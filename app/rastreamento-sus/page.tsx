@@ -137,9 +137,9 @@ export default function RastreamentoSUSPage() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-50 text-neutral-900">
+    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-blue-50/30 to-emerald-50/30 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-900 text-neutral-900 dark:text-neutral-100">
       {/* Presenter Controls */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-neutral-200 print:hidden">
+      <div className="fixed top-0 left-0 right-0 z-50 glass border-b border-neutral-200/50 print:hidden shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <button
@@ -195,7 +195,7 @@ export default function RastreamentoSUSPage() {
       </div>
 
       {/* Header with Progress */}
-      <header className="fixed top-14 left-0 right-0 z-40 bg-neutral-50/80 backdrop-blur border-b border-neutral-200 print:static print:bg-white">
+      <header className="fixed top-14 left-0 right-0 z-40 glass border-b border-neutral-200/50 print:static print:bg-white shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-baseline gap-2">
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-black text-white text-xs font-semibold">
@@ -214,9 +214,9 @@ export default function RastreamentoSUSPage() {
             Scroll para navegar pela aula
           </span>
         </div>
-        <div className="h-1 bg-neutral-200">
+        <div className="h-1 bg-neutral-200/50">
           <div
-            className="h-1 bg-neutral-900 transition-all"
+            className="h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 transition-all shadow-lg"
             style={{ width: `${scrollProgress}%` }}
           />
         </div>
@@ -232,8 +232,8 @@ export default function RastreamentoSUSPage() {
                   href={`#${sec.id}`}
                   className={`flex items-center justify-between px-3 py-2 rounded-lg transition ${
                     activeSection === sec.id
-                      ? "bg-neutral-900 text-white"
-                      : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+                      ? "bg-neutral-900 dark:bg-neutral-700 text-white"
+                      : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800"
                   }`}
                 >
                   <span className="flex items-center gap-2">
@@ -283,7 +283,7 @@ export default function RastreamentoSUSPage() {
                 <h3 className="font-semibold">Notas do Apresentador</h3>
                 <button
                   onClick={() => setShowNotes(false)}
-                  className="text-neutral-500 hover:text-neutral-900"
+                  className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100"
                 >
                   ✕
                 </button>

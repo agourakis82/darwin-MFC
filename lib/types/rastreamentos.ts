@@ -29,7 +29,7 @@ export interface Recommendations {
 export interface Rastreamento {
   id: string;
   title: string;
-  category: 'neonatal' | 'infantil' | 'adultos' | 'cancer' | 'gestacao' | 'infecciosas' | 'saude_mental';
+  category: 'neonatal' | 'infantil' | 'adultos' | 'cancer' | 'gestacao' | 'infecciosas' | 'saude_mental' | 'outros';
   description: string; // Introdução/Resumo
   recommendations: Recommendations;
   epidemiology: {

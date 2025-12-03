@@ -3,6 +3,7 @@ import "./globals.css";
 import ThemeProvider from "./components/Layout/ThemeProvider";
 import Header from "./components/Layout/Header";
 import Sidebar from "./components/Layout/Sidebar";
+import Footer from "./components/Layout/Footer";
 
 export const metadata: Metadata = {
   title: "Rastreamentos Populacionais no SUS (2025) - Análise Sistêmica Q1",
@@ -15,8 +16,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
-      <body className="bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
+    <html lang="pt-BR" className="dark" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('app-theme');
+                  // Dark mode como padrão se não houver preferência salva
+                  if (theme === 'light') {
+                    document.documentElement.classList.remove('dark');
+                  } else {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (e) {
+                  // Fallback para dark mode
+                  document.documentElement.classList.add('dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body>
         <ThemeProvider>
           <div className="min-h-screen flex flex-col">
             <Header />
@@ -28,6 +51,7 @@ export default function RootLayout({
                 {children}
               </main>
             </div>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>

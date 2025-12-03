@@ -33,14 +33,14 @@ export function HeroSection() {
       transition={{ staggerChildren: 0.1 }}
     >
       <motion.div variants={fadeInUp} className="space-y-6">
-        <p className="uppercase tracking-[0.2em] text-xs text-neutral-500">
+        <p className="uppercase tracking-[0.2em] text-xs font-semibold text-blue-600">
           Aula interativa • Medicina de Família e Comunidade • 5º ano
         </p>
-        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-neutral-900">
+        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-neutral-900">
           Rastreamentos no SUS x&nbsp;
-          <span className="text-neutral-500">Sociedades médicas</span>
+          <span className="bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent">Sociedades médicas</span>
         </h2>
-        <p className="text-lg md:text-xl text-neutral-600 max-w-2xl">
+        <p className="text-lg md:text-xl text-neutral-700 max-w-2xl font-medium">
           Uma jornada do teste do pezinho ao PSA, passando pelos rastreios de
           DCNT, câncer, infecções, gestação e saúde mental — sempre na
           intersecção entre a lógica populacional do SUS e a lógica
@@ -71,10 +71,17 @@ export function HeroSection() {
 
 function HeroCard({ title, text }: { title: string; text: string }) {
   return (
-    <article className="card-base p-5 md:p-6 flex flex-col gap-2 hover:shadow-md transition-shadow">
-      <h3 className="text-sm font-semibold text-neutral-900">{title}</h3>
-      <p className="text-sm text-neutral-600 leading-relaxed">{text}</p>
-    </article>
+    <motion.article 
+      className="card-base p-6 md:p-8 flex flex-col gap-3 group cursor-default"
+      whileHover={{ scale: 1.03, y: -8 }}
+      transition={{ type: "spring", stiffness: 300 }}
+    >
+      <h3 className="text-base font-bold text-neutral-900 flex items-center gap-2">
+        <span className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-600 group-hover:scale-150 transition-transform shadow-lg"></span>
+        {title}
+      </h3>
+      <p className="text-sm text-neutral-700 leading-relaxed font-medium">{text}</p>
+    </motion.article>
   );
 }
 
@@ -83,10 +90,10 @@ export function ConceptSection() {
   return (
     <section id="concepts" className="section-spacing space-y-8">
       <header className="space-y-3">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">
           O que estamos chamando de rastreio?
         </h2>
-        <p className="text-neutral-600 max-w-2xl">
+        <p className="text-neutral-700 max-w-2xl text-lg font-medium">
           Antes de falar de colo, mama ou PSA, é preciso limpar a semântica:
           rastreamento populacional não é sinônimo de check-up, nem qualquer
           exame feito em pessoa saudável. Tem critérios, limites e um custo
@@ -132,17 +139,28 @@ function ConceptCard({
   bullets: string[];
 }) {
   return (
-    <article className="card-base p-5 md:p-6 flex flex-col gap-3">
-      <h3 className="text-sm font-semibold text-neutral-900">{title}</h3>
-      <ul className="text-sm text-neutral-600 space-y-1.5">
+    <motion.article 
+      className="card-base p-6 md:p-8 flex flex-col gap-4"
+      whileHover={{ y: -6, scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 300 }}
+    >
+      <h3 className="text-base font-bold text-neutral-900 pb-3 border-b-2 border-gradient-to-r from-blue-600 to-emerald-600">{title}</h3>
+      <ul className="text-sm text-neutral-700 space-y-3 font-medium">
         {bullets.map((b, idx) => (
-          <li key={idx} className="flex gap-2">
-            <span className="mt-[6px] h-[6px] w-[6px] rounded-full bg-neutral-900 flex-shrink-0" />
-            <span>{b}</span>
-          </li>
+          <motion.li 
+            key={idx} 
+            className="flex gap-2"
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: idx * 0.1 }}
+            viewport={{ once: true }}
+          >
+            <span className="mt-[6px] h-2 w-2 rounded-full bg-gradient-to-r from-blue-600 to-emerald-600 flex-shrink-0 shadow-md" />
+            <span className="flex-1">{b}</span>
+          </motion.li>
         ))}
       </ul>
-    </article>
+    </motion.article>
   );
 }
 
@@ -153,10 +171,10 @@ export function LifeCycleSection() {
   return (
     <section id="lifecycle" className="section-spacing space-y-10">
       <header className="space-y-3">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">
           Linha do tempo dos rastreamentos no SUS
         </h2>
-        <p className="text-neutral-600 max-w-2xl">
+        <p className="text-neutral-700 max-w-2xl text-lg font-medium">
           Em vez de decorar rastreios soltos, é mais útil enxergar uma linha de
           vida: o que acontece no RN, o que aparece na infância, quando entram
           DCNT, câncer e as janelas de oportunidade que não voltam.
@@ -164,9 +182,9 @@ export function LifeCycleSection() {
       </header>
 
       {/* Timeline horizontal */}
-      <div className="relative">
-        <div className="h-px bg-neutral-300 w-full mb-6" />
-        <div className="flex justify-between text-xs md:text-sm font-medium text-neutral-500">
+      <div className="relative glass-strong rounded-2xl p-6">
+        <div className="h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 w-full mb-8 rounded-full shadow-lg" />
+        <div className="flex justify-between text-xs md:text-sm font-bold text-neutral-700">
           {LIFECYCLE_POINTS.map((p) => {
             const isActive = p === active;
             return (
@@ -176,10 +194,10 @@ export function LifeCycleSection() {
                 className="relative flex flex-col items-center gap-2 group"
               >
                 <span
-                  className={`h-3 w-3 rounded-full border-2 transition ${
+                  className={`h-4 w-4 rounded-full border-2 transition shadow-lg ${
                     isActive
-                      ? "border-neutral-900 bg-neutral-900"
-                      : "border-neutral-400 bg-neutral-50 group-hover:border-neutral-700"
+                      ? "border-blue-600 bg-gradient-to-r from-blue-600 to-emerald-600 scale-125"
+                      : "border-neutral-400 bg-white group-hover:border-blue-500 group-hover:scale-110"
                   }`}
                 />
                 <span
@@ -208,10 +226,10 @@ function LifeCyclePanel({ point }: { point: LifePoint }) {
       key={point}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="card-base p-6 md:p-8 space-y-4"
+      className="glass-strong p-8 md:p-10 space-y-5 rounded-2xl shadow-xl"
     >
-      <h3 className="text-lg md:text-xl font-semibold">{content.title}</h3>
-      <div className="text-sm md:text-base text-neutral-700 space-y-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1.5">
+      <h3 className="text-xl md:text-2xl font-bold text-neutral-900 border-l-4 border-blue-600 pl-4">{content.title}</h3>
+      <div className="text-base md:text-lg text-neutral-800 space-y-3 font-medium [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_strong]:text-neutral-900 [&_strong]:font-bold">
         {content.body}
       </div>
     </motion.div>
@@ -403,24 +421,24 @@ export function DCNTSection() {
 
   return (
     <section id="dcnt" className="section-spacing space-y-10">
-      <header className="space-y-3">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+      <header className="space-y-4">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">
           DCNT: SUS faz o mínimo suficiente, sociedades querem apertar a malha
         </h2>
-        <p className="text-neutral-600 max-w-2xl">
+        <p className="text-neutral-700 max-w-2xl text-lg font-medium">
           Hipertensão, diabetes 2, dislipidemias, obesidade, tabagismo e álcool
           são a base da carga de doença. Aqui, SUS e sociedades quase sempre
           concordam no "o que", mas nem sempre no "quando" e "quão amplo".
         </p>
-        <div className="inline-flex rounded-full bg-neutral-200 p-1">
+        <div className="inline-flex rounded-full glass p-1.5 shadow-lg">
           {(["sus", "soc", "combined"] as Mode[]).map((m) => (
             <button
               key={m}
               onClick={() => setMode(m)}
-              className={`px-4 py-1 text-xs md:text-sm rounded-full transition ${
+              className={`px-5 py-2 text-sm md:text-base rounded-full transition font-semibold ${
                 mode === m
-                  ? "bg-white shadow-sm text-neutral-900"
-                  : "text-neutral-500"
+                  ? "bg-gradient-to-r from-blue-600 to-emerald-600 text-white shadow-md"
+                  : "text-neutral-600 hover:text-neutral-900"
               }`}
             >
               {m === "sus" && "Ver SUS"}
@@ -444,10 +462,14 @@ function DCNTCard({ title, mode }: { title: string; mode: Mode }) {
   const isDM2 = title === "Diabetes tipo 2";
 
   return (
-    <article className="card-base p-5 md:p-6 flex flex-col gap-3">
-      <h3 className="text-sm font-semibold text-neutral-900">{title}</h3>
+    <motion.article 
+      className="card-base p-6 md:p-8 flex flex-col gap-4"
+      whileHover={{ y: -6, scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 300 }}
+    >
+      <h3 className="text-lg font-bold text-neutral-900 border-b-2 border-blue-600 pb-2">{title}</h3>
       {mode === "sus" && (
-        <p className="text-sm text-neutral-600 leading-relaxed">
+        <p className="text-base text-neutral-800 leading-relaxed font-medium">
           {title === "Hipertensão" &&
             "SUS recomenda aferir PA em todos os adultos a partir dos 18 anos, idealmente em toda consulta de APS. Rastreamento universal, grau de evidência máximo."}
           {isDM2 &&
@@ -457,7 +479,7 @@ function DCNTCard({ title, mode }: { title: string; mode: Mode }) {
         </p>
       )}
       {mode === "soc" && (
-        <p className="text-sm text-neutral-600 leading-relaxed">
+        <p className="text-base text-neutral-800 leading-relaxed font-medium">
           {title === "Hipertensão" &&
             "Sociedades de cardiologia convergem com o SUS na aferição ampla, reforçando repetição em diferentes dias antes de fechar diagnóstico e uso de medida residencial quando possível."}
           {isDM2 &&
@@ -467,9 +489,9 @@ function DCNTCard({ title, mode }: { title: string; mode: Mode }) {
         </p>
       )}
       {mode === "combined" && (
-        <div className="space-y-2 text-sm text-neutral-600 leading-relaxed">
-          <p className="font-medium text-blue-600">SUS:</p>
-          <p>
+        <div className="space-y-3 text-base text-neutral-800 leading-relaxed font-medium">
+          <p className="font-bold text-blue-700 text-lg">SUS:</p>
+          <p className="pl-4 border-l-2 border-blue-600">
             {title === "Hipertensão" &&
               "Foca em rastreio universal de PA, aproveitando cada contato com o sistema para identificar hipertensos ocultos."}
             {isDM2 &&
@@ -477,8 +499,8 @@ function DCNTCard({ title, mode }: { title: string; mode: Mode }) {
             {title === "Dislipidemias" &&
               "Define idades de corte (H≥35, M≥45) e prioriza grupos com maior risco global para manter o rastreio custo-efetivo."}
           </p>
-          <p className="font-medium text-purple-600 mt-3">Sociedades:</p>
-          <p>
+          <p className="font-bold text-purple-700 text-lg mt-4">Sociedades:</p>
+          <p className="pl-4 border-l-2 border-purple-600">
             {isDM2 &&
               "Ampliam a malha: não querem perder obesos jovens e pessoas com história familiar importante, mesmo sem hipertensão."}
             {title === "Dislipidemias" &&
@@ -488,22 +510,26 @@ function DCNTCard({ title, mode }: { title: string; mode: Mode }) {
           </p>
         </div>
       )}
-    </article>
+    </motion.article>
   );
 }
 
 /* ================= CÂNCER ================= */
 export function CancerSection() {
   return (
-    <section
+    <motion.section
       id="cancer"
-      className="section-spacing space-y-10 bg-neutral-950 text-neutral-100 rounded-3xl md:rounded-[2.5rem] px-4 md:px-8 mt-10"
+      className="section-spacing space-y-10 glass-dark rounded-3xl md:rounded-[2.5rem] px-6 md:px-10 mt-10 shadow-2xl"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
     >
-      <header className="space-y-3 max-w-3xl">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+      <header className="space-y-4 max-w-3xl">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
           Câncer: colo, mama, colorretal e próstata
         </h2>
-        <p className="text-neutral-400">
+        <p className="text-neutral-200 text-lg font-medium">
           Aqui o jogo fica mais tenso: são os rastreios que disputam recursos,
           geram manchetes e, muitas vezes, colocam SUS e sociedades médicas em
           lados diferentes do cabo de guerra.
@@ -540,7 +566,7 @@ export function CancerSection() {
           evidence="C"
         />
       </div>
-    </section>
+    </motion.section>
   );
 }
 
@@ -564,29 +590,33 @@ function CancerCard({
   };
 
   return (
-    <article className="bg-neutral-900 rounded-3xl border border-neutral-800 p-5 md:p-6 flex flex-col gap-3">
+    <motion.article 
+      className="glass-dark rounded-3xl p-6 md:p-8 flex flex-col gap-4 hover:shadow-2xl transition-all"
+      whileHover={{ scale: 1.03, y: -6 }}
+      transition={{ type: "spring", stiffness: 300 }}
+    >
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-neutral-50">{title}</h3>
+        <h3 className="text-lg font-bold text-white">{title}</h3>
         <span
-          className={`${evidenceColors[evidence]} text-white text-xs px-2 py-0.5 rounded-full font-semibold`}
+          className={`${evidenceColors[evidence]} text-white text-sm px-3 py-1.5 rounded-full font-bold shadow-xl`}
         >
           Evidência {evidence}
         </span>
       </div>
-      <div className="space-y-2 text-xs md:text-sm text-neutral-300 leading-relaxed">
-        <p>
-          <span className="font-semibold text-blue-400">SUS: </span>
+      <div className="space-y-3 text-base text-neutral-100 leading-relaxed font-medium">
+        <p className="border-l-2 border-blue-400 pl-4">
+          <span className="font-bold text-blue-300 block mb-1">SUS: </span>
           {sus}
         </p>
-        <p>
-          <span className="font-semibold text-purple-400">Sociedades: </span>
+        <p className="border-l-2 border-purple-400 pl-4">
+          <span className="font-bold text-purple-300 block mb-1">Sociedades: </span>
           {soc}
         </p>
-        <p className="border-t border-neutral-800 pt-2 text-neutral-400">
+        <p className="border-t-2 border-neutral-700 pt-3 text-neutral-200 italic bg-neutral-800/30 p-3 rounded-lg">
           {comment}
         </p>
       </div>
-    </article>
+    </motion.article>
   );
 }
 
@@ -594,11 +624,11 @@ function CancerCard({
 export function InfectiousSection() {
   return (
     <section id="infectious" className="section-spacing space-y-10">
-      <header className="space-y-3">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+      <header className="space-y-4">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">
           Infecções e IST: onde quase todo mundo rema na mesma direção
         </h2>
-        <p className="text-neutral-600 max-w-2xl">
+        <p className="text-neutral-700 max-w-2xl text-lg font-medium">
           Em HIV, sífilis e hepatites, SUS e sociedades médicas são, em geral,
           aliados explícitos. O foco é ampliar testagem, tratar imediatamente e
           caminhar para eliminação como problema de saúde pública.
@@ -641,17 +671,21 @@ function InfectionCard({
   soc: string;
 }) {
   return (
-    <article className="card-base p-5 md:p-6 flex flex-col gap-2">
-      <h3 className="text-sm font-semibold text-neutral-900">{title}</h3>
-      <p className="text-sm text-neutral-600 leading-relaxed">
-        <span className="font-semibold text-blue-600">SUS: </span>
+    <motion.article 
+      className="card-base p-6 md:p-8 flex flex-col gap-4"
+      whileHover={{ y: -6, scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 300 }}
+    >
+      <h3 className="text-lg font-bold text-neutral-900 border-b-2 border-emerald-600 pb-2">{title}</h3>
+      <p className="text-base text-neutral-800 leading-relaxed font-medium border-l-2 border-blue-600 pl-4">
+        <span className="font-bold text-blue-700 block mb-1">SUS: </span>
         {sus}
       </p>
-      <p className="text-sm text-neutral-600 leading-relaxed">
-        <span className="font-semibold text-purple-600">Sociedades: </span>
+      <p className="text-base text-neutral-800 leading-relaxed font-medium border-l-2 border-purple-600 pl-4">
+        <span className="font-bold text-purple-700 block mb-1">Sociedades: </span>
         {soc}
       </p>
-    </article>
+    </motion.article>
   );
 }
 
@@ -659,43 +693,70 @@ function InfectionCard({
 export function PregnancySection() {
   return (
     <section id="pregnancy" className="section-spacing space-y-10">
-      <header className="space-y-3">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+      <header className="space-y-4">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">
           Gestação: o pacote de rastreios mais denso do SUS
         </h2>
-        <p className="text-neutral-600 max-w-2xl">
+        <p className="text-neutral-700 max-w-2xl text-lg font-medium">
           O pré-natal concentra alguns dos rastreamentos mais clássicos de saúde
           pública. É também onde as diferenças SUS vs sociedades são mais
           tecnológicas: cultura de GBS, triagem de aneuploidias, HCV universal.
         </p>
       </header>
 
-      <div className="card-base p-6 md:p-8 space-y-6">
-        <h3 className="text-sm font-semibold text-neutral-900">
+      <div className="glass-strong p-8 md:p-10 space-y-8 rounded-2xl shadow-xl">
+        <h3 className="text-xl font-bold text-neutral-900 border-b-2 border-purple-600 pb-3">
           Linha do tempo do pré-natal
         </h3>
 
-        <div className="grid md:grid-cols-4 gap-6 text-sm text-neutral-700">
-          <div>
-            <h4 className="font-semibold mb-2 text-blue-600">1º trimestre</h4>
+        <div className="grid md:grid-cols-4 gap-6 text-base text-neutral-800 font-medium">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0 }}
+            viewport={{ once: true }}
+            className="p-5 rounded-xl glass border-2 border-blue-400 shadow-lg"
+          >
+            <h4 className="font-bold mb-4 text-blue-700 flex items-center gap-2 text-lg">
+              <span className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-blue-400 text-white flex items-center justify-center text-sm font-bold shadow-md">1º</span>
+              Trimestre
+            </h4>
             <ul className="list-disc pl-4 space-y-1">
               <li>HIV, sífilis, hepatite B.</li>
               <li>Tipagem sanguínea e Coombs, hemograma.</li>
               <li>Urocultura para bacteriúria assintomática.</li>
               <li>Avaliação de risco para DM prévio.</li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
-            <h4 className="font-semibold mb-2 text-purple-600">2º trimestre</h4>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            viewport={{ once: true }}
+            className="p-5 rounded-xl glass border-2 border-purple-400 shadow-lg"
+          >
+            <h4 className="font-bold mb-4 text-purple-700 flex items-center gap-2 text-lg">
+              <span className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-purple-400 text-white flex items-center justify-center text-sm font-bold shadow-md">2º</span>
+              Trimestre
+            </h4>
             <ul className="list-disc pl-4 space-y-1">
               <li>Teste oral de tolerância à glicose (24–28s).</li>
               <li>Ultrassom morfológico de 2º trimestre.</li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
-            <h4 className="font-semibold mb-2 text-green-600">3º trimestre</h4>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+            className="p-5 rounded-xl glass border-2 border-green-400 shadow-lg"
+          >
+            <h4 className="font-bold mb-4 text-green-700 flex items-center gap-2 text-lg">
+              <span className="w-10 h-10 rounded-full bg-gradient-to-r from-green-600 to-green-400 text-white flex items-center justify-center text-sm font-bold shadow-md">3º</span>
+              Trimestre
+            </h4>
             <ul className="list-disc pl-4 space-y-1">
               <li>Repetir HIV e sífilis.</li>
               <li>
@@ -704,10 +765,17 @@ export function PregnancySection() {
               </li>
               <li>Seguimento de PA e proteinúria (pré-eclâmpsia).</li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
-            <h4 className="font-semibold mb-2 text-amber-600">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            viewport={{ once: true }}
+            className="p-5 rounded-xl glass border-2 border-amber-400 shadow-lg"
+          >
+            <h4 className="font-bold mb-4 text-amber-700 flex items-center gap-2 text-lg">
+              <span className="w-10 h-10 rounded-full bg-gradient-to-r from-amber-600 to-amber-400 text-white flex items-center justify-center text-lg shadow-md">🤱</span>
               Parto e puerpério
             </h4>
             <ul className="list-disc pl-4 space-y-1">
@@ -715,17 +783,17 @@ export function PregnancySection() {
               <li>Triagem de depressão pós-parto (EPDS).</li>
               <li>Atualização vacinal da puérpera.</li>
             </ul>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="border-t border-neutral-200 pt-4 text-sm text-neutral-700 space-y-1.5">
-          <p>
-            <span className="font-semibold text-blue-600">SUS: </span>
+        <div className="border-t-2 border-neutral-300 pt-5 text-base text-neutral-800 space-y-3 font-medium">
+          <p className="border-l-2 border-blue-600 pl-4">
+            <span className="font-bold text-blue-700 block mb-1">SUS: </span>
             entrega um pacote robusto baseado em sífilis, HIV, HBV, DMG,
             bacteriúria, tipagem, PA e US morfológico.
           </p>
-          <p>
-            <span className="font-semibold text-purple-600">
+          <p className="border-l-2 border-purple-600 pl-4">
+            <span className="font-bold text-purple-700 block mb-1">
               Sociedades (FEBRASGO, SBP, etc.):{" "}
             </span>
             empurram para inclusão universal de cultura GBS, triagem de
@@ -742,11 +810,11 @@ export function PregnancySection() {
 export function MentalHealthSection() {
   return (
     <section id="mental" className="section-spacing space-y-10">
-      <header className="space-y-3">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+      <header className="space-y-4">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">
           Saúde mental: o rastreio invisível que acontece na consulta
         </h2>
-        <p className="text-neutral-600 max-w-2xl">
+        <p className="text-neutral-700 max-w-2xl text-lg font-medium">
           Depressão, depressão pós-parto e TEA são hoje as três grandes frentes
           em que rastreio estruturado em saúde mental faz sentido na APS. O
           resto continua a depender muito da sensibilidade clínica.
@@ -773,10 +841,14 @@ export function MentalHealthSection() {
 
 function MentalCard({ title, text }: { title: string; text: string }) {
   return (
-    <article className="card-base p-5 md:p-6 flex flex-col gap-2">
-      <h3 className="text-sm font-semibold text-neutral-900">{title}</h3>
-      <p className="text-sm text-neutral-600 leading-relaxed">{text}</p>
-    </article>
+    <motion.article 
+      className="card-base p-6 md:p-8 flex flex-col gap-3"
+      whileHover={{ y: -6, scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 300 }}
+    >
+      <h3 className="text-lg font-bold text-neutral-900 border-b-2 border-emerald-600 pb-2">{title}</h3>
+      <p className="text-base text-neutral-800 leading-relaxed font-medium">{text}</p>
+    </motion.article>
   );
 }
 
@@ -784,11 +856,11 @@ function MentalCard({ title, text }: { title: string; text: string }) {
 export function CaseSection() {
   return (
     <section id="case" className="section-spacing space-y-8">
-      <header className="space-y-3">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+      <header className="space-y-4">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">
           Caso clínico: onde tudo isso cai na vida de uma pessoa
         </h2>
-        <p className="text-neutral-600 max-w-2xl">
+        <p className="text-neutral-700 max-w-2xl text-lg font-medium">
           Aqui entra o paciente que você vai levar da UBS para a aula. A lógica
           é usar uma única pessoa como fio condutor: o que o SUS recomenda para
           ela, o que as sociedades sugeririam a mais, e o que de fato foi feito
@@ -798,8 +870,8 @@ export function CaseSection() {
 
       <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
         {/* Lado esquerdo: narrativa do caso (placeholder) */}
-        <article className="card-base p-5 md:p-6 space-y-3 text-sm text-neutral-700">
-          <h3 className="text-sm font-semibold text-neutral-900">
+        <article className="glass-strong p-6 md:p-8 space-y-4 text-base text-neutral-800 font-medium rounded-2xl shadow-lg">
+          <h3 className="text-lg font-bold text-neutral-900 border-b-2 border-blue-600 pb-2">
             Linha do tempo do paciente
           </h3>
           <p className="text-neutral-500 text-xs italic">
@@ -826,49 +898,49 @@ export function CaseSection() {
         </article>
 
         {/* Lado direito: checklist SUS vs Sociedades */}
-        <article className="bg-neutral-900 text-neutral-100 rounded-3xl border border-neutral-800 p-5 md:p-6 space-y-4 text-sm">
-          <h3 className="text-sm font-semibold">Plano de rastreio comparado</h3>
-          <p className="text-neutral-400 text-xs italic">
+        <article className="glass-dark rounded-3xl p-6 md:p-8 space-y-5 text-base shadow-lg">
+          <h3 className="text-lg font-bold text-white border-b-2 border-purple-600 pb-2">Plano de rastreio comparado</h3>
+          <p className="text-neutral-200 text-sm italic font-medium">
             Use esta tabela como roteiro para discussão em sala.
           </p>
 
-          <table className="w-full text-xs md:text-sm border-separate border-spacing-y-2">
+          <table className="w-full text-sm md:text-base border-separate border-spacing-y-3 font-medium">
             <thead>
-              <tr className="text-neutral-400">
+              <tr className="text-neutral-300 font-bold">
                 <th className="text-left font-normal pb-1">Condição</th>
                 <th className="text-left font-normal pb-1">SUS</th>
                 <th className="text-left font-normal pb-1">Sociedades</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className="align-top pr-2">DCNT</td>
-                <td className="align-top pr-2 text-neutral-300">
+              <tr className="bg-neutral-800/30 rounded-lg">
+                <td className="align-top pr-2 font-bold text-white">DCNT</td>
+                <td className="align-top pr-2 text-neutral-100">
                   PA em toda consulta; glicemia se HAS; lipídios conforme idade.
                 </td>
-                <td className="align-top text-neutral-300">
+                <td className="align-top text-neutral-100">
                   Inclui glicemia mais ampla (≥45 anos) e rastreio lipídico mais
                   precoce em obesos/familiares.
                 </td>
               </tr>
-              <tr>
-                <td className="align-top pr-2">Câncer</td>
-                <td className="align-top pr-2 text-neutral-300">
+              <tr className="bg-neutral-800/30 rounded-lg">
+                <td className="align-top pr-2 font-bold text-white">Câncer</td>
+                <td className="align-top pr-2 text-neutral-100">
                   Colo (25–64); mama (50–74 bienal; 40–49 conforme decisão);
                   colorretal (se/quando diretriz local existir).
                 </td>
-                <td className="align-top text-neutral-300">
+                <td className="align-top text-neutral-100">
                   Mama desde os 40, anual; CCR a partir de 45; PSA + toque
                   conforme especialidade.
                 </td>
               </tr>
-              <tr>
-                <td className="align-top pr-2">Infecções</td>
-                <td className="align-top pr-2 text-neutral-300">
+              <tr className="bg-neutral-800/30 rounded-lg">
+                <td className="align-top pr-2 font-bold text-white">Infecções</td>
+                <td className="align-top pr-2 text-neutral-100">
                   Pelo menos um teste de HIV/HCV ao longo da vida; IST em
                   gestação e populações-chave.
                 </td>
-                <td className="align-top text-neutral-300">
+                <td className="align-top text-neutral-100">
                   Puxa para testagem ainda mais ampla e frequente em grupos de
                   risco.
                 </td>
@@ -876,7 +948,7 @@ export function CaseSection() {
             </tbody>
           </table>
 
-          <p className="text-neutral-400">
+          <p className="text-neutral-200 italic bg-neutral-800/30 p-4 rounded-lg font-medium">
             No fim, você mostra para o seu paciente o que é mínimo (SUS), o que
             é desejável (Sociedades) e decide com ele onde vale a pena expandir.
           </p>
@@ -890,8 +962,8 @@ export function CaseSection() {
 export function SummarySection() {
   return (
     <section id="summary" className="section-spacing space-y-10">
-      <header className="space-y-3">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+      <header className="space-y-4">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">
           Três frases para sair da aula lembrando
         </h2>
       </header>
@@ -912,11 +984,11 @@ export function SummarySection() {
       </div>
 
       {/* Mini quiz conceitual simples */}
-      <div className="card-base p-6 md:p-8 space-y-4 mt-10">
-        <h3 className="text-sm font-semibold text-neutral-900">
+      <div className="glass-strong p-8 md:p-10 space-y-5 mt-10 rounded-2xl shadow-xl">
+        <h3 className="text-xl font-bold text-neutral-900 border-b-2 border-emerald-600 pb-3">
           Mini quiz de fixação (para discussão em grupo)
         </h3>
-        <ol className="list-decimal pl-5 text-sm text-neutral-700 space-y-2">
+        <ol className="list-decimal pl-6 text-base text-neutral-800 space-y-3 font-medium">
           <li>
             Em quais das seguintes situações o SUS{" "}
             <span className="font-semibold">não</span> recomenda um rastreio
@@ -931,7 +1003,7 @@ export function SummarySection() {
             forma honesta as posições de SUS/INCA e SBU em relação ao PSA?
           </li>
         </ol>
-        <p className="text-xs text-neutral-500 mt-2">
+        <p className="text-sm text-neutral-600 mt-3 italic font-medium">
           (Você pode usar essas perguntas para conduzir a discussão ao final da
           apresentação.)
         </p>
@@ -942,9 +1014,13 @@ export function SummarySection() {
 
 function SummaryCard({ title, text }: { title: string; text: string }) {
   return (
-    <article className="card-base p-5 md:p-6 flex flex-col gap-2">
-      <h3 className="text-sm font-semibold text-neutral-900">{title}</h3>
-      <p className="text-sm text-neutral-600 leading-relaxed">{text}</p>
-    </article>
+    <motion.article 
+      className="card-base p-6 md:p-8 flex flex-col gap-3"
+      whileHover={{ y: -6, scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 300 }}
+    >
+      <h3 className="text-lg font-bold text-neutral-900 border-b-2 border-blue-600 pb-2">{title}</h3>
+      <p className="text-base text-neutral-800 leading-relaxed font-medium">{text}</p>
+    </motion.article>
   );
 }

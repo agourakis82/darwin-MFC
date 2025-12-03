@@ -1,48 +1,60 @@
 import ComparisonSection from '../components/Comparison/ComparisonSection';
+import HeroSection from '../components/Hero/HeroSection';
 import { getRastreamentosByCategory } from '@/lib/data/rastreamentos';
+import { Activity, Heart, Droplets, Stethoscope } from 'lucide-react';
 
 export default function AdultosPage() {
   const rastreamentos = getRastreamentosByCategory('adultos');
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-5xl">
-      {/* Header */}
-      <div className="mb-12">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-16 h-16 bg-emerald-600 rounded-xl flex items-center justify-center text-3xl">
-            💪
-          </div>
-          <div>
-            <h1 className="text-4xl font-bold text-neutral-900 dark:text-neutral-100">
-              Adultos - Doenças Crônicas
-            </h1>
-            <p className="text-neutral-600 dark:text-neutral-400">
-              Rastreamento Cardiometabólico (HAS, DM2, Dislipidemias)
-            </p>
-          </div>
-        </div>
-        
-        <div className="bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 rounded-lg p-4">
-          <p className="text-sm text-neutral-700 dark:text-neutral-300">
-            <strong>Enfoque Cardiometabólico:</strong> SUS prioriza hipertensão, diabetes e dislipidemia por serem grandes 
-            causadoras de mortalidade (AVC, infarto, insuficiências renal e cardíaca). Rastreamentos com evidência grau A.
-          </p>
-        </div>
-      </div>
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 lg:px-8 py-8 max-w-7xl">
+        {/* Modern Hero Section */}
+        <HeroSection
+          icon={<Activity className="w-8 h-8 lg:w-10 lg:h-10 text-white" strokeWidth={2} />}
+          title="Saúde do Adulto"
+          subtitle="Rastreamentos em Atenção Primária"
+          description="Prevenção e detecção precoce de doenças crônicas não transmissíveis (DCNTs), infecções sexualmente transmissíveis (ISTs) e complicações cardiovasculares. Protocolos baseados em evidências grau A do Ministério da Saúde e sociedades médicas brasileiras."
+          gradient="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600"
+          stats={[
+            { value: `${rastreamentos.length}`, label: 'Protocolos' },
+            { value: '8', label: 'Condições' },
+            { value: '2025', label: 'Atualizado' },
+            { value: 'Q1', label: 'Padrão' }
+          ]}
+        />
 
-      {/* Rastreamentos */}
-      <div className="space-y-16">
-        {rastreamentos.map((rastreamento) => (
-          <div key={rastreamento.id} id={rastreamento.id}>
-            <ComparisonSection rastreamento={rastreamento} />
+        {/* Category Pills */}
+        <div className="flex flex-wrap gap-3 mb-12">
+          <div className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-sm font-semibold flex items-center gap-2">
+            <Heart className="w-4 h-4" />
+            Cardiometabólicas
           </div>
-        ))}
-        
-        {rastreamentos.length === 0 && (
-          <div className="text-center py-12 text-neutral-500 dark:text-neutral-400">
-            Dados em construção.
+          <div className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 rounded-full text-sm font-semibold flex items-center gap-2">
+            <Stethoscope className="w-4 h-4" />
+            ISTs
           </div>
-        )}
+          <div className="px-4 py-2 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 rounded-full text-sm font-semibold flex items-center gap-2">
+            <Droplets className="w-4 h-4" />
+            Hepatites
+          </div>
+        </div>
+
+        {/* Rastreamentos Grid */}
+        <div className="space-y-12">
+          {rastreamentos.map((rastreamento) => (
+            <div key={rastreamento.id} id={rastreamento.id} className="scroll-mt-24">
+              <ComparisonSection rastreamento={rastreamento} />
+            </div>
+          ))}
+
+          {rastreamentos.length === 0 && (
+            <div className="text-center py-20 text-neutral-500 dark:text-neutral-400">
+              <Activity className="w-16 h-16 mx-auto mb-4 opacity-30" />
+              <p>Dados em construção.</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

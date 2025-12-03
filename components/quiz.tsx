@@ -124,41 +124,41 @@ export function QuizModal({ onClose }: QuizModalProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md p-4"
       onClick={onClose}
     >
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
-        className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+        className="glass-strong rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e: React.MouseEvent) => e.stopPropagation()}
       >
-        <div className="p-6 md:p-8">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl md:text-2xl font-semibold">
+        <div className="p-8 md:p-10">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">
               Quiz Interativo
             </h2>
             <button
               onClick={onClose}
-              className="p-2 hover:bg-neutral-100 rounded-lg transition"
+              className="p-2 hover:bg-neutral-200 rounded-lg transition glass"
             >
-              <X className="w-5 h-5" />
+              <X className="w-6 h-6" />
             </button>
           </div>
 
           {!quizComplete ? (
             <>
-              <div className="mb-6">
-                <div className="flex items-center justify-between text-sm text-neutral-500 mb-2">
+              <div className="mb-8">
+                <div className="flex items-center justify-between text-base text-neutral-700 mb-3 font-semibold">
                   <span>
                     Questão {currentQuestion + 1} de {QUIZ_QUESTIONS.length}
                   </span>
                   <span>Pontuação: {score}</span>
                 </div>
-                <div className="h-2 bg-neutral-200 rounded-full overflow-hidden">
+                <div className="h-3 bg-neutral-200 rounded-full overflow-hidden shadow-inner">
                   <div
-                    className="h-full bg-blue-600 transition-all"
+                    className="h-full bg-gradient-to-r from-blue-600 to-emerald-600 transition-all shadow-lg"
                     style={{
                       width: `${((currentQuestion + 1) / QUIZ_QUESTIONS.length) * 100}%`,
                     }}
@@ -166,12 +166,12 @@ export function QuizModal({ onClose }: QuizModalProps) {
                 </div>
               </div>
 
-              <div className="space-y-6">
-                <h3 className="text-lg font-medium text-neutral-900">
+              <div className="space-y-8">
+                <h3 className="text-xl font-bold text-neutral-900">
                   {question.question}
                 </h3>
 
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {question.options.map((option, index) => {
                     const isSelected = selectedAnswer === index;
                     const isCorrectAnswer = index === question.correct;
@@ -183,18 +183,18 @@ export function QuizModal({ onClose }: QuizModalProps) {
                         key={index}
                         onClick={() => handleAnswer(index)}
                         disabled={selectedAnswer !== null}
-                        className={`w-full text-left p-4 rounded-xl border-2 transition ${
+                        className={`w-full text-left p-5 rounded-xl border-2 transition font-medium shadow-md ${
                           showCorrect
-                            ? "border-green-600 bg-green-50"
+                            ? "border-green-600 bg-green-50 shadow-green-200"
                             : showIncorrect
-                            ? "border-red-600 bg-red-50"
+                            ? "border-red-600 bg-red-50 shadow-red-200"
                             : isSelected
-                            ? "border-blue-600 bg-blue-50"
-                            : "border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50"
+                            ? "border-blue-600 bg-blue-50 shadow-blue-200"
+                            : "border-neutral-300 hover:border-blue-400 hover:bg-neutral-50 hover:shadow-lg"
                         } ${selectedAnswer !== null ? "cursor-not-allowed" : "cursor-pointer"}`}
                       >
                         <div className="flex items-center justify-between">
-                          <span className="text-sm md:text-base">{option}</span>
+                          <span className="text-base md:text-lg">{option}</span>
                           {showCorrect && (
                             <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
                           )}
@@ -211,14 +211,14 @@ export function QuizModal({ onClose }: QuizModalProps) {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className={`p-4 rounded-xl ${
-                      isCorrect ? "bg-green-50 border border-green-200" : "bg-amber-50 border border-amber-200"
+                    className={`p-5 rounded-xl shadow-lg ${
+                      isCorrect ? "glass border-2 border-green-400 bg-green-50/50" : "glass border-2 border-amber-400 bg-amber-50/50"
                     }`}
                   >
-                    <p className="text-sm font-medium mb-2">
+                    <p className="text-base font-bold mb-2">
                       {isCorrect ? "✓ Correto!" : "✗ Incorreto"}
                     </p>
-                    <p className="text-sm text-neutral-700">
+                    <p className="text-base text-neutral-800 font-medium">
                       {question.explanation}
                     </p>
                   </motion.div>
@@ -227,7 +227,7 @@ export function QuizModal({ onClose }: QuizModalProps) {
                 {showExplanation && (
                   <button
                     onClick={handleNext}
-                    className="w-full py-3 px-6 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition"
+                    className="w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-emerald-600 text-white rounded-xl font-bold hover:shadow-xl transition text-lg"
                   >
                     {currentQuestion < QUIZ_QUESTIONS.length - 1
                       ? "Próxima Questão"
@@ -237,18 +237,18 @@ export function QuizModal({ onClose }: QuizModalProps) {
               </div>
             </>
           ) : (
-            <div className="text-center space-y-6">
-              <div className="w-20 h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center">
-                <span className="text-3xl font-bold text-blue-600">
+            <div className="text-center space-y-8">
+              <div className="w-24 h-24 mx-auto bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full flex items-center justify-center shadow-xl">
+                <span className="text-4xl font-bold text-white">
                   {score}/{QUIZ_QUESTIONS.length}
                 </span>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold mb-2">
+                <h3 className="text-3xl font-bold mb-3 text-neutral-900">
                   Quiz Concluído!
                 </h3>
-                <p className="text-neutral-600">
+                <p className="text-neutral-700 text-lg font-medium">
                   Você acertou {score} de {QUIZ_QUESTIONS.length} questões
                   {score === QUIZ_QUESTIONS.length && " - Perfeito! 🎉"}
                   {score >= QUIZ_QUESTIONS.length * 0.7 &&
@@ -258,16 +258,16 @@ export function QuizModal({ onClose }: QuizModalProps) {
                 </p>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex gap-4">
                 <button
                   onClick={handleRestart}
-                  className="flex-1 py-3 px-6 bg-neutral-100 text-neutral-900 rounded-xl font-medium hover:bg-neutral-200 transition"
+                  className="flex-1 py-4 px-6 glass border-2 border-neutral-300 text-neutral-900 rounded-xl font-bold hover:border-neutral-400 hover:shadow-lg transition"
                 >
                   Refazer Quiz
                 </button>
                 <button
                   onClick={onClose}
-                  className="flex-1 py-3 px-6 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition"
+                  className="flex-1 py-4 px-6 bg-gradient-to-r from-blue-600 to-emerald-600 text-white rounded-xl font-bold hover:shadow-xl transition"
                 >
                   Fechar
                 </button>

@@ -97,9 +97,9 @@ export default function AnalisePage() {
                         <div className="text-xs font-semibold text-neutral-600 dark:text-neutral-400 mb-1">
                           Implicação Sistêmica:
                         </div>
-                        <p className="text-sm text-neutral-800 dark:text-neutral-200">
+                        <div className="text-sm text-neutral-800 dark:text-neutral-200">
                           {insight.implication} <InlineCitation citation={insight.citations} />
-                        </p>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -133,9 +133,9 @@ export default function AnalisePage() {
                               {controversy.positionA.entity}
                             </span>
                           </div>
-                          <p className="text-sm text-neutral-700 dark:text-neutral-300">
+                          <div className="text-sm text-neutral-700 dark:text-neutral-300">
                             {controversy.positionA.argument} <InlineCitation citation={controversy.positionA.citations} />
-                          </p>
+                          </div>
                         </div>
 
                         {/* Posição B */}
@@ -148,9 +148,9 @@ export default function AnalisePage() {
                               {controversy.positionB.entity}
                             </span>
                           </div>
-                          <p className="text-sm text-neutral-700 dark:text-neutral-300">
+                          <div className="text-sm text-neutral-700 dark:text-neutral-300">
                             {controversy.positionB.argument} <InlineCitation citation={controversy.positionB.citations} />
-                          </p>
+                          </div>
                         </div>
                       </div>
 

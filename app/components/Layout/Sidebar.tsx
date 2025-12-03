@@ -1,22 +1,25 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { 
-  ChevronDown, 
-  ChevronRight, 
-  Home, 
-  Baby, 
-  Users, 
-  Heart, 
+import {
+  ChevronDown,
+  ChevronRight,
+  Home,
+  Baby,
+  Users,
+  Heart,
   Activity,
   BookOpen,
   Clock,
   Calculator,
   BookMarked,
-  FileSearch
+  FileSearch,
+  Stethoscope,
+  GraduationCap
 } from 'lucide-react';
+import { getRastreamentosByCategory } from '@/lib/data/rastreamentos';
 
 interface NavSection {
   title: string;
@@ -28,6 +31,15 @@ interface NavSection {
   }[];
 }
 
+// Dynamically generate subsections from actual rastreamentos data
+function getSubsectionsForCategory(category: string, path: string) {
+  const rastreamentos = getRastreamentosByCategory(category);
+  return rastreamentos.map(r => ({
+    title: r.title.replace('Rastreamento de ', '').replace('Rastreamento ', ''),
+    path: `${path}#${r.id}`
+  }));
+}
+
 const navigation: NavSection[] = [
   {
     title: 'Início',
@@ -35,62 +47,49 @@ const navigation: NavSection[] = [
     path: '/',
   },
   {
+    title: 'Caso Clínico',
+    icon: GraduationCap,
+    path: '/aula',
+  },
+  {
     title: 'Triagem Neonatal',
     icon: Baby,
     path: '/neonatal',
-    subsections: [
-      { title: 'Teste do Pezinho', path: '/neonatal#pezinho' },
-      { title: 'Teste da Orelhinha', path: '/neonatal#orelhinha' },
-      { title: 'Teste do Olhinho', path: '/neonatal#olhinho' },
-      { title: 'Teste do Coraçãozinho', path: '/neonatal#coracaozinho' },
-      { title: 'Teste da Linguinha', path: '/neonatal#linguinha' },
-    ],
+    get subsections() {
+      return getSubsectionsForCategory('neonatal', '/neonatal');
+    }
   },
   {
     title: 'Saúde Infantil',
     icon: Users,
     path: '/infantil',
-    subsections: [
-      { title: 'Autismo (TEA)', path: '/infantil#tea' },
-      { title: 'Desenvolvimento', path: '/infantil#desenvolvimento' },
-      { title: 'Anemia Ferropriva', path: '/infantil#anemia' },
-      { title: 'Visão', path: '/infantil#visao' },
-    ],
+    get subsections() {
+      return getSubsectionsForCategory('infantil', '/infantil');
+    }
   },
   {
     title: 'Adultos (DCNTs)',
     icon: Activity,
     path: '/adultos',
-    subsections: [
-      { title: 'Hipertensão Arterial', path: '/adultos#has' },
-      { title: 'Diabetes Mellitus', path: '/adultos#diabetes' },
-      { title: 'Dislipidemias', path: '/adultos#dislipidemia' },
-      { title: 'Obesidade', path: '/adultos#obesidade' },
-      { title: 'Tabagismo', path: '/adultos#tabagismo' },
-    ],
+    get subsections() {
+      return getSubsectionsForCategory('adultos', '/adultos');
+    }
   },
   {
     title: 'Câncer',
     icon: Heart,
     path: '/cancer',
-    subsections: [
-      { title: 'Câncer de Mama', path: '/cancer#mama' },
-      { title: 'Câncer de Colo do Útero', path: '/cancer#colo' },
-      { title: 'Câncer Colorretal', path: '/cancer#colorretal' },
-      { title: 'Câncer de Próstata', path: '/cancer#prostata' },
-    ],
+    get subsections() {
+      return getSubsectionsForCategory('cancer', '/cancer');
+    }
   },
   {
     title: 'Gestação (Pré-natal)',
-    icon: Baby,
+    icon: Stethoscope,
     path: '/gestacao',
-    subsections: [
-      { title: 'Sífilis', path: '/gestacao#sifilis' },
-      { title: 'HIV', path: '/gestacao#hiv' },
-      { title: 'Hepatites B e C', path: '/gestacao#hepatites' },
-      { title: 'GBS (Streptococcus)', path: '/gestacao#gbs' },
-      { title: 'Diabetes Gestacional', path: '/gestacao#dmg' },
-    ],
+    get subsections() {
+      return getSubsectionsForCategory('gestacao', '/gestacao');
+    }
   },
   {
     title: 'Timeline 2025',
@@ -116,7 +115,7 @@ const navigation: NavSection[] = [
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set([pathname.split('#')[0]]));
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set([pathname?.split('#')[0] || '/']));
 
   const toggleSection = (title: string) => {
     const newExpanded = new Set(expandedSections);
@@ -129,9 +128,19 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="w-64 lg:w-72 bg-white dark:bg-neutral-900 border-r border-neutral-200 dark:border-neutral-800 h-screen sticky top-16 overflow-y-auto">
-      <div className="p-4">
-        <nav className="space-y-1">
+    <aside className="w-72 lg:w-80 glass border-r border-neutral-200/80 dark:border-neutral-700/50 h-screen sticky top-0 overflow-y-auto shadow-sm">
+      <div className="p-6">
+        {/* Sidebar Header - UpToDate Style */}
+        <div className="mb-8 pb-6 border-b border-neutral-200 dark:border-neutral-700">
+          <h2 className="text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-1">
+            Rastreamentos SUS
+          </h2>
+          <p className="text-xs text-neutral-600 dark:text-neutral-400">
+            Medicina Baseada em Evidências
+          </p>
+        </div>
+
+        <nav className="space-y-2">
           {navigation.map((section) => {
             const Icon = section.icon;
             const isExpanded = expandedSections.has(section.path || section.title);
@@ -143,10 +152,10 @@ export default function Sidebar() {
                 {section.path ? (
                   <Link
                     href={section.path}
-                    className={`flex items-center justify-between px-3 py-2.5 rounded-lg transition-colors ${
+                    className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all group ${
                       isActive
-                        ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 font-semibold'
-                        : 'text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800'
+                        ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20 font-semibold'
+                        : 'text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800/80 hover:shadow-sm'
                     }`}
                     onClick={(e) => {
                       if (hasSubsections) {
@@ -195,19 +204,19 @@ export default function Sidebar() {
                   </button>
                 )}
 
-                {/* Subsections */}
+                {/* Subsections - Modern Medical Style */}
                 {hasSubsections && isExpanded && (
-                  <div className="ml-8 mt-1 space-y-1">
+                  <div className="ml-10 mt-2 space-y-1 border-l-2 border-neutral-200 dark:border-neutral-700 pl-4">
                     {section.subsections!.map((subsection) => {
                       const isSubActive = pathname + (typeof window !== 'undefined' ? window.location.hash : '') === subsection.path;
-                      
+
                       return (
                         <Link
                           key={subsection.path}
                           href={subsection.path}
-                          className={`block px-3 py-2 text-sm rounded-lg transition-colors ${
+                          className={`block px-3 py-2 text-sm rounded-lg transition-all ${
                             isSubActive
-                              ? 'text-blue-700 dark:text-blue-400 font-medium bg-blue-50 dark:bg-blue-900/30'
+                              ? 'text-blue-700 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900/30 border-l-2 border-blue-600 -ml-[18px] pl-4'
                               : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-800/50'
                           }`}
                         >
@@ -222,14 +231,25 @@ export default function Sidebar() {
           })}
         </nav>
 
-        {/* Footer info */}
-        <div className="mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-800">
-          <div className="px-3 py-2 text-xs text-neutral-500 dark:text-neutral-400 space-y-1">
-            <p className="font-semibold">Padrão Q1</p>
-            <p>Todas as afirmações com referências validadas</p>
-            <div className="mt-3 flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-green-500"></div>
-              <span>Última atualização: Nov/2025</span>
+        {/* Footer - Professional Medical Style */}
+        <div className="mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-700">
+          <div className="px-4 py-3 bg-neutral-50 dark:bg-neutral-800/50 rounded-xl">
+            <div className="flex items-start gap-3 mb-3">
+              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <BookOpen className="w-4 h-4 text-white" />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-neutral-900 dark:text-neutral-100 mb-1">
+                  Padrão Q1 Acadêmico
+                </p>
+                <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  Todas as afirmações validadas com referências científicas
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+              <span>Atualizado: Dez/2025</span>
             </div>
           </div>
         </div>

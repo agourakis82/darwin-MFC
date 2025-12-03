@@ -126,11 +126,18 @@ npm run dev
 - **Validação**: Componente `ReferenceValidator` alerta sobre afirmações sem referência
 - **Formatos**: ABNT, Vancouver, BibTeX, EndNote, RIS
 
-### 2. Dual Content View
+### 2. Dual Content View ✨ **FUNCIONANDO**
 
-- **Modo Descritivo**: Diretrizes, protocolos, epidemiologia
-- **Modo Análise Crítica**: Insights de 2ª/3ª ordem, controvérsias, desafios
-- Toggle global no Header (Zustand state)
+- **Modo Descritivo**: Diretrizes, protocolos, epidemiologia, dados SUS vs Sociedades
+- **Modo Análise Crítica**: Insights de 2ª/3ª ordem, controvérsias, desafios operacionais
+- **Toggle no Header**: Botão azul/roxo alterna entre modos instantaneamente
+- **Animações suaves**: Transição Apple-style com Framer Motion
+- **Estado persistente**: Escolha salva no localStorage (Zustand)
+
+**Como usar:**
+1. Clique no botão "Descritivo" ou "Análise" no canto superior direito
+2. Conteúdo muda instantaneamente com animação
+3. Disponível em: `/cancer` e `/gestacao` (outras em desenvolvimento)
 
 ### 3. Comparações Interativas
 

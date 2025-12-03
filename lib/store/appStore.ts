@@ -18,8 +18,8 @@ interface AppStore extends AppState {
 export const useAppStore = create<AppStore>()(
   persist(
     (set, get) => ({
-      // Estado inicial
-      theme: 'light',
+      // Estado inicial - Dark mode como padrão
+      theme: 'dark',
       contentMode: 'descriptive',
       favorites: [],
       notes: {},

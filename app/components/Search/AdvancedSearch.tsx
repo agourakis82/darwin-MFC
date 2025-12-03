@@ -220,7 +220,7 @@ function getCategoryInfo(category: string) {
     cancer: { label: 'Câncer', color: 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300' },
     gestacao: { label: 'Gestação', color: 'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300' },
   };
-  return categories[category] || { label: category, color: 'bg-neutral-100 text-neutral-700' };
+  return categories[category] || { label: category, color: 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300' };
 }
 
 function getConvergenceInfo(status: string) {
@@ -230,6 +230,6 @@ function getConvergenceInfo(status: string) {
     divergencia: { label: 'Divergência', icon: '🔴', color: 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300' },
     em_disputa: { label: 'Em Disputa', icon: '🟣', color: 'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300' },
   };
-  return statuses[status] || { label: status, icon: '⚪', color: 'bg-neutral-100 text-neutral-700' };
+  return statuses[status] || { label: status, icon: '⚪', color: 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300' };
 }
 
