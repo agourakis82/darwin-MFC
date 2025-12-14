@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { ArrowRight, BookOpen, TrendingUp, Users, FileText, Baby, Users as UsersIcon, Activity, Heart, Stethoscope, FileSearch, Calendar } from 'lucide-react';
+import { ArrowRight, BookOpen, TrendingUp, Users, FileText, Baby, Users as UsersIcon, Activity, Heart, Stethoscope, FileSearch, Calendar, Pill, Shield, Calculator, Brain } from 'lucide-react';
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Premium Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-900 mb-16">
+      <div className="relative overflow-hidden bg-gradient-to-br from-emerald-600 via-teal-700 to-blue-900 mb-16">
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -16,13 +16,13 @@ export default function Home() {
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/10 dark:to-black/10" />
 
-        <div className="relative container mx-auto px-4 lg:px-8 py-20 lg:py-32 max-w-7xl">
+        <div className="relative container mx-auto px-4 lg:px-8 py-20 lg:py-28 max-w-7xl">
           {/* Badge */}
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/20 backdrop-blur-md rounded-full border-2 border-white/30 shadow-lg">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
               <span className="text-sm lg:text-base font-bold text-white uppercase tracking-wider">
-                Padrão Acadêmico Q1 • Dezembro 2025
+                Guia Completo MFC • Dezembro 2025
               </span>
             </div>
           </div>
@@ -30,37 +30,42 @@ export default function Home() {
           {/* Main Heading */}
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-              Rastreamentos Populacionais no SUS
+              Darwin MFC
             </h1>
-            <p className="text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-              Análise sistêmica comparativa entre diretrizes do Sistema Único de Saúde e recomendações das Sociedades Médicas Brasileiras, com referências validadas no padrão Q1 acadêmico.
+            <p className="text-2xl lg:text-3xl text-white/90 max-w-4xl mx-auto leading-relaxed font-medium mb-4">
+              Guia de Medicina de Família e Comunidade
+            </p>
+            <p className="text-lg text-white/80 max-w-3xl mx-auto">
+              Doenças, medicamentos, protocolos e rastreamentos para consulta point-of-care na Atenção Primária à Saúde
             </p>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-16">
             <Link
-              href="/cancer"
-              className="group px-8 py-4 bg-white hover:bg-neutral-50 text-blue-700 rounded-xl font-bold text-lg flex items-center gap-3 transition-all duration-300 shadow-2xl hover:shadow-blue-500/50 hover:scale-105"
+              href="/doencas"
+              className="group px-8 py-4 bg-white hover:bg-neutral-50 text-emerald-700 rounded-xl font-bold text-lg flex items-center gap-3 transition-all duration-300 shadow-2xl hover:shadow-emerald-500/50 hover:scale-105"
             >
-              Explorar Rastreamentos
+              <BookOpen className="w-5 h-5" />
+              Explorar Doenças
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
 
             <Link
-              href="/timeline"
+              href="/medicamentos"
               className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white rounded-xl font-bold text-lg flex items-center gap-3 transition-all duration-300 border-2 border-white/30"
             >
-              Timeline 2025
+              <Pill className="w-5 h-5" />
+              Bulário RENAME
             </Link>
           </div>
 
           {/* Stats Mini Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {[
+              { value: '30+', label: 'Doenças', icon: BookOpen },
+              { value: '50+', label: 'Medicamentos', icon: Pill },
               { value: '35+', label: 'Rastreamentos', icon: FileText },
-              { value: '15+', label: 'Sociedades', icon: Users },
-              { value: '100%', label: 'Validado', icon: BookOpen },
               { value: 'Q1', label: 'Padrão', icon: TrendingUp }
             ].map((stat, idx) => (
               <div key={idx} className="bg-white/10 backdrop-blur-md rounded-xl p-5 border-2 border-white/20 text-center hover:bg-white/20 transition-all duration-300">
@@ -74,14 +79,58 @@ export default function Home() {
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl pb-20">
+        {/* Quick Access - NEW */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-50 mb-4">
+              Acesso Rápido
+            </h2>
+            <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+              Ferramentas essenciais para sua consulta
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {quickAccess.map((item) => {
+              const IconComponent = item.icon;
+              return (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  className="group relative overflow-hidden rounded-2xl border-2 border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] p-6"
+                >
+                  <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+                  
+                  <div className="relative flex flex-col items-center text-center">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${item.gradient} rounded-2xl flex items-center justify-center mb-4 shadow-lg ${item.shadow} group-hover:scale-110 transition-transform duration-300`}>
+                      <IconComponent className="w-8 h-8 text-white" strokeWidth={2.5} />
+                    </div>
+                    <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-50 mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">
+                      {item.description}
+                    </p>
+                    {item.badge && (
+                      <span className="px-2 py-0.5 bg-emerald-500 text-white text-xs font-bold rounded-full">
+                        {item.badge}
+                      </span>
+                    )}
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Categories Grid */}
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-50 mb-4">
-              Categorias de Rastreamento
+              Rastreamentos SUS
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
-              Explore rastreamentos organizados por ciclo de vida e condições de saúde
+              Comparação SUS vs Sociedades por ciclo de vida
             </p>
           </div>
 
@@ -162,6 +211,44 @@ export default function Home() {
   );
 }
 
+const quickAccess = [
+  {
+    title: 'Doenças da APS',
+    description: 'QuickView + Versão Completa',
+    path: '/doencas',
+    icon: BookOpen,
+    gradient: 'from-blue-600 to-indigo-700',
+    shadow: 'shadow-blue-600/30',
+    badge: 'Novo',
+  },
+  {
+    title: 'Bulário RENAME',
+    description: 'Posologia e interações',
+    path: '/medicamentos',
+    icon: Pill,
+    gradient: 'from-emerald-600 to-teal-700',
+    shadow: 'shadow-emerald-600/30',
+    badge: 'Novo',
+  },
+  {
+    title: 'Protocolos',
+    description: 'Algoritmos de conduta',
+    path: '/protocolos',
+    icon: FileText,
+    gradient: 'from-purple-600 to-violet-700',
+    shadow: 'shadow-purple-600/30',
+    badge: 'Novo',
+  },
+  {
+    title: 'Calculadoras',
+    description: 'IMC, CKD-EPI, PHQ-9...',
+    path: '/calculadoras',
+    icon: Calculator,
+    gradient: 'from-amber-600 to-orange-700',
+    shadow: 'shadow-amber-600/30',
+  },
+];
+
 const categories = [
   {
     title: 'Triagem Neonatal',
@@ -209,42 +296,42 @@ const categories = [
     color: 'text-purple-700 dark:text-purple-400',
   },
   {
-    title: 'Timeline 2025',
-    description: 'Eventos disruptivos e mudanças paradigmáticas nos rastreamentos',
-    path: '/timeline',
-    icon: Calendar,
-    gradient: 'from-amber-600 to-orange-700',
-    shadow: 'shadow-amber-600/30',
-    color: 'text-amber-700 dark:text-amber-400',
+    title: 'SUS e APS',
+    description: 'Princípios, PNAB 2017, atributos da APS (Starfield) e organização do SUS',
+    path: '/sus',
+    icon: Shield,
+    gradient: 'from-green-600 to-emerald-700',
+    shadow: 'shadow-green-600/30',
+    color: 'text-green-700 dark:text-green-400',
   },
 ];
 
 const features = [
   {
-    title: 'Sistema de Referências Q1',
-    description: 'Todas as afirmações com citações inline validadas, bibliografia completa ABNT/Vancouver e DOI verificados',
-    icon: BookOpen,
+    title: 'QuickView Point-of-Care',
+    description: 'Resumo de 1 tela para consulta rápida: definição, critérios diagnósticos, tratamento e red flags',
+    icon: Brain,
     gradient: 'from-blue-600 to-cyan-700',
     shadow: 'shadow-blue-600/30',
   },
   {
-    title: 'Comparação SUS vs Sociedades',
-    description: 'Visualização lado a lado das recomendações com análise detalhada de convergências, divergências e disputas',
-    icon: Users,
+    title: 'Codificação CIAP-2/CID-10',
+    description: 'Todas as doenças com códigos CIAP-2 e CID-10 para registro adequado no prontuário eletrônico',
+    icon: FileText,
     gradient: 'from-emerald-600 to-teal-700',
     shadow: 'shadow-emerald-600/30',
   },
   {
-    title: 'Análise Crítica Sistêmica',
-    description: 'Insights de segunda e terceira ordem sobre desafios operacionais, controvérsias e implicações sistêmicas',
-    icon: TrendingUp,
+    title: 'Bulário com Interações',
+    description: 'Medicamentos RENAME com posologia, ajuste renal (CKD-EPI), segurança na gestação e interações',
+    icon: Pill,
     gradient: 'from-purple-600 to-violet-700',
     shadow: 'shadow-purple-600/30',
   },
   {
-    title: 'Busca Avançada Integrada',
-    description: 'Sistema de busca por patologia, faixa etária, sociedade médica e nível de evidência científica',
-    icon: FileSearch,
+    title: 'Comparação SUS vs Sociedades',
+    description: 'Visualização lado a lado das recomendações com análise de convergências, divergências e disputas',
+    icon: Users,
     gradient: 'from-amber-600 to-orange-700',
     shadow: 'shadow-amber-600/30',
   },
