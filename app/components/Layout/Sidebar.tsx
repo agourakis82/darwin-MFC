@@ -23,7 +23,13 @@ import {
   FileText,
   Brain,
   Wind,
-  Bug
+  Bug,
+  Zap,
+  ClipboardList,
+  AlertTriangle,
+  Printer,
+  Search,
+  Keyboard
 } from 'lucide-react';
 import { getRastreamentosByCategory } from '@/lib/data/rastreamentos';
 
@@ -113,8 +119,12 @@ const navigationGroups: NavGroup[] = [
     ]
   },
   {
-    title: 'Ferramentas',
+    title: 'Ferramentas Clínicas',
     sections: [
+      { title: 'Consulta Rápida', icon: Zap, path: '/consulta-rapida', badge: 'Novo' },
+      { title: 'Prontuário SOAP', icon: ClipboardList, path: '/prontuario' },
+      { title: 'Interações Medicamentosas', icon: AlertTriangle, path: '/medicamentos/interacoes' },
+      { title: 'Comparador de Medicamentos', icon: Pill, path: '/medicamentos/comparador' },
       { title: 'Busca Avançada', icon: FileSearch, path: '/busca' },
     ]
   }

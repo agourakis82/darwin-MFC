@@ -7,8 +7,8 @@ import {
   Fingerprint, Utensils, Zap, Droplets, Baby, Users,
   ChevronRight, BookOpen, Pill, FileText, Star
 } from 'lucide-react';
-import { doencas, getDoencasByCategoria } from '@/lib/data/doencas';
-import { CATEGORIAS_DOENCA, CategoriaDoenca } from '@/lib/types/doenca';
+import { doencasConsolidadas, getDoencasStats } from '@/lib/data/doencas/index';
+import { CATEGORIAS_DOENCA, CategoriaDoenca, getDoencasByCategoria } from '@/lib/types/doenca';
 
 // Mapeamento de ícones
 const iconMap: Record<string, React.ElementType> = {
@@ -20,10 +20,10 @@ export default function DoencasPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategoria, setSelectedCategoria] = useState<CategoriaDoenca | 'todas'>('todas');
   
-  const doencasAgrupadas = useMemo(() => getDoencasByCategoria(doencas), []);
+  const doencasAgrupadas = useMemo(() => getDoencasByCategoria(doencasConsolidadas), []);
   
   const doencasFiltradas = useMemo(() => {
-    let filtered = doencas;
+    let filtered = doencasConsolidadas;
     
     if (selectedCategoria !== 'todas') {
       filtered = filtered.filter(d => d.categoria === selectedCategoria);
@@ -63,8 +63,8 @@ export default function DoencasPage() {
         
         <div className="glass-strong rounded-2xl p-5 border border-blue-500/30">
           <p className="text-base text-[#1d1d1f] dark:text-[#f5f5f7]">
-            <strong className="text-blue-600 dark:text-blue-400">📚 {doencas.length} Condições Clínicas</strong> com QuickView (resumo 1 tela) + Versão Completa. 
-            Todas com codificação <strong>CIAP-2/CID-10</strong> e referências Q1.
+            <strong className="text-blue-600 dark:text-blue-400">📚 {doencasConsolidadas.length} Condições Clínicas</strong> com QuickView (resumo 1 tela) + Versão Completa. 
+            Todas com <strong>CIAP-2/CID-10/DOID/SNOMED-CT/MeSH</strong> e referências Q1.
           </p>
         </div>
       </div>
@@ -94,7 +94,7 @@ export default function DoencasPage() {
                 : 'bg-white/50 dark:bg-neutral-800/50 text-[#86868b] hover:bg-blue-100 dark:hover:bg-blue-900/30'
             }`}
           >
-            Todas ({doencas.length})
+            Todas ({doencasConsolidadas.length})
           </button>
           {Object.entries(CATEGORIAS_DOENCA).map(([key, value]) => {
             const count = doencasAgrupadas.find(g => g.categoria === key)?.count || 0;

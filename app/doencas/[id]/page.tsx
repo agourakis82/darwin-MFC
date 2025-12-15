@@ -1,9 +1,9 @@
-import { doencas } from '@/lib/data/doencas';
+import { doencasConsolidadas } from '@/lib/data/doencas/index';
 import DoencaDetailClient from './DoencaDetailClient';
 
-// Generate static params for all doencas
+// Generate static params for all doencas (includes all categories)
 export function generateStaticParams() {
-  return doencas.map((doenca) => ({
+  return doencasConsolidadas.map((doenca) => ({
     id: doenca.id,
   }));
 }

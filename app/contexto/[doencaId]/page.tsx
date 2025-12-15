@@ -10,12 +10,12 @@
  * - Quando encaminhar
  */
 
-import { doencas } from '@/lib/data/doencas';
+import { doencasConsolidadas } from '@/lib/data/doencas/index';
 import ContextoClient from './ContextoClient';
 
-// Generate static params for all diseases
+// Generate static params for all diseases (includes all categories)
 export async function generateStaticParams() {
-  return doencas.map((doenca) => ({
+  return doencasConsolidadas.map((doenca) => ({
     doencaId: doenca.id,
   }));
 }

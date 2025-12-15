@@ -4,6 +4,7 @@ import ThemeProvider from "./components/Layout/ThemeProvider";
 import Header from "./components/Layout/Header";
 import Sidebar from "./components/Layout/Sidebar";
 import Footer from "./components/Layout/Footer";
+import KeyboardShortcuts from "./components/KeyboardShortcuts";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -75,6 +76,7 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
+          <KeyboardShortcuts />
           <div className="min-h-screen flex flex-col">
             <Header />
             <div className="flex flex-1">

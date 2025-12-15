@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useAppStore } from '@/lib/store/appStore';
-import { Sun, Moon, BookOpen, FileText, Menu, X, Search } from 'lucide-react';
+import { Sun, Moon, BookOpen, FileText, Menu, X, Search, Zap, ClipboardList, AlertTriangle, Pill, Calculator, Stethoscope, Keyboard } from 'lucide-react';
 
 export default function Header() {
   const { theme, toggleTheme, contentMode, toggleContentMode } = useAppStore();
@@ -145,60 +145,117 @@ export default function Header() {
           </div>
         )}
 
-        {/* Menu Mobile */}
+        {/* Menu Mobile - Melhorado */}
         {mobileMenuOpen && (
-          <div className="lg:hidden pb-4 border-t border-black/10 dark:border-white/10 mt-4 pt-4 animate-fade-in">
-            <nav className="flex flex-col gap-2">
-              <Link
-                href="/neonatal"
-                className="px-5 py-3 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-xl apple-transition-fast"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Neonatal
-              </Link>
-              <Link
-                href="/infantil"
-                className="px-5 py-3 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-xl apple-transition-fast"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Infantil
-              </Link>
-              <Link
-                href="/adultos"
-                className="px-5 py-3 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-xl apple-transition-fast"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Adultos
-              </Link>
-              <Link
-                href="/cancer"
-                className="px-5 py-3 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-xl apple-transition-fast"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Câncer
-              </Link>
-              <Link
-                href="/gestacao"
-                className="px-5 py-3 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-xl apple-transition-fast"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Gestação
-              </Link>
-              <Link
-                href="/timeline"
-                className="px-5 py-3 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-xl apple-transition-fast"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Timeline 2025
-              </Link>
-              <Link
-                href="/bibliografia"
-                className="px-5 py-3 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-xl apple-transition-fast"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Bibliografia
-              </Link>
-            </nav>
+          <div className="lg:hidden pb-6 border-t border-black/10 dark:border-white/10 mt-4 pt-4 animate-fade-in max-h-[80vh] overflow-y-auto">
+            
+            {/* Ferramentas Rápidas */}
+            <div className="mb-4">
+              <p className="px-5 py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">
+                Ferramentas Clínicas
+              </p>
+              <nav className="grid grid-cols-2 gap-2 px-3">
+                <Link
+                  href="/consulta-rapida"
+                  className="flex flex-col items-center gap-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Zap className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                  <span className="text-xs font-medium">Consulta Rápida</span>
+                </Link>
+                <Link
+                  href="/prontuario"
+                  className="flex flex-col items-center gap-2 p-4 bg-green-50 dark:bg-green-900/20 rounded-xl"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <ClipboardList className="w-6 h-6 text-green-600 dark:text-green-400" />
+                  <span className="text-xs font-medium">SOAP</span>
+                </Link>
+                <Link
+                  href="/medicamentos/interacoes"
+                  className="flex flex-col items-center gap-2 p-4 bg-red-50 dark:bg-red-900/20 rounded-xl"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <AlertTriangle className="w-6 h-6 text-red-600 dark:text-red-400" />
+                  <span className="text-xs font-medium">Interações</span>
+                </Link>
+                <Link
+                  href="/calculadoras"
+                  className="flex flex-col items-center gap-2 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Calculator className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                  <span className="text-xs font-medium">Calculadoras</span>
+                </Link>
+              </nav>
+            </div>
+
+            {/* Guia Clínico */}
+            <div className="mb-4">
+              <p className="px-5 py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">
+                Guia Clínico
+              </p>
+              <nav className="flex flex-col gap-1 px-3">
+                <Link
+                  href="/doencas"
+                  className="flex items-center gap-3 px-4 py-3 hover:bg-black/5 dark:hover:bg-white/10 rounded-xl"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Stethoscope className="w-5 h-5 text-[#86868b]" />
+                  <span className="font-medium">Doenças APS</span>
+                  <span className="ml-auto text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-0.5 rounded-full">Novo</span>
+                </Link>
+                <Link
+                  href="/medicamentos"
+                  className="flex items-center gap-3 px-4 py-3 hover:bg-black/5 dark:hover:bg-white/10 rounded-xl"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Pill className="w-5 h-5 text-[#86868b]" />
+                  <span className="font-medium">Bulário RENAME</span>
+                </Link>
+                <Link
+                  href="/protocolos"
+                  className="flex items-center gap-3 px-4 py-3 hover:bg-black/5 dark:hover:bg-white/10 rounded-xl"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <FileText className="w-5 h-5 text-[#86868b]" />
+                  <span className="font-medium">Protocolos</span>
+                </Link>
+              </nav>
+            </div>
+
+            {/* Rastreamentos */}
+            <div className="mb-4">
+              <p className="px-5 py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">
+                Rastreamentos SUS
+              </p>
+              <nav className="flex flex-col gap-1 px-3">
+                {[
+                  { href: '/neonatal', label: 'Triagem Neonatal' },
+                  { href: '/infantil', label: 'Saúde Infantil' },
+                  { href: '/adultos', label: 'Adultos (DCNTs)' },
+                  { href: '/cancer', label: 'Câncer' },
+                  { href: '/gestacao', label: 'Gestação' },
+                ].map(item => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="px-4 py-2.5 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-xl"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Atalhos */}
+            <div className="px-5 pt-4 border-t border-black/10 dark:border-white/10">
+              <div className="flex items-center gap-2 text-xs text-[#86868b]">
+                <Keyboard className="w-4 h-4" />
+                <span>Pressione <kbd className="px-1.5 py-0.5 bg-neutral-200 dark:bg-neutral-700 rounded text-xs font-mono">?</kbd> para ver atalhos</span>
+              </div>
+            </div>
           </div>
         )}
       </div>

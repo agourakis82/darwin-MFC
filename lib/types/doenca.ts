@@ -201,6 +201,10 @@ export interface Doenca {
   /** Sinônimos e termos relacionados (para busca) */
   sinonimos?: string[];
   
+  // ===========================================================================
+  // ONTOLOGIAS E CLASSIFICAÇÕES
+  // ===========================================================================
+  
   /** 
    * Disease Ontology ID (DOID) 
    * Padrão internacional para identificação de doenças
@@ -208,10 +212,37 @@ export interface Doenca {
    */
   doid?: string;
   
-  /** Códigos CIAP-2 */
+  /**
+   * SNOMED-CT Concept ID
+   * Terminologia clínica padrão global
+   * @see https://www.snomed.org/
+   */
+  snomedCT?: string;
+  
+  /**
+   * MeSH (Medical Subject Headings) ID
+   * Vocabulário controlado para indexação biomédica (PubMed/MEDLINE)
+   * @see https://meshb.nlm.nih.gov/
+   */
+  meshId?: string;
+  
+  /**
+   * UMLS CUI (Unified Medical Language System Concept Unique Identifier)
+   * Identificador único que integra múltiplas terminologias
+   * @see https://www.nlm.nih.gov/research/umls/
+   */
+  umlsCui?: string;
+  
+  /**
+   * ORDO (Orphanet Rare Disease Ontology) - apenas para doenças raras
+   * @see https://www.orpha.net/
+   */
+  ordoId?: string;
+  
+  /** Códigos CIAP-2 (Classificação Internacional de Atenção Primária) */
   ciap2: string[];
   
-  /** Códigos CID-10 */
+  /** Códigos CID-10 (Classificação Internacional de Doenças) */
   cid10: string[];
   
   /** Códigos CID-11 (quando disponível) */

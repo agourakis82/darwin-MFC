@@ -33,12 +33,23 @@ export type ClasseTerapeutica =
   | 'ansiolitico'
   | 'antipsicotico'
   | 'anticonvulsivante'
+  | 'antiepileptico'
+  | 'estabilizador_humor'
   | 'broncodilatador'
   | 'corticoide'
+  | 'corticoide_inalatorio'
   | 'anti_histaminico'
+  | 'antiemetico'
+  | 'gastrointestinal'
   | 'inibidor_bomba_protonica'
   | 'hormonio_tireoide'
+  | 'hormonio'
+  | 'indutor_ovulacao'
+  | 'diuretico'
+  | 'cardiotonico'
   | 'contraceptivo'
+  | 'vitamina'
+  | 'suplemento'
   | 'vitamina_mineral'
   | 'outros';
 
@@ -58,12 +69,23 @@ export const CLASSES_TERAPEUTICAS: Record<ClasseTerapeutica, { label: string; co
   ansiolitico: { label: 'Ansiolítico', color: 'bg-violet-500' },
   antipsicotico: { label: 'Antipsicótico', color: 'bg-fuchsia-500' },
   anticonvulsivante: { label: 'Anticonvulsivante', color: 'bg-cyan-500' },
+  antiepileptico: { label: 'Antiepiléptico', color: 'bg-cyan-600' },
+  estabilizador_humor: { label: 'Estabilizador de Humor', color: 'bg-violet-600' },
   broncodilatador: { label: 'Broncodilatador', color: 'bg-sky-500' },
   corticoide: { label: 'Corticoide', color: 'bg-yellow-500' },
+  corticoide_inalatorio: { label: 'Corticoide Inalatório', color: 'bg-yellow-600' },
   anti_histaminico: { label: 'Anti-histamínico', color: 'bg-slate-500' },
+  antiemetico: { label: 'Antiemético', color: 'bg-stone-400' },
+  gastrointestinal: { label: 'Gastrointestinal', color: 'bg-stone-600' },
   inibidor_bomba_protonica: { label: 'IBP', color: 'bg-stone-500' },
   hormonio_tireoide: { label: 'Hormônio Tireoide', color: 'bg-zinc-500' },
+  hormonio: { label: 'Hormônio', color: 'bg-zinc-400' },
+  indutor_ovulacao: { label: 'Indutor de Ovulação', color: 'bg-pink-600' },
+  diuretico: { label: 'Diurético', color: 'bg-blue-600' },
+  cardiotonico: { label: 'Cardiotônico', color: 'bg-red-600' },
   contraceptivo: { label: 'Contraceptivo', color: 'bg-pink-400' },
+  vitamina: { label: 'Vitamina', color: 'bg-lime-500' },
+  suplemento: { label: 'Suplemento', color: 'bg-lime-600' },
   vitamina_mineral: { label: 'Vitamina/Mineral', color: 'bg-lime-400' },
   outros: { label: 'Outros', color: 'bg-gray-500' },
 };
@@ -74,14 +96,37 @@ export const CLASSES_TERAPEUTICAS: Record<ClasseTerapeutica, { label: string; co
 
 export type SubclasseMedicamento = 
   // Anti-hipertensivos
-  | 'ieca' | 'bra' | 'bcc' | 'diuretico_tiazidico' | 'diuretico_alca' 
-  | 'betabloqueador' | 'alfabloqueador' | 'vasodilatador'
+  | 'ieca' | 'bra' | 'bcc' | 'diuretico_tiazidico' | 'diuretico_alca' | 'alca'
+  | 'betabloqueador' | 'alfabloqueador' | 'vasodilatador' | 'tiazidico' | 'poupador_potassio'
   // Antidiabéticos
-  | 'biguanida' | 'sulfonilureira' | 'insulina' | 'isglt2' | 'glp1' | 'idpp4'
+  | 'biguanida' | 'sulfonilureira' | 'sulfonilureia' | 'insulina' | 'isglt2' | 'glp1' | 'idpp4'
+  | 'insulina_intermediaria' | 'insulina_rapida'
   // Antibióticos
-  | 'penicilina' | 'cefalosporina' | 'macrolidio' | 'fluoroquinolona' | 'sulfonamida'
-  // Antidepressivos
-  | 'isrs' | 'isrsn' | 'triciclico' | 'atipico'
+  | 'penicilina' | 'penicilina_inibidor' | 'cefalosporina' | 'cefalosporina_1g' | 'cefalosporina_3g'
+  | 'cefalosporina_1_geracao' | 'macrolideos' | 'macrolidio' | 'macrolideo'
+  | 'fluoroquinolona' | 'sulfonamida' | 'sulfonamida_inibidor_folato' | 'nitroimidazol' | 'nitrofurano' | 'tetraciclina'
+  // Analgésicos/AINEs
+  | 'analgesico_nao_opioide' | 'nao_opioide' | 'opioide_fraco' | 'opioide_forte' | 'aine'
+  | 'nao_seletivo' | 'seletivo_cox2'
+  // Psicotrópicos
+  | 'isrs' | 'isrsn' | 'triciclico' | 'atipico' | 'tipico' | 'benzodiazepínico' 
+  | 'antipsicotico_tipico' | 'antipsicotico_atipico' | 'bloqueador_canais_sodio' | 'bloqueador_canal_sodio'
+  | 'multiplo' | 'litio' | 'sal_litio' | 'derivado_valproico' | 'barbiturico'
+  // Cardiovasculares
+  | 'estatina' | 'inibidor_cox' | 'inibidor_p2y12' | 'antagonista_vitamina_k' | 'doac' | 'glicosideo_cardiaco'
+  | 'hbpm'
+  // Gastrointestinais
+  | 'ibp' | 'antagonista_h2' | 'procinetico' | 'antagonista_d2' | 'antagonista_5ht3'
+  // Anti-histamínicos
+  | 'h1_1geracao' | 'h1_2geracao'
+  // Broncodilatadores/Respiratórios
+  | 'beta2_agonista_curta' | 'beta2_agonista_longa' | 'ci' | 'anticolinergico'
+  // Antifúngicos/Antiparasitários
+  | 'antifungico' | 'sistemico' | 'anti_helmintico' | 'escabicida_pediculicida'
+  // Vitaminas/Suplementos
+  | 'vitamina' | 'vitamina_b' | 'vitamina_d' | 'antianemico'
+  // Hormonais
+  | 'tireoidiano' | 'corticosteroide' | 'serm'
   // Outros
   | 'outros';
 
@@ -130,10 +175,10 @@ export const CLASSIFICACAO_GESTACAO: Record<ClassificacaoGestacao, { label: stri
 
 export type FormaFarmaceutica = 
   | 'comprimido' | 'capsula' | 'dragea'
-  | 'solucao_oral' | 'suspensao_oral' | 'xarope' | 'gotas'
-  | 'injetavel_im' | 'injetavel_iv' | 'injetavel_sc'
-  | 'creme' | 'pomada' | 'gel' | 'locao'
-  | 'colírio' | 'spray_nasal' | 'inalatorio'
+  | 'solucao_oral' | 'suspensao_oral' | 'xarope' | 'gotas' | 'elixir'
+  | 'injetavel' | 'injetavel_im' | 'injetavel_iv' | 'injetavel_sc'
+  | 'creme' | 'pomada' | 'gel' | 'locao' | 'gel_topico' | 'gel_vaginal'
+  | 'colirio' | 'spray_nasal' | 'inalatorio' | 'aerossol' | 'solucao_nebulizacao'
   | 'supositorio' | 'ovulo'
   | 'adesivo' | 'outros';
 
@@ -210,6 +255,35 @@ export interface Medicamento {
   
   /** Nomes comerciais principais */
   nomesComerciais?: string[];
+  
+  // =============================================================================
+  // ONTOLOGIAS DE MEDICAMENTOS
+  // =============================================================================
+  
+  /** Código ATC (Anatomical Therapeutic Chemical) - OMS */
+  atcCode?: string;
+  
+  /** RxNorm CUI - NIH (interoperabilidade) */
+  rxNormCui?: string;
+  
+  /** DrugBank ID - Base de dados de medicamentos */
+  drugBankId?: string;
+  
+  /** Código SNOMED-CT para o medicamento */
+  snomedCT?: string;
+  
+  /** Registro ANVISA (número de registro) */
+  anvisaRegistro?: string;
+  
+  /** CAS Number (Chemical Abstracts Service) */
+  casNumber?: string;
+  
+  /** DCB (Denominação Comum Brasileira) - código oficial */
+  dcbCode?: string;
+  
+  // =============================================================================
+  // CLASSIFICAÇÃO
+  // =============================================================================
   
   /** Classe terapêutica principal */
   classeTerapeutica: ClasseTerapeutica;

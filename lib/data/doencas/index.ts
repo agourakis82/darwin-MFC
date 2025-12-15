@@ -16,6 +16,13 @@ import { doencasRespiratorias } from './respiratorias';
 import { doencasEndocrinas } from './endocrinas';
 import { doencasSaudeMental } from './saude-mental';
 import { doencasGastrointestinais } from './gastrointestinais';
+import { doencasMusculoesqueleticas } from './musculoesqueleticas';
+import { doencasDermatologicas } from './dermatologicas';
+import { doencasInfecciosas } from './infecciosas';
+import { doencasRenaisUrologicas } from './renais-urologicas';
+import { doencasNeurologicas } from './neurologicas';
+import { doencasHematologicas } from './hematologicas';
+import { doencasGinecoObstetricas } from './gineco-obstetricas';
 
 // Consolidar todas as doenças
 export const todasDoencas: Doenca[] = [
@@ -25,6 +32,13 @@ export const todasDoencas: Doenca[] = [
   ...doencasEndocrinas,
   ...doencasSaudeMental,
   ...doencasGastrointestinais,
+  ...doencasMusculoesqueleticas,
+  ...doencasDermatologicas,
+  ...doencasInfecciosas,
+  ...doencasRenaisUrologicas,
+  ...doencasNeurologicas,
+  ...doencasHematologicas,
+  ...doencasGinecoObstetricas,
 ];
 
 // Remover duplicatas por ID (caso existam)
@@ -62,8 +76,80 @@ export function searchDoencas(query: string): Doenca[] {
     d.sinonimos?.some(s => s.toLowerCase().includes(normalizedQuery)) ||
     d.ciap2.some(c => c.toLowerCase().includes(normalizedQuery)) ||
     d.cid10.some(c => c.toLowerCase().includes(normalizedQuery)) ||
-    d.tags?.some(t => t.toLowerCase().includes(normalizedQuery))
+    d.tags?.some(t => t.toLowerCase().includes(normalizedQuery)) ||
+    d.doid?.toLowerCase().includes(normalizedQuery) ||
+    d.snomedCT?.includes(normalizedQuery) ||
+    d.meshId?.toLowerCase().includes(normalizedQuery) ||
+    d.umlsCui?.toLowerCase().includes(normalizedQuery)
   );
+}
+
+// ================================
+// FUNÇÕES DE BUSCA POR ONTOLOGIA
+// ================================
+
+/**
+ * Busca doença por DOID (Disease Ontology ID)
+ * @example getDoencaByDOID('DOID:9351') // Diabetes mellitus tipo 2
+ */
+export function getDoencaByDOID(doid: string): Doenca | undefined {
+  return doencasConsolidadas.find(d => d.doid === doid);
+}
+
+/**
+ * Busca doença por SNOMED-CT Concept ID
+ * @example getDoencaBySNOMED('73211009') // Diabetes mellitus
+ */
+export function getDoencaBySNOMED(snomedCT: string): Doenca | undefined {
+  return doencasConsolidadas.find(d => d.snomedCT === snomedCT);
+}
+
+/**
+ * Busca doença por MeSH ID
+ * @example getDoencaByMeSH('D003920') // Diabetes Mellitus
+ */
+export function getDoencaByMeSH(meshId: string): Doenca | undefined {
+  return doencasConsolidadas.find(d => d.meshId === meshId);
+}
+
+/**
+ * Busca doença por UMLS CUI
+ * @example getDoencaByUMLS('C0011860') // Diabetes Mellitus, Type 2
+ */
+export function getDoencaByUMLS(umlsCui: string): Doenca | undefined {
+  return doencasConsolidadas.find(d => d.umlsCui === umlsCui);
+}
+
+/**
+ * Busca doenças que possuem mapeamento completo de ontologias
+ */
+export function getDoencasWithFullOntologyMapping(): Doenca[] {
+  return doencasConsolidadas.filter(d => 
+    d.doid && d.snomedCT && d.meshId && d.umlsCui
+  );
+}
+
+/**
+ * Obtém estatísticas de cobertura de ontologias
+ */
+export function getOntologyStats() {
+  const total = doencasConsolidadas.length;
+  const withDOID = doencasConsolidadas.filter(d => d.doid).length;
+  const withSNOMED = doencasConsolidadas.filter(d => d.snomedCT).length;
+  const withMeSH = doencasConsolidadas.filter(d => d.meshId).length;
+  const withUMLS = doencasConsolidadas.filter(d => d.umlsCui).length;
+  const withAll = getDoencasWithFullOntologyMapping().length;
+  
+  return {
+    total,
+    cobertura: {
+      doid: { count: withDOID, percent: Math.round((withDOID / total) * 100) },
+      snomedCT: { count: withSNOMED, percent: Math.round((withSNOMED / total) * 100) },
+      meshId: { count: withMeSH, percent: Math.round((withMeSH / total) * 100) },
+      umlsCui: { count: withUMLS, percent: Math.round((withUMLS / total) * 100) },
+      allMapped: { count: withAll, percent: Math.round((withAll / total) * 100) },
+    }
+  };
 }
 
 // Estatísticas

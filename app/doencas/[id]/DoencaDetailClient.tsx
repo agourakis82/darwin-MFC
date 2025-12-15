@@ -7,7 +7,7 @@ import {
   CheckCircle, XCircle, Clock, Users, Heart, ChevronDown, ChevronUp,
   Stethoscope, Activity, Clipboard, Target, ExternalLink
 } from 'lucide-react';
-import { doencas, getDoencaById } from '@/lib/data/doencas';
+import { getDoencaById } from '@/lib/data/doencas/index';
 import { CATEGORIAS_DOENCA } from '@/lib/types/doenca';
 import { 
   getMedicamentosForDoenca, 

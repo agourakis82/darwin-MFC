@@ -5,7 +5,19 @@ export * from './analysis';
 export * from './timeline';
 export * from './doenca';
 export * from './medicamento';
-export * from './protocolo';
+// Protocolo React Flow (novo sistema)
+export type {
+  Protocolo,
+  ProtocolNode,
+  ProtocolEdge,
+  CategoriaProtocolo,
+  NivelComplexidade,
+  CustomNodeData,
+  ReactFlowConfig,
+  FlowchartState,
+} from './protocolo';
+// NodeType renomeado para evitar conflito
+export type { NodeType as ReactFlowNodeType } from './protocolo';
 export * from './ciap2';
 // Re-exportar cross-references
 export { 

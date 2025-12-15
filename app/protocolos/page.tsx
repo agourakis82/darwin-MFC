@@ -8,8 +8,10 @@
  */
 
 import { useState } from 'react';
-import { GitFork, Search, Filter, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import { GitFork, Search, Filter, ChevronRight, Workflow, ExternalLink } from 'lucide-react';
 import { getAllProtocolos, getProtocoloById } from '@/lib/data/protocolos';
+import { todosProtocolosFlowchart } from '@/lib/data/protocolos-flowchart';
 import FlowchartEngine from '@/app/components/Protocolos/FlowchartEngine';
 
 export default function ProtocolosPage() {
@@ -158,6 +160,95 @@ export default function ProtocolosPage() {
             <li>• Ao final, clique em &quot;Copiar&quot; para exportar o resultado para o prontuário</li>
             <li>• Use &quot;Reiniciar&quot; para recomeçar a qualquer momento</li>
           </ul>
+        </div>
+
+        {/* Fluxogramas Avançados com React Flow */}
+        <div className="mt-12">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/30">
+              <Workflow className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+                Fluxogramas Interativos
+              </h2>
+              <p className="text-slate-600 dark:text-slate-400">
+                Visualização avançada com zoom, pan e detalhes expandidos
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {todosProtocolosFlowchart.map((protocolo) => {
+              const categoriaColors: Record<string, string> = {
+                cardiovascular: 'from-rose-500 to-red-600',
+                endocrino: 'from-amber-500 to-orange-600',
+                urgencia: 'from-red-600 to-rose-700',
+                respiratorio: 'from-cyan-500 to-blue-600',
+                infectologia: 'from-yellow-500 to-amber-600',
+              };
+              const gradientColor = categoriaColors[protocolo.categoria] || 'from-slate-500 to-slate-600';
+
+              return (
+                <Link
+                  key={protocolo.id}
+                  href={`/protocolos/flowchart/${protocolo.id}`}
+                  className="group relative overflow-hidden bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-purple-300 dark:hover:border-purple-700 transition-all hover:shadow-lg"
+                >
+                  {/* Gradient Header */}
+                  <div className={`h-2 bg-gradient-to-r ${gradientColor}`} />
+                  
+                  <div className="p-4">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex-1">
+                        <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                          {protocolo.titulo}
+                        </h3>
+                        {protocolo.subtitulo && (
+                          <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+                            {protocolo.subtitulo}
+                          </p>
+                        )}
+                      </div>
+                      <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-purple-500 transition-colors flex-shrink-0" />
+                    </div>
+
+                    <div className="flex items-center gap-2 mt-3">
+                      <span className={`px-2 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r ${gradientColor} text-white`}>
+                        {protocolo.categoria}
+                      </span>
+                      <span className="text-xs text-slate-500 dark:text-slate-400">
+                        {protocolo.nodes.length} etapas
+                      </span>
+                    </div>
+
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-3 line-clamp-2">
+                      {protocolo.descricao}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-1 mt-3">
+                      {protocolo.tags.slice(0, 3).map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 text-xs rounded"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Coming Soon */}
+          <div className="mt-6 p-4 bg-purple-50 dark:bg-purple-950/30 rounded-xl border border-purple-200 dark:border-purple-800">
+            <p className="text-sm text-purple-700 dark:text-purple-300">
+              <span className="font-medium">🚧 Em desenvolvimento:</span> Mais protocolos interativos serão adicionados em breve, incluindo Asma, ITU, Lombalgia, Cefaleia e outros.
+            </p>
+          </div>
         </div>
       </div>
     </div>
