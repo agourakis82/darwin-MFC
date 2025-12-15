@@ -370,9 +370,9 @@ export const casoDepressao: CasoClinico = {
     queixaPrincipal: 'Cansaço e desânimo há 3 meses',
     historiaDoencaAtual: 'Paciente refere que há cerca de 3 meses vem se sentindo cada vez mais cansada, sem ânimo para realizar suas atividades habituais. Diz que antes adorava dar aulas, mas agora "arrasta os pés para ir trabalhar". Apresenta dificuldade para dormir, acordando às 4h da manhã sem conseguir voltar a dormir. Perdeu cerca de 5kg neste período sem fazer dieta. Refere dificuldade de concentração nas aulas e erros que antes não cometia. Nega ideação suicida ativa, mas relata pensamentos de que "seria melhor se não acordasse mais". Divórcio há 1 ano. Mãe com histórico de depressão.'
   },
-  
-  etapas: [
-    {
+    
+    etapas: [
+      {
       id: 'etapa-1-anamnese',
       titulo: 'Aprofundando a Anamnese',
       tipo: 'anamnese',
@@ -908,6 +908,340 @@ export const casoLombalgia: CasoClinico = {
 };
 
 // ============================================================================
+// CASO 6: INFECÇÃO DO TRATO URINÁRIO
+// ============================================================================
+
+export const casoITU: CasoClinico = {
+  id: 'caso-itu-001',
+  titulo: 'Infecção Urinária na Mulher',
+  subtitulo: 'Diagnóstico e tratamento da cistite não complicada',
+  categoria: 'infeccioso',
+  dificuldade: 'iniciante',
+  tempoEstimado: 12,
+  ultimaAtualizacao: '2024-12',
+  
+  apresentacao: {
+    paciente: {
+      nome: 'Carla Mendes',
+      idade: 32,
+      sexo: 'F',
+      profissao: 'Secretária',
+      estadoCivil: 'Casada'
+    },
+    queixaPrincipal: 'Dor para urinar há 2 dias',
+    historiaDoencaAtual: 'Paciente refere disúria há 2 dias, acompanhada de polaciúria e urgência miccional. Urina em pequenas quantidades, com sensação de esvaziamento incompleto. Nega febre, dor lombar ou corrimento vaginal. Refere que teve relação sexual há 3 dias. Teve 2 episódios de cistite no último ano, tratados com antibióticos. Não está grávida (teste recente negativo). Sem comorbidades.'
+  },
+  
+  etapas: [
+    {
+      id: 'etapa-1-quadro',
+      titulo: 'Avaliando o Quadro Clínico',
+      tipo: 'anamnese',
+      conteudo: {
+        texto: 'Você atende Carla na UBS. É importante diferenciar cistite de outras condições.',
+        dicas: ['Disúria + polaciúria + urgência = tríade clássica', 'Febre e dor lombar sugerem pielonefrite']
+      },
+      pergunta: {
+        enunciado: 'Qual característica clínica diferencia cistite de pielonefrite?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Presença de disúria', correta: false },
+          { id: 'b', texto: 'Febre e dor lombar (Giordano positivo)', correta: true },
+          { id: 'c', texto: 'Polaciúria', correta: false },
+          { id: 'd', texto: 'Urina turva', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Cistite: sintomas baixos (disúria, polaciúria, urgência), sem febre. Pielonefrite: febre >38°C, dor lombar, Giordano positivo, náuseas. A diferenciação é clínica e muda completamente a conduta.',
+        pontos: 10
+      }
+    },
+    {
+      id: 'etapa-2-exames',
+      titulo: 'Necessidade de Exames',
+      tipo: 'exames_complementares',
+      conteudo: {
+        texto: 'Você precisa decidir se solicita exames laboratoriais.',
+        dados: {
+          'Sintomas típicos': 'Sim (tríade clássica)',
+          'Febre': 'Não',
+          'Dor lombar': 'Não',
+          'Corrimento vaginal': 'Não',
+          'Gestante': 'Não'
+        }
+      },
+      pergunta: {
+        enunciado: 'Qual a conduta quanto a exames nesta paciente?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Obrigatório: urocultura antes de tratar', correta: false },
+          { id: 'b', texto: 'Opcional: pode tratar empiricamente sem exames', correta: true },
+          { id: 'c', texto: 'Obrigatório: EAS + urocultura', correta: false },
+          { id: 'd', texto: 'Solicitar ultrassom de vias urinárias', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Cistite não complicada em mulher jovem com quadro típico: tratamento empírico é aceitável. Urocultura indicada se: ITU complicada, gestante, recorrência, falha terapêutica, sintomas atípicos. EAS pode auxiliar, mas não é obrigatório.',
+        pontos: 15
+      }
+    },
+    {
+      id: 'etapa-3-tratamento',
+      titulo: 'Escolha do Antibiótico',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'É hora de prescrever o tratamento.',
+        dicas: ['Fosfomicina dose única é primeira linha', 'Nitrofurantoína por 5 dias é alternativa']
+      },
+      pergunta: {
+        enunciado: 'Qual o tratamento de primeira linha para cistite não complicada?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Ciprofloxacino 500mg 12/12h por 7 dias', correta: false },
+          { id: 'b', texto: 'Amoxicilina 500mg 8/8h por 7 dias', correta: false },
+          { id: 'c', texto: 'Fosfomicina 3g dose única', correta: true },
+          { id: 'd', texto: 'Sulfametoxazol-Trimetoprim 12/12h por 14 dias', correta: false }
+        ],
+        respostaCorreta: 'c',
+        explicacao: 'Primeira linha: Fosfomicina 3g dose única OU Nitrofurantoína 100mg 6/6h por 5 dias. Fluoroquinolonas são reservadas para casos complicados (resistência, efeitos colaterais). SMZ-TMP apenas se sensibilidade local >80%.',
+        pontos: 20
+      }
+    },
+    {
+      id: 'etapa-4-orientacoes',
+      titulo: 'Orientações e Prevenção',
+      tipo: 'educacao',
+      conteudo: {
+        texto: 'Carla teve 2 episódios no último ano. Você precisa orientar sobre prevenção.',
+        dicas: ['ITU recorrente: ≥3 episódios/ano ou ≥2 em 6 meses']
+      },
+      pergunta: {
+        enunciado: 'Qual orientação NÃO tem evidência para prevenção de ITU recorrente?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Urinar após relação sexual', correta: false },
+          { id: 'b', texto: 'Aumentar ingesta hídrica', correta: false },
+          { id: 'c', texto: 'Uso de cranberry profilático', correta: false },
+          { id: 'd', texto: 'Limpar de frente para trás após evacuação', correta: true }
+        ],
+        respostaCorreta: 'd',
+        explicacao: 'Limpar de frente para trás parece lógico, mas NÃO há evidência de que previna ITU. Evidência para: urinar pós-coito (fraca), hidratação, cranberry (modesta). Se ITU recorrente, considerar ATB profilático ou pós-coito.',
+        pontos: 10
+      }
+    }
+  ],
+  
+  desfecho: {
+    resumo: 'Carla apresentava cistite não complicada, tratada empiricamente com sucesso.',
+    diagnosticoFinal: 'Cistite não complicada (N30.0)',
+    tratamentoRealizado: 'Fosfomicina 3g dose única. Orientada sobre hidratação e urinar após relação sexual.',
+    evolucao: 'Melhora dos sintomas em 24-48h. Sem recorrência em 3 meses. Agendada revisão se novo episódio para discutir profilaxia.',
+    licoesPrincipais: [
+      'Cistite não complicada pode ser tratada empiricamente',
+      'Urocultura não é obrigatória em caso típico',
+      'Fosfomicina ou Nitrofurantoína são primeira linha',
+      'Fluoroquinolonas devem ser reservadas',
+      'ITU recorrente merece avaliação e profilaxia'
+    ],
+    errosComuns: [
+      'Solicitar urocultura em todos os casos',
+      'Usar fluoroquinolona como primeira linha',
+      'Tratar por 7-14 dias (tempo excessivo)',
+      'Não diferenciar cistite de pielonefrite',
+      'Não orientar prevenção de recorrência'
+    ]
+  },
+  
+  objetivosAprendizagem: [
+    'Diferenciar cistite de pielonefrite',
+    'Indicar tratamento empírico adequadamente',
+    'Escolher antibiótico de primeira linha',
+    'Orientar prevenção de ITU recorrente'
+  ],
+  competencias: ['Diagnóstico clínico', 'Prescrição racional', 'Medicina baseada em evidências'],
+  doencasRelacionadas: ['infeccao-urinaria'],
+  medicamentosRelacionados: ['fosfomicina', 'nitrofurantoina'],
+  calculadorasRelacionadas: [],
+  referencias: ['Diretriz AUA/CUA/SUFU 2019', 'IDSA Guidelines 2011'],
+  tags: ['ITU', 'cistite', 'infecção', 'iniciante']
+};
+
+// ============================================================================
+// CASO 7: TRANSTORNO DE ANSIEDADE GENERALIZADA
+// ============================================================================
+
+export const casoAnsiedade: CasoClinico = {
+  id: 'caso-ansiedade-001',
+  titulo: 'Transtorno de Ansiedade Generalizada',
+  subtitulo: 'Diagnóstico e manejo na APS',
+  categoria: 'psiquiatrico',
+  dificuldade: 'intermediario',
+  tempoEstimado: 18,
+  ultimaAtualizacao: '2024-12',
+  
+  apresentacao: {
+    paciente: {
+      nome: 'Fernanda Costa',
+      idade: 34,
+      sexo: 'F',
+      profissao: 'Advogada',
+      estadoCivil: 'Casada'
+    },
+    queixaPrincipal: 'Nervosismo e preocupação constante há 8 meses',
+    historiaDoencaAtual: 'Paciente refere que há 8 meses vem se sentindo muito ansiosa, com preocupação excessiva sobre trabalho, família, saúde e finanças. Diz que não consegue "desligar a mente". Apresenta tensão muscular no pescoço e ombros, dificuldade para relaxar e irritabilidade. Sono fragmentado com dificuldade para pegar no sono. Sente palpitações frequentes sem esforço. Realizou check-up cardiológico há 2 meses: normal. Nega uso de substâncias. Nega sintomas depressivos predominantes. Mãe com "problema de nervos".'
+    },
+    
+    etapas: [
+      {
+      id: 'etapa-1-criterios',
+      titulo: 'Avaliação dos Critérios Diagnósticos',
+        tipo: 'anamnese',
+      conteudo: {
+        texto: 'Você precisa avaliar se Fernanda preenche critérios para TAG.',
+        dicas: ['Preocupação excessiva por >6 meses', 'Dificuldade de controlar a preocupação']
+      },
+      pergunta: {
+        enunciado: 'Quantos sintomas somáticos são necessários para o diagnóstico de TAG (DSM-5)?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: '1 sintoma', correta: false },
+          { id: 'b', texto: '2 sintomas', correta: false },
+          { id: 'c', texto: '3 ou mais sintomas', correta: true },
+          { id: 'd', texto: '5 sintomas', correta: false }
+        ],
+        respostaCorreta: 'c',
+        explicacao: 'DSM-5: Ansiedade + preocupação excessiva por ≥6 meses + dificuldade de controlar + ≥3 sintomas (inquietação, fadiga, dificuldade concentração, irritabilidade, tensão muscular, alteração sono). Fernanda tem: tensão muscular, irritabilidade, insônia, inquietação.',
+        pontos: 10
+      }
+    },
+    {
+      id: 'etapa-2-gad7',
+      titulo: 'Aplicação do GAD-7',
+      tipo: 'exames_complementares',
+      conteudo: {
+        texto: 'Você aplica o GAD-7 (Generalized Anxiety Disorder 7-item).',
+        dados: {
+          'GAD-7 Total': '16/21 pontos',
+          'Classificação': 'Ansiedade grave (≥15)',
+          'Sintomas': 'Quase todos os dias em 6 dos 7 itens'
+        }
+      },
+      pergunta: {
+        enunciado: 'O GAD-7 é utilizado para:',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Diagnóstico definitivo de TAG', correta: false },
+          { id: 'b', texto: 'Rastreamento e monitoramento de gravidade', correta: true },
+          { id: 'c', texto: 'Indicar necessidade de internação', correta: false },
+          { id: 'd', texto: 'Substituir a avaliação clínica', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'GAD-7: rastreamento e monitoramento (como PHQ-9 para depressão). Pontos de corte: 5-9 leve, 10-14 moderada, ≥15 grave. Não substitui avaliação clínica para diagnóstico. Útil para acompanhamento de resposta ao tratamento.',
+        pontos: 10
+      }
+    },
+    {
+      id: 'etapa-3-diferenciais',
+      titulo: 'Diagnósticos Diferenciais',
+      tipo: 'diagnostico',
+      conteudo: {
+        texto: 'É importante descartar outras causas de ansiedade.',
+        dicas: ['Hipertireoidismo pode mimetizar ansiedade', 'Uso de substâncias deve ser investigado']
+      },
+      pergunta: {
+        enunciado: 'Qual exame é MAIS importante solicitar para excluir causa orgânica?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Eletroencefalograma', correta: false },
+          { id: 'b', texto: 'TSH', correta: true },
+          { id: 'c', texto: 'Ressonância de crânio', correta: false },
+          { id: 'd', texto: 'Tomografia de tórax', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'TSH é essencial: hipertireoidismo causa ansiedade, palpitações, insônia (quadro idêntico ao TAG). Outras causas: cafeína, drogas, abstinência, feocromocitoma (raro). Se palpitações proeminentes, ECG já foi feito.',
+        pontos: 15
+      }
+    },
+    {
+      id: 'etapa-4-tratamento',
+      titulo: 'Definindo o Tratamento',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'Com TAG confirmado e sintomas graves, é hora de tratar.',
+        dicas: ['ISRS são primeira linha', 'TCC é tão eficaz quanto farmacoterapia']
+      },
+      pergunta: {
+        enunciado: 'Qual a abordagem inicial mais adequada para TAG grave?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Apenas psicoterapia (TCC)', correta: false },
+          { id: 'b', texto: 'Benzodiazepínico contínuo', correta: false },
+          { id: 'c', texto: 'ISRS + TCC (tratamento combinado)', correta: true },
+          { id: 'd', texto: 'Antipsicótico atípico', correta: false }
+        ],
+        respostaCorreta: 'c',
+        explicacao: 'TAG grave: tratamento combinado (ISRS + TCC) é superior a monoterapia. ISRS primeira linha: Sertralina, Escitalopram, Paroxetina. Evitar benzodiazepínicos contínuos (dependência). Podem ser usados por curto prazo no início.',
+        pontos: 20
+      }
+    },
+    {
+      id: 'etapa-5-prescricao',
+      titulo: 'Escolha do Medicamento',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'Você decide iniciar farmacoterapia.',
+        dicas: ['Iniciar dose baixa, aumentar gradualmente', 'Orientar sobre tempo para efeito']
+      },
+      pergunta: {
+        enunciado: 'Qual a prescrição inicial mais adequada?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Escitalopram 10mg/dia', correta: true },
+          { id: 'b', texto: 'Diazepam 10mg 3x/dia', correta: false },
+          { id: 'c', texto: 'Clonazepam 2mg à noite', correta: false },
+          { id: 'd', texto: 'Quetiapina 50mg à noite', correta: false }
+        ],
+        respostaCorreta: 'a',
+        explicacao: 'ISRS (Escitalopram, Sertralina) são primeira linha. Dose inicial pode ser metade para minimizar piora inicial da ansiedade. Escitalopram 5-10mg inicial, aumentar para 20mg. Benzodiazepínicos: apenas curto prazo (<4 semanas) se necessário para alívio rápido.',
+        pontos: 15
+      }
+    }
+  ],
+  
+  desfecho: {
+    resumo: 'Fernanda foi diagnosticada com TAG grave e iniciou tratamento combinado com excelente resposta.',
+    diagnosticoFinal: 'Transtorno de Ansiedade Generalizada (F41.1)',
+    tratamentoRealizado: 'Escitalopram 10mg → 20mg após 2 semanas. Encaminhada para TCC no NASF (8 sessões). Clonazepam 0,5mg à noite por 2 semanas iniciais.',
+    evolucao: 'Em 4 semanas: GAD-7 reduziu para 10 (moderada). Em 8 semanas: GAD-7 = 6 (leve). Suspendeu benzodiazepínico. Mantendo ISRS e completando TCC.',
+    licoesPrincipais: [
+      'GAD-7 auxilia no rastreamento e monitoramento',
+      'Sempre excluir hipertireoidismo',
+      'ISRS são primeira linha - não benzodiazepínicos',
+      'TCC é tão eficaz quanto farmacoterapia',
+      'Tratamento combinado é superior para casos graves'
+    ],
+    errosComuns: [
+      'Prescrever benzodiazepínico como tratamento crônico',
+      'Não investigar causas orgânicas (TSH)',
+      'Não encaminhar para psicoterapia',
+      'Usar doses subterapêuticas',
+      'Esperar pouco tempo para resposta (4-6 semanas)'
+    ]
+  },
+  
+  objetivosAprendizagem: [
+    'Aplicar critérios diagnósticos do TAG',
+    'Utilizar GAD-7 para monitoramento',
+    'Excluir causas orgânicas de ansiedade',
+    'Prescrever tratamento de primeira linha'
+  ],
+  competencias: ['Diagnóstico clínico', 'Prescrição racional', 'Abordagem integrada'],
+  doencasRelacionadas: ['transtorno-ansiedade'],
+  medicamentosRelacionados: ['escitalopram', 'sertralina'],
+  calculadorasRelacionadas: ['gad-7'],
+  referencias: ['DSM-5', 'CANMAT Guidelines 2020', 'NICE Anxiety 2019'],
+  tags: ['ansiedade', 'TAG', 'saúde mental', 'intermediário']
+};
+
+// ============================================================================
 // TODOS OS CASOS
 // ============================================================================
 
@@ -917,6 +1251,8 @@ export const todosCasosClinicos: CasoClinico[] = [
   casoDepressao,
   casoAsma,
   casoLombalgia,
+  casoITU,
+  casoAnsiedade,
 ];
 
 // Funções auxiliares

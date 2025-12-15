@@ -4,7 +4,7 @@ import { useState, useCallback, useRef } from 'react';
 import { 
   Users, Plus, Trash2, Download, Upload, ZoomIn, ZoomOut, 
   RotateCcw, Save, Square, Circle, Heart, HeartCrack, 
-  X, Minus, AlertTriangle, Baby, Skull
+  X, Minus, AlertTriangle, Baby, Skull, Image, FileJson
 } from 'lucide-react';
 
 // Tipos para o Genograma
@@ -119,7 +119,7 @@ export default function GenogramaClient() {
     }
   }, [modo, relacionamentoTemp, adicionarRelacionamento]);
 
-  // Exportar genograma
+  // Exportar genograma como JSON
   const exportarGenograma = useCallback(() => {
     const data = { pessoas, relacionamentos, versao: '1.0' };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -130,6 +130,33 @@ export default function GenogramaClient() {
     a.click();
     URL.revokeObjectURL(url);
   }, [pessoas, relacionamentos]);
+
+  // Exportar genograma como imagem PNG
+  const exportarComoImagem = useCallback(async () => {
+    if (!canvasRef.current) return;
+    
+    try {
+      // Importar html2canvas dinamicamente
+      const html2canvas = (await import('html2canvas')).default;
+      
+      const canvas = await html2canvas(canvasRef.current, {
+        backgroundColor: '#ffffff',
+        scale: 2, // Alta resolução
+        useCORS: true,
+        logging: false,
+      });
+      
+      // Converter para PNG e baixar
+      const link = document.createElement('a');
+      link.download = `genograma-${new Date().toISOString().split('T')[0]}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    } catch (error) {
+      // Fallback: usar método nativo se html2canvas não estiver disponível
+      console.warn('html2canvas não disponível, usando método alternativo');
+      alert('Para exportar como imagem, use Print Screen ou ferramenta de captura.');
+    }
+  }, []);
 
   // Importar genograma
   const importarGenograma = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -303,14 +330,17 @@ export default function GenogramaClient() {
 
             {/* Actions */}
             <div className="flex items-center gap-1">
-              <button onClick={exportarGenograma} className="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg" title="Exportar">
-                <Download className="w-5 h-5" />
+              <button onClick={exportarComoImagem} className="p-2 hover:bg-green-100 dark:hover:bg-green-900/30 text-green-600 rounded-lg" title="Exportar como Imagem PNG">
+                <Image className="w-5 h-5" />
               </button>
-              <label className="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg cursor-pointer" title="Importar">
+              <button onClick={exportarGenograma} className="p-2 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 rounded-lg" title="Exportar JSON">
+                <FileJson className="w-5 h-5" />
+              </button>
+              <label className="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg cursor-pointer" title="Importar JSON">
                 <Upload className="w-5 h-5" />
                 <input type="file" accept=".json" onChange={importarGenograma} className="hidden" />
               </label>
-              <button onClick={limparTudo} className="p-2 hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 rounded-lg" title="Limpar">
+              <button onClick={limparTudo} className="p-2 hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 rounded-lg" title="Limpar Tudo">
                 <Trash2 className="w-5 h-5" />
               </button>
             </div>

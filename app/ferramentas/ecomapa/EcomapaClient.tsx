@@ -5,7 +5,7 @@ import {
   Network, Plus, Trash2, Download, Upload, ZoomIn, ZoomOut, 
   X, Home, Heart, Briefcase, GraduationCap, Church, Hospital,
   Users, Building, ShieldPlus, Dumbbell, Leaf, Music, Car,
-  Phone, AlertTriangle
+  Phone, AlertTriangle, Image, FileJson
 } from 'lucide-react';
 
 // Tipos para o Ecomapa
@@ -129,7 +129,7 @@ export default function EcomapaClient() {
     setDragging(null);
   }, []);
 
-  // Exportar ecomapa
+  // Exportar ecomapa como JSON
   const exportarEcomapa = useCallback(() => {
     const data = { recursos, nomeFamilia, versao: '1.0' };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -140,6 +140,30 @@ export default function EcomapaClient() {
     a.click();
     URL.revokeObjectURL(url);
   }, [recursos, nomeFamilia]);
+
+  // Exportar ecomapa como imagem PNG
+  const exportarComoImagem = useCallback(async () => {
+    if (!canvasRef.current) return;
+    
+    try {
+      const html2canvas = (await import('html2canvas')).default;
+      
+      const canvas = await html2canvas(canvasRef.current, {
+        backgroundColor: '#ffffff',
+        scale: 2,
+        useCORS: true,
+        logging: false,
+      });
+      
+      const link = document.createElement('a');
+      link.download = `ecomapa-${new Date().toISOString().split('T')[0]}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    } catch (error) {
+      console.warn('html2canvas não disponível');
+      alert('Para exportar como imagem, use Print Screen ou ferramenta de captura.');
+    }
+  }, []);
 
   // Importar ecomapa
   const importarEcomapa = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -245,10 +269,13 @@ export default function EcomapaClient() {
 
             {/* Actions */}
             <div className="flex items-center gap-1">
-              <button onClick={exportarEcomapa} className="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg" title="Exportar">
-                <Download className="w-5 h-5" />
+              <button onClick={exportarComoImagem} className="p-2 hover:bg-green-100 dark:hover:bg-green-900/30 text-green-600 rounded-lg" title="Exportar como Imagem PNG">
+                <Image className="w-5 h-5" />
               </button>
-              <label className="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg cursor-pointer" title="Importar">
+              <button onClick={exportarEcomapa} className="p-2 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 rounded-lg" title="Exportar JSON">
+                <FileJson className="w-5 h-5" />
+              </button>
+              <label className="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg cursor-pointer" title="Importar JSON">
                 <Upload className="w-5 h-5" />
                 <input type="file" accept=".json" onChange={importarEcomapa} className="hidden" />
               </label>
