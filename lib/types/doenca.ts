@@ -201,11 +201,21 @@ export interface Doenca {
   /** Sinônimos e termos relacionados (para busca) */
   sinonimos?: string[];
   
+  /** 
+   * Disease Ontology ID (DOID) 
+   * Padrão internacional para identificação de doenças
+   * @see https://disease-ontology.org/
+   */
+  doid?: string;
+  
   /** Códigos CIAP-2 */
   ciap2: string[];
   
   /** Códigos CID-10 */
   cid10: string[];
+  
+  /** Códigos CID-11 (quando disponível) */
+  cid11?: string[];
   
   /** Categoria principal */
   categoria: CategoriaDoenca;

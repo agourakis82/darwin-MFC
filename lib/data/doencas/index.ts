@@ -14,6 +14,8 @@ import { doencas as doencasBase } from '../doencas';
 import { doencasCardiovasculares } from './cardiovasculares';
 import { doencasRespiratorias } from './respiratorias';
 import { doencasEndocrinas } from './endocrinas';
+import { doencasSaudeMental } from './saude-mental';
+import { doencasGastrointestinais } from './gastrointestinais';
 
 // Consolidar todas as doenças
 export const todasDoencas: Doenca[] = [
@@ -21,6 +23,8 @@ export const todasDoencas: Doenca[] = [
   ...doencasCardiovasculares,
   ...doencasRespiratorias,
   ...doencasEndocrinas,
+  ...doencasSaudeMental,
+  ...doencasGastrointestinais,
 ];
 
 // Remover duplicatas por ID (caso existam)

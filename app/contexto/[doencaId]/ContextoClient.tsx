@@ -447,9 +447,9 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
                   💡 Sugestões
                 </h3>
                 <div className="space-y-3">
-                  {suggestions.slice(0, 4).map((sug) => (
+                  {suggestions.slice(0, 4).map((sug, i) => (
                     <ContextualSuggestionCard
-                      key={`${sug.tipo}-${sug.id}`}
+                      key={i}
                       type={sug.tipo as 'calculadora' | 'protocolo' | 'rastreamento' | 'medicamento' | 'doenca'}
                       id={sug.id}
                       title={sug.titulo}
