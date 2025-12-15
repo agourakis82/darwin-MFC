@@ -150,5 +150,161 @@ export const doencasGeriatricas: Partial<Doenca>[] = [
     medicamentos: [],
     protocolos: [],
     calculadoras: []
+  },
+  // ===============================================
+  // SÍNDROMES GERIÁTRICAS ADICIONAIS
+  // ===============================================
+  {
+    id: 'demencia',
+    titulo: 'Demência (Transtorno Neurocognitivo Maior)',
+    ciap2: ['P70'],
+    cid10: ['F00', 'F01', 'F02', 'F03', 'G30'],
+    categoria: 'neurologico',
+    doid: 'DOID:1307',
+    snomedCT: '52448006',
+    meshId: 'D003704',
+    umlsCui: 'C0497327',
+    quickView: {
+      definicao: 'Síndrome de declínio cognitivo progressivo com prejuízo funcional. Alzheimer é a causa mais comum (60-70%). Prevalência dobra a cada 5 anos após 65.',
+      criteriosDiagnosticos: [
+        'Declínio cognitivo em ≥2 domínios',
+        'Prejuízo funcional (AVDs)',
+        'Não explicado por delirium',
+        'Não explicado por transtorno psiquiátrico',
+        'MEEM <24 (ajustar escolaridade)'
+      ],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Estimulação cognitiva', 'Atividade física', 'Suporte ao cuidador', 'Segurança ambiental'],
+        farmacologico: [
+          'Inibidores colinesterase (donepezila 5-10mg) - leve a moderada',
+          'Memantina (moderada a grave)',
+          'Evitar anticolinérgicos'
+        ]
+      },
+      redFlags: ['Declínio rápido (<6 meses)', 'Sinais focais', 'Início <65 anos', 'Alteração de personalidade precoce']
+    },
+    medicamentos: ['donepezila'],
+    protocolos: [],
+    calculadoras: ['meem']
+  },
+  {
+    id: 'sarcopenia',
+    titulo: 'Sarcopenia',
+    ciap2: ['L29'],
+    cid10: ['M62.84'],
+    categoria: 'musculoesqueletico',
+    doid: 'DOID:0081310',
+    snomedCT: '1172655006',
+    meshId: 'D055948',
+    umlsCui: 'C0872084',
+    quickView: {
+      definicao: 'Perda progressiva de massa e força muscular esquelética com o envelhecimento. Prevalência 5-13% em 60-70 anos, até 50% em >80 anos.',
+      criteriosDiagnosticos: [
+        'EWGSOP2: força reduzida (provável)',
+        'Dinamometria <27kg (H) ou <16kg (F)',
+        'Confirmação: massa muscular baixa (DXA/BIA)',
+        'Severidade: desempenho físico baixo (SPPB <8)'
+      ],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Exercício resistido progressivo', 'Proteína 1,0-1,2g/kg/dia', 'Leucina/HMB como adjuvante'],
+        farmacologico: ['Vitamina D se deficiência', 'Não há fármacos aprovados específicos']
+      },
+      redFlags: ['Perda de peso rápida', 'Quedas recorrentes', 'Incapacidade de levantar da cadeira', 'Sarcopenia + obesidade']
+    },
+    medicamentos: ['vitamina-d'],
+    protocolos: [],
+    calculadoras: []
+  },
+  {
+    id: 'osteoporose',
+    titulo: 'Osteoporose',
+    ciap2: ['L95'],
+    cid10: ['M80', 'M81'],
+    categoria: 'musculoesqueletico',
+    doid: 'DOID:11476',
+    snomedCT: '64859006',
+    meshId: 'D010024',
+    umlsCui: 'C0029456',
+    quickView: {
+      definicao: 'Doença esquelética com massa óssea baixa e deterioração microarquitetural, aumentando risco de fratura. Prevalência pós-menopausa: 30-50%.',
+      criteriosDiagnosticos: [
+        'DXA: T-score ≤-2,5 (coluna/fêmur)',
+        'OU fratura por fragilidade prévia',
+        'T-score -1 a -2,5 = osteopenia',
+        'FRAX para calcular risco'
+      ],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Exercício com carga', 'Prevenção de quedas', 'Cessar tabagismo', 'Cálcio dietético 1000-1200mg/dia'],
+        farmacologico: [
+          'Alendronato 70mg/semana ou Risedronato 35mg/semana',
+          'Vitamina D 800-2000UI/dia',
+          'Denosumabe se intolerância a bifosfonatos'
+        ]
+      },
+      redFlags: ['Fratura vertebral', 'Múltiplas fraturas', 'Perda de altura >4cm', 'Dor óssea difusa']
+    },
+    medicamentos: ['alendronato', 'vitamina-d', 'carbonato-calcio'],
+    protocolos: [],
+    calculadoras: ['frax']
+  },
+  {
+    id: 'depressao-idoso',
+    titulo: 'Depressão no Idoso',
+    ciap2: ['P76'],
+    cid10: ['F32', 'F33'],
+    categoria: 'saude_mental',
+    doid: 'DOID:1596',
+    snomedCT: '35489007',
+    meshId: 'D003866',
+    umlsCui: 'C0011570',
+    quickView: {
+      definicao: 'Transtorno depressivo maior no idoso, muitas vezes subdiagnosticado. Pode apresentar-se com queixas somáticas e "pseudodemência".',
+      criteriosDiagnosticos: [
+        'GDS-15 ≥5 (rastreamento)',
+        'Sintomas atípicos comuns: queixas somáticas',
+        'Perda de interesse mais que tristeza',
+        'Pseudodemência: déficit cognitivo reversível'
+      ],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Atividade física', 'Ativação comportamental', 'Suporte social', 'Psicoterapia'],
+        farmacologico: [
+          'ISRS: Sertralina 25-50mg (preferido)',
+          'Evitar tricíclicos (efeitos anticolinérgicos)',
+          'Start low, go slow'
+        ]
+      },
+      redFlags: ['Ideação suicida (maior risco que jovens)', 'Recusa alimentar', 'Psicose', 'Declínio funcional rápido']
+    },
+    medicamentos: ['sertralina', 'escitalopram'],
+    protocolos: [],
+    calculadoras: ['gds-15']
+  },
+  {
+    id: 'hipotensao-ortostatica',
+    titulo: 'Hipotensão Ortostática',
+    ciap2: ['K88'],
+    cid10: ['I95.1'],
+    categoria: 'cardiovascular',
+    doid: 'DOID:10763',
+    snomedCT: '28651003',
+    meshId: 'D007024',
+    umlsCui: 'C0020651',
+    quickView: {
+      definicao: 'Queda da PAS ≥20mmHg ou PAD ≥10mmHg ao ortostatismo. Prevalência 20-30% em >65 anos. Causa importante de quedas.',
+      criteriosDiagnosticos: [
+        'Queda PA ao ortostatismo (1-3 min)',
+        'Sintomas: tontura, escurecimento visual',
+        'Reprodutível ao teste postural',
+        'Avaliar medicamentos causadores'
+      ],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Levantar em etapas', 'Elevar cabeceira', 'Meias compressivas', 'Hidratação adequada', 'Aumentar sal (se não HAS grave)'],
+        farmacologico: ['Revisar e reduzir anti-hipertensivos', 'Fludrocortisona 0,1mg/dia (se refratário)', 'Midodrina 2,5-10mg 3x/dia']
+      },
+      redFlags: ['Síncope', 'Quedas recorrentes', 'Sintomas neurológicos associados', 'Anemia']
+    },
+    medicamentos: [],
+    protocolos: [],
+    calculadoras: []
   }
 ];

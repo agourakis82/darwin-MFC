@@ -123,5 +123,156 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     medicamentos: ['paracetamol', 'ibuprofeno'],
     protocolos: ['ivas'],
     calculadoras: []
+  },
+  // ===============================================
+  // DOENÇAS PEDIÁTRICAS ADICIONAIS
+  // ===============================================
+  {
+    id: 'asma-infantil',
+    titulo: 'Asma na Infância',
+    ciap2: ['R96'],
+    cid10: ['J45'],
+    categoria: 'respiratorio',
+    doid: 'DOID:2841',
+    snomedCT: '195967001',
+    meshId: 'D001249',
+    umlsCui: 'C0004096',
+    quickView: {
+      definicao: 'Doença inflamatória crônica das vias aéreas com episódios recorrentes de sibilância. Diagnóstico desafiador em <5 anos. Principal doença crônica da infância.',
+      criteriosDiagnosticos: [
+        'Sibilância recorrente (≥3 episódios)',
+        'Tosse noturna/matinal',
+        'Dispneia aos esforços',
+        'Melhora com broncodilatador',
+        'IPA modificado (preditivo em <5 anos)'
+      ],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Controle ambiental', 'Evitar tabagismo passivo', 'Vacinação em dia'],
+        farmacologico: [
+          'Leve intermitente: SABA resgate',
+          'Persistente: CI dose baixa (budesonida 100-200mcg)',
+          'Step-up se não controlado'
+        ]
+      },
+      redFlags: ['Cianose', 'Uso de musculatura acessória', 'Dificuldade para falar', 'SpO2 <92%', 'Silêncio torácico']
+    },
+    medicamentos: ['salbutamol', 'budesonida', 'prednisolona'],
+    protocolos: ['asma-exacerbacao'],
+    calculadoras: []
+  },
+  {
+    id: 'diarreia-aguda-pediatrica',
+    titulo: 'Diarreia Aguda Infantil',
+    ciap2: ['D73'],
+    cid10: ['A09'],
+    categoria: 'gastrointestinal',
+    doid: 'DOID:13250',
+    snomedCT: '409966000',
+    meshId: 'D003967',
+    umlsCui: 'C0011991',
+    quickView: {
+      definicao: 'Alteração do hábito intestinal com ≥3 evacuações amolecidas/líquidas em 24h, duração <14 dias. Principal causa: rotavírus.',
+      criteriosDiagnosticos: [
+        '≥3 evacuações líquidas/dia',
+        'Duração <14 dias (aguda)',
+        'Avaliar grau de desidratação',
+        'Sem sangue/muco = provavelmente viral'
+      ],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['TRO (Soro caseiro ou SRO)', 'Manter alimentação', 'Aleitamento materno livre demanda'],
+        farmacologico: ['Zinco 10-20mg/dia por 10-14 dias', 'SEM antidiarreicos', 'SEM antieméticos de rotina']
+      },
+      redFlags: ['Desidratação grave', 'Letargia', 'Olhos fundos', 'Sinal da prega >2s', 'Diurese ausente', 'Sangue nas fezes']
+    },
+    medicamentos: ['sais-reidratacao-oral'],
+    protocolos: [],
+    calculadoras: []
+  },
+  {
+    id: 'constipacao-pediatrica',
+    titulo: 'Constipação Funcional na Infância',
+    ciap2: ['D12'],
+    cid10: ['K59.0'],
+    categoria: 'gastrointestinal',
+    doid: 'DOID:2089',
+    snomedCT: '14760008',
+    meshId: 'D003248',
+    umlsCui: 'C0009806',
+    quickView: {
+      definicao: 'Evacuações infrequentes (<3/semana), dolorosas ou com retenção fecal. 90% funcional. Pico: treinamento esfincteriano e início escolar.',
+      criteriosDiagnosticos: [
+        'Roma IV: ≥2 critérios por 1 mês',
+        '≤2 evacuações/semana',
+        'Retenção fecal excessiva',
+        'Evacuações dolorosas',
+        'Fezes volumosas no reto',
+        'Incontinência fecal (escape)'
+      ],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Educação familiar (não punitivo)', 'Treinamento de hábito', 'Dieta com fibras', 'Hidratação'],
+        farmacologico: ['Desimpactação: PEG (1-1,5g/kg/dia) ou enema', 'Manutenção: PEG 0,4-0,8g/kg/dia', 'Lactulose alternativa']
+      },
+      redFlags: ['Distensão abdominal grave', 'Vômitos biliosos', 'Atraso eliminação mecônio', 'Déficit de crescimento']
+    },
+    medicamentos: ['lactulose'],
+    protocolos: [],
+    calculadoras: []
+  },
+  {
+    id: 'dermatite-atopica-pediatrica',
+    titulo: 'Dermatite Atópica',
+    ciap2: ['S87'],
+    cid10: ['L20'],
+    categoria: 'dermatologico',
+    doid: 'DOID:3310',
+    snomedCT: '24079001',
+    meshId: 'D003876',
+    umlsCui: 'C0011615',
+    quickView: {
+      definicao: 'Dermatose inflamatória crônica pruriginosa. Início geralmente <5 anos. Faz parte da marcha atópica (dermatite → rinite → asma).',
+      criteriosDiagnosticos: [
+        'Hanifin-Rajka: prurido + ≥3 critérios',
+        'Morfologia típica para idade',
+        'Lactentes: face e superfícies extensoras',
+        'Maiores: flexuras (fossas)',
+        'Curso crônico/recidivante'
+      ],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Hidratação intensa (emolientes 2-3x/dia)', 'Banho curto, água morna', 'Evitar gatilhos', 'Cortar unhas'],
+        farmacologico: ['Corticoide tópico baixa potência (hidrocortisona)', 'Crises: CT média potência curto prazo', 'Inibidor calcineurina (>2 anos)']
+      },
+      redFlags: ['Infecção secundária (impetigo)', 'Eczema herpético', 'Eritrodermia', 'Refratariedade ao tratamento']
+    },
+    medicamentos: ['hidrocortisona-topica'],
+    protocolos: [],
+    calculadoras: []
+  },
+  {
+    id: 'anemia-ferropriva-pediatrica',
+    titulo: 'Anemia Ferropriva na Infância',
+    ciap2: ['B80'],
+    cid10: ['D50'],
+    categoria: 'hematologico',
+    doid: 'DOID:11758',
+    snomedCT: '87522002',
+    meshId: 'D018798',
+    umlsCui: 'C0085576',
+    quickView: {
+      definicao: 'Anemia mais comum na infância. Prevalência 20-30% em <5 anos no Brasil. Causa: desequilíbrio oferta/demanda de ferro.',
+      criteriosDiagnosticos: [
+        'Hb <11g/dL (6m-5a) ou <11,5g/dL (5-11a)',
+        'VCM baixo (microcitose)',
+        'RDW elevado (anisocitose)',
+        'Ferritina <12ng/mL (ou <30 se inflamação)'
+      ],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Alimentação rica em ferro', 'Vitamina C nas refeições', 'Evitar leite de vaca em excesso'],
+        farmacologico: ['Sulfato ferroso 3-5mg/kg/dia de Fe elementar', 'Longe das refeições', 'Duração: 3-6 meses (repor estoques)']
+      },
+      redFlags: ['Anemia grave (Hb <7)', 'Não resposta ao tratamento', 'Sintomas neurológicos', 'Sangramento GI']
+    },
+    medicamentos: ['sulfato-ferroso'],
+    protocolos: [],
+    calculadoras: []
   }
 ];

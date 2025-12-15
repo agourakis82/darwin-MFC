@@ -1,7 +1,14 @@
 'use client';
 
 import React, { useState, useMemo, useRef } from 'react';
-import { Copy, Download, Check, FileText, ClipboardList, Stethoscope, Pill, Target, Calendar, User, ChevronDown, ChevronUp } from 'lucide-react';
+import Link from 'next/link';
+import { Copy, Download, Check, FileText, ClipboardList, Stethoscope, Pill, Target, User, ChevronDown, ChevronUp, Users, Network, ExternalLink } from 'lucide-react';
+
+interface FamilyToolsData {
+  genogramaResumo?: string;
+  ecomapaResumo?: string;
+  observacoesFamilia?: string;
+}
 
 interface SOAPData {
   // Identificação
@@ -45,6 +52,9 @@ interface SOAPData {
     encaminhamentos?: string[];
     retorno?: string;
   };
+  
+  // Ferramentas de Família (MFC)
+  familia?: FamilyToolsData;
 }
 
 interface SOAPExportProps {
@@ -90,6 +100,7 @@ export default function SOAPExport({
     objetivo: true,
     avaliacao: true,
     plano: true,
+    familia: false, // Collapsed by default
   });
   const [newHipotese, setNewHipotese] = useState('');
   const [newOrientacao, setNewOrientacao] = useState('');
@@ -229,6 +240,28 @@ export default function SOAPExport({
     
     if (data.plano?.retorno) {
       text += `▸ Retorno: ${data.plano.retorno}\n`;
+    }
+
+    // Ferramentas de Família (se preenchido)
+    if (data.familia?.genogramaResumo || data.familia?.ecomapaResumo || data.familia?.observacoesFamilia) {
+      text += '\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n';
+      text += '【F】 ABORDAGEM FAMILIAR (MFC)\n';
+      text += '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n';
+      
+      if (data.familia.genogramaResumo) {
+        text += '▸ Genograma:\n';
+        text += `   ${data.familia.genogramaResumo}\n\n`;
+      }
+      
+      if (data.familia.ecomapaResumo) {
+        text += '▸ Ecomapa (Rede de Apoio):\n';
+        text += `   ${data.familia.ecomapaResumo}\n\n`;
+      }
+      
+      if (data.familia.observacoesFamilia) {
+        text += '▸ Observações Familiares:\n';
+        text += `   ${data.familia.observacoesFamilia}\n`;
+      }
     }
 
     text += '\n═══════════════════════════════════════\n';
@@ -551,6 +584,90 @@ export default function SOAPExport({
                 onChange={e => updateData({ plano: { ...data.plano, retorno: e.target.value } })}
                 className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm"
               />
+            </div>
+          )}
+        </div>
+
+        {/* F - Família (MFC) */}
+        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+          <SectionHeader 
+            icon={Users} 
+            title="【F】 Abordagem Familiar (MFC)" 
+            section="familia"
+            color="bg-rose-100 dark:bg-rose-900 text-rose-700 dark:text-rose-200"
+          />
+          {expandedSections.familia && (
+            <div className="p-4 space-y-4">
+              {/* Links para ferramentas */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                <Link
+                  href="/ferramentas/genograma"
+                  target="_blank"
+                  className="px-3 py-2 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 rounded-lg text-sm flex items-center gap-2 hover:bg-rose-100 dark:hover:bg-rose-800 transition-colors"
+                >
+                  <Users className="w-4 h-4" />
+                  Criar Genograma
+                  <ExternalLink className="w-3 h-3" />
+                </Link>
+                <Link
+                  href="/ferramentas/ecomapa"
+                  target="_blank"
+                  className="px-3 py-2 bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 rounded-lg text-sm flex items-center gap-2 hover:bg-teal-100 dark:hover:bg-teal-800 transition-colors"
+                >
+                  <Network className="w-4 h-4" />
+                  Criar Ecomapa
+                  <ExternalLink className="w-3 h-3" />
+                </Link>
+              </div>
+              
+              {/* Resumo do Genograma */}
+              <div>
+                <label className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-2 block">
+                  Resumo do Genograma (estrutura familiar)
+                </label>
+                <textarea
+                  placeholder="Ex: Família nuclear, pai (52a, HAS, DM), mãe (48a, hígida), 2 filhos. Avó paterna com histórico de IAM aos 60a..."
+                  value={data.familia?.genogramaResumo || ''}
+                  onChange={e => updateData({ familia: { ...data.familia, genogramaResumo: e.target.value } })}
+                  rows={2}
+                  className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm resize-none"
+                />
+              </div>
+
+              {/* Resumo do Ecomapa */}
+              <div>
+                <label className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-2 block">
+                  Resumo do Ecomapa (rede de apoio)
+                </label>
+                <textarea
+                  placeholder="Ex: Rede de apoio forte com família extensa. Vinculado à UBS e CRAS. Trabalho como fonte de estresse. Participa de grupo de hipertensos..."
+                  value={data.familia?.ecomapaResumo || ''}
+                  onChange={e => updateData({ familia: { ...data.familia, ecomapaResumo: e.target.value } })}
+                  rows={2}
+                  className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm resize-none"
+                />
+              </div>
+
+              {/* Observações */}
+              <div>
+                <label className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-2 block">
+                  Observações sobre dinâmica familiar
+                </label>
+                <textarea
+                  placeholder="Ex: Sobrecarga do cuidador identificada. Conflito familiar em relação ao tratamento. Luto recente..."
+                  value={data.familia?.observacoesFamilia || ''}
+                  onChange={e => updateData({ familia: { ...data.familia, observacoesFamilia: e.target.value } })}
+                  rows={2}
+                  className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm resize-none"
+                />
+              </div>
+
+              {/* Dica */}
+              <div className="p-3 bg-rose-50 dark:bg-rose-900/20 rounded-lg border border-rose-200 dark:border-rose-800">
+                <p className="text-xs text-rose-700 dark:text-rose-300">
+                  💡 <strong>Dica MFC:</strong> A abordagem familiar é fundamental na APS. Considere o ciclo de vida familiar, crises normativas/paranormativas, e a influência do contexto social na saúde do paciente.
+                </p>
+              </div>
             </div>
           )}
         </div>
