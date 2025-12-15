@@ -23,9 +23,12 @@ import { doencasRenaisUrologicas } from './renais-urologicas';
 import { doencasNeurologicas } from './neurologicas';
 import { doencasHematologicas } from './hematologicas';
 import { doencasGinecoObstetricas } from './gineco-obstetricas';
+import { doencasPediatricas } from './pediatricas';
+import { doencasGeriatricas } from './geriatricas';
 
 // Consolidar todas as doenças
-export const todasDoencas: Doenca[] = [
+// Nota: Algumas categorias usam Partial<Doenca> para flexibilidade de expansão
+export const todasDoencas: Partial<Doenca>[] = [
   ...doencasBase,
   ...doencasCardiovasculares,
   ...doencasRespiratorias,
@@ -39,43 +42,57 @@ export const todasDoencas: Doenca[] = [
   ...doencasNeurologicas,
   ...doencasHematologicas,
   ...doencasGinecoObstetricas,
+  ...doencasPediatricas,
+  ...doencasGeriatricas,
 ];
 
-// Remover duplicatas por ID (caso existam)
-const doencasMap = new Map<string, Doenca>();
-todasDoencas.forEach(d => doencasMap.set(d.id, d));
-export const doencasConsolidadas: Doenca[] = Array.from(doencasMap.values());
+// Remover duplicatas por ID (caso existam) e filtrar apenas doenças com ID
+const doencasMap = new Map<string, Partial<Doenca>>();
+todasDoencas.forEach(d => {
+  if (d.id) doencasMap.set(d.id, d);
+});
+export const doencasConsolidadas: Partial<Doenca>[] = Array.from(doencasMap.values());
 
 // Funções auxiliares
-export function getAllDoencas(): Doenca[] {
+export function getAllDoencas(): Partial<Doenca>[] {
   return doencasConsolidadas;
 }
 
-export function getDoencaById(id: string): Doenca | undefined {
+export function getDoencaById(id: string): Partial<Doenca> | undefined {
   return doencasConsolidadas.find(d => d.id === id);
 }
 
-export function getDoencasByCategoria(categoria: string): Doenca[] {
+export function getDoencasByCategoria(doencas: Partial<Doenca>[]): Record<string, Partial<Doenca>[]> {
+  const grouped: Record<string, Partial<Doenca>[]> = {};
+  doencas.forEach(d => {
+    const cat = d.categoria || 'outros';
+    if (!grouped[cat]) grouped[cat] = [];
+    grouped[cat].push(d);
+  });
+  return grouped;
+}
+
+export function filterByCategoria(categoria: string): Partial<Doenca>[] {
   return doencasConsolidadas.filter(d => d.categoria === categoria);
 }
 
-export function getDoencasByCIAP2(code: string): Doenca[] {
-  return doencasConsolidadas.filter(d => d.ciap2.includes(code));
+export function getDoencasByCIAP2(code: string): Partial<Doenca>[] {
+  return doencasConsolidadas.filter(d => d.ciap2?.includes(code));
 }
 
-export function getDoencasByCID10(code: string): Doenca[] {
+export function getDoencasByCID10(code: string): Partial<Doenca>[] {
   return doencasConsolidadas.filter(d => 
-    d.cid10.some(c => c.startsWith(code))
+    d.cid10?.some(c => c.startsWith(code))
   );
 }
 
-export function searchDoencas(query: string): Doenca[] {
+export function searchDoencas(query: string): Partial<Doenca>[] {
   const normalizedQuery = query.toLowerCase().trim();
   return doencasConsolidadas.filter(d =>
-    d.titulo.toLowerCase().includes(normalizedQuery) ||
+    d.titulo?.toLowerCase().includes(normalizedQuery) ||
     d.sinonimos?.some(s => s.toLowerCase().includes(normalizedQuery)) ||
-    d.ciap2.some(c => c.toLowerCase().includes(normalizedQuery)) ||
-    d.cid10.some(c => c.toLowerCase().includes(normalizedQuery)) ||
+    d.ciap2?.some(c => c.toLowerCase().includes(normalizedQuery)) ||
+    d.cid10?.some(c => c.toLowerCase().includes(normalizedQuery)) ||
     d.tags?.some(t => t.toLowerCase().includes(normalizedQuery)) ||
     d.doid?.toLowerCase().includes(normalizedQuery) ||
     d.snomedCT?.includes(normalizedQuery) ||
@@ -92,7 +109,7 @@ export function searchDoencas(query: string): Doenca[] {
  * Busca doença por DOID (Disease Ontology ID)
  * @example getDoencaByDOID('DOID:9351') // Diabetes mellitus tipo 2
  */
-export function getDoencaByDOID(doid: string): Doenca | undefined {
+export function getDoencaByDOID(doid: string): Partial<Doenca> | undefined {
   return doencasConsolidadas.find(d => d.doid === doid);
 }
 
@@ -100,7 +117,7 @@ export function getDoencaByDOID(doid: string): Doenca | undefined {
  * Busca doença por SNOMED-CT Concept ID
  * @example getDoencaBySNOMED('73211009') // Diabetes mellitus
  */
-export function getDoencaBySNOMED(snomedCT: string): Doenca | undefined {
+export function getDoencaBySNOMED(snomedCT: string): Partial<Doenca> | undefined {
   return doencasConsolidadas.find(d => d.snomedCT === snomedCT);
 }
 
@@ -108,7 +125,7 @@ export function getDoencaBySNOMED(snomedCT: string): Doenca | undefined {
  * Busca doença por MeSH ID
  * @example getDoencaByMeSH('D003920') // Diabetes Mellitus
  */
-export function getDoencaByMeSH(meshId: string): Doenca | undefined {
+export function getDoencaByMeSH(meshId: string): Partial<Doenca> | undefined {
   return doencasConsolidadas.find(d => d.meshId === meshId);
 }
 
@@ -116,14 +133,14 @@ export function getDoencaByMeSH(meshId: string): Doenca | undefined {
  * Busca doença por UMLS CUI
  * @example getDoencaByUMLS('C0011860') // Diabetes Mellitus, Type 2
  */
-export function getDoencaByUMLS(umlsCui: string): Doenca | undefined {
+export function getDoencaByUMLS(umlsCui: string): Partial<Doenca> | undefined {
   return doencasConsolidadas.find(d => d.umlsCui === umlsCui);
 }
 
 /**
  * Busca doenças que possuem mapeamento completo de ontologias
  */
-export function getDoencasWithFullOntologyMapping(): Doenca[] {
+export function getDoencasWithFullOntologyMapping(): Partial<Doenca>[] {
   return doencasConsolidadas.filter(d => 
     d.doid && d.snomedCT && d.meshId && d.umlsCui
   );
@@ -156,8 +173,9 @@ export function getOntologyStats() {
 export function getDoencasStats() {
   const categorias = new Map<string, number>();
   doencasConsolidadas.forEach(d => {
-    const count = categorias.get(d.categoria) || 0;
-    categorias.set(d.categoria, count + 1);
+    const cat = d.categoria || 'outros';
+    const count = categorias.get(cat) || 0;
+    categorias.set(cat, count + 1);
   });
   
   return {

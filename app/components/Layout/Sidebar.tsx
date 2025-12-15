@@ -69,10 +69,11 @@ const navigationGroups: NavGroup[] = [
   {
     title: 'Guia Clínico',
     sections: [
-      { title: 'Doenças da APS', icon: BookOpen, path: '/doencas', badge: 'Novo' },
-      { title: 'Bulário RENAME', icon: Pill, path: '/medicamentos', badge: 'Novo' },
-      { title: 'Protocolos', icon: FileText, path: '/protocolos', badge: 'Novo' },
+      { title: 'Doenças da APS', icon: BookOpen, path: '/doencas' },
+      { title: 'Bulário RENAME', icon: Pill, path: '/medicamentos' },
+      { title: 'Protocolos', icon: FileText, path: '/protocolos' },
       { title: 'Calculadoras', icon: Calculator, path: '/calculadoras' },
+      { title: 'Casos Clínicos', icon: GraduationCap, path: '/casos-clinicos', badge: 'Novo' },
     ]
   },
   {
@@ -121,8 +122,10 @@ const navigationGroups: NavGroup[] = [
   {
     title: 'Ferramentas Clínicas',
     sections: [
-      { title: 'Consulta Rápida', icon: Zap, path: '/consulta-rapida', badge: 'Novo' },
+      { title: 'Consulta Rápida', icon: Zap, path: '/consulta-rapida' },
       { title: 'Prontuário SOAP', icon: ClipboardList, path: '/prontuario' },
+      { title: 'Genograma', icon: Users, path: '/ferramentas/genograma', badge: 'Novo' },
+      { title: 'Ecomapa', icon: Heart, path: '/ferramentas/ecomapa', badge: 'Novo' },
       { title: 'Interações Medicamentosas', icon: AlertTriangle, path: '/medicamentos/interacoes' },
       { title: 'Comparador de Medicamentos', icon: Pill, path: '/medicamentos/comparador' },
       { title: 'Busca Avançada', icon: FileSearch, path: '/busca' },

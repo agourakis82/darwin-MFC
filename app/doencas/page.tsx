@@ -7,8 +7,8 @@ import {
   Fingerprint, Utensils, Zap, Droplets, Baby, Users,
   ChevronRight, BookOpen, Pill, FileText, Star
 } from 'lucide-react';
-import { doencasConsolidadas, getDoencasStats } from '@/lib/data/doencas/index';
-import { CATEGORIAS_DOENCA, CategoriaDoenca, getDoencasByCategoria } from '@/lib/types/doenca';
+import { doencasConsolidadas, getDoencasStats, getDoencasByCategoria } from '@/lib/data/doencas/index';
+import { CATEGORIAS_DOENCA, CategoriaDoenca } from '@/lib/types/doenca';
 
 // Mapeamento de ícones
 const iconMap: Record<string, React.ElementType> = {
@@ -32,10 +32,10 @@ export default function DoencasPage() {
     if (searchTerm.trim()) {
       const term = searchTerm.toLowerCase();
       filtered = filtered.filter(d => 
-        d.titulo.toLowerCase().includes(term) ||
+        d.titulo?.toLowerCase().includes(term) ||
         d.sinonimos?.some(s => s.toLowerCase().includes(term)) ||
-        d.ciap2.some(c => c.toLowerCase().includes(term)) ||
-        d.cid10.some(c => c.toLowerCase().includes(term)) ||
+        d.ciap2?.some(c => c.toLowerCase().includes(term)) ||
+        d.cid10?.some(c => c.toLowerCase().includes(term)) ||
         d.tags?.some(t => t.toLowerCase().includes(term))
       );
     }
@@ -97,7 +97,7 @@ export default function DoencasPage() {
             Todas ({doencasConsolidadas.length})
           </button>
           {Object.entries(CATEGORIAS_DOENCA).map(([key, value]) => {
-            const count = doencasAgrupadas.find(g => g.categoria === key)?.count || 0;
+            const count = doencasAgrupadas[key]?.length || 0;
             if (count === 0) return null;
             return (
               <button
@@ -125,9 +125,9 @@ export default function DoencasPage() {
         </div>
       ) : (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {doencasFiltradas.map((doenca) => {
-            const categoriaInfo = CATEGORIAS_DOENCA[doenca.categoria];
-            const IconComponent = iconMap[categoriaInfo.icon] || BookOpen;
+          {doencasFiltradas.filter(d => d.id).map((doenca) => {
+            const categoriaInfo = doenca.categoria ? CATEGORIAS_DOENCA[doenca.categoria] : CATEGORIAS_DOENCA['outros'];
+            const IconComponent = categoriaInfo ? iconMap[categoriaInfo.icon] || BookOpen : BookOpen;
             
             return (
               <Link
@@ -136,7 +136,7 @@ export default function DoencasPage() {
                 className="group glass-strong rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-transparent hover:border-blue-500/30"
               >
                 <div className="flex items-start gap-4">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${categoriaInfo.color} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
+                  <div className={`w-12 h-12 bg-gradient-to-br ${categoriaInfo?.color || 'from-gray-400 to-gray-500'} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -144,17 +144,17 @@ export default function DoencasPage() {
                       {doenca.titulo}
                     </h3>
                     <p className="text-sm text-[#86868b] line-clamp-2 mb-3">
-                      {doenca.quickView.definicao}
+                      {doenca.quickView?.definicao || 'Descrição não disponível'}
                     </p>
                     
                     {/* Códigos */}
                     <div className="flex flex-wrap gap-2 mb-3">
-                      {doenca.ciap2.slice(0, 2).map(code => (
+                      {doenca.ciap2?.slice(0, 2).map(code => (
                         <span key={code} className="px-2 py-0.5 bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-mono rounded">
                           {code}
                         </span>
                       ))}
-                      {doenca.cid10.slice(0, 2).map(code => (
+                      {doenca.cid10?.slice(0, 2).map(code => (
                         <span key={code} className="px-2 py-0.5 bg-blue-500/20 text-blue-700 dark:text-blue-300 text-xs font-mono rounded">
                           {code}
                         </span>
@@ -163,18 +163,6 @@ export default function DoencasPage() {
                     
                     {/* Links rápidos */}
                     <div className="flex items-center gap-4 text-xs text-[#86868b]">
-                      {doenca.medicamentos.length > 0 && (
-                        <span className="flex items-center gap-1">
-                          <Pill className="w-3 h-3" />
-                          {doenca.medicamentos.length} meds
-                        </span>
-                      )}
-                      {doenca.protocolos.length > 0 && (
-                        <span className="flex items-center gap-1">
-                          <FileText className="w-3 h-3" />
-                          {doenca.protocolos.length} protocolos
-                        </span>
-                      )}
                       <ChevronRight className="w-4 h-4 ml-auto group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -187,17 +175,18 @@ export default function DoencasPage() {
 
       {/* Quick Stats */}
       <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-        {doencasAgrupadas.slice(0, 4).map((grupo) => {
-          const categoriaInfo = CATEGORIAS_DOENCA[grupo.categoria];
+        {Object.entries(doencasAgrupadas).slice(0, 4).map(([categoria, doencas]) => {
+          const categoriaInfo = CATEGORIAS_DOENCA[categoria as CategoriaDoenca];
+          if (!categoriaInfo) return null;
           const IconComponent = iconMap[categoriaInfo.icon] || BookOpen;
           
           return (
-            <div key={grupo.categoria} className="glass-subtle rounded-xl p-4 text-center">
+            <div key={categoria} className="glass-subtle rounded-xl p-4 text-center">
               <IconComponent className="w-8 h-8 mx-auto mb-2 text-[#86868b]" />
               <div className="text-2xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7]">
-                {grupo.count}
+                {doencas.length}
               </div>
-              <div className="text-sm text-[#86868b]">{grupo.label}</div>
+              <div className="text-sm text-[#86868b]">{categoriaInfo.label}</div>
             </div>
           );
         })}
