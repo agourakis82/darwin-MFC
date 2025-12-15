@@ -1245,6 +1245,571 @@ export const casoAnsiedade: CasoClinico = {
 // TODOS OS CASOS
 // ============================================================================
 
+// ============================================================================
+// CASO 8: PNEUMONIA ADQUIRIDA NA COMUNIDADE
+// ============================================================================
+
+export const casoPneumonia: CasoClinico = {
+  id: 'caso-pac-001',
+  titulo: 'Pneumonia Adquirida na Comunidade',
+  subtitulo: 'Diagnóstico, estratificação e tratamento ambulatorial',
+  categoria: 'respiratorio',
+  dificuldade: 'intermediario',
+  tempoEstimado: 18,
+  ultimaAtualizacao: '2024-12',
+  
+  apresentacao: {
+    paciente: {
+      nome: 'Roberto Souza',
+      idade: 55,
+      sexo: 'M',
+      profissao: 'Comerciante',
+      estadoCivil: 'Casado'
+    },
+    queixaPrincipal: 'Tosse com catarro e febre há 4 dias',
+    historiaDoencaAtual: 'Paciente refere quadro iniciado há 4 dias com tosse produtiva com escarro amarelado-esverdeado, febre (mediu 38,5°C em casa), calafrios e dor torácica à direita que piora com a respiração profunda. Refere também fadiga e inapetência. Nega dispneia em repouso, mas cansa ao subir escadas. Tabagista 30 anos-maço (1 maço/dia há 30 anos), tentou parar 2 vezes sem sucesso. Hipertenso em uso de losartana 50mg. Nega viagens recentes, internação ou uso de antibióticos nos últimos 3 meses.'
+  },
+  
+  etapas: [
+    {
+      id: 'etapa-1-exame',
+      titulo: 'Exame Físico',
+      tipo: 'exame_fisico',
+      conteudo: {
+        texto: 'Você realiza exame físico completo.',
+        dados: {
+          'Estado geral': 'Regular, eupneico em repouso',
+          'PA': '128/82 mmHg',
+          'FC': '96 bpm',
+          'FR': '22 irpm',
+          'Temp': '38,2°C',
+          'SpO2': '94% ar ambiente',
+          'Ausculta pulmonar': 'Estertores crepitantes em base D + sopro tubário',
+          'Percussão': 'Submacicez em base D'
+        }
+      },
+      pergunta: {
+        enunciado: 'Qual achado auscultatório é MAIS específico para consolidação pneumônica?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Estertores crepitantes', correta: false },
+          { id: 'b', texto: 'Sopro tubário (broncofonia)', correta: true },
+          { id: 'c', texto: 'Sibilos', correta: false },
+          { id: 'd', texto: 'Atrito pleural', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'O sopro tubário (som traqueal transmitido para periferia) indica consolidação pulmonar e é MAIS específico que crepitantes (presentes em várias condições). Egofonia (E→A) e pectorilóquia são também sinais de consolidação.',
+        pontos: 10
+      }
+    },
+    {
+      id: 'etapa-2-rx',
+      titulo: 'Confirmação Diagnóstica',
+      tipo: 'exames_complementares',
+      conteudo: {
+        texto: 'Você solicita radiografia de tórax.',
+        dados: {
+          'RX Tórax PA/Perfil': 'Opacidade alveolar em lobo inferior direito com broncograma aéreo',
+          'Seios costofrênicos': 'Livre bilateralmente',
+          'Área cardíaca': 'Normal'
+        }
+      },
+      pergunta: {
+        enunciado: 'O broncograma aéreo no RX indica:',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Derrame pleural', correta: false },
+          { id: 'b', texto: 'Consolidação alveolar com brônquios pérvios', correta: true },
+          { id: 'c', texto: 'Atelectasia', correta: false },
+          { id: 'd', texto: 'Pneumotórax', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Broncograma aéreo = ar nos brônquios visível porque os alvéolos ao redor estão preenchidos (consolidação). É patognomônico de pneumonia. Na atelectasia, os brônquios colabam e não há broncograma.',
+        pontos: 10
+      }
+    },
+    {
+      id: 'etapa-3-curb65',
+      titulo: 'Estratificação de Risco',
+      tipo: 'diagnostico',
+      conteudo: {
+        texto: 'Você aplica o escore CURB-65 para estratificar.',
+        dados: {
+          'C - Confusão mental': 'Não (0)',
+          'U - Ureia >50 mg/dL': 'Não (ureia 38 mg/dL) (0)',
+          'R - FR ≥30': 'Não (FR 22) (0)',
+          'B - PAS <90 ou PAD ≤60': 'Não (0)',
+          '65 - Idade ≥65': 'Não (55 anos) (0)',
+          'CURB-65 Total': '0 pontos'
+        }
+      },
+      pergunta: {
+        enunciado: 'Com CURB-65 = 0, qual é a conduta quanto ao local de tratamento?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Internação hospitalar obrigatória', correta: false },
+          { id: 'b', texto: 'Tratamento ambulatorial', correta: true },
+          { id: 'c', texto: 'Internação em UTI', correta: false },
+          { id: 'd', texto: 'Observação em pronto-socorro por 24h', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'CURB-65: 0-1 = tratamento ambulatorial (mortalidade <3%), 2 = considerar internação breve, 3-5 = internação (≥3 considerar UTI). Paciente com CURB-65=0 pode ser tratado em casa com segurança.',
+        pontos: 15
+      }
+    },
+    {
+      id: 'etapa-4-tratamento',
+      titulo: 'Escolha do Antibiótico',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'É hora de prescrever o tratamento para PAC ambulatorial.',
+        dicas: ['Cobrir S. pneumoniae (principal agente)', 'Considerar atípicos']
+      },
+      pergunta: {
+        enunciado: 'Qual antibiótico é PRIMEIRA LINHA para PAC ambulatorial em paciente sem comorbidades?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Amoxicilina 500mg 8/8h por 5-7 dias', correta: true },
+          { id: 'b', texto: 'Levofloxacino 750mg 1x/dia por 5 dias', correta: false },
+          { id: 'c', texto: 'Azitromicina 500mg 1x/dia por 3 dias', correta: false },
+          { id: 'd', texto: 'Ceftriaxona 1g IM 1x/dia', correta: false }
+        ],
+        respostaCorreta: 'a',
+        explicacao: 'Amoxicilina (ou ampicilina) é primeira linha para PAC ambulatorial sem comorbidades - excelente cobertura para S. pneumoniae. Macrolídeos são alternativa se alergia. Quinolonas respiratórias são reservadas para falha ou comorbidades.',
+        pontos: 20
+      }
+    },
+    {
+      id: 'etapa-5-orientacoes',
+      titulo: 'Orientações e Seguimento',
+      tipo: 'educacao',
+      conteudo: {
+        texto: 'Você precisa orientar Roberto sobre o tratamento e cessação tabágica.',
+        dicas: ['Cessação tabágica é fundamental', 'Retorno se piora']
+      },
+      pergunta: {
+        enunciado: 'Em quanto tempo espera-se melhora clínica com o tratamento adequado?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: '12-24 horas', correta: false },
+          { id: 'b', texto: '48-72 horas', correta: true },
+          { id: 'c', texto: '7-10 dias', correta: false },
+          { id: 'd', texto: '2 semanas', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Espera-se melhora da febre e sintomas em 48-72h. Se não houver melhora, reavaliar: resistência, diagnóstico alternativo, complicação. RX pode demorar semanas para normalizar (não repetir se melhora clínica).',
+        pontos: 10
+      }
+    }
+  ],
+  
+  desfecho: {
+    resumo: 'Roberto apresentava PAC de baixo risco, tratado ambulatorialmente com sucesso.',
+    diagnosticoFinal: 'Pneumonia Adquirida na Comunidade (J18.9) | Tabagismo ativo (F17.2)',
+    tratamentoRealizado: 'Amoxicilina 500mg 8/8h por 7 dias. Repouso relativo. Hidratação. Antitérmico SOS. Abordagem de cessação tabágica.',
+    evolucao: 'Afebril em 48h. Tosse melhorou em 5 dias. Completou tratamento. Aceitou iniciar bupropiona para cessação tabágica.',
+    licoesPrincipais: [
+      'Sopro tubário e broncograma aéreo são específicos de consolidação',
+      'CURB-65 estratifica risco e local de tratamento',
+      'Amoxicilina é primeira linha para PAC ambulatorial simples',
+      'Melhora esperada em 48-72h - reavaliar se não melhorar',
+      'PAC é momento oportunístico para abordar tabagismo'
+    ],
+    errosComuns: [
+      'Usar quinolona de primeira linha',
+      'Solicitar TC de tórax em PAC simples',
+      'Não estratificar risco com CURB-65',
+      'Repetir RX para controle de cura',
+      'Não abordar cessação tabágica'
+    ]
+  },
+  
+  objetivosAprendizagem: [
+    'Reconhecer síndrome de consolidação pulmonar',
+    'Aplicar CURB-65 para estratificação',
+    'Escolher antibiótico adequado',
+    'Orientar seguimento e abordar tabagismo'
+  ],
+  competencias: ['Diagnóstico clínico', 'Estratificação de risco', 'Prescrição racional', 'Medicina preventiva'],
+  doencasRelacionadas: ['pneumonia'],
+  medicamentosRelacionados: ['amoxicilina', 'azitromicina'],
+  calculadorasRelacionadas: ['curb-65'],
+  referencias: ['Diretriz SBPT PAC 2022', 'IDSA/ATS Guidelines 2019'],
+  tags: ['pneumonia', 'PAC', 'respiratório', 'CURB-65', 'intermediário']
+};
+
+// ============================================================================
+// CASO 9: CEFALEIA TENSIONAL E MIGRÂNEA
+// ============================================================================
+
+export const casoCefaleia: CasoClinico = {
+  id: 'caso-cefaleia-001',
+  titulo: 'Cefaleia na APS',
+  subtitulo: 'Diagnóstico diferencial e manejo de cefaleias primárias',
+  categoria: 'neurologico',
+  dificuldade: 'intermediario',
+  tempoEstimado: 16,
+  ultimaAtualizacao: '2024-12',
+  
+  apresentacao: {
+    paciente: {
+      nome: 'Patrícia Lima',
+      idade: 35,
+      sexo: 'F',
+      profissao: 'Contadora',
+      estadoCivil: 'Casada'
+    },
+    queixaPrincipal: 'Dor de cabeça frequente há 6 meses',
+    historiaDoencaAtual: 'Paciente refere cefaleia recorrente há 6 meses, cerca de 8-10 episódios/mês. Descreve dois tipos de dor: (1) Uma dor bilateral, em pressão, intensidade 4-5/10, que melhora com paracetamol e não impede atividades - esta ocorre quase diariamente. (2) Outra dor unilateral, pulsátil, intensidade 8/10, com náuseas e fotofobia, que a obriga a deitar no escuro - ocorre 3-4x/mês, durante menstruação. Nega aura visual. Nega febre, rigidez de nuca, alteração visual persistente. Mãe tem "enxaqueca". Trabalha 10h/dia no computador. Dorme 5-6h/noite.'
+  },
+  
+  etapas: [
+    {
+      id: 'etapa-1-redflags',
+      titulo: 'Avaliação de Sinais de Alarme',
+      tipo: 'anamnese',
+      conteudo: {
+        texto: 'Antes de classificar a cefaleia, você precisa excluir causas secundárias.',
+        dicas: ['SNOOP mnemônico para red flags', 'Cefaleia secundária = exame neurológico obrigatório']
+      },
+      pergunta: {
+        enunciado: 'Qual característica seria um RED FLAG para cefaleia secundária?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Dor pulsátil unilateral', correta: false },
+          { id: 'b', texto: 'Piora durante a menstruação', correta: false },
+          { id: 'c', texto: 'Cefaleia "a pior da vida" de início súbito', correta: true },
+          { id: 'd', texto: 'Associação com náuseas e fotofobia', correta: false }
+        ],
+        respostaCorreta: 'c',
+        explicacao: 'Red flags (SNOOP): Systemic (febre, HIV, câncer), Neurologic signs, Onset súbito ("thunderclap"), Older (>50 anos, nova), Positional. "Pior da vida" + súbita = pensar em HSA. Características típicas de migrânea NÃO são red flags.',
+        pontos: 15
+      }
+    },
+    {
+      id: 'etapa-2-classificacao',
+      titulo: 'Classificação das Cefaleias',
+      tipo: 'diagnostico',
+      conteudo: {
+        texto: 'Patrícia descreve dois padrões diferentes de cefaleia.',
+        dados: {
+          'Padrão 1': 'Bilateral, pressão, 4-5/10, diário, melhora com analgésico',
+          'Padrão 2': 'Unilateral, pulsátil, 8/10, 3-4x/mês, náusea, fotofobia'
+        }
+      },
+      pergunta: {
+        enunciado: 'Quais são os diagnósticos mais prováveis para os dois padrões?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Padrão 1: Migrânea sem aura | Padrão 2: Tensional', correta: false },
+          { id: 'b', texto: 'Padrão 1: Tensional | Padrão 2: Migrânea sem aura', correta: true },
+          { id: 'c', texto: 'Padrão 1: Cluster | Padrão 2: Migrânea com aura', correta: false },
+          { id: 'd', texto: 'Ambas são migrânea em diferentes intensidades', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Padrão 1 = Tensional: bilateral, pressão, intensidade leve-moderada, sem náusea. Padrão 2 = Migrânea sem aura: unilateral, pulsátil, moderada-intensa, náusea, foto/fonofobia. Comum coexistirem na mesma pessoa.',
+        pontos: 15
+      }
+    },
+    {
+      id: 'etapa-3-profilaxia',
+      titulo: 'Indicação de Profilaxia',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'Você precisa decidir se há indicação de tratamento profilático.',
+        dados: {
+          'Frequência migrânea': '3-4 episódios/mês',
+          'Incapacidade': 'Perde 1-2 dias de trabalho/mês',
+          'Uso de analgésicos': '10-12 dias/mês'
+        }
+      },
+      pergunta: {
+        enunciado: 'Qual a PRINCIPAL indicação de profilaxia para migrânea?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: '≥1 crise/mês', correta: false },
+          { id: 'b', texto: '≥4 crises/mês OU impacto significativo na qualidade de vida', correta: true },
+          { id: 'c', texto: 'Apenas se cefaleia crônica diária', correta: false },
+          { id: 'd', texto: 'Apenas se refratária a triptanos', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Indicações de profilaxia: ≥4 crises/mês, crises muito incapacitantes, uso excessivo de analgésicos (>10 dias/mês), contraindicação a tratamento agudo. Patrícia tem impacto funcional + uso excessivo de analgésicos.',
+        pontos: 15
+      }
+    },
+    {
+      id: 'etapa-4-escolha',
+      titulo: 'Escolha do Profilático',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'Você decide iniciar profilaxia.',
+        dicas: ['Betabloqueadores e antidepressivos são primeira linha', 'Considerar comorbidades']
+      },
+      pergunta: {
+        enunciado: 'Qual medicamento é MAIS adequado como profilático para Patrícia?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Amitriptilina 25mg à noite', correta: true },
+          { id: 'b', texto: 'Topiramato 100mg/dia', correta: false },
+          { id: 'c', texto: 'Flunarizina 10mg à noite', correta: false },
+          { id: 'd', texto: 'Valproato 500mg 12/12h', correta: false }
+        ],
+        respostaCorreta: 'a',
+        explicacao: 'Amitriptilina é excelente escolha: eficaz para AMBAS (migrânea E tensional), melhora sono (ela dorme pouco), disponível no SUS, baixo custo. Betabloqueadores também são primeira linha. Topiramato tem mais efeitos colaterais.',
+        pontos: 20
+      }
+    },
+    {
+      id: 'etapa-5-agudo',
+      titulo: 'Tratamento das Crises',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'Além da profilaxia, você precisa orientar o tratamento das crises de migrânea.',
+        dicas: ['Triptanos são específicos para migrânea', 'Tratar precocemente']
+      },
+      pergunta: {
+        enunciado: 'Qual a orientação correta para tratamento agudo da crise de migrânea?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Usar analgésico comum e esperar 2h antes de triptano', correta: false },
+          { id: 'b', texto: 'Triptano precoce + antiemético, máximo 10 dias/mês', correta: true },
+          { id: 'c', texto: 'Opioides são primeira linha para crises intensas', correta: false },
+          { id: 'd', texto: 'Ergotamina diária é segura por ser natural', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Triptano (sumatriptano, naratriptano) no INÍCIO da crise é mais eficaz. Limitar uso a <10 dias/mês (evitar cefaleia por uso excessivo). Metoclopramida melhora absorção e trata náusea. NUNCA opioides de rotina.',
+        pontos: 10
+      }
+    }
+  ],
+  
+  desfecho: {
+    resumo: 'Patrícia tinha cefaleia tensional crônica + migrânea episódica, com uso excessivo de analgésicos.',
+    diagnosticoFinal: 'Migrânea sem aura (G43.0) | Cefaleia tensional episódica (G44.2) | Uso excessivo de analgésicos',
+    tratamentoRealizado: 'Amitriptilina 25mg → 50mg à noite. Sumatriptano 50mg para crises de migrânea. Orientada higiene do sono, pausas no trabalho, limitar analgésicos.',
+    evolucao: 'Em 8 semanas: migrânea reduziu para 1x/mês. Tensional esporádica. Sono melhorou. Uso de analgésicos <5 dias/mês.',
+    licoesPrincipais: [
+      'Sempre excluir red flags antes de diagnosticar cefaleia primária',
+      'Tensional e migrânea frequentemente coexistem',
+      'Uso excessivo de analgésicos pode cronificar cefaleia',
+      'Amitriptilina trata ambos os tipos + melhora sono',
+      'Profilaxia deve ser mantida por 3-6 meses'
+    ],
+    errosComuns: [
+      'Solicitar TC/RM em cefaleia primária típica',
+      'Prescrever opioides para migrânea',
+      'Não limitar uso de analgésicos',
+      'Usar profilático apenas por 2-4 semanas',
+      'Não abordar fatores de estilo de vida'
+    ]
+  },
+  
+  objetivosAprendizagem: [
+    'Identificar red flags para cefaleia secundária',
+    'Diferenciar tensional de migrânea',
+    'Indicar profilaxia adequadamente',
+    'Prescrever tratamento agudo e preventivo'
+  ],
+  competencias: ['Diagnóstico clínico', 'Prescrição racional', 'Educação em saúde'],
+  doencasRelacionadas: ['cefaleia-tensional', 'migranca'],
+  medicamentosRelacionados: ['amitriptilina', 'paracetamol', 'ibuprofeno'],
+  calculadorasRelacionadas: [],
+  referencias: ['IHS Classification ICHD-3', 'AHS Treatment Guidelines 2021'],
+  tags: ['cefaleia', 'migrânea', 'tensional', 'neurológico', 'intermediário']
+};
+
+// ============================================================================
+// CASO 10: DPOC
+// ============================================================================
+
+export const casoDPOC: CasoClinico = {
+  id: 'caso-dpoc-001',
+  titulo: 'DPOC na Atenção Primária',
+  subtitulo: 'Diagnóstico, classificação GOLD e tratamento escalonado',
+  categoria: 'respiratorio',
+  dificuldade: 'avancado',
+  tempoEstimado: 22,
+  ultimaAtualizacao: '2024-12',
+  
+  apresentacao: {
+    paciente: {
+      nome: 'Joaquim Pereira',
+      idade: 62,
+      sexo: 'M',
+      profissao: 'Aposentado (ex-mineiro)',
+      estadoCivil: 'Viúvo'
+    },
+    queixaPrincipal: 'Falta de ar progressiva há 2 anos',
+    historiaDoencaAtual: 'Paciente refere dispneia que iniciou há 2 anos, insidiosa, progressiva. Atualmente sente falta de ar ao caminhar 100 metros em terreno plano, precisando parar para descansar. Tosse crônica matinal produtiva há 10 anos, com escarro claro. Nega hemoptise. Refere 3 "crises de bronquite" no último ano que precisou de antibiótico e corticoide oral. Tabagista 45 anos-maço (parou há 2 anos após a última internação). Trabalhou 25 anos em mineração. Nega asma na infância.'
+  },
+  
+  etapas: [
+    {
+      id: 'etapa-1-espiro',
+      titulo: 'Confirmação Diagnóstica',
+      tipo: 'exames_complementares',
+      conteudo: {
+        texto: 'Você solicita espirometria pré e pós-broncodilatador.',
+        dados: {
+          'VEF1 pré-BD': '1,2 L (42% previsto)',
+          'CVF pré-BD': '2,8 L (78% previsto)',
+          'VEF1/CVF pré-BD': '0,43',
+          'VEF1 pós-BD': '1,35 L (47% previsto)',
+          'Variação VEF1': '+12% e +150mL',
+          'Resposta ao BD': 'Positiva parcial'
+        }
+      },
+      pergunta: {
+        enunciado: 'O diagnóstico de DPOC é confirmado porque:',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'VEF1 <50% do previsto', correta: false },
+          { id: 'b', texto: 'VEF1/CVF <0,70 PÓS-broncodilatador', correta: true },
+          { id: 'c', texto: 'Resposta ao broncodilatador positiva', correta: false },
+          { id: 'd', texto: 'História de tabagismo', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'DPOC = obstrução NÃO TOTALMENTE reversível. Critério diagnóstico: VEF1/CVF <0,70 (ou <LIN) PÓS-broncodilatador. O VEF1 pós-BD classifica gravidade da obstrução. Resposta ao BD não exclui DPOC.',
+        pontos: 15
+      }
+    },
+    {
+      id: 'etapa-2-classificacao',
+      titulo: 'Classificação GOLD ABE',
+      tipo: 'diagnostico',
+      conteudo: {
+        texto: 'Você aplica mMRC e conta exacerbações para classificar.',
+        dados: {
+          'mMRC': '3 (para por falta de ar após 100m)',
+          'CAT': '22 pontos (impacto alto)',
+          'Exacerbações no ano': '3 (1 com internação)',
+          'VEF1 pós-BD': '47% (GOLD 3 - grave)'
+        }
+      },
+      pergunta: {
+        enunciado: 'De acordo com GOLD 2024, qual é a classificação deste paciente?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'GOLD A', correta: false },
+          { id: 'b', texto: 'GOLD B', correta: false },
+          { id: 'c', texto: 'GOLD E', correta: true },
+          { id: 'd', texto: 'GOLD 3', correta: false }
+        ],
+        respostaCorreta: 'c',
+        explicacao: 'GOLD 2024: A (≤1 exacerb. moderada + mMRC 0-1), B (≤1 exacerb + mMRC ≥2), E (≥2 moderadas OU ≥1 com internação). Este paciente tem 3 exacerbações (1 grave) = GOLD E. GOLD 3 é a classificação espirométrica (VEF1 30-50%).',
+        pontos: 20
+      }
+    },
+    {
+      id: 'etapa-3-tratamento',
+      titulo: 'Tratamento de Manutenção',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'Com base na classificação GOLD E, você precisa definir o tratamento.',
+        dicas: ['GOLD E = alto risco de exacerbação', 'LAMA+LABA é base do tratamento']
+      },
+      pergunta: {
+        enunciado: 'Qual o tratamento de manutenção recomendado para GOLD E?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'SABA isolado conforme necessidade', correta: false },
+          { id: 'b', texto: 'LAMA isolado', correta: false },
+          { id: 'c', texto: 'LAMA + LABA', correta: true },
+          { id: 'd', texto: 'CI + LABA', correta: false }
+        ],
+        respostaCorreta: 'c',
+        explicacao: 'GOLD E: LAMA+LABA como primeira linha. Se eosinófilos >300 ou asma concomitante, adicionar CI (tripla terapia). Se eosinófilos <100, não usar CI. Este paciente deve iniciar LAMA+LABA.',
+        pontos: 20
+      }
+    },
+    {
+      id: 'etapa-4-eosinofilos',
+      titulo: 'Decisão sobre Corticoide Inalatório',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'Você solicita hemograma para avaliar eosinófilos.',
+        dados: {
+          'Eosinófilos': '420/mm³ (6%)',
+          'Classificação': '>300 = favorece uso de CI'
+        }
+      },
+      pergunta: {
+        enunciado: 'Com eosinófilos 420/mm³, qual a conduta quanto ao corticoide inalatório?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'CI contraindicado na DPOC', correta: false },
+          { id: 'b', texto: 'Adicionar CI à terapia LAMA+LABA (tripla terapia)', correta: true },
+          { id: 'c', texto: 'CI apenas se internação em UTI', correta: false },
+          { id: 'd', texto: 'CI apenas se VEF1 <30%', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Eosinófilos ≥300 + exacerbações frequentes = forte indicação de CI. Tripla terapia (LAMA+LABA+CI) reduz exacerbações neste fenótipo. Se eosinófilos <100, CI tem pouco benefício e aumenta risco de pneumonia.',
+        pontos: 15
+      }
+    },
+    {
+      id: 'etapa-5-medidas',
+      titulo: 'Medidas Não Farmacológicas',
+      tipo: 'educacao',
+      conteudo: {
+        texto: 'Além dos medicamentos, você precisa orientar medidas essenciais.',
+        dicas: ['Reabilitação pulmonar é fundamental', 'Vacinação previne exacerbações']
+      },
+      pergunta: {
+        enunciado: 'Qual medida tem MAIOR impacto na história natural da DPOC?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Uso contínuo de broncodilatadores', correta: false },
+          { id: 'b', texto: 'Cessação tabágica (já parou)', correta: true },
+          { id: 'c', texto: 'Oxigenoterapia domiciliar', correta: false },
+          { id: 'd', texto: 'Corticoide inalatório', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Cessação tabágica é a ÚNICA intervenção que comprovadamente reduz mortalidade e desacelera perda de função pulmonar. Joaquim já parou - reforçar manutenção. O2 domiciliar reduz mortalidade apenas se hipoxemia crônica grave.',
+        pontos: 10
+      }
+    }
+  ],
+  
+  desfecho: {
+    resumo: 'Joaquim tinha DPOC grave (GOLD 3, grupo E) com fenótipo eosinofílico.',
+    diagnosticoFinal: 'DPOC GOLD 3E (J44.1) | Ex-tabagista | Pneumoconiose (exposição ocupacional)',
+    tratamentoRealizado: 'Tripla terapia: Tiotrópio 18mcg + Formoterol/Budesonida. Vacinas influenza e pneumocócica. Encaminhado para reabilitação pulmonar. Avaliação de O2 domiciliar se hipoxemia.',
+    evolucao: 'Em 6 meses: exacerbações reduziram para 1. mMRC 2. Completou reabilitação. SpO2 94% em ar ambiente (sem indicação de O2). Qualidade de vida melhorou significativamente.',
+    licoesPrincipais: [
+      'Diagnóstico de DPOC requer espirometria PÓS-broncodilatador',
+      'GOLD ABE classifica por sintomas e exacerbações',
+      'GOLD E = LAMA+LABA de primeira linha',
+      'Eosinófilos guiam decisão de adicionar CI',
+      'Cessação tabágica é a medida de maior impacto'
+    ],
+    errosComuns: [
+      'Diagnosticar DPOC sem espirometria',
+      'Usar CI isolado sem LABA/LAMA',
+      'Ignorar contagem de eosinófilos',
+      'Não vacinar anualmente',
+      'Não encaminhar para reabilitação pulmonar'
+    ]
+  },
+  
+  objetivosAprendizagem: [
+    'Confirmar diagnóstico com espirometria pós-BD',
+    'Classificar DPOC pelo GOLD ABE',
+    'Escolher tratamento baseado em fenótipo',
+    'Indicar medidas não farmacológicas'
+  ],
+  competencias: ['Diagnóstico clínico', 'Interpretação de exames', 'Prescrição racional', 'Prevenção quaternária'],
+  doencasRelacionadas: ['dpoc'],
+  medicamentosRelacionados: ['salbutamol', 'beclometasona'],
+  calculadorasRelacionadas: [],
+  referencias: ['GOLD 2024', 'Diretriz SBPT DPOC 2021'],
+  tags: ['DPOC', 'respiratório', 'tabagismo', 'espirometria', 'avançado']
+};
+
+// ============================================================================
+// TODOS OS CASOS
+// ============================================================================
+
 export const todosCasosClinicos: CasoClinico[] = [
   casoHAS,
   casoDM2,
@@ -1253,6 +1818,9 @@ export const todosCasosClinicos: CasoClinico[] = [
   casoLombalgia,
   casoITU,
   casoAnsiedade,
+  casoPneumonia,
+  casoCefaleia,
+  casoDPOC,
 ];
 
 // Funções auxiliares
