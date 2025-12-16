@@ -108,7 +108,7 @@ export default function RootLayout({
                   basePath = '/darwin-MFC';
                 }
                 
-                // Update manifest and icon links if basePath is detected
+                // Update manifest, icon, and CSS links if basePath is detected
                 if (basePath) {
                   var manifestLink = document.querySelector('link[rel="manifest"]');
                   if (manifestLink) {
@@ -118,6 +118,22 @@ export default function RootLayout({
                   if (appleIcon) {
                     appleIcon.setAttribute('href', basePath + '/logos/sus-logo.svg');
                   }
+                  // Update CSS links
+                  var cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
+                  cssLinks.forEach(function(link) {
+                    var href = link.getAttribute('href');
+                    if (href && href.startsWith('/_next/')) {
+                      link.setAttribute('href', basePath + href);
+                    }
+                  });
+                  // Update script src attributes
+                  var scripts = document.querySelectorAll('script[src]');
+                  scripts.forEach(function(script) {
+                    var src = script.getAttribute('src');
+                    if (src && src.startsWith('/_next/')) {
+                      script.setAttribute('src', basePath + src);
+                    }
+                  });
                 }
                 
                 try {
