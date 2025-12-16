@@ -18,6 +18,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_PATH 
+      ? 'https://agourakis82.github.io/darwin-MFC'
+      : 'http://localhost:3000'
+  ),
   title: {
     default: "Darwin MFC - Guia de Medicina de Família e Comunidade",
     template: "%s - Darwin MFC",
