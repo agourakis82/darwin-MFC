@@ -614,5 +614,332 @@ export const doencasAdicionais: Partial<Doenca>[] = [
     protocolos: [],
     calculadoras: ['fagerstrom']
   },
+
+  // ============================================
+  // CONDIÇÕES GASTROINTESTINAIS ADICIONAIS
+  // ============================================
+  {
+    id: 'gastrite',
+    titulo: 'Gastrite',
+    ciap2: ['D84'],
+    cid10: ['K29'],
+    categoria: 'gastrointestinal',
+    doid: 'DOID:3119',
+    snomedCT: '396332003',
+    meshId: 'D005756',
+    umlsCui: 'C0017159',
+    quickView: {
+      definicao: 'Inflamação da mucosa gástrica. Aguda (H. pylori, AINEs, álcool, estresse) ou crônica. Helicobacter pylori presente em 70-80% dos casos.',
+      criteriosDiagnosticos: ['Dor epigástrica', 'Sensação de plenitude', 'Náuseas', 'Endoscopia (padrão-ouro)', 'Teste de H. pylori'],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Evitar fatores agressores (AINEs, álcool, tabaco)', 'Dieta fracionada'],
+        farmacologico: ['H. pylori+: Tratamento erradicador (Amoxicilina + Claritromicina + IBP por 14 dias)', 'Sem H. pylori: IBP se sintomático (Omeprazol 20-40mg/dia)']
+      },
+      redFlags: ['Hematêmese', 'Melena', 'Perda de peso', 'Anemia', 'Idade >55 anos com sintomas novos']
+    },
+    medicamentos: ['omeprazol', 'amoxicilina', 'claritromicina'],
+    protocolos: [],
+    calculadoras: []
+  },
+  {
+    id: 'constipacao-intestinal',
+    titulo: 'Constipação Intestinal',
+    ciap2: ['D12'],
+    cid10: ['K59.0'],
+    categoria: 'gastrointestinal',
+    doid: 'DOID:10533',
+    snomedCT: '14760008',
+    meshId: 'D003248',
+    umlsCui: 'C0009806',
+    quickView: {
+      definicao: 'Defecação infrequente (<3x/semana) ou dificultosa por >3 meses. Constipação funcional (mais comum) vs orgânica.',
+      criteriosDiagnosticos: ['<3 evacuações/semana', 'Esforço excessivo', 'Fezes endurecidas', 'Sensação de esvaziamento incompleto', 'Critérios Roma IV'],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Aumento de fibras (25-30g/dia)', 'Hidratação adequada', 'Atividade física', 'Hábitos intestinais regulares'],
+        farmacologico: ['Primeira linha: Laxante formador de bolo (Psyllium) ou osmótico (Lactulose 15-30ml/dia)', 'Se refratária: Polietilenoglicol ou laxante estimulante (senna)']
+      },
+      redFlags: ['Sintomas de alarme (sangramento, perda de peso, anemia)', 'Obstrução intestinal', 'Megacólon']
+    },
+    medicamentos: ['lactulose', 'psyllium'],
+    protocolos: [],
+    calculadoras: []
+  },
+  {
+    id: 'gastroenterite-aguda',
+    titulo: 'Gastroenterite Aguda',
+    ciap2: ['D70'],
+    cid10: ['A09'],
+    categoria: 'infecciosas',
+    doid: 'DOID:3119',
+    snomedCT: '235856003',
+    meshId: 'D005759',
+    umlsCui: 'C0017163',
+    quickView: {
+      definicao: 'Inflamação do trato gastrointestinal causada por vírus (rotavírus, norovírus), bactérias ou parasitas. Duração <2 semanas.',
+      criteriosDiagnosticos: ['Diarreia aguda (<14 dias)', 'Vômitos', 'Náuseas', 'Cólicas abdominais', 'Febre pode estar presente'],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Hidratação oral (SRO)', 'Dieta leve', 'Repouso'],
+        farmacologico: ['ATB apenas se: cólera, shigelose, amebíase, ou fatores de risco', 'Antiemético se necessário: Ondansetrona (evitar em crianças <4 anos)']
+      },
+      redFlags: ['Desidratação severa', 'Sinais de choque', 'Sangue nas fezes', 'Idosos ou crianças pequenas']
+    },
+    medicamentos: ['soro-oral'],
+    protocolos: [],
+    calculadoras: []
+  },
+
+  // ============================================
+  // CONDIÇÕES RESPIRATÓRIAS ADICIONAIS
+  // ============================================
+  {
+    id: 'faringite-aguda',
+    titulo: 'Faringite Aguda',
+    ciap2: ['R72'],
+    cid10: ['J02'],
+    categoria: 'respiratorio',
+    doid: 'DOID:974',
+    snomedCT: '363746003',
+    meshId: 'D010612',
+    umlsCui: 'C0031350',
+    quickView: {
+      definicao: 'Inflamação da faringe. Maioria viral (70-90%). Estreptocócica (GABHS) em 15-30% das crianças, 5-15% dos adultos.',
+      criteriosDiagnosticos: ['Dor de garganta', 'Eritema faríngeo', 'Exsudato amigdaliano', 'Adenomegalia cervical', 'Critérios de Centor modificado'],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Analgésicos (paracetamol/ibuprofeno)', 'Gargarejo com água morna e sal'],
+        farmacologico: ['Viral: sintomático apenas', 'Bacteriana (GABHS): Penicilina V 250-500mg 6/6h por 10 dias OU Amoxicilina 500mg 8/8h']
+      },
+      redFlags: ['Trismo', 'Desvio de úvula', 'Estridor', 'Abscesso periamigdaliano']
+    },
+    medicamentos: ['amoxicilina', 'paracetamol', 'ibuprofeno'],
+    protocolos: [],
+    calculadoras: []
+  },
+  {
+    id: 'bronquite-aguda',
+    titulo: 'Bronquite Aguda',
+    ciap2: ['R78'],
+    cid10: ['J20'],
+    categoria: 'respiratorio',
+    doid: 'DOID:6132',
+    snomedCT: '32398004',
+    meshId: 'D001991',
+    umlsCui: 'C0006267',
+    quickView: {
+      definicao: 'Inflamação dos brônquios de duração <3 semanas. Geralmente viral (90%). Tosse pode persistir 2-3 semanas.',
+      criteriosDiagnosticos: ['Tosse produtiva', 'Sem evidência de pneumonia', 'Duração <3 semanas', 'Sintomas respiratórios altos'],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Hidratação', 'Repouso', 'Evitar irritantes'],
+        farmacologico: ['Sintomático: antitussígenos se tosse seca perturbadora', 'Antibióticos NÃO indicados rotineiramente', 'Broncodilatador se sibilos (Salbutamol inalatório)']
+      },
+      redFlags: ['Tosse >3 semanas', 'Sinais de pneumonia', 'Hemoptise', 'Dispneia']
+    },
+    medicamentos: ['salbutamol'],
+    protocolos: [],
+    calculadoras: []
+  },
+
+  // ============================================
+  // CONDIÇÕES DERMATOLÓGICAS ADICIONAIS
+  // ============================================
+  {
+    id: 'dermatite-contato',
+    titulo: 'Dermatite de Contato',
+    ciap2: ['S88'],
+    cid10: ['L25'],
+    categoria: 'dermatologico',
+    doid: 'DOID:13360',
+    snomedCT: '40275004',
+    meshId: 'D017449',
+    umlsCui: 'C0011606',
+    quickView: {
+      definicao: 'Erupção cutânea causada por contato direto com irritante ou alérgeno. Irritativa (80%) vs alérgica (20%).',
+      criteriosDiagnosticos: ['Eritema localizado', 'Prurido', 'Vesículas/bolhas (alérgica)', 'História de exposição', 'Distribuição compatível'],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Identificar e evitar agente causador', 'Compressas frias', 'Hidratação cutânea'],
+        farmacologico: ['Corticoide tópico: Hidrocortisona 1% (face) ou Betametasona (corpo) 2x/dia até resolução', 'Antihistamínico oral se prurido intenso']
+      },
+      redFlags: ['Superinfecção', 'Eczema generalizado', 'Anafilaxia']
+    },
+    medicamentos: ['hidrocortisona', 'betametasona'],
+    protocolos: [],
+    calculadoras: []
+  },
+  {
+    id: 'urticaria',
+    titulo: 'Urticária',
+    ciap2: ['S97'],
+    cid10: ['L50'],
+    categoria: 'dermatologico',
+    doid: 'DOID:6945',
+    snomedCT: '42702005',
+    meshId: 'D014581',
+    umlsCui: 'C0020538',
+    quickView: {
+      definicao: 'Erupção cutânea caracterizada por pápulas/placas eritematosas pruriginosas transitórias (<24h). Aguda (<6 semanas) vs crônica.',
+      criteriosDiagnosticos: ['Pápulas/placas eritematosas', 'Prurido intenso', 'Lesões evanescentes (<24h)', 'Angioedema pode estar presente'],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Evitar desencadeantes identificados', 'Compressas frias'],
+        farmacologico: ['Antihistamínico H1 não sedativo: Loratadina 10mg 1x/dia ou Cetirizina 10mg 1x/dia', 'Se refratária: aumentar dose ou adicionar outro antihistamínico']
+      },
+      redFlags: ['Angioedema de vias aéreas', 'Anafilaxia', 'Urticária crônica com angioedema']
+    },
+    medicamentos: ['loratadina', 'cetirizina'],
+    protocolos: [],
+    calculadoras: []
+  },
+
+  // ============================================
+  // CONDIÇÕES ENDÓCRINAS ADICIONAIS
+  // ============================================
+  {
+    id: 'hipotireoidismo',
+    titulo: 'Hipotireoidismo',
+    ciap2: ['T86'],
+    cid10: ['E03'],
+    categoria: 'endocrino',
+    doid: 'DOID:409',
+    snomedCT: '40930008',
+    meshId: 'D007037',
+    umlsCui: 'C0020676',
+    quickView: {
+      definicao: 'Deficiência de hormônios tireoidianos. Primário (tireoidite de Hashimoto, pós-cirúrgico) mais comum que secundário.',
+      criteriosDiagnosticos: ['TSH elevado', 'T4 livre baixo ou normal', 'Sintomas: fadiga, ganho de peso, intolerância ao frio, constipação'],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Monitoramento periódico', 'Ajuste de dose conforme resposta'],
+        farmacologico: ['Levotiroxina (T4 sintético): dose inicial 25-50μg/dia, ajustar até TSH normal', 'Dose de manutenção: 1,6-1,8μg/kg/dia']
+      },
+      redFlags: ['Mixedema (hipotireoidismo severo)', 'Coma mixedematoso', 'Angina instável']
+    },
+    medicamentos: ['levotiroxina'],
+    protocolos: [],
+    calculadoras: []
+  },
+  {
+    id: 'hipertireoidismo',
+    titulo: 'Hipertireoidismo',
+    ciap2: ['T85'],
+    cid10: ['E05'],
+    categoria: 'endocrino',
+    doid: 'DOID:7998',
+    snomedCT: '34486009',
+    meshId: 'D006980',
+    umlsCui: 'C0020550',
+    quickView: {
+      definicao: 'Excesso de hormônios tireoidianos. Doença de Graves (autoimune) é causa mais comum (70-80%).',
+      criteriosDiagnosticos: ['TSH suprimido', 'T4 livre e/ou T3 elevados', 'Sintomas: taquicardia, perda de peso, ansiedade, tremores'],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Repouso', 'Evitar estresse', 'Bloqueador beta para sintomas'],
+        farmacologico: ['Metimazol 10-40mg/dia (primeira linha) OU Propiltiouracil se gestação/amamentação', 'Bloqueador beta: Propranolol para sintomas adrenérgicos']
+      },
+      redFlags: ['Crise tireotóxica', 'Fibrilação atrial', 'Insuficiência cardíaca']
+    },
+    medicamentos: ['metimazol', 'propranolol'],
+    protocolos: [],
+    calculadoras: []
+  },
+
+  // ============================================
+  // CONDIÇÕES MUSCULOESQUELÉTICAS ADICIONAIS
+  // ============================================
+  {
+    id: 'tendinite',
+    titulo: 'Tendinite',
+    ciap2: ['L92'],
+    cid10: ['M65'],
+    categoria: 'musculoesqueletico',
+    doid: 'DOID:13361',
+    snomedCT: '42475007',
+    meshId: 'D052256',
+    umlsCui: 'C0039482',
+    quickView: {
+      definicao: 'Inflamação do tendão. Frequentemente por uso excessivo ou trauma. Ombro, cotovelo, punho são locais comuns.',
+      criteriosDiagnosticos: ['Dor localizada no tendão', 'Dor agravada por movimento', 'Edema local', 'Limitação funcional'],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Repouso relativo', 'Gelo nas primeiras 48-72h', 'Fisioterapia', 'Alongamentos'],
+        farmacologico: ['AINEs: Ibuprofeno 400-600mg 8/8h por 5-7 dias', 'Injeção local de corticoide se refratária']
+      },
+      redFlags: ['Ruptura tendão', 'Infecção', 'Tendinite de repetição']
+    },
+    medicamentos: ['ibuprofeno'],
+    protocolos: [],
+    calculadoras: []
+  },
+  {
+    id: 'osteoartrite',
+    titulo: 'Osteoartrite (Artrose)',
+    ciap2: ['L91'],
+    cid10: ['M15', 'M19'],
+    categoria: 'musculoesqueletico',
+    doid: 'DOID:8398',
+    snomedCT: '396275006',
+    meshId: 'D010003',
+    umlsCui: 'C0029408',
+    quickView: {
+      definicao: 'Doença degenerativa das articulações. Mais comum em idosos. Joelhos, quadris, mãos são mais afetados.',
+      criteriosDiagnosticos: ['Dor articular piora com atividade', 'Rigidez matinal <30min', 'Crepitação', 'Radiografia: estreitamento de espaço, osteófitos'],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Exercícios (fortalecimento, alongamento)', 'Perda de peso se obeso', 'Fisioterapia', 'Órteses se necessário'],
+        farmacologico: ['Paracetamol 1g 6/6h (primeira linha)', 'Se insuficiente: AINEs tópicos ou orais', 'Injeção intra-articular de corticoide se necessário']
+      },
+      redFlags: ['Infecção articular', 'Fratura', 'Artropatia inflamatória']
+    },
+    medicamentos: ['paracetamol', 'ibuprofeno'],
+    protocolos: [],
+    calculadoras: []
+  },
+
+  // ============================================
+  // CONDIÇÕES HEMATOLÓGICAS
+  // ============================================
+  {
+    id: 'anemia-ferropriva',
+    titulo: 'Anemia Ferropriva',
+    ciap2: ['B82'],
+    cid10: ['D50'],
+    categoria: 'hematologico',
+    doid: 'DOID:2355',
+    snomedCT: '266331005',
+    meshId: 'D000748',
+    umlsCui: 'C0002871',
+    quickView: {
+      definicao: 'Anemia por deficiência de ferro, causa mais comum de anemia. Mulheres em idade fértil, gestantes, crianças são grupos de risco.',
+      criteriosDiagnosticos: ['Hemoglobina baixa', 'Ferritina baixa', 'Ferro sérico baixo', 'TIBC elevada', 'Sintomas: fadiga, palidez, taquicardia'],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Dieta rica em ferro (carnes, folhosos)', 'Identificar e tratar causa (sangramento, deficiência nutricional)'],
+        farmacologico: ['Sulfato ferroso 200mg (65mg de ferro elementar) 1-2x/dia em jejum', 'Vitamina C aumenta absorção', 'Duração: 3-6 meses até repor estoques']
+      },
+      redFlags: ['Sangramento ativo', 'Anemia severa sintomática', 'Refratária ao tratamento']
+    },
+    medicamentos: ['sulfato-ferroso'],
+    protocolos: [],
+    calculadoras: []
+  },
+
+  // ============================================
+  // CONDIÇÕES OTORRINOLARINGOLÓGICAS ADICIONAIS
+  // ============================================
+  {
+    id: 'otite-media-aguda',
+    titulo: 'Otite Média Aguda',
+    ciap2: ['H71'],
+    cid10: ['H66'],
+    categoria: 'respiratorio',
+    doid: 'DOID:10723',
+    snomedCT: '193462001',
+    meshId: 'D010033',
+    umlsCui: 'C0029881',
+    quickView: {
+      definicao: 'Infecção do ouvido médio. Comum em crianças. Vírus ou bactérias (S. pneumoniae, H. influenzae).',
+      criteriosDiagnosticos: ['Abaulamento da membrana timpânica (mais específico)', 'Hiperemia timpânica', 'Otalgia', 'Febre pode estar presente'],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: ['Analgésico: Paracetamol ou Ibuprofeno', 'Observação pode ser opção em casos selecionados'],
+        farmacologico: ['<2 anos ou sintomas severos: Amoxicilina 80-90mg/kg/dia 12/12h por 10 dias', '≥2 anos, sintomas leves: pode observar 48-72h']
+      },
+      redFlags: ['Mastoidite', 'Paralisia facial', 'Abscesso', 'Complicações intracranianas']
+    },
+    medicamentos: ['amoxicilina', 'paracetamol'],
+    protocolos: [],
+    calculadoras: []
+  },
 ];
 
