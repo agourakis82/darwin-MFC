@@ -124,6 +124,7 @@ const navigationGroups: NavGroup[] = [
     sections: [
       { title: 'Consulta Rápida', icon: Zap, path: '/consulta-rapida' },
       { title: 'Prontuário SOAP', icon: ClipboardList, path: '/prontuario' },
+      { title: 'Modo Estudo', icon: GraduationCap, path: '/estudo', badge: 'Novo' },
       { title: 'Genograma', icon: Users, path: '/ferramentas/genograma', badge: 'Novo' },
       { title: 'Ecomapa', icon: Heart, path: '/ferramentas/ecomapa', badge: 'Novo' },
       { title: 'Interações Medicamentosas', icon: AlertTriangle, path: '/medicamentos/interacoes' },

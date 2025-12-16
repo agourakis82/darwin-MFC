@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { 
   ArrowLeft, BookOpen, Pill, FileText, Calculator, AlertTriangle,
   CheckCircle, XCircle, Clock, Users, Heart, ChevronDown, ChevronUp,
-  Stethoscope, Activity, Clipboard, Target, ExternalLink
+  Stethoscope, Activity, Clipboard, Target, ExternalLink, ClipboardCheck
 } from 'lucide-react';
 import { getDoencaById } from '@/lib/data/doencas/index';
 import { CATEGORIAS_DOENCA } from '@/lib/types/doenca';
@@ -15,11 +15,14 @@ import {
   getCalculadorasForDoenca 
 } from '@/lib/data/cross-references';
 import { notFound } from 'next/navigation';
+import ChecklistConsultaComponent from '../../components/Checklist/ChecklistConsulta';
+import { generateChecklistFromDoenca } from '@/lib/utils/checklist-generator';
 
 export default function DoencaDetailClient({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const doenca = getDoencaById(id);
   const [showFullContent, setShowFullContent] = useState(false);
+  const [showChecklist, setShowChecklist] = useState(false);
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['epidemiologia']));
   
   if (!doenca) {
@@ -37,6 +40,8 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
     }
     setExpandedSections(newExpanded);
   };
+
+  const checklist = generateChecklistFromDoenca(doenca as any);
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
@@ -78,11 +83,14 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
         </div>
         
         {/* Toggle View */}
-        <div className="flex gap-2 mt-4">
+        <div className="flex gap-2 mt-4 flex-wrap">
           <button
-            onClick={() => setShowFullContent(false)}
+            onClick={() => {
+              setShowFullContent(false);
+              setShowChecklist(false);
+            }}
             className={`px-4 py-2 rounded-xl font-medium transition-all ${
-              !showFullContent
+              !showFullContent && !showChecklist
                 ? 'bg-blue-600 text-white shadow-lg'
                 : 'bg-white/50 dark:bg-neutral-800/50 text-[#86868b] hover:bg-blue-100'
             }`}
@@ -90,20 +98,48 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
             ⚡ QuickView (1 tela)
           </button>
           <button
-            onClick={() => setShowFullContent(true)}
+            onClick={() => {
+              setShowFullContent(true);
+              setShowChecklist(false);
+            }}
             className={`px-4 py-2 rounded-xl font-medium transition-all ${
-              showFullContent
+              showFullContent && !showChecklist
                 ? 'bg-purple-600 text-white shadow-lg'
                 : 'bg-white/50 dark:bg-neutral-800/50 text-[#86868b] hover:bg-purple-100'
             }`}
           >
             📖 Versão Completa
           </button>
+          <button
+            onClick={() => {
+              setShowFullContent(false);
+              setShowChecklist(true);
+            }}
+            className={`px-4 py-2 rounded-xl font-medium transition-all flex items-center gap-2 ${
+              showChecklist
+                ? 'bg-emerald-600 text-white shadow-lg'
+                : 'bg-white/50 dark:bg-neutral-800/50 text-[#86868b] hover:bg-emerald-100'
+            }`}
+          >
+            <ClipboardCheck className="w-4 h-4" />
+            Checklist de Consulta
+          </button>
         </div>
       </div>
 
-      {/* QuickView Content */}
-      {!showFullContent && doenca.quickView ? (
+      {/* Checklist Content */}
+      {showChecklist ? (
+        <div className="mt-8">
+          <ChecklistConsultaComponent
+            checklist={checklist}
+            onComplete={(progress) => {
+              // Salvar no localStorage
+              const key = `checklist-${checklist.id}`;
+              localStorage.setItem(key, JSON.stringify(progress));
+            }}
+          />
+        </div>
+      ) : !showFullContent && doenca.quickView ? (
         <div className="space-y-6">
           {/* Definição */}
           <div className="glass-strong rounded-2xl p-6">
