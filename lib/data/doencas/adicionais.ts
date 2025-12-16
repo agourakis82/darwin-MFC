@@ -670,7 +670,7 @@ export const doencasAdicionais: Partial<Doenca>[] = [
     ciap2: ['D70'],
     cid10: ['A09'],
     categoria: 'infecciosas',
-    doid: 'DOID:3119',
+    doid: 'DOID:4194',
     snomedCT: '235856003',
     meshId: 'D005759',
     umlsCui: 'C0017163',
