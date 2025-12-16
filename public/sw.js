@@ -3,21 +3,40 @@
  * ===========================
  * 
  * Cache-first strategy for offline access
+ * Supports basePath for GitHub Pages deployment
  */
 
+// Detect basePath from service worker location
+const getBasePath = () => {
+  // Get the pathname of the service worker script
+  // e.g., /darwin-MFC/sw.js -> /darwin-MFC
+  const swPath = self.location.pathname;
+  if (swPath.startsWith('/darwin-MFC/')) {
+    return '/darwin-MFC';
+  }
+  return '';
+};
+
+const BASE_PATH = getBasePath();
+const path = (p) => {
+  // Ensure path starts with / and doesn't duplicate basePath
+  const cleanPath = p.startsWith('/') ? p : '/' + p;
+  return BASE_PATH + cleanPath;
+};
+
 const CACHE_NAME = 'darwin-mfc-v1';
-const OFFLINE_URL = '/offline.html';
+const OFFLINE_URL = path('/offline.html');
 
 // Resources to cache on install
 const PRECACHE_RESOURCES = [
-  '/',
-  '/doencas',
-  '/medicamentos',
-  '/calculadoras',
-  '/protocolos',
-  '/sus',
-  '/busca',
-  '/manifest.json',
+  path('/'),
+  path('/doencas/'),
+  path('/medicamentos/'),
+  path('/calculadoras/'),
+  path('/protocolos/'),
+  path('/sus/'),
+  path('/busca/'),
+  path('/manifest.json'),
 ];
 
 // Install event - cache core resources
@@ -103,8 +122,8 @@ self.addEventListener('sync', (event) => {
 self.addEventListener('push', (event) => {
   const options = {
     body: event.data?.text() || 'Nova atualização disponível!',
-    icon: '/icons/icon-192x192.png',
-    badge: '/icons/badge-72x72.png',
+    icon: path('/logos/sus-logo.svg'),
+    badge: path('/logos/sus-logo.svg'),
     vibrate: [100, 50, 100],
   };
 

@@ -100,6 +100,26 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
+                // Detect basePath from current location
+                var basePath = '';
+                var pathname = window.location.pathname;
+                // Check if we're in a GitHub Pages subdirectory
+                if (pathname.startsWith('/darwin-MFC') || window.location.hostname.includes('github.io')) {
+                  basePath = '/darwin-MFC';
+                }
+                
+                // Update manifest and icon links if basePath is detected
+                if (basePath) {
+                  var manifestLink = document.querySelector('link[rel="manifest"]');
+                  if (manifestLink) {
+                    manifestLink.setAttribute('href', basePath + '/manifest.json');
+                  }
+                  var appleIcon = document.querySelector('link[rel="apple-touch-icon"]');
+                  if (appleIcon) {
+                    appleIcon.setAttribute('href', basePath + '/logos/sus-logo.svg');
+                  }
+                }
+                
                 try {
                   var theme = localStorage.getItem('app-theme');
                   // Dark mode como padrão se não houver preferência salva
@@ -113,10 +133,11 @@ export default function RootLayout({
                   document.documentElement.classList.add('dark');
                 }
                 
-                // Register Service Worker
+                // Register Service Worker with basePath support
                 if ('serviceWorker' in navigator) {
                   window.addEventListener('load', function() {
-                    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    var swPath = basePath + '/sw.js';
+                    navigator.serviceWorker.register(swPath).then(function(registration) {
                       console.log('ServiceWorker registered: ', registration.scope);
                     }).catch(function(err) {
                       console.log('ServiceWorker registration failed: ', err);
