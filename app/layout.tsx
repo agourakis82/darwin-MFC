@@ -9,14 +9,62 @@ import KeyboardShortcuts from "./components/KeyboardShortcuts";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  themeColor: "#0f172a",
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
+  ],
 };
 
 export const metadata: Metadata = {
-  title: "Darwin MFC - Guia de Medicina de Família e Comunidade",
-  description: "Guia completo de Medicina de Família e Comunidade para consulta point-of-care na APS. Doenças, medicamentos, protocolos e calculadoras com padrão acadêmico Q1.",
+  title: {
+    default: "Darwin MFC - Guia de Medicina de Família e Comunidade",
+    template: "%s - Darwin MFC",
+  },
+  description: "Guia completo de Medicina de Família e Comunidade para consulta point-of-care na APS. 82 doenças, 138 medicamentos RENAME, protocolos flowchart e calculadoras clínicas com padrão acadêmico Q1. Codificação CIAP-2/CID-10.",
+  keywords: [
+    "medicina de família", "MFC", "APS", "atenção primária",
+    "doenças", "medicamentos", "RENAME", "protocolos",
+    "calculadoras médicas", "CIAP-2", "CID-10", "SUS",
+    "residência médica", "genograma", "ecomapa", "SOAP"
+  ],
+  authors: [{ name: "Agourakis Med Research" }],
+  creator: "Darwin Medical Foundation Cluster",
+  publisher: "Darwin MFC",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "https://agourakis82.github.io/darwin-MFC/",
+    siteName: "Darwin MFC",
+    title: "Darwin MFC - Guia de Medicina de Família e Comunidade",
+    description: "Guia completo para consulta point-of-care na APS. Doenças, medicamentos, protocolos e calculadoras com padrão Q1.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Darwin MFC - Guia de Medicina de Família",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Darwin MFC - Guia de MFC",
+    description: "Guia completo de Medicina de Família para APS",
+    images: ["/og-image.png"],
+  },
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -24,9 +72,15 @@ export const metadata: Metadata = {
     title: "Darwin MFC",
   },
   icons: {
-    icon: "/icons/icon-192x192.png",
-    apple: "/icons/icon-192x192.png",
+    icon: [
+      { url: "/icons/icon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [
+      { url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
   },
+  category: "medical",
 };
 
 export default function RootLayout({
@@ -77,13 +131,27 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <KeyboardShortcuts />
+          {/* Skip links for accessibility */}
+          <a 
+            href="#main-content" 
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg"
+          >
+            Pular para o conteúdo principal
+          </a>
+          <a 
+            href="#main-nav" 
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-64 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg"
+          >
+            Pular para navegação
+          </a>
+          
           <div className="min-h-screen flex flex-col">
             <Header />
             <div className="flex flex-1">
               <div className="hidden lg:block">
                 <Sidebar />
               </div>
-              <main className="flex-1 overflow-x-hidden">
+              <main id="main-content" className="flex-1 overflow-x-hidden" role="main" aria-label="Conteúdo principal">
                 {children}
               </main>
             </div>
