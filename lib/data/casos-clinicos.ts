@@ -212,9 +212,9 @@ export const casoDM2: CasoClinico = {
   subtitulo: 'Diagnóstico e tratamento inicial na APS',
   categoria: 'endocrino',
   dificuldade: 'iniciante',
-  tempoEstimado: 20,
+    tempoEstimado: 20,
   ultimaAtualizacao: '2024-12',
-  
+    
   apresentacao: {
     paciente: {
       nome: 'Maria Santos',
@@ -776,7 +776,7 @@ export const casoLombalgia: CasoClinico = {
     {
       id: 'etapa-2-exame',
       titulo: 'Exame Físico',
-      tipo: 'exame_fisico',
+        tipo: 'exame_fisico',
       conteudo: {
         texto: 'Você realiza exame físico da coluna e neurológico.',
         dados: {
@@ -828,7 +828,7 @@ export const casoLombalgia: CasoClinico = {
     },
     {
       id: 'etapa-4-tratamento',
-      titulo: 'Conduta Terapêutica',
+        titulo: 'Conduta Terapêutica',
       tipo: 'tratamento',
       conteudo: {
         texto: 'É hora de definir o tratamento para Pedro.',
@@ -1461,10 +1461,10 @@ export const casoCefaleia: CasoClinico = {
     },
     queixaPrincipal: 'Dor de cabeça frequente há 6 meses',
     historiaDoencaAtual: 'Paciente refere cefaleia recorrente há 6 meses, cerca de 8-10 episódios/mês. Descreve dois tipos de dor: (1) Uma dor bilateral, em pressão, intensidade 4-5/10, que melhora com paracetamol e não impede atividades - esta ocorre quase diariamente. (2) Outra dor unilateral, pulsátil, intensidade 8/10, com náuseas e fotofobia, que a obriga a deitar no escuro - ocorre 3-4x/mês, durante menstruação. Nega aura visual. Nega febre, rigidez de nuca, alteração visual persistente. Mãe tem "enxaqueca". Trabalha 10h/dia no computador. Dorme 5-6h/noite.'
-  },
-  
-  etapas: [
-    {
+    },
+    
+    etapas: [
+      {
       id: 'etapa-1-redflags',
       titulo: 'Avaliação de Sinais de Alarme',
       tipo: 'anamnese',
@@ -1807,6 +1807,691 @@ export const casoDPOC: CasoClinico = {
 };
 
 // ============================================================================
+// CASO 11: ITU PEDIÁTRICA
+// ============================================================================
+
+export const casoITUPediatrica: CasoClinico = {
+  id: 'caso-itu-pediatrica-001',
+  titulo: 'Infecção Urinária em Criança',
+  subtitulo: 'Diagnóstico e manejo da ITU em pré-escolar',
+  categoria: 'pediatrico',
+  dificuldade: 'intermediario',
+    tempoEstimado: 15,
+  ultimaAtualizacao: '2024-12',
+    
+  apresentacao: {
+    paciente: {
+      nome: 'Lara Silva',
+      idade: 4,
+      sexo: 'F',
+      profissao: 'Estudante'
+    },
+    queixaPrincipal: 'Febre há 2 dias e urina escura',
+    historiaDoencaAtual: 'Mãe traz Lara (4 anos) à UBS com febre há 2 dias (38,5-39°C), sem outros sintomas gripais. Urina com cheiro forte e escura. Negou dor ao urinar quando questionada. Apresentou 1 episódio de vômito hoje pela manhã. Apetite reduzido, mas hidratada. Sem história prévia de ITU. Desenvolvimento normal. Sem constipação.'
+  },
+  
+  etapas: [
+    {
+      id: 'etapa-1-suspeita',
+      titulo: 'Suspeita Diagnóstica',
+      tipo: 'anamnese',
+      conteudo: {
+        texto: 'ITU pediátrica tem apresentação atípica. Febre sem foco em criança pequena requer investigação.',
+        dicas: ['ITU é causa comum de febre sem foco <2 anos', 'Sintomas podem ser inespecíficos']
+      },
+      pergunta: {
+        enunciado: 'Qual fator NÃO aumenta risco de ITU em crianças?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Sexo feminino', correta: false },
+          { id: 'b', texto: 'Circuncisão (meninos)', correta: true },
+          { id: 'c', texto: 'Constipação', correta: false },
+          { id: 'd', texto: 'Anomalias urogenitais', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Circuncisão REDUZ risco de ITU em meninos. Fatores de risco: sexo feminino, não circuncisado (meninos), constipação, anomalias, refluxo vesicoureteral, higiene inadequada.',
+        pontos: 10
+      }
+    },
+    {
+      id: 'etapa-2-coleta',
+      titulo: 'Coleta de Urina',
+      tipo: 'exames_complementares',
+      conteudo: {
+        texto: 'Coleta de urina em criança pequena é desafiadora.',
+        dados: {
+          'Idade': '4 anos',
+          'Toilet trained': 'Sim',
+          'Febre': '38,8°C',
+          'Outros sintomas': 'Inespecíficos'
+        }
+      },
+      pergunta: {
+        enunciado: 'Qual método de coleta é mais apropriado nesta menina de 4 anos?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Coleta espontânea com assepsia', correta: true },
+          { id: 'b', texto: 'Sonda vesical (método de escolha)', correta: false },
+          { id: 'c', texto: 'Bolsão coletor', correta: false },
+          { id: 'd', texto: 'Punção suprapúbica', correta: false }
+        ],
+        respostaCorreta: 'a',
+        explicacao: 'Criança >2 anos e toilet trained: coleta espontânea com assepsia é aceitável. Bolsão coletor tem alta contaminação (≥85%). Sonda ou punção são reservados para <2 anos ou quando necessário para evitar contaminação.',
+        pontos: 15
+      }
+    },
+    {
+      id: 'etapa-3-tratamento',
+      titulo: 'Tratamento Antimicrobiano',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'EAS mostra: leucócitos +++, nitrito +, hemácias +. Urocultura pendente.',
+        dicas: ['Tratamento empírico imediato em ITU febril', 'Ajustar após cultura']
+      },
+      pergunta: {
+        enunciado: 'Qual antibiótico é primeira linha para ITU em criança ≥2 meses?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Cefalexina 50mg/kg/dia 8/8h por 7-14 dias', correta: true },
+          { id: 'b', texto: 'Ciprofloxacino (contraindicado <18 anos)', correta: false },
+          { id: 'c', texto: 'Nitrofurantoína (não usar <2 meses)', correta: false },
+          { id: 'd', texto: 'Fosfomicina (apenas adultos)', correta: false }
+        ],
+        respostaCorreta: 'a',
+        explicacao: 'Cefalexina ou Amoxicilina-Ácido Clavulânico são primeira linha. Duração: 7-10 dias (crianças pequenas) ou 5 dias (≥2 anos, não complicada). Fluoroquinolonas contraindicadas em pediatria. Nitrofurantoína apenas ≥2 meses e não usar em ITU febril (não atinge tecido renal).',
+        pontos: 20
+      }
+    },
+    {
+      id: 'etapa-4-imagem',
+      titulo: 'Investigação de Anomalias',
+      tipo: 'exames_complementares',
+      conteudo: {
+        texto: 'Após tratamento, você precisa decidir sobre investigação de refluxo vesicoureteral.',
+        dicas: ['Ultrassom renal não é rotineiro após primeira ITU', 'Cistouretrografia indicada em casos específicos']
+      },
+      pergunta: {
+        enunciado: 'Quando indicar ultrassom renal após ITU febril?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Sempre após primeira ITU febril', correta: false },
+          { id: 'b', texto: 'Apenas se recorrência, <2 anos, ou ITU complicada', correta: true },
+          { id: 'c', texto: 'Apenas meninos', correta: false },
+          { id: 'd', texto: 'Não indicar nunca', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Ultrassom renal indicado se: ITU recorrente, <2 anos, resposta inadequada ao tratamento, ITU complicada, ou achados sugestivos de anomalia. Cistouretrografia miccional indicada apenas se ultrassom anormal ou ITU recorrente em <2 anos.',
+        pontos: 15
+      }
+    }
+  ],
+  
+  desfecho: {
+    resumo: 'ITU febril tratada com sucesso. Investigação reservada para casos específicos.',
+    diagnosticoFinal: 'Infecção do trato urinário (N39.0) - Pielonefrite aguda provável',
+    tratamentoRealizado: 'Cefalexina 50mg/kg/dia 8/8h por 10 dias. Urocultura confirmou E. coli sensível. Ultrassom renal agendado após tratamento.',
+    evolucao: 'Afebril em 48h. Sintomas desapareceram. Urocultura positiva para E. coli. Ultrassom normal. Sem recorrência.',
+    licoesPrincipais: [
+      'ITU pediátrica pode apresentar sintomas inespecíficos',
+      'Coleta de urina adequada é fundamental',
+      'Tratamento empírico imediato em ITU febril',
+      'Investigação por imagem seletiva',
+      'Profilaxia apenas se RVU ou recorrência'
+    ],
+    errosComuns: [
+      'Não investigar febre sem foco',
+      'Usar bolsão coletor como método de escolha',
+      'Usar fluoroquinolonas em crianças',
+      'Solicitar ultrassom em todos os casos',
+      'Não considerar constipação como fator de risco'
+    ]
+  },
+  
+  objetivosAprendizagem: [
+    'Reconhecer apresentação atípica de ITU em crianças',
+    'Escolher método de coleta adequado',
+    'Prescrever antibiótico apropriado para pediatria',
+    'Indicar investigação por imagem seletivamente'
+  ],
+  competencias: ['Diagnóstico pediátrico', 'Prescrição pediátrica', 'Medicina baseada em evidências'],
+  doencasRelacionadas: ['infeccao-urinaria'],
+  medicamentosRelacionados: ['cefalexina', 'amoxicilina'],
+  calculadorasRelacionadas: [],
+  referencias: ['NICE UTI in Children 2022', 'IDSA Pediatric UTI Guidelines 2011'],
+  tags: ['ITU', 'pediatria', 'infecção', 'intermediário']
+};
+
+// ============================================================================
+// CASO 12: PRÉ-NATAL - DIABETES GESTACIONAL
+// ============================================================================
+
+export const casoPreNatal: CasoClinico = {
+  id: 'caso-prenatal-001',
+  titulo: 'Pré-Natal: Rastreamento de Diabetes Gestacional',
+  subtitulo: 'Rastreamento e manejo de DG na APS',
+  categoria: 'gineco_obstetricia',
+  dificuldade: 'intermediario',
+  tempoEstimado: 18,
+  ultimaAtualizacao: '2024-12',
+  
+  apresentacao: {
+    paciente: {
+      nome: 'Juliana Alves',
+      idade: 32,
+      sexo: 'F',
+      profissao: 'Enfermeira',
+      estadoCivil: 'Casada'
+    },
+    queixaPrincipal: 'Consulta de pré-natal de 28 semanas',
+    historiaDoencaAtual: 'Gestante G2P1A0, 28 semanas, pré-natal adequado. Ganho de peso: 12kg até agora (peso pré-gestacional 68kg, IMC 26). Glicemia de jejum na 1ª consulta: 92mg/dL. Sem histórico de DG. Mãe com diabetes tipo 2. Urina rotina: glicosúria +. Sem sintomas de poliúria, polidipsia. Pressão arterial normal. Útero compatível com idade gestacional.'
+    },
+    
+    etapas: [
+      {
+      id: 'etapa-1-rastreamento',
+      titulo: 'Quando Rastrear Diabetes Gestacional',
+        tipo: 'anamnese',
+      conteudo: {
+        texto: 'Você precisa decidir quando fazer TOTG.',
+        dicas: ['Rastreamento entre 24-28 semanas', 'Rastrear todas as gestantes']
+      },
+      pergunta: {
+        enunciado: 'Em qual momento do pré-natal deve ser realizado o rastreamento de DG?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: '1ª consulta de pré-natal', correta: false },
+          { id: 'b', texto: '24-28 semanas (todas as gestantes)', correta: true },
+          { id: 'c', texto: 'Apenas se fatores de risco', correta: false },
+          { id: 'd', texto: '3º trimestre (32-34 semanas)', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'TOTG entre 24-28 semanas para TODAS as gestantes (rastreamento universal no Brasil). Na 1ª consulta, apenas se fatores de alto risco (IMC ≥40, história prévia de DG, glicemia ≥126mg/dL), solicitar glicemia de jejum ou TOTG.',
+        pontos: 15
+      }
+    },
+    {
+      id: 'etapa-2-totg',
+      titulo: 'Teste Oral de Tolerância à Glicose',
+      tipo: 'exames_complementares',
+      conteudo: {
+        texto: 'Você solicita TOTG com 75g de glicose.',
+        dados: {
+          'Jejum': '95mg/dL (normal <92)',
+          '1 hora': '185mg/dL (normal <180)',
+          '2 horas': '155mg/dL (normal <153)'
+        }
+      },
+      pergunta: {
+        enunciado: 'Os valores indicam diabetes gestacional porque:',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Glicemia de jejum ≥92mg/dL', correta: true },
+          { id: 'b', texto: 'Glicemia 1h ≥180mg/dL', correta: false },
+          { id: 'c', texto: 'Glicemia 2h ≥153mg/dL', correta: false },
+          { id: 'd', texto: 'Glicosúria positiva', correta: false }
+        ],
+        respostaCorreta: 'a',
+        explicacao: 'Critério IADPSG: 1 valor alterado confirma DG. Jejum ≥92 OU 1h ≥180 OU 2h ≥153mg/dL. Esta paciente tem jejum alterado (95mg/dL). Glicosúria não é critério diagnóstico.',
+        pontos: 20
+      }
+    },
+    {
+      id: 'etapa-3-tratamento',
+      titulo: 'Tratamento Inicial',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'Diagnóstico confirmado. Iniciar tratamento.',
+        dicas: ['Dieta + exercício são primeira linha', 'Metformina ou insulina se controle inadequado']
+      },
+      pergunta: {
+        enunciado: 'Qual o tratamento de primeira linha para DG?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Insulina imediatamente', correta: false },
+          { id: 'b', texto: 'Dieta + exercício + automonitoramento glicêmico', correta: true },
+          { id: 'c', texto: 'Metformina desde o diagnóstico', correta: false },
+          { id: 'd', texto: 'Apenas orientação dietética', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Primeira linha: intervenção nutricional + atividade física + automonitoramento glicêmico (4-6x/dia). Se meta não atingida (glicemia jejum <95, pós-prandial <140), adicionar insulina ou metformina. Metformina é alternativa se paciente recusa insulina, mas preferência por insulina em alguns protocolos.',
+        pontos: 20
+      }
+    }
+  ],
+  
+  desfecho: {
+    resumo: 'DG diagnosticada e tratada adequadamente com dieta e exercício.',
+    diagnosticoFinal: 'Diabetes gestacional (O24.4)',
+    tratamentoRealizado: 'Intervenção nutricional + atividade física moderada + automonitoramento glicêmico. Glicemias controladas. Sem necessidade de insulina.',
+    evolucao: 'Bom controle glicêmico. Parto a termo, RN saudável (peso adequado). Glicemia pós-parto normalizada. Orientada sobre risco futuro de DM2.',
+    licoesPrincipais: [
+      'Rastreamento universal entre 24-28 semanas',
+      '1 valor alterado no TOTG confirma DG',
+      'Dieta + exercício são primeira linha',
+      'Metas glicêmicas rigorosas',
+      'Rastreamento pós-parto necessário'
+    ],
+    errosComuns: [
+      'Não rastrear todas as gestantes',
+      'Rastrear fora da janela 24-28 semanas',
+      'Iniciar insulina sem tentar dieta',
+      'Não rastrear pós-parto',
+      'Não orientar sobre risco futuro'
+    ]
+  },
+  
+  objetivosAprendizagem: [
+    'Rastrear diabetes gestacional adequadamente',
+    'Interpretar TOTG corretamente',
+    'Manejar tratamento de DG',
+    'Orientar sobre riscos futuros'
+  ],
+  competencias: ['Pré-natal', 'Interpretação de exames', 'Educação em saúde'],
+  doencasRelacionadas: ['diabetes-gestacional'],
+  medicamentosRelacionados: ['metformina', 'insulina'],
+  calculadorasRelacionadas: ['imc'],
+  referencias: ['Protocolo MS Pré-natal 2022', 'Diretriz ADA Gestational Diabetes 2023'],
+  tags: ['pré-natal', 'diabetes', 'gestação', 'intermediário']
+};
+
+// ============================================================================
+// CASO 13: IVAS - INFECÇÃO VIRAL RESPIRATÓRIA AGUDA
+// ============================================================================
+
+export const casoIVAS: CasoClinico = {
+  id: 'caso-ivas-001',
+  titulo: 'Infecção Viral Respiratória Aguda (IVAS)',
+  subtitulo: 'Diagnóstico diferencial e manejo na APS',
+  categoria: 'respiratorio',
+  dificuldade: 'iniciante',
+  tempoEstimado: 12,
+  ultimaAtualizacao: '2024-12',
+  
+  apresentacao: {
+    paciente: {
+      nome: 'Roberto Santos',
+      idade: 45,
+      sexo: 'M',
+      profissao: 'Professor',
+      estadoCivil: 'Casado'
+    },
+    queixaPrincipal: 'Coriza, tosse e febre há 3 dias',
+    historiaDoencaAtual: 'Paciente refere início há 3 dias de coriza aquosa, espirros, tosse seca e febre baixa (37,8-38°C). Cefaleia leve. Sensação de mal-estar geral. Nega dispneia, dor torácica ou expectoração purulenta. Contato recente com pessoas gripadas na escola. Sem comorbidades. Vacina influenza atualizada.'
+  },
+  
+  etapas: [
+    {
+      id: 'etapa-1-diagnostico',
+      titulo: 'Diagnóstico Clínico',
+        tipo: 'anamnese',
+      conteudo: {
+        texto: 'Quadro típico de IVAS. Importante diferenciar de outras condições.',
+        dicas: ['IVAS = sintomas respiratórios altos', 'Duração usual: 3-7 dias']
+      },
+      pergunta: {
+        enunciado: 'Qual característica diferencia IVAS de sinusite bacteriana?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Presença de febre', correta: false },
+          { id: 'b', texto: 'Duração <7 dias (viral) vs >10 dias ou piora após melhora (bacteriana)', correta: true },
+          { id: 'c', texto: 'Rinorreia', correta: false },
+          { id: 'd', texto: 'Cefaleia', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'IVAS: sintomas <7-10 dias, pico em 2-3 dias, melhora gradual. Sinusite bacteriana: sintomas >10 dias OU piora após melhora inicial (padrão bifásico) + rinorreia purulenta, dor facial/pressão. Febre pode ocorrer em ambos.',
+        pontos: 15
+      }
+    },
+    {
+      id: 'etapa-2-tratamento',
+      titulo: 'Tratamento Sintomático',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'IVAS é autolimitada. Tratamento é sintomático.',
+        dicas: ['Antibióticos NÃO são indicados', 'Tratamento sintomático apenas']
+      },
+      pergunta: {
+        enunciado: 'Qual o tratamento apropriado para IVAS não complicada?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Amoxicilina profilática', correta: false },
+          { id: 'b', texto: 'Tratamento sintomático (analgésico, hidratação, repouso)', correta: true },
+          { id: 'c', texto: 'Corticoide oral', correta: false },
+          { id: 'd', texto: 'Oseltamivir sempre', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'IVAS não complicada: tratamento sintomático apenas (analgésico/antipirético, hidratação, repouso). Antibióticos NÃO são indicados (vírus não respondem a ATB). Oseltamivir apenas se influenza confirmada em <48h de sintomas. Corticoide apenas em casos específicos.',
+        pontos: 20
+      }
+    },
+    {
+      id: 'etapa-3-sinais-alerta',
+      titulo: 'Sinais de Alerta',
+      tipo: 'educacao',
+      conteudo: {
+        texto: 'Você orienta sobre quando retornar.',
+        dicas: ['Sinais de complicação: febre >3 dias, dispneia, piora']
+      },
+      pergunta: {
+        enunciado: 'Qual NÃO é sinal de alerta para retorno em IVAS?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Dispneia ou taquipneia', correta: false },
+          { id: 'b', texto: 'Febre >38,5°C por >3 dias', correta: false },
+          { id: 'c', texto: 'Tosse por 5-7 dias', correta: true },
+          { id: 'd', texto: 'Piora após melhora inicial', correta: false }
+        ],
+        respostaCorreta: 'c',
+        explicacao: 'Tosse pode persistir 2-3 semanas após IVAS (síndrome pós-viral). Sinais de alerta: dispneia, taquipneia, febre alta persistente, piora após melhora (superinfecção bacteriana), desidratação, cianose, toxemia.',
+        pontos: 10
+      }
+    }
+  ],
+  
+  desfecho: {
+    resumo: 'IVAS tratada sintomaticamente com boa evolução.',
+    diagnosticoFinal: 'Infecção viral respiratória aguda não especificada (J00)',
+    tratamentoRealizado: 'Paracetamol 500mg 6/6h se febre/dor. Hidratação, repouso. Orientado sobre sinais de alerta.',
+    evolucao: 'Melhora completa em 5 dias. Tosse residual leve por mais 1 semana. Sem complicações.',
+    licoesPrincipais: [
+      'IVAS é autolimitada',
+      'Antibióticos não são indicados',
+      'Tratamento sintomático apenas',
+      'Reconhecer sinais de complicação',
+      'Educar sobre expectativa de duração'
+    ],
+    errosComuns: [
+      'Prescrever antibióticos desnecessariamente',
+      'Não orientar sobre evolução natural',
+      'Não identificar sinais de alerta',
+      'Solicitar exames desnecessários',
+      'Subestimar importância da hidratação'
+    ]
+  },
+  
+  objetivosAprendizagem: [
+    'Diagnosticar IVAS clinicamente',
+    'Diferenciar de sinusite bacteriana',
+    'Prescrever tratamento sintomático adequado',
+    'Educar sobre sinais de alerta'
+  ],
+  competencias: ['Diagnóstico clínico', 'Prescrição racional', 'Educação em saúde'],
+  doencasRelacionadas: ['ivas', 'sinusite-aguda'],
+  medicamentosRelacionados: ['paracetamol'],
+  calculadorasRelacionadas: [],
+  referencias: ['Diretriz SBMFC IVAS 2018', 'IDSA Acute Respiratory Tract Infections 2020'],
+  tags: ['IVAS', 'resfriado', 'gripe', 'iniciante']
+};
+
+// ============================================================================
+// CASO 14: OBESIDADE NA APS
+// ============================================================================
+
+export const casoObesidade: CasoClinico = {
+  id: 'caso-obesidade-001',
+  titulo: 'Obesidade e Manejo na Atenção Primária',
+  subtitulo: 'Abordagem multiprofissional e farmacoterapia',
+  categoria: 'endocrino',
+  dificuldade: 'avancado',
+  tempoEstimado: 20,
+  ultimaAtualizacao: '2024-12',
+  
+  apresentacao: {
+    paciente: {
+      nome: 'Marcos Oliveira',
+      idade: 38,
+      sexo: 'M',
+      profissao: 'Motorista',
+      estadoCivil: 'Casado'
+    },
+    queixaPrincipal: 'Consulta de rotina - sobrepeso',
+    historiaDoencaAtual: 'Paciente comparece para consulta de rotina. Refere ganho de peso progressivo nos últimos 5 anos (pesava 75kg, agora 108kg). Altura 1,75m (IMC 35,3 - obesidade grau II). Relata fome constante, "não consegue parar de comer". Sedentário há 10 anos. Refere cansaço, apneia do sono (ronco alto, sono fragmentado). Pai e mãe obesos. Negou diabetes, HAS. Tentou várias dietas sem sucesso duradouro.'
+  },
+  
+  etapas: [
+    {
+      id: 'etapa-1-avaliacao',
+      titulo: 'Avaliação Inicial',
+      tipo: 'anamnese',
+      conteudo: {
+        texto: 'Obesidade é doença crônica. Avaliação completa é necessária.',
+        dicas: ['IMC 30-34,9 = grau I', 'IMC 35-39,9 = grau II', 'IMC ≥40 = grau III']
+      },
+      pergunta: {
+        enunciado: 'Além do IMC, quais avaliações são essenciais na obesidade?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Apenas IMC e peso', correta: false },
+          { id: 'b', texto: 'IMC + circunferência abdominal + comorbidades + fatores psicossociais', correta: true },
+          { id: 'c', texto: 'Apenas IMC e glicemia', correta: false },
+          { id: 'd', texto: 'Apenas IMC e perfil lipídico', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Avaliação completa: IMC, circunferência abdominal (risco metabólico), comorbidades (HAS, DM2, SAOS, dislipidemia, DORT), fatores psicossociais, histórico de tentativas de perda de peso, barreiras, motivação. IMC isolado é insuficiente.',
+        pontos: 15
+      }
+    },
+    {
+      id: 'etapa-2-tratamento',
+      titulo: 'Tratamento Não Farmacológico',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'Primeira linha: mudança de estilo de vida.',
+        dicas: ['Dieta hipocalórica', 'Atividade física', 'Suporte comportamental']
+      },
+      pergunta: {
+        enunciado: 'Qual é a primeira linha de tratamento para obesidade?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Medicamentos desde o início', correta: false },
+          { id: 'b', texto: 'Cirurgia bariátrica', correta: false },
+          { id: 'c', texto: 'Mudança de estilo de vida (dieta + exercício + suporte comportamental)', correta: true },
+          { id: 'd', texto: 'Apenas dieta restritiva', correta: false }
+        ],
+        respostaCorreta: 'c',
+        explicacao: 'Primeira linha: intervenção no estilo de vida (dieta hipocalórica 500-750kcal/dia de déficit, atividade física 150min/semana moderada, terapia comportamental). Se IMC ≥30 ou ≥27 com comorbidades e perda <5% em 3 meses, considerar farmacoterapia.',
+        pontos: 20
+      }
+    },
+    {
+      id: 'etapa-3-farmaco',
+      titulo: 'Farmacoterapia',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'Após 3 meses, perda de apenas 2kg (1,8%). Considerar farmacoterapia.',
+        dados: {
+          'IMC inicial': '35,3',
+          'IMC atual': '34,8',
+          'Perda de peso': '1,8% (meta: ≥5%)',
+          'Tempo de intervenção': '3 meses'
+        }
+      },
+      pergunta: {
+        enunciado: 'Quando considerar farmacoterapia para obesidade?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'IMC ≥30 OU IMC ≥27 com comorbidades, após 3 meses de mudança de estilo de vida sem perda ≥5%', correta: true },
+          { id: 'b', texto: 'Apenas se IMC ≥40', correta: false },
+          { id: 'c', texto: 'Sempre desde o início', correta: false },
+          { id: 'd', texto: 'Apenas se paciente solicitar', correta: false }
+        ],
+        respostaCorreta: 'a',
+        explicacao: 'Farmacoterapia indicada se: IMC ≥30 OU IMC ≥27 com comorbidades (HAS, DM2, dislipidemia, SAOS), E após tentativa de mudança de estilo de vida por ≥3 meses sem perda ≥5% do peso inicial. Opções: orlistate, liraglutida (Saxenda), semaglutida (Wegovy).',
+        pontos: 20
+      }
+    }
+  ],
+  
+  desfecho: {
+    resumo: 'Obesidade abordada com tratamento multimodal.',
+    diagnosticoFinal: 'Obesidade (E66.9) - Grau II, com apneia do sono',
+    tratamentoRealizado: 'Intervenção no estilo de vida (dieta hipocalórica, exercícios, suporte psicológico). Após 3 meses, perda <5%. Iniciado orlistate. Encaminhado para avaliação de SAOS.',
+    evolucao: 'Perda de 8% do peso em 6 meses (108kg → 99kg). Melhora do ronco. SAOS confirmado, iniciado CPAP. Continuando seguimento.',
+    licoesPrincipais: [
+      'Obesidade é doença crônica',
+      'Avaliação completa necessária',
+      'Mudança de estilo de vida é primeira linha',
+      'Farmacoterapia se perda <5% em 3 meses',
+      'Abordagem multiprofissional ideal'
+    ],
+    errosComuns: [
+      'Tratar apenas com dieta',
+      'Não avaliar comorbidades',
+      'Não oferecer suporte comportamental',
+      'Usar medicação sem tentar mudança de estilo de vida',
+      'Não considerar cirurgia quando indicado'
+    ]
+  },
+  
+  objetivosAprendizagem: [
+    'Avaliar obesidade adequadamente',
+    'Prescrever mudança de estilo de vida',
+    'Indicar farmacoterapia quando apropriado',
+    'Abordar comorbidades relacionadas'
+  ],
+  competencias: ['Diagnóstico', 'Prescrição', 'Abordagem multiprofissional', 'Medicina baseada em evidências'],
+  doencasRelacionadas: ['obesidade'],
+  medicamentosRelacionados: ['orlistate'],
+  calculadorasRelacionadas: ['imc'],
+  referencias: ['Diretriz ABESO 2023', 'Obesity Clinical Practice Guidelines AACE 2016'],
+  tags: ['obesidade', 'IMC', 'endócrino', 'avançado']
+};
+
+// ============================================================================
+// CASO 15: OTITE MÉDIA AGUDA (PEDIATRIA)
+// ============================================================================
+
+export const casoOtite: CasoClinico = {
+  id: 'caso-otite-001',
+  titulo: 'Otite Média Aguda em Criança',
+  subtitulo: 'Diagnóstico e manejo na pediatria',
+  categoria: 'pediatrico',
+  dificuldade: 'intermediario',
+  tempoEstimado: 14,
+  ultimaAtualizacao: '2024-12',
+  
+  apresentacao: {
+    paciente: {
+      nome: 'Pedro Costa',
+      idade: 2,
+      sexo: 'M',
+      profissao: 'Estudante'
+    },
+    queixaPrincipal: 'Dor de ouvido e febre há 1 dia',
+    historiaDoencaAtual: 'Mãe traz Pedro (2 anos) com choro intenso e toque frequente na orelha direita há 1 dia. Febre desde ontem (38,5°C). Irritabilidade, sono agitado. Apresentou coriza há 3 dias. Amamentação reduzida. Sem vômitos ou diarreia. Sem sintomas respiratórios importantes. Primeiro episódio de otite. Vacinação atualizada.'
+  },
+  
+  etapas: [
+    {
+      id: 'etapa-1-otoscopia',
+      titulo: 'Exame Otoscópico',
+      tipo: 'exame_fisico',
+      conteudo: {
+        texto: 'Otoscopia mostra membrana timpânica hiperemiada, abaulada, com perda dos pontos de referência.',
+        dicas: ['OMA = abaulamento timpânico + sintomas', 'Hiperemia isolada não é diagnóstico']
+      },
+      pergunta: {
+        enunciado: 'Qual achado otoscópico é mais específico para OMA?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Hiperemia isolada da membrana timpânica', correta: false },
+          { id: 'b', texto: 'Abaulamento da membrana timpânica', correta: true },
+          { id: 'c', texto: 'Presença de cera', correta: false },
+          { id: 'd', texto: 'Membrana opaca', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Critério diagnóstico OMA (AAP 2013): abaulamento moderado a severo da membrana timpânica (mais específico) OU otorreia aguda. Hiperemia isolada pode ser otite externa ou apenas congestão. Membrana opaca pode ser otite média com efusão (OME), não OMA.',
+        pontos: 20
+      }
+    },
+    {
+      id: 'etapa-2-tratamento',
+      titulo: 'Decisão de Tratamento',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'Você precisa decidir: observar ou tratar com antibiótico.',
+        dados: {
+          'Idade': '2 anos',
+          'Bilateral': 'Não (apenas direita)',
+          'Otorreia': 'Não',
+          'Febre': '38,5°C',
+          'Sintomas severos': 'Sim (irritabilidade intensa)'
+        }
+      },
+      pergunta: {
+        enunciado: 'Nesta criança de 2 anos com OMA, qual a conduta?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Observação (watchful waiting) por 48-72h', correta: false },
+          { id: 'b', texto: 'Tratamento antibiótico imediato', correta: true },
+          { id: 'c', texto: 'Apenas sintomático', correta: false },
+          { id: 'd', texto: 'Aguardar cultura', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Tratamento antibiótico imediato se: <2 anos (qualquer lateralidade), ≥2 anos com OMA bilateral OU otorreia, sintomas severos (febre ≥39°C ou otalgia intensa), ou follow-up difícil. Watchful waiting apenas ≥2 anos, OMA unilateral, sintomas leves-moderados, follow-up garantido.',
+        pontos: 20
+      }
+    },
+    {
+      id: 'etapa-3-antibiotico',
+      titulo: 'Escolha do Antibiótico',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'Antibiótico de primeira linha para OMA.',
+        dicas: ['Amoxicilina é primeira linha', 'Dose alta se risco de resistência']
+      },
+      pergunta: {
+        enunciado: 'Qual o tratamento de primeira linha para OMA em criança?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Amoxicilina 40-50mg/kg/dia 8/8h por 5-7 dias', correta: false },
+          { id: 'b', texto: 'Amoxicilina 80-90mg/kg/dia 12/12h por 10 dias', correta: true },
+          { id: 'c', texto: 'Azitromicina 10mg/kg/dia por 3 dias', correta: false },
+          { id: 'd', texto: 'Ceftriaxona IM dose única', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Primeira linha: Amoxicilina 80-90mg/kg/dia (dose alta) 12/12h por 10 dias. Dose alta por resistência de S. pneumoniae. Se alergia não anafilática: cefuroxima ou cefdinir. Se anafilaxia: azitromicina ou claritromicina. Ceftriaxona apenas se falha ou não adesão.',
+        pontos: 15
+      }
+    }
+  ],
+  
+  desfecho: {
+    resumo: 'OMA tratada com sucesso com amoxicilina em dose alta.',
+    diagnosticoFinal: 'Otite média aguda (H66.9)',
+    tratamentoRealizado: 'Amoxicilina 80mg/kg/dia 12/12h por 10 dias. Paracetamol para dor/febre. Reavaliação em 48-72h se sem melhora.',
+    evolucao: 'Melhora dos sintomas em 48h. Afebril. Sem complicações. Reavaliação normal. Membrana timpânica com resolução.',
+    licoesPrincipais: [
+      'Abaulamento timpânico é achado chave',
+      '<2 anos = tratar imediatamente',
+      'Amoxicilina dose alta é primeira linha',
+      'Duração: 10 dias em <2 anos',
+      'Reavaliar se sem melhora em 48-72h'
+    ],
+    errosComuns: [
+      'Diagnosticar apenas por hiperemia',
+      'Observar em crianças <2 anos',
+      'Usar dose padrão de amoxicilina',
+      'Tratar por tempo insuficiente',
+      'Não reavaliar se sem resposta'
+    ]
+  },
+  
+  objetivosAprendizagem: [
+    'Diagnosticar OMA pelo exame otoscópico',
+    'Decidir entre observar ou tratar',
+    'Prescrever antibiótico adequado',
+    'Acompanhar evolução'
+  ],
+  competencias: ['Exame físico pediátrico', 'Prescrição pediátrica', 'Medicina baseada em evidências'],
+  doencasRelacionadas: ['otite-media-aguda'],
+  medicamentosRelacionados: ['amoxicilina'],
+  calculadorasRelacionadas: [],
+  referencias: ['AAP Clinical Practice Guideline 2013', 'Diretriz SBP Otite 2020'],
+  tags: ['otite', 'pediatria', 'infecção', 'intermediário']
+};
+
+// ============================================================================
 // TODOS OS CASOS
 // ============================================================================
 
@@ -1821,6 +2506,11 @@ export const todosCasosClinicos: CasoClinico[] = [
   casoPneumonia,
   casoCefaleia,
   casoDPOC,
+  casoITUPediatrica,
+  casoPreNatal,
+  casoIVAS,
+  casoObesidade,
+  casoOtite,
 ];
 
 // Funções auxiliares
