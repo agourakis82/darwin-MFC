@@ -77,13 +77,8 @@ export const metadata: Metadata = {
     title: "Darwin MFC",
   },
   icons: {
-    icon: [
-      { url: "/icons/icon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
-    ],
-    apple: [
-      { url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
-    ],
+    icon: "/logos/sus-logo.svg",
+    apple: "/logos/sus-logo.svg",
   },
   category: "medical",
 };
@@ -100,7 +95,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#0f172a" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+        <link rel="apple-touch-icon" href="/logos/sus-logo.svg" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
