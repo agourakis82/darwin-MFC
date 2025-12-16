@@ -1,5 +1,15 @@
 import Link from 'next/link';
-import { ArrowRight, BookOpen, TrendingUp, Users, FileText, Baby, Users as UsersIcon, Activity, Heart, Stethoscope, FileSearch, Calendar, Pill, Shield, Calculator, Brain } from 'lucide-react';
+import { ArrowRight, BookOpen, TrendingUp, Users, FileText, Baby, Users as UsersIcon, Activity, Heart, Stethoscope, FileSearch, Calendar, Pill, Shield, Calculator, Brain, ClipboardList, Sparkles } from 'lucide-react';
+import { doencasConsolidadas } from '@/lib/data/doencas/index';
+import { medicamentosConsolidados } from '@/lib/data/medicamentos/index';
+import { todosProtocolosFlowchart } from '@/lib/data/protocolos-flowchart';
+
+// Estatísticas dinâmicas
+const stats = {
+  doencas: doencasConsolidadas.length,
+  medicamentos: medicamentosConsolidados.length,
+  protocolos: todosProtocolosFlowchart.length,
+};
 
 export default function Home() {
   return (
@@ -63,9 +73,9 @@ export default function Home() {
           {/* Stats Mini Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {[
-              { value: '30+', label: 'Doenças', icon: BookOpen },
-              { value: '50+', label: 'Medicamentos', icon: Pill },
-              { value: '35+', label: 'Rastreamentos', icon: FileText },
+              { value: stats.doencas.toString(), label: 'Doenças', icon: BookOpen },
+              { value: stats.medicamentos.toString(), label: 'Medicamentos', icon: Pill },
+              { value: stats.protocolos.toString(), label: 'Protocolos', icon: ClipboardList },
               { value: 'Q1', label: 'Padrão', icon: TrendingUp }
             ].map((stat, idx) => (
               <div key={idx} className="bg-white/10 backdrop-blur-md rounded-xl p-5 border-2 border-white/20 text-center hover:bg-white/20 transition-all duration-300">

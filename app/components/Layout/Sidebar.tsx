@@ -171,14 +171,14 @@ export default function Sidebar() {
             }}
           >
             <div className="flex items-center gap-3">
-              <Icon className="w-5 h-5" />
+              <Icon className="w-5 h-5 flex-shrink-0" />
               <span className="text-sm font-medium">{section.title}</span>
-              {section.badge && (
-                <span className="px-1.5 py-0.5 bg-emerald-500 text-white text-[10px] font-bold rounded-full">
-                  {section.badge}
-                </span>
-              )}
             </div>
+            {section.badge && (
+              <span className="px-1.5 py-0.5 bg-emerald-500 text-white text-[10px] font-bold rounded-full ml-auto mr-2">
+                {section.badge}
+              </span>
+            )}
             {hasSubsections && (
               <button
                 onClick={(e) => {
