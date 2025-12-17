@@ -245,8 +245,11 @@ export interface Doenca {
   /** Códigos CID-10 (Classificação Internacional de Doenças) */
   cid10: string[];
   
-  /** Códigos CID-11 (quando disponível) */
+  /** Códigos CID-11 (Classificação Internacional de Doenças - 11ª revisão, OMS 2022) */
   cid11?: string[];
+  
+  /** Human Phenotype Ontology (HPO) - fenótipos associados à doença */
+  hpo?: string[];
   
   /** Categoria principal */
   categoria: CategoriaDoenca;
