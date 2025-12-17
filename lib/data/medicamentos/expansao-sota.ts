@@ -58,7 +58,7 @@ export const medicamentosExpansaoSOTA: Medicamento[] = [
     rename: true,
     apresentacoes: [
       { forma: 'comprimido', concentracao: '500mg', disponivelSUS: true },
-      { forma: 'oral', concentracao: '250mg/5mL', disponivelSUS: true }
+      { forma: 'xarope', concentracao: '250mg/5mL', disponivelSUS: true }
     ],
     indicacoes: ['Infecções de pele e partes moles', 'ITU não complicada', 'Infecções respiratórias'],
     mecanismoAcao: 'Inibe síntese da parede celular bacteriana.',
