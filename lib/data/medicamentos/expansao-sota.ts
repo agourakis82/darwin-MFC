@@ -25,7 +25,7 @@ export const medicamentosExpansaoSOTA: Medicamento[] = [
     rename: true,
     apresentacoes: [
       { forma: 'comprimido', concentracao: '500mg', disponivelSUS: true },
-      { forma: 'oral', concentracao: '200mg/5mL', disponivelSUS: true }
+      { forma: 'comprimido', concentracao: '250mg', disponivelSUS: true }
     ],
     indicacoes: ['Infecções respiratórias', 'Infecções de pele e partes moles', 'ITU não complicada'],
     mecanismoAcao: 'Inibe síntese proteica bacteriana por ligação à subunidade 50S do ribossomo.',
@@ -96,7 +96,7 @@ export const medicamentosExpansaoSOTA: Medicamento[] = [
     apresentacoes: [
       { forma: 'comprimido', concentracao: '150mg', disponivelSUS: true },
       { forma: 'comprimido', concentracao: '200mg', disponivelSUS: true },
-      { forma: 'oral', concentracao: '50mg/5mL', disponivelSUS: true }
+      { forma: 'comprimido', concentracao: '50mg', disponivelSUS: true }
     ],
     indicacoes: ['Candidíase vulvovaginal', 'Candidíase oral', 'Candidíase esofágica', 'Criptococose'],
     mecanismoAcao: 'Inibe síntese de ergosterol, componente da membrana fúngica.',
