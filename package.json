@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:custom-domain": "next build && node scripts/fix-custom-domain-links.js",
     "start": "next start",
     "export": "next build && next export"
   },
@@ -31,6 +32,7 @@
     "@types/papaparse": "^5.3.14",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "glob": "^13.0.0",
     "postcss": "^8.4.49",
     "postcss-import": "^16.1.0",
     "postcss-preset-env": "^10.1.1",

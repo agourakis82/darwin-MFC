@@ -38,6 +38,9 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /darwin-MFC
 
+      - name: Fix links for custom domain
+        run: node scripts/fix-custom-domain-links.js
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
