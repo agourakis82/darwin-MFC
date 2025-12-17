@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === 'production';
-// Only use basePath for GitHub Pages subdirectory, not for custom domain
-const isGitHubPages = process.env.NEXT_PUBLIC_BASE_PATH === '/darwin-MFC' && !process.env.NEXT_PUBLIC_CUSTOM_DOMAIN;
+// Build without basePath for custom domain (default for GitHub Pages with CNAME)
+// Only use basePath when explicitly building for github.io subdirectory
+const useBasePath = process.env.USE_BASE_PATH === 'true';
+const basePathValue = useBasePath ? '/darwin-MFC' : '';
 
 const nextConfig: NextConfig = {
   output: "export",
@@ -10,10 +12,10 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  // GitHub Pages configuration
-  // Custom domain serves from root, so no basePath needed
-  basePath: isGitHubPages ? '/darwin-MFC' : '',
-  assetPrefix: isGitHubPages ? '/darwin-MFC/' : '',
+  // Build without basePath by default (for custom domain)
+  // Set USE_BASE_PATH=true to build with basePath for github.io subdirectory
+  basePath: basePathValue,
+  assetPrefix: basePathValue ? `${basePathValue}/` : '',
 };
 
 export default nextConfig;
