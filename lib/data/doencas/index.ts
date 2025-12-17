@@ -28,6 +28,8 @@ import { doencasGeriatricas } from './geriatricas';
 import { doencasAdicionais } from './adicionais';
 import { doencasExpansaoSOTA } from './expansao-sota';
 import { doencasExpansaoSOTAAvancada } from './expansao-sota-avancada';
+import { doencasExpansaoSOTAFinal } from './expansao-sota-final';
+import { doencasExpansaoSOTAAvancada } from './expansao-sota-avancada';
 
 // Consolidar todas as doenças
 // Nota: Algumas categorias usam Partial<Doenca> para flexibilidade de expansão
