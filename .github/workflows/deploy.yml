@@ -35,8 +35,6 @@ jobs:
 
       - name: Build with Next.js (no basePath for custom domain)
         run: npm run build
-        env:
-          USE_BASE_PATH: false
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
