@@ -130,7 +130,7 @@ export const medicamentosExpansaoSOTA: Medicamento[] = [
     snomedCT: '372782003',
     casNumber: '59277-89-3',
     classeTerapeutica: 'antiviral',
-    subclasse: 'antiviral_herpes',
+    subclasse: undefined,
     rename: true,
     apresentacoes: [
       { forma: 'comprimido', concentracao: '200mg', disponivelSUS: true },
@@ -239,7 +239,7 @@ export const medicamentosExpansaoSOTA: Medicamento[] = [
     snomedCT: '372576009',
     casNumber: '59-05-2',
     classeTerapeutica: 'outros',
-    subclasse: 'antimetabolito',
+    subclasse: undefined,
     rename: true,
     apresentacoes: [
       { forma: 'comprimido', concentracao: '2,5mg', disponivelSUS: true },
