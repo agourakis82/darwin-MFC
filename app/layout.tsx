@@ -103,13 +103,56 @@ export default function RootLayout({
                 // Detect basePath from current location
                 var basePath = '';
                 var pathname = window.location.pathname;
-                // Check if we're in a GitHub Pages subdirectory
-                if (pathname.startsWith('/darwin-MFC') || window.location.hostname.includes('github.io')) {
+                var hostname = window.location.hostname;
+                
+                // If using custom domain, no basePath needed (files served from root)
+                // Only use basePath for github.io subdirectory
+                if (hostname.includes('github.io') && pathname.startsWith('/darwin-MFC')) {
+                  basePath = '/darwin-MFC';
+                } else if (hostname.includes('github.io') && !pathname.startsWith('/darwin-MFC')) {
+                  // GitHub Pages without subdirectory in path - might need basePath
                   basePath = '/darwin-MFC';
                 }
+                // Custom domain (mfc.agourakis.med.br) serves from root, so basePath = ''
                 
-                // Update manifest, icon, and CSS links if basePath is detected
-                if (basePath) {
+                // Update manifest, icon, and CSS links based on basePath
+                // If custom domain is detected, remove basePath from links
+                var isCustomDomain = !hostname.includes('github.io');
+                
+                if (isCustomDomain) {
+                  // Custom domain: remove basePath from all links
+                  var manifestLink = document.querySelector('link[rel="manifest"]');
+                  if (manifestLink) {
+                    var manifestHref = manifestLink.getAttribute('href');
+                    if (manifestHref && manifestHref.startsWith('/darwin-MFC')) {
+                      manifestLink.setAttribute('href', manifestHref.replace('/darwin-MFC', ''));
+                    }
+                  }
+                  var appleIcon = document.querySelector('link[rel="apple-touch-icon"]');
+                  if (appleIcon) {
+                    var iconHref = appleIcon.getAttribute('href');
+                    if (iconHref && iconHref.startsWith('/darwin-MFC')) {
+                      appleIcon.setAttribute('href', iconHref.replace('/darwin-MFC', ''));
+                    }
+                  }
+                  // Remove basePath from CSS links
+                  var cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
+                  cssLinks.forEach(function(link) {
+                    var href = link.getAttribute('href');
+                    if (href && href.startsWith('/darwin-MFC/_next/')) {
+                      link.setAttribute('href', href.replace('/darwin-MFC', ''));
+                    }
+                  });
+                  // Remove basePath from script src attributes
+                  var scripts = document.querySelectorAll('script[src]');
+                  scripts.forEach(function(script) {
+                    var src = script.getAttribute('src');
+                    if (src && src.startsWith('/darwin-MFC/_next/')) {
+                      script.setAttribute('src', src.replace('/darwin-MFC', ''));
+                    }
+                  });
+                } else if (basePath) {
+                  // GitHub Pages subdirectory: add basePath to links
                   var manifestLink = document.querySelector('link[rel="manifest"]');
                   if (manifestLink) {
                     manifestLink.setAttribute('href', basePath + '/manifest.json');
@@ -122,7 +165,7 @@ export default function RootLayout({
                   var cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
                   cssLinks.forEach(function(link) {
                     var href = link.getAttribute('href');
-                    if (href && href.startsWith('/_next/')) {
+                    if (href && href.startsWith('/_next/') && !href.startsWith(basePath)) {
                       link.setAttribute('href', basePath + href);
                     }
                   });
@@ -130,7 +173,7 @@ export default function RootLayout({
                   var scripts = document.querySelectorAll('script[src]');
                   scripts.forEach(function(script) {
                     var src = script.getAttribute('src');
-                    if (src && src.startsWith('/_next/')) {
+                    if (src && src.startsWith('/_next/') && !src.startsWith(basePath)) {
                       script.setAttribute('src', basePath + src);
                     }
                   });
