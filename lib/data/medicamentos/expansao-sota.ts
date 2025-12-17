@@ -202,7 +202,7 @@ export const medicamentosExpansaoSOTA: Medicamento[] = [
     snomedCT: '372628001',
     casNumber: '57-41-0',
     classeTerapeutica: 'anticonvulsivante',
-    subclasse: 'anticonvulsivante_tratamento',
+    subclasse: 'bloqueador_canal_sodio',
     rename: true,
     apresentacoes: [
       { forma: 'comprimido', concentracao: '100mg', disponivelSUS: true },
