@@ -69,6 +69,26 @@ function fixHtmlFile(filePath) {
     }
   );
 
+  // Fix navigation links (href in <a> tags)
+  // Remove /darwin-MFC from all href attributes
+  content = content.replace(
+    /href="\/darwin-MFC\/([^"]*)"/g,
+    (match, path) => {
+      modified = true;
+      // Keep trailing slash if it was there, but remove basePath
+      return `href="/${path}"`;
+    }
+  );
+
+  // Also fix action attributes in forms
+  content = content.replace(
+    /action="\/darwin-MFC\/([^"]*)"/g,
+    (match, path) => {
+      modified = true;
+      return `action="/${path}"`;
+    }
+  );
+
   if (modified) {
     fs.writeFileSync(filePath, content, 'utf8');
     console.log(`✓ Fixed: ${path.relative(OUT_DIR, filePath)}`);
