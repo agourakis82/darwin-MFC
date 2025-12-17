@@ -1,37 +1,86 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { CheckCircle2, XCircle, Clock, Award } from 'lucide-react';
+import { useState, useEffect, useMemo } from 'react';
+import { CheckCircle2, XCircle, Clock, Award, TrendingUp, TrendingDown } from 'lucide-react';
 import { Quiz, QuizQuestion, QuizAttempt, QuizResposta } from '@/lib/types/study-mode';
+import { 
+  initializeAdaptiveState, 
+  updateAdaptiveState, 
+  selectNextQuestion,
+  calculatePerformanceScore,
+  getPerformanceFeedback,
+  AdaptiveQuizState,
+  Difficulty
+} from '@/lib/utils/adaptive-quiz';
 
 interface QuizPlayerProps {
   quiz: Quiz;
   onComplete: (attempt: QuizAttempt) => void;
   onExit?: () => void;
+  adaptive?: boolean; // Se deve usar modo adaptativo
 }
 
-export default function QuizPlayer({ quiz, onComplete, onExit }: QuizPlayerProps) {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+export default function QuizPlayer({ quiz, onComplete, onExit, adaptive = true }: QuizPlayerProps) {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string | string[]>>({});
   const [showResults, setShowResults] = useState(false);
   const [startTime] = useState(Date.now());
-  const [questionStartTime] = useState(Date.now());
+  const [questionStartTime, setQuestionStartTime] = useState(Date.now());
+  const [answeredQuestions, setAnsweredQuestions] = useState<Set<string>>(new Set());
+  const [adaptiveState, setAdaptiveState] = useState<AdaptiveQuizState>(
+    () => initializeAdaptiveState(quiz.dificuldade)
+  );
+  const [remainingQuestions, setRemainingQuestions] = useState<QuizQuestion[]>(quiz.questoes);
 
-  const question = quiz.questoes[currentQuestion];
-  const isLastQuestion = currentQuestion === quiz.questoes.length - 1;
+  // Get current question (adaptive or sequential)
+  const currentQuestion = useMemo(() => {
+    if (adaptive && remainingQuestions.length > 0) {
+      return selectNextQuestion(remainingQuestions, adaptiveState) || remainingQuestions[0];
+    }
+    return quiz.questoes[currentQuestionIndex];
+  }, [adaptive, remainingQuestions, adaptiveState, currentQuestionIndex, quiz.questoes]);
+
+  const isLastQuestion = remainingQuestions.length === 1 || currentQuestionIndex === quiz.questoes.length - 1;
 
   const handleAnswer = (answer: string) => {
-    setSelectedAnswers({
+    const newSelectedAnswers = {
       ...selectedAnswers,
-      [question.id]: answer
-    });
+      [currentQuestion.id]: answer
+    };
+    setSelectedAnswers(newSelectedAnswers);
+    setAnsweredQuestions(new Set([...answeredQuestions, currentQuestion.id]));
   };
 
   const handleNext = () => {
-    if (isLastQuestion) {
+    // Calculate time spent on current question
+    const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
+    
+    // Check if answer was correct
+    const resposta = selectedAnswers[currentQuestion.id];
+    const wasCorrect = Array.isArray(currentQuestion.respostaCorreta)
+      ? currentQuestion.respostaCorreta.includes(resposta as string)
+      : resposta === currentQuestion.respostaCorreta;
+
+    // Update adaptive state if enabled
+    if (adaptive) {
+      const newState = updateAdaptiveState(adaptiveState, wasCorrect, timeSpent);
+      setAdaptiveState(newState);
+      
+      // Remove answered question from remaining
+      setRemainingQuestions(prev => prev.filter(q => q.id !== currentQuestion.id));
+    }
+
+    // Move to next question or finish
+    if (isLastQuestion || (adaptive && remainingQuestions.length === 1)) {
       finishQuiz();
     } else {
-      setCurrentQuestion(currentQuestion + 1);
+      if (adaptive) {
+        // Reset question start time for next question
+        setQuestionStartTime(Date.now());
+      } else {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setQuestionStartTime(Date.now());
+      }
     }
   };
 
@@ -39,22 +88,33 @@ export default function QuizPlayer({ quiz, onComplete, onExit }: QuizPlayerProps
     const endTime = Date.now();
     const tempoUtilizado = Math.floor((endTime - startTime) / 1000);
     
-    const respostas: QuizResposta[] = quiz.questoes.map(q => {
+    // Get all questions that were answered (for adaptive, use answered set)
+    const allQuestions = adaptive 
+      ? [...answeredQuestions].map(id => quiz.questoes.find(q => q.id === id)).filter(Boolean) as QuizQuestion[]
+      : quiz.questoes;
+    
+    const respostas: QuizResposta[] = allQuestions.map(q => {
       const resposta = selectedAnswers[q.id];
       const correta = Array.isArray(q.respostaCorreta)
         ? q.respostaCorreta.includes(resposta as string)
         : resposta === q.respostaCorreta;
       
+      // Calculate time spent per question (approximate)
+      const questionTime = tempoUtilizado / allQuestions.length;
+      
       return {
         questaoId: q.id,
         resposta: resposta || '',
-        correta
+        correta,
+        tempoGasto: questionTime,
       };
     });
 
-    const pontuacao = respostas.reduce((acc, r, idx) => 
-      acc + (r.correta ? quiz.questoes[idx].pontos : 0), 0
-    );
+    // Find question points for each response
+    const pontuacao = respostas.reduce((acc, r) => {
+      const question = allQuestions.find(q => q.id === r.questaoId);
+      return acc + (r.correta ? (question?.pontos || 0) : 0);
+    }, 0);
     const porcentagemAcerto = (respostas.filter(r => r.correta).length / respostas.length) * 100;
 
     const attempt: QuizAttempt = {
@@ -71,7 +131,11 @@ export default function QuizPlayer({ quiz, onComplete, onExit }: QuizPlayerProps
   };
 
   if (showResults) {
-    const correctCount = quiz.questoes.filter((q, idx) => {
+    const allAnsweredQuestions = adaptive 
+      ? [...answeredQuestions].map(id => quiz.questoes.find(q => q.id === id)).filter(Boolean) as QuizQuestion[]
+      : quiz.questoes;
+    
+    const correctCount = allAnsweredQuestions.filter((q) => {
       const resposta = selectedAnswers[q.id];
       const correta = Array.isArray(q.respostaCorreta)
         ? q.respostaCorreta.includes(resposta as string)
@@ -85,16 +149,27 @@ export default function QuizPlayer({ quiz, onComplete, onExit }: QuizPlayerProps
           <Award className="w-16 h-16 mx-auto mb-4" />
           <h2 className="text-3xl font-bold mb-4">Quiz Concluído!</h2>
           <div className="text-6xl font-bold mb-2">
-            {Math.round((correctCount / quiz.questoes.length) * 100)}%
+            {Math.round((correctCount / allAnsweredQuestions.length) * 100)}%
           </div>
           <div className="text-xl opacity-90 mb-6">
-            {correctCount} de {quiz.questoes.length} questões corretas
+            {correctCount} de {allAnsweredQuestions.length} questões corretas
           </div>
+          {adaptive && (
+            <div className="mt-4 p-4 bg-white/20 rounded-lg">
+              <div className="text-sm opacity-90 mb-2">
+                {getPerformanceFeedback(adaptiveState)}
+              </div>
+              <div className="flex items-center justify-center gap-4 text-sm">
+                <span>Dificuldade final: {adaptiveState.currentDifficulty}</span>
+                <span>Score: {Math.round(calculatePerformanceScore(adaptiveState))}/100</span>
+              </div>
+            </div>
+          )}
           <div className="grid grid-cols-2 gap-4 mt-6">
             <div className="bg-white/20 rounded-lg p-4">
               <div className="text-sm opacity-80 mb-1">Pontuação</div>
               <div className="text-2xl font-bold">
-                {quiz.questoes.reduce((acc, q, idx) => {
+                {allAnsweredQuestions.reduce((acc, q) => {
                   const resposta = selectedAnswers[q.id];
                   const correta = Array.isArray(q.respostaCorreta)
                     ? q.respostaCorreta.includes(resposta as string)
@@ -120,13 +195,22 @@ export default function QuizPlayer({ quiz, onComplete, onExit }: QuizPlayerProps
       {/* Progress bar */}
       <div className="mb-6">
         <div className="flex justify-between text-sm text-slate-600 dark:text-slate-400 mb-2">
-          <span>Questão {currentQuestion + 1} de {quiz.questoes.length}</span>
-          <span>{Math.round(((currentQuestion + 1) / quiz.questoes.length) * 100)}%</span>
+          <span>
+            Questão {adaptive ? answeredQuestions.size + 1 : currentQuestionIndex + 1} de {adaptive ? remainingQuestions.length + answeredQuestions.size : quiz.questoes.length}
+            {adaptive && (
+              <span className="ml-2 text-xs">(Dificuldade: {adaptiveState.currentDifficulty})</span>
+            )}
+          </span>
+          <span>
+            {Math.round(((adaptive ? answeredQuestions.size + 1 : currentQuestionIndex + 1) / (adaptive ? remainingQuestions.length + answeredQuestions.size : quiz.questoes.length)) * 100)}%
+          </span>
         </div>
         <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
           <div
             className="bg-emerald-600 h-2 rounded-full transition-all duration-300"
-            style={{ width: `${((currentQuestion + 1) / quiz.questoes.length) * 100}%` }}
+            style={{ 
+              width: `${((adaptive ? answeredQuestions.size + 1 : currentQuestionIndex + 1) / (adaptive ? remainingQuestions.length + answeredQuestions.size : quiz.questoes.length)) * 100}%` 
+            }}
           />
         </div>
       </div>
@@ -138,20 +222,20 @@ export default function QuizPlayer({ quiz, onComplete, onExit }: QuizPlayerProps
             {quiz.categoria.toUpperCase()}
           </div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
-            {question.enunciado}
+            {currentQuestion.enunciado}
           </h2>
-          {question.tempoEstimado && (
+          {currentQuestion.tempoEstimado && (
             <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
               <Clock className="w-4 h-4" />
-              <span>Tempo estimado: {question.tempoEstimado}s</span>
+              <span>Tempo estimado: {currentQuestion.tempoEstimado}s</span>
             </div>
           )}
         </div>
 
         {/* Options */}
         <div className="space-y-3">
-          {question.opcoes?.map((opcao) => {
-            const isSelected = selectedAnswers[question.id] === opcao.id;
+          {currentQuestion.opcoes?.map((opcao) => {
+            const isSelected = selectedAnswers[currentQuestion.id] === opcao.id;
             return (
               <button
                 key={opcao.id}
@@ -182,16 +266,19 @@ export default function QuizPlayer({ quiz, onComplete, onExit }: QuizPlayerProps
 
       {/* Navigation */}
       <div className="flex justify-between">
-        <button
-          onClick={() => setCurrentQuestion(Math.max(0, currentQuestion - 1))}
-          disabled={currentQuestion === 0}
-          className="px-6 py-3 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-xl font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
-        >
-          Anterior
-        </button>
+        {!adaptive && (
+          <button
+            onClick={() => setCurrentQuestionIndex(Math.max(0, currentQuestionIndex - 1))}
+            disabled={currentQuestionIndex === 0}
+            className="px-6 py-3 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-xl font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
+          >
+            Anterior
+          </button>
+        )}
+        {adaptive && <div />}
         <button
           onClick={handleNext}
-          disabled={!selectedAnswers[question.id]}
+          disabled={!selectedAnswers[currentQuestion.id]}
           className="px-6 py-3 bg-emerald-600 text-white rounded-xl font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-emerald-700 transition-colors"
         >
           {isLastQuestion ? 'Finalizar' : 'Próxima'}

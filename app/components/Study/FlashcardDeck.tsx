@@ -1,23 +1,75 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Shuffle, RotateCcw, ArrowRight, ArrowLeft } from 'lucide-react';
+import { useState, useEffect, useMemo } from 'react';
+import { Shuffle, RotateCcw, ArrowRight, ArrowLeft, Calendar } from 'lucide-react';
 import Flashcard from './Flashcard';
 import { Flashcard as FlashcardType } from '@/lib/types/study-mode';
+import { useStudyStore } from '@/lib/store/studyStore';
+import { getCardsDueToday, getOverdueCards, getNewCards, calculateReviewStats, Quality } from '@/lib/utils/spaced-repetition';
 
 interface FlashcardDeckProps {
   flashcards: FlashcardType[];
   onComplete?: () => void;
+  mode?: 'all' | 'due' | 'new' | 'overdue'; // Modo de filtro de cards
 }
 
-export default function FlashcardDeck({ flashcards, onComplete }: FlashcardDeckProps) {
+export default function FlashcardDeck({ flashcards, onComplete, mode = 'all' }: FlashcardDeckProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [shuffled, setShuffled] = useState<FlashcardType[]>(flashcards);
-  const [progress, setProgress] = useState<Record<string, number>>({});
+  
+  const { 
+    flashcardSchedules, 
+    initializeFlashcard, 
+    updateFlashcardReview,
+    getFlashcardSchedule,
+    getCardsDueToday: getDueTodayFromStore,
+  } = useStudyStore();
+
+  // Initialize schedules for all flashcards
+  useEffect(() => {
+    flashcards.forEach(flashcard => {
+      if (!flashcardSchedules[flashcard.id]) {
+        initializeFlashcard(flashcard.id);
+      }
+    });
+  }, [flashcards, flashcardSchedules, initializeFlashcard]);
+
+  // Filter flashcards based on mode
+  const filteredFlashcards = useMemo(() => {
+    if (mode === 'all') {
+      return flashcards;
+    }
+
+    const schedules = Object.values(flashcardSchedules).filter(s => 
+      flashcards.some(f => f.id === s.cardId)
+    );
+
+    if (mode === 'due') {
+      const dueSchedules = getCardsDueToday(schedules);
+      const dueIds = new Set(dueSchedules.map(s => s.cardId));
+      return flashcards.filter(f => dueIds.has(f.id));
+    }
+
+    if (mode === 'overdue') {
+      const overdueSchedules = getOverdueCards(schedules);
+      const overdueIds = new Set(overdueSchedules.map(s => s.cardId));
+      return flashcards.filter(f => overdueIds.has(f.id));
+    }
+
+    if (mode === 'new') {
+      const newSchedules = getNewCards(schedules);
+      const newIds = new Set(newSchedules.map(s => s.cardId));
+      return flashcards.filter(f => newIds.has(f.id) || !flashcardSchedules[f.id]);
+    }
+
+    return flashcards;
+  }, [flashcards, mode, flashcardSchedules]);
+
+  const [shuffled, setShuffled] = useState<FlashcardType[]>(filteredFlashcards);
 
   useEffect(() => {
-    setShuffled([...flashcards]);
-  }, [flashcards]);
+    setShuffled([...filteredFlashcards]);
+    setCurrentIndex(0);
+  }, [filteredFlashcards]);
 
   const handleShuffle = () => {
     const newShuffled = [...shuffled].sort(() => Math.random() - 0.5);
@@ -26,11 +78,18 @@ export default function FlashcardDeck({ flashcards, onComplete }: FlashcardDeckP
   };
 
   const handleMasteryChange = (level: number) => {
-    setProgress({
-      ...progress,
-      [shuffled[currentIndex].id]: level
-    });
+    const cardId = shuffled[currentIndex].id;
+    // Update review using spaced repetition algorithm
+    updateFlashcardReview(cardId, level as Quality);
   };
+
+  // Calculate stats
+  const stats = useMemo(() => {
+    const schedules = Object.values(flashcardSchedules).filter(s =>
+      flashcards.some(f => f.id === s.cardId)
+    );
+    return calculateReviewStats(schedules);
+  }, [flashcardSchedules, flashcards]);
 
   const handleNext = () => {
     if (currentIndex < shuffled.length - 1) {
@@ -55,30 +114,41 @@ export default function FlashcardDeck({ flashcards, onComplete }: FlashcardDeckP
   }
 
   const currentFlashcard = shuffled[currentIndex];
-  const completedCount = Object.keys(progress).length;
-  const averageMastery = Object.values(progress).length > 0
-    ? Object.values(progress).reduce((a, b) => a + b, 0) / Object.values(progress).length
-    : 0;
+  const currentSchedule = currentFlashcard ? getFlashcardSchedule(currentFlashcard.id) : null;
+  const nextReviewDate = currentSchedule ? new Date(currentSchedule.nextReview) : null;
 
   return (
     <div className="w-full">
       {/* Stats */}
-      <div className="mb-6 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <div className="text-sm text-slate-600 dark:text-slate-400">
-            {currentIndex + 1} / {shuffled.length}
+      <div className="mb-6 flex flex-col gap-4">
+        <div className="flex items-center justify-between flex-wrap gap-4">
+          <div className="flex items-center gap-4">
+            <div className="text-sm text-slate-600 dark:text-slate-400">
+              {currentIndex + 1} / {shuffled.length}
+            </div>
+            {nextReviewDate && (
+              <div className="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-1">
+                <Calendar className="w-4 h-4" />
+                Próxima revisão: {nextReviewDate.toLocaleDateString('pt-BR')}
+              </div>
+            )}
           </div>
-          <div className="text-sm text-slate-600 dark:text-slate-400">
-            Média de domínio: {averageMastery.toFixed(1)}/5
-          </div>
+          <button
+            onClick={handleShuffle}
+            className="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors flex items-center gap-2"
+          >
+            <Shuffle className="w-4 h-4" />
+            Embaralhar
+          </button>
         </div>
-        <button
-          onClick={handleShuffle}
-          className="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors flex items-center gap-2"
-        >
-          <Shuffle className="w-4 h-4" />
-          Embaralhar
-        </button>
+        
+        {/* Review Stats */}
+        <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+          <span>Novos: {stats.new}</span>
+          <span>Para hoje: {stats.dueToday}</span>
+          <span>Atrasados: {stats.overdue}</span>
+          <span>Dominados: {stats.mastered}</span>
+        </div>
       </div>
 
       {/* Flashcard */}
@@ -99,7 +169,7 @@ export default function FlashcardDeck({ flashcards, onComplete }: FlashcardDeckP
           Anterior
         </button>
         <div className="text-sm text-slate-600 dark:text-slate-400">
-          {completedCount} revisados
+          {stats.total - stats.new} revisados
         </div>
         <button
           onClick={handleNext}

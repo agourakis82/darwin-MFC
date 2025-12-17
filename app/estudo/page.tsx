@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { BookOpen, Brain, ClipboardList, TrendingUp, RotateCcw } from 'lucide-react';
+import { BookOpen, Brain, ClipboardList, TrendingUp, RotateCcw, Download } from 'lucide-react';
 import FlashcardDeck from '../components/Study/FlashcardDeck';
 import QuizPlayer from '../components/Study/QuizPlayer';
+import ExportButtons from '../components/Study/ExportButtons';
 import { Flashcard, Quiz } from '@/lib/types/study-mode';
 import { todosCasosClinicos } from '@/lib/data/casos-clinicos';
 import { doencasConsolidadas } from '@/lib/data/doencas/index';
+import { useStudyStore } from '@/lib/store/studyStore';
 
 export default function EstudoPage() {
   const [mode, setMode] = useState<'menu' | 'flashcards' | 'quiz'>('menu');
@@ -134,9 +136,11 @@ export default function EstudoPage() {
     setMode('quiz');
   };
 
+  const { flashcardSchedules, recordQuizAttempt } = useStudyStore();
+
   const handleQuizComplete = (attempt: any) => {
-    console.log('Quiz completed:', attempt);
-    // Aqui você salvaria o progresso no localStorage ou backend
+    // Salvar progresso no store
+    recordQuizAttempt(attempt.quizId, attempt);
   };
 
   if (mode === 'flashcards') {
@@ -152,7 +156,21 @@ export default function EstudoPage() {
               Voltar ao Menu
             </button>
           </div>
-          <FlashcardDeck flashcards={flashcards} />
+          
+          <div className="grid lg:grid-cols-3 gap-6">
+            <div className="lg:col-span-2">
+              <FlashcardDeck flashcards={flashcards} mode="due" />
+            </div>
+            <div className="lg:col-span-1">
+              <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-200 dark:border-slate-700 sticky top-24">
+                <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                  <Download className="w-5 h-5" />
+                  Exportar para Anki
+                </h2>
+                <ExportButtons flashcards={flashcards} schedules={flashcardSchedules} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -174,7 +192,7 @@ export default function EstudoPage() {
               Sair
             </button>
           </div>
-          <QuizPlayer quiz={currentQuiz} onComplete={handleQuizComplete} />
+          <QuizPlayer quiz={currentQuiz} onComplete={handleQuizComplete} adaptive={true} />
         </div>
       </div>
     );

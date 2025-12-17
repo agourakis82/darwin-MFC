@@ -1,41 +1,39 @@
 'use client';
 
 import { useState } from 'react';
-import { FlipHorizontal, Check, X, RotateCcw } from 'lucide-react';
+import { FlipHorizontal } from 'lucide-react';
 import { Flashcard as FlashcardType } from '@/lib/types/study-mode';
+import { Quality } from '@/lib/utils/spaced-repetition';
 
 interface FlashcardProps {
   flashcard: FlashcardType;
-  onMasteryChange: (level: number) => void;
+  onMasteryChange: (level: Quality) => void;
   onNext: () => void;
 }
 
 export default function Flashcard({ flashcard, onMasteryChange, onNext }: FlashcardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [masteryLevel, setMasteryLevel] = useState(flashcard.masteryLevel);
 
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
   };
 
-  const handleMastery = (level: number) => {
-    setMasteryLevel(level);
+  const handleMastery = (level: Quality) => {
     onMasteryChange(level);
     // Auto avançar após escolher mastery
     setTimeout(() => {
       onNext();
       setIsFlipped(false);
-      setMasteryLevel(flashcard.masteryLevel);
     }, 300);
   };
 
-  const masteryLabels = [
-    { level: 0, label: 'Não sei', color: 'bg-red-500' },
-    { level: 1, label: 'Muito difícil', color: 'bg-orange-500' },
-    { level: 2, label: 'Difícil', color: 'bg-yellow-500' },
-    { level: 3, label: 'Bom', color: 'bg-blue-500' },
-    { level: 4, label: 'Fácil', color: 'bg-green-500' },
-    { level: 5, label: 'Muito fácil', color: 'bg-emerald-500' },
+  const masteryLabels: Array<{ level: Quality; label: string; color: string; description: string }> = [
+    { level: 0, label: 'Incorreta', color: 'bg-red-500', description: 'Esquecido completamente' },
+    { level: 1, label: 'Muito difícil', color: 'bg-orange-500', description: 'Lembrou com muito esforço' },
+    { level: 2, label: 'Difícil', color: 'bg-yellow-500', description: 'Lembrou com esforço' },
+    { level: 3, label: 'Bom', color: 'bg-blue-500', description: 'Lembrou com algum esforço' },
+    { level: 4, label: 'Fácil', color: 'bg-green-500', description: 'Lembrou facilmente' },
+    { level: 5, label: 'Muito fácil', color: 'bg-emerald-500', description: 'Lembrou instantaneamente' },
   ];
 
   return (
@@ -83,40 +81,32 @@ export default function Flashcard({ flashcard, onMasteryChange, onNext }: Flashc
             {/* Mastery buttons */}
             <div className="space-y-4">
               <div className="text-sm font-semibold text-center mb-3">
-                Quão bem você conhecia isso?
+                Quão bem você conhecia isso? (Anki Scale)
               </div>
-              <div className="grid grid-cols-3 gap-2">
-                {masteryLabels.map(({ level, label, color }) => (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                {masteryLabels.map(({ level, label, color, description }) => (
                   <button
                     key={level}
                     onClick={(e) => {
                       e.stopPropagation();
                       handleMastery(level);
                     }}
-                    className={`${color} hover:opacity-90 text-white py-3 px-4 rounded-lg text-sm font-medium transition-all`}
+                    className={`${color} hover:opacity-90 text-white py-3 px-4 rounded-lg text-xs font-medium transition-all flex flex-col items-center justify-center`}
+                    title={description}
                   >
-                    {label}
+                    <span className="font-bold">{level}</span>
+                    <span>{label}</span>
                   </button>
                 ))}
+              </div>
+              <div className="text-xs text-center opacity-75 mt-2">
+                O algoritmo ajustará o intervalo de revisão baseado na sua resposta
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Progress indicator */}
-      <div className="mt-4 flex items-center justify-center gap-2">
-        <div className="flex gap-1">
-          {[0, 1, 2, 3, 4, 5].map((level) => (
-            <div
-              key={level}
-              className={`w-2 h-2 rounded-full ${
-                level <= masteryLevel ? 'bg-emerald-500' : 'bg-gray-300'
-              }`}
-            />
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
