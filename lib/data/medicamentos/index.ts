@@ -14,6 +14,7 @@ import { analgesicosAines } from './analgesicos-aines';
 import { psicofarmacos } from './psicofarmacos';
 import { medicamentosDiversos } from './diversos';
 import { medicamentosComplementares } from './complementares';
+import { medicamentosExpansaoSOTA } from './expansao-sota';
 
 // Consolidar todos os medicamentos
 // Filtrar apenas medicamentos completos do expanded
@@ -32,6 +33,7 @@ export const todosMedicamentos: Medicamento[] = [
   ...psicofarmacos,
   ...medicamentosDiversos,
   ...medicamentosComplementares,
+  ...medicamentosExpansaoSOTA,
 ];
 
 // Remover duplicatas por ID
