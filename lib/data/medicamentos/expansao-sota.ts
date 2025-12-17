@@ -91,7 +91,7 @@ export const medicamentosExpansaoSOTA: Medicamento[] = [
     snomedCT: '372772009',
     casNumber: '86386-73-4',
     classeTerapeutica: 'antifungico',
-    subclasse: 'azólico',
+    subclasse: 'antifungico',
     rename: true,
     apresentacoes: [
       { forma: 'comprimido', concentracao: '150mg', disponivelSUS: true },
