@@ -91,15 +91,12 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="dark" suppressHydrationWarning>
       <head>
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#0f172a" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <link rel="apple-touch-icon" href="/logos/sus-logo.svg" />
+        {/* CRITICAL: This script MUST run first, before any CSS/JS resources load */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
+                // CRITICAL: Execute synchronously before any resources load
                 // Detect basePath from current location
                 var basePath = '';
                 var pathname = window.location.pathname;
@@ -115,42 +112,131 @@ export default function RootLayout({
                 }
                 // Custom domain (mfc.agourakis.med.br) serves from root, so basePath = ''
                 
-                // Update manifest, icon, and CSS links based on basePath
-                // If custom domain is detected, remove basePath from links
+                // Fix links IMMEDIATELY before page loads
                 var isCustomDomain = !hostname.includes('github.io');
                 
+                // Intercept and fix links as they are added to the DOM
                 if (isCustomDomain) {
-                  // Custom domain: remove basePath from all links
-                  var manifestLink = document.querySelector('link[rel="manifest"]');
+                  var originalAppendChild = Node.prototype.appendChild;
+                  Node.prototype.appendChild = function(child) {
+                    if (child.tagName === 'LINK' && child.href) {
+                      var href = child.getAttribute('href');
+                      if (href && href.startsWith('/darwin-MFC/')) {
+                        child.setAttribute('href', href.replace('/darwin-MFC', ''));
+                      }
+                    }
+                    if (child.tagName === 'SCRIPT' && child.src) {
+                      var src = child.getAttribute('src');
+                      if (src && src.startsWith('/darwin-MFC/')) {
+                        child.setAttribute('src', src.replace('/darwin-MFC', ''));
+                      }
+                    }
+                    return originalAppendChild.call(this, child);
+                  };
+                  
+                  // Also fix existing links in head
+                  var fixLinks = function() {
+                    var head = document.head || document.getElementsByTagName('head')[0];
+                    if (!head) return;
+                    
+                    var cssLinks = head.querySelectorAll('link[rel="stylesheet"]');
+                    for (var i = 0; i < cssLinks.length; i++) {
+                      var link = cssLinks[i];
+                      var href = link.getAttribute('href');
+                      if (href && href.startsWith('/darwin-MFC/')) {
+                        link.setAttribute('href', href.replace('/darwin-MFC', ''));
+                      }
+                    }
+                    
+                    var preloadLinks = head.querySelectorAll('link[rel="preload"]');
+                    for (var i = 0; i < preloadLinks.length; i++) {
+                      var link = preloadLinks[i];
+                      var href = link.getAttribute('href');
+                      if (href && href.startsWith('/darwin-MFC/')) {
+                        link.setAttribute('href', href.replace('/darwin-MFC', ''));
+                      }
+                    }
+                  };
+                  
+                  // Fix immediately and also on DOMContentLoaded
+                  if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', fixLinks);
+                  } else {
+                    fixLinks();
+                  }
+                  
+                  // Use MutationObserver to catch links added dynamically
+                  if (window.MutationObserver) {
+                    var observer = new MutationObserver(function(mutations) {
+                      mutations.forEach(function(mutation) {
+                        mutation.addedNodes.forEach(function(node) {
+                          if (node.nodeType === 1) {
+                            if (node.tagName === 'LINK' && node.href) {
+                              var href = node.getAttribute('href');
+                              if (href && href.startsWith('/darwin-MFC/')) {
+                                node.setAttribute('href', href.replace('/darwin-MFC', ''));
+                              }
+                            }
+                            if (node.tagName === 'SCRIPT' && node.src) {
+                              var src = node.getAttribute('src');
+                              if (src && src.startsWith('/darwin-MFC/')) {
+                                node.setAttribute('src', src.replace('/darwin-MFC', ''));
+                              }
+                            }
+                          }
+                        });
+                      });
+                    });
+                    observer.observe(document.head, { childList: true, subtree: true });
+                  }
+                }
+                
+                // Update manifest, icon, and CSS links based on basePath
+                // If custom domain is detected, remove basePath from links
+                
+                if (isCustomDomain) {
+                  // Custom domain: remove basePath from all links IMMEDIATELY
+                  // Use document.head to access elements before body loads
+                  var head = document.head || document.getElementsByTagName('head')[0];
+                  
+                  // Fix CSS links
+                  var cssLinks = head.querySelectorAll('link[rel="stylesheet"]');
+                  for (var i = 0; i < cssLinks.length; i++) {
+                    var link = cssLinks[i];
+                    var href = link.getAttribute('href');
+                    if (href && href.startsWith('/darwin-MFC/_next/')) {
+                      link.setAttribute('href', href.replace('/darwin-MFC', ''));
+                    }
+                  }
+                  
+                  // Fix preload links
+                  var preloadLinks = head.querySelectorAll('link[rel="preload"]');
+                  for (var i = 0; i < preloadLinks.length; i++) {
+                    var link = preloadLinks[i];
+                    var href = link.getAttribute('href');
+                    if (href && href.startsWith('/darwin-MFC/_next/')) {
+                      link.setAttribute('href', href.replace('/darwin-MFC', ''));
+                    }
+                  }
+                  
+                  // Fix manifest and icons
+                  var manifestLink = head.querySelector('link[rel="manifest"]');
                   if (manifestLink) {
                     var manifestHref = manifestLink.getAttribute('href');
                     if (manifestHref && manifestHref.startsWith('/darwin-MFC')) {
                       manifestLink.setAttribute('href', manifestHref.replace('/darwin-MFC', ''));
                     }
                   }
-                  var appleIcon = document.querySelector('link[rel="apple-touch-icon"]');
+                  var appleIcon = head.querySelector('link[rel="apple-touch-icon"]');
                   if (appleIcon) {
                     var iconHref = appleIcon.getAttribute('href');
                     if (iconHref && iconHref.startsWith('/darwin-MFC')) {
                       appleIcon.setAttribute('href', iconHref.replace('/darwin-MFC', ''));
                     }
                   }
-                  // Remove basePath from CSS links
-                  var cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
-                  cssLinks.forEach(function(link) {
-                    var href = link.getAttribute('href');
-                    if (href && href.startsWith('/darwin-MFC/_next/')) {
-                      link.setAttribute('href', href.replace('/darwin-MFC', ''));
-                    }
-                  });
-                  // Remove basePath from script src attributes
-                  var scripts = document.querySelectorAll('script[src]');
-                  scripts.forEach(function(script) {
-                    var src = script.getAttribute('src');
-                    if (src && src.startsWith('/darwin-MFC/_next/')) {
-                      script.setAttribute('src', src.replace('/darwin-MFC', ''));
-                    }
-                  });
+                  
+                  // Fix scripts in head (they load after this script)
+                  // We'll also fix them after DOM loads as fallback
                 } else if (basePath) {
                   // GitHub Pages subdirectory: add basePath to links
                   var manifestLink = document.querySelector('link[rel="manifest"]');
@@ -192,10 +278,24 @@ export default function RootLayout({
                   document.documentElement.classList.add('dark');
                 }
                 
+                // Fix script tags after DOM loads (fallback for scripts in body)
+                if (isCustomDomain) {
+                  document.addEventListener('DOMContentLoaded', function() {
+                    var scripts = document.querySelectorAll('script[src]');
+                    for (var i = 0; i < scripts.length; i++) {
+                      var script = scripts[i];
+                      var src = script.getAttribute('src');
+                      if (src && src.startsWith('/darwin-MFC/_next/')) {
+                        script.setAttribute('src', src.replace('/darwin-MFC', ''));
+                      }
+                    }
+                  });
+                }
+                
                 // Register Service Worker with basePath support
                 if ('serviceWorker' in navigator) {
                   window.addEventListener('load', function() {
-                    var swPath = basePath + '/sw.js';
+                    var swPath = (isCustomDomain ? '' : basePath) + '/sw.js';
                     navigator.serviceWorker.register(swPath).then(function(registration) {
                       console.log('ServiceWorker registered: ', registration.scope);
                     }).catch(function(err) {
