@@ -272,7 +272,7 @@ export const medicamentosExpansaoSOTA: Medicamento[] = [
     snomedCT: '372734001',
     casNumber: '747-36-4',
     classeTerapeutica: 'outros',
-    subclasse: 'imunossupressor',
+    subclasse: undefined,
     rename: true,
     apresentacoes: [
       { forma: 'comprimido', concentracao: '200mg', disponivelSUS: true },
