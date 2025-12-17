@@ -165,7 +165,8 @@ export default function RootLayout({
                       }
                     });
                     
-                    // Fix scripts - remove and recreate
+                    // Fix scripts - remove and recreate IMMEDIATELY
+                    // Must do this before browser starts loading them
                     var scripts = Array.from(head.querySelectorAll('script[src]'));
                     scripts.forEach(function(script) {
                       var src = script.getAttribute('src');
@@ -173,14 +174,26 @@ export default function RootLayout({
                         var newSrc = src.replace('/darwin-MFC', '');
                         var async = script.hasAttribute('async');
                         var defer = script.hasAttribute('defer');
-                        // Remove old script
+                        var fetchPriority = script.getAttribute('fetchPriority');
+                        // Remove old script BEFORE creating new one
                         script.remove();
                         // Create new script with correct path
                         var newScript = document.createElement('script');
                         newScript.src = newSrc;
                         if (async) newScript.async = true;
                         if (defer) newScript.defer = true;
+                        if (fetchPriority) newScript.setAttribute('fetchPriority', fetchPriority);
+                        // Insert at same position if possible, otherwise append
                         head.appendChild(newScript);
+                      }
+                    });
+                    
+                    // Also fix preload links for scripts
+                    var preloadScripts = Array.from(head.querySelectorAll('link[rel="preload"][as="script"]'));
+                    preloadScripts.forEach(function(link) {
+                      var href = link.getAttribute('href');
+                      if (href && href.startsWith('/darwin-MFC/')) {
+                        link.setAttribute('href', href.replace('/darwin-MFC', ''));
                       }
                     });
                   }
