@@ -150,8 +150,16 @@ export function getDoencaByUMLS(umlsCui: string): Partial<Doenca> | undefined {
  */
 export function getDoencasWithFullOntologyMapping(): Partial<Doenca>[] {
   return doencasConsolidadas.filter(d => 
-    d.doid && d.snomedCT && d.meshId && d.umlsCui
+    d.doid && d.snomedCT && d.meshId && d.umlsCui && d.cid10 && d.ciap2
   );
+}
+
+export function getDoencasWithCID11(): Partial<Doenca>[] {
+  return doencasConsolidadas.filter(d => d.cid11 && d.cid11.length > 0);
+}
+
+export function getDoencasWithHPO(): Partial<Doenca>[] {
+  return doencasConsolidadas.filter(d => d.hpo && d.hpo.length > 0);
 }
 
 /**
@@ -163,6 +171,8 @@ export function getOntologyStats() {
   const withSNOMED = doencasConsolidadas.filter(d => d.snomedCT).length;
   const withMeSH = doencasConsolidadas.filter(d => d.meshId).length;
   const withUMLS = doencasConsolidadas.filter(d => d.umlsCui).length;
+  const withCID11 = getDoencasWithCID11().length;
+  const withHPO = getDoencasWithHPO().length;
   const withAll = getDoencasWithFullOntologyMapping().length;
   
   return {
@@ -172,6 +182,8 @@ export function getOntologyStats() {
       snomedCT: { count: withSNOMED, percent: Math.round((withSNOMED / total) * 100) },
       meshId: { count: withMeSH, percent: Math.round((withMeSH / total) * 100) },
       umlsCui: { count: withUMLS, percent: Math.round((withUMLS / total) * 100) },
+      cid11: { count: withCID11, percent: Math.round((withCID11 / total) * 100) },
+      hpo: { count: withHPO, percent: Math.round((withHPO / total) * 100) },
       allMapped: { count: withAll, percent: Math.round((withAll / total) * 100) },
     }
   };
