@@ -115,17 +115,19 @@ export default function RootLayout({
                 // Fix links IMMEDIATELY before page loads
                 var isCustomDomain = !hostname.includes('github.io');
                 
-                // Intercept and fix links as they are added to the DOM
+                // CRITICAL: Fix links IMMEDIATELY for custom domain
+                // Must execute before browser starts loading resources
                 if (isCustomDomain) {
+                  // Intercept appendChild to fix links before they're added
                   var originalAppendChild = Node.prototype.appendChild;
                   Node.prototype.appendChild = function(child) {
-                    if (child.tagName === 'LINK' && child.href) {
+                    if (child.tagName === 'LINK') {
                       var href = child.getAttribute('href');
                       if (href && href.startsWith('/darwin-MFC/')) {
                         child.setAttribute('href', href.replace('/darwin-MFC', ''));
                       }
                     }
-                    if (child.tagName === 'SCRIPT' && child.src) {
+                    if (child.tagName === 'SCRIPT') {
                       var src = child.getAttribute('src');
                       if (src && src.startsWith('/darwin-MFC/')) {
                         child.setAttribute('src', src.replace('/darwin-MFC', ''));
@@ -134,50 +136,68 @@ export default function RootLayout({
                     return originalAppendChild.call(this, child);
                   };
                   
-                  // Also fix existing links in head
-                  var fixLinks = function() {
-                    var head = document.head || document.getElementsByTagName('head')[0];
-                    if (!head) return;
+                  // Fix existing links in head IMMEDIATELY (synchronous)
+                  var head = document.head || document.getElementsByTagName('head')[0];
+                  if (head) {
+                    // Fix CSS links - remove and recreate to prevent loading
+                    var cssLinks = Array.from(head.querySelectorAll('link[rel="stylesheet"]'));
+                    cssLinks.forEach(function(link) {
+                      var href = link.getAttribute('href');
+                      if (href && href.startsWith('/darwin-MFC/')) {
+                        var newHref = href.replace('/darwin-MFC', '');
+                        // Remove old link
+                        link.remove();
+                        // Create new link with correct path
+                        var newLink = document.createElement('link');
+                        newLink.rel = 'stylesheet';
+                        newLink.href = newHref;
+                        newLink.setAttribute('data-precedence', link.getAttribute('data-precedence') || 'next');
+                        head.appendChild(newLink);
+                      }
+                    });
                     
-                    var cssLinks = head.querySelectorAll('link[rel="stylesheet"]');
-                    for (var i = 0; i < cssLinks.length; i++) {
-                      var link = cssLinks[i];
+                    // Fix preload links
+                    var preloadLinks = Array.from(head.querySelectorAll('link[rel="preload"]'));
+                    preloadLinks.forEach(function(link) {
                       var href = link.getAttribute('href');
                       if (href && href.startsWith('/darwin-MFC/')) {
                         link.setAttribute('href', href.replace('/darwin-MFC', ''));
                       }
-                    }
+                    });
                     
-                    var preloadLinks = head.querySelectorAll('link[rel="preload"]');
-                    for (var i = 0; i < preloadLinks.length; i++) {
-                      var link = preloadLinks[i];
-                      var href = link.getAttribute('href');
-                      if (href && href.startsWith('/darwin-MFC/')) {
-                        link.setAttribute('href', href.replace('/darwin-MFC', ''));
+                    // Fix scripts - remove and recreate
+                    var scripts = Array.from(head.querySelectorAll('script[src]'));
+                    scripts.forEach(function(script) {
+                      var src = script.getAttribute('src');
+                      if (src && src.startsWith('/darwin-MFC/')) {
+                        var newSrc = src.replace('/darwin-MFC', '');
+                        var async = script.hasAttribute('async');
+                        var defer = script.hasAttribute('defer');
+                        // Remove old script
+                        script.remove();
+                        // Create new script with correct path
+                        var newScript = document.createElement('script');
+                        newScript.src = newSrc;
+                        if (async) newScript.async = true;
+                        if (defer) newScript.defer = true;
+                        head.appendChild(newScript);
                       }
-                    }
-                  };
-                  
-                  // Fix immediately and also on DOMContentLoaded
-                  if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', fixLinks);
-                  } else {
-                    fixLinks();
+                    });
                   }
                   
-                  // Use MutationObserver to catch links added dynamically
+                  // MutationObserver as fallback for dynamically added elements
                   if (window.MutationObserver) {
                     var observer = new MutationObserver(function(mutations) {
                       mutations.forEach(function(mutation) {
                         mutation.addedNodes.forEach(function(node) {
                           if (node.nodeType === 1) {
-                            if (node.tagName === 'LINK' && node.href) {
+                            if (node.tagName === 'LINK') {
                               var href = node.getAttribute('href');
                               if (href && href.startsWith('/darwin-MFC/')) {
                                 node.setAttribute('href', href.replace('/darwin-MFC', ''));
                               }
                             }
-                            if (node.tagName === 'SCRIPT' && node.src) {
+                            if (node.tagName === 'SCRIPT') {
                               var src = node.getAttribute('src');
                               if (src && src.startsWith('/darwin-MFC/')) {
                                 node.setAttribute('src', src.replace('/darwin-MFC', ''));
