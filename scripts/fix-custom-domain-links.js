@@ -44,33 +44,26 @@ function fixHtmlFile(filePath) {
     }
   );
 
-  // Fix manifest and other root-level links
+  // Fix manifest and other root-level resource links
   content = content.replace(
-    /href="\/darwin-MFC\/([^"]+)"/g,
+    /href="\/darwin-MFC\/(manifest\.json|logos\/[^"]+)"/g,
     (match, filename) => {
-      // Don't fix internal navigation links, only resource links
-      if (filename.startsWith('_next/') || filename === 'manifest.json' || filename.startsWith('logos/')) {
-        modified = true;
-        return `href="/${filename}"`;
-      }
-      return match;
+      modified = true;
+      return `href="/${filename}"`;
     }
   );
 
   // Fix src attributes for images and other resources
   content = content.replace(
-    /src="\/darwin-MFC\/([^"]+)"/g,
+    /src="\/darwin-MFC\/(_next\/[^"]+|logos\/[^"]+)"/g,
     (match, filename) => {
-      if (filename.startsWith('_next/') || filename.startsWith('logos/')) {
-        modified = true;
-        return `src="/${filename}"`;
-      }
-      return match;
+      modified = true;
+      return `src="/${filename}"`;
     }
   );
 
-  // Fix navigation links (href in <a> tags)
-  // Remove /darwin-MFC from all href attributes
+  // Fix navigation links (href in <a> tags) - must be last to catch remaining href
+  // Remove /darwin-MFC from all remaining href attributes
   content = content.replace(
     /href="\/darwin-MFC\/([^"]*)"/g,
     (match, path) => {
