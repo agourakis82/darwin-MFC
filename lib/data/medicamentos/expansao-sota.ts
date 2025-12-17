@@ -54,7 +54,7 @@ export const medicamentosExpansaoSOTA: Medicamento[] = [
     snomedCT: '372523001',
     casNumber: '15686-71-2',
     classeTerapeutica: 'antibiotico',
-    subclasse: 'cefalosporina_1geracao',
+    subclasse: 'cefalosporina_1_geracao',
     rename: true,
     apresentacoes: [
       { forma: 'comprimido', concentracao: '500mg', disponivelSUS: true },
@@ -238,7 +238,7 @@ export const medicamentosExpansaoSOTA: Medicamento[] = [
     drugBankId: 'DB00563',
     snomedCT: '372576009',
     casNumber: '59-05-2',
-    classeTerapeutica: 'imunossupressor',
+    classeTerapeutica: 'outros',
     subclasse: 'antimetabolito',
     rename: true,
     apresentacoes: [
@@ -271,8 +271,8 @@ export const medicamentosExpansaoSOTA: Medicamento[] = [
     drugBankId: 'DB01611',
     snomedCT: '372734001',
     casNumber: '747-36-4',
-    classeTerapeutica: 'imunossupressor',
-    subclasse: 'antimalarico_imunossupressor',
+    classeTerapeutica: 'outros',
+    subclasse: 'imunossupressor',
     rename: true,
     apresentacoes: [
       { forma: 'comprimido', concentracao: '200mg', disponivelSUS: true },
