@@ -275,8 +275,10 @@ export default function EcomapaEditor() {
     }
   };
 
-  const exportEcomapa = () => {
-    if (reactFlowInstance) {
+  const exportEcomapa = async (format: 'json' | 'svg' | 'png' = 'json') => {
+    if (!reactFlowInstance) return;
+
+    if (format === 'json') {
       const flow = reactFlowInstance.toObject();
       const dataStr = JSON.stringify(flow, null, 2);
       const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
@@ -284,6 +286,29 @@ export default function EcomapaEditor() {
       link.setAttribute('href', dataUri);
       link.setAttribute('download', 'ecomapa.json');
       link.click();
+      return;
+    }
+
+    // Export as image (SVG/PNG)
+    try {
+      const reactFlowElement = document.querySelector('.react-flow') as HTMLElement;
+      if (!reactFlowElement) {
+        console.error('React Flow element not found');
+        return;
+      }
+
+      const { reactFlowToPNG, exportReactFlowToSVG, downloadSVG, downloadPNG } = await import('@/lib/utils/family-tools-export');
+      
+      if (format === 'svg') {
+        const svgString = await exportReactFlowToSVG(reactFlowInstance);
+        downloadSVG(svgString, 'ecomapa.svg');
+      } else if (format === 'png') {
+        const pngDataURL = await reactFlowToPNG(reactFlowElement, { backgroundColor: '#ffffff' });
+        downloadPNG(pngDataURL, 'ecomapa.png');
+      }
+    } catch (error) {
+      console.error('Error exporting ecomapa:', error);
+      alert('Erro ao exportar ecomapa. Tente novamente.');
     }
   };
 
@@ -332,13 +357,36 @@ export default function EcomapaEditor() {
             </button>
           ) : null}
           
-          <button
-            onClick={exportEcomapa}
-            className="flex items-center gap-2 px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm font-medium shadow-lg"
-          >
-            <Download className="w-4 h-4" />
-            Exportar
-          </button>
+          <div className="relative group">
+            <button
+              onClick={() => exportEcomapa('png')}
+              className="flex items-center gap-2 px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm font-medium shadow-lg"
+            >
+              <Download className="w-4 h-4" />
+              Exportar PNG
+            </button>
+            {/* Dropdown menu */}
+            <div className="absolute top-full left-0 mt-1 hidden group-hover:block bg-white dark:bg-neutral-800 rounded-lg shadow-xl border border-neutral-200 dark:border-neutral-700 z-50 min-w-[120px]">
+              <button
+                onClick={() => exportEcomapa('png')}
+                className="w-full text-left px-4 py-2 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-t-lg"
+              >
+                PNG
+              </button>
+              <button
+                onClick={() => exportEcomapa('svg')}
+                className="w-full text-left px-4 py-2 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-700"
+              >
+                SVG
+              </button>
+              <button
+                onClick={() => exportEcomapa('json')}
+                className="w-full text-left px-4 py-2 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-b-lg"
+              >
+                JSON
+              </button>
+            </div>
+          </div>
           
           <button
             onClick={resetEcomapa}

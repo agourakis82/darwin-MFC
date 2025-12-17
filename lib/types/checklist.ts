@@ -53,7 +53,7 @@ export interface ChecklistConsulta {
 export interface ChecklistProgress {
   checklistId: string;
   consultaId?: string; // ID único da consulta específica
-  itensCompletados: Set<string>; // IDs dos itens marcados
+  itensCompletados: Set<string> | string[]; // IDs dos itens marcados (Set ou Array)
   observacoes?: Record<string, string>; // Observações por item
   dataPreenchimento: Date;
   preenchidoPor?: string;

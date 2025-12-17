@@ -37,9 +37,13 @@ export default function ChecklistConsultaComponent({
   onComplete,
   initialProgress 
 }: ChecklistConsultaProps) {
-  const [completados, setCompletados] = useState<Set<string>>(
-    initialProgress?.itensCompletados || new Set()
-  );
+  const initialCompletados = initialProgress?.itensCompletados instanceof Set
+    ? initialProgress.itensCompletados
+    : initialProgress?.itensCompletados
+      ? new Set(initialProgress.itensCompletados)
+      : new Set<string>();
+  
+  const [completados, setCompletados] = useState<Set<string>>(initialCompletados);
   const [observacoes, setObservacoes] = useState<Record<string, string>>(
     initialProgress?.observacoes || {}
   );

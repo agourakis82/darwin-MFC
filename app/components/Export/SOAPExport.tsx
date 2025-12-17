@@ -7,6 +7,8 @@ import { Copy, Download, Check, FileText, ClipboardList, Stethoscope, Pill, Targ
 interface FamilyToolsData {
   genogramaResumo?: string;
   ecomapaResumo?: string;
+  genogramaImagem?: string; // Base64 data URL da imagem
+  ecomapaImagem?: string; // Base64 data URL da imagem
   observacoesFamilia?: string;
 }
 
@@ -61,6 +63,11 @@ interface SOAPExportProps {
   initialData?: Partial<SOAPData>;
   doencaId?: string;
   onDataChange?: (data: SOAPData) => void;
+  checklistProgress?: {
+    checklist: ChecklistConsulta;
+    progress: ChecklistProgress;
+  };
+  includeChecklist?: boolean;
 }
 
 export default function SOAPExport({
@@ -243,18 +250,26 @@ export default function SOAPExport({
     }
 
     // Ferramentas de Família (se preenchido)
-    if (data.familia?.genogramaResumo || data.familia?.ecomapaResumo || data.familia?.observacoesFamilia) {
+    if (data.familia?.genogramaResumo || data.familia?.ecomapaResumo || data.familia?.observacoesFamilia || data.familia?.genogramaImagem || data.familia?.ecomapaImagem) {
       text += '\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n';
       text += '【F】 ABORDAGEM FAMILIAR (MFC)\n';
       text += '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n';
       
+      if (data.familia.genogramaImagem) {
+        text += '▸ Genograma (imagem anexa)\n';
+      }
+      
       if (data.familia.genogramaResumo) {
-        text += '▸ Genograma:\n';
+        text += '▸ Genograma (resumo):\n';
         text += `   ${data.familia.genogramaResumo}\n\n`;
       }
       
+      if (data.familia.ecomapaImagem) {
+        text += '▸ Ecomapa (imagem anexa)\n';
+      }
+      
       if (data.familia.ecomapaResumo) {
-        text += '▸ Ecomapa (Rede de Apoio):\n';
+        text += '▸ Ecomapa (Rede de Apoio - resumo):\n';
         text += `   ${data.familia.ecomapaResumo}\n\n`;
       }
       
