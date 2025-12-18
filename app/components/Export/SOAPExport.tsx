@@ -5,6 +5,16 @@ import Link from 'next/link';
 import { Copy, Download, Check, FileText, ClipboardList, Stethoscope, Pill, Target, User, ChevronDown, ChevronUp, Users, Network, ExternalLink } from 'lucide-react';
 import type { ChecklistProgress, ChecklistConsulta } from '@/lib/types/checklist';
 import { checklistProgressToSOAPText, checklistProgressToSOAPResumo } from './ChecklistSOAPExport';
+import SOAPNLPSuggestions, { SOAPNLPSuggestionsInline } from './SOAPNLPSuggestions';
+import { suggestCodesForDiagnosis } from '@/lib/utils/nlp-soap';
+import { todasDoencas } from '@/lib/data/doencas/index';
+import { todosMedicamentos } from '@/lib/data/medicamentos/index';
+import RecommendationsPanel from '@/app/components/Recommendations/RecommendationsPanel';
+import { saveConsultationToHistory } from '@/lib/utils/recommendations';
+import type { Recommendation } from '@/lib/utils/recommendations';
+import DrugInteractionAlerts from './DrugInteractionAlerts';
+import DifferentialDiagnosisAssistant from '@/app/components/Diagnosis/DifferentialDiagnosisAssistant';
+import { extractSymptomsFromSOAP } from '@/lib/utils/symptom-extraction';
 
 interface FamilyToolsData {
   genogramaResumo?: string;
@@ -14,7 +24,7 @@ interface FamilyToolsData {
   observacoesFamilia?: string;
 }
 
-interface SOAPData {
+export interface SOAPData {
   // Identificação
   paciente?: {
     iniciais?: string;
@@ -332,10 +342,106 @@ export default function SOAPExport({
     </button>
   );
 
+  const findMedicationIdByName = (name: string): string | null => {
+    const normalized = name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    for (const med of todosMedicamentos) {
+      if (med.nomeGenerico.toLowerCase().includes(normalized) || 
+          med.nomeGenerico.toLowerCase() === normalized) {
+        return med.id;
+      }
+      if (med.nomesComerciais?.some(nc => nc.toLowerCase().includes(normalized))) {
+        return med.id;
+      }
+    }
+    return null;
+  };
+
+  const handleSelectRecommendation = (rec: Recommendation) => {
+    if (rec.type === 'diagnosis' && rec.metadata?.doencaId) {
+      const doenca = todasDoencas.find(d => d.id === rec.metadata?.doencaId);
+      if (doenca && doenca.titulo) {
+        const hipoteses = data.avaliacao?.hipoteses || [];
+        if (!hipoteses.includes(doenca.titulo)) {
+          updateData({
+            avaliacao: {
+              ...data.avaliacao,
+              hipoteses: [...hipoteses, doenca.titulo],
+              cid10: [...new Set([...(data.avaliacao?.cid10 || []), ...(doenca.cid10 || [])])],
+              ciap2: [...new Set([...(data.avaliacao?.ciap2 || []), ...(doenca.ciap2 || [])])],
+            }
+          });
+        }
+      }
+    } else if (rec.type === 'medication' && rec.metadata?.medicamentoId) {
+      const medicamentoId = rec.metadata.medicamentoId;
+      const medicamento = todosMedicamentos.find(m => m.id === medicamentoId);
+      if (medicamento) {
+        const prescricoes = data.plano?.prescricoes || [];
+        const alreadyPrescribed = prescricoes.some(p => {
+          const medId = findMedicationIdByName(p.medicamento);
+          return medId !== null && medId === medicamento.id;
+        });
+        if (!alreadyPrescribed) {
+          const firstPosologia = medicamento.posologias && medicamento.posologias.length > 0 ? medicamento.posologias[0] : null;
+          const doseAdultos = firstPosologia?.adultos?.dose || 'Conforme prescrição médica';
+          const frequenciaAdultos = firstPosologia?.adultos?.frequencia || '';
+          const posologiaCompleta = frequenciaAdultos ? `${doseAdultos} ${frequenciaAdultos}` : doseAdultos;
+          updateData({
+            plano: {
+              ...data.plano,
+              prescricoes: [...prescricoes, {
+                medicamento: medicamento.nomeGenerico,
+                posologia: posologiaCompleta,
+                duracao: '',
+              }]
+            }
+          });
+        }
+      }
+    } else if (rec.type === 'followup' && rec.metadata?.doencaId) {
+      const doenca = todasDoencas.find(d => d.id === rec.metadata?.doencaId);
+      if (doenca && doenca.titulo && !data.plano?.retorno) {
+        updateData({
+          plano: {
+            ...data.plano,
+            retorno: '15 dias',
+          }
+        });
+      }
+    }
+  };
+
+  const handleSaveToHistory = () => {
+    try {
+      const consultId = saveConsultationToHistory(data);
+      alert(`Consulta salva no histórico! (ID: ${consultId})`);
+    } catch (error) {
+      console.error('Erro ao salvar consulta:', error);
+      alert('Erro ao salvar consulta no histórico');
+    }
+  };
+
+  // Extrai sintomas do SOAP para o assistente de diagnóstico
+  const extractedSymptoms = useMemo(() => {
+    return extractSymptomsFromSOAP({
+      subjetivo: data.subjetivo,
+      objetivo: data.objetivo,
+    });
+  }, [data.subjetivo, data.objetivo?.exameFisico]);
+
   return (
-    <div className="grid lg:grid-cols-2 gap-6">
-      {/* Formulário */}
-      <div className="space-y-4">
+    <div className="space-y-6">
+      {/* Painel de Recomendações */}
+      <RecommendationsPanel
+        currentSOAP={data}
+        onSelectRecommendation={handleSelectRecommendation}
+        showStatistics={true}
+        maxRecommendations={8}
+      />
+
+      <div className="grid lg:grid-cols-2 gap-6">
+        {/* Formulário */}
+        <div className="space-y-4">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
             <FileText className="w-6 h-6 text-white" />
@@ -404,6 +510,46 @@ export default function SOAPExport({
                 rows={4}
                 className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm resize-none"
               />
+              {data.subjetivo && data.subjetivo.length > 20 && (
+                <SOAPNLPSuggestions
+                  text={data.subjetivo}
+                  onSelectDiagnosis={(doencaId) => {
+                    const doenca = todasDoencas.find(d => d.id === doencaId);
+                    if (doenca?.titulo) {
+                      const hipoteses = data.avaliacao?.hipoteses || [];
+                      if (!hipoteses.includes(doenca.titulo)) {
+                        updateData({
+                          avaliacao: {
+                            ...data.avaliacao,
+                            hipoteses: [...hipoteses, doenca.titulo],
+                            cid10: [...new Set([...(data.avaliacao?.cid10 || []), ...(doenca.cid10 || [])])],
+                            ciap2: [...new Set([...(data.avaliacao?.ciap2 || []), ...(doenca.ciap2 || [])])],
+                          }
+                        });
+                      }
+                    }
+                  }}
+                  onSelectCode={(code, type) => {
+                    if (type === 'cid10') {
+                      updateData({
+                        avaliacao: {
+                          ...data.avaliacao,
+                          cid10: [...new Set([...(data.avaliacao?.cid10 || []), code])],
+                        }
+                      });
+                    } else {
+                      updateData({
+                        avaliacao: {
+                          ...data.avaliacao,
+                          ciap2: [...new Set([...(data.avaliacao?.ciap2 || []), code])],
+                        }
+                      });
+                    }
+                  }}
+                  showOnly={['diagnoses', 'codes']}
+                  maxSuggestions={3}
+                />
+              )}
             </div>
           )}
         </div>
@@ -455,6 +601,25 @@ export default function SOAPExport({
                   rows={3}
                   className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm resize-none"
                 />
+                {data.objetivo?.exameFisico && (
+                  <SOAPNLPSuggestionsInline
+                    text={data.objetivo.exameFisico}
+                    onSelectDiagnosis={(doencaId) => {
+                      const doenca = todasDoencas.find(d => d.id === doencaId);
+                      if (doenca?.titulo) {
+                        const hipoteses = data.avaliacao?.hipoteses || [];
+                        if (!hipoteses.includes(doenca.titulo)) {
+                          updateData({
+                            avaliacao: {
+                              ...data.avaliacao,
+                              hipoteses: [...hipoteses, doenca.titulo],
+                            }
+                          });
+                        }
+                      }
+                    }}
+                  />
+                )}
               </div>
             </div>
           )}
@@ -469,7 +634,29 @@ export default function SOAPExport({
             color="bg-amber-100 dark:bg-amber-900 text-amber-700 dark:text-amber-200"
           />
           {expandedSections.avaliacao && (
-            <div className="p-4 space-y-3">
+            <div className="p-4 space-y-4">
+              {/* Assistente de Diagnóstico Diferencial */}
+              <DifferentialDiagnosisAssistant
+                initialSymptom={extractedSymptoms.principal}
+                initialSecondarySymptoms={extractedSymptoms.secundarios}
+                onDiagnosisSelect={(doencaId) => {
+                  const doenca = todasDoencas.find(d => d.id === doencaId);
+                  if (doenca?.titulo) {
+                    const hipoteses = data.avaliacao?.hipoteses || [];
+                    if (!hipoteses.includes(doenca.titulo)) {
+                      updateData({
+                        avaliacao: {
+                          ...data.avaliacao,
+                          hipoteses: [...hipoteses, doenca.titulo],
+                          cid10: [...new Set([...(data.avaliacao?.cid10 || []), ...(doenca.cid10 || [])])],
+                          ciap2: [...new Set([...(data.avaliacao?.ciap2 || []), ...(doenca.ciap2 || [])])],
+                        }
+                      });
+                    }
+                  }
+                }}
+              />
+
               <div>
                 <label className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-2 block">Hipóteses Diagnósticas</label>
                 <div className="flex gap-2 mb-2">
@@ -551,6 +738,9 @@ export default function SOAPExport({
           />
           {expandedSections.plano && (
             <div className="p-4 space-y-4">
+              {/* Alertas de Interações Medicamentosas */}
+              <DrugInteractionAlerts soapData={data} includeHistory={true} />
+
               {/* Prescrições */}
               <div>
                 <label className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-2 block">Prescrição</label>
@@ -722,6 +912,53 @@ export default function SOAPExport({
             </pre>
           </div>
         </div>
+      </div>
+
+      {/* Preview */}
+      <div className="lg:sticky lg:top-4 h-fit">
+        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+          <div className="p-4 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+            <h3 className="font-bold text-slate-900 dark:text-white">Pré-visualização</h3>
+            <div className="flex gap-2">
+              <button
+                onClick={copyToClipboard}
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 transition-colors ${
+                  copied 
+                    ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' 
+                    : 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800'
+                }`}
+              >
+                {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                {copied ? 'Copiado!' : 'Copiar'}
+              </button>
+              <button
+                onClick={downloadTxt}
+                className="px-3 py-1.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium flex items-center gap-1 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+              >
+                <Download className="w-4 h-4" />
+                Download
+              </button>
+            </div>
+          </div>
+          <div className="p-4 max-h-[calc(100vh-200px)] overflow-y-auto">
+            <pre className="text-xs text-slate-700 dark:text-slate-300 whitespace-pre-wrap font-mono bg-slate-50 dark:bg-slate-900 p-4 rounded-lg">
+              {formattedSOAP}
+            </pre>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      {/* Botão para salvar no histórico */}
+      <div className="flex justify-end gap-3 pt-4 border-t border-neutral-200 dark:border-neutral-700">
+        <button
+          onClick={handleSaveToHistory}
+          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition-colors flex items-center gap-2"
+          title="Salvar consulta no histórico para recomendações futuras"
+        >
+          <FileText className="w-4 h-4" />
+          Salvar no Histórico
+        </button>
       </div>
     </div>
   );

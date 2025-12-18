@@ -104,7 +104,7 @@ export type SubclasseMedicamento =
   // Antibióticos
   | 'penicilina' | 'penicilina_inibidor' | 'cefalosporina' | 'cefalosporina_1g' | 'cefalosporina_3g'
   | 'cefalosporina_1_geracao' | 'macrolideos' | 'macrolidio' | 'macrolideo'
-  | 'fluoroquinolona' | 'sulfonamida' | 'sulfonamida_inibidor_folato' | 'nitroimidazol' | 'nitrofurano' | 'tetraciclina'
+  | 'fluoroquinolona' | 'sulfonamida' | 'sulfonamida_inibidor_folato' | 'nitroimidazol' | 'nitrofurano' | 'tetraciclina' | 'lincosamida'
   // Analgésicos/AINEs
   | 'analgesico_nao_opioide' | 'nao_opioide' | 'opioide_fraco' | 'opioide_forte' | 'aine'
   | 'nao_seletivo' | 'seletivo_cox2'

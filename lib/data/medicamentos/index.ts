@@ -16,6 +16,7 @@ import { medicamentosDiversos } from './diversos';
 import { medicamentosComplementares } from './complementares';
 import { medicamentosExpansaoSOTA } from './expansao-sota';
 import { medicamentosExpansaoSOTAFinal } from './expansao-sota-final';
+import { medicamentosExpansaoUltima } from './expansao-ultima';
 
 // Consolidar todos os medicamentos
 // Filtrar apenas medicamentos completos do expanded
@@ -36,6 +37,7 @@ export const todosMedicamentos: Medicamento[] = [
   ...medicamentosComplementares,
   ...medicamentosExpansaoSOTA,
   ...medicamentosExpansaoSOTAFinal,
+  ...medicamentosExpansaoUltima,
 ];
 
 // Remover duplicatas por ID
