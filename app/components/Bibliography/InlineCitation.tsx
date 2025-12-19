@@ -4,13 +4,20 @@ import { useState } from 'react';
 import { Citation } from '@/lib/types/references';
 import { getReference } from '@/lib/data/references';
 import CitationTooltip from './CitationTooltip';
+import { EvidenceBadge } from './EvidenceBadge';
+import type { EvidenceLevel } from '@/lib/types/evidence';
 
 interface InlineCitationProps {
   citation: Citation | Citation[];
   format?: 'vancouver' | 'abnt';
+  showEvidenceLevel?: boolean; // Show evidence level badge
 }
 
-export default function InlineCitation({ citation, format = 'vancouver' }: InlineCitationProps) {
+export default function InlineCitation({ 
+  citation, 
+  format = 'vancouver',
+  showEvidenceLevel = true,
+}: InlineCitationProps) {
   const [showTooltip, setShowTooltip] = useState(false);
   
   const citations = Array.isArray(citation) ? citation : [citation];
@@ -22,9 +29,12 @@ export default function InlineCitation({ citation, format = 'vancouver' }: Inlin
     ? formatVancouver(refIds)
     : formatABNT(citations);
 
+  // Get evidence level from first citation if available
+  const evidenceLevel: EvidenceLevel | undefined = citations[0]?.evidenceLevel;
+
   return (
     <span 
-      className="relative inline-block"
+      className="relative inline-flex items-center gap-1.5"
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
     >
@@ -39,6 +49,10 @@ export default function InlineCitation({ citation, format = 'vancouver' }: Inlin
       >
         {displayText}
       </button>
+      
+      {showEvidenceLevel && evidenceLevel && (
+        <EvidenceBadge level={evidenceLevel} size="sm" />
+      )}
       
       {showTooltip && (
         <CitationTooltip citations={citations} format={format} />

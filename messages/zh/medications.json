@@ -1,0 +1,642 @@
+{
+  "amoxicilina": {
+    "nomeGenerico": "Amoxicillin",
+    "indicacoes": [
+      "Upper and lower respiratory tract infections",
+      "Acute otitis media",
+      "Acute bacterial sinusitis",
+      "Streptococcal pharyngotonsillitis",
+      "Community-acquired pneumonia (mild)",
+      "Uncomplicated urinary tract infection",
+      "H. pylori eradication (in combination)"
+    ],
+    "contraindicacoes": [
+      "Allergy to penicillins or cephalosporins (severe reaction)",
+      "Infectious mononucleosis (rash risk)"
+    ]
+  },
+  "azitromicina": {
+    "nomeGenerico": "Azithromycin",
+    "indicacoes": [
+      "Respiratory infections (alternative to amoxicillin)",
+      "Community-acquired pneumonia",
+      "Acute bacterial bronchitis",
+      "Streptococcal pharyngotonsillitis (penicillin-allergic)",
+      "Skin and soft tissue infections",
+      "Pelvic inflammatory disease"
+    ],
+    "contraindicacoes": [
+      "Allergy to macrolides",
+      "Cardiac arrhythmias (prolonged QT)"
+    ]
+  },
+  "cefalexina": {
+    "nomeGenerico": "Cephalexin",
+    "indicacoes": [
+      "Skin and soft tissue infections",
+      "Uncomplicated urinary tract infection",
+      "Streptococcal pharyngotonsillitis (alternative)",
+      "Respiratory infections"
+    ],
+    "contraindicacoes": [
+      "Allergy to cephalosporins or penicillins (severe reaction)"
+    ]
+  },
+  "paracetamol": {
+    "nomeGenerico": "Acetaminophen",
+    "indicacoes": [
+      "Mild to moderate pain",
+      "Fever",
+      "Headache",
+      "Musculoskeletal pain",
+      "Osteoarthritis"
+    ],
+    "contraindicacoes": [
+      "Severe liver disease",
+      "Hypersensitivity"
+    ]
+  },
+  "ibuprofeno": {
+    "nomeGenerico": "Ibuprofen",
+    "indicacoes": [
+      "Mild to moderate pain",
+      "Fever",
+      "Inflammation",
+      "Osteoarthritis",
+      "Rheumatoid arthritis",
+      "Dysmenorrhea"
+    ],
+    "contraindicacoes": [
+      "Active peptic ulcer",
+      "Severe renal failure",
+      "Severe liver failure",
+      "Hypersensitivity to NSAIDs",
+      "Third trimester of pregnancy"
+    ]
+  },
+  "dipirona": {
+    "nomeGenerico": "Metamizole",
+    "indicacoes": [
+      "Moderate to severe pain",
+      "Fever",
+      "Renal colic",
+      "Biliary colic"
+    ],
+    "contraindicacoes": [
+      "Porphyria",
+      "Previous aplastic anemia",
+      "Previous agranulocytosis",
+      "Hypersensitivity"
+    ]
+  },
+  "tramadol": {
+    "nomeGenerico": "Tramadol",
+    "indicacoes": [
+      "Moderate to severe pain",
+      "Chronic pain",
+      "Postoperative pain"
+    ],
+    "contraindicacoes": [
+      "Acute alcohol intoxication",
+      "Opioid intoxication",
+      "MAOI use (14 days)",
+      "Uncontrolled epilepsy"
+    ]
+  },
+  "codeina": {
+    "nomeGenerico": "Codeine",
+    "indicacoes": [
+      "Persistent dry cough",
+      "Mild to moderate pain"
+    ],
+    "contraindicacoes": [
+      "Respiratory failure",
+      "Severe asthma",
+      "MAOI use",
+      "Children < 12 years (cough)"
+    ]
+  },
+  "metformina": {
+    "nomeGenerico": "Metformin hydrochloride",
+    "indicacoes": [
+      "Type 2 diabetes mellitus (first line)",
+      "Polycystic ovary syndrome",
+      "Diabetes prevention in prediabetics"
+    ],
+    "contraindicacoes": [
+      "Renal failure (eGFR < 30 mL/min)",
+      "Lactic acidosis",
+      "Severe liver failure",
+      "Severe dehydration",
+      "Iodinated contrast use (suspend 48h)"
+    ]
+  },
+  "glibenclamida": {
+    "nomeGenerico": "Glyburide",
+    "indicacoes": [
+      "Type 2 diabetes mellitus (second line or monotherapy)"
+    ],
+    "contraindicacoes": [
+      "Type 1 diabetes",
+      "Diabetic ketoacidosis",
+      "Severe renal failure",
+      "Severe liver failure",
+      "Pregnancy"
+    ]
+  },
+  "insulina-nph": {
+    "nomeGenerico": "NPH Insulin",
+    "indicacoes": [
+      "Type 1 diabetes mellitus",
+      "Type 2 diabetes mellitus (when needed)",
+      "Gestational diabetes"
+    ],
+    "contraindicacoes": [
+      "Hypoglycemia",
+      "Hypersensitivity"
+    ]
+  },
+  "insulina-regular": {
+    "nomeGenerico": "Regular Insulin",
+    "indicacoes": [
+      "Type 1 diabetes mellitus",
+      "Type 2 diabetes mellitus (when needed)",
+      "Diabetic ketoacidosis",
+      "Hyperosmolar hyperglycemia"
+    ],
+    "contraindicacoes": [
+      "Hypoglycemia",
+      "Hypersensitivity"
+    ]
+  },
+  "losartana": {
+    "nomeGenerico": "Losartan potassium",
+    "indicacoes": [
+      "Hypertension",
+      "Heart failure (reduced EF)",
+      "Diabetic nephropathy with proteinuria"
+    ],
+    "contraindicacoes": [
+      "Pregnancy (2nd and 3rd trimesters)",
+      "Bilateral renal artery stenosis",
+      "Hypersensitivity"
+    ]
+  },
+  "atenolol": {
+    "nomeGenerico": "Atenolol",
+    "indicacoes": [
+      "Hypertension",
+      "Stable angina",
+      "Atrial fibrillation (heart rate control)",
+      "Post-MI prophylaxis"
+    ],
+    "contraindicacoes": [
+      "Symptomatic bradycardia",
+      "2nd/3rd degree AV block",
+      "Decompensated heart failure",
+      "Severe asthma"
+    ]
+  },
+  "propranolol": {
+    "nomeGenerico": "Propranolol hydrochloride",
+    "indicacoes": [
+      "Hypertension",
+      "Migraine prophylaxis",
+      "Essential tremor",
+      "Hyperthyroidism",
+      "Performance anxiety"
+    ],
+    "contraindicacoes": [
+      "Asthma",
+      "Severe COPD",
+      "Decompensated heart failure",
+      "2nd/3rd degree AV block",
+      "Severe bradycardia"
+    ]
+  },
+  "carvedilol": {
+    "nomeGenerico": "Carvedilol",
+    "indicacoes": [
+      "Heart failure (reduced EF)",
+      "Hypertension",
+      "Post-MI with LV dysfunction"
+    ],
+    "contraindicacoes": [
+      "Decompensated heart failure",
+      "Severe bradycardia",
+      "Symptomatic hypotension",
+      "Asthma"
+    ]
+  },
+  "hidroclorotiazida": {
+    "nomeGenerico": "Hydrochlorothiazide",
+    "indicacoes": [
+      "Hypertension",
+      "Edema due to heart failure",
+      "Edema due to cirrhosis",
+      "Nephrolithiasis (prevention)"
+    ],
+    "contraindicacoes": [
+      "Anuria",
+      "Severe renal failure",
+      "Hypersensitivity to sulfonamides",
+      "Pregnancy"
+    ]
+  },
+  "espironolactona": {
+    "nomeGenerico": "Spironolactone",
+    "indicacoes": [
+      "Heart failure (reduced EF) with ACEI/ARB",
+      "Resistant hypertension",
+      "Cirrhosis with ascites",
+      "Polycystic ovary syndrome"
+    ],
+    "contraindicacoes": [
+      "Anuria",
+      "Severe renal failure",
+      "Hyperkalemia",
+      "Pregnancy"
+    ]
+  },
+  "omeprazol": {
+    "nomeGenerico": "Omeprazole",
+    "indicacoes": [
+      "GERD",
+      "Peptic ulcer",
+      "H. pylori (triple therapy)",
+      "NSAID ulcer prevention",
+      "Zollinger-Ellison"
+    ],
+    "contraindicacoes": [
+      "Hypersensitivity"
+    ]
+  },
+  "pantoprazol": {
+    "nomeGenerico": "Pantoprazole sodium",
+    "indicacoes": [
+      "GERD",
+      "Peptic ulcer",
+      "Zollinger-Ellison",
+      "Upper GI bleeding (IV)"
+    ],
+    "contraindicacoes": [
+      "Hypersensitivity"
+    ]
+  },
+  "ranitidina": {
+    "nomeGenerico": "Ranitidine hydrochloride",
+    "indicacoes": [
+      "Peptic ulcer",
+      "GERD",
+      "Aspiration prophylaxis (pre-surgical)"
+    ],
+    "contraindicacoes": [
+      "Hypersensitivity",
+      "Porphyria"
+    ]
+  },
+  "metoclopramida": {
+    "nomeGenerico": "Metoclopramide hydrochloride",
+    "indicacoes": [
+      "Nausea and vomiting",
+      "Gastroparesis",
+      "Gastroesophageal reflux"
+    ],
+    "contraindicacoes": [
+      "GI obstruction",
+      "GI perforation",
+      "Pheochromocytoma",
+      "Epilepsy",
+      "Parkinsonism"
+    ]
+  },
+  "ondansetrona": {
+    "nomeGenerico": "Ondansetron",
+    "indicacoes": [
+      "Post-chemotherapy nausea and vomiting",
+      "Postoperative nausea and vomiting",
+      "Hyperemesis gravidarum"
+    ],
+    "contraindicacoes": [
+      "Hypersensitivity",
+      "Long QT syndrome"
+    ]
+  },
+  "loratadina": {
+    "nomeGenerico": "Loratadine",
+    "indicacoes": [
+      "Allergic rhinitis",
+      "Urticaria",
+      "Allergic conjunctivitis"
+    ],
+    "contraindicacoes": [
+      "Hypersensitivity"
+    ]
+  },
+  "prometazina": {
+    "nomeGenerico": "Promethazine hydrochloride",
+    "indicacoes": [
+      "Nausea and vomiting",
+      "Allergy",
+      "Preoperative sedation",
+      "Insomnia"
+    ],
+    "contraindicacoes": [
+      "Coma",
+      "CNS depression by alcohol/barbiturates",
+      "Children < 2 years"
+    ]
+  },
+  "prednisona": {
+    "nomeGenerico": "Prednisone",
+    "indicacoes": [
+      "Inflammatory diseases",
+      "Autoimmune diseases",
+      "Severe asthma",
+      "Exacerbated COPD",
+      "Severe allergic reactions"
+    ],
+    "contraindicacoes": [
+      "Uncontrolled systemic infections",
+      "Hypersensitivity"
+    ]
+  },
+  "hidrocortisona": {
+    "nomeGenerico": "Hydrocortisone",
+    "indicacoes": [
+      "Adrenal insufficiency",
+      "Septic shock",
+      "Inflammatory diseases",
+      "Contact dermatitis"
+    ],
+    "contraindicacoes": [
+      "Uncontrolled systemic infections",
+      "Hypersensitivity"
+    ]
+  },
+  "levotiroxina": {
+    "nomeGenerico": "Levothyroxine sodium",
+    "indicacoes": [
+      "Hypothyroidism",
+      "Goiter",
+      "Thyroid cancer (TSH suppression)"
+    ],
+    "contraindicacoes": [
+      "Untreated hyperthyroidism",
+      "Recent acute myocardial infarction",
+      "Thyrotoxicosis"
+    ]
+  },
+  "amitriptilina": {
+    "nomeGenerico": "Amitriptyline hydrochloride",
+    "indicacoes": [
+      "Depression",
+      "Neuropathic pain",
+      "Nocturnal enuresis",
+      "Chronic tension headache"
+    ],
+    "contraindicacoes": [
+      "Recent myocardial infarction",
+      "Angle-closure glaucoma",
+      "Urinary retention",
+      "MAOI use (14 days)"
+    ]
+  },
+  "fluoxetina": {
+    "nomeGenerico": "Fluoxetine hydrochloride",
+    "indicacoes": [
+      "Depression",
+      "Obsessive-compulsive disorder",
+      "Bulimia nervosa",
+      "Panic disorder"
+    ],
+    "contraindicacoes": [
+      "MAOI use (14 days before/after)",
+      "Hypersensitivity"
+    ]
+  },
+  "sertralina": {
+    "nomeGenerico": "Sertraline hydrochloride",
+    "indicacoes": [
+      "Depression",
+      "Obsessive-compulsive disorder",
+      "Panic disorder",
+      "Post-traumatic stress disorder",
+      "Social phobia"
+    ],
+    "contraindicacoes": [
+      "MAOI use (14 days)",
+      "Hypersensitivity"
+    ]
+  },
+  "lorazepam": {
+    "nomeGenerico": "Lorazepam",
+    "indicacoes": [
+      "Anxiety",
+      "Insomnia",
+      "Alcohol withdrawal",
+      "Agitation"
+    ],
+    "contraindicacoes": [
+      "Angle-closure glaucoma",
+      "Myasthenia gravis",
+      "Severe respiratory failure",
+      "Sleep apnea"
+    ]
+  },
+  "diazepam": {
+    "nomeGenerico": "Diazepam",
+    "indicacoes": [
+      "Anxiety",
+      "Muscle spasms",
+      "Alcohol withdrawal",
+      "Seizures"
+    ],
+    "contraindicacoes": [
+      "Angle-closure glaucoma",
+      "Myasthenia gravis",
+      "Severe respiratory failure",
+      "Sleep apnea"
+    ]
+  },
+  "haloperidol": {
+    "nomeGenerico": "Haloperidol",
+    "indicacoes": [
+      "Schizophrenia",
+      "Psychotic agitation",
+      "Tourette syndrome",
+      "Delirium"
+    ],
+    "contraindicacoes": [
+      "Parkinsonism",
+      "Coma",
+      "CNS depression",
+      "Hypersensitivity"
+    ]
+  },
+  "risperidona": {
+    "nomeGenerico": "Risperidone",
+    "indicacoes": [
+      "Schizophrenia",
+      "Bipolar disorder",
+      "Autism (irritability)"
+    ],
+    "contraindicacoes": [
+      "Hypersensitivity"
+    ]
+  },
+  "clorpromazina": {
+    "nomeGenerico": "Chlorpromazine hydrochloride",
+    "indicacoes": [
+      "Schizophrenia",
+      "Psychotic agitation",
+      "Severe nausea and vomiting",
+      "Alcohol withdrawal syndrome"
+    ],
+    "contraindicacoes": [
+      "Coma",
+      "CNS depression",
+      "Hypersensitivity"
+    ]
+  },
+  "gabapentina": {
+    "nomeGenerico": "Gabapentin",
+    "indicacoes": [
+      "Neuropathic pain",
+      "Partial epilepsy",
+      "Restless legs syndrome"
+    ],
+    "contraindicacoes": [
+      "Hypersensitivity"
+    ]
+  },
+  "carbamazepina": {
+    "nomeGenerico": "Carbamazepine",
+    "indicacoes": [
+      "Partial epilepsy",
+      "Trigeminal neuralgia",
+      "Bipolar disorder"
+    ],
+    "contraindicacoes": [
+      "AV block",
+      "Previous aplastic anemia",
+      "Previous leukopenia",
+      "Hypersensitivity"
+    ]
+  },
+  "fenitoina": {
+    "nomeGenerico": "Phenytoin",
+    "indicacoes": [
+      "Epilepsy (tonic-clonic seizures)",
+      "Status epilepticus",
+      "Post-TBI seizure prophylaxis"
+    ],
+    "contraindicacoes": [
+      "Hypersensitivity",
+      "AV block",
+      "Sinus bradycardia"
+    ]
+  },
+  "valproato": {
+    "nomeGenerico": "Sodium valproate",
+    "indicacoes": [
+      "Epilepsy (generalized and partial)",
+      "Bipolar disorder",
+      "Migraine prophylaxis"
+    ],
+    "contraindicacoes": [
+      "Active liver disease",
+      "Urea cycle enzyme deficiency",
+      "Pregnancy (malformation risk)"
+    ]
+  },
+  "salbutamol": {
+    "nomeGenerico": "Salbutamol sulfate",
+    "indicacoes": [
+      "Asthma",
+      "COPD",
+      "Bronchospasm"
+    ],
+    "contraindicacoes": [
+      "Hypersensitivity",
+      "Severe cardiac arrhythmias"
+    ]
+  },
+  "budesonida": {
+    "nomeGenerico": "Budesonide",
+    "indicacoes": [
+      "Persistent asthma",
+      "COPD",
+      "Allergic rhinitis",
+      "Crohn's disease"
+    ],
+    "contraindicacoes": [
+      "Untreated respiratory infections",
+      "Hypersensitivity"
+    ]
+  },
+  "ferro-sulfato": {
+    "nomeGenerico": "Ferrous sulfate",
+    "indicacoes": [
+      "Iron deficiency anemia",
+      "Iron deficiency prevention"
+    ],
+    "contraindicacoes": [
+      "Hemosiderosis",
+      "Hemochromatosis",
+      "Hemolytic anemia"
+    ]
+  },
+  "acido-folico": {
+    "nomeGenerico": "Folic acid",
+    "indicacoes": [
+      "Folate deficiency",
+      "Megaloblastic anemia",
+      "Neural tube defect prevention (pregnancy)",
+      "Hyperhomocysteinemia"
+    ],
+    "contraindicacoes": [
+      "Hypersensitivity"
+    ]
+  },
+  "cianocobalamina": {
+    "nomeGenerico": "Cyanocobalamin (Vitamin B12)",
+    "indicacoes": [
+      "Vitamin B12 deficiency",
+      "Pernicious anemia",
+      "B12 deficiency neuropathy"
+    ],
+    "contraindicacoes": [
+      "Hypersensitivity"
+    ]
+  },
+  "colecalciferol": {
+    "nomeGenerico": "Cholecalciferol (Vitamin D3)",
+    "indicacoes": [
+      "Vitamin D deficiency",
+      "Osteoporosis",
+      "Rickets",
+      "Osteomalacia"
+    ],
+    "contraindicacoes": [
+      "Hypercalcemia",
+      "Hypercalciuria",
+      "Active nephrolithiasis"
+    ]
+  },
+  "calcio-carbonato": {
+    "nomeGenerico": "Calcium carbonate",
+    "indicacoes": [
+      "Calcium deficiency",
+      "Osteoporosis",
+      "Hypoparathyroidism",
+      "Antacid"
+    ],
+    "contraindicacoes": [
+      "Hypercalcemia",
+      "Calcium nephrolithiasis",
+      "Severe renal failure"
+    ]
+  }
+}
+

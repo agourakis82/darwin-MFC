@@ -270,7 +270,19 @@ export interface Medicamento {
   drugBankId?: string;
   
   /** Código SNOMED-CT para o medicamento */
-  snomedCT?: string;
+  snomedCT?: string | string[]; // Support both single string and array for backwards compatibility
+  
+  /** LOINC codes (for lab tests related to medication monitoring) */
+  loinc?: string[];
+  
+  /** PharmGKB pharmacogenomics data */
+  pharmgkb?: {
+    gene: string; // Gene name (e.g., "CYP2D6")
+    variant?: string; // Genetic variant
+    phenotype?: 'poor_metabolizer' | 'intermediate_metabolizer' | 'extensive_metabolizer' | 'ultra_rapid_metabolizer';
+    implications?: string[]; // Clinical implications
+    dosageRecommendations?: string[]; // Dosage recommendations based on phenotype
+  }[];
   
   /** Registro ANVISA (número de registro) */
   anvisaRegistro?: string;

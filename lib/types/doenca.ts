@@ -236,6 +236,7 @@ export interface Doenca {
   /**
    * ORDO (Orphanet Rare Disease Ontology) - apenas para doenças raras
    * @see https://www.orpha.net/
+   * @deprecated Use ordo instead
    */
   ordoId?: string;
   
@@ -250,6 +251,12 @@ export interface Doenca {
   
   /** Human Phenotype Ontology (HPO) - fenótipos associados à doença */
   hpo?: string[];
+  
+  /** LOINC codes for laboratory exams related to this disease */
+  loinc?: string[];
+  
+  /** ORDO (Orphanet Rare Disease Ontology) codes - for rare diseases */
+  ordo?: string[];
   
   /** Categoria principal */
   categoria: CategoriaDoenca;

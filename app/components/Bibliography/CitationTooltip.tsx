@@ -2,6 +2,8 @@
 
 import { Citation } from '@/lib/types/references';
 import { getReference } from '@/lib/data/references';
+import { EvidenceBadge } from './EvidenceBadge';
+import { getEvidenceLevelLabel } from '@/lib/utils/evidence-level';
 
 interface CitationTooltipProps {
   citations: Citation[];
@@ -49,6 +51,24 @@ export default function CitationTooltip({ citations, format = 'vancouver' }: Cit
                 {citation.note && (
                   <div className="text-xs text-neutral-600 dark:text-neutral-300 mt-1 italic">
                     {citation.note}
+                  </div>
+                )}
+                {citation.evidenceLevel && (
+                  <div className="mt-2 flex items-center gap-2">
+                    <EvidenceBadge level={citation.evidenceLevel} size="sm" />
+                    <span className="text-xs text-neutral-500 dark:text-neutral-400">
+                      {getEvidenceLevelLabel(citation.evidenceLevel)}
+                    </span>
+                  </div>
+                )}
+                {citation.limitations && citation.limitations.length > 0 && (
+                  <div className="mt-2 text-xs text-amber-700 dark:text-amber-400">
+                    <strong>Limitações:</strong> {citation.limitations.join('; ')}
+                  </div>
+                )}
+                {citation.conflictsOfInterest && (
+                  <div className="mt-1 text-xs text-red-700 dark:text-red-400">
+                    <strong>Conflitos:</strong> {citation.conflictsOfInterest}
                   </div>
                 )}
               </div>

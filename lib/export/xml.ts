@@ -201,7 +201,8 @@ export function exportMedicationsToXML(
     }
     
     if (med.snomedCT) {
-      xml += `${indent}${indent}${createXMLElement('snomedCT', med.snomedCT)}\n`;
+      const snomedValue = Array.isArray(med.snomedCT) ? med.snomedCT.join('; ') : med.snomedCT;
+      xml += `${indent}${indent}${createXMLElement('snomedCT', snomedValue)}\n`;
     }
     
     if (med.apresentacoes && med.apresentacoes.length > 0) {

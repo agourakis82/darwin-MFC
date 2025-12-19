@@ -1,3 +1,5 @@
+import type { EvidenceLevel, StudyType } from './evidence';
+
 export type ReferenceType = 
   | 'artigo' 
   | 'portaria' 
@@ -29,5 +31,10 @@ export interface Citation {
   refId: string;
   page?: string; // Referência específica dentro da obra
   note?: string; // Nota contextual opcional
+  evidenceLevel?: EvidenceLevel; // Nível de evidência
+  studyType?: StudyType; // Tipo de estudo
+  qualityScore?: number; // Score de qualidade (0-10)
+  limitations?: string[]; // Limitações do estudo
+  conflictsOfInterest?: string; // Conflitos de interesse
 }
 

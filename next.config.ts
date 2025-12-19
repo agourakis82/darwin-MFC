@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 const isProd = process.env.NODE_ENV === 'production';
 // Build without basePath for custom domain (default for GitHub Pages with CNAME)
@@ -18,4 +21,4 @@ const nextConfig: NextConfig = {
   assetPrefix: basePathValue ? `${basePathValue}/` : '',
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

@@ -20,6 +20,10 @@ export async function generateStaticParams() {
   }));
 }
 
+// Force static generation
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+
 interface PageProps {
   params: Promise<{ doencaId: string }>;
 }

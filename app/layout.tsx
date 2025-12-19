@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { defaultLocale } from '@/i18n/config';
 import ThemeProvider from "./components/Layout/ThemeProvider";
 import Header from "./components/Layout/Header";
 import Sidebar from "./components/Layout/Sidebar";
@@ -83,11 +86,14 @@ export const metadata: Metadata = {
   category: "medical",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Provide default locale messages for pages not yet migrated to [locale]
+  const messages = await getMessages({ locale: defaultLocale });
+  
   return (
     <html lang="pt-BR" className="dark" suppressHydrationWarning>
       <head>
@@ -342,7 +348,8 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider>
           <KeyboardShortcuts />
           {/* Skip links for accessibility */}
           <a 
@@ -371,6 +378,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

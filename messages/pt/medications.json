@@ -1,0 +1,642 @@
+{
+  "amoxicilina": {
+    "nomeGenerico": "Amoxicilina",
+    "indicacoes": [
+      "Infecções de vias aéreas superiores e inferiores",
+      "Otite média aguda",
+      "Sinusite bacteriana aguda",
+      "Faringoamigdalite estreptocócica",
+      "Pneumonia adquirida na comunidade (leve)",
+      "Infecção urinária não complicada",
+      "Erradicação de H. pylori (em esquema)"
+    ],
+    "contraindicacoes": [
+      "Alergia a penicilinas ou cefalosporinas (reação grave)",
+      "Mononucleose infecciosa (risco de rash)"
+    ]
+  },
+  "azitromicina": {
+    "nomeGenerico": "Azitromicina",
+    "indicacoes": [
+      "Infecções respiratórias (alternativa a amoxicilina)",
+      "Pneumonia adquirida na comunidade",
+      "Bronquite aguda bacteriana",
+      "Faringoamigdalite estreptocócica (alérgicos a penicilina)",
+      "Infecções de pele e tecidos moles",
+      "Doença inflamatória pélvica"
+    ],
+    "contraindicacoes": [
+      "Alergia a macrolídeos",
+      "Arritmias cardíacas (QT prolongado)"
+    ]
+  },
+  "cefalexina": {
+    "nomeGenerico": "Cefalexina",
+    "indicacoes": [
+      "Infecções de pele e tecidos moles",
+      "Infecção urinária não complicada",
+      "Faringoamigdalite estreptocócica (alternativa)",
+      "Infecções respiratórias"
+    ],
+    "contraindicacoes": [
+      "Alergia a cefalosporinas ou penicilinas (reação grave)"
+    ]
+  },
+  "paracetamol": {
+    "nomeGenerico": "Paracetamol",
+    "indicacoes": [
+      "Dor leve a moderada",
+      "Febre",
+      "Cefaleia",
+      "Dor musculoesquelética",
+      "Osteoartrite"
+    ],
+    "contraindicacoes": [
+      "Hepatopatia grave",
+      "Hipersensibilidade"
+    ]
+  },
+  "ibuprofeno": {
+    "nomeGenerico": "Ibuprofeno",
+    "indicacoes": [
+      "Dor leve a moderada",
+      "Febre",
+      "Inflamação",
+      "Osteoartrite",
+      "Artrite reumatoide",
+      "Dismenorreia"
+    ],
+    "contraindicacoes": [
+      "Úlcera péptica ativa",
+      "Insuficiência renal grave",
+      "Insuficiência hepática grave",
+      "Hipersensibilidade a AINEs",
+      "3º trimestre de gestação"
+    ]
+  },
+  "dipirona": {
+    "nomeGenerico": "Dipirona",
+    "indicacoes": [
+      "Dor moderada a intensa",
+      "Febre",
+      "Cólica renal",
+      "Cólica biliar"
+    ],
+    "contraindicacoes": [
+      "Porfiria",
+      "Anemia aplásica prévia",
+      "Agranulocitose prévia",
+      "Hipersensibilidade"
+    ]
+  },
+  "tramadol": {
+    "nomeGenerico": "Tramadol",
+    "indicacoes": [
+      "Dor moderada a intensa",
+      "Dor crônica",
+      "Dor pós-operatória"
+    ],
+    "contraindicacoes": [
+      "Intoxicação aguda por álcool",
+      "Intoxicação por opioides",
+      "Uso de IMAO (14 dias)",
+      "Epilepsia não controlada"
+    ]
+  },
+  "codeina": {
+    "nomeGenerico": "Codeína",
+    "indicacoes": [
+      "Tosse seca persistente",
+      "Dor leve a moderada"
+    ],
+    "contraindicacoes": [
+      "Insuficiência respiratória",
+      "Asma grave",
+      "Uso de IMAO",
+      "Crianças < 12 anos (tosse)"
+    ]
+  },
+  "metformina": {
+    "nomeGenerico": "Cloridrato de metformina",
+    "indicacoes": [
+      "Diabetes mellitus tipo 2 (primeira linha)",
+      "Síndrome dos ovários policísticos",
+      "Prevenção de diabetes em pré-diabéticos"
+    ],
+    "contraindicacoes": [
+      "Insuficiência renal (TFG < 30 mL/min)",
+      "Acidose láctica",
+      "Insuficiência hepática grave",
+      "Desidratação grave",
+      "Uso de contraste iodado (suspender 48h)"
+    ]
+  },
+  "glibenclamida": {
+    "nomeGenerico": "Glibenclamida",
+    "indicacoes": [
+      "Diabetes mellitus tipo 2 (segunda linha ou monoterapia)"
+    ],
+    "contraindicacoes": [
+      "Diabetes tipo 1",
+      "Cetoacidose diabética",
+      "Insuficiência renal grave",
+      "Insuficiência hepática grave",
+      "Gravidez"
+    ]
+  },
+  "insulina-nph": {
+    "nomeGenerico": "Insulina NPH",
+    "indicacoes": [
+      "Diabetes mellitus tipo 1",
+      "Diabetes mellitus tipo 2 (quando necessário)",
+      "Diabetes gestacional"
+    ],
+    "contraindicacoes": [
+      "Hipoglicemia",
+      "Hipersensibilidade"
+    ]
+  },
+  "insulina-regular": {
+    "nomeGenerico": "Insulina regular",
+    "indicacoes": [
+      "Diabetes mellitus tipo 1",
+      "Diabetes mellitus tipo 2 (quando necessário)",
+      "Cetoacidose diabética",
+      "Hiperglicemia hiperosmolar"
+    ],
+    "contraindicacoes": [
+      "Hipoglicemia",
+      "Hipersensibilidade"
+    ]
+  },
+  "losartana": {
+    "nomeGenerico": "Losartana potássica",
+    "indicacoes": [
+      "Hipertensão arterial",
+      "Insuficiência cardíaca (FE reduzida)",
+      "Nefropatia diabética com proteinúria"
+    ],
+    "contraindicacoes": [
+      "Gravidez (2º e 3º trimestres)",
+      "Estenose bilateral de artéria renal",
+      "Hipersensibilidade"
+    ]
+  },
+  "atenolol": {
+    "nomeGenerico": "Atenolol",
+    "indicacoes": [
+      "Hipertensão arterial",
+      "Angina estável",
+      "Fibrilação atrial (controle de FC)",
+      "Profilaxia pós-IAM"
+    ],
+    "contraindicacoes": [
+      "Bradicardia sintomática",
+      "BAV 2º/3º grau",
+      "IC descompensada",
+      "Asma grave"
+    ]
+  },
+  "propranolol": {
+    "nomeGenerico": "Cloridrato de propranolol",
+    "indicacoes": [
+      "HAS",
+      "Profilaxia de enxaqueca",
+      "Tremor essencial",
+      "Hipertireoidismo",
+      "Ansiedade de desempenho"
+    ],
+    "contraindicacoes": [
+      "Asma",
+      "DPOC grave",
+      "IC descompensada",
+      "BAV 2º/3º grau",
+      "Bradicardia grave"
+    ]
+  },
+  "carvedilol": {
+    "nomeGenerico": "Carvedilol",
+    "indicacoes": [
+      "Insuficiência cardíaca (FE reduzida)",
+      "HAS",
+      "Pós-IAM com disfunção VE"
+    ],
+    "contraindicacoes": [
+      "IC descompensada",
+      "Bradicardia grave",
+      "Hipotensão sintomática",
+      "Asma"
+    ]
+  },
+  "hidroclorotiazida": {
+    "nomeGenerico": "Hidroclorotiazida",
+    "indicacoes": [
+      "Hipertensão arterial",
+      "Edema por insuficiência cardíaca",
+      "Edema por cirrose",
+      "Nefrolitíase (prevenção)"
+    ],
+    "contraindicacoes": [
+      "Anúria",
+      "Insuficiência renal grave",
+      "Hipersensibilidade a sulfonamidas",
+      "Gravidez"
+    ]
+  },
+  "espironolactona": {
+    "nomeGenerico": "Espironolactona",
+    "indicacoes": [
+      "Insuficiência cardíaca (FE reduzida) com IECA/ARA",
+      "HAS (resistentes)",
+      "Cirrose com ascite",
+      "Síndrome dos ovários policísticos"
+    ],
+    "contraindicacoes": [
+      "Anúria",
+      "Insuficiência renal grave",
+      "Hipercalemia",
+      "Gravidez"
+    ]
+  },
+  "omeprazol": {
+    "nomeGenerico": "Omeprazol",
+    "indicacoes": [
+      "DRGE",
+      "Úlcera péptica",
+      "H. pylori (esquema tríplice)",
+      "Prevenção úlcera por AINEs",
+      "Zollinger-Ellison"
+    ],
+    "contraindicacoes": [
+      "Hipersensibilidade"
+    ]
+  },
+  "pantoprazol": {
+    "nomeGenerico": "Pantoprazol sódico",
+    "indicacoes": [
+      "DRGE",
+      "Úlcera péptica",
+      "Zollinger-Ellison",
+      "Sangramento digestivo alto (IV)"
+    ],
+    "contraindicacoes": [
+      "Hipersensibilidade"
+    ]
+  },
+  "ranitidina": {
+    "nomeGenerico": "Cloridrato de ranitidina",
+    "indicacoes": [
+      "Úlcera péptica",
+      "DRGE",
+      "Profilaxia de aspiração (pré-cirúrgico)"
+    ],
+    "contraindicacoes": [
+      "Hipersensibilidade",
+      "Porfiria"
+    ]
+  },
+  "metoclopramida": {
+    "nomeGenerico": "Cloridrato de metoclopramida",
+    "indicacoes": [
+      "Náusea e vômito",
+      "Gastroparesia",
+      "Refluxo gastroesofágico"
+    ],
+    "contraindicacoes": [
+      "Obstrução GI",
+      "Perfuração GI",
+      "Feocromocitoma",
+      "Epilepsia",
+      "Parkinsonismo"
+    ]
+  },
+  "ondansetrona": {
+    "nomeGenerico": "Ondansetrona",
+    "indicacoes": [
+      "Náusea e vômito pós-quimioterapia",
+      "Náusea e vômito pós-operatório",
+      "Hiperêmese gravídica"
+    ],
+    "contraindicacoes": [
+      "Hipersensibilidade",
+      "Síndrome do QT longo"
+    ]
+  },
+  "loratadina": {
+    "nomeGenerico": "Loratadina",
+    "indicacoes": [
+      "Rinite alérgica",
+      "Urticária",
+      "Conjuntivite alérgica"
+    ],
+    "contraindicacoes": [
+      "Hipersensibilidade"
+    ]
+  },
+  "prometazina": {
+    "nomeGenerico": "Cloridrato de prometazina",
+    "indicacoes": [
+      "Náusea e vômito",
+      "Alergia",
+      "Sedação pré-operatória",
+      "Insônia"
+    ],
+    "contraindicacoes": [
+      "Coma",
+      "Depressão do SNC por álcool/barbitúricos",
+      "Crianças < 2 anos"
+    ]
+  },
+  "prednisona": {
+    "nomeGenerico": "Prednisona",
+    "indicacoes": [
+      "Doenças inflamatórias",
+      "Doenças autoimunes",
+      "Asma grave",
+      "DPOC exacerbada",
+      "Reações alérgicas graves"
+    ],
+    "contraindicacoes": [
+      "Infecções sistêmicas não controladas",
+      "Hipersensibilidade"
+    ]
+  },
+  "hidrocortisona": {
+    "nomeGenerico": "Hidrocortisona",
+    "indicacoes": [
+      "Insuficiência adrenal",
+      "Choque séptico",
+      "Doenças inflamatórias",
+      "Dermatite de contato"
+    ],
+    "contraindicacoes": [
+      "Infecções sistêmicas não controladas",
+      "Hipersensibilidade"
+    ]
+  },
+  "levotiroxina": {
+    "nomeGenerico": "Levotiroxina sódica",
+    "indicacoes": [
+      "Hipotireoidismo",
+      "Bócio",
+      "Câncer de tireoide (supressão de TSH)"
+    ],
+    "contraindicacoes": [
+      "Hipertireoidismo não tratado",
+      "Infarto agudo do miocárdio recente",
+      "Tireotoxicose"
+    ]
+  },
+  "amitriptilina": {
+    "nomeGenerico": "Cloridrato de amitriptilina",
+    "indicacoes": [
+      "Depressão",
+      "Dor neuropática",
+      "Enurese noturna",
+      "Cefaleia tensional crônica"
+    ],
+    "contraindicacoes": [
+      "Infarto recente",
+      "Glaucoma de ângulo fechado",
+      "Retenção urinária",
+      "Uso de IMAO (14 dias)"
+    ]
+  },
+  "fluoxetina": {
+    "nomeGenerico": "Cloridrato de fluoxetina",
+    "indicacoes": [
+      "Depressão",
+      "Transtorno obsessivo-compulsivo",
+      "Bulimia nervosa",
+      "Transtorno de pânico"
+    ],
+    "contraindicacoes": [
+      "Uso de IMAO (14 dias antes/depois)",
+      "Hipersensibilidade"
+    ]
+  },
+  "sertralina": {
+    "nomeGenerico": "Cloridrato de sertralina",
+    "indicacoes": [
+      "Depressão",
+      "Transtorno obsessivo-compulsivo",
+      "Transtorno de pânico",
+      "Transtorno de estresse pós-traumático",
+      "Fobia social"
+    ],
+    "contraindicacoes": [
+      "Uso de IMAO (14 dias)",
+      "Hipersensibilidade"
+    ]
+  },
+  "lorazepam": {
+    "nomeGenerico": "Lorazepam",
+    "indicacoes": [
+      "Ansiedade",
+      "Insônia",
+      "Estado de abstinência alcoólica",
+      "Agitação"
+    ],
+    "contraindicacoes": [
+      "Glaucoma de ângulo fechado",
+      "Miastenia gravis",
+      "Insuficiência respiratória grave",
+      "Apneia do sono"
+    ]
+  },
+  "diazepam": {
+    "nomeGenerico": "Diazepam",
+    "indicacoes": [
+      "Ansiedade",
+      "Espasmos musculares",
+      "Estado de abstinência alcoólica",
+      "Convulsões"
+    ],
+    "contraindicacoes": [
+      "Glaucoma de ângulo fechado",
+      "Miastenia gravis",
+      "Insuficiência respiratória grave",
+      "Apneia do sono"
+    ]
+  },
+  "haloperidol": {
+    "nomeGenerico": "Haloperidol",
+    "indicacoes": [
+      "Esquizofrenia",
+      "Agitação psicótica",
+      "Síndrome de Tourette",
+      "Delirium"
+    ],
+    "contraindicacoes": [
+      "Parkinsonismo",
+      "Coma",
+      "Depressão do SNC",
+      "Hipersensibilidade"
+    ]
+  },
+  "risperidona": {
+    "nomeGenerico": "Risperidona",
+    "indicacoes": [
+      "Esquizofrenia",
+      "Transtorno bipolar",
+      "Autismo (irritabilidade)"
+    ],
+    "contraindicacoes": [
+      "Hipersensibilidade"
+    ]
+  },
+  "clorpromazina": {
+    "nomeGenerico": "Cloridrato de clorpromazina",
+    "indicacoes": [
+      "Esquizofrenia",
+      "Agitação psicótica",
+      "Náusea e vômito grave",
+      "Síndrome de abstinência alcoólica"
+    ],
+    "contraindicacoes": [
+      "Coma",
+      "Depressão do SNC",
+      "Hipersensibilidade"
+    ]
+  },
+  "gabapentina": {
+    "nomeGenerico": "Gabapentina",
+    "indicacoes": [
+      "Dor neuropática",
+      "Epilepsia parcial",
+      "Síndrome das pernas inquietas"
+    ],
+    "contraindicacoes": [
+      "Hipersensibilidade"
+    ]
+  },
+  "carbamazepina": {
+    "nomeGenerico": "Carbamazepina",
+    "indicacoes": [
+      "Epilepsia parcial",
+      "Neuralgia do trigêmeo",
+      "Transtorno bipolar"
+    ],
+    "contraindicacoes": [
+      "Bloqueio AV",
+      "Anemia aplásica prévia",
+      "Leucopenia prévia",
+      "Hipersensibilidade"
+    ]
+  },
+  "fenitoina": {
+    "nomeGenerico": "Fenitoína",
+    "indicacoes": [
+      "Epilepsia (convulsões tônico-clônicas)",
+      "Status epilepticus",
+      "Profilaxia de convulsões pós-TCE"
+    ],
+    "contraindicacoes": [
+      "Hipersensibilidade",
+      "Bloqueio AV",
+      "Sinus bradicardia"
+    ]
+  },
+  "valproato": {
+    "nomeGenerico": "Valproato de sódio",
+    "indicacoes": [
+      "Epilepsia (generalizada e parcial)",
+      "Transtorno bipolar",
+      "Profilaxia de enxaqueca"
+    ],
+    "contraindicacoes": [
+      "Hepatopatia ativa",
+      "Deficiência de enzimas do ciclo da ureia",
+      "Gravidez (risco de malformações)"
+    ]
+  },
+  "salbutamol": {
+    "nomeGenerico": "Sulfato de salbutamol",
+    "indicacoes": [
+      "Asma",
+      "DPOC",
+      "Broncoespasmo"
+    ],
+    "contraindicacoes": [
+      "Hipersensibilidade",
+      "Arritmias cardíacas graves"
+    ]
+  },
+  "budesonida": {
+    "nomeGenerico": "Budesonida",
+    "indicacoes": [
+      "Asma persistente",
+      "DPOC",
+      "Rinite alérgica",
+      "Doença de Crohn"
+    ],
+    "contraindicacoes": [
+      "Infecções respiratórias não tratadas",
+      "Hipersensibilidade"
+    ]
+  },
+  "ferro-sulfato": {
+    "nomeGenerico": "Sulfato ferroso",
+    "indicacoes": [
+      "Anemia ferropriva",
+      "Prevenção de deficiência de ferro"
+    ],
+    "contraindicacoes": [
+      "Hemossiderose",
+      "Hemocromatose",
+      "Anemia hemolítica"
+    ]
+  },
+  "acido-folico": {
+    "nomeGenerico": "Ácido fólico",
+    "indicacoes": [
+      "Deficiência de folato",
+      "Anemia megaloblástica",
+      "Prevenção de defeitos do tubo neural (gestação)",
+      "Hiperhomocisteinemia"
+    ],
+    "contraindicacoes": [
+      "Hipersensibilidade"
+    ]
+  },
+  "cianocobalamina": {
+    "nomeGenerico": "Cianocobalamina (Vitamina B12)",
+    "indicacoes": [
+      "Deficiência de vitamina B12",
+      "Anemia perniciosa",
+      "Neuropatia por deficiência de B12"
+    ],
+    "contraindicacoes": [
+      "Hipersensibilidade"
+    ]
+  },
+  "colecalciferol": {
+    "nomeGenerico": "Colecalciferol (Vitamina D3)",
+    "indicacoes": [
+      "Deficiência de vitamina D",
+      "Osteoporose",
+      "Raquitismo",
+      "Osteomalacia"
+    ],
+    "contraindicacoes": [
+      "Hipercalcemia",
+      "Hipercalciúria",
+      "Nefrolitíase ativa"
+    ]
+  },
+  "calcio-carbonato": {
+    "nomeGenerico": "Carbonato de cálcio",
+    "indicacoes": [
+      "Deficiência de cálcio",
+      "Osteoporose",
+      "Hipoparatireoidismo",
+      "Antiacido"
+    ],
+    "contraindicacoes": [
+      "Hipercalcemia",
+      "Nefrolitíase de cálcio",
+      "Insuficiência renal grave"
+    ]
+  }
+}
+

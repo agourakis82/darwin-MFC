@@ -8,6 +8,10 @@ export function generateStaticParams() {
   }));
 }
 
+// Force static generation
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+
 export default function DoencaDetailPage({ params }: { params: Promise<{ id: string }> }) {
   return <DoencaDetailClient params={params} />;
 }

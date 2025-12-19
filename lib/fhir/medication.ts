@@ -47,10 +47,13 @@ export function medicamentoToFHIRMedication(
 
   // SNOMED-CT
   if (medicamento.snomedCT) {
-    codings.push({
-      system: FHIR_CODE_SYSTEMS.SNOMED_CT,
-      code: medicamento.snomedCT,
-      display: medicamento.nomeGenerico,
+    const snomedCodes = Array.isArray(medicamento.snomedCT) ? medicamento.snomedCT : [medicamento.snomedCT];
+    snomedCodes.forEach(code => {
+      codings.push({
+        system: FHIR_CODE_SYSTEMS.SNOMED_CT,
+        code,
+        display: medicamento.nomeGenerico,
+      });
     });
   }
 

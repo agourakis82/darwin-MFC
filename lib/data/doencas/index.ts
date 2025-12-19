@@ -15,12 +15,17 @@ import { doencasCardiovasculares } from './cardiovasculares';
 import { doencasRespiratorias } from './respiratorias';
 import { doencasEndocrinas } from './endocrinas';
 import { doencasSaudeMental } from './saude-mental';
+import { transtornosMentalDSM5 } from './saude-mental/dsm5-transtornos';
+import { transtornosMentalDSM5Expansao } from './saude-mental/dsm5-transtornos-expansao';
+import { transtornosMentalRaros } from './saude-mental/dsm5-transtornos-raros';
 import { doencasGastrointestinais } from './gastrointestinais';
 import { doencasMusculoesqueleticas } from './musculoesqueleticas';
 import { doencasDermatologicas } from './dermatologicas';
 import { doencasInfecciosas } from './infecciosas';
 import { doencasRenaisUrologicas } from './renais-urologicas';
 import { doencasNeurologicas } from './neurologicas';
+import { doencasNeurologicasExpansao } from './neurologicas/expansao-neurologia';
+import { doencasNeurologicasRaras } from './neurologicas/doencas-raras';
 import { doencasHematologicas } from './hematologicas';
 import { doencasGinecoObstetricas } from './gineco-obstetricas';
 import { doencasPediatricas } from './pediatricas';
@@ -39,12 +44,17 @@ export const todasDoencas: Partial<Doenca>[] = [
   ...doencasRespiratorias,
   ...doencasEndocrinas,
   ...doencasSaudeMental,
+  ...(transtornosMentalDSM5 as Doenca[]),
+  ...(transtornosMentalDSM5Expansao as Doenca[]),
+  ...(transtornosMentalRaros as Doenca[]),
   ...doencasGastrointestinais,
   ...doencasMusculoesqueleticas,
   ...doencasDermatologicas,
   ...doencasInfecciosas,
   ...doencasRenaisUrologicas,
   ...doencasNeurologicas,
+  ...(doencasNeurologicasExpansao as Doenca[]),
+  ...(doencasNeurologicasRaras as Doenca[]),
   ...doencasHematologicas,
   ...doencasGinecoObstetricas,
   ...doencasPediatricas,

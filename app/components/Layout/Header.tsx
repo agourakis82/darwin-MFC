@@ -1,11 +1,49 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 import { useAppStore } from '@/lib/store/appStore';
+import { LanguageSelector } from '../LanguageSelector';
 import { Sun, Moon, BookOpen, FileText, Menu, X, Search, Zap, ClipboardList, AlertTriangle, Pill, Calculator, Stethoscope, Keyboard } from 'lucide-react';
 
+// Fallback translations for pages not yet migrated to [locale]
+const fallbackTranslations: Record<string, string> = {
+  'common.appName': 'Darwin MFC',
+  'common.appSubtitle': 'Análise Sistêmica 2025',
+  'nav.neonatal': 'Neonatal',
+  'nav.infantil': 'Infantil',
+  'nav.adultos': 'Adultos',
+  'nav.cancer': 'Câncer',
+  'nav.gestacao': 'Gestação',
+  'nav.outros': 'Outros',
+  'nav.timeline': 'Timeline',
+  'nav.doencas': 'Doenças APS',
+  'nav.medicamentos': 'Bulário RENAME',
+  'nav.protocolos': 'Protocolos',
+  'header.search': 'Buscar',
+  'header.descriptiveMode': 'Descritivo',
+  'header.criticalAnalysisMode': 'Análise',
+  'header.lightMode': 'Modo claro',
+  'header.darkMode': 'Modo escuro',
+  'sidebar.quickAccess': 'Guia Clínico',
+  'sidebar.rastreamentos': 'Rastreamentos SUS',
+  'sidebar.new': 'Novo',
+  'contentMode.descriptive': 'Modo Descritivo',
+  'contentMode.criticalAnalysis': 'Modo Análise Crítica',
+};
+
+function useSafeTranslations() {
+  try {
+    return useTranslations();
+  } catch {
+    return ((key: string) => fallbackTranslations[key] || key) as ReturnType<typeof useTranslations>;
+  }
+}
+
 export default function Header() {
+  const t = useSafeTranslations();
+  
   const { theme, toggleTheme, contentMode, toggleContentMode } = useAppStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -34,10 +72,10 @@ export default function Header() {
               </div>
               <div>
                 <h1 className="text-xl font-semibold text-[#1d1d1f] dark:text-[#f5f5f7] tracking-tight">
-                  Rastreamentos SUS
+                  {t('common.appName')}
                 </h1>
                 <p className="text-sm text-[#86868b] dark:text-[#86868b] hidden sm:block">
-                  Análise Sistêmica 2025
+                  {t('common.appSubtitle')}
                 </p>
               </div>
             </Link>
@@ -49,43 +87,43 @@ export default function Header() {
               href="/neonatal"
               className="px-3.5 py-2 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-lg apple-transition-fast"
             >
-              Neonatal
+              {t('nav.neonatal')}
             </Link>
             <Link
               href="/infantil"
               className="px-3.5 py-2 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-lg apple-transition-fast"
             >
-              Infantil
+              {t('nav.infantil')}
             </Link>
             <Link
               href="/adultos"
               className="px-3.5 py-2 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-lg apple-transition-fast"
             >
-              Adultos
+              {t('nav.adultos')}
             </Link>
             <Link
               href="/cancer"
               className="px-3.5 py-2 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-lg apple-transition-fast"
             >
-              Câncer
+              {t('nav.cancer')}
             </Link>
             <Link
               href="/gestacao"
               className="px-3.5 py-2 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-lg apple-transition-fast"
             >
-              Gestação
+              {t('nav.gestacao')}
             </Link>
             <Link
               href="/outros"
               className="px-3.5 py-2 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-lg apple-transition-fast"
             >
-              Outros
+              {t('nav.outros')}
             </Link>
             <Link
               href="/timeline"
               className="px-3.5 py-2 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-lg apple-transition-fast"
             >
-              Timeline
+              {t('nav.timeline')}
             </Link>
           </nav>
 
@@ -95,8 +133,8 @@ export default function Header() {
             <button
               onClick={() => setSearchOpen(!searchOpen)}
               className="p-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 apple-transition-fast"
-              aria-label="Buscar"
-              title="Buscar"
+              aria-label={t('header.search')}
+              title={t('header.search')}
             >
               <Search className="w-5 h-5 text-[#1d1d1f] dark:text-[#f5f5f7]" />
             </button>
@@ -109,11 +147,11 @@ export default function Header() {
                   ? 'bg-[#007aff]/10 text-[#007aff] dark:bg-[#5ac8fa]/15 dark:text-[#5ac8fa]'
                   : 'bg-[#af52de]/10 text-[#af52de] dark:bg-[#bf5af2]/15 dark:text-[#bf5af2]'
               }`}
-              title={contentMode === 'descriptive' ? 'Modo Descritivo' : 'Modo Análise Crítica'}
+              title={contentMode === 'descriptive' ? t('contentMode.descriptive') : t('contentMode.criticalAnalysis')}
             >
               <FileText className="w-5 h-5" />
               <span className="hidden sm:inline">
-                {contentMode === 'descriptive' ? 'Descritivo' : 'Análise'}
+                {contentMode === 'descriptive' ? t('header.descriptiveMode') : t('header.criticalAnalysisMode')}
               </span>
             </button>
 
@@ -121,8 +159,8 @@ export default function Header() {
             <button
               onClick={toggleTheme}
               className="p-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 apple-transition-fast"
-              aria-label={theme === 'light' ? 'Modo escuro' : 'Modo claro'}
-              title={theme === 'light' ? 'Modo escuro' : 'Modo claro'}
+              aria-label={theme === 'light' ? t('header.darkMode') : t('header.lightMode')}
+              title={theme === 'light' ? t('header.darkMode') : t('header.lightMode')}
             >
               {theme === 'light' ? (
                 <Moon className="w-5 h-5 text-[#1d1d1f] dark:text-[#f5f5f7]" />
@@ -193,7 +231,7 @@ export default function Header() {
             {/* Guia Clínico */}
             <div className="mb-4">
               <p className="px-5 py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">
-                Guia Clínico
+                {t('sidebar.quickAccess')}
               </p>
               <nav className="flex flex-col gap-1 px-3">
                 <Link
@@ -227,15 +265,15 @@ export default function Header() {
             {/* Rastreamentos */}
             <div className="mb-4">
               <p className="px-5 py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">
-                Rastreamentos SUS
+                {t('sidebar.rastreamentos')}
               </p>
               <nav className="flex flex-col gap-1 px-3">
                 {[
-                  { href: '/neonatal', label: 'Triagem Neonatal' },
-                  { href: '/infantil', label: 'Saúde Infantil' },
-                  { href: '/adultos', label: 'Adultos (DCNTs)' },
-                  { href: '/cancer', label: 'Câncer' },
-                  { href: '/gestacao', label: 'Gestação' },
+                  { href: '/neonatal', label: t('nav.neonatal') },
+                  { href: '/infantil', label: t('nav.infantil') },
+                  { href: '/adultos', label: t('nav.adultos') },
+                  { href: '/cancer', label: t('nav.cancer') },
+                  { href: '/gestacao', label: t('nav.gestacao') },
                 ].map(item => (
                   <Link
                     key={item.href}

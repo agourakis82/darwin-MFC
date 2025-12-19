@@ -978,3 +978,339 @@ pre code {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   }
 }
+
+/* ============================================ */
+/* RTL (Right-to-Left) SUPPORT FOR ARABIC */
+/* ============================================ */
+
+[dir="rtl"] {
+  /* Text alignment */
+  text-align: right;
+}
+
+[dir="rtl"] body {
+  direction: rtl;
+}
+
+/* RTL: Flip flexbox directions */
+[dir="rtl"] .flex {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .flex-row-reverse {
+  flex-direction: row;
+}
+
+/* RTL: Adjust margins and paddings */
+[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+[dir="rtl"] .mr-2 {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+[dir="rtl"] .ml-2 {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+[dir="rtl"] .ml-4 {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+[dir="rtl"] .mr-4 {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+[dir="rtl"] .ml-10 {
+  margin-left: 0;
+  margin-right: 2.5rem;
+}
+
+[dir="rtl"] .mr-10 {
+  margin-right: 0;
+  margin-left: 2.5rem;
+}
+
+[dir="rtl"] .ml-20 {
+  margin-left: 0;
+  margin-right: 5rem;
+}
+
+[dir="rtl"] .mr-20 {
+  margin-right: 0;
+  margin-left: 5rem;
+}
+
+/* RTL: Adjust padding */
+[dir="rtl"] .pl-4 {
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
+[dir="rtl"] .pr-4 {
+  padding-right: 0;
+  padding-left: 1rem;
+}
+
+[dir="rtl"] .pl-6 {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+[dir="rtl"] .pr-6 {
+  padding-right: 0;
+  padding-left: 1.5rem;
+}
+
+/* RTL: Adjust text alignment */
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+/* RTL: Adjust positioning */
+[dir="rtl"] .left-0 {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .right-0 {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .left-1\/2 {
+  left: auto;
+  right: 50%;
+}
+
+[dir="rtl"] .right-4 {
+  right: auto;
+  left: 1rem;
+}
+
+[dir="rtl"] .left-4 {
+  left: auto;
+  right: 1rem;
+}
+
+[dir="rtl"] .left-64 {
+  left: auto;
+  right: 16rem;
+}
+
+/* RTL: Adjust borders */
+[dir="rtl"] .border-l {
+  border-left: none;
+  border-right-width: 1px;
+  border-right-style: solid;
+}
+
+[dir="rtl"] .border-l-2 {
+  border-left: none;
+  border-right-width: 2px;
+  border-right-style: solid;
+}
+
+[dir="rtl"] .border-r {
+  border-right: none;
+  border-left-width: 1px;
+  border-left-style: solid;
+}
+
+[dir="rtl"] .border-r-2 {
+  border-right: none;
+  border-left-width: 2px;
+  border-left-style: solid;
+}
+
+/* RTL: Adjust transform origins */
+[dir="rtl"] .-translate-x-1\/2 {
+  transform: translateX(50%);
+}
+
+/* RTL: Adjust spacing utilities */
+[dir="rtl"] .space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+[dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+[dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* RTL: Adjust gap in flexbox (handled automatically by CSS, but ensure proper spacing) */
+[dir="rtl"] .gap-2 {
+  gap: 0.5rem;
+}
+
+[dir="rtl"] .gap-3 {
+  gap: 0.75rem;
+}
+
+[dir="rtl"] .gap-4 {
+  gap: 1rem;
+}
+
+/* RTL: Icon rotations (arrows, chevrons) */
+[dir="rtl"] .rotate-180 {
+  transform: rotate(0deg);
+}
+
+/* RTL: Adjust float */
+[dir="rtl"] .float-left {
+  float: right;
+}
+
+[dir="rtl"] .float-right {
+  float: left;
+}
+
+/* RTL: Adjust grid auto-fit for RTL */
+[dir="rtl"] .grid {
+  direction: rtl;
+}
+
+/* RTL: Ensure proper font rendering for Arabic */
+[dir="rtl"] {
+  font-family: 'Inter', 'Segoe UI', 'Arial', 'Tahoma', 'Arabic Typesetting', sans-serif;
+}
+
+/* RTL: Adjust sidebar positioning */
+[dir="rtl"] aside {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-right: none;
+}
+
+[dir="rtl"] .border-r {
+  border-right: none;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: inherit;
+}
+
+/* RTL: Adjust dropdown menus */
+[dir="rtl"] .absolute.right-0 {
+  right: auto;
+  left: 0;
+}
+
+/* RTL: Ensure icons and images maintain proper alignment */
+[dir="rtl"] img,
+[dir="rtl"] svg {
+  display: inline-block;
+}
+
+/* RTL: Adjust navigation items */
+[dir="rtl"] nav a,
+[dir="rtl"] nav button {
+  direction: rtl;
+}
+
+/* RTL: Adjust gradient directions */
+[dir="rtl"] .bg-gradient-to-r {
+  background-image: linear-gradient(to left, var(--tw-gradient-stops));
+}
+
+[dir="rtl"] .bg-gradient-to-l {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+/* RTL: Adjust dropdown positioning */
+[dir="rtl"] .dropdown-menu {
+  right: auto;
+  left: 0;
+}
+
+/* RTL: Adjust tooltip positioning */
+[dir="rtl"] [data-tooltip]::after {
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* RTL: Adjust transform for RTL */
+[dir="rtl"] .translate-x-1 {
+  transform: translateX(-0.25rem);
+}
+
+[dir="rtl"] .-translate-x-1 {
+  transform: translateX(0.25rem);
+}
+
+/* RTL: Ensure proper scrollbar positioning */
+[dir="rtl"] ::-webkit-scrollbar {
+  direction: rtl;
+}
+
+/* RTL: Adjust table direction */
+[dir="rtl"] table {
+  direction: rtl;
+}
+
+/* RTL: Adjust list markers */
+[dir="rtl"] ul,
+[dir="rtl"] ol {
+  padding-right: 1.5em;
+  padding-left: 0;
+}
+
+/* RTL: Adjust input and textarea */
+[dir="rtl"] input,
+[dir="rtl"] textarea {
+  text-align: right;
+  direction: rtl;
+}
+
+/* RTL: Adjust code blocks */
+[dir="rtl"] code,
+[dir="rtl"] pre {
+  direction: ltr; /* Code usually stays LTR */
+  text-align: left;
+}
+
+/* RTL: Adjust numbered lists */
+[dir="rtl"] ol {
+  counter-reset: item;
+}
+
+[dir="rtl"] ol li {
+  display: block;
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 1.5em;
+  padding-left: 0;
+}
+
+[dir="rtl"] ol li::before {
+  content: counter(item) ".";
+  counter-increment: item;
+  position: absolute;
+  right: 0;
+}

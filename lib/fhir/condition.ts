@@ -55,10 +55,13 @@ export function doencaToFHIRCondition(
 
   // SNOMED-CT
   if (doenca.snomedCT) {
-    codings.push({
-      system: FHIR_CODE_SYSTEMS.SNOMED_CT,
-      code: doenca.snomedCT,
-      display: doenca.titulo,
+    const snomedCodes = Array.isArray(doenca.snomedCT) ? doenca.snomedCT : [doenca.snomedCT];
+    snomedCodes.forEach(code => {
+      codings.push({
+        system: FHIR_CODE_SYSTEMS.SNOMED_CT,
+        code,
+        display: doenca.titulo,
+      });
     });
   }
 

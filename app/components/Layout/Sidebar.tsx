@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import {
   ChevronDown,
   ChevronRight,
@@ -58,85 +59,86 @@ function getSubsectionsForCategory(category: string, path: string) {
   }));
 }
 
-const navigationGroups: NavGroup[] = [
-  {
-    title: 'Principal',
-    sections: [
-      { title: 'Início', icon: Home, path: '/' },
-      { title: 'Caso Clínico', icon: GraduationCap, path: '/aula' },
-    ]
-  },
-  {
-    title: 'Guia Clínico',
-    sections: [
-      { title: 'Doenças da APS', icon: BookOpen, path: '/doencas' },
-      { title: 'Bulário RENAME', icon: Pill, path: '/medicamentos' },
-      { title: 'Protocolos', icon: FileText, path: '/protocolos' },
-      { title: 'Calculadoras', icon: Calculator, path: '/calculadoras' },
-      { title: 'Casos Clínicos', icon: GraduationCap, path: '/casos-clinicos', badge: 'Novo' },
-    ]
-  },
-  {
-    title: 'Rastreamentos SUS',
-    sections: [
-      {
-        title: 'Triagem Neonatal',
-        icon: Baby,
-        path: '/neonatal',
-        get subsections() { return getSubsectionsForCategory('neonatal', '/neonatal'); }
-      },
-      {
-        title: 'Saúde Infantil',
-        icon: Users,
-        path: '/infantil',
-        get subsections() { return getSubsectionsForCategory('infantil', '/infantil'); }
-      },
-      {
-        title: 'Adultos (DCNTs)',
-        icon: Activity,
-        path: '/adultos',
-        get subsections() { return getSubsectionsForCategory('adultos', '/adultos'); }
-      },
-      {
-        title: 'Câncer',
-        icon: Heart,
-        path: '/cancer',
-        get subsections() { return getSubsectionsForCategory('cancer', '/cancer'); }
-      },
-      {
-        title: 'Gestação (Pré-natal)',
-        icon: Stethoscope,
-        path: '/gestacao',
-        get subsections() { return getSubsectionsForCategory('gestacao', '/gestacao'); }
-      },
-    ]
-  },
-  {
-    title: 'Fundamentos',
-    sections: [
-      { title: 'SUS e APS', icon: Shield, path: '/sus', badge: 'Novo' },
-      { title: 'Timeline 2025', icon: Clock, path: '/timeline' },
-      { title: 'Bibliografia', icon: BookMarked, path: '/bibliografia' },
-    ]
-  },
-  {
-    title: 'Ferramentas Clínicas',
-    sections: [
-      { title: 'Consulta Rápida', icon: Zap, path: '/consulta-rapida' },
-      { title: 'Prontuário SOAP', icon: ClipboardList, path: '/prontuario' },
-      { title: 'Modo Estudo', icon: GraduationCap, path: '/estudo', badge: 'Novo' },
-      { title: 'Genograma', icon: Users, path: '/ferramentas/genograma', badge: 'Novo' },
-      { title: 'Ecomapa', icon: Heart, path: '/ferramentas/ecomapa', badge: 'Novo' },
-      { title: 'Interações Medicamentosas', icon: AlertTriangle, path: '/medicamentos/interacoes' },
-      { title: 'Comparador de Medicamentos', icon: Pill, path: '/medicamentos/comparador' },
-      { title: 'Busca Avançada', icon: FileSearch, path: '/busca' },
-    ]
-  }
-];
-
 export default function Sidebar() {
+  const t = useTranslations();
   const pathname = usePathname();
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set([pathname?.split('#')[0] || '/']));
+
+  const navigationGroups: NavGroup[] = useMemo(() => [
+    {
+      title: t('sidebar.main'),
+      sections: [
+        { title: t('sidebar.home'), icon: Home, path: '/' },
+        { title: t('sidebar.clinicalCase'), icon: GraduationCap, path: '/aula' },
+      ]
+    },
+    {
+      title: t('sidebar.clinicalGuide'),
+      sections: [
+        { title: t('sidebar.diseasesAPS'), icon: BookOpen, path: '/doencas' },
+        { title: t('sidebar.medicationGuide'), icon: Pill, path: '/medicamentos' },
+        { title: t('sidebar.protocols'), icon: FileText, path: '/protocolos' },
+        { title: t('sidebar.calculators'), icon: Calculator, path: '/calculadoras' },
+        { title: t('sidebar.clinicalCases'), icon: GraduationCap, path: '/casos-clinicos', badge: t('common.new') },
+      ]
+    },
+    {
+      title: t('sidebar.susScreenings'),
+      sections: [
+        {
+          title: t('sidebar.neonatalScreening'),
+          icon: Baby,
+          path: '/neonatal',
+          get subsections() { return getSubsectionsForCategory('neonatal', '/neonatal'); }
+        },
+        {
+          title: t('sidebar.childHealth'),
+          icon: Users,
+          path: '/infantil',
+          get subsections() { return getSubsectionsForCategory('infantil', '/infantil'); }
+        },
+        {
+          title: t('sidebar.adultsDCNTs'),
+          icon: Activity,
+          path: '/adultos',
+          get subsections() { return getSubsectionsForCategory('adultos', '/adultos'); }
+        },
+        {
+          title: t('sidebar.cancer'),
+          icon: Heart,
+          path: '/cancer',
+          get subsections() { return getSubsectionsForCategory('cancer', '/cancer'); }
+        },
+        {
+          title: t('sidebar.gestationPrenatal'),
+          icon: Stethoscope,
+          path: '/gestacao',
+          get subsections() { return getSubsectionsForCategory('gestacao', '/gestacao'); }
+        },
+      ]
+    },
+    {
+      title: t('sidebar.fundamentals'),
+      sections: [
+        { title: t('sidebar.susAPS'), icon: Shield, path: '/sus', badge: t('common.new') },
+        { title: t('sidebar.timeline'), icon: Clock, path: '/timeline' },
+        { title: t('sidebar.bibliography'), icon: BookMarked, path: '/bibliografia' },
+      ]
+    },
+    {
+      title: t('sidebar.clinicalTools'),
+      sections: [
+        { title: t('sidebar.quickConsultation'), icon: Zap, path: '/consulta-rapida' },
+        { title: t('sidebar.soapRecord'), icon: ClipboardList, path: '/prontuario' },
+        { title: t('sidebar.studyMode'), icon: GraduationCap, path: '/estudo', badge: t('common.new') },
+        { title: t('sidebar.genogram'), icon: Users, path: '/ferramentas/genograma', badge: t('common.new') },
+        { title: t('sidebar.ecomap'), icon: Heart, path: '/ferramentas/ecomapa', badge: t('common.new') },
+        { title: t('sidebar.drugInteractions'), icon: AlertTriangle, path: '/medicamentos/interacoes' },
+        { title: t('sidebar.drugComparator'), icon: Pill, path: '/medicamentos/comparador' },
+        { title: t('sidebar.advancedSearch'), icon: FileSearch, path: '/busca' },
+      ]
+    }
+  ], [t]);
 
   const toggleSection = (title: string) => {
     const newExpanded = new Set(expandedSections);
@@ -247,10 +249,10 @@ export default function Sidebar() {
         {/* Sidebar Header */}
         <div className="mb-6 pb-4 border-b border-neutral-200 dark:border-neutral-700">
           <h2 className="text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-1">
-            Darwin MFC
+            {t('common.appName')}
           </h2>
           <p className="text-xs text-neutral-600 dark:text-neutral-400">
-            Guia de Medicina de Família e Comunidade
+            {t('common.appDescription')}
           </p>
         </div>
 
@@ -276,16 +278,16 @@ export default function Sidebar() {
               </div>
               <div>
                 <p className="text-xs font-bold text-neutral-900 dark:text-neutral-100 mb-1">
-                  Padrão Q1 Acadêmico
+                  {t('sidebar.q1Standard')}
                 </p>
                 <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  Todas as afirmações validadas com referências científicas
+                  {t('sidebar.q1Description')}
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-              <span>Atualizado: Dez/2025</span>
+              <span>{t('sidebar.lastUpdate')}</span>
             </div>
           </div>
         </div>

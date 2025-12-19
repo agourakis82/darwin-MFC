@@ -66,7 +66,7 @@ export function exportDiseasesToCSV(
       disease.categoria || '',
       (disease.cid10 || []).join('; '),
       (disease.ciap2 || []).join('; '),
-      disease.snomedCT || '',
+      Array.isArray(disease.snomedCT) ? disease.snomedCT.join('; ') : (disease.snomedCT || ''),
       disease.doid || '',
       disease.umlsCui || '',
       disease.quickView?.definicao || '',
@@ -125,7 +125,7 @@ export function exportMedicationsToCSV(
       med.atcCode || '',
       med.rxNormCui || '',
       med.drugBankId || '',
-      med.snomedCT || '',
+      Array.isArray(med.snomedCT) ? med.snomedCT.join('; ') : (med.snomedCT || ''),
       formas,
       disponivelSUS,
     ];

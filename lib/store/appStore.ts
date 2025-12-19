@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { AppState, ContentMode, Theme } from '../types';
+import type { Locale } from '@/i18n/config';
 
 interface AppStore extends AppState {
   // Actions
@@ -20,6 +21,9 @@ interface AppStore extends AppState {
   removeFavoritoMedicamento: (id: string) => void;
   addFavoritoProtocolo: (id: string) => void;
   removeFavoritoProtocolo: (id: string) => void;
+  // i18n
+  locale?: Locale;
+  setLocale: (locale: Locale) => void;
 }
 
 export const useAppStore = create<AppStore>()(
@@ -100,6 +104,10 @@ export const useAppStore = create<AppStore>()(
       removeFavoritoProtocolo: (id) => set((state) => ({
         favoritosProtocolos: state.favoritosProtocolos.filter(fav => fav !== id)
       })),
+
+      // i18n
+      locale: undefined,
+      setLocale: (locale) => set({ locale }),
     }),
     {
       name: 'darwin-mfc-storage', // Nome da key no localStorage
@@ -111,6 +119,7 @@ export const useAppStore = create<AppStore>()(
         favoritosMedicamentos: state.favoritosMedicamentos,
         favoritosProtocolos: state.favoritosProtocolos,
         notes: state.notes,
+        locale: state.locale,
       }),
     }
   )
