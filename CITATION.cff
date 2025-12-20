@@ -28,16 +28,15 @@ date-released: 2025-12-25
 url: https://github.com/agourakis82/darwin-mfc
 repository-code: https://github.com/agourakis82/darwin-mfc
 
-# Persistent Identifier (DOI) - Placeholder for Zenodo upload
-# Identificador Persistente (DOI) - Placeholder para upload no Zenodo
-doi: 10.5281/zenodo.XXXXXXX
-# Note: Replace with actual DOI after Zenodo upload
-# Nota: Substituir com DOI real após upload no Zenodo
+# Persistent Identifier (DOI) - Zenodo DOI
+# Identificador Persistente (DOI) - DOI do Zenodo
+doi: 10.5281/zenodo.17987610
 
 # Identifiers / Identificadores
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.XXXXXXX
+    value: 10.5281/zenodo.17987610
+    description: "Zenodo DOI for this version"
   - type: url
     value: https://github.com/agourakis82/darwin-mfc
 

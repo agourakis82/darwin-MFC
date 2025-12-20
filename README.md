@@ -10,6 +10,7 @@ Análise comparativa de diretrizes de rastreamento populacional com rigor acadê
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
 ![License](https://img.shields.io/badge/License-MIT%2BCC--BY--4.0-green?style=for-the-badge)
 ![Version](https://img.shields.io/badge/Version-0.7.0-blue?style=for-the-badge)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17987610.svg)](https://doi.org/10.5281/zenodo.17987610)
 
 ---
 
@@ -96,10 +97,10 @@ Este projeto usa metadados de citação compatíveis com **FORCE11**. Use o arqu
 ### Quick Citation / Citação Rápida
 
 ```
-Agourakis, D. C. (2025). Darwin-MFC: Interactive Global Guide for Family and Community Medicine Screening Guidelines (Version 0.7.0) [Software]. https://github.com/agourakis82/darwin-mfc
+Agourakis, D. C. (2025). Darwin-MFC: Interactive Global Guide for Family and Community Medicine Screening Guidelines (Version 0.7.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.17987610
 ```
 
-**Note**: A DOI will be available after Zenodo upload. / **Nota**: Um DOI estará disponível após upload no Zenodo.
+**DOI**: [10.5281/zenodo.17987610](https://doi.org/10.5281/zenodo.17987610)
 
 ---
 
