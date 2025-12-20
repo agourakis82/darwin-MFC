@@ -1,9 +1,9 @@
 /**
  * i18n Configuration
- * Internationalization setup for 7 languages
+ * Internationalization setup for 9 languages
  */
 
-export const locales = ['pt', 'en', 'es', 'fr', 'ru', 'ar', 'zh', 'el'] as const;
+export const locales = ['pt', 'en', 'es', 'fr', 'ru', 'ar', 'zh', 'el', 'hi'] as const;
 export type Locale = typeof locales[number];
 
 export const defaultLocale: Locale = 'pt';
@@ -17,6 +17,7 @@ export const localeNames: Record<Locale, string> = {
   ar: 'العربية',
   zh: '中文',
   el: 'Ελληνικά',
+  hi: 'हिंदी',
 };
 
 export const localeFlags: Record<Locale, string> = {
@@ -28,6 +29,7 @@ export const localeFlags: Record<Locale, string> = {
   ar: '🇸🇦',
   zh: '🇨🇳',
   el: '🇬🇷',
+  hi: '🇮🇳',
 };
 
 /**

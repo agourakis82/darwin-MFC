@@ -28,12 +28,24 @@ export const rastreamentos: Record<string, Rastreamento> = {
           { refId: 'sbm-mamografia-2025' }
         ]
       },
+      india: {
+        organization: ['NP-NCD', 'MoHFW'],
+        population: 'Mulheres de 30 anos ou mais',
+        method: 'Exame Clínico das Mamas (CBE) por profissional de saúde treinado',
+        periodicity: 'Anual (a cada 1 ano)',
+        justification: 'NP-NCD 2023-2030 prioriza métodos de baixo custo. CBE é acessível em áreas rurais e pode ser realizado por ASHA workers treinados. Mamografia disponível em centros terciários para casos suspeitos.',
+        citations: [
+          { refId: 'np-ncd-operational-guidelines-2023' },
+          { refId: 'mohfw-cancer-operational-framework-2023' }
+        ]
+      },
       convergence: {
         status: 'parcial',
-        description: 'Alta convergência na idade de início (40 anos) após atualização de Set/2025. Divergência persiste na periodicidade: SUS mantém bienal, sociedades recomendam anual.',
+        description: 'Alta convergência na idade de início (40 anos) após atualização de Set/2025. Divergência persiste na periodicidade: SUS mantém bienal, sociedades recomendam anual. Índia prioriza CBE (30+) como método de baixo custo, com mamografia em centros terciários.',
         citations: [
           { refId: 'ms-mamografia-2025' },
-          { refId: 'sbm-mamografia-2025' }
+          { refId: 'sbm-mamografia-2025' },
+          { refId: 'np-ncd-operational-guidelines-2023' }
         ]
       }
     },
@@ -75,12 +87,24 @@ export const rastreamentos: Record<string, Rastreamento> = {
           { refId: 'febrasgo-hpv-2024' }
         ]
       },
+      india: {
+        organization: ['NP-NCD', 'MoHFW'],
+        population: 'Mulheres de 30 a 65 anos',
+        method: 'Visual Inspection with Acetic Acid (VIA) por profissional de saúde treinado',
+        periodicity: 'A cada 3-5 anos (VIA negativo)',
+        justification: 'VIA é método de baixo custo, altamente acessível em áreas rurais indianas. Pode ser realizado por profissionais de saúde treinados em nível primário. HPV-DNA disponível em centros terciários.',
+        citations: [
+          { refId: 'np-ncd-operational-guidelines-2023' },
+          { refId: 'mohfw-cancer-operational-framework-2023' }
+        ]
+      },
       convergence: {
         status: 'convergencia',
-        description: 'Alinhamento quase total. FEBRASGO e ABPTGIC participaram da elaboração das novas diretrizes. Convergência completa em tecnologia, população-alvo e periodicidade.',
+        description: 'Alinhamento quase total. FEBRASGO e ABPTGIC participaram da elaboração das novas diretrizes. Convergência completa em tecnologia, população-alvo e periodicidade. Índia utiliza VIA (30-65 anos) como método de baixo custo, adaptado ao contexto de recursos limitados.',
         citations: [
           { refId: 'portaria-saes-13-2025' },
-          { refId: 'febrasgo-hpv-2024' }
+          { refId: 'febrasgo-hpv-2024' },
+          { refId: 'np-ncd-operational-guidelines-2023' }
         ]
       }
     },
@@ -93,6 +117,52 @@ export const rastreamentos: Record<string, Rastreamento> = {
       ]
     },
     lastUpdate: '2025-08'
+  },
+
+  'cancer-oral': {
+    id: 'cancer-oral',
+    title: 'Rastreamento do Câncer Oral',
+    category: 'cancer',
+    description: 'O câncer oral é um problema de saúde pública significativo na Índia, frequentemente associado ao uso de tabaco e betel quid. No Brasil, estimam-se ~15 mil casos novos/ano. A detecção precoce é crucial para melhor prognóstico.',
+    recommendations: {
+      sus: {
+        population: 'Não há rastreamento populacional organizado no SUS. Rastreamento oportunístico em consultas odontológicas.',
+        method: 'Exame clínico da cavidade oral (inspeção visual)',
+        periodicity: 'Oportunístico',
+        justification: 'Foco na detecção precoce de lesões suspeitas em pacientes de risco durante consultas de rotina.',
+        citations: []
+      },
+      societies: {
+        organization: ['ABOP', 'SOBRAEP'],
+        population: 'Indivíduos com fatores de risco (tabagismo, etilismo) em consultas de rotina.',
+        method: 'Exame clínico da cavidade oral',
+        periodicity: 'Anual para grupos de risco',
+        recommendation: 'Aconselhamento sobre fatores de risco e exame clínico regular são fundamentais.',
+        citations: []
+      },
+      india: {
+        organization: ['NP-NCD', 'MoHFW'],
+        population: 'Indivíduos ≥30 anos, especialmente usuários de tabaco/álcool',
+        method: 'Inspeção visual oral (Oral Visual Inspection - OVI) por ASHA workers e profissionais de saúde',
+        periodicity: 'Anual ou bienal',
+        justification: 'Alta prevalência de câncer oral na Índia. OVI é um método de baixo custo e pode ser realizado por trabalhadores de saúde comunitários para detecção precoce.',
+        citations: [
+          { refId: 'np-ncd-operational-guidelines-2023' },
+          { refId: 'mohfw-cancer-operational-framework-2023' }
+        ]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Divergência na abordagem populacional. Índia tem um programa de rastreamento organizado devido à alta carga da doença, enquanto SUS foca em detecção oportunística.',
+        citations: []
+      }
+    },
+    epidemiology: {
+      incidence: 'Alta incidência na Índia, especialmente em homens. No Brasil, ~15 mil casos novos/ano.',
+      mortality: 'Alta mortalidade se diagnosticado em estágios avançados.',
+      citations: []
+    },
+    lastUpdate: '2025-12'
   },
 
   'cancer-prostata': {
@@ -207,16 +277,27 @@ export const rastreamentos: Record<string, Rastreamento> = {
         recommendation: 'Consenso total: rastrear PA é pilar da atenção primária. Medir em diferentes dias antes de diagnóstico.',
         citations: [{ refId: 'ms-mamografia-2025', note: 'Referência de consenso' }]
       },
+      india: {
+        organization: ['NP-NCD', 'MoHFW'],
+        population: 'Todos adultos ≥18 anos',
+        method: 'Medida da pressão arterial com esfigmomanômetro calibrado',
+        periodicity: 'Anual ou em todas as consultas',
+        justification: 'NP-NCD 2023-2030 recomenda rastreamento universal de hipertensão a partir de 18 anos. Tratamento precoce reduz mortalidade cardiovascular e AVC. Método de baixo custo, acessível em atenção primária.',
+        citations: [
+          { refId: 'np-ncd-operational-guidelines-2023' },
+          { refId: 'who-india-ncd-report-2023' }
+        ]
+      },
       convergence: {
         status: 'convergencia',
-        description: 'Consenso absoluto entre MS e sociedades. Não há divergência - evidência robusta e alto impacto.',
-        citations: [{ refId: 'ms-mamografia-2025' }]
+        description: 'Consenso absoluto entre MS, sociedades e NP-NCD Índia. Não há divergência - evidência robusta e alto impacto. Todos recomendam rastreamento universal ≥18 anos.',
+        citations: [{ refId: 'ms-mamografia-2025' }, { refId: 'np-ncd-operational-guidelines-2023' }]
       }
     },
     epidemiology: {
-      prevalence: '~24% dos adultos brasileiros',
+      prevalence: '~24% dos adultos brasileiros; ~30% na Índia',
       mortality: 'Principal causa de AVC e doença cardiovascular',
-      citations: [{ refId: 'inca-estimativa-2023', note: 'Dados epidemiológicos gerais' }]
+      citations: [{ refId: 'inca-estimativa-2023', note: 'Dados epidemiológicos gerais' }, { refId: 'who-india-ncd-report-2023' }]
     },
     lastUpdate: '2025-11'
   },
@@ -243,17 +324,28 @@ export const rastreamentos: Record<string, Rastreamento> = {
         recommendation: 'SBD estabelece critérios diagnósticos claros: Glicemia jejum ≥126 mg/dL ou HbA1c ≥6.5% ou TOTG-2h ≥200 mg/dL ou glicemia aleatória ≥200 mg/dL com sintomas. Pré-diabetes: glicemia jejum 100-125 mg/dL ou HbA1c 5.7-6.4% ou TOTG-2h 140-199 mg/dL.',
         citations: [{ refId: 'sbd-diagnostico-2024' }, { refId: 'sbd-rastreamento-2025' }]
       },
+      india: {
+        organization: ['NP-NCD', 'MoHFW'],
+        population: 'Adultos ≥30 anos com fatores de risco (obesidade, história familiar, hipertensão)',
+        method: 'Glicemia de jejum ou HbA1c (quando disponível)',
+        periodicity: 'Anual para grupos de risco',
+        justification: 'NP-NCD 2023-2030 recomenda rastreamento de DM2 em adultos ≥30 anos com fatores de risco. Prioriza métodos de baixo custo (glicemia de jejum) acessíveis em atenção primária. HbA1c disponível em centros terciários.',
+        citations: [
+          { refId: 'np-ncd-operational-guidelines-2023' },
+          { refId: 'who-india-ncd-report-2023' }
+        ]
+      },
       convergence: {
         status: 'convergencia',
-        description: 'Alta convergência entre SUS e SBD após atualização das diretrizes 2024-2025. Ambos recomendam triagem universal ≥35 anos e rastreamento de jovens com obesidade/sobrepeso + fatores de risco. Periodicidade estratificada por risco está alinhada entre as recomendações.',
-        citations: [{ refId: 'sbd-diagnostico-2024' }]
+        description: 'Alta convergência entre SUS, SBD e NP-NCD Índia. Todos recomendam rastreamento universal ≥30-35 anos e rastreamento de jovens com fatores de risco. Periodicidade estratificada por risco está alinhada entre as recomendações.',
+        citations: [{ refId: 'sbd-diagnostico-2024' }, { refId: 'np-ncd-operational-guidelines-2023' }]
       }
     },
     epidemiology: {
-      prevalence: '~7-10% da população adulta brasileira; ~50% dos casos não diagnosticados',
+      prevalence: '~7-10% da população adulta brasileira; ~50% dos casos não diagnosticados; ~8-10% na Índia',
       incidence: 'Crescimento epidêmico associado à epidemia de obesidade e sedentarismo',
       mortality: 'DM2 é responsável por importante morbimortalidade cardiovascular, renal e por complicações microvasculares',
-      citations: [{ refId: 'sbd-epidemiologia-2024' }]
+      citations: [{ refId: 'sbd-epidemiologia-2024' }, { refId: 'who-india-ncd-report-2023' }]
     },
     lastUpdate: '2025-12'
   },

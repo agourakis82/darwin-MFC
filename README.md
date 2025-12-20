@@ -1,336 +1,207 @@
-# Rastreamentos Populacionais no SUS (2025) - Aplicação Acadêmica Q1
+# Darwin-MFC
+
+**Interactive Global Guide for Family and Community Medicine / Guia Interativo Global para Medicina de Família e Comunidade**
+
+Comparative analysis of population screening guidelines with Q1 academic rigor, multilingual (9 languages), and health-system-specific adaptation.
+
+Análise comparativa de diretrizes de rastreamento populacional com rigor acadêmico Q1, multilíngue (9 idiomas) e adaptação específica por sistema de saúde.
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
-![Tailwind](https://img.shields.io/badge/Tailwind-4-38bdf8?style=for-the-badge&logo=tailwindcss)
-
-Aplicação web interativa de rigor acadêmico Q1 (padrão Nature/Cell) para análise comparativa entre as **Diretrizes do SUS** e **Recomendações de Sociedades Médicas** sobre rastreamentos populacionais no Brasil.
-
----
-
-## 🎯 Objetivos
-
-1. **Conteúdo Descritivo Completo**: Protocolos, populações-alvo, periodicidade, métodos diagnósticos
-2. **Análise Crítica Sistêmica**: Insights de segunda e terceira ordem, controvérsias, desafios operacionais
-3. **Sistema de Referências Acadêmico**: Citações inline Vancouver, tooltips, validação de completude
-4. **Comparações Interativas**: SUS vs Sociedades lado a lado com status de convergência
-5. **Visualizações Analíticas**: Gráficos de cobertura, convergência, evolução temporal
-6. **Busca Avançada**: Fuzzy search + filtros por categoria, convergência, ano
+![License](https://img.shields.io/badge/License-MIT%2BCC--BY--4.0-green?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-0.7.0-blue?style=for-the-badge)
 
 ---
 
-## 🚀 Tecnologias
+## 🌍 Vision / Visão
 
-- **Next.js 15** + **React 19** + **TypeScript 5**
-- **Tailwind CSS 4** - Design system acadêmico responsivo
-- **Zustand** - Gerenciamento de estado global
-- **Recharts** - Gráficos e visualizações de dados
-- **Fuse.js** - Busca fuzzy inteligente
-- **Lucide Icons** - Iconografia moderna
+Open tool to strengthen primary care worldwide, comparing official guidelines (SUS, USPSTF, NHS, NP-NCD India, WHO) with localized critical analysis.
+
+Ferramenta aberta para fortalecer a atenção primária mundialmente, comparando diretrizes oficiais (SUS, USPSTF, NHS, NP-NCD Índia, OMS) com análise crítica localizada.
 
 ---
 
-## 📂 Estrutura do Projeto
+## ✨ Key Features / Funcionalidades Principais
 
-```
-Darwin-MFC/
-├── app/
-│   ├── layout.tsx              # Layout raiz com ThemeProvider
-│   ├── page.tsx                # Homepage (redirect)
-│   ├── globals.css             # Estilos globais + temas + print
-│   │
-│   ├── cancer/                 # Rastreamentos oncológicos
-│   ├── infantil/               # Saúde da criança
-│   ├── adultos/                # DCNTs (HAS, DM2, dislipidemia)
-│   ├── neonatal/               # Triagem neonatal
-│   ├── gestacao/               # Pré-natal
-│   ├── comparacao/             # Visão comparativa + gráficos
-│   ├── busca/                  # Busca avançada
-│   ├── analise/                # Análise crítica sistêmica
-│   ├── bibliografia/           # Referências completas
-│   └── timeline/               # Linha do tempo 2025
-│   │
-│   └── components/
-│       ├── Layout/             # Header, Sidebar, ThemeProvider
-│       ├── Bibliography/       # InlineCitation, ReferenceList, Tooltip
-│       ├── Comparison/         # ComparisonCard, ComparisonSection
-│       ├── Charts/             # CoverageChart, ConvergenceChart, TimelineChart
-│       ├── Search/             # AdvancedSearch (Fuse.js)
-│       ├── Calculators/        # RiskCalculator, BMICalculator
-│       └── Export/             # ExportTools (PDF, CSV, JSON)
-│
-├── lib/
-│   ├── data/
-│   │   ├── rastreamentos.ts    # Dados descritivos estruturados
-│   │   ├── analise-critica.ts  # Análises sistêmicas
-│   │   ├── references.ts       # Bibliografia completa
-│   │   └── timeline.ts         # Eventos 2025+
-│   │
-│   ├── types/
-│   │   ├── rastreamentos.ts    # Interfaces Rastreamento
-│   │   ├── references.ts       # Interfaces Reference
-│   │   ├── analysis.ts         # AnalysisContent, Controversies, Insights
-│   │   └── index.ts            # Re-exports
-│   │
-│   └── store/
-│       └── appStore.ts         # Zustand store (theme, contentMode)
-│
-├── package.json
-├── tsconfig.json
-├── tailwind.config.ts
-├── next.config.ts
-└── README.md
-```
+- **Dual View**: Descriptive vs. Critical Analysis / **Visão Dual**: Descritivo vs. Análise Crítica
+- **Visual traffic-light comparisons** / Comparações visuais semafóricas
+- **Integrated clinical calculators** / Calculadoras clínicas integradas
+- **Interactive genogram/ecomap** / Genograma/ecomapa interativos
+- **Academic export** (PDF, BibTeX, CSV) / Exportação acadêmica (PDF, BibTeX, CSV)
+- **9 languages**: Portuguese, English, Spanish, French, Russian, Arabic, Chinese, Greek, Hindi / **9 idiomas**: Português, Inglês, Espanhol, Francês, Russo, Árabe, Chinês, Grego, Hindi
+- **Offline-ready** (future PWA) / Pronto para offline (PWA futuro)
 
 ---
 
-## ⚡ Instalação e Execução
+## 🚀 Live Demo / Demonstração ao Vivo
 
-### Pré-requisitos
+🌐 **https://mfc.agourakis.med.br**
 
-- **Node.js 18+** (recomendado 20+)
-- **npm**, **yarn** ou **pnpm**
+---
 
-### Passos
+## 📊 Graphical Abstracts / Abstracts Gráficos
+
+Graphical abstracts for core modules are available in `public/graphical-abstracts/`:
+
+Os abstracts gráficos para os módulos principais estão disponíveis em `public/graphical-abstracts/`:
+
+1. Breast Cancer Screening Global Comparison / Comparação Global de Rastreamento de Câncer de Mama
+2. Cervical Cancer Screening / Rastreamento de Câncer de Colo do Útero
+3. Oral Cancer Screening (India priority) / Rastreamento de Câncer Oral (prioridade Índia)
+4. Hypertension Management in Primary Care / Manejo de Hipertensão na Atenção Primária
+5. Interactive Genogram/Ecomap / Genograma/Ecomapa Interativo
+6. Platform Overview / Visão Geral da Plataforma
+
+---
+
+## 🛠 Installation / Instalação
+
+### Prerequisites / Pré-requisitos
+
+- **Node.js 18+** (recommended 20+) / **Node.js 18+** (recomendado 20+)
+- **npm**, **yarn** or **pnpm** / **npm**, **yarn** ou **pnpm**
+
+### Steps / Passos
 
 ```bash
-# 1. Clone o repositório (se aplicável)
-git clone <repo-url>
-cd Darwin-MFC
+# 1. Clone the repository / Clone o repositório
+git clone https://github.com/agourakis82/darwin-mfc.git
+cd darwin-mfc
 
-# 2. Instale as dependências
+# 2. Install dependencies / Instale as dependências
 npm install
 
-# 3. Execute em modo de desenvolvimento
+# 3. Run in development mode / Execute em modo de desenvolvimento
 npm run dev
 
-# 4. Acesse no navegador
+# 4. Access in browser / Acesse no navegador
 # http://localhost:3000
 ```
 
-### Scripts Disponíveis
+### Available Scripts / Scripts Disponíveis
 
-- `npm run dev` - Servidor de desenvolvimento (porta 3000)
-- `npm run build` - Build de produção
-- `npm run start` - Servidor de produção
-- `npm run lint` - Análise estática (ESLint)
-
----
-
-## 📊 Funcionalidades Principais
-
-### 1. Sistema de Referências Q1
-
-- **Citações Inline**: `<InlineCitation citation="[1], [2]" />` 
-- **Tooltips**: Hover sobre citação exibe referência completa
-- **Validação**: Componente `ReferenceValidator` alerta sobre afirmações sem referência
-- **Formatos**: ABNT, Vancouver, BibTeX, EndNote, RIS
-
-### 2. Dual Content View ✨ **FUNCIONANDO**
-
-- **Modo Descritivo**: Diretrizes, protocolos, epidemiologia, dados SUS vs Sociedades
-- **Modo Análise Crítica**: Insights de 2ª/3ª ordem, controvérsias, desafios operacionais
-- **Toggle no Header**: Botão azul/roxo alterna entre modos instantaneamente
-- **Animações suaves**: Transição Apple-style com Framer Motion
-- **Estado persistente**: Escolha salva no localStorage (Zustand)
-
-**Como usar:**
-1. Clique no botão "Descritivo" ou "Análise" no canto superior direito
-2. Conteúdo muda instantaneamente com animação
-3. Disponível em: `/cancer` e `/gestacao` (outras em desenvolvimento)
-
-### 3. Comparações Interativas
-
-- **ComparisonCard**: SUS vs Sociedades lado a lado
-- **Status Visual**:
-  - 🟢 Convergência Total
-  - 🟡 Convergência Parcial
-  - 🔴 Divergência
-  - 🟣 Em Disputa
-
-### 4. Visualizações de Dados
-
-- **CoverageChart**: Cobertura atual vs Meta (barras com cores semafóricas)
-- **ConvergenceChart**: Pizza de status de convergência
-- **TimelineChart**: Evolução histórica 2015-2025
-
-### 5. Busca Avançada (Fuse.js)
-
-- Busca fuzzy inteligente (tolera erros de digitação)
-- Filtros combinados: categoria + convergência + ano
-- Resultados ranqueados por relevância
-
-### 6. Calculadoras Clínicas
-
-- **SCORE Cardiovascular** (risco 10 anos)
-- **Framingham**
-- **Gail Model** (risco câncer de mama)
-- **IMC** com classificação OMS
-
-### 7. Exportação
-
-- **PDF**: Impressão acadêmica otimizada
-- **CSV**: Dados tabulares para análise
-- **JSON**: Dados estruturados para integração
-- **Referências**: EndNote, BibTeX, RIS, ABNT, Vancouver
+- `npm run dev` - Development server (port 3000) / Servidor de desenvolvimento (porta 3000)
+- `npm run build` - Production build / Build de produção
+- `npm run start` - Production server / Servidor de produção
+- `npm run lint` - Static analysis (ESLint) / Análise estática (ESLint)
 
 ---
 
-## 🎨 Design System
+## 📚 How to Cite / Como Citar
 
-### Temas
+This project uses **FORCE11-compliant** citation metadata. Use the `CITATION.cff` file in the repository root.
 
-- **Claro**: Background branco, texto cinza-900
-- **Escuro**: Background cinza-950, texto cinza-100
-- Transições suaves, alto contraste para acessibilidade
+Este projeto usa metadados de citação compatíveis com **FORCE11**. Use o arquivo `CITATION.cff` na raiz do repositório.
 
-### Tipografia
+### Quick Citation / Citação Rápida
 
-- **Títulos**: Font Inter, peso 700-900
-- **Corpo**: Font Inter, peso 400-500
-- **Monospace**: Para código/dados técnicos
+```
+Agourakis, D. C. (2025). Darwin-MFC: Interactive Global Guide for Family and Community Medicine Screening Guidelines (Version 0.7.0) [Software]. https://github.com/agourakis82/darwin-mfc
+```
 
-### Cores
-
-- **Primary**: Blue 600 (ações principais)
-- **Success**: Emerald 600 (convergência)
-- **Warning**: Amber 600 (parcial)
-- **Danger**: Red 600 (divergência)
-- **Info**: Purple 600 (em disputa)
-
-### Responsividade
-
-- **Mobile-first**: Layout adaptativo para telas 320px+
-- **Breakpoints**: sm (640px), md (768px), lg (1024px), xl (1280px)
-- **Print**: Estilos otimizados para impressão acadêmica
+**Note**: A DOI will be available after Zenodo upload. / **Nota**: Um DOI estará disponível após upload no Zenodo.
 
 ---
 
-## 📚 Rastreamentos Mapeados
+## 🤝 Contributing / Contribuindo
 
-### ✅ Implementados
+This project is part of the **Darwin Medical Foundation Cluster (Darwin-MFC)** platform and is under active development. Contributions are welcome!
 
-1. **Câncer de Mama** - Mamografia (40+ anos, decisão compartilhada)
-2. **Câncer de Colo do Útero** - DNA-HPV (30-64 anos, quinquenal)
-3. **Câncer de Próstata** - Não recomendado (decisão compartilhada)
-4. **TEA (Autismo)** - M-CHAT-R (16-30 meses)
+Este projeto faz parte da plataforma **Darwin Medical Foundation Cluster (Darwin-MFC)** e está sob desenvolvimento ativo. Contribuições são bem-vindas!
 
-### 🚧 Em Desenvolvimento
-
-5. Câncer Colorretal
-6. Hipertensão Arterial
-7. Diabetes Tipo 2
-8. Dislipidemia
-9. Teste do Pezinho (6-7 → 50 doenças)
-10. Sífilis Pré-natal
-11. HIV Pré-natal
-12. Hepatites B/C Gestacionais
-13. GBS (Streptococcus Grupo B)
-14. Teste da Orelhinha
-15. Teste do Olhinho
-16. Teste do Coraçãozinho
+1. Fork the repository / Faça fork do repositório
+2. Create a branch / Crie uma branch (`git checkout -b feature/nova-funcionalidade`)
+3. Commit your changes / Faça commit das suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
+4. Push to the branch / Faça push para a branch (`git push origin feature/nova-funcionalidade`)
+5. Open a Pull Request / Abra um Pull Request
 
 ---
 
-## 🔬 Metodologia Acadêmica
+## 📄 License / Licença
 
-### Critérios de Rigor Q1
+- **Code**: MIT License / **Código**: Licença MIT
+- **Clinical Content**: CC-BY-4.0 / **Conteúdo Clínico**: CC-BY-4.0
 
-1. **Toda afirmação factual possui referência inline**
-2. **Dados estatísticos vinculados à fonte primária**
-3. **Portarias e leis citadas com número oficial e link**
-4. **Diferenciação visual entre fontes primárias e secundárias**
-5. **Análise crítica baseada em insights de 2ª e 3ª ordem**
-6. **Controvérsias apresentadas com múltiplas perspectivas**
-7. **Desafios operacionais documentados com evidências**
+See `LICENSE` and `CONTENT_LICENSE` files for details.
 
-### Fontes Primárias
-
-- Portarias MS (Diário Oficial da União)
-- Notas Técnicas INCA/CONITEC
-- Posicionamentos de Sociedades (SBM, FEBRASGO, SBP, SBU, etc.)
-- Ensaios clínicos e meta-análises
-- Dados DATASUS/SIM/SINAN
+Veja os arquivos `LICENSE` e `CONTENT_LICENSE` para detalhes.
 
 ---
 
-## 🌟 Diferenciais da Aplicação
+## 👨‍⚕️ Author / Autor
 
-1. **Rigor Acadêmico Máximo**: Padrão Q1 (Nature, Cell, JAMA)
-2. **Dual Content View**: Descritivo ↔ Análise Crítica
-3. **Sistema de Referências Completo**: Validação + múltiplos formatos
-4. **Análise Sistêmica**: Insights de 2ª/3ª ordem, não apenas descrição
-5. **Interatividade Avançada**: Busca fuzzy, filtros, gráficos, calculadoras
-6. **Responsividade Total**: Mobile, tablet, desktop, impressão
-7. **Acessibilidade**: WCAG 2.1 AA, alto contraste, navegação por teclado
-8. **Performance**: Next.js 15, SSR, otimização de imagens
+**Demetrios Chiuratto Agourakis, MD**
+
+Physician and Resident in Family and Community Medicine (PUC-SP, Brazil). Interdisciplinary researcher focused on computational psychiatry, open science infrastructure, and primary care tools.
+
+Médico e Residente em Medicina de Família e Comunidade (PUC-SP, Brasil). Pesquisador interdisciplinar focado em psiquiatria computacional, infraestrutura de ciência aberta e ferramentas de atenção primária.
+
+- **ORCID**: [0009-0001-8671-8878](https://orcid.org/0009-0001-8671-8878)
+- **GitHub**: [agourakis82](https://github.com/agourakis82)
+- **About**: [About the Author / Sobre o Autor](/about)
+
+---
+
+## 📧 Contact / Contato
+
+For questions, suggestions, or collaborations / Para dúvidas, sugestões ou colaborações:
+
+- **GitHub Issues**: [Create an issue](https://github.com/agourakis82/darwin-mfc/issues)
+- **ORCID Profile**: [View profile](https://orcid.org/0009-0001-8671-8878)
+
+---
+
+## 🎯 Project Goals / Objetivos do Projeto
+
+1. **Complete Descriptive Content** / **Conteúdo Descritivo Completo**: Protocols, target populations, periodicity, diagnostic methods / Protocolos, populações-alvo, periodicidade, métodos diagnósticos
+2. **Systemic Critical Analysis** / **Análise Crítica Sistêmica**: Second and third-order insights, controversies, operational challenges / Insights de segunda e terceira ordem, controvérsias, desafios operacionais
+3. **Academic Reference System** / **Sistema de Referências Acadêmico**: Inline Vancouver citations, tooltips, completeness validation / Citações inline Vancouver, tooltips, validação de completude
+4. **Interactive Comparisons** / **Comparações Interativas**: Side-by-side comparisons with convergence status / Comparações lado a lado com status de convergência
+5. **Analytical Visualizations** / **Visualizações Analíticas**: Coverage charts, convergence charts, temporal evolution / Gráficos de cobertura, convergência, evolução temporal
+6. **Advanced Search** / **Busca Avançada**: Fuzzy search + filters by category, convergence, year / Busca fuzzy + filtros por categoria, convergência, ano
+
+---
+
+## 🚀 Technologies / Tecnologias
+
+- **Next.js 15** + **React 19** + **TypeScript 5**
+- **Tailwind CSS 4** - Responsive academic design system / Design system acadêmico responsivo
+- **Zustand** - Global state management / Gerenciamento de estado global
+- **Recharts** - Charts and data visualizations / Gráficos e visualizações de dados
+- **Fuse.js** - Intelligent fuzzy search / Busca fuzzy inteligente
+- **Lucide Icons** - Modern iconography / Iconografia moderna
 
 ---
 
 ## 📈 Roadmap
 
-### Versão 1.0 (Atual)
+### Version 0.7.0 (Current) / Versão 0.7.0 (Atual)
 
-- [x] Sistema de referências Q1
-- [x] Layout responsivo + tema dark/light
-- [x] 4 rastreamentos completos
-- [x] Busca avançada
-- [x] Gráficos básicos
-- [x] Análise crítica inicial
+- [x] Complete Hindi (hi) locale support / Suporte completo ao locale Hindi (hi)
+- [x] NP-NCD 2023-2030 Indian guidelines integration / Integração de diretrizes indianas NP-NCD 2023-2030
+- [x] FORCE11-compliant CITATION.cff / CITATION.cff compatível com FORCE11
+- [x] Professional bilingual README / README bilíngue profissional
+- [x] About the Author page / Página Sobre o Autor
+- [x] Graphical abstracts (6 modules) / Abstracts gráficos (6 módulos)
 
-### Versão 1.1 (Próximo)
+### Version 1.0 (Next) / Versão 1.0 (Próximo)
 
-- [ ] Completar todos os 16 rastreamentos
-- [ ] Expandir análises críticas
-- [ ] Implementar exportação PDF completa (jspdf)
-- [ ] Adicionar calculadoras clínicas funcionais
-- [ ] Sistema de favoritos com localStorage
+- [ ] Complete all 16 screenings / Completar todos os 16 rastreamentos
+- [ ] Expand critical analyses / Expandir análises críticas
+- [ ] Full PDF export implementation / Implementação completa de exportação PDF
+- [ ] Functional clinical calculators / Calculadoras clínicas funcionais
+- [ ] Favorites system with localStorage / Sistema de favoritos com localStorage
 
-### Versão 2.0 (Futuro)
+### Version 2.0 (Future) / Versão 2.0 (Futuro)
 
-- [ ] Backend API (Next.js API routes)
-- [ ] Autenticação de usuários
-- [ ] Notas colaborativas
-- [ ] Integração com Zotero/Mendeley
-- [ ] PWA (Progressive Web App)
-- [ ] Modo offline
-
----
-
-## 🤝 Contribuições
-
-Este projeto faz parte da plataforma **Darwin Medical Foundation Cluster (Darwin-MFC)** e está sob desenvolvimento ativo. Contribuições são bem-vindas:
-
-1. Fork o repositório
-2. Crie uma branch (`git checkout -b feature/nova-funcionalidade`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
-4. Push para a branch (`git push origin feature/nova-funcionalidade`)
-5. Abra um Pull Request
+- [ ] Backend API (Next.js API routes) / API Backend (rotas API Next.js)
+- [ ] User authentication / Autenticação de usuários
+- [ ] Collaborative notes / Notas colaborativas
+- [ ] Zotero/Mendeley integration / Integração com Zotero/Mendeley
+- [ ] PWA (Progressive Web App) / PWA (Aplicativo Web Progressivo)
+- [ ] Offline mode / Modo offline
 
 ---
 
-## 📄 Licença
-
-Este projeto é de natureza acadêmica e científica. Todos os dados, análises e referências são de domínio público ou citados conforme normas acadêmicas. Para uso comercial, consulte os autores.
-
----
-
-## 👨‍⚕️ Autoria
-
-**Dr. Demétrios Agourakis**  
-Pesquisador interdisciplinar - Medicina, Farmacologia, Neurociência, Direito Médico  
-Plataforma Darwin-MFC
-
----
-
-## 📧 Contato
-
-Para dúvidas, sugestões ou colaborações:  
-📧 [email do projeto]  
-🌐 [site da plataforma Darwin]
-
----
-
-**Última Atualização**: Dezembro 2025  
-**Versão**: 1.0.0
-# darwin-MFC
+**Last Update / Última Atualização**: December 2025 / Dezembro 2025  
+**Version / Versão**: 0.7.0

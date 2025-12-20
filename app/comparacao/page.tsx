@@ -53,6 +53,9 @@ export default function ComparacaoPage() {
                   <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-700 dark:text-neutral-300 uppercase tracking-wider">
                     Sociedades Médicas
                   </th>
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-700 dark:text-neutral-300 uppercase tracking-wider">
+                    India (NP-NCD)
+                  </th>
                   <th className="px-6 py-3 text-center text-xs font-semibold text-neutral-700 dark:text-neutral-300 uppercase tracking-wider">
                     Status
                   </th>
@@ -69,6 +72,9 @@ export default function ComparacaoPage() {
                     </td>
                     <td className="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">
                       {row.sociedades}
+                    </td>
+                    <td className="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">
+                      {row.india || '-'}
                     </td>
                     <td className="px-6 py-4 text-center">
                       <StatusBadge status={row.status} />
@@ -131,60 +137,77 @@ const comparativeData = [
     condicao: 'Câncer de Mama',
     sus: '40 anos (Decisão Compartilhada), bienal',
     sociedades: '40 anos (SBM/CBR), anual',
+    india: '30+ anos, CBE anual (NP-NCD)',
     status: 'parcial'
   },
   {
     condicao: 'Colo do Útero',
     sus: 'DNA-HPV (30-64 anos), quinquenal',
     sociedades: 'DNA-HPV (FEBRASGO), quinquenal',
+    india: '30-65 anos, VIA 3-5 anos (NP-NCD)',
     status: 'convergencia'
+  },
+  {
+    condicao: 'Câncer Oral',
+    sus: 'Oportunístico (sem programa organizado)',
+    sociedades: 'Oportunístico em grupos de risco',
+    india: '30+ anos, OVI anual/bienal (NP-NCD)',
+    status: 'parcial'
   },
   {
     condicao: 'Câncer Colorretal',
     sus: 'Em definição (Lei: 35a / Técnica: 50a)',
     sociedades: '45 anos (SBOC)',
+    india: '-',
     status: 'em_disputa'
   },
   {
     condicao: 'Câncer de Próstata',
     sus: 'Não Recomendado (decisão compartilhada)',
     sociedades: 'Recomendado 45/50a (SBU)',
+    india: '-',
     status: 'divergencia'
   },
   {
     condicao: 'Diabetes Tipo 2',
     sus: '45 anos / Risco CV',
     sociedades: '35 anos (SBD)',
+    india: '30+ anos com fatores de risco (NP-NCD)',
     status: 'parcial'
   },
   {
     condicao: 'Hipertensão Arterial',
     sus: '≥18 anos, toda consulta',
     sociedades: '≥18 anos (SBC)',
+    india: '≥18 anos (NP-NCD)',
     status: 'convergencia'
   },
   {
     condicao: 'Autismo (TEA)',
     sus: 'M-CHAT-R (16-30m)',
     sociedades: 'M-CHAT-R (SBP)',
+    india: '-',
     status: 'convergencia'
   },
   {
     condicao: 'Sífilis Pré-natal',
     sus: '1º tri, 3º tri, parto',
     sociedades: 'Igual + mais se risco (FEBRASGO)',
+    india: '-',
     status: 'convergencia'
   },
   {
     condicao: 'HIV Pré-natal',
     sus: '1º tri, 3º tri',
     sociedades: '1º tri, 3º tri, parto (FEBRASGO)',
+    india: '-',
     status: 'convergencia'
   },
   {
     condicao: 'Teste do Pezinho',
     sus: 'Universal (3º-5º dia), 6-7 doenças → 50',
     sociedades: 'Universal (SBP)',
+    india: '-',
     status: 'convergencia'
   },
 ];

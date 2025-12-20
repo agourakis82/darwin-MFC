@@ -876,6 +876,49 @@ export const references: Record<string, Reference> = {
     publisher: 'WHO',
     url: 'https://www.who.int/publications/i/item/9789240027077',
     accessDate: '2025-12-02'
+  },
+  // Indian Guidelines (NP-NCD 2023-2030) / Diretrizes Indianas (NP-NCD 2023-2030)                                                                       
+  'np-ncd-operational-guidelines-2023': {
+    id: 'np-ncd-operational-guidelines-2023',
+    type: 'diretriz',
+    title: 'National Programme for Prevention and Control of Cancer, Diabetes, Cardiovascular Diseases and Stroke (NP-NCD) - Operational Guidelines 2023-2030',
+    year: 2023,
+    authors: ['Ministry of Health and Family Welfare, Government of India'],
+    url: 'https://www.mohfw.gov.in',
+    accessDate: '2025-12-25'
+  },
+
+  'mohfw-cancer-operational-framework-2023': {
+    id: 'mohfw-cancer-operational-framework-2023',
+    type: 'diretriz',
+    title: 'Operational Framework for Management of Common Cancers',
+    year: 2023,
+    authors: ['Ministry of Health and Family Welfare, Government of India'],
+    url: 'https://www.mohfw.gov.in',
+    accessDate: '2025-12-25',
+    note: 'Framework emphasizing ASHA workers, rural access, and cost-effective screening methods'
+  },
+
+  'icmr-cancer-guidelines-2023': {
+    id: 'icmr-cancer-guidelines-2023',
+    type: 'diretriz',
+    title: 'ICMR Guidelines for Cancer Screening in India',
+    year: 2023,
+    authors: ['Indian Council of Medical Research'],
+    url: 'https://www.icmr.gov.in',
+    accessDate: '2025-12-25',
+    note: 'ICMR recommendations for population-based cancer screening adapted to Indian context'
+  },
+
+  'who-india-ncd-report-2023': {
+    id: 'who-india-ncd-report-2023',
+    type: 'relatorio',
+    title: 'WHO India NCD Country Profile 2023',
+    year: 2023,
+    authors: ['World Health Organization'],
+    url: 'https://www.who.int',
+    accessDate: '2025-12-25',
+    note: 'WHO report on NCD burden and screening strategies in India'
   }
 };
 

@@ -17,6 +17,10 @@ import { medicamentosComplementares } from './complementares';
 import { medicamentosExpansaoSOTA } from './expansao-sota';
 import { medicamentosExpansaoSOTAFinal } from './expansao-sota-final';
 import { medicamentosExpansaoUltima } from './expansao-ultima';
+import { medicamentosExpansaoNovaFase } from './expansao-nova-fase';
+import { medicamentosExpansaoNovaFaseContinuacao } from './expansao-nova-fase-continuacao';
+import { agent1Antibiotics } from './agent-1-antibiotics';
+import { agent2CardiovascularEndo } from './agent-2-cardiovascular-endo';
 
 // Consolidar todos os medicamentos
 // Filtrar apenas medicamentos completos do expanded
@@ -38,6 +42,10 @@ export const todosMedicamentos: Medicamento[] = [
   ...medicamentosExpansaoSOTA,
   ...medicamentosExpansaoSOTAFinal,
   ...medicamentosExpansaoUltima,
+  ...medicamentosExpansaoNovaFase,
+  ...medicamentosExpansaoNovaFaseContinuacao,
+  ...agent1Antibiotics,
+  ...agent2CardiovascularEndo,
 ];
 
 // Remover duplicatas por ID

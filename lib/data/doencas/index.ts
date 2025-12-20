@@ -35,6 +35,8 @@ import { doencasExpansaoSOTA } from './expansao-sota';
 import { doencasExpansaoSOTAAvancada } from './expansao-sota-avancada';
 import { doencasExpansaoSOTAFinal } from './expansao-sota-final';
 import { doencasExpansaoUltima } from './expansao-ultima';
+// import { doencasExpansaoNovaFase } from './expansao-nova-fase'; // Desabilitado temporariamente até corrigir erros de tipo
+import { doencasExpansaoNovaFaseSimplificada } from './expansao-nova-fase-simplificada';
 
 // Consolidar todas as doenças
 // Nota: Algumas categorias usam Partial<Doenca> para flexibilidade de expansão
@@ -64,6 +66,10 @@ export const todasDoencas: Partial<Doenca>[] = [
   ...doencasExpansaoSOTAAvancada,
   ...doencasExpansaoSOTAFinal,
   ...doencasExpansaoUltima,
+  // ...doencasExpansaoNovaFase,  // Desabilitado temporariamente
+  ...doencasExpansaoNovaFaseSimplificada,
+  // ...agent3InfectiousDiseases,  // Desabilitado - arquivo não encontrado
+  // ...agent4NonInfectiousDiseases,  // Desabilitado - arquivo não encontrado
 ];
 
 // Remover duplicatas por ID (caso existam) e filtrar apenas doenças com ID

@@ -20,7 +20,7 @@ export function LanguageSelector({ className = '', variant = 'dropdown' }: Langu
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const path = window.location.pathname;
-      const localeMatch = path.match(/^\/(pt|en|es|fr|ru|ar|zh|el)/);
+      const localeMatch = path.match(/^\/(pt|en|es|fr|ru|ar|zh|el|hi)/);
       if (localeMatch) {
         setCurrentLocale(localeMatch[1] as Locale);
       } else {
@@ -40,7 +40,7 @@ export function LanguageSelector({ className = '', variant = 'dropdown' }: Langu
       localStorage.setItem('preferred-locale', newLocale);
       // Reload page with new locale in path
       const currentPath = window.location.pathname;
-      const pathWithoutLocale = currentPath.replace(/^\/(pt|en|es|fr|ru|ar|zh|el)/, '') || '/';
+      const pathWithoutLocale = currentPath.replace(/^\/(pt|en|es|fr|ru|ar|zh|el|hi)/, '') || '/';
       window.location.href = `/${newLocale}${pathWithoutLocale}`;
     }
     setIsOpen(false);

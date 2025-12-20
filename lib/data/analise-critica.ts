@@ -20,6 +20,22 @@ const analiseCancerMama: CriticalAnalysis = {
       description: 'Sociedades médicas recomendam mamografia anual aos 40 anos há uma década. A "convergência" de 2025 não representa mudança científica - representa mudança fiscal possível após reajuste do teto de gastos da saúde.',
       implication: 'O timing da convergência é mais político-fiscal que epidemiológico. Evidências de benefício aos 40 anos existem desde 2010.',
       citations: [{ refId: 'sbm-mamografia-2025' }, { refId: 'inca-estimativa-2023' }]
+    },
+    {
+      id: 'insight-mama-3',
+      type: 'segunda_ordem',
+      title: 'Perspectiva Global: Índia e o Modelo de Baixo Custo',
+      description: 'Enquanto Brasil debate mamografia aos 40 vs 50 anos, a Índia (NP-NCD 2023-2030) prioriza CBE (Exame Clínico das Mamas) a partir de 30 anos como método de baixo custo. CBE pode ser realizado por ASHA workers (agentes comunitários de saúde) treinados, alcançando áreas rurais inacessíveis. Mamografia fica reservada para casos suspeitos em centros terciários.',
+      implication: 'A estratégia indiana revela que em contextos de recursos limitados, métodos de baixo custo com alta cobertura populacional podem ser mais efetivos que tecnologias avançadas com baixa cobertura. Brasil poderia aprender: CBE como primeiro nível, mamografia como segundo nível.',
+      citations: [{ refId: 'np-ncd-operational-guidelines-2023' }, { refId: 'mohfw-cancer-operational-framework-2023' }]
+    },
+    {
+      id: 'insight-mama-4',
+      type: 'terceira_ordem',
+      title: 'Comparação Internacional: Brasil vs Índia vs USA',
+      description: 'USA (USPSTF): Mamografia bienal 50-74 anos. Brasil (SUS): Mamografia bienal 50-74 anos + decisão compartilhada 40-49. Índia (NP-NCD): CBE anual 30+ anos. Três modelos refletem três realidades: USA tem recursos para tecnologia avançada universal; Brasil tem tecnologia mas limitações orçamentárias; Índia prioriza acesso sobre tecnologia.',
+      implication: 'Não existe "melhor prática universal". Cada país adapta evidências ao seu contexto fiscal, geográfico e cultural. A comparação global revela que "padrão-ouro" é relativo.',
+      citations: [{ refId: 'np-ncd-operational-guidelines-2023' }, { refId: 'uspstf-screening-2023' }]
     }
   ],
   controversies: [
@@ -45,6 +61,12 @@ const analiseCancerMama: CriticalAnalysis = {
       financial: 'Cada mamografia custa ao SUS ~R$80-120. Incluir 40-49 anos com decisão compartilhada pode gerar 1-2 milhões de exames adicionais/ano (R$80-240 milhões).',
       equity: 'Mulheres de áreas urbanas terão acesso facilitado. Norte e Nordeste rural podem levar 3-5 anos para ter cobertura adequada.',
       citations: [{ refId: 'ms-mamografia-2025' }, { refId: 'inca-estimativa-2023' }]
+    },
+    {
+      operational: 'Contexto Indiano: ASHA workers (1 milhão de agentes comunitários) podem realizar CBE após treinamento de 3 dias. Cobertura rural alcança 70%+ vs <30% com mamografia em áreas remotas.',
+      financial: 'CBE custa ~$0.50 por exame vs $50-100 da mamografia. Índia prioriza volume sobre precisão: melhor detectar 80% dos casos com CBE do que 20% com mamografia inacessível.',
+      equity: 'Desafios indianos: alta carga de tabaco (câncer oral é prioridade #1), acesso rural limitado, custos out-of-pocket altos (60% dos gastos em saúde). NP-NCD foca em métodos que funcionam sem infraestrutura complexa.',
+      citations: [{ refId: 'np-ncd-operational-guidelines-2023' }, { refId: 'who-india-ncd-report-2023' }]
     }
   ],
   conclusion: 'A política de 2025 é um avanço discursivo que ancora expectativas sem garantir orçamento. O risco é criar direito subjetivo sem efetividade, gerando judicialização e aprofundando iniquidades.'
@@ -62,6 +84,22 @@ const analiseCancerColoUtero: CriticalAnalysis = {
       description: 'Testes DNA-HPV permitem intervalo de 5 anos (vs 3 anos do Papanicolau) devido à maior sensibilidade. Contudo, intervalos longos reduzem pontos de contato com o sistema de saúde, podendo aumentar perda de seguimento.',
       implication: 'Mulheres podem esquecer de retornar após 5 anos. Sistemas de busca ativa (SMS, e-mail) serão críticos para manter cobertura.',
       citations: [{ refId: 'portaria-saes-13-2025' }]
+    },
+    {
+      id: 'insight-colo-2',
+      type: 'segunda_ordem',
+      title: 'VIA na Índia: Tecnologia Adaptada ao Contexto',
+      description: 'Índia utiliza VIA (Visual Inspection with Acetic Acid) como método primário de rastreamento de câncer de colo do útero (30-65 anos, a cada 3-5 anos). VIA pode ser realizado por profissionais de saúde treinados em nível primário, sem necessidade de laboratório. Custo: ~$2-5 vs $50-100 do HPV-DNA. Sensibilidade: ~70-80% vs 90%+ do HPV-DNA.',
+      implication: 'VIA representa compromisso entre custo e efetividade. Para países com recursos limitados, 70% de sensibilidade com 80% de cobertura populacional pode ser superior a 90% de sensibilidade com 20% de cobertura.',
+      citations: [{ refId: 'np-ncd-operational-guidelines-2023' }, { refId: 'mohfw-cancer-operational-framework-2023' }]
+    },
+    {
+      id: 'insight-colo-3',
+      type: 'terceira_ordem',
+      title: 'Comparação Global: VIA (Índia) vs HPV-DNA (Brasil/USA) vs Citologia (Brasil antigo)',
+      description: 'Três modelos de rastreamento refletem três níveis de desenvolvimento de infraestrutura: Citologia (baixa sensibilidade, baixo custo, requer laboratório básico) → VIA (sensibilidade intermediária, muito baixo custo, pode ser feito em campo) → HPV-DNA (alta sensibilidade, alto custo, requer laboratório avançado). Brasil migrou de Citologia para HPV-DNA; Índia escolheu VIA como estratégia de transição.',
+      implication: 'A "melhor" tecnologia não é sempre a mais avançada. Em contextos onde 60% da população vive em áreas rurais sem acesso a laboratórios, VIA pode salvar mais vidas que HPV-DNA inacessível.',
+      citations: [{ refId: 'np-ncd-operational-guidelines-2023' }, { refId: 'portaria-saes-13-2025' }]
     }
   ],
   controversies: [],
@@ -71,6 +109,12 @@ const analiseCancerColoUtero: CriticalAnalysis = {
       financial: 'Teste DNA-HPV custa ~R$150-200 vs R$12-18 do Papanicolau. Apesar do intervalo maior, custo total por mulher/ano aumenta.',
       equity: 'Capitais já têm laboratórios. Interior depende de logística de transporte de amostras que pode inviabilizar prazo adequado.',
       citations: [{ refId: 'febrasgo-hpv-2024' }, { refId: 'portaria-saes-13-2025' }]
+    },
+    {
+      operational: 'Contexto Indiano: VIA pode ser realizado em postos de saúde primários por profissionais treinados. Não requer transporte de amostras, refrigeração ou laboratório. Resultado imediato permite tratamento no mesmo dia se necessário.',
+      financial: 'VIA custa ~$2-5 vs $50-100 do HPV-DNA. Para Índia com 500 milhões de mulheres elegíveis, diferença de custo é crítica. NP-NCD prioriza métodos que podem ser escalados nacionalmente.',
+      equity: 'Desafios indianos: alta prevalência de câncer oral (prioridade #1), carga de tabaco, acesso rural limitado. VIA permite rastreamento mesmo em áreas sem infraestrutura laboratorial. HPV-DNA fica reservado para centros terciários e casos suspeitos.',
+      citations: [{ refId: 'np-ncd-operational-guidelines-2023' }, { refId: 'icmr-cancer-guidelines-2023' }]
     }
   ],
   conclusion: 'A mudança para DNA-HPV é cientificamente sólida e alinha o Brasil às melhores práticas globais. O desafio reside na infraestrutura logística e nos sistemas de informação para garantir retorno da mulher após 5 anos.'

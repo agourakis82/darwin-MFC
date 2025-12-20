@@ -7,6 +7,148 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+## [0.7.0] - 2025-12-25
+
+### 🎉 Release: Hindi Global Edition / Edição Global Hindi
+
+Esta versão eleva o Darwin-MFC a um produto open-source global de referência em Medicina de Família e Comunidade, com suporte completo ao Hindi e integração de diretrizes indianas NP-NCD.
+
+### ✨ Novos Recursos
+
+#### Suporte Completo ao Hindi (Locale 'hi')
+- **5 arquivos de tradução completos** em Hindi:
+  - `messages/hi/common.json` - Interface global (UI, navegação, footer)
+  - `messages/hi/diseases.json` - ~145 doenças com terminologia médica precisa
+  - `messages/hi/medications.json` - 50+ medicamentos com indicações/contraindicações
+  - `messages/hi/protocols.json` - Protocolos clínicos
+  - `messages/hi/clinical-cases.json` - Casos clínicos
+- **Fontes Devanagari** adicionadas ao `globals.css` (Noto Sans Devanagari, Mukta)
+- **LanguageSelector** atualizado para suportar Hindi
+- **Middleware** configurado para roteamento Hindi (`/hi/*`)
+
+#### Integração de Diretrizes Indianas (NP-NCD 2023-2030)
+- **Novo campo `india`** no tipo `Recommendations` para acomodar diretrizes NP-NCD
+- **3 rastreamentos com diretrizes indianas completas**:
+  - **Câncer de Mama**: CBE (Exame Clínico das Mamas) a partir de 30 anos, anual
+  - **Câncer de Colo do Útero**: VIA (Visual Inspection with Acetic Acid) 30-65 anos, a cada 3-5 anos
+  - **Câncer Oral**: OVI (Oral Visual Inspection) a partir de 30 anos, anual/bienal (novo rastreamento)
+- **4 referências acadêmicas indianas** adicionadas:
+  - NP-NCD Operational Guidelines 2023-2030
+  - MoHFW Cancer Operational Framework 2023
+  - ICMR Cancer Guidelines 2023
+  - WHO India NCD Report 2023
+- **Página de comparação** atualizada com coluna "India (NP-NCD)"
+
+#### Análise Crítica Adaptada ao Contexto Indiano
+- **4 novos insights** comparando Brasil vs Índia vs USA:
+  - Perspetiva Global: Índia e o Modelo de Baixo Custo
+  - Comparação Internacional: Brasil vs Índia vs USA
+  - VIA na Índia: Tecnologia Adaptada ao Contexto
+  - Comparação Global: VIA vs HPV-DNA vs Citologia
+- **Desafios operacionais, financeiros e de equidade** do contexto indiano documentados
+- Ênfase em métodos de baixo custo (VIA, CBE, OVI) e desafios de acesso rural
+
+#### Documentação Acadêmica
+- **CITATION.cff FORCE11-compliant** (versão 1.2.0) criado:
+  - Metadata completo para citação acadêmica
+  - Message bilíngue EN-PT
+  - Placeholder para DOI Zenodo
+  - Keywords incluindo hindi, np-ncd, india
+- **README.md bilíngue EN-PT** completamente reescrito:
+  - Badges profissionais
+  - Visão e funcionalidades principais
+  - Links para graphical abstracts
+  - Instruções de instalação
+  - Guia de citação
+  - Seção "About the Author"
+- **LICENSE (MIT)** e **CONTENT_LICENSE (CC-BY-4.0)** com comentários bilíngues
+
+#### Graphical Abstracts
+- **6 abstracts gráficos SVG** criados (1200x675, 16:9):
+  1. Breast Cancer Screening Global Comparison
+  2. Cervical Cancer Screening (VIA vs HPV-DNA vs Cytology)
+  3. Oral Cancer Screening - India Priority
+  4. Hypertension Management in Primary Care
+  5. Interactive Genogram/Ecomap
+  6. Platform Overview
+- Estilo científico limpo, cores institucionais, ícones Lucide-react
+- Títulos bilíngues (EN/PT + HI para foco indiano)
+
+#### Seção "About the Author"
+- **Nova página `/about`** com informações do autor
+- **Componente `AboutAuthor.tsx`** reutilizável
+- **Seção `about`** adicionada a todos os 9 idiomas
+- Link no Footer para acesso fácil
+- Design profissional alinhado ao design system
+
+### 🔧 Melhorias Técnicas
+
+#### Correções de Build
+- Corrigidos múltiplos erros de sintaxe em `expansao-nova-fase.ts`:
+  - Comentários mal formatados (`# Nota` → `// Nota`)
+  - `criteriosEncaminhamento` → `redFlags` (conforme tipo)
+  - Linhas soltas removidas
+  - Duplicatas de `redFlags` removidas
+- Corrigido erro em `doencas/index.ts` (comentadas linhas com arquivos não encontrados)
+- Corrigido tipo de subclasse em `medicamentos/expansao-nova-fase-corrigida.ts`
+- Corrigido campo `note` em `references.ts` (removido - não existe no tipo)
+
+#### Estrutura de Dados
+- Tipo `Recommendations` estendido com campo opcional `india`
+- Novo rastreamento `cancer-oral` adicionado
+- Campo `india` adicionado para HAS e diabetes-tipo2
+
+### 📁 Novos Arquivos
+
+```
+messages/hi/
+├── common.json
+├── diseases.json
+├── medications.json
+├── protocols.json
+└── clinical-cases.json
+
+app/
+├── about/
+│   └── page.tsx
+└── components/
+    └── About/
+        └── AboutAuthor.tsx
+
+public/graphical-abstracts/
+├── breast-cancer-global-comparison.svg
+├── cervical-cancer-screening.svg
+├── oral-cancer-screening-india.svg
+├── hypertension-primary-care.svg
+├── genogram-ecomap-interactive.svg
+├── platform-overview.svg
+└── README.md
+
+CITATION.cff
+LICENSE
+CONTENT_LICENSE
+```
+
+### 📊 Estatísticas
+
+- **9 idiomas** suportados (PT, EN, ES, FR, RU, AR, ZH, EL, HI)
+- **25 rastreamentos** (incluindo novo cancer-oral)
+- **4 países/sistemas** comparados (Brasil/SUS, USA/USPSTF, UK/NHS, India/NP-NCD)
+- **6 graphical abstracts** criados
+- **FORCE11-compliant** citation metadata
+
+### 🔗 Links
+
+- **Live Demo**: https://mfc.agourakis.med.br
+- **Repository**: https://github.com/agourakis82/darwin-mfc
+- **Zenodo DOI**: (será adicionado após upload)
+
+### 🙏 Agradecimentos
+
+Agradecimentos especiais à comunidade médica indiana e aos desenvolvedores do NP-NCD por disponibilizar diretrizes abertas que permitiram esta integração.
+
+---
+
 ## [2.0.0] - 2024-12-14
 
 ### 🎉 Major Release: Guia Completo de MFC

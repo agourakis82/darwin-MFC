@@ -19,6 +19,14 @@ export interface Recommendations {
     recommendation: string;
     citations: Citation[];
   };
+  india?: {
+    organization: string[]; // Ex: ["NP-NCD", "MoHFW"]
+    population: string;
+    method: string;
+    periodicity: string;
+    justification: string;
+    citations: Citation[];
+  };
   convergence: {
     status: ConvergenciaStatus;
     description: string;

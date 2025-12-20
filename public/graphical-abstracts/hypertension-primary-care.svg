@@ -1,0 +1,95 @@
+<svg width="1200" height="675" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="675" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="600" y="50" font-family="Inter, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#18181b">
+    Hypertension Management in Primary Care / Manejo de Hipertensão na Atenção Primária
+  </text>
+  
+  <!-- Flow Diagram -->
+  <g transform="translate(100, 120)">
+    <!-- Step 1: Screening -->
+    <rect x="0" y="0" width="200" height="120" fill="#2563eb" opacity="0.1" rx="12" stroke="#2563eb" stroke-width="2"/>
+    <text x="100" y="35" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#2563eb">1. Screening</text>
+    <text x="100" y="60" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" fill="#52525b">≥18 years</text>
+    <text x="100" y="80" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" fill="#52525b">Every visit</text>
+    <text x="100" y="100" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#71717a">BP measurement</text>
+    
+    <!-- Arrow -->
+    <path d="M 220 60 L 280 60" stroke="#52525b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 2: Diagnosis -->
+    <rect x="300" y="0" width="200" height="120" fill="#059669" opacity="0.1" rx="12" stroke="#059669" stroke-width="2"/>
+    <text x="400" y="35" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#059669">2. Diagnosis</text>
+    <text x="400" y="60" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" fill="#52525b">≥140/90 mmHg</text>
+    <text x="400" y="80" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" fill="#52525b">Confirm with</text>
+    <text x="400" y="100" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#71717a">MAPA/MRPA</text>
+    
+    <!-- Arrow -->
+    <path d="M 520 60 L 580 60" stroke="#52525b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 3: Risk Stratification -->
+    <rect x="600" y="0" width="200" height="120" fill="#9333ea" opacity="0.1" rx="12" stroke="#9333ea" stroke-width="2"/>
+    <text x="700" y="35" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#9333ea">3. Risk</text>
+    <text x="700" y="55" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#9333ea">Stratification</text>
+    <text x="700" y="80" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" fill="#52525b">SCORE /</text>
+    <text x="700" y="100" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#71717a">Framingham</text>
+    
+    <!-- Arrow -->
+    <path d="M 820 60 L 880 60" stroke="#52525b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 4: Treatment -->
+    <rect x="900" y="0" width="200" height="120" fill="#dc2626" opacity="0.1" rx="12" stroke="#dc2626" stroke-width="2"/>
+    <text x="1000" y="35" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#dc2626">4. Treatment</text>
+    <text x="1000" y="60" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" fill="#52525b">Lifestyle +</text>
+    <text x="1000" y="80" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" fill="#52525b">Pharmacotherapy</text>
+    <text x="1000" y="100" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#71717a">Target: &lt;140/90</text>
+  </g>
+  
+  <!-- Guidelines Comparison -->
+  <g transform="translate(200, 280)">
+    <text x="400" y="0" font-family="Inter, sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#18181b">
+      Global Guidelines Alignment / Alinhamento de Diretrizes Globais
+    </text>
+    
+    <rect x="0" y="40" width="800" height="200" fill="#f4f4f5" rx="12" stroke="#e4e4e7" stroke-width="2"/>
+    
+    <!-- SUS -->
+    <rect x="50" y="70" width="150" height="150" fill="#2563eb" opacity="0.1" rx="8"/>
+    <text x="125" y="100" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#2563eb">🇧🇷 SUS</text>
+    <text x="125" y="130" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#52525b">≥18 years</text>
+    <text x="125" y="150" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#059669">✓ Convergent</text>
+    
+    <!-- SBC -->
+    <rect x="250" y="70" width="150" height="150" fill="#059669" opacity="0.1" rx="8"/>
+    <text x="325" y="100" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#059669">🇧🇷 SBC</text>
+    <text x="325" y="130" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#52525b">≥18 years</text>
+    <text x="325" y="150" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#059669">✓ Convergent</text>
+    
+    <!-- India NP-NCD -->
+    <rect x="450" y="70" width="150" height="150" fill="#dc2626" opacity="0.1" rx="8"/>
+    <text x="525" y="100" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#dc2626">🇮🇳 NP-NCD</text>
+    <text x="525" y="130" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#52525b">≥18 years</text>
+    <text x="525" y="150" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#059669">✓ Convergent</text>
+    
+    <!-- WHO -->
+    <rect x="650" y="70" width="150" height="150" fill="#f59e0b" opacity="0.1" rx="8"/>
+    <text x="725" y="100" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#f59e0b">🌍 WHO</text>
+    <text x="725" y="130" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#52525b">≥18 years</text>
+    <text x="725" y="150" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#059669">✓ Convergent</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#52525b"/>
+    </marker>
+  </defs>
+  
+  <!-- Footer -->
+  <text x="600" y="650" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#71717a">
+    Darwin-MFC v0.7.0 | Primary Care Protocol
+  </text>
+</svg>
+

@@ -1,0 +1,77 @@
+# Citation File Format (CFF) v1.2.0
+# FORCE11-compliant citation metadata for Darwin-MFC
+# This file provides citation information for academic and research use
+# Este arquivo fornece informações de citação para uso acadêmico e de pesquisa
+
+cff-version: 1.2.0
+message: "If you use Darwin-MFC, please cite it as below. / Se você usar Darwin-MFC, por favor cite conforme abaixo."
+type: software
+
+# Authors / Autores
+authors:
+  - family-names: Agourakis
+    given-names: Demetrios Chiuratto
+    orcid: https://orcid.org/0009-0001-8671-8878
+    affiliation: "PUC-SP, Brazil / PUC-SP, Brasil"
+
+# Title / Título
+title: "Darwin-MFC: Interactive Global Guide for Family and Community Medicine Screening Guidelines"
+title-alternative: "Darwin-MFC: Guia Interativo Global para Diretrizes de Rastreamento em Medicina de Família e Comunidade"
+
+# Version / Versão
+version: 0.7.0
+
+# Release Date / Data de Lançamento
+date-released: 2025-12-25
+
+# Repository / Repositório
+url: https://github.com/agourakis82/darwin-mfc
+repository-code: https://github.com/agourakis82/darwin-mfc
+
+# Persistent Identifier (DOI) - Placeholder for Zenodo upload
+# Identificador Persistente (DOI) - Placeholder para upload no Zenodo
+doi: 10.5281/zenodo.XXXXXXX
+# Note: Replace with actual DOI after Zenodo upload
+# Nota: Substituir com DOI real após upload no Zenodo
+
+# Identifiers / Identificadores
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.XXXXXXX
+  - type: url
+    value: https://github.com/agourakis82/darwin-mfc
+
+# License / Licença
+license:
+  - MIT
+  - CC-BY-4.0
+# Note: MIT for code, CC-BY-4.0 for clinical content
+# Nota: MIT para código, CC-BY-4.0 para conteúdo clínico
+
+# Keywords / Palavras-chave
+keywords:
+  - family-medicine
+  - primary-care
+  - cancer-screening
+  - global-health
+  - open-science
+  - nextjs
+  - multilingual
+  - hindi
+  - np-ncd
+  - india
+  - medicina-de-familia
+  - atencao-primaria
+  - rastreamento-cancer
+  - saude-global
+  - ciencia-aberta
+
+# Abstract / Resumo
+abstract: "Interactive web application for comparative analysis of population screening guidelines in Family and Community Medicine. Supports 9 languages (Portuguese, English, Spanish, French, Russian, Arabic, Chinese, Greek, Hindi) with health-system-specific adaptations. Features dual view (descriptive vs. critical analysis), traffic-light comparisons, integrated clinical calculators, interactive genogram/ecomap, and academic export (PDF, BibTeX, CSV). Content includes oncology/child/adult/neonatal/prenatal screenings, ~145 diseases, 50+ medications, and CID-11/HPO ontologies. / Aplicação web interativa para análise comparativa de diretrizes de rastreamento populacional em Medicina de Família e Comunidade. Suporta 9 idiomas (Português, Inglês, Espanhol, Francês, Russo, Árabe, Chinês, Grego, Hindi) com adaptações específicas por sistema de saúde. Recursos incluem visão dual (descritiva vs. análise crítica), comparações semafóricas, calculadoras clínicas integradas, genograma/ecomapa interativos e exportação acadêmica (PDF, BibTeX, CSV). Conteúdo inclui rastreamentos oncológicos/infantil/adulto/neonatal/pré-natal, ~145 doenças, 50+ medicamentos e ontologias CID-11/HPO."
+
+# Contact / Contato
+contact:
+  - family-names: Agourakis
+    given-names: Demetrios Chiuratto
+    orcid: https://orcid.org/0009-0001-8671-8878
+

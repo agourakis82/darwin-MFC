@@ -1,0 +1,64 @@
+<svg width="1200" height="675" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="675" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="600" y="50" font-family="Inter, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#18181b">
+    Oral Cancer Screening - India Priority / Rastreamento de Câncer Oral - Prioridade Índia
+  </text>
+  <text x="600" y="80" font-family="Inter, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="#dc2626">
+    मुख कैंसर स्क्रीनिंग - भारत की प्राथमिकता
+  </text>
+  
+  <!-- Main Content -->
+  <g transform="translate(200, 150)">
+    <!-- Priority Box -->
+    <rect x="0" y="0" width="800" height="120" fill="#dc2626" opacity="0.1" rx="12" stroke="#dc2626" stroke-width="3"/>
+    <text x="400" y="40" font-family="Inter, sans-serif" font-size="24" font-weight="700" text-anchor="middle" fill="#dc2626">
+      #1 Cancer Priority in India / Prioridade #1 de Câncer na Índia
+    </text>
+    <text x="400" y="70" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" fill="#52525b">
+      High tobacco burden • Rural access challenges • Low-cost methods essential
+    </text>
+    <text x="400" y="95" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" fill="#52525b">
+      Alta carga de tabaco • Desafios de acesso rural • Métodos de baixo custo essenciais
+    </text>
+  </g>
+  
+  <!-- Screening Method -->
+  <g transform="translate(300, 320)">
+    <rect x="0" y="0" width="600" height="200" fill="#059669" opacity="0.1" rx="12" stroke="#059669" stroke-width="2"/>
+    <text x="300" y="40" font-family="Inter, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#059669">
+      Visual Inspection / Inspeção Visual
+    </text>
+    <text x="300" y="70" font-family="Inter, sans-serif" font-size="18" text-anchor="middle" fill="#18181b">
+      Age: 30+ years / Idade: 30+ anos
+    </text>
+    <text x="300" y="100" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" fill="#52525b">
+      Can be performed by trained health workers / Pode ser realizado por profissionais de saúde treinados
+    </text>
+    <text x="300" y="130" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" fill="#52525b">
+      No laboratory required / Não requer laboratório
+    </text>
+    <text x="300" y="160" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" fill="#52525b">
+      Cost: $1-3 per examination / Custo: $1-3 por exame
+    </text>
+    <text x="300" y="185" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#71717a">
+      NP-NCD 2023-2030 Operational Guidelines
+    </text>
+  </g>
+  
+  <!-- Risk Factors -->
+  <g transform="translate(100, 550)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#18181b">Key Risk Factors / Fatores de Risco Principais:</text>
+    <text x="0" y="25" font-family="Inter, sans-serif" font-size="14" fill="#52525b">• Tobacco use (smoking, chewing) / Uso de tabaco</text>
+    <text x="0" y="45" font-family="Inter, sans-serif" font-size="14" fill="#52525b">• Betel nut consumption / Consumo de noz de areca</text>
+    <text x="0" y="65" font-family="Inter, sans-serif" font-size="14" fill="#52525b">• Alcohol consumption / Consumo de álcool</text>
+  </g>
+  
+  <!-- Footer -->
+  <text x="600" y="650" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#71717a">
+    Darwin-MFC v0.7.0 | India NP-NCD Guidelines 2023-2030
+  </text>
+</svg>
+
