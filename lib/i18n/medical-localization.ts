@@ -18,7 +18,7 @@ import type { Locale } from '@/i18n/config';
 // PAÍSES-ALVO E SUAS ONTOLOGIAS MÉDICAS
 // =============================================================================
 
-export type CountryCode = 'BR' | 'US' | 'ES' | 'FR' | 'RU' | 'SA' | 'CN' | 'GR';
+export type CountryCode = 'BR' | 'US' | 'ES' | 'FR' | 'RU' | 'SA' | 'CN' | 'GR' | 'IN';
 
 export interface MedicalOntologyConfig {
   /** Código do país (ISO 3166-1 alpha-2) */
@@ -343,6 +343,40 @@ export const MEDICAL_LOCALIZATION: Record<Locale, MedicalOntologyConfig> = {
       countrySpecificProtocols: [
         'Κλινικές Οδηγίες',
         'Πρωτόκολλα Εθνικού Συστήματος Υγείας',
+      ],
+    },
+  },
+
+  // ÍNDIA
+  hi: {
+    countryCode: 'IN',
+    countryName: 'भारत',
+    diseaseClassification: {
+      primary: 'ICD-10',
+      version: 'ICD-10 (India)',
+      secondary: 'ICD-11',
+      tertiary: 'SNOMED-CT',
+    },
+    medicationClassification: {
+      primary: 'CDSCO',
+      secondary: 'ATC',
+      tertiary: 'RxNorm',
+    },
+    healthSystem: {
+      name: 'NHM',
+      type: 'mixed',
+      essentialMedicationsList: 'NLEM (National List of Essential Medicines)',
+    },
+    nationalGuidelines: {
+      organization: 'MoHFW / ICMR',
+      guidelinesUrl: 'https://www.mohfw.gov.in',
+    },
+    medicalPractices: {
+      traditionalMedicine: true,
+      countrySpecificProtocols: [
+        'NP-NCD 2023-2030',
+        'ICMR Guidelines',
+        'National Programme Guidelines',
       ],
     },
   },

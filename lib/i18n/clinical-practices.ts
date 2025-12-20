@@ -233,6 +233,36 @@ export const CLINICAL_PRACTICES: Record<Locale, Record<string, ClinicalPractice[
       },
     ],
   },
+
+  // ÍNDIA
+  hi: {
+    'hipertensao-arterial': [
+      {
+        id: 'india-hypertension-2020',
+        title: 'भारतीय उच्च रक्तचाप दिशानिर्देश - 2020',
+        organization: 'Hypertension India / ICMR',
+        year: 2020,
+        url: 'https://www.icmr.gov.in',
+        countrySpecificNotes: [
+          'NP-NCD 2023-2030 screening protocol integration',
+          'ASHA worker-based community screening',
+        ],
+      },
+    ],
+    'diabetes-mellitus-tipo-2': [
+      {
+        id: 'india-diabetes-2024',
+        title: 'भारतीय मधुमेह दिशानिर्देश - 2024',
+        organization: 'Research Society for the Study of Diabetes in India',
+        year: 2024,
+        url: 'https://www.rssdi.in',
+        countrySpecificNotes: [
+          'NP-NCD integration for population screening',
+          'Focus on prediabetes detection in rural areas',
+        ],
+      },
+    ],
+  },
 };
 
 // =============================================================================

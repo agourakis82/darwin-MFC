@@ -26,6 +26,7 @@ export function formatLocaleForHTML(locale: Locale): string {
     ar: 'ar-SA',
     zh: 'zh-CN',
     el: 'el-GR',
+    hi: 'hi-IN',
   };
   return localeMap[locale] || locale;
 }

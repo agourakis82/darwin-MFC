@@ -438,6 +438,58 @@ export const MEDICATION_LOCALIZATIONS: Record<Locale, Record<string, MedicationL
       publicSystemName: 'ΕΣΥ',
     },
   },
+
+  // ÍNDIA (Hindi)
+  hi: {
+    'losartana': {
+      medicationId: 'losartana',
+      genericName: 'Losartan potassium',
+      commercialNames: ['Losar', 'Covance'],
+      nationalCode: 'CDSCO-12345',
+      availableInPublicSystem: true,
+      publicSystemName: 'Jan Aushadhi',
+    },
+    'metformina': {
+      medicationId: 'metformina',
+      genericName: 'Metformin hydrochloride',
+      commercialNames: ['Glycomet', 'Glucophage'],
+      nationalCode: 'CDSCO-12346',
+      availableInPublicSystem: true,
+      publicSystemName: 'Jan Aushadhi',
+    },
+    'amoxicilina': {
+      medicationId: 'amoxicilina',
+      genericName: 'Amoxicillin',
+      commercialNames: ['Mox', 'Novamox'],
+      nationalCode: 'CDSCO-12347',
+      availableInPublicSystem: true,
+      publicSystemName: 'Jan Aushadhi',
+    },
+    'paracetamol': {
+      medicationId: 'paracetamol',
+      genericName: 'Paracetamol',
+      commercialNames: ['Crocin', 'Dolo'],
+      nationalCode: 'CDSCO-12348',
+      availableInPublicSystem: true,
+      publicSystemName: 'Jan Aushadhi',
+    },
+    'ibuprofeno': {
+      medicationId: 'ibuprofeno',
+      genericName: 'Ibuprofen',
+      commercialNames: ['Brufen', 'Ibugesic'],
+      nationalCode: 'CDSCO-12349',
+      availableInPublicSystem: true,
+      publicSystemName: 'Jan Aushadhi',
+    },
+    'omeprazol': {
+      medicationId: 'omeprazol',
+      genericName: 'Omeprazole',
+      commercialNames: ['Omez', 'Pan'],
+      nationalCode: 'CDSCO-12350',
+      availableInPublicSystem: true,
+      publicSystemName: 'Jan Aushadhi',
+    },
+  },
 };
 
 // =============================================================================

@@ -1,13 +1,14 @@
 import type { EvidenceLevel, StudyType } from './evidence';
 
-export type ReferenceType = 
-  | 'artigo' 
-  | 'portaria' 
-  | 'lei' 
-  | 'nota_tecnica' 
-  | 'site' 
-  | 'livro' 
-  | 'diretriz';
+export type ReferenceType =
+  | 'artigo'
+  | 'portaria'
+  | 'lei'
+  | 'nota_tecnica'
+  | 'site'
+  | 'livro'
+  | 'diretriz'
+  | 'relatorio';
 
 export interface Reference {
   id: string;
@@ -24,6 +25,7 @@ export interface Reference {
   legalNumber?: string; // Para portarias/leis (ex: "Portaria GM/MS nº 1.234")
   publisher?: string; // Para livros
   edition?: string; // Para livros
+  note?: string; // Nota contextual opcional
 }
 
 // Interface para uso em citações inline (ex: [1], [2-4])

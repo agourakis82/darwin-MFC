@@ -219,6 +219,31 @@ export const DISEASE_CODE_MAPPINGS: Record<Locale, Record<string, DiseaseCodeMap
       doid: 'DOID:6000',
     },
   },
+
+  // ÍNDIA (Hindi) - ICD-10
+  hi: {
+    'hipertensao-arterial': {
+      cid10: 'I10',
+      countryCode: 'I10', // ICD-10 padrão
+      snomedCT: '38341003',
+      icd11: 'BA00',
+      doid: 'DOID:10763',
+    },
+    'diabetes-mellitus-tipo-2': {
+      cid10: 'E11',
+      countryCode: 'E11', // ICD-10 padrão
+      snomedCT: '44054006',
+      icd11: '5A11',
+      doid: 'DOID:9351',
+    },
+    'insuficiencia-cardiaca': {
+      cid10: 'I50',
+      countryCode: 'I50', // ICD-10 padrão
+      snomedCT: '84114007',
+      icd11: 'BD10',
+      doid: 'DOID:6000',
+    },
+  },
 };
 
 // =============================================================================

@@ -378,6 +378,52 @@ export function getCriticalAnalysisLocalizationConfig(locale: Locale): CriticalA
         'UBS': 'Κέντρο Υγείας',
         'RENAME': 'ΕΟΦ',
       }
+    },
+    hi: {
+      locale: 'hi',
+      countryName: 'भारत',
+      healthSystemName: 'राष्ट्रीय स्वास्थ्य मिशन',
+      healthSystemAbbreviation: 'NHM',
+      adaptContext: (ctx) => {
+        return ctx
+          .replace(/SUS/g, 'NHM')
+          .replace(/Ministério da Saúde/g, 'स्वास्थ्य और परिवार कल्याण मंत्रालय')
+          .replace(/APS/g, 'प्राथमिक स्वास्थ्य देखभाल')
+          .replace(/UBS/g, 'प्राथमिक स्वास्थ्य केंद्र')
+          .replace(/CONITEC/g, 'CDSCO')
+          .replace(/RENAME/g, 'NLEM');
+      },
+      adaptStakeholder: (stakeholder) => {
+        const mapping: Record<string, string> = {
+          'MS': 'MoHFW',
+          'SBMFC': 'Academy of Family Physicians of India (AFPI)',
+          'SBC': 'Cardiological Society of India (CSI)',
+          'SBD': 'Research Society for Study of Diabetes in India (RSSDI)',
+          'CONITEC': 'CDSCO',
+          'APS': 'Primary Health Care',
+          'UBS': 'Primary Health Centre',
+        };
+        return mapping[stakeholder] || stakeholder;
+      },
+      adaptOperationalChallenge: (challenge) => {
+        return challenge
+          .replace(/SUS/g, 'NHM')
+          .replace(/UBS/g, 'primary health centre')
+          .replace(/RENAME/g, 'NLEM')
+          .replace(/farmácias do SUS/g, 'Jan Aushadhi pharmacies');
+      },
+      stakeholderMappings: {
+        'MS': 'Ministry of Health and Family Welfare (MoHFW)',
+        'SBMFC': 'Academy of Family Physicians of India (AFPI)',
+        'SBC': 'Cardiological Society of India (CSI)',
+        'SBD': 'Research Society for Study of Diabetes in India (RSSDI)',
+        'FEBRASGO': 'Federation of Obstetric and Gynaecological Societies of India (FOGSI)',
+        'CONITEC': 'Central Drugs Standard Control Organisation (CDSCO)',
+        'INCA': 'Indian Council of Medical Research (ICMR)',
+        'APS': 'Primary Health Care',
+        'UBS': 'Primary Health Centre (PHC)',
+        'RENAME': 'National List of Essential Medicines (NLEM)',
+      }
     }
   };
 

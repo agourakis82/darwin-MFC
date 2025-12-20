@@ -4,14 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Darwin-MFC** is an academic Q1-standard (Nature/Cell level) interactive web application for comparative analysis of population-based screening programs in Brazil. It compares **SUS (Sistema Único de Saúde)** guidelines with **Medical Society recommendations** across 16 different screening programs (cancer, prenatal, neonatal, chronic diseases, etc.).
+**Darwin-MFC** is an academic Q1-standard (Nature/Cell level) interactive web application for comparative analysis of population-based screening programs and clinical protocols. It compares **official guidelines** (SUS/Brazil, USPSTF/USA, NHS/UK, NP-NCD/India, WHO) with **Medical Society recommendations** across multiple health domains.
 
 **Key Characteristics:**
 - Academic rigor with inline citations (Vancouver style)
 - Dual content mode: Descriptive ↔ Critical Analysis
+- **9 languages**: pt, en, es, fr, ru, ar (RTL), zh, el, hi
 - Static site generation (SSG) for GitHub Pages deployment
 - Dark mode as default theme
-- Portuguese language content (pt-BR)
 
 ## Commands
 
@@ -20,13 +20,34 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 npm run dev          # Start development server (localhost:3000)
 npm run build        # Build for production (static export)
 npm run start        # Serve production build locally
-npm install          # Install dependencies
+npm run lint         # ESLint static analysis
+npm run verify       # Run integration verification script
+npm run test:integration  # Same as verify
 ```
 
 ### Deployment
 The app is configured for static export (`output: "export"` in next.config.ts) suitable for GitHub Pages or similar static hosting.
 
 ## Architecture & Code Structure
+
+### Internationalization (next-intl)
+
+**Files:**
+- `i18n/config.ts`: Locale definitions, RTL detection
+- `i18n/routing.ts`: next-intl navigation wrappers (Link, useRouter, usePathname)
+- `middleware.ts`: Locale routing middleware
+- `messages/{locale}/`: Translation JSON files (common.json, clinical-cases.json, protocols.json)
+
+**Locales:** `pt` (default), `en`, `es`, `fr`, `ru`, `ar` (RTL), `zh`, `el`, `hi`
+
+**Usage Pattern:**
+```tsx
+import { useTranslations } from 'next-intl';
+const t = useTranslations('common');
+return <h1>{t('title')}</h1>;
+```
+
+**Routing:** All routes are prefixed with locale (e.g., `/pt/cancer`, `/en/cancer`). The `[locale]` dynamic segment in `app/[locale]/page.tsx` handles the root for each locale.
 
 ### Core State Management (Zustand)
 
@@ -105,9 +126,16 @@ The app's unique feature is the **dual content mode system**:
 ### Page Structure (App Router)
 
 Pages follow Next.js 15 App Router conventions in the `app/` directory:
-- Each screening category has its own route (e.g., `/cancer`, `/gestacao`, `/infantil`)
-- Pages that support dual content use `ContentModeWrapper` to switch between modes
-- `page.tsx` files are the entry points for each route
+
+**Major Route Categories:**
+- **Screening**: `/cancer`, `/gestacao`, `/infantil`, `/neonatal`, `/adultos`, `/outros`
+- **Clinical Tools**: `/medicamentos`, `/medicamentos/[id]`, `/medicamentos/comparador`, `/medicamentos/interacoes`
+- **Diseases**: `/doencas`, `/doencas/[id]`, `/contexto/[doencaId]`
+- **Protocols**: `/protocolos`, `/protocolos/flowchart/[id]`
+- **Clinical Cases**: `/casos-clinicos`, `/casos-clinicos/[id]`
+- **Family Tools**: `/ferramentas-familia`, `/ferramentas/genograma`, `/ferramentas/ecomapa`
+- **Utilities**: `/calculadoras`, `/busca`, `/consulta-rapida`, `/prontuario`, `/estudo`
+- **Reference**: `/analise`, `/bibliografia`, `/timeline`, `/comparacao`, `/about`
 
 **Example Dual-Mode Page Pattern:**
 ```tsx
@@ -129,6 +157,8 @@ All content is stored as TypeScript constants (no database):
 - `rastreamentos.ts`: Array of screening protocols with full citations
 - `analise-critica.ts`: Array of critical analyses matching screening IDs
 - `references.ts`: Centralized bibliography database
+- `medicamentos/`: Drug information modules (antibiotics, cardiovascular, endocrine)
+- `doencas/`: Disease protocols (infectious, non-infectious)
 
 **Data Linking:** Critical analyses link to screenings via `rastreamentoId` field.
 
@@ -199,10 +229,12 @@ State persists automatically to localStorage.
 1. **Static Export:** App is fully static (no server-side runtime) for easy deployment
 2. **No Backend:** All data is TypeScript constants, no API calls or database
 3. **Client-Side Only State:** Zustand + localStorage (no server state)
-4. **Portuguese Content:** All UI and content in pt-BR
+4. **Multilingual:** 9 locales via next-intl, Portuguese as default
 5. **Academic Rigor:** Every claim must be cited with Vancouver-style references
 6. **Dual Content Architecture:** Central design pattern affecting entire app structure
 
 ## Project Context
 
-This is an academic/scientific project for the **Darwin Medical Foundation Cluster (Darwin-MFC)** platform. The goal is Nature/Cell-level academic rigor for analyzing Brazilian healthcare screening guidelines. Priority is given to accuracy, citations, and critical systemic analysis over features.
+This is an academic/scientific project for the **Darwin Medical Foundation Cluster (Darwin-MFC)** platform. The goal is Nature/Cell-level academic rigor for analyzing healthcare screening guidelines globally. Priority is given to accuracy, citations, and critical systemic analysis over features.
+
+**Live Demo:** <https://mfc.agourakis.med.br>
