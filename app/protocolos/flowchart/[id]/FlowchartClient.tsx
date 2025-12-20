@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Protocolo, ProtocolNode } from '@/lib/types/protocolo';
 import FlowchartEngine from '@/app/components/Flowchart/FlowchartEngine';
+import { useLocalizedProtocol } from '@/app/hooks/useLocalizedProtocol';
 
 interface FlowchartClientProps {
   protocolo: Protocolo;
@@ -33,9 +34,12 @@ const complexidadeLabels: Record<string, { label: string; color: string }> = {
 export default function FlowchartClient({ protocolo }: FlowchartClientProps) {
   const [showInfo, setShowInfo] = useState(true);
   const [selectedNode, setSelectedNode] = useState<ProtocolNode | null>(null);
+  
+  // Adaptar protocolo ao locale atual
+  const localizedProtocol = useLocalizedProtocol(protocolo);
 
-  const categoriaInfo = categoriaLabels[protocolo.categoria] || { label: protocolo.categoria, color: 'bg-gray-100 text-gray-800', icon: '📋' };
-  const complexidadeInfo = complexidadeLabels[protocolo.complexidade];
+  const categoriaInfo = categoriaLabels[localizedProtocol.categoria] || { label: localizedProtocol.categoria, color: 'bg-gray-100 text-gray-800', icon: '📋' };
+  const complexidadeInfo = complexidadeLabels[localizedProtocol.complexidade];
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
@@ -54,11 +58,11 @@ export default function FlowchartClient({ protocolo }: FlowchartClientProps) {
               <div className="h-6 w-px bg-slate-300 dark:bg-slate-600" />
               <div>
                 <h1 className="text-xl font-bold text-slate-900 dark:text-white">
-                  {protocolo.titulo}
+                  {localizedProtocol.titulo}
                 </h1>
-                {protocolo.subtitulo && (
+                {localizedProtocol.subtitulo && (
                   <p className="text-sm text-slate-500 dark:text-slate-400">
-                    {protocolo.subtitulo}
+                    {localizedProtocol.subtitulo}
                   </p>
                 )}
               </div>
@@ -104,7 +108,7 @@ export default function FlowchartClient({ protocolo }: FlowchartClientProps) {
                   Descrição
                 </h2>
                 <p className="text-sm text-slate-700 dark:text-slate-300">
-                  {protocolo.descricao}
+                  {localizedProtocol.descricao}
                 </p>
               </section>
 
@@ -114,7 +118,7 @@ export default function FlowchartClient({ protocolo }: FlowchartClientProps) {
                   🎯 Objetivos
                 </h2>
                 <ul className="space-y-1">
-                  {protocolo.objetivos.map((obj, i) => (
+                  {localizedProtocol.objetivos.map((obj, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
                       <span className="text-green-500 mt-0.5">✓</span>
                       {obj}
@@ -129,18 +133,18 @@ export default function FlowchartClient({ protocolo }: FlowchartClientProps) {
                   👥 População Alvo
                 </h2>
                 <p className="text-sm text-slate-700 dark:text-slate-300">
-                  {protocolo.populacaoAlvo}
+                  {localizedProtocol.populacaoAlvo}
                 </p>
               </section>
 
               {/* Sinais de Alerta */}
-              {protocolo.sinaisAlerta && protocolo.sinaisAlerta.length > 0 && (
+              {localizedProtocol.sinaisAlerta && localizedProtocol.sinaisAlerta.length > 0 && (
                 <section>
                   <h2 className="text-sm font-semibold text-red-500 uppercase tracking-wide mb-2">
                     ⚠️ Sinais de Alerta
                   </h2>
                   <ul className="space-y-1">
-                    {protocolo.sinaisAlerta.map((sinal, i) => (
+                    {localizedProtocol.sinaisAlerta.map((sinal, i) => (
                       <li
                         key={i}
                         className="flex items-start gap-2 text-sm text-red-600 dark:text-red-400"
@@ -159,7 +163,7 @@ export default function FlowchartClient({ protocolo }: FlowchartClientProps) {
                   📋 Códigos
                 </h2>
                 <div className="flex flex-wrap gap-2">
-                  {protocolo.ciap2?.map((code) => (
+                  {localizedProtocol.ciap2?.map((code) => (
                     <span
                       key={code}
                       className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded font-mono"
@@ -167,7 +171,7 @@ export default function FlowchartClient({ protocolo }: FlowchartClientProps) {
                       CIAP-2: {code}
                     </span>
                   ))}
-                  {protocolo.cid10?.map((code) => (
+                  {localizedProtocol.cid10?.map((code) => (
                     <span
                       key={code}
                       className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs rounded font-mono"
@@ -179,13 +183,13 @@ export default function FlowchartClient({ protocolo }: FlowchartClientProps) {
               </section>
 
               {/* Medicamentos Relacionados */}
-              {protocolo.medicamentosRelacionados && protocolo.medicamentosRelacionados.length > 0 && (
+              {localizedProtocol.medicamentosRelacionados && localizedProtocol.medicamentosRelacionados.length > 0 && (
                 <section>
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
                     💊 Medicamentos
                   </h2>
                   <div className="flex flex-wrap gap-1">
-                    {protocolo.medicamentosRelacionados.map((med) => (
+                    {localizedProtocol.medicamentosRelacionados.map((med) => (
                       <Link
                         key={med}
                         href={`/medicamentos/${med}`}
@@ -199,13 +203,13 @@ export default function FlowchartClient({ protocolo }: FlowchartClientProps) {
               )}
 
               {/* Doenças Relacionadas */}
-              {protocolo.doencasRelacionadas && protocolo.doencasRelacionadas.length > 0 && (
+              {localizedProtocol.doencasRelacionadas && localizedProtocol.doencasRelacionadas.length > 0 && (
                 <section>
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
                     🩺 Doenças Relacionadas
                   </h2>
                   <div className="flex flex-wrap gap-1">
-                    {protocolo.doencasRelacionadas.map((doenca) => (
+                    {localizedProtocol.doencasRelacionadas.map((doenca) => (
                       <Link
                         key={doenca}
                         href={`/doencas/${doenca}`}
@@ -219,17 +223,17 @@ export default function FlowchartClient({ protocolo }: FlowchartClientProps) {
               )}
 
               {/* Encaminhamento */}
-              {protocolo.encaminhamento && (
+              {localizedProtocol.encaminhamento && (
                 <section>
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
                     🏥 Quando Encaminhar
                   </h2>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-3">
                     <p className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">
-                      Para: {protocolo.encaminhamento.paraCQuem}
+                      Para: {localizedProtocol.encaminhamento.paraCQuem}
                     </p>
                     <ul className="space-y-1">
-                      {protocolo.encaminhamento.quando.map((crit, i) => (
+                      {localizedProtocol.encaminhamento.quando.map((crit, i) => (
                         <li key={i} className="text-xs text-slate-600 dark:text-slate-300 flex items-start gap-1">
                           <span className="text-pink-500">→</span>
                           {crit}
@@ -243,9 +247,9 @@ export default function FlowchartClient({ protocolo }: FlowchartClientProps) {
               {/* Metadados */}
               <section className="pt-4 border-t border-slate-200 dark:border-slate-700">
                 <div className="text-xs text-slate-400 space-y-1">
-                  <p>Versão: {protocolo.versao}</p>
-                  <p>Atualização: {protocolo.ultimaAtualizacao}</p>
-                  <p>Fonte: {protocolo.fonte}</p>
+                  <p>Versão: {localizedProtocol.versao}</p>
+                  <p>Atualização: {localizedProtocol.ultimaAtualizacao}</p>
+                  <p>Fonte: {localizedProtocol.fonte}</p>
                 </div>
               </section>
             </div>
@@ -255,8 +259,8 @@ export default function FlowchartClient({ protocolo }: FlowchartClientProps) {
         {/* Área do Fluxograma */}
         <main className="flex-1 relative">
           <FlowchartEngine
-            nodes={protocolo.nodes}
-            edges={protocolo.edges}
+            nodes={localizedProtocol.nodes}
+            edges={localizedProtocol.edges}
             onNodeClick={setSelectedNode}
             showMiniMap={true}
             showControls={true}
