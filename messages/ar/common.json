@@ -2,8 +2,10 @@
   "common": {
     "appName": "Darwin MFC",
     "appSubtitle": "التحليل النظامي 2025",
+    "appDescription": "دليل طب الأسرة والمجتمع",
     "loading": "جاري التحميل...",
     "error": "خطأ",
+    "success": "نجاح",
     "save": "حفظ",
     "cancel": "إلغاء",
     "delete": "حذف",
@@ -14,7 +16,13 @@
     "next": "التالي",
     "previous": "السابق",
     "submit": "إرسال",
-    "reset": "مسح"
+    "reset": "مسح",
+    "new": "جديد",
+    "export": "تصدير",
+    "import": "استيراد",
+    "download": "تحميل",
+    "print": "طباعة",
+    "share": "مشاركة"
   },
   "nav": {
     "home": "الرئيسية",
@@ -25,11 +33,13 @@
     "gestacao": "الحمل",
     "outros": "أخرى",
     "timeline": "الجدول الزمني",
-    "doencas": "أمراض APS",
+    "doencas": "أمراض الرعاية الأولية",
     "medicamentos": "دليل RENAME",
     "protocolos": "البروتوكولات",
     "calculadoras": "الآلات الحاسبة",
-    "busca": "بحث"
+    "busca": "بحث",
+    "clinicalCase": "حالة سريرية",
+    "clinicalCases": "حالات سريرية"
   },
   "header": {
     "menu": "القائمة",
@@ -38,16 +48,76 @@
     "criticalAnalysisMode": "تحليل",
     "lightMode": "الوضع الفاتح",
     "darkMode": "الوضع الداكن",
-    "selectLanguage": "اختر اللغة"
+    "selectLanguage": "اختر اللغة",
+    "searchPlaceholder": "البحث في جميع الفحوصات...",
+    "keyboardShortcutHint": "اضغط ? لعرض الاختصارات",
+    "clinicalGuide": "الدليل السريري",
+    "susScreenings": "فحوصات SUS",
+    "shortcuts": "اختصارات",
+    "home": "الرئيسية",
+    "clinicalCase": "حالة سريرية",
+    "diseasesAPS": "أمراض الرعاية الأولية",
+    "medicationGuide": "دليل RENAME",
+    "protocols": "البروتوكولات",
+    "calculators": "الآلات الحاسبة",
+    "clinicalCases": "حالات سريرية",
+    "neonatalScreening": "فحص حديثي الولادة",
+    "childHealth": "صحة الطفل",
+    "adultsDCNTs": "البالغون (الأمراض غير المعدية)",
+    "cancer": "السرطان",
+    "gestationPrenatal": "الحمل (ما قبل الولادة)",
+    "susAPS": "SUS والرعاية الأولية",
+    "timeline2025": "الجدول الزمني 2025",
+    "bibliography": "المراجع",
+    "quickConsultation": "استشارة سريعة",
+    "soapRecord": "سجل SOAP",
+    "studyMode": "وضع الدراسة",
+    "genogram": "شجرة العائلة الطبية",
+    "ecomap": "خريطة البيئة",
+    "drugInteractions": "تفاعلات الأدوية",
+    "drugComparator": "مقارنة الأدوية",
+    "advancedSearch": "بحث متقدم"
   },
   "sidebar": {
     "quickAccess": "الوصول السريع",
-    "rastreamentos": "فحص SUS",
-    "new": "جديد"
+    "rastreamentos": "فحوصات SUS",
+    "new": "جديد",
+    "main": "الرئيسي",
+    "home": "الرئيسية",
+    "clinicalCase": "حالة سريرية",
+    "clinicalGuide": "الدليل السريري",
+    "diseasesAPS": "أمراض الرعاية الأولية",
+    "medicationGuide": "دليل RENAME",
+    "protocols": "البروتوكولات",
+    "calculators": "الآلات الحاسبة",
+    "clinicalCases": "حالات سريرية",
+    "susScreenings": "فحوصات SUS",
+    "neonatalScreening": "فحص حديثي الولادة",
+    "childHealth": "صحة الطفل",
+    "adultsDCNTs": "البالغون (الأمراض غير المعدية)",
+    "cancer": "السرطان",
+    "gestationPrenatal": "الحمل (ما قبل الولادة)",
+    "fundamentals": "الأساسيات",
+    "susAPS": "SUS والرعاية الأولية",
+    "timeline": "الجدول الزمني 2025",
+    "bibliography": "المراجع",
+    "clinicalTools": "الأدوات السريرية",
+    "quickConsultation": "استشارة سريعة",
+    "soapRecord": "سجل SOAP",
+    "studyMode": "وضع الدراسة",
+    "genogram": "شجرة العائلة الطبية",
+    "ecomap": "خريطة البيئة",
+    "drugInteractions": "تفاعلات الأدوية",
+    "drugComparator": "مقارنة الأدوية",
+    "advancedSearch": "بحث متقدم",
+    "q1Standard": "معيار Q1 الأكاديمي",
+    "q1Description": "جميع البيانات مدعومة بمراجع علمية",
+    "lastUpdate": "التحديث: ديسمبر/2025"
   },
   "footer": {
     "copyright": "© 2025 Darwin Medical Foundation Cluster",
-    "allRightsReserved": "جميع الحقوق محفوظة"
+    "allRightsReserved": "جميع الحقوق محفوظة",
+    "poweredBy": "مدعوم من"
   },
   "contentMode": {
     "descriptive": "الوضع الوصفي",
@@ -58,6 +128,18 @@
   "accessibility": {
     "skipToContent": "انتقل إلى المحتوى الرئيسي",
     "skipToNavigation": "انتقل إلى التنقل"
+  },
+  "export": {
+    "pdf": "PDF",
+    "csv": "CSV",
+    "json": "JSON",
+    "print": "طباعة",
+    "exportAsPDF": "تصدير كـ PDF",
+    "exportAsCSV": "تصدير كـ CSV",
+    "exportAsJSON": "تصدير كـ JSON",
+    "printPage": "طباعة",
+    "csvComingSoon": "ميزة تصدير CSV قريباً",
+    "jsonComingSoon": "ميزة تصدير JSON قريباً"
   },
   "about": {
     "title": "حول المؤلف",
@@ -93,5 +175,21 @@
         "الصحة العالمية"
       ]
     }
+  },
+  "pwa": {
+    "installTitle": "تثبيت Darwin MFC",
+    "installSubtitle": "يعمل بدون إنترنت!",
+    "benefitOffline": "الوصول للمحتوى بدون إنترنت",
+    "benefitFast": "تحميل سريع، بيانات أقل",
+    "benefitApp": "استخدم كتطبيق أصلي",
+    "installButton": "تثبيت",
+    "later": "لاحقاً",
+    "online": "متصل - الوقت المثالي للتثبيت!",
+    "offline": "غير متصل - ثبّت عند الاتصال",
+    "updateTitle": "تحديث متاح",
+    "updateMessage": "إصدار جديد جاهز للتثبيت",
+    "updateButton": "تحديث الآن",
+    "reconnected": "عدت للاتصال!",
+    "offlineMode": "غير متصل - استخدام البيانات المخزنة"
   }
 }

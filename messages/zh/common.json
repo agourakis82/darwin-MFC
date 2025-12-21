@@ -2,8 +2,10 @@
   "common": {
     "appName": "Darwin MFC",
     "appSubtitle": "系统分析 2025",
+    "appDescription": "家庭与社区医学指南",
     "loading": "加载中...",
     "error": "错误",
+    "success": "成功",
     "save": "保存",
     "cancel": "取消",
     "delete": "删除",
@@ -14,7 +16,13 @@
     "next": "下一步",
     "previous": "上一步",
     "submit": "提交",
-    "reset": "清除"
+    "reset": "清除",
+    "new": "新建",
+    "export": "导出",
+    "import": "导入",
+    "download": "下载",
+    "print": "打印",
+    "share": "分享"
   },
   "nav": {
     "home": "首页",
@@ -25,11 +33,13 @@
     "gestacao": "妊娠",
     "outros": "其他",
     "timeline": "时间线",
-    "doencas": "APS疾病",
+    "doencas": "初级保健疾病",
     "medicamentos": "RENAME处方集",
-    "protocolos": "协议",
+    "protocolos": "临床方案",
     "calculadoras": "计算器",
-    "busca": "搜索"
+    "busca": "搜索",
+    "clinicalCase": "临床病例",
+    "clinicalCases": "临床病例"
   },
   "header": {
     "menu": "菜单",
@@ -38,16 +48,76 @@
     "criticalAnalysisMode": "分析",
     "lightMode": "浅色模式",
     "darkMode": "深色模式",
-    "selectLanguage": "选择语言"
+    "selectLanguage": "选择语言",
+    "searchPlaceholder": "搜索所有筛查项目...",
+    "keyboardShortcutHint": "按 ? 查看快捷键",
+    "clinicalGuide": "临床指南",
+    "susScreenings": "SUS筛查",
+    "shortcuts": "快捷键",
+    "home": "首页",
+    "clinicalCase": "临床病例",
+    "diseasesAPS": "初级保健疾病",
+    "medicationGuide": "RENAME处方集",
+    "protocols": "临床方案",
+    "calculators": "计算器",
+    "clinicalCases": "临床病例",
+    "neonatalScreening": "新生儿筛查",
+    "childHealth": "儿童健康",
+    "adultsDCNTs": "成人（慢性病）",
+    "cancer": "癌症",
+    "gestationPrenatal": "妊娠（产前）",
+    "susAPS": "SUS和初级保健",
+    "timeline2025": "时间线 2025",
+    "bibliography": "参考文献",
+    "quickConsultation": "快速查询",
+    "soapRecord": "SOAP病历",
+    "studyMode": "学习模式",
+    "genogram": "家系图",
+    "ecomap": "生态图",
+    "drugInteractions": "药物相互作用",
+    "drugComparator": "药物比较",
+    "advancedSearch": "高级搜索"
   },
   "sidebar": {
     "quickAccess": "快速访问",
     "rastreamentos": "SUS筛查",
-    "new": "新"
+    "new": "新建",
+    "main": "主要",
+    "home": "首页",
+    "clinicalCase": "临床病例",
+    "clinicalGuide": "临床指南",
+    "diseasesAPS": "初级保健疾病",
+    "medicationGuide": "RENAME处方集",
+    "protocols": "临床方案",
+    "calculators": "计算器",
+    "clinicalCases": "临床病例",
+    "susScreenings": "SUS筛查",
+    "neonatalScreening": "新生儿筛查",
+    "childHealth": "儿童健康",
+    "adultsDCNTs": "成人（慢性病）",
+    "cancer": "癌症",
+    "gestationPrenatal": "妊娠（产前）",
+    "fundamentals": "基础知识",
+    "susAPS": "SUS和初级保健",
+    "timeline": "时间线 2025",
+    "bibliography": "参考文献",
+    "clinicalTools": "临床工具",
+    "quickConsultation": "快速查询",
+    "soapRecord": "SOAP病历",
+    "studyMode": "学习模式",
+    "genogram": "家系图",
+    "ecomap": "生态图",
+    "drugInteractions": "药物相互作用",
+    "drugComparator": "药物比较",
+    "advancedSearch": "高级搜索",
+    "q1Standard": "Q1学术标准",
+    "q1Description": "所有陈述均有科学参考文献支持",
+    "lastUpdate": "更新：2025年12月"
   },
   "footer": {
     "copyright": "© 2025 Darwin Medical Foundation Cluster",
-    "allRightsReserved": "版权所有"
+    "allRightsReserved": "版权所有",
+    "poweredBy": "技术支持"
   },
   "contentMode": {
     "descriptive": "描述模式",
@@ -58,6 +128,18 @@
   "accessibility": {
     "skipToContent": "跳转到主要内容",
     "skipToNavigation": "跳转到导航"
+  },
+  "export": {
+    "pdf": "PDF",
+    "csv": "CSV",
+    "json": "JSON",
+    "print": "打印",
+    "exportAsPDF": "导出为PDF",
+    "exportAsCSV": "导出为CSV",
+    "exportAsJSON": "导出为JSON",
+    "printPage": "打印",
+    "csvComingSoon": "CSV导出功能即将推出",
+    "jsonComingSoon": "JSON导出功能即将推出"
   },
   "about": {
     "title": "关于作者",
@@ -93,5 +175,21 @@
         "全球健康"
       ]
     }
+  },
+  "pwa": {
+    "installTitle": "安装 Darwin MFC",
+    "installSubtitle": "离线可用！",
+    "benefitOffline": "无需网络即可访问内容",
+    "benefitFast": "加载快速，节省流量",
+    "benefitApp": "像原生应用一样使用",
+    "installButton": "安装",
+    "later": "稍后",
+    "online": "在线 - 最佳安装时机！",
+    "offline": "离线 - 联网后安装",
+    "updateTitle": "更新可用",
+    "updateMessage": "新版本已准备就绪",
+    "updateButton": "立即更新",
+    "reconnected": "已重新连接！",
+    "offlineMode": "离线 - 使用缓存数据"
   }
 }
