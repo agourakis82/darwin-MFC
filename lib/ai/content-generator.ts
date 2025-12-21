@@ -19,11 +19,25 @@ import type { Reference } from '@/lib/types/references';
 // TYPES
 // =============================================================================
 
+/**
+ * Supported AI providers:
+ * - anthropic: Claude (paid, best quality)
+ * - openai: GPT-4 (paid)
+ * - groq: Free tier available, fast inference
+ * - ollama: Free, runs locally on your machine
+ * - google: Gemini (free tier available)
+ */
+export type AIProvider = 'anthropic' | 'openai' | 'groq' | 'ollama' | 'google';
+
 export interface AIContentConfig {
-  /** API key for Claude/OpenAI (from environment) */
+  /** AI provider to use */
+  provider?: AIProvider;
+  /** API key (not needed for ollama) */
   apiKey?: string;
-  /** Model to use (default: claude-3-opus) */
-  model?: 'claude-3-opus-20240229' | 'claude-3-sonnet-20240229' | 'gpt-4-turbo';
+  /** API base URL (for ollama: http://localhost:11434) */
+  baseUrl?: string;
+  /** Model to use */
+  model?: string;
   /** Temperature for generation (lower = more deterministic) */
   temperature?: number;
   /** Maximum tokens for response */
@@ -31,6 +45,17 @@ export interface AIContentConfig {
   /** Language for content generation */
   language?: 'pt' | 'en' | 'es' | 'fr';
 }
+
+/**
+ * Default models for each provider
+ */
+export const DEFAULT_MODELS: Record<AIProvider, string> = {
+  anthropic: 'claude-3-5-sonnet-20241022',
+  openai: 'gpt-4-turbo',
+  groq: 'llama-3.1-70b-versatile', // Free!
+  ollama: 'llama3.1',              // Free, local
+  google: 'gemini-1.5-flash',      // Free tier
+};
 
 export interface ContentDraft<T> {
   /** Unique draft ID */
@@ -194,13 +219,66 @@ export class ContentGenerator {
   private config: Required<AIContentConfig>;
 
   constructor(config: AIContentConfig = {}) {
+    const provider = config.provider || this.detectProvider(config);
+
     this.config = {
-      apiKey: config.apiKey || process.env.ANTHROPIC_API_KEY || '',
-      model: config.model || 'claude-3-sonnet-20240229',
+      provider,
+      apiKey: config.apiKey || this.getEnvKey(provider),
+      baseUrl: config.baseUrl || this.getDefaultBaseUrl(provider),
+      model: config.model || DEFAULT_MODELS[provider],
       temperature: config.temperature ?? 0.3,
       maxTokens: config.maxTokens || 4096,
       language: config.language || 'pt',
     };
+  }
+
+  /**
+   * Detect provider from environment or config
+   */
+  private detectProvider(config: AIContentConfig): AIProvider {
+    if (config.apiKey) {
+      // Try to detect from key format
+      if (config.apiKey.startsWith('sk-ant-')) return 'anthropic';
+      if (config.apiKey.startsWith('sk-')) return 'openai';
+      if (config.apiKey.startsWith('gsk_')) return 'groq';
+    }
+
+    // Check environment variables
+    if (process.env.ANTHROPIC_API_KEY) return 'anthropic';
+    if (process.env.OPENAI_API_KEY) return 'openai';
+    if (process.env.GROQ_API_KEY) return 'groq';
+    if (process.env.GOOGLE_API_KEY) return 'google';
+
+    // Default to ollama (free, local)
+    return 'ollama';
+  }
+
+  /**
+   * Get API key from environment for provider
+   */
+  private getEnvKey(provider: AIProvider): string {
+    const envKeys: Record<AIProvider, string> = {
+      anthropic: process.env.ANTHROPIC_API_KEY || '',
+      openai: process.env.OPENAI_API_KEY || '',
+      groq: process.env.GROQ_API_KEY || '',
+      ollama: '', // No key needed
+      google: process.env.GOOGLE_API_KEY || '',
+    };
+    return envKeys[provider];
+  }
+
+  /**
+   * Get default base URL for provider
+   */
+  private getDefaultBaseUrl(provider: AIProvider): string {
+    const baseUrls: Record<AIProvider, string> = {
+      anthropic: 'https://api.anthropic.com',
+      openai: 'https://api.openai.com',
+      groq: 'https://api.groq.com/openai',
+      ollama: 'http://localhost:11434',
+      google: 'https://generativelanguage.googleapis.com',
+    };
+    return baseUrls[provider];
   }
 
   /**
@@ -307,12 +385,33 @@ export class ContentGenerator {
     text: string;
     usage: { prompt: number; completion: number; total: number };
   }> {
+    switch (this.config.provider) {
+      case 'anthropic':
+        return this.callAnthropic(prompt);
+      case 'openai':
+      case 'groq':
+        return this.callOpenAICompatible(prompt);
+      case 'ollama':
+        return this.callOllama(prompt);
+      case 'google':
+        return this.callGoogle(prompt);
+      default:
+        throw new Error(`Unknown provider: ${this.config.provider}`);
+    }
+  }
+
+  /**
+   * Call Anthropic Claude API
+   */
+  private async callAnthropic(prompt: string): Promise<{
+    text: string;
+    usage: { prompt: number; completion: number; total: number };
+  }> {
     if (!this.config.apiKey) {
-      throw new Error('API key not configured. Set ANTHROPIC_API_KEY environment variable.');
+      throw new Error('API key required. Set ANTHROPIC_API_KEY environment variable.');
     }
 
-    // Using Anthropic Claude API
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const response = await fetch(`${this.config.baseUrl}/v1/messages`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -323,29 +422,171 @@ export class ContentGenerator {
         model: this.config.model,
         max_tokens: this.config.maxTokens,
         temperature: this.config.temperature,
+        messages: [{ role: 'user', content: prompt }],
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.text();
+      throw new Error(`Anthropic API failed: ${response.status} - ${error}`);
+    }
+
+    const data = await response.json();
+    return {
+      text: data.content[0]?.text || '',
+      usage: {
+        prompt: data.usage?.input_tokens || 0,
+        completion: data.usage?.output_tokens || 0,
+        total: (data.usage?.input_tokens || 0) + (data.usage?.output_tokens || 0),
+      },
+    };
+  }
+
+  /**
+   * Call OpenAI-compatible APIs (OpenAI, Groq)
+   * Groq offers FREE tier with Llama models!
+   */
+  private async callOpenAICompatible(prompt: string): Promise<{
+    text: string;
+    usage: { prompt: number; completion: number; total: number };
+  }> {
+    if (!this.config.apiKey) {
+      const envVar = this.config.provider === 'groq' ? 'GROQ_API_KEY' : 'OPENAI_API_KEY';
+      throw new Error(`API key required. Set ${envVar} environment variable.`);
+    }
+
+    const baseUrl = this.config.provider === 'groq'
+      ? 'https://api.groq.com/openai/v1'
+      : 'https://api.openai.com/v1';
+
+    const response = await fetch(`${baseUrl}/chat/completions`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.config.apiKey}`,
+      },
+      body: JSON.stringify({
+        model: this.config.model,
+        max_tokens: this.config.maxTokens,
+        temperature: this.config.temperature,
         messages: [
           {
-            role: 'user',
-            content: prompt,
+            role: 'system',
+            content: 'You are a medical content specialist for Darwin-MFC clinical decision support.',
           },
+          { role: 'user', content: prompt },
         ],
       }),
     });
 
     if (!response.ok) {
       const error = await response.text();
-      throw new Error(`API call failed: ${response.status} - ${error}`);
+      throw new Error(`${this.config.provider} API failed: ${response.status} - ${error}`);
     }
 
     const data = await response.json();
-    const text = data.content[0]?.text || '';
+    return {
+      text: data.choices[0]?.message?.content || '',
+      usage: {
+        prompt: data.usage?.prompt_tokens || 0,
+        completion: data.usage?.completion_tokens || 0,
+        total: data.usage?.total_tokens || 0,
+      },
+    };
+  }
+
+  /**
+   * Call Ollama API (FREE, runs locally)
+   * No API key needed - just run `ollama serve` locally
+   */
+  private async callOllama(prompt: string): Promise<{
+    text: string;
+    usage: { prompt: number; completion: number; total: number };
+  }> {
+    const baseUrl = this.config.baseUrl || 'http://localhost:11434';
+
+    try {
+      const response = await fetch(`${baseUrl}/api/generate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: this.config.model,
+          prompt: prompt,
+          stream: false,
+          options: {
+            temperature: this.config.temperature,
+            num_predict: this.config.maxTokens,
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        const error = await response.text();
+        throw new Error(`Ollama API failed: ${response.status} - ${error}`);
+      }
+
+      const data = await response.json();
+      return {
+        text: data.response || '',
+        usage: {
+          prompt: data.prompt_eval_count || 0,
+          completion: data.eval_count || 0,
+          total: (data.prompt_eval_count || 0) + (data.eval_count || 0),
+        },
+      };
+    } catch (error) {
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        throw new Error(
+          'Cannot connect to Ollama. Make sure Ollama is running:\n' +
+          '  1. Install Ollama: https://ollama.ai\n' +
+          '  2. Run: ollama serve\n' +
+          '  3. Pull a model: ollama pull llama3.1'
+        );
+      }
+      throw error;
+    }
+  }
+
+  /**
+   * Call Google Gemini API (FREE tier available)
+   */
+  private async callGoogle(prompt: string): Promise<{
+    text: string;
+    usage: { prompt: number; completion: number; total: number };
+  }> {
+    if (!this.config.apiKey) {
+      throw new Error('API key required. Set GOOGLE_API_KEY environment variable.');
+    }
+
+    const response = await fetch(
+      `${this.config.baseUrl}/v1beta/models/${this.config.model}:generateContent?key=${this.config.apiKey}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: {
+            temperature: this.config.temperature,
+            maxOutputTokens: this.config.maxTokens,
+          },
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      const error = await response.text();
+      throw new Error(`Google API failed: ${response.status} - ${error}`);
+    }
+
+    const data = await response.json();
+    const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
 
     return {
       text,
       usage: {
-        prompt: data.usage?.input_tokens || 0,
-        completion: data.usage?.output_tokens || 0,
-        total: (data.usage?.input_tokens || 0) + (data.usage?.output_tokens || 0),
+        prompt: data.usageMetadata?.promptTokenCount || 0,
+        completion: data.usageMetadata?.candidatesTokenCount || 0,
+        total: data.usageMetadata?.totalTokenCount || 0,
       },
     };
   }
