@@ -16,6 +16,7 @@ export const doencasRaras: Partial<Doenca>[] = [
   {
     id: 'doenca-fabry',
     titulo: 'Doença de Fabry',
+    ciap2: ['T99'],
     categoria: 'outros',
     cid10: ['E75.2'],
     cid11: ['5C56.0Z'],
@@ -61,6 +62,7 @@ export const doencasRaras: Partial<Doenca>[] = [
   {
     id: 'doenca-gaucher',
     titulo: 'Doença de Gaucher',
+    ciap2: ['T99'],
     categoria: 'outros',
     cid10: ['E75.2'],
     cid11: ['5C56.1'],
@@ -100,6 +102,7 @@ export const doencasRaras: Partial<Doenca>[] = [
   {
     id: 'doenca-pompe',
     titulo: 'Doença de Pompe (Glicogenose Tipo II)',
+    ciap2: ['T99'],
     categoria: 'outros',
     cid10: ['E74.0'],
     cid11: ['5C50.10'],
@@ -145,6 +148,7 @@ export const doencasPediatricasExpandidas: Partial<Doenca>[] = [
   {
     id: 'fibrose-cistica',
     titulo: 'Fibrose Cística',
+    ciap2: ['R99'],
     categoria: 'pediatrico',
     cid10: ['E84'],
     cid11: ['CA25'],
@@ -186,6 +190,7 @@ export const doencasPediatricasExpandidas: Partial<Doenca>[] = [
   {
     id: 'espinha-bifida',
     titulo: 'Espinha Bífida',
+    ciap2: ['N85'],
     categoria: 'pediatrico',
     cid10: ['Q05'],
     cid11: ['LA02'],
@@ -231,6 +236,7 @@ export const doencasGeriatricasExpandidas: Partial<Doenca>[] = [
   {
     id: 'sindrome-fragilidade',
     titulo: 'Síndrome da Fragilidade',
+    ciap2: ['A04'],
     categoria: 'geriatrico',
     cid10: ['R54'],
     cid11: ['MG2A'],
@@ -269,6 +275,7 @@ export const doencasGeriatricasExpandidas: Partial<Doenca>[] = [
   {
     id: 'delirium',
     titulo: 'Delirium',
+    ciap2: ['P71'],
     categoria: 'geriatrico',
     cid10: ['F05'],
     cid11: ['6D70'],
@@ -317,6 +324,7 @@ export const doencasInfecciosasExpandidas: Partial<Doenca>[] = [
   {
     id: 'hepatite-a',
     titulo: 'Hepatite A',
+    ciap2: ['D72'],
     categoria: 'infecciosas',
     cid10: ['B15'],
     cid11: ['1D81'],
@@ -356,6 +364,7 @@ export const doencasInfecciosasExpandidas: Partial<Doenca>[] = [
   {
     id: 'hepatite-b',
     titulo: 'Hepatite B',
+    ciap2: ['D72'],
     categoria: 'infecciosas',
     cid10: ['B16', 'B18.0', 'B18.1'],
     cid11: ['1D82', '1D83'],
