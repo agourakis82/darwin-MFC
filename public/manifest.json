@@ -16,58 +16,10 @@
   "iarc_rating_id": "",
   "icons": [
     {
-      "src": "/icons/icon-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-128x128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-152x152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-maskable-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     },
     {
       "src": "/logos/sus-logo.svg",
@@ -81,47 +33,28 @@
       "name": "Diseases / Doenças",
       "short_name": "Diseases",
       "description": "300+ diseases with diagnosis and treatment",
-      "url": "/doencas",
-      "icons": [{"src": "/icons/shortcut-diseases.png", "sizes": "96x96"}]
+      "url": "/doencas"
     },
     {
       "name": "Medications / Medicamentos",
       "short_name": "Meds",
       "description": "400+ medications with dosing and interactions",
-      "url": "/medicamentos",
-      "icons": [{"src": "/icons/shortcut-meds.png", "sizes": "96x96"}]
+      "url": "/medicamentos"
     },
     {
       "name": "Calculators / Calculadoras",
       "short_name": "Calc",
       "description": "20+ clinical calculators",
-      "url": "/calculadoras",
-      "icons": [{"src": "/icons/shortcut-calc.png", "sizes": "96x96"}]
+      "url": "/calculadoras"
     },
     {
       "name": "Protocols / Protocolos",
       "short_name": "Protocols",
       "description": "Clinical protocols and flowcharts",
-      "url": "/protocolos",
-      "icons": [{"src": "/icons/shortcut-protocols.png", "sizes": "96x96"}]
+      "url": "/protocolos"
     }
   ],
-  "screenshots": [
-    {
-      "src": "/screenshots/home-wide.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Darwin MFC Home - Clinical Decision Support"
-    },
-    {
-      "src": "/screenshots/home-narrow.png",
-      "sizes": "750x1334",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Darwin MFC Mobile"
-    }
-  ],
+  "screenshots": [],
   "related_applications": [],
   "prefer_related_applications": false,
   "handle_links": "preferred",
