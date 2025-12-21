@@ -16,6 +16,7 @@ export const doencasEndocrinas: Doenca[] = [
     umlsCui: 'C0020676',
     ciap2: ['T86'],
     cid10: ['E03', 'E03.9', 'E06.3'],
+    cid11: ['5A00'],
     categoria: 'metabolico',
     quickView: {
       definicao: 'Síndrome clínica resultante da deficiência de hormônios tireoidianos (T3 e T4), com consequente lentificação generalizada dos processos metabólicos.',
@@ -213,6 +214,7 @@ export const doencasEndocrinas: Doenca[] = [
     umlsCui: 'C0028754',
     ciap2: ['T82', 'T83'],
     cid10: ['E66', 'E66.0', 'E66.9'],
+    cid11: ['5B81'],
     categoria: 'metabolico',
     quickView: {
       definicao: 'Doença crônica caracterizada pelo acúmulo excessivo de gordura corporal, com repercussões negativas sobre a saúde. Definida por IMC ≥30 kg/m².',

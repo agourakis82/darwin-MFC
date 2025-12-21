@@ -16,6 +16,7 @@ export const doencasCardiovasculares: Doenca[] = [
     umlsCui: 'C0018801',
     ciap2: ['K77'],
     cid10: ['I50', 'I50.0', 'I50.1', 'I50.9'],
+    cid11: ['BD10'],
     categoria: 'cardiovascular',
     quickView: {
       definicao: 'Síndrome clínica caracterizada pela incapacidade do coração de bombear sangue suficiente para atender às necessidades metabólicas dos tecidos, ou fazê-lo apenas com pressões de enchimento elevadas.',
@@ -232,6 +233,7 @@ export const doencasCardiovasculares: Doenca[] = [
     umlsCui: 'C0004238',
     ciap2: ['K78'],
     cid10: ['I48', 'I48.0', 'I48.1', 'I48.9'],
+    cid11: ['BC81.1'],
     categoria: 'cardiovascular',
     quickView: {
       definicao: 'Arritmia supraventricular caracterizada por ativação atrial desorganizada, irregular e rápida, com perda da contração atrial efetiva. É a arritmia sustentada mais comum.',
@@ -438,6 +440,7 @@ export const doencasCardiovasculares: Doenca[] = [
     umlsCui: 'C0010054',
     ciap2: ['K74', 'K76'],
     cid10: ['I25', 'I25.1', 'I25.9', 'I20.8'],
+    cid11: ['BA80'],
     categoria: 'cardiovascular',
     quickView: {
       definicao: 'Obstrução aterosclerótica das artérias coronárias levando a isquemia miocárdica durante esforço ou estresse. Caracteriza-se por angina típica previsível, estável em frequência e intensidade.',

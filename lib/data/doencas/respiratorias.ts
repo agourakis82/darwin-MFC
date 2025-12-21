@@ -16,6 +16,7 @@ export const doencasRespiratorias: Doenca[] = [
     umlsCui: 'C0024117',
     ciap2: ['R95'],
     cid10: ['J44', 'J44.0', 'J44.1', 'J44.9'],
+    cid11: ['CA22'],
     categoria: 'respiratorio',
     quickView: {
       definicao: 'Doença respiratória crônica prevenível e tratável, caracterizada por limitação persistente ao fluxo aéreo, geralmente progressiva e associada a resposta inflamatória crônica das vias aéreas e pulmões a partículas ou gases nocivos.',
@@ -232,6 +233,7 @@ export const doencasRespiratorias: Doenca[] = [
     umlsCui: 'C0694549',
     ciap2: ['R81'],
     cid10: ['J18', 'J15', 'J13', 'J14'],
+    cid11: ['CA40'],
     categoria: 'respiratorio',
     quickView: {
       definicao: 'Infecção aguda do parênquima pulmonar adquirida fora do ambiente hospitalar, caracterizada por sintomas respiratórios agudos e infiltrado pulmonar novo à radiografia.',
@@ -437,6 +439,7 @@ export const doencasRespiratorias: Doenca[] = [
     umlsCui: 'C0035457',
     ciap2: ['R97'],
     cid10: ['J30', 'J30.1', 'J30.4'],
+    cid11: ['CA08'],
     categoria: 'respiratorio',
     quickView: {
       definicao: 'Inflamação da mucosa nasal mediada por IgE, caracterizada por sintomas nasais (espirros, prurido, coriza e obstrução) após exposição a alérgenos.',

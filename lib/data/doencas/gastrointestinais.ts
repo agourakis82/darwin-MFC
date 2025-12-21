@@ -18,6 +18,7 @@ export const doencasGastrointestinais: Doenca[] = [
     umlsCui: 'C0017168',
     ciap2: ['D84'],
     cid10: ['K21', 'K21.0'],
+    cid11: ['DA22'],
     categoria: 'gastrointestinal',
     quickView: {
       definicao: 'Condição que se desenvolve quando o refluxo do conteúdo gástrico causa sintomas incômodos e/ou complicações. Manifestações típicas: pirose e regurgitação.',
@@ -216,6 +217,7 @@ export const doencasGastrointestinais: Doenca[] = [
     umlsCui: 'C0022104',
     ciap2: ['D93'],
     cid10: ['K58', 'K58.0', 'K58.9'],
+    cid11: ['DD91'],
     categoria: 'gastrointestinal',
     quickView: {
       definicao: 'Distúrbio funcional gastrointestinal caracterizado por dor abdominal recorrente associada a alteração do hábito intestinal, sem causa orgânica identificável.',
@@ -434,6 +436,7 @@ export const doencasGastrointestinais: Doenca[] = [
     umlsCui: 'C0017152',
     ciap2: ['D87'],
     cid10: ['K29', 'K30'],
+    cid11: ['DA42', 'DA40'],
     categoria: 'gastrointestinal',
     quickView: {
       definicao: 'Gastrite: inflamação da mucosa gástrica. Dispepsia: sintomas de dor/desconforto epigástrico sem causa orgânica identificável (funcional) ou secundária a doença (orgânica).',
