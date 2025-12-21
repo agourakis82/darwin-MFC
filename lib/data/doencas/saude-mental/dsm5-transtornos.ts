@@ -21,6 +21,10 @@ export const transtornosMentalDSM5: Array<Partial<DoencaMental> & { id: string; 
     cid10: ['F32', 'F33'],
     cid11: ['6A70', '6A71'],
     ciap2: ['P76'],
+    snomedCT: '35489007', // Major depressive disorder (disorder)
+    doid: 'DOID:1470',
+    meshId: 'D003865',
+    umlsCui: 'C1269683',
     dsm5: {
       code: '296.33', // Recurrent episode, severe
       codeAlternative: 'F32', // CID-10 mapping
@@ -156,6 +160,10 @@ export const transtornosMentalDSM5: Array<Partial<DoencaMental> & { id: string; 
     cid10: ['F41.1'],
     cid11: ['6B00'],
     ciap2: ['P74'],
+    snomedCT: '21897009', // Generalized anxiety disorder (disorder)
+    doid: 'DOID:14320',
+    meshId: 'D001008',
+    umlsCui: 'C0270458',
     dsm5: {
       code: '300.02',
       category: DSM5_CATEGORIES.ANXIETY,
@@ -238,6 +246,10 @@ export const transtornosMentalDSM5: Array<Partial<DoencaMental> & { id: string; 
     cid10: ['F41.0'],
     cid11: ['6B01'],
     ciap2: ['P74'],
+    snomedCT: '371631005', // Panic disorder (disorder)
+    doid: 'DOID:594',
+    meshId: 'D016584',
+    umlsCui: 'C0030319',
     dsm5: {
       code: '300.01',
       category: DSM5_CATEGORIES.ANXIETY,
@@ -306,6 +318,10 @@ export const transtornosMentalDSM5: Array<Partial<DoencaMental> & { id: string; 
     cid10: ['F31'],
     cid11: ['6A60'],
     ciap2: ['P73'],
+    snomedCT: '13746004', // Bipolar I disorder (disorder)
+    doid: 'DOID:3312',
+    meshId: 'D001714',
+    umlsCui: 'C0853193',
     dsm5: {
       code: '296.43', // Bipolar I, most recent episode manic, severe
       category: 'Bipolar and Related Disorders',
@@ -383,6 +399,10 @@ export const transtornosMentalDSM5: Array<Partial<DoencaMental> & { id: string; 
     cid10: ['F20'],
     cid11: ['6A20'],
     ciap2: ['P72'],
+    snomedCT: '58214004', // Schizophrenia (disorder)
+    doid: 'DOID:5419',
+    meshId: 'D012559',
+    umlsCui: 'C0036341',
     dsm5: {
       code: '295.90',
       category: 'Schizophrenia Spectrum and Other Psychotic Disorders',
@@ -473,6 +493,10 @@ export const transtornosMentalDSM5: Array<Partial<DoencaMental> & { id: string; 
     cid10: ['F43.1'],
     cid11: ['6B40'],
     ciap2: ['P74'],
+    snomedCT: '47505003', // Posttraumatic stress disorder (disorder)
+    doid: 'DOID:2055',
+    meshId: 'D013313',
+    umlsCui: 'C0038436',
     dsm5: {
       code: '309.81',
       category: DSM5_CATEGORIES.TRAUMA_STRESS,
@@ -566,6 +590,10 @@ export const transtornosMentalDSM5: Array<Partial<DoencaMental> & { id: string; 
     cid10: ['F42'],
     cid11: ['6B20'],
     ciap2: ['P79'],
+    snomedCT: '191736004', // Obsessive-compulsive disorder (disorder)
+    doid: 'DOID:10933',
+    meshId: 'D009771',
+    umlsCui: 'C0028768',
     dsm5: {
       code: '300.3',
       category: 'Obsessive-Compulsive and Related Disorders',

@@ -18,6 +18,10 @@ export const transtornosMentalDSM5Expansao: Array<Partial<DoencaMental> & Pick<D
     cid10: ['F34.1'],
     cid11: ['6A71'],
     ciap2: ['P76'],
+    snomedCT: '78667006', // Dysthymia (disorder)
+    doid: 'DOID:1596',
+    meshId: 'D019263',
+    umlsCui: 'C0013415',
     dsm5: {
       code: '300.4',
       category: DSM5_CATEGORIES.DEPRESSIVE,
@@ -85,6 +89,10 @@ export const transtornosMentalDSM5Expansao: Array<Partial<DoencaMental> & Pick<D
     cid10: ['F31.8'],
     cid11: ['6A60'],
     ciap2: ['P73'],
+    snomedCT: '83746006', // Bipolar II disorder (disorder)
+    doid: 'DOID:540',
+    meshId: 'D001714',
+    umlsCui: 'C0236788',
     dsm5: {
       code: '296.89',
       category: DSM5_CATEGORIES.MOOD,
@@ -153,6 +161,10 @@ export const transtornosMentalDSM5Expansao: Array<Partial<DoencaMental> & Pick<D
     cid10: ['F40.1'],
     cid11: ['6B04'],
     ciap2: ['P74'],
+    snomedCT: '25501002', // Social phobia (disorder)
+    doid: 'DOID:11257',
+    meshId: 'D010698',
+    umlsCui: 'C0031572',
     dsm5: {
       code: '300.23',
       category: DSM5_CATEGORIES.ANXIETY,
@@ -225,6 +237,10 @@ export const transtornosMentalDSM5Expansao: Array<Partial<DoencaMental> & Pick<D
     cid10: ['F40.0'],
     cid11: ['6B02'],
     ciap2: ['P74'],
+    snomedCT: '70691001', // Agoraphobia (disorder)
+    doid: 'DOID:11259',
+    meshId: 'D000379',
+    umlsCui: 'C0001818',
     dsm5: {
       code: '300.22',
       category: DSM5_CATEGORIES.ANXIETY,
@@ -291,6 +307,10 @@ export const transtornosMentalDSM5Expansao: Array<Partial<DoencaMental> & Pick<D
     cid10: ['F60.3'],
     cid11: ['6D10'],
     ciap2: ['P79'],
+    snomedCT: '20010003', // Borderline personality disorder (disorder)
+    doid: 'DOID:10930',
+    meshId: 'D001883',
+    umlsCui: 'C0006012',
     dsm5: {
       code: '301.83',
       category: DSM5_CATEGORIES.PERSONALITY,
@@ -368,6 +388,10 @@ export const transtornosMentalDSM5Expansao: Array<Partial<DoencaMental> & Pick<D
     cid10: ['F10'],
     cid11: ['6C40'],
     ciap2: ['P15', 'P16'],
+    snomedCT: '7200002', // Alcoholism (disorder)
+    doid: 'DOID:0050741',
+    meshId: 'D000437',
+    umlsCui: 'C0001973',
     dsm5: {
       code: '305.00', // Mild
       category: DSM5_CATEGORIES.SUBSTANCE,

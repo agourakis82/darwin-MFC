@@ -17,6 +17,10 @@ export const doencasNeurologicasRaras: Array<Partial<TranstornoNeurologico> & Pi
     cid10: ['G10'],
     cid11: ['8A01'],
     ciap2: ['N87'],
+    snomedCT: '58756001', // Huntington disease (disorder)
+    doid: 'DOID:12858',
+    meshId: 'D006816',
+    umlsCui: 'C0020179',
     classificacao: {
       tipo: 'doenca_neurodegenerativa',
       subtipo: 'transtorno_movimento',
@@ -89,6 +93,10 @@ export const doencasNeurologicasRaras: Array<Partial<TranstornoNeurologico> & Pi
     cid10: ['G12.2'],
     cid11: ['8B60'],
     ciap2: ['N87'],
+    snomedCT: '86044005', // Amyotrophic lateral sclerosis (disorder)
+    doid: 'DOID:332',
+    meshId: 'D000690',
+    umlsCui: 'C0002736',
     classificacao: {
       tipo: 'doenca_neurodegenerativa',
       subtipo: 'doenca_motoneuronio',
@@ -160,6 +168,10 @@ export const doencasNeurologicasRaras: Array<Partial<TranstornoNeurologico> & Pi
     cid10: ['G36.0'],
     cid11: ['8A45'],
     ciap2: ['N88'],
+    snomedCT: '6368000', // Neuromyelitis optica (disorder)
+    doid: 'DOID:8869',
+    meshId: 'D009471',
+    umlsCui: 'C0027873',
     classificacao: {
       tipo: 'doenca_desmielinizante',
       subtipo: 'neuromielite_optica',
@@ -236,6 +248,10 @@ export const doencasNeurologicasRaras: Array<Partial<TranstornoNeurologico> & Pi
     cid10: ['G70.0'],
     cid11: ['8C60'],
     ciap2: ['N87'],
+    snomedCT: '17097001', // Myasthenia gravis (disorder)
+    doid: 'DOID:437',
+    meshId: 'D009157',
+    umlsCui: 'C0026896',
     classificacao: {
       tipo: 'miopatia',
       subtipo: 'doenca_autoimune',
@@ -311,6 +327,10 @@ export const doencasNeurologicasRaras: Array<Partial<TranstornoNeurologico> & Pi
     cid10: ['G43.1'],
     cid11: ['8A80.2'],
     ciap2: ['N89'],
+    snomedCT: '230461009', // Hemiplegic migraine (disorder)
+    doid: 'DOID:6364',
+    meshId: 'D020325',
+    umlsCui: 'C0338484',
     classificacao: {
       tipo: 'cefaleia',
       subtipo: 'primaria',

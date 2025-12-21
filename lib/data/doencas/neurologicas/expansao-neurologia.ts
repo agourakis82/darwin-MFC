@@ -17,6 +17,10 @@ export const doencasNeurologicasExpansao: Array<Partial<TranstornoNeurologico> &
     cid10: ['G40.0', 'G40.1', 'G40.2'],
     cid11: ['8A60'],
     ciap2: ['N88'],
+    snomedCT: '69480007', // Focal epilepsy (disorder)
+    doid: 'DOID:4469',
+    meshId: 'D004828',
+    umlsCui: 'C0014547',
     classificacao: {
       tipo: 'epilepsia',
       subtipo: 'focal',
@@ -107,6 +111,10 @@ export const doencasNeurologicasExpansao: Array<Partial<TranstornoNeurologico> &
     cid10: ['G40.3', 'G40.4', 'G40.6'],
     cid11: ['8A61'],
     ciap2: ['N88'],
+    snomedCT: '84757009', // Generalized epilepsy (disorder)
+    doid: 'DOID:1826',
+    meshId: 'D020936',
+    umlsCui: 'C0270786',
     classificacao: {
       tipo: 'epilepsia',
       subtipo: 'generalizada',
@@ -180,6 +188,10 @@ export const doencasNeurologicasExpansao: Array<Partial<TranstornoNeurologico> &
     cid10: ['G44.2'],
     cid11: ['8A81'],
     ciap2: ['N89'],
+    snomedCT: '398057008', // Tension-type headache (disorder)
+    doid: 'DOID:9565',
+    meshId: 'D018781',
+    umlsCui: 'C0033893',
     classificacao: {
       tipo: 'cefaleia',
       subtipo: 'primaria',
@@ -229,6 +241,10 @@ export const doencasNeurologicasExpansao: Array<Partial<TranstornoNeurologico> &
     cid10: ['G44.0'],
     cid11: ['8A82'],
     ciap2: ['N89'],
+    snomedCT: '193031009', // Cluster headache syndrome (disorder)
+    doid: 'DOID:9634',
+    meshId: 'D003027',
+    umlsCui: 'C0009043',
     classificacao: {
       tipo: 'cefaleia',
       subtipo: 'primaria',
@@ -286,6 +302,10 @@ export const doencasNeurologicasExpansao: Array<Partial<TranstornoNeurologico> &
     cid10: ['G63.2', 'E11.4'],
     cid11: ['8C03', '5A10'],
     ciap2: ['N94', 'T90'],
+    snomedCT: '230572002', // Diabetic peripheral neuropathy (disorder)
+    doid: 'DOID:5682',
+    meshId: 'D003929',
+    umlsCui: 'C0011882',
     classificacao: {
       tipo: 'neuropatia',
       subtipo: 'polineuropatia',
@@ -365,6 +385,10 @@ export const doencasNeurologicasExpansao: Array<Partial<TranstornoNeurologico> &
     cid10: ['G56.0'],
     cid11: ['8C7Y'],
     ciap2: ['L83'],
+    snomedCT: '57406009', // Carpal tunnel syndrome (disorder)
+    doid: 'DOID:12169',
+    meshId: 'D002349',
+    umlsCui: 'C0007286',
     classificacao: {
       tipo: 'neuropatia',
       subtipo: 'mononeuropatia',
@@ -437,6 +461,10 @@ export const doencasNeurologicasExpansao: Array<Partial<TranstornoNeurologico> &
     cid10: ['G20'],
     cid11: ['8A00'],
     ciap2: ['N87'],
+    snomedCT: '49049000', // Parkinson disease (disorder)
+    doid: 'DOID:14330',
+    meshId: 'D010300',
+    umlsCui: 'C0030567',
     classificacao: {
       tipo: 'doenca_neurodegenerativa',
       subtipo: 'parkinsonismo',
@@ -514,6 +542,10 @@ export const doencasNeurologicasExpansao: Array<Partial<TranstornoNeurologico> &
     cid10: ['G35'],
     cid11: ['8A40'],
     ciap2: ['N88'],
+    snomedCT: '24700007', // Multiple sclerosis (disorder)
+    doid: 'DOID:2377',
+    meshId: 'D009103',
+    umlsCui: 'C0026769',
     classificacao: {
       tipo: 'doenca_desmielinizante',
       subtipo: 'esclerose_multipla',

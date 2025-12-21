@@ -18,6 +18,10 @@ export const transtornosMentalRaros: Array<Partial<DoencaMental> & Pick<DoencaMe
     cid10: ['F06.7'],
     cid11: ['6D70'],
     ciap2: ['P70'],
+    snomedCT: '386806002', // Mild cognitive disorder (disorder)
+    doid: 'DOID:0060469',
+    meshId: 'D060825',
+    umlsCui: 'C1270972',
     dsm5: {
       code: '331.83',
       category: DSM5_CATEGORIES.NEUROCOGNITIVE,
@@ -98,6 +102,10 @@ export const transtornosMentalRaros: Array<Partial<DoencaMental> & Pick<DoencaMe
     cid10: ['F44.81'],
     cid11: ['6B64'],
     ciap2: ['P79'],
+    snomedCT: '32388005', // Dissociative identity disorder (disorder)
+    doid: 'DOID:1532',
+    meshId: 'D009105',
+    umlsCui: 'C0026847',
     dsm5: {
       code: '300.14',
       category: DSM5_CATEGORIES.DISSOCIATIVE,
@@ -163,6 +171,10 @@ export const transtornosMentalRaros: Array<Partial<DoencaMental> & Pick<DoencaMe
     cid10: ['F50.0'],
     cid11: ['6B80'],
     ciap2: ['P99'],
+    snomedCT: '56882008', // Anorexia nervosa (disorder)
+    doid: 'DOID:8689',
+    meshId: 'D000856',
+    umlsCui: 'C0003125',
     dsm5: {
       code: '307.1',
       category: DSM5_CATEGORIES.FEEDING_EATING,
@@ -244,6 +256,10 @@ export const transtornosMentalRaros: Array<Partial<DoencaMental> & Pick<DoencaMe
     cid10: ['F50.2'],
     cid11: ['6B81'],
     ciap2: ['P99'],
+    snomedCT: '78004001', // Bulimia nervosa (disorder)
+    doid: 'DOID:8513',
+    meshId: 'D052018',
+    umlsCui: 'C0006370',
     dsm5: {
       code: '307.51',
       category: DSM5_CATEGORIES.FEEDING_EATING,
@@ -312,6 +328,10 @@ export const transtornosMentalRaros: Array<Partial<DoencaMental> & Pick<DoencaMe
     cid10: ['F84.0'],
     cid11: ['6A02'],
     ciap2: ['P15'],
+    snomedCT: '35919005', // Autism spectrum disorder (disorder)
+    doid: 'DOID:0060041',
+    meshId: 'D000067877',
+    umlsCui: 'C1510586',
     dsm5: {
       code: '299.00',
       category: DSM5_CATEGORIES.NEURODEVELOPMENTAL,
@@ -400,6 +420,10 @@ export const transtornosMentalRaros: Array<Partial<DoencaMental> & Pick<DoencaMe
     cid10: ['G47.4'],
     cid11: ['7A20'],
     ciap2: ['P06'],
+    snomedCT: '60380001', // Narcolepsy (disorder)
+    doid: 'DOID:8986',
+    meshId: 'D009290',
+    umlsCui: 'C0027404',
     dsm5: {
       code: '347.00',
       category: DSM5_CATEGORIES.SLEEP_WAKE,
@@ -462,6 +486,10 @@ export const transtornosMentalRaros: Array<Partial<DoencaMental> & Pick<DoencaMe
     cid10: ['F12'],
     cid11: ['6C41'],
     ciap2: ['P15', 'P16'],
+    snomedCT: '37344009', // Cannabis dependence (disorder)
+    doid: 'DOID:0050742',
+    meshId: 'D002189',
+    umlsCui: 'C0006870',
     dsm5: {
       code: '304.30',
       category: DSM5_CATEGORIES.SUBSTANCE,
