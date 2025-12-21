@@ -14,6 +14,9 @@ export const doencasSaudeMental: Doenca[] = [
     titulo: 'Transtorno de Ansiedade Generalizada',
     sinonimos: ['TAG', 'Ansiedade crônica', 'Ansiedade generalizada'],
     doid: 'DOID:14320', // generalized anxiety disorder
+    snomedCT: '21897009', // Generalized anxiety disorder (disorder)
+    meshId: 'D001008',
+    umlsCui: 'C0270458',
     ciap2: ['P74'],
     cid10: ['F41.1'],
     cid11: ['6B00'],
@@ -222,6 +225,9 @@ export const doencasSaudeMental: Doenca[] = [
     titulo: 'Transtorno de Pânico',
     sinonimos: ['Síndrome do pânico', 'Ataques de pânico'],
     doid: 'DOID:594', // panic disorder
+    snomedCT: '371631005', // Panic disorder (disorder)
+    meshId: 'D016584',
+    umlsCui: 'C0030319',
     ciap2: ['P74'],
     cid10: ['F41.0'],
     cid11: ['6B01'],
@@ -425,6 +431,9 @@ export const doencasSaudeMental: Doenca[] = [
     titulo: 'Insônia',
     sinonimos: ['Transtorno de insônia', 'Insônia crônica', 'Distúrbio do sono'],
     doid: 'DOID:526', // insomnia
+    snomedCT: '193462001', // Insomnia (disorder)
+    meshId: 'D007319',
+    umlsCui: 'C0917801',
     ciap2: ['P06'],
     cid10: ['G47.0', 'F51.0'],
     cid11: ['7A00'],

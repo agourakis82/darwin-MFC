@@ -13,6 +13,9 @@ export const doencasGastrointestinais: Doenca[] = [
     titulo: 'Doença do Refluxo Gastroesofágico',
     sinonimos: ['DRGE', 'Refluxo', 'Esofagite de refluxo'],
     doid: 'DOID:8534', // gastroesophageal reflux disease
+    snomedCT: '235595009', // Gastroesophageal reflux disease (disorder)
+    meshId: 'D005764',
+    umlsCui: 'C0017168',
     ciap2: ['D84'],
     cid10: ['K21', 'K21.0'],
     categoria: 'gastrointestinal',
@@ -208,6 +211,9 @@ export const doencasGastrointestinais: Doenca[] = [
     titulo: 'Síndrome do Intestino Irritável',
     sinonimos: ['SII', 'Cólon irritável', 'IBS'],
     doid: 'DOID:9778', // irritable bowel syndrome
+    snomedCT: '10743008', // Irritable bowel syndrome (disorder)
+    meshId: 'D043183',
+    umlsCui: 'C0022104',
     ciap2: ['D93'],
     cid10: ['K58', 'K58.0', 'K58.9'],
     categoria: 'gastrointestinal',
@@ -423,6 +429,9 @@ export const doencasGastrointestinais: Doenca[] = [
     titulo: 'Gastrite e Dispepsia',
     sinonimos: ['Gastrite crônica', 'Dispepsia funcional', 'Má digestão'],
     doid: 'DOID:4029', // gastritis
+    snomedCT: '4556007', // Gastritis (disorder)
+    meshId: 'D005756',
+    umlsCui: 'C0017152',
     ciap2: ['D87'],
     cid10: ['K29', 'K30'],
     categoria: 'gastrointestinal',
