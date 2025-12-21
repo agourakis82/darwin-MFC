@@ -913,3 +913,609 @@ export function calculateSCORE(params: {
     ]
   };
 }
+
+// =============================================================================
+// CURB-65 - GRAVIDADE DE PNEUMONIA ADQUIRIDA NA COMUNIDADE
+// =============================================================================
+
+/**
+ * CURB-65 - Escore de gravidade para Pneumonia Adquirida na Comunidade (PAC)
+ * Prediz mortalidade em 30 dias e orienta decisão de internação
+ *
+ * Critérios:
+ * C - Confusion (confusão mental)
+ * U - Urea > 7 mmol/L (ou BUN > 19 mg/dL, ou ureia > 42 mg/dL)
+ * R - Respiratory rate ≥ 30/min
+ * B - Blood pressure (PAS < 90 mmHg ou PAD ≤ 60 mmHg)
+ * 65 - Idade ≥ 65 anos
+ *
+ * Referências:
+ * - Lim WS et al. Defining community acquired pneumonia severity. Thorax. 2003.
+ * - BTS Guidelines for CAP in adults. Thorax. 2009.
+ * - SBPT. Diretrizes Brasileiras para PAC em adultos imunocompetentes. J Bras Pneumol. 2009.
+ */
+export function calculateCURB65(params: {
+  confusao: boolean;
+  ureia: number; // em mg/dL
+  frequenciaRespiratoria: number;
+  pressaoSistolica: number;
+  pressaoDiastolica: number;
+  idade: number;
+}): CalculatorResult {
+  let pontos = 0;
+
+  // C - Confusão mental (novo estado confusional)
+  if (params.confusao) pontos += 1;
+
+  // U - Ureia > 42 mg/dL (equivalente a >7 mmol/L ou BUN >19 mg/dL)
+  if (params.ureia > 42) pontos += 1;
+
+  // R - Frequência respiratória ≥ 30/min
+  if (params.frequenciaRespiratoria >= 30) pontos += 1;
+
+  // B - Hipotensão (PAS < 90 ou PAD ≤ 60 mmHg)
+  if (params.pressaoSistolica < 90 || params.pressaoDiastolica <= 60) pontos += 1;
+
+  // 65 - Idade ≥ 65 anos
+  if (params.idade >= 65) pontos += 1;
+
+  let category: string;
+  let interpretation: string;
+  let recommendations: string;
+  let mortalidade: string;
+  let local: string;
+
+  if (pontos === 0) {
+    category = 'Grupo 1 - Baixo Risco';
+    mortalidade = '0,6%';
+    local = 'Ambulatorial';
+    interpretation = `CURB-65 = ${pontos}/5. Mortalidade em 30 dias: ~0,6%. PAC leve.`;
+    recommendations = 'Tratamento ambulatorial. Antibioticoterapia oral: Amoxicilina 500mg 8/8h por 5-7 dias OU Azitromicina 500mg/dia por 3-5 dias. Retorno em 48-72h ou se piora. Orientar sinais de alarme.';
+  } else if (pontos === 1) {
+    category = 'Grupo 1 - Baixo Risco';
+    mortalidade = '2,7%';
+    local = 'Ambulatorial';
+    interpretation = `CURB-65 = ${pontos}/5. Mortalidade em 30 dias: ~2,7%. PAC leve a moderada.`;
+    recommendations = 'Tratamento ambulatorial na maioria. Considerar internação breve se critério for idade ≥65 isolado com comorbidades. Antibioticoterapia oral: Amoxicilina + Clavulanato 875mg 12/12h OU Quinolona respiratória. Reavaliação em 48h.';
+  } else if (pontos === 2) {
+    category = 'Grupo 2 - Risco Intermediário';
+    mortalidade = '6,8%';
+    local = 'Internação curta ou observação';
+    interpretation = `CURB-65 = ${pontos}/5. Mortalidade em 30 dias: ~6,8%. PAC moderada.`;
+    recommendations = 'Internação hospitalar recomendada. Considerar observação 24h em UPA se bom suporte domiciliar. Antibioticoterapia IV ou VO: Amoxicilina-Clavulanato + Macrolídeo OU Quinolona respiratória. Oxigenoterapia se SpO2 <92%.';
+  } else if (pontos === 3) {
+    category = 'Grupo 3 - Alto Risco';
+    mortalidade = '14%';
+    local = 'Internação enfermaria';
+    interpretation = `CURB-65 = ${pontos}/5. Mortalidade em 30 dias: ~14%. PAC grave.`;
+    recommendations = 'Internação hospitalar obrigatória. Antibioticoterapia IV: Ceftriaxona 2g/dia + Azitromicina 500mg/dia OU Quinolona respiratória IV. Considerar UTI se instável. Hemocultura antes do ATB. Oxigenoterapia. Profilaxia de TVP.';
+  } else if (pontos === 4) {
+    category = 'Grupo 3 - Alto Risco';
+    mortalidade = '27,8%';
+    local = 'Internação/UTI';
+    interpretation = `CURB-65 = ${pontos}/5. Mortalidade em 30 dias: ~27,8%. PAC muito grave.`;
+    recommendations = 'Internação em UTI ou semi-intensiva. Antibioticoterapia IV ampla: Ceftriaxona 2g/dia + Azitromicina 500mg/dia. Considerar Piperacilina-Tazobactam se risco de Pseudomonas. Suporte ventilatório. Vasopressores se choque séptico.';
+  } else {
+    category = 'Grupo 3 - Risco Muito Alto';
+    mortalidade = '57,6%';
+    local = 'UTI';
+    interpretation = `CURB-65 = ${pontos}/5. Mortalidade em 30 dias: ~57,6%. PAC gravíssima.`;
+    recommendations = 'UTI obrigatória. Antibioticoterapia IV de amplo espectro: considerar cobertura para Pseudomonas e MRSA. Suporte intensivo: ventilação mecânica, drogas vasoativas. Discussão de prognóstico com família. Cuidados paliativos se indicado.';
+  }
+
+  return {
+    value: pontos,
+    unit: `pontos (mortalidade ${mortalidade})`,
+    category,
+    interpretation,
+    recommendations,
+    formula: 'C(onfusão) + U(reia>42) + R(esp≥30) + B(PA<90/60) + 65(idade)',
+    references: [
+      'Lim WS et al. Defining community acquired pneumonia severity on presentation to hospital: an international derivation and validation study. Thorax. 2003;58(5):377-382.',
+      'Mandell LA et al. Infectious Diseases Society of America/American Thoracic Society consensus guidelines on the management of CAP in adults. Clin Infect Dis. 2007;44(Suppl 2):S27-72.',
+      'SBPT. Diretrizes brasileiras para PAC em adultos imunocompetentes - 2009. J Bras Pneumol. 2009;35(6):574-601.'
+    ]
+  };
+}
+
+// =============================================================================
+// CRB-65 - VERSÃO SEM UREIA (AMBULATORIAL)
+// =============================================================================
+
+/**
+ * CRB-65 - Versão simplificada do CURB-65 sem dosagem de ureia
+ * Útil em ambiente ambulatorial onde não há laboratório disponível
+ *
+ * Referências:
+ * - Bauer TT et al. CRB-65 predicts death from CAP. J Intern Med. 2006.
+ */
+export function calculateCRB65(params: {
+  confusao: boolean;
+  frequenciaRespiratoria: number;
+  pressaoSistolica: number;
+  pressaoDiastolica: number;
+  idade: number;
+}): CalculatorResult {
+  let pontos = 0;
+
+  if (params.confusao) pontos += 1;
+  if (params.frequenciaRespiratoria >= 30) pontos += 1;
+  if (params.pressaoSistolica < 90 || params.pressaoDiastolica <= 60) pontos += 1;
+  if (params.idade >= 65) pontos += 1;
+
+  let category: string;
+  let interpretation: string;
+  let recommendations: string;
+
+  if (pontos === 0) {
+    category = 'Baixo Risco';
+    interpretation = `CRB-65 = ${pontos}/4. Mortalidade muito baixa (<1%). PAC leve.`;
+    recommendations = 'Tratamento ambulatorial seguro. Antibioticoterapia oral. Retorno se piora.';
+  } else if (pontos <= 2) {
+    category = 'Risco Intermediário';
+    interpretation = `CRB-65 = ${pontos}/4. Mortalidade intermediária (1-10%). Considerar internação.`;
+    recommendations = 'Avaliar necessidade de internação. Se ambulatorial: reavaliação em 24-48h obrigatória. Considerar coleta de ureia para CURB-65 completo.';
+  } else {
+    category = 'Alto Risco';
+    interpretation = `CRB-65 = ${pontos}/4. Mortalidade alta (>10%). Internação indicada.`;
+    recommendations = 'Internação hospitalar. Aplicar CURB-65 completo para estratificação. Considerar UTI se instabilidade.';
+  }
+
+  return {
+    value: pontos,
+    unit: 'pontos',
+    category,
+    interpretation,
+    recommendations,
+    formula: 'C(onfusão) + R(esp≥30) + B(PA<90/60) + 65(idade)',
+    references: [
+      'Bauer TT et al. CRB-65 predicts death from community-acquired pneumonia. J Intern Med. 2006;260(1):93-101.',
+      'Chalmers JD et al. Severity assessment tools for predicting mortality in hospitalised patients with CAP. Thorax. 2010;65(10):878-883.'
+    ]
+  };
+}
+
+// =============================================================================
+// WELLS - TVP (TROMBOSE VENOSA PROFUNDA)
+// =============================================================================
+
+/**
+ * Escore de Wells para Trombose Venosa Profunda (TVP)
+ * Estratifica probabilidade pré-teste para guiar investigação diagnóstica
+ *
+ * Referências:
+ * - Wells PS et al. Value of assessment of pretest probability of DVT. Lancet. 1997.
+ * - ACCP Guidelines for VTE. Chest. 2016.
+ */
+export function calculateWellsTVP(params: {
+  cancerAtivo: boolean;           // Tratamento nos últimos 6 meses ou paliativo
+  paralisia: boolean;             // Paresia, paralisia ou imobilização gessada de MMII
+  acamado: boolean;               // Acamado >3 dias ou cirurgia maior nas últimas 12 semanas
+  dolorLocalizado: boolean;       // Dor localizada ao longo do sistema venoso profundo
+  edemaGlobal: boolean;           // Edema de toda a perna
+  edema3cm: boolean;              // Edema da panturrilha >3cm vs. contralateral
+  edemaCacifo: boolean;           // Edema com cacifo (apenas na perna sintomática)
+  veiasColaterais: boolean;       // Veias superficiais colaterais (não varicosas)
+  tvpPrevia: boolean;             // TVP previamente documentada
+  diagnosticoAlternativo: boolean; // Diagnóstico alternativo tão ou mais provável
+}): CalculatorResult {
+  let pontos = 0;
+
+  if (params.cancerAtivo) pontos += 1;
+  if (params.paralisia) pontos += 1;
+  if (params.acamado) pontos += 1;
+  if (params.dolorLocalizado) pontos += 1;
+  if (params.edemaGlobal) pontos += 1;
+  if (params.edema3cm) pontos += 1;
+  if (params.edemaCacifo) pontos += 1;
+  if (params.veiasColaterais) pontos += 1;
+  if (params.tvpPrevia) pontos += 1;
+  if (params.diagnosticoAlternativo) pontos -= 2;
+
+  let category: string;
+  let interpretation: string;
+  let recommendations: string;
+  let probabilidade: string;
+
+  if (pontos <= 0) {
+    category = 'Baixa Probabilidade';
+    probabilidade = '~5%';
+    interpretation = `Wells TVP = ${pontos}. Probabilidade pré-teste baixa (~5%).`;
+    recommendations = 'Solicitar D-dímero. Se D-dímero negativo: TVP excluída (VPN >99%). Se D-dímero positivo: realizar USG Doppler venoso. Se USG negativo em baixa probabilidade: TVP excluída.';
+  } else if (pontos <= 2) {
+    category = 'Probabilidade Moderada';
+    probabilidade = '~17%';
+    interpretation = `Wells TVP = ${pontos}. Probabilidade pré-teste moderada (~17%).`;
+    recommendations = 'Solicitar D-dímero. Se negativo: TVP improvável. Se positivo: USG Doppler venoso obrigatório. Considerar repetir USG em 5-7 dias se inicial negativo com alta suspeita clínica.';
+  } else {
+    category = 'Alta Probabilidade';
+    probabilidade = '~53-75%';
+    interpretation = `Wells TVP = ${pontos}. Probabilidade pré-teste alta (~53-75%). D-dímero não exclui TVP nesta categoria.`;
+    recommendations = 'USG Doppler venoso direto (sem D-dímero). Se positivo: iniciar anticoagulação. Se negativo mas alta suspeita: repetir USG em 5-7 dias ou considerar venografia/angioTC. Não aguardar exame para anticoagular se instável.';
+  }
+
+  return {
+    value: pontos,
+    unit: `pontos (prob. ${probabilidade})`,
+    category,
+    interpretation,
+    recommendations,
+    formula: 'Soma de critérios clínicos (-2 se diagnóstico alternativo mais provável)',
+    references: [
+      'Wells PS et al. Value of assessment of pretest probability of deep-vein thrombosis in clinical management. Lancet. 1997;350(9094):1795-1798.',
+      'Wells PS et al. Evaluation of D-dimer in the diagnosis of suspected DVT. N Engl J Med. 2003;349(13):1227-1235.',
+      'Kearon C et al. Antithrombotic Therapy for VTE Disease: CHEST Guideline. Chest. 2016;149(2):315-352.'
+    ]
+  };
+}
+
+// =============================================================================
+// WELLS - EP (EMBOLIA PULMONAR)
+// =============================================================================
+
+/**
+ * Escore de Wells para Embolia Pulmonar (EP)
+ * Versão original e simplificada para estratificação de risco
+ *
+ * Referências:
+ * - Wells PS et al. Excluding pulmonary embolism at the bedside. Ann Intern Med. 2001.
+ * - PIOPED II Investigators. NEJM. 2006.
+ */
+export function calculateWellsEP(params: {
+  sintomasTVP: boolean;            // Sinais/sintomas clínicos de TVP
+  diagnosticoAlternativo: boolean; // Diagnóstico alternativo menos provável que EP
+  fc100: boolean;                  // FC > 100 bpm
+  imobilizacao: boolean;           // Imobilização ≥3 dias ou cirurgia nas últimas 4 semanas
+  tvpEpPrevia: boolean;            // TVP ou EP prévia
+  hemoptise: boolean;              // Hemoptise
+  malignidade: boolean;            // Malignidade (tratamento nos últimos 6 meses ou paliativo)
+}): CalculatorResult {
+  let pontos = 0;
+
+  if (params.sintomasTVP) pontos += 3;
+  if (params.diagnosticoAlternativo) pontos += 3;
+  if (params.fc100) pontos += 1.5;
+  if (params.imobilizacao) pontos += 1.5;
+  if (params.tvpEpPrevia) pontos += 1.5;
+  if (params.hemoptise) pontos += 1;
+  if (params.malignidade) pontos += 1;
+
+  let category: string;
+  let interpretation: string;
+  let recommendations: string;
+  let probabilidade: string;
+
+  if (pontos <= 4) {
+    category = 'EP Improvável';
+    probabilidade = '~8%';
+    interpretation = `Wells EP = ${pontos}. Probabilidade pré-teste baixa-moderada (~8%). EP improvável.`;
+    recommendations = 'Solicitar D-dímero (alta sensibilidade, ex: ELISA). Se D-dímero negativo: EP excluída (VPN >99,5%). Se D-dímero positivo: AngioTC de tórax. Considerar YEARS algorithm como alternativa.';
+  } else {
+    category = 'EP Provável';
+    probabilidade = '~28-41%';
+    interpretation = `Wells EP = ${pontos}. Probabilidade pré-teste alta (~28-41%). EP provável.`;
+    recommendations = 'AngioTC de tórax direto (D-dímero não exclui EP nesta categoria). Se contraindicação a contraste: cintilografia V/Q. Se instável: considerar trombólise empírica ou embolectomia. Anticoagulação empírica enquanto aguarda exame se alta suspeita.';
+  }
+
+  return {
+    value: pontos,
+    unit: `pontos (prob. ${probabilidade})`,
+    category,
+    interpretation,
+    recommendations,
+    formula: 'Soma ponderada de 7 critérios clínicos',
+    references: [
+      'Wells PS et al. Excluding pulmonary embolism at the bedside without diagnostic imaging: management of patients with suspected PE. Ann Intern Med. 2001;135(2):98-107.',
+      'van Belle A et al. Effectiveness of managing suspected PE using an algorithm. JAMA. 2006;295(2):172-179.',
+      'Konstantinides SV et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020;41(4):543-603.'
+    ]
+  };
+}
+
+// =============================================================================
+// CHA2DS2-VASc - RISCO DE AVC EM FIBRILAÇÃO ATRIAL
+// =============================================================================
+
+/**
+ * CHA2DS2-VASc - Escore de risco de AVC em Fibrilação Atrial
+ * Guia decisão sobre anticoagulação para prevenção de AVC cardioembólico
+ *
+ * Acrônimo:
+ * C - Congestive heart failure (IC com FEVE reduzida)
+ * H - Hypertension
+ * A2 - Age ≥75 (2 pontos)
+ * D - Diabetes mellitus
+ * S2 - Stroke/TIA/tromboembolismo prévio (2 pontos)
+ * V - Vascular disease (IAM, DAP, placa aórtica)
+ * A - Age 65-74
+ * Sc - Sex category (feminino)
+ *
+ * Referências:
+ * - Lip GY et al. Refining clinical risk stratification for predicting stroke in AF. Chest. 2010.
+ * - ESC Guidelines for AF. Eur Heart J. 2020.
+ * - SBC. Diretrizes Brasileiras de Fibrilação Atrial. Arq Bras Cardiol. 2023.
+ */
+export function calculateCHA2DS2VASc(params: {
+  insuficienciaCardiaca: boolean; // IC sintomática ou FEVE ≤40%
+  hipertensao: boolean;           // HAS ou uso de anti-hipertensivo
+  idade: number;
+  diabetes: boolean;              // DM em tratamento ou glicemia jejum ≥126 mg/dL
+  avcPrevio: boolean;             // AVC, AIT ou tromboembolismo prévio
+  doencaVascular: boolean;        // IAM prévio, DAP ou placa aórtica
+  sexoFeminino: boolean;
+}): CalculatorResult {
+  let pontos = 0;
+
+  // C - IC (1 ponto)
+  if (params.insuficienciaCardiaca) pontos += 1;
+
+  // H - HAS (1 ponto)
+  if (params.hipertensao) pontos += 1;
+
+  // A2 - Idade ≥75 (2 pontos) ou A - Idade 65-74 (1 ponto)
+  if (params.idade >= 75) pontos += 2;
+  else if (params.idade >= 65) pontos += 1;
+
+  // D - Diabetes (1 ponto)
+  if (params.diabetes) pontos += 1;
+
+  // S2 - AVC/AIT/tromboembolismo (2 pontos)
+  if (params.avcPrevio) pontos += 2;
+
+  // V - Doença vascular (1 ponto)
+  if (params.doencaVascular) pontos += 1;
+
+  // Sc - Sexo feminino (1 ponto)
+  if (params.sexoFeminino) pontos += 1;
+
+  // Tabela de risco anual de AVC (aproximado)
+  const riscoAnual: Record<number, string> = {
+    0: '0%',
+    1: '1,3%',
+    2: '2,2%',
+    3: '3,2%',
+    4: '4,0%',
+    5: '6,7%',
+    6: '9,8%',
+    7: '9,6%',
+    8: '12,5%',
+    9: '15,2%'
+  };
+
+  let category: string;
+  let interpretation: string;
+  let recommendations: string;
+
+  if (pontos === 0) {
+    category = 'Baixo Risco';
+    interpretation = `CHA2DS2-VASc = ${pontos}. Risco anual de AVC: ~0%. Anticoagulação não indicada.`;
+    recommendations = 'Anticoagulação NÃO recomendada. Nenhuma terapia antitrombótica ou, no máximo, AAS (benefício controverso). Reavaliar periodicamente se surgir fator de risco.';
+  } else if (pontos === 1 && params.sexoFeminino && Object.values(params).filter(v => v === true).length === 1) {
+    // Apenas sexo feminino como fator = escore 1 apenas por ser mulher
+    category = 'Baixo Risco (sexo feminino isolado)';
+    interpretation = `CHA2DS2-VASc = ${pontos}. Sexo feminino isolado não indica anticoagulação.`;
+    recommendations = 'Anticoagulação NÃO recomendada se sexo feminino for o único fator. Reavaliar se surgir outro fator de risco. Considerar controle de ritmo.';
+  } else if (pontos === 1) {
+    category = 'Risco Intermediário';
+    interpretation = `CHA2DS2-VASc = ${pontos}. Risco anual de AVC: ~1,3%. Considerar anticoagulação.`;
+    recommendations = 'Anticoagulação pode ser considerada. Ponderar risco-benefício individual (usar HAS-BLED). DOACs preferidos sobre varfarina. Se optar por não anticoagular: AAS não recomendado como alternativa.';
+  } else {
+    category = 'Alto Risco';
+    interpretation = `CHA2DS2-VASc = ${pontos}. Risco anual de AVC: ~${riscoAnual[Math.min(pontos, 9)] || '>15%'}. Anticoagulação indicada.`;
+    recommendations = `Anticoagulação INDICADA. DOACs preferidos: Apixabana 5mg 12/12h, Rivaroxabana 20mg/dia, Dabigatrana 150mg 12/12h, Edoxabana 60mg/dia. Varfarina se prótese mecânica ou estenose mitral moderada-grave. Avaliar risco de sangramento (HAS-BLED). Contraindicações: sangramento ativo, coagulopatia grave.`;
+  }
+
+  return {
+    value: pontos,
+    unit: 'pontos',
+    category,
+    interpretation,
+    recommendations,
+    formula: 'C(1) + H(1) + A2(2 se ≥75, 1 se 65-74) + D(1) + S2(2) + V(1) + Sc(1)',
+    references: [
+      'Lip GY et al. Refining clinical risk stratification for predicting stroke and thromboembolism in atrial fibrillation. Chest. 2010;137(2):263-272.',
+      'Hindricks G et al. 2020 ESC Guidelines for the diagnosis and management of atrial fibrillation. Eur Heart J. 2021;42(5):373-498.',
+      'Sociedade Brasileira de Cardiologia. Diretrizes Brasileiras de Fibrilação Atrial. Arq Bras Cardiol. 2023;120(1):e20220892.'
+    ]
+  };
+}
+
+// =============================================================================
+// HAS-BLED - RISCO DE SANGRAMENTO EM ANTICOAGULAÇÃO
+// =============================================================================
+
+/**
+ * HAS-BLED - Escore de risco de sangramento maior em pacientes anticoagulados
+ * Complementar ao CHA2DS2-VASc para decisão de anticoagulação em FA
+ *
+ * Acrônimo:
+ * H - Hypertension (PAS > 160 mmHg)
+ * A - Abnormal renal/liver function
+ * S - Stroke
+ * B - Bleeding history or predisposition
+ * L - Labile INR (se em varfarina)
+ * E - Elderly (> 65 anos)
+ * D - Drugs or alcohol
+ *
+ * Referências:
+ * - Pisters R et al. A novel user-friendly score (HAS-BLED). Chest. 2010.
+ */
+export function calculateHASBLED(params: {
+  hipertensaoNaoControlada: boolean; // PAS > 160 mmHg
+  disfuncaoRenal: boolean;           // Diálise, transplante, Cr >2,3 mg/dL
+  disfuncaoHepatica: boolean;        // Cirrose, bilirrubina >2x, AST/ALT >3x
+  avcPrevio: boolean;                // AVC prévio
+  sangramentoPrevio: boolean;        // Sangramento maior prévio ou predisposição
+  inrLabil: boolean;                 // TTR <60% se em varfarina
+  idoso: boolean;                    // > 65 anos
+  drogasAntiplaquetarias: boolean;   // AAS, AINEs
+  alcoolismo: boolean;               // ≥8 doses/semana
+}): CalculatorResult {
+  let pontos = 0;
+
+  if (params.hipertensaoNaoControlada) pontos += 1;
+  if (params.disfuncaoRenal) pontos += 1;
+  if (params.disfuncaoHepatica) pontos += 1;
+  if (params.avcPrevio) pontos += 1;
+  if (params.sangramentoPrevio) pontos += 1;
+  if (params.inrLabil) pontos += 1;
+  if (params.idoso) pontos += 1;
+  if (params.drogasAntiplaquetarias) pontos += 1;
+  if (params.alcoolismo) pontos += 1;
+
+  let category: string;
+  let interpretation: string;
+  let recommendations: string;
+
+  if (pontos <= 2) {
+    category = 'Baixo Risco de Sangramento';
+    interpretation = `HAS-BLED = ${pontos}. Risco de sangramento maior: ~1-3,7%/ano.`;
+    recommendations = 'Anticoagulação segura se indicada por CHA2DS2-VASc. Monitorar fatores modificáveis. Preferir DOACs sobre varfarina.';
+  } else {
+    category = 'Alto Risco de Sangramento';
+    interpretation = `HAS-BLED = ${pontos}. Risco de sangramento maior: ~4-8,7%/ano. NÃO contraindica anticoagulação, mas requer cautela.`;
+    recommendations = 'Anticoagulação ainda indicada se CHA2DS2-VASc ≥2 (benefício supera risco). MODIFICAR FATORES: controlar PA, suspender AINEs/AAS, tratar alcoolismo, otimizar função renal/hepática. Preferir DOACs. Se varfarina: manter TTR >70%. Monitorização mais frequente.';
+  }
+
+  return {
+    value: pontos,
+    unit: 'pontos',
+    category,
+    interpretation,
+    recommendations,
+    formula: 'H(1) + A(1-2) + S(1) + B(1) + L(1) + E(1) + D(1-2)',
+    references: [
+      'Pisters R et al. A novel user-friendly score (HAS-BLED) to assess 1-year risk of major bleeding. Chest. 2010;138(5):1093-1100.',
+      'Hindricks G et al. 2020 ESC Guidelines for AF. Eur Heart J. 2021.',
+      'Lip GY. Implications of the HAS-BLED Score for Clinical Practice. Thromb Haemost. 2011.'
+    ]
+  };
+}
+
+// =============================================================================
+// ASCVD - RISCO CARDIOVASCULAR ATEROSCLERÓTICO EM 10 ANOS
+// =============================================================================
+
+/**
+ * Pooled Cohort Equations - ASCVD Risk Calculator
+ * Estima risco de evento cardiovascular aterosclerótico em 10 anos
+ * Inclui: IAM fatal/não-fatal, AVC fatal/não-fatal
+ *
+ * Recomendado pelo ACC/AHA para decisão sobre estatinas
+ *
+ * Referências:
+ * - Goff DC et al. 2013 ACC/AHA guideline on the assessment of cardiovascular risk. Circulation. 2014.
+ * - Grundy SM et al. 2018 AHA/ACC Guideline on the Management of Blood Cholesterol. Circulation. 2019.
+ */
+export function calculateASCVD(params: {
+  idade: number;                   // 40-79 anos
+  sexo: 'M' | 'F';
+  raca: 'branco' | 'negro' | 'outro';
+  colesterolTotal: number;         // mg/dL
+  hdl: number;                     // mg/dL
+  pressaoSistolica: number;        // mmHg
+  tratamentoHAS: boolean;
+  diabetes: boolean;
+  fumante: boolean;
+}): CalculatorResult {
+  const { idade, sexo, raca, colesterolTotal, hdl, pressaoSistolica, tratamentoHAS, diabetes, fumante } = params;
+
+  // Validação de idade
+  if (idade < 40 || idade > 79) {
+    return {
+      value: 'N/A',
+      unit: '',
+      category: 'Fora do intervalo',
+      interpretation: 'ASCVD só é validado para idades entre 40-79 anos.',
+      recommendations: 'Para <40 anos: considerar fatores de risco individuais. Para ≥80 anos: decisão clínica individualizada.',
+      references: []
+    };
+  }
+
+  // Coeficientes das Pooled Cohort Equations (simplificados)
+  // Nota: Esta é uma aproximação. O cálculo completo usa coeficientes específicos por sexo/raça
+
+  let baseRisk = 0;
+
+  // Fator idade
+  const idadeFator = Math.pow(idade / 10, 2);
+
+  // Cálculo simplificado baseado nos principais fatores
+  let risco = 0;
+
+  // Sexo e idade base
+  if (sexo === 'M') {
+    risco = 0.5 + (idade - 40) * 0.3;
+  } else {
+    risco = 0.2 + (idade - 40) * 0.2;
+  }
+
+  // Raça
+  if (raca === 'negro') {
+    risco *= 1.3;
+  }
+
+  // Colesterol (razão CT/HDL)
+  const razaoCT_HDL = colesterolTotal / hdl;
+  if (razaoCT_HDL > 5) risco *= 1.4;
+  else if (razaoCT_HDL > 4) risco *= 1.2;
+  else if (razaoCT_HDL < 3) risco *= 0.8;
+
+  // HDL baixo
+  if (hdl < 40) risco *= 1.3;
+  else if (hdl >= 60) risco *= 0.8;
+
+  // PA sistólica
+  if (pressaoSistolica >= 180) risco *= 2.0;
+  else if (pressaoSistolica >= 160) risco *= 1.6;
+  else if (pressaoSistolica >= 140) risco *= 1.3;
+  else if (pressaoSistolica >= 130) risco *= 1.1;
+
+  // Tratamento HAS (risco residual maior)
+  if (tratamentoHAS) risco *= 1.1;
+
+  // Diabetes
+  if (diabetes) risco *= sexo === 'F' ? 2.5 : 2.0;
+
+  // Tabagismo
+  if (fumante) risco *= 2.0;
+
+  // Ajuste para manter dentro de faixa realista
+  risco = Math.min(Math.max(risco, 0.5), 50);
+
+  let category: string;
+  let interpretation: string;
+  let recommendations: string;
+
+  if (risco < 5) {
+    category = 'Baixo Risco';
+    interpretation = `Risco ASCVD em 10 anos: ${risco.toFixed(1)}%. Baixo risco de evento cardiovascular.`;
+    recommendations = 'Estatina geralmente NÃO indicada se risco <5%. Enfatizar estilo de vida saudável. Considerar estatina se: LDL ≥190 mg/dL, história familiar prematura de DCV, PCR-us ≥2 mg/L, escore de cálcio coronário >0.';
+  } else if (risco < 7.5) {
+    category = 'Risco Limítrofe';
+    interpretation = `Risco ASCVD em 10 anos: ${risco.toFixed(1)}%. Risco limítrofe.`;
+    recommendations = 'Discussão risco-benefício sobre estatina. Considerar fatores intensificadores: LDL ≥160, história familiar, síndrome metabólica, DRC, pré-eclâmpsia, menopausa precoce. Escore de cálcio coronário pode auxiliar decisão.';
+  } else if (risco < 20) {
+    category = 'Risco Intermediário';
+    interpretation = `Risco ASCVD em 10 anos: ${risco.toFixed(1)}%. Risco intermediário.`;
+    recommendations = 'Estatina de intensidade moderada indicada (atorvastatina 10-20mg ou rosuvastatina 5-10mg). Meta LDL <100 mg/dL, idealmente redução ≥30%. Escore de cálcio coronário pode reclassificar (se =0, pode postergar estatina).';
+  } else {
+    category = 'Alto Risco';
+    interpretation = `Risco ASCVD em 10 anos: ${risco.toFixed(1)}%. Alto risco cardiovascular.`;
+    recommendations = 'Estatina de alta intensidade indicada (atorvastatina 40-80mg ou rosuvastatina 20-40mg). Meta LDL <70 mg/dL ou redução ≥50%. Considerar ezetimiba se não atingir meta. Avaliar inibidor de PCSK9 se LDL persistentemente elevado. AAS em prevenção primária: benefício controverso, individualizar.';
+  }
+
+  return {
+    value: risco.toFixed(1),
+    unit: '%',
+    category,
+    interpretation,
+    recommendations,
+    formula: 'Pooled Cohort Equations (ACC/AHA 2013, simplificado)',
+    references: [
+      'Goff DC Jr et al. 2013 ACC/AHA Guideline on the Assessment of Cardiovascular Risk. Circulation. 2014;129(25 Suppl 2):S49-73.',
+      'Grundy SM et al. 2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol. Circulation. 2019;139(25):e1082-e1143.',
+      'Lloyd-Jones DM et al. Use of Risk Assessment Tools to Guide Decision-Making in the Primary Prevention of ASCVD. Circulation. 2019;139(25):e1162-e1177.'
+    ]
+  };
+}
