@@ -5,6 +5,7 @@ import Header from '../components/Layout/Header';
 import Sidebar from '../components/Layout/Sidebar';
 import Footer from '../components/Layout/Footer';
 import KeyboardShortcuts from '../components/KeyboardShortcuts';
+import { PWAProvider } from '../components/PWA';
 
 /**
  * Root layout content component
@@ -13,6 +14,7 @@ import KeyboardShortcuts from '../components/KeyboardShortcuts';
 export default function RootLayoutContent({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
+        <PWAProvider />
         <KeyboardShortcuts />
         {/* Skip links for accessibility */}
         <a 

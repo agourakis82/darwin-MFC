@@ -8,6 +8,7 @@ import Header from "./components/Layout/Header";
 import Sidebar from "./components/Layout/Sidebar";
 import Footer from "./components/Layout/Footer";
 import KeyboardShortcuts from "./components/KeyboardShortcuts";
+import { PWAProvider } from "./components/PWA";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -350,6 +351,7 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
+          <PWAProvider />
           <KeyboardShortcuts />
           {/* Skip links for accessibility */}
           <a 
