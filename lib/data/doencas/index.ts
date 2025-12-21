@@ -35,7 +35,9 @@ import { doencasExpansaoSOTA } from './expansao-sota';
 import { doencasExpansaoSOTAAvancada } from './expansao-sota-avancada';
 import { doencasExpansaoSOTAFinal } from './expansao-sota-final';
 import { doencasExpansaoUltima } from './expansao-ultima';
-// Note: expansao-nova-fase files removed (files deleted)
+import { doencasMetabolicasExpansao } from './expansao-sprint3-metabolico';
+import { doencasCardiovascularesExpansao } from './expansao-sprint3-cardiovascular';
+import { doencasEspecialidadesExpansao } from './expansao-sprint3-especialidades';
 
 // Consolidar todas as doenças
 // Nota: Algumas categorias usam Partial<Doenca> para flexibilidade de expansão
@@ -65,6 +67,9 @@ export const todasDoencas: Partial<Doenca>[] = [
   ...doencasExpansaoSOTAAvancada,
   ...doencasExpansaoSOTAFinal,
   ...doencasExpansaoUltima,
+  ...doencasMetabolicasExpansao,
+  ...doencasCardiovascularesExpansao,
+  ...doencasEspecialidadesExpansao,
 ];
 
 // Remover duplicatas por ID (caso existam) e filtrar apenas doenças com ID
