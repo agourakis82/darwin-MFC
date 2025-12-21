@@ -1,0 +1,92 @@
+name: "Bug Report"
+description: "Report a bug or incorrect medical information"
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Darwin-MFC! Please describe the bug you encountered.
+
+  - type: dropdown
+    id: bug-type
+    attributes:
+      label: Bug Type
+      options:
+        - Incorrect medical information
+        - Outdated guideline reference
+        - Translation error
+        - UI/UX issue
+        - Performance problem
+        - Broken link/reference
+        - Calculator error
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: "Clear description of the bug"
+      placeholder: |
+        What happened?
+        What did you expect to happen?
+    validations:
+      required: true
+
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      description: "URL where the bug occurs"
+      placeholder: "e.g., https://mfc.agourakis.med.br/pt/medicamentos/metformina"
+    validations:
+      required: false
+
+  - type: textarea
+    id: correct-info
+    attributes:
+      label: Correct Information (if applicable)
+      description: "If this is a medical content error, please provide the correct information with references"
+      placeholder: |
+        Correct information: ...
+        Reference: Author A, et al. Title. Journal. Year;Vol:Pages. doi:xxx
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: "How severe is this bug?"
+      options:
+        - Critical (patient safety concern)
+        - High (significantly incorrect information)
+        - Medium (minor inaccuracy)
+        - Low (cosmetic/typo)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Mobile Chrome
+        - Mobile Safari
+        - Other
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues and this is not a duplicate
+          required: true

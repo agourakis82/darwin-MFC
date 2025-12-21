@@ -1,0 +1,125 @@
+name: "New Medication Request"
+description: "Request to add a new medication to the database"
+title: "[Medication]: "
+labels: ["content", "medication", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping expand Darwin-MFC! Please provide medication details.
+
+  - type: input
+    id: medication-name
+    attributes:
+      label: Medication Name (Generic)
+      description: "International Nonproprietary Name (INN)"
+      placeholder: "e.g., Metformin"
+    validations:
+      required: true
+
+  - type: input
+    id: brand-names
+    attributes:
+      label: Brand Names
+      description: "Common brand names (optional)"
+      placeholder: "e.g., Glucophage, Glifage"
+    validations:
+      required: false
+
+  - type: input
+    id: atc-code
+    attributes:
+      label: ATC Code
+      description: "Anatomical Therapeutic Chemical code"
+      placeholder: "e.g., A10BA02"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Pharmacological Class
+      options:
+        - Antibiotics/Anti-infectives
+        - Cardiovascular
+        - Endocrine/Antidiabetics
+        - Respiratory
+        - Gastrointestinal
+        - Neurological/Psychiatric
+        - Analgesics/Anti-inflammatory
+        - Dermatological
+        - Hematological
+        - Immunosuppressants
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: availability
+    attributes:
+      label: Availability in Public Health Systems
+      options:
+        - Available in most systems (WHO Essential Medicines)
+        - Available in some countries
+        - Limited availability
+        - Not widely available
+    validations:
+      required: true
+
+  - type: textarea
+    id: indications
+    attributes:
+      label: Primary Indications
+      description: "Main therapeutic uses"
+      placeholder: |
+        - Type 2 Diabetes Mellitus
+        - Polycystic Ovary Syndrome
+        - Prediabetes prevention
+    validations:
+      required: true
+
+  - type: textarea
+    id: contraindications
+    attributes:
+      label: Key Contraindications
+      description: "Important contraindications"
+      placeholder: |
+        - Renal failure (eGFR <30)
+        - Active hepatic disease
+        - Metabolic acidosis
+    validations:
+      required: false
+
+  - type: textarea
+    id: dosing
+    attributes:
+      label: Dosing Information
+      description: "Typical adult dosing"
+      placeholder: |
+        Initial: 500mg once daily
+        Maintenance: 500-2000mg/day in divided doses
+        Maximum: 2550mg/day
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: "Drug information sources"
+      placeholder: |
+        1. UpToDate Drug Information
+        2. RENAME (Brazilian list)
+        3. WHO Model List of Essential Medicines
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing medications and this is not a duplicate
+          required: true
+        - label: This medication is relevant for primary care
+          required: true

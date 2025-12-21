@@ -1,0 +1,102 @@
+name: "Translation Contribution"
+description: "Contribute or improve translations"
+title: "[Translation]: "
+labels: ["translation", "content", "i18n"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping make Darwin-MFC accessible to more people!
+        We support: Portuguese, English, Spanish, French, Russian, Arabic, Chinese, Greek, Hindi.
+
+  - type: dropdown
+    id: contribution-type
+    attributes:
+      label: Contribution Type
+      options:
+        - Fix translation error
+        - Improve existing translation
+        - Add new language support
+        - Review/verify translations
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      options:
+        - Portuguese (pt)
+        - English (en)
+        - Spanish (es)
+        - French (fr)
+        - Russian (ru)
+        - Arabic (ar)
+        - Chinese (zh)
+        - Greek (el)
+        - Hindi (hi)
+        - New language (specify below)
+    validations:
+      required: true
+
+  - type: input
+    id: new-language
+    attributes:
+      label: New Language (if applicable)
+      description: "If adding a new language, specify the language and ISO code"
+      placeholder: "e.g., Swahili (sw)"
+    validations:
+      required: false
+
+  - type: textarea
+    id: translation-details
+    attributes:
+      label: Translation Details
+      description: "Describe the translation changes"
+      placeholder: |
+        File: messages/es/common.json
+        Key: "screening.title"
+        Current: "Rastreo de salud"
+        Suggested: "Detección temprana de enfermedades"
+        Reason: More accurate medical terminology in Latin American Spanish
+    validations:
+      required: true
+
+  - type: dropdown
+    id: expertise
+    attributes:
+      label: Language Expertise
+      description: "Your level of expertise in this language"
+      options:
+        - Native speaker
+        - Fluent (C1-C2)
+        - Advanced (B2)
+        - Intermediate (B1)
+        - Medical translator
+    validations:
+      required: true
+
+  - type: dropdown
+    id: medical-background
+    attributes:
+      label: Medical Background
+      description: "Do you have medical/healthcare background?"
+      options:
+        - Healthcare professional
+        - Medical student
+        - Medical translator
+        - No medical background
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have verified the medical terminology is correct
+          required: true
+        - label: I am a native or fluent speaker of this language
+          required: true
+        - label: I understand translations will be reviewed before merging
+          required: true

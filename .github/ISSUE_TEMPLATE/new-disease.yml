@@ -1,0 +1,117 @@
+name: "New Disease Request"
+description: "Request to add a new disease to the database"
+title: "[Disease]: "
+labels: ["content", "disease", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping expand Darwin-MFC! Please provide as much detail as possible.
+
+  - type: input
+    id: disease-name
+    attributes:
+      label: Disease Name
+      description: "Primary name of the disease"
+      placeholder: "e.g., Systemic Lupus Erythematosus"
+    validations:
+      required: true
+
+  - type: input
+    id: icd10
+    attributes:
+      label: ICD-10 Code(s)
+      description: "International Classification of Diseases codes"
+      placeholder: "e.g., M32.0, M32.1"
+    validations:
+      required: false
+
+  - type: input
+    id: icpc2
+    attributes:
+      label: ICPC-2 Code
+      description: "International Classification of Primary Care code"
+      placeholder: "e.g., L88"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: "Disease category"
+      options:
+        - Cardiovascular
+        - Respiratory
+        - Endocrine/Metabolic
+        - Gastrointestinal
+        - Neurological
+        - Musculoskeletal
+        - Dermatological
+        - Infectious
+        - Renal/Urological
+        - Hematological
+        - Psychiatric
+        - Gynecologic/Obstetric
+        - Pediatric
+        - Geriatric
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prevalence
+    attributes:
+      label: Primary Care Relevance
+      description: "How commonly is this seen in primary care?"
+      options:
+        - Very Common (>10% of population)
+        - Common (1-10%)
+        - Uncommon (0.1-1%)
+        - Rare (<0.1%)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Brief Description
+      description: "Short description of the disease"
+      placeholder: "A chronic autoimmune disease characterized by..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: diagnostic-criteria
+    attributes:
+      label: Key Diagnostic Criteria
+      description: "Main criteria for diagnosis"
+      placeholder: |
+        - Criterion 1
+        - Criterion 2
+        - Criterion 3
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: "Guidelines or sources (Vancouver style preferred)"
+      placeholder: |
+        1. Author A, et al. Title. Journal. Year;Vol:Pages. doi:xxx
+        2. WHO/CDC Guidelines, etc.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing diseases and this is not a duplicate
+          required: true
+        - label: This disease is relevant for primary care
+          required: true
+        - label: I can provide or verify clinical references
+          required: false
