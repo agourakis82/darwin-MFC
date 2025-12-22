@@ -371,40 +371,6 @@
     "subtitle": "Connect, learn, and share with healthcare professionals worldwide",
     "forums": "Discussion Forums",
     "forums_desc": "Join clinical discussions and get peer advice",
-    "cases": "Clinical Cases",
-    "cases_desc": "Share and learn from anonymized patient cases",
-    "mentorship": "Mentorship",
-    "mentorship_desc": "Find mentors or become one for fellow practitioners",
-    "categories": {
-      "clinical": "Clinical Discussions",
-      "clinical_desc": "General clinical questions and discussions",
-      "cases": "Case Discussions",
-      "cases_desc": "Anonymized clinical case presentations",
-      "study_groups": "Study Groups",
-      "study_groups_desc": "Exam preparation and learning communities",
-      "regional": "Regional Forums",
-      "regional_desc": "Country and region-specific discussions"
-    },
-    "posts": "{count, plural, =0 {No posts} =1 {1 post} other {# posts}}",
-    "replies": "{count, plural, =0 {No replies} =1 {1 reply} other {# replies}}",
-    "views": "{count, plural, =0 {No views} =1 {1 view} other {# views}}",
-    "reply": {
-      "placeholder": "Write your reply...",
-      "placeholder_text": "text",
-      "submit": "Reply",
-      "submitting": "Posting...",
-      "chars_remaining": "characters remaining",
-      "error_empty": "Reply cannot be empty",
-      "error_too_short": "Reply must be at least 10 characters",
-      "error_generic": "Failed to post reply",
-      "format": {
-        "bold": "Bold",
-        "italic": "Italic",
-        "code": "Code",
-        "list": "List",
-        "link": "Link"
-      }
-    },
     "cases": {
       "title": "Clinical Cases",
       "subtitle": "Share and discuss anonymized patient presentations",
@@ -490,6 +456,7 @@
       "back": "Back",
       "cancel": "Cancel"
     },
+    "cases_desc": "Share and learn from anonymized patient cases",
     "mentorship": {
       "title": "Mentorship Program",
       "subtitle": "Connect with experienced practitioners for guidance",
@@ -547,6 +514,56 @@
       "done": "Done",
       "error_missing_fields": "Please select a mentor and write an introduction message",
       "error_generic": "Failed to send request. Please try again."
+    },
+    "mentorship_desc": "Find mentors or become one for fellow practitioners",
+    "categories": {
+      "clinical": "Clinical Discussions",
+      "clinical_desc": "General clinical questions and discussions",
+      "cases": "Case Discussions",
+      "cases_desc": "Anonymized clinical case presentations",
+      "study_groups": "Study Groups",
+      "study_groups_desc": "Exam preparation and learning communities",
+      "regional": "Regional Forums",
+      "regional_desc": "Country and region-specific discussions"
+    },
+    "posts": "{count, plural, =0 {No posts} =1 {1 post} other {# posts}}",
+    "replies": "{count, plural, =0 {No replies} =1 {1 reply} other {# replies}}",
+    "views": "{count, plural, =0 {No views} =1 {1 view} other {# views}}",
+    "reply": {
+      "placeholder": "Write your reply...",
+      "placeholder_text": "text",
+      "submit": "Reply",
+      "submitting": "Posting...",
+      "chars_remaining": "characters remaining",
+      "error_empty": "Reply cannot be empty",
+      "error_too_short": "Reply must be at least 10 characters",
+      "error_generic": "Failed to post reply",
+      "format": {
+        "bold": "Bold",
+        "italic": "Italic",
+        "code": "Code",
+        "list": "List",
+        "link": "Link"
+      }
     }
+  },
+  "commandPalette": {
+    "placeholder": "Search diseases, medications, protocols...",
+    "noResults": "No results found.",
+    "recentSearches": "Recent",
+    "quickActions": "Quick Actions",
+    "navigation": "Navigation",
+    "diseases": "Diseases",
+    "medications": "Medications",
+    "screenings": "Screenings",
+    "toggleTheme": "Toggle theme",
+    "toggleContentMode": "Toggle content mode",
+    "goToHome": "Go to Home",
+    "goToDiseases": "Go to Diseases",
+    "goToMedications": "Go to Medications",
+    "goToProtocols": "Go to Protocols",
+    "goToCalculators": "Go to Calculators",
+    "goToLearn": "Go to Learning Platform",
+    "goToCommunity": "Go to Community"
   }
 }

@@ -9,6 +9,11 @@ import Sidebar from "./components/Layout/Sidebar";
 import Footer from "./components/Layout/Footer";
 import KeyboardShortcuts from "./components/KeyboardShortcuts";
 import { PWAProvider } from "./components/PWA";
+import { ToastProvider } from "./components/ui/Toast";
+
+// NOTE: This root layout is used for pages NOT under [locale]/
+// Pages under [locale]/ have their own layout with Header/Sidebar/Footer
+// This prevents duplicate menus
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -351,6 +356,7 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
+          <ToastProvider />
           <PWAProvider />
           <KeyboardShortcuts />
           {/* Skip links for accessibility */}

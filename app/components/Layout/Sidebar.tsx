@@ -172,9 +172,11 @@ export default function Sidebar() {
                 toggleSection(section.path!);
               }
             }}
+            aria-current={isActive ? 'page' : undefined}
+            aria-expanded={hasSubsections ? isExpanded : undefined}
           >
             <div className="flex items-center gap-3">
-              <Icon className="w-5 h-5 flex-shrink-0" />
+              <Icon className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
               <span className="text-sm font-medium">{section.title}</span>
             </div>
             {section.badge && (
@@ -190,11 +192,12 @@ export default function Sidebar() {
                   toggleSection(section.path!);
                 }}
                 className="p-1"
+                aria-label={isExpanded ? 'Collapse section' : 'Expand section'}
               >
                 {isExpanded ? (
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDown className="w-4 h-4" aria-hidden="true" />
                 ) : (
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight className="w-4 h-4" aria-hidden="true" />
                 )}
               </button>
             )}
@@ -203,23 +206,24 @@ export default function Sidebar() {
           <button
             onClick={() => toggleSection(section.title)}
             className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg transition-colors text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+            aria-expanded={hasSubsections ? isExpanded : undefined}
           >
             <div className="flex items-center gap-3">
-              <Icon className="w-5 h-5" />
+              <Icon className="w-5 h-5" aria-hidden="true" />
               <span className="text-sm font-medium">{section.title}</span>
             </div>
             {hasSubsections && (
               isExpanded ? (
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="w-4 h-4" aria-hidden="true" />
               ) : (
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-4 h-4" aria-hidden="true" />
               )
             )}
           </button>
         )}
 
         {hasSubsections && isExpanded && (
-          <div className="ml-10 mt-2 space-y-1 border-l-2 border-neutral-200 dark:border-neutral-700 pl-4">
+          <div className="ml-10 mt-2 space-y-1 border-l-2 border-neutral-200 dark:border-neutral-700 pl-4" role="group">
             {section.subsections!.map((subsection) => {
               const isSubActive = pathname + (typeof window !== 'undefined' ? window.location.hash : '') === subsection.path;
 
@@ -232,6 +236,7 @@ export default function Sidebar() {
                       ? 'text-blue-700 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900/30 border-l-2 border-blue-600 -ml-[18px] pl-4'
                       : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-800/50'
                   }`}
+                  aria-current={isSubActive ? 'page' : undefined}
                 >
                   {subsection.title}
                 </Link>
@@ -244,7 +249,11 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="w-72 lg:w-80 glass border-r border-neutral-200/80 dark:border-neutral-700/50 h-screen sticky top-0 overflow-y-auto shadow-sm">
+    <aside
+      className="w-72 lg:w-80 glass border-r border-neutral-200/80 dark:border-neutral-700/50 h-screen sticky top-0 overflow-y-auto shadow-sm"
+      role="complementary"
+      aria-label="Sidebar navigation"
+    >
       <div className="p-6">
         {/* Sidebar Header */}
         <div className="mb-6 pb-4 border-b border-neutral-200 dark:border-neutral-700">
@@ -256,7 +265,7 @@ export default function Sidebar() {
           </p>
         </div>
 
-        <nav className="space-y-6">
+        <nav className="space-y-6" role="navigation" aria-label="Clinical guide navigation">
           {navigationGroups.map((group) => (
             <div key={group.title}>
               <h3 className="text-xs font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-wider mb-2 px-4">
