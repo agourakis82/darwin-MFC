@@ -23,19 +23,44 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   // Load and merge messages from multiple files
   const commonMessages = (await import(`../messages/${locale}/common.json`)).default;
-  
+
   // Load optional message files (with fallback to empty object if not found)
   let diseasesMessages = {};
+  let learningMessages = {};
+  let communityMessages = {};
+  let clinicalCasesMessages = {};
+
   try {
     diseasesMessages = (await import(`../messages/${locale}/diseases.json`)).default;
   } catch (e) {
     // File doesn't exist yet, use empty object
   }
-  
+
+  try {
+    learningMessages = (await import(`../messages/${locale}/learning.json`)).default;
+  } catch (e) {
+    // File doesn't exist yet, use empty object
+  }
+
+  try {
+    communityMessages = (await import(`../messages/${locale}/community.json`)).default;
+  } catch (e) {
+    // File doesn't exist yet, use empty object
+  }
+
+  try {
+    clinicalCasesMessages = (await import(`../messages/${locale}/clinical-cases.json`)).default;
+  } catch (e) {
+    // File doesn't exist yet, use empty object
+  }
+
   return {
     locale,
     messages: {
       ...commonMessages,
+      ...learningMessages,
+      ...communityMessages,
+      ...clinicalCasesMessages,
       diseases: diseasesMessages,
     },
   };

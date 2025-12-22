@@ -1,0 +1,219 @@
+{
+  "learning": {
+    "title": "Centro de Aprendizaje",
+    "description": "Rutas de aprendizaje estructuradas para profesionales de la salud. Gratis y siempre lo será.",
+    "available_paths": "Rutas Disponibles",
+    "coming_soon": "Próximamente",
+    "no_paths_available": "No hay rutas disponibles en este momento.",
+    "modules": "módulos",
+    "certificate_available": "Certificado",
+    "continue": "Continuar",
+    "start": "Iniciar",
+    "progress": "Progreso",
+
+    "stats": {
+      "paths": "Rutas",
+      "modules": "Módulos",
+      "hours": "Horas",
+      "certificates": "Certificados",
+      "streak": "Racha"
+    },
+
+    "continue_learning": "Continuar Aprendiendo",
+    "confirm_reset": "¿Estás seguro de que deseas reiniciar tu progreso en este curso? Esta acción no se puede deshacer.",
+    "confirm_reset_all": "¿Estás seguro de que deseas reiniciar todo el progreso? Esta acción no se puede deshacer.",
+    "add_bookmark": "Añadir a favoritos",
+    "remove_bookmark": "Quitar de favoritos",
+    "reset_progress": "Reiniciar progreso",
+
+    "status": {
+      "locked": "Bloqueado",
+      "completed": "Completado",
+      "certified": "Certificado",
+      "in_progress": "En Progreso",
+      "not_started": "No Iniciado"
+    },
+
+    "difficulty": {
+      "beginner": "Principiante",
+      "intermediate": "Intermedio",
+      "advanced": "Avanzado"
+    },
+
+    "coming": {
+      "emergency": "Emergencias en APS",
+      "emergency_desc": "Manejo inicial de emergencias en el contexto de atención primaria.",
+      "mental_health": "Salud Mental",
+      "mental_health_desc": "Abordaje integral de la salud mental en APS.",
+      "pediatrics": "Pediatría Esencial",
+      "pediatrics_desc": "Condiciones pediátricas comunes en atención primaria."
+    },
+
+    "free_forever": {
+      "title": "100% Gratis, Para Siempre",
+      "description": "Darwin MFC es una plataforma académica sin fines de lucro. Todo el contenido educativo es y siempre será completamente gratuito."
+    },
+
+    "widget": {
+      "start_learning": "Comenzar a Aprender",
+      "start_description": "Rutas de aprendizaje estructuradas para profesionales de atención primaria. Gratis para siempre.",
+      "explore": "Explorar Rutas",
+      "my_learning": "Mi Aprendizaje",
+      "view_all": "Ver Todo",
+      "days": "días",
+      "certs": "certificados",
+      "paths": "rutas",
+      "continue": "Continuar desde donde lo dejaste",
+      "all_completed": "¡Todas las rutas completadas! Revisa contenido nuevo.",
+      "browse": "Explorar Rutas"
+    },
+
+    "progress": {
+      "title": "Mi Progreso",
+      "reset_all": "Reiniciar Todo",
+      "streak_days": "Racha de Días",
+      "modules_completed": "Módulos",
+      "minutes_studied": "Minutos",
+      "certificates": "Certificados",
+      "no_progress": "Aún no hay progreso de aprendizaje",
+      "start_learning": "Comienza una ruta de aprendizaje para rastrear tu progreso aquí.",
+      "browse_paths": "Explorar Rutas de Aprendizaje",
+      "in_progress": "En Progreso",
+      "completed": "Completado",
+      "my_certificates": "Mis Certificados",
+      "activity": "Actividad Reciente",
+      "last_active": "Última actividad",
+      "day_streak": "racha de días",
+      "no_activity": "Sin actividad reciente",
+      "bookmarked": "Marcado"
+    },
+
+    "paths": {
+      "aps_essentials": {
+        "title": "Fundamentos de la APS",
+        "description": "Conocimientos esenciales para la práctica en Atención Primaria de Salud."
+      },
+      "medication_safety": {
+        "title": "Seguridad en el Uso de Medicamentos",
+        "description": "Interacciones medicamentosas, ajuste renal, poblaciones especiales."
+      }
+    },
+
+    "modules": {
+      "aps_intro": {
+        "title": "Introducción a la APS",
+        "description": "Conceptos fundamentales de la Atención Primaria de Salud."
+      },
+      "hipertensao": {
+        "title": "Hipertensión Arterial",
+        "description": "Diagnóstico y manejo de la HTA en APS."
+      },
+      "hipertensao_quiz": {
+        "title": "Quiz: Hipertensión",
+        "description": "Evalúa tu conocimiento sobre HTA."
+      },
+      "diabetes": {
+        "title": "Diabetes Mellitus",
+        "description": "Manejo de la diabetes tipo 2 en atención primaria."
+      },
+      "diabetes_case": {
+        "title": "Caso Clínico: Diabetes",
+        "description": "Caso interactivo de paciente con DM2."
+      },
+      "depressao": {
+        "title": "Depresión",
+        "description": "Tamizaje y tratamiento de la depresión en APS."
+      },
+      "depressao_quiz": {
+        "title": "Quiz: Depresión",
+        "description": "Evalúa tu conocimiento sobre depresión."
+      },
+      "rastreamento": {
+        "title": "Tamizaje de Cáncer",
+        "description": "Protocolos de tamizaje oncológico en APS."
+      },
+      "final_assessment": {
+        "title": "Evaluación Final",
+        "description": "Prueba integrada de todos los módulos."
+      },
+      "med_principles": {
+        "title": "Principios de Prescripción Segura",
+        "description": "Fundamentos de la prescripción segura de medicamentos."
+      },
+      "med_interactions": {
+        "title": "Interacciones Medicamentosas",
+        "description": "Interacciones clínicamente relevantes."
+      },
+      "interactions_flashcards": {
+        "title": "Flashcards: Interacciones",
+        "description": "Revisión con repetición espaciada."
+      },
+      "renal_dosing": {
+        "title": "Ajuste Renal",
+        "description": "Ajuste de dosis en insuficiencia renal."
+      },
+      "renal_quiz": {
+        "title": "Quiz: Ajuste Renal",
+        "description": "Evalúa tu conocimiento sobre ajuste renal."
+      },
+      "med_elderly": {
+        "title": "Medicamentos en Ancianos",
+        "description": "Prescripción segura en el paciente anciano."
+      },
+      "med_pregnancy": {
+        "title": "Medicamentos en el Embarazo",
+        "description": "Seguridad medicamentosa en el embarazo."
+      },
+      "med_final": {
+        "title": "Evaluación Final",
+        "description": "Prueba integrada de seguridad medicamentosa."
+      }
+    },
+
+    "certs": {
+      "aps_essentials": {
+        "title": "Fundamentos de la APS",
+        "description": "Certificado de finalización del curso de Fundamentos de la APS."
+      },
+      "medication_safety": {
+        "title": "Seguridad Medicamentosa",
+        "description": "Certificado de finalización del curso de Seguridad en el Uso de Medicamentos."
+      }
+    },
+
+    "quiz": {
+      "question": "Pregunta",
+      "points": "puntos",
+      "submit": "Responder",
+      "next": "Siguiente",
+      "finish": "Finalizar",
+      "retry": "Intentar de Nuevo",
+      "attempts_remaining": "intentos restantes",
+      "passed_title": "¡Felicitaciones!",
+      "passed_message": "Alcanzaste la puntuación mínima.",
+      "failed_title": "Esta vez no",
+      "failed_message": "No alcanzaste la puntuación mínima.",
+      "passing": "Mínimo",
+      "correct_answers": "Aciertos"
+    },
+
+    "certificate": {
+      "title": "Certificado de Finalización",
+      "subtitle": "Curso Completado con Éxito",
+      "presented_to": "Certificamos que",
+      "for_completing": "completó con aprovechamiento el curso",
+      "score": "aprovechamiento",
+      "download": "Descargar Certificado",
+      "generating": "Generando...",
+      "share": "Compartir",
+      "verify_link": "Verificar autenticidad",
+      "share_title": "Mi certificado Darwin MFC",
+      "share_text": "Completé el curso de",
+      "link_copied": "¡Enlace copiado al portapapeles!",
+      "not_found": "Certificado no encontrado",
+      "view_all": "Ver Todos los Certificados",
+      "no_certificates": "Aún no tienes certificados",
+      "complete_path": "Completa una ruta de aprendizaje para recibir tu certificado."
+    }
+  }
+}

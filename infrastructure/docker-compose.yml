@@ -1,0 +1,246 @@
+# DARWIN-MFC BACKEND INFRASTRUCTURE
+# ==================================
+#
+# Self-hosted backend for Darwin-MFC platform.
+# 5-node cluster with Traefik, Keycloak, PocketBase, PostgreSQL, and supporting services.
+#
+# Deployment nodes:
+# - Node 1: Traefik (API Gateway) + Keycloak (Auth)
+# - Node 2: PocketBase (REST/Realtime API)
+# - Node 3: PostgreSQL + Meilisearch
+# - Node 4: Redis + MinIO
+# - Node 5: Uptime Kuma + Restic (Monitoring/Backups)
+
+version: "3.9"
+
+networks:
+  darwin-net:
+    driver: bridge
+
+volumes:
+  postgres-data:
+  pocketbase-data:
+  keycloak-data:
+  meilisearch-data:
+  redis-data:
+  minio-data:
+  uptime-kuma-data:
+  traefik-certs:
+
+services:
+  # ===========================================================================
+  # NODE 1: API GATEWAY + AUTHENTICATION
+  # ===========================================================================
+
+  traefik:
+    image: traefik:v3.0
+    container_name: darwin-traefik
+    restart: unless-stopped
+    command:
+      - "--api.dashboard=true"
+      - "--api.insecure=false"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge=true"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+      - "--certificatesresolvers.letsencrypt.acme.email=${ACME_EMAIL}"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/certs/acme.json"
+      - "--log.level=INFO"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - traefik-certs:/certs
+      - ./traefik/traefik.yml:/etc/traefik/traefik.yml:ro
+      - ./traefik/dynamic:/etc/traefik/dynamic:ro
+    networks:
+      - darwin-net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dashboard.rule=Host(`traefik.${DOMAIN}`)"
+      - "traefik.http.routers.dashboard.service=api@internal"
+      - "traefik.http.routers.dashboard.middlewares=auth"
+      - "traefik.http.middlewares.auth.basicauth.users=${TRAEFIK_DASHBOARD_AUTH}"
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:23.0
+    container_name: darwin-keycloak
+    restart: unless-stopped
+    command: start
+    environment:
+      - KC_DB=postgres
+      - KC_DB_URL=jdbc:postgresql://postgres:5432/keycloak
+      - KC_DB_USERNAME=${POSTGRES_USER}
+      - KC_DB_PASSWORD=${POSTGRES_PASSWORD}
+      - KC_HOSTNAME=auth.${DOMAIN}
+      - KC_PROXY=edge
+      - KC_HTTP_ENABLED=true
+      - KEYCLOAK_ADMIN=${KEYCLOAK_ADMIN}
+      - KEYCLOAK_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD}
+    volumes:
+      - keycloak-data:/opt/keycloak/data
+      - ./keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json:ro
+    networks:
+      - darwin-net
+    depends_on:
+      - postgres
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.keycloak.rule=Host(`auth.${DOMAIN}`)"
+      - "traefik.http.routers.keycloak.entrypoints=websecure"
+      - "traefik.http.routers.keycloak.tls.certresolver=letsencrypt"
+      - "traefik.http.services.keycloak.loadbalancer.server.port=8080"
+
+  # ===========================================================================
+  # NODE 2: API SERVER
+  # ===========================================================================
+
+  pocketbase:
+    image: ghcr.io/muchobien/pocketbase:latest
+    container_name: darwin-pocketbase
+    restart: unless-stopped
+    environment:
+      - PB_ENCRYPTION_KEY=${PB_ENCRYPTION_KEY}
+    volumes:
+      - pocketbase-data:/pb/pb_data
+      - ./pocketbase/pb_hooks:/pb/pb_hooks:ro
+      - ./pocketbase/pb_migrations:/pb/pb_migrations:ro
+    networks:
+      - darwin-net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.pocketbase.rule=Host(`api.${DOMAIN}`)"
+      - "traefik.http.routers.pocketbase.entrypoints=websecure"
+      - "traefik.http.routers.pocketbase.tls.certresolver=letsencrypt"
+      - "traefik.http.services.pocketbase.loadbalancer.server.port=8090"
+      # CORS headers
+      - "traefik.http.middlewares.cors.headers.accesscontrolallowmethods=GET,POST,PUT,PATCH,DELETE,OPTIONS"
+      - "traefik.http.middlewares.cors.headers.accesscontrolallowheaders=Content-Type,Authorization,X-Requested-With"
+      - "traefik.http.middlewares.cors.headers.accesscontrolalloworiginlist=https://${DOMAIN},https://www.${DOMAIN}"
+      - "traefik.http.middlewares.cors.headers.accesscontrolmaxage=100"
+      - "traefik.http.routers.pocketbase.middlewares=cors"
+
+  # ===========================================================================
+  # NODE 3: DATABASE + SEARCH
+  # ===========================================================================
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: darwin-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=darwin_mfc
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - darwin-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d darwin_mfc"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.6
+    container_name: darwin-meilisearch
+    restart: unless-stopped
+    environment:
+      - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
+      - MEILI_ENV=production
+      - MEILI_NO_ANALYTICS=true
+    volumes:
+      - meilisearch-data:/meili_data
+    networks:
+      - darwin-net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.meilisearch.rule=Host(`search.${DOMAIN}`)"
+      - "traefik.http.routers.meilisearch.entrypoints=websecure"
+      - "traefik.http.routers.meilisearch.tls.certresolver=letsencrypt"
+      - "traefik.http.services.meilisearch.loadbalancer.server.port=7700"
+
+  # ===========================================================================
+  # NODE 4: CACHE + OBJECT STORAGE
+  # ===========================================================================
+
+  redis:
+    image: redis:7-alpine
+    container_name: darwin-redis
+    restart: unless-stopped
+    command: redis-server --requirepass ${REDIS_PASSWORD} --appendonly yes
+    volumes:
+      - redis-data:/data
+    networks:
+      - darwin-net
+
+  minio:
+    image: minio/minio:latest
+    container_name: darwin-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      - MINIO_ROOT_USER=${MINIO_ROOT_USER}
+      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
+    volumes:
+      - minio-data:/data
+    networks:
+      - darwin-net
+    labels:
+      - "traefik.enable=true"
+      # MinIO API
+      - "traefik.http.routers.minio.rule=Host(`storage.${DOMAIN}`)"
+      - "traefik.http.routers.minio.entrypoints=websecure"
+      - "traefik.http.routers.minio.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.minio.service=minio"
+      - "traefik.http.services.minio.loadbalancer.server.port=9000"
+      # MinIO Console
+      - "traefik.http.routers.minio-console.rule=Host(`storage-console.${DOMAIN}`)"
+      - "traefik.http.routers.minio-console.entrypoints=websecure"
+      - "traefik.http.routers.minio-console.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.minio-console.service=minio-console"
+      - "traefik.http.services.minio-console.loadbalancer.server.port=9001"
+
+  # ===========================================================================
+  # NODE 5: MONITORING + BACKUPS
+  # ===========================================================================
+
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: darwin-uptime-kuma
+    restart: unless-stopped
+    volumes:
+      - uptime-kuma-data:/app/data
+    networks:
+      - darwin-net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.uptime.rule=Host(`status.${DOMAIN}`)"
+      - "traefik.http.routers.uptime.entrypoints=websecure"
+      - "traefik.http.routers.uptime.tls.certresolver=letsencrypt"
+      - "traefik.http.services.uptime.loadbalancer.server.port=3001"
+
+  # Backup service (runs periodically via cron in host or as scheduled container)
+  backup:
+    image: restic/restic:latest
+    container_name: darwin-backup
+    environment:
+      - RESTIC_REPOSITORY=${BACKUP_REPOSITORY}
+      - RESTIC_PASSWORD=${BACKUP_PASSWORD}
+      - AWS_ACCESS_KEY_ID=${BACKUP_S3_KEY}
+      - AWS_SECRET_ACCESS_KEY=${BACKUP_S3_SECRET}
+    volumes:
+      - postgres-data:/data/postgres:ro
+      - pocketbase-data:/data/pocketbase:ro
+      - keycloak-data:/data/keycloak:ro
+      - ./scripts/backup.sh:/backup.sh:ro
+    networks:
+      - darwin-net
+    entrypoint: ["/bin/sh", "-c", "sleep infinity"]
+    profiles:
+      - backup

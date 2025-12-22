@@ -1,0 +1,219 @@
+{
+  "learning": {
+    "title": "مركز التعلم",
+    "description": "مسارات تعليمية منظمة للمهنيين الصحيين. مجاني وسيبقى كذلك دائماً.",
+    "available_paths": "المسارات المتاحة",
+    "coming_soon": "قريباً",
+    "no_paths_available": "لا توجد مسارات متاحة في الوقت الحالي.",
+    "modules": "وحدات",
+    "certificate_available": "شهادة",
+    "continue": "استمرار",
+    "start": "بدء",
+    "progress": "التقدم",
+
+    "stats": {
+      "paths": "المسارات",
+      "modules": "الوحدات",
+      "hours": "الساعات",
+      "certificates": "الشهادات",
+      "streak": "سلسلة"
+    },
+
+    "continue_learning": "متابعة التعلم",
+    "confirm_reset": "هل أنت متأكد من أنك تريد إعادة تعيين تقدمك في هذه الدورة؟ لا يمكن التراجع عن هذا الإجراء.",
+    "confirm_reset_all": "هل أنت متأكد من أنك تريد إعادة تعيين كل التقدم؟ لا يمكن التراجع عن هذا الإجراء.",
+    "add_bookmark": "إضافة إلى المفضلة",
+    "remove_bookmark": "إزالة من المفضلة",
+    "reset_progress": "إعادة تعيين التقدم",
+
+    "status": {
+      "locked": "مغلق",
+      "completed": "مكتمل",
+      "certified": "معتمد",
+      "in_progress": "قيد التنفيذ",
+      "not_started": "لم يبدأ"
+    },
+
+    "difficulty": {
+      "beginner": "مبتدئ",
+      "intermediate": "متوسط",
+      "advanced": "متقدم"
+    },
+
+    "coming": {
+      "emergency": "طوارئ الرعاية الأولية",
+      "emergency_desc": "الإدارة الأولية للطوارئ في سياق الرعاية الأولية.",
+      "mental_health": "الصحة النفسية",
+      "mental_health_desc": "نهج شامل للصحة النفسية في الرعاية الأولية.",
+      "pediatrics": "طب الأطفال الأساسي",
+      "pediatrics_desc": "الحالات الشائعة لدى الأطفال في الرعاية الأولية."
+    },
+
+    "free_forever": {
+      "title": "مجاني 100٪، للأبد",
+      "description": "Darwin MFC منصة أكاديمية غير ربحية. جميع المحتويات التعليمية مجانية وستبقى كذلك دائماً."
+    },
+
+    "widget": {
+      "start_learning": "بدء التعلم",
+      "start_description": "مسارات تعليمية منظمة لمهنيي الرعاية الأولية. مجاني للأبد.",
+      "explore": "استكشاف المسارات",
+      "my_learning": "تعلمي",
+      "view_all": "عرض الكل",
+      "days": "أيام",
+      "certs": "شهادات",
+      "paths": "مسارات",
+      "continue": "تابع من حيث توقفت",
+      "all_completed": "جميع المسارات مكتملة! تحقق من المحتوى الجديد.",
+      "browse": "تصفح المسارات"
+    },
+
+    "progress": {
+      "title": "تقدمي",
+      "reset_all": "إعادة تعيين الكل",
+      "streak_days": "سلسلة الأيام",
+      "modules_completed": "الوحدات",
+      "minutes_studied": "الدقائق",
+      "certificates": "الشهادات",
+      "no_progress": "لا يوجد تقدم تعليمي بعد",
+      "start_learning": "ابدأ مسار تعليمي لتتبع تقدمك هنا.",
+      "browse_paths": "تصفح مسارات التعلم",
+      "in_progress": "قيد التنفيذ",
+      "completed": "مكتمل",
+      "my_certificates": "شهاداتي",
+      "activity": "النشاط الأخير",
+      "last_active": "آخر نشاط",
+      "day_streak": "سلسلة أيام",
+      "no_activity": "لا يوجد نشاط حديث",
+      "bookmarked": "مفضلة"
+    },
+
+    "paths": {
+      "aps_essentials": {
+        "title": "أساسيات الرعاية الأولية",
+        "description": "المعرفة الأساسية لممارسة الرعاية الصحية الأولية."
+      },
+      "medication_safety": {
+        "title": "سلامة الأدوية",
+        "description": "التفاعلات الدوائية، الجرعات الكلوية، الفئات الخاصة."
+      }
+    },
+
+    "modules": {
+      "aps_intro": {
+        "title": "مقدمة في الرعاية الأولية",
+        "description": "المفاهيم الأساسية للرعاية الصحية الأولية."
+      },
+      "hipertensao": {
+        "title": "ارتفاع ضغط الدم",
+        "description": "تشخيص وإدارة ارتفاع ضغط الدم في الرعاية الأولية."
+      },
+      "hipertensao_quiz": {
+        "title": "اختبار: ارتفاع ضغط الدم",
+        "description": "اختبر معرفتك حول ارتفاع ضغط الدم."
+      },
+      "diabetes": {
+        "title": "داء السكري",
+        "description": "إدارة السكري من النوع الثاني في الرعاية الأولية."
+      },
+      "diabetes_case": {
+        "title": "حالة سريرية: السكري",
+        "description": "حالة تفاعلية لمريض بالسكري من النوع الثاني."
+      },
+      "depressao": {
+        "title": "الاكتئاب",
+        "description": "فحص وعلاج الاكتئاب في الرعاية الأولية."
+      },
+      "depressao_quiz": {
+        "title": "اختبار: الاكتئاب",
+        "description": "اختبر معرفتك حول الاكتئاب."
+      },
+      "rastreamento": {
+        "title": "فحص السرطان",
+        "description": "بروتوكولات فحص السرطان في الرعاية الأولية."
+      },
+      "final_assessment": {
+        "title": "التقييم النهائي",
+        "description": "اختبار متكامل لجميع الوحدات."
+      },
+      "med_principles": {
+        "title": "مبادئ الوصف الآمن",
+        "description": "أساسيات وصف الأدوية بأمان."
+      },
+      "med_interactions": {
+        "title": "التفاعلات الدوائية",
+        "description": "التفاعلات ذات الأهمية السريرية."
+      },
+      "interactions_flashcards": {
+        "title": "بطاقات: التفاعلات",
+        "description": "مراجعة بالتكرار المتباعد."
+      },
+      "renal_dosing": {
+        "title": "الجرعات الكلوية",
+        "description": "تعديل الجرعة في القصور الكلوي."
+      },
+      "renal_quiz": {
+        "title": "اختبار: الجرعات الكلوية",
+        "description": "اختبر معرفتك حول التعديل الكلوي."
+      },
+      "med_elderly": {
+        "title": "الأدوية لكبار السن",
+        "description": "الوصف الآمن للمرضى المسنين."
+      },
+      "med_pregnancy": {
+        "title": "الأدوية والحمل",
+        "description": "سلامة الأدوية أثناء الحمل."
+      },
+      "med_final": {
+        "title": "التقييم النهائي",
+        "description": "اختبار متكامل لسلامة الأدوية."
+      }
+    },
+
+    "certs": {
+      "aps_essentials": {
+        "title": "أساسيات الرعاية الأولية",
+        "description": "شهادة إتمام دورة أساسيات الرعاية الأولية."
+      },
+      "medication_safety": {
+        "title": "سلامة الأدوية",
+        "description": "شهادة إتمام دورة سلامة الأدوية."
+      }
+    },
+
+    "quiz": {
+      "question": "سؤال",
+      "points": "نقاط",
+      "submit": "إجابة",
+      "next": "التالي",
+      "finish": "إنهاء",
+      "retry": "إعادة المحاولة",
+      "attempts_remaining": "محاولات متبقية",
+      "passed_title": "تهانينا!",
+      "passed_message": "لقد حققت الدرجة الدنيا.",
+      "failed_title": "ليس هذه المرة",
+      "failed_message": "لم تحقق الدرجة الدنيا.",
+      "passing": "الحد الأدنى",
+      "correct_answers": "إجابات صحيحة"
+    },
+
+    "certificate": {
+      "title": "شهادة إتمام",
+      "subtitle": "تم إتمام الدورة بنجاح",
+      "presented_to": "نشهد بأن",
+      "for_completing": "قد أتم بنجاح دورة",
+      "score": "الدرجة",
+      "download": "تحميل الشهادة",
+      "generating": "جاري الإنشاء...",
+      "share": "مشاركة",
+      "verify_link": "التحقق من الأصالة",
+      "share_title": "شهادتي من Darwin MFC",
+      "share_text": "أتممت دورة",
+      "link_copied": "تم نسخ الرابط!",
+      "not_found": "الشهادة غير موجودة",
+      "view_all": "عرض جميع الشهادات",
+      "no_certificates": "ليس لديك أي شهادات بعد",
+      "complete_path": "أكمل مسار تعليمي للحصول على شهادتك."
+    }
+  }
+}

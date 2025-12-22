@@ -1,0 +1,271 @@
+{
+  "learning": {
+    "title": "Learning Center",
+    "description": "Structured learning paths for healthcare professionals. Free and always will be.",
+    "available_paths": "Available Paths",
+    "coming_soon": "Coming Soon",
+    "no_paths_available": "No paths available at the moment.",
+    "modules": "modules",
+    "certificate_available": "Certificate",
+    "continue": "Continue",
+    "start": "Start",
+    "progress": "Progress",
+
+    "stats": {
+      "paths": "Paths",
+      "modules": "Modules",
+      "hours": "Hours",
+      "certificates": "Certificates",
+      "streak": "Streak"
+    },
+
+    "continue_learning": "Continue Learning",
+    "confirm_reset": "Are you sure you want to reset your progress in this course? This action cannot be undone.",
+    "add_bookmark": "Add to bookmarks",
+    "remove_bookmark": "Remove from bookmarks",
+    "reset_progress": "Reset progress",
+
+    "status": {
+      "locked": "Locked",
+      "completed": "Completed",
+      "certified": "Certified",
+      "in_progress": "In Progress",
+      "not_started": "Not Started"
+    },
+
+    "difficulty": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+
+    "path_not_found": "Path not found",
+    "back_to_paths": "Back to paths",
+    "path_modules": "Path Modules",
+    "modules_completed": "{completed} of {total} modules completed",
+    "minimum_score": "Minimum score for certification: {score}%",
+
+    "module_types": {
+      "content": "Content",
+      "quiz": "Quiz",
+      "case_study": "Clinical Case",
+      "flashcards": "Flashcards",
+      "video": "Video",
+      "interactive": "Interactive"
+    },
+
+    "module_not_found": "Module not found",
+    "previous": "Previous",
+    "next": "Next",
+    "complete_path": "Complete Path",
+    "completed_score": "{score}% - Completed",
+    "completed": "Completed",
+    "congratulations": "Congratulations!",
+    "path_completed": "Path Completed!",
+    "close": "Close",
+    "continue_btn": "Continue",
+    "default_user": "Healthcare Professional",
+    "mark_complete": "Mark as complete",
+    "mark_as_viewed": "Mark as viewed",
+
+    "case_study_player": {
+      "title": "Interactive Clinical Case",
+      "coming_soon": "Interactive clinical cases will be available soon."
+    },
+
+    "flashcards_player": {
+      "title": "Spaced Repetition Flashcards",
+      "coming_soon": "The flashcards system will be available soon."
+    },
+
+    "completion_modal": {
+      "congratulations": "Congratulations!",
+      "path_completed": "Path Completed!",
+      "completed_with_cert": "You completed the path <strong>{pathTitle}</strong> and earned a certificate!",
+      "completed_success": "You completed the path <strong>{pathTitle}</strong> successfully.",
+      "certificate_issued": "Certificate Issued",
+      "score": "Score: {score}%",
+      "view_certificate": "View Certificate",
+      "close": "Close",
+      "continue": "Continue"
+    },
+
+    "coming": {
+      "emergency": "Primary Care Emergencies",
+      "emergency_desc": "Initial management of emergencies in primary care settings.",
+      "mental_health": "Mental Health",
+      "mental_health_desc": "Comprehensive mental health approach in primary care.",
+      "pediatrics": "Essential Pediatrics",
+      "pediatrics_desc": "Common pediatric conditions in primary care."
+    },
+
+    "free_forever": {
+      "title": "100% Free, Forever",
+      "description": "Darwin MFC is a non-profit academic platform. All educational content is and always will be completely free."
+    },
+
+    "paths": {
+      "aps_essentials": {
+        "title": "Primary Care Fundamentals",
+        "description": "Essential knowledge for Primary Health Care practice."
+      },
+      "medication_safety": {
+        "title": "Medication Safety",
+        "description": "Drug interactions, renal dosing, special populations."
+      }
+    },
+
+    "modules": {
+      "aps_intro": {
+        "title": "Introduction to PHC",
+        "description": "Fundamental concepts of Primary Health Care."
+      },
+      "hipertensao": {
+        "title": "Arterial Hypertension",
+        "description": "Diagnosis and management of HTN in primary care."
+      },
+      "hipertensao_quiz": {
+        "title": "Quiz: Hypertension",
+        "description": "Test your knowledge about HTN."
+      },
+      "diabetes": {
+        "title": "Diabetes Mellitus",
+        "description": "Type 2 diabetes management in primary care."
+      },
+      "diabetes_case": {
+        "title": "Clinical Case: Diabetes",
+        "description": "Interactive case of a patient with T2DM."
+      },
+      "depressao": {
+        "title": "Depression",
+        "description": "Screening and treatment of depression in primary care."
+      },
+      "depressao_quiz": {
+        "title": "Quiz: Depression",
+        "description": "Test your knowledge about depression."
+      },
+      "rastreamento": {
+        "title": "Cancer Screening",
+        "description": "Oncological screening protocols in primary care."
+      },
+      "final_assessment": {
+        "title": "Final Assessment",
+        "description": "Integrated test of all modules."
+      },
+      "med_principles": {
+        "title": "Safe Prescribing Principles",
+        "description": "Fundamentals of safe medication prescribing."
+      },
+      "med_interactions": {
+        "title": "Drug Interactions",
+        "description": "Clinically relevant interactions."
+      },
+      "interactions_flashcards": {
+        "title": "Flashcards: Interactions",
+        "description": "Spaced repetition review."
+      },
+      "renal_dosing": {
+        "title": "Renal Dosing",
+        "description": "Dose adjustment in renal impairment."
+      },
+      "renal_quiz": {
+        "title": "Quiz: Renal Dosing",
+        "description": "Test your knowledge about renal adjustments."
+      },
+      "med_elderly": {
+        "title": "Medications in the Elderly",
+        "description": "Safe prescribing in older adults."
+      },
+      "med_pregnancy": {
+        "title": "Medications in Pregnancy",
+        "description": "Drug safety during pregnancy."
+      },
+      "med_final": {
+        "title": "Final Assessment",
+        "description": "Integrated medication safety test."
+      }
+    },
+
+    "certs": {
+      "aps_essentials": {
+        "title": "Primary Care Fundamentals",
+        "description": "Certificate of completion for Primary Care Fundamentals course."
+      },
+      "medication_safety": {
+        "title": "Medication Safety",
+        "description": "Certificate of completion for Medication Safety course."
+      }
+    },
+
+    "quiz": {
+      "question": "Question",
+      "points": "points",
+      "submit": "Submit",
+      "next": "Next",
+      "finish": "Finish",
+      "retry": "Try Again",
+      "attempts_remaining": "attempts remaining",
+      "passed_title": "Congratulations!",
+      "passed_message": "You achieved the minimum score.",
+      "failed_title": "Not this time",
+      "failed_message": "You did not achieve the minimum score.",
+      "passing": "Minimum",
+      "correct_answers": "Correct"
+    },
+
+    "widget": {
+      "start_learning": "Start Learning",
+      "start_description": "Structured learning paths for primary care professionals. Free forever.",
+      "explore": "Explore Paths",
+      "my_learning": "My Learning",
+      "view_all": "View All",
+      "days": "days",
+      "certs": "certs",
+      "paths": "paths",
+      "continue": "Continue where you left off",
+      "all_completed": "All paths completed! Check out new content.",
+      "browse": "Browse Paths"
+    },
+
+    "progress": {
+      "title": "My Progress",
+      "reset_all": "Reset All",
+      "streak_days": "Day Streak",
+      "modules_completed": "Modules",
+      "minutes_studied": "Minutes",
+      "certificates": "Certificates",
+      "no_progress": "No learning progress yet",
+      "start_learning": "Start a learning path to track your progress here.",
+      "browse_paths": "Browse Learning Paths",
+      "in_progress": "In Progress",
+      "completed": "Completed",
+      "my_certificates": "My Certificates",
+      "activity": "Recent Activity",
+      "last_active": "Last active",
+      "day_streak": "day streak",
+      "no_activity": "No recent activity",
+      "bookmarked": "Bookmarked"
+    },
+
+    "confirm_reset_all": "Are you sure you want to reset all progress? This cannot be undone.",
+
+    "certificate": {
+      "title": "Certificate of Completion",
+      "subtitle": "Course Successfully Completed",
+      "presented_to": "This certifies that",
+      "for_completing": "has successfully completed the course",
+      "score": "score",
+      "download": "Download Certificate",
+      "generating": "Generating...",
+      "share": "Share",
+      "verify_link": "Verify authenticity",
+      "share_title": "My Darwin MFC certificate",
+      "share_text": "I completed the course",
+      "link_copied": "Link copied to clipboard!",
+      "not_found": "Certificate not found",
+      "view_all": "View All Certificates",
+      "no_certificates": "You don't have any certificates yet",
+      "complete_path": "Complete a learning path to receive your certificate."
+    }
+  }
+}

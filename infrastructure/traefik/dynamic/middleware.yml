@@ -1,0 +1,60 @@
+# TRAEFIK DYNAMIC MIDDLEWARE CONFIGURATION
+# =========================================
+
+http:
+  middlewares:
+    # Security headers
+    securityHeaders:
+      headers:
+        browserXssFilter: true
+        contentTypeNosniff: true
+        forceSTSHeader: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 31536000
+        customFrameOptionsValue: "SAMEORIGIN"
+        referrerPolicy: "strict-origin-when-cross-origin"
+        contentSecurityPolicy: >-
+          default-src 'self';
+          script-src 'self' 'unsafe-inline' 'unsafe-eval';
+          style-src 'self' 'unsafe-inline';
+          img-src 'self' data: https:;
+          font-src 'self' data:;
+          connect-src 'self' https://api.mfc.agourakis.med.br wss://api.mfc.agourakis.med.br;
+          frame-ancestors 'self';
+
+    # Rate limiting
+    rateLimit:
+      rateLimit:
+        average: 100
+        burst: 50
+        period: 1s
+
+    # CORS for API
+    corsHeaders:
+      headers:
+        accessControlAllowMethods:
+          - GET
+          - POST
+          - PUT
+          - PATCH
+          - DELETE
+          - OPTIONS
+        accessControlAllowHeaders:
+          - Content-Type
+          - Authorization
+          - X-Requested-With
+          - Accept
+          - Origin
+        accessControlAllowOriginList:
+          - https://mfc.agourakis.med.br
+          - https://www.mfc.agourakis.med.br
+          - http://localhost:3000
+        accessControlMaxAge: 100
+        addVaryHeader: true
+
+    # Compression
+    compress:
+      compress:
+        excludedContentTypes:
+          - text/event-stream

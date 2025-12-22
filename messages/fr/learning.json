@@ -1,0 +1,219 @@
+{
+  "learning": {
+    "title": "Centre d'Apprentissage",
+    "description": "Parcours d'apprentissage structurés pour les professionnels de santé. Gratuit et le restera toujours.",
+    "available_paths": "Parcours Disponibles",
+    "coming_soon": "Bientôt Disponible",
+    "no_paths_available": "Aucun parcours disponible pour le moment.",
+    "modules": "modules",
+    "certificate_available": "Certificat",
+    "continue": "Continuer",
+    "start": "Commencer",
+    "progress": "Progression",
+
+    "stats": {
+      "paths": "Parcours",
+      "modules": "Modules",
+      "hours": "Heures",
+      "certificates": "Certificats",
+      "streak": "Série"
+    },
+
+    "continue_learning": "Continuer à Apprendre",
+    "confirm_reset": "Êtes-vous sûr de vouloir réinitialiser votre progression dans ce cours ? Cette action est irréversible.",
+    "confirm_reset_all": "Êtes-vous sûr de vouloir réinitialiser toute votre progression ? Cette action est irréversible.",
+    "add_bookmark": "Ajouter aux favoris",
+    "remove_bookmark": "Retirer des favoris",
+    "reset_progress": "Réinitialiser la progression",
+
+    "status": {
+      "locked": "Verrouillé",
+      "completed": "Terminé",
+      "certified": "Certifié",
+      "in_progress": "En Cours",
+      "not_started": "Non Commencé"
+    },
+
+    "difficulty": {
+      "beginner": "Débutant",
+      "intermediate": "Intermédiaire",
+      "advanced": "Avancé"
+    },
+
+    "coming": {
+      "emergency": "Urgences en Soins Primaires",
+      "emergency_desc": "Prise en charge initiale des urgences en soins primaires.",
+      "mental_health": "Santé Mentale",
+      "mental_health_desc": "Approche globale de la santé mentale en soins primaires.",
+      "pediatrics": "Pédiatrie Essentielle",
+      "pediatrics_desc": "Pathologies pédiatriques courantes en soins primaires."
+    },
+
+    "free_forever": {
+      "title": "100% Gratuit, Pour Toujours",
+      "description": "Darwin MFC est une plateforme académique à but non lucratif. Tout le contenu éducatif est et restera toujours entièrement gratuit."
+    },
+
+    "widget": {
+      "start_learning": "Commencer à Apprendre",
+      "start_description": "Parcours d'apprentissage structurés pour les professionnels de soins primaires. Gratuit pour toujours.",
+      "explore": "Explorer les Parcours",
+      "my_learning": "Mon Apprentissage",
+      "view_all": "Tout Voir",
+      "days": "jours",
+      "certs": "certificats",
+      "paths": "parcours",
+      "continue": "Continuer là où vous en étiez",
+      "all_completed": "Tous les parcours complétés ! Découvrez du nouveau contenu.",
+      "browse": "Parcourir les Parcours"
+    },
+
+    "progress": {
+      "title": "Ma Progression",
+      "reset_all": "Tout Réinitialiser",
+      "streak_days": "Série de Jours",
+      "modules_completed": "Modules",
+      "minutes_studied": "Minutes",
+      "certificates": "Certificats",
+      "no_progress": "Aucune progression d'apprentissage pour le moment",
+      "start_learning": "Commencez un parcours d'apprentissage pour suivre votre progression ici.",
+      "browse_paths": "Parcourir les Parcours d'Apprentissage",
+      "in_progress": "En Cours",
+      "completed": "Terminé",
+      "my_certificates": "Mes Certificats",
+      "activity": "Activité Récente",
+      "last_active": "Dernière activité",
+      "day_streak": "série de jours",
+      "no_activity": "Aucune activité récente",
+      "bookmarked": "Favoris"
+    },
+
+    "paths": {
+      "aps_essentials": {
+        "title": "Fondamentaux des Soins Primaires",
+        "description": "Connaissances essentielles pour la pratique en soins de santé primaires."
+      },
+      "medication_safety": {
+        "title": "Sécurité Médicamenteuse",
+        "description": "Interactions médicamenteuses, ajustement rénal, populations spéciales."
+      }
+    },
+
+    "modules": {
+      "aps_intro": {
+        "title": "Introduction aux Soins Primaires",
+        "description": "Concepts fondamentaux des soins de santé primaires."
+      },
+      "hipertensao": {
+        "title": "Hypertension Artérielle",
+        "description": "Diagnostic et prise en charge de l'HTA en soins primaires."
+      },
+      "hipertensao_quiz": {
+        "title": "Quiz : Hypertension",
+        "description": "Testez vos connaissances sur l'HTA."
+      },
+      "diabetes": {
+        "title": "Diabète",
+        "description": "Prise en charge du diabète de type 2 en soins primaires."
+      },
+      "diabetes_case": {
+        "title": "Cas Clinique : Diabète",
+        "description": "Cas interactif d'un patient diabétique de type 2."
+      },
+      "depressao": {
+        "title": "Dépression",
+        "description": "Dépistage et traitement de la dépression en soins primaires."
+      },
+      "depressao_quiz": {
+        "title": "Quiz : Dépression",
+        "description": "Testez vos connaissances sur la dépression."
+      },
+      "rastreamento": {
+        "title": "Dépistage du Cancer",
+        "description": "Protocoles de dépistage oncologique en soins primaires."
+      },
+      "final_assessment": {
+        "title": "Évaluation Finale",
+        "description": "Test intégré de tous les modules."
+      },
+      "med_principles": {
+        "title": "Principes de Prescription Sécurisée",
+        "description": "Fondamentaux de la prescription médicamenteuse sécurisée."
+      },
+      "med_interactions": {
+        "title": "Interactions Médicamenteuses",
+        "description": "Interactions cliniquement pertinentes."
+      },
+      "interactions_flashcards": {
+        "title": "Flashcards : Interactions",
+        "description": "Révision par répétition espacée."
+      },
+      "renal_dosing": {
+        "title": "Ajustement Rénal",
+        "description": "Ajustement posologique en insuffisance rénale."
+      },
+      "renal_quiz": {
+        "title": "Quiz : Ajustement Rénal",
+        "description": "Testez vos connaissances sur l'ajustement rénal."
+      },
+      "med_elderly": {
+        "title": "Médicaments chez la Personne Âgée",
+        "description": "Prescription sécurisée chez le patient âgé."
+      },
+      "med_pregnancy": {
+        "title": "Médicaments et Grossesse",
+        "description": "Sécurité médicamenteuse pendant la grossesse."
+      },
+      "med_final": {
+        "title": "Évaluation Finale",
+        "description": "Test intégré sur la sécurité médicamenteuse."
+      }
+    },
+
+    "certs": {
+      "aps_essentials": {
+        "title": "Fondamentaux des Soins Primaires",
+        "description": "Certificat de réussite du cours Fondamentaux des Soins Primaires."
+      },
+      "medication_safety": {
+        "title": "Sécurité Médicamenteuse",
+        "description": "Certificat de réussite du cours Sécurité Médicamenteuse."
+      }
+    },
+
+    "quiz": {
+      "question": "Question",
+      "points": "points",
+      "submit": "Répondre",
+      "next": "Suivant",
+      "finish": "Terminer",
+      "retry": "Réessayer",
+      "attempts_remaining": "tentatives restantes",
+      "passed_title": "Félicitations !",
+      "passed_message": "Vous avez atteint le score minimum.",
+      "failed_title": "Pas cette fois",
+      "failed_message": "Vous n'avez pas atteint le score minimum.",
+      "passing": "Minimum",
+      "correct_answers": "Bonnes réponses"
+    },
+
+    "certificate": {
+      "title": "Certificat de Réussite",
+      "subtitle": "Cours Complété avec Succès",
+      "presented_to": "Nous certifions que",
+      "for_completing": "a complété avec succès le cours",
+      "score": "score",
+      "download": "Télécharger le Certificat",
+      "generating": "Génération en cours...",
+      "share": "Partager",
+      "verify_link": "Vérifier l'authenticité",
+      "share_title": "Mon certificat Darwin MFC",
+      "share_text": "J'ai terminé le cours",
+      "link_copied": "Lien copié dans le presse-papiers !",
+      "not_found": "Certificat introuvable",
+      "view_all": "Voir Tous les Certificats",
+      "no_certificates": "Vous n'avez pas encore de certificats",
+      "complete_path": "Terminez un parcours d'apprentissage pour recevoir votre certificat."
+    }
+  }
+}

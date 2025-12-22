@@ -1,0 +1,219 @@
+{
+  "learning": {
+    "title": "学习中心",
+    "description": "为医疗专业人员设计的结构化学习路径。免费且永远免费。",
+    "available_paths": "可用路径",
+    "coming_soon": "即将推出",
+    "no_paths_available": "目前没有可用的路径。",
+    "modules": "模块",
+    "certificate_available": "证书",
+    "continue": "继续",
+    "start": "开始",
+    "progress": "进度",
+
+    "stats": {
+      "paths": "路径",
+      "modules": "模块",
+      "hours": "小时",
+      "certificates": "证书",
+      "streak": "连续"
+    },
+
+    "continue_learning": "继续学习",
+    "confirm_reset": "您确定要重置此课程的进度吗？此操作无法撤消。",
+    "confirm_reset_all": "您确定要重置所有进度吗？此操作无法撤消。",
+    "add_bookmark": "添加到收藏夹",
+    "remove_bookmark": "从收藏夹移除",
+    "reset_progress": "重置进度",
+
+    "status": {
+      "locked": "锁定",
+      "completed": "已完成",
+      "certified": "已认证",
+      "in_progress": "进行中",
+      "not_started": "未开始"
+    },
+
+    "difficulty": {
+      "beginner": "初级",
+      "intermediate": "中级",
+      "advanced": "高级"
+    },
+
+    "coming": {
+      "emergency": "初级保健急诊",
+      "emergency_desc": "初级保健环境中急诊的初步处理。",
+      "mental_health": "心理健康",
+      "mental_health_desc": "初级保健中心理健康的综合方法。",
+      "pediatrics": "基础儿科",
+      "pediatrics_desc": "初级保健中常见的儿科疾病。"
+    },
+
+    "free_forever": {
+      "title": "100%免费，永远",
+      "description": "Darwin MFC是一个非营利学术平台。所有教育内容永远完全免费。"
+    },
+
+    "widget": {
+      "start_learning": "开始学习",
+      "start_description": "为初级保健专业人员设计的结构化学习路径。永远免费。",
+      "explore": "探索路径",
+      "my_learning": "我的学习",
+      "view_all": "查看全部",
+      "days": "天",
+      "certs": "证书",
+      "paths": "路径",
+      "continue": "从上次停下的地方继续",
+      "all_completed": "所有路径已完成！查看新内容。",
+      "browse": "浏览路径"
+    },
+
+    "progress": {
+      "title": "我的进度",
+      "reset_all": "重置全部",
+      "streak_days": "连续天数",
+      "modules_completed": "模块",
+      "minutes_studied": "分钟",
+      "certificates": "证书",
+      "no_progress": "尚无学习进度",
+      "start_learning": "开始学习路径以在此跟踪您的进度。",
+      "browse_paths": "浏览学习路径",
+      "in_progress": "进行中",
+      "completed": "已完成",
+      "my_certificates": "我的证书",
+      "activity": "最近活动",
+      "last_active": "最后活动",
+      "day_streak": "连续天数",
+      "no_activity": "无最近活动",
+      "bookmarked": "已收藏"
+    },
+
+    "paths": {
+      "aps_essentials": {
+        "title": "初级保健基础",
+        "description": "初级卫生保健实践的基本知识。"
+      },
+      "medication_safety": {
+        "title": "用药安全",
+        "description": "药物相互作用、肾脏剂量调整、特殊人群。"
+      }
+    },
+
+    "modules": {
+      "aps_intro": {
+        "title": "初级保健导论",
+        "description": "初级卫生保健的基本概念。"
+      },
+      "hipertensao": {
+        "title": "高血压",
+        "description": "初级保健中高血压的诊断和管理。"
+      },
+      "hipertensao_quiz": {
+        "title": "测验：高血压",
+        "description": "测试您对高血压的了解。"
+      },
+      "diabetes": {
+        "title": "糖尿病",
+        "description": "初级保健中2型糖尿病的管理。"
+      },
+      "diabetes_case": {
+        "title": "临床案例：糖尿病",
+        "description": "2型糖尿病患者的互动案例。"
+      },
+      "depressao": {
+        "title": "抑郁症",
+        "description": "初级保健中抑郁症的筛查和治疗。"
+      },
+      "depressao_quiz": {
+        "title": "测验：抑郁症",
+        "description": "测试您对抑郁症的了解。"
+      },
+      "rastreamento": {
+        "title": "癌症筛查",
+        "description": "初级保健中的肿瘤筛查方案。"
+      },
+      "final_assessment": {
+        "title": "期末评估",
+        "description": "所有模块的综合测试。"
+      },
+      "med_principles": {
+        "title": "安全处方原则",
+        "description": "安全用药处方的基础知识。"
+      },
+      "med_interactions": {
+        "title": "药物相互作用",
+        "description": "临床相关的相互作用。"
+      },
+      "interactions_flashcards": {
+        "title": "闪卡：相互作用",
+        "description": "间隔重复复习。"
+      },
+      "renal_dosing": {
+        "title": "肾脏剂量调整",
+        "description": "肾功能不全时的剂量调整。"
+      },
+      "renal_quiz": {
+        "title": "测验：肾脏剂量调整",
+        "description": "测试您对肾脏调整的了解。"
+      },
+      "med_elderly": {
+        "title": "老年人用药",
+        "description": "老年患者的安全处方。"
+      },
+      "med_pregnancy": {
+        "title": "孕期用药",
+        "description": "妊娠期药物安全。"
+      },
+      "med_final": {
+        "title": "期末评估",
+        "description": "用药安全综合测试。"
+      }
+    },
+
+    "certs": {
+      "aps_essentials": {
+        "title": "初级保健基础",
+        "description": "初级保健基础课程结业证书。"
+      },
+      "medication_safety": {
+        "title": "用药安全",
+        "description": "用药安全课程结业证书。"
+      }
+    },
+
+    "quiz": {
+      "question": "问题",
+      "points": "分",
+      "submit": "提交",
+      "next": "下一题",
+      "finish": "完成",
+      "retry": "重试",
+      "attempts_remaining": "剩余尝试次数",
+      "passed_title": "恭喜！",
+      "passed_message": "您达到了最低分数。",
+      "failed_title": "这次没成功",
+      "failed_message": "您没有达到最低分数。",
+      "passing": "最低",
+      "correct_answers": "正确答案"
+    },
+
+    "certificate": {
+      "title": "结业证书",
+      "subtitle": "课程成功完成",
+      "presented_to": "兹证明",
+      "for_completing": "已成功完成课程",
+      "score": "成绩",
+      "download": "下载证书",
+      "generating": "生成中...",
+      "share": "分享",
+      "verify_link": "验证真实性",
+      "share_title": "我的Darwin MFC证书",
+      "share_text": "我完成了课程",
+      "link_copied": "链接已复制到剪贴板！",
+      "not_found": "未找到证书",
+      "view_all": "查看所有证书",
+      "no_certificates": "您还没有任何证书",
+      "complete_path": "完成学习路径以获得您的证书。"
+    }
+  }
+}

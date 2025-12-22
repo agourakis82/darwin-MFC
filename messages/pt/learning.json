@@ -1,0 +1,271 @@
+{
+  "learning": {
+    "title": "Centro de Aprendizado",
+    "description": "Trilhas de aprendizagem estruturadas para profissionais de saúde. Gratuito e sempre será.",
+    "available_paths": "Trilhas Disponíveis",
+    "coming_soon": "Em Breve",
+    "no_paths_available": "Nenhuma trilha disponível no momento.",
+    "modules": "módulos",
+    "certificate_available": "Certificado",
+    "continue": "Continuar",
+    "start": "Iniciar",
+    "progress": "Progresso",
+
+    "stats": {
+      "paths": "Trilhas",
+      "modules": "Módulos",
+      "hours": "Horas",
+      "certificates": "Certificados",
+      "streak": "Sequência"
+    },
+
+    "continue_learning": "Continuar Aprendendo",
+    "confirm_reset": "Tem certeza que deseja resetar seu progresso neste curso? Esta ação não pode ser desfeita.",
+    "add_bookmark": "Adicionar aos favoritos",
+    "remove_bookmark": "Remover dos favoritos",
+    "reset_progress": "Resetar progresso",
+
+    "status": {
+      "locked": "Bloqueado",
+      "completed": "Concluído",
+      "certified": "Certificado",
+      "in_progress": "Em Andamento",
+      "not_started": "Não Iniciado"
+    },
+
+    "difficulty": {
+      "beginner": "Iniciante",
+      "intermediate": "Intermediário",
+      "advanced": "Avançado"
+    },
+
+    "path_not_found": "Trilha não encontrada",
+    "back_to_paths": "Voltar para trilhas",
+    "path_modules": "Módulos da Trilha",
+    "modules_completed": "{completed} de {total} módulos concluídos",
+    "minimum_score": "Nota mínima para certificação: {score}%",
+
+    "module_types": {
+      "content": "Conteúdo",
+      "quiz": "Quiz",
+      "case_study": "Caso Clínico",
+      "flashcards": "Flashcards",
+      "video": "Vídeo",
+      "interactive": "Interativo"
+    },
+
+    "module_not_found": "Módulo não encontrado",
+    "previous": "Anterior",
+    "next": "Próximo",
+    "complete_path": "Concluir Trilha",
+    "completed_score": "{score}% - Concluído",
+    "completed": "Concluído",
+    "congratulations": "Parabéns!",
+    "path_completed": "Trilha Concluída!",
+    "close": "Fechar",
+    "continue_btn": "Continuar",
+    "default_user": "Profissional de Saúde",
+    "mark_complete": "Marcar como concluído",
+    "mark_as_viewed": "Marcar como visto",
+
+    "case_study_player": {
+      "title": "Caso Clínico Interativo",
+      "coming_soon": "Os casos clínicos interativos estarão disponíveis em breve."
+    },
+
+    "flashcards_player": {
+      "title": "Flashcards com Repetição Espaçada",
+      "coming_soon": "O sistema de flashcards estará disponível em breve."
+    },
+
+    "completion_modal": {
+      "congratulations": "Parabéns!",
+      "path_completed": "Trilha Concluída!",
+      "completed_with_cert": "Você concluiu a trilha <strong>{pathTitle}</strong> e ganhou um certificado!",
+      "completed_success": "Você concluiu a trilha <strong>{pathTitle}</strong> com sucesso.",
+      "certificate_issued": "Certificado Emitido",
+      "score": "Pontuação: {score}%",
+      "view_certificate": "Ver Certificado",
+      "close": "Fechar",
+      "continue": "Continuar"
+    },
+
+    "coming": {
+      "emergency": "Urgências na APS",
+      "emergency_desc": "Manejo inicial de emergências no contexto da atenção primária.",
+      "mental_health": "Saúde Mental",
+      "mental_health_desc": "Abordagem integral da saúde mental na APS.",
+      "pediatrics": "Pediatria Essencial",
+      "pediatrics_desc": "Condições pediátricas comuns na atenção primária."
+    },
+
+    "free_forever": {
+      "title": "100% Gratuito, Para Sempre",
+      "description": "Darwin MFC é uma plataforma acadêmica sem fins lucrativos. Todo o conteúdo educacional é e sempre será completamente gratuito."
+    },
+
+    "paths": {
+      "aps_essentials": {
+        "title": "Fundamentos da APS",
+        "description": "Conhecimentos essenciais para a prática na Atenção Primária à Saúde."
+      },
+      "medication_safety": {
+        "title": "Segurança no Uso de Medicamentos",
+        "description": "Interações medicamentosas, ajuste renal, populações especiais."
+      }
+    },
+
+    "modules": {
+      "aps_intro": {
+        "title": "Introdução à APS",
+        "description": "Conceitos fundamentais da Atenção Primária à Saúde."
+      },
+      "hipertensao": {
+        "title": "Hipertensão Arterial",
+        "description": "Diagnóstico e manejo da HAS na APS."
+      },
+      "hipertensao_quiz": {
+        "title": "Quiz: Hipertensão",
+        "description": "Avalie seu conhecimento sobre HAS."
+      },
+      "diabetes": {
+        "title": "Diabetes Mellitus",
+        "description": "Manejo do diabetes tipo 2 na atenção primária."
+      },
+      "diabetes_case": {
+        "title": "Caso Clínico: Diabetes",
+        "description": "Caso interativo de paciente com DM2."
+      },
+      "depressao": {
+        "title": "Depressão",
+        "description": "Rastreamento e tratamento da depressão na APS."
+      },
+      "depressao_quiz": {
+        "title": "Quiz: Depressão",
+        "description": "Avalie seu conhecimento sobre depressão."
+      },
+      "rastreamento": {
+        "title": "Rastreamento de Câncer",
+        "description": "Protocolos de rastreamento oncológico na APS."
+      },
+      "final_assessment": {
+        "title": "Avaliação Final",
+        "description": "Teste integrado de todos os módulos."
+      },
+      "med_principles": {
+        "title": "Princípios de Prescrição Segura",
+        "description": "Fundamentos da prescrição segura de medicamentos."
+      },
+      "med_interactions": {
+        "title": "Interações Medicamentosas",
+        "description": "Interações clinicamente relevantes."
+      },
+      "interactions_flashcards": {
+        "title": "Flashcards: Interações",
+        "description": "Revisão com repetição espaçada."
+      },
+      "renal_dosing": {
+        "title": "Ajuste Renal",
+        "description": "Ajuste de dose na insuficiência renal."
+      },
+      "renal_quiz": {
+        "title": "Quiz: Ajuste Renal",
+        "description": "Teste seu conhecimento sobre ajuste renal."
+      },
+      "med_elderly": {
+        "title": "Medicamentos em Idosos",
+        "description": "Prescrição segura no paciente idoso."
+      },
+      "med_pregnancy": {
+        "title": "Medicamentos na Gestação",
+        "description": "Segurança medicamentosa na gravidez."
+      },
+      "med_final": {
+        "title": "Avaliação Final",
+        "description": "Teste integrado de segurança medicamentosa."
+      }
+    },
+
+    "certs": {
+      "aps_essentials": {
+        "title": "Fundamentos da APS",
+        "description": "Certificado de conclusão do curso de Fundamentos da APS."
+      },
+      "medication_safety": {
+        "title": "Segurança Medicamentosa",
+        "description": "Certificado de conclusão do curso de Segurança no Uso de Medicamentos."
+      }
+    },
+
+    "quiz": {
+      "question": "Questão",
+      "points": "pontos",
+      "submit": "Responder",
+      "next": "Próxima",
+      "finish": "Finalizar",
+      "retry": "Tentar Novamente",
+      "attempts_remaining": "tentativas restantes",
+      "passed_title": "Parabéns!",
+      "passed_message": "Você atingiu a pontuação mínima.",
+      "failed_title": "Não foi desta vez",
+      "failed_message": "Você não atingiu a pontuação mínima.",
+      "passing": "Mínimo",
+      "correct_answers": "Acertos"
+    },
+
+    "widget": {
+      "start_learning": "Comece a Aprender",
+      "start_description": "Trilhas de aprendizado estruturadas para profissionais de atenção primária. Grátis para sempre.",
+      "explore": "Explorar Trilhas",
+      "my_learning": "Meu Aprendizado",
+      "view_all": "Ver Tudo",
+      "days": "dias",
+      "certs": "certs",
+      "paths": "trilhas",
+      "continue": "Continue de onde parou",
+      "all_completed": "Todas as trilhas concluídas! Confira novos conteúdos.",
+      "browse": "Ver Trilhas"
+    },
+
+    "progress": {
+      "title": "Meu Progresso",
+      "reset_all": "Resetar Tudo",
+      "streak_days": "Dias de Sequência",
+      "modules_completed": "Módulos",
+      "minutes_studied": "Minutos",
+      "certificates": "Certificados",
+      "no_progress": "Nenhum progresso de aprendizado ainda",
+      "start_learning": "Inicie uma trilha de aprendizado para acompanhar seu progresso aqui.",
+      "browse_paths": "Ver Trilhas de Aprendizado",
+      "in_progress": "Em Andamento",
+      "completed": "Concluído",
+      "my_certificates": "Meus Certificados",
+      "activity": "Atividade Recente",
+      "last_active": "Última atividade",
+      "day_streak": "dias de sequência",
+      "no_activity": "Nenhuma atividade recente",
+      "bookmarked": "Favoritos"
+    },
+
+    "confirm_reset_all": "Tem certeza que deseja resetar todo o progresso? Esta ação não pode ser desfeita.",
+
+    "certificate": {
+      "title": "Certificado de Conclusão",
+      "subtitle": "Curso Concluído com Êxito",
+      "presented_to": "Certificamos que",
+      "for_completing": "concluiu com aproveitamento o curso",
+      "score": "aproveitamento",
+      "download": "Baixar Certificado",
+      "generating": "Gerando...",
+      "share": "Compartilhar",
+      "verify_link": "Verificar autenticidade",
+      "share_title": "Meu certificado Darwin MFC",
+      "share_text": "Concluí o curso de",
+      "link_copied": "Link copiado para a área de transferência!",
+      "not_found": "Certificado não encontrado",
+      "view_all": "Ver Todos os Certificados",
+      "no_certificates": "Você ainda não possui certificados",
+      "complete_path": "Complete uma trilha de aprendizado para receber seu certificado."
+    }
+  }
+}

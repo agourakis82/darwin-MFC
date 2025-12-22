@@ -5,7 +5,7 @@ import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { useAppStore } from '@/lib/store/appStore';
 import { LanguageSelector } from '../LanguageSelector';
-import { Sun, Moon, BookOpen, FileText, Menu, X, Search, Zap, ClipboardList, AlertTriangle, Pill, Calculator, Stethoscope, Keyboard } from 'lucide-react';
+import { Sun, Moon, BookOpen, FileText, Menu, X, Search, Zap, ClipboardList, AlertTriangle, Pill, Calculator, Stethoscope, Keyboard, GraduationCap, Users } from 'lucide-react';
 
 // Fallback translations for pages not yet migrated to [locale]
 const fallbackTranslations: Record<string, string> = {
@@ -21,6 +21,8 @@ const fallbackTranslations: Record<string, string> = {
   'nav.doencas': 'Doenças APS',
   'nav.medicamentos': 'Bulário RENAME',
   'nav.protocolos': 'Protocolos',
+  'nav.learn': 'Aprender',
+  'nav.community': 'Comunidade',
   'header.search': 'Buscar',
   'header.descriptiveMode': 'Descritivo',
   'header.criticalAnalysisMode': 'Análise',
@@ -125,6 +127,21 @@ export default function Header() {
             >
               {t('nav.timeline')}
             </Link>
+            <div className="w-px h-5 bg-black/10 dark:bg-white/10 mx-1" />
+            <Link
+              href="/learn"
+              className="px-3.5 py-2 text-base font-medium text-[#007aff] dark:text-[#5ac8fa] hover:bg-[#007aff]/10 dark:hover:bg-[#5ac8fa]/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
+            >
+              <GraduationCap className="w-4 h-4" />
+              {t('nav.learn')}
+            </Link>
+            <Link
+              href="/community"
+              className="px-3.5 py-2 text-base font-medium text-[#af52de] dark:text-[#bf5af2] hover:bg-[#af52de]/10 dark:hover:bg-[#bf5af2]/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
+            >
+              <Users className="w-4 h-4" />
+              {t('nav.community')}
+            </Link>
           </nav>
 
           {/* Controles */}
@@ -187,6 +204,31 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="lg:hidden pb-6 border-t border-black/10 dark:border-white/10 mt-4 pt-4 animate-fade-in max-h-[80vh] overflow-y-auto">
             
+            {/* Plataforma Social */}
+            <div className="mb-4">
+              <p className="px-5 py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">
+                Plataforma
+              </p>
+              <nav className="grid grid-cols-2 gap-2 px-3">
+                <Link
+                  href="/learn"
+                  className="flex flex-col items-center gap-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border-2 border-blue-200 dark:border-blue-800"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <GraduationCap className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                  <span className="text-xs font-medium">Aprender</span>
+                </Link>
+                <Link
+                  href="/community"
+                  className="flex flex-col items-center gap-2 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border-2 border-purple-200 dark:border-purple-800"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Users className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                  <span className="text-xs font-medium">Comunidade</span>
+                </Link>
+              </nav>
+            </div>
+
             {/* Ferramentas Rápidas */}
             <div className="mb-4">
               <p className="px-5 py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">

@@ -4,6 +4,7 @@ import { doencasConsolidadas } from '@/lib/data/doencas/index';
 import { medicamentosConsolidados } from '@/lib/data/medicamentos/index';
 import { todosProtocolosFlowchart } from '@/lib/data/protocolos-flowchart';
 import { useTranslations } from 'next-intl';
+import { LearningWidget } from '@/app/components/Learning';
 
 // Estatísticas dinâmicas
 const stats = {
@@ -99,6 +100,13 @@ export default function HomeContent() {
               Fluxogramas interativos e calculadoras clínicas
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Learning Widget Section */}
+      <div className="container mx-auto px-4 mb-16">
+        <div className="max-w-lg mx-auto">
+          <LearningWidget />
         </div>
       </div>
 

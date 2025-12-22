@@ -20,11 +20,12 @@
 // CONFIGURATION
 // =============================================================================
 
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const CACHE_NAME = `darwin-mfc-${CACHE_VERSION}`;
 const STATIC_CACHE = `darwin-mfc-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE = `darwin-mfc-dynamic-${CACHE_VERSION}`;
 const IMAGE_CACHE = `darwin-mfc-images-${CACHE_VERSION}`;
+const API_CACHE = `darwin-mfc-api-${CACHE_VERSION}`;
 
 // Maximum cache sizes (in bytes)
 const MAX_DYNAMIC_CACHE_SIZE = 50 * 1024 * 1024; // 50MB
@@ -343,7 +344,60 @@ self.addEventListener('message', (event) => {
       event.ports[0].postMessage({ size });
     });
   }
+
+  // Register background sync
+  if (event.data && event.data.type === 'REGISTER_SYNC') {
+    const tag = event.data.tag || SYNC_TAGS.USER_DATA;
+    self.registration.sync.register(tag).then(() => {
+      console.log('[SW] Sync registered:', tag);
+    }).catch(err => {
+      console.error('[SW] Sync registration failed:', err);
+    });
+  }
+
+  // Force sync now
+  if (event.data && event.data.type === 'SYNC_NOW') {
+    syncAllUserData().then(() => {
+      event.ports[0]?.postMessage({ success: true });
+    }).catch(err => {
+      event.ports[0]?.postMessage({ success: false, error: err.message });
+    });
+  }
+
+  // Get sync status
+  if (event.data && event.data.type === 'GET_SYNC_STATUS') {
+    Promise.all([
+      getSyncQueueCount(),
+      getAuthToken().then(t => !!t),
+    ]).then(([queueCount, hasAuth]) => {
+      event.ports[0]?.postMessage({
+        queueCount,
+        hasAuth,
+        isOnline: navigator.onLine,
+      });
+    });
+  }
 });
+
+/**
+ * Get sync queue count
+ */
+async function getSyncQueueCount() {
+  try {
+    const db = await openUserDB();
+    const tx = db.transaction('syncQueue', 'readonly');
+    const store = tx.objectStore('syncQueue');
+    const index = store.index('status');
+
+    return new Promise((resolve, reject) => {
+      const request = index.count('pending');
+      request.onerror = () => reject(request.error);
+      request.onsuccess = () => resolve(request.result);
+    });
+  } catch (error) {
+    return 0;
+  }
+}
 
 /**
  * Get total cache size in bytes
@@ -369,18 +423,391 @@ async function getCacheSize() {
 }
 
 // =============================================================================
-// BACKGROUND SYNC (for future use with favorites/notes)
+// BACKGROUND SYNC (for user data synchronization)
 // =============================================================================
 
+// Sync tags
+const SYNC_TAGS = {
+  USER_DATA: 'sync-user-data',
+  FAVORITES: 'sync-favorites',
+  NOTES: 'sync-notes',
+  PROGRESS: 'sync-progress',
+  QUEUE: 'sync-queue',
+};
+
 self.addEventListener('sync', (event) => {
-  if (event.tag === 'sync-favorites') {
-    event.waitUntil(syncFavorites());
+  console.log('[SW] Background sync triggered:', event.tag);
+
+  switch (event.tag) {
+    case SYNC_TAGS.USER_DATA:
+      event.waitUntil(syncAllUserData());
+      break;
+    case SYNC_TAGS.FAVORITES:
+      event.waitUntil(syncFavorites());
+      break;
+    case SYNC_TAGS.NOTES:
+      event.waitUntil(syncNotes());
+      break;
+    case SYNC_TAGS.PROGRESS:
+      event.waitUntil(syncProgress());
+      break;
+    case SYNC_TAGS.QUEUE:
+      event.waitUntil(processSyncQueue());
+      break;
+    default:
+      console.log('[SW] Unknown sync tag:', event.tag);
   }
 });
 
+/**
+ * Sync all pending user data
+ */
+async function syncAllUserData() {
+  console.log('[SW] Syncing all user data...');
+
+  try {
+    await Promise.all([
+      syncFavorites(),
+      syncNotes(),
+      syncProgress(),
+      processSyncQueue(),
+    ]);
+    console.log('[SW] All user data synced successfully');
+  } catch (error) {
+    console.error('[SW] Failed to sync user data:', error);
+    throw error; // Retry later
+  }
+}
+
+/**
+ * Sync favorites with server
+ */
 async function syncFavorites() {
-  // Future: sync user favorites when back online
-  console.log('[SW] Background sync triggered');
+  console.log('[SW] Syncing favorites...');
+
+  try {
+    // Get pending favorites from IndexedDB
+    const db = await openUserDB();
+    const tx = db.transaction('favorites', 'readonly');
+    const store = tx.objectStore('favorites');
+    const index = store.index('syncStatus');
+    const pending = await getAllFromIndex(index, 'pending');
+
+    if (pending.length === 0) {
+      console.log('[SW] No pending favorites to sync');
+      return;
+    }
+
+    // Get auth token
+    const token = await getAuthToken();
+    if (!token) {
+      console.log('[SW] No auth token, skipping favorites sync');
+      return;
+    }
+
+    // Push to server
+    const response = await fetch(getApiUrl('/favorites/sync'), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify({ items: pending }),
+    });
+
+    if (response.ok) {
+      // Mark as synced
+      const txWrite = db.transaction('favorites', 'readwrite');
+      const storeWrite = txWrite.objectStore('favorites');
+      for (const item of pending) {
+        item.syncStatus = 'synced';
+        storeWrite.put(item);
+      }
+      console.log(`[SW] Synced ${pending.length} favorites`);
+    } else {
+      throw new Error(`Favorites sync failed: ${response.status}`);
+    }
+  } catch (error) {
+    console.error('[SW] Favorites sync error:', error);
+    throw error;
+  }
+}
+
+/**
+ * Sync notes with server
+ */
+async function syncNotes() {
+  console.log('[SW] Syncing notes...');
+
+  try {
+    const db = await openUserDB();
+    const tx = db.transaction('notes', 'readonly');
+    const store = tx.objectStore('notes');
+    const index = store.index('syncStatus');
+    const pending = await getAllFromIndex(index, 'pending');
+
+    if (pending.length === 0) {
+      console.log('[SW] No pending notes to sync');
+      return;
+    }
+
+    const token = await getAuthToken();
+    if (!token) {
+      console.log('[SW] No auth token, skipping notes sync');
+      return;
+    }
+
+    const response = await fetch(getApiUrl('/notes/sync'), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify({ items: pending }),
+    });
+
+    if (response.ok) {
+      const txWrite = db.transaction('notes', 'readwrite');
+      const storeWrite = txWrite.objectStore('notes');
+      for (const item of pending) {
+        item.syncStatus = 'synced';
+        storeWrite.put(item);
+      }
+      console.log(`[SW] Synced ${pending.length} notes`);
+    } else {
+      throw new Error(`Notes sync failed: ${response.status}`);
+    }
+  } catch (error) {
+    console.error('[SW] Notes sync error:', error);
+    throw error;
+  }
+}
+
+/**
+ * Sync learning progress with server
+ */
+async function syncProgress() {
+  console.log('[SW] Syncing progress...');
+
+  try {
+    const db = await openUserDB();
+    const tx = db.transaction('progress', 'readonly');
+    const store = tx.objectStore('progress');
+    const index = store.index('syncStatus');
+    const pending = await getAllFromIndex(index, 'pending');
+
+    if (pending.length === 0) {
+      console.log('[SW] No pending progress to sync');
+      return;
+    }
+
+    const token = await getAuthToken();
+    if (!token) {
+      console.log('[SW] No auth token, skipping progress sync');
+      return;
+    }
+
+    const response = await fetch(getApiUrl('/sync/push'), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify({ store: 'progress', items: pending }),
+    });
+
+    if (response.ok) {
+      const txWrite = db.transaction('progress', 'readwrite');
+      const storeWrite = txWrite.objectStore('progress');
+      for (const item of pending) {
+        item.syncStatus = 'synced';
+        storeWrite.put(item);
+      }
+      console.log(`[SW] Synced ${pending.length} progress records`);
+    } else {
+      throw new Error(`Progress sync failed: ${response.status}`);
+    }
+  } catch (error) {
+    console.error('[SW] Progress sync error:', error);
+    throw error;
+  }
+}
+
+/**
+ * Process the sync queue
+ */
+async function processSyncQueue() {
+  console.log('[SW] Processing sync queue...');
+
+  try {
+    const db = await openUserDB();
+    const tx = db.transaction('syncQueue', 'readonly');
+    const store = tx.objectStore('syncQueue');
+    const index = store.index('status');
+    const pending = await getAllFromIndex(index, 'pending');
+
+    if (pending.length === 0) {
+      console.log('[SW] No pending operations in queue');
+      return;
+    }
+
+    const token = await getAuthToken();
+    if (!token) {
+      console.log('[SW] No auth token, skipping queue processing');
+      return;
+    }
+
+    let processed = 0;
+    let failed = 0;
+
+    for (const operation of pending) {
+      try {
+        const { endpoint, method, body } = operation.payload;
+
+        const response = await fetch(getApiUrl(endpoint), {
+          method: method || 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+          },
+          body: body ? JSON.stringify(body) : undefined,
+        });
+
+        if (response.ok) {
+          // Remove from queue
+          const txWrite = db.transaction('syncQueue', 'readwrite');
+          txWrite.objectStore('syncQueue').delete(operation.id);
+          processed++;
+        } else {
+          throw new Error(`Operation failed: ${response.status}`);
+        }
+      } catch (error) {
+        // Mark as failed after 3 attempts
+        const txWrite = db.transaction('syncQueue', 'readwrite');
+        const storeWrite = txWrite.objectStore('syncQueue');
+        operation.attempts = (operation.attempts || 0) + 1;
+        operation.lastAttempt = new Date().toISOString();
+        operation.error = error.message;
+
+        if (operation.attempts >= 3) {
+          operation.status = 'failed';
+        }
+
+        storeWrite.put(operation);
+        failed++;
+      }
+    }
+
+    console.log(`[SW] Queue processed: ${processed} success, ${failed} failed`);
+  } catch (error) {
+    console.error('[SW] Queue processing error:', error);
+    throw error;
+  }
+}
+
+// =============================================================================
+// INDEXEDDB HELPERS (for service worker context)
+// =============================================================================
+
+const USER_DB_NAME = 'darwin-mfc-db';
+const USER_DB_VERSION = 1;
+
+function openUserDB() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(USER_DB_NAME, USER_DB_VERSION);
+    request.onerror = () => reject(request.error);
+    request.onsuccess = () => resolve(request.result);
+  });
+}
+
+function getAllFromIndex(index, value) {
+  return new Promise((resolve, reject) => {
+    const request = index.getAll(value);
+    request.onerror = () => reject(request.error);
+    request.onsuccess = () => resolve(request.result);
+  });
+}
+
+async function getAuthToken() {
+  try {
+    const db = await openUserDB();
+    const tx = db.transaction('authTokens', 'readonly');
+    const store = tx.objectStore('authTokens');
+
+    return new Promise((resolve, reject) => {
+      const request = store.get('current');
+      request.onerror = () => reject(request.error);
+      request.onsuccess = () => {
+        const tokens = request.result;
+        if (tokens && new Date(tokens.offlineValidUntil) > new Date()) {
+          resolve(tokens.accessToken);
+        } else {
+          resolve(null);
+        }
+      };
+    });
+  } catch (error) {
+    console.error('[SW] Failed to get auth token:', error);
+    return null;
+  }
+}
+
+function getApiUrl(endpoint) {
+  // API URL - should match the app configuration
+  const API_BASE = self.location.origin.includes('localhost')
+    ? 'http://localhost:8090'
+    : 'https://api.darwin-mfc.com'; // Production API
+  return `${API_BASE}/api/v1${endpoint}`;
+}
+
+// =============================================================================
+// PERIODIC SYNC (for content updates)
+// =============================================================================
+
+self.addEventListener('periodicsync', (event) => {
+  if (event.tag === 'content-update') {
+    event.waitUntil(checkContentUpdates());
+  }
+});
+
+async function checkContentUpdates() {
+  console.log('[SW] Checking for content updates...');
+
+  try {
+    const response = await fetch(getApiUrl('/content/version'));
+    if (response.ok) {
+      const data = await response.json();
+      const currentVersion = await getCachedContentVersion();
+
+      if (data.version !== currentVersion) {
+        console.log('[SW] New content available:', data.version);
+        // Notify the app
+        const clients = await self.clients.matchAll();
+        clients.forEach((client) => {
+          client.postMessage({
+            type: 'CONTENT_UPDATE_AVAILABLE',
+            version: data.version,
+          });
+        });
+      }
+    }
+  } catch (error) {
+    console.error('[SW] Content update check failed:', error);
+  }
+}
+
+async function getCachedContentVersion() {
+  try {
+    const cache = await caches.open(DYNAMIC_CACHE);
+    const response = await cache.match('/content-version');
+    if (response) {
+      const data = await response.json();
+      return data.version;
+    }
+  } catch (error) {
+    // Ignore
+  }
+  return null;
 }
 
 // =============================================================================

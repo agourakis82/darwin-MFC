@@ -26,12 +26,18 @@ const OfflineIndicator = dynamic(
   { ssr: false }
 );
 
+const SyncManager = dynamic(
+  () => import('./SyncManager'),
+  { ssr: false }
+);
+
 export function PWAProvider() {
   return (
     <>
       <ServiceWorkerRegistration />
       <InstallPrompt />
       <OfflineIndicator />
+      <SyncManager />
     </>
   );
 }
@@ -40,3 +46,4 @@ export function PWAProvider() {
 export { default as InstallPrompt } from './InstallPrompt';
 export { default as ServiceWorkerRegistration } from './ServiceWorkerRegistration';
 export { default as OfflineIndicator } from './OfflineIndicator';
+export { default as SyncManager } from './SyncManager';
