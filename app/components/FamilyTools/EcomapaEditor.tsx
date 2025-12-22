@@ -1,20 +1,22 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import ReactFlow, {
-  Node,
-  Edge,
+import {
+  ReactFlow,
+  type Node,
+  type Edge,
   Controls,
   Background,
   useNodesState,
   useEdgesState,
   addEdge,
-  Connection,
+  type Connection,
   MarkerType,
   Panel,
-  ReactFlowInstance,
-} from 'reactflow';
-import 'reactflow/dist/style.css';
+  type ReactFlowInstance,
+  type NodeProps,
+} from '@xyflow/react';
+import '@xyflow/react/dist/style.css';
 import { 
   Plus, 
   Trash2, 
@@ -90,8 +92,11 @@ const tipoCores: Record<TipoRecurso, string> = {
   outro: 'bg-neutral-500',
 };
 
+// Custom node type for xyflow
+type RecursoNode = Node<RecursoData, 'recurso'>;
+
 // Nó de recurso
-const RecursoNode = ({ data }: { data: RecursoData }) => {
+const RecursoNodeComponent = ({ data }: NodeProps<RecursoNode>) => {
   const { nome, tipo, isFamilia } = data;
   const Icon = tipoIcones[tipo];
   const corBg = tipoCores[tipo];
@@ -122,7 +127,7 @@ const RecursoNode = ({ data }: { data: RecursoData }) => {
 
 // Tipos de nó customizados
 const nodeTypes = {
-  recurso: RecursoNode,
+  recurso: RecursoNodeComponent,
 };
 
 // Estilos de linha por tipo de vínculo
@@ -135,7 +140,7 @@ const estilosVinculo: Record<TipoVinculo, { strokeWidth: number; strokeDasharray
 };
 
 // Estado inicial - família no centro
-const initialNodes: Node<RecursoData>[] = [
+const initialNodes: RecursoNode[] = [
   {
     id: 'familia-central',
     type: 'recurso',
@@ -160,9 +165,9 @@ const recursosSugeridos: { nome: string; tipo: TipoRecurso }[] = [
 ];
 
 export default function EcomapaEditor() {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [nodes, setNodes, onNodesChange] = useNodesState<RecursoNode>(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-  const [selectedNode, setSelectedNode] = useState<Node<RecursoData> | null>(null);
+  const [selectedNode, setSelectedNode] = useState<RecursoNode | null>(null);
   const [selectedEdge, setSelectedEdge] = useState<Edge | null>(null);
   const [showAddModal, setShowAddModal] = useState(false);
   const [reactFlowInstance, setReactFlowInstance] = useState<ReactFlowInstance | null>(null);
@@ -190,8 +195,8 @@ export default function EcomapaEditor() {
     [setEdges, tipoVinculo]
   );
 
-  const onNodeClick = useCallback((_: React.MouseEvent, node: Node) => {
-    setSelectedNode(node as Node<RecursoData>);
+  const onNodeClick = useCallback((_: React.MouseEvent, node: RecursoNode) => {
+    setSelectedNode(node);
     setSelectedEdge(null);
   }, []);
 
@@ -213,7 +218,7 @@ export default function EcomapaEditor() {
   const addRecurso = () => {
     const newId = `recurso-${Date.now()}`;
     const currentCount = nodes.length;
-    const newNode: Node<RecursoData> = {
+    const newNode: RecursoNode = {
       id: newId,
       type: 'recurso',
       position: getPositionAroundCenter(currentCount, currentCount + 5),
@@ -322,14 +327,14 @@ export default function EcomapaEditor() {
   return (
     <div className="h-[600px] w-full bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-700 overflow-hidden">
       <ReactFlow
-        nodes={nodes}
+        nodes={nodes as Node[]}
         edges={edges}
-        onNodesChange={onNodesChange}
+        onNodesChange={onNodesChange as any}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
-        onNodeClick={onNodeClick}
+        onNodeClick={onNodeClick as any}
         onEdgeClick={onEdgeClick}
-        onInit={setReactFlowInstance}
+        onInit={setReactFlowInstance as any}
         nodeTypes={nodeTypes}
         fitView
         className="bg-neutral-50 dark:bg-neutral-800"

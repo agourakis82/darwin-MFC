@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip, type PieLabelRenderProps } from 'recharts';
 import { getDiseaseCategoryStats } from '@/lib/utils/disease-stats';
 
 interface DiseaseCategoryChartProps {
@@ -52,16 +52,17 @@ export default function DiseaseCategoryChart({
   height = 300,
 }: DiseaseCategoryChartProps) {
   const stats = getDiseaseCategoryStats(diseases);
-  
+
   const data = stats.map(stat => ({
     name: CATEGORY_LABELS[stat.category] || stat.category,
     value: stat.count,
     percentage: stat.percentage.toFixed(1),
   }));
 
-  const renderLabel = (entry: { name: string; percentage: string }) => {
+  const renderLabel = (props: PieLabelRenderProps) => {
     if (!showLabels) return null;
-    return `${entry.name}: ${entry.percentage}%`;
+    const payload = props.payload as { name?: string; percentage?: string };
+    return `${payload.name || ''}: ${payload.percentage || '0'}%`;
   };
 
   return (
@@ -77,21 +78,21 @@ export default function DiseaseCategoryChart({
           fill="#8884d8"
           dataKey="value"
         >
-          {data.map((entry, index) => (
+          {data.map((_, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
         <Tooltip
-          formatter={(value: number, name: string, props: any) => [
-            `${value} doenças (${props.payload.percentage}%)`,
-            props.payload.name,
+          formatter={(value, _name, props) => [
+            `${value} doenças (${(props.payload as { percentage?: string }).percentage || '0'}%)`,
+            (props.payload as { name?: string }).name || '',
           ]}
         />
         {showLegend && (
           <Legend
-            formatter={(value: string, entry: any) => (
+            formatter={(value, entry) => (
               <span className="text-sm text-neutral-700 dark:text-neutral-300">
-                {value} ({entry.payload.percentage}%)
+                {value} ({(entry.payload as { percentage?: string })?.percentage || '0'}%)
               </span>
             )}
           />

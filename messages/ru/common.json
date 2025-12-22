@@ -22,7 +22,34 @@
     "import": "Импорт",
     "download": "Скачать",
     "print": "Печать",
-    "share": "Поделиться"
+    "share": "Поделиться",
+    "pwa": {
+      "installTitle": "Установить Darwin MFC",
+      "installSubtitle": "Работает офлайн!",
+      "benefitOffline": "Доступ к контенту без интернета",
+      "benefitFast": "Быстрая загрузка, меньше данных",
+      "benefitApp": "Используйте как нативное приложение",
+      "installButton": "Установить",
+      "later": "Позже",
+      "online": "Онлайн",
+      "offline": "Офлайн",
+      "sync_status": "Статус синхронизации",
+      "last_sync": "Последняя синхр.",
+      "pending_sync": "Ожидает",
+      "sync_failed": "Ошибка",
+      "clear_failed": "Очистить ошибки",
+      "storage": "Хранилище",
+      "syncing": "Синхронизация...",
+      "sync_now": "Синхронизировать",
+      "never_synced": "Никогда",
+      "just_now": "Только что",
+      "ago": "назад",
+      "updateTitle": "Доступно обновление",
+      "updateMessage": "Новая версия готова к установке",
+      "updateButton": "Обновить сейчас",
+      "reconnected": "Снова онлайн!",
+      "offlineMode": "Офлайн - используются кэшированные данные"
+    }
   },
   "nav": {
     "home": "Главная",
@@ -201,32 +228,5 @@
       "languages": "Языки",
       "calculators": "Калькуляторы"
     }
-  },
-  "pwa": {
-    "installTitle": "Установить Darwin MFC",
-    "installSubtitle": "Работает офлайн!",
-    "benefitOffline": "Доступ к контенту без интернета",
-    "benefitFast": "Быстрая загрузка, меньше данных",
-    "benefitApp": "Используйте как нативное приложение",
-    "installButton": "Установить",
-    "later": "Позже",
-    "online": "Онлайн",
-    "offline": "Офлайн",
-    "sync_status": "Статус синхронизации",
-    "last_sync": "Последняя синхр.",
-    "pending_sync": "Ожидает",
-    "sync_failed": "Ошибка",
-    "clear_failed": "Очистить ошибки",
-    "storage": "Хранилище",
-    "syncing": "Синхронизация...",
-    "sync_now": "Синхронизировать",
-    "never_synced": "Никогда",
-    "just_now": "Только что",
-    "ago": "назад",
-    "updateTitle": "Доступно обновление",
-    "updateMessage": "Новая версия готова к установке",
-    "updateButton": "Обновить сейчас",
-    "reconnected": "Снова онлайн!",
-    "offlineMode": "Офлайн - используются кэшированные данные"
   }
 }

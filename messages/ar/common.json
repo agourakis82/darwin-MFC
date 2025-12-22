@@ -22,7 +22,34 @@
     "import": "استيراد",
     "download": "تحميل",
     "print": "طباعة",
-    "share": "مشاركة"
+    "share": "مشاركة",
+    "pwa": {
+      "installTitle": "تثبيت Darwin MFC",
+      "installSubtitle": "يعمل بدون إنترنت!",
+      "benefitOffline": "الوصول للمحتوى بدون إنترنت",
+      "benefitFast": "تحميل سريع، بيانات أقل",
+      "benefitApp": "استخدم كتطبيق أصلي",
+      "installButton": "تثبيت",
+      "later": "لاحقاً",
+      "online": "متصل",
+      "offline": "غير متصل",
+      "sync_status": "حالة المزامنة",
+      "last_sync": "آخر مزامنة",
+      "pending_sync": "قيد الانتظار",
+      "sync_failed": "فشل",
+      "clear_failed": "مسح الفاشلة",
+      "storage": "التخزين",
+      "syncing": "جاري المزامنة...",
+      "sync_now": "مزامنة الآن",
+      "never_synced": "أبداً",
+      "just_now": "الآن",
+      "ago": "منذ",
+      "updateTitle": "تحديث متاح",
+      "updateMessage": "إصدار جديد جاهز للتثبيت",
+      "updateButton": "تحديث الآن",
+      "reconnected": "عدت للاتصال!",
+      "offlineMode": "غير متصل - استخدام البيانات المخزنة"
+    }
   },
   "nav": {
     "home": "الرئيسية",
@@ -201,32 +228,5 @@
       "languages": "اللغات",
       "calculators": "الآلات الحاسبة"
     }
-  },
-  "pwa": {
-    "installTitle": "تثبيت Darwin MFC",
-    "installSubtitle": "يعمل بدون إنترنت!",
-    "benefitOffline": "الوصول للمحتوى بدون إنترنت",
-    "benefitFast": "تحميل سريع، بيانات أقل",
-    "benefitApp": "استخدم كتطبيق أصلي",
-    "installButton": "تثبيت",
-    "later": "لاحقاً",
-    "online": "متصل",
-    "offline": "غير متصل",
-    "sync_status": "حالة المزامنة",
-    "last_sync": "آخر مزامنة",
-    "pending_sync": "قيد الانتظار",
-    "sync_failed": "فشل",
-    "clear_failed": "مسح الفاشلة",
-    "storage": "التخزين",
-    "syncing": "جاري المزامنة...",
-    "sync_now": "مزامنة الآن",
-    "never_synced": "أبداً",
-    "just_now": "الآن",
-    "ago": "منذ",
-    "updateTitle": "تحديث متاح",
-    "updateMessage": "إصدار جديد جاهز للتثبيت",
-    "updateButton": "تحديث الآن",
-    "reconnected": "عدت للاتصال!",
-    "offlineMode": "غير متصل - استخدام البيانات المخزنة"
   }
 }

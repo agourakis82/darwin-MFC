@@ -60,8 +60,8 @@ export default function CID10DistributionChart({
             }}
           />
           <Tooltip
-            formatter={(value: number, name: string, props: any) => {
-              const percentage = props.payload?.percentage?.toFixed(1) || '0';
+            formatter={(value, _name, props) => {
+              const percentage = (props.payload as { percentage?: number })?.percentage?.toFixed(1) || '0';
               return `${value} doenças (${percentage}%)`;
             }}
             contentStyle={{
@@ -103,8 +103,8 @@ export default function CID10DistributionChart({
           tick={{ fill: 'currentColor', fontSize: 12 }}
         />
         <Tooltip
-          formatter={(value: number, name: string, props: any) => {
-            const percentage = props.payload?.percentage?.toFixed(1) || '0';
+          formatter={(value, _name, props) => {
+            const percentage = (props.payload as { percentage?: number })?.percentage?.toFixed(1) || '0';
             return `${value} doenças (${percentage}%)`;
           }}
           contentStyle={{

@@ -1,20 +1,22 @@
 'use client';
 
 import { useState, useCallback, useRef } from 'react';
-import ReactFlow, {
-  Node,
-  Edge,
+import {
+  ReactFlow,
+  type Node,
+  type Edge,
   Controls,
   Background,
   useNodesState,
   useEdgesState,
   addEdge,
-  Connection,
+  type Connection,
   MarkerType,
   Panel,
-  ReactFlowInstance,
-} from 'reactflow';
-import 'reactflow/dist/style.css';
+  type ReactFlowInstance,
+  type NodeProps,
+} from '@xyflow/react';
+import '@xyflow/react/dist/style.css';
 import { 
   UserPlus, 
   Trash2, 
@@ -50,8 +52,11 @@ interface PessoaData {
   [key: string]: unknown;
 }
 
+// Custom node type for xyflow
+type PessoaNode = Node<PessoaData, 'pessoa'>;
+
 // Símbolos do genograma
-const GenogramaPessoa = ({ data }: { data: PessoaData }) => {
+const GenogramaPessoaComponent = ({ data }: NodeProps<PessoaNode>) => {
   const { nome, idade, sexo, estadoVital, condicoes, isPacienteIndice } = data;
   
   const baseSize = 50;
@@ -110,11 +115,11 @@ const GenogramaPessoa = ({ data }: { data: PessoaData }) => {
 
 // Tipos de nó customizados
 const nodeTypes = {
-  pessoa: GenogramaPessoa,
+  pessoa: GenogramaPessoaComponent,
 };
 
 // Estado inicial
-const initialNodes: Node<PessoaData>[] = [
+const initialNodes: PessoaNode[] = [
   {
     id: 'paciente',
     type: 'pessoa',
@@ -133,9 +138,9 @@ const initialNodes: Node<PessoaData>[] = [
 const initialEdges: Edge[] = [];
 
 export default function GenogramaEditor() {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [nodes, setNodes, onNodesChange] = useNodesState<PessoaNode>(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-  const [selectedNode, setSelectedNode] = useState<Node<PessoaData> | null>(null);
+  const [selectedNode, setSelectedNode] = useState<PessoaNode | null>(null);
   const [showAddModal, setShowAddModal] = useState(false);
   const [reactFlowInstance, setReactFlowInstance] = useState<ReactFlowInstance | null>(null);
   
@@ -161,13 +166,13 @@ export default function GenogramaEditor() {
     [setEdges]
   );
 
-  const onNodeClick = useCallback((_: React.MouseEvent, node: Node) => {
-    setSelectedNode(node as Node<PessoaData>);
+  const onNodeClick = useCallback((_: React.MouseEvent, node: PessoaNode) => {
+    setSelectedNode(node);
   }, []);
 
   const addPessoa = () => {
     const newId = `pessoa-${Date.now()}`;
-    const newNode: Node<PessoaData> = {
+    const newNode: PessoaNode = {
       id: newId,
       type: 'pessoa',
       position: { x: Math.random() * 400 + 100, y: Math.random() * 300 + 100 },
@@ -249,13 +254,13 @@ export default function GenogramaEditor() {
   return (
     <div className="h-[600px] w-full bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-700 overflow-hidden">
       <ReactFlow
-        nodes={nodes}
+        nodes={nodes as Node[]}
         edges={edges}
-        onNodesChange={onNodesChange}
+        onNodesChange={onNodesChange as any}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
-        onNodeClick={onNodeClick}
-        onInit={setReactFlowInstance}
+        onNodeClick={onNodeClick as any}
+        onInit={setReactFlowInstance as any}
         nodeTypes={nodeTypes}
         fitView
         className="bg-neutral-50 dark:bg-neutral-800"

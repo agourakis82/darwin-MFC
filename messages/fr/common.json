@@ -22,7 +22,34 @@
     "import": "Importer",
     "download": "Télécharger",
     "print": "Imprimer",
-    "share": "Partager"
+    "share": "Partager",
+    "pwa": {
+      "installTitle": "Installer Darwin MFC",
+      "installSubtitle": "Fonctionne hors ligne!",
+      "benefitOffline": "Accéder au contenu sans internet",
+      "benefitFast": "Chargement rapide, moins de données",
+      "benefitApp": "Utiliser comme app native",
+      "installButton": "Installer",
+      "later": "Plus tard",
+      "online": "En ligne",
+      "offline": "Hors ligne",
+      "sync_status": "État de synchronisation",
+      "last_sync": "Dernière sync",
+      "pending_sync": "En attente",
+      "sync_failed": "Échoué",
+      "clear_failed": "Effacer les échecs",
+      "storage": "Stockage",
+      "syncing": "Synchronisation...",
+      "sync_now": "Synchroniser",
+      "never_synced": "Jamais",
+      "just_now": "À l'instant",
+      "ago": "il y a",
+      "updateTitle": "Mise à jour disponible",
+      "updateMessage": "Nouvelle version prête à installer",
+      "updateButton": "Mettre à jour",
+      "reconnected": "Reconnecté!",
+      "offlineMode": "Hors ligne - utilisation des données en cache"
+    }
   },
   "nav": {
     "home": "Accueil",
@@ -201,32 +228,5 @@
       "languages": "Langues",
       "calculators": "Calculatrices"
     }
-  },
-  "pwa": {
-    "installTitle": "Installer Darwin MFC",
-    "installSubtitle": "Fonctionne hors ligne!",
-    "benefitOffline": "Accéder au contenu sans internet",
-    "benefitFast": "Chargement rapide, moins de données",
-    "benefitApp": "Utiliser comme app native",
-    "installButton": "Installer",
-    "later": "Plus tard",
-    "online": "En ligne",
-    "offline": "Hors ligne",
-    "sync_status": "État de synchronisation",
-    "last_sync": "Dernière sync",
-    "pending_sync": "En attente",
-    "sync_failed": "Échoué",
-    "clear_failed": "Effacer les échecs",
-    "storage": "Stockage",
-    "syncing": "Synchronisation...",
-    "sync_now": "Synchroniser",
-    "never_synced": "Jamais",
-    "just_now": "À l'instant",
-    "ago": "il y a",
-    "updateTitle": "Mise à jour disponible",
-    "updateMessage": "Nouvelle version prête à installer",
-    "updateButton": "Mettre à jour",
-    "reconnected": "Reconnecté!",
-    "offlineMode": "Hors ligne - utilisation des données en cache"
   }
 }

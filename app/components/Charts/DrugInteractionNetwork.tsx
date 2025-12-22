@@ -1,11 +1,9 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-// Usando @xyflow/react (versão mais recente) ou reactflow (versão antiga)
-// Verificando qual está disponível
-import type { Node as FlowNode, Edge as FlowEdge } from 'reactflow';
-import { ReactFlow, Background, Controls, MiniMap } from 'reactflow';
-import 'reactflow/dist/style.css';
+import type { Node as FlowNode, Edge as FlowEdge } from '@xyflow/react';
+import { ReactFlow, Background, Controls, MiniMap } from '@xyflow/react';
+import '@xyflow/react/dist/style.css';
 import { buildMedicationNetwork, findInteractionsForMedications, calculateNetworkStatistics } from '@/lib/utils/medication-network';
 import { todosMedicamentos } from '@/lib/data/medicamentos/index';
 import type { Medicamento } from '@/lib/types/medicamento';

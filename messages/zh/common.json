@@ -22,7 +22,34 @@
     "import": "导入",
     "download": "下载",
     "print": "打印",
-    "share": "分享"
+    "share": "分享",
+    "pwa": {
+      "installTitle": "安装 Darwin MFC",
+      "installSubtitle": "离线可用！",
+      "benefitOffline": "无需网络即可访问内容",
+      "benefitFast": "加载快速，节省流量",
+      "benefitApp": "像原生应用一样使用",
+      "installButton": "安装",
+      "later": "稍后",
+      "online": "在线",
+      "offline": "离线",
+      "sync_status": "同步状态",
+      "last_sync": "上次同步",
+      "pending_sync": "待同步",
+      "sync_failed": "失败",
+      "clear_failed": "清除失败项",
+      "storage": "存储空间",
+      "syncing": "同步中...",
+      "sync_now": "立即同步",
+      "never_synced": "从未",
+      "just_now": "刚刚",
+      "ago": "前",
+      "updateTitle": "更新可用",
+      "updateMessage": "新版本已准备就绪",
+      "updateButton": "立即更新",
+      "reconnected": "已重新连接！",
+      "offlineMode": "离线 - 使用缓存数据"
+    }
   },
   "nav": {
     "home": "首页",
@@ -201,32 +228,5 @@
       "languages": "语言",
       "calculators": "计算器"
     }
-  },
-  "pwa": {
-    "installTitle": "安装 Darwin MFC",
-    "installSubtitle": "离线可用！",
-    "benefitOffline": "无需网络即可访问内容",
-    "benefitFast": "加载快速，节省流量",
-    "benefitApp": "像原生应用一样使用",
-    "installButton": "安装",
-    "later": "稍后",
-    "online": "在线",
-    "offline": "离线",
-    "sync_status": "同步状态",
-    "last_sync": "上次同步",
-    "pending_sync": "待同步",
-    "sync_failed": "失败",
-    "clear_failed": "清除失败项",
-    "storage": "存储空间",
-    "syncing": "同步中...",
-    "sync_now": "立即同步",
-    "never_synced": "从未",
-    "just_now": "刚刚",
-    "ago": "前",
-    "updateTitle": "更新可用",
-    "updateMessage": "新版本已准备就绪",
-    "updateButton": "立即更新",
-    "reconnected": "已重新连接！",
-    "offlineMode": "离线 - 使用缓存数据"
   }
 }

@@ -197,7 +197,7 @@ export function MatchingWizard({
           {t('request_sent')}
         </h3>
         <p className="text-gray-600 dark:text-gray-400 mb-6">
-          {t('request_sent_desc', { mentor: selectedMentor?.displayName })}
+          {t('request_sent_desc', { mentor: selectedMentor?.displayName || '' })}
         </p>
         <button
           onClick={onClose}
