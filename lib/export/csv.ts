@@ -5,6 +5,8 @@
 
 import type { Doenca } from '@/lib/types/doenca';
 import type { Medicamento } from '@/lib/types/medicamento';
+import type { Note } from '@/lib/notes/storage';
+import type { AnalyticsEvent } from '@/lib/analytics/tracker';
 
 export interface CSVExportOptions {
   delimiter?: string; // Delimitador (padrão: ',')
@@ -277,5 +279,112 @@ export function importMedicationsFromCSV(
   }
   
   return medications;
+}
+
+/**
+ * Exporta notas para CSV
+ */
+export function exportNotesToCSV(
+  notes: Note[],
+  options: CSVExportOptions = {}
+): string {
+  const delimiter = options.delimiter || ',';
+  const includeHeaders = options.includeHeaders !== false;
+
+  const rows: string[] = [];
+
+  // Cabeçalhos
+  if (includeHeaders) {
+    const headers = [
+      'ID',
+      'Título',
+      'Conteúdo',
+      'Tipo',
+      'Tags',
+      'Fixada',
+      'Arquivada',
+      'Cor',
+      'Vinculado a',
+      'Criado em',
+      'Atualizado em',
+    ];
+    rows.push(headers.map(escapeCSVValue).join(delimiter));
+  }
+
+  // Dados
+  notes.forEach(note => {
+    const row = [
+      note.id,
+      note.title,
+      note.content,
+      note.type,
+      note.tags.join('; '),
+      note.isPinned ? 'Sim' : 'Não',
+      note.isArchived ? 'Sim' : 'Não',
+      note.color || '',
+      note.linkedTo ? `${note.linkedTo.type}: ${note.linkedTo.name}` : '',
+      new Date(note.createdAt).toLocaleString('pt-BR'),
+      new Date(note.updatedAt).toLocaleString('pt-BR'),
+    ];
+    rows.push(row.map(escapeCSVValue).join(delimiter));
+  });
+
+  return rows.join('\n');
+}
+
+/**
+ * Exporta eventos de analytics para CSV
+ */
+export function exportAnalyticsToCSV(
+  events: AnalyticsEvent[],
+  options: CSVExportOptions = {}
+): string {
+  const delimiter = options.delimiter || ',';
+  const includeHeaders = options.includeHeaders !== false;
+
+  const rows: string[] = [];
+
+  // Cabeçalhos
+  if (includeHeaders) {
+    const headers = [
+      'ID',
+      'Tipo',
+      'Data/Hora',
+      'Dados',
+      'Sessão',
+    ];
+    rows.push(headers.map(escapeCSVValue).join(delimiter));
+  }
+
+  // Dados
+  events.forEach(event => {
+    const row = [
+      event.id,
+      event.type,
+      new Date(event.timestamp).toLocaleString('pt-BR'),
+      JSON.stringify(event.data),
+      event.sessionId,
+    ];
+    rows.push(row.map(escapeCSVValue).join(delimiter));
+  });
+
+  return rows.join('\n');
+}
+
+/**
+ * Helper para download de CSV no navegador
+ */
+export function downloadCSV(csvContent: string, filename: string): void {
+  const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  URL.revokeObjectURL(url);
 }
 
