@@ -5,7 +5,7 @@ import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { useAppStore } from '@/lib/store/appStore';
 import { LanguageSelector } from '../LanguageSelector';
-import { Sun, Moon, BookOpen, FileText, Menu, X, Search, Zap, ClipboardList, AlertTriangle, Pill, Calculator, Stethoscope, Keyboard, GraduationCap, Users, Command } from 'lucide-react';
+import { Sun, Moon, BookOpen, FileText, Menu, X, Search, Zap, ClipboardList, AlertTriangle, Pill, Calculator, Stethoscope, Keyboard, GraduationCap, Users, Command, StickyNote } from 'lucide-react';
 import CommandPalette from '../CommandPalette/CommandPalette';
 import { HighYieldToggle } from '../HighYield';
 
@@ -25,6 +25,7 @@ const fallbackTranslations: Record<string, string> = {
   'nav.protocolos': 'Protocolos',
   'nav.learn': 'Aprender',
   'nav.community': 'Comunidade',
+  'nav.notas': 'Notas',
   'header.search': 'Buscar',
   'header.descriptiveMode': 'Descritivo',
   'header.criticalAnalysisMode': 'Análise',
@@ -125,6 +126,13 @@ export default function Header() {
             >
               <Users className="w-4 h-4" />
               {t('nav.community')}
+            </Link>
+            <Link
+              href="/notas"
+              className="px-3.5 py-2 text-base font-medium text-[#ff9500] dark:text-[#ff9f0a] hover:bg-[#ff9500]/10 dark:hover:bg-[#ff9f0a]/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
+            >
+              <StickyNote className="w-4 h-4" />
+              {t('nav.notas')}
             </Link>
           </nav>
 
@@ -264,6 +272,14 @@ export default function Header() {
                 >
                   <Calculator className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                   <span className="text-xs font-medium">Calculadoras</span>
+                </Link>
+                <Link
+                  href="/notas"
+                  className="flex flex-col items-center gap-2 p-4 bg-orange-50 dark:bg-orange-900/20 rounded-xl"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <StickyNote className="w-6 h-6 text-orange-600 dark:text-orange-400" />
+                  <span className="text-xs font-medium">Notas</span>
                 </Link>
               </nav>
             </div>
