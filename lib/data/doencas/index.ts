@@ -38,6 +38,8 @@ import { doencasExpansaoUltima } from './expansao-ultima';
 import { doencasMetabolicasExpansao } from './expansao-sprint3-metabolico';
 import { doencasCardiovascularesExpansao } from './expansao-sprint3-cardiovascular';
 import { doencasEspecialidadesExpansao } from './expansao-sprint3-especialidades';
+import { doencasEmergencias } from './emergencias';
+import { doencasTropicais } from './tropicais';
 
 // Consolidar todas as doenças
 // Nota: Algumas categorias usam Partial<Doenca> para flexibilidade de expansão
@@ -70,6 +72,8 @@ export const todasDoencas: Partial<Doenca>[] = [
   ...doencasMetabolicasExpansao,
   ...doencasCardiovascularesExpansao,
   ...doencasEspecialidadesExpansao,
+  ...doencasEmergencias,
+  ...doencasTropicais,
 ];
 
 // Remover duplicatas por ID (caso existam) e filtrar apenas doenças com ID
