@@ -7,6 +7,7 @@ export * from './doenca';
 export * from './medicamento';
 export * from './evidence';
 export * from './gamification';
+export * from './ai';
 // Protocolo React Flow (novo sistema)
 export type {
   Protocolo,

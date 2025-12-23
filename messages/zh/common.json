@@ -387,5 +387,39 @@
       "streak_milestone": "Streak Milestone!",
       "challenge_complete": "Challenge Complete!"
     }
+  },
+  "ai": {
+    "title": "Darwin AI",
+    "subtitle": "临床助手",
+    "welcome": "您好！我是 Darwin AI",
+    "welcomeDescription": "我可以帮助解答关于疾病、药物、方案等问题。即将推出！",
+    "inputPlaceholder": "输入您的问题...",
+    "disclaimer": "这是原型。真正的AI即将推出。",
+    "clearChat": "清除聊天",
+    "openChat": "打开聊天",
+    "buttonTooltip": "Darwin AI 助手",
+    "suggestedPrompts": "建议",
+    "suggestedActions": "建议操作",
+    "citations": "参考文献",
+    "comingSoonResponse": "Darwin AI 正在开发中！很快我就能帮助解答临床问题、搜索数据库并提供带有引用的循证答案。",
+    "actions": {
+      "searchDiseases": "搜索疾病",
+      "viewProtocols": "查看方案"
+    },
+    "prompts": {
+      "differential_diagnosis": "这些症状的鉴别诊断是什么？",
+      "red_flags": "我应该注意哪些危险信号？",
+      "first_line_treatment": "一线治疗是什么？",
+      "non_pharm_options": "有哪些非药物选择？",
+      "dosage_adjustment": "如何针对肾功能不全调整剂量？",
+      "pediatric_dose": "儿科剂量是多少？",
+      "drug_interactions": "主要的药物相互作用有哪些？",
+      "when_to_refer": "什么时候应该转诊给专科医生？",
+      "follow_up": "推荐的随访计划是什么？",
+      "explain_mechanism": "用简单的术语解释病理生理学",
+      "clinical_pearls": "关键的临床要点是什么？",
+      "summarize": "总结要点",
+      "evidence_level": "这个建议的证据级别是什么？"
+    }
   }
 }

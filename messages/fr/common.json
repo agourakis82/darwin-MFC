@@ -387,5 +387,39 @@
       "streak_milestone": "Streak Milestone!",
       "challenge_complete": "Challenge Complete!"
     }
+  },
+  "ai": {
+    "title": "Darwin AI",
+    "subtitle": "Assistant Clinique",
+    "welcome": "Bonjour! Je suis Darwin AI",
+    "welcomeDescription": "Je peux aider avec des questions sur les maladies, médicaments, protocoles et plus. Bientôt disponible!",
+    "inputPlaceholder": "Tapez votre question...",
+    "disclaimer": "Ceci est un prototype. IA réelle bientôt.",
+    "clearChat": "Effacer le chat",
+    "openChat": "Ouvrir le chat",
+    "buttonTooltip": "Assistant Darwin AI",
+    "suggestedPrompts": "Suggestions",
+    "suggestedActions": "Actions suggérées",
+    "citations": "Références",
+    "comingSoonResponse": "Darwin AI est en développement! Bientôt, je pourrai aider avec des questions cliniques, rechercher dans la base de données et fournir des réponses basées sur des preuves avec citations.",
+    "actions": {
+      "searchDiseases": "Rechercher maladies",
+      "viewProtocols": "Voir protocoles"
+    },
+    "prompts": {
+      "differential_diagnosis": "Quels sont les diagnostics différentiels pour ces symptômes?",
+      "red_flags": "Quels sont les drapeaux rouges à surveiller?",
+      "first_line_treatment": "Quel est le traitement de première ligne?",
+      "non_pharm_options": "Quelles options non pharmacologiques sont disponibles?",
+      "dosage_adjustment": "Comment ajuster la dose en cas d'insuffisance rénale?",
+      "pediatric_dose": "Quelle est la posologie pédiatrique?",
+      "drug_interactions": "Quelles sont les principales interactions médicamenteuses?",
+      "when_to_refer": "Quand référer à un spécialiste?",
+      "follow_up": "Quel est le calendrier de suivi recommandé?",
+      "explain_mechanism": "Expliquez la physiopathologie en termes simples",
+      "clinical_pearls": "Quelles sont les perles cliniques clés?",
+      "summarize": "Résumez les points clés",
+      "evidence_level": "Quel est le niveau de preuve pour cette recommandation?"
+    }
   }
 }

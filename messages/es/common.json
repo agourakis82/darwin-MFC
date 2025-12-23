@@ -387,5 +387,39 @@
       "streak_milestone": "¡Hito de Racha!",
       "challenge_complete": "¡Desafío Completo!"
     }
+  },
+  "ai": {
+    "title": "Darwin AI",
+    "subtitle": "Asistente Clínico",
+    "welcome": "¡Hola! Soy Darwin AI",
+    "welcomeDescription": "Puedo ayudar con preguntas sobre enfermedades, medicamentos, protocolos y más. ¡Próximamente!",
+    "inputPlaceholder": "Escribe tu pregunta...",
+    "disclaimer": "Esto es un prototipo. IA real próximamente.",
+    "clearChat": "Limpiar chat",
+    "openChat": "Abrir chat",
+    "buttonTooltip": "Asistente Darwin AI",
+    "suggestedPrompts": "Sugerencias",
+    "suggestedActions": "Acciones sugeridas",
+    "citations": "Referencias",
+    "comingSoonResponse": "¡Darwin AI está en desarrollo! Pronto podré ayudar con preguntas clínicas, buscar en la base de datos y proporcionar respuestas basadas en evidencia con citas.",
+    "actions": {
+      "searchDiseases": "Buscar enfermedades",
+      "viewProtocols": "Ver protocolos"
+    },
+    "prompts": {
+      "differential_diagnosis": "¿Cuáles son los diagnósticos diferenciales para estos síntomas?",
+      "red_flags": "¿Cuáles son las señales de alarma que debo observar?",
+      "first_line_treatment": "¿Cuál es el tratamiento de primera línea?",
+      "non_pharm_options": "¿Qué opciones no farmacológicas están disponibles?",
+      "dosage_adjustment": "¿Cómo ajustar la dosis para insuficiencia renal?",
+      "pediatric_dose": "¿Cuál es la dosis pediátrica?",
+      "drug_interactions": "¿Cuáles son las principales interacciones medicamentosas?",
+      "when_to_refer": "¿Cuándo derivar al especialista?",
+      "follow_up": "¿Cuál es el cronograma de seguimiento recomendado?",
+      "explain_mechanism": "Explica la fisiopatología en términos simples",
+      "clinical_pearls": "¿Cuáles son las perlas clínicas clave?",
+      "summarize": "Resume los puntos principales",
+      "evidence_level": "¿Cuál es el nivel de evidencia para esta recomendación?"
+    }
   }
 }

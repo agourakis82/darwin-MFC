@@ -387,5 +387,39 @@
       "streak_milestone": "Streak Milestone!",
       "challenge_complete": "Challenge Complete!"
     }
+  },
+  "ai": {
+    "title": "Darwin AI",
+    "subtitle": "المساعد السريري",
+    "welcome": "مرحباً! أنا Darwin AI",
+    "welcomeDescription": "يمكنني المساعدة في الأسئلة حول الأمراض والأدوية والبروتوكولات والمزيد. قريباً!",
+    "inputPlaceholder": "اكتب سؤالك...",
+    "disclaimer": "هذا نموذج أولي. الذكاء الاصطناعي الحقيقي قريباً.",
+    "clearChat": "مسح المحادثة",
+    "openChat": "فتح المحادثة",
+    "buttonTooltip": "مساعد Darwin AI",
+    "suggestedPrompts": "اقتراحات",
+    "suggestedActions": "إجراءات مقترحة",
+    "citations": "المراجع",
+    "comingSoonResponse": "Darwin AI قيد التطوير! قريباً سأتمكن من المساعدة في الأسئلة السريرية والبحث في قاعدة البيانات وتقديم إجابات مبنية على الأدلة مع الاستشهادات.",
+    "actions": {
+      "searchDiseases": "البحث في الأمراض",
+      "viewProtocols": "عرض البروتوكولات"
+    },
+    "prompts": {
+      "differential_diagnosis": "ما هي التشخيصات التفريقية لهذه الأعراض؟",
+      "red_flags": "ما هي علامات الخطر التي يجب مراقبتها؟",
+      "first_line_treatment": "ما هو العلاج الأول؟",
+      "non_pharm_options": "ما هي الخيارات غير الدوائية المتاحة؟",
+      "dosage_adjustment": "كيف أعدل الجرعة للقصور الكلوي؟",
+      "pediatric_dose": "ما هي الجرعة للأطفال؟",
+      "drug_interactions": "ما هي التفاعلات الدوائية الرئيسية؟",
+      "when_to_refer": "متى يجب الإحالة للأخصائي؟",
+      "follow_up": "ما هو جدول المتابعة الموصى به؟",
+      "explain_mechanism": "اشرح الفسيولوجيا المرضية بمصطلحات بسيطة",
+      "clinical_pearls": "ما هي اللآلئ السريرية الرئيسية؟",
+      "summarize": "لخص النقاط الرئيسية",
+      "evidence_level": "ما هو مستوى الدليل لهذه التوصية؟"
+    }
   }
 }

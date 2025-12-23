@@ -24,7 +24,15 @@ import {
   BarChart3,
   Clock,
   ArrowRight,
+  Lightbulb,
+  TrendingUp,
+  Sparkles,
 } from 'lucide-react';
+import {
+  findTypoCorrection,
+  getRelatedTopics,
+  getTrendingSearches,
+} from '@/lib/utils/smart-search';
 import { useAppStore } from '@/lib/store/appStore';
 import { getAllRastreamentos } from '@/lib/data/rastreamentos';
 import { doencas } from '@/lib/data/doencas';
@@ -214,6 +222,23 @@ export default function CommandPalette({ open, onOpenChange }: CommandPalettePro
     });
   }, [allItems]);
 
+  // Smart suggestions
+  const smartSuggestions = useMemo(() => {
+    if (!search.trim() || search.length < 2) {
+      return {
+        correction: undefined,
+        relatedTopics: [] as string[],
+        trendingSearches: getTrendingSearches(),
+      };
+    }
+
+    return {
+      correction: findTypoCorrection(search),
+      relatedTopics: getRelatedTopics(search),
+      trendingSearches: [] as string[],
+    };
+  }, [search]);
+
   // Filter results
   const filteredItems = useMemo(() => {
     if (!search.trim()) {
@@ -319,6 +344,63 @@ export default function CommandPalette({ open, onOpenChange }: CommandPalettePro
             <Command.Empty className="py-12 text-center text-[#86868b]">
               {t('commandPalette.noResults')}
             </Command.Empty>
+
+            {/* Did you mean? - Typo Correction */}
+            {smartSuggestions.correction && smartSuggestions.correction !== search.toLowerCase() && (
+              <div className="px-3 py-2 mb-2">
+                <button
+                  onClick={() => setSearch(smartSuggestions.correction!)}
+                  className="flex items-center gap-2 text-sm text-[#007aff] dark:text-[#5ac8fa] hover:underline"
+                >
+                  <Sparkles className="w-4 h-4" />
+                  <span>Did you mean: <strong>{smartSuggestions.correction}</strong>?</span>
+                </button>
+              </div>
+            )}
+
+            {/* Trending Searches */}
+            {!search && smartSuggestions.trendingSearches.length > 0 && (
+              <Command.Group heading={
+                <div className="flex items-center gap-2">
+                  <TrendingUp className="w-3 h-3" />
+                  <span>Trending</span>
+                </div>
+              }>
+                <div className="flex flex-wrap gap-2 px-3 py-2">
+                  {smartSuggestions.trendingSearches.slice(0, 6).map((term) => (
+                    <button
+                      key={`trending-${term}`}
+                      onClick={() => setSearch(term)}
+                      className="px-3 py-1.5 text-sm rounded-full bg-gradient-to-r from-[#007aff]/10 to-[#5ac8fa]/10 text-[#007aff] dark:text-[#5ac8fa] hover:from-[#007aff]/20 hover:to-[#5ac8fa]/20 transition-colors"
+                    >
+                      {term}
+                    </button>
+                  ))}
+                </div>
+              </Command.Group>
+            )}
+
+            {/* Related Topics */}
+            {search && smartSuggestions.relatedTopics.length > 0 && (
+              <Command.Group heading={
+                <div className="flex items-center gap-2">
+                  <Lightbulb className="w-3 h-3" />
+                  <span>Related</span>
+                </div>
+              }>
+                <div className="flex flex-wrap gap-2 px-3 py-2">
+                  {smartSuggestions.relatedTopics.slice(0, 5).map((topic) => (
+                    <button
+                      key={`related-${topic}`}
+                      onClick={() => setSearch(topic)}
+                      className="px-3 py-1.5 text-sm rounded-full bg-[#f5f5f7] dark:bg-white/10 text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-[#e8e8ed] dark:hover:bg-white/20 transition-colors"
+                    >
+                      {topic}
+                    </button>
+                  ))}
+                </div>
+              </Command.Group>
+            )}
 
             {/* Recent Searches */}
             {!search && recentSearches.length > 0 && (

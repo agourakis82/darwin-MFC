@@ -705,5 +705,39 @@
       "streak_milestone": "Streak Milestone!",
       "challenge_complete": "Challenge Complete!"
     }
+  },
+  "ai": {
+    "title": "Darwin AI",
+    "subtitle": "Clinical Assistant",
+    "welcome": "Hello! I'm Darwin AI",
+    "welcomeDescription": "I can help with questions about diseases, medications, protocols, and more. Coming soon!",
+    "inputPlaceholder": "Type your question...",
+    "disclaimer": "This is a scaffold. Real AI coming soon.",
+    "clearChat": "Clear chat",
+    "openChat": "Open chat",
+    "buttonTooltip": "Darwin AI Assistant",
+    "suggestedPrompts": "Suggested prompts",
+    "suggestedActions": "Suggested actions",
+    "citations": "References",
+    "comingSoonResponse": "Darwin AI is under development! Soon I'll be able to help with clinical questions, search the database, and provide evidence-based answers with citations.",
+    "actions": {
+      "searchDiseases": "Search diseases",
+      "viewProtocols": "View protocols"
+    },
+    "prompts": {
+      "differential_diagnosis": "What are the differential diagnoses for these symptoms?",
+      "red_flags": "What are the red flags I should watch for?",
+      "first_line_treatment": "What is the first-line treatment?",
+      "non_pharm_options": "What non-pharmacological options are available?",
+      "dosage_adjustment": "How should I adjust the dose for renal impairment?",
+      "pediatric_dose": "What is the pediatric dosage?",
+      "drug_interactions": "What are the main drug interactions?",
+      "when_to_refer": "When should I refer to a specialist?",
+      "follow_up": "What is the recommended follow-up schedule?",
+      "explain_mechanism": "Explain the pathophysiology in simple terms",
+      "clinical_pearls": "What are the key clinical pearls?",
+      "summarize": "Summarize the key points",
+      "evidence_level": "What is the evidence level for this recommendation?"
+    }
   }
 }

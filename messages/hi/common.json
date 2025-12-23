@@ -387,5 +387,39 @@
       "streak_milestone": "Streak Milestone!",
       "challenge_complete": "Challenge Complete!"
     }
+  },
+  "ai": {
+    "title": "Darwin AI",
+    "subtitle": "क्लिनिकल सहायक",
+    "welcome": "नमस्ते! मैं Darwin AI हूं",
+    "welcomeDescription": "मैं बीमारियों, दवाओं, प्रोटोकॉल और अन्य के बारे में प्रश्नों में मदद कर सकता हूं। जल्द आ रहा है!",
+    "inputPlaceholder": "अपना प्रश्न लिखें...",
+    "disclaimer": "यह एक प्रोटोटाइप है। असली AI जल्द आ रहा है।",
+    "clearChat": "चैट साफ़ करें",
+    "openChat": "चैट खोलें",
+    "buttonTooltip": "Darwin AI सहायक",
+    "suggestedPrompts": "सुझाव",
+    "suggestedActions": "सुझाए गए कार्य",
+    "citations": "संदर्भ",
+    "comingSoonResponse": "Darwin AI विकास में है! जल्द ही मैं क्लिनिकल प्रश्नों में मदद करने, डेटाबेस खोजने और उद्धरणों के साथ साक्ष्य-आधारित उत्तर प्रदान करने में सक्षम हो जाऊंगा।",
+    "actions": {
+      "searchDiseases": "बीमारियां खोजें",
+      "viewProtocols": "प्रोटोकॉल देखें"
+    },
+    "prompts": {
+      "differential_diagnosis": "इन लक्षणों के लिए विभेदक निदान क्या हैं?",
+      "red_flags": "मुझे किन खतरे के संकेतों पर ध्यान देना चाहिए?",
+      "first_line_treatment": "प्रथम पंक्ति उपचार क्या है?",
+      "non_pharm_options": "कौन से गैर-दवा विकल्प उपलब्ध हैं?",
+      "dosage_adjustment": "गुर्दे की कमजोरी के लिए खुराक कैसे समायोजित करें?",
+      "pediatric_dose": "बाल रोगी की खुराक क्या है?",
+      "drug_interactions": "मुख्य दवा अंतर्क्रियाएं क्या हैं?",
+      "when_to_refer": "विशेषज्ञ को कब संदर्भित करना चाहिए?",
+      "follow_up": "अनुशंसित फॉलो-अप शेड्यूल क्या है?",
+      "explain_mechanism": "पैथोफिज़ियोलॉजी को सरल शब्दों में समझाएं",
+      "clinical_pearls": "प्रमुख क्लिनिकल पर्ल्स क्या हैं?",
+      "summarize": "मुख्य बिंदुओं का सारांश दें",
+      "evidence_level": "इस सिफारिश के लिए साक्ष्य स्तर क्या है?"
+    }
   }
 }
