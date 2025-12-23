@@ -290,5 +290,102 @@
       "quickDecision": "Decisión Rápida",
       "pearl": "Perla Clínica"
     }
+  },
+  "gamification": {
+    "title": "Gamificación",
+    "xp": "XP",
+    "level": "Nivel",
+    "streak": "Racha",
+    "badges": {
+      "title": "Insignias",
+      "earned": "Obtenidas",
+      "locked": "Bloqueadas",
+      "progress": "Progreso",
+      "first_steps": {
+        "name": "Primeros Pasos",
+        "description": "Completa tu primer módulo de aprendizaje"
+      },
+      "dedicated_learner": {
+        "name": "Aprendiz Dedicado",
+        "description": "Completa 10 módulos de aprendizaje"
+      },
+      "knowledge_seeker": {
+        "name": "Buscador de Conocimiento",
+        "description": "Completa 50 módulos de aprendizaje"
+      },
+      "path_pioneer": {
+        "name": "Pionero de Ruta",
+        "description": "Completa tu primera ruta de aprendizaje"
+      },
+      "perfectionist": {
+        "name": "Perfeccionista",
+        "description": "Obtén 100% en 5 cuestionarios"
+      },
+      "streak_starter": {
+        "name": "Iniciador de Racha",
+        "description": "Mantén una racha de 3 días"
+      },
+      "week_warrior": {
+        "name": "Guerrero de la Semana",
+        "description": "Mantén una racha de 7 días"
+      },
+      "month_master": {
+        "name": "Maestro del Mes",
+        "description": "Mantén una racha de 30 días"
+      },
+      "disease_explorer": {
+        "name": "Explorador de Enfermedades",
+        "description": "Ve 25 enfermedades diferentes"
+      },
+      "pharmacology_fan": {
+        "name": "Fan de Farmacología",
+        "description": "Ve 20 medicamentos diferentes"
+      },
+      "protocol_pro": {
+        "name": "Profesional de Protocolos",
+        "description": "Ve 10 protocolos clínicos"
+      },
+      "citation_scholar": {
+        "name": "Académico de Citas",
+        "description": "Lee 50 citas"
+      },
+      "data_exporter": {
+        "name": "Exportador de Datos",
+        "description": "Exporta 5 documentos"
+      },
+      "early_adopter": {
+        "name": "Adoptador Temprano",
+        "description": "Únete a Darwin MFC en 2025"
+      }
+    },
+    "levels": {
+      "novice": "Novato",
+      "apprentice": "Aprendiz",
+      "student": "Estudiante",
+      "scholar": "Académico",
+      "practitioner": "Practicante",
+      "expert": "Experto",
+      "master": "Maestro",
+      "specialist": "Especialista",
+      "authority": "Autoridad",
+      "legend": "Leyenda"
+    },
+    "challenges": {
+      "title": "Desafíos Diarios",
+      "daily_quiz": {
+        "title": "Quiz Diario",
+        "description": "Completa 1 quiz hoy"
+      },
+      "daily_reading": {
+        "title": "Lectura Diaria",
+        "description": "Ve 3 páginas de enfermedades"
+      }
+    },
+    "notifications": {
+      "badge_earned": "¡Insignia Obtenida!",
+      "level_up": "¡Subiste de Nivel!",
+      "streak_milestone": "¡Hito de Racha!",
+      "challenge_complete": "¡Desafío Completo!"
+    }
   }
 }
