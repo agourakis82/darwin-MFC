@@ -247,5 +247,48 @@
     "goToCalculators": "الذهاب إلى الآلات الحاسبة",
     "goToLearn": "الذهاب إلى منصة التعلم",
     "goToCommunity": "الذهاب إلى المجتمع"
+  },
+  "evidence": {
+    "legend": {
+      "title": "دليل قوة الأدلة"
+    },
+    "levels": {
+      "A": {
+        "label": "قوي",
+        "description": "تجارب معشاة ذات شواهد عالية الجودة أو تحليلات تلوية"
+      },
+      "B": {
+        "label": "متوسط",
+        "description": "تجارب معشاة ذات شواهد منخفضة الجودة أو دراسات رصدية جيدة التصميم"
+      },
+      "C": {
+        "label": "ضعيف",
+        "description": "دراسات رصدية أو سلاسل حالات أو إجماع خبراء"
+      },
+      "D": {
+        "label": "خبير",
+        "description": "رأي خبير أو خبرة سريرية بدون أدلة قوية"
+      },
+      "GPP": {
+        "label": "ممارسة جيدة",
+        "description": "نقطة ممارسة جيدة بناءً على الخبرة السريرية لمجموعة الإرشادات"
+      }
+    }
+  },
+  "highYield": {
+    "toggle": "تبديل وضع High-Yield",
+    "full": "كامل",
+    "highYield": "High-Yield",
+    "printFriendly": "طباعة",
+    "fullDescription": "عرض كل المحتوى",
+    "highYieldDescription": "عرض النقاط الرئيسية والإنذارات والقيم الحرجة فقط",
+    "printFriendlyDescription": "محسّن للطباعة",
+    "categories": {
+      "keyPoint": "نقطة رئيسية",
+      "criticalValue": "قيمة حرجة",
+      "redFlag": "علامة تحذير",
+      "quickDecision": "قرار سريع",
+      "pearl": "لؤلؤة سريرية"
+    }
   }
 }

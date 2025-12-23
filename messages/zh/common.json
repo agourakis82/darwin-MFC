@@ -247,5 +247,48 @@
     "goToCalculators": "前往计算器",
     "goToLearn": "前往学习平台",
     "goToCommunity": "前往社区"
+  },
+  "evidence": {
+    "legend": {
+      "title": "证据强度图例"
+    },
+    "levels": {
+      "A": {
+        "label": "强",
+        "description": "高质量随机对照试验或荟萃分析"
+      },
+      "B": {
+        "label": "中等",
+        "description": "质量较低的随机对照试验或设计良好的观察性研究"
+      },
+      "C": {
+        "label": "弱",
+        "description": "观察性研究、病例系列或专家共识"
+      },
+      "D": {
+        "label": "专家",
+        "description": "专家意见或缺乏强有力证据的临床经验"
+      },
+      "GPP": {
+        "label": "良好实践",
+        "description": "基于指南小组临床经验的良好实践要点"
+      }
+    }
+  },
+  "highYield": {
+    "toggle": "切换高产出模式",
+    "full": "完整",
+    "highYield": "高产出",
+    "printFriendly": "打印",
+    "fullDescription": "显示所有内容",
+    "highYieldDescription": "仅显示关键点、危险信号和临界值",
+    "printFriendlyDescription": "打印优化",
+    "categories": {
+      "keyPoint": "关键点",
+      "criticalValue": "临界值",
+      "redFlag": "危险信号",
+      "quickDecision": "快速决策",
+      "pearl": "临床珠玑"
+    }
   }
 }

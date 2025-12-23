@@ -247,5 +247,48 @@
     "goToCalculators": "Ir a Calculadoras",
     "goToLearn": "Ir a Plataforma de Aprendizaje",
     "goToCommunity": "Ir a Comunidad"
+  },
+  "evidence": {
+    "legend": {
+      "title": "Leyenda de Fuerza de Evidencia"
+    },
+    "levels": {
+      "A": {
+        "label": "Fuerte",
+        "description": "ECAs de alta calidad o metaanálisis"
+      },
+      "B": {
+        "label": "Moderada",
+        "description": "ECAs de menor calidad o estudios observacionales bien diseñados"
+      },
+      "C": {
+        "label": "Débil",
+        "description": "Estudios observacionales, series de casos o consenso de expertos"
+      },
+      "D": {
+        "label": "Experto",
+        "description": "Opinión de expertos o experiencia clínica sin evidencia sólida"
+      },
+      "GPP": {
+        "label": "Buena Práctica",
+        "description": "Punto de buena práctica basado en la experiencia clínica del grupo de guías"
+      }
+    }
+  },
+  "highYield": {
+    "toggle": "Alternar Modo High-Yield",
+    "full": "Completo",
+    "highYield": "High-Yield",
+    "printFriendly": "Imprimir",
+    "fullDescription": "Mostrar todo el contenido",
+    "highYieldDescription": "Mostrar solo puntos clave, señales de alerta y valores críticos",
+    "printFriendlyDescription": "Optimizado para impresión",
+    "categories": {
+      "keyPoint": "Punto Clave",
+      "criticalValue": "Valor Crítico",
+      "redFlag": "Señal de Alerta",
+      "quickDecision": "Decisión Rápida",
+      "pearl": "Perla Clínica"
+    }
   }
 }

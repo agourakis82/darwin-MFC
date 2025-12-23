@@ -2,13 +2,27 @@
  * Utility functions for evidence level classification
  */
 
-import type { EvidenceLevel, StudyType } from '../types/evidence';
+import type { OxfordEvidenceLevel, GradeEvidenceLevel, EvidenceLevel, StudyType } from '../types/evidence';
+
+/**
+ * Type guard to check if level is Oxford-style
+ */
+function isOxfordLevel(level: EvidenceLevel): level is OxfordEvidenceLevel {
+  return ['Ia', 'Ib', 'IIa', 'IIb', 'III', 'IV'].includes(level);
+}
+
+/**
+ * Type guard to check if level is GRADE-style
+ */
+function isGradeLevel(level: EvidenceLevel): level is GradeEvidenceLevel {
+  return ['A', 'B', 'C', 'D', 'GPP'].includes(level);
+}
 
 /**
  * Map study type to evidence level
  * Based on Oxford Centre for Evidence-Based Medicine
  */
-export function getEvidenceLevelFromStudyType(studyType: StudyType): EvidenceLevel {
+export function getEvidenceLevelFromStudyType(studyType: StudyType): OxfordEvidenceLevel {
   switch (studyType) {
     case 'MetaAnalysis':
     case 'SystematicReview':
@@ -35,8 +49,8 @@ export function getEvidenceLevelFromStudyType(studyType: StudyType): EvidenceLev
 /**
  * Get evidence level label
  */
-export function getEvidenceLevelLabel(level: EvidenceLevel): string {
-  const labels: Record<EvidenceLevel, string> = {
+export function getEvidenceLevelLabel(level: OxfordEvidenceLevel): string {
+  const labels: Record<OxfordEvidenceLevel, string> = {
     Ia: 'Ia - Revisão sistemática de ECRs',
     Ib: 'Ib - Ensaio clínico randomizado individual',
     IIa: 'IIa - Revisão sistemática de estudos de coorte',
@@ -50,8 +64,8 @@ export function getEvidenceLevelLabel(level: EvidenceLevel): string {
 /**
  * Get evidence level description
  */
-export function getEvidenceLevelDescription(level: EvidenceLevel): string {
-  const descriptions: Record<EvidenceLevel, string> = {
+export function getEvidenceLevelDescription(level: OxfordEvidenceLevel): string {
+  const descriptions: Record<OxfordEvidenceLevel, string> = {
     Ia: 'Evidência mais forte: revisão sistemática de múltiplos ensaios clínicos randomizados bem conduzidos',
     Ib: 'Evidência forte: ensaio clínico randomizado individual bem conduzido',
     IIa: 'Evidência moderada: revisão sistemática de estudos de coorte bem conduzidos',
@@ -65,8 +79,8 @@ export function getEvidenceLevelDescription(level: EvidenceLevel): string {
 /**
  * Get evidence level color for UI
  */
-export function getEvidenceLevelColor(level: EvidenceLevel): string {
-  const colors: Record<EvidenceLevel, string> = {
+export function getEvidenceLevelColor(level: OxfordEvidenceLevel): string {
+  const colors: Record<OxfordEvidenceLevel, string> = {
     Ia: 'bg-green-600', // Strongest evidence - green
     Ib: 'bg-green-500',
     IIa: 'bg-blue-500', // Moderate evidence - blue
@@ -80,7 +94,59 @@ export function getEvidenceLevelColor(level: EvidenceLevel): string {
 /**
  * Get evidence level badge text (abbreviated)
  */
-export function getEvidenceLevelBadge(level: EvidenceLevel): string {
+export function getEvidenceLevelBadge(level: OxfordEvidenceLevel): string {
+  return level;
+}
+
+// GRADE-style labels
+const gradeLabels: Record<GradeEvidenceLevel, string> = {
+  A: 'A - Evidência forte',
+  B: 'B - Evidência moderada',
+  C: 'C - Evidência fraca',
+  D: 'D - Opinião de especialista',
+  GPP: 'GPP - Ponto de boa prática',
+};
+
+/**
+ * Get label for any evidence level (Oxford or GRADE)
+ * This is a unified function that handles both systems
+ */
+export function getAnyEvidenceLevelLabel(level: EvidenceLevel): string {
+  if (isOxfordLevel(level)) {
+    return getEvidenceLevelLabel(level);
+  }
+  if (isGradeLevel(level)) {
+    return gradeLabels[level];
+  }
+  return level;
+}
+
+// GRADE-style colors
+const gradeColors: Record<GradeEvidenceLevel, string> = {
+  A: 'bg-emerald-600', // Strong - green
+  B: 'bg-amber-500', // Moderate - yellow/amber
+  C: 'bg-orange-500', // Weak - orange
+  D: 'bg-neutral-500', // Expert - gray
+  GPP: 'bg-blue-500', // Good Practice - blue
+};
+
+/**
+ * Get color for any evidence level (Oxford or GRADE)
+ */
+export function getAnyEvidenceLevelColor(level: EvidenceLevel): string {
+  if (isOxfordLevel(level)) {
+    return getEvidenceLevelColor(level);
+  }
+  if (isGradeLevel(level)) {
+    return gradeColors[level];
+  }
+  return 'bg-gray-500';
+}
+
+/**
+ * Get badge text for any evidence level (Oxford or GRADE)
+ */
+export function getAnyEvidenceLevelBadge(level: EvidenceLevel): string {
   return level;
 }
 

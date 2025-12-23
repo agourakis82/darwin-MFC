@@ -3,7 +3,7 @@
 import { Citation } from '@/lib/types/references';
 import { getReference } from '@/lib/data/references';
 import { EvidenceBadge } from './EvidenceBadge';
-import { getEvidenceLevelLabel } from '@/lib/utils/evidence-level';
+import { getAnyEvidenceLevelLabel } from '@/lib/utils/evidence-level';
 
 interface CitationTooltipProps {
   citations: Citation[];
@@ -57,7 +57,7 @@ export default function CitationTooltip({ citations, format = 'vancouver' }: Cit
                   <div className="mt-2 flex items-center gap-2">
                     <EvidenceBadge level={citation.evidenceLevel} size="sm" />
                     <span className="text-xs text-neutral-500 dark:text-neutral-400">
-                      {getEvidenceLevelLabel(citation.evidenceLevel)}
+                      {getAnyEvidenceLevelLabel(citation.evidenceLevel)}
                     </span>
                   </div>
                 )}

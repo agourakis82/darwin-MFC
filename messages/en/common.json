@@ -565,5 +565,48 @@
     "goToCalculators": "Go to Calculators",
     "goToLearn": "Go to Learning Platform",
     "goToCommunity": "Go to Community"
+  },
+  "evidence": {
+    "legend": {
+      "title": "Evidence Strength Legend"
+    },
+    "levels": {
+      "A": {
+        "label": "Strong",
+        "description": "High-quality RCTs or meta-analyses"
+      },
+      "B": {
+        "label": "Moderate",
+        "description": "Lower-quality RCTs or well-designed observational studies"
+      },
+      "C": {
+        "label": "Weak",
+        "description": "Observational studies, case series, or expert consensus"
+      },
+      "D": {
+        "label": "Expert",
+        "description": "Expert opinion or clinical experience without strong evidence"
+      },
+      "GPP": {
+        "label": "Good Practice",
+        "description": "Good practice point based on clinical experience of the guideline group"
+      }
+    }
+  },
+  "highYield": {
+    "toggle": "Toggle High-Yield Mode",
+    "full": "Full",
+    "highYield": "High-Yield",
+    "printFriendly": "Print",
+    "fullDescription": "Show all content",
+    "highYieldDescription": "Show only key points, red flags, and critical values",
+    "printFriendlyDescription": "Optimized for printing",
+    "categories": {
+      "keyPoint": "Key Point",
+      "criticalValue": "Critical Value",
+      "redFlag": "Red Flag",
+      "quickDecision": "Quick Decision",
+      "pearl": "Clinical Pearl"
+    }
   }
 }

@@ -5,6 +5,7 @@ export * from './analysis';
 export * from './timeline';
 export * from './doenca';
 export * from './medicamento';
+export * from './evidence';
 // Protocolo React Flow (novo sistema)
 export type {
   Protocolo,
@@ -37,10 +38,14 @@ export * from './protocolo-interativo';
 export type ContentMode = 'descriptive' | 'critical_analysis';
 export type Theme = 'light' | 'dark';
 
+// Re-export ViewMode from evidence.ts
+export type { ViewMode } from './evidence';
+
 // Estado global da aplicação
 export interface AppState {
   theme: Theme;
   contentMode: ContentMode;
+  viewMode: import('./evidence').ViewMode; // full | high_yield | print_friendly
   favorites: string[]; // IDs dos rastreamentos favoritos
   favoritosDoencas: string[]; // IDs das doenças favoritas
   favoritosMedicamentos: string[]; // IDs dos medicamentos favoritos

@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { AppState, ContentMode, Theme } from '../types';
+import { AppState, ContentMode, Theme, ViewMode } from '../types';
 import type { Locale } from '@/i18n/config';
 
 interface AppStore extends AppState {
@@ -9,6 +9,9 @@ interface AppStore extends AppState {
   toggleTheme: () => void;
   setContentMode: (mode: ContentMode) => void;
   toggleContentMode: () => void;
+  // View mode actions (High-Yield mode)
+  setViewMode: (mode: ViewMode) => void;
+  toggleHighYieldMode: () => void;
   addFavorite: (id: string) => void;
   removeFavorite: (id: string) => void;
   toggleFavorite: (id: string) => void;
@@ -32,6 +35,7 @@ export const useAppStore = create<AppStore>()(
       // Estado inicial - Dark mode como padrão
       theme: 'dark',
       contentMode: 'descriptive',
+      viewMode: 'full', // full | high_yield | print_friendly
       favorites: [],
       favoritosDoencas: [],
       favoritosMedicamentos: [],
@@ -47,8 +51,15 @@ export const useAppStore = create<AppStore>()(
 
       setContentMode: (mode) => set({ contentMode: mode }),
       
-      toggleContentMode: () => set((state) => ({ 
-        contentMode: state.contentMode === 'descriptive' ? 'critical_analysis' : 'descriptive' 
+      toggleContentMode: () => set((state) => ({
+        contentMode: state.contentMode === 'descriptive' ? 'critical_analysis' : 'descriptive'
+      })),
+
+      // View mode (High-Yield)
+      setViewMode: (viewMode) => set({ viewMode }),
+
+      toggleHighYieldMode: () => set((state) => ({
+        viewMode: state.viewMode === 'high_yield' ? 'full' : 'high_yield'
       })),
 
       addFavorite: (id) => set((state) => ({
@@ -114,6 +125,7 @@ export const useAppStore = create<AppStore>()(
       partialize: (state) => ({
         theme: state.theme,
         contentMode: state.contentMode,
+        viewMode: state.viewMode,
         favorites: state.favorites,
         favoritosDoencas: state.favoritosDoencas,
         favoritosMedicamentos: state.favoritosMedicamentos,

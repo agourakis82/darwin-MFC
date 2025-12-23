@@ -247,5 +247,48 @@
     "goToCalculators": "कैलकुलेटर पर जाएं",
     "goToLearn": "लर्निंग प्लेटफॉर्म पर जाएं",
     "goToCommunity": "समुदाय पर जाएं"
+  },
+  "evidence": {
+    "legend": {
+      "title": "साक्ष्य शक्ति लेजेंड"
+    },
+    "levels": {
+      "A": {
+        "label": "मजबूत",
+        "description": "उच्च गुणवत्ता वाले RCTs या मेटा-विश्लेषण"
+      },
+      "B": {
+        "label": "मध्यम",
+        "description": "निम्न गुणवत्ता वाले RCTs या अच्छी तरह से डिज़ाइन किए गए अवलोकन अध्ययन"
+      },
+      "C": {
+        "label": "कमजोर",
+        "description": "अवलोकन अध्ययन, केस सीरीज, या विशेषज्ञ सहमति"
+      },
+      "D": {
+        "label": "विशेषज्ञ",
+        "description": "मजबूत साक्ष्य के बिना विशेषज्ञ राय या नैदानिक अनुभव"
+      },
+      "GPP": {
+        "label": "अच्छी प्रथा",
+        "description": "दिशानिर्देश समूह के नैदानिक अनुभव पर आधारित अच्छी प्रथा बिंदु"
+      }
+    }
+  },
+  "highYield": {
+    "toggle": "High-Yield मोड टॉगल करें",
+    "full": "पूर्ण",
+    "highYield": "High-Yield",
+    "printFriendly": "प्रिंट",
+    "fullDescription": "सभी सामग्री दिखाएं",
+    "highYieldDescription": "केवल मुख्य बिंदु, लाल झंडे और महत्वपूर्ण मान दिखाएं",
+    "printFriendlyDescription": "मुद्रण के लिए अनुकूलित",
+    "categories": {
+      "keyPoint": "मुख्य बिंदु",
+      "criticalValue": "महत्वपूर्ण मान",
+      "redFlag": "लाल झंडा",
+      "quickDecision": "त्वरित निर्णय",
+      "pearl": "नैदानिक मोती"
+    }
   }
 }

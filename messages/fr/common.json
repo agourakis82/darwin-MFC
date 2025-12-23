@@ -247,5 +247,48 @@
     "goToCalculators": "Aller aux Calculatrices",
     "goToLearn": "Aller à la Plateforme d'Apprentissage",
     "goToCommunity": "Aller à la Communauté"
+  },
+  "evidence": {
+    "legend": {
+      "title": "Légende de la Force des Preuves"
+    },
+    "levels": {
+      "A": {
+        "label": "Fort",
+        "description": "ECR de haute qualité ou méta-analyses"
+      },
+      "B": {
+        "label": "Modéré",
+        "description": "ECR de qualité inférieure ou études observationnelles bien conçues"
+      },
+      "C": {
+        "label": "Faible",
+        "description": "Études observationnelles, séries de cas ou consensus d'experts"
+      },
+      "D": {
+        "label": "Expert",
+        "description": "Opinion d'expert ou expérience clinique sans preuve solide"
+      },
+      "GPP": {
+        "label": "Bonne Pratique",
+        "description": "Point de bonne pratique basé sur l'expérience clinique du groupe de directives"
+      }
+    }
+  },
+  "highYield": {
+    "toggle": "Basculer le Mode High-Yield",
+    "full": "Complet",
+    "highYield": "High-Yield",
+    "printFriendly": "Impression",
+    "fullDescription": "Afficher tout le contenu",
+    "highYieldDescription": "Afficher uniquement les points clés, signaux d'alerte et valeurs critiques",
+    "printFriendlyDescription": "Optimisé pour l'impression",
+    "categories": {
+      "keyPoint": "Point Clé",
+      "criticalValue": "Valeur Critique",
+      "redFlag": "Signal d'Alerte",
+      "quickDecision": "Décision Rapide",
+      "pearl": "Perle Clinique"
+    }
   }
 }

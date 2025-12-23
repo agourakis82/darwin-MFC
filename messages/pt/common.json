@@ -390,40 +390,6 @@
     "subtitle": "Conecte-se, aprenda e compartilhe com profissionais de saúde do mundo todo",
     "forums": "Fóruns de Discussão",
     "forums_desc": "Participe de discussões clínicas e obtenha conselhos de colegas",
-    "cases": "Casos Clínicos",
-    "cases_desc": "Compartilhe e aprenda com casos de pacientes anonimizados",
-    "mentorship": "Mentoria",
-    "mentorship_desc": "Encontre mentores ou torne-se um para outros profissionais",
-    "categories": {
-      "clinical": "Discussões Clínicas",
-      "clinical_desc": "Perguntas e discussões clínicas gerais",
-      "cases": "Discussões de Casos",
-      "cases_desc": "Apresentações de casos clínicos anonimizados",
-      "study_groups": "Grupos de Estudo",
-      "study_groups_desc": "Preparação para exames e comunidades de aprendizado",
-      "regional": "Fóruns Regionais",
-      "regional_desc": "Discussões específicas por país e região"
-    },
-    "posts": "{count, plural, =0 {Nenhum post} =1 {1 post} other {# posts}}",
-    "replies": "{count, plural, =0 {Nenhuma resposta} =1 {1 resposta} other {# respostas}}",
-    "views": "{count, plural, =0 {Nenhuma visualização} =1 {1 visualização} other {# visualizações}}",
-    "reply": {
-      "placeholder": "Escreva sua resposta...",
-      "placeholder_text": "texto",
-      "submit": "Responder",
-      "submitting": "Publicando...",
-      "chars_remaining": "caracteres restantes",
-      "error_empty": "A resposta não pode estar vazia",
-      "error_too_short": "A resposta deve ter pelo menos 10 caracteres",
-      "error_generic": "Falha ao publicar resposta",
-      "format": {
-        "bold": "Negrito",
-        "italic": "Itálico",
-        "code": "Código",
-        "list": "Lista",
-        "link": "Link"
-      }
-    },
     "cases": {
       "title": "Casos Clínicos",
       "subtitle": "Compartilhe e discuta apresentações de pacientes anonimizadas",
@@ -509,6 +475,7 @@
       "back": "Voltar",
       "cancel": "Cancelar"
     },
+    "cases_desc": "Compartilhe e aprenda com casos de pacientes anonimizados",
     "mentorship": {
       "title": "Programa de Mentoria",
       "subtitle": "Conecte-se com profissionais experientes para orientação",
@@ -566,6 +533,80 @@
       "done": "Concluído",
       "error_missing_fields": "Por favor, selecione um mentor e escreva uma mensagem de apresentação",
       "error_generic": "Falha ao enviar solicitação. Por favor, tente novamente."
+    },
+    "mentorship_desc": "Encontre mentores ou torne-se um para outros profissionais",
+    "categories": {
+      "clinical": "Discussões Clínicas",
+      "clinical_desc": "Perguntas e discussões clínicas gerais",
+      "cases": "Discussões de Casos",
+      "cases_desc": "Apresentações de casos clínicos anonimizados",
+      "study_groups": "Grupos de Estudo",
+      "study_groups_desc": "Preparação para exames e comunidades de aprendizado",
+      "regional": "Fóruns Regionais",
+      "regional_desc": "Discussões específicas por país e região"
+    },
+    "posts": "{count, plural, =0 {Nenhum post} =1 {1 post} other {# posts}}",
+    "replies": "{count, plural, =0 {Nenhuma resposta} =1 {1 resposta} other {# respostas}}",
+    "views": "{count, plural, =0 {Nenhuma visualização} =1 {1 visualização} other {# visualizações}}",
+    "reply": {
+      "placeholder": "Escreva sua resposta...",
+      "placeholder_text": "texto",
+      "submit": "Responder",
+      "submitting": "Publicando...",
+      "chars_remaining": "caracteres restantes",
+      "error_empty": "A resposta não pode estar vazia",
+      "error_too_short": "A resposta deve ter pelo menos 10 caracteres",
+      "error_generic": "Falha ao publicar resposta",
+      "format": {
+        "bold": "Negrito",
+        "italic": "Itálico",
+        "code": "Código",
+        "list": "Lista",
+        "link": "Link"
+      }
+    }
+  },
+  "evidence": {
+    "legend": {
+      "title": "Legenda de Força da Evidência"
+    },
+    "levels": {
+      "A": {
+        "label": "Forte",
+        "description": "ECRs de alta qualidade ou meta-análises"
+      },
+      "B": {
+        "label": "Moderada",
+        "description": "ECRs de menor qualidade ou estudos observacionais bem desenhados"
+      },
+      "C": {
+        "label": "Fraca",
+        "description": "Estudos observacionais, séries de casos ou consenso de especialistas"
+      },
+      "D": {
+        "label": "Especialista",
+        "description": "Opinião de especialista ou experiência clínica sem evidência forte"
+      },
+      "GPP": {
+        "label": "Boa Prática",
+        "description": "Ponto de boa prática baseado na experiência clínica do grupo de diretrizes"
+      }
+    }
+  },
+  "highYield": {
+    "toggle": "Alternar Modo High-Yield",
+    "full": "Completo",
+    "highYield": "High-Yield",
+    "printFriendly": "Impressão",
+    "fullDescription": "Mostrar todo o conteúdo",
+    "highYieldDescription": "Mostrar apenas pontos-chave, sinais de alerta e valores críticos",
+    "printFriendlyDescription": "Otimizado para impressão",
+    "categories": {
+      "keyPoint": "Ponto-Chave",
+      "criticalValue": "Valor Crítico",
+      "redFlag": "Sinal de Alerta",
+      "quickDecision": "Decisão Rápida",
+      "pearl": "Pérola Clínica"
     }
   }
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { getEvidenceLevelLabel, getEvidenceLevelColor, getEvidenceLevelBadge } from '@/lib/utils/evidence-level';
+import { getAnyEvidenceLevelLabel, getAnyEvidenceLevelColor, getAnyEvidenceLevelBadge } from '@/lib/utils/evidence-level';
 import type { EvidenceLevel } from '@/lib/types/evidence';
 
 interface EvidenceBadgeProps {
@@ -13,6 +13,7 @@ interface EvidenceBadgeProps {
 
 /**
  * Badge component to display evidence level
+ * Supports both Oxford (Ia, Ib, etc.) and GRADE (A, B, C, D, GPP) levels
  */
 export function EvidenceBadge({
   level,
@@ -20,9 +21,9 @@ export function EvidenceBadge({
   size = 'md',
   className = '',
 }: EvidenceBadgeProps) {
-  const colorClass = getEvidenceLevelColor(level);
-  const badgeText = getEvidenceLevelBadge(level);
-  const label = getEvidenceLevelLabel(level);
+  const colorClass = getAnyEvidenceLevelColor(level);
+  const badgeText = getAnyEvidenceLevelBadge(level);
+  const label = getAnyEvidenceLevelLabel(level);
 
   const sizeClasses = {
     sm: 'text-xs px-1.5 py-0.5',
@@ -56,7 +57,7 @@ interface EvidenceTooltipProps {
 }
 
 export function EvidenceTooltip({ level, children }: EvidenceTooltipProps) {
-  const label = getEvidenceLevelLabel(level);
+  const label = getAnyEvidenceLevelLabel(level);
   
   return (
     <div className="group relative inline-block">

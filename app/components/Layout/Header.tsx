@@ -7,6 +7,7 @@ import { useAppStore } from '@/lib/store/appStore';
 import { LanguageSelector } from '../LanguageSelector';
 import { Sun, Moon, BookOpen, FileText, Menu, X, Search, Zap, ClipboardList, AlertTriangle, Pill, Calculator, Stethoscope, Keyboard, GraduationCap, Users, Command } from 'lucide-react';
 import CommandPalette from '../CommandPalette/CommandPalette';
+import { HighYieldToggle } from '../HighYield';
 
 // Fallback translations for pages not yet migrated to [locale]
 const fallbackTranslations: Record<string, string> = {
@@ -150,6 +151,12 @@ export default function Header() {
             >
               <Search className="w-5 h-5 text-[#1d1d1f] dark:text-[#f5f5f7]" />
             </button>
+
+            {/* High-Yield Mode Toggle */}
+            <HighYieldToggle
+              className="hidden md:flex"
+              showLabel={false}
+            />
 
             {/* Toggle Modo de Conteúdo */}
             <button
