@@ -1,9 +1,10 @@
 /**
  * CONSOLIDAÇÃO DE MEDICAMENTOS - DARWIN-MFC
  * ==========================================
- * 
+ *
  * Este arquivo consolida todos os medicamentos de todas as categorias.
- * Total alvo: 100+ medicamentos RENAME
+ * Total alvo: 600+ medicamentos (Sprint 1 Target)
+ * Inclui: antibióticos, cardiovasculares, metabólicos, endócrinos, psicofármacos, etc.
  */
 
 import { Medicamento } from '../../types/medicamento';
@@ -17,16 +18,79 @@ import { medicamentosComplementares } from './complementares';
 import { medicamentosExpansaoSOTA } from './expansao-sota';
 import { medicamentosExpansaoSOTAFinal } from './expansao-sota-final';
 import { medicamentosExpansaoUltima } from './expansao-ultima';
-// Note: expansao-nova-fase, agent-1-antibiotics, agent-2-cardiovascular-endo removed (files deleted)
+import { medicamentosAntibioticosExpansao } from './expansao-antibioticos';
+import { medicamentosCardiovascularesCompleto } from './expansao-cardiovascular-completo';
+import { medicamentosMetabolicoEndocrino } from './expansao-metabolico-endocrino';
+import { medicamentosRespiratorios } from './expansao-respiratorio';
+import { medicamentosNeuropsiquiatricos } from './expansao-neuropsiquiatrico';
+import { medicamentosGastrointestinais } from './expansao-gastrointestinal';
+import { medicamentosDermatologicos } from './expansao-dermatologico';
+import { medicamentosOftalmologicos } from './expansao-oftalmologico';
+import { medicamentosUrologicos } from './expansao-urologico';
+import { medicamentosMusculoesqueleticos } from './expansao-musculoesqueletico';
+import { medicamentosPediatricos } from './expansao-pediatrico';
+import { medicamentosGinecologia } from './expansao-ginecologia';
+import { medicamentosHematologia } from './expansao-hematologia';
+import { medicamentosAntivirais } from './expansao-antivirais';
+import { medicamentosEmergencia } from './expansao-emergencia';
+import { medicamentosOtorrino } from './expansao-otorrino';
+import { medicamentosOncologiaSuporte } from './expansao-oncologia-suporte';
+import { medicamentosReumatologia } from './expansao-reumatologia';
+import { medicamentosPsiquiatriaAdicional } from './expansao-psiquiatria-adicional';
+import { medicamentosEndocrinoAdicional } from './expansao-endocrino-adicional';
+import { medicamentosDermatologiaAdicional } from './expansao-dermatologia-adicional';
+import { medicamentosDiversosFinal } from './expansao-diversos-final';
+import { medicamentosAntibioticosFinais } from './expansao-antibioticos-final';
+import { medicamentosCardiovascularesFinais } from './expansao-cardiovascular-final';
+import { medicamentosComplementoFinal } from './expansao-final-complementar';
+import { medicamentos600Final } from './expansao-600-final';
+import { medicamentosTarget600 } from './expansao-target-600';
+import { medicamentosFinalBatch } from './expansao-final-batch';
+import { medicamentos600Complete } from './expansao-600-complete';
+import { medicamentosFinal12 } from './expansao-final-12';
+import { medicamentos600Ultimo } from './expansao-600-ultimo';
+import { medicamentos600FinalBatch } from './expansao-600-final-batch';
 
 // Consolidar todos os medicamentos
-// Filtrar apenas medicamentos completos do expanded
-const expandedCompletos = medicamentosExpanded.filter(
-  (med): med is Medicamento => 
-    med.id !== undefined && 
-    med.nomeGenerico !== undefined &&
-    med.classeTerapeutica !== undefined
-) as Medicamento[];
+// Filtrar apenas medicamentos completos (com campos obrigatórios)
+const isMedicamentoCompleto = (med: Partial<Medicamento>): med is Medicamento =>
+  med.id !== undefined &&
+  med.nomeGenerico !== undefined &&
+  med.classeTerapeutica !== undefined;
+
+const expandedCompletos = medicamentosExpanded.filter(isMedicamentoCompleto);
+const antibioticosExpansaoCompletos = medicamentosAntibioticosExpansao.filter(isMedicamentoCompleto);
+const cardiovascularesCompletos = medicamentosCardiovascularesCompleto.filter(isMedicamentoCompleto);
+const metabolicoEndocrinoCompletos = medicamentosMetabolicoEndocrino.filter(isMedicamentoCompleto);
+const respiratoriosCompletos = medicamentosRespiratorios.filter(isMedicamentoCompleto);
+const neuropsiquiatricosCompletos = medicamentosNeuropsiquiatricos.filter(isMedicamentoCompleto);
+const gastrointestinaisCompletos = medicamentosGastrointestinais.filter(isMedicamentoCompleto);
+const dermatologicosCompletos = medicamentosDermatologicos.filter(isMedicamentoCompleto);
+const oftalmologicosCompletos = medicamentosOftalmologicos.filter(isMedicamentoCompleto);
+const urologicosCompletos = medicamentosUrologicos.filter(isMedicamentoCompleto);
+const musculoesqueleticosCompletos = medicamentosMusculoesqueleticos.filter(isMedicamentoCompleto);
+const pediatricosCompletos = medicamentosPediatricos.filter(isMedicamentoCompleto);
+const ginecologiaCompletos = medicamentosGinecologia.filter(isMedicamentoCompleto);
+const hematologiaCompletos = medicamentosHematologia.filter(isMedicamentoCompleto);
+const antiviraisCompletos = medicamentosAntivirais.filter(isMedicamentoCompleto);
+const emergenciaCompletos = medicamentosEmergencia.filter(isMedicamentoCompleto);
+const otorrinoCompletos = medicamentosOtorrino.filter(isMedicamentoCompleto);
+const oncologiaSuporteCompletos = medicamentosOncologiaSuporte.filter(isMedicamentoCompleto);
+const reumatologiaCompletos = medicamentosReumatologia.filter(isMedicamentoCompleto);
+const psiquiatriaAdicionalCompletos = medicamentosPsiquiatriaAdicional.filter(isMedicamentoCompleto);
+const endocrinoAdicionalCompletos = medicamentosEndocrinoAdicional.filter(isMedicamentoCompleto);
+const dermatologiaAdicionalCompletos = medicamentosDermatologiaAdicional.filter(isMedicamentoCompleto);
+const diversosFinalCompletos = medicamentosDiversosFinal.filter(isMedicamentoCompleto);
+const antibioticosFinaisCompletos = medicamentosAntibioticosFinais.filter(isMedicamentoCompleto);
+const cardiovascularesFinaisCompletos = medicamentosCardiovascularesFinais.filter(isMedicamentoCompleto);
+const complementoFinalCompletos = medicamentosComplementoFinal.filter(isMedicamentoCompleto);
+const medicamentos600Completos = medicamentos600Final.filter(isMedicamentoCompleto);
+const medicamentosTarget600Completos = medicamentosTarget600.filter(isMedicamentoCompleto);
+const medicamentosFinalBatchCompletos = medicamentosFinalBatch.filter(isMedicamentoCompleto);
+const medicamentos600CompleteFiltered = medicamentos600Complete.filter(isMedicamentoCompleto);
+const medicamentosFinal12Filtered = medicamentosFinal12.filter(isMedicamentoCompleto);
+const medicamentos600UltimoFiltered = medicamentos600Ultimo.filter(isMedicamentoCompleto);
+const medicamentos600FinalBatchFiltered = medicamentos600FinalBatch.filter(isMedicamentoCompleto);
 
 export const todosMedicamentos: Medicamento[] = [
   ...medicamentosBase,
@@ -39,6 +103,38 @@ export const todosMedicamentos: Medicamento[] = [
   ...medicamentosExpansaoSOTA,
   ...medicamentosExpansaoSOTAFinal,
   ...medicamentosExpansaoUltima,
+  ...antibioticosExpansaoCompletos,
+  ...cardiovascularesCompletos,
+  ...metabolicoEndocrinoCompletos,
+  ...respiratoriosCompletos,
+  ...neuropsiquiatricosCompletos,
+  ...gastrointestinaisCompletos,
+  ...dermatologicosCompletos,
+  ...oftalmologicosCompletos,
+  ...urologicosCompletos,
+  ...musculoesqueleticosCompletos,
+  ...pediatricosCompletos,
+  ...ginecologiaCompletos,
+  ...hematologiaCompletos,
+  ...antiviraisCompletos,
+  ...emergenciaCompletos,
+  ...otorrinoCompletos,
+  ...oncologiaSuporteCompletos,
+  ...reumatologiaCompletos,
+  ...psiquiatriaAdicionalCompletos,
+  ...endocrinoAdicionalCompletos,
+  ...dermatologiaAdicionalCompletos,
+  ...diversosFinalCompletos,
+  ...antibioticosFinaisCompletos,
+  ...cardiovascularesFinaisCompletos,
+  ...complementoFinalCompletos,
+  ...medicamentos600Completos,
+  ...medicamentosTarget600Completos,
+  ...medicamentosFinalBatchCompletos,
+  ...medicamentos600CompleteFiltered,
+  ...medicamentosFinal12Filtered,
+  ...medicamentos600UltimoFiltered,
+  ...medicamentos600FinalBatchFiltered,
 ];
 
 // Remover duplicatas por ID
