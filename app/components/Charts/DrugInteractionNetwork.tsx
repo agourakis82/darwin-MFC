@@ -1,13 +1,15 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import type { Node as FlowNode, Edge as FlowEdge } from '@xyflow/react';
 import { ReactFlow, Background, Controls, MiniMap } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { buildMedicationNetwork, findInteractionsForMedications, calculateNetworkStatistics } from '@/lib/utils/medication-network';
+import { exportToJSON, exportToCSV, exportToPDF } from '@/lib/utils/interaction-export';
 import { todosMedicamentos } from '@/lib/data/medicamentos/index';
 import type { Medicamento } from '@/lib/types/medicamento';
-import { AlertTriangle, Info, Minus } from 'lucide-react';
+import { Info, Download, FileJson, FileSpreadsheet, FileText, ChevronDown } from 'lucide-react';
+import DrugInteractionPanel from './DrugInteractionPanel';
 
 interface DrugInteractionNetworkProps {
   selectedMedications?: string[]; // IDs dos medicamentos selecionados
@@ -36,6 +38,8 @@ export default function DrugInteractionNetwork({
 }: DrugInteractionNetworkProps) {
   const [filterSeverity, setFilterSeverity] = useState<'grave' | 'moderada' | 'leve' | 'all'>('all');
   const [selectedNode, setSelectedNode] = useState<string | null>(null);
+  const [isPanelOpen, setIsPanelOpen] = useState(false);
+  const [showExportMenu, setShowExportMenu] = useState(false);
 
   const networkData = useMemo(() => {
     if (showAll) {
@@ -123,10 +127,40 @@ export default function DrugInteractionNetwork({
 
   const onNodeClickHandler = (event: React.MouseEvent, node: FlowNode) => {
     setSelectedNode(node.id);
+    setIsPanelOpen(true);
     if (onNodeClick) {
       onNodeClick(node.id);
     }
   };
+
+  // Get selected node data and its interactions
+  const selectedNodeData = useMemo(() => {
+    if (!selectedNode) return null;
+    return networkData.nodes.find((n) => n.id === selectedNode) || null;
+  }, [selectedNode, networkData.nodes]);
+
+  const selectedNodeInteractions = useMemo(() => {
+    if (!selectedNode) return [];
+    return networkData.edges.filter(
+      (e) => e.source === selectedNode || e.target === selectedNode
+    );
+  }, [selectedNode, networkData.edges]);
+
+  // Export handlers
+  const handleExportJSON = useCallback(() => {
+    exportToJSON(networkData);
+    setShowExportMenu(false);
+  }, [networkData]);
+
+  const handleExportCSV = useCallback(() => {
+    exportToCSV(networkData);
+    setShowExportMenu(false);
+  }, [networkData]);
+
+  const handleExportPDF = useCallback(() => {
+    exportToPDF(networkData);
+    setShowExportMenu(false);
+  }, [networkData]);
 
   if (networkData.nodes.length === 0) {
     return (
@@ -135,10 +169,6 @@ export default function DrugInteractionNetwork({
       </div>
     );
   }
-
-  const selectedInteraction = networkData.edges.find(
-    e => e.source === selectedNode || e.target === selectedNode
-  );
 
   return (
     <div className="space-y-4">
@@ -159,6 +189,50 @@ export default function DrugInteractionNetwork({
               <option value="moderada">Moderada</option>
               <option value="leve">Leve</option>
             </select>
+          </div>
+
+          {/* Export Button */}
+          <div className="relative">
+            <button
+              onClick={() => setShowExportMenu(!showExportMenu)}
+              className="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+            >
+              <Download className="w-4 h-4" />
+              Exportar
+              <ChevronDown className="w-3 h-3" />
+            </button>
+
+            {showExportMenu && (
+              <>
+                <div
+                  className="fixed inset-0 z-10"
+                  onClick={() => setShowExportMenu(false)}
+                />
+                <div className="absolute left-0 top-full mt-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-lg z-20 min-w-[160px] overflow-hidden">
+                  <button
+                    onClick={handleExportPDF}
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-left text-neutral-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                  >
+                    <FileText className="w-4 h-4 text-red-500" />
+                    Exportar PDF
+                  </button>
+                  <button
+                    onClick={handleExportCSV}
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-left text-neutral-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                  >
+                    <FileSpreadsheet className="w-4 h-4 text-green-500" />
+                    Exportar CSV
+                  </button>
+                  <button
+                    onClick={handleExportJSON}
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-left text-neutral-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                  >
+                    <FileJson className="w-4 h-4 text-blue-500" />
+                    Exportar JSON
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
 
@@ -200,34 +274,37 @@ export default function DrugInteractionNetwork({
         </ReactFlow>
       </div>
 
-      {/* Detalhes da Interação Selecionada */}
-      {selectedInteraction && selectedNode && (
-        <div className="p-4 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg">
-          <div className="flex items-start gap-3">
-            <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400 mt-0.5" />
-            <div className="flex-1">
-              <h4 className="font-semibold text-amber-900 dark:text-amber-200 mb-2">
-                Interação {SEVERITY_LABELS[selectedInteraction.strength]}
-              </h4>
-              <p className="text-sm text-amber-800 dark:text-amber-300 mb-1">
-                <strong>Efeito:</strong> {selectedInteraction.interaction.efeito}
-              </p>
-              <p className="text-sm text-amber-800 dark:text-amber-300 mb-1">
-                <strong>Mecanismo:</strong> {selectedInteraction.interaction.mecanismo}
-              </p>
-              <p className="text-sm text-amber-800 dark:text-amber-300">
-                <strong>Conduta:</strong> {selectedInteraction.interaction.conduta}
-              </p>
+      {/* Quick Info Banner */}
+      {selectedNode && selectedNodeInteractions.length > 0 && !isPanelOpen && (
+        <div className="p-4 bg-[#007aff]/10 dark:bg-[#5ac8fa]/10 border border-[#007aff]/20 dark:border-[#5ac8fa]/20 rounded-lg">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Info className="w-5 h-5 text-[#007aff] dark:text-[#5ac8fa]" />
+              <span className="text-sm text-[#1d1d1f] dark:text-[#f5f5f7]">
+                <strong>{selectedNodeData?.name}</strong> possui {selectedNodeInteractions.length} interação(ões)
+              </span>
             </div>
             <button
-              onClick={() => setSelectedNode(null)}
-              className="text-amber-600 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-200"
+              onClick={() => setIsPanelOpen(true)}
+              className="px-3 py-1.5 text-sm font-medium text-[#007aff] dark:text-[#5ac8fa] hover:bg-[#007aff]/10 dark:hover:bg-[#5ac8fa]/10 rounded-lg transition-colors"
             >
-              <Minus className="w-5 h-5" />
+              Ver Detalhes
             </button>
           </div>
         </div>
       )}
+
+      {/* Interaction Details Panel */}
+      <DrugInteractionPanel
+        isOpen={isPanelOpen}
+        onClose={() => {
+          setIsPanelOpen(false);
+          setSelectedNode(null);
+        }}
+        selectedNode={selectedNodeData}
+        interactions={selectedNodeInteractions}
+        nodes={networkData.nodes}
+      />
     </div>
   );
 }
