@@ -5,4 +5,6 @@
 
 export * from './synonyms';
 export * from './semantic';
+export * from './searchIndex';
+export * from './advancedSearch';
 
