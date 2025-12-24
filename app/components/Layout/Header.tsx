@@ -184,6 +184,9 @@ export default function Header() {
               </span>
             </button>
 
+            {/* Language Selector */}
+            <LanguageSelector className="hidden sm:block" />
+
             {/* Toggle Tema */}
             <button
               onClick={toggleTheme}
@@ -341,6 +344,14 @@ export default function Header() {
                   </Link>
                 ))}
               </nav>
+            </div>
+
+            {/* Language Selector Mobile */}
+            <div className="px-5 pt-4 border-t border-black/10 dark:border-white/10">
+              <p className="py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">
+                {t('header.selectLanguage')}
+              </p>
+              <LanguageSelector variant="buttons" />
             </div>
 
             {/* Atalhos */}
