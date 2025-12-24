@@ -1519,3 +1519,460 @@ export function calculateASCVD(params: {
     ]
   };
 }
+
+// =============================================================================
+// GLASGOW COMA SCALE (GCS) - ESCALA DE COMA DE GLASGOW
+// =============================================================================
+
+/**
+ * Escala de Coma de Glasgow para avaliação do nível de consciência
+ * Fundamental em trauma, AVC, e qualquer alteração neurológica
+ *
+ * Referências:
+ * - Teasdale G, Jennett B. Assessment of coma and impaired consciousness. Lancet. 1974.
+ * - Teasdale G et al. The Glasgow Coma Scale at 40 years. Lancet Neurol. 2014.
+ */
+export function calculateGCS(params: {
+  abertura_ocular: 1 | 2 | 3 | 4;
+  resposta_verbal: 1 | 2 | 3 | 4 | 5;
+  resposta_motora: 1 | 2 | 3 | 4 | 5 | 6;
+}): CalculatorResult {
+  const total = params.abertura_ocular + params.resposta_verbal + params.resposta_motora;
+
+  let category: string;
+  let interpretation: string;
+  let recommendations: string;
+
+  if (total <= 8) {
+    category = 'Grave (Coma)';
+    interpretation = `GCS = ${total}/15 (E${params.abertura_ocular}V${params.resposta_verbal}M${params.resposta_motora}). TCE grave ou coma. Via aérea em risco.`;
+    recommendations = 'Considerar IOT para proteção de via aérea (GCS ≤8). TC de crânio urgente se trauma. Monitorização neurológica intensiva.';
+  } else if (total <= 12) {
+    category = 'Moderado';
+    interpretation = `GCS = ${total}/15 (E${params.abertura_ocular}V${params.resposta_verbal}M${params.resposta_motora}). Alteração moderada do nível de consciência.`;
+    recommendations = 'Observação em ambiente monitorizado. TC de crânio se trauma ou suspeita de AVC. Avaliação neurológica seriada.';
+  } else if (total <= 14) {
+    category = 'Leve';
+    interpretation = `GCS = ${total}/15 (E${params.abertura_ocular}V${params.resposta_verbal}M${params.resposta_motora}). Alteração leve do nível de consciência.`;
+    recommendations = 'Observação clínica. TC de crânio se trauma com mecanismo significativo. Reavaliar em intervalos regulares.';
+  } else {
+    category = 'Normal';
+    interpretation = `GCS = ${total}/15 (E${params.abertura_ocular}V${params.resposta_verbal}M${params.resposta_motora}). Nível de consciência normal.`;
+    recommendations = 'Paciente alerta e orientado. Continuar avaliação conforme indicação clínica.';
+  }
+
+  return {
+    value: `${total} (E${params.abertura_ocular}V${params.resposta_verbal}M${params.resposta_motora})`,
+    unit: 'pontos',
+    category,
+    interpretation,
+    recommendations,
+    formula: 'GCS = E(1-4) + V(1-5) + M(1-6) = 3-15',
+    references: [
+      'Teasdale G, Jennett B. Assessment of coma and impaired consciousness. Lancet. 1974;2(7872):81-84.',
+      'Teasdale G et al. The Glasgow Coma Scale at 40 years. Lancet Neurol. 2014;13(8):844-854.',
+      'ATLS - Advanced Trauma Life Support. 10th ed. American College of Surgeons, 2018.'
+    ]
+  };
+}
+
+// =============================================================================
+// qSOFA - QUICK SEQUENTIAL ORGAN FAILURE ASSESSMENT
+// =============================================================================
+
+/**
+ * qSOFA - Rastreamento rápido de sepse à beira-leito
+ */
+export function calculateqSOFA(params: {
+  frequenciaRespiratoria: number;
+  pressaoSistolica: number;
+  alteracaoMental: boolean;
+}): CalculatorResult {
+  let pontos = 0;
+
+  if (params.frequenciaRespiratoria >= 22) pontos += 1;
+  if (params.pressaoSistolica <= 100) pontos += 1;
+  if (params.alteracaoMental) pontos += 1;
+
+  let category: string;
+  let interpretation: string;
+  let recommendations: string;
+
+  if (pontos >= 2) {
+    category = 'Alto Risco - Suspeita de Sepse';
+    interpretation = `qSOFA = ${pontos}/3. Alto risco de mortalidade em paciente com suspeita de infecção.`;
+    recommendations = 'Protocolo de sepse: antibioticoterapia em 1h, ressuscitação volêmica (30mL/kg), colher lactato e hemocultura. Considerar UTI.';
+  } else if (pontos === 1) {
+    category = 'Risco Intermediário';
+    interpretation = `qSOFA = ${pontos}/3. Risco intermediário.`;
+    recommendations = 'Monitorização atenta. Reavaliar frequentemente. Colher lactato se suspeita de infecção.';
+  } else {
+    category = 'Baixo Risco (pelo qSOFA)';
+    interpretation = `qSOFA = ${pontos}/3. Baixo risco pelo qSOFA. Não exclui sepse.`;
+    recommendations = 'qSOFA negativo não exclui sepse. Se suspeita clínica, continuar investigação.';
+  }
+
+  return {
+    value: pontos,
+    unit: 'pontos',
+    category,
+    interpretation,
+    recommendations,
+    formula: 'FR≥22 + PAS≤100 + Alt.Mental (0-3)',
+    references: [
+      'Seymour CW et al. Assessment of Clinical Criteria for Sepsis (Sepsis-3). JAMA. 2016;315(8):762-774.',
+      'Singer M et al. The Third International Consensus Definitions for Sepsis (Sepsis-3). JAMA. 2016;315(8):801-810.'
+    ]
+  };
+}
+
+// =============================================================================
+// GAD-7 - GENERALIZED ANXIETY DISORDER
+// =============================================================================
+
+/**
+ * GAD-7 - Rastreamento de transtorno de ansiedade generalizada
+ */
+export function calculateGAD7(respostas: number[]): CalculatorResult {
+  const total = respostas.reduce((sum, val) => sum + val, 0);
+
+  let category: string;
+  let interpretation: string;
+  let recommendations: string;
+
+  if (total >= 15) {
+    category = 'Ansiedade Grave';
+    interpretation = `GAD-7 = ${total}/21. Ansiedade grave.`;
+    recommendations = 'Avaliação psiquiátrica. Tratamento farmacológico + psicoterapia. ISRS primeira linha.';
+  } else if (total >= 10) {
+    category = 'Ansiedade Moderada';
+    interpretation = `GAD-7 = ${total}/21. Ansiedade moderada.`;
+    recommendations = 'Considerar tratamento farmacológico e/ou psicoterapia. TCC eficaz.';
+  } else if (total >= 5) {
+    category = 'Ansiedade Leve';
+    interpretation = `GAD-7 = ${total}/21. Ansiedade leve.`;
+    recommendations = 'Monitoramento. Técnicas de relaxamento. Considerar psicoterapia breve.';
+  } else {
+    category = 'Mínima/Sem Ansiedade';
+    interpretation = `GAD-7 = ${total}/21. Sintomas mínimos ou ausentes.`;
+    recommendations = 'Rastreamento negativo. Promoção de saúde mental.';
+  }
+
+  return {
+    value: total,
+    unit: 'pontos',
+    category,
+    interpretation,
+    recommendations,
+    formula: 'Soma de 7 questões (0-3 cada)',
+    references: [
+      'Spitzer RL et al. A brief measure for assessing GAD. Arch Intern Med. 2006;166(10):1092-1097.',
+      'Kroenke K et al. Anxiety disorders in primary care. Ann Intern Med. 2007;146(5):317-325.'
+    ]
+  };
+}
+
+// =============================================================================
+// CHILD-PUGH - GRAVIDADE DA CIRROSE
+// =============================================================================
+
+export function calculateChildPugh(params: {
+  bilirrubina: number;
+  albumina: number;
+  inr: number;
+  ascite: 'ausente' | 'leve' | 'moderada_grave';
+  encefalopatia: 'ausente' | 'grau1_2' | 'grau3_4';
+}): CalculatorResult {
+  let pontos = 0;
+
+  if (params.bilirrubina < 2) pontos += 1;
+  else if (params.bilirrubina <= 3) pontos += 2;
+  else pontos += 3;
+
+  if (params.albumina > 3.5) pontos += 1;
+  else if (params.albumina >= 2.8) pontos += 2;
+  else pontos += 3;
+
+  if (params.inr < 1.7) pontos += 1;
+  else if (params.inr <= 2.3) pontos += 2;
+  else pontos += 3;
+
+  if (params.ascite === 'ausente') pontos += 1;
+  else if (params.ascite === 'leve') pontos += 2;
+  else pontos += 3;
+
+  if (params.encefalopatia === 'ausente') pontos += 1;
+  else if (params.encefalopatia === 'grau1_2') pontos += 2;
+  else pontos += 3;
+
+  const classe = pontos <= 6 ? 'A' : pontos <= 9 ? 'B' : 'C';
+
+  return {
+    value: `${pontos} (Classe ${classe})`,
+    unit: 'pontos',
+    category: `Child-Pugh ${classe}`,
+    interpretation: `Child-Pugh = ${pontos} (Classe ${classe}). ${classe === 'A' ? 'Cirrose compensada.' : classe === 'B' ? 'Comprometimento moderado.' : 'Cirrose descompensada grave.'}`,
+    recommendations: classe === 'A'
+      ? 'Vigilância de varizes e CHC. Evitar hepatotóxicos.'
+      : classe === 'B'
+        ? 'Encaminhar para transplante. Profilaxia de varizes.'
+        : 'Avaliação urgente para transplante hepático.',
+    formula: 'Bilirrubina + Albumina + INR + Ascite + Encefalopatia (5-15)',
+    references: [
+      'Pugh RN et al. Transection of the oesophagus for bleeding varices. Br J Surg. 1973;60(8):646-649.',
+      'EASL Clinical Practice Guidelines: Decompensated cirrhosis. J Hepatol. 2018.'
+    ]
+  };
+}
+
+// =============================================================================
+// MELD - MODEL FOR END-STAGE LIVER DISEASE
+// =============================================================================
+
+export function calculateMELD(params: {
+  bilirrubina: number;
+  creatinina: number;
+  inr: number;
+  sodio?: number;
+  dialise?: boolean;
+}): CalculatorResult {
+  const bili = Math.max(params.bilirrubina, 1);
+  const cr = params.dialise ? 4.0 : Math.max(Math.min(params.creatinina, 4), 1);
+  const inr = Math.max(params.inr, 1);
+
+  const meld = Math.round(10 * (0.957 * Math.log(cr) + 0.378 * Math.log(bili) + 1.12 * Math.log(inr) + 0.643));
+
+  let meldNa: number | null = null;
+  if (params.sodio) {
+    const na = Math.max(Math.min(params.sodio, 140), 125);
+    meldNa = Math.round(meld + 1.32 * (137 - na) - (0.033 * meld * (137 - na)));
+    meldNa = Math.max(Math.min(meldNa, 40), 6);
+  }
+
+  const score = meldNa ?? meld;
+
+  return {
+    value: score,
+    unit: 'pontos',
+    category: score < 10 ? 'Baixo' : score < 20 ? 'Intermediário' : score < 30 ? 'Alto' : 'Muito Alto',
+    interpretation: `MELD${meldNa ? '-Na' : ''} = ${score}. Mortalidade em 3 meses: ${score < 10 ? '~2%' : score < 20 ? '~6-20%' : score < 30 ? '~20-45%' : '~70-100%'}.`,
+    recommendations: score < 20 ? 'Acompanhamento e avaliação para transplante.' : 'Prioridade para transplante hepático.',
+    formula: meldNa ? 'MELD-Na' : 'MELD = 10×[0.957×ln(Cr) + 0.378×ln(Bili) + 1.12×ln(INR) + 0.643]',
+    references: [
+      'Kamath PS et al. A model to predict survival in end-stage liver disease. Hepatology. 2001;33(2):464-470.',
+      'Kim WR et al. Hyponatremia and mortality. N Engl J Med. 2008;359(10):1018-1026.'
+    ]
+  };
+}
+
+// =============================================================================
+// HEART SCORE - DOR TORÁCICA
+// =============================================================================
+
+export function calculateHEART(params: {
+  historia: 0 | 1 | 2;
+  ecg: 0 | 1 | 2;
+  idade: number;
+  fatoresRisco: number;
+  troponina: 0 | 1 | 2;
+}): CalculatorResult {
+  let pontos = params.historia + params.ecg + params.troponina;
+
+  if (params.idade >= 65) pontos += 2;
+  else if (params.idade >= 45) pontos += 1;
+
+  if (params.fatoresRisco >= 3) pontos += 2;
+  else if (params.fatoresRisco >= 1) pontos += 1;
+
+  return {
+    value: pontos,
+    unit: 'pontos',
+    category: pontos <= 3 ? 'Baixo Risco' : pontos <= 6 ? 'Risco Intermediário' : 'Alto Risco',
+    interpretation: `HEART = ${pontos}. Risco de MACE em 6 semanas: ${pontos <= 3 ? '~1,7%' : pontos <= 6 ? '~12-17%' : '~50-65%'}.`,
+    recommendations: pontos <= 3
+      ? 'Considerar alta precoce. Seguimento ambulatorial.'
+      : pontos <= 6
+        ? 'Admissão. Troponina seriada. Teste funcional antes da alta.'
+        : 'Internação. Estratégia invasiva precoce.',
+    formula: 'H(0-2) + E(0-2) + A(0-2) + R(0-2) + T(0-2)',
+    references: [
+      'Six AJ et al. The HEART score. Neth Heart J. 2008;16(6):191-196.',
+      'Backus BE et al. HEART score validation. Int J Cardiol. 2013;168(3):2153-2158.'
+    ]
+  };
+}
+
+// =============================================================================
+// NEWS2 - NATIONAL EARLY WARNING SCORE
+// =============================================================================
+
+export function calculateNEWS2(params: {
+  frequenciaRespiratoria: number;
+  spo2: number;
+  oxigenioSuplementar: boolean;
+  temperatura: number;
+  pressaoSistolica: number;
+  frequenciaCardiaca: number;
+  nivelConsciencia: 'alerta' | 'confuso' | 'voz' | 'dor' | 'irresponsivo';
+}): CalculatorResult {
+  let pontos = 0;
+
+  // FR
+  if (params.frequenciaRespiratoria <= 8) pontos += 3;
+  else if (params.frequenciaRespiratoria <= 11) pontos += 1;
+  else if (params.frequenciaRespiratoria <= 20) pontos += 0;
+  else if (params.frequenciaRespiratoria <= 24) pontos += 2;
+  else pontos += 3;
+
+  // SpO2
+  if (params.spo2 <= 91) pontos += 3;
+  else if (params.spo2 <= 93) pontos += 2;
+  else if (params.spo2 <= 95) pontos += 1;
+
+  if (params.oxigenioSuplementar) pontos += 2;
+
+  // Temperatura
+  if (params.temperatura <= 35.0) pontos += 3;
+  else if (params.temperatura <= 36.0) pontos += 1;
+  else if (params.temperatura <= 38.0) pontos += 0;
+  else if (params.temperatura <= 39.0) pontos += 1;
+  else pontos += 2;
+
+  // PAS
+  if (params.pressaoSistolica <= 90) pontos += 3;
+  else if (params.pressaoSistolica <= 100) pontos += 2;
+  else if (params.pressaoSistolica <= 110) pontos += 1;
+  else if (params.pressaoSistolica <= 219) pontos += 0;
+  else pontos += 3;
+
+  // FC
+  if (params.frequenciaCardiaca <= 40) pontos += 3;
+  else if (params.frequenciaCardiaca <= 50) pontos += 1;
+  else if (params.frequenciaCardiaca <= 90) pontos += 0;
+  else if (params.frequenciaCardiaca <= 110) pontos += 1;
+  else if (params.frequenciaCardiaca <= 130) pontos += 2;
+  else pontos += 3;
+
+  // Consciência
+  if (params.nivelConsciencia !== 'alerta') pontos += 3;
+
+  return {
+    value: pontos,
+    unit: 'pontos',
+    category: pontos <= 4 ? 'Baixo' : pontos <= 6 ? 'Médio' : 'Alto',
+    interpretation: `NEWS2 = ${pontos}. Risco de deterioração: ${pontos <= 4 ? 'Baixo' : pontos <= 6 ? 'Médio - resposta urgente' : 'Alto - resposta emergencial'}.`,
+    recommendations: pontos <= 4
+      ? 'Monitorização de rotina a cada 4-6h.'
+      : pontos <= 6
+        ? 'Monitorização horária. Avaliação médica urgente.'
+        : 'Monitorização contínua. Time de Resposta Rápida. UTI.',
+    formula: 'FR + SpO2 + O2 + Temp + PAS + FC + ACVPU (0-20)',
+    references: [
+      'Royal College of Physicians. NEWS 2. London: RCP, 2017.',
+      'Smith GB et al. NEWS to discriminate at-risk patients. Resuscitation. 2013;84(4):465-470.'
+    ]
+  };
+}
+
+// =============================================================================
+// BISHOP SCORE - INDUÇÃO DO PARTO
+// =============================================================================
+
+export function calculateBishop(params: {
+  dilatacao: number;
+  apagamento: number;
+  consistencia: 'firme' | 'medio' | 'amolecido';
+  posicao: 'posterior' | 'medio' | 'anterior';
+  altura: number;
+}): CalculatorResult {
+  let pontos = 0;
+
+  // Dilatação
+  if (params.dilatacao === 0) pontos += 0;
+  else if (params.dilatacao <= 2) pontos += 1;
+  else if (params.dilatacao <= 4) pontos += 2;
+  else pontos += 3;
+
+  // Apagamento
+  if (params.apagamento <= 30) pontos += 0;
+  else if (params.apagamento <= 50) pontos += 1;
+  else if (params.apagamento <= 70) pontos += 2;
+  else pontos += 3;
+
+  // Consistência
+  if (params.consistencia === 'firme') pontos += 0;
+  else if (params.consistencia === 'medio') pontos += 1;
+  else pontos += 2;
+
+  // Posição
+  if (params.posicao === 'posterior') pontos += 0;
+  else if (params.posicao === 'medio') pontos += 1;
+  else pontos += 2;
+
+  // Altura
+  if (params.altura <= -3) pontos += 0;
+  else if (params.altura <= -1) pontos += 1;
+  else if (params.altura <= 1) pontos += 2;
+  else pontos += 3;
+
+  return {
+    value: pontos,
+    unit: 'pontos',
+    category: pontos >= 9 ? 'Colo Maduro' : pontos >= 6 ? 'Intermediário' : 'Colo Imaturo',
+    interpretation: `Bishop = ${pontos}/13. ${pontos >= 9 ? 'Colo favorável.' : pontos >= 6 ? 'Moderadamente favorável.' : 'Colo desfavorável.'}`,
+    recommendations: pontos >= 9
+      ? 'Indução com ocitocina. Alta chance de sucesso.'
+      : pontos >= 6
+        ? 'Considerar preparo cervical ou indução direta.'
+        : 'Preparo cervical recomendado (Misoprostol ou Foley).',
+    formula: 'Dilatação + Apagamento + Consistência + Posição + Altura (0-13)',
+    references: [
+      'Bishop EH. Pelvic scoring for elective induction. Obstet Gynecol. 1964;24:266-268.',
+      'ACOG Practice Bulletin: Induction of Labor. 2009.'
+    ]
+  };
+}
+
+// =============================================================================
+// METADATA FOR SEARCH INDEXING
+// =============================================================================
+
+export interface CalculadoraMetadata {
+  id: string;
+  nome: string;
+  descricao: string;
+  categoria: string;
+  tags: string[];
+}
+
+export const calculadoras: CalculadoraMetadata[] = [
+  { id: 'imc', nome: 'IMC (Índice de Massa Corporal)', descricao: 'Cálculo do IMC para avaliação nutricional', categoria: 'Antropometria', tags: ['obesidade', 'peso', 'nutrição', 'antropometria'] },
+  { id: 'ckd-epi', nome: 'CKD-EPI', descricao: 'Taxa de filtração glomerular estimada', categoria: 'Nefrologia', tags: ['rim', 'creatinina', 'função renal', 'tfg'] },
+  { id: 'cockcroft-gault', nome: 'Cockcroft-Gault', descricao: 'Clearance de creatinina estimado', categoria: 'Nefrologia', tags: ['rim', 'creatinina', 'função renal'] },
+  { id: 'phq-9', nome: 'PHQ-9', descricao: 'Rastreamento e avaliação de depressão', categoria: 'Saúde Mental', tags: ['depressão', 'saúde mental', 'rastreamento'] },
+  { id: 'phq-2', nome: 'PHQ-2', descricao: 'Rastreamento rápido de depressão', categoria: 'Saúde Mental', tags: ['depressão', 'saúde mental', 'rastreamento'] },
+  { id: 'audit-c', nome: 'AUDIT-C', descricao: 'Rastreamento de uso de álcool', categoria: 'Saúde Mental', tags: ['álcool', 'dependência', 'rastreamento'] },
+  { id: 'cage', nome: 'CAGE', descricao: 'Rastreamento rápido de alcoolismo', categoria: 'Saúde Mental', tags: ['álcool', 'dependência', 'rastreamento'] },
+  { id: 'findrisc', nome: 'FINDRISC', descricao: 'Risco de diabetes tipo 2', categoria: 'Endocrinologia', tags: ['diabetes', 'rastreamento', 'risco cardiovascular'] },
+  { id: 'hidratacao-dengue', nome: 'Hidratação Dengue', descricao: 'Cálculo de hidratação para dengue', categoria: 'Infectologia', tags: ['dengue', 'hidratação', 'arbovirose'] },
+  { id: 'apgar', nome: 'APGAR', descricao: 'Avaliação do recém-nascido', categoria: 'Pediatria', tags: ['neonatal', 'parto', 'pediatria'] },
+  { id: 'framingham', nome: 'Framingham', descricao: 'Risco cardiovascular em 10 anos', categoria: 'Cardiologia', tags: ['risco cardiovascular', 'prevenção', 'infarto'] },
+  { id: 'gail', nome: 'Gail', descricao: 'Risco de câncer de mama', categoria: 'Oncologia', tags: ['câncer mama', 'rastreamento', 'risco'] },
+  { id: 'score', nome: 'SCORE', descricao: 'Risco cardiovascular europeu', categoria: 'Cardiologia', tags: ['risco cardiovascular', 'prevenção'] },
+  { id: 'curb-65', nome: 'CURB-65', descricao: 'Gravidade de pneumonia adquirida na comunidade', categoria: 'Pneumologia', tags: ['pneumonia', 'pac', 'gravidade'] },
+  { id: 'crb-65', nome: 'CRB-65', descricao: 'Versão simplificada do CURB-65', categoria: 'Pneumologia', tags: ['pneumonia', 'pac', 'gravidade'] },
+  { id: 'wells-tvp', nome: 'Wells TVP', descricao: 'Probabilidade de trombose venosa profunda', categoria: 'Vascular', tags: ['tvp', 'trombose', 'vascular'] },
+  { id: 'wells-ep', nome: 'Wells EP', descricao: 'Probabilidade de embolia pulmonar', categoria: 'Vascular', tags: ['embolia pulmonar', 'tep', 'vascular'] },
+  { id: 'cha2ds2-vasc', nome: 'CHA2DS2-VASc', descricao: 'Risco de AVC em fibrilação atrial', categoria: 'Cardiologia', tags: ['fibrilação atrial', 'avc', 'anticoagulação'] },
+  { id: 'has-bled', nome: 'HAS-BLED', descricao: 'Risco de sangramento em anticoagulação', categoria: 'Cardiologia', tags: ['anticoagulação', 'sangramento', 'fibrilação atrial'] },
+  { id: 'child-pugh', nome: 'Child-Pugh', descricao: 'Classificação de cirrose hepática', categoria: 'Hepatologia', tags: ['cirrose', 'fígado', 'hepatopatia'] },
+  { id: 'meld', nome: 'MELD', descricao: 'Gravidade de hepatopatia', categoria: 'Hepatologia', tags: ['cirrose', 'fígado', 'transplante'] },
+  { id: 'centor', nome: 'Centor', descricao: 'Probabilidade de faringite estreptocócica', categoria: 'Infectologia', tags: ['faringite', 'estreptococo', 'antibiótico'] },
+  { id: 'mcisaac', nome: 'McIsaac', descricao: 'Versão modificada do Centor', categoria: 'Infectologia', tags: ['faringite', 'estreptococo', 'antibiótico'] },
+  { id: 'gravindex', nome: 'Gravindex', descricao: 'Peso ideal para gestante', categoria: 'Obstetrícia', tags: ['gestação', 'peso', 'pré-natal'] },
+  { id: 'capurro', nome: 'Capurro', descricao: 'Idade gestacional do recém-nascido', categoria: 'Pediatria', tags: ['neonatal', 'idade gestacional'] },
+  { id: 'ballard', nome: 'Ballard', descricao: 'Idade gestacional do recém-nascido', categoria: 'Pediatria', tags: ['neonatal', 'idade gestacional'] },
+  { id: 'silverman-anderson', nome: 'Silverman-Anderson', descricao: 'Desconforto respiratório neonatal', categoria: 'Pediatria', tags: ['neonatal', 'respiratório', 'desconforto'] },
+  { id: 'tanner', nome: 'Tanner', descricao: 'Estágios de desenvolvimento puberal', categoria: 'Pediatria', tags: ['puberdade', 'desenvolvimento', 'adolescente'] },
+  { id: 'bishop', nome: 'Bishop', descricao: 'Pontuação de maturidade cervical', categoria: 'Obstetrícia', tags: ['parto', 'indução', 'colo uterino'] },
+];

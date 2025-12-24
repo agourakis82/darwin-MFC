@@ -4,9 +4,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getDirection, formatLocaleForHTML } from '@/lib/i18n/utils';
 import { locales, type Locale } from '@/i18n/config';
-import RootLayoutContent from './RootLayoutContent';
-import type { Metadata, Viewport } from 'next';
-import '../globals.css';
+import LocaleHtmlAttributes from './LocaleHtmlAttributes';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -16,6 +14,15 @@ export function generateStaticParams() {
 export const dynamic = 'force-static';
 export const dynamicParams = false;
 
+/**
+ * Locale Layout - wraps locale-prefixed pages with translations
+ *
+ * IMPORTANT: This layout does NOT have its own html/body tags.
+ * The root layout (app/layout.tsx) provides html/body and navigation.
+ * This layout only adds:
+ * 1. NextIntlClientProvider for translations
+ * 2. LocaleHtmlAttributes to update lang/dir attributes
+ */
 export default async function LocaleLayout({
   children,
   params,
@@ -30,42 +37,17 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
+  // Providing all messages to the client side
   const messages = await getMessages();
 
   const direction = getDirection(locale as Locale);
   const htmlLang = formatLocaleForHTML(locale as Locale);
 
   return (
-    <html lang={htmlLang} dir={direction} className="dark" suppressHydrationWarning>
-      <head>
-        {/* Theme initialization script */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('app-theme');
-                  if (theme === 'light') {
-                    document.documentElement.classList.remove('dark');
-                  } else {
-                    document.documentElement.classList.add('dark');
-                  }
-                } catch (e) {
-                  document.documentElement.classList.add('dark');
-                }
-              })();
-            `,
-          }}
-        />
-      </head>
-      <body>
-        <NextIntlClientProvider messages={messages}>
-          <RootLayoutContent>{children}</RootLayoutContent>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      <LocaleHtmlAttributes lang={htmlLang} dir={direction} />
+      {children}
+    </NextIntlClientProvider>
   );
 }
 

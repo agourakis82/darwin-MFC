@@ -110,13 +110,95 @@ export default function HomeContent() {
         </div>
       </div>
 
-      {/* Features Grid */}
+      {/* Quick Access Cards */}
       <div className="container mx-auto px-4 mb-16">
-        <h2 className="text-3xl font-bold text-center mb-12 text-[#1d1d1f] dark:text-[#f5f5f7]">
-          Recursos Principais
+        <h2 className="text-2xl font-bold mb-8 text-[#1d1d1f] dark:text-[#f5f5f7]">
+          Acesso Rápido
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Add feature cards here */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <Link
+            href="/consulta-rapida"
+            className="group p-6 rounded-2xl bg-white dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg transition-all"
+          >
+            <Stethoscope className="w-8 h-8 text-blue-500 mb-3 group-hover:scale-110 transition-transform" />
+            <h3 className="font-semibold text-[#1d1d1f] dark:text-white mb-1">Consulta Rápida</h3>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">Acesso direto ao ponto de atendimento</p>
+          </Link>
+
+          <Link
+            href="/calculadoras"
+            className="group p-6 rounded-2xl bg-white dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg transition-all"
+          >
+            <Calculator className="w-8 h-8 text-purple-500 mb-3 group-hover:scale-110 transition-transform" />
+            <h3 className="font-semibold text-[#1d1d1f] dark:text-white mb-1">Calculadoras</h3>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">Escores e fórmulas clínicas</p>
+          </Link>
+
+          <Link
+            href="/protocolos"
+            className="group p-6 rounded-2xl bg-white dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-lg transition-all"
+          >
+            <FileSearch className="w-8 h-8 text-emerald-500 mb-3 group-hover:scale-110 transition-transform" />
+            <h3 className="font-semibold text-[#1d1d1f] dark:text-white mb-1">Protocolos</h3>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">Fluxogramas interativos</p>
+          </Link>
+
+          <Link
+            href="/medicamentos/interacoes"
+            className="group p-6 rounded-2xl bg-white dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 hover:border-red-400 dark:hover:border-red-500 hover:shadow-lg transition-all"
+          >
+            <Shield className="w-8 h-8 text-red-500 mb-3 group-hover:scale-110 transition-transform" />
+            <h3 className="font-semibold text-[#1d1d1f] dark:text-white mb-1">Interações</h3>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">Verificar segurança</p>
+          </Link>
+        </div>
+      </div>
+
+      {/* Screening Categories */}
+      <div className="container mx-auto px-4 mb-16">
+        <h2 className="text-2xl font-bold mb-8 text-[#1d1d1f] dark:text-[#f5f5f7]">
+          Rastreamentos por Ciclo de Vida
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+          <Link
+            href="/neonatal"
+            className="group flex flex-col items-center p-5 rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 hover:shadow-md transition-all"
+          >
+            <Baby className="w-7 h-7 text-amber-600 dark:text-amber-400 mb-2" />
+            <span className="text-sm font-medium text-amber-700 dark:text-amber-300">Neonatal</span>
+          </Link>
+
+          <Link
+            href="/infantil"
+            className="group flex flex-col items-center p-5 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 hover:shadow-md transition-all"
+          >
+            <UsersIcon className="w-7 h-7 text-green-600 dark:text-green-400 mb-2" />
+            <span className="text-sm font-medium text-green-700 dark:text-green-300">Infantil</span>
+          </Link>
+
+          <Link
+            href="/adultos"
+            className="group flex flex-col items-center p-5 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 hover:shadow-md transition-all"
+          >
+            <Activity className="w-7 h-7 text-blue-600 dark:text-blue-400 mb-2" />
+            <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Adultos</span>
+          </Link>
+
+          <Link
+            href="/cancer"
+            className="group flex flex-col items-center p-5 rounded-xl bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 hover:shadow-md transition-all"
+          >
+            <Heart className="w-7 h-7 text-purple-600 dark:text-purple-400 mb-2" />
+            <span className="text-sm font-medium text-purple-700 dark:text-purple-300">Câncer</span>
+          </Link>
+
+          <Link
+            href="/gestacao"
+            className="group flex flex-col items-center p-5 rounded-xl bg-pink-50 dark:bg-pink-900/20 border border-pink-200 dark:border-pink-800 hover:shadow-md transition-all"
+          >
+            <Heart className="w-7 h-7 text-pink-600 dark:text-pink-400 mb-2" />
+            <span className="text-sm font-medium text-pink-700 dark:text-pink-300">Gestação</span>
+          </Link>
         </div>
       </div>
     </div>

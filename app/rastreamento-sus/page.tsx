@@ -17,9 +17,9 @@ import {
   MentalHealthSection,
   CaseSection,
   SummarySection,
-} from "@/components/sections";
-import { QuizModal } from "@/components/quiz";
-import { PresenterNotes } from "@/components/presenter-notes";
+} from "@/app/components/Presentation/sections";
+import { QuizModal } from "@/app/components/Presentation/quiz";
+import { PresenterNotes } from "@/app/components/Presentation/presenter-notes";
 
 type Mode = "sus" | "soc" | "combined";
 

@@ -18,75 +18,184 @@ import { Citation } from './references';
 // =============================================================================
 
 export type ClasseTerapeutica =
+  // Cardiovascular
   | 'anti_hipertensivo'
-  | 'antidiabetico'
-  | 'hipolipemiante'
   | 'anticoagulante'
   | 'antiagregante'
-  | 'analgesico'
-  | 'anti_inflamatorio'
-  | 'antibiotico'
-  | 'antifungico'
-  | 'antiviral'
-  | 'antiparasitario'
+  | 'hipolipemiante'
+  | 'cardiotonico'
+  | 'diuretico'
+  // Metabolismo
+  | 'antidiabetico'
+  | 'hormonio_tireoide'
+  | 'hormonio'
+  // Neuropsiquiatria
   | 'antidepressivo'
   | 'ansiolitico'
   | 'antipsicotico'
   | 'anticonvulsivante'
   | 'antiepileptico'
   | 'estabilizador_humor'
+  | 'antiparkinsoniano'
+  | 'antidemencia'
+  // Dor e Inflamação
+  | 'analgesico'
+  | 'anti_inflamatorio'
+  | 'aine'
+  | 'relaxante_muscular'
+  | 'antigotoso'
+  // Infecciosas
+  | 'antibiotico'
+  | 'antifungico'
+  | 'antiviral'
+  | 'antiparasitario'
+  // Respiratório
   | 'broncodilatador'
-  | 'corticoide'
   | 'corticoide_inalatorio'
-  | 'anti_histaminico'
-  | 'antiemetico'
+  | 'corticoide_nasal'
+  | 'antileucotrienico'
+  | 'mucolitico'
+  | 'antitussigeno'
+  | 'descongestionante'
+  // Gastrointestinal
   | 'gastrointestinal'
   | 'inibidor_bomba_protonica'
-  | 'hormonio_tireoide'
-  | 'hormonio'
+  | 'antiemetico'
+  | 'antiacido'
+  | 'protetor_gastrico'
+  | 'laxante'
+  | 'antidiarreico'
+  | 'antiespamodico'
+  | 'enzima_digestiva'
+  | 'anti_inflamatorio_intestinal'
+  // Alergia
+  | 'anti_histaminico'
+  // Hormônios e Reprodução
+  | 'corticoide'
+  | 'corticosteroide'
   | 'indutor_ovulacao'
-  | 'diuretico'
-  | 'cardiotonico'
   | 'contraceptivo'
+  // Imunologia
+  | 'imunossupressor'
+  | 'anti_osteoporose'
+  | 'antigotoso'
+  // Suplementos
   | 'vitamina'
   | 'suplemento'
   | 'vitamina_mineral'
+  // Psiquiatria adicional
+  | 'psicoestimulante'
+  | 'tratamento_dependencia'
+  | 'hipnotico'
+  // Endócrino adicional
+  | 'antiobesidade'
+  | 'antitireoidiano'
+  // Dermatológicos
+  | 'antiacneico'
+  | 'antipsoríatico'
+  | 'imunomodulador_topico'
+  | 'antialopecia'
+  | 'despigmentante'
+  // Neurológicos adicionais
+  | 'antienxaqueca'
+  // Nefrológicos
+  | 'quelante_fosfato'
+  | 'antihiperparatireoideo'
+  // Hepatobiliares
+  | 'hepatobiliar'
+  // Antianêmicos
+  | 'antianemico'
+  // Especiais
+  | 'gas_medicinal'
   | 'outros';
 
 export const CLASSES_TERAPEUTICAS: Record<ClasseTerapeutica, { label: string; color: string }> = {
+  // Cardiovascular
   anti_hipertensivo: { label: 'Anti-hipertensivo', color: 'bg-red-500' },
-  antidiabetico: { label: 'Antidiabético', color: 'bg-amber-500' },
-  hipolipemiante: { label: 'Hipolipemiante', color: 'bg-orange-500' },
   anticoagulante: { label: 'Anticoagulante', color: 'bg-rose-600' },
   antiagregante: { label: 'Antiagregante', color: 'bg-pink-500' },
-  analgesico: { label: 'Analgésico', color: 'bg-blue-500' },
-  anti_inflamatorio: { label: 'Anti-inflamatório', color: 'bg-indigo-500' },
-  antibiotico: { label: 'Antibiótico', color: 'bg-green-500' },
-  antifungico: { label: 'Antifúngico', color: 'bg-lime-500' },
-  antiviral: { label: 'Antiviral', color: 'bg-teal-500' },
-  antiparasitario: { label: 'Antiparasitário', color: 'bg-emerald-500' },
+  hipolipemiante: { label: 'Hipolipemiante', color: 'bg-orange-500' },
+  cardiotonico: { label: 'Cardiotônico', color: 'bg-red-600' },
+  diuretico: { label: 'Diurético', color: 'bg-blue-600' },
+  // Metabolismo
+  antidiabetico: { label: 'Antidiabético', color: 'bg-amber-500' },
+  hormonio_tireoide: { label: 'Hormônio Tireoide', color: 'bg-zinc-500' },
+  hormonio: { label: 'Hormônio', color: 'bg-zinc-400' },
+  // Neuropsiquiatria
   antidepressivo: { label: 'Antidepressivo', color: 'bg-purple-500' },
   ansiolitico: { label: 'Ansiolítico', color: 'bg-violet-500' },
   antipsicotico: { label: 'Antipsicótico', color: 'bg-fuchsia-500' },
   anticonvulsivante: { label: 'Anticonvulsivante', color: 'bg-cyan-500' },
   antiepileptico: { label: 'Antiepiléptico', color: 'bg-cyan-600' },
   estabilizador_humor: { label: 'Estabilizador de Humor', color: 'bg-violet-600' },
+  antiparkinsoniano: { label: 'Antiparkinsoniano', color: 'bg-indigo-400' },
+  antidemencia: { label: 'Antidemência', color: 'bg-purple-400' },
+  // Dor e Inflamação
+  analgesico: { label: 'Analgésico', color: 'bg-blue-500' },
+  anti_inflamatorio: { label: 'Anti-inflamatório', color: 'bg-indigo-500' },
+  aine: { label: 'AINE', color: 'bg-indigo-400' },
+  relaxante_muscular: { label: 'Relaxante Muscular', color: 'bg-indigo-300' },
+  antigotoso: { label: 'Antigotoso', color: 'bg-blue-400' },
+  // Infecciosas
+  antibiotico: { label: 'Antibiótico', color: 'bg-green-500' },
+  antifungico: { label: 'Antifúngico', color: 'bg-lime-500' },
+  antiviral: { label: 'Antiviral', color: 'bg-teal-500' },
+  antiparasitario: { label: 'Antiparasitário', color: 'bg-emerald-500' },
+  // Respiratório
   broncodilatador: { label: 'Broncodilatador', color: 'bg-sky-500' },
-  corticoide: { label: 'Corticoide', color: 'bg-yellow-500' },
   corticoide_inalatorio: { label: 'Corticoide Inalatório', color: 'bg-yellow-600' },
-  anti_histaminico: { label: 'Anti-histamínico', color: 'bg-slate-500' },
-  antiemetico: { label: 'Antiemético', color: 'bg-stone-400' },
+  corticoide_nasal: { label: 'Corticoide Nasal', color: 'bg-yellow-400' },
+  antileucotrienico: { label: 'Antileucotriênico', color: 'bg-sky-400' },
+  mucolitico: { label: 'Mucolítico', color: 'bg-sky-300' },
+  antitussigeno: { label: 'Antitussígeno', color: 'bg-blue-300' },
+  descongestionante: { label: 'Descongestionante', color: 'bg-cyan-300' },
+  // Gastrointestinal
   gastrointestinal: { label: 'Gastrointestinal', color: 'bg-stone-600' },
   inibidor_bomba_protonica: { label: 'IBP', color: 'bg-stone-500' },
-  hormonio_tireoide: { label: 'Hormônio Tireoide', color: 'bg-zinc-500' },
-  hormonio: { label: 'Hormônio', color: 'bg-zinc-400' },
+  antiemetico: { label: 'Antiemético', color: 'bg-stone-400' },
+  antiacido: { label: 'Antiácido', color: 'bg-stone-350' },
+  protetor_gastrico: { label: 'Protetor Gástrico', color: 'bg-amber-300' },
+  laxante: { label: 'Laxante', color: 'bg-amber-400' },
+  antidiarreico: { label: 'Antidiarreico', color: 'bg-amber-600' },
+  antiespamodico: { label: 'Antiespasmódico', color: 'bg-orange-300' },
+  enzima_digestiva: { label: 'Enzima Digestiva', color: 'bg-orange-400' },
+  anti_inflamatorio_intestinal: { label: 'Anti-inflamatório Intestinal', color: 'bg-stone-700' },
+  // Alergia
+  anti_histaminico: { label: 'Anti-histamínico', color: 'bg-slate-500' },
+  // Hormônios e Reprodução
+  corticoide: { label: 'Corticoide', color: 'bg-yellow-500' },
+  corticosteroide: { label: 'Corticosteroide', color: 'bg-yellow-600' },
   indutor_ovulacao: { label: 'Indutor de Ovulação', color: 'bg-pink-600' },
-  diuretico: { label: 'Diurético', color: 'bg-blue-600' },
-  cardiotonico: { label: 'Cardiotônico', color: 'bg-red-600' },
   contraceptivo: { label: 'Contraceptivo', color: 'bg-pink-400' },
+  // Imunologia
+  imunossupressor: { label: 'Imunossupressor', color: 'bg-rose-500' },
+  anti_osteoporose: { label: 'Anti-osteoporose', color: 'bg-amber-700' },
+  // Suplementos
   vitamina: { label: 'Vitamina', color: 'bg-lime-500' },
   suplemento: { label: 'Suplemento', color: 'bg-lime-600' },
   vitamina_mineral: { label: 'Vitamina/Mineral', color: 'bg-lime-400' },
+  // Psiquiatria adicional
+  psicoestimulante: { label: 'Psicoestimulante', color: 'bg-orange-600' },
+  tratamento_dependencia: { label: 'Tratamento Dependência', color: 'bg-emerald-600' },
+  hipnotico: { label: 'Hipnótico', color: 'bg-indigo-700' },
+  antiobesidade: { label: 'Antiobesidade', color: 'bg-teal-600' },
+  antitireoidiano: { label: 'Antitireoidiano', color: 'bg-zinc-600' },
+  antiacneico: { label: 'Antiacneico', color: 'bg-pink-500' },
+  antipsoríatico: { label: 'Antipsoríatico', color: 'bg-rose-700' },
+  imunomodulador_topico: { label: 'Imunomodulador Tópico', color: 'bg-violet-600' },
+  antialopecia: { label: 'Antialopecia', color: 'bg-cyan-600' },
+  despigmentante: { label: 'Despigmentante', color: 'bg-neutral-500' },
+  // Neurológicos adicionais
+  antienxaqueca: { label: 'Antienxaqueca', color: 'bg-purple-600' },
+  // Nefrológicos
+  quelante_fosfato: { label: 'Quelante de Fosfato', color: 'bg-amber-800' },
+  antihiperparatireoideo: { label: 'Antihiperparatireoideo', color: 'bg-zinc-700' },
+  // Hepatobiliares
+  hepatobiliar: { label: 'Hepatobiliar', color: 'bg-emerald-700' },
+  // Antianêmicos
+  antianemico: { label: 'Antianêmico', color: 'bg-rose-700' },
+  // Especiais
+  gas_medicinal: { label: 'Gás Medicinal', color: 'bg-gray-400' },
   outros: { label: 'Outros', color: 'bg-gray-500' },
 };
 
@@ -94,7 +203,7 @@ export const CLASSES_TERAPEUTICAS: Record<ClasseTerapeutica, { label: string; co
 // SUBCLASSES (MECANISMO DE AÇÃO)
 // =============================================================================
 
-export type SubclasseMedicamento = 
+export type SubclasseMedicamento =
   // Anti-hipertensivos
   | 'ieca' | 'bra' | 'bcc' | 'diuretico_tiazidico' | 'diuretico_alca' | 'alca'
   | 'betabloqueador' | 'alfabloqueador' | 'vasodilatador' | 'tiazidico' | 'poupador_potassio'
@@ -103,30 +212,107 @@ export type SubclasseMedicamento =
   | 'insulina_intermediaria' | 'insulina_rapida'
   // Antibióticos
   | 'penicilina' | 'penicilina_inibidor' | 'cefalosporina' | 'cefalosporina_1g' | 'cefalosporina_3g'
-  | 'cefalosporina_1_geracao' | 'macrolideos' | 'macrolidio' | 'macrolideo'
+  | 'cefalosporina_1_geracao' | 'cefalosporina_4g' | 'cefalosporina_5g' | 'cefalosporina_inibidor'
+  | 'carbapenemico' | 'glicopeptideo' | 'oxazolidinona' | 'polimixina' | 'aminoglicosideo'
+  | 'glicilciclina' | 'antituberculoso' | 'rifamicina' | 'polieno' | 'azol' | 'equinocandina'
+  | 'macrolideos' | 'macrolidio' | 'macrolideo'
   | 'fluoroquinolona' | 'sulfonamida' | 'sulfonamida_inibidor_folato' | 'nitroimidazol' | 'nitrofurano' | 'tetraciclina' | 'lincosamida'
   // Analgésicos/AINEs
-  | 'analgesico_nao_opioide' | 'nao_opioide' | 'opioide_fraco' | 'opioide_forte' | 'aine'
+  | 'analgesico_nao_opioide' | 'nao_opioide' | 'opioide_fraco' | 'opioide_forte' | 'opioide' | 'aine'
   | 'nao_seletivo' | 'seletivo_cox2'
   // Psicotrópicos
-  | 'isrs' | 'isrsn' | 'triciclico' | 'atipico' | 'tipico' | 'benzodiazepínico' 
+  | 'isrs' | 'isrsn' | 'irsn' | 'triciclico' | 'atipico' | 'tipico' | 'benzodiazepínico'
   | 'antipsicotico_tipico' | 'antipsicotico_atipico' | 'bloqueador_canais_sodio' | 'bloqueador_canal_sodio'
-  | 'multiplo' | 'litio' | 'sal_litio' | 'derivado_valproico' | 'barbiturico'
-  // Cardiovasculares
+  | 'multiplo' | 'multiplos_mecanismos' | 'litio' | 'sal_litio' | 'derivado_valproico' | 'acido_valproico' | 'barbiturico'
+  | 'ligante_sv2a' | 'antagonista_nmda' | 'inibidor_colinesterase'
+  // Cardiovasculares/Hematológicos
   | 'estatina' | 'inibidor_cox' | 'inibidor_p2y12' | 'antagonista_vitamina_k' | 'doac' | 'glicosideo_cardiaco'
-  | 'hbpm'
+  | 'hbpm' | 'inibidor_fator_xa' | 'inibidor_trombina_direto' | 'heparina_baixo_peso' | 'heparina'
+  | 'antifibrinolitico' | 'fator_coagulacao' | 'trombolitico' | 'estimulante_eritropoiese'
+  | 'vasopressor' | 'inotropico' | 'antiarritmico'
   // Gastrointestinais
-  | 'ibp' | 'antagonista_h2' | 'procinetico' | 'antagonista_d2' | 'antagonista_5ht3'
+  | 'ibp' | 'antagonista_h2' | 'procinetico' | 'antagonista_d2' | 'antagonista_5ht3' | 'antagonista_nk1'
+  | 'barreira_mucosa' | 'bismuto' | 'osmotico' | 'estimulante' | 'opioide_periferico' | 'antissecretor'
+  | 'anticolinergico' | 'pancreatica' | 'aminossalicilato'
   // Anti-histamínicos
-  | 'h1_1geracao' | 'h1_2geracao'
+  | 'h1_1geracao' | 'h1_2geracao' | 'segunda_geracao'
   // Broncodilatadores/Respiratórios
-  | 'beta2_agonista_curta' | 'beta2_agonista_longa' | 'ci' | 'anticolinergico'
+  | 'beta2_agonista_curta' | 'beta2_agonista_longa' | 'ci' | 'ci_laba_combinacao'
+  | 'anticolinergico_curta' | 'anticolinergico_longa' | 'glicocorticoide'
+  | 'antagonista_receptor' | 'tiol' | 'benzilamin' | 'nao_opioide' | 'simpatomimetico'
   // Antifúngicos/Antiparasitários
   | 'antifungico' | 'sistemico' | 'anti_helmintico' | 'escabicida_pediculicida'
+  // Antivirais
+  | 'antirretroviral' | 'antiviral_hepatite' | 'antiviral_herpes' | 'antiviral_cmv'
+  | 'antiviral_influenza' | 'antiviral_covid'
+  // Dermatológicos
+  | 'topico' | 'corticoide_topico' | 'retinoides' | 'queratolítico'
   // Vitaminas/Suplementos
-  | 'vitamina' | 'vitamina_b' | 'vitamina_d' | 'antianemico'
+  | 'vitamina' | 'vitamina_b' | 'vitamina_d' | 'vitamina_k' | 'antianemico'
   // Hormonais
-  | 'tireoidiano' | 'corticosteroide' | 'serm'
+  | 'tireoidiano' | 'corticosteroide' | 'serm' | 'hormonio_pancreatico'
+  // Reumatologia/Imunobiológicos
+  | 'dmard' | 'antimetabolito' | 'inibidor_calcineurina' | 'anti_tnf' | 'anti_il6' | 'anti_cd20'
+  | 'modulador_coestimulacao' | 'anti_il17' | 'anti_il12_23' | 'inibidor_jak'
+  // Gota
+  | 'anti_inflamatorio_gota' | 'inibidor_xantina_oxidase' | 'uricosurico'
+  // Osteoporose
+  | 'bisfosfonato' | 'anticorpo_rankl' | 'analogo_pth' | 'anticorpo_esclerostina'
+  // Psicoestimulantes/TDAH
+  | 'estimulante_snc' | 'inibidor_recaptacao_noradrenalina'
+  // Dependências
+  | 'antagonista_opioide' | 'aversivo_alcool' | 'modulador_glutamato' | 'agonista_parcial_opioide'
+  | 'agonista_opioide' | 'agonista_parcial_nicotinico' | 'inibidor_recaptacao_da_ne'
+  // Hipnóticos
+  | 'z_drugs' | 'antagonista_orexina' | 'hormonio_pineal'
+  // Antidepressivos adicionais
+  | 'ligante_alfa2delta' | 'azapirona' | 'sari' | 'agonista_melatonina' | 'multimodal'
+  // Obesidade
+  | 'inibidor_lipase' | 'dual_glp1_gip' | 'inibidor_recaptacao_ne_5ht' | 'combinacao_saciedade'
+  // Tireoide
+  | 'tionamida' | 'radioisotopo'
+  // Insulinas
+  | 'insulina_longa' | 'insulina_ultralonga' | 'insulina_ultrarapida'
+  // Hormônios diversos
+  | 'analogo_adh' | 'analogo_somatostatina' | 'agonista_dopamina' | 'mineralocorticoide'
+  // Dermatológicos
+  | 'retinoide_sistemico' | 'retinoide_topico' | 'antimicrobiano_topico' | 'analogo_vitamina_d'
+  | 'queratolítico_antisseborreico' | 'inibidor_calcineurina_topico' | 'anti_il4_il13'
+  | 'corticoide_topico_potente' | 'corticoide_topico_superpotente' | 'corticoide_topico_fraco'
+  | 'azol_topico' | 'alilamina' | 'pleuromutilin' | 'avermectina' | 'escabicida'
+  | 'vasodilatador_topico' | 'inibidor_5alfa_redutase' | 'inibidor_tirosinase' | 'acido_dicarboxilico'
+  // Neurológicos
+  | 'precursor_dopamina' | 'agonista_dopaminergico' | 'imao_b' | 'inibidor_comt'
+  // Enxaqueca
+  | 'triptano' | 'anticorpo_cgrp' | 'antagonista_ampa'
+  // Nefrologia
+  | 'resina' | 'calcio' | 'calcimimetico'
+  // Gastrointestinal adicional
+  | 'anti_integrina' | 'acido_biliar' | 'agonista_gc_c'
+  // Antianêmicos
+  | 'ferro_oral' | 'ferro_parenteral'
+  // Suplementos adicionais
+  | 'mineral'
+  // Hormônios sexuais
+  | 'estrogeno' | 'progestageno' | 'androgeno' | 'antiandrogeno'
+  // Anti-histamínicos
+  | 'estabilizador_mastocito'
+  // Oftálmicos
+  | 'analogo_prostaglandina' | 'inibidor_anidrase_carbonica'
+  // Antidiabéticos
+  | 'tiazolidinediona' | 'inibidor_alfa_glicosidase'
+  // Anti-hipertensivos
+  | 'agonista_alfa2'
+  // Relaxantes musculares
+  | 'relaxante_central' | 'agonista_gaba_b'
+  // Cardiovascular adicional
+  | 'nitrato' | 'anestesico_local'
+  // Emergência/Anestesia
+  | 'anestesico_geral' | 'anestesico_dissociativo' | 'bloqueador_neuromuscular' | 'antidoto'
+  // Eletrólitos/Nutrientes
+  | 'eletrolito' | 'nutriente'
+  // Especiais
+  | 'oxigenio'
   // Outros
   | 'outros';
 
@@ -173,14 +359,31 @@ export const CLASSIFICACAO_GESTACAO: Record<ClassificacaoGestacao, { label: stri
 // FORMAS FARMACÊUTICAS
 // =============================================================================
 
-export type FormaFarmaceutica = 
+export type FormaFarmaceutica =
+  // Formas orais sólidas
   | 'comprimido' | 'capsula' | 'dragea'
+  | 'comprimido_cr' | 'comprimido_xr' | 'comprimido_er' // liberação controlada/prolongada
+  | 'comprimido_liberacao_prolongada' | 'comprimido_orodispersivel'
+  | 'comprimido_dispersivel' | 'comprimido_mastigavel'
+  | 'capsula_sprinkle' | 'capsula_inalacao' | 'capsula_xr'
+  | 'granulado' | 'sache' | 'po_oral'
+  // Formas orais líquidas
   | 'solucao_oral' | 'suspensao_oral' | 'xarope' | 'gotas' | 'elixir'
+  | 'xarope_pediatrico' | 'xarope_adulto' | 'solucao_gotas'
+  // Formas parenterais
   | 'injetavel' | 'injetavel_im' | 'injetavel_iv' | 'injetavel_sc'
-  | 'creme' | 'pomada' | 'gel' | 'locao' | 'gel_topico' | 'gel_vaginal'
-  | 'colirio' | 'spray_nasal' | 'inalatorio' | 'aerossol' | 'solucao_nebulizacao'
-  | 'supositorio' | 'ovulo'
-  | 'adesivo' | 'outros';
+  | 'injetavel_longa_acao' | 'po_injetavel'
+  // Formas tópicas
+  | 'creme' | 'pomada' | 'gel' | 'locao' | 'gel_topico' | 'gel_vaginal' | 'po_topico'
+  // Formas oftálmicas/nasais
+  | 'colirio' | 'spray_nasal'
+  // Formas inalatórias
+  | 'inalatorio' | 'aerosol' | 'aerossol' | 'solucao_nebulizacao'
+  | 'po_inalacao' | 'solucao_inalacao' | 'suspensao_nebulizacao'
+  // Formas retais
+  | 'supositorio' | 'ovulo' | 'solucao_retal' | 'enema'
+  // Formas especiais
+  | 'adesivo' | 'gas' | 'outros';
 
 // =============================================================================
 // POSOLOGIA

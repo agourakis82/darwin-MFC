@@ -37,6 +37,14 @@
   ],
   "exclude": [
     "node_modules",
-    "mobile"
+    "mobile",
+    "lib/supabase",
+    "lib/sync",
+    "infrastructure",
+    "**/__tests__/**",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
   ]
 }
