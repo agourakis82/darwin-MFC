@@ -1,8 +1,8 @@
 'use client';
 
-import ComparisonSection from '../components/Comparison/ComparisonSection';
-import CriticalAnalysisView from '../components/Analysis/CriticalAnalysisView';
-import ContentModeWrapper from '../components/Content/ContentModeWrapper';
+import ComparisonSection from '@/app/components/Comparison/ComparisonSection';
+import CriticalAnalysisView from '@/app/components/Analysis/CriticalAnalysisView';
+import ContentModeWrapper from '@/app/components/Content/ContentModeWrapper';
 import { getRastreamentosByCategory } from '@/lib/data/rastreamentos';
 
 export default function GestacaoPage() {

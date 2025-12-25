@@ -1,18 +1,18 @@
 'use client';
 
-import ComparisonSection from '../components/Comparison/ComparisonSection';
-import CriticalAnalysisView from '../components/Analysis/CriticalAnalysisView';
-import ContentModeWrapper from '../components/Content/ContentModeWrapper';
-import InstitutionLogos, { SUSStructureDiagram } from '../components/Logos/InstitutionLogos';
-import { LogosGrid } from '../components/Logos/OfficialLogos';
+import ComparisonSection from '@/app/components/Comparison/ComparisonSection';
+import CriticalAnalysisView from '@/app/components/Analysis/CriticalAnalysisView';
+import ContentModeWrapper from '@/app/components/Content/ContentModeWrapper';
+import InstitutionLogos, { SUSStructureDiagram } from '@/app/components/Logos/InstitutionLogos';
+import { LogosGrid } from '@/app/components/Logos/OfficialLogos';
 import { 
   MamografiaCobertura, 
   DistribuicaoMamografos, 
   TempoEsperaSUS,
   CapacitacaoAPS,
   CrescimentoPSA 
-} from '../components/Infographics/RealDataInfographics';
-import { CancerInfographicsGrid } from '../components/Infographics/OfficialInfographics';
+} from '@/app/components/Infographics/RealDataInfographics';
+import { CancerInfographicsGrid } from '@/app/components/Infographics/OfficialInfographics';
 import { getRastreamentosByCategory } from '@/lib/data/rastreamentos';
 
 export default function CancerPage() {

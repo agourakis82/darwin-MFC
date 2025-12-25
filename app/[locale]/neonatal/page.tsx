@@ -1,5 +1,5 @@
-import ComparisonSection from '../components/Comparison/ComparisonSection';
-import HeroSection from '../components/Hero/HeroSection';
+import ComparisonSection from '@/app/components/Comparison/ComparisonSection';
+import HeroSection from '@/app/components/Hero/HeroSection';
 import { getRastreamentosByCategory } from '@/lib/data/rastreamentos';
 import { Baby, Heart, Ear, Eye, AlertCircle } from 'lucide-react';
 

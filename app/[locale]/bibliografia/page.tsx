@@ -1,4 +1,4 @@
-import ReferenceList from '../components/Bibliography/ReferenceList';
+import ReferenceList from '@/app/components/Bibliography/ReferenceList';
 import { BookMarked, Download } from 'lucide-react';
 
 export default function BibliografiaPage() {

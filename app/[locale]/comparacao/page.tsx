@@ -1,6 +1,6 @@
-import CoverageChart from '../components/Charts/CoverageChart';
-import ConvergenceChart from '../components/Charts/ConvergenceChart';
-import TimelineChart from '../components/Charts/TimelineChart';
+import CoverageChart from '@/app/components/Charts/CoverageChart';
+import ConvergenceChart from '@/app/components/Charts/ConvergenceChart';
+import TimelineChart from '@/app/components/Charts/TimelineChart';
 import { BarChart3 } from 'lucide-react';
 
 export default function ComparacaoPage() {

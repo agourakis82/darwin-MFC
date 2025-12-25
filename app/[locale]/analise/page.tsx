@@ -1,5 +1,5 @@
 import { getAnaliseCritica } from '@/lib/data/analise-critica';
-import InlineCitation from '../components/Bibliography/InlineCitation';
+import InlineCitation from '@/app/components/Bibliography/InlineCitation';
 import { Lightbulb, AlertTriangle, TrendingUp } from 'lucide-react';
 
 export default function AnalisePage() {

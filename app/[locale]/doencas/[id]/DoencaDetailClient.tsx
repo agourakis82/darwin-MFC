@@ -15,7 +15,7 @@ import {
   getCalculadorasForDoenca 
 } from '@/lib/data/cross-references';
 import { notFound } from 'next/navigation';
-import ChecklistConsultaComponent from '../../components/Checklist/ChecklistConsulta';
+import ChecklistConsultaComponent from '@/app/components/Checklist/ChecklistConsulta';
 import { generateChecklistFromDoenca } from '@/lib/utils/checklist-generator';
 
 export default function DoencaDetailClient({ params }: { params: Promise<{ id: string }> }) {

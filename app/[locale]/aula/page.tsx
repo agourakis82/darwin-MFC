@@ -6,11 +6,11 @@ import { caseSteps } from '@/lib/data/caso-clinico';
 import { ChevronLeft, ChevronRight, Home } from 'lucide-react';
 
 // Direct imports - no lazy loading
-import AuthorCredits from '../components/Aula/AuthorCredits';
-import CaseTimeline from '../components/Aula/CaseTimeline';
-import Genogram from '../components/Aula/Genogram';
-import Ecomap from '../components/Aula/Ecomap';
-import CaseStep from '../components/Aula/CaseStep';
+import AuthorCredits from '@/app/components/Aula/AuthorCredits';
+import CaseTimeline from '@/app/components/Aula/CaseTimeline';
+import Genogram from '@/app/components/Aula/Genogram';
+import Ecomap from '@/app/components/Aula/Ecomap';
+import CaseStep from '@/app/components/Aula/CaseStep';
 
 export default function AulaPage() {
   const router = useRouter();

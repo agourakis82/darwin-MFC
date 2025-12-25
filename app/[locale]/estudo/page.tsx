@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { BookOpen, Brain, ClipboardList, TrendingUp, RotateCcw, Download } from 'lucide-react';
-import FlashcardDeck from '../components/Study/FlashcardDeck';
-import QuizPlayer from '../components/Study/QuizPlayer';
-import ExportButtons from '../components/Study/ExportButtons';
+import FlashcardDeck from '@/app/components/Study/FlashcardDeck';
+import QuizPlayer from '@/app/components/Study/QuizPlayer';
+import ExportButtons from '@/app/components/Study/ExportButtons';
 import { Flashcard, Quiz } from '@/lib/types/study-mode';
 import { todosCasosClinicos } from '@/lib/data/casos-clinicos';
 import { doencasConsolidadas } from '@/lib/data/doencas/index';
