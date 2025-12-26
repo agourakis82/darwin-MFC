@@ -1243,5 +1243,49 @@
       "breastfeeding": "Θηλασμός"
     },
     "lastUpdate": "Τελευταία ενημέρωση"
+  },
+  "clinicalContext": {
+    "notFound": "Η κατάσταση δεν βρέθηκε",
+    "viewAllDiseases": "Δείτε όλες τις ασθένειες",
+    "breadcrumb": {
+      "diseases": "Ασθένειες",
+      "clinicalContext": "Κλινικό Πλαίσιο"
+    },
+    "tabs": {
+      "summary": "Περίληψη",
+      "medications": "Φάρμακα ({count})",
+      "protocols": "Πρωτόκολλα ({count})",
+      "tools": "Εργαλεία"
+    },
+    "sections": {
+      "definition": "Ορισμός",
+      "diagnosticCriteria": "Διαγνωστικά Κριτήρια",
+      "firstLineTreatment": "Θεραπεία Πρώτης Γραμμής",
+      "redFlags": "Σημάδια Κινδύνου (Red Flags)"
+    },
+    "treatment": {
+      "nonPharmacological": "Μη Φαρμακευτική",
+      "pharmacological": "Φαρμακευτική"
+    },
+    "empty": {
+      "medications": "Δεν υπάρχουν συνδεδεμένα φάρμακα ακόμα",
+      "protocols": "Δεν υπάρχουν συνδεδεμένα πρωτόκολλα ακόμα",
+      "calculators": "Δεν υπάρχουν συνδεδεμένοι υπολογιστές"
+    },
+    "medications": {
+      "firstLine": "Πρώτη Γραμμή",
+      "secondLineAlternatives": "Δεύτερη Γραμμή / Εναλλακτικές"
+    },
+    "tools": {
+      "relevantCalculators": "Σχετικοί Υπολογιστές",
+      "relatedScreenings": "Σχετικοί Έλεγχοι"
+    },
+    "sidebar": {
+      "quickActions": "Γρήγορες Ενέργειες",
+      "suggestions": "Προτάσεις",
+      "viewFullContent": "Δείτε πλήρες περιεχόμενο",
+      "fullContentDescription": "Επιδημιολογία, παθοφυσιολογία, διαφορική διάγνωση και άλλα",
+      "access": "Πρόσβαση"
+    }
   }
 }

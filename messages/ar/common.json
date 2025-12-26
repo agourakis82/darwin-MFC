@@ -1243,5 +1243,49 @@
       "breastfeeding": "الرضاعة"
     },
     "lastUpdate": "آخر تحديث"
+  },
+  "clinicalContext": {
+    "notFound": "الحالة غير موجودة",
+    "viewAllDiseases": "عرض جميع الأمراض",
+    "breadcrumb": {
+      "diseases": "الأمراض",
+      "clinicalContext": "السياق السريري"
+    },
+    "tabs": {
+      "summary": "ملخص",
+      "medications": "الأدوية ({count})",
+      "protocols": "البروتوكولات ({count})",
+      "tools": "الأدوات"
+    },
+    "sections": {
+      "definition": "التعريف",
+      "diagnosticCriteria": "معايير التشخيص",
+      "firstLineTreatment": "علاج الخط الأول",
+      "redFlags": "علامات الخطر"
+    },
+    "treatment": {
+      "nonPharmacological": "غير دوائي",
+      "pharmacological": "دوائي"
+    },
+    "empty": {
+      "medications": "لا توجد أدوية مرتبطة بعد",
+      "protocols": "لا توجد بروتوكولات مرتبطة بعد",
+      "calculators": "لا توجد حاسبات مرتبطة"
+    },
+    "medications": {
+      "firstLine": "الخط الأول",
+      "secondLineAlternatives": "الخط الثاني / البدائل"
+    },
+    "tools": {
+      "relevantCalculators": "الحاسبات ذات الصلة",
+      "relatedScreenings": "الفحوصات ذات الصلة"
+    },
+    "sidebar": {
+      "quickActions": "إجراءات سريعة",
+      "suggestions": "اقتراحات",
+      "viewFullContent": "عرض المحتوى الكامل",
+      "fullContentDescription": "علم الأوبئة، الفيزيولوجيا المرضية، التشخيص التفريقي والمزيد",
+      "access": "وصول"
+    }
   }
 }

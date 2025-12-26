@@ -1558,5 +1558,49 @@
       "breastfeeding": "Breastfeeding"
     },
     "lastUpdate": "Last update"
+  },
+  "clinicalContext": {
+    "notFound": "Condition not found",
+    "viewAllDiseases": "View all diseases",
+    "breadcrumb": {
+      "diseases": "Diseases",
+      "clinicalContext": "Clinical Context"
+    },
+    "tabs": {
+      "summary": "Summary",
+      "medications": "Medications ({count})",
+      "protocols": "Protocols ({count})",
+      "tools": "Tools"
+    },
+    "sections": {
+      "definition": "Definition",
+      "diagnosticCriteria": "Diagnostic Criteria",
+      "firstLineTreatment": "First-Line Treatment",
+      "redFlags": "Red Flags"
+    },
+    "treatment": {
+      "nonPharmacological": "Non-Pharmacological",
+      "pharmacological": "Pharmacological"
+    },
+    "empty": {
+      "medications": "No medications linked yet",
+      "protocols": "No protocols linked yet",
+      "calculators": "No calculators linked"
+    },
+    "medications": {
+      "firstLine": "First Line",
+      "secondLineAlternatives": "Second Line / Alternatives"
+    },
+    "tools": {
+      "relevantCalculators": "Relevant Calculators",
+      "relatedScreenings": "Related Screenings"
+    },
+    "sidebar": {
+      "quickActions": "Quick Actions",
+      "suggestions": "Suggestions",
+      "viewFullContent": "View full content",
+      "fullContentDescription": "Epidemiology, pathophysiology, differential diagnosis and more",
+      "access": "Access"
+    }
   }
 }

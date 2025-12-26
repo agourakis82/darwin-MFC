@@ -1243,5 +1243,49 @@
       "breastfeeding": "Lactancia"
     },
     "lastUpdate": "Última actualización"
+  },
+  "clinicalContext": {
+    "notFound": "Condición no encontrada",
+    "viewAllDiseases": "Ver todas las enfermedades",
+    "breadcrumb": {
+      "diseases": "Enfermedades",
+      "clinicalContext": "Contexto Clínico"
+    },
+    "tabs": {
+      "summary": "Resumen",
+      "medications": "Medicamentos ({count})",
+      "protocols": "Protocolos ({count})",
+      "tools": "Herramientas"
+    },
+    "sections": {
+      "definition": "Definición",
+      "diagnosticCriteria": "Criterios Diagnósticos",
+      "firstLineTreatment": "Tratamiento de Primera Línea",
+      "redFlags": "Señales de Alarma (Red Flags)"
+    },
+    "treatment": {
+      "nonPharmacological": "No Farmacológico",
+      "pharmacological": "Farmacológico"
+    },
+    "empty": {
+      "medications": "Ningún medicamento vinculado aún",
+      "protocols": "Ningún protocolo vinculado aún",
+      "calculators": "Ninguna calculadora vinculada"
+    },
+    "medications": {
+      "firstLine": "Primera Línea",
+      "secondLineAlternatives": "Segunda Línea / Alternativas"
+    },
+    "tools": {
+      "relevantCalculators": "Calculadoras Relevantes",
+      "relatedScreenings": "Rastreos Relacionados"
+    },
+    "sidebar": {
+      "quickActions": "Acciones Rápidas",
+      "suggestions": "Sugerencias",
+      "viewFullContent": "Ver contenido completo",
+      "fullContentDescription": "Epidemiología, fisiopatología, diagnóstico diferencial y más",
+      "access": "Acceder"
+    }
   }
 }

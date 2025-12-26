@@ -3,17 +3,18 @@
 /**
  * CONTEXTO CLÍNICO CLIENT - DARWIN-MFC
  * =====================================
- * 
+ *
  * Componente cliente para a página de contexto clínico
  */
 
 import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { 
-  Stethoscope, 
-  Pill, 
-  Calculator, 
-  GitFork, 
+import {
+  Stethoscope,
+  Pill,
+  Calculator,
+  GitFork,
   AlertTriangle,
   ArrowRight,
   Copy,
@@ -42,6 +43,7 @@ interface ContextoClientProps {
 }
 
 export default function ContextoClient({ doencaId }: ContextoClientProps) {
+  const t = useTranslations('clinicalContext');
   const [activeTab, setActiveTab] = useState<'quickview' | 'medicamentos' | 'protocolos' | 'ferramentas'>('quickview');
   const [copiedAction, setCopiedAction] = useState<string | null>(null);
 
@@ -66,10 +68,10 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
     return (
       <div className="container mx-auto px-4 py-12 text-center">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
-          Condição não encontrada
+          {t('notFound')}
         </h1>
         <Link href="/doencas" className="text-blue-600 hover:underline">
-          Ver todas as doenças
+          {t('viewAllDiseases')}
         </Link>
       </div>
     );
@@ -86,9 +88,9 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
             </div>
             <div>
               <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-1">
-                <Link href="/doencas" className="hover:text-blue-600">Doenças</Link>
+                <Link href="/doencas" className="hover:text-blue-600">{t('breadcrumb.diseases')}</Link>
                 <ChevronRight className="w-4 h-4" />
-                <span>Contexto Clínico</span>
+                <span>{t('breadcrumb.clinicalContext')}</span>
               </div>
               <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
                 {doenca.titulo}
@@ -112,10 +114,10 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
         {/* Tabs */}
         <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
           {[
-            { id: 'quickview', label: 'Resumo', icon: FileSearch },
-            { id: 'medicamentos', label: `Medicamentos (${medicamentosRefs.length})`, icon: Pill },
-            { id: 'protocolos', label: `Protocolos (${protocolosRefs.length})`, icon: GitFork },
-            { id: 'ferramentas', label: 'Ferramentas', icon: Calculator },
+            { id: 'quickview', label: t('tabs.summary'), icon: FileSearch },
+            { id: 'medicamentos', label: t('tabs.medications', { count: medicamentosRefs.length }), icon: Pill },
+            { id: 'protocolos', label: t('tabs.protocols', { count: protocolosRefs.length }), icon: GitFork },
+            { id: 'ferramentas', label: t('tabs.tools'), icon: Calculator },
           ].map(tab => (
             <button
               key={tab.id}
@@ -142,7 +144,7 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
                 {/* Definition */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700">
                   <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
-                    Definição
+                    {t('sections.definition')}
                   </h2>
                   <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
                     {doenca.quickView.definicao}
@@ -152,7 +154,7 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
                 {/* Diagnostic Criteria */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700">
                   <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
-                    Critérios Diagnósticos
+                    {t('sections.diagnosticCriteria')}
                   </h2>
                   <ul className="space-y-2">
                     {doenca.quickView.criteriosDiagnosticos.map((criterio, i) => (
@@ -169,14 +171,14 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
                 {/* Treatment */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700">
                   <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
-                    Tratamento de Primeira Linha
+                    {t('sections.firstLineTreatment')}
                   </h2>
-                  
+
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <h3 className="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
                         <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                        Não-Farmacológico
+                        {t('treatment.nonPharmacological')}
                       </h3>
                       <ul className="space-y-1 text-sm text-slate-600 dark:text-slate-400">
                         {doenca.quickView.tratamentoPrimeiraLinha.naoFarmacologico.map((item, i) => (
@@ -187,7 +189,7 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
                     <div>
                       <h3 className="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
                         <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
-                        Farmacológico
+                        {t('treatment.pharmacological')}
                       </h3>
                       <ul className="space-y-1 text-sm text-slate-600 dark:text-slate-400">
                         {doenca.quickView.tratamentoPrimeiraLinha.farmacologico.map((item, i) => (
@@ -202,7 +204,7 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
                 <div className="bg-red-50 dark:bg-red-950/50 rounded-2xl p-6 border border-red-200 dark:border-red-800">
                   <h2 className="text-xl font-bold text-red-800 dark:text-red-200 mb-3 flex items-center gap-2">
                     <AlertTriangle className="w-5 h-5" />
-                    Sinais de Alarme (Red Flags)
+                    {t('sections.redFlags')}
                   </h2>
                   <ul className="space-y-2">
                     {doenca.quickView.redFlags.map((flag, i) => (
@@ -222,7 +224,7 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
                 {medicamentosRefs.length === 0 ? (
                   <div className="text-center py-12 text-slate-500 dark:text-slate-400">
                     <Pill className="w-12 h-12 mx-auto mb-3 opacity-50" />
-                    <p>Nenhum medicamento vinculado ainda</p>
+                    <p>{t('empty.medications')}</p>
                   </div>
                 ) : (
                   <>
@@ -230,7 +232,7 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
                     <div>
                       <h3 className="font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
                         <span className="w-3 h-3 bg-green-500 rounded-full"></span>
-                        Primeira Linha
+                        {t('medications.firstLine')}
                       </h3>
                       <div className="space-y-3">
                         {medicamentosRefs.filter(m => m.tipoUso === 'primeira_linha').map(med => (
@@ -267,7 +269,7 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
                       <div>
                         <h3 className="font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
                           <span className="w-3 h-3 bg-amber-500 rounded-full"></span>
-                          Segunda Linha / Alternativas
+                          {t('medications.secondLineAlternatives')}
                         </h3>
                         <div className="space-y-3">
                           {medicamentosRefs.filter(m => m.tipoUso !== 'primeira_linha').map(med => (
@@ -310,7 +312,7 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
                 {protocolosRefs.length === 0 ? (
                   <div className="text-center py-12 text-slate-500 dark:text-slate-400">
                     <GitFork className="w-12 h-12 mx-auto mb-3 opacity-50" />
-                    <p>Nenhum protocolo vinculado ainda</p>
+                    <p>{t('empty.protocols')}</p>
                   </div>
                 ) : (
                   protocolosRefs.map(prot => (
@@ -353,10 +355,10 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
                 <div>
                   <h3 className="font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
                     <Calculator className="w-5 h-5 text-emerald-600" />
-                    Calculadoras Relevantes
+                    {t('tools.relevantCalculators')}
                   </h3>
                   {calculadorasRefs.length === 0 ? (
-                    <p className="text-slate-500 dark:text-slate-400 text-sm">Nenhuma calculadora vinculada</p>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">{t('empty.calculators')}</p>
                   ) : (
                     <div className="grid gap-3">
                       {calculadorasRefs.map(calc => (
@@ -384,7 +386,7 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
                   <div>
                     <h3 className="font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
                       <FileSearch className="w-5 h-5 text-cyan-600" />
-                      Rastreamentos Relacionados
+                      {t('tools.relatedScreenings')}
                     </h3>
                     <div className="grid gap-3">
                       {rastreamentosRefs.map(rast => (
@@ -417,7 +419,7 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
               <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700">
                 <h3 className="font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                   <Copy className="w-5 h-5 text-blue-600" />
-                  Ações Rápidas
+                  {t('sidebar.quickActions')}
                 </h3>
                 <div className="space-y-2">
                   {quickActions.map(action => (
@@ -444,7 +446,7 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
             {suggestions.length > 0 && (
               <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700">
                 <h3 className="font-bold text-slate-900 dark:text-white mb-4">
-                  💡 Sugestões
+                  💡 {t('sidebar.suggestions')}
                 </h3>
                 <div className="space-y-3">
                   {suggestions.slice(0, 4).map((sug, i) => (
@@ -472,12 +474,12 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
               href={`/doencas/${doencaId}`}
               className="block bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-2xl p-6 hover:from-blue-600 hover:to-indigo-700 transition-all"
             >
-              <h3 className="font-bold mb-2">Ver conteúdo completo</h3>
+              <h3 className="font-bold mb-2">{t('sidebar.viewFullContent')}</h3>
               <p className="text-sm opacity-90">
-                Epidemiologia, fisiopatologia, diagnóstico diferencial e mais
+                {t('sidebar.fullContentDescription')}
               </p>
               <div className="flex items-center gap-1 mt-3 text-sm font-medium">
-                Acessar <ArrowRight className="w-4 h-4" />
+                {t('sidebar.access')} <ArrowRight className="w-4 h-4" />
               </div>
             </Link>
           </div>

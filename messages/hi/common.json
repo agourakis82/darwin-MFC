@@ -1243,5 +1243,49 @@
       "breastfeeding": "स्तनपान"
     },
     "lastUpdate": "अंतिम अपडेट"
+  },
+  "clinicalContext": {
+    "notFound": "स्थिति नहीं मिली",
+    "viewAllDiseases": "सभी रोग देखें",
+    "breadcrumb": {
+      "diseases": "रोग",
+      "clinicalContext": "नैदानिक संदर्भ"
+    },
+    "tabs": {
+      "summary": "सारांश",
+      "medications": "दवाएं ({count})",
+      "protocols": "प्रोटोकॉल ({count})",
+      "tools": "उपकरण"
+    },
+    "sections": {
+      "definition": "परिभाषा",
+      "diagnosticCriteria": "नैदानिक मानदंड",
+      "firstLineTreatment": "प्रथम पंक्ति उपचार",
+      "redFlags": "खतरे के संकेत (रेड फ्लैग्स)"
+    },
+    "treatment": {
+      "nonPharmacological": "गैर-औषधीय",
+      "pharmacological": "औषधीय"
+    },
+    "empty": {
+      "medications": "अभी तक कोई दवा जुड़ी नहीं है",
+      "protocols": "अभी तक कोई प्रोटोकॉल जुड़ा नहीं है",
+      "calculators": "कोई कैलकुलेटर जुड़ा नहीं है"
+    },
+    "medications": {
+      "firstLine": "प्रथम पंक्ति",
+      "secondLineAlternatives": "द्वितीय पंक्ति / विकल्प"
+    },
+    "tools": {
+      "relevantCalculators": "प्रासंगिक कैलकुलेटर",
+      "relatedScreenings": "संबंधित स्क्रीनिंग"
+    },
+    "sidebar": {
+      "quickActions": "त्वरित कार्य",
+      "suggestions": "सुझाव",
+      "viewFullContent": "पूर्ण सामग्री देखें",
+      "fullContentDescription": "महामारी विज्ञान, पैथोफिज़ियोलॉजी, विभेदक निदान और अधिक",
+      "access": "एक्सेस"
+    }
   }
 }

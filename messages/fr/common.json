@@ -1243,5 +1243,49 @@
       "breastfeeding": "Allaitement"
     },
     "lastUpdate": "Dernière mise à jour"
+  },
+  "clinicalContext": {
+    "notFound": "Condition non trouvée",
+    "viewAllDiseases": "Voir toutes les maladies",
+    "breadcrumb": {
+      "diseases": "Maladies",
+      "clinicalContext": "Contexte Clinique"
+    },
+    "tabs": {
+      "summary": "Résumé",
+      "medications": "Médicaments ({count})",
+      "protocols": "Protocoles ({count})",
+      "tools": "Outils"
+    },
+    "sections": {
+      "definition": "Définition",
+      "diagnosticCriteria": "Critères Diagnostiques",
+      "firstLineTreatment": "Traitement de Première Ligne",
+      "redFlags": "Signaux d'Alarme (Red Flags)"
+    },
+    "treatment": {
+      "nonPharmacological": "Non Pharmacologique",
+      "pharmacological": "Pharmacologique"
+    },
+    "empty": {
+      "medications": "Aucun médicament lié encore",
+      "protocols": "Aucun protocole lié encore",
+      "calculators": "Aucune calculatrice liée"
+    },
+    "medications": {
+      "firstLine": "Première Ligne",
+      "secondLineAlternatives": "Deuxième Ligne / Alternatives"
+    },
+    "tools": {
+      "relevantCalculators": "Calculatrices Pertinentes",
+      "relatedScreenings": "Dépistages Associés"
+    },
+    "sidebar": {
+      "quickActions": "Actions Rapides",
+      "suggestions": "Suggestions",
+      "viewFullContent": "Voir le contenu complet",
+      "fullContentDescription": "Épidémiologie, physiopathologie, diagnostic différentiel et plus",
+      "access": "Accéder"
+    }
   }
 }

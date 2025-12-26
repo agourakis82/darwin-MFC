@@ -1243,5 +1243,49 @@
       "breastfeeding": "Кормление грудью"
     },
     "lastUpdate": "Последнее обновление"
+  },
+  "clinicalContext": {
+    "notFound": "Состояние не найдено",
+    "viewAllDiseases": "Показать все заболевания",
+    "breadcrumb": {
+      "diseases": "Заболевания",
+      "clinicalContext": "Клинический контекст"
+    },
+    "tabs": {
+      "summary": "Резюме",
+      "medications": "Препараты ({count})",
+      "protocols": "Протоколы ({count})",
+      "tools": "Инструменты"
+    },
+    "sections": {
+      "definition": "Определение",
+      "diagnosticCriteria": "Диагностические критерии",
+      "firstLineTreatment": "Лечение первой линии",
+      "redFlags": "Красные флаги"
+    },
+    "treatment": {
+      "nonPharmacological": "Немедикаментозное",
+      "pharmacological": "Медикаментозное"
+    },
+    "empty": {
+      "medications": "Препараты пока не связаны",
+      "protocols": "Протоколы пока не связаны",
+      "calculators": "Калькуляторы не связаны"
+    },
+    "medications": {
+      "firstLine": "Первая линия",
+      "secondLineAlternatives": "Вторая линия / Альтернативы"
+    },
+    "tools": {
+      "relevantCalculators": "Релевантные калькуляторы",
+      "relatedScreenings": "Связанные скрининги"
+    },
+    "sidebar": {
+      "quickActions": "Быстрые действия",
+      "suggestions": "Предложения",
+      "viewFullContent": "Смотреть полный контент",
+      "fullContentDescription": "Эпидемиология, патофизиология, дифференциальная диагностика и более",
+      "access": "Открыть"
+    }
   }
 }

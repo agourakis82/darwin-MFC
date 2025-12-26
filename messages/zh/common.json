@@ -1243,5 +1243,49 @@
       "breastfeeding": "哺乳"
     },
     "lastUpdate": "最后更新"
+  },
+  "clinicalContext": {
+    "notFound": "未找到该疾病",
+    "viewAllDiseases": "查看所有疾病",
+    "breadcrumb": {
+      "diseases": "疾病",
+      "clinicalContext": "临床背景"
+    },
+    "tabs": {
+      "summary": "摘要",
+      "medications": "药物 ({count})",
+      "protocols": "方案 ({count})",
+      "tools": "工具"
+    },
+    "sections": {
+      "definition": "定义",
+      "diagnosticCriteria": "诊断标准",
+      "firstLineTreatment": "一线治疗",
+      "redFlags": "危险信号"
+    },
+    "treatment": {
+      "nonPharmacological": "非药物治疗",
+      "pharmacological": "药物治疗"
+    },
+    "empty": {
+      "medications": "暂无关联药物",
+      "protocols": "暂无关联方案",
+      "calculators": "暂无关联计算器"
+    },
+    "medications": {
+      "firstLine": "一线",
+      "secondLineAlternatives": "二线 / 替代方案"
+    },
+    "tools": {
+      "relevantCalculators": "相关计算器",
+      "relatedScreenings": "相关筛查"
+    },
+    "sidebar": {
+      "quickActions": "快速操作",
+      "suggestions": "建议",
+      "viewFullContent": "查看完整内容",
+      "fullContentDescription": "流行病学、病理生理学、鉴别诊断等",
+      "access": "访问"
+    }
   }
 }
