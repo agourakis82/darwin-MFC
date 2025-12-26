@@ -8,7 +8,7 @@
  * Features:
  * - Batching: 5-10 diseases or 10-15 medications per API call
  * - Checkpoint/resume: Saves progress to continue after interruption
- * - Multiple AI providers: Grok 3 (free), Gemini Flash, Claude, GPT-4
+ * - Multiple AI providers: Grok 3, Hugging Face (free), Gemini Flash, Claude, GPT-4
  * - Glossary integration: Uses standardized medical terminology
  * - Validation: Checks JSON structure and glossary usage
  *
@@ -19,7 +19,8 @@
  *   npx tsx scripts/translate-medical-content.ts --type diseases --locale en --provider grok
  *
  * Environment Variables:
- *   XAI_API_KEY - xAI Grok API key (recommended - free tier available)
+ *   HF_API_KEY - Hugging Face API key (free tier available)
+ *   XAI_API_KEY - xAI Grok API key
  *   GEMINI_API_KEY - Google Gemini API key
  *   ANTHROPIC_API_KEY - Anthropic Claude API key
  *   OPENAI_API_KEY - OpenAI GPT-4 API key
@@ -35,7 +36,7 @@ import * as path from 'path';
 interface TranslationConfig {
   type: 'diseases' | 'medications';
   locale: string | 'all';
-  provider: 'grok' | 'gemini' | 'claude' | 'openai';
+  provider: 'grok' | 'gemini' | 'claude' | 'openai' | 'huggingface';
   dryRun: boolean;
   resume: boolean;
   batchSize: number;
@@ -301,6 +302,105 @@ async function translateWithGrok(
   }
 }
 
+async function translateWithHuggingFace(
+  content: string,
+  systemPrompt: string,
+  _apiKey: string
+): Promise<TranslationResult> {
+  // HuggingFace Router API (as of Dec 2024)
+  // Uses OpenAI-compatible chat completions format
+  // Endpoint: https://router.huggingface.co/v1/chat/completions
+
+  const models = [
+    'Qwen/Qwen2.5-72B-Instruct',           // Best quality, 72B params
+    'meta-llama/Llama-3.2-3B-Instruct',    // Fast fallback
+    'mistralai/Mistral-7B-Instruct-v0.2',  // Alternative fallback
+  ];
+
+  const endpoint = 'https://router.huggingface.co/v1/chat/completions';
+
+  for (const model of models) {
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${_apiKey}`,
+        },
+        body: JSON.stringify({
+          model: model,
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: `CONTENT TO TRANSLATE:\n${content}\n\nReturn ONLY valid JSON:` },
+          ],
+          max_tokens: 8192,
+          temperature: 0.1,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.log(`  Model ${model}: ${response.status} - ${errorText.substring(0, 100)}...`);
+
+        if (response.status === 429) {
+          console.log('  Rate limited, waiting 30 seconds...');
+          await new Promise(resolve => setTimeout(resolve, 30000));
+          continue;
+        }
+
+        // Model not supported, try next
+        if (response.status === 400 || response.status === 404) {
+          continue;
+        }
+
+        continue;
+      }
+
+      const result = await response.json();
+      const text = result.choices?.[0]?.message?.content;
+
+      if (!text) {
+        console.log(`  Model ${model}: Empty response, trying next...`);
+        continue;
+      }
+
+      // Parse JSON from response
+      let jsonText = text;
+      const codeBlockMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+      if (codeBlockMatch) {
+        jsonText = codeBlockMatch[1];
+      }
+
+      const jsonMatch = jsonText.match(/[\[{][\s\S]*[\]}]/);
+      if (!jsonMatch) {
+        console.log(`  Model ${model}: No JSON found in response, trying next...`);
+        continue;
+      }
+
+      try {
+        const parsed = JSON.parse(jsonMatch[0]);
+        console.log(`  ✓ Using model: ${model}`);
+        return {
+          success: true,
+          data: parsed,
+          tokens: {
+            input: result.usage?.prompt_tokens || 0,
+            output: result.usage?.completion_tokens || 0,
+          },
+        };
+      } catch {
+        console.log(`  Model ${model}: JSON parse error, trying next...`);
+        continue;
+      }
+    } catch (error) {
+      console.log(`  Model ${model}: ${error}`);
+      continue;
+    }
+  }
+
+  return { success: false, error: 'All HuggingFace models failed. Try using --provider gemini or --provider claude instead.' };
+}
+
 async function translateWithGemini(
   content: string,
   systemPrompt: string,
@@ -520,6 +620,7 @@ async function translateBatch(
     gemini: 'GEMINI_API_KEY',
     claude: 'ANTHROPIC_API_KEY',
     openai: 'OPENAI_API_KEY',
+    huggingface: 'HF_API_KEY',
   }[config.provider];
 
   const apiKey = process.env[apiKeyEnvVar];
@@ -538,6 +639,8 @@ async function translateBatch(
       return translateWithClaude(content, prompt, apiKey);
     case 'openai':
       return translateWithOpenAI(content, prompt, apiKey);
+    case 'huggingface':
+      return translateWithHuggingFace(content, prompt, apiKey);
     default:
       return { success: false, error: `Unknown provider: ${config.provider}` };
   }
@@ -591,7 +694,7 @@ async function main() {
         config.locale = args[++i];
         break;
       case '--provider':
-        config.provider = args[++i] as 'grok' | 'gemini' | 'claude' | 'openai';
+        config.provider = args[++i] as 'grok' | 'gemini' | 'claude' | 'openai' | 'huggingface';
         break;
       case '--dry-run':
         config.dryRun = true;
@@ -612,20 +715,21 @@ Usage:
 Options:
   --type <diseases|medications>  Content type to translate (default: diseases)
   --locale <locale|all>          Target locale or 'all' (default: en)
-  --provider <grok|gemini|claude|openai>  AI provider (default: grok)
+  --provider <provider>          AI provider: grok, gemini, claude, openai, huggingface (default: grok)
   --batch-size <number>          Items per batch (default: 5)
   --dry-run                      Show what would be done without making API calls
   --resume                       Resume from last checkpoint
   --help                         Show this help
 
 Environment Variables:
-  XAI_API_KEY         xAI Grok API key (recommended - free tier)
+  XAI_API_KEY         xAI Grok API key
+  HF_API_KEY          Hugging Face API key (free tier available)
   GEMINI_API_KEY      Google Gemini API key
   ANTHROPIC_API_KEY   Anthropic Claude API key
   OPENAI_API_KEY      OpenAI API key
 
 Examples:
-  npx tsx scripts/translate-medical-content.ts --type diseases --locale en
+  npx tsx scripts/translate-medical-content.ts --type diseases --locale en --provider huggingface
   npx tsx scripts/translate-medical-content.ts --type diseases --locale en --provider grok
   npx tsx scripts/translate-medical-content.ts --type medications --locale all
   npx tsx scripts/translate-medical-content.ts --type diseases --locale fr --provider claude
@@ -677,21 +781,135 @@ Examples:
       }
     }
 
-    // TODO: Load actual data from imports
-    // For now, show placeholder message
-    console.log(`\nTo complete this script, import data from:`);
-    console.log(`  - lib/data/doencas/index.ts (getAllDoencas)`);
-    console.log(`  - lib/data/medicamentos/index.ts (getAllMedicamentos)`);
-    console.log(`  - lib/data/translations/glossary/medical-terms.ts (generateGlossaryPrompt)`);
-    console.log(`\nThen call translateBatch() for each batch and save results.`);
+    // Load data based on type
+    let items: unknown[] = [];
+    let glossary = '';
+
+    try {
+      // Dynamic imports to avoid circular dependencies
+      const glossaryModule = await import('../lib/data/translations/glossary/medical-terms');
+      glossary = glossaryModule.generateGlossaryPrompt(locale as 'en' | 'es' | 'fr' | 'ru' | 'ar' | 'zh' | 'el' | 'hi');
+
+      if (config.type === 'diseases') {
+        const doencasModule = await import('../lib/data/doencas/index');
+        items = doencasModule.getAllDoencas();
+      } else {
+        const medsModule = await import('../lib/data/medicamentos/index');
+        items = medsModule.getAllMedicamentos();
+      }
+    } catch (error) {
+      console.error(`Failed to load data: ${error}`);
+      continue;
+    }
+
+    console.log(`Loaded ${items.length} ${config.type}`);
+
+    // Filter out already completed items if resuming
+    if (checkpoint) {
+      items = items.filter((item: any) => !checkpoint!.completedIds.includes(item.id));
+      console.log(`${items.length} items remaining after checkpoint`);
+    }
+
+    if (items.length === 0) {
+      console.log('No items to translate!');
+      continue;
+    }
+
+    // Create batches
+    const batchSize = config.type === 'diseases' ? config.batchSize : config.batchSize * 2;
+    const batches = createBatches(items, batchSize);
+    console.log(`Created ${batches.length} batches of ${batchSize} items each\n`);
 
     if (config.dryRun) {
-      console.log(`\n[Would process ${config.type} for locale ${locale}]`);
+      console.log(`[DRY RUN] Would translate ${items.length} ${config.type} in ${batches.length} batches`);
+      console.log(`[DRY RUN] Sample item: ${JSON.stringify((items[0] as any)?.titulo || (items[0] as any)?.nomeGenerico)}`);
+      continue;
+    }
+
+    // Process batches
+    const completedIds: string[] = checkpoint?.completedIds || [];
+    const allTranslations: unknown[] = [];
+    let totalTokens = { input: 0, output: 0 };
+
+    for (let i = 0; i < batches.length; i++) {
+      const batch = batches[i];
+      console.log(`Processing batch ${i + 1}/${batches.length} (items ${batch.startIndex + 1}-${batch.endIndex})...`);
+
+      // Rate limiting - wait 1 second between batches
+      if (i > 0) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+      }
+
+      const result = await translateBatch(batch.items, localeConfig, glossary);
+
+      if (!result.success) {
+        console.error(`  Batch ${i + 1} failed: ${result.error}`);
+        console.log('  Saving checkpoint and stopping...');
+
+        // Save checkpoint
+        saveCheckpoint(localeConfig, {
+          type: config.type,
+          locale,
+          completedIds,
+          lastBatchIndex: i,
+          startedAt: checkpoint?.startedAt || new Date().toISOString(),
+          lastUpdated: new Date().toISOString(),
+        });
+
+        break;
+      }
+
+      // Add translations
+      const translations = Array.isArray(result.data) ? result.data : [result.data];
+      allTranslations.push(...translations);
+
+      // Track completed IDs
+      for (const item of batch.items) {
+        completedIds.push((item as any).id);
+      }
+
+      // Track tokens
+      if (result.tokens) {
+        totalTokens.input += result.tokens.input;
+        totalTokens.output += result.tokens.output;
+      }
+
+      console.log(`  ✓ Batch ${i + 1} complete (${result.tokens?.input || 0} in, ${result.tokens?.output || 0} out tokens)`);
+
+      // Save checkpoint after each batch
+      saveCheckpoint(localeConfig, {
+        type: config.type,
+        locale,
+        completedIds,
+        lastBatchIndex: i,
+        startedAt: checkpoint?.startedAt || new Date().toISOString(),
+        lastUpdated: new Date().toISOString(),
+      });
+    }
+
+    // Group translations by category and save
+    if (allTranslations.length > 0) {
+      const byCategory = new Map<string, unknown[]>();
+
+      for (const translation of allTranslations) {
+        const category = (translation as any).categoria || (translation as any).classeTerapeutica || 'outros';
+        if (!byCategory.has(category)) {
+          byCategory.set(category, []);
+        }
+        byCategory.get(category)!.push(translation);
+      }
+
+      for (const [category, translations] of byCategory) {
+        saveTranslation(translations, category, localeConfig);
+      }
+
+      console.log(`\n✓ Saved ${allTranslations.length} translations for ${locale}`);
+      console.log(`  Total tokens: ${totalTokens.input} input, ${totalTokens.output} output`);
     }
   }
 
   console.log('\n========================================');
-  console.log('Translation script setup complete!');
+  console.log('Translation complete!');
   console.log('========================================\n');
 }
 
