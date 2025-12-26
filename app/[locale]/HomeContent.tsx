@@ -3,7 +3,7 @@ import { ArrowRight, BookOpen, TrendingUp, Users, FileText, Baby, Users as Users
 import { doencasConsolidadas } from '@/lib/data/doencas/index';
 import { medicamentosConsolidados } from '@/lib/data/medicamentos/index';
 import { todosProtocolosFlowchart } from '@/lib/data/protocolos-flowchart';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { LearningWidget } from '@/app/components/Learning';
 
 // Estatísticas dinâmicas
@@ -13,8 +13,8 @@ const stats = {
   protocolos: todosProtocolosFlowchart.length,
 };
 
-export default function HomeContent() {
-  const t = useTranslations('home');
+export default async function HomeContent() {
+  const t = await getTranslations('home');
 
   return (
     <div className="min-h-screen">
