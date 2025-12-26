@@ -414,5 +414,18 @@
       "cancer": "癌症",
       "pregnancy": "怀孕"
     }
+  },
+  "doencas": {
+    "title": "初级保健疾病",
+    "subtitle": "{count} 个临床病症，含ICPC-2和ICD-10编码",
+    "searchPlaceholder": "按名称、ICPC-2或ICD-10搜索...",
+    "filter": "筛选",
+    "activeFilter": "当前筛选：",
+    "all": "全部",
+    "conditions": "{count} 个病症",
+    "results": "{count, plural, =0 {0 个结果} =1 {1 个结果} other {# 个结果}}",
+    "noResults": "未找到疾病",
+    "tryAnotherTerm": "尝试其他搜索词",
+    "noDescription": "暂无描述"
   }
 }

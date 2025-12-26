@@ -414,5 +414,18 @@
       "cancer": "Cancer",
       "pregnancy": "Grossesse"
     }
+  },
+  "doencas": {
+    "title": "Maladies des Soins Primaires",
+    "subtitle": "{count} conditions cliniques avec codes CISP-2 et CIM-10",
+    "searchPlaceholder": "Rechercher par nom, CISP-2 ou CIM-10...",
+    "filter": "Filtrer",
+    "activeFilter": "Filtre actif:",
+    "all": "Toutes",
+    "conditions": "{count} conditions",
+    "results": "{count, plural, =0 {0 résultats} =1 {1 résultat} other {# résultats}}",
+    "noResults": "Aucune maladie trouvée",
+    "tryAnotherTerm": "Essayez de chercher un autre terme",
+    "noDescription": "Description non disponible"
   }
 }

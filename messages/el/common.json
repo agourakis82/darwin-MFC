@@ -414,5 +414,18 @@
       "cancer": "Καρκίνος",
       "pregnancy": "Εγκυμοσύνη"
     }
+  },
+  "doencas": {
+    "title": "Νοσήματα Πρωτοβάθμιας Φροντίδας",
+    "subtitle": "{count} κλινικές καταστάσεις με κωδικούς ICPC-2 και ICD-10",
+    "searchPlaceholder": "Αναζήτηση με όνομα, ICPC-2 ή ICD-10...",
+    "filter": "Φίλτρο",
+    "activeFilter": "Ενεργό φίλτρο:",
+    "all": "Όλα",
+    "conditions": "{count} καταστάσεις",
+    "results": "{count, plural, =0 {0 αποτελέσματα} =1 {1 αποτέλεσμα} other {# αποτελέσματα}}",
+    "noResults": "Δεν βρέθηκε νόσημα",
+    "tryAnotherTerm": "Δοκιμάστε άλλον όρο αναζήτησης",
+    "noDescription": "Μη διαθέσιμη περιγραφή"
   }
 }

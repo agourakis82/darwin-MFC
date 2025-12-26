@@ -414,5 +414,18 @@
       "cancer": "السرطان",
       "pregnancy": "الحمل"
     }
+  },
+  "doencas": {
+    "title": "أمراض الرعاية الأولية",
+    "subtitle": "{count} حالة سريرية مع رموز ICPC-2 و ICD-10",
+    "searchPlaceholder": "البحث بالاسم أو ICPC-2 أو ICD-10...",
+    "filter": "تصفية",
+    "activeFilter": "الفلتر النشط:",
+    "all": "الكل",
+    "conditions": "{count} حالات",
+    "results": "{count, plural, =0 {0 نتائج} =1 {نتيجة واحدة} other {# نتائج}}",
+    "noResults": "لم يتم العثور على مرض",
+    "tryAnotherTerm": "حاول البحث بمصطلح آخر",
+    "noDescription": "الوصف غير متوفر"
   }
 }

@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 import {
   Search, Heart, Activity, Wind, Brain, Bug, Bone,
   Fingerprint, Utensils, Zap, Droplets, Baby, Users,
@@ -17,6 +18,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export default function DoencasPage() {
+  const t = useTranslations('doencas');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategoria, setSelectedCategoria] = useState<CategoriaDoenca | 'todas'>('todas');
   const [showFilters, setShowFilters] = useState(false);
@@ -53,10 +55,10 @@ export default function DoencasPage() {
       {/* Compact Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-2">
-          Doenças da APS
+          {t('title')}
         </h1>
         <p className="text-neutral-500 dark:text-neutral-400">
-          {doencasConsolidadas.length} condições clínicas com códigos CIAP-2 e CID-10
+          {t('subtitle', { count: doencasConsolidadas.length })}
         </p>
       </div>
 
@@ -68,7 +70,7 @@ export default function DoencasPage() {
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Buscar por nome, CIAP-2 ou CID-10..."
+            placeholder={t('searchPlaceholder')}
             className="w-full pl-10 pr-4 py-3 border border-neutral-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 text-[#1d1d1f] dark:text-[#f5f5f7] focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
         </div>
@@ -81,7 +83,7 @@ export default function DoencasPage() {
           }`}
         >
           <Filter className="w-5 h-5" />
-          <span className="hidden sm:inline">Filtrar</span>
+          <span className="hidden sm:inline">{t('filter')}</span>
           {selectedCategoria !== 'todas' && (
             <span className="w-2 h-2 bg-blue-500 rounded-full" />
           )}
@@ -91,7 +93,7 @@ export default function DoencasPage() {
       {/* Active Filter Badge */}
       {selectedCategoria !== 'todas' && (
         <div className="mb-4 flex items-center gap-2">
-          <span className="text-sm text-neutral-500">Filtro ativo:</span>
+          <span className="text-sm text-neutral-500">{t('activeFilter')}</span>
           <button
             onClick={() => setSelectedCategoria('todas')}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg text-sm font-medium hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors"
@@ -114,7 +116,7 @@ export default function DoencasPage() {
                   : 'bg-white dark:bg-neutral-700 hover:bg-blue-50 dark:hover:bg-neutral-600'
               }`}
             >
-              <span className="text-sm font-medium">Todas</span>
+              <span className="text-sm font-medium">{t('all')}</span>
               <span className="block text-xs opacity-70">{doencasConsolidadas.length}</span>
             </button>
             {Object.entries(CATEGORIAS_DOENCA).map(([key, value]) => {
@@ -135,7 +137,7 @@ export default function DoencasPage() {
                     <IconComponent className="w-4 h-4" />
                     <span className="text-sm font-medium truncate">{value.label}</span>
                   </div>
-                  <span className="text-xs opacity-70">{count} condições</span>
+                  <span className="text-xs opacity-70">{t('conditions', { count })}</span>
                 </button>
               );
             })}
@@ -145,15 +147,15 @@ export default function DoencasPage() {
 
       {/* Results Count */}
       <p className="text-sm text-neutral-500 mb-4">
-        {doencasFiltradas.length} resultado{doencasFiltradas.length !== 1 ? 's' : ''}
+        {t('results', { count: doencasFiltradas.length })}
       </p>
 
       {/* Results */}
       {doencasFiltradas.length === 0 ? (
         <div className="text-center py-16">
           <Search className="w-12 h-12 mx-auto mb-3 text-neutral-300 dark:text-neutral-600" />
-          <p className="text-lg text-neutral-500">Nenhuma doença encontrada</p>
-          <p className="text-sm text-neutral-400 mt-1">Tente buscar por outro termo</p>
+          <p className="text-lg text-neutral-500">{t('noResults')}</p>
+          <p className="text-sm text-neutral-400 mt-1">{t('tryAnotherTerm')}</p>
         </div>
       ) : (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -176,7 +178,7 @@ export default function DoencasPage() {
                       {doenca.titulo}
                     </h3>
                     <p className="text-sm text-neutral-500 dark:text-neutral-400 line-clamp-2 mb-2">
-                      {doenca.quickView?.definicao || 'Descrição não disponível'}
+                      {doenca.quickView?.definicao || t('noDescription')}
                     </p>
 
                     {/* Single code badge - cleaner */}

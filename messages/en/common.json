@@ -729,5 +729,18 @@
       "cancer": "Cancer",
       "pregnancy": "Pregnancy"
     }
+  },
+  "doencas": {
+    "title": "Primary Care Diseases",
+    "subtitle": "{count} clinical conditions with ICPC-2 and ICD-10 codes",
+    "searchPlaceholder": "Search by name, ICPC-2 or ICD-10...",
+    "filter": "Filter",
+    "activeFilter": "Active filter:",
+    "all": "All",
+    "conditions": "{count} conditions",
+    "results": "{count, plural, =0 {0 results} =1 {1 result} other {# results}}",
+    "noResults": "No disease found",
+    "tryAnotherTerm": "Try searching for another term",
+    "noDescription": "Description not available"
   }
 }

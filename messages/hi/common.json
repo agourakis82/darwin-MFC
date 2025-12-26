@@ -414,5 +414,18 @@
       "cancer": "कैंसर",
       "pregnancy": "गर्भावस्था"
     }
+  },
+  "doencas": {
+    "title": "प्राथमिक देखभाल रोग",
+    "subtitle": "{count} नैदानिक स्थितियाँ ICPC-2 और ICD-10 कोड के साथ",
+    "searchPlaceholder": "नाम, ICPC-2 या ICD-10 द्वारा खोजें...",
+    "filter": "फ़िल्टर",
+    "activeFilter": "सक्रिय फ़िल्टर:",
+    "all": "सभी",
+    "conditions": "{count} स्थितियाँ",
+    "results": "{count, plural, =0 {0 परिणाम} =1 {1 परिणाम} other {# परिणाम}}",
+    "noResults": "कोई रोग नहीं मिला",
+    "tryAnotherTerm": "दूसरे शब्द से खोजें",
+    "noDescription": "विवरण उपलब्ध नहीं"
   }
 }
