@@ -1193,5 +1193,55 @@
       "more": "+ {count} de plus",
       "priority": "Prioritaire"
     }
+  },
+  "medicationDetail": {
+    "backToPharmacy": "Retour à la Pharmacie",
+    "badges": {
+      "pregnancyCategory": "Grossesse: Catégorie {category}",
+      "breastfeedingCompatible": "✓ Compatible allaitement",
+      "breastfeedingAvoid": "✗ Éviter pendant allaitement"
+    },
+    "sections": {
+      "mechanismOfAction": "Mécanisme d'Action",
+      "indications": "Indications",
+      "dosage": "Posologie",
+      "contraindications": "Contre-indications",
+      "adverseEffects": "Effets Indésirables",
+      "drugInteractions": "Interactions Médicamenteuses",
+      "renalAdjustment": "Ajustement de Dose en Insuffisance Rénale",
+      "availablePresentations": "Présentations Disponibles",
+      "patientGuidelines": "Conseils au Patient"
+    },
+    "dosage": {
+      "adults": "Adultes",
+      "pediatric": "Pédiatrique",
+      "frequency": "Fréquence",
+      "maxDose": "Dose maximale"
+    },
+    "adverseEffects": {
+      "common": "Courants",
+      "severe": "Graves"
+    },
+    "interactions": {
+      "effect": "Effet",
+      "management": "Conduite",
+      "severity": {
+        "leve": "LÉGÈRE",
+        "moderada": "MODÉRÉE",
+        "grave": "GRAVE",
+        "contraindicada": "CONTRE-INDIQUÉE"
+      }
+    },
+    "renalAdjustment": {
+      "gfr": "DFG (mL/min)",
+      "adjustment": "Ajustement",
+      "observation": "Observation",
+      "calculatorLink": "Utiliser le calculateur CKD-EPI pour estimer le DFG"
+    },
+    "safety": {
+      "pregnancy": "Grossesse",
+      "breastfeeding": "Allaitement"
+    },
+    "lastUpdate": "Dernière mise à jour"
   }
 }

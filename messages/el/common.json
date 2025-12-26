@@ -1193,5 +1193,55 @@
       "more": "+ {count} ακόμη",
       "priority": "Προτεραιότητα"
     }
+  },
+  "medicationDetail": {
+    "backToPharmacy": "Επιστροφή στο Φαρμακείο",
+    "badges": {
+      "pregnancyCategory": "Εγκυμοσύνη: Κατηγορία {category}",
+      "breastfeedingCompatible": "✓ Συμβατό με θηλασμό",
+      "breastfeedingAvoid": "✗ Αποφυγή κατά τη θηλασμό"
+    },
+    "sections": {
+      "mechanismOfAction": "Μηχανισμός Δράσης",
+      "indications": "Ενδείξεις",
+      "dosage": "Δοσολογία",
+      "contraindications": "Αντενδείξεις",
+      "adverseEffects": "Ανεπιθύμητες Ενέργειες",
+      "drugInteractions": "Αλληλεπιδράσεις Φαρμάκων",
+      "renalAdjustment": "Προσαρμογή Δόσης σε Νεφρική Ανεπάρκεια",
+      "availablePresentations": "Διαθέσιμες Μορφές",
+      "patientGuidelines": "Οδηγίες για τον Ασθενή"
+    },
+    "dosage": {
+      "adults": "Ενήλικες",
+      "pediatric": "Παιδιατρικό",
+      "frequency": "Συχνότητα",
+      "maxDose": "Μέγιστη δόση"
+    },
+    "adverseEffects": {
+      "common": "Συχνές",
+      "severe": "Σοβαρές"
+    },
+    "interactions": {
+      "effect": "Επίδραση",
+      "management": "Διαχείριση",
+      "severity": {
+        "leve": "ΗΠΙΑ",
+        "moderada": "ΜΕΤΡΙΑ",
+        "grave": "ΣΟΒΑΡΗ",
+        "contraindicada": "ΑΝΤΕΝΔΕΙΚΝΥΤΑΙ"
+      }
+    },
+    "renalAdjustment": {
+      "gfr": "GFR (mL/min)",
+      "adjustment": "Προσαρμογή",
+      "observation": "Παρατήρηση",
+      "calculatorLink": "Χρήση υπολογιστή CKD-EPI για εκτίμηση GFR"
+    },
+    "safety": {
+      "pregnancy": "Εγκυμοσύνη",
+      "breastfeeding": "Θηλασμός"
+    },
+    "lastUpdate": "Τελευταία ενημέρωση"
   }
 }

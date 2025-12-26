@@ -1193,5 +1193,55 @@
       "more": "+ {count} المزيد",
       "priority": "أولوية"
     }
+  },
+  "medicationDetail": {
+    "backToPharmacy": "العودة إلى الصيدلية",
+    "badges": {
+      "pregnancyCategory": "الحمل: الفئة {category}",
+      "breastfeedingCompatible": "✓ متوافق مع الرضاعة",
+      "breastfeedingAvoid": "✗ تجنب أثناء الرضاعة"
+    },
+    "sections": {
+      "mechanismOfAction": "آلية العمل",
+      "indications": "دواعي الاستعمال",
+      "dosage": "الجرعات",
+      "contraindications": "موانع الاستعمال",
+      "adverseEffects": "الآثار الجانبية",
+      "drugInteractions": "التفاعلات الدوائية",
+      "renalAdjustment": "تعديل الجرعة في القصور الكلوي",
+      "availablePresentations": "الأشكال الصيدلانية المتوفرة",
+      "patientGuidelines": "إرشادات المريض"
+    },
+    "dosage": {
+      "adults": "البالغون",
+      "pediatric": "الأطفال",
+      "frequency": "التكرار",
+      "maxDose": "الجرعة القصوى"
+    },
+    "adverseEffects": {
+      "common": "شائعة",
+      "severe": "خطيرة"
+    },
+    "interactions": {
+      "effect": "التأثير",
+      "management": "التدبير",
+      "severity": {
+        "leve": "خفيفة",
+        "moderada": "متوسطة",
+        "grave": "شديدة",
+        "contraindicada": "موانع"
+      }
+    },
+    "renalAdjustment": {
+      "gfr": "معدل الترشيح الكبيبي (مل/دقيقة)",
+      "adjustment": "التعديل",
+      "observation": "ملاحظة",
+      "calculatorLink": "استخدم حاسبة CKD-EPI لتقدير معدل الترشيح"
+    },
+    "safety": {
+      "pregnancy": "الحمل",
+      "breastfeeding": "الرضاعة"
+    },
+    "lastUpdate": "آخر تحديث"
   }
 }

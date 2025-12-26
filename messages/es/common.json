@@ -1193,5 +1193,55 @@
       "more": "+ {count} más",
       "priority": "Prioritaria"
     }
+  },
+  "medicationDetail": {
+    "backToPharmacy": "Volver a Farmacia",
+    "badges": {
+      "pregnancyCategory": "Embarazo: Categoría {category}",
+      "breastfeedingCompatible": "✓ Compatible con lactancia",
+      "breastfeedingAvoid": "✗ Evitar durante lactancia"
+    },
+    "sections": {
+      "mechanismOfAction": "Mecanismo de Acción",
+      "indications": "Indicaciones",
+      "dosage": "Posología",
+      "contraindications": "Contraindicaciones",
+      "adverseEffects": "Efectos Adversos",
+      "drugInteractions": "Interacciones Medicamentosas",
+      "renalAdjustment": "Ajuste de Dosis en Insuficiencia Renal",
+      "availablePresentations": "Presentaciones Disponibles",
+      "patientGuidelines": "Orientaciones al Paciente"
+    },
+    "dosage": {
+      "adults": "Adultos",
+      "pediatric": "Pediátrico",
+      "frequency": "Frecuencia",
+      "maxDose": "Dosis máxima"
+    },
+    "adverseEffects": {
+      "common": "Comunes",
+      "severe": "Graves"
+    },
+    "interactions": {
+      "effect": "Efecto",
+      "management": "Conducta",
+      "severity": {
+        "leve": "LEVE",
+        "moderada": "MODERADA",
+        "grave": "GRAVE",
+        "contraindicada": "CONTRAINDICADA"
+      }
+    },
+    "renalAdjustment": {
+      "gfr": "TFG (mL/min)",
+      "adjustment": "Ajuste",
+      "observation": "Observación",
+      "calculatorLink": "Usar calculadora CKD-EPI para estimar TFG"
+    },
+    "safety": {
+      "pregnancy": "Embarazo",
+      "breastfeeding": "Lactancia"
+    },
+    "lastUpdate": "Última actualización"
   }
 }

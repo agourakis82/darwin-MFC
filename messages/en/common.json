@@ -1508,5 +1508,55 @@
       "more": "+ {count} more",
       "priority": "Priority"
     }
+  },
+  "medicationDetail": {
+    "backToPharmacy": "Back to Pharmacy",
+    "badges": {
+      "pregnancyCategory": "Pregnancy: Category {category}",
+      "breastfeedingCompatible": "✓ Breastfeeding compatible",
+      "breastfeedingAvoid": "✗ Avoid during breastfeeding"
+    },
+    "sections": {
+      "mechanismOfAction": "Mechanism of Action",
+      "indications": "Indications",
+      "dosage": "Dosage",
+      "contraindications": "Contraindications",
+      "adverseEffects": "Adverse Effects",
+      "drugInteractions": "Drug Interactions",
+      "renalAdjustment": "Dose Adjustment in Renal Impairment",
+      "availablePresentations": "Available Presentations",
+      "patientGuidelines": "Patient Guidelines"
+    },
+    "dosage": {
+      "adults": "Adults",
+      "pediatric": "Pediatric",
+      "frequency": "Frequency",
+      "maxDose": "Maximum dose"
+    },
+    "adverseEffects": {
+      "common": "Common",
+      "severe": "Severe"
+    },
+    "interactions": {
+      "effect": "Effect",
+      "management": "Management",
+      "severity": {
+        "leve": "MILD",
+        "moderada": "MODERATE",
+        "grave": "SEVERE",
+        "contraindicada": "CONTRAINDICATED"
+      }
+    },
+    "renalAdjustment": {
+      "gfr": "GFR (mL/min)",
+      "adjustment": "Adjustment",
+      "observation": "Observation",
+      "calculatorLink": "Use CKD-EPI calculator to estimate GFR"
+    },
+    "safety": {
+      "pregnancy": "Pregnancy",
+      "breastfeeding": "Breastfeeding"
+    },
+    "lastUpdate": "Last update"
   }
 }

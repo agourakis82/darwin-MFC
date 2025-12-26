@@ -1193,5 +1193,55 @@
       "more": "+ ещё {count}",
       "priority": "Приоритетный"
     }
+  },
+  "medicationDetail": {
+    "backToPharmacy": "Вернуться в справочник",
+    "badges": {
+      "pregnancyCategory": "Беременность: Категория {category}",
+      "breastfeedingCompatible": "✓ Совместимо с кормлением",
+      "breastfeedingAvoid": "✗ Избегать при кормлении"
+    },
+    "sections": {
+      "mechanismOfAction": "Механизм действия",
+      "indications": "Показания",
+      "dosage": "Дозировка",
+      "contraindications": "Противопоказания",
+      "adverseEffects": "Побочные эффекты",
+      "drugInteractions": "Лекарственные взаимодействия",
+      "renalAdjustment": "Коррекция дозы при почечной недостаточности",
+      "availablePresentations": "Доступные формы выпуска",
+      "patientGuidelines": "Рекомендации пациенту"
+    },
+    "dosage": {
+      "adults": "Взрослые",
+      "pediatric": "Дети",
+      "frequency": "Частота",
+      "maxDose": "Максимальная доза"
+    },
+    "adverseEffects": {
+      "common": "Частые",
+      "severe": "Тяжёлые"
+    },
+    "interactions": {
+      "effect": "Эффект",
+      "management": "Тактика",
+      "severity": {
+        "leve": "ЛЁГКАЯ",
+        "moderada": "УМЕРЕННАЯ",
+        "grave": "ТЯЖЁЛАЯ",
+        "contraindicada": "ПРОТИВОПОКАЗАНО"
+      }
+    },
+    "renalAdjustment": {
+      "gfr": "СКФ (мл/мин)",
+      "adjustment": "Коррекция",
+      "observation": "Примечание",
+      "calculatorLink": "Использовать калькулятор CKD-EPI для оценки СКФ"
+    },
+    "safety": {
+      "pregnancy": "Беременность",
+      "breastfeeding": "Кормление грудью"
+    },
+    "lastUpdate": "Последнее обновление"
   }
 }

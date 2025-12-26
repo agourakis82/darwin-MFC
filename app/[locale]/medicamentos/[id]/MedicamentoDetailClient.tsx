@@ -1,8 +1,9 @@
 'use client';
 
 import { use } from 'react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { 
+import {
   ArrowLeft, Pill, AlertTriangle, Baby, Heart, TestTube,
   Clock, Shield, BookOpen, ChevronRight, Activity, XCircle,
   CheckCircle, Info, Stethoscope
@@ -12,6 +13,7 @@ import { CLASSES_TERAPEUTICAS, CLASSIFICACAO_GESTACAO } from '@/lib/types/medica
 import { notFound } from 'next/navigation';
 
 export default function MedicamentoDetailClient({ params }: { params: Promise<{ id: string }> }) {
+  const t = useTranslations('medicationDetail');
   const { id } = use(params);
   const medicamento = getMedicamentoById(id);
   
@@ -25,12 +27,12 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       {/* Breadcrumb */}
-      <Link 
-        href="/medicamentos" 
+      <Link
+        href="/medicamentos"
         className="inline-flex items-center gap-2 text-[#86868b] hover:text-emerald-600 mb-6 transition-colors"
       >
         <ArrowLeft className="w-4 h-4" />
-        Voltar para Bulário
+        {t('backToPharmacy')}
       </Link>
 
       {/* Header */}
@@ -65,10 +67,10 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
           </span>
           <span className={`px-3 py-1 ${gestacaoInfo.color} text-white text-sm font-medium rounded-full flex items-center gap-1`}>
             <Baby className="w-4 h-4" />
-            Gestação: Categoria {medicamento.gestacao}
+            {t('badges.pregnancyCategory', { category: medicamento.gestacao })}
           </span>
           <span className={`px-3 py-1 ${medicamento.amamentacao.compativel ? 'bg-green-500' : 'bg-red-500'} text-white text-sm font-medium rounded-full`}>
-            {medicamento.amamentacao.compativel ? '✓ Compatível amamentação' : '✗ Evitar na amamentação'}
+            {medicamento.amamentacao.compativel ? t('badges.breastfeedingCompatible') : t('badges.breastfeedingAvoid')}
           </span>
         </div>
       </div>
@@ -79,7 +81,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
         <div className="glass-strong rounded-2xl p-6">
           <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
             <Activity className="w-5 h-5 text-blue-500" />
-            Mecanismo de Ação
+            {t('sections.mechanismOfAction')}
           </h2>
           <p className="text-[#1d1d1f] dark:text-[#f5f5f7] leading-relaxed">
             {medicamento.mecanismoAcao}
@@ -90,7 +92,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
         <div className="glass-strong rounded-2xl p-6">
           <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
             <Stethoscope className="w-5 h-5 text-emerald-500" />
-            Indicações
+            {t('sections.indications')}
           </h2>
           <ul className="space-y-2">
             {medicamento.indicacoes.map((ind, idx) => (
@@ -106,7 +108,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
         <div className="glass-strong rounded-2xl p-6">
           <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-4 flex items-center gap-2">
             <Clock className="w-5 h-5 text-purple-500" />
-            Posologia
+            {t('sections.dosage')}
           </h2>
           <div className="space-y-4">
             {medicamento.posologias.map((pos, idx) => (
@@ -116,16 +118,16 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <span className="font-medium">Adultos:</span> {pos.adultos.dose}
+                    <span className="font-medium">{t('dosage.adults')}:</span> {pos.adultos.dose}
                     <br />
-                    <span className="text-[#86868b]">Frequência: {pos.adultos.frequencia}</span>
+                    <span className="text-[#86868b]">{t('dosage.frequency')}: {pos.adultos.frequencia}</span>
                     {pos.adultos.doseMaxima && (
-                      <><br /><span className="text-[#86868b]">Dose máxima: {pos.adultos.doseMaxima}</span></>
+                      <><br /><span className="text-[#86868b]">{t('dosage.maxDose')}: {pos.adultos.doseMaxima}</span></>
                     )}
                   </div>
                   {pos.pediatrico && (
                     <div>
-                      <span className="font-medium">Pediátrico:</span> {pos.pediatrico.dose}
+                      <span className="font-medium">{t('dosage.pediatric')}:</span> {pos.pediatrico.dose}
                       <br />
                       <span className="text-[#86868b]">{pos.pediatrico.observacoes}</span>
                     </div>
@@ -140,7 +142,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
         <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-6">
           <h2 className="text-xl font-bold text-red-700 dark:text-red-400 mb-3 flex items-center gap-2">
             <XCircle className="w-5 h-5" />
-            Contraindicações
+            {t('sections.contraindications')}
           </h2>
           <ul className="space-y-2">
             {medicamento.contraindicacoes.map((ci, idx) => (
@@ -156,11 +158,11 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
         <div className="glass-strong rounded-2xl p-6">
           <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-4 flex items-center gap-2">
             <AlertTriangle className="w-5 h-5 text-amber-500" />
-            Efeitos Adversos
+            {t('sections.adverseEffects')}
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <h3 className="font-semibold text-amber-600 dark:text-amber-400 mb-2">Comuns:</h3>
+              <h3 className="font-semibold text-amber-600 dark:text-amber-400 mb-2">{t('adverseEffects.common')}:</h3>
               <ul className="space-y-1 text-sm">
                 {medicamento.efeitosAdversos.comuns.map((ea, idx) => (
                   <li key={idx} className="flex items-center gap-2">
@@ -172,7 +174,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
             </div>
             {medicamento.efeitosAdversos.graves && (
               <div>
-                <h3 className="font-semibold text-red-600 dark:text-red-400 mb-2">Graves:</h3>
+                <h3 className="font-semibold text-red-600 dark:text-red-400 mb-2">{t('adverseEffects.severe')}:</h3>
                 <ul className="space-y-1 text-sm">
                   {medicamento.efeitosAdversos.graves.map((ea, idx) => (
                     <li key={idx} className="flex items-center gap-2">
@@ -191,7 +193,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
           <div className="glass-strong rounded-2xl p-6">
             <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-4 flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-orange-500" />
-              Interações Medicamentosas
+              {t('sections.drugInteractions')}
             </h2>
             <div className="space-y-3">
               {medicamento.interacoes.map((int, idx) => {
@@ -211,14 +213,14 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
                         int.gravidade === 'moderada' ? 'bg-orange-500 text-white' :
                         'bg-yellow-500 text-black'
                       }`}>
-                        {int.gravidade.toUpperCase()}
+                        {t(`interactions.severity.${int.gravidade}`)}
                       </span>
                     </div>
                     <p className="text-sm text-[#1d1d1f] dark:text-[#f5f5f7]">
-                      <strong>Efeito:</strong> {int.efeito}
+                      <strong>{t('interactions.effect')}:</strong> {int.efeito}
                     </p>
                     <p className="text-sm text-[#86868b] mt-1">
-                      <strong>Conduta:</strong> {int.conduta}
+                      <strong>{t('interactions.management')}:</strong> {int.conduta}
                     </p>
                   </div>
                 );
@@ -232,15 +234,15 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
           <div className="glass-strong rounded-2xl p-6">
             <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-4 flex items-center gap-2">
               <TestTube className="w-5 h-5 text-blue-500" />
-              Ajuste de Dose na Insuficiência Renal
+              {t('sections.renalAdjustment')}
             </h2>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-neutral-200 dark:border-neutral-700">
-                    <th className="text-left py-2 px-4 font-semibold">TFG (mL/min)</th>
-                    <th className="text-left py-2 px-4 font-semibold">Ajuste</th>
-                    <th className="text-left py-2 px-4 font-semibold">Observação</th>
+                    <th className="text-left py-2 px-4 font-semibold">{t('renalAdjustment.gfr')}</th>
+                    <th className="text-left py-2 px-4 font-semibold">{t('renalAdjustment.adjustment')}</th>
+                    <th className="text-left py-2 px-4 font-semibold">{t('renalAdjustment.observation')}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -257,7 +259,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
             <div className="mt-4 p-3 bg-blue-500/10 rounded-xl">
               <Link href="/calculadoras" className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline">
                 <Activity className="w-4 h-4" />
-                Usar calculadora CKD-EPI para estimar TFG
+                {t('renalAdjustment.calculatorLink')}
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
@@ -269,15 +271,15 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
           <div className={`rounded-2xl p-6 ${gestacaoInfo.color} bg-opacity-20`}>
             <h2 className="text-lg font-bold mb-2 flex items-center gap-2">
               <Baby className="w-5 h-5" />
-              Gestação - {gestacaoInfo.label}
+              {t('safety.pregnancy')} - {gestacaoInfo.label}
             </h2>
             <p className="text-sm">{gestacaoInfo.descricao}</p>
           </div>
-          
+
           <div className={`rounded-2xl p-6 ${medicamento.amamentacao.compativel ? 'bg-green-500/20' : 'bg-red-500/20'}`}>
             <h2 className="text-lg font-bold mb-2 flex items-center gap-2">
               <Heart className="w-5 h-5" />
-              Amamentação
+              {t('safety.breastfeeding')}
             </h2>
             <p className="text-sm">{medicamento.amamentacao.observacao}</p>
           </div>
@@ -287,7 +289,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
         <div className="glass-strong rounded-2xl p-6">
           <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-4 flex items-center gap-2">
             <Pill className="w-5 h-5 text-teal-500" />
-            Apresentações Disponíveis
+            {t('sections.availablePresentations')}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {medicamento.apresentacoes.map((ap, idx) => (
@@ -311,7 +313,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
           <div className="glass-subtle rounded-2xl p-6">
             <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-4 flex items-center gap-2">
               <Info className="w-5 h-5 text-cyan-500" />
-              Orientações ao Paciente
+              {t('sections.patientGuidelines')}
             </h2>
             <ul className="space-y-2">
               {medicamento.orientacoesPaciente.map((ori, idx) => (
@@ -327,7 +329,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
 
       {/* Last Update */}
       <div className="mt-8 text-center text-sm text-[#86868b]">
-        Última atualização: {medicamento.lastUpdate}
+        {t('lastUpdate')}: {medicamento.lastUpdate}
       </div>
     </div>
   );

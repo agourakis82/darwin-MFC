@@ -1193,5 +1193,55 @@
       "more": "+ {count} और",
       "priority": "प्राथमिकता"
     }
+  },
+  "medicationDetail": {
+    "backToPharmacy": "फार्मेसी पर वापस जाएं",
+    "badges": {
+      "pregnancyCategory": "गर्भावस्था: श्रेणी {category}",
+      "breastfeedingCompatible": "✓ स्तनपान के साथ संगत",
+      "breastfeedingAvoid": "✗ स्तनपान के दौरान टालें"
+    },
+    "sections": {
+      "mechanismOfAction": "क्रिया का तंत्र",
+      "indications": "संकेत",
+      "dosage": "खुराक",
+      "contraindications": "मतभेद",
+      "adverseEffects": "प्रतिकूल प्रभाव",
+      "drugInteractions": "दवा अंतःक्रियाएं",
+      "renalAdjustment": "गुर्दे की अपर्याप्तता में खुराक समायोजन",
+      "availablePresentations": "उपलब्ध प्रस्तुतियां",
+      "patientGuidelines": "रोगी मार्गदर्शन"
+    },
+    "dosage": {
+      "adults": "वयस्क",
+      "pediatric": "बाल",
+      "frequency": "आवृत्ति",
+      "maxDose": "अधिकतम खुराक"
+    },
+    "adverseEffects": {
+      "common": "सामान्य",
+      "severe": "गंभीर"
+    },
+    "interactions": {
+      "effect": "प्रभाव",
+      "management": "प्रबंधन",
+      "severity": {
+        "leve": "हल्का",
+        "moderada": "मध्यम",
+        "grave": "गंभीर",
+        "contraindicada": "विपरीत संकेत"
+      }
+    },
+    "renalAdjustment": {
+      "gfr": "GFR (mL/min)",
+      "adjustment": "समायोजन",
+      "observation": "टिप्पणी",
+      "calculatorLink": "GFR अनुमान के लिए CKD-EPI कैलकुलेटर का उपयोग करें"
+    },
+    "safety": {
+      "pregnancy": "गर्भावस्था",
+      "breastfeeding": "स्तनपान"
+    },
+    "lastUpdate": "अंतिम अपडेट"
   }
 }

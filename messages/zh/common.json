@@ -1193,5 +1193,55 @@
       "more": "+ 更多 {count}",
       "priority": "优先"
     }
+  },
+  "medicationDetail": {
+    "backToPharmacy": "返回药品库",
+    "badges": {
+      "pregnancyCategory": "妊娠：{category}类",
+      "breastfeedingCompatible": "✓ 哺乳期可用",
+      "breastfeedingAvoid": "✗ 哺乳期避免使用"
+    },
+    "sections": {
+      "mechanismOfAction": "作用机制",
+      "indications": "适应症",
+      "dosage": "用法用量",
+      "contraindications": "禁忌症",
+      "adverseEffects": "不良反应",
+      "drugInteractions": "药物相互作用",
+      "renalAdjustment": "肾功能不全剂量调整",
+      "availablePresentations": "可用剂型",
+      "patientGuidelines": "患者指导"
+    },
+    "dosage": {
+      "adults": "成人",
+      "pediatric": "儿童",
+      "frequency": "频率",
+      "maxDose": "最大剂量"
+    },
+    "adverseEffects": {
+      "common": "常见",
+      "severe": "严重"
+    },
+    "interactions": {
+      "effect": "影响",
+      "management": "处理",
+      "severity": {
+        "leve": "轻度",
+        "moderada": "中度",
+        "grave": "重度",
+        "contraindicada": "禁忌"
+      }
+    },
+    "renalAdjustment": {
+      "gfr": "GFR (mL/min)",
+      "adjustment": "调整",
+      "observation": "备注",
+      "calculatorLink": "使用CKD-EPI计算器估算GFR"
+    },
+    "safety": {
+      "pregnancy": "妊娠",
+      "breastfeeding": "哺乳"
+    },
+    "lastUpdate": "最后更新"
   }
 }
