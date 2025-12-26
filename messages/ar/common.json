@@ -1287,5 +1287,59 @@
       "fullContentDescription": "علم الأوبئة، الفيزيولوجيا المرضية، التشخيص التفريقي والمزيد",
       "access": "وصول"
     }
+  },
+  "flowchart": {
+    "backToProtocols": "البروتوكولات",
+    "showInfo": "إظهار المعلومات",
+    "hideInfo": "إخفاء المعلومات",
+    "categories": {
+      "urgencia": "طوارئ",
+      "cronico": "مزمن",
+      "preventivo": "وقائي",
+      "materno_infantil": "أمومة وطفولة",
+      "saude_mental": "صحة نفسية",
+      "infectologia": "أمراض معدية",
+      "cardiovascular": "قلبي وعائي",
+      "endocrino": "غدد صماء",
+      "respiratorio": "تنفسي",
+      "gastro": "جهاز هضمي",
+      "dermatologia": "جلدية",
+      "musculoesqueletico": "عضلي هيكلي"
+    },
+    "complexity": {
+      "basico": "أساسي",
+      "intermediario": "متوسط",
+      "avancado": "متقدم"
+    },
+    "sections": {
+      "description": "الوصف",
+      "objectives": "الأهداف",
+      "targetPopulation": "الفئة المستهدفة",
+      "warningSignals": "علامات التحذير",
+      "codes": "الرموز",
+      "medications": "الأدوية",
+      "relatedDiseases": "الأمراض ذات الصلة",
+      "whenToRefer": "متى يتم التحويل"
+    },
+    "referral": {
+      "to": "إلى"
+    },
+    "metadata": {
+      "version": "الإصدار",
+      "update": "التحديث",
+      "source": "المصدر"
+    },
+    "legend": {
+      "title": "المفتاح",
+      "start": "بداية",
+      "end": "نهاية",
+      "decision": "قرار",
+      "action": "إجراء",
+      "assessment": "تقييم",
+      "treatment": "علاج",
+      "refer": "تحويل",
+      "alert": "تنبيه"
+    },
+    "instructions": "انقر على العقد للتفاصيل • مرر للتكبير • اسحب للتحريك"
   }
 }

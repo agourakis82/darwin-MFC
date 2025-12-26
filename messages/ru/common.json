@@ -1287,5 +1287,59 @@
       "fullContentDescription": "Эпидемиология, патофизиология, дифференциальная диагностика и более",
       "access": "Открыть"
     }
+  },
+  "flowchart": {
+    "backToProtocols": "Протоколы",
+    "showInfo": "Показать информацию",
+    "hideInfo": "Скрыть информацию",
+    "categories": {
+      "urgencia": "Неотложная",
+      "cronico": "Хроническое",
+      "preventivo": "Профилактика",
+      "materno_infantil": "Материнство-детство",
+      "saude_mental": "Психическое здоровье",
+      "infectologia": "Инфекционные болезни",
+      "cardiovascular": "Сердечно-сосудистые",
+      "endocrino": "Эндокринология",
+      "respiratorio": "Дыхательная",
+      "gastro": "Гастро",
+      "dermatologia": "Дерматология",
+      "musculoesqueletico": "Костно-мышечная"
+    },
+    "complexity": {
+      "basico": "Базовый",
+      "intermediario": "Промежуточный",
+      "avancado": "Продвинутый"
+    },
+    "sections": {
+      "description": "Описание",
+      "objectives": "Цели",
+      "targetPopulation": "Целевая популяция",
+      "warningSignals": "Тревожные признаки",
+      "codes": "Коды",
+      "medications": "Препараты",
+      "relatedDiseases": "Связанные заболевания",
+      "whenToRefer": "Когда направлять"
+    },
+    "referral": {
+      "to": "Кому"
+    },
+    "metadata": {
+      "version": "Версия",
+      "update": "Обновление",
+      "source": "Источник"
+    },
+    "legend": {
+      "title": "Легенда",
+      "start": "Начало",
+      "end": "Конец",
+      "decision": "Решение",
+      "action": "Действие",
+      "assessment": "Оценка",
+      "treatment": "Лечение",
+      "refer": "Направить",
+      "alert": "Тревога"
+    },
+    "instructions": "Нажмите на узлы для деталей • Прокрутка для масштаба • Перетащите для перемещения"
   }
 }

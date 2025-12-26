@@ -1287,5 +1287,59 @@
       "fullContentDescription": "Epidemiología, fisiopatología, diagnóstico diferencial y más",
       "access": "Acceder"
     }
+  },
+  "flowchart": {
+    "backToProtocols": "Protocolos",
+    "showInfo": "Mostrar información",
+    "hideInfo": "Ocultar información",
+    "categories": {
+      "urgencia": "Urgencia",
+      "cronico": "Crónico",
+      "preventivo": "Preventivo",
+      "materno_infantil": "Materno-Infantil",
+      "saude_mental": "Salud Mental",
+      "infectologia": "Infectología",
+      "cardiovascular": "Cardiovascular",
+      "endocrino": "Endocrino",
+      "respiratorio": "Respiratorio",
+      "gastro": "Gastro",
+      "dermatologia": "Dermatología",
+      "musculoesqueletico": "Musculoesquelético"
+    },
+    "complexity": {
+      "basico": "Básico",
+      "intermediario": "Intermedio",
+      "avancado": "Avanzado"
+    },
+    "sections": {
+      "description": "Descripción",
+      "objectives": "Objetivos",
+      "targetPopulation": "Población Objetivo",
+      "warningSignals": "Señales de Alarma",
+      "codes": "Códigos",
+      "medications": "Medicamentos",
+      "relatedDiseases": "Enfermedades Relacionadas",
+      "whenToRefer": "Cuándo Derivar"
+    },
+    "referral": {
+      "to": "A"
+    },
+    "metadata": {
+      "version": "Versión",
+      "update": "Actualización",
+      "source": "Fuente"
+    },
+    "legend": {
+      "title": "Leyenda",
+      "start": "Inicio",
+      "end": "Fin",
+      "decision": "Decisión",
+      "action": "Acción",
+      "assessment": "Evaluación",
+      "treatment": "Tratamiento",
+      "refer": "Derivar",
+      "alert": "Alerta"
+    },
+    "instructions": "Clic en los nodos para ver detalles • Scroll para zoom • Arrastre para mover"
   }
 }

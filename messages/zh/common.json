@@ -1287,5 +1287,59 @@
       "fullContentDescription": "流行病学、病理生理学、鉴别诊断等",
       "access": "访问"
     }
+  },
+  "flowchart": {
+    "backToProtocols": "方案",
+    "showInfo": "显示信息",
+    "hideInfo": "隐藏信息",
+    "categories": {
+      "urgencia": "急诊",
+      "cronico": "慢性",
+      "preventivo": "预防",
+      "materno_infantil": "母婴",
+      "saude_mental": "心理健康",
+      "infectologia": "传染病",
+      "cardiovascular": "心血管",
+      "endocrino": "内分泌",
+      "respiratorio": "呼吸系统",
+      "gastro": "消化系统",
+      "dermatologia": "皮肤科",
+      "musculoesqueletico": "肌肉骨骼"
+    },
+    "complexity": {
+      "basico": "基础",
+      "intermediario": "中级",
+      "avancado": "高级"
+    },
+    "sections": {
+      "description": "描述",
+      "objectives": "目标",
+      "targetPopulation": "目标人群",
+      "warningSignals": "警示信号",
+      "codes": "代码",
+      "medications": "药物",
+      "relatedDiseases": "相关疾病",
+      "whenToRefer": "何时转诊"
+    },
+    "referral": {
+      "to": "至"
+    },
+    "metadata": {
+      "version": "版本",
+      "update": "更新",
+      "source": "来源"
+    },
+    "legend": {
+      "title": "图例",
+      "start": "开始",
+      "end": "结束",
+      "decision": "决策",
+      "action": "操作",
+      "assessment": "评估",
+      "treatment": "治疗",
+      "refer": "转诊",
+      "alert": "警报"
+    },
+    "instructions": "点击节点查看详情 • 滚动缩放 • 拖动移动"
   }
 }

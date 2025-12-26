@@ -1287,5 +1287,59 @@
       "fullContentDescription": "Επιδημιολογία, παθοφυσιολογία, διαφορική διάγνωση και άλλα",
       "access": "Πρόσβαση"
     }
+  },
+  "flowchart": {
+    "backToProtocols": "Πρωτόκολλα",
+    "showInfo": "Εμφάνιση πληροφοριών",
+    "hideInfo": "Απόκρυψη πληροφοριών",
+    "categories": {
+      "urgencia": "Επείγον",
+      "cronico": "Χρόνιο",
+      "preventivo": "Προληπτικό",
+      "materno_infantil": "Μητρότητα-Παιδί",
+      "saude_mental": "Ψυχική Υγεία",
+      "infectologia": "Λοιμωξιολογία",
+      "cardiovascular": "Καρδιαγγειακό",
+      "endocrino": "Ενδοκρινολογικό",
+      "respiratorio": "Αναπνευστικό",
+      "gastro": "Γαστρεντερικό",
+      "dermatologia": "Δερματολογία",
+      "musculoesqueletico": "Μυοσκελετικό"
+    },
+    "complexity": {
+      "basico": "Βασικό",
+      "intermediario": "Ενδιάμεσο",
+      "avancado": "Προχωρημένο"
+    },
+    "sections": {
+      "description": "Περιγραφή",
+      "objectives": "Στόχοι",
+      "targetPopulation": "Πληθυσμός-Στόχος",
+      "warningSignals": "Προειδοποιητικά Σημεία",
+      "codes": "Κωδικοί",
+      "medications": "Φάρμακα",
+      "relatedDiseases": "Σχετικές Ασθένειες",
+      "whenToRefer": "Πότε να Παραπέμψετε"
+    },
+    "referral": {
+      "to": "Προς"
+    },
+    "metadata": {
+      "version": "Έκδοση",
+      "update": "Ενημέρωση",
+      "source": "Πηγή"
+    },
+    "legend": {
+      "title": "Υπόμνημα",
+      "start": "Έναρξη",
+      "end": "Τέλος",
+      "decision": "Απόφαση",
+      "action": "Ενέργεια",
+      "assessment": "Αξιολόγηση",
+      "treatment": "Θεραπεία",
+      "refer": "Παραπομπή",
+      "alert": "Ειδοποίηση"
+    },
+    "instructions": "Κάντε κλικ στους κόμβους για λεπτομέρειες • Κύλιση για zoom • Σύρετε για μετακίνηση"
   }
 }
