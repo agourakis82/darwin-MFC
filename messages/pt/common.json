@@ -783,5 +783,248 @@
       "step3": "Use o zoom e pan para explorar fluxogramas complexos",
       "step4": "Ao final, copie a conduta para colar no prontuário"
     }
+  },
+  "calculadoras": {
+    "title": "Calculadoras Clínicas",
+    "subtitle": "Ferramentas de Avaliação de Risco e Decisão Clínica para APS",
+    "selectCalculator": "Selecione a Calculadora",
+    "warning": {
+      "title": "Aviso Importante:",
+      "text1": "Estas calculadoras são ferramentas educacionais e de apoio à decisão clínica.",
+      "text2": "Não substituem avaliação médica completa e julgamento clínico.",
+      "text3": "Todas as fórmulas incluem referências às fontes originais validadas (padrão Q1)."
+    },
+    "result": {
+      "title": "Resultado",
+      "interpretation": "Interpretação",
+      "recommendations": "Recomendações",
+      "formula": "Fórmula",
+      "references": "Referências (Padrão Q1)"
+    },
+    "emptyState": {
+      "fillAndCalculate": "Preencha os campos e calcule",
+      "resultWillAppear": "O resultado aparecerá aqui"
+    },
+    "common": {
+      "weight": "Peso (kg)",
+      "height": "Altura (m)",
+      "age": "Idade (anos)",
+      "sex": "Sexo",
+      "male": "Masculino",
+      "female": "Feminino",
+      "creatinine": "Creatinina (mg/dL)",
+      "exWeight": "Ex: 70",
+      "exHeight": "Ex: 1.75",
+      "exAge": "Ex: 55",
+      "exCreatinine": "Ex: 1.2",
+      "years": "Anos",
+      "totalCholesterol": "Colesterol Total (mg/dL)",
+      "hdl": "HDL (mg/dL)",
+      "systolicBP": "Pressão Sistólica (mmHg)",
+      "currentSmoker": "Fumante atual",
+      "diabetes": "Diabetes",
+      "hypertensionTreatment": "Em tratamento para hipertensão",
+      "calculateRisk": "Calcular Risco"
+    },
+    "calculators": {
+      "imc": {
+        "name": "IMC",
+        "desc": "Índice de Massa Corporal"
+      },
+      "ckdepi": {
+        "name": "CKD-EPI",
+        "desc": "Taxa Filtração Glomerular"
+      },
+      "cockcroft": {
+        "name": "Cockcroft",
+        "desc": "Clearance Creatinina"
+      },
+      "framingham": {
+        "name": "Framingham",
+        "desc": "Risco CV 10 anos"
+      },
+      "score": {
+        "name": "SCORE",
+        "desc": "Risco Morte CV"
+      },
+      "findrisc": {
+        "name": "FINDRISC",
+        "desc": "Risco DM2 10 anos"
+      },
+      "gail": {
+        "name": "Gail",
+        "desc": "Risco CA Mama"
+      },
+      "phq2": {
+        "name": "PHQ-2",
+        "desc": "Rastreio Depressão"
+      },
+      "phq9": {
+        "name": "PHQ-9",
+        "desc": "Depressão Completo"
+      },
+      "auditc": {
+        "name": "AUDIT-C",
+        "desc": "Uso de Álcool"
+      },
+      "cage": {
+        "name": "CAGE",
+        "desc": "Alcoolismo"
+      },
+      "dengue": {
+        "name": "Dengue",
+        "desc": "Hidratação"
+      },
+      "apgar": {
+        "name": "APGAR",
+        "desc": "Recém-Nascido"
+      }
+    },
+    "forms": {
+      "imc": {
+        "title": "Índice de Massa Corporal (IMC)",
+        "description": "Avaliação do estado nutricional baseado em peso e altura.",
+        "calculate": "Calcular IMC"
+      },
+      "ckdepi": {
+        "title": "Taxa de Filtração Glomerular (CKD-EPI 2021)",
+        "description": "Estimativa da função renal. Equação 2021 sem variável raça.",
+        "calculate": "Calcular TFG"
+      },
+      "cockcroft": {
+        "title": "Clearance de Creatinina (Cockcroft-Gault)",
+        "description": "Para ajuste de dose de medicamentos. Usa peso corporal real.",
+        "calculate": "Calcular Clearance"
+      },
+      "phq": {
+        "opt0": "0 - Nenhuma vez",
+        "opt1": "1 - Vários dias",
+        "opt2": "2 - Mais da metade dos dias",
+        "opt3": "3 - Quase todos os dias"
+      },
+      "phq9": {
+        "title": "PHQ-9 (Depressão)",
+        "description": "Nas últimas 2 semanas, com que frequência você foi incomodado(a) por:",
+        "calculate": "Calcular PHQ-9",
+        "q1": "Pouco interesse ou prazer em fazer as coisas",
+        "q2": "Sentir-se para baixo, deprimido(a) ou sem esperança",
+        "q3": "Dificuldade para pegar no sono, permanecer dormindo ou dormir demais",
+        "q4": "Sentir-se cansado(a) ou com pouca energia",
+        "q5": "Falta de apetite ou comer demais",
+        "q6": "Sentir-se mal consigo mesmo(a), ou achar que é um fracasso",
+        "q7": "Dificuldade para se concentrar nas coisas",
+        "q8": "Lentidão ou inquietação notadas por outros",
+        "q9": "Pensamentos de que seria melhor estar morto(a) ou de se machucar"
+      },
+      "phq2": {
+        "title": "PHQ-2 (Rastreamento Rápido)",
+        "description": "Nas últimas 2 semanas, com que frequência você foi incomodado(a) por:",
+        "calculate": "Calcular PHQ-2"
+      },
+      "auditc": {
+        "title": "AUDIT-C (Uso de Álcool)",
+        "description": "Rastreamento de uso problemático de álcool.",
+        "calculate": "Calcular AUDIT-C",
+        "q1": "Com que frequência você consome bebidas alcoólicas?",
+        "q2": "Quantas doses você consome em um dia típico?",
+        "q3": "Com que frequência você consome 5 ou mais doses em uma ocasião?",
+        "freq0": "Nunca",
+        "freq1": "Mensalmente ou menos",
+        "freq2": "2-4 vezes por mês",
+        "freq3": "2-3 vezes por semana",
+        "freq4": "4 ou mais vezes por semana",
+        "qty0": "1 ou 2",
+        "qty1": "3 ou 4",
+        "qty2": "5 ou 6",
+        "qty3": "7, 8 ou 9",
+        "qty4": "10 ou mais",
+        "binge0": "Nunca",
+        "binge1": "Menos que mensalmente",
+        "binge2": "Mensalmente",
+        "binge3": "Semanalmente",
+        "binge4": "Diariamente ou quase"
+      },
+      "cage": {
+        "title": "CAGE (Alcoolismo)",
+        "description": "Rastreamento de dependência alcoólica.",
+        "calculate": "Calcular CAGE",
+        "cutDown": "ut down - Você já sentiu que deveria diminuir a quantidade de bebida?",
+        "annoyed": "nnoyed - As pessoas o aborrecem porque criticam seu modo de beber?",
+        "guilty": "uilty - Você se sente culpado pela maneira como costuma beber?",
+        "eyeOpener": "ye-opener - Você costuma beber pela manhã para diminuir o nervosismo ou ressaca?"
+      },
+      "findrisc": {
+        "title": "FINDRISC (Risco de DM2)",
+        "description": "Predição de risco de diabetes tipo 2 em 10 anos.",
+        "calculate": "Calcular FINDRISC",
+        "bmi": "IMC (kg/m²)",
+        "waist": "Circ. Abdominal (cm)",
+        "familyHistory": "Histórico Familiar de DM",
+        "familyNone": "Nenhum",
+        "familySecond": "2º grau (avós, tios, primos)",
+        "familyFirst": "1º grau (pais, irmãos, filhos)",
+        "physicalActivity": "Pratica ≥30 min de atividade física/dia",
+        "vegetables": "Consome vegetais/frutas diariamente",
+        "antihypertensive": "Usa medicação anti-hipertensiva",
+        "prediabetes": "Já teve glicemia alterada (pré-diabetes)"
+      },
+      "dengue": {
+        "title": "Hidratação para Dengue",
+        "description": "Cálculo de volume de hidratação conforme classificação de risco.",
+        "calculate": "Calcular Hidratação",
+        "riskClassification": "Classificação de Risco",
+        "groupA": "Grupo A",
+        "groupADesc": "Sem sinais de alarme, sem comorbidades",
+        "groupB": "Grupo B",
+        "groupBDesc": "Sem sinais de alarme, com comorbidade ou risco social",
+        "groupC": "Grupo C",
+        "groupCDesc": "COM sinais de alarme (dor abdominal, vômitos, sangramento)",
+        "groupD": "Grupo D - GRAVE",
+        "groupDDesc": "Choque, sangramento grave, comprometimento de órgãos"
+      },
+      "apgar": {
+        "title": "Escore de APGAR",
+        "description": "Avaliação do recém-nascido no 1º e 5º minuto de vida.",
+        "calculate": "Calcular APGAR",
+        "heartRate": "Frequência Cardíaca",
+        "hr0": "0 - Ausente",
+        "hr1": "1 - <100 bpm",
+        "hr2": "2 - ≥100 bpm",
+        "respiration": "Respiração",
+        "resp0": "0 - Ausente",
+        "resp1": "1 - Fraca, irregular",
+        "resp2": "2 - Forte, choro vigoroso",
+        "muscleTone": "Tônus Muscular",
+        "tone0": "0 - Flácido",
+        "tone1": "1 - Flexão de extremidades",
+        "tone2": "2 - Movimentos ativos",
+        "reflexIrritability": "Irritabilidade Reflexa",
+        "reflex0": "0 - Sem resposta",
+        "reflex1": "1 - Careta, algum movimento",
+        "reflex2": "2 - Choro, tosse, espirro",
+        "skinColor": "Cor da Pele",
+        "color0": "0 - Cianose/palidez generalizada",
+        "color1": "1 - Corpo rosado, extremidades cianóticas",
+        "color2": "2 - Completamente rosado"
+      },
+      "framingham": {
+        "title": "Escore de Framingham",
+        "description": "Risco de evento cardiovascular em 10 anos."
+      },
+      "gail": {
+        "title": "Modelo de Gail",
+        "description": "Risco de câncer de mama em 5 anos.",
+        "currentAge": "Idade atual",
+        "menarcheAge": "Idade da menarca",
+        "firstBirthAge": "Idade do 1º parto (0 se nulípara)",
+        "relatives": "Parentes 1º grau com CA mama",
+        "twoOrMore": "2 ou mais",
+        "biopsies": "Nº de biópsias de mama"
+      },
+      "score": {
+        "title": "SCORE Europeu",
+        "description": "Risco de morte cardiovascular em 10 anos."
+      }
+    }
   }
 }

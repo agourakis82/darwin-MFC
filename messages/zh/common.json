@@ -468,5 +468,248 @@
       "step3": "使用缩放和平移探索复杂的流程图",
       "step4": "最后，复制建议粘贴到病历中"
     }
+  },
+  "calculadoras": {
+    "title": "临床计算器",
+    "subtitle": "初级保健风险评估和临床决策工具",
+    "selectCalculator": "选择计算器",
+    "warning": {
+      "title": "重要提示:",
+      "text1": "这些计算器是教育和临床决策支持工具。",
+      "text2": "不能替代完整的医学评估和临床判断。",
+      "text3": "所有公式都包含对已验证原始来源的参考（Q1标准）。"
+    },
+    "result": {
+      "title": "结果",
+      "interpretation": "解释",
+      "recommendations": "建议",
+      "formula": "公式",
+      "references": "参考文献（Q1标准）"
+    },
+    "emptyState": {
+      "fillAndCalculate": "填写字段并计算",
+      "resultWillAppear": "结果将显示在这里"
+    },
+    "common": {
+      "weight": "体重（公斤）",
+      "height": "身高（米）",
+      "age": "年龄（岁）",
+      "sex": "性别",
+      "male": "男",
+      "female": "女",
+      "creatinine": "肌酐（mg/dL）",
+      "exWeight": "例：70",
+      "exHeight": "例：1.75",
+      "exAge": "例：55",
+      "exCreatinine": "例：1.2",
+      "years": "岁",
+      "totalCholesterol": "总胆固醇（mg/dL）",
+      "hdl": "高密度脂蛋白（mg/dL）",
+      "systolicBP": "收缩压（mmHg）",
+      "currentSmoker": "当前吸烟",
+      "diabetes": "糖尿病",
+      "hypertensionTreatment": "高血压治疗中",
+      "calculateRisk": "计算风险"
+    },
+    "calculators": {
+      "imc": {
+        "name": "BMI",
+        "desc": "体质指数"
+      },
+      "ckdepi": {
+        "name": "CKD-EPI",
+        "desc": "肾小球滤过率"
+      },
+      "cockcroft": {
+        "name": "Cockcroft",
+        "desc": "肌酐清除率"
+      },
+      "framingham": {
+        "name": "弗雷明汉",
+        "desc": "10年心血管风险"
+      },
+      "score": {
+        "name": "SCORE",
+        "desc": "心血管死亡风险"
+      },
+      "findrisc": {
+        "name": "FINDRISC",
+        "desc": "10年2型糖尿病风险"
+      },
+      "gail": {
+        "name": "盖尔",
+        "desc": "乳腺癌风险"
+      },
+      "phq2": {
+        "name": "PHQ-2",
+        "desc": "抑郁筛查"
+      },
+      "phq9": {
+        "name": "PHQ-9",
+        "desc": "完整抑郁评估"
+      },
+      "auditc": {
+        "name": "AUDIT-C",
+        "desc": "酒精使用"
+      },
+      "cage": {
+        "name": "CAGE",
+        "desc": "酒精依赖"
+      },
+      "dengue": {
+        "name": "登革热",
+        "desc": "补液"
+      },
+      "apgar": {
+        "name": "阿普加",
+        "desc": "新生儿"
+      }
+    },
+    "forms": {
+      "imc": {
+        "title": "体质指数（BMI）",
+        "description": "基于体重和身高的营养状况评估。",
+        "calculate": "计算BMI"
+      },
+      "ckdepi": {
+        "title": "肾小球滤过率（CKD-EPI 2021）",
+        "description": "肾功能估计。2021方程无种族变量。",
+        "calculate": "计算GFR"
+      },
+      "cockcroft": {
+        "title": "肌酐清除率（Cockcroft-Gault）",
+        "description": "用于药物剂量调整。使用实际体重。",
+        "calculate": "计算清除率"
+      },
+      "phq": {
+        "opt0": "0 - 从不",
+        "opt1": "1 - 几天",
+        "opt2": "2 - 超过一半的天数",
+        "opt3": "3 - 几乎每天"
+      },
+      "phq9": {
+        "title": "PHQ-9（抑郁症）",
+        "description": "过去两周，以下问题困扰您的频率：",
+        "calculate": "计算PHQ-9",
+        "q1": "做事缺乏兴趣或乐趣",
+        "q2": "感到沮丧、抑郁或绝望",
+        "q3": "入睡困难或睡眠过多",
+        "q4": "感到疲倦或精力不足",
+        "q5": "食欲不振或暴饮暴食",
+        "q6": "对自己感到不满",
+        "q7": "难以集中注意力",
+        "q8": "行动或说话缓慢或坐立不安",
+        "q9": "想到死亡或伤害自己"
+      },
+      "phq2": {
+        "title": "PHQ-2（快速筛查）",
+        "description": "过去两周，以下问题困扰您的频率：",
+        "calculate": "计算PHQ-2"
+      },
+      "auditc": {
+        "title": "AUDIT-C（酒精使用）",
+        "description": "问题性酒精使用筛查。",
+        "calculate": "计算AUDIT-C",
+        "q1": "您多久饮酒一次？",
+        "q2": "通常一天喝多少？",
+        "q3": "多久喝5杯或更多？",
+        "freq0": "从不",
+        "freq1": "每月或更少",
+        "freq2": "每月2-4次",
+        "freq3": "每周2-3次",
+        "freq4": "每周4次以上",
+        "qty0": "1-2杯",
+        "qty1": "3-4杯",
+        "qty2": "5-6杯",
+        "qty3": "7-9杯",
+        "qty4": "10杯以上",
+        "binge0": "从不",
+        "binge1": "少于每月",
+        "binge2": "每月",
+        "binge3": "每周",
+        "binge4": "每天"
+      },
+      "cage": {
+        "title": "CAGE（酒精依赖）",
+        "description": "酒精依赖筛查。",
+        "calculate": "计算CAGE",
+        "cutDown": "ut down - 您是否觉得应该减少饮酒？",
+        "annoyed": "nnoyed - 别人批评您饮酒让您恼火吗？",
+        "guilty": "uilty - 您是否为饮酒感到内疚？",
+        "eyeOpener": "ye-opener - 您是否早上喝酒来镇定神经？"
+      },
+      "findrisc": {
+        "title": "FINDRISC（2型糖尿病风险）",
+        "description": "10年2型糖尿病风险预测。",
+        "calculate": "计算FINDRISC",
+        "bmi": "BMI（kg/m²）",
+        "waist": "腰围（cm）",
+        "familyHistory": "糖尿病家族史",
+        "familyNone": "无",
+        "familySecond": "二级亲属",
+        "familyFirst": "一级亲属",
+        "physicalActivity": "体力活动≥30分钟/天",
+        "vegetables": "每天吃蔬菜/水果",
+        "antihypertensive": "使用降压药",
+        "prediabetes": "既往血糖升高"
+      },
+      "dengue": {
+        "title": "登革热补液",
+        "description": "根据风险分类计算补液量。",
+        "calculate": "计算补液",
+        "riskClassification": "风险分类",
+        "groupA": "A组",
+        "groupADesc": "无警示征兆，无合并症",
+        "groupB": "B组",
+        "groupBDesc": "无警示征兆，有合并症",
+        "groupC": "C组",
+        "groupCDesc": "有警示征兆",
+        "groupD": "D组 - 严重",
+        "groupDDesc": "休克，严重出血"
+      },
+      "apgar": {
+        "title": "阿普加评分",
+        "description": "新生儿第1和第5分钟评估。",
+        "calculate": "计算阿普加",
+        "heartRate": "心率",
+        "hr0": "0 - 无",
+        "hr1": "1 - <100次/分",
+        "hr2": "2 - ≥100次/分",
+        "respiration": "呼吸",
+        "resp0": "0 - 无",
+        "resp1": "1 - 弱",
+        "resp2": "2 - 强壮哭声",
+        "muscleTone": "肌张力",
+        "tone0": "0 - 松弛",
+        "tone1": "1 - 四肢屈曲",
+        "tone2": "2 - 主动活动",
+        "reflexIrritability": "反射",
+        "reflex0": "0 - 无反应",
+        "reflex1": "1 - 做鬼脸",
+        "reflex2": "2 - 哭泣、咳嗽",
+        "skinColor": "皮肤颜色",
+        "color0": "0 - 青紫/苍白",
+        "color1": "1 - 躯干粉红，四肢青紫",
+        "color2": "2 - 全身粉红"
+      },
+      "framingham": {
+        "title": "弗雷明汉评分",
+        "description": "10年心血管事件风险。"
+      },
+      "gail": {
+        "title": "盖尔模型",
+        "description": "5年乳腺癌风险。",
+        "currentAge": "当前年龄",
+        "menarcheAge": "初潮年龄",
+        "firstBirthAge": "首次分娩年龄（未生育填0）",
+        "relatives": "一级亲属乳腺癌",
+        "twoOrMore": "2个或更多",
+        "biopsies": "乳腺活检次数"
+      },
+      "score": {
+        "title": "欧洲SCORE",
+        "description": "10年心血管死亡风险。"
+      }
+    }
   }
 }
