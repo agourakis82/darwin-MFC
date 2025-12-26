@@ -1330,5 +1330,64 @@
       "importError": "Erro ao importar arquivo",
       "clearConfirm": "Tem certeza que deseja limpar o ecomapa?"
     }
+  },
+  "quickConsultation": {
+    "title": "Consulta Rápida",
+    "searchPlaceholder": "Buscar medicamento ou doença...",
+    "tabs": {
+      "home": "Início",
+      "meds": "Meds",
+      "medications": "Medicamentos",
+      "diseases": "Doenças",
+      "calc": "Calc",
+      "calculators": "Calculadoras"
+    },
+    "quickDoses": {
+      "title": "Doses Rápidas",
+      "filter": "Filtrar...",
+      "more": "+{count} mais"
+    },
+    "quickAccess": {
+      "title": "Acesso Rápido",
+      "interactions": "Interações",
+      "check": "Verificar",
+      "soapNote": "Nota SOAP",
+      "generate": "Gerar",
+      "comparator": "Comparador",
+      "medications": "Medicamentos",
+      "protocols": "Protocolos",
+      "flowcharts": "Fluxogramas"
+    },
+    "calculators": {
+      "bmi": "IMC",
+      "gfr": "TFG (CKD-EPI)",
+      "cvRisk": "Risco CV",
+      "wells": "Wells (TEP/TVP)",
+      "framingham": "Framingham",
+      "gestationalAge": "Idade Gestacional"
+    },
+    "medDetail": {
+      "dosage": "Posologia",
+      "adults": "Adultos",
+      "pediatric": "Pediátrico",
+      "contraindications": "Contraindicações",
+      "pregnancy": "Gestação",
+      "breastfeeding": "Amamentação",
+      "category": "Categoria {category}",
+      "compatible": "Compatível",
+      "avoid": "Evitar",
+      "viewFullInfo": "Ver Bula Completa"
+    },
+    "medsTab": {
+      "title": "Medicamentos RENAME"
+    },
+    "diseasesTab": {
+      "title": "Doenças da APS"
+    },
+    "calcTab": {
+      "title": "Calculadoras Clínicas",
+      "openCalculators": "Abrir Calculadoras",
+      "description": "IMC, TFG, Risco CV, e mais"
+    }
   }
 }

@@ -1015,5 +1015,64 @@
       "importError": "导入文件错误",
       "clearConfirm": "您确定要清除生态图吗？"
     }
+  },
+  "quickConsultation": {
+    "title": "快速咨询",
+    "searchPlaceholder": "搜索药物或疾病...",
+    "tabs": {
+      "home": "首页",
+      "meds": "药物",
+      "medications": "药物列表",
+      "diseases": "疾病",
+      "calc": "计算器",
+      "calculators": "计算器"
+    },
+    "quickDoses": {
+      "title": "快速剂量",
+      "filter": "筛选...",
+      "more": "+{count} 更多"
+    },
+    "quickAccess": {
+      "title": "快速访问",
+      "interactions": "相互作用",
+      "check": "检查",
+      "soapNote": "SOAP记录",
+      "generate": "生成",
+      "comparator": "比较器",
+      "medications": "药物",
+      "protocols": "协议",
+      "flowcharts": "流程图"
+    },
+    "calculators": {
+      "bmi": "BMI",
+      "gfr": "eGFR (CKD-EPI)",
+      "cvRisk": "心血管风险",
+      "wells": "Wells评分",
+      "framingham": "Framingham",
+      "gestationalAge": "孕龄"
+    },
+    "medDetail": {
+      "dosage": "用法用量",
+      "adults": "成人",
+      "pediatric": "儿童",
+      "contraindications": "禁忌症",
+      "pregnancy": "妊娠",
+      "breastfeeding": "哺乳",
+      "category": "{category}类",
+      "compatible": "兼容",
+      "avoid": "避免",
+      "viewFullInfo": "查看完整信息"
+    },
+    "medsTab": {
+      "title": "RENAME药物"
+    },
+    "diseasesTab": {
+      "title": "基层医疗疾病"
+    },
+    "calcTab": {
+      "title": "临床计算器",
+      "openCalculators": "打开计算器",
+      "description": "BMI、GFR、心血管风险等"
+    }
   }
 }

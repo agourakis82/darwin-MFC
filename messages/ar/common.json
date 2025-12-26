@@ -1015,5 +1015,64 @@
       "importError": "خطأ في استيراد الملف",
       "clearConfirm": "هل أنت متأكد أنك تريد مسح الخريطة البيئية؟"
     }
+  },
+  "quickConsultation": {
+    "title": "استشارة سريعة",
+    "searchPlaceholder": "البحث عن دواء أو مرض...",
+    "tabs": {
+      "home": "الرئيسية",
+      "meds": "أدوية",
+      "medications": "الأدوية",
+      "diseases": "الأمراض",
+      "calc": "حاسبة",
+      "calculators": "الحاسبات"
+    },
+    "quickDoses": {
+      "title": "جرعات سريعة",
+      "filter": "تصفية...",
+      "more": "+{count} المزيد"
+    },
+    "quickAccess": {
+      "title": "وصول سريع",
+      "interactions": "التفاعلات",
+      "check": "تحقق",
+      "soapNote": "ملاحظة SOAP",
+      "generate": "إنشاء",
+      "comparator": "مقارنة",
+      "medications": "الأدوية",
+      "protocols": "البروتوكولات",
+      "flowcharts": "المخططات"
+    },
+    "calculators": {
+      "bmi": "مؤشر كتلة الجسم",
+      "gfr": "معدل الترشيح الكبيبي",
+      "cvRisk": "خطر القلب والأوعية",
+      "wells": "ويلز (PE/DVT)",
+      "framingham": "فرامنغهام",
+      "gestationalAge": "عمر الحمل"
+    },
+    "medDetail": {
+      "dosage": "الجرعات",
+      "adults": "البالغون",
+      "pediatric": "الأطفال",
+      "contraindications": "موانع الاستعمال",
+      "pregnancy": "الحمل",
+      "breastfeeding": "الرضاعة",
+      "category": "الفئة {category}",
+      "compatible": "متوافق",
+      "avoid": "تجنب",
+      "viewFullInfo": "عرض المعلومات الكاملة"
+    },
+    "medsTab": {
+      "title": "أدوية RENAME"
+    },
+    "diseasesTab": {
+      "title": "أمراض الرعاية الأولية"
+    },
+    "calcTab": {
+      "title": "الحاسبات السريرية",
+      "openCalculators": "فتح الحاسبات",
+      "description": "مؤشر الكتلة، معدل الترشيح، والمزيد"
+    }
   }
 }

@@ -1015,5 +1015,64 @@
       "importError": "Σφάλμα εισαγωγής αρχείου",
       "clearConfirm": "Είστε σίγουροι ότι θέλετε να καθαρίσετε τον οικοχάρτη;"
     }
+  },
+  "quickConsultation": {
+    "title": "Γρήγορη Διαβούλευση",
+    "searchPlaceholder": "Αναζήτηση φαρμάκου ή νόσου...",
+    "tabs": {
+      "home": "Αρχική",
+      "meds": "Φάρμακα",
+      "medications": "Φαρμακευτικά",
+      "diseases": "Νόσοι",
+      "calc": "Υπολ.",
+      "calculators": "Υπολογιστές"
+    },
+    "quickDoses": {
+      "title": "Γρήγορες Δόσεις",
+      "filter": "Φίλτρο...",
+      "more": "+{count} ακόμη"
+    },
+    "quickAccess": {
+      "title": "Γρήγορη Πρόσβαση",
+      "interactions": "Αλληλεπιδράσεις",
+      "check": "Έλεγχος",
+      "soapNote": "Σημείωση SOAP",
+      "generate": "Δημιουργία",
+      "comparator": "Σύγκριση",
+      "medications": "Φάρμακα",
+      "protocols": "Πρωτόκολλα",
+      "flowcharts": "Διαγράμματα"
+    },
+    "calculators": {
+      "bmi": "ΔΜΣ",
+      "gfr": "eGFR (CKD-EPI)",
+      "cvRisk": "Καρδιαγγ. Κίνδυνος",
+      "wells": "Wells (ΠΕ/ΕΦΘ)",
+      "framingham": "Framingham",
+      "gestationalAge": "Ηλικία Κύησης"
+    },
+    "medDetail": {
+      "dosage": "Δοσολογία",
+      "adults": "Ενήλικες",
+      "pediatric": "Παιδιατρικό",
+      "contraindications": "Αντενδείξεις",
+      "pregnancy": "Εγκυμοσύνη",
+      "breastfeeding": "Θηλασμός",
+      "category": "Κατηγορία {category}",
+      "compatible": "Συμβατό",
+      "avoid": "Αποφυγή",
+      "viewFullInfo": "Πλήρεις Πληροφορίες"
+    },
+    "medsTab": {
+      "title": "Φάρμακα RENAME"
+    },
+    "diseasesTab": {
+      "title": "Νόσοι ΠΦΥ"
+    },
+    "calcTab": {
+      "title": "Κλινικοί Υπολογιστές",
+      "openCalculators": "Άνοιγμα Υπολογιστών",
+      "description": "ΔΜΣ, GFR, Καρδιαγγ. Κίνδυνος κ.ά."
+    }
   }
 }

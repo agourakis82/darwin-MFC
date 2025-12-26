@@ -1015,5 +1015,64 @@
       "importError": "फ़ाइल आयात करने में त्रुटि",
       "clearConfirm": "क्या आप वाकई इकोमैप साफ़ करना चाहते हैं?"
     }
+  },
+  "quickConsultation": {
+    "title": "त्वरित परामर्श",
+    "searchPlaceholder": "दवा या बीमारी खोजें...",
+    "tabs": {
+      "home": "होम",
+      "meds": "दवाएं",
+      "medications": "दवाइयाँ",
+      "diseases": "रोग",
+      "calc": "गणक",
+      "calculators": "कैलकुलेटर"
+    },
+    "quickDoses": {
+      "title": "त्वरित खुराक",
+      "filter": "फ़िल्टर...",
+      "more": "+{count} और"
+    },
+    "quickAccess": {
+      "title": "त्वरित पहुंच",
+      "interactions": "इंटरैक्शन",
+      "check": "जांचें",
+      "soapNote": "SOAP नोट",
+      "generate": "बनाएं",
+      "comparator": "तुलनाकर्ता",
+      "medications": "दवाइयाँ",
+      "protocols": "प्रोटोकॉल",
+      "flowcharts": "फ़्लोचार्ट"
+    },
+    "calculators": {
+      "bmi": "BMI",
+      "gfr": "eGFR (CKD-EPI)",
+      "cvRisk": "CV जोखिम",
+      "wells": "Wells (PE/DVT)",
+      "framingham": "Framingham",
+      "gestationalAge": "गर्भकालीन आयु"
+    },
+    "medDetail": {
+      "dosage": "खुराक",
+      "adults": "वयस्क",
+      "pediatric": "बाल रोग",
+      "contraindications": "प्रतिकूल संकेत",
+      "pregnancy": "गर्भावस्था",
+      "breastfeeding": "स्तनपान",
+      "category": "श्रेणी {category}",
+      "compatible": "संगत",
+      "avoid": "बचें",
+      "viewFullInfo": "पूर्ण जानकारी देखें"
+    },
+    "medsTab": {
+      "title": "RENAME दवाइयाँ"
+    },
+    "diseasesTab": {
+      "title": "प्राथमिक देखभाल रोग"
+    },
+    "calcTab": {
+      "title": "क्लिनिकल कैलकुलेटर",
+      "openCalculators": "कैलकुलेटर खोलें",
+      "description": "BMI, GFR, CV जोखिम, और अधिक"
+    }
   }
 }

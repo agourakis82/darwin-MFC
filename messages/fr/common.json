@@ -1015,5 +1015,64 @@
       "importError": "Erreur lors de l'importation du fichier",
       "clearConfirm": "Êtes-vous sûr de vouloir effacer l'écomap?"
     }
+  },
+  "quickConsultation": {
+    "title": "Consultation Rapide",
+    "searchPlaceholder": "Rechercher médicament ou maladie...",
+    "tabs": {
+      "home": "Accueil",
+      "meds": "Méds",
+      "medications": "Médicaments",
+      "diseases": "Maladies",
+      "calc": "Calc",
+      "calculators": "Calculateurs"
+    },
+    "quickDoses": {
+      "title": "Doses Rapides",
+      "filter": "Filtrer...",
+      "more": "+{count} de plus"
+    },
+    "quickAccess": {
+      "title": "Accès Rapide",
+      "interactions": "Interactions",
+      "check": "Vérifier",
+      "soapNote": "Note SOAP",
+      "generate": "Générer",
+      "comparator": "Comparateur",
+      "medications": "Médicaments",
+      "protocols": "Protocoles",
+      "flowcharts": "Organigrammes"
+    },
+    "calculators": {
+      "bmi": "IMC",
+      "gfr": "DFGe (CKD-EPI)",
+      "cvRisk": "Risque CV",
+      "wells": "Wells (EP/TVP)",
+      "framingham": "Framingham",
+      "gestationalAge": "Âge Gestationnel"
+    },
+    "medDetail": {
+      "dosage": "Posologie",
+      "adults": "Adultes",
+      "pediatric": "Pédiatrique",
+      "contraindications": "Contre-indications",
+      "pregnancy": "Grossesse",
+      "breastfeeding": "Allaitement",
+      "category": "Catégorie {category}",
+      "compatible": "Compatible",
+      "avoid": "Éviter",
+      "viewFullInfo": "Voir Information Complète"
+    },
+    "medsTab": {
+      "title": "Médicaments RENAME"
+    },
+    "diseasesTab": {
+      "title": "Maladies des Soins Primaires"
+    },
+    "calcTab": {
+      "title": "Calculateurs Cliniques",
+      "openCalculators": "Ouvrir Calculateurs",
+      "description": "IMC, DFG, Risque CV, et plus"
+    }
   }
 }

@@ -1015,5 +1015,64 @@
       "importError": "Ошибка импорта файла",
       "clearConfirm": "Вы уверены, что хотите очистить экокарту?"
     }
+  },
+  "quickConsultation": {
+    "title": "Быстрая Консультация",
+    "searchPlaceholder": "Поиск лекарства или заболевания...",
+    "tabs": {
+      "home": "Главная",
+      "meds": "Лекарства",
+      "medications": "Препараты",
+      "diseases": "Болезни",
+      "calc": "Калькул.",
+      "calculators": "Калькуляторы"
+    },
+    "quickDoses": {
+      "title": "Быстрые Дозы",
+      "filter": "Фильтр...",
+      "more": "+{count} ещё"
+    },
+    "quickAccess": {
+      "title": "Быстрый Доступ",
+      "interactions": "Взаимодействия",
+      "check": "Проверить",
+      "soapNote": "Заметка SOAP",
+      "generate": "Создать",
+      "comparator": "Сравнение",
+      "medications": "Препараты",
+      "protocols": "Протоколы",
+      "flowcharts": "Схемы"
+    },
+    "calculators": {
+      "bmi": "ИМТ",
+      "gfr": "СКФ (CKD-EPI)",
+      "cvRisk": "СС Риск",
+      "wells": "Уэллс (ТЭЛА/ТГВ)",
+      "framingham": "Фремингем",
+      "gestationalAge": "Гестационный Возраст"
+    },
+    "medDetail": {
+      "dosage": "Дозировка",
+      "adults": "Взрослые",
+      "pediatric": "Педиатрия",
+      "contraindications": "Противопоказания",
+      "pregnancy": "Беременность",
+      "breastfeeding": "Кормление",
+      "category": "Категория {category}",
+      "compatible": "Совместимо",
+      "avoid": "Избегать",
+      "viewFullInfo": "Полная Информация"
+    },
+    "medsTab": {
+      "title": "Препараты RENAME"
+    },
+    "diseasesTab": {
+      "title": "Болезни ПМСП"
+    },
+    "calcTab": {
+      "title": "Клинические Калькуляторы",
+      "openCalculators": "Открыть Калькуляторы",
+      "description": "ИМТ, СКФ, СС Риск и др."
+    }
   }
 }

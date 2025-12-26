@@ -1330,5 +1330,64 @@
       "importError": "Error importing file",
       "clearConfirm": "Are you sure you want to clear the ecomap?"
     }
+  },
+  "quickConsultation": {
+    "title": "Quick Consultation",
+    "searchPlaceholder": "Search medication or disease...",
+    "tabs": {
+      "home": "Home",
+      "meds": "Meds",
+      "medications": "Medications",
+      "diseases": "Diseases",
+      "calc": "Calc",
+      "calculators": "Calculators"
+    },
+    "quickDoses": {
+      "title": "Quick Doses",
+      "filter": "Filter...",
+      "more": "+{count} more"
+    },
+    "quickAccess": {
+      "title": "Quick Access",
+      "interactions": "Interactions",
+      "check": "Check",
+      "soapNote": "SOAP Note",
+      "generate": "Generate",
+      "comparator": "Comparator",
+      "medications": "Medications",
+      "protocols": "Protocols",
+      "flowcharts": "Flowcharts"
+    },
+    "calculators": {
+      "bmi": "BMI",
+      "gfr": "eGFR (CKD-EPI)",
+      "cvRisk": "CV Risk",
+      "wells": "Wells (PE/DVT)",
+      "framingham": "Framingham",
+      "gestationalAge": "Gestational Age"
+    },
+    "medDetail": {
+      "dosage": "Dosage",
+      "adults": "Adults",
+      "pediatric": "Pediatric",
+      "contraindications": "Contraindications",
+      "pregnancy": "Pregnancy",
+      "breastfeeding": "Breastfeeding",
+      "category": "Category {category}",
+      "compatible": "Compatible",
+      "avoid": "Avoid",
+      "viewFullInfo": "View Full Information"
+    },
+    "medsTab": {
+      "title": "RENAME Medications"
+    },
+    "diseasesTab": {
+      "title": "Primary Care Diseases"
+    },
+    "calcTab": {
+      "title": "Clinical Calculators",
+      "openCalculators": "Open Calculators",
+      "description": "BMI, GFR, CV Risk, and more"
+    }
   }
 }

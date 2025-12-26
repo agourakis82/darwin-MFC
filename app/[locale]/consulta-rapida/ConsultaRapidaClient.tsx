@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useCallback } from 'react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Search, Pill, FileText, Calculator, Stethoscope, ChevronRight, X, Heart, Activity, Syringe, Shield, Clock, ArrowLeft, Home } from 'lucide-react';
 import { todosMedicamentos, searchMedicamentos } from '@/lib/data/medicamentos/index';
@@ -44,17 +45,18 @@ const dosesRapidas: QuickDose[] = [
   { id: '20', nome: 'Sertralina', indicacao: 'Depressão / Ansiedade', dose: '50-100mg', via: 'VO', frequencia: '1x/dia' },
 ];
 
-// Calculadoras rápidas
+// Calculadoras rápidas - keys for translation
 const calculadorasRapidas = [
-  { id: 'imc', nome: 'IMC', icon: '⚖️', path: '/calculadoras' },
-  { id: 'ckdepi', nome: 'TFG (CKD-EPI)', icon: '🫘', path: '/calculadoras' },
-  { id: 'risco-cv', nome: 'Risco CV', icon: '❤️', path: '/calculadoras' },
-  { id: 'wells', nome: 'Wells (TEP/TVP)', icon: '🩸', path: '/calculadoras' },
-  { id: 'framingham', nome: 'Framingham', icon: '📊', path: '/calculadoras' },
-  { id: 'gestacao', nome: 'Idade Gestacional', icon: '🤰', path: '/calculadoras' },
+  { id: 'imc', nameKey: 'calculators.bmi', icon: '⚖️', path: '/calculadoras' },
+  { id: 'ckdepi', nameKey: 'calculators.gfr', icon: '🫘', path: '/calculadoras' },
+  { id: 'risco-cv', nameKey: 'calculators.cvRisk', icon: '❤️', path: '/calculadoras' },
+  { id: 'wells', nameKey: 'calculators.wells', icon: '🩸', path: '/calculadoras' },
+  { id: 'framingham', nameKey: 'calculators.framingham', icon: '📊', path: '/calculadoras' },
+  { id: 'gestacao', nameKey: 'calculators.gestationalAge', icon: '🤰', path: '/calculadoras' },
 ];
 
 export default function ConsultaRapidaClient() {
+  const t = useTranslations('quickConsultation');
   const [activeTab, setActiveTab] = useState<TabType>('inicio');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedMed, setSelectedMed] = useState<Medicamento | null>(null);
@@ -136,16 +138,16 @@ export default function ConsultaRapidaClient() {
           <section className="bg-white dark:bg-slate-800 rounded-xl p-4">
             <h2 className="font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
               <Pill className="w-5 h-5 text-blue-500" />
-              Posologia
+              {t('medDetail.dosage')}
             </h2>
             {selectedMed.posologias.map((pos, i) => (
               <div key={i} className="mb-3 pb-3 border-b border-slate-100 dark:border-slate-700 last:border-0 last:pb-0 last:mb-0">
                 <p className="text-xs font-medium text-blue-600 dark:text-blue-400 mb-1">{pos.indicacao}</p>
                 <div className="text-sm text-slate-700 dark:text-slate-300">
-                  <p><strong>Adultos:</strong> {pos.adultos.dose} - {pos.adultos.frequencia}</p>
+                  <p><strong>{t('medDetail.adults')}:</strong> {pos.adultos.dose} - {pos.adultos.frequencia}</p>
                   {pos.pediatrico && (
                     <p className="text-xs text-slate-500 mt-1">
-                      <strong>Pediátrico:</strong> {pos.pediatrico.dose}
+                      <strong>{t('medDetail.pediatric')}:</strong> {pos.pediatrico.dose}
                     </p>
                   )}
                 </div>
@@ -157,7 +159,7 @@ export default function ConsultaRapidaClient() {
           <section className="bg-red-50 dark:bg-red-950/50 rounded-xl p-4 border border-red-200 dark:border-red-800">
             <h2 className="font-bold text-red-800 dark:text-red-200 mb-2 flex items-center gap-2">
               <X className="w-5 h-5" />
-              Contraindicações
+              {t('medDetail.contraindications')}
             </h2>
             <ul className="text-sm text-red-700 dark:text-red-300 space-y-1">
               {selectedMed.contraindicacoes.slice(0, 5).map((ci, i) => (
@@ -172,22 +174,22 @@ export default function ConsultaRapidaClient() {
           {/* Gestação/Amamentação */}
           <div className="grid grid-cols-2 gap-3">
             <div className={`p-3 rounded-xl ${
-              selectedMed.gestacao === 'A' || selectedMed.gestacao === 'B' 
+              selectedMed.gestacao === 'A' || selectedMed.gestacao === 'B'
                 ? 'bg-green-50 dark:bg-green-950/50 border border-green-200 dark:border-green-800'
                 : selectedMed.gestacao === 'X'
                 ? 'bg-red-50 dark:bg-red-950/50 border border-red-200 dark:border-red-800'
                 : 'bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-800'
             }`}>
-              <p className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">🤰 Gestação</p>
-              <p className="font-bold">Categoria {selectedMed.gestacao}</p>
+              <p className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">🤰 {t('medDetail.pregnancy')}</p>
+              <p className="font-bold">{t('medDetail.category', { category: selectedMed.gestacao })}</p>
             </div>
             <div className={`p-3 rounded-xl ${
               selectedMed.amamentacao.compativel
                 ? 'bg-green-50 dark:bg-green-950/50 border border-green-200 dark:border-green-800'
                 : 'bg-red-50 dark:bg-red-950/50 border border-red-200 dark:border-red-800'
             }`}>
-              <p className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">🍼 Amamentação</p>
-              <p className="font-bold">{selectedMed.amamentacao.compativel ? 'Compatível' : 'Evitar'}</p>
+              <p className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">🍼 {t('medDetail.breastfeeding')}</p>
+              <p className="font-bold">{selectedMed.amamentacao.compativel ? t('medDetail.compatible') : t('medDetail.avoid')}</p>
             </div>
           </div>
 
@@ -196,7 +198,7 @@ export default function ConsultaRapidaClient() {
             href={`/medicamentos/${selectedMed.id}`}
             className="block w-full p-3 bg-blue-500 text-white text-center rounded-xl font-medium"
           >
-            Ver Bula Completa →
+            {t('medDetail.viewFullInfo')} →
           </Link>
         </main>
       </div>
@@ -210,19 +212,19 @@ export default function ConsultaRapidaClient() {
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
             <Activity className="w-6 h-6" />
-            <h1 className="font-bold text-lg">Consulta Rápida</h1>
+            <h1 className="font-bold text-lg">{t('title')}</h1>
           </div>
           <Link href="/" className="p-2 hover:bg-white/20 rounded-lg">
             <Home className="w-5 h-5" />
           </Link>
         </div>
-        
+
         {/* Busca Global */}
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/60" />
           <input
             type="text"
-            placeholder="Buscar medicamento ou doença..."
+            placeholder={t('searchPlaceholder')}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-2.5 bg-white/20 backdrop-blur border border-white/30 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
@@ -233,7 +235,7 @@ export default function ConsultaRapidaClient() {
             <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 max-h-64 overflow-y-auto">
               {searchResults.meds.length > 0 && (
                 <div className="p-2">
-                  <p className="text-xs font-medium text-slate-400 px-2 mb-1">💊 Medicamentos</p>
+                  <p className="text-xs font-medium text-slate-400 px-2 mb-1">💊 {t('tabs.medications')}</p>
                   {searchResults.meds.map(med => (
                     <button
                       key={med.id}
@@ -251,7 +253,7 @@ export default function ConsultaRapidaClient() {
               )}
               {searchResults.doencas.length > 0 && (
                 <div className="p-2 border-t border-slate-100 dark:border-slate-700">
-                  <p className="text-xs font-medium text-slate-400 px-2 mb-1">🩺 Doenças</p>
+                  <p className="text-xs font-medium text-slate-400 px-2 mb-1">🩺 {t('tabs.diseases')}</p>
                   {searchResults.doencas.map(doenca => (
                     <Link
                       key={doenca.id}
@@ -278,11 +280,11 @@ export default function ConsultaRapidaClient() {
               <div className="flex items-center justify-between mb-3">
                 <h2 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <Syringe className="w-5 h-5 text-blue-500" />
-                  Doses Rápidas
+                  {t('quickDoses.title')}
                 </h2>
                 <input
                   type="text"
-                  placeholder="Filtrar..."
+                  placeholder={t('quickDoses.filter')}
                   value={doseFilter}
                   onChange={e => setDoseFilter(e.target.value)}
                   className="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm w-32"
@@ -310,7 +312,7 @@ export default function ConsultaRapidaClient() {
               
               {filteredDoses.length > 10 && (
                 <p className="text-center text-sm text-slate-400 mt-2">
-                  +{filteredDoses.length - 10} mais
+                  {t('quickDoses.more', { count: filteredDoses.length - 10 })}
                 </p>
               )}
             </section>
@@ -319,7 +321,7 @@ export default function ConsultaRapidaClient() {
             <section>
               <h2 className="font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
                 <Clock className="w-5 h-5 text-purple-500" />
-                Acesso Rápido
+                {t('quickAccess.title')}
               </h2>
               <div className="grid grid-cols-2 gap-3">
                 <Link
@@ -327,32 +329,32 @@ export default function ConsultaRapidaClient() {
                   className="p-4 bg-gradient-to-br from-red-500 to-rose-600 rounded-xl text-white"
                 >
                   <Shield className="w-6 h-6 mb-2" />
-                  <p className="font-bold">Interações</p>
-                  <p className="text-xs opacity-80">Verificar</p>
+                  <p className="font-bold">{t('quickAccess.interactions')}</p>
+                  <p className="text-xs opacity-80">{t('quickAccess.check')}</p>
                 </Link>
                 <Link
                   href="/prontuario"
                   className="p-4 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl text-white"
                 >
                   <FileText className="w-6 h-6 mb-2" />
-                  <p className="font-bold">Nota SOAP</p>
-                  <p className="text-xs opacity-80">Gerar</p>
+                  <p className="font-bold">{t('quickAccess.soapNote')}</p>
+                  <p className="text-xs opacity-80">{t('quickAccess.generate')}</p>
                 </Link>
                 <Link
                   href="/medicamentos/comparador"
                   className="p-4 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl text-white"
                 >
                   <Pill className="w-6 h-6 mb-2" />
-                  <p className="font-bold">Comparador</p>
-                  <p className="text-xs opacity-80">Medicamentos</p>
+                  <p className="font-bold">{t('quickAccess.comparator')}</p>
+                  <p className="text-xs opacity-80">{t('quickAccess.medications')}</p>
                 </Link>
                 <Link
                   href="/protocolos"
                   className="p-4 bg-gradient-to-br from-orange-500 to-amber-600 rounded-xl text-white"
                 >
                   <Activity className="w-6 h-6 mb-2" />
-                  <p className="font-bold">Protocolos</p>
-                  <p className="text-xs opacity-80">Fluxogramas</p>
+                  <p className="font-bold">{t('quickAccess.protocols')}</p>
+                  <p className="text-xs opacity-80">{t('quickAccess.flowcharts')}</p>
                 </Link>
               </div>
             </section>
@@ -361,7 +363,7 @@ export default function ConsultaRapidaClient() {
             <section>
               <h2 className="font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
                 <Calculator className="w-5 h-5 text-green-500" />
-                Calculadoras
+                {t('tabs.calculators')}
               </h2>
               <div className="grid grid-cols-3 gap-2">
                 {calculadorasRapidas.map(calc => (
@@ -371,7 +373,7 @@ export default function ConsultaRapidaClient() {
                     className="p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 text-center hover:border-green-400 transition-colors"
                   >
                     <span className="text-2xl">{calc.icon}</span>
-                    <p className="text-xs font-medium text-slate-700 dark:text-slate-300 mt-1">{calc.nome}</p>
+                    <p className="text-xs font-medium text-slate-700 dark:text-slate-300 mt-1">{t(calc.nameKey)}</p>
                   </Link>
                 ))}
               </div>
@@ -381,7 +383,7 @@ export default function ConsultaRapidaClient() {
 
         {activeTab === 'medicamentos' && (
           <div className="space-y-3">
-            <h2 className="font-bold text-slate-900 dark:text-white mb-3">Medicamentos RENAME</h2>
+            <h2 className="font-bold text-slate-900 dark:text-white mb-3">{t('medsTab.title')}</h2>
             {todosMedicamentos.slice(0, 20).map(med => (
               <button
                 key={med.id}
@@ -400,7 +402,7 @@ export default function ConsultaRapidaClient() {
 
         {activeTab === 'doencas' && (
           <div className="space-y-3">
-            <h2 className="font-bold text-slate-900 dark:text-white mb-3">Doenças da APS</h2>
+            <h2 className="font-bold text-slate-900 dark:text-white mb-3">{t('diseasesTab.title')}</h2>
             {todasDoencas.slice(0, 20).map(doenca => (
               <Link
                 key={doenca.id}
@@ -421,14 +423,14 @@ export default function ConsultaRapidaClient() {
 
         {activeTab === 'calculadoras' && (
           <div className="space-y-3">
-            <h2 className="font-bold text-slate-900 dark:text-white mb-3">Calculadoras Clínicas</h2>
+            <h2 className="font-bold text-slate-900 dark:text-white mb-3">{t('calcTab.title')}</h2>
             <Link
               href="/calculadoras"
               className="block bg-gradient-to-br from-green-500 to-emerald-600 text-white rounded-xl p-6 text-center"
             >
               <Calculator className="w-12 h-12 mx-auto mb-3" />
-              <p className="font-bold text-lg">Abrir Calculadoras</p>
-              <p className="text-sm opacity-80">IMC, TFG, Risco CV, e mais</p>
+              <p className="font-bold text-lg">{t('calcTab.openCalculators')}</p>
+              <p className="text-sm opacity-80">{t('calcTab.description')}</p>
             </Link>
           </div>
         )}
@@ -436,10 +438,10 @@ export default function ConsultaRapidaClient() {
 
       {/* Bottom Navigation */}
       <nav className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-2 py-1 flex justify-around safe-area-inset-bottom">
-        <TabButton tab="inicio" icon={Home} label="Início" />
-        <TabButton tab="medicamentos" icon={Pill} label="Meds" />
-        <TabButton tab="doencas" icon={Stethoscope} label="Doenças" />
-        <TabButton tab="calculadoras" icon={Calculator} label="Calc" />
+        <TabButton tab="inicio" icon={Home} label={t('tabs.home')} />
+        <TabButton tab="medicamentos" icon={Pill} label={t('tabs.meds')} />
+        <TabButton tab="doencas" icon={Stethoscope} label={t('tabs.diseases')} />
+        <TabButton tab="calculadoras" icon={Calculator} label={t('tabs.calc')} />
       </nav>
     </div>
   );
