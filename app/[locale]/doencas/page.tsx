@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { doencasConsolidadas, getDoencasByCategoria } from '@/lib/data/doencas/index';
 import { CATEGORIAS_DOENCA, CategoriaDoenca } from '@/lib/types/doenca';
+import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
 
 // Icon mapping
 const iconMap: Record<string, React.ElementType> = {
@@ -19,6 +20,7 @@ const iconMap: Record<string, React.ElementType> = {
 
 export default function DoencasPage() {
   const t = useTranslations('doencas');
+  const { translateDisease } = useMedicalTerms();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategoria, setSelectedCategoria] = useState<CategoriaDoenca | 'todas'>('todas');
   const [showFilters, setShowFilters] = useState(false);
@@ -175,7 +177,7 @@ export default function DoencasPage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-[#1d1d1f] dark:text-[#f5f5f7] mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-1">
-                      {doenca.titulo}
+                      {translateDisease(doenca.cid10, doenca.titulo || '')}
                     </h3>
                     <p className="text-sm text-neutral-500 dark:text-neutral-400 line-clamp-2 mb-2">
                       {doenca.quickView?.definicao || t('noDescription')}

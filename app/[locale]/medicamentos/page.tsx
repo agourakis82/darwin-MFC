@@ -9,9 +9,11 @@ import {
 } from 'lucide-react';
 import { medicamentos, getMedicamentosByClasse } from '@/lib/data/medicamentos';
 import { CLASSES_TERAPEUTICAS, ClasseTerapeutica, CLASSIFICACAO_GESTACAO } from '@/lib/types/medicamento';
+import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
 
 export default function MedicamentosPage() {
   const t = useTranslations('medicamentos');
+  const { translateMedication } = useMedicalTerms();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedClasse, setSelectedClasse] = useState<ClasseTerapeutica | 'todas'>('todas');
   const [showRENAME, setShowRENAME] = useState(false);
@@ -147,7 +149,7 @@ export default function MedicamentosPage() {
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors capitalize">
-                      {med.nomeGenerico}
+                      {translateMedication(med.atcCode, med.nomeGenerico)}
                     </h3>
                     {med.nomesComerciais && (
                       <p className="text-sm text-[#86868b]">

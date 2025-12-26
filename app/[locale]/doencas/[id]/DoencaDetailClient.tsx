@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { getDoencaById } from '@/lib/data/doencas/index';
 import { CATEGORIAS_DOENCA } from '@/lib/types/doenca';
+import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
 import { 
   getMedicamentosForDoenca, 
   getProtocolosForDoenca, 
@@ -21,6 +22,7 @@ import { generateChecklistFromDoenca } from '@/lib/utils/checklist-generator';
 
 export default function DoencaDetailClient({ params }: { params: Promise<{ id: string }> }) {
   const t = useTranslations('diseaseDetail');
+  const { translateDisease } = useMedicalTerms();
   const { id } = use(params);
   const doenca = getDoencaById(id);
   const [showFullContent, setShowFullContent] = useState(false);
@@ -64,7 +66,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
           </div>
           <div className="flex-1">
             <h1 className="text-4xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-2">
-              {doenca.titulo}
+              {translateDisease(doenca.cid10, doenca.titulo || '')}
             </h1>
             <div className="flex flex-wrap gap-2">
               <span className={`px-3 py-1 bg-gradient-to-r ${categoriaInfo.color} text-white text-sm font-medium rounded-full`}>

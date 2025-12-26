@@ -10,19 +10,22 @@ import {
 } from 'lucide-react';
 import { medicamentos, getMedicamentoById } from '@/lib/data/medicamentos';
 import { CLASSES_TERAPEUTICAS, CLASSIFICACAO_GESTACAO } from '@/lib/types/medicamento';
+import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
 import { notFound } from 'next/navigation';
 
 export default function MedicamentoDetailClient({ params }: { params: Promise<{ id: string }> }) {
   const t = useTranslations('medicationDetail');
+  const { translateMedication } = useMedicalTerms();
   const { id } = use(params);
   const medicamento = getMedicamentoById(id);
-  
+
   if (!medicamento) {
     notFound();
   }
 
   const classeInfo = CLASSES_TERAPEUTICAS[medicamento.classeTerapeutica];
   const gestacaoInfo = CLASSIFICACAO_GESTACAO[medicamento.gestacao];
+  const translatedName = translateMedication(medicamento.atcCode, medicamento.nomeGenerico);
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
@@ -44,7 +47,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
           <div className="flex-1">
             <div className="flex items-center gap-3">
               <h1 className="text-4xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] capitalize">
-                {medicamento.nomeGenerico}
+                {translatedName}
               </h1>
               {medicamento.rename && (
                 <span className="px-3 py-1 bg-emerald-500 text-white text-sm font-bold rounded-full">
