@@ -1127,5 +1127,71 @@
       "tip3": "Utilisez pour choisir entre alternatives thérapeutiques",
       "tip4": "Vérifiez la disponibilité dans le système public"
     }
+  },
+  "diseaseDetail": {
+    "backToDiseases": "Retour aux Maladies",
+    "views": {
+      "quickView": "Vue Rapide",
+      "fullVersion": "Version Complète",
+      "checklist": "Liste de Contrôle"
+    },
+    "sections": {
+      "definition": "Définition",
+      "diagnosticCriteria": "Critères Diagnostiques",
+      "nonPharmacological": "Non Pharmacologique",
+      "pharmacological": "Pharmacologique",
+      "redFlags": "Signaux d'Alarme",
+      "therapeuticGoals": "Objectifs Thérapeutiques",
+      "initialExams": "Examens Initiaux",
+      "epidemiology": "Épidémiologie",
+      "clinicalPresentation": "Présentation Clinique",
+      "diagnosis": "Diagnostic",
+      "fullTreatment": "Traitement Complet",
+      "followUp": "Suivi"
+    },
+    "epi": {
+      "prevalence": "Prévalence",
+      "incidence": "Incidence",
+      "mortality": "Mortalité",
+      "riskFactors": "Facteurs de Risque"
+    },
+    "clinical": {
+      "mainSymptoms": "Symptômes Principaux",
+      "physicalExamSigns": "Signes à l'Examen Physique"
+    },
+    "diagnosis": {
+      "criteria": "Critères",
+      "differential": "Diagnostic Différentiel"
+    },
+    "treatment": {
+      "objectives": "Objectifs",
+      "nonPharmacological": "Non Pharmacologique",
+      "pharmacologicalFirstLine": "Pharmacologique Première Ligne"
+    },
+    "followUp": {
+      "visitFrequency": "Fréquence des Consultations",
+      "therapeuticGoals": "Objectifs Thérapeutiques",
+      "referralCriteria": "Critères de Référence"
+    },
+    "contentInDevelopment": "Contenu détaillé en développement",
+    "resources": {
+      "medications": "{count} Médicaments",
+      "protocols": "{count} Protocoles",
+      "calculators": "{count} Calculatrices",
+      "viewInPharmacy": "Voir en pharmacie",
+      "viewAlgorithms": "Voir algorithmes",
+      "useTools": "Utiliser les outils"
+    },
+    "openClinicalContext": "Ouvrir le Contexte Clinique Intégré",
+    "lastUpdate": "Dernière mise à jour",
+    "crossRefs": {
+      "title": "Ressources Intégrées",
+      "medications": "Médicaments ({count})",
+      "protocols": "Protocoles ({count})",
+      "calculators": "Calculatrices ({count})",
+      "firstLine": "1ère ligne",
+      "more": "+ {count} de plus",
+      "priority": "Prioritaire"
+    }
   }
 }

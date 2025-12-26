@@ -1127,5 +1127,71 @@
       "tip3": "चिकित्सीय विकल्पों में से चुनने के लिए उपयोग करें",
       "tip4": "सार्वजनिक स्वास्थ्य प्रणाली में उपलब्धता जांचें"
     }
+  },
+  "diseaseDetail": {
+    "backToDiseases": "रोगों पर वापस जाएं",
+    "views": {
+      "quickView": "त्वरित दृश्य",
+      "fullVersion": "पूर्ण संस्करण",
+      "checklist": "चेकलिस्ट"
+    },
+    "sections": {
+      "definition": "परिभाषा",
+      "diagnosticCriteria": "नैदानिक मानदंड",
+      "nonPharmacological": "गैर-औषधीय",
+      "pharmacological": "औषधीय",
+      "redFlags": "खतरे के संकेत",
+      "therapeuticGoals": "चिकित्सीय लक्ष्य",
+      "initialExams": "प्रारंभिक परीक्षाएं",
+      "epidemiology": "महामारी विज्ञान",
+      "clinicalPresentation": "नैदानिक प्रस्तुति",
+      "diagnosis": "निदान",
+      "fullTreatment": "पूर्ण उपचार",
+      "followUp": "अनुवर्ती"
+    },
+    "epi": {
+      "prevalence": "प्रसार",
+      "incidence": "घटना",
+      "mortality": "मृत्यु दर",
+      "riskFactors": "जोखिम कारक"
+    },
+    "clinical": {
+      "mainSymptoms": "मुख्य लक्षण",
+      "physicalExamSigns": "शारीरिक परीक्षा के संकेत"
+    },
+    "diagnosis": {
+      "criteria": "मानदंड",
+      "differential": "विभेदक निदान"
+    },
+    "treatment": {
+      "objectives": "उद्देश्य",
+      "nonPharmacological": "गैर-औषधीय",
+      "pharmacologicalFirstLine": "प्रथम पंक्ति औषधीय"
+    },
+    "followUp": {
+      "visitFrequency": "विज़िट की आवृत्ति",
+      "therapeuticGoals": "चिकित्सीय लक्ष्य",
+      "referralCriteria": "रेफरल मानदंड"
+    },
+    "contentInDevelopment": "विस्तृत सामग्री विकास में है",
+    "resources": {
+      "medications": "{count} दवाएं",
+      "protocols": "{count} प्रोटोकॉल",
+      "calculators": "{count} कैलकुलेटर",
+      "viewInPharmacy": "फार्मेसी में देखें",
+      "viewAlgorithms": "एल्गोरिदम देखें",
+      "useTools": "टूल का उपयोग करें"
+    },
+    "openClinicalContext": "एकीकृत नैदानिक संदर्भ खोलें",
+    "lastUpdate": "अंतिम अपडेट",
+    "crossRefs": {
+      "title": "एकीकृत संसाधन",
+      "medications": "दवाएं ({count})",
+      "protocols": "प्रोटोकॉल ({count})",
+      "calculators": "कैलकुलेटर ({count})",
+      "firstLine": "प्रथम पंक्ति",
+      "more": "+ {count} और",
+      "priority": "प्राथमिकता"
+    }
   }
 }

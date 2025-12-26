@@ -1,8 +1,9 @@
 'use client';
 
 import { use, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { 
+import {
   ArrowLeft, BookOpen, Pill, FileText, Calculator, AlertTriangle,
   CheckCircle, XCircle, Clock, Users, Heart, ChevronDown, ChevronUp,
   Stethoscope, Activity, Clipboard, Target, ExternalLink, ClipboardCheck
@@ -19,6 +20,7 @@ import ChecklistConsultaComponent from '@/app/components/Checklist/ChecklistCons
 import { generateChecklistFromDoenca } from '@/lib/utils/checklist-generator';
 
 export default function DoencaDetailClient({ params }: { params: Promise<{ id: string }> }) {
+  const t = useTranslations('diseaseDetail');
   const { id } = use(params);
   const doenca = getDoencaById(id);
   const [showFullContent, setShowFullContent] = useState(false);
@@ -46,12 +48,12 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       {/* Breadcrumb */}
-      <Link 
-        href="/doencas" 
+      <Link
+        href="/doencas"
         className="inline-flex items-center gap-2 text-[#86868b] hover:text-blue-600 mb-6 transition-colors"
       >
         <ArrowLeft className="w-4 h-4" />
-        Voltar para Doenças
+        {t('backToDiseases')}
       </Link>
 
       {/* Header */}
@@ -95,7 +97,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                 : 'bg-white/50 dark:bg-neutral-800/50 text-[#86868b] hover:bg-blue-100'
             }`}
           >
-            ⚡ QuickView (1 tela)
+            ⚡ {t('views.quickView')}
           </button>
           <button
             onClick={() => {
@@ -108,7 +110,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                 : 'bg-white/50 dark:bg-neutral-800/50 text-[#86868b] hover:bg-purple-100'
             }`}
           >
-            📖 Versão Completa
+            📖 {t('views.fullVersion')}
           </button>
           <button
             onClick={() => {
@@ -122,7 +124,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
             }`}
           >
             <ClipboardCheck className="w-4 h-4" />
-            Checklist de Consulta
+            {t('views.checklist')}
           </button>
         </div>
       </div>
@@ -145,7 +147,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
           <div className="glass-strong rounded-2xl p-6">
             <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
               <Stethoscope className="w-5 h-5 text-blue-500" />
-              Definição
+              {t('sections.definition')}
             </h2>
             <p className="text-lg text-[#1d1d1f] dark:text-[#f5f5f7] leading-relaxed">
               {doenca.quickView.definicao}
@@ -157,7 +159,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
             <div className="glass-strong rounded-2xl p-6">
               <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
                 <Clipboard className="w-5 h-5 text-emerald-500" />
-                Critérios Diagnósticos
+                {t('sections.diagnosticCriteria')}
               </h2>
               <ul className="space-y-2">
                 {doenca.quickView.criteriosDiagnosticos.map((criterio, idx) => (
@@ -178,7 +180,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                 <div className="glass-strong rounded-2xl p-6">
                   <h2 className="text-lg font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
                     <Heart className="w-5 h-5 text-pink-500" />
-                    Tratamento Não Farmacológico
+                    {t('sections.nonPharmacological')}
                   </h2>
                   <ul className="space-y-2">
                     {doenca.quickView.tratamentoPrimeiraLinha.naoFarmacologico.map((item, idx) => (
@@ -196,7 +198,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                 <div className="glass-strong rounded-2xl p-6">
                   <h2 className="text-lg font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
                     <Pill className="w-5 h-5 text-blue-500" />
-                    Tratamento Farmacológico (1ª linha)
+                    {t('sections.pharmacological')}
                   </h2>
                   <ul className="space-y-2">
                     {doenca.quickView.tratamentoPrimeiraLinha.farmacologico.map((item, idx) => (
@@ -216,7 +218,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
             <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-6">
               <h2 className="text-xl font-bold text-red-700 dark:text-red-400 mb-3 flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5" />
-                🚨 Red Flags - Quando Encaminhar
+                🚨 {t('sections.redFlags')}
               </h2>
               <ul className="space-y-2">
                 {doenca.quickView.redFlags.map((flag, idx) => (
@@ -236,7 +238,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                 <div className="glass-subtle rounded-2xl p-6">
                   <h2 className="text-lg font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
                     <Target className="w-5 h-5 text-amber-500" />
-                    Metas Terapêuticas
+                    {t('sections.therapeuticGoals')}
                   </h2>
                   <ul className="space-y-2">
                     {doenca.quickView.metasTerapeuticas.map((meta, idx) => (
@@ -253,7 +255,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                 <div className="glass-subtle rounded-2xl p-6">
                   <h2 className="text-lg font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
                     <Activity className="w-5 h-5 text-purple-500" />
-                    Exames Iniciais
+                    {t('sections.initialExams')}
                   </h2>
                   <ul className="space-y-2">
                     {doenca.quickView.examesIniciais.map((exame, idx) => (
@@ -274,7 +276,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
           {/* Epidemiologia */}
           {doenca.fullContent.epidemiologia && (
             <CollapsibleSection
-              title="Epidemiologia"
+              title={t('sections.epidemiology')}
               icon={<Users className="w-5 h-5 text-blue-500" />}
               isExpanded={expandedSections.has('epidemiologia')}
               onToggle={() => toggleSection('epidemiologia')}
@@ -285,7 +287,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                     <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                       {doenca.fullContent.epidemiologia.prevalencia}
                     </div>
-                    <div className="text-sm text-[#86868b]">Prevalência</div>
+                    <div className="text-sm text-[#86868b]">{t('epi.prevalence')}</div>
                   </div>
                 )}
                 {doenca.fullContent.epidemiologia.incidencia && (
@@ -293,7 +295,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                     <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                       {doenca.fullContent.epidemiologia.incidencia}
                     </div>
-                    <div className="text-sm text-[#86868b]">Incidência</div>
+                    <div className="text-sm text-[#86868b]">{t('epi.incidence')}</div>
                   </div>
                 )}
                 {doenca.fullContent.epidemiologia.mortalidade && (
@@ -301,13 +303,13 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                     <div className="text-2xl font-bold text-red-600 dark:text-red-400">
                       {doenca.fullContent.epidemiologia.mortalidade}
                     </div>
-                    <div className="text-sm text-[#86868b]">Mortalidade</div>
+                    <div className="text-sm text-[#86868b]">{t('epi.mortality')}</div>
                   </div>
                 )}
               </div>
               {doenca.fullContent.epidemiologia.fatoresRisco && (
                 <div>
-                  <h4 className="font-semibold mb-2">Fatores de Risco:</h4>
+                  <h4 className="font-semibold mb-2">{t('epi.riskFactors')}:</h4>
                   <ul className="grid md:grid-cols-2 gap-2">
                     {doenca.fullContent.epidemiologia.fatoresRisco.map((fator, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm">
@@ -324,14 +326,14 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
           {/* Quadro Clínico */}
           {doenca.fullContent?.quadroClinico && (
             <CollapsibleSection
-              title="Quadro Clínico"
+              title={t('sections.clinicalPresentation')}
               icon={<Stethoscope className="w-5 h-5 text-emerald-500" />}
               isExpanded={expandedSections.has('quadroClinico')}
               onToggle={() => toggleSection('quadroClinico')}
             >
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-semibold mb-2">Sintomas Principais:</h4>
+                  <h4 className="font-semibold mb-2">{t('clinical.mainSymptoms')}:</h4>
                   <ul className="space-y-1">
                     {doenca.fullContent.quadroClinico.sintomasPrincipais?.map((s, idx) => (
                       <li key={idx} className="text-sm flex items-start gap-2">
@@ -341,7 +343,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">Sinais ao Exame Físico:</h4>
+                  <h4 className="font-semibold mb-2">{t('clinical.physicalExamSigns')}:</h4>
                   <ul className="space-y-1">
                     {doenca.fullContent.quadroClinico.sinaisExameFisico?.map((s, idx) => (
                       <li key={idx} className="text-sm flex items-start gap-2">
@@ -357,7 +359,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
           {/* Diagnóstico */}
           {doenca.fullContent?.diagnostico && (
             <CollapsibleSection
-              title="Diagnóstico"
+              title={t('sections.diagnosis')}
               icon={<Clipboard className="w-5 h-5 text-purple-500" />}
               isExpanded={expandedSections.has('diagnostico')}
               onToggle={() => toggleSection('diagnostico')}
@@ -365,7 +367,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
               <div className="space-y-4">
                 {doenca.fullContent.diagnostico.criterios && (
                   <div>
-                    <h4 className="font-semibold mb-2">Critérios Diagnósticos:</h4>
+                    <h4 className="font-semibold mb-2">{t('diagnosis.criteria')}:</h4>
                     <ul className="space-y-1">
                       {doenca.fullContent.diagnostico.criterios.map((c, idx) => (
                         <li key={idx} className="text-sm flex items-start gap-2">
@@ -377,7 +379,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                 )}
                 {doenca.fullContent.diagnostico.diagnosticoDiferencial && (
                   <div>
-                    <h4 className="font-semibold mb-2">Diagnóstico Diferencial:</h4>
+                    <h4 className="font-semibold mb-2">{t('diagnosis.differential')}:</h4>
                     <div className="flex flex-wrap gap-2">
                       {doenca.fullContent.diagnostico.diagnosticoDiferencial.map((d, idx) => (
                         <span key={idx} className="px-3 py-1 bg-purple-500/20 text-purple-700 dark:text-purple-300 text-sm rounded-full">
@@ -394,7 +396,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
           {/* Tratamento */}
           {doenca.fullContent?.tratamento && (
             <CollapsibleSection
-              title="Tratamento Completo"
+              title={t('sections.fullTreatment')}
               icon={<Pill className="w-5 h-5 text-blue-500" />}
               isExpanded={expandedSections.has('tratamento')}
               onToggle={() => toggleSection('tratamento')}
@@ -402,7 +404,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
               <div className="space-y-6">
                 {doenca.fullContent.tratamento.objetivos && (
                   <div>
-                    <h4 className="font-semibold mb-2">Objetivos:</h4>
+                    <h4 className="font-semibold mb-2">{t('treatment.objectives')}:</h4>
                     <ul className="space-y-1">
                       {doenca.fullContent.tratamento.objetivos.map((o, idx) => (
                         <li key={idx} className="text-sm flex items-start gap-2">
@@ -412,11 +414,11 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                     </ul>
                   </div>
                 )}
-                
+
                 <div className="grid md:grid-cols-2 gap-4">
                   {doenca.fullContent.tratamento.naoFarmacologico?.medidas && (
                     <div className="bg-pink-500/10 rounded-xl p-4">
-                      <h4 className="font-semibold mb-2 text-pink-700 dark:text-pink-300">Não Farmacológico:</h4>
+                      <h4 className="font-semibold mb-2 text-pink-700 dark:text-pink-300">{t('treatment.nonPharmacological')}:</h4>
                       <ul className="space-y-1">
                         {doenca.fullContent.tratamento.naoFarmacologico.medidas.map((m, idx) => (
                           <li key={idx} className="text-sm">{m}</li>
@@ -424,15 +426,15 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                       </ul>
                     </div>
                   )}
-                  
+
                   {doenca.fullContent.tratamento.farmacologico?.primeiraLinha && (
                     <div className="bg-blue-500/10 rounded-xl p-4">
-                      <h4 className="font-semibold mb-2 text-blue-700 dark:text-blue-300">Farmacológico (1ª linha):</h4>
-                      {doenca.fullContent.tratamento.farmacologico.primeiraLinha.map((t, idx) => (
+                      <h4 className="font-semibold mb-2 text-blue-700 dark:text-blue-300">{t('treatment.pharmacologicalFirstLine')}:</h4>
+                      {doenca.fullContent.tratamento.farmacologico.primeiraLinha.map((tr, idx) => (
                         <div key={idx} className="mb-2">
-                          <span className="font-medium">{t.classe}:</span>
+                          <span className="font-medium">{tr.classe}:</span>
                           <ul className="ml-4">
-                            {t.medicamentos?.map((m, midx) => (
+                            {tr.medicamentos?.map((m, midx) => (
                               <li key={midx} className="text-sm">{m}</li>
                             ))}
                           </ul>
@@ -448,7 +450,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
           {/* Acompanhamento */}
           {doenca.fullContent?.acompanhamento && (
             <CollapsibleSection
-              title="Acompanhamento"
+              title={t('sections.followUp')}
               icon={<Clock className="w-5 h-5 text-amber-500" />}
               isExpanded={expandedSections.has('acompanhamento')}
               onToggle={() => toggleSection('acompanhamento')}
@@ -456,14 +458,14 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
               <div className="space-y-4">
                 {doenca.fullContent.acompanhamento.frequenciaConsultas && (
                   <div className="bg-amber-500/10 rounded-xl p-4">
-                    <h4 className="font-semibold mb-1">Frequência de Consultas:</h4>
+                    <h4 className="font-semibold mb-1">{t('followUp.visitFrequency')}:</h4>
                     <p className="text-sm">{doenca.fullContent.acompanhamento.frequenciaConsultas}</p>
                   </div>
                 )}
-                
+
                 {doenca.fullContent.acompanhamento.metasTerapeuticas && (
                   <div>
-                    <h4 className="font-semibold mb-2">Metas Terapêuticas:</h4>
+                    <h4 className="font-semibold mb-2">{t('followUp.therapeuticGoals')}:</h4>
                     <ul className="space-y-1">
                       {doenca.fullContent.acompanhamento.metasTerapeuticas.map((m, idx) => (
                         <li key={idx} className="text-sm flex items-start gap-2">
@@ -473,10 +475,10 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                     </ul>
                   </div>
                 )}
-                
+
                 {doenca.fullContent.acompanhamento.criteriosEncaminhamento && (
                   <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
-                    <h4 className="font-semibold mb-2 text-red-700 dark:text-red-400">Critérios de Encaminhamento:</h4>
+                    <h4 className="font-semibold mb-2 text-red-700 dark:text-red-400">{t('followUp.referralCriteria')}:</h4>
                     <ul className="space-y-1">
                       {doenca.fullContent.acompanhamento.criteriosEncaminhamento.map((c, idx) => (
                         <li key={idx} className="text-sm text-red-800 dark:text-red-200">{c}</li>
@@ -490,7 +492,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
         </div>
       ) : (
         <div className="text-center py-8 text-neutral-500">
-          Conteúdo detalhado em desenvolvimento
+          {t('contentInDevelopment')}
         </div>
       )}
 
@@ -501,32 +503,32 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
             <div className="flex items-center gap-3">
               <Pill className="w-8 h-8 text-blue-500" />
               <div>
-                <div className="font-semibold group-hover:text-blue-600">{(doenca as {medicamentos?: string[]}).medicamentos?.length} Medicamentos</div>
-                <div className="text-sm text-[#86868b]">Ver no bulário</div>
+                <div className="font-semibold group-hover:text-blue-600">{t('resources.medications', { count: (doenca as {medicamentos?: string[]}).medicamentos?.length ?? 0 })}</div>
+                <div className="text-sm text-[#86868b]">{t('resources.viewInPharmacy')}</div>
               </div>
             </div>
           </Link>
         )}
-        
+
         {((doenca as {protocolos?: string[]}).protocolos?.length ?? 0) > 0 && (
           <Link href="/protocolos" className="glass-subtle rounded-xl p-4 hover:shadow-lg transition-all group">
             <div className="flex items-center gap-3">
               <FileText className="w-8 h-8 text-purple-500" />
               <div>
-                <div className="font-semibold group-hover:text-purple-600">{(doenca as {protocolos?: string[]}).protocolos?.length} Protocolos</div>
-                <div className="text-sm text-[#86868b]">Ver algoritmos</div>
+                <div className="font-semibold group-hover:text-purple-600">{t('resources.protocols', { count: (doenca as {protocolos?: string[]}).protocolos?.length ?? 0 })}</div>
+                <div className="text-sm text-[#86868b]">{t('resources.viewAlgorithms')}</div>
               </div>
             </div>
           </Link>
         )}
-        
+
         {((doenca as {calculadoras?: string[]}).calculadoras?.length ?? 0) > 0 && (
           <Link href="/calculadoras" className="glass-subtle rounded-xl p-4 hover:shadow-lg transition-all group">
             <div className="flex items-center gap-3">
               <Calculator className="w-8 h-8 text-emerald-500" />
               <div>
-                <div className="font-semibold group-hover:text-emerald-600">{(doenca as {calculadoras?: string[]}).calculadoras?.length} Calculadoras</div>
-                <div className="text-sm text-[#86868b]">Usar ferramentas</div>
+                <div className="font-semibold group-hover:text-emerald-600">{t('resources.calculators', { count: (doenca as {calculadoras?: string[]}).calculadoras?.length ?? 0 })}</div>
+                <div className="text-sm text-[#86868b]">{t('resources.useTools')}</div>
               </div>
             </div>
           </Link>
@@ -538,19 +540,19 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
 
       {/* Context Link */}
       <div className="mt-8">
-        <Link 
+        <Link
           href={`/contexto/${id}`}
           className="flex items-center justify-center gap-2 w-full p-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl font-medium hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg"
         >
           <Clipboard className="w-5 h-5" />
-          Abrir Contexto Clínico Integrado
+          {t('openClinicalContext')}
           <ExternalLink className="w-4 h-4" />
         </Link>
       </div>
 
       {/* Last Update */}
       <div className="mt-8 text-center text-sm text-[#86868b]">
-        Última atualização: {doenca.lastUpdate}
+        {t('lastUpdate')}: {doenca.lastUpdate}
       </div>
     </div>
   );
@@ -558,32 +560,33 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
 
 // Cross-References Section Component
 function CrossReferencesSection({ doencaId }: { doencaId: string }) {
+  const t = useTranslations('diseaseDetail');
   const medicamentos = getMedicamentosForDoenca(doencaId);
   const protocolos = getProtocolosForDoenca(doencaId);
   const calculadoras = getCalculadorasForDoenca(doencaId);
 
   const hasAnyRef = medicamentos.length > 0 || protocolos.length > 0 || calculadoras.length > 0;
-  
+
   if (!hasAnyRef) return null;
 
   return (
     <div className="mt-8 glass-strong rounded-2xl p-6">
       <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-4 flex items-center gap-2">
-        🔗 Recursos Integrados
+        🔗 {t('crossRefs.title')}
       </h2>
-      
+
       <div className="grid md:grid-cols-3 gap-4">
         {/* Medicamentos */}
         {medicamentos.length > 0 && (
           <div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-4">
             <h3 className="font-semibold text-purple-800 dark:text-purple-300 mb-3 flex items-center gap-2">
               <Pill className="w-4 h-4" />
-              Medicamentos ({medicamentos.length})
+              {t('crossRefs.medications', { count: medicamentos.length })}
             </h3>
             <ul className="space-y-2">
               {medicamentos.slice(0, 4).map(med => (
                 <li key={med.medicamentoId}>
-                  <Link 
+                  <Link
                     href={`/medicamentos/${med.medicamentoId}`}
                     className="flex items-center justify-between p-2 bg-white/50 dark:bg-neutral-800/50 rounded-lg hover:bg-white dark:hover:bg-neutral-800 transition-colors"
                   >
@@ -593,7 +596,7 @@ function CrossReferencesSection({ doencaId }: { doencaId: string }) {
                       </span>
                       {med.tipoUso === 'primeira_linha' && (
                         <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-1.5 py-0.5 rounded">
-                          1ª linha
+                          {t('crossRefs.firstLine')}
                         </span>
                       )}
                     </div>
@@ -603,7 +606,7 @@ function CrossReferencesSection({ doencaId }: { doencaId: string }) {
               ))}
               {medicamentos.length > 4 && (
                 <li className="text-sm text-[#86868b] text-center pt-2">
-                  + {medicamentos.length - 4} mais
+                  {t('crossRefs.more', { count: medicamentos.length - 4 })}
                 </li>
               )}
             </ul>
@@ -615,12 +618,12 @@ function CrossReferencesSection({ doencaId }: { doencaId: string }) {
           <div className="bg-orange-50 dark:bg-orange-900/20 rounded-xl p-4">
             <h3 className="font-semibold text-orange-800 dark:text-orange-300 mb-3 flex items-center gap-2">
               <FileText className="w-4 h-4" />
-              Protocolos ({protocolos.length})
+              {t('crossRefs.protocols', { count: protocolos.length })}
             </h3>
             <ul className="space-y-2">
               {protocolos.map(prot => (
                 <li key={prot.protocoloId}>
-                  <Link 
+                  <Link
                     href={`/protocolos?id=${prot.protocoloId}`}
                     className="flex items-center justify-between p-2 bg-white/50 dark:bg-neutral-800/50 rounded-lg hover:bg-white dark:hover:bg-neutral-800 transition-colors"
                   >
@@ -640,12 +643,12 @@ function CrossReferencesSection({ doencaId }: { doencaId: string }) {
           <div className="bg-emerald-50 dark:bg-emerald-900/20 rounded-xl p-4">
             <h3 className="font-semibold text-emerald-800 dark:text-emerald-300 mb-3 flex items-center gap-2">
               <Calculator className="w-4 h-4" />
-              Calculadoras ({calculadoras.length})
+              {t('crossRefs.calculators', { count: calculadoras.length })}
             </h3>
             <ul className="space-y-2">
               {calculadoras.map(calc => (
                 <li key={calc.calculadoraId}>
-                  <Link 
+                  <Link
                     href={`/calculadoras#${calc.calculadoraId}`}
                     className="flex items-center justify-between p-2 bg-white/50 dark:bg-neutral-800/50 rounded-lg hover:bg-white dark:hover:bg-neutral-800 transition-colors"
                   >
@@ -655,7 +658,7 @@ function CrossReferencesSection({ doencaId }: { doencaId: string }) {
                       </span>
                       {calc.prioritaria && (
                         <span className="ml-2 text-xs bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 px-1.5 py-0.5 rounded">
-                          Prioritária
+                          {t('crossRefs.priority')}
                         </span>
                       )}
                     </div>

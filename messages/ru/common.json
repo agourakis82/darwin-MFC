@@ -1127,5 +1127,71 @@
       "tip3": "Используйте для выбора между терапевтическими альтернативами",
       "tip4": "Проверьте доступность в системе здравоохранения"
     }
+  },
+  "diseaseDetail": {
+    "backToDiseases": "Вернуться к заболеваниям",
+    "views": {
+      "quickView": "Быстрый просмотр",
+      "fullVersion": "Полная версия",
+      "checklist": "Чек-лист"
+    },
+    "sections": {
+      "definition": "Определение",
+      "diagnosticCriteria": "Диагностические критерии",
+      "nonPharmacological": "Немедикаментозное",
+      "pharmacological": "Медикаментозное",
+      "redFlags": "Красные флаги",
+      "therapeuticGoals": "Терапевтические цели",
+      "initialExams": "Начальные обследования",
+      "epidemiology": "Эпидемиология",
+      "clinicalPresentation": "Клиническая картина",
+      "diagnosis": "Диагноз",
+      "fullTreatment": "Полное лечение",
+      "followUp": "Наблюдение"
+    },
+    "epi": {
+      "prevalence": "Распространённость",
+      "incidence": "Заболеваемость",
+      "mortality": "Смертность",
+      "riskFactors": "Факторы риска"
+    },
+    "clinical": {
+      "mainSymptoms": "Основные симптомы",
+      "physicalExamSigns": "Признаки при осмотре"
+    },
+    "diagnosis": {
+      "criteria": "Критерии",
+      "differential": "Дифференциальный диагноз"
+    },
+    "treatment": {
+      "objectives": "Цели",
+      "nonPharmacological": "Немедикаментозное",
+      "pharmacologicalFirstLine": "Медикаментозное первой линии"
+    },
+    "followUp": {
+      "visitFrequency": "Частота визитов",
+      "therapeuticGoals": "Терапевтические цели",
+      "referralCriteria": "Критерии направления"
+    },
+    "contentInDevelopment": "Подробное содержание в разработке",
+    "resources": {
+      "medications": "{count} Препаратов",
+      "protocols": "{count} Протоколов",
+      "calculators": "{count} Калькуляторов",
+      "viewInPharmacy": "Смотреть в справочнике",
+      "viewAlgorithms": "Смотреть алгоритмы",
+      "useTools": "Использовать инструменты"
+    },
+    "openClinicalContext": "Открыть интегрированный клинический контекст",
+    "lastUpdate": "Последнее обновление",
+    "crossRefs": {
+      "title": "Интегрированные ресурсы",
+      "medications": "Препараты ({count})",
+      "protocols": "Протоколы ({count})",
+      "calculators": "Калькуляторы ({count})",
+      "firstLine": "1-я линия",
+      "more": "+ ещё {count}",
+      "priority": "Приоритетный"
+    }
   }
 }

@@ -1127,5 +1127,71 @@
       "tip3": "استخدم للاختيار بين البدائل العلاجية",
       "tip4": "تحقق من التوفر في النظام الصحي"
     }
+  },
+  "diseaseDetail": {
+    "backToDiseases": "العودة إلى الأمراض",
+    "views": {
+      "quickView": "عرض سريع",
+      "fullVersion": "النسخة الكاملة",
+      "checklist": "قائمة التحقق"
+    },
+    "sections": {
+      "definition": "التعريف",
+      "diagnosticCriteria": "معايير التشخيص",
+      "nonPharmacological": "غير دوائي",
+      "pharmacological": "دوائي",
+      "redFlags": "علامات الخطر",
+      "therapeuticGoals": "الأهداف العلاجية",
+      "initialExams": "الفحوصات الأولية",
+      "epidemiology": "علم الوبائيات",
+      "clinicalPresentation": "العرض السريري",
+      "diagnosis": "التشخيص",
+      "fullTreatment": "العلاج الكامل",
+      "followUp": "المتابعة"
+    },
+    "epi": {
+      "prevalence": "الانتشار",
+      "incidence": "معدل الإصابة",
+      "mortality": "معدل الوفيات",
+      "riskFactors": "عوامل الخطر"
+    },
+    "clinical": {
+      "mainSymptoms": "الأعراض الرئيسية",
+      "physicalExamSigns": "علامات الفحص البدني"
+    },
+    "diagnosis": {
+      "criteria": "المعايير",
+      "differential": "التشخيص التفريقي"
+    },
+    "treatment": {
+      "objectives": "الأهداف",
+      "nonPharmacological": "غير دوائي",
+      "pharmacologicalFirstLine": "الخط الأول الدوائي"
+    },
+    "followUp": {
+      "visitFrequency": "تكرار الزيارات",
+      "therapeuticGoals": "الأهداف العلاجية",
+      "referralCriteria": "معايير الإحالة"
+    },
+    "contentInDevelopment": "المحتوى التفصيلي قيد التطوير",
+    "resources": {
+      "medications": "{count} أدوية",
+      "protocols": "{count} بروتوكولات",
+      "calculators": "{count} حاسبات",
+      "viewInPharmacy": "عرض في الصيدلية",
+      "viewAlgorithms": "عرض الخوارزميات",
+      "useTools": "استخدام الأدوات"
+    },
+    "openClinicalContext": "فتح السياق السريري المتكامل",
+    "lastUpdate": "آخر تحديث",
+    "crossRefs": {
+      "title": "الموارد المتكاملة",
+      "medications": "الأدوية ({count})",
+      "protocols": "البروتوكولات ({count})",
+      "calculators": "الحاسبات ({count})",
+      "firstLine": "الخط الأول",
+      "more": "+ {count} المزيد",
+      "priority": "أولوية"
+    }
   }
 }

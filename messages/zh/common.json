@@ -1127,5 +1127,71 @@
       "tip3": "用于在治疗方案间做选择",
       "tip4": "检查公共卫生系统中的可用性"
     }
+  },
+  "diseaseDetail": {
+    "backToDiseases": "返回疾病列表",
+    "views": {
+      "quickView": "快速查看",
+      "fullVersion": "完整版本",
+      "checklist": "检查清单"
+    },
+    "sections": {
+      "definition": "定义",
+      "diagnosticCriteria": "诊断标准",
+      "nonPharmacological": "非药物治疗",
+      "pharmacological": "药物治疗",
+      "redFlags": "危险信号",
+      "therapeuticGoals": "治疗目标",
+      "initialExams": "初步检查",
+      "epidemiology": "流行病学",
+      "clinicalPresentation": "临床表现",
+      "diagnosis": "诊断",
+      "fullTreatment": "完整治疗",
+      "followUp": "随访"
+    },
+    "epi": {
+      "prevalence": "患病率",
+      "incidence": "发病率",
+      "mortality": "死亡率",
+      "riskFactors": "危险因素"
+    },
+    "clinical": {
+      "mainSymptoms": "主要症状",
+      "physicalExamSigns": "体检体征"
+    },
+    "diagnosis": {
+      "criteria": "标准",
+      "differential": "鉴别诊断"
+    },
+    "treatment": {
+      "objectives": "目标",
+      "nonPharmacological": "非药物治疗",
+      "pharmacologicalFirstLine": "一线药物治疗"
+    },
+    "followUp": {
+      "visitFrequency": "随访频率",
+      "therapeuticGoals": "治疗目标",
+      "referralCriteria": "转诊标准"
+    },
+    "contentInDevelopment": "详细内容正在开发中",
+    "resources": {
+      "medications": "{count} 种药物",
+      "protocols": "{count} 个方案",
+      "calculators": "{count} 个计算器",
+      "viewInPharmacy": "查看药品",
+      "viewAlgorithms": "查看算法",
+      "useTools": "使用工具"
+    },
+    "openClinicalContext": "打开综合临床背景",
+    "lastUpdate": "最后更新",
+    "crossRefs": {
+      "title": "综合资源",
+      "medications": "药物 ({count})",
+      "protocols": "方案 ({count})",
+      "calculators": "计算器 ({count})",
+      "firstLine": "一线",
+      "more": "+ 更多 {count}",
+      "priority": "优先"
+    }
   }
 }

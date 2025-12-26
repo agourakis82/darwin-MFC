@@ -1442,5 +1442,71 @@
       "tip3": "Use to choose between therapeutic alternatives",
       "tip4": "Check availability in public health system (RENAME)"
     }
+  },
+  "diseaseDetail": {
+    "backToDiseases": "Back to Diseases",
+    "views": {
+      "quickView": "Quick View",
+      "fullVersion": "Full Version",
+      "checklist": "Checklist"
+    },
+    "sections": {
+      "definition": "Definition",
+      "diagnosticCriteria": "Diagnostic Criteria",
+      "nonPharmacological": "Non-Pharmacological",
+      "pharmacological": "Pharmacological",
+      "redFlags": "Red Flags",
+      "therapeuticGoals": "Therapeutic Goals",
+      "initialExams": "Initial Exams",
+      "epidemiology": "Epidemiology",
+      "clinicalPresentation": "Clinical Presentation",
+      "diagnosis": "Diagnosis",
+      "fullTreatment": "Full Treatment",
+      "followUp": "Follow-up"
+    },
+    "epi": {
+      "prevalence": "Prevalence",
+      "incidence": "Incidence",
+      "mortality": "Mortality",
+      "riskFactors": "Risk Factors"
+    },
+    "clinical": {
+      "mainSymptoms": "Main Symptoms",
+      "physicalExamSigns": "Physical Exam Signs"
+    },
+    "diagnosis": {
+      "criteria": "Criteria",
+      "differential": "Differential Diagnosis"
+    },
+    "treatment": {
+      "objectives": "Objectives",
+      "nonPharmacological": "Non-Pharmacological",
+      "pharmacologicalFirstLine": "Pharmacological First Line"
+    },
+    "followUp": {
+      "visitFrequency": "Visit Frequency",
+      "therapeuticGoals": "Therapeutic Goals",
+      "referralCriteria": "Referral Criteria"
+    },
+    "contentInDevelopment": "Detailed content in development",
+    "resources": {
+      "medications": "{count} Medications",
+      "protocols": "{count} Protocols",
+      "calculators": "{count} Calculators",
+      "viewInPharmacy": "View in pharmacy",
+      "viewAlgorithms": "View algorithms",
+      "useTools": "Use tools"
+    },
+    "openClinicalContext": "Open Integrated Clinical Context",
+    "lastUpdate": "Last update",
+    "crossRefs": {
+      "title": "Integrated Resources",
+      "medications": "Medications ({count})",
+      "protocols": "Protocols ({count})",
+      "calculators": "Calculators ({count})",
+      "firstLine": "First line",
+      "more": "+ {count} more",
+      "priority": "Priority"
+    }
   }
 }

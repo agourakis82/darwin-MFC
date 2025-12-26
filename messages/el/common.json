@@ -1127,5 +1127,71 @@
       "tip3": "Χρησιμοποιήστε για επιλογή μεταξύ θεραπευτικών εναλλακτικών",
       "tip4": "Ελέγξτε τη διαθεσιμότητα στο δημόσιο σύστημα υγείας"
     }
+  },
+  "diseaseDetail": {
+    "backToDiseases": "Επιστροφή στις Ασθένειες",
+    "views": {
+      "quickView": "Γρήγορη Προβολή",
+      "fullVersion": "Πλήρης Έκδοση",
+      "checklist": "Λίστα Ελέγχου"
+    },
+    "sections": {
+      "definition": "Ορισμός",
+      "diagnosticCriteria": "Διαγνωστικά Κριτήρια",
+      "nonPharmacological": "Μη Φαρμακευτική",
+      "pharmacological": "Φαρμακευτική",
+      "redFlags": "Σημάδια Κινδύνου",
+      "therapeuticGoals": "Θεραπευτικοί Στόχοι",
+      "initialExams": "Αρχικές Εξετάσεις",
+      "epidemiology": "Επιδημιολογία",
+      "clinicalPresentation": "Κλινική Εικόνα",
+      "diagnosis": "Διάγνωση",
+      "fullTreatment": "Πλήρης Θεραπεία",
+      "followUp": "Παρακολούθηση"
+    },
+    "epi": {
+      "prevalence": "Επιπολασμός",
+      "incidence": "Επίπτωση",
+      "mortality": "Θνητότητα",
+      "riskFactors": "Παράγοντες Κινδύνου"
+    },
+    "clinical": {
+      "mainSymptoms": "Κύρια Συμπτώματα",
+      "physicalExamSigns": "Σημεία Κλινικής Εξέτασης"
+    },
+    "diagnosis": {
+      "criteria": "Κριτήρια",
+      "differential": "Διαφορική Διάγνωση"
+    },
+    "treatment": {
+      "objectives": "Στόχοι",
+      "nonPharmacological": "Μη Φαρμακευτική",
+      "pharmacologicalFirstLine": "Φαρμακευτική Πρώτης Γραμμής"
+    },
+    "followUp": {
+      "visitFrequency": "Συχνότητα Επισκέψεων",
+      "therapeuticGoals": "Θεραπευτικοί Στόχοι",
+      "referralCriteria": "Κριτήρια Παραπομπής"
+    },
+    "contentInDevelopment": "Λεπτομερές περιεχόμενο υπό ανάπτυξη",
+    "resources": {
+      "medications": "{count} Φάρμακα",
+      "protocols": "{count} Πρωτόκολλα",
+      "calculators": "{count} Υπολογιστές",
+      "viewInPharmacy": "Προβολή στο φαρμακείο",
+      "viewAlgorithms": "Προβολή αλγορίθμων",
+      "useTools": "Χρήση εργαλείων"
+    },
+    "openClinicalContext": "Άνοιγμα Ολοκληρωμένου Κλινικού Πλαισίου",
+    "lastUpdate": "Τελευταία ενημέρωση",
+    "crossRefs": {
+      "title": "Ολοκληρωμένοι Πόροι",
+      "medications": "Φάρμακα ({count})",
+      "protocols": "Πρωτόκολλα ({count})",
+      "calculators": "Υπολογιστές ({count})",
+      "firstLine": "1η γραμμή",
+      "more": "+ {count} ακόμη",
+      "priority": "Προτεραιότητα"
+    }
   }
 }
