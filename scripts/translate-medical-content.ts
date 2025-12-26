@@ -8,7 +8,7 @@
  * Features:
  * - Batching: 5-10 diseases or 10-15 medications per API call
  * - Checkpoint/resume: Saves progress to continue after interruption
- * - Multiple AI providers: Gemini Flash (recommended), Claude, GPT-4
+ * - Multiple AI providers: Grok 3 (free), Gemini Flash, Claude, GPT-4
  * - Glossary integration: Uses standardized medical terminology
  * - Validation: Checks JSON structure and glossary usage
  *
@@ -16,9 +16,11 @@
  *   npx tsx scripts/translate-medical-content.ts --type diseases --locale en
  *   npx tsx scripts/translate-medical-content.ts --type medications --locale es --resume
  *   npx tsx scripts/translate-medical-content.ts --type diseases --locale all --dry-run
+ *   npx tsx scripts/translate-medical-content.ts --type diseases --locale en --provider grok
  *
  * Environment Variables:
- *   GEMINI_API_KEY - Google Gemini API key (recommended)
+ *   XAI_API_KEY - xAI Grok API key (recommended - free tier available)
+ *   GEMINI_API_KEY - Google Gemini API key
  *   ANTHROPIC_API_KEY - Anthropic Claude API key
  *   OPENAI_API_KEY - OpenAI GPT-4 API key
  */
@@ -33,7 +35,7 @@ import * as path from 'path';
 interface TranslationConfig {
   type: 'diseases' | 'medications';
   locale: string | 'all';
-  provider: 'gemini' | 'claude' | 'openai';
+  provider: 'grok' | 'gemini' | 'claude' | 'openai';
   dryRun: boolean;
   resume: boolean;
   batchSize: number;
@@ -46,7 +48,7 @@ const SUPPORTED_LOCALES = ['en', 'es', 'fr', 'ru', 'ar', 'zh', 'el', 'hi'];
 const DEFAULT_CONFIG: TranslationConfig = {
   type: 'diseases',
   locale: 'en',
-  provider: 'gemini',
+  provider: 'grok', // Default to Grok 3 (free tier)
   dryRun: false,
   resume: false,
   batchSize: 5, // diseases per batch (medications use 10)
@@ -222,6 +224,81 @@ interface TranslationResult {
     input: number;
     output: number;
   };
+}
+
+async function translateWithGrok(
+  content: string,
+  systemPrompt: string,
+  _apiKey: string
+): Promise<TranslationResult> {
+  // xAI Grok 3 API implementation
+  // Using grok-3 model (free tier available)
+
+  const endpoint = 'https://api.x.ai/v1/chat/completions';
+
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${_apiKey}`,
+      },
+      body: JSON.stringify({
+        model: 'grok-3',
+        temperature: 0.1,
+        max_tokens: 16384,
+        messages: [
+          {
+            role: 'system',
+            content: systemPrompt,
+          },
+          {
+            role: 'user',
+            content: `CONTENT TO TRANSLATE:\n${content}\n\nReturn ONLY valid JSON:`,
+          },
+        ],
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.text();
+      return { success: false, error: `Grok API error: ${error}` };
+    }
+
+    const result = await response.json();
+    const text = result.choices?.[0]?.message?.content;
+
+    if (!text) {
+      return { success: false, error: 'Empty response from Grok' };
+    }
+
+    // Parse JSON from response (handle markdown code blocks)
+    let jsonText = text;
+
+    // Remove markdown code blocks if present
+    const codeBlockMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+    if (codeBlockMatch) {
+      jsonText = codeBlockMatch[1];
+    }
+
+    // Find JSON object or array
+    const jsonMatch = jsonText.match(/[\[{][\s\S]*[\]}]/);
+    if (!jsonMatch) {
+      return { success: false, error: 'No valid JSON found in response' };
+    }
+
+    const parsed = JSON.parse(jsonMatch[0]);
+    return {
+      success: true,
+      data: parsed,
+      tokens: {
+        input: result.usage?.prompt_tokens || 0,
+        output: result.usage?.completion_tokens || 0,
+      },
+    };
+  } catch (error) {
+    return { success: false, error: `Grok error: ${error}` };
+  }
 }
 
 async function translateWithGemini(
@@ -439,6 +516,7 @@ async function translateBatch(
 
   // Get API key
   const apiKeyEnvVar = {
+    grok: 'XAI_API_KEY',
     gemini: 'GEMINI_API_KEY',
     claude: 'ANTHROPIC_API_KEY',
     openai: 'OPENAI_API_KEY',
@@ -452,6 +530,8 @@ async function translateBatch(
 
   // Call appropriate provider
   switch (config.provider) {
+    case 'grok':
+      return translateWithGrok(content, prompt, apiKey);
     case 'gemini':
       return translateWithGemini(content, prompt, apiKey);
     case 'claude':
@@ -511,7 +591,7 @@ async function main() {
         config.locale = args[++i];
         break;
       case '--provider':
-        config.provider = args[++i] as 'gemini' | 'claude' | 'openai';
+        config.provider = args[++i] as 'grok' | 'gemini' | 'claude' | 'openai';
         break;
       case '--dry-run':
         config.dryRun = true;
@@ -532,19 +612,21 @@ Usage:
 Options:
   --type <diseases|medications>  Content type to translate (default: diseases)
   --locale <locale|all>          Target locale or 'all' (default: en)
-  --provider <gemini|claude|openai>  AI provider (default: gemini)
+  --provider <grok|gemini|claude|openai>  AI provider (default: grok)
   --batch-size <number>          Items per batch (default: 5)
   --dry-run                      Show what would be done without making API calls
   --resume                       Resume from last checkpoint
   --help                         Show this help
 
 Environment Variables:
+  XAI_API_KEY         xAI Grok API key (recommended - free tier)
   GEMINI_API_KEY      Google Gemini API key
   ANTHROPIC_API_KEY   Anthropic Claude API key
   OPENAI_API_KEY      OpenAI API key
 
 Examples:
   npx tsx scripts/translate-medical-content.ts --type diseases --locale en
+  npx tsx scripts/translate-medical-content.ts --type diseases --locale en --provider grok
   npx tsx scripts/translate-medical-content.ts --type medications --locale all
   npx tsx scripts/translate-medical-content.ts --type diseases --locale fr --provider claude
         `);
