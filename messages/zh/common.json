@@ -806,5 +806,214 @@
         "incorrect": "错误"
       }
     }
+  },
+  "familyTools": {
+    "title": "家庭工具",
+    "subtitle": "交互式家系图和生态图",
+    "instructions": {
+      "title": "使用方法",
+      "drag": "拖动：",
+      "dragDesc": "在画布上移动元素",
+      "connect": "连接：",
+      "connectDesc": "创建元素之间的关系",
+      "click": "双击：",
+      "clickDesc": "编辑每个元素的详细信息",
+      "export": "导出：",
+      "exportDesc": "保存为图片或JSON文件"
+    },
+    "tabs": {
+      "genogram": "家系图",
+      "ecomap": "生态图"
+    },
+    "about": {
+      "genogram": {
+        "title": "关于家系图",
+        "description": "家系图是超越传统家谱的家庭结构图形表示。",
+        "item1": "可视化家庭关系模式",
+        "item2": "识别遗传性疾病",
+        "item3": "映射情感动态",
+        "item4": "协助系统诊断",
+        "reference": "参考文献：McGoldrick M, Gerson R. Genograms in Family Assessment."
+      },
+      "ecomap": {
+        "title": "关于生态图",
+        "description": "生态图表示家庭与外部系统和社区资源的联系。",
+        "item1": "映射社会支持网络",
+        "item2": "识别资源和压力源",
+        "item3": "可视化资源流动",
+        "item4": "协助干预规划",
+        "bondTypes": "纽带类型："
+      }
+    },
+    "bonds": {
+      "strong": "强",
+      "moderate": "中等",
+      "weak": "弱",
+      "stressful": "紧张"
+    },
+    "clinicalTip": {
+      "title": "临床提示",
+      "text": "将家系图和生态图作为与家庭对话的工具，在咨询期间一起构建，以促进反思和参与。"
+    }
+  },
+  "genogram": {
+    "title": "家系图",
+    "subtitle": "家谱编辑器",
+    "modes": {
+      "select": "选择",
+      "move": "移动",
+      "person": "+ 人员",
+      "relation": "关联"
+    },
+    "actions": {
+      "exportPNG": "导出PNG",
+      "exportJSON": "导出JSON",
+      "import": "导入",
+      "clear": "清除",
+      "edit": "编辑",
+      "save": "保存",
+      "cancel": "取消",
+      "confirm": "确认"
+    },
+    "instructions": {
+      "addPerson": "点击画布添加人员",
+      "selectFirst": "点击第一个人",
+      "selectSecond": "点击第二个人创建关系",
+      "dragToMove": "拖动人员重新定位"
+    },
+    "emptyState": {
+      "title": "开始您的家系图",
+      "description": "点击工具栏中的\"+ 人员\"，然后点击画布添加家庭成员"
+    },
+    "legend": {
+      "title": "图例",
+      "male": "男性",
+      "female": "女性",
+      "deceased": "已故"
+    },
+    "person": {
+      "newPerson": "新人员",
+      "indexPatient": "先证者",
+      "sex": "性别",
+      "male": "男性",
+      "female": "女性",
+      "status": "状态",
+      "alive": "在世",
+      "deceased": "已故",
+      "age": "年龄",
+      "years": "{count}岁",
+      "healthConditions": "健康状况"
+    },
+    "relationships": {
+      "marriage": "婚姻",
+      "stableUnion": "同居",
+      "separation": "分居",
+      "divorce": "离婚",
+      "child": "子女",
+      "adoption": "收养"
+    },
+    "conditions": {
+      "hypertension": "高血压",
+      "diabetes": "糖尿病",
+      "cancer": "癌症",
+      "heartDisease": "心脏病",
+      "stroke": "中风",
+      "depression": "抑郁症",
+      "anxiety": "焦虑症",
+      "alcoholism": "酗酒",
+      "smoking": "吸烟",
+      "obesity": "肥胖",
+      "asthma": "哮喘",
+      "copd": "慢阻肺",
+      "alzheimers": "阿尔茨海默症",
+      "parkinsons": "帕金森病",
+      "schizophrenia": "精神分裂症",
+      "bipolar": "双相情感障碍",
+      "epilepsy": "癫痫",
+      "kidneyDisease": "肾病",
+      "arthritis": "关节炎"
+    },
+    "modal": {
+      "editPerson": "编辑人员",
+      "name": "姓名",
+      "namePlaceholder": "人员姓名",
+      "birthDate": "出生日期",
+      "deathDate": "死亡日期",
+      "indexPatient": "先证者（主病例）",
+      "relationshipType": "关系类型"
+    },
+    "alerts": {
+      "exportImageError": "要导出为图片，请使用Print Screen或截图工具。",
+      "importError": "导入文件错误",
+      "clearConfirm": "您确定要清除家系图吗？"
+    }
+  },
+  "ecomap": {
+    "title": "生态图",
+    "subtitle": "支持网络和资源",
+    "nuclearFamily": "核心家庭",
+    "notes": "备注",
+    "actions": {
+      "addResource": "添加资源",
+      "exportPNG": "导出PNG",
+      "exportJSON": "导出JSON",
+      "import": "导入",
+      "clear": "清除",
+      "edit": "编辑",
+      "save": "保存",
+      "cancel": "取消"
+    },
+    "instructions": {
+      "dragAndEdit": "拖动资源重新定位。双击编辑。"
+    },
+    "emptyState": {
+      "description": "点击\"添加资源\"开始"
+    },
+    "resourceTypes": {
+      "extendedFamily": "大家庭",
+      "friends": "朋友",
+      "work": "工作",
+      "education": "学校/教育",
+      "religion": "宗教",
+      "health": "医疗服务",
+      "community": "社区/非政府组织",
+      "government": "政府服务",
+      "leisure": "休闲/运动",
+      "culture": "文化/艺术",
+      "transport": "交通",
+      "neighborhood": "邻里",
+      "other": "其他"
+    },
+    "quality": {
+      "label": "关系质量",
+      "forte": "💪 强",
+      "moderada": "👍 中等",
+      "fraca": "👎 弱",
+      "estressante": "⚠️ 紧张"
+    },
+    "flow": {
+      "label": "资源流向",
+      "bidirecional": "↔ 双向（互惠交流）",
+      "entrada": "→ 家庭获得支持",
+      "saida": "← 家庭提供支持"
+    },
+    "legend": {
+      "title": "线条图例",
+      "strong": "强（支持多）",
+      "moderate": "中等",
+      "weak": "弱（接触少）",
+      "stressful": "紧张（冲突）"
+    },
+    "modal": {
+      "addResource": "添加资源",
+      "editResource": "编辑资源",
+      "name": "名称",
+      "notesPlaceholder": "关于此资源的备注..."
+    },
+    "alerts": {
+      "exportImageError": "要导出为图片，请使用Print Screen或截图工具。",
+      "importError": "导入文件错误",
+      "clearConfirm": "您确定要清除生态图吗？"
+    }
   }
 }

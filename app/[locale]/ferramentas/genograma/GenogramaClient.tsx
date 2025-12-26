@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { 
-  Users, Plus, Trash2, Download, Upload, ZoomIn, ZoomOut, 
-  RotateCcw, Save, Heart, HeartCrack, 
+import { useTranslations } from 'next-intl';
+import {
+  Users, Plus, Trash2, Download, Upload, ZoomIn, ZoomOut,
+  RotateCcw, Save, Heart, HeartCrack,
   X, Minus, AlertTriangle, Baby, Skull, Image, FileJson,
   Move, Link2, Edit3, Info
 } from 'lucide-react';
@@ -31,23 +32,24 @@ interface Relacionamento {
 
 type TipoRelacionamento = 'casamento' | 'uniao_estavel' | 'separacao' | 'divorcio' | 'filho' | 'gemeos' | 'adocao';
 
-const tiposRelacionamento: { tipo: TipoRelacionamento; label: string; cor: string }[] = [
-  { tipo: 'casamento', label: 'Casamento', cor: '#22c55e' },
-  { tipo: 'uniao_estavel', label: 'União Estável', cor: '#3b82f6' },
-  { tipo: 'separacao', label: 'Separação', cor: '#f97316' },
-  { tipo: 'divorcio', label: 'Divórcio', cor: '#ef4444' },
-  { tipo: 'filho', label: 'Filho(a)', cor: '#8b5cf6' },
-  { tipo: 'adocao', label: 'Adoção', cor: '#06b6d4' },
+const tiposRelacionamento: { tipo: TipoRelacionamento; labelKey: string; cor: string }[] = [
+  { tipo: 'casamento', labelKey: 'relationships.marriage', cor: '#22c55e' },
+  { tipo: 'uniao_estavel', labelKey: 'relationships.stableUnion', cor: '#3b82f6' },
+  { tipo: 'separacao', labelKey: 'relationships.separation', cor: '#f97316' },
+  { tipo: 'divorcio', labelKey: 'relationships.divorce', cor: '#ef4444' },
+  { tipo: 'filho', labelKey: 'relationships.child', cor: '#8b5cf6' },
+  { tipo: 'adocao', labelKey: 'relationships.adoption', cor: '#06b6d4' },
 ];
 
 const condicoesComuns = [
-  'Hipertensão', 'Diabetes', 'Câncer', 'Doença cardíaca', 'AVC', 
-  'Depressão', 'Ansiedade', 'Alcoolismo', 'Tabagismo', 'Obesidade',
-  'Asma', 'DPOC', 'Alzheimer', 'Parkinson', 'Esquizofrenia',
-  'Transtorno Bipolar', 'Epilepsia', 'Doença renal', 'Artrite'
+  'hypertension', 'diabetes', 'cancer', 'heartDisease', 'stroke',
+  'depression', 'anxiety', 'alcoholism', 'smoking', 'obesity',
+  'asthma', 'copd', 'alzheimers', 'parkinsons', 'schizophrenia',
+  'bipolar', 'epilepsy', 'kidneyDisease', 'arthritis'
 ];
 
 export default function GenogramaClient() {
+  const t = useTranslations('genogram');
   const [pessoas, setPessoas] = useState<Pessoa[]>([]);
   const [relacionamentos, setRelacionamentos] = useState<Relacionamento[]>([]);
   const [selectedPessoa, setSelectedPessoa] = useState<string | null>(null);
@@ -85,7 +87,7 @@ export default function GenogramaClient() {
   const adicionarPessoa = useCallback((x: number, y: number) => {
     const novaPessoa: Pessoa = {
       id: `pessoa-${Date.now()}`,
-      nome: 'Nova Pessoa',
+      nome: t('person.newPerson'),
       sexo: 'masculino',
       vivo: true,
       pacienteIndice: pessoas.length === 0,
@@ -96,7 +98,7 @@ export default function GenogramaClient() {
     setPessoas(prev => [...prev, novaPessoa]);
     setEditingPessoa(novaPessoa);
     setShowModal(true);
-  }, [pessoas.length]);
+  }, [pessoas.length, t]);
 
   // Remover pessoa
   const removerPessoa = useCallback((id: string) => {
@@ -235,9 +237,9 @@ export default function GenogramaClient() {
       link.href = canvas.toDataURL('image/png');
       link.click();
     } catch (error) {
-      alert('Para exportar como imagem, use Print Screen ou ferramenta de captura.');
+      alert(t('alerts.exportImageError'));
     }
-  }, []);
+  }, [t]);
 
   // Importar genograma
   const importarGenograma = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -250,21 +252,21 @@ export default function GenogramaClient() {
           setPessoas(data.pessoas || []);
           setRelacionamentos(data.relacionamentos || []);
         } catch (err) {
-          alert('Erro ao importar arquivo');
+          alert(t('alerts.importError'));
         }
       };
       reader.readAsText(file);
     }
-  }, []);
+  }, [t]);
 
   // Limpar tudo
   const limparTudo = useCallback(() => {
-    if (confirm('Tem certeza que deseja limpar o genograma?')) {
+    if (confirm(t('alerts.clearConfirm'))) {
       setPessoas([]);
       setRelacionamentos([]);
       setSelectedPessoa(null);
     }
-  }, []);
+  }, [t]);
 
   // Calcular idade
   const calcularIdade = (dataNasc?: string, dataObito?: string) => {
@@ -493,9 +495,9 @@ export default function GenogramaClient() {
             </div>
             <div>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Genograma Familiar
+                {t('title')}
               </h1>
-              <p className="text-sm text-neutral-500">Ferramenta de Avaliação Familiar</p>
+              <p className="text-sm text-neutral-500">{t('subtitle')}</p>
             </div>
           </div>
 
@@ -504,23 +506,23 @@ export default function GenogramaClient() {
             {/* Modo */}
             <div className="flex bg-neutral-100 dark:bg-neutral-800 rounded-xl p-1 shadow-inner">
               {[
-                { id: 'selecionar', icon: Edit3, label: 'Selecionar' },
-                { id: 'mover', icon: Move, label: 'Mover' },
-                { id: 'adicionar', icon: Plus, label: 'Pessoa' },
-                { id: 'relacionamento', icon: Link2, label: 'Relação' },
+                { id: 'selecionar', icon: Edit3, labelKey: 'modes.select' },
+                { id: 'mover', icon: Move, labelKey: 'modes.move' },
+                { id: 'adicionar', icon: Plus, labelKey: 'modes.person' },
+                { id: 'relacionamento', icon: Link2, labelKey: 'modes.relation' },
               ].map(m => (
                 <button
                   key={m.id}
                   onClick={() => { setModo(m.id as typeof modo); setRelacionamentoTemp(null); }}
                   className={`px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-1.5 transition-all ${
-                    modo === m.id 
-                      ? 'bg-white dark:bg-neutral-700 shadow-md text-purple-600 dark:text-purple-400' 
+                    modo === m.id
+                      ? 'bg-white dark:bg-neutral-700 shadow-md text-purple-600 dark:text-purple-400'
                       : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900'
                   }`}
-                  title={m.label}
+                  title={t(m.labelKey)}
                 >
                   <m.icon className="w-4 h-4" />
-                  <span className="hidden sm:inline">{m.label}</span>
+                  <span className="hidden sm:inline">{t(m.labelKey)}</span>
                 </button>
               ))}
             </div>
@@ -544,28 +546,28 @@ export default function GenogramaClient() {
 
             {/* Actions */}
             <div className="flex items-center gap-1 bg-neutral-100 dark:bg-neutral-800 rounded-xl p-1">
-              <button 
-                onClick={exportarComoImagem} 
-                className="p-2 hover:bg-green-100 dark:hover:bg-green-900/30 text-green-600 rounded-lg transition-colors" 
-                title="Exportar PNG"
+              <button
+                onClick={exportarComoImagem}
+                className="p-2 hover:bg-green-100 dark:hover:bg-green-900/30 text-green-600 rounded-lg transition-colors"
+                title={t('actions.exportPNG')}
               >
                 <Image className="w-5 h-5" />
               </button>
-              <button 
-                onClick={exportarGenograma} 
-                className="p-2 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 rounded-lg transition-colors" 
-                title="Exportar JSON"
+              <button
+                onClick={exportarGenograma}
+                className="p-2 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 rounded-lg transition-colors"
+                title={t('actions.exportJSON')}
               >
                 <FileJson className="w-5 h-5" />
               </button>
-              <label className="p-2 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-lg cursor-pointer transition-colors" title="Importar">
+              <label className="p-2 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-lg cursor-pointer transition-colors" title={t('actions.import')}>
                 <Upload className="w-5 h-5" />
                 <input type="file" accept=".json" onChange={importarGenograma} className="hidden" />
               </label>
-              <button 
-                onClick={limparTudo} 
-                className="p-2 hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 rounded-lg transition-colors" 
-                title="Limpar"
+              <button
+                onClick={limparTudo}
+                className="p-2 hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 rounded-lg transition-colors"
+                title={t('actions.clear')}
               >
                 <Trash2 className="w-5 h-5" />
               </button>
@@ -583,9 +585,9 @@ export default function GenogramaClient() {
             'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300'
           }`}>
             <Info className="w-4 h-4" />
-            {modo === 'adicionar' && 'Clique no canvas para adicionar uma pessoa'}
-            {modo === 'relacionamento' && (relacionamentoTemp ? 'Clique na segunda pessoa para criar o relacionamento' : 'Clique na primeira pessoa')}
-            {modo === 'mover' && 'Arraste as pessoas para reposicioná-las'}
+            {modo === 'adicionar' && t('instructions.addPerson')}
+            {modo === 'relacionamento' && (relacionamentoTemp ? t('instructions.selectSecond') : t('instructions.selectFirst'))}
+            {modo === 'mover' && t('instructions.dragToMove')}
           </div>
         </div>
       )}
@@ -640,18 +642,16 @@ export default function GenogramaClient() {
                 <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <Users className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 dark:text-white">Comece seu Genograma</h3>
-                <p className="text-neutral-500 mb-6">
-                  Clique em <strong>"+ Pessoa"</strong> na barra de ferramentas e depois clique no canvas para adicionar membros da família
-                </p>
+                <h3 className="text-xl font-bold mb-3 dark:text-white">{t('emptyState.title')}</h3>
+                <p className="text-neutral-500 mb-6">{t('emptyState.description')}</p>
                 <div className="flex gap-6 justify-center text-sm">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 border-2 border-neutral-800 bg-white" />
-                    <span className="text-neutral-600 dark:text-neutral-400">Homem</span>
+                    <span className="text-neutral-600 dark:text-neutral-400">{t('legend.male')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-full border-2 border-neutral-800 bg-white" />
-                    <span className="text-neutral-600 dark:text-neutral-400">Mulher</span>
+                    <span className="text-neutral-600 dark:text-neutral-400">{t('legend.female')}</span>
                   </div>
                 </div>
               </div>
@@ -673,7 +673,7 @@ export default function GenogramaClient() {
                       <h3 className="text-xl font-bold dark:text-white">{pessoa.nome}</h3>
                       {pessoa.pacienteIndice && (
                         <span className="inline-flex items-center gap-1 text-xs font-medium text-blue-600 bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded-full mt-1">
-                          <Users className="w-3 h-3" /> Paciente Índice
+                          <Users className="w-3 h-3" /> {t('person.indexPatient')}
                         </span>
                       )}
                     </div>
@@ -681,22 +681,22 @@ export default function GenogramaClient() {
                       <X className="w-5 h-5" />
                     </button>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-3">
                     <div className="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-3">
-                      <p className="text-xs text-neutral-500 mb-1">Sexo</p>
-                      <p className="font-medium dark:text-white">{pessoa.sexo === 'masculino' ? '♂ Masculino' : '♀ Feminino'}</p>
+                      <p className="text-xs text-neutral-500 mb-1">{t('person.sex')}</p>
+                      <p className="font-medium dark:text-white">{pessoa.sexo === 'masculino' ? `♂ ${t('person.male')}` : `♀ ${t('person.female')}`}</p>
                     </div>
                     <div className="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-3">
-                      <p className="text-xs text-neutral-500 mb-1">Status</p>
+                      <p className="text-xs text-neutral-500 mb-1">{t('person.status')}</p>
                       <p className={`font-medium ${pessoa.vivo ? 'text-green-600' : 'text-red-600'}`}>
-                        {pessoa.vivo ? '● Vivo' : '✝ Falecido'}
+                        {pessoa.vivo ? `● ${t('person.alive')}` : `✝ ${t('person.deceased')}`}
                       </p>
                     </div>
                     {idade !== null && (
                       <div className="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-3">
-                        <p className="text-xs text-neutral-500 mb-1">Idade</p>
-                        <p className="font-medium dark:text-white">{idade} anos</p>
+                        <p className="text-xs text-neutral-500 mb-1">{t('person.age')}</p>
+                        <p className="font-medium dark:text-white">{t('person.years', { count: idade })}</p>
                       </div>
                     )}
                   </div>
@@ -705,12 +705,12 @@ export default function GenogramaClient() {
                     <div>
                       <p className="text-sm font-semibold mb-2 dark:text-white flex items-center gap-2">
                         <AlertTriangle className="w-4 h-4 text-red-500" />
-                        Condições de Saúde
+                        {t('person.healthConditions')}
                       </p>
                       <div className="flex flex-wrap gap-1.5">
                         {pessoa.condicoes.map(c => (
                           <span key={c} className="px-2.5 py-1 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 rounded-lg text-xs font-medium">
-                            {c}
+                            {t(`conditions.${c}`)}
                           </span>
                         ))}
                       </div>
@@ -718,14 +718,14 @@ export default function GenogramaClient() {
                   )}
 
                   <div className="flex gap-2 pt-4 border-t dark:border-neutral-800">
-                    <button 
+                    <button
                       onClick={() => { setEditingPessoa(pessoa); setShowModal(true); }}
                       className="flex-1 px-4 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl text-sm font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
                     >
                       <Edit3 className="w-4 h-4" />
-                      Editar
+                      {t('actions.edit')}
                     </button>
-                    <button 
+                    <button
                       onClick={() => removerPessoa(pessoa.id)}
                       className="px-4 py-2.5 bg-red-50 dark:bg-red-900/30 text-red-600 rounded-xl text-sm font-medium hover:bg-red-100 transition-colors"
                     >
@@ -741,31 +741,31 @@ export default function GenogramaClient() {
 
       {/* Legenda */}
       <div className="fixed bottom-4 left-4 bg-white/95 dark:bg-neutral-800/95 backdrop-blur rounded-2xl shadow-xl p-4 text-xs border border-purple-100 dark:border-neutral-700">
-        <p className="font-bold mb-3 dark:text-white text-sm">Legenda</p>
+        <p className="font-bold mb-3 dark:text-white text-sm">{t('legend.title')}</p>
         <div className="grid grid-cols-2 gap-x-6 gap-y-2">
           <div className="flex items-center gap-2">
             <div className="w-5 h-5 border-2 border-neutral-800 dark:border-neutral-400 bg-white dark:bg-neutral-800" />
-            <span className="dark:text-neutral-300">Homem</span>
+            <span className="dark:text-neutral-300">{t('legend.male')}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-5 h-5 rounded-full border-2 border-neutral-800 dark:border-neutral-400 bg-white dark:bg-neutral-800" />
-            <span className="dark:text-neutral-300">Mulher</span>
+            <span className="dark:text-neutral-300">{t('legend.female')}</span>
           </div>
           <div className="flex items-center gap-2">
             <X className="w-4 h-4 text-red-600" />
-            <span className="dark:text-neutral-300">Falecido</span>
+            <span className="dark:text-neutral-300">{t('legend.deceased')}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-5 h-0.5 bg-green-500" />
-            <span className="dark:text-neutral-300">Casamento</span>
+            <span className="dark:text-neutral-300">{t('relationships.marriage')}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-5 border-t-2 border-dashed border-blue-500" />
-            <span className="dark:text-neutral-300">União Estável</span>
+            <span className="dark:text-neutral-300">{t('relationships.stableUnion')}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-5 h-0.5 bg-red-500" />
-            <span className="dark:text-neutral-300">Divórcio</span>
+            <span className="dark:text-neutral-300">{t('relationships.divorce')}</span>
           </div>
         </div>
       </div>
@@ -775,52 +775,52 @@ export default function GenogramaClient() {
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-white dark:bg-neutral-900 rounded-3xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-auto">
             <div className="p-5 border-b dark:border-neutral-800 flex items-center justify-between">
-              <h2 className="text-xl font-bold dark:text-white">Editar Pessoa</h2>
+              <h2 className="text-xl font-bold dark:text-white">{t('modal.editPerson')}</h2>
               <button onClick={() => { setShowModal(false); setEditingPessoa(null); }} className="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-xl">
                 <X className="w-5 h-5" />
               </button>
             </div>
-            
+
             <div className="p-5 space-y-5">
               <div>
-                <label className="block text-sm font-medium mb-2 dark:text-white">Nome</label>
+                <label className="block text-sm font-medium mb-2 dark:text-white">{t('modal.name')}</label>
                 <input
                   type="text"
                   value={editingPessoa.nome}
                   onChange={e => setEditingPessoa({...editingPessoa, nome: e.target.value})}
                   className="w-full px-4 py-3 border-2 border-neutral-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 dark:text-white focus:border-purple-500 focus:outline-none transition-colors"
-                  placeholder="Nome da pessoa"
+                  placeholder={t('modal.namePlaceholder')}
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-2 dark:text-white">Sexo</label>
+                  <label className="block text-sm font-medium mb-2 dark:text-white">{t('person.sex')}</label>
                   <select
                     value={editingPessoa.sexo}
                     onChange={e => setEditingPessoa({...editingPessoa, sexo: e.target.value as 'masculino' | 'feminino'})}
                     className="w-full px-4 py-3 border-2 border-neutral-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 dark:text-white focus:border-purple-500 focus:outline-none"
                   >
-                    <option value="masculino">♂ Masculino</option>
-                    <option value="feminino">♀ Feminino</option>
+                    <option value="masculino">♂ {t('person.male')}</option>
+                    <option value="feminino">♀ {t('person.female')}</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2 dark:text-white">Status</label>
+                  <label className="block text-sm font-medium mb-2 dark:text-white">{t('person.status')}</label>
                   <select
                     value={editingPessoa.vivo ? 'vivo' : 'falecido'}
                     onChange={e => setEditingPessoa({...editingPessoa, vivo: e.target.value === 'vivo'})}
                     className="w-full px-4 py-3 border-2 border-neutral-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 dark:text-white focus:border-purple-500 focus:outline-none"
                   >
-                    <option value="vivo">● Vivo</option>
-                    <option value="falecido">✝ Falecido</option>
+                    <option value="vivo">● {t('person.alive')}</option>
+                    <option value="falecido">✝ {t('person.deceased')}</option>
                   </select>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-2 dark:text-white">Nascimento</label>
+                  <label className="block text-sm font-medium mb-2 dark:text-white">{t('modal.birthDate')}</label>
                   <input
                     type="date"
                     value={editingPessoa.dataNascimento || ''}
@@ -830,7 +830,7 @@ export default function GenogramaClient() {
                 </div>
                 {!editingPessoa.vivo && (
                   <div>
-                    <label className="block text-sm font-medium mb-2 dark:text-white">Óbito</label>
+                    <label className="block text-sm font-medium mb-2 dark:text-white">{t('modal.deathDate')}</label>
                     <input
                       type="date"
                       value={editingPessoa.dataObito || ''}
@@ -848,11 +848,11 @@ export default function GenogramaClient() {
                   onChange={e => setEditingPessoa({...editingPessoa, pacienteIndice: e.target.checked})}
                   className="w-5 h-5 rounded border-2 border-neutral-300 text-purple-600 focus:ring-purple-500"
                 />
-                <span className="text-sm font-medium dark:text-white">Paciente Índice (probando)</span>
+                <span className="text-sm font-medium dark:text-white">{t('modal.indexPatient')}</span>
               </label>
 
               <div>
-                <label className="block text-sm font-medium mb-3 dark:text-white">Condições de Saúde</label>
+                <label className="block text-sm font-medium mb-3 dark:text-white">{t('person.healthConditions')}</label>
                 <div className="flex flex-wrap gap-2 max-h-48 overflow-auto p-1">
                   {condicoesComuns.map(cond => (
                     <button
@@ -862,7 +862,7 @@ export default function GenogramaClient() {
                         const has = editingPessoa.condicoes.includes(cond);
                         setEditingPessoa({
                           ...editingPessoa,
-                          condicoes: has 
+                          condicoes: has
                             ? editingPessoa.condicoes.filter(c => c !== cond)
                             : [...editingPessoa.condicoes, cond]
                         });
@@ -873,7 +873,7 @@ export default function GenogramaClient() {
                           : 'bg-white dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700 hover:border-red-300'
                       }`}
                     >
-                      {cond}
+                      {t(`conditions.${cond}`)}
                     </button>
                   ))}
                 </div>
@@ -885,13 +885,13 @@ export default function GenogramaClient() {
                 onClick={() => { setShowModal(false); setEditingPessoa(null); }}
                 className="flex-1 px-4 py-3 border-2 border-neutral-200 dark:border-neutral-700 rounded-xl font-medium hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
               >
-                Cancelar
+                {t('actions.cancel')}
               </button>
               <button
                 onClick={() => atualizarPessoa(editingPessoa)}
                 className="flex-1 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-medium hover:opacity-90 transition-opacity"
               >
-                Salvar
+                {t('actions.save')}
               </button>
             </div>
           </div>
@@ -903,9 +903,9 @@ export default function GenogramaClient() {
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-white dark:bg-neutral-900 rounded-3xl shadow-2xl w-full max-w-sm">
             <div className="p-5 border-b dark:border-neutral-800">
-              <h2 className="text-xl font-bold dark:text-white">Tipo de Relacionamento</h2>
+              <h2 className="text-xl font-bold dark:text-white">{t('modal.relationshipType')}</h2>
             </div>
-            
+
             <div className="p-5 space-y-2">
               {tiposRelacionamento.map(tipo => (
                 <button
@@ -918,7 +918,7 @@ export default function GenogramaClient() {
                   }`}
                 >
                   <div className="w-4 h-1 rounded" style={{ backgroundColor: tipo.cor }} />
-                  {tipo.label}
+                  {t(tipo.labelKey)}
                 </button>
               ))}
             </div>
@@ -928,13 +928,13 @@ export default function GenogramaClient() {
                 onClick={() => { setShowTipoRelModal(false); setPendingRelacionamento(null); }}
                 className="flex-1 px-4 py-3 border-2 border-neutral-200 dark:border-neutral-700 rounded-xl font-medium hover:bg-neutral-50 dark:hover:bg-neutral-800"
               >
-                Cancelar
+                {t('actions.cancel')}
               </button>
               <button
                 onClick={confirmarRelacionamento}
                 className="flex-1 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-medium hover:opacity-90"
               >
-                Confirmar
+                {t('actions.confirm')}
               </button>
             </div>
           </div>

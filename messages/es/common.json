@@ -806,5 +806,214 @@
         "incorrect": "Incorrecto"
       }
     }
+  },
+  "familyTools": {
+    "title": "Herramientas Familiares",
+    "subtitle": "Genograma y Ecomapa Interactivos",
+    "instructions": {
+      "title": "Cómo usar",
+      "drag": "Arrastrar:",
+      "dragDesc": "Mueva elementos por el lienzo",
+      "connect": "Conectar:",
+      "connectDesc": "Cree relaciones entre elementos",
+      "click": "Doble clic:",
+      "clickDesc": "Edite los detalles de cada elemento",
+      "export": "Exportar:",
+      "exportDesc": "Guarde como imagen o archivo JSON"
+    },
+    "tabs": {
+      "genogram": "Genograma",
+      "ecomap": "Ecomapa"
+    },
+    "about": {
+      "genogram": {
+        "title": "Sobre el Genograma",
+        "description": "El genograma es una representación gráfica de la estructura familiar que va más allá de un árbol genealógico tradicional.",
+        "item1": "Visualiza patrones de relaciones familiares",
+        "item2": "Identifica enfermedades hereditarias",
+        "item3": "Mapea dinámicas emocionales",
+        "item4": "Ayuda en el diagnóstico sistémico",
+        "reference": "Referencia: McGoldrick M, Gerson R. Genograms in Family Assessment."
+      },
+      "ecomap": {
+        "title": "Sobre el Ecomapa",
+        "description": "El ecomapa representa las conexiones de la familia con sistemas externos y recursos comunitarios.",
+        "item1": "Mapea redes de apoyo social",
+        "item2": "Identifica recursos y estresores",
+        "item3": "Visualiza flujo de recursos",
+        "item4": "Ayuda en la planificación de intervenciones",
+        "bondTypes": "Tipos de vínculo:"
+      }
+    },
+    "bonds": {
+      "strong": "Fuerte",
+      "moderate": "Moderado",
+      "weak": "Débil",
+      "stressful": "Estresante"
+    },
+    "clinicalTip": {
+      "title": "Consejo Clínico",
+      "text": "Use el genograma y ecomapa como herramientas de diálogo con la familia, construyéndolos juntos durante la consulta para promover reflexión y compromiso."
+    }
+  },
+  "genogram": {
+    "title": "Genograma",
+    "subtitle": "Editor de Árbol Familiar",
+    "modes": {
+      "select": "Seleccionar",
+      "move": "Mover",
+      "person": "+ Persona",
+      "relation": "Relacionar"
+    },
+    "actions": {
+      "exportPNG": "Exportar PNG",
+      "exportJSON": "Exportar JSON",
+      "import": "Importar",
+      "clear": "Limpiar",
+      "edit": "Editar",
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "confirm": "Confirmar"
+    },
+    "instructions": {
+      "addPerson": "Haga clic en el lienzo para agregar una persona",
+      "selectFirst": "Haga clic en la primera persona",
+      "selectSecond": "Haga clic en la segunda persona para crear la relación",
+      "dragToMove": "Arrastre las personas para reposicionarlas"
+    },
+    "emptyState": {
+      "title": "Comience su Genograma",
+      "description": "Haga clic en \"+ Persona\" en la barra de herramientas y luego haga clic en el lienzo para agregar miembros de la familia"
+    },
+    "legend": {
+      "title": "Leyenda",
+      "male": "Hombre",
+      "female": "Mujer",
+      "deceased": "Fallecido"
+    },
+    "person": {
+      "newPerson": "Nueva Persona",
+      "indexPatient": "Paciente Índice",
+      "sex": "Sexo",
+      "male": "Masculino",
+      "female": "Femenino",
+      "status": "Estado",
+      "alive": "Vivo",
+      "deceased": "Fallecido",
+      "age": "Edad",
+      "years": "{count} años",
+      "healthConditions": "Condiciones de Salud"
+    },
+    "relationships": {
+      "marriage": "Matrimonio",
+      "stableUnion": "Unión Estable",
+      "separation": "Separación",
+      "divorce": "Divorcio",
+      "child": "Hijo(a)",
+      "adoption": "Adopción"
+    },
+    "conditions": {
+      "hypertension": "Hipertensión",
+      "diabetes": "Diabetes",
+      "cancer": "Cáncer",
+      "heartDisease": "Enfermedad cardíaca",
+      "stroke": "ACV",
+      "depression": "Depresión",
+      "anxiety": "Ansiedad",
+      "alcoholism": "Alcoholismo",
+      "smoking": "Tabaquismo",
+      "obesity": "Obesidad",
+      "asthma": "Asma",
+      "copd": "EPOC",
+      "alzheimers": "Alzheimer",
+      "parkinsons": "Parkinson",
+      "schizophrenia": "Esquizofrenia",
+      "bipolar": "Trastorno Bipolar",
+      "epilepsy": "Epilepsia",
+      "kidneyDisease": "Enfermedad renal",
+      "arthritis": "Artritis"
+    },
+    "modal": {
+      "editPerson": "Editar Persona",
+      "name": "Nombre",
+      "namePlaceholder": "Nombre de la persona",
+      "birthDate": "Nacimiento",
+      "deathDate": "Fallecimiento",
+      "indexPatient": "Paciente Índice (probando)",
+      "relationshipType": "Tipo de Relación"
+    },
+    "alerts": {
+      "exportImageError": "Para exportar como imagen, use Print Screen o herramienta de captura.",
+      "importError": "Error al importar archivo",
+      "clearConfirm": "¿Está seguro de que desea limpiar el genograma?"
+    }
+  },
+  "ecomap": {
+    "title": "Ecomapa",
+    "subtitle": "Red de Apoyo y Recursos",
+    "nuclearFamily": "Familia Nuclear",
+    "notes": "Notas",
+    "actions": {
+      "addResource": "Agregar Recurso",
+      "exportPNG": "Exportar PNG",
+      "exportJSON": "Exportar JSON",
+      "import": "Importar",
+      "clear": "Limpiar",
+      "edit": "Editar",
+      "save": "Guardar",
+      "cancel": "Cancelar"
+    },
+    "instructions": {
+      "dragAndEdit": "Arrastre los recursos para reposicionarlos. Haga doble clic para editar."
+    },
+    "emptyState": {
+      "description": "Haga clic en \"Agregar Recurso\" para comenzar"
+    },
+    "resourceTypes": {
+      "extendedFamily": "Familia Extensa",
+      "friends": "Amigos",
+      "work": "Trabajo",
+      "education": "Escuela/Educación",
+      "religion": "Religión",
+      "health": "Servicios de Salud",
+      "community": "Comunidad/ONGs",
+      "government": "Serv. Gubernamentales",
+      "leisure": "Ocio/Deportes",
+      "culture": "Cultura/Arte",
+      "transport": "Transporte",
+      "neighborhood": "Vecindario",
+      "other": "Otro"
+    },
+    "quality": {
+      "label": "Calidad de la Relación",
+      "forte": "💪 Fuerte",
+      "moderada": "👍 Moderada",
+      "fraca": "👎 Débil",
+      "estressante": "⚠️ Estresante"
+    },
+    "flow": {
+      "label": "Flujo de Recursos",
+      "bidirecional": "↔ Bidireccional (intercambio mutuo)",
+      "entrada": "→ Familia recibe apoyo",
+      "saida": "← Familia da apoyo"
+    },
+    "legend": {
+      "title": "Leyenda de Líneas",
+      "strong": "Fuerte (mucho apoyo)",
+      "moderate": "Moderada",
+      "weak": "Débil (poco contacto)",
+      "stressful": "Estresante (conflicto)"
+    },
+    "modal": {
+      "addResource": "Agregar Recurso",
+      "editResource": "Editar Recurso",
+      "name": "Nombre",
+      "notesPlaceholder": "Observaciones sobre este recurso..."
+    },
+    "alerts": {
+      "exportImageError": "Para exportar como imagen, use Print Screen o herramienta de captura.",
+      "importError": "Error al importar archivo",
+      "clearConfirm": "¿Está seguro de que desea limpiar el ecomapa?"
+    }
   }
 }

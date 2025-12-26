@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { 
-  Network, Plus, Trash2, Upload, ZoomIn, ZoomOut, 
+import { useTranslations } from 'next-intl';
+import {
+  Network, Plus, Trash2, Upload, ZoomIn, ZoomOut,
   X, Home, Heart, Briefcase, GraduationCap, Church, Hospital,
   Users, Building, ShieldPlus, Dumbbell, Music, Car,
   AlertTriangle, Image, FileJson, Edit3, Info, RotateCcw
@@ -27,36 +28,37 @@ type TipoRecurso =
 
 interface ConfigRecurso {
   tipo: TipoRecurso;
-  nome: string;
+  nameKey: string;
   icon: React.ElementType;
   cor: string;
   corClara: string;
 }
 
 const tiposRecurso: ConfigRecurso[] = [
-  { tipo: 'familia', nome: 'Família Extensa', icon: Users, cor: '#ec4899', corClara: '#fce7f3' },
-  { tipo: 'amigos', nome: 'Amigos', icon: Heart, cor: '#f43f5e', corClara: '#ffe4e6' },
-  { tipo: 'trabalho', nome: 'Trabalho', icon: Briefcase, cor: '#3b82f6', corClara: '#dbeafe' },
-  { tipo: 'escola', nome: 'Escola/Educação', icon: GraduationCap, cor: '#8b5cf6', corClara: '#ede9fe' },
-  { tipo: 'religiao', nome: 'Religião', icon: Church, cor: '#a855f7', corClara: '#f3e8ff' },
-  { tipo: 'saude', nome: 'Serviços de Saúde', icon: Hospital, cor: '#22c55e', corClara: '#dcfce7' },
-  { tipo: 'comunidade', nome: 'Comunidade/ONGs', icon: Building, cor: '#06b6d4', corClara: '#cffafe' },
-  { tipo: 'governo', nome: 'Serviços Gov.', icon: ShieldPlus, cor: '#64748b', corClara: '#f1f5f9' },
-  { tipo: 'lazer', nome: 'Lazer/Esporte', icon: Dumbbell, cor: '#f97316', corClara: '#ffedd5' },
-  { tipo: 'cultura', nome: 'Cultura/Arte', icon: Music, cor: '#eab308', corClara: '#fef9c3' },
-  { tipo: 'transporte', nome: 'Transporte', icon: Car, cor: '#78716c', corClara: '#f5f5f4' },
-  { tipo: 'vizinhanca', nome: 'Vizinhança', icon: Home, cor: '#14b8a6', corClara: '#ccfbf1' },
-  { tipo: 'outro', nome: 'Outro', icon: Network, cor: '#6b7280', corClara: '#f3f4f6' },
+  { tipo: 'familia', nameKey: 'resourceTypes.extendedFamily', icon: Users, cor: '#ec4899', corClara: '#fce7f3' },
+  { tipo: 'amigos', nameKey: 'resourceTypes.friends', icon: Heart, cor: '#f43f5e', corClara: '#ffe4e6' },
+  { tipo: 'trabalho', nameKey: 'resourceTypes.work', icon: Briefcase, cor: '#3b82f6', corClara: '#dbeafe' },
+  { tipo: 'escola', nameKey: 'resourceTypes.education', icon: GraduationCap, cor: '#8b5cf6', corClara: '#ede9fe' },
+  { tipo: 'religiao', nameKey: 'resourceTypes.religion', icon: Church, cor: '#a855f7', corClara: '#f3e8ff' },
+  { tipo: 'saude', nameKey: 'resourceTypes.health', icon: Hospital, cor: '#22c55e', corClara: '#dcfce7' },
+  { tipo: 'comunidade', nameKey: 'resourceTypes.community', icon: Building, cor: '#06b6d4', corClara: '#cffafe' },
+  { tipo: 'governo', nameKey: 'resourceTypes.government', icon: ShieldPlus, cor: '#64748b', corClara: '#f1f5f9' },
+  { tipo: 'lazer', nameKey: 'resourceTypes.leisure', icon: Dumbbell, cor: '#f97316', corClara: '#ffedd5' },
+  { tipo: 'cultura', nameKey: 'resourceTypes.culture', icon: Music, cor: '#eab308', corClara: '#fef9c3' },
+  { tipo: 'transporte', nameKey: 'resourceTypes.transport', icon: Car, cor: '#78716c', corClara: '#f5f5f4' },
+  { tipo: 'vizinhanca', nameKey: 'resourceTypes.neighborhood', icon: Home, cor: '#14b8a6', corClara: '#ccfbf1' },
+  { tipo: 'outro', nameKey: 'resourceTypes.other', icon: Network, cor: '#6b7280', corClara: '#f3f4f6' },
 ];
 
 export default function EcomapaClient() {
+  const t = useTranslations('ecomap');
   const [recursos, setRecursos] = useState<Recurso[]>([]);
   const [selectedRecurso, setSelectedRecurso] = useState<string | null>(null);
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [editingRecurso, setEditingRecurso] = useState<Recurso | null>(null);
   const [zoom, setZoom] = useState(1);
-  const [nomeFamilia, setNomeFamilia] = useState('Família Nuclear');
+  const [nomeFamilia, setNomeFamilia] = useState('');
   const [editandoNomeFamilia, setEditandoNomeFamilia] = useState(false);
   const canvasRef = useRef<HTMLDivElement>(null);
   const [canvasSize, setCanvasSize] = useState({ width: 800, height: 600 });
@@ -69,6 +71,13 @@ export default function EcomapaClient() {
   const centroX = canvasSize.width / (2 * zoom);
   const centroY = canvasSize.height / (2 * zoom);
   const raioFamilia = 70;
+
+  // Initialize family name with translation
+  useEffect(() => {
+    if (!nomeFamilia) {
+      setNomeFamilia(t('nuclearFamily'));
+    }
+  }, [nomeFamilia, t]);
 
   // Resize observer
   useEffect(() => {
@@ -87,23 +96,23 @@ export default function EcomapaClient() {
 
   // Adicionar recurso
   const adicionarRecurso = useCallback((tipo: TipoRecurso) => {
-    const config = tiposRecurso.find(t => t.tipo === tipo)!;
+    const config = tiposRecurso.find(tr => tr.tipo === tipo)!;
     const angulo = ((recursos.length * 360 / 8) + 45) * (Math.PI / 180);
     const distancia = 200 + (recursos.length % 3) * 40;
-    
+
     const novoRecurso: Recurso = {
       id: `recurso-${Date.now()}`,
-      nome: config.nome,
+      nome: t(config.nameKey),
       tipo,
       qualidadeRelacao: 'moderada',
       direcaoFluxo: 'bidirecional',
       x: centroX + Math.cos(angulo) * distancia,
       y: centroY + Math.sin(angulo) * distancia
     };
-    
+
     setRecursos(prev => [...prev, novoRecurso]);
     setShowAddModal(false);
-  }, [recursos.length, centroX, centroY]);
+  }, [recursos.length, centroX, centroY, t]);
 
   // Remover recurso
   const removerRecurso = useCallback((id: string) => {
@@ -182,9 +191,9 @@ export default function EcomapaClient() {
       link.href = canvas.toDataURL('image/png');
       link.click();
     } catch (error) {
-      alert('Para exportar como imagem, use Print Screen ou ferramenta de captura.');
+      alert(t('alerts.exportImageError'));
     }
-  }, []);
+  }, [t]);
 
   // Importar ecomapa
   const importarEcomapa = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -195,22 +204,22 @@ export default function EcomapaClient() {
         try {
           const data = JSON.parse(event.target?.result as string);
           setRecursos(data.recursos || []);
-          setNomeFamilia(data.nomeFamilia || 'Família Nuclear');
+          setNomeFamilia(data.nomeFamilia || t('nuclearFamily'));
         } catch (err) {
-          alert('Erro ao importar arquivo');
+          alert(t('alerts.importError'));
         }
       };
       reader.readAsText(file);
     }
-  }, []);
+  }, [t]);
 
   // Limpar tudo
   const limparTudo = useCallback(() => {
-    if (confirm('Tem certeza que deseja limpar o ecomapa?')) {
+    if (confirm(t('alerts.clearConfirm'))) {
       setRecursos([]);
       setSelectedRecurso(null);
     }
-  }, []);
+  }, [t]);
 
   // Obter estilo da linha baseado na qualidade
   const getLinhaEstilo = (qualidade: Recurso['qualidadeRelacao']) => {
@@ -245,9 +254,9 @@ export default function EcomapaClient() {
             </div>
             <div>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                Ecomapa
+                {t('title')}
               </h1>
-              <p className="text-sm text-neutral-500">Rede de Apoio e Recursos</p>
+              <p className="text-sm text-neutral-500">{t('subtitle')}</p>
             </div>
           </div>
 
@@ -258,20 +267,20 @@ export default function EcomapaClient() {
               className="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl flex items-center gap-2 font-medium hover:opacity-90 transition-opacity shadow-lg shadow-cyan-500/20"
             >
               <Plus className="w-5 h-5" />
-              Adicionar Recurso
+              {t('actions.addResource')}
             </button>
 
             {/* Zoom */}
             <div className="flex items-center gap-1 bg-neutral-100 dark:bg-neutral-800 rounded-xl p-1">
-              <button 
-                onClick={() => setZoom(z => Math.max(0.5, z - 0.1))} 
+              <button
+                onClick={() => setZoom(z => Math.max(0.5, z - 0.1))}
                 className="p-2 hover:bg-white dark:hover:bg-neutral-700 rounded-lg transition-colors"
               >
                 <ZoomOut className="w-4 h-4" />
               </button>
               <span className="text-sm w-14 text-center font-medium">{Math.round(zoom * 100)}%</span>
-              <button 
-                onClick={() => setZoom(z => Math.min(1.5, z + 0.1))} 
+              <button
+                onClick={() => setZoom(z => Math.min(1.5, z + 0.1))}
                 className="p-2 hover:bg-white dark:hover:bg-neutral-700 rounded-lg transition-colors"
               >
                 <ZoomIn className="w-4 h-4" />
@@ -280,28 +289,28 @@ export default function EcomapaClient() {
 
             {/* Actions */}
             <div className="flex items-center gap-1 bg-neutral-100 dark:bg-neutral-800 rounded-xl p-1">
-              <button 
-                onClick={exportarComoImagem} 
-                className="p-2 hover:bg-green-100 dark:hover:bg-green-900/30 text-green-600 rounded-lg transition-colors" 
-                title="Exportar PNG"
+              <button
+                onClick={exportarComoImagem}
+                className="p-2 hover:bg-green-100 dark:hover:bg-green-900/30 text-green-600 rounded-lg transition-colors"
+                title={t('actions.exportPNG')}
               >
                 <Image className="w-5 h-5" />
               </button>
-              <button 
-                onClick={exportarEcomapa} 
-                className="p-2 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 rounded-lg transition-colors" 
-                title="Exportar JSON"
+              <button
+                onClick={exportarEcomapa}
+                className="p-2 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 rounded-lg transition-colors"
+                title={t('actions.exportJSON')}
               >
                 <FileJson className="w-5 h-5" />
               </button>
-              <label className="p-2 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-lg cursor-pointer transition-colors" title="Importar">
+              <label className="p-2 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-lg cursor-pointer transition-colors" title={t('actions.import')}>
                 <Upload className="w-5 h-5" />
                 <input type="file" accept=".json" onChange={importarEcomapa} className="hidden" />
               </label>
-              <button 
-                onClick={limparTudo} 
-                className="p-2 hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 rounded-lg transition-colors" 
-                title="Limpar"
+              <button
+                onClick={limparTudo}
+                className="p-2 hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 rounded-lg transition-colors"
+                title={t('actions.clear')}
               >
                 <Trash2 className="w-5 h-5" />
               </button>
@@ -314,7 +323,7 @@ export default function EcomapaClient() {
       <div className="max-w-7xl mx-auto px-4 mt-2">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300">
           <Info className="w-4 h-4" />
-          Arraste os recursos para reposicioná-los. Clique duas vezes para editar.
+          {t('instructions.dragAndEdit')}
         </div>
       </div>
 
@@ -499,13 +508,11 @@ export default function EcomapaClient() {
           {/* Instruções se vazio */}
           {recursos.length === 0 && (
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div 
+              <div
                 className="text-center p-4 bg-white/60 dark:bg-neutral-800/60 backdrop-blur rounded-2xl"
                 style={{ transform: `translateY(${100 * zoom}px)` }}
               >
-                <p className="text-neutral-500 text-sm">
-                  Clique em <strong>"Adicionar Recurso"</strong> para começar
-                </p>
+                <p className="text-neutral-500 text-sm">{t('emptyState.description')}</p>
               </div>
             </div>
           )}
@@ -517,13 +524,13 @@ export default function EcomapaClient() {
             {(() => {
               const recurso = recursos.find(r => r.id === selectedRecurso);
               if (!recurso) return null;
-              const config = tiposRecurso.find(t => t.tipo === recurso.tipo)!;
-              
+              const config = tiposRecurso.find(tr => tr.tipo === recurso.tipo)!;
+
               return (
                 <div className="space-y-5">
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-3">
-                      <div 
+                      <div
                         className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg"
                         style={{ backgroundColor: config.cor }}
                       >
@@ -531,19 +538,19 @@ export default function EcomapaClient() {
                       </div>
                       <div>
                         <h3 className="text-lg font-bold dark:text-white">{recurso.nome}</h3>
-                        <p className="text-sm text-neutral-500">{config.nome}</p>
+                        <p className="text-sm text-neutral-500">{t(config.nameKey)}</p>
                       </div>
                     </div>
                     <button onClick={() => setSelectedRecurso(null)} className="p-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg">
                       <X className="w-5 h-5" />
                     </button>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <div className="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-4">
-                      <p className="text-xs text-neutral-500 mb-2">Qualidade da Relação</p>
+                      <p className="text-xs text-neutral-500 mb-2">{t('quality.label')}</p>
                       <div className="flex items-center gap-2">
-                        <div 
+                        <div
                           className="w-4 h-4 rounded-full"
                           style={{ backgroundColor: getLinhaEstilo(recurso.qualidadeRelacao).stroke }}
                         />
@@ -553,40 +560,35 @@ export default function EcomapaClient() {
                           recurso.qualidadeRelacao === 'fraca' ? 'text-neutral-500' :
                           'text-red-600'
                         }`}>
-                          {recurso.qualidadeRelacao === 'forte' ? '💪 Forte' :
-                           recurso.qualidadeRelacao === 'moderada' ? '👍 Moderada' :
-                           recurso.qualidadeRelacao === 'fraca' ? '👎 Fraca' :
-                           '⚠️ Estressante'}
+                          {t(`quality.${recurso.qualidadeRelacao}`)}
                         </span>
                       </div>
                     </div>
-                    
+
                     <div className="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-4">
-                      <p className="text-xs text-neutral-500 mb-2">Fluxo de Recursos</p>
+                      <p className="text-xs text-neutral-500 mb-2">{t('flow.label')}</p>
                       <span className="text-base font-medium dark:text-white">
-                        {recurso.direcaoFluxo === 'entrada' ? '→ Família recebe apoio' :
-                         recurso.direcaoFluxo === 'saida' ? '← Família dá apoio' :
-                         '↔ Troca mútua'}
+                        {t(`flow.${recurso.direcaoFluxo}`)}
                       </span>
                     </div>
 
                     {recurso.notas && (
                       <div className="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-4">
-                        <p className="text-xs text-neutral-500 mb-2">Notas</p>
+                        <p className="text-xs text-neutral-500 mb-2">{t('notes')}</p>
                         <p className="text-sm dark:text-neutral-300">{recurso.notas}</p>
                       </div>
                     )}
                   </div>
 
                   <div className="flex gap-2 pt-4 border-t dark:border-neutral-800">
-                    <button 
+                    <button
                       onClick={() => { setEditingRecurso(recurso); setShowEditModal(true); }}
                       className="flex-1 px-4 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl text-sm font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
                     >
                       <Edit3 className="w-4 h-4" />
-                      Editar
+                      {t('actions.edit')}
                     </button>
-                    <button 
+                    <button
                       onClick={() => removerRecurso(recurso.id)}
                       className="px-4 py-2.5 bg-red-50 dark:bg-red-900/30 text-red-600 rounded-xl text-sm font-medium hover:bg-red-100 transition-colors"
                     >
@@ -602,23 +604,23 @@ export default function EcomapaClient() {
 
       {/* Legenda */}
       <div className="fixed bottom-4 left-4 bg-white/95 dark:bg-neutral-800/95 backdrop-blur rounded-2xl shadow-xl p-4 text-xs border border-cyan-100 dark:border-neutral-700">
-        <p className="font-bold mb-3 dark:text-white text-sm">Legenda das Linhas</p>
+        <p className="font-bold mb-3 dark:text-white text-sm">{t('legend.title')}</p>
         <div className="space-y-2">
           <div className="flex items-center gap-3">
             <div className="w-8 h-1.5 bg-green-500 rounded-full" />
-            <span className="dark:text-neutral-300">Forte (muito apoio)</span>
+            <span className="dark:text-neutral-300">{t('legend.strong')}</span>
           </div>
           <div className="flex items-center gap-3">
             <div className="w-8 h-1 bg-blue-500 rounded-full" />
-            <span className="dark:text-neutral-300">Moderada</span>
+            <span className="dark:text-neutral-300">{t('legend.moderate')}</span>
           </div>
           <div className="flex items-center gap-3">
             <div className="w-8 border-t-2 border-dashed border-neutral-400" />
-            <span className="dark:text-neutral-300">Fraca (pouco contato)</span>
+            <span className="dark:text-neutral-300">{t('legend.weak')}</span>
           </div>
           <div className="flex items-center gap-3">
             <div className="w-8 h-1 bg-red-500 rounded-full" />
-            <span className="dark:text-neutral-300">Estressante (conflito)</span>
+            <span className="dark:text-neutral-300">{t('legend.stressful')}</span>
           </div>
         </div>
       </div>
@@ -628,12 +630,12 @@ export default function EcomapaClient() {
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-white dark:bg-neutral-900 rounded-3xl shadow-2xl w-full max-w-2xl max-h-[80vh] overflow-auto">
             <div className="p-5 border-b dark:border-neutral-800 flex items-center justify-between sticky top-0 bg-white dark:bg-neutral-900">
-              <h2 className="text-xl font-bold dark:text-white">Adicionar Recurso</h2>
+              <h2 className="text-xl font-bold dark:text-white">{t('modal.addResource')}</h2>
               <button onClick={() => setShowAddModal(false)} className="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-xl">
                 <X className="w-5 h-5" />
               </button>
             </div>
-            
+
             <div className="p-5 grid grid-cols-3 sm:grid-cols-4 gap-3">
               {tiposRecurso.map(tipo => (
                 <button
@@ -642,13 +644,13 @@ export default function EcomapaClient() {
                   className="flex flex-col items-center gap-3 p-4 rounded-2xl border-2 border-transparent hover:border-cyan-500 transition-all hover:shadow-lg group"
                   style={{ backgroundColor: tipo.corClara }}
                 >
-                  <div 
+                  <div
                     className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"
                     style={{ backgroundColor: tipo.cor }}
                   >
                     <tipo.icon className="w-7 h-7 text-white" />
                   </div>
-                  <span className="text-xs text-center font-medium dark:text-neutral-900">{tipo.nome}</span>
+                  <span className="text-xs text-center font-medium dark:text-neutral-900">{t(tipo.nameKey)}</span>
                 </button>
               ))}
             </div>
@@ -661,15 +663,15 @@ export default function EcomapaClient() {
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-white dark:bg-neutral-900 rounded-3xl shadow-2xl w-full max-w-md">
             <div className="p-5 border-b dark:border-neutral-800 flex items-center justify-between">
-              <h2 className="text-xl font-bold dark:text-white">Editar Recurso</h2>
+              <h2 className="text-xl font-bold dark:text-white">{t('modal.editResource')}</h2>
               <button onClick={() => { setShowEditModal(false); setEditingRecurso(null); }} className="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-xl">
                 <X className="w-5 h-5" />
               </button>
             </div>
-            
+
             <div className="p-5 space-y-5">
               <div>
-                <label className="block text-sm font-medium mb-2 dark:text-white">Nome</label>
+                <label className="block text-sm font-medium mb-2 dark:text-white">{t('modal.name')}</label>
                 <input
                   type="text"
                   value={editingRecurso.nome}
@@ -679,13 +681,13 @@ export default function EcomapaClient() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2 dark:text-white">Qualidade da Relação</label>
+                <label className="block text-sm font-medium mb-2 dark:text-white">{t('quality.label')}</label>
                 <div className="grid grid-cols-2 gap-2">
                   {[
-                    { value: 'forte', label: '💪 Forte', cor: '#22c55e' },
-                    { value: 'moderada', label: '👍 Moderada', cor: '#3b82f6' },
-                    { value: 'fraca', label: '👎 Fraca', cor: '#94a3b8' },
-                    { value: 'estressante', label: '⚠️ Estressante', cor: '#ef4444' },
+                    { value: 'forte', cor: '#22c55e' },
+                    { value: 'moderada', cor: '#3b82f6' },
+                    { value: 'fraca', cor: '#94a3b8' },
+                    { value: 'estressante', cor: '#ef4444' },
                   ].map(opt => (
                     <button
                       key={opt.value}
@@ -697,33 +699,33 @@ export default function EcomapaClient() {
                       }`}
                     >
                       <div className="w-3 h-3 rounded-full" style={{ backgroundColor: opt.cor }} />
-                      <span className="text-sm">{opt.label}</span>
+                      <span className="text-sm">{t(`quality.${opt.value}`)}</span>
                     </button>
                   ))}
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2 dark:text-white">Direção do Fluxo</label>
+                <label className="block text-sm font-medium mb-2 dark:text-white">{t('flow.label')}</label>
                 <select
                   value={editingRecurso.direcaoFluxo}
                   onChange={e => setEditingRecurso({...editingRecurso, direcaoFluxo: e.target.value as Recurso['direcaoFluxo']})}
                   className="w-full px-4 py-3 border-2 border-neutral-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 dark:text-white focus:border-cyan-500 focus:outline-none"
                 >
-                  <option value="bidirecional">↔ Bidirecional (troca mútua)</option>
-                  <option value="entrada">→ Entrada (família recebe apoio)</option>
-                  <option value="saida">← Saída (família dá apoio)</option>
+                  <option value="bidirecional">{t('flow.bidirecional')}</option>
+                  <option value="entrada">{t('flow.entrada')}</option>
+                  <option value="saida">{t('flow.saida')}</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2 dark:text-white">Notas</label>
+                <label className="block text-sm font-medium mb-2 dark:text-white">{t('notes')}</label>
                 <textarea
                   value={editingRecurso.notas || ''}
                   onChange={e => setEditingRecurso({...editingRecurso, notas: e.target.value})}
                   className="w-full px-4 py-3 border-2 border-neutral-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 dark:text-white focus:border-cyan-500 focus:outline-none resize-none"
                   rows={3}
-                  placeholder="Observações sobre este recurso..."
+                  placeholder={t('modal.notesPlaceholder')}
                 />
               </div>
             </div>
@@ -733,13 +735,13 @@ export default function EcomapaClient() {
                 onClick={() => { setShowEditModal(false); setEditingRecurso(null); }}
                 className="flex-1 px-4 py-3 border-2 border-neutral-200 dark:border-neutral-700 rounded-xl font-medium hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
               >
-                Cancelar
+                {t('actions.cancel')}
               </button>
               <button
                 onClick={() => atualizarRecurso(editingRecurso)}
                 className="flex-1 px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-medium hover:opacity-90 transition-opacity"
               >
-                Salvar
+                {t('actions.save')}
               </button>
             </div>
           </div>

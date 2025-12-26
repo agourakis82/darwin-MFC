@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
+import { useTranslations } from 'next-intl';
 import { Users, Network, BookOpen, Info, AlertCircle } from 'lucide-react';
 
 // Dynamic imports para evitar SSR issues com React Flow
@@ -20,7 +21,7 @@ function LoadingPlaceholder() {
     <div className="h-[600px] w-full bg-neutral-100 dark:bg-neutral-800 rounded-2xl flex items-center justify-center">
       <div className="text-center">
         <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-neutral-600 dark:text-neutral-400">Carregando editor...</p>
+        <p className="text-neutral-600 dark:text-neutral-400">Loading...</p>
       </div>
     </div>
   );
@@ -29,6 +30,7 @@ function LoadingPlaceholder() {
 type TabType = 'genograma' | 'ecomapa';
 
 export default function FerramentasFamiliaClient() {
+  const t = useTranslations('familyTools');
   const [activeTab, setActiveTab] = useState<TabType>('genograma');
 
   return (
@@ -40,8 +42,8 @@ export default function FerramentasFamiliaClient() {
             <Users className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold">Ferramentas de Abordagem Familiar</h1>
-            <p className="text-neutral-600 dark:text-neutral-400">Genograma e Ecomapa Interativos</p>
+            <h1 className="text-2xl font-bold">{t('title')}</h1>
+            <p className="text-neutral-600 dark:text-neutral-400">{t('subtitle')}</p>
           </div>
         </div>
       </div>
@@ -51,12 +53,12 @@ export default function FerramentasFamiliaClient() {
         <div className="flex items-start gap-3">
           <Info className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
           <div className="text-sm">
-            <p className="font-medium text-blue-800 dark:text-blue-300 mb-1">Instruções de Uso</p>
+            <p className="font-medium text-blue-800 dark:text-blue-300 mb-1">{t('instructions.title')}</p>
             <ul className="text-blue-700 dark:text-blue-400 space-y-1">
-              <li>• <strong>Arraste</strong> os elementos para reposicioná-los</li>
-              <li>• <strong>Conecte</strong> arrastando de um elemento a outro</li>
-              <li>• <strong>Clique</strong> para selecionar e editar</li>
-              <li>• <strong>Exporte</strong> em JSON para salvar e reimportar depois</li>
+              <li>• <strong>{t('instructions.drag')}</strong> {t('instructions.dragDesc')}</li>
+              <li>• <strong>{t('instructions.connect')}</strong> {t('instructions.connectDesc')}</li>
+              <li>• <strong>{t('instructions.click')}</strong> {t('instructions.clickDesc')}</li>
+              <li>• <strong>{t('instructions.export')}</strong> {t('instructions.exportDesc')}</li>
             </ul>
           </div>
         </div>
@@ -73,7 +75,7 @@ export default function FerramentasFamiliaClient() {
           }`}
         >
           <Users className="w-5 h-5" />
-          Genograma
+          {t('tabs.genogram')}
         </button>
         <button
           onClick={() => setActiveTab('ecomapa')}
@@ -84,7 +86,7 @@ export default function FerramentasFamiliaClient() {
           }`}
         >
           <Network className="w-5 h-5" />
-          Ecomapa
+          {t('tabs.ecomap')}
         </button>
       </div>
 
@@ -99,21 +101,18 @@ export default function FerramentasFamiliaClient() {
         <div className="p-6 bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-700">
           <div className="flex items-center gap-2 mb-4">
             <Users className="w-5 h-5 text-blue-600" />
-            <h3 className="font-bold">Sobre o Genograma</h3>
+            <h3 className="font-bold">{t('about.genogram.title')}</h3>
           </div>
           <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-2">
-            <p>
-              O <strong>Genograma</strong> é uma representação gráfica da estrutura familiar 
-              que mostra pelo menos 3 gerações, incluindo informações sobre:
-            </p>
+            <p>{t('about.genogram.description')}</p>
             <ul className="list-disc list-inside space-y-1">
-              <li>Relações de parentesco</li>
-              <li>Padrões de doenças familiares</li>
-              <li>Eventos importantes (nascimentos, mortes, casamentos)</li>
-              <li>Dinâmicas relacionais</li>
+              <li>{t('about.genogram.item1')}</li>
+              <li>{t('about.genogram.item2')}</li>
+              <li>{t('about.genogram.item3')}</li>
+              <li>{t('about.genogram.item4')}</li>
             </ul>
             <p className="text-xs mt-3 text-neutral-500">
-              Referência: McGoldrick M, Gerson R, Petry S. Genograms: Assessment and Intervention. 3rd ed.
+              {t('about.genogram.reference')}
             </p>
           </div>
         </div>
@@ -122,26 +121,23 @@ export default function FerramentasFamiliaClient() {
         <div className="p-6 bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-700">
           <div className="flex items-center gap-2 mb-4">
             <Network className="w-5 h-5 text-purple-600" />
-            <h3 className="font-bold">Sobre o Ecomapa</h3>
+            <h3 className="font-bold">{t('about.ecomap.title')}</h3>
           </div>
           <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-2">
-            <p>
-              O <strong>Ecomapa</strong> visualiza as relações da família com sistemas 
-              e recursos externos, incluindo:
-            </p>
+            <p>{t('about.ecomap.description')}</p>
             <ul className="list-disc list-inside space-y-1">
-              <li>Serviços de saúde (UBS, hospitais)</li>
-              <li>Trabalho e escola</li>
-              <li>Religião e comunidade</li>
-              <li>Rede de apoio social</li>
+              <li>{t('about.ecomap.item1')}</li>
+              <li>{t('about.ecomap.item2')}</li>
+              <li>{t('about.ecomap.item3')}</li>
+              <li>{t('about.ecomap.item4')}</li>
             </ul>
             <div className="mt-3 p-2 bg-neutral-100 dark:bg-neutral-800 rounded">
-              <p className="text-xs font-medium">Tipos de vínculo:</p>
+              <p className="text-xs font-medium">{t('about.ecomap.bondTypes')}</p>
               <div className="flex flex-wrap gap-2 mt-1">
-                <span className="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded">Forte</span>
-                <span className="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Moderado</span>
-                <span className="text-xs px-2 py-0.5 bg-neutral-200 text-neutral-600 rounded">Fraco</span>
-                <span className="text-xs px-2 py-0.5 bg-red-100 text-red-700 rounded">Estressante</span>
+                <span className="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded">{t('bonds.strong')}</span>
+                <span className="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">{t('bonds.moderate')}</span>
+                <span className="text-xs px-2 py-0.5 bg-neutral-200 text-neutral-600 rounded">{t('bonds.weak')}</span>
+                <span className="text-xs px-2 py-0.5 bg-red-100 text-red-700 rounded">{t('bonds.stressful')}</span>
               </div>
             </div>
           </div>
@@ -153,12 +149,8 @@ export default function FerramentasFamiliaClient() {
         <div className="flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
           <div className="text-sm">
-            <p className="font-medium text-amber-800 dark:text-amber-300 mb-1">Dica Clínica</p>
-            <p className="text-amber-700 dark:text-amber-400">
-              Utilize o genograma e ecomapa durante a primeira consulta ou visita domiciliar 
-              para entender melhor o contexto familiar e os recursos disponíveis. 
-              Isso facilita o planejamento terapêutico e a abordagem centrada na pessoa e família.
-            </p>
+            <p className="font-medium text-amber-800 dark:text-amber-300 mb-1">{t('clinicalTip.title')}</p>
+            <p className="text-amber-700 dark:text-amber-400">{t('clinicalTip.text')}</p>
           </div>
         </div>
       </div>

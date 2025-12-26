@@ -1121,5 +1121,214 @@
         "incorrect": "Incorrect"
       }
     }
+  },
+  "familyTools": {
+    "title": "Family Tools",
+    "subtitle": "Interactive Genogram and Ecomap",
+    "instructions": {
+      "title": "How to use",
+      "drag": "Drag:",
+      "dragDesc": "Move elements across the canvas",
+      "connect": "Connect:",
+      "connectDesc": "Create relationships between elements",
+      "click": "Double-click:",
+      "clickDesc": "Edit details of each element",
+      "export": "Export:",
+      "exportDesc": "Save as image or JSON file"
+    },
+    "tabs": {
+      "genogram": "Genogram",
+      "ecomap": "Ecomap"
+    },
+    "about": {
+      "genogram": {
+        "title": "About Genogram",
+        "description": "A genogram is a graphical representation of family structure that goes beyond a traditional family tree.",
+        "item1": "Visualizes family relationship patterns",
+        "item2": "Identifies hereditary diseases",
+        "item3": "Maps emotional dynamics",
+        "item4": "Assists in systemic diagnosis",
+        "reference": "Reference: McGoldrick M, Gerson R. Genograms in Family Assessment."
+      },
+      "ecomap": {
+        "title": "About Ecomap",
+        "description": "An ecomap represents the family connections with external systems and community resources.",
+        "item1": "Maps social support networks",
+        "item2": "Identifies resources and stressors",
+        "item3": "Visualizes resource flow",
+        "item4": "Assists in intervention planning",
+        "bondTypes": "Bond types:"
+      }
+    },
+    "bonds": {
+      "strong": "Strong",
+      "moderate": "Moderate",
+      "weak": "Weak",
+      "stressful": "Stressful"
+    },
+    "clinicalTip": {
+      "title": "Clinical Tip",
+      "text": "Use genogram and ecomap as dialogue tools with the family, building them together during consultation to promote reflection and engagement."
+    }
+  },
+  "genogram": {
+    "title": "Genogram",
+    "subtitle": "Family Tree Editor",
+    "modes": {
+      "select": "Select",
+      "move": "Move",
+      "person": "+ Person",
+      "relation": "Relate"
+    },
+    "actions": {
+      "exportPNG": "Export PNG",
+      "exportJSON": "Export JSON",
+      "import": "Import",
+      "clear": "Clear",
+      "edit": "Edit",
+      "save": "Save",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "instructions": {
+      "addPerson": "Click on the canvas to add a person",
+      "selectFirst": "Click on the first person",
+      "selectSecond": "Click on the second person to create the relationship",
+      "dragToMove": "Drag people to reposition them"
+    },
+    "emptyState": {
+      "title": "Start your Genogram",
+      "description": "Click on \"+ Person\" in the toolbar and then click on the canvas to add family members"
+    },
+    "legend": {
+      "title": "Legend",
+      "male": "Male",
+      "female": "Female",
+      "deceased": "Deceased"
+    },
+    "person": {
+      "newPerson": "New Person",
+      "indexPatient": "Index Patient",
+      "sex": "Sex",
+      "male": "Male",
+      "female": "Female",
+      "status": "Status",
+      "alive": "Alive",
+      "deceased": "Deceased",
+      "age": "Age",
+      "years": "{count} years",
+      "healthConditions": "Health Conditions"
+    },
+    "relationships": {
+      "marriage": "Marriage",
+      "stableUnion": "Common-law",
+      "separation": "Separation",
+      "divorce": "Divorce",
+      "child": "Child",
+      "adoption": "Adoption"
+    },
+    "conditions": {
+      "hypertension": "Hypertension",
+      "diabetes": "Diabetes",
+      "cancer": "Cancer",
+      "heartDisease": "Heart disease",
+      "stroke": "Stroke",
+      "depression": "Depression",
+      "anxiety": "Anxiety",
+      "alcoholism": "Alcoholism",
+      "smoking": "Smoking",
+      "obesity": "Obesity",
+      "asthma": "Asthma",
+      "copd": "COPD",
+      "alzheimers": "Alzheimer's",
+      "parkinsons": "Parkinson's",
+      "schizophrenia": "Schizophrenia",
+      "bipolar": "Bipolar disorder",
+      "epilepsy": "Epilepsy",
+      "kidneyDisease": "Kidney disease",
+      "arthritis": "Arthritis"
+    },
+    "modal": {
+      "editPerson": "Edit Person",
+      "name": "Name",
+      "namePlaceholder": "Person's name",
+      "birthDate": "Birth date",
+      "deathDate": "Death date",
+      "indexPatient": "Index Patient (proband)",
+      "relationshipType": "Relationship Type"
+    },
+    "alerts": {
+      "exportImageError": "To export as image, use Print Screen or screenshot tool.",
+      "importError": "Error importing file",
+      "clearConfirm": "Are you sure you want to clear the genogram?"
+    }
+  },
+  "ecomap": {
+    "title": "Ecomap",
+    "subtitle": "Support Network and Resources",
+    "nuclearFamily": "Nuclear Family",
+    "notes": "Notes",
+    "actions": {
+      "addResource": "Add Resource",
+      "exportPNG": "Export PNG",
+      "exportJSON": "Export JSON",
+      "import": "Import",
+      "clear": "Clear",
+      "edit": "Edit",
+      "save": "Save",
+      "cancel": "Cancel"
+    },
+    "instructions": {
+      "dragAndEdit": "Drag resources to reposition them. Double-click to edit."
+    },
+    "emptyState": {
+      "description": "Click on \"Add Resource\" to get started"
+    },
+    "resourceTypes": {
+      "extendedFamily": "Extended Family",
+      "friends": "Friends",
+      "work": "Work",
+      "education": "School/Education",
+      "religion": "Religion",
+      "health": "Health Services",
+      "community": "Community/NGOs",
+      "government": "Gov. Services",
+      "leisure": "Leisure/Sports",
+      "culture": "Culture/Arts",
+      "transport": "Transport",
+      "neighborhood": "Neighborhood",
+      "other": "Other"
+    },
+    "quality": {
+      "label": "Relationship Quality",
+      "forte": "💪 Strong",
+      "moderada": "👍 Moderate",
+      "fraca": "👎 Weak",
+      "estressante": "⚠️ Stressful"
+    },
+    "flow": {
+      "label": "Resource Flow",
+      "bidirecional": "↔ Bidirectional (mutual exchange)",
+      "entrada": "→ Family receives support",
+      "saida": "← Family gives support"
+    },
+    "legend": {
+      "title": "Line Legend",
+      "strong": "Strong (much support)",
+      "moderate": "Moderate",
+      "weak": "Weak (little contact)",
+      "stressful": "Stressful (conflict)"
+    },
+    "modal": {
+      "addResource": "Add Resource",
+      "editResource": "Edit Resource",
+      "name": "Name",
+      "notesPlaceholder": "Notes about this resource..."
+    },
+    "alerts": {
+      "exportImageError": "To export as image, use Print Screen or screenshot tool.",
+      "importError": "Error importing file",
+      "clearConfirm": "Are you sure you want to clear the ecomap?"
+    }
   }
 }

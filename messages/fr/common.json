@@ -806,5 +806,214 @@
         "incorrect": "Incorrect"
       }
     }
+  },
+  "familyTools": {
+    "title": "Outils Familiaux",
+    "subtitle": "Génogramme et Écomap Interactifs",
+    "instructions": {
+      "title": "Comment utiliser",
+      "drag": "Glisser:",
+      "dragDesc": "Déplacez les éléments sur le canevas",
+      "connect": "Connecter:",
+      "connectDesc": "Créez des relations entre les éléments",
+      "click": "Double-clic:",
+      "clickDesc": "Modifiez les détails de chaque élément",
+      "export": "Exporter:",
+      "exportDesc": "Enregistrez comme image ou fichier JSON"
+    },
+    "tabs": {
+      "genogram": "Génogramme",
+      "ecomap": "Écomap"
+    },
+    "about": {
+      "genogram": {
+        "title": "À propos du Génogramme",
+        "description": "Le génogramme est une représentation graphique de la structure familiale qui va au-delà de l'arbre généalogique traditionnel.",
+        "item1": "Visualise les modèles de relations familiales",
+        "item2": "Identifie les maladies héréditaires",
+        "item3": "Cartographie les dynamiques émotionnelles",
+        "item4": "Aide au diagnostic systémique",
+        "reference": "Référence: McGoldrick M, Gerson R. Genograms in Family Assessment."
+      },
+      "ecomap": {
+        "title": "À propos de l'Écomap",
+        "description": "L'écomap représente les connexions de la famille avec les systèmes externes et les ressources communautaires.",
+        "item1": "Cartographie les réseaux de soutien social",
+        "item2": "Identifie les ressources et les facteurs de stress",
+        "item3": "Visualise le flux des ressources",
+        "item4": "Aide à la planification des interventions",
+        "bondTypes": "Types de liens:"
+      }
+    },
+    "bonds": {
+      "strong": "Fort",
+      "moderate": "Modéré",
+      "weak": "Faible",
+      "stressful": "Stressant"
+    },
+    "clinicalTip": {
+      "title": "Conseil Clinique",
+      "text": "Utilisez le génogramme et l'écomap comme outils de dialogue avec la famille, en les construisant ensemble pendant la consultation pour promouvoir la réflexion et l'engagement."
+    }
+  },
+  "genogram": {
+    "title": "Génogramme",
+    "subtitle": "Éditeur d'Arbre Généalogique",
+    "modes": {
+      "select": "Sélectionner",
+      "move": "Déplacer",
+      "person": "+ Personne",
+      "relation": "Relier"
+    },
+    "actions": {
+      "exportPNG": "Exporter PNG",
+      "exportJSON": "Exporter JSON",
+      "import": "Importer",
+      "clear": "Effacer",
+      "edit": "Modifier",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "confirm": "Confirmer"
+    },
+    "instructions": {
+      "addPerson": "Cliquez sur le canevas pour ajouter une personne",
+      "selectFirst": "Cliquez sur la première personne",
+      "selectSecond": "Cliquez sur la deuxième personne pour créer la relation",
+      "dragToMove": "Faites glisser les personnes pour les repositionner"
+    },
+    "emptyState": {
+      "title": "Commencez votre Génogramme",
+      "description": "Cliquez sur \"+ Personne\" dans la barre d'outils puis cliquez sur le canevas pour ajouter des membres de la famille"
+    },
+    "legend": {
+      "title": "Légende",
+      "male": "Homme",
+      "female": "Femme",
+      "deceased": "Décédé"
+    },
+    "person": {
+      "newPerson": "Nouvelle Personne",
+      "indexPatient": "Patient Index",
+      "sex": "Sexe",
+      "male": "Masculin",
+      "female": "Féminin",
+      "status": "Statut",
+      "alive": "Vivant",
+      "deceased": "Décédé",
+      "age": "Âge",
+      "years": "{count} ans",
+      "healthConditions": "Conditions de Santé"
+    },
+    "relationships": {
+      "marriage": "Mariage",
+      "stableUnion": "Union Libre",
+      "separation": "Séparation",
+      "divorce": "Divorce",
+      "child": "Enfant",
+      "adoption": "Adoption"
+    },
+    "conditions": {
+      "hypertension": "Hypertension",
+      "diabetes": "Diabète",
+      "cancer": "Cancer",
+      "heartDisease": "Maladie cardiaque",
+      "stroke": "AVC",
+      "depression": "Dépression",
+      "anxiety": "Anxiété",
+      "alcoholism": "Alcoolisme",
+      "smoking": "Tabagisme",
+      "obesity": "Obésité",
+      "asthma": "Asthme",
+      "copd": "BPCO",
+      "alzheimers": "Alzheimer",
+      "parkinsons": "Parkinson",
+      "schizophrenia": "Schizophrénie",
+      "bipolar": "Trouble Bipolaire",
+      "epilepsy": "Épilepsie",
+      "kidneyDisease": "Maladie rénale",
+      "arthritis": "Arthrite"
+    },
+    "modal": {
+      "editPerson": "Modifier la Personne",
+      "name": "Nom",
+      "namePlaceholder": "Nom de la personne",
+      "birthDate": "Naissance",
+      "deathDate": "Décès",
+      "indexPatient": "Patient Index (proposant)",
+      "relationshipType": "Type de Relation"
+    },
+    "alerts": {
+      "exportImageError": "Pour exporter comme image, utilisez Print Screen ou un outil de capture.",
+      "importError": "Erreur lors de l'importation du fichier",
+      "clearConfirm": "Êtes-vous sûr de vouloir effacer le génogramme?"
+    }
+  },
+  "ecomap": {
+    "title": "Écomap",
+    "subtitle": "Réseau de Soutien et Ressources",
+    "nuclearFamily": "Famille Nucléaire",
+    "notes": "Notes",
+    "actions": {
+      "addResource": "Ajouter une Ressource",
+      "exportPNG": "Exporter PNG",
+      "exportJSON": "Exporter JSON",
+      "import": "Importer",
+      "clear": "Effacer",
+      "edit": "Modifier",
+      "save": "Enregistrer",
+      "cancel": "Annuler"
+    },
+    "instructions": {
+      "dragAndEdit": "Faites glisser les ressources pour les repositionner. Double-cliquez pour modifier."
+    },
+    "emptyState": {
+      "description": "Cliquez sur \"Ajouter une Ressource\" pour commencer"
+    },
+    "resourceTypes": {
+      "extendedFamily": "Famille Élargie",
+      "friends": "Amis",
+      "work": "Travail",
+      "education": "École/Éducation",
+      "religion": "Religion",
+      "health": "Services de Santé",
+      "community": "Communauté/ONGs",
+      "government": "Services Gov.",
+      "leisure": "Loisirs/Sports",
+      "culture": "Culture/Art",
+      "transport": "Transport",
+      "neighborhood": "Voisinage",
+      "other": "Autre"
+    },
+    "quality": {
+      "label": "Qualité de la Relation",
+      "forte": "💪 Forte",
+      "moderada": "👍 Modérée",
+      "fraca": "👎 Faible",
+      "estressante": "⚠️ Stressante"
+    },
+    "flow": {
+      "label": "Flux des Ressources",
+      "bidirecional": "↔ Bidirectionnel (échange mutuel)",
+      "entrada": "→ La famille reçoit du soutien",
+      "saida": "← La famille donne du soutien"
+    },
+    "legend": {
+      "title": "Légende des Lignes",
+      "strong": "Forte (beaucoup de soutien)",
+      "moderate": "Modérée",
+      "weak": "Faible (peu de contact)",
+      "stressful": "Stressante (conflit)"
+    },
+    "modal": {
+      "addResource": "Ajouter une Ressource",
+      "editResource": "Modifier la Ressource",
+      "name": "Nom",
+      "notesPlaceholder": "Observations sur cette ressource..."
+    },
+    "alerts": {
+      "exportImageError": "Pour exporter comme image, utilisez Print Screen ou un outil de capture.",
+      "importError": "Erreur lors de l'importation du fichier",
+      "clearConfirm": "Êtes-vous sûr de vouloir effacer l'écomap?"
+    }
   }
 }
