@@ -1074,5 +1074,58 @@
       "openCalculators": "कैलकुलेटर खोलें",
       "description": "BMI, GFR, CV जोखिम, और अधिक"
     }
+  },
+  "comparator": {
+    "title": "दवा तुलनाकर्ता",
+    "subtitle": "4 दवाओं की तुलना साथ-साथ करें",
+    "backToMedications": "औषधि संदर्भ",
+    "interactions": {
+      "detected": "पाई गई इंटरैक्शन ({count})",
+      "conduct": "प्रबंधन",
+      "severity": {
+        "grave": "गंभीर",
+        "moderada": "मध्यम",
+        "leve": "हल्का"
+      }
+    },
+    "slots": {
+      "selectBelow": "नीचे चुनें",
+      "addMedication": "दवा जोड़ें"
+    },
+    "search": {
+      "placeholder": "जोड़ने के लिए दवा खोजें..."
+    },
+    "table": {
+      "attribute": "विशेषता",
+      "class": "वर्ग",
+      "presentations": "प्रस्तुतियां",
+      "indications": "संकेत",
+      "contraindications": "प्रतिकूल संकेत",
+      "dosageAdults": "खुराक (वयस्क)",
+      "pregnancy": "गर्भावस्था",
+      "category": "श्रेणी {category}",
+      "breastfeeding": "स्तनपान",
+      "compatible": "संगत",
+      "avoid": "बचें",
+      "adverseEffects": "दुष्प्रभाव",
+      "common": "सामान्य",
+      "severe": "गंभीर",
+      "renalAdjustment": "गुर्दे समायोजन",
+      "gfr": "eGFR",
+      "notSpecified": "निर्दिष्ट नहीं",
+      "codes": "कोड",
+      "more": "+{count} और"
+    },
+    "emptyState": {
+      "title": "कम से कम 2 दवाएं चुनें",
+      "description": "तुलना के लिए दवाएं जोड़ने के लिए ऊपर के कार्ड पर क्लिक करें"
+    },
+    "tips": {
+      "title": "उपयोग के सुझाव",
+      "tip1": "एक साथ 4 दवाओं की तुलना करें",
+      "tip2": "इंटरैक्शन स्वचालित रूप से जांची जाती हैं",
+      "tip3": "चिकित्सीय विकल्पों में से चुनने के लिए उपयोग करें",
+      "tip4": "सार्वजनिक स्वास्थ्य प्रणाली में उपलब्धता जांचें"
+    }
   }
 }

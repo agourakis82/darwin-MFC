@@ -1074,5 +1074,58 @@
       "openCalculators": "Abrir Calculadoras",
       "description": "IMC, TFG, Riesgo CV, y más"
     }
+  },
+  "comparator": {
+    "title": "Comparador de Medicamentos",
+    "subtitle": "Compare hasta 4 medicamentos lado a lado",
+    "backToMedications": "Vademécum",
+    "interactions": {
+      "detected": "Interacciones Detectadas ({count})",
+      "conduct": "Conducta",
+      "severity": {
+        "grave": "Grave",
+        "moderada": "Moderada",
+        "leve": "Leve"
+      }
+    },
+    "slots": {
+      "selectBelow": "Seleccione abajo",
+      "addMedication": "Agregar medicamento"
+    },
+    "search": {
+      "placeholder": "Buscar medicamento para agregar..."
+    },
+    "table": {
+      "attribute": "Atributo",
+      "class": "Clase",
+      "presentations": "Presentaciones",
+      "indications": "Indicaciones",
+      "contraindications": "Contraindicaciones",
+      "dosageAdults": "Posología (Adultos)",
+      "pregnancy": "Embarazo",
+      "category": "Categoría {category}",
+      "breastfeeding": "Lactancia",
+      "compatible": "Compatible",
+      "avoid": "Evitar",
+      "adverseEffects": "Efectos Adversos",
+      "common": "Comunes",
+      "severe": "Graves",
+      "renalAdjustment": "Ajuste Renal",
+      "gfr": "TFG",
+      "notSpecified": "No especificado",
+      "codes": "Códigos",
+      "more": "+{count} más"
+    },
+    "emptyState": {
+      "title": "Seleccione al menos 2 medicamentos",
+      "description": "Haga clic en las tarjetas arriba para agregar medicamentos a la comparación"
+    },
+    "tips": {
+      "title": "Consejos de Uso",
+      "tip1": "Compare hasta 4 medicamentos simultáneamente",
+      "tip2": "Las interacciones se verifican automáticamente",
+      "tip3": "Use para elegir entre alternativas terapéuticas",
+      "tip4": "Verifique disponibilidad en el sistema público"
+    }
   }
 }

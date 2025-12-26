@@ -1074,5 +1074,58 @@
       "openCalculators": "打开计算器",
       "description": "BMI、GFR、心血管风险等"
     }
+  },
+  "comparator": {
+    "title": "药物比较器",
+    "subtitle": "并排比较最多4种药物",
+    "backToMedications": "药物手册",
+    "interactions": {
+      "detected": "检测到相互作用 ({count})",
+      "conduct": "处理",
+      "severity": {
+        "grave": "严重",
+        "moderada": "中等",
+        "leve": "轻微"
+      }
+    },
+    "slots": {
+      "selectBelow": "在下方选择",
+      "addMedication": "添加药物"
+    },
+    "search": {
+      "placeholder": "搜索要添加的药物..."
+    },
+    "table": {
+      "attribute": "属性",
+      "class": "类别",
+      "presentations": "剂型",
+      "indications": "适应症",
+      "contraindications": "禁忌症",
+      "dosageAdults": "剂量（成人）",
+      "pregnancy": "妊娠",
+      "category": "{category}类",
+      "breastfeeding": "哺乳",
+      "compatible": "兼容",
+      "avoid": "避免",
+      "adverseEffects": "不良反应",
+      "common": "常见",
+      "severe": "严重",
+      "renalAdjustment": "肾功能调整",
+      "gfr": "eGFR",
+      "notSpecified": "未指定",
+      "codes": "编码",
+      "more": "+{count} 更多"
+    },
+    "emptyState": {
+      "title": "请选择至少2种药物",
+      "description": "点击上方卡片添加药物进行比较"
+    },
+    "tips": {
+      "title": "使用提示",
+      "tip1": "同时比较最多4种药物",
+      "tip2": "自动检查药物相互作用",
+      "tip3": "用于在治疗方案间做选择",
+      "tip4": "检查公共卫生系统中的可用性"
+    }
   }
 }

@@ -1074,5 +1074,58 @@
       "openCalculators": "فتح الحاسبات",
       "description": "مؤشر الكتلة، معدل الترشيح، والمزيد"
     }
+  },
+  "comparator": {
+    "title": "مقارنة الأدوية",
+    "subtitle": "قارن حتى 4 أدوية جنبًا إلى جنب",
+    "backToMedications": "دليل الأدوية",
+    "interactions": {
+      "detected": "التفاعلات المكتشفة ({count})",
+      "conduct": "التدبير",
+      "severity": {
+        "grave": "شديد",
+        "moderada": "متوسط",
+        "leve": "خفيف"
+      }
+    },
+    "slots": {
+      "selectBelow": "اختر أدناه",
+      "addMedication": "إضافة دواء"
+    },
+    "search": {
+      "placeholder": "البحث عن دواء للإضافة..."
+    },
+    "table": {
+      "attribute": "السمة",
+      "class": "الفئة",
+      "presentations": "الأشكال",
+      "indications": "الاستطبابات",
+      "contraindications": "موانع الاستعمال",
+      "dosageAdults": "الجرعة (البالغون)",
+      "pregnancy": "الحمل",
+      "category": "الفئة {category}",
+      "breastfeeding": "الرضاعة",
+      "compatible": "متوافق",
+      "avoid": "تجنب",
+      "adverseEffects": "الآثار الجانبية",
+      "common": "شائعة",
+      "severe": "خطيرة",
+      "renalAdjustment": "تعديل الجرعة الكلوي",
+      "gfr": "معدل الترشيح",
+      "notSpecified": "غير محدد",
+      "codes": "الرموز",
+      "more": "+{count} المزيد"
+    },
+    "emptyState": {
+      "title": "اختر دواءين على الأقل",
+      "description": "انقر على البطاقات أعلاه لإضافة أدوية للمقارنة"
+    },
+    "tips": {
+      "title": "نصائح الاستخدام",
+      "tip1": "قارن حتى 4 أدوية في وقت واحد",
+      "tip2": "يتم التحقق من التفاعلات تلقائيًا",
+      "tip3": "استخدم للاختيار بين البدائل العلاجية",
+      "tip4": "تحقق من التوفر في النظام الصحي"
+    }
   }
 }

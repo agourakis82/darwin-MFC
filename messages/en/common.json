@@ -1389,5 +1389,58 @@
       "openCalculators": "Open Calculators",
       "description": "BMI, GFR, CV Risk, and more"
     }
+  },
+  "comparator": {
+    "title": "Medication Comparator",
+    "subtitle": "Compare up to 4 medications side by side",
+    "backToMedications": "Drug Reference",
+    "interactions": {
+      "detected": "Interactions Detected ({count})",
+      "conduct": "Management",
+      "severity": {
+        "grave": "Severe",
+        "moderada": "Moderate",
+        "leve": "Mild"
+      }
+    },
+    "slots": {
+      "selectBelow": "Select below",
+      "addMedication": "Add medication"
+    },
+    "search": {
+      "placeholder": "Search medication to add..."
+    },
+    "table": {
+      "attribute": "Attribute",
+      "class": "Class",
+      "presentations": "Presentations",
+      "indications": "Indications",
+      "contraindications": "Contraindications",
+      "dosageAdults": "Dosage (Adults)",
+      "pregnancy": "Pregnancy",
+      "category": "Category {category}",
+      "breastfeeding": "Breastfeeding",
+      "compatible": "Compatible",
+      "avoid": "Avoid",
+      "adverseEffects": "Adverse Effects",
+      "common": "Common",
+      "severe": "Severe",
+      "renalAdjustment": "Renal Adjustment",
+      "gfr": "eGFR",
+      "notSpecified": "Not specified",
+      "codes": "Codes",
+      "more": "+{count} more"
+    },
+    "emptyState": {
+      "title": "Select at least 2 medications",
+      "description": "Click on the cards above to add medications to compare"
+    },
+    "tips": {
+      "title": "Usage Tips",
+      "tip1": "Compare up to 4 medications simultaneously",
+      "tip2": "Interactions are checked automatically",
+      "tip3": "Use to choose between therapeutic alternatives",
+      "tip4": "Check availability in public health system (RENAME)"
+    }
   }
 }

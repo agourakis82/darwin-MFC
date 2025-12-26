@@ -1074,5 +1074,58 @@
       "openCalculators": "Ouvrir Calculateurs",
       "description": "IMC, DFG, Risque CV, et plus"
     }
+  },
+  "comparator": {
+    "title": "Comparateur de Médicaments",
+    "subtitle": "Comparez jusqu'à 4 médicaments côte à côte",
+    "backToMedications": "Formulaire",
+    "interactions": {
+      "detected": "Interactions Détectées ({count})",
+      "conduct": "Conduite",
+      "severity": {
+        "grave": "Grave",
+        "moderada": "Modérée",
+        "leve": "Légère"
+      }
+    },
+    "slots": {
+      "selectBelow": "Sélectionnez ci-dessous",
+      "addMedication": "Ajouter un médicament"
+    },
+    "search": {
+      "placeholder": "Rechercher un médicament à ajouter..."
+    },
+    "table": {
+      "attribute": "Attribut",
+      "class": "Classe",
+      "presentations": "Présentations",
+      "indications": "Indications",
+      "contraindications": "Contre-indications",
+      "dosageAdults": "Posologie (Adultes)",
+      "pregnancy": "Grossesse",
+      "category": "Catégorie {category}",
+      "breastfeeding": "Allaitement",
+      "compatible": "Compatible",
+      "avoid": "Éviter",
+      "adverseEffects": "Effets Indésirables",
+      "common": "Communs",
+      "severe": "Graves",
+      "renalAdjustment": "Ajustement Rénal",
+      "gfr": "DFGe",
+      "notSpecified": "Non spécifié",
+      "codes": "Codes",
+      "more": "+{count} de plus"
+    },
+    "emptyState": {
+      "title": "Sélectionnez au moins 2 médicaments",
+      "description": "Cliquez sur les cartes ci-dessus pour ajouter des médicaments à comparer"
+    },
+    "tips": {
+      "title": "Conseils d'Utilisation",
+      "tip1": "Comparez jusqu'à 4 médicaments simultanément",
+      "tip2": "Les interactions sont vérifiées automatiquement",
+      "tip3": "Utilisez pour choisir entre alternatives thérapeutiques",
+      "tip4": "Vérifiez la disponibilité dans le système public"
+    }
   }
 }

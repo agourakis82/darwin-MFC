@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Search, X, Plus, AlertTriangle, Check, ArrowLeftRight, Pill, Heart, Baby, Stethoscope } from 'lucide-react';
 import { todosMedicamentos, searchMedicamentos, checkInteractions } from '@/lib/data/medicamentos/index';
@@ -12,6 +13,7 @@ interface SelectedMed {
 }
 
 export default function ComparadorClient() {
+  const t = useTranslations('comparator');
   const [selectedMeds, setSelectedMeds] = useState<SelectedMed[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeSlot, setActiveSlot] = useState<number | null>(null);
@@ -89,7 +91,7 @@ export default function ComparadorClient() {
             href="/medicamentos"
             className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400"
           >
-            ← Bulário
+            ← {t('backToMedications')}
           </Link>
           <div className="flex items-center gap-3">
             <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
@@ -97,10 +99,10 @@ export default function ComparadorClient() {
             </div>
             <div>
               <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-                Comparador de Medicamentos
+                {t('title')}
               </h1>
               <p className="text-slate-600 dark:text-slate-400">
-                Compare até 4 medicamentos lado a lado
+                {t('subtitle')}
               </p>
             </div>
           </div>
@@ -111,7 +113,7 @@ export default function ComparadorClient() {
           <div className="mb-6 space-y-2">
             <h2 className="font-semibold text-red-600 dark:text-red-400 flex items-center gap-2">
               <AlertTriangle className="w-5 h-5" />
-              Interações Detectadas ({interactions.length})
+              {t('interactions.detected', { count: interactions.length })}
             </h2>
             <div className="space-y-2">
               {interactions.map((int, i) => (
@@ -124,12 +126,12 @@ export default function ComparadorClient() {
                       {int.med1} ↔ {int.med2}
                     </span>
                     <span className="text-xs px-2 py-0.5 rounded-full bg-white/50 font-medium uppercase">
-                      {int.interaction.gravidade}
+                      {t(`interactions.severity.${int.interaction.gravidade}`)}
                     </span>
                   </div>
                   <p className="text-sm">{int.interaction.efeito}</p>
                   <p className="text-xs mt-1 opacity-80">
-                    <strong>Conduta:</strong> {int.interaction.conduta}
+                    <strong>{t('interactions.conduct')}:</strong> {int.interaction.conduta}
                   </p>
                 </div>
               ))}
@@ -185,7 +187,7 @@ export default function ComparadorClient() {
                   <div className="p-8 flex flex-col items-center justify-center text-slate-400">
                     <Plus className="w-8 h-8 mb-2" />
                     <span className="text-sm">
-                      {isActive ? 'Selecione abaixo' : 'Adicionar medicamento'}
+                      {isActive ? t('slots.selectBelow') : t('slots.addMedication')}
                     </span>
                   </div>
                 )}
@@ -201,7 +203,7 @@ export default function ComparadorClient() {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
               <input
                 type="text"
-                placeholder="Buscar medicamento para adicionar..."
+                placeholder={t('search.placeholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 autoFocus
@@ -245,7 +247,7 @@ export default function ComparadorClient() {
                 <thead className="bg-slate-50 dark:bg-slate-900">
                   <tr>
                     <th className="px-4 py-3 text-left text-sm font-semibold text-slate-600 dark:text-slate-300 w-40">
-                      Atributo
+                      {t('table.attribute')}
                     </th>
                     {selectedMeds.map(({ medicamento }) => (
                       <th
@@ -266,7 +268,7 @@ export default function ComparadorClient() {
                   {/* Classe Terapêutica */}
                   <tr>
                     <td className="px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300">
-                      Classe
+                      {t('table.class')}
                     </td>
                     {selectedMeds.map(({ medicamento }) => (
                       <td key={medicamento.id} className="px-4 py-3 text-sm text-slate-700 dark:text-slate-200">
@@ -279,7 +281,7 @@ export default function ComparadorClient() {
                   {/* Apresentações */}
                   <tr className="bg-slate-50/50 dark:bg-slate-900/50">
                     <td className="px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300">
-                      Apresentações
+                      {t('table.presentations')}
                     </td>
                     {selectedMeds.map(({ medicamento }) => (
                       <td key={medicamento.id} className="px-4 py-3 text-sm">
@@ -303,7 +305,7 @@ export default function ComparadorClient() {
                   <tr>
                     <td className="px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300">
                       <Stethoscope className="w-4 h-4 inline mr-1" />
-                      Indicações
+                      {t('table.indications')}
                     </td>
                     {selectedMeds.map(({ medicamento }) => (
                       <td key={medicamento.id} className="px-4 py-3 text-sm text-slate-700 dark:text-slate-200">
@@ -312,7 +314,7 @@ export default function ComparadorClient() {
                             <li key={i} className="text-xs">{ind}</li>
                           ))}
                           {medicamento.indicacoes.length > 4 && (
-                            <li className="text-xs text-slate-400">+{medicamento.indicacoes.length - 4} mais</li>
+                            <li className="text-xs text-slate-400">{t('table.more', { count: medicamento.indicacoes.length - 4 })}</li>
                           )}
                         </ul>
                       </td>
@@ -323,7 +325,7 @@ export default function ComparadorClient() {
                   <tr className="bg-slate-50/50 dark:bg-slate-900/50">
                     <td className="px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300">
                       <AlertTriangle className="w-4 h-4 inline mr-1 text-red-500" />
-                      Contraindicações
+                      {t('table.contraindications')}
                     </td>
                     {selectedMeds.map(({ medicamento }) => (
                       <td key={medicamento.id} className="px-4 py-3 text-sm text-red-700 dark:text-red-300">
@@ -332,7 +334,7 @@ export default function ComparadorClient() {
                             <li key={i} className="text-xs">{ci}</li>
                           ))}
                           {medicamento.contraindicacoes.length > 4 && (
-                            <li className="text-xs text-red-400">+{medicamento.contraindicacoes.length - 4} mais</li>
+                            <li className="text-xs text-red-400">{t('table.more', { count: medicamento.contraindicacoes.length - 4 })}</li>
                           )}
                         </ul>
                       </td>
@@ -342,7 +344,7 @@ export default function ComparadorClient() {
                   {/* Posologia Adultos */}
                   <tr>
                     <td className="px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300">
-                      Posologia (Adultos)
+                      {t('table.dosageAdults')}
                     </td>
                     {selectedMeds.map(({ medicamento }) => (
                       <td key={medicamento.id} className="px-4 py-3 text-sm text-slate-700 dark:text-slate-200">
@@ -367,12 +369,12 @@ export default function ComparadorClient() {
                   <tr className="bg-slate-50/50 dark:bg-slate-900/50">
                     <td className="px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300">
                       <Heart className="w-4 h-4 inline mr-1 text-pink-500" />
-                      Gestação
+                      {t('table.pregnancy')}
                     </td>
                     {selectedMeds.map(({ medicamento }) => (
                       <td key={medicamento.id} className="px-4 py-3">
                         <span className={`inline-block px-2 py-1 rounded text-xs font-bold ${getGestacaoColor(medicamento.gestacao)}`}>
-                          Categoria {medicamento.gestacao}
+                          {t('table.category', { category: medicamento.gestacao })}
                         </span>
                       </td>
                     ))}
@@ -382,17 +384,17 @@ export default function ComparadorClient() {
                   <tr>
                     <td className="px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300">
                       <Baby className="w-4 h-4 inline mr-1 text-blue-500" />
-                      Amamentação
+                      {t('table.breastfeeding')}
                     </td>
                     {selectedMeds.map(({ medicamento }) => (
                       <td key={medicamento.id} className="px-4 py-3 text-sm">
                         {medicamento.amamentacao.compativel ? (
                           <span className="text-green-600 dark:text-green-400 flex items-center gap-1">
-                            <Check className="w-4 h-4" /> Compatível
+                            <Check className="w-4 h-4" /> {t('table.compatible')}
                           </span>
                         ) : (
                           <span className="text-red-600 dark:text-red-400 flex items-center gap-1">
-                            <X className="w-4 h-4" /> Evitar
+                            <X className="w-4 h-4" /> {t('table.avoid')}
                           </span>
                         )}
                         {medicamento.amamentacao.observacao && (
@@ -407,18 +409,18 @@ export default function ComparadorClient() {
                   {/* Efeitos Adversos Comuns */}
                   <tr className="bg-slate-50/50 dark:bg-slate-900/50">
                     <td className="px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300">
-                      Efeitos Adversos
+                      {t('table.adverseEffects')}
                     </td>
                     {selectedMeds.map(({ medicamento }) => (
                       <td key={medicamento.id} className="px-4 py-3 text-sm">
                         <div className="space-y-1">
                           <div className="text-xs text-slate-600 dark:text-slate-300">
-                            <span className="font-medium">Comuns:</span>{' '}
+                            <span className="font-medium">{t('table.common')}:</span>{' '}
                             {medicamento.efeitosAdversos.comuns.slice(0, 3).join(', ')}
                           </div>
                           {medicamento.efeitosAdversos.graves && medicamento.efeitosAdversos.graves.length > 0 && (
                             <div className="text-xs text-red-600 dark:text-red-400">
-                              <span className="font-medium">⚠️ Graves:</span>{' '}
+                              <span className="font-medium">⚠️ {t('table.severe')}:</span>{' '}
                               {medicamento.efeitosAdversos.graves.slice(0, 2).join(', ')}
                             </div>
                           )}
@@ -430,7 +432,7 @@ export default function ComparadorClient() {
                   {/* Ajuste Renal */}
                   <tr>
                     <td className="px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300">
-                      Ajuste Renal
+                      {t('table.renalAdjustment')}
                     </td>
                     {selectedMeds.map(({ medicamento }) => (
                       <td key={medicamento.id} className="px-4 py-3 text-sm text-slate-700 dark:text-slate-200">
@@ -438,12 +440,12 @@ export default function ComparadorClient() {
                           <ul className="space-y-1">
                             {medicamento.ajusteDoseRenal.slice(0, 2).map((aj, i) => (
                               <li key={i} className="text-xs">
-                                <span className="font-medium">TFG {aj.tfg}:</span> {aj.ajuste}
+                                <span className="font-medium">{t('table.gfr')} {aj.tfg}:</span> {aj.ajuste}
                               </li>
                             ))}
                           </ul>
                         ) : (
-                          <span className="text-xs text-slate-400">Não especificado</span>
+                          <span className="text-xs text-slate-400">{t('table.notSpecified')}</span>
                         )}
                       </td>
                     ))}
@@ -452,7 +454,7 @@ export default function ComparadorClient() {
                   {/* Ontologias */}
                   <tr className="bg-slate-50/50 dark:bg-slate-900/50">
                     <td className="px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300">
-                      Códigos
+                      {t('table.codes')}
                     </td>
                     {selectedMeds.map(({ medicamento }) => (
                       <td key={medicamento.id} className="px-4 py-3">
@@ -482,10 +484,10 @@ export default function ComparadorClient() {
           <div className="text-center py-12 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
             <ArrowLeftRight className="w-16 h-16 mx-auto text-slate-300 dark:text-slate-600 mb-4" />
             <h2 className="text-xl font-semibold text-slate-700 dark:text-slate-300 mb-2">
-              Selecione pelo menos 2 medicamentos
+              {t('emptyState.title')}
             </h2>
             <p className="text-slate-500 dark:text-slate-400">
-              Clique nos cards acima para adicionar medicamentos à comparação
+              {t('emptyState.description')}
             </p>
           </div>
         )}
@@ -493,13 +495,13 @@ export default function ComparadorClient() {
         {/* Info Box */}
         <div className="mt-8 p-6 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-950/50 dark:to-indigo-950/50 rounded-2xl border border-purple-200 dark:border-purple-800">
           <h3 className="font-bold text-purple-800 dark:text-purple-200 mb-2">
-            💡 Dicas de Uso
+            💡 {t('tips.title')}
           </h3>
           <ul className="text-sm text-purple-700 dark:text-purple-300 space-y-1">
-            <li>• Compare até 4 medicamentos simultaneamente</li>
-            <li>• Interações são verificadas automaticamente</li>
-            <li>• Use para escolher entre alternativas terapêuticas</li>
-            <li>• Verifique disponibilidade no SUS (RENAME)</li>
+            <li>• {t('tips.tip1')}</li>
+            <li>• {t('tips.tip2')}</li>
+            <li>• {t('tips.tip3')}</li>
+            <li>• {t('tips.tip4')}</li>
           </ul>
         </div>
       </div>
