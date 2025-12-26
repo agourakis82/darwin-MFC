@@ -14,9 +14,8 @@ const stats = {
 };
 
 export default function HomeContent() {
-  // Note: This will need to be converted to client component if using useTranslations
-  // For now, keeping as server component with hardcoded text
-  
+  const t = useTranslations('home');
+
   return (
     <div className="min-h-screen">
       {/* Premium Hero Section */}
@@ -26,27 +25,27 @@ export default function HomeContent() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
               <Sparkles className="w-4 h-4 text-white" />
-              <span className="text-sm font-medium text-white">Plataforma Acadêmica Q1</span>
+              <span className="text-sm font-medium text-white">{t('hero.badge')}</span>
             </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
-              Darwin MFC
+              {t('hero.title')}
             </h1>
             <p className="text-xl sm:text-2xl text-emerald-50 mb-8 leading-relaxed">
-              Guia completo de Medicina de Família e Comunidade para consulta point-of-care na APS
+              {t('hero.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 href="/doencas"
                 className="group inline-flex items-center gap-2 px-8 py-4 bg-white text-emerald-600 rounded-xl font-semibold hover:bg-emerald-50 transition-all shadow-lg hover:shadow-xl hover:scale-105"
               >
-                Explorar Doenças
+                {t('hero.exploreDiseases')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/medicamentos"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 rounded-xl font-semibold hover:bg-white/20 transition-all"
               >
-                Ver Medicamentos
+                {t('hero.viewMedications')}
               </Link>
             </div>
           </div>
@@ -63,11 +62,11 @@ export default function HomeContent() {
               </div>
               <div>
                 <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">{stats.doencas}+</div>
-                <div className="text-sm text-blue-700 dark:text-blue-300">Doenças</div>
+                <div className="text-sm text-blue-700 dark:text-blue-300">{t('stats.diseases')}</div>
               </div>
             </div>
             <p className="text-sm text-blue-600/80 dark:text-blue-400/80">
-              Condições mapeadas com CID-10, CIAP-2 e ontologias internacionais
+              {t('stats.diseasesDesc')}
             </p>
           </div>
 
@@ -78,11 +77,11 @@ export default function HomeContent() {
               </div>
               <div>
                 <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">{stats.medicamentos}+</div>
-                <div className="text-sm text-emerald-700 dark:text-emerald-300">Medicamentos</div>
+                <div className="text-sm text-emerald-700 dark:text-emerald-300">{t('stats.medications')}</div>
               </div>
             </div>
             <p className="text-sm text-emerald-600/80 dark:text-emerald-400/80">
-              RENAME 2024 com interações, ajustes e farmacogenética
+              {t('stats.medicationsDesc')}
             </p>
           </div>
 
@@ -93,11 +92,11 @@ export default function HomeContent() {
               </div>
               <div>
                 <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">{stats.protocolos}+</div>
-                <div className="text-sm text-purple-700 dark:text-purple-300">Protocolos</div>
+                <div className="text-sm text-purple-700 dark:text-purple-300">{t('stats.protocols')}</div>
               </div>
             </div>
             <p className="text-sm text-purple-600/80 dark:text-purple-400/80">
-              Fluxogramas interativos e calculadoras clínicas
+              {t('stats.protocolsDesc')}
             </p>
           </div>
         </div>
@@ -113,7 +112,7 @@ export default function HomeContent() {
       {/* Quick Access Cards */}
       <div className="container mx-auto px-4 mb-16">
         <h2 className="text-2xl font-bold mb-8 text-[#1d1d1f] dark:text-[#f5f5f7]">
-          Acesso Rápido
+          {t('quickAccess.title')}
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Link
@@ -121,8 +120,8 @@ export default function HomeContent() {
             className="group p-6 rounded-2xl bg-white dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg transition-all"
           >
             <Stethoscope className="w-8 h-8 text-blue-500 mb-3 group-hover:scale-110 transition-transform" />
-            <h3 className="font-semibold text-[#1d1d1f] dark:text-white mb-1">Consulta Rápida</h3>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400">Acesso direto ao ponto de atendimento</p>
+            <h3 className="font-semibold text-[#1d1d1f] dark:text-white mb-1">{t('quickAccess.quickConsult')}</h3>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">{t('quickAccess.quickConsultDesc')}</p>
           </Link>
 
           <Link
@@ -130,8 +129,8 @@ export default function HomeContent() {
             className="group p-6 rounded-2xl bg-white dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-lg transition-all"
           >
             <Calculator className="w-8 h-8 text-purple-500 mb-3 group-hover:scale-110 transition-transform" />
-            <h3 className="font-semibold text-[#1d1d1f] dark:text-white mb-1">Calculadoras</h3>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400">Escores e fórmulas clínicas</p>
+            <h3 className="font-semibold text-[#1d1d1f] dark:text-white mb-1">{t('quickAccess.calculators')}</h3>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">{t('quickAccess.calculatorsDesc')}</p>
           </Link>
 
           <Link
@@ -139,8 +138,8 @@ export default function HomeContent() {
             className="group p-6 rounded-2xl bg-white dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-lg transition-all"
           >
             <FileSearch className="w-8 h-8 text-emerald-500 mb-3 group-hover:scale-110 transition-transform" />
-            <h3 className="font-semibold text-[#1d1d1f] dark:text-white mb-1">Protocolos</h3>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400">Fluxogramas interativos</p>
+            <h3 className="font-semibold text-[#1d1d1f] dark:text-white mb-1">{t('quickAccess.protocols')}</h3>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">{t('quickAccess.protocolsDesc')}</p>
           </Link>
 
           <Link
@@ -148,8 +147,8 @@ export default function HomeContent() {
             className="group p-6 rounded-2xl bg-white dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 hover:border-red-400 dark:hover:border-red-500 hover:shadow-lg transition-all"
           >
             <Shield className="w-8 h-8 text-red-500 mb-3 group-hover:scale-110 transition-transform" />
-            <h3 className="font-semibold text-[#1d1d1f] dark:text-white mb-1">Interações</h3>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400">Verificar segurança</p>
+            <h3 className="font-semibold text-[#1d1d1f] dark:text-white mb-1">{t('quickAccess.interactions')}</h3>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">{t('quickAccess.interactionsDesc')}</p>
           </Link>
         </div>
       </div>
@@ -157,7 +156,7 @@ export default function HomeContent() {
       {/* Screening Categories */}
       <div className="container mx-auto px-4 mb-16">
         <h2 className="text-2xl font-bold mb-8 text-[#1d1d1f] dark:text-[#f5f5f7]">
-          Rastreamentos por Ciclo de Vida
+          {t('screening.title')}
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
           <Link
@@ -165,7 +164,7 @@ export default function HomeContent() {
             className="group flex flex-col items-center p-5 rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 hover:shadow-md transition-all"
           >
             <Baby className="w-7 h-7 text-amber-600 dark:text-amber-400 mb-2" />
-            <span className="text-sm font-medium text-amber-700 dark:text-amber-300">Neonatal</span>
+            <span className="text-sm font-medium text-amber-700 dark:text-amber-300">{t('screening.neonatal')}</span>
           </Link>
 
           <Link
@@ -173,7 +172,7 @@ export default function HomeContent() {
             className="group flex flex-col items-center p-5 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 hover:shadow-md transition-all"
           >
             <UsersIcon className="w-7 h-7 text-green-600 dark:text-green-400 mb-2" />
-            <span className="text-sm font-medium text-green-700 dark:text-green-300">Infantil</span>
+            <span className="text-sm font-medium text-green-700 dark:text-green-300">{t('screening.children')}</span>
           </Link>
 
           <Link
@@ -181,7 +180,7 @@ export default function HomeContent() {
             className="group flex flex-col items-center p-5 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 hover:shadow-md transition-all"
           >
             <Activity className="w-7 h-7 text-blue-600 dark:text-blue-400 mb-2" />
-            <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Adultos</span>
+            <span className="text-sm font-medium text-blue-700 dark:text-blue-300">{t('screening.adults')}</span>
           </Link>
 
           <Link
@@ -189,7 +188,7 @@ export default function HomeContent() {
             className="group flex flex-col items-center p-5 rounded-xl bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 hover:shadow-md transition-all"
           >
             <Heart className="w-7 h-7 text-purple-600 dark:text-purple-400 mb-2" />
-            <span className="text-sm font-medium text-purple-700 dark:text-purple-300">Câncer</span>
+            <span className="text-sm font-medium text-purple-700 dark:text-purple-300">{t('screening.cancer')}</span>
           </Link>
 
           <Link
@@ -197,11 +196,10 @@ export default function HomeContent() {
             className="group flex flex-col items-center p-5 rounded-xl bg-pink-50 dark:bg-pink-900/20 border border-pink-200 dark:border-pink-800 hover:shadow-md transition-all"
           >
             <Heart className="w-7 h-7 text-pink-600 dark:text-pink-400 mb-2" />
-            <span className="text-sm font-medium text-pink-700 dark:text-pink-300">Gestação</span>
+            <span className="text-sm font-medium text-pink-700 dark:text-pink-300">{t('screening.pregnancy')}</span>
           </Link>
         </div>
       </div>
     </div>
   );
 }
-

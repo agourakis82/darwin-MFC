@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darwin MFC - Language Switching Test</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+        h1 {
+            color: #60a5fa;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #93c5fd;
+            margin-top: 30px;
+        }
+        .test-section {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .test-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .test-link {
+            background: #3b82f6;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            border-radius: 6px;
+            text-align: center;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .test-link:hover {
+            background: #2563eb;
+        }
+        .test-link.secondary {
+            background: #475569;
+        }
+        .test-link.secondary:hover {
+            background: #334155;
+        }
+        .instructions {
+            background: #1e40af;
+            border-left: 4px solid #60a5fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .instructions code {
+            background: #1e293b;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #fbbf24;
+        }
+        .checklist {
+            list-style: none;
+            padding-left: 0;
+        }
+        .checklist li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        .checklist li:before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+            color: #60a5fa;
+        }
+        .locale-badge {
+            background: #475569;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌐 Darwin MFC - Language Switching Test</h1>
+
+    <div class="instructions">
+        <h3>📋 Test Instructions</h3>
+        <p>This page helps you verify that language switching works correctly across all 9 locales. Follow the test scenarios below and check each item.</p>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 1: Homepage in All Languages</h2>
+        <p>Click each link below. The page should display in the selected language with the correct locale prefix in the URL.</p>
+        <div class="test-links">
+            <a href="https://mfc.agourakis.med.br/pt/" class="test-link" target="_blank">
+                🇧🇷 Português
+            </a>
+            <a href="https://mfc.agourakis.med.br/en/" class="test-link" target="_blank">
+                🇬🇧 English
+            </a>
+            <a href="https://mfc.agourakis.med.br/es/" class="test-link" target="_blank">
+                🇪🇸 Español
+            </a>
+            <a href="https://mfc.agourakis.med.br/fr/" class="test-link" target="_blank">
+                🇫🇷 Français
+            </a>
+            <a href="https://mfc.agourakis.med.br/ru/" class="test-link" target="_blank">
+                🇷🇺 Русский
+            </a>
+            <a href="https://mfc.agourakis.med.br/ar/" class="test-link" target="_blank">
+                🇸🇦 العربية
+            </a>
+            <a href="https://mfc.agourakis.med.br/zh/" class="test-link" target="_blank">
+                🇨🇳 中文
+            </a>
+            <a href="https://mfc.agourakis.med.br/el/" class="test-link" target="_blank">
+                🇬🇷 Ελληνικά
+            </a>
+            <a href="https://mfc.agourakis.med.br/hi/" class="test-link" target="_blank">
+                🇮🇳 हिन्दी
+            </a>
+        </div>
+        <ul class="checklist">
+            <li>URL shows correct locale prefix (e.g., <code>/pt/</code>, <code>/en/</code>)</li>
+            <li>Language selector shows all 9 languages</li>
+            <li>Content displays in the selected language</li>
+            <li>HTML lang attribute matches locale (check browser inspector)</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Navigation Within Same Locale</h2>
+        <p>Start in Portuguese, then navigate to different pages. All links should maintain <code>/pt/</code> prefix.</p>
+        <div class="test-links">
+            <a href="https://mfc.agourakis.med.br/pt/" class="test-link secondary" target="_blank">
+                1. Start: PT Homepage
+            </a>
+            <a href="https://mfc.agourakis.med.br/pt/doencas/" class="test-link secondary" target="_blank">
+                2. Click: Doenças
+            </a>
+            <a href="https://mfc.agourakis.med.br/pt/medicamentos/" class="test-link secondary" target="_blank">
+                3. Click: Medicamentos
+            </a>
+            <a href="https://mfc.agourakis.med.br/pt/about/" class="test-link secondary" target="_blank">
+                4. Click: Sobre
+            </a>
+        </div>
+        <ul class="checklist">
+            <li>All URLs maintain <code>/pt/</code> prefix</li>
+            <li>Content stays in Portuguese throughout navigation</li>
+            <li>No broken links or 404 errors</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Switching Languages Mid-Session</h2>
+        <p>Test the language selector functionality:</p>
+        <div class="test-links">
+            <a href="https://mfc.agourakis.med.br/pt/doencas/" class="test-link secondary" target="_blank">
+                1. Open: Doenças (PT)
+            </a>
+        </div>
+        <ul class="checklist">
+            <li>Open the language selector (globe icon in header)</li>
+            <li>Select "English" - URL should change to <code>/en/doencas/</code></li>
+            <li>Content should now be in English</li>
+            <li>Select "Español" - URL should change to <code>/es/doencas/</code></li>
+            <li>Content should now be in Spanish</li>
+            <li>Browser back button works correctly</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 4: Deep Links in Different Languages</h2>
+        <p>Test specific pages across multiple locales:</p>
+        <div class="test-links">
+            <a href="https://mfc.agourakis.med.br/pt/medicamentos/losartana/" class="test-link secondary" target="_blank">
+                <span class="locale-badge">PT</span> Losartana
+            </a>
+            <a href="https://mfc.agourakis.med.br/en/medicamentos/losartana/" class="test-link secondary" target="_blank">
+                <span class="locale-badge">EN</span> Losartan
+            </a>
+            <a href="https://mfc.agourakis.med.br/es/medicamentos/losartana/" class="test-link secondary" target="_blank">
+                <span class="locale-badge">ES</span> Losartán
+            </a>
+        </div>
+        <ul class="checklist">
+            <li>Same medication page loads in different languages</li>
+            <li>URLs maintain correct locale prefix</li>
+            <li>All internal links preserve the current locale</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 5: RTL Support (Arabic)</h2>
+        <p>Test right-to-left language support:</p>
+        <div class="test-links">
+            <a href="https://mfc.agourakis.med.br/ar/" class="test-link" target="_blank">
+                🇸🇦 Arabic Homepage
+            </a>
+            <a href="https://mfc.agourakis.med.br/ar/about/" class="test-link secondary" target="_blank">
+                🇸🇦 Arabic About Page
+            </a>
+        </div>
+        <ul class="checklist">
+            <li>Page direction is right-to-left</li>
+            <li>HTML has <code>dir="rtl"</code> attribute</li>
+            <li>Navigation and layout flow correctly RTL</li>
+            <li>Language selector works from Arabic page</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 6: Root Redirect</h2>
+        <p>Test that the root URL redirects to a locale:</p>
+        <div class="test-links">
+            <a href="https://mfc.agourakis.med.br/" class="test-link" target="_blank">
+                Root URL (/)
+            </a>
+        </div>
+        <ul class="checklist">
+            <li>Root redirects to a locale (based on browser language or <code>/pt/</code>)</li>
+            <li>Shows "Redirecting..." message briefly</li>
+            <li>Ends up at a localized homepage</li>
+        </ul>
+    </div>
+
+    <div class="instructions">
+        <h3>✅ Expected Results</h3>
+        <p>If all tests pass, you should observe:</p>
+        <ul>
+            <li>✅ All 9 locales are accessible and functional</li>
+            <li>✅ Language switching preserves the current page context</li>
+            <li>✅ No 404 errors when navigating between localized routes</li>
+            <li>✅ Internal links always include the locale prefix</li>
+            <li>✅ Arabic displays RTL correctly</li>
+            <li>✅ Content is translated appropriately for each locale</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>🐛 Issues to Report</h2>
+        <p>If you find any problems, check for:</p>
+        <ul>
+            <li>404 errors on localized pages</li>
+            <li>Links without locale prefix (e.g., <code href="/doencas/">/doencas/</code> instead of <code>/pt/doencas/</code>)</li>
+            <li>Language selector not working</li>
+            <li>Content not changing when switching languages</li>
+            <li>RTL not working for Arabic</li>
+            <li>Browser console errors</li>
+        </ul>
+    </div>
+</body>
+</html>
