@@ -440,5 +440,33 @@
     "interactions": "{count} 个相互作用",
     "renalAdjustment": "肾功能调整",
     "therapeuticClasses": "治疗类别"
+  },
+  "protocolos": {
+    "title": "临床协议",
+    "subtitle": "{count} 个用于初级保健临床决策的交互式流程图",
+    "searchPlaceholder": "按名称、类别或标签搜索协议...",
+    "results": "{count, plural, =0 {未找到协议} =1 {找到 1 个协议} other {找到 # 个协议}}",
+    "steps": "{count} 个步骤",
+    "noResults": "未找到协议",
+    "tryOtherTerms": "尝试其他搜索词或清除筛选器",
+    "clearFilters": "清除筛选",
+    "categories": {
+      "all": "全部",
+      "cardiovascular": "心血管",
+      "endocrine": "内分泌",
+      "respiratory": "呼吸系统",
+      "mentalHealth": "心理健康",
+      "musculoskeletal": "肌肉骨骼",
+      "infectology": "感染病学",
+      "emergency": "急诊",
+      "maternalChild": "母婴"
+    },
+    "howToUse": {
+      "title": "如何使用协议",
+      "step1": "点击协议打开交互式流程图",
+      "step2": "通过点击呈现的选项浏览节点",
+      "step3": "使用缩放和平移探索复杂的流程图",
+      "step4": "最后，复制建议粘贴到病历中"
+    }
   }
 }

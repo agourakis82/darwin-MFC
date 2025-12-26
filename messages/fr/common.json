@@ -440,5 +440,33 @@
     "interactions": "{count} interactions",
     "renalAdjustment": "Ajustement rénal",
     "therapeuticClasses": "Classes Thérapeutiques"
+  },
+  "protocolos": {
+    "title": "Protocoles Cliniques",
+    "subtitle": "{count} organigrammes interactifs pour la prise de décision en soins primaires",
+    "searchPlaceholder": "Rechercher des protocoles par nom, catégorie ou tags...",
+    "results": "{count, plural, =0 {Aucun protocole trouvé} =1 {1 protocole trouvé} other {# protocoles trouvés}}",
+    "steps": "{count} étapes",
+    "noResults": "Aucun protocole trouvé",
+    "tryOtherTerms": "Essayez de chercher avec dautres termes ou effacez les filtres",
+    "clearFilters": "Effacer les filtres",
+    "categories": {
+      "all": "Tous",
+      "cardiovascular": "Cardiovasculaire",
+      "endocrine": "Endocrinien",
+      "respiratory": "Respiratoire",
+      "mentalHealth": "Santé Mentale",
+      "musculoskeletal": "Musculo-squelettique",
+      "infectology": "Infectiologie",
+      "emergency": "Urgence",
+      "maternalChild": "Mère-Enfant"
+    },
+    "howToUse": {
+      "title": "Comment utiliser les protocoles",
+      "step1": "Cliquez sur un protocole pour ouvrir lorganigramme interactif",
+      "step2": "Naviguez à travers les nœuds en cliquant sur les options présentées",
+      "step3": "Utilisez le zoom et le pan pour explorer les organigrammes complexes",
+      "step4": "À la fin, copiez la recommandation pour la coller dans le dossier médical"
+    }
   }
 }

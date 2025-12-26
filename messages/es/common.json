@@ -440,5 +440,33 @@
     "interactions": "{count} interacciones",
     "renalAdjustment": "Ajuste renal",
     "therapeuticClasses": "Clases Terapéuticas"
+  },
+  "protocolos": {
+    "title": "Protocolos Clínicos",
+    "subtitle": "{count} flujogramas interactivos para toma de decisiones en APS",
+    "searchPlaceholder": "Buscar protocolos por nombre, categoría o etiquetas...",
+    "results": "{count, plural, =0 {Ningún protocolo encontrado} =1 {1 protocolo encontrado} other {# protocolos encontrados}}",
+    "steps": "{count} pasos",
+    "noResults": "Ningún protocolo encontrado",
+    "tryOtherTerms": "Intenta buscar con otros términos o limpia los filtros",
+    "clearFilters": "Limpiar filtros",
+    "categories": {
+      "all": "Todos",
+      "cardiovascular": "Cardiovascular",
+      "endocrine": "Endocrino",
+      "respiratory": "Respiratorio",
+      "mentalHealth": "Salud Mental",
+      "musculoskeletal": "Musculoesquelético",
+      "infectology": "Infectología",
+      "emergency": "Urgencia",
+      "maternalChild": "Materno-Infantil"
+    },
+    "howToUse": {
+      "title": "Cómo usar los protocolos",
+      "step1": "Haz clic en un protocolo para abrir el flujograma interactivo",
+      "step2": "Navega por los nodos haciendo clic en las opciones presentadas",
+      "step3": "Usa zoom y pan para explorar flujogramas complejos",
+      "step4": "Al final, copia la conducta para pegar en la historia clínica"
+    }
   }
 }

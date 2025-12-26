@@ -755,5 +755,33 @@
     "interactions": "{count} interactions",
     "renalAdjustment": "Renal adjustment",
     "therapeuticClasses": "Therapeutic Classes"
+  },
+  "protocolos": {
+    "title": "Clinical Protocols",
+    "subtitle": "{count} interactive flowcharts for clinical decision-making in Primary Care",
+    "searchPlaceholder": "Search protocols by name, category or tags...",
+    "results": "{count, plural, =0 {No protocols found} =1 {1 protocol found} other {# protocols found}}",
+    "steps": "{count} steps",
+    "noResults": "No protocol found",
+    "tryOtherTerms": "Try searching with other terms or clear the filters",
+    "clearFilters": "Clear filters",
+    "categories": {
+      "all": "All",
+      "cardiovascular": "Cardiovascular",
+      "endocrine": "Endocrine",
+      "respiratory": "Respiratory",
+      "mentalHealth": "Mental Health",
+      "musculoskeletal": "Musculoskeletal",
+      "infectology": "Infectology",
+      "emergency": "Emergency",
+      "maternalChild": "Maternal-Child"
+    },
+    "howToUse": {
+      "title": "How to use protocols",
+      "step1": "Click on a protocol to open the interactive flowchart",
+      "step2": "Navigate through nodes by clicking on the presented options",
+      "step3": "Use zoom and pan to explore complex flowcharts",
+      "step4": "At the end, copy the recommendation to paste in the medical record"
+    }
   }
 }

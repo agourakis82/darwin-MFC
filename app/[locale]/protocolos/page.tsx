@@ -3,28 +3,30 @@
 /**
  * PÁGINA DE PROTOCOLOS INTERATIVOS - DARWIN-MFC
  * ==============================================
- * 
+ *
  * Fluxogramas clicáveis para decisão clínica
  */
 
 import { useState, useMemo } from 'react';
 import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 import { GitFork, Search, Workflow, ExternalLink, Filter, Clock, ChevronRight } from 'lucide-react';
 import { todosProtocolosFlowchart } from '@/lib/data/protocolos-flowchart';
 
-const categorias = [
-  { id: 'todos', label: 'Todos', cor: 'bg-slate-500' },
-  { id: 'cardiovascular', label: 'Cardiovascular', cor: 'bg-rose-500' },
-  { id: 'endocrino', label: 'Endócrino', cor: 'bg-amber-500' },
-  { id: 'respiratorio', label: 'Respiratório', cor: 'bg-cyan-500' },
-  { id: 'saude_mental', label: 'Saúde Mental', cor: 'bg-purple-500' },
-  { id: 'musculoesqueletico', label: 'Musculoesquelético', cor: 'bg-orange-500' },
-  { id: 'infectologia', label: 'Infectologia', cor: 'bg-yellow-500' },
-  { id: 'urgencia', label: 'Urgência', cor: 'bg-red-600' },
-  { id: 'materno_infantil', label: 'Materno-Infantil', cor: 'bg-pink-500' },
-];
-
 export default function ProtocolosPage() {
+  const t = useTranslations('protocolos');
+
+  const categorias = [
+    { id: 'todos', label: t('categories.all'), cor: 'bg-slate-500' },
+    { id: 'cardiovascular', label: t('categories.cardiovascular'), cor: 'bg-rose-500' },
+    { id: 'endocrino', label: t('categories.endocrine'), cor: 'bg-amber-500' },
+    { id: 'respiratorio', label: t('categories.respiratory'), cor: 'bg-cyan-500' },
+    { id: 'saude_mental', label: t('categories.mentalHealth'), cor: 'bg-purple-500' },
+    { id: 'musculoesqueletico', label: t('categories.musculoskeletal'), cor: 'bg-orange-500' },
+    { id: 'infectologia', label: t('categories.infectology'), cor: 'bg-yellow-500' },
+    { id: 'urgencia', label: t('categories.emergency'), cor: 'bg-red-600' },
+    { id: 'materno_infantil', label: t('categories.maternalChild'), cor: 'bg-pink-500' },
+  ];
   const [searchTerm, setSearchTerm] = useState('');
   const [categoriaAtiva, setCategoriaAtiva] = useState('todos');
 
@@ -65,10 +67,10 @@ export default function ProtocolosPage() {
           </div>
           <div>
             <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
-              Protocolos Clínicos
+              {t('title')}
             </h1>
             <p className="text-slate-600 dark:text-slate-400">
-              {todosProtocolosFlowchart.length} fluxogramas interativos para tomada de decisão na APS
+              {t('subtitle', { count: todosProtocolosFlowchart.length })}
             </p>
           </div>
         </div>
@@ -80,7 +82,7 @@ export default function ProtocolosPage() {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
             <input
               type="text"
-              placeholder="Buscar protocolos por nome, categoria ou tags..."
+              placeholder={t('searchPlaceholder')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-12 pr-4 py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-lg shadow-sm"
@@ -107,7 +109,7 @@ export default function ProtocolosPage() {
 
         {/* Results Count */}
         <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
-          {protocolosFiltrados.length} protocolo{protocolosFiltrados.length !== 1 ? 's' : ''} encontrado{protocolosFiltrados.length !== 1 ? 's' : ''}
+          {t('results', { count: protocolosFiltrados.length })}
         </p>
 
         {/* Protocols Grid */}
@@ -153,7 +155,7 @@ export default function ProtocolosPage() {
                       </span>
                       <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
                         <Clock className="w-3 h-3" />
-                        {protocolo.nodes.length} etapas
+                        {t('steps', { count: protocolo.nodes.length })}
                       </span>
                     </div>
 
@@ -182,16 +184,16 @@ export default function ProtocolosPage() {
           <div className="text-center py-16">
             <Search className="w-16 h-16 mx-auto mb-4 text-slate-300" />
             <h3 className="text-xl font-semibold text-slate-600 dark:text-slate-400 mb-2">
-              Nenhum protocolo encontrado
+              {t('noResults')}
             </h3>
             <p className="text-slate-500 dark:text-slate-500">
-              Tente buscar com outros termos ou limpe os filtros
+              {t('tryOtherTerms')}
             </p>
             <button
               onClick={() => { setSearchTerm(''); setCategoriaAtiva('todos'); }}
               className="mt-4 px-6 py-2 bg-purple-600 text-white rounded-xl font-medium hover:bg-purple-700 transition-colors"
             >
-              Limpar filtros
+              {t('clearFilters')}
             </button>
           </div>
         )}
@@ -200,24 +202,24 @@ export default function ProtocolosPage() {
         <div className="mt-12 p-6 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-950/50 dark:to-indigo-950/50 rounded-2xl border border-purple-200 dark:border-purple-800">
           <h3 className="font-bold text-purple-800 dark:text-purple-200 mb-3 flex items-center gap-2">
             <Workflow className="w-5 h-5" />
-            Como usar os protocolos
+            {t('howToUse.title')}
           </h3>
           <ul className="text-sm text-purple-700 dark:text-purple-300 space-y-2">
             <li className="flex items-start gap-2">
               <span className="text-purple-500">1.</span>
-              Clique em um protocolo para abrir o fluxograma interativo
+              {t('howToUse.step1')}
             </li>
             <li className="flex items-start gap-2">
               <span className="text-purple-500">2.</span>
-              Navegue pelos nós clicando nas opções apresentadas
+              {t('howToUse.step2')}
             </li>
             <li className="flex items-start gap-2">
               <span className="text-purple-500">3.</span>
-              Use o zoom e pan para explorar fluxogramas complexos
+              {t('howToUse.step3')}
             </li>
             <li className="flex items-start gap-2">
               <span className="text-purple-500">4.</span>
-              Ao final, copie a conduta para colar no prontuário
+              {t('howToUse.step4')}
             </li>
           </ul>
         </div>

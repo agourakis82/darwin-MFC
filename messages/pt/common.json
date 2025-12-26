@@ -755,5 +755,33 @@
     "interactions": "{count} interações",
     "renalAdjustment": "Ajuste renal",
     "therapeuticClasses": "Classes Terapêuticas"
+  },
+  "protocolos": {
+    "title": "Protocolos Clínicos",
+    "subtitle": "{count} fluxogramas interativos para tomada de decisão na APS",
+    "searchPlaceholder": "Buscar protocolos por nome, categoria ou tags...",
+    "results": "{count, plural, =0 {Nenhum protocolo encontrado} =1 {1 protocolo encontrado} other {# protocolos encontrados}}",
+    "steps": "{count} etapas",
+    "noResults": "Nenhum protocolo encontrado",
+    "tryOtherTerms": "Tente buscar com outros termos ou limpe os filtros",
+    "clearFilters": "Limpar filtros",
+    "categories": {
+      "all": "Todos",
+      "cardiovascular": "Cardiovascular",
+      "endocrine": "Endócrino",
+      "respiratory": "Respiratório",
+      "mentalHealth": "Saúde Mental",
+      "musculoskeletal": "Musculoesquelético",
+      "infectology": "Infectologia",
+      "emergency": "Urgência",
+      "maternalChild": "Materno-Infantil"
+    },
+    "howToUse": {
+      "title": "Como usar os protocolos",
+      "step1": "Clique em um protocolo para abrir o fluxograma interativo",
+      "step2": "Navegue pelos nós clicando nas opções apresentadas",
+      "step3": "Use o zoom e pan para explorar fluxogramas complexos",
+      "step4": "Ao final, copie a conduta para colar no prontuário"
+    }
   }
 }
