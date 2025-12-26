@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useRef } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { Copy, Download, Check, FileText, ClipboardList, Stethoscope, Pill, Target, User, ChevronDown, ChevronUp, Users, Network, ExternalLink } from 'lucide-react';
 import type { ChecklistProgress, ChecklistConsulta } from '@/lib/types/checklist';
 import { checklistProgressToSOAPText, checklistProgressToSOAPResumo } from './ChecklistSOAPExport';

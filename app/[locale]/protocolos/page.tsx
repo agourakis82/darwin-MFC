@@ -8,7 +8,7 @@
  */
 
 import { useState, useMemo } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { GitFork, Search, Workflow, ExternalLink, Filter, Clock, ChevronRight } from 'lucide-react';
 import { todosProtocolosFlowchart } from '@/lib/data/protocolos-flowchart';
 

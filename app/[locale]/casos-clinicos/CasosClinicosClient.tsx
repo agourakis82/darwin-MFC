@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { 
   BookOpen, Clock, Trophy, ArrowRight, Heart, Brain, 
   Stethoscope, Baby, Activity, Bug, Filter

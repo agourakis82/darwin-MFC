@@ -1,7 +1,7 @@
 'use client';
 
 import { use, useState } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { 
   ArrowLeft, BookOpen, Pill, FileText, Calculator, AlertTriangle,
   CheckCircle, XCircle, Clock, Users, Heart, ChevronDown, ChevronUp,

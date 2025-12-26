@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { 
   Search, Pill, AlertTriangle, Heart, Baby, Activity,
   ChevronRight, BookOpen, TestTube, Shield, Stethoscope

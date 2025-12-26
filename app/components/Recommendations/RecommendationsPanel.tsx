@@ -11,7 +11,7 @@ import {
   type PersonalizedRecommendations,
 } from '@/lib/utils/recommendations';
 import type { SOAPData } from '@/app/components/Export/SOAPExport';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 interface RecommendationsPanelProps {
   currentSOAP?: Partial<SOAPData>;

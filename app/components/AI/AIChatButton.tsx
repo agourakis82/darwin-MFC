@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { usePathname } from 'next/navigation';
+import { usePathname } from '@/i18n/routing';
 import { AIChatInterface } from './AIChatInterface';
 import type { ChatContext } from '@/lib/types/ai';
 

@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import SOAPExport from '@/app/components/Export/SOAPExport';
 
 export const metadata: Metadata = {

@@ -6,7 +6,7 @@ import Fuse from 'fuse.js';
 import { getAllRastreamentos } from '@/lib/data/rastreamentos';
 import { doencas } from '@/lib/data/doencas';
 import { medicamentos } from '@/lib/data/medicamentos';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 type SearchResultType = 'rastreamento' | 'doenca' | 'medicamento';
 

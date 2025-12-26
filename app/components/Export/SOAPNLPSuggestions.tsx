@@ -3,7 +3,7 @@
 import React from 'react';
 import { Sparkles, Pill, Stethoscope, FileCode, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { analyzeSOAPText, type SOAPAnalysis, type ExtractedEntity } from '@/lib/utils/nlp-soap';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 interface SOAPNLPSuggestionsProps {
   text: string;

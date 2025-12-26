@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useCallback } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { AlertTriangle, X, Search, Plus, Shield, Info, ChevronDown, ChevronUp } from 'lucide-react';
 import { todosMedicamentos, searchMedicamentos, checkInteractions } from '@/lib/data/medicamentos/index';
 import { Medicamento } from '@/lib/types/medicamento';

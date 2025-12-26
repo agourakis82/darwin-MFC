@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { 
   Heart, Users, Scale, Building2, Map, MessageSquare,
   ChevronRight, BookOpen, Shield, Target, Layers, Network,

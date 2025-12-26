@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/i18n/routing';
 import { caseSteps } from '@/lib/data/caso-clinico';
 import { ChevronLeft, ChevronRight, Home } from 'lucide-react';
 

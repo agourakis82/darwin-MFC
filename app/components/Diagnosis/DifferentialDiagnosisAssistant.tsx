@@ -8,7 +8,7 @@ import {
   type DifferentialDiagnosisResult,
   type DiagnosticPathway,
 } from '@/lib/utils/differential-diagnosis';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 interface DifferentialDiagnosisAssistantProps {
   initialSymptom?: string;

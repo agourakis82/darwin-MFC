@@ -1,7 +1,7 @@
 'use client';
 
 import { use } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { 
   ArrowLeft, Pill, AlertTriangle, Baby, Heart, TestTube,
   Clock, Shield, BookOpen, ChevronRight, Activity, XCircle,

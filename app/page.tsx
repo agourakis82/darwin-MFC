@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/i18n/routing';
 import { defaultLocale, locales, type Locale } from '@/i18n/config';
 
 export default function RootPage() {

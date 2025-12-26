@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { 
   ArrowLeft, ArrowRight, CheckCircle, XCircle, 
   User, FileText, Stethoscope, FlaskConical, 

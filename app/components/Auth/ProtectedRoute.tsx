@@ -9,7 +9,7 @@
  */
 
 import React, { useEffect, ReactNode } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/i18n/routing';
 import { Loader2 } from 'lucide-react';
 import { useAuth } from './AuthProvider';
 
