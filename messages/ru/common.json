@@ -711,5 +711,100 @@
         "description": "10-летний риск сердечно-сосудистой смерти."
       }
     }
+  },
+  "clinicalCases": {
+    "title": "Интерактивные Клинические Случаи",
+    "subtitle": "Учитесь на реальных случаях первичной помощи",
+    "stats": {
+      "available": "Доступных случаев",
+      "categories": "Категории",
+      "completed": "Завершённых случаев"
+    },
+    "filter": {
+      "label": "Фильтр:",
+      "allCategories": "Все категории",
+      "allDifficulties": "Все уровни сложности",
+      "found": "Найдено: {count}"
+    },
+    "categories": {
+      "cardiovascular": "Кардиоваскулярные",
+      "endocrino": "Эндокринные",
+      "neurologico": "Неврологические",
+      "infeccioso": "Инфекционные",
+      "pediatrico": "Педиатрические",
+      "respiratorio": "Респираторные",
+      "gastro": "Гастроинтестинальные",
+      "psiquiatrico": "Психиатрические"
+    },
+    "difficulty": {
+      "beginner": "Начинающий",
+      "intermediate": "Средний",
+      "advanced": "Продвинутый"
+    },
+    "patient": {
+      "years": "лет",
+      "male": "мужчина",
+      "female": "женщина",
+      "chiefComplaint": "ОЖ"
+    },
+    "meta": {
+      "min": "мин",
+      "steps": "{count} этапов"
+    },
+    "actions": {
+      "start": "Начать"
+    },
+    "emptyState": {
+      "title": "Случаи не найдены",
+      "subtitle": "Попробуйте изменить фильтры"
+    },
+    "player": {
+      "caseCompleted": "Случай Завершён!",
+      "correctRate": "{percent}% правильных ({correct}/{total})",
+      "score": "Счёт: {points} баллов",
+      "outcome": {
+        "title": "Исход Случая",
+        "finalDiagnosis": "Окончательный Диагноз",
+        "treatmentProvided": "Проведённое Лечение",
+        "evolution": "Эволюция"
+      },
+      "lessons": {
+        "keyLessons": "Ключевые Уроки",
+        "commonMistakes": "Типичные Ошибки"
+      },
+      "actions": {
+        "retry": "Повторить Случай",
+        "viewOthers": "Другие Случаи",
+        "startCase": "Начать Случай",
+        "checkAnswer": "Проверить Ответ",
+        "nextStep": "Следующий Этап",
+        "viewOutcome": "Смотреть Исход"
+      },
+      "nav": {
+        "back": "Назад",
+        "presentation": "Представление",
+        "stepOf": "Этап {current} из {total}",
+        "pts": "б."
+      },
+      "presentation": {
+        "chiefComplaint": "Основная Жалоба",
+        "historyOfPresentIllness": "Анамнез Заболевания",
+        "learningObjectives": "Цели Обучения"
+      },
+      "stepTypes": {
+        "anamnese": "Анамнез",
+        "exame_fisico": "Физикальный Осмотр",
+        "exames_complementares": "Дополнительные Исследования",
+        "diagnostico": "Диагноз",
+        "tratamento": "Лечение",
+        "acompanhamento": "Наблюдение",
+        "educacao": "Обучение Пациента"
+      },
+      "hints": "Подсказки",
+      "feedback": {
+        "correct": "Правильно!",
+        "incorrect": "Неправильно"
+      }
+    }
   }
 }

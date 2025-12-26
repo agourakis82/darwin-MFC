@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import { Link } from '@/i18n/routing';
-import { 
-  BookOpen, Clock, Trophy, ArrowRight, Heart, Brain, 
+import { useTranslations } from 'next-intl';
+import {
+  BookOpen, Clock, Trophy, ArrowRight, Heart, Brain,
   Stethoscope, Baby, Activity, Bug, Filter
 } from 'lucide-react';
 import { todosCasosClinicos, CasoClinico } from '@/lib/data/casos-clinicos';
@@ -29,13 +30,14 @@ const categoriaCores: Record<string, string> = {
   default: 'from-blue-500 to-indigo-600'
 };
 
-const dificuldadeBadge: Record<string, { cor: string; texto: string }> = {
-  iniciante: { cor: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400', texto: 'Iniciante' },
-  intermediario: { cor: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400', texto: 'Intermediário' },
-  avancado: { cor: 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400', texto: 'Avançado' }
+const dificuldadeCores: Record<string, string> = {
+  iniciante: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
+  intermediario: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400',
+  avancado: 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
 };
 
 export default function CasosClinicosClient() {
+  const t = useTranslations('clinicalCases');
   const [filtroCategoria, setFiltroCategoria] = useState<string>('todas');
   const [filtroDificuldade, setFiltroDificuldade] = useState<string>('todas');
 
@@ -57,26 +59,26 @@ export default function CasosClinicosClient() {
               <BookOpen className="w-8 h-8" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">Casos Clínicos Interativos</h1>
-              <p className="text-indigo-100">Aprenda com casos reais da Atenção Primária</p>
+              <h1 className="text-3xl font-bold">{t('title')}</h1>
+              <p className="text-indigo-100">{t('subtitle')}</p>
             </div>
           </div>
           
           <div className="flex flex-wrap gap-4 mt-8">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3">
               <div className="text-2xl font-bold">{todosCasosClinicos.length}</div>
-              <div className="text-sm text-indigo-100">Casos disponíveis</div>
+              <div className="text-sm text-indigo-100">{t('stats.available')}</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3">
               <div className="text-2xl font-bold">{categorias.length}</div>
-              <div className="text-sm text-indigo-100">Categorias</div>
+              <div className="text-sm text-indigo-100">{t('stats.categories')}</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3">
               <div className="text-2xl font-bold flex items-center gap-1">
                 <Trophy className="w-5 h-5" />
                 0
               </div>
-              <div className="text-sm text-indigo-100">Casos concluídos</div>
+              <div className="text-sm text-indigo-100">{t('stats.completed')}</div>
             </div>
           </div>
         </div>
@@ -87,17 +89,17 @@ export default function CasosClinicosClient() {
         <div className="flex flex-wrap gap-4 items-center">
           <div className="flex items-center gap-2">
             <Filter className="w-5 h-5 text-neutral-500" />
-            <span className="text-sm font-medium dark:text-white">Filtrar:</span>
+            <span className="text-sm font-medium dark:text-white">{t('filter.label')}</span>
           </div>
-          
+
           <select
             value={filtroCategoria}
             onChange={(e) => setFiltroCategoria(e.target.value)}
             className="px-4 py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 dark:text-white"
           >
-            <option value="todas">Todas as categorias</option>
+            <option value="todas">{t('filter.allCategories')}</option>
             {categorias.map(cat => (
-              <option key={cat} value={cat}>{cat.charAt(0).toUpperCase() + cat.slice(1)}</option>
+              <option key={cat} value={cat}>{t(`categories.${cat}`)}</option>
             ))}
           </select>
 
@@ -106,14 +108,14 @@ export default function CasosClinicosClient() {
             onChange={(e) => setFiltroDificuldade(e.target.value)}
             className="px-4 py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 dark:text-white"
           >
-            <option value="todas">Todas as dificuldades</option>
-            <option value="iniciante">Iniciante</option>
-            <option value="intermediario">Intermediário</option>
-            <option value="avancado">Avançado</option>
+            <option value="todas">{t('filter.allDifficulties')}</option>
+            <option value="iniciante">{t('difficulty.beginner')}</option>
+            <option value="intermediario">{t('difficulty.intermediate')}</option>
+            <option value="avancado">{t('difficulty.advanced')}</option>
           </select>
 
           <span className="text-sm text-neutral-500">
-            {casosFiltrados.length} caso(s) encontrado(s)
+            {t('filter.found', { count: casosFiltrados.length })}
           </span>
         </div>
       </div>
@@ -124,7 +126,8 @@ export default function CasosClinicosClient() {
           {casosFiltrados.map(caso => {
             const IconCategoria = categoriaIcons[caso.categoria] || categoriaIcons.default;
             const corGradiente = categoriaCores[caso.categoria] || categoriaCores.default;
-            const badge = dificuldadeBadge[caso.dificuldade];
+            const badgeCor = dificuldadeCores[caso.dificuldade];
+            const badgeTexto = t(`difficulty.${caso.dificuldade === 'iniciante' ? 'beginner' : caso.dificuldade === 'intermediario' ? 'intermediate' : 'advanced'}`);
 
             return (
               <Link
@@ -138,8 +141,8 @@ export default function CasosClinicosClient() {
                     <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
                       <IconCategoria className="w-6 h-6" />
                     </div>
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${badge.cor}`}>
-                      {badge.texto}
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${badgeCor}`}>
+                      {badgeTexto}
                     </span>
                   </div>
                 </div>
@@ -156,10 +159,10 @@ export default function CasosClinicosClient() {
                   {/* Paciente */}
                   <div className="bg-neutral-50 dark:bg-neutral-700/50 rounded-lg p-3 mb-4">
                     <p className="text-sm">
-                      <span className="font-medium">{caso.apresentacao.paciente.nome}</span>, {caso.apresentacao.paciente.idade} anos, {caso.apresentacao.paciente.sexo === 'M' ? 'masculino' : 'feminino'}
+                      <span className="font-medium">{caso.apresentacao.paciente.nome}</span>, {caso.apresentacao.paciente.idade} {t('patient.years')}, {caso.apresentacao.paciente.sexo === 'M' ? t('patient.male') : t('patient.female')}
                     </p>
                     <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-                      QP: {caso.apresentacao.queixaPrincipal}
+                      {t('patient.chiefComplaint')}: {caso.apresentacao.queixaPrincipal}
                     </p>
                   </div>
 
@@ -167,14 +170,14 @@ export default function CasosClinicosClient() {
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center gap-1 text-neutral-500">
                       <Clock className="w-4 h-4" />
-                      <span>{caso.tempoEstimado} min</span>
+                      <span>{caso.tempoEstimado} {t('meta.min')}</span>
                     </div>
                     <div className="flex items-center gap-1 text-neutral-500">
                       <BookOpen className="w-4 h-4" />
-                      <span>{caso.etapas.length} etapas</span>
+                      <span>{t('meta.steps', { count: caso.etapas.length })}</span>
                     </div>
                     <div className="flex items-center gap-1 text-blue-600 font-medium group-hover:gap-2 transition-all">
-                      <span>Iniciar</span>
+                      <span>{t('actions.start')}</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   </div>
@@ -187,8 +190,8 @@ export default function CasosClinicosClient() {
         {casosFiltrados.length === 0 && (
           <div className="text-center py-12">
             <Stethoscope className="w-16 h-16 mx-auto text-neutral-300 mb-4" />
-            <h3 className="text-lg font-semibold dark:text-white">Nenhum caso encontrado</h3>
-            <p className="text-neutral-500">Tente ajustar os filtros</p>
+            <h3 className="text-lg font-semibold dark:text-white">{t('emptyState.title')}</h3>
+            <p className="text-neutral-500">{t('emptyState.subtitle')}</p>
           </div>
         )}
       </div>

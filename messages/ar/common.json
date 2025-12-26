@@ -711,5 +711,100 @@
         "description": "خطر وفاة القلب في 10 سنوات."
       }
     }
+  },
+  "clinicalCases": {
+    "title": "حالات سريرية تفاعلية",
+    "subtitle": "تعلم من حالات حقيقية في الرعاية الأولية",
+    "stats": {
+      "available": "حالات متاحة",
+      "categories": "فئات",
+      "completed": "حالات مكتملة"
+    },
+    "filter": {
+      "label": "تصفية:",
+      "allCategories": "جميع الفئات",
+      "allDifficulties": "جميع المستويات",
+      "found": "تم العثور على {count} حالة"
+    },
+    "categories": {
+      "cardiovascular": "قلبي وعائي",
+      "endocrino": "غدد صماء",
+      "neurologico": "عصبي",
+      "infeccioso": "معدي",
+      "pediatrico": "أطفال",
+      "respiratorio": "تنفسي",
+      "gastro": "معدي معوي",
+      "psiquiatrico": "نفسي"
+    },
+    "difficulty": {
+      "beginner": "مبتدئ",
+      "intermediate": "متوسط",
+      "advanced": "متقدم"
+    },
+    "patient": {
+      "years": "سنة",
+      "male": "ذكر",
+      "female": "أنثى",
+      "chiefComplaint": "الشكوى الرئيسية"
+    },
+    "meta": {
+      "min": "دقيقة",
+      "steps": "{count} خطوات"
+    },
+    "actions": {
+      "start": "ابدأ"
+    },
+    "emptyState": {
+      "title": "لم يتم العثور على حالات",
+      "subtitle": "حاول تعديل الفلاتر"
+    },
+    "player": {
+      "caseCompleted": "تم إكمال الحالة!",
+      "correctRate": "{percent}% صحيح ({correct}/{total})",
+      "score": "النتيجة: {points} نقاط",
+      "outcome": {
+        "title": "نتيجة الحالة",
+        "finalDiagnosis": "التشخيص النهائي",
+        "treatmentProvided": "العلاج المقدم",
+        "evolution": "التطور"
+      },
+      "lessons": {
+        "keyLessons": "الدروس الرئيسية",
+        "commonMistakes": "أخطاء شائعة يجب تجنبها"
+      },
+      "actions": {
+        "retry": "إعادة المحاولة",
+        "viewOthers": "عرض حالات أخرى",
+        "startCase": "بدء الحالة",
+        "checkAnswer": "تحقق من الإجابة",
+        "nextStep": "الخطوة التالية",
+        "viewOutcome": "عرض النتيجة"
+      },
+      "nav": {
+        "back": "رجوع",
+        "presentation": "العرض",
+        "stepOf": "الخطوة {current} من {total}",
+        "pts": "نقاط"
+      },
+      "presentation": {
+        "chiefComplaint": "الشكوى الرئيسية",
+        "historyOfPresentIllness": "تاريخ المرض الحالي",
+        "learningObjectives": "أهداف التعلم"
+      },
+      "stepTypes": {
+        "anamnese": "القصة المرضية",
+        "exame_fisico": "الفحص البدني",
+        "exames_complementares": "الفحوصات التكميلية",
+        "diagnostico": "التشخيص",
+        "tratamento": "العلاج",
+        "acompanhamento": "المتابعة",
+        "educacao": "تثقيف المريض"
+      },
+      "hints": "تلميحات",
+      "feedback": {
+        "correct": "صحيح!",
+        "incorrect": "غير صحيح"
+      }
+    }
   }
 }

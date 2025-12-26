@@ -711,5 +711,100 @@
         "description": "10-वर्षीय हृदय मृत्यु जोखिम।"
       }
     }
+  },
+  "clinicalCases": {
+    "title": "इंटरैक्टिव क्लिनिकल केस",
+    "subtitle": "प्राथमिक देखभाल के वास्तविक मामलों से सीखें",
+    "stats": {
+      "available": "उपलब्ध केस",
+      "categories": "श्रेणियाँ",
+      "completed": "पूर्ण केस"
+    },
+    "filter": {
+      "label": "फ़िल्टर:",
+      "allCategories": "सभी श्रेणियाँ",
+      "allDifficulties": "सभी स्तर",
+      "found": "{count} केस मिले"
+    },
+    "categories": {
+      "cardiovascular": "हृदय संबंधी",
+      "endocrino": "अंतःस्रावी",
+      "neurologico": "न्यूरोलॉजिकल",
+      "infeccioso": "संक्रामक",
+      "pediatrico": "बाल चिकित्सा",
+      "respiratorio": "श्वसन",
+      "gastro": "गैस्ट्रोइंटेस्टाइनल",
+      "psiquiatrico": "मनोचिकित्सा"
+    },
+    "difficulty": {
+      "beginner": "प्रारंभिक",
+      "intermediate": "मध्यम",
+      "advanced": "उन्नत"
+    },
+    "patient": {
+      "years": "वर्ष",
+      "male": "पुरुष",
+      "female": "महिला",
+      "chiefComplaint": "मुख्य शिकायत"
+    },
+    "meta": {
+      "min": "मिनट",
+      "steps": "{count} चरण"
+    },
+    "actions": {
+      "start": "शुरू करें"
+    },
+    "emptyState": {
+      "title": "कोई केस नहीं मिला",
+      "subtitle": "फ़िल्टर समायोजित करें"
+    },
+    "player": {
+      "caseCompleted": "केस पूर्ण!",
+      "correctRate": "{percent}% सही ({correct}/{total})",
+      "score": "स्कोर: {points} अंक",
+      "outcome": {
+        "title": "केस का परिणाम",
+        "finalDiagnosis": "अंतिम निदान",
+        "treatmentProvided": "दिया गया उपचार",
+        "evolution": "विकास"
+      },
+      "lessons": {
+        "keyLessons": "मुख्य सबक",
+        "commonMistakes": "सामान्य गलतियाँ"
+      },
+      "actions": {
+        "retry": "पुनः प्रयास करें",
+        "viewOthers": "अन्य केस देखें",
+        "startCase": "केस शुरू करें",
+        "checkAnswer": "उत्तर जांचें",
+        "nextStep": "अगला चरण",
+        "viewOutcome": "परिणाम देखें"
+      },
+      "nav": {
+        "back": "वापस",
+        "presentation": "प्रस्तुति",
+        "stepOf": "चरण {current}/{total}",
+        "pts": "अंक"
+      },
+      "presentation": {
+        "chiefComplaint": "मुख्य शिकायत",
+        "historyOfPresentIllness": "वर्तमान बीमारी का इतिहास",
+        "learningObjectives": "सीखने के उद्देश्य"
+      },
+      "stepTypes": {
+        "anamnese": "इतिहास लेना",
+        "exame_fisico": "शारीरिक परीक्षा",
+        "exames_complementares": "पूरक परीक्षाएं",
+        "diagnostico": "निदान",
+        "tratamento": "उपचार",
+        "acompanhamento": "अनुवर्ती",
+        "educacao": "रोगी शिक्षा"
+      },
+      "hints": "संकेत",
+      "feedback": {
+        "correct": "सही!",
+        "incorrect": "गलत"
+      }
+    }
   }
 }

@@ -1026,5 +1026,100 @@
         "description": "Risco de morte cardiovascular em 10 anos."
       }
     }
+  },
+  "clinicalCases": {
+    "title": "Casos Clínicos Interativos",
+    "subtitle": "Aprenda com casos reais da Atenção Primária",
+    "stats": {
+      "available": "Casos disponíveis",
+      "categories": "Categorias",
+      "completed": "Casos concluídos"
+    },
+    "filter": {
+      "label": "Filtrar:",
+      "allCategories": "Todas as categorias",
+      "allDifficulties": "Todas as dificuldades",
+      "found": "{count} caso(s) encontrado(s)"
+    },
+    "categories": {
+      "cardiovascular": "Cardiovascular",
+      "endocrino": "Endócrino",
+      "neurologico": "Neurológico",
+      "infeccioso": "Infeccioso",
+      "pediatrico": "Pediátrico",
+      "respiratorio": "Respiratório",
+      "gastro": "Gastrointestinal",
+      "psiquiatrico": "Psiquiátrico"
+    },
+    "difficulty": {
+      "beginner": "Iniciante",
+      "intermediate": "Intermediário",
+      "advanced": "Avançado"
+    },
+    "patient": {
+      "years": "anos",
+      "male": "masculino",
+      "female": "feminino",
+      "chiefComplaint": "QP"
+    },
+    "meta": {
+      "min": "min",
+      "steps": "{count} etapas"
+    },
+    "actions": {
+      "start": "Iniciar"
+    },
+    "emptyState": {
+      "title": "Nenhum caso encontrado",
+      "subtitle": "Tente ajustar os filtros"
+    },
+    "player": {
+      "caseCompleted": "Caso Concluído!",
+      "correctRate": "{percent}% de acertos ({correct}/{total})",
+      "score": "Pontuação: {points} pontos",
+      "outcome": {
+        "title": "Desfecho do Caso",
+        "finalDiagnosis": "Diagnóstico Final",
+        "treatmentProvided": "Tratamento Realizado",
+        "evolution": "Evolução"
+      },
+      "lessons": {
+        "keyLessons": "Lições Principais",
+        "commonMistakes": "Erros Comuns a Evitar"
+      },
+      "actions": {
+        "retry": "Refazer Caso",
+        "viewOthers": "Ver Outros Casos",
+        "startCase": "Iniciar Caso",
+        "checkAnswer": "Verificar Resposta",
+        "nextStep": "Próxima Etapa",
+        "viewOutcome": "Ver Desfecho"
+      },
+      "nav": {
+        "back": "Voltar",
+        "presentation": "Apresentação",
+        "stepOf": "Etapa {current} de {total}",
+        "pts": "pts"
+      },
+      "presentation": {
+        "chiefComplaint": "Queixa Principal",
+        "historyOfPresentIllness": "História da Doença Atual",
+        "learningObjectives": "Objetivos de Aprendizagem"
+      },
+      "stepTypes": {
+        "anamnese": "Anamnese",
+        "exame_fisico": "Exame Físico",
+        "exames_complementares": "Exames Complementares",
+        "diagnostico": "Diagnóstico",
+        "tratamento": "Tratamento",
+        "acompanhamento": "Acompanhamento",
+        "educacao": "Educação"
+      },
+      "hints": "Dicas",
+      "feedback": {
+        "correct": "Correto!",
+        "incorrect": "Incorreto"
+      }
+    }
   }
 }

@@ -711,5 +711,100 @@
         "description": "10ετής κίνδυνος καρδιαγγειακού θανάτου."
       }
     }
+  },
+  "clinicalCases": {
+    "title": "Διαδραστικές Κλινικές Περιπτώσεις",
+    "subtitle": "Μάθετε από πραγματικές περιπτώσεις Πρωτοβάθμιας Φροντίδας",
+    "stats": {
+      "available": "Διαθέσιμες περιπτώσεις",
+      "categories": "Κατηγορίες",
+      "completed": "Ολοκληρωμένες περιπτώσεις"
+    },
+    "filter": {
+      "label": "Φίλτρο:",
+      "allCategories": "Όλες οι κατηγορίες",
+      "allDifficulties": "Όλα τα επίπεδα",
+      "found": "Βρέθηκαν {count} περίπτωση(εις)"
+    },
+    "categories": {
+      "cardiovascular": "Καρδιαγγειακά",
+      "endocrino": "Ενδοκρινικά",
+      "neurologico": "Νευρολογικά",
+      "infeccioso": "Λοιμώδη",
+      "pediatrico": "Παιδιατρικά",
+      "respiratorio": "Αναπνευστικά",
+      "gastro": "Γαστρεντερικά",
+      "psiquiatrico": "Ψυχιατρικά"
+    },
+    "difficulty": {
+      "beginner": "Αρχάριος",
+      "intermediate": "Μεσαίο",
+      "advanced": "Προχωρημένο"
+    },
+    "patient": {
+      "years": "ετών",
+      "male": "άνδρας",
+      "female": "γυναίκα",
+      "chiefComplaint": "ΚΕ"
+    },
+    "meta": {
+      "min": "λεπτά",
+      "steps": "{count} βήματα"
+    },
+    "actions": {
+      "start": "Έναρξη"
+    },
+    "emptyState": {
+      "title": "Δεν βρέθηκαν περιπτώσεις",
+      "subtitle": "Δοκιμάστε να προσαρμόσετε τα φίλτρα"
+    },
+    "player": {
+      "caseCompleted": "Η Περίπτωση Ολοκληρώθηκε!",
+      "correctRate": "{percent}% σωστές ({correct}/{total})",
+      "score": "Βαθμολογία: {points} πόντοι",
+      "outcome": {
+        "title": "Έκβαση της Περίπτωσης",
+        "finalDiagnosis": "Τελική Διάγνωση",
+        "treatmentProvided": "Θεραπεία που Χορηγήθηκε",
+        "evolution": "Εξέλιξη"
+      },
+      "lessons": {
+        "keyLessons": "Βασικά Μαθήματα",
+        "commonMistakes": "Συνήθη Λάθη προς Αποφυγή"
+      },
+      "actions": {
+        "retry": "Επανάληψη Περίπτωσης",
+        "viewOthers": "Προβολή Άλλων Περιπτώσεων",
+        "startCase": "Έναρξη Περίπτωσης",
+        "checkAnswer": "Έλεγχος Απάντησης",
+        "nextStep": "Επόμενο Βήμα",
+        "viewOutcome": "Προβολή Έκβασης"
+      },
+      "nav": {
+        "back": "Πίσω",
+        "presentation": "Παρουσίαση",
+        "stepOf": "Βήμα {current} από {total}",
+        "pts": "πόντοι"
+      },
+      "presentation": {
+        "chiefComplaint": "Κύριο Ενόχλημα",
+        "historyOfPresentIllness": "Ιστορικό Παρούσας Νόσου",
+        "learningObjectives": "Μαθησιακοί Στόχοι"
+      },
+      "stepTypes": {
+        "anamnese": "Λήψη Ιστορικού",
+        "exame_fisico": "Φυσική Εξέταση",
+        "exames_complementares": "Συμπληρωματικές Εξετάσεις",
+        "diagnostico": "Διάγνωση",
+        "tratamento": "Θεραπεία",
+        "acompanhamento": "Παρακολούθηση",
+        "educacao": "Εκπαίδευση Ασθενούς"
+      },
+      "hints": "Υποδείξεις",
+      "feedback": {
+        "correct": "Σωστό!",
+        "incorrect": "Λάθος"
+      }
+    }
   }
 }

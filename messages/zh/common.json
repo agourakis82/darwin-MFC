@@ -711,5 +711,100 @@
         "description": "10年心血管死亡风险。"
       }
     }
+  },
+  "clinicalCases": {
+    "title": "互动临床病例",
+    "subtitle": "从真实的初级保健病例中学习",
+    "stats": {
+      "available": "可用病例",
+      "categories": "类别",
+      "completed": "已完成病例"
+    },
+    "filter": {
+      "label": "筛选:",
+      "allCategories": "所有类别",
+      "allDifficulties": "所有难度",
+      "found": "找到 {count} 个病例"
+    },
+    "categories": {
+      "cardiovascular": "心血管",
+      "endocrino": "内分泌",
+      "neurologico": "神经",
+      "infeccioso": "传染",
+      "pediatrico": "儿科",
+      "respiratorio": "呼吸",
+      "gastro": "胃肠",
+      "psiquiatrico": "精神"
+    },
+    "difficulty": {
+      "beginner": "初级",
+      "intermediate": "中级",
+      "advanced": "高级"
+    },
+    "patient": {
+      "years": "岁",
+      "male": "男性",
+      "female": "女性",
+      "chiefComplaint": "主诉"
+    },
+    "meta": {
+      "min": "分钟",
+      "steps": "{count} 步骤"
+    },
+    "actions": {
+      "start": "开始"
+    },
+    "emptyState": {
+      "title": "未找到病例",
+      "subtitle": "尝试调整筛选条件"
+    },
+    "player": {
+      "caseCompleted": "病例完成！",
+      "correctRate": "正确率 {percent}% ({correct}/{total})",
+      "score": "得分: {points} 分",
+      "outcome": {
+        "title": "病例结果",
+        "finalDiagnosis": "最终诊断",
+        "treatmentProvided": "治疗方案",
+        "evolution": "病程演变"
+      },
+      "lessons": {
+        "keyLessons": "关键要点",
+        "commonMistakes": "常见错误"
+      },
+      "actions": {
+        "retry": "重试病例",
+        "viewOthers": "查看其他病例",
+        "startCase": "开始病例",
+        "checkAnswer": "检查答案",
+        "nextStep": "下一步",
+        "viewOutcome": "查看结果"
+      },
+      "nav": {
+        "back": "返回",
+        "presentation": "病例介绍",
+        "stepOf": "步骤 {current}/{total}",
+        "pts": "分"
+      },
+      "presentation": {
+        "chiefComplaint": "主诉",
+        "historyOfPresentIllness": "现病史",
+        "learningObjectives": "学习目标"
+      },
+      "stepTypes": {
+        "anamnese": "病史采集",
+        "exame_fisico": "体格检查",
+        "exames_complementares": "辅助检查",
+        "diagnostico": "诊断",
+        "tratamento": "治疗",
+        "acompanhamento": "随访",
+        "educacao": "患者教育"
+      },
+      "hints": "提示",
+      "feedback": {
+        "correct": "正确！",
+        "incorrect": "错误"
+      }
+    }
   }
 }

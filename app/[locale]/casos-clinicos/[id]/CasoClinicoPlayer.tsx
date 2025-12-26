@@ -2,9 +2,10 @@
 
 import { useState, useCallback } from 'react';
 import { Link } from '@/i18n/routing';
-import { 
-  ArrowLeft, ArrowRight, CheckCircle, XCircle, 
-  User, FileText, Stethoscope, FlaskConical, 
+import { useTranslations } from 'next-intl';
+import {
+  ArrowLeft, ArrowRight, CheckCircle, XCircle,
+  User, FileText, Stethoscope, FlaskConical,
   Target, Pill, TrendingUp, GraduationCap,
   Trophy, RotateCcw, Home, Lightbulb
 } from 'lucide-react';
@@ -24,17 +25,8 @@ const tipoEtapaIcons: Record<string, React.ElementType> = {
   educacao: GraduationCap
 };
 
-const tipoEtapaNomes: Record<string, string> = {
-  anamnese: 'Anamnese',
-  exame_fisico: 'Exame Físico',
-  exames_complementares: 'Exames Complementares',
-  diagnostico: 'Diagnóstico',
-  tratamento: 'Tratamento',
-  acompanhamento: 'Acompanhamento',
-  educacao: 'Educação'
-};
-
 export default function CasoClinicoPlayer({ caso }: Props) {
+  const t = useTranslations('clinicalCases');
   const [etapaAtual, setEtapaAtual] = useState(-1); // -1 = apresentação
   const [respostas, setRespostas] = useState<Record<string, { resposta: string; correta: boolean }>>({});
   const [respostaSelecionada, setRespostaSelecionada] = useState<string | null>(null);
@@ -95,29 +87,29 @@ export default function CasoClinicoPlayer({ caso }: Props) {
           <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg overflow-hidden mb-6">
             <div className={`p-8 text-center text-white ${percentual >= 70 ? 'bg-gradient-to-r from-green-500 to-emerald-600' : 'bg-gradient-to-r from-amber-500 to-orange-600'}`}>
               <Trophy className="w-16 h-16 mx-auto mb-4" />
-              <h1 className="text-3xl font-bold mb-2">Caso Concluído!</h1>
-              <p className="text-xl opacity-90">{percentual}% de acertos ({acertos}/{total})</p>
-              <p className="text-lg mt-2">Pontuação: {pontuacaoTotal} pontos</p>
+              <h1 className="text-3xl font-bold mb-2">{t('player.caseCompleted')}</h1>
+              <p className="text-xl opacity-90">{t('player.correctRate', { percent: percentual, correct: acertos, total })}</p>
+              <p className="text-lg mt-2">{t('player.score', { points: pontuacaoTotal })}</p>
             </div>
           </div>
 
           {/* Desfecho */}
           <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-6 mb-6">
-            <h2 className="text-xl font-bold mb-4 dark:text-white">📋 Desfecho do Caso</h2>
-            
+            <h2 className="text-xl font-bold mb-4 dark:text-white">{t('player.outcome.title')}</h2>
+
             <div className="space-y-4">
               <div>
-                <h3 className="font-semibold text-blue-600 mb-1">Diagnóstico Final</h3>
+                <h3 className="font-semibold text-blue-600 mb-1">{t('player.outcome.finalDiagnosis')}</h3>
                 <p className="dark:text-neutral-300">{caso.desfecho.diagnosticoFinal}</p>
               </div>
-              
+
               <div>
-                <h3 className="font-semibold text-green-600 mb-1">Tratamento Realizado</h3>
+                <h3 className="font-semibold text-green-600 mb-1">{t('player.outcome.treatmentProvided')}</h3>
                 <p className="dark:text-neutral-300">{caso.desfecho.tratamentoRealizado}</p>
               </div>
-              
+
               <div>
-                <h3 className="font-semibold text-purple-600 mb-1">Evolução</h3>
+                <h3 className="font-semibold text-purple-600 mb-1">{t('player.outcome.evolution')}</h3>
                 <p className="dark:text-neutral-300">{caso.desfecho.evolucao}</p>
               </div>
             </div>
@@ -128,7 +120,7 @@ export default function CasoClinicoPlayer({ caso }: Props) {
             <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-6">
               <h2 className="text-lg font-bold mb-3 flex items-center gap-2 text-green-600">
                 <Lightbulb className="w-5 h-5" />
-                Lições Principais
+                {t('player.lessons.keyLessons')}
               </h2>
               <ul className="space-y-2">
                 {caso.desfecho.licoesPrincipais.map((licao, i) => (
@@ -143,7 +135,7 @@ export default function CasoClinicoPlayer({ caso }: Props) {
             <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-6">
               <h2 className="text-lg font-bold mb-3 flex items-center gap-2 text-red-600">
                 <XCircle className="w-5 h-5" />
-                Erros Comuns a Evitar
+                {t('player.lessons.commonMistakes')}
               </h2>
               <ul className="space-y-2">
                 {caso.desfecho.errosComuns.map((erro, i) => (
@@ -163,14 +155,14 @@ export default function CasoClinicoPlayer({ caso }: Props) {
               className="px-6 py-3 bg-neutral-200 dark:bg-neutral-700 rounded-xl flex items-center gap-2 hover:bg-neutral-300 dark:hover:bg-neutral-600 transition-colors"
             >
               <RotateCcw className="w-5 h-5" />
-              Refazer Caso
+              {t('player.actions.retry')}
             </button>
             <Link
               href="/casos-clinicos"
               className="px-6 py-3 bg-blue-600 text-white rounded-xl flex items-center gap-2 hover:bg-blue-700 transition-colors"
             >
               <Home className="w-5 h-5" />
-              Ver Outros Casos
+              {t('player.actions.viewOthers')}
             </Link>
           </div>
         </div>
@@ -186,13 +178,13 @@ export default function CasoClinicoPlayer({ caso }: Props) {
           <div className="flex items-center justify-between mb-2">
             <Link href="/casos-clinicos" className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">
               <ArrowLeft className="w-5 h-5" />
-              <span className="text-sm">Voltar</span>
+              <span className="text-sm">{t('player.nav.back')}</span>
             </Link>
             <div className="text-sm font-medium dark:text-white">
-              {etapaAtual < 0 ? 'Apresentação' : `Etapa ${etapaAtual + 1} de ${caso.etapas.length}`}
+              {etapaAtual < 0 ? t('player.nav.presentation') : t('player.nav.stepOf', { current: etapaAtual + 1, total: caso.etapas.length })}
             </div>
             <div className="text-sm text-neutral-500">
-              {pontuacaoTotal} pts
+              {pontuacaoTotal} {t('player.nav.pts')}
             </div>
           </div>
           
@@ -224,7 +216,7 @@ export default function CasoClinicoPlayer({ caso }: Props) {
                 <div>
                   <h3 className="font-bold text-lg dark:text-white">{caso.apresentacao.paciente.nome}</h3>
                   <p className="text-neutral-600 dark:text-neutral-400">
-                    {caso.apresentacao.paciente.idade} anos, {caso.apresentacao.paciente.sexo === 'M' ? 'masculino' : 'feminino'}
+                    {caso.apresentacao.paciente.idade} {t('patient.years')}, {caso.apresentacao.paciente.sexo === 'M' ? t('patient.male') : t('patient.female')}
                   </p>
                   {caso.apresentacao.paciente.profissao && (
                     <p className="text-sm text-neutral-500">{caso.apresentacao.paciente.profissao}</p>
@@ -235,19 +227,19 @@ export default function CasoClinicoPlayer({ caso }: Props) {
               {/* QP e HDA */}
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-semibold text-blue-600 mb-1">Queixa Principal</h3>
+                  <h3 className="font-semibold text-blue-600 mb-1">{t('player.presentation.chiefComplaint')}</h3>
                   <p className="text-lg dark:text-white">"{caso.apresentacao.queixaPrincipal}"</p>
                 </div>
-                
+
                 <div>
-                  <h3 className="font-semibold text-blue-600 mb-1">História da Doença Atual</h3>
+                  <h3 className="font-semibold text-blue-600 mb-1">{t('player.presentation.historyOfPresentIllness')}</h3>
                   <p className="dark:text-neutral-300 leading-relaxed">{caso.apresentacao.historiaDoencaAtual}</p>
                 </div>
               </div>
 
               {/* Objetivos */}
               <div className="mt-6 pt-6 border-t dark:border-neutral-700">
-                <h3 className="font-semibold mb-3 dark:text-white">🎯 Objetivos de Aprendizagem</h3>
+                <h3 className="font-semibold mb-3 dark:text-white">{t('player.presentation.learningObjectives')}</h3>
                 <div className="flex flex-wrap gap-2">
                   {caso.objetivosAprendizagem.map((obj, i) => (
                     <span key={i} className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-sm">
@@ -262,7 +254,7 @@ export default function CasoClinicoPlayer({ caso }: Props) {
                 onClick={() => setEtapaAtual(0)}
                 className="w-full mt-6 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all flex items-center justify-center gap-2"
               >
-                Iniciar Caso
+                {t('player.actions.startCase')}
                 <ArrowRight className="w-5 h-5" />
               </button>
             </div>
@@ -278,7 +270,7 @@ export default function CasoClinicoPlayer({ caso }: Props) {
               })()}
               <div>
                 <h2 className="font-bold">{etapa.titulo}</h2>
-                <p className="text-sm opacity-80">{tipoEtapaNomes[etapa.tipo]}</p>
+                <p className="text-sm opacity-80">{t(`player.stepTypes.${etapa.tipo}`)}</p>
               </div>
             </div>
 
@@ -303,7 +295,7 @@ export default function CasoClinicoPlayer({ caso }: Props) {
               {/* Dicas */}
               {etapa.conteudo.dicas && !mostrarFeedback && (
                 <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-4 mb-4">
-                  <p className="text-sm font-medium text-amber-700 dark:text-amber-400 mb-2">💡 Dicas</p>
+                  <p className="text-sm font-medium text-amber-700 dark:text-amber-400 mb-2">{t('player.hints')}</p>
                   <ul className="list-disc list-inside text-sm text-amber-600 dark:text-amber-300">
                     {etapa.conteudo.dicas.map((dica, i) => (
                       <li key={i}>{dica}</li>
@@ -364,14 +356,14 @@ export default function CasoClinicoPlayer({ caso }: Props) {
                   {/* Feedback */}
                   {mostrarFeedback && (
                     <div className={`mt-4 p-4 rounded-xl ${
-                      respostas[etapa.id]?.correta 
-                        ? 'bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800' 
+                      respostas[etapa.id]?.correta
+                        ? 'bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800'
                         : 'bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800'
                     }`}>
                       <p className={`font-semibold mb-2 ${
                         respostas[etapa.id]?.correta ? 'text-green-700 dark:text-green-400' : 'text-red-700 dark:text-red-400'
                       }`}>
-                        {respostas[etapa.id]?.correta ? '✅ Correto!' : '❌ Incorreto'}
+                        {respostas[etapa.id]?.correta ? t('player.feedback.correct') : t('player.feedback.incorrect')}
                       </p>
                       <p className="text-sm dark:text-neutral-300">{etapa.pergunta.explicacao}</p>
                     </div>
@@ -387,16 +379,16 @@ export default function CasoClinicoPlayer({ caso }: Props) {
                     disabled={!respostaSelecionada}
                     className="flex-1 py-3 bg-blue-600 text-white rounded-xl font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-700 transition-colors"
                   >
-                    Verificar Resposta
+                    {t('player.actions.checkAnswer')}
                   </button>
                 )}
-                
+
                 {(mostrarFeedback || !etapa.pergunta) && (
                   <button
                     onClick={proximaEtapa}
                     className="flex-1 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all flex items-center justify-center gap-2"
                   >
-                    {etapaAtual < caso.etapas.length - 1 ? 'Próxima Etapa' : 'Ver Desfecho'}
+                    {etapaAtual < caso.etapas.length - 1 ? t('player.actions.nextStep') : t('player.actions.viewOutcome')}
                     <ArrowRight className="w-5 h-5" />
                   </button>
                 )}

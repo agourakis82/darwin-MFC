@@ -1026,5 +1026,100 @@
         "description": "10-year cardiovascular death risk."
       }
     }
+  },
+  "clinicalCases": {
+    "title": "Interactive Clinical Cases",
+    "subtitle": "Learn from real Primary Care cases",
+    "stats": {
+      "available": "Cases available",
+      "categories": "Categories",
+      "completed": "Cases completed"
+    },
+    "filter": {
+      "label": "Filter:",
+      "allCategories": "All categories",
+      "allDifficulties": "All difficulties",
+      "found": "{count} case(s) found"
+    },
+    "categories": {
+      "cardiovascular": "Cardiovascular",
+      "endocrino": "Endocrine",
+      "neurologico": "Neurological",
+      "infeccioso": "Infectious",
+      "pediatrico": "Pediatric",
+      "respiratorio": "Respiratory",
+      "gastro": "Gastrointestinal",
+      "psiquiatrico": "Psychiatric"
+    },
+    "difficulty": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "patient": {
+      "years": "years old",
+      "male": "male",
+      "female": "female",
+      "chiefComplaint": "CC"
+    },
+    "meta": {
+      "min": "min",
+      "steps": "{count} steps"
+    },
+    "actions": {
+      "start": "Start"
+    },
+    "emptyState": {
+      "title": "No cases found",
+      "subtitle": "Try adjusting the filters"
+    },
+    "player": {
+      "caseCompleted": "Case Completed!",
+      "correctRate": "{percent}% correct ({correct}/{total})",
+      "score": "Score: {points} points",
+      "outcome": {
+        "title": "Case Outcome",
+        "finalDiagnosis": "Final Diagnosis",
+        "treatmentProvided": "Treatment Provided",
+        "evolution": "Evolution"
+      },
+      "lessons": {
+        "keyLessons": "Key Lessons",
+        "commonMistakes": "Common Mistakes to Avoid"
+      },
+      "actions": {
+        "retry": "Retry Case",
+        "viewOthers": "View Other Cases",
+        "startCase": "Start Case",
+        "checkAnswer": "Check Answer",
+        "nextStep": "Next Step",
+        "viewOutcome": "View Outcome"
+      },
+      "nav": {
+        "back": "Back",
+        "presentation": "Presentation",
+        "stepOf": "Step {current} of {total}",
+        "pts": "pts"
+      },
+      "presentation": {
+        "chiefComplaint": "Chief Complaint",
+        "historyOfPresentIllness": "History of Present Illness",
+        "learningObjectives": "Learning Objectives"
+      },
+      "stepTypes": {
+        "anamnese": "History Taking",
+        "exame_fisico": "Physical Examination",
+        "exames_complementares": "Complementary Exams",
+        "diagnostico": "Diagnosis",
+        "tratamento": "Treatment",
+        "acompanhamento": "Follow-up",
+        "educacao": "Patient Education"
+      },
+      "hints": "Hints",
+      "feedback": {
+        "correct": "Correct!",
+        "incorrect": "Incorrect"
+      }
+    }
   }
 }
