@@ -2,7 +2,8 @@
 
 import { useState, useMemo } from 'react';
 import { Link } from '@/i18n/routing';
-import { 
+import { useTranslations } from 'next-intl';
+import {
   Search, Pill, AlertTriangle, Heart, Baby, Activity,
   ChevronRight, BookOpen, TestTube, Shield, Stethoscope
 } from 'lucide-react';
@@ -10,6 +11,7 @@ import { medicamentos, getMedicamentosByClasse } from '@/lib/data/medicamentos';
 import { CLASSES_TERAPEUTICAS, ClasseTerapeutica, CLASSIFICACAO_GESTACAO } from '@/lib/types/medicamento';
 
 export default function MedicamentosPage() {
+  const t = useTranslations('medicamentos');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedClasse, setSelectedClasse] = useState<ClasseTerapeutica | 'todas'>('todas');
   const [showRENAME, setShowRENAME] = useState(false);
@@ -50,18 +52,17 @@ export default function MedicamentosPage() {
           </div>
           <div>
             <h1 className="text-5xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] tracking-tight">
-              Bulário APS
+              {t('title')}
             </h1>
             <p className="text-lg text-[#86868b]">
-              Medicamentos essenciais para a Atenção Primária à Saúde
+              {t('subtitle')}
             </p>
           </div>
         </div>
         
         <div className="glass-strong rounded-2xl p-5 border border-emerald-500/30">
           <p className="text-base text-[#1d1d1f] dark:text-[#f5f5f7]">
-            <strong className="text-emerald-600 dark:text-emerald-400">💊 {medicamentos.length} Medicamentos</strong> com posologia, interações, ajuste renal e segurança na gestação. 
-            Baseado na <strong>RENAME 2024</strong> e bulas ANVISA.
+            <strong className="text-emerald-600 dark:text-emerald-400">💊 {t('medicationCount', { count: medicamentos.length })}</strong> {t('description')}
           </p>
         </div>
       </div>
@@ -74,7 +75,7 @@ export default function MedicamentosPage() {
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Buscar por nome genérico, comercial ou indicação..."
+            placeholder={t('searchPlaceholder')}
             className="w-full pl-12 pr-4 py-4 border border-neutral-300/50 dark:border-neutral-600/50 rounded-xl bg-white/50 dark:bg-neutral-800/50 text-[#1d1d1f] dark:text-[#f5f5f7] focus:ring-2 focus:ring-emerald-500 text-lg"
           />
         </div>
@@ -92,7 +93,7 @@ export default function MedicamentosPage() {
           }`}
         >
           <Shield className="w-4 h-4" />
-          Apenas RENAME
+          {t('renameOnly')}
         </button>
         
         {/* Class Filter */}
@@ -106,7 +107,7 @@ export default function MedicamentosPage() {
                   : 'bg-white/50 dark:bg-neutral-800/50 text-[#86868b] hover:bg-blue-100'
               }`}
             >
-              Todas ({medicamentos.length})
+              {t('all')} ({medicamentos.length})
             </button>
             {medicamentosAgrupados.slice(0, 8).map(grupo => (
               <button
@@ -129,7 +130,7 @@ export default function MedicamentosPage() {
       {medicamentosFiltrados.length === 0 ? (
         <div className="text-center py-20">
           <Pill className="w-16 h-16 mx-auto mb-4 text-[#86868b] opacity-30" />
-          <p className="text-xl text-[#86868b]">Nenhum medicamento encontrado</p>
+          <p className="text-xl text-[#86868b]">{t('noResults')}</p>
         </div>
       ) : (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -182,13 +183,13 @@ export default function MedicamentosPage() {
                   {med.interacoes.length > 0 && (
                     <span className="flex items-center gap-1">
                       <AlertTriangle className="w-3 h-3 text-amber-500" />
-                      {med.interacoes.length} interações
+                      {t('interactions', { count: med.interacoes.length })}
                     </span>
                   )}
                   {med.ajusteDoseRenal && med.ajusteDoseRenal.length > 0 && (
                     <span className="flex items-center gap-1">
                       <TestTube className="w-3 h-3 text-blue-500" />
-                      Ajuste renal
+                      {t('renalAdjustment')}
                     </span>
                   )}
                   <ChevronRight className="w-4 h-4 ml-auto group-hover:translate-x-1 transition-transform" />
@@ -201,7 +202,7 @@ export default function MedicamentosPage() {
 
       {/* Quick Stats */}
       <div className="mt-16">
-        <h2 className="text-2xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-6">Classes Terapêuticas</h2>
+        <h2 className="text-2xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-6">{t('therapeuticClasses')}</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {medicamentosAgrupados.slice(0, 6).map((grupo) => (
             <button
