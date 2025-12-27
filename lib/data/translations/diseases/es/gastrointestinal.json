@@ -1,0 +1,776 @@
+{
+  "locale": "es",
+  "category": "gastrointestinal",
+  "generatedAt": "2025-12-27T14:59:53.954Z",
+  "count": 13,
+  "diseases": [
+    {
+      "id": "doenca-refluxo-gastroesofagico",
+      "titulo": "Enfermedad del Reflujo Gastroesofágico (ERGE)",
+      "sinonimos": [
+        "Reflujo gastroesofágico",
+        "ERGE",
+        "Reflujo esofágico"
+      ],
+      "ciap2": [
+        "D87"
+      ],
+      "cid10": [
+        "K21"
+      ],
+      "cid11": [
+        "DD90.3"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:77",
+      "snomedCT": "235595009",
+      "meshId": "D005764",
+      "umlsCui": "C0017158",
+      "hpo": [
+        "HP:0002585",
+        "HP:0000202"
+      ],
+      "tags": [
+        "gastrointestinal",
+        "común",
+        "aps",
+        "crónica"
+      ],
+      "quickView": {
+        "definicao": "Reflujo patológico del contenido gástrico hacia el esófago, causando síntomas o complicaciones. La acidez y la regurgitación son los síntomas principales.",
+        "criteriosDiagnosticos": [
+          "Acidez frecuente",
+          "Regurgitación ácida",
+          "Síntomas empeoran después de las comidas/decúbito",
+          "Mejora con antiácidos",
+          "Síntomas ≥2x/semana por >4 semanas"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Elevar la cabecera",
+            "Evitar comidas 2-3h antes de acostarse",
+            "Perder peso si es obeso",
+            "Evitar alimentos desencadenantes (grasas, café, alcohol)"
+          ],
+          "farmacologico": [
+            "IBP: Omeprazol 20-40mg 1-2x/día",
+            "Ou Pantoprazol 40mg 1x/día",
+            "Antiácidos si los síntomas son leves"
+          ]
+        },
+        "redFlags": [
+          "Disfagia",
+          "Odinofagia",
+          "Hematemesis",
+          "Pérdida de peso",
+          "Anemia",
+          "Síntomas >5 años"
+        ]
+      },
+      "medicamentos": [
+        "omeprazol",
+        "pantoprazol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-intestino-irritavel",
+      "titulo": "Síndrome del Intestino Irritable (SII)",
+      "sinonimos": [
+        "Colon irritable",
+        "SII"
+      ],
+      "ciap2": [
+        "D93"
+      ],
+      "cid10": [
+        "K58"
+      ],
+      "cid11": [
+        "DD91"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:10165",
+      "snomedCT": "10743008",
+      "meshId": "D043183",
+      "umlsCui": "C0022104",
+      "hpo": [
+        "HP:0002019",
+        "HP:0002023"
+      ],
+      "tags": [
+        "gastrointestinal",
+        "funcional",
+        "crónica"
+      ],
+      "quickView": {
+        "definicao": "Trastorno funcional intestinal caracterizado por dolor abdominal recurrente asociado a la alteración del hábito intestinal, en ausencia de enfermedad orgánica.",
+        "criteriosDiagnosticos": [
+          "Criterios de Roma IV: Dolor abdominal ≥1x/semana en los últimos 3 meses",
+          "Asociada a ≥2: relacionada a la defecación, cambio de frecuencia o forma de las heces",
+          "Síntomas ≥6 meses antes del diagnóstico"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Dieta FODMAP (temporaria)",
+            "Fibras solúbles",
+            "Ejercicios",
+            "Técnicas de relajación",
+            "Acompañamiento dietético"
+          ],
+          "farmacologico": [
+            "Antiespasmódicos: Hioscina o Butilescopolamina",
+            "Probióticos",
+            "Fibras: Psyllium si predominan la constipación",
+            "Antidiarreicos si predominan la diarrea"
+          ]
+        },
+        "redFlags": [
+          "Sangrado rectal",
+          "Pérdida ponderal",
+          "Anemia",
+          "Historia familiar de cáncer colorrectal",
+          "Edad >50 años con síntomas nuevos"
+        ]
+      },
+      "medicamentos": [
+        "hioscina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gastrite",
+      "titulo": "Gastritis",
+      "sinonimos": [
+        "Gastritis Crónica",
+        "Gastritis Aguda"
+      ],
+      "ciap2": [
+        "D87"
+      ],
+      "cid10": [
+        "K29"
+      ],
+      "cid11": [
+        "DD90"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:7147",
+      "snomedCT": "235595009",
+      "meshId": "D005756",
+      "umlsCui": "C0017158",
+      "hpo": [
+        "HP:0002585",
+        "HP:0002028"
+      ],
+      "tags": [
+        "gastrointestinal",
+        "común",
+        "aps"
+      ],
+      "quickView": {
+        "definicao": "Inflamación de la mucosa gástrica. Puede ser aguda o crónica. Helicobacter pylori es causa común de gastritis crónica.",
+        "criteriosDiagnosticos": [
+          "Síntomas dispepticos",
+          "Dolor epigástrico",
+          "Endoscopia: inflamación gástrica",
+          "Test de H. pylori si indicado"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Evitar alimentos irritantes",
+            "Comidas menores y frecuentes",
+            "Reducir alcohol/tabaco"
+          ],
+          "farmacologico": [
+            "IBP: Omeprazol 20mg 1x/día si H. pylori negativo",
+            "Si H. pylori positivo: Terapia triple (IBP + Amoxicilina + Claritromicina)"
+          ]
+        },
+        "redFlags": [
+          "Hematoquecia/melena",
+          "Anemia",
+          "Vómitos persistentes",
+          "Edad >55 años con síntomas nuevos"
+        ]
+      },
+      "medicamentos": [
+        "omeprazol",
+        "amoxicilina",
+        "claritromicina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "diarreia-aguda-pediatrica",
+      "titulo": "Diarrea Aguda Infantil",
+      "ciap2": [
+        "D73"
+      ],
+      "cid10": [
+        "A09"
+      ],
+      "cid11": [
+        "1A40"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:13250",
+      "snomedCT": "409966000",
+      "meshId": "D003967",
+      "umlsCui": "C0011991",
+      "quickView": {
+        "definicao": "Alteración del hábito intestinal con ≥3 evacuaciones amolecidas/líquidas en 24h, duración <14 días. Principal causa: rotavirus.",
+        "criteriosDiagnosticos": [
+          "≥3 evacuaciones líquidas/día",
+          "Duración <14 días (aguda)",
+          "Evaluar grado de deshidratación",
+          "Sin sangre/muco = probablemente viral"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "TRO (Soro casero o SRO)",
+            "Mantener alimentación",
+            "Alejamiento materno libre demanda"
+          ],
+          "farmacologico": [
+            "Zinc 10-20mg/día por 10-14 días",
+            "SIN antidiarreicos",
+            "SIN antieméticos de rutina"
+          ]
+        },
+        "redFlags": [
+          "Deshidratación grave",
+          "Letargia",
+          "Ojos hundidos",
+          "Signo de la prega >2s",
+          "Ausencia de diuresis",
+          "Sangre en las heces"
+        ]
+      },
+      "medicamentos": [
+        "sais-reidratacao-oral"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "constipacao-pediatrica",
+      "titulo": "Constipación Funcional en la Infancia",
+      "ciap2": [
+        "D12"
+      ],
+      "cid10": [
+        "K59.0"
+      ],
+      "cid11": [
+        "ME04"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:2089",
+      "snomedCT": "14760008",
+      "meshId": "D003248",
+      "umlsCui": "C0009806",
+      "quickView": {
+        "definicao": "Defecaciones infrecuentes (<3/semana), dolorosas o con retención fecal. 90% funcional. Pico: entrenamiento esfinteriano y inicio escolar.",
+        "criteriosDiagnosticos": [
+          "Roma IV: ≥2 criterios por 1 mes",
+          "≤2 defecaciones/semana",
+          "Retención fecal excesiva",
+          "Defecaciones dolorosas",
+          "Heces voluminosas en el recto",
+          "Incontinencia fecal (escape)"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Educación familiar (no punitiva)",
+            "Entrenamiento de hábito",
+            "Dieta con fibra",
+            "Hidratación"
+          ],
+          "farmacologico": [
+            "Desimpacción: PEG (1-1,5g/kg/día) o enema",
+            "Mantenimiento: PEG 0,4-0,8g/kg/día",
+            "Lactulosa alternativa"
+          ]
+        },
+        "redFlags": [
+          "Distensión abdominal grave",
+          "Vómitos biliosos",
+          "Retraso en la eliminación del meconio",
+          "Déficit de crecimiento"
+        ]
+      },
+      "medicamentos": [
+        "lactulose"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hemorroidas",
+      "titulo": "Enfermedad Hemorroidaria",
+      "ciap2": [
+        "D95"
+      ],
+      "cid10": [
+        "K64"
+      ],
+      "cid11": [
+        "DB34"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:9277",
+      "snomedCT": "70153002",
+      "meshId": "D006484",
+      "umlsCui": "C0019112",
+      "quickView": {
+        "definicao": "Ingurgitación de los plexos hemorroidarios (internos o externos). Muy común. Se agrava con la constipación y el esfuerzo evacuatorio.",
+        "criteriosDiagnosticos": [
+          "Sangrado vivo al evacuar",
+          "Prolapso (grados I-IV)",
+          "Prurito anal",
+          "Dolor si hay trombosis"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Dieta rica en fibra",
+            "Hidratación",
+            "Evitar el esfuerzo evacuatorio",
+            "Baño de asiento tibio"
+          ],
+          "farmacologico": [
+            "Sintomático: Crema de lidocaína + corticoide tópico por 7 días",
+            "Diosmina 450mg + Hesperidina 50mg 2x/día",
+            "Laxante si hay constipación"
+          ]
+        },
+        "redFlags": [
+          "Sangrado persistente",
+          "Anemia",
+          "Cambio en el hábito intestinal",
+          "Edad >50 años sin colonoscopia"
+        ]
+      },
+      "medicamentos": [
+        "lactulose"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "constipacao-intestinal",
+      "titulo": "Constipación Intestinal",
+      "ciap2": [
+        "D12"
+      ],
+      "cid10": [
+        "K59.0"
+      ],
+      "cid11": [
+        "ME05"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:10533",
+      "snomedCT": "14760008",
+      "meshId": "D003248",
+      "umlsCui": "C0009806",
+      "quickView": {
+        "definicao": "Defecación infrecuente (<3x/semana) o difícil por >3 meses. Constipación funcional (más común) vs orgánica.",
+        "criteriosDiagnosticos": [
+          "<3 evacuaciones/semana",
+          "Esfuerzo excesivo",
+          "Heces endurecidas",
+          "Sensación de vaciamiento incompleto",
+          "Criterios Roma IV"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Aumento de fibra (25-30g/día)",
+            "Hidratación adecuada",
+            "Actividad física",
+            "Hábitos intestinales regulares"
+          ],
+          "farmacologico": [
+            "Primera línea: Laxante formador de bolo (Psyllium) o osmótico (Lactulose 15-30ml/día)",
+            "Si refractaria: Polietilenoglicol o laxante estimulante (senna)"
+          ]
+        },
+        "redFlags": [
+          "Síntomas de alarma (sangrado, pérdida de peso, anemia)",
+          "Obstrucción intestinal",
+          "Megacolon"
+        ]
+      },
+      "medicamentos": [
+        "lactulose",
+        "psyllium"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-crohn",
+      "titulo": "Enfermedad de Crohn",
+      "ciap2": [
+        "D94"
+      ],
+      "cid10": [
+        "K50"
+      ],
+      "cid11": [
+        "DD70"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:8778",
+      "snomedCT": "34000006",
+      "meshId": "D003424",
+      "umlsCui": "C0010346",
+      "tags": [
+        "crónica",
+        "gastrointestinal",
+        "autoinmune"
+      ],
+      "quickView": {
+        "definicao": "Enfermedad inflamatoria intestinal crónica. Puede afectar cualquier parte del TGI. Inflamación transmural.",
+        "criteriosDiagnosticos": [
+          "Dolor abdominal recurrente",
+          "Diarrea crónica",
+          "Pérdida de peso",
+          "Aftas orales",
+          "Fístulas"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Acompañamiento especializado",
+            "Soporte nutricional",
+            "Evitar el tabaquismo"
+          ],
+          "farmacologico": [
+            "5-ASA: Mesalazina según indicaciones",
+            "Corticosteroides en la exacerbación"
+          ]
+        },
+        "redFlags": [
+          "Obstrucción intestinal",
+          "Fístulas",
+          "Abscesos",
+          "Megacolon tóxico"
+        ]
+      },
+      "medicamentos": [
+        "mesalazina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "colite-ulcerativa",
+      "titulo": "Colitis ulcerativa",
+      "ciap2": [
+        "D93"
+      ],
+      "cid10": [
+        "K51"
+      ],
+      "cid11": [
+        "DD71"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:0050589",
+      "snomedCT": "64766004",
+      "meshId": "D003093",
+      "umlsCui": "C0009324",
+      "tags": [
+        "crónica",
+        "gastrointestinal",
+        "autoinmune"
+      ],
+      "quickView": {
+        "definicao": "Enfermedad inflamatoria intestinal limitada al colon. Úlceras superficiales de la mucosa.",
+        "criteriosDiagnosticos": [
+          "Diarrea con sangre/muco",
+          "Urgencia evacuatoria",
+          "Dolor abdominal",
+          "Síntomas sistémicos"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Acompañamiento especializado",
+            "Soporte nutricional"
+          ],
+          "farmacologico": [
+            "5-ASA: Mesalazina según extensión",
+            "Corticosteroides en exacerbación"
+          ]
+        },
+        "redFlags": [
+          "Megacolon tóxico",
+          "Hemorragia grave",
+          "Perforación",
+          "Colangitis esclerosante"
+        ]
+      },
+      "medicamentos": [
+        "mesalazina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-intestino-irritavel-diarréia",
+      "titulo": "Síndrome del Intestino Irritable - Tipo Diarrea",
+      "ciap2": [
+        "D93"
+      ],
+      "cid10": [
+        "K58.0"
+      ],
+      "cid11": [
+        "DD91.0"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:10171",
+      "snomedCT": "107939000",
+      "meshId": "D043183",
+      "umlsCui": "C0022104",
+      "tags": [
+        "funcional",
+        "gastrointestinal"
+      ],
+      "quickView": {
+        "definicao": "SII con predominio de diarrea (≥25% de las evacuaciones). Criterios de Roma IV.",
+        "criteriosDiagnosticos": [
+          "Dolor abdominal recurrente ≥1x/semana",
+          "Asociada a la defecación y/o alteración de frecuencia/forma",
+          "≥6 meses",
+          "Diarrea predominante"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Dieta baja en FODMAP",
+            "Fibras solubles",
+            "Manejo del estrés"
+          ],
+          "farmacologico": [
+            "Loperamida 2mg después de las evacuaciones diarreicas (máx 16mg/día)",
+            "O Rifaximina si hay sobrecrecimiento bacteriano"
+          ]
+        },
+        "redFlags": [
+          "Síntomas de inicio después de los 50 años",
+          "Pérdida de peso",
+          "Hemorragia digestiva",
+          "Historia familiar de cáncer colorrectal"
+        ]
+      },
+      "medicamentos": [
+        "loperamida"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-celíaca",
+      "titulo": "Enfermedad Celíaca",
+      "sinonimos": [
+        "Enteropatía por gluten",
+        "Esporran celíaco"
+      ],
+      "ciap2": [
+        "D90"
+      ],
+      "cid10": [
+        "K90.0"
+      ],
+      "cid11": [
+        "DD90.0"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:13084",
+      "snomedCT": "396331005",
+      "meshId": "D002446",
+      "umlsCui": "C0007570",
+      "hpo": [
+        "HP:0002027",
+        "HP:0002583",
+        "HP:0004380"
+      ],
+      "tags": [
+        "autoinmune",
+        "gastrointestinal",
+        "gluten"
+      ],
+      "quickView": {
+        "definicao": "Enteropatía autoinmune desencadenada por gluten en individuos genéticamente susceptibles. Caracterizada por atrofia vilosa.",
+        "criteriosDiagnosticos": [
+          "Anti-tTG IgA elevado",
+          "Anti-EMA positivo",
+          "Biopsia duodenal: atrofia vilosa",
+          "HLA-DQ2 o DQ8 positivo"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Dieta sin gluten estricta y permanente",
+            "Soporte nutricional",
+            "Seguimiento nutricional"
+          ],
+          "farmacologico": [
+            "Suplementación: Hierro, Ácido fólico, Vitamina D según deficiencias"
+          ]
+        },
+        "redFlags": [
+          "Linfoma intestinal",
+          "Refractaria al tratamiento",
+          "Colitis microscópica"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "constipacao",
+      "titulo": "Constipación Intestinal",
+      "sinonimos": [
+        "Prisión de vientre"
+      ],
+      "ciap2": [
+        "D12"
+      ],
+      "cid10": [
+        "K59.0"
+      ],
+      "cid11": [
+        "DD91.0"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:1100",
+      "snomedCT": "14760008",
+      "meshId": "D003248",
+      "umlsCui": "C0009806",
+      "hpo": [
+        "HP:0002019",
+        "HP:0004383"
+      ],
+      "tags": [
+        "gastrointestinal",
+        "común",
+        "funcional"
+      ],
+      "quickView": {
+        "definicao": "Evacuaciones infrecuentes (<3x/semana) o dificultad para evacuar. Puede ser funcional o secundaria.",
+        "criteriosDiagnosticos": [
+          "<3 evacuaciones/semana",
+          "Esfuerzo excesivo",
+          "Heces duras",
+          "Sensación de evacuación incompleta",
+          "Criterios de Roma IV"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Aumentar fibra (25-30g/día)",
+            "Hidratación adecuada",
+            "Ejercicios",
+            "Establecer rutina evacuatoria"
+          ],
+          "farmacologico": [
+            "Laxante osmótico: Lactulona 15-30mL/día",
+            "O Polietilenoglicol",
+            "Laxante estimulante solo si es necesario"
+          ]
+        },
+        "redFlags": [
+          "Sangrado retal",
+          "Pérdida de peso",
+          "Anemia",
+          "Obstrucción intestinal",
+          "Historia familiar de cáncer colorrectal"
+        ]
+      },
+      "medicamentos": [
+        "lactulona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "esteatose-hepatica",
+      "titulo": "Esteatosis Hepática No Alcohólica (EHNA)",
+      "sinonimos": [
+        "NAFLD",
+        "Hígado graso",
+        "MASLD"
+      ],
+      "ciap2": [
+        "D97"
+      ],
+      "cid10": [
+        "K76.0"
+      ],
+      "cid11": [
+        "DB92.1"
+      ],
+      "doid": "DOID:0080547",
+      "snomedCT": "197315008",
+      "meshId": "D065626",
+      "umlsCui": "C0400966",
+      "categoria": "gastrointestinal",
+      "quickView": {
+        "definicao": "Acumulación de grasa hepática (>5%) en ausencia de consumo significativo de alcohol. Prevalencia del 25-30% a nivel mundial, asociada al síndrome metabólico.",
+        "criteriosDiagnosticos": [
+          "Esteatosis en exámenes de imagen (US, TC, RM)",
+          "Exclusión de consumo alcohólico significativo (<20g/día M, <30g/día H)",
+          "Exclusión de otras causas de hepatopatía",
+          "FIB-4 o NAFLD Fibrosis Score para estratificación"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Pérdida de peso del 7-10% (tratamiento principal)",
+            "Ejercicio aeróbico + de resistencia",
+            "Dieta mediterránea",
+            "Evitar fructosa/bebidas azucaradas"
+          ],
+          "farmacologico": [
+            "Vitamina E 800 UI/día (no diabéticos con NASH confirmada)",
+            "Pioglitazona (diabéticos con NASH)",
+            "Agonistas GLP-1 (semaglutida) - evidencia emergente",
+            "Tratar comorbilidades: DM, dislipidemia"
+          ]
+        },
+        "redFlags": [
+          "Cirrosis",
+          "Hipertensión portal",
+          "Carcinoma hepatocelular",
+          "Transaminasas >10x LSN"
+        ],
+        "metasTerapeuticas": [
+          "Pérdida de peso sostenida",
+          "Normalización de transaminasas"
+        ],
+        "examesIniciais": [
+          "TGO, TGP, GGT",
+          "Perfil lipídico",
+          "Glicemia/HbA1c",
+          "US abdomen",
+          "FIB-4"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "pioglitazona",
+        "vitamina-e"
+      ],
+      "calculadoras": [
+        "fib-4"
+      ],
+      "tags": [
+        "hígado",
+        "obesidad",
+        "síndrome metabólico"
+      ]
+    }
+  ]
+}

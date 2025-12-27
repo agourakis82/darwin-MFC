@@ -1,0 +1,376 @@
+{
+  "locale": "es",
+  "category": "musculoesqueletico",
+  "generatedAt": "2025-12-27T14:59:53.954Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "fibromialgia",
+      "titulo": "Fibromialgia",
+      "ciap2": [
+        "L18"
+      ],
+      "cid10": [
+        "M79.3"
+      ],
+      "cid11": [
+        "MG30.0"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:3634",
+      "snomedCT": "23867004",
+      "meshId": "D005356",
+      "umlsCui": "C0016053",
+      "hpo": [
+        "HP:0003327",
+        "HP:0003324"
+      ],
+      "tags": [
+        "musculoesqueletico",
+        "cronica",
+        "dolor"
+      ],
+      "quickView": {
+        "definicao": "Síndrome de dolor crónico generalizado. Puntos dolorosos a la palpación. Fatiga, trastornos del sueño.",
+        "criteriosDiagnosticos": [
+          "Dolor crónico generalizado ≥3 meses",
+          "≥11 puntos dolorosos en 18 puntos (criterios ACR 1990)",
+          "O criterios ACR 2010/2016"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ejercicios (aeróbicos, elongación)",
+            "Educación sobre la enfermedad",
+            "TCC",
+            "Mejora del sueño"
+          ],
+          "farmacologico": [
+            "Duloxetina 60mg/día",
+            "O Pregabalina",
+            "O Amitriptilina 10-50mg HS"
+          ]
+        },
+        "redFlags": [
+          "Síntomas neurológicos focales",
+          "Artritis verdadera",
+          "Enfermedad reumatológica"
+        ]
+      },
+      "medicamentos": [
+        "duloxetina",
+        "pregabalina",
+        "amitriptilina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gota",
+      "titulo": "Gota",
+      "ciap2": [
+        "T92"
+      ],
+      "cid10": [
+        "M10"
+      ],
+      "cid11": [
+        "FA25"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:13189",
+      "snomedCT": "90560007",
+      "meshId": "D006073",
+      "umlsCui": "C0018099",
+      "quickView": {
+        "definicao": "Artritis inflamatoria por depósito de cristales de urato monosódico. Ácido úrico >7mg/dL. Más común en hombres.",
+        "criteriosDiagnosticos": [
+          "Monoartritis aguda (1ª MTF = podagra es clásico)",
+          "Dolor intenso de inicio súbito, pico en 12-24h",
+          "Eritema, edema, calor intenso",
+          "Hiperuricemia (pero puede ser normal durante la crisis)"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Reposo de la articulación",
+            "Hielo local",
+            "Evitar alcohol y dieta rica en purinas"
+          ],
+          "farmacologico": [
+            "Crise: AINE (Indometacina 50mg 8/8h) o Colchicina 0,5mg 3 veces al día o Prednisona 30-40mg/día",
+            "Profilaxis: Alopurinol 100-300mg/día (NO iniciar durante la crisis)"
+          ]
+        },
+        "redFlags": [
+          "Artritis séptica (fiebre alta, único hallazgo)",
+          "Insuficiencia renal",
+          "Tófus extensos"
+        ]
+      },
+      "medicamentos": [
+        "alopurinol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "tendinite-ombro",
+      "titulo": "Síndrome del Manguito Rotador",
+      "ciap2": [
+        "L92"
+      ],
+      "cid10": [
+        "M75"
+      ],
+      "cid11": [
+        "FA23.0"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:0080731",
+      "snomedCT": "239872009",
+      "meshId": "D000070636",
+      "umlsCui": "C0085551",
+      "quickView": {
+        "definicao": "Tendinopatía del manguito rotador (supraespinoso más común). Principal causa de dolor en el hombro en adultos.",
+        "criteriosDiagnosticos": [
+          "Dolor en el hombro anterolateral",
+          "Arco doloroso (60-120° abducción)",
+          "Pruebas: Jobe, Neer, Hawkins positivas",
+          "Dificultad para dormir sobre el lado"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Reposo relativo (evitar movimientos overhead)",
+            "Fisioterapia (fortalecimiento y movilización)",
+            "Crioterapia"
+          ],
+          "farmacologico": [
+            "AINE: Ibuprofeno 400mg 8/8h por 7-10 días",
+            "Analgésico si es necesario"
+          ]
+        },
+        "redFlags": [
+          "Trauma agudo",
+          "Incapacidad para elevar el brazo",
+          "Atrofia muscular",
+          "Parestesias"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno",
+        "paracetamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "fascite-plantar",
+      "titulo": "Fascitis Plantar",
+      "ciap2": [
+        "L99"
+      ],
+      "cid10": [
+        "M72.2"
+      ],
+      "cid11": [
+        "FB06.1"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:0060041",
+      "snomedCT": "202882003",
+      "meshId": "D036981",
+      "umlsCui": "C0238698",
+      "quickView": {
+        "definicao": "Degeneración de la fáscia plantar en la inserción en el calcáneo. Causa más común de dolor en el talón. Pico: 40-60 años.",
+        "criteriosDiagnosticos": [
+          "Dolor en el talón medial",
+          "Empeora en los primeros pasos de la mañana",
+          "Mejora con actividad leve, empeora con actividad prolongada",
+          "Dolor a la palpación de la tuberosidad medial del calcáneo"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ejercicios de elongación de la fáscia y el gastrocnemio",
+            "Plantillas con soporte de arco",
+            "Aplicación de hielo local",
+            "Calzado adecuado"
+          ],
+          "farmacologico": [
+            "AINE de corta duración",
+            "Infiltración con corticoide si es refractario"
+          ]
+        },
+        "redFlags": [
+          "Dolor nocturno",
+          "Parestesias",
+          "Eritema y edema",
+          "Fiebre"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "tendinite",
+      "titulo": "Tendinitis",
+      "ciap2": [
+        "L92"
+      ],
+      "cid10": [
+        "M65"
+      ],
+      "cid11": [
+        "FB51"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:13361",
+      "snomedCT": "42475007",
+      "meshId": "D052256",
+      "umlsCui": "C0039482",
+      "quickView": {
+        "definicao": "Inflamación del tendón. Frecuentemente por uso excesivo o trauma. Hombro, codo, muñeca son lugares comunes.",
+        "criteriosDiagnosticos": [
+          "Dolor localizado en el tendón",
+          "Dolor exacerbado por movimiento",
+          "Edema local",
+          "Limitación funcional"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Reposo relativo",
+            "Hielo durante las primeras 48-72h",
+            "Fisioterapia",
+            "Ejercicios de elongación"
+          ],
+          "farmacologico": [
+            "AINEs: Ibuprofeno 400-600mg 8/8h por 5-7 días",
+            "Inyección local de corticoide si es refractaria"
+          ]
+        },
+        "redFlags": [
+          "Rotura del tendón",
+          "Infección",
+          "Tendinitis recurrente"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "artrite-reumatoide",
+      "titulo": "Artritis Reumatoide",
+      "ciap2": [
+        "L88"
+      ],
+      "cid10": [
+        "M06"
+      ],
+      "cid11": [
+        "FA20"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:7148",
+      "snomedCT": "69896004",
+      "meshId": "D001172",
+      "umlsCui": "C0003873",
+      "tags": [
+        "crónica",
+        "autoinmune",
+        "reumatológica"
+      ],
+      "quickView": {
+        "definicao": "Poliartritis inflamatoria simétrica. Enfermedad autoinmune sistémica. Puede tener manifestaciones extraarticulares.",
+        "criteriosDiagnosticos": [
+          "Poliartritis simétrica",
+          "Rigidez matinal >1h",
+          "Factor reumatoide o anti-CCP positivo",
+          "Alteraciones radiográficas"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Fisioterapia",
+            "Terapia ocupacional",
+            "Ejercicios adaptativos"
+          ],
+          "farmacologico": [
+            "MTX 7,5-25mg/semana",
+            "Prednisona 5-10mg/día en la inducción",
+            "DMARDs según sea necesario"
+          ]
+        },
+        "redFlags": [
+          "Vasculitis",
+          "Complicaciones pulmonares",
+          "Amiloidosis",
+          "Erosiones articulares rápidas"
+        ]
+      },
+      "medicamentos": [
+        "metotrexato",
+        "prednisona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "espondilite-anquilosante",
+      "titulo": "Espondilite Anquilosante",
+      "ciap2": [
+        "L88"
+      ],
+      "cid10": [
+        "M45"
+      ],
+      "cid11": [
+        "FA92.0"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:7149",
+      "snomedCT": "59670000",
+      "meshId": "D013167",
+      "umlsCui": "C0003879",
+      "tags": [
+        "crónica",
+        "autoinmune",
+        "reumatológica"
+      ],
+      "quickView": {
+        "definicao": "Espondiloartritis seronegativa. Inflamación crónica de la columna y sacroilíacas. Más común en hombres jóvenes.",
+        "criteriosDiagnosticos": [
+          "Dolor lumbar inflamatorio",
+          "Rigidez matinal",
+          "Mejora con ejercicio",
+          "Sacroileítis radiográfica",
+          "HLA-B27 positivo (90%)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Fisioterapia",
+            "Ejercicios",
+            "Postura correcta"
+          ],
+          "farmacologico": [
+            "AINEs: Naproxeno 500mg 2x/día",
+            "Anti-TNF si no responde"
+          ]
+        },
+        "redFlags": [
+          "Fractura vertebral",
+          "Cifosis grave",
+          "Complicaciones cardíacas"
+        ]
+      },
+      "medicamentos": [
+        "naproxeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

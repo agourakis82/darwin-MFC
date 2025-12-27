@@ -1,0 +1,708 @@
+{
+  "locale": "es",
+  "category": "pediatrico",
+  "generatedAt": "2025-12-27T14:59:53.956Z",
+  "count": 11,
+  "diseases": [
+    {
+      "id": "bronquiolite",
+      "titulo": "Bronquiolitis",
+      "sinonimos": [
+        "Bronquiolitis viral aguda"
+      ],
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J21"
+      ],
+      "cid11": [
+        "CA40.1"
+      ],
+      "doid": "DOID:2942",
+      "snomedCT": "4120002",
+      "meshId": "D001988",
+      "umlsCui": "C0006271",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Infección viral de las vías aéreas inferiores en lactantes (<2 años). El VSR es el agente más común. Pico: invierno.",
+        "criteriosDiagnosticos": [
+          "Edad <24 meses",
+          "Primer episodio de sibilancia",
+          "Pródromos de IRAV (rinorrea, tos)",
+          "Taquipnea, retracciones, sibilancias, crepitantes",
+          "Diagnóstico clínico - exámenes raramente necesarios"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hidratación adecuada",
+            "Aspiración nasal",
+            "Oxigenoterapia si SatO2 <90-92%",
+            "Posición elevada"
+          ],
+          "farmacologico": [
+            "NO usar rutinariamente: broncodilatadores, corticoides, antibióticos",
+            "Nebulización con suero hipertónico 3% puede ser intentada",
+            "Palivizumabe (profilaxis en alto riesgo - prematuro, cardiopatía)"
+          ]
+        },
+        "redFlags": [
+          "Apnea",
+          "Cianosis",
+          "Deshidratación",
+          "Letargia",
+          "SatO2 <90%"
+        ],
+        "metasTerapeuticas": [
+          "Mantener la oxigenación",
+          "Hidratación",
+          "Soporte hasta la resolución"
+        ],
+        "examesIniciais": [
+          "Oximetría de pulso",
+          "Radiografía solo si hay duda diagnóstica"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [],
+      "calculadoras": [],
+      "tags": [
+        "lactante",
+        "virus",
+        "invierno"
+      ]
+    },
+    {
+      "id": "laringite-aguda",
+      "titulo": "Laringitis/Crupe Viral",
+      "sinonimos": [
+        "Laringotraqueobronquitis",
+        "Crupe"
+      ],
+      "ciap2": [
+        "R77"
+      ],
+      "cid10": [
+        "J05.0",
+        "J04.0"
+      ],
+      "cid11": [
+        "CA03.0"
+      ],
+      "doid": "DOID:9396",
+      "snomedCT": "6142004",
+      "meshId": "D003440",
+      "umlsCui": "C0010380",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Inflamación de la laringe y la traquea, generalmente viral (parainfluenza). Pico: 6 meses a 3 años. Estridor inspiratorio característico.",
+        "criteriosDiagnosticos": [
+          "Tos ladrante (\"de perro\")",
+          "Estridor inspiratorio (peor por la noche)",
+          "Ronquera",
+          "Fiebre baja, prodromos de VIH",
+          "Signo de la torre en radiografía (estrechamiento subglótico) - no obligatorio"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Aire frío o humificado",
+            "Mantener calmado (el llanto empeora)",
+            "Monitorear la progresión"
+          ],
+          "farmacologico": [
+            "Leve: observación, puede no necesitar medicación",
+            "Moderado: Dexametasona 0,15-0,6mg/kg VO dosis única",
+            "Grave: Dexametasona + Nebulización de adrenalina (1:1000) 3-5mL - sala de emergencia",
+            "Adrenalina: efecto temporal (2h) - observar después"
+          ]
+        },
+        "redFlags": [
+          "Estridor en reposo",
+          "Retracción acentuada",
+          "Cianosis",
+          "Agitación/somnolencia",
+          "Baba (epiglotitis?)"
+        ],
+        "metasTerapeuticas": [
+          "Alivio del estridor",
+          "Prevención de la obstrucción"
+        ],
+        "examesIniciais": [
+          "Clínico - evitar manipulación de la orofaringe",
+          "Oximetría"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "dexametasona"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "emergencia",
+        "virus",
+        "estridor"
+      ]
+    },
+    {
+      "id": "otite-media-aguda",
+      "titulo": "Otitis Media Aguda",
+      "sinonimos": [
+        "OMA"
+      ],
+      "ciap2": [
+        "H71"
+      ],
+      "cid10": [
+        "H66"
+      ],
+      "cid11": [
+        "AA80.0"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:10727",
+      "snomedCT": "194267006",
+      "meshId": "D006639",
+      "umlsCui": "C0029879",
+      "hpo": [
+        "HP:0000388",
+        "HP:0000379"
+      ],
+      "tags": [
+        "orl",
+        "pediatrica",
+        "infecciosa"
+      ],
+      "quickView": {
+        "definicao": "Infección aguda del oído medio. Común en niños <5 años. Síntomas: otalgia, fiebre, irritabilidad. Puede tener otorrea si el tímpano está perforado.",
+        "criteriosDiagnosticos": [
+          "Otalgia aguda",
+          "Otoscopia: tímpano abombado/eritematoso",
+          "Fiebre",
+          "Irritabilidad en niños",
+          "Puede tener otorrea"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Analgésicos: Paracetamol o Ibuprofeno",
+            "Observación vigilante por 48-72h en casos leves (niños >6 meses)"
+          ],
+          "farmacologico": [
+            "Si tratamiento: Amoxicilina 80-90mg/kg/día por 7-10 días",
+            "O Amoxicilina-clavulanato si uso reciente de antibióticos",
+            "Si alergia: Azitromicina o Ceftriaxona"
+          ]
+        },
+        "redFlags": [
+          "Mastoiditis",
+          "Parálisis facial",
+          "Meningitis",
+          "Complicaciones intracraneanas"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "azitromicina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquiolite-aguda",
+      "titulo": "Bronquiolitis Aguda",
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J21"
+      ],
+      "cid11": [
+        "CA20.1"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:6131",
+      "snomedCT": "6142004",
+      "meshId": "D001988",
+      "umlsCui": "C0006274",
+      "tags": [
+        "pediátrica",
+        "respiratorio",
+        "viral"
+      ],
+      "quickView": {
+        "definicao": "Infección de las vías aéreas inferiores en <2 años. Principalmente VSR. Sibilancia y disnea.",
+        "criteriosDiagnosticos": [
+          "<2 años",
+          "Rinorrea precediendo síntomas respiratorios",
+          "Sibilancia",
+          "Tos",
+          "Taquipnea"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Soporte ventilatorio si es necesario",
+            "Hidratación",
+            "Aspiración nasal"
+          ],
+          "farmacologico": [
+            "Sintomático: Paracetamol",
+            "Salbutamol puede ser intentado pero eficacia limitada"
+          ]
+        },
+        "redFlags": [
+          "Cianosis",
+          "Apnea",
+          "Deshidratación",
+          "Insuficiencia respiratoria"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "salbutamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "convulsao-febril",
+      "titulo": "Convulsión Febril",
+      "ciap2": [
+        "N89"
+      ],
+      "cid10": [
+        "R56.0"
+      ],
+      "cid11": [
+        "8A62"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:8665",
+      "snomedCT": "85234005",
+      "meshId": "D012640",
+      "umlsCui": "C0038220",
+      "tags": [
+        "pediátrica",
+        "neurológica"
+      ],
+      "quickView": {
+        "definicao": "Convulsión asociada a fiebre en niños de 6 meses a 5 años. Generalmente benigna y autolimitada.",
+        "criteriosDiagnosticos": [
+          "6 meses a 5 años",
+          "Fiebre ≥38°C",
+          "Convulsión generalizada",
+          "Sin infección del SNC",
+          "Sin historia previa de convulsión afebril"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Tratar fiebre: Paracetamol",
+            "Mantenerla en posición lateral durante la convulsión"
+          ],
+          "farmacologico": [
+            "Diazepam retal si la convulsión >5min",
+            "Antipirético: Paracetamol"
+          ]
+        },
+        "redFlags": [
+          "Convulsión focal",
+          "Duración >15min",
+          "Múltiples convulsiones",
+          "Alteración de la conciencia prolongada"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "diazepam"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-inflamatoria-intestinal-pediatrica",
+      "titulo": "Enfermedad Inflamatoria Intestinal Pediátrica",
+      "ciap2": [
+        "D93"
+      ],
+      "cid10": [
+        "K50",
+        "K51"
+      ],
+      "cid11": [
+        "DD90",
+        "DD91"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:8778",
+      "snomedCT": "64766004",
+      "meshId": "D015212",
+      "umlsCui": "C0021390",
+      "hpo": [
+        "HP:0002024",
+        "HP:0002583"
+      ],
+      "tags": [
+        "pediatrica",
+        "cronica",
+        "gastrointestinal"
+      ],
+      "quickView": {
+        "definicao": "EII manifestada antes de los 18 años. Incluye Enfermedad de Crohn y Colitis ulcerosa. La presentación puede ser diferente a la del adulto.",
+        "criteriosDiagnosticos": [
+          "Edad <18 años",
+          "Síntomas gastrointestinales crónicos",
+          "Endoscopia/colonoscopia",
+          "Histopatología"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Soporte nutricional",
+            "Crecimiento y desarrollo",
+            "Acompañamiento multidisciplinario"
+          ],
+          "farmacologico": [
+            "5-ASA según tipo",
+            "Corticosteroides en la inducción",
+            "Inmunosupresores según gravedad"
+          ]
+        },
+        "redFlags": [
+          "Retraso de crecimiento",
+          "Pubertad tardía",
+          "Desnutrición grave"
+        ]
+      },
+      "medicamentos": [
+        "mesalazina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hipotireoidismo-congenito",
+      "titulo": "Hipotireoidismo congénito",
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E03.0",
+        "E03.1"
+      ],
+      "cid11": [
+        "5A00.0"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:9502",
+      "snomedCT": "19031007",
+      "meshId": "D003409",
+      "umlsCui": "C0020509",
+      "hpo": [
+        "HP:0008230",
+        "HP:0001511"
+      ],
+      "tags": [
+        "pediátrica",
+        "endocrino",
+        "congénita"
+      ],
+      "quickView": {
+        "definicao": "Deficiencia de hormona tiroidea desde el nacimiento. Detectado en la prueba del talón. Tratamiento precoz esencial.",
+        "criteriosDiagnosticos": [
+          "Prueba del talón: TSH elevado/T4 bajo",
+          "Confirmar con pruebas serológicas",
+          "Cintigrafía si es necesario"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Iniciar tratamiento inmediatamente",
+            "Acompañamiento multidisciplinario"
+          ],
+          "farmacologico": [
+            "Levotiroxina 10-15 mcg/kg/día",
+            "Ajustar según T4 libre y TSH"
+          ]
+        },
+        "redFlags": [
+          "No detectado en la prueba del talón",
+          "Retraso mental si no se trata",
+          "Cretinismo"
+        ]
+      },
+      "medicamentos": [
+        "levotiroxina"
+      ],
+      "protocolos": [
+        "teste-pezinho"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquiolite-viral",
+      "titulo": "Bronquiolitis Viral (VSR)",
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J21"
+      ],
+      "cid11": [
+        "CA40.0"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:6131",
+      "snomedCT": "6142004",
+      "meshId": "D001988",
+      "umlsCui": "C0006274",
+      "hpo": [
+        "HP:0002099",
+        "HP:0002780"
+      ],
+      "tags": [
+        "pediátrica",
+        "viral",
+        "respiratorio"
+      ],
+      "quickView": {
+        "definicao": "Infección de las vías aéreas inferiores en <2 años. Principalmente VSR. Sibilancia, taquipnea, disnea.",
+        "criteriosDiagnosticos": [
+          "<2 años",
+          "Rinorrea precedente",
+          "Sibilancia",
+          "Taquipnea",
+          "Disnea",
+          "Signos de esfuerzo respiratorio"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Soporte ventilatorio si es necesario",
+            "Hidratación",
+            "Aspiración nasal",
+            "Oxigenoterapia si SpO2 <90%"
+          ],
+          "farmacologico": [
+            "Sintomático: Paracetamol",
+            "Salbutamol puede ser intentado pero evidencia limitada"
+          ]
+        },
+        "redFlags": [
+          "Cianosis",
+          "Apnea",
+          "Deshidratación",
+          "Insuficiencia respiratoria",
+          "Empeoramiento rápido"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "salbutamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "coqueluche",
+      "titulo": "Coqueluche",
+      "sinonimos": [
+        "Tosferina",
+        "Pertussis"
+      ],
+      "ciap2": [
+        "R71"
+      ],
+      "cid10": [
+        "A37"
+      ],
+      "cid11": [
+        "1C12"
+      ],
+      "doid": "DOID:1116",
+      "snomedCT": "27836007",
+      "meshId": "D014917",
+      "umlsCui": "C0043167",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Infección respiratoria por Bordetella pertussis. Tos paroxística con grito inspiratorio. Grave en lactantes no vacunados.",
+        "criteriosDiagnosticos": [
+          "Tos ≥2 semanas con al menos uno de los siguientes:",
+          "Paroxismos de tos",
+          "Grito inspiratorio (whoop)",
+          "Vómito post-tos",
+          "Apnea en lactantes",
+          "PCR o cultivo para B. pertussis"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Aislamiento respiratorio por 5 días de antibiótico",
+            "Monitoreo de lactantes (riesgo de apnea)"
+          ],
+          "farmacologico": [
+            "Azitromicina 10mg/kg/día por 5 días (preferido en <1 mes)",
+            "O Claritromicina 15mg/kg/día dividido cada 12 horas por 7 días",
+            "O Eritromicina (menos usada - intolerancia GI)",
+            "Quimioprofilaxis de contactos domiciliarios"
+          ]
+        },
+        "redFlags": [
+          "Lactante <6 meses",
+          "Apnea",
+          "Cianosis",
+          "Convulsión",
+          "Neumonía"
+        ],
+        "metasTerapeuticas": [
+          "Reducir transmisibilidad",
+          "Prevención de complicaciones"
+        ],
+        "examesIniciais": [
+          "PCR para B. pertussis",
+          "Hemograma (linfocitosis)"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "azitromicina",
+        "claritromicina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "vacuna",
+        "notificación",
+        "tos crónica"
+      ]
+    },
+    {
+      "id": "escarlatina",
+      "titulo": "Escarlatina",
+      "sinonimos": [
+        "Fiebre escarlatina"
+      ],
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "A38"
+      ],
+      "cid11": [
+        "1B50"
+      ],
+      "doid": "DOID:4914",
+      "snomedCT": "30242009",
+      "meshId": "D012541",
+      "umlsCui": "C0036285",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Infección por Streptococcus pyogenes (grupo A) productora de toxina eritrogénica. Faringitis + exantema característico.",
+        "criteriosDiagnosticos": [
+          "Faringitis estreptocócica (odinofagia, exudado)",
+          "Exantema: papular fino (\"lija\"), palidez perioral, líneas de Pastia",
+          "Lengua de fresa",
+          "Descamación en dedos después de 1-2 semanas",
+          "Prueba rápida o cultivo para Streptococcus"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hidratación",
+            "Reposo",
+            "Retorno a las actividades 24h después del inicio del ATB"
+          ],
+          "farmacologico": [
+            "Penicilina V 250-500mg 12/12h por 10 días",
+            "O Amoxicilina 50mg/kg/día por 10 días",
+            "Alergia a penicilina: Azitromicina 12mg/kg/día por 5 días"
+          ]
+        },
+        "redFlags": [
+          "No mejora en 48-72h",
+          "Absceso peritonsilar",
+          "Fiebre reumática"
+        ],
+        "metasTerapeuticas": [
+          "Erradicación del Streptococcus",
+          "Prevención de FR y GNDA"
+        ],
+        "examesIniciais": [
+          "Prueba rápida para Streptococcus",
+          "Cultivo de orofaringe si la PR es negativa"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "amoxicilina",
+        "penicilina-v"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "exantema",
+        "streptococcus",
+        "faringitis"
+      ]
+    },
+    {
+      "id": "dermatite-fraldas",
+      "titulo": "Dermatite de la Área de Fraldas",
+      "sinonimos": [
+        "Assadura",
+        "Dermatite de fralda"
+      ],
+      "ciap2": [
+        "S89"
+      ],
+      "cid10": [
+        "L22"
+      ],
+      "cid11": [
+        "ED52.0"
+      ],
+      "doid": "DOID:0060163",
+      "snomedCT": "91487003",
+      "meshId": "D003963",
+      "umlsCui": "C0011616",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Dermatite irritativa de contacto en el área cubierta por la fralda. Puede haber infección secundaria por Candida.",
+        "criteriosDiagnosticos": [
+          "Eritema en áreas convexas (párpados = irritativa)",
+          "Lesiones satélites, pústulas, pliegues afectados = Candida",
+          "Descamación, erosiones en casos graves",
+          "Diagnóstico clínico"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cambio frecuente de fraldas",
+            "Mantener el área seca",
+            "Expuesta al aire",
+            "Pasta de agua o óxido de zinc como barrera"
+          ],
+          "farmacologico": [
+            "Irritativa leve: barrera (óxido de zinc) suficiente",
+            "Si Candida: Nistatina crema 4x/día por 7-14 días",
+            "O Miconazol crema 2x/día",
+            "Corticoide de baja potencia (hidrocortisona 1%) si inflamación intensa, uso breve"
+          ]
+        },
+        "redFlags": [
+          "No respuesta al tratamiento",
+          "Erosiones extensas",
+          "Infección bacteriana secundaria"
+        ],
+        "metasTerapeuticas": [
+          "Resolución del eritema",
+          "Prevención de recurrencia"
+        ],
+        "examesIniciais": [
+          "Clínico - exámenes generalmente innecesarios",
+          "Raspado si hay duda (Candida)"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "nistatina",
+        "miconazol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "lactente",
+        "candida",
+        "piel"
+      ]
+    }
+  ]
+}

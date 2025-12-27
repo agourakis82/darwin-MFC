@@ -1,0 +1,1337 @@
+{
+  "locale": "es",
+  "category": "urologico",
+  "generatedAt": "2025-12-27T14:59:53.955Z",
+  "count": 10,
+  "diseases": [
+    {
+      "id": "doenca-renal-cronica",
+      "titulo": "Doença Renal Crônica",
+      "sinonimos": [
+        "DRC",
+        "Insuficiência renal crônica",
+        "Nefropatia crônica"
+      ],
+      "doid": "DOID:784",
+      "snomedCT": "709044004",
+      "meshId": "D051436",
+      "umlsCui": "C1561643",
+      "ciap2": [
+        "U99"
+      ],
+      "cid10": [
+        "N18"
+      ],
+      "cid11": [
+        "GB61"
+      ],
+      "categoria": "urologico",
+      "quickView": {
+        "definicao": "Anormalidade da estrutura ou função renal presente por >3 meses, com implicações para a saúde. Definida por TFG <60 mL/min/1,73m² e/ou marcadores de lesão renal (albuminúria, alterações sedimento, histopatologia, imagem, transplante).",
+        "criteriosDiagnosticos": [
+          "CRITÉRIOS KDIGO 2024:",
+          "TFG <60 mL/min/1,73m² por ≥3 meses OU",
+          "Marcadores de lesão renal por ≥3 meses:",
+          "- Albuminúria (ACR ≥30 mg/g)",
+          "- Alterações do sedimento urinário",
+          "- Distúrbios eletrolíticos (acidose, hipercalemia)",
+          "- Alterações histológicas",
+          "- Alterações estruturais (imagem)",
+          "- História de transplante renal"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Controle de peso",
+            "Dieta hipossódica (<2g/dia de sódio)",
+            "Restrição proteica moderada (0,8 g/kg/dia em estágios 3-5)",
+            "Atividade física regular",
+            "Cessação do tabagismo",
+            "Evitar nefrotóxicos (AINEs, contraste)"
+          ],
+          "farmacologico": [
+            "iECA ou BRA (renoproteção, especialmente se albuminúria)",
+            "iSGLT2 (Dapagliflozina 10mg/dia ou Empagliflozina) - nova 1ª linha",
+            "Estatina (DRC = alto risco CV)",
+            "Controle de PA (<130/80 mmHg)",
+            "Controle glicêmico se DM (HbA1c <7%)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "PA <130/80 mmHg",
+          "Redução de albuminúria em ≥30%",
+          "HbA1c <7% (se DM)",
+          "LDL <70 mg/dL",
+          "Retardar progressão da DRC"
+        ],
+        "examesIniciais": [
+          "Creatinina sérica + cálculo de TFG (CKD-EPI)",
+          "Albuminúria (relação albumina/creatinina - ACR)",
+          "Exame de urina (EAS)",
+          "Eletrólitos (Na, K, Ca, P, Mg)",
+          "Hemograma (anemia)",
+          "USG renal",
+          "PTH, vitamina D (estágios 3-5)"
+        ],
+        "redFlags": [
+          "Hipercalemia grave (K >6,5 mEq/L)",
+          "Edema pulmonar refratário",
+          "Pericardite urêmica",
+          "Encefalopatia urêmica",
+          "Acidose metabólica grave",
+          "Sangramento urêmico",
+          "Queda rápida de TFG (>5 mL/min/ano)",
+          "Hematúria macroscópica"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "10-15% da população adulta mundial tem algum grau de DRC",
+          "incidencia": "Crescente devido a DM e HAS",
+          "faixaEtaria": "Aumenta com idade, pico >60 anos",
+          "fatoresRisco": [
+            "Diabetes mellitus (causa #1)",
+            "Hipertensão arterial (causa #2)",
+            "Doença cardiovascular",
+            "Obesidade",
+            "Tabagismo",
+            "Idade avançada",
+            "História familiar",
+            "Nefrotóxicos (AINEs, contrastes)"
+          ],
+          "citations": [
+            {
+              "refId": "kdigo-ckd-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Perda progressiva de néfrons leva a hiperfiltração adaptativa dos remanescentes, resultando em esclerose glomerular e fibrose intersticial. Sistema renina-angiotensina-aldosterona e hiperglicemia agravam lesão. Progressão causa uremia, distúrbios hidroeletrolíticos, anemia, doença óssea e risco cardiovascular elevado.",
+          "citations": [
+            {
+              "refId": "kdigo-ckd-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Estágios iniciais: geralmente assintomático",
+            "Fadiga e fraqueza",
+            "Edema (membros, periorbital)",
+            "Dispneia (congestão)",
+            "Náuseas, anorexia, perda de peso",
+            "Prurido",
+            "Noctúria, oligúria (tardia)"
+          ],
+          "sinaisExameFisico": [
+            "Hipertensão arterial",
+            "Palidez (anemia)",
+            "Edema",
+            "Hálito urêmico",
+            "Alterações cutâneas (xerose, prurido)",
+            "Atrito pericárdico (pericardite urêmica - avançado)"
+          ],
+          "formasClinicas": [
+            "DRC estágio 1: TFG ≥90 + lesão renal",
+            "DRC estágio 2: TFG 60-89 + lesão renal",
+            "DRC estágio 3a: TFG 45-59",
+            "DRC estágio 3b: TFG 30-44",
+            "DRC estágio 4: TFG 15-29",
+            "DRC estágio 5: TFG <15 (DRT)"
+          ],
+          "citations": [
+            {
+              "refId": "kdigo-ckd-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "TFG <60 por ≥3 meses",
+            "OU marcadores de lesão renal ≥3 meses",
+            "Classificar por estágio (TFG) e categoria de albuminúria (A1-A3)"
+          ],
+          "diagnosticoDiferencial": [
+            "Lesão renal aguda (reversível)",
+            "Glomerulonefrite ativa",
+            "Nefrite intersticial",
+            "Nefropatia obstrutiva"
+          ],
+          "examesLaboratoriais": [
+            "Creatinina + TFG (CKD-EPI)",
+            "Albuminúria (ACR)",
+            "EAS",
+            "Eletrólitos, cálcio, fósforo, PTH",
+            "Hemograma, ferritina, saturação de transferrina",
+            "Perfil lipídico, HbA1c"
+          ],
+          "citations": [
+            {
+              "refId": "kdigo-ckd-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Retardar progressão",
+            "Reduzir risco cardiovascular",
+            "Tratar complicações",
+            "Preparar para TRS quando necessário"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Dieta hipossódica",
+              "Restrição proteica moderada",
+              "Controle de peso",
+              "Atividade física",
+              "Cessação do tabagismo",
+              "Evitar nefrotóxicos"
+            ],
+            "citations": [
+              {
+                "refId": "kdigo-ckd-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "iECA ou BRA",
+                "medicamentos": [
+                  "Enalapril",
+                  "Losartana"
+                ],
+                "posologia": "Enalapril 10-40mg/dia ou Losartana 50-100mg/dia. Titular conforme PA e K."
+              },
+              {
+                "classe": "iSGLT2",
+                "medicamentos": [
+                  "Dapagliflozina",
+                  "Empagliflozina"
+                ],
+                "posologia": "Dapa 10mg/dia. Benefício mesmo sem DM (DAPA-CKD)."
+              },
+              {
+                "classe": "Estatina",
+                "medicamentos": [
+                  "Atorvastatina",
+                  "Rosuvastatina"
+                ],
+                "posologia": "Todos com DRC devem usar (alto risco CV)."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Antagonista de mineralocorticoide",
+                "medicamentos": [
+                  "Finerenona"
+                ],
+                "posologia": "Finerenona 10-20mg/dia (DRC + DM com albuminúria)."
+              },
+              {
+                "classe": "Eritropoietina",
+                "medicamentos": [
+                  "Alfaepoetina"
+                ],
+                "posologia": "Se Hb <10 g/dL (após corrigir ferro)."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Hipercalemia",
+                "conduta": "Restrição de K dietético. Patiromer ou ciclossilicato de zircônio. Ajustar iECA/BRA."
+              },
+              {
+                "situacao": "Anemia da DRC",
+                "conduta": "Ferro IV se ferritina <100 ou sat <20%. EPO se Hb <10."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "kdigo-ckd-2024"
+              }
+            ]
+          },
+          "duracao": "Tratamento crônico e progressivo."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Estágio 1-2: anual. Estágio 3: semestral. Estágio 4-5: trimestral ou mais.",
+          "examesControle": [
+            "Creatinina, TFG, eletrólitos",
+            "ACR anual ou mais",
+            "Hemograma, ferritina",
+            "PTH, Ca, P (estágios 3-5)"
+          ],
+          "metasTerapeuticas": [
+            "PA <130/80",
+            "Albuminúria reduzida",
+            "TFG estável",
+            "Hb 10-12 g/dL",
+            "PTH controlado"
+          ],
+          "criteriosEncaminhamento": [
+            "TFG <30 (nefrologia)",
+            "Queda rápida de TFG",
+            "Albuminúria grave (A3)",
+            "Hipercalemia recorrente",
+            "Preparação para diálise/transplante"
+          ],
+          "citations": [
+            {
+              "refId": "kdigo-ckd-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Controle de DM e HAS",
+            "Evitar obesidade",
+            "Evitar nefrotóxicos"
+          ],
+          "secundaria": [
+            "Rastreamento de DRC em DM, HAS",
+            "Tratamento precoce agressivo"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "drc-estagiamento"
+      ],
+      "medicamentos": [
+        "enalapril",
+        "losartana",
+        "dapagliflozina",
+        "atorvastatina"
+      ],
+      "calculadoras": [
+        "ckd-epi",
+        "mdrd",
+        "cockcroft-gault"
+      ],
+      "rastreamentos": [
+        "rastreamento-drc"
+      ],
+      "citations": [
+        {
+          "refId": "kdigo-ckd-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "drc",
+        "insuficiencia-renal",
+        "tfg",
+        "albuminuria",
+        "isglt2"
+      ]
+    },
+    {
+      "id": "nefrolitiase",
+      "titulo": "Nefrolitiasis",
+      "sinonimos": [
+        "Cálculo renal",
+        "Piedra en los riñones",
+        "Urolitiasis",
+        "Litiasis urinaria"
+      ],
+      "doid": "DOID:585",
+      "snomedCT": "95570007",
+      "meshId": "D007669",
+      "umlsCui": "C0022650",
+      "ciap2": [
+        "U95"
+      ],
+      "cid10": [
+        "N20"
+      ],
+      "cid11": [
+        "GB70"
+      ],
+      "categoria": "urologico",
+      "quickView": {
+        "definicao": "Presencia de cálculos en el tracto urinario (riñones, ureter, vejiga). El oxalato de calcio es el más común (70-80%). Dolor en cólica es el síntoma cardinal. Alta tasa de recurrencia (50% en 5 años).",
+        "criteriosDiagnosticos": [
+          "Cuadro clínico típico: Dolor en cólica lumbar/flanco irradiando a la fosita iliaca/genitales",
+          "Náuseas, vómitos, agitación",
+          "Hematuria (micro o macroscópica)",
+          "Confirmación por imagen:",
+          "- TC de abdomen sin contraste: patrón-oro",
+          "- USG: detecta cálculos renales y dilatación ureteral"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hidratación (2-3 L/día después de la fase aguda)",
+            "Dieta equilibrada (no restringir calcio!)",
+            "Reducir sodio y proteína animal",
+            "Reducir oxalato (espinacas, chocolate, té)",
+            "Actividad física"
+          ],
+          "farmacologico": [
+            "DOLOR AGUDO (cólica):",
+            "AINE: Cetoprofeno 100mg IV/IM o Diclofenaco 75mg IM (1ª línea)",
+            "Dipirona 1-2g IV",
+            "Opioides: Tramadol o Morfina si es refractario",
+            "Alfa-bloqueador: Tamsulosina 0,4mg/día (terapia expulsiva para cálculos 5-10mm)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Alivio del dolor",
+          "Eliminación del cálculo",
+          "Preservación de la función renal",
+          "Prevención de recurrencia"
+        ],
+        "examesIniciais": [
+          "EAS (hematuria, cristaluria)",
+          "Creatinina, urea",
+          "Hemograma (descartar infección)",
+          "TC abdomen sin contraste (patrón-oro)",
+          "USG si gestante o indisponibilidad de TC",
+          "Calcio, ácido úrico, PTH (investigación metabólica)"
+        ],
+        "redFlags": [
+          "Fiebre (pielonefritis obstructiva - emergencia urológica!)",
+          "Anuria o oliguria (obstrucción bilateral o riñón único)",
+          "Dolor refractario a analgésicos",
+          "Sepsis urinaria",
+          "Lesión renal aguda",
+          "Cálculo >10mm (baja probabilidad de expulsión espontánea)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "5-15% de la población tendrá un cálculo renal en la vida",
+          "incidencia": "100-200 casos/100.000 personas/año",
+          "faixaEtaria": "Pico 30-60 años",
+          "fatoresRisco": [
+            "Historia previa de cálculo (recurrencia 50% en 5 años)",
+            "Historia familiar",
+            "Baja ingesta de líquidos",
+            "Dieta rica en sodio y proteína animal",
+            "Obesidad",
+            "Síndrome metabólico",
+            "Hiperparatiroidismo",
+            "Infecciones urinarias de repetición",
+            "Algunas cirugías (bariátrica)"
+          ],
+          "citations": [
+            {
+              "refId": "eau-urolithiasis-2023"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Supersaturación urinaria con sales litogénicas (calcio, oxalato, ácido úrico, fosfato) supera los inhibidores naturales (citrato, magnesio). Nucleación, agregación y crecimiento cristalino forman el cálculo. Factores metabólicos (hipercalciuria, hiperuricemia, hipocitraturia) y anatómicos contribuyen.",
+          "citations": [
+            {
+              "refId": "eau-urolithiasis-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dolor en cólica (lumbar/flanco irradiando a la ingle)",
+            "Dolor súbito, intenso, en ondas",
+            "Náuseas y vómitos",
+            "Agitación psicomotora",
+            "Hematuria",
+            "Disuria, urgencia (si cálculo distal)"
+          ],
+          "sinaisExameFisico": [
+            "Punzón-percusión lumbar positiva (Giordano)",
+            "Paciente inquieto (no puede quedarse quieto)",
+            "Sin signos de irritación peritoneal",
+            "Fiebre sugiere infección asociada"
+          ],
+          "formasClinicas": [
+            "Cálculo de calcio (oxalato, fosfato) - 70-80%",
+            "Cálculo de ácido úrico - 5-10%",
+            "Cálculo de estruvita (infeccioso) - 5-15%",
+            "Cálculo de cistina - 1-2%"
+          ],
+          "citations": [
+            {
+              "refId": "eau-urolithiasis-2023"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínica típica + imagen confirmatoria",
+            "TC sin contraste: patrón-oro (sensibilidad >95%)",
+            "USG: primera elección en gestante, niños, seguimiento"
+          ],
+          "diagnosticoDiferencial": [
+            "Pielonefritis",
+            "Apendicitis",
+            "Diverticulitis",
+            "Cólica biliar",
+            "Diseción de aorta",
+            "Embarazo ectópico",
+            "Torsión de testículo/ovario"
+          ],
+          "examesLaboratoriais": [
+            "EAS (hematuria en 85%)",
+            "Creatinina",
+            "Hemograma, PCR (infección)",
+            "Urocultura",
+            "Investigación metabólica: Ca, P, ácido úrico, PTH, citrato urinario, oxalato urinario"
+          ],
+          "citations": [
+            {
+              "refId": "eau-urolithiasis-2023"
+            }
+          ]
+        },
+        "tratamiento": {
+          "objetivos": [
+            "Aliviar dolor",
+            "Facilitar expulsión del cálculo",
+            "Tratar obstrucción/infección",
+            "Prevenir recurrencia"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hidratación (2,5-3 L/día)",
+              "Dieta equilibrada",
+              "No restringir calcio (contraproducente)",
+              "Reducir sodio <2g/día",
+              "Reducir proteína animal"
+            ],
+            "citations": [
+              {
+                "refId": "eau-urolithiasis-2023"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "AINE",
+                "medicamentos": [
+                  "Cetoprofeno",
+                  "Diclofenaco",
+                  "Cetorolaco"
+                ],
+                "posologia": "Cetoprofeno 100mg IV/IM. Diclofenaco 75mg IM. Primera elección para cólica."
+              },
+              {
+                "classe": "Terapia expulsiva médica",
+                "medicamentos": [
+                  "Tamsulosina"
+                ],
+                "posologia": "Tamsulosina 0,4mg/día por 4-6 semanas. Cálculos ureterales 5-10mm."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Opioides",
+                "medicamentos": [
+                  "Tramadol",
+                  "Morfina"
+                ],
+                "posologia": "Tramadol 50-100mg IV o Morfina 2-5mg IV. Si es refractario a AINEs."
+              },
+              {
+                "classe": "Prevención de recurrencia",
+                "medicamentos": [
+                  "Citrato de potasio",
+                  "Tiazídico",
+                  "Allopurinol"
+                ],
+                "posologia": "Citrato de K 20-60 mEq/día. Tiazídico para hipercalciuria. Allopurinol para hiperuricemia."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Cálculo >10mm o obstrucción con infección",
+                "conduta": "Intervención urológica: LECO, ureteroscopia, nefrolitotripsia."
+              },
+              {
+                "situacao": "Cálculo de ácido úrico",
+                "conduta": "Alcalinización urinaria (pH 6,5-7) + hidratación puede disolver."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "eau-urolithiasis-2023"
+              }
+            ]
+          },
+          "duracao": "Agudo: días. Prevención: continua."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Reevaluación en 2-4 semanas después de la cólica",
+          "examesControle": [
+            "Imagen para confirmar expulsión",
+            "Investigación metabólica si recorrente",
+            "Análisis del cálculo (si disponible)"
+          ],
+          "metasTerapeuticas": [
+            "Expulsión del cálculo",
+            "Volumen urinario >2L/día",
+            "Prevención de recurrencia"
+          ],
+          "criteriosEncaminhamento": [
+            "Cálculo >10mm",
+            "Fiebre + obstrucción (urgencia!)",
+            "Fallo de expulsión",
+            "Cálculos recorrentes",
+            "Riñón único o trasplantado"
+          ],
+          "citations": [
+            {
+              "refId": "eau-urolithiasis-2023"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Ingesta hídrica adecuada (>2,5L/día)",
+            "Dieta equilibrada",
+            "Evitar exceso de sodio"
+          ],
+          "secundaria": [
+            "Investigación metabólica",
+            "Tratamiento específico según tipo de cálculo",
+            "Citrato de potasio"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "cetoprofeno",
+        "diclofenaco",
+        "tamsulosina",
+        "citrato-potassio"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "eau-urolithiasis-2023"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "nefrolitiasis",
+        "calculo-renal",
+        "colica",
+        "urologia",
+        "oxalato"
+      ]
+    },
+    {
+      "id": "hiperplasia-prostatica-benigna",
+      "titulo": "Hiperplasia Prostática Benigna",
+      "sinonimos": [
+        "HPB",
+        "Aumento benigno de la próstata",
+        "Adenoma prostático"
+      ],
+      "doid": "DOID:2997",
+      "snomedCT": "266569009",
+      "meshId": "D011470",
+      "umlsCui": "C0005001",
+      "ciap2": [
+        "Y85"
+      ],
+      "cid10": [
+        "N40"
+      ],
+      "cid11": [
+        "GA90.0"
+      ],
+      "categoria": "urologico",
+      "quickView": {
+        "definicao": "Aumento benigno de la próstata debido a la hiperplasia del estroma y epitelio glandular, causando síntomas del tracto urinario inferior (STUI) obstructivos e irritativos. Condición casi universal en hombres mayores.",
+        "criteriosDiagnosticos": [
+          "Síntomas del tracto urinario inferior (STUI):",
+          "OBSTRUCTIVOS: Jet débil, hesitación, esfuerzo miccional, goteo terminal, vaciamiento incompleto",
+          "IRRITATIVOS: Urgencia, polaciuria, nocturia",
+          "Palpación rectal: Próstata aumentada, lisa, simétrica, sulco mediano preservado, consistencia fibroelástica",
+          "IPSS (puntuación internacional de síntomas prostáticos) para cuantificar"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Watchful waiting (IPSS leve, <8)",
+            "Reducir ingesta hídrica nocturna",
+            "Evitar cafeína y alcohol",
+            "Micción doble",
+            "Evitar medicamentos que empeoran STUI (anticolinérgicos, descongestionantes)"
+          ],
+          "farmacologico": [
+            "STUI moderado-grave:",
+            "Alfa-bloqueador: Tansulosina 0,4mg/día o Doxazosina 4mg/día (1ª línea)",
+            "Inhibidor de 5-alfa-reductasa: Finasterida 5mg/día o Dutasterida 0,5mg/día (próstata >30-40g)",
+            "Combinación alfa-bloqueador + inhibidor 5AR: Próstatas grandes con STUI intenso",
+            "Anticolinérgico o agonista beta-3: Si STUI irritativos predominantes"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Reducción de síntomas (IPSS)",
+          "Mejora de la calidad de vida",
+          "Prevención de retención urinaria aguda",
+          "Evitar progresión y complicaciones"
+        ],
+        "examesIniciais": [
+          "PSA (descartar cáncer, evaluar volumen prostático)",
+          "EAS + urocultura",
+          "Creatinina (si se sospecha de uropatía obstructiva)",
+          "IPSS (cuestionario de síntomas)",
+          "USG de vías urinarias + residuo post-miccional",
+          "Palpación rectal"
+        ],
+        "redFlags": [
+          "Hematuria macroscópica",
+          "Retención urinaria aguda",
+          "Insuficiencia renal obstructiva",
+          "ITU de repetición",
+          "Cálculo vesical",
+          "PSA elevado o nódulo al tacto (descartar cáncer!)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "50% a los 60 años, 90% a los 90 años tienen HPB histológica",
+          "incidencia": "Aumenta linealmente con la edad",
+          "faixaEtaria": "Comienza después de 40 años, sintomático generalmente >50",
+          "fatoresRisco": [
+            "Edad (principal)",
+            "Testosterona (andrógenos necesarios)",
+            "Obesidad",
+            "Síndrome metabólico",
+            "Factores genéticos"
+          ],
+          "citations": [
+            {
+              "refId": "eau-bph-2023"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Hiperplasia nodular del estroma y epitelio de la zona de transición prostática, bajo la influencia de DHT (diidrotestosterona). Compresión uretral causa obstrucción mecánica. Componente dinámico (contracción de la musculatura lisa mediada por receptores alfa-1) contribuye a STUI.",
+          "citations": [
+            {
+              "refId": "eau-bph-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Síntomas obstructivos: jet débil, hesitación, esfuerzo, goteo, vaciamiento incompleto",
+            "Síntomas irritativos: urgencia, polaciuria, nocturia",
+            "Incontinencia por rebosamiento",
+            "Reducción de la calidad de vida"
+          ],
+          "sinaisExameFisico": [
+            "Palpación rectal: próstata aumentada, lisa, simétrica, consistencia fibroelástica",
+            "Sulco mediano preservado (diferente del cáncer)",
+            "Vesícula palpable si hay retención",
+            "Evaluar bexigoma"
+          ],
+          "formasClinicas": [
+            "STUI leve (IPSS 0-7)",
+            "STUI moderado (IPSS 8-19)",
+            "STUI grave (IPSS 20-35)",
+            "HPB con complicaciones (retención, ITU, cálculo vesical, hidronefrosis)"
+          ],
+          "citations": [
+            {
+              "refId": "eau-bph-2023"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "STUI + palpación rectal compatible",
+            "Excluir otras causas (ITU, prostatitis, vejiga hiperactiva)",
+            "IPSS para cuantificar síntomas",
+            "USG para volumen prostático y residuo"
+          ],
+          "diagnosticoDiferencial": [
+            "Cáncer de próstata",
+            "Prostatitis crónica",
+            "Vesícula hiperactiva",
+            "Estenosis de uretra",
+            "Vesícula neurogénica",
+            "ITU"
+          ],
+          "examesLaboratoriais": [
+            "PSA (cáncer y volumen prostático)",
+            "EAS y urocultura",
+            "Creatinina",
+            "IPSS",
+            "USG prostático, renal y residuo post-miccional"
+          ],
+          "citations": [
+            {
+              "refId": "eau-bph-2023"
+            }
+          ]
+        },
+        "tratamiento": {
+          "objetivos": [
+            "Reducción de síntomas",
+            "Mejora de la calidad de vida",
+            "Prevención de progresión y complicaciones"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Watchful waiting (síntomas leves)",
+              "Modificación conductual",
+              "Reducción de líquidos por la noche",
+              "Evitar cafeína y alcohol",
+              "Revisión de medicamentos"
+            ],
+            "citations": [
+              {
+                "refId": "eau-bph-2023"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Alfa-bloqueador",
+                "medicamentos": [
+                  "Tansulosina",
+                  "Doxazosina",
+                  "Alfuzosina"
+                ],
+                "posologia": "Tansulosina 0,4mg/día. Doxazosina 2-8mg/día. Alivio rápido (días). Eyaculación retrógrada, hipotensión."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Inhibidor de 5-alfa-reductasa",
+                "medicamentos": [
+                  "Finasterida",
+                  "Dutasterida"
+                ],
+                "posologia": "Finasterida 5mg/día. Dutasterida 0,5mg/día. Próstata >30g. Efecto en 3-6 meses. Reduce PSA en 50%."
+              },
+              {
+                "classe": "Combinación",
+                "medicamentos": [
+                  "Tansulosina + Dutasterida"
+                ],
+                "posologia": "Para próstatas grandes (>40g) y STUI significativos."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "STUI irritativos predominantes",
+                "conduta": "Anticolinérgico (oxibutinina, tolterodina) o mirabegrona. Cuidado con residuo."
+              },
+              {
+                "situacao": "Refractario o complicaciones",
+                "conduta": "Cirugía: RTU de próstata, vaporización a láser, enucleación."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "eau-bph-2023"
+              }
+            ]
+          },
+          "duracao": "Tratamiento crónico, generalmente por vida."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Cada 6-12 meses",
+          "examesControle": [
+            "IPSS",
+            "PSA anual (recordar que 5AR reduce en 50%)",
+            "Residuo post-miccional",
+            "Función renal si indicado"
+          ],
+          "metasTerapeuticas": [
+            "IPSS <8",
+            "Residuo post-miccional <100 mL",
+            "Ausencia de complicaciones"
+          ],
+          "criteriosEncaminhamento": [
+            "Retención urinaria aguda",
+            "Hematuria macroscópica",
+            "ITU recurrente",
+            "Insuficiencia renal obstructiva",
+            "PSA elevado/sospecha de cáncer",
+            "Fallo del tratamiento clínico"
+          ],
+          "citations": [
+            {
+              "refId": "eau-bph-2023"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "No hay prevención establecida",
+            "Estilo de vida saludable puede ayudar"
+          ],
+          "secundaria": [
+            "Tratamiento precoz",
+            "Acompañamiento regular"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "tansulosina",
+        "doxazosina",
+        "finasterida",
+        "dutasterida"
+      ],
+      "calculadoras": [
+        "ipss"
+      ],
+      "rastreamentos": [
+        "rastreamiento-prostata"
+      ],
+      "citations": [
+        {
+          "refId": "eau-bph-2023"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "hpb",
+        "prostata",
+        "stui",
+        "tansulosina",
+        "finasterida"
+      ]
+    },
+    {
+      "id": "litiase-renal",
+      "titulo": "Litiasis Renal (Cálculo Renal)",
+      "ciap2": [
+        "U95"
+      ],
+      "cid10": [
+        "N20"
+      ],
+      "cid11": [
+        "GC00"
+      ],
+      "categoria": "urologico",
+      "doid": "DOID:585",
+      "snomedCT": "95570007",
+      "meshId": "D007669",
+      "umlsCui": "C0022650",
+      "quickView": {
+        "definicao": "Formación de cálculos en el tracto urinario. Prevalencia 5-15%. El calcio es el tipo más común (80%).",
+        "criteriosDiagnosticos": [
+          "Cólica renal: dolor lumbar intenso, irradiación al flanco y la ingle",
+          "Náuseas y vómitos",
+          "Hematuria",
+          "Agitación (no encuentra posición de alivio)"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hidratación",
+            "Tamizar la orina para capturar el cálculo",
+            "Reposo durante la crisis"
+          ],
+          "farmacologico": [
+            "Analgesia: Dipirona 1g EV + AINE (Cetoprofeno 100mg)",
+            "Antiespasmódico: Hioscina 20mg",
+            "Alfa-bloqueador: Tamsulosina 0,4mg si el cálculo mide 5-10mm"
+          ]
+        },
+        "redFlags": [
+          "Fiebre (pielonefritis obstructiva)",
+          "Anuria",
+          "Riñón único",
+          "Insuficiencia renal"
+        ]
+      },
+      "medicamentos": [
+        "dipirona",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hiperplasia-prostatica",
+      "titulo": "Hiperplasia Prostática Benigna (HPB)",
+      "ciap2": [
+        "Y85"
+      ],
+      "cid10": [
+        "N40"
+      ],
+      "cid11": [
+        "GB01"
+      ],
+      "categoria": "urologico",
+      "doid": "DOID:2191",
+      "snomedCT": "266569009",
+      "meshId": "D011470",
+      "umlsCui": "C0005001",
+      "quickView": {
+        "definicao": "Aumento benigno de la próstata causando SITUR (síntomas del tracto urinario inferior). Afecta al 50% de los hombres >50 años.",
+        "criteriosDiagnosticos": [
+          "IPSS ≥8 (moderado a grave)",
+          "Síntomas obstructivos: chorro débil, vacilación, vaciamiento incompleto",
+          "Síntomas irritativos: nicturia, urgencia, polaciuria",
+          "Palpación rectal: próstata aumentada, fibroelástica"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Reducir líquidos por la noche",
+            "Evitar cafeína y alcohol",
+            "Micción doble"
+          ],
+          "farmacologico": [
+            "Alfa-bloqueador: Tamsulosina 0,4mg por la noche",
+            "Si próstata >40g: añadir Finasterida 5mg/día",
+            "IPSS leve: vigilancia activa"
+          ]
+        },
+        "redFlags": [
+          "Retención urinaria aguda",
+          "Hematuria macroscópica",
+          "ITU de repetición",
+          "Insuficiencia renal"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": [
+        "ipss"
+      ]
+    },
+    {
+      "id": "incontinencia-urgencia",
+      "titulo": "Incontinencia Urinaria de Urgencia",
+      "sinonimos": [
+        "Vesícula Hiperactiva"
+      ],
+      "ciap2": [
+        "U02"
+      ],
+      "cid10": [
+        "N39.3"
+      ],
+      "cid11": [
+        "GC40"
+      ],
+      "categoria": "urologico",
+      "doid": "DOID:11628",
+      "snomedCT": "126906006",
+      "meshId": "D014547",
+      "umlsCui": "C0020538",
+      "tags": [
+        "urologico",
+        "comun",
+        "geriatrico"
+      ],
+      "quickView": {
+        "definicao": "Pérdida involuntaria de orina asociada a urgencia miccional. Causa: contracciones involuntarias del detrusor (vesícula hiperactiva).",
+        "criteriosDiagnosticos": [
+          "Pérdida de orina con urgencia",
+          "Frecuencia miccional aumentada",
+          "Nocturia",
+          "Diario miccional puede ayudar en el diagnóstico"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ejercicios de Kegel",
+            "Entrenamiento vesical",
+            "Modificaciones comportamentales",
+            "Reducir cafeína/álcohol"
+          ],
+          "farmacologico": [
+            "Anticolinérgicos: Oxybutinina 5mg 2x/día",
+            "O Solifenacina 5-10mg/día",
+            "O Tolterodina 2mg 2x/día"
+          ]
+        },
+        "redFlags": [
+          "Incontinencia de esfuerzo (diferencial)",
+          "Hematuria",
+          "Infección urinaria recurrente",
+          "Síntomas neurológicos"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "prostatite",
+      "titulo": "Prostatitis",
+      "sinonimos": [
+        "Prostatitis aguda",
+        "Prostatitis crónica",
+        "Síndrome de dolor pélvico crónico"
+      ],
+      "ciap2": [
+        "Y73"
+      ],
+      "cid10": [
+        "N41.0",
+        "N41.1"
+      ],
+      "cid11": [
+        "GA90.0"
+      ],
+      "doid": "DOID:12259",
+      "snomedCT": "9713002",
+      "meshId": "D011472",
+      "umlsCui": "C0033581",
+      "categoria": "urologico",
+      "quickView": {
+        "definicao": "Inflamación de la próstata. Tipo I: bacteriana aguda. Tipo II: bacteriana crónica. Tipo III: síndrome de dolor pélvico crónico (más común).",
+        "criteriosDiagnosticos": [
+          "Tipo I: fiebre, disuria, dolor perineal, próstata edematosa y dolorosa",
+          "Tipo II: infecciones urinarias recurrentes, síntomas >3 meses",
+          "Tipo III: dolor pélvico crónico sin infección confirmada",
+          "Urocultura, PSA puede estar elevado transitoriamente"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hidratación adecuada",
+            "Baños de asiento tibios",
+            "Evitar cafeína y alcohol"
+          ],
+          "farmacologico": [
+            "Tipo I: Ciprofloxacino 500mg 12/12h por 4-6 semanas",
+            "Tipo II: fluoroquinolona por 4-6 semanas",
+            "Tipo III: alfa-bloqueador, fitoterapia (serenoa), analgésicos"
+          ]
+        },
+        "redFlags": [
+          "Retención urinaria aguda",
+          "Septicemia",
+          "Absceso prostático"
+        ],
+        "metasTerapeuticas": [
+          "Resolución de síntomas",
+          "Erradicación bacteriana"
+        ],
+        "examesIniciais": [
+          "EAS + urocultura",
+          "PSA (después del tratamiento)",
+          "Palpación rectal"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "ciprofloxacino",
+        "doxazosina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "próstata",
+        "infección",
+        "dolor pélvico"
+      ]
+    },
+    {
+      "id": "bexiga-hiperativa",
+      "titulo": "Bexiga Hiperactiva",
+      "sinonimos": [
+        "Síndrome de la bexiga hiperactiva",
+        "OAB"
+      ],
+      "ciap2": [
+        "U13"
+      ],
+      "cid10": [
+        "N32.8"
+      ],
+      "cid11": [
+        "GC01.Y"
+      ],
+      "doid": "DOID:0080543",
+      "snomedCT": "60851000119108",
+      "meshId": "D053201",
+      "umlsCui": "C0878773",
+      "categoria": "urologico",
+      "quickView": {
+        "definicao": "Urgencia urinaria, con o sin incontinencia de urgencia, generalmente con polaciuria y nocturia, en ausencia de ITS o otra patología.",
+        "criteriosDiagnosticos": [
+          "Urgencia urinaria (deseo súbito e imperioso)",
+          "Frecuencia urinaria >8x/día",
+          "Nocturia >1 episodio/noche",
+          "Incontinencia de urgencia (úmida) vs sin incontinencia (seca)",
+          "Exclusión de ITS, tumor, cálculo"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Entrenamiento vesical (aumentar intervalo entre micciones)",
+            "Ejercicios de Kegel",
+            "Reducir cafeína y líquidos por la noche",
+            "Diario miccional"
+          ],
+          "farmacologico": [
+            "Antimuscarínicos: Oxibutinina 5mg 2-3x/día, Tolterodina 2mg 2x/día",
+            "Beta-3 agonista: Mirabegrona 25-50mg/día (alternativa)",
+            "Cuidado con anticolinérgicos en ancianos (riesgo cognitivo)"
+          ]
+        },
+        "redFlags": [
+          "Hematuria",
+          "Dolor pélvico",
+          "ITS de repetición",
+          "Retención urinaria"
+        ],
+        "metasTerapeuticas": [
+          "Reducción de 50% en la frecuencia",
+          "Mejora de la calidad de vida"
+        ],
+        "examesIniciais": [
+          "EAS + urocultivo",
+          "Diario miccional",
+          "Residuo post-miccional"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "oxibutinina",
+        "tolterodina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "incontinencia",
+        "anciano",
+        "calidad de vida"
+      ]
+    },
+    {
+      "id": "epididimite",
+      "titulo": "Epididimite",
+      "sinonimos": [
+        "Orquiepididimite"
+      ],
+      "ciap2": [
+        "Y74"
+      ],
+      "cid10": [
+        "N45.1"
+      ],
+      "cid11": [
+        "GA70"
+      ],
+      "doid": "DOID:10689",
+      "snomedCT": "31070006",
+      "meshId": "D004823",
+      "umlsCui": "C0014534",
+      "categoria": "urologico",
+      "quickView": {
+        "definicao": "Inflamación del epididimo, generalmente infecciosa. <35 años: ETS (Chlamydia, Gonorrea). >35 años: uropatógenos (E. coli).",
+        "criteriosDiagnosticos": [
+          "Dolor testicular unilateral de inicio gradual",
+          "Aumento y endurecimiento del epididimo",
+          "Signo de Prehn positivo (alivio con elevación)",
+          "Diferencial: torsión testicular (emergencia)"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Reposo, elevación escrotal",
+            "Hielo local",
+            "Abstinencia sexual durante tratamiento"
+          ],
+          "farmacologico": [
+            "Si ETS sospechada (<35 años): Ceftriaxona 500mg IM dosis única + Doxiciclina 100mg 12/12h por 10 días",
+            "Si uropatógeno (>35 años): Levofloxacino 500mg/día por 10 días",
+            "Tratar pareja si ETS"
+          ]
+        },
+        "redFlags": [
+          "Dolor intenso y agudo (torsión?)",
+          "Fiebre alta",
+          "Absceso escrotal",
+          "Torsión testicular"
+        ],
+        "metasTerapeuticas": [
+          "Resolución del dolor y la inflamación",
+          "Erradicación de la infección"
+        ],
+        "examesIniciais": [
+          "EAS + urocultura",
+          "Test para Chlamydia/Gonorrea",
+          "USG escrotal si duda"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "ceftriaxona",
+        "doxiciclina",
+        "levofloxacino"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "ETS",
+        "escroto",
+        "urgencia"
+      ]
+    },
+    {
+      "id": "hidrocele",
+      "titulo": "Hidrocele",
+      "sinonimos": [
+        "Hidrocele testicular"
+      ],
+      "ciap2": [
+        "Y83"
+      ],
+      "cid10": [
+        "N43.0",
+        "N43.3"
+      ],
+      "cid11": [
+        "GA80"
+      ],
+      "doid": "DOID:12316",
+      "snomedCT": "26614003",
+      "meshId": "D006848",
+      "umlsCui": "C0020295",
+      "categoria": "urologico",
+      "quickView": {
+        "definicao": "Acúmulo de líquido seroso entre las capas de la túnica vaginal del testículo. Congénita (comunicante) o adquirida (reacional).",
+        "criteriosDiagnosticos": [
+          "Aumento escrotal indolor y progresivo",
+          "Transiluminación positiva (diferencia de hernia/tumor)",
+          "Testículo no palpable (líquido alrededor)",
+          "USG confirma líquido alrededor del testículo"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Observación si pequeña y asintomática",
+            "En niños <2 años: generalmente resuelve espontáneamente"
+          ],
+          "farmacologico": [
+            "No hay tratamiento medicamentoso",
+            "Cirugía (hidrocelectomía) si sintomática o grande",
+            "Investigar causa si secundaria (trauma, infección, tumor)"
+          ]
+        },
+        "redFlags": [
+          "Dolor intenso",
+          "Endurecimiento testicular (¿tumor?)",
+          "Hernia encarcelada"
+        ],
+        "metasTerapeuticas": [
+          "Resolución del aumento escrotal si sintomático"
+        ],
+        "examesIniciais": [
+          "USG escrotal",
+          "Transiluminación"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [],
+      "calculadoras": [],
+      "tags": [
+        "escroto",
+        "cirugía",
+        "pediátrico"
+      ]
+    }
+  ]
+}

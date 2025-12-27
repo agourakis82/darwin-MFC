@@ -1,0 +1,1348 @@
+{
+  "locale": "es",
+  "category": "respiratorio",
+  "generatedAt": "2025-12-27T14:59:53.952Z",
+  "count": 12,
+  "diseases": [
+    {
+      "id": "asma",
+      "titulo": "Asma Brónquica",
+      "sinonimos": [
+        "Asma",
+        "Bronquitis asmática",
+        "Hiperreactividad bronquial"
+      ],
+      "doid": "DOID:2841",
+      "snomedCT": "195967001",
+      "meshId": "D001249",
+      "umlsCui": "C0004096",
+      "ciap2": [
+        "R96"
+      ],
+      "cid10": [
+        "J45",
+        "J46"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "Enfermedad inflamatoria crónica de las vías aéreas caracterizada por hiperreactividad bronquial y obstrucción variable al flujo aéreo, manifestándose por episodios recurrentes de sibilancia, disnea, opresión torácica y tos.",
+        "criteriosDiagnosticos": [
+          "Síntomas variables (sibilos, disnea, tos, opresión torácica)",
+          "Empeoramiento nocturno/matutino, con ejercicio, alérgenos, infecciones",
+          "Espirometría: VEF1/CVF <0,7 + mejora ≥12% y 200ml post-BD",
+          "PFE: variabilidad >10% en adultos",
+          "Si espirometría normal: prueba de broncoprovocación positiva"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Alejamiento de alérgenos (ácaros, moho, pelos de animales)",
+            "Control ambiental (encapar colchones, lavar ropa de cama)",
+            "Cese del tabaquismo (propio y pasivo)",
+            "Evitar AINEs y betabloqueadores si hay hipersensibilidad",
+            "Vacunación (influenza anual, neumococo)",
+            "Plan de acción por escrito"
+          ],
+          "farmacologico": [
+            "Etapa 1-2: CI dosis baja-media (Beclometasona 200-400mcg) + SABA si es necesario",
+            "Etapa 3: CI dosis media + LABA (Formoterol) o LAMA",
+            "Etapa 4-5: CI dosis alta + LABA, considerar anti-IgE/IL-5",
+            "Rescate: Formoterol-CI (preferido) o SABA (Salbutamol)",
+            "Exacerbación: Prednisona 40-60mg/día 5-7 días"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Control de síntomas: ACT ≥20, sin limitación de actividades",
+          "Reducir riesgo de exacerbaciones",
+          "Minimizar uso de SABA (<2x/mes para síntomas)",
+          "Función pulmonar normal o próxima a la normal",
+          "Minimizar efectos adversos del tratamiento"
+        ],
+        "examesIniciais": [
+          "Espirometría con prueba broncodilatadora",
+          "Peak Flow (PFE) para monitoreo domiciliario",
+          "Hemograma (eosinofilia sugiere asma alérgica)",
+          "IgE total",
+          "Radiografía de tórax (en evaluación inicial)"
+        ],
+        "redFlags": [
+          "Exacerbación grave: habla entrecortada, FR >30, FC >120, SpO2 <90%",
+          "Uso de musculatura accesoría, cianosis",
+          "PFE <50% del previsto o mejor personal",
+          "Falta de respuesta al broncodilatador",
+          "Historia de intubación por asma",
+          "Pneumotórax"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "10-15% en niños, 5-10% en adultos en Brasil",
+          "mortalidad": "~2.500 muertes/año en Brasil (mayoría evitable)",
+          "faixaEtaria": "Inicio frecuente en la infancia, puede iniciar en cualquier edad",
+          "fatoresRisco": [
+            "Atopia (rinofaringitis, eccema)",
+            "Historia familiar de asma",
+            "Exposición a alérgenos (ácaros, moho, pelos)",
+            "Infecciones respiratorias en la infancia",
+            "Tabaquismo pasivo",
+            "Contaminación ambiental",
+            "Obesidad"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Sibilancia (chiado en el pecho)",
+            "Disnea episódica",
+            "Tos, especialmente nocturna/matutina",
+            "Opresión torácica",
+            "Síntomas variables en el tiempo e intensidad",
+            "Empeoramiento con infecciones, ejercicio, alérgenos, cambios climáticos"
+          ],
+          "sinaisExameFisico": [
+            "Sibilos expiratorios difusos en crisis",
+            "Fase expiratoria prolongada",
+            "Uso de musculatura accesoría (crisis graves)",
+            "Inter crisis: examen frecuentemente normal",
+            "Rinitis alérgica asociada"
+          ],
+          "formasClinicas": [
+            "Asma alérgica (más común)",
+            "Asma no alérgica",
+            "Asma de inicio tardío",
+            "Asma con limitación fija al flujo aéreo",
+            "Asma con obesidad"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Historia de síntomas respiratorios variables",
+            "Limitación variable al flujo expiratorio (espirometría)",
+            "Respuesta al broncodilatador (≥12% y 200ml en VEF1)",
+            "O variabilidad del PFE >10%",
+            "O prueba de broncoprovocación positiva"
+          ],
+          "diagnosticoDiferencial": [
+            "EPOC",
+            "Disfunción de cuerdas vocales",
+            "Insuficiencia cardíaca",
+            "Bronquiectasias",
+            "Cuerpo extraño",
+            "DRGE con tos"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "tratamiento": {
+          "objetivos": [
+            "Control de los síntomas",
+            "Prevención de exacerbaciones",
+            "Mantenimiento de la función pulmonar normal",
+            "Minimizar efectos adversos"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Educación en asma y plan de acción",
+              "Técnica inhalatoria correcta",
+              "Control ambiental",
+              "Cese del tabaquismo",
+              "Actividad física regular",
+              "Control del peso",
+              "Vacunación"
+            ],
+            "citations": [
+              {
+                "refId": "gina-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "CI dosis baja",
+                "medicamentos": [
+                  "Beclometasona 200-400mcg/día",
+                  "Budesonida 200-400mcg/día"
+                ],
+                "observacoes": "Base del tratamiento. Etapas 1-2"
+              },
+              {
+                "classe": "CI + Formoterol",
+                "medicamentos": [
+                  "Budesonida/Formoterol 200-400/6-12mcg"
+                ],
+                "observacoes": "Mantenimiento y resgate (MART). Preferido por GINA"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "CI dosis media-alta + LABA",
+                "medicamentos": [
+                  "Budesonida/Formoterol 400-800/12-24mcg"
+                ],
+                "observacoes": "Etapas 3-4"
+              },
+              {
+                "classe": "LAMA",
+                "medicamentos": [
+                  "Tiotrópio 5mcg (Respimat)"
+                ],
+                "observacoes": "Adicional en etapa 4-5"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Exacerbación",
+                "conduta": "SABA + corticoide oral (prednisona 40-60mg 5-7 días)"
+              },
+              {
+                "situacao": "Gestación",
+                "conduta": "Mantener tratamiento. CI seguros. Control es prioridad"
+              },
+              {
+                "situacao": "Asma grave",
+                "conduta": "Derivar. Inmunobiológicos (anti-IgE, anti-IL5)"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "gina-2024"
+              }
+            ]
+          },
+          "duracao": "Tratamiento continuo. Step down después de 3 meses de control"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Cada 1-3 meses hasta control, después cada 3-6 meses",
+          "examesControle": [
+            "Espirometría anual",
+            "ACT (Asthma Control Test) en cada consulta",
+            "PFE domiciliario"
+          ],
+          "metasTerapeuticas": [
+            "ACT ≥20",
+            "Sin exacerbaciones",
+            "SABA <2x/mes",
+            "VEF1 normal o próximo"
+          ],
+          "criteriosEncaminhamento": [
+            "Asma de difícil control (etapa 4-5)",
+            "Exacerbación grave/casi fatal",
+            "Duda diagnóstica",
+            "Sospecha de asma ocupacional",
+            "Necesidad de inmunobiológico"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-asma",
+        "crise-asma"
+      ],
+      "medicamentos": [
+        "beclometasona",
+        "budesonida",
+        "salbutamol",
+        "formoterol"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "gina-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "respiratorio",
+        "crónica",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "dpoc",
+      "titulo": "Enfermedad Pulmonar Obstructiva Crónica",
+      "sinonimos": [
+        "EPOC",
+        "Enfisema",
+        "Bronquitis crónica"
+      ],
+      "doid": "DOID:3083",
+      "snomedCT": "13645005",
+      "meshId": "D029424",
+      "umlsCui": "C0024117",
+      "ciap2": [
+        "R95"
+      ],
+      "cid10": [
+        "J44",
+        "J44.0",
+        "J44.1",
+        "J44.9"
+      ],
+      "cid11": [
+        "CA22"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "Enfermedad respiratoria crónica prevenible y tratable, caracterizada por una limitación persistente al flujo aéreo, generalmente progresiva y asociada a una respuesta inflamatoria crónica de las vías aéreas y los pulmones a partículas o gases nocivos.",
+        "criteriosDiagnosticos": [
+          "Disnea persistente y progresiva",
+          "Tos crónica con o sin expectoración",
+          "Historia de exposición a factores de riesgo (tabaquismo)",
+          "Espirometría post-BD: VEF1/CVF <0,70"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cesación del tabaquismo (esencial)",
+            "Vacunación (influenza anual, neumococo)",
+            "Rehabilitación pulmonar",
+            "Actividad física regular",
+            "Oxigenoterapia domiciliar si está indicada"
+          ],
+          "farmacologico": [
+            "GOLD A-B: Broncodilatador de corta o larga duración",
+            "LABA o LAMA (Tiotrópio 18mcg/día o Formoterol)",
+            "GOLD C-D: LABA + LAMA o LABA + CI",
+            "CI si eosinófilos >300 o historia de asma"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Reducir síntomas (mMRC <2, CAT <10)",
+          "Prevenir exacerbaciones",
+          "Mejorar la capacidad de ejercicio",
+          "Retardar la progresión de la enfermedad",
+          "Reducir la mortalidad"
+        ],
+        "examesIniciais": [
+          "Espirometría con prueba broncodilatadora",
+          "Radiografía de tórax",
+          "Oximetría de pulso",
+          "Gasometría si SpO2 <92%",
+          "Hemograma (poliglobulia)",
+          "Alfa-1 antitripsina si <45 años o historia familiar"
+        ],
+        "redFlags": [
+          "Exacerbación grave (disnea intensa, taquipnea >25)",
+          "Alteración del nivel de conciencia",
+          "SpO2 <88% o cianosis",
+          "Uso de musculatura accesoría",
+          "Edema de MMII (cor pulmonal)",
+          "Fiebre alta (infección grave)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "10-15% de los adultos >40 años, mayor en tabaquistas",
+          "incidencia": "Tercera causa de muerte en el mundo",
+          "faixaEtaria": "Generalmente >40 años",
+          "fatoresRisco": [
+            "Tabaquismo (90% de los casos)",
+            "Exposición ocupacional (polvos, químicos)",
+            "Contaminación del aire",
+            "Deficiencia de alfa-1 antitripsina",
+            "Infecciones respiratorias en la infancia",
+            "Biomasa (estufas de leña)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Inflamación crónica de las vías aéreas y el parénquima pulmonar inducida por la inhalación de partículas nocivas, principalmente humo de cigarrillo. Resulta en bronquitis crónica (hipersecreción de moco) y/o enfisema (destrucción alveolar), llevando a una limitación fija al flujo aéreo.",
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Disnea progresiva (inicialmente a grandes esfuerzos)",
+            "Tos crónica, generalmente matutina",
+            "Expectoración crónica (muco o purulenta)",
+            "Silbidos",
+            "Sensación de opresión en el pecho",
+            "Fatiga e intolerancia al ejercicio"
+          ],
+          "sinaisExameFisico": [
+            "Tórax barril (hiperinflación)",
+            "Uso de musculatura accesoría",
+            "Expiración prolongada",
+            "Disminución del murmullo vesicular",
+            "Silbidos y roncus",
+            "Cianosis (casos avanzados)"
+          ],
+          "formasClinicas": [
+            "Fenotipo enfisematoso (pink puffer): delgado, disnea intensa",
+            "Fenotipo bronquítico (blue bloater): cianosis, edema, tos productiva",
+            "Superposición asma-EPOC (ACO)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínica compatible + factores de riesgo",
+            "Espirometría post-BD: VEF1/CVF <0,70",
+            "Clasificación GOLD (VEF1% predicho)"
+          ],
+          "diagnosticoDiferencial": [
+            "Asma",
+            "Bronquiectasias",
+            "Tuberculosis",
+            "Insuficiencia cardíaca",
+            "Cáncer de pulmón",
+            "Fibrosis pulmonar"
+          ],
+          "examesLaboratoriais": [
+            "Espirometría con prueba broncodilatadora",
+            "Gasometría arterial (si SpO2 <92%)",
+            "Hemograma",
+            "Alfa-1 antitripsina (si está indicado)",
+            "TC de tórax (casos seleccionados)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Aliviar síntomas",
+            "Prevenir exacerbaciones",
+            "Mejorar la tolerancia al ejercicio y la calidad de vida",
+            "Prevenir la progresión",
+            "Reducir la mortalidad"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Cesación del tabaquismo (más efectivo)",
+              "Vacunación anual (influenza) y neumococo",
+              "Rehabilitación pulmonar",
+              "Oxigenoterapia si PaO2 ≤55 o SpO2 ≤88%",
+              "Soporte nutricional si bajo peso"
+            ],
+            "citations": [
+              {
+                "refId": "gold-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "LAMA",
+                "medicamentos": [
+                  "Tiotrópio",
+                  "Glicopirrónio"
+                ],
+                "posologia": "Tiotrópio 18mcg 1x/día inhalador"
+              },
+              {
+                "classe": "LABA",
+                "medicamentos": [
+                  "Formoterol",
+                  "Salmeterol",
+                  "Indacaterol"
+                ],
+                "posologia": "Formoterol 12mcg 12/12h inhalador"
+              },
+              {
+                "classe": "LABA + LAMA (si persisten síntomas)",
+                "medicamentos": [
+                  "Tiotrópio + Formoterol"
+                ],
+                "posologia": "Combinación en dispositivo único o separado"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Exacerbador frecuente (≥2/año)",
+                "conduta": "Considerar añadir CI si eosinófilos ≥300"
+              },
+              {
+                "situacao": "Superposición asma-EPOC",
+                "conduta": "LABA + CI, no usar LABA aislado"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "gold-2024"
+              }
+            ]
+          },
+          "duracao": "Tratamiento continuo"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Cada 3-6 meses, o más frecuente si inestable",
+          "examesControle": [
+            "Espirometría anual",
+            "Oximetría en cada consulta",
+            "Evaluación de síntomas (mMRC, CAT)"
+          ],
+          "metasTerapeuticas": [
+            "mMRC 0-1, CAT <10",
+            "0-1 exacerbación/año",
+            "Mantenimiento de la capacidad funcional"
+          ],
+          "criteriosEncaminhamento": [
+            "EPOC grave (GOLD 3-4)",
+            "Exacerbaciones frecuentes a pesar del tratamiento",
+            "Candidato a oxigenoterapia domiciliar",
+            "Evaluación para cirugía reductora o trasplante"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "No iniciar el tabaquismo",
+            "Protección ocupacional",
+            "Reducción de la contaminación ambiental"
+          ],
+          "secundaria": [
+            "Cesación del tabaquismo",
+            "Vacunación",
+            "Tratamiento precoz"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-dpoc"
+      ],
+      "medicamentos": [
+        "tiotropio",
+        "formoterol",
+        "salbutamol",
+        "beclometasona"
+      ],
+      "calculadoras": [
+        "gold-copd",
+        "bode-index"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "gold-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "dpoc",
+        "enfisema",
+        "bronquitis",
+        "tabaquismo",
+        "disnea"
+      ]
+    },
+    {
+      "id": "pneumonia-comunitaria",
+      "titulo": "Pneumonía Adquirida en la Comunidad",
+      "sinonimos": [
+        "PAC",
+        "Pneumonía comunitaria",
+        "Pneumonía"
+      ],
+      "doid": "DOID:552",
+      "snomedCT": "385093006",
+      "meshId": "D018410",
+      "umlsCui": "C0694549",
+      "ciap2": [
+        "R81"
+      ],
+      "cid10": [
+        "J18",
+        "J15",
+        "J13",
+        "J14"
+      ],
+      "cid11": [
+        "CA40"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "Infección aguda del parénquima pulmonar adquirida fuera del ambiente hospitalario, caracterizada por síntomas respiratorios agudos y nuevo infiltrado pulmonar en la radiografía.",
+        "criteriosDiagnosticos": [
+          "Síntomas agudos: tos, expectoración, fiebre, disnea, dolor torácico pleurítico",
+          "Signos: taquipnea, estertores, sopro tubario",
+          "Nuevo infiltrado en la radiografía de tórax",
+          "Ausencia de hospitalización reciente (>48h en los últimos 90 días)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hidratación adecuada",
+            "Descanso relativo",
+            "Antitérmicos si hay fiebre",
+            "Monitoreo de SpO2"
+          ],
+          "farmacologico": [
+            "PAC leve (ambulatorial): Amoxicilina 500mg 8/8h VO x 5-7 días",
+            "Ou Azitromicina 500mg/día x 3-5 días (si alergia a la penicilina)",
+            "PAC moderada: Amoxicilina-clavulanato + Macrólido o Quinolona respiratoria",
+            "Duración: 5-7 días (mínimo 5 días, afebril por 48-72h)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Resolución de los síntomas en 48-72h",
+          "Defervescencia en 48-72h",
+          "Mejora radiológica (puede llevar semanas)",
+          "SpO2 >90%"
+        ],
+        "examesIniciais": [
+          "Radiografía de tórax (PA y perfil)",
+          "Oximetría de pulso",
+          "Hemograma, PCR",
+          "Función renal si moderada/grave",
+          "Gasometría si SpO2 <92%"
+        ],
+        "redFlags": [
+          "SpO2 <90% en aire ambiente",
+          "Hipotensión (PAS <90)",
+          "Confusión mental",
+          "FR >30 rpm",
+          "Urea >50 mg/dL",
+          "Derrame pleural voluminoso",
+          "Infiltrado multilobar"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Causa común de consulta e internación",
+          "incidencia": "5-11 casos/1000 habitantes/año",
+          "faixaEtaria": "Todas las edades, más grave en ancianos y niños",
+          "fatoresRisco": [
+            "Edad >65 años",
+            "EPOC, asma",
+            "Insuficiencia cardíaca",
+            "Diabetes mellitus",
+            "Inmunosupresión",
+            "Tabaquismo, alcoholismo",
+            "Institucionalización"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Infección del parénquima pulmonar por microorganismos (bacterias, virus, hongos). Los más comunes son Streptococcus pneumoniae, Haemophilus influenzae, Mycoplasma pneumoniae y virus respiratorios. La respuesta inflamatoria causa consolidación alveolar y comprometimiento de las intercambios gaseosos.",
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Tos (generalmente productiva)",
+            "Fiebre (puede estar ausente en ancianos)",
+            "Disnea",
+            "Dolor torácico pleurítico",
+            "Escalofríos",
+            "Malestar general"
+          ],
+          "sinaisExameFisico": [
+            "Taquipnea (FR >20)",
+            "Fiebre",
+            "Estertores crepitantes",
+            "Sopro tubario (consolidación)",
+            "Macicez a la percusión",
+            "Aumento del fremito toracovocal"
+          ],
+          "formasClinicas": [
+            "PAC típica: inicio agudo, fiebre alta, tos productiva",
+            "PAC atípica: inicio insidioso, tos seca, manifestaciones extrapulmonares"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Cuadro clínico compatible",
+            "Nuevo infiltrado en la radiografía de tórax",
+            "Exclusión de otras causas"
+          ],
+          "diagnosticoDiferencial": [
+            "Bronquitis aguda",
+            "Exacerbación de EPOC/asma",
+            "Insuficiencia cardíaca",
+            "EP",
+            "Tuberculosis",
+            "Cáncer de pulmón"
+          ],
+          "examesLaboratoriais": [
+            "Radiografía de tórax",
+            "Hemograma",
+            "PCR o procalcitonina",
+            "Urea, creatinina",
+            "Hemocultivo (si internación)",
+            "Búsqueda de antígeno urinario (pneumococo, legionella) si grave"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "tratamiento": {
+          "objetivos": [
+            "Erradicación del patógeno",
+            "Resolución de los síntomas",
+            "Prevención de complicaciones",
+            "Evitar resistencia antimicrobiana"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hidratación",
+              "Descanso",
+              "Oxigenoterapia si SpO2 <90%",
+              "Analgésicos/antitérmicos"
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-pac-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Betalactámico",
+                "medicamentos": [
+                  "Amoxicilina",
+                  "Amoxicilina-clavulanato"
+                ],
+                "posologia": "Amoxicilina 500mg 8/8h VO x 5-7 días"
+              },
+              {
+                "classe": "Macrólido (alternativa o asociación)",
+                "medicamentos": [
+                  "Azitromicina",
+                  "Claritromicina"
+                ],
+                "posologia": "Azitromicina 500mg/día x 3-5 días"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Alergia a la penicilina",
+                "conduta": "Azitromicina o Quinolona respiratoria (Levofloxacino)"
+              },
+              {
+                "situacao": "PAC grave (internación)",
+                "conduta": "Amoxicilina-clavulanato IV + Azitromicina o Quinolona IV"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-pac-2022"
+              }
+            ]
+          },
+          "duracao": "5-7 días (mínimo 5 días, afebril por 48-72h antes de suspender)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Retorno en 48-72h si ambulatorial",
+          "examesControle": [
+            "Radiografía de control en 4-6 semanas (si >50 años o tabaquista)",
+            "Reevaluación clínica si no mejora en 48-72h"
+          ],
+          "metasTerapeuticas": [
+            "Defervescencia en 48-72h",
+            "Mejora de los síntomas respiratorios"
+          ],
+          "criteriosEncaminhamento": [
+            "CURB-65 ≥2 (considerar internación)",
+            "SpO2 <90%",
+            "Complicaciones (derrame pleural, absceso)",
+            "Falla del tratamiento ambulatorial"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Vacunación neumocócica (>65 años y grupos de riesgo)",
+            "Vacunación anual contra la influenza",
+            "Cesación del tabaquismo"
+          ],
+          "secundaria": [
+            "Tratamiento adecuado de infecciones respiratorias",
+            "Vacunación post-PAC"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-pac"
+      ],
+      "medicamentos": [
+        "amoxicilina",
+        "azitromicina",
+        "levofloxacino"
+      ],
+      "calculadoras": [
+        "curb-65",
+        "psi-port"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "sbpt-pac-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "pneumonia",
+        "pac",
+        "infeccion-respiratoria",
+        "tos",
+        "fiebre"
+      ]
+    },
+    {
+      "id": "rinite-alergica",
+      "titulo": "Rinite alérgica",
+      "sinonimos": [
+        "Rinite alérgica perenne",
+        "Rinite alérgica sazonal",
+        "Polinose"
+      ],
+      "ciap2": [
+        "R97"
+      ],
+      "cid10": [
+        "J30"
+      ],
+      "cid11": [
+        "CA08.0"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:8819",
+      "snomedCT": "47758005",
+      "meshId": "D012221",
+      "umlsCui": "C0035384",
+      "hpo": [
+        "HP:0002197",
+        "HP:0000422"
+      ],
+      "tags": [
+        "respiratorio",
+        "alergia",
+        "comum"
+      ],
+      "quickView": {
+        "definicao": "Inflamación de la mucosa nasal mediada por IgE, desencadenada por alérgenos. Síntomas: rinorrea, estornudos, prurito nasal, congestión.",
+        "criteriosDiagnosticos": [
+          "Rinorrea acuosa",
+          "Estornudos",
+          "Prurito nasal/ocular",
+          "Congestión nasal",
+          "Síntomas desencadenados por alérgenos conocidos",
+          "Prueba cutánea o IgE específica positiva"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Evitar alérgenos",
+            "Lavado nasal con suero fisiológico",
+            "Vacunas anti-alérgicas (inmunoterapia) si indicado"
+          ],
+          "farmacologico": [
+            "Antihistamínicos orales: Cetirizina 10mg/día o Loratadina 10mg/día",
+            "Corticosteroides nasales: Budesonida o Fluticasona",
+            "Antihistamínico tópico nasal si es necesario"
+          ]
+        },
+        "redFlags": [
+          "Sinusal",
+          "Obstrucción nasal unilateral",
+          "Sangrado nasal persistente",
+          "Pólipos nasales"
+        ]
+      },
+      "medicamentos": [
+        "cetirizina",
+        "loratadina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "ivas-pediatrica",
+      "titulo": "IVAS (Infección de Vías Aéreas Superiores)",
+      "ciap2": [
+        "R74"
+      ],
+      "cid10": [
+        "J00",
+        "J06"
+      ],
+      "cid11": [
+        "CA07"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:0050117",
+      "snomedCT": "54150009",
+      "meshId": "D012141",
+      "umlsCui": "C0041912",
+      "quickView": {
+        "definicao": "Resfriado común. Causa más frecuente de consulta pediátrica. Etiología viral (>200 virus). Autolimitada en 7-10 días.",
+        "criteriosDiagnosticos": [
+          "Coriza clara → purulenta",
+          "Obstrucción nasal",
+          "Fiebre baja",
+          "Tos seca/productiva"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Lavado nasal con SF",
+            "Hidratación",
+            "Elevación de la cabecera",
+            "Miel (>1 año) para tos"
+          ],
+          "farmacologico": [
+            "Antitérmico si hay fiebre",
+            "NO usar descongestionantes <6 años",
+            "NO usar antitusígenos"
+          ]
+        },
+        "redFlags": [
+          "Fiebre >72h o recurrente",
+          "Dificultad respiratoria",
+          "Empeoramiento después de mejoría inicial",
+          "Otalgia"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [
+        "ivas"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "asma-infantil",
+      "titulo": "Asma en la Infancia",
+      "ciap2": [
+        "R96"
+      ],
+      "cid10": [
+        "J45"
+      ],
+      "cid11": [
+        "CA23"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:2841",
+      "snomedCT": "195967001",
+      "meshId": "D001249",
+      "umlsCui": "C0004096",
+      "quickView": {
+        "definicao": "Enfermedad inflamatoria crónica de las vías aéreas con episodios recurrentes de sibilancia. Diagnóstico desafiador en <5 años. Principal enfermedad crónica de la infancia.",
+        "criteriosDiagnosticos": [
+          "Sibilancia recurrente (≥3 episodios)",
+          "Tos nocturna/matutina",
+          "Disnea al esfuerzo",
+          "Mejora con broncodilatador",
+          "IPA modificado (predictivo en <5 años)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Control ambiental",
+            "Evitar el tabaquismo pasivo",
+            "Vacunación al día"
+          ],
+          "farmacologico": [
+            "Leve intermitente: SABA de rescate",
+            "Persistente: CI dosis baja (budesonida 100-200mcg)",
+            "Escalada si no está controlado"
+          ]
+        },
+        "redFlags": [
+          "Cianosis",
+          "Uso de musculatura accesoría",
+          "Dificultad para hablar",
+          "SpO2 <92%",
+          "Silencio torácico"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol",
+        "budesonida",
+        "prednisolona"
+      ],
+      "protocolos": [
+        "asma-exacerbacao"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "sinusite-aguda",
+      "titulo": "Sinusitis Aguda",
+      "ciap2": [
+        "R75"
+      ],
+      "cid10": [
+        "J01"
+      ],
+      "cid11": [
+        "CA12"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:0050127",
+      "snomedCT": "15805002",
+      "meshId": "D012852",
+      "umlsCui": "C0037199",
+      "quickView": {
+        "definicao": "Inflamación de los senos paranasales, generalmente viral. Duración <4 semanas. Bacteriana si los síntomas >10 días o empeoran después de una mejoría inicial.",
+        "criteriosDiagnosticos": [
+          "Congestión nasal",
+          "Rinorrea purulenta",
+          "Dolor facial/presión",
+          "Hiposmia",
+          "Duración 7-10 días (viral) o >10 días (bacteriana)"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Lavado nasal con SF",
+            "Hidratación",
+            "Humidificación del aire"
+          ],
+          "farmacologico": [
+            "Sintomático: analgésico + descongestionante tópico (máx 5 días)",
+            "ATB si bacteriana: Amoxicilina 500mg 8/8h 7-10 días"
+          ]
+        },
+        "redFlags": [
+          "Edema periorbital",
+          "Alteración visual",
+          "Cefalea intensa",
+          "Signos meníngeos"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "paracetamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "faringite-aguda",
+      "titulo": "Faringitis Aguda",
+      "ciap2": [
+        "R72"
+      ],
+      "cid10": [
+        "J02"
+      ],
+      "cid11": [
+        "CA02"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:974",
+      "snomedCT": "363746003",
+      "meshId": "D010612",
+      "umlsCui": "C0031350",
+      "quickView": {
+        "definicao": "Inflamación de la faringe. Mayoría viral (70-90%). Estreptocócica (GABHS) en 15-30% de los niños, 5-15% de los adultos.",
+        "criteriosDiagnosticos": [
+          "Dolor de garganta",
+          "Eritema faríngeo",
+          "Exsudato amigdalino",
+          "Adenomegalia cervical",
+          "Criterios de Centor modificado"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Analgésicos (paracetamol/ibuprofeno)",
+            "Gargarejo con agua tibia y sal"
+          ],
+          "farmacologico": [
+            "Viral: solo sintomático",
+            "Bacteriana (GABHS): Penicilina V 250-500mg 6/6h por 10 días O Amoxicilina 500mg 8/8h"
+          ]
+        },
+        "redFlags": [
+          "Trismo",
+          "Desviación de la úvula",
+          "Estridor",
+          "Absceso periamigdalino"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquite-aguda",
+      "titulo": "Bronquitis Aguda",
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J20"
+      ],
+      "cid11": [
+        "CA20"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:6132",
+      "snomedCT": "32398004",
+      "meshId": "D001991",
+      "umlsCui": "C0006267",
+      "quickView": {
+        "definicao": "Inflamación de los bronquios de duración <3 semanas. Generalmente viral (90%). La tos puede persistir 2-3 semanas.",
+        "criteriosDiagnosticos": [
+          "Tos productiva",
+          "Sin evidencia de neumonía",
+          "Duración <3 semanas",
+          "Síntomas respiratorios altos"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hidratación",
+            "Reposo",
+            "Evitar irritantes"
+          ],
+          "farmacologico": [
+            "Sintomático: antitusígenos si la tos seca es molesta",
+            "Antibióticos NO indicados rutinariamente",
+            "Broncodilatador si hay sibilos (Salbutamol inhalador)"
+          ]
+        },
+        "redFlags": [
+          "Tos >3 semanas",
+          "Signos de neumonía",
+          "Hemoptisis",
+          "Disnea"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquite-cronica",
+      "titulo": "Bronquitis Crónica",
+      "sinonimos": [
+        "Bronquitis Crónica Simple",
+        "Enfermedad Pulmonar Obstructiva Crónica - Tipo Bronquítico"
+      ],
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J41"
+      ],
+      "cid11": [
+        "CA22.0"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:6132",
+      "snomedCT": "13645005",
+      "meshId": "D001991",
+      "umlsCui": "C0006277",
+      "tags": [
+        "crónica",
+        "respiratorio",
+        "tabaquismo"
+      ],
+      "quickView": {
+        "definicao": "Tos y expectoración por ≥3 meses/año en ≥2 años consecutivos, frecuentemente asociada al tabaquismo.",
+        "criteriosDiagnosticos": [
+          "Tos productiva ≥3 meses/año",
+          "≥2 años consecutivos",
+          "Exclusión de otras causas (TB, bronquiectasias, etc)"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cesación tabáquica",
+            "Vacunación (gripe, neumococo)",
+            "Rehabilitación pulmonar"
+          ],
+          "farmacologico": [
+            "Broncodilatador inhalador: Salbutamol spray 2 jatos 4 veces/día",
+            "Si síntomas frecuentes: añadir corticoide inhalador"
+          ]
+        },
+        "redFlags": [
+          "Hemoptisis",
+          "Pérdida de peso",
+          "Fiebre persistente",
+          "Disnea progresiva"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol",
+        "budesonida"
+      ],
+      "protocolos": [
+        "dpoc"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "enfisema-pulmonar",
+      "titulo": "Enfisema Pulmonar",
+      "ciap2": [
+        "R95"
+      ],
+      "cid10": [
+        "J43"
+      ],
+      "cid11": [
+        "CA22.1"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:3119",
+      "snomedCT": "196494001",
+      "meshId": "D004656",
+      "umlsCui": "C0014120",
+      "tags": [
+        "cronica",
+        "respiratorio",
+        "dpoc"
+      ],
+      "quickView": {
+        "definicao": "Destrucción permanente de alvéolos con hiperinsuflación. Tipo enfisematoso de la EPOC.",
+        "criteriosDiagnosticos": [
+          "Disnea progresiva",
+          "Tórax en barril",
+          "Disminución del murmullo vesicular",
+          "RX: hiperinsuflación"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cesación tabágica",
+            "Oxigenoterapia si SpO2 <88%",
+            "Rehabilitación pulmonar"
+          ],
+          "farmacologico": [
+            "Broncodilatador: Tiotrópio 18mcg 1x/día",
+            "Si exacerbações: añadir corticoide inhalador"
+          ]
+        },
+        "redFlags": [
+          "Insuficiencia respiratoria",
+          "Neumotórax",
+          "Pérdida ponderal importante"
+        ]
+      },
+      "medicamentos": [
+        "tiotropio"
+      ],
+      "protocolos": [
+        "dpoc"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "tosse-cronica",
+      "titulo": "Tosse crónica",
+      "sinonimos": [
+        "Tosse persistente"
+      ],
+      "ciap2": [
+        "R05"
+      ],
+      "cid10": [
+        "R05"
+      ],
+      "cid11": [
+        "MD11.1"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:12759",
+      "snomedCT": "49727002",
+      "meshId": "D003371",
+      "umlsCui": "C0010200",
+      "tags": [
+        "respiratorio",
+        "sintoma",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "Tosse persistente por >8 semanas. Principales causas: síndrome del goteo postnasal, asma, DRGE, uso de IECA.",
+        "criteriosDiagnosticos": [
+          "Tosse >8 semanas",
+          "Investigar causas: DRGE, asma, rinitis, IECA",
+          "Radiografía de tórax normal",
+          "Exclusión de otras causas"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Tratar causa subyacente",
+            "Suspender IECA si uso reciente",
+            "Evitar irritantes"
+          ],
+          "farmacologico": [
+            "Si DRGE: IBP",
+            "Si asma: Broncodilatadores + Corticosteroides inhalados",
+            "Si rinitis: Antihistamínicos + Corticosteroides nasales",
+            "Codeína o Dextrometorfano solo a corto plazo si es necesario"
+          ]
+        },
+        "redFlags": [
+          "Hemorragia",
+          "Pérdida ponderal",
+          "Fiebre",
+          "Adenomegalia",
+          "Tabaquismo",
+          "Edad >50 años"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

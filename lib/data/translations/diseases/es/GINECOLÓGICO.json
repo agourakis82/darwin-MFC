@@ -1,0 +1,77 @@
+{
+  "locale": "es",
+  "category": "GINECOLÓGICO",
+  "generatedAt": "2025-12-27T14:59:53.956Z",
+  "count": 1,
+  "diseases": [
+    {
+      "id": "endometriose",
+      "titulo": "Endometriosis",
+      "sinonimos": [
+        "Endometrioma"
+      ],
+      "ciap2": [
+        "X99"
+      ],
+      "cid10": [
+        "N80"
+      ],
+      "cid11": [
+        "GA10"
+      ],
+      "doid": "DOID:289",
+      "snomedCT": "129103003",
+      "meshId": "D004715",
+      "umlsCui": "C0014175",
+      "categoria": "GINECOLÓGICO",
+      "quickView": {
+        "definicao": "Presencia de tejido endometrial fuera del útero (ovarios, peritoneo, septo rectovaginal). Afecta al 10% de las mujeres en edad fértil.",
+        "criteriosDiagnosticos": [
+          "Dismenorrea progresiva e incapacitante",
+          "Dispareunia profunda",
+          "Dolor pélvico crónico",
+          "Infertilidad",
+          "Laparoscopia con biopsia: estándar de oro"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Actividad física regular",
+            "Calor local para alivio del dolor"
+          ],
+          "farmacologico": [
+            "AINEs para el dolor",
+            "Anticonceptivo hormonal combinado continuo",
+            "Progestágenos: dienogest 2mg/día, DIU-LNG",
+            "Análogos de GnRH (casos graves): uso temporal"
+          ]
+        },
+        "redFlags": [
+          "Masa pélvica grande",
+          "Obstrucción intestinal/ureteral",
+          "Infertilidad refractaria"
+        ],
+        "metasTerapeuticas": [
+          "Control del dolor",
+          "Preservación de la fertilidad",
+          "Calidad de vida"
+        ],
+        "examesIniciais": [
+          "Ultrasonido transvaginal",
+          "RM pélvica (mapeo)",
+          "CA-125 (inespecífico)"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "dienogest",
+        "ibuprofeno"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "dolor pélvico",
+        "infertilidad",
+        "hormona"
+      ]
+    }
+  ]
+}

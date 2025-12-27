@@ -1,0 +1,741 @@
+{
+  "locale": "es",
+  "category": "neurologico",
+  "generatedAt": "2025-12-27T14:59:53.955Z",
+  "count": 4,
+  "diseases": [
+    {
+      "id": "doenca-parkinson",
+      "titulo": "Enfermedad de Parkinson",
+      "ciap2": [
+        "N87"
+      ],
+      "cid10": [
+        "G20"
+      ],
+      "cid11": [
+        "8A00.0"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:14330",
+      "snomedCT": "49049000",
+      "meshId": "D010300",
+      "umlsCui": "C0030567",
+      "hpo": [
+        "HP:0001300",
+        "HP:0001260",
+        "HP:0002072"
+      ],
+      "tags": [
+        "neurologico",
+        "crónica",
+        "movimiento"
+      ],
+      "quickView": {
+        "definicao": "Enfermedad neurodegenerativa. Pérdida de neuronas dopaminérgicas de la sustancia negra. Temblor, rigidez, bradicinesia.",
+        "criteriosDiagnosticos": [
+          "Temblor en reposo",
+          "Rigidez",
+          "Bradicinesia",
+          "Inestabilidad postural",
+          "Respuesta a la levodopa"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Fisioterapia",
+            "Logopedia",
+            "Terapia ocupacional",
+            "Ejercicios"
+          ],
+          "farmacologico": [
+            "Levodopa/Carbidopa",
+            "Agonistas dopaminérgicos: Pramipexol o Ropinirol",
+            "Inhibidores de la MAO-B"
+          ]
+        },
+        "redFlags": [
+          "Demencia",
+          "Alucinaciones",
+          "Fenómeno ON-OFF",
+          "Distonía"
+        ]
+      },
+      "medicamentos": [
+        "levodopa"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "demencia-vascular",
+      "titulo": "Demencia Vascular",
+      "ciap2": [
+        "P70"
+      ],
+      "cid10": [
+        "F01"
+      ],
+      "cid11": [
+        "6D80"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:6713",
+      "snomedCT": "52448006",
+      "meshId": "D003712",
+      "umlsCui": "C0011269",
+      "hpo": [
+        "HP:0000726",
+        "HP:0001263"
+      ],
+      "tags": [
+        "neurologico",
+        "cronica",
+        "cognitiva"
+      ],
+      "quickView": {
+        "definicao": "Demencia por lesiones vasculares cerebrales. Puede ser isquémica o hemorrágica. Degradación cognitiva multifocal.",
+        "criteriosDiagnosticos": [
+          "Demencia",
+          "Evidencias de enfermedad cerebrovascular",
+          "Relación temporal entre evento vascular y demencia",
+          "Imagen: lesiones vasculares"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Prevención secundaria de IAC",
+            "Control de factores de riesgo",
+            "Rehabilitación cognitiva"
+          ],
+          "farmacologico": [
+            "Inhibidores de colinesterasa: Donepezila o Rivastigmina",
+            "Memantina"
+          ]
+        },
+        "redFlags": [
+          "Evolución rápida",
+          "Síntomas focales",
+          "IAC recurrente"
+        ]
+      },
+      "medicamentos": [
+        "donepezila",
+        "rivastigmina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "avc-isquemico",
+      "titulo": "Accidente Vascular Cerebral Isquémico",
+      "sinonimos": [
+        "AVC",
+        "AVCi",
+        "Ictus isquémico",
+        "Infarto cerebral"
+      ],
+      "doid": "DOID:3455",
+      "snomedCT": "422504002",
+      "meshId": "D002544",
+      "umlsCui": "C0007785",
+      "ciap2": [
+        "K90"
+      ],
+      "cid10": [
+        "I63",
+        "I63.0",
+        "I63.1",
+        "I63.2",
+        "I63.3",
+        "I63.4",
+        "I63.5",
+        "I63.8",
+        "I63.9"
+      ],
+      "cid11": [
+        "8B11"
+      ],
+      "categoria": "neurologico",
+      "quickView": {
+        "definicao": "Déficit neurológico focal de inicio súbito causado por isquemia cerebral. Emergencia neurológica con ventana terapéutica crítica para trombólisis (4,5h) y trombectomía mecánica (hasta 24h en casos seleccionados).",
+        "criteriosDiagnosticos": [
+          "Déficit neurológico focal de inicio súbito",
+          "FAST: Face (asimetría), Arm (debilidad), Speech (alteración del habla), Time",
+          "NIHSS para cuantificar gravedad",
+          "TC de cráneo: excluye hemorragia (puede ser normal en las primeras horas)",
+          "Angio-TC/RM: identifica oclusión de gran vaso",
+          "Tiempo de inicio de los síntomas es crítico"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ABC - estabilización clínica",
+            "Cabeceira a 0° (sin hipertensión intracraneana)",
+            "Acceso venoso periférico (evitar subclavia)",
+            "Monitorización continua",
+            "Glicemia capilar"
+          ],
+          "farmacologico": [
+            "TROMBÓLISIS IV (si <4,5h del inicio):",
+            "Alteplase (rtPA) 0,9mg/kg (máx 90mg) - 10% en bolus, 90% en 1h",
+            "O Tenecteplase 0,25mg/kg en bolus único",
+            "",
+            "NO REDUCIR PA SI <220/120 (candidato a trombólisis: <185/110)",
+            "AAS 100-300mg después de 24h de la trombólisis",
+            "Estatina de alta potencia"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Trombólisis en <60min de la llegada (door-to-needle)",
+          "Trombectomía en <90min si indicada",
+          "Prevenir transformación hemorrágica",
+          "Rehabilitación precoz"
+        ],
+        "examesIniciais": [
+          "TC de cráneo sin contraste (excluye hemorragia)",
+          "Glicemia capilar",
+          "ECG 12 derivaciones",
+          "Hemograma, TP/INR, plaquetas",
+          "Función renal, electrolitos",
+          "Angio-TC (si oclusión de gran vaso)"
+        ],
+        "redFlags": [
+          "PA >185/110 en candidato a trombólisis",
+          "Glicemia <50 o >400 mg/dL",
+          "INR >1,7 o uso de anticoagulante",
+          "Plaquetas <100.000",
+          "Sangrado activo",
+          "AVC/TCE grave en los últimos 3 meses",
+          "Cirugía de gran porte en los últimos 14 días"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2ª causa de muerte en Brasil",
+          "incidencia": "~400.000 casos/año en Brasil",
+          "mortalidad": "30% en 30 días, principal causa de incapacidad",
+          "faixaEtaria": "Aumenta con edad, >55 años mayor riesgo",
+          "fatoresRisco": [
+            "Hipertensión arterial (principal)",
+            "Fibrilación auricular",
+            "Diabetes mellitus",
+            "Dislipidemia",
+            "Tabaquismo",
+            "Cardiopatía estructural",
+            "AVC/AIT previo",
+            "Estenosis carotídea"
+          ],
+          "citations": [
+            {
+              "refId": "sbn-avc-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Oclusión arterial por trombo (cardioembólico, aterotrombico o lacunar) llevando a isquemia cerebral. Existe una área de penumbra potencialmente salvable alrededor del core isquémico. La ventana terapéutica busca salvar esta penumbra.",
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Hemiparesia/hemiplejía",
+            "Hemi-hipoestesia",
+            "Afasia (motora, sensorial, mixta)",
+            "Disartria",
+            "Hemianopsia",
+            "Ataxia",
+            "Vertigo",
+            "Diplopía",
+            "Alteración del nivel de conciencia"
+          ],
+          "sinaisExameFisico": [
+            "Déficit motor focal",
+            "Desviación de la comisura",
+            "Signo de Babinski",
+            "Alteración de reflejos",
+            "Negligencia hemiespacial",
+            "Soplo carotídeo"
+          ],
+          "formasClinicas": [
+            "AVC de territorio carotídeo (circulación anterior)",
+            "AVC de territorio vertebrobasilar (circulación posterior)",
+            "AVC lacunar (pequeños vasos)",
+            "AIT (síntomas <24h con neuroimagen normal)"
+          ],
+          "citations": [
+            {
+              "refId": "sbn-avc-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Déficit neurológico focal súbito",
+            "TC sin hemorragia",
+            "Exclusión de mimetizadores (hipoglucemia, crisis epiléptica)"
+          ],
+          "diagnosticoDiferencial": [
+            "AVC hemorrágico",
+            "Hipoglucemia",
+            "Crisis epiléptica post-ictal (parálisis de Todd)",
+            "Migraña con aura",
+            "Tumor cerebral",
+            "Encefalitis",
+            "Trastorno conversivo"
+          ],
+          "examesLaboratoriais": [
+            "Glicemia (obligatorio antes de trombólisis)",
+            "Hemograma completo",
+            "TP/INR, TTPa",
+            "Función renal, electrolitos",
+            "Troponina (si se sospecha cardiopatía)"
+          ],
+          "examesImagem": [
+            "TC de cráneo sin contraste",
+            "Angio-TC de vasos cervicales e intracraneanos",
+            "RM de cráneo (difusión)",
+            "Ecocardiograma (búsqueda de fuente embólica)",
+            "Doppler de carótidas"
+          ],
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "tratamiento": {
+          "objetivos": [
+            "Recanalización arterial",
+            "Minimizar área de infarto",
+            "Prevenir complicaciones",
+            "Identificar etiología para prevención secundaria"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Monitorización neurológica intensiva",
+              "Control de temperatura (evitar hipertermia)",
+              "Cabeceira a 0-15°",
+              "Fisioterapia/fonoaudiología precoz",
+              "Prevención de broncoaspiración"
+            ],
+            "citations": [
+              {
+                "refId": "sbn-avc-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Trombólítico",
+                "medicamentos": [
+                  "Alteplase 0,9mg/kg",
+                  "Tenecteplase 0,25mg/kg"
+                ],
+                "posologia": "Dosis única",
+                "observacoes": "Ventana <4,5h"
+              },
+              {
+                "classe": "Antiagregante",
+                "medicamentos": [
+                  "AAS 100-300mg/día"
+                ],
+                "posologia": "Después de 24h de la trombólisis"
+              },
+              {
+                "classe": "Estatina",
+                "medicamentos": [
+                  "Atorvastatina 40-80mg",
+                  "Rosuvastatina 20-40mg"
+                ],
+                "posologia": "1x/día"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Anticoagulación",
+                "medicamentos": [
+                  "Rivaroxabana",
+                  "Apixabana",
+                  "Varfarina"
+                ],
+                "observacoes": "Si FA, después de 3-14 días dependiendo del tamaño del AVC"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "aha-stroke-2019"
+              }
+            ]
+          },
+          "duracao": "Prevención secundaria vitalicia"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Alta de la unidad de AVC en 5-7 días, después mensual por 3 meses",
+          "examesControle": [
+            "TC/RM de control",
+            "Ecocardiograma",
+            "Holter 24-72h",
+            "Doppler carotídeo"
+          ],
+          "metasTerapeuticas": [
+            "PA <130/80 mmHg",
+            "LDL <70 mg/dL (o <55 si muy alto riesgo)",
+            "HbA1c <7%",
+            "INR 2-3 si varfarina",
+            "Rehabilitación neurológica"
+          ],
+          "criteriosEncaminhamento": [
+            "Todo AVC agudo: Unidad de AVC/Neurología",
+            "Estenosis carotídea >50% sintomática: Cirugía vascular",
+            "Joven sin factor de riesgo: investigación de trombofilias"
+          ],
+          "citations": [
+            {
+              "refId": "sbn-avc-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Control de la HAS",
+            "Anticoagulación en FA (CHA2DS2-VASc)",
+            "Estatina en alto riesgo",
+            "Cesación del tabaquismo"
+          ],
+          "secundaria": [
+            "Antiagregación o anticoagulación",
+            "Estatina de alta potencia",
+            "Control riguroso de factores de riesgo",
+            "Revascularización carotídea si indicada"
+          ],
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "codigo-avc",
+        "trombolise-avc",
+        "investigacao-avc-jovem"
+      ],
+      "medicamentos": [
+        "alteplase",
+        "aas",
+        "clopidogrel",
+        "atorvastatina",
+        "rivaroxabana"
+      ],
+      "calculadoras": [
+        "nihss",
+        "abcd2",
+        "chads2-vasc"
+      ],
+      "citations": [
+        {
+          "refId": "sbn-avc-2022"
+        },
+        {
+          "refId": "aha-stroke-2019"
+        },
+        {
+          "refId": "eso-stroke-2021"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "estado-de-mal-epileptico",
+      "titulo": "Estado de Mal Epiléptico",
+      "sinonimos": [
+        "Status epilepticus",
+        "EME",
+        "Crise epiléptica prolongada",
+        "Crise refratária"
+      ],
+      "doid": "DOID:9188",
+      "snomedCT": "26184008",
+      "meshId": "D013226",
+      "umlsCui": "C0038220",
+      "ciap2": [
+        "N88"
+      ],
+      "cid10": [
+        "G41",
+        "G41.0",
+        "G41.1",
+        "G41.2",
+        "G41.9"
+      ],
+      "cid11": [
+        "8A62"
+      ],
+      "categoria": "neurologico",
+      "quickView": {
+        "definicao": "Atividade epiléptica contínua por >5 minutos ou crises recorrentes sem recuperação da consciência entre elas. Emergência neurológica com risco de dano cerebral permanente e morte se não tratada rapidamente.",
+        "criteriosDiagnosticos": [
+          "Crise epiléptica por ≥5 minutos (definição operacional)",
+          "Duas ou mais crises sem recuperação da consciência",
+          "Definição clássica: >30 min (risco de sequela)",
+          "EME não convulsivo: alteração de consciência + atividade epileptiforme no EEG",
+          "Identificar possível causa (metabólica, lesional, abstinência)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ABC - via aérea com cânula orofaríngea (não forçar)",
+            "O2 suplementar",
+            "Posição de recuperação (lateral)",
+            "Acesso venoso (ou intraósseo)",
+            "Glicemia capilar IMEDIATA",
+            "Monitorização contínua"
+          ],
+          "farmacologico": [
+            "FASE 1 (0-5 min): Benzodiazepínico",
+            "Diazepam 10mg IV lento (0,2mg/kg, máx 20mg) OU",
+            "Midazolam 10mg IM (se sem acesso venoso) OU",
+            "Lorazepam 4mg IV (se disponível)",
+            "",
+            "FASE 2 (5-20 min): Se não responder",
+            "Fenitoína 20mg/kg IV (máx 50mg/min) OU",
+            "Valproato 40mg/kg IV (máx 10mg/kg/min) OU",
+            "Levetiracetam 60mg/kg IV",
+            "",
+            "FASE 3 (>20 min): EME refratário",
+            "Indução anestésica: Propofol, Midazolam ou Tiopental em BIC",
+            "IOT e ventilação mecânica"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Cessação da atividade epiléptica",
+          "Proteção neurológica",
+          "Estabilização hemodinâmica",
+          "Identificação da causa"
+        ],
+        "examesIniciais": [
+          "Glicemia capilar (OBRIGATÓRIO)",
+          "Hemograma, eletrólitos (Na, K, Ca, Mg)",
+          "Gasometria arterial",
+          "Ureia, creatinina",
+          "Níveis de antiepilépticos (se uso prévio)",
+          "Screening toxicológico",
+          "TC de crânio",
+          "Punção lombar (se suspeita de infecção, após imagem)"
+        ],
+        "redFlags": [
+          "EME >30 minutos (dano neurológico)",
+          "EME refratário (não responde a 2 FAEs)",
+          "EME super-refratário (>24h em anestesia)",
+          "Causa estrutural aguda (AVC, tumor)",
+          "Febre (encefalite)",
+          "Hiponatremia grave",
+          "Acidose metabólica persistente"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "50-150 casos/100.000 habitantes/ano",
+          "incidencia": "Mortalidade de 20-30% no EME refratário",
+          "faixaEtaria": "Bimodal: crianças pequenas e idosos",
+          "fatoresRisco": [
+            "Epilepsia prévia (má aderência, redução de FAE)",
+            "AVC agudo ou sequela",
+            "Infecção do SNC",
+            "Tumor cerebral",
+            "Distúrbios metabólicos (hipoglicemia, hiponatremia)",
+            "Abstinência de álcool ou benzodiazepínicos",
+            "Intoxicação"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-status-2015"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Falha dos mecanismos inibitórios (GABAérgicos) em encerrar a atividade ictal, com hiperatividade excitatória (glutamatérgica) mantida. Leva a excitotoxicidade, dano neuronal, edema cerebral e potencial falência respiratória/cardiovascular.",
+          "citations": [
+            {
+              "refId": "ilae-status-2015"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Movimentos tônico-clônicos generalizados",
+            "Perda de consciência",
+            "Salivação excessiva",
+            "Cianose",
+            "Incontinência",
+            "Confusão pós-ictal prolongada"
+          ],
+          "sinaisExameFisico": [
+            "Movimentos clônicos",
+            "Hipertonia",
+            "Desvio ocular",
+            "Taquicardia, hipertensão",
+            "Febre (pela atividade muscular)",
+            "Sinais focais pós-ictais"
+          ],
+          "formasClinicas": [
+            "EME convulsivo generalizado",
+            "EME focal com consciência preservada",
+            "EME focal com comprometimento da consciência",
+            "EME não convulsivo (suspeitar em alteração de consciência prolongada)",
+            "EME sutil (movimentos mínimos, EEG epileptiforme)"
+          ],
+          "citations": [
+            {
+              "refId": "lbn-eme-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Critério temporal: ≥5 minutos de crise ou crises recorrentes sem recuperação",
+            "EEG para EME não convulsivo",
+            "Identificação da etiologia"
+          ],
+          "diagnosticoDiferencial": [
+            "Síncope convulsiva",
+            "Crises psicogênicas não epilépticas",
+            "Rigidez de descerebração",
+            "Movimento involuntário (distonia, coreia)",
+            "Intoxicação",
+            "Hipoglicemia"
+          ],
+          "examesLaboratoriais": [
+            "Glicemia",
+            "Eletrólitos (Na, K, Ca, Mg)",
+            "Gasometria arterial",
+            "Função renal e hepática",
+            "Níveis de antiepilépticos",
+            "Lactato"
+          ],
+          "examesImagem": [
+            "TC de crânio (urgente)",
+            "RM de crânio (se TC normal e causa não identificada)",
+            "EEG contínuo (UTI)"
+          ],
+          "outrosExames": [
+            "Punção lombar (se suspeita de neuroinfecção, após imagem)",
+            "Anticorpos antineuronais (encefalite autoimune)"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-status-2015"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Cessar a atividade epiléptica rapidamente",
+            "Prevenir dano neuronal",
+            "Tratar a causa subjacente",
+            "Prevenir recorrência"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Via aérea pérvia",
+              "Oxigenoterapia",
+              "Intubação se necessário",
+              "Monitorização contínua",
+              "Correção de distúrbios metabólicos"
+            ],
+            "citations": [
+              {
+                "refId": "lbn-eme-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Benzodiazepínico",
+                "medicamentos": [
+                  "Diazepam 10mg IV",
+                  "Midazolam 10mg IM",
+                  "Lorazepam 4mg IV"
+                ],
+                "posologia": "Dose única, repetir 1x se necessário",
+                "observacoes": "Primeira linha, eficaz em ~65%"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Antiepiléptico IV",
+                "medicamentos": [
+                  "Fenitoína 20mg/kg IV",
+                  "Valproato 40mg/kg IV",
+                  "Levetiracetam 60mg/kg IV"
+                ],
+                "observacoes": "Se BZD falhar"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "EME refratário",
+                "conduta": "Anestésicos: Midazolam, Propofol ou Tiopental em BIC; IOT + VM; EEG contínuo"
+              },
+              {
+                "situacao": "Hipoglicemia",
+                "conduta": "Glicose 50% 50mL IV + Tiamina 100mg"
+              },
+              {
+                "situacao": "Abstinência alcoólica",
+                "conduta": "Benzodiazepínicos em doses altas + Tiamina"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ilae-status-2015"
+              }
+            ]
+          },
+          "duracao": "Manutenção com FAE conforme etiologia"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "UTI até controle; depois neurologia ambulatorial",
+          "metasTerapeuticas": [
+            "Ausência de crises",
+            "Recuperação neurológica",
+            "Controle do FAE de manutenção"
+          ],
+          "criteriosEncaminhamento": [
+            "Todo EME: Emergência → UTI",
+            "Neurologia para investigação",
+            "Epileptologista se refratário"
+          ],
+          "citations": [
+            {
+              "refId": "lbn-eme-2020"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "eme-emergencia",
+        "crise-epileptica-aguda"
+      ],
+      "medicamentos": [
+        "diazepam",
+        "midazolam",
+        "fenitoina",
+        "valproato",
+        "levetiracetam"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ilae-status-2015"
+        },
+        {
+          "refId": "lbn-eme-2020"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

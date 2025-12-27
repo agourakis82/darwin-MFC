@@ -1,0 +1,553 @@
+{
+  "locale": "es",
+  "category": "dermatologico",
+  "generatedAt": "2025-12-27T14:59:53.954Z",
+  "count": 10,
+  "diseases": [
+    {
+      "id": "dermatite-atopica",
+      "titulo": "Dermatitis Atópica",
+      "sinonimos": [
+        "Eczema atópico"
+      ],
+      "ciap2": [
+        "S87"
+      ],
+      "cid10": [
+        "L20"
+      ],
+      "cid11": [
+        "EA80"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:3310",
+      "snomedCT": "24079001",
+      "meshId": "D003876",
+      "umlsCui": "C0011603",
+      "hpo": [
+        "HP:0000967",
+        "HP:0000962"
+      ],
+      "tags": [
+        "dermatologico",
+        "alérgica",
+        "crónica"
+      ],
+      "quickView": {
+        "definicao": "Dermatitis crónica recidivante. Prurito intenso, lesiones eczematósas. Comúnmente asociada a asma y rinitis alérgica.",
+        "criteriosDiagnosticos": [
+          "Prurito",
+          "Morfología y distribución típica",
+          "Cronificación",
+          "Historia personal/familiar de atopia"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Emolientes abundantes",
+            "Evitar irritantes",
+            "Baños tibios",
+            "Hidratación"
+          ],
+          "farmacologico": [
+            "Corticosteroides tópicos",
+            "Inhibidores de calcineurina tópicos",
+            "Antihistamínicos para prurito"
+          ]
+        },
+        "redFlags": [
+          "Infección secundaria",
+          "Eritroderma",
+          "Impetiginización"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "psoriase",
+      "titulo": "Psoriasis",
+      "ciap2": [
+        "S91"
+      ],
+      "cid10": [
+        "L40"
+      ],
+      "cid11": [
+        "EA90"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:8893",
+      "snomedCT": "9014002",
+      "meshId": "D011565",
+      "umlsCui": "C0033860",
+      "hpo": [
+        "HP:0003765",
+        "HP:0003766"
+      ],
+      "tags": [
+        "dermatologico",
+        "autoinmune",
+        "crónica"
+      ],
+      "quickView": {
+        "definicao": "Enfermedad inflamatoria crónica de la piel. Placas eritematosas con escamas plateadas. Puede presentar artritis psoriásica.",
+        "criteriosDiagnosticos": [
+          "Placas eritematosas con escamas",
+          "Localización típica (codos, rodillas, cuero cabelludo)",
+          "Histopatología si es necesario"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Emolientes",
+            "Fototerapia",
+            "Evitar factores desencadenantes"
+          ],
+          "farmacologico": [
+            "Corticosteroides tópicos",
+            "Análogos de la vitamina D tópicos",
+            "Sistémico si extenso: Metotrexato o Biológicos"
+          ]
+        },
+        "redFlags": [
+          "Eritroderma",
+          "Pústulas",
+          "Artritis psoriásica",
+          "Infección secundaria"
+        ]
+      },
+      "medicamentos": [
+        "metotrexato"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "urticaria-cronica",
+      "titulo": "Urticaria Crónica",
+      "ciap2": [
+        "S99"
+      ],
+      "cid10": [
+        "L50"
+      ],
+      "cid11": [
+        "EB01"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:9119",
+      "snomedCT": "37796009",
+      "meshId": "D014581",
+      "umlsCui": "C0042109",
+      "tags": [
+        "dermatologico",
+        "cronica",
+        "alergica"
+      ],
+      "quickView": {
+        "definicao": "Urticaria persistente >6 semanas. Generalmente idiopática o autoinmune.",
+        "criteriosDiagnosticos": [
+          "Pápulas eritematosas pruriginosas",
+          ">6 semanas de duración",
+          "Angioedema puede estar presente"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Evitar desencadenantes identificados",
+            "Evitar AAS/AINES si están relacionados"
+          ],
+          "farmacologico": [
+            "Antihistamínico H1: Cetirizina 10mg 1x/día",
+            "Si no responde: aumentar dosis o añadir H2"
+          ]
+        },
+        "redFlags": [
+          "Angioedema de vías aéreas",
+          "Anafilaxia",
+          "Síntomas sistémicos"
+        ]
+      },
+      "medicamentos": [
+        "cetirizina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dermatite-atopica-pediatrica",
+      "titulo": "Dermatitis Atópica",
+      "ciap2": [
+        "S87"
+      ],
+      "cid10": [
+        "L20"
+      ],
+      "cid11": [
+        "EA80"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:3310",
+      "snomedCT": "24079001",
+      "meshId": "D003876",
+      "umlsCui": "C0011615",
+      "quickView": {
+        "definicao": "Dermatosis inflamatoria crónica pruriginosa. Inicio generalmente <5 años. Forma parte de la marcha atópica (dermatitis → rinitis → asma).",
+        "criteriosDiagnosticos": [
+          "Hanifin-Rajka: prurito + ≥3 criterios",
+          "Morfología típica para la edad",
+          "Lactantes: cara y superficies extensoras",
+          "Mayores: flexuras (fossas)",
+          "Curso crónico/recidivante"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hidratación intensa (emolientes 2-3 veces al día)",
+            "Baño corto, agua tibia",
+            "Evitar gatillos",
+            "Cortar uñas"
+          ],
+          "farmacologico": [
+            "Corticoide tópico de baja potencia (hidrocortisona)",
+            " Crisis: corticoide tópico de potencia media a corto plazo",
+            "Inhibidor de calcineurina (>2 años)"
+          ]
+        },
+        "redFlags": [
+          "Infección secundaria (impétigo)",
+          "Eczema herpético",
+          "Eritrodermia",
+          "Refractariedad al tratamiento"
+        ]
+      },
+      "medicamentos": [
+        "hidrocortisona-topica"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "acne-vulgar",
+      "titulo": "Acne vulgar",
+      "sinonimos": [
+        "Acne común"
+      ],
+      "ciap2": [
+        "S88"
+      ],
+      "cid10": [
+        "L70"
+      ],
+      "cid11": [
+        "ED80"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:654",
+      "snomedCT": "89765004",
+      "meshId": "D000152",
+      "umlsCui": "C0001053",
+      "hpo": [
+        "HP:0001061"
+      ],
+      "tags": [
+        "dermatologico",
+        "común",
+        "adolescencia"
+      ],
+      "quickView": {
+        "definicao": "Dermatosis inflamatoria crónica del folículo pilossebáceo. Común en adolescentes. Lesiones: comedones, pápulas, pústulas, nódulos.",
+        "criteriosDiagnosticos": [
+          "Lesiones típicas: comedones, pápulas, pústulas, nódulos",
+          "Localización: cara, tórax, dorso",
+          "Edad: principalmente adolescentes/adultos jóvenes"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Higiene adecuada",
+            "Evitar espremer lesiones",
+            "Protector solar no comedogénico",
+            "Dieta: reducir azúcar/lácteos puede ayudar"
+          ],
+          "farmacologico": [
+            "Leve: Peróxido de benzoíla tópico 2,5-10%",
+            "Moderada: Peróxido de benzoíla + Retinoides tópicos",
+            "Severa: Doxiciclina o Minociclina oral + Tretinoína tópica",
+            "Mujeres: Anticonceptivo oral combinado si es indicado"
+          ]
+        },
+        "redFlags": [
+          "Acne fulminante",
+          "Acne conglobata",
+          "Cicatrices extensas",
+          "Resistente al tratamiento"
+        ]
+      },
+      "medicamentos": [
+        "doxiciclina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "impetigo",
+      "titulo": "Impétigo",
+      "sinonimos": [
+        "Piodermia superficial"
+      ],
+      "ciap2": [
+        "S72"
+      ],
+      "cid10": [
+        "L01"
+      ],
+      "cid11": [
+        "EA40"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:8406",
+      "snomedCT": "48277006",
+      "meshId": "D007169",
+      "umlsCui": "C0021099",
+      "tags": [
+        "dermatologico",
+        "infecciosa",
+        "bacteriana",
+        "pediatrica"
+      ],
+      "quickView": {
+        "definicao": "Infección cutánea superficial bacteriana. Causas: S. aureus, S. pyogenes. Lesiones: vesículas/pústulas que evolucionan a costras melicéricas.",
+        "criteriosDiagnosticos": [
+          "Lesiones vesiculares/pustulares",
+          "Evolucionan a costras melicéricas",
+          "Localización: cara, extremidades",
+          "Más común en niños"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Higiene local",
+            "Remover costras",
+            "Evitar contacto"
+          ],
+          "farmacologico": [
+            "Tópico: Mupirocina 2% 3 veces al día por 7-10 días",
+            "O Ácido fusídico tópico",
+            "Si extenso: Cefalexina oral 25-50mg/kg/día por 7 días",
+            "O Amoxicilina-clavulanato"
+          ]
+        },
+        "redFlags": [
+          "Celulitis",
+          "Erisipela",
+          "Linfangitis",
+          "Glomerulonefritis postestreptocócica"
+        ]
+      },
+      "medicamentos": [
+        "cefalexina",
+        "amoxicilina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dermatite-contato",
+      "titulo": "Dermatitis de Contacto",
+      "ciap2": [
+        "S88"
+      ],
+      "cid10": [
+        "L25"
+      ],
+      "cid11": [
+        "EA80.1"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:13360",
+      "snomedCT": "40275004",
+      "meshId": "D017449",
+      "umlsCui": "C0011606",
+      "quickView": {
+        "definicao": "Erupción cutánea causada por contacto directo con irritante o alérgeno. Irritativa (80%) vs alérgica (20%).",
+        "criteriosDiagnosticos": [
+          "Eritema localizado",
+          "Prurito",
+          "Vesículas/bolhas (alérgica)",
+          "Historia de exposición",
+          "Distribución compatible"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Identificar y evitar agente causador",
+            "Compresas frías",
+            "Hidratación cutánea"
+          ],
+          "farmacologico": [
+            "Corticoide tópico: Hidrocortisona 1% (rostro) o Betametasona (cuerpo) 2 veces al día hasta la resolución",
+            "Antihistamínico oral si prurito intenso"
+          ]
+        },
+        "redFlags": [
+          "Superinfección",
+          "Eczema generalizado",
+          "Anafilaxia"
+        ]
+      },
+      "medicamentos": [
+        "hidrocortisona",
+        "betametasona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "urticaria",
+      "titulo": "Urticaria",
+      "ciap2": [
+        "S97"
+      ],
+      "cid10": [
+        "L50"
+      ],
+      "cid11": [
+        "EB01"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:6945",
+      "snomedCT": "42702005",
+      "meshId": "D014581",
+      "umlsCui": "C0020538",
+      "quickView": {
+        "definicao": "Erupción cutánea caracterizada por pápulas/placas eritematosas pruriginosas transitórias (<24h). Aguda (<6 semanas) vs crónica.",
+        "criteriosDiagnosticos": [
+          "Pápulas/placas eritematosas",
+          "Prurido intenso",
+          "Lesiones evanescentes (<24h)",
+          "Angioedema puede estar presente"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Evitar desencadeantes identificados",
+            "Compressas frias"
+          ],
+          "farmacologico": [
+            "Antihistamínico H1 no sedante: Loratadina 10mg 1x/día o Cetirizina 10mg 1x/día",
+            "Si refractaria: aumentar dosis o añadir otro antihistamínico"
+          ]
+        },
+        "redFlags": [
+          "Angioedema de vías aéreas",
+          "Anafilaxia",
+          "Urticaria crónica con angioedema"
+        ]
+      },
+      "medicamentos": [
+        "loratadina",
+        "cetirizina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "vitiligo",
+      "titulo": "Vitiligo",
+      "ciap2": [
+        "S93"
+      ],
+      "cid10": [
+        "L80"
+      ],
+      "cid11": [
+        "ED70"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:9008",
+      "snomedCT": "9014002",
+      "meshId": "D014820",
+      "umlsCui": "C0042890",
+      "tags": [
+        "dermatologico",
+        "autoinmune"
+      ],
+      "quickView": {
+        "definicao": "Despigmentación de la piel por pérdida de melanocitos. Enfermedad autoinmune.",
+        "criteriosDiagnosticos": [
+          "Manchas hipocrómicas/acrómicas",
+          "Bordes bien delimitados",
+          "Lámpara de Wood positiva"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Protección solar",
+            "Maquillaje corrector"
+          ],
+          "farmacologico": [
+            "Corticosteroides tópicos",
+            "Inhibidores de calcineurina tópicos",
+            "Fototerapia"
+          ]
+        },
+        "redFlags": [
+          "Despigmentación rápida",
+          "Asociado a otras enfermedades autoinmunes"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dermatite-seborreica",
+      "titulo": "Dermatitis Seborreica",
+      "ciap2": [
+        "S89"
+      ],
+      "cid10": [
+        "L21"
+      ],
+      "cid11": [
+        "EA81"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:8725",
+      "snomedCT": "5960000",
+      "meshId": "D012628",
+      "umlsCui": "C0011616",
+      "hpo": [
+        "HP:0003765"
+      ],
+      "tags": [
+        "dermatologico",
+        "comun",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "Dermatitis crónica recurrente. Áreas seborreicas: cuero cabelludo, cara, tórax. Escamas amarillentas y aceitosas.",
+        "criteriosDiagnosticos": [
+          "Lesiones descamativas en áreas seborreicas",
+          "Prurito leve a moderado",
+          "Eritema",
+          "Distribución típica"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Champú anti-caspa",
+            "Higiene adecuada",
+            "Evitar productos oleosos"
+          ],
+          "farmacologico": [
+            "Cetoconazol tópico",
+            "Corticosteroides tópicos suaves",
+            "Ciclopirox tópico"
+          ]
+        },
+        "redFlags": [
+          "Lesiones extensas",
+          "Infección secundaria",
+          "Resistente al tratamiento"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

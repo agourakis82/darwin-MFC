@@ -1,0 +1,190 @@
+{
+  "locale": "es",
+  "category": "salud_mental",
+  "generatedAt": "2025-12-27T14:59:53.954Z",
+  "count": 1,
+  "diseases": [
+    {
+      "id": "transtorno-depressivo-maior",
+      "titulo": "Trastorno Depresivo Mayor (TDM)",
+      "categoria": "salud_mental",
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "cid11": [
+        "6A70",
+        "6A71"
+      ],
+      "ciap2": [
+        "P76"
+      ],
+      "snomedCT": "35489007",
+      "doid": "DOID:1470",
+      "meshId": "D003865",
+      "umlsCui": "C1269683",
+      "dsm5": {
+        "code": "296.33",
+        "codeAlternative": "F32",
+        "category": "Trastornos Depresivos",
+        "diagnosticCriteria": {
+          "code": "296.33",
+          "name": "Trastorno Depresivo Mayor",
+          "category": "Trastornos Depresivos",
+          "criteria": [
+            {
+              "text": "A. Cinco (o más) de los siguientes síntomas han estado presentes durante el mismo período de 2 semanas y representan un cambio del funcionamiento previo; al menos uno de los síntomas es (1) humor deprimido o (2) pérdida de interés o placer."
+            },
+            {
+              "letter": "1",
+              "text": "Humor deprimido la mayor parte del día, casi todos los días"
+            },
+            {
+              "letter": "2",
+              "text": "Disminución marcada del interés o placer en todas o casi todas las actividades"
+            },
+            {
+              "letter": "3",
+              "text": "Pérdida o ganancia significativa de peso (más del 5% del peso corporal en 1 mes)"
+            },
+            {
+              "letter": "4",
+              "text": "Insomnio o hipersomnia casi todos los días"
+            },
+            {
+              "letter": "5",
+              "text": "Agitación o retardo psicomotor casi todos los días"
+            },
+            {
+              "letter": "6",
+              "text": "Fatiga o pérdida de energía casi todos los días"
+            },
+            {
+              "letter": "7",
+              "text": "Sentimientos de inutilidad o culpa excesiva o inadecuada"
+            },
+            {
+              "letter": "8",
+              "text": "Capacidad disminuida para pensar o concentrarse, o indecisión"
+            },
+            {
+              "letter": "9",
+              "text": "Pensamientos recurrentes de muerte, ideación suicida"
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "Leve",
+              "Moderado",
+              "Grave",
+              "Con Características Psicóticas"
+            ],
+            "course": [
+              "Episodio Único",
+              "Recurrencia"
+            ],
+            "episode": [
+              "Con Características Melancólicas",
+              "Con Características Atípicas",
+              "Con Catatonía"
+            ],
+            "remission": [
+              "En Remisión Parcial",
+              "En Remisión Completa"
+            ]
+          },
+          "exclusions": [
+            "Inducido por Sustancias/Medicamentos",
+            "Debido a Otra Condición Médica"
+          ]
+        },
+        "specifiers": {
+          "severity": [
+            "Leve",
+            "Moderado",
+            "Grave",
+            "Con Características Psicóticas"
+          ],
+          "course": [
+            "Episodio Único",
+            "Recurrencia"
+          ],
+          "episode": [
+            "Con Características Melancólicas",
+            "Con Características Atípicas",
+            "Con Catatonía"
+          ],
+          "remission": [
+            "En Remisión Parcial",
+            "En Remisión Completa"
+          ],
+          "withAnxiousDistress": true,
+          "withMelancholicFeatures": true,
+          "withAtypicalFeatures": true,
+          "withPsychoticFeatures": true,
+          "withCatatonia": true,
+          "withPeripartumOnset": true,
+          "withSeasonalPattern": true
+        }
+      },
+      "quickView": {
+        "definicao": "Trastorno del estado de ánimo caracterizado por episodios de humor deprimido, pérdida de interés o placer, acompañados de otros síntomas cognitivos, neurovegetativos y psicomotores, que causan sufrimiento o deterioro significativo.",
+        "criteriosDiagnosticos": [
+          "Humor deprimido o pérdida de interés/placer",
+          "Al menos 5 síntomas por 2 semanas",
+          "Síntomas: peso, sueño, psicomotor, energía, cognición, culpa, ideación suicida",
+          "Deterioro significativo en el funcionamiento"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psicoterapia: TCC (terapia cognitivo-conductual) - estándar de oro",
+            "Psicoterapia: IPT (terapia interpersonal)",
+            "Activación conductual",
+            "Ejercicio físico regular"
+          ],
+          "farmacologico": [
+            "ISRS: Sertralina, Escitalopram, Fluoxetina (primera línea)",
+            "ISRN: Venlafaxina, Duloxetina",
+            "Antidepresivos tricíclicos: Amitriptilina (segunda línea)"
+          ]
+        },
+        "redFlags": [
+          "Ideación suicida activa",
+          "Intento de suicidio",
+          "Psicosis (alucinaciones/delirios)",
+          "Catatonía",
+          "Resistencia al tratamiento",
+          "TDM grave con respuesta insuficiente"
+        ],
+        "examesIniciais": [
+          "TSH, T4 libre (excluir hipotiroidismo)",
+          "Vitamina B12, ácido fólico",
+          "Hemograma completo",
+          "Escala PHQ-9 o HAM-D para evaluación"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "PHQ-9",
+          "description": "Patient Health Questionnaire-9: Escala de 9 ítems, puntuación 0-27. ≥10 indica depresión moderada a grave.",
+          "cutoff": "≥10",
+          "reference": "Kroenke et al., 2001"
+        },
+        {
+          "name": "HAM-D",
+          "description": "Hamilton Depression Rating Scale: Escala clínica, puntuación 0-52. ≥17 indica depresión moderada a grave.",
+          "cutoff": "≥17",
+          "reference": "Hamilton, 1960"
+        }
+      ],
+      "tags": [
+        "depresion",
+        "humor",
+        "isrs",
+        "tcc",
+        "dsm5",
+        "salud_mental"
+      ]
+    }
+  ]
+}

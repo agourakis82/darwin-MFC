@@ -1,0 +1,636 @@
+{
+  "locale": "es",
+  "category": "hematologico",
+  "generatedAt": "2025-12-27T14:59:53.955Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "anemia-ferropriva",
+      "titulo": "Anemia Ferropriva",
+      "sinonimos": [
+        "Anemia por deficiencia de hierro"
+      ],
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D50"
+      ],
+      "cid11": [
+        "3A00"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:2355",
+      "snomedCT": "399096004",
+      "meshId": "D000740",
+      "umlsCui": "C0002871",
+      "hpo": [
+        "HP:0001875",
+        "HP:0001892"
+      ],
+      "tags": [
+        "hematologico",
+        "anemia",
+        "deficiencia",
+        "comun"
+      ],
+      "quickView": {
+        "definicao": "Anemia por deficiencia de hierro. La causa más común de anemia. Caracterizada por microcitosis y hipocromia. Ferritina baja, transferrina elevada.",
+        "criteriosDiagnosticos": [
+          "Anemia microcítica hipocrómica",
+          "Ferritina baja",
+          "Transferrina/saturación de transferrina baja",
+          "Investigar causa: pérdida de sangre, mala absorción, deficiencia nutricional"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Dieta rica en hierro",
+            "Tratar causa subyacente (sangrado, mala absorción)",
+            "Evitar café/té con comidas"
+          ],
+          "farmacologico": [
+            "Sulfato ferroso 200mg (65mg de hierro elemental) 1-2x/día",
+            "O Ferro quelato",
+            "Asociar vitamina C puede mejorar la absorción",
+            "Tratamiento por 3-6 meses después de la normalización"
+          ]
+        },
+        "redFlags": [
+          "Sangrado digestivo",
+          "Pérdida de sangre persistente",
+          "No responde al tratamiento",
+          "Mala absorción"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anemia-megaloblastica",
+      "titulo": "Anemia megaloblástica",
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D51",
+        "D52"
+      ],
+      "cid11": [
+        "3A00",
+        "3A01"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:13636",
+      "snomedCT": "840580004",
+      "meshId": "D000749",
+      "umlsCui": "C0002878",
+      "hpo": [
+        "HP:0001875",
+        "HP:0002901"
+      ],
+      "tags": [
+        "hematologico",
+        "anemia",
+        "deficiencia"
+      ],
+      "quickView": {
+        "definicao": "Anemia por deficiencia de B12 o ácido fólico. Macrocitosis, megaloblastosis medular. Puede tener síntomas neurológicos (B12).",
+        "criteriosDiagnosticos": [
+          "Anemia macrocítica",
+          "B12 baja o ácido fólico bajo",
+          "Megaloblastosis medular",
+          "LDH elevado",
+          "Homocisteína elevada"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Tratar causa (déficit nutricional, mala absorción)",
+            "Dieta adecuada"
+          ],
+          "farmacologico": [
+            "B12: Cianocobalamina IM o oral",
+            "Ácido fólico: 5mg/día"
+          ]
+        },
+        "redFlags": [
+          "Síntomas neurológicos (B12)",
+          "Deficiencia combinada",
+          "Mala absorción"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "trombocitopenia",
+      "titulo": "Trombocitopenia",
+      "sinonimos": [
+        "Plaquetopenia",
+        "PTI",
+        "Púrpura trombocitopénica inmune"
+      ],
+      "doid": "DOID:1588",
+      "snomedCT": "302215000",
+      "meshId": "D013921",
+      "umlsCui": "C0040034",
+      "ciap2": [
+        "B83"
+      ],
+      "cid10": [
+        "D69.3",
+        "D69.6"
+      ],
+      "cid11": [
+        "3B64"
+      ],
+      "categoria": "hematologico",
+      "quickView": {
+        "definicao": "Reducción de la cuenta de plaquetas <150.000/µL. Puede ser leve y asintomática o grave con sangrado. Causas: destrucción inmune (PTI), consumo (CIVD, PTT), sequestro esplénico, producción disminuida.",
+        "criteriosDiagnosticos": [
+          "Plaquetas <150.000/µL (trombocitopenia)",
+          "Leve: 100.000-150.000/µL",
+          "Moderada: 50.000-100.000/µL",
+          "Grave: <50.000/µL",
+          "Muy grave: <20.000/µL (riesgo de sangrado espontáneo)",
+          "",
+          "PTI: Diagnóstico de exclusión (trombocitopenia aislada sin causa identificada)"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Evitar medicamentos que afectan las plaquetas (AAS, AINEs)",
+            "Evitar actividades con riesgo de trauma",
+            "Evitar procedimientos invasivos si plaquetas <50.000"
+          ],
+          "farmacologico": [
+            "PTI AGUDA (adulto con sangrado o <20.000-30.000):",
+            "Prednisona 1-2 mg/kg/día por 2-4 semanas, después desmame",
+            "O Dexametasona 40mg/día por 4 días (ciclos)",
+            "Inmunoglobulina IV 1g/kg x1-2 días (respuesta rápida)",
+            "",
+            "PTI CRÓNICA REFRACTARIA:",
+            "Agonistas de trombopoetina (Eltrombopag, Romiplostim)",
+            "Rituximabe",
+            "Esplenectomía"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Plaquetas >30.000/µL (seguro en la mayoría)",
+          "Plaquetas >50.000/µL para procedimientos",
+          "Plaquetas >100.000/µL para grandes cirugías",
+          "Ausencia de sangrado"
+        ],
+        "examesIniciais": [
+          "Hemograma completo (confirmar trombocitopenia aislada)",
+          "Esfregaço de sangre periférico (descartar pseudotrombocitopenia por aglutinación)",
+          "Coagulación (TP, TTPa)",
+          "Función hepática y renal",
+          "Serologías: VIH, VHC, VHB",
+          "TSH",
+          "Anticuerpos antiplaquetarios (no sensibles)",
+          "Mielograma si se sospecha de causa central"
+        ],
+        "redFlags": [
+          "Sangrado activo significativo",
+          "Plaquetas <10.000/µL (riesgo de sangrado intracraneano)",
+          "Anemia hemolítica microangiopática (esquizócitos): PTT/SHU - emergencia!",
+          "Panicitopenia (enfermedad medular)",
+          "Fiebre + trombocitopenia: sepsis, dengue, PTT",
+          "Embarazada con trombocitopenia (preclampsia, HELLP)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "PTI: 3-4/100.000 adultos",
+          "incidencia": "PTI más común en niños (post-viral)",
+          "faixaEtaria": "Niños: PTI aguda. Adultos: PTI crónica",
+          "fatoresRisco": [
+            "Infecciones virales recientes (niños)",
+            "Enfermedades autoinmunes (LEP)",
+            "VIH, VHC",
+            "Medicamentos (heparina, quinina, sulfas)",
+            "Embarazo",
+            "Hepatopatía (sequestro esplénico)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "PTI: Autoanticuerpos (IgG) contra glicoproteínas plaquetarias (GPIIb/IIIa, GPIb/IX) causan destrucción de plaquetas por el sistema reticuloendotelial (bazo). También hay inhibición de la megacariopoiesis. Otras causas: consumo (CIVD, PTT), sequestro esplénico, falencia medular.",
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Frecuentemente asintomática (hallazgo incidental)",
+            "Petequias y equimosis",
+            "Epistaxis",
+            "Gingivorragia",
+            "Menorragia",
+            "Sangrado GI o urinario (grave)"
+          ],
+          "sinaisExameFisico": [
+            "Petiquias (principalmente en MMII)",
+            "Equimosis",
+            "Púrpura",
+            "Sangrado mucoso",
+            "AUSENCIA de esplenomegalia (en PTI típica)"
+          ],
+          "formasClinicas": [
+            "PTI primaria (idiopática)",
+            "PTI secundaria (VIH, VHC, LEP, medicamentos)",
+            "PTI aguda (niños, post-viral)",
+            "PTI crónica (>12 meses)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Trombocitopenia aislada",
+            "Exclusión de otras causas",
+            "Esfregaço sin esquizócitos o blastos"
+          ],
+          "diagnosticoDiferencial": [
+            "Pseudotrombocitopenia (aglutinación en EDTA)",
+            "PTT/SHU (anemia hemolítica microangiopática)",
+            "CIVD",
+            "Hipersplenismo",
+            "Leucemia, mielodisplasia",
+            "Medicamentos (heparina)",
+            "Dengue"
+          ],
+          "examesLaboratoriais": [
+            "Hemograma + esfregaço",
+            "TP, TTPa, fibrinógeno",
+            "VIH, VHC, VHB",
+            "FAN, complemento (si se sospecha de LEP)",
+            "Mielograma (si atípico)",
+            "Coombs directo (si anemia)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "tratamiento": {
+          "objetivos": [
+            "Prevenir sangrado",
+            "Mantener plaquetas en nivel seguro",
+            "Minimizar toxicidad del tratamiento"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Evitar trauma",
+              "Suspender medicamentos antiagregantes",
+              "Watchful waiting si asintomático y plaquetas >30.000"
+            ],
+            "citations": [
+              {
+                "refId": "ash-itp-2019"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Corticoide",
+                "medicamentos": [
+                  "Prednisona",
+                  "Dexametasona"
+                ],
+                "posologia": "Prednisona 1-2mg/kg/día por 2-4 semanas, desmame. O Dexametasona 40mg/día x4 días."
+              },
+              {
+                "classe": "Inmunoglobulina IV (respuesta rápida)",
+                "medicamentos": [
+                  "IVIg"
+                ],
+                "posologia": "1g/kg x1-2 días. Respuesta en 24-48h. Temporal."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Agonista de trombopoetina",
+                "medicamentos": [
+                  "Eltrombopag",
+                  "Romiplostim"
+                ],
+                "posologia": "Eltrombopag 50mg/día VO. Romiplostim SC semanal. PTI crónica."
+              },
+              {
+                "classe": "Rituximabe",
+                "medicamentos": [
+                  "Rituximabe"
+                ],
+                "posologia": "375 mg/m² semanal x4 dosis. Respuesta en semanas."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Sangrado activo grave",
+                "conduta": "IVIg + Corticoide + Transfusión de plaquetas + Ácido tranexámico."
+              },
+              {
+                "situacao": "Embarazada",
+                "conduta": "IVIg preferible a corticoide. Plaquetas >30.000 para parto vaginal, >50.000 para cesárea."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ash-itp-2019"
+              }
+            ]
+          },
+          "duracao": "Según respuesta. Agonistas TPO pueden ser necesarios crónicamente."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Semanal hasta estabilización, después mensual",
+          "examesControle": [
+            "Hemograma seriado",
+            "Esfregaço si cambio clínico"
+          ],
+          "metasTerapeuticas": [
+            "Plaquetas >30.000 estables",
+            "Ausencia de sangrado"
+          ],
+          "criteriosEncaminhamento": [
+            "PTI crónica o refractaria",
+            "Necesidad de esplenectomía",
+            "Candidato a agonista TPO o rituximabe",
+            "Sangrado grave"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "No hay prevención primaria"
+          ],
+          "secundaria": [
+            "Evitar gatillos",
+            "Mantener plaquetas en nivel seguro"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "prednisona",
+        "dexametasona",
+        "imunoglobulina-iv",
+        "eltrombopag"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ash-itp-2019"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "trombocitopenia",
+        "pti",
+        "plaqueta",
+        "púrpura",
+        "sangrado"
+      ]
+    },
+    {
+      "id": "anemia-ferropriva-pediatrica",
+      "titulo": "Anemia Ferropriva en la Infancia",
+      "ciap2": [
+        "B80"
+      ],
+      "cid10": [
+        "D50"
+      ],
+      "cid11": [
+        "3A00"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:11758",
+      "snomedCT": "87522002",
+      "meshId": "D018798",
+      "umlsCui": "C0085576",
+      "quickView": {
+        "definicao": "Anemia más común en la infancia. Prevalencia del 20-30% en menores de 5 años en Brasil. Causa: desequilibrio entre la oferta y la demanda de hierro.",
+        "criteriosDiagnosticos": [
+          "Hb <11g/dL (6m-5a) o <11,5g/dL (5-11a)",
+          "VCM bajo (microcitosis)",
+          "RDW elevado (anisocitosis)",
+          "Ferritina <12ng/mL (o <30 si hay inflamación)"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Alimentación rica en hierro",
+            "Vitamina C en las comidas",
+            "Evitar el consumo excesivo de leche de vaca"
+          ],
+          "farmacologico": [
+            "Sulfato ferroso 3-5mg/kg/día de Fe elemental",
+            "Lejos de las comidas",
+            "Duración: 3-6 meses (para reponer los depósitos)"
+          ]
+        },
+        "redFlags": [
+          "Anemia grave (Hb <7)",
+          "No respuesta al tratamiento",
+          "Síntomas neurológicos",
+          "Sangrado gastrointestinal"
+        ]
+      },
+      "medicamentos": [
+        "sulfato-ferroso"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anemia-hemolitica",
+      "titulo": "Anemia hemolítica",
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D59"
+      ],
+      "cid11": [
+        "3A10"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:9538",
+      "snomedCT": "955009",
+      "meshId": "D000743",
+      "umlsCui": "C0002878",
+      "tags": [
+        "hematologico",
+        "anemia"
+      ],
+      "quickView": {
+        "definicao": "Anemia por hemólisis aumentada. Puede ser autoinmune, hereditaria o adquirida.",
+        "criteriosDiagnosticos": [
+          "Anemia",
+          "Aumento de reticulocitos",
+          "LDH elevado",
+          "Bilirrubina indirecta elevada",
+          "Haptoglobina baja"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Tratar causa de base",
+            "Evitar desencadenantes"
+          ],
+          "farmacologico": [
+            "Corticosteroides si es autoinmune",
+            "Transfusión si es sintomático"
+          ]
+        },
+        "redFlags": [
+          "Crisis aplásica",
+          "Insuficiencia renal",
+          "Coagulopatía"
+        ]
+      },
+      "medicamentos": [
+        "prednisona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "leucemia-linfocitica-cronica",
+      "titulo": "Leucemia Linfocítica Crónica",
+      "ciap2": [
+        "B73"
+      ],
+      "cid10": [
+        "C91.1"
+      ],
+      "cid11": [
+        "2A82.0"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:8552",
+      "snomedCT": "91857009",
+      "meshId": "D015451",
+      "umlsCui": "C0023418",
+      "tags": [
+        "hematologico",
+        "neoplasia",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "Neoplasia de linfócitos B maduros. Más común en ancianos. Generalmente indolente.",
+        "criteriosDiagnosticos": [
+          "Linfocitosis >5000/μL",
+          "Morfológicamente compatible",
+          "Imunofenotipo característico"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Vigilancia si asintomático y estable",
+            "Acompañamiento onco-hematológico"
+          ],
+          "farmacologico": [
+            "Tratamiento solo si sintomático o progresivo",
+            "Quimioterapia según estadiamiento"
+          ]
+        },
+        "redFlags": [
+          "Citopenias",
+          "Linfonodos voluminosos",
+          "Organomegalia",
+          "Infecciones recurrentes"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "deficiencia-vitamina-b12",
+      "titulo": "Deficiencia de Vitamina B12",
+      "sinonimos": [
+        "Hipovitaminosis B12",
+        "Deficiencia de cobalamina"
+      ],
+      "ciap2": [
+        "B81"
+      ],
+      "cid10": [
+        "E53.8"
+      ],
+      "cid11": [
+        "5B5C"
+      ],
+      "doid": "DOID:13381",
+      "snomedCT": "190634004",
+      "meshId": "D014806",
+      "umlsCui": "C0042847",
+      "categoria": "hematologico",
+      "quickView": {
+        "definicao": "Deficiencia de cobalamina causando anemia megaloblástica y manifestaciones neurológicas. Común en ancianos, vegetarianos y uso crónico de metformina/IBP.",
+        "criteriosDiagnosticos": [
+          "B12 sérica <200 pg/mL: deficiencia",
+          "B12 200-300 pg/mL: zona gris - dosar MMA y homocisteína",
+          "VCM >100 fL (anemia macrocítica)",
+          "Síntomas neurológicos: parestesias, ataxia, alteración cognitiva"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Investigar causa: dieta, anemia perniciosa, gastritis atrófica",
+            "Orientación dietética para vegetarianos"
+          ],
+          "farmacologico": [
+            "Deficiencia grave/síntomas neurológicos: Cianocobalamina 1000mcg IM 1x/día por 7 días, después semanal por 4 sem, después mensual",
+            "Deficiencia leve: Cianocobalamina oral 1000-2000mcg/día",
+            "Manutención vitalicia si anemia perniciosa"
+          ]
+        },
+        "redFlags": [
+          "Pancitopenia",
+          "Síntomas neurológicos graves",
+          "Declive cognitivo rápido"
+        ],
+        "metasTerapeuticas": [
+          "B12 >400 pg/mL",
+          "Resolución de la anemia",
+          "Mejora neurológica"
+        ],
+        "examesIniciais": [
+          "Hemograma con VCM",
+          "B12 sérica",
+          "Reticulocitos",
+          "LDH",
+          "Ácido fólico"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "cianocobalamina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "anemia",
+        "neurologia",
+        "anciano"
+      ]
+    }
+  ]
+}

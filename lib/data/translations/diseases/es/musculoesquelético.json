@@ -1,0 +1,561 @@
+{
+  "locale": "es",
+  "category": "musculoesquelético",
+  "generatedAt": "2025-12-27T14:59:53.953Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "lombalgia",
+      "titulo": "Lombalgia",
+      "sinonimos": [
+        "Dolor lumbar",
+        "Dolor de espalda",
+        "Lumbago"
+      ],
+      "doid": "DOID:0060167",
+      "snomedCT": "279039007",
+      "meshId": "D017116",
+      "umlsCui": "C0024031",
+      "ciap2": [
+        "L03",
+        "L84",
+        "L86"
+      ],
+      "cid10": [
+        "M54.5",
+        "M54.4"
+      ],
+      "categoria": "musculoesquelético",
+      "quickView": {
+        "definicao": "Dolor localizado en la región lumbar (entre el último arco costal y las pliegues glúteos), puede o no irradiarse hacia los miembros inferiores. Es la principal causa de incapacidad en el mundo.",
+        "criteriosDiagnosticos": [
+          "Dolor en la región lumbar con o sin irradiación",
+          "Clasificar: inespecífica (>90%), con irradiación radicular, o específica",
+          "Duración: aguda (<6 semanas), subaguda (6-12 sem), crónica (>12 sem)",
+          "Excluir red flags (fractura, infección, tumor, síndrome de cola de caballo)"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Educación: tranquilizar, pronóstico generalmente bueno",
+            "Mantener actividades habituales (evitar reposo prolongado)",
+            "Calor local",
+            "Ejercicios de fortalecimiento y elongación",
+            "Fisioterapia si persiste >4 semanas"
+          ],
+          "farmacologico": [
+            "Paracetamol 500-1000mg 6/6h (1ª línea si tolerado)",
+            "AINE: Ibuprofeno 400-600mg 8/8h o Diclofenaco 50mg 8/8h (ciclo corto)",
+            "Relajante muscular: Ciclobenzaprina 5-10mg a la noche (espasmo asociado)",
+            "Opiode débil: Tramadol 50-100mg 6/6h (dolor intenso, corto plazo)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Alivio del dolor",
+          "Retorno a las actividades habituales",
+          "Prevención de cronificación",
+          "Evitar uso prolongado de medicamentos"
+        ],
+        "examesIniciais": [
+          "Exámenes de imagen NO indicados de rutina en la lombalgia inespecífica",
+          "Solicitar RX/RM si red flags o persistencia >6 semanas sin mejora"
+        ],
+        "redFlags": [
+          "Trauma significativo",
+          "Edad <20 o >55 años con primer episodio",
+          "Dolor nocturno que despierta, dolor en reposo",
+          "Pérdida de peso inexplicada",
+          "Historia de cáncer, inmunosupresión, uso de corticoides",
+          "Síndrome de cola de caballo (anestesia en silla, incontinencia, debilidad MMII)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "60-80% tendrán lombalgia en la vida",
+          "incidencia": "Principal causa de incapacidad laboral",
+          "faixaEtaria": "Pico 35-55 años",
+          "fatoresRisco": [
+            "Trabajo manual pesado",
+            "Posturas inadecuadas",
+            "Sedentarismo",
+            "Obesidad",
+            "Tabaquismo",
+            "Factores psicosociales (estrés, insatisfacción laboral)",
+            "Depresión, ansiedad"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dolor lumbar localizado",
+            "Peor con movimiento, mejor con reposo (mecánica)",
+            "Rigidez matinal breve (<30 min)",
+            "Irradiación hacia el glúteo o muslo (sin dermatoma)",
+            "Si radiculopatía: dolor irradiado hacia MMII en dermatoma"
+          ],
+          "sinaisExameFisico": [
+            "Limitación de amplitud de movimiento lumbar",
+            "Contracción muscular paravertebral",
+            "Lasègue positivo si radiculopatía",
+            "Examen neurológico normal en la lombalgia inespecífica",
+            "Evaluar fuerza, sensibilidad, reflejos en MMII"
+          ],
+          "formasClinicas": [
+            "Lombalgia mecánica/inespecífica (>90%)",
+            "Lombalgia con radiculopatía (hernia de disco)",
+            "Lombalgia específica (fractura, tumor, infección, espondiloartritis)"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Diagnóstico clínico",
+            "Clasificar por duración y presencia de red flags",
+            "Exámenes de imagen solo si red flags o refractariedad"
+          ],
+          "diagnosticoDiferencial": [
+            "Hernia de disco con radiculopatía",
+            "Estenosis de canal",
+            "Espondilolistesis",
+            "Espondilitis anquilosante",
+            "Fractura vertebral",
+            "Metástasis ósea",
+            "Infección (discitis, absceso)"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "tratamiento": {
+          "objetivos": [
+            "Alivio del dolor",
+            "Mantenimiento de la función",
+            "Prevención de cronificación",
+            "Retorno al trabajo"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Educación y reassurance",
+              "Mantener actividad física",
+              "Ejercicios supervisados",
+              "Calor superficial",
+              "Terapia cognitivo-conductual si cronicidad"
+            ],
+            "citations": [
+              {
+                "refId": "lancet-lombalgia-2018"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Analgésico simple",
+                "medicamentos": [
+                  "Paracetamol 500-1000mg 6/6h"
+                ],
+                "observacoes": "Eficacia limitada, pero seguro"
+              },
+              {
+                "classe": "AINE",
+                "medicamentos": [
+                  "Ibuprofeno 400-600mg 8/8h",
+                  "Naproxeno 250-500mg 12/12h"
+                ],
+                "observacoes": "Eficaz. Uso corto (7-14 días). Atención a riesgos GI/CV/renal"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Relajante muscular",
+                "medicamentos": [
+                  "Ciclobenzaprina 5-10mg a la noche"
+                ],
+                "observacoes": "Si espasmo muscular. Corto plazo. Somnolencia"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Dolor crónico",
+                "conduta": "Abordaje multimodal. Considerar duloxetina, amitriptilina. Derivar"
+              },
+              {
+                "situacao": "Radiculopatía",
+                "conduta": "AINE + fisioterapia. Si refractario, derivar para evaluación quirúrgica"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "lancet-lombalgia-2018"
+              }
+            ]
+          },
+          "duracao": "Mayoría resuelve en 4-6 semanas"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Reevaluación en 2-4 semanas si no mejora",
+          "metasTerapeuticas": [
+            "Resolución del dolor",
+            "Retorno a las actividades",
+            "Sin uso crónico de medicamentos"
+          ],
+          "criteriosEncaminhamento": [
+            "Red flags (urgente)",
+            "Déficit neurológico progresivo",
+            "Dolor refractario >6 semanas",
+            "Síndrome de cola de caballo (emergencia)",
+            "Necesidad de fisioterapia especializada"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno",
+        "ciclobenzaprina"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "lancet-lombalgia-2018"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "musculoesquelético",
+        "aguda",
+        "crónica",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "osteoartrite",
+      "titulo": "Osteoartrite (Artrosis)",
+      "ciap2": [
+        "L91"
+      ],
+      "cid10": [
+        "M15",
+        "M19"
+      ],
+      "cid11": [
+        "FA00"
+      ],
+      "categoria": "musculoesquelético",
+      "doid": "DOID:8398",
+      "snomedCT": "396275006",
+      "meshId": "D010003",
+      "umlsCui": "C0029408",
+      "quickView": {
+        "definicao": "Enfermedad degenerativa de las articulaciones. Más común en ancianos. Rodillas, caderas, manos son más afectadas.",
+        "criteriosDiagnosticos": [
+          "Dolor articular que empeora con la actividad",
+          "Rigidez matinal <30min",
+          "Crepitación",
+          "Radiografía: estrechamiento de espacio, osteófitos"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ejercicios (fortalecimiento, elongación)",
+            "Pérdida de peso si es obeso",
+            "Fisioterapia",
+            "Órtesis si es necesario"
+          ],
+          "farmacologico": [
+            "Paracetamol 1g 6/6h (primera línea)",
+            "Si es insuficiente: AINEs tópicos o orales",
+            "Inyección intra-articular de corticoide si es necesario"
+          ]
+        },
+        "redFlags": [
+          "Infección articular",
+          "Fractura",
+          "Artritis inflamatoria"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sarcopenia",
+      "titulo": "Sarcopenia",
+      "ciap2": [
+        "L29"
+      ],
+      "cid10": [
+        "M62.84"
+      ],
+      "cid11": [
+        "FB32.3"
+      ],
+      "categoria": "musculoesquelético",
+      "doid": "DOID:0081310",
+      "snomedCT": "1172655006",
+      "meshId": "D055948",
+      "umlsCui": "C0872084",
+      "quickView": {
+        "definicao": "Pérdida progresiva de masa y fuerza muscular esquelética con el envejecimiento. Prevalencia 5-13% en 60-70 años, hasta 50% en >80 años.",
+        "criteriosDiagnosticos": [
+          "EWGSOP2: fuerza reducida (probable)",
+          "Dinamometría <27kg (H) o <16kg (F)",
+          "Confirmación: masa muscular baja (DXA/BIA)",
+          "Gravedad: rendimiento físico bajo (SPPB <8)"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ejercicio resistido progresivo",
+            "Proteína 1,0-1,2g/kg/día",
+            "Leucina/HMB como adyuvante"
+          ],
+          "farmacologico": [
+            "Vitamina D si hay deficiencia",
+            "No hay fármacos aprobados específicos"
+          ]
+        },
+        "redFlags": [
+          "Pérdida de peso rápida",
+          "Caídas recurrentes",
+          "Incapacidad para levantarse de la silla",
+          "Sarcopenia + obesidad"
+        ]
+      },
+      "medicamentos": [
+        "vitamina-d"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "osteoporose",
+      "titulo": "Osteoporosis",
+      "ciap2": [
+        "L95"
+      ],
+      "cid10": [
+        "M80",
+        "M81"
+      ],
+      "cid11": [
+        "FB83"
+      ],
+      "categoria": "musculoesquelético",
+      "doid": "DOID:11476",
+      "snomedCT": "64859006",
+      "meshId": "D010024",
+      "umlsCui": "C0029456",
+      "quickView": {
+        "definicao": "Enfermedad esquelética con masa ósea baja y deterioración microarquitectural, aumentando el riesgo de fractura. Prevalencia postmenopáusica: 30-50%.",
+        "criteriosDiagnosticos": [
+          "DXA: T-score ≤-2,5 (columna/fémur)",
+          "O fractura por fragilidad previa",
+          "T-score -1 a -2,5 = osteopenia",
+          "FRAX para calcular riesgo"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ejercicio con carga",
+            "Prevención de caídas",
+            "Cese del tabaquismo",
+            "Calcio dietético 1000-1200mg/día"
+          ],
+          "farmacologico": [
+            "Alendronate 70mg/semana o Risedronate 35mg/semana",
+            "Vitamina D 800-2000UI/día",
+            "Denosumab si hay intolerancia a los bifosfonatos"
+          ]
+        },
+        "redFlags": [
+          "Fractura vertebral",
+          "Múltiples fracturas",
+          "Pérdida de altura >4cm",
+          "Dolor óseo difuso"
+        ]
+      },
+      "medicamentos": [
+        "alendronato",
+        "vitamina-d",
+        "carbonato-calcio"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "frax"
+      ]
+    },
+    {
+      "id": "epicondilite-lateral",
+      "titulo": "Epicondilite Lateral (Codo de Tenista)",
+      "ciap2": [
+        "L93"
+      ],
+      "cid10": [
+        "M77.1"
+      ],
+      "cid11": [
+        "FB53.2"
+      ],
+      "categoria": "musculoesquelético",
+      "doid": "DOID:9479",
+      "snomedCT": "202855006",
+      "meshId": "D013716",
+      "umlsCui": "C0039516",
+      "quickView": {
+        "definicao": "Tendinopatía de inserción de los extensores del muñeco en el epicóndilo lateral. Causa común de dolor en el codo.",
+        "criteriosDiagnosticos": [
+          "Dolor en el epicóndilo lateral",
+          "Empeora con prensión y extensión del muñeco",
+          "Test de Cozen positivo",
+          "Test de Mill positivo"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Reposo de la actividad causante",
+            "Ortesis de contrafuerza",
+            "Ejercicios excéntricos y estiramientos"
+          ],
+          "farmacologico": [
+            "AINE tópico: Diclofenaco gel 3 veces al día",
+            "AINE oral a corto plazo si es necesario"
+          ]
+        },
+        "redFlags": [
+          "Bloqueo articular",
+          "Inestabilidad",
+          "Masa palpable"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno",
+        "diclofenaco"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "lupus-eritematoso-sistemico",
+      "titulo": "Lúpus Eritematoso Sistémico",
+      "ciap2": [
+        "L99"
+      ],
+      "cid10": [
+        "M32"
+      ],
+      "cid11": [
+        "4A40"
+      ],
+      "categoria": "musculoesquelético",
+      "doid": "DOID:9074",
+      "snomedCT": "55464009",
+      "meshId": "D008180",
+      "umlsCui": "C0024141",
+      "tags": [
+        "crónica",
+        "autoinmune",
+        "sistémica"
+      ],
+      "quickView": {
+        "definicao": "Enfermedad autoinmune sistémica. Puede afectar la piel, articulaciones, riñón, sistema nervioso. Más común en mujeres.",
+        "criteriosDiagnosticos": [
+          "Criterios SLICC o ACR",
+          "Erupción malar",
+          "Fotosensibilidad",
+          "Anticuerpos antinucleares"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Protección solar",
+            "Descanso durante exacerbaciones"
+          ],
+          "farmacologico": [
+            "Hidroxicloroquina 200-400mg/día",
+            "Prednisona según gravedad",
+            "Inmunosupresores si es necesario"
+          ]
+        },
+        "redFlags": [
+          "Nefritis lúpica",
+          "Neurolupus",
+          "Crisis lúpica",
+          "Trombocitopenia grave"
+        ]
+      },
+      "medicamentos": [
+        "hidroxicloroquina",
+        "prednisona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-sjogren",
+      "titulo": "Síndrome de Sjögren",
+      "ciap2": [
+        "L99"
+      ],
+      "cid10": [
+        "M35.0"
+      ],
+      "cid11": [
+        "4A01.0"
+      ],
+      "categoria": "musculoesquelético",
+      "doid": "DOID:12858",
+      "snomedCT": "48271000",
+      "meshId": "D012859",
+      "umlsCui": "C0037243",
+      "tags": [
+        "crónica",
+        "autoinmune",
+        "sistemica"
+      ],
+      "quickView": {
+        "definicao": "Enfermedad autoinmune con sequedad de mucosas. Puede ser primaria o asociada a otras enfermedades autoinmunes.",
+        "criteriosDiagnosticos": [
+          "Ojo seco",
+          "Boca seca",
+          "Anti-SSA/Ro o SSB/La positivo",
+          "Biopsia de glándula salival"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Lubricantes oculares",
+            "Saliva artificial",
+            "Hidratación"
+          ],
+          "farmacologico": [
+            "Pilocarpina 5mg 3-4x/día",
+            "Hidroxicloroquina para síntomas sistémicos"
+          ]
+        },
+        "redFlags": [
+          "Linftoma",
+          "Enfermedad pulmonar intersticial",
+          "Vasculitis"
+        ]
+      },
+      "medicamentos": [
+        "pilocarpina",
+        "hidroxicloroquina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

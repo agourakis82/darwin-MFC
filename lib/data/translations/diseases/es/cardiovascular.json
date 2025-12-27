@@ -1,0 +1,2879 @@
+{
+  "locale": "es",
+  "category": "cardiovascular",
+  "generatedAt": "2025-12-27T14:59:53.951Z",
+  "count": 21,
+  "diseases": [
+    {
+      "id": "hipertensao-arterial",
+      "titulo": "Hipertensión Arterial Sistémica (HAS)",
+      "sinonimos": [
+        "Presión alta",
+        "HAS",
+        "Hipertensión"
+      ],
+      "doid": "DOID:10763",
+      "snomedCT": "38341003",
+      "meshId": "D006973",
+      "umlsCui": "C0020538",
+      "ciap2": [
+        "K86",
+        "K87"
+      ],
+      "cid10": [
+        "I10",
+        "I11",
+        "I12",
+        "I13"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Condición clínica multifactorial caracterizada por elevación sostenida de los niveles presóricos ≥140/90 mmHg. Es el principal factor de riesgo modificable para enfermedades cardiovasculares, cerebrovasculares y renales.",
+        "criteriosDiagnosticos": [
+          "PA de consulta ≥140/90 mmHg en 2 o más ocasiones distintas",
+          "MAPA: media 24h ≥130/80 mmHg, vigilia ≥135/85 mmHg, sueño ≥120/70 mmHg",
+          "MRPA: media ≥130/80 mmHg (7 días, 2 medidas/día)",
+          "Excluir hipertensión de bata blanca y encubierta"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Reducción de sodio (<2g/día o 5g sal/día)",
+            "Dieta DASH (frutas, vegetales, lácteos descremados)",
+            "Actividad física: 150 min/semana (moderada) o 75 min (intensa)",
+            "Pérdida de peso si IMC >25 (meta: pérdida de 5-10%)",
+            "Moderación del alcohol (≤2 dosis/día hombres, ≤1 mujeres)",
+            "Cesación del tabaquismo"
+          ],
+          "farmacologico": [
+            "IECA (Enalapril 5-20mg 12/12h) o BRA (Losartan 50-100mg/día)",
+            "BCC (Amlodipino 5-10mg/día)",
+            "Diurético tiazídico (HCTZ 12,5-25mg/día o Clortalidona 12,5-25mg)",
+            "Combinaciones preferidas: IECA/BRA + BCC o IECA/BRA + Diurético",
+            "Evitar monoterapia en estadio 2 o alto riesgo CV"
+          ]
+        },
+        "metasTerapeuticas": [
+          "PA <140/90 mmHg (general)",
+          "PA <130/80 mmHg si alto riesgo CV, DM o DRC",
+          "PA <130/80 mmHg en ancianos frágiles (<80 años)",
+          "PA <150/90 mmHg en ancianos frágiles (>80 años)"
+        ],
+        "examesIniciais": [
+          "Glicemia de ayunas y HbA1c",
+          "Creatinina y TFG (CKD-EPI)",
+          "Potasio sérico",
+          "Perfil lipídico (CT, LDL, HDL, TG)",
+          "Ácido úrico",
+          "Examen de orina (EAS) y relación albúmina/creatinina",
+          "ECG de reposo"
+        ],
+        "redFlags": [
+          "PA ≥180/120 mmHg con síntomas (cefalea intensa, alteración visual, disnea)",
+          "Sospecha de HAS secundaria (inicio <30 años, refractaria, hipocaliemia)",
+          "Lesión de órgano-objetivo aguda (IAM, IAC, EAP, dissecación)",
+          "Embarazada con PA ≥140/90 mmHg"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "32% de la población adulta brasileña",
+          "incidencia": "~500 mil nuevos casos/año",
+          "mortalidad": "~300 mil muertes CV/año (principal FR)",
+          "faixaEtaria": "Aumenta progresivamente con la edad (>60% en >65 años)",
+          "fatoresRisco": [
+            "Edad avanzada",
+            "Historia familiar de HAS",
+            "Etnia negra",
+            "Exceso de sodio",
+            "Obesidad/sobrepeso",
+            "Sedentarismo",
+            "Consumo excesivo de alcohol",
+            "Estrés crónico"
+          ],
+          "citations": [
+            {
+              "refId": "vigitel-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Frecuentemente asintomática (\"asesina silenciosa\")",
+            "Cefalea occipital (generalmente matinal)",
+            "Tontura",
+            "Epistaxis (no específico)",
+            "Disnea al esfuerzo (si ICC)",
+            "Alteraciones visuales (si retinopatía)"
+          ],
+          "sinaisExameFisico": [
+            "PA elevada en ambos brazos",
+            "Soplos abdominales (HAS renovascular)",
+            "Pulsos femorales disminuidos (coartación)",
+            "Fondo de ojo alterado (retinopatía)",
+            "B4 (sobrecarga ventricular)",
+            "Edema de MMII (si ICC)"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "PA ≥140/90 mmHg en 2+ consultas con técnica adecuada",
+            "MAPA o MRPA para confirmación (excluir bata blanca)",
+            "Clasificación: Óptima (<120/80), Normal (120-129/80-84), Pre-HAS (130-139/85-89)",
+            "Estadios: 1 (140-159/90-99), 2 (160-179/100-109), 3 (≥180/110)"
+          ],
+          "diagnosticoDiferencial": [
+            "Hipertensión de bata blanca",
+            "Hipertensión encubierta",
+            "HAS secundaria (renal, endocrina, medicamentosa)",
+            "Síndrome de apnea del sueño"
+          ],
+          "examesLaboratoriais": [
+            "Glicemia de ayunas, HbA1c, creatinina, potasio, ácido úrico",
+            "Perfil lipídico, EAS, microalbuminuria"
+          ],
+          "outrosExames": [
+            "ECG de reposo",
+            "Ecocardiograma si sospecha de cardiopatía",
+            "USG renal si sospecha de HAS secundaria"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "tratamiento": {
+          "objetivos": [
+            "Reducir morbimortalidad CV",
+            "Alcanzar metas presóricas individualizadas",
+            "Controlar factores de riesgo asociados",
+            "Prevenir/regresar lesiones de órgano-objetivo"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Dieta DASH: rica en frutas, vegetales, granos integrales, lácteos descremados",
+              "Restricción de sodio: <2g/día (5g sal)",
+              "Actividad física aeróbica: 150 min/semana moderada",
+              "Ejercicio resistido: 2-3x/semana",
+              "Pérdida de peso: meta 5-10% si sobrepeso/obesidad",
+              "Moderación del alcohol",
+              "Control del estrés"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-has-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "IECA",
+                "medicamentos": [
+                  "Enalapril 5-40mg/día",
+                  "Captopril 25-150mg/día",
+                  "Ramipril 2,5-10mg/día"
+                ],
+                "posologia": "1-2x/día",
+                "observacoes": "Tos seca en 5-20%. CI: gestación, K>5,5, estenosis bilateral renal"
+              },
+              {
+                "classe": "BRA",
+                "medicamentos": [
+                  "Losartan 50-100mg/día",
+                  "Valsartan 80-320mg/día"
+                ],
+                "posologia": "1x/día",
+                "observacoes": "Alternativa si intolerancia a IECA"
+              },
+              {
+                "classe": "BCC",
+                "medicamentos": [
+                  "Amlodipino 5-10mg/día",
+                  "Nifedipino Retard 20-60mg/día"
+                ],
+                "posologia": "1x/día",
+                "observacoes": "Edema de MMII dosis-dependiente"
+              },
+              {
+                "classe": "Diurético tiazídico",
+                "medicamentos": [
+                  "HCTZ 12,5-25mg/día",
+                  "Clortalidona 12,5-25mg/día",
+                  "Indapamida 1,5mg/día"
+                ],
+                "posologia": "1x/día por la mañana",
+                "observacoes": "Monitorear K+, glicemia, ácido úrico"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Betabloqueador",
+                "medicamentos": [
+                  "Atenolol 25-100mg/día",
+                  "Carvedilol 12,5-50mg/día",
+                  "Metoprolol 50-200mg/día"
+                ],
+                "observacoes": "Preferir si ICC, FA, post-IAM. Evitar en EPOC descompensada"
+              },
+              {
+                "classe": "Diurético de asa",
+                "medicamentos": [
+                  "Furosemida 20-80mg/día"
+                ],
+                "observacoes": "Si TFG <30 o edema refractario"
+              },
+              {
+                "classe": "Ahorrador de potasio",
+                "medicamentos": [
+                  "Espironolactona 25-50mg/día"
+                ],
+                "observacoes": "HAS resistente. Monitorear K+"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Diabetes",
+                "conduta": "IECA o BRA (nefroprotección). Meta <130/80"
+              },
+              {
+                "situacao": "DRC",
+                "conduta": "IECA o BRA si albuminuria. Meta <130/80"
+              },
+              {
+                "situacao": "ICC FEr",
+                "conduta": "IECA/BRA + BB + iSGLT2"
+              },
+              {
+                "situacao": "Embarazo",
+                "conduta": "Metildopa, Nifedipino, Labetalol. CI: IECA, BRA"
+              },
+              {
+                "situacao": "Negro",
+                "conduta": "BCC o Tiazídico como 1ª línea (mejor respuesta)"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbc-has-2020"
+              }
+            ]
+          },
+          "duracao": "Tratamiento continuo. Descontinuación solo en casos seleccionados (MEV bien-sucedida, HAS inicial leve)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Mensual hasta control, después trimestral/semestral",
+          "examesControle": [
+            "Creatinina y K+ (1-2 semanas después de iniciar/ajustar IECA/BRA/diurético)",
+            "Perfil lipídico, glicemia: anual",
+            "Microalbuminuria: anual si DM o DRC"
+          ],
+          "metasTerapeuticas": [
+            "PA <140/90 mmHg (general)",
+            "PA <130/80 mmHg si alto riesgo, DM, DRC",
+            "Control de DM, dislipidemia, tabaquismo"
+          ],
+          "criteriosEncaminhamento": [
+            "HAS resistente (no controlada con 3 drogas incluyendo diurético)",
+            "Sospecha de HAS secundaria",
+            "Lesión de órgano-objetivo avanzada",
+            "DRC TFG <30 mL/min",
+            "Emergencias hipertensivas"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Alimentación saludable desde la infancia",
+            "Mantenimiento de peso adecuado",
+            "Actividad física regular",
+            "Moderación del sodio y alcohol",
+            "No iniciar tabaquismo"
+          ],
+          "secundaria": [
+            "Adhesión al tratamiento",
+            "Automonitoreo de la PA",
+            "Control de factores de riesgo asociados"
+          ],
+          "citations": [
+            {
+              "refId": "ms-cab-37-2013"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-has",
+        "estratificacao-rcv"
+      ],
+      "medicamentos": [
+        "losartan",
+        "enalapril",
+        "amlodipino",
+        "hctz",
+        "atenolol"
+      ],
+      "calculadoras": [
+        "framingham",
+        "score",
+        "ckdepi"
+      ],
+      "rastreamentos": [
+        "hipertensao-arterial"
+      ],
+      "citations": [
+        {
+          "refId": "sbc-has-2020"
+        },
+        {
+          "refId": "ms-cab-37-2013"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "cardiovascular",
+        "crónica",
+        "prevalente",
+        "dcnt"
+      ]
+    },
+    {
+      "id": "insuficiencia-cardiaca",
+      "titulo": "Insuficiencia Cardíaca",
+      "sinonimos": [
+        "IC",
+        "ICC",
+        "Insuficiencia cardíaca congestiva"
+      ],
+      "doid": "DOID:6000",
+      "snomedCT": "84114007",
+      "meshId": "D006333",
+      "umlsCui": "C0018801",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "I50",
+        "I50.0",
+        "I50.1",
+        "I50.9"
+      ],
+      "cid11": [
+        "BD10"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Síndrome clínica caracterizada por la incapacidad del corazón de bombear sangre suficiente para atender a las necesidades metabólicas de los tejidos, o hacerlo solo con presiones de llenado elevadas.",
+        "criteriosDiagnosticos": [
+          "Síntomas típicos: disnea, ortopnea, DPN, fatiga, edema MMII",
+          "Signos: turgencia yugular, hepatomegalia, estertores pulmonares",
+          "Evidencia objetiva de disfunción cardíaca (ecocardiograma)",
+          "Criterios de Framingham: 2 mayores O 1 mayor + 2 menores"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Restricción de sodio (<2g/día)",
+            "Restricción hídrica si hiponatremia (<1,5L/día)",
+            "Actividad física supervisada (rehabilitación cardíaca)",
+            "Cese del tabaquismo y alcohol",
+            "Vacunación (influenza, neumococo)"
+          ],
+          "farmacologico": [
+            "IECA o BRA (ej: Enalapril 2,5-20mg 12/12h)",
+            "Betabloqueador (ej: Carvedilol 3,125-25mg 12/12h)",
+            "Diurético de asa si congestión (Furosemida 20-80mg/día)",
+            "Espironolactona 25-50mg/día si FEVE ≤35%"
+          ]
+        },
+        "metasTerapeuticas": [
+          "FEVE: estabilización o mejora",
+          "Clase funcional NYHA: mejora de al menos 1 clase",
+          "PA adecuada, FC 60-70 bpm",
+          "Euvolemia (sin edema, peso seco)",
+          "Reducción de hospitalizaciones"
+        ],
+        "examesIniciais": [
+          "Ecocardiograma transtorácico",
+          "ECG",
+          "Radiografía de tórax",
+          "Hemograma, función renal, electrolitos",
+          "BNP o NT-proBNP",
+          "Perfil lipídico, glucemia, TSH"
+        ],
+        "redFlags": [
+          "Hipotensión sintomática (PAS <90)",
+          "Choque cardiogénico",
+          "Edema agudo de pulmón",
+          "Arritmias graves (FV, TVNS)",
+          "Síncope",
+          "Peoramiento rápido de la clase funcional"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2% de la población adulta, aumenta con la edad (>10% en >70 años)",
+          "incidencia": "2-5 nuevos casos/1000 personas-año",
+          "faixaEtaria": "Más común >65 años",
+          "fatoresRisco": [
+            "Hipertensión arterial (principal)",
+            "Enfermedad arterial coronaria",
+            "Diabetes mellitus",
+            "Obesidad",
+            "Valvulopatías",
+            "Cardiomiopatías",
+            "Tabaquismo, alcohismo"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Disfunción sistólica (FEVE reducida) o diastólica (FEVE preservada) lleva a activación neuro-hormonal compensatoria (SRAA, sistema simpático), remodelación cardíaca progresiva y congestión sistémica/pulmonar.",
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Disnea al esfuerzo (progresiva)",
+            "Ortopnea",
+            "Disnea paroxística nocturna (DPN)",
+            "Fatiga e intolerancia al ejercicio",
+            "Edema de miembros inferiores",
+            "Ganancia de peso (retención hídrica)"
+          ],
+          "sinaisExameFisico": [
+            "Turgencia yugular a 45°",
+            "Reflujo hepato-yugular",
+            "Estertores pulmonares bibásicos",
+            "B3 (galope)",
+            "Hepatomegalia dolorosa",
+            "Edema de MMII con cedema"
+          ],
+          "formasClinicas": [
+            "ICFEr (FEVE <40%): IC sistólica",
+            "ICFEi (FEVE 40-49%): IC intermedia",
+            "ICFEp (FEVE ≥50%): IC diastólica"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Criterios de Framingham",
+            "Ecocardiograma con FEVE y función diastólica",
+            "BNP >100 pg/mL o NT-proBNP >300 pg/mL"
+          ],
+          "diagnosticoDiferencial": [
+            "EPOC",
+            "Pneumonía",
+            "EP",
+            "Insuficiencia renal con hipervolemia",
+            "Cirrosis hepática con ascitis",
+            "Síndrome nefrótico"
+          ],
+          "examesLaboratoriais": [
+            "BNP/NT-proBNP",
+            "Hemograma, función renal, electrolitos",
+            "Hepatograma",
+            "Perfil lipídico, glucemia, HbA1c",
+            "TSH",
+            "Ferritina, saturación de transferrina"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "tratamiento": {
+          "objetivos": [
+            "Aliviar síntomas y mejorar calidad de vida",
+            "Reducir mortalidad y hospitalizaciones",
+            "Prevenir progresión del remodelamiento"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Educación sobre IC y autocuidado",
+              "Monitoreo diario del peso",
+              "Restricción de sodio y líquidos",
+              "Rehabilitación cardíaca",
+              "Vacunación anual"
+            ],
+            "citations": [
+              {
+                "refId": "diretriz-ic-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "IECA/BRA",
+                "medicamentos": [
+                  "Enalapril",
+                  "Losartan"
+                ],
+                "posologia": "Enalapril 2,5-20mg 12/12h | Losartan 25-100mg/día"
+              },
+              {
+                "classe": "Betabloqueador",
+                "medicamentos": [
+                  "Carvedilol",
+                  "Bisoprolol",
+                  "Metoprolol succinato"
+                ],
+                "posologia": "Carvedilol 3,125-25mg 12/12h (titular lentamente)"
+              },
+              {
+                "classe": "Antagonista mineralocorticoide",
+                "medicamentos": [
+                  "Espironolactona"
+                ],
+                "posologia": "25-50mg/día si FEVE ≤35% y sintomático"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Congestión",
+                "conduta": "Furosemida 20-80mg/día VO o IV"
+              },
+              {
+                "situacao": "FA con RVR",
+                "conduta": "Control de frecuencia con betabloqueador o digoxina"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "diretriz-ic-2021"
+              }
+            ]
+          },
+          "duracao": "Tratamiento continuo por toda la vida"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Mensual hasta estabilización, después cada 3-6 meses",
+          "examesControle": [
+            "Función renal y electrolitos (1-2 semanas después de ajuste de IECA/diurético)",
+            "BNP/NT-proBNP si disponible",
+            "Ecocardiograma anual o si empeora clínicamente"
+          ],
+          "metasTerapeuticas": [
+            "Clase NYHA I-II",
+            "Peso seco estable",
+            "Sin hospitalizaciones"
+          ],
+          "criteriosEncaminhamento": [
+            "FEVE <30%",
+            "IC avanzada (NYHA III-IV refractaria)",
+            "Considerar CDI/TRC",
+            "Evaluación para trasplante"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Control de HTA, DM, dislipidemia",
+            "Cese del tabaquismo",
+            "Actividad física regular"
+          ],
+          "secundaria": [
+            "Adherencia al tratamiento medicamentoso",
+            "Monitoreo diario del peso",
+            "Dieta hipossódica"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-ic"
+      ],
+      "medicamentos": [
+        "enalapril",
+        "losartan",
+        "carvedilol",
+        "furosemida",
+        "espironolactona"
+      ],
+      "calculadoras": [
+        "nyha",
+        "ckd-epi"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "diretriz-ic-2021"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "ic",
+        "insuficiencia-cardiaca",
+        "dispneia",
+        "edema",
+        "cardiopatia"
+      ]
+    },
+    {
+      "id": "fibrilacao-atrial",
+      "titulo": "Fibrilación Atrial",
+      "sinonimos": [
+        "FA",
+        "Arritmia",
+        "Fibrilación auricular"
+      ],
+      "doid": "DOID:0060224",
+      "snomedCT": "49436004",
+      "meshId": "D001281",
+      "umlsCui": "C0004238",
+      "ciap2": [
+        "K78"
+      ],
+      "cid10": [
+        "I48",
+        "I48.0",
+        "I48.1",
+        "I48.9"
+      ],
+      "cid11": [
+        "BC81.1"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Arritmia supraventricular caracterizada por activación auricular desorganizada, irregular y rápida, con pérdida de la contracción auricular efectiva. Es la arritmia sostenida más común.",
+        "criteriosDiagnosticos": [
+          "ECG: ausencia de onda P, presencia de ondas f irregulares",
+          "Intervalos RR irregularmente irregulares",
+          "Frecuencia auricular 350-600 bpm",
+          "Puede ser paroxística, persistente o permanente"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Control de factores precipitantes (alcohol, cafeína)",
+            "Tratamiento de causas reversibles (hipertiroidismo)",
+            "Pérdida de peso si hay obesidad",
+            "Tratamiento de apnea del sueño"
+          ],
+          "farmacologico": [
+            "Control de frecuencia: Betabloqueador (Atenolol 25-100mg/día) o BCC (Diltiazem)",
+            "Anticoagulación si CHA2DS2-VASc ≥2 (hombres) o ≥3 (mujeres)",
+            "Varfarina (INR 2-3) o DOACs (Rivaroxabana, Apixabana)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "FC en reposo 60-110 bpm",
+          "Anticoagulación adecuada (INR 2-3 o adherencia a DOAC)",
+          "Prevención de IAC y eventos tromboembólicos",
+          "Control de síntomas"
+        ],
+        "examesIniciais": [
+          "ECG de 12 derivaciones",
+          "Ecocardiograma transtorácico",
+          "TSH",
+          "Función renal, electrolitos",
+          "Hemograma",
+          "Holter 24h si paroxística"
+        ],
+        "redFlags": [
+          "FA con RVR e inestabilidad hemodinámica",
+          "Signos de IAC/AIT",
+          "Síncope",
+          "Dolor torácico sugestivo de IAC",
+          "IC descompensada",
+          "Preexcitación (WPW + FA)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2-4% de la población adulta, aumenta con la edad",
+          "incidencia": "Dobla cada década después de los 55 años",
+          "faixaEtaria": "Rara antes de los 50 años, común >75 años",
+          "fatoresRisco": [
+            "Edad avanzada",
+            "Hipertensión arterial",
+            "Enfermedad valvular (principalmente mitral)",
+            "IC, EAC",
+            "Diabetes mellitus",
+            "Obesidad",
+            "Apnea obstructiva del sueño",
+            "Hipertiroidismo",
+            "Consumo excesivo de alcohol"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Múltiples circuitos de reentrada en los átrios, frecuentemente iniciados por focos ectópicos en las venas pulmonares. Remodelación auricular eléctrica y estructural perpetúa la arritmia. Estasis auricular predispone a la formación de trombos, principalmente en el apéndice auricular izquierdo.",
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Palpitaciones irregulares",
+            "Disnea al esfuerzo",
+            "Fatiga",
+            "Dizziness",
+            "Discomfort torácico",
+            "Puede ser asintomática (30%)"
+          ],
+          "sinaisExameFisico": [
+            "Pulso irregular y generalmente rápido",
+            "Déficit de pulso (FC apical > FC radial)",
+            "Variación de la intensidad de B1",
+            "Ausencia de onda a en el pulso yugular"
+          ],
+          "formasClinicas": [
+            "Paroxística: episodios <7 días, autolimitados",
+            "Persistente: >7 días o requiere cardioversión",
+            "Persistente de larga duración: >1 año",
+            "Permanente: aceptada, sin intento de restaurar ritmo"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "ECG con ritmo irregularmente irregular",
+            "Ausencia de ondas P definidas",
+            "Ondas f de fibrilación (mejor vistas en V1)"
+          ],
+          "diagnosticoDiferencial": [
+            "Flutter auricular",
+            "Taquicardia auricular multifocal",
+            "Extrasístoles auriculares frecuentes",
+            "Taquicardia sinusal con extrasístoles"
+          ],
+          "examesLaboratoriais": [
+            "TSH (descartar hipertiroidismo)",
+            "Función renal (ajuste de anticoagulantes)",
+            "Electrolitos",
+            "Hemograma",
+            "Coagulograma si varfarina"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "tratamiento": {
+          "objetivos": [
+            "Prevención de tromboembolismo (IAC)",
+            "Control de síntomas",
+            "Tratamiento de comorbilidades"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Modificación del estilo de vida",
+              "Control de peso",
+              "Reducción de alcohol",
+              "Tratamiento de apnea del sueño",
+              "Ablación por catéter en casos seleccionados"
+            ],
+            "citations": [
+              {
+                "refId": "esc-fa-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Control de frecuencia",
+                "medicamentos": [
+                  "Atenolol",
+                  "Metoprolol",
+                  "Diltiazem",
+                  "Verapamil",
+                  "Digoxina"
+                ],
+                "posologia": "Atenolol 25-100mg/día | Metoprolol 50-200mg/día"
+              },
+              {
+                "classe": "Anticoagulación (si CHA2DS2-VASc indica)",
+                "medicamentos": [
+                  "Varfarina",
+                  "Rivaroxabana",
+                  "Apixabana",
+                  "Dabigatrana",
+                  "Edoxabana"
+                ],
+                "posologia": "Varfarina (INR 2-3) o DOAC según función renal"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "FA + IC con FEVE reducida",
+                "conduta": "Preferir betabloqueador o digoxina (evitar BCC)"
+              },
+              {
+                "situacao": "FA + WPW",
+                "conduta": "EVITAR digoxina, BCC, betabloqueador. Derivar urgentemente."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-fa-2020"
+              }
+            ]
+          },
+          "duracao": "Anticoagulación generalmente continua si indicada"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Cada 3-6 meses, o más frecuente si inestable",
+          "examesControle": [
+            "INR mensual si varfarina",
+            "Función renal anual (ajuste de DOAC)",
+            "ECG si cambio de síntomas"
+          ],
+          "metasTerapeuticas": [
+            "FC 60-110 bpm en reposo",
+            "TTR >70% si varfarina",
+            "Ausencia de eventos tromboembólicos"
+          ],
+          "criteriosEncaminhamento": [
+            "FA con inestabilidad hemodinámica",
+            "Candidato a ablación",
+            "FA + WPW",
+            "FA refractaria al control de frecuencia"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Control de HTA",
+            "Tratamiento de apnea del sueño",
+            "Control de peso",
+            "Moderación en el consumo de alcohol"
+          ],
+          "secundaria": [
+            "Anticoagulación adecuada",
+            "Control de factores precipitantes"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "atenolol",
+        "metoprolol",
+        "varfarina",
+        "rivaroxabana"
+      ],
+      "calculadoras": [
+        "cha2ds2-vasc",
+        "has-bled"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "esc-fa-2020"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "fa",
+        "fibrilacion-atrial",
+        "arritmia",
+        "anticoagulacion",
+        "iac"
+      ]
+    },
+    {
+      "id": "doenca-arterial-coronariana",
+      "titulo": "Enfermedad Arterial Coronaria Estable",
+      "sinonimos": [
+        "DAC",
+        "Angina estable",
+        "Cardiopatía isquémica crónica"
+      ],
+      "doid": "DOID:3393",
+      "snomedCT": "53741008",
+      "meshId": "D003324",
+      "umlsCui": "C0010054",
+      "ciap2": [
+        "K74",
+        "K76"
+      ],
+      "cid10": [
+        "I25",
+        "I25.1",
+        "I25.9",
+        "I20.8"
+      ],
+      "cid11": [
+        "BA80"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Obstrucción aterosclerótica de las arterias coronarias que lleva a isquemia miocárdica durante el esfuerzo o el estrés. Se caracteriza por angina típica previsible, estable en frecuencia e intensidad.",
+        "criteriosDiagnosticos": [
+          "Dolor torácico típico: retroesternal, de presión, desencadenado por esfuerzo/estrés",
+          "Alivio con reposo o nitrito sublingual (1-3 min)",
+          "Duración de 2-10 minutos",
+          "Prueba ergométrica positiva o imagen funcional con isquemia"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cese del tabaquismo (esencial)",
+            "Dieta mediterránea",
+            "Actividad física regular supervisada",
+            "Control de peso",
+            "Control del estrés"
+          ],
+          "farmacologico": [
+            "AAS 100mg/día (antiagregación)",
+            "Estatina de alta intensidad (Atorvastatina 40-80mg)",
+            "Betabloqueador (Atenolol, Metoprolol) para control de angina",
+            "Nitrito sublingual para crisis"
+          ]
+        },
+        "metasTerapeuticas": [
+          "LDL-C <50 mg/dL (riesgo muy alto) o <70 mg/dL (riesgo alto)",
+          "PA <130/80 mmHg",
+          "HbA1c <7% si DM",
+          "Cese completo del tabaquismo",
+          "Control de angina (Clase CCS I-II)"
+        ],
+        "examesIniciais": [
+          "ECG de reposo",
+          "Ecocardiograma",
+          "Perfil lipídico",
+          "Glucemia, HbA1c",
+          "Función renal",
+          "Prueba ergométrica o cintigrafía"
+        ],
+        "redFlags": [
+          "Angina en reposo o prolongada (>20 min)",
+          "Angina de inicio reciente (<2 meses)",
+          "Angina en aumento (peoramiento progresivo)",
+          "Alteraciones dinámicas de ECG",
+          "Inestabilidad hemodinámica",
+          "Síncope con dolor torácico"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "5-8% de los adultos >40 años",
+          "incidencia": "Principal causa de muerte en el mundo",
+          "faixaEtaria": "Aumenta con la edad, hombres >45 años, mujeres >55 años",
+          "fatoresRisco": [
+            "Hipertensión arterial",
+            "Dislipidemia (LDL elevado, HDL bajo)",
+            "Diabetes mellitus",
+            "Tabaquismo",
+            "Obesidad",
+            "Sedentarismo",
+            "Historia familiar de DAC precoz",
+            "Edad avanzada"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Aterosclerosis coronaria con formación de placas que reducen el lumen arterial. Cuando la obstrucción alcanza >70%, el flujo coronario se vuelve insuficiente durante el esfuerzo, causando isquemia y angina.",
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dolor/desconforto torácico retroesternal de presión/aprieto",
+            "Irradiación hacia el brazo izquierdo, mandíbula, espalda",
+            "Desencadenado por esfuerzo físico, estrés emocional, frío",
+            "Alivia con reposo (1-5 min) o nitrito sublingual",
+            "Equivalentes anginosos: disnea, fatiga"
+          ],
+          "sinaisExameFisico": [
+            "Generalmente normal en el período intercrítico",
+            "B4 puede estar presente",
+            "Soplo de insuficiencia mitral transitorio durante la crisis"
+          ],
+          "formasClinicas": [
+            "Angina típica: 3 características (localización típica, desencadenada por esfuerzo, alivia con reposo/nitrito)",
+            "Angina atípica: 2 características",
+            "Dolor torácico no cardíaco: 0-1 característica"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Historia clínica compatible",
+            "Prueba funcional positiva para isquemia",
+            "O anatomía coronaria con estenosis significativa (>50% TCE o >70% otras)"
+          ],
+          "diagnosticoDiferencial": [
+            "Síndrome coronario agudo",
+            "Diseción de aorta",
+            "EPTE",
+            "Pericarditis",
+            "Espasmo esofágico",
+            "Dolor musculoesquelético"
+          ],
+          "examesLaboratoriais": [
+            "Perfil lipídico completo",
+            "Glucemia, HbA1c",
+            "Función renal",
+            "Hemograma",
+            "Troponina (para descartar SCA)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "tratamiento": {
+          "objetivos": [
+            "Aliviar síntomas",
+            "Prevenir eventos cardiovasculares (IAM, muerte)",
+            "Mejorar calidad de vida",
+            "Controlar factores de riesgo"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Cese absoluto del tabaquismo",
+              "Dieta mediterránea o DASH",
+              "Ejercicio aeróbico regular (150 min/semana)",
+              "Mantenimiento del peso ideal",
+              "Rehabilitación cardíaca"
+            ],
+            "citations": [
+              {
+                "refId": "esc-dac-2019"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Antiagregante",
+                "medicamentos": [
+                  "AAS"
+                ],
+                "posologia": "AAS 100mg/día"
+              },
+              {
+                "classe": "Estatina",
+                "medicamentos": [
+                  "Atorvastatina",
+                  "Rosuvastatina"
+                ],
+                "posologia": "Atorvastatina 40-80mg/día (alta intensidad)"
+              },
+              {
+                "classe": "Antianginoso",
+                "medicamentos": [
+                  "Atenolol",
+                  "Metoprolol",
+                  "Bisoprolol"
+                ],
+                "posologia": "Atenolol 25-100mg/día | Nitrito SL para crisis"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Intolerancia a betabloqueador",
+                "conduta": "BCC (Anlodipino, Diltiazem) o Ivabradina"
+              },
+              {
+                "situacao": "DAC + DM",
+                "conduta": "Considerar iSGLT2 o GLP-1RA con beneficio CV"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-dac-2019"
+              }
+            ]
+          },
+          "duracao": "Tratamiento continuo"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Cada 3-6 meses",
+          "examesControle": [
+            "Perfil lipídico cada 6-12 meses",
+            "Función renal anual",
+            "ECG si cambio clínico"
+          ],
+          "metasTerapeuticas": [
+            "LDL-C en la meta",
+            "PA <130/80",
+            "Ausencia de angina o angina controlada (Clase CCS I)"
+          ],
+          "criteriosEncaminhamento": [
+            "Angina refractaria al tratamiento clínico",
+            "Angina inestable",
+            "Prueba funcional con gran área de isquemia",
+            "Disfunción ventricular izquierda"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Control riguroso de factores de riesgo CV",
+            "Estatina en alto riesgo",
+            "Cese del tabaquismo"
+          ],
+          "secundaria": [
+            "AAS + estatina de alta intensidad",
+            "Control agresivo de LDL",
+            "Rehabilitación cardíaca"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "aas",
+        "atorvastatina",
+        "atenolol",
+        "isossorbida"
+      ],
+      "calculadoras": [
+        "risco-cv",
+        "cha2ds2-vasc"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "esc-dac-2019"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "dac",
+        "angina",
+        "coronariopatia",
+        "aterosclerosis",
+        "isquemia"
+      ]
+    },
+    {
+      "id": "hipotensao-ortostatica",
+      "titulo": "Hipotensión Ortostática",
+      "ciap2": [
+        "K88"
+      ],
+      "cid10": [
+        "I95.1"
+      ],
+      "cid11": [
+        "BA81"
+      ],
+      "categoria": "cardiovascular",
+      "doid": "DOID:10763",
+      "snomedCT": "28651003",
+      "meshId": "D007024",
+      "umlsCui": "C0020651",
+      "quickView": {
+        "definicao": "Caída de la PA ≥20mmHg o PAD ≥10mmHg al ortostatismo. Prevalencia 20-30% en >65 años. Causa importante de caídas.",
+        "criteriosDiagnosticos": [
+          "Caída PA al ortostatismo (1-3 min)",
+          "Síntomas: mareo, oscurecimiento visual",
+          "Reproducible en el test postural",
+          "Evaluar medicamentos causantes"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Levantarse en etapas",
+            "Elevar la cabecera",
+            "Medias compresivas",
+            "Hidratación adecuada",
+            "Aumentar sal (si no HTA grave)"
+          ],
+          "farmacologico": [
+            "Revisar y reducir antihipertensivos",
+            "Fludrocortisona 0,1mg/día (si refractario)",
+            "Midodrina 2,5-10mg 3 veces al día"
+          ]
+        },
+        "redFlags": [
+          "Síncope",
+          "Caídas recurrentes",
+          "Síntomas neurológicos asociados",
+          "Anemia"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "endocardite-infecciosa",
+      "titulo": "Endocarditis Infecciosa",
+      "ciap2": [
+        "K71"
+      ],
+      "cid10": [
+        "I33"
+      ],
+      "cid11": [
+        "BC40"
+      ],
+      "categoria": "cardiovascular",
+      "doid": "DOID:846",
+      "snomedCT": "84114007",
+      "meshId": "D004696",
+      "umlsCui": "C0014118",
+      "tags": [
+        "cardiovascular",
+        "infecciosa",
+        "grave"
+      ],
+      "quickView": {
+        "definicao": "Infección del endocárdio/valvas cardíacas. Puede ser aguda (S. aureus) o subaguda (estreptococos).",
+        "criteriosDiagnosticos": [
+          "Fiebre",
+          "Soplo cardíaco nuevo o alterado",
+          "Hemocultivos positivos",
+          "Vegetaciones ecocardiográficas",
+          "Criterios de Duke"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hospitalización",
+            "Ecocardiografía",
+            "Evaluación cardiológica"
+          ],
+          "farmacologico": [
+            "Antibioticoterapia parenteral según hemocultivo",
+            "Vancomicina + Gentamicina empíricamente"
+          ]
+        },
+        "redFlags": [
+          "Insuficiencia cardíaca",
+          "Embolas sistémicas",
+          "Abscesos",
+          "Insuficiencia valvular grave"
+        ]
+      },
+      "medicamentos": [
+        "vancomicina",
+        "gentamicina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "miocardiopatia-dilatada",
+      "titulo": "Miocardiopatía Dilatada",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "I42.0"
+      ],
+      "cid11": [
+        "BC43.0"
+      ],
+      "categoria": "cardiovascular",
+      "doid": "DOID:12930",
+      "snomedCT": "84114007",
+      "meshId": "D002311",
+      "umlsCui": "C0027051",
+      "tags": [
+        "cardiovascular",
+        "crónica"
+      ],
+      "quickView": {
+        "definicao": "Dilatación ventricular con disfunción sistólica. Fracción de eyección reducida.",
+        "criteriosDiagnosticos": [
+          "IC con fracción de eyección reducida",
+          "Dilatación ventricular",
+          "Ecocardiograma: FE <40%"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Restricción de sal",
+            "Restricción de líquidos",
+            "Ejercicios controlados"
+          ],
+          "farmacologico": [
+            "IECA o BRA: Enalapril o Losartan",
+            "Beta-bloqueador: Carvedilol",
+            "Diurético si es necesario"
+          ]
+        },
+        "redFlags": [
+          "IC refractaria",
+          "Arritmias",
+          "Muerte súbita",
+          "Tromboembolismo"
+        ]
+      },
+      "medicamentos": [
+        "enalapril",
+        "losartan",
+        "carvedilol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-arterial-periferica",
+      "titulo": "Enfermedad Arterial Periférica",
+      "sinonimos": [
+        "EAP",
+        "EAP",
+        "Claudicación intermitente",
+        "Enfermedad vascular periférica"
+      ],
+      "ciap2": [
+        "K92"
+      ],
+      "cid10": [
+        "I73.9",
+        "I70.2"
+      ],
+      "cid11": [
+        "BD40"
+      ],
+      "doid": "DOID:0050830",
+      "snomedCT": "399957001",
+      "meshId": "D058729",
+      "umlsCui": "C1704436",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Aterosclerosis de arterias periféricas (especialmente MMII) causando isquemia. ITB <0,9 es diagnóstico. Marcador de enfermedad aterosclerótica sistémica.",
+        "criteriosDiagnosticos": [
+          "ITB (Índice Tobillo-Brazo) <0,9",
+          "Claudicación intermitente: dolor en pantorrilla al caminar, alivia con reposo",
+          "Pulsos periféricos disminuidos/ausentes",
+          "ITB <0,4 o dolor en reposo: isquemia crítica"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ejercicio supervisado de caminata (principal)",
+            "Cesación del tabaquismo (obligatoria)",
+            "Cuidados con los pies"
+          ],
+          "farmacologico": [
+            "AAS 100mg/día o Clopidogrel 75mg/día",
+            "Estatina de alta potencia",
+            "IECA si HTA o DM",
+            "Cilostazol 100mg 2x/día (claudicación limitante)"
+          ]
+        },
+        "redFlags": [
+          "Dolor en reposo",
+          "Úlcera arterial",
+          "Gangrena",
+          "ITB <0,4"
+        ],
+        "metasTerapeuticas": [
+          "LDL-c <70 mg/dL",
+          "PA <130/80",
+          "HbA1c <7%",
+          "Cesación del tabaquismo"
+        ],
+        "examesIniciais": [
+          "ITB",
+          "Doppler arterial",
+          "Perfil lipídico",
+          "Glicemia/HbA1c",
+          "Creatinina"
+        ]
+      },
+      "protocolos": [
+        "has",
+        "dm2"
+      ],
+      "medicamentos": [
+        "aas",
+        "clopidogrel",
+        "atorvastatina",
+        "cilostazol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "vascular",
+        "aterosclerosis",
+        "tabaquismo"
+      ]
+    },
+    {
+      "id": "estenose-aortica",
+      "titulo": "Estenosis Aórtica",
+      "sinonimos": [
+        "EAo",
+        "Valvulopatía aórtica"
+      ],
+      "ciap2": [
+        "K83"
+      ],
+      "cid10": [
+        "I35.0",
+        "I06.0"
+      ],
+      "cid11": [
+        "BB60.0"
+      ],
+      "doid": "DOID:1712",
+      "snomedCT": "60573004",
+      "meshId": "D001024",
+      "umlsCui": "C0003507",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Obstrucción a la eyección del VE por la válvula aórtica. Degenerativa (calcificada) es la causa más común en ancianos. Bicúspide en jóvenes.",
+        "criteriosDiagnosticos": [
+          "Soplo sistólico eyectivo en foco aórtico, irradiación a carótidas",
+          "Eco: EAo grave = área valvular <1,0 cm², gradiente medio >40 mmHg, Vmáx >4 m/s",
+          "Síntomas: disnea, angina, síncope",
+          "Pulso parvus et tardus (tardío y de baja amplitud)"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Evitar ejercicio intenso si es sintomático",
+            "Profilaxis de endocarditis (si alto riesgo)"
+          ],
+          "farmacologico": [
+            "Tratamiento clínico limitado - cirugía es definitivo",
+            "Evitar vasodilatadores intensos (riesgo de hipotensión)",
+            "Betabloqueador si FA o angina",
+            "Estatina NO reduce progresión"
+          ]
+        },
+        "redFlags": [
+          "Síncope",
+          "Angina",
+          "IC descompensada",
+          "EAo grave sintomática"
+        ],
+        "metasTerapeuticas": [
+          "Derivación temprana si es sintomático",
+          "Cambio valvular (TAVR o quirúrgico)"
+        ],
+        "examesIniciais": [
+          "Ecocardiograma",
+          "ECG",
+          "Radiografía de tórax"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [],
+      "calculadoras": [],
+      "tags": [
+        "valvulopatía",
+        "soplo",
+        "cirugía"
+      ]
+    },
+    {
+      "id": "insuficiencia-mitral",
+      "titulo": "Insuficiencia Mitral",
+      "sinonimos": [
+        "IM",
+        "Regurgitación mitral"
+      ],
+      "ciap2": [
+        "K83"
+      ],
+      "cid10": [
+        "I34.0",
+        "I05.1"
+      ],
+      "cid11": [
+        "BB61.1"
+      ],
+      "doid": "DOID:11719",
+      "snomedCT": "48724000",
+      "meshId": "D008944",
+      "umlsCui": "C0026266",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Reflujo de sangre del VE a AE durante la sístole. Primaria (valvular) o secundaria (funcional por dilatación del VE).",
+        "criteriosDiagnosticos": [
+          "Soplo holossistólico en foco mitral, irradiación a axila",
+          "Eco: gravedad por volumen regurgitante, área del chorro, vena contracta",
+          "IM grave: FEVE ↓, dilatación de VE/AE, hipertensión pulmonar"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Restricción de sal y líquidos si IC",
+            "Actividad física según tolerancia"
+          ],
+          "farmacologico": [
+            "IM secundaria: optimizar tratamiento de IC (IECA/BRA, betabloqueador, espironolactona)",
+            "IM primaria: tratamiento clínico limitado",
+            "Diuréticos si congestión",
+            "Anticoagulación si FA"
+          ]
+        },
+        "redFlags": [
+          "IC refractaria",
+          "FEVE <60%",
+          "Diámetro sistólico VE >40mm",
+          "FA de inicio reciente"
+        ],
+        "metasTerapeuticas": [
+          "Mantener FEVE",
+          "Control de síntomas",
+          "Cirugía si indicado"
+        ],
+        "examesIniciais": [
+          "Ecocardiograma",
+          "ECG",
+          "BNP"
+        ]
+      },
+      "protocolos": [
+        "insuficiencia-cardiaca"
+      ],
+      "medicamentos": [
+        "enalapril",
+        "carvedilol",
+        "furosemida"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "valvulopatía",
+        "soplo",
+        "insuficiencia cardíaca"
+      ]
+    },
+    {
+      "id": "trombose-venosa-profunda",
+      "titulo": "Trombosis Venosa Profunda",
+      "sinonimos": [
+        "TVP",
+        "Tromboflebitis profunda"
+      ],
+      "ciap2": [
+        "K94"
+      ],
+      "cid10": [
+        "I80.2"
+      ],
+      "cid11": [
+        "BD72.0"
+      ],
+      "doid": "DOID:1725",
+      "snomedCT": "128053003",
+      "meshId": "D020246",
+      "umlsCui": "C0149871",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Formación de trombo en venas profundas, generalmente en MMII. Riesgo de TEP y síndrome postrombótico.",
+        "criteriosDiagnosticos": [
+          "Escore de Wells para TVP (probabilidad clínica)",
+          "D-dímero: alto VNP si probabilidad baja",
+          "USG Doppler venoso: diagnóstico definitivo",
+          "Edema unilateral, dolor en pantorrilla, empastamiento"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Deambulación precoz (no más reposo)",
+            "Media elástica de compresión",
+            "Elevación del miembro"
+          ],
+          "farmacologico": [
+            "DOACs: Rivaroxabana 15mg 2x/día por 21 días, después 20mg/día",
+            "Ou Apixabana 10mg 2x/día por 7 días, después 5mg 2x/día",
+            "Alternativa: Enoxaparina + Varfarina (puente)",
+            "Duración: 3-6 meses (provocado), indefinido (no provocado/recurrente)"
+          ]
+        },
+        "redFlags": [
+          "Disnea (sospecha de TEP)",
+          "TVP proximal extensa",
+          "Flegmasia",
+          "Síndrome compartimental"
+        ],
+        "metasTerapeuticas": [
+          "Anticoagulación terapéutica",
+          "Prevención de TEP",
+          "Prevención de recurrencia"
+        ],
+        "examesIniciais": [
+          "USG Doppler venoso",
+          "D-dímero",
+          "Hemograma",
+          "Coagulograma",
+          "Creatinina"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "rivaroxabana",
+        "apixabana",
+        "enoxaparina",
+        "varfarina"
+      ],
+      "calculadoras": [
+        "wells-tvp"
+      ],
+      "tags": [
+        "tromboembolismo",
+        "anticoagulación",
+        "urgencia"
+      ]
+    },
+    {
+      "id": "embolia-pulmonar",
+      "titulo": "Embolia pulmonar",
+      "sinonimos": [
+        "TEP",
+        "Tromboembolismo pulmonar"
+      ],
+      "ciap2": [
+        "K93"
+      ],
+      "cid10": [
+        "I26"
+      ],
+      "cid11": [
+        "BB20"
+      ],
+      "doid": "DOID:9477",
+      "snomedCT": "59282003",
+      "meshId": "D011655",
+      "umlsCui": "C0034065",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Obstrucción de arterias pulmonares por trombos, generalmente originados de TVP de MMII. Espectro de asintomático a inestabilidad hemodinámica.",
+        "criteriosDiagnosticos": [
+          "Escore de Wells para TEP: alta (>6), moderada (2-6), baja (<2)",
+          "PERC rule: si todos negativos y baja probabilidad, excluido",
+          "D-dímero: alto VNP si baja/moderada probabilidad",
+          "Angio-TC de tórax: estándar de oro",
+          "Disnea súbita, dolor torácico pleurítico, taquicardia, hipoxemia"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Estabilización hemodinámica",
+            "Oxigenoterapia"
+          ],
+          "farmacologico": [
+            "TEP de bajo riesgo: DOAC (rivaroxabana o apixabana)",
+            "TEP de riesgo intermedio: anticoagulación + monitoreo",
+            "TEP alto riesgo (inestable): trombólisis sistémica (alteplase)",
+            "Duración: igual a TVP"
+          ]
+        },
+        "redFlags": [
+          "Hipotensión",
+          "Disfunción de VE",
+          "Troponina elevada",
+          "BNP elevado"
+        ],
+        "metasTerapeuticas": [
+          "Anticoagulación precoz",
+          "Estabilización hemodinámica"
+        ],
+        "examesIniciais": [
+          "Angio-TC tórax",
+          "D-dímero",
+          "ECG",
+          "Gasometría",
+          "Troponina",
+          "BNP",
+          "Eco si inestable"
+        ]
+      },
+      "protocolos": [
+        "dor-toracica"
+      ],
+      "medicamentos": [
+        "rivaroxabana",
+        "apixabana",
+        "enoxaparina",
+        "alteplase"
+      ],
+      "calculadoras": [
+        "wells-tep"
+      ],
+      "tags": [
+        "emergencia",
+        "anticoagulación",
+        "tromboembolismo"
+      ]
+    },
+    {
+      "id": "pericardite-aguda",
+      "titulo": "Pericarditis Aguda",
+      "sinonimos": [
+        "Inflamación pericárdica"
+      ],
+      "ciap2": [
+        "K84"
+      ],
+      "cid10": [
+        "I30"
+      ],
+      "cid11": [
+        "BC80"
+      ],
+      "doid": "DOID:1787",
+      "snomedCT": "3238004",
+      "meshId": "D010493",
+      "umlsCui": "C0031046",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Inflamación del pericardio, generalmente idiopática/viral. Diagnóstico: ≥2 de 4 criterios.",
+        "criteriosDiagnosticos": [
+          "Dolor torácico típico: precordial, empeora con respiración/decúbito, mejora sentado",
+          "Fricción pericárdica",
+          "Alteraciones ECG: elevación difusa de ST, depresión de PR",
+          "Derrame pericárdico nuevo o aumento"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Reposo relativo hasta la resolución de síntomas",
+            "Evitar el ejercicio por 3 meses (atletas)"
+          ],
+          "farmacologico": [
+            "AAS 650-1000mg 8/8h por 1-2 semanas O",
+            "Ibuprofeno 600mg 8/8h por 1-2 semanas",
+            "Colchicina 0,5mg 12/12h por 3 meses (reduce la recurrencia)",
+            "IBP para protección gástrica"
+          ]
+        },
+        "redFlags": [
+          "Fiebre alta",
+          "Derrame voluminoso",
+          "Tamponamiento",
+          "Inmunosupresión",
+          "Anticoagulación"
+        ],
+        "metasTerapeuticas": [
+          "Resolución del dolor",
+          "Normalización de marcadores inflamatorios"
+        ],
+        "examesIniciais": [
+          "ECG",
+          "Ecocardiograma",
+          "PCR",
+          "Troponina",
+          "Radiografía de tórax"
+        ]
+      },
+      "protocolos": [
+        "dor-toracica"
+      ],
+      "medicamentos": [
+        "aas",
+        "ibuprofeno",
+        "colchicina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "dolor torácico",
+        "inflamación",
+        "viral"
+      ]
+    },
+    {
+      "id": "cardiomiopatia-hipertrofica",
+      "titulo": "Cardiomiopatía Hipertrófica",
+      "sinonimos": [
+        "CMH",
+        "Miocardiopatía hipertrófica"
+      ],
+      "ciap2": [
+        "K84"
+      ],
+      "cid10": [
+        "I42.1",
+        "I42.2"
+      ],
+      "cid11": [
+        "BC43.0"
+      ],
+      "doid": "DOID:11984",
+      "snomedCT": "45227007",
+      "meshId": "D002312",
+      "umlsCui": "C0007194",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Hipertrofia ventricular inexplicada (≥15mm), generalmente asimétrica. Causa genética (mutaciones sarcómicas). Principal causa de muerte súbita en jóvenes atletas.",
+        "criteriosDiagnosticos": [
+          "Eco: espesor VE ≥15mm sin causa",
+          "Obstrucción dinámica de VSVE (gradiente ≥30 mmHg)",
+          "Movimiento sistólico anterior de la mitral (SAM)",
+          "ECG: hipertrofia VE, ondas Q, alteraciones de ST-T"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Evitar ejercicio competitivo de alta intensidad",
+            "Rastreo familiar (1º grado)",
+            "Aconsejamiento genético"
+          ],
+          "farmacologico": [
+            "Betabloqueador (propranolol, metoprolol) - primera línea",
+            "Verapamil si intolerancia a BB",
+            "Mavacamten (inhibidor de miosina) - nuevo",
+            "CDI si alto riesgo de muerte súbita"
+          ]
+        },
+        "redFlags": [
+          "Síncope",
+          "Historia familiar de muerte súbita",
+          "TVNS",
+          "Respuesta anormal de PA al ejercicio"
+        ],
+        "metasTerapeuticas": [
+          "Prevención de muerte súbita",
+          "Control de síntomas"
+        ],
+        "examesIniciais": [
+          "Ecocardiograma",
+          "ECG",
+          "Holter 24h",
+          "RM cardíaca",
+          "Test genético"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "propranolol",
+        "metoprolol",
+        "verapamil"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "muerte súbita",
+        "genética",
+        "atleta"
+      ]
+    },
+    {
+      "id": "sincope",
+      "titulo": "Síncope",
+      "sinonimos": [
+        "Desmayo",
+        "Pérdida transitoria de conciencia"
+      ],
+      "ciap2": [
+        "A06"
+      ],
+      "cid10": [
+        "R55"
+      ],
+      "cid11": [
+        "MB40.1"
+      ],
+      "doid": "DOID:11091",
+      "snomedCT": "271594007",
+      "meshId": "D013575",
+      "umlsCui": "C0039070",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Pérdida transitoria de conciencia por hipoperfusión cerebral global con recuperación espontánea y completa. Vasovagal es la causa más común.",
+        "criteriosDiagnosticos": [
+          "Pérdida de conciencia transitoria con recuperación espontánea",
+          "Síncope reflejo (vasovagal): gatillo, prodromos (náuseas, sudoración, visión borrosa)",
+          "Hipotensión ortostática: caída PA ≥20/10 mmHg al ortostatismo",
+          "Cardíaco: ejercicio, palpitaciones, ECG anormal, cardiopatía estructural"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Vasovagal: evitar gatillos, reconocer prodromos, maniobras de contrapresión",
+            "Ortostática: hidratación, sal, levantarse despacio, medias elásticas"
+          ],
+          "farmacologico": [
+            "Vasovagal: generalmente no farmacológico. Fludrocortisona, midodrina si es refractario",
+            "Ortostática: fludrocortisona 0,1-0,3mg/día, midodrina 2,5-10mg 3x/día",
+            "Cardíaco: tratar causa (marcapaso, DAI, antiarrítmico)"
+          ]
+        },
+        "redFlags": [
+          "Síncope al ejercicio",
+          "Palpitaciones antes",
+          "Dolor torácico",
+          "ECG anormal",
+          "Cardiopatía conocida"
+        ],
+        "metasTerapeuticas": [
+          "Identificar causa",
+          "Prevenir recurrencia",
+          "Evaluar riesgo de muerte súbita"
+        ],
+        "examesIniciais": [
+          "ECG",
+          "PA ortostática",
+          "Glicemia",
+          "Hemograma",
+          "Eco si se sospecha cardíaca"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "fludrocortisona",
+        "midodrina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "emergencia",
+        "arritmia",
+        "neurologia"
+      ]
+    },
+    {
+      "id": "angina-estavel",
+      "titulo": "Angina Estable",
+      "sinonimos": [
+        "Angina pectoris crónica",
+        "Angina de esfuerzo"
+      ],
+      "ciap2": [
+        "K74"
+      ],
+      "cid10": [
+        "I20.8",
+        "I20.9"
+      ],
+      "cid11": [
+        "BA80.1"
+      ],
+      "doid": "DOID:0111052",
+      "snomedCT": "194828000",
+      "meshId": "D060050",
+      "umlsCui": "C0340288",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Dolor torácico desencadenado por esfuerzo o estrés emocional, aliviado con reposo o nitrato. Indica enfermedad arterial coronaria obstructiva.",
+        "criteriosDiagnosticos": [
+          "Dolor retroesternal, de tipo opresión/presión",
+          "Desencadenado por esfuerzo/estrés",
+          "Aliviado en <10 min con reposo o nitrato",
+          "Angina típica: 3/3 criterios. Atípica: 2/3"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Modificación de factores de riesgo",
+            "Ejercicio supervisado (rehabilitación cardiovascular)",
+            "Cesación del tabaquismo"
+          ],
+          "farmacologico": [
+            "AAS 100mg/día",
+            "Estatina de alta potencia (atorvastatina 40-80mg)",
+            "Betabloqueador (metoprolol, bisoprolol) - primera línea antianginoso",
+            "Nitrato sublingual de rescate",
+            "Agregar BCC si los síntomas persisten"
+          ]
+        },
+        "redFlags": [
+          "Angina inestable",
+          "Angina en reposo",
+          "Angina progresiva",
+          "Angina post-IAM"
+        ],
+        "metasTerapeuticas": [
+          "LDL-c <55 mg/dL",
+          "PA <130/80",
+          "FC 55-60 bpm",
+          "Cesación del tabaco"
+        ],
+        "examesIniciais": [
+          "ECG",
+          "Ecocardiograma",
+          "Prueba de esfuerzo",
+          "Perfil lipídico",
+          "Glicemia"
+        ]
+      },
+      "protocolos": [
+        "dor-toracica"
+      ],
+      "medicamentos": [
+        "aas",
+        "atorvastatina",
+        "metoprolol",
+        "isossorbida"
+      ],
+      "calculadoras": [
+        "risco-cardiovascular"
+      ],
+      "tags": [
+        "coronariopatia",
+        "prevención",
+        "dolor torácico"
+      ]
+    },
+    {
+      "id": "flutter-atrial",
+      "titulo": "Flutter Atrial",
+      "sinonimos": [
+        "FLA"
+      ],
+      "ciap2": [
+        "K78"
+      ],
+      "cid10": [
+        "I48.3",
+        "I48.4"
+      ],
+      "cid11": [
+        "BC81.0"
+      ],
+      "doid": "DOID:0060675",
+      "snomedCT": "5370000",
+      "meshId": "D001282",
+      "umlsCui": "C0004239",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Taquiarritmia auricular con circuito de macrorreentrada. ECG típico: ondas F en dentes de sierra, FC auricular ~300 bpm, conducción AV generalmente 2:1 (FC ~150 bpm).",
+        "criteriosDiagnosticos": [
+          "ECG: ondas F (dientes de sierra) en DII, DIII, aVF",
+          "Frecuencia auricular 250-350 bpm",
+          "Conducción AV 2:1, 3:1, 4:1 o variable",
+          "FC ventricular regular (excepto si la conducción es variable)"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cardioversión eléctrica si inestable (50-100J)",
+            "Ablación por cateter (alta tasa de éxito)"
+          ],
+          "farmacologico": [
+            "Control de frecuencia: betabloqueador o BCC no-dihidropiridínico",
+            "Anticoagulación: mismas reglas de la FA (CHA2DS2-VASc)",
+            "Cardioversión farmacológica menos eficaz que en la FA",
+            "Ibutilida IV para cardioversión (hospitalaria)"
+          ]
+        },
+        "redFlags": [
+          "Inestabilidad hemodinámica",
+          "IC descompensada",
+          "Síndrome de preexcitación"
+        ],
+        "metasTerapeuticas": [
+          "Restaurar ritmo sinusal o controlar FC",
+          "Prevenir tromboembolismo"
+        ],
+        "examesIniciais": [
+          "ECG 12 derivaciones",
+          "Ecocardiograma",
+          "TSH",
+          "Electrólitos"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "metoprolol",
+        "diltiazem",
+        "amiodarona"
+      ],
+      "calculadoras": [
+        "cha2ds2-vasc"
+      ],
+      "tags": [
+        "arritmia",
+        "anticoagulación",
+        "ablação"
+      ]
+    },
+    {
+      "id": "bloqueio-atrioventricular",
+      "titulo": "Bloqueo Atrioventricular",
+      "sinonimos": [
+        "BAV",
+        "Bloqueo AV"
+      ],
+      "ciap2": [
+        "K84"
+      ],
+      "cid10": [
+        "I44.0",
+        "I44.1",
+        "I44.2"
+      ],
+      "cid11": [
+        "BC61"
+      ],
+      "doid": "DOID:0110687",
+      "snomedCT": "233916004",
+      "meshId": "D054537",
+      "umlsCui": "C0004245",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Trastorno de conducción entre los átrios y los ventrículos. 1º grado: PR prolongado. 2º grado: algunos P bloqueados. 3º grado (BAVT): disociación AV completa.",
+        "criteriosDiagnosticos": [
+          "BAV 1º grado: PR >200ms, todos P conducidos",
+          "BAV 2º grado Mobitz I: PR progresivamente mayor hasta P bloqueado (Wenckebach)",
+          "BAV 2º grado Mobitz II: P bloqueado sin alargamiento previo de PR",
+          "BAV 3º grado (BAVT): ningún P conducido, escape ventricular"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "BAV 1º y Mobitz I: observación, retirar drogas bradicardizantes",
+            "BAVT y Mobitz II: marcapaso provisional → definitivo"
+          ],
+          "farmacologico": [
+            "Atropina 0,5-1mg IV (emergencia, BAVT sintomático)",
+            "Isoproterenol (temporal)",
+            "Suspender drogas: betabloqueador, BCC, digoxina, amiodarona",
+            "Tratar causa: isquemia, Lyme, hipercalemia"
+          ]
+        },
+        "redFlags": [
+          "Síncope",
+          "Bradicardia sintomática",
+          "BAVT",
+          "Mobitz II",
+          "QRS largo en el escape"
+        ],
+        "metasTerapeuticas": [
+          "Marcapaso si está indicado",
+          "FC adecuada",
+          "Ausencia de síntomas"
+        ],
+        "examesIniciais": [
+          "ECG 12 derivaciones",
+          "Holter 24h",
+          "Electrólitos",
+          "Función tiroidea",
+          "Digoxinemia si se usa"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "atropina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "arritmia",
+        "marcapaso",
+        "emergencia"
+      ]
+    },
+    {
+      "id": "hipertensao-pulmonar",
+      "titulo": "Hipertensión Pulmonar",
+      "sinonimos": [
+        "HP",
+        "Hipertensión arterial pulmonar"
+      ],
+      "ciap2": [
+        "K82"
+      ],
+      "cid10": [
+        "I27.0",
+        "I27.2"
+      ],
+      "cid11": [
+        "BB01"
+      ],
+      "doid": "DOID:6432",
+      "snomedCT": "70995007",
+      "meshId": "D006976",
+      "umlsCui": "C0020542",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Presión arterial pulmonar media ≥25 mmHg en reposo. Clasificación: Grupo 1 (HAP), 2 (cardiopatía izquierda), 3 (pulmonar), 4 (CTEPH), 5 (multifactorial).",
+        "criteriosDiagnosticos": [
+          "Síntomas: disnea progresiva al esfuerzo, fatiga, síncope",
+          "Eco: PSAP estimada >35-40 mmHg, dilatación de VE",
+          "Cateterismo derecho: PAPm ≥25 mmHg (diagnóstico definitivo)",
+          "BNP/NT-proBNP elevados"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Limitar esfuerzo físico intenso",
+            "Oxigenoterapia si hay hipoxemia",
+            "Anticoncepción (embarazo contraindicado)"
+          ],
+          "farmacologico": [
+            "Grupo 2: tratar cardiopatía de base",
+            "Grupo 3: tratar neumopatía, O2",
+            "Grupo 4 (CTEPH): anticoagulación, considerar cirugía",
+            "HAP: terapias específicas (sildenafil, bosentan, prostanoideos)"
+          ]
+        },
+        "redFlags": [
+          "Síncope",
+          "Signos de fallo de VE",
+          "BNP muy elevado",
+          "Derrame pericárdico"
+        ],
+        "metasTerapeuticas": [
+          "Clase funcional OMS I-II",
+          "BNP bajo",
+          "Distancia en TC6M"
+        ],
+        "examesIniciais": [
+          "Ecocardiograma",
+          "BNP",
+          "TC de tórax",
+          "V/Q scan",
+          "Cateterismo derecho"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "sildenafil"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "disnea",
+        "insuficiencia cardíaca",
+        "especializado"
+      ]
+    },
+    {
+      "id": "sindrome-coronariana-aguda",
+      "titulo": "Síndrome Coronaria Aguda",
+      "sinonimos": [
+        "SCA",
+        "Infarto agudo del miocardio",
+        "IAM",
+        "IAMCSST",
+        "IAMSSST",
+        "Angina inestable"
+      ],
+      "doid": "DOID:0060158",
+      "snomedCT": "394659003",
+      "meshId": "D054058",
+      "umlsCui": "C0948089",
+      "ciap2": [
+        "K74",
+        "K75",
+        "K76"
+      ],
+      "cid10": [
+        "I20.0",
+        "I21",
+        "I21.0",
+        "I21.1",
+        "I21.2",
+        "I21.3",
+        "I21.4",
+        "I21.9"
+      ],
+      "cid11": [
+        "BA41",
+        "BA42",
+        "BA80"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Espectro de isquemia miocárdica aguda incluyendo angina inestable, IAM sin elevación de ST (IAMSSST) e IAM con elevación de ST (IAMCSST). Representa emergencia cardiovascular con necesidad de intervención inmediata.",
+        "criteriosDiagnosticos": [
+          "Dolor torácico típico: opresivo, retroesternal, irradiación a MIE/mandíbula, >20min",
+          "Disnea, sudoración fría, náuseas, síncope",
+          "ECG: Elevación de ST ≥1mm en 2 derivaciones contiguas (IAMCSST)",
+          "ECG: Depresión de ST, inversión de onda T (IAMSSST)",
+          "Troponina elevada (curva ascendente)",
+          "Escore HEART ≥4 puntos indica alto riesgo"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "muy_alto",
+            "criterios": [
+              "IAMCSST",
+              "Inestabilidad hemodinámica",
+              "Arritmia maligna"
+            ],
+            "conduta": "Cateterismo de emergencia <90min"
+          },
+          {
+            "nivel": "alto",
+            "criterios": [
+              "IAMSSST con troponina +",
+              "GRACE >140"
+            ],
+            "conduta": "Cateterismo <24h"
+          },
+          {
+            "nivel": "moderado",
+            "criterios": [
+              "Angina inestable",
+              "GRACE 109-140"
+            ],
+            "conduta": "Evaluación invasiva en 72h"
+          }
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "MONABCH: Monitor, Oxígeno (si SatO2<90%), Acceso venoso",
+            "Reposo absoluto",
+            "Desfibrilador a disposición"
+          ],
+          "farmacologico": [
+            "AAS 300mg masticable inmediatamente",
+            "Clopidogrel 300-600mg (o Ticagrelor 180mg)",
+            "Heparina (HNF o Enoxaparina)",
+            "Morfina 2-4mg IV si dolor refractario",
+            "Nitrato SL (no usar si PAS<90, uso de sildenafilo, IAM de VI)",
+            "IAMCSST: Trombólito (Tenecteplase) si >120min hasta ICP"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Reperfusión en <90min (ICP primaria)",
+          "Control del dolor",
+          "Prevención de arritmias",
+          "Estabilización hemodinámica"
+        ],
+        "examesIniciais": [
+          "ECG 12 derivaciones en <10min",
+          "Troponina (0h, 1h, 3h)",
+          "Hemograma, función renal, electrolitos",
+          "Coagulograma",
+          "BNP/NT-proBNP",
+          "Rx de tórax"
+        ],
+        "redFlags": [
+          "Hipotensión (PAS<90mmHg) - choque cardígeno",
+          "Taquiarritmia o bradiarritmia",
+          "Congestión pulmonar (Killip ≥II)",
+          "Parada cardiorrespiratoria",
+          "Dissecación aórtica concomitante",
+          "Sangrado activo (contraindicación a anticoagulación)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Principal causa de muerte en Brasil",
+          "incidencia": "~350.000 casos/ano en Brasil",
+          "mortalidad": "30% en la fase aguda sin tratamiento adecuado",
+          "faixaEtaria": "Aumenta progresivamente con edad, pico >60 años",
+          "fatoresRisco": [
+            "Hipertensión arterial",
+            "Diabetes mellitus",
+            "Dislipidemia",
+            "Tabaquismo",
+            "Obesidad",
+            "Historia familiar de DAC precoz",
+            "Sedentarismo"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Ruptura o erosión de placa ateroesclerótica vulnerable, con exposición del núcleo lipídico y formación de trombo. En IAMCSST hay oclusión total; en IAMSSST/angina inestable, oclusión parcial o microembolización.",
+          "citations": [
+            {
+              "refId": "esc-stemi-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dolor torácico opresivo/ceñidor",
+            "Irradiación a MIE, mandíbula, epigastrio, dorso",
+            "Disnea",
+            "Sudoración fría (diáforisis)",
+            "Náuseas y vómitos",
+            "Síncope",
+            "Sensación de muerte inminente"
+          ],
+          "sinaisExameFisico": [
+            "Palidez cutánea",
+            "Taquicardia o bradicardia",
+            "B4 (rigidez ventricular)",
+            "Estertores pulmonares (congestión)",
+            "Hipotensión (mal pronóstico)",
+            "Turgencia jugular (IAM de VI)"
+          ],
+          "formasClinicas": [
+            "Angina inestable: sin elevación de troponina",
+            "IAMSSST: troponina elevada, sin elevación de ST",
+            "IAMCSST: elevación de ST en ECG"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Historia clínica sugestiva",
+            "ECG con alteraciones isquémicas",
+            "Elevación de troponina (curva)"
+          ],
+          "diagnosticoDiferencial": [
+            "Dissecación aórtica",
+            "Embolia pulmonar",
+            "Pericarditis aguda",
+            "Espasmo esofágico",
+            "Pneumotórax",
+            "Costocondritis"
+          ],
+          "examesLaboratoriais": [
+            "Troponina I o T (alta sensibilidad)",
+            "CK-MB (si troponina indisponible)",
+            "Hemograma, creatinina, electrolitos",
+            "Glicemia, HbA1c",
+            "Perfil lipídico"
+          ],
+          "examesImagem": [
+            "ECG 12 derivaciones",
+            "Ecocardiograma transtorácico",
+            "Rx de tórax",
+            "Angiografía coronaria (cineangiocoronariografía)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-stemi-2023"
+            }
+          ]
+        },
+        "tratamiento": {
+          "objetivos": [
+            "Reperfusión coronaria precoz",
+            "Alivio del dolor",
+            "Prevención de complicaciones",
+            "Prevención secundaria"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Reposo absoluto",
+              "Monitorización continua",
+              "Oxigenoterapia si SatO2<90%",
+              "Ayuno inicial"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-sca-2020"
+              }
+            ],
+            "farmacologico": {
+              "primeiraLinha": [
+                {
+                  "classe": "Antiagregantes",
+                  "medicamentos": [
+                    "AAS 300mg",
+                    "Clopidogrel 600mg o Ticagrelor 180mg"
+                  ],
+                  "posologia": "Dosis de ataque"
+                },
+                {
+                  "classe": "Anticoagulantes",
+                  "medicamentos": [
+                    "Enoxaparina 1mg/kg SC 12/12h",
+                    "HNF IV"
+                  ],
+                  "posologia": "Hasta revascularización"
+                },
+                {
+                  "classe": "Analgesia",
+                  "medicamentos": [
+                    "Morfina 2-4mg IV"
+                  ],
+                  "observacoes": "Si dolor refractario a nitrato"
+                },
+                {
+                  "classe": "Betabloqueador",
+                  "medicamentos": [
+                    "Metoprolol 5mg IV"
+                  ],
+                  "observacoes": "Si no hay contraindicación"
+                }
+              ],
+              "citations": [
+                {
+                  "refId": "esc-stemi-2023"
+                }
+              ]
+            },
+            "duracao": "Internación + terapia dual antiagregante por 12 meses"
+          },
+          "acompanhamento": {
+            "frequenciaConsultas": "Primera consulta en 7-14 días post-alta, después mensual por 3 meses",
+            "examesControle": [
+              "Ecocardiograma en 4-6 semanas",
+              "Perfil lipídico",
+              "HbA1c",
+              "Función renal"
+            ],
+            "metasTerapeuticas": [
+              "LDL <55 mg/dL",
+              "PA <130/80 mmHg",
+              "HbA1c <7% si diabético",
+              "Cesación tabáquica",
+              "Rehabilitación cardíaca"
+            ],
+            "criteriosEncaminhamento": [
+              "Todo IAMCSST: emergencia/cardiología intervencionista",
+              "IAMSSST de alto riesgo",
+              "Complicaciones mecánicas",
+              "Arritmias sostenidas"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-sca-2020"
+              }
+            ]
+          },
+          "prevencao": {
+            "primaria": [
+              "Control de factores de riesgo",
+              "Estatina en alto riesgo cardiovascular",
+              "AAS en prevención primaria (controverso)"
+            ],
+            "secundaria": [
+              "Terapia dual antiagregante",
+              "Estatina de alta potencia",
+              "Betabloqueador",
+              "IECA/BRA",
+              "Rehabilitación cardíaca"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-sca-2020"
+              }
+            ]
+          }
+        }
+      },
+      "protocolos": [
+        "manejo-sca",
+        "anticoagulacao-sca"
+      ],
+      "medicamentos": [
+        "aas",
+        "clopidogrel",
+        "ticagrelor",
+        "enoxaparina",
+        "morfina"
+      ],
+      "calculadoras": [
+        "heart-score",
+        "grace-score",
+        "timi-score"
+      ],
+      "citations": [
+        {
+          "refId": "sbc-sca-2020"
+        },
+        {
+          "refId": "esc-stemi-2023"
+        },
+        {
+          "refId": "aha-ua-nstemi-2021"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "edema-agudo-pulmao",
+      "titulo": "Edema Agudo de Pulmón",
+      "sinonimos": [
+        "EAP",
+        "Edema pulmonar cardiogénico",
+        "Congestión pulmonar aguda"
+      ],
+      "doid": "DOID:11396",
+      "snomedCT": "67782005",
+      "meshId": "D011654",
+      "umlsCui": "C0034063",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "J81",
+        "I50.1"
+      ],
+      "cid11": [
+        "CB01"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Acúmulo abrupto de líquido en el intersticio y alvéolos pulmonares por aumento de la presión capilar pulmonar (cardiogénico) o aumento de la permeabilidad (no cardiogénico). Emergencia con insuficiencia respiratoria aguda.",
+        "criteriosDiagnosticos": [
+          "Disnea intensa de inicio súbito",
+          "Ortopnea (no tolera decúbito)",
+          "Estertores crepitantes difusos bilaterales",
+          "Escupitajo rosado espumoso (casos graves)",
+          "Taquipnea, uso de musculatura accesoría",
+          "Rx de tórax: infiltrado bilateral \"en ala de murciélago\"",
+          "BNP/NT-proBNP elevado (cardiogénico)"
+        ],
+        "tratamientoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "LEMON: Lasix, Elevar cabeceira, Morfina, Oxígeno, Nitrato",
+            "Cabeceira elevada a 90° (o sentado con piernas pendientes)",
+            "Oxígeno (máscara no reinalante, VNI si disponible)",
+            "VNI (CPAP o BiPAP) - reduce mortalidad",
+            "Acceso venoso, monitorización"
+          ],
+          "farmacologico": [
+            "FUROSEMIDA 40-80mg IV (0,5-1mg/kg)",
+            "Repetir si necesario; duplicar dosis si uso previo de diurético",
+            "",
+            "NITROGLICERINA SL 0,4mg o spray (si PAS>90)",
+            "Si posible: NTG IV 10-200mcg/min",
+            "",
+            "MORFINA 2-4mg IV (controvertido, precaución)",
+            "",
+            "Si HTA grave: Nitroprusiato IV",
+            "Si hipotensión: Noradrenalina + Dobutamina"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Reducción de la congestión pulmonar",
+          "Mejora de la oxigenación (SatO2>92%)",
+          "Control de la presión arterial",
+          "Identificación y tratamiento de la causa"
+        ],
+        "examesIniciais": [
+          "ECG 12 derivaciones (isquemia, arritmia)",
+          "Rx de tórax",
+          "BNP o NT-proBNP",
+          "Troponina",
+          "Gasometría arterial",
+          "Electrólitos, función renal",
+          "Ecocardiograma (lo antes posible)"
+        ],
+        "redFlags": [
+          "Choque cardiogénico (PA baja, extremidades frías)",
+          "Arritmia grave (FA rápida, TV)",
+          "IAM asociado",
+          "Necesidad de IOT",
+          "Saturación <80% a pesar de O2",
+          "No respuesta a VNI en 30-60 min"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Complicación común de IC (1 millón de hospitalizaciones/año en EE.UU.)",
+          "faixaEtaria": "Más común en ancianos",
+          "fatoresRisco": [
+            "Insuficiencia cardíaca previa",
+            "Cardiopatía isquémica",
+            "Hipertensión arterial",
+            "Valvopatías",
+            "Cardiomiopatías",
+            "Fibrilación auricular",
+            "Enfermedad renal crónica"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Aumento de la presión de llenado del VI → aumento de la presión capilar pulmonar → transudación de líquido al intersticio y alvéolos → comprometimiento de los intercambios gaseosos e hipoxemia. En el no cardiogénico, hay lesión de la barrera alvéolo-capilar.",
+          "citations": [
+            {
+              "refId": "esc-hf-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Disnea intensa",
+            "Ortopnea",
+            "Disnea paroxística nocturna",
+            "Tos con escupitajo rosado espumoso",
+            "Ansiedad, sensación de muerte inminente"
+          ],
+          "sinaisExameFisico": [
+            "Taquipnea",
+            "Uso de musculatura accesoría",
+            "Estertores crepitantes bilaterales",
+            "Silbidos (\"asma cardíaca\")",
+            "Turgencia yugular",
+            "B3/B4, soplos",
+            "Edema de MMII"
+          ],
+          "formasClinicas": [
+            "EAP hipertensivo (PA elevada)",
+            "EAP normotensivo",
+            "EAP con choque cardiogénico (PA baja)",
+            "EAP no cardiogénico (SDRA)"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínica + Rx compatible",
+            "BNP/NT-proBNP elevado",
+            "Exclusión de causas no cardiogénicas"
+          ],
+          "diagnosticoDiferencial": [
+            "SDRA (no cardiogénico)",
+            "Pneumonía grave",
+            "Exacerbación de EPOC/asma",
+            "Embolia pulmonar",
+            "Crisis de ansiedad/hiperventilación"
+          ],
+          "examesLaboratoriais": [
+            "BNP (>400pg/mL) o NT-proBNP (>2000pg/mL)",
+            "Troponina (IAM asociado?)",
+            "Gasometría arterial",
+            "Hemograma, función renal, electrólitos",
+            "D-dímero (si sospecha de TEP)"
+          ],
+          "examesImagem": [
+            "Rx de tórax (congestión vascular, infiltrado, cardiomegalia)",
+            "Ecocardiograma (disfunción VI, valvopatías)",
+            "TC de tórax (si duda diagnóstica)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-hf-2021"
+            }
+          ]
+        },
+        "tratamiento": {
+          "objetivos": [
+            "Aliviar la congestión",
+            "Mejorar la oxigenación",
+            "Tratar la causa",
+            "Prevenir la recurrencia"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Sentar paciente (piernas pendientes)",
+              "Oxigenoterapia",
+              "VNI (CPAP 5-10cmH2O o BiPAP)",
+              "Intubación si VNI falla"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-ic-2018"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Diurético de asa",
+                "medicamentos": [
+                  "Furosemida 40-80mg IV"
+                ],
+                "posologia": "Dosis inicial; repetir según respuesta"
+              },
+              {
+                "classe": "Vasodilatador",
+                "medicamentos": [
+                  "Nitroglicerina SL o IV",
+                  "Nitroprusiato IV (si HTA)"
+                ],
+                "posologia": "NTG IV 10-200mcg/min"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Inotrópico",
+                "medicamentos": [
+                  "Dobutamina 2,5-20mcg/kg/min"
+                ],
+                "observacoes": "Si bajo débito"
+              },
+              {
+                "classe": "Vasopresor",
+                "medicamentos": [
+                  "Noradrenalina"
+                ],
+                "observacoes": "Si choque"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-hf-2021"
+              }
+            ]
+          },
+          "duracao": "Fase aguda: horas a días; optimización crónica de la IC"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Reevaluación continua en la emergencia; seguimiento cardiológico",
+          "metasTerapeuticas": [
+            "Euvolemia",
+            "Optimización de IECA/BRA, BB, antagonista mineralocorticoide",
+            "Control de factores precipitantes"
+          ],
+          "criteriosEncaminhamento": [
+            "UCI si choque, IOT o refractario",
+            "Cardiología para investigación y optimización",
+            "Cirugía cardíaca si valvopatía grave"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "eap-emergencia",
+        "ic-descompensada"
+      ],
+      "medicamentos": [
+        "furosemida",
+        "nitroglicerina",
+        "nitroprusiato",
+        "dobutamina"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "sbc-ic-2018"
+        },
+        {
+          "refId": "esc-hf-2021"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}
