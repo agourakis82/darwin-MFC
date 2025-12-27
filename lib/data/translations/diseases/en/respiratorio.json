@@ -1,0 +1,820 @@
+{
+  "locale": "en",
+  "category": "respiratorio",
+  "generatedAt": "2025-12-27T03:34:57.571Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "asma",
+      "titulo": "Asma Brônquica",
+      "sinonimos": [
+        "Asma",
+        "Bronquite asmática",
+        "Hiperreatividade brônquica"
+      ],
+      "doid": "DOID:2841",
+      "snomedCT": "195967001",
+      "meshId": "D001249",
+      "umlsCui": "C0004096",
+      "ciap2": [
+        "R96"
+      ],
+      "cid10": [
+        "J45",
+        "J46"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "Doãncia inflamatória crónica das vias aéreas caracterizada por hiperresponsividade brônquica e obstrução variável ao fluxo aéreo, manifestando-se por episódios recorrentes de sibiláncia, dispneia, opressão torácica e tosse.",
+        "criteriosDiagnosticos": [
+          "Sintomas variáveis (sibilos, dispneia, tosse, opressão torácica)",
+          "Piora noturna/matinal, com exercício, alérgenos, infecções",
+          "Espirometria: VEF1/CVF <0,7 + melhora é12% e 200ml pós-BD",
+          "PFE: variabilidade >10% em adultos",
+          "Se espirometria normal: teste de broncoprovocação positivo"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Afastamento de alérgenos (ácaros, mofo, pelos de animais)",
+            "Controle ambiental (encapar colchônes, lavar roupas de cama)",
+            "Cessão do tabagismo (próprio e passivo)",
+            "Evitar AINEs e betabloqueadores se hipersensibilidade",
+            "VacinaÃo (influenza anual, pneumococo)",
+            "Plano de açõo por escrito"
+          ],
+          "farmacologico": [
+            "Etapa 1-2: CI dose baixa-média (Beclometasona 200-400mcg) + SABA se necessário",
+            "Etapa 3: CI dose média + LABA (Formoterol) ou LAMA",
+            "Etapa 4-5: CI dose alta + LABA, considerar anti-IgE/IL-5",
+            "Resgate: Formoterol-CI (preferido) ou SABA (Salbutamol)",
+            "ExacerbaÃo: Prednisona 40-60mg/dia 5-7 dias"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Controle de sintomas: ACT é20, sem limitaçõ de atividades",
+          "Reduzir risco de exacerbaÅões",
+          "Minimizar uso de SABA (<2x/mãs para sintomas)",
+          "Função pulmonar normal ou próxima do normal",
+          "Minimizar efeitos adversos do tratamento"
+        ],
+        "examesIniciais": [
+          "Espirometria com prova broncodilatadora",
+          "Peak Flow (PFE) para monitorização domiciliar",
+          "Hemograma (eosinofilia sugere asma alérgica)",
+          "IgE total",
+          "Radiografia de tórax (na avaliaÅó inicial)"
+        ],
+        "redFlags": [
+          "ExacerbaÅõ grave: fala entrecortada, FR >30, FC >120, SpO2 <90%",
+          "Uso de musculatura acessória, cianose",
+          "PFE <50% do previsto ou melhor pessoal",
+          "Falta de resposta ao broncodilatador",
+          "História de intubação por asma",
+          "Pneumotórax"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "10-15% em crianÃas, 5-10% em adultos no Brasil",
+          "mortalidade": "~2.500 mortes/ano no Brasil (maioria evitável)",
+          "faixaEtaria": "InÌiã frequente na infáncia, pode iniciar em qualquer idade",
+          "fatoresRisco": [
+            "Atopia (rinite, eczema)",
+            "História familiar de asma",
+            "Exposição a alérgenos (ácaros, mofo, pelos)",
+            "Infecções respiratórias na infência",
+            "Tabagismo passivo",
+            "Polução ambiental",
+            "Obesidade"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Sibiláncia (chiado no peito)",
+            "Dispneia episódica",
+            "Tosse, especialmente noturna/matinal",
+            "Opressão torácica",
+            "Sintomas variçveis no tempo e intensidade",
+            "Piora com infecções, exercício, alérgenos, mudanês climáticas"
+          ],
+          "sinaisExameFisico": [
+            "Sibilos expiratórios difusos na crise",
+            "Fase expiratória prolongada",
+            "Uso de musculatura acessória (crise grave)",
+            "Intercrises: exame frequentemente normal",
+            "Rinite alérgica associada"
+          ],
+          "formasClinicas": [
+            "Asma alérgica (mais comum)",
+            "Asma não alérgica",
+            "Asma de inÌião tardio",
+            "Asma com limitação fixa ao fluxo aéreo",
+            "Asma com obesidade"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "História de sintomas respiratórios variáveis",
+            "Limitação variável ao fluxo expiratório (espirometria)",
+            "Resposta ao broncodilatador (≥12% e 200ml no VEF1)",
+            "Ou variabilidade do PFE >10%",
+            "Ou teste de broncoprovocação positivo"
+          ],
+          "diagnosticoDiferencial": [
+            "DPOC",
+            "Disfunção de cordas vocais",
+            "Insuficiência cardíaca",
+            "Bronquiectasias",
+            "Corpo estranho",
+            "DRGE com tosse"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Controle dos sintomas",
+            "Prevenção de exacerbações",
+            "Manutenção da função pulmonar normal",
+            "Minimizar efeitos adversos"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Educação em asma e plano de ação",
+              "Técnica inalatória correta",
+              "Controle ambiental",
+              "Cessação do tabagismo",
+              "Atividade física regular",
+              "Controle do peso",
+              "Vacinação"
+            ],
+            "citations": [
+              {
+                "refId": "gina-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "CI dose baixa",
+                "medicamentos": [
+                  "Beclometasona 200-400mcg/dia",
+                  "Budesonida 200-400mcg/dia"
+                ],
+                "observações": "Base do tratamento. Etapas 1-2"
+              },
+              {
+                "classe": "CI + Formoterol",
+                "medicamentos": [
+                  "Budesonida/Formoterol 200-400/6-12mcg"
+                ],
+                "observações": "Manutenção e resgate (MART). Preferido pelo GINA"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "CI dose média-alta + LABA",
+                "medicamentos": [
+                  "Budesonida/Formoterol 400-800/12-24mcg"
+                ],
+                "observações": "Etapas 3-4"
+              },
+              {
+                "classe": "LAMA",
+                "medicamentos": [
+                  "Tiotrópio 5mcg (Respimat)"
+                ],
+                "observações": "Adicional em etapa 4-5"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Exacerbação",
+                "conduta": "SABA + corticoide oral (prednisona 40-60mg 5-7 dias)"
+              },
+              {
+                "situacao": "Gestação",
+                "conduta": "Manter tratamento. CI seguros. Controle é prioridade"
+              },
+              {
+                "situacao": "Asma grave",
+                "conduta": "Encaminhar. Imunobiológicos (anti-IgE, anti-IL5)"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "gina-2024"
+              }
+            ]
+          },
+          "duracao": "Tratamento contínuo. Step down após 3 meses de controle"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "A cada 1-3 meses até controle, depois a cada 3-6 meses",
+          "examesControle": [
+            "Espirometria anual",
+            "ACT (Asthma Control Test) a cada consulta",
+            "PFE domiciliar"
+          ],
+          "metasTerapeuticas": [
+            "ACT ≥20",
+            "Sem exacerbações",
+            "SABA <2x/mês",
+            "VEF1 normal ou próxima"
+          ],
+          "criteriosEncaminhamento": [
+            "Asma de difícil controle (etapa 4-5)",
+            "Exacerbação grave/quase fatal",
+            "Dúvida diagnóstica",
+            "Suspeita de asma ocupacional",
+            "Necessidade de imunobiológico"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-asma",
+        "crise-asma"
+      ],
+      "medicamentos": [
+        "beclometasona",
+        "budesonida",
+        "salbutamol",
+        "formoterol"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "gina-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "respiratorio",
+        "cronica",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "pneumonia-comunitaria",
+      "titulo": "Community-Acquired Pneumonia",
+      "sinonimos": [
+        "CAP",
+        "Community-Acquired Pneumonia",
+        "Pneumonia"
+      ],
+      "doid": "DOID:552",
+      "snomedCT": "385093006",
+      "meshId": "D018410",
+      "umlsCui": "C0694549",
+      "ciap2": [
+        "R81"
+      ],
+      "cid10": [
+        "J18",
+        "J15",
+        "J13",
+        "J14"
+      ],
+      "cid11": [
+        "CA40"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "Acute infection of the pulmonary parenchyma acquired outside the hospital setting, characterized by acute respiratory symptoms and new pulmonary infiltrate on radiography.",
+        "criteriosDiagnosticos": [
+          "Acute symptoms: cough, sputum production, fever, dyspnea, pleuritic chest pain",
+          "Signs: tachypnea, crackles, tubular breath sounds",
+          "New infiltrate on chest radiography",
+          "No recent hospitalization (>48 hours in the last 90 days)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Adequate hydration",
+            "Relative rest",
+            "Antipyretics if fever",
+            "SpO2 monitoring"
+          ],
+          "farmacologico": [
+            "Mild CAP (outpatient): Amoxicillin 500mg every 8 hours PO for 5-7 days",
+            "Or Azithromycin 500mg/day for 3-5 days (if penicillin allergy)",
+            "Moderate CAP: Amoxicillin-clavulanate + Macrolide or Respiratory Quinolone",
+            "Duration: 5-7 days (minimum 5 days, afebrile for 48-72 hours)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Resolution of symptoms in 48-72 hours",
+          "Defervescence in 48-72 hours",
+          "Radiographic improvement (may take weeks)",
+          "SpO2 >90%"
+        ],
+        "examesIniciais": [
+          "Chest radiography (PA and lateral)",
+          "Pulse oximetry",
+          "Complete blood count, CRP",
+          "Renal function if moderate/severe",
+          "Arterial blood gas if SpO2 <92%"
+        ],
+        "redFlags": [
+          "SpO2 <90% on room air",
+          "Hypotension (SBP <90)",
+          "Mental confusion",
+          "Respiratory rate >30 breaths/min",
+          "Urea >50 mg/dL",
+          "Large pleural effusion",
+          "Multilobar infiltrate"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Common cause of consultation and hospitalization",
+          "incidencia": "5-11 cases/1000 inhabitants/year",
+          "faixaEtaria": "All ages, more severe in the elderly and children",
+          "fatoresRisco": [
+            "Age >65 years",
+            "COPD, asthma",
+            "Heart failure",
+            "Diabetes mellitus",
+            "Immunosuppression",
+            "Smoking, alcoholism",
+            "Institutionalization"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Infection of the pulmonary parenchyma by microorganisms (bacteria, viruses, fungi). The most common are Streptococcus pneumoniae, Haemophilus influenzae, Mycoplasma pneumoniae, and respiratory viruses. The inflammatory response causes alveolar consolidation and impairment of gas exchange.",
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Cough (usually productive)",
+            "Fever (may be absent in the elderly)",
+            "Dyspnea",
+            "Pleuritic chest pain",
+            "Chills",
+            "General malaise"
+          ],
+          "sinaisExameFisico": [
+            "Tachypnea (RR >20)",
+            "Fever",
+            "Crackles",
+            "Tubular breath sounds (consolidation)",
+            "Dullness to percussion",
+            "Increased vocal fremitus"
+          ],
+          "formasClinicas": [
+            "Typical CAP: acute onset, high fever, productive cough",
+            "Atypical CAP: insidious onset, dry cough, extrapulmonary manifestations"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinical presentation consistent with CAP",
+            "New infiltrate on chest radiography",
+            "Exclusion of other causes"
+          ],
+          "diagnosticoDiferencial": [
+            "Acute bronchitis",
+            "Exacerbation of COPD/asthma",
+            "Heart failure",
+            "Pulmonary embolism",
+            "Tuberculosis",
+            "Lung cancer"
+          ],
+          "examesLaboratoriais": [
+            "Chest radiography",
+            "Complete blood count",
+            "CRP or procalcitonin",
+            "Urea, creatinine",
+            "Blood culture (if hospitalized)",
+            "Urine antigen testing (pneumococcus, legionella) if severe"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Eradication of the pathogen",
+            "Resolution of symptoms",
+            "Prevention of complications",
+            "Avoidance of antimicrobial resistance"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hydration",
+              "Rest",
+              "Oxygen therapy if SpO2 <90%",
+              "Analgesics/antipyretics"
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-pac-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Betalactam",
+                "medicamentos": [
+                  "Amoxicillin",
+                  "Amoxicillin-clavulanate"
+                ],
+                "posologia": "Amoxicillin 500mg every 8 hours PO for 5-7 days"
+              },
+              {
+                "classe": "Macrolide (alternative or combination)",
+                "medicamentos": [
+                  "Azithromycin",
+                  "Clarithromycin"
+                ],
+                "posologia": "Azithromycin 500mg/day for 3-5 days"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Penicillin allergy",
+                "conduta": "Azithromycin or Respiratory Quinolone (Levofloxacin)"
+              },
+              {
+                "situacao": "Severe CAP (hospitalization)",
+                "conduta": "Amoxicillin-clavulanate IV + Azithromycin or Quinolone IV"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-pac-2022"
+              }
+            ]
+          },
+          "duracao": "5-7 days (minimum 5 days, afebrile for 48-72 hours before discontinuation)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Follow-up in 48-72 hours if outpatient",
+          "examesControle": [
+            "Follow-up chest radiography in 4-6 weeks (if >50 years or smoker)",
+            "Clinical re-evaluation if no improvement in 48-72 hours"
+          ],
+          "metasTerapeuticas": [
+            "Defervescence in 48-72 hours",
+            "Improvement of respiratory symptoms"
+          ],
+          "criteriosEncaminhamento": [
+            "CURB-65 ≥2 (consider hospitalization)",
+            "SpO2 <90%",
+            "Complications (pleural effusion, abscess)",
+            "Failure of outpatient treatment"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Pneumococcal vaccination (>65 years and high-risk groups)",
+            "Annual influenza vaccination",
+            "Smoking cessation"
+          ],
+          "secundaria": [
+            "Adequate treatment of respiratory infections",
+            "Post-CAP vaccination"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-pac"
+      ],
+      "medicamentos": [
+        "amoxicilina",
+        "azitromicina",
+        "levofloxacino"
+      ],
+      "calculadoras": [
+        "curb-65",
+        "psi-port"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "sbpt-pac-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "pneumonia",
+        "cap",
+        "respiratory-infection",
+        "cough",
+        "fever"
+      ]
+    },
+    {
+      "id": "asma-infantil",
+      "titulo": "Asthma in Childhood",
+      "ciap2": [
+        "R96"
+      ],
+      "cid10": [
+        "J45"
+      ],
+      "cid11": [
+        "CA23"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:2841",
+      "snomedCT": "195967001",
+      "meshId": "D001249",
+      "umlsCui": "C0004096",
+      "quickView": {
+        "definicao": "Chronic inflammatory disease of the airways with recurrent episodes of wheezing. Diagnosis is challenging in children under 5 years. The leading chronic disease of childhood.",
+        "criteriosDiagnosticos": [
+          "Recurrent wheezing (≥3 episodes)",
+          "Nocturnal/morning cough",
+          "Exertional dyspnea",
+          "Improvement with bronchodilator",
+          "Modified asthma predictive index (predictive in children <5 years)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Environmental control",
+            "Avoid passive smoking",
+            "Up-to-date vaccination"
+          ],
+          "farmacologico": [
+            "Mild intermittent: SABA rescue",
+            "Persistent: Low-dose inhaled corticosteroids (budesonide 100-200mcg)",
+            "Step-up if uncontrolled"
+          ]
+        },
+        "redFlags": [
+          "Cyanosis",
+          "Use of accessory muscles",
+          "Difficulty speaking",
+          "SpO2 <92%",
+          "Silent chest"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol",
+        "budesonida",
+        "prednisolona"
+      ],
+      "protocolos": [
+        "asma-exacerbacao"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "sinusite-aguda",
+      "titulo": "Acute Sinusitis",
+      "ciap2": [
+        "R75"
+      ],
+      "cid10": [
+        "J01"
+      ],
+      "cid11": [
+        "CA12"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:0050127",
+      "snomedCT": "15805002",
+      "meshId": "D012852",
+      "umlsCui": "C0037199",
+      "quickView": {
+        "definicao": "Inflammation of the paranasal sinuses, usually viral. Duration <4 weeks. Bacterial if symptoms >10 days or worsen after initial improvement.",
+        "criteriosDiagnosticos": [
+          "Nasal congestion",
+          "Purulent rhinorrhea",
+          "Facial pain/pressure",
+          "Hyposmia",
+          "Duration 7-10 days (viral) or >10 days (bacterial)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Nasal irrigation with saline solution",
+            "Hydration",
+            "Air humidification"
+          ],
+          "farmacologico": [
+            "Symptomatic: analgesic + topical decongestant (max 5 days)",
+            "ATB if bacterial: Amoxicillin 500mg every 8 hours for 7-10 days"
+          ]
+        },
+        "redFlags": [
+          "Periorbital edema",
+          "Visual disturbance",
+          "Severe headache",
+          "Meningeal signs"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "paracetamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "faringite-aguda",
+      "titulo": "Acute Pharyngitis",
+      "ciap2": [
+        "R72"
+      ],
+      "cid10": [
+        "J02"
+      ],
+      "cid11": [
+        "CA02"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:974",
+      "snomedCT": "363746003",
+      "meshId": "D010612",
+      "umlsCui": "C0031350",
+      "quickView": {
+        "definicao": "Inflammation of the pharynx. Majority viral (70-90%). Streptococcal (GABHS) in 15-30% of children, 5-15% of adults.",
+        "criteriosDiagnosticos": [
+          "Sore throat",
+          "Pharyngeal erythema",
+          "Tonsillar exudate",
+          "Cervical adenopathy",
+          "Modified Centor criteria"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Analgesics (paracetamol/ibuprofen)",
+            "Gargling with warm salt water"
+          ],
+          "farmacologico": [
+            "Viral: symptomatic treatment only",
+            "Bacterial (GABHS): Penicillin V 250-500mg every 6 hours for 10 days OR Amoxicillin 500mg every 8 hours"
+          ]
+        },
+        "redFlags": [
+          "Trismus",
+          "Uvular deviation",
+          "Stridor",
+          "Peritonsillar abscess"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquite-aguda",
+      "titulo": "Acute Bronchitis",
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J20"
+      ],
+      "cid11": [
+        "CA20"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:6132",
+      "snomedCT": "32398004",
+      "meshId": "D001991",
+      "umlsCui": "C0006267",
+      "quickView": {
+        "definicao": "Inflammation of the bronchi lasting <3 weeks. Usually viral (90%). Cough may persist for 2-3 weeks.",
+        "criteriosDiagnosticos": [
+          "Productive cough",
+          "No evidence of pneumonia",
+          "Duration <3 weeks",
+          "Upper respiratory symptoms"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydration",
+            "Rest",
+            "Avoid irritants"
+          ],
+          "farmacologico": [
+            "Symptomatic: antitussives if dry, disturbing cough",
+            "Antibiotics NOT routinely indicated",
+            "Bronchodilator if wheezing (Salbutamol inhaler)"
+          ]
+        },
+        "redFlags": [
+          "Cough >3 weeks",
+          "Signs of pneumonia",
+          "Hemoptysis",
+          "Dyspnea"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "tosse-cronica",
+      "titulo": "Chronic Cough",
+      "sinonimos": [
+        "Persistent Cough"
+      ],
+      "ciap2": [
+        "R05"
+      ],
+      "cid10": [
+        "R05"
+      ],
+      "cid11": [
+        "MD11.1"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:12759",
+      "snomedCT": "49727002",
+      "meshId": "D003371",
+      "umlsCui": "C0010200",
+      "tags": [
+        "respiratorio",
+        "symptom",
+        "chronic"
+      ],
+      "quickView": {
+        "definicao": "Persistent cough lasting >8 weeks. Main causes: post-nasal drip syndrome, asthma, gastroesophageal reflux disease (GERD), use of ACE inhibitors.",
+        "criteriosDiagnosticos": [
+          "Cough >8 weeks",
+          "Investigate causes: GERD, asthma, rhinitis, ACE inhibitors",
+          "Normal chest radiograph",
+          "Exclusion of other causes"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Treat underlying cause",
+            "Discontinue ACE inhibitors if recently started",
+            "Avoid irritants"
+          ],
+          "farmacologico": [
+            "If GERD: Proton pump inhibitors (PPI)",
+            "If asthma: Bronchodilators + Inhaled corticosteroids",
+            "If rhinitis: Antihistamines + Nasal corticosteroids",
+            "Codeine or Dextromethorphan only for short-term use if necessary"
+          ]
+        },
+        "redFlags": [
+          "Hemoptysis",
+          "Weight loss",
+          "Fever",
+          "Lymphadenopathy",
+          "Smoking",
+          "Age >50 years"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

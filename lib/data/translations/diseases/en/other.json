@@ -1,0 +1,1266 @@
+{
+  "locale": "en",
+  "category": "other",
+  "generatedAt": "2025-12-27T13:00:44.805Z",
+  "count": 10,
+  "diseases": [
+    {
+      "id": "sindrome-fragilidade",
+      "titulo": "Frailty Syndrome",
+      "ciap2": [
+        "A04"
+      ],
+      "cid10": [
+        "R54"
+      ],
+      "cid11": [
+        "MG2A"
+      ],
+      "categoria": "other",
+      "doid": "DOID:0080429",
+      "snomedCT": "248279007",
+      "meshId": "D000073496",
+      "umlsCui": "C0424594",
+      "quickView": {
+        "definicao": "Geriatric syndrome of increased vulnerability to stressors due to a decline in physiological reserves. Prevalence of 10-15% in individuals >65 years.",
+        "criteriosDiagnosticos": [
+          "Fried phenotype: ≥3 criteria = frail, 1-2 = pre-frail",
+          "Unintentional weight loss >4.5 kg/year",
+          "Self-reported exhaustion",
+          "Low physical activity",
+          "Slow gait speed",
+          "Weakness (grip strength)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Multicomponent exercise (resistance + balance)",
+            "Protein nutritional intervention",
+            "Comprehensive geriatric assessment"
+          ],
+          "farmacologico": [
+            "Vitamin D if deficient",
+            "Medication review and deprescribing"
+          ]
+        },
+        "redFlags": [
+          "Recurrent falls",
+          "Significant weight loss",
+          "Frequent hospitalizations",
+          "Rapid functional decline"
+        ]
+      },
+      "medicamentos": [
+        "vitamina-d"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "incontinencia-urinaria-idoso",
+      "titulo": "Urinary Incontinence in the Elderly",
+      "ciap2": [
+        "U04"
+      ],
+      "cid10": [
+        "N39.4"
+      ],
+      "cid11": [
+        "MF50"
+      ],
+      "categoria": "other",
+      "doid": "DOID:13580",
+      "snomedCT": "165232002",
+      "meshId": "D014549",
+      "umlsCui": "C0042024",
+      "quickView": {
+        "definicao": "Involuntary loss of urine causing social or hygienic impact. Affects 30-50% of elderly individuals in the community.",
+        "criteriosDiagnosticos": [
+          "Identify type: urgency, stress, mixed, functional",
+          "Bladder diary",
+          "Positive stress test",
+          "Post-void residual"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Kegel exercises (pelvic floor)",
+            "Bladder training",
+            "Scheduled voiding",
+            "Reduce caffeine intake"
+          ],
+          "farmacologico": [
+            "Oxybutynin or Tolterodine (urgency)",
+            "Mirabegron (alternative)",
+            "Caution with anticholinergics in the elderly"
+          ]
+        },
+        "redFlags": [
+          "Hematuria",
+          "Pelvic pain",
+          "Recurrent urinary tract infection",
+          "Urinary retention"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "quedas-idoso",
+      "titulo": "Fall Syndrome in the Elderly",
+      "ciap2": [
+        "A29"
+      ],
+      "cid10": [
+        "W19"
+      ],
+      "cid11": [
+        "NE01"
+      ],
+      "categoria": "other",
+      "doid": "DOID:14002",
+      "snomedCT": "56307009",
+      "meshId": "D000058",
+      "umlsCui": "C0000921",
+      "quickView": {
+        "definicao": "Unintentional event of displacement to the ground. 30% of individuals >65 years fall annually. The leading cause of traumatic death in the elderly.",
+        "criteriosDiagnosticos": [
+          "≥2 falls in 12 months = high risk",
+          "Timed Up and Go >12 seconds",
+          "Detailed history of the fall",
+          "Assessment of gait and balance"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Balance exercises (Tai Chi)",
+            "Vision correction",
+            "Environmental adaptation",
+            "Appropriate footwear"
+          ],
+          "farmacologico": [
+            "Vitamin D 800-1000IU/day",
+            "Review sedatives and antihypertensives"
+          ]
+        },
+        "redFlags": [
+          "Fall with fracture",
+          "Head injury",
+          "Associated syncope",
+          "Recurrent falls"
+        ]
+      },
+      "medicamentos": [
+        "vitamin-d"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "conjuntivite",
+      "titulo": "Conjunctivitis",
+      "ciap2": [
+        "F70"
+      ],
+      "cid10": [
+        "H10"
+      ],
+      "cid11": [
+        "9A60"
+      ],
+      "categoria": "other",
+      "doid": "DOID:6195",
+      "snomedCT": "9826008",
+      "meshId": "D003231",
+      "umlsCui": "C0009763",
+      "quickView": {
+        "definicao": "Inflammation of the conjunctiva. Viral (most common), bacterial, or allergic. Highly contagious if infectious.",
+        "criteriosDiagnosticos": [
+          "Conjunctival hyperemia",
+          "Discharge (watery=viral, purulent=bacterial)",
+          "Pruritus (allergic)",
+          "Foreign body sensation"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cold compresses",
+            "Hand hygiene",
+            "Avoid contact with others"
+          ],
+          "farmacologico": [
+            "Viral: self-limiting 7-14 days",
+            "Bacterial: Ciprofloxacin eye drops 1 drop 4 times daily for 7 days",
+            "Allergic: Antihistamine eye drops"
+          ]
+        },
+        "redFlags": [
+          "Severe ocular pain",
+          "Photophobia",
+          "Reduced visual acuity",
+          "Corneal opacity"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "olho-seco",
+      "titulo": "Dry Eye Syndrome",
+      "ciap2": [
+        "F13"
+      ],
+      "cid10": [
+        "H04.1"
+      ],
+      "cid11": [
+        "9A0A"
+      ],
+      "categoria": "other",
+      "doid": "DOID:12895",
+      "snomedCT": "302896008",
+      "meshId": "D015352",
+      "umlsCui": "C0013238",
+      "quickView": {
+        "definicao": "Multifactorial disease of the ocular surface with instability of the tear film. Prevalence increases with age and screen use.",
+        "criteriosDiagnosticos": [
+          "Sensation of sand in the eyes",
+          "Burning",
+          "Intermittent blurred vision",
+          "Eye fatigue",
+          "Reflex tearing"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Frequent breaks from screen use (20-20-20 rule)",
+            "Humidifier",
+            "Avoid direct air conditioning"
+          ],
+          "farmacologico": [
+            "Preservative-free artificial tears 4-6 times/day",
+            "Lubricating gel at night"
+          ]
+        },
+        "redFlags": [
+          "Severe pain",
+          "Vision loss",
+          "No response to treatment"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "estomatite-aftosa",
+      "titulo": "Recurrent Aphthous Stomatitis",
+      "sinonimos": [
+        "Oral ulcers",
+        "Oral aphthae"
+      ],
+      "ciap2": [
+        "D82"
+      ],
+      "cid10": [
+        "K12.0"
+      ],
+      "cid11": [
+        "DA01.0"
+      ],
+      "categoria": "other",
+      "doid": "DOID:10581",
+      "snomedCT": "54081009",
+      "meshId": "D013281",
+      "umlsCui": "C0038362",
+      "hpo": [
+        "HP:0000160"
+      ],
+      "tags": [
+        "oral",
+        "common",
+        "recurrent"
+      ],
+      "quickView": {
+        "definicao": "Recurrent oral ulcers. Painful aphthae. Etiology not fully understood. May be associated with nutritional deficiencies.",
+        "criteriosDiagnosticos": [
+          "Recurrent oral ulcers",
+          "Localized pain",
+          "Duration of weeks",
+          "Spontaneous healing"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Avoid acidic/spicy foods",
+            "Adequate oral hygiene",
+            "Supplementation: Iron, B12, Folic acid if deficient"
+          ],
+          "farmacologico": [
+            "Topical corticosteroids",
+            "Topical anesthetics",
+            "Oral antiseptics"
+          ]
+        },
+        "redFlags": [
+          "Genital ulcers (Behçet's disease)",
+          "Multiple large ulcers",
+          "No healing"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "cerume-impactado",
+      "titulo": "Impacted Cerumen",
+      "sinonimos": [
+        "Cerumen Plug"
+      ],
+      "ciap2": [
+        "H82"
+      ],
+      "cid10": [
+        "H61.2"
+      ],
+      "cid11": [
+        "AB30.0"
+      ],
+      "categoria": "other",
+      "doid": "DOID:14694",
+      "snomedCT": "69695003",
+      "meshId": "D002624",
+      "umlsCui": "C0007783",
+      "tags": [
+        "otolaryngology",
+        "common"
+      ],
+      "quickView": {
+        "definicao": "Excessive accumulation of cerumen in the external auditory canal, causing obstruction and symptoms such as hearing loss and aural fullness.",
+        "criteriosDiagnosticos": [
+          "Hearing loss",
+          "Aural fullness",
+          "Otoscopy: obstructive cerumen",
+          "May have itching",
+          "May have mild ear pain"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Manual removal with a curette",
+            "Irrigation with warm water",
+            "Ceruminolytic drops: Cerumin or Hydrogen peroxide before removal"
+          ],
+          "farmacologico": [
+            "Topical ceruminolytics for 3-5 days before removal"
+          ]
+        },
+        "redFlags": [
+          "Tympanic membrane perforation",
+          "External ear infection",
+          "Severe pain"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anafilaxia",
+      "titulo": "Anaphylaxis",
+      "sinonimos": [
+        "Anaphylactic Reaction",
+        "Anaphylactic Shock",
+        "Systemic Anaphylaxis"
+      ],
+      "doid": "DOID:5841",
+      "snomedCT": "39579001",
+      "meshId": "D000707",
+      "umlsCui": "C0002792",
+      "ciap2": [
+        "A92"
+      ],
+      "cid10": [
+        "T78.2",
+        "T78.0",
+        "T80.5",
+        "T88.6"
+      ],
+      "cid11": [
+        "4A84"
+      ],
+      "categoria": "other",
+      "quickView": {
+        "definicao": "Severe systemic hypersensitivity reaction, potentially fatal, with rapid onset after allergen exposure. Requires immediate recognition and treatment with adrenaline.",
+        "criteriosDiagnosticos": [
+          "CRITERION 1: Acute onset with skin/mucosal involvement + respiratory compromise OR hypotension",
+          "CRITERION 2: ≥2 of the following after probable exposure: skin/mucosa, respiratory, hypotension, gastrointestinal symptoms",
+          "CRITERION 3: Hypotension after known allergen",
+          "Time: minutes to hours after exposure",
+          "Common triggers: medications, foods, insects, latex"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "REMOVE ALLERGEN if possible",
+            "Position patient (Trendelenburg if hypotensive)",
+            "ABC - airway, oxygen",
+            "Large-bore IV access",
+            "Continuous monitoring"
+          ],
+          "farmacologico": [
+            "ADRENALINE IM 0.3-0.5mg (0.01mg/kg) anterior thigh",
+            "Repeat every 5-15min if needed",
+            "0.9% NS 20mL/kg bolus if hypotensive",
+            "Diphenhydramine 25-50mg IV (adjunct)",
+            "Ranitidine 50mg IV (adjunct)",
+            "Methylprednisolone 1-2mg/kg IV (to prevent biphasic reaction)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Hemodynamic stabilization",
+          "Reversal of bronchospasm",
+          "Prevention of biphasic reaction",
+          "Identification of allergen"
+        ],
+        "examesIniciais": [
+          "Serum tryptase (draw within 1h, repeat at 24h)",
+          "ECG (if cardiovascular symptoms)",
+          "Arterial blood gas (if severe dyspnea)",
+          "Observation for 4-6h minimum"
+        ],
+        "redFlags": [
+          "Severe stridor or wheezing (airway edema)",
+          "Refractory hypotension to adrenaline",
+          "Need for >2 doses of adrenaline",
+          "Use of beta-blocker (attenuated response)",
+          "Severe pre-existing asthma",
+          "Biphasic reaction (recurrence within 1-72h)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "0.05-2% of the general population",
+          "incidencia": "50-112 cases/100,000 person-years",
+          "mortalidade": "0.5-1% of cases, higher in adolescents/young adults",
+          "faixaEtaria": "Any age; foods more common in children, medications in adults",
+          "fatoresRisco": [
+            "History of anaphylaxis",
+            "Asthma (especially poorly controlled)",
+            "Systemic mastocytosis",
+            "Use of beta-blockers or ACE inhibitors",
+            "Post-prandial exercise",
+            "Peanut/nut allergy (higher risk of fatality)"
+          ],
+          "citations": [
+            {
+              "refId": "wao-anaphylaxis-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "IgE-mediated (majority) or non-IgE reaction with massive degranulation of mast cells and basophils, releasing histamine, tryptase, leukotrienes, and prostaglandins. Causes vasodilation, increased vascular permeability, bronchoconstriction, and stimulation of nerve endings.",
+          "citations": [
+            {
+              "refId": "eaaci-anaphylaxis-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Urticaria, pruritus, flushing",
+            "Angioedema (lips, tongue, eyelids)",
+            "Dyspnea, wheezing, stridor",
+            "Abdominal pain, nausea, vomiting, diarrhea",
+            "Dizziness, syncope",
+            "Sense of impending doom"
+          ],
+          "sinaisExameFisico": [
+            "Generalized urticaria",
+            "Lip/tongue/uvula edema",
+            "Wheezing, rhonchi, stridor",
+            "Hypotension, tachycardia",
+            "Altered level of consciousness",
+            "Cyanosis"
+          ],
+          "formasClinicas": [
+            "Uniphasic anaphylaxis (single episode)",
+            "Biphasic anaphylaxis (recurrence within 1-72h)",
+            "Protracted anaphylaxis (persistent symptoms)",
+            "Exercise-induced anaphylaxis"
+          ],
+          "citations": [
+            {
+              "refId": "wao-anaphylaxis-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "WAO (World Allergy Organization) clinical criteria",
+            "Rapid onset after exposure",
+            "Response to adrenaline supports diagnosis"
+          ],
+          "diagnosticoDiferencial": [
+            "Isolated urticaria/angioedema",
+            "Asthma attack",
+            "Vasovagal syncope",
+            "Panic attack",
+            "Carcinoid syndrome",
+            "Systemic mastocytosis",
+            "Septic shock"
+          ],
+          "examesLaboratoriais": [
+            "Serum tryptase (peak at 1-2h)",
+            "Plasma histamine (short half-life)",
+            "Specific IgE later"
+          ],
+          "citations": [
+            {
+              "refId": "eaaci-anaphylaxis-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Immediate stabilization",
+            "Prevention of progression",
+            "Prevention of biphasic reaction",
+            "Education and secondary prevention"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Remove trigger if possible",
+              "Supine position with legs elevated",
+              "Supplemental oxygen",
+              "Large-bore IV access",
+              "Prepare for intubation if airway edema"
+            ],
+            "citations": [
+              {
+                "refId": "wao-anaphylaxis-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Adrenaline",
+                "medicamentos": [
+                  "Adrenaline 1:1000 (1mg/mL)"
+                ],
+                "posologia": "0.3-0.5mg IM (0.01mg/kg in children, max 0.5mg)",
+                "observacoes": "Anterior thigh. Repeat every 5-15min"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "H1 Antihistamine",
+                "medicamentos": [
+                  "Diphenhydramine 25-50mg IV",
+                  "Promethazine 25mg IM"
+                ],
+                "observacoes": "Adjunct, does not replace adrenaline"
+              },
+              {
+                "classe": "H2 Antihistamine",
+                "medicamentos": [
+                  "Ranitidine 50mg IV"
+                ],
+                "observacoes": "May help with cutaneous symptoms"
+              },
+              {
+                "classe": "Corticosteroid",
+                "medicamentos": [
+                  "Methylprednisolone 1-2mg/kg IV",
+                  "Hydrocortisone 200mg IV"
+                ],
+                "observacoes": "May prevent biphasic reaction, no immediate effect"
+              },
+              {
+                "classe": "Bronchodilator",
+                "medicamentos": [
+                  "Salbutamol 4-8 puffs or nebulization"
+                ],
+                "observacoes": "If bronchospasm"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Use of beta-blocker",
+                "conduta": "Glucagon 1-5mg IV if refractory to adrenaline"
+              },
+              {
+                "situacao": "Refractory shock",
+                "conduta": "Adrenaline IV 0.1-0.5mcg/kg/min in BIC"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "eaaci-anaphylaxis-2021"
+              }
+            ]
+          },
+          "duracao": "Minimum observation 4-6h (up to 24h if severe or previous biphasic reaction)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Allergist follow-up 2-4 weeks post-discharge",
+          "metasTerapeuticas": [
+            "Identification of allergen",
+            "Prescription of adrenaline auto-injector",
+            "Patient and family education",
+            "Written action plan"
+          ],
+          "criteriosEncaminhamento": [
+            "All patients: Allergist for investigation",
+            "Consider immunotherapy if insect venom",
+            "Desensitization if essential medication"
+          ],
+          "citations": [
+            {
+              "refId": "wao-anaphylaxis-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Identification and avoidance of allergens",
+            "Reading food labels",
+            "Medical alerts in medical records"
+          ],
+          "secundaria": [
+            "Carry adrenaline auto-injector always",
+            "Medical alert bracelet",
+            "Education of family and caregivers",
+            "Written emergency plan"
+          ],
+          "citations": [
+            {
+              "refId": "eaaci-anaphylaxis-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "anafilaxia-emergencia",
+        "choque-anafilatico"
+      ],
+      "medicamentos": [
+        "adrenalina",
+        "difenidramina",
+        "metilprednisolona",
+        "ranitidina"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "wao-anaphylaxis-2020"
+        },
+        {
+          "refId": "eaaci-anaphylaxis-2021"
+        },
+        {
+          "refId": "asbai-anafilaxia-2022"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "intoxicacao-exogena",
+      "titulo": "Acute Exogenous Intoxication",
+      "sinonimos": [
+        "Poisoning",
+        "Drug intoxication",
+        "Overdose",
+        "Drug toxicity"
+      ],
+      "doid": "DOID:3571",
+      "snomedCT": "75478009",
+      "meshId": "D011041",
+      "umlsCui": "C0032343",
+      "ciap2": [
+        "A84",
+        "A86"
+      ],
+      "cid10": [
+        "T36-T65",
+        "T50.9",
+        "X40-X49"
+      ],
+      "cid11": [
+        "NE61"
+      ],
+      "categoria": "other",
+      "quickView": {
+        "definicao": "Exposure to toxic substances (medications, drugs, chemicals, poisonous plants, venomous animals) resulting in potentially severe clinical manifestations. Requires identification of the agent and specific treatment.",
+        "criteriosDiagnosticos": [
+          "History of exposure (intentional or accidental)",
+          "Clinical presentation compatible (toxidrome)",
+          "CLASSIC TOXIDROMES:",
+          "Cholinergic: SLUDGE (salivation, lacrimation, urination, diarrhoea, gastrointestinal, vomiting) + miosis + bradycardia",
+          "Anticholinergic: \"blind, red, dry, hot, mad\" + mydriasis + tachycardia",
+          "Sympathomimetic: tachycardia, hypertension, mydriasis, hyperthermia, agitation",
+          "Opioid: pinpoint miosis, respiratory depression, coma",
+          "Sedative-hypnotic: central nervous system depression, hypotension, hypothermia"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ABC - airway is a priority",
+            "Cutaneous/ocular decontamination if external exposure",
+            "Continuous monitoring",
+            "Intravenous access",
+            "ECG (evaluate QRS, QTc)"
+          ],
+          "farmacologico": [
+            "SPECIFIC ANTIDOTES (when available):",
+            "Opioids: Naloxone 0.4-2mg IV (repeat up to 10mg)",
+            "Benzodiazepines: Flumazenil 0.2-0.5mg IV (caution!)",
+            "Organophosphates: Atropine 2-4mg IV + Pralidoxime",
+            "Paracetamol: N-acetylcysteine",
+            "Tricyclic antidepressants: Sodium bicarbonate if QRS>100ms",
+            "Activated charcoal 1g/kg if <1h post-ingestion (no contraindications)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Patient stabilization",
+          "Identification of the toxic agent",
+          "Decontamination when indicated",
+          "Administration of specific antidote",
+          "Prevention of complications"
+        ],
+        "examesIniciais": [
+          "Capillary glucose (ALWAYS)",
+          "12-lead ECG",
+          "Arterial blood gas",
+          "Electrolytes (including Ca, Mg)",
+          "Renal and liver function",
+          "Complete blood count, coagulation profile",
+          "Toxicology screen (urine)",
+          "Specific serum levels if available (paracetamol, salicylate, lithium, digoxin)"
+        ],
+        "redFlags": [
+          "Respiratory depression (RR<12)",
+          "Arrhythmias (QRS>100ms, QTc>500ms)",
+          "Seizures",
+          "Refractory hypotension",
+          "Malignant hyperthermia",
+          "Rhabdomyolysis",
+          "Altered level of consciousness"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~2.5 million exposures/year in the USA",
+          "incidencia": "In Brazil: ~100,000 cases/year reported (underreported)",
+          "mortalidade": "Varies by agent; opioids and pesticides have the highest mortality",
+          "faixaEtaria": "Children <6 years: mostly accidental; Adolescents/adults: intentional",
+          "fatoresRisco": [
+            "Access to medications",
+            "Psychiatric disorders",
+            "Illicit drug use",
+            "Agricultural work (pesticides)",
+            "Young children (oral exploration)"
+          ],
+          "citations": [
+            {
+              "refId": "aapcc-annual-report-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Varies by agent: binding to specific receptors, enzymatic inhibition, ionic channel alteration, direct cellular damage. Each toxidrome reflects the predominant mechanism of the involved agent.",
+          "citations": [
+            {
+              "refId": "goldfrank-toxicology"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Altered level of consciousness",
+            "Nausea and vomiting",
+            "Seizures",
+            "Pupillary changes",
+            "Body temperature changes",
+            "Neuromuscular changes"
+          ],
+          "sinaisExameFisico": [
+            "Pupillary size (miosis vs mydriasis)",
+            "Sweating or dry mucous membranes",
+            "Heart rate and rhythm",
+            "Body temperature",
+            "Mental status",
+            "Bowel sounds (increased vs decreased)",
+            "Characteristic odors"
+          ],
+          "formasClinicas": [
+            "Cholinergic toxidrome (organophosphates, carbamates)",
+            "Anticholinergic toxidrome (antihistamines, tricyclic antidepressants, scopolamine)",
+            "Sympathomimetic toxidrome (cocaine, amphetamines)",
+            "Opioid toxidrome (morphine, fentanyl, heroin)",
+            "Sedative-hypnotic toxidrome (benzodiazepines, barbiturates)"
+          ],
+          "citations": [
+            {
+              "refId": "goldfrank-toxicology"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "History of exposure",
+            "Compatible toxidrome",
+            "Exclusion of other causes",
+            "Specific serum levels when available"
+          ],
+          "diagnosticoDiferencial": [
+            "Hypoglycemia",
+            "Stroke",
+            "Metabolic encephalopathy",
+            "Central nervous system infection",
+            "Psychiatric disorders",
+            "Head trauma"
+          ],
+          "examesLaboratoriais": [
+            "Glucose",
+            "Blood gas with lactate",
+            "Electrolytes, osmolality",
+            "Renal and liver function",
+            "CK (rhabdomyolysis)",
+            "Coagulation profile",
+            "Toxicology screen",
+            "Specific levels (paracetamol, salicylate, digoxin, lithium, etc.)"
+          ],
+          "examesImagem": [
+            "Chest X-ray (aspiration)",
+            "Abdominal X-ray (body packer)",
+            "CT head if persistent altered sensorium"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-intoxicacoes-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Clinical stabilization",
+            "Decontamination",
+            "Specific antidote",
+            "Support of organ dysfunction",
+            "Psychiatric evaluation (if intentional)"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Endotracheal intubation if necessary",
+              "Gastric lavage (contraindicated: corrosives, hydrocarbons, <1h)",
+              "Activated charcoal (if <1h, adsorbable agent, protected airway)",
+              "Whole bowel irrigation (body packer, Fe, Li, prolonged release)",
+              "Hemodialysis (salicylates, methanol, ethylene glycol, lithium)"
+            ],
+            "citations": [
+              {
+                "refId": "goldfrank-toxicology"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Antidotes",
+                "medicamentos": [
+                  "Naloxone (opioids)",
+                  "Atropine (organophosphates)",
+                  "N-acetylcysteine (paracetamol)",
+                  "Flumazenil (BZD)",
+                  "Sodium bicarbonate (tricyclic antidepressants)"
+                ],
+                "observacoes": "Use according to identified agent"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Paracetamol",
+                "conduta": "N-acetylcysteine if above treatment line on nomogram"
+              },
+              {
+                "situacao": "Organophosphates",
+                "conduta": "Atropine to dry secretions + Pralidoxime in the first 24-48h"
+              },
+              {
+                "situacao": "Tricyclic antidepressants",
+                "conduta": "Sodium bicarbonate 1-2mEq/kg if QRS>100ms"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-intoxicacoes-2021"
+              }
+            ]
+          },
+          "duracao": "Minimum observation 6-24h depending on the agent; some require prolonged hospitalization"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Depending on severity and agent",
+          "metasTerapeuticas": [
+            "Resolution of symptoms",
+            "Normalization of laboratory values",
+            "Psychiatric evaluation if intentional"
+          ],
+          "criteriosEncaminhamento": [
+            "ICU if hemodynamic instability or respiratory depression",
+            "Psychiatry if suicide attempt",
+            "Poison control center for guidance (0800 722 6001 - CEATOX-SP)"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-intoxicacoes-2021"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Safe storage of medications and chemicals",
+            "Education on risks",
+            "Child-resistant packaging"
+          ],
+          "secundaria": [
+            "Early recognition",
+            "Immediate contact with poison control center",
+            "Evaluation and treatment of psychiatric disorders"
+          ],
+          "citations": [
+            {
+              "refId": "aapcc-annual-report-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "intoxicacao-aguda",
+        "lavagem-gastrica",
+        "carvao-ativado"
+      ],
+      "medicamentos": [
+        "naloxona",
+        "atropina",
+        "n-acetilcisteina",
+        "flumazenil"
+      ],
+      "calculadoras": [
+        "nomograma-paracetamol"
+      ],
+      "citations": [
+        {
+          "refId": "goldfrank-toxicology"
+        },
+        {
+          "refId": "sbpt-intoxicacoes-2021"
+        },
+        {
+          "refId": "aapcc-annual-report-2022"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "queimaduras",
+      "titulo": "Burns",
+      "sinonimos": [
+        "Thermal burn",
+        "Chemical burn",
+        "Electrical burn",
+        "Scald"
+      ],
+      "doid": "DOID:0080312",
+      "snomedCT": "125666000",
+      "meshId": "D002056",
+      "umlsCui": "C0006434",
+      "ciap2": [
+        "S14"
+      ],
+      "cid10": [
+        "T20-T32",
+        "T30",
+        "T31"
+      ],
+      "cid11": [
+        "NB5"
+      ],
+      "categoria": "other",
+      "quickView": {
+        "definicao": "Tissue injury caused by thermal, chemical, electrical, or radioactive agents. Severity depends on extent (% TBSA), depth, and location. Major burns require volume resuscitation and specialized treatment.",
+        "criteriosDiagnosticos": [
+          "DEPTH:",
+          "1st degree: erythema, pain, no blisters (epidermis)",
+          "Superficial 2nd degree: blisters, wet base, very painful",
+          "Deep 2nd degree: ruptured blisters, pale base, less painful",
+          "3rd degree: necrosis, painless, white/black color",
+          "",
+          "EXTENT - Rule of Nines (adult):",
+          "Head 9%, Each upper limb 9%, Anterior chest 18%, Posterior chest 18%, Each lower limb 18%, Perineum 1%",
+          "Patient's palm = 1% TBSA"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "low",
+            "criterios": [
+              "<10% TBSA adult",
+              "Superficial 2nd degree",
+              "No face/hands/feet/perineum"
+            ],
+            "conduta": "Outpatient treatment"
+          },
+          {
+            "nivel": "moderate",
+            "criterios": [
+              "10-20% TBSA",
+              "Deep 2nd degree",
+              "Elderly or child"
+            ],
+            "conduta": "Consider hospitalization"
+          },
+          {
+            "nivel": "high",
+            "criterios": [
+              ">20% TBSA",
+              "3rd degree >5%",
+              "Face, hands, feet, genitals, joints",
+              "Electrical, chemical, inhalation"
+            ],
+            "conduta": "Burn center"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cool with running water (10-20min) - DO NOT use ice",
+            "Remove clothing and jewelry (if not adhered)",
+            "Cover with clean/sterile dressing",
+            "Elevate extremities",
+            "Maintain body temperature (avoid hypothermia)"
+          ],
+          "farmacologico": [
+            "VOLUME RESUSCITATION (Parkland):",
+            "4mL x weight(kg) x %TBSA in the first 24h",
+            "50% in the first 8h, 50% in the next 16h",
+            "Goal: urine output 0.5-1mL/kg/h",
+            "",
+            "Analgesia: Morphine or Tramadol IV",
+            "Tetanus prophylaxis",
+            "DO NOT use routine prophylactic antibiotics",
+            "Dressings with silver sulfadiazine (2nd/3rd degree)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Adequate volume resuscitation",
+          "Pain control",
+          "Infection prevention",
+          "Function and aesthetic preservation",
+          "Directed healing"
+        ],
+        "examesIniciais": [
+          "Complete blood count, electrolytes, renal function",
+          "Arterial blood gas (if inhalation)",
+          "Carboxyhemoglobin (if fire in enclosed space)",
+          "ECG (if electrical burn)",
+          "CK (rhabdomyolysis in electrical burns)",
+          "Chest X-ray (if inhalation suspected)"
+        ],
+        "redFlags": [
+          "Airway burn (hoarseness, stridor, singed nasal hairs)",
+          "Electrical burn (risk of arrhythmia and compartment syndrome)",
+          "Chemical burn (continuous irrigation)",
+          "Circumferential injury (compartment syndrome)",
+          "TBSA >20% (hypovolemic shock)",
+          "Extremes of age (<2 or >60 years)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Millions of cases/year globally",
+          "incidencia": "~1 million cases/year in Brazil",
+          "mortalidade": "Depends on extent; >50% TBSA has high mortality",
+          "faixaEtaria": "Small children (scalds) and adults (work)",
+          "fatoresRisco": [
+            "Unsafe home environment",
+            "Risky work (industry, construction)",
+            "Alcohol and drugs",
+            "Epilepsy",
+            "Extremes of age",
+            "Abuse (children and elderly)"
+          ],
+          "citations": [
+            {
+              "refId": "sbq-queimaduras-2021"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Tissue injury with three zones: coagulation (central necrosis), stasis (potentially salvageable), and hyperemia (inflammation). Major burns develop a systemic inflammatory response with increased capillary permeability, edema, and distributive shock.",
+          "citations": [
+            {
+              "refId": "aba-guidelines-2016"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Pain (variable depending on depth)",
+            "Erythema, blisters, or necrosis",
+            "Local or generalized edema",
+            "Inhalation symptoms (cough, hoarseness, dyspnea)"
+          ],
+          "sinaisExameFisico": [
+            "Appearance of the injury (color, blisters, texture)",
+            "Sensitivity to touch",
+            "Capillary refill",
+            "Signs of airway injury",
+            "Distal pulses (circumferential injury)"
+          ],
+          "formasClinicas": [
+            "Thermal burn (flame, contact, scald)",
+            "Chemical burn (acid, alkali)",
+            "Electrical burn (low or high voltage)",
+            "Inhalation injury"
+          ],
+          "citations": [
+            {
+              "refId": "sbq-queimaduras-2021"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Depth assessment",
+            "Extent calculation (Rule of Nines or palm)",
+            "Identification of special areas",
+            "Assessment of associated injuries"
+          ],
+          "diagnosticoDiferencial": [
+            "Toxic epidermal necrolysis (TEN)",
+            "Stevens-Johnson syndrome",
+            "Severe contact dermatitis",
+            "Pemphigus/pemphigoid"
+          ],
+          "examesLaboratoriais": [
+            "Complete blood count",
+            "Electrolytes, urea, creatinine",
+            "Arterial blood gas",
+            "Lactate",
+            "CK (electrical burn)",
+            "Carboxyhemoglobin (inhalation)"
+          ],
+          "examesImagem": [
+            "Chest X-ray",
+            "Bronchoscopy (if inhalation suspected)"
+          ],
+          "citations": [
+            {
+              "refId": "aba-guidelines-2016"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Hemodynamic resuscitation",
+            "Adequate analgesia",
+            "Infection prevention",
+            "Adequate healing",
+            "Functional and aesthetic preservation"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Initial cooling with running water",
+              "Dressings with silver sulfadiazine or biological dressings",
+              "Surgical debridement when indicated",
+              "Escharotomy/fasciotomy if compartment syndrome",
+              "Skin grafting in deep burns",
+              "Early physiotherapy"
+            ],
+            "citations": [
+              {
+                "refId": "sbq-queimaduras-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Crystalloid",
+                "medicamentos": [
+                  "Ringer's Lactate"
+                ],
+                "posologia": "4mL/kg/%TBSA in 24h (Parkland)",
+                "observacoes": "50% in the first 8h"
+              },
+              {
+                "classe": "Analgesic",
+                "medicamentos": [
+                  "Morphine",
+                  "Tramadol"
+                ],
+                "posologia": "As needed for pain intensity"
+              },
+              {
+                "classe": "Tetanus prophylaxis",
+                "medicamentos": [
+                  "dT vaccine + TAT if necessary"
+                ]
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Topical antimicrobial",
+                "medicamentos": [
+                  "1% Silver sulfadiazine"
+                ],
+                "observacoes": "In 2nd/3rd degree burns"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "aba-guidelines-2016"
+              }
+            ]
+          },
+          "duracao": "Variable depending on extent and depth"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Dressing changes every 24-72h; prolonged follow-up",
+          "metasTerapeuticas": [
+            "Healing in 2-3 weeks (superficial 2nd degree)",
+            "Prevention of hypertrophic scars",
+            "Functional rehabilitation",
+            "Psychological support"
+          ],
+          "criteriosEncaminhamento": [
+            "Burn center: >20% TBSA, 3rd degree, face/hands/feet/genitals, electrical, chemical, inhalation",
+            "Plastic surgery: scars, contractures",
+            "Psychology/Psychiatry"
+          ],
+          "citations": [
+            {
+              "refId": "sbq-queimaduras-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "queimaduras-atendimento-inicial",
+        "parkland-ressuscitacao"
+      ],
+      "medicamentos": [
+        "morfina",
+        "sulfadiazina-prata"
+      ],
+      "calculadoras": [
+        "regra-dos-9",
+        "parkland"
+      ],
+      "citations": [
+        {
+          "refId": "sbq-queimaduras-2021"
+        },
+        {
+          "refId": "aba-guidelines-2016"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

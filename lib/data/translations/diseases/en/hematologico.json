@@ -1,0 +1,636 @@
+{
+  "locale": "en",
+  "category": "hematologico",
+  "generatedAt": "2025-12-27T03:34:57.578Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "anemia-ferropriva",
+      "titulo": "Iron Deficiency Anemia",
+      "sinonimos": [
+        "Anemia due to iron deficiency"
+      ],
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D50"
+      ],
+      "cid11": [
+        "3A00"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:2355",
+      "snomedCT": "399096004",
+      "meshId": "D000740",
+      "umlsCui": "C0002871",
+      "hpo": [
+        "HP:0001875",
+        "HP:0001892"
+      ],
+      "tags": [
+        "hematologico",
+        "anemia",
+        "deficiency",
+        "common"
+      ],
+      "quickView": {
+        "definicao": "Iron deficiency anemia. The most common cause of anemia. Characterized by microcytosis and hypochromia. Low ferritin, elevated transferrin.",
+        "criteriosDiagnosticos": [
+          "Microcytic hypochromic anemia",
+          "Low ferritin",
+          "Low transferrin/ transferrin saturation",
+          "Investigate cause: blood loss, malabsorption, nutritional deficiency"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Iron-rich diet",
+            "Treat underlying cause (bleeding, malabsorption)",
+            "Avoid coffee/tea with meals"
+          ],
+          "farmacologico": [
+            "Ferrous sulfate 200mg (65mg of elemental iron) 1-2x/day",
+            "Or Chelated iron",
+            "Adding vitamin C can improve absorption",
+            "Treatment for 3-6 months after normalization"
+          ]
+        },
+        "redFlags": [
+          "Gastrointestinal bleeding",
+          "Persistent blood loss",
+          "Non-responsive to treatment",
+          "Malabsorption"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anemia-megaloblastica",
+      "titulo": "Megaloblastic Anaemia",
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D51",
+        "D52"
+      ],
+      "cid11": [
+        "3A00",
+        "3A01"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:13636",
+      "snomedCT": "840580004",
+      "meshId": "D000749",
+      "umlsCui": "C0002878",
+      "hpo": [
+        "HP:0001875",
+        "HP:0002901"
+      ],
+      "tags": [
+        "hematologico",
+        "anemia",
+        "deficiencia"
+      ],
+      "quickView": {
+        "definicao": "Anaemia due to B12 or folic acid deficiency. Macrocytosis, megaloblastic bone marrow. May have neurological symptoms (B12).",
+        "criteriosDiagnosticos": [
+          "Macrocytic anaemia",
+          "Low B12 or low folic acid",
+          "Megaloblastic bone marrow",
+          "Elevated LDH",
+          "Elevated homocysteine"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Treat the cause (nutritional deficiency, malabsorption)",
+            "Adequate diet"
+          ],
+          "farmacologico": [
+            "B12: Cyanocobalamin IM or oral",
+            "Folic acid: 5mg/day"
+          ]
+        },
+        "redFlags": [
+          "Neurological symptoms (B12)",
+          "Combined deficiency",
+          "Malabsorption"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "trombocitopenia",
+      "titulo": "Thrombocytopenia",
+      "sinonimos": [
+        "Plateletopenia",
+        "ITP",
+        "Immune Thrombocytopenic Purpura"
+      ],
+      "doid": "DOID:1588",
+      "snomedCT": "302215000",
+      "meshId": "D013921",
+      "umlsCui": "C0040034",
+      "ciap2": [
+        "B83"
+      ],
+      "cid10": [
+        "D69.3",
+        "D69.6"
+      ],
+      "cid11": [
+        "3B64"
+      ],
+      "categoria": "hematologico",
+      "quickView": {
+        "definicao": "Reduction in platelet count <150,000/µL. Can be mild and asymptomatic or severe with bleeding. Causes: immune destruction (ITP), consumption (DIC, TTP), splenic sequestration, decreased production.",
+        "criteriosDiagnosticos": [
+          "Platelets <150,000/µL (thrombocytopenia)",
+          "Mild: 100,000-150,000/µL",
+          "Moderate: 50,000-100,000/µL",
+          "Severe: <50,000/µL",
+          "Very severe: <20,000/µL (risk of spontaneous bleeding)",
+          "",
+          "ITP: Diagnosis of exclusion (isolated thrombocytopenia without identified cause)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Avoid medications that affect platelets (ASA, NSAIDs)",
+            "Avoid activities with risk of trauma",
+            "Avoid invasive procedures if platelets <50,000"
+          ],
+          "farmacologico": [
+            "ACUTE ITP (adult with bleeding or <20,000-30,000):",
+            "Prednisone 1-2 mg/kg/day for 2-4 weeks, then taper",
+            "OR Dexamethasone 40mg/day for 4 days (cycles)",
+            "Intravenous immunoglobulin 1g/kg x1-2 days (rapid response)",
+            "",
+            "CHRONIC REFRACTORY ITP:",
+            "Thrombopoietin agonists (Eltrombopag, Romiplostim)",
+            "Rituximab",
+            "Splenectomy"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Platelets >30,000/µL (safe in most cases)",
+          "Platelets >50,000/µL for procedures",
+          "Platelets >100,000/µL for major surgeries",
+          "Absence of bleeding"
+        ],
+        "examesIniciais": [
+          "Complete blood count (confirm isolated thrombocytopenia)",
+          "Peripheral blood smear (rule out pseudothrombocytopenia due to agglutination)",
+          "Coagulation (PT, aPTT)",
+          "Liver and renal function",
+          "Serologies: HIV, HCV, HBV",
+          "TSH",
+          "Antiplatelet antibodies (not sensitive)",
+          "Bone marrow examination if central cause is suspected"
+        ],
+        "redFlags": [
+          "Significant active bleeding",
+          "Platelets <10,000/µL (risk of intracranial bleeding)",
+          "Microangiopathic hemolytic anemia (schistocytes): TTP/HUS - emergency!",
+          "Pancytopenia (bone marrow disease)",
+          "Fever + thrombocytopenia: sepsis, TTP",
+          "Pregnant with thrombocytopenia (pre-eclampsia, HELLP)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "ITP: 3-4/100,000 adults",
+          "incidencia": "ITP more common in children (post-viral)",
+          "faixaEtaria": "Children: Acute ITP. Adults: Chronic ITP",
+          "fatoresRisco": [
+            "Recent viral infections (children)",
+            "Autoimmune diseases (SLE)",
+            "HIV, HCV",
+            "Medications (heparin, quinine, sulfas)",
+            "Pregnancy",
+            "Liver disease (splenic sequestration)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "ITP: Autoantibodies (IgG) against platelet glycoproteins (GPIIb/IIIa, GPIb/IX) cause platelet destruction by the reticuloendothelial system (spleen). There is also inhibition of megakaryopoiesis. Other causes: consumption (DIC, TTP), splenic sequestration, bone marrow failure.",
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Often asymptomatic (incidental finding)",
+            "Petechiae and ecchymoses",
+            "Epistaxis",
+            "Gingival bleeding",
+            "Menorrhagia",
+            "GI or urinary bleeding (severe)"
+          ],
+          "sinaisExameFisico": [
+            "Petechiae (mainly in lower extremities)",
+            "Ecchymoses",
+            "Purpura",
+            "Mucosal bleeding",
+            "ABSENCE of splenomegaly (in typical ITP)"
+          ],
+          "formasClinicas": [
+            "Primary ITP (idiopathic)",
+            "Secondary ITP (HIV, HCV, SLE, medications)",
+            "Acute ITP (children, post-viral)",
+            "Chronic ITP (>12 months)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Isolated thrombocytopenia",
+            "Exclusion of other causes",
+            "Smear without schistocytes or blasts"
+          ],
+          "diagnosticoDiferencial": [
+            "Pseudothrombocytopenia (agglutination in EDTA)",
+            "TTP/HUS (microangiopathic hemolytic anemia)",
+            "DIC",
+            "Hypersplenism",
+            "Leukemia, myelodysplasia",
+            "Medications (heparin)",
+            "Dengue"
+          ],
+          "examesLaboratoriais": [
+            "Complete blood count + smear",
+            "PT, aPTT, fibrinogen",
+            "HIV, HCV, HBV",
+            "ANA, complement (if SLE is suspected)",
+            "Bone marrow examination (if atypical)",
+            "Direct Coombs (if anemia)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Prevent bleeding",
+            "Maintain safe platelet levels",
+            "Minimize treatment toxicity"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Avoid trauma",
+              "Discontinue antiplatelet medications",
+              "Watchful waiting if asymptomatic and platelets >30,000"
+            ],
+            "citations": [
+              {
+                "refId": "ash-itp-2019"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Corticosteroid",
+                "medicamentos": [
+                  "Prednisone",
+                  "Dexamethasone"
+                ],
+                "posologia": "Prednisone 1-2mg/kg/day for 2-4 weeks, then taper. OR Dexamethasone 40mg/day x4 days."
+              },
+              {
+                "classe": "Intravenous immunoglobulin (rapid response)",
+                "medicamentos": [
+                  "IVIg"
+                ],
+                "posologia": "1g/kg x1-2 days. Response in 24-48h. Temporary."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Thrombopoietin agonist",
+                "medicamentos": [
+                  "Eltrombopag",
+                  "Romiplostim"
+                ],
+                "posologia": "Eltrombopag 50mg/day PO. Romiplostim SC weekly. Chronic ITP."
+              },
+              {
+                "classe": "Rituximab",
+                "medicamentos": [
+                  "Rituximab"
+                ],
+                "posologia": "375 mg/m² weekly x4 doses. Response in weeks."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Severe active bleeding",
+                "conduta": "IVIg + Corticosteroid + Platelet transfusion + Tranexamic acid."
+              },
+              {
+                "situacao": "Pregnant",
+                "conduta": "IVIg preferred over corticosteroid. Platelets >30,000 for vaginal delivery, >50,000 for cesarean section."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ash-itp-2019"
+              }
+            ]
+          },
+          "duracao": "As per response. TPO agonists may be required chronically."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Weekly until stabilization, then monthly",
+          "examesControle": [
+            "Serial complete blood counts",
+            "Smear if clinical change"
+          ],
+          "metasTerapeuticas": [
+            "Stable platelets >30,000",
+            "Absence of bleeding"
+          ],
+          "criteriosEncaminhamento": [
+            "Chronic or refractory ITP",
+            "Need for splenectomy",
+            "Candidate for TPO agonist or rituximab",
+            "Severe bleeding"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "No primary prevention"
+          ],
+          "secundaria": [
+            "Avoid triggers",
+            "Maintain safe platelet levels"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "prednisona",
+        "dexametasona",
+        "imunoglobulina-iv",
+        "eltrombopag"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ash-itp-2019"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "thrombocytopenia",
+        "itp",
+        "platelet",
+        "purpura",
+        "bleeding"
+      ]
+    },
+    {
+      "id": "anemia-ferropriva-pediatrica",
+      "titulo": "Iron-Deficiency Anaemia in Childhood",
+      "ciap2": [
+        "B80"
+      ],
+      "cid10": [
+        "D50"
+      ],
+      "cid11": [
+        "3A00"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:11758",
+      "snomedCT": "87522002",
+      "meshId": "D018798",
+      "umlsCui": "C0085576",
+      "quickView": {
+        "definicao": "The most common anaemia in childhood. Prevalence 20-30% in children <5 years in Brazil. Cause: imbalance in iron supply/demand.",
+        "criteriosDiagnosticos": [
+          "Hb <11g/dL (6m-5y) or <11.5g/dL (5-11y)",
+          "Low MCV (microcytosis)",
+          "Elevated RDW (anisocytosis)",
+          "Ferritin <12ng/mL (or <30 if inflammation)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Iron-rich diet",
+            "Vitamin C with meals",
+            "Avoid excessive cow's milk"
+          ],
+          "farmacologico": [
+            "Ferrous sulfate 3-5mg/kg/day of elemental iron",
+            "Away from meals",
+            "Duration: 3-6 months (to replenish stores)"
+          ]
+        },
+        "redFlags": [
+          "Severe anaemia (Hb <7)",
+          "No response to treatment",
+          "Neurological symptoms",
+          "GI bleeding"
+        ]
+      },
+      "medicamentos": [
+        "sulfato-ferroso"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anemia-hemolitica",
+      "titulo": "Hemolytic Anemia",
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D59"
+      ],
+      "cid11": [
+        "3A10"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:9538",
+      "snomedCT": "955009",
+      "meshId": "D000743",
+      "umlsCui": "C0002878",
+      "tags": [
+        "hematologico",
+        "anemia"
+      ],
+      "quickView": {
+        "definicao": "Anemia due to increased hemolysis. It can be autoimmune, hereditary, or acquired.",
+        "criteriosDiagnosticos": [
+          "Anemia",
+          "Increased reticulocytes",
+          "Elevated LDH",
+          "Elevated indirect bilirubin",
+          "Low haptoglobin"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Treat underlying cause",
+            "Avoid triggers"
+          ],
+          "farmacologico": [
+            "Corticosteroids if autoimmune",
+            "Transfusion if symptomatic"
+          ]
+        },
+        "redFlags": [
+          "Aplastic crisis",
+          "Renal insufficiency",
+          "Coagulopathy"
+        ]
+      },
+      "medicamentos": [
+        "prednisona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "leucemia-linfocitica-cronica",
+      "titulo": "Chronic Lymphocytic Leukemia",
+      "ciap2": [
+        "B73"
+      ],
+      "cid10": [
+        "C91.1"
+      ],
+      "cid11": [
+        "2A82.0"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:8552",
+      "snomedCT": "91857009",
+      "meshId": "D015451",
+      "umlsCui": "C0023418",
+      "tags": [
+        "hematologico",
+        "neoplasia",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "Neoplasm of mature B lymphocytes. Most common in elderly individuals. Generally indolent.",
+        "criteriosDiagnosticos": [
+          "Lymphocytosis >5000/μL",
+          "Morphologically compatible",
+          "Characteristic immunophenotype"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Surveillance if asymptomatic and stable",
+            "Oncology-hematology follow-up"
+          ],
+          "farmacologico": [
+            "Treatment only if symptomatic or progressive",
+            "Chemotherapy according to staging"
+          ]
+        },
+        "redFlags": [
+          "Cytopenias",
+          "Enlarged lymph nodes",
+          "Organomegaly",
+          "Recurrent infections"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "deficiencia-vitamina-b12",
+      "titulo": "Vitamin B12 Deficiency",
+      "sinonimos": [
+        "B12 Hypovitaminosis",
+        "Cobalamin Deficiency"
+      ],
+      "ciap2": [
+        "B81"
+      ],
+      "cid10": [
+        "E53.8"
+      ],
+      "cid11": [
+        "5B5C"
+      ],
+      "doid": "DOID:13381",
+      "snomedCT": "190634004",
+      "meshId": "D014806",
+      "umlsCui": "C0042847",
+      "categoria": "hematologico",
+      "quickView": {
+        "definicao": "Cobalamin deficiency causing megaloblastic anemia and neurological manifestations. Common in elderly, vegetarians, and chronic use of metformin/PPIs.",
+        "criteriosDiagnosticos": [
+          "Serum B12 <200 pg/mL: deficiency",
+          "B12 200-300 pg/mL: gray zone - measure MMA and homocysteine",
+          "MCV >100 fL (macrocytic anemia)",
+          "Neurological symptoms: paresthesias, ataxia, cognitive impairment"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Investigate cause: diet, pernicious anemia, atrophic gastritis",
+            "Dietary counseling for vegetarians"
+          ],
+          "farmacologico": [
+            "Severe deficiency/neurological symptoms: Cyanocobalamin 1000mcg IM once daily for 7 days, then weekly for 4 weeks, then monthly",
+            "Mild deficiency: Oral cyanocobalamin 1000-2000mcg/day",
+            "Lifelong maintenance if pernicious anemia"
+          ]
+        },
+        "redFlags": [
+          "Pancytopenia",
+          "Severe neurological symptoms",
+          "Rapid cognitive decline"
+        ],
+        "metasTerapeuticas": [
+          "B12 >400 pg/mL",
+          "Resolution of anemia",
+          "Neurological improvement"
+        ],
+        "examesIniciais": [
+          "Complete blood count with MCV",
+          "Serum B12",
+          "Reticulocytes",
+          "LDH",
+          "Folic acid"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "cianocobalamina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "anemia",
+        "neurology",
+        "elderly"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,433 @@
+{
+  "locale": "en",
+  "category": "endocrine",
+  "generatedAt": "2025-12-27T03:34:57.573Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "hypothyroidism",
+      "titulo": "Hypothyroidism",
+      "ciap2": [
+        "T86"
+      ],
+      "cid10": [
+        "E03"
+      ],
+      "cid11": [
+        "5A00.0"
+      ],
+      "categoria": "endocrine",
+      "doid": "DOID:409",
+      "snomedCT": "40930008",
+      "meshId": "D007037",
+      "umlsCui": "C0020676",
+      "quickView": {
+        "definicao": "Deficiency of thyroid hormones. Primary (Hashimoto's thyroiditis, post-surgical) is more common than secondary.",
+        "criteriosDiagnosticos": [
+          "Elevated TSH",
+          "Low or normal free T4",
+          "Symptoms: fatigue, weight gain, cold intolerance, constipation"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Periodic monitoring",
+            "Dose adjustment based on response"
+          ],
+          "farmacologico": [
+            "Levotiroxine (synthetic T4): initial dose 25-50μg/day, adjust until TSH is normal",
+            "Maintenance dose: 1.6-1.8μg/kg/day"
+          ]
+        },
+        "redFlags": [
+          "Myxedema (severe hypothyroidism)",
+          "Myxedema coma",
+          "Unstable angina"
+        ]
+      },
+      "medicamentos": [
+        "levotiroxine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hipertireoidismo",
+      "titulo": "Hyperthyroidism",
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E05"
+      ],
+      "cid11": [
+        "5A02"
+      ],
+      "categoria": "endocrine",
+      "doid": "DOID:7998",
+      "snomedCT": "34486009",
+      "meshId": "D006980",
+      "umlsCui": "C0020550",
+      "quickView": {
+        "definicao": "Excess of thyroid hormones. Graves' disease (autoimmune) is the most common cause (70-80%).",
+        "criteriosDiagnosticos": [
+          "Suppressed TSH",
+          "Elevated free T4 and/or T3",
+          "Symptoms: tachycardia, weight loss, anxiety, tremors"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Rest",
+            "Avoid stress",
+            "Beta-blocker for symptoms"
+          ],
+          "farmacologico": [
+            "Methimazole 10-40mg/day (first line) OR Propylthiouracil if pregnant/breastfeeding",
+            "Beta-blocker: Propranolol for adrenergic symptoms"
+          ]
+        },
+        "redFlags": [
+          "Thyroid storm",
+          "Atrial fibrillation",
+          "Heart failure"
+        ]
+      },
+      "medicamentos": [
+        "metimazol",
+        "propranolol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bocio-simples",
+      "titulo": "Simple Goitre",
+      "sinonimos": [
+        "Nontoxic Goitre"
+      ],
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E04"
+      ],
+      "cid11": [
+        "5A01"
+      ],
+      "categoria": "endocrine",
+      "doid": "DOID:11981",
+      "snomedCT": "367460001",
+      "meshId": "D006042",
+      "umlsCui": "C0018021",
+      "tags": [
+        "endocrine",
+        "thyroid"
+      ],
+      "quickView": {
+        "definicao": "Diffuse enlargement of the thyroid gland without hyperthyroidism or hypothyroidism. Normal thyroid function. Causes: iodine deficiency, genetic factors.",
+        "criteriosDiagnosticos": [
+          "Thyroid enlargement",
+          "Normal thyroid function (TSH, free T4)",
+          "Absence of nodules",
+          "Compressive symptoms may be present"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "If iodine deficiency: Iodine supplementation",
+            "Clinical monitoring"
+          ],
+          "farmacologico": [
+            "Levotiroxine if TSH is at the upper limit (prevention)",
+            "Generally does not require treatment if function is normal"
+          ]
+        },
+        "redFlags": [
+          "Thyroid nodules",
+          "Significant compressive symptoms",
+          "Altered thyroid function",
+          "Family history of thyroid cancer"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hipotireoidismo-subclinico",
+      "titulo": "Subclinical Hypothyroidism",
+      "sinonimos": [
+        "Subclinical Thyroid Dysfunction"
+      ],
+      "ciap2": [
+        "T86"
+      ],
+      "cid10": [
+        "E02"
+      ],
+      "cid11": [
+        "5A00.1"
+      ],
+      "doid": "DOID:0080530",
+      "snomedCT": "237519004",
+      "meshId": "D000073057",
+      "umlsCui": "C0271790",
+      "categoria": "endocrine",
+      "quickView": {
+        "definicao": "Elevated TSH with normal free T4. Prevalence 4-10% in adults, higher in women and the elderly. Progression to overt hypothyroidism ~2-5%/year.",
+        "criteriosDiagnosticos": [
+          "Elevated TSH (>4.0-4.5 mUI/L as per laboratory)",
+          "Normal free T4",
+          "Confirm with a second measurement in 2-3 months",
+          "Test for anti-TPO to assess progression risk"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Observation with monitoring if TSH <10 and asymptomatic",
+            "Repeat TSH in 6-12 months"
+          ],
+          "farmacologico": [
+            "Treat if TSH ≥10 mUI/L",
+            "Consider treatment if: TSH 7-10 + symptoms, positive anti-TPO, pregnant, planning pregnancy",
+            "Levotiroxine: start at 25-50mcg/day, adjust every 6-8 weeks",
+            "Elderly: start with 12.5-25mcg"
+          ]
+        },
+        "redFlags": [
+          "Pregnancy",
+          "Enlarged goiter",
+          "TSH >10",
+          "Significant symptoms"
+        ],
+        "metasTerapeuticas": [
+          "TSH 0.5-4.0 mUI/L if treated"
+        ],
+        "examesIniciais": [
+          "TSH",
+          "Free T4",
+          "Anti-TPO",
+          "Lipid profile"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "levotiroxine"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "thyroid",
+        "screening",
+        "endocrinology"
+      ]
+    },
+    {
+      "id": "insuficiencia-adrenal",
+      "titulo": "Adrenal Insufficiency",
+      "sinonimos": [
+        "Addison's Disease",
+        "Hypoadrenalism"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E27.1",
+        "E27.2",
+        "E27.4"
+      ],
+      "cid11": [
+        "5A74.1"
+      ],
+      "doid": "DOID:10493",
+      "snomedCT": "386584007",
+      "meshId": "D000309",
+      "umlsCui": "C0001623",
+      "categoria": "endocrine",
+      "quickView": {
+        "definicao": "Deficiency in cortisol production (primary) or ACTH (secondary). Primary: adrenal destruction. Secondary: suppression by exogenous corticosteroids is a common cause.",
+        "criteriosDiagnosticos": [
+          "Morning cortisol <5 mcg/dL: suggests insufficiency",
+          "Cortisol >18 mcg/dL: excludes insufficiency",
+          "ACTH stimulation test: cortisol <18 mcg/dL",
+          "ACTH: elevated (primary) or low/normal (secondary)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Education about the disease and identification of crisis",
+            "Medical identification bracelet/card",
+            "Teach self-injection of hydrocortisone"
+          ],
+          "farmacologico": [
+            "Hydrocortisone 15-25mg/day (divided: 2/3 in the morning, 1/3 in the afternoon)",
+            "Or Prednisone 3-5mg/day",
+            "Fludrocortisone 0.05-0.2mg/day if primary",
+            "Double the dose during stress/illness"
+          ]
+        },
+        "redFlags": [
+          "Adrenal crisis: hypotension, vomiting, abdominal pain",
+          "Hyperkalemia",
+          "Severe hyponatremia"
+        ],
+        "metasTerapeuticas": [
+          "Clinical well-being",
+          "Normal BP",
+          "Normal electrolytes"
+        ],
+        "examesIniciais": [
+          "8 AM cortisol",
+          "ACTH",
+          "Sodium, potassium",
+          "Anti-21-hydroxylase"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "hydrocortisone",
+        "prednisone"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "emergency",
+        "corticosteroid",
+        "endocrinology"
+      ]
+    },
+    {
+      "id": "hipogonadismo-masculino",
+      "titulo": "Male Hypogonadism",
+      "sinonimos": [
+        "Testosterone deficiency",
+        "Andropause",
+        "DAEM"
+      ],
+      "ciap2": [
+        "Y99"
+      ],
+      "cid10": [
+        "E29.1"
+      ],
+      "cid11": [
+        "5A80.0"
+      ],
+      "doid": "DOID:1924",
+      "snomedCT": "48723006",
+      "meshId": "D007006",
+      "umlsCui": "C0020619",
+      "categoria": "endocrine",
+      "quickView": {
+        "definicao": "Clinical syndrome of testosterone deficiency with characteristic symptoms and signs. Prevalence increases with age.",
+        "criteriosDiagnosticos": [
+          "Morning total testosterone <300 ng/dL (repeat)",
+          "Symptoms: fatigue, erectile dysfunction, reduced libido, depressed mood",
+          "Signs: muscle mass loss, osteoporosis, gynecomastia",
+          "LH: elevated (primary) or low/normal (secondary)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Weight loss if obese",
+            "Physical exercise",
+            "Optimize sleep",
+            "Investigate secondary causes"
+          ],
+          "farmacologico": [
+            "Clear indications: symptoms + confirmed low testosterone",
+            "Testosterone cypionate 200mg IM every 2 weeks",
+            "Testosterone undecanoate 1000mg IM every 10-12 weeks",
+            "Monitor hematocrit, PSA, lipids"
+          ]
+        },
+        "redFlags": [
+          "Prostate cancer",
+          "Hematocrit >54%",
+          "Elevated PSA",
+          "Pituitary tumor"
+        ],
+        "metasTerapeuticas": [
+          "Testosterone 400-700 ng/dL",
+          "Improvement of symptoms"
+        ],
+        "examesIniciais": [
+          "Total testosterone (2x morning)",
+          "LH, FSH",
+          "Prolactin",
+          "PSA",
+          "Hematocrit"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [],
+      "calculadoras": [],
+      "tags": [
+        "andrology",
+        "erectile dysfunction",
+        "osteoporosis"
+      ]
+    },
+    {
+      "id": "hiperprolactinemia",
+      "titulo": "Hyperprolactinemia",
+      "sinonimos": [
+        "Elevated prolactin"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E22.1"
+      ],
+      "cid11": [
+        "5A60.1"
+      ],
+      "doid": "DOID:10504",
+      "snomedCT": "237662005",
+      "meshId": "D006966",
+      "umlsCui": "C0020514",
+      "categoria": "endocrine",
+      "quickView": {
+        "definicao": "Elevation of serum prolactin. Causes: prolactinoma, medications (antipsychotics, metoclopramide), hypothyroidism, pregnancy.",
+        "criteriosDiagnosticos": [
+          "Prolactin >25 ng/mL in women, >20 ng/mL in men",
+          "Exclude secondary causes: medications, hypothyroidism",
+          "If PRL >200 ng/mL: highly suggestive of prolactinoma",
+          "MRI of the sella turcica if PRL >100 or compressive symptoms"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Discontinue causative medication if possible",
+            "Treat hypothyroidism if present"
+          ],
+          "farmacologico": [
+            "Dopaminergic agonist: Cabergoline 0.25-1 mg 1-2x/week",
+            "Bromocriptine as an alternative",
+            "Surgery if refractory or chiasmal compression"
+          ]
+        },
+        "redFlags": [
+          "Severe headache",
+          "Visual disturbance (hemianopia)",
+          "Pituitary apoplexy"
+        ],
+        "metasTerapeuticas": [
+          "Normal prolactin",
+          "Restore gonadal function",
+          "Tumor reduction"
+        ],
+        "examesIniciais": [
+          "Prolactin (2x)",
+          "TSH",
+          "Beta-HCG",
+          "MRI of the sella turcica"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "cabergoline"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "pituitary",
+        "amenorrhea",
+        "galactorrhea"
+      ]
+    }
+  ]
+}

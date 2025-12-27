@@ -1,0 +1,708 @@
+{
+  "locale": "en",
+  "category": "pediatrico",
+  "generatedAt": "2025-12-27T03:34:57.578Z",
+  "count": 11,
+  "diseases": [
+    {
+      "id": "bronquiolite",
+      "titulo": "Bronchiolitis",
+      "sinonimos": [
+        "Acute Viral Bronchiolitis"
+      ],
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J21"
+      ],
+      "cid11": [
+        "CA40.1"
+      ],
+      "doid": "DOID:2942",
+      "snomedCT": "4120002",
+      "meshId": "D001988",
+      "umlsCui": "C0006271",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Viral infection of the lower respiratory tract in infants (<2 years). RSV is the most common agent. Peak: winter.",
+        "criteriosDiagnosticos": [
+          "Age <24 months",
+          "First episode of wheezing",
+          "Prodromal symptoms of URI (rhinorrhea, cough)",
+          "Tachypnea, retractions, wheezing, crackles",
+          "Clinical diagnosis - tests rarely necessary"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Adequate hydration",
+            "Nasal suctioning",
+            "Oxygen therapy if SatO2 <90-92%",
+            "Elevated position"
+          ],
+          "farmacologico": [
+            "DO NOT routinely use: bronchodilators, corticosteroids, antibiotics",
+            "Hypertonic saline 3% nebulization may be attempted",
+            "Palivizumab (prophylaxis in high-risk - premature, cardiac disease)"
+          ]
+        },
+        "redFlags": [
+          "Apnea",
+          "Cyanosis",
+          "Dehydration",
+          "Lethargy",
+          "SatO2 <90%"
+        ],
+        "metasTerapeuticas": [
+          "Maintain oxygenation",
+          "Hydration",
+          "Support until resolution"
+        ],
+        "examesIniciais": [
+          "Pulse oximetry",
+          "Chest X-ray only if diagnostic doubt"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [],
+      "calculadoras": [],
+      "tags": [
+        "infant",
+        "virus",
+        "winter"
+      ]
+    },
+    {
+      "id": "laringite-aguda",
+      "titulo": "Acute Laryngitis/Viral Croup",
+      "sinonimos": [
+        "Laryngotracheobronchitis",
+        "Croup"
+      ],
+      "ciap2": [
+        "R77"
+      ],
+      "cid10": [
+        "J05.0",
+        "J04.0"
+      ],
+      "cid11": [
+        "CA03.0"
+      ],
+      "doid": "DOID:9396",
+      "snomedCT": "6142004",
+      "meshId": "D003440",
+      "umlsCui": "C0010380",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Inflammation of the larynx and trachea, usually viral (parainfluenza). Peak incidence: 6 months to 3 years. Characteristic inspiratory stridor.",
+        "criteriosDiagnosticos": [
+          "Barking cough (\"like a dog\")",
+          "Inspiratory stridor (worse at night)",
+          "Hoarseness",
+          "Low-grade fever, prodromal symptoms of upper respiratory infection",
+          "Tower sign on radiography (subglottic narrowing) - not mandatory"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cold air or humidified air",
+            "Keep calm (crying worsens symptoms)",
+            "Monitor progression"
+          ],
+          "farmacologico": [
+            "Mild: observation, may not require medication",
+            "Moderate: Dexamethasone 0.15-0.6 mg/kg PO single dose",
+            "Severe: Dexamethasone + Adrenaline nebulization (1:1000) 3-5 mL - emergency department",
+            "Adrenaline: temporary effect (2 hours) - observe afterward"
+          ]
+        },
+        "redFlags": [
+          "Stridor at rest",
+          "Marked retractions",
+          "Cyanosis",
+          "Agitation/somnolence",
+          "Drooling (possible epiglottitis?)"
+        ],
+        "metasTerapeuticas": [
+          "Relief of stridor",
+          "Prevention of obstruction"
+        ],
+        "examesIniciais": [
+          "Clinical - avoid manipulation of the oropharynx",
+          "Pulse oximetry"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "dexametasona"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "emergency",
+        "virus",
+        "stridor"
+      ]
+    },
+    {
+      "id": "otite-media-aguda",
+      "titulo": "Acute Otitis Media",
+      "sinonimos": [
+        "AOM"
+      ],
+      "ciap2": [
+        "H71"
+      ],
+      "cid10": [
+        "H66"
+      ],
+      "cid11": [
+        "AA80.0"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:10727",
+      "snomedCT": "194267006",
+      "meshId": "D006639",
+      "umlsCui": "C0029879",
+      "hpo": [
+        "HP:0000388",
+        "HP:0000379"
+      ],
+      "tags": [
+        "otolaryngology",
+        "pediatric",
+        "infectious"
+      ],
+      "quickView": {
+        "definicao": "Acute infection of the middle ear. Common in children <5 years. Symptoms: otalgia, fever, irritability. Otorrhea may occur if the tympanic membrane is perforated.",
+        "criteriosDiagnosticos": [
+          "Acute otalgia",
+          "Otoscopy: bulging/erythematous tympanic membrane",
+          "Fever",
+          "Irritability in children",
+          "Otorrhea may occur"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Analgesics: Paracetamol or Ibuprofen",
+            "Watchful waiting for 48-72h in mild cases (children >6 months)"
+          ],
+          "farmacologico": [
+            "If treatment: Amoxicillin 80-90mg/kg/day for 7-10 days",
+            "Or Amoxicillin-clavulanate if recent antibiotic use",
+            "If allergic: Azithromycin or Ceftriaxone"
+          ]
+        },
+        "redFlags": [
+          "Mastoiditis",
+          "Facial paralysis",
+          "Meningitis",
+          "Intracranial complications"
+        ]
+      },
+      "medicamentos": [
+        "amoxicillin",
+        "azithromycin"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquiolite-aguda",
+      "titulo": "Acute Bronchiolitis",
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J21"
+      ],
+      "cid11": [
+        "CA20.1"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:6131",
+      "snomedCT": "6142004",
+      "meshId": "D001988",
+      "umlsCui": "C0006274",
+      "tags": [
+        "pediatrica",
+        "respiratorio",
+        "viral"
+      ],
+      "quickView": {
+        "definicao": "Infection of the lower respiratory tract in <2 years. Primarily RSV. Wheezing and dyspnea.",
+        "criteriosDiagnosticos": [
+          "<2 years",
+          "Rhinorrhea preceding respiratory symptoms",
+          "Wheezing",
+          "Cough",
+          "Tachypnea"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ventilatory support if needed",
+            "Hydration",
+            "Nasal suctioning"
+          ],
+          "farmacologico": [
+            "Symptomatic: Paracetamol",
+            "Salbutamol may be tried but with limited efficacy"
+          ]
+        },
+        "redFlags": [
+          "Cyanosis",
+          "Apnea",
+          "Dehydration",
+          "Respiratory failure"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "salbutamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "convulsao-febril",
+      "titulo": "Febrile Seizure",
+      "ciap2": [
+        "N89"
+      ],
+      "cid10": [
+        "R56.0"
+      ],
+      "cid11": [
+        "8A62"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:8665",
+      "snomedCT": "85234005",
+      "meshId": "D012640",
+      "umlsCui": "C0038220",
+      "tags": [
+        "pediatrica",
+        "neurologico"
+      ],
+      "quickView": {
+        "definicao": "Seizure associated with fever in children aged 6 months to 5 years. Generally benign and self-limiting.",
+        "criteriosDiagnosticos": [
+          "6 months to 5 years",
+          "Fever ≥38°C",
+          "Generalized seizure",
+          "No central nervous system infection",
+          "No history of afebrile seizures"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Treat fever: Paracetamol",
+            "Maintain lateral position during seizure"
+          ],
+          "farmacologico": [
+            "Rectal diazepam if seizure >5min",
+            "Antipyretic: Paracetamol"
+          ]
+        },
+        "redFlags": [
+          "Focal seizure",
+          "Duration >15min",
+          "Multiple seizures",
+          "Prolonged altered consciousness"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "diazepam"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-inflamatoria-intestinal-pediatrica",
+      "titulo": "Pediatric Inflammatory Bowel Disease",
+      "ciap2": [
+        "D93"
+      ],
+      "cid10": [
+        "K50",
+        "K51"
+      ],
+      "cid11": [
+        "DD90",
+        "DD91"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:8778",
+      "snomedCT": "64766004",
+      "meshId": "D015212",
+      "umlsCui": "C0021390",
+      "hpo": [
+        "HP:0002024",
+        "HP:0002583"
+      ],
+      "tags": [
+        "pediatrica",
+        "chronic",
+        "gastrointestinal"
+      ],
+      "quickView": {
+        "definicao": "Inflammatory Bowel Disease (IBD) manifested before the age of 18. Includes Crohn's disease and Ulcerative Colitis. Presentation may differ from adults.",
+        "criteriosDiagnosticos": [
+          "Age <18 years",
+          "Chronic gastrointestinal symptoms",
+          "Endoscopy/colonoscopy",
+          "Histopathology"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Nutritional support",
+            "Growth and development",
+            "Multidisciplinary follow-up"
+          ],
+          "farmacologico": [
+            "5-ASA according to type",
+            "Corticosteroids for induction",
+            "Immunosuppressants according to severity"
+          ]
+        },
+        "redFlags": [
+          "Growth delay",
+          "Delayed puberty",
+          "Severe malnutrition"
+        ]
+      },
+      "medicamentos": [
+        "mesalazina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hipotireoidismo-congenito",
+      "titulo": "Congenital Hypothyroidism",
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E03.0",
+        "E03.1"
+      ],
+      "cid11": [
+        "5A00.0"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:9502",
+      "snomedCT": "19031007",
+      "meshId": "D003409",
+      "umlsCui": "C0020509",
+      "hpo": [
+        "HP:0008230",
+        "HP:0001511"
+      ],
+      "tags": [
+        "pediatrica",
+        "endocrino",
+        "congenita"
+      ],
+      "quickView": {
+        "definicao": "Deficiency of thyroid hormone since birth. Detected in newborn screening. Early treatment is essential.",
+        "criteriosDiagnosticos": [
+          "Newborn screening: Elevated TSH/low T4",
+          "Confirm with serum tests",
+          "Scintigraphy if needed"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Initiate treatment immediately",
+            "Multidisciplinary follow-up"
+          ],
+          "farmacologico": [
+            "Levotiroxine 10-15 mcg/kg/day",
+            "Adjust according to free T4 and TSH"
+          ]
+        },
+        "redFlags": [
+          "Not detected in newborn screening",
+          "Mental retardation if untreated",
+          "Cretinism"
+        ]
+      },
+      "medicamentos": [
+        "levotiroxina"
+      ],
+      "protocolos": [
+        "teste-pezinho"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquiolite-viral",
+      "titulo": "Viral Bronchiolitis (RSV)",
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J21"
+      ],
+      "cid11": [
+        "CA40.0"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:6131",
+      "snomedCT": "6142004",
+      "meshId": "D001988",
+      "umlsCui": "C0006274",
+      "hpo": [
+        "HP:0002099",
+        "HP:0002780"
+      ],
+      "tags": [
+        "pediatrica",
+        "viral",
+        "respiratorio"
+      ],
+      "quickView": {
+        "definicao": "Infection of the lower respiratory tract in <2 years. Primarily RSV. Wheezing, tachypnea, dyspnea.",
+        "criteriosDiagnosticos": [
+          "<2 years",
+          "Rhinorrhea preceding",
+          "Wheezing",
+          "Tachypnea",
+          "Dyspnea",
+          "Signs of respiratory effort"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ventilatory support if needed",
+            "Hydration",
+            "Nasal suctioning",
+            "Oxygen therapy if SpO2 <90%"
+          ],
+          "farmacologico": [
+            "Symptomatic: Paracetamol",
+            "Salbutamol may be tried but evidence is limited"
+          ]
+        },
+        "redFlags": [
+          "Cyanosis",
+          "Apnea",
+          "Dehydration",
+          "Respiratory failure",
+          "Rapid worsening"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "salbutamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "coqueluche",
+      "titulo": "Pertussis",
+      "sinonimos": [
+        "Whooping Cough",
+        "Pertussis"
+      ],
+      "ciap2": [
+        "R71"
+      ],
+      "cid10": [
+        "A37"
+      ],
+      "cid11": [
+        "1C12"
+      ],
+      "doid": "DOID:1116",
+      "snomedCT": "27836007",
+      "meshId": "D014917",
+      "umlsCui": "C0043167",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Respiratory infection caused by Bordetella pertussis. Paroxysmal cough with inspiratory whoop. Severe in unvaccinated infants.",
+        "criteriosDiagnosticos": [
+          "Cough ≥2 weeks with at least one of the following:",
+          "Paroxysms of cough",
+          "Inspiratory whoop",
+          "Post-cough vomiting",
+          "Apnea in infants",
+          "PCR or culture for B. pertussis"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Respiratory isolation for 5 days of antibiotic",
+            "Monitoring of infants (risk of apnea)"
+          ],
+          "farmacologico": [
+            "Azithromycin 10mg/kg/day for 5 days (preferred in <1 month)",
+            "Or Clarithromycin 15mg/kg/day divided every 12 hours for 7 days",
+            "Or Erythromycin (less commonly used - GI intolerance)",
+            "Chemoprophylaxis for household contacts"
+          ]
+        },
+        "redFlags": [
+          "Infant <6 months",
+          "Apnea",
+          "Cyanosis",
+          "Seizure",
+          "Pneumonia"
+        ],
+        "metasTerapeuticas": [
+          "Reduce transmissibility",
+          "Prevent complications"
+        ],
+        "examesIniciais": [
+          "PCR for B. pertussis",
+          "Complete blood count (lymphocytosis)"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "azitromicina",
+        "claritromicina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "vaccine",
+        "notification",
+        "chronic cough"
+      ]
+    },
+    {
+      "id": "escarlatina",
+      "titulo": "Scarlet Fever",
+      "sinonimos": [
+        "Scarlet Fever"
+      ],
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "A38"
+      ],
+      "cid11": [
+        "1B50"
+      ],
+      "doid": "DOID:4914",
+      "snomedCT": "30242009",
+      "meshId": "D012541",
+      "umlsCui": "C0036285",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Infection by Streptococcus pyogenes (group A) producing erythrogenic toxin. Pharyngitis + characteristic exanthem.",
+        "criteriosDiagnosticos": [
+          "Streptococcal pharyngitis (odynophagia, exudate)",
+          "Exanthem: fine papular (\"sandpaper\"), perioral pallor, Pastia's lines",
+          "Strawberry tongue",
+          "Desquamation on fingers after 1-2 weeks",
+          "Rapid test or culture for Streptococcus"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydration",
+            "Rest",
+            "Return to activities 24 hours after starting AB"
+          ],
+          "farmacologico": [
+            "Phenoxymethylpenicillin 250-500mg every 12 hours for 10 days",
+            "Or Amoxicillin 50mg/kg/day for 10 days",
+            "Penicillin allergy: Azithromycin 12mg/kg/day for 5 days"
+          ]
+        },
+        "redFlags": [
+          "No improvement in 48-72 hours",
+          "Peritonsillar abscess",
+          "Rheumatic fever"
+        ],
+        "metasTerapeuticas": [
+          "Eradication of Streptococcus",
+          "Prevention of RF and AGN"
+        ],
+        "examesIniciais": [
+          "Rapid test for Streptococcus",
+          "Oropharyngeal culture if RT is negative"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "amoxicilina",
+        "penicilina-v"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "exanthem",
+        "streptococcus",
+        "pharyngitis"
+      ]
+    },
+    {
+      "id": "dermatite-fraldas",
+      "titulo": "Diaper Area Dermatitis",
+      "sinonimos": [
+        "Diaper Rash",
+        "Diaper Dermatitis"
+      ],
+      "ciap2": [
+        "S89"
+      ],
+      "cid10": [
+        "L22"
+      ],
+      "cid11": [
+        "ED52.0"
+      ],
+      "doid": "DOID:0060163",
+      "snomedCT": "91487003",
+      "meshId": "D003963",
+      "umlsCui": "C0011616",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Irritant contact dermatitis in the diaper-covered area. Secondary infection by Candida may occur.",
+        "criteriosDiagnosticos": [
+          "Erythema in convex areas (spares folds = irritant)",
+          "Satellite lesions, pustules, folds affected = Candida",
+          "Desquamation, erosions in severe cases",
+          "Clinical diagnosis"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Frequent diaper changes",
+            "Keep the area dry",
+            "Expose to air",
+            "Use barrier paste or zinc oxide"
+          ],
+          "farmacologico": [
+            "Mild irritant: barrier (zinc oxide) is sufficient",
+            "If Candida: Nystatin cream 4 times daily for 7-14 days",
+            "Or Miconazole cream twice daily",
+            "Low-potency corticosteroid (hydrocortisone 1%) if severe inflammation, short-term use"
+          ]
+        },
+        "redFlags": [
+          "No response to treatment",
+          "Extensive erosions",
+          "Secondary bacterial infection"
+        ],
+        "metasTerapeuticas": [
+          "Resolution of erythema",
+          "Prevention of recurrence"
+        ],
+        "examesIniciais": [
+          "Clinical - generally unnecessary tests",
+          "Scraping if in doubt (Candida)"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "nistatina",
+        "miconazol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "infant",
+        "candida",
+        "skin"
+      ]
+    }
+  ]
+}

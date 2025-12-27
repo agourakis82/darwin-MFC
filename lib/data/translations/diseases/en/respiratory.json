@@ -1,0 +1,536 @@
+{
+  "locale": "en",
+  "category": "respiratory",
+  "generatedAt": "2025-12-27T03:34:57.572Z",
+  "count": 5,
+  "diseases": [
+    {
+      "id": "dpoc",
+      "titulo": "Chronic Obstructive Pulmonary Disease",
+      "sinonimos": [
+        "COPD",
+        "Chronic Bronchitis",
+        "Chronic Cough"
+      ],
+      "doid": "DOID:3083",
+      "snomedCT": "13645005",
+      "meshId": "D029424",
+      "umlsCui": "C0024117",
+      "ciap2": [
+        "R95"
+      ],
+      "cid10": [
+        "J44",
+        "J44.0",
+        "J44.1",
+        "J44.9"
+      ],
+      "cid11": [
+        "CA22"
+      ],
+      "categoria": "respiratory",
+      "quickView": {
+        "definicao": "Chronic respiratory disease preventable and treatable, characterized by persistent limitation of airflow, generally progressive and associated with chronic inflammatory response of the airways and lungs to harmful particles or gases.",
+        "criteriosDiagnosticos": [
+          "Persistent and progressive dyspnea",
+          "Chronic cough with or without sputum production",
+          "History of exposure to risk factors (smoking)",
+          "Post-bronchodilator spirometry: FEV1/FVC <0.70"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cessation of smoking (essential)",
+            "Vaccination (influenza annual, pneumococcal)",
+            "Pulmonary rehabilitation",
+            "Regular physical activity",
+            "Home oxygen therapy if indicated"
+          ],
+          "farmacologico": [
+            "GOLD A-B: Short-acting or long-acting bronchodilator",
+            "LABA or LAMA (Tiotropium 18mcg/day or Formoterol)",
+            "GOLD C-D: LABA + LAMA or LABA + CI",
+            "CI if eosinophils >300 or history of asthma"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Relieve symptoms",
+          "Prevent exacerbations",
+          "Improve exercise tolerance and quality of life",
+          "Prevent progression",
+          "Reduce mortality"
+        ],
+        "examesIniciais": [
+          "Post-bronchodilator spirometry",
+          "Chest X-ray",
+          "Oxygen saturation monitoring",
+          "Gasometry if SpO2 <92%",
+          "Hemogram (policythemia)",
+          "Alpha-1 antitrypsin if <45 years or family history"
+        ],
+        "redFlags": [
+          "Severe exacerbation (intense dyspnea, tachypnea >25)",
+          "Alteration of level of consciousness",
+          "SpO2 <88% or cyanosis",
+          "Use of accessory muscles",
+          "Edema of MMII (cor pulmonale)",
+          "High fever (severe infection)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "10-15% of adults >40 years, greater in smokers",
+          "incidencia": "Third leading cause of death worldwide",
+          "faixaEtaria": "Generally >40 years",
+          "fatoresRisco": [
+            "Smoking (90% of cases)",
+            "Occupational exposure (dust, chemicals)",
+            "Air pollution",
+            "Alpha-1 antitrypsin deficiency",
+            "Respiratory infections in childhood",
+            "Biomass (wood stove)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Chronic inflammatory response of the airways and lung parenchyma induced by inhalation of harmful particles, mainly cigarette smoke. Results in chronic bronchitis (excessive mucus production) and/or emphysema (destruction of alveoli), leading to fixed limitation of airflow.",
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Persistent dyspnea (initially with exertion)",
+            "Chronic cough, usually morning",
+            "Chronic sputum production (mucous or purulent)",
+            "Sibilance",
+            "Chest tightness",
+            "Fatigue and intolerance to exercise"
+          ],
+          "sinaisExameFisico": [
+            "Torus in tonel (hyperinflation)",
+            "Use of accessory muscles",
+            "Prolonged expiration",
+            "Diminished murmurs",
+            "Sibilance and ronchosis",
+            "Cyanosis (advanced cases)"
+          ],
+          "formasClinicas": [
+            "Emphysematous phenotype (pink puffer): thin, severe dyspnea",
+            "Bronchiolytic phenotype (blue bloater): cyanosis, edema, productive cough",
+            "Overlapping asthma-COPD (ACO)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinical compatible + risk factors",
+            "Post-bronchodilator spirometry: FEV1/FVC <0.70",
+            "GOLD classification (FEV1% predicted)"
+          ],
+          "diagnosticoDiferencial": [
+            "Asthma",
+            "Bronchiectasis",
+            "Tuberculosis",
+            "Heart failure",
+            "Lung cancer",
+            "Pulmonary fibrosis"
+          ],
+          "examesLaboratoriais": [
+            "Post-bronchodilator spirometry",
+            "Gasometry arterial (if SpO2 <92%)",
+            "Hemogram",
+            "Alpha-1 antitrypsin (if indicated)",
+            "Chest X-ray (selected cases)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Relieve symptoms",
+            "Prevent exacerbations",
+            "Improve exercise tolerance and quality of life",
+            "Prevent progression",
+            "Reduce mortality"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Cessation of smoking (more effective)",
+              "Vaccination (influenza annual, pneumococcal)",
+              "Pulmonary rehabilitation",
+              "Home oxygen therapy if PaO2 ≤55 or SpO2 ≤88%",
+              "Nutritional support if low weight"
+            ],
+            "citations": [
+              {
+                "refId": "gold-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "LAMA",
+                "medicamentos": [
+                  "Tiotropium",
+                  "Glicopirronio"
+                ],
+                "posologia": "Tiotropium 18mcg 1x/day inhaled"
+              },
+              {
+                "classe": "LABA",
+                "medicamentos": [
+                  "Formoterol",
+                  "Salmeterol",
+                  "Indacaterol"
+                ],
+                "posologia": "Formoterol 12mcg 12/12h inhaled"
+              },
+              {
+                "classe": "LABA + LAMA (if persistent symptoms)",
+                "medicamentos": [
+                  "Tiotropium + Formoterol"
+                ],
+                "posologia": "Combination in a single device or separate"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Frequent exacerbator (≥2/yr)",
+                "conduta": "Consider adding CI if eosinophils ≥300"
+              },
+              {
+                "situacao": "Overlapping asthma-COPD",
+                "conduta": "LABA + CI, not use LABA alone"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "gold-2024"
+              }
+            ]
+          },
+          "duracao": "Continuous treatment"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Every 3-6 months, or more frequently if unstable",
+          "examesControle": [
+            "Post-bronchodilator spirometry",
+            "Oxygen saturation monitoring",
+            "Symptom assessment (MRC, CAT)"
+          ],
+          "metasTerapeuticas": [
+            "MRC 0-1, CAT <10",
+            "0-1 exacerbation/yr",
+            "Maintenance of functional capacity"
+          ],
+          "criteriosEncaminhamento": [
+            "COPD severe (GOLD 3-4)",
+            "Frequent exacerbations despite treatment",
+            "Candidate for home oxygen therapy",
+            "Evaluation for surgical reduction or transplantation"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Do not start smoking",
+            "Occupational protection",
+            "Air pollution reduction"
+          ],
+          "secundaria": [
+            "Cessation of smoking",
+            "Vaccination",
+            "Early treatment"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-dpoc"
+      ],
+      "medicamentos": [
+        "tiotropio",
+        "formoterol",
+        "salbutamol",
+        "beclometasona"
+      ],
+      "calculadoras": [
+        "gold-copd",
+        "bode-index"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "gold-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "dpoc",
+        "emphysema",
+        "chronic cough",
+        "smoking",
+        "dyspnea"
+      ]
+    },
+    {
+      "id": "rinite-alergica",
+      "titulo": "Allergic Rhinitis",
+      "sinonimos": [
+        "Perennial Allergic Rhinitis",
+        "Seasonal Allergic Rhinitis",
+        "Hay Fever"
+      ],
+      "ciap2": [
+        "R97"
+      ],
+      "cid10": [
+        "J30"
+      ],
+      "cid11": [
+        "CA08.0"
+      ],
+      "categoria": "respiratory",
+      "doid": "DOID:8819",
+      "snomedCT": "47758005",
+      "meshId": "D01221",
+      "umlsCui": "C0035384",
+      "hpo": [
+        "HP:0002197",
+        "HP:0000422"
+      ],
+      "tags": [
+        "respiratory",
+        "allergy",
+        "common"
+      ],
+      "quickView": {
+        "definicao": "Inflammation of the nasal mucosa mediated by IgE, triggered by allergens. Symptoms: rhinorrhea, sneezing, nasal pruritus, congestion.",
+        "criteriosDiagnosticos": [
+          "Watery rhinorrhea",
+          "Sneezing",
+          "Nasal/ocular pruritus",
+          "Nasal congestion",
+          "Symptoms triggered by known allergens",
+          "Positive skin test or specific IgE"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Avoid allergens",
+            "Nasal irrigation with saline solution",
+            "Allergen vaccines (immunotherapy) if indicated"
+          ],
+          "farmacologico": [
+            "Oral antihistamines: Cetirizine 10mg/day or Loratadine 10mg/day",
+            "Nasal corticosteroids: Budesonide or Fluticasone",
+            "Topical nasal antihistamine if needed"
+          ]
+        },
+        "redFlags": [
+          "Sinus",
+          "Unilateral nasal obstruction",
+          "Persistent nasal bleeding",
+          "Nasal polyps"
+        ]
+      },
+      "medicamentos": [
+        "cetirizine",
+        "loratadine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "ivas-pediatrica",
+      "titulo": "Upper Respiratory Tract Infection (URTI)",
+      "ciap2": [
+        "R74"
+      ],
+      "cid10": [
+        "J00",
+        "J06"
+      ],
+      "cid11": [
+        "CA07"
+      ],
+      "categoria": "respiratory",
+      "doid": "DOID:0050117",
+      "snomedCT": "54150009",
+      "meshId": "D012141",
+      "umlsCui": "C0041912",
+      "quickView": {
+        "definicao": "Common cold. The most frequent cause of pediatric consultations. Viral etiology (>200 viruses). Self-limiting within 7-10 days.",
+        "criteriosDiagnosticos": [
+          "Clear rhinorrhea → purulent",
+          "Nasal obstruction",
+          "Low-grade fever",
+          "Dry/productive cough"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Nasal irrigation with saline solution",
+            "Hydration",
+            "Elevation of the head",
+            "Honey (>1 year) for cough"
+          ],
+          "farmacologico": [
+            "Antipyretic if fever",
+            "DO NOT use decongestants <6 years",
+            "DO NOT use antitussives"
+          ]
+        },
+        "redFlags": [
+          "Fever >72h or recurrent",
+          "Respiratory distress",
+          "Worsening after initial improvement",
+          "Ear pain"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [
+        "ivas"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquite-cronica",
+      "titulo": "Chronic Bronchitis",
+      "sinonimos": [
+        "Simple Chronic Bronchitis",
+        "Chronic Obstructive Pulmonary Disease - Bronchitic Type"
+      ],
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J41"
+      ],
+      "cid11": [
+        "CA22.0"
+      ],
+      "categoria": "respiratory",
+      "doid": "DOID:6132",
+      "snomedCT": "13645005",
+      "meshId": "D001991",
+      "umlsCui": "C0006277",
+      "tags": [
+        "chronic",
+        "respiratory",
+        "smoking"
+      ],
+      "quickView": {
+        "definicao": "Cough and sputum production for ≥3 months/year in ≥2 consecutive years, often associated with smoking.",
+        "criteriosDiagnosticos": [
+          "Productive cough ≥3 months/year",
+          "≥2 consecutive years",
+          "Exclusion of other causes (tuberculosis, bronchiectasis, etc.)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Smoking cessation",
+            "Vaccination (influenza, pneumococcal)",
+            "Pulmonary rehabilitation"
+          ],
+          "farmacologico": [
+            "Inhaler bronchodilator: Salbutamol spray 2 puffs 4 times daily",
+            "If frequent symptoms: add inhaled corticosteroid"
+          ]
+        },
+        "redFlags": [
+          "Hemoptysis",
+          "Weight loss",
+          "Persistent fever",
+          "Progressive dyspnea"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol",
+        "budesonida"
+      ],
+      "protocolos": [
+        "copd"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "enfisema-pulmonar",
+      "titulo": "Pulmonary Emphysema",
+      "ciap2": [
+        "R95"
+      ],
+      "cid10": [
+        "J43"
+      ],
+      "cid11": [
+        "CA22.1"
+      ],
+      "categoria": "respiratory",
+      "doid": "DOID:3119",
+      "snomedCT": "196494001",
+      "meshId": "D004656",
+      "umlsCui": "C0014120",
+      "tags": [
+        "chronic",
+        "respiratory",
+        "copd"
+      ],
+      "quickView": {
+        "definicao": "Permanent destruction of alveoli with hyperinflation. Emphysematous type of COPD.",
+        "criteriosDiagnosticos": [
+          "Progressive dyspnea",
+          "Barrel chest",
+          "Decreased vesicular murmur",
+          "Chest X-ray: hyperinflation"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Smoking cessation",
+            "Oxygen therapy if SpO2 <88%",
+            "Pulmonary rehabilitation"
+          ],
+          "farmacologico": [
+            "Bronchodilator: Tiotropium 18mcg once daily",
+            "If exacerbations: add inhaled corticosteroid"
+          ]
+        },
+        "redFlags": [
+          "Respiratory failure",
+          "Pneumothorax",
+          "Significant weight loss"
+        ]
+      },
+      "medicamentos": [
+        "tiotropio"
+      ],
+      "protocolos": [
+        "copd"
+      ],
+      "calculadoras": []
+    }
+  ]
+}

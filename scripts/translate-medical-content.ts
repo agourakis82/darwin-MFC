@@ -664,16 +664,42 @@ function saveTranslation(
 
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 
+  // Load existing translations and merge with new ones
+  let existingTranslations: unknown[] = [];
+  const itemKey = config.type === 'diseases' ? 'diseases' : 'medications';
+
+  if (fs.existsSync(outputPath)) {
+    try {
+      const existing = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
+      existingTranslations = existing[itemKey] || [];
+    } catch {
+      // File is corrupted or invalid, start fresh
+    }
+  }
+
+  // Merge: use Map to deduplicate by ID, preferring new translations
+  const translationMap = new Map<string, unknown>();
+  for (const t of existingTranslations) {
+    const id = (t as Record<string, unknown>).id as string;
+    if (id) translationMap.set(id, t);
+  }
+  for (const t of translations) {
+    const id = (t as Record<string, unknown>).id as string;
+    if (id) translationMap.set(id, t);
+  }
+
+  const mergedTranslations = Array.from(translationMap.values());
+
   const output = {
     locale: config.locale,
     category,
     generatedAt: new Date().toISOString(),
-    count: translations.length,
-    [config.type === 'diseases' ? 'diseases' : 'medications']: translations,
+    count: mergedTranslations.length,
+    [itemKey]: mergedTranslations,
   };
 
   fs.writeFileSync(outputPath, JSON.stringify(output, null, 2));
-  console.log(`  Saved: ${outputPath} (${translations.length} items)`);
+  console.log(`  Saved: ${outputPath} (${mergedTranslations.length} items)`);
 }
 
 // =============================================================================

@@ -1,0 +1,86 @@
+{
+  "locale": "en",
+  "category": "metabolico",
+  "generatedAt": "2025-12-27T03:34:57.580Z",
+  "count": 1,
+  "diseases": [
+    {
+      "id": "sindrome-metabolica",
+      "titulo": "Síndrome Metabólica",
+      "sinonimos": [
+        "Síndrome X",
+        "Síndrome de resistência insulínica"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E88.81"
+      ],
+      "cid11": [
+        "5C80.Z"
+      ],
+      "doid": "DOID:14221",
+      "snomedCT": "237602007",
+      "meshId": "D024821",
+      "umlsCui": "C0524620",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "Constelação de fatores de risco metabólicos que aumentam risco de DCV e DM2. Prevalência de 20-25% em adultos.",
+        "criteriosDiagnosticos": [
+          "Critérios NCEP-ATPIII (≥3 de 5):",
+          "Circunferência abdominal: >102cm (H) ou >88cm (M)",
+          "Triglicérides ≥150 mg/dL",
+          "HDL-c <40 (H) ou <50 (M) mg/dL",
+          "PA ≥130/85 mmHg ou em tratamento",
+          "Glicemia jejum ≥100 mg/dL ou DM"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Perda de peso 7-10% (principal intervenção)",
+            "Exercício aeróbico + resistência",
+            "Dieta hipocalórica, baixo IG",
+            "Cessar tabagismo"
+          ],
+          "farmacologico": [
+            "Tratar cada componente individualmente",
+            "Metformina se pré-diabetes + alto risco",
+            "Estatina conforme risco CV",
+            "Anti-hipertensivo se HAS"
+          ]
+        },
+        "redFlags": [
+          "DM2 manifesto",
+          "Doença cardiovascular estabelecida",
+          "NASH/cirrose"
+        ],
+        "metasTerapeuticas": [
+          "Perda de peso sustentada",
+          "Normalização dos componentes"
+        ],
+        "examesIniciais": [
+          "Glicemia jejum",
+          "TOTG se GJ 100-125",
+          "Perfil lipídico",
+          "TGO/TGP",
+          "US abdome"
+        ]
+      },
+      "protocolos": [
+        "dm2",
+        "has"
+      ],
+      "medicamentos": [
+        "metformina"
+      ],
+      "calculadoras": [
+        "imc"
+      ],
+      "tags": [
+        "obesidade",
+        "diabetes",
+        "cardiovascular"
+      ]
+    }
+  ]
+}

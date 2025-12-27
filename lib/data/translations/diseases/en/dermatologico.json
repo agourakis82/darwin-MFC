@@ -1,0 +1,553 @@
+{
+  "locale": "en",
+  "category": "dermatologico",
+  "generatedAt": "2025-12-27T03:34:57.577Z",
+  "count": 10,
+  "diseases": [
+    {
+      "id": "dermatite-atopica",
+      "titulo": "Atopic Dermatitis",
+      "sinonimos": [
+        "Atopic Eczema"
+      ],
+      "ciap2": [
+        "S87"
+      ],
+      "cid10": [
+        "L20"
+      ],
+      "cid11": [
+        "EA80"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:3310",
+      "snomedCT": "24079001",
+      "meshId": "D003876",
+      "umlsCui": "C0011603",
+      "hpo": [
+        "HP:0000967",
+        "HP:0000962"
+      ],
+      "tags": [
+        "dermatologico",
+        "alergica",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "Chronic recurrent dermatitis. Intense pruritus, eczematous lesions. Commonly associated with asthma and allergic rhinitis.",
+        "criteriosDiagnosticos": [
+          "Pruritus",
+          "Typical morphology and distribution",
+          "Chronicity",
+          "Personal/family history of atopy"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Abundant emollients",
+            "Avoid irritants",
+            "Warm baths",
+            "Hydration"
+          ],
+          "farmacologico": [
+            "Topical corticosteroids",
+            "Topical calcineurin inhibitors",
+            "Antihistamines for pruritus"
+          ]
+        },
+        "redFlags": [
+          "Secondary infection",
+          "Erythroderma",
+          "Impetiginization"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "psoriase",
+      "titulo": "Psoriasis",
+      "ciap2": [
+        "S91"
+      ],
+      "cid10": [
+        "L40"
+      ],
+      "cid11": [
+        "EA90"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:8893",
+      "snomedCT": "9014002",
+      "meshId": "D011565",
+      "umlsCui": "C0033860",
+      "hpo": [
+        "HP:0003765",
+        "HP:0003766"
+      ],
+      "tags": [
+        "dermatologico",
+        "autoimmune",
+        "chronic"
+      ],
+      "quickView": {
+        "definicao": "Chronic inflammatory skin disease. Erythematous plaques with silvery scales. May have psoriatic arthritis.",
+        "criteriosDiagnosticos": [
+          "Erythematous plaques with scales",
+          "Typical location (elbows, knees, scalp)",
+          "Histopathology if needed"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Emollients",
+            "Phototherapy",
+            "Avoid triggers"
+          ],
+          "farmacologico": [
+            "Topical corticosteroids",
+            "Topical vitamin D analogues",
+            "Systemic if extensive: Methotrexate or Biologics"
+          ]
+        },
+        "redFlags": [
+          "Erythroderma",
+          "Pustules",
+          "Psoriatic arthritis",
+          "Secondary infection"
+        ]
+      },
+      "medicamentos": [
+        "metotrexate"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "urticaria-cronica",
+      "titulo": "Chronic Urticaria",
+      "ciap2": [
+        "S99"
+      ],
+      "cid10": [
+        "L50"
+      ],
+      "cid11": [
+        "EB01"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:9119",
+      "snomedCT": "37796009",
+      "meshId": "D014581",
+      "umlsCui": "C0042109",
+      "tags": [
+        "dermatologico",
+        "chronic",
+        "allergic"
+      ],
+      "quickView": {
+        "definicao": "Persistent urticaria >6 weeks. Usually idiopathic or autoimmune.",
+        "criteriosDiagnosticos": [
+          "Pruritic erythematous papules",
+          ">6 weeks duration",
+          "Angioedema may be present"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Avoid identified triggers",
+            "Avoid NSAIDs if related"
+          ],
+          "farmacologico": [
+            "H1 antihistamine: Cetirizine 10mg once daily",
+            "If no response: increase dose or add H2"
+          ]
+        },
+        "redFlags": [
+          "Airway angioedema",
+          "Anaphylaxis",
+          "Systemic symptoms"
+        ]
+      },
+      "medicamentos": [
+        "cetirizine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dermatite-atopica-pediatrica",
+      "titulo": "Atopic Dermatitis",
+      "ciap2": [
+        "S87"
+      ],
+      "cid10": [
+        "L20"
+      ],
+      "cid11": [
+        "EA80"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:3310",
+      "snomedCT": "24079001",
+      "meshId": "D003876",
+      "umlsCui": "C0011615",
+      "quickView": {
+        "definicao": "Chronic pruritic inflammatory dermatosis. Usually begins <5 years. Part of the atopic march (dermatitis → rhinitis → asthma).",
+        "criteriosDiagnosticos": [
+          "Hanifin-Rajka: pruritus + ≥3 criteria",
+          "Typical morphology for age",
+          "Infants: face and extensor surfaces",
+          "Older: flexures (folds)",
+          "Chronic/recurrent course"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Intensive hydration (emollients 2-3 times daily)",
+            "Short, warm bath",
+            "Avoid triggers",
+            "Trim nails"
+          ],
+          "farmacologico": [
+            "Topical low-potency corticosteroid (hydrocortisone)",
+            "Flares: medium-potency corticosteroid for short term",
+            "Calcineurin inhibitor (>2 years)"
+          ]
+        },
+        "redFlags": [
+          "Secondary infection (impetigo)",
+          "Herpetic eczema",
+          "Erythroderma",
+          "Treatment resistance"
+        ]
+      },
+      "medicamentos": [
+        "hidrocortisona-topica"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "acne-vulgar",
+      "titulo": "Acne Vulgar",
+      "sinonimos": [
+        "Common Acne"
+      ],
+      "ciap2": [
+        "S88"
+      ],
+      "cid10": [
+        "L70"
+      ],
+      "cid11": [
+        "ED80"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:654",
+      "snomedCT": "89765004",
+      "meshId": "D000152",
+      "umlsCui": "C0001053",
+      "hpo": [
+        "HP:0001061"
+      ],
+      "tags": [
+        "dermatologico",
+        "common",
+        "adolescence"
+      ],
+      "quickView": {
+        "definicao": "Chronic inflammatory dermatosis of the pilosebaceous follicle. Common in adolescents. Lesions: comedones, papules, pustules, nodules.",
+        "criteriosDiagnosticos": [
+          "Typical lesions: comedones, papules, pustules, nodules",
+          "Location: face, chest, back",
+          "Age: primarily adolescents/young adults"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Adequate hygiene",
+            "Avoid squeezing lesions",
+            "Non-comedogenic sunscreen",
+            "Diet: reducing sugar/dairy may help"
+          ],
+          "farmacologico": [
+            "Mild: Topical benzoyl peroxide 2.5-10%",
+            "Moderate: Topical benzoyl peroxide + Topical retinoid",
+            "Severe: Oral doxycycline or minocycline + Topical tretinoin",
+            "Women: Combined oral contraceptive if indicated"
+          ]
+        },
+        "redFlags": [
+          "Fulminant acne",
+          "Conglobate acne",
+          "Extensive scarring",
+          "Treatment-resistant"
+        ]
+      },
+      "medicamentos": [
+        "doxycycline"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "impetigo",
+      "titulo": "Impetigo",
+      "sinonimos": [
+        "Superficial pyoderma"
+      ],
+      "ciap2": [
+        "S72"
+      ],
+      "cid10": [
+        "L01"
+      ],
+      "cid11": [
+        "EA40"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:8406",
+      "snomedCT": "48277006",
+      "meshId": "D007169",
+      "umlsCui": "C0021099",
+      "tags": [
+        "dermatologico",
+        "infecciosa",
+        "bacteriana",
+        "pediatrica"
+      ],
+      "quickView": {
+        "definicao": "Superficial bacterial skin infection. Causes: S. aureus, S. pyogenes. Lesions: vesicles/pustules that evolve into honey-colored crusts.",
+        "criteriosDiagnosticos": [
+          "Vesicular/pustular lesions",
+          "Evolve into honey-colored crusts",
+          "Location: face, extremities",
+          "Most common in children"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Local hygiene",
+            "Remove crusts",
+            "Avoid contact"
+          ],
+          "farmacologico": [
+            "Topical: Mupirocin 2% three times daily for 7-10 days",
+            "Or Topical fusidic acid",
+            "If extensive: Oral cefalexin 25-50mg/kg/day for 7 days",
+            "Or Amoxicillin-clavulanate"
+          ]
+        },
+        "redFlags": [
+          "Cellulitis",
+          "Erysipelas",
+          "Lymphangitis",
+          "Post-streptococcal glomerulonephritis"
+        ]
+      },
+      "medicamentos": [
+        "cefalexin",
+        "amoxicillin"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dermatite-contato",
+      "titulo": "Contact Dermatitis",
+      "ciap2": [
+        "S88"
+      ],
+      "cid10": [
+        "L25"
+      ],
+      "cid11": [
+        "EA80.1"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:13360",
+      "snomedCT": "40275004",
+      "meshId": "D017449",
+      "umlsCui": "C0011606",
+      "quickView": {
+        "definicao": "Cutaneous eruption caused by direct contact with an irritant or allergen. Irritant (80%) vs allergic (20%).",
+        "criteriosDiagnosticos": [
+          "Localized erythema",
+          "Pruritus",
+          "Vesicles/blisters (allergic)",
+          "History of exposure",
+          "Compatible distribution"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Identify and avoid the causative agent",
+            "Cold compresses",
+            "Skin hydration"
+          ],
+          "farmacologico": [
+            "Topical corticosteroid: Hydrocortisone 1% (face) or Betamethasone (body) twice daily until resolution",
+            "Oral antihistamine if severe pruritus"
+          ]
+        },
+        "redFlags": [
+          "Superinfection",
+          "Generalized eczema",
+          "Anaphylaxis"
+        ]
+      },
+      "medicamentos": [
+        "hidrocortisona",
+        "betametasona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "urticaria",
+      "titulo": "Urticaria",
+      "ciap2": [
+        "S97"
+      ],
+      "cid10": [
+        "L50"
+      ],
+      "cid11": [
+        "EB01"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:6945",
+      "snomedCT": "42702005",
+      "meshId": "D014581",
+      "umlsCui": "C0020538",
+      "quickView": {
+        "definicao": "Cutaneous eruption characterized by pruritic erythematous papules/plaques that are transient (<24h). Acute (<6 weeks) vs chronic.",
+        "criteriosDiagnosticos": [
+          "Erythematous papules/plaques",
+          "Intense pruritus",
+          "Transient lesions (<24h)",
+          "Angioedema may be present"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Avoid identified triggers",
+            "Cold compresses"
+          ],
+          "farmacologico": [
+            "Non-sedating H1 antihistamine: Loratadine 10mg once daily or Cetirizine 10mg once daily",
+            "If refractory: increase dose or add another antihistamine"
+          ]
+        },
+        "redFlags": [
+          "Airway angioedema",
+          "Anaphylaxis",
+          "Chronic urticaria with angioedema"
+        ]
+      },
+      "medicamentos": [
+        "loratadina",
+        "cetirizina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "vitiligo",
+      "titulo": "Vitiligo",
+      "ciap2": [
+        "S93"
+      ],
+      "cid10": [
+        "L80"
+      ],
+      "cid11": [
+        "ED70"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:9008",
+      "snomedCT": "9014002",
+      "meshId": "D014820",
+      "umlsCui": "C0042890",
+      "tags": [
+        "dermatologico",
+        "autoimune"
+      ],
+      "quickView": {
+        "definicao": "Depigmentation of the skin due to loss of melanocytes. An autoimmune disease.",
+        "criteriosDiagnosticos": [
+          "Hypochromic/achromic patches",
+          "Well-defined borders",
+          "Positive Wood's lamp"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Sun protection",
+            "Corrective makeup"
+          ],
+          "farmacologico": [
+            "Topical corticosteroids",
+            "Topical calcineurin inhibitors",
+            "Phototherapy"
+          ]
+        },
+        "redFlags": [
+          "Rapid depigmentation",
+          "Associated with other autoimmune diseases"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dermatite-seborreica",
+      "titulo": "Seborrheic Dermatitis",
+      "ciap2": [
+        "S89"
+      ],
+      "cid10": [
+        "L21"
+      ],
+      "cid11": [
+        "EA81"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:8725",
+      "snomedCT": "5960000",
+      "meshId": "D012628",
+      "umlsCui": "C0011616",
+      "hpo": [
+        "HP:0003765"
+      ],
+      "tags": [
+        "dermatologico",
+        "common",
+        "chronic"
+      ],
+      "quickView": {
+        "definicao": "Chronic recurrent dermatitis. Seborrheic areas: scalp, face, chest. Yellowish and oily scales.",
+        "criteriosDiagnosticos": [
+          "Scaly lesions in seborrheic areas",
+          "Mild to moderate pruritus",
+          "Erythema",
+          "Typical distribution"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Anti-dandruff shampoo",
+            "Adequate hygiene",
+            "Avoid oily products"
+          ],
+          "farmacologico": [
+            "Topical ketoconazole",
+            "Mild topical corticosteroids",
+            "Topical ciclopirox"
+          ]
+        },
+        "redFlags": [
+          "Extensive lesions",
+          "Secondary infection",
+          "Treatment-resistant"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

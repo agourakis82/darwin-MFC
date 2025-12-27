@@ -1,0 +1,269 @@
+{
+  "locale": "en",
+  "category": "gynecologic",
+  "generatedAt": "2025-12-27T03:34:57.578Z",
+  "count": 1,
+  "diseases": [
+    {
+      "id": "vulvovaginite-candidíase",
+      "titulo": "Vulvovaginal Candidiasis",
+      "sinonimos": [
+        "VVC",
+        "Vaginal candidiasis",
+        "Vaginal moniliasis"
+      ],
+      "doid": "DOID:13842",
+      "snomedCT": "78048006",
+      "meshId": "D002181",
+      "umlsCui": "C0006840",
+      "ciap2": [
+        "X72"
+      ],
+      "cid10": [
+        "B37.3"
+      ],
+      "cid11": [
+        "1F23.1"
+      ],
+      "categoria": "gynecologic",
+      "quickView": {
+        "definicao": "Vulvovaginal infection caused by yeasts of the genus Candida (mainly C. albicans). Characterized by intense vulvar pruritus, white curdy discharge, and external dysuria. Very common - 75% of women will have at least 1 episode.",
+        "criteriosDiagnosticos": [
+          "CLINICAL + LABORATORY DIAGNOSIS:",
+          "Intense vulvar pruritus (cardinal symptom)",
+          "White, curdy, \"cottage cheese-like\" discharge",
+          "Vulvar erythema and edema",
+          "Normal vaginal pH (4.0-4.5)",
+          "KOH test: hyphae and pseudohyphae on microscopy",
+          "Fungal culture if recurrent or atypical"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Avoid synthetic underwear (prefer cotton)",
+            "Avoid vaginal douching",
+            "Keep the genital area dry",
+            "Treat partner only if symptomatic (balanitis)"
+          ],
+          "farmacologico": [
+            "UNCOMPLICATED VVC:",
+            "Fluconazole 150mg PO single dose OR",
+            "Clotrimazole vaginal cream 1% for 7 nights OR",
+            "Miconazole suppository 200mg for 3 nights",
+            "",
+            "RECURRENT VVC (≥4 episodes/year):",
+            "Fluconazole 150mg PO D1, D4, D7 (induction)",
+            "Then Fluconazole 150mg once weekly for 6 months (maintenance)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Resolution of symptoms",
+          "Fungal eradication",
+          "Prevention of recurrence"
+        ],
+        "examesIniciais": [
+          "Vaginal pH (normal in candidiasis)",
+          "Wet mount + KOH (hyphae, pseudohyphae, spores)",
+          "Fungal culture if recurrent or refractory (identify species)",
+          "Blood glucose if recurrent (rule out DM)"
+        ],
+        "redFlags": [
+          "Recurrent VVC (≥4/year): investigate DM, immunosuppression",
+          "Non-albicans Candida (C. glabrata): resistance to azoles",
+          "Pregnant: avoid oral fluconazole (use topical treatments)",
+          "Severe vulvovaginitis with ulceration"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "75% of women will have ≥1 episode, 40-45% will have ≥2",
+          "incidencia": "5-8% have recurrent VVC",
+          "faixaEtaria": "Reproductive age",
+          "fatoresRisco": [
+            "Recent use of antibiotics",
+            "Diabetes mellitus",
+            "Pregnancy",
+            "Immunosuppression",
+            "Use of corticosteroids",
+            "High-estrogen contraceptives",
+            "Frequent sexual activity"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Candida is part of the normal vaginal microbiota in 20-50% of women. Alterations in balance (antibiotics, immunosuppression, estrogen) allow fungal proliferation. Local inflammatory response causes symptoms.",
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Intense vulvar pruritus (most characteristic)",
+            "Vulvar burning",
+            "White, curdy, odorless discharge",
+            "External dysuria",
+            "Superficial dyspareunia"
+          ],
+          "sinaisExameFisico": [
+            "Vulvar erythema and edema",
+            "Scratches from scratching",
+            "Adherent discharge on vaginal walls",
+            "Erythematous vaginal mucosa"
+          ],
+          "formasClinicas": [
+            "Uncomplicated VVC (majority)",
+            "Complicated VVC: severe, recurrent, non-albicans, pregnant, immunosuppressed"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinical + microscopy or culture",
+            "Normal pH helps differentiate from BV"
+          ],
+          "diagnosticoDiferencial": [
+            "Bacterial vaginosis (pH >4.5, fishy odor)",
+            "Trichomoniasis (yellow-green, frothy discharge)",
+            "Genital herpes (vesicles, ulcers)",
+            "Contact dermatitis",
+            "Lichen sclerosus"
+          ],
+          "examesLaboratoriais": [
+            "Wet mount with KOH",
+            "Fungal culture (Sabouraud)",
+            "Vaginal pH"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Relieve symptoms",
+            "Eradicate fungus",
+            "Prevent recurrence"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Cotton underwear",
+              "Avoid vaginal douching",
+              "Keep the area dry"
+            ],
+            "citations": [
+              {
+                "refId": "cdc-sti-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Oral azole",
+                "medicamentos": [
+                  "Fluconazole"
+                ],
+                "posologia": "150mg PO single dose. Efficacy 90%."
+              },
+              {
+                "classe": "Topical azole",
+                "medicamentos": [
+                  "Clotrimazole",
+                  "Miconazole",
+                  "Terconazole"
+                ],
+                "posologia": "Clotrimazole cream 1% for 7 nights or Miconazole suppository 200mg for 3 nights."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Maintenance regimen (recurrent)",
+                "medicamentos": [
+                  "Fluconazole"
+                ],
+                "posologia": "150mg weekly for 6 months after induction."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Pregnant",
+                "conduta": "Only topical treatment (7 days). Oral fluconazole contraindicated."
+              },
+              {
+                "situacao": "C. glabrata (resistant)",
+                "conduta": "Boric acid 600mg intravaginally for 14 nights."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "cdc-sti-2021"
+              }
+            ]
+          },
+          "duracao": "Episode: 1-7 days. Maintenance: 6 months."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Follow-up if no improvement in 72 hours or recurrence",
+          "examesControle": [
+            "Culture if recurrent or refractory"
+          ],
+          "metasTerapeuticas": [
+            "Resolution of symptoms",
+            "<4 episodes/year"
+          ],
+          "criteriosEncaminhamento": [
+            "Recurrent refractory VVC",
+            "Immunosuppression",
+            "Need for comorbidity evaluation"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Avoid unnecessary antibiotics",
+            "Glycemic control in DM"
+          ],
+          "secundaria": [
+            "Maintenance regimen if recurrent"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "fluconazol",
+        "clotrimazol",
+        "miconazol"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "cdc-sti-2021"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "candidiasis",
+        "vulvovaginitis",
+        "pruritus",
+        "fluconazole",
+        "discharge"
+      ]
+    }
+  ]
+}

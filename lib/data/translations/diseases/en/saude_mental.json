@@ -1,0 +1,1217 @@
+{
+  "locale": "en",
+  "category": "saude_mental",
+  "generatedAt": "2025-12-27T03:34:57.576Z",
+  "count": 14,
+  "diseases": [
+    {
+      "id": "insonia",
+      "titulo": "Insomnia",
+      "ciap2": [
+        "P06"
+      ],
+      "cid10": [
+        "G47.0"
+      ],
+      "cid11": [
+        "7A00.0"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:193",
+      "snomedCT": "193462001",
+      "meshId": "D007319",
+      "umlsCui": "C0917801",
+      "quickView": {
+        "definicao": "Difficulty initiating/maintaining sleep or early awakening, with daytime impairment. Chronic if ≥3 times/week for ≥3 months.",
+        "criteriosDiagnosticos": [
+          "Difficulty sleeping despite adequate opportunity",
+          "Daytime impairment (fatigue, irritability, concentration)",
+          "Exclude sleep apnea, RLS, other causes"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "CBT-I (Cognitive Behavioral Therapy for Insomnia)",
+            "Sleep hygiene",
+            "Stimulus control",
+            "Sleep restriction"
+          ],
+          "farmacologico": [
+            "Avoid chronic use of benzodiazepines",
+            "Short-term: Zolpidem 5-10mg or Zopiclone",
+            "If comorbid: Trazodone 25-100mg or Mirtazapine"
+          ]
+        },
+        "redFlags": [
+          "Excessive daytime sleepiness (sleep apnea)",
+          "Loud snoring",
+          "Restless legs syndrome",
+          "Cataplexy"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "transtorno-depressivo-maior",
+      "titulo": "Major Depressive Disorder (MDD)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "cid11": [
+        "6A70",
+        "6A71"
+      ],
+      "ciap2": [
+        "P76"
+      ],
+      "snomedCT": "35489007",
+      "doid": "DOID:1470",
+      "meshId": "D003865",
+      "umlsCui": "C1269683",
+      "dsm5": {
+        "code": "296.33",
+        "codeAlternative": "F32",
+        "category": "Depressive Disorders",
+        "diagnosticCriteria": {
+          "code": "296.33",
+          "name": "Major Depressive Disorder",
+          "category": "Depressive Disorders",
+          "criteria": [
+            {
+              "text": "A. Five (or more) of the following symptoms have been present during the same 2-week period and represent a change from previous functioning; at least one of the symptoms is (1) depressed mood or (2) loss of interest or pleasure."
+            },
+            {
+              "letter": "1",
+              "text": "Depressed mood most of the day, nearly every day"
+            },
+            {
+              "letter": "2",
+              "text": "Markedly diminished interest or pleasure in all, or almost all, activities"
+            },
+            {
+              "letter": "3",
+              "text": "Significant weight loss or gain (more than 5% of body weight in 1 month)"
+            },
+            {
+              "letter": "4",
+              "text": "Insomnia or hypersomnia nearly every day"
+            },
+            {
+              "letter": "5",
+              "text": "Psychomotor agitation or retardation nearly every day"
+            },
+            {
+              "letter": "6",
+              "text": "Fatigue or loss of energy nearly every day"
+            },
+            {
+              "letter": "7",
+              "text": "Feelings of worthlessness or excessive or inappropriate guilt"
+            },
+            {
+              "letter": "8",
+              "text": "Diminished ability to think or concentrate, or indecisiveness"
+            },
+            {
+              "letter": "9",
+              "text": "Recurrent thoughts of death, suicidal ideation"
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "Mild",
+              "Moderate",
+              "Severe",
+              "With Psychotic Features"
+            ],
+            "course": [
+              "Single Episode",
+              "Recurrent"
+            ],
+            "episode": [
+              "With Melancholic Features",
+              "With Atypical Features",
+              "With Catatonia"
+            ],
+            "remission": [
+              "In Partial Remission",
+              "In Full Remission"
+            ]
+          },
+          "exclusions": [
+            "Substance/Medication-Induced",
+            "Due to Another Medical Condition"
+          ]
+        },
+        "specifiers": {
+          "severity": [
+            "Mild",
+            "Moderate",
+            "Severe",
+            "With Psychotic Features"
+          ],
+          "course": [
+            "Single Episode",
+            "Recurrent"
+          ],
+          "episode": [
+            "With Melancholic Features",
+            "With Atypical Features",
+            "With Catatonia"
+          ],
+          "remission": [
+            "In Partial Remission",
+            "In Full Remission"
+          ],
+          "withAnxiousDistress": true,
+          "withMelancholicFeatures": true,
+          "withAtypicalFeatures": true,
+          "withPsychoticFeatures": true,
+          "withCatatonia": true,
+          "withPeripartumOnset": true,
+          "withSeasonalPattern": true
+        }
+      },
+      "quickView": {
+        "definicao": "Mood disorder characterized by episodes of depressed mood, loss of interest or pleasure, accompanied by other cognitive, neurovegetative, and psychomotor symptoms, causing significant distress or impairment.",
+        "criteriosDiagnosticos": [
+          "Depressed mood or loss of interest/pleasure",
+          "At least 5 symptoms for 2 weeks",
+          "Symptoms: weight, sleep, psychomotor, energy, cognition, guilt, suicidal ideation",
+          "Significant impairment in functioning"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psychotherapy: CBT (cognitive-behavioral therapy) - gold standard",
+            "Psychotherapy: IPT (interpersonal therapy)",
+            "Behavioral activation",
+            "Regular physical exercise"
+          ],
+          "farmacologico": [
+            "SSRIs: Sertraline, Escitalopram, Fluoxetine (first line)",
+            "SNRIs: Venlafaxine, Duloxetine",
+            "Tricyclic antidepressants: Amitriptyline (second line)"
+          ]
+        },
+        "redFlags": [
+          "Active suicidal ideation",
+          "Suicide attempt",
+          "Psychosis (hallucinations/delusions)",
+          "Catatonia",
+          "Treatment resistance",
+          "Severe MDD with insufficient response"
+        ],
+        "examesIniciais": [
+          "TSH, free T4 (to rule out hypothyroidism)",
+          "Vitamin B12, folate",
+          "Complete blood count",
+          "PHQ-9 or HAM-D for assessment"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "PHQ-9",
+          "description": "Patient Health Questionnaire-9: 9-item scale, score 0-27. ≥10 indicates moderate to severe depression.",
+          "cutoff": "≥10",
+          "reference": "Kroenke et al., 2001"
+        },
+        {
+          "name": "HAM-D",
+          "description": "Hamilton Depression Rating Scale: Clinical scale, score 0-52. ≥17 indicates moderate to severe depression.",
+          "cutoff": "≥17",
+          "reference": "Hamilton, 1960"
+        }
+      ],
+      "tags": [
+        "depression",
+        "mood",
+        "ssris",
+        "cbt",
+        "dsm5",
+        "mental_health"
+      ]
+    },
+    {
+      "id": "esquizofrenia",
+      "titulo": "Schizophrenia",
+      "ciap2": [
+        "P72"
+      ],
+      "cid10": [
+        "F20"
+      ],
+      "cid11": [
+        "6A20"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:5419",
+      "snomedCT": "58214004",
+      "meshId": "D012559",
+      "umlsCui": "C0036341",
+      "tags": [
+        "saude_mental",
+        "cronica",
+        "psicose"
+      ],
+      "quickView": {
+        "definicao": "Mental disorder with positive symptoms (hallucinations, delusions) and negative symptoms (abulia, affective blunting).",
+        "criteriosDiagnosticos": [
+          "Positive or negative symptoms for ≥1 month",
+          "Social/occupational dysfunction",
+          "Duration ≥6 months"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psychotherapy",
+            "Psychoeducation",
+            "Psychosocial rehabilitation"
+          ],
+          "farmacologico": [
+            "Antipsychotic: Risperidone or Olanzapine",
+            "Prolonged maintenance"
+          ]
+        },
+        "redFlags": [
+          "Suicidal ideation/behavior",
+          "Psychomotor agitation",
+          "Neglect of self-care"
+        ]
+      },
+      "medicamentos": [
+        "risperidona",
+        "olanzapina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "transtorno-obsessivo-compulsivo",
+      "titulo": "Obsessive-Compulsive Disorder (OCD)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F42"
+      ],
+      "cid11": [
+        "6B20"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "191736004",
+      "doid": "DOID:10933",
+      "meshId": "D009771",
+      "umlsCui": "C0028768",
+      "dsm5": {
+        "code": "300.3",
+        "category": "Obsessive-Compulsive and Related Disorders",
+        "diagnosticCriteria": {
+          "code": "300.3",
+          "name": "Obsessive-Compulsive Disorder",
+          "category": "Obsessive-Compulsive and Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Presence of obsessions, compulsions, or both"
+            },
+            {
+              "letter": "B",
+              "text": "Obsessions or compulsions are time-consuming (more than 1 hour per day) or cause significant distress or impairment"
+            }
+          ]
+        },
+        "quickView": {
+          "definicao": "Disorder characterized by obsessions (recurrent and persistent thoughts, impulses, or images) and/or compulsions (repetitive behaviors or mental acts) that are time-consuming or cause significant distress.",
+          "criteriosDiagnosticos": [
+            "Obsessions: recurrent and persistent intrusive and unwanted thoughts, impulses, or images",
+            "Compulsions: repetitive behaviors or mental acts in response to obsessions",
+            "Consume >1 hour/day or cause significant distress/impairment"
+          ],
+          "tratamentoPrimeiraLinha": {
+            "naoFarmacologico": [
+              "Cognitive Behavioral Therapy with Exposure and Response Prevention (ERP) - gold standard",
+              "Acceptance and Commitment Therapy (ACT)"
+            ],
+            "farmacologico": [
+              "SSRIs at high doses: Sertraline (≥200mg), Fluoxetine (≥60mg), Fluvoxamine",
+              "Clomipramine (tricyclic antidepressant, second line)"
+            ]
+          },
+          "redFlags": [
+            "Severe OCD with significant functional impairment",
+            "Suicidal ideation",
+            "Untreated comorbidity",
+            "Treatment resistance"
+          ],
+          "examesIniciais": [
+            "Functional assessment",
+            "Y-BOCS scale for evaluation"
+          ]
+        },
+        "escalasAvaliacao": [
+          {
+            "name": "Y-BOCS",
+            "description": "Yale-Brown Obsessive Compulsive Scale: 10-item scale, score 0-40. ≥16 indicates moderate to severe OCD.",
+            "cutoff": "≥16",
+            "reference": "Goodman et al., 1989"
+          }
+        ],
+        "tags": [
+          "ocd",
+          "obsessive",
+          "compulsive",
+          "erp",
+          "ssris",
+          "dsm5"
+        ]
+      }
+    },
+    {
+      "id": "transtorno-bipolar-ii",
+      "titulo": "Bipolar Disorder Type II",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F31.8"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "ciap2": [
+        "P73"
+      ],
+      "snomedCT": "83746006",
+      "doid": "DOID:540",
+      "meshId": "D001714",
+      "umlsCui": "C0236788",
+      "dsm5": {
+        "code": "296.89",
+        "category": "Bipolar and Related Disorders",
+        "diagnosticCriteria": {
+          "code": "296.89",
+          "name": "Bipolar II Disorder",
+          "category": "Bipolar and Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Criteria for a current or past hypomanic episode and a current or past major depressive episode have been met"
+            },
+            {
+              "letter": "B",
+              "text": "There has never been a manic episode"
+            }
+          ]
+        },
+        "quickView": {
+          "definicao": "Mood disorder characterized by at least one hypomanic episode and one major depressive episode, without a history of a complete manic episode.",
+          "criteriosDiagnosticos": [
+            "Hypomanic episode: elevated/irritable mood + 3 symptoms for ≥4 days, without significant functional impairment",
+            "Major depressive episode: present or past",
+            "No history of a complete manic episode"
+          ],
+          "tratamentoPrimeiraLinha": {
+            "naoFarmacologico": [
+              "Psychoeducation",
+              "Family therapy",
+              "Regulation of social rhythms"
+            ],
+            "farmacologico": [
+              "Lithium or Lamotrigine (prevention of episodes)",
+              "Quetiapine (depressive episode)",
+              "Avoid isolated antidepressants (risk of manic switch)"
+            ]
+          },
+          "redFlags": [
+            "Risk of manic switch with antidepressants",
+            "Suicide risk during depression",
+            "Recurrent episodes"
+          ]
+        },
+        "criteriosEncaminhamento": [
+          "First hypomanic episode",
+          "Severe depression",
+          "Suicide risk",
+          "Need for stabilizer adjustment"
+        ],
+        "urgencia": {
+          "riscosuicida": true,
+          "criterios": [
+            "Severe depression",
+            "Risk of manic switch"
+          ]
+        },
+        "tags": [
+          "bipolar",
+          "hypomania",
+          "depression",
+          "lithium",
+          "lamotrigine",
+          "dsm5"
+        ]
+      }
+    },
+    {
+      "id": "agorafobia",
+      "titulo": "Agoraphobia",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F40.0"
+      ],
+      "cid11": [
+        "6B02"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "70691001",
+      "doid": "DOID:11259",
+      "meshId": "D000379",
+      "umlsCui": "C0001818",
+      "dsm5": {
+        "code": "300.22",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.22",
+          "name": "Agoraphobia",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Marked fear or anxiety about two (or more) of the following situations:",
+              "subCriteria": [
+                {
+                  "text": "1. Using public transportation"
+                },
+                {
+                  "text": "2. Being in open spaces"
+                },
+                {
+                  "text": "3. Being in enclosed places"
+                },
+                {
+                  "text": "4. Being in a crowd or standing in a line"
+                },
+                {
+                  "text": "5. Being outside the home alone"
+                }
+              ]
+            },
+            {
+              "letter": "B",
+              "text": "The individual avoids these situations due to fear of not being able to escape or of not receiving help"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Anxiety disorder characterized by marked fear or anxiety in situations where escape may be difficult or where help may not be available in case of panic symptoms or other disabling symptoms.",
+        "criteriosDiagnosticos": [
+          "Marked fear/anxiety in ≥2 situations: public transportation, open spaces, enclosed places, crowds, being alone outside the home",
+          "Avoidance due to fear of not being able to escape or not receiving help",
+          "Duration ≥6 months",
+          "Significant functional impairment"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cognitive Behavioral Therapy (CBT) with gradual exposure - gold standard",
+            "Psychoeducation",
+            "Breathing techniques"
+          ],
+          "farmacologico": [
+            "SSRIs: Sertraline, Paroxetine",
+            "SNRIs: Venlafaxine"
+          ]
+        },
+        "redFlags": [
+          "Homebound isolation",
+          "Comorbidity with panic disorder",
+          "Severe functional impairment"
+        ],
+        "examesIniciais": [
+          "Functional assessment"
+        ]
+      },
+      "tags": [
+        "agoraphobia",
+        "anxiety",
+        "cognitive_behavioral_therapy",
+        "ssris",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-personalidade-borderline",
+      "titulo": "Borderline Personality Disorder",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F60.3"
+      ],
+      "cid11": [
+        "6D10"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "20010003",
+      "doid": "DOID:10930",
+      "meshId": "D001883",
+      "umlsCui": "C0006012",
+      "dsm5": {
+        "code": "301.83",
+        "category": "Personality Disorders",
+        "diagnosticCriteria": {
+          "code": "301.83",
+          "name": "Borderline Personality Disorder",
+          "category": "Personality Disorders",
+          "criteria": [
+            {
+              "text": "A pervasive pattern of instability in interpersonal relationships, self-image, and affects, and marked impulsivity, beginning in early adulthood and present in a variety of contexts, as indicated by five (or more) of the following:",
+              "subCriteria": [
+                {
+                  "text": "1. Frantic efforts to avoid real or imagined abandonment"
+                },
+                {
+                  "text": "2. A pattern of unstable and intense interpersonal relationships characterized by alternating between extremes of idealization and devaluation"
+                },
+                {
+                  "text": "3. Identity disturbance: markedly and persistently unstable self-image or sense of self"
+                },
+                {
+                  "text": "4. Impulsivity in at least two areas that are potentially self-damaging"
+                },
+                {
+                  "text": "5. Recurrent suicidal behavior, gestures, or threats, or self-mutilating behavior"
+                },
+                {
+                  "text": "6. Affective instability due to marked reactivity of mood"
+                },
+                {
+                  "text": "7. Chronic feelings of emptiness"
+                },
+                {
+                  "text": "8. Intense or inappropriate anger or difficulty controlling anger"
+                },
+                {
+                  "text": "9. Transient, stress-related paranoid ideation or severe dissociative symptoms"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Personality disorder characterized by marked instability in relationships, self-image, and affects, with impulsivity and self-destructive behaviors.",
+        "criteriosDiagnosticos": [
+          "≥5 of 9 criteria: efforts to avoid abandonment, unstable relationships, identity disturbance, impulsivity, suicidal/self-harming behavior, affective instability, feelings of emptiness, intense anger, dissociative/paranoid symptoms",
+          "Onset in early adulthood",
+          "Present in various contexts"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "DBT (Dialectical Behavior Therapy) - gold standard",
+            "Specialized CBT",
+            "Schema therapy",
+            "Group therapy"
+          ],
+          "farmacologico": [
+            "Medication for specific symptoms:",
+            "- SSRIs for affective instability",
+            "- Atypical antipsychotics at low doses for cognitive symptoms",
+            "- Mood stabilizers for impulsivity"
+          ]
+        },
+        "redFlags": [
+          "High suicide risk",
+          "Self-harming behavior",
+          "Comorbidity with other disorders"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "First diagnosis",
+        "Suicide risk",
+        "Severe self-harming behavior",
+        "Need for specialized DBT"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "riscoAutolesao": true,
+        "criterios": [
+          "Suicidal behavior",
+          "Self-mutilation",
+          "Acute crises"
+        ]
+      },
+      "tags": [
+        "borderline",
+        "personality",
+        "dbt",
+        "instability",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-uso-alcool",
+      "titulo": "Alcohol Use Disorder",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F10"
+      ],
+      "cid11": [
+        "6C40"
+      ],
+      "ciap2": [
+        "P15",
+        "P16"
+      ],
+      "snomedCT": "7200002",
+      "doid": "DOID:0050741",
+      "meshId": "D000437",
+      "umlsCui": "C0001973",
+      "dsm5": {
+        "code": "305.00",
+        "category": "Substance-Related and Addictive Disorders",
+        "diagnosticCriteria": {
+          "code": "305.00",
+          "name": "Alcohol Use Disorder",
+          "category": "Substance-Related and Addictive Disorders",
+          "criteria": [
+            {
+              "text": "A pattern of alcohol use leading to clinically significant impairment or distress, manifested by at least two of the following, occurring within a 12-month period:",
+              "subCriteria": [
+                {
+                  "text": "1. Alcohol often taken in larger amounts or over a longer period than intended"
+                },
+                {
+                  "text": "2. Persistent desire or unsuccessful efforts to cut down or control alcohol use"
+                },
+                {
+                  "text": "3. A great deal of time spent in activities necessary to obtain alcohol, use it, or recover from its effects"
+                },
+                {
+                  "text": "4. Craving or a strong desire or urge to use alcohol"
+                },
+                {
+                  "text": "5. Recurrent alcohol use resulting in a failure to fulfill major role obligations"
+                },
+                {
+                  "text": "6. Continued use despite persistent or recurrent social or interpersonal problems"
+                },
+                {
+                  "text": "7. Important social, occupational, or recreational activities given up or reduced"
+                },
+                {
+                  "text": "8. Recurrent use in situations that are physically hazardous"
+                },
+                {
+                  "text": "9. Continued use despite knowledge of a persistent or recurrent physical or psychological problem"
+                },
+                {
+                  "text": "10. Tolerance (defined by either of the following):",
+                  "subCriteria": [
+                    {
+                      "text": "a) A need for markedly increased amounts to achieve intoxication or desired effect"
+                    },
+                    {
+                      "text": "b) A markedly diminished effect with continued use of the same amount"
+                    }
+                  ]
+                },
+                {
+                  "text": "11. Withdrawal (defined by either of the following):",
+                  "subCriteria": [
+                    {
+                      "text": "a) A characteristic withdrawal syndrome"
+                    },
+                    {
+                      "text": "b) Alcohol (or a related substance) is taken to relieve or avoid withdrawal symptoms"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "Mild (2-3 symptoms)",
+              "Moderate (4-5 symptoms)",
+              "Severe (6+ symptoms)"
+            ],
+            "course": [
+              "Early Remission",
+              "Sustained Remission",
+              "On Maintenance Therapy",
+              "In a Controlled Environment"
+            ]
+          }
+        }
+      },
+      "quickView": {
+        "definicao": "Disorder characterized by a pattern of problematic alcohol use leading to clinically significant impairment or distress, manifested by ≥2 criteria in 12 months.",
+        "criteriosDiagnosticos": [
+          "≥2 criteria in 12 months:",
+          "Larger consumption than intended, efforts to reduce, significant time spent, craving, failure to fulfill obligations, interpersonal problems, abandonment of activities, use in dangerous situations, continued use despite problems, tolerance, withdrawal",
+          "Severity: Mild (2-3), Moderate (4-5), Severe (6+)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Motivational interviewing",
+            "Cognitive-behavioral therapy",
+            "Support groups (AA)",
+            "Relapse prevention"
+          ],
+          "farmacologico": [
+            "Detoxification if necessary (benzodiazepines for withdrawal)",
+            "Relapse prevention: Naltrexone, Acamprosate",
+            "Deterrence: Disulfiram"
+          ]
+        },
+        "redFlags": [
+          "Severe withdrawal with risk of seizures",
+          "Delirium tremens",
+          "Alcoholic liver disease",
+          "Pancreatitis",
+          "Wernicke-Korsakoff syndrome"
+        ],
+        "examesIniciais": [
+          "AST, ALT, GGT",
+          "Bilirubin",
+          "Complete blood count",
+          "AUDIT (Alcohol Use Disorders Identification Test)"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "Severe disorder",
+        "Severe withdrawal",
+        "Delirium tremens",
+        "Clinical complications",
+        "Resistance to outpatient treatment"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "criterios": [
+          "Severe withdrawal",
+          "Delirium tremens",
+          "Clinical complications"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "AUDIT",
+          "description": "Alcohol Use Disorders Identification Test: 10-item scale for screening problematic alcohol use.",
+          "cutoff": "≥8 indicates problematic use",
+          "reference": "WHO, 2001"
+        }
+      ],
+      "tags": [
+        "alcohol",
+        "substance",
+        "addiction",
+        "naltrexone",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-neurocognitivo-leve",
+      "titulo": "Mild Neurocognitive Disorder",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F06.7"
+      ],
+      "cid11": [
+        "6D70"
+      ],
+      "ciap2": [
+        "P70"
+      ],
+      "snomedCT": "386806002",
+      "doid": "DOID:0060469",
+      "meshId": "D060825",
+      "umlsCui": "C1270972",
+      "dsm5": {
+        "code": "331.83",
+        "category": "Neurocognitive Disorders",
+        "diagnosticCriteria": {
+          "code": "331.83",
+          "name": "Mild Neurocognitive Disorder",
+          "category": "Neurocognitive Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Evidence of modest cognitive decline from a previous level of performance in one or more cognitive domains"
+            },
+            {
+              "letter": "B",
+              "text": "Cognitive decline does not interfere with the ability to perform instrumental activities of daily living independently"
+            }
+          ]
+        },
+        "quickView": {
+          "definicao": "Modest cognitive decline in one or more domains (complex attention, executive function, learning and memory, language, perceptual-motor, social cognition) that does not interfere with functional independence.",
+          "criteriosDiagnosticos": [
+            "Modest cognitive decline in ≥1 domain",
+            "Objective assessment (neuropsychological tests)",
+            "Does NOT interfere with functional independence",
+            "Does NOT meet criteria for delirium"
+          ],
+          "tratamentoPrimeiraLinha": {
+            "naoFarmacologico": [
+              "Cognitive rehabilitation",
+              "Cognitive training",
+              "Regular physical exercise",
+              "Control of cardiovascular risk factors"
+            ],
+            "farmacologico": [
+              "Treatment of underlying cause",
+              "Donepezil or Rivastigmine (if Alzheimer's disease)"
+            ]
+          },
+          "redFlags": [
+            "Rapid progression",
+            "Functional decline",
+            "Behavioral symptoms",
+            "Untreated reversible cause"
+          ],
+          "examesIniciais": [
+            "Neuropsychological evaluation",
+            "Brain MRI",
+            "Complete blood count, thyroid function, B12, folate",
+            "Exclude reversible causes"
+          ]
+        },
+        "escalasAvaliacao": [
+          {
+            "name": "MoCA",
+            "description": "Montreal Cognitive Assessment: Cognitive screening scale",
+            "cutoff": "<26 suggests impairment",
+            "reference": "Nasreddine et al., 2005"
+          },
+          {
+            "name": "MMSE",
+            "description": "Mini-Mental State Examination: Classic screening scale",
+            "cutoff": "<24 suggests impairment",
+            "reference": "Folstein et al., 1975"
+          }
+        ],
+        "tags": [
+          "neurocognitive",
+          "cognition",
+          "dementia",
+          "moca",
+          "mmse",
+          "dsm5"
+        ]
+      }
+    },
+    {
+      "id": "transtorno-identidade-dissociativo",
+      "titulo": "Dissociative Identity Disorder",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F44.81"
+      ],
+      "cid11": [
+        "6B64"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "32388005",
+      "doid": "DOID:1532",
+      "meshId": "D009105",
+      "umlsCui": "C0026847",
+      "dsm5": {
+        "code": "300.14",
+        "category": "Dissociative Disorders",
+        "diagnosticCriteria": {
+          "code": "300.14",
+          "name": "Dissociative Identity Disorder",
+          "category": "Dissociative Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Disruption of identity characterized by two or more distinct personalities"
+            },
+            {
+              "letter": "B",
+              "text": "Recurrent gaps in the recall of everyday events, important personal information, or traumatic events"
+            }
+          ]
+        },
+        "quickView": {
+          "definicao": "Dissociative disorder characterized by disruption of identity with two or more distinct personalities and memory gaps.",
+          "criteriosDiagnosticos": [
+            "≥2 distinct personalities (identities)",
+            "Recurrent memory gaps",
+            "Causes distress or functional impairment",
+            "Not attributable to substances or medical condition"
+          ],
+          "tratamentoPrimeiraLinha": {
+            "naoFarmacologico": [
+              "Specialized psychotherapy (long-term)",
+              "Integration of identities",
+              "Processing of traumas",
+              "Stabilization of symptoms"
+            ],
+            "farmacologico": [
+              "Medication for specific symptoms (depression, anxiety)",
+              "NO specific medication for DID"
+            ]
+          },
+          "redFlags": [
+            "Identity crises",
+            "Self-harm",
+            "Suicidal behavior",
+            "Severe dissociative amnesia"
+          ]
+        },
+        "criteriosEncaminhamento": [
+          "Always refer to a specialist in dissociative disorders",
+          "First diagnosis",
+          "Severe symptoms"
+        ],
+        "tags": [
+          "dissociative",
+          "identity",
+          "rare",
+          "dsm5"
+        ]
+      }
+    },
+    {
+      "id": "narcolepsia",
+      "titulo": "Narcolepsy",
+      "categoria": "saude_mental",
+      "cid10": [
+        "G47.4"
+      ],
+      "cid11": [
+        "7A20"
+      ],
+      "ciap2": [
+        "P06"
+      ],
+      "snomedCT": "60380001",
+      "doid": "DOID:8986",
+      "meshId": "D009290",
+      "umlsCui": "C0027404",
+      "dsm5": {
+        "code": "347.00",
+        "category": "Sleep-Wake Disorders",
+        "diagnosticCriteria": {
+          "code": "347.00",
+          "name": "Narcolepsy",
+          "category": "Sleep-Wake Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Recurrent episodes of an irresistible need to sleep, naps, or lapses into sleep"
+            },
+            {
+              "letter": "B",
+              "text": "Presence of ≥1: cataplexy, low levels of orexin, REM sleep latency ≤15 minutes"
+            }
+          ]
+        },
+        "quickView": {
+          "definicao": "A sleep disorder characterized by excessive daytime sleepiness, irresistible episodes of sleep, often associated with cataplexy (sudden loss of muscle tone).",
+          "criteriosDiagnosticos": [
+            "Excessive daytime sleepiness ≥3 months",
+            "Recurrent episodes of sleep in inappropriate situations",
+            "≥1: cataplexy, low hypocretin in CSF, REM sleep latency ≤15 min on multiple sleep latency test"
+          ],
+          "tratamentoPrimeiraLinha": {
+            "naoFarmacologico": [
+              "Scheduled naps (2-3/day, 15-20 min)",
+              "Strict sleep hygiene",
+              "Psychosocial support"
+            ],
+            "farmacologico": [
+              "Stimulants: Modafinil 200-400mg/day or Armodafinil",
+              "For cataplexy: Venlafaxine, Fluoxetine, or Sodium oxybate"
+            ]
+          },
+          "redFlags": [
+            "Severe cataplexy with risk of falls",
+            "Hypnagogic hallucinations",
+            "Sleep paralysis"
+          ],
+          "examesIniciais": [
+            "Multiple sleep latency test (MSLT)",
+            "Polysomnography",
+            "Hypocretin measurement in CSF"
+          ]
+        },
+        "tags": [
+          "narcolepsy",
+          "sleep",
+          "cataplexy",
+          "modafinil",
+          "dsm5"
+        ]
+      }
+    },
+    {
+      "id": "depressao-idoso",
+      "titulo": "Depression in the Elderly",
+      "ciap2": [
+        "P76"
+      ],
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "cid11": [
+        "6A70",
+        "6A71"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:1596",
+      "snomedCT": "35489007",
+      "meshId": "D003866",
+      "umlsCui": "C0011570",
+      "quickView": {
+        "definicao": "Major depressive disorder in the elderly, often underdiagnosed. May present with somatic complaints and \"pseudodementia\".",
+        "criteriosDiagnosticos": [
+          "GDS-15 ≥5 (screening)",
+          "Common atypical symptoms: somatic complaints",
+          "Loss of interest more than sadness",
+          "Pseudodementia: reversible cognitive deficit"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Physical activity",
+            "Behavioral activation",
+            "Social support",
+            "Psychotherapy"
+          ],
+          "farmacologico": [
+            "SSRIs: Sertraline 25-50mg (preferred)",
+            "Avoid tricyclics (anticholinergic effects)",
+            "Start low, go slow"
+          ]
+        },
+        "redFlags": [
+          "Suicidal ideation (higher risk than in younger individuals)",
+          "Refusal to eat",
+          "Psychosis",
+          "Rapid functional decline"
+        ]
+      },
+      "medicamentos": [
+        "sertralina",
+        "escitalopram"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "gds-15"
+      ]
+    },
+    {
+      "id": "tabagismo",
+      "titulo": "Nicotine Dependence (Tobacco Smoking)",
+      "ciap2": [
+        "P17"
+      ],
+      "cid10": [
+        "F17"
+      ],
+      "cid11": [
+        "6C4A"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:0050742",
+      "snomedCT": "89765005",
+      "meshId": "D014029",
+      "umlsCui": "C0040336",
+      "quickView": {
+        "definicao": "Leading preventable cause of death. 1 billion smokers worldwide. Cessation reduces mortality at any age.",
+        "criteriosDiagnosticos": [
+          "Fagerström ≥6 = high dependence",
+          "Daily use despite known risks",
+          "Previous failed cessation attempts",
+          "Withdrawal symptoms"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Brief intervention (5 As)",
+            "Motivational counseling",
+            "Support group",
+            "Helpline (136)"
+          ],
+          "farmacologico": [
+            "First line: Bupropion 150mg twice daily for 7-12 weeks",
+            "OR Varenicline 0.5mg → 1mg twice daily",
+            "TRN: patch + lozenge/gum as needed"
+          ]
+        },
+        "redFlags": [
+          "Advanced pulmonary or cardiac disease",
+          "Pregnancy",
+          "Severe psychiatric disorder"
+        ]
+      },
+      "medicamentos": [
+        "bupropiona"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "fagerstrom"
+      ]
+    },
+    {
+      "id": "transtorno-bipolar",
+      "titulo": "Bipolar Disorder",
+      "ciap2": [
+        "P73"
+      ],
+      "cid10": [
+        "F31"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:3312",
+      "snomedCT": "13746004",
+      "meshId": "D001714",
+      "umlsCui": "C0005586",
+      "tags": [
+        "saude_mental",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "Episodes of mania/hypomania and depression. Type I (mania + depression) or Type II (hypomania + depression).",
+        "criteriosDiagnosticos": [
+          "Manic episode (Type I) or hypomanic episode (Type II)",
+          "Depressive episodes",
+          "Mood changes"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psychotherapy",
+            "Patient education",
+            "Family support"
+          ],
+          "farmacologico": [
+            "Mood stabilizer: Lithium or Valproate",
+            "Antipsychotics for mania",
+            "Antidepressants with caution"
+          ]
+        },
+        "redFlags": [
+          "Suicidal ideation",
+          "Psychosis",
+          "Severe mania",
+          "Hospitalization required"
+        ]
+      },
+      "medicamentos": [
+        "lítio",
+        "valproato"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

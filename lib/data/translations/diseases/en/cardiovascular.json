@@ -1,0 +1,2879 @@
+{
+  "locale": "en",
+  "category": "cardiovascular",
+  "generatedAt": "2025-12-27T13:00:44.806Z",
+  "count": 21,
+  "diseases": [
+    {
+      "id": "hipertensao-arterial",
+      "titulo": "Systemic Arterial Hypertension (SAH)",
+      "sinonimos": [
+        "High blood pressure",
+        "SAH",
+        "Hypertension"
+      ],
+      "doid": "DOID:10763",
+      "snomedCT": "38341003",
+      "meshId": "D006973",
+      "umlsCui": "C0020538",
+      "ciap2": [
+        "K86",
+        "K87"
+      ],
+      "cid10": [
+        "I10",
+        "I11",
+        "I12",
+        "I13"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "A multifactorial clinical condition characterized by sustained blood pressure levels ≥140/90 mmHg. It is the primary modifiable risk factor for cardiovascular, cerebrovascular, and renal diseases.",
+        "criteriosDiagnosticos": [
+          "Office BP ≥140/90 mmHg on 2 or more separate occasions",
+          "24-hour ambulatory BP: mean 24h ≥130/80 mmHg, awake ≥135/85 mmHg, sleep ≥120/70 mmHg",
+          "Home BP monitoring: mean ≥130/80 mmHg (7 days, 2 measurements/day)",
+          "Rule out white coat hypertension and masked hypertension"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Sodium reduction (<2g/day or 5g salt/day)",
+            "DASH diet (fruits, vegetables, low-fat dairy)",
+            "Physical activity: 150 min/week (moderate) or 75 min (intense)",
+            "Weight loss if BMI >25 (goal: 5-10% weight loss)",
+            "Alcohol moderation (≤2 drinks/day for men, ≤1 for women)",
+            "Smoking cessation"
+          ],
+          "farmacologico": [
+            "ACE inhibitors (Enalapril 5-20mg every 12 hours) or ARBs (Losartan 50-100mg/day)",
+            "Calcium channel blockers (Amlodipine 5-10mg/day)",
+            "Thiazide diuretics (Hydrochlorothiazide 12.5-25mg/day or Chlorthalidone 12.5-25mg)",
+            "Preferred combinations: ACE/ARB + CCB or ACE/ARB + Diuretic",
+            "Avoid monotherapy in stage 2 or high CV risk"
+          ]
+        },
+        "metasTerapeuticas": [
+          "BP <140/90 mmHg (general)",
+          "BP <130/80 mmHg if high CV risk, DM, or CKD",
+          "BP <130/80 mmHg in fit elderly (<80 years)",
+          "BP <150/90 mmHg in frail elderly (>80 years)"
+        ],
+        "examesIniciais": [
+          "Fasting glucose and HbA1c",
+          "Serum creatinine and GFR (CKD-EPI)",
+          "Serum potassium",
+          "Lipid profile (TC, LDL, HDL, TG)",
+          "Serum uric acid",
+          "Urinalysis (UA) and albumin/creatinine ratio",
+          "Resting ECG"
+        ],
+        "redFlags": [
+          "BP ≥180/120 mmHg with symptoms (severe headache, visual changes, dyspnea)",
+          "Suspected secondary SAH (onset <30 years, refractory, hypokalemia)",
+          "Acute target organ damage (MI, stroke, aortic dissection)",
+          "Pregnant with BP ≥140/90 mmHg"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "32% of the adult Brazilian population",
+          "incidencia": "~500,000 new cases/year",
+          "mortalidade": "~300,000 CV deaths/year (primary risk factor)",
+          "faixaEtaria": "Progressively increases with age (>60% in >65 years)",
+          "fatoresRisco": [
+            "Advanced age",
+            "Family history of SAH",
+            "Black ethnicity",
+            "Excess sodium",
+            "Obesity/overweight",
+            "Sedentary lifestyle",
+            "Excessive alcohol consumption",
+            "Chronic stress"
+          ],
+          "citations": [
+            {
+              "refId": "vigitel-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Often asymptomatic (\"silent killer\")",
+            "Occipital headache (usually in the morning)",
+            "Dizziness",
+            "Epistaxis (non-specific)",
+            "Exertional dyspnea (if HF)",
+            "Visual changes (if retinopathy)"
+          ],
+          "sinaisExameFisico": [
+            "Elevated BP in both arms",
+            "Abdominal bruits (renal SAH)",
+            "Diminished femoral pulses (coarctation)",
+            "Altered fundus (retinopathy)",
+            "S4 (ventricular overload)",
+            "Lower extremity edema (if HF)"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "BP ≥140/90 mmHg in 2+ visits with proper technique",
+            "Ambulatory BP or home BP monitoring for confirmation (exclude white coat hypertension)",
+            "Classification: Optimal (<120/80), Normal (120-129/80-84), Pre-HTN (130-139/85-89)",
+            "Stages: 1 (140-159/90-99), 2 (160-179/100-109), 3 (≥180/110)"
+          ],
+          "diagnosticoDiferencial": [
+            "White coat hypertension",
+            "Masked hypertension",
+            "Secondary SAH (renal, endocrine, drug-induced)",
+            "Sleep apnea syndrome"
+          ],
+          "examesLaboratoriais": [
+            "Fasting glucose, HbA1c, creatinine, potassium, uric acid",
+            "Lipid profile, UA, microalbuminuria"
+          ],
+          "outrosExames": [
+            "Resting ECG",
+            "Echocardiogram if suspected cardiomyopathy",
+            "Renal ultrasound if suspected secondary SAH"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Reduce CV morbidity and mortality",
+            "Achieve individualized BP targets",
+            "Control associated risk factors",
+            "Prevent/regress target organ damage"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "DASH diet: rich in fruits, vegetables, whole grains, low-fat dairy",
+              "Sodium restriction: <2g/day (5g salt)",
+              "Aerobic physical activity: 150 min/week moderate",
+              "Resistance exercise: 2-3x/week",
+              "Weight loss: goal 5-10% if overweight/obese",
+              "Alcohol moderation",
+              "Stress management"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-has-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "ACE inhibitors",
+                "medicamentos": [
+                  "Enalapril 5-40mg/day",
+                  "Captopril 25-150mg/day",
+                  "Ramipril 2.5-10mg/day"
+                ],
+                "posologia": "1-2x/day",
+                "observacoes": "Dry cough in 5-20%. CI: pregnancy, K>5.5, bilateral renal stenosis"
+              },
+              {
+                "classe": "ARBs",
+                "medicamentos": [
+                  "Losartan 50-100mg/day",
+                  "Valsartan 80-320mg/day"
+                ],
+                "posologia": "Once daily",
+                "observacoes": "Alternative if ACEI intolerance"
+              },
+              {
+                "classe": "Calcium channel blockers",
+                "medicamentos": [
+                  "Amlodipine 5-10mg/day",
+                  "Nifedipine SR 20-60mg/day"
+                ],
+                "posologia": "Once daily",
+                "observacoes": "Dose-dependent lower extremity edema"
+              },
+              {
+                "classe": "Thiazide diuretics",
+                "medicamentos": [
+                  "Hydrochlorothiazide 12.5-25mg/day",
+                  "Chlorthalidone 12.5-25mg/day",
+                  "Indapamide 1.5mg/day"
+                ],
+                "posologia": "Once daily in the morning",
+                "observacoes": "Monitor K+, glucose, uric acid"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Beta-blockers",
+                "medicamentos": [
+                  "Atenolol 25-100mg/day",
+                  "Carvedilol 12.5-50mg/day",
+                  "Metoprolol 50-200mg/day"
+                ],
+                "observacoes": "Prefer in HF, AF, post-MI. Avoid in decompensated COPD"
+              },
+              {
+                "classe": "Loop diuretics",
+                "medicamentos": [
+                  "Furosemide 20-80mg/day"
+                ],
+                "observacoes": "If GFR <30 or refractory edema"
+              },
+              {
+                "classe": "Potassium-sparing diuretics",
+                "medicamentos": [
+                  "Spironolactone 25-50mg/day"
+                ],
+                "observacoes": "Resistant SAH. Monitor K+"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Diabetes",
+                "conduta": "ACEI or ARB (nephroprotection). Target <130/80"
+              },
+              {
+                "situacao": "CKD",
+                "conduta": "ACEI or ARB if albuminuria. Target <130/80"
+              },
+              {
+                "situacao": "HFpEF",
+                "conduta": "ACEI/ARB + BB + SGLT2 inhibitor"
+              },
+              {
+                "situacao": "Pregnancy",
+                "conduta": "Methyldopa, Nifedipine, Labetalol. CI: ACEI, ARB"
+              },
+              {
+                "situacao": "Black",
+                "conduta": "CCB or thiazide as first line (better response)"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbc-has-2020"
+              }
+            ]
+          },
+          "duracao": "Continuous treatment. Discontinuation only in selected cases (successful MEV, mild initial SAH)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Monthly until control, then quarterly/semi-annually",
+          "examesControle": [
+            "Creatinine and K+ (1-2 weeks after starting/adjusting ACEI/ARB/diuretic)",
+            "Lipid profile, glucose: annually",
+            "Microalbuminuria: annually if DM or CKD"
+          ],
+          "metasTerapeuticas": [
+            "BP <140/90 mmHg (general)",
+            "BP <130/80 mmHg if high risk, DM, CKD",
+            "Control of DM, dyslipidemia, smoking"
+          ],
+          "criteriosEncaminhamento": [
+            "Resistant SAH (uncontrolled with 3 drugs including diuretic)",
+            "Suspected secondary SAH",
+            "Advanced target organ damage",
+            "CKD GFR <30 mL/min",
+            "Hypertensive emergencies"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Healthy diet from childhood",
+            "Maintain healthy weight",
+            "Regular physical activity",
+            "Moderate sodium and alcohol",
+            "Do not start smoking"
+          ],
+          "secundaria": [
+            "Adherence to treatment",
+            "Self-monitoring of BP",
+            "Control of associated risk factors"
+          ],
+          "citations": [
+            {
+              "refId": "ms-cab-37-2013"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-has",
+        "estratificacao-rcv"
+      ],
+      "medicamentos": [
+        "losartan",
+        "enalapril",
+        "amlodipine",
+        "hydrochlorothiazide",
+        "atenolol"
+      ],
+      "calculadoras": [
+        "framingham",
+        "score",
+        "ckdepi"
+      ],
+      "rastreamentos": [
+        "hipertensao-arterial"
+      ],
+      "citations": [
+        {
+          "refId": "sbc-has-2020"
+        },
+        {
+          "refId": "ms-cab-37-2013"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "cardiovascular",
+        "chronic",
+        "prevalent",
+        "dcnt"
+      ]
+    },
+    {
+      "id": "insuficiencia-cardiaca",
+      "titulo": "Heart Failure",
+      "sinonimos": [
+        "HF",
+        "CHF",
+        "Congestive Heart Failure"
+      ],
+      "doid": "DOID:6000",
+      "snomedCT": "84114007",
+      "meshId": "D006333",
+      "umlsCui": "C0018801",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "I50",
+        "I50.0",
+        "I50.1",
+        "I50.9"
+      ],
+      "cid11": [
+        "BD10"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Clinical syndrome characterized by the heart's inability to pump sufficient blood to meet the metabolic needs of tissues, or to do so only with elevated filling pressures.",
+        "criteriosDiagnosticos": [
+          "Typical symptoms: dyspnea, orthopnea, PND, fatigue, edema of lower extremities",
+          "Signs: jugular venous distension, hepatomegaly, pulmonary crackles",
+          "Objective evidence of cardiac dysfunction (echocardiogram)",
+          "Framingham criteria: 2 major OR 1 major + 2 minor"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Sodium restriction (<2g/day)",
+            "Fluid restriction if hyponatremia (<1.5L/day)",
+            "Supervised physical activity (cardiac rehabilitation)",
+            "Smoking and alcohol cessation",
+            "Vaccination (influenza, pneumococcus)"
+          ],
+          "farmacologico": [
+            "ACE inhibitor or ARB (e.g., Enalapril 2.5-20mg every 12 hours)",
+            "Beta-blocker (e.g., Carvedilol 3.125-25mg every 12 hours)",
+            "Loop diuretic if congestion (Furosemide 20-80mg/day)",
+            "Spironolactone 25-50mg/day if LVEF ≤35%"
+          ]
+        },
+        "metasTerapeuticas": [
+          "LVEF: stabilization or improvement",
+          "NYHA functional class: improvement of at least 1 class",
+          "Adequate BP, HR 60-70 bpm",
+          "Euvolemia (no edema, dry weight)",
+          "Reduction in hospitalizations"
+        ],
+        "examesIniciais": [
+          "Transthoracic echocardiogram",
+          "ECG",
+          "Chest X-ray",
+          "Complete blood count, renal function, electrolytes",
+          "BNP or NT-proBNP",
+          "Lipid profile, glucose, TSH"
+        ],
+        "redFlags": [
+          "Symptomatic hypotension (SBP <90)",
+          "Cardiogenic shock",
+          "Acute pulmonary edema",
+          "Severe arrhythmias (AF, VT)",
+          "Syncope",
+          "Rapid worsening of functional class"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2% of the adult population, increases with age (>10% in >70 years)",
+          "incidencia": "2-5 new cases/1000 person-years",
+          "faixaEtaria": "Most common >65 years",
+          "fatoresRisco": [
+            "Hypertension (primary)",
+            "Coronary artery disease",
+            "Diabetes mellitus",
+            "Obesity",
+            "Valvular heart disease",
+            "Cardiomyopathies",
+            "Smoking, alcoholism"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Systolic dysfunction (reduced LVEF) or diastolic dysfunction (preserved LVEF) leads to compensatory neurohormonal activation (RAAS, sympathetic system), progressive cardiac remodeling, and systemic/pulmonary congestion.",
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Exertional dyspnea (progressive)",
+            "Orthopnea",
+            "Paroxysmal nocturnal dyspnea (PND)",
+            "Fatigue and exercise intolerance",
+            "Edema of lower extremities",
+            "Weight gain (fluid retention)"
+          ],
+          "sinaisExameFisico": [
+            "Jugular venous distension at 45°",
+            "Hepatojugular reflux",
+            "Bibasilar pulmonary crackles",
+            "S3 gallop",
+            "Tender hepatomegaly",
+            "Pitting edema of lower extremities"
+          ],
+          "formasClinicas": [
+            "HFrEF (LVEF <40%): systolic HF",
+            "HFmrEF (LVEF 40-49%): intermediate HF",
+            "HFpEF (LVEF ≥50%): diastolic HF"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Framingham criteria",
+            "Echocardiogram with LVEF and diastolic function",
+            "BNP >100 pg/mL or NT-proBNP >300 pg/mL"
+          ],
+          "diagnosticoDiferencial": [
+            "COPD",
+            "Pneumonia",
+            "PE",
+            "Renal failure with hypervolemia",
+            "Hepatic cirrhosis with ascites",
+            "Nephrotic syndrome"
+          ],
+          "examesLaboratoriais": [
+            "BNP/NT-proBNP",
+            "Complete blood count, renal function, electrolytes",
+            "Liver function tests",
+            "Lipid profile, glucose, HbA1c",
+            "TSH",
+            "Ferritin, transferrin saturation"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Relieve symptoms and improve quality of life",
+            "Reduce mortality and hospitalizations",
+            "Prevent progression of remodeling"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Education on HF and self-care",
+              "Daily weight monitoring",
+              "Sodium and fluid restriction",
+              "Cardiac rehabilitation",
+              "Annual vaccination"
+            ],
+            "citations": [
+              {
+                "refId": "diretriz-ic-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "ACE inhibitor/ARB",
+                "medicamentos": [
+                  "Enalapril",
+                  "Losartan"
+                ],
+                "posologia": "Enalapril 2.5-20mg every 12 hours | Losartan 25-100mg/day"
+              },
+              {
+                "classe": "Beta-blocker",
+                "medicamentos": [
+                  "Carvedilol",
+                  "Bisoprolol",
+                  "Metoprolol succinate"
+                ],
+                "posologia": "Carvedilol 3.125-25mg every 12 hours (titrate slowly)"
+              },
+              {
+                "classe": "Mineralocorticoid antagonist",
+                "medicamentos": [
+                  "Spironolactone"
+                ],
+                "posologia": "25-50mg/day if LVEF ≤35% and symptomatic"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Congestion",
+                "conduta": "Furosemide 20-80mg/day PO or IV"
+              },
+              {
+                "situacao": "AF with RVR",
+                "conduta": "Rate control with beta-blocker or digoxin"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "diretriz-ic-2021"
+              }
+            ]
+          },
+          "duracao": "Continuous treatment for life"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Monthly until stabilization, then every 3-6 months",
+          "examesControle": [
+            "Renal function and electrolytes (1-2 weeks after ACE inhibitor/diuretic adjustment)",
+            "BNP/NT-proBNP if available",
+            "Annual echocardiogram or if clinical worsening"
+          ],
+          "metasTerapeuticas": [
+            "NYHA class I-II",
+            "Stable dry weight",
+            "No hospitalizations"
+          ],
+          "criteriosEncaminhamento": [
+            "LVEF <30%",
+            "Advanced HF (NYHA III-IV refractory)",
+            "Consider CRT/ICD",
+            "Evaluation for transplantation"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Control of hypertension, diabetes, dyslipidemia",
+            "Smoking cessation",
+            "Regular physical activity"
+          ],
+          "secundaria": [
+            "Adherence to medication",
+            "Daily weight monitoring",
+            "Low-sodium diet"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-ic"
+      ],
+      "medicamentos": [
+        "enalapril",
+        "losartan",
+        "carvedilol",
+        "furosemide",
+        "spironolactone"
+      ],
+      "calculadoras": [
+        "nyha",
+        "ckd-epi"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "diretriz-ic-2021"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "hf",
+        "heart-failure",
+        "dyspnea",
+        "edema",
+        "cardiopathy"
+      ]
+    },
+    {
+      "id": "fibrilacao-atrial",
+      "titulo": "Atrial Fibrillation",
+      "sinonimos": [
+        "AF",
+        "Arrhythmia",
+        "Atrial Fibrillation"
+      ],
+      "doid": "DOID:0060224",
+      "snomedCT": "49436004",
+      "meshId": "D001281",
+      "umlsCui": "C0004238",
+      "ciap2": [
+        "K78"
+      ],
+      "cid10": [
+        "I48",
+        "I48.0",
+        "I48.1",
+        "I48.9"
+      ],
+      "cid11": [
+        "BC81.1"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Supraventricular arrhythmia characterized by disorganized, irregular, and rapid atrial activation, with loss of effective atrial contraction. It is the most common sustained arrhythmia.",
+        "criteriosDiagnosticos": [
+          "ECG: absence of P waves, presence of irregular f waves",
+          "RR intervals irregularly irregular",
+          "Atrial rate 350-600 bpm",
+          "May be paroxysmal, persistent, or permanent"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Control of precipitating factors (alcohol, caffeine)",
+            "Treatment of reversible causes (hyperthyroidism)",
+            "Weight loss if obesity",
+            "Treatment of sleep apnea"
+          ],
+          "farmacologico": [
+            "Rate control: Beta-blocker (Atenolol 25-100mg/day) or CCB (Diltiazem)",
+            "Anticoagulation if CHA2DS2-VASc ≥2 (men) or ≥3 (women)",
+            "Warfarin (INR 2-3) or DOACs (Rivaroxaban, Apixaban)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "HR at rest 60-110 bpm",
+          "Adequate anticoagulation (INR 2-3 or adherence to DOAC)",
+          "Prevention of stroke and thromboembolic events",
+          "Symptom control"
+        ],
+        "examesIniciais": [
+          "12-lead ECG",
+          "Transthoracic echocardiogram",
+          "TSH",
+          "Renal function, electrolytes",
+          "Complete blood count",
+          "24-hour Holter if paroxysmal"
+        ],
+        "redFlags": [
+          "AF with RVR and hemodynamic instability",
+          "Signs of stroke/TIA",
+          "Syncope",
+          "Chest pain suggestive of ACS",
+          " Decompensated HF",
+          "Pre-excitation (WPW + AF)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2-4% of the adult population, increases with age",
+          "incidencia": "Doubles every decade after age 55",
+          "faixaEtaria": "Rare before age 50, common >75 years",
+          "fatoresRisco": [
+            "Advanced age",
+            "Hypertension",
+            "Valvular disease (mainly mitral)",
+            "HF, CAD",
+            "Diabetes mellitus",
+            "Obesity",
+            "Obstructive sleep apnea",
+            "Hyperthyroidism",
+            "Excessive alcohol consumption"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Multiple reentry circuits in the atria, often initiated by ectopic foci in the pulmonary veins. Atrial electrical and structural remodeling perpetuates the arrhythmia. Atrial stasis predisposes to thrombus formation, mainly in the left atrial appendage.",
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Irregular palpitations",
+            "Dyspnea on exertion",
+            "Fatigue",
+            "Dizziness",
+            "Chest discomfort",
+            "May be asymptomatic (30%)"
+          ],
+          "sinaisExameFisico": [
+            "Irregular and usually rapid pulse",
+            "Pulse deficit (apical HR > radial HR)",
+            "Variation in the intensity of S1",
+            "Absence of a wave in the jugular pulse"
+          ],
+          "formasClinicas": [
+            "Paroxysmal: episodes <7 days, self-limited",
+            "Persistent: >7 days or requires cardioversion",
+            "Long-standing persistent: >1 year",
+            "Permanent: accepted, without attempts to restore rhythm"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "ECG with irregularly irregular rhythm",
+            "Absence of defined P waves",
+            "F waves of fibrillation (best seen in V1)"
+          ],
+          "diagnosticoDiferencial": [
+            "Atrial flutter",
+            "Multifocal atrial tachycardia",
+            "Frequent atrial premature beats",
+            "Sinus tachycardia with premature beats"
+          ],
+          "examesLaboratoriais": [
+            "TSH (to rule out hyperthyroidism)",
+            "Renal function (adjustment of anticoagulants)",
+            "Electrolytes",
+            "Complete blood count",
+            "Coagulation profile if warfarin"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Prevention of thromboembolism (stroke)",
+            "Symptom control",
+            "Treatment of comorbidities"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Lifestyle modification",
+              "Weight control",
+              "Alcohol reduction",
+              "Treatment of sleep apnea",
+              "Catheter ablation in selected cases"
+            ],
+            "citations": [
+              {
+                "refId": "esc-fa-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Rate control",
+                "medicamentos": [
+                  "Atenolol",
+                  "Metoprolol",
+                  "Diltiazem",
+                  "Verapamil",
+                  "Digoxin"
+                ],
+                "posologia": "Atenolol 25-100mg/day | Metoprolol 50-200mg/day"
+              },
+              {
+                "classe": "Anticoagulation (if CHA2DS2-VASc indicates)",
+                "medicamentos": [
+                  "Warfarin",
+                  "Rivaroxaban",
+                  "Apixaban",
+                  "Dabigatran",
+                  "Edoxaban"
+                ],
+                "posologia": "Warfarin (INR 2-3) or DOAC according to renal function"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "AF + HF with reduced LVEF",
+                "conduta": "Prefer beta-blocker or digoxin (avoid CCB)"
+              },
+              {
+                "situacao": "AF + WPW",
+                "conduta": "AVOID digoxin, CCB, beta-blocker. Refer urgently."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-fa-2020"
+              }
+            ]
+          },
+          "duracao": "Continuous anticoagulation if indicated"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Every 3-6 months, or more frequently if unstable",
+          "examesControle": [
+            "Monthly INR if warfarin",
+            "Annual renal function (adjustment of DOAC)",
+            "ECG if change in symptoms"
+          ],
+          "metasTerapeuticas": [
+            "HR 60-110 bpm at rest",
+            "TTR >70% if warfarin",
+            "Absence of thromboembolic events"
+          ],
+          "criteriosEncaminhamento": [
+            "AF with hemodynamic instability",
+            "Candidate for ablation",
+            "AF + WPW",
+            "AF refractory to rate control"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Control of hypertension",
+            "Treatment of sleep apnea",
+            "Weight control",
+            "Moderation in alcohol consumption"
+          ],
+          "secundaria": [
+            "Adequate anticoagulation",
+            "Control of precipitating factors"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "atenolol",
+        "metoprolol",
+        "warfarin",
+        "rivaroxaban"
+      ],
+      "calculadoras": [
+        "cha2ds2-vasc",
+        "has-bled"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "esc-fa-2020"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "af",
+        "atrial-fibrillation",
+        "arrhythmia",
+        "anticoagulation",
+        "stroke"
+      ]
+    },
+    {
+      "id": "doenca-arterial-coronariana",
+      "titulo": "Stable Coronary Artery Disease",
+      "sinonimos": [
+        "CAD",
+        "Stable Angina",
+        "Chronic Ischemic Heart Disease"
+      ],
+      "doid": "DOID:3393",
+      "snomedCT": "53741008",
+      "meshId": "D003324",
+      "umlsCui": "C0010054",
+      "ciap2": [
+        "K74",
+        "K76"
+      ],
+      "cid10": [
+        "I25",
+        "I25.1",
+        "I25.9",
+        "I20.8"
+      ],
+      "cid11": [
+        "BA80"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Atherosclerotic obstruction of the coronary arteries leading to myocardial ischemia during exertion or stress. It is characterized by typical predictable angina, stable in frequency and intensity.",
+        "criteriosDiagnosticos": [
+          "Typical chest pain: retrosternal, constricting, triggered by exertion/stress",
+          "Relief with rest or sublingual nitrate (1-3 min)",
+          "Duration of 2-10 minutes",
+          "Positive exercise test or functional imaging with ischemia"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Smoking cessation (essential)",
+            "Mediterranean diet",
+            "Regular supervised physical activity",
+            "Weight control",
+            "Stress management"
+          ],
+          "farmacologico": [
+            "Aspirin 100mg/day (antiplatelet)",
+            "High-intensity statin (Atorvastatin 40-80mg)",
+            "Beta-blocker (Atenolol, Metoprolol) for angina control",
+            "Sublingual nitrate for crises"
+          ]
+        },
+        "metasTerapeuticas": [
+          "LDL-C <50 mg/dL (very high risk) or <70 mg/dL (high risk)",
+          "BP <130/80 mmHg",
+          "HbA1c <7% if DM",
+          "Complete smoking cessation",
+          "Angina control (CCS class I-II)"
+        ],
+        "examesIniciais": [
+          "Rest ECG",
+          "Echocardiogram",
+          "Lipid profile",
+          "Glucose, HbA1c",
+          "Renal function",
+          "Exercise test or scintigraphy"
+        ],
+        "redFlags": [
+          "Angina at rest or prolonged (>20 min)",
+          "Recent onset angina (<2 months)",
+          "Worsening angina (progressive deterioration)",
+          "Dynamic ECG changes",
+          "Hemodynamic instability",
+          "Syncope with chest pain"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "5-8% of adults >40 years",
+          "incidencia": "Leading cause of death worldwide",
+          "faixaEtaria": "Increases with age, men >45 years, women >55 years",
+          "fatoresRisco": [
+            "Hypertension",
+            "Dyslipidemia (high LDL, low HDL)",
+            "Diabetes mellitus",
+            "Smoking",
+            "Obesity",
+            "Sedentary lifestyle",
+            "Family history of early CAD",
+            "Advanced age"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Coronary atherosclerosis with plaque formation that reduces the arterial lumen. When the obstruction exceeds 70%, coronary flow becomes insufficient during exertion, causing ischemia and angina.",
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Retrosternal chest pain/discomfort, constricting/pressing",
+            "Radiation to left shoulder, jaw, back",
+            "Triggered by physical exertion, emotional stress, cold",
+            "Relieved by rest (1-5 min) or sublingual nitrate",
+            "Anginal equivalents: dyspnea, fatigue"
+          ],
+          "sinaisExameFisico": [
+            "Generally normal during intercritical periods",
+            "B4 may be present",
+            "Transient mitral regurgitation murmur during crisis"
+          ],
+          "formasClinicas": [
+            "Typical angina: 3 characteristics (typical location, triggered by exertion, relieved by rest/nitrate)",
+            "Atypical angina: 2 characteristics",
+            "Non-cardiac chest pain: 0-1 characteristic"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Compatible clinical history",
+            "Positive functional test for ischemia",
+            "Or significant coronary anatomy stenosis (>50% TCE or >70% others)"
+          ],
+          "diagnosticoDiferencial": [
+            "Acute coronary syndrome",
+            "Aortic dissection",
+            "Pulmonary embolism",
+            "Pericarditis",
+            "Esophageal spasm",
+            "Musculoskeletal pain"
+          ],
+          "examesLaboratoriais": [
+            "Complete lipid profile",
+            "Glucose, HbA1c",
+            "Renal function",
+            "Complete blood count",
+            "Troponin (to rule out ACS)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Relieve symptoms",
+            "Prevent cardiovascular events (MI, death)",
+            "Improve quality of life",
+            "Control risk factors"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Absolute smoking cessation",
+              "Mediterranean or DASH diet",
+              "Regular aerobic exercise (150 min/week)",
+              "Maintenance of ideal weight",
+              "Cardiac rehabilitation"
+            ],
+            "citations": [
+              {
+                "refId": "esc-dac-2019"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Antiplatelet",
+                "medicamentos": [
+                  "Aspirin"
+                ],
+                "posologia": "Aspirin 100mg/day"
+              },
+              {
+                "classe": "Statin",
+                "medicamentos": [
+                  "Atorvastatin",
+                  "Rosuvastatin"
+                ],
+                "posologia": "Atorvastatin 40-80mg/day (high intensity)"
+              },
+              {
+                "classe": "Anti-anginal",
+                "medicamentos": [
+                  "Atenolol",
+                  "Metoprolol",
+                  "Bisoprolol"
+                ],
+                "posologia": "Atenolol 25-100mg/day | Sublingual nitrate for crises"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Intolerance to beta-blocker",
+                "conduta": "Calcium channel blocker (Amlodipine, Diltiazem) or Ivabradine"
+              },
+              {
+                "situacao": "CAD + DM",
+                "conduta": "Consider SGLT2 inhibitors or GLP-1 receptor agonists with CV benefit"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-dac-2019"
+              }
+            ]
+          },
+          "duracao": "Continuous treatment"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Every 3-6 months",
+          "examesControle": [
+            "Lipid profile every 6-12 months",
+            "Annual renal function",
+            "ECG if clinical change"
+          ],
+          "metasTerapeuticas": [
+            "LDL-C on target",
+            "BP <130/80",
+            "No angina or controlled angina (CCS I)"
+          ],
+          "criteriosEncaminhamento": [
+            "Refractory angina to clinical treatment",
+            "Unstable angina",
+            "Functional test with large ischemic area",
+            "Left ventricular dysfunction"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Strict control of cardiovascular risk factors",
+            "Statin in high risk",
+            "Smoking cessation"
+          ],
+          "secundaria": [
+            "Aspirin + high-intensity statin",
+            "Aggressive LDL control",
+            "Cardiac rehabilitation"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "aas",
+        "atorvastatina",
+        "atenolol",
+        "isosorbide"
+      ],
+      "calculadoras": [
+        "cv-risk",
+        "cha2ds2-vasc"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "esc-dac-2019"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "cad",
+        "angina",
+        "coronary artery disease",
+        "atherosclerosis",
+        "ischemia"
+      ]
+    },
+    {
+      "id": "hipotensao-ortostatica",
+      "titulo": "Orthostatic Hypotension",
+      "ciap2": [
+        "K88"
+      ],
+      "cid10": [
+        "I95.1"
+      ],
+      "cid11": [
+        "BA81"
+      ],
+      "categoria": "cardiovascular",
+      "doid": "DOID:10763",
+      "snomedCT": "28651003",
+      "meshId": "D007024",
+      "umlsCui": "C0020651",
+      "quickView": {
+        "definicao": "Decrease in systolic BP ≥20mmHg or diastolic BP ≥10mmHg upon standing. Prevalence 20-30% in >65 years. An important cause of falls.",
+        "criteriosDiagnosticos": [
+          "Decrease in BP upon standing (1-3 min)",
+          "Symptoms: dizziness, visual darkening",
+          "Reproducible on positional testing",
+          "Evaluate causative medications"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Rise gradually",
+            "Elevate head of bed",
+            "Compression stockings",
+            "Adequate hydration",
+            "Increase salt intake (if no severe hypertension)"
+          ],
+          "farmacologico": [
+            "Review and reduce antihypertensives",
+            "Fludrocortisone 0.1mg/day (if refractory)",
+            "Midodrine 2.5-10mg three times daily"
+          ]
+        },
+        "redFlags": [
+          "Syncope",
+          "Recurrent falls",
+          "Associated neurological symptoms",
+          "Anemia"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "endocardite-infecciosa",
+      "titulo": "Infective Endocarditis",
+      "ciap2": [
+        "K71"
+      ],
+      "cid10": [
+        "I33"
+      ],
+      "cid11": [
+        "BC40"
+      ],
+      "categoria": "cardiovascular",
+      "doid": "DOID:846",
+      "snomedCT": "84114007",
+      "meshId": "D004696",
+      "umlsCui": "C0014118",
+      "tags": [
+        "cardiovascular",
+        "infectious",
+        "severe"
+      ],
+      "quickView": {
+        "definicao": "Infection of the endocardium/heart valves. Can be acute (S. aureus) or subacute (streptococci).",
+        "criteriosDiagnosticos": [
+          "Fever",
+          "New or changed heart murmur",
+          "Positive blood cultures",
+          "Echocardiographic vegetations",
+          "Duke criteria"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hospitalization",
+            "Echocardiography",
+            "Cardiological evaluation"
+          ],
+          "farmacologico": [
+            "Parenteral antibiotic therapy according to blood cultures",
+            "Vancomycin + Gentamicin empirically"
+          ]
+        },
+        "redFlags": [
+          "Heart failure",
+          "Systemic emboli",
+          "Abscesses",
+          "Severe valvular insufficiency"
+        ]
+      },
+      "medicamentos": [
+        "vancomycin",
+        "gentamicin"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "miocardiopatia-dilatada",
+      "titulo": "Dilated Cardiomyopathy",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "I42.0"
+      ],
+      "cid11": [
+        "BC43.0"
+      ],
+      "categoria": "cardiovascular",
+      "doid": "DOID:12930",
+      "snomedCT": "84114007",
+      "meshId": "D002311",
+      "umlsCui": "C0027051",
+      "tags": [
+        "cardiovascular",
+        "chronic"
+      ],
+      "quickView": {
+        "definicao": "Ventricular dilation with systolic dysfunction. Reduced ejection fraction.",
+        "criteriosDiagnosticos": [
+          "Heart failure with reduced ejection fraction",
+          "Ventricular dilation",
+          "Echocardiogram: EF <40%"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Sodium restriction",
+            "Fluid restriction",
+            "Controlled exercise"
+          ],
+          "farmacologico": [
+            "ACE inhibitor or ARB: Enalapril or Losartan",
+            "Beta-blocker: Carvedilol",
+            "Diuretic as needed"
+          ]
+        },
+        "redFlags": [
+          "Refractory heart failure",
+          "Arrhythmias",
+          "Sudden death",
+          "Thromboembolism"
+        ]
+      },
+      "medicamentos": [
+        "enalapril",
+        "losartan",
+        "carvedilol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-arterial-periferica",
+      "titulo": "Peripheral Arterial Disease",
+      "sinonimos": [
+        "PAD",
+        "ASVD",
+        "Intermittent claudication",
+        "Peripheral vascular disease"
+      ],
+      "ciap2": [
+        "K92"
+      ],
+      "cid10": [
+        "I73.9",
+        "I70.2"
+      ],
+      "cid11": [
+        "BD40"
+      ],
+      "doid": "DOID:0050830",
+      "snomedCT": "399957001",
+      "meshId": "D058729",
+      "umlsCui": "C1704436",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Atherosclerosis of peripheral arteries (especially lower extremities) causing ischemia. ABI <0.9 is diagnostic. Marker of systemic atherosclerotic disease.",
+        "criteriosDiagnosticos": [
+          "ABI (Ankle-Brachial Index) <0.9",
+          "Intermittent claudication: pain in calf while walking, relieved by rest",
+          "Diminished/absent peripheral pulses",
+          "ABI <0.4 or rest pain: critical ischemia"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Supervised walking exercise (primary)",
+            "Smoking cessation (mandatory)",
+            "Foot care"
+          ],
+          "farmacologico": [
+            "Aspirin 100mg/day or Clopidogrel 75mg/day",
+            "High-potency statin",
+            "ACE inhibitor if hypertension or diabetes mellitus",
+            "Cilostazol 100mg twice daily (limiting claudication)"
+          ]
+        },
+        "redFlags": [
+          "Rest pain",
+          "Arterial ulcer",
+          "Gangrene",
+          "ABI <0.4"
+        ],
+        "metasTerapeuticas": [
+          "LDL-c <70 mg/dL",
+          "BP <130/80",
+          "HbA1c <7%",
+          "Cease smoking"
+        ],
+        "examesIniciais": [
+          "ABI",
+          "Arterial Doppler",
+          "Lipid profile",
+          "Glucose/HbA1c",
+          "Creatinine"
+        ]
+      },
+      "protocolos": [
+        "has",
+        "dm2"
+      ],
+      "medicamentos": [
+        "aas",
+        "clopidogrel",
+        "atorvastatina",
+        "cilostazol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "vascular",
+        "atherosclerosis",
+        "smoking"
+      ]
+    },
+    {
+      "id": "estenose-aortica",
+      "titulo": "Aortic Stenosis",
+      "sinonimos": [
+        "AS",
+        "Aortic Valve Disease"
+      ],
+      "ciap2": [
+        "K83"
+      ],
+      "cid10": [
+        "I35.0",
+        "I06.0"
+      ],
+      "cid11": [
+        "BB60.0"
+      ],
+      "doid": "DOID:1712",
+      "snomedCT": "60573004",
+      "meshId": "D001024",
+      "umlsCui": "C0003507",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Obstruction to left ventricular ejection by the aortic valve. Degenerative (calcified) is the most common cause in the elderly. Bicuspid in young individuals.",
+        "criteriosDiagnosticos": [
+          "Systolic ejection murmur at the aortic focus, radiating to the carotids",
+          "Echocardiography: Severe AS = valve area <1.0 cm², mean gradient >40 mmHg, Vmax >4 m/s",
+          "Symptoms: dyspnea, angina, syncope",
+          "Pulse parvus et tardus (delayed and low amplitude)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Avoid intense exercise if symptomatic",
+            "Endocarditis prophylaxis (if high risk)"
+          ],
+          "farmacologico": [
+            "Limited medical treatment - surgery is definitive",
+            "Avoid intense vasodilators (risk of hypotension)",
+            "Beta-blocker if AF or angina",
+            "Statins do NOT reduce progression"
+          ]
+        },
+        "redFlags": [
+          "Syncope",
+          "Angina",
+          " Decompensated heart failure",
+          "Severe symptomatic AS"
+        ],
+        "metasTerapeuticas": [
+          "Early referral if symptomatic",
+          "Valve replacement (TAVR or surgical)"
+        ],
+        "examesIniciais": [
+          "Echocardiogram",
+          "ECG",
+          "Chest X-ray"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [],
+      "calculadoras": [],
+      "tags": [
+        "valvulopathy",
+        "murmur",
+        "surgery"
+      ]
+    },
+    {
+      "id": "insuficiencia-mitral",
+      "titulo": "Mitral Regurgitation",
+      "sinonimos": [
+        "IM",
+        "Mitral Regurgitation"
+      ],
+      "ciap2": [
+        "K83"
+      ],
+      "cid10": [
+        "I34.0",
+        "I05.1"
+      ],
+      "cid11": [
+        "BB61.1"
+      ],
+      "doid": "DOID:11719",
+      "snomedCT": "48724000",
+      "meshId": "D008944",
+      "umlsCui": "C0026266",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Reflux of blood from the left ventricle to the left atrium during systole. Primary (valvular) or secondary (functional due to left ventricular dilation).",
+        "criteriosDiagnosticos": [
+          "Holosystolic murmur at the mitral focus, radiating to the axilla",
+          "Echocardiography: severity by regurgitant volume, jet area, vena contracta",
+          "Severe mitral regurgitation: LVEF ↓, left ventricular/atrial dilation, pulmonary hypertension"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Sodium and fluid restriction if HF",
+            "Physical activity according to tolerance"
+          ],
+          "farmacologico": [
+            "Secondary MR: optimize HF treatment (ACEI/ARB, beta-blocker, spironolactone)",
+            "Primary MR: limited medical treatment",
+            "Diuretics if congestion",
+            "Anticoagulation if AF"
+          ]
+        },
+        "redFlags": [
+          "Refractory HF",
+          "LVEF <60%",
+          "Left ventricular systolic diameter >40mm",
+          "Recent onset AF"
+        ],
+        "metasTerapeuticas": [
+          "Maintain LVEF",
+          "Symptom control",
+          "Surgery if indicated"
+        ],
+        "examesIniciais": [
+          "Echocardiogram",
+          "ECG",
+          "BNP"
+        ]
+      },
+      "protocolos": [
+        "insuficiencia-cardiaca"
+      ],
+      "medicamentos": [
+        "enalapril",
+        "carvedilol",
+        "furosemida"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "valvulopathy",
+        "murmur",
+        "heart failure"
+      ]
+    },
+    {
+      "id": "trombose-venosa-profunda",
+      "titulo": "Deep Vein Thrombosis",
+      "sinonimos": [
+        "DVT",
+        "Deep vein thrombophlebitis"
+      ],
+      "ciap2": [
+        "K94"
+      ],
+      "cid10": [
+        "I80.2"
+      ],
+      "cid11": [
+        "BD72.0"
+      ],
+      "doid": "DOID:1725",
+      "snomedCT": "128053003",
+      "meshId": "D020246",
+      "umlsCui": "C0149871",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Formation of a thrombus in deep veins, usually in the lower limbs. Risk of pulmonary embolism and post-thrombotic syndrome.",
+        "criteriosDiagnosticos": [
+          "Wells score for DVT (clinical probability)",
+          "D-dimer: high NPV if low probability",
+          "Venous Doppler ultrasound: definitive diagnosis",
+          "Unilateral edema, calf pain, induration"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Early ambulation (no longer bed rest)",
+            "Compression stockings",
+            "Elevation of the limb"
+          ],
+          "farmacologico": [
+            "DOACs: Rivaroxaban 15mg twice daily for 21 days, then 20mg daily",
+            "Or Apixaban 10mg twice daily for 7 days, then 5mg twice daily",
+            "Alternative: Enoxaparin + Warfarin (bridge)",
+            "Duration: 3-6 months (provoked), indefinite (unprovoked/recurrent)"
+          ]
+        },
+        "redFlags": [
+          "Dyspnea (suspected pulmonary embolism)",
+          "Extensive proximal DVT",
+          "Phlegmasia",
+          "Compartment syndrome"
+        ],
+        "metasTerapeuticas": [
+          "Therapeutic anticoagulation",
+          "Prevention of pulmonary embolism",
+          "Prevention of recurrence"
+        ],
+        "examesIniciais": [
+          "Venous Doppler ultrasound",
+          "D-dimer",
+          "Complete blood count",
+          "Coagulation profile",
+          "Creatinine"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "rivaroxaban",
+        "apixaban",
+        "enoxaparin",
+        "warfarin"
+      ],
+      "calculadoras": [
+        "wells-tvp"
+      ],
+      "tags": [
+        "thromboembolism",
+        "anticoagulation",
+        "emergency"
+      ]
+    },
+    {
+      "id": "embolia-pulmonar",
+      "titulo": "Pulmonary Embolism",
+      "sinonimos": [
+        "PE",
+        "Pulmonary Thromboembolism"
+      ],
+      "ciap2": [
+        "K93"
+      ],
+      "cid10": [
+        "I26"
+      ],
+      "cid11": [
+        "BB20"
+      ],
+      "doid": "DOID:9477",
+      "snomedCT": "59282003",
+      "meshId": "D011655",
+      "umlsCui": "C0034065",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Obstruction of pulmonary arteries by thrombi, usually originating from deep vein thrombosis of the lower limbs. Spectrum from asymptomatic to hemodynamic instability.",
+        "criteriosDiagnosticos": [
+          "Wells score for PE: high (>6), moderate (2-6), low (<2)",
+          "PERC rule: if all negative and low probability, excluded",
+          "D-dimer: high NPV if low/moderate probability",
+          "Chest CT angiography: gold standard",
+          "Sudden dyspnea, pleuritic chest pain, tachycardia, hypoxemia"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hemodynamic stabilization",
+            "Oxygen therapy"
+          ],
+          "farmacologico": [
+            "Low-risk PE: DOAC (rivaroxaban or apixaban)",
+            "Intermediate-risk PE: anticoagulation + monitoring",
+            "High-risk PE (unstable): systemic thrombolysis (alteplase)",
+            "Duration: same as DVT"
+          ]
+        },
+        "redFlags": [
+          "Hypotension",
+          "Right ventricular dysfunction",
+          "Elevated troponin",
+          "Elevated BNP"
+        ],
+        "metasTerapeuticas": [
+          "Early anticoagulation",
+          "Hemodynamic stabilization"
+        ],
+        "examesIniciais": [
+          "Chest CT angiography",
+          "D-dimer",
+          "ECG",
+          "Blood gas analysis",
+          "Troponin",
+          "BNP",
+          "Echocardiogram if unstable"
+        ]
+      },
+      "protocolos": [
+        "chest-pain"
+      ],
+      "medicamentos": [
+        "rivaroxaban",
+        "apixaban",
+        "enoxaparin",
+        "alteplase"
+      ],
+      "calculadoras": [
+        "wells-pe"
+      ],
+      "tags": [
+        "emergency",
+        "anticoagulation",
+        "thromboembolism"
+      ]
+    },
+    {
+      "id": "pericardite-aguda",
+      "titulo": "Acute Pericarditis",
+      "sinonimos": [
+        "Pericardial Inflammation"
+      ],
+      "ciap2": [
+        "K84"
+      ],
+      "cid10": [
+        "I30"
+      ],
+      "cid11": [
+        "BC80"
+      ],
+      "doid": "DOID:1787",
+      "snomedCT": "3238004",
+      "meshId": "D010493",
+      "umlsCui": "C0031046",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Inflammation of the pericardium, usually idiopathic/viral. Diagnosis: ≥2 of 4 criteria.",
+        "criteriosDiagnosticos": [
+          "Typical chest pain: precordial, worsens with breathing/supine position, improves when sitting",
+          "Pericardial friction rub",
+          "ECG changes: diffuse ST elevation, PR depression",
+          "New or increased pericardial effusion"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Relative rest until symptom resolution",
+            "Avoid exercise for 3 months (athletes)"
+          ],
+          "farmacologico": [
+            "Aspirin 650-1000mg every 8 hours for 1-2 weeks OR",
+            "Ibuprofen 600mg every 8 hours for 1-2 weeks",
+            "Colchicine 0.5mg every 12 hours for 3 months (reduces recurrence)",
+            "PPI for gastric protection"
+          ]
+        },
+        "redFlags": [
+          "High fever",
+          "Large effusion",
+          "Cardiac tamponade",
+          "Immunosuppression",
+          "Anticoagulation"
+        ],
+        "metasTerapeuticas": [
+          "Resolution of pain",
+          "Normalization of inflammatory markers"
+        ],
+        "examesIniciais": [
+          "ECG",
+          "Echocardiogram",
+          "CRP",
+          "Troponin",
+          "Chest X-ray"
+        ]
+      },
+      "protocolos": [
+        "dor-toracica"
+      ],
+      "medicamentos": [
+        "aas",
+        "ibuprofeno",
+        "colchicina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "chest pain",
+        "inflammation",
+        "viral"
+      ]
+    },
+    {
+      "id": "cardiomiopatia-hipertrofica",
+      "titulo": "Hypertrophic Cardiomyopathy",
+      "sinonimos": [
+        "HCM",
+        "Hypertrophic Myocardiopathy"
+      ],
+      "ciap2": [
+        "K84"
+      ],
+      "cid10": [
+        "I42.1",
+        "I42.2"
+      ],
+      "cid11": [
+        "BC43.0"
+      ],
+      "doid": "DOID:11984",
+      "snomedCT": "45227007",
+      "meshId": "D002312",
+      "umlsCui": "C0007194",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Unexplained ventricular hypertrophy (≥15mm), usually asymmetric. Genetic cause (sarcomeric mutations). Leading cause of sudden death in young athletes.",
+        "criteriosDiagnosticos": [
+          "Echocardiogram: IVS thickness ≥15mm without cause",
+          "Dynamic LVOT obstruction (gradient ≥30 mmHg)",
+          "Systolic anterior motion of the mitral valve (SAM)",
+          "ECG: ventricular hypertrophy, Q waves, ST-T changes"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Avoid high-intensity competitive exercise",
+            "Family screening (1st degree)",
+            "Genetic counseling"
+          ],
+          "farmacologico": [
+            "Beta-blocker (propranolol, metoprolol) - first line",
+            "Verapamil if intolerant to BB",
+            "Mavacamten (myosin inhibitor) - new",
+            "ICD if high risk of sudden death"
+          ]
+        },
+        "redFlags": [
+          "Syncope",
+          "Family history of sudden death",
+          "NSVT",
+          "Abnormal BP response to exercise"
+        ],
+        "metasTerapeuticas": [
+          "Prevention of sudden death",
+          "Symptom control"
+        ],
+        "examesIniciais": [
+          "Echocardiogram",
+          "ECG",
+          "24-hour Holter",
+          "Cardiac MRI",
+          "Genetic testing"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "propranolol",
+        "metoprolol",
+        "verapamil"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "sudden death",
+        "genetics",
+        "athlete"
+      ]
+    },
+    {
+      "id": "sincope",
+      "titulo": "Syncope",
+      "sinonimos": [
+        "Fainting",
+        "Transient Loss of Consciousness"
+      ],
+      "ciap2": [
+        "A06"
+      ],
+      "cid10": [
+        "R55"
+      ],
+      "cid11": [
+        "MB40.1"
+      ],
+      "doid": "DOID:11091",
+      "snomedCT": "271594007",
+      "meshId": "D013575",
+      "umlsCui": "C0039070",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Transient loss of consciousness due to global cerebral hypoperfusion with spontaneous and complete recovery. Vasovagal is the most common cause.",
+        "criteriosDiagnosticos": [
+          "Transient loss of consciousness with spontaneous recovery",
+          "Reflex syncope (vasovagal): trigger, prodromes (nausea, sweating, blurred vision)",
+          "Orthostatic hypotension: BP drop ≥20/10 mmHg upon standing",
+          "Cardiac: exercise, palpitations, abnormal ECG, structural heart disease"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Vasovagal: avoid triggers, recognize prodromes, perform counterpressure maneuvers",
+            "Orthostatic: hydration, salt, rise slowly, compression stockings"
+          ],
+          "farmacologico": [
+            "Vasovagal: generally non-pharmacological. Fludrocortisone, midodrine if refractory",
+            "Orthostatic: fludrocortisone 0.1-0.3mg/day, midodrine 2.5-10mg three times daily",
+            "Cardiac: treat the cause (pacemaker, ICD, antiarrhythmic)"
+          ]
+        },
+        "redFlags": [
+          "Syncope during exercise",
+          "Palpitations before",
+          "Chest pain",
+          "Abnormal ECG",
+          "Known heart disease"
+        ],
+        "metasTerapeuticas": [
+          "Identify the cause",
+          "Prevent recurrence",
+          "Assess risk of sudden death"
+        ],
+        "examesIniciais": [
+          "ECG",
+          "Orthostatic BP",
+          "Glucose",
+          "Complete blood count",
+          "Echocardiogram if cardiac suspected"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "fludrocortisona",
+        "midodrina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "emergency",
+        "arrhythmia",
+        "neurology"
+      ]
+    },
+    {
+      "id": "angina-estavel",
+      "titulo": "Stable Angina",
+      "sinonimos": [
+        "Chronic Angina Pectoris",
+        "Exertional Angina"
+      ],
+      "ciap2": [
+        "K74"
+      ],
+      "cid10": [
+        "I20.8",
+        "I20.9"
+      ],
+      "cid11": [
+        "BA80.1"
+      ],
+      "doid": "DOID:0111052",
+      "snomedCT": "194828000",
+      "meshId": "D060050",
+      "umlsCui": "C0340288",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Chest pain triggered by exertion or emotional stress, relieved by rest or nitrate. Indicates obstructive coronary artery disease.",
+        "criteriosDiagnosticos": [
+          "Retrosternal pain, feeling of squeezing/pressure",
+          "Triggered by exertion/stress",
+          "Relieved in <10 min with rest or nitrate",
+          "Typical angina: 3/3 criteria. Atypical: 2/3"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Modification of risk factors",
+            "Supervised exercise (cardiac rehabilitation)",
+            "Smoking cessation"
+          ],
+          "farmacologico": [
+            "Aspirin 100mg/day",
+            "High-potency statin (atorvastatin 40-80mg)",
+            "Beta-blocker (metoprolol, bisoprolol) - first-line antianginal",
+            "Sublingual nitrate for rescue",
+            "Add a calcium channel blocker if symptoms persist"
+          ]
+        },
+        "redFlags": [
+          "Unstable angina",
+          "Angina at rest",
+          "Progressive angina",
+          "Post-AMI angina"
+        ],
+        "metasTerapeuticas": [
+          "LDL-c <55 mg/dL",
+          "BP <130/80",
+          "HR 55-60 bpm",
+          "Cessation of tobacco"
+        ],
+        "examesIniciais": [
+          "ECG",
+          "Echocardiogram",
+          "Stress test",
+          "Lipid profile",
+          "Glucose"
+        ]
+      },
+      "protocolos": [
+        "chest-pain"
+      ],
+      "medicamentos": [
+        "aspirin",
+        "atorvastatin",
+        "metoprolol",
+        "isosorbide"
+      ],
+      "calculadoras": [
+        "cardiovascular-risk"
+      ],
+      "tags": [
+        "coronary artery disease",
+        "prevention",
+        "chest pain"
+      ]
+    },
+    {
+      "id": "flutter-atrial",
+      "titulo": "Atrial Flutter",
+      "sinonimos": [
+        "AFL"
+      ],
+      "ciap2": [
+        "K78"
+      ],
+      "cid10": [
+        "I48.3",
+        "I48.4"
+      ],
+      "cid11": [
+        "BC81.0"
+      ],
+      "doid": "DOID:0060675",
+      "snomedCT": "5370000",
+      "meshId": "D001282",
+      "umlsCui": "C0004239",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Atrial tachyarrhythmia with macroreentrant circuit. Typical ECG: F waves in sawtooth pattern, atrial HR ~300 bpm, AV conduction usually 2:1 (HR ~150 bpm).",
+        "criteriosDiagnosticos": [
+          "ECG: F waves (sawtooth pattern) in DII, DIII, aVF",
+          "Atrial frequency 250-350 bpm",
+          "AV conduction 2:1, 3:1, 4:1, or variable",
+          "Regular ventricular HR (except if conduction is variable)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Electrical cardioversion if unstable (50-100J)",
+            "Catheter ablation (high success rate)"
+          ],
+          "farmacologico": [
+            "Rate control: beta-blocker or non-dihydropyridine calcium channel blocker",
+            "Anticoagulation: same rules as for AF (CHA2DS2-VASc)",
+            "Pharmacological cardioversion less effective than in AF",
+            "Ibutilide IV for cardioversion (hospital setting)"
+          ]
+        },
+        "redFlags": [
+          "Hemodynamic instability",
+          " Decompensated heart failure",
+          "Pre-excitation syndrome"
+        ],
+        "metasTerapeuticas": [
+          "Restore sinus rhythm or control HR",
+          "Prevent thromboembolism"
+        ],
+        "examesIniciais": [
+          "12-lead ECG",
+          "Echocardiogram",
+          "TSH",
+          "Electrolytes"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "metoprolol",
+        "diltiazem",
+        "amiodarone"
+      ],
+      "calculadoras": [
+        "cha2ds2-vasc"
+      ],
+      "tags": [
+        "arrhythmia",
+        "anticoagulation",
+        "ablation"
+      ]
+    },
+    {
+      "id": "bloqueio-atrioventricular",
+      "titulo": "Atrioventricular Block",
+      "sinonimos": [
+        "AVB",
+        "AV Block"
+      ],
+      "ciap2": [
+        "K84"
+      ],
+      "cid10": [
+        "I44.0",
+        "I44.1",
+        "I44.2"
+      ],
+      "cid11": [
+        "BC61"
+      ],
+      "doid": "DOID:0110687",
+      "snomedCT": "233916004",
+      "meshId": "D054537",
+      "umlsCui": "C0004245",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Conduction disorder between atria and ventricles. 1st degree: prolonged PR. 2nd degree: some P waves blocked. 3rd degree (complete AV block): complete AV dissociation.",
+        "criteriosDiagnosticos": [
+          "1st degree AVB: PR >200ms, all P waves conducted",
+          "2nd degree AVB Mobitz I: progressively longer PR until P wave is blocked (Wenckebach)",
+          "2nd degree AVB Mobitz II: P wave blocked without prior PR prolongation",
+          "3rd degree AVB (complete AV block): no P waves conducted, ventricular escape"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "1st degree and Mobitz I: observation, remove bradycardic drugs",
+            "Complete AV block and Mobitz II: temporary pacemaker → permanent pacemaker"
+          ],
+          "farmacologico": [
+            "Atropine 0.5-1mg IV (emergency, symptomatic complete AV block)",
+            "Isoproterenol (temporary)",
+            "Discontinue drugs: beta-blocker, calcium channel blocker, digoxin, amiodarone",
+            "Treat underlying cause: ischemia, Lyme, hyperkalemia"
+          ]
+        },
+        "redFlags": [
+          "Syncope",
+          "Symptomatic bradycardia",
+          "Complete AV block",
+          "Mobitz II",
+          "Wide QRS in escape rhythm"
+        ],
+        "metasTerapeuticas": [
+          "Pacemaker if indicated",
+          "Adequate HR",
+          "Absence of symptoms"
+        ],
+        "examesIniciais": [
+          "12-lead ECG",
+          "24-hour Holter",
+          "Electrolytes",
+          "Thyroid function",
+          "Serum digoxin if used"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "atropine"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "arrhythmia",
+        "pacemaker",
+        "emergency"
+      ]
+    },
+    {
+      "id": "hipertensao-pulmonar",
+      "titulo": "Pulmonary Hypertension",
+      "sinonimos": [
+        "PH",
+        "Pulmonary Arterial Hypertension"
+      ],
+      "ciap2": [
+        "K82"
+      ],
+      "cid10": [
+        "I27.0",
+        "I27.2"
+      ],
+      "cid11": [
+        "BB01"
+      ],
+      "doid": "DOID:6432",
+      "snomedCT": "70995007",
+      "meshId": "D006976",
+      "umlsCui": "C0020542",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Mean pulmonary artery pressure ≥25 mmHg at rest. Classification: Group 1 (PAH), 2 (left heart disease), 3 (pulmonary), 4 (CTEPH), 5 (multifactorial).",
+        "criteriosDiagnosticos": [
+          "Symptoms: progressive exertional dyspnea, fatigue, syncope",
+          "Echocardiography: estimated PASP >35-40 mmHg, right ventricular dilation",
+          "Right heart catheterization: mPAP ≥25 mmHg (definitive diagnosis)",
+          "Elevated BNP/NT-proBNP"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Limit intense physical exertion",
+            "Oxygen therapy if hypoxemia",
+            "Contraception (pregnancy contraindicated)"
+          ],
+          "farmacologico": [
+            "Group 2: treat underlying heart disease",
+            "Group 3: treat lung disease, O2",
+            "Group 4 (CTEPH): anticoagulation, consider surgery",
+            "PAH: specific therapies (sildenafil, bosentan, prostacyclins)"
+          ]
+        },
+        "redFlags": [
+          "Syncope",
+          "Signs of right ventricular failure",
+          "Very high BNP",
+          "Pericardial effusion"
+        ],
+        "metasTerapeuticas": [
+          "WHO Functional Class I-II",
+          "Low BNP",
+          "6-minute walk distance"
+        ],
+        "examesIniciais": [
+          "Echocardiogram",
+          "BNP",
+          "Chest CT",
+          "V/Q scan",
+          "Right heart catheterization"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "sildenafil"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "dyspnea",
+        "heart failure",
+        "specialized"
+      ]
+    },
+    {
+      "id": "sindrome-coronariana-aguda",
+      "titulo": "Acute Coronary Syndrome",
+      "sinonimos": [
+        "ACS",
+        "Acute Myocardial Infarction",
+        "AMI",
+        "STEMI",
+        "NSTEMI",
+        "Unstable Angina"
+      ],
+      "doid": "DOID:0060158",
+      "snomedCT": "394659003",
+      "meshId": "D054058",
+      "umlsCui": "C0948089",
+      "ciap2": [
+        "K74",
+        "K75",
+        "K76"
+      ],
+      "cid10": [
+        "I20.0",
+        "I21",
+        "I21.0",
+        "I21.1",
+        "I21.2",
+        "I21.3",
+        "I21.4",
+        "I21.9"
+      ],
+      "cid11": [
+        "BA41",
+        "BA42",
+        "BA80"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Spectrum of acute myocardial ischemia including unstable angina, non-ST-elevation myocardial infarction (NSTEMI), and ST-elevation myocardial infarction (STEMI). Represents a cardiovascular emergency requiring immediate intervention.",
+        "criteriosDiagnosticos": [
+          "Typical chest pain: oppressive, retrosternal, radiating to the left arm/jaw, >20min",
+          "Dyspnea, cold sweat, nausea, syncope",
+          "ECG: ST-segment elevation ≥1mm in 2 contiguous leads (STEMI)",
+          "ECG: ST-segment depression, T-wave inversion (NSTEMI)",
+          "Elevated troponin (ascending curve)",
+          "HEART score ≥4 points indicates high risk"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "very_high",
+            "criterios": [
+              "STEMI",
+              "Hemodynamic instability",
+              "Malignant arrhythmia"
+            ],
+            "conduta": "Emergency catheterization <90min"
+          },
+          {
+            "nivel": "high",
+            "criterios": [
+              "NSTEMI with positive troponin",
+              "GRACE >140"
+            ],
+            "conduta": "Catheterization <24h"
+          },
+          {
+            "nivel": "moderate",
+            "criterios": [
+              "Unstable angina",
+              "GRACE 109-140"
+            ],
+            "conduta": "Invasive evaluation within 72h"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "MONABCH: Monitor, Oxygen (if SatO2<90%), Venous access",
+            "Absolute rest",
+            "Defibrillator available"
+          ],
+          "farmacologico": [
+            "Aspirin 300mg chewable immediately",
+            "Clopidogrel 300-600mg (or Ticagrelor 180mg)",
+            "Heparin (UFH or Enoxaparin)",
+            "Morphine 2-4mg IV if pain refractory",
+            "Sublingual nitrate (do not use if SBP<90, use of sildenafil, right ventricular AMI)",
+            "STEMI: Thrombolytic (Tenecteplase) if >120min until PCI"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Reperfusion in <90min (primary PCI)",
+          "Pain control",
+          "Prevention of arrhythmias",
+          "Hemodynamic stabilization"
+        ],
+        "examesIniciais": [
+          "12-lead ECG in <10min",
+          "Troponin (0h, 1h, 3h)",
+          "Complete blood count, renal function, electrolytes",
+          "Coagulation profile",
+          "BNP/NT-proBNP",
+          "Chest X-ray"
+        ],
+        "redFlags": [
+          "Hypotension (SBP<90mmHg) - cardiogenic shock",
+          "Tachyarrhythmia or bradyarrhythmia",
+          "Pulmonary congestion (Killip ≥II)",
+          "Cardiorespiratory arrest",
+          "Concomitant aortic dissection",
+          "Active bleeding (contraindication to anticoagulation)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Leading cause of death in Brazil",
+          "incidencia": "~350,000 cases/year in Brazil",
+          "mortalidade": "30% in the acute phase without adequate treatment",
+          "faixaEtaria": "Progressively increases with age, peak >60 years",
+          "fatoresRisco": [
+            "Hypertension",
+            "Diabetes mellitus",
+            "Dyslipidemia",
+            "Smoking",
+            "Obesity",
+            "Family history of premature CAD",
+            "Sedentary lifestyle"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Rupture or erosion of a vulnerable atherosclerotic plaque, exposing the lipid core and leading to thrombus formation. In STEMI, there is complete occlusion; in NSTEMI/unstable angina, partial occlusion or microembolization.",
+          "citations": [
+            {
+              "refId": "esc-stemi-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Oppressive/chest tightness pain",
+            "Radiation to the left arm, jaw, epigastrium, back",
+            "Dyspnea",
+            "Cold sweat (diaphoresis)",
+            "Nausea and vomiting",
+            "Syncope",
+            "Sense of impending doom"
+          ],
+          "sinaisExameFisico": [
+            "Pale skin",
+            "Tachycardia or bradycardia",
+            "S4 (ventricular stiffness)",
+            "Pulmonary crackles (congestion)",
+            "Hypotension (poor prognosis)",
+            "Jugular venous distention (right ventricular AMI)"
+          ],
+          "formasClinicas": [
+            "Unstable angina: no troponin elevation",
+            "NSTEMI: elevated troponin, no ST-segment elevation",
+            "STEMI: ST-segment elevation on ECG"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Suggestive clinical history",
+            "ECG with ischemic changes",
+            "Elevated troponin (curve)"
+          ],
+          "diagnosticoDiferencial": [
+            "Aortic dissection",
+            "Pulmonary embolism",
+            "Acute pericarditis",
+            "Esophageal spasm",
+            "Pneumothorax",
+            "Costochondritis"
+          ],
+          "examesLaboratoriais": [
+            "Troponin I or T (high sensitivity)",
+            "CK-MB (if troponin unavailable)",
+            "Complete blood count, creatinine, electrolytes",
+            "Glucose, HbA1c",
+            "Lipid profile"
+          ],
+          "examesImagem": [
+            "12-lead ECG",
+            " Transthoracic echocardiogram",
+            "Chest X-ray",
+            "Coronary angiography (cineangiography)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-stemi-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Early coronary reperfusion",
+            "Pain relief",
+            "Prevention of complications",
+            "Secondary prevention"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Absolute rest",
+              "Continuous monitoring",
+              "Oxygen therapy if SatO2<90%",
+              "Initial fasting"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-sca-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Antiplatelets",
+                "medicamentos": [
+                  "Aspirin 300mg",
+                  "Clopidogrel 600mg or Ticagrelor 180mg"
+                ],
+                "posologia": "Loading dose"
+              },
+              {
+                "classe": "Anticoagulants",
+                "medicamentos": [
+                  "Enoxaparin 1mg/kg SC every 12 hours",
+                  "UFH IV"
+                ],
+                "posologia": "Until revascularization"
+              },
+              {
+                "classe": "Analgesics",
+                "medicamentos": [
+                  "Morphine 2-4mg IV"
+                ],
+                "observacoes": "If pain refractory to nitrate"
+              },
+              {
+                "classe": "Beta-blockers",
+                "medicamentos": [
+                  "Metoprolol 5mg IV"
+                ],
+                "observacoes": "If no contraindications"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-stemi-2023"
+              }
+            ]
+          },
+          "duracao": "Hospitalization + dual antiplatelet therapy for 12 months"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "First follow-up visit 7-14 days post-discharge, then monthly for 3 months",
+          "examesControle": [
+            "Echocardiogram at 4-6 weeks",
+            "Lipid profile",
+            "HbA1c",
+            "Renal function"
+          ],
+          "metasTerapeuticas": [
+            "LDL <55 mg/dL",
+            "BP <130/80 mmHg",
+            "HbA1c <7% if diabetic",
+            "Smoking cessation",
+            "Cardiac rehabilitation"
+          ],
+          "criteriosEncaminhamento": [
+            "All STEMIs: emergency/interventional cardiology",
+            "High-risk NSTEMIs",
+            "Mechanical complications",
+            "Sustained arrhythmias"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Control of risk factors",
+            "Statins in high cardiovascular risk",
+            "Aspirin in primary prevention (controversial)"
+          ],
+          "secundaria": [
+            "Dual antiplatelet therapy",
+            "High-potency statins",
+            "Beta-blockers",
+            "ACE inhibitors/ARBs",
+            "Cardiac rehabilitation"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "manejo-sca",
+        "anticoagulacao-sca"
+      ],
+      "medicamentos": [
+        "aas",
+        "clopidogrel",
+        "ticagrelor",
+        "enoxaparina",
+        "morfina"
+      ],
+      "calculadoras": [
+        "heart-score",
+        "grace-score",
+        "timi-score"
+      ],
+      "citations": [
+        {
+          "refId": "sbc-sca-2020"
+        },
+        {
+          "refId": "esc-stemi-2023"
+        },
+        {
+          "refId": "aha-ua-nstemi-2021"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "edema-agudo-pulmao",
+      "titulo": "Acute Pulmonary Edema",
+      "sinonimos": [
+        "APE",
+        "Cardiogenic Pulmonary Edema",
+        "Acute Pulmonary Congestion"
+      ],
+      "doid": "DOID:11396",
+      "snomedCT": "67782005",
+      "meshId": "D011654",
+      "umlsCui": "C0034063",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "J81",
+        "I50.1"
+      ],
+      "cid11": [
+        "CB01"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Sudden accumulation of fluid in the pulmonary interstitium and alveoli due to increased pulmonary capillary pressure (cardiogenic) or increased permeability (non-cardiogenic). Emergency with acute respiratory failure.",
+        "criteriosDiagnosticos": [
+          "Intense dyspnea of sudden onset",
+          "Orthopnea (cannot lie down)",
+          "Diffuse crackles bilaterally",
+          "Pink frothy sputum (severe cases)",
+          "Tachypnea, use of accessory muscles",
+          "Chest X-ray: bilateral \"bat wing\" infiltrates",
+          "Elevated BNP/NT-proBNP (cardiogenic)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "LEMON: Lasix, Elevate head, Morphine, Oxygen, Nitrate",
+            "Head of bed elevated to 90° (or sitting with legs dangling)",
+            "Oxygen (non-rebreather mask, NIV if available)",
+            "NIV (CPAP or BiPAP) - reduces mortality",
+            "Venous access, monitoring"
+          ],
+          "farmacologico": [
+            "FUROSEMIDE 40-80mg IV (0.5-1mg/kg)",
+            "Repeat if necessary; double dose if prior diuretic use",
+            "",
+            "NITROGLYCERIN SL 0.4mg or spray (if SBP>90)",
+            "If possible: NTG IV 10-200mcg/min",
+            "",
+            "MORPHINE 2-4mg IV (controversial, use with caution)",
+            "",
+            "If severe hypertension: Nitroprusside IV",
+            "If hypotension: Norepinephrine + Dobutamine"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Reduction of pulmonary congestion",
+          "Improvement in oxygenation (SpO2>92%)",
+          "Control of blood pressure",
+          "Identification and treatment of the cause"
+        ],
+        "examesIniciais": [
+          "12-lead ECG (ischemia, arrhythmia)",
+          "Chest X-ray",
+          "BNP or NT-proBNP",
+          "Troponin",
+          "Arterial blood gas",
+          "Electrolytes, renal function",
+          "Echocardiogram (as soon as possible)"
+        ],
+        "redFlags": [
+          "Cardiogenic shock (low BP, cold extremities)",
+          "Severe arrhythmia (rapid AF, VT)",
+          "Associated MI",
+          "Need for intubation",
+          "Oxygen saturation <80% despite O2",
+          "No response to NIV in 30-60 min"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Common complication of HF (1 million hospitalizations/year in the USA)",
+          "faixaEtaria": "More common in the elderly",
+          "fatoresRisco": [
+            "Prior heart failure",
+            "Ischemic heart disease",
+            "Hypertension",
+            "Valvular disease",
+            "Cardiomyopathies",
+            "Atrial fibrillation",
+            "Chronic kidney disease"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Increased left ventricular filling pressure → increased pulmonary capillary pressure → transudation of fluid into the interstitium and alveoli → impaired gas exchange and hypoxemia. In non-cardiogenic, there is alveolar-capillary barrier injury.",
+          "citations": [
+            {
+              "refId": "esc-hf-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Intense dyspnea",
+            "Orthopnea",
+            "Nocturnal paroxysmal dyspnea",
+            "Cough with pink frothy sputum",
+            "Anxiety, feeling of impending death"
+          ],
+          "sinaisExameFisico": [
+            "Tachypnea",
+            "Use of accessory muscles",
+            "Diffuse crackles",
+            "Wheezing (\"cardiac asthma\")",
+            "Jugular venous distension",
+            "S3/S4, murmurs",
+            "Peripheral edema"
+          ],
+          "formasClinicas": [
+            "Hypertensive APE (high BP)",
+            "Normotensive APE",
+            "APE with cardiogenic shock (low BP)",
+            "Non-cardiogenic APE (ARDS)"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinical presentation + compatible chest X-ray",
+            "Elevated BNP/NT-proBNP",
+            "Exclusion of non-cardiogenic causes"
+          ],
+          "diagnosticoDiferencial": [
+            "ARDS (non-cardiogenic)",
+            "Severe pneumonia",
+            "Exacerbation of COPD/asthma",
+            "Pulmonary embolism",
+            "Anxiety/hyperventilation crisis"
+          ],
+          "examesLaboratoriais": [
+            "BNP (>400pg/mL) or NT-proBNP (>2000pg/mL)",
+            "Troponin (associated MI?)",
+            "Arterial blood gas",
+            "Complete blood count, renal function, electrolytes",
+            "D-dimer (if PE suspected)"
+          ],
+          "examesImagem": [
+            "Chest X-ray (vascular congestion, infiltrates, cardiomegaly)",
+            "Echocardiogram (left ventricular dysfunction, valvular disease)",
+            "CT chest (if diagnostic doubt)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-hf-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Relieve congestion",
+            "Improve oxygenation",
+            "Treat the cause",
+            "Prevent recurrence"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Sit patient up (legs dangling)",
+              "Oxygen therapy",
+              "NIV (CPAP 5-10cmH2O or BiPAP)",
+              "Intubation if NIV fails"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-ic-2018"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Loop diuretic",
+                "medicamentos": [
+                  "Furosemide 40-80mg IV"
+                ],
+                "posologia": "Initial dose; repeat as needed"
+              },
+              {
+                "classe": "Vasodilator",
+                "medicamentos": [
+                  "Nitroglycerin SL or IV",
+                  "Nitroprusside IV (if hypertension)"
+                ],
+                "posologia": "NTG IV 10-200mcg/min"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Inotrope",
+                "medicamentos": [
+                  "Dobutamine 2.5-20mcg/kg/min"
+                ],
+                "observacoes": "If low output"
+              },
+              {
+                "classe": "Vasopressor",
+                "medicamentos": [
+                  "Norepinephrine"
+                ],
+                "observacoes": "If shock"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-hf-2021"
+              }
+            ]
+          },
+          "duracao": "Acute phase: hours to days; chronic optimization of HF"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Continuous re-evaluation in the emergency department; cardiological follow-up",
+          "metasTerapeuticas": [
+            "Euvolemia",
+            "Optimization of ACEI/ARB, BB, mineralocorticoid antagonist",
+            "Control of precipitating factors"
+          ],
+          "criteriosEncaminhamento": [
+            "ICU if shock, intubation, or refractory",
+            "Cardiology for investigation and optimization",
+            "Cardiac surgery if severe valvular disease"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "eap-emergencia",
+        "ic-descompensada"
+      ],
+      "medicamentos": [
+        "furosemide",
+        "nitroglycerin",
+        "nitroprusside",
+        "dobutamine"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "sbc-ic-2018"
+        },
+        {
+          "refId": "esc-hf-2021"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

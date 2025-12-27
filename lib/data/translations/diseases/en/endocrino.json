@@ -1,0 +1,469 @@
+{
+  "locale": "en",
+  "category": "endocrino",
+  "generatedAt": "2025-12-27T13:00:44.807Z",
+  "count": 4,
+  "diseases": [
+    {
+      "id": "hiperparatireoidismo",
+      "titulo": "Primary Hyperparathyroidism",
+      "ciap2": [
+        "T93"
+      ],
+      "cid10": [
+        "E21.0"
+      ],
+      "cid11": [
+        "5A51.0"
+      ],
+      "categoria": "endocrino",
+      "doid": "DOID:2723",
+      "snomedCT": "363478007",
+      "meshId": "D049950",
+      "umlsCui": "C0020507",
+      "tags": [
+        "endocrino",
+        "metabolic"
+      ],
+      "quickView": {
+        "definicao": "Increased PTH. Usually due to adenoma. Causes hypercalcemia and bone/renal complications.",
+        "criteriosDiagnosticos": [
+          "Hypercalcemia",
+          "Elevated or inappropriately normal PTH",
+          "Exclusion of secondary causes"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydration",
+            "Limit dietary calcium"
+          ],
+          "farmacologico": [
+            "Parathyroidectomy if symptomatic or complications",
+            "Cinacalcet if non-surgical"
+          ]
+        },
+        "redFlags": [
+          "Hypercalcemic crisis",
+          "Renal insufficiency",
+          "Recurrent kidney stones"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-graves",
+      "titulo": "Graves' Disease",
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E05.0"
+      ],
+      "cid11": [
+        "5A00.0"
+      ],
+      "categoria": "endocrino",
+      "doid": "DOID:4194",
+      "snomedCT": "56294001",
+      "meshId": "D006111",
+      "umlsCui": "C0018213",
+      "tags": [
+        "endocrino",
+        "autoimmune"
+      ],
+      "quickView": {
+        "definicao": "Autoimmune hyperthyroidism. Anti-TSHR antibodies. Associated with ophthalmopathy and diffuse goitre.",
+        "criteriosDiagnosticos": [
+          "Hyperthyroidism",
+          "Diffuse goitre",
+          "Ophthalmopathy (50%)",
+          "Positive anti-TSHR"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Avoid iodine",
+            "Ocular protection if ophthalmopathy"
+          ],
+          "farmacologico": [
+            "Methimazole 10-40mg/day",
+            "Beta-blocker for symptoms"
+          ]
+        },
+        "redFlags": [
+          "Thyroid storm",
+          "Severe ophthalmopathy",
+          "Tracheal compression"
+        ]
+      },
+      "medicamentos": [
+        "metimazol",
+        "propranolol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hipertireoidismo-subclinico",
+      "titulo": "Subclinical Hyperthyroidism",
+      "sinonimos": [
+        "Subclinical Thyrotoxicosis"
+      ],
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E05.9"
+      ],
+      "cid11": [
+        "5A01.Z"
+      ],
+      "doid": "DOID:0080532",
+      "snomedCT": "237516002",
+      "meshId": "D000073058",
+      "umlsCui": "C0342157",
+      "categoria": "endocrino",
+      "quickView": {
+        "definicao": "Suppressed TSH with normal free T4 and free T3. It can be endogenous (Graves' disease, toxic nodule) or exogenous (excess levothyroxine).",
+        "criteriosDiagnosticos": [
+          "TSH <0.1-0.4 mIU/L (according to laboratory)",
+          "Normal free T4 and free T3",
+          "Grade I: TSH 0.1-0.4 mIU/L",
+          "Grade II: TSH <0.1 mIU/L"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Observation if mild and asymptomatic",
+            "Investigate cause: scintigraphy, anti-TSH receptor antibodies (TRAb)"
+          ],
+          "farmacologico": [
+            "Treat if: >65 years, atrial fibrillation, osteoporosis, symptoms",
+            "Endogenous cause: methimazole or radioiodine",
+            "Exogenous cause: reduce levothyroxine dose",
+            "Beta-blocker if adrenergic symptoms"
+          ]
+        },
+        "redFlags": [
+          "Atrial fibrillation",
+          "Osteoporosis",
+          "Cardiovascular symptoms",
+          "Elderly >65 years"
+        ],
+        "metasTerapeuticas": [
+          "Normal TSH",
+          "Euthyroidism"
+        ],
+        "examesIniciais": [
+          "TSH",
+          "Free T4",
+          "Free T3",
+          "Anti-TSH receptor antibodies (TRAb)",
+          "Scintigraphy if indicated"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "propranolol",
+        "methimazole"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "thyroid",
+        "arrhythmia",
+        "osteoporosis"
+      ]
+    },
+    {
+      "id": "cetoacidose-diabetica",
+      "titulo": "Cetoacidose Diabética",
+      "sinonimos": [
+        "CAD",
+        "Cetoacidose",
+        "Descompensação diabética aguda"
+      ],
+      "doid": "DOID:11716",
+      "snomedCT": "420422005",
+      "meshId": "D016883",
+      "umlsCui": "C0011880",
+      "ciap2": [
+        "T89"
+      ],
+      "cid10": [
+        "E10.1",
+        "E11.1",
+        "E13.1",
+        "E14.1"
+      ],
+      "cid11": [
+        "5A10.1",
+        "5A11.1"
+      ],
+      "categoria": "endocrino",
+      "quickView": {
+        "definicao": "Emergência metabólica caracterizada por hiperglicemia, acidose metabólica e cetonemia, causada por deficiência absoluta ou relativa de insulina. Mais comum em DM1, mas pode ocorrer em DM2.",
+        "criteriosDiagnosticos": [
+          "TRÍADE: Hiperglicemia + Acidose + Cetonemia",
+          "Glicemia >250 mg/dL",
+          "pH arterial <7,3",
+          "Bicarbonato <18 mEq/L",
+          "Cetonúria ++ ou cetonemia >3 mmol/L",
+          "Ânion gap aumentado (>12)",
+          "GRAVIDADE: Leve (pH 7,25-7,3), Moderada (pH 7,0-7,24), Grave (pH<7,0)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Acesso venoso calibroso (2 acessos)",
+            "Sondagem vesical de demora",
+            "Monitorização contínua",
+            "Glicemia capilar 1/1h"
+          ],
+          "farmacologico": [
+            "1. HIDRATAÇÃO (Prioridade):",
+            "SF 0,9% 1-1,5L na 1ª hora",
+            "SF 0,9% 250-500mL/h nas próximas horas",
+            "Trocar para SF 0,45% se Na corrigido >135",
+            "",
+            "2. INSULINA (após 1h de hidratação):",
+            "Insulina Regular 0,1U/kg em bolus IV",
+            "Depois: 0,1U/kg/h em BIC",
+            "Meta: queda de glicemia 50-70mg/dL/h",
+            "",
+            "3. POTÁSSIO:",
+            "K <3,3: NÃO iniciar insulina até repor K",
+            "K 3,3-5,3: KCl 20-30mEq/L no SF",
+            "K >5,3: Aguardar para repor",
+            "",
+            "4. BICARBONATO (apenas se pH<6,9):",
+            "NaHCO3 100mEq em 400mL SF em 2h"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Glicemia 150-200 mg/dL",
+          "pH >7,3",
+          "Bicarbonato >18 mEq/L",
+          "Ânion gap <12",
+          "Cetonemia <0,6 mmol/L",
+          "Potássio normal"
+        ],
+        "examesIniciais": [
+          "Glicemia",
+          "Gasometria arterial",
+          "Eletrólitos (Na, K, Cl)",
+          "Ureia, creatinina",
+          "Hemograma",
+          "EAS + cetonúria",
+          "Beta-hidroxibutirato (se disponível)",
+          "ECG (avaliar K)",
+          "Rx de tórax, culturas (se suspeita de infecção)"
+        ],
+        "redFlags": [
+          "pH <7,0 (CAD grave)",
+          "Hipocalemia grave (K<3,3)",
+          "Alteração do nível de consciência",
+          "Choque hipovolêmico",
+          "Edema cerebral (principalmente crianças)",
+          "Insuficiência renal aguda"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~4-8 episódios/1000 diabéticos/ano",
+          "mortalidade": "<1% em centros especializados; até 5% em países em desenvolvimento",
+          "faixaEtaria": "Mais comum em jovens com DM1; primeiro diagnóstico em até 30%",
+          "fatoresRisco": [
+            "DM1 (principalmente)",
+            "Omissão ou redução de insulina",
+            "Infecções (principal precipitante)",
+            "IAM, AVC",
+            "Primeiro diagnóstico de DM",
+            "Uso de SGLT2i (CAD euglicêmica)",
+            "Uso de corticoides"
+          ],
+          "citations": [
+            {
+              "refId": "ada-diabetes-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Deficiência de insulina + excesso de hormônios contrarreguladores → lipólise aumentada → excesso de ácidos graxos livres → cetogênese hepática → acúmulo de corpos cetônicos (acetoacetato, beta-hidroxibutirato) → acidose metabólica. Hiperglicemia causa diurese osmótica e desidratação.",
+          "citations": [
+            {
+              "refId": "sbd-cad-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Poliúria, polidipsia",
+            "Náuseas, vômitos, dor abdominal",
+            "Desidratação",
+            "Taquipneia (respiração de Kussmaul)",
+            "Hálito cetônico (maçã podre)",
+            "Confusão mental, letargia"
+          ],
+          "sinaisExameFisico": [
+            "Desidratação (mucosas secas, turgor diminuído)",
+            "Taquicardia, hipotensão",
+            "Respiração de Kussmaul",
+            "Hálito cetônico",
+            "Alteração do nível de consciência"
+          ],
+          "formasClinicas": [
+            "CAD leve (pH 7,25-7,3)",
+            "CAD moderada (pH 7,0-7,24)",
+            "CAD grave (pH <7,0)",
+            "CAD euglicêmica (glicemia <250, uso de SGLT2i)"
+          ],
+          "citations": [
+            {
+              "refId": "ada-diabetes-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Glicemia >250 mg/dL",
+            "pH <7,3 e/ou HCO3 <18",
+            "Cetonemia ou cetonúria",
+            "Ânion gap aumentado"
+          ],
+          "diagnosticoDiferencial": [
+            "Estado hiperglicêmico hiperosmolar",
+            "Acidose lática",
+            "Cetose de jejum",
+            "Cetoacidose alcoólica",
+            "Intoxicação (metanol, etilenoglicol, salicilatos)",
+            "Acidose urêmica"
+          ],
+          "examesLaboratoriais": [
+            "Glicemia",
+            "Gasometria arterial",
+            "Eletrólitos com cálculo de ânion gap",
+            "Beta-hidroxibutirato sérico",
+            "Ureia, creatinina",
+            "Hemograma, PCR",
+            "Amilase, lipase (se dor abdominal)",
+            "Culturas (se suspeita de infecção)"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-cad-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Correção da volemia",
+            "Correção da hiperglicemia",
+            "Correção da acidose e cetose",
+            "Correção de distúrbios eletrolíticos",
+            "Tratamento do fator precipitante"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Monitorização em UTI ou unidade intensiva",
+              "Balanço hídrico rigoroso",
+              "Glicemia capilar 1/1h",
+              "Eletrólitos e gasometria 2-4h",
+              "Identificar e tratar precipitante"
+            ],
+            "citations": [
+              {
+                "refId": "ada-diabetes-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Cristaloide",
+                "medicamentos": [
+                  "SF 0,9%"
+                ],
+                "posologia": "1-1,5L na 1ª hora; depois 250-500mL/h"
+              },
+              {
+                "classe": "Insulina",
+                "medicamentos": [
+                  "Insulina Regular IV"
+                ],
+                "posologia": "0,1U/kg bolus + 0,1U/kg/h em BIC"
+              },
+              {
+                "classe": "Potássio",
+                "medicamentos": [
+                  "KCl"
+                ],
+                "posologia": "20-40mEq/L no soro, conforme K sérico"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Glicemia <200 com acidose persistente",
+                "conduta": "Adicionar SG 5% ao SF e manter insulina"
+              },
+              {
+                "situacao": "pH <6,9",
+                "conduta": "Considerar NaHCO3 100mEq em 400mL em 2h"
+              },
+              {
+                "situacao": "K <3,3",
+                "conduta": "Adiar insulina e repor K primeiro"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbd-cad-2022"
+              }
+            ]
+          },
+          "duracao": "Até resolução da acidose e cetose (geralmente 12-24h)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "UTI até resolução; depois endocrinologia ambulatorial",
+          "metasTerapeuticas": [
+            "Transição para insulina SC",
+            "Educação do paciente",
+            "Ajuste do esquema de insulina",
+            "Prevenção de recorrência"
+          ],
+          "criteriosEncaminhamento": [
+            "UTI se CAD grave",
+            "Endocrinologia para ajuste",
+            "Psicologia se omissão intencional de insulina"
+          ],
+          "citations": [
+            {
+              "refId": "ada-diabetes-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "cad-emergencia",
+        "insulinizacao-cad"
+      ],
+      "medicamentos": [
+        "insulina-regular",
+        "sf-0,9",
+        "kcl"
+      ],
+      "calculadoras": [
+        "anion-gap",
+        "sodio-corrigido",
+        "osmolaridade"
+      ],
+      "citations": [
+        {
+          "refId": "ada-diabetes-2024"
+        },
+        {
+          "refId": "sbd-cad-2022"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

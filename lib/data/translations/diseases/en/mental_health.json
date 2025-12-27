@@ -1,0 +1,1299 @@
+{
+  "locale": "en",
+  "category": "mental_health",
+  "generatedAt": "2025-12-27T03:34:57.576Z",
+  "count": 12,
+  "diseases": [
+    {
+      "id": "depressao",
+      "titulo": "Major Depressive Disorder",
+      "sinonimos": [
+        "Depression",
+        "Major Depression",
+        "Depressive Episode"
+      ],
+      "doid": "DOID:1470",
+      "snomedCT": "35489007",
+      "meshId": "D003865",
+      "umlsCui": "C0011570",
+      "ciap2": [
+        "P76"
+      ],
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "categoria": "mental_health",
+      "quickView": {
+        "definicao": "A mental disorder characterized by persistent depressed mood and/or loss of interest for ≥2 weeks, accompanied by cognitive, behavioral, and physical symptoms, causing significant functional impairment.",
+        "criteriosDiagnosticos": [
+          "≥5 symptoms for ≥2 weeks, with either depressed mood OR anhedonia being mandatory",
+          "Others: weight/appetite changes, insomnia/hypersomnia, agitation/retardation",
+          "Fatigue, feelings of worthlessness/guilt, concentration difficulties",
+          "Thoughts of death or suicidal ideation",
+          "Significant functional impairment (work, relationships, self-care)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psychoeducation about the disease and treatment",
+            "Psychotherapy (Cognitive Behavioral Therapy, interpersonal therapy) - recommended for all",
+            "Regular physical activity (antidepressant effect)",
+            "Sleep hygiene",
+            "Social and family support",
+            "Abstinence from alcohol and drugs"
+          ],
+          "farmacologico": [
+            "SSRIs first line: Fluoxetine 20-60mg, Sertraline 50-200mg, Escitalopram 10-20mg",
+            "SNRIs: Venlafaxine 75-225mg, Duloxetine 60-120mg (if associated pain)",
+            "Tricyclic: Amitriptyline 25-150mg (if pain, insomnia, low cost)",
+            "Minimum 6-12 months after remission. Maintenance if ≥3 episodes"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Complete remission of symptoms (PHQ-9 <5)",
+          "Return to previous functioning",
+          "Prevention of relapses",
+          "Identification and management of comorbidities"
+        ],
+        "examesIniciais": [
+          "TSH (to rule out hypothyroidism)",
+          "Complete blood count (anemia)",
+          "Blood glucose",
+          "Renal and liver function (baseline for medications)",
+          "Vitamin B12 and folic acid (if elderly or malnourished)"
+        ],
+        "redFlags": [
+          "Structured suicidal ideation with plan and intent",
+          "Recent prior suicide attempt",
+          "Psychotic symptoms (delusions, hallucinations)",
+          "Manic or hypomanic episode (suggests bipolarity)",
+          "Catatonia",
+          "Risk of heteroaggression"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "7-10% of the adult population, 2x more common in women",
+          "incidencia": "Peak at 25-44 years",
+          "mortalidade": "Suicide: 15% in severe untreated cases",
+          "fatoresRisco": [
+            "Family history of depression",
+            "Adverse childhood events",
+            "Chronic stress, grief, unemployment",
+            "Chronic diseases (DM, chronic pain, cancer)",
+            "Substance use",
+            "Prior anxiety disorder",
+            "Postpartum period"
+          ],
+          "citations": [
+            {
+              "refId": "who-depression-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Depressed mood most of the day",
+            "Anhedonia (loss of pleasure)",
+            "Weight/appetite changes (increase or decrease)",
+            "Insomnia or hypersomnia",
+            "Fatigue, loss of energy",
+            "Feelings of worthlessness or excessive guilt",
+            "Concentration difficulties",
+            "Thoughts of death, suicidal ideation"
+          ],
+          "sinaisExameFisico": [
+            "Neglected appearance",
+            "Psychomotor retardation or agitation",
+            "Sad facial expression, crying",
+            "Slow, monotonous speech",
+            "Difficulty maintaining eye contact"
+          ],
+          "formasClinicas": [
+            "Mild: minimal symptoms, preserved functionality",
+            "Moderate: evident symptoms and functional impairment",
+            "Severe: intense symptoms, risk of suicide, possible psychosis"
+          ],
+          "citations": [
+            {
+              "refId": "dsm-5"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "≥5 symptoms for ≥2 weeks (depressed mood or anhedonia mandatory)",
+            "Significant clinical impairment",
+            "Not attributable to substance or medical condition",
+            "No prior manic or hypomanic episode"
+          ],
+          "diagnosticoDiferencial": [
+            "Bipolar disorder",
+            "Hypothyroidism",
+            "Anemia",
+            "Adjustment disorder",
+            "Normal grief",
+            "Secondary depression (medications, diseases)"
+          ],
+          "examesLaboratoriais": [
+            "TSH, complete blood count, blood glucose, renal and liver function",
+            "Vitamin B12, folate (elderly)",
+            "Toxicology screen if substance use is suspected"
+          ],
+          "citations": [
+            {
+              "refId": "dsm-5"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Remission of symptoms",
+            "Functional recovery",
+            "Prevention of relapses and recurrences",
+            "Improvement in quality of life"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Psychotherapy: CBT (12-20 sessions) or interpersonal therapy",
+              "Behavioral activation",
+              "Physical exercise: 30-45 min, 3-5x/week",
+              "Sleep hygiene",
+              "Support groups",
+              "Mindfulness"
+            ],
+            "citations": [
+              {
+                "refId": "nice-depression-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "SSRIs",
+                "medicamentos": [
+                  "Fluoxetine 20-60mg/day",
+                  "Sertraline 50-200mg/day",
+                  "Escitalopram 10-20mg/day"
+                ],
+                "posologia": "Once daily, in the morning",
+                "observacoes": "Start with a low dose, increase every 2 weeks. Effect in 2-4 weeks"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "SNRIs",
+                "medicamentos": [
+                  "Venlafaxine 75-225mg/day",
+                  "Duloxetine 60-120mg/day"
+                ],
+                "observacoes": "If associated chronic pain or SSRI failure"
+              },
+              {
+                "classe": "Tricyclic",
+                "medicamentos": [
+                  "Amitriptyline 25-150mg/day",
+                  "Nortriptyline 25-150mg/day"
+                ],
+                "observacoes": "Lower cost. More adverse effects. Pre-treatment ECG if >40 years"
+              },
+              {
+                "classe": "Others",
+                "medicamentos": [
+                  "Bupropion 150-300mg/day",
+                  "Mirtazapine 15-45mg/day"
+                ],
+                "observacoes": "Bupropion: smoking cessation. Mirtazapine: insomnia, anorexia"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Pregnancy",
+                "conduta": "Sertraline is safer. Avoid paroxetine in the 1st trimester"
+              },
+              {
+                "situacao": "Elderly",
+                "conduta": "Start with lower doses. Prefer SSRIs"
+              },
+              {
+                "situacao": "Bipolarity",
+                "conduta": "Antidepressant + mood stabilizer. Refer to psychiatry"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "nice-depression-2022"
+              }
+            ]
+          },
+          "duracao": "Minimum 6-12 months after remission. Indefinite maintenance if ≥3 episodes or risk factors"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Weekly/biweekly initially, then monthly, quarterly when stable",
+          "examesControle": [
+            "PHQ-9 at each visit",
+            "Assessment of adverse effects",
+            "Assessment of suicide risk",
+            "ECG if tricyclic in >40 years"
+          ],
+          "metasTerapeuticas": [
+            "PHQ-9 <5 (remission)",
+            "Return to work/activities",
+            "Normalized sleep and appetite",
+            "Absence of suicidal ideation"
+          ],
+          "criteriosEncaminhamento": [
+            "High suicide risk",
+            "Psychotic symptoms",
+            "Suspected bipolarity",
+            "Treatment-resistant (failure of 2+ antidepressants)",
+            "Need for ECT",
+            "Severe psychiatric comorbidity"
+          ],
+          "citations": [
+            {
+              "refId": "nice-depression-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-depressao"
+      ],
+      "medicamentos": [
+        "fluoxetina",
+        "sertralina",
+        "amitriptilina",
+        "escitalopram"
+      ],
+      "calculadoras": [
+        "phq9",
+        "phq2"
+      ],
+      "citations": [
+        {
+          "refId": "dsm-5"
+        },
+        {
+          "refId": "nice-depression-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "mental_health",
+        "chronic",
+        "prevalent"
+      ]
+    },
+    {
+      "id": "transtorno-ansiedade-generalizada",
+      "titulo": "Generalized Anxiety Disorder (GAD)",
+      "categoria": "mental_health",
+      "cid10": [
+        "F41.1"
+      ],
+      "cid11": [
+        "6B00"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "21897009",
+      "doid": "DOID:14320",
+      "meshId": "D001008",
+      "umlsCui": "C0270458",
+      "dsm5": {
+        "code": "300.02",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.02",
+          "name": "Generalized Anxiety Disorder",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Excessive anxiety and worry (apprehensive expectation), occurring more days than not for at least 6 months, about various events or activities"
+            },
+            {
+              "letter": "B",
+              "text": "The individual finds it difficult to control the worry"
+            },
+            {
+              "letter": "C",
+              "text": "The anxiety and worry are associated with three (or more) of the following six symptoms:",
+              "subCriteria": [
+                {
+                  "text": "1. Restlessness or feeling keyed up or on edge"
+                },
+                {
+                  "text": "2. Being easily fatigued"
+                },
+                {
+                  "text": "3. Difficulty concentrating or mind going blank"
+                },
+                {
+                  "text": "4. Irritability"
+                },
+                {
+                  "text": "5. Muscle tension"
+                },
+                {
+                  "text": "6. Sleep disturbance"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "A disorder characterized by excessive and persistent anxiety and worry about various events or activities, which is difficult to control and is associated with physical and cognitive symptoms.",
+        "criteriosDiagnosticos": [
+          "Excessive worry on most days for ≥6 months",
+          "Difficulty controlling worry",
+          "3 or more symptoms: restlessness, fatigue, difficulty concentrating, irritability, muscle tension, sleep disturbance",
+          "Significant impairment in functioning"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "CBT (Cognitive Behavioral Therapy) - gold standard",
+            "Acceptance and Commitment Therapy (ACT)",
+            "Mindfulness",
+            "Relaxation techniques"
+          ],
+          "farmacologico": [
+            "SSRIs: Escitalopram, Sertraline",
+            "SNRIs: Venlafaxine XR",
+            "Pregabalin (alternative)"
+          ]
+        },
+        "redFlags": [
+          "Suicidal ideation",
+          "Severe comorbid anxiety disorders",
+          "Treatment resistance",
+          "Substance use"
+        ],
+        "examesIniciais": [
+          "TSH (to rule out hyperthyroidism)",
+          "Complete blood count",
+          "GAD-7 scale for assessment"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "GAD-7",
+          "description": "Generalized Anxiety Disorder-7: 7-item scale, score 0-21. ≥10 indicates moderate to severe GAD.",
+          "cutoff": "≥10",
+          "reference": "Spitzer et al., 2006"
+        }
+      ],
+      "tags": [
+        "anxiety",
+        "gad",
+        "ssris",
+        "cbt",
+        "dsm5",
+        "mental_health"
+      ]
+    },
+    {
+      "id": "transtorno-panico",
+      "titulo": "Panic Disorder",
+      "categoria": "mental_health",
+      "cid10": [
+        "F41.0"
+      ],
+      "cid11": [
+        "6B01"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "371631005",
+      "doid": "DOID:594",
+      "meshId": "D016584",
+      "umlsCui": "C0030319",
+      "dsm5": {
+        "code": "300.01",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.01",
+          "name": "Panic Disorder",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Recurrent and unexpected panic attacks"
+            },
+            {
+              "letter": "B",
+              "text": "At least one of the attacks was followed by 1 month (or more) of one or both:",
+              "subCriteria": [
+                {
+                  "text": "1. Persistent concern about additional attacks or their consequences"
+                },
+                {
+                  "text": "2. Significant maladaptive behavioral change related to the attacks"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Disorder characterized by recurrent and unexpected panic attacks, followed by persistent concern or significant maladaptive behavioral change.",
+        "criteriosDiagnosticos": [
+          "Recurrent and unexpected panic attacks",
+          "At least 4 symptoms during the attack: palpitations, sweating, trembling, shortness of breath, chest pain, nausea, dizziness, derealization, fear of losing control, fear of dying",
+          "Persistent concern or behavioral change for ≥1 month"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cognitive Behavioral Therapy with interoceptive exposure",
+            "Psychoeducation about panic attacks",
+            "Breathing techniques"
+          ],
+          "farmacologico": [
+            "SSRIs: Sertraline, Paroxetine, Escitalopram",
+            "Alprazolam (short-term use, avoid dependence)"
+          ]
+        },
+        "redFlags": [
+          "Severe agoraphobia",
+          "Suicidal ideation",
+          "Substance use",
+          "Untreated comorbidity"
+        ],
+        "examesIniciais": [
+          "ECG (to rule out arrhythmias)",
+          "TSH",
+          "Fasting glucose",
+          "Complete blood count"
+        ]
+      },
+      "tags": [
+        "panic",
+        "anxiety",
+        "attacks",
+        "ssris",
+        "cbt",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-bipolar-i",
+      "titulo": "Bipolar I Disorder",
+      "categoria": "mental_health",
+      "cid10": [
+        "F31"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "ciap2": [
+        "P73"
+      ],
+      "snomedCT": "13746004",
+      "doid": "DOID:3312",
+      "meshId": "D001714",
+      "umlsCui": "C0853193",
+      "dsm5": {
+        "code": "296.43",
+        "category": "Bipolar and Related Disorders",
+        "diagnosticCriteria": {
+          "code": "296.43",
+          "name": "Bipolar I Disorder",
+          "category": "Bipolar and Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Criteria for a manic episode have been met"
+            },
+            {
+              "letter": "B",
+              "text": "The manic episode is not better explained by schizophrenia, schizoaffective disorder, or another psychotic disorder"
+            }
+          ]
+        },
+        "specifiers": {
+          "severity": [
+            "Mild",
+            "Moderate",
+            "Severe",
+            "With Psychotic Features"
+          ],
+          "course": [
+            "Single Manic Episode",
+            "Most Recent Episode Manic",
+            "Most Recent Episode Hypomanic",
+            "Most Recent Episode Depressed",
+            "Most Recent Episode Unspecified"
+          ],
+          "episode": [
+            "With Catatonia",
+            "With Peripartum Onset",
+            "With Seasonal Pattern"
+          ],
+          "remission": [
+            "In Partial Remission",
+            "In Full Remission"
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Mood disorder characterized by at least one complete manic episode, often alternating with major depressive episodes.",
+        "criteriosDiagnosticos": [
+          "At least one manic episode (elevated/irritable mood + 3 symptoms for ≥1 week)",
+          "Manic symptoms: grandiosity, reduced sleep, talkativeness, flight of ideas, distractibility, increased activity, involvement in risky activities",
+          "Significant impairment or need for hospitalization"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psychoeducation about the disorder",
+            "Family therapy",
+            "Social rhythm therapy"
+          ],
+          "farmacologico": [
+            "Mood stabilizers: Lithium (gold standard)",
+            "Anticonvulsants: Valproate, Carbamazepine",
+            "Atypical antipsychotics: Quetiapine, Olanzapine"
+          ]
+        },
+        "redFlags": [
+          "Severe manic episode with psychosis",
+          "Suicide risk during depression",
+          "Non-adherence to treatment",
+          "Recurrent episodes"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "First manic episode",
+        "Severe manic episode or with psychosis",
+        "Suicide risk",
+        "Need for lithium adjustment",
+        "Recurrent episodes despite treatment"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "riscoAgressao": true,
+        "criterios": [
+          "Severe manic episode",
+          "Psychosis",
+          "Risk of self-harm"
+        ]
+      },
+      "tags": [
+        "bipolar",
+        "mania",
+        "depression",
+        "lithium",
+        "stabilizers",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-estresse-pos-traumatico",
+      "titulo": "Post-Traumatic Stress Disorder (PTSD)",
+      "categoria": "mental_health",
+      "cid10": [
+        "F43.1"
+      ],
+      "cid11": [
+        "6B40"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "47505003",
+      "doid": "DOID:2055",
+      "meshId": "D013313",
+      "umlsCui": "C0038436",
+      "dsm5": {
+        "code": "309.81",
+        "category": "Trauma- and Stressor-Related Disorders",
+        "diagnosticCriteria": {
+          "code": "309.81",
+          "name": "Posttraumatic Stress Disorder",
+          "category": "Trauma- and Stressor-Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Exposure to actual or threatened death, serious injury, or sexual violence"
+            },
+            {
+              "letter": "B",
+              "text": "Presence of one (or more) of the following intrusion symptoms:",
+              "subCriteria": [
+                {
+                  "text": "1. Recurrent distressing memories"
+                },
+                {
+                  "text": "2. Recurrent distressing dreams"
+                },
+                {
+                  "text": "3. Dissociative reactions"
+                },
+                {
+                  "text": "4. Intense psychological or physiological distress"
+                }
+              ]
+            },
+            {
+              "letter": "C",
+              "text": "Persistent avoidance of stimuli associated with the trauma"
+            },
+            {
+              "letter": "D",
+              "text": "Negative alterations in cognition and mood"
+            },
+            {
+              "letter": "E",
+              "text": "Marked alterations in arousal and reactivity"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "A disorder that develops after exposure to a severe traumatic event, characterized by symptoms of intrusion, avoidance, negative cognitive/mood changes, and hyperarousal.",
+        "criteriosDiagnosticos": [
+          "Exposure to trauma (death, serious injury, violence)",
+          "Intrusion symptoms: memories, dreams, flashbacks",
+          "Persistent avoidance",
+          "Negative cognitive/mood changes",
+          "Hyperarousal and reactivity",
+          "Duration >1 month"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Trauma-focused therapy (TF-CBT): EMDR, prolonged exposure therapy",
+            "Cognitive-behavioral therapy with exposure",
+            "Cognitive therapy for PTSD"
+          ],
+          "farmacologico": [
+            "SSRIs: Sertraline, Paroxetine (FDA-approved)",
+            "SNRIs: Venlafaxine",
+            "Prazosin (for nightmares)"
+          ]
+        },
+        "redFlags": [
+          "Suicide risk",
+          "Substance use",
+          "Severe comorbidity",
+          "Chronic PTSD unresponsive to treatment"
+        ],
+        "examesIniciais": [
+          "Suicide risk assessment",
+          "Substance use screening",
+          "PCL-5 scale for evaluation"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "PCL-5",
+          "description": "PTSD Checklist for DSM-5: 20-item scale, score 0-80. ≥33 indicates probable PTSD.",
+          "cutoff": "≥33",
+          "reference": "Weathers et al., 2013"
+        }
+      ],
+      "tags": [
+        "ptsd",
+        "trauma",
+        "stress",
+        "emdr",
+        "ssris",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-distimico",
+      "titulo": "Persistent Depressive Disorder (Dysthymia)",
+      "categoria": "mental_health",
+      "cid10": [
+        "F34.1"
+      ],
+      "cid11": [
+        "6A71"
+      ],
+      "ciap2": [
+        "P76"
+      ],
+      "snomedCT": "78667006",
+      "doid": "DOID:1596",
+      "meshId": "D019263",
+      "umlsCui": "C0013415",
+      "dsm5": {
+        "code": "300.4",
+        "category": "Depressive Disorders",
+        "diagnosticCriteria": {
+          "code": "300.4",
+          "name": "Persistent Depressive Disorder (Dysthymia)",
+          "category": "Depressive Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Depressed mood for most of the day, for more days than not, as indicated by either subjective report or observation by others, for at least 2 years"
+            },
+            {
+              "letter": "B",
+              "text": "Presence, while depressed, of two (or more) of the following:",
+              "subCriteria": [
+                {
+                  "text": "1. Decreased appetite or overeating"
+                },
+                {
+                  "text": "2. Insomnia or hypersomnia"
+                },
+                {
+                  "text": "3. Low energy or fatigue"
+                },
+                {
+                  "text": "4. Low self-esteem"
+                },
+                {
+                  "text": "5. Difficulty concentrating or making decisions"
+                },
+                {
+                  "text": "6. Feelings of hopelessness"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Chronic depressive disorder characterized by persistent depressed mood for ≥2 years, with less intense symptoms than MDD, but with significant functional impairment.",
+        "criteriosDiagnosticos": [
+          "Depressed mood for most of the day, ≥2 years",
+          "≥2 symptoms: appetite, sleep, energy, self-esteem, concentration, hopelessness",
+          "No symptom-free period >2 months",
+          "Significant functional impairment"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psychotherapy: CBT, IPT",
+            "Behavioral activation",
+            "Physical exercise"
+          ],
+          "farmacologico": [
+            "SSRIs: Sertraline, Escitalopram",
+            "SNRIs: Venlafaxine"
+          ]
+        },
+        "redFlags": [
+          "Superimposed MDD",
+          "Suicidal ideation",
+          "Treatment resistance"
+        ],
+        "examesIniciais": [
+          "TSH",
+          "PHQ-9"
+        ]
+      },
+      "tags": [
+        "dysthymia",
+        "depression",
+        "chronic",
+        "ssris",
+        "cbt",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "fobia-social",
+      "titulo": "Social Phobia (Social Anxiety Disorder)",
+      "categoria": "mental_health",
+      "cid10": [
+        "F40.1"
+      ],
+      "cid11": [
+        "6B04"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "25501002",
+      "doid": "DOID:11257",
+      "meshId": "D010698",
+      "umlsCui": "C0031572",
+      "dsm5": {
+        "code": "300.23",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.23",
+          "name": "Social Anxiety Disorder (Social Phobia)",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Marked fear or anxiety about one or more social situations in which the individual is exposed to possible scrutiny by others"
+            },
+            {
+              "letter": "B",
+              "text": "The individual fears that they will act in a way that shows symptoms of anxiety that will be negatively evaluated"
+            },
+            {
+              "letter": "C",
+              "text": "The social situations almost always provoke fear or anxiety"
+            },
+            {
+              "letter": "D",
+              "text": "The social situations are avoided or endured with intense fear or anxiety"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Anxiety disorder characterized by marked fear or anxiety in social situations where the individual is exposed to possible evaluation by others.",
+        "criteriosDiagnosticos": [
+          "Marked fear or anxiety in social situations",
+          "Fear of being negatively evaluated",
+          "Social situations almost always provoke fear/anxiety",
+          "Avoidance or endurance with intense fear/anxiety",
+          "Duration ≥6 months",
+          "Significant functional impairment"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cognitive Behavioral Therapy (CBT) with exposure - gold standard",
+            "Social skills training",
+            "Group therapy"
+          ],
+          "farmacologico": [
+            "SSRIs: Paroxetine, Sertraline, Escitalopram",
+            "SNRIs: Venlafaxine XR"
+          ]
+        },
+        "redFlags": [
+          "Severe avoidance with social isolation",
+          "Comorbid depression",
+          "Substance use to cope with situations"
+        ],
+        "examesIniciais": [
+          "Functional assessment",
+          "LSAS scale"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "LSAS",
+          "description": "Liebowitz Social Anxiety Scale: 24-item scale to assess social phobia.",
+          "reference": "Liebowitz, 1987"
+        }
+      ],
+      "tags": [
+        "social-phobia",
+        "anxiety",
+        "cbt",
+        "ssris",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "anorexia-nervosa",
+      "titulo": "Anorexia Nervosa",
+      "categoria": "mental_health",
+      "cid10": [
+        "F50.0"
+      ],
+      "cid11": [
+        "6B80"
+      ],
+      "ciap2": [
+        "P99"
+      ],
+      "snomedCT": "56882008",
+      "doid": "DOID:8689",
+      "meshId": "D000856",
+      "umlsCui": "C0003125",
+      "dsm5": {
+        "code": "307.1",
+        "category": "Feeding and Eating Disorders",
+        "diagnosticCriteria": {
+          "code": "307.1",
+          "name": "Anorexia Nervosa",
+          "category": "Feeding and Eating Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Restriction of food intake leading to significantly low body weight"
+            },
+            {
+              "letter": "B",
+              "text": "Intense fear of gaining weight or becoming fat"
+            },
+            {
+              "letter": "C",
+              "text": "Disturbance in the way one experiences their weight or body shape"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Eating disorder characterized by food restriction, intense fear of gaining weight, and disturbance in weight/body perception, resulting in significantly low body weight.",
+        "criteriosDiagnosticos": [
+          "Food restriction → significantly low body weight (BMI <18.5 or weight <85% of expected)",
+          "Intense fear of gaining weight",
+          "Disturbance in weight/body perception",
+          "Types: Restrictive or Binge Eating/Purging"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Multidisciplinary treatment: physician, nutritionist, psychologist",
+            "Family therapy (for adolescents)",
+            "Specialized cognitive-behavioral therapy",
+            "Nutritional rehabilitation (supervised)"
+          ],
+          "farmacologico": [
+            "Olanzapine (weight gain, obsessive symptoms)",
+            "SSRIs for comorbidities (depression, anxiety)",
+            "Nutritional supplementation if needed"
+          ]
+        },
+        "redFlags": [
+          "BMI <15 or rapid weight loss",
+          "Bradycardia (<50 bpm)",
+          "Orthostatic hypotension",
+          "Hypothermia",
+          "Amenorrhea",
+          "Suicidal behavior"
+        ],
+        "examesIniciais": [
+          "Weight, height, BMI",
+          "Vital signs",
+          "Complete blood count, electrolytes, liver and kidney function",
+          "ECG (arrhythmias)",
+          "Bone density (osteoporosis)"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "BMI <15",
+        "Unstable vital signs",
+        "Severe malnutrition",
+        "Medical complications",
+        "Failure of outpatient treatment"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "criterios": [
+          "Severe malnutrition",
+          "Unstable vital signs",
+          "Medical complications"
+        ]
+      },
+      "tags": [
+        "anorexia",
+        "eating",
+        "restrictive",
+        "olanzapine",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "bulimia-nervosa",
+      "titulo": "Bulimia Nervosa",
+      "categoria": "mental_health",
+      "cid10": [
+        "F50.2"
+      ],
+      "cid11": [
+        "6B81"
+      ],
+      "ciap2": [
+        "P99"
+      ],
+      "snomedCT": "78004001",
+      "doid": "DOID:8513",
+      "meshId": "D052018",
+      "umlsCui": "C0006370",
+      "dsm5": {
+        "code": "307.51",
+        "category": "Feeding and Eating Disorders",
+        "diagnosticCriteria": {
+          "code": "307.51",
+          "name": "Bulimia Nervosa",
+          "category": "Feeding and Eating Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Recurrent episodes of binge eating"
+            },
+            {
+              "letter": "B",
+              "text": "Recurrent inappropriate compensatory behaviors to prevent weight gain"
+            },
+            {
+              "letter": "C",
+              "text": "Episodes occur on average at least once a week for 3 months"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Eating disorder characterized by recurrent episodes of binge eating followed by inappropriate compensatory behaviors (self-induced vomiting, laxative use, excessive exercise).",
+        "criteriosDiagnosticos": [
+          "Recurrent episodes of binge eating (large amount in a short period, feeling of loss of control)",
+          "Recurrent compensatory behaviors: self-induced vomiting, laxative/diuretic use, excessive exercise, fasting",
+          "≥1 time/week for ≥3 months",
+          "Self-evaluation unduly influenced by body shape and weight"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Specialized CBT (CBT-BN) - gold standard",
+            "Interpersonal therapy (IPT)",
+            "Nutritional psychoeducation"
+          ],
+          "farmacologico": [
+            "SSRIs: Fluoxetine 60mg/day (approved for BN)",
+            "Other SSRIs at high doses"
+          ]
+        },
+        "redFlags": [
+          "Severe electrolyte imbalance",
+          "Esophagitis/tooth erosion",
+          "Suicidal behavior",
+          "Excessive laxative use"
+        ],
+        "examesIniciais": [
+          "Electrolytes (hypokalemia, hyponatremia)",
+          "Liver and kidney function",
+          "Dental evaluation (erosion)"
+        ]
+      },
+      "tags": [
+        "bulimia",
+        "binge",
+        "purging",
+        "fluoxetine",
+        "cbt",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-espectro-autista",
+      "titulo": "Autism Spectrum Disorder (ASD)",
+      "categoria": "mental_health",
+      "cid10": [
+        "F84.0"
+      ],
+      "cid11": [
+        "6A02"
+      ],
+      "ciap2": [
+        "P15"
+      ],
+      "snomedCT": "35919005",
+      "doid": "DOID:0060041",
+      "meshId": "D000067877",
+      "umlsCui": "C1510586",
+      "dsm5": {
+        "code": "299.00",
+        "category": "Neurodevelopmental Disorders",
+        "diagnosticCriteria": {
+          "code": "299.00",
+          "name": "Autism Spectrum Disorder",
+          "category": "Neurodevelopmental Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Persistent deficits in social communication and social interaction across multiple contexts"
+            },
+            {
+              "letter": "B",
+              "text": "Restricted, repetitive patterns of behavior, interests, or activities"
+            },
+            {
+              "letter": "C",
+              "text": "Symptoms present in the early developmental period"
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "Level 1 (Requires Support)",
+              "Level 2 (Requires Substantial Support)",
+              "Level 3 (Requires Very Substantial Support)"
+            ]
+          }
+        }
+      },
+      "quickView": {
+        "definicao": "A neurodevelopmental disorder characterized by persistent deficits in social communication and social interaction, and restricted, repetitive patterns of behavior, present from early development.",
+        "criteriosDiagnosticos": [
+          "Deficits in social communication: socioemotional reciprocity, nonverbal communication, relationships",
+          "Restricted/repetitive patterns: ≥2: stereotyped movements, insistence on routine, fixed interests, hyper/hyporeactivity to sensory input",
+          "Symptoms present in early development (may not be evident until social demands exceed capabilities)",
+          "Support level: 1 (mild), 2 (moderate), 3 (severe)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Intensive early behavioral interventions",
+            "Applied Behavior Analysis (ABA)",
+            "Social communication therapy",
+            "Occupational therapy (sensory integration)",
+            "Specialized educational support"
+          ],
+          "farmacologico": [
+            "Medication for specific symptoms:",
+            "- Risperidone or Aripiprazole (aggression, irritability)",
+            "- SSRIs for anxiety/obsessive behavior",
+            "- Stimulants for comorbid ADHD"
+          ]
+        },
+        "redFlags": [
+          "Regression of skills",
+          "Severe self-injurious behaviors",
+          "Aggression",
+          "Untreated psychiatric comorbidities"
+        ],
+        "examesIniciais": [
+          "Multidisciplinary evaluation: pediatrician, neurologist, speech therapist, psychologist",
+          "Auditory assessment (rule out hearing loss)",
+          "Genetic testing (if indicated)",
+          "Scales: ADOS, ADI-R"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "M-CHAT-R",
+          "description": "Modified Checklist for Autism in Toddlers, Revised: Screening for ASD in children 16-30 months",
+          "reference": "Robins et al., 2009"
+        },
+        {
+          "name": "ADOS",
+          "description": "Autism Diagnostic Observation Schedule: Gold standard for ASD diagnosis",
+          "reference": "Lord et al., 2012"
+        }
+      ],
+      "tags": [
+        "autism",
+        "ASD",
+        "neurodevelopment",
+        "ABA",
+        "DSM-5"
+      ]
+    },
+    {
+      "id": "transtorno-uso-cannabis",
+      "titulo": "Cannabis Use Disorder",
+      "categoria": "mental_health",
+      "cid10": [
+        "F12"
+      ],
+      "cid11": [
+        "6C41"
+      ],
+      "ciap2": [
+        "P15",
+        "P16"
+      ],
+      "snomedCT": "37344009",
+      "doid": "DOID:0050742",
+      "meshId": "D002189",
+      "umlsCui": "C0006870",
+      "dsm5": {
+        "code": "304.30",
+        "category": "Substance-Related and Addictive Disorders",
+        "diagnosticCriteria": {
+          "code": "304.30",
+          "name": "Cannabis Use Disorder",
+          "category": "Substance-Related and Addictive Disorders",
+          "criteria": [
+            {
+              "text": "A pattern of problematic cannabis use leading to clinically significant impairment or distress, manifested by ≥2 criteria within 12 months"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "A pattern of problematic cannabis use leading to clinically significant impairment or distress.",
+        "criteriosDiagnosticos": [
+          "≥2 criteria within 12 months: greater use than intended, efforts to reduce, excessive time spent, craving, failure to fulfill obligations, interpersonal problems, abandonment of activities, use in hazardous situations, continued use despite problems, tolerance, withdrawal"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Motivational Interviewing",
+            "Cognitive Behavioral Therapy for Substance Use",
+            "Contingency Management Therapy",
+            "Support Groups"
+          ],
+          "farmacologico": [
+            "Treatment of withdrawal symptoms if necessary",
+            "Naltrexone may be helpful"
+          ]
+        },
+        "redFlags": [
+          "Psychotic disorder induced by cannabis",
+          "Use in adolescents (higher risk of dependence)",
+          "Comorbid psychiatric disorders"
+        ],
+        "examesIniciais": [
+          "Toxicology test",
+          "Evaluation of comorbid psychiatric conditions"
+        ]
+      },
+      "tags": [
+        "cannabis",
+        "marijuana",
+        "substance",
+        "cognitive_behavioral_therapy",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "sindrome-ansiedade-generalizada",
+      "titulo": "Generalized Anxiety Disorder",
+      "ciap2": [
+        "P74"
+      ],
+      "cid10": [
+        "F41.1"
+      ],
+      "cid11": [
+        "6B00"
+      ],
+      "categoria": "mental_health",
+      "doid": "DOID:1596",
+      "snomedCT": "48544008",
+      "meshId": "D001008",
+      "umlsCui": "C0003467",
+      "hpo": [
+        "HP:0000739"
+      ],
+      "tags": [
+        "mental_health",
+        "anxiety",
+        "chronic"
+      ],
+      "quickView": {
+        "definicao": "Excessive and persistent anxiety for ≥6 months. Difficult to control worries. Associated physical symptoms.",
+        "criteriosDiagnosticos": [
+          "Excessive anxiety for ≥6 months",
+          "Difficulty controlling worries",
+          "≥3 symptoms: restlessness, fatigue, difficulty concentrating, irritability, muscle tension, sleep disturbance"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cognitive Behavioral Therapy (CBT)",
+            "Psychotherapy",
+            "Relaxation techniques",
+            "Exercise"
+          ],
+          "farmacologico": [
+            "SSRIs: Sertraline or Escitalopram",
+            "Benzodiazepines only for short-term use if necessary"
+          ]
+        },
+        "redFlags": [
+          "Suicidal ideation",
+          "Panic attacks",
+          "Psychiatric comorbidities"
+        ]
+      },
+      "medicamentos": [
+        "sertraline",
+        "escitalopram"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

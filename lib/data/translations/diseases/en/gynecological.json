@@ -1,0 +1,925 @@
+{
+  "locale": "en",
+  "category": "gynecological",
+  "generatedAt": "2025-12-27T03:34:57.578Z",
+  "count": 11,
+  "diseases": [
+    {
+      "id": "sindrome-ovarios-policisticos",
+      "titulo": "Polycystic Ovary Syndrome (PCOS)",
+      "ciap2": [
+        "X99"
+      ],
+      "cid10": [
+        "E28.2"
+      ],
+      "cid11": [
+        "GA34.4Y"
+      ],
+      "categoria": "gynecological",
+      "doid": "DOID:11612",
+      "snomedCT": "237055002",
+      "meshId": "D011085",
+      "umlsCui": "C0032460",
+      "quickView": {
+        "definicao": "The most common endocrine syndrome in women of reproductive age (5-10%). Associated with insulin resistance and metabolic risk.",
+        "criteriosDiagnosticos": [
+          "Rotterdam: 2 out of 3 criteria",
+          "Oligo/anovulation",
+          "Clinical or laboratory hyperandrogenism",
+          "Polycystic ovaries on US",
+          "Exclude other causes"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Weight loss (5-10% improves ovulation)",
+            "Diet and regular exercise"
+          ],
+          "farmacologico": [
+            "Menstrual regulation: Combined oral contraceptive",
+            "If desiring pregnancy: Metformin + ovulation induction",
+            "Hirsutism: Spironolactone 100mg/day"
+          ]
+        },
+        "redFlags": [
+          "Rapid virilization",
+          "Primary amenorrhea",
+          "Cushing's syndrome symptoms"
+        ]
+      },
+      "medicamentos": [
+        "metformin"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "vaginose-bacteriana",
+      "titulo": "Bacterial Vaginosis",
+      "ciap2": [
+        "X84"
+      ],
+      "cid10": [
+        "N76.0"
+      ],
+      "cid11": [
+        "GA0B.0"
+      ],
+      "categoria": "gynecological",
+      "doid": "DOID:0080165",
+      "snomedCT": "419760006",
+      "meshId": "D016585",
+      "umlsCui": "C0085166",
+      "quickView": {
+        "definicao": "Imbalance of the vaginal microbiota with replacement of Lactobacillus by anaerobes. Not a sexually transmitted infection. The most common cause of vaginal discharge.",
+        "criteriosDiagnosticos": [
+          "Amsel criteria (3 out of 4): homogeneous grayish discharge, pH >4.5, positive amine test (fishy odor), clue cells on wet mount microscopy"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Avoid vaginal douching",
+            "Do not use intimate soaps"
+          ],
+          "farmacologico": [
+            "Metronidazole 500mg PO every 12 hours for 7 days",
+            "OR Metronidazole gel 0.75% intravaginal once daily for 5 days",
+            "Pregnant: Metronidazole 250mg every 8 hours for 7 days"
+          ]
+        },
+        "redFlags": [
+          "Pregnant (risk of preterm labor)",
+          "Persistent symptoms post-treatment"
+        ]
+      },
+      "medicamentos": [
+        "metronidazol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "pre-eclampsia",
+      "titulo": "Preeclampsia",
+      "sinonimos": [
+        "PE",
+        "Pregnancy-induced hypertension",
+        "Gestational hypertension"
+      ],
+      "doid": "DOID:10591",
+      "snomedCT": "398254007",
+      "meshId": "D011225",
+      "umlsCui": "C0032914",
+      "ciap2": [
+        "W81"
+      ],
+      "cid10": [
+        "O14",
+        "O14.0",
+        "O14.1"
+      ],
+      "cid11": [
+        "JA24"
+      ],
+      "categoria": "gynecological",
+      "quickView": {
+        "definicao": "A multisystem syndrome exclusive to pregnancy, characterized by hypertension (≥140/90) after 20 weeks + proteinuria OR target organ dysfunction. Obstetric emergency - leading cause of maternal mortality.",
+        "criteriosDiagnosticos": [
+          "BP ≥140/90 mmHg after 20 weeks of gestation (2 measurements ≥4h apart)",
+          "+",
+          "Proteinuria ≥300mg/24h (or protein/creatinine ratio ≥0.3) OR",
+          "In the absence of proteinuria: target organ dysfunction:",
+          "- Thrombocytopenia <100,000/µL",
+          "- Creatinine >1.1 mg/dL or double baseline",
+          "- AST/ALT >2x upper limit",
+          "- Pulmonary edema",
+          "- Neurological symptoms (headache, scotomas)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hospitalization",
+            "Relative rest",
+            "Intensive maternal-fetal monitoring",
+            "Severity assessment (severity criteria)",
+            "Determine timing of delivery (only definitive cure)"
+          ],
+          "farmacologico": [
+            "ANTIHYPERTENSIVE (BP ≥160/110):",
+            "Nifedipine 10-20mg PO every 30 min (max 60mg)",
+            "Hydralazine 5mg IV every 20 min (max 20mg)",
+            "Goal: SBP 140-155, DBP 90-100 mmHg",
+            "",
+            "ECLAMPSIA PROPHYLAXIS (severe PE):",
+            "Magnesium sulfate: 4g IV bolus + 1-2g/h IV maintenance",
+            "",
+            "CORTICOSTEROID (pulmonary maturation if <34 weeks):",
+            "Betamethasone 12mg IM, 2 doses 24h apart"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Prevent eclampsia (seizure)",
+          "Prevent maternal stroke",
+          "Maintain adequate placental perfusion",
+          "Determine optimal timing of delivery",
+          "Optimize fetal conditions (pulmonary maturation)"
+        ],
+        "examesIniciais": [
+          "Complete blood count with platelets",
+          "Creatinine, urea",
+          "AST, ALT, LDH, bilirubin",
+          "24-hour proteinuria or protein/creatinine ratio",
+          "Uric acid",
+          "Coagulation profile",
+          "Obstetric ultrasound + Doppler",
+          "CTG (cardiotocography)"
+        ],
+        "redFlags": [
+          "SEVERITY CRITERIA (severe PE):",
+          "BP ≥160/110 mmHg",
+          "Platelets <100,000/µL",
+          "AST/ALT >2x normal",
+          "Creatinine >1.1 mg/dL",
+          "Pulmonary edema",
+          "Neurological symptoms: severe headache, scotomas, confusion",
+          "Epigastric/right upper quadrant pain (hepatic distension)",
+          "Oliguria <500 mL/24h",
+          "HELLP (hemolysis, elevated liver enzymes, thrombocytopenia)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2-8% of pregnancies",
+          "incidencia": "Leading cause of maternal mortality",
+          "faixaEtaria": "Any pregnant woman, more common in reproductive extremes",
+          "fatoresRisco": [
+            "Primigravida (primary)",
+            "Multiple gestation",
+            "Personal or family history of PE",
+            "Chronic hypertension, diabetes, renal disease, SLE",
+            "Obesity",
+            "Maternal age >35 or <18 years",
+            "Black race",
+            "New partner",
+            "Long interpregnancy interval"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Deficient placentation in the first trimester with failure of spiral artery remodeling. Placental hypoxia releases antiangiogenic factors (sFlt-1) causing systemic endothelial dysfunction, vasospasm, coagulation activation, and multi-organ injury.",
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Hypertension",
+            "Edema (non-specific)",
+            "Severe frontal or occipital headache",
+            "Scotomas, photopsias",
+            "Epigastric/right upper quadrant pain",
+            "Oliguria"
+          ],
+          "sinaisExameFisico": [
+            "BP ≥140/90 mmHg",
+            "Facial and hand edema",
+            "Hyperreflexia",
+            "Pain on palpation of right upper quadrant",
+            "Excessive weight gain"
+          ],
+          "formasClinicas": [
+            "PE without severity criteria",
+            "PE with severity criteria",
+            "Eclampsia (seizure)",
+            "HELLP syndrome",
+            "PE superimposed on chronic hypertension"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "BP ≥140/90 after 20 weeks + proteinuria or target organ dysfunction",
+            "Classify severity"
+          ],
+          "diagnosticoDiferencial": [
+            "Chronic hypertension",
+            "Gestational hypertension (without proteinuria/dysfunction)",
+            "Hemolytic uremic syndrome",
+            "Acute fatty liver of pregnancy"
+          ],
+          "examesLaboratoriais": [
+            "Complete blood count, platelets, peripheral smear (schistocytes?)",
+            "Creatinine, urea",
+            "AST, ALT, LDH, bilirubin",
+            "Uric acid",
+            "24-hour proteinuria",
+            "Coagulation profile"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Prevent maternal complications",
+            "Prevent eclampsia",
+            "Optimize fetal conditions",
+            "Determine timing of delivery"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hospitalization",
+              "Intensive monitoring",
+              "Fluid balance",
+              "Relative rest"
+            ],
+            "citations": [
+              {
+                "refId": "acog-hyp-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Antihypertensive (if BP ≥160/110)",
+                "medicamentos": [
+                  "Nifedipine",
+                  "Hydralazine",
+                  "Labetalol"
+                ],
+                "posologia": "Nifedipine 10-20mg PO. Hydralazine 5-10mg IV. Goal: 140-155/90-100."
+              },
+              {
+                "classe": "Anticonvulsant (eclampsia prophylaxis)",
+                "medicamentos": [
+                  "Magnesium sulfate"
+                ],
+                "posologia": "Bolus: 4-6g IV over 20 min. Maintenance: 1-2g/h IV. Monitor reflexes, RR, urine output."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Corticosteroid (pulmonary maturation)",
+                "medicamentos": [
+                  "Betamethasone",
+                  "Dexamethasone"
+                ],
+                "posologia": "Betamethasone 12mg IM, repeat in 24h (if <34 weeks)."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Severe PE or HELLP",
+                "conduta": "Maternal stabilization + Delivery (only definitive cure). Usually terminate if >34 weeks."
+              },
+              {
+                "situacao": "Eclampsia",
+                "conduta": "Immediate MgSO4. Stabilization. Delivery after stabilization (not emergency cesarean)."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "acog-hyp-2020"
+              }
+            ]
+          },
+          "duracao": "Until delivery (definitive cure)."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Hospitalization for severe PE. Rigorous outpatient follow-up for non-severe PE.",
+          "examesControle": [
+            "Daily complete blood count, liver and renal function if severe",
+            "Daily CTG",
+            "Serial fetal Doppler"
+          ],
+          "metasTerapeuticas": [
+            "No eclampsia",
+            "Controlled BP",
+            "Fetal well-being"
+          ],
+          "criteriosEncaminhamento": [
+            "All PE should be managed in a referral center",
+            "Maternal ICU if HELLP or eclampsia"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Low-dose aspirin (100-150mg/night) starting at 12-16 weeks in high risk",
+            "Calcium supplementation (1-2g/day) in populations with low intake"
+          ],
+          "secundaria": [
+            "Adequate prenatal care",
+            "Early diagnosis"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "pre-eclampsia-manejo",
+        "sulfato-magnesio"
+      ],
+      "medicamentos": [
+        "nifedipina",
+        "hidralazina",
+        "sulfato-magnesio",
+        "betametasona"
+      ],
+      "calculadoras": [
+        "risco-pre-eclampsia"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "acog-hyp-2020"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "pre-eclampsia",
+        "hellp",
+        "eclampsia",
+        "pregnancy",
+        "hypertension"
+      ]
+    },
+    {
+      "id": "candidose-vulvovaginal",
+      "titulo": "Vulvovaginal Candidiasis",
+      "ciap2": [
+        "X72"
+      ],
+      "cid10": [
+        "B37.3"
+      ],
+      "cid11": [
+        "1F23.00"
+      ],
+      "categoria": "gynecological",
+      "doid": "DOID:1304",
+      "snomedCT": "78048006",
+      "meshId": "D002181",
+      "umlsCui": "C0006840",
+      "quickView": {
+        "definicao": "Fungal infection caused by Candida species (C. albicans 90%). Affects 75% of women. Not a sexually transmitted disease.",
+        "criteriosDiagnosticos": [
+          "Intense vulvovaginal pruritus",
+          "White curdy discharge (like cottage cheese)",
+          "Vulvar hyperemia",
+          "Dysuria and dyspareunia"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cotton underwear",
+            "Avoid tight clothing",
+            "Keep the area dry"
+          ],
+          "farmacologico": [
+            "Fluconazole 150mg PO single dose",
+            "OR Clotrimazole vaginal cream 1% for 7 days",
+            "Recurrent (≥4/year): Fluconazole 150mg weekly for 6 months"
+          ]
+        },
+        "redFlags": [
+          "Uncontrolled DM",
+          "Immunosuppression",
+          "Pregnancy",
+          "No response to treatment"
+        ]
+      },
+      "medicamentos": [
+        "fluconazol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dismenorreia",
+      "titulo": "Dysmenorrhea",
+      "ciap2": [
+        "X02"
+      ],
+      "cid10": [
+        "N94.4"
+      ],
+      "cid11": [
+        "GA10.0"
+      ],
+      "categoria": "gynecological",
+      "doid": "DOID:1596",
+      "snomedCT": "266599000",
+      "meshId": "D004412",
+      "umlsCui": "C0013390",
+      "quickView": {
+        "definicao": "Pelvic pain during menstruation. Primary (no pathology) or secondary (endometriosis, adenomyosis, fibroid).",
+        "criteriosDiagnosticos": [
+          "Suprapubic cramping pain",
+          "Onset with menstruation (primary) or before (secondary)",
+          "Nausea, diarrhea, headache associated",
+          "Primary: onset 6-12 months post-menarche"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Regular physical exercise",
+            "Local heat (hot water bottle)",
+            "TENS"
+          ],
+          "farmacologico": [
+            "NSAIDs: Ibuprofen 400mg every 6 hours starting 1 day before menstruation",
+            "Combined continuous or extended COC",
+            "Levonorgestrel IUD (if contraception is desired)"
+          ]
+        },
+        "redFlags": [
+          "Onset after age 25",
+          "Progression of pain",
+          "Deep dyspareunia",
+          "No response to NSAIDs + COC"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "menopausa-climatério",
+      "titulo": "Menopause and Perimenopause",
+      "sinonimos": [
+        "Climacteric Syndrome",
+        "Menopausal Transition"
+      ],
+      "ciap2": [
+        "X11"
+      ],
+      "cid10": [
+        "N95.1"
+      ],
+      "cid11": [
+        "GA31.0"
+      ],
+      "doid": "DOID:0111805",
+      "snomedCT": "161712005",
+      "meshId": "D008593",
+      "umlsCui": "C0025320",
+      "categoria": "gynecological",
+      "quickView": {
+        "definicao": "Permanent cessation of menstruation after 12 months of amenorrhea. Average age 51 years. Perimenopause: transition period peri and post-menopause.",
+        "criteriosDiagnosticos": [
+          "12 consecutive months of amenorrhea in >45 years",
+          "FSH >25-30 mUI/mL (if needed to confirm)",
+          "Vasomotor symptoms: hot flashes, night sweats",
+          "Urogenital symptoms: vaginal atrophy, dyspareunia"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Regular physical exercise",
+            "Avoid hot flash triggers (alcohol, caffeine, spicy food)",
+            "Vaginal lubricants",
+            "Mind-body therapies"
+          ],
+          "farmacologico": [
+            "Hormone therapy (HT) if symptoms are moderate/severe and no contraindications",
+            "Estrogen + progestin if uterus is intact",
+            "Topical vaginal estrogen for urogenital symptoms",
+            "Alternatives: SSRIs, gabapentin, clonidine"
+          ]
+        },
+        "redFlags": [
+          "Post-menopausal bleeding",
+          "Previous thromboembolism",
+          "Breast cancer",
+          "Established cardiovascular disease"
+        ],
+        "metasTerapeuticas": [
+          "Symptom control",
+          "Quality of life",
+          "Osteoporosis prevention"
+        ],
+        "examesIniciais": [
+          "FSH (if in doubt)",
+          "Mammography",
+          "Transvaginal ultrasound",
+          "Bone densitometry",
+          "Lipid profile"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "estradiol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "gynecology",
+        "osteoporosis",
+        "hormone"
+      ]
+    },
+    {
+      "id": "endometriose",
+      "titulo": "Endometriosis",
+      "sinonimos": [
+        "Endometrioma"
+      ],
+      "ciap2": [
+        "X99"
+      ],
+      "cid10": [
+        "N80"
+      ],
+      "cid11": [
+        "GA10"
+      ],
+      "doid": "DOID:289",
+      "snomedCT": "129103003",
+      "meshId": "D004715",
+      "umlsCui": "C0014175",
+      "categoria": "gynecological",
+      "quickView": {
+        "definicao": "Presence of endometrial tissue outside the uterus (ovaries, peritoneum, rectovaginal septum). Affects 10% of women of reproductive age.",
+        "criteriosDiagnosticos": [
+          "Progressive and disabling dysmenorrhea",
+          "Deep dyspareunia",
+          "Chronic pelvic pain",
+          "Infertility",
+          "Laparoscopy with biopsy: gold standard"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Regular physical activity",
+            "Local heat for pain relief"
+          ],
+          "farmacologico": [
+            "NSAIDs for pain",
+            "Combined hormonal contraceptive",
+            "Progestogens: dienogest 2mg/day, LNG-IUD",
+            "GnRH analogues (severe cases): temporary use"
+          ]
+        },
+        "redFlags": [
+          "Large pelvic mass",
+          "Intestinal/ureteral obstruction",
+          "Refractory infertility"
+        ],
+        "metasTerapeuticas": [
+          "Pain control",
+          "Fertility preservation",
+          "Quality of life"
+        ],
+        "examesIniciais": [
+          "Transvaginal ultrasound",
+          "Pelvic MRI (mapping)",
+          "CA-125 (nonspecific)"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "dienogest",
+        "ibuprofen"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "pelvic pain",
+        "infertility",
+        "hormone"
+      ]
+    },
+    {
+      "id": "mioma-uterino",
+      "titulo": "Uterine Leiomyoma",
+      "sinonimos": [
+        "Leiomyoma",
+        "Uterine Fibroid"
+      ],
+      "ciap2": [
+        "X78"
+      ],
+      "cid10": [
+        "D25"
+      ],
+      "cid11": [
+        "2E86"
+      ],
+      "doid": "DOID:13223",
+      "snomedCT": "95315005",
+      "meshId": "D007889",
+      "umlsCui": "C0042133",
+      "categoria": "gynecological",
+      "quickView": {
+        "definicao": "Benign tumor of the myometrium. Prevalence of 20-40% in women of reproductive age. Types: submucosal, intramural, subserosal.",
+        "criteriosDiagnosticos": [
+          "Abnormal uterine bleeding (menorrhagia)",
+          "Pelvic pain/pressure",
+          "Compressive symptoms: urinary frequency, constipation",
+          "Ultrasonography or MRI: well-defined myometrial nodules"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Observation if asymptomatic",
+            "Uterine artery embolization (surgical alternative)"
+          ],
+          "farmacologico": [
+            "Bleeding: tranexamic acid, NSAIDs",
+            "Hormonal control: COC, LNG-IUD, progestogens",
+            "GnRH analogs (preoperative): reduce size",
+            "Surgery: myomectomy or hysterectomy if refractory"
+          ]
+        },
+        "redFlags": [
+          "Severe anemia",
+          "Rapid growth post-menopause",
+          "Ureteral compression"
+        ],
+        "metasTerapeuticas": [
+          "Bleeding control",
+          "Preserve fertility if desired"
+        ],
+        "examesIniciais": [
+          "Transvaginal ultrasound",
+          "Complete blood count",
+          "Ferritin",
+          "Hysteroscopy if submucosal"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "acido-tranexamico"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "bleeding",
+        "surgery",
+        "anemia"
+      ]
+    },
+    {
+      "id": "doenca-inflamatoria-pelvica",
+      "titulo": "Pelvic Inflammatory Disease",
+      "sinonimos": [
+        "PID",
+        "Salpingitis",
+        "Adnexitis"
+      ],
+      "ciap2": [
+        "X74"
+      ],
+      "cid10": [
+        "N73",
+        "N74"
+      ],
+      "cid11": [
+        "GA06"
+      ],
+      "doid": "DOID:1003",
+      "snomedCT": "198130006",
+      "meshId": "D000292",
+      "umlsCui": "C0242172",
+      "categoria": "gynecological",
+      "quickView": {
+        "definicao": "Ascending infection of the upper genital tract (endometritis, salpingitis, tubo-ovarian abscess). Usually polymicrobial, including Chlamydia and Gonorrhea.",
+        "criteriosDiagnosticos": [
+          "Pelvic/low abdominal pain",
+          "Cervical motion tenderness",
+          "Adnexal tenderness on palpation",
+          "Additional criteria: fever, mucopurulent discharge, leukocytosis"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Rest",
+            "Sexual abstinence during treatment",
+            "Treat partner(s)"
+          ],
+          "farmacologico": [
+            "Outpatient (mild/moderate): Ceftriaxone 500mg IM + Doxycycline 100mg every 12 hours for 14 days + Metronidazole 500mg every 12 hours for 14 days",
+            "Inpatient (severe): IV until improvement, then oral",
+            "Surgery if abscess is unresponsive"
+          ]
+        },
+        "redFlags": [
+          "Tubo-ovarian abscess",
+          "Peritonitis",
+          "Sepsis",
+          "No response within 72 hours"
+        ],
+        "metasTerapeuticas": [
+          "Eradication of infection",
+          "Prevention of sequelae (infertility, ectopic pregnancy)"
+        ],
+        "examesIniciais": [
+          "Test for Chlamydia/Gonorrhea",
+          "Transvaginal ultrasound",
+          "Complete blood count",
+          "PCR"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "ceftriaxone",
+        "doxycycline",
+        "metronidazole"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "STD",
+        "emergency",
+        "infertility"
+      ]
+    },
+    {
+      "id": "sangramento-uterino-anormal",
+      "titulo": "Abnormal Uterine Bleeding",
+      "sinonimos": [
+        "AUB",
+        "Menorrhagia",
+        "Metrorrhagia",
+        "Dysfunctional Uterine Bleeding"
+      ],
+      "ciap2": [
+        "X06"
+      ],
+      "cid10": [
+        "N92",
+        "N93"
+      ],
+      "cid11": [
+        "GA20"
+      ],
+      "doid": "DOID:0081295",
+      "snomedCT": "64996003",
+      "meshId": "D008796",
+      "umlsCui": "C0025874",
+      "categoria": "gynecological",
+      "quickView": {
+        "definicao": "Alteration in the menstrual pattern (frequency, duration, volume). PALM-COEIN classification: Polyp, Adenomyosis, Leiomyoma, Malignancy - Coagulopathy, Ovulatory, Endometrial, Iatrogenic, Not classified.",
+        "criteriosDiagnosticos": [
+          "Bleeding >80mL/cycle or >7 days",
+          "Cycles <21 or >35 days",
+          "Intermenstrual or post-coital bleeding",
+          "Investigate cause according to PALM-COEIN"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Menstrual diary",
+            "Iron supplementation if anemia"
+          ],
+          "farmacologico": [
+            "Acute: tranexamic acid 1g every 8 hours, high-dose COC",
+            "Chronic ovulatory: LNG-IUD, COC",
+            "Chronic anovulatory: cyclic progestin, COC",
+            "Treat specific cause (polyp, fibroid)"
+          ]
+        },
+        "redFlags": [
+          "Postmenopausal bleeding",
+          "Severe anemia",
+          "Hemodynamic instability"
+        ],
+        "metasTerapeuticas": [
+          "Cycle regularization",
+          "Anemia correction"
+        ],
+        "examesIniciais": [
+          "Complete blood count",
+          "Ferritin",
+          "TSH",
+          "Transvaginal ultrasound",
+          "Hysteroscopy if indicated"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "acido-tranexamico",
+        "medroxiprogesterona"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "menstruation",
+        "anemia",
+        "hormone"
+      ]
+    },
+    {
+      "id": "mastite-lactacional",
+      "titulo": "Lactational Mastitis",
+      "sinonimos": [
+        "Puerperal Mastitis"
+      ],
+      "ciap2": [
+        "W94"
+      ],
+      "cid10": [
+        "O91.1"
+      ],
+      "cid11": [
+        "JB42.2"
+      ],
+      "doid": "DOID:10690",
+      "snomedCT": "45198002",
+      "meshId": "D008413",
+      "umlsCui": "C0024894",
+      "categoria": "gynecological",
+      "quickView": {
+        "definicao": "Mammary inflammation during lactation, usually due to milk stasis and/or bacterial infection (S. aureus). Peak: 2-3 weeks postpartum.",
+        "criteriosDiagnosticos": [
+          "Localized breast pain, erythema, warmth",
+          "Fever ≥38.5°C, malaise",
+          "Fluctuant mass suggests abscess",
+          "Usually unilateral"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "CONTINUE BREASTFEEDING (essential)",
+            "Frequent breast emptying",
+            "Warm compresses before breastfeeding",
+            "Cold compresses after for discomfort"
+          ],
+          "farmacologico": [
+            "Analgesic: Ibuprofen 400mg every 8 hours or Paracetamol",
+            "Antibiotic if no improvement in 24-48 hours or systemic symptoms: Cefalexin 500mg every 6 hours for 10-14 days",
+            "Alternative: Amoxicillin-clavulanate"
+          ]
+        },
+        "redFlags": [
+          "Abscess (drain)",
+          "Sepsis",
+          "No response to antibiotic"
+        ],
+        "metasTerapeuticas": [
+          "Resolution of inflammation",
+          "Maintenance of breastfeeding"
+        ],
+        "examesIniciais": [
+          "Clinical examination usually sufficient",
+          "Ultrasound if abscess is suspected"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "cefalexina",
+        "ibuprofeno"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "breastfeeding",
+        "puerperium",
+        "infection"
+      ]
+    }
+  ]
+}

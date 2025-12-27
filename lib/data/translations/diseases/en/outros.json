@@ -1,0 +1,56 @@
+{
+  "locale": "en",
+  "category": "outros",
+  "generatedAt": "2025-12-27T03:34:57.579Z",
+  "count": 1,
+  "diseases": [
+    {
+      "id": "polifarmacia",
+      "titulo": "Polypharmacy in the Elderly",
+      "ciap2": [
+        "A97"
+      ],
+      "cid10": [
+        "Y57.9"
+      ],
+      "cid11": [
+        "NE60"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:0111688",
+      "snomedCT": "182929008",
+      "meshId": "D019338",
+      "umlsCui": "C0032269",
+      "quickView": {
+        "definicao": "Simultaneous use of ≥5 medications. 40% of elderly individuals >65 years. The main cause of avoidable adverse events.",
+        "criteriosDiagnosticos": [
+          "Medication count ≥5",
+          "Identify potentially inappropriate medications (PIMs) using Beers or STOPP/START criteria",
+          "Evaluate prescription cascade",
+          "Medication reconciliation"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Medication reconciliation",
+            "Apply STOPP/START criteria",
+            "Supervised gradual deprescribing",
+            "Involve patient and family"
+          ],
+          "farmacologico": [
+            "None - treatment is deprescribing"
+          ]
+        },
+        "redFlags": [
+          "Adverse reactions",
+          "Falls",
+          "Cognitive decline",
+          "Non-adherence",
+          "Functional decline"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

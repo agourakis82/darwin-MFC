@@ -1,0 +1,984 @@
+{
+  "locale": "en",
+  "category": "infecciosas",
+  "generatedAt": "2025-12-27T13:00:44.806Z",
+  "count": 4,
+  "diseases": [
+    {
+      "id": "sífilis-terciaria",
+      "titulo": "Tertiary Syphilis",
+      "ciap2": [
+        "Y77"
+      ],
+      "cid10": [
+        "A52"
+      ],
+      "cid11": [
+        "1C1Z"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:13240",
+      "snomedCT": "76272004",
+      "meshId": "D013592",
+      "umlsCui": "C0039102",
+      "hpo": [
+        "HP:0001250",
+        "HP:0002134"
+      ],
+      "tags": [
+        "infectious",
+        "bacterial",
+        "neurological"
+      ],
+      "quickView": {
+        "definicao": "Late syphilis (years after infection). Neurosyphilis, cardiovascular syphilis, gummas.",
+        "criteriosDiagnosticos": [
+          "History of syphilis",
+          "Positive VDRL/RPR",
+          "Positive TPHA/FTA-ABS",
+          "Late manifestations"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Neurological evaluation",
+            "Cardiological evaluation if needed"
+          ],
+          "farmacologico": [
+            "Crystalline penicillin G 18-24 million units/day IV 10-14 days (neurosyphilis)",
+            "Or ceftriaxone as an alternative"
+          ]
+        },
+        "redFlags": [
+          "Active neurosyphilis",
+          "Aortic insufficiency",
+          "Aortic aneurysm"
+        ]
+      },
+      "medicamentos": [
+        "penicilina-g"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sepse",
+      "titulo": "Sepsis and Septic Shock",
+      "sinonimos": [
+        "Septicemia",
+        "Septic Syndrome",
+        "Septic Shock",
+        "Systemic Infection"
+      ],
+      "doid": "DOID:0080009",
+      "snomedCT": "91302008",
+      "meshId": "D018805",
+      "umlsCui": "C0036690",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "A41",
+        "A41.9",
+        "R65.1",
+        "R57.2"
+      ],
+      "cid11": [
+        "1G40"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Potentially fatal organ dysfunction caused by a dysregulated host response to infection. Septic shock: sepsis + need for vasopressors + lactate >2 mmol/L despite fluid resuscitation.",
+        "criteriosDiagnosticos": [
+          "SEPSIS: Suspected/confirmed infection + SOFA ≥2 points",
+          "qSOFA (screening): ≥2 of: RR≥22, SBP≤100, altered mental status",
+          "SEPTIC SHOCK: Sepsis + vasopressor for MAP≥65 + Lactate>2 after volume",
+          "Identify infectious focus",
+          "Blood cultures before antibiotics (without delaying ABT)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Identify and control the source (drain abscess, remove catheter)",
+            "Large-bore venous access (ideally central)",
+            "Continuous monitoring",
+            "Bladder catheterization for urine output"
+          ],
+          "farmacologico": [
+            "HOUR 1 (Surviving Sepsis Bundles):",
+            "Lactate (repeat if initial >2)",
+            "Blood cultures (2 sets) before ABT",
+            "Broad-spectrum antibiotic <1h",
+            "0.9% NS 30mL/kg if hypotension or lactate≥4",
+            "Norepinephrine if MAP<65 after volume",
+            "",
+            "Empiric ABT based on suspected focus:",
+            "Pulmonary: Ceftriaxone + Azithromycin",
+            "Abdominal: Piperacillin-Tazobactam or Meropenem",
+            "Urinary: Ceftriaxone or Ciprofloxacin",
+            "Skin: Oxacillin + Clindamycin"
+          ]
+        },
+        "metasTerapeuticas": [
+          "MAP ≥65 mmHg",
+          "Urine output ≥0.5 mL/kg/h",
+          "Normalization of lactate",
+          "Improvement in consciousness",
+          "Control of infectious source"
+        ],
+        "examesIniciais": [
+          "Serum lactate",
+          "Blood cultures (2 sets before ABT)",
+          "Complete blood count, creatinine, bilirubin",
+          "Arterial blood gas",
+          "Coagulation profile",
+          "Procalcitonin (if available)",
+          "Chest X-ray, urinalysis/urine culture, imaging based on focus"
+        ],
+        "redFlags": [
+          "Lactate >4 mmol/L",
+          "Refractory hypotension to volume",
+          "Multiple organ dysfunction",
+          "Significant alteration in level of consciousness",
+          "Coagulopathy (DIC)",
+          "Severe immunosuppression"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~30 million cases/year worldwide",
+          "incidencia": "200-300 cases/100,000 population/year in developed countries",
+          "mortalidade": "25-30% in sepsis, 40-50% in septic shock",
+          "faixaEtaria": "Extremes of age (neonates and elderly) are more vulnerable",
+          "fatoresRisco": [
+            "Advanced age",
+            "Immunosuppression",
+            "Diabetes mellitus",
+            "Neoplasms",
+            "Chronic renal/hepatic disease",
+            "Invasive devices (catheters, probes)",
+            "Recent hospitalization",
+            "Recent surgery"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Dysregulated immune response to infection with massive release of cytokines (cytokine storm), activation of coagulation cascade, endothelial dysfunction, and vasodilation. Results in tissue hypoperfusion, organ dysfunction, and potential death.",
+          "citations": [
+            {
+              "refId": "sepsis-3"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Fever or hypothermia",
+            "Chills",
+            "Tachycardia, tachypnea",
+            "Altered mental status, agitation, or lethargy",
+            "Oliguria",
+            "Signs of the infectious focus"
+          ],
+          "sinaisExameFisico": [
+            "Hypotension",
+            "Tachycardia",
+            "Tachypnea",
+            "Altered sensorium",
+            "Capillary refill time >3s",
+            "Mottled or livedo skin",
+            "Cold extremities"
+          ],
+          "formasClinicas": [
+            "Sepsis without shock",
+            "Septic shock",
+            "Sepsis with specific organ dysfunction (AKI, ARDS, etc.)"
+          ],
+          "citations": [
+            {
+              "refId": "sepsis-3"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Sepsis-3: SOFA ≥2 + infection",
+            "qSOFA for screening (not diagnosis)",
+            "Identification of the source and agent"
+          ],
+          "diagnosticoDiferencial": [
+            "Cardiogenic shock",
+            "Hypovolemic shock",
+            "Anaphylactic shock",
+            "Non-infectious SIRS (pancreatitis, burns)",
+            "Acute adrenal insufficiency"
+          ],
+          "examesLaboratoriais": [
+            "Blood cultures (2 sets)",
+            "Arterial lactate",
+            "Procalcitonin",
+            "Complete blood count (leukocytosis or leukopenia)",
+            "Renal and liver function",
+            "Coagulation profile (thrombocytopenia, prolonged PT)",
+            "Arterial blood gas"
+          ],
+          "examesImagem": [
+            "Chest X-ray",
+            "CT scan based on suspicion (abdomen, pelvis)",
+            "Echocardiogram (if cardiac dysfunction or suspected endocarditis)"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Early hemodynamic resuscitation",
+            "Appropriate antibiotic therapy <1h",
+            "Control of the infectious source",
+            "Support of organ dysfunction"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Central venous access",
+              "Invasive MAP catheter",
+              "Source control (drainage, debridement, removal of device)",
+              "Protective ventilation if ARDS",
+              "Renal replacement therapy if necessary"
+            ],
+            "citations": [
+              {
+                "refId": "surviving-sepsis-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Antibiotic",
+                "medicamentos": [
+                  "Piperacillin-Tazobactam",
+                  "Meropenem",
+                  "Ceftriaxone + Metronidazole"
+                ],
+                "posologia": "Maximum dose, renal adjustment",
+                "observacoes": "Initiate <1h from recognition"
+              },
+              {
+                "classe": "Crystalloid",
+                "medicamentos": [
+                  "0.9% NS",
+                  "Ringer's Lactate"
+                ],
+                "posologia": "30mL/kg in the first 3h if hypotension/lactate≥4"
+              },
+              {
+                "classe": "Vasopressor",
+                "medicamentos": [
+                  "Norepinephrine 0.1-2mcg/kg/min"
+                ],
+                "posologia": "Titrate to MAP≥65",
+                "observacoes": "First choice"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Additional Vasopressor",
+                "medicamentos": [
+                  "Vasopressin 0.01-0.04 U/min"
+                ],
+                "observacoes": "If norepinephrine is insufficient"
+              },
+              {
+                "classe": "Inotrope",
+                "medicamentos": [
+                  "Dobutamine 2.5-20mcg/kg/min"
+                ],
+                "observacoes": "If low cardiac output"
+              },
+              {
+                "classe": "Corticosteroid",
+                "medicamentos": [
+                  "Hydrocortisone 200mg/day"
+                ],
+                "observacoes": "If refractory to vasopressors"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "surviving-sepsis-2021"
+              }
+            ]
+          },
+          "duracao": "ABT for 7-10 days in most cases; adjust based on focus and response"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Continuous reassessment during the acute phase",
+          "examesControle": [
+            "Serial lactate",
+            "Renal function",
+            "Complete blood count",
+            "Surveillance cultures"
+          ],
+          "metasTerapeuticas": [
+            "Clearance of lactate",
+            "Weaning off vasopressors",
+            "Urine output >0.5mL/kg/h",
+            "Resolution of organ dysfunction"
+          ],
+          "criteriosEncaminhamento": [
+            "All patients with sepsis: ICU or intensive care unit",
+            "Surgery if surgical focus",
+            "Infectious disease specialist for complex cases"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Vaccination (pneumococcal, influenza)",
+            "Hand hygiene",
+            "Prevention of hospital-acquired infections",
+            "Proper management of invasive devices"
+          ],
+          "secundaria": [
+            "Early recognition of infections",
+            "Appropriate treatment of community-acquired infections",
+            "Hour 1 bundle"
+          ],
+          "citations": [
+            {
+              "refId": "surviving-sepsis-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "sepse-bundle-1h",
+        "choque-septico",
+        "atb-empirico-sepse"
+      ],
+      "medicamentos": [
+        "noradrenalina",
+        "meropenem",
+        "piperacilina-tazobactam",
+        "vancomicina"
+      ],
+      "calculadoras": [
+        "sofa",
+        "qsofa",
+        "apache-ii"
+      ],
+      "citations": [
+        {
+          "refId": "sepsis-3"
+        },
+        {
+          "refId": "surviving-sepsis-2021"
+        },
+        {
+          "refId": "ilas-sepse-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "doenca-chagas",
+      "titulo": "Chagas Disease",
+      "sinonimos": [
+        "American Trypanosomiasis",
+        "Chagas",
+        "Chagas' Disease"
+      ],
+      "doid": "DOID:12140",
+      "snomedCT": "77506005",
+      "meshId": "D014355",
+      "umlsCui": "C0041234",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "B57",
+        "B57.0",
+        "B57.1",
+        "B57.2",
+        "B57.3",
+        "B57.4",
+        "B57.5"
+      ],
+      "cid11": [
+        "1F51"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Parasitic disease caused by Trypanosoma cruzi, primarily transmitted by the triatomine (\"kissing bug\"). Acute phase is often asymptomatic; chronic phase with cardiomyopathy and/or megaesophagus/megacolon.",
+        "criteriosDiagnosticos": [
+          "ACUTE PHASE: Fever, hepatosplenomegaly, edema, Romana's sign/chagoma",
+          "Detectable parasitemia (thick smear, QBC, PCR)",
+          "CHRONIC PHASE: Positive serology (2 different methods)",
+          "Chagasic cardiomyopathy: RBBB + LAFB, arrhythmias, CHF",
+          "Megaesophagus: dysphagia, regurgitation",
+          "Megacolon: chronic constipation, fecaloma"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Clinical support in the acute phase",
+            "Control of arrhythmias and CHF in the chronic phase",
+            "Pasty diet in megaesophagus",
+            "Laxative diet in megacolon"
+          ],
+          "farmacologico": [
+            "ACUTE PHASE (treatment mandatory):",
+            "Benznidazole 5mg/kg/day for 60 days (adults: twice daily)",
+            "OR Nifurtimox 8-10mg/kg/day for 60-90 days",
+            "",
+            "INDETERMINATE CHRONIC PHASE:",
+            "Benznidazole: indicated in <50 years, women of childbearing age",
+            "",
+            "CARDIAC CHRONIC PHASE:",
+            "Treatment of CHF (ACE inhibitors, beta-blockers, spironolactone)",
+            "Amiodarone if arrhythmias",
+            "Pacemaker if advanced AV block",
+            "Consider ICD if high risk of sudden death"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Acute phase: eliminate parasite, prevent progression",
+          "Chronic phase: control symptoms, prevent complications",
+          "Prevent vertical transmission"
+        ],
+        "examesIniciais": [
+          "Serology (ELISA + IFA or ELISA + HAI)",
+          "Thick smear/QBC (acute phase)",
+          "PCR for T. cruzi",
+          "12-lead ECG",
+          "Echocardiogram",
+          "Chest X-ray",
+          "Barium swallow/esophagram (if dysphagia)",
+          "Barium enema (if constipation)"
+        ],
+        "redFlags": [
+          "Severe acute myocarditis",
+          "Meningoencephalitis",
+          " Decompensated CHF",
+          "Malignant arrhythmias (sustained VT)",
+          "Advanced AV block",
+          "Reactivation in immunosuppressed individuals",
+          "Intestinal perforation/volvulus"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "6-7 million infected worldwide; 1-3 million in Brazil",
+          "incidencia": "Acute cases: ~200/year in Brazil (oral transmission)",
+          "mortalidade": "~12,000 deaths/year in Brazil (chronic cardiac phase)",
+          "faixaEtaria": "Infection at any age; chronic manifestations after decades",
+          "fatoresRisco": [
+            "Residence in endemic rural areas",
+            "Housing with gaps (wattle and daub)",
+            "Consumption of contaminated foods (açaí, sugarcane juice)",
+            "Untested blood transfusion",
+            "Infected mother (vertical transmission)"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "T. cruzi invades host cells (myocytes, neurons), multiplies, and causes direct cellular destruction and chronic inflammation. In the chronic phase, there is progressive destruction of the myocardium and myenteric plexus (autonomic denervation), leading to dilated cardiomyopathy and megas.",
+          "citations": [
+            {
+              "refId": "who-chagas-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "ACUTE: Fever, malaise, hepatosplenomegaly, edema, myocarditis",
+            "Romana's sign (unilateral eyelid edema)",
+            "Chagoma of inoculation (cutaneous lesion at the bite site)",
+            "CHRONIC: Palpitations, dyspnea, syncope, dysphagia, constipation"
+          ],
+          "sinaisExameFisico": [
+            "Hepatosplenomegaly (acute phase)",
+            "Signs of CHF",
+            "Arrhythmias",
+            "Cardiac chamber dilation",
+            "Apical aneurysm of the left ventricle"
+          ],
+          "formasClinicas": [
+            "Acute phase (symptomatic or asymptomatic)",
+            "Indeterminate chronic phase (asymptomatic, positive serology)",
+            "Chronic cardiac phase",
+            "Chronic digestive phase (megaesophagus/megacolon)",
+            "Mixed form (cardiac + digestive)"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Acute phase: positive parasitological examination",
+            "Chronic phase: 2 positive serological tests with different methods"
+          ],
+          "diagnosticoDiferencial": [
+            "Idiopathic dilated cardiomyopathy",
+            "Ischemic cardiomyopathy",
+            "Achalasia",
+            "Hirschsprung's disease",
+            "Other parasitoses"
+          ],
+          "examesLaboratoriais": [
+            "Serology (ELISA, IFA, HAI) - 2 methods",
+            "Direct parasitological examination (acute phase)",
+            "PCR",
+            "Xenodiagnosis (historical)",
+            "Blood culture for T. cruzi"
+          ],
+          "examesImagem": [
+            "ECG (RBBB, LAFB, extrasystoles, blocks)",
+            "Echocardiogram (dilation, apical aneurysm)",
+            "24-hour Holter",
+            "Chest X-ray (cardiomegaly)",
+            "Barium swallow/esophagram",
+            "Barium enema/colonoscopy"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Acute phase: eliminate parasite",
+            "Chronic phase: control manifestations, prevent complications"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Diet for dysphagia (megaesophagus)",
+              "Laxative diet and hydration (megacolon)",
+              "Supervised physical exercise (mild cardiomyopathy)",
+              "Surgery for advanced megas"
+            ],
+            "citations": [
+              {
+                "refId": "consenso-chagas-2016"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Trypanocidal",
+                "medicamentos": [
+                  "Benznidazole 5mg/kg/day"
+                ],
+                "posologia": "60 days, divided into 2 doses",
+                "observacoes": "Mandatory in the acute phase"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Alternative",
+                "medicamentos": [
+                  "Nifurtimox 8-10mg/kg/day"
+                ],
+                "posologia": "60-90 days",
+                "observacoes": "More adverse effects"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Chagasic cardiomyopathy",
+                "conduta": "Treatment of CHF: ACE inhibitors, beta-blockers, spironolactone, diuretics"
+              },
+              {
+                "situacao": "Arrhythmias",
+                "conduta": "Amiodarone; ICD if high risk of sudden death"
+              },
+              {
+                "situacao": "Advanced megaesophagus",
+                "conduta": "Heller myotomy or esophagectomy"
+              },
+              {
+                "situacao": "Megacolon",
+                "conduta": "Sigmoidectomy if recurrent volvulus or fecaloma"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-chagas-2023"
+              }
+            ]
+          },
+          "duracao": "Trypanocidal: 60 days; treatment of complications: continuous"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Annual in the indeterminate phase; semi-annual/quarterly in cardiomyopathy",
+          "examesControle": [
+            "Annual ECG",
+            "Annual echocardiogram",
+            "Holter",
+            "Follow-up serology"
+          ],
+          "metasTerapeuticas": [
+            "Negative PCR (parasitological cure)",
+            "Stabilization of cardiomyopathy",
+            "Prevention of sudden death"
+          ],
+          "criteriosEncaminhamento": [
+            "Cardiology: chagasic cardiomyopathy",
+            "Arrhythmia: electrophysiology",
+            "Megas: gastroenterology/surgery",
+            "Reactivation: infectious disease"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Housing improvement",
+            "Vector control (spraying, screens)",
+            "Blood bank screening",
+            "Food safety (avoid contamination)"
+          ],
+          "secundaria": [
+            "Pregnancy screening",
+            "Treatment of acute cases",
+            "Follow-up of chronic cases"
+          ],
+          "citations": [
+            {
+              "refId": "who-chagas-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "chagas-tratamento",
+        "cardiopatia-chagasica"
+      ],
+      "medicamentos": [
+        "benznidazol",
+        "nifurtimox",
+        "amiodarona"
+      ],
+      "calculadoras": [
+        "rassi-score"
+      ],
+      "citations": [
+        {
+          "refId": "consenso-chagas-2016"
+        },
+        {
+          "refId": "who-chagas-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "febre-amarela",
+      "titulo": "Yellow Fever",
+      "sinonimos": [
+        "FA",
+        "Yellow fever",
+        "Tifo icteroides"
+      ],
+      "doid": "DOID:9682",
+      "snomedCT": "16541001",
+      "meshId": "D015004",
+      "umlsCui": "C0043395",
+      "ciap2": [
+        "A77"
+      ],
+      "cid10": [
+        "A95",
+        "A95.0",
+        "A95.1",
+        "A95.9"
+      ],
+      "cid11": [
+        "1D40"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Acute viral disease caused by flavivirus, transmitted by Haemagogus/Sabethes (sylvatic) or Aedes aegypti (urban) mosquitoes. It can progress to a severe form with jaundice, hemorrhage, and multi-organ failure.",
+        "criteriosDiagnosticos": [
+          "Sudden onset fever (≤7 days)",
+          "Jaundice and/or hemorrhage",
+          "Compatible epidemiology (risk area, unvaccinated)",
+          "Faget's sign (relative bradycardia despite fever)",
+          "Confirmation: RT-PCR, viral isolation, IgM (after 5th day)",
+          "Histopathology: Councilman bodies (hepatic necrosis)"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "low",
+            "criterios": [
+              "Mild/moderate form",
+              "No jaundice",
+              "No hemorrhage"
+            ],
+            "conduta": "Outpatient with monitoring"
+          },
+          {
+            "nivel": "very_high",
+            "criterios": [
+              "Jaundice",
+              "Hemorrhage",
+              "Oliguria",
+              "Hepatic encephalopathy"
+            ],
+            "conduta": "ICU"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "NO SPECIFIC TREATMENT",
+            "Intensive clinical support",
+            "Isolation (to prevent transmission by Aedes)",
+            "Rest, hydration"
+          ],
+          "farmacologico": [
+            "SUPPORT:",
+            "IV hydration",
+            "Antipyretics (AVOID ASA and NSAIDs)",
+            "Vitamin K if coagulopathy",
+            "Plasma/platelets if bleeding",
+            "Dialysis if AKI",
+            "Gastric protection",
+            "N-acetylcysteine (under study)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Support of organ dysfunction",
+          "Prevention of bleeding",
+          "Maintenance of volume status",
+          "Prevention of transmission"
+        ],
+        "examesIniciais": [
+          "Complete blood count (leukopenia, thrombocytopenia)",
+          "Bilirubin (intense jaundice)",
+          "Transaminases (very high, >1000)",
+          "Coagulation profile (prolonged)",
+          "Urea, creatinine",
+          "RT-PCR for yellow fever (up to 5th day)",
+          "IgM (after 5th day)",
+          "Liver biopsy (post-mortem)"
+        ],
+        "redFlags": [
+          "Jaundice",
+          "Hemorrhage (melena, hematemesis, gingival bleeding)",
+          "Oliguria/anuria",
+          "Hepatic encephalopathy",
+          "Hypotension/shock",
+          "Transaminases >1000",
+          "Severe coagulopathy"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Recent outbreaks in Brazil (2016-2018): >2,000 cases",
+          "mortalidade": "Severe form: 20-50% mortality",
+          "faixaEtaria": "All unvaccinated ages",
+          "fatoresRisco": [
+            "Unvaccinated",
+            "Residence/travel in risk areas",
+            "Activity in forested areas",
+            "Peak transmission period: Jan-May"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Flavivirus with tropism for hepatocytes and endothelial cells. Causes midzonal hepatic necrosis (Councilman bodies), endothelial dysfunction, DIC, shock, and multi-organ failure. The cytokine storm contributes to severity.",
+          "citations": [
+            {
+              "refId": "who-yellowfever-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "High fever with sudden onset",
+            "Severe headache",
+            "Myalgia",
+            "Nausea, vomiting",
+            "Jaundice (severe form)",
+            "Hemorrhage (gingival, gastrointestinal)",
+            "Oliguria"
+          ],
+          "sinaisExameFisico": [
+            "Ruby jaundice",
+            "Faget's sign (pulse-temperature dissociation)",
+            "Painful hepatomegaly",
+            "Petechiae, ecchymoses",
+            "Somnolence, confusion (encephalopathy)"
+          ],
+          "formasClinicas": [
+            "Mild form (majority)",
+            "Moderate form",
+            "Severe form (hepatonephro-hemorrhagic)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinical + epidemiology",
+            "Laboratory confirmation (RT-PCR, serology)"
+          ],
+          "diagnosticoDiferencial": [
+            "Leptospirosis",
+            "Severe malaria",
+            "Severe dengue",
+            "Fulminant viral hepatitis",
+            "Sepsis",
+            "Other hemorrhagic fevers"
+          ],
+          "examesLaboratoriais": [
+            "RT-PCR (up to 5th day of illness)",
+            "MAC-ELISA IgM (after 5th day)",
+            "Complete blood count (leukopenia)",
+            "Transaminases (very high)",
+            "Bilirubin",
+            "Coagulation profile (DIC)",
+            "Renal function"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Clinical support",
+            "Prevention of complications",
+            "Treatment of organ dysfunction"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "ICU for severe cases",
+              "Careful hydration",
+              "Gastric protection",
+              "Dialysis if AKI",
+              "Transfusion if bleeding",
+              "Isolation (vector control)"
+            ],
+            "citations": [
+              {
+                "refId": "ms-fa-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Support",
+                "medicamentos": [
+                  "IV hydration",
+                  "Vitamin K",
+                  "Fresh frozen plasma"
+                ],
+                "observacoes": "No specific antiviral"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Avoid",
+                "conduta": "ASA and NSAIDs (bleeding risk)"
+              },
+              {
+                "situacao": "Encephalopathy",
+                "conduta": "Lactulose, protein restriction"
+              },
+              {
+                "situacao": "Experimental",
+                "conduta": "N-acetylcysteine, sofosbuvir (under study)"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-yellowfever-2023"
+              }
+            ]
+          },
+          "duracao": "Support until resolution of illness"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Continuous monitoring for 14 days after onset",
+          "metasTerapeuticas": [
+            "Resolution of jaundice",
+            "Renal recovery",
+            "Normalization of transaminases (may take weeks)"
+          ],
+          "criteriosEncaminhamento": [
+            "Severe form: ICU/referenced hospital",
+            "Immediate mandatory notification"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "VACCINATION (most effective measure)",
+            "Single dose at 9 months and booster at 4 years",
+            "Travelers: vaccinate 10 days before",
+            "Vector control",
+            "Individual protection (repellents, long clothing)"
+          ],
+          "secundaria": [
+            "Epidemiological surveillance",
+            "Active search during outbreaks",
+            "Ring vaccination"
+          ],
+          "citations": [
+            {
+              "refId": "who-yellowfever-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "febre-amarela-manejo",
+        "fa-grave"
+      ],
+      "medicamentos": [],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-fa-2022"
+        },
+        {
+          "refId": "who-yellowfever-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

@@ -1,0 +1,929 @@
+{
+  "locale": "en",
+  "category": "musculoskeletal",
+  "generatedAt": "2025-12-27T03:34:57.577Z",
+  "count": 14,
+  "diseases": [
+    {
+      "id": "lombalgia",
+      "titulo": "Low Back Pain",
+      "sinonimos": [
+        "Lumbar Pain",
+        "Back Pain",
+        "Lumbago"
+      ],
+      "doid": "DOID:0060167",
+      "snomedCT": "279039007",
+      "meshId": "D017116",
+      "umlsCui": "C0024031",
+      "ciap2": [
+        "L03",
+        "L84",
+        "L86"
+      ],
+      "cid10": [
+        "M54.5",
+        "M54.4"
+      ],
+      "categoria": "musculoskeletal",
+      "quickView": {
+        "definicao": "Pain localized in the lumbar region (between the last rib and the gluteal folds), which may or may not radiate to the lower limbs. It is the leading cause of disability worldwide.",
+        "criteriosDiagnosticos": [
+          "Pain in the lumbar region with or without radiation",
+          "Classify: non-specific (>90%), with radicular radiation, or specific",
+          "Duration: acute (<6 weeks), subacute (6-12 weeks), chronic (>12 weeks)",
+          "Exclude red flags (fracture, infection, tumor, cauda equina syndrome)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Education: reassure, generally good prognosis",
+            "Maintain usual activities (avoid prolonged rest)",
+            "Local heat",
+            "Strengthening and stretching exercises",
+            "Physiotherapy if persistence >4 weeks"
+          ],
+          "farmacologico": [
+            "Paracetamol 500-1000mg every 6 hours (first line if tolerated)",
+            "NSAIDs: Ibuprofen 400-600mg every 8 hours or Diclofenac 50mg every 8 hours (short cycle)",
+            "Muscle relaxant: Cyclobenzaprine 5-10mg at night (associated spasm)",
+            "Weak opioid: Tramadol 50-100mg every 6 hours (intense pain, short term)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Pain relief",
+          "Return to usual activities",
+          "Prevention of chronicity",
+          "Avoid prolonged use of medications"
+        ],
+        "examesIniciais": [
+          "Imaging tests NOT routinely indicated in non-specific low back pain",
+          "Order X-ray/MRI if red flags or persistence >6 weeks without improvement"
+        ],
+        "redFlags": [
+          "Significant trauma",
+          "Age <20 or >55 years with first episode",
+          "Night pain that awakens, pain at rest",
+          "Unexplained weight loss",
+          "History of cancer, immunosuppression, corticosteroid use",
+          "Cauda equina syndrome (saddle anesthesia, incontinence, weakness in lower limbs)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "60-80% will experience low back pain in their lifetime",
+          "incidencia": "Leading cause of work disability",
+          "faixaEtaria": "Peak 35-55 years",
+          "fatoresRisco": [
+            "Heavy manual labor",
+            "Poor posture",
+            "Sedentary lifestyle",
+            "Obesity",
+            "Smoking",
+            "Psychosocial factors (stress, job dissatisfaction)",
+            "Depression, anxiety"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Localized lumbar pain",
+            "Worsens with movement, improves with rest (mechanical)",
+            "Brief morning stiffness (<30 minutes)",
+            "Radiation to buttock or thigh (without dermatome)",
+            "If radiculopathy: radiating pain to lower limb in dermatome"
+          ],
+          "sinaisExameFisico": [
+            "Limited range of lumbar motion",
+            "Paravertebral muscle spasm",
+            "Positive Lasègue sign if radiculopathy",
+            "Normal neurological exam in non-specific low back pain",
+            "Assess strength, sensation, reflexes in lower limbs"
+          ],
+          "formasClinicas": [
+            "Mechanical/non-specific low back pain (>90%)",
+            "Low back pain with radiculopathy (herniated disc)",
+            "Specific low back pain (fracture, tumor, infection, spondyloarthritis)"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinical diagnosis",
+            "Classify by duration and presence of red flags",
+            "Imaging tests only if red flags or refractory"
+          ],
+          "diagnosticoDiferencial": [
+            "Herniated disc with radiculopathy",
+            "Spinal stenosis",
+            "Spondylolisthesis",
+            "Ankylosing spondylitis",
+            "Vertebral fracture",
+            "Bone metastasis",
+            "Infection (discitis, abscess)"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Pain relief",
+            "Maintenance of function",
+            "Prevention of chronicity",
+            "Return to work"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Education and reassurance",
+              "Maintain physical activity",
+              "Supervised exercises",
+              "Superficial heat",
+              "Cognitive-behavioral therapy if chronicity"
+            ],
+            "citations": [
+              {
+                "refId": "lancet-lombalgia-2018"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Simple analgesic",
+                "medicamentos": [
+                  "Paracetamol 500-1000mg every 6 hours"
+                ],
+                "observacoes": "Limited efficacy, but safe"
+              },
+              {
+                "classe": "NSAIDs",
+                "medicamentos": [
+                  "Ibuprofen 400-600mg every 8 hours",
+                  "Naproxen 250-500mg every 12 hours"
+                ],
+                "observacoes": "Effective. Short-term use (7-14 days). Attention to GI/CV/renal risks"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Muscle relaxant",
+                "medicamentos": [
+                  "Cyclobenzaprine 5-10mg at night"
+                ],
+                "observacoes": "If muscle spasm. Short-term use. Drowsiness"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Chronic pain",
+                "conduta": "Multimodal approach. Consider duloxetine, amitriptyline. Refer"
+              },
+              {
+                "situacao": "Radiculopathy",
+                "conduta": "NSAIDs + physiotherapy. If refractory, refer for surgical evaluation"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "lancet-lombalgia-2018"
+              }
+            ]
+          },
+          "duracao": "Most cases resolve in 4-6 weeks"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Re-evaluation in 2-4 weeks if no improvement",
+          "metasTerapeuticas": [
+            "Resolution of pain",
+            "Return to activities",
+            "No chronic medication use"
+          ],
+          "criteriosEncaminhamento": [
+            "Red flags (urgent)",
+            "Progressive neurological deficit",
+            "Refractory pain >6 weeks",
+            "Cauda equina syndrome (emergency)",
+            "Need for specialized physiotherapy"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno",
+        "ciclobenzaprina"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "lancet-lombalgia-2018"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "musculoskeletal",
+        "acute",
+        "chronic",
+        "prevalent"
+      ]
+    },
+    {
+      "id": "osteoartrite",
+      "titulo": "Osteoarthritis (Osteoarthrosis)",
+      "ciap2": [
+        "L91"
+      ],
+      "cid10": [
+        "M15",
+        "M19"
+      ],
+      "cid11": [
+        "FA00"
+      ],
+      "categoria": "musculoskeletal",
+      "doid": "DOID:8398",
+      "snomedCT": "396275006",
+      "meshId": "D010003",
+      "umlsCui": "C0029408",
+      "quickView": {
+        "definicao": "Degenerative joint disease. Most common in the elderly. Knees, hips, and hands are most affected.",
+        "criteriosDiagnosticos": [
+          "Joint pain worsens with activity",
+          "Morning stiffness <30min",
+          "Crepitation",
+          "X-ray: joint space narrowing, osteophytes"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Exercises (strengthening, stretching)",
+            "Weight loss if obese",
+            "Physical therapy",
+            "Orthoses if needed"
+          ],
+          "farmacologico": [
+            "Paracetamol 1g every 6 hours (first line)",
+            "If insufficient: topical or oral NSAIDs",
+            "Intra-articular corticosteroid injection if needed"
+          ]
+        },
+        "redFlags": [
+          "Septic arthritis",
+          "Fracture",
+          "Inflammatory arthropathy"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "fibromialgia",
+      "titulo": "Fibromyalgia",
+      "ciap2": [
+        "L18"
+      ],
+      "cid10": [
+        "M79.3"
+      ],
+      "cid11": [
+        "MG30.0"
+      ],
+      "categoria": "musculoskeletal",
+      "doid": "DOID:3634",
+      "snomedCT": "23867004",
+      "meshId": "D005356",
+      "umlsCui": "C0016053",
+      "hpo": [
+        "HP:0003327",
+        "HP:0003324"
+      ],
+      "tags": [
+        "musculoskeletal",
+        "chronic",
+        "pain"
+      ],
+      "quickView": {
+        "definicao": "Chronic widespread pain syndrome. Tender points on palpation. Fatigue, sleep disturbances.",
+        "criteriosDiagnosticos": [
+          "Chronic widespread pain ≥3 months",
+          "≥11 tender points out of 18 (ACR 1990 criteria)",
+          "Or ACR 2010/2016 criteria"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Exercise (aerobic, stretching)",
+            "Patient education",
+            "Cognitive-behavioral therapy (CBT)",
+            "Improvement of sleep"
+          ],
+          "farmacologico": [
+            "Duloxetine 60mg/day",
+            "Or Pregabalin",
+            "Or Amitriptyline 10-50mg at bedtime"
+          ]
+        },
+        "redFlags": [
+          "Focal neurological symptoms",
+          "True arthritis",
+          "Rheumatic disease"
+        ]
+      },
+      "medicamentos": [
+        "duloxetina",
+        "pregabalina",
+        "amitriptilina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gota",
+      "titulo": "Gout",
+      "ciap2": [
+        "T92"
+      ],
+      "cid10": [
+        "M10"
+      ],
+      "cid11": [
+        "FA25"
+      ],
+      "categoria": "musculoskeletal",
+      "doid": "DOID:13189",
+      "snomedCT": "90560007",
+      "meshId": "D006073",
+      "umlsCui": "C0018099",
+      "quickView": {
+        "definicao": "Inflammatory arthritis due to monosodium urate crystal deposition. Serum uric acid >7mg/dL. More common in men.",
+        "criteriosDiagnosticos": [
+          "Acute monoarthritis (1st MTP = podagra is classic)",
+          "Intense pain with sudden onset, peaking in 12-24h",
+          "Erythema, swelling, intense heat",
+          "Hyperuricemia (but can be normal during an attack)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Rest of the joint",
+            "Local ice",
+            "Avoid alcohol and purine-rich diet"
+          ],
+          "farmacologico": [
+            "Acute attack: NSAIDs (Indomethacin 50mg every 8 hours) or Colchicine 0.5mg three times daily or Prednisone 30-40mg daily",
+            "Prophylaxis: Allopurinol 100-300mg daily (DO NOT initiate during an attack)"
+          ]
+        },
+        "redFlags": [
+          "Septic arthritis (high fever, single finding)",
+          "Renal insufficiency",
+          "Extensive tophi"
+        ]
+      },
+      "medicamentos": [
+        "alopurinol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sarcopenia",
+      "titulo": "Sarcopenia",
+      "ciap2": [
+        "L29"
+      ],
+      "cid10": [
+        "M62.84"
+      ],
+      "cid11": [
+        "FB32.3"
+      ],
+      "categoria": "musculoskeletal",
+      "doid": "DOID:0081310",
+      "snomedCT": "1172655006",
+      "meshId": "D055948",
+      "umlsCui": "C0872084",
+      "quickView": {
+        "definicao": "Progressive loss of skeletal muscle mass and strength with aging. Prevalence 5-13% in 60-70 years, up to 50% in >80 years.",
+        "criteriosDiagnosticos": [
+          "EWGSOP2: reduced strength (probable)",
+          "Dynamometry <27kg (M) or <16kg (F)",
+          "Confirmation: low muscle mass (DXA/BIA)",
+          "Severity: low physical performance (SPPB <8)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Progressive resistance exercise",
+            "Protein 1.0-1.2g/kg/day",
+            "Leucine/HMB as adjunct"
+          ],
+          "farmacologico": [
+            "Vitamin D if deficient",
+            "No specific approved drugs"
+          ]
+        },
+        "redFlags": [
+          "Rapid weight loss",
+          "Recurrent falls",
+          "Inability to rise from a chair",
+          "Sarcopenia + obesity"
+        ]
+      },
+      "medicamentos": [
+        "vitamin-d"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "osteoporose",
+      "titulo": "Osteoporosis",
+      "ciap2": [
+        "L95"
+      ],
+      "cid10": [
+        "M80",
+        "M81"
+      ],
+      "cid11": [
+        "FB83"
+      ],
+      "categoria": "musculoskeletal",
+      "doid": "DOID:11476",
+      "snomedCT": "64859006",
+      "meshId": "D010024",
+      "umlsCui": "C0029456",
+      "quickView": {
+        "definicao": "Skeletal disease with low bone mass and microarchitectural deterioration, increasing the risk of fracture. Prevalence post-menopause: 30-50%.",
+        "criteriosDiagnosticos": [
+          "DXA: T-score ≤-2.5 (spine/femur)",
+          "OR prior fragility fracture",
+          "T-score -1 to -2.5 = osteopenia",
+          "FRAX to calculate risk"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Weight-bearing exercise",
+            "Fall prevention",
+            "Cessation of smoking",
+            "Dietary calcium 1000-1200mg/day"
+          ],
+          "farmacologico": [
+            "Alendronate 70mg/week or Risedronate 35mg/week",
+            "Vitamin D 800-2000IU/day",
+            "Denosumab if intolerant to bisphosphonates"
+          ]
+        },
+        "redFlags": [
+          "Vertebral fracture",
+          "Multiple fractures",
+          "Height loss >4cm",
+          "Diffuse bone pain"
+        ]
+      },
+      "medicamentos": [
+        "alendronato",
+        "vitamina-d",
+        "carbonato-calcio"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "frax"
+      ]
+    },
+    {
+      "id": "tendinite-ombro",
+      "titulo": "Rotator Cuff Syndrome",
+      "ciap2": [
+        "L92"
+      ],
+      "cid10": [
+        "M75"
+      ],
+      "cid11": [
+        "FA23.0"
+      ],
+      "categoria": "musculoskeletal",
+      "doid": "DOID:0080731",
+      "snomedCT": "239872009",
+      "meshId": "D000070636",
+      "umlsCui": "C0085551",
+      "quickView": {
+        "definicao": "Tendinopathy of the rotator cuff (most commonly supraspinatus). The main cause of shoulder pain in adults.",
+        "criteriosDiagnosticos": [
+          "Anterolateral shoulder pain",
+          "Painful arc (60-120° abduction)",
+          "Positive Jobe, Neer, and Hawkins tests",
+          "Difficulty sleeping on the affected side"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Relative rest (avoid overhead movements)",
+            "Physical therapy (strengthening and mobilization)",
+            "Cryotherapy"
+          ],
+          "farmacologico": [
+            "NSAIDs: Ibuprofen 400mg every 8 hours for 7-10 days",
+            "Analgesic as needed"
+          ]
+        },
+        "redFlags": [
+          "Acute trauma",
+          "Inability to raise the arm",
+          "Muscle atrophy",
+          "Paresthesias"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno",
+        "paracetamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "epicondilite-lateral",
+      "titulo": "Lateral Epicondylitis (Tennis Elbow)",
+      "ciap2": [
+        "L93"
+      ],
+      "cid10": [
+        "M77.1"
+      ],
+      "cid11": [
+        "FB53.2"
+      ],
+      "categoria": "musculoskeletal",
+      "doid": "DOID:9479",
+      "snomedCT": "202855006",
+      "meshId": "D013716",
+      "umlsCui": "C0039516",
+      "quickView": {
+        "definicao": "Tendinopathy of the insertion of the wrist extensors on the lateral epicondyle. A common cause of elbow pain.",
+        "criteriosDiagnosticos": [
+          "Pain at the lateral epicondyle",
+          "Worsening with gripping and wrist extension",
+          "Positive Cozen's test",
+          "Positive Mill's test"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Rest from the causative activity",
+            "Counterforce brace",
+            "Stretching and eccentric exercises"
+          ],
+          "farmacologico": [
+            "Topical NSAID: Diclofenac gel three times daily",
+            "Short-term oral NSAID if needed"
+          ]
+        },
+        "redFlags": [
+          "Joint locking",
+          "Instability",
+          "Palpable mass"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofen",
+        "diclofenac"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "fascite-plantar",
+      "titulo": "Plantar Fasciitis",
+      "ciap2": [
+        "L99"
+      ],
+      "cid10": [
+        "M72.2"
+      ],
+      "cid11": [
+        "FB06.1"
+      ],
+      "categoria": "musculoskeletal",
+      "doid": "DOID:0060041",
+      "snomedCT": "202882003",
+      "meshId": "D036981",
+      "umlsCui": "C0238698",
+      "quickView": {
+        "definicao": "Degeneration of the plantar fascia at its insertion on the calcaneus. The most common cause of heel pain. Peak incidence: 40-60 years.",
+        "criteriosDiagnosticos": [
+          "Medial heel pain",
+          "Worse with the first steps in the morning",
+          "Improves with light activity, worsens with prolonged activity",
+          "Pain on palpation of the medial calcaneal tuberosity"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Stretching of the plantar fascia and gastrocnemius",
+            "Arch support insoles",
+            "Local ice",
+            "Appropriate footwear"
+          ],
+          "farmacologico": [
+            "Short-term NSAIDs",
+            "Corticosteroid injection if refractory"
+          ]
+        },
+        "redFlags": [
+          "Nocturnal pain",
+          "Paresthesias",
+          "Erythema and edema",
+          "Fever"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofen"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "tendinite",
+      "titulo": "Tendinitis",
+      "ciap2": [
+        "L92"
+      ],
+      "cid10": [
+        "M65"
+      ],
+      "cid11": [
+        "FB51"
+      ],
+      "categoria": "musculoskeletal",
+      "doid": "DOID:13361",
+      "snomedCT": "42475007",
+      "meshId": "D052256",
+      "umlsCui": "C0039482",
+      "quickView": {
+        "definicao": "Inflammation of the tendon. Often due to overuse or trauma. Common sites include the shoulder, elbow, and wrist.",
+        "criteriosDiagnosticos": [
+          "Localized pain in the tendon",
+          "Pain worsened by movement",
+          "Local swelling",
+          "Functional limitation"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Relative rest",
+            "Ice for the first 48-72 hours",
+            "Physical therapy",
+            "Stretching"
+          ],
+          "farmacologico": [
+            "NSAIDs: Ibuprofen 400-600mg every 8 hours for 5-7 days",
+            "Local injection of corticosteroid if refractory"
+          ]
+        },
+        "redFlags": [
+          "Tendon rupture",
+          "Infection",
+          "Recurrent tendinitis"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "artrite-reumatoide",
+      "titulo": "Rheumatoid Arthritis",
+      "ciap2": [
+        "L88"
+      ],
+      "cid10": [
+        "M06"
+      ],
+      "cid11": [
+        "FA20"
+      ],
+      "categoria": "musculoskeletal",
+      "doid": "DOID:7148",
+      "snomedCT": "69896004",
+      "meshId": "D001172",
+      "umlsCui": "C0003873",
+      "tags": [
+        "chronic",
+        "autoimmune",
+        "rheumatological"
+      ],
+      "quickView": {
+        "definicao": "Symmetrical inflammatory polyarthritis. Systemic autoimmune disease. May have extra-articular manifestations.",
+        "criteriosDiagnosticos": [
+          "Symmetrical polyarthritis",
+          "Morning stiffness >1 hour",
+          "Positive rheumatoid factor or anti-CCP",
+          "Radiographic changes"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Physiotherapy",
+            "Occupational therapy",
+            "Adaptive exercises"
+          ],
+          "farmacologico": [
+            "MTX 7.5-25mg/week",
+            "Prednisone 5-10mg/day during induction",
+            "DMARDs as needed"
+          ]
+        },
+        "redFlags": [
+          "Vasculitis",
+          "Pulmonary complications",
+          "Amyloidosis",
+          "Rapid joint erosions"
+        ]
+      },
+      "medicamentos": [
+        "methotrexate",
+        "prednisone"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "lupus-eritematoso-sistemico",
+      "titulo": "Systemic Lupus Erythematosus",
+      "ciap2": [
+        "L99"
+      ],
+      "cid10": [
+        "M32"
+      ],
+      "cid11": [
+        "4A40"
+      ],
+      "categoria": "musculoskeletal",
+      "doid": "DOID:9074",
+      "snomedCT": "55464009",
+      "meshId": "D008180",
+      "umlsCui": "C0024141",
+      "tags": [
+        "chronic",
+        "autoimmune",
+        "systemic"
+      ],
+      "quickView": {
+        "definicao": "Systemic autoimmune disease. May affect skin, joints, kidneys, nervous system. More common in women.",
+        "criteriosDiagnosticos": [
+          "SLICC or ACR criteria",
+          "Malar rash",
+          "Photosensitivity",
+          "Antinuclear antibodies"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Sun protection",
+            "Rest during exacerbations"
+          ],
+          "farmacologico": [
+            "Hydroxychloroquine 200-400mg/day",
+            "Prednisone as per severity",
+            "Immunosuppressants if necessary"
+          ]
+        },
+        "redFlags": [
+          "Lupus nephritis",
+          "Neuropsychiatric lupus",
+          "Lupus flare",
+          "Severe thrombocytopenia"
+        ]
+      },
+      "medicamentos": [
+        "hydroxychloroquine",
+        "prednisone"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "espondilite-anquilosante",
+      "titulo": "Ankylosing Spondylitis",
+      "ciap2": [
+        "L88"
+      ],
+      "cid10": [
+        "M45"
+      ],
+      "cid11": [
+        "FA92.0"
+      ],
+      "categoria": "musculoskeletal",
+      "doid": "DOID:7149",
+      "snomedCT": "59670000",
+      "meshId": "D013167",
+      "umlsCui": "C0003879",
+      "tags": [
+        "chronic",
+        "autoimmune",
+        "rheumatological"
+      ],
+      "quickView": {
+        "definicao": "Seronegative spondyloarthritis. Chronic inflammation of the spine and sacroiliac joints. More common in young men.",
+        "criteriosDiagnosticos": [
+          "Inflammatory low back pain",
+          "Morning stiffness",
+          "Improvement with exercise",
+          "Radiographic sacroiliitis",
+          "Positive HLA-B27 (90%)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Physical therapy",
+            "Exercise",
+            "Correct posture"
+          ],
+          "farmacologico": [
+            "NSAIDs: Naproxen 500mg twice daily",
+            "Anti-TNF if no response"
+          ]
+        },
+        "redFlags": [
+          "Vertebral fracture",
+          "Severe kyphosis",
+          "Cardiac complications"
+        ]
+      },
+      "medicamentos": [
+        "naproxeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-sjogren",
+      "titulo": "Sjögren Syndrome",
+      "ciap2": [
+        "L99"
+      ],
+      "cid10": [
+        "M35.0"
+      ],
+      "cid11": [
+        "4A01.0"
+      ],
+      "categoria": "musculoskeletal",
+      "doid": "DOID:12858",
+      "snomedCT": "48271000",
+      "meshId": "D012859",
+      "umlsCui": "C0037243",
+      "tags": [
+        "chronic",
+        "autoimmune",
+        "systemic"
+      ],
+      "quickView": {
+        "definicao": "Autoimmune disease with dry mucous membranes. It can be primary or associated with other autoimmune diseases.",
+        "criteriosDiagnosticos": [
+          "Dry eye",
+          "Dry mouth",
+          "Positive anti-SSA/Ro or SSB/La",
+          "Salivary gland biopsy"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ocular lubricants",
+            "Artificial saliva",
+            "Hydration"
+          ],
+          "farmacologico": [
+            "Pilocarpine 5mg 3-4x/day",
+            "Hydroxychloroquine for systemic symptoms"
+          ]
+        },
+        "redFlags": [
+          "Lymphoma",
+          "Interstitial lung disease",
+          "Vasculitis"
+        ]
+      },
+      "medicamentos": [
+        "pilocarpine",
+        "hydroxychloroquine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

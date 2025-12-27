@@ -1,0 +1,862 @@
+{
+  "locale": "en",
+  "category": "metabolic",
+  "generatedAt": "2025-12-27T03:34:57.574Z",
+  "count": 6,
+  "diseases": [
+    {
+      "id": "diabetes-mellitus-2",
+      "titulo": "Type 2 Diabetes Mellitus (T2DM)",
+      "sinonimos": [
+        "Type 2 Diabetes",
+        "T2DM",
+        "Adult-Onset Diabetes"
+      ],
+      "doid": "DOID:9351",
+      "snomedCT": "44054006",
+      "meshId": "D003924",
+      "umlsCui": "C0011860",
+      "ciap2": [
+        "T90"
+      ],
+      "cid10": [
+        "E11"
+      ],
+      "categoria": "metabolic",
+      "quickView": {
+        "definicao": "A metabolic disorder characterized by chronic hyperglycemia resulting from defects in insulin secretion and/or action. It represents 90-95% of diabetes cases and is strongly associated with obesity and sedentary lifestyle.",
+        "criteriosDiagnosticos": [
+          "Fasting glucose ≥126 mg/dL (confirmed on 2 occasions)",
+          "2-hour post-OGTT 75g glucose ≥200 mg/dL",
+          "HbA1c ≥6.5% (certified method)",
+          "Casual glucose ≥200 mg/dL + classic symptoms (polyuria, polydipsia, weight loss)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Diet: caloric reduction if overweight, complex carbohydrates, fiber",
+            "Physical activity: 150 min/week aerobic + resistance 2-3x",
+            "Weight loss of 7-10% if overweight/obese",
+            "Diabetes education and self-monitoring",
+            "Smoking cessation"
+          ],
+          "farmacologico": [
+            "Metformin 500-2550mg/day (first line if GFR >30)",
+            "If HbA1c >7.5% or symptomatic: add second agent",
+            "SGLT2 inhibitors if CVD or CKD (empagliflozin, dapagliflozin)",
+            "GLP-1 agonists if obesity or CVD (semaglutide, liraglutide)",
+            "Insulin if HbA1c >10% or severe symptoms"
+          ]
+        },
+        "metasTerapeuticas": [
+          "HbA1c <7% (general)",
+          "HbA1c <6.5% if recently diagnosed, young, no hypoglycemia",
+          "HbA1c <8% if frail elderly, comorbidities, hypoglycemia risk",
+          "Fasting glucose 80-130 mg/dL",
+          "Postprandial glucose <180 mg/dL"
+        ],
+        "examesIniciais": [
+          "HbA1c (every 3-6 months)",
+          "Fasting glucose",
+          "Lipid profile (LDL, HDL, TG)",
+          "Creatinine and GFR",
+          "Urine albumin/creatinine ratio",
+          "Fundus examination",
+          "Foot examination (sensitivity, pulses)",
+          "ECG"
+        ],
+        "redFlags": [
+          "Diabetic ketoacidosis (glucose >250, ketonuria, acidosis)",
+          "Hyperosmolar hyperglycemic state (glucose >600, severe dehydration)",
+          "Severe hypoglycemia (<54 mg/dL with neurological symptoms)",
+          "Severe infection (infected diabetic foot, sepsis)",
+          "Acute coronary syndrome"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "9.4% of the Brazilian adult population (~16 million)",
+          "incidencia": "~500,000 new cases/year",
+          "mortalidade": "~70,000 deaths/year attributed to DM",
+          "faixaEtaria": "Peak 45-64 years, increasing in younger individuals",
+          "fatoresRisco": [
+            "Obesity/overweight (BMI ≥25)",
+            "Sedentary lifestyle",
+            "Family history of DM",
+            "Prediabetes (fasting glucose 100-125, OGTT 140-199, HbA1c 5.7-6.4%)",
+            "Previous gestational diabetes",
+            "Polycystic ovary syndrome",
+            "HTN, dyslipidemia",
+            "Use of corticosteroids, antipsychotics"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Often oligosymptomatic or asymptomatic",
+            "Polyuria (frequent urination)",
+            "Polydipsia (excessive thirst)",
+            "Unintentional weight loss",
+            "Fatigue",
+            "Blurred vision",
+            "Recurrent infections (candidiasis, UTIs)"
+          ],
+          "sinaisExameFisico": [
+            "Central obesity (increased waist circumference)",
+            "Acanthosis nigricans (neck, armpits)",
+            "Sensory changes in feet (neuropathy)",
+            "Diminished pedal pulses (PAD)",
+            "Retinopathy on fundus examination"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Fasting glucose ≥126 mg/dL (2 occasions or 1 + symptoms)",
+            "2-hour OGTT 75g glucose ≥200 mg/dL",
+            "HbA1c ≥6.5%",
+            "Casual glucose ≥200 + classic symptoms"
+          ],
+          "diagnosticoDiferencial": [
+            "Type 1 diabetes (autoimmune, absolute insulin deficiency)",
+            "LADA (late autoimmune diabetes)",
+            "MODY (genetic)",
+            "Secondary diabetes (pancreatitis, Cushing's, medications)"
+          ],
+          "examesLaboratoriais": [
+            "HbA1c, fasting glucose",
+            "Lipid profile",
+            "Creatinine, GFR, urine albumin/creatinine ratio",
+            "Transaminases",
+            "TSH"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Achieve and maintain individualized glycemic targets",
+            "Prevent micro and macrovascular complications",
+            "Reduce cardiovascular mortality",
+            "Improve quality of life"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Individualized nutritional therapy",
+              "Reduction of simple carbohydrates and sugar",
+              "Increase in fiber, vegetables, proteins",
+              "Physical activity: 150 min/week aerobic + resistance",
+              "Weight loss of 7-10% if overweight",
+              "Structured diabetes education",
+              "Capillary glucose self-monitoring"
+            ],
+            "citations": [
+              {
+                "refId": "sbd-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Biguanide",
+                "medicamentos": [
+                  "Metformin 500-2550mg/day"
+                ],
+                "posologia": "2-3x/day with meals (XR 1x/day)",
+                "observacoes": "Start with 500mg 1-2x/day, titrate every 1-2 weeks. Contraindicated: GFR <30, acidosis, dehydration"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "SGLT2 inhibitors",
+                "medicamentos": [
+                  "Empagliflozin 10-25mg/day",
+                  "Dapagliflozin 10mg/day"
+                ],
+                "observacoes": "Prefer if atherosclerotic CVD or HF or CKD. Contraindicated: GFR <20-25"
+              },
+              {
+                "classe": "GLP-1 agonist",
+                "medicamentos": [
+                  "Semaglutide 0.25-1mg SC/week",
+                  "Liraglutide 0.6-1.8mg SC/day"
+                ],
+                "observacoes": "Prefer if obesity or CVD. High cost, not available in SUS"
+              },
+              {
+                "classe": "Sulfonylurea",
+                "medicamentos": [
+                  "Glibenclamide 2.5-20mg/day",
+                  "Gliclazide MR 30-120mg/day"
+                ],
+                "observacoes": "Available in SUS. Risk of hypoglycemia and weight gain"
+              },
+              {
+                "classe": "Insulin",
+                "medicamentos": [
+                  "NPH 10 U at night",
+                  "Regular preprandial"
+                ],
+                "observacoes": "If HbA1c >10%, catabolic symptoms, failure of OADs"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Established CVD",
+                "conduta": "Prefer SGLT2 inhibitors or GLP-1 agonists with proven CV benefit"
+              },
+              {
+                "situacao": "HF",
+                "conduta": "SGLT2 inhibitors mandatory (empagliflozin, dapagliflozin)"
+              },
+              {
+                "situacao": "CKD",
+                "conduta": "SGLT2 inhibitors if GFR >20-25. Adjust metformin/suspend if GFR <30"
+              },
+              {
+                "situacao": "Frail elderly",
+                "conduta": "Target HbA1c <8%. Avoid sulfonylureas. Prefer DPP-4 inhibitors"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbd-2024"
+              }
+            ]
+          },
+          "duracao": "Continuous and progressive treatment"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Every 3-4 months if uncontrolled; 6 months if stable",
+          "examesControle": [
+            "HbA1c every 3-6 months",
+            "Lipid profile, creatinine, GFR, microalbuminuria: annually",
+            "Fundus examination: annually (every 2 years if no retinopathy and good control)",
+            "Foot examination: at each visit",
+            "ECG: annually if >40 years or risk factors"
+          ],
+          "metasTerapeuticas": [
+            "Individualized HbA1c (generally <7%)",
+            "BP <130/80 mmHg",
+            "LDL <100 mg/dL (or <70 if high CV risk)",
+            "Smoking cessation",
+            "Healthy weight"
+          ],
+          "criteriosEncaminhamento": [
+            "Diabetic retinopathy (to ophthalmology)",
+            "Diabetic foot with lesion/infection",
+            "CKD GFR <30 or progressive albuminuria",
+            "Refractory decompensation",
+            "Complex insulinization required"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Identification and treatment of prediabetes",
+            "Lifestyle change program",
+            "Metformin in high-risk prediabetes"
+          ],
+          "secundaria": [
+            "Adequate glycemic control",
+            "Screening and treatment of complications",
+            "Vaccination (influenza, pneumococcus, hepatitis B)"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-dm2",
+        "insulinizacao-dm2"
+      ],
+      "medicamentos": [
+        "metformina",
+        "glibenclamida",
+        "insulina-nph",
+        "empagliflozina"
+      ],
+      "calculadoras": [
+        "findrisc",
+        "ckdepi",
+        "framingham"
+      ],
+      "rastreamentos": [
+        "diabetes-mellitus-2"
+      ],
+      "citations": [
+        {
+          "refId": "sbd-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "metabolic",
+        "chronic",
+        "prevalent",
+        "dcnt"
+      ]
+    },
+    {
+      "id": "obesidade",
+      "titulo": "Obesity",
+      "sinonimos": [
+        "Excess weight",
+        "Overweight"
+      ],
+      "doid": "DOID:9970",
+      "snomedCT": "414916001",
+      "meshId": "D009765",
+      "umlsCui": "C0028754",
+      "ciap2": [
+        "T82",
+        "T83"
+      ],
+      "cid10": [
+        "E66",
+        "E66.0",
+        "E66.9"
+      ],
+      "cid11": [
+        "5B81"
+      ],
+      "categoria": "metabolic",
+      "quickView": {
+        "definicao": "A chronic disease characterized by excessive accumulation of body fat, with negative health consequences. Defined by BMI ≥30 kg/m².",
+        "criteriosDiagnosticos": [
+          "BMI ≥25 kg/m²: overweight",
+          "BMI ≥30 kg/m²: obesity grade I",
+          "BMI ≥35 kg/m²: obesity grade II",
+          "BMI ≥40 kg/m²: obesity grade III (morbid)",
+          "Waist circumference: >94cm (M) or >80cm (F) - increased risk"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Lifestyle modification (Lifestyle Changes) is the foundation of treatment",
+            "Hypocaloric diet (500-1000 kcal/day deficit)",
+            "Physical activity: 150-300 min/week of aerobic exercise",
+            "Cognitive-behavioral therapy",
+            "Nutritional support with a dietitian"
+          ],
+          "farmacologico": [
+            "Consider if BMI ≥30, or BMI ≥27 with comorbidity",
+            "After failure of lifestyle changes for 3-6 months",
+            "Options: Orlistate, Semaglutide, Liraglutide, Sibutramine (with restrictions)",
+            "Bariatric surgery if BMI ≥40 or ≥35 with severe comorbidity"
+          ]
+        },
+        "metasTerapeuticas": [
+          "5-10% weight loss in 6 months (clinically significant)",
+          "Improvement of comorbidities (DM, HTN, dyslipidemia)",
+          "Long-term weight maintenance",
+          "Improvement in quality of life"
+        ],
+        "examesIniciais": [
+          "Fasting glucose, HbA1c",
+          "Lipid profile",
+          "Liver function (steatosis)",
+          "TSH (to rule out hypothyroidism)",
+          "Renal function",
+          "Uric acid"
+        ],
+        "redFlags": [
+          "Rapid and unexplained weight gain",
+          "Cushing's syndrome (moon face, purple striae)",
+          "Severe sleep apnea",
+          "Idiopathic intracranial hypertension",
+          "Severe metabolic syndrome"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "30% of Brazilian adults (obesity), 55% overweight",
+          "incidencia": "Growing global pandemic",
+          "faixaEtaria": "All ages, increases in middle age",
+          "fatoresRisco": [
+            "Hypercaloric and ultra-processed diet",
+            "Sedentary lifestyle",
+            "Genetics (60-70% heritability)",
+            "Socioeconomic factors",
+            "Sleep disorders",
+            "Chronic stress",
+            "Medications (corticosteroids, antipsychotics, some antidepressants)"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Chronic imbalance between energy intake and expenditure, modulated by genetic, environmental, hormonal, and psychological factors. Adipose tissue is not inert: it secretes adipokines that promote low-grade chronic inflammation, insulin resistance, and metabolic dysfunction.",
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Visible excess weight",
+            "Dyspnea on exertion",
+            "Fatigue",
+            "Joint pain (knees, spine)",
+            "Snoring, sleep apnea",
+            "Low self-esteem"
+          ],
+          "sinaisExameFisico": [
+            "Elevated BMI",
+            "Increased waist circumference",
+            "Acanthosis nigricans (insulin resistance)",
+            "Striae",
+            "Edema of the lower extremities"
+          ],
+          "formasClinicas": [
+            "Android obesity (central/visceral): higher metabolic risk",
+            "Gynoid obesity (peripheral): lower metabolic risk"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "BMI ≥30 kg/m² (obesity)",
+            "Increased waist circumference",
+            "Evaluation of associated comorbidities"
+          ],
+          "diagnosticoDiferencial": [
+            "Edema (anasarca)",
+            "Hypothyroidism",
+            "Cushing's syndrome",
+            "Medication use",
+            "Rare genetic syndromes"
+          ],
+          "examesLaboratoriais": [
+            "Fasting glucose, HbA1c, OGTT",
+            "Complete lipid profile",
+            "Liver function, abdominal ultrasound (steatosis)",
+            "TSH",
+            "Renal function, uric acid",
+            "ECG, echocardiogram if indicated"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Sustained weight loss",
+            "Improvement of comorbidities",
+            "Prevention of complications",
+            "Improvement in quality of life"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Balanced hypocaloric diet (500-1000 kcal/day deficit)",
+              "Physical activity: 150-300 min/week aerobic + resistance",
+              "Cognitive-behavioral therapy",
+              "Multidisciplinary team follow-up"
+            ],
+            "citations": [
+              {
+                "refId": "abeso-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Lipase inhibitor",
+                "medicamentos": [
+                  "Orlistate"
+                ],
+                "posologia": "120mg three times daily with main meals"
+              },
+              {
+                "classe": "GLP-1 agonist",
+                "medicamentos": [
+                  "Semaglutide",
+                  "Liraglutide"
+                ],
+                "posologia": "Semaglutide SC: start at 0.25mg/week, titrate to 2.4mg/week"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "BMI ≥40 or ≥35 with severe comorbidity",
+                "conduta": "Evaluate for bariatric surgery"
+              },
+              {
+                "situacao": "Obesity + T2DM",
+                "conduta": "Prefer GLP-1 agonists or SGLT2 inhibitors"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "abeso-2022"
+              }
+            ]
+          },
+          "duracao": "Chronic treatment"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Monthly for the first 6 months, then every 3 months",
+          "examesControle": [
+            "Weight, BMI, waist circumference",
+            "Glucose, HbA1c",
+            "Lipid profile",
+            "Liver function"
+          ],
+          "metasTerapeuticas": [
+            "5-10% weight loss from initial weight is clinically significant",
+            "Maintenance of lost weight"
+          ],
+          "criteriosEncaminhamento": [
+            "Evaluation for bariatric surgery",
+            "Suspected secondary cause",
+            "Severe complications"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Healthy diet from childhood",
+            "Regular physical activity",
+            "Reduction of ultra-processed foods"
+          ],
+          "secundaria": [
+            "Early intervention in overweight",
+            "Treatment of comorbidities"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-obesidade"
+      ],
+      "medicamentos": [
+        "orlistate",
+        "semaglutide",
+        "liraglutide"
+      ],
+      "calculadoras": [
+        "imc",
+        "risco-cv"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "abeso-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "obesity",
+        "overweight",
+        "bmi",
+        "weight-loss",
+        "bariatric-surgery"
+      ]
+    },
+    {
+      "id": "nodulo-tireoide",
+      "titulo": "Thyroid Nodule",
+      "ciap2": [
+        "T81"
+      ],
+      "cid10": [
+        "E04"
+      ],
+      "cid11": [
+        "5A00.1"
+      ],
+      "categoria": "metabolic",
+      "doid": "DOID:50",
+      "snomedCT": "237495005",
+      "meshId": "D016606",
+      "umlsCui": "C0040137",
+      "quickView": {
+        "definicao": "Discrete lesions in the thyroid, very common (50% of the population by ultrasound). Most are benign. 5-15% are carcinomas.",
+        "criteriosDiagnosticos": [
+          "Palpable nodule or incidental finding on imaging",
+          "TSH to assess function",
+          "Thyroid ultrasound for characterization",
+          "Fine-needle aspiration biopsy if >1cm with suspicious features"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Observation if benign and small",
+            "Periodic follow-up with ultrasound"
+          ],
+          "farmacologico": [
+            "No pharmacological treatment for benign nodules",
+            "Levotiroxine does NOT suppress nodules"
+          ]
+        },
+        "redFlags": [
+          "Rapid growth",
+          "Hoarseness",
+          "Hard nodule",
+          "Cervical lymphadenopathy",
+          "Family history of thyroid cancer"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dislipidemia",
+      "titulo": "Dyslipidemia",
+      "sinonimos": [
+        "Hyperlipidemia",
+        "Hypercholesterolemia",
+        "Hypertriglyceridemia"
+      ],
+      "ciap2": [
+        "T93"
+      ],
+      "cid10": [
+        "E78.0",
+        "E78.1",
+        "E78.2",
+        "E78.5"
+      ],
+      "cid11": [
+        "5C80"
+      ],
+      "doid": "DOID:1168",
+      "snomedCT": "370992007",
+      "meshId": "D050171",
+      "umlsCui": "C0242339",
+      "categoria": "metabolic",
+      "quickView": {
+        "definicao": "Alteration in lipid metabolism with elevated LDL-c, triglycerides, and/or reduced HDL-c. The main modifiable risk factor for atherosclerotic cardiovascular disease.",
+        "criteriosDiagnosticos": [
+          "LDL-c ≥160 mg/dL (high) or ≥130 mg/dL (borderline)",
+          "HDL-c <40 mg/dL (men) or <50 mg/dL (women)",
+          "Triglycerides ≥150 mg/dL",
+          "Total cholesterol ≥240 mg/dL",
+          "Calculate cardiovascular risk (ASCVD, Framingham)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Mediterranean diet or DASH",
+            "Aerobic exercise 150 min/week",
+            "Weight loss if overweight/obese",
+            "Smoking cessation",
+            "Reduce alcohol"
+          ],
+          "farmacologico": [
+            "Statins: Simvastatin 20-40mg, Atorvastatin 10-80mg, Rosuvastatin 5-20mg",
+            "Target LDL-c according to risk: <70 (very high), <100 (high), <130 (moderate)",
+            "Ezetimibe 10mg if target not achieved with statin",
+            "Fibrate if TG >500 mg/dL"
+          ]
+        },
+        "redFlags": [
+          "Xanthomas",
+          "Corneal arcus <45 years",
+          "Family history of early CV event",
+          "Pancreatitis (TG>1000)"
+        ],
+        "metasTerapeuticas": [
+          "Reduction of 30-50% in LDL-c or absolute target according to risk"
+        ],
+        "examesIniciais": [
+          "Fasting lipid profile",
+          "Glucose",
+          "Creatinine",
+          "TSH",
+          "AST/ALT"
+        ]
+      },
+      "protocolos": [
+        "has",
+        "dm2"
+      ],
+      "medicamentos": [
+        "sinvastatina",
+        "atorvastatina",
+        "rosuvastatina"
+      ],
+      "calculadoras": [
+        "risco-cardiovascular"
+      ],
+      "tags": [
+        "cardiovascular",
+        "prevention",
+        "statin"
+      ]
+    },
+    {
+      "id": "deficiencia-vitamina-d",
+      "titulo": "Vitamin D Deficiency",
+      "sinonimos": [
+        "Hypovitaminosis D",
+        "Vitamin D Insufficiency"
+      ],
+      "ciap2": [
+        "T91"
+      ],
+      "cid10": [
+        "E55.9"
+      ],
+      "cid11": [
+        "5B57.4"
+      ],
+      "doid": "DOID:10609",
+      "snomedCT": "34713006",
+      "meshId": "D014808",
+      "umlsCui": "C0042870",
+      "categoria": "metabolic",
+      "quickView": {
+        "definicao": "Insufficient levels of 25(OH)D associated with bone impairment and possible extraskeletal effects. Prevalence >50% in some populations.",
+        "criteriosDiagnosticos": [
+          "25(OH)D <20 ng/mL: Deficiency",
+          "25(OH)D 20-29 ng/mL: Insufficiency",
+          "25(OH)D ≥30 ng/mL: Sufficiency",
+          "Screen risk groups: elderly, obese, dark-skinned, low sun exposure"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Moderate sun exposure (10-15 min/day)",
+            "Fortified foods",
+            "Fatty fish, egg yolk"
+          ],
+          "farmacologico": [
+            "Deficiency: Colecalciferol 50,000 IU/week for 8 weeks",
+            "Maintenance: 1,000-2,000 IU/day",
+            "Elderly/obese may require higher doses"
+          ]
+        },
+        "redFlags": [
+          "Symptomatic hypocalcemia",
+          "Fragility fractures",
+          "Osteomalacia"
+        ],
+        "metasTerapeuticas": [
+          "25(OH)D ≥30 ng/mL"
+        ],
+        "examesIniciais": [
+          "Serum 25(OH)D",
+          "Calcium, phosphorus",
+          "PTH",
+          "Creatinine"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "colecalciferol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "bone",
+        "supplementation",
+        "screening"
+      ]
+    },
+    {
+      "id": "hiperuricemia-assintomatica",
+      "titulo": "Asymptomatic Hyperuricemia",
+      "sinonimos": [
+        "Elevated uric acid"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E79.0"
+      ],
+      "cid11": [
+        "5C64.0"
+      ],
+      "doid": "DOID:9245",
+      "snomedCT": "35885006",
+      "meshId": "D033461",
+      "umlsCui": "C0740394",
+      "categoria": "metabolic",
+      "quickView": {
+        "definicao": "Elevated serum uric acid (>7 mg/dL in men, >6 mg/dL in women) without a history of gout or urate nephrolithiasis.",
+        "criteriosDiagnosticos": [
+          "Uric acid >7 mg/dL (M) or >6 mg/dL (F)",
+          "Absence of gouty arthritis",
+          "Absence of urate nephrolithiasis",
+          "Evaluate comorbidities: hypertension, chronic kidney disease, metabolic syndrome"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Weight reduction",
+            "Limit alcohol (especially beer)",
+            "Avoid sugary drinks",
+            "Reduce red meat and offal",
+            "Increase low-fat dairy"
+          ],
+          "farmacologico": [
+            "DO NOT treat based on uric acid level alone",
+            "Consider treatment if: progressive chronic kidney disease, very high cardiovascular risk",
+            "If indicated: Alopurinol 100mg, titrate to target",
+            "Febuxostat as an alternative"
+          ]
+        },
+        "redFlags": [
+          "First episode of gout",
+          "Urate nephrolithiasis",
+          "Urate nephropathy",
+          "Tumor lysis syndrome"
+        ],
+        "metasTerapeuticas": [
+          "Uric acid <6 mg/dL if treated"
+        ],
+        "examesIniciais": [
+          "Serum uric acid",
+          "Creatinine",
+          "Lipid profile",
+          "Blood glucose",
+          "Complete blood count"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "alopurinol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "gout",
+        "renal",
+        "metabolic"
+      ]
+    }
+  ]
+}
