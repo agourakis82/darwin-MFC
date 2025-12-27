@@ -1,0 +1,158 @@
+{
+  "locale": "fr",
+  "category": "infeccieuses",
+  "generatedAt": "2025-12-27T22:46:44.904Z",
+  "count": 3,
+  "diseases": [
+    {
+      "id": "herpes-simples",
+      "titulo": "Herpes Simple",
+      "ciap2": [
+        "S71"
+      ],
+      "cid10": [
+        "B00"
+      ],
+      "cid11": [
+        "1F00"
+      ],
+      "categoria": "infeccieuses",
+      "doid": "DOID:8566",
+      "snomedCT": "88594005",
+      "meshId": "D006561",
+      "umlsCui": "C0019348",
+      "quickView": {
+        "definicao": "Infection virale récurrente par HSV-1 (labial) ou HSV-2 (génital). Latence dans les ganglions nerveux avec réactivations.",
+        "criteriosDiagnosticos": [
+          "Vesicules groupées sur une base érythémateuse",
+          "Précurseurs : picotements, brûlures",
+          "Évolue vers des croûtes en 7-10 jours"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éviter le contact pendant la phase active",
+            "Éviter les facteurs déclencheurs (soleil, stress)"
+          ],
+          "farmacologico": [
+            "Épisode : Aciclovir 400mg 3 fois par jour pendant 5 jours",
+            "Suppression (≥6 récurrences/an) : Aciclovir 400mg 2 fois par jour continu"
+          ]
+        },
+        "redFlags": [
+          "Herpès oculaire",
+          "Herpès eczémateux",
+          "Herpès disséminé (immunodéprimé)"
+        ]
+      },
+      "medicamentos": [
+        "aciclovir"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gastroenterite-aguda",
+      "titulo": "Gastro-entérite aiguë",
+      "ciap2": [
+        "D70"
+      ],
+      "cid10": [
+        "A09"
+      ],
+      "cid11": [
+        "1A40"
+      ],
+      "categoria": "infeccieuses",
+      "doid": "DOID:4194",
+      "snomedCT": "235856003",
+      "meshId": "D005759",
+      "umlsCui": "C0017163",
+      "quickView": {
+        "definicao": "Inflammation du tractus gastro-intestinal causée par des virus (rotavirus, norovirus), des bactéries ou des parasites. Durée <2 semaines.",
+        "criteriosDiagnosticos": [
+          "Diarrhée aiguë (<14 jours)",
+          "Vomissements",
+          "Nausées",
+          "Douleurs abdominales",
+          "Fièvre peut être présente"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation orale (SRO)",
+            "Régime léger",
+            "Repos"
+          ],
+          "farmacologico": [
+            "ATB uniquement si : choléra, shigellose, amibiase, ou facteurs de risque",
+            "Antiemétique si nécessaire : ondansétron (éviter chez les enfants <4 ans)"
+          ]
+        },
+        "redFlags": [
+          "Déshydratation sévère",
+          "Signes de choc",
+          "Sang dans les selles",
+          "Personnes âgées ou jeunes enfants"
+        ]
+      },
+      "medicamentos": [
+        "soro-oral"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hepatite-e",
+      "titulo": "Hépatite E",
+      "ciap2": [
+        "D72"
+      ],
+      "cid10": [
+        "B17.2"
+      ],
+      "cid11": [
+        "1E50.0"
+      ],
+      "categoria": "infeccieuses",
+      "doid": "DOID:12476",
+      "snomedCT": "240530008",
+      "meshId": "D006526",
+      "umlsCui": "C0019160",
+      "hpo": [
+        "HP:0002920",
+        "HP:0002901"
+      ],
+      "tags": [
+        "infectieuse",
+        "virale",
+        "hépatite"
+      ],
+      "quickView": {
+        "definicao": "Infection par le virus de l'hépatite E (VHE). Transmission fécale-orale. Peut être grave pendant la grossesse.",
+        "criteriosDiagnosticos": [
+          "Anti-VHE IgM positif",
+          "VHE ARN positif",
+          "Élévation des transaminases"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Soutien",
+            "Repos",
+            "Hydratation"
+          ],
+          "farmacologico": [
+            "Symptomatique uniquement",
+            "Ribavirine en cas graves/transplantation"
+          ]
+        },
+        "redFlags": [
+          "Insuffisance hépatique fulminante",
+          "Grossesse (mortalité élevée)",
+          "Immunodéprimés"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

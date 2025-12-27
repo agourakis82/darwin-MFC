@@ -1,0 +1,2870 @@
+{
+  "locale": "fr",
+  "category": "cardiovasculaire",
+  "generatedAt": "2025-12-27T22:46:44.903Z",
+  "count": 21,
+  "diseases": [
+    {
+      "id": "hipertensao-arterial",
+      "titulo": "Hypertension Artérielle Systémique (HAS)",
+      "sinonimos": [
+        "Pression élevée",
+        "HAS",
+        "Hypertension"
+      ],
+      "doid": "DOID:10763",
+      "snomedCT": "38341003",
+      "meshId": "D006973",
+      "umlsCui": "C0020538",
+      "ciap2": [
+        "K86",
+        "K87"
+      ],
+      "cid10": [
+        "I10",
+        "I11",
+        "I12",
+        "I13"
+      ],
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Condition clinique multifactorielle caractérisée par une élévation soutenue des niveaux pressionnels ≥140/90 mmHg. Elle est le principal facteur de risque modifiable pour les maladies cardiovasculaires, cérébrovasculaires et rénales.",
+        "criteriosDiagnosticos": [
+          "PA de consultation ≥140/90 mmHg en 2 ou plus d'occasions distinctes",
+          "MAPA : moyenne 24h ≥130/80 mmHg, veille ≥135/85 mmHg, sommeil ≥120/70 mmHg",
+          "MRPA : moyenne ≥130/80 mmHg (7 jours, 2 mesures/jour)",
+          "Éliminer l'hypertension du jaleco blanc et masquée"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Réduction de sodium (<2g/jour ou 5g de sel/jour)",
+            "Régime DASH (fruits, légumes, laitages écrémés)",
+            "Activité physique : 150 min/semaine (modérée) ou 75 min (intense)",
+            "Perte de poids si IMC >25 (objectif : perte de 5-10%)",
+            "Modération de l'alcool (≤2 doses/jour pour les hommes, ≤1 pour les femmes)",
+            "Cessation du tabagisme"
+          ],
+          "farmacologico": [
+            "IECA (Enalapril 5-20mg 12/12h) ou BRA (Losartan 50-100mg/jour)",
+            "BCC (Amlodipine 5-10mg/jour)",
+            "Diurétique thiazidique (HCTZ 12,5-25mg/jour ou Chlortalidone 12,5-25mg)",
+            "Combinaisons préférées : IECA/BRA + BCC ou IECA/BRA + Diurétique",
+            "Éviter la monothérapie en stade 2 ou risque CV élevé"
+          ]
+        },
+        "metasTerapeuticas": [
+          "PA <140/90 mmHg (général)",
+          "PA <130/80 mmHg si risque CV élevé, DM ou IRC",
+          "PA <130/80 mmHg chez les personnes âgées vigoureuses (<80 ans)",
+          "PA <150/90 mmHg chez les personnes âgées fragiles (>80 ans)"
+        ],
+        "examesIniciais": [
+          "Glycémie à jeun et HbA1c",
+          "Créatinine et DFG (CKD-EPI)",
+          "Potassium sérique",
+          "Profil lipidique (CT, LDL, HDL, TG)",
+          "Acide urique",
+          "Examen d'urine (EAS) et rapport albumine/créatinine",
+          "ECG au repos"
+        ],
+        "redFlags": [
+          "PA ≥180/120 mmHg avec symptômes (céphalées intenses, altération visuelle, dyspnée)",
+          "Suspicion d'HAS secondaire (début <30 ans, réfractaire, hypokaliémie)",
+          "Lésion d'organe cible aiguë (IAM, AVC, EAP, dissection)",
+          "Grossesse avec PA ≥140/90 mmHg"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "32% de la population adulte brésilienne",
+          "incidencia": "~500 000 nouveaux cas/an",
+          "mortalidade": "~300 000 décès CV/an (principal FR)",
+          "faixaEtaria": "Augmente progressivement avec l'âge (>60% chez les >65 ans)",
+          "fatoresRisco": [
+            "Âge avancé",
+            "Antécédents familiaux d'HAS",
+            "Ethnie noire",
+            "Excès de sodium",
+            "Obésité/surpoids",
+            "Sédentarité",
+            "Consommation excessive d'alcool",
+            "Stress chronique"
+          ],
+          "citations": [
+            {
+              "refId": "vigitel-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Frequemment asymptomatique (\"assassine silencieuse\")",
+            "Céphalées occipitales (généralement matinales)",
+            "Vertiges",
+            "Épistaxis (non spécifique)",
+            "Dyspnée à l'effort (si ICC)",
+            "Altérations visuelles (si rétinopathie)"
+          ],
+          "sinaisExameFisico": [
+            "PA élevée dans les deux bras",
+            "Souffles abdominaux (HAS rénovasculaire)",
+            "Pouls fémoraux diminués (coarctation)",
+            "Fond d'œil altéré (rétinopathie)",
+            "B4 (surcharge ventriculaire)",
+            "Oedème des MMII (si ICC)"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "PA ≥140/90 mmHg en 2+ consultations avec technique adéquate",
+            "MAPA ou MRPA pour confirmation (exclure le jaleco blanc)",
+            "Classification : Optimal (<120/80), Normal (120-129/80-84), Pré-HAS (130-139/85-89)",
+            "Stades : 1 (140-159/90-99), 2 (160-179/100-109), 3 (≥180/110)"
+          ],
+          "diagnosticoDiferencial": [
+            "Hypertension du jaleco blanc",
+            "Hypertension masquée",
+            "HAS secondaire (rénale, endocrinienne, médicamenteuse)",
+            "Syndrome d'apnée du sommeil"
+          ],
+          "examesLaboratoriais": [
+            "Glycémie à jeun, HbA1c, créatinine, potassium, acide urique",
+            "Profil lipidique, EAS, microalbuminurie"
+          ],
+          "outrosExames": [
+            "ECG au repos",
+            "Échocardiogramme si suspicion de cardiopathie",
+            "USG rénale si suspicion d'HAS secondaire"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Réduire la morbi-mortalité CV",
+            "Atteindre les objectifs pressionnels individualisés",
+            "Contrôler les facteurs de risque associés",
+            "Prévenir/régresser les lésions d'organe cible"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Régime DASH : riche en fruits, légumes, céréales complètes, laitages écrémés",
+              "Restriction de sodium : <2g/jour (5g de sel)",
+              "Activité physique aérobie : 150 min/semaine modérée",
+              "Exercice de résistance : 2-3x/semaine",
+              "Perte de poids : objectif 5-10% si surpoids/obésité",
+              "Modération de l'alcool",
+              "Contrôle du stress"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-has-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "IECA",
+                "medicamentos": [
+                  "Enalapril 5-40mg/jour",
+                  "Captopril 25-150mg/jour",
+                  "Ramipril 2,5-10mg/jour"
+                ],
+                "posologia": "1-2x/jour",
+                "observacoes": "Toux sèche chez 5-20%. CI : grossesse, K>5,5, sténose rénale bilatérale"
+              },
+              {
+                "classe": "BRA",
+                "medicamentos": [
+                  "Losartan 50-100mg/jour",
+                  "Valsartan 80-320mg/jour"
+                ],
+                "posologia": "1x/jour",
+                "observacoes": "Alternative en cas d'intolérance aux IECA"
+              },
+              {
+                "classe": "BCC",
+                "medicamentos": [
+                  "Amlodipine 5-10mg/jour",
+                  "Nifédipine Retard 20-60mg/jour"
+                ],
+                "posologia": "1x/jour",
+                "observacoes": "Oedème des MMII dose-dépendant"
+              },
+              {
+                "classe": "Diurétique thiazidique",
+                "medicamentos": [
+                  "HCTZ 12,5-25mg/jour",
+                  "Chlortalidone 12,5-25mg/jour",
+                  "Indapamide 1,5mg/jour"
+                ],
+                "posologia": "1x/jour le matin",
+                "observacoes": "Surveiller K+, glycémie, acide urique"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Bétabloquant",
+                "medicamentos": [
+                  "Aténolol 25-100mg/jour",
+                  "Carvedilol 12,5-50mg/jour",
+                  "Métoprolol 50-200mg/jour"
+                ],
+                "observacoes": "Préférer en cas d'ICC, FA, post-IAM. Éviter en cas de DPOC décompensée"
+              },
+              {
+                "classe": "Épargneur de potassium",
+                "medicamentos": [
+                  "Spironolactone 25-50mg/jour"
+                ],
+                "observacoes": "HAS réfractaire. Surveiller K+"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Diabète",
+                "conduta": "IECA ou BRA (néphroprotection). Objectif <130/80"
+              },
+              {
+                "situacao": "IRC",
+                "conduta": "IECA ou BRA si albuminurie. Objectif <130/80"
+              },
+              {
+                "situacao": "ICC FEr",
+                "conduta": "IECA/BRA + BB + iSGLT2"
+              },
+              {
+                "situacao": "Grossesse",
+                "conduta": "Méthylodopa, Nifédipine, Labetalol. CI : IECA, BRA"
+              },
+              {
+                "situacao": "Noir",
+                "conduta": "BCC ou thiazidique comme 1ère ligne (meilleure réponse)"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbc-has-2020"
+              }
+            ]
+          },
+          "duracao": "Traitement continu. Arrêt uniquement dans des cas sélectionnés (MEV réussie, HAS initiale légère)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Mensuelle jusqu'à contrôle, ensuite trimestrielle/semestrielle",
+          "examesControle": [
+            "Créatinine et K+ (1-2 semaines après l'initiation/ajustement des IECA/BRA/diurétiques)",
+            "Profil lipidique, glycémie : annuelle",
+            "Microalbuminurie : annuelle si DM ou IRC"
+          ],
+          "metasTerapeuticas": [
+            "PA <140/90 mmHg (général)",
+            "PA <130/80 mmHg si risque élevé, DM, IRC",
+            "Contrôle du DM, dyslipidémie, tabagisme"
+          ],
+          "criteriosEncaminhamento": [
+            "HAS réfractaire (non contrôlée avec 3 médicaments incluant un diurétique)",
+            "Suspicion d'HAS secondaire",
+            "Lésion d'organe cible avancée",
+            "IRC DFG <30 mL/min",
+            "Urgences hypertensives"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Alimentation saine dès l'enfance",
+            "Maintien d'un poids approprié",
+            "Activité physique régulière",
+            "Modération du sodium et de l'alcool",
+            "Ne pas commencer à fumer"
+          ],
+          "secundaria": [
+            "Adhésion au traitement",
+            "Automonitorisation de la PA",
+            "Contrôle des facteurs de risque associés"
+          ],
+          "citations": [
+            {
+              "refId": "ms-cab-37-2013"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-has",
+        "estratificacao-rcv"
+      ],
+      "medicamentos": [
+        "losartan",
+        "enalapril",
+        "amlodipine",
+        "hctz",
+        "atenolol"
+      ],
+      "calculadoras": [
+        "framingham",
+        "score",
+        "ckdepi"
+      ],
+      "rastreamentos": [
+        "hipertensao-arterial"
+      ],
+      "citations": [
+        {
+          "refId": "sbc-has-2020"
+        },
+        {
+          "refId": "ms-cab-37-2013"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "cardiovasculaire",
+        "chronique",
+        "prévalente",
+        "dcnt"
+      ]
+    },
+    {
+      "id": "insuficiencia-cardiaca",
+      "titulo": "Insuffisance cardiaque",
+      "sinonimos": [
+        "IC",
+        "ICC",
+        "Insuffisance cardiaque congestive"
+      ],
+      "doid": "DOID:6000",
+      "snomedCT": "84114007",
+      "meshId": "D006333",
+      "umlsCui": "C0018801",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "I50",
+        "I50.0",
+        "I50.1",
+        "I50.9"
+      ],
+      "cid11": [
+        "BD10"
+      ],
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Syndrome clinique caractérisée par l'incapacité du cœur à pomper suffisamment de sang pour répondre aux besoins métaboliques des tissus, ou à le faire uniquement avec des pressions de remplissage élevées.",
+        "criteriosDiagnosticos": [
+          "Symptômes typiques : dyspnée, orthopnée, DPN, fatigue, œdème des MMII",
+          "Signes : turgescence jugulaire, hépatomégalie, râles pulmonaires",
+          "Preuve objective de dysfonction cardiaque (échocardiographie)",
+          "Critères de Framingham : 2 majeurs OU 1 majeur + 2 mineurs"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Restriction de sodium (<2g/jour)",
+            "Restriction hydrique si hyponatrémie (<1,5L/jour)",
+            "Activité physique supervisée (réadaptation cardiaque)",
+            "Cessation du tabagisme et de l'alcool",
+            "Vaccination (grippe, pneumocoque)"
+          ],
+          "farmacologico": [
+            "IECA ou BRA (ex: Enalapril 2,5-20mg 12/12h)",
+            "Bétabloquant (ex: Carvedilol 3,125-25mg 12/12h)",
+            "Diurétique de boucle en cas de congestion (Furosemide 20-80mg/jour)",
+            "Spironolactone 25-50mg/jour si FEVG ≤35%"
+          ]
+        },
+        "metasTerapeuticas": [
+          "FEVG : stabilisation ou amélioration",
+          "Classe fonctionnelle NYHA : amélioration d'au moins 1 classe",
+          "PA adéquate, FC 60-70 bpm",
+          "Euvolémie (sans œdème, poids sec)",
+          "Réduction des hospitalisations"
+        ],
+        "examesIniciais": [
+          "Échocardiographie transtoracique",
+          "ECG",
+          "Radiographie de thorax",
+          "Hémogramme, fonction rénale, électrolytes",
+          "BNP ou NT-proBNP",
+          "Profil lipidique, glycémie, TSH"
+        ],
+        "redFlags": [
+          "Hypotension symptomatique (PAS <90)",
+          "Choc cardiogénique",
+          "Œdème aigu pulmonaire",
+          "Arrythmies graves (FA, TVNS)",
+          "Syncope",
+          "Détérioration rapide de la classe fonctionnelle"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2% de la population adulte, augmente avec l'âge (>10% chez les >70 ans)",
+          "incidencia": "2-5 nouveaux cas/1000 personnes-année",
+          "faixaEtaria": "Plus courante >65 ans",
+          "fatoresRisco": [
+            "Hypertension artérielle (principale)",
+            "Maladie coronarienne",
+            "Diabète de type 2",
+            "Obésité",
+            "Valvulopathies",
+            "Cardiomyopathies",
+            "Tabagisme, alcoolisme"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Dysfonction systolique (FEVG réduite) ou diastolique (FEVG préservée) entraîne une activation neuro-hormonale compensatoire (SRAA, système sympathique), un remodelage cardiaque progressif et une congestion systémique/pulmonaire.",
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dyspnée d'effort (progressive)",
+            "Orthopnée",
+            "Dyspnée paroxystique nocturne (DPN)",
+            "Fatigue et intolérance à l'effort",
+            "Œdème des membres inférieurs",
+            "Gain de poids (rétention hydrique)"
+          ],
+          "sinaisExameFisico": [
+            "Turgescence jugulaire à 45°",
+            "Réflexe hépatojugulaire",
+            "Râles pulmonaires basculaires",
+            "B3 (galop)",
+            "Hépatomégalie douloureuse",
+            "Œdème des MMII avec creux de pression"
+          ],
+          "formasClinicas": [
+            "ICFEr (FEVG <40%) : IC systolique",
+            "ICFEi (FEVG 40-49%) : IC intermédiaire",
+            "ICFEp (FEVG ≥50%) : IC diastolique"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Critères de Framingham",
+            "Échocardiographie avec FEVG et fonction diastolique",
+            "BNP >100 pg/mL ou NT-proBNP >300 pg/mL"
+          ],
+          "diagnosticoDiferencial": [
+            "MPOC",
+            "Pneumonie",
+            "Embolie pulmonaire",
+            "Insuffisance rénale avec hypervolémie",
+            "Cirrhose hépatique avec ascite",
+            "Syndrome néphrotique"
+          ],
+          "examesLaboratoriais": [
+            "BNP/NT-proBNP",
+            "Hémogramme, fonction rénale, électrolytes",
+            "Hépatogramme",
+            "Profil lipidique, glycémie, HbA1c",
+            "Ferritine, saturation de transferrine"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Soulager les symptômes et améliorer la qualité de vie",
+            "Réduire la mortalité et les hospitalisations",
+            "Prévenir la progression du remodelage"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Éducation sur l'IC et l'autocoinvocation",
+              "Surveillance quotidienne du poids",
+              "Restriction de sodium et de liquides",
+              "Réadaptation cardiaque",
+              "Vaccination annuelle"
+            ],
+            "citations": [
+              {
+                "refId": "diretriz-ic-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "IECA/BRA",
+                "medicamentos": [
+                  "Enalapril",
+                  "Losartan"
+                ],
+                "posologia": "Enalapril 2,5-20mg 12/12h | Losartan 25-100mg/jour"
+              },
+              {
+                "classe": "Bétabloquant",
+                "medicamentos": [
+                  "Carvedilol",
+                  "Bisoprolol",
+                  "Metoprolol succinate"
+                ],
+                "posologia": "Carvedilol 3,125-25mg 12/12h (titrer lentement)"
+              },
+              {
+                "classe": "Antagoniste minéralcorticoïde",
+                "medicamentos": [
+                  "Spironolactone"
+                ],
+                "posologia": "25-50mg/jour si FEVG ≤35% et symptomatique"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Congestion",
+                "conduta": "Furosemide 20-80mg/jour PO ou IV"
+              },
+              {
+                "situacao": "FA avec RVR",
+                "conduta": "Contrôle de la fréquence avec bétabloquant ou digoxine"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "diretriz-ic-2021"
+              }
+            ]
+          },
+          "duracao": "Traitement continu pour toute la vie"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Mensuelle jusqu'à stabilisation, ensuite tous les 3-6 mois",
+          "examesControle": [
+            "Fonction rénale et électrolytes (1-2 semaines après ajustement de l'IECA/diurétique)",
+            "BNP/NT-proBNP si disponible",
+            "Échocardiographie annuelle ou en cas de détérioration clinique"
+          ],
+          "metasTerapeuticas": [
+            "Classe NYHA I-II",
+            "Poids sec stable",
+            "Aucune hospitalisation"
+          ],
+          "criteriosEncaminhamento": [
+            "FEVG <30%",
+            "IC avancée (NYHA III-IV réfractaire)",
+            "Considérer l'implantation d'un CDI/TRC",
+            "Évaluation pour transplantation"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Contrôle de l'HAT, DM, dyslipidémie",
+            "Cessation du tabagisme",
+            "Activité physique régulière"
+          ],
+          "secundaria": [
+            "Adhésion au traitement médicamenteux",
+            "Surveillance quotidienne du poids",
+            "Diète hyposodée"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-ic"
+      ],
+      "medicamentos": [
+        "enalapril",
+        "losartan",
+        "carvedilol",
+        "furosemide",
+        "spironolactone"
+      ],
+      "calculadoras": [
+        "nyha",
+        "ckd-epi"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "diretriz-ic-2021"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "ic",
+        "insuffisance-cardiaque",
+        "dyspnée",
+        "œdème",
+        "cardiopathie"
+      ]
+    },
+    {
+      "id": "fibrilacao-atrial",
+      "titulo": "Fibrillation Atriale",
+      "sinonimos": [
+        "FA",
+        "Trouble du rythme",
+        "Fibrillation auriculaire"
+      ],
+      "doid": "DOID:0060224",
+      "snomedCT": "49436004",
+      "meshId": "D001281",
+      "umlsCui": "C0004238",
+      "ciap2": [
+        "K78"
+      ],
+      "cid10": [
+        "I48",
+        "I48.0",
+        "I48.1",
+        "I48.9"
+      ],
+      "cid11": [
+        "BC81.1"
+      ],
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Trouble du rythme supraventriculaire caractérisé par une activation atriale désorganisée, irrégulière et rapide, avec perte de la contraction atriale efficace. C'est le trouble du rythme soutenu le plus courant.",
+        "criteriosDiagnosticos": [
+          "ECG : absence d'onde P, présence d'ondes f irrégulières",
+          "Intervalles RR irrégulièrement irréguliers",
+          "Fréquence atriale 350-600 bpm",
+          "Peut être paroxystique, persistante ou permanente"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Contrôle des facteurs précipitants (alcool, caféine)",
+            "Traitement des causes réversibles (hyperthyroïdie)",
+            "Perte de poids en cas d'obésité",
+            "Traitement de l'apnée du sommeil"
+          ],
+          "farmacologico": [
+            "Contrôle de la fréquence : bêta-bloquant (Atenolol 25-100mg/jour) ou BCC (Diltiazem)",
+            "Anticoagulation si CHA2DS2-VASc ≥2 (hommes) ou ≥3 (femmes)",
+            "Varfarine (INR 2-3) ou ACOD (Rivaroxabane, Apixabane)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "FC au repos 60-110 bpm",
+          "Anticoagulation adéquate (INR 2-3 ou adhérence à l'ACOD)",
+          "Prévention de l'AVC et des événements thromboemboliques",
+          "Contrôle des symptômes"
+        ],
+        "examesIniciais": [
+          "ECG de 12 dérivations",
+          "Échocardiographie transthoracique",
+          "TSH",
+          "Fonction rénale, électrolytes",
+          "Hémogramme",
+          "Holter 24h si paroxystique"
+        ],
+        "redFlags": [
+          "FA avec RVR et instabilité hémodynamique",
+          "Signes d'AVC/AIT",
+          "Syncope",
+          "Douleur thoracique suggestive de SCV",
+          "IC décompensée",
+          "Pré-excitation (WPW + FA)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2-4% de la population adulte, augmente avec l'âge",
+          "incidencia": "Double chaque décennie après 55 ans",
+          "faixaEtaria": "Rare avant 50 ans, courante >75 ans",
+          "fatoresRisco": [
+            "Âge avancé",
+            "Hypertension artérielle",
+            "Maladie valvulaire (principalement mitrale)",
+            "IC, CAD",
+            "Diabète de type 2",
+            "Obésité",
+            "Apnée obstructive du sommeil",
+            "Hyperthyroïdie",
+            "Consommation excessive d'alcool"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Multiples circuits de réentrée dans les oreillettes, souvent initiés par des foyers ectopiques dans les veines pulmonaires. Le remodelage atrial électrique et structurel perpétue le trouble du rythme. L'asystole atriale prédispose à la formation de caillots, principalement dans l'appendice auriculaire gauche.",
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Palpitations irrégulières",
+            "Dyspnée à l'effort",
+            "Fatigue",
+            "Vertiges",
+            "Malaise thoracique",
+            "Peut être asymptomatique (30%)"
+          ],
+          "sinaisExameFisico": [
+            "Pouls irrégulier et généralement rapide",
+            "Déficit de pouls (FC apicale > FC radiale)",
+            "Variation de l'intensité de S1",
+            "Absence d'onde a au pouls jugulaire"
+          ],
+          "formasClinicas": [
+            "Paroxystique : épisodes <7 jours, autolimités",
+            "Persistante : >7 jours ou nécessitant une cardioversion",
+            "Persistante de longue durée : >1 an",
+            "Permanente : acceptée, sans tentative de restauration du rythme"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "ECG avec rythme irrégulièrement irrégulier",
+            "Absence d'ondes P définies",
+            "Ondes f de fibrillation (mieux visibles en V1)"
+          ],
+          "diagnosticoDiferencial": [
+            "Flutter atrial",
+            "Tachycardie atriale multifocale",
+            "Extrasystoles atriales fréquentes",
+            "Tachycardie sinuso-atriale avec extrasystoles"
+          ],
+          "examesLaboratoriais": [
+            "TSH (éliminer l'hyperthyroïdie)",
+            "Fonction rénale (ajustement des anticoagulants)",
+            "Électrolytes",
+            "Hémogramme",
+            "Coagulogramme si varfarine"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Prévention du thromboembolisme (AVC)",
+            "Contrôle des symptômes",
+            "Traitement des comorbidités"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Modification du mode de vie",
+              "Contrôle du poids",
+              "Réduction de l'alcool",
+              "Traitement de l'apnée du sommeil",
+              "Ablation par cathéter dans certains cas"
+            ],
+            "citations": [
+              {
+                "refId": "esc-fa-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Contrôle de la fréquence",
+                "medicamentos": [
+                  "Atenolol",
+                  "Metoprolol",
+                  "Diltiazem",
+                  "Verapamil",
+                  "Digoxine"
+                ],
+                "posologia": "Atenolol 25-100mg/jour | Metoprolol 50-200mg/jour"
+              },
+              {
+                "classe": "Anticoagulation (si CHA2DS2-VASc indique)",
+                "medicamentos": [
+                  "Varfarine",
+                  "Rivaroxabane",
+                  "Apixabane",
+                  "Dabigatran",
+                  "Edoxabane"
+                ],
+                "posologia": "Varfarine (INR 2-3) ou ACOD selon la fonction rénale"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "FA + IC avec FEVG réduite",
+                "conduta": "Préférer un bêta-bloquant ou la digoxine (éviter les BCC)"
+              },
+              {
+                "situacao": "FA + WPW",
+                "conduta": "ÉVITER la digoxine, les BCC, les bêta-bloquants. Référer d'urgence."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-fa-2020"
+              }
+            ]
+          },
+          "duracao": "Anticoagulation généralement continue si indiquée"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Toutes les 3-6 mois, ou plus fréquent si instable",
+          "examesControle": [
+            "INR mensuel si varfarine",
+            "Fonction rénale annuelle (ajustement de l'ACOD)",
+            "ECG si changement de symptômes"
+          ],
+          "metasTerapeuticas": [
+            "FC 60-110 bpm au repos",
+            "TTR >70% si varfarine",
+            "Absence d'événements thromboemboliques"
+          ],
+          "criteriosEncaminhamento": [
+            "FA avec instabilité hémodynamique",
+            "Candidat à l'ablation",
+            "FA + WPW",
+            "FA réfractaire au contrôle de la fréquence"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Contrôle de l'HAT",
+            "Traitement de l'apnée du sommeil",
+            "Contrôle du poids",
+            "Modération dans la consommation d'alcool"
+          ],
+          "secundaria": [
+            "Anticoagulation adéquate",
+            "Contrôle des facteurs précipitants"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "atenolol",
+        "metoprolol",
+        "varfarina",
+        "rivaroxabana"
+      ],
+      "calculadoras": [
+        "cha2ds2-vasc",
+        "has-bled"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "esc-fa-2020"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "fa",
+        "fibrillation-atriale",
+        "trouble-du-rythme",
+        "anticoagulation",
+        "avc"
+      ]
+    },
+    {
+      "id": "doenca-arterial-coronariana",
+      "titulo": "Maladie Arterielle Coronarienne Stable",
+      "sinonimos": [
+        "MAC",
+        "Angine stable",
+        "Cardiopathie ischémique chronique"
+      ],
+      "doid": "DOID:3393",
+      "snomedCT": "53741008",
+      "meshId": "D003324",
+      "umlsCui": "C0010054",
+      "ciap2": [
+        "K74",
+        "K76"
+      ],
+      "cid10": [
+        "I25",
+        "I25.1",
+        "I25.9",
+        "I20.8"
+      ],
+      "cid11": [
+        "BA80"
+      ],
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Obstruction athérosclérotique des artères coronaires entraînant une ischémie myocardique pendant l'effort ou le stress. Caractérisée par une angine typique prévisible, stable en fréquence et intensité.",
+        "criteriosDiagnosticos": [
+          "Douleur thoracique typique : rétrosternale, en étau, déclenchée par l'effort/le stress",
+          "Soulagement avec le repos ou le nitrate sublingual (1-3 min)",
+          "Durée de 2-10 minutes",
+          "Test ergométrique positif ou imagerie fonctionnelle avec ischémie"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cessation du tabagisme (essentielle)",
+            "Diète méditerranéenne",
+            "Activité physique régulière supervisée",
+            "Contrôle du poids",
+            "Contrôle du stress"
+          ],
+          "farmacologico": [
+            "AAS 100mg/jour (antiagrégation)",
+            "Statine de haute intensité (Atorvastatine 40-80mg)",
+            "Bétabloquant (Aténolol, Métoprolol) pour le contrôle de l'angine",
+            "Nitrate sublingual pour les crises"
+          ]
+        },
+        "metasTerapeuticas": [
+          "LDL-C <50 mg/dL (risque très élevé) ou <70 mg/dL (risque élevé)",
+          "PA <130/80 mmHg",
+          "HbA1c <7% si DM",
+          "Cessation complète du tabagisme",
+          "Contrôle de l'angine (CCS classe I-II)"
+        ],
+        "examesIniciais": [
+          "ECG au repos",
+          "Échocardiographie",
+          "Profil lipidique",
+          "Glycémie, HbA1c",
+          "Fonction rénale",
+          "Test ergométrique ou scintigraphie"
+        ],
+        "redFlags": [
+          "Angine au repos ou prolongée (>20 min)",
+          "Angine de début récent (<2 mois)",
+          "Angine en progression (aggravation progressive)",
+          "Modifications dynamiques de l'ECG",
+          "Instabilité hémodynamique",
+          "Syncope avec douleur thoracique"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "5-8% des adultes >40 ans",
+          "incidencia": "Principale cause de mortalité dans le monde",
+          "faixaEtaria": "Augmente avec l'âge, hommes >45 ans, femmes >55 ans",
+          "fatoresRisco": [
+            "Hypertension artérielle",
+            "Dyslipidémie (LDL élevé, HDL bas)",
+            "Diabète de type 2",
+            "Tabagisme",
+            "Obésité",
+            "Sédentarité",
+            "Antécédents familiaux de MAC précoce",
+            "Âge avancé"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Athérosclérose coronarienne avec formation de plaques réduisant le lumen artériel. Lorsque l'obstruction atteint >70%, le flux coronarien devient insuffisant pendant l'effort, causant une ischémie et une angine.",
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Douleur/déscomfort thoracique rétrosternal en étau/pression",
+            "Irradiation vers le MPO, la mâchoire, le dos",
+            "Déclenchée par l'effort physique, le stress émotionnel, le froid",
+            "Soulagement avec le repos (1-5 min) ou le nitrate sublingual",
+            "Équivalents angineux : dyspnée, fatigue"
+          ],
+          "sinaisExameFisico": [
+            "Généralement normal entre les crises",
+            "B4 peut être présent",
+            "Souffle de l'insuffisance mitrale transitoire pendant la crise"
+          ],
+          "formasClinicas": [
+            "Angine typique : 3 caractéristiques (localisation typique, déclenchée par l'effort, soulagement avec le repos/nitrate)",
+            "Angine atypique : 2 caractéristiques",
+            "Douleur thoracique non cardiaque : 0-1 caractéristique"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Histoire clinique compatible",
+            "Test fonctionnel positif pour l'ischémie",
+            "Ou anatomie coronarienne avec sténose significative (>50% TCE ou >70% autres)"
+          ],
+          "diagnosticoDiferencial": [
+            "Syndrome coronaire aigu",
+            "Dissection de l'aorte",
+            "Embolie pulmonaire",
+            "Péricardite",
+            "Spasme oesophagien",
+            "Douleur musculosquelettique"
+          ],
+          "examesLaboratoriais": [
+            "Profil lipidique complet",
+            "Glycémie, HbA1c",
+            "Fonction rénale",
+            "Hémogramme",
+            "Troponine (pour éliminer le SCA)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Soulager les symptômes",
+            "Prévenir les événements cardiovasculaires (IAM, décès)",
+            "Améliorer la qualité de vie",
+            "Contrôler les facteurs de risque"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Cessation absolue du tabagisme",
+              "Diète méditerranéenne ou DASH",
+              "Exercice aérobie régulier (150 min/semaine)",
+              "Maintien du poids idéal",
+              "Réadaptation cardiaque"
+            ],
+            "citations": [
+              {
+                "refId": "esc-dac-2019"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Antiagrégant",
+                "medicamentos": [
+                  "AAS"
+                ],
+                "posologia": "AAS 100mg/jour"
+              },
+              {
+                "classe": "Statine",
+                "medicamentos": [
+                  "Atorvastatine",
+                  "Rosuvastatine"
+                ],
+                "posologia": "Atorvastatine 40-80mg/jour (haute intensité)"
+              },
+              {
+                "classe": "Antiangineux",
+                "medicamentos": [
+                  "Aténolol",
+                  "Métoprolol",
+                  "Bisoprolol"
+                ],
+                "posologia": "Aténolol 25-100mg/jour | Nitrate SL pour les crises"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Intolérance au bétabloquant",
+                "conduta": "CCB (Amlodipine, Diltiazem) ou Ivabradine"
+              },
+              {
+                "situacao": "MAC + DM",
+                "conduta": "Considérer iSGLT2 ou GLP-1RA avec bénéfice CV"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-dac-2019"
+              }
+            ]
+          },
+          "duracao": "Traitement continu"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Toutes les 3-6 mois",
+          "examesControle": [
+            "Profil lipidique tous les 6-12 mois",
+            "Fonction rénale annuelle",
+            "ECG si modification clinique"
+          ],
+          "metasTerapeuticas": [
+            "LDL-C à la cible",
+            "PA <130/80",
+            "Absence d'angine ou angine contrôlée (CCS I)"
+          ],
+          "criteriosEncaminhamento": [
+            "Angine réfractaire au traitement clinique",
+            "Angine instable",
+            "Test fonctionnel avec grande zone d'ischémie",
+            "Dysfonction ventriculaire gauche"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Contrôle rigoureux des facteurs de risque CV",
+            "Statine en haut risque",
+            "Cessation du tabagisme"
+          ],
+          "secundaria": [
+            "AAS + statine de haute intensité",
+            "Contrôle agressif du LDL",
+            "Réadaptation cardiaque"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "aas",
+        "atorvastatina",
+        "atenolol",
+        "isosorbide"
+      ],
+      "calculadoras": [
+        "risco-cv",
+        "cha2ds2-vasc"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "esc-dac-2019"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "mac",
+        "angine",
+        "coronariopathie",
+        "athérosclérose",
+        "ischémie"
+      ]
+    },
+    {
+      "id": "hipotensao-ortostatica",
+      "titulo": "Hypotension orthostatique",
+      "ciap2": [
+        "K88"
+      ],
+      "cid10": [
+        "I95.1"
+      ],
+      "cid11": [
+        "BA81"
+      ],
+      "categoria": "cardiovasculaire",
+      "doid": "DOID:10763",
+      "snomedCT": "28651003",
+      "meshId": "D007024",
+      "umlsCui": "C0020651",
+      "quickView": {
+        "definicao": "Chute de la PA ≥20mmHg ou PAD ≥10mmHg au passage en position debout. Prévalence 20-30% chez les >65 ans. Cause importante de chutes.",
+        "criteriosDiagnosticos": [
+          "Chute de la PA au passage en position debout (1-3 min)",
+          "Symptômes : vertiges, obscurcissement visuel",
+          "Reproductible lors du test postural",
+          "Évaluer les médicaments responsables"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Se lever progressivement",
+            "Élever la tête du lit",
+            "Porter des bas de contention",
+            "Hydratation adéquate",
+            "Augmenter le sel (si pas d'HAT grave)"
+          ],
+          "farmacologico": [
+            "Réviser et réduire les antihypertenseurs",
+            "Fludrocortisona 0,1mg/jour (si réfractaire)",
+            "Midodrine 2,5-10mg 3x/jour"
+          ]
+        },
+        "redFlags": [
+          "Syncope",
+          "Chutes récurrentes",
+          "Symptômes neurologiques associés",
+          "Anémie"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "endocardite-infecciosa",
+      "titulo": "Endocardite infectieuse",
+      "ciap2": [
+        "K71"
+      ],
+      "cid10": [
+        "I33"
+      ],
+      "cid11": [
+        "BC40"
+      ],
+      "categoria": "cardiovasculaire",
+      "doid": "DOID:846",
+      "snomedCT": "84114007",
+      "meshId": "D004696",
+      "umlsCui": "C0014118",
+      "tags": [
+        "cardiovasculaire",
+        "infectieuse",
+        "grave"
+      ],
+      "quickView": {
+        "definicao": "Infection du tissu endocardique/valves cardiaques. Peut être aiguë (S. aureus) ou subaiguë (streptocoques).",
+        "criteriosDiagnosticos": [
+          "Fièvre",
+          "Souffle cardiaque nouveau ou modifié",
+          "Hémocultures positives",
+          "Végétations échocardiographiques",
+          "Critères de Duke"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hospitalisation",
+            "Échocardiographie",
+            "Évaluation cardiaque"
+          ],
+          "farmacologico": [
+            "Antibiothérapie parentérale selon les hémocultures",
+            "Vancomycine + Gentamicine empiriquement"
+          ]
+        },
+        "redFlags": [
+          "Insuffisance cardiaque",
+          "Emboly systémiques",
+          "Abscesses",
+          "Insuffisance valvulaire grave"
+        ]
+      },
+      "medicamentos": [
+        "vancomycine",
+        "gentamicine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "miocardiopatia-dilatada",
+      "titulo": "Miocardiopathie dilatée",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "I42.0"
+      ],
+      "cid11": [
+        "BC43.0"
+      ],
+      "categoria": "cardiovasculaire",
+      "doid": "DOID:12930",
+      "snomedCT": "84114007",
+      "meshId": "D002311",
+      "umlsCui": "C0027051",
+      "tags": [
+        "cardiovasculaire",
+        "chronique"
+      ],
+      "quickView": {
+        "definicao": "Dilatation ventriculaire avec dysfonction systolique. Fraction d'éjection réduite.",
+        "criteriosDiagnosticos": [
+          "IC avec fraction d'éjection réduite",
+          "Dilatation ventriculaire",
+          "Échocardiographie : FE <40%"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Restriction de sel",
+            "Restriction de liquides",
+            "Exercices contrôlés"
+          ],
+          "farmacologico": [
+            "IECA ou ARA-II : Enalapril ou Losartan",
+            "Bêta-bloquant : Carvedilol",
+            "Diurétique si nécessaire"
+          ]
+        },
+        "redFlags": [
+          "IC réfractaire",
+          "Arrhythmies",
+          "Mort subite",
+          "Thrombo-embolisme"
+        ]
+      },
+      "medicamentos": [
+        "enalapril",
+        "losartan",
+        "carvedilol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-arterial-periferica",
+      "titulo": "Maladie Artérielle Périphérique",
+      "sinonimos": [
+        "MAP",
+        "MAOP",
+        "Claudication intermittente",
+        "Maladie vasculaire périphérique"
+      ],
+      "ciap2": [
+        "K92"
+      ],
+      "cid10": [
+        "I73.9",
+        "I70.2"
+      ],
+      "cid11": [
+        "BD40"
+      ],
+      "doid": "DOID:0050830",
+      "snomedCT": "399957001",
+      "meshId": "D058729",
+      "umlsCui": "C1704436",
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Athérosclérose des artères périphériques (particulièrement des MMII) causant une ischémie. ITB <0,9 est diagnostique. Marqueur de maladie athérosclérotique systémique.",
+        "criteriosDiagnosticos": [
+          "ITB (Indice Tarse-Brachial) <0,9",
+          "Claudication intermittente : douleur à la cuisse en marchant, s'atténue au repos",
+          "Pouls périphériques diminués/absents",
+          "ITB <0,4 ou douleur au repos : ischémie critique"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Exercice supervisé de marche (principal)",
+            "Arrêt du tabagisme (obligatoire)",
+            "Soins des pieds"
+          ],
+          "farmacologico": [
+            "AAS 100mg/jour ou Clopidogrel 75mg/jour",
+            "Statine de haute puissance",
+            "IECA si HTA ou DM",
+            "Cilostazol 100mg 2x/jour (claudication limitante)"
+          ]
+        },
+        "redFlags": [
+          "Douleur au repos",
+          "Ulcère artériel",
+          "Gangrène",
+          "ITB <0,4"
+        ],
+        "metasTerapeuticas": [
+          "LDL-c <70 mg/dL",
+          "PA <130/80",
+          "HbA1c <7%",
+          "Arrêter le tabagisme"
+        ],
+        "examesIniciais": [
+          "ITB",
+          "Doppler artériel",
+          "Profil lipidique",
+          "Glycémie/HbA1c",
+          "Créatinine"
+        ]
+      },
+      "protocolos": [
+        "has",
+        "dm2"
+      ],
+      "medicamentos": [
+        "aas",
+        "clopidogrel",
+        "atorvastatina",
+        "cilostazol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "vasculaire",
+        "athérosclérose",
+        "tabagisme"
+      ]
+    },
+    {
+      "id": "estenose-aortica",
+      "titulo": "Sténose aortique",
+      "sinonimos": [
+        "EAo",
+        "Valvulopathie aortique"
+      ],
+      "ciap2": [
+        "K83"
+      ],
+      "cid10": [
+        "I35.0",
+        "I06.0"
+      ],
+      "cid11": [
+        "BB60.0"
+      ],
+      "doid": "DOID:1712",
+      "snomedCT": "60573004",
+      "meshId": "D001024",
+      "umlsCui": "C0003507",
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Obstruction de l'éjection du ventricule gauche par la valve aortique. La forme dégénérative (calcifiée) est la cause la plus courante chez les personnes âgées. La forme bicuspide est plus fréquente chez les jeunes.",
+        "criteriosDiagnosticos": [
+          "Souffle systolique éjectif au foyer aortique, irradiant vers les carotides",
+          "Échographie : sténose aortique sévère = surface valvulaire <1,0 cm², gradient moyen >40 mmHg, Vmax >4 m/s",
+          "Symptômes : dyspnée, angine, syncope",
+          "Pouls parvus et tardus (tardif et de faible amplitude)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éviter l'exercice intense si symptomatique",
+            "Prévention de l'endocardite (si haut risque)"
+          ],
+          "farmacologico": [
+            "Traitement clinique limité - la chirurgie est définitive",
+            "Éviter les vasodilatateurs intenses (risque d'hypotension)",
+            "Bétabloquant si FA ou angine",
+            "L'statine NE réduit PAS la progression"
+          ]
+        },
+        "redFlags": [
+          "Syncope",
+          "Angine",
+          "IC décompensée",
+          "Sténose aortique sévère symptomatique"
+        ],
+        "metasTerapeuticas": [
+          "Orientation précoce si symptomatique",
+          "Remplacement valvulaire (TAVR ou chirurgie)"
+        ],
+        "examesIniciais": [
+          "Échocardiographie",
+          "ECG",
+          "Radiographie de thorax"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [],
+      "calculadoras": [],
+      "tags": [
+        "valvulopathie",
+        "souffle",
+        "chirurgie"
+      ]
+    },
+    {
+      "id": "insuficiencia-mitral",
+      "titulo": "Insuffisance mitrale",
+      "sinonimos": [
+        "IM",
+        "Régurgitation mitrale"
+      ],
+      "ciap2": [
+        "K83"
+      ],
+      "cid10": [
+        "I34.0",
+        "I05.1"
+      ],
+      "cid11": [
+        "BB61.1"
+      ],
+      "doid": "DOID:11719",
+      "snomedCT": "48724000",
+      "meshId": "D008944",
+      "umlsCui": "C0026266",
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Refluxe de sang du VG vers le GA pendant la systole. Primaire (valvulaire) ou secondaire (fonctionnelle par dilatation du VG).",
+        "criteriosDiagnosticos": [
+          "Souffle holosystolique au foyer mitral, irradiant vers l'aisselle",
+          "Échographie : gravité évaluée par le volume rétrograde, la surface du jet, la vena contracta",
+          "IM sévère : FEVG ↓, dilatation du VG/GA, hypertension pulmonaire"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Restriction de sel et de liquides en cas d'IC",
+            "Activité physique selon la tolérance"
+          ],
+          "farmacologico": [
+            "IM secondaire : optimiser le traitement de l'IC (IECA/ARA, bêta-bloquant, spironolactone)",
+            "IM primaire : traitement clinique limité",
+            "Diurétiques en cas de congestion",
+            "Anticoagulation en cas de FA"
+          ]
+        },
+        "redFlags": [
+          "IC réfractaire",
+          "FEVG <60%",
+          "Diamètre systolique du VG >40mm",
+          "FA de début récent"
+        ],
+        "metasTerapeuticas": [
+          "Maintenir la FEVG",
+          "Contrôle des symptômes",
+          "Chirurgie si indiquée"
+        ],
+        "examesIniciais": [
+          "Échocardiographie",
+          "ECG",
+          "BNP"
+        ]
+      },
+      "protocolos": [
+        "insuficiencia-cardiaca"
+      ],
+      "medicamentos": [
+        "enalapril",
+        "carvedilol",
+        "furosemida"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "valvulopathie",
+        "souffle",
+        "insuffisance cardiaque"
+      ]
+    },
+    {
+      "id": "trombose-venosa-profunda",
+      "titulo": "Trombose Veineuse Profonde",
+      "sinonimos": [
+        "TVP",
+        "Thrombophlébite profonde"
+      ],
+      "ciap2": [
+        "K94"
+      ],
+      "cid10": [
+        "I80.2"
+      ],
+      "cid11": [
+        "BD72.0"
+      ],
+      "doid": "DOID:1725",
+      "snomedCT": "128053003",
+      "meshId": "D020246",
+      "umlsCui": "C0149871",
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Formation de thrombus dans les veines profondes, généralement aux MMII. Risque de TEP et syndrome post-thrombotique.",
+        "criteriosDiagnosticos": [
+          "Score de Wells pour TVP (probabilité clinique)",
+          "D-dimère : haute VNP si probabilité faible",
+          "Échographie Doppler veineuse : diagnostic définitif",
+          "Œdème unilatéral, douleur à la cuisse, induration"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Marche précoce (plus de repos)",
+            "Chaussette de compression élastique",
+            "Élevation du membre"
+          ],
+          "farmacologico": [
+            "DOACs : Rivaroxabane 15 mg 2x/jour pendant 21 jours, puis 20 mg/jour",
+            "Ou Apixabane 10 mg 2x/jour pendant 7 jours, puis 5 mg 2x/jour",
+            "Alternative : Énoxaparine + Warfarine (pontage)",
+            "Durée : 3-6 mois (provoquée), indéfinie (non provoquée/récidivante)"
+          ]
+        },
+        "redFlags": [
+          "Dyspnée (soupçon de TEP)",
+          "TVP proximale étendue",
+          "Phlémasie",
+          "Syndrome compartimental"
+        ],
+        "metasTerapeuticas": [
+          "Anticoagulation thérapeutique",
+          "Prévention de TEP",
+          "Prévention de la récurrence"
+        ],
+        "examesIniciais": [
+          "Échographie Doppler veineuse",
+          "D-dimère",
+          "Hémogramme",
+          "Coagulogramme",
+          "Créatinine"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "rivaroxabane",
+        "apixabane",
+        "énoxaparine",
+        "warfarine"
+      ],
+      "calculadoras": [
+        "wells-tvp"
+      ],
+      "tags": [
+        "thromboembolisme",
+        "anticoagulation",
+        "urgence"
+      ]
+    },
+    {
+      "id": "embolia-pulmonar",
+      "titulo": "Embolie pulmonaire",
+      "sinonimos": [
+        "TEP",
+        "Thromboembolisme pulmonaire"
+      ],
+      "ciap2": [
+        "K93"
+      ],
+      "cid10": [
+        "I26"
+      ],
+      "cid11": [
+        "BB20"
+      ],
+      "doid": "DOID:9477",
+      "snomedCT": "59282003",
+      "meshId": "D011655",
+      "umlsCui": "C0034065",
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Obstruction des artères pulmonaires par des thrombus, généralement d'origine de la TVP des MMII. Spectre allant de l'asymptomatique à l'instabilité hémodynamique.",
+        "criteriosDiagnosticos": [
+          "Score de Wells pour TEP : élevé (>6), modéré (2-6), faible (<2)",
+          "Règle PERC : si tous négatifs et faible probabilité, exclu",
+          "D-dimère : haute VNP si faible/modérée probabilité",
+          "Angio-TC thoracique : référence d'or",
+          "Dyspnée soudaine, douleur thoracique pleurétique, tachycardie, hypoxémie"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Stabilisation hémodynamique",
+            "Oxygénothérapie"
+          ],
+          "farmacologico": [
+            "TEP de faible risque : DOAC (rivaroxabane ou apixabane)",
+            "TEP de risque intermédiaire : anticoagulation + monitoring",
+            "TEP de haut risque (instable) : thrombolyse systémique (alteplase)",
+            "Durée : identique à la TVP"
+          ]
+        },
+        "redFlags": [
+          "Hypotension",
+          "Dysfonction du VG",
+          "Troponine élevée",
+          "BNP élevé"
+        ],
+        "metasTerapeuticas": [
+          "Anticoagulation précoce",
+          "Stabilisation hémodynamique"
+        ],
+        "examesIniciais": [
+          "Angio-TC thoracique",
+          "D-dimère",
+          "ECG",
+          "Gaz du sang",
+          "Troponine",
+          "Écho si instable"
+        ]
+      },
+      "protocolos": [
+        "dor-toracica"
+      ],
+      "medicamentos": [
+        "rivaroxabana",
+        "apixabana",
+        "enoxaparina",
+        "alteplase"
+      ],
+      "calculadoras": [
+        "wells-tep"
+      ],
+      "tags": [
+        "urgence",
+        "anticoagulation",
+        "thromboembolisme"
+      ]
+    },
+    {
+      "id": "pericardite-aguda",
+      "titulo": "Péricardite aiguë",
+      "sinonimos": [
+        "Inflammation péricardique"
+      ],
+      "ciap2": [
+        "K84"
+      ],
+      "cid10": [
+        "I30"
+      ],
+      "cid11": [
+        "BC80"
+      ],
+      "doid": "DOID:1787",
+      "snomedCT": "3238004",
+      "meshId": "D010493",
+      "umlsCui": "C0031046",
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Inflammation du péricarde, généralement idiopathique/virale. Diagnostic : ≥2 de 4 critères.",
+        "criteriosDiagnosticos": [
+          "Douleur thoracique typique : précordiale, s'aggrave avec la respiration/la position allongée, s'améliore en position assise",
+          "Frottement péricardique",
+          "Modifications ECG : élévation diffuse du segment ST, dépression du segment PR",
+          "Épanchement péricardique nouveau ou augmentation"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Repos relatif jusqu'à la résolution des symptômes",
+            "Éviter l'exercice pendant 3 mois (athlètes)"
+          ],
+          "farmacologico": [
+            "AAS 650-1000mg 8/8h pendant 1-2 semaines OU",
+            "Ibuprofène 600mg 8/8h pendant 1-2 semaines",
+            "Colchicine 0,5mg 12/12h pendant 3 mois (réduit la récurrence)",
+            "IBP pour protection gastrique"
+          ]
+        },
+        "redFlags": [
+          "Fièvre élevée",
+          "Épanchement volumineux",
+          "Tamponnement",
+          "Immunosuppression",
+          "Anticoagulation"
+        ],
+        "metasTerapeuticas": [
+          "Résolution de la douleur",
+          "Normalisation des marqueurs inflammatoires"
+        ],
+        "examesIniciais": [
+          "ECG",
+          "Échocardiographie",
+          "PCR",
+          "Troponine",
+          "Radiographie de thorax"
+        ]
+      },
+      "protocolos": [
+        "dor-toracica"
+      ],
+      "medicamentos": [
+        "aas",
+        "ibuprofeno",
+        "colchicina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "douleur thoracique",
+        "inflammation",
+        "viral"
+      ]
+    },
+    {
+      "id": "cardiomiopatia-hipertrofica",
+      "titulo": "Cardiomyopathie Hypertrophique",
+      "sinonimos": [
+        "CMH",
+        "Myocardiopathie hypertrophique"
+      ],
+      "ciap2": [
+        "K84"
+      ],
+      "cid10": [
+        "I42.1",
+        "I42.2"
+      ],
+      "cid11": [
+        "BC43.0"
+      ],
+      "doid": "DOID:11984",
+      "snomedCT": "45227007",
+      "meshId": "D002312",
+      "umlsCui": "C0007194",
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Hypertrophie ventriculaire inexplicée (≥15mm), généralement asymétrique. Cause génétique (mutations sarcomériques). Principale cause de mort subite chez les jeunes athlètes.",
+        "criteriosDiagnosticos": [
+          "Écho : épaisseur VEG ≥15mm sans cause",
+          "Obstruction dynamique du VSG (gradient ≥30 mmHg)",
+          "Mouvement systolique antérieur de la mitrale (SAM)",
+          "ECG : hypertrophie VEG, ondes Q, modifications de ST-T"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éviter l'exercice compétitif d'intensité élevée",
+            "Dépistage familial (1er degré)",
+            "Conseil génétique"
+          ],
+          "farmacologico": [
+            "Bétabloquant (propranolol, metoprolol) - première ligne",
+            "Vérabamile si intolérance aux BB",
+            "Mavacamten (inhibiteur de myosine) - nouveau",
+            "CDI si risque élevé de mort subite"
+          ]
+        },
+        "redFlags": [
+          "Syncope",
+          "Antécédents familiaux de mort subite",
+          "TVNS",
+          "Réponse anormale de la PA à l'exercice"
+        ],
+        "metasTerapeuticas": [
+          "Prévention de la mort subite",
+          "Contrôle des symptômes"
+        ],
+        "examesIniciais": [
+          "Échocardiographie",
+          "ECG",
+          "Holter 24h",
+          "IRM cardiaque",
+          "Test génétique"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "propranolol",
+        "metoprolol",
+        "verapamil"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "mort subite",
+        "génétique",
+        "athlète"
+      ]
+    },
+    {
+      "id": "sincope",
+      "titulo": "Syncope",
+      "sinonimos": [
+        "Perte de connaissance",
+        "Perte transitoire de conscience"
+      ],
+      "ciap2": [
+        "A06"
+      ],
+      "cid10": [
+        "R55"
+      ],
+      "cid11": [
+        "MB40.1"
+      ],
+      "doid": "DOID:11091",
+      "snomedCT": "271594007",
+      "meshId": "D013575",
+      "umlsCui": "C0039070",
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Perte transitoire de conscience due à une hypoperfusion cérébrale globale avec récupération spontanée et complète. Le type vasovagal est la cause la plus fréquente.",
+        "criteriosDiagnosticos": [
+          "Perte de conscience transitoire avec récupération spontanée",
+          "Syncope réflexe (vasovagal) : déclencheur, signes prodromiques (nausées, sueurs, vision floue)",
+          "Hypotension orthostatique : baisse de PA ≥20/10 mmHg en position debout",
+          "Cardiaque : exercice, palpitations, ECG anormal, cardiopathie structurale"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Vasovagal : éviter les déclencheurs, reconnaître les signes prodromiques, manœuvres de contre-pression",
+            "Orthostatique : hydratation, sel, lever lentement, bas de contention"
+          ],
+          "farmacologico": [
+            "Vasovagal : généralement non pharmacologique. Fludrocortisona, midodrine si réfractaire",
+            "Orthostatique : fludrocortisona 0,1-0,3 mg/jour, midodrine 2,5-10 mg 3x/jour",
+            "Cardiaque : traiter la cause (pacemaker, DAI, antiarythmique)"
+          ]
+        },
+        "redFlags": [
+          "Syncope lors de l'exercice",
+          "Palpitations avant",
+          "Douleur thoracique",
+          "ECG anormal",
+          "Cardiopathie connue"
+        ],
+        "metasTerapeuticas": [
+          "Identifier la cause",
+          "Prévenir la récurrence",
+          "Évaluer le risque de mort subite"
+        ],
+        "examesIniciais": [
+          "ECG",
+          "PA orthostatique",
+          "Glycémie",
+          "Hémogramme",
+          "Echo si suspicion cardiaque"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "fludrocortisona",
+        "midodrine"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "urgence",
+        "arythmie",
+        "neurologie"
+      ]
+    },
+    {
+      "id": "angina-estavel",
+      "titulo": "Angine stable",
+      "sinonimos": [
+        "Angine pectoris chronique",
+        "Angine d'effort"
+      ],
+      "ciap2": [
+        "K74"
+      ],
+      "cid10": [
+        "I20.8",
+        "I20.9"
+      ],
+      "cid11": [
+        "BA80.1"
+      ],
+      "doid": "DOID:0111052",
+      "snomedCT": "194828000",
+      "meshId": "D060050",
+      "umlsCui": "C0340288",
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Douleur thoracique déclenchée par l'effort ou le stress émotionnel, soulagée par le repos ou les nitrates. Indique une maladie artério-coronarienne obstructive.",
+        "criteriosDiagnosticos": [
+          "Douleur rétrosternale, de type oppression/pression",
+          "Déclenchée par l'effort/le stress",
+          "Soulagée en <10 min par le repos ou les nitrates",
+          "Angine typique : 3/3 critères. Atypique : 2/3"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Modification des facteurs de risque",
+            "Exercice supervisé (réadaptation cardiaque)",
+            "Cessation du tabagisme"
+          ],
+          "farmacologico": [
+            "AAS 100mg/jour",
+            "Statine de haute puissance (atorvastatine 40-80mg)",
+            "Bêtabloquant (métoprolol, bisoprolol) - première ligne antiangineuse",
+            "Nitrates sublinguaux de secours",
+            "Ajouter un inhibiteur du calcium si les symptômes persistent"
+          ]
+        },
+        "redFlags": [
+          "Angine instable",
+          "Angine au repos",
+          "Angine progressive",
+          "Angine post-IC"
+        ],
+        "metasTerapeuticas": [
+          "LDL-c <55 mg/dL",
+          "PA <130/80",
+          "FC 55-60 bpm",
+          "Cesser le tabac"
+        ],
+        "examesIniciais": [
+          "ECG",
+          "Échocardiographie",
+          "Test ergométrique",
+          "Profil lipidique",
+          "Glycémie"
+        ]
+      },
+      "protocolos": [
+        "dor-toracica"
+      ],
+      "medicamentos": [
+        "aas",
+        "atorvastatina",
+        "metoprolol",
+        "isossorbida"
+      ],
+      "calculadoras": [
+        "risco-cardiovascular"
+      ],
+      "tags": [
+        "maladie coronarienne",
+        "prévention",
+        "douleur thoracique"
+      ]
+    },
+    {
+      "id": "flutter-atrial",
+      "titulo": "Flutter Atrial",
+      "sinonimos": [
+        "FLA"
+      ],
+      "ciap2": [
+        "K78"
+      ],
+      "cid10": [
+        "I48.3",
+        "I48.4"
+      ],
+      "cid11": [
+        "BC81.0"
+      ],
+      "doid": "DOID:0060675",
+      "snomedCT": "5370000",
+      "meshId": "D001282",
+      "umlsCui": "C0004239",
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Tachyarythmie atriale avec circuit de macroréentrée. ECG typique : ondes F en dents de scie, FC atriale ~300 bpm, conduction AV généralement 2:1 (FC ~150 bpm).",
+        "criteriosDiagnosticos": [
+          "ECG : ondes F (dents de scie) en DII, DIII, aVF",
+          "Fréquence atriale 250-350 bpm",
+          "Conduction AV 2:1, 3:1, 4:1 ou variable",
+          "FC ventriculaire régulière (sauf si conduction variable)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cardioversion électrique si instable (50-100J)",
+            "Ablation par cathéter (taux de succès élevé)"
+          ],
+          "farmacologico": [
+            "Contrôle de la fréquence : bêtabloquant ou BCC non-dihydropyridinique",
+            "Anticoagulation : mêmes règles que pour la FA (CHA2DS2-VASc)",
+            "Cardioversion pharmacologique moins efficace que pour la FA",
+            "Ibutilide IV pour la cardioversion (hospitalière)"
+          ]
+        },
+        "redFlags": [
+          "Instabilité hémodynamique",
+          "IC décompensée",
+          "Syndrome de pré-excitation"
+        ],
+        "metasTerapeuticas": [
+          "Restaurer le rythme sinusal ou contrôler la FC",
+          "Prévenir le thromboembolisme"
+        ],
+        "examesIniciais": [
+          "ECG 12 dérivations",
+          "Échocardiogramme",
+          "TSH",
+          "Électrolytes"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "metoprolol",
+        "diltiazem",
+        "amiodarone"
+      ],
+      "calculadoras": [
+        "cha2ds2-vasc"
+      ],
+      "tags": [
+        "arythmie",
+        "anticoagulation",
+        "ablation"
+      ]
+    },
+    {
+      "id": "bloqueio-atrioventricular",
+      "titulo": "Bloc Atrioventriculaire",
+      "sinonimos": [
+        "BAV",
+        "Bloc AV"
+      ],
+      "ciap2": [
+        "K84"
+      ],
+      "cid10": [
+        "I44.0",
+        "I44.1",
+        "I44.2"
+      ],
+      "cid11": [
+        "BC61"
+      ],
+      "doid": "DOID:0110687",
+      "snomedCT": "233916004",
+      "meshId": "D054537",
+      "umlsCui": "C0004245",
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Trouble de conduction entre les atriums et les ventricules. 1er degré : PR prolongé. 2e degré : certains P bloqués. 3e degré (BAVT) : dissociation AV complète.",
+        "criteriosDiagnosticos": [
+          "BAV 1er degré : PR >200ms, tous les P conduits",
+          "BAV 2e degré Mobitz I : PR progressivement plus long jusqu'à un P bloqué (Wenckebach)",
+          "BAV 2e degré Mobitz II : P bloqué sans allongement préalable du PR",
+          "BAV 3e degré (BAVT) : aucun P conduit, échappement ventriculaire"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "BAV 1er degré et Mobitz I : observation, retirer les médicaments bradycardisants",
+            "BAVT et Mobitz II : stimulateur cardiaque temporaire → définitif"
+          ],
+          "farmacologico": [
+            "Atropine 0,5-1mg IV (urgence, BAVT symptomatique)",
+            "Isoprotérenol (temporaire)",
+            "Arrêter les médicaments : bêta-bloquant, BCC, digoxine, amiodarone",
+            "Traiter la cause : ischémie, Lyme, hypercalcémie"
+          ]
+        },
+        "redFlags": [
+          "Syncope",
+          "Bradycardie symptomatique",
+          "BAVT",
+          "Mobitz II",
+          "QRS large à l'échappement"
+        ],
+        "metasTerapeuticas": [
+          "Stimulateur cardiaque si indiqué",
+          "FC adéquate",
+          "Absence de symptômes"
+        ],
+        "examesIniciais": [
+          "ECG 12 dérivations",
+          "Holter 24h",
+          "Électrolytes",
+          "Fonction thyroïdienne",
+          "Digoxinémie si usage"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "atropine"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "arythmie",
+        "stimulateur cardiaque",
+        "urgence"
+      ]
+    },
+    {
+      "id": "hipertensao-pulmonar",
+      "titulo": "Hypertension pulmonaire",
+      "sinonimos": [
+        "HP",
+        "Hypertension artérielle pulmonaire"
+      ],
+      "ciap2": [
+        "K82"
+      ],
+      "cid10": [
+        "I27.0",
+        "I27.2"
+      ],
+      "cid11": [
+        "BB01"
+      ],
+      "doid": "DOID:6432",
+      "snomedCT": "70995007",
+      "meshId": "D006976",
+      "umlsCui": "C0020542",
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Pression artérielle pulmonaire moyenne ≥25 mmHg au repos. Classification: Groupe 1 (HAP), 2 (cardiopathie gauche), 3 (pulmonaire), 4 (CTEPH), 5 (multifactorielle).",
+        "criteriosDiagnosticos": [
+          "Symptômes: dyspnée progressive à l'effort, fatigue, syncope",
+          "Écho: PSAP estimée >35-40 mmHg, dilatation du VE",
+          "Cathétérisme droit: PAPm ≥25 mmHg (diagnostic définitif)",
+          "BNP/NT-proBNP élevés"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Limiter l'effort physique intense",
+            "Oxygénothérapie en cas d'hypoxémie",
+            "Anticonception (grossesse contre-indiquée)"
+          ],
+          "farmacologico": [
+            "Groupe 2: traiter la cardiopathie sous-jacente",
+            "Groupe 3: traiter la pneumopathie, O2",
+            "Groupe 4 (CTEPH): anticoagulation, envisager une chirurgie",
+            "HAP: thérapies spécifiques (sildenafil, bosentan, prostanoïdes)"
+          ]
+        },
+        "redFlags": [
+          "Syncope",
+          "Signes de défaillance du VE",
+          "BNP très élevé",
+          "Effusion péricardique"
+        ],
+        "metasTerapeuticas": [
+          "Classe fonctionnelle OMS I-II",
+          "BNP bas",
+          "Distance au TC6M"
+        ],
+        "examesIniciais": [
+          "Échocardiographie",
+          "BNP",
+          "TC de thorax",
+          "Scan V/Q",
+          "Cathétérisme droit"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "sildenafil"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "dyspnée",
+        "insuffisance cardiaque",
+        "spécialisé"
+      ]
+    },
+    {
+      "id": "sindrome-coronariana-aguda",
+      "titulo": "Syndrome Coronarienne Aiguë",
+      "sinonimos": [
+        "SCA",
+        "Infarctus aigu du myocarde",
+        "IAM",
+        "IAMCSST",
+        "IAMSSST",
+        "Angine instable"
+      ],
+      "doid": "DOID:0060158",
+      "snomedCT": "394659003",
+      "meshId": "D054058",
+      "umlsCui": "C0948089",
+      "ciap2": [
+        "K74",
+        "K75",
+        "K76"
+      ],
+      "cid10": [
+        "I20.0",
+        "I21",
+        "I21.0",
+        "I21.1",
+        "I21.2",
+        "I21.3",
+        "I21.4",
+        "I21.9"
+      ],
+      "cid11": [
+        "BA41",
+        "BA42",
+        "BA80"
+      ],
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Spectre de l'ischémie myocardique aiguë incluant l'angine instable, l'infarctus aigu du myocarde sans élévation du segment ST (IAMSSST) et l'infarctus aigu du myocarde avec élévation du segment ST (IAMCSST). Représente une urgence cardiovasculaire nécessitant une intervention immédiate.",
+        "criteriosDiagnosticos": [
+          "Douleur thoracique typique : oppressive, rétrosternale, irradiation vers le MPE/mandibule, >20 min",
+          "Dyspnée, sueurs froides, nausées, syncope",
+          "ECG : élévation du segment ST ≥1 mm en 2 dérivations contiguës (IAMCSST)",
+          "ECG : dépression du segment ST, inversion de l'onde T (IAMSSST)",
+          "Troponine élevée (courbe ascendante)",
+          "Score HEART ≥4 points indique un risque élevé"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "muito_alto",
+            "criterios": [
+              "IAMCSST",
+              "Instabilité hémodynamique",
+              "Arrythmie maligne"
+            ],
+            "conduta": "Cathétérisme d'urgence <90 min"
+          },
+          {
+            "nivel": "alto",
+            "criterios": [
+              "IAMSSST avec troponine +",
+              "GRACE >140"
+            ],
+            "conduta": "Cathétérisme <24 h"
+          },
+          {
+            "nivel": "moderado",
+            "criterios": [
+              "Angine instable",
+              "GRACE 109-140"
+            ],
+            "conduta": "Évaluation invasive en 72 h"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "MONABCH : surveillance, oxygène (si SatO2<90%), accès veineux",
+            "Repos absolu",
+            "Défibrillateur disponible"
+          ],
+          "farmacologico": [
+            "AAS 300 mg mastiqué immédiatement",
+            "Clopidogrel 300-600 mg (ou Ticagrelor 180 mg)",
+            "Héparine (HNF ou Enoxaparine)",
+            "Morphine 2-4 mg IV si douleur réfractaire",
+            "Nitrate SL (ne pas utiliser si PAS<90, utilisation de sildénafil, IAM de VD)",
+            "IAMCSST : thrombolytique (Tenecteplase) si >120 min jusqu'à l'ICP"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Réperfusion en <90 min (ICP primaire)",
+          "Contrôle de la douleur",
+          "Prévention des arythmies",
+          "Stabilisation hémodynamique"
+        ],
+        "examesIniciais": [
+          "ECG 12 dérivations en <10 min",
+          "Troponine (0 h, 1 h, 3 h)",
+          "Hémogramme, fonction rénale, électrolytes",
+          "Coagulogramme",
+          "BNP/NT-proBNP",
+          "Radiographie de thorax"
+        ],
+        "redFlags": [
+          "Hypotension (PAS<90 mmHg) - choc cardiogénique",
+          "Tachyarythmie ou bradyarythmie",
+          "Congestion pulmonaire (Killip ≥II)",
+          "Arrêt cardiorespiratoire",
+          "Dissection aortique concomitante",
+          "Saignement actif (contre-indication à l'anticoagulation)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Principale cause de mortalité au Brésil",
+          "incidencia": "~350.000 cas/an au Brésil",
+          "mortalidade": "30% dans la phase aiguë sans traitement approprié",
+          "faixaEtaria": "Augmente progressivement avec l'âge, pic >60 ans",
+          "fatoresRisco": [
+            "Hypertension artérielle",
+            "Diabète de type 2",
+            "Dyslipidémie",
+            "Tabagisme",
+            "Obésité",
+            "Antécédents familiaux de DAC précoce",
+            "Sédentarité"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Rupture ou érosion d'une plaque d'athérome vulnérable, avec exposition du noyau lipide et formation de thrombus. Dans l'IAMCSST, il y a occlusion totale ; dans l'IAMSSST/angine instable, occlusion partielle ou microembolie.",
+          "citations": [
+            {
+              "refId": "esc-stemi-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Douleur thoracique oppressive/écrasante",
+            "Irradiation vers le MPE, mandibule, épigastre, dos",
+            "Dyspnée",
+            "Sueurs froides (diaphorèse)",
+            "Nausées et vomissements",
+            "Syncope",
+            "Sensation de mort imminente"
+          ],
+          "sinaisExameFisico": [
+            "Pâleur cutanée",
+            "Tachycardie ou bradycardie",
+            "B4 (raideur ventriculaire)",
+            "Crachats pulmonaires (congestion)",
+            "Hypotension (mauvais pronostic)",
+            "Turgescence jugulaire (IAM de VD)"
+          ],
+          "formasClinicas": [
+            "Angine instable : sans élévation de troponine",
+            "IAMSSST : troponine élevée, sans élévation du segment ST",
+            "IAMCSST : élévation du segment ST à l'ECG"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Histoire clinique suggestive",
+            "ECG avec altérations ischémiques",
+            "Élévation de la troponine (courbe)"
+          ],
+          "diagnosticoDiferencial": [
+            "Dissection aortique",
+            "Embolie pulmonaire",
+            "Péricardite aiguë",
+            "Spasme œsophagien",
+            "Pneumothorax",
+            "Costochondrite"
+          ],
+          "examesLaboratoriais": [
+            "Troponine I ou T (haute sensibilité)",
+            "CK-MB (si troponine indisponible)",
+            "Hémogramme, créatinine, électrolytes",
+            "Glycémie, HbA1c",
+            "Profil lipidique"
+          ],
+          "examesImagem": [
+            "ECG 12 dérivations",
+            "Échocardiographie transthoracique",
+            "Radiographie de thorax",
+            "Angiographie coronarienne (cineangiocoronariographie)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-stemi-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Réperfusion coronarienne précoce",
+            "Soulagement de la douleur",
+            "Prévention des complications",
+            "Prévention secondaire"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Repos absolu",
+              "Surveillance continue",
+              "Oxygénothérapie si SatO2<90%",
+              "Jeûne initial"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-sca-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Antiagrégants",
+                "medicamentos": [
+                  "AAS 300 mg",
+                  "Clopidogrel 600 mg ou Ticagrelor 180 mg"
+                ],
+                "posologia": "Dose de charge"
+              },
+              {
+                "classe": "Anticoagulants",
+                "medicamentos": [
+                  "Enoxaparine 1 mg/kg SC 12/12 h",
+                  "HNF IV"
+                ],
+                "posologia": "Jusqu'à la revascularisation"
+              },
+              {
+                "classe": "Analgesie",
+                "medicamentos": [
+                  "Morphine 2-4 mg IV"
+                ],
+                "observacoes": "Si douleur réfractaire aux nitrates"
+              },
+              {
+                "classe": "Bétabloquant",
+                "medicamentos": [
+                  "Métoprolol 5 mg IV"
+                ],
+                "observacoes": "Si pas de contre-indication"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-stemi-2023"
+              }
+            ]
+          },
+          "duracao": "Hospitalisation + thérapie antiagrégante double pendant 12 mois"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Première consultation 7-14 jours après la sortie, puis mensuelle pendant 3 mois",
+          "examesControle": [
+            "Échocardiographie en 4-6 semaines",
+            "Profil lipidique",
+            "HbA1c",
+            "Fonction rénale"
+          ],
+          "metasTerapeuticas": [
+            "LDL <55 mg/dL",
+            "PA <130/80 mmHg",
+            "HbA1c <7% si diabétique",
+            "Arrêt tabagique",
+            "Réadaptation cardiaque"
+          ],
+          "criteriosEncaminhamento": [
+            "Tout IAMCSST : urgence/cardiologie interventionnelle",
+            "IAMSSST à haut risque",
+            "Complications mécaniques",
+            "Arythmies soutenues"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Contrôle des facteurs de risque",
+            "Statine à haut risque cardiovasculaire",
+            "AAS en prévention primaire (controversé)"
+          ],
+          "secundaria": [
+            "Thérapie antiagrégante double",
+            "Statine de haute puissance",
+            "Bétabloquant",
+            "IECA/BRA",
+            "Réadaptation cardiaque"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "manejo-sca",
+        "anticoagulacao-sca"
+      ],
+      "medicamentos": [
+        "aas",
+        "clopidogrel",
+        "ticagrelor",
+        "enoxaparina",
+        "morfina"
+      ],
+      "calculadoras": [
+        "heart-score",
+        "grace-score",
+        "timi-score"
+      ],
+      "citations": [
+        {
+          "refId": "sbc-sca-2020"
+        },
+        {
+          "refId": "esc-stemi-2023"
+        },
+        {
+          "refId": "aha-ua-nstemi-2021"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "edema-agudo-pulmao",
+      "titulo": "Édème Aigu du Poumon",
+      "sinonimos": [
+        "EAP",
+        "Édème pulmonaire cardigène",
+        "Congestion pulmonaire aiguë"
+      ],
+      "doid": "DOID:11396",
+      "snomedCT": "67782005",
+      "meshId": "D011654",
+      "umlsCui": "C0034063",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "J81",
+        "I50.1"
+      ],
+      "cid11": [
+        "CB01"
+      ],
+      "categoria": "cardiovasculaire",
+      "quickView": {
+        "definicao": "Accumulation brutale de liquide dans l'interstitium et les alvéoles pulmonaires due à une augmentation de la pression capillaire pulmonaire (cardigène) ou à une augmentation de la perméabilité (non cardigène). Urgence avec insuffisance respiratoire aiguë.",
+        "criteriosDiagnosticos": [
+          "Dyspnée intense de début soudain",
+          "Orthopnée (intolérance au décubitus)",
+          "Crépitements crépitants diffus bilatéraux",
+          "Expectoration rosée mousseuse (cas graves)",
+          "Tachypnée, utilisation de la musculature accessoire",
+          "Radiographie de thorax : infiltrat bilatéral en forme d'aile de chauve-souris",
+          "BNP/NT-proBNP élevé (cardigène)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "LEMON: Lasix, Élever la tête, Morphine, Oxygène, Nitrates",
+            "Tête élevée à 90° (ou assis avec les jambes pendantes)",
+            "Oxygène (masque non réinsufflant, VNI si disponible)",
+            "VNI (CPAP ou BiPAP) - réduit la mortalité",
+            "Accès veineux, monitoring"
+          ],
+          "farmacologico": [
+            "FUROSEMIDE 40-80mg IV (0,5-1mg/kg)",
+            "Répéter si nécessaire ; doubler la dose si utilisation préalable de diurétique",
+            "",
+            "NITROGLYCERINE SL 0,4mg ou spray (si PAS>90)",
+            "Si possible : NTG IV 10-200mcg/min",
+            "",
+            "MORPHINE 2-4mg IV (controversé, prudence)",
+            "",
+            "Si HTA sévère : Nitroprussiate IV",
+            "Si hypotension : Noradrénaline + Dobutamine"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Réduction de la congestion pulmonaire",
+          "Amélioration de l'oxygénation (SatO2>92%)",
+          "Contrôle de la pression artérielle",
+          "Identification et traitement de la cause"
+        ],
+        "examesIniciais": [
+          "ECG 12 dérivations (ischémie, arythmie)",
+          "Radiographie de thorax",
+          "BNP ou NT-proBNP",
+          "Troponine",
+          "Gaz du sang artériel",
+          "Électrolytes, fonction rénale",
+          "Échocardiographie (aussi vite que possible)"
+        ],
+        "redFlags": [
+          "Choc cardigène (PA basse, extrémités froides)",
+          "Arythmie grave (FA rapide, TV)",
+          "IAM associé",
+          "Besoin de ventilation mécanique invasive",
+          "Saturation <80% malgré l'O2",
+          "Pas de réponse à la VNI en 30-60 min"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Complication courante de l'IC (1 million d'hospitalisations/an aux USA)",
+          "faixaEtaria": "Plus courant chez les personnes âgées",
+          "fatoresRisco": [
+            "Insuffisance cardiaque préexistante",
+            "Cardiopathie ischémique",
+            "Hypertension artérielle",
+            "Valvopathies",
+            "Cardiomyopathies",
+            "Fibrillation auriculaire",
+            "Maladie rénale chronique"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Augmentation de la pression de remplissage du VG → augmentation de la pression capillaire pulmonaire → transsudation de liquide vers l'interstitium et les alvéoles → altération des échanges gazeux et hypoxémie. Dans le cas non cardigène, il y a une lésion de la barrière alvéolo-capillaire.",
+          "citations": [
+            {
+              "refId": "esc-hf-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dyspnée intense",
+            "Orthopnée",
+            "Dyspnée paroxystique nocturne",
+            "Toux avec expectoration rosée mousseuse",
+            "Anxiété, sensation de mort imminente"
+          ],
+          "sinaisExameFisico": [
+            "Tachypnée",
+            "Utilisation de la musculature accessoire",
+            "Crépitements crépitants bilatéraux",
+            "Sifflements (« asthme cardiaque »)",
+            "Turgescence jugulaire",
+            "B3/B4, souffles",
+            "Œdème des MMII"
+          ],
+          "formasClinicas": [
+            "EAP hypertensif (PA élevée)",
+            "EAP normotensif",
+            "EAP avec choc cardigène (PA basse)",
+            "EAP non cardigène (SDRA)"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinique + radiographie compatible",
+            "BNP/NT-proBNP élevé",
+            "Exclusion des causes non cardigènes"
+          ],
+          "diagnosticoDiferencial": [
+            "SDRA (non cardigène)",
+            "Pneumonie grave",
+            "Exacerbation de la BPCO/asthme",
+            "Embolie pulmonaire",
+            "Crise d'anxiété/hyperventilation"
+          ],
+          "examesLaboratoriais": [
+            "BNP (>400pg/mL) ou NT-proBNP (>2000pg/mL)",
+            "Troponine (SCA associée ?)",
+            "Gaz du sang artériel",
+            "Hémogramme, fonction rénale, électrolytes",
+            "D-dimères (si suspicion d'EP)"
+          ],
+          "examesImagem": [
+            "Radiographie de thorax (congestion vasculaire, infiltrat, cardiomégalie)",
+            "Échocardiographie (dysfonction VG, valvopathies)",
+            "Scanner de thorax (si doute diagnostique)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-hf-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Alléger la congestion",
+            "Améliorer l'oxygénation",
+            "Traiter la cause",
+            "Prévenir la récurrence"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Assoir le patient (jambes pendantes)",
+              "Oxygénothérapie",
+              "VNI (CPAP 5-10cmH2O ou BiPAP)",
+              "Intubation si VNI échoue"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-ic-2018"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Diurétique de boucle",
+                "medicamentos": [
+                  "Furosemide 40-80mg IV"
+                ],
+                "posologia": "Dose initiale ; répéter selon la réponse"
+              },
+              {
+                "classe": "Vasodilatateur",
+                "medicamentos": [
+                  "Nitroglycerine SL ou IV",
+                  "Nitroprussiate IV (si HTA)"
+                ],
+                "posologia": "NTG IV 10-200mcg/min"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Inotrope",
+                "medicamentos": [
+                  "Dobutamine 2,5-20mcg/kg/min"
+                ],
+                "observacoes": "Si faible débit"
+              },
+              {
+                "classe": "Vasopresseur",
+                "medicamentos": [
+                  "Noradrénaline"
+                ],
+                "observacoes": "Si choc"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-hf-2021"
+              }
+            ]
+          },
+          "duracao": "Phase aiguë : heures à jours ; optimisation chronique de l'IC"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Réévaluation continue en urgence ; suivi cardiolique",
+          "metasTerapeuticas": [
+            "Euvolémie",
+            "Optimisation des IECA/BRA, BB, antagoniste minéralcorticoïde",
+            "Contrôle des facteurs précipitants"
+          ],
+          "criteriosEncaminhamento": [
+            "USI si choc, intubation ou réfractaire",
+            "Cardiologie pour investigation et optimisation",
+            "Chirurgie cardiaque si valvopathie grave"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "eap-emergencia",
+        "ic-descompensada"
+      ],
+      "medicamentos": [
+        "furosemide",
+        "nitroglycerine",
+        "nitroprussiate",
+        "dobutamine"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "sbc-ic-2018"
+        },
+        {
+          "refId": "esc-hf-2021"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

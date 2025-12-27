@@ -1,0 +1,372 @@
+{
+  "locale": "fr",
+  "category": "infectieuses",
+  "generatedAt": "2025-12-27T22:46:44.910Z",
+  "count": 2,
+  "diseases": [
+    {
+      "id": "faringoamigdalite",
+      "titulo": "Faringoamigdalite Aiguë",
+      "ciap2": [
+        "R76"
+      ],
+      "cid10": [
+        "J02",
+        "J03"
+      ],
+      "cid11": [
+        "CA02"
+      ],
+      "categoria": "infectieuses",
+      "doid": "DOID:3083",
+      "snomedCT": "195666003",
+      "meshId": "D010612",
+      "umlsCui": "C0031350",
+      "quickView": {
+        "definicao": "Inflammation de la pharynx et des amygdales. Virale (majorité) vs. bactérienne (Streptococcus pyogenes - 15-30%). Pic : 5-15 ans.",
+        "criteriosDiagnosticos": [
+          "Centor/McIsaac : Fièvre >38°C, Absence de toux, Adénopathie cervicale antérieure, Exsudat amygdalien"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Hydratation",
+            "Gargarisme avec de l'eau tiède salée",
+            "Repos"
+          ],
+          "farmacologico": [
+            "Si EBHGA : Benzathine pénicilline 600.000U (<27kg) ou 1.200.000U (>27kg) IM DU",
+            "Alternative : Amoxicilline 50mg/kg/jour ÷2 pendant 10 jours"
+          ]
+        },
+        "redFlags": [
+          "Abscessus périamygdalien (trismus, voix étouffée)",
+          "Difficulté respiratoire",
+          "Mononucléose (splénomégalie)"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilline",
+        "benzathine pénicilline"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "malaria",
+      "titulo": "Paludisme",
+      "sinonimos": [
+        "Paludisme",
+        "Fièvre tierce",
+        "Fièvre quarte",
+        "Impaludisme"
+      ],
+      "doid": "DOID:12365",
+      "snomedCT": "61462000",
+      "meshId": "D008288",
+      "umlsCui": "C0024530",
+      "ciap2": [
+        "A73"
+      ],
+      "cid10": [
+        "B50",
+        "B51",
+        "B52",
+        "B53",
+        "B54"
+      ],
+      "cid11": [
+        "1F40"
+      ],
+      "categoria": "infectieuses",
+      "quickView": {
+        "definicao": "Maladie infectieuse causée par des protozoaires du genre Plasmodium, transmise par les moustiques Anopheles. P. falciparum cause la forme la plus grave. Endémique dans l'Amazonie brésilienne légale.",
+        "criteriosDiagnosticos": [
+          "Fièvre (généralement intermittente/cyclique)",
+          "Frissons intenses, sueurs abondantes",
+          "Céphalées, myalgies, arthralgies",
+          "Hépatosplénomégalie",
+          "Historique d'exposition en zone endémique",
+          "Goutte épaisse ou test rapide positif",
+          "Périodicité : P. vivax/ovale (48h), P. malariae (72h), P. falciparum (irrégulière)"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "bas",
+            "criterios": [
+              "P. vivax non compliquée",
+              "Sans signes d'alarme"
+            ],
+            "conduta": "Traitement ambulatoire"
+          },
+          {
+            "nivel": "élevé",
+            "criterios": [
+              "P. falciparum",
+              "Signes de gravité",
+              "Grossesse",
+              "Extremes d'âge"
+            ],
+            "conduta": "Hospitalisation et traitement IV"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation adéquate",
+            "Antipyrétiques (dipyrone, paracétamol)",
+            "Repos",
+            "Notification obligatoire immédiate"
+          ],
+          "farmacologico": [
+            "P. VIVAX (non compliquée) :",
+            "Chloroquine 25mg/kg sur 3 jours + Primaquine 0,5mg/kg/jour pendant 7 jours",
+            "",
+            "P. FALCIPARUM (non compliquée) :",
+            "Arteméther-Lumefantrine (Coartem®) 6 doses sur 3 jours",
+            "OU Artesunate-Méfloquine",
+            "",
+            "PALUDISME GRAVE (toute espèce) :",
+            "Artesunate IV 2,4mg/kg à 0h, 12h, 24h, puis 1 fois par jour",
+            "Compléter avec Coartem® après amélioration"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Élimination du parasite (guérison clinique et parasitologique)",
+          "Prévention des rechutes (P. vivax/ovale - hypnozoïtes)",
+          "Prévention des complications graves",
+          "Guérison radicale avec primaquine"
+        ],
+        "examesIniciais": [
+          "Goutte épaisse (standard-or)",
+          "Test rapide (HRP2 pour P. falciparum)",
+          "Hémogramme (anémie, thrombopénie)",
+          "Fonction rénale et hépatique",
+          "Glycémie",
+          "Bilirubines",
+          "Gazométrie (si grave)"
+        ],
+        "redFlags": [
+          "Altération du niveau de conscience (paludisme cérébral)",
+          "Insuffisance respiratoire (SDRA)",
+          "Ictère intense (Bb>3mg/dL)",
+          "Hémoglobinurie (\"fièvre de l'eau noire\")",
+          "Hypoglycémie (<40mg/dL)",
+          "Acidose métabolique",
+          "Hyperparasitémie (>250.000/mm³)",
+          "Insuffisance rénale aiguë",
+          "Anémie grave (Hb<5g/dL)",
+          "Saignement spontané"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~140.000 cas/an au Brésil (>99% en Amazonie)",
+          "incidencia": "229 millions de cas/an dans le monde (OMS)",
+          "mortalidade": "~400.000 décès/an dans le monde ; au Brésil <100/an",
+          "faixaEtaria": "Tous les âges ; enfants <5 ans plus vulnérables",
+          "fatoresRisco": [
+            "Résidence/voyage en zone endémique",
+            "Manque d'utilisation de moustiquaires",
+            "Heures crépusculaires sans protection",
+            "Grossesses",
+            "Immunodépression",
+            "Première infection"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Les sporozoïtes inoculés par le moustique infectent les hépatocytes, se multiplient et libèrent des mérozoïtes qui envahissent les érythrocytes. Le cycle érythrocytaire provoque une hémolyse, la libération de cytokines et la symptomatologie. P. vivax/ovale forment des hypnozoïtes hépatiques (rechutes). P. falciparum cause une cytoadhérence et une obstruction microvasculaire.",
+          "citations": [
+            {
+              "refId": "who-malaria-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Fièvre élevée (39-41°C)",
+            "Frissons (phase froide)",
+            "Sueurs abondantes (phase de sueur)",
+            "Céphalées intenses",
+            "Myalgies, arthralgies",
+            "Nausées, vomissements",
+            "Asthenie"
+          ],
+          "sinaisExameFisico": [
+            "Splénomégalie (courante)",
+            "Hépatomégalie",
+            "Pâleur (anémie)",
+            "Ictère léger à modéré",
+            "Tachycardie"
+          ],
+          "formasClinicas": [
+            "Paludisme non compliqué",
+            "Paludisme grave/compliqué",
+            "Paludisme cérébral",
+            "Paludisme pendant la grossesse"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinique évocatrice + exposition épidémiologique",
+            "Confirmation parasitologique obligatoire"
+          ],
+          "diagnosticoDiferencial": [
+            "Dengue",
+            "Fièvre typhoïde",
+            "Leptospirose",
+            "Hépatite virale",
+            "Fièvre jaune",
+            "Méningite",
+            "Septicémie"
+          ],
+          "examesLaboratoriais": [
+            "Goutte épaisse (identifie l'espèce et la parasitémie)",
+            "Frottis fin",
+            "Test rapide immunochromatographique",
+            "Hémogramme",
+            "Bilirubines, transaminases",
+            "Fonction rénale",
+            "Glycémie, lactate"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Éliminer le parasite",
+            "Prévenir les complications",
+            "Prévenir la transmission",
+            "Éviter les rechutes (hypnozoïtes)"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hydratation",
+              "Antipyrétiques",
+              "Surveillance",
+              "Transfusion si Hb<5g/dL"
+            ],
+            "citations": [
+              {
+                "refId": "ms-malaria-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "P. vivax",
+                "medicamentos": [
+                  "Chloroquine 25mg/kg sur 3 jours",
+                  "Primaquine 0,5mg/kg/jour pendant 7 jours"
+                ],
+                "observacoes": "Vérifier la déficience en G6PD"
+              },
+              {
+                "classe": "P. falciparum",
+                "medicamentos": [
+                  "Arteméther-Lumefantrine",
+                  "Artesunate-Méfloquine"
+                ],
+                "posologia": "6 doses sur 3 jours"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Paludisme grave",
+                "medicamentos": [
+                  "Artesunate IV 2,4mg/kg"
+                ],
+                "posologia": "0h, 12h, 24h, puis quotidien"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Grossesse",
+                "conduta": "Ne pas utiliser la primaquine ; préférer la quinine + clindamycine au 1er trimestre"
+              },
+              {
+                "situacao": "Déficience en G6PD",
+                "conduta": "Primaquine 0,75mg/kg/semaine pendant 8 semaines"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-malaria-2023"
+              }
+            ]
+          },
+          "duracao": "Traitement court (3-7 jours) ; primaquine pendant 7-14 jours"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Contrôle de guérison : goutte épaisse aux J3, J7, J14, J28, J42",
+          "metasTerapeuticas": [
+            "Négativation de la parasitémie",
+            "Résolution clinique",
+            "Prévention des rechutes (guérison radicale)"
+          ],
+          "criteriosEncaminhamento": [
+            "Paludisme grave : USI/hôpital de référence",
+            "Grossesse avec paludisme",
+            "Échec thérapeutique"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Utilisation de moustiquaires imprégnées d'insecticide",
+            "Répulsifs",
+            "Éviter l'exposition au crépuscule",
+            "Chimioprophylaxie pour les voyageurs (méfloquine, doxycycline, atovaquone-proguanil)",
+            "Contrôle vectoriel"
+          ],
+          "secundaria": [
+            "Diagnostic et traitement précoces",
+            "Recherche active de cas",
+            "Notification obligatoire"
+          ],
+          "citations": [
+            {
+              "refId": "who-malaria-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "malaria-tratamento",
+        "malaria-grave"
+      ],
+      "medicamentos": [
+        "cloroquine",
+        "primaquine",
+        "artemeter-lumefantrine",
+        "artesunate"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-malaria-2022"
+        },
+        {
+          "refId": "who-malaria-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

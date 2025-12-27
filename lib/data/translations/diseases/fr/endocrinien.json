@@ -1,0 +1,195 @@
+{
+  "locale": "fr",
+  "category": "endocrinien",
+  "generatedAt": "2025-12-27T22:46:44.909Z",
+  "count": 3,
+  "diseases": [
+    {
+      "id": "hipotireoidismo",
+      "titulo": "Hypothyroïdie",
+      "ciap2": [
+        "T86"
+      ],
+      "cid10": [
+        "E03"
+      ],
+      "cid11": [
+        "5A00.0"
+      ],
+      "categoria": "endocrinien",
+      "doid": "DOID:409",
+      "snomedCT": "40930008",
+      "meshId": "D007037",
+      "umlsCui": "C0020676",
+      "quickView": {
+        "definicao": "Déficit en hormones thyroïdiennes. Forme primaire (thyroïdite de Hashimoto, post-chirurgicale) plus courante que la forme secondaire.",
+        "criteriosDiagnosticos": [
+          "TSH élevé",
+          "T4 libre bas ou normal",
+          "Symptômes : fatigue, prise de poids, intolérance au froid, constipation"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Surveillance périodique",
+            "Ajustement de la dose selon la réponse"
+          ],
+          "farmacologico": [
+            "Levotiroxine (T4 synthétique) : dose initiale 25-50μg/jour, ajuster jusqu'à normalisation du TSH",
+            "Dose d'entretien : 1,6-1,8μg/kg/jour"
+          ]
+        },
+        "redFlags": [
+          "Myxœdème (hypothyroïdie sévère)",
+          "Coma myxœdémateux",
+          "Angine instable"
+        ]
+      },
+      "medicamentos": [
+        "levotiroxina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "insuficiencia-adrenal",
+      "titulo": "Insuffisance surrénale",
+      "sinonimos": [
+        "Maladie d'Addison",
+        "Hypoadrenalisme"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E27.1",
+        "E27.2",
+        "E27.4"
+      ],
+      "cid11": [
+        "5A74.1"
+      ],
+      "doid": "DOID:10493",
+      "snomedCT": "386584007",
+      "meshId": "D000309",
+      "umlsCui": "C0001623",
+      "categoria": "endocrinien",
+      "quickView": {
+        "definicao": "Déficit de production de cortisol (primaire) ou d'ACTH (secondaire). Primaire : destruction surrénale. Secondaire : la suppression par des corticoïdes exogènes est une cause courante.",
+        "criteriosDiagnosticos": [
+          "Cortisol matinal <5 mcg/dL : suggère l'insuffisance",
+          "Cortisol >18 mcg/dL : exclut l'insuffisance",
+          "Test de stimulation avec ACTH : cortisol <18 mcg/dL",
+          "ACTH : élevé (primaire) ou bas/normal (secondaire)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éducation sur la maladie et identification de la crise",
+            "Bracelet/carte d'identification médicale",
+            "Apprendre l'auto-injection d'hydrocortisone"
+          ],
+          "farmacologico": [
+            "Hydrocortisone 15-25mg/jour (divisé : 2/3 le matin, 1/3 l'après-midi)",
+            "Ou Prednisone 3-5mg/jour",
+            "Fludrocortisone 0,05-0,2mg/jour si primaire",
+            "Doubler la dose en cas de stress/maladie"
+          ]
+        },
+        "redFlags": [
+          "Crise surrénale : hypotension, vomissements, douleur abdominale",
+          "Hyperkaliémie",
+          "Hyponatrémie sévère"
+        ],
+        "metasTerapeuticas": [
+          "Bien-être clinique",
+          "PA normale",
+          "Électrolytes normaux"
+        ],
+        "examesIniciais": [
+          "Cortisol 8h",
+          "ACTH",
+          "Sodium, potassium",
+          "Glycémie",
+          "Anti-21-hydroxylase"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "hydrocortisone",
+        "prednisone"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "urgence",
+        "corticoïde",
+        "endocrinologie"
+      ]
+    },
+    {
+      "id": "hiperprolactinemia",
+      "titulo": "Hyperprolactinémie",
+      "sinonimos": [
+        "Prolactine élevée"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E22.1"
+      ],
+      "cid11": [
+        "5A60.1"
+      ],
+      "doid": "DOID:10504",
+      "snomedCT": "237662005",
+      "meshId": "D006966",
+      "umlsCui": "C0020514",
+      "categoria": "endocrinien",
+      "quickView": {
+        "definicao": "Élévation de la prolactine sérique. Causes : prolactinome, médicaments (antipsychotiques, métopramide), hypothyroïdie, grossesse.",
+        "criteriosDiagnosticos": [
+          "Prolactine >25 ng/mL chez les femmes, >20 ng/mL chez les hommes",
+          "Éliminer les causes secondaires : médicaments, hypothyroïdie",
+          "Si PRL >200 ng/mL : fortement évocateur de prolactinome",
+          "IRM de la selle turcique si PRL >100 ou symptômes compressifs"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Arrêter le médicament responsable si possible",
+            "Traiter l'hypothyroïdie si présente"
+          ],
+          "farmacologico": [
+            "Agoniste dopaminergique : Cabergoline 0,25-1 mg 1-2x/semaine",
+            "Bromocriptine comme alternative",
+            "Chirurgie si réfractaire ou compression chiasmatique"
+          ]
+        },
+        "redFlags": [
+          "Céphalées intenses",
+          "Altération visuelle (hémianopsie)",
+          "Apoplexie hypophysaire"
+        ],
+        "metasTerapeuticas": [
+          "Prolactine normale",
+          "Restauration de la fonction gonadale",
+          "Réduction tumorale"
+        ],
+        "examesIniciais": [
+          "Prolactine (2x)",
+          "TSH",
+          "Beta-HCG",
+          "IRM de la selle turcique"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "cabergoline"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "hypophyse",
+        "amenorrhée",
+        "galactorrhée"
+      ]
+    }
+  ]
+}

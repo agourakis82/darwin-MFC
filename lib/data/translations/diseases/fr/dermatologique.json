@@ -1,0 +1,384 @@
+{
+  "locale": "fr",
+  "category": "dermatologique",
+  "generatedAt": "2025-12-27T22:46:44.897Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "psoriase",
+      "titulo": "Psoriasis",
+      "ciap2": [
+        "S91"
+      ],
+      "cid10": [
+        "L40"
+      ],
+      "cid11": [
+        "EA90"
+      ],
+      "categoria": "dermatologique",
+      "doid": "DOID:8893",
+      "snomedCT": "9014002",
+      "meshId": "D011565",
+      "umlsCui": "C0033860",
+      "hpo": [
+        "HP:0003765",
+        "HP:0003766"
+      ],
+      "tags": [
+        "dermatologique",
+        "autoimmune",
+        "chronique"
+      ],
+      "quickView": {
+        "definicao": "Maladie inflammatoire chronique de la peau. Plaques érythémateuses avec des squames argentées. Peut être associée à une arthrite psoriasique.",
+        "criteriosDiagnosticos": [
+          "Plaques érythémateuses avec des squames",
+          "Localisation typique (coudes, genoux, cuir chevelu)",
+          "Histopathologie si nécessaire"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Émollients",
+            "Photothérapie",
+            "Éviter les facteurs déclencheurs"
+          ],
+          "farmacologico": [
+            "Corticoïdes topiques",
+            "Analogues de la vitamine D topiques",
+            "Traitement systémique si étendu : Méthotrexate ou Biologics"
+          ]
+        },
+        "redFlags": [
+          "Érythrodermie",
+          "Pustules",
+          "Arthrite psoriasique",
+          "Infection secondaire"
+        ]
+      },
+      "medicamentos": [
+        "metotrexate"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "urticaria-cronica",
+      "titulo": "Urticaire chronique",
+      "ciap2": [
+        "S99"
+      ],
+      "cid10": [
+        "L50"
+      ],
+      "cid11": [
+        "EB01"
+      ],
+      "categoria": "dermatologique",
+      "doid": "DOID:9119",
+      "snomedCT": "37796009",
+      "meshId": "D014581",
+      "umlsCui": "C0042109",
+      "tags": [
+        "dermatologique",
+        "chronique",
+        "allergique"
+      ],
+      "quickView": {
+        "definicao": "Urticaire persistant >6 semaines. Généralement idiopathique ou auto-immune.",
+        "criteriosDiagnosticos": [
+          "Papules érythémateuses prurigineuses",
+          ">6 semaines de durée",
+          "L'angioœdème peut être présent"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éviter les déclencheurs identifiés",
+            "Éviter les AAS/AINS si liés"
+          ],
+          "farmacologico": [
+            "Antihistaminique H1 : Cetirizine 10mg 1x/jour",
+            "Si non répondeur : augmenter la dose ou ajouter H2"
+          ]
+        },
+        "redFlags": [
+          "Angioœdème des voies aériennes",
+          "Anaphylaxie",
+          "Symptômes systémiques"
+        ]
+      },
+      "medicamentos": [
+        "cetirizine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dermatite-atopica-pediatrica",
+      "titulo": "Dermatite atopique",
+      "ciap2": [
+        "S87"
+      ],
+      "cid10": [
+        "L20"
+      ],
+      "cid11": [
+        "EA80"
+      ],
+      "categoria": "dermatologique",
+      "doid": "DOID:3310",
+      "snomedCT": "24079001",
+      "meshId": "D003876",
+      "umlsCui": "C0011615",
+      "quickView": {
+        "definicao": "Dermatose inflammatoire chronique prurigineuse. Début généralement <5 ans. Fait partie de la marche atopique (dermatite → rhinite → asthme).",
+        "criteriosDiagnosticos": [
+          "Hanifin-Rajka : prurit + ≥3 critères",
+          "Morphologie typique pour l'âge",
+          "Nourrissons : visage et surfaces extensorielles",
+          "Plus âgés : flexures (fosses)",
+          "Cours chronique/récidivant"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation intense (émollients 2-3x/jour)",
+            "Bain court, eau tiède",
+            "Éviter les déclencheurs",
+            "Couper les ongles"
+          ],
+          "farmacologico": [
+            "Corticoïde topique faible puissance (hydrocortisone)",
+            "Crises : CT moyenne puissance court terme",
+            "Inhibiteur de calcineurine (>2 ans)"
+          ]
+        },
+        "redFlags": [
+          "Infection secondaire (impétigo)",
+          "Eczéma herpétique",
+          "Érythrodermie",
+          "Résistance au traitement"
+        ]
+      },
+      "medicamentos": [
+        "hidrocortisona-topica"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "acne-vulgar",
+      "titulo": "Acné vulgaire",
+      "sinonimos": [
+        "Acné commun"
+      ],
+      "ciap2": [
+        "S88"
+      ],
+      "cid10": [
+        "L70"
+      ],
+      "cid11": [
+        "ED80"
+      ],
+      "categoria": "dermatologique",
+      "doid": "DOID:654",
+      "snomedCT": "89765004",
+      "meshId": "D000152",
+      "umlsCui": "C0001053",
+      "hpo": [
+        "HP:0001061"
+      ],
+      "tags": [
+        "dermatologique",
+        "commun",
+        "adolescence"
+      ],
+      "quickView": {
+        "definicao": "Dermatose inflammatoire chronique du follicule pilosébacé. Commune chez les adolescents. Lésions : comédons, papules, pustules, nodules.",
+        "criteriosDiagnosticos": [
+          "Lésions typiques : comédons, papules, pustules, nodules",
+          "Localisation : visage, thorax, dos",
+          "Âge : principalement adolescents/jeunes adultes"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hygiène adéquate",
+            "Éviter d'écraser les lésions",
+            "Protecteur solaire non comédogène",
+            "Régime alimentaire : réduire le sucre/produits laitiers peut aider"
+          ],
+          "farmacologico": [
+            "Léger : Peroxyde de benzoyle topique 2,5-10%",
+            "Modéré : Peroxyde de benzoyle + Rétinoïde topique",
+            "Grave : Doxycycline ou Minocycline orale + Tretinoïne topique",
+            "Femmes : Contraceptif oral combiné si indiqué"
+          ]
+        },
+        "redFlags": [
+          "Acné fulminante",
+          "Acné conglobata",
+          "Cicatrices étendues",
+          "Résistant au traitement"
+        ]
+      },
+      "medicamentos": [
+        "doxiciclina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dermatite-contato",
+      "titulo": "Dermatite de contact",
+      "ciap2": [
+        "S88"
+      ],
+      "cid10": [
+        "L25"
+      ],
+      "cid11": [
+        "EA80.1"
+      ],
+      "categoria": "dermatologique",
+      "doid": "DOID:13360",
+      "snomedCT": "40275004",
+      "meshId": "D017449",
+      "umlsCui": "C0011606",
+      "quickView": {
+        "definicao": "Éruption cutanée causée par un contact direct avec un irritant ou un allergène. Irritative (80%) vs allergique (20%).",
+        "criteriosDiagnosticos": [
+          "Érythème localisé",
+          "Prurit",
+          "Vesicules/ampoules (allergique)",
+          "Historique d'exposition",
+          "Distribution compatible"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Identifier et éviter l'agent causal",
+            "Compresse froides",
+            "Hydratation cutanée"
+          ],
+          "farmacologico": [
+            "Corticoïde topique: Hidrocortisona 1% (visage) ou Betametasona (corps) 2x/jour jusqu'à la résolution",
+            "Antihistaminique oral si prurit intense"
+          ]
+        },
+        "redFlags": [
+          "Surinfection",
+          "Eczéma généralisé",
+          "Anaphylaxie"
+        ]
+      },
+      "medicamentos": [
+        "hidrocortisona",
+        "betametasona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "urticaria",
+      "titulo": "Urticaire",
+      "ciap2": [
+        "S97"
+      ],
+      "cid10": [
+        "L50"
+      ],
+      "cid11": [
+        "EB01"
+      ],
+      "categoria": "dermatologique",
+      "doid": "DOID:6945",
+      "snomedCT": "42702005",
+      "meshId": "D014581",
+      "umlsCui": "C0020538",
+      "quickView": {
+        "definicao": "Éruption cutanée caractérisée par des papules/plaques érythémateuses prurigineuses transitoires (<24h). Aiguë (<6 semaines) vs chronique.",
+        "criteriosDiagnosticos": [
+          "Papules/plaques érythémateuses",
+          "Prurit intense",
+          "Lésions éphémères (<24h)",
+          "L'angioœdème peut être présent"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éviter les déclencheurs identifiés",
+            "Compresse froides"
+          ],
+          "farmacologico": [
+            "Antihistaminique H1 non sédatif : Loratadine 10mg 1x/jour ou Cétirizine 10mg 1x/jour",
+            "Si réfractaire : augmenter la dose ou ajouter un autre antihistaminique"
+          ]
+        },
+        "redFlags": [
+          "Angioœdème des voies aériennes",
+          "Anaphylaxie",
+          "Urticaire chronique avec angioœdème"
+        ]
+      },
+      "medicamentos": [
+        "loratadina",
+        "cetirizina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dermatite-seborreica",
+      "titulo": "Dermatite séborrhéique",
+      "ciap2": [
+        "S89"
+      ],
+      "cid10": [
+        "L21"
+      ],
+      "cid11": [
+        "EA81"
+      ],
+      "categoria": "dermatologique",
+      "doid": "DOID:8725",
+      "snomedCT": "5960000",
+      "meshId": "D012628",
+      "umlsCui": "C0011616",
+      "hpo": [
+        "HP:0003765"
+      ],
+      "tags": [
+        "dermatologique",
+        "commune",
+        "chronique"
+      ],
+      "quickView": {
+        "definicao": "Dermatite chronique récidivante. Zones séborrhéiques : cuir chevelu, visage, thorax. Écailles jaunâtres et grasses.",
+        "criteriosDiagnosticos": [
+          "Lésions squameuses dans les zones séborrhéiques",
+          "Prurit léger à modéré",
+          "Érythème",
+          "Distribution typique"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Shampooing anti-pelliculaire",
+            "Hygiène adéquate",
+            "Éviter les produits gras"
+          ],
+          "farmacologico": [
+            "Kétoconazole topique",
+            "Corticoïdes topiques doux",
+            "Ciclopirox topique"
+          ]
+        },
+        "redFlags": [
+          "Lésions étendues",
+          "Infection secondaire",
+          "Résistance au traitement"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

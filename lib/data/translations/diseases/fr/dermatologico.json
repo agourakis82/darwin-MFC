@@ -1,0 +1,177 @@
+{
+  "locale": "fr",
+  "category": "dermatologico",
+  "generatedAt": "2025-12-27T22:46:44.905Z",
+  "count": 3,
+  "diseases": [
+    {
+      "id": "dermatite-atopica",
+      "titulo": "Dermatite atopique",
+      "sinonimos": [
+        "Eczéma atopique"
+      ],
+      "ciap2": [
+        "S87"
+      ],
+      "cid10": [
+        "L20"
+      ],
+      "cid11": [
+        "EA80"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:3310",
+      "snomedCT": "24079001",
+      "meshId": "D003876",
+      "umlsCui": "C0011603",
+      "hpo": [
+        "HP:0000967",
+        "HP:0000962"
+      ],
+      "tags": [
+        "dermatologique",
+        "allergique",
+        "chronique"
+      ],
+      "quickView": {
+        "definicao": "Dermatite chronique récurrente. Prurit intense, lésions eczémateuses. Fréquemment associée à l'asthme et à la rhinite allergique.",
+        "criteriosDiagnosticos": [
+          "Prurit",
+          "Morphologie et distribution typiques",
+          "Chronification",
+          "Antécédents personnels/familiaux d'atopie"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Émollients abondants",
+            "Éviter les irritants",
+            "Bains tièdes",
+            "Hydratation"
+          ],
+          "farmacologico": [
+            "Corticoïdes topiques",
+            "Inhibiteurs de calcineurine topiques",
+            "Antihistaminiques pour le prurit"
+          ]
+        },
+        "redFlags": [
+          "Infection secondaire",
+          "Érythrodermie",
+          "Impétigo"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "impetigo",
+      "titulo": "Impétigo",
+      "sinonimos": [
+        "Piodermite superficielle"
+      ],
+      "ciap2": [
+        "S72"
+      ],
+      "cid10": [
+        "L01"
+      ],
+      "cid11": [
+        "EA40"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:8406",
+      "snomedCT": "48277006",
+      "meshId": "D007169",
+      "umlsCui": "C0021099",
+      "tags": [
+        "dermatologique",
+        "infectieuse",
+        "bactérienne",
+        "pédiatrique"
+      ],
+      "quickView": {
+        "definicao": "Infection cutanée superficielle bactérienne. Causes : S. aureus, S. pyogenes. Lésions : vésicules/pustules qui évoluent en croûtes mielleuses.",
+        "criteriosDiagnosticos": [
+          "Lésions vésiculaires/pustuleuses",
+          "Évoluent en croûtes mielleuses",
+          "Localisation : visage, membres",
+          "Plus courant chez les enfants"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hygiène locale",
+            "Retirer les croûtes",
+            "Éviter le contact"
+          ],
+          "farmacologico": [
+            "Topique : Mupirocine 2% 3 fois par jour pendant 7-10 jours",
+            "Ou Acide fusidique topique",
+            "Si étendu : Céfalexine orale 25-50 mg/kg/jour pendant 7 jours",
+            "Ou Amoxicilline-clavulanate"
+          ]
+        },
+        "redFlags": [
+          "Cellulite",
+          "Erythrasma",
+          "Lymphangite",
+          "Glomérulonéphrite post-streptococcique"
+        ]
+      },
+      "medicamentos": [
+        "cefalexina",
+        "amoxicilina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "vitiligo",
+      "titulo": "Vitiligo",
+      "ciap2": [
+        "S93"
+      ],
+      "cid10": [
+        "L80"
+      ],
+      "cid11": [
+        "ED70"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:9008",
+      "snomedCT": "9014002",
+      "meshId": "D014820",
+      "umlsCui": "C0042890",
+      "tags": [
+        "dermatologique",
+        "autoimmune"
+      ],
+      "quickView": {
+        "definicao": "Dépigmentation de la peau due à la perte de mélanocytes. Maladie auto-immune.",
+        "criteriosDiagnosticos": [
+          "Taches hypochromiques/acromiques",
+          "Bords bien délimités",
+          "Lampe de Wood positive"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Protection solaire",
+            "Maquillage correcteur"
+          ],
+          "farmacologico": [
+            "Corticoïdes topiques",
+            "Inhibiteurs de calcineurine topiques",
+            "Photothérapie"
+          ]
+        },
+        "redFlags": [
+          "Dépigmentation rapide",
+          "Associée à d'autres maladies auto-immunes"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

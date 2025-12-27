@@ -1,0 +1,750 @@
+{
+  "locale": "fr",
+  "category": "respiratorio",
+  "generatedAt": "2025-12-27T22:46:44.897Z",
+  "count": 5,
+  "diseases": [
+    {
+      "id": "dpoc",
+      "titulo": "Maladie Pulmonaire Obstructive Chronique",
+      "sinonimos": [
+        "MPOC",
+        "Émfisème",
+        "Bronchite chronique"
+      ],
+      "doid": "DOID:3083",
+      "snomedCT": "13645005",
+      "meshId": "D029424",
+      "umlsCui": "C0024117",
+      "ciap2": [
+        "R95"
+      ],
+      "cid10": [
+        "J44",
+        "J44.0",
+        "J44.1",
+        "J44.9"
+      ],
+      "cid11": [
+        "CA22"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "Maladie respiratoire chronique préventible et traitable, caractérisée par une limitation persistante du flux aérodynamique, généralement progressive et associée à une réponse inflammatoire chronique des voies aériennes et des poumons à des particules ou gaz nocifs.",
+        "criteriosDiagnosticos": [
+          "Essoufflement persistant et progressif",
+          "Toux chronique avec ou sans expectoration",
+          "Historique d’exposition aux facteurs de risque (tabagisme)",
+          "Espirométrie post-BD : VEF1/CVF <0,70"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Arrêt du tabagisme (essentiel)",
+            "Vaccination (grippe annuelle, pneumocoque)",
+            "Réhabilitation pulmonaire",
+            "Activité physique régulière",
+            "Oxygénothérapie domiciliaire si indiquée"
+          ],
+          "farmacologico": [
+            "GOLD A-B : Bronchodilatateur de courte ou longue durée",
+            "LABA ou LAMA (Tiotropium 18mcg/jour ou Formoterol)",
+            "GOLD C-D : LABA + LAMA ou LABA + CI",
+            "CI si éosinophiles >300 ou histoire d’asthme"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Réduire les symptômes (mMRC <2, CAT <10)",
+          "Prévenir les exacerbations",
+          "Améliorer la capacité d’exercice",
+          "Retarder la progression de la maladie",
+          "Réduire la mortalité"
+        ],
+        "examesIniciais": [
+          "Espirométrie avec test bronchodilatateur",
+          "Radiographie de thorax",
+          "Oxymétrie de pouls",
+          "Gazométrie si SpO2 <92%",
+          "Hémogramme (polycythémie)",
+          "Alpha-1 antitrypsine si <45 ans ou antécédents familiaux"
+        ],
+        "redFlags": [
+          "Exacerbation grave (essoufflement intense, tachypnée >25)",
+          "Altération du niveau de conscience",
+          "SpO2 <88% ou cyanose",
+          "Utilisation de la musculature accessoire",
+          "Œdème des MMII (cor pulmonale)",
+          "Fièvre élevée (infection grave)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "10-15% des adultes >40 ans, plus fréquente chez les fumeurs",
+          "incidencia": "Troisième cause de décès dans le monde",
+          "faixaEtaria": "Généralement >40 ans",
+          "fatoresRisco": [
+            "Tabagisme (90% des cas)",
+            "Exposition professionnelle (poussières, produits chimiques)",
+            "Pollution de l’air",
+            "Déficit en alpha-1 antitrypsine",
+            "Infections respiratoires pendant l’enfance",
+            "Biomasse (foyer à bois)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Inflammation chronique des voies aériennes et du parenchyme pulmonaire induite par l’inhalation de particules nocives, principalement la fumée de cigarette. Résulte en une bronchite chronique (hypersecrétion de mucus) et/ou un emphysème (destruction alvéolaire), entraînant une limitation fixe du flux aérodynamique.",
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Essoufflement progressif (initialement lors d’efforts importants)",
+            "Toux chronique, généralement matinale",
+            "Expectoration chronique (muqueuse ou purulente)",
+            "Sifflements",
+            "Sensation de serrement dans la poitrine",
+            "Fatigue et intolérance à l’exercice"
+          ],
+          "sinaisExameFisico": [
+            "Thorax en barrique (hyperinsufflation)",
+            "Utilisation de la musculature accessoire",
+            "Expiration prolongée",
+            "Diminution du murmure vésical",
+            "Sifflements et ronflements",
+            "Cyanose (cas avancés)"
+          ],
+          "formasClinicas": [
+            "Phénotype emphysémateux (pink puffer) : maigre, essoufflement intense",
+            "Phénotype bronchitique (blue bloater) : cyanose, œdème, toux productive",
+            "Superposition asthme-MPOC (ACO)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinique compatible + facteurs de risque",
+            "Espirométrie post-BD : VEF1/CVF <0,70",
+            "Classification GOLD (VEF1% prévu)"
+          ],
+          "diagnosticoDiferencial": [
+            "Asthme",
+            "Bronchiectasies",
+            "Tuberculose",
+            "Insuffisance cardiaque",
+            "Cancer du poumon",
+            "Fibrose pulmonaire"
+          ],
+          "examesLaboratoriais": [
+            "Espirométrie avec test bronchodilatateur",
+            "Gazométrie artérielle (si SpO2 <92%)",
+            "Hémogramme",
+            "Alpha-1 antitrypsine (si indiqué)",
+            "Scanner thoracique (cas sélectionnés)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Soulager les symptômes",
+            "Prévenir les exacerbations",
+            "Améliorer la tolérance à l’exercice et la qualité de vie",
+            "Prévenir la progression",
+            "Réduire la mortalité"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Arrêt du tabagisme (le plus efficace)",
+              "Vaccination annuelle (grippe) et pneumocoque",
+              "Réhabilitation pulmonaire",
+              "Oxygénothérapie si PaO2 ≤55 ou SpO2 ≤88%",
+              "Soutien nutritionnel si poids bas"
+            ],
+            "citations": [
+              {
+                "refId": "gold-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "LAMA",
+                "medicamentos": [
+                  "Tiotropium",
+                  "Glycopyrronium"
+                ],
+                "posologia": "Tiotropium 18mcg 1x/jour inhalateur"
+              },
+              {
+                "classe": "LABA",
+                "medicamentos": [
+                  "Formoterol",
+                  "Salmeterol",
+                  "Indacaterol"
+                ],
+                "posologia": "Formoterol 12mcg 12/12h inhalateur"
+              },
+              {
+                "classe": "LABA + LAMA (si persistance des symptômes)",
+                "medicamentos": [
+                  "Tiotropium + Formoterol"
+                ],
+                "posologia": "Combinaison en dispositif unique ou séparé"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Exacerbateur fréquent (≥2/an)",
+                "conduta": "Considérer l’ajout de CI si éosinophiles ≥300"
+              },
+              {
+                "situacao": "Superposition asthme-MPOC",
+                "conduta": "LABA + CI, ne pas utiliser LABA seul"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "gold-2024"
+              }
+            ]
+          },
+          "duracao": "Traitement continu"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Toutes les 3-6 mois, ou plus fréquent si instable",
+          "examesControle": [
+            "Espirométrie annuelle",
+            "Oxymétrie à chaque consultation",
+            "Évaluation des symptômes (mMRC, CAT)"
+          ],
+          "metasTerapeuticas": [
+            "mMRC 0-1, CAT <10",
+            "0-1 exacerbation/an",
+            "Maintien de la capacité fonctionnelle"
+          ],
+          "criteriosEncaminhamento": [
+            "MPOC grave (GOLD 3-4)",
+            "Exacerbations fréquentes malgré le traitement",
+            "Candidat à l’oxygénothérapie domiciliaire",
+            "Évaluation pour chirurgie réductrice ou transplantation"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Ne pas commencer à fumer",
+            "Protection professionnelle",
+            "Réduction de la pollution environnementale"
+          ],
+          "secundaria": [
+            "Arrêt du tabagisme",
+            "Vaccination",
+            "Traitement précoce"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-dpoc"
+      ],
+      "medicamentos": [
+        "tiotropio",
+        "formoterol",
+        "salbutamol",
+        "beclometasona"
+      ],
+      "calculadoras": [
+        "gold-copd",
+        "bode-index"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "gold-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "dpoc",
+        "enfisema",
+        "bronquite",
+        "tabagismo",
+        "dispneia"
+      ]
+    },
+    {
+      "id": "pneumonia-comunitaria",
+      "titulo": "Pneumonie Communautaire",
+      "sinonimos": [
+        "PAC",
+        "Pneumonie communautaire",
+        "Pneumonie"
+      ],
+      "doid": "DOID:552",
+      "snomedCT": "385093006",
+      "meshId": "D018410",
+      "umlsCui": "C0694549",
+      "ciap2": [
+        "R81"
+      ],
+      "cid10": [
+        "J18",
+        "J15",
+        "J13",
+        "J14"
+      ],
+      "cid11": [
+        "CA40"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "Infection aiguë du parenchyme pulmonaire acquise en dehors de l'environnement hospitalier, caractérisée par des symptômes respiratoires aigus et une nouvelle infiltration pulmonaire à la radiographie.",
+        "criteriosDiagnosticos": [
+          "Symptômes aigus : toux, expectoration, fièvre, dyspnée, douleur thoracique pleurétique",
+          "Signes : tachypnée, râles, souffle tubaire",
+          "Nouvelle infiltration à la radiographie de thorax",
+          "Absence de récente hospitalisation (>48h dans les 90 derniers jours)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation adéquate",
+            "Repos relatif",
+            "Antipyrétiques si fièvre",
+            "Surveillance de la SpO2"
+          ],
+          "farmacologico": [
+            "PAC légère (ambulatoire) : Amoxicilline 500mg 8/8h PO x 5-7 jours",
+            "Ou Azithromycine 500mg/jour x 3-5 jours (si allergie à la pénicilline)",
+            "PAC modérée : Amoxicilline-clavulanate + Macrolide ou Quinolone respiratoire",
+            "Durée : 5-7 jours (minimum 5 jours, apyrexie pendant 48-72h)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Résolution des symptômes en 48-72h",
+          "Défervescence en 48-72h",
+          "Amélioration radiologique (peut prendre plusieurs semaines)",
+          "SpO2 >90%"
+        ],
+        "examesIniciais": [
+          "Radiographie de thorax (PA et profil)",
+          "Oxymétrie de pouls",
+          "Hémogramme, VHS",
+          "Fonction rénale si modérée/grave",
+          "Gaz du sang si SpO2 <92%"
+        ],
+        "redFlags": [
+          "SpO2 <90% en air ambiant",
+          "Hypotension (PA systolique <90)",
+          "Confusion mentale",
+          "FR >30 irpm",
+          "Uréé >50 mg/dL",
+          "Épanchement pleural volumineux",
+          "Infiltrat multilobar"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Cause courante de consultation et d'hospitalisation",
+          "incidencia": "5-11 cas/1000 habitants/an",
+          "faixaEtaria": "Tous les âges, plus grave chez les personnes âgées et les enfants",
+          "fatoresRisco": [
+            "Âge >65 ans",
+            "MPOC, asthme",
+            "Insuffisance cardiaque",
+            "Diabète mellitus",
+            "Immunosuppression",
+            "Tabagisme, alcoolisme",
+            "Institutionnalisation"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Infection du parenchyme pulmonaire par des microorganismes (bactéries, virus, champignons). Les plus courants sont Streptococcus pneumoniae, Haemophilus influenzae, Mycoplasma pneumoniae et virus respiratoires. La réponse inflammatoire provoque une consolidation alvéolaire et un compromis des échanges gazeux.",
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Toux (généralement productive)",
+            "Fièvre (peut être absente chez les personnes âgées)",
+            "Dyspnée",
+            "Douleur thoracique pleurétique",
+            "Frissons",
+            "Malaise général"
+          ],
+          "sinaisExameFisico": [
+            "Tachypnée (FR >20)",
+            "Fièvre",
+            "Râles crépitants",
+            "Souffle tubaire (consolidation)",
+            "Macice à la percussion",
+            "Augmentation du frémitus thoracovocal"
+          ],
+          "formasClinicas": [
+            "PAC typique : début aigu, forte fièvre, toux productive",
+            "PAC atypique : début insidieux, toux sèche, manifestations extra-pulmonaires"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Tableau clinique compatible",
+            "Nouvelle infiltration à la radiographie de thorax",
+            "Exclusion d'autres causes"
+          ],
+          "diagnosticoDiferencial": [
+            "Bronchite aiguë",
+            "Exacerbation de MPOC/asthme",
+            "Insuffisance cardiaque",
+            "Embolie pulmonaire",
+            "Tuberculose",
+            "Cancer du poumon"
+          ],
+          "examesLaboratoriais": [
+            "Radiographie de thorax",
+            "Hémogramme",
+            "VHS ou procalcitonine",
+            "Uréé, créatinine",
+            "Hématoculture (si hospitalisation)",
+            "Recherche d'antigène urinaire (pneumocoque, légionnelle) si grave"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Éradication du pathogène",
+            "Résolution des symptômes",
+            "Prévention des complications",
+            "Éviter la résistance aux antimicrobiens"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hydratation",
+              "Repos",
+              "Oxygénothérapie si SpO2 <90%",
+              "Analgesiques/antipyrétiques"
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-pac-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Béta-lactamique",
+                "medicamentos": [
+                  "Amoxicilline",
+                  "Amoxicilline-clavulanate"
+                ],
+                "posologia": "Amoxicilline 500mg 8/8h PO x 5-7 jours"
+              },
+              {
+                "classe": "Macrolide (alternative ou association)",
+                "medicamentos": [
+                  "Azithromycine",
+                  "Clarithromycine"
+                ],
+                "posologia": "Azithromycine 500mg/jour x 3-5 jours"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Allergie à la pénicilline",
+                "conduta": "Azithromycine ou Quinolone respiratoire (Levofloxacine)"
+              },
+              {
+                "situacao": "PAC grave (hospitalisation)",
+                "conduta": "Amoxicilline-clavulanate IV + Azithromycine ou Quinolone IV"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-pac-2022"
+              }
+            ]
+          },
+          "duracao": "5-7 jours (minimum 5 jours, apyrexie pendant 48-72h avant d'arrêter)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Retour en 48-72h si ambulatoire",
+          "examesControle": [
+            "Radiographie de contrôle en 4-6 semaines (si >50 ans ou tabagique)",
+            "Réévaluation clinique si pas d'amélioration en 48-72h"
+          ],
+          "metasTerapeuticas": [
+            "Défervescence en 48-72h",
+            "Amélioration des symptômes respiratoires"
+          ],
+          "criteriosEncaminhamento": [
+            "CURB-65 ≥2 (considérer l'hospitalisation)",
+            "SpO2 <90%",
+            "Complications (épanchement pleural, abcès)",
+            "Échec du traitement ambulatoire"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Vaccination pneumococcique (>65 ans et groupes à risque)",
+            "Vaccination antigrippale annuelle",
+            "Arrêt du tabagisme"
+          ],
+          "secundaria": [
+            "Traitement approprié des infections respiratoires",
+            "Vaccination post-PAC"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-pac"
+      ],
+      "medicamentos": [
+        "amoxicilina",
+        "azitromicina",
+        "levofloxacino"
+      ],
+      "calculadoras": [
+        "curb-65",
+        "psi-port"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "sbpt-pac-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "pneumonia",
+        "pac",
+        "infeccao-respiratoria",
+        "tosse",
+        "febre"
+      ]
+    },
+    {
+      "id": "asma-infantil",
+      "titulo": "Asma infantile",
+      "ciap2": [
+        "R96"
+      ],
+      "cid10": [
+        "J45"
+      ],
+      "cid11": [
+        "CA23"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:2841",
+      "snomedCT": "195967001",
+      "meshId": "D001249",
+      "umlsCui": "C0004096",
+      "quickView": {
+        "definicao": "Maladie inflammatoire chronique des voies aériennes avec des épisodes récurrents de sifflement. Diagnostic difficile chez les enfants de moins de 5 ans. Principale maladie chronique de l'enfance.",
+        "criteriosDiagnosticos": [
+          "Sifflement récurrent (≥3 épisodes)",
+          "Toux nocturne/matinale",
+          "Essoufflement à l'effort",
+          "Amélioration avec un bronchodilatateur",
+          "IPA modifié (prédictif chez les enfants de moins de 5 ans)"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Contrôle environnemental",
+            "Éviter le tabagisme passif",
+            "Vaccination à jour"
+          ],
+          "farmacologico": [
+            "Léger intermittent : SABA de secours",
+            "Persistant : CI dose basse (budesonide 100-200mcg)",
+            "Augmentation du traitement si non contrôlé"
+          ]
+        },
+        "redFlags": [
+          "Cyanose",
+          "Utilisation de la musculature accessoire",
+          "Difficulté à parler",
+          "SpO2 <92%",
+          "Silence thoracique"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol",
+        "budesonide",
+        "prednisolone"
+      ],
+      "protocolos": [
+        "asma-exacerbacao"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquite-cronica",
+      "titulo": "Bronchite Chronique",
+      "sinonimos": [
+        "Bronchite Chronique Simple",
+        "Maladie Pulmonaire Obstructive Chronique - Type Bronchitique"
+      ],
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J41"
+      ],
+      "cid11": [
+        "CA22.0"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:6132",
+      "snomedCT": "13645005",
+      "meshId": "D001991",
+      "umlsCui": "C0006277",
+      "tags": [
+        "chronique",
+        "respiratoire",
+        "tabagisme"
+      ],
+      "quickView": {
+        "definicao": "Toux et expectoration pendant ≥3 mois/an pendant ≥2 ans consécutifs, sans autres causes. Fréquemment associée au tabagisme.",
+        "criteriosDiagnosticos": [
+          "Toux productive ≥3 mois/an",
+          "≥2 ans consécutifs",
+          "Élimination d'autres causes (TB, bronchiectasies, etc)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Arrêt du tabagisme",
+            "Vaccination (grippe, pneumocoque)",
+            "Réhabilitation pulmonaire"
+          ],
+          "farmacologico": [
+            "Bronchodilatateur inhalatoire : Salbutamol spray 2 jets 4x/jour",
+            "Si symptômes fréquents : ajouter corticoïde inhalatoire"
+          ]
+        },
+        "redFlags": [
+          "Hémoptysie",
+          "Perte pondérale",
+          "Fièvre persistante",
+          "Essoufflement progressif"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol",
+        "budesonida"
+      ],
+      "protocolos": [
+        "dpoc"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "tosse-cronica",
+      "titulo": "Tosse chronique",
+      "sinonimos": [
+        "Tosse persistente"
+      ],
+      "ciap2": [
+        "R05"
+      ],
+      "cid10": [
+        "R05"
+      ],
+      "cid11": [
+        "MD11.1"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:12759",
+      "snomedCT": "49727002",
+      "meshId": "D003371",
+      "umlsCui": "C0010200",
+      "tags": [
+        "respiratorio",
+        "sintoma",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "Tosse persistante depuis plus de 8 semaines. Principales causes : syndrome du ruissellement post-nasal, asthme, RGO, utilisation d'IECA.",
+        "criteriosDiagnosticos": [
+          "Tosse >8 semaines",
+          "Investiguer les causes : RGO, asthme, rhinite, IECA",
+          "Radiographie thoracique normale",
+          "Élimination des autres causes"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Traiter la cause sous-jacente",
+            "Arrêter l'IECA si utilisation récente",
+            "Éviter les irritants"
+          ],
+          "farmacologico": [
+            "Si RGO : IPP",
+            "Si asthme : Bronchodilatateurs + Corticoïdes inhalés",
+            "Si rhinite : Antihistaminiques + Corticoïdes nasaux",
+            "Codéine ou Dextrométhorphane uniquement à court terme si nécessaire"
+          ]
+        },
+        "redFlags": [
+          "Hémorragie",
+          "Perte de poids",
+          "Fièvre",
+          "Adénopathies",
+          "Tabagisme",
+          "Âge >50 ans"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

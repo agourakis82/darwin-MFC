@@ -1,0 +1,708 @@
+{
+  "locale": "fr",
+  "category": "pediatrico",
+  "generatedAt": "2025-12-27T22:46:44.895Z",
+  "count": 11,
+  "diseases": [
+    {
+      "id": "bronquiolite",
+      "titulo": "Bronquiolite",
+      "sinonimos": [
+        "Bronquiolite virale aiguë"
+      ],
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J21"
+      ],
+      "cid11": [
+        "CA40.1"
+      ],
+      "doid": "DOID:2942",
+      "snomedCT": "4120002",
+      "meshId": "D001988",
+      "umlsCui": "C0006271",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Infection virale des voies aériennes inférieures chez les nourrissons (<2 ans). Le VSR est l'agent le plus courant. Pic : hiver.",
+        "criteriosDiagnosticos": [
+          "Âge <24 mois",
+          "Premier épisode de sibilance",
+          "Précurseurs de l'IVAS (rhinorrhée, toux)",
+          "Tachypnée, tirage, sibilants, crépitants",
+          "Diagnostic clinique - examens rarement nécessaires"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation adéquate",
+            "Aspiration nasale",
+            "Oxygénothérapie si SatO2 <90-92%",
+            "Position surélevée"
+          ],
+          "farmacologico": [
+            "NE PAS utiliser de manière routinière : bronchodilatateurs, corticoïdes, antibiotiques",
+            "Nébulisation avec solution saline hypertonique 3% peut être tentée",
+            "Palivizumab (prévention chez les patients à haut risque - prématurité, cardiopathie)"
+          ]
+        },
+        "redFlags": [
+          "Apnée",
+          "Cyanose",
+          "Déshydratation",
+          "Léthargie",
+          "SatO2 <90%"
+        ],
+        "metasTerapeuticas": [
+          "Maintenir l'oxygénation",
+          "Hydratation",
+          "Soutien jusqu'à la résolution"
+        ],
+        "examesIniciais": [
+          "Oxymétrie de pouls",
+          "Radiographie seulement en cas de doute diagnostique"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [],
+      "calculadoras": [],
+      "tags": [
+        "nourrisson",
+        "virus",
+        "hiver"
+      ]
+    },
+    {
+      "id": "laringite-aguda",
+      "titulo": "Laringite/Crupe Viral",
+      "sinonimos": [
+        "Laryngotrachéobronchite",
+        "Crupe"
+      ],
+      "ciap2": [
+        "R77"
+      ],
+      "cid10": [
+        "J05.0",
+        "J04.0"
+      ],
+      "cid11": [
+        "CA03.0"
+      ],
+      "doid": "DOID:9396",
+      "snomedCT": "6142004",
+      "meshId": "D003440",
+      "umlsCui": "C0010380",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Inflammation de la laryngotrachée, généralement virale (parainfluenza). Pic : 6 mois à 3 ans. Stridor inspiratoire caractéristique.",
+        "criteriosDiagnosticos": [
+          "Toux canin (\"de chien\")",
+          "Stridor inspiratoire (plus prononcé la nuit)",
+          "Rauquité",
+          "Fièvre basse, prodromes d'IVAS",
+          "Signe de la tour en radiographie (étroitesse sous-glottique) - non obligatoire"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Air froid ou humidifié",
+            "Maintenir calme (le pleur aggrave)",
+            "Surveiller l'évolution"
+          ],
+          "farmacologico": [
+            "Léger : observation, peut ne pas nécessiter de médication",
+            "Modéré : Dexaméthasone 0,15-0,6 mg/kg PO dose unique",
+            "Grave : Dexaméthasone + Nébulisation d'adrénaline (1:1000) 3-5 mL - service d'urgence",
+            "Adrénaline : effet temporaire (2 h) - observer après"
+          ]
+        },
+        "redFlags": [
+          "Stridor au repos",
+          "Retractions marquées",
+          "Cyanose",
+          "Agitation/somnolence",
+          "Bave (épiglottite ?)"
+        ],
+        "metasTerapeuticas": [
+          "Soulagement du stridor",
+          "Prévention de l'obstruction"
+        ],
+        "examesIniciais": [
+          "Clinique - éviter la manipulation de l'oropharynx",
+          "Oxymétrie"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "dexametasona"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "urgence",
+        "virus",
+        "stridor"
+      ]
+    },
+    {
+      "id": "otite-media-aguda",
+      "titulo": "Otite moyenne aiguë",
+      "sinonimos": [
+        "OMA"
+      ],
+      "ciap2": [
+        "H71"
+      ],
+      "cid10": [
+        "H66"
+      ],
+      "cid11": [
+        "AA80.0"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:10727",
+      "snomedCT": "194267006",
+      "meshId": "D006639",
+      "umlsCui": "C0029879",
+      "hpo": [
+        "HP:0000388",
+        "HP:0000379"
+      ],
+      "tags": [
+        "orl",
+        "pédiatrique",
+        "infectieuse"
+      ],
+      "quickView": {
+        "definicao": "Infection aiguë de l'oreille moyenne. Commune chez les enfants <5 ans. Symptômes : otalgie, fièvre, irritabilité. Peut avoir une otorrhée si le tympan est perforé.",
+        "criteriosDiagnosticos": [
+          "Otalgie aiguë",
+          "Otoscopie : tympan bombé/érythémateux",
+          "Fièvre",
+          "Irritabilité chez les enfants",
+          "Peut avoir une otorrhée"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Analgésiques : Paracétamol ou Ibuprofène",
+            "Surveillance attentive pendant 48-72h dans les cas légers (enfants >6 mois)"
+          ],
+          "farmacologico": [
+            "Si traitement : Amoxicilline 80-90mg/kg/jour pendant 7-10 jours",
+            "Ou Amoxicilline-clavulanate si utilisation récente d'antibiotiques",
+            "Si allergie : Azithromycine ou Céftriaxone"
+          ]
+        },
+        "redFlags": [
+          "Mastoidite",
+          "Paralysie faciale",
+          "Méningite",
+          "Complications intracrâniennes"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "azitromicina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquiolite-aguda",
+      "titulo": "Bronchiolite aiguë",
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J21"
+      ],
+      "cid11": [
+        "CA20.1"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:6131",
+      "snomedCT": "6142004",
+      "meshId": "D001988",
+      "umlsCui": "C0006274",
+      "tags": [
+        "pédiatrie",
+        "respiratoire",
+        "viral"
+      ],
+      "quickView": {
+        "definicao": "Infection des voies aériennes inférieures chez les enfants de <2 ans. Principalement due au VSR. Sibilance et dyspnée.",
+        "criteriosDiagnosticos": [
+          "<2 ans",
+          "Rhinorrhée précédant les symptômes respiratoires",
+          "Sibilance",
+          "Toux",
+          "Tachypnée"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Soutien ventilatoire si nécessaire",
+            "Hydratation",
+            "Aspiration nasale"
+          ],
+          "farmacologico": [
+            "Symptomatique : Paracetamol",
+            "Salbutamol peut être tenté mais efficacité limitée"
+          ]
+        },
+        "redFlags": [
+          "Cyanose",
+          "Apnée",
+          "Déshydratation",
+          "Insuffisance respiratoire"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "salbutamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "convulsao-febril",
+      "titulo": "Convulsion fébrile",
+      "ciap2": [
+        "N89"
+      ],
+      "cid10": [
+        "R56.0"
+      ],
+      "cid11": [
+        "8A62"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:8665",
+      "snomedCT": "85234005",
+      "meshId": "D012640",
+      "umlsCui": "C0038220",
+      "tags": [
+        "pédiatrie",
+        "neurologique"
+      ],
+      "quickView": {
+        "definicao": "Convulsion associée à la fièvre chez un enfant de 6 mois à 5 ans. Généralement bénigne et autolimitée.",
+        "criteriosDiagnosticos": [
+          "6 mois à 5 ans",
+          "Fièvre ≥38°C",
+          "Convulsion généralisée",
+          "Aucune infection du SNC",
+          "Aucun antécédent de convulsion afebrile"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Traiter la fièvre : Paracétamol",
+            "La maintenir en position latérale pendant la convulsion"
+          ],
+          "farmacologico": [
+            "Diazepam par voie rectale si convulsion >5min",
+            "Antipyrétique : Paracétamol"
+          ]
+        },
+        "redFlags": [
+          "Convulsion focale",
+          "Durée >15min",
+          "Convulsions multiples",
+          "Altération de la conscience prolongée"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "diazepam"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-inflamatoria-intestinal-pediatrica",
+      "titulo": "Maladie inflammatoire intestinale pédiatrique",
+      "ciap2": [
+        "D93"
+      ],
+      "cid10": [
+        "K50",
+        "K51"
+      ],
+      "cid11": [
+        "DD90",
+        "DD91"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:8778",
+      "snomedCT": "64766004",
+      "meshId": "D015212",
+      "umlsCui": "C0021390",
+      "hpo": [
+        "HP:0002024",
+        "HP:0002583"
+      ],
+      "tags": [
+        "pédiatrique",
+        "chronique",
+        "gastro-intestinal"
+      ],
+      "quickView": {
+        "definicao": "MII manifestée avant 18 ans. Inclut la maladie de Crohn et la colite ulcéreuse. La présentation peut être différente de celle de l'adulte.",
+        "criteriosDiagnosticos": [
+          "Âge <18 ans",
+          "Symptômes gastro-intestinaux chroniques",
+          "Endoscopie/coloscopie",
+          "Histopathologie"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Soutien nutritionnel",
+            "Croissance et développement",
+            "Suivi multidisciplinaire"
+          ],
+          "farmacologico": [
+            "5-ASA selon le type",
+            "Corticoïdes pour l'induction",
+            "Immunosuppresseurs selon la gravité"
+          ]
+        },
+        "redFlags": [
+          "Retard de croissance",
+          "Puberté tardive",
+          "Malnutrition grave"
+        ]
+      },
+      "medicamentos": [
+        "mesalazina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hipotireoidismo-congenito",
+      "titulo": "Hypothyroïdie congénitale",
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E03.0",
+        "E03.1"
+      ],
+      "cid11": [
+        "5A00.0"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:9502",
+      "snomedCT": "19031007",
+      "meshId": "D003409",
+      "umlsCui": "C0020509",
+      "hpo": [
+        "HP:0008230",
+        "HP:0001511"
+      ],
+      "tags": [
+        "pédiatrie",
+        "endocrinien",
+        "congénital"
+      ],
+      "quickView": {
+        "definicao": "Déficit en hormone thyroïdienne depuis la naissance. Détecté lors du test du talon. Un traitement précoce est essentiel.",
+        "criteriosDiagnosticos": [
+          "Test du talon : TSH élevé/T4 bas",
+          "Confirmer avec des examens sanguins",
+          "Scintigraphie si nécessaire"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Commencer le traitement immédiatement",
+            "Suivi multidisciplinaire"
+          ],
+          "farmacologico": [
+            "Levotiroxine 10-15 mcg/kg/jour",
+            "Ajuster selon la T4 libre et la TSH"
+          ]
+        },
+        "redFlags": [
+          "Non détecté lors du test du talon",
+          "Retard mental si non traité",
+          "Crétinisme"
+        ]
+      },
+      "medicamentos": [
+        "levotiroxine"
+      ],
+      "protocolos": [
+        "test-du-talon"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquiolite-viral",
+      "titulo": "Bronchite virale (RSV)",
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J21"
+      ],
+      "cid11": [
+        "CA40.0"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:6131",
+      "snomedCT": "6142004",
+      "meshId": "D001988",
+      "umlsCui": "C0006274",
+      "hpo": [
+        "HP:0002099",
+        "HP:0002780"
+      ],
+      "tags": [
+        "pédiatrie",
+        "viral",
+        "respiratoire"
+      ],
+      "quickView": {
+        "definicao": "Infection des voies aériennes inférieures chez les enfants de moins de 2 ans. Principalement causée par le RSV. Sifflement, tachypnée, dyspnée.",
+        "criteriosDiagnosticos": [
+          "Moins de 2 ans",
+          "Rhinite précédente",
+          "Sifflement",
+          "Tachypnée",
+          "Dyspnée",
+          "Signes d'effort respiratoire"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Support ventilatoire si nécessaire",
+            "Hydratation",
+            "Aspiration nasale",
+            "Oxygénothérapie si SpO2 <90%"
+          ],
+          "farmacologico": [
+            "Symptomatique : Paracetamol",
+            "Salbutamol peut être tenté mais preuves limitées"
+          ]
+        },
+        "redFlags": [
+          "Cyanose",
+          "Apnée",
+          "Déshydratation",
+          "Insuffisance respiratoire",
+          "Dégradation rapide"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "salbutamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "coqueluche",
+      "titulo": "Coqueluche",
+      "sinonimos": [
+        "Toux longue",
+        "Pertussis"
+      ],
+      "ciap2": [
+        "R71"
+      ],
+      "cid10": [
+        "A37"
+      ],
+      "cid11": [
+        "1C12"
+      ],
+      "doid": "DOID:1116",
+      "snomedCT": "27836007",
+      "meshId": "D014917",
+      "umlsCui": "C0043167",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Infection respiratoire par Bordetella pertussis. Toux paroxystique avec sifflement inspiratoire. Grave chez les nourrissons non vaccinés.",
+        "criteriosDiagnosticos": [
+          "Toux ≥2 semaines avec au moins un des critères suivants :",
+          "Paroxysmes de toux",
+          "Sifflement inspiratoire (whoop)",
+          "Vomissements post-toux",
+          "Apnée chez les nourrissons",
+          "PCR ou culture pour B. pertussis"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Isolement respiratoire pendant 5 jours sous antibiotique",
+            "Surveillance des nourrissons (risque d'apnée)"
+          ],
+          "farmacologico": [
+            "Azithromycine 10 mg/kg/jour pendant 5 jours (préféré chez les <1 mois)",
+            "Ou Clarithromycine 15 mg/kg/jour divisée en 12/12h pendant 7 jours",
+            "Ou Érythromycine (moins utilisée - intolérance gastro-intestinale)",
+            "Chimioprophylaxie des contacts familiaux"
+          ]
+        },
+        "redFlags": [
+          "Nourrisson <6 mois",
+          "Apnée",
+          "Cyanose",
+          "Convulsion",
+          "Pneumonie"
+        ],
+        "metasTerapeuticas": [
+          "Réduire la transmissibilité",
+          "Prévention des complications"
+        ],
+        "examesIniciais": [
+          "PCR pour B. pertussis",
+          "Hémogramme (lymphocytose)"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "azitromicina",
+        "claritromicina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "vaccin",
+        "notification",
+        "toux chronique"
+      ]
+    },
+    {
+      "id": "escarlatina",
+      "titulo": "Escarlatine",
+      "sinonimos": [
+        "Fièvre écarlate"
+      ],
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "A38"
+      ],
+      "cid11": [
+        "1B50"
+      ],
+      "doid": "DOID:4914",
+      "snomedCT": "30242009",
+      "meshId": "D012541",
+      "umlsCui": "C0036285",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Infection par Streptococcus pyogenes (groupe A) producteur de toxine érythrogène. Pharyngite + exanthème caractéristique.",
+        "criteriosDiagnosticos": [
+          "Pharyngite streptococcique (odynophagie, exsudat)",
+          "Exanthème : papules fines (« papier de verre »), pâleur péri-orale, lignes de Pastia",
+          "Langue framboise",
+          "Desquamation des doigts après 1-2 semaines",
+          "Test rapide ou culture pour Streptococcus"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation",
+            "Repos",
+            "Retour aux activités 24h après le début de l'ATB"
+          ],
+          "farmacologico": [
+            "Pénicilline V 250-500mg toutes les 12 heures pendant 10 jours",
+            "Ou Amoxicilline 50mg/kg/jour pendant 10 jours",
+            "Allergie à la pénicilline : Azithromycine 12mg/kg/jour pendant 5 jours"
+          ]
+        },
+        "redFlags": [
+          "Pas d'amélioration en 48-72h",
+          "Abscessus péritonsillaire",
+          "Fièvre rhumatismale"
+        ],
+        "metasTerapeuticas": [
+          "Éradication du Streptococcus",
+          "Prévention de la fièvre rhumatismale et de la néphrite glomérulaire aiguë"
+        ],
+        "examesIniciais": [
+          "Test rapide pour Streptococcus",
+          "Culture de l'oropharynx si test rapide négatif"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "amoxicilina",
+        "penicilina-v"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "exanthème",
+        "streptococcus",
+        "pharyngite"
+      ]
+    },
+    {
+      "id": "dermatite-fraldas",
+      "titulo": "Dermatite de l'aire de la couche",
+      "sinonimos": [
+        "Assadure",
+        "Dermatite de couche"
+      ],
+      "ciap2": [
+        "S89"
+      ],
+      "cid10": [
+        "L22"
+      ],
+      "cid11": [
+        "ED52.0"
+      ],
+      "doid": "DOID:0060163",
+      "snomedCT": "91487003",
+      "meshId": "D003963",
+      "umlsCui": "C0011616",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "Dermatite irritative de contact dans la zone couverte par la couche. Il peut y avoir une infection secondaire par Candida.",
+        "criteriosDiagnosticos": [
+          "Érythème dans les zones convexes (épargne les plis = irritative)",
+          "Lésions satellites, pustules, plis affectés = Candida",
+          "Desquamation, érosions dans les cas graves",
+          "Diagnostic clinique"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Changement fréquent de couche",
+            "Maintenir la zone sèche",
+            "Exposer à l'air",
+            "Pâte d'eau ou oxyde de zinc comme barrière"
+          ],
+          "farmacologico": [
+            "Irritative légère : barrière (oxyde de zinc) suffisante",
+            "Si Candida : Nistatine crème 4x/jour pendant 7-14 jours",
+            "Ou Miconazole crème 2x/jour",
+            "Corticoïde de faible puissance (hydrocortisone 1%) si inflammation intense, utilisation brève"
+          ]
+        },
+        "redFlags": [
+          "Non-réponse au traitement",
+          "Érosions étendues",
+          "Infection bactérienne secondaire"
+        ],
+        "metasTerapeuticas": [
+          "Résolution de l'erythème",
+          "Prévention de la récurrence"
+        ],
+        "examesIniciais": [
+          "Clinique - examens généralement inutiles",
+          "Frottis si doute (Candida)"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "nistatina",
+        "miconazol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "lactant",
+        "candida",
+        "peau"
+      ]
+    }
+  ]
+}

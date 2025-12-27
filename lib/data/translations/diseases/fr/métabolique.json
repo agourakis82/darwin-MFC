@@ -1,0 +1,366 @@
+{
+  "locale": "fr",
+  "category": "métabolique",
+  "generatedAt": "2025-12-27T22:46:44.908Z",
+  "count": 2,
+  "diseases": [
+    {
+      "id": "obesidade",
+      "titulo": "Obésité",
+      "sinonimos": [
+        "Excès de poids",
+        "Surpoids"
+      ],
+      "doid": "DOID:9970",
+      "snomedCT": "414916001",
+      "meshId": "D009765",
+      "umlsCui": "C0028754",
+      "ciap2": [
+        "T82",
+        "T83"
+      ],
+      "cid10": [
+        "E66",
+        "E66.0",
+        "E66.9"
+      ],
+      "cid11": [
+        "5B81"
+      ],
+      "categoria": "métabolique",
+      "quickView": {
+        "definicao": "Maladie chronique caractérisée par l'accumulation excessive de graisse corporelle, avec des répercussions négatives sur la santé. Définie par IMC ≥30 kg/m².",
+        "criteriosDiagnosticos": [
+          "IMC ≥25 kg/m²: surpoids",
+          "IMC ≥30 kg/m²: obésité degré I",
+          "IMC ≥35 kg/m²: obésité degré II",
+          "IMC ≥40 kg/m²: obésité degré III (morbide)",
+          "Circonférence abdominale: >94cm (H) ou >80cm (F) - risque accru"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Changement de mode de vie (MEV) est la base du traitement",
+            "Régime hypocalorique (déficit de 500-1000 kcal/jour)",
+            "Activité physique: 150-300 min/semaine d'exercice aérobie",
+            "Thérapie cognitivo-comportementale",
+            "Soutien nutritionnel avec diététicien"
+          ],
+          "farmacologico": [
+            "À considérer si IMC ≥30, ou IMC ≥27 avec comorbidité",
+            "Après échec de MEV pendant 3-6 mois",
+            "Options: Orlistate, Semaglutide, Liraglutide, Sibutramine (avec restrictions)",
+            "Chirurgie bariatrique si IMC ≥40 ou ≥35 avec comorbidité grave"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Perte de 5-10% du poids initial en 6 mois (cliniquement significative)",
+          "Amélioration des comorbidités (DM, HAS, dyslipidémie)",
+          "Maintien du poids à long terme",
+          "Amélioration de la qualité de vie"
+        ],
+        "examesIniciais": [
+          "Glycémie à jeun, HbA1c",
+          "Profil lipidique",
+          "Fonction hépatique (stéatose)",
+          "TSH (éliminer l'hypothyroïdie)",
+          "Fonction rénale",
+          "Acide urique"
+        ],
+        "redFlags": [
+          "Gain de poids rapide et inexpliqué",
+          "Syndrome de Cushing (visage lunaire, stries violacées)",
+          "Apnée du sommeil grave",
+          "Hypertension intracrânienne idiopathique",
+          "Syndrome métabolique grave"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "30% des adultes brésiliens (obésité), 55% surpoids",
+          "incidencia": "Pandémie mondiale en croissance",
+          "faixaEtaria": "Tous les âges, augmente à la mi-vie",
+          "fatoresRisco": [
+            "Régime hypercalorique et ultra-transformé",
+            "Sédentarité",
+            "Génétique (60-70% d'hérédabilité)",
+            "Facteurs socio-économiques",
+            "Troubles du sommeil",
+            "Stress chronique",
+            "Médicaments (corticoïdes, antipsychotiques, certains antidépresseurs)"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Déséquilibre chronique entre l'apport et la dépense énergétique, modulé par des facteurs génétiques, environnementaux, hormonaux et psychologiques. Le tissu adipeux n'est pas inerte : il sécrète des adipocines qui favorisent l'inflammation chronique de faible intensité, la résistance à l'insuline et la dysfonction métabolique.",
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Excès de poids visible",
+            "Dyspnée à l'effort",
+            "Fatigue",
+            "Douleur articulaire (genoux, colonne vertébrale)",
+            "Ronflement, apnée du sommeil",
+            "Baisse de l'estime de soi"
+          ],
+          "sinaisExameFisico": [
+            "IMC élevé",
+            "Circonférence abdominale augmentée",
+            "Acanthosis nigricans (résistance à l'insuline)",
+            "Stries",
+            "Oedème des MMII"
+          ],
+          "formasClinicas": [
+            "Obésité androïde (centrale/viscérale): risque métabolique accru",
+            "Obésité gynoïde (périphérique): risque métabolique moindre"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "IMC ≥30 kg/m² (obésité)",
+            "Circonférence abdominale augmentée",
+            "Évaluation des comorbidités associées"
+          ],
+          "diagnosticoDiferencial": [
+            "Oedème (anasarque)",
+            "Hypothyroïdie",
+            "Syndrome de Cushing",
+            "Prise de médicaments",
+            "Syndromes génétiques rares"
+          ],
+          "examesLaboratoriais": [
+            "Glycémie, HbA1c, TOTG",
+            "Profil lipidique complet",
+            "Fonction hépatique, échographie abdominale (stéatose)",
+            "TSH",
+            "Fonction rénale, acide urique",
+            "ECG, échocardiographie si indiqué"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Perte de poids durable",
+            "Amélioration des comorbidités",
+            "Prévention des complications",
+            "Amélioration de la qualité de vie"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Régime hypocalorique équilibré (déficit de 500-1000 kcal/jour)",
+              "Activité physique: 150-300 min/semaine aérobie + résistif",
+              "Thérapie cognitivo-comportementale",
+              "Suivi par une équipe multidisciplinaire"
+            ],
+            "citations": [
+              {
+                "refId": "abeso-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Inhibiteur de lipases",
+                "medicamentos": [
+                  "Orlistate"
+                ],
+                "posologia": "120mg 3x/jour avec les repas principaux"
+              },
+              {
+                "classe": "Agoniste GLP-1",
+                "medicamentos": [
+                  "Semaglutide",
+                  "Liraglutide"
+                ],
+                "posologia": "Semaglutide SC: commencer à 0,25mg/semaine, titrer jusqu'à 2,4mg/semaine"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "IMC ≥40 ou ≥35 avec comorbidité grave",
+                "conduta": "Évaluer la chirurgie bariatrique"
+              },
+              {
+                "situacao": "Obésité + DM2",
+                "conduta": "Préférer les agonistes GLP-1 ou iSGLT2"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "abeso-2022"
+              }
+            ]
+          },
+          "duracao": "Traitement chronique"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Mensuel les 6 premiers mois, ensuite tous les 3 mois",
+          "examesControle": [
+            "Poids, IMC, circonférence abdominale",
+            "Glycémie, HbA1c",
+            "Profil lipidique",
+            "Fonction hépatique"
+          ],
+          "metasTerapeuticas": [
+            "Perte de 5-10% du poids initial est cliniquement significative",
+            "Maintien du poids perdu"
+          ],
+          "criteriosEncaminhamento": [
+            "Évaluation pour chirurgie bariatrique",
+            "Suspecter une cause secondaire",
+            "Complications graves"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Alimentation saine dès l'enfance",
+            "Activité physique régulière",
+            "Réduction des ultra-transformés"
+          ],
+          "secundaria": [
+            "Intervention précoce en cas de surpoids",
+            "Traitement des comorbidités"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-obesidade"
+      ],
+      "medicamentos": [
+        "orlistate",
+        "semaglutide",
+        "liraglutide"
+      ],
+      "calculadoras": [
+        "imc",
+        "risco-cv"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "abeso-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "obesidade",
+        "sobrepeso",
+        "imc",
+        "emagrecimento",
+        "cirurgia-bariatrica"
+      ]
+    },
+    {
+      "id": "dislipidemia",
+      "titulo": "Dislipidémie",
+      "sinonimos": [
+        "Hyperlipidémie",
+        "Hypercholestérolémie",
+        "Hypertriglycéridémie"
+      ],
+      "ciap2": [
+        "T93"
+      ],
+      "cid10": [
+        "E78.0",
+        "E78.1",
+        "E78.2",
+        "E78.5"
+      ],
+      "cid11": [
+        "5C80"
+      ],
+      "doid": "DOID:1168",
+      "snomedCT": "370992007",
+      "meshId": "D050171",
+      "umlsCui": "C0242339",
+      "categoria": "métabolique",
+      "quickView": {
+        "definicao": "Altération du métabolisme lipidique avec élévation du LDL-c, des triglycérides et/ou réduction du HDL-c. Principal facteur de risque modifiable pour les maladies cardiovasculaires athérosclérotiques.",
+        "criteriosDiagnosticos": [
+          "LDL-c ≥160 mg/dL (élevé) ou ≥130 mg/dL (limite)",
+          "HDL-c <40 mg/dL (hommes) ou <50 mg/dL (femmes)",
+          "Triglycérides ≥150 mg/dL",
+          "Cholestérol total ≥240 mg/dL",
+          "Calculer le risque cardiovasculaire (ASCVD, Framingham)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Régime méditerranéen ou DASH",
+            "Exercice aérobie 150 min/semaine",
+            "Perte de poids si surpoids/obésité",
+            "Arrêt du tabagisme",
+            "Réduire l’alcool"
+          ],
+          "farmacologico": [
+            "Statines: Sinvastatine 20-40 mg, Atorvastatine 10-80 mg, Rosuvastatine 5-20 mg",
+            "Objectif LDL-c selon le risque: <70 (très élevé), <100 (élevé), <130 (modéré)",
+            "Ezetimibe 10 mg si l’objectif n’est pas atteint avec les statines",
+            "Fibrate si TG >500 mg/dL"
+          ]
+        },
+        "redFlags": [
+          "Xanthomes",
+          "Arc cornéen <45 ans",
+          "Antécédent familial d’événement CV précoce",
+          "Pancréatite (TG>1000)"
+        ],
+        "metasTerapeuticas": [
+          "Réduction de 30-50% du LDL-c ou objectif absolu selon le risque"
+        ],
+        "examesIniciais": [
+          "Profil lipidique à jeun",
+          "Glycémie",
+          "Créatinine",
+          "TSH",
+          "ASAT/ALAT"
+        ]
+      },
+      "protocolos": [
+        "has",
+        "dm2"
+      ],
+      "medicamentos": [
+        "sinvastatina",
+        "atorvastatina",
+        "rosuvastatina"
+      ],
+      "calculadoras": [
+        "risco-cardiovascular"
+      ],
+      "tags": [
+        "cardiovasculaire",
+        "prévention",
+        "statine"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,663 @@
+{
+  "locale": "fr",
+  "category": "urologique",
+  "generatedAt": "2025-12-27T22:46:44.906Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "hiperplasia-prostatica-benigna",
+      "titulo": "Hypertrophie Bénigne de la Prostate",
+      "sinonimos": [
+        "HBP",
+        "Augmentation bénigne de la prostate",
+        "Adénome prostatique"
+      ],
+      "doid": "DOID:2997",
+      "snomedCT": "266569009",
+      "meshId": "D011470",
+      "umlsCui": "C0005001",
+      "ciap2": [
+        "Y85"
+      ],
+      "cid10": [
+        "N40"
+      ],
+      "cid11": [
+        "GA90.0"
+      ],
+      "categoria": "urologique",
+      "quickView": {
+        "definicao": "Augmentation bénigne de la prostate due à l'hyperplasie du stroma et de l'épithélium glandulaire, provoquant des symptômes du tractus urinaire inférieur (STUI) obstructifs et irritatifs. Condition quasi universelle chez les hommes âgés.",
+        "criteriosDiagnosticos": [
+          "Symptômes du tractus urinaire inférieur (STUI) :",
+          "OBSTRUCTIFS : Jet faible, hésitation, effort mictionnel, goutte finale, vidange incomplète",
+          "IRRITATIFS : Urgence, pollakiurie, nycturie",
+          "Palpation rectale : Prostate augmentée, lisse, symétrique, sillon médian préservé, consistance fibroélastique",
+          "IPSS (score international des symptômes prostatiques) pour quantifier"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Surveillance active (IPSS léger, <8)",
+            "Réduire l'ingestion hydrique nocturne",
+            "Éviter la caféine et l'alcool",
+            "Miction double",
+            "Éviter les médicaments qui aggravent les STUI (anticholinergiques, décongestionnants)"
+          ],
+          "farmacologico": [
+            "STUI modéré-grave :",
+            "Bêta-bloqueur : Tamsulosine 0,4 mg/jour ou Doxazosine 4 mg/jour (1ère ligne)",
+            "Inhibiteur de la 5-alpha-réductase : Finastéride 5 mg/jour ou Dutastéride 0,5 mg/jour (prostate >30-40g)",
+            "Combinaison bêta-bloqueur + inhibiteur 5AR : Prostates volumineuses avec STUI intenses",
+            "Anticholinergique ou agoniste bêta-3 : Si les STUI irritatifs prédominent"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Réduction des symptômes (IPSS)",
+          "Amélioration de la qualité de vie",
+          "Prévention de la rétention urinaire aiguë",
+          "Éviter la progression et les complications"
+        ],
+        "examesIniciais": [
+          "PSA (éliminer le cancer, évaluer le volume prostatique)",
+          "EAS + culture urinaire",
+          "Créatinine (si suspicion d'uro-pathie obstructive)",
+          "IPSS (questionnaire de symptômes)",
+          "USG des voies urinaires + résidu post-mictionnel",
+          "Palpation rectale"
+        ],
+        "redFlags": [
+          "Hématurie macroscopique",
+          "Rétention urinaire aiguë",
+          "Insuffisance rénale obstructive",
+          "Infections urinaires à répétition",
+          "Calcul vésical",
+          "PSA élevé ou nodule à la palpation (éliminer le cancer !)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "50% à 60 ans, 90% à 90 ans ont une HBP histologique",
+          "incidencia": "Augmente linéairement avec l'âge",
+          "faixaEtaria": "Commence après 40 ans, symptomatique généralement >50",
+          "fatoresRisco": [
+            "Âge (principal)",
+            "Testostérone (androgènes nécessaires)",
+            "Obésité",
+            "Syndrome métabolique",
+            "Facteurs génétiques"
+          ],
+          "citations": [
+            {
+              "refId": "eau-bph-2023"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Hyperplasie nodulaire du stroma et de l'épithélium de la zone de transition prostatique, sous l'influence de la DHT (dihydrotestostérone). La compression urétrale cause une obstruction mécanique. Le composant dynamique (contraction de la musculature lisse médiée par les récepteurs alpha-1) contribue aux STUI.",
+          "citations": [
+            {
+              "refId": "eau-bph-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Symptômes obstructifs : jet faible, hésitation, effort, goutte finale, vidange incomplète",
+            "Symptômes irritatifs : urgence, pollakiurie, nycturie",
+            "Incontinence par débordement",
+            "Réduction de la qualité de vie"
+          ],
+          "sinaisExameFisico": [
+            "Palpation rectale : prostate augmentée, lisse, symétrique, consistance fibroélastique",
+            "Sillon médian préservé (différent du cancer)",
+            "Vessie palpable si rétention",
+            "Évaluer la vessicocèle"
+          ],
+          "formasClinicas": [
+            "STUI légers (IPSS 0-7)",
+            "STUI modérés (IPSS 8-19)",
+            "STUI graves (IPSS 20-35)",
+            "HBP avec complications (rétention, infections urinaires, calcul vésical, hydronéphrose)"
+          ],
+          "citations": [
+            {
+              "refId": "eau-bph-2023"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "STUI + palpation rectale compatible",
+            "Éliminer d'autres causes (infections urinaires, prostatite, cancer, vessie hyperactive)",
+            "IPSS pour quantifier les symptômes",
+            "USG pour le volume prostatique et le résidu"
+          ],
+          "diagnosticoDiferencial": [
+            "Cancer de la prostate",
+            "Prostatite chronique",
+            "Vessie hyperactive",
+            "Sténose de l'urètre",
+            "Vessie neurogène",
+            "Infections urinaires"
+          ],
+          "examesLaboratoriais": [
+            "PSA (cancer et volume prostatique)",
+            "EAS et culture urinaire",
+            "Créatinine",
+            "IPSS",
+            "USG prostatique, rénale et résidu post-mictionnel"
+          ],
+          "citations": [
+            {
+              "refId": "eau-bph-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Réduire les symptômes",
+            "Améliorer la qualité de vie",
+            "Prévenir la progression et les complications"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Surveillance active (symptômes légers)",
+              "Modification comportementale",
+              "Réduire les liquides la nuit",
+              "Éviter la caféine et l'alcool",
+              "Révision des médicaments"
+            ],
+            "citations": [
+              {
+                "refId": "eau-bph-2023"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Bêta-bloqueur",
+                "medicamentos": [
+                  "Tamsulosine",
+                  "Doxazosine",
+                  "Alfuzosine"
+                ],
+                "posologia": "Tamsulosine 0,4 mg/jour. Doxazosine 2-8 mg/jour. Soulagement rapide (jours). Éjaculation rétrograde, hypotension."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Inhibiteur de la 5-alpha-réductase",
+                "medicamentos": [
+                  "Finastéride",
+                  "Dutastéride"
+                ],
+                "posologia": "Finastéride 5 mg/jour. Dutastéride 0,5 mg/jour. Prostate >30g. Effet en 3-6 mois. Réduit le PSA de 50%."
+              },
+              {
+                "classe": "Combinaison",
+                "medicamentos": [
+                  "Tamsulosine + Dutastéride"
+                ],
+                "posologia": "Pour prostates volumineuses (>40g) et STUI significatifs."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "STUI irritatifs prédominants",
+                "conduta": "Anticholinergique (oxybutynine, tolterodine) ou mirabégrome. Faire attention au résidu."
+              },
+              {
+                "situacao": "Réfractaire ou complications",
+                "conduta": "Chirurgie : résection transurétrale de la prostate, vaporisation au laser, enucléation."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "eau-bph-2023"
+              }
+            ]
+          },
+          "duracao": "Traitement chronique, généralement à vie."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Toutes les 6-12 mois",
+          "examesControle": [
+            "IPSS",
+            "PSA annuel (rappeler que les 5AR réduisent de 50%)",
+            "Résidu post-mictionnel",
+            "Fonction rénale si indiqué"
+          ],
+          "metasTerapeuticas": [
+            "IPSS <8",
+            "Résidu post-mictionnel <100 mL",
+            "Absence de complications"
+          ],
+          "criteriosEncaminhamento": [
+            "Rétention urinaire aiguë",
+            "Hématurie macroscopique",
+            "Infections urinaires récurrentes",
+            "Insuffisance rénale obstructive",
+            "PSA élevé/suspicion de cancer",
+            "Échec du traitement clinique"
+          ],
+          "citations": [
+            {
+              "refId": "eau-bph-2023"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Il n'y a pas de prévention établie",
+            "Un mode de vie sain peut aider"
+          ],
+          "secundaria": [
+            "Traitement précoce",
+            "Suivi régulier"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "tamsulosine",
+        "doxazosine",
+        "finasteride",
+        "dutasteride"
+      ],
+      "calculadoras": [
+        "ipss"
+      ],
+      "rastreamentos": [
+        "rastreamento-prostata"
+      ],
+      "citations": [
+        {
+          "refId": "eau-bph-2023"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "hbp",
+        "prostate",
+        "stui",
+        "tamsulosine",
+        "finasteride"
+      ]
+    },
+    {
+      "id": "litiase-renal",
+      "titulo": "Litiasie rénale (Calculus rénal)",
+      "ciap2": [
+        "U95"
+      ],
+      "cid10": [
+        "N20"
+      ],
+      "cid11": [
+        "GC00"
+      ],
+      "categoria": "urologique",
+      "doid": "DOID:585",
+      "snomedCT": "95570007",
+      "meshId": "D007669",
+      "umlsCui": "C0022650",
+      "quickView": {
+        "definicao": "Formation de calculs dans le tractus urinaire. Prévalence 5-15%. Le calcium est le type le plus courant (80%).",
+        "criteriosDiagnosticos": [
+          "Colique rénale : douleur lombaire intense, irradiation vers le flanc et l'aine",
+          "Nausées et vomissements",
+          "Hématurie",
+          "Agitation (ne trouve pas de position de soulagement)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation",
+            "Filtrer l'urine pour capturer le calcul",
+            "Repos pendant la crise"
+          ],
+          "farmacologico": [
+            "Analgesie : Dipirona 1g IV + AINS (Cetoprofène 100mg)",
+            "Antispasmodique : Hyoscine 20mg",
+            "Alpha-bloquant : Tamsulosine 0,4mg si le calcul mesure 5-10mm"
+          ]
+        },
+        "redFlags": [
+          "Fièvre (pyélonéphrite obstructive)",
+          "Anurie",
+          "Rein unique",
+          "Insuffisance rénale"
+        ]
+      },
+      "medicamentos": [
+        "dipirona",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hiperplasia-prostatica",
+      "titulo": "Hypertrophie Bénigne de la Prostate (HBP)",
+      "ciap2": [
+        "Y85"
+      ],
+      "cid10": [
+        "N40"
+      ],
+      "cid11": [
+        "GB01"
+      ],
+      "categoria": "urologique",
+      "doid": "DOID:2191",
+      "snomedCT": "266569009",
+      "meshId": "D011470",
+      "umlsCui": "C0005001",
+      "quickView": {
+        "definicao": "Augmentation bénigne de la prostate causant des LUTS (symptômes du tractus urinaire inférieur). Elle affecte 50% des hommes >50 ans.",
+        "criteriosDiagnosticos": [
+          "IPSS ≥8 (modéré à grave)",
+          "Symptômes obstructifs : jet faible, hésitation, vidange incomplète",
+          "Symptômes irritatifs : nycturie, urgences mictionnelles, pollakiurie",
+          "Palpation rectale : prostate augmentée, fibroélastique"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Réduire la consommation de liquides le soir",
+            "Éviter la caféine et l'alcool",
+            "Miccion double"
+          ],
+          "farmacologico": [
+            "Alpha-bloquant : Tamsulosine 0,4 mg à jeun",
+            "Si prostate >40g : ajouter Finastéride 5 mg/jour",
+            "IPSS léger : surveillance active"
+          ]
+        },
+        "redFlags": [
+          "Rétention urinaire aiguë",
+          "Hématurie macroscopique",
+          "Infections urinaires récurrentes",
+          "Insuffisance rénale"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": [
+        "ipss"
+      ]
+    },
+    {
+      "id": "prostatite",
+      "titulo": "Prostatite",
+      "sinonimos": [
+        "Prostatite aiguë",
+        "Prostatite chronique",
+        "Syndrome de douleur pelvienne chronique"
+      ],
+      "ciap2": [
+        "Y73"
+      ],
+      "cid10": [
+        "N41.0",
+        "N41.1"
+      ],
+      "cid11": [
+        "GA90.0"
+      ],
+      "doid": "DOID:12259",
+      "snomedCT": "9713002",
+      "meshId": "D011472",
+      "umlsCui": "C0033581",
+      "categoria": "urologique",
+      "quickView": {
+        "definicao": "Inflammation de la prostate. Type I : bactérienne aiguë. Type II : bactérienne chronique. Type III : syndrome de douleur pelvienne chronique (le plus courant).",
+        "criteriosDiagnosticos": [
+          "Type I : fièvre, dysurie, douleur périanale, prostate œdémateuse et douloureuse",
+          "Type II : infections urinaires récurrentes, symptômes >3 mois",
+          "Type III : douleur pelvienne chronique sans infection confirmée",
+          "Uroculture, PSA peut être temporairement élevé"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation adéquate",
+            "Bains de siège tièdes",
+            "Éviter la caféine et l'alcool"
+          ],
+          "farmacologico": [
+            "Type I : Ciprofloxacine 500mg 12/12h pendant 4-6 semaines",
+            "Type II : fluoroquinolone pendant 4-6 semaines",
+            "Type III : alpha-bloqueur, phytothérapie (serenoa), analgésiques"
+          ]
+        },
+        "redFlags": [
+          "Rétention urinaire aiguë",
+          "Septicémie",
+          "Abscessus prostatique"
+        ],
+        "metasTerapeuticas": [
+          "Résolution des symptômes",
+          "Éradication bactérienne"
+        ],
+        "examesIniciais": [
+          "EAS + uroculture",
+          "PSA (après traitement)",
+          "Examen rectal"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "ciprofloxacine",
+        "doxazosine"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "prostate",
+        "infection",
+        "douleur pelvienne"
+      ]
+    },
+    {
+      "id": "bexiga-hiperativa",
+      "titulo": "Vessie hyperactive",
+      "sinonimos": [
+        "Syndrome de la vessie hyperactive",
+        "OAB"
+      ],
+      "ciap2": [
+        "U13"
+      ],
+      "cid10": [
+        "N32.8"
+      ],
+      "cid11": [
+        "GC01.Y"
+      ],
+      "doid": "DOID:0080543",
+      "snomedCT": "60851000119108",
+      "meshId": "D053201",
+      "umlsCui": "C0878773",
+      "categoria": "urologique",
+      "quickView": {
+        "definicao": "Urgence urinaire, avec ou sans incontinence d'urgence, généralement avec polyurie et nycturie, en l'absence d'infection urinaire ou d'autre pathologie.",
+        "criteriosDiagnosticos": [
+          "Urgence urinaire (désir soudain et impérieux)",
+          "Fréquence urinaire >8x/jour",
+          "Nycturie >1 épisode/nuit",
+          "Incontinence d'urgence (humide) vs sans incontinence (sèche)",
+          "Exclusion d'infection urinaire, tumeur, calcul"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Rééducation vésicale (augmenter l'intervalle entre les mictions)",
+            "Exercices de Kegel",
+            "Réduire la caféine et les liquides le soir",
+            "Journal des mictions"
+          ],
+          "farmacologico": [
+            "Antimuscariniques: Oxibutinina 5mg 2-3x/jour, Tolterodina 2mg 2x/jour",
+            "Agoniste bêta-3: Mirabegrona 25-50mg/jour (alternative)",
+            "Précaution avec les anticholinergiques chez les personnes âgées (risque cognitif)"
+          ]
+        },
+        "redFlags": [
+          "Hématurie",
+          "Douleur pelvienne",
+          "Infection urinaire récurrente",
+          "Rétention urinaire"
+        ],
+        "metasTerapeuticas": [
+          "Réduction de 50% de la fréquence",
+          "Amélioration de la qualité de vie"
+        ],
+        "examesIniciais": [
+          "EAS + culture urinaire",
+          "Journal des mictions",
+          "Résidu post-mictionnel"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "oxibutinina",
+        "tolterodina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "incontinence",
+        "personne âgée",
+        "qualité de vie"
+      ]
+    },
+    {
+      "id": "epididimite",
+      "titulo": "Épididymite",
+      "sinonimos": [
+        "Orchidépididymite"
+      ],
+      "ciap2": [
+        "Y74"
+      ],
+      "cid10": [
+        "N45.1"
+      ],
+      "cid11": [
+        "GA70"
+      ],
+      "doid": "DOID:10689",
+      "snomedCT": "31070006",
+      "meshId": "D004823",
+      "umlsCui": "C0014534",
+      "categoria": "urologique",
+      "quickView": {
+        "definicao": "Inflammation de l'épididyme, généralement infectieuse. <35 ans : ISTs (Chlamydia, Gonorrhée). >35 ans : uropathogènes (E. coli).",
+        "criteriosDiagnosticos": [
+          "Douleur testiculaire unilatérale d'apparition progressive",
+          "Augmentation et induration de l'épididyme",
+          "Signe de Prehn positif (soulagement avec la levée)",
+          "Différentiel : torsion testiculaire (urgence)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Repos, élévation scrotale",
+            "Glace locale",
+            "Abstinence sexuelle pendant le traitement"
+          ],
+          "farmacologico": [
+            "Si suspicion d'IST (<35 ans) : Ceftriaxone 500mg IM dose unique + Doxycycline 100mg toutes les 12 heures pendant 10 jours",
+            "Si uropathogène (>35 ans) : Levofloxacin 500mg/jour pendant 10 jours",
+            "Traiter le partenaire si IST"
+          ]
+        },
+        "redFlags": [
+          "Douleur intense et aiguë (torsion ?)",
+          "Fièvre élevée",
+          "Abscessus scrotal",
+          "Torsion testiculaire"
+        ],
+        "metasTerapeuticas": [
+          "Résolution de la douleur et de l'inflammation",
+          "Éradication de l'infection"
+        ],
+        "examesIniciais": [
+          "EAS + culture urinaire",
+          "Test pour Chlamydia/Gonorrhée",
+          "USG scrotale si doute"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "ceftriaxone",
+        "doxycycline",
+        "levofloxacin"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "IST",
+        "scrotum",
+        "urgence"
+      ]
+    },
+    {
+      "id": "hidrocele",
+      "titulo": "Hidrocele",
+      "sinonimos": [
+        "Hidrocele testiculaire"
+      ],
+      "ciap2": [
+        "Y83"
+      ],
+      "cid10": [
+        "N43.0",
+        "N43.3"
+      ],
+      "cid11": [
+        "GA80"
+      ],
+      "doid": "DOID:12316",
+      "snomedCT": "26614003",
+      "meshId": "D006848",
+      "umlsCui": "C0020295",
+      "categoria": "urologique",
+      "quickView": {
+        "definicao": "Ac cumul de liquide séreux entre les couches de la tunique vaginale du testicule. Congénital (communicant) ou acquis (rétentionnel).",
+        "criteriosDiagnosticos": [
+          "Augmentation scrotale indolore et progressive",
+          "Transillumination positive (différenciation de l'hernie/tumeur)",
+          "Testicule non palpable (liquide autour)",
+          "Échographie confirme le liquide autour du testicule"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Observation si petite et asymptomatique",
+            "Chez les enfants <2 ans : généralement résolu spontanément"
+          ],
+          "farmacologico": [
+            "Pas de traitement médicamenteux",
+            "Chirurgie (hydrocélectomie) si symptomatique ou grande",
+            "Investiguer la cause si secondaire (traumatisme, infection, tumeur)"
+          ]
+        },
+        "redFlags": [
+          "Douleur intense",
+          "Induration testiculaire (tumeur ?)",
+          "Hernie incarcérée"
+        ],
+        "metasTerapeuticas": [
+          "Résolution de l'augmentation scrotale si symptomatique"
+        ],
+        "examesIniciais": [
+          "Échographie scrotale",
+          "Transillumination"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [],
+      "calculadoras": [],
+      "tags": [
+        "scrotum",
+        "chirurgie",
+        "pédiatrique"
+      ]
+    }
+  ]
+}

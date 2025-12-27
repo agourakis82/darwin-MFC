@@ -1,0 +1,582 @@
+{
+  "locale": "fr",
+  "category": "metabolico",
+  "generatedAt": "2025-12-27T22:46:44.906Z",
+  "count": 5,
+  "diseases": [
+    {
+      "id": "diabetes-mellitus-2",
+      "titulo": "Diabète de type 2 (DT2)",
+      "sinonimos": [
+        "Diabète de type 2",
+        "DT2",
+        "Diabète de l'adulte"
+      ],
+      "doid": "DOID:9351",
+      "snomedCT": "44054006",
+      "meshId": "D003924",
+      "umlsCui": "C0011860",
+      "ciap2": [
+        "T90"
+      ],
+      "cid10": [
+        "E11"
+      ],
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "Maladie métabolique caractérisée par une hyperglycémie chronique résultant de défauts dans la sécrétion et/ou l'action de l'insuline. Elle représente 90-95% des cas de diabète et est fortement associée à l'obésité et au sédentarisme.",
+        "criteriosDiagnosticos": [
+          "Glycémie à jeun ≥126 mg/dL (confirmée en 2 occasions)",
+          "Glycémie 2h après TOTG 75g ≥200 mg/dL",
+          "HbA1c ≥6,5% (méthode certifiée)",
+          "Glycémie aléatoire ≥200 mg/dL + symptômes classiques (polyurie, polydipsie, perte de poids)"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Diète : réduction calorique si surpoids, glucides complexes, fibres",
+            "Activité physique : 150 min/semaine aérobie + résistée 2-3x",
+            "Perte de 7-10% du poids si surpoids/obésité",
+            "Éducation au diabète et automonitorisation",
+            "Arrêt du tabagisme"
+          ],
+          "farmacologico": [
+            "Méformine 500-2550mg/jour (1ère ligne si DFG >30)",
+            "Si HbA1c >7,5% ou symptomatique : associer 2ème agent",
+            "iSGLT2 si DVC ou IRC (empagliflozine, dapagliflozine)",
+            "GLP-1 si obésité ou DVC (semaglutide, liraglutide)",
+            "Insuline si HbA1c >10% ou symptômes graves"
+          ]
+        },
+        "metasTerapeuticas": [
+          "HbA1c <7% (général)",
+          "HbA1c <6,5% si DT récent, jeune, sans hypoglycémies",
+          "HbA1c <8% si âgé fragile, comorbidités, risque d'hypoglycémie",
+          "Glycémie à jeun 80-130 mg/dL",
+          "Glycémie post-prandiale <180 mg/dL"
+        ],
+        "examesIniciais": [
+          "HbA1c (tous les 3-6 mois)",
+          "Glycémie à jeun",
+          "Profil lipidique (LDL, HDL, TG)",
+          "Créatinine et DFG",
+          "Rapport albumine/créatinine urinaire",
+          "Examen du fond d'œil",
+          "Examen des pieds (sensibilité, pouls)",
+          "ECG"
+        ],
+        "redFlags": [
+          "Cétoacidose diabétique (glycémie >250, cétonurie, acidose)",
+          "État hyperglycémique hyperosmolaire (glycémie >600, déshydratation grave)",
+          "Hypoglycémie grave (<54 mg/dL avec symptômes neurologiques)",
+          "Infection grave (pied diabétique infecté, sepsie)",
+          "Syndrome coronaire aigu"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "9,4% de la population adulte brésilienne (~16 millions)",
+          "incidencia": "~500 000 nouveaux cas/an",
+          "mortalidade": "~70 000 décès/an attribués au DT",
+          "faixaEtaria": "Pic 45-64 ans, croissant chez les jeunes",
+          "fatoresRisco": [
+            "Obésité/surpoids (IMC ≥25)",
+            "Sédentarisme",
+            "Antécédents familiaux de DT",
+            "Prédiabète (GJ 100-125, TOTG 140-199, HbA1c 5,7-6,4%)",
+            "Diabète gestationnel préalable",
+            "Syndrome des ovaires polykystiques",
+            "HTA, dyslipidémie",
+            "Utilisation de corticoïdes, antipsychotiques"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Fréquemment oligosymptomatique ou asymptomatique",
+            "Polyurie (miction fréquente)",
+            "Polydipsie (soif excessive)",
+            "Perte de poids non intentionnelle",
+            "Fatigue",
+            "Brouillard visuel",
+            "Infections récurrentes (candidose, ITU)"
+          ],
+          "sinaisExameFisico": [
+            "Obésité centrale (circonférence abdominale augmentée)",
+            "Acanthosis nigricans (cou, aisselles)",
+            "Altérations de la sensibilité aux pieds (neuropathie)",
+            "Pouls pédiatriques diminués (DAP)",
+            "Rétinopathie à l'examen du fond d'œil"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Glycémie à jeun ≥126 mg/dL (2 occasions ou 1 + symptômes)",
+            "TOTG 75g ≥200 mg/dL à 2h",
+            "HbA1c ≥6,5%",
+            "Glycémie aléatoire ≥200 + symptômes classiques"
+          ],
+          "diagnosticoDiferencial": [
+            "Diabète de type 1 (autoimmune, insulino-pénurie absolue)",
+            "LADA (autoimmune tardive)",
+            "MODY (génétique)",
+            "Diabète secondaire (pancréatite, syndrome de Cushing, médicaments)"
+          ],
+          "examesLaboratoriais": [
+            "HbA1c, glycémie à jeun",
+            "Profil lipidique",
+            "Créatinine, DFG, rapport albumine/créatinine",
+            "Transaminases",
+            "TSH"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Atteindre et maintenir des objectifs glycémiques individualisés",
+            "Prévenir les complications micro et macrovasculaires",
+            "Réduire la mortalité cardiovasculaire",
+            "Améliorer la qualité de vie"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Thérapie nutritionnelle individualisée",
+              "Réduction des glucides simples et du sucre",
+              "Augmentation des fibres, légumes, protéines",
+              "Activité physique : 150 min/semaine aérobie + résistée",
+              "Perte de 7-10% du poids si surpoids",
+              "Éducation structurée au diabète",
+              "Automonitorisation de la glycémie capillaire"
+            ],
+            "citations": [
+              {
+                "refId": "sbd-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Biguanide",
+                "medicamentos": [
+                  "Méformine 500-2550mg/jour"
+                ],
+                "posologia": "2-3x/jour aux repas (XR 1x/jour)",
+                "observacoes": "Commencer 500mg 1-2x/jour, titrer toutes les 1-2 semaines. CI : DFG <30, acidose, déshydratation"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "iSGLT2",
+                "medicamentos": [
+                  "Empagliflozine 10-25mg/jour",
+                  "Dapagliflozine 10mg/jour"
+                ],
+                "observacoes": "Préférer si DVC atherosclerotique ou IC ou IRC. CI : DFG <20-25"
+              },
+              {
+                "classe": "Agoniste GLP-1",
+                "medicamentos": [
+                  "Semaglutide 0,25-1mg SC/semaine",
+                  "Liraglutide 0,6-1,8mg SC/jour"
+                ],
+                "observacoes": "Préférer si obésité ou DVC. Coût élevé, non disponible dans le SUS"
+              },
+              {
+                "classe": "Sulfamylurea",
+                "medicamentos": [
+                  "Glibenclamide 2,5-20mg/jour",
+                  "Gliclazide MR 30-120mg/jour"
+                ],
+                "observacoes": "Disponible dans le SUS. Risque d'hypoglycémie et gain de poids"
+              },
+              {
+                "classe": "Insuline",
+                "medicamentos": [
+                  "NPH 10 UI nocturne",
+                  "Régulière pré-prandiale"
+                ],
+                "observacoes": "Si HbA1c >10%, symptômes cataboliques, échec des ADOs"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "DVC établie",
+                "conduta": "Préférer iSGLT2 ou GLP-1 avec bénéfice CV prouvé"
+              },
+              {
+                "situacao": "IC",
+                "conduta": "iSGLT2 obligatoire (empagliflozine, dapagliflozine)"
+              },
+              {
+                "situacao": "IRC",
+                "conduta": "iSGLT2 si DFG >20-25. Ajuster méformine/suspendre si DFG <30"
+              },
+              {
+                "situacao": "Âgé fragile",
+                "conduta": "Objectif HbA1c <8%. Éviter les sulfamylurées. Préférer iDPP4"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbd-2024"
+              }
+            ]
+          },
+          "duracao": "Traitement continu et progressif"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Tous les 3-4 mois si déséquilibré ; 6 mois si stable",
+          "examesControle": [
+            "HbA1c tous les 3-6 mois",
+            "Profil lipidique, créatinine, DFG, microalbuminurie : annuelle",
+            "Fond d'œil : annuelle (tous les 2 ans si sans rétinopathie et bon contrôle)",
+            "Examen des pieds : à chaque consultation",
+            "ECG : annuelle si >40 ans ou facteurs de risque"
+          ],
+          "metasTerapeuticas": [
+            "HbA1c individualisée (généralement <7%)",
+            "PA <130/80 mmHg",
+            "LDL <100 mg/dL (ou <70 si haut risque CV)",
+            "Arrêt du tabagisme",
+            "Poids santé"
+          ],
+          "criteriosEncaminhamento": [
+            "Rétinopathie diabétique (pour ophtalmologie)",
+            "Pied diabétique avec lésion/infection",
+            "IRC DFG <30 ou albuminurie progressive",
+            "Déscompensation réfractaire",
+            "Besoin d'insulinisation complexe"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Identification et traitement du prédiabète",
+            "Programme de changement de style de vie",
+            "Méformine pour le prédiabète à haut risque"
+          ],
+          "secundaria": [
+            "Contrôle glycémique adéquat",
+            "Dépistage et traitement des complications",
+            "Vaccination (grippe, pneumocoque, hépatite B)"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-dm2",
+        "insulinizacao-dm2"
+      ],
+      "medicamentos": [
+        "metformina",
+        "glibenclamida",
+        "insulina-nph",
+        "empagliflozina"
+      ],
+      "calculadoras": [
+        "findrisc",
+        "ckdepi",
+        "framingham"
+      ],
+      "rastreamentos": [
+        "diabetes-mellitus-2"
+      ],
+      "citations": [
+        {
+          "refId": "sbd-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "metabolico",
+        "cronica",
+        "prevalente",
+        "dcnt"
+      ]
+    },
+    {
+      "id": "nodulo-tireoide",
+      "titulo": "Nodule thyroïdien",
+      "ciap2": [
+        "T81"
+      ],
+      "cid10": [
+        "E04"
+      ],
+      "cid11": [
+        "5A00.1"
+      ],
+      "categoria": "metabolico",
+      "doid": "DOID:50",
+      "snomedCT": "237495005",
+      "meshId": "D016606",
+      "umlsCui": "C0040137",
+      "quickView": {
+        "definicao": "Lésions discrètes dans la thyroïde, très courantes (50% de la population par échographie). Majoritairement bénignes. 5-15% sont des carcinomes.",
+        "criteriosDiagnosticos": [
+          "Nodule palpable ou incidentel en imagerie",
+          "TSH pour évaluer la fonction",
+          "Échographie thyroïdienne pour caractérisation",
+          "PAAF si >1 cm avec des caractéristiques suspectes"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Surveillance si bénin et petit",
+            "Suivi avec échographie périodique"
+          ],
+          "farmacologico": [
+            "Il n'y a pas de traitement médicamenteux pour les nodules bénins",
+            "La levotiroxine NE supprime PAS les nodules"
+          ]
+        },
+        "redFlags": [
+          "Croissance rapide",
+          "Rauque",
+          "Nodule pétreux",
+          "Adénopathie cervicale",
+          "Antécédents familiaux de cancer thyroïdien"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-metabolica",
+      "titulo": "Syndrome métabolique",
+      "sinonimos": [
+        "Syndrome X",
+        "Syndrome de résistance à l'insuline"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E88.81"
+      ],
+      "cid11": [
+        "5C80.Z"
+      ],
+      "doid": "DOID:14221",
+      "snomedCT": "237602007",
+      "meshId": "D024821",
+      "umlsCui": "C0524620",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "Constellation de facteurs de risque métaboliques qui augmentent le risque de maladies cardiovasculaires et de diabète de type 2. Prévalence de 20-25% chez les adultes.",
+        "criteriosDiagnosticos": [
+          "Critères NCEP-ATPIII (≥3 sur 5) :",
+          "Circonférence abdominale : >102 cm (H) ou >88 cm (F)",
+          "Triglycérides ≥150 mg/dL",
+          "HDL-c <40 (H) ou <50 (F) mg/dL",
+          "PA ≥130/85 mmHg ou en traitement",
+          "Glycémie à jeun ≥100 mg/dL ou diabète"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Perte de poids de 7-10% (intervention principale)",
+            "Exercice aérobie + résistance",
+            "Régime hypocalorique, faible IG",
+            "Arrêt du tabagisme"
+          ],
+          "farmacologico": [
+            "Traiter chaque composant individuellement",
+            "Méformine si pré-diabète + risque élevé",
+            "Statine selon le risque cardiovasculaire",
+            "Antihypertenseur si HTA"
+          ]
+        },
+        "redFlags": [
+          "Diabète de type 2 manifeste",
+          "Maladie cardiovasculaire établie",
+          "NASH/cirrhose"
+        ],
+        "metasTerapeuticas": [
+          "Perte de poids durable",
+          "Normalisation des composants"
+        ],
+        "examesIniciais": [
+          "Glycémie à jeun",
+          "TOTG si glycémie 100-125",
+          "Profil lipidique",
+          "TGO/TGP",
+          "Échographie abdominale"
+        ]
+      },
+      "protocolos": [
+        "dm2",
+        "has"
+      ],
+      "medicamentos": [
+        "metformina"
+      ],
+      "calculadoras": [
+        "imc"
+      ],
+      "tags": [
+        "obésité",
+        "diabète",
+        "cardiovasculaire"
+      ]
+    },
+    {
+      "id": "deficiencia-vitamina-d",
+      "titulo": "Déficit en vitamine D",
+      "sinonimos": [
+        "Hypovitaminose D",
+        "Insuffisance en vitamine D"
+      ],
+      "ciap2": [
+        "T91"
+      ],
+      "cid10": [
+        "E55.9"
+      ],
+      "cid11": [
+        "5B57.4"
+      ],
+      "doid": "DOID:10609",
+      "snomedCT": "34713006",
+      "meshId": "D014808",
+      "umlsCui": "C0042870",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "Niveaux insuffisants de 25(OH)D associés à un compromis osseux et à des effets extra-squelettiques possibles. Prévalence >50% dans certaines populations.",
+        "criteriosDiagnosticos": [
+          "25(OH)D <20 ng/mL: Déficit",
+          "25(OH)D 20-29 ng/mL: Insuffisance",
+          "25(OH)D ≥30 ng/mL: Suffisance",
+          "Surveillance des groupes à risque : personnes âgées, obèses, peau foncée, faible exposition solaire"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Exposition solaire modérée (10-15 min/jour)",
+            "Aliments enrichis",
+            "Poissons gras, jaune d'œuf"
+          ],
+          "farmacologico": [
+            "Déficit : Colecalciferol 50 000 UI/semaine pendant 8 semaines",
+            "Maintenance : 1 000-2 000 UI/jour",
+            "Les personnes âgées/obèses peuvent nécessiter des doses plus élevées"
+          ]
+        },
+        "redFlags": [
+          "Hypocalcémie symptomatique",
+          "Fractures par fragilité",
+          "Ostéomalacie"
+        ],
+        "metasTerapeuticas": [
+          "25(OH)D ≥30 ng/mL"
+        ],
+        "examesIniciais": [
+          "25(OH)D sérique",
+          "Calcium, phosphore",
+          "PTH",
+          "Créatinine"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "colecalciferol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "osso",
+        "supplémentation",
+        "surveillance"
+      ]
+    },
+    {
+      "id": "hiperuricemia-assintomatica",
+      "titulo": "Hyperuricémie asymptomatique",
+      "sinonimos": [
+        "Acide urique élevé"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E79.0"
+      ],
+      "cid11": [
+        "5C64.0"
+      ],
+      "doid": "DOID:9245",
+      "snomedCT": "35885006",
+      "meshId": "D033461",
+      "umlsCui": "C0740394",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "Acide urique sérique élevé (>7 mg/dL chez les hommes, >6 mg/dL chez les femmes) sans antécédents de goutte ou de néphrolithiase par urate.",
+        "criteriosDiagnosticos": [
+          "Acide urique >7 mg/dL (H) ou >6 mg/dL (F)",
+          "Absence d'arthrite goutteuse",
+          "Absence de néphrolithiase par urate",
+          "Évaluer les comorbidités : HTA, IRC, syndrome métabolique"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Réduction du poids",
+            "Limiter l'alcool (particulièrement la bière)",
+            "Éviter les boissons sucrées",
+            "Réduire la consommation de viandes rouges et d'abats",
+            "Augmenter la consommation de produits laitiers écrémés"
+          ],
+          "farmacologico": [
+            "NE PAS traiter uniquement en fonction du niveau d'acide urique",
+            "Considérer le traitement si : IRC progressive, risque CV très élevé",
+            "Si indiqué : Alopurinol 100 mg, titrer jusqu'à l'objectif",
+            "Febuxostat comme alternative"
+          ]
+        },
+        "redFlags": [
+          "Premier épisode de goutte",
+          "Néphrolithiase",
+          "Néphropathie par urate",
+          "Syndrome de lyse tumorale"
+        ],
+        "metasTerapeuticas": [
+          "Acide urique <6 mg/dL si traité"
+        ],
+        "examesIniciais": [
+          "Acide urique sérique",
+          "Créatinine",
+          "Profil lipidique",
+          "Glycémie",
+          "Bilan hépatique"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "alopurinol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "goutte",
+        "rénal",
+        "métabolique"
+      ]
+    }
+  ]
+}

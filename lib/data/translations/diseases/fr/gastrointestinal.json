@@ -1,0 +1,381 @@
+{
+  "locale": "fr",
+  "category": "gastrointestinal",
+  "generatedAt": "2025-12-27T22:46:44.907Z",
+  "count": 6,
+  "diseases": [
+    {
+      "id": "doenca-refluxo-gastroesofagico",
+      "titulo": "Maladie du Reflux Gastro-œsophagien (MRGE)",
+      "sinonimos": [
+        "Reflux gastro-œsophagien",
+        "MRGE",
+        "Reflux œsophagien"
+      ],
+      "ciap2": [
+        "D87"
+      ],
+      "cid10": [
+        "K21"
+      ],
+      "cid11": [
+        "DD90.3"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:77",
+      "snomedCT": "235595009",
+      "meshId": "D005764",
+      "umlsCui": "C0017158",
+      "hpo": [
+        "HP:0002585",
+        "HP:0000202"
+      ],
+      "tags": [
+        "gastrointestinal",
+        "commune",
+        "aps",
+        "chronique"
+      ],
+      "quickView": {
+        "definicao": "Reflux pathologique du contenu gastrique vers l'œsophage, causant des symptômes ou des complications. La pyrosis et la régurgitation sont les principaux symptômes.",
+        "criteriosDiagnosticos": [
+          "Pyrosis fréquente",
+          "Régurgitation acide",
+          "Symptômes s'aggravent après les repas/au repos",
+          "Amélioration avec les antacides",
+          "Symptômes ≥2x/semaine pendant >4 semaines"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Élever la tête du lit",
+            "Éviter les repas 2-3h avant de se coucher",
+            "Perdre du poids si obèse",
+            "Éviter les aliments déclencheurs (graisses, café, alcool)"
+          ],
+          "farmacologico": [
+            "IBP: Omeprazol 20-40mg 1-2x/jour",
+            "Ou Pantoprazol 40mg 1x/jour",
+            "Antiacides si symptômes légers"
+          ]
+        },
+        "redFlags": [
+          "Dysphagie",
+          "Odynophagie",
+          "Hématemèse",
+          "Perte de poids",
+          "Anémie",
+          "Symptômes >5 ans"
+        ]
+      },
+      "medicamentos": [
+        "omeprazol",
+        "pantoprazol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-intestino-irritavel",
+      "titulo": "Syndrome du Côlon Irritable (SCI)",
+      "sinonimos": [
+        "Colon irritable",
+        "SCI"
+      ],
+      "ciap2": [
+        "D93"
+      ],
+      "cid10": [
+        "K58"
+      ],
+      "cid11": [
+        "DD91"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:10165",
+      "snomedCT": "10743008",
+      "meshId": "D043183",
+      "umlsCui": "C0022104",
+      "hpo": [
+        "HP:0002019",
+        "HP:0002023"
+      ],
+      "tags": [
+        "gastrointestinal",
+        "fonctionnel",
+        "chronique"
+      ],
+      "quickView": {
+        "definicao": "Trouble fonctionnel intestinal caractérisé par des douleurs abdominales récurrentes associées à une modification des habitudes intestinales, en l'absence de maladie organique.",
+        "criteriosDiagnosticos": [
+          "Critères de Rome IV : Douleur abdominale ≥1x/semaine au cours des 3 derniers mois",
+          "Associée à ≥2 : liée à la défécation, changement de fréquence ou de forme des selles",
+          "Symptômes ≥6 mois avant le diagnostic"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Régime FODMAP (temporaire)",
+            "Fibres solubles",
+            "Exercices",
+            "Techniques de relaxation",
+            "Suivi diététique"
+          ],
+          "farmacologico": [
+            "Antispasmodiques : Hioscine ou Butylscopolamine",
+            "Probiotiques",
+            "Fibres : Psyllium si prédominance de constipation",
+            "Antidiarrhéiques si prédominance de diarrhée"
+          ]
+        },
+        "redFlags": [
+          "Saignement rectal",
+          "Perte de poids",
+          "Anémie",
+          "Antécédents familiaux de cancer colorectal",
+          "Âge >50 ans avec nouveaux symptômes"
+        ]
+      },
+      "medicamentos": [
+        "hioscina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gastrite",
+      "titulo": "Gastrite",
+      "sinonimos": [
+        "Gastrite Chronique",
+        "Gastrite Aiguë"
+      ],
+      "ciap2": [
+        "D87"
+      ],
+      "cid10": [
+        "K29"
+      ],
+      "cid11": [
+        "DD90"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:7147",
+      "snomedCT": "235595009",
+      "meshId": "D005756",
+      "umlsCui": "C0017158",
+      "hpo": [
+        "HP:0002585",
+        "HP:0002028"
+      ],
+      "tags": [
+        "gastrointestinal",
+        "commun",
+        "aps"
+      ],
+      "quickView": {
+        "definicao": "Inflammation de la muqueuse gastrique. Peut être aiguë ou chronique. Helicobacter pylori est une cause courante de gastrite chronique.",
+        "criteriosDiagnosticos": [
+          "Symptômes dyspeptiques",
+          "Douleur épigastrique",
+          "Endoscopie : inflammation gastrique",
+          "Test H. pylori si indiqué"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éviter les aliments irritants",
+            "Repas plus petits et fréquents",
+            "Réduire l'alcool/tabac"
+          ],
+          "farmacologico": [
+            "IBP : Omeprazol 20 mg 1x/jour si H. pylori négatif",
+            "Si H. pylori positif : Thérapie triple (IBP + Amoxicilline + Clarithromycine)"
+          ]
+        },
+        "redFlags": [
+          "Hématochezie/mélanèse",
+          "Anémie",
+          "Vomissements persistants",
+          "Âge >55 ans avec nouveaux symptômes"
+        ]
+      },
+      "medicamentos": [
+        "omeprazol",
+        "amoxicilline",
+        "clarithromycine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-crohn",
+      "titulo": "Maladie de Crohn",
+      "ciap2": [
+        "D94"
+      ],
+      "cid10": [
+        "K50"
+      ],
+      "cid11": [
+        "DD70"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:8778",
+      "snomedCT": "34000006",
+      "meshId": "D003424",
+      "umlsCui": "C0010346",
+      "tags": [
+        "chronique",
+        "gastro-intestinal",
+        "autoimmune"
+      ],
+      "quickView": {
+        "definicao": "Maladie inflammatoire intestinale chronique. Peut affecter toute partie du tube digestif. Inflammation transmurale.",
+        "criteriosDiagnosticos": [
+          "Douleur abdominale récurrente",
+          "Diarrhée chronique",
+          "Perte de poids",
+          "Aphthes buccales",
+          "Fistules"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Suivi spécialisé",
+            "Soutien nutritionnel",
+            "Éviter le tabagisme"
+          ],
+          "farmacologico": [
+            "5-ASA: Mésothiazide selon les recommandations",
+            "Corticoïdes en cas d'exacerbation"
+          ]
+        },
+        "redFlags": [
+          "Obstruction intestinale",
+          "Fistules",
+          "Abscesses",
+          "Mégacôlon toxique"
+        ]
+      },
+      "medicamentos": [
+        "mesalazina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "colite-ulcerativa",
+      "titulo": "Colite ulcéreuse",
+      "ciap2": [
+        "D93"
+      ],
+      "cid10": [
+        "K51"
+      ],
+      "cid11": [
+        "DD71"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:0050589",
+      "snomedCT": "64766004",
+      "meshId": "D003093",
+      "umlsCui": "C0009324",
+      "tags": [
+        "chronique",
+        "gastro-intestinal",
+        "autoimmune"
+      ],
+      "quickView": {
+        "definicao": "Maladie inflammatoire intestinale limitée au côlon. Ulcères superficiels de la muqueuse.",
+        "criteriosDiagnosticos": [
+          "Diarrhée avec sang/mucus",
+          "Urgence évacuatrice",
+          "Douleur abdominale",
+          "Symptômes systémiques"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Suivi spécialisé",
+            "Soutien nutritionnel"
+          ],
+          "farmacologico": [
+            "5-ASA: Méthylprednisolone selon l'extension",
+            "Corticoïdes en exacerbation"
+          ]
+        },
+        "redFlags": [
+          "Mégacôlon toxique",
+          "Hémorragie grave",
+          "Perforation",
+          "Cholangite sclérosante"
+        ]
+      },
+      "medicamentos": [
+        "mesalazina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "constipacao",
+      "titulo": "Constipation intestinale",
+      "sinonimos": [
+        "Constipation"
+      ],
+      "ciap2": [
+        "D12"
+      ],
+      "cid10": [
+        "K59.0"
+      ],
+      "cid11": [
+        "DD91.0"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:1100",
+      "snomedCT": "14760008",
+      "meshId": "D003248",
+      "umlsCui": "C0009806",
+      "hpo": [
+        "HP:0002019",
+        "HP:0004383"
+      ],
+      "tags": [
+        "gastrointestinal",
+        "commun",
+        "fonctionnel"
+      ],
+      "quickView": {
+        "definicao": "Évacuations infrequentes (<3x/semaine) ou difficulté pour évacuer. Peut être fonctionnelle ou secondaire.",
+        "criteriosDiagnosticos": [
+          "<3 évacuations/semaine",
+          "Effort excessif",
+          "Selles dures",
+          "Sensation d'évacuation incomplète",
+          "Critères de Rome IV"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Augmenter les fibres (25-30g/jour)",
+            "Hydratation adéquate",
+            "Exercices",
+            "Établir une routine d'évacuation"
+          ],
+          "farmacologico": [
+            "Laxatif osmotique : Lactulose 15-30mL/jour",
+            "Ou Polyéthylène glycol",
+            "Laxatif stimulant uniquement si nécessaire"
+          ]
+        },
+        "redFlags": [
+          "Saignement rectal",
+          "Perte de poids",
+          "Anémie",
+          "Obstruction intestinale",
+          "Antécédents familiaux de cancer colorectal"
+        ]
+      },
+      "medicamentos": [
+        "lactulose"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

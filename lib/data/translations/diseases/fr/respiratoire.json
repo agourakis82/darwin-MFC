@@ -1,0 +1,606 @@
+{
+  "locale": "fr",
+  "category": "respiratoire",
+  "generatedAt": "2025-12-27T22:46:44.895Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "asma",
+      "titulo": "Asma bronchique",
+      "sinonimos": [
+        "Asma",
+        "Bronchite asthmatique",
+        "Hyper-réactivité bronchique"
+      ],
+      "doid": "DOID:2841",
+      "snomedCT": "195967001",
+      "meshId": "D001249",
+      "umlsCui": "C0004096",
+      "ciap2": [
+        "R96"
+      ],
+      "cid10": [
+        "J45",
+        "J46"
+      ],
+      "categoria": "respiratoire",
+      "quickView": {
+        "definicao": "Maladie inflammatoire chronique des voies aériennes caractérisée par une hyper-réactivité bronchique et une obstruction variable du flux aérien, se manifestant par des épisodes récurrents de sifflements, de dyspnée, d'oppression thoracique et de toux.",
+        "criteriosDiagnosticos": [
+          "Symptômes variables (sifflements, dyspnée, toux, oppression thoracique)",
+          "Aggravation nocturne/matinal, avec l'exercice, allergènes, infections",
+          "Spiremétie : VEF1/CVF <0,7 + amélioration ≥12% et 200ml après BD",
+          "PFE : variabilité >10% chez les adultes",
+          "Si la spiremétie est normale : test de provocation bronchique positif"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éloignement des allergènes (acariens, moisissures, poils d'animaux)",
+            "Contrôle environnemental (housse de protection des matelas, lavage des draps de lit)",
+            "Arrêt du tabagisme (personnel et passif)",
+            "Éviter les AINS et les bêtabloqueurs en cas d'hypersensibilité",
+            "Vaccination (grippe annuelle, pneumocoque)",
+            "Plan d'action écrit"
+          ],
+          "farmacologico": [
+            "Étape 1-2 : CI dose basse-moyenne (Beclometasona 200-400mcg) + SABA si nécessaire",
+            "Étape 3 : CI dose moyenne + LABA (Formoterol) ou LAMA",
+            "Étape 4-5 : CI dose élevée + LABA, envisager anti-IgE/IL-5",
+            "Résolution : Formoterol-CI (préféré) ou SABA (Salbutamol)",
+            "Exacerbation : Prednisone 40-60mg/jour 5-7 jours"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Contrôle des symptômes : ACT ≥20, sans limitation d'activités",
+          "Réduire le risque d'exacerbations",
+          "Minimiser l'utilisation de SABA (<2x/mois pour les symptômes)",
+          "Fonction pulmonaire normale ou proche de la normale",
+          "Minimiser les effets indésirables du traitement"
+        ],
+        "examesIniciais": [
+          "Spiremétie avec test bronchodilatateur",
+          "Peak Flow (PFE) pour la surveillance à domicile",
+          "Hémogramme (éosinophilie suggère asma allergique)",
+          "IgE totale",
+          "Radiographie de thorax (à l'évaluation initiale)"
+        ],
+        "redFlags": [
+          "Exacerbation grave : parole entrecoupée, FR >30, FC >120, SpO2 <90%",
+          "Utilisation de la musculature accessoire, cyanose",
+          "PFE <50% de la valeur prévue ou personnelle",
+          "Absence de réponse au bronchodilatateur",
+          "Histoire d'intubation par asma",
+          "Pneumothorax"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "10-15% chez les enfants, 5-10% chez les adultes au Brésil",
+          "mortalidade": "~2.500 décès/an au Brésil (majorité évitables)",
+          "faixaEtaria": "Début fréquent pendant l'enfance, peut débuter à tout âge",
+          "fatoresRisco": [
+            "Atopie (rhinite, eczéma)",
+            "Antécédents familiaux d'asma",
+            "Exposition aux allergènes (acariens, moisissures, poils)",
+            "Infections respiratoires pendant l'enfance",
+            "Tabagisme passif",
+            "Pollution environnementale",
+            "Obésité"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Sifflements (sifflement dans la poitrine)",
+            "Dyspnée épisodique",
+            "Toux, particulièrement nocturne/matinal",
+            "Oppression thoracique",
+            "Symptômes variables dans le temps et en intensité",
+            "Aggravation avec les infections, l'exercice, les allergènes, les changements climatiques"
+          ],
+          "sinaisExameFisico": [
+            "Sifflements expiratoires diffus lors de la crise",
+            "Phase expiratoire prolongée",
+            "Utilisation de la musculature accessoire (crise grave)",
+            "Intercrises : examen souvent normal",
+            "Rhinite allergique associée"
+          ],
+          "formasClinicas": [
+            "Asma allergique (la plus courante)",
+            "Asma non allergique",
+            "Asma de début tardif",
+            "Asma avec limitation fixe du flux aérien",
+            "Asma avec obésité"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Histoire de symptômes respiratoires variables",
+            "Limitation variable du flux expiratoire (spiremétie)",
+            "Réponse au bronchodilatateur (≥12% et 200ml dans le VEF1)",
+            "Ou variabilité du PFE >10%",
+            "Ou test de provocation bronchique positif"
+          ],
+          "diagnosticoDiferencial": [
+            "MPOC",
+            "Dysfonctionnement des cordes vocales",
+            "Insuffisance cardiaque",
+            "Bronchiectasies",
+            "Corps étranger",
+            "DRGE avec toux"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Contrôle des symptômes",
+            "Prévention des exacerbations",
+            "Maintien de la fonction pulmonaire normale",
+            "Minimiser les effets indésirables"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Éducation en asma et plan d'action",
+              "Technique d'inhalation correcte",
+              "Contrôle environnemental",
+              "Arrêt du tabagisme",
+              "Activité physique régulière",
+              "Contrôle du poids",
+              "Vaccination"
+            ],
+            "citations": [
+              {
+                "refId": "gina-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "CI dose basse",
+                "medicamentos": [
+                  "Beclometasona 200-400mcg/jour",
+                  "Budesonida 200-400mcg/jour"
+                ],
+                "observacoes": "Base du traitement. Étapes 1-2"
+              },
+              {
+                "classe": "CI + Formoterol",
+                "medicamentos": [
+                  "Budesonida/Formoterol 200-400/6-12mcg"
+                ],
+                "observacoes": "Maintenance et résolution (MART). Préféré par le GINA"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "CI dose moyenne-élevée + LABA",
+                "medicamentos": [
+                  "Budesonida/Formoterol 400-800/12-24mcg"
+                ],
+                "observacoes": "Étapes 3-4"
+              },
+              {
+                "classe": "LAMA",
+                "medicamentos": [
+                  "Tiotropium 5mcg (Respimat)"
+                ],
+                "observacoes": "Supplémentaire en étapes 4-5"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Exacerbation",
+                "conduta": "SABA + corticoïde oral (prednisone 40-60mg 5-7 jours)"
+              },
+              {
+                "situacao": "Grossesse",
+                "conduta": "Maintenir le traitement. CI sûrs. Le contrôle est une priorité"
+              },
+              {
+                "situacao": "Asma grave",
+                "conduta": "Orienter. Immunobiologiques (anti-IgE, anti-IL5)"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "gina-2024"
+              }
+            ]
+          },
+          "duracao": "Traitement continu. Step down après 3 mois de contrôle"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Toutes les 1-3 mois jusqu'au contrôle, ensuite toutes les 3-6 mois",
+          "examesControle": [
+            "Spiremétie annuelle",
+            "ACT (Asthma Control Test) à chaque consultation",
+            "PFE à domicile"
+          ],
+          "metasTerapeuticas": [
+            "ACT ≥20",
+            "Aucune exacerbation",
+            "SABA <2x/mois",
+            "VEF1 normal ou proche"
+          ],
+          "criteriosEncaminhamento": [
+            "Asma de contrôle difficile (étapes 4-5)",
+            "Exacerbation grave/quasi fatale",
+            "Doute diagnostique",
+            "Soupçon d'asma professionnelle",
+            "Nécessité d'immunobiologique"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-asma",
+        "crise-asma"
+      ],
+      "medicamentos": [
+        "beclometasona",
+        "budesonida",
+        "salbutamol",
+        "formoterol"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "gina-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "respiratoire",
+        "chronique",
+        "prévalente"
+      ]
+    },
+    {
+      "id": "rinite-alergica",
+      "titulo": "Rhinite Allergique",
+      "sinonimos": [
+        "Rhinite allergique perenne",
+        "Rhinite allergique saisonnière",
+        "Polinose"
+      ],
+      "ciap2": [
+        "R97"
+      ],
+      "cid10": [
+        "J30"
+      ],
+      "cid11": [
+        "CA08.0"
+      ],
+      "categoria": "respiratoire",
+      "doid": "DOID:8819",
+      "snomedCT": "47758005",
+      "meshId": "D012221",
+      "umlsCui": "C0035384",
+      "hpo": [
+        "HP:0002197",
+        "HP:0000422"
+      ],
+      "tags": [
+        "respiratoire",
+        "allergie",
+        "commun"
+      ],
+      "quickView": {
+        "definicao": "Inflammation de la muqueuse nasale médiée par l'IgE, déclenchée par des allergènes. Symptômes : rhinorrhée, éternuements, prurit nasal, congestion.",
+        "criteriosDiagnosticos": [
+          "Rhinorrhée aqueuse",
+          "Éternuements",
+          "Prurit nasal/oculaire",
+          "Congestion nasale",
+          "Symptômes déclenchés par des allergènes connus",
+          "Test cutané ou IgE spécifique positif"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éviter les allergènes",
+            "Lavage nasal au sérum physiologique",
+            "Vaccins anti-allergiques (immunothérapie) si indiqué"
+          ],
+          "farmacologico": [
+            "Antihistaminiques oraux : Cetirizine 10 mg/jour ou Loratadine 10 mg/jour",
+            "Corticoïdes nasaux : Budesonide ou Fluticasone",
+            "Antihistaminique nasal topique si nécessaire"
+          ]
+        },
+        "redFlags": [
+          "Sinusal",
+          "Obstruction nasale unilatérale",
+          "Saignement nasal persistant",
+          "Polypes nasaux"
+        ]
+      },
+      "medicamentos": [
+        "cetirizine",
+        "loratadine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "ivas-pediatrica",
+      "titulo": "IVAS (Infections des Voies Aériennes Supérieures)",
+      "ciap2": [
+        "R74"
+      ],
+      "cid10": [
+        "J00",
+        "J06"
+      ],
+      "cid11": [
+        "CA07"
+      ],
+      "categoria": "respiratoire",
+      "doid": "DOID:0050117",
+      "snomedCT": "54150009",
+      "meshId": "D012141",
+      "umlsCui": "C0041912",
+      "quickView": {
+        "definicao": "Rhume commun. Cause la plus fréquente de consultation pédiatrique. Étiologie virale (>200 virus). Autolimitée en 7-10 jours.",
+        "criteriosDiagnosticos": [
+          "Rhinorrhée claire → purulente",
+          "Obstruction nasale",
+          "Fièvre basse",
+          "Toux sèche/productive"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Lavage nasal avec SF",
+            "Hydratation",
+            "Élévation de la tête",
+            "Miel (>1 an) pour la toux"
+          ],
+          "farmacologico": [
+            "Antipyrétique en cas de fièvre",
+            "NE PAS utiliser de décongestionnants <6 ans",
+            "NE PAS utiliser d'antitussifs"
+          ]
+        },
+        "redFlags": [
+          "Fièvre >72h ou récurrente",
+          "Dyspnée",
+          "Aggravation après amélioration initiale",
+          "Otalgie"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [
+        "ivas"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "sinusite-aguda",
+      "titulo": "Sinusite aiguë",
+      "ciap2": [
+        "R75"
+      ],
+      "cid10": [
+        "J01"
+      ],
+      "cid11": [
+        "CA12"
+      ],
+      "categoria": "respiratoire",
+      "doid": "DOID:0050127",
+      "snomedCT": "15805002",
+      "meshId": "D012852",
+      "umlsCui": "C0037199",
+      "quickView": {
+        "definicao": "Inflammation des sinus paranasaux, généralement virale. Durée <4 semaines. Bactérienne si symptômes >10 jours ou aggravation après une amélioration initiale.",
+        "criteriosDiagnosticos": [
+          "Congestion nasale",
+          "Rhinorrhée purulente",
+          "Douleur faciale/pression",
+          "Hypoosmie",
+          "Durée 7-10 jours (virale) ou >10 jours (bactérienne)"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Lavage nasal avec SF",
+            "Hydratation",
+            "Humidification de l'air"
+          ],
+          "farmacologico": [
+            "Symptomatique : analgésique + décongestionnant topique (max 5 jours)",
+            "ATB si bactérienne : Amoxicilline 500mg 8/8h 7-10 jours"
+          ]
+        },
+        "redFlags": [
+          "Œdème périorbital",
+          "Altération visuelle",
+          "Céphalée intense",
+          "Signes méningés"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilline",
+        "paracétamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "faringite-aguda",
+      "titulo": "Faringite aiguë",
+      "ciap2": [
+        "R72"
+      ],
+      "cid10": [
+        "J02"
+      ],
+      "cid11": [
+        "CA02"
+      ],
+      "categoria": "respiratoire",
+      "doid": "DOID:974",
+      "snomedCT": "363746003",
+      "meshId": "D010612",
+      "umlsCui": "C0031350",
+      "quickView": {
+        "definicao": "Inflammation de la pharynx. Majoritairement virale (70-90%). Streptococcique (GABHS) dans 15-30% des enfants, 5-15% des adultes.",
+        "criteriosDiagnosticos": [
+          "Douleur de gorge",
+          "Érythème pharyngé",
+          "Exsudat amygdalien",
+          "Adénopathie cervicale",
+          "Critères de Centor modifiés"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Analgésiques (paracétamol/ibuprofène)",
+            "Gargarisme avec de l'eau tiède et du sel"
+          ],
+          "farmacologico": [
+            "Viral: symptomatic uniquement",
+            "Bactérienne (GABHS): Pénicilline V 250-500mg 6/6h pendant 10 jours OU Amoxicilline 500mg 8/8h"
+          ]
+        },
+        "redFlags": [
+          "Trismus",
+          "Déviation de l'uvule",
+          "Stridor",
+          "Abscessus périamygdalien"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilline",
+        "paracétamol",
+        "ibuprofène"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquite-aguda",
+      "titulo": "Bronchite Aiguë",
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J20"
+      ],
+      "cid11": [
+        "CA20"
+      ],
+      "categoria": "respiratoire",
+      "doid": "DOID:6132",
+      "snomedCT": "32398004",
+      "meshId": "D001991",
+      "umlsCui": "C0006267",
+      "quickView": {
+        "definicao": "Inflammation des bronches de durée <3 semaines. Généralement virale (90%). La toux peut persister 2-3 semaines.",
+        "criteriosDiagnosticos": [
+          "Toux productive",
+          "Sans preuve de pneumonie",
+          "Durée <3 semaines",
+          "Symptômes respiratoires hauts"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation",
+            "Repos",
+            "Éviter les irritants"
+          ],
+          "farmacologico": [
+            "Symptomatique : antitussifs si toux sèche gênante",
+            "Antibiotiques NON indiqués de manière routinière",
+            "Bronchodilatateur si sifflements (Salbutamol inhalatoire)"
+          ]
+        },
+        "redFlags": [
+          "Toux >3 semaines",
+          "Signes de pneumonie",
+          "Hémoptysie",
+          "Dyspnée"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "enfisema-pulmonar",
+      "titulo": "Enfisème pulmonaire",
+      "ciap2": [
+        "R95"
+      ],
+      "cid10": [
+        "J43"
+      ],
+      "cid11": [
+        "CA22.1"
+      ],
+      "categoria": "respiratoire",
+      "doid": "DOID:3119",
+      "snomedCT": "196494001",
+      "meshId": "D004656",
+      "umlsCui": "C0014120",
+      "tags": [
+        "chronique",
+        "respiratoire",
+        "mco"
+      ],
+      "quickView": {
+        "definicao": "Destruction permanente des alvéoles avec hyperinsufflation. Type emphysémateux de la MCO.",
+        "criteriosDiagnosticos": [
+          "Essoufflement progressif",
+          "Thorax en baril",
+          "Diminution du murmure vésical",
+          "RX : hyperinsufflation"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Arrêt tabagique",
+            "Oxygénothérapie si SpO2 <88%",
+            "Réhabilitation pulmonaire"
+          ],
+          "farmacologico": [
+            "Bronchodilatateur : tiotropium 18 mcg 1x/jour",
+            "En cas d'exacerbations : ajouter un corticoïde inhalé"
+          ]
+        },
+        "redFlags": [
+          "Insuffisance respiratoire",
+          "Pneumothorax",
+          "Perte pondérale importante"
+        ]
+      },
+      "medicamentos": [
+        "tiotropium"
+      ],
+      "protocolos": [
+        "mco"
+      ],
+      "calculadoras": []
+    }
+  ]
+}

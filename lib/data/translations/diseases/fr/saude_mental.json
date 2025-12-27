@@ -1,0 +1,2508 @@
+{
+  "locale": "fr",
+  "category": "saude_mental",
+  "generatedAt": "2025-12-27T22:46:44.902Z",
+  "count": 26,
+  "diseases": [
+    {
+      "id": "depressao",
+      "titulo": "Trouble Dépressif Majeur",
+      "sinonimos": [
+        "Dépression",
+        "Dépression majeure",
+        "Épisode dépressif"
+      ],
+      "doid": "DOID:1470",
+      "snomedCT": "35489007",
+      "meshId": "D003865",
+      "umlsCui": "C0011570",
+      "ciap2": [
+        "P76"
+      ],
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "categoria": "saude_mental",
+      "quickView": {
+        "definicao": "Trouble mental caractérisé par un humeur dépressive persistante et/ou une perte d'intérêt pour ≥2 semaines, accompagnée de symptômes cognitifs, comportementaux et physiques, causant un préjudice fonctionnel significatif.",
+        "criteriosDiagnosticos": [
+          "≥5 symptômes pour ≥2 semaines, dont obligatoirement : humeur dépressive OU anhédonie",
+          "Autres : altération du poids/appétit, insomnie/hypersomnie, agitation/ralentissement",
+          "Fatigue, sentiment d'inutilité/culpabilité, difficultés de concentration",
+          "Pensées de mort ou idées suicidaires",
+          "Préjudice fonctionnel significatif (travail, relations, soins personnels)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psychoéducation sur la maladie et le traitement",
+            "Psychothérapie (TCC, interpersonnelle) - recommandée pour tous",
+            "Activité physique régulière (effet antidépresseur)",
+            "Hygiène du sommeil",
+            "Soutien social et familial",
+            "Éloignement de l'alcool et des drogues"
+          ],
+          "farmacologico": [
+            "ISRS 1ère ligne : Fluoxétine 20-60mg, Sétraline 50-200mg, Escitalopram 10-20mg",
+            "ISRSN : Vénlafaxine 75-225mg, Duloxétine 60-120mg (si douleur associée)",
+            "Tricyclique : Amitriptyline 25-150mg (si douleur, insomnie, coût bas)",
+            "Minimum 6-12 mois après rémission. Maintenance si ≥3 épisodes"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Rémission complète des symptômes (PHQ-9 <5)",
+          "Retour au fonctionnement antérieur",
+          "Prévention des rechutes",
+          "Identification et gestion des comorbidités"
+        ],
+        "examesIniciais": [
+          "TSH (éliminer l'hypothyroïdie)",
+          "Hémogramme (anémie)",
+          "Glycémie",
+          "Fonction rénale et hépatique (baseline pour les médicaments)",
+          "Vitamine B12 et acide folique (si âgé ou malnutritionné)"
+        ],
+        "redFlags": [
+          "Idées suicidaires structurées avec plan et intention",
+          "Tentative de suicide récente",
+          "Symptômes psychotiques (délires, hallucinations)",
+          "Épisode maniaque/hypomaniaque (suggère bipolarité)",
+          "Catatonie",
+          "Risque d'hétéroagression"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "7-10% de la population adulte, 2x plus chez les femmes",
+          "incidencia": "Pic à 25-44 ans",
+          "mortalidade": "Suicide : 15% en cas graves non traités",
+          "fatoresRisco": [
+            "Antécédents familiaux de dépression",
+            "Événements adverses durant l'enfance",
+            "Stress chronique, deuil, chômage",
+            "Maladies chroniques (DM, douleur chronique, cancer)",
+            "Usage de substances",
+            "Trouble d'anxiété préexistant",
+            "Puerpéralité"
+          ],
+          "citations": [
+            {
+              "refId": "who-depression-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Humeur dépressive la plupart du temps",
+            "Anhédonie (perte de plaisir)",
+            "Altération du poids/appétit (augmentation ou diminution)",
+            "Insomnie ou hypersomnie",
+            "Fatigue, perte d'énergie",
+            "Sentiment d'inutilité ou culpabilité excessive",
+            "Difficultés de concentration",
+            "Pensées de mort, idées suicidaires"
+          ],
+          "sinaisExameFisico": [
+            "Apparence négligée",
+            "Lentification psychomotrice ou agitation",
+            "Visage triste, pleurs",
+            "Parole lente, monotone",
+            "Difficulté de contact visuel"
+          ],
+          "formasClinicas": [
+            "Légère : symptômes minimes, fonctionnalité préservée",
+            "Modérée : symptômes et préjudices fonctionnels évidents",
+            "Grave : symptômes intenses, risque de suicide, possible psychose"
+          ],
+          "citations": [
+            {
+              "refId": "dsm-5"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "≥5 symptômes pour ≥2 semaines (humeur dépressive ou anhédonie obligatoire)",
+            "Préjudice clinique significatif",
+            "Non attribuable à une substance ou condition médicale",
+            "Sans épisode maniaque/hypomaniaque préexistant"
+          ],
+          "diagnosticoDiferencial": [
+            "Trouble bipolaire",
+            "Hypothyroïdie",
+            "Anémie",
+            "Trouble d'ajustement",
+            "Deuil normal",
+            "Dépression secondaire (médicaments, maladies)"
+          ],
+          "examesLaboratoriais": [
+            "TSH, hémogramme, glycémie, fonction rénale et hépatique",
+            "Vitamine B12, folate (âgés)",
+            "Test toxicologique si suspicion d'usage de substances"
+          ],
+          "citations": [
+            {
+              "refId": "dsm-5"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Rémission des symptômes",
+            "Rétablissement fonctionnel",
+            "Prévention des rechutes et récidives",
+            "Amélioration de la qualité de vie"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Psychothérapie : TCC (12-20 séances) ou thérapie interpersonnelle",
+              "Activation comportementale",
+              "Exercice physique : 30-45 min, 3-5x/semaine",
+              "Hygiène du sommeil",
+              "Groupes de soutien",
+              "Mindfulness"
+            ],
+            "citations": [
+              {
+                "refId": "nice-depression-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "ISRS",
+                "medicamentos": [
+                  "Fluoxétine 20-60mg/jour",
+                  "Sétraline 50-200mg/jour",
+                  "Escitalopram 10-20mg/jour"
+                ],
+                "posologia": "1x/jour, le matin",
+                "observacoes": "Commencer à faible dose, augmenter toutes les 2 semaines. Effet en 2-4 semaines"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "ISRSN",
+                "medicamentos": [
+                  "Vénlafaxine 75-225mg/jour",
+                  "Duloxétine 60-120mg/jour"
+                ],
+                "observacoes": "Si douleur chronique associée ou échec des ISRS"
+              },
+              {
+                "classe": "Tricyclique",
+                "medicamentos": [
+                  "Amitriptyline 25-150mg/jour",
+                  "Nortriptyline 25-150mg/jour"
+                ],
+                "observacoes": "Coût moindre. Plus d'effets indésirables. ECG préalable si >40 ans"
+              },
+              {
+                "classe": "Autres",
+                "medicamentos": [
+                  "Bupropione 150-300mg/jour",
+                  "Mirtazapine 15-45mg/jour"
+                ],
+                "observacoes": "Bupropione : sevrage tabagique. Mirtazapine : insomnie, anorexie"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Grossesse",
+                "conduta": "Sétraline plus sûre. Éviter la paroxétine au 1er trimestre"
+              },
+              {
+                "situacao": "Personne âgée",
+                "conduta": "Commencer à faible dose. Préférer les ISRS"
+              },
+              {
+                "situacao": "Bipolarité",
+                "conduta": "Antidépresseur + stabilisateur de l'humeur. Référer en psychiatrie"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "nice-depression-2022"
+              }
+            ]
+          },
+          "duracao": "Minimum 6-12 mois après rémission. Maintenance indéfinie si ≥3 épisodes ou facteurs de risque"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Hebdomadaire/bihebdomadaire initialement, puis mensuelle, trimestrielle lorsque stable",
+          "examesControle": [
+            "PHQ-9 à chaque consultation",
+            "Évaluation des effets indésirables",
+            "Évaluation du risque suicidaire",
+            "ECG si tricyclique chez les >40 ans"
+          ],
+          "metasTerapeuticas": [
+            "PHQ-9 <5 (rémission)",
+            "Retour au travail/activités",
+            "Sommeil et appétit normalisés",
+            "Absence d'idées suicidaires"
+          ],
+          "criteriosEncaminhamento": [
+            "Risque suicidaire élevé",
+            "Symptômes psychotiques",
+            "Soupçon de bipolarité",
+            "Résistance (échec à 2+ antidépresseurs)",
+            "Besoin de TCE",
+            "Comorbidité psychiatrique grave"
+          ],
+          "citations": [
+            {
+              "refId": "nice-depression-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-depressao"
+      ],
+      "medicamentos": [
+        "fluoxetina",
+        "sertralina",
+        "amitriptilina",
+        "escitalopram"
+      ],
+      "calculadoras": [
+        "phq9",
+        "phq2"
+      ],
+      "citations": [
+        {
+          "refId": "dsm-5"
+        },
+        {
+          "refId": "nice-depression-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "saude_mental",
+        "cronica",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "transtorno-ansiedade-generalizada",
+      "titulo": "Trouble d'Anxiété Généralisée (TAG)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F41.1"
+      ],
+      "cid11": [
+        "6B00"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "21897009",
+      "doid": "DOID:14320",
+      "meshId": "D001008",
+      "umlsCui": "C0270458",
+      "dsm5": {
+        "code": "300.02",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.02",
+          "name": "Generalized Anxiety Disorder",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Anxiété et préoccupation excessives (attente anxieuse), se produisant la plupart des jours pendant au moins 6 mois, concernant divers événements ou activités"
+            },
+            {
+              "letter": "B",
+              "text": "La personne considère difficile de contrôler la préoccupation"
+            },
+            {
+              "letter": "C",
+              "text": "L'anxiété et la préoccupation sont associées à trois (ou plus) des six symptômes suivants :",
+              "subCriteria": [
+                {
+                  "text": "1. Agitation ou sensation d'avoir les nerfs à vif"
+                },
+                {
+                  "text": "2. Fatigue"
+                },
+                {
+                  "text": "3. Difficulté à se concentrer ou sensations de \"blanc\" dans l'esprit"
+                },
+                {
+                  "text": "4. Irritabilité"
+                },
+                {
+                  "text": "5. Tension musculaire"
+                },
+                {
+                  "text": "6. Perturbation du sommeil"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Trouble caractérisé par une anxiété et une préoccupation excessives et persistantes concernant divers événements ou activités, difficile à contrôler, associée à des symptômes physiques et cognitifs.",
+        "criteriosDiagnosticos": [
+          "Préoccupation excessive la plupart des jours pendant ≥6 mois",
+          "Difficulté à contrôler la préoccupation",
+          "3 ou plus de symptômes : agitation, fatigue, difficulté de concentration, irritabilité, tension musculaire, perturbation du sommeil",
+          "Préjudice significatif au fonctionnement"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "TCC (thérapie cognitivo-comportementale) - or standard",
+            "Thérapie d'acceptation et d'engagement (ACT)",
+            "Techniques de relaxation"
+          ],
+          "farmacologico": [
+            "ISRS : Escitalopram, Sertraline",
+            "ISRN : Venlafaxine XR",
+            "Pregabalin (alternative)"
+          ]
+        },
+        "redFlags": [
+          "Idéation suicidaire",
+          "Troubles d'anxiété comorbides graves",
+          "Résistance au traitement",
+          "Usage de substances"
+        ],
+        "examesIniciais": [
+          "TSH (pour exclure l'hyperthyroïdie)",
+          "Hémogramme",
+          "Échelle GAD-7 pour évaluation"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "GAD-7",
+          "description": "Trouble d'Anxiété Généralisée-7 : Échelle de 7 items, score 0-21. ≥10 indique un TAG modéré à grave.",
+          "cutoff": "≥10",
+          "reference": "Spitzer et al., 2006"
+        }
+      ],
+      "tags": [
+        "anxiété",
+        "tag",
+        "isrs",
+        "tcc",
+        "dsm5",
+        "saude_mental"
+      ]
+    },
+    {
+      "id": "transtorno-panico",
+      "titulo": "Trouble de Panique",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F41.0"
+      ],
+      "cid11": [
+        "6B01"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "371631005",
+      "doid": "DOID:594",
+      "meshId": "D016584",
+      "umlsCui": "C0030319",
+      "dsm5": {
+        "code": "300.01",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.01",
+          "name": "Panic Disorder",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Ataques de panique récurrents et inattendus"
+            },
+            {
+              "letter": "B",
+              "text": "Au moins un des attaques a été suivi par 1 mois (ou plus) de l’un ou des deux éléments suivants :",
+              "subCriteria": [
+                {
+                  "text": "1. Préoccupation persistante concernant des attaques supplémentaires ou leurs conséquences"
+                },
+                {
+                  "text": "2. Changement de comportement maladaptatif significatif lié aux attaques"
+                }
+              ]
+            }
+          ]
+        },
+        "quickView": {
+          "definicao": "Trouble caractérisé par des attaques de panique récurrentes et inattendues, suivies de préoccupation persistante ou de changement comportemental maladaptatif.",
+          "criteriosDiagnosticos": [
+            "Ataques de panique récurrents et inattendus",
+            "Au moins 4 symptômes pendant l'attaque : palpitations, sueurs, tremblements, dyspnée, douleur thoracique, nausées, vertiges, déréalisation, peur de perdre le contrôle, peur de mourir",
+            "Préoccupation persistante ou changement comportemental pendant ≥1 mois"
+          ],
+          "tratamentoPrimeiraLinha": {
+            "naoFarmacologico": [
+              "TCC avec exposition interoceptive",
+              "Psychoéducation sur les attaques de panique",
+              "Techniques de respiration"
+            ],
+            "farmacologico": [
+              "ISRS : Sertraline, Paroxétine, Escitalopram",
+              "Alprazolam (utilisation courte, éviter la dépendance)"
+            ]
+          },
+          "redFlags": [
+            "Agoraphobie grave",
+            "Idéation suicidaire",
+            "Usage de substances",
+            "Comorbidité non traitée"
+          ],
+          "examesIniciais": [
+            "ECG (exclure les arythmies)",
+            "TSH",
+            "Glycémie à jeun",
+            "Hémogramme"
+          ]
+        },
+        "tags": [
+          "panique",
+          "anxiété",
+          "attaques",
+          "isrs",
+          "tcc",
+          "dsm5"
+        ]
+      }
+    },
+    {
+      "id": "insonia",
+      "titulo": "Insomnie",
+      "ciap2": [
+        "P06"
+      ],
+      "cid10": [
+        "G47.0"
+      ],
+      "cid11": [
+        "7A00.0"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:193",
+      "snomedCT": "193462001",
+      "meshId": "D007319",
+      "umlsCui": "C0917801",
+      "quickView": {
+        "definicao": "Difficulté à s'endormir/maintenir le sommeil ou réveil précoce, avec un préjudice diurne. Chronique si ≥3 fois/semaine pendant ≥3 mois.",
+        "criteriosDiagnosticos": [
+          "Difficulté à dormir malgré une opportunité adéquate",
+          "Préjudice diurne (fatigue, irritabilité, concentration)",
+          "Exclure l'apnée du sommeil, le syndrome des jambes sans repos, autres causes"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "TCC-I (thérapie cognitivo-comportementale pour l'insomnie)",
+            "Hygiène du sommeil",
+            "Contrôle des stimuli",
+            "Restriction du temps au lit"
+          ],
+          "farmacologico": [
+            "Éviter les benzodiazépines chroniquement",
+            "Court terme : Zolpidem 5-10mg ou Zopiclone",
+            "Si comorbidité : Trazodone 25-100mg ou Mirtazapine"
+          ]
+        },
+        "redFlags": [
+          "Somnolence diurne excessive (apnée)",
+          "Ronflement intense",
+          "Syndrome des jambes sans repos",
+          "Cataplexie"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "transtorno-depressivo-maior",
+      "titulo": "Trouble Dépressif Majeur (TDM)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "cid11": [
+        "6A70",
+        "6A71"
+      ],
+      "ciap2": [
+        "P76"
+      ],
+      "snomedCT": "35489007",
+      "doid": "DOID:1470",
+      "meshId": "D003865",
+      "umlsCui": "C1269683",
+      "dsm5": {
+        "code": "296.33",
+        "codeAlternative": "F32",
+        "category": "Troubles Dépressifs",
+        "diagnosticCriteria": {
+          "code": "296.33",
+          "name": "Trouble Dépressif Majeur",
+          "category": "Troubles Dépressifs",
+          "criteria": [
+            {
+              "text": "A. Cinq (ou plus) des symptômes suivants ont été présents pendant la même période de 2 semaines et représentent un changement par rapport au fonctionnement antérieur ; au moins un des symptômes est (1) humeur déprimée ou (2) perte d'intérêt ou de plaisir."
+            },
+            {
+              "letter": "1",
+              "text": "Humeur déprimée la plupart du temps, presque tous les jours"
+            },
+            {
+              "letter": "2",
+              "text": "Diminution marquée de l'intérêt ou du plaisir pour toutes ou presque toutes les activités"
+            },
+            {
+              "letter": "3",
+              "text": "Perte ou gain de poids significatif (plus de 5 % du poids corporel en 1 mois)"
+            },
+            {
+              "letter": "4",
+              "text": "Insomnie ou hypersomnie presque tous les jours"
+            },
+            {
+              "letter": "5",
+              "text": "Agitation ou ralentissement psychomoteur presque tous les jours"
+            },
+            {
+              "letter": "6",
+              "text": "Fatigue ou perte d'énergie presque tous les jours"
+            },
+            {
+              "letter": "7",
+              "text": "Sentiments d'inutilité ou de culpabilité excessive ou inappropriée"
+            },
+            {
+              "letter": "8",
+              "text": "Capacité diminuée de penser ou de se concentrer, ou indécision"
+            },
+            {
+              "letter": "9",
+              "text": "Pensées récurrentes de mort, idéation suicidaire"
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "Léger",
+              "Modéré",
+              "Grave",
+              "Avec symptômes psychotiques"
+            ],
+            "course": [
+              "Épisode unique",
+              "Récurrent"
+            ],
+            "episode": [
+              "Avec caractéristiques mélancoliques",
+              "Avec caractéristiques atypiques",
+              "Avec catatonie"
+            ],
+            "remission": [
+              "En rémission partielle",
+              "En rémission complète"
+            ]
+          },
+          "exclusions": [
+            "Induit par une substance/medication",
+            "Dû à une autre affection médicale"
+          ]
+        },
+        "specifiers": {
+          "severity": [
+            "Léger",
+            "Modéré",
+            "Grave",
+            "Avec symptômes psychotiques"
+          ],
+          "course": [
+            "Épisode unique",
+            "Récurrent"
+          ],
+          "episode": [
+            "Avec caractéristiques mélancoliques",
+            "Avec caractéristiques atypiques",
+            "Avec catatonie"
+          ],
+          "remission": [
+            "En rémission partielle",
+            "En rémission complète"
+          ],
+          "withAnxiousDistress": true,
+          "withMelancholicFeatures": true,
+          "withAtypicalFeatures": true,
+          "withPsychoticFeatures": true,
+          "withCatatonia": true,
+          "withPeripartumOnset": true,
+          "withSeasonalPattern": true
+        }
+      },
+      "quickView": {
+        "definicao": "Trouble de l'humeur caractérisé par des épisodes d'humeur déprimée, perte d'intérêt ou de plaisir, accompagnés d'autres symptômes cognitifs, neurovégétatifs et psychomoteurs, qui causent un souffrance ou un préjudice significatif.",
+        "criteriosDiagnosticos": [
+          "Humeur déprimée ou perte d'intérêt/plaisir",
+          "Au moins 5 symptômes pendant 2 semaines",
+          "Symptômes : poids, sommeil, psychomoteur, énergie, cognition, culpabilité, idéation suicidaire",
+          "Préjudice significatif dans le fonctionnement"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Psychothérapie : TCC (thérapie cognitivo-comportementale) - or standard",
+            "Psychothérapie : TIP (thérapie interpersonnelle)",
+            "Activation comportementale",
+            "Exercice physique régulier"
+          ],
+          "farmacologico": [
+            "ISRS : Sertraline, Escitalopram, Fluoxétine (première ligne)",
+            "ISRN : Venlafaxine, Duloxétine",
+            "Antidépresseurs tricycliques : Amitriptyline (deuxième ligne)"
+          ]
+        },
+        "redFlags": [
+          "Idéation suicidaire active",
+          "Tentative de suicide",
+          "Psychose (hallucinations/délire)",
+          "Catatonie",
+          "Résistance au traitement",
+          "TDM grave avec réponse insuffisante"
+        ],
+        "examesIniciais": [
+          "TSH, T4 libre (exclure l'hypothyroïdie)",
+          "Vitamine B12, folate",
+          "Hémogramme complet",
+          "Échelle PHQ-9 ou HAM-D pour évaluation"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "PHQ-9",
+          "description": "Patient Health Questionnaire-9 : Échelle de 9 items, score 0-27. ≥10 indique une dépression modérée à grave.",
+          "cutoff": "≥10",
+          "reference": "Kroenke et al., 2001"
+        },
+        {
+          "name": "HAM-D",
+          "description": "Échelle d'évaluation de la dépression de Hamilton : Échelle clinique, score 0-52. ≥17 indique une dépression modérée à grave.",
+          "cutoff": "≥17",
+          "reference": "Hamilton, 1960"
+        }
+      ],
+      "tags": [
+        "dépression",
+        "humeur",
+        "isrs",
+        "tcc",
+        "dsm5",
+        "saude_mental"
+      ]
+    },
+    {
+      "id": "transtorno-bipolar-i",
+      "titulo": "Trouble Bipolaire de Type I",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F31"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "ciap2": [
+        "P73"
+      ],
+      "snomedCT": "13746004",
+      "doid": "DOID:3312",
+      "meshId": "D001714",
+      "umlsCui": "C0853193",
+      "dsm5": {
+        "code": "296.43",
+        "category": "Bipolar and Related Disorders",
+        "diagnosticCriteria": {
+          "code": "296.43",
+          "name": "Bipolar I Disorder",
+          "category": "Bipolar and Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Critères pour un épisode maniaque ont été remplis"
+            },
+            {
+              "letter": "B",
+              "text": "L'épisode maniaque n'est pas mieux expliqué par la schizophrénie, le trouble schizoaffectif ou un autre trouble psychotique"
+            }
+          ]
+        },
+        "specifiers": {
+          "severity": [
+            "Mild",
+            "Moderate",
+            "Severe",
+            "With Psychotic Features"
+          ],
+          "course": [
+            "Single Manic Episode",
+            "Most Recent Episode Manic",
+            "Most Recent Episode Hypomanic",
+            "Most Recent Episode Depressed",
+            "Most Recent Episode Unspecified"
+          ],
+          "episode": [
+            "With Catatonia",
+            "With Peripartum Onset",
+            "With Seasonal Pattern"
+          ],
+          "remission": [
+            "In Partial Remission",
+            "In Full Remission"
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Trouble de l'humeur caractérisé par au moins un épisode maniaque complet, souvent alternant avec des épisodes dépressifs majeurs.",
+        "criteriosDiagnosticos": [
+          "Au moins un épisode maniaque (humeur élevée/irritabilité + 3 symptômes pendant ≥1 semaine)",
+          "Symptômes maniaques : grandiosité, sommeil réduit, loquacité, fugue d'idées, distractibilité, activité augmentée, engagement dans des activités à risque",
+          "Préjudice significatif ou nécessité d'hospitalisation"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psychoéducation sur le trouble",
+            "Thérapie familiale",
+            "Thérapie des rythmes sociaux"
+          ],
+          "farmacologico": [
+            "Stabilisateurs de l'humeur : Lithium (standard d'or)",
+            "Anticonvulsivants : Valproate, Carbamazépine",
+            "Antipsychotiques atypiques : Quetiapine, Olanzapine"
+          ]
+        },
+        "redFlags": [
+          "Épisode maniaque grave avec psychose",
+          "Risque suicidaire pendant la dépression",
+          "Non-adhésion au traitement",
+          "Crises récurrentes"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "Premier épisode maniaque",
+        "Épisode maniaque grave ou avec psychose",
+        "Risque suicidaire",
+        "Nécessité d'ajustement du lithium",
+        "Crises récurrentes malgré le traitement"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "riscoAgressao": true,
+        "criterios": [
+          "Épisode maniaque grave",
+          "Psychose",
+          "Risque d'auto-lésion"
+        ]
+      },
+      "tags": [
+        "bipolar",
+        "mania",
+        "dépression",
+        "lithium",
+        "stabilisateurs",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "esquizofrenia",
+      "titulo": "Schizophrénie",
+      "ciap2": [
+        "P72"
+      ],
+      "cid10": [
+        "F20"
+      ],
+      "cid11": [
+        "6A20"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:5419",
+      "snomedCT": "58214004",
+      "meshId": "D012559",
+      "umlsCui": "C0036341",
+      "tags": [
+        "saude_mental",
+        "cronica",
+        "psicose"
+      ],
+      "quickView": {
+        "definicao": "Maladie mentale avec des symptômes positifs (hallucinations, délire) et négatifs (aboulie, émoussement affectif).",
+        "criteriosDiagnosticos": [
+          "Symptômes positifs ou négatifs pendant ≥1 mois",
+          "Dysfonctionnement social/occupational",
+          "Durée ≥6 mois"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psychothérapie",
+            "Psychoéducation",
+            "Réhabilitation psychosociale"
+          ],
+          "farmacologico": [
+            "Antipsychotique: Risperidone ou Olanzapine",
+            "Maintenance prolongée"
+          ]
+        },
+        "redFlags": [
+          "Idéation/comportement suicidaire",
+          "Agitation psychomotrice",
+          "Négligence des soins personnels"
+        ]
+      },
+      "medicamentos": [
+        "risperidona",
+        "olanzapina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "transtorno-estresse-pos-traumatico",
+      "titulo": "Trouble de stress post-traumatique (TSPT)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F43.1"
+      ],
+      "cid11": [
+        "6B40"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "47505003",
+      "doid": "DOID:2055",
+      "meshId": "D013313",
+      "umlsCui": "C0038436",
+      "dsm5": {
+        "code": "309.81",
+        "category": "Troubles liés aux traumatismes et aux facteurs de stress",
+        "diagnosticCriteria": {
+          "code": "309.81",
+          "name": "Trouble de stress post-traumatique",
+          "category": "Troubles liés aux traumatismes et aux facteurs de stress",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Exposition à la mort réelle ou menacée, à une lésion grave ou à une violence sexuelle"
+            },
+            {
+              "letter": "B",
+              "text": "Présence d'un (ou plusieurs) des symptômes d'intrusion suivants :",
+              "subCriteria": [
+                {
+                  "text": "1. Souvenirs douloureux récurrents"
+                },
+                {
+                  "text": "2. Cauchemars récurrents"
+                },
+                {
+                  "text": "3. Réactions dissociatives"
+                },
+                {
+                  "text": "4. Angoisse psychologique ou physiologique intense"
+                }
+              ]
+            },
+            {
+              "letter": "C",
+              "text": "Évitement persistant des stimuli associés au traumatisme"
+            },
+            {
+              "letter": "D",
+              "text": "Modifications négatives dans les cognitions et l'humeur"
+            },
+            {
+              "letter": "E",
+              "text": "Modifications marquées de l'excitation et de la réactivité"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Trouble qui se développe après exposition à un événement traumatique grave, caractérisé par des symptômes d'intrusion, d'évitement, de modifications cognitives/humorales et d'hyperexcitation.",
+        "criteriosDiagnosticos": [
+          "Exposition au traumatisme (mort, lésion grave, violence)",
+          "Symptômes d'intrusion : souvenirs, cauchemars, flashbacks",
+          "Évitement persistant",
+          "Modifications cognitives/humorales négatives",
+          "Hyperexcitation et réactivité",
+          "Durée >1 mois"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "TFT (thérapie focalisée sur le trauma) : EMDR, thérapie d'exposition prolongée",
+            "TCC avec exposition",
+            "Thérapie cognitive pour le TSPT"
+          ],
+          "farmacologico": [
+            "ISRS : Sertraline, Paroxétine (approuvés par la FDA)",
+            "ISRN : Vénlafaxine",
+            "Prazosine (pour les cauchemars)"
+          ]
+        },
+        "redFlags": [
+          "Risque suicidaire",
+          "Usage de substances",
+          "Comorbidité grave",
+          "TSPT chronique non répondeur"
+        ],
+        "examesIniciais": [
+          "Évaluation du risque suicidaire",
+          "Évaluation de l'usage de substances",
+          "Échelle PCL-5 pour l'évaluation"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "PCL-5",
+          "description": "Checklist du TSPT pour le DSM-5 : Échelle de 20 items, score 0-80. ≥33 indique un TSPT probable.",
+          "cutoff": "≥33",
+          "reference": "Weathers et al., 2013"
+        }
+      ],
+      "tags": [
+        "tspt",
+        "trauma",
+        "stress",
+        "emdr",
+        "isrs",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-obsessivo-compulsivo",
+      "titulo": "Trouble obsessionnel-compulsif (TOC)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F42"
+      ],
+      "cid11": [
+        "6B20"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "191736004",
+      "doid": "DOID:10933",
+      "meshId": "D009771",
+      "umlsCui": "C0028768",
+      "dsm5": {
+        "code": "300.3",
+        "category": "Obsessive-Compulsive and Related Disorders",
+        "diagnosticCriteria": {
+          "code": "300.3",
+          "name": "Obsessive-Compulsive Disorder",
+          "category": "Obsessive-Compulsive and Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Présence d'obsessions, de compulsions ou des deux"
+            },
+            {
+              "letter": "B",
+              "text": "Les obsessions ou les compulsions consomment du temps (plus d'une heure par jour) ou provoquent un inconfort ou un préjudice significatif"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Trouble caractérisé par des obsessions (pensées, impulsions ou images récurrentes et persistantes) et/ou des compulsions (comportements ou actes mentaux répétitifs) qui consomment du temps ou provoquent un inconfort significatif.",
+        "criteriosDiagnosticos": [
+          "Obsessions : pensées, impulsions ou images récurrentes et persistantes, intrusives et indésirables",
+          "Compulsions : comportements ou actes mentaux répétitifs en réponse aux obsessions",
+          "Consomment >1 heure/jour ou provoquent un inconfort/préjudice significatif"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "TCC avec prévention de la réponse et exposition (ERP) - standard d'or",
+            "Thérapie d'acceptation et d'engagement (ACT)"
+          ],
+          "farmacologico": [
+            "ISRS en doses élevées : Sertraline (≥200mg), Fluoxétine (≥60mg), Fluvoxamine",
+            "Clomipramine (antidépresseur tricyclique, deuxième ligne)"
+          ]
+        },
+        "redFlags": [
+          "TOC grave avec préjudice fonctionnel sévère",
+          "Idée suicidaire",
+          "Comorbidité non traitée",
+          "Résistance au traitement"
+        ],
+        "examesIniciais": [
+          "Évaluation du fonctionnement",
+          "Échelle Y-BOCS pour évaluation"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "Y-BOCS",
+          "description": "Yale-Brown Obsessive Compulsive Scale : Échelle de 10 items, score 0-40. ≥16 indique un TOC modéré à grave.",
+          "cutoff": "≥16",
+          "reference": "Goodman et al., 1989"
+        }
+      ],
+      "tags": [
+        "toc",
+        "obsessionnel",
+        "compulsif",
+        "erp",
+        "isrs",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-distimico",
+      "titulo": "Trouble Dépressif Persistant (Disthymie)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F34.1"
+      ],
+      "cid11": [
+        "6A71"
+      ],
+      "ciap2": [
+        "P76"
+      ],
+      "snomedCT": "78667006",
+      "doid": "DOID:1596",
+      "meshId": "D019263",
+      "umlsCui": "C0013415",
+      "dsm5": {
+        "code": "300.4",
+        "category": "Troubles Dépressifs",
+        "diagnosticCriteria": {
+          "code": "300.4",
+          "name": "Trouble Dépressif Persistant (Disthymie)",
+          "category": "Troubles Dépressifs",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Humeur déprimée la plupart du temps, la plupart des jours, indiquée par un rapport subjectif ou une observation d'autrui, pendant au moins 2 ans"
+            },
+            {
+              "letter": "B",
+              "text": "Présence, pendant la dépression, de deux (ou plus) des suivants :",
+              "subCriteria": [
+                {
+                  "text": "1. Appétit diminué ou excessif"
+                },
+                {
+                  "text": "2. Insomnie ou hypersomnie"
+                },
+                {
+                  "text": "3. Faible énergie ou fatigue"
+                },
+                {
+                  "text": "4. Faible estime de soi"
+                },
+                {
+                  "text": "5. Difficulté de concentration ou de prise de décision"
+                },
+                {
+                  "text": "6. Sentiments d'espoirlessness"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Trouble dépressif chronique caractérisé par une humeur déprimée persistante pendant ≥2 ans, avec des symptômes moins intenses que le TDM, mais avec un impact fonctionnel significatif.",
+        "criteriosDiagnosticos": [
+          "Humeur déprimée la plupart du temps, ≥2 ans",
+          "≥2 symptômes : appétit, sommeil, énergie, estime de soi, concentration, espoirlessness",
+          "Pas de période sans symptômes >2 mois",
+          "Préjudice fonctionnel significatif"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psychothérapie : TCC, IPT",
+            "Activation comportementale",
+            "Exercice physique"
+          ],
+          "farmacologico": [
+            "ISRS : Sertraline, Escitalopram",
+            "ISRN : Venlafaxine"
+          ]
+        },
+        "redFlags": [
+          "TDM superposé",
+          "Idéation suicidaire",
+          "Résistance au traitement"
+        ],
+        "examesIniciais": [
+          "TSH",
+          "PHQ-9"
+        ]
+      },
+      "tags": [
+        "disthymie",
+        "dépression",
+        "chronique",
+        "isrs",
+        "tcc",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-bipolar-ii",
+      "titulo": "Trouble bipolaire de type II",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F31.8"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "ciap2": [
+        "P73"
+      ],
+      "snomedCT": "83746006",
+      "doid": "DOID:540",
+      "meshId": "D001714",
+      "umlsCui": "C0236788",
+      "dsm5": {
+        "code": "296.89",
+        "category": "Bipolar and Related Disorders",
+        "diagnosticCriteria": {
+          "code": "296.89",
+          "name": "Bipolar II Disorder",
+          "category": "Bipolar and Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Critères pour un épisode hypomaniaque actuel ou passé ET pour un épisode dépressif majeur actuel ou passé ont été remplis"
+            },
+            {
+              "letter": "B",
+              "text": "Il n'a jamais eu d'épisode maniaque complet"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Trouble de l'humeur caractérisé par au moins un épisode hypomaniaque et un épisode dépressif majeur, sans antécédents d'épisode maniaque complet.",
+        "criteriosDiagnosticos": [
+          "Épisode hypomaniaque : humeur élevée/irritable + 3 symptômes pendant ≥4 jours, sans altération fonctionnelle marquée",
+          "Épisode dépressif majeur : présent ou passé",
+          "Il n'a jamais eu d'épisode maniaque complet"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psychoéducation",
+            "Thérapie familiale",
+            "Régulation des rythmes sociaux"
+          ],
+          "farmacologico": [
+            "Lithium ou Lamotrigine (prévention des épisodes)",
+            "Quetiapine (épisode dépressif)",
+            "Éviter les antidépresseurs isolés (risque de basculement maniaque)"
+          ]
+        },
+        "redFlags": [
+          "Risque de basculement maniaque avec les antidépresseurs",
+          "Risque suicidaire pendant la dépression",
+          "Crises récurrentes"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "Premier épisode hypomaniaque",
+        "Dépression grave",
+        "Risque suicidaire",
+        "Nécessité d'ajustement des stabilisateurs"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "criterios": [
+          "Dépression grave",
+          "Risque de basculement maniaque"
+        ]
+      },
+      "tags": [
+        "bipolar",
+        "hypomania",
+        "dépression",
+        "lithium",
+        "lamotrigine",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "fobia-social",
+      "titulo": "Fobie Sociale (Trouble de l'Anxiété Sociale)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F40.1"
+      ],
+      "cid11": [
+        "6B04"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "25501002",
+      "doid": "DOID:11257",
+      "meshId": "D010698",
+      "umlsCui": "C0031572",
+      "dsm5": {
+        "code": "300.23",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.23",
+          "name": "Social Anxiety Disorder (Social Phobia)",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Peur ou anxiété marquée concernant une ou plusieurs situations sociales dans lesquelles l'individu est exposé à une évaluation possible par autrui"
+            },
+            {
+              "letter": "B",
+              "text": "L'individu craint d'agir d'une manière qui montrera des symptômes d'anxiété qui seront évalués négativement"
+            },
+            {
+              "letter": "C",
+              "text": "Les situations sociales provoquent presque toujours peur ou anxiété"
+            },
+            {
+              "letter": "D",
+              "text": "Les situations sociales sont évitées ou supportées avec une peur ou une anxiété intense"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Trouble de l'anxiété caractérisé par une peur ou une anxiété marquée dans les situations sociales où l'individu est exposé à une évaluation possible par autrui.",
+        "criteriosDiagnosticos": [
+          "Peur ou anxiété marquée dans les situations sociales",
+          "Peur d'être évalué négativement",
+          "Les situations sociales provoquent presque toujours peur/anxiété",
+          "Évitement ou support avec une peur/anxiété intense",
+          "Durée ≥6 mois",
+          "Préjudice fonctionnel significatif"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "TCC avec exposition - standard-or",
+            "Formation aux compétences sociales",
+            "Thérapie de groupe"
+          ],
+          "farmacologico": [
+            "ISRS : Paroxétine, Sétraline, Escitalopram",
+            "ISRN : Vénlafaxine XR"
+          ]
+        },
+        "redFlags": [
+          "Évitement sévère avec isolement social",
+          "Comorbidité dépressive",
+          "Usage de substances pour faire face aux situations"
+        ],
+        "examesIniciais": [
+          "Évaluation fonctionnelle",
+          "Échelle LSAS"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "LSAS",
+          "description": "Liebowitz Social Anxiety Scale : Échelle de 24 items pour évaluer la fobie sociale.",
+          "reference": "Liebowitz, 1987"
+        }
+      ],
+      "tags": [
+        "fobia-social",
+        "ansiedade",
+        "tcc",
+        "isrs",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "agorafobia",
+      "titulo": "Agoraphobie",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F40.0"
+      ],
+      "cid11": [
+        "6B02"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "70691001",
+      "doid": "DOID:11259",
+      "meshId": "D000379",
+      "umlsCui": "C0001818",
+      "dsm5": {
+        "code": "300.22",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.22",
+          "name": "Agoraphobia",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Peur ou anxiété marquée concernant deux (ou plus) des situations suivantes :",
+              "subCriteria": [
+                {
+                  "text": "1. Utilisation des transports en commun"
+                },
+                {
+                  "text": "2. Être dans des espaces ouverts"
+                },
+                {
+                  "text": "3. Être dans des lieux fermés"
+                },
+                {
+                  "text": "4. Être dans une foule ou une file d'attente"
+                },
+                {
+                  "text": "5. Être hors de chez soi seul"
+                }
+              ]
+            },
+            {
+              "letter": "B",
+              "text": "L'individu évite ces situations par peur de ne pas pouvoir s'échapper ou de ne pas recevoir d'aide"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Trouble d'anxiété caractérisé par une peur ou une anxiété marquée dans des situations où l'évasion peut être difficile ou où l'aide peut ne pas être disponible en cas de symptômes de panique ou d'autres symptômes invalidants.",
+        "criteriosDiagnosticos": [
+          "Peur/anxiété marquée dans ≥2 situations : transports en commun, espaces ouverts, lieux fermés, foule, hors de chez soi seul",
+          "Évitement par peur de ne pas pouvoir s'échapper ou de ne pas recevoir d'aide",
+          "Durée ≥6 mois",
+          "Préjudice fonctionnel significatif"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "TCC avec exposition progressive - standard d'or",
+            "Psychoéducation",
+            "Techniques de respiration"
+          ],
+          "farmacologico": [
+            "ISRS : Sertraline, Paroxétine",
+            "ISRN : Venlafaxine"
+          ]
+        },
+        "redFlags": [
+          "Isolement à domicile",
+          "Comorbidité avec le trouble panique",
+          "Préjudice fonctionnel grave"
+        ],
+        "examesIniciais": [
+          "Évaluation fonctionnelle"
+        ]
+      },
+      "tags": [
+        "agorafobia",
+        "anxiété",
+        "tcc",
+        "isrs",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-personalidade-borderline",
+      "titulo": "Trouble de la personnalité borderline",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F60.3"
+      ],
+      "cid11": [
+        "6D10"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "20010003",
+      "doid": "DOID:10930",
+      "meshId": "D001883",
+      "umlsCui": "C0006012",
+      "dsm5": {
+        "code": "301.83",
+        "category": "Personality Disorders",
+        "diagnosticCriteria": {
+          "code": "301.83",
+          "name": "Borderline Personality Disorder",
+          "category": "Personality Disorders",
+          "criteria": [
+            {
+              "text": "Un modèle diffus d'instabilité dans les relations interpersonnelles, l'image de soi et les affects, et une impulsivité marquée, commençant au début de l'âge adulte et présente dans divers contextes, comme en témoignent cinq (ou plus) des éléments suivants :",
+              "subCriteria": [
+                {
+                  "text": "1. Efforts frénétiques pour éviter un abandon réel ou imaginé"
+                },
+                {
+                  "text": "2. Modèle de relations interpersonnelles instables et intenses caractérisé par des alternances entre l'idéalisation et la dévalorisation"
+                },
+                {
+                  "text": "3. Perturbation de l'identité : instabilité marquée et persistante de l'image de soi ou du sentiment de soi"
+                },
+                {
+                  "text": "4. Impulsivité dans au moins deux domaines potentiellement autodestructeurs"
+                },
+                {
+                  "text": "5. Récurrence de comportements, gestes ou menaces suicidaires ou de comportements automutilatoires"
+                },
+                {
+                  "text": "6. Instabilité affective due à une réactivité émotionnelle marquée"
+                },
+                {
+                  "text": "7. Sentiments chroniques de vide"
+                },
+                {
+                  "text": "8. Colère intense et inappropriée ou difficulté à contrôler la colère"
+                },
+                {
+                  "text": "9. Idées paranoïdes transitoires liées au stress ou symptômes dissociatifs graves"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Trouble de la personnalité caractérisé par une instabilité marquée dans les relations, l'image de soi et les affects, avec impulsivité et comportements autodestructeurs.",
+        "criteriosDiagnosticos": [
+          "≥5 des 9 critères : efforts pour éviter l'abandon, relations instables, perturbation de l'identité, impulsivité, comportement suicidaire/automutilatoire, instabilité affective, sentiment de vide, colère intense, symptômes dissociatifs/paranoïdes",
+          "Début au début de l'âge adulte",
+          "Présent dans divers contextes"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "DBT (Dialectical Behavior Therapy) - standard d'or",
+            "TCC spécialisée",
+            "Thérapie des schémas",
+            "Thérapie de groupe"
+          ],
+          "farmacologico": [
+            "Médication pour les symptômes spécifiques :",
+            "- ISRS pour l'instabilité affective",
+            "- Antipsychotiques atypiques en faible dose pour les symptômes cognitifs",
+            "- Stabilisateurs d'humeur pour l'impulsivité"
+          ]
+        },
+        "redFlags": [
+          "Risque suicidaire élevé",
+          "Comportement autolesionnel",
+          "Comorbidité avec d'autres troubles"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "Premier diagnostic",
+        "Risque suicidaire",
+        "Comportement autolesionnel grave",
+        "Nécessité de DBT spécialisée"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "riscoAutolesao": true,
+        "criterios": [
+          "Comportement suicidaire",
+          "Automutilation",
+          "Crises aiguës"
+        ]
+      },
+      "tags": [
+        "borderline",
+        "personnalité",
+        "dbt",
+        "instabilité",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-uso-alcool",
+      "titulo": "Trouble liée à l'usage de l'alcool",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F10"
+      ],
+      "cid11": [
+        "6C40"
+      ],
+      "ciap2": [
+        "P15",
+        "P16"
+      ],
+      "snomedCT": "7200002",
+      "doid": "DOID:0050741",
+      "meshId": "D000437",
+      "umlsCui": "C0001973",
+      "dsm5": {
+        "code": "305.00",
+        "category": "Substance-Related and Addictive Disorders",
+        "diagnosticCriteria": {
+          "code": "305.00",
+          "name": "Alcohol Use Disorder",
+          "category": "Substance-Related and Addictive Disorders",
+          "criteria": [
+            {
+              "text": "Un modèle d'utilisation problématique de l'alcool entraînant un préjudice ou un souffrance cliniquement significatifs, manifesté par au moins deux des éléments suivants, survenant sur une période de 12 mois :",
+              "subCriteria": [
+                {
+                  "text": "1. Consommation d'alcool fréquemment en quantités plus importantes ou sur une période plus longue que prévue"
+                },
+                {
+                  "text": "2. Désir persistant ou tentatives infructueuses de réduire ou de contrôler l'utilisation de l'alcool"
+                },
+                {
+                  "text": "3. Beaucoup de temps passé à des activités nécessaires pour obtenir de l'alcool, l'utiliser ou s'en remettre de ses effets"
+                },
+                {
+                  "text": "4. Envie (craving) ou désir ou impulsion forte d'utiliser de l'alcool"
+                },
+                {
+                  "text": "5. Utilisation récurrente de l'alcool entraînant un échec à remplir des obligations principales"
+                },
+                {
+                  "text": "6. Utilisation continuée malgré des problèmes sociaux ou interpersonnels persistants ou récurrents"
+                },
+                {
+                  "text": "7. Activités sociales, professionnelles ou récréatives importantes abandonnées ou réduites"
+                },
+                {
+                  "text": "8. Utilisation récurrente dans des situations physiquement dangereuses"
+                },
+                {
+                  "text": "9. Utilisation continuée malgré la connaissance d'un problème physique ou psychologique"
+                },
+                {
+                  "text": "10. Tolérance (définie par l'un des éléments suivants) :",
+                  "subCriteria": [
+                    {
+                      "text": "a) Nécessité de quantités progressivement plus importantes pour atteindre l'intoxication ou l'effet désiré"
+                    },
+                    {
+                      "text": "b) Effet marquément diminué avec utilisation continuée de la même quantité"
+                    }
+                  ]
+                },
+                {
+                  "text": "11. Sevrage (défini par l'un des éléments suivants) :",
+                  "subCriteria": [
+                    {
+                      "text": "a) Syndrome de sevrage caractéristique"
+                    },
+                    {
+                      "text": "b) L'alcool (ou une substance apparentée) est consommé pour soulager ou éviter les symptômes de sevrage"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "Léger (2-3 symptômes)",
+              "Modéré (4-5 symptômes)",
+              "Grave (6+ symptômes)"
+            ],
+            "course": [
+              "Early Remission",
+              "Sustained Remission",
+              "On Maintenance Therapy",
+              "In a Controlled Environment"
+            ]
+          }
+        }
+      },
+      "quickView": {
+        "definicao": "Trouble caractérisé par un modèle d'utilisation problématique de l'alcool entraînant un préjudice ou un souffrance cliniquement significatifs, manifesté par ≥2 critères sur 12 mois.",
+        "criteriosDiagnosticos": [
+          "≥2 critères sur 12 mois :",
+          "Consommation plus importante que prévue, tentatives de réduction, beaucoup de temps passé, envie, échec dans les obligations, problèmes interpersonnels, abandon d'activités, utilisation dans des situations dangereuses, utilisation malgré les problèmes, tolérance, sevrage",
+          "Gravité : Léger (2-3), Modéré (4-5), Grave (6+)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Entretien motivationnel",
+            "Thérapie cognitivo-comportementale",
+            "Groupes de soutien (AA)",
+            "Prévention de la rechute"
+          ],
+          "farmacologico": [
+            "Désintoxication si nécessaire (benzodiazépines pour le sevrage)",
+            "Prévention de la rechute : Naltrexone, Acamprosate",
+            "Détérence : Disulfiram"
+          ]
+        },
+        "redFlags": [
+          "Sevrage grave avec risque de convulsions",
+          "Delirium tremens",
+          "Hépatopathie alcoolique",
+          "Pancréatite",
+          "Wernicke-Korsakoff"
+        ],
+        "examesIniciais": [
+          "AST, ALT, GGT",
+          "Bilirubine",
+          "Hémogramme complet",
+          "AUDIT (Alcohol Use Disorders Identification Test)"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "Trouble grave",
+        "Sevrage grave",
+        "Delirium tremens",
+        "Complications cliniques",
+        "Résistance au traitement ambulatoire"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "criterios": [
+          "Sevrage grave",
+          "Delirium tremens",
+          "Complications cliniques"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "AUDIT",
+          "description": "Alcohol Use Disorders Identification Test : Échelle de 10 items pour le dépistage de l'usage problématique de l'alcool.",
+          "cutoff": "≥8 indique un usage problématique",
+          "reference": "WHO, 2001"
+        }
+      ],
+      "tags": [
+        "alcool",
+        "substance",
+        "addiction",
+        "naltrexone",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-neurocognitivo-leve",
+      "titulo": "Trouble neurocognitif léger",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F06.7"
+      ],
+      "cid11": [
+        "6D70"
+      ],
+      "ciap2": [
+        "P70"
+      ],
+      "snomedCT": "386806002",
+      "doid": "DOID:0060469",
+      "meshId": "D060825",
+      "umlsCui": "C1270972",
+      "dsm5": {
+        "code": "331.83",
+        "category": "Neurocognitive Disorders",
+        "diagnosticCriteria": {
+          "code": "331.83",
+          "name": "Mild Neurocognitive Disorder",
+          "category": "Neurocognitive Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Preuve d'un déclin cognitif modéré par rapport à un niveau antérieur de performance dans un ou plusieurs domaines cognitifs"
+            },
+            {
+              "letter": "B",
+              "text": "Le déclin cognitif n'interfère pas avec la capacité d'indépendance dans les activités instrumentales de la vie quotidienne"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Déclin cognitif modéré dans un ou plusieurs domaines (attention complexe, fonction exécutive, apprentissage et mémoire, langage, perception-motrice, cognition sociale) qui n'interfère pas avec l'indépendance fonctionnelle.",
+        "criteriosDiagnosticos": [
+          "Déclin cognitif modéré dans ≥1 domaine",
+          "Évaluation objective (tests neuropsychologiques)",
+          "N'INTERFÈRE PAS avec l'indépendance fonctionnelle",
+          "N'ATTEINT PAS les critères du délire"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Rééducation cognitive",
+            "Entraînement cognitif",
+            "Exercice physique régulier",
+            "Contrôle des facteurs de risque cardiovasculaires"
+          ],
+          "farmacologico": [
+            "Traitement de la cause sous-jacente",
+            "Donepezil ou Rivastigmine (si Alzheimer)"
+          ]
+        },
+        "redFlags": [
+          "Progression rapide",
+          "Déclin fonctionnel",
+          "Symptômes comportementaux",
+          "Cause réversible non traitée"
+        ],
+        "examesIniciais": [
+          "Évaluation neuropsychologique",
+          "IRM de crâne",
+          "Hémogramme, fonction thyroïdienne, B12, folate",
+          "Exclure les causes réversibles"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "MoCA",
+          "description": "Montreal Cognitive Assessment: Échelle de dépistage cognitif",
+          "cutoff": "<26 suggère une altération",
+          "reference": "Nasreddine et al., 2005"
+        },
+        {
+          "name": "MMSE",
+          "description": "Mini-Mental State Examination: Échelle classique de dépistage",
+          "cutoff": "<24 suggère une altération",
+          "reference": "Folstein et al., 1975"
+        }
+      ],
+      "tags": [
+        "neurocognitif",
+        "cognition",
+        "démence",
+        "moca",
+        "mmse",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-identidade-dissociativo",
+      "titulo": "Trouble de l'Identité Dissociatif",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F44.81"
+      ],
+      "cid11": [
+        "6B64"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "32388005",
+      "doid": "DOID:1532",
+      "meshId": "D009105",
+      "umlsCui": "C0026847",
+      "dsm5": {
+        "code": "300.14",
+        "category": "Dissociative Disorders",
+        "diagnosticCriteria": {
+          "code": "300.14",
+          "name": "Dissociative Identity Disorder",
+          "category": "Dissociative Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Disruption de l'identité caractérisée par deux ou plusieurs personnalités distinctes"
+            },
+            {
+              "letter": "B",
+              "text": "Oublis récurrents de la mémoire des événements quotidiens, d'informations personnelles importantes ou d'événements traumatiques"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Trouble dissociatif caractérisé par une disruption de l'identité avec deux ou plusieurs personnalités distinctes et des lacunes dans la mémoire.",
+        "criteriosDiagnosticos": [
+          "≥2 personnalités distinctes (identités)",
+          "Oublis récurrents de la mémoire",
+          "Cause un souffrance ou un préjudice fonctionnel",
+          "Non attribuable à des substances ou à une condition médicale"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psychothérapie spécialisée (à long terme)",
+            "Intégration des identités",
+            "Traitement des traumatismes",
+            "Stabilisation des symptômes"
+          ],
+          "farmacologico": [
+            "Médication pour les symptômes spécifiques (dépression, anxiété)",
+            "IL N'Y A PAS DE MÉDICAMENT SPÉCIFIQUE POUR LE TID"
+          ]
+        },
+        "redFlags": [
+          "Crises d'identité",
+          "Automutilation",
+          "Comportement suicidaire",
+          "Amnésie dissociative grave"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "Toujours orienter vers un spécialiste des troubles dissociatifs",
+        "Premier diagnostic",
+        "Symptômes graves"
+      ],
+      "tags": [
+        "dissociatif",
+        "identité",
+        "trauma",
+        "rarissimo",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "anorexia-nervosa",
+      "titulo": "Anorexie nerveuse",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F50.0"
+      ],
+      "cid11": [
+        "6B80"
+      ],
+      "ciap2": [
+        "P99"
+      ],
+      "snomedCT": "56882008",
+      "doid": "DOID:8689",
+      "meshId": "D000856",
+      "umlsCui": "C0003125",
+      "dsm5": {
+        "code": "307.1",
+        "category": "Feeding and Eating Disorders",
+        "diagnosticCriteria": {
+          "code": "307.1",
+          "name": "Anorexia Nervosa",
+          "category": "Feeding and Eating Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Restriction de l'apport alimentaire entraînant un poids corporel significativement bas"
+            },
+            {
+              "letter": "B",
+              "text": "Peur intense de prendre du poids ou de devenir obèse"
+            },
+            {
+              "letter": "C",
+              "text": "Perturbation de la perception du poids ou de la forme corporelle"
+            }
+          ]
+        },
+        "quickView": {
+          "definicao": "Trouble alimentaire caractérisé par une restriction alimentaire, une peur intense de prendre du poids et une perturbation de la perception du poids/corps, entraînant un poids significativement bas.",
+          "criteriosDiagnosticos": [
+            "Restriction alimentaire → poids significativement bas (IMC <18,5 ou poids <85% du poids attendu)",
+            "Peur intense de prendre du poids",
+            "Perturbation de la perception du poids/corps",
+            "Types : Restrictif ou Compulsion périodique/Purgation"
+          ],
+          "tratamentoPrimeiraLinha": {
+            "naoFarmacologico": [
+              "Traitement multidisciplinaire : médecin, diététicien, psychologue",
+              "Thérapie familiale (pour les adolescents)",
+              "Thérapie cognitivo-comportementale spécialisée",
+              "Réhabilitation nutritionnelle (sous supervision)"
+            ],
+            "farmacologico": [
+              "Olanzapine (prise de poids, symptômes obsessionnels)",
+              "ISRS pour comorbidités (dépression, anxiété)",
+              "Supplémentation nutritionnelle si nécessaire"
+            ]
+          },
+          "redFlags": [
+            "IMC <15 ou perte de poids rapide",
+            "Bradycardie (<50 bpm)",
+            "Hypotension orthostatique",
+            "Hypothermie",
+            "Amenorrhée",
+            "Comportement suicidaire"
+          ],
+          "examesIniciais": [
+            "Poids, taille, IMC",
+            "Signes vitaux",
+            "Hémogramme, électrolytes, fonction hépatique et rénale",
+            "ECG (arythmies)",
+            "Densité osseuse (ostéoporose)"
+          ]
+        },
+        "criteriosEncaminhamento": [
+          "IMC <15",
+          "Signes vitaux instables",
+          "Dénutrition grave",
+          "Complications médicales",
+          "Échec du traitement ambulatoire"
+        ],
+        "urgencia": {
+          "riscosuicida": true,
+          "criterios": [
+            "Dénutrition grave",
+            "Signes vitaux instables",
+            "Complications médicales"
+          ]
+        },
+        "tags": [
+          "anorexie",
+          "alimentaire",
+          "restrictif",
+          "olanzapine",
+          "dsm5"
+        ]
+      }
+    },
+    {
+      "id": "bulimia-nervosa",
+      "titulo": "Boulimie nerveuse",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F50.2"
+      ],
+      "cid11": [
+        "6B81"
+      ],
+      "ciap2": [
+        "P99"
+      ],
+      "snomedCT": "78004001",
+      "doid": "DOID:8513",
+      "meshId": "D052018",
+      "umlsCui": "C0006370",
+      "dsm5": {
+        "code": "307.51",
+        "category": "Troubles du comportement alimentaire et de l'alimentation",
+        "diagnosticCriteria": {
+          "code": "307.51",
+          "name": "Boulimie nerveuse",
+          "category": "Troubles du comportement alimentaire et de l'alimentation",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Épisodes récurrents de boulimie"
+            },
+            {
+              "letter": "B",
+              "text": "Comportements compensatoires récurrents et inadéquats pour prévenir la prise de poids"
+            },
+            {
+              "letter": "C",
+              "text": "Les épisodes se produisent en moyenne au moins une fois par semaine pendant 3 mois"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Trouble alimentaire caractérisé par des épisodes récurrents de boulimie suivis de comportements compensatoires inadéquats (vomissements, laxatifs, exercice excessif).",
+        "criteriosDiagnosticos": [
+          "Épisodes récurrents de boulimie (grande quantité en peu de temps, sensation de perte de contrôle)",
+          "Comportements compensatoires récurrents : vomissements auto-induits, utilisation de laxatifs/diurétiques, exercice excessif, jeûne",
+          "≥1 fois/semaine pendant ≥3 mois",
+          "Auto-évaluation indûment influencée par la forme et le poids du corps"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "TCC spécialisée (TCC-BN) - standard d'or",
+            "Thérapie interpersonnelle (TIP)",
+            "Éducation nutritionnelle"
+          ],
+          "farmacologico": [
+            "ISRS : Fluoxétine 60 mg/jour (approuvé pour la BN)",
+            "Autres ISRS à fortes doses"
+          ]
+        },
+        "redFlags": [
+          "Déséquilibre électrolytique grave",
+          "Œsophagite/érosion dentaire",
+          "Comportement suicidaire",
+          "Utilisation excessive de laxatifs"
+        ],
+        "examesIniciais": [
+          "Électrolytes (hypokaliémie, hyponatrémie)",
+          "Fonction hépatique et rénale",
+          "Évaluation odontologique (érosion)"
+        ]
+      },
+      "tags": [
+        "boulimie",
+        "boulimie",
+        "purgation",
+        "fluoxétine",
+        "TCC",
+        "DSM-5"
+      ]
+    },
+    {
+      "id": "transtorno-espectro-autista",
+      "titulo": "Trouble du spectre autistique (TSA)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F84.0"
+      ],
+      "cid11": [
+        "6A02"
+      ],
+      "ciap2": [
+        "P15"
+      ],
+      "snomedCT": "35919005",
+      "doid": "DOID:0060041",
+      "meshId": "D000067877",
+      "umlsCui": "C1510586",
+      "dsm5": {
+        "code": "299.00",
+        "category": "Neurodevelopmental Disorders",
+        "diagnosticCriteria": {
+          "code": "299.00",
+          "name": "Autism Spectrum Disorder",
+          "category": "Neurodevelopmental Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Déficits persistants dans la communication sociale et l'interaction sociale dans de multiples contextes"
+            },
+            {
+              "letter": "B",
+              "text": "Modèles de comportement, d'intérêts ou d'activités restreints et répétitifs"
+            },
+            {
+              "letter": "C",
+              "text": "Symptômes présents au début de la période de développement"
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "Niveau 1 (Requiert un soutien)",
+              "Niveau 2 (Requiert un soutien substantiel)",
+              "Niveau 3 (Requiert un soutien très substantiel)"
+            ]
+          }
+        },
+        "quickView": {
+          "definicao": "Trouble du neurodéveloppement caractérisé par des déficits persistants dans la communication sociale et l'interaction sociale, et des modèles de comportement restreints et répétitifs, présents depuis le début du développement.",
+          "criteriosDiagnosticos": [
+            "Déficits de communication sociale : réciprocité socio-émotionnelle, communication non verbale, relations",
+            "Modèles restreints/répétitifs : ≥2 : mouvements stéréotypés, insistance sur la routine, intérêts fixes, hyper/hyporéactivité sensorielle",
+            "Symptômes présents au début du développement (peuvent ne pas être évidents jusqu'à ce que les exigences sociales dépassent les capacités)",
+            "Niveau de soutien : 1 (léger), 2 (modéré), 3 (grave)"
+          ],
+          "tratamentoPrimeiraLinha": {
+            "naoFarmacologico": [
+              "Interventions comportementales précoces intensives",
+              "Analyse du comportement appliquée (ABA)",
+              "Thérapie de communication sociale",
+              "Thérapie occupationnelle (intégration sensorielle)",
+              "Soutien éducatif spécialisé"
+            ],
+            "farmacologico": [
+              "Médication pour symptômes spécifiques :",
+              "- Risperidone ou Aripiprazole (agressivité, irritabilité)",
+              "- ISRS pour l'anxiété/comportement obsessionnel",
+              "- Stimulants pour le TDAH comorbide"
+            ]
+          },
+          "redFlags": [
+            "Régression des compétences",
+            "Comportements auto-lésifs graves",
+            "Agressivité",
+            "Comorbidités psychiatriques non traitées"
+          ],
+          "examesIniciais": [
+            "Évaluation multidisciplinaire : pédiatre, neurologue, orthophoniste, psychologue",
+            "Évaluation auditive (pour exclure la perte auditive)",
+            "Tests génétiques (si indiqués)",
+            "Échelles : ADOS, ADI-R"
+          ]
+        },
+        "escalasAvaliacao": [
+          {
+            "name": "M-CHAT-R",
+            "description": "Modified Checklist for Autism in Toddlers, Revised: Évaluation pour TSA chez les enfants de 16 à 30 mois",
+            "reference": "Robins et al., 2009"
+          },
+          {
+            "name": "ADOS",
+            "description": "Autism Diagnostic Observation Schedule: Standard-or pour le diagnostic de TSA",
+            "reference": "Lord et al., 2012"
+          }
+        ],
+        "tags": [
+          "autisme",
+          "tsa",
+          "neurodéveloppement",
+          "aba",
+          "dsm5"
+        ]
+      }
+    },
+    {
+      "id": "narcolepsia",
+      "titulo": "Narcolepsie",
+      "categoria": "saude_mental",
+      "cid10": [
+        "G47.4"
+      ],
+      "cid11": [
+        "7A20"
+      ],
+      "ciap2": [
+        "P06"
+      ],
+      "snomedCT": "60380001",
+      "doid": "DOID:8986",
+      "meshId": "D009290",
+      "umlsCui": "C0027404",
+      "dsm5": {
+        "code": "347.00",
+        "category": "Troubles du sommeil-veille",
+        "diagnosticCriteria": {
+          "code": "347.00",
+          "name": "Narcolepsie",
+          "category": "Troubles du sommeil-veille",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Épisodes récurrents d'une nécessité irrésistible de dormir, de siestes ou de lapsus de sommeil"
+            },
+            {
+              "letter": "B",
+              "text": "Présence de ≥1 : cataplexie, niveaux bas d'orexine, latence du sommeil paradoxal ≤15 minutes"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Trouble du sommeil caractérisé par une somnolence diurne excessive, des épisodes irrésistibles de sommeil, souvent associés à la cataplexie (perte soudaine du tonus musculaire).",
+        "criteriosDiagnosticos": [
+          "Somnolence diurne excessive ≥3 mois",
+          "Épisodes récurrents de sommeil dans des situations inappropriées",
+          "≥1 : cataplexie, taux bas d'hypocrétine dans le LCR, latence REM ≤15 min au test multiple de latence du sommeil"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Siestes programmées (2-3/jour, 15-20 min)",
+            "Hygiène du sommeil rigoureuse",
+            "Soutien psychosocial"
+          ],
+          "farmacologico": [
+            "Stimulants : Modafinil 200-400 mg/jour ou Armodafinil",
+            "Pour la cataplexie : Venlafaxine, Fluoxétine, ou Sodium oxybate"
+          ]
+        },
+        "redFlags": [
+          "Cataplexie grave avec risque de chutes",
+          "Hallucinations hypnagogiques",
+          "Paralysie du sommeil"
+        ],
+        "examesIniciais": [
+          "Test multiple de latence du sommeil (MSLT)",
+          "Polysomnographie",
+          "Dosage de l'hypocrétine dans le LCR"
+        ]
+      },
+      "tags": [
+        "narcolepsie",
+        "sommeil",
+        "cataplexie",
+        "modafinil",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-uso-cannabis",
+      "titulo": "Trouble liée à l'usage de la cannabis",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F12"
+      ],
+      "cid11": [
+        "6C41"
+      ],
+      "ciap2": [
+        "P15",
+        "P16"
+      ],
+      "snomedCT": "37344009",
+      "doid": "DOID:0050742",
+      "meshId": "D002189",
+      "umlsCui": "C0006870",
+      "dsm5": {
+        "code": "304.30",
+        "category": "Troubles liés aux substances et troubles addictifs",
+        "diagnosticCriteria": {
+          "code": "304.30",
+          "name": "Trouble lié à l'usage de la cannabis",
+          "category": "Troubles liés aux substances et troubles addictifs",
+          "criteria": [
+            {
+              "text": "Modèle d'utilisation problématique de la cannabis entraînant un préjudice ou un souffrance cliniquement significatifs, manifesté par ≥2 critères en 12 mois"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Modèle d'utilisation problématique de la cannabis entraînant un préjudice ou un souffrance cliniquement significatifs.",
+        "criteriosDiagnosticos": [
+          "≥2 critères en 12 mois : utilisation supérieure à ce qui était prévu, efforts pour réduire, beaucoup de temps passé, envie intense, échec dans les obligations, problèmes interpersonnels, abandon d'activités, utilisation dans des situations dangereuses, utilisation malgré les problèmes, tolérance, sevrage"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Entretien motivationnel",
+            "Thérapie cognitivo-comportementale pour l'usage de substances",
+            "Thérapie de gestion des contingences",
+            "Groupes de soutien"
+          ],
+          "farmacologico": [
+            "Traitement des symptômes de sevrage si nécessaire",
+            "La naltrexone peut aider"
+          ]
+        },
+        "redFlags": [
+          "Trouble psychotique induit",
+          "Usage chez les adolescents (plus grand risque de dépendance)",
+          "Comorbidité psychiatrique"
+        ],
+        "examesIniciais": [
+          "Test toxicologique",
+          "Évaluation des comorbidités psychiatriques"
+        ]
+      },
+      "tags": [
+        "cannabis",
+        "marijuana",
+        "substance",
+        "tcc",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "depressao-idoso",
+      "titulo": "Dépression chez le sujet âgé",
+      "ciap2": [
+        "P76"
+      ],
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "cid11": [
+        "6A70",
+        "6A71"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:1596",
+      "snomedCT": "35489007",
+      "meshId": "D003866",
+      "umlsCui": "C0011570",
+      "quickView": {
+        "definicao": "Trouble dépressif majeur chez le sujet âgé, souvent sous-diagnostiqué. Peut se présenter avec des plaintes somatiques et une « pseudodémence ».",
+        "criteriosDiagnosticos": [
+          "GDS-15 ≥5 (rastreament)",
+          "Symptômes atypiques courants : plaintes somatiques",
+          "Perte d'intérêt plus que tristesse",
+          "Pseudodémence : déficit cognitif réversible"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Activité physique",
+            "Activation comportementale",
+            "Soutien social",
+            "Psychothérapie"
+          ],
+          "farmacologico": [
+            "ISRS : Sertraline 25-50 mg (préféré)",
+            "Éviter les tricycliques (effets anticholinergiques)",
+            "Start low, go slow"
+          ]
+        },
+        "redFlags": [
+          "Idée suicidaire (risque plus élevé que chez les jeunes)",
+          "Refus alimentaire",
+          "Psychoses",
+          "Déclin fonctionnel rapide"
+        ]
+      },
+      "medicamentos": [
+        "sertraline",
+        "escitalopram"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "gds-15"
+      ]
+    },
+    {
+      "id": "tabagismo",
+      "titulo": "Dépendance à la Nicotine (Tabagisme)",
+      "ciap2": [
+        "P17"
+      ],
+      "cid10": [
+        "F17"
+      ],
+      "cid11": [
+        "6C4A"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:0050742",
+      "snomedCT": "89765005",
+      "meshId": "D014029",
+      "umlsCui": "C0040336",
+      "quickView": {
+        "definicao": "Principale cause évitable de mortalité. 1 milliard de fumeurs dans le monde. L'arrêt réduit la mortalité à tout âge.",
+        "criteriosDiagnosticos": [
+          "Fagerström ≥6 = dépendance élevée",
+          "Usage quotidien malgré la connaissance des risques",
+          "Essais précédents d'arrêt sans succès",
+          "Symptômes de sevrage"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Approche brève (5 A)",
+            "Conseil motivationnel",
+            "Groupe de soutien",
+            "Ligne téléphonique (136)"
+          ],
+          "farmacologico": [
+            "Première ligne : Bupropion 150 mg 2 fois par jour pendant 7-12 semaines",
+            "OU Varenicline 0,5 mg → 1 mg 2 fois par jour",
+            "TRN : patch + comprimé/gomme selon la nécessité"
+          ]
+        },
+        "redFlags": [
+          "Maladie pulmonaire ou cardiaque avancée",
+          "Grossesse",
+          "Trouble psychiatrique grave"
+        ]
+      },
+      "medicamentos": [
+        "bupropion"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "fagerstrom"
+      ]
+    },
+    {
+      "id": "transtorno-bipolar",
+      "titulo": "Trouble bipolaire",
+      "ciap2": [
+        "P73"
+      ],
+      "cid10": [
+        "F31"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:3312",
+      "snomedCT": "13746004",
+      "meshId": "D001714",
+      "umlsCui": "C0005586",
+      "tags": [
+        "saude_mental",
+        "chronique"
+      ],
+      "quickView": {
+        "definicao": "Épisodes de manie/hypomanie et de dépression. Type I (manie + dépression) ou Type II (hypomanie + dépression).",
+        "criteriosDiagnosticos": [
+          "Épisode maniaque (Type I) ou hypomaniaque (Type II)",
+          "Épisodes dépressifs",
+          "Changement d'humeur"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psychothérapie",
+            "Éducation sur la maladie",
+            "Soutien familial"
+          ],
+          "farmacologico": [
+            "Stabilisateur de l'humeur : Lithium ou Valproate",
+            "Antipsychotiques en cas de manie",
+            "Antidépresseurs avec prudence"
+          ]
+        },
+        "redFlags": [
+          "Idées suicidaires",
+          "Psychoses",
+          "Manie grave",
+          "Hospitalisation nécessaire"
+        ]
+      },
+      "medicamentos": [
+        "lithium",
+        "valproate"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-ansiedade-generalizada",
+      "titulo": "Trouble d'anxiété généralisée",
+      "ciap2": [
+        "P74"
+      ],
+      "cid10": [
+        "F41.1"
+      ],
+      "cid11": [
+        "6B00"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:1596",
+      "snomedCT": "48544008",
+      "meshId": "D001008",
+      "umlsCui": "C0003467",
+      "hpo": [
+        "HP:0000739"
+      ],
+      "tags": [
+        "saude_mental",
+        "anxiété",
+        "chronique"
+      ],
+      "quickView": {
+        "definicao": "Anxiété excessive et persistante depuis ≥6 mois. Préoccupations difficiles à contrôler. Symptômes physiques associés.",
+        "criteriosDiagnosticos": [
+          "Anxiété excessive depuis ≥6 mois",
+          "Difficulté à contrôler les préoccupations",
+          "≥3 symptômes : agitation, fatigue, difficulté de concentration, irritabilité, tension musculaire, troubles du sommeil"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "TCC",
+            "Psychothérapie",
+            "Techniques de relaxation",
+            "Exercices"
+          ],
+          "farmacologico": [
+            "ISRS : Sertraline ou Escitalopram",
+            "Benzodiazépines uniquement en court terme si nécessaire"
+          ]
+        },
+        "redFlags": [
+          "Idées suicidaires",
+          "Crises de panique",
+          "Comorbidités psychiatriques"
+        ]
+      },
+      "medicamentos": [
+        "sertralina",
+        "escitalopram"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

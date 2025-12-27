@@ -1,0 +1,403 @@
+{
+  "locale": "fr",
+  "category": "gastro-intestinal",
+  "generatedAt": "2025-12-27T22:46:44.897Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "diarreia-aguda-pediatrica",
+      "titulo": "Diarrhée Aiguë Pédiatrique",
+      "ciap2": [
+        "D73"
+      ],
+      "cid10": [
+        "A09"
+      ],
+      "cid11": [
+        "1A40"
+      ],
+      "categoria": "gastro-intestinal",
+      "doid": "DOID:13250",
+      "snomedCT": "409966000",
+      "meshId": "D003967",
+      "umlsCui": "C0011991",
+      "quickView": {
+        "definicao": "Modification de l'habitude intestinale avec ≥3 selles molles/liquides en 24h, durée <14 jours. Principale cause : rotavirus.",
+        "criteriosDiagnosticos": [
+          "≥3 selles liquides/jour",
+          "Durée <14 jours (aiguë)",
+          "Évaluer le degré de déshydratation",
+          "Sans sang/mucus = probablement viral"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ORS (Sérothérapie orale ou SRP)",
+            "Maintenir l'alimentation",
+            "Allaitement maternel à la demande"
+          ],
+          "farmacologico": [
+            "Zinc 10-20mg/jour pendant 10-14 jours",
+            "SANS antidiarrhéiques",
+            "SANS antiémétiques de routine"
+          ]
+        },
+        "redFlags": [
+          "Déshydratation grave",
+          "Léthargie",
+          "Yeux creux",
+          "Rétraction cutanée >2s",
+          "Absence d'urine",
+          "Sang dans les selles"
+        ]
+      },
+      "medicamentos": [
+        "sais-reidratacao-oral"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "constipacao-pediatrica",
+      "titulo": "Constipation Fonctionnelle chez l'Enfant",
+      "ciap2": [
+        "D12"
+      ],
+      "cid10": [
+        "K59.0"
+      ],
+      "cid11": [
+        "ME04"
+      ],
+      "categoria": "gastro-intestinal",
+      "doid": "DOID:2089",
+      "snomedCT": "14760008",
+      "meshId": "D003248",
+      "umlsCui": "C0009806",
+      "quickView": {
+        "definicao": "Évacuations infrequentes (<3/semaine), douloureuses ou avec rétention fécale. 90% fonctionnel. Pic : apprentissage du contrôle sphinctérien et début scolaire.",
+        "criteriosDiagnosticos": [
+          "Rome IV : ≥2 critères pendant 1 mois",
+          "≤2 évacuations/semaine",
+          "Rétention fécale excessive",
+          "Évacuations douloureuses",
+          "Selles volumineuses dans le rectum",
+          "Incontinence fécale (fuite)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éducation familiale (non punitive)",
+            "Apprentissage des habitudes",
+            "Régime riche en fibres",
+            "Hydratation"
+          ],
+          "farmacologico": [
+            "Déimpaction : PEG (1-1,5g/kg/jour) ou lavement",
+            "Maintenance : PEG 0,4-0,8g/kg/jour",
+            "Lactulose alternative"
+          ]
+        },
+        "redFlags": [
+          "Distension abdominale grave",
+          "Vomissements bilieux",
+          "Retard d'élimination du méconium",
+          "Déficit de croissance"
+        ]
+      },
+      "medicamentos": [
+        "lactulose"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hemorroidas",
+      "titulo": "Maladie hémorroïdaire",
+      "ciap2": [
+        "D95"
+      ],
+      "cid10": [
+        "K64"
+      ],
+      "cid11": [
+        "DB34"
+      ],
+      "categoria": "gastro-intestinal",
+      "doid": "DOID:9277",
+      "snomedCT": "70153002",
+      "meshId": "D006484",
+      "umlsCui": "C0019112",
+      "quickView": {
+        "definicao": "Ingurgitation des plexus hémorroïdaires (internes ou externes). Très courante. S'aggrave avec la constipation et l'effort d'évacuation.",
+        "criteriosDiagnosticos": [
+          "Saignement vif à l'évacuation",
+          "Prolapsus (degrés I-IV)",
+          "Prurit anal",
+          "Douleur en cas de thrombose"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Régime riche en fibres",
+            "Hydratation",
+            "Éviter l'effort d'évacuation",
+            "Bain de siège tiède"
+          ],
+          "farmacologico": [
+            "Symptomatique : Pommade de lidocaïne + corticoïde topique pendant 7 jours",
+            "Diosmine 450mg + Héséridine 50mg 2x/jour",
+            "Laxatif en cas de constipation"
+          ]
+        },
+        "redFlags": [
+          "Saignement persistant",
+          "Anémie",
+          "Changement des habitudes intestinales",
+          "Âge >50 ans sans coloscopie"
+        ]
+      },
+      "medicamentos": [
+        "lactulose"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "constipacao-intestinal",
+      "titulo": "Constipation intestinale",
+      "ciap2": [
+        "D12"
+      ],
+      "cid10": [
+        "K59.0"
+      ],
+      "cid11": [
+        "ME05"
+      ],
+      "categoria": "gastro-intestinal",
+      "doid": "DOID:10533",
+      "snomedCT": "14760008",
+      "meshId": "D003248",
+      "umlsCui": "C0009806",
+      "quickView": {
+        "definicao": "Défécation infrequente (<3x/semaine) ou difficile pendant >3 mois. Constipation fonctionnelle (plus courante) vs organique.",
+        "criteriosDiagnosticos": [
+          "<3 selles/semaine",
+          "Effort excessif",
+          "Selles durcies",
+          "Sensation d'évacuation incomplète",
+          "Critères de Rome IV"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Augmentation des fibres (25-30g/jour)",
+            "Hydratation adéquate",
+            "Activité physique",
+            "Habitudes intestinales régulières"
+          ],
+          "farmacologico": [
+            "Première ligne : laxatif formateur de boule (Psyllium) ou osmotique (Lactulose 15-30ml/jour)",
+            "Si réfractaire : Polyéthylène glycol ou laxatif stimulant (senna)"
+          ]
+        },
+        "redFlags": [
+          "Symptômes d'alarme (saignement, perte de poids, anémie)",
+          "Obstruction intestinale",
+          "Mégacôlon"
+        ]
+      },
+      "medicamentos": [
+        "lactulose",
+        "psyllium"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-intestino-irritavel-diarréia",
+      "titulo": "Syndrome intestinale irritable - Type diarrhée",
+      "ciap2": [
+        "D93"
+      ],
+      "cid10": [
+        "K58.0"
+      ],
+      "cid11": [
+        "DD91.0"
+      ],
+      "categoria": "gastro-intestinal",
+      "doid": "DOID:10171",
+      "snomedCT": "107939000",
+      "meshId": "D043183",
+      "umlsCui": "C0022104",
+      "tags": [
+        "fonctionnel",
+        "gastro-intestinal"
+      ],
+      "quickView": {
+        "definicao": "SII avec prédominance de diarrhée (≥25% des selles). Critères de Rome IV.",
+        "criteriosDiagnosticos": [
+          "Douleur abdominale récurrente ≥1x/semaine",
+          "Associée à la défécation et/ou à une modification de la fréquence/forme",
+          "≥6 mois",
+          "Diarrhée prédominante"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Régime faible en FODMAP",
+            "Fibres solubles",
+            "Gestion du stress"
+          ],
+          "farmacologico": [
+            "Loperamide 2mg après les selles diarrhéiques (max 16mg/jour)",
+            "Ou Rifaximine si surcroissance bactérienne"
+          ]
+        },
+        "redFlags": [
+          "Symptômes débutant après 50 ans",
+          "Perte de poids",
+          "Hémorragie digestive",
+          "Antécédents familiaux de cancer colorectal"
+        ]
+      },
+      "medicamentos": [
+        "loperamide"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-celíaca",
+      "titulo": "Maladie cœliaque",
+      "sinonimos": [
+        "Entéropathie au gluten",
+        "Sprue cœliaque"
+      ],
+      "ciap2": [
+        "D90"
+      ],
+      "cid10": [
+        "K90.0"
+      ],
+      "cid11": [
+        "DD90.0"
+      ],
+      "categoria": "gastro-intestinal",
+      "doid": "DOID:13084",
+      "snomedCT": "396331005",
+      "meshId": "D002446",
+      "umlsCui": "C0007570",
+      "hpo": [
+        "HP:0002027",
+        "HP:0002583",
+        "HP:0004380"
+      ],
+      "tags": [
+        "autoimmune",
+        "gastro-intestinal",
+        "gluten"
+      ],
+      "quickView": {
+        "definicao": "Entéropathie auto-immune déclenchée par le gluten chez les individus génétiquement prédisposés. Caractérisée par une atrophie villositaire.",
+        "criteriosDiagnosticos": [
+          "Anti-tTG IgA élevé",
+          "Anti-EMA positif",
+          "Biopsie duodénale : atrophie villositaire",
+          "HLA-DQ2 ou DQ8 positif"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Diète sans gluten stricte et permanente",
+            "Soutien nutritionnel",
+            "Suivi nutritionnel"
+          ],
+          "farmacologico": [
+            "Supplémentation : Fer, Acide folique, Vitamine D selon les carences"
+          ]
+        },
+        "redFlags": [
+          "Lymphome intestinal",
+          "Réfractaire au traitement",
+          "Colite microscopique"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "esteatose-hepatica",
+      "titulo": "Esteatose hépatique non alcoolique (EHNA)",
+      "sinonimos": [
+        "NAFLD",
+        "Foie gras",
+        "MASLD"
+      ],
+      "ciap2": [
+        "D97"
+      ],
+      "cid10": [
+        "K76.0"
+      ],
+      "cid11": [
+        "DB92.1"
+      ],
+      "doid": "DOID:0080547",
+      "snomedCT": "197315008",
+      "meshId": "D065626",
+      "umlsCui": "C0400966",
+      "categoria": "gastro-intestinal",
+      "quickView": {
+        "definicao": " Accumulation de graisse hépatique (>5%) en l'absence de consommation d'alcool significative. Prévalence de 25-30% à l'échelle mondiale, associée au syndrome métabolique.",
+        "criteriosDiagnosticos": [
+          "Esteatose observée lors de l'examen d'imagerie (US, TC, IRM)",
+          "Exclusion de consommation d'alcool significative (<20g/jour pour les femmes, <30g/jour pour les hommes)",
+          "Exclusion d'autres causes d'hépatopathie",
+          "Score FIB-4 ou NAFLD Fibrosis Score pour la stratification"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Perte de poids de 7-10% (traitement principal)",
+            "Exercice aérobie et résistance",
+            "Régime méditerranéen",
+            "Éviter la fructose et les boissons sucrées"
+          ],
+          "farmacologico": [
+            "Vitamine E 800 UI/jour (pour les patients non diabétiques avec NASH confirmée)",
+            "Pioglitazone (pour les patients diabétiques avec NASH)",
+            "Agonistes GLP-1 (semaglutide) - preuves émergentes",
+            "Traiter les comorbidités : DM, dyslipidémie"
+          ]
+        },
+        "redFlags": [
+          "Cirrhose",
+          "Hypertension portale",
+          "Carcinome hépatocellulaire",
+          "Transaminases >10x LSN"
+        ],
+        "metasTerapeuticas": [
+          "Perte de poids durable",
+          "Normalisation des transaminases"
+        ],
+        "examesIniciais": [
+          "ASAT, ALAT, GGT",
+          "Profil lipidique",
+          "Glycémie/HbA1c",
+          "US abdominale",
+          "FIB-4"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "pioglitazone",
+        "vitamine-e"
+      ],
+      "calculadoras": [
+        "fib-4"
+      ],
+      "tags": [
+        "foie",
+        "obésité",
+        "syndrome métabolique"
+      ]
+    }
+  ]
+}

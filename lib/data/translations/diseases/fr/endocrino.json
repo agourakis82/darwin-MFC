@@ -1,0 +1,708 @@
+{
+  "locale": "fr",
+  "category": "endocrino",
+  "generatedAt": "2025-12-27T22:46:44.906Z",
+  "count": 8,
+  "diseases": [
+    {
+      "id": "hipertireoidismo",
+      "titulo": "Hyperthyroïdie",
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E05"
+      ],
+      "cid11": [
+        "5A02"
+      ],
+      "categoria": "endocrino",
+      "doid": "DOID:7998",
+      "snomedCT": "34486009",
+      "meshId": "D006980",
+      "umlsCui": "C0020550",
+      "quickView": {
+        "definicao": "Excès d'hormones thyroïdiennes. La maladie de Basedow (autoimmune) est la cause la plus courante (70-80%).",
+        "criteriosDiagnosticos": [
+          "TSH supprimée",
+          "T4 libre et/ou T3 élevés",
+          "Symptômes : tachycardie, perte de poids, anxiété, tremblements"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Repos",
+            "Éviter le stress",
+            "Bêta-bloquant pour les symptômes"
+          ],
+          "farmacologico": [
+            "Méthimazole 10-40 mg/jour (première ligne) OU Propylthiouracile si grossesse/allaitement",
+            "Bêta-bloquant : Propranolol pour les symptômes adrénergiques"
+          ]
+        },
+        "redFlags": [
+          "Crise thyrotoxique",
+          "Fibrillation auriculaire",
+          "Insuffisance cardiaque"
+        ]
+      },
+      "medicamentos": [
+        "metimazol",
+        "propranolol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hiperparatireoidismo",
+      "titulo": "Hyperparathyroïdie primaire",
+      "ciap2": [
+        "T93"
+      ],
+      "cid10": [
+        "E21.0"
+      ],
+      "cid11": [
+        "5A51.0"
+      ],
+      "categoria": "endocrino",
+      "doid": "DOID:2723",
+      "snomedCT": "363478007",
+      "meshId": "D049950",
+      "umlsCui": "C0020507",
+      "tags": [
+        "endocrinien",
+        "métabolique"
+      ],
+      "quickView": {
+        "definicao": "Augmentation de l'PTH. Généralement due à un adénome. Causée par l'hypercalcémie et des complications osseuses/rénales.",
+        "criteriosDiagnosticos": [
+          "Hypercalcémie",
+          "PTH élevé ou inapproprié normalement",
+          "Exclusion des causes secondaires"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation",
+            "Limiter le calcium alimentaire"
+          ],
+          "farmacologico": [
+            "Parathyroïdectomie si symptomatique ou en cas de complications",
+            "Cinacalcet si non chirurgical"
+          ]
+        },
+        "redFlags": [
+          "Crise d'hypercalcémie",
+          "Insuffisance rénale",
+          "Lithiase rénale récurrente"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-graves",
+      "titulo": "Maladie de Graves",
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E05.0"
+      ],
+      "cid11": [
+        "5A00.0"
+      ],
+      "categoria": "endocrino",
+      "doid": "DOID:4194",
+      "snomedCT": "56294001",
+      "meshId": "D006111",
+      "umlsCui": "C0018213",
+      "tags": [
+        "endocrinien",
+        "autoimmune"
+      ],
+      "quickView": {
+        "definicao": "Hyperthyroïdie auto-immune. Anticorps anti-TSHR. Associée à une ophtalmopathie et un goitre diffus.",
+        "criteriosDiagnosticos": [
+          "Hyperthyroïdie",
+          "Goitre diffus",
+          "Ophtalmopathie (50%)",
+          "Anti-TSHR positif"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éviter l'iode",
+            "Protection oculaire si ophtalmopathie"
+          ],
+          "farmacologico": [
+            "Méthymazole 10-40 mg/jour",
+            "Bêta-bloquant pour les symptômes"
+          ]
+        },
+        "redFlags": [
+          "Tempête thyroïdienne",
+          "Ophtalmopathie grave",
+          "Compression trachéale"
+        ]
+      },
+      "medicamentos": [
+        "methimazole",
+        "propranolol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bocio-simples",
+      "titulo": "Bócio Simple",
+      "sinonimos": [
+        "Bócio non toxique"
+      ],
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E04"
+      ],
+      "cid11": [
+        "5A01"
+      ],
+      "categoria": "endocrino",
+      "doid": "DOID:11981",
+      "snomedCT": "367460001",
+      "meshId": "D006042",
+      "umlsCui": "C0018021",
+      "tags": [
+        "endocrino",
+        "thyroïde"
+      ],
+      "quickView": {
+        "definicao": "Augmentation diffuse de la glande thyroïde sans hyperthyroïdie ou hypothyroïdie. Fonction thyroïdienne normale. Causes : déficit en iode, facteurs génétiques.",
+        "criteriosDiagnosticos": [
+          "Augmentation de la thyroïde",
+          "Fonction thyroïdienne normale (TSH, T4 libre)",
+          "Absence de nodules",
+          "Symptômes compressifs peuvent être présents"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Si déficit en iode : supplémentation en iode",
+            "Suivi clinique"
+          ],
+          "farmacologico": [
+            "Levotiroxine si TSH au limite supérieur (prévention)",
+            "Généralement ne nécessite pas de traitement si fonction normale"
+          ]
+        },
+        "redFlags": [
+          "Nodules thyroïdiens",
+          "Symptômes compressifs importants",
+          "Altération de la fonction thyroïdienne",
+          "Antécédents familiaux de cancer de la thyroïde"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hipotireoidismo-subclinico",
+      "titulo": "Hypothyroïdie subclinique",
+      "sinonimos": [
+        "Dysfonction thyroïdienne subclinique"
+      ],
+      "ciap2": [
+        "T86"
+      ],
+      "cid10": [
+        "E02"
+      ],
+      "cid11": [
+        "5A00.1"
+      ],
+      "doid": "DOID:0080530",
+      "snomedCT": "237519004",
+      "meshId": "D000073057",
+      "umlsCui": "C0271790",
+      "categoria": "endocrino",
+      "quickView": {
+        "definicao": "TSH élevé avec T4 libre normal. Prévalence 4-10% chez les adultes, plus fréquente chez les femmes et les personnes âgées. Progression vers l'hypothyroïdie manifeste ~2-5%/an.",
+        "criteriosDiagnosticos": [
+          "TSH élevé (>4,0-4,5 mUI/L selon le laboratoire)",
+          "T4 libre normal",
+          "Confirmer avec une deuxième dosage en 2-3 mois",
+          "Rechercher les anti-TPO pour évaluer le risque de progression"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Surveillance avec monitoring si TSH <10 et asymptomatique",
+            "Répéter TSH en 6-12 mois"
+          ],
+          "farmacologico": [
+            "Traiter si TSH ≥10 mUI/L",
+            "Considérer le traitement si : TSH 7-10 + symptômes, anti-TPO+, femmes enceintes, tentant de tomber enceinte",
+            "Levotiroxine : commencer à 25-50mcg/jour, ajuster tous les 6-8 semaines",
+            "Personnes âgées : commencer à 12,5-25mcg"
+          ]
+        },
+        "redFlags": [
+          "Grossesse",
+          "Goitre volumineux",
+          "TSH >10",
+          "Symptômes significatifs"
+        ],
+        "metasTerapeuticas": [
+          "TSH 0,5-4,0 mUI/L si traité"
+        ],
+        "examesIniciais": [
+          "TSH",
+          "T4 libre",
+          "Anti-TPO",
+          "Profil lipidique"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "levotiroxine"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "thyroïde",
+        " dépistage",
+        "endocrinologie"
+      ]
+    },
+    {
+      "id": "hipertireoidismo-subclinico",
+      "titulo": "Hyperthyroïdie subclinique",
+      "sinonimos": [
+        "Thyrotoxicose subclinique"
+      ],
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E05.9"
+      ],
+      "cid11": [
+        "5A01.Z"
+      ],
+      "doid": "DOID:0080532",
+      "snomedCT": "237516002",
+      "meshId": "D000073058",
+      "umlsCui": "C0342157",
+      "categoria": "endocrino",
+      "quickView": {
+        "definicao": "TSH supprimé avec des T4 et T3 libres normaux. Peut être endogène (Graves, nodule toxique) ou exogène (excès de lévothyroxine).",
+        "criteriosDiagnosticos": [
+          "TSH <0,1-0,4 mUI/L (selon le laboratoire)",
+          "T4 libre et T3 libre normaux",
+          "Grade I: TSH 0,1-0,4 mUI/L",
+          "Grade II: TSH <0,1 mUI/L"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Surveillance si léger et asymptomatique",
+            "Investiguer la cause: scintigraphie, anti-TRAB"
+          ],
+          "farmacologico": [
+            "Traiter si : >65 ans, FA, ostéoporose, symptômes",
+            "Cause endogène: méthimazole ou radioiodure",
+            "Cause exogène: réduire la dose de lévothyroxine",
+            "Bêta-bloquant si symptômes adrénergiques"
+          ]
+        },
+        "redFlags": [
+          "Fibrillation auriculaire",
+          "Ostéoporose",
+          "Symptômes cardiovasculaires",
+          "Personnes âgées >65 ans"
+        ],
+        "metasTerapeuticas": [
+          "TSH normal",
+          "Eutiroïdisme"
+        ],
+        "examesIniciais": [
+          "TSH",
+          "T4 libre",
+          "T3 libre",
+          "Anti-TRAB",
+          "Scintigraphie si indiquée"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "propranolol",
+        "metimazol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "thyroïde",
+        "arythmie",
+        "ostéoporose"
+      ]
+    },
+    {
+      "id": "hipogonadismo-masculino",
+      "titulo": "Hypogonadisme masculin",
+      "sinonimos": [
+        "Déficit de testostérone",
+        "Andropause",
+        "DAEM"
+      ],
+      "ciap2": [
+        "Y99"
+      ],
+      "cid10": [
+        "E29.1"
+      ],
+      "cid11": [
+        "5A80.0"
+      ],
+      "doid": "DOID:1924",
+      "snomedCT": "48723006",
+      "meshId": "D007006",
+      "umlsCui": "C0020619",
+      "categoria": "endocrino",
+      "quickView": {
+        "definicao": "Syndrome clinique de déficit de testostérone avec des symptômes et signes caractéristiques. La prévalence augmente avec l'âge.",
+        "criteriosDiagnosticos": [
+          "Testostérone totale matinale <300 ng/dL (répéter)",
+          "Symptômes : fatigue, dysfonction érectile, libido réduite, humeur dépressive",
+          "Signes : perte de masse musculaire, ostéoporose, gynécomastie",
+          "LH : élevé (primaire) ou bas/normal (secondaire)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Perte de poids si obèse",
+            "Exercice physique",
+            "Optimiser le sommeil",
+            "Investiguer les causes secondaires"
+          ],
+          "farmacologico": [
+            "Indications claires : symptômes + testostérone basse confirmée",
+            "Cipionate de testostérone 200 mg IM toutes les 2 semaines",
+            "Undecanoate de testostérone 1000 mg IM toutes les 10-12 semaines",
+            "Surveiller l'hématocrite, le PSA, les lipides"
+          ]
+        },
+        "redFlags": [
+          "Cancer de la prostate",
+          "Hématocrite >54%",
+          "PSA élevé",
+          "Tumeur hypophysaire"
+        ],
+        "metasTerapeuticas": [
+          "Testostérone 400-700 ng/dL",
+          "Amélioration des symptômes"
+        ],
+        "examesIniciais": [
+          "Testostérone totale (2x matin)",
+          "LH, FSH",
+          "Prolactine",
+          "PSA",
+          "Hématocrite"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [],
+      "calculadoras": [],
+      "tags": [
+        "andrologie",
+        "dysfonction érectile",
+        "ostéoporose"
+      ]
+    },
+    {
+      "id": "cetoacidose-diabetica",
+      "titulo": "Cétose diabétique",
+      "sinonimos": [
+        "CAD",
+        "Cétose",
+        "Déséquilibre diabétique aigu"
+      ],
+      "doid": "DOID:11716",
+      "snomedCT": "420422005",
+      "meshId": "D016883",
+      "umlsCui": "C0011880",
+      "ciap2": [
+        "T89"
+      ],
+      "cid10": [
+        "E10.1",
+        "E11.1",
+        "E13.1",
+        "E14.1"
+      ],
+      "cid11": [
+        "5A10.1",
+        "5A11.1"
+      ],
+      "categoria": "endocrino",
+      "quickView": {
+        "definicao": "Urgence métabolique caractérisée par une hyperglycémie, une acidose métabolique et une cétémie, causée par une déficience absolue ou relative d'insuline. Plus courante dans le DM1, mais peut survenir dans le DM2.",
+        "criteriosDiagnosticos": [
+          "TRIADE: Hyperglycémie + Acidose + Cétémie",
+          "Glycémie >250 mg/dL",
+          "pH artériel <7,3",
+          "Bicarbonate <18 mEq/L",
+          "Cétonurie ++ ou cétémie >3 mmol/L",
+          "Gap anionique augmenté (>12)",
+          "GRAVITÉ: Léger (pH 7,25-7,3), Modéré (pH 7,0-7,24), Grave (pH<7,0)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Accès veineux de gros calibre (2 accès)",
+            "Sondage vésical de durée",
+            "Surveillance continue",
+            "Glycémie capillaire 1/1h"
+          ],
+          "farmacologico": [
+            "1. HYDRATATION (Priorité):",
+            "SF 0,9% 1-1,5L dans la 1ère heure",
+            "SF 0,9% 250-500mL/h dans les heures suivantes",
+            "Changer pour SF 0,45% si Na corrigé >135",
+            "",
+            "2. INSULINE (après 1h d'hydratation):",
+            "Insuline régulière 0,1U/kg en bolus IV",
+            "Ensuite: 0,1U/kg/h en CI",
+            "Objectif: baisse de glycémie 50-70mg/dL/h",
+            "",
+            "3. POTASSIUM:",
+            "K <3,3: NE pas commencer l'insuline jusqu'à rétablissement du K",
+            "K 3,3-5,3: KCl 20-30mEq/L dans le SF",
+            "K >5,3: Attendre pour rétablir",
+            "",
+            "4. BICARBONATE (seulement si pH<6,9):",
+            "NaHCO3 100mEq en 400mL SF en 2h"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Glycémie 150-200 mg/dL",
+          "pH >7,3",
+          "Bicarbonate >18 mEq/L",
+          "Gap anionique <12",
+          "Cétémie <0,6 mmol/L",
+          "Potassium normal"
+        ],
+        "examesIniciais": [
+          "Glycémie",
+          "Gaz du sang artériel",
+          "Électrolytes (Na, K, Cl)",
+          "Urée, créatinine",
+          "Hémogramme",
+          "EAS + cétonurie",
+          "Bêta-hydroxybutyrate (si disponible)",
+          "ECG (évaluer K)",
+          "Radiographie de thorax, cultures (si suspicion d'infection)"
+        ],
+        "redFlags": [
+          "pH <7,0 (CAD grave)",
+          "Hypokaliémie grave (K<3,3)",
+          "Altération du niveau de conscience",
+          "Choc hypovolémique",
+          "Oedème cérébral (principalement chez les enfants)",
+          "Insuffisance rénale aiguë"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~4-8 épisodes/1000 diabétiques/an",
+          "mortalidade": "<1% dans les centres spécialisés; jusqu'à 5% dans les pays en développement",
+          "faixaEtaria": "Plus courante chez les jeunes avec DM1; premier diagnostic dans jusqu'à 30%",
+          "fatoresRisco": [
+            "DM1 (principalement)",
+            "Omission ou réduction de l'insuline",
+            "Infections (principale cause précipitante)",
+            "IAM, AVC",
+            "Premier diagnostic de DM",
+            "Utilisation de SGLT2i (CAD euglycémique)",
+            "Utilisation de corticoïdes"
+          ],
+          "citations": [
+            {
+              "refId": "ada-diabetes-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Déficit d'insuline + excès d'hormones contrarégulatrices → lipolyse augmentée → excès d'acides gras libres → cétogenèse hépatique → accumulation de corps cétoniques (acétoacétate, bêta-hydroxybutyrate) → acidose métabolique. L'hyperglycémie cause une diurèse osmotique et une déshydratation.",
+          "citations": [
+            {
+              "refId": "sbd-cad-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Polyurie, polydipsie",
+            "Nausées, vomissements, douleur abdominale",
+            "Déshydratation",
+            "Tachypnée (respiration de Kussmaul)",
+            "Haleine cétonique (pomme pourrie)",
+            "Confusion mentale, léthargie"
+          ],
+          "sinaisExameFisico": [
+            "Déshydratation (muqueuses sèches, turgescence diminuée)",
+            "Tachycardie, hypotension",
+            "Respiration de Kussmaul",
+            "Haleine cétonique",
+            "Altération du niveau de conscience"
+          ],
+          "formasClinicas": [
+            "CAD légère (pH 7,25-7,3)",
+            "CAD modérée (pH 7,0-7,24)",
+            "CAD grave (pH <7,0)",
+            "CAD euglycémique (glycémie <250, utilisation de SGLT2i)"
+          ],
+          "citations": [
+            {
+              "refId": "ada-diabetes-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Glycémie >250 mg/dL",
+            "pH <7,3 et/ou HCO3 <18",
+            "Cétémie ou cétonurie",
+            "Gap anionique augmenté"
+          ],
+          "diagnosticoDiferencial": [
+            "État hyperglycémique hyperosmolaire",
+            "Acidose lactique",
+            "Cétose de jeûne",
+            "Cétose alcoolique",
+            "Intoxication (méthanol, éthylène glycol, salicylates)",
+            "Acidose urémique"
+          ],
+          "examesLaboratoriais": [
+            "Glycémie",
+            "Gaz du sang artériel",
+            "Électrolytes avec calcul du gap anionique",
+            "Bêta-hydroxybutyrate sérique",
+            "Urée, créatinine",
+            "Hémogramme, VSG",
+            "Amylase, lipase (si douleur abdominale)",
+            "Cultures (si suspicion d'infection)"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-cad-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Correction de la volemie",
+            "Correction de l'hyperglycémie",
+            "Correction de l'acidose et de la cétose",
+            "Correction des troubles électrolytiques",
+            "Traitement du facteur précipitant"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Surveillance en USI ou unité intensive",
+              "Bilan hydrique rigoureux",
+              "Glycémie capillaire 1/1h",
+              "Électrolytes et gaz du sang 2-4h",
+              "Identifier et traiter le facteur précipitant"
+            ],
+            "citations": [
+              {
+                "refId": "ada-diabetes-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Cristalloïde",
+                "medicamentos": [
+                  "SF 0,9%"
+                ],
+                "posologia": "1-1,5L dans la 1ère heure; ensuite 250-500mL/h"
+              },
+              {
+                "classe": "Insuline",
+                "medicamentos": [
+                  "Insuline régulière IV"
+                ],
+                "posologia": "0,1U/kg bolus + 0,1U/kg/h en CI"
+              },
+              {
+                "classe": "Potassium",
+                "medicamentos": [
+                  "KCl"
+                ],
+                "posologia": "20-40mEq/L dans le sérum, selon K sérique"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Glycémie <200 avec acidose persistante",
+                "conduta": "Ajouter SG 5% au SF et maintenir l'insuline"
+              },
+              {
+                "situacao": "pH <6,9",
+                "conduta": "Considérer NaHCO3 100mEq en 400mL en 2h"
+              },
+              {
+                "situacao": "K <3,3",
+                "conduta": "Retarder l'insuline et rétablir K en premier"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbd-cad-2022"
+              }
+            ]
+          },
+          "duracao": "Jusqu'à résolution de l'acidose et de la cétose (généralement 12-24h)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "USI jusqu'à résolution; ensuite endocrinologie ambulatoire",
+          "metasTerapeuticas": [
+            "Transition vers l'insuline SC",
+            "Éducation du patient",
+            "Ajustement du schéma d'insuline",
+            "Prévention de la récurrence"
+          ],
+          "criteriosEncaminhamento": [
+            "USI si CAD grave",
+            "Endocrinologie pour ajustement",
+            "Psychologie si omission intentionnelle de l'insuline"
+          ],
+          "citations": [
+            {
+              "refId": "ada-diabetes-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "cad-emergencia",
+        "insulinizacao-cad"
+      ],
+      "medicamentos": [
+        "insulina-regular",
+        "sf-0,9",
+        "kcl"
+      ],
+      "calculadoras": [
+        "anion-gap",
+        "sodio-corrigido",
+        "osmolaridade"
+      ],
+      "citations": [
+        {
+          "refId": "ada-diabetes-2024"
+        },
+        {
+          "refId": "sbd-cad-2022"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

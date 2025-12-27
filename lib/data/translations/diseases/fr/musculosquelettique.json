@@ -1,0 +1,929 @@
+{
+  "locale": "fr",
+  "category": "musculosquelettique",
+  "generatedAt": "2025-12-27T22:46:44.900Z",
+  "count": 14,
+  "diseases": [
+    {
+      "id": "lombalgia",
+      "titulo": "Lombalgie",
+      "sinonimos": [
+        "Douleur lombaire",
+        "Douleur dans le dos",
+        "Lombalgie"
+      ],
+      "doid": "DOID:0060167",
+      "snomedCT": "279039007",
+      "meshId": "D017116",
+      "umlsCui": "C0024031",
+      "ciap2": [
+        "L03",
+        "L84",
+        "L86"
+      ],
+      "cid10": [
+        "M54.5",
+        "M54.4"
+      ],
+      "categoria": "musculosquelettique",
+      "quickView": {
+        "definicao": "Douleur localisée dans la région lombaire (entre le dernier arc costal et les plis gluteaux), pouvant ou non irradier vers les membres inférieurs. C'est la principale cause d'incapacité dans le monde.",
+        "criteriosDiagnosticos": [
+          "Douleur dans la région lombaire avec ou sans irradiation",
+          "Classer : inspécifique (>90 %), avec irradiation radiculaire, ou spécifique",
+          "Durée : aiguë (<6 semaines), subaiguë (6-12 sem), chronique (>12 sem)",
+          "Exclure les signes d'alarme (fracture, infection, tumeur, syndrome de la queue de cheval)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éducation : rassurer, pronostic généralement bon",
+            "Maintenir les activités habituelles (éviter le repos prolongé)",
+            "Chaleur locale",
+            "Exercices de renforcement et d'étirement",
+            "Kinésithérapie si persistance >4 semaines"
+          ],
+          "farmacologico": [
+            "Paracétamol 500-1000mg 6/6h (1ère ligne si toléré)",
+            "AINE : Ibuprofène 400-600mg 8/8h ou Diclofénac 50mg 8/8h (traitement court)",
+            "Relaxant musculaire : Cyclobenzaprine 5-10mg le soir (spasme associé)",
+            "Opioïde faible : Tramadol 50-100mg 6/6h (douleur intense, court terme)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Soulagement de la douleur",
+          "Retour aux activités habituelles",
+          "Prévention de la chronisation",
+          "Éviter l'utilisation prolongée de médicaments"
+        ],
+        "examesIniciais": [
+          "Examens d'imagerie NON indiqués de routine en cas de lombalgie inspécifique",
+          "Prescrire RX/RM si signes d'alarme ou persistance >6 semaines sans amélioration"
+        ],
+        "redFlags": [
+          "Traumatisme significatif",
+          "Âge <20 ou >55 ans au premier épisode",
+          "Douleur nocturne qui réveille, douleur au repos",
+          "Perte de poids inexpliquée",
+          "Histoire de cancer, immunosuppression, prise de corticoïdes",
+          "Syndrome de la queue de cheval (anesthésie en selle, incontinence, faiblesse des MMII)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "60-80 % auront une lombalgie dans leur vie",
+          "incidencia": "Principale cause d'incapacité professionnelle",
+          "faixaEtaria": "Pic entre 35-55 ans",
+          "fatoresRisco": [
+            "Travail manuel lourd",
+            "Postures inadéquates",
+            "Sédentarité",
+            "Obésité",
+            "Tabagisme",
+            "Facteurs psychosociaux (stress, insatisfaction professionnelle)",
+            "Dépression, anxiété"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Douleur lombaire localisée",
+            "Aggravation par le mouvement, amélioration par le repos (mécanique)",
+            "Rigidité matinale brève (<30 min)",
+            "Irradiation vers la fesse ou la cuisse (sans dermatome)",
+            "Si radiculopathie : douleur irradiée vers les MMII dans un dermatome"
+          ],
+          "sinaisExameFisico": [
+            "Limitation de l'amplitude de mouvement lombaire",
+            "Contracture musculaire paravertébrale",
+            "Lasègue positif en cas de radiculopathie",
+            "Examen neurologique normal en cas de lombalgie inspécifique",
+            "Évaluer la force, la sensibilité, les réflexes des MMII"
+          ],
+          "formasClinicas": [
+            "Lombalgie mécanique/inspécifique (>90 %)",
+            "Lombalgie avec radiculopathie (hernie discale)",
+            "Lombalgie spécifique (fracture, tumeur, infection, spondylarthrite)"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Diagnostic clinique",
+            "Classer selon la durée et la présence de signes d'alarme",
+            "Examens d'imagerie uniquement en cas de signes d'alarme ou de réfractarité"
+          ],
+          "diagnosticoDiferencial": [
+            "Hernie discale avec radiculopathie",
+            "Sténose du canal",
+            "Spondylolisthésis",
+            "Spondylarthrite ankylosante",
+            "Fracture vertébrale",
+            "Métastase osseuse",
+            "Infection (discite, abcès)"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Soulagement de la douleur",
+            "Maintien de la fonction",
+            "Prévention de la chronisation",
+            "Retour au travail"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Éducation et rassurance",
+              "Maintenir l'activité physique",
+              "Exercices supervisés",
+              "Chaleur superficielle",
+              "Thérapie cognitivo-comportementale en cas de chronisation"
+            ],
+            "citations": [
+              {
+                "refId": "lancet-lombalgia-2018"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Analgésique simple",
+                "medicamentos": [
+                  "Paracétamol 500-1000mg 6/6h"
+                ],
+                "observacoes": "Efficacité limitée, mais sûr"
+              },
+              {
+                "classe": "AINE",
+                "medicamentos": [
+                  "Ibuprofène 400-600mg 8/8h",
+                  "Naproxène 250-500mg 12/12h"
+                ],
+                "observacoes": "Efficace. Utilisation courte (7-14 jours). Attention aux risques gastro-intestinaux, cardiovasculaires et rénaux"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Relaxant musculaire",
+                "medicamentos": [
+                  "Cyclobenzaprine 5-10mg le soir"
+                ],
+                "observacoes": "En cas de spasme musculaire. Court terme. Somnolence"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Douleur chronique",
+                "conduta": "Approche multimodale. Considérer la duloxétine, l'amitriptyline. Orienter"
+              },
+              {
+                "situacao": "Radiculopathie",
+                "conduta": "AINE + kinésithérapie. Si réfractaire, orienter pour évaluation chirurgicale"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "lancet-lombalgia-2018"
+              }
+            ]
+          },
+          "duracao": "Majorité résolue en 4-6 semaines"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Réévaluation en 2-4 semaines si pas d'amélioration",
+          "metasTerapeuticas": [
+            "Résolution de la douleur",
+            "Retour aux activités",
+            "Sans usage chronique de médicaments"
+          ],
+          "criteriosEncaminhamento": [
+            "Signes d'alarme (urgent)",
+            "Déficit neurologique progressif",
+            "Douleur réfractaire >6 semaines",
+            "Syndrome de la queue de cheval (urgence)",
+            "Nécessité de kinésithérapie spécialisée"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno",
+        "ciclobenzaprina"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "lancet-lombalgia-2018"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "musculosquelettique",
+        "aiguë",
+        "chronique",
+        "prévalente"
+      ]
+    },
+    {
+      "id": "osteoartrite",
+      "titulo": "Ostéoarthrite (Arthrose)",
+      "ciap2": [
+        "L91"
+      ],
+      "cid10": [
+        "M15",
+        "M19"
+      ],
+      "cid11": [
+        "FA00"
+      ],
+      "categoria": "musculosquelettique",
+      "doid": "DOID:8398",
+      "snomedCT": "396275006",
+      "meshId": "D010003",
+      "umlsCui": "C0029408",
+      "quickView": {
+        "definicao": "Maladie dégénérative des articulations. Plus courante chez les personnes âgées. Les genoux, les hanches et les mains sont le plus souvent affectés.",
+        "criteriosDiagnosticos": [
+          "Douleur articulaire s'aggravant avec l'activité",
+          "Raideur matinale <30 min",
+          "Crépitation",
+          "Radiographie : rétrécissement de l'espace articulaire, ostéophytes"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Exercices (renforcement, étirement)",
+            "Perte de poids si obèse",
+            "Kinésithérapie",
+            "Orthèses si nécessaire"
+          ],
+          "farmacologico": [
+            "Paracétamol 1g toutes les 6 heures (première ligne)",
+            "Si insuffisant : AINS topiques ou oraux",
+            "Injection intra-articulaire de corticoïde si nécessaire"
+          ]
+        },
+        "redFlags": [
+          "Infection articulaire",
+          "Fracture",
+          "Arthropathie inflammatoire"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "fibromialgie",
+      "titulo": "Fibromyalgie",
+      "ciap2": [
+        "L18"
+      ],
+      "cid10": [
+        "M79.3"
+      ],
+      "cid11": [
+        "MG30.0"
+      ],
+      "categoria": "musculosquelettique",
+      "doid": "DOID:3634",
+      "snomedCT": "23867004",
+      "meshId": "D005356",
+      "umlsCui": "C0016053",
+      "hpo": [
+        "HP:0003327",
+        "HP:0003324"
+      ],
+      "tags": [
+        "musculosquelettique",
+        "chronique",
+        "douleur"
+      ],
+      "quickView": {
+        "definicao": "Syndrome de douleur chronique généralisée. Points douloureux à la palpation. Fatigue, troubles du sommeil.",
+        "criteriosDiagnosticos": [
+          "Douleur chronique généralisée ≥3 mois",
+          "≥11 points douloureux sur 18 points (critères ACR 1990)",
+          "Ou critères ACR 2010/2016"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Exercices (aérobies, étirements)",
+            "Éducation sur la maladie",
+            "TCC",
+            "Amélioration du sommeil"
+          ],
+          "farmacologico": [
+            "Duloxétine 60mg/jour",
+            "Ou Pregabalin",
+            "Ou Amitriptyline 10-50mg HS"
+          ]
+        },
+        "redFlags": [
+          "Symptômes neurologiques focaux",
+          "Arthrite vraie",
+          "Maladie rhumatologique"
+        ]
+      },
+      "medicamentos": [
+        "duloxetina",
+        "pregabalina",
+        "amitriptilina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gota",
+      "titulo": "Goutte",
+      "ciap2": [
+        "T92"
+      ],
+      "cid10": [
+        "M10"
+      ],
+      "cid11": [
+        "FA25"
+      ],
+      "categoria": "musculosquelettique",
+      "doid": "DOID:13189",
+      "snomedCT": "90560007",
+      "meshId": "D006073",
+      "umlsCui": "C0018099",
+      "quickView": {
+        "definicao": "Arthrite inflammatoire due au dépôt de cristaux d'urate monosodique. Acide urique >7mg/dL. Plus courante chez les hommes.",
+        "criteriosDiagnosticos": [
+          "Monoarthrite aiguë (1ère MTF = podagre est classique)",
+          "Douleur intense de début soudain, pic en 12-24h",
+          "Érythème, œdème, chaleur intense",
+          "Hyperuricémie (mais peut être normale pendant la crise)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Repos de l'articulation",
+            "Application de glace locale",
+            "Éviter l'alcool et une alimentation riche en purines"
+          ],
+          "farmacologico": [
+            "Crise : AINS (Indométacine 50mg toutes les 8 heures) ou Colchicine 0,5mg 3 fois par jour ou Prednisone 30-40mg par jour",
+            "Prévention : Allopurinol 100-300mg par jour (NE PAS commencer pendant la crise)"
+          ]
+        },
+        "redFlags": [
+          "Arthrite septique (fièvre élevée, seul symptôme)",
+          "Insuffisance rénale",
+          "Tophi étendus"
+        ]
+      },
+      "medicamentos": [
+        "allopurinol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sarcopenia",
+      "titulo": "Sarcopénie",
+      "ciap2": [
+        "L29"
+      ],
+      "cid10": [
+        "M62.84"
+      ],
+      "cid11": [
+        "FB32.3"
+      ],
+      "categoria": "musculosquelettique",
+      "doid": "DOID:0081310",
+      "snomedCT": "1172655006",
+      "meshId": "D055948",
+      "umlsCui": "C0872084",
+      "quickView": {
+        "definicao": "Perte progressive de la masse et de la force musculaires squelettiques avec le vieillissement. Prévalence de 5 à 13 % chez les 60-70 ans, jusqu'à 50 % chez les plus de 80 ans.",
+        "criteriosDiagnosticos": [
+          "EWGSOP2 : force réduite (probable)",
+          "Dynamométrie <27 kg (H) ou <16 kg (F)",
+          "Confirmation : masse musculaire basse (DXA/BIA)",
+          "Sévérité : performance physique basse (SPPB <8)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Exercice résisté progressif",
+            "Protéines 1,0-1,2 g/kg/jour",
+            "Leucine/HMB comme adjuvant"
+          ],
+          "farmacologico": [
+            "Vitamine D si déficience",
+            "Il n'y a pas de médicaments approuvés spécifiques"
+          ]
+        },
+        "redFlags": [
+          "Perte de poids rapide",
+          "Chutes récurrentes",
+          "Incapacité à se lever d'une chaise",
+          "Sarcopénie + obésité"
+        ]
+      },
+      "medicamentos": [
+        "vitamina-d"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "osteoporose",
+      "titulo": "Ostéoporose",
+      "ciap2": [
+        "L95"
+      ],
+      "cid10": [
+        "M80",
+        "M81"
+      ],
+      "cid11": [
+        "FB83"
+      ],
+      "categoria": "musculosquelettique",
+      "doid": "DOID:11476",
+      "snomedCT": "64859006",
+      "meshId": "D010024",
+      "umlsCui": "C0029456",
+      "quickView": {
+        "definicao": "Maladie squelettique avec une masse osseuse basse et une détérioration microarchitecturale, augmentant le risque de fracture. Prévalence post-ménopausique : 30-50%.",
+        "criteriosDiagnosticos": [
+          "DXA : T-score ≤-2,5 (colonne/fémur)",
+          "OU fracture par fragilité préalable",
+          "T-score -1 à -2,5 = ostéopénie",
+          "FRAX pour calculer le risque"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Exercice avec charge",
+            "Prévention des chutes",
+            "Arrêt du tabagisme",
+            "Calcium diététique 1000-1200mg/jour"
+          ],
+          "farmacologico": [
+            "Alendronate 70mg/semaine ou Risedronate 35mg/semaine",
+            "Vitamine D 800-2000UI/jour",
+            "Denosumab si intolérance aux bisphosphonates"
+          ]
+        },
+        "redFlags": [
+          "Fracture vertébrale",
+          "Fractures multiples",
+          "Perte de hauteur >4cm",
+          "Douleur osseuse diffuse"
+        ]
+      },
+      "medicamentos": [
+        "alendronate",
+        "vitamine-d",
+        "carbonate-calcio"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "frax"
+      ]
+    },
+    {
+      "id": "tendinite-ombro",
+      "titulo": "Syndrome du Manguito Rotateur",
+      "ciap2": [
+        "L92"
+      ],
+      "cid10": [
+        "M75"
+      ],
+      "cid11": [
+        "FA23.0"
+      ],
+      "categoria": "musculosquelettique",
+      "doid": "DOID:0080731",
+      "snomedCT": "239872009",
+      "meshId": "D000070636",
+      "umlsCui": "C0085551",
+      "quickView": {
+        "definicao": "Tendinopathie du manguito rotateur (le supra-épineux est le plus courant). Principale cause de douleur à l'épaule chez les adultes.",
+        "criteriosDiagnosticos": [
+          "Douleur à l'épaule antéro-latérale",
+          "Arc douloureux (60-120° d'abduction)",
+          "Tests : Jobe, Neer, Hawkins positifs",
+          "Difficulté à dormir sur le côté"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Repos relatif (éviter les mouvements au-dessus de la tête)",
+            "Kinésithérapie (renforcement et mobilisation)",
+            "Cryothérapie"
+          ],
+          "farmacologico": [
+            "AINE: Ibuprofène 400mg toutes les 8 heures pendant 7-10 jours",
+            "Analgésique si nécessaire"
+          ]
+        },
+        "redFlags": [
+          "Traumatisme aigu",
+          "Incapacité à lever le bras",
+          "Atrophie musculaire",
+          "Paresthésies"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofene",
+        "paracetamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "epicondilite-lateral",
+      "titulo": "Épicondylite latérale (Coude du tennisman)",
+      "ciap2": [
+        "L93"
+      ],
+      "cid10": [
+        "M77.1"
+      ],
+      "cid11": [
+        "FB53.2"
+      ],
+      "categoria": "musculosquelettique",
+      "doid": "DOID:9479",
+      "snomedCT": "202855006",
+      "meshId": "D013716",
+      "umlsCui": "C0039516",
+      "quickView": {
+        "definicao": "Tendinopathie d'insertion des extenseurs du poignet sur l'épicondyle latéral. Cause courante de douleur au coude.",
+        "criteriosDiagnosticos": [
+          "Douleur à l'épicondyle latéral",
+          "Aggravation avec la préhension et l'extension du poignet",
+          "Test de Cozen positif",
+          "Test de Mill positif"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            " Repos du membre responsable",
+            "Orthèse de contre-pression",
+            "Étirements et exercices excentriques"
+          ],
+          "farmacologico": [
+            "AINS topique : Gel de diclofénac 3x/jour",
+            "AINS oraux à court terme si nécessaire"
+          ]
+        },
+        "redFlags": [
+          "Blocage articulaire",
+          "Instabilité",
+          "Masse palpable"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofene",
+        "diclofenac"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "fascite-plantar",
+      "titulo": "Fascite plantaire",
+      "ciap2": [
+        "L99"
+      ],
+      "cid10": [
+        "M72.2"
+      ],
+      "cid11": [
+        "FB06.1"
+      ],
+      "categoria": "musculosquelettique",
+      "doid": "DOID:0060041",
+      "snomedCT": "202882003",
+      "meshId": "D036981",
+      "umlsCui": "C0238698",
+      "quickView": {
+        "definicao": "Dégeneration de la fascie plantaire à l'insertion sur le calcanéum. Cause la plus fréquente de douleur au talon. Pic : 40-60 ans.",
+        "criteriosDiagnosticos": [
+          "Douleur au talon médial",
+          "Aggravation lors des premiers pas du matin",
+          "Amélioration avec une activité légère, aggravation avec une activité prolongée",
+          "Douleur à la palpation de la tubérosité médiale du talon"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Étirement de la fascie et du gastrocnémien",
+            "Semelles avec soutien de voûte plantaire",
+            "Application de glace locale",
+            "Chaussures adaptées"
+          ],
+          "farmacologico": [
+            "AINS à court terme",
+            "Infiltration avec corticoïde si réfractaire"
+          ]
+        },
+        "redFlags": [
+          "Douleur nocturne",
+          "Paresthésies",
+          "Érythème et œdème",
+          "Fièvre"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofene"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "tendinite",
+      "titulo": "Tendinite",
+      "ciap2": [
+        "L92"
+      ],
+      "cid10": [
+        "M65"
+      ],
+      "cid11": [
+        "FB51"
+      ],
+      "categoria": "musculosquelettique",
+      "doid": "DOID:13361",
+      "snomedCT": "42475007",
+      "meshId": "D052256",
+      "umlsCui": "C0039482",
+      "quickView": {
+        "definicao": "Inflammation du tendon. Fréquemment due à un usage excessif ou à un traumatisme. L'épaule, le coude et le poignet sont des sites courants.",
+        "criteriosDiagnosticos": [
+          "Douleur localisée au tendon",
+          "Douleur aggravée par le mouvement",
+          "Œdème local",
+          "Limitation fonctionnelle"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Repos relatif",
+            "Glace pendant les 48-72 premières heures",
+            "Kinésithérapie",
+            "Étirements"
+          ],
+          "farmacologico": [
+            "AINS : Ibuprofène 400-600mg toutes les 8 heures pendant 5-7 jours",
+            "Injection locale de corticoïde si réfractaire"
+          ]
+        },
+        "redFlags": [
+          "Rupture du tendon",
+          "Infection",
+          "Tendinite de répétition"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofene"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "artrite-reumatoide",
+      "titulo": "Arthrite rhumatoïde",
+      "ciap2": [
+        "L88"
+      ],
+      "cid10": [
+        "M06"
+      ],
+      "cid11": [
+        "FA20"
+      ],
+      "categoria": "musculosquelettique",
+      "doid": "DOID:7148",
+      "snomedCT": "69896004",
+      "meshId": "D001172",
+      "umlsCui": "C0003873",
+      "tags": [
+        "chronique",
+        "autoimmune",
+        "rhumatologique"
+      ],
+      "quickView": {
+        "definicao": "Polyarthrite inflammatoire symétrique. Maladie auto-immune systémique. Peut présenter des manifestations extra-articulaires.",
+        "criteriosDiagnosticos": [
+          "Polyarthrite symétrique",
+          "Raideur matinale >1h",
+          "Facteur rhumatoïde ou anti-CCP positif",
+          "Modifications radiographiques"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Kinésithérapie",
+            "Thérapie occupationnelle",
+            "Exercices adaptés"
+          ],
+          "farmacologico": [
+            "MTX 7,5-25mg/semaine",
+            "Prednisone 5-10mg/jour à l'induction",
+            "DMARDs selon les besoins"
+          ]
+        },
+        "redFlags": [
+          "Vasculite",
+          "Complications pulmonaires",
+          "Amylose",
+          "Érosions articulaires rapides"
+        ]
+      },
+      "medicamentos": [
+        "metotrexate",
+        "prednisone"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "lupus-eritematoso-sistemico",
+      "titulo": "Lupus érythémateux systémique",
+      "ciap2": [
+        "L99"
+      ],
+      "cid10": [
+        "M32"
+      ],
+      "cid11": [
+        "4A40"
+      ],
+      "categoria": "musculosquelettique",
+      "doid": "DOID:9074",
+      "snomedCT": "55464009",
+      "meshId": "D008180",
+      "umlsCui": "C0024141",
+      "tags": [
+        "chronique",
+        "autoimmune",
+        "systémique"
+      ],
+      "quickView": {
+        "definicao": "Maladie auto-immune systémique. Peut affecter la peau, les articulations, les reins, le système nerveux. Plus courante chez les femmes.",
+        "criteriosDiagnosticos": [
+          "Critères SLICC ou ACR",
+          "Rash malar",
+          "Photosensibilité",
+          "Anticorps antinucléaires"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Protection solaire",
+            "Repos pendant les exacerbations"
+          ],
+          "farmacologico": [
+            "Hidroxicloroquina 200-400mg/jour",
+            "Prednisone selon la gravité",
+            "Immunosuppresseurs si nécessaire"
+          ]
+        },
+        "redFlags": [
+          "Néphrite lupique",
+          "Neurolupique",
+          "Crise lupique",
+          "Thrombopénie grave"
+        ]
+      },
+      "medicamentos": [
+        "hidroxicloroquina",
+        "prednisona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "espondilite-anquilosante",
+      "titulo": "Espondylite ankylosante",
+      "ciap2": [
+        "L88"
+      ],
+      "cid10": [
+        "M45"
+      ],
+      "cid11": [
+        "FA92.0"
+      ],
+      "categoria": "musculosquelettique",
+      "doid": "DOID:7149",
+      "snomedCT": "59670000",
+      "meshId": "D013167",
+      "umlsCui": "C0003879",
+      "tags": [
+        "chronique",
+        "autoimmune",
+        "rhumatologique"
+      ],
+      "quickView": {
+        "definicao": "Spondyloarthrite séronégative. Inflammation chronique de la colonne vertébrale et des articulations sacro-iliaques. Plus fréquente chez les jeunes hommes.",
+        "criteriosDiagnosticos": [
+          "Douleur lombaire inflammatoire",
+          "Raideur matinale",
+          "Amélioration avec l'exercice",
+          "Sacro-iliite radiographique",
+          "HLA-B27 positif (90%)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Kinésithérapie",
+            "Exercices",
+            "Posture correcte"
+          ],
+          "farmacologico": [
+            "AINS : Naproxène 500 mg 2 fois par jour",
+            "Anti-TNF si non répondeur"
+          ]
+        },
+        "redFlags": [
+          "Fracture vertébrale",
+          "Cyphose grave",
+          "Complications cardiaques"
+        ]
+      },
+      "medicamentos": [
+        "naproxeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-sjogren",
+      "titulo": "Syndrome de Sjögren",
+      "ciap2": [
+        "L99"
+      ],
+      "cid10": [
+        "M35.0"
+      ],
+      "cid11": [
+        "4A01.0"
+      ],
+      "categoria": "musculosquelettique",
+      "doid": "DOID:12858",
+      "snomedCT": "48271000",
+      "meshId": "D012859",
+      "umlsCui": "C0037243",
+      "tags": [
+        "chronique",
+        "autoimmune",
+        "systémique"
+      ],
+      "quickView": {
+        "definicao": "Maladie auto-immune caractérisée par une sécheresse des muqueuses. Peut être primaire ou associée à d'autres maladies auto-immunes.",
+        "criteriosDiagnosticos": [
+          "Œil sec",
+          "Bouche sèche",
+          "Anti-SSA/Ro ou SSB/La positif",
+          "Biopsie de glande salivaire"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Lubrifiants oculaires",
+            "Salive artificielle",
+            "Hydratation"
+          ],
+          "farmacologico": [
+            "Pilocarpine 5mg 3-4x/jour",
+            "Hydroxychloroquine pour les symptômes systémiques"
+          ]
+        },
+        "redFlags": [
+          "Lymphome",
+          "Maladie pulmonaire interstitielle",
+          "Vasculite"
+        ]
+      },
+      "medicamentos": [
+        "pilocarpine",
+        "hydroxychloroquine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

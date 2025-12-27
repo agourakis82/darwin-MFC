@@ -1,0 +1,1046 @@
+{
+  "locale": "fr",
+  "category": "gynécologique",
+  "generatedAt": "2025-12-27T22:46:44.894Z",
+  "count": 10,
+  "diseases": [
+    {
+      "id": "sindrome-ovarios-policisticos",
+      "titulo": "Syndrome des Ovaires Polykystiques (SOP)",
+      "ciap2": [
+        "X99"
+      ],
+      "cid10": [
+        "E28.2"
+      ],
+      "cid11": [
+        "GA34.4Y"
+      ],
+      "categoria": "gynécologique",
+      "doid": "DOID:11612",
+      "snomedCT": "237055002",
+      "meshId": "D011085",
+      "umlsCui": "C0032460",
+      "quickView": {
+        "definicao": "Syndrome endocrinien la plus courante chez les femmes en âge de procréer (5-10 %). Associée à la résistance à l'insuline et au risque métabolique.",
+        "criteriosDiagnosticos": [
+          "Rotterdam: 2 de 3 critères",
+          "Oligo/anovulation",
+          "Hyperandrogénie clinique ou biologique",
+          "Ovaires polykystiques à l'US",
+          "Exclure les autres causes"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Perte de poids (5-10 % améliore l'ovulation)",
+            "Régime alimentaire et exercice régulier"
+          ],
+          "farmacologico": [
+            "Régularisation menstruelle: CO combiné",
+            "Si désir de grossesse: Metformine + induction ovulatoire",
+            "Hirsutisme: Spironolactone 100 mg/jour"
+          ]
+        },
+        "redFlags": [
+          "Virilisation rapide",
+          "Amenorrhée primaire",
+          "Symptômes de Cushing"
+        ]
+      },
+      "medicamentos": [
+        "metformine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "vulvovaginite-candidíase",
+      "titulo": "Candidiase vulvovaginale",
+      "sinonimos": [
+        "CVV",
+        "Candidose vaginale",
+        "Moniliasis vaginale"
+      ],
+      "doid": "DOID:13842",
+      "snomedCT": "78048006",
+      "meshId": "D002181",
+      "umlsCui": "C0006840",
+      "ciap2": [
+        "X72"
+      ],
+      "cid10": [
+        "B37.3"
+      ],
+      "cid11": [
+        "1F23.1"
+      ],
+      "categoria": "gynécologique",
+      "quickView": {
+        "definicao": "Infection vulvovaginale causée par des levures du genre Candida (principalement C. albicans). Caractérisée par un prurit vulvaire intense, un leucorrhée blanc grumeleux et une dysurie externe. Très courante - 75% des femmes auront au moins 1 épisode.",
+        "criteriosDiagnosticos": [
+          "DIAGNOSTIC CLINIQUE + LABORATOIREL :",
+          "Prurit vulvaire intense (symptôme cardinal)",
+          "Leucorrhée blanc, grumeleux, \"type lait caillé\"",
+          "Érythème et œdème vulvaires",
+          "pH vaginal normal (4,0-4,5)",
+          "Test de KOH : hyphes et pseudo-hyphes à la microscopie",
+          "Culture fongique si récurrente ou atypique"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éviter les sous-vêtements synthétiques (préférer le coton)",
+            "Éviter les douches vaginales",
+            "Maintenir la zone génitale sèche",
+            "Traiter le partenaire seulement s'il est symptomatique (balanite)"
+          ],
+          "farmacologico": [
+            "CVV NON COMPLIQUÉE :",
+            "Fluconazole 150mg PO dose unique OU",
+            "Clotrimazole crème vaginale 1% pendant 7 nuits OU",
+            "Miconazole ovule 200mg pendant 3 nuits",
+            "",
+            "CVV RÉCURRENTE (≥4 épisodes/an) :",
+            "Fluconazole 150mg PO J1, J4, J7 (induction)",
+            "Ensuite Fluconazole 150mg 1x/semaine pendant 6 mois (maintenance)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Résolution des symptômes",
+          "Éradication fongique",
+          "Prévention de la récurrence"
+        ],
+        "examesIniciais": [
+          "pH vaginal (normal en cas de candidiase)",
+          "Examen frais + KOH (hyphes, pseudo-hyphes, spores)",
+          "Culture fongique si récurrente ou réfractaire (identifier l'espèce)",
+          "Glycémie si récurrente (éliminer le DM)"
+        ],
+        "redFlags": [
+          "CVV récurrente (≥4/an) : investiguer le DM, l'immunosuppression",
+          "Candida non-albicans (C. glabrata) : résistance aux azoles",
+          "Gestante : éviter le fluconazole oral (utiliser des traitements topiques)",
+          "Vulvovaginite grave avec ulcérations"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "75% des femmes auront ≥1 épisode, 40-45% auront ≥2",
+          "incidencia": "5-8% ont une CVV récurrente",
+          "faixaEtaria": "Âge reproductif",
+          "fatoresRisco": [
+            "Usage récent d'antibiotiques",
+            "Diabète sucré",
+            "Grossesse",
+            "Immunosuppression",
+            "Usage de corticoïdes",
+            "Contraceptifs à haute dose d'œstrogène",
+            "Activité sexuelle fréquente"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Candida fait partie de la microbiote vaginale normale chez 20-50% des femmes. Les altérations de l'équilibre (antibiotiques, immunosuppression, œstrogène) permettent la prolifération fongique. La réponse inflammatoire locale cause les symptômes.",
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Prurit vulvaire intense (le plus caractéristique)",
+            "Brûlure vulvaire",
+            "Leucorrhée blanc, grumeleuse, sans odeur",
+            "Dysurie externe",
+            "Dyspareunie superficielle"
+          ],
+          "sinaisExameFisico": [
+            "Érythème et œdème vulvaires",
+            "Lésions par grattage",
+            "Leucorrhée adhérente aux parois vaginales",
+            "Muqueuse vaginale érythémateuse"
+          ],
+          "formasClinicas": [
+            "CVV non compliquée (majorité)",
+            "CVV compliquée : grave, récurrente, non-albicans, gestante, immunodéprimée"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinique + microscopie ou culture",
+            "pH normal aide à différencier de la VB"
+          ],
+          "diagnosticoDiferencial": [
+            "Vaginose bactérienne (pH >4,5, odeur de poisson)",
+            "Trichomonase (leucorrhée jaune-vert, mousseuse)",
+            "Herpes génital (vésicules, ulcères)",
+            "Dermatite de contact",
+            "Lichen scléreux"
+          ],
+          "examesLaboratoriais": [
+            "Examen frais avec KOH",
+            "Culture fongique (Sabouraud)",
+            "pH vaginal"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Soulager les symptômes",
+            "Éradiquer le champignon",
+            "Prévenir la récurrence"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Sous-vêtements en coton",
+              "Éviter les douches vaginales",
+              "Maintenir la zone sèche"
+            ],
+            "citations": [
+              {
+                "refId": "cdc-sti-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Azol oral",
+                "medicamentos": [
+                  "Fluconazole"
+                ],
+                "posologia": "150mg PO dose unique. Efficacité 90%."
+              },
+              {
+                "classe": "Azol topique",
+                "medicamentos": [
+                  "Clotrimazole",
+                  "Miconazole",
+                  "Terconazole"
+                ],
+                "posologia": "Clotrimazole crème 1% 7 nuits ou Miconazole ovule 200mg 3 nuits."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Schéma de maintenance (récurrent)",
+                "medicamentos": [
+                  "Fluconazole"
+                ],
+                "posologia": "150mg hebdomadaire pendant 6 mois après induction."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Gestante",
+                "conduta": "Seulement traitement topique (7 jours). Fluconazole oral contre-indiqué."
+              },
+              {
+                "situacao": "C. glabrata (résistant)",
+                "conduta": "Acide borique 600mg intravaginal pendant 14 nuits."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "cdc-sti-2021"
+              }
+            ]
+          },
+          "duracao": "Épisode : 1-7 jours. Maintenance : 6 mois."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Retour si pas d'amélioration en 72h ou récurrence",
+          "examesControle": [
+            "Culture si récurrente ou réfractaire"
+          ],
+          "metasTerapeuticas": [
+            "Résolution des symptômes",
+            "<4 épisodes/an"
+          ],
+          "criteriosEncaminhamento": [
+            "CVV récurrente réfractaire",
+            "Immunosuppression",
+            "Nécessité d'évaluation des comorbidités"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Éviter les antibiotiques inutiles",
+            "Contrôle glycémique en cas de DM"
+          ],
+          "secundaria": [
+            "Schéma de maintenance si récurrent"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "fluconazole",
+        "clotrimazole",
+        "miconazole"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "cdc-sti-2021"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "candidiase",
+        "vulvovaginite",
+        "prurit",
+        "fluconazole",
+        "leucorrhée"
+      ]
+    },
+    {
+      "id": "vaginose-bacteriana",
+      "titulo": "Vaginose bactérienne",
+      "ciap2": [
+        "X84"
+      ],
+      "cid10": [
+        "N76.0"
+      ],
+      "cid11": [
+        "GA0B.0"
+      ],
+      "categoria": "gynécologique",
+      "doid": "DOID:0080165",
+      "snomedCT": "419760006",
+      "meshId": "D016585",
+      "umlsCui": "C0085166",
+      "quickView": {
+        "definicao": "Déséquilibre de la microbiote vaginal avec substitution des Lactobacillus par des anaérobies. Ce n'est pas une MST. Cause la plus fréquente de leucorrhée.",
+        "criteriosDiagnosticos": [
+          "Critères d'Amsel (3 sur 4) : leucorrhée grise homogène, pH >4,5, test des amines positif (odeur de poisson), cellules indice au microscope direct"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éviter les lavages vaginaux",
+            "Ne pas utiliser de savon intime"
+          ],
+          "farmacologico": [
+            "Metronidazole 500 mg PO toutes les 12 heures pendant 7 jours",
+            "OU Métrodiazole gel 0,75% intravaginal une fois par jour pendant 5 jours",
+            "Grossesse : Metronidazole 250 mg toutes les 8 heures pendant 7 jours"
+          ]
+        },
+        "redFlags": [
+          "Grossesse (risque d'accouchement prématuré)",
+          "Symptômes persistants après le traitement"
+        ]
+      },
+      "medicamentos": [
+        "metronidazol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "pre-eclampsia",
+      "titulo": "Pré-éclampsie",
+      "sinonimos": [
+        "PE",
+        "Toxémie gravidique",
+        "Maladie hypertensive spécifique de la grossesse"
+      ],
+      "doid": "DOID:10591",
+      "snomedCT": "398254007",
+      "meshId": "D011225",
+      "umlsCui": "C0032914",
+      "ciap2": [
+        "W81"
+      ],
+      "cid10": [
+        "O14",
+        "O14.0",
+        "O14.1"
+      ],
+      "cid11": [
+        "JA24"
+      ],
+      "categoria": "gynécologique",
+      "quickView": {
+        "definicao": "Syndrome multisystémique exclusive de la grossesse, caractérisée par une hypertension artérielle (≥140/90) après 20 semaines + protéinurie OU dysfonction d'organe-cible. Urgence obstétricale - principale cause de mortalité maternelle.",
+        "criteriosDiagnosticos": [
+          "PA ≥140/90 mmHg après 20 semaines de grossesse (2 mesures avec un intervalle ≥4h)",
+          "+",
+          "Protéinurie ≥300mg/24h (ou rapport protéine/créatinine ≥0,3) OU",
+          "En l'absence de protéinurie : dysfonction d'organe-cible :",
+          "- Plaquettes <100.000/µL",
+          "- Créatinine >1,1 mg/dL ou double du basal",
+          "- TGO/TGP >2x limite supérieur",
+          "- Oedème pulmonaire",
+          "- Symptômes cérébraux (céphalées, scotomes)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hospitalisation",
+            "Repos relatif",
+            "Surveillance materno-fœtale intensive",
+            "Évaluation de la gravité (critères de gravité)",
+            "Définition du moment de l'accouchement (seule guérison définitive)"
+          ],
+          "farmacologico": [
+            "ANTIHYPERTENSEUR (PA ≥160/110) :",
+            "Nifédipine 10-20mg PO toutes les 30 min (max 60mg)",
+            "Hydralazine 5mg IV toutes les 20 min (max 20mg)",
+            "Objectif : PAS 140-155, PAD 90-100 mmHg",
+            "",
+            "PRÉVENTION DE L'ÉCLAMPSIE (PE grave) :",
+            "Sulfate de magnésium : Attaque 4g IV + Maintenance 1-2g/h IV",
+            "",
+            "CORTICOÏDE (maturité pulmonaire si <34 sem) :",
+            "Bétaméthasone 12mg IM, 2 doses avec un intervalle de 24h"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Prévenir l'éclampsie (convulsions)",
+          "Prévenir l'AVC maternel",
+          "Maintenir une perfusion placentaire adéquate",
+          "Définir le moment idéal de l'accouchement",
+          "Optimiser les conditions fœtales (maturité pulmonaire)"
+        ],
+        "examesIniciais": [
+          "Hémogramme avec plaquettes",
+          "Créatinine, urée",
+          "TGO, TGP, LDH, bilirubines",
+          "Protéinurie 24h ou rapport P/C",
+          "Acide urique",
+          "Coagulogramme",
+          "USG obstétricale + Doppler",
+          "CTG (cardiotocographie)"
+        ],
+        "redFlags": [
+          "CRITÈRES DE GRAVITÉ (PE grave) :",
+          "PA ≥160/110 mmHg",
+          "Plaquettes <100.000/µL",
+          "TGO/TGP >2x normal",
+          "Créatinine >1,1 mg/dL",
+          "Oedème pulmonaire",
+          "Symptômes cérébraux : céphalées intenses, scotomes, confusion",
+          "Douleur épigastrique/hypochondre droit (distension hépatique)",
+          "Oligurie <500 mL/24h",
+          "HELLP (hémolyse, enzymes hépatiques élevées, plaquettopénie)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2-8% des grossesses",
+          "incidencia": "Principale cause de mortalité maternelle",
+          "faixaEtaria": "Toute grossesse, plus courante aux extrêmes de l'âge reproductive",
+          "fatoresRisco": [
+            "Primipare (principale)",
+            "Grossesse multiple",
+            "Antécédents personnels ou familiaux de PE",
+            "HTA chronique, DM, DRC, LES",
+            "Obésité",
+            "Âge maternel >35 ou <18 ans",
+            "Race noire",
+            "Nouveau partenaire",
+            "Intervalle interpartum long"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Placentation déficiente au 1er trimestre avec échec du remodelage des artères spiraux. Hypoxie placentaire libère des facteurs anti-angiogéniques (sFlt-1) qui causent une dysfonction endothéliale systémique, un spasme vasculaire, une activation de la coagulation et une lésion de multiples organes.",
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Hypertension artérielle",
+            "Oedème (non spécifique)",
+            "Céphalées frontales ou occipitales intenses",
+            "Scotomes, photopsies",
+            "Douleur épigastrique/hypochondre droit",
+            "Oligurie"
+          ],
+          "sinaisExameFisico": [
+            "PA ≥140/90 mmHg",
+            "Oedème du visage et des mains",
+            "Hyperréflexie",
+            "Douleur à la palpation de l'hypochondre droit",
+            "Gain de poids excessif"
+          ],
+          "formasClinicas": [
+            "PE sans critères de gravité",
+            "PE avec critères de gravité",
+            "Éclampsie (convulsions)",
+            "Syndrome HELLP",
+            "PE superposée à l'HTA chronique"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "PA ≥140/90 après 20 semaines + protéinurie ou dysfonction d'organe-cible",
+            "Classer la gravité"
+          ],
+          "diagnosticoDiferencial": [
+            "HTA chronique",
+            "HTA gestationnelle (sans protéinurie/dysfonction)",
+            "Syndrome hémolytique-urémique",
+            "PTT",
+            "Stéatose hépatique aiguë de la grossesse"
+          ],
+          "examesLaboratoriais": [
+            "Hémogramme, plaquettes, frottis (schizocytes ?)",
+            "Créatinine, urée",
+            "TGO, TGP, LDH, bilirubines",
+            "Acide urique",
+            "Protéinurie 24h",
+            "Coagulogramme"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Prévenir les complications maternelles",
+            "Prévenir l'éclampsie",
+            "Optimiser les conditions fœtales",
+            "Définir le moment de l'accouchement"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hospitalisation",
+              "Surveillance intensive",
+              "Bilan hydrique",
+              "Repos relatif"
+            ],
+            "citations": [
+              {
+                "refId": "acog-hyp-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Antihypertenseur (si PA ≥160/110)",
+                "medicamentos": [
+                  "Nifédipine",
+                  "Hydralazine",
+                  "Labetalol"
+                ],
+                "posologia": "Nifédipine 10-20mg PO. Hydralazine 5-10mg IV. Objectif : 140-155/90-100."
+              },
+              {
+                "classe": "Anticonvulsivant (prévention de l'éclampsie)",
+                "medicamentos": [
+                  "Sulfate de magnésium"
+                ],
+                "posologia": "Attaque : 4-6g IV en 20 min. Maintenance : 1-2g/h IV. Surveiller les réflexes, FR, diurèse."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Corticoïde (maturité pulmonaire)",
+                "medicamentos": [
+                  "Bétaméthasone",
+                  "Dexaméthasone"
+                ],
+                "posologia": "Bétaméthasone 12mg IM, répéter en 24h (si <34 sem)."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "PE grave ou HELLP",
+                "conduta": "Stabilisation maternelle + Accouchement (seule guérison). Généralement interrompu si >34 sem."
+              },
+              {
+                "situacao": "Éclampsie",
+                "conduta": "MgSO4 immédiat. Stabilisation. Accouchement après stabilisation (pas de césarienne d'urgence)."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "acog-hyp-2020"
+              }
+            ]
+          },
+          "duracao": "Jusqu'à l'accouchement (guérison définitive)."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Hospitalisation en cas de PE grave. Suivi ambulatoire rigoureux pour PE sans gravité.",
+          "examesControle": [
+            "Hémogramme, fonction hépatique, rénale quotidienne si grave",
+            "CTG quotidienne",
+            "Doppler fœtal sérié"
+          ],
+          "metasTerapeuticas": [
+            "Absence d'éclampsie",
+            "PA contrôlée",
+            "Bien-être fœtal"
+          ],
+          "criteriosEncaminhamento": [
+            "Toute PE doit être suivie dans un centre de référence",
+            "USI maternelle si HELLP ou éclampsie"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "AAS basse dose (100-150mg/nuit) à partir de 12-16 sem en haut risque",
+            "Supplémentation en calcium (1-2g/jour) dans les populations à faible apport"
+          ],
+          "secundaria": [
+            "Suivi prénatal adéquat",
+            "Diagnostic précoce"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "pre-eclampsia-manejo",
+        "sulfato-magnesio"
+      ],
+      "medicamentos": [
+        "nifedipina",
+        "hidralazina",
+        "sulfato-magnesio",
+        "betametasona"
+      ],
+      "calculadoras": [
+        "risco-pre-eclampsia"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "acog-hyp-2020"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "pre-eclampsia",
+        "hellp",
+        "eclampsia",
+        "gestacao",
+        "hipertensao"
+      ]
+    },
+    {
+      "id": "candidose-vulvovaginal",
+      "titulo": "Candidose vulvovaginale",
+      "ciap2": [
+        "X72"
+      ],
+      "cid10": [
+        "B37.3"
+      ],
+      "cid11": [
+        "1F23.00"
+      ],
+      "categoria": "gynécologique",
+      "doid": "DOID:1304",
+      "snomedCT": "78048006",
+      "meshId": "D002181",
+      "umlsCui": "C0006840",
+      "quickView": {
+        "definicao": "Infection fongique par Candida sp. (C. albicans 90 %). Atteint 75 % des femmes. N'est pas une MST.",
+        "criteriosDiagnosticos": [
+          "Prurit vulvovaginal intense",
+          "Leucorrhée blanche grumeuse (aspect de lait caillé)",
+          "Hyperémie vulvaire",
+          "Dysurie et dyspareunie"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Lingerie en coton",
+            "Éviter les vêtements serrés",
+            "Maintenir la zone sèche"
+          ],
+          "farmacologico": [
+            "Fluconazole 150 mg PO dose unique",
+            "OU Clotrimazole crème vaginale 1 % pendant 7 jours",
+            "Récurrente (≥4/an) : Fluconazole 150 mg hebdomadaire pendant 6 mois"
+          ]
+        },
+        "redFlags": [
+          "DM décompensé",
+          "Immunodépression",
+          "Grossesse",
+          "Non-réponse au traitement"
+        ]
+      },
+      "medicamentos": [
+        "fluconazol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dismenorreia",
+      "titulo": "Dysménorrhée",
+      "ciap2": [
+        "X02"
+      ],
+      "cid10": [
+        "N94.4"
+      ],
+      "cid11": [
+        "GA10.0"
+      ],
+      "categoria": "gynécologique",
+      "doid": "DOID:1596",
+      "snomedCT": "266599000",
+      "meshId": "D004412",
+      "umlsCui": "C0013390",
+      "quickView": {
+        "definicao": "Douleur pelvienne pendant la menstruation. Primaire (sans pathologie) ou secondaire (endométriose, adénomyose, myome).",
+        "criteriosDiagnosticos": [
+          "Douleur en crampes suprapubiques",
+          "Début avec la menstruation (primaire) ou avant (secondaire)",
+          "Nausées, diarrhée, céphalées associées",
+          "Primaire : début 6-12 mois après la ménarche"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Exercice physique régulier",
+            "Chaleur locale (bouillotte)",
+            "TENS"
+          ],
+          "farmacologico": [
+            "AINE : Ibuprofène 400mg toutes les 6 heures, débutant 1 jour avant la menstruation",
+            "CO combiné continu ou prolongé",
+            "DIU au lévonorgestrel (si contraception souhaitée)"
+          ]
+        },
+        "redFlags": [
+          "Début après 25 ans",
+          "Progression de la douleur",
+          "Dyspareunie profonde",
+          "Non-réponse à l'AINE + CO"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "menopausa-climatério",
+      "titulo": "Ménopause et Climatère",
+      "sinonimos": [
+        "Syndrome climatérique",
+        "Transition ménopausique"
+      ],
+      "ciap2": [
+        "X11"
+      ],
+      "cid10": [
+        "N95.1"
+      ],
+      "cid11": [
+        "GA31.0"
+      ],
+      "doid": "DOID:0111805",
+      "snomedCT": "161712005",
+      "meshId": "D008593",
+      "umlsCui": "C0025320",
+      "categoria": "gynécologique",
+      "quickView": {
+        "definicao": "Cessation permanente des règles après 12 mois d'amenorrhée. Âge moyen : 51 ans. Climatère : période de transition péri et post-ménopausique.",
+        "criteriosDiagnosticos": [
+          "12 mois consécutifs d'amenorrhée chez les femmes âgées de plus de 45 ans",
+          "FSH >25-30 mUI/mL (si nécessaire pour confirmer)",
+          "Symptômes vasomoteurs : bouffées de chaleur, sueurs nocturnes",
+          "Symptômes urogénitaux : atrophie vaginale, dyspareunie"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Activité physique régulière",
+            "Éviter les déclencheurs des bouffées de chaleur (alcool, café, nourriture épicée)",
+            "Lubrifiants vaginaux",
+            "Thérapies corps-esprit"
+          ],
+          "farmacologico": [
+            "Thérapie hormonale (TH) si symptômes modérés/gravess et sans contre-indications",
+            "Estrogène + progestatif si l'utérus est intact",
+            "Estrogène topique vaginal pour les symptômes urogénitaux",
+            "Alternatives : ISRS, gabapentine, clonidine"
+          ]
+        },
+        "redFlags": [
+          "Saignement post-ménopausique",
+          "Thromboembolie préalable",
+          "Cancer du sein",
+          "Maladie cardiovasculaire établie"
+        ],
+        "metasTerapeuticas": [
+          "Contrôle des symptômes",
+          "Qualité de vie",
+          "Prévention de l'ostéoporose"
+        ],
+        "examesIniciais": [
+          "FSH (si doute)",
+          "Mammographie",
+          "Échographie pelvienne",
+          "Densitométrie osseuse",
+          "Profil lipidique"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "estradiol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "gynécologie",
+        "ostéoporose",
+        "hormone"
+      ]
+    },
+    {
+      "id": "endometriose",
+      "titulo": "Endométriose",
+      "sinonimos": [
+        "Endométriose ovarienne"
+      ],
+      "ciap2": [
+        "X99"
+      ],
+      "cid10": [
+        "N80"
+      ],
+      "cid11": [
+        "GA10"
+      ],
+      "doid": "DOID:289",
+      "snomedCT": "129103003",
+      "meshId": "D004715",
+      "umlsCui": "C0014175",
+      "categoria": "gynécologique",
+      "quickView": {
+        "definicao": "Présence de tissu endométrial en dehors de l'utérus (ovaires, péritoine, séptum rétro-vaginal). Affecte 10% des femmes en âge de procréer.",
+        "criteriosDiagnosticos": [
+          "Dysménorrhée progressive et invalidante",
+          "Dyspareunie profonde",
+          "Douleur pelvienne chronique",
+          "Infertilité",
+          "Laparoscopie avec biopsie : standard-or"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Activité physique régulière",
+            "Chaleur locale pour soulager la douleur"
+          ],
+          "farmacologico": [
+            "AINS pour la douleur",
+            "Contraceptif hormonal combiné continu",
+            "Progestatifs : dienogest 2 mg/jour, DIU-LNG",
+            "Analogues de la GnRH (cas graves) : utilisation temporaire"
+          ]
+        },
+        "redFlags": [
+          "Masse pelvienne importante",
+          "Obstruction intestinale/urétérale",
+          "Infertilité réfractaire"
+        ],
+        "metasTerapeuticas": [
+          "Contrôle de la douleur",
+          "Préservation de la fertilité",
+          "Qualité de vie"
+        ],
+        "examesIniciais": [
+          "Échographie transvaginale",
+          "IRM pelvienne (cartographie)",
+          "CA-125 (non spécifique)"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "dienogest",
+        "ibuprofen"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "douleur pelvienne",
+        "infertilité",
+        "hormone"
+      ]
+    },
+    {
+      "id": "mioma-uterino",
+      "titulo": "Miome utérin",
+      "sinonimos": [
+        "Leiomyome",
+        "Fibrome utérin"
+      ],
+      "ciap2": [
+        "X78"
+      ],
+      "cid10": [
+        "D25"
+      ],
+      "cid11": [
+        "2E86"
+      ],
+      "doid": "DOID:13223",
+      "snomedCT": "95315005",
+      "meshId": "D007889",
+      "umlsCui": "C0042133",
+      "categoria": "gynécologique",
+      "quickView": {
+        "definicao": "Tumeur bénigne du myomètre. Prévalence de 20-40% des femmes en âge de procréer. Types : sous-muqueux, intramural, sous-séreux.",
+        "criteriosDiagnosticos": [
+          "Saignement utérin anormal (ménorragie)",
+          "Douleur/pression pelvienne",
+          "Symptômes compressifs : fréquence urinaire, constipation",
+          "Échographie ou IRM : nodules myométraux bien définis"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Surveillance si asymptomatique",
+            "Embolication des artères utérines (alternative chirurgicale)"
+          ],
+          "farmacologico": [
+            "Saignement : acide tranexamique, AINS",
+            "Contrôle hormonal : COC, DIU-LNG, progestatifs",
+            "Analogues de la GnRH (pré-opératoire) : réduisent la taille",
+            "Chirurgie : myomectomie ou hystérectomie si réfractaire"
+          ]
+        },
+        "redFlags": [
+          "Anémie grave",
+          "Croissance rapide post-ménopause",
+          "Compression urétérale"
+        ],
+        "metasTerapeuticas": [
+          "Contrôle du saignement",
+          "Préservation de la fertilité si désirée"
+        ],
+        "examesIniciais": [
+          "Échographie transvaginale",
+          "Hémogramme",
+          "Ferritine",
+          "Hystéroscopie si sous-muqueux"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "acido-tranexamico"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "saignement",
+        "chirurgie",
+        "anémie"
+      ]
+    },
+    {
+      "id": "sangramento-uterino-anormal",
+      "titulo": "Sangrement utérin anormal",
+      "sinonimos": [
+        "SUA",
+        "Métrorragie",
+        "Sangrement utérin dysfonctionnel"
+      ],
+      "ciap2": [
+        "X06"
+      ],
+      "cid10": [
+        "N92",
+        "N93"
+      ],
+      "cid11": [
+        "GA20"
+      ],
+      "doid": "DOID:0081295",
+      "snomedCT": "64996003",
+      "meshId": "D008796",
+      "umlsCui": "C0025874",
+      "categoria": "gynécologique",
+      "quickView": {
+        "definicao": "Modification du schéma menstruel (fréquence, durée, volume). Classification PALM-COEIN: Polype, Adénomyose, Léiomyome, Malignité - Coagulopathie, Ovulatoire, Endométrial, Iatrogène, Non classifiée.",
+        "criteriosDiagnosticos": [
+          "Sangrement >80mL/cycle ou >7 jours",
+          "Cycles <21 ou >35 jours",
+          "Sangrement intermenstruel ou post-coïtal",
+          "Investiguer la cause selon PALM-COEIN"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Journal menstruel",
+            "Supplémentation en fer en cas d'anémie"
+          ],
+          "farmacologico": [
+            "Aigu : acide tranexámique 1g 8/8h, ACO en haute dose",
+            "Chronique ovulatoire : DIU-LNG, ACO",
+            "Chronique anovulatoire : progestatif cyclique, ACO",
+            "Traiter la cause spécifique (polype, myome)"
+          ]
+        },
+        "redFlags": [
+          "Sangrement post-ménopausique",
+          "Anémie grave",
+          "Instabilité hémodynamique"
+        ],
+        "metasTerapeuticas": [
+          "Régularisation du cycle",
+          "Correction de l'anémie"
+        ],
+        "examesIniciais": [
+          "Hémogramme",
+          "Ferritine",
+          "TSH",
+          "Échographie transvaginale",
+          "Hystéroscopie si indiquée"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "acido-tranexamico",
+        "medroxiprogesterona"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "ménstruation",
+        "anémie",
+        "hormone"
+      ]
+    }
+  ]
+}

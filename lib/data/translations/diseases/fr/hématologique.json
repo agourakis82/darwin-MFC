@@ -1,0 +1,298 @@
+{
+  "locale": "fr",
+  "category": "hématologique",
+  "generatedAt": "2025-12-27T22:46:44.907Z",
+  "count": 5,
+  "diseases": [
+    {
+      "id": "anemia-ferropriva",
+      "titulo": "Anémie ferriprive",
+      "sinonimos": [
+        "Anémie par carence en fer"
+      ],
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D50"
+      ],
+      "cid11": [
+        "3A00"
+      ],
+      "categoria": "hématologique",
+      "doid": "DOID:2355",
+      "snomedCT": "399096004",
+      "meshId": "D000740",
+      "umlsCui": "C0002871",
+      "hpo": [
+        "HP:0001875",
+        "HP:0001892"
+      ],
+      "tags": [
+        "hématologique",
+        "anémie",
+        "carence",
+        "commune"
+      ],
+      "quickView": {
+        "definicao": "Anémie par carence en fer. La cause la plus courante d'anémie. Caractérisée par une microcytose et une hypochromie. Ferritine basse, transferrine élevée.",
+        "criteriosDiagnosticos": [
+          "Anémie microcytaire hypochrome",
+          "Ferritine basse",
+          "Transferrine/saturation de transferrine basse",
+          "Investiguer la cause : perte de sang, mauvaise absorption, carence nutritionnelle"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Régime riche en fer",
+            "Traiter la cause sous-jacente (saignement, mauvaise absorption)",
+            "Éviter le café/thé avec les repas"
+          ],
+          "farmacologico": [
+            "Sulfate ferreux 200mg (65mg de fer élémentaire) 1-2x/jour",
+            "Ou Fer chélaté",
+            "Associer la vitamine C peut améliorer l'absorption",
+            "Traitement pendant 3-6 mois après normalisation"
+          ]
+        },
+        "redFlags": [
+          "Saignement digestif",
+          "Perte de sang persistante",
+          "Non-réponse au traitement",
+          "Mauvaise absorption"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anemia-megaloblastica",
+      "titulo": "Anémie mégaloblastique",
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D51",
+        "D52"
+      ],
+      "cid11": [
+        "3A00",
+        "3A01"
+      ],
+      "categoria": "hématologique",
+      "doid": "DOID:13636",
+      "snomedCT": "840580004",
+      "meshId": "D000749",
+      "umlsCui": "C0002878",
+      "hpo": [
+        "HP:0001875",
+        "HP:0002901"
+      ],
+      "tags": [
+        "hématologique",
+        "anémie",
+        "déficit"
+      ],
+      "quickView": {
+        "definicao": "Anémie due à la carence en B12 ou en acide folique. Macrocytose, mégaloblastose médullaire. Peut présenter des symptômes neurologiques (B12).",
+        "criteriosDiagnosticos": [
+          "Anémie macrocytaire",
+          "B12 bas ou acide folique bas",
+          "Mégaloblastose médullaire",
+          "LDH élevé",
+          "Homocystéine élevée"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Traiter la cause (déficit nutritionnel, mauvaise absorption)",
+            "Alimentation équilibrée"
+          ],
+          "farmacologico": [
+            "B12: Cianocobalamine IM ou orale",
+            "Acide folique: 5mg/jour"
+          ]
+        },
+        "redFlags": [
+          "Symptômes neurologiques (B12)",
+          "Déficit combiné",
+          "Mauvaise absorption"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anemia-hemolitica",
+      "titulo": "Anémie hémolytique",
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D59"
+      ],
+      "cid11": [
+        "3A10"
+      ],
+      "categoria": "hématologique",
+      "doid": "DOID:9538",
+      "snomedCT": "955009",
+      "meshId": "D000743",
+      "umlsCui": "C0002878",
+      "tags": [
+        "hématologique",
+        "anémie"
+      ],
+      "quickView": {
+        "definicao": "Anémie due à une hémolyse accrue. Peut être auto-immune, héréditaire ou acquise.",
+        "criteriosDiagnosticos": [
+          "Anémie",
+          "Augmentation des réticulocytes",
+          "LDH élevé",
+          "Bilirubine indirecte élevée",
+          "Haptoglobine basse"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Traiter la cause sous-jacente",
+            "Éviter les déclencheurs"
+          ],
+          "farmacologico": [
+            "Corticoïdes si auto-immune",
+            "Transfusion si symptomatique"
+          ]
+        },
+        "redFlags": [
+          "Crise aplasique",
+          "Insuffisance rénale",
+          "Coagulopathie"
+        ]
+      },
+      "medicamentos": [
+        "prednisona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "leucemia-linfocitica-cronica",
+      "titulo": "Leucémie lymphocytaire chronique",
+      "ciap2": [
+        "B73"
+      ],
+      "cid10": [
+        "C91.1"
+      ],
+      "cid11": [
+        "2A82.0"
+      ],
+      "categoria": "hématologique",
+      "doid": "DOID:8552",
+      "snomedCT": "91857009",
+      "meshId": "D015451",
+      "umlsCui": "C0023418",
+      "tags": [
+        "hématologique",
+        "néoplasie",
+        "chronique"
+      ],
+      "quickView": {
+        "definicao": "Néoplasie de lymphocytes B matures. Plus courante chez les personnes âgées. Généralement indolente.",
+        "criteriosDiagnosticos": [
+          "Lymphocytose >5000/μL",
+          "Morphologie compatible",
+          "Immunophénotype caractéristique"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Surveillance si asymptomatique et stable",
+            "Suivi onco-hématologique"
+          ],
+          "farmacologico": [
+            "Traitement uniquement si symptomatique ou progressif",
+            "Chimiothérapie selon le stade"
+          ]
+        },
+        "redFlags": [
+          "Cytopénies",
+          "Ganglions lymphatiques volumineux",
+          "Organomégalie",
+          "Infections récurrentes"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "deficiencia-vitamina-b12",
+      "titulo": "Déficit en vitamine B12",
+      "sinonimos": [
+        "Hypovitaminose B12",
+        "Déficit en cobalamine"
+      ],
+      "ciap2": [
+        "B81"
+      ],
+      "cid10": [
+        "E53.8"
+      ],
+      "cid11": [
+        "5B5C"
+      ],
+      "doid": "DOID:13381",
+      "snomedCT": "190634004",
+      "meshId": "D014806",
+      "umlsCui": "C0042847",
+      "categoria": "hématologique",
+      "quickView": {
+        "definicao": "Déficit en cobalamine causant une anémie mégaloblastique et des manifestations neurologiques. Fréquent chez les personnes âgées, les végétariens et lors d'une utilisation chronique de la metformine/IBP.",
+        "criteriosDiagnosticos": [
+          "B12 sérique <200 pg/mL : déficit",
+          "B12 200-300 pg/mL : zone grise - mesurer le MMA et l'homocystéine",
+          "VCM >100 fL (anémie macrocytaire)",
+          "Symptômes neurologiques : paresthésies, ataxie, altération cognitive"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Investiguer la cause : alimentation, anémie pernicieuse, gastrite atrophile",
+            "Orientation diététique pour les végétariens"
+          ],
+          "farmacologico": [
+            "Déficit grave/symptômes neurologiques : Cianocobalamina 1000mcg IM 1x/jour pendant 7 jours, puis hebdomadaire pendant 4 sem, puis mensuellement",
+            "Déficit léger : Cianocobalamina orale 1000-2000mcg/jour",
+            "Maintenance à vie si anémie pernicieuse"
+          ]
+        },
+        "redFlags": [
+          "Pancytopenie",
+          "Symptômes neurologiques graves",
+          "Déclin cognitif rapide"
+        ],
+        "metasTerapeuticas": [
+          "B12 >400 pg/mL",
+          "Résolution de l'anémie",
+          "Amélioration neurologique"
+        ],
+        "examesIniciais": [
+          "Hémogramme avec VCM",
+          "B12 sérique",
+          "Réticulocytes",
+          "LDH",
+          "Acide folique"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "cianocobalamina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "anémie",
+        "neurologie",
+        "personnes âgées"
+      ]
+    }
+  ]
+}

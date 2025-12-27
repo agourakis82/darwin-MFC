@@ -1,0 +1,346 @@
+{
+  "locale": "fr",
+  "category": "hematologico",
+  "generatedAt": "2025-12-27T22:46:44.898Z",
+  "count": 2,
+  "diseases": [
+    {
+      "id": "trombocitopenia",
+      "titulo": "Trombocytopenie",
+      "sinonimos": [
+        "Plaquetopenie",
+        "PTI",
+        "Purpura thrombocytopénique immunitaire"
+      ],
+      "doid": "DOID:1588",
+      "snomedCT": "302215000",
+      "meshId": "D013921",
+      "umlsCui": "C0040034",
+      "ciap2": [
+        "B83"
+      ],
+      "cid10": [
+        "D69.3",
+        "D69.6"
+      ],
+      "cid11": [
+        "3B64"
+      ],
+      "categoria": "hematologico",
+      "quickView": {
+        "definicao": "Réduction du nombre de plaquettes <150.000/µL. Peut être légère et asymptomatique ou grave avec des saignements. Causes : destruction immunitaire (PTI), consommation (CIVD, PTT), séquestration splénique, production diminuée.",
+        "criteriosDiagnosticos": [
+          "Plaquettes <150.000/µL (trombocytopenie)",
+          "Légère : 100.000-150.000/µL",
+          "Modérée : 50.000-100.000/µL",
+          "Grave : <50.000/µL",
+          "Très grave : <20.000/µL (risque de saignement spontané)",
+          "",
+          "PTI : Diagnostic d'exclusion (trombocytopenie isolée sans cause identifiée)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éviter les médicaments qui affectent les plaquettes (AAS, AINEs)",
+            "Éviter les activités à risque de traumatisme",
+            "Éviter les procédures invasives si plaquettes <50.000"
+          ],
+          "farmacologico": [
+            "PTI AIGÜE (adulte avec saignement ou <20.000-30.000) :",
+            "Prednisone 1-2 mg/kg/jour pendant 2-4 semaines, puis sevrage",
+            "OU Dexaméthasone 40 mg/jour pendant 4 jours (ciclos)",
+            "Immunoglobuline IV 1g/kg x1-2 jours (réponse rapide)",
+            "",
+            "PTI CHRONIQUE RÉFRACTAIRE :",
+            "Agonistes de la thrombopoïétine (Eltrombopag, Romiplostim)",
+            "Rituximab",
+            "Splénectomie"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Plaquettes >30.000/µL (sécurité pour la majorité)",
+          "Plaquettes >50.000/µL pour les procédures",
+          "Plaquettes >100.000/µL pour les grandes chirurgies",
+          "Absence de saignement"
+        ],
+        "examesIniciais": [
+          "Hémogramme complet (confirmer la thrombocytopenie isolée)",
+          "Frottis sanguin périphérique (éliminer la pseudotrombocytopenie par agglutination)",
+          "Coagulation (TP, TTPa)",
+          "Fonction hépatique et rénale",
+          "Sérologies : VIH, VHC, VHB",
+          "TSH",
+          "Anticorps antiplaquettaires (non sensibles)",
+          "Myélogramme si suspicion de cause centrale"
+        ],
+        "redFlags": [
+          "Saignement actif significatif",
+          "Plaquettes <10.000/µL (risque de saignement intracrânien)",
+          "Anémie hémolytique microangiopathique (schizocytes) : PTT/SHU - urgence !",
+          "Pancytopenie (maladie médullaire)",
+          "Fièvre + thrombocytopenie : sepsis, dengue, PTT",
+          "Grossesse avec thrombocytopenie (pré-éclampsie, HELLP)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "PTI : 3-4/100.000 adultes",
+          "incidencia": "PTI plus courante chez les enfants (post-viral)",
+          "faixaEtaria": "Enfants : PTI aiguë. Adultes : PTI chronique",
+          "fatoresRisco": [
+            "Infections virales récentes (enfants)",
+            "Maladies auto-immunes (SLE)",
+            "VIH, VHC",
+            "Médicaments (héparine, quinine, sulfamides)",
+            "Grossesse",
+            "Hépatopathie (séquestration splénique)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "PTI : Autoanticorps (IgG) contre les glycoprotéines plaquettaires (GPIIb/IIIa, GPIb/IX) causent la destruction des plaquettes par le système réticulo-endothélial (spleen). Il y a également une inhibition de la mégacaryopoïèse. Autres causes : consommation (CIVD, PTT), séquestration splénique, insuffisance médullaire.",
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Fréquemment asymptomatique (trouve incidentel)",
+            "Pétéchies et ecchymoses",
+            "Épistaxis",
+            "Gingivorragie",
+            "Métronorrhagie",
+            "Saignement gastro-intestinal ou urinaire (grave)"
+          ],
+          "sinaisExameFisico": [
+            "Pétéchies (principalement aux MMII)",
+            "Ecchymoses",
+            "Purpura",
+            "Saignement muqueux",
+            "ABSENCE d'splénomégalie (dans la PTI typique)"
+          ],
+          "formasClinicas": [
+            "PTI primaire (idiopathique)",
+            "PTI secondaire (VIH, VHC, SLE, médicaments)",
+            "PTI aiguë (enfants, post-viral)",
+            "PTI chronique (>12 mois)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Thrombocytopenie isolée",
+            "Élimination d'autres causes",
+            "Frottis sans schizocytes ou blastes"
+          ],
+          "diagnosticoDiferencial": [
+            "Pseudotrombocytopenie (agglutination en EDTA)",
+            "PTT/SHU (anémie hémolytique microangiopathique)",
+            "CIVD",
+            "Hypersplénisme",
+            "Leucémie, myélodysplasie",
+            "Médicaments (héparine)",
+            "Dengue"
+          ],
+          "examesLaboratoriais": [
+            "Hémogramme + frottis",
+            "TP, TTPa, fibrinogène",
+            "VIH, VHC, VHB",
+            "FAN, complément (si suspicion de SLE)",
+            "Myélogramme (si atypique)",
+            "Coombs direct (si anémie)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Prévenir les saignements",
+            "Maintenir les plaquettes à un niveau sûr",
+            "Minimiser la toxicité du traitement"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Éviter le traumatisme",
+              "Suspendre les médicaments antiagrégants",
+              "Surveillance active si asymptomatique et plaquettes >30.000"
+            ],
+            "citations": [
+              {
+                "refId": "ash-itp-2019"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Corticoïde",
+                "medicamentos": [
+                  "Prednisone",
+                  "Dexaméthasone"
+                ],
+                "posologia": "Prednisone 1-2 mg/kg/jour pendant 2-4 semaines, puis sevrage. OU Dexaméthasone 40 mg/jour x4 jours."
+              },
+              {
+                "classe": "Immunoglobuline IV (réponse rapide)",
+                "medicamentos": [
+                  "IVIg"
+                ],
+                "posologia": "1g/kg x1-2 jours. Réponse en 24-48h. Temporaire."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Agoniste de la thrombopoïétine",
+                "medicamentos": [
+                  "Eltrombopag",
+                  "Romiplostim"
+                ],
+                "posologia": "Eltrombopag 50 mg/jour PO. Romiplostim SC hebdomadaire. PTI chronique."
+              },
+              {
+                "classe": "Rituximab",
+                "medicamentos": [
+                  "Rituximab"
+                ],
+                "posologia": "375 mg/m² hebdomadaire x4 doses. Réponse en semaines."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Saignement actif grave",
+                "conduta": "IVIg + Corticoïde + Transfusion de plaquettes + Acide tranexamique."
+              },
+              {
+                "situacao": "Grossesse",
+                "conduta": "IVIg préférable au corticoïde. Plaquettes >30.000 pour l'accouchement vaginal, >50.000 pour la césarienne."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ash-itp-2019"
+              }
+            ]
+          },
+          "duracao": "Selon la réponse. Les agonistes de la TPO peuvent être nécessaires de manière chronique."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Hebdomadaire jusqu'à stabilisation, puis mensuelle",
+          "examesControle": [
+            "Hémogrammes sériés",
+            "Frottis si changement clinique"
+          ],
+          "metasTerapeuticas": [
+            "Plaquettes >30.000 stables",
+            "Absence de saignement"
+          ],
+          "criteriosEncaminhamento": [
+            "PTI chronique ou réfractaire",
+            "Nécessité de splénectomie",
+            "Candidat à un agoniste de la TPO ou rituximab",
+            "Saignement grave"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Pas de prévention primaire"
+          ],
+          "secundaria": [
+            "Éviter les déclencheurs",
+            "Maintenir les plaquettes à un niveau sûr"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "prednisona",
+        "dexametasona",
+        "imunoglobulina-iv",
+        "eltrombopag"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ash-itp-2019"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "trombocytopenie",
+        "pti",
+        "plaquette",
+        "purpura",
+        "saignement"
+      ]
+    },
+    {
+      "id": "anemia-ferropriva-pediatrica",
+      "titulo": "Anémie Ferriprive chez l'Enfant",
+      "ciap2": [
+        "B80"
+      ],
+      "cid10": [
+        "D50"
+      ],
+      "cid11": [
+        "3A00"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:11758",
+      "snomedCT": "87522002",
+      "meshId": "D018798",
+      "umlsCui": "C0085576",
+      "quickView": {
+        "definicao": "Anémie la plus courante chez l'enfant. Prévalence de 20-30% chez les enfants de moins de 5 ans au Brésil. Cause : déséquilibre entre l'offre et la demande en fer.",
+        "criteriosDiagnosticos": [
+          "Hb <11g/dL (6m-5a) ou <11,5g/dL (5-11a)",
+          "VCM bas (microcytose)",
+          "RDW élevé (anisocytose)",
+          "Ferritine <12ng/mL (ou <30 si inflammation)"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Alimentation riche en fer",
+            "Vitamine C avec les repas",
+            "Éviter le lait de vache en excès"
+          ],
+          "farmacologico": [
+            "Sulfate ferreux 3-5mg/kg/jour de fer élémentaire",
+            "Hors des repas",
+            "Durée : 3-6 mois (pour rétablir les stocks)"
+          ]
+        },
+        "redFlags": [
+          "Anémie grave (Hb <7)",
+          "Non-réponse au traitement",
+          "Symptômes neurologiques",
+          "Saignement gastro-intestinal"
+        ]
+      },
+      "medicamentos": [
+        "sulfato-ferroso"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

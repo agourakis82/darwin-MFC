@@ -1,0 +1,289 @@
+{
+  "locale": "fr",
+  "category": "neurologico",
+  "generatedAt": "2025-12-27T20:47:52.183Z",
+  "count": 1,
+  "diseases": [
+    {
+      "id": "epilepsia",
+      "titulo": "Epilepsia",
+      "sinonimos": [
+        "Convulsão",
+        "Crises epilépticas",
+        "Síndrome epiléptica"
+      ],
+      "doid": "DOID:1826",
+      "snomedCT": "84757009",
+      "meshId": "D004827",
+      "umlsCui": "C0014544",
+      "ciap2": [
+        "N88"
+      ],
+      "cid10": [
+        "G40",
+        "G41"
+      ],
+      "cid11": [
+        "8A60"
+      ],
+      "categoria": "neurologico",
+      "quickView": {
+        "definicao": "Doença cerebral caracterizada por predisposição persistente a gerar crises epilépticas e pelas consequências neurobiológicas, cognitivas, psicológicas e sociais. Diagnóstico: ≥2 crises não provocadas com intervalo >24h, ou 1 crise + risco de recorrência >60%.",
+        "criteriosDiagnosticos": [
+          "DEFINIÇÃO ILAE 2014:",
+          "≥2 crises não provocadas (ou reflexas) com intervalo >24h, OU",
+          "1 crise não provocada + probabilidade de recorrência ≥60% (ex: lesão estrutural, EEG epileptiforme), OU",
+          "Diagnóstico de síndrome epiléptica"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Educação sobre a doença",
+            "Evitar privação de sono e álcool",
+            "Segurança (banho com porta aberta, não nadar sozinho)",
+            "Restrição para dirigir (conforme legislação)"
+          ],
+          "farmacologico": [
+            "CRISES FOCAIS: Carbamazepina 400-1200mg/dia ou Lamotrigina 100-400mg/dia",
+            "CRISES GENERALIZADAS: Valproato 500-2000mg/dia (cuidado em mulheres) ou Lamotrigina",
+            "IDOSO: Lamotrigina ou Levetiracetam (menos interações)",
+            "Iniciar com dose baixa, titular lentamente",
+            "Monoterapia sempre que possível"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Controle total de crises (70% dos pacientes)",
+          "Mínimo de efeitos adversos",
+          "Manter qualidade de vida",
+          "Possibilitar retirada da medicação (casos selecionados)"
+        ],
+        "examesIniciais": [
+          "EEG (interictal pode ser normal)",
+          "RM de crânio (protocolo para epilepsia)",
+          "Exames laboratoriais básicos (eletrólitos, glicemia, função hepática/renal)",
+          "ECG (síndrome de QT longo)",
+          "Considerar vídeo-EEG se dúvida diagnóstica"
+        ],
+        "redFlags": [
+          "Estado de mal epiléptico (crise >5 min ou crises subentrantes)",
+          "Primeira crise em adulto (investigar causa)",
+          "Crises refratárias (falha ≥2 antiepilépticos)",
+          "Déficit neurológico pós-ictal prolongado",
+          "Suspeita de lesão estrutural (tumor, AVC)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "0,5-1% da população",
+          "incidencia": "50-70 novos casos/100.000 pessoas-ano",
+          "faixaEtaria": "Bimodal: infância e >60 anos",
+          "fatoresRisco": [
+            "Lesão cerebral estrutural (AVC, TCE, tumor)",
+            "Infecção do SNC (meningite, encefalite)",
+            "História familiar de epilepsia",
+            "Anomalias do desenvolvimento cortical",
+            "Esclerose mesial temporal",
+            "Doenças neurodegenerativas"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Descargas neuronais excessivas e hipersincronizadas resultantes de desequilíbrio entre excitação (glutamato) e inibição (GABA). Pode originar-se de foco cortical (focal) ou envolver ambos hemisférios desde o início (generalizada).",
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Crises focais: aura, automatismos, alteração de consciência",
+            "Crises generalizadas tônico-clônicas: perda de consciência, rigidez, abalos",
+            "Ausências: breve perda de consciência, olhar vago",
+            "Crises mioclônicas: abalos súbitos breves",
+            "Período pós-ictal: confusão, sonolência, cefaleia"
+          ],
+          "sinaisExameFisico": [
+            "Exame interictal geralmente normal",
+            "Pode haver déficits focais (lesão estrutural)",
+            "Mordedura lateral de língua (sugestivo de CTCG)",
+            "Incontinência urinária"
+          ],
+          "formasClinicas": [
+            "Epilepsia focal (temporal, frontal, etc.)",
+            "Epilepsia generalizada genética",
+            "Epilepsia combinada focal e generalizada",
+            "Síndromes epilépticas (Lennox-Gastaut, West, Dravet, etc.)"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Critérios ILAE 2014",
+            "EEG (pode ser normal em até 50% no primeiro exame)",
+            "RM para investigar etiologia estrutural"
+          ],
+          "diagnosticoDiferencial": [
+            "Síncope",
+            "Crise psicogênica não epiléptica (CPNE)",
+            "Distúrbios do movimento",
+            "Enxaqueca com aura",
+            "AIT",
+            "Parassonias"
+          ],
+          "examesLaboratoriais": [
+            "EEG (ictal/interictal)",
+            "RM de crânio",
+            "Vídeo-EEG (casos duvidosos ou pré-cirúrgicos)",
+            "Exames genéticos (síndromes)"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Controle total das crises",
+            "Minimizar efeitos adversos",
+            "Manter qualidade de vida",
+            "Possibilitar retirada da medicação (casos selecionados)"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Educação do paciente e família",
+              "Evitar privação de sono",
+              "Evitar álcool em excesso",
+              "Medidas de segurança",
+              "Dieta cetogênica (casos refratários, especialmente pediátricos)"
+            ],
+            "citations": [
+              {
+                "refId": "ilae-2017"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Crises focais",
+                "medicamentos": [
+                  "Carbamazepina",
+                  "Oxcarbazepina",
+                  "Lamotrigina",
+                  "Levetiracetam"
+                ],
+                "posologia": "Carbamazepina 400-1200mg/dia. Levetiracetam 500-3000mg/dia."
+              },
+              {
+                "classe": "Crises generalizadas",
+                "medicamentos": [
+                  "Valproato",
+                  "Lamotrigina",
+                  "Levetiracetam"
+                ],
+                "posologia": "Valproato 500-2000mg/dia. Evitar em mulheres em idade fértil (teratogênico)."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Associação ou troca",
+                "medicamentos": [
+                  "Clobazam",
+                  "Topiramato",
+                  "Lacosamida",
+                  "Perampanel"
+                ],
+                "posologia": "Adicionar ou substituir conforme resposta. Politerapia racional."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Estado de mal epiléptico",
+                "conduta": "Diazepam 10mg IV ou Midazolam 10mg IM. Se refratário: Fenitoína/Fosfenitoína IV."
+              },
+              {
+                "situacao": "Mulher em idade fértil",
+                "conduta": "Evitar Valproato. Preferir Lamotrigina ou Levetiracetam. Suplementar ácido fólico."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ilae-2017"
+              }
+            ]
+          },
+          "duracao": "Geralmente por anos. Considerar retirada após 2-5 anos sem crises (casos selecionados)."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "A cada 3-6 meses",
+          "examesControle": [
+            "EEG periódico",
+            "Dosagem sérica de antiepilépticos (se disponível)",
+            "Função hepática/renal, hemograma"
+          ],
+          "metasTerapeuticas": [
+            "Controle de crises",
+            "Ausência de efeitos adversos significativos"
+          ],
+          "criteriosEncaminhamento": [
+            "Epilepsia refratária (falha ≥2 FAEs)",
+            "Candidato a cirurgia de epilepsia",
+            "Síndrome epiléptica específica",
+            "Mulher que deseja gestar"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Prevenção de TCE (capacete)",
+            "Controle de infecções do SNC",
+            "Cuidados perinatais"
+          ],
+          "secundaria": [
+            "Adesão ao tratamento",
+            "Evitar fatores desencadeadores"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "estado-mal-epileptico"
+      ],
+      "medicamentos": [
+        "carbamazepina",
+        "valproato",
+        "lamotrigina",
+        "levetiracetam",
+        "diazepam"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ilae-2017"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "epilepsia",
+        "convulsao",
+        "crise",
+        "antiepileptico",
+        "eeg"
+      ]
+    }
+  ]
+}

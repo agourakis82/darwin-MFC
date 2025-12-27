@@ -1,0 +1,3668 @@
+{
+  "locale": "fr",
+  "category": "infecciosas",
+  "generatedAt": "2025-12-27T22:46:44.904Z",
+  "count": 20,
+  "diseases": [
+    {
+      "id": "infeccao-urinaria",
+      "titulo": "Infection du Tractus Urinaire (ITU)",
+      "sinonimos": [
+        "Cystite",
+        "ITU",
+        "Infection urinaire"
+      ],
+      "doid": "DOID:13148",
+      "snomedCT": "68566005",
+      "meshId": "D014552",
+      "umlsCui": "C0042029",
+      "ciap2": [
+        "U71"
+      ],
+      "cid10": [
+        "N30",
+        "N39.0"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Infection bactérienne du tractus urinaire, plus couramment cystite (infection basse) chez les femmes. ITU non compliquée chez les femmes en bonne santé, non enceintes, avec une anatomie urinaire normale.",
+        "criteriosDiagnosticos": [
+          "Symptômes typiques : dysurie, pollakiurie, urgence mictionnelle",
+          "Douleur suprapubienne",
+          "EAS : leucocyturie, nitrite positif, bactériurie",
+          "Uroculture si ITU compliquée, récurrente, échec thérapeutique, gestante",
+          "Diagnostic clinique possible en ITU non compliquée"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation abondante",
+            "Miction post-coïtale (prévention)",
+            "Éviter les spermicides",
+            "Hygiène adéquate (ne pas utiliser de douches)",
+            "Traiter la constipation si associée"
+          ],
+          "farmacologico": [
+            "Nitrofurantoïne 100mg toutes les 6 heures pendant 5-7 jours (1ère choix)",
+            "Fosfomycine 3g dose unique (bonne adhésion, 2ème choix)",
+            "Sulfaméthoxazole-Triméthoprime 800/160mg toutes les 12 heures pendant 3 jours (si sensibilité locale)",
+            "Éviter les fluoroquinolones en ITU non compliquée"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Résolution des symptômes en 48-72h",
+          "Stérilisation de l'urine",
+          "Prévention des récidives"
+        ],
+        "examesIniciais": [
+          "EAS (examen d'urine type 1)",
+          "Uroculture + antibiogramme si : ITU compliquée, récurrente, gestante, échec thérapeutique",
+          "Créatinine si suspicion de pyélonéphrite"
+        ],
+        "redFlags": [
+          "Fièvre >38°C, frissons (suggère pyélonéphrite)",
+          "Douleur lombaire (signe de Giordano positif)",
+          "Nausées/vomissements",
+          "Gestante (risque de complications)",
+          "Immunodépression, DM décompensé",
+          "ITU chez l'homme (toujours investiguer)",
+          "Sepsie"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "50-60% des femmes auront une ITU dans leur vie",
+          "incidencia": "25-30% de récurrence en 6 mois après le premier épisode",
+          "faixaEtaria": "Pic chez les femmes jeunes sexuellement actives et les personnes âgées",
+          "fatoresRisco": [
+            "Sexe féminin (uretère court)",
+            "Activité sexuelle",
+            "Utilisation de spermicides/diafragme",
+            "Ménopause (atrophie urogénitale)",
+            "Histoire préalable d'ITU",
+            "DM",
+            "Cathétérisme vésical",
+            "Anomalies urologiques"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dysurie (douleur/brûlure lors de la miction)",
+            "Pollakiurie (mictions fréquentes)",
+            "Urgence mictionnelle",
+            "Douleur suprapubienne",
+            "Hématurie (peut survenir)",
+            "Urine trouble ou fétide"
+          ],
+          "sinaisExameFisico": [
+            "Généralement examen physique normal en cystite",
+            "Douleur à la palpation suprapubienne",
+            "Absence de fièvre (cystite)",
+            "Si fièvre + signe de Giordano + : pyélonéphrite"
+          ],
+          "formasClinicas": [
+            "Cystite (infection basse)",
+            "Pyélonéphrite (infection haute)",
+            "Bactériurie asymptomatique",
+            "ITU récurrente (≥3/an ou ≥2/6 mois)"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinique en ITU non compliquée (symptômes typiques)",
+            "EAS : leucocyturie (>10 leucocytes/champ), nitrite +",
+            "Uroculture : >10⁵ UFC/mL (ou >10² si symptomatique)"
+          ],
+          "diagnosticoDiferencial": [
+            "Vaginite/vulvovaginite",
+            "Urétrite (IST)",
+            "Vessie hyperactive",
+            "Cystite interstitielle",
+            "Néphrolithiase"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Éradiquer l'infection",
+            "Soulager les symptômes",
+            "Prévenir les complications",
+            "Prévenir les récidives"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hydratation abondante",
+              "Miction post-coïtale",
+              "Éviter la rétention urinaire",
+              "Traiter la constipation"
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Nitrofurantoïne",
+                "medicamentos": [
+                  "Nitrofurantoïne 100mg toutes les 6 heures pendant 5-7 jours"
+                ],
+                "observacoes": "1ère choix. Éviter si DFG <30"
+              },
+              {
+                "classe": "Fosfomycine",
+                "medicamentos": [
+                  "Fosfomycine trométhamine 3g dose unique"
+                ],
+                "observacoes": "Bonne adhésion. Plus cher"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Sulfaméthoxazole-Triméthoprime",
+                "medicamentos": [
+                  "SMX-TMP 800/160mg toutes les 12 heures pendant 3 jours"
+                ],
+                "observacoes": "Si sensibilité locale >80%. Éviter au 3ème trimestre"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Gestante",
+                "conduta": "Nitrofurantoïne (pas au 3ème tri), Céfalexine, Amoxicilline. Traiter la bactériurie asymptomatique"
+              },
+              {
+                "situacao": "Pyélonéphrite",
+                "conduta": "Fluoroquinolone ou Céftriaxone. 7-14 jours. Considérer l'hospitalisation"
+              },
+              {
+                "situacao": "ITU récurrente",
+                "conduta": "Prévention : Nitrofurantoïne 50-100mg par nuit ou post-coïtale"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "duracao": "Cystite : 3-7 jours. Pyélonéphrite : 7-14 jours"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Réévaluation en 48-72h si pas d'amélioration",
+          "metasTerapeuticas": [
+            "Résolution des symptômes",
+            "Uroculture de contrôle non indiquée de routine"
+          ],
+          "criteriosEncaminhamento": [
+            "Pyélonéphrite grave (sepsie, vomissements, gestante)",
+            "ITU récurrente sans cause identifiée",
+            "Suspicion d'anomalie anatomique",
+            "ITU chez l'homme (urologie)"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-itu"
+      ],
+      "medicamentos": [
+        "nitrofurantoina",
+        "fosfomicina",
+        "sulfametoxazol-tmp"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "idsa-itu-2011"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "infecciosas",
+        "aguda",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "infeccao-trato-urinario",
+      "titulo": "Infection du Tractus Urinaire",
+      "sinonimos": [
+        "ITU",
+        "Cystite",
+        "Pyélonéphrite",
+        "Infection urinaire"
+      ],
+      "doid": "DOID:13148",
+      "snomedCT": "68566005",
+      "meshId": "D014552",
+      "umlsCui": "C0042029",
+      "ciap2": [
+        "U71",
+        "U70"
+      ],
+      "cid10": [
+        "N39.0",
+        "N10",
+        "N30"
+      ],
+      "cid11": [
+        "GC08",
+        "GB60"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Infection bactérienne du tractus urinaire, classifiée en cystite (bas) ou pyélonéphrite (haut). E. coli est l'agent dans 80-90% des cas non compliqués.",
+        "criteriosDiagnosticos": [
+          "CYSTITE : Dysurie + Pollakiurie + Urgence + Douleur suprapubienne",
+          "Urine trouble ou odeur fétide",
+          "Absence de fièvre/douleur lombaire (cystite)",
+          "PYÉLONÉPHRITE : Fièvre + Douleur lombaire + Signe de Giordano positif",
+          "Symptômes de cystite peuvent être présents ou non",
+          "EAS : Leucocyturie (>10 leucocytes/champ), nitrite +, esterase leucocytaire +",
+          "Uroculture : >100.000 UFC/mL (ou >1.000 chez les symptomatiques)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation adéquate",
+            "Vide vesical fréquent",
+            "Hygiène adéquate (nettoyer de l'avant vers l'arrière)"
+          ],
+          "farmacologico": [
+            "CYSTITE NON COMPLIQUÉE (femme) :",
+            "Fosfomycine 3g dose unique (1ère choix) OU",
+            "Nitrofurantoïne 100mg 6/6h pendant 5 jours OU",
+            "Sulfaméthoxazole-Triméthoprime 800/160mg 12/12h pendant 3 jours",
+            "",
+            "PYÉLONÉPHRITE LÉGÈRE (ambulatoire) :",
+            "Ciprofloxacine 500mg 12/12h pendant 7 jours OU",
+            "Céftriaxone 1g IM/IV + Céfuroxime PO pendant 10-14 jours"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Résolution des symptômes en 24-48h",
+          "Éradication bactérienne",
+          "Prévention de la récurrence",
+          "Éviter la progression vers la septicémie"
+        ],
+        "examesIniciais": [
+          "EAS (urine type I)",
+          "Uroculture + antibiogramme (si compliquée, récurrente, homme, gestante, échec du traitement)",
+          "Hémogramme, créatinine, VSG (si pyélonéphrite)",
+          "USG reins et voies urinaires (si pyélonéphrite ou suspicion de complication)"
+        ],
+        "redFlags": [
+          "Fièvre élevée, toxémie (septicémie urinaire)",
+          "Vomissements (hospitalisation pour ATB IV)",
+          "Douleur lombaire intense, masse palpable",
+          "Anurie ou oligurie",
+          "Immunodépression, DM décompensé, gestante",
+          "Homme (toujours considérer comme compliquée)",
+          "ITU de répétition (≥3/an)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "11% des femmes/an ont une cystite",
+          "incidencia": "150 millions de cas/an dans le monde",
+          "faixaEtaria": "Plus courante chez les femmes en âge de procréer",
+          "fatoresRisco": [
+            "Sexe féminin (uretère court)",
+            "Activité sexuelle",
+            "Utilisation de spermicides",
+            "Cathétérisme vésical",
+            "Ménopause (atrophie vaginale)",
+            "Diabète mellitus",
+            "Obstruction urinaire",
+            "Grossesse"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Colonisation péri-urétrale par des uropathogènes intestinaux (principalement E. coli uropathogène) qui montent par l'uretère jusqu'à la vessie. Les adhésines bactériennes (fimbries P) permettent l'adhésion à l'urothélium. La pyélonéphrite survient par ascension au tronc supérieur.",
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dysurie (douleur/brûlure lors de la miction)",
+            "Pollakiurie (augmentation de la fréquence)",
+            "Urgence urinaire",
+            "Douleur suprapubienne (cystite)",
+            "Fièvre, frissons (pyélonéphrite)",
+            "Douleur lombaire (pyélonéphrite)"
+          ],
+          "sinaisExameFisico": [
+            "Sensibilité suprapubienne (cystite)",
+            "Fièvre (pyélonéphrite)",
+            "Percussion lombaire positive (Giordano)",
+            "Absence de leucorrhée vaginale"
+          ],
+          "formasClinicas": [
+            "ITU non compliquée (cystite chez une femme saine)",
+            "ITU compliquée (homme, gestante, cathétérisée, DM, anomalie anatomique)",
+            "Pyélonéphrite aiguë",
+            "ITU récurrente (≥3/an ou ≥2 en 6 mois)",
+            "Bactériurie asymptomatique (traiter uniquement chez la gestante/pré-procédures)"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinique (cystite non compliquée) : peut traiter empiriquement",
+            "EAS : leucocyturie, nitrite, esterase",
+            "Uroculture : >100.000 UFC/mL"
+          ],
+          "diagnosticoDiferencial": [
+            "Vaginite/vaginose",
+            "Urétrite (IST : chlamydia, gonorrhée)",
+            "Prostatite",
+            "Syndrome de vessie douloureuse",
+            "Néphrolithiase",
+            "Appendicite (douleur suprapubienne)"
+          ],
+          "examesLaboratoriais": [
+            "EAS (bilan urinaire)",
+            "Uroculture + antibiogramme",
+            "Hémogramme, VSG (pyélonéphrite)",
+            "Fonction rénale"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Éradiquer l'infection",
+            "Soulager les symptômes",
+            "Prévenir les complications",
+            "Prévenir la récurrence"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hydratation",
+              "Vide vesical fréquent",
+              "Éviter les spermicides"
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Cystite non compliquée",
+                "medicamentos": [
+                  "Fosfomycine",
+                  "Nitrofurantoïne",
+                  "SMX-TMP"
+                ],
+                "posologia": "Fosfomycine 3g dose unique. Nitrofurantoïne 100mg 6/6h 5j. SMX-TMP 800/160mg 12/12h 3j."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Fluoroquinolone (réserver)",
+                "medicamentos": [
+                  "Ciprofloxacine",
+                  "Norfloxacine"
+                ],
+                "posologia": "Ciprofloxacine 500mg 12/12h 3 jours. Réserver pour pyélonéphrite ou résistance."
+              },
+              {
+                "classe": "Pyélonéphrite ambulatoire",
+                "medicamentos": [
+                  "Ciprofloxacine",
+                  "Céftriaxone"
+                ],
+                "posologia": "Cipro 500mg 12/12h 7j. Céftriaxone 1g IM/IV 1x + oral pendant 10-14j."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Gestante",
+                "conduta": "Nitrofurantoïne (éviter 3ème tri), Céfalexine, Amoxicilline. Traitement obligatoire, 7 jours. Uroculture de contrôle."
+              },
+              {
+                "situacao": "ITU récurrente",
+                "conduta": "Prévention : Nitrofurantoïne 50-100mg/nuit OU SMX-TMP 400/80mg/nuit. Ou prévention post-coïtale."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "duracao": "Cystite : 1-5 jours. Pyélonéphrite : 7-14 jours."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Réévaluation en 48-72h si les symptômes persistent",
+          "examesControle": [
+            "Uroculture de contrôle uniquement chez la gestante ou en cas de symptômes persistants",
+            "Ne pas répéter EAS/uroculture de routine"
+          ],
+          "metasTerapeuticas": [
+            "Résolution des symptômes",
+            "Uroculture négative (lorsqu'indiquée)"
+          ],
+          "criteriosEncaminhamento": [
+            "Pyélonéphrite avec vomissements/toxémie (hospitalisation)",
+            "ITU récurrente pour investigation",
+            "Homme jeune avec ITU",
+            "Suspicion d'anomalie anatomique"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Hydratation",
+            "Miccion post-coïtale",
+            "Hygiène adéquate"
+          ],
+          "secundaria": [
+            "Prévention antibiotique (si récurrente)",
+            "Estrogène topique (post-ménopause)"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "itu-manejo"
+      ],
+      "medicamentos": [
+        "fosfomicina",
+        "nitrofurantoina",
+        "sulfametoxazol-trimetoprima",
+        "ciprofloxacino"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "idsa-itu-2011"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "itu",
+        "cistite",
+        "pyélonéphrite",
+        "dysurie",
+        "e-coli"
+      ]
+    },
+    {
+      "id": "dengue",
+      "titulo": "Dengue",
+      "sinonimos": [
+        "Fièvre dengue",
+        "Dengue hémorragique",
+        "Dengue grave"
+      ],
+      "doid": "DOID:11205",
+      "snomedCT": "38362002",
+      "meshId": "D003715",
+      "umlsCui": "C0011311",
+      "ciap2": [
+        "A77"
+      ],
+      "cid10": [
+        "A90",
+        "A91"
+      ],
+      "cid11": [
+        "1D20"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Arbovirose causée par le virus dengue (DENV 1-4), transmise par l'Aedes aegypti. Spectre clinique large : fièvre indifférenciée à dengue grave avec choc et hémorragie. Le Brésil est hyperendémique.",
+        "criteriosDiagnosticos": [
+          "CAS SUSPECT : Fièvre (2-7 jours) + ≥2 des suivants dans une zone endémique :",
+          "Myalgie, arthralgie, céphalée rétro-orbitaire",
+          "Exanthème maculopapulaire",
+          "Prostration intense",
+          "Pétéchies/test du bracelet positif",
+          "Nausées/vomissements",
+          "",
+          "CONFIRMATION : NS1 (jusqu'au 5e jour) ou IgM (après le 6e jour) ou PCR"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation orale vigoureuse (60-80 mL/kg/jour)",
+            "Repos",
+            "Orientation sur les signes d'alerte"
+          ],
+          "farmacologico": [
+            "Paracétamol 500-750mg toutes les 6 heures (NE PAS utiliser les AINS/AAS !)",
+            "Dipyrone 500-1000mg toutes les 6 heures (analgésique/antipyrétique alternatif)",
+            "Antiémétiques : Métoclopramide, Ondansétron",
+            "",
+            "HYDRATATION SELON LE GROUPE :",
+            "A : 60 mL/kg/jour PO ambulatoire",
+            "B (avec risque ou comorbidité) : 60-80 mL/kg/jour, observation 6-8h",
+            "C (signes d'alerte) : Hydratation IV 10-20 mL/kg en 1h, répéter si nécessaire",
+            "D (choc) : Expansion 20 mL/kg en 20 min, USI"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Maintenir une hydratation adéquate (diurèse ≥0,5 mL/kg/h)",
+          "Éviter la progression vers une dengue grave",
+          "Reconnaître précocement les signes d'alerte",
+          "Rétablissement sans séquelles"
+        ],
+        "examesIniciais": [
+          "Hémogramme avec plaquettes (hémocentration, thrombopénie)",
+          "NS1 (jusqu'au 5e jour de symptômes)",
+          "Sérologie IgM/IgG (après le 6e jour)",
+          "TGO, TGP, albumine si signes d'alerte",
+          "Test du bracelet"
+        ],
+        "redFlags": [
+          "SIGNES D'ALERTE (indiquent une dengue grave imminente) :",
+          "Douleur abdominale intense et continue",
+          "Vomissements persistants",
+          "Accumulation de liquides (ascite, épanchement pleural)",
+          "Saignements de muqueuses",
+          "Léthargie ou irritabilité",
+          "Hépatomégalie >2cm",
+          "Augmentation progressive de l'hématocrite",
+          "Chute brutale des plaquettes"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Brésil : pays avec le plus grand nombre de cas au monde",
+          "incidencia": "Millions de cas/an, pics épidémiques cycliques",
+          "faixaEtaria": "Tous les âges, la gravité peut être plus importante aux extrêmes",
+          "fatoresRisco": [
+            "Résider dans une zone endémique",
+            "Infection préalable par un autre sérotype (risque de gravité)",
+            "Enfants et personnes âgées (gravité plus importante)",
+            "Comorbidités",
+            "Grossesses"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Le virus inoculé par l'Aedes aegypti infecte les cellules dendritiques et les monocytes. La viremie provoque la fièvre. Pendant la phase critique (décrue), l'augmentation de la perméabilité capillaire due à la réponse immunitaire (cytokines, complément) entraîne un extravasement plasmatique. Les anticorps hétérotypes d'une infection préalable peuvent potentiellement amplifier l'infection (ADE).",
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Fièvre élevée de début soudain (2-7 jours)",
+            "Céphalée intense, rétro-orbitaire",
+            "Myalgie (« fièvre brise-os »)",
+            "Arthralgie",
+            "Exanthème (3e-4e jour, maculopapulaire)",
+            "Prostration intense",
+            "Nausées, vomissements, anorexie"
+          ],
+          "sinaisExameFisico": [
+            "Fièvre",
+            "Exanthème maculopapulaire prurigineux",
+            "Test du bracelet positif (≥20 pétéchies en 2,5cm²)",
+            "Pétéchies spontanées",
+            "Hépatomégalie (signe de gravité)",
+            "Effusions (ascite, épanchement pleural) - phase critique"
+          ],
+          "formasClinicas": [
+            "Dengue sans signes d'alerte (majorité)",
+            "Dengue avec signes d'alerte",
+            "Dengue grave (choc, hémorragie grave, dysfonctionnement organique)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinique-épidémiologique + laboratoire",
+            "Antigène NS1 (1er-5e jour) : sensibilité 60-90%",
+            "IgM (après le 6e jour) : reste positif pendant des semaines",
+            "PCR : référence, identifie le sérotype"
+          ],
+          "diagnosticoDiferencial": [
+            "Chikungunya",
+            "Zika",
+            "Leptospirose",
+            "COVID-19",
+            "Grippe",
+            "Fièvre typhoïde",
+            "Méningococcémie"
+          ],
+          "examesLaboratoriais": [
+            "Hémogramme (hémocentration : Ht ↑20%, thrombopénie)",
+            "NS1 ou IgM",
+            "TGO, TGP, albumine (cas modérés/graves)",
+            "Coagulogramme (soupçon d'hémorragie)",
+            "Électrolytes, fonction rénale"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Maintenir l'hydratation",
+            "Reconnaître les signes d'alerte",
+            "Prévenir et traiter le choc",
+            "Éviter l'utilisation des AINS"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hydratation orale vigoureuse",
+              "Repos",
+              "Retour immédiat si signes d'alerte",
+              "Notification obligatoire"
+            ],
+            "citations": [
+              {
+                "refId": "ms-dengue-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Analgésique/antipyrétique",
+                "medicamentos": [
+                  "Paracétamol",
+                  "Dipyrone"
+                ],
+                "posologia": "Paracétamol 500-750mg toutes les 6 heures. Dipyrone 500-1000mg toutes les 6 heures. NE PAS utiliser les AAS ou AINS !"
+              },
+              {
+                "classe": "Hydratation (Groupe A)",
+                "medicamentos": [
+                  "Sérum oral"
+                ],
+                "posologia": "60 mL/kg/jour (1/3 solution saline + 2/3 liquides). Ambulatoire."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Hydratation IV (Groupes C/D)",
+                "medicamentos": [
+                  "SF 0,9%",
+                  "Ringer lactate"
+                ],
+                "posologia": "C : 10-20 mL/kg en 1h, réévaluer. D (choc) : 20 mL/kg en 20 min bolus."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Grossesse",
+                "conduta": "Hospitalisation précoce, monitoring fœtal. Risque accru d'hémorragie."
+              },
+              {
+                "situacao": "Dengue grave avec hémorragie",
+                "conduta": "Transfusion de globules rouges/plaquettes selon indication. USI."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ms-dengue-2024"
+              }
+            ]
+          },
+          "duracao": "Phase aiguë : 7-10 jours. Convalescence : semaines."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Quotidienne jusqu'à 48h après la décrue (phase critique)",
+          "examesControle": [
+            "Hémogramme quotidien pendant la phase critique",
+            "Hématocrite sérié",
+            "Réévaluation clinique"
+          ],
+          "metasTerapeuticas": [
+            "Stabilité hémodynamique",
+            "Diurèse adéquate",
+            "Rétablissement des plaquettes"
+          ],
+          "criteriosEncaminhamento": [
+            "Signes d'alerte (observation/hospitalisation)",
+            "Dengue grave (USI)",
+            "Grossesse",
+            "Comorbidités décompensées"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Contrôle du vecteur (éliminer les gîtes larvaires)",
+            "Utilisation de répulsifs",
+            "Moustiquaires et moustiquiers",
+            "Vaccination (Qdenga - séropositifs)"
+          ],
+          "secundaria": [
+            "Surveillance épidémiologique",
+            "Notification obligatoire"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "dengue-classificacao"
+      ],
+      "medicamentos": [
+        "paracetamol",
+        "dipirona",
+        "metoclopramida"
+      ],
+      "calculadoras": [
+        "prova-laco"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ms-dengue-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "dengue",
+        "arbovirose",
+        "aedes",
+        "fièvre",
+        "hydratation"
+      ]
+    },
+    {
+      "id": "herpes-zoster",
+      "titulo": "Herpes Zóster",
+      "ciap2": [
+        "S70"
+      ],
+      "cid10": [
+        "B02"
+      ],
+      "cid11": [
+        "1E90"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:8536",
+      "snomedCT": "4740000",
+      "meshId": "D006562",
+      "umlsCui": "C0019360",
+      "quickView": {
+        "definicao": "Réactivation du virus varicelle-zona latent dans les ganglions. Le risque augmente avec l'âge et l'immunosuppression.",
+        "criteriosDiagnosticos": [
+          "Douleur neuropathique précédant l'éruption",
+          "Vesicules dans un dermatome unilatéral",
+          "Ne dépasse pas la ligne médiane",
+          "Dermatomes thoraciques plus courants"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Maintenir les lésions propres et sèches",
+            "Ne pas percer les vésicules"
+          ],
+          "farmacologico": [
+            "Aciclovir 800mg 5 fois par jour pendant 7 jours (commencer <72h)",
+            "Analgesie: Paracétamol + AINS",
+            "Si >50 ans: associer un corticoïde pour réduire la neuralgie"
+          ]
+        },
+        "redFlags": [
+          "Zona ophtalmique (pointe du nez)",
+          "Syndrome de Ramsay-Hunt (oreille)",
+          "Disseminé",
+          "Immunodéprimé"
+        ]
+      },
+      "medicamentos": [
+        "aciclovir",
+        "paracetamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "escabiose",
+      "titulo": "Escabiose (Sarcopte)",
+      "ciap2": [
+        "S72"
+      ],
+      "cid10": [
+        "B86"
+      ],
+      "cid11": [
+        "1G89"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:13234",
+      "snomedCT": "128869009",
+      "meshId": "D012532",
+      "umlsCui": "C0036262",
+      "quickView": {
+        "definicao": "Infestation cutanée par l'acarien Sarcoptes scabiei. Transmission par contact direct prolongé.",
+        "criteriosDiagnosticos": [
+          "Prurit intense nocturne",
+          "Lésions aux espaces interdigitaux, poignets, aisselles, génitaux",
+          "Sillons/tunnels caractéristiques",
+          "Contact familial avec prurit"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Traiter tous les contacts familiaux",
+            "Laver les vêtements et les draps à l'eau chaude",
+            "Mettre en sac les vêtements non lavables pendant 72h"
+          ],
+          "farmacologico": [
+            "Permetrine 5% crème : appliquer du cou aux pieds, rincer après 8-14h, répéter après 7 jours",
+            "Ivermectine 200mcg/kg PO dose unique (cas étendus)"
+          ]
+        },
+        "redFlags": [
+          "Sarcopte norvégienne (croûtée) - immunodéprimé",
+          "Infection secondaire"
+        ]
+      },
+      "medicamentos": [
+        "ivermectine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "mononucleose-infecciosa",
+      "titulo": "Mononucléose infectieuse",
+      "ciap2": [
+        "A75"
+      ],
+      "cid10": [
+        "B27"
+      ],
+      "cid11": [
+        "1D81"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:8620",
+      "snomedCT": "186759007",
+      "meshId": "D007244",
+      "umlsCui": "C0026650",
+      "tags": [
+        "infectieuse",
+        "virale",
+        "pédiatrique"
+      ],
+      "quickView": {
+        "definicao": "Infection par le VEB. Caractérisée par la fièvre, la pharyngite, la lymphadénopathie, la splénomégalie.",
+        "criteriosDiagnosticos": [
+          "Pharyngite exsudative",
+          "Lymphadénopathie cervicale",
+          "Lymphocytose atypique",
+          "Test de Paul-Bunnell positif"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Repos",
+            "Hydratation",
+            "Gargarismes"
+          ],
+          "farmacologico": [
+            "Symptomatique : Paracetamol ou Ibuprofene",
+            "Corticoïde uniquement en cas de complications"
+          ]
+        },
+        "redFlags": [
+          "Rupture splénique",
+          "Obstruction des voies aériennes",
+          "Hépatite grave",
+          "Méningo-encéphalite"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hepatite-a",
+      "titulo": "Hépatite A",
+      "ciap2": [
+        "D72"
+      ],
+      "cid10": [
+        "B15"
+      ],
+      "cid11": [
+        "1E50.0"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:12549",
+      "snomedCT": "50711007",
+      "meshId": "D006506",
+      "umlsCui": "C0019158",
+      "tags": [
+        "infectieuse",
+        "virale",
+        "hépatite"
+      ],
+      "quickView": {
+        "definicao": "Infection par le VHA. Transmission fécale-orale. Généralement autolimitée, rarement fulminante.",
+        "criteriosDiagnosticos": [
+          "Ictère",
+          "AST/ALT élevés",
+          "Anti-VHA IgM positif"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Repos",
+            "Hydratation",
+            "Éviter l'alcool"
+          ],
+          "farmacologico": [
+            "Symptomatique uniquement",
+            "Pas de traitement spécifique"
+          ]
+        },
+        "redFlags": [
+          "Hépatite fulminante",
+          "Insuffisance hépatique",
+          "Coagulopathie"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hepatite-b",
+      "titulo": "Hépatite B",
+      "ciap2": [
+        "D72"
+      ],
+      "cid10": [
+        "B16"
+      ],
+      "cid11": [
+        "1E50.1"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:2043",
+      "snomedCT": "66071002",
+      "meshId": "D006509",
+      "umlsCui": "C0019159",
+      "tags": [
+        "infecciosa",
+        "virale",
+        "hépatite",
+        "chronique"
+      ],
+      "quickView": {
+        "definicao": "Infection par le VHB. Peut être aiguë ou chronique. Transmission parentérale, sexuelle ou verticale.",
+        "criteriosDiagnosticos": [
+          "HBsAg positif",
+          "Anti-HBc IgM (aiguë)",
+          "Charge virale VHB"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Repos",
+            "Éviter l'alcool",
+            "Protection des contacts"
+          ],
+          "farmacologico": [
+            "Aiguë : symptomatique",
+            "Chronique : Tenofovir ou Entecavir"
+          ]
+        },
+        "redFlags": [
+          "Hépatite fulminante",
+          "Cirrhose",
+          "Carcinome hépatocellulaire"
+        ]
+      },
+      "medicamentos": [
+        "tenofovir",
+        "entecavir"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sífilis-terciaria",
+      "titulo": "Syphilis tertiaire",
+      "ciap2": [
+        "Y77"
+      ],
+      "cid10": [
+        "A52"
+      ],
+      "cid11": [
+        "1C1Z"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:13240",
+      "snomedCT": "76272004",
+      "meshId": "D013592",
+      "umlsCui": "C0039102",
+      "hpo": [
+        "HP:0001250",
+        "HP:0002134"
+      ],
+      "tags": [
+        "infectieuse",
+        "bactérienne",
+        "neurologique"
+      ],
+      "quickView": {
+        "definicao": "Syphilis tardive (années après l'infection). Neurolues, syphilis cardiovasculaire, gommes syphilitiques.",
+        "criteriosDiagnosticos": [
+          "Antécédents de syphilis",
+          "VDRL/RPR positif",
+          "TPHA/FTA-ABS positif",
+          "Manifestations tardives"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Évaluation neurologique",
+            "Cardiologique si nécessaire"
+          ],
+          "farmacologico": [
+            "Pénicilline G cristalline 18-24 millions UI/jour IV 10-14 jours (neurolues)",
+            "Ou céftriaxone alternative"
+          ]
+        },
+        "redFlags": [
+          "Neurolues actives",
+          "Insuffisance aortique",
+          "Aneurysme aortique"
+        ]
+      },
+      "medicamentos": [
+        "penicilina-g"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "faringite-estreptococica",
+      "titulo": "Faringite à Streptocoque",
+      "sinonimos": [
+        "Amigdalite à Streptocoque"
+      ],
+      "ciap2": [
+        "R72"
+      ],
+      "cid10": [
+        "J02.0"
+      ],
+      "cid11": [
+        "CA40"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:10763",
+      "snomedCT": "43878009",
+      "meshId": "D010996",
+      "umlsCui": "C0032285",
+      "hpo": [
+        "HP:0000347",
+        "HP:0025258"
+      ],
+      "tags": [
+        "infeccieuse",
+        "bactérienne",
+        "pédiatrique"
+      ],
+      "quickView": {
+        "definicao": "Faringite causée par Streptococcus pyogenes (groupe A). Plus courante chez les enfants de 5 à 15 ans. Peut compliquer avec une fièvre rhumatismale.",
+        "criteriosDiagnosticos": [
+          "Faringite/amigdalite",
+          "Exsudat tonsillaire",
+          "Adénomegalie cervicale",
+          "Fièvre",
+          "Test rapide ou culture positive"
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "Analgésiques : Paracétamol ou Ibuprofène",
+            "Gargarismes",
+            "Hydratation"
+          ],
+          "farmacologico": [
+            "Pénicilline V 250-500mg 6/6h pendant 10 jours",
+            "Ou Amoxicilline 500mg 8/8h pendant 10 jours",
+            "Ou Azithromycine en cas d'allergie"
+          ]
+        },
+        "redFlags": [
+          "Abscessus péri-amygdalien",
+          "Obstruction des voies aériennes",
+          "Fièvre rhumatismale",
+          "Glomérulonéphrite"
+        ]
+      },
+      "medicamentos": [
+        "penicilina-v",
+        "amoxicilina",
+        "azitromicina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "amigdalite",
+      "titulo": "Amigdalite",
+      "ciap2": [
+        "R72"
+      ],
+      "cid10": [
+        "J03"
+      ],
+      "cid11": [
+        "CA40"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:10763",
+      "snomedCT": "56717001",
+      "meshId": "D014069",
+      "umlsCui": "C0040425",
+      "hpo": [
+        "HP:0025258",
+        "HP:0012825"
+      ],
+      "tags": [
+        "infectieuse",
+        "ORL",
+        "commune"
+      ],
+      "quickView": {
+        "definicao": "Inflammation des amygdales. Peut être virale (plus courante) ou bactérienne. Symptômes : douleur de gorge, fièvre, adénopathie.",
+        "criteriosDiagnosticos": [
+          "Douleur de gorge",
+          "Amygdales hyperémiques/œdémateuses",
+          "Exsudat peut être présent",
+          "Adénopathie cervicale",
+          "Fièvre"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Analgésiques : Paracetamol ou Ibuprofène",
+            "Gargarismes",
+            "Hydratation"
+          ],
+          "farmacologico": [
+            "Si streptococcique : Penicillin V ou Amoxicilline",
+            "Virale : traitement symptomatique uniquement"
+          ]
+        },
+        "redFlags": [
+          "Abscessus péri-amygdalien",
+          "Obstruction des voies aériennes",
+          "Trismus",
+          "Déviation de l'uvette"
+        ]
+      },
+      "medicamentos": [
+        "penicilina-v",
+        "amoxicilina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gastroenterite-viral",
+      "titulo": "Gastro-entérite virale",
+      "sinonimos": [
+        "Gastro-entérite aiguë virale"
+      ],
+      "ciap2": [
+        "D73"
+      ],
+      "cid10": [
+        "A08"
+      ],
+      "cid11": [
+        "DD92"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:4374",
+      "snomedCT": "48866001",
+      "meshId": "D005759",
+      "umlsCui": "C0017168",
+      "tags": [
+        "infectieuse",
+        "virale",
+        "gastro-intestinale",
+        "pédiatrique"
+      ],
+      "quickView": {
+        "definicao": "Infection virale du tractus gastro-intestinal. Causes : rotavirus, norovirus, adénovirus. Symptômes : diarrhée, vomissements, nausées, douleur abdominale.",
+        "criteriosDiagnosticos": [
+          "Diarrhée aiguë",
+          "Vomissements",
+          "Nausées",
+          "Douleur abdominale",
+          "Fièvre peut être présente",
+          "Antécédents épidémiologiques"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation orale : Solution de réhydratation orale",
+            "Régime alimentaire léger",
+            "Repos",
+            "Prévention : hygiène, vaccination (rotavirus)"
+          ],
+          "farmacologico": [
+            "Antiémétiques si vomissements intenses : Ondansetrona",
+            "Zinc chez les enfants <5 ans",
+            "Les probiotiques peuvent aider"
+          ]
+        },
+        "redFlags": [
+          "Déshydratation sévère",
+          "Sang dans les selles",
+          "Personnes âgées/enfants en bas âge",
+          "Symptômes >7 jours"
+        ]
+      },
+      "medicamentos": [
+        "ondansetrona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sepse",
+      "titulo": "Sepse et Choc septique",
+      "sinonimos": [
+        "Septicémie",
+        "Syndrome septique",
+        "Choc septique",
+        "Infection généralisée"
+      ],
+      "doid": "DOID:0080009",
+      "snomedCT": "91302008",
+      "meshId": "D018805",
+      "umlsCui": "C0036690",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "A41",
+        "A41.9",
+        "R65.1",
+        "R57.2"
+      ],
+      "cid11": [
+        "1G40"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Dysfonction organique potentiellement fatale causée par une réponse désrégulée de l'hôte à l'infection. Choc septique : sepse + nécessité de vasopresseurs + lactate >2 mmol/L malgré la réhydratation.",
+        "criteriosDiagnosticos": [
+          "SEPSE : infection suspectée/confirmée + SOFA ≥2 points",
+          "qSOFA (triage) : ≥2 de : FR≥22, PAS≤100, altération mentale",
+          "CHOQUE SÉPTIQUE : sepse + vasopresseurs pour PAM≥65 + lactate>2 après volume",
+          "Identifier le foyer infectieux",
+          "Prélèvements sanguins avant antibiotique (sans retarder l'ATB)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Identifier et contrôler le foyer (drainage d'abcès, retrait de cathéter)",
+            "Accès veineux de gros calibre (idéalement central)",
+            "Surveillance continue",
+            "Sondage vésical pour débit urinaire"
+          ],
+          "farmacologico": [
+            "HEURE 1 (Bundles Surviving Sepsis) :",
+            "Lactate (répéter si initial >2)",
+            "Prélèvements sanguins (2 prélèvements) avant l'ATB",
+            "Antibiotique à large spectre <1h",
+            "SF 0,9% 30mL/kg si hypotension ou lactate≥4",
+            "Noradrénaline si PAM<65 après volume",
+            "",
+            "ATB empirique selon le foyer suspecté :",
+            "Pulmonaire : Ceftriaxone + Azithromycine",
+            "Abdominal : Piperacilline-Tazobactam ou Méropénem",
+            "Urinaires : Ceftriaxone ou Ciprofloxacine",
+            "Peau : Oxacilline + Clindamycine"
+          ]
+        },
+        "metasTerapeuticas": [
+          "PAM ≥65 mmHg",
+          "Débit urinaire ≥0,5 mL/kg/h",
+          "Normalisation du lactate",
+          "Amélioration de la conscience",
+          "Contrôle du foyer infectieux"
+        ],
+        "examesIniciais": [
+          "Lactate sérique",
+          "Prélèvements sanguins (2 prélèvements avant l'ATB)",
+          "Hémogramme, créatinine, bilirubines",
+          "Gaz du sang artériel",
+          "Coagulogramme",
+          "Procalcitonine (si disponible)",
+          "Radiographie de thorax, urines, imagerie selon le foyer"
+        ],
+        "redFlags": [
+          "Lactate >4 mmol/L",
+          "Hypotension réfractaire au volume",
+          "Dysfonction de multiples organes",
+          "Altération importante du niveau de conscience",
+          "Coagulopathie (CIVD)",
+          "Immunosuppression grave"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~30 millions de cas/an dans le monde",
+          "incidencia": "200-300 cas/100.000 habitants/an dans les pays développés",
+          "mortalidade": "25-30% dans la sepse, 40-50% dans le choc septique",
+          "faixaEtaria": "Extrêmes d'âge (nouveau-nés et personnes âgées) plus vulnérables",
+          "fatoresRisco": [
+            "Âge avancé",
+            "Immunosuppression",
+            "Diabète de type 1",
+            "Néoplasies",
+            "Maladie rénale/hépatique chronique",
+            "Dispositifs invasifs (cathéter, sonde)",
+            "Hospitalisation récente",
+            "Chirurgie récente"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Réponse immunitaire désrégulée à l'infection avec libération massive de cytokines (tempête de cytokines), activation de la cascade de coagulation, dysfonction endothéliale et vasodilatation. Résulte en une hypoperfusion tissulaire, dysfonction organique et potentiel décès.",
+          "citations": [
+            {
+              "refId": "sepsis-3"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Fièvre ou hypothermie",
+            "Frissons",
+            "Tachycardie, tachypnée",
+            "Confusion mentale, agitation ou léthargie",
+            "Oligurie",
+            "Signes du foyer infectieux"
+          ],
+          "sinaisExameFisico": [
+            "Hypotension",
+            "Tachycardie",
+            "Tachypnée",
+            "Altération du sens",
+            "Temps de remplissage capillaire >3s",
+            "Peau maculée/livide",
+            "Extrémités froides"
+          ],
+          "formasClinicas": [
+            "Sepse sans choc",
+            "Choc septique",
+            "Sepse avec dysfonction d'organe spécifique (IRA, SDRA, etc.)"
+          ],
+          "citations": [
+            {
+              "refId": "sepsis-3"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Sepsis-3 : SOFA ≥2 + infection",
+            "qSOFA pour triage (pas diagnostic)",
+            "Identification du foyer et de l'agent"
+          ],
+          "diagnosticoDiferencial": [
+            "Choc cardigénique",
+            "Choc hypovolémique",
+            "Choc anaphylactique",
+            "SIRS non infectieux (pancréatite, brûlures)",
+            "Insuffisance surrénalienne aiguë"
+          ],
+          "examesLaboratoriais": [
+            "Prélèvements sanguins (2 prélèvements)",
+            "Lactate artériel",
+            "Procalcitonine",
+            "Hémogramme (leucocytose ou leucopénie)",
+            "Fonction rénale et hépatique",
+            "Coagulogramme (thrombopénie, allongement du TP)",
+            "Gaz du sang artériel"
+          ],
+          "examesImagem": [
+            "Radiographie de thorax",
+            "Scanner selon suspicion (abdomen, pelvis)",
+            "Échocardiographie (si dysfonction cardiaque ou suspicion d'endocardite)"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Résuscitation hémodynamique précoce",
+            "Antibiothérapie adéquate <1h",
+            "Contrôle du foyer infectieux",
+            "Soutien des dysfonctions organiques"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Accès veineux central",
+              "Cathéter de PAM invasif",
+              "Contrôle du foyer (drainage, débridement, retrait de dispositif)",
+              "Ventilation protectrice si SDRA",
+              "Thérapie de remplacement rénale si nécessaire"
+            ],
+            "citations": [
+              {
+                "refId": "surviving-sepsis-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Antibiotique",
+                "medicamentos": [
+                  "Piperacilline-Tazobactam",
+                  "Méropénem",
+                  "Ceftriaxone + Métrodiazole"
+                ],
+                "posologia": "Dose maximale, ajustement rénal",
+                "observacoes": "Commencer <1h après reconnaissance"
+              },
+              {
+                "classe": "Cristalloïde",
+                "medicamentos": [
+                  "SF 0,9%",
+                  "Ringer Lactate"
+                ],
+                "posologia": "30mL/kg dans les 3 premières heures si hypotension/lactate≥4"
+              },
+              {
+                "classe": "Vasopresseur",
+                "medicamentos": [
+                  "Noradrénaline 0,1-2mcg/kg/min"
+                ],
+                "posologia": "Titration pour PAM≥65",
+                "observacoes": "Premier choix"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Vasopresseur supplémentaire",
+                "medicamentos": [
+                  "Vasopressine 0,01-0,04 U/min"
+                ],
+                "observacoes": "Si noradrénaline insuffisante"
+              },
+              {
+                "classe": "Inotrope",
+                "medicamentos": [
+                  "Dobutamine 2,5-20mcg/kg/min"
+                ],
+                "observacoes": "Si faible débit cardiaque"
+              },
+              {
+                "classe": "Corticoïde",
+                "medicamentos": [
+                  "Hydrocortisone 200mg/jour"
+                ],
+                "observacoes": "Si réfractaire aux vasopresseurs"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "surviving-sepsis-2021"
+              }
+            ]
+          },
+          "duracao": "ATB pendant 7-10 jours dans la majorité ; ajuster selon le foyer et la réponse"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Réévaluation continue pendant la phase aiguë",
+          "examesControle": [
+            "Lactate sérique sérié",
+            "Fonction rénale",
+            "Hémogramme",
+            "Prélèvements de surveillance"
+          ],
+          "metasTerapeuticas": [
+            "Clairance du lactate",
+            "Sevrage des vasopresseurs",
+            "Débit urinaire >0,5mL/kg/h",
+            "Résolution de la dysfonction organique"
+          ],
+          "criteriosEncaminhamento": [
+            "Tout patient avec sepse : USI ou unité de soins intensifs",
+            "Chirurgie si foyer chirurgical",
+            "Infectiologue pour cas complexes"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Vaccination (pneumococcique, grippe)",
+            "Hygiène des mains",
+            "Prévention des infections nosocomiales",
+            "Gestion appropriée des dispositifs invasifs"
+          ],
+          "secundaria": [
+            "Reconnaissance précoce des infections",
+            "Traitement approprié des infections communautaires",
+            "Bundle de l'heure 1"
+          ],
+          "citations": [
+            {
+              "refId": "surviving-sepsis-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "sepse-bundle-1h",
+        "choque-septico",
+        "atb-empirico-sepse"
+      ],
+      "medicamentos": [
+        "noradrenalina",
+        "meropenem",
+        "piperacilina-tazobactam",
+        "vancomicina"
+      ],
+      "calculadoras": [
+        "sofa",
+        "qsofa",
+        "apache-ii"
+      ],
+      "citations": [
+        {
+          "refId": "sepsis-3"
+        },
+        {
+          "refId": "surviving-sepsis-2021"
+        },
+        {
+          "refId": "ilas-sepse-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "doenca-chagas",
+      "titulo": "Maladie de Chagas",
+      "sinonimos": [
+        "Trypanosomiase américaine",
+        "Chagas",
+        "Mal de Chagas"
+      ],
+      "doid": "DOID:12140",
+      "snomedCT": "77506005",
+      "meshId": "D014355",
+      "umlsCui": "C0041234",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "B57",
+        "B57.0",
+        "B57.1",
+        "B57.2",
+        "B57.3",
+        "B57.4",
+        "B57.5"
+      ],
+      "cid11": [
+        "1F51"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Maladie parasitaire causée par le Trypanosoma cruzi, transmise principalement par le triatomine (« barbeiro »). Phase aiguë souvent asymptomatique ; phase chronique avec cardiopathie et/ou mégaœsophage/mégacôlon.",
+        "criteriosDiagnosticos": [
+          "PHASE AIGUE : Fièvre, hépatosplénomégalie, œdème, signe de Romaña/chagome",
+          "Parasitémie détectable (goutte épaisse, QBC, PCR)",
+          "PHASE CHRONIQUE : Sérologie positive (2 méthodes différentes)",
+          "Cardiopathie chagasicienne : BDP + BDA, arythmies, IRC",
+          "Mégaœsophage : dysphagie, régurgitation",
+          "Mégacôlon : constipation chronique, fécalome"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Soutien clinique en phase aiguë",
+            "Contrôle des arythmies et de l'IRC en phase chronique",
+            "Diète semi-liquide en cas de mégaœsophage",
+            "Diète laxative en cas de mégacôlon"
+          ],
+          "farmacologico": [
+            "PHASE AIGUE (traitement obligatoire) :",
+            "Benznidazole 5 mg/kg/jour pendant 60 jours (adultes : 2 fois par jour)",
+            "OU Nifurtimoxyde 8-10 mg/kg/jour pendant 60-90 jours",
+            "",
+            "PHASE CHRONIQUE INDETERMINÉE :",
+            "Benznidazole : indiqué chez les patients âgés de moins de 50 ans, femmes en âge de procréer",
+            "",
+            "PHASE CHRONIQUE CARDIAQUE :",
+            "Traitement de l'IRC (IECA, BB, spironolactone)",
+            "Amiodarone en cas d'arythmies",
+            "Pacemaker en cas de blocage AV avancé",
+            "Considérer un DAI si risque élevé de mort subite"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Phase aiguë : éliminer le parasite, prévenir l'évolution",
+          "Phase chronique : contrôle des symptômes, prévenir les complications",
+          "Prévention de la transmission verticale"
+        ],
+        "examesIniciais": [
+          "Sérologie (ELISA + IFI ou ELISA + HAI)",
+          "Goutte épaisse/QBC (phase aiguë)",
+          "PCR pour T. cruzi",
+          "ECG 12 dérivations",
+          "Échocardiographie",
+          "Radiographie de thorax",
+          "EDA/œsophagogramme (si dysphagie)",
+          "Enema opaque (si constipation)"
+        ],
+        "redFlags": [
+          "Myocardite aiguë grave",
+          "Méningo-encéphalite",
+          "IRC décompensée",
+          "Arythmies malignes (VT soutenue)",
+          "Blocage AV avancé",
+          "Réactivation chez les immunodéprimés",
+          "Perforation/volvulus intestinal"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "6-7 millions d'infectés dans le monde ; 1-3 millions au Brésil",
+          "incidencia": "Cas aigus : ~200/an au Brésil (transmission orale)",
+          "mortalidade": "~12 000 décès/an au Brésil (phase chronique cardiaque)",
+          "faixaEtaria": "Infection à tout âge ; manifestations chroniques après plusieurs décennies",
+          "fatoresRisco": [
+            "Résidence en zone rurale endémique",
+            "Logement avec fentes (pau-a-pique)",
+            "Consommation d'aliments contaminés (açaï, jus de canne)",
+            "Transfusion sanguine non testée",
+            "Mère porteuse (transmission verticale)"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "T. cruzi envahit les cellules de l'hôte (myocytes, neurones), se multiplie et provoque une destruction cellulaire directe et une inflammation chronique. En phase chronique, il y a une destruction progressive du myocarde et du plexus myentérique (dénervation autonome), conduisant à une cardiomyopathie dilatée et aux mégas.",
+          "citations": [
+            {
+              "refId": "who-chagas-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "AIGUE : Fièvre, malaise, hépatosplénomégalie, œdème, myocardite",
+            "Signe de Romaña (œdème palpébral unilatéral)",
+            "Chagome d'inoculation (lésion cutanée au site de la piqûre)",
+            "CHRONIQUE : Palpitations, dyspnée, syncope, dysphagie, constipation"
+          ],
+          "sinaisExameFisico": [
+            "Hépatosplénomégalie (phase aiguë)",
+            "Signes d'IRC",
+            "Arythmies",
+            "Dilatation des cavités cardiaques",
+            "Anévrysme apical du ventricule gauche"
+          ],
+          "formasClinicas": [
+            "Phase aiguë (symptomatique ou asymptomatique)",
+            "Phase chronique indéterminée (asymptomatique, sérologie positive)",
+            "Phase chronique cardiaque",
+            "Phase chronique digestive (mégaœsophage/mégacôlon)",
+            "Forme mixte (cardiaque + digestive)"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Phase aiguë : examen parasitologique positif",
+            "Phase chronique : 2 tests sérologiques positifs avec des méthodes différentes"
+          ],
+          "diagnosticoDiferencial": [
+            "Cardiomyopathie dilatée idiopathique",
+            "Cardiomyopathie ischémique",
+            "Achalasie",
+            "Maladie de Hirschsprung",
+            "Autres parasitoses"
+          ],
+          "examesLaboratoriais": [
+            "Sérologie (ELISA, IFI, HAI) - 2 méthodes",
+            "Examen parasitologique direct (phase aiguë)",
+            "PCR",
+            "Xéno-diagnostic (historique)",
+            "Hémoculture pour T. cruzi"
+          ],
+          "examesImagem": [
+            "ECG (BDP, BDA, extrasystoles, blocages)",
+            "Échocardiographie (dilatation, anévrysme apical)",
+            "Holter 24h",
+            "Radiographie de thorax (cardiomegalie)",
+            "Œsophagogramme/EDA",
+            "Enema opaque/coloscopie"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Phase aiguë : éliminer le parasite",
+            "Phase chronique : contrôler les manifestations, prévenir les complications"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Diète pour la dysphagie (mégaœsophage)",
+              "Diète laxative et hydratation (mégacôlon)",
+              "Exercice physique supervisé (cardiopathie légère)",
+              "Chirurgie pour les mégas avancés"
+            ],
+            "citations": [
+              {
+                "refId": "consenso-chagas-2016"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Tripanocide",
+                "medicamentos": [
+                  "Benznidazole 5 mg/kg/jour"
+                ],
+                "posologia": "60 jours, divisé en 2 prises",
+                "observacoes": "Obligatoire en phase aiguë"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Alternative",
+                "medicamentos": [
+                  "Nifurtimoxyde 8-10 mg/kg/jour"
+                ],
+                "posologia": "60-90 jours",
+                "observacoes": "Plus d'effets indésirables"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Cardiopathie chagasicienne",
+                "conduta": "Traitement de l'IRC : IECA, BB, spironolactone, diurétiques"
+              },
+              {
+                "situacao": "Arythmies",
+                "conduta": "Amiodarone ; DAI si risque élevé de mort subite"
+              },
+              {
+                "situacao": "Mégaœsophage avancé",
+                "conduta": "Cardiomiotomie de Heller ou œsophagectomie"
+              },
+              {
+                "situacao": "Mégacôlon",
+                "conduta": "Sigmoïdectomie en cas de volvulus récurrent ou de fécalome"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-chagas-2023"
+              }
+            ]
+          },
+          "duracao": "Tripanocide : 60 jours ; traitement des complications : continu"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Annuelle en phase indéterminée ; semestrielle/trimestrielle en cardiopathie",
+          "examesControle": [
+            "ECG annuel",
+            "Échocardiographie annuelle",
+            "Holter",
+            "Sérologie de contrôle"
+          ],
+          "metasTerapeuticas": [
+            "Négativation de la PCR (guérison parasitologique)",
+            "Stabilisation de la cardiopathie",
+            "Prévention de la mort subite"
+          ],
+          "criteriosEncaminhamento": [
+            "Cardiologie : cardiopathie chagasicienne",
+            "Arythmie : électrophysiologie",
+            "Mégas : gastro-entérologie/chirurgie",
+            "Réactivation : infectiologie"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Amélioration du logement",
+            "Contrôle du vecteur (pulvérisation, moustiquaires)",
+            "Triage dans les banques de sang",
+            "Précautions alimentaires (éviter la contamination)"
+          ],
+          "secundaria": [
+            "Triage des femmes enceintes",
+            "Traitement des cas aigus",
+            "Suivi des cas chroniques"
+          ],
+          "citations": [
+            {
+              "refId": "who-chagas-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "chagas-tratamento",
+        "cardiopatia-chagasica"
+      ],
+      "medicamentos": [
+        "benznidazol",
+        "nifurtimox",
+        "amiodarona"
+      ],
+      "calculadoras": [
+        "rassi-score"
+      ],
+      "citations": [
+        {
+          "refId": "consenso-chagas-2016"
+        },
+        {
+          "refId": "who-chagas-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "leishmaniose-visceral",
+      "titulo": "Leishmaniose viscérale",
+      "sinonimos": [
+        "Calazar",
+        "Kala-azar",
+        "Fièvre noire",
+        "LV"
+      ],
+      "doid": "DOID:9146",
+      "snomedCT": "186802003",
+      "meshId": "D007898",
+      "umlsCui": "C0023290",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "B55.0"
+      ],
+      "cid11": [
+        "1F54.0"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Maladie causée par Leishmania infantum (Brésil), transmise par le phlébotome Lutzomyia longipalpis. Principalement affecte le système réticuloendothélial. Potentiellement mortelle si non traitée.",
+        "criteriosDiagnosticos": [
+          "Fièvre prolongée (>2 semaines)",
+          "Splénomégalie volumineuse",
+          "Hépatomégalie",
+          "Pancytopenie (anémie, leucopénie, thrombopénie)",
+          "Hypergammaprotéinémie",
+          "Maigrissement, asthénie",
+          "Confirmation : parasitologique (ponction de moelle) ou sérologique (rK39) + clinique"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "moderado",
+            "criterios": [
+              "Âge 1-40 ans",
+              "Sans comorbidités",
+              "Sans signes de gravité"
+            ],
+            "conduta": "Traitement ambulatoire supervisé"
+          },
+          {
+            "nivel": "alto",
+            "criterios": [
+              "<1 ou >50 ans",
+              "Ictère",
+              "Œdème",
+              "Saignement",
+              "VIH+",
+              "Coinfection"
+            ],
+            "conduta": "Hospitalisation"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Support nutritionnel",
+            "Transfusion en cas d'anémie grave ou de saignement",
+            "Traiter les infections bactériennes associées",
+            "Déclaration obligatoire"
+          ],
+          "farmacologico": [
+            "PREMIER CHOIX :",
+            "Amphotéricine B liposomale 3mg/kg/jour pendant 7 jours (20mg/kg total)",
+            "",
+            "ALTERNATIVES :",
+            "Amphotéricine B désoxycholate 1mg/kg/jour pendant 14-20 jours",
+            "Antimoniate de N-méthylglucamine (Glucantime®) 20mg Sb/kg/jour pendant 20-40 jours",
+            "",
+            "Préférer liposomale chez : <1 an, >50 ans, insuffisance cardiaque, rénale, hépatique, VIH, grossesse"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Guérison clinique (résolution de la fièvre, splénomégalie)",
+          "Normalisation hématologique",
+          "Guérison parasitologique"
+        ],
+        "examesIniciais": [
+          "Hémogramme complet",
+          "Fonction rénale et hépatique",
+          "Protéines totales et fractions",
+          "Coagulogramme",
+          "Sérologie rK39 (test rapide)",
+          "Ponction de moelle osseuse (myélogramme + culture)",
+          "Sérologie pour VIH",
+          "Radiographie thoracique, ECG (avant l'antimonial)"
+        ],
+        "redFlags": [
+          "Âge <1 ou >50 ans",
+          "Ictère (Bb>2mg/dL)",
+          "Œdème généralisé",
+          "Saignement",
+          "Coinfection VIH",
+          "Infection bactérienne grave",
+          "Malnutrition grave",
+          "Insuffisance rénale ou hépatique"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~3.000 cas/an au Brésil",
+          "mortalidade": "~8% de létalité au Brésil ; jusqu'à 95% si non traitée",
+          "faixaEtaria": "Enfants <10 ans plus touchés",
+          "fatoresRisco": [
+            "Résidence dans une zone endémique",
+            "Présence de chiens infectés",
+            "Malnutrition",
+            "Immunodépression (VIH)",
+            "Conditions socio-économiques précaires"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Les promastigotes inoculés par le phlébotome sont phagocytés par les macrophages, se transformant en amastigotes. Il y a une dissémination par le système réticuloendothélial (rate, foie, moelle osseuse), provoquant une hyperplasie et une infiltration, entraînant des organomégalies et une suppression médullaire.",
+          "citations": [
+            {
+              "refId": "who-leishmaniasis-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Fièvre prolongée irrégulière",
+            "Maigrissement progressif",
+            "Asthénie intense",
+            "Augmentation abdominale (splénomégalie)",
+            "Pâleur (anémie)",
+            "Épistaxis, gingivorragie"
+          ],
+          "sinaisExameFisico": [
+            "Splénomégalie volumineuse (peut dépasser la cicatrice ombilicale)",
+            "Hépatomégalie",
+            "Pâleur cutanéo-muqueuse",
+            "Malnutrition",
+            "Œdème",
+            "Ictère (dans les cas graves)"
+          ],
+          "formasClinicas": [
+            "Forme classique (fièvre, hépatosplénomégalie, pancytopenie)",
+            "Forme oligosymptomatique",
+            "Coinfection LV-VIH"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinique + épidémiologie + confirmation laboratoriale",
+            "Sérologie rK39 ou RIFI ≥1:80",
+            "Parasitologique de moelle osseuse (standard-or)"
+          ],
+          "diagnosticoDiferencial": [
+            "Paludisme",
+            "Fièvre typhoïde",
+            "Schistosomiase hépatosplénique",
+            "Leucémies et lymphomes",
+            "Histoplasmose",
+            "Brucellose",
+            "Mononucléose"
+          ],
+          "examesLaboratoriais": [
+            "Hémogramme (pancytopenie)",
+            "VHS élevée",
+            "Protéines (inversion A/G)",
+            "Sérologie rK39, ELISA, RIFI",
+            "Myélogramme avec recherche de Leishmania",
+            "PCR pour Leishmania"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Élimination du parasite",
+            "Résolution des altérations cliniques et laboratoriales",
+            "Prévention des rechutes"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Support nutritionnel",
+              "Transfusion si nécessaire",
+              "Antibiothérapie pour les infections secondaires"
+            ],
+            "citations": [
+              {
+                "refId": "ms-lv-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Amphotéricine B liposomale",
+                "medicamentos": [
+                  "AmBisome®"
+                ],
+                "posologia": "3mg/kg/jour IV pendant 7 jours",
+                "observacoes": "Préférentielle pour les groupes à risque"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Antimonial pentavalent",
+                "medicamentos": [
+                  "Glucantime® 20mg Sb/kg/jour"
+                ],
+                "posologia": "IM ou IV pendant 20-40 jours",
+                "observacoes": "Cardiotoxicité (surveillance ECG)"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Coinfection VIH",
+                "conduta": "Amphotéricine B liposomale + prophylaxie secondaire + TARV"
+              },
+              {
+                "situacao": "Grossesse",
+                "conduta": "Amphotéricine B liposomale (antimonial contre-indiqué)"
+              },
+              {
+                "situacao": "Rechute",
+                "conduta": "Amphotéricine B liposomale en dose plus forte ou durée plus longue"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-leishmaniasis-2023"
+              }
+            ]
+          },
+          "duracao": "Amphotéricine B liposomale : 7 jours ; Antimonial : 20-40 jours"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Pendant le traitement : quotidien ; après : 3, 6, 12 mois",
+          "examesControle": [
+            "Hémogramme",
+            "Fonction rénale",
+            "Taille de la rate"
+          ],
+          "metasTerapeuticas": [
+            "Guérison clinique en 2-3 mois",
+            "Normalisation hématologique",
+            "Absence de rechute en 1 an"
+          ],
+          "criteriosEncaminhamento": [
+            "Cas graves : hôpital de référence",
+            "Coinfection VIH : infectiologie",
+            "Rechutes : centre de référence"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Contrôle du vecteur (pulvérisation)",
+            "Utilisation de moustiquaires et répulsifs",
+            "Identification et gestion des chiens infectés",
+            "Colliers imprégnés pour les chiens"
+          ],
+          "secundaria": [
+            "Diagnostic et traitement précoces",
+            "Surveillance épidémiologique"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "leishmaniose-visceral-tratamento",
+        "lv-grave"
+      ],
+      "medicamentos": [
+        "anfotericina-b-lipossomal",
+        "glucantime"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-lv-2022"
+        },
+        {
+          "refId": "who-leishmaniasis-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "leptospirose",
+      "titulo": "Leptospirose",
+      "sinonimos": [
+        "Maladie de Weil",
+        "Fièvre des inondations",
+        "Fièvre des rizières"
+      ],
+      "doid": "DOID:2297",
+      "snomedCT": "77377001",
+      "meshId": "D007919",
+      "umlsCui": "C0023364",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "A27",
+        "A27.0",
+        "A27.8",
+        "A27.9"
+      ],
+      "cid11": [
+        "1B91"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Zoonose causée par des spirochètes du genre Leptospira, transmise par l'urine de rongeurs. La forme anictérique (90 %) est autolimitée ; la forme ictérique (Weil) a une mortalité élevée.",
+        "criteriosDiagnosticos": [
+          "Fièvre élevée de début brutal",
+          "Myalgie intense (mollets)",
+          "Suffusion conjonctivale (yeux rouges sans sécrétion)",
+          "Ictère (forme grave)",
+          "Historique d'exposition : inondations, égouts, nettoyage de fosses",
+          "Confirmation : sérologie (MAT) ou PCR"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "bas",
+            "criterios": [
+              "Forme anictérique",
+              "Sans signes d'alarme"
+            ],
+            "conduta": "Traitement ambulatoire"
+          },
+          {
+            "nivel": "élevé",
+            "criterios": [
+              "Ictère",
+              "IRA",
+              "Hémorragie pulmonaire",
+              "Altération du sensibilité"
+            ],
+            "conduta": "USI"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation adéquate",
+            "Support ventilatoire en cas d'hémorragie alvéolaire",
+            "Dialyse en cas d'IRA oligurique",
+            "Transfusion en cas de coagulopathie/hémorragie"
+          ],
+          "farmacologico": [
+            "FORME LÉGÈRE (ambulatoire) :",
+            "Doxycycline 100 mg 12/12h pendant 7 jours OU",
+            "Amoxicilline 500 mg 8/8h pendant 7 jours",
+            "",
+            "FORME GRAVE (hospitalisation) :",
+            "Pénicilline G cristalline 1,5 millions UI IV 6/6h OU",
+            "Céftriaxone 1 g IV 1x/jour OU",
+            "Ampicilline 1 g IV 6/6h",
+            "",
+            "Ne pas retarder l'ATB en attendant la confirmation !"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Contrôle de l'infection",
+          "Support des dysfonctions organiques",
+          "Prévention de l'hémorragie pulmonaire"
+        ],
+        "examesIniciais": [
+          "Hémogramme (leucocytose avec déviation, thrombopénie)",
+          "Fonction rénale (IRA non oligurique)",
+          "Bilirubines (directe augmentée)",
+          "CPK (rhabdomyolyse)",
+          "Coagulogramme",
+          "Radiographie de thorax (infiltrat alvéolaire)",
+          "Sérologie (MAT) - prélever lors de la phase aiguë et de convalescence",
+          "PCR dans le sang (phase initiale)"
+        ],
+        "redFlags": [
+          "Ictère (Bb > 3 mg/dL)",
+          "Insuffisance rénale aiguë",
+          "Hémorragie pulmonaire (hémoptysie, infiltrat diffus)",
+          "Dyspnée/hypoxémie",
+          "Troubles du rythme (myocardite)",
+          "Altération du niveau de conscience",
+          "Choc"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~4.000 cas/année au Brésil",
+          "incidencia": "Pics durant les périodes de pluies/inondations",
+          "mortalidade": "Forme anictérique : <1 % ; Syndrome de Weil : 10-40 %",
+          "faixaEtaria": "Jeunes adultes, travailleurs à risque",
+          "fatoresRisco": [
+            "Contact avec l'eau d'inondation",
+            "Égouts, déchets, fosses",
+            "Travailleurs de l'assainissement, nettoyage urbain",
+            "Agriculteurs (rizières, canne à sucre)",
+            "Contact avec des rongeurs"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Les leptospires pénètrent par les muqueuses ou la peau lésée, se disséminent par voie hématogène. Elles provoquent une vasculite et un dommage endothélial, notamment aux reins (néphrite interstitielle, IRA non oligurique), foie (choléstase), poumons (hémorragie alvéolaire) et muscles.",
+          "citations": [
+            {
+              "refId": "who-leptospirosis-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Fièvre élevée de début brutal",
+            "Myalgie intense (notamment aux mollets)",
+            "Céphalées",
+            "Suffusion conjonctivale",
+            "Nausées, vomissements, diarrhée",
+            "Ictère (forme grave)",
+            "Hémoptysie (hémorragie pulmonaire)"
+          ],
+          "sinaisExameFisico": [
+            "Suffusion conjonctivale (rougeur)",
+            "Ictère rubin (peau orangée)",
+            "Hépatomégalie douloureuse",
+            "Pétéchies",
+            "Crachats pulmonaires"
+          ],
+          "formasClinicas": [
+            "Forme anictérique (90 %) - autolimitée",
+            "Syndrome de Weil (ictère + IRA + hémorragies)",
+            "Syndrome hémorragique pulmonaire grave"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinique + exposition épidémiologique",
+            "Confirmation par MAT (séroconversion) ou PCR"
+          ],
+          "diagnosticoDiferencial": [
+            "Dengue grave",
+            "Fièvre jaune",
+            "Paludisme",
+            "Hépatites virales",
+            "Septicémie",
+            "Hantavirus",
+            "Rickettsioses"
+          ],
+          "examesLaboratoriais": [
+            "Hémogramme",
+            "Bilirubines (directe augmentée)",
+            "Transaminases (généralement <500)",
+            "Uréa, créatinine (IRA)",
+            "CPK (élevée)",
+            "Potassium (hypokaliémie)",
+            "Coagulogramme",
+            "MAT (2 échantillons avec un intervalle de 14 jours)",
+            "PCR sang (phase initiale)"
+          ],
+          "examesImagem": [
+            "Radiographie de thorax (infiltrat alvéolaire en cas d'hémorragie pulmonaire)",
+            "Scanner de thorax en cas d'hypoxémie"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Éliminer la leptospire",
+            "Support des dysfonctions organiques",
+            "Prévenir l'hémorragie pulmonaire"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hydratation soignée",
+              "Ventilation protectrice en cas d'hémorragie pulmonaire",
+              "Dialyse précoce en cas d'IRA",
+              "Transfusion en cas de coagulopathie"
+            ],
+            "citations": [
+              {
+                "refId": "ms-leptospirose-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Ambulatoire",
+                "medicamentos": [
+                  "Doxycycline 100 mg 12/12h",
+                  "Amoxicilline 500 mg 8/8h"
+                ],
+                "posologia": "7 jours"
+              },
+              {
+                "classe": "Hospitalière",
+                "medicamentos": [
+                  "Pénicilline G cristalline 1,5M UI 6/6h IV",
+                  "Céftriaxone 1 g/jour IV"
+                ],
+                "posologia": "7 jours"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Hémorragie pulmonaire",
+                "conduta": "IOT précoce, ventilation protectrice, envisager la méthylprednisolone"
+              },
+              {
+                "situacao": "IRA",
+                "conduta": "Dialyse précoce, éviter l'hyperhydratation"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-leptospirosis-2023"
+              }
+            ]
+          },
+          "duracao": "7 jours d'antibiothérapie"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Réévaluation en 48-72h ; contrôle en 1-2 semaines",
+          "metasTerapeuticas": [
+            "Résolution de la fièvre en 24-48h",
+            "Rétablissement rénal (peut prendre plusieurs semaines)",
+            "Résolution de l'ictère"
+          ],
+          "criteriosEncaminhamento": [
+            "Forme grave : USI",
+            "IRA persistante : néphrologie",
+            "Hémorragie pulmonaire : thérapie intensive"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Éviter le contact avec l'eau d'inondation",
+            "Utilisation de bottes et de gants",
+            "Contrôle des rongeurs",
+            "Assainissement de base",
+            "Doxycycline 200 mg/semaine en cas d'exposition à haut risque"
+          ],
+          "secundaria": [
+            "Diagnostic et traitement précoces",
+            "Notification obligatoire"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "leptospirose-tratamento",
+        "leptospirose-grave"
+      ],
+      "medicamentos": [
+        "doxiciclina",
+        "penicilina-g-cristalina",
+        "ceftriaxona"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-leptospirose-2022"
+        },
+        {
+          "refId": "who-leptospirosis-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "febre-amarela",
+      "titulo": "Fièvre jaune",
+      "sinonimos": [
+        "FJ",
+        "Yellow fever",
+        "Typhus icteroides"
+      ],
+      "doid": "DOID:9682",
+      "snomedCT": "16541001",
+      "meshId": "D015004",
+      "umlsCui": "C0043395",
+      "ciap2": [
+        "A77"
+      ],
+      "cid10": [
+        "A95",
+        "A95.0",
+        "A95.1",
+        "A95.9"
+      ],
+      "cid11": [
+        "1D40"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Maladie virale aiguë causée par un flavivirus, transmise par des moustiques Haemagogus/Sabethes (sylvatique) ou Aedes aegypti (urbain). Peut évoluer vers une forme grave avec icterus, hémorragies et insuffisance multiple d'organes.",
+        "criteriosDiagnosticos": [
+          "Fièvre d'apparition brutale (≤7 jours)",
+          "Icterus et/ou hémorragies",
+          "Épidémiologie compatible (zone à risque, non vacciné)",
+          "Signe de Faget (bradycardie relative malgré la fièvre)",
+          "Confirmation : RT-PCR, isolement viral, IgM (après le 5e jour)",
+          "Histopathologie : corpuscules de Councilman (nécrose hépatique)"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "bas",
+            "criterios": [
+              "Forme légère/modérée",
+              "Sans icterus",
+              "Sans hémorragies"
+            ],
+            "conduta": "Soins ambulatoires avec surveillance"
+          },
+          {
+            "nivel": "très_haut",
+            "criterios": [
+              "Icterus",
+              "Hémorragies",
+              "Oligurie",
+              "Encéphalopathie"
+            ],
+            "conduta": "USI"
+          }
+        ],
+        "tratamentoPrimeiraLigne": {
+          "naoFarmacologico": [
+            "IL N'EXISTE PAS DE TRAITEMENT SPÉCIFIQUE",
+            "Soutien clinique intensif",
+            "Isolement (éviter la transmission par Aedes)",
+            "Repos, hydratation"
+          ],
+          "farmacologico": [
+            "SOUTIEN :",
+            "Hydratation IV",
+            "Antipyrétiques (ÉVITER l'ASA et les AINS)",
+            "Vitamine K en cas de coagulopathie",
+            "Plasma/plaquettes en cas d'hémorragie",
+            "Dialyse en cas d'IRA",
+            "Protection gastrique",
+            "N-acétylcystéine (en étude)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Soutien des dysfonctions organiques",
+          "Prévention des hémorragies",
+          "Maintien de la volemie",
+          "Prévention de la transmission"
+        ],
+        "examesIniciais": [
+          "Hémogramme (leucopénie, thrombopénie)",
+          "Bilirubines (icterus intense)",
+          "Transaminases (très élevées, >1000)",
+          "Coagulogramme (prolongé)",
+          "Uréa, créatinine",
+          "RT-PCR pour la fièvre jaune (jusqu'au 5e jour)",
+          "IgM (après le 5e jour)",
+          "Biopsie hépatique (post-mortem)"
+        ],
+        "redFlags": [
+          "Icterus",
+          "Hémorragies (mélène, hématemèse, gingivorragie)",
+          "Oligurie/anurie",
+          "Encéphalopathie hépatique",
+          "Hypotension/choc",
+          "Transaminases >1000",
+          "Coagulopathie grave"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Flambées récentes au Brésil (2016-2018) : >2 000 cas",
+          "mortalidade": "Forme grave : 20-50 % de létalité",
+          "faixaEtaria": "Tous les âges non vaccinés",
+          "fatoresRisco": [
+            "Non-vaccination",
+            "Résidence/voyage dans une zone à risque",
+            "Activité en zone forestière",
+            "Période de plus forte transmission : janv-mai"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Flavivirus avec tropisme pour les hépatocytes et les cellules endothéliales. Cause une nécrose hépatique centrolobulaire (corpuscules de Councilman), une dysfonction endothéliale, un DIC, un choc et une insuffisance multiple d'organes. La tempête de cytokines contribue à la gravité.",
+          "citations": [
+            {
+              "refId": "who-yellowfever-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Fièvre élevée d'apparition brutale",
+            "Céphalées intenses",
+            "Myalgies",
+            "Nausées, vomissements",
+            "Icterus (forme grave)",
+            "Hémorragies (gingivales, gastro-intestinales)",
+            "Oligurie"
+          ],
+          "sinaisExameFisico": [
+            "Icterus rubiniforme",
+            "Signe de Faget (dissociation pouls-température)",
+            "Hépatomégalie douloureuse",
+            "Pétéchies, ecchymoses",
+            "Somnolence, confusion (encéphalopathie)"
+          ],
+          "formasClinicas": [
+            "Forme légère (majoritaire)",
+            "Forme modérée",
+            "Forme grave (hépatonephro-hémorragique)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinique + épidémiologie",
+            "Confirmation biologique (RT-PCR, sérologie)"
+          ],
+          "diagnosticoDiferencial": [
+            "Leptospirose",
+            "Paludisme grave",
+            "Dengue grave",
+            "Hépatites virales fulminantes",
+            "Septicémie",
+            "Autres fièvres hémorragiques"
+          ],
+          "examesLaboratoriais": [
+            "RT-PCR (jusqu'au 5e jour de la maladie)",
+            "MAC-ELISA IgM (après le 5e jour)",
+            "Hémogramme (leucopénie)",
+            "Transaminases (très élevées)",
+            "Bilirubines",
+            "Coagulogramme (DIC)",
+            "Fonction rénale"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Soutien clinique",
+            "Prévention des complications",
+            "Traitement des dysfonctions organiques"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "USI pour les cas graves",
+              "Hydratation soignée",
+              "Protection gastrique",
+              "Dialyse en cas d'IRA",
+              "Transfusion en cas d'hémorragies",
+              "Isolement (contrôle vectoriel)"
+            ],
+            "citations": [
+              {
+                "refId": "ms-fa-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Soutien",
+                "medicamentos": [
+                  "Hydratation IV",
+                  "Vitamine K",
+                  "Plasma frais congelé"
+                ],
+                "observacoes": "Il n'existe pas d'antiviral spécifique"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Éviter",
+                "conduta": "ASA et AINS (risque d'hémorragie)"
+              },
+              {
+                "situacao": "Encéphalopathie",
+                "conduta": "Lactulose, restriction protéique"
+              },
+              {
+                "situacao": "Expérimental",
+                "conduta": "N-acétylcystéine, sofosbuvir (en étude)"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-yellowfever-2023"
+              }
+            ]
+          },
+          "duracao": "Soutien jusqu'à la résolution de la maladie"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Surveillance continue jusqu'à 14 jours après le début",
+          "metasTerapeuticas": [
+            "Résolution de l'icterus",
+            "Rétablissement rénal",
+            "Normalisation des transaminases (peut prendre plusieurs semaines)"
+          ],
+          "criteriosEncaminhamento": [
+            "Forme grave : USI/hôpital de référence",
+            "Notification obligatoire immédiate"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "VACCINATION (mesure la plus efficace)",
+            "Dose unique à 9 mois et rappel à 4 ans",
+            "Voyageurs : vacciner 10 jours avant",
+            "Contrôle vectoriel",
+            "Protection individuelle (répulsifs, vêtements longs)"
+          ],
+          "secundaria": [
+            "Surveillance épidémiologique",
+            "Recherche active lors de flambées",
+            "Vaccination de blocage"
+          ],
+          "citations": [
+            {
+              "refId": "who-yellowfever-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "febre-amarela-manejo",
+        "fa-grave"
+      ],
+      "medicamentos": [],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-fa-2022"
+        },
+        {
+          "refId": "who-yellowfever-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "esquistossomose",
+      "titulo": "Esquistossomose mansoni",
+      "sinonimos": [
+        "Barriga d'água",
+        "Xistose",
+        "Bilharziose",
+        "Esquistossomose intestinale"
+      ],
+      "doid": "DOID:1395",
+      "snomedCT": "28019009",
+      "meshId": "D012552",
+      "umlsCui": "C0036323",
+      "ciap2": [
+        "D96"
+      ],
+      "cid10": [
+        "B65.1"
+      ],
+      "cid11": [
+        "1F83.1"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Maladie parasitaire causée par Schistosoma mansoni, transmise par les escargots du genre Biomphalaria. Forme aiguë rarement diagnostiquée ; forme hépatosplénique peut causer une hypertension portale.",
+        "criteriosDiagnosticos": [
+          "FORME AIGÜE (Fièvre de Katayama) : Fièvre, urticaire, éosinophilie, exposition récente",
+          "FORME INTESTINALE : Diarrhée intermittente, douleur abdominale",
+          "FORME HÉPATOSPLÉNIQUE : Hépatosplénomégalie, hypertension portale",
+          "Exposition : bain/contacts avec l'eau douce en zone endémique",
+          "Confirmation : œufs dans les selles (Kato-Katz) ou biopsie rectale"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éducation sur la transmission",
+            "Assainissement de base",
+            "Traitement de l'eau",
+            "Contrôle des escargots"
+          ],
+          "farmacologico": [
+            "Praziquantel 50mg/kg dose unique (enfants : 60mg/kg)",
+            "",
+            "Contre-indications :",
+            "- Grossesse (traiter après l'accouchement)",
+            "- Forme aiguë grave (corticoïde avant)",
+            "",
+            "FORME AIGÜE (Katayama) :",
+            "Prédnisone 1mg/kg/jour pendant 5-7 jours, puis praziquantel"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Élimination du parasite",
+          "Prévention de l'évolution vers la forme hépatosplénique",
+          "Contrôle de l'hypertension portale (si déjà installée)"
+        ],
+        "examesIniciaux": [
+          "EPF avec méthode Kato-Katz (3 échantillons)",
+          "Hémogramme (éosinophilie)",
+          "USG d'abdomen (fibrose périportale)",
+          "Fonction hépatique",
+          "Biopsie rectale (si EPF négatif)",
+          "EGD (varices œsophagiennes dans la forme hépatosplénique)"
+        ],
+        "redFlags": [
+          "Hématemèse (rupture de varices)",
+          "Hépatosplénomégalie volumineuse avec hypersplénisme",
+          "Ascite",
+          "Encéphalopathie hépatique",
+          "Glomérulonéphrite schistosomotique",
+          "Myélopathie schistosomotique"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~1,5 millions d'infestés au Brésil",
+          "faixaEtaria": "Jeunes et adultes de zones endémiques",
+          "fatoresRisco": [
+            "Résidence en zone endémique (Nordeste, MG)",
+            "Contact avec les eaux naturelles (rivières, lacs)",
+            "Manque d'assainissement",
+            "Travail agricole en zones inondées"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistossomose-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Les cercaires pénètrent la peau, se transforment en schistosomules et migrent jusqu'au système porte-hépatique. Les vers adultes vivent dans les veines mésentériques ; les œufs provoquent une réaction granulomateuse. Dans la forme hépatosplénique, la fibrose périportale (Symmers) cause une hypertension portale.",
+          "citations": [
+            {
+              "refId": "who-schistosomiasis-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "AGUË : Fièvre, prurit, urticaire, diarrhée, toux",
+            "INTESTINALE : Diarrhée intermittente, coliques, sang/muqueuse dans les selles",
+            "HÉPATOSPLÉNIQUE : Augmentation abdominale, circulation collatérale, hématemèse"
+          ],
+          "sinaisExameFisico": [
+            "Éosinophilie (phase aiguë)",
+            "Hépatomégalie du lobe gauche",
+            "Hépatosplénomégalie",
+            "Circulation collatérale",
+            "Ascite"
+          ],
+          "formasClinicas": [
+            "Forme aiguë (Katayama)",
+            "Forme intestinale",
+            "Forme hépatointestinale",
+            "Forme hépatosplénique compensée",
+            "Forme hépatosplénique décompensée",
+            "Formes ectopiques (neuroschistosomose, pulmonaire)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistossomose-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Épidémiologie + examen parasitologique positif",
+            "USG avec fibrose périportale"
+          ],
+          "diagnosticoDiferencial": [
+            "Cirrhose hépatique",
+            "Leishmaniose viscérale",
+            "Leucémies/lymphomes",
+            "Autres causes d'hypertension portale"
+          ],
+          "examesLaboratoriais": [
+            "EPF Kato-Katz (3 échantillons)",
+            "Biopsie rectale",
+            "Hémogramme (éosinophilie, pancitopénie si hypersplénisme)",
+            "Fonction hépatique (généralement normale)",
+            "Sérologie (IgG)"
+          ],
+          "examesImagem": [
+            "USG d'abdomen (fibrose périportale, hépatosplénomégalie)",
+            "EGD (varices œsophagiennes)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistossomose-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Éliminer le parasite",
+            "Prévenir l'évolution",
+            "Traiter les complications de l'hypertension portale"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Éducation sanitaire",
+              "Amélioration de l'assainissement",
+              "Traitement des varices (ligature, TIPS)",
+              "Splénectomie avec déconnexion azigoportale (cas sélectionnés)"
+            ],
+            "citations": [
+              {
+                "refId": "ms-esquistossomose-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Antischistosomien",
+                "medicamentos": [
+                  "Praziquantel 50-60mg/kg"
+                ],
+                "posologia": "Dose unique",
+                "observacoes": "Guérison ~80%"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Alternative",
+                "medicamentos": [
+                  "Oxamniquine 15mg/kg"
+                ],
+                "posologia": "Dose unique",
+                "observacoes": "Si intolérance au praziquantel"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Forme aiguë",
+                "conduta": "Corticoïde pendant 5-7 jours avant le praziquantel"
+              },
+              {
+                "situacao": "Varices à haut risque",
+                "conduta": "Bêtabloquant (prévention primaire), ligature élastique"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-schistosomiasis-2023"
+              }
+            ]
+          },
+          "duracao": "Dose unique ; contrôle de guérison après 6 mois"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Contrôle de guérison : EPF à 30, 90, 180 jours après le traitement",
+          "metasTerapeuticas": [
+            "Négativation de l'EPF",
+            "Stabilisation de la fibrose",
+            "Contrôle des varices"
+          ],
+          "criteriosEncaminhamento": [
+            "Forme hépatosplénique : gastro-entérologie/hépatologie",
+            "Neuroschistosomose : neurologie",
+            "Varices à haut risque : endoscopie"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistossomose-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Assainissement de base",
+            "Éducation à la santé",
+            "Contrôle des escargots",
+            "Éviter le contact avec les eaux naturelles en zones endémiques"
+          ],
+          "secundaria": [
+            "Diagnostic et traitement précoces",
+            "Enquêtes coproscopiques en zones endémiques",
+            "Traitement collectif en zones à forte prévalence"
+          ],
+          "citations": [
+            {
+              "refId": "who-schistosomiasis-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "esquistossomose-tratamento",
+        "hipertensao-portal-esquistossomotica"
+      ],
+      "medicamentos": [
+        "praziquantel",
+        "oxamniquine"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-esquistossomose-2022"
+        },
+        {
+          "refId": "who-schistosomiasis-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "hanseniase",
+      "titulo": "Hanseníase",
+      "sinonimos": [
+        "Lèpre",
+        "Mal de Hansen",
+        "Morphée"
+      ],
+      "doid": "DOID:1024",
+      "snomedCT": "81004002",
+      "meshId": "D007918",
+      "umlsCui": "C0023343",
+      "ciap2": [
+        "S76"
+      ],
+      "cid10": [
+        "A30",
+        "A30.0",
+        "A30.1",
+        "A30.2",
+        "A30.3",
+        "A30.4",
+        "A30.5",
+        "A30.8",
+        "A30.9"
+      ],
+      "cid11": [
+        "1B21"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Maladie infectieuse chronique causée par le Mycobacterium leprae, affectant la peau et les nerfs périphériques. Classifiée en paucibacillaire (PB) ou multibacillaire (MB) pour les besoins du traitement.",
+        "criteriosDiagnosticos": [
+          "Lésion(s) cutanée(s) avec altération de la sensibilité",
+          "Épaississement de nerf périphérique",
+          "Bacilloscopie positive (en MB)",
+          "CAS DÉFINI : ≥1 des signes cardinaux :",
+          "1. Lésion hypochromique/érythémateuse avec perte de sensibilité",
+          "2. Épaississement de tronc nerveux périphérique",
+          "3. Bacilloscopie positive",
+          "Classification opérationnelle : PB (≤5 lésions) vs MB (>5 lésions ou bacilloscopie +)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éducation sur la maladie (lutte contre le stigmate)",
+            "Soins aux pieds et mains insensibles",
+            "Prévention des incapacités",
+            "Examen des contacts familiaux"
+          ],
+          "farmacologico": [
+            "PAUCIBACILLAIRE (PB - ≤5 lésions) :",
+            "Rifampicine 600 mg dose mensuelle sous surveillance",
+            "Dapsone 100 mg/jour (autoadministrée)",
+            "Durée : 6 doses mensuelles en jusqu'à 9 mois",
+            "",
+            "MULTIBACILLAIRE (MB - >5 lésions) :",
+            "Rifampicine 600 mg dose mensuelle sous surveillance",
+            "Clofazimine 300 mg mensuel + 50 mg/jour",
+            "Dapsone 100 mg/jour",
+            "Durée : 12 doses mensuelles en jusqu'à 18 mois"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Guérison bactériologique",
+          "Prévention des incapacités",
+          "Interruption de la chaîne de transmission"
+        ],
+        "examesIniciais": [
+          "Examen dermatoneurologique complet",
+          "Test de sensibilité (thermique, douloureuse, tactile)",
+          "Bacilloscopie de frottis cutané",
+          "Évaluation du degré d'incapacité physique (0, I, II)",
+          "Biopsie cutanée (cas douteux)",
+          "Électroneuromyographie (si atteinte nerveuse)"
+        ],
+        "redFlags": [
+          "RÉACTION DE TYPE 1 (réaction inverse) : érythème et œdème des lésions, névrite",
+          "RÉACTION DE TYPE 2 (ENH) : fièvre, nodules douloureux, névrite, irite, arthrite",
+          "Névrite aiguë (risque de séquelle)",
+          "Main en griffe, pied tombant",
+          "Ulcères trophiques"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~30 000 nouveaux cas/an au Brésil (2e dans le monde)",
+          "faixaEtaria": "Tous les âges, pic chez les jeunes adultes",
+          "fatoresRisco": [
+            "Contact familial prolongé avec un cas MB non traité",
+            "Conditions socio-économiques précaires",
+            "Immunodépression relative",
+            "Predisposition génétique"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "M. leprae a une tropisme pour les macrophages et les cellules de Schwann. La réponse immunitaire de l'hôte détermine la forme clinique : réponse Th1 (paucibacillaire) vs Th2 (multibacillaire). La destruction neuronale entraîne une perte de sensibilité et des incapacités.",
+          "citations": [
+            {
+              "refId": "who-leprosy-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Macules hypochromiques ou érythémateuses",
+            "Perte de sensibilité dans les lésions",
+            "Fourmillements, engourdissements aux extrémités",
+            "Faiblesse musculaire",
+            "Épaississement des nerfs",
+            "Lésions nodulaires (forme virchowienne)"
+          ],
+          "sinaisExameFisico": [
+            "Lésions cutanées avec anesthésie",
+            "Nerfs épaissis et douloureux à la palpation",
+            "Madarose (perte des sourcils)",
+            "Infiltrat facial (face leonine)",
+            "Atrophie musculaire (interosseux, thenar, hypothenar)",
+            "Main en griffe, pied tombant"
+          ],
+          "formasClinicas": [
+            "Indéterminée (forme initiale)",
+            "Tuberculoïde (paucibacillaire)",
+            "Dimorphe (borderline)",
+            "Virchowienne (multibacillaire)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinique (signes cardinaux)",
+            "Bacilloscopie (+ en MB)",
+            "Histopathologie (si doute)"
+          ],
+          "diagnosticoDiferencial": [
+            "Pityriasis versicolor",
+            "Vitiligo",
+            "Dermatophytoses",
+            "Syphilis secondaire",
+            "Leishmaniose cutanée",
+            "Neurofibromatose",
+            "Autres neuropathies périphériques"
+          ],
+          "examesLaboratoriais": [
+            "Bacilloscopie de frottis cutané",
+            "Biopsie cutanée avec étude histopathologique",
+            "Test de Mitsuda (valeur pronostique)",
+            "PCR pour M. leprae (si disponible)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Guérison de l'infection",
+            "Prévention des incapacités",
+            "Traitement des réactions",
+            "Surveillance des contacts"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Soins personnels (pieds, mains, yeux)",
+              "Kinésithérapie",
+              "Chirurgie reconstructive (si nécessaire)",
+              "Orthèses et prothèses"
+            ],
+            "citations": [
+              {
+                "refId": "ms-hanseniase-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "PQT-PB",
+                "medicamentos": [
+                  "Rifampicine 600 mg/mois",
+                  "Dapsone 100 mg/jour"
+                ],
+                "posologia": "6 doses en jusqu'à 9 mois"
+              },
+              {
+                "classe": "PQT-MB",
+                "medicamentos": [
+                  "Rifampicine 600 mg/mois",
+                  "Clofazimine 300 mg/mois + 50 mg/jour",
+                  "Dapsone 100 mg/jour"
+                ],
+                "posologia": "12 doses en jusqu'à 18 mois"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Réaction de type 1 (réaction inverse)",
+                "conduta": "Prédnisone 1-2 mg/kg/jour avec réduction progressive"
+              },
+              {
+                "situacao": "Réaction de type 2 (ENH)",
+                "conduta": "Thalidomide 100-400 mg/jour (contre-indiquée chez les femmes en âge de procréer) OU Prédnisone"
+              },
+              {
+                "situacao": "Névrite aiguë",
+                "conduta": "Prédnisone + immobilisation ; envisager la décompression nerveuse"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-leprosy-2023"
+              }
+            ]
+          },
+          "duracao": "PB : 6 mois ; MB : 12 mois"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Mensuelle pendant le traitement ; semestrielle pendant 5 ans après la sortie",
+          "examesControle": [
+            "Évaluation neurologique",
+            "Degré d'incapacité",
+            "Bacilloscopie (MB)"
+          ],
+          "metasTerapeuticas": [
+            "Compléter le schéma thérapeutique",
+            "Maintenir le degré d'incapacité",
+            "Identifier et traiter les réactions",
+            "Examiner et traiter les contacts"
+          ],
+          "criteriosEncaminhamento": [
+            "Réactions graves : centre de référence",
+            "Incapacités : kinésithérapie/chirurgie",
+            "Résistance aux médicaments : centre de référence"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Examen des contacts familiaux",
+            "BCG chez les contacts",
+            "Éducation sanitaire",
+            "Amélioration des conditions de vie"
+          ],
+          "secundaria": [
+            "Diagnostic précoce",
+            "Traitement adéquat",
+            "Prévention des incapacités"
+          ],
+          "citations": [
+            {
+              "refId": "who-leprosy-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "hanseniase-tratamento",
+        "reacao-hanseniase"
+      ],
+      "medicamentos": [
+        "rifampicina",
+        "dapsona",
+        "clofazimina",
+        "prednisona",
+        "talidomida"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-hanseniase-2022"
+        },
+        {
+          "refId": "who-leprosy-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "raiva-humana",
+      "titulo": "Rage Humaine",
+      "sinonimos": [
+        "Hydrophobie",
+        "Rage"
+      ],
+      "doid": "DOID:11260",
+      "snomedCT": "14168008",
+      "meshId": "D011818",
+      "umlsCui": "C0034494",
+      "ciap2": [
+        "A77"
+      ],
+      "cid10": [
+        "A82",
+        "A82.0",
+        "A82.1",
+        "A82.9"
+      ],
+      "cid11": [
+        "1C82"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Encéphalite virale aiguë causée par le virus de la rage (Lyssavirus), transmise par la morsure d'animaux infectés. Virtuellement 100 % fatale après l'apparition des symptômes. PRÉVENABLE par prophylaxie post-exposition.",
+        "criteriosDiagnosticos": [
+          "Historique d'exposition : morsure/égratignure d'un animal suspect ou d'une chauve-souris",
+          "Période d'incubation : 20-90 jours (variable : 4 jours à plusieurs années)",
+          "Symptômes prodromiques : fièvre, malaise, paresthésies locales",
+          "Phase neurologique : agitation, hydrophobie, aérophobie, hypersalivation",
+          "Confirmation : IFD, isolement viral, RT-PCR, Sellers post-mortem"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "PRÉVENTION POST-EXPOSITION (avant l'apparition des symptômes) :",
+            "Lavage immédiat de la blessure avec de l'eau et du savon (15 minutes)",
+            "NE PAS suturer la blessure",
+            "Évaluation de l'animal (observation de 10 jours si chien/chat)",
+            "Prophylaxie selon le protocole du MS"
+          ],
+          "farmacologico": [
+            "PROPHYLAXIE POST-EXPOSITION :",
+            "VACCIN : 4 doses (J0, J3, J7, J14) IM deltoïde",
+            "SERUM/IMMUNOGLOBULINE : SAR ou IGHAR au site de la lésion",
+            "Indication du sérum : lésions graves (tête, cou, mains), muqueuses, morsure de chauve-souris",
+            "",
+            "Après l'apparition des symptômes : TRAITEMENT DE SOUTIEN",
+            "Protocole de Milwaukee (controversé, rarissimes survivants)",
+            "USI, sédation profonde, antiviraux"
+          ]
+        },
+        "metasTerapeuticas": [
+          "PRÉVENTION : prophylaxie post-exposition adéquate",
+          "Si symptomatique : soutien palliatif",
+          "Protection du personnel soignant"
+        ],
+        "examesIniciais": [
+          "Imprint de la cornée avec IFD",
+          "Biopsie de peau de la nuque (follicule pileux)",
+          "RT-PCR de la salive, LCR",
+          "Nécropsie de l'animal agresseur (si possible)",
+          "LCR : pléocytose lymphocytaire"
+        ],
+        "redFlags": [
+          "Morsure de chauve-souris (même sans lésion visible)",
+          "Animal mort ou disparu",
+          "Lésions au visage, tête, cou, mains",
+          "Multiples morsures",
+          "Retard dans la prophylaxie"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~60.000 décès/an dans le monde (majorité Asie/Afrique)",
+          "incidencia": "Au Brésil : <10 cas/an (majorité transmission par chauves-souris)",
+          "mortalidade": "~100 % après l'apparition des symptômes",
+          "fatoresRisco": [
+            "Contact avec des animaux sauvages (chauves-souris)",
+            "Chiens et chats non vaccinés",
+            " Zones rurales",
+            "Professionnels exposés (vétérinaires, biologistes)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-raiva-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Le virus pénètre par la blessure, se réplique dans le muscle, remonte par les nerfs périphériques jusqu'au SNC. Dans l'encéphale, il provoque une encéphalite diffuse avec des corpuscules de Negri. Il se dissémine vers les glandes salivaires (transmission). La mort survient par insuffisance respiratoire/cardiovasculaire.",
+          "citations": [
+            {
+              "refId": "who-rabies-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Prodrome : fièvre, céphalées, malaise, paresthésies locales",
+            "Phase furieuse : agitation, hydrophobie, aérophobie, hypersalivation",
+            "Phase paralytique : paralysie flasque ascendante",
+            "Coma et décès"
+          ],
+          "sinaisExameFisico": [
+            "Spasmes pharyngés lors de la tentative de boire (hydrophobie)",
+            "Spasmes avec un courant d'air (aérophobie)",
+            "Hypersalivation",
+            "Agitation psychomotrice",
+            "Paralysie, aréflexie (forme paralytique)",
+            "Dysfonctionnement autonome"
+          ],
+          "formasClinicas": [
+            "Forme furieuse (encéphalique) - la plus courante",
+            "Forme paralytique (similaire à la syndrome de Guillain-Barré)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-raiva-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinique + exposition épidémiologique",
+            "Confirmation laboratoriale (IFD, PCR, isolement)"
+          ],
+          "diagnosticoDiferencial": [
+            "Encéphalites virales autres",
+            "Tétanos",
+            "Syndrome de Guillain-Barré",
+            "Botulisme",
+            "Hystérie (rarement)"
+          ],
+          "examesLaboratoriais": [
+            "IFD de l'impression de la cornée ou biopsie de la nuque",
+            "RT-PCR de la salive, biopsie, LCR",
+            "Isolement viral",
+            "LCR : pléocytose lymphocytaire, protéine élevée",
+            "Anticorps neutralisants (chez les non vaccinés)",
+            "Post-mortem : corpuscules de Negri"
+          ],
+          "citations": [
+            {
+              "refId": "who-rabies-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "LA PRÉVENTION est le focus principal",
+            "Soutien palliatif si symptomatique"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Lavage de la blessure (très important)",
+              "Observation de l'animal (10 jours pour chien/chat)",
+              "Soutien intensif (si symptomatique)"
+            ],
+            "citations": [
+              {
+                "refId": "ms-raiva-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Vaccin antirabique",
+                "medicamentos": [
+                  "Vaccin de culture cellulaire (Vero ou HDCV)"
+                ],
+                "posologia": "J0, J3, J7, J14 (ou schéma alternatif)"
+              },
+              {
+                "classe": "Immunoprophylaxie passive",
+                "medicamentos": [
+                  "SAR (séro antirabique) 40 UI/kg",
+                  "IGHAR 20 UI/kg"
+                ],
+                "posologia": "Dose unique, infiltrer au site de la blessure"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Morsure de chauve-souris",
+                "conduta": "Toujours indiquer vaccin + sérum"
+              },
+              {
+                "situacao": "Immunodéprimé",
+                "conduta": "5 doses de vaccin + sérum + sérologie de contrôle"
+              },
+              {
+                "situacao": "Réexposition",
+                "conduta": "2 doses (J0, J3) si vaccination préalable complète"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-rabies-2023"
+              }
+            ]
+          },
+          "duracao": "Prophylaxie : schéma complet ; Traitement symptomatique : jusqu'au décès"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Suivi jusqu'à la complétion du schéma vaccinal",
+          "metasTerapeuticas": [
+            "Compléter la prophylaxie post-exposition",
+            "Surveiller les effets indésirables du vaccin/sérum"
+          ],
+          "criteriosEncaminhamento": [
+            "Symptomatique : hôpital de référence",
+            "Réaction indésirable grave : CRIE"
+          ],
+          "citations": [
+            {
+              "refId": "ms-raiva-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Vaccination des chiens et chats",
+            "Éviter le contact avec les animaux sauvages",
+            "Prophylaxie pré-exposition chez les professionnels à risque",
+            "Contrôle des chauves-souris dans les zones urbaines"
+          ],
+          "secundaria": [
+            "Prophylaxie post-exposition adéquate et opportune",
+            "Observation de l'animal agresseur",
+            "Notification obligatoire"
+          ],
+          "citations": [
+            {
+              "refId": "who-rabies-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "raiva-profilaxia-pos-exposicao",
+        "esquema-vacinal-raiva"
+      ],
+      "medicamentos": [
+        "vacina-antirrabica",
+        "soro-antirrabico",
+        "imunoglobulina-antirrabica"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-raiva-2022"
+        },
+        {
+          "refId": "who-rabies-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

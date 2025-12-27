@@ -1,0 +1,682 @@
+{
+  "locale": "fr",
+  "category": "urologico",
+  "generatedAt": "2025-12-27T22:46:44.907Z",
+  "count": 3,
+  "diseases": [
+    {
+      "id": "doenca-renal-cronica",
+      "titulo": "Maladie rénale chronique",
+      "sinonimos": [
+        "MRC",
+        "Insuffisance rénale chronique",
+        "Néphropathie chronique"
+      ],
+      "doid": "DOID:784",
+      "snomedCT": "709044004",
+      "meshId": "D051436",
+      "umlsCui": "C1561643",
+      "ciap2": [
+        "U99"
+      ],
+      "cid10": [
+        "N18"
+      ],
+      "cid11": [
+        "GB61"
+      ],
+      "categoria": "urologico",
+      "quickView": {
+        "definicao": "Anomalie de la structure ou de la fonction rénale présente depuis plus de 3 mois, avec des implications pour la santé. Définie par un DFG <60 mL/min/1,73m² et/ou des marqueurs de lésion rénale (albuminurie, altérations du dépôt, histopathologie, imagerie, transplantation).",
+        "criteriosDiagnosticos": [
+          "CRITÈRES KDIGO 2024:",
+          "DFG <60 mL/min/1,73m² pendant ≥3 mois OU",
+          "Marqueurs de lésion rénale pendant ≥3 mois :",
+          "- Albuminurie (ACR ≥30 mg/g)",
+          "- Altérations du dépôt urinaire",
+          "- Troubles électrolytiques (acidose, hyperkaliémie)",
+          "- Altérations histologiques",
+          "- Altérations structurelles (imagerie)",
+          "- Histoire de transplantation rénale"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Contrôle du poids",
+            "Régime hypersonique (<2g/jour de sodium)",
+            "Restriction protéique modérée (0,8 g/kg/jour en stades 3-5)",
+            "Activité physique régulière",
+            "Arrêt du tabagisme",
+            "Éviter les néphrotoxiques (AINS, contraste)"
+          ],
+          "farmacologico": [
+            "iECA ou BRA (protection rénale, en particulier si albuminurie)",
+            "iSGLT2 (Dapagliflozine 10mg/jour ou Empagliflozine) - nouvelle ligne de première intention",
+            "Statine (MRC = haut risque CV)",
+            "Contrôle de la PA (<130/80 mmHg)",
+            "Contrôle glycémique si DM (HbA1c <7%)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "PA <130/80 mmHg",
+          "Réduction de l'albuminurie de ≥30%",
+          "HbA1c <7% (si DM)",
+          "LDL <70 mg/dL",
+          "Retarder la progression de la MRC"
+        ],
+        "examesIniciais": [
+          "Créatinine sérique + calcul de DFG (CKD-EPI)",
+          "Albuminurie (rapport albumine/créatinine - ACR)",
+          "Examen d'urine (EAS)",
+          "Électrolytes (Na, K, Ca, P, Mg)",
+          "Hémogramme (anémie)",
+          "USG rénale",
+          "PTH, vitamine D (stades 3-5)"
+        ],
+        "redFlags": [
+          "Hyperkaliémie grave (K >6,5 mEq/L)",
+          "Œdème pulmonaire réfractaire",
+          "Péricardite urémique",
+          "Encéphalopathie urémique",
+          "Acidose métabolique grave",
+          "Saignement urémique",
+          "Chute rapide de DFG (>5 mL/min/an)",
+          "Hématurie macroscopique"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "10-15% de la population adulte mondiale présente un certain degré de MRC",
+          "incidencia": "En augmentation due au DM et à l'HAT",
+          "faixaEtaria": "Augmente avec l'âge, pic >60 ans",
+          "fatoresRisco": [
+            "Diabète de type 2 (cause #1)",
+            "Hypertension artérielle (cause #2)",
+            "Maladie cardiovasculaire",
+            "Obésité",
+            "Tabagisme",
+            "Âge avancé",
+            "Antécédents familiaux",
+            "Néphrotoxiques (AINS, contrastes)"
+          ],
+          "citations": [
+            {
+              "refId": "kdigo-ckd-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Perte progressive de néphrons entraînant une hyperfiltration adaptative des restants, aboutissant à une sclérose glomérulaire et une fibrose interstitielle. Le système rénine-angiotensine-aldostérone et l'hyperglycémie aggravent la lésion. La progression cause une urémie, des troubles hydro-électrolytiques, une anémie, une maladie osseuse et un risque cardiovasculaire élevé.",
+          "citations": [
+            {
+              "refId": "kdigo-ckd-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Stades initiaux : généralement asymptomatique",
+            "Fatigue et faiblesse",
+            "Œdème (membres, péri-orbital)",
+            "Dyspnée (congestion)",
+            "Nausées, anorexie, perte de poids",
+            "Prurit",
+            "Nycturie, oligurie (tardive)"
+          ],
+          "sinaisExameFisico": [
+            "Hypertension artérielle",
+            "Pâleur (anémie)",
+            "Œdème",
+            "Haleine urémique",
+            "Altérations cutanées (xérose, prurit)",
+            "Frottement péricardique (péricardite urémique - avancé)"
+          ],
+          "formasClinicas": [
+            "MRC stade 1 : DFG ≥90 + lésion rénale",
+            "MRC stade 2 : DFG 60-89 + lésion rénale",
+            "MRC stade 3a : DFG 45-59",
+            "MRC stade 3b : DFG 30-44",
+            "MRC stade 4 : DFG 15-29",
+            "MRC stade 5 : DFG <15 (DRT)"
+          ],
+          "citations": [
+            {
+              "refId": "kdigo-ckd-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "DFG <60 pendant ≥3 mois",
+            "OU marqueurs de lésion rénale ≥3 mois",
+            "Classer par stade (DFG) et catégorie d'albuminurie (A1-A3)"
+          ],
+          "diagnosticoDiferencial": [
+            "Lésion rénale aiguë (réversible)",
+            "Glomérulonéphrite active",
+            "Néphrite interstitielle",
+            "Néphropathie obstructive"
+          ],
+          "examesLaboratoriais": [
+            "Créatinine + DFG (CKD-EPI)",
+            "Albuminurie (ACR)",
+            "EAS",
+            "Électrolytes, calcium, phosphore, PTH",
+            "Hémogramme, ferritine, saturation de transferrine",
+            "Profil lipidique, HbA1c"
+          ],
+          "citations": [
+            {
+              "refId": "kdigo-ckd-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Retarder la progression",
+            "Réduire le risque cardiovasculaire",
+            "Traiter les complications",
+            "Préparer à la TRS si nécessaire"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Régime hypersonique",
+              "Restriction protéique modérée",
+              "Contrôle du poids",
+              "Activité physique",
+              "Arrêt du tabagisme",
+              "Éviter les néphrotoxiques"
+            ],
+            "citations": [
+              {
+                "refId": "kdigo-ckd-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "iECA ou BRA",
+                "medicamentos": [
+                  "Enalapril",
+                  "Losartan"
+                ],
+                "posologia": "Enalapril 10-40mg/jour ou Losartan 50-100mg/jour. Titrer selon PA et K."
+              },
+              {
+                "classe": "iSGLT2",
+                "medicamentos": [
+                  "Dapagliflozine",
+                  "Empagliflozine"
+                ],
+                "posologia": "Dapa 10mg/jour. Bénéfice même sans DM (DAPA-CKD)."
+              },
+              {
+                "classe": "Statine",
+                "medicamentos": [
+                  "Atorvastatine",
+                  "Rosuvastatine"
+                ],
+                "posologia": "Tous les patients avec MRC doivent utiliser (haut risque CV)."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Antagoniste de minéralocorticoïde",
+                "medicamentos": [
+                  "Finéronone"
+                ],
+                "posologia": "Finéronone 10-20mg/jour (MRC + DM avec albuminurie)."
+              },
+              {
+                "classe": "Érythropoïétine",
+                "medicamentos": [
+                  "Époétine alfa"
+                ],
+                "posologia": "Si Hb <10 g/dL (après correction du fer)."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Hyperkaliémie",
+                "conduta": "Restriction de K alimentaire. Patiromer ou cyclodésilicate de zirconium. Ajuster iECA/BRA."
+              },
+              {
+                "situacao": "Anémie de la MRC",
+                "conduta": "Fer IV si ferritine <100 ou sat <20%. EPO si Hb <10."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "kdigo-ckd-2024"
+              }
+            ]
+          },
+          "duracao": "Traitement chronique et progressif."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Stade 1-2 : annuelle. Stade 3 : semestrielle. Stade 4-5 : trimestrielle ou plus.",
+          "examesControle": [
+            "Créatinine, DFG, électrolytes",
+            "ACR annuelle ou plus",
+            "Hémogramme, ferritine",
+            "PTH, Ca, P (stades 3-5)"
+          ],
+          "metasTerapeuticas": [
+            "PA <130/80",
+            "Albuminurie réduite",
+            "DFG stable",
+            "Hb 10-12 g/dL",
+            "PTH contrôlé"
+          ],
+          "criteriosEncaminhamento": [
+            "DFG <30 (néphrologie)",
+            "Chute rapide de DFG",
+            "Albuminurie grave (A3)",
+            "Hyperkaliémie récurrente",
+            "Préparation à la dialyse/transplantation"
+          ],
+          "citations": [
+            {
+              "refId": "kdigo-ckd-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Contrôle du DM et de l'HAT",
+            "Éviter l'obésité",
+            "Éviter les néphrotoxiques"
+          ],
+          "secundaria": [
+            "Dépistage de la MRC chez les patients DM, HAT",
+            "Traitement précoce et agressif"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "drc-estagiamento"
+      ],
+      "medicamentos": [
+        "enalapril",
+        "losartan",
+        "dapagliflozine",
+        "atorvastatine"
+      ],
+      "calculadoras": [
+        "ckd-epi",
+        "mdrd",
+        "cockcroft-gault"
+      ],
+      "rastreamentos": [
+        "rastreamento-drc"
+      ],
+      "citations": [
+        {
+          "refId": "kdigo-ckd-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "mrc",
+        "insuffisance-renale",
+        "dfg",
+        "albuminurie",
+        "isglt2"
+      ]
+    },
+    {
+      "id": "nefrolitiase",
+      "titulo": "Néphrolithiase",
+      "sinonimos": [
+        "Calcul rénal",
+        "Pierre aux reins",
+        "Urolithiase",
+        "Lithiase urinaire"
+      ],
+      "doid": "DOID:585",
+      "snomedCT": "95570007",
+      "meshId": "D007669",
+      "umlsCui": "C0022650",
+      "ciap2": [
+        "U95"
+      ],
+      "cid10": [
+        "N20"
+      ],
+      "cid11": [
+        "GB70"
+      ],
+      "categoria": "urologico",
+      "quickView": {
+        "definicao": "Présence de calculs dans le tractus urinaire (reins, uretère, vessie). L'oxalate de calcium est le plus courant (70-80 %). La douleur en colique est le symptôme cardinal. Taux élevé de récurrence (50 % en 5 ans).",
+        "criteriosDiagnosticos": [
+          "Tableau clinique typique : Douleur en colique lombaire/flanc irradiant vers la fosse iliaque/génital",
+          "Nausées, vomissements, agitation",
+          "Hématurie (micro ou macroscopique)",
+          "Confirmation par imagerie :",
+          "- TDM abdominale sans contraste : référence-or",
+          "- Échographie : détecte les calculs rénaux et la dilatation urétérale"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hydratation (2-3 L/jour après la phase aiguë)",
+            "Régime équilibré (ne pas restreindre le calcium !)",
+            "Réduire le sodium et la protéine animale",
+            "Réduire l'oxalate (épinards, chocolat, thé)",
+            "Activité physique"
+          ],
+          "farmacologico": [
+            "DOULEUR AIGUE (colique) :",
+            "AINS : Cétoprofène 100 mg IV/IM ou Diclofénac 75 mg IM (1ère ligne)",
+            "Dipyrone 1-2 g IV",
+            "Opioïde : Tramadol ou Morphine si réfractaire",
+            "Alpha-bloquant : Tamsulosine 0,4 mg/jour (thérapie expulsive pour les calculs de 5-10 mm)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Soulagement de la douleur",
+          "Élimination du calcul",
+          "Préservation de la fonction rénale",
+          "Prévention de la récurrence"
+        ],
+        "examesIniciais": [
+          "EAS (hématurie, cristallurie)",
+          "Créatinine, urée",
+          "Hémogramme (éliminer une infection)",
+          "TDM abdominale sans contraste (référence-or)",
+          "Échographie si grossesse ou indisponibilité de TDM",
+          "Calcium, acide urique, PTH (investigation métabolique)"
+        ],
+        "redFlags": [
+          "Fièvre (pyélonéphrite obstructive - urgence urologique !)",
+          "Anurie ou oligurie (obstruction bilatérale ou rein unique)",
+          "Douleur réfractaire aux analgésiques",
+          "Septicémie urinaire",
+          "Lésion rénale aiguë",
+          "Calcul >10 mm (faible chance d'expulsion spontanée)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "5-15 % de la population aura un calcul rénal dans sa vie",
+          "incidencia": "100-200 cas/100 000 personnes/an",
+          "faixaEtaria": "Pic entre 30-60 ans",
+          "fatoresRisco": [
+            "Antécédents de calcul (récurrence 50 % en 5 ans)",
+            "Antécédents familiaux",
+            "Faible apport hydrique",
+            "Régime riche en sodium et protéines animales",
+            "Obésité",
+            "Syndrome métabolique",
+            "Hyperparathyroïdie",
+            "Infections urinaires récurrentes",
+            "Certaines chirurgies (bariatrique)"
+          ],
+          "citations": [
+            {
+              "refId": "eau-urolithiasis-2023"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Sursturation urinaire avec des sels lithogéniques (calcium, oxalate, acide urique, phosphate) dépasse les inhibiteurs naturels (citrates, magnésium). Nucleation, agrégation et croissance cristalline forment le calcul. Les facteurs métaboliques (hypercalciurie, hyperuricémie, hypocitraturie) et anatomiques contribuent.",
+          "citations": [
+            {
+              "refId": "eau-urolithiasis-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Douleur en colique (lombaire/flanc irradiant vers l'aine)",
+            "Douleur soudaine, intense, en vagues",
+            "Nausées et vomissements",
+            "Agitation psychomotrice",
+            "Hématurie",
+            "Dysurie, urgences (si calcul distal)"
+          ],
+          "sinaisExameFisico": [
+            "Coude de percussion lombaire positif (Giordano)",
+            "Patient agité (ne peut pas rester immobile)",
+            "Pas de signes d'irritation péritoñale",
+            "Fièvre suggère une infection associée"
+          ],
+          "formasClinicas": [
+            "Calcul de calcium (oxalate, phosphate) - 70-80 %",
+            "Calcul d'acide urique - 5-10 %",
+            "Calcul d'estrubite (infectieux) - 5-15 %",
+            "Calcul de cystine - 1-2 %"
+          ],
+          "citations": [
+            {
+              "refId": "eau-urolithiasis-2023"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clinique typique + image confirmatoire",
+            "TDM sans contraste : référence-or (sensibilité >95 %)",
+            "Échographie : premier choix chez la femme enceinte, les enfants, le suivi"
+          ],
+          "diagnosticoDiferencial": [
+            "Pyélonéphrite",
+            "Appendicite",
+            "Diverticulite",
+            "Colique biliaire",
+            "Dissection de l'aorte",
+            "Grossesse extra-utérine",
+            "Torsion du testicule/ovaire"
+          ],
+          "examesLaboratoriais": [
+            "EAS (hématurie dans 85 % des cas)",
+            "Créatinine",
+            "Hémogramme, VHS (infection)",
+            "Culture d'urine",
+            "Investigation métabolique : Ca, P, acide urique, PTH, citrate urinaire, oxalate urinaire"
+          ],
+          "citations": [
+            {
+              "refId": "eau-urolithiasis-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Soulager la douleur",
+            "Faciliter l'expulsion du calcul",
+            "Traiter l'obstruction/infection",
+            "Prévenir la récurrence"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hydratation (2,5-3 L/jour)",
+              "Régime équilibré",
+              "Ne pas restreindre le calcium (contre-productif)",
+              "Réduire le sodium <2 g/jour",
+              "Réduire la protéine animale"
+            ],
+            "citations": [
+              {
+                "refId": "eau-urolithiasis-2023"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "AINS",
+                "medicamentos": [
+                  "Cétoprofène",
+                  "Diclofénac",
+                  "Cétorolac"
+                ],
+                "posologia": "Cétoprofène 100 mg IV/IM. Diclofénac 75 mg IM. Première ligne pour la colique."
+              },
+              {
+                "classe": "Thérapie expulsive médicale",
+                "medicamentos": [
+                  "Tamsulosine"
+                ],
+                "posologia": "Tamsulosine 0,4 mg/jour pendant 4-6 semaines. Calculs urétéraux de 5-10 mm."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Opioïdes",
+                "medicamentos": [
+                  "Tramadol",
+                  "Morphine"
+                ],
+                "posologia": "Tramadol 50-100 mg IV ou Morphine 2-5 mg IV. Si réfractaire aux AINS."
+              },
+              {
+                "classe": "Prévention de la récurrence",
+                "medicamentos": [
+                  "Citrate de potassium",
+                  "Thiazidique",
+                  "Allopurinol"
+                ],
+                "posologia": "Citrate de K 20-60 mEq/jour. Thiazidique pour l'hypercalciurie. Allopurinol pour l'hyperuricémie."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Calcul >10 mm ou obstruction avec infection",
+                "conduta": "Intervention urologique : LECO, uretéroscopie, néphrolithotripsie."
+              },
+              {
+                "situacao": "Calcul d'acide urique",
+                "conduta": "Alcalinisation urinaire (pH 6,5-7) + hydratation peut dissoudre."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "eau-urolithiasis-2023"
+              }
+            ]
+          },
+          "duracao": "Aigu : quelques jours. Prévention : continue."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Réévaluation à 2-4 semaines après la colique",
+          "examesControle": [
+            "Imagerie pour confirmer l'expulsion",
+            "Investigation métabolique si récurrent",
+            "Analyse du calcul (si disponible)"
+          ],
+          "metasTerapeuticas": [
+            "Expulsion du calcul",
+            "Volume urinaire >2 L/jour",
+            "Prévention de la récurrence"
+          ],
+          "criteriosEncaminhamento": [
+            "Calcul >10 mm",
+            "Fièvre + obstruction (urgence !)",
+            "Échec de l'expulsion",
+            "Calculs récurrents",
+            "Rein unique ou transplanté"
+          ],
+          "citations": [
+            {
+              "refId": "eau-urolithiasis-2023"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Apport hydrique adéquat (>2,5 L/jour)",
+            "Régime équilibré",
+            "Éviter l'excès de sodium"
+          ],
+          "secundaria": [
+            "Investigation métabolique",
+            "Traitement spécifique selon le type de calcul",
+            "Citrate de potassium"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "cetoprofeno",
+        "diclofenaco",
+        "tansulosina",
+        "citrato-potassio"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "eau-urolithiasis-2023"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "néphrolithiase",
+        "calcul-rénal",
+        "colique",
+        "urologie",
+        "oxalate"
+      ]
+    },
+    {
+      "id": "incontinencia-urgencia",
+      "titulo": "Incontinence urinaire d'urgence",
+      "sinonimos": [
+        "Vessie hyperactive"
+      ],
+      "ciap2": [
+        "U02"
+      ],
+      "cid10": [
+        "N39.3"
+      ],
+      "cid11": [
+        "GC40"
+      ],
+      "categoria": "urologico",
+      "doid": "DOID:11628",
+      "snomedCT": "126906006",
+      "meshId": "D014547",
+      "umlsCui": "C0020538",
+      "tags": [
+        "urologique",
+        "commun",
+        "gériatrique"
+      ],
+      "quickView": {
+        "definicao": "Perte involontaire d'urine associée à l'urgence mictionnelle. Cause : contractions involontaires du détrusor ( vessie hyperactive).",
+        "criteriosDiagnosticos": [
+          "Perte d'urine avec urgence",
+          "Fréquence mictionnelle augmentée",
+          "Nycturie",
+          "Un journal mictionnel peut aider au diagnostic"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Exercices de Kegel",
+            "Rééducation vésicale",
+            "Modifications comportementales",
+            "Réduire la caféine/l'alcool"
+          ],
+          "farmacologico": [
+            "Anticholinergiques: Oxybutinine 5mg 2x/jour",
+            "Ou Solifénacine 5-10mg/jour",
+            "Ou Tolterodine 2mg 2x/jour"
+          ]
+        },
+        "redFlags": [
+          "Incontinence d'effort (différentiel)",
+          "Hématurie",
+          "Infection urinaire récurrente",
+          "Symptômes neurologiques"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

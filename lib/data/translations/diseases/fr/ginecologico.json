@@ -1,0 +1,148 @@
+{
+  "locale": "fr",
+  "category": "ginecologico",
+  "generatedAt": "2025-12-27T22:46:44.910Z",
+  "count": 2,
+  "diseases": [
+    {
+      "id": "doenca-inflamatoria-pelvica",
+      "titulo": "Maladie inflammatoire pelvienne",
+      "sinonimos": [
+        "MIP",
+        "Salpingite",
+        "Annexe"
+      ],
+      "ciap2": [
+        "X74"
+      ],
+      "cid10": [
+        "N73",
+        "N74"
+      ],
+      "cid11": [
+        "GA06"
+      ],
+      "doid": "DOID:1003",
+      "snomedCT": "198130006",
+      "meshId": "D000292",
+      "umlsCui": "C0242172",
+      "categoria": "ginecologico",
+      "quickView": {
+        "definicao": "Infection ascendante du tractus génital supérieur (endométrite, salpingite, abcès tubo-ovarien). Généralement polymicrobienne, incluant la Chlamydia et la Gonorrhée.",
+        "criteriosDiagnosticos": [
+          "Douleur pelvienne/basse abdominale",
+          "Douleur à la mobilisation du col utérin",
+          "Douleur annexe à la palpation",
+          "Critères supplémentaires : fièvre, sécrétion muco-purulente, leucocytose"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Repos",
+            "Abstinence sexuelle pendant le traitement",
+            "Traiter le partenaire(s)"
+          ],
+          "farmacologico": [
+            "Ambulatoire (léger/modéré) : Ceftriaxone 500mg IM + Doxycycline 100mg toutes les 12 heures pendant 14 jours + Métronidazole 500mg toutes les 12 heures pendant 14 jours",
+            "Hospitalier (grave) : IV jusqu'à l'amélioration, puis par voie orale",
+            "Chirurgie si l'abcès ne répond pas"
+          ]
+        },
+        "redFlags": [
+          "Abcès tubo-ovarien",
+          "Péritonite",
+          "Septicémie",
+          "Non-réponse en 72 heures"
+        ],
+        "metasTerapeuticas": [
+          "Éradication de l'infection",
+          "Prévention des séquelles (infertilité, grossesse extra-utérine)"
+        ],
+        "examesIniciais": [
+          "Test pour la Chlamydia/Gonorrhée",
+          "Échographie transvaginale",
+          "Hémogramme",
+          "PCR"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "ceftriaxone",
+        "doxycycline",
+        "metronidazole"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "IST",
+        "urgence",
+        "infertilité"
+      ]
+    },
+    {
+      "id": "mastite-lactacional",
+      "titulo": "Mastite lactationnelle",
+      "sinonimos": [
+        "Mastite puerpérale"
+      ],
+      "ciap2": [
+        "W94"
+      ],
+      "cid10": [
+        "O91.1"
+      ],
+      "cid11": [
+        "JB42.2"
+      ],
+      "doid": "DOID:10690",
+      "snomedCT": "45198002",
+      "meshId": "D008413",
+      "umlsCui": "C0024894",
+      "categoria": "ginecologico",
+      "quickView": {
+        "definicao": "Inflammation mammaire pendant l'allaitement, généralement due à la stase lactée et/ou à une infection bactérienne (S. aureus). Pic : 2-3 semaines post-partum.",
+        "criteriosDiagnosticos": [
+          "Douleur mammaire localisée, érythème, chaleur",
+          "Fièvre ≥38,5°C, malaise",
+          "Masse flottante suggère un abcès",
+          "Généralement unilatéral"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "CONTINUER L'ALLAITEMENT (essentiel)",
+            "Vide fréquent de la mamelle",
+            "Compresse chaude avant l'allaitement",
+            "Compresse froide après pour le confort"
+          ],
+          "farmacologico": [
+            "Analgésique : Ibuprofène 400mg 8/8h ou Paracétamol",
+            "Antibiotique si pas d'amélioration en 24-48h ou symptômes systémiques : Céfalexine 500mg 6/6h pendant 10-14 jours",
+            "Alternative : Amoxicilline-clavulanate"
+          ]
+        },
+        "redFlags": [
+          "Abcès (drainer)",
+          "Septicémie",
+          "Non-réponse à l'antibiotique"
+        ],
+        "metasTerapeuticas": [
+          "Résolution de l'inflammation",
+          "Maintien de l'allaitement"
+        ],
+        "examesIniciais": [
+          "Examen clinique généralement suffisant",
+          "Échographie si suspicion d'abcès"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "cefalexina",
+        "ibuprofeno"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "allaitement",
+        "puerpérisme",
+        "infection"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1316 @@
+{
+  "locale": "fr",
+  "category": "outros",
+  "generatedAt": "2025-12-27T22:46:44.898Z",
+  "count": 11,
+  "diseases": [
+    {
+      "id": "sindrome-fragilidade",
+      "titulo": "Syndrome de fragilité",
+      "ciap2": [
+        "A04"
+      ],
+      "cid10": [
+        "R54"
+      ],
+      "cid11": [
+        "MG2A"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:0080429",
+      "snomedCT": "248279007",
+      "meshId": "D000073496",
+      "umlsCui": "C0424594",
+      "quickView": {
+        "definicao": "Syndrome gérontologique de vulnérabilité accrue aux stresseurs en raison d'un déclin des réserves physiologiques. Prévalence de 10-15% chez les personnes âgées de plus de 65 ans.",
+        "criteriosDiagnosticos": [
+          "Phénotype de Fried : ≥3 critères = fragile, 1-2 = pré-fragile",
+          "Perte de poids non intentionnelle >4,5kg/année",
+          "Épuisement auto-ressenti",
+          "Faible activité physique",
+          "Lenteur de la marche",
+          "Faiblesse (force de préhension)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Exercice multicomposant (résistance + équilibre)",
+            "Intervention nutritionnelle protéique",
+            "Évaluation gérontologique complète"
+          ],
+          "farmacologico": [
+            "Vitamine D en cas de déficience",
+            "Révision et déscription de médicaments"
+          ]
+        },
+        "redFlags": [
+          "Chutes récurrentes",
+          "Perte de poids significative",
+          "Hospitalisations fréquentes",
+          "Déclin fonctionnel rapide"
+        ]
+      },
+      "medicamentos": [
+        "vitamina-d"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "incontinencia-urinaria-idoso",
+      "titulo": "Incontinence urinaire chez le sujet âgé",
+      "ciap2": [
+        "U04"
+      ],
+      "cid10": [
+        "N39.4"
+      ],
+      "cid11": [
+        "MF50"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:13580",
+      "snomedCT": "165232002",
+      "meshId": "D014549",
+      "umlsCui": "C0042024",
+      "quickView": {
+        "definicao": "Perte involontaire d'urine causant un impact social ou hygiénique. 30-50% des personnes âgées dans la communauté.",
+        "criteriosDiagnosticos": [
+          "Identifier le type : urgence, effort, mixte, fonctionnel",
+          "Journal mictionnel",
+          "Test d'effort positif",
+          "Résidu post-mictionnel"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Exercices de Kegel (plancher pelvien)",
+            "Rééducation vésicale",
+            "Miction programmée",
+            "Réduire la caféine"
+          ],
+          "farmacologico": [
+            "Oxybutynine ou Tolterodine (urgence)",
+            "Mirabégron (alternative)",
+            "Prudence avec les anticholinergiques chez les personnes âgées"
+          ]
+        },
+        "redFlags": [
+          "Hématurie",
+          "Douleur pelvienne",
+          "Infection urinaire récurrente",
+          "Rétenue urinaire"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "quedas-idoso",
+      "titulo": "Syndrome de Chutes chez les Personnes Âgées",
+      "ciap2": [
+        "A29"
+      ],
+      "cid10": [
+        "W19"
+      ],
+      "cid11": [
+        "NE01"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:14002",
+      "snomedCT": "56307009",
+      "meshId": "D000058",
+      "umlsCui": "C0000921",
+      "quickView": {
+        "definicao": "Événement non intentionnel de déplacement au sol. 30% des >65 ans tombent/an. Principale cause de décès traumatique chez les personnes âgées.",
+        "criteriosDiagnosticos": [
+          "≥2 chutes en 12 mois = risque élevé",
+          "Timed Up and Go >12 secondes",
+          "Histoire détaillée de la chute",
+          "Évaluation de la marche et de l'équilibre"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Exercices d'équilibre (Tai Chi)",
+            "Correction visuelle",
+            "Adaptation de l'environnement",
+            "Chaussures appropriées"
+          ],
+          "farmacologico": [
+            "Vitamine D 800-1000UI/jour",
+            "Révision des sédatifs et antihypertenseurs"
+          ]
+        },
+        "redFlags": [
+          "Chute avec fracture",
+          "Lésion de la tête",
+          "Syncope associée",
+          "Chute récurrente"
+        ]
+      },
+      "medicamentos": [
+        "vitamina-d"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "polifarmacia",
+      "titulo": "Polymédication chez le sujet âgé",
+      "ciap2": [
+        "A97"
+      ],
+      "cid10": [
+        "Y57.9"
+      ],
+      "cid11": [
+        "NE60"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:0111688",
+      "snomedCT": "182929008",
+      "meshId": "D019338",
+      "umlsCui": "C0032269",
+      "quickView": {
+        "definicao": "Utilisation simultanée de ≥5 médicaments. 40% des personnes âgées >65 ans. Principale cause d'événements indésirables évitables.",
+        "criteriosDiagnosticos": [
+          "Comptage de médicaments ≥5",
+          "Identifier les MPI via Beers ou STOPP/START",
+          "Évaluer la cascade de prescription",
+          "Réconciliation médicamenteuse"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Réconciliation médicamenteuse",
+            "Appliquer STOPP/START",
+            "Déscription progressive supervisée",
+            "Impliquer le patient et la famille"
+          ],
+          "farmacologico": [
+            "Non - le traitement est la déscription"
+          ]
+        },
+        "redFlags": [
+          "Réactions indésirables",
+          "Chutes",
+          "Déclin cognitif",
+          "Non-adhésion",
+          "Détérioration fonctionnelle"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "conjuntivite",
+      "titulo": "Conjonctivite",
+      "ciap2": [
+        "F70"
+      ],
+      "cid10": [
+        "H10"
+      ],
+      "cid11": [
+        "9A60"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:6195",
+      "snomedCT": "9826008",
+      "meshId": "D003231",
+      "umlsCui": "C0009763",
+      "quickView": {
+        "definicao": "Inflammation de la conjonctive. Virale (la plus courante), bactérienne ou allergique. Très contagieuse si infectieuse.",
+        "criteriosDiagnosticos": [
+          "Hyperrhée conjonctivale",
+          "Sécrétion (aqueuse=virale, purulente=bactérienne)",
+          "Prurit (allergique)",
+          "Sensation d'étranger dans l'œil"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Compresse froide",
+            "Hygiène des mains",
+            "Éviter le contact avec les autres"
+          ],
+          "farmacologico": [
+            "Virale : autolimitée 7-14 jours",
+            "Bactérienne : Ciprofloxacine collyre 1 goutte 4x/jour 7 jours",
+            "Allergique : Antihistaminique collyre"
+          ]
+        },
+        "redFlags": [
+          "Douleur oculaire intense",
+          "Photophobie",
+          "Acuité visuelle réduite",
+          "Opacité cornéenne"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "olho-seco",
+      "titulo": "Syndrome de l'œil sec",
+      "ciap2": [
+        "F13"
+      ],
+      "cid10": [
+        "H04.1"
+      ],
+      "cid11": [
+        "9A0A"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:12895",
+      "snomedCT": "302896008",
+      "meshId": "D015352",
+      "umlsCui": "C0013238",
+      "quickView": {
+        "definicao": "Maladie multifactorielle de la surface oculaire avec une instabilité du film lacrymal. La prévalence augmente avec l'âge et l'utilisation d'écrans.",
+        "criteriosDiagnosticos": [
+          "Sensation de sable dans les yeux",
+          "Brûlure",
+          "Vision floue intermittente",
+          "Fatigue oculaire",
+          "Larmoiement réflexe"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Pauses fréquentes lors de l'utilisation d'écrans (règle 20-20-20)",
+            "Humidificateur d'air",
+            "Éviter l'air conditionné direct"
+          ],
+          "farmacologico": [
+            "Larmes artificielles sans conservateurs 4-6x/jour",
+            "Gel lubrifiant la nuit"
+          ]
+        },
+        "redFlags": [
+          "Douleur intense",
+          "Perte visuelle",
+          "Non-réponse au traitement"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "estomatite-aftosa",
+      "titulo": "Estomatite Aftoseuse Récidivante",
+      "sinonimos": [
+        "Aftes orales",
+        "Aftose orale"
+      ],
+      "ciap2": [
+        "D82"
+      ],
+      "cid10": [
+        "K12.0"
+      ],
+      "cid11": [
+        "DA01.0"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:10581",
+      "snomedCT": "54081009",
+      "meshId": "D013281",
+      "umlsCui": "C0038362",
+      "hpo": [
+        "HP:0000160"
+      ],
+      "tags": [
+        "oral",
+        "commune",
+        "récidivante"
+      ],
+      "quickView": {
+        "definicao": "Úlceres orales récidivantes. Aftes douloureuses. Étiologie non entièrement connue. Peut être associée à des carences nutritionnelles.",
+        "criteriosDiagnosticos": [
+          "Úlceres orales récidivants",
+          "Douleur localisée",
+          "Durée de plusieurs semaines",
+          "Cicatrisation spontanée"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Éviter les aliments acides/piquants",
+            "Hygiène buccale appropriée",
+            "Supplémentation : Fer, B12, Acide folique si carence"
+          ],
+          "farmacologico": [
+            "Corticoïdes topiques",
+            "Anesthésiques topiques",
+            "Antiseptiques oraux"
+          ]
+        },
+        "redFlags": [
+          "Úlceres génitaux (Maladie de Behçet)",
+          "Úlceres multiples et importants",
+          "Pas de cicatrisation"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "cerume-impactado",
+      "titulo": "Cerume Impactado",
+      "sinonimos": [
+        "Rolha de cerume"
+      ],
+      "ciap2": [
+        "H82"
+      ],
+      "cid10": [
+        "H61.2"
+      ],
+      "cid11": [
+        "AB30.0"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:14694",
+      "snomedCT": "69695003",
+      "meshId": "D002624",
+      "umlsCui": "C0007783",
+      "tags": [
+        "orl",
+        "comum"
+      ],
+      "quickView": {
+        "definicao": "Acúmulo excessivo de cerume no conduto auditivo externo, causando obstrôe e sintomas como hipoacusia e plenitude auricular.",
+        "criteriosDiagnosticos": [
+          "Hipoacusia",
+          "Plenitude auricular",
+          "Otoscopia: cerume obstrutivo",
+          "Pode ter prurido",
+          "Pode ter otalgia leve"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Remoção manual com cureta",
+            "Irrigação com água morna",
+            "Gotas ceruminolíticas: Cerumin ou Peróxido de hidrogénio antes da remoção"
+          ],
+          "farmacologico": [
+            "Ceruminolíticos tópicos por 3-5 dias antes da remoção"
+          ]
+        },
+        "redFlags": [
+          "Perfuração timpánica",
+          "Infecção do ouvido externo",
+          "Dor intensa"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anafilaxia",
+      "titulo": "Anaphylaxie",
+      "sinonimos": [
+        "Réaction anaphylactique",
+        "Choc anaphylactique",
+        "Anaphylaxie systémique"
+      ],
+      "doid": "DOID:5841",
+      "snomedCT": "39579001",
+      "meshId": "D000707",
+      "umlsCui": "C0002792",
+      "ciap2": [
+        "A92"
+      ],
+      "cid10": [
+        "T78.2",
+        "T78.0",
+        "T80.5",
+        "T88.6"
+      ],
+      "cid11": [
+        "4A84"
+      ],
+      "categoria": "outros",
+      "quickView": {
+        "definicao": "Réaction d'hypersensibilité systémique grave, potentiellement fatale, d'apparition rapide après exposition à un allergène. Nécessite une reconnaissance et un traitement immédiats avec de l'adrénaline.",
+        "criteriosDiagnosticos": [
+          "CRITÈRE 1: Début aigu avec implication cutanée/muqueuse + atteinte respiratoire OU hypotension",
+          "CRITÈRE 2: ≥2 des suivants après exposition probable : peau/muqueuses, respiratoire, hypotension, TGI",
+          "CRITÈRE 3: Hypotension après allergène connu",
+          "Temps : minutes à heures après exposition",
+          "Déclencheurs courants : médicaments, aliments, insectes, latex"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "SUPPRIMER L'ALLERGÈNE si possible",
+            "Positionner le patient (Trendelenburg si hypotendu)",
+            "ABC - voie aérienne, oxygène",
+            "Accès veineux calibreur",
+            "Surveillance continue"
+          ],
+          "farmacologico": [
+            "ADRENALINE IM 0,3-0,5mg (0,01mg/kg) face antérolatérale de la cuisse",
+            "Répéter toutes les 5-15 min si nécessaire",
+            "SF 0,9% 20mL/kg en bolus si hypotension",
+            "Diphenhydramine 25-50mg IV (adjuvant)",
+            "Ranitidine 50mg IV (adjuvant)",
+            "Methylprednisolone 1-2mg/kg IV (prévenir bifasique)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Stabilisation hémodynamique",
+          "Réversion du bronchospasme",
+          "Prévention de la réaction bifasique",
+          "Identification de l'allergène"
+        ],
+        "examesIniciais": [
+          "Trypsine sérique (prélèvement dans les 1h, répéter à 24h)",
+          "ECG (si symptômes cardiovasculaires)",
+          "Gazométrie artérielle (si dyspnée grave)",
+          "Observation minimale de 4-6h"
+        ],
+        "redFlags": [
+          "Stridor ou sifflement grave (œdème des voies aériennes)",
+          "Hypotension réfractaire à l'adrénaline",
+          "Besoin de >2 doses d'adrénaline",
+          "Utilisation de bêtabloquant (réponse atténuée)",
+          "Asma grave préexistante",
+          "Réaction bifasique (récurrence entre 1-72h)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "0,05-2% de la population générale",
+          "incidencia": "50-112 cas/100 000 personnes-année",
+          "mortalidade": "0,5-1% des cas, plus élevée chez les adolescents/adultes jeunes",
+          "faixaEtaria": "Tout âge ; aliments plus courants chez les enfants, médicaments chez les adultes",
+          "fatoresRisco": [
+            "Antécédents d'anaphylaxie",
+            "Asma (particulièrement mal contrôlée)",
+            "Mastocytose systémique",
+            "Utilisation de bêtabloquants ou d'IECA",
+            "Exercice post-prandial",
+            "Allergie aux arachides/noix (plus grand risque de décès)"
+          ],
+          "citations": [
+            {
+              "refId": "wao-anaphylaxis-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Réaction médiée par l'IgE (majorité) ou non-IgE avec dégranulation massive des mastocytes et basophiles, libérant de l'histamine, de la tryptase, des leucotriènes et des prostaglandines. Causant une vasodilatation, une augmentation de la perméabilité vasculaire, un bronchospasme et une stimulation des terminaisons nerveuses.",
+          "citations": [
+            {
+              "refId": "eaaci-anaphylaxis-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Urticaire, prurit, flush",
+            "Angioedème (lèvres, langue, paupières)",
+            "Dyspnée, sifflement, stridor",
+            "Douleur abdominale, nausées, vomissements, diarrhée",
+            "Vertiges, syncope",
+            "Sentiment de mort imminente"
+          ],
+          "sinaisExameFisico": [
+            "Urticaire généralisée",
+            "Œdème des lèvres/langue/uvette",
+            "Sifflements, ronflements, stridor",
+            "Hypotension, tachycardie",
+            "Altération du niveau de conscience",
+            "Cyanose"
+          ],
+          "formasClinicas": [
+            "Anaphylaxie unipolaire (unique épisode)",
+            "Anaphylaxie bifasique (récurrence entre 1-72h)",
+            "Anaphylaxie prolongée (symptômes persistants)",
+            "Anaphylaxie induite par l'exercice"
+          ],
+          "citations": [
+            {
+              "refId": "wao-anaphylaxis-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Critères cliniques de l'WAO (World Allergy Organization)",
+            "Début rapide après exposition",
+            "Réponse à l'adrénaline soutient le diagnostic"
+          ],
+          "diagnosticoDiferencial": [
+            "Urticaire/angioedème isolés",
+            "Crise d'asma",
+            "Syncope vasovagale",
+            "Attaque de panique",
+            "Syndrome carcinoïde",
+            "Mastocytose systémique",
+            "Choc septique"
+          ],
+          "examesLaboratoriais": [
+            "Trypsine sérique (pic entre 1-2h)",
+            "Histamine plasmatique (demi-vie courte)",
+            "IgE spécifique ultérieurement"
+          ],
+          "citations": [
+            {
+              "refId": "eaaci-anaphylaxis-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Stabilisation immédiate",
+            "Prévention de la progression",
+            "Prévention de la réaction bifasique",
+            "Éducation et prévention secondaire"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Supprimer le déclencheur si possible",
+              "Position allongée avec les membres inférieurs surélevés",
+              "Oxygène supplémentaire",
+              "Accès veineux calibreur",
+              "Préparation pour une intubation orotrachéale si œdème des voies aériennes"
+            ],
+            "citations": [
+              {
+                "refId": "wao-anaphylaxis-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Adrénaline",
+                "medicamentos": [
+                  "Adrénaline 1:1000 (1mg/mL)"
+                ],
+                "posologia": "0,3-0,5mg IM (0,01mg/kg chez les enfants, max 0,5mg)",
+                "observacoes": "Face antérolatérale de la cuisse. Répéter toutes les 5-15 min"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Antihistaminique H1",
+                "medicamentos": [
+                  "Diphenhydramine 25-50mg IV",
+                  "Promethazine 25mg IM"
+                ],
+                "observacoes": "Adjuvant, ne remplace pas l'adrénaline"
+              },
+              {
+                "classe": "Antihistaminique H2",
+                "medicamentos": [
+                  "Ranitidine 50mg IV"
+                ],
+                "observacoes": "Peut aider pour les symptômes cutanés"
+              },
+              {
+                "classe": "Corticoïde",
+                "medicamentos": [
+                  "Methylprednisolone 1-2mg/kg IV",
+                  "Hydrocortisone 200mg IV"
+                ],
+                "observacoes": "Peut prévenir la réaction bifasique, sans effet immédiat"
+              },
+              {
+                "classe": "Bronchodilatateur",
+                "medicamentos": [
+                  "Salbutamol 4-8 pulvérisations ou nébulisation"
+                ],
+                "observacoes": "Si bronchospasme"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Utilisation de bêtabloquant",
+                "conduta": "Glucagon 1-5mg IV si réfractaire à l'adrénaline"
+              },
+              {
+                "situacao": "Choc réfractaire",
+                "conduta": "Adrénaline IV 0,1-0,5mcg/kg/min en perfusion continue"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "eaaci-anaphylaxis-2021"
+              }
+            ]
+          },
+          "duracao": "Observation minimale de 4-6h (jusqu'à 24h si grave ou réaction bifasique préalable)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Allergologue en 2-4 semaines après la sortie",
+          "metasTerapeuticas": [
+            "Identification de l'allergène",
+            "Prescription d'un auto-injecteur d'adrénaline",
+            "Éducation du patient et des proches",
+            "Plan d'action écrit"
+          ],
+          "criteriosEncaminhamento": [
+            "Tout patient : Allergologue pour investigation",
+            "Considérer l'immunothérapie si venin d'insecte",
+            "Désensibilisation si médicament essentiel"
+          ],
+          "citations": [
+            {
+              "refId": "wao-anaphylaxis-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Identification et évitement des allergènes",
+            "Lecture des étiquettes alimentaires",
+            "Alertes médicales dans le dossier patient"
+          ],
+          "secundaria": [
+            "Porter toujours un auto-injecteur d'adrénaline",
+            "Bracelet d'identification médicale",
+            "Éducation des proches et des soignants",
+            "Plan d'urgence écrit"
+          ],
+          "citations": [
+            {
+              "refId": "eaaci-anaphylaxis-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "anafilaxia-emergencia",
+        "choque-anafilatico"
+      ],
+      "medicamentos": [
+        "adrenalina",
+        "difenidramina",
+        "metilprednisolona",
+        "ranitidina"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "wao-anaphylaxis-2020"
+        },
+        {
+          "refId": "eaaci-anaphylaxis-2021"
+        },
+        {
+          "refId": "asbai-anafilaxia-2022"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "intoxicacao-exogena",
+      "titulo": "Intoxication Exogène Aiguë",
+      "sinonimos": [
+        "Empoisonnement",
+        "Intoxication par des médicaments",
+        "Overdose",
+        "Intoxication médicamenteuse"
+      ],
+      "doid": "DOID:3571",
+      "snomedCT": "75478009",
+      "meshId": "D011041",
+      "umlsCui": "C0032343",
+      "ciap2": [
+        "A84",
+        "A86"
+      ],
+      "cid10": [
+        "T36-T65",
+        "T50.9",
+        "X40-X49"
+      ],
+      "cid11": [
+        "NE61"
+      ],
+      "categoria": "outros",
+      "quickView": {
+        "definicao": "Exposition à des substances toxiques (médicaments, drogues, produits chimiques, plantes, animaux venimeux) entraînant des manifestations cliniques potentiellement graves. Nécessite l'identification de l'agent et un traitement spécifique.",
+        "criteriosDiagnosticos": [
+          "Historique d'exposition (intentionnelle ou accidentelle)",
+          "Tableau clinique compatible (toxidrome)",
+          "TOXIDROMES CLASSIQUES :",
+          "Cholinergique : SLUDGE (salivation, larmoiement, urination, diarrhée, gastro-intestinal, vomissements) + myosis + bradycardie",
+          "Anticholinergique : \"aveugle, rouge, sec, chaud, fou\" + mydriasis + tachycardie",
+          "Sympathomimétique : tachycardie, HTA, mydriasis, hyperthermie, agitation",
+          "Opioïde : myosis punctiforme, dépression respiratoire, coma",
+          "Sédatif-hypnotique : dépression du SNC, hypotension, hypothermie"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ABC - la voie aérienne est une priorité",
+            "Décontamination cutanée/oculaire en cas d'exposition externe",
+            "Surveillance continue",
+            "Accès veineux",
+            "ECG (évaluer QRS, QTc)"
+          ],
+          "farmacologico": [
+            "ANTIDOTES SPÉCIFIQUES (lorsqu'ils sont disponibles) :",
+            "Opioïdes : Naloxone 0,4-2mg IV (répéter jusqu'à 10mg)",
+            "Benzodiazépines : Flumazénil 0,2-0,5mg IV (attention !)",
+            "Organophosphorés : Atropine 2-4mg IV + Pralidoxime",
+            "Paracétamol : N-acétylcystéine",
+            "Antidépresseurs tricycliques : Bicarbonate de sodium si QRS > 100ms",
+            "Glucagon 5-10mg IV",
+            "Charbon actif 1g/kg si <1h après ingestion (sans contre-indications)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Stabilisation du patient",
+          "Identification de l'agent toxique",
+          "Décontamination lorsque cela est indiqué",
+          "Administration d'un antidote spécifique",
+          "Prévention des complications"
+        ],
+        "examesIniciais": [
+          "Glycémie capillaire (TOUJOURS)",
+          "ECG 12 dérivations",
+          "Gazométrie artérielle",
+          "Électrolytes (y compris Ca, Mg)",
+          "Fonction rénale et hépatique",
+          "Hémogramme, coagulogramme",
+          "Écran toxicologique (urine)",
+          "Niveaux sériques spécifiques si disponibles (paracétamol, salicylate, lithium, digoxine)"
+        ],
+        "redFlags": [
+          "Dépression respiratoire (FR < 12)",
+          "Troubles du rythme (QRS > 100ms, QTc > 500ms)",
+          "Convulsions",
+          "Hypotension réfractaire",
+          "Hyperthermie maligne",
+          "Rhabdomyolyse",
+          "Altération du niveau de conscience"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~2,5 millions d'expositions/an aux États-Unis",
+          "incidencia": "Au Brésil : ~100 000 cas/an notifiés (sous-notification)",
+          "mortalidade": "Variable selon l'agent ; opioïdes et pesticides avec une mortalité plus élevée",
+          "faixaEtaria": "Enfants < 6 ans : majoritairement accidentel ; Adolescents/adultes : intentionnel",
+          "fatoresRisco": [
+            "Accès aux médicaments",
+            "Troubles psychiatriques",
+            "Usage de drogues illicites",
+            "Travail agricole (pesticides)",
+            "Jeunes enfants (exploration orale)"
+          ],
+          "citations": [
+            {
+              "refId": "aapcc-annual-report-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Variable selon l'agent : liaison à des récepteurs spécifiques, inhibition enzymatique, altération des canaux ioniques, dommage cellulaire direct. Chaque toxidrome reflète le mécanisme prédominant de l'agent impliqué.",
+          "citations": [
+            {
+              "refId": "goldfrank-toxicology"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Altération du niveau de conscience",
+            "Nausées et vomissements",
+            "Convulsions",
+            "Troubles du rythme",
+            "Altération pupillaire",
+            "Altération de la température corporelle",
+            "Altérations neuromusculaires"
+          ],
+          "sinaisExameFisico": [
+            "Taille pupillaire (myosis vs mydriasis)",
+            "Transpiration ou sécheresse des muqueuses",
+            "Fréquence cardiaque et rythme",
+            "Température corporelle",
+            "État mental",
+            "Péristaltisme (augmenté vs diminué)",
+            "Odeurs caractéristiques"
+          ],
+          "formasClinicas": [
+            "Toxidrome cholinergique (organophosphorés, carbamates)",
+            "Toxidrome anticholinergique (antihistaminiques, ATC, scopolamine)",
+            "Toxidrome sympathomimétique (cocaïne, amphétamines)",
+            "Toxidrome opioïde (morphine, fentanyl, héroïne)",
+            "Toxidrome sédatif-hypnotique (benzodiazépines, barbituriques)"
+          ],
+          "citations": [
+            {
+              "refId": "goldfrank-toxicology"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Historique d'exposition",
+            "Toxidrome compatible",
+            "Élimination d'autres causes",
+            "Niveaux sériques lorsque disponibles"
+          ],
+          "diagnosticoDiferencial": [
+            "Hypoglycémie",
+            "AVC",
+            "Encéphalopathie métabolique",
+            "Infection du SNC",
+            "Troubles psychiatriques",
+            "Traumatisme crânien"
+          ],
+          "examesLaboratoriais": [
+            "Glycémie",
+            "Gazométrie avec lactate",
+            "Électrolytes, osmolarité",
+            "Fonction rénale et hépatique",
+            "CK (rhabdomyolyse)",
+            "Coagulogramme",
+            "Écran toxicologique",
+            "Niveaux spécifiques (paracétamol, salicylate, digoxine, lithium, etc.)"
+          ],
+          "examesImagem": [
+            "Radiographie de thorax (aspiration)",
+            "Radiographie d'abdomen (body packer)",
+            "Scanner cérébral si altération persistante du sensibilité"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-intoxicacoes-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Stabilisation clinique",
+            "Décontamination",
+            "Antidote spécifique",
+            "Soutien des dysfonctions organiques",
+            "Évaluation psychiatrique (si intentionnel)"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Intubation oro-trachéale si nécessaire",
+              "Lavage gastrique (contre-indications : corrosifs, hydrocarbures, <1h)",
+              "Charbon actif (si <1h, agent absorbable, voie aérienne protégée)",
+              "Irrigation intestinale totale (body packer, Fe, Li, libération prolongée)",
+              "Hémodialyse (salicylates, méthanol, éthylène glycol, lithium)"
+            ],
+            "citations": [
+              {
+                "refId": "goldfrank-toxicology"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Antidotes",
+                "medicamentos": [
+                  "Naloxone (opioïdes)",
+                  "Atropine (organophosphorés)",
+                  "N-acétylcystéine (paracétamol)",
+                  "Flumazénil (BZD)",
+                  "Bicarbonate (ATC)"
+                ],
+                "observacoes": "Utilisation selon l'agent identifié"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Paracétamol",
+                "conduta": "N-acétylcystéine si le niveau est au-dessus de la ligne de traitement sur le nomogramme"
+              },
+              {
+                "situacao": "Organophosphorés",
+                "conduta": "Atropine jusqu'à sécher les sécrétions + Pralidoxime pendant les premières 24-48h"
+              },
+              {
+                "situacao": "Antidépresseurs tricycliques",
+                "conduta": "Bicarbonate 1-2mEq/kg si QRS > 100ms"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-intoxicacoes-2021"
+              }
+            ]
+          },
+          "duracao": "Observation minimale de 6-24h selon l'agent ; certains nécessitent une hospitalisation prolongée"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Selon la gravité et l'agent",
+          "metasTerapeuticas": [
+            "Résolution des symptômes",
+            "Normalisation biologique",
+            "Évaluation psychiatrique si intentionnel"
+          ],
+          "criteriosEncaminhamento": [
+            "USI si instabilité hémodynamique ou dépression respiratoire",
+            "Psychiatrie si tentative de suicide",
+            "Centre d'intoxication pour orientation (0800 722 6001 - CEATOX-SP)"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-intoxicacoes-2021"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Stockage sécurisé des médicaments et produits chimiques",
+            "Éducation sur les risques",
+            "Emballages de sécurité"
+          ],
+          "secundaria": [
+            "Reconnaissance précoce",
+            "Contact immédiat avec un centre d'intoxication",
+            "Évaluation et traitement des troubles psychiatriques"
+          ],
+          "citations": [
+            {
+              "refId": "aapcc-annual-report-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "intoxicacao-aguda",
+        "lavagem-gastrica",
+        "carvao-ativado"
+      ],
+      "medicamentos": [
+        "naloxona",
+        "atropina",
+        "n-acetilcisteina",
+        "flumazenil"
+      ],
+      "calculadoras": [
+        "nomograma-paracetamol"
+      ],
+      "citations": [
+        {
+          "refId": "goldfrank-toxicology"
+        },
+        {
+          "refId": "sbpt-intoxicacoes-2021"
+        },
+        {
+          "refId": "aapcc-annual-report-2022"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "queimaduras",
+      "titulo": "Queimaduras",
+      "sinonimos": [
+        "Queimadura térmica",
+        "Queimadura química",
+        "Queimadura elétrica",
+        "Escaldadura"
+      ],
+      "doid": "DOID:0080312",
+      "snomedCT": "125666000",
+      "meshId": "D002056",
+      "umlsCui": "C0006434",
+      "ciap2": [
+        "S14"
+      ],
+      "cid10": [
+        "T20-T32",
+        "T30",
+        "T31"
+      ],
+      "cid11": [
+        "NB5"
+      ],
+      "categoria": "outros",
+      "quickView": {
+        "definicao": "Lesôn tecidual causada por agentes térmicos, quémicos, élétricos ou radioativos. Gravidade depende da extensôão (% SCQ), profundidade e localizaôçô. Grande queimado requer ressuscitação volémica e tratamento especializado.",
+        "criteriosDiagnosticos": [
+          "PROFUNDIDADE:",
+          "1êtra grau: eritema, dor, sem bolhas (epiderme)",
+          "2êtra grau superficial: bolhas, base éumida, muito dolorosa",
+          "2êtra grau profundo: bolhas rotas, base pálida, menos dolorosa",
+          "3êtra grau: necrose, indolor, cor branca/negra",
+          "",
+          "EXTENSãO - Regra dos 9 (adulto):",
+          "Cabeça 9%, Cada MS 9%, Tórax anterior 18%, Tórax posterior 18%, Cada MI 18%, Períneo 1%",
+          "Palma da mão do paciente = 1% SCQ"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "baixo",
+            "criterios": [
+              "<10% SCQ adulto",
+              "2êtra grau superficial",
+              "Sem face/mãos/pés/períneo"
+            ],
+            "conduta": "Tratamento ambulatorial"
+          },
+          {
+            "nivel": "moderado",
+            "criterios": [
+              "10-20% SCQ",
+              "2êtra grau profundo",
+              "Idoso ou criança"
+            ],
+            "conduta": "Considerar internação"
+          },
+          {
+            "nivel": "alto",
+            "criterios": [
+              ">20% SCQ",
+              "3êtra grau >5%",
+              "Face, mãos, pés, genitais, articulações",
+              "Elétrica, química, inalação"
+            ],
+            "conduta": "Centro de queimados"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Resfriar com água corrente (10-20min) - Näo gelo",
+            "Remover roupas e joias (se não aderidas)",
+            "Cobrir com campo limpo/estéril",
+            "Elevação de extremidades",
+            "Manter temperatura corporal (evitar hipotermia)"
+          ],
+          "farmacologico": [
+            "RESSUSCITAÇÃO VOLÊMICA (Parkland):",
+            "4mL x peso(kg) x %SCQ nas primeiras 24h",
+            "50% nas primeiras 8h, 50% nas 16h seguintes",
+            "Meta: diurese 0,5-1mL/kg/h",
+            "",
+            "Analgesia: Morfina ou Tramadol IV",
+            "Profilaxia antitetânica",
+            "Näo usar ATB profilático de rotina",
+            "Curativo com sulfadiazina de prata (2º/3º grau)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Ressuscitação hemodinâmica",
+          "Analgesia adequada",
+          "Prevenção de infecção",
+          "Cicatrização adequada",
+          "Preservação funcional e estética"
+        ],
+        "examesIniciais": [
+          "Hemograma, eletrólitos, função renal",
+          "Gasometria arterial (se inalação)",
+          "Carboxi-hemoglobina (se incêndio em ambiente fechado)",
+          "ECG (se queimadura elétrica)",
+          "CK (rabdomiólise em elétrica)",
+          "Rx de tórax (se suspeita de inalação)"
+        ],
+        "redFlags": [
+          "Queimadura de via aérea (rouquidão, stridor, pelos nasais chamuscados)",
+          "Queimadura elétrica (risco de arritmia e síndrome compartimental)",
+          "Queimadura química (irrigação contínua)",
+          "Lesão circunferencial (síndrome compartimental)",
+          "SCQ >20% (choque hipovolêmico)",
+          "Extremos de idade (<2 ou >60 anos)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Milhões de casos/ano globalmente",
+          "incidencia": "~1 milhão de casos/ano no Brasil",
+          "mortalidade": "Depende da extensão; >50% SCQ tem alta mortalidade",
+          "faixaEtaria": "Crianças pequenas (escaldadura) e adultos (trabalho)",
+          "fatoresRisco": [
+            "Ambiente doméstico inseguro",
+            "Trabalho em risco (indústria, construção)",
+            "Álcool e drogas",
+            "Epilepsia",
+            "Extremos de idade",
+            "Maus-tratos (crianças e idosos)"
+          ],
+          "citations": [
+            {
+              "refId": "sbq-queimaduras-2021"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Lesão tecidual com três zonas: coagulação (necrose central), estase (potencialmente salvável) e hiperemia (inflamação). Grande queimado desenvolve resposta inflamatória sistêmica com aumento da permeabilidade capilar, edema e choque distributivo.",
+          "citations": [
+            {
+              "refId": "aba-guidelines-2016"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dor (variável conforme profundidade)",
+            "Eritema, bolhas ou necrose",
+            "Edema local ou generalizado",
+            "Sintomas de inalação (tosse, rouquidão, dispneia)"
+          ],
+          "sinaisExameFisico": [
+            "Aspecto da lesão (cor, bolhas, textura)",
+            "Sensibilidade ao toque",
+            "Enchimento capilar",
+            "Sinais de lesão de via aérea",
+            "Pulsos distais (lesão circunferencial)"
+          ],
+          "formasClinicas": [
+            "Queimadura térmica (chama, contato, escaldadura)",
+            "Queimadura química (ácido, álcali)",
+            "Queimadura elétrica (baixa ou alta tensão)",
+            "Lesão por inalação"
+          ],
+          "citations": [
+            {
+              "refId": "sbq-queimaduras-2021"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Avaliação da profundidade",
+            "Cálculo da extensão (regra dos 9 ou palma)",
+            "Identificação de áreas especiais",
+            "Avaliação de lesões associadas"
+          ],
+          "diagnosticoDiferencial": [
+            "Necrólise epidérmica tóxica (NET)",
+            "Síndrome de Stevens-Johnson",
+            "Dermatite de contato severa",
+            "Pênfigo/penfigoide"
+          ],
+          "examesLaboratoriais": [
+            "Hemograma",
+            "Eletrólitos, ureia, creatinina",
+            "Gasometria arterial",
+            "Lactato",
+            "CK (queimadura elétrica)",
+            "Carboxi-hemoglobina (inalação)"
+          ],
+          "examesImagem": [
+            "Rx de tórax",
+            "Broncoscopia (se suspeita de lesão inalatória)"
+          ],
+          "citations": [
+            {
+              "refId": "aba-guidelines-2016"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Ressuscitação hemodinâmica",
+            "Analgesia adequada",
+            "Prevenção de infecção",
+            "Cicatrização adequada",
+            "Preservação funcional e estética"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Resfriamento inicial com água corrente",
+              "Curativos com sulfadiazina de prata ou curativos biológicos",
+              "Desbridamento cirúrgico quando indicado",
+              "Escarotomia/fasciotomia se síndrome compartimental",
+              "Enxertia de pele em queimaduras profundas",
+              "Fisioterapia precoce"
+            ],
+            "citations": [
+              {
+                "refId": "sbq-queimaduras-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Cristaloide",
+                "medicamentos": [
+                  "Ringer Lactato"
+                ],
+                "posologia": "4mL/kg/%SCQ em 24h (Parkland)",
+                "observacoes": "50% nas primeiras 8h"
+              },
+              {
+                "classe": "Analgésico",
+                "medicamentos": [
+                  "Morfina",
+                  "Tramadol"
+                ],
+                "posologia": "Conforme intensidade da dor"
+              },
+              {
+                "classe": "Profilaxia antitetânica",
+                "medicamentos": [
+                  "Vacina dT + SAT se necessário"
+                ]
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Antimicrobiano tópico",
+                "medicamentos": [
+                  "Sulfadiazina de prata 1%"
+                ],
+                "observacoes": "Em queimaduras de 2º/3º grau"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "aba-guidelines-2016"
+              }
+            ]
+          },
+          "duracao": "Variável conforme extensão e profundidade"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Trocas de curativos a cada 24-72h; acompanhamento prolongado",
+          "metasTerapeuticas": [
+            "Cicatrização em 2-3 semanas (2º grau superficial)",
+            "Prevenção de cicatrizes hipertróficas",
+            "Reabilitação funcional",
+            "Suporte psicológico"
+          ],
+          "criteriosEncaminhamento": [
+            "Centro de queimados: >20% SCQ, 3º grau, face/mãos/pés/genitais, elétrica, química, inalação",
+            "Cirurgia plástica: cicatrizes, retraturas",
+            "Psicologia/Psiquiatria"
+          ],
+          "citations": [
+            {
+              "refId": "sbq-queimaduras-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "queimaduras-atendimento-inicial",
+        "parkland-ressuscitacao"
+      ],
+      "medicamentos": [
+        "morfina",
+        "sulfadiazina-prata"
+      ],
+      "calculadoras": [
+        "regra-dos-9",
+        "parkland"
+      ],
+      "citations": [
+        {
+          "refId": "sbq-queimaduras-2021"
+        },
+        {
+          "refId": "aba-guidelines-2016"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}
