@@ -1,0 +1,1348 @@
+{
+  "locale": "ru",
+  "category": "respiratorio",
+  "generatedAt": "2025-12-28T02:36:49.940Z",
+  "count": 12,
+  "diseases": [
+    {
+      "id": "asma",
+      "titulo": "Бронхиальная астма",
+      "sinonimos": [
+        "Астма",
+        "Бронхит астматический",
+        "Бронхиальная гиперреактивность"
+      ],
+      "doid": "DOID:2841",
+      "snomedCT": "195967001",
+      "meshId": "D001249",
+      "umlsCui": "C0004096",
+      "ciap2": [
+        "R96"
+      ],
+      "cid10": [
+        "J45",
+        "J46"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "Хроническое воспалительное заболевание дыхательных путей, характеризующееся бронхиальной гиперреактивностью и переменной обструкцией airflow, проявляющейся повторяющимися эпизодами свистящего дыхания, одышки, давления в груди и кашля.",
+        "criteriosDiagnosticos": [
+          "Переменные симптомы (свистящее дыхание, одышка, кашель, давление в груди)",
+          "Ухудшение ночью/утром, при физической нагрузке, воздействии аллергенов, инфекциях",
+          "Спирометрия: ОФВ1/ЖЕЛ <0,7 + улучшение ≥12% и 200 мл после бронходилататора",
+          "Пиковый поток воздуха (ПФ): вариабельность >10% у взрослых",
+          "Если спирометрия нормальная: положительный тест на бронхопровокацию"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Отстранение от аллергенов (клещи, плесень, шерсть животных)",
+            "Контроль окружающей среды (покрытие матрасов, стирка постельного белья)",
+            "Прекращение курения (личное и пассивное)",
+            "Избегание НПВП и бета-блокаторов при гиперчувствительности",
+            "Вакцинация (ежегодная против гриппа, пневмококковая)",
+            "Письменный план действий"
+          ],
+          "farmacologico": [
+            "Этап 1-2: ИК доза низкая-средняя (Беклометазон 200-400 мкг) + КСА по мере необходимости",
+            "Этап 3: ИК доза средняя + ЛАБА (Формотерол) или ЛАМА",
+            "Этап 4-5: ИК доза высокая + ЛАБА, рассмотреть анти-IgE/IL-5",
+            "Спасательная терапия: Формотерол-ИК (предпочтительно) или КСА (Сальбутамол)",
+            "Обострение: Преднизон 40-60 мг/день 5-7 дней"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Контроль симптомов: ACT ≥20, без ограничения активности",
+          "Снижение риска обострений",
+          "Минимизация использования КСА (<2 раза в месяц для симптомов)",
+          "Нормальная или близкая к норме функция легких",
+          "Минимизация побочных эффектов лечения"
+        ],
+        "examesIniciais": [
+          "Спирометрия с пробой бронходилатации",
+          "Пиковый поток воздуха (ПФ) для домашнего мониторинга",
+          "Кровь на общий анализ (эозинофилия указывает на аллергическую астму)",
+          "Общий IgE",
+          "Рентгенография грудной клетки (при начальной оценке)"
+        ],
+        "redFlags": [
+          "Тяжелое обострение: прерывистая речь, ЧДД >30, ЧСС >120, SpO2 <90%",
+          "Использование вспомогательной мускулатуры, цианоз",
+          "ПФ <50% от предполагаемого или личного лучшего",
+          "Отсутствие ответа на бронходилататор",
+          "История интубации из-за астмы",
+          "Пневмоторакс"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "10-15% у детей, 5-10% у взрослых в Бразилии",
+          "mortalidade": "~2.500 смертей в год в Бразилии (большинство из них можно было предотвратить)",
+          "faixaEtaria": "Часто начинается в детстве, может начаться в любом возрасте",
+          "fatoresRisco": [
+            "Атопия (ринит, экзема)",
+            "Семейный анамнез астмы",
+            "Воздействие аллергенов (клещи, плесень, шерсть)",
+            "Респираторные инфекции в детстве",
+            "Пассивное курение",
+            "Загрязнение окружающей среды",
+            "Ожирение"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Свистящее дыхание (шипение в груди)",
+            "Эпизодическая одышка",
+            "Кашель, особенно ночью/утром",
+            "Давление в груди",
+            "Переменные по времени и интенсивности симптомы",
+            "Ухудшение при инфекциях, физической нагрузке, воздействии аллергенов, изменениях погоды"
+          ],
+          "sinaisExameFisico": [
+            "Диффузные свистящие хрипы в фазе выдоха во время приступа",
+            "Продолжительная фаза выдоха",
+            "Использование вспомогательной мускулатуры (при тяжелом приступе)",
+            "Межприступный период: часто нормальный осмотр",
+            "Сопутствующий аллергический ринит"
+          ],
+          "formasClinicas": [
+            "Аллергическая астма (самая распространенная)",
+            "Неаллергическая астма",
+            "Астма позднего начала",
+            "Астма с фиксированной обструкцией airflow",
+            "Астма с ожирением"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "История переменных дыхательных симптомов",
+            "Переменная обструкция экспираторного потока (спирометрия)",
+            "Ответ на бронходилататор (≥12% и 200 мл в ОФВ1)",
+            "Или вариабельность ПФ >10%",
+            "Или положительный тест на бронхопровокацию"
+          ],
+          "diagnosticoDiferencial": [
+            "ХОБЛ",
+            "Дисфункция голосовых связок",
+            "Кардиальная недостаточность",
+            "Бронхоэктазия",
+            "Инородное тело",
+            "Рефлюкс-эзофагит с кашлем"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Контроль симптомов",
+            "Профилактика обострений",
+            "Поддержание нормальной функции легких",
+            "Минимизация побочных эффектов"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Образование по астме и план действий",
+              "Правильная техника ингаляции",
+              "Контроль окружающей среды",
+              "Прекращение курения",
+              "Регулярная физическая активность",
+              "Контроль веса",
+              "Вакцинация"
+            ],
+            "citations": [
+              {
+                "refId": "gina-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "ИК доза низкая",
+                "medicamentos": [
+                  "Беклометазон 200-400 мкг/день",
+                  "Будесонид 200-400 мкг/день"
+                ],
+                "observacoes": "Основа лечения. Этапы 1-2"
+              },
+              {
+                "classe": "ИК + Формотерол",
+                "medicamentos": [
+                  "Будесонид/Формотерол 200-400/6-12 мкг"
+                ],
+                "observacoes": "Поддерживающая и спасательная терапия (MART). Предпочтительна по GINA"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "ИК доза средняя-высокая + ЛАБА",
+                "medicamentos": [
+                  "Будесонид/Формотерол 400-800/12-24 мкг"
+                ],
+                "observacoes": "Этапы 3-4"
+              },
+              {
+                "classe": "ЛАМА",
+                "medicamentos": [
+                  "Тиотропий 5 мкг (Respimat)"
+                ],
+                "observacoes": "Дополнительно на этапах 4-5"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Обострение",
+                "conduta": "КСА + пероральный кортикостероид (преднизон 40-60 мг 5-7 дней)"
+              },
+              {
+                "situacao": "Беременность",
+                "conduta": "Продолжать лечение. Безопасные ИК. Контроль является приоритетом"
+              },
+              {
+                "situacao": "Тяжелая астма",
+                "conduta": "Направить. Иммунобиологические препараты (анти-IgE, анти-IL5)"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "gina-2024"
+              }
+            ]
+          },
+          "duracao": "Непрерывное лечение. Снижение дозировки после 3 месяцев контроля"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Каждые 1-3 месяца до контроля, затем каждые 3-6 месяцев",
+          "examesControle": [
+            "Ежегодная спирометрия",
+            "ACT (Asthma Control Test) на каждом приеме",
+            "Домашний мониторинг ПФ"
+          ],
+          "metasTerapeuticas": [
+            "ACT ≥20",
+            "Без обострений",
+            "КСА <2 раза в месяц",
+            "ОФВ1 нормальный или близкий к нормальному"
+          ],
+          "criteriosEncaminhamento": [
+            "Тяжелая астма (этапы 4-5)",
+            "Тяжелое/почти фатальное обострение",
+            "Сомнения в диагностике",
+            "Подозрение на профессиональную астму",
+            "Необходимость иммунобиологического лечения"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-asma",
+        "crise-asma"
+      ],
+      "medicamentos": [
+        "beclometasona",
+        "budesonida",
+        "salbutamol",
+        "formoterol"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "gina-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "respiratorio",
+        "cronica",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "dpoc",
+      "titulo": "Doença Pulmonar Obstrutiva Crônica",
+      "sinonimos": [
+        "DPOC",
+        "Enfisema",
+        "Bronquite crônica"
+      ],
+      "doid": "DOID:3083",
+      "snomedCT": "13645005",
+      "meshId": "D029424",
+      "umlsCui": "C0024117",
+      "ciap2": [
+        "R95"
+      ],
+      "cid10": [
+        "J44",
+        "J44.0",
+        "J44.1",
+        "J44.9"
+      ],
+      "cid11": [
+        "CA22"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "Doãnse respiratória crónica prevenível e tratável, caracterizada por limitação persistente ao fluxo aéreo, geralmente progressiva e associada a resposta inflamatória crónica das vias aéreas e pulmôes a partículas ou gases nocivos.",
+        "criteriosDiagnosticos": [
+          "Dispneia persistente e progressiva",
+          "Tosse crónica com ou sem expectoraÃo",
+          "História de exposiÇão a fatores de risco (tabagismo)",
+          "Espirometria pós-BD: VEF1/CVF <0,70"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cessão do tabagismo (essencial)",
+            "VacinaÃo (influenza anual, pneumococo)",
+            "Reabilitação pulmonar",
+            "Atividade fízica regular",
+            "Oxigenoterapia domiciliar se indicada"
+          ],
+          "farmacologico": [
+            "GOLD A-B: Broncodilatador de curta ou longa duraÅo",
+            "LABA ou LAMA (Tiotrópio 18mcg/dia ou Formoterol)",
+            "GOLD C-D: LABA + LAMA ou LABA + CI",
+            "CI se eosinófilos >300 ou história de asma"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Reduzir sintomas (mMRC <2, CAT <10)",
+          "Prevenir exacerbaÇões",
+          "Melhorar capacidade de exercício",
+          "Retardar progressó de doenÇa",
+          "Reduzir mortalidade"
+        ],
+        "examesIniciais": [
+          "Espirometria com prova broncodilatadora",
+          "Radiografia de tórax",
+          "Oximetria de pulso",
+          "Gasometria se SpO2 <92%",
+          "Hemograma (policitemia)",
+          "Alfa-1 antitripsina se <45 anos ou história familiar"
+        ],
+        "redFlags": [
+          "ExacerbaÇão grave (dispneia intensa, taquipneia >25)",
+          "AlteraÇão do nível de consciência",
+          "SpO2 <88% ou cianose",
+          "Uso de musculatura acessória",
+          "Edema de MMII (cor pulmonale)",
+          "Febre alta (infecção grave)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "10-15% dos adultos >40 anos, maior em tabagistas",
+          "incidencia": "Terceira causa de morte no mundo",
+          "faixaEtaria": "Geralmente >40 anos",
+          "fatoresRisco": [
+            "Tabagismo (90% dos casos)",
+            "Exposição ocupacional (poeiras, químicos)",
+            "PoluÇão do ar",
+            "Deficiência de alfa-1 antitripsina",
+            "Infecções respiratórias na infênci",
+            "Biomassa (fogão a lenha)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "InflamaÇão crónica das vias aéreas e parénquima pulmonar induzida por inalaÇão de partículas nocivas, principalmente fumaça de cigarro. Resulta em bronquite crónica (hipersecreção de muco) e/ou enfisema (destruição alveolar), levando a limitaÇão fixa ao fluxo aéreo.",
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dispneia progressiva (inicialmente aos grandes esforÇos)",
+            "Tosse crónica, geralmente matinal",
+            "ExpectoraÃo crónica (mucosa ou purulenta)",
+            "Sibiláncia",
+            "Sensção de aperto no peito",
+            "Fadiga e intolerância ao exercÇio"
+          ],
+          "sinaisExameFisico": [
+            "Tórax em tonel (hiperinsuflação)",
+            "Uso de musculatura acessória",
+            "Expiração prolongada",
+            "Diminuição do murmúrio vesicular",
+            "Sibilos e roncos",
+            "Cianose (casos avançados)"
+          ],
+          "formasClinicas": [
+            "Fenótipo enfisematoso (pink puffer): magro, dispneia intensa",
+            "Fenótipo bronquítico (blue bloater): cianose, edema, tosse produtiva",
+            "Sobreposição asma-DPOC (ACO)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínica compatível + fatores de risco",
+            "Espirometria pós-BD: VEF1/CVF <0,70",
+            "Classificação GOLD (VEF1% previsto)"
+          ],
+          "diagnosticoDiferencial": [
+            "Asma",
+            "Bronquiectasias",
+            "Tuberculose",
+            "Insuficiência cardíaca",
+            "Câncer de pulmão",
+            "Fibrose pulmonar"
+          ],
+          "examesLaboratoriais": [
+            "Espirometria com prova broncodilatadora",
+            "Gasometria arterial (se SpO2 <92%)",
+            "Hemograma",
+            "Alfa-1 antitripsina (se indicado)",
+            "TC de tórax (casos selecionados)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Aliviar sintomas",
+            "Prevenir exacerbações",
+            "Melhorar tolerância ao exercício e qualidade de vida",
+            "Prevenir progressão",
+            "Reduzir mortalidade"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Cessação do tabagismo (mais efetivo)",
+              "Vacinação anual (influenza) e pneumococo",
+              "Reabilitação pulmonar",
+              "Oxigenoterapia se PaO2 ≤55 ou SpO2 ≤88%",
+              "Suporte nutricional se baixo peso"
+            ],
+            "citations": [
+              {
+                "refId": "gold-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "LAMA",
+                "medicamentos": [
+                  "Tiotrópio",
+                  "Glicopirrônio"
+                ],
+                "posologia": "Tiotrópio 18mcg 1x/dia inalatório"
+              },
+              {
+                "classe": "LABA",
+                "medicamentos": [
+                  "Formoterol",
+                  "Salmeterol",
+                  "Indacaterol"
+                ],
+                "posologia": "Formoterol 12mcg 12/12h inalatório"
+              },
+              {
+                "classe": "LABA + LAMA (se persistir sintomas)",
+                "medicamentos": [
+                  "Tiotrópio + Formoterol"
+                ],
+                "posologia": "Combinação em dispositivo único ou separado"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Exacerbador frequente (≥2/ano)",
+                "conduta": "Considerar adicionar CI se eosinófilos ≥300"
+              },
+              {
+                "situacao": "Sobreposição asma-DPOC",
+                "conduta": "LABA + CI, não usar LABA isolado"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "gold-2024"
+              }
+            ]
+          },
+          "duracao": "Tratamento contínuo"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "A cada 3-6 meses, ou mais frequente se instável",
+          "examesControle": [
+            "Espirometria anual",
+            "Oximetria a cada consulta",
+            "Avaliação de sintomas (mMRC, CAT)"
+          ],
+          "metasTerapeuticas": [
+            "mMRC 0-1, CAT <10",
+            "0-1 exacerbação/ano",
+            "Manutenção da capacidade funcional"
+          ],
+          "criteriosEncaminhamento": [
+            "DPOC grave (GOLD 3-4)",
+            "Exacerbações frequentes apesar do tratamento",
+            "Candidato a oxigenoterapia domiciliar",
+            "Avaliação para cirurgia redutora ou transplante"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Não iniciar tabagismo",
+            "Proteção ocupacional",
+            "Redução da poluição ambiental"
+          ],
+          "secundaria": [
+            "Cessação do tabagismo",
+            "Vacinação",
+            "Tratamento precoce"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-dpoc"
+      ],
+      "medicamentos": [
+        "tiotropio",
+        "formoterol",
+        "salbutamol",
+        "beclometasona"
+      ],
+      "calculadoras": [
+        "gold-copd",
+        "bode-index"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "gold-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "dpoc",
+        "enfisema",
+        "bronquite",
+        "tabagismo",
+        "dispneia"
+      ]
+    },
+    {
+      "id": "pneumonia-comunitaria",
+      "titulo": "Пневмония, приобретенная в сообществе",
+      "sinonimos": [
+        "ПАС",
+        "Пневмония, приобретенная в сообществе",
+        "Пневмония"
+      ],
+      "doid": "DOID:552",
+      "snomedCT": "385093006",
+      "meshId": "D018410",
+      "umlsCui": "C0694549",
+      "ciap2": [
+        "R81"
+      ],
+      "cid10": [
+        "J18",
+        "J15",
+        "J13",
+        "J14"
+      ],
+      "cid11": [
+        "CA40"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "Острая инфекция легочной паренхимы, приобретенная вне больничной среды, характеризующаяся острыми дыхательными симптомами и новым инфильтратом на рентгенограмме.",
+        "criteriosDiagnosticos": [
+          "Острые симптомы: кашель, выделения из бронхов, лихорадка, одышка, плевральная боль",
+          "Признаки: тахипноэ, хрипы, трубы",
+          "Новый инфильтрат на рентгенограмме грудной клетки",
+          "Отсутствие недавней госпитализации (>48 ч в последние 90 дней)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Адекватноеhydration",
+            "Относительный покой",
+            "Антипиретики при лихорадке",
+            "Мониторинг SpO2"
+          ],
+          "farmacologico": [
+            "Легкая ПАС (амбулаторно): Амоксициллин 500 мг каждые 8 часов внутрь × 5-7 дней",
+            "Или Азитромицин 500 мг/день × 3-5 дней (при аллергии на пенициллин)",
+            "Умеренная ПАС: Амоксициллин-клавуланат + Макролид или Респираторная квинолон",
+            "Длительность: 5-7 дней (минимум 5 дней, без лихорадки в течение 48-72 ч)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Разрешение симптомов в течение 48-72 ч",
+          "Снижение температуры в течение 48-72 ч",
+          "Улучшение на рентгенограмме (может занять недели)",
+          "SpO2 >90%"
+        ],
+        "examesIniciais": [
+          "Рентгенограмма грудной клетки (PA и профиль)",
+          "Пульсоксиметрия",
+          "Общий анализ крови, СОЭ",
+          "Функция почек при умеренной/тяжелой форме",
+          "Газовый анализ крови при SpO2 <92%"
+        ],
+        "redFlags": [
+          "SpO2 <90% в воздухе",
+          "Гипотензия (САД <90)",
+          "Помутнение сознания",
+          "ЧДД >30 в минуту",
+          "Мочевина >50 мг/дл",
+          "Объемный плевральный выпот",
+          "Множественные долевые инфильтраты"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Частая причина обращения и госпитализации",
+          "incidencia": "5-11 случаев/1000 человек/год",
+          "faixaEtaria": "Все возрастные группы, наиболее тяжело протекает у пожилых и детей",
+          "fatoresRisco": [
+            "Возраст >65 лет",
+            "ХОБЛ, бронхиальная астма",
+            "Хроническая сердечная недостаточность",
+            "Сахарный диабет",
+            "Иммуносупрессия",
+            "Курение, алкоголизм",
+            "Институционализация"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Инфекция легочной паренхимы микроорганизмами (бактерии, вирусы, грибы). Наиболее распространены Streptococcus pneumoniae, Haemophilus influenzae, Mycoplasma pneumoniae и респираторные вирусы. Воспалительная реакция вызывает альвеолярную консолидацию и нарушение газообмена.",
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Кашель (обычно продуктивный)",
+            "Лихорадка (может отсутствовать у пожилых)",
+            "Одышка",
+            "Плевральная боль",
+            "Озноб",
+            "Общее недомогание"
+          ],
+          "sinaisExameFisico": [
+            "Тахипноэ (ЧДД >20)",
+            "Лихорадка",
+            "Хрипы",
+            "Трубы (консолидация)",
+            "Тупость при перкуссии",
+            "Увеличение голосового дрожания"
+          ],
+          "formasClinicas": [
+            "Типичная ПАС: острое начало, высокая лихорадка, продуктивный кашель",
+            "Атипичная ПАС: подострое начало, сухой кашель, внелегочные проявления"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Клиническая картина, соответствующая заболеванию",
+            "Новый инфильтрат на рентгенограмме грудной клетки",
+            "Исключение других причин"
+          ],
+          "diagnosticoDiferencial": [
+            "Острая бронхит",
+            "Обострение ХОБЛ/бронхиальной астмы",
+            "Хроническая сердечная недостаточность",
+            "Тромбоэмболия легочной артерии",
+            "Туберкулез",
+            "Рак легкого"
+          ],
+          "examesLaboratoriais": [
+            "Рентгенограмма грудной клетки",
+            "Общий анализ крови",
+            "СОЭ или прокальцитонин",
+            "Мочевина, креатинин",
+            "Кровь на посев (при госпитализации)",
+            "Исследование антигена в моче (пневмококк, легионелла) при тяжелой форме"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Устранение патогена",
+            "Разрешение симптомов",
+            "Предотвращение осложнений",
+            "Избежание антибиотикорезистентности"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Гидратация",
+              "Покой",
+              "Кислородотерапия при SpO2 <90%",
+              "Анальгетики/антипиретики"
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-pac-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Бета-лактам",
+                "medicamentos": [
+                  "Амоксициллин",
+                  "Амоксициллин-клавуланат"
+                ],
+                "posologia": "Амоксициллин 500 мг каждые 8 часов внутрь × 5-7 дней"
+              },
+              {
+                "classe": "Макролид (альтернатива или комбинация)",
+                "medicamentos": [
+                  "Азитромицин",
+                  "Кларитромицин"
+                ],
+                "posologia": "Азитромицин 500 мг/день × 3-5 дней"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Аллергия на пенициллин",
+                "conduta": "Азитромицин или Респираторная квинолон (Левофлоксацин)"
+              },
+              {
+                "situacao": "Тяжелая ПАС (госпитализация)",
+                "conduta": "Амоксициллин-клавуланат В/в + Азитромицин или Респираторная квинолон В/в"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-pac-2022"
+              }
+            ]
+          },
+          "duracao": "5-7 дней (минимум 5 дней, без лихорадки в течение 48-72 ч перед прекращением)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Повторный осмотр через 48-72 ч при амбулаторном лечении",
+          "examesControle": [
+            "Контрольная рентгенограмма через 4-6 недель (при >50 лет или курении)",
+            "Переоценка состояния при отсутствии улучшения в течение 48-72 ч"
+          ],
+          "metasTerapeuticas": [
+            "Снижение температуры в течение 48-72 ч",
+            "Улучшение дыхательных симптомов"
+          ],
+          "criteriosEncaminhamento": [
+            "CURB-65 ≥2 (рассмотреть госпитализацию)",
+            "SpO2 <90%",
+            "Осложнения (плевральный выпот, абсцесс)",
+            "Неэффективность амбулаторного лечения"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Прививка против пневмококка (>65 лет и группы риска)",
+            "Ежегодная вакцинация против гриппа",
+            "Прекращение курения"
+          ],
+          "secundaria": [
+            "Адекватное лечение респираторных инфекций",
+            "Вакцинация после ПАС"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-pac"
+      ],
+      "medicamentos": [
+        "amoxicilina",
+        "azitromicina",
+        "levofloxacino"
+      ],
+      "calculadoras": [
+        "curb-65",
+        "psi-port"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "sbpt-pac-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "пневмония",
+        "пас",
+        "респираторная-инфекция",
+        "кашель",
+        "лихорадка"
+      ]
+    },
+    {
+      "id": "rinite-alergica",
+      "titulo": "Аллергический ринит",
+      "sinonimos": [
+        "Переносный аллергический ринит",
+        "Сезонный аллергический ринит",
+        "Поллиноз"
+      ],
+      "ciap2": [
+        "R97"
+      ],
+      "cid10": [
+        "J30"
+      ],
+      "cid11": [
+        "CA08.0"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:8819",
+      "snomedCT": "47758005",
+      "meshId": "D012221",
+      "umlsCui": "C0035384",
+      "hpo": [
+        "HP:0002197",
+        "HP:0000422"
+      ],
+      "tags": [
+        "respiratorio",
+        "аллергия",
+        "распространенный"
+      ],
+      "quickView": {
+        "definicao": "Воспаление слизистой оболочки носа, медиатором которого является IgE, вызванное аллергенами. Симптомы: ринорея, чихание, зуд в носу, заложенность носа.",
+        "criteriosDiagnosticos": [
+          "Водянистая ринорея",
+          "Чихание",
+          "Зуд в носу/глазах",
+          "Заложенность носа",
+          "Симптомы, вызванные известными аллергенами",
+          "Положительный кожный тест или специфический IgE"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Избегать аллергенов",
+            "Промывание носа физиологическим раствором",
+            "Антиаллергические вакцины (иммунотерапия) по показаниям"
+          ],
+          "farmacologico": [
+            "Оральные антигистаминные препараты: Цетиризин 10 мг/день или Лоратадин 10 мг/день",
+            "Назальные кортикостероиды: Будесонид или Флутиказон",
+            "Назальный топический антигистаминный препарат по мере необходимости"
+          ]
+        },
+        "redFlags": [
+          "Синусит",
+          "Односторонняя заложенность носа",
+          "Постоянное носовое кровотечение",
+          "Назальные полипы"
+        ]
+      },
+      "medicamentos": [
+        "cetirizine",
+        "loratadine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "ivas-pediatrica",
+      "titulo": "IVAS (Инфекция верхних дыхательных путей)",
+      "ciap2": [
+        "R74"
+      ],
+      "cid10": [
+        "J00",
+        "J06"
+      ],
+      "cid11": [
+        "CA07"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:0050117",
+      "snomedCT": "54150009",
+      "meshId": "D012141",
+      "umlsCui": "C0041912",
+      "quickView": {
+        "definicao": "Обычный простудный синдром. Наиболее частая причина обращения к педиатру. Вирусная этиология (>200 вирусов). Самопроизвольно исчезает в течение 7-10 дней.",
+        "criteriosDiagnosticos": [
+          "Прозрачный насморк → гнойный",
+          "Заложенность носа",
+          "Низкая температура",
+          "Сухой/ produktivnyy кашель"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Промывание носа солевым раствором",
+            "Обильное питье",
+            "Поднятие головного конца кровати",
+            "Мед (>1 год) для кашля"
+          ],
+          "farmacologico": [
+            "Антипиретик при наличии жара",
+            "Не использовать деконгестанты у детей младше 6 лет",
+            "Не использовать противокашлевые средства"
+          ]
+        },
+        "redFlags": [
+          "Температура >72 ч или повторяющаяся",
+          "Дыхательная недостаточность",
+          "Ухудшение после начального улучшения",
+          "Боль в ухе"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [
+        "ivas"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "asma-infantil",
+      "titulo": "Бронхиальная астма у детей",
+      "ciap2": [
+        "R96"
+      ],
+      "cid10": [
+        "J45"
+      ],
+      "cid11": [
+        "CA23"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:2841",
+      "snomedCT": "195967001",
+      "meshId": "D001249",
+      "umlsCui": "C0004096",
+      "quickView": {
+        "definicao": "Хроническое воспалительное заболевание дыхательных путей с повторяющимися эпизодами свистящего дыхания. Диагностика затруднена у детей младше 5 лет. Основное хроническое заболевание детского возраста.",
+        "criteriosDiagnosticos": [
+          "Повторяющееся свистящее дыхание (≥3 эпизода)",
+          "Ночной/утренний кашель",
+          "Одышка при физической нагрузке",
+          "Улучшение после бронходилататора",
+          "Модифицированный IPA (прогностический в возрасте <5 лет)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Контроль окружающей среды",
+            "Избегание пассивного курения",
+            "Своевременная вакцинация"
+          ],
+          "farmacologico": [
+            "Легкий интермиттирующий: SABA для купирования приступов",
+            "Постоянный: ИКС низкой дозы (бudesonida 100-200 мкг)",
+            "Эскалация лечения при неэффективности"
+          ]
+        },
+        "redFlags": [
+          "Цианоз",
+          "Использование вспомогательной мускулатуры",
+          "Трудности с речью",
+          "SpO2 <92%",
+          "Торacicное молчание"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol",
+        "budesonida",
+        "prednisolona"
+      ],
+      "protocolos": [
+        "asma-exacerbacao"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "sinusite-aguda",
+      "titulo": "Острый синусит",
+      "ciap2": [
+        "R75"
+      ],
+      "cid10": [
+        "J01"
+      ],
+      "cid11": [
+        "CA12"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:0050127",
+      "snomedCT": "15805002",
+      "meshId": "D012852",
+      "umlsCui": "C0037199",
+      "quickView": {
+        "definicao": "Воспаление околоносовых пазух, обычно вирусного происхождения. Продолжительность <4 недели. Бактериальная форма, если симптомы сохраняются более 10 дней или ухудшаются после начального улучшения.",
+        "criteriosDiagnosticos": [
+          "Насморк",
+          "Гнойные выделения из носа",
+          "Боль в лице/давление",
+          "Обонятельные нарушения",
+          "Продолжительность 7-10 дней (вирусная) или >10 дней (бактериальная)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Назальный душ с физиологическим раствором",
+            "Гидратация",
+            "Увлажнение воздуха"
+          ],
+          "farmacologico": [
+            "Симптоматическое лечение: анальгетик + местный деконгестант (максимум 5 дней)",
+            "Антибиотик при бактериальной форме: Амоксициллин 500 мг каждые 8 часов 7-10 дней"
+          ]
+        },
+        "redFlags": [
+          "Периорбитальный отек",
+          "Нарушения зрения",
+          "Интенсивная головная боль",
+          "Менингеальные симптомы"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "парацетамол"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "faringite-aguda",
+      "titulo": "Острая фарингит",
+      "ciap2": [
+        "R72"
+      ],
+      "cid10": [
+        "J02"
+      ],
+      "cid11": [
+        "CA02"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:974",
+      "snomedCT": "363746003",
+      "meshId": "D010612",
+      "umlsCui": "C0031350",
+      "quickView": {
+        "definicao": "Воспаление глотки. Большинство случаев вирусного происхождения (70-90%). Стрептококковый (GABHS) в 15-30% случаев у детей, 5-15% случаев у взрослых.",
+        "criteriosDiagnosticos": [
+          "Боль в горле",
+          "Гиперемия глотки",
+          "Амигдалоэкссудат",
+          "Цервикальная аденоидальная гипертрофия",
+          "Модифицированные критерии Центора"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Анальгетики (парацетамол/ибупрофен)",
+            "Полоскание теплой соленой водой"
+          ],
+          "farmacologico": [
+            "Вирусный: только симптоматическое лечение",
+            "Бактериальный (GABHS): Пенициллин V 250-500 мг каждые 6 часов на 10 дней ИЛИ Амоксициллин 500 мг каждые 8 часов"
+          ]
+        },
+        "redFlags": [
+          "Тризм",
+          "Отклонение увеи",
+          "Струidor",
+          "Перифарингеальный абсцесс"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquite-aguda",
+      "titulo": "Острая бронхит",
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J20"
+      ],
+      "cid11": [
+        "CA20"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:6132",
+      "snomedCT": "32398004",
+      "meshId": "D001991",
+      "umlsCui": "C0006267",
+      "quickView": {
+        "definicao": "Воспаление бронхов продолжительностью менее 3 недель. Обычно вирусное (90%). Кашель может сохраняться 2-3 недели.",
+        "criteriosDiagnosticos": [
+          "Продуктивный кашель",
+          "Отсутствие признаков пневмонии",
+          "Продолжительность менее 3 недель",
+          "Высокие дыхательные симптомы"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Гидратация",
+            "Покой",
+            "Избегать раздражителей"
+          ],
+          "farmacologico": [
+            "Симптоматическое лечение: антикушечные средства при беспокоящем сухом кашле",
+            "Антибиотики НЕ показаны рутинно",
+            "Бронходилататор при хрипах (Сальбутамол ингалятор)"
+          ]
+        },
+        "redFlags": [
+          "Кашель более 3 недель",
+          "Признаки пневмонии",
+          "Кровохарканье",
+          "Одышка"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquite-cronica",
+      "titulo": "Хронический бронхит",
+      "sinonimos": [
+        "Хронический бронхит простой",
+        "Хроническое обструктивное легочное заболевание - бронхитический тип"
+      ],
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J41"
+      ],
+      "cid11": [
+        "CA22.0"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:6132",
+      "snomedCT": "13645005",
+      "meshId": "D001991",
+      "umlsCui": "C0006277",
+      "tags": [
+        "chronic",
+        "respiratory",
+        "smoking"
+      ],
+      "quickView": {
+        "definicao": "Кашель и выделение мокроты в течение ≥3 месяцев в год на протяжении ≥2 последовательных лет, без других причин. Часто ассоциируется с курением.",
+        "criteriosDiagnosticos": [
+          "Продуктивный кашель ≥3 месяцев в год",
+          "≥2 последовательных года",
+          "Исключение других причин (туберкулез, бронхоэктазия и др.)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Отказ от курения",
+            "Вакцинация (грипп, пневмококковая)",
+            "Пульmonary реабилитация"
+          ],
+          "farmacologico": [
+            "Бронходилататор ингалятор: Сальбутамол спрей 2 впрыскивания 4 раза в день",
+            "Если симптомы часто: добавить кортикостероид ингалятор"
+          ]
+        },
+        "redFlags": [
+          "Кровохарканье",
+          "Потеря веса",
+          "Постоянная лихорадка",
+          "Прогрессирующая одышка"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol",
+        "budesonida"
+      ],
+      "protocolos": [
+        "dpoc"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "enfisema-pulmonar",
+      "titulo": "Эмфизема легких",
+      "ciap2": [
+        "R95"
+      ],
+      "cid10": [
+        "J43"
+      ],
+      "cid11": [
+        "CA22.1"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:3119",
+      "snomedCT": "196494001",
+      "meshId": "D004656",
+      "umlsCui": "C0014120",
+      "tags": [
+        "хроническая",
+        "дыхательная",
+        "ХОБЛ"
+      ],
+      "quickView": {
+        "definicao": "Постоянное разрушение альвеол с гиперинфлуацией. Эмфизематозная форма ХОБЛ.",
+        "criteriosDiagnosticos": [
+          "Прогрессирующая одышка",
+          "Бочкообразная грудная клетка",
+          "Уменьшение везикалярного шума",
+          "Рентген: гиперинфлуация"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Отказ от курения",
+            "Кислородотерапия при SpO2 <88%",
+            "Пульmonary реабилитация"
+          ],
+          "farmacologico": [
+            "Бронходилататор: Тиотропий 18 мкг 1 раз в день",
+            "При обострениях: добавить ингаляционный кортикостероид"
+          ]
+        },
+        "redFlags": [
+          "Дыхательная недостаточность",
+          "Пневмоторакс",
+          "Значительная потеря веса"
+        ]
+      },
+      "medicamentos": [
+        "tiotropio"
+      ],
+      "protocolos": [
+        "dpoc"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "tosse-cronica",
+      "titulo": "Хронический кашель",
+      "sinonimos": [
+        "Постоянный кашель"
+      ],
+      "ciap2": [
+        "R05"
+      ],
+      "cid10": [
+        "R05"
+      ],
+      "cid11": [
+        "MD11.1"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:12759",
+      "snomedCT": "49727002",
+      "meshId": "D003371",
+      "umlsCui": "C0010200",
+      "tags": [
+        "respiratorio",
+        "симптом",
+        "хронический"
+      ],
+      "quickView": {
+        "definicao": "Постоянный кашель более 8 недель. Основные причины: синдром постназального затекания, бронхиальная астма, ГЭРБ, использование ИЭКА.",
+        "criteriosDiagnosticos": [
+          "Кашель более 8 недель",
+          "Выявление причин: ГЭРБ, бронхиальная астма, ринит, ИЭКА",
+          "Нормальная рентгенография грудной клетки",
+          "Исключение других причин"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Лечение основного заболевания",
+            "Отмена ИЭКА при недавнем использовании",
+            "Избегание раздражителей"
+          ],
+          "farmacologico": [
+            "При ГЭРБ: ИБП",
+            "При бронхиальной астме: Бронходилататоры + Ингаляционные кортикостероиды",
+            "При рините: Антигистаминные препараты + Назальные кортикостероиды",
+            "Кодеин или Дексаметорфан только на короткий срок при необходимости"
+          ]
+        },
+        "redFlags": [
+          "Кровотечение",
+          "Потеря веса",
+          "Лихорадка",
+          "Лимфаденопатия",
+          "Курение",
+          "Возраст >50 лет"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

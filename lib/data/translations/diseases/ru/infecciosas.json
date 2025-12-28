@@ -1,0 +1,4180 @@
+{
+  "locale": "ru",
+  "category": "infecciosas",
+  "generatedAt": "2025-12-28T02:36:49.941Z",
+  "count": 25,
+  "diseases": [
+    {
+      "id": "infeccao-urinaria",
+      "titulo": "Infecção do Trato Urinário (ITU)",
+      "sinonimos": [
+        "Cistite",
+        "ITU",
+        "Infecção urinária"
+      ],
+      "doid": "DOID:13148",
+      "snomedCT": "68566005",
+      "meshId": "D014552",
+      "umlsCui": "C0042029",
+      "ciap2": [
+        "U71"
+      ],
+      "cid10": [
+        "N30",
+        "N39.0"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Infecção bacteriana do trato urinário, mais comumente cistite (infecção baixa) em mulheres. ITU não complicada ocorre em mulheres saudáveis, não grávidas, com anatomia urinária normal.",
+        "criteriosDiagnosticos": [
+          "Sintomas típicos: disúria, polaciúria, urgência miccional",
+          "Dor suprapúbica",
+          "EAS: leucocitúria, nitrito positivo, bacteriúria",
+          "Urocultura se ITU complicada, recorrente, falha terapêutica, gestante",
+          "Diagnóstico pode ser clínico em ITU não complicada"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hidratação abundante",
+            "Micção pós-coito (prevenção)",
+            "Evitar espermicidas",
+            "Higiene adequada (não usar duchas)",
+            "Tratar constipação se associada"
+          ],
+          "farmacologico": [
+            "Nitrofurantoína 100mg 6/6h por 5-7 dias (1ª escolha)",
+            "Fosfomicina 3g dose única (boa adesão, 2ª escolha)",
+            "Sulfametoxazol-TMP 800/160mg 12/12h por 3 dias (se sensibilidade local)",
+            "Evitar fluoroquinolonas em ITU não complicada"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Resolução dos sintomas em 48-72h",
+          "Esterilização da urina",
+          "Prevenção de recorrências"
+        ],
+        "examesIniciais": [
+          "EAS (exame de urina tipo 1)",
+          "Urocultura + antibiograma se: ITU complicada, recorrente, gestante, falha terapêutica",
+          "Creatinina se suspeita de pielonefrite"
+        ],
+        "redFlags": [
+          "Febre >38°C, calafrios (sugere pielonefrite)",
+          "Dor lombar (Giordano positivo)",
+          "Náuseas/vômitos",
+          "Gestante (risco de complicações)",
+          "Imunossupressão, DM descompensado",
+          "ITU em homem (sempre investigar)",
+          "Sepse"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "50-60% das mulheres terão ITU na vida",
+          "incidencia": "25-30% recorrência em 6 meses após primeiro episódio",
+          "faixaEtaria": "Pico em mulheres jovens sexualmente ativas e idosas",
+          "fatoresRisco": [
+            "Sexo feminino (uretra curta)",
+            "Atividade sexual",
+            "Uso de espermicida/diafragma",
+            "Menopausa (atrofia urogenital)",
+            "História prévia de ITU",
+            "DM",
+            "Cateterismo vesical",
+            "Anomalias urológicas"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Disúria (dor/ardência ao urinar)",
+            "Polaciúria (micções frequentes)",
+            "Urgência miccional",
+            "Dor suprapúbica",
+            "Hematúria (pode ocorrer)",
+            "Urina turva ou fétida"
+          ],
+          "sinaisExameFisico": [
+            "Geralmente exame físico normal na cistite",
+            "Dor à palpação suprapúbica",
+            "Ausência de febre (cistite)",
+            "Se febre + Giordano +: pielonefrite"
+          ],
+          "formasClinicas": [
+            "Cistite (infecção baixa)",
+            "Pielonefrite (infecção alta)",
+            "Bacteriúria assintomática",
+            "ITU recorrente (≥3/ano ou ≥2/6 meses)"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínico em ITU não complicada (sintomas típicos)",
+            "EAS: leucocitúria (>10 leucócitos/campo), nitrito +",
+            "Urocultura: >10⁵ UFC/mL (ou >10² se sintomática)"
+          ],
+          "diagnosticoDiferencial": [
+            "Vaginite/vulvovaginite",
+            "Uretrite (IST)",
+            "Bexiga hiperativa",
+            "Cistite intersticial",
+            "Nefrolitíase"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Erradicar infecção",
+            "Aliviar sintomas",
+            "Prevenir complicações",
+            "Prevenir recorrências"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hidratação abundante",
+              "Micção pós-coito",
+              "Evitar retenção urinária",
+              "Tratar constipação"
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Nitrofurantoína",
+                "medicamentos": [
+                  "Nitrofurantoína 100mg 6/6h por 5-7 dias"
+                ],
+                "observacoes": "1ª escolha. Evitar se TFG <30"
+              },
+              {
+                "classe": "Fosfomicina",
+                "medicamentos": [
+                  "Fosfomicina trometamol 3g dose única"
+                ],
+                "observacoes": "Boa adesão. Mais cara"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Sulfametoxazol-TMP",
+                "medicamentos": [
+                  "SMX-TMP 800/160mg 12/12h por 3 dias"
+                ],
+                "observacoes": "Se sensibilidade local >80%. Evitar no 3º trimestre"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Gestante",
+                "conduta": "Nitrofurantoína (não no 3º tri), Cefalexina, Amoxicilina. Tratar bacteriúria assintomática"
+              },
+              {
+                "situacao": "Pielonefrite",
+                "conduta": "Fluoroquinolona ou Ceftriaxona. 7-14 dias. Considerar internação"
+              },
+              {
+                "situacao": "ITU recorrente",
+                "conduta": "Profilaxia: Nitrofurantoína 50-100mg/noite ou pós-coito"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "duracao": "Cistite: 3-7 dias. Pielonefrite: 7-14 dias"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Reavaliação em 48-72h se não melhora",
+          "metasTerapeuticas": [
+            "Resolução dos sintomas",
+            "Urocultura de controle não indicada de rotina"
+          ],
+          "criteriosEncaminhamento": [
+            "Pielonefrite grave (sepse, vômitos, gestante)",
+            "ITU recorrente sem causa identificada",
+            "Suspeita de alteração anatômica",
+            "ITU em homem (urologia)"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-itu"
+      ],
+      "medicamentos": [
+        "nitrofurantoina",
+        "fosfomicina",
+        "sulfametoxazol-tmp"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "idsa-itu-2011"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "infecciosas",
+        "aguda",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "infeccao-trato-urinario",
+      "titulo": "Infecção do Trato Urinário",
+      "sinonimos": [
+        "ITU",
+        "Cistite",
+        "Pielonefrite",
+        "Infecção urinária"
+      ],
+      "doid": "DOID:13148",
+      "snomedCT": "68566005",
+      "meshId": "D014552",
+      "umlsCui": "C0042029",
+      "ciap2": [
+        "U71",
+        "U70"
+      ],
+      "cid10": [
+        "N39.0",
+        "N10",
+        "N30"
+      ],
+      "cid11": [
+        "GC08",
+        "GB60"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Infecção bacteriana do trato urinário, classificada como cistite (baixa) ou pielonefrite (alta). E. coli é o agente em 80-90% dos casos não complicados.",
+        "criteriosDiagnosticos": [
+          "CISTITE: Disúria + Polaciúria + Urgência + Dor suprapúbica",
+          "Urina turva ou odor fétido",
+          "Ausência de febre/dor lombar (cistite)",
+          "PIELONEFRITE: Febre + Dor lombar + Sinal de Giordano positivo",
+          "Sintomas de cistite podem ou não estar presentes",
+          "EAS: Piúria (>10 leucócitos/campo), nitrito +, esterase leucocitária +",
+          "Urocultura: >100.000 UFC/mL (ou >1.000 em sintomáticos)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hidratação adequada",
+            "Esvaziamento vesical frequente",
+            "Higiene adequada (limpar frente para trás)"
+          ],
+          "farmacologico": [
+            "CISTITE NÃO COMPLICADA (mulher):",
+            "Fosfomicina 3g dose única (1ª escolha) OU",
+            "Nitrofurantoína 100mg 6/6h por 5 dias OU",
+            "Sulfametoxazol-Trimetoprima 800/160mg 12/12h por 3 dias",
+            "",
+            "PIELONEFRITE LEVE (ambulatorial):",
+            "Ciprofloxacino 500mg 12/12h por 7 dias OU",
+            "Ceftriaxona 1g IM/IV + Cefuroxima VO por 10-14 dias"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Resolução dos sintomas em 24-48h",
+          "Erradicação bacteriana",
+          "Prevenção de recorrência",
+          "Evitar progressão para sepse"
+        ],
+        "examesIniciais": [
+          "EAS (urina tipo I)",
+          "Urocultura + antibiograma (se complicada, recorrente, homem, gestante, falha tratamento)",
+          "Hemograma, creatinina, PCR (se pielonefrite)",
+          "USG rins e vias urinárias (se pielonefrite ou suspeita de complicação)"
+        ],
+        "redFlags": [
+          "Febre alta, toxemia (sepse urinária)",
+          "Vômitos (internação para ATB IV)",
+          "Dor lombar intensa, massa palpável",
+          "Anúria ou oligúria",
+          "Imunossupressão, DM descompensado, gestante",
+          "Homem (sempre considerar complicada)",
+          "ITU de repetição (≥3/ano)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "11% das mulheres/ano têm cistite",
+          "incidencia": "150 milhões de casos/ano no mundo",
+          "faixaEtaria": "Mais comum em mulheres em idade reprodutiva",
+          "fatoresRisco": [
+            "Sexo feminino (uretra curta)",
+            "Atividade sexual",
+            "Uso de espermicidas",
+            "Cateterismo vesical",
+            "Menopausa (atrofia vaginal)",
+            "Diabetes mellitus",
+            "Obstrução urinária",
+            "Gravidez"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Colonização periuretral por uropatógenos intestinais (principalmente E. coli uropatogênica) que ascendem pela uretra até a bexiga. Adesinas bacterianas (fímbrias P) permitem adesão ao urotélio. Pielonefrite ocorre por ascensão ao trato superior.",
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Disúria (dor/ardência ao urinar)",
+            "Polaciúria (aumento da frequência)",
+            "Urgência urinária",
+            "Dor suprapúbica (cistite)",
+            "Febre, calafrios (pielonefrite)",
+            "Dor lombar (pielonefrite)"
+          ],
+          "sinaisExameFisico": [
+            "Sensibilidade suprapúbica (cistite)",
+            "Febre (pielonefrite)",
+            "Punho-percussão lombar positiva (Giordano)",
+            "Ausência de corrimento vaginal"
+          ],
+          "formasClinicas": [
+            "ITU não complicada (cistite em mulher saudável)",
+            "ITU complicada (homem, gestante, cateter, DM, alteração anatômica)",
+            "Pielonefrite aguda",
+            "ITU recorrente (≥3/ano ou ≥2 em 6 meses)",
+            "Bacteriúria assintomática (só tratar em gestante/pré-procedimento)"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínico (cistite não complicada): pode tratar empiricamente",
+            "EAS: piúria, nitrito, esterase",
+            "Urocultura: >100.000 UFC/mL"
+          ],
+          "diagnosticoDiferencial": [
+            "Vaginite/vaginose",
+            "Uretrite (DST: clamídia, gonorreia)",
+            "Prostatite",
+            "Síndrome da bexiga dolorosa",
+            "Nefrolitíase",
+            "Apendicite (dor suprapúbica)"
+          ],
+          "examesLaboratoriais": [
+            "EAS (sumário de urina)",
+            "Urocultura + antibiograma",
+            "Hemograma, PCR (pielonefrite)",
+            "Função renal"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Erradicar infecção",
+            "Aliviar sintomas",
+            "Prevenir complicações",
+            "Prevenir recorrência"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hidratação",
+              "Esvaziamento vesical frequente",
+              "Evitar espermicidas"
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Cistite não complicada",
+                "medicamentos": [
+                  "Fosfomicina",
+                  "Nitrofurantoína",
+                  "SMX-TMP"
+                ],
+                "posologia": "Fosfomicina 3g dose única. Nitrofurantoína 100mg 6/6h 5d. SMX-TMP 800/160mg 12/12h 3d."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Fluoroquinolona (reservar)",
+                "medicamentos": [
+                  "Ciprofloxacino",
+                  "Norfloxacino"
+                ],
+                "posologia": "Ciprofloxacino 500mg 12/12h 3 dias. Reservar para pielonefrite ou resistência."
+              },
+              {
+                "classe": "Pielonefrite ambulatorial",
+                "medicamentos": [
+                  "Ciprofloxacino",
+                  "Ceftriaxona"
+                ],
+                "posologia": "Cipro 500mg 12/12h 7d. Ceftriaxona 1g IM/IV 1x + oral por 10-14d."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Gestante",
+                "conduta": "Nitrofurantoína (evitar 3º tri), Cefalexina, Amoxicilina. Tratamento obrigatório, 7 dias. Urocultura de controle."
+              },
+              {
+                "situacao": "ITU recorrente",
+                "conduta": "Profilaxia: Nitrofurantoína 50-100mg/noite OU SMX-TMP 400/80mg/noite. Ou profilaxia pós-coito."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "duracao": "Cistite: 1-5 dias. Pielonefrite: 7-14 dias."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Reavaliação em 48-72h se sintomas persistirem",
+          "examesControle": [
+            "Urocultura de controle apenas em gestante ou sintomas persistentes",
+            "Não repetir EAS/urocultura de rotina"
+          ],
+          "metasTerapeuticas": [
+            "Resolução de sintomas",
+            "Urocultura negativa (quando indicada)"
+          ],
+          "criteriosEncaminhamento": [
+            "Pielonefrite com vômitos/toxemia (internação)",
+            "ITU recorrente para investigação",
+            "Homem jovem com ITU",
+            "Suspeita de alteração anatômica"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Hidratação",
+            "Micção pós-coito",
+            "Higiene adequada"
+          ],
+          "secundaria": [
+            "Profilaxia antibiótica (se recorrente)",
+            "Estrogênio tópico (pós-menopausa)"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "itu-manejo"
+      ],
+      "medicamentos": [
+        "fosfomicina",
+        "nitrofurantoina",
+        "sulfametoxazol-trimetoprima",
+        "ciprofloxacino"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "idsa-itu-2011"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "itu",
+        "cistite",
+        "pielonefrite",
+        "disuria",
+        "e-coli"
+      ]
+    },
+    {
+      "id": "faringoamigdalite",
+      "titulo": "Острая фаринготонзиллит",
+      "ciap2": [
+        "R76"
+      ],
+      "cid10": [
+        "J02",
+        "J03"
+      ],
+      "cid11": [
+        "CA02"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:3083",
+      "snomedCT": "195666003",
+      "meshId": "D010612",
+      "umlsCui": "C0031350",
+      "quickView": {
+        "definicao": "Воспаление глотки и миндалин. Вирусное (большинство случаев) против бактериального (Streptococcus pyogenes - 15-30%). Пик заболеваемости: 5-15 лет.",
+        "criteriosDiagnosticos": [
+          "Центор/МакАйсак: Температура >38°C, Отсутствие кашля, Передняя шейная лимфаденопатия, Миндалинный экссудат"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Гидратация",
+            "Полоскание теплой соленой водой",
+            "Покой"
+          ],
+          "farmacologico": [
+            "При ЭБГА: Бензатиновая пенициллина 600.000 ЕД (<27 кг) или 1.200.000 ЕД (>27 кг) В/м ДУ",
+            "Альтернатива: Амоксициллин 50 мг/кг/сут ÷2 на 10 дней"
+          ]
+        },
+        "redFlags": [
+          "Перитонзиллярный абсцесс (тризм, приглушенный голос)",
+          "Дыхательная недостаточность",
+          "Мононуклеоз (спленомегалия)"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "penicilina-benzatina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dengue",
+      "titulo": "Денге",
+      "sinonimos": [
+        "Лихорадка денге",
+        "Геморрагическая лихорадка денге",
+        "Тяжелая форма денге"
+      ],
+      "doid": "DOID:11205",
+      "snomedCT": "38362002",
+      "meshId": "D003715",
+      "umlsCui": "C0011311",
+      "ciap2": [
+        "A77"
+      ],
+      "cid10": [
+        "A90",
+        "A91"
+      ],
+      "cid11": [
+        "1D20"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Арбовироз, вызываемый вирусом денге (DENV 1-4), передаваемый через комаров Aedes aegypti. Широкий клинический спектр: от неспецифической лихорадки до тяжелой формы денге с шоком и кровотечением. Бразилия является гиперэндемичной страной.",
+        "criteriosDiagnosticos": [
+          "ПОДОЗРИТЕЛЬНЫЙ СЛУЧАЙ: Лихорадка (2-7 дней) + ≥2 из следующих симптомов в эндемичном регионе:",
+          "Миалгия, артралгия, ретроорбитальная головная боль",
+          "Макулопапулезный высыпание",
+          "Интенсивная слабость",
+          "Петехии/положительный тест на петехии",
+          "Тошнота/рвота",
+          "",
+          "ПОДТВЕРЖДЕНИЕ: NS1 (до 5-го дня) или IgM (после 6-го дня) или ПЦР"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Интенсивное пероральноеhydration (60-80 мл/кг/сутки)",
+            "Покой",
+            "Информирование о признаках тревоги"
+          ],
+          "farmacologico": [
+            "Парацетамол 500-750 мг каждые 6 часов (НЕ ИСПОЛЬЗОВАТЬ НПВП/АСК!)",
+            "Дипирон 500-1000 мг каждые 6 часов (альтернативный анальгетик/антипиретик)",
+            "Противорвотные средства: Метоклопрамид, Ондансетрон",
+            "",
+            "ГИДРАТАЦИЯ В ЗАВИСИМОСТИ ОТ ГРУППЫ:",
+            "A: 60 мл/кг/сутки внутрь амбулаторно",
+            "B (с риском или сопутствующими заболеваниями): 60-80 мл/кг/сутки, наблюдение 6-8 часов",
+            "C (признаки тревоги): Инфузионная гидратация 10-20 мл/кг за 1 час, повторить при необходимости",
+            "D (шок): Экспансия 20 мл/кг за 20 минут, реанимационное отделение"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Поддержание адекватной гидратации (диурез ≥0,5 мл/кг/ч)",
+          "Предотвращение прогрессирования к тяжелой форме денге",
+          "Раннее распознавание признаков тревоги",
+          "Восстановление без последствий"
+        ],
+        "examesIniciais": [
+          "Кровь на полную формулу с тромбоцитами (гемоконцентрация, тромбоцитопения)",
+          "NS1 (до 5-го дня симптомов)",
+          "Серология IgM/IgG (после 6-го дня)",
+          "АЛТ, АСТ, альбумин при признаках тревоги",
+          "Тест на петехии"
+        ],
+        "redFlags": [
+          "ПРИЗНАКИ ТРЕВОГИ (указывают на предстоящую тяжелую форму денге):",
+          "Интенсивная и постоянная абдоминальная боль",
+          "Постоянная рвота",
+          "Накопление жидкости (асцит, плевральный выпот)",
+          "Кровотечение из слизистых",
+          "Летаргия или раздражительность",
+          "Гепатомегалия >2 см",
+          "Прогрессирующее повышение гематокрита",
+          "Резкое снижение тромбоцитов"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Бразилия: страна с наибольшим числом случаев в мире",
+          "incidencia": "Миллионы случаев в год, циклические эпидемические вспышки",
+          "faixaEtaria": "Все возрастные группы, тяжесть может быть больше на крайних возрастах",
+          "fatoresRisco": [
+            "Проживание в эндемичном регионе",
+            "Предшествующая инфекция другим серотипом (повышенный риск тяжелой формы)",
+            "Дети и пожилые люди (более тяжелое течение)",
+            "Сопутствующие заболевания",
+            "Беременные женщины"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Вирус, внедренный через укусы комаров Aedes aegypti, инфицирует дендритные клетки и моноциты. Вирусемия вызывает лихорадку. В критической фазе (снижение температуры) увеличение проницаемости капилляров в результате иммунного ответа (цитокины, комплемент) приводит к экстравазации плазмы. Гетеротипические антитела при предшествующей инфекции могут усиливать инфекцию (ADE).",
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Высокая лихорадка с внезапным началом (2-7 дней)",
+            "Интенсивная ретроорбитальная головная боль",
+            "Миалгия («лихорадка ломота в костях»)",
+            "Артралгия",
+            "Высыпания (3-4 день, макулопапулезные)",
+            "Интенсивная слабость",
+            "Тошнота, рвота, анорексия"
+          ],
+          "sinaisExameFisico": [
+            "Лихорадка",
+            "Макулопапулезное высыпание с зудом",
+            "Положительный тест на петехии (≥20 петехий на 2,5 см²)",
+            "Спонтанные петехии",
+            "Гепатомегалия (признак тяжести)",
+            "Эффузии (асцит, плевральный выпот) - критическая фаза"
+          ],
+          "formasClinicas": [
+            "Денге без признаков тревоги (большинство случаев)",
+            "Денге с признаками тревоги",
+            "Тяжелая форма денге (шок, тяжелое кровотечение, дисфункция органов)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Клинико-эпидемиологический + лабораторный",
+            "Антиген NS1 (1-5 день): чувствительность 60-90%",
+            "IgM (после 6-го дня): остается положительным недели",
+            "ПЦР: золотой стандарт, определяет серотип"
+          ],
+          "diagnosticoDiferencial": [
+            "Чикунгунья",
+            "Зика",
+            "Лептоспироз",
+            "COVID-19",
+            "Грипп",
+            "Пятнистая лихорадка",
+            "Менингококцемия"
+          ],
+          "examesLaboratoriais": [
+            "Кровь на полную формулу (гемоконцентрация: гематокрит ↑20%, тромбоцитопения)",
+            "NS1 или IgM",
+            "АЛТ, АСТ, альбумин (при умеренных/тяжелых формах)",
+            "Коагулограмма (при подозрении на кровотечение)",
+            "Электролиты, функция почек"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Поддержание гидратации",
+            "Раннее распознавание признаков тревоги",
+            "Предотвращение и лечение шока",
+            "Избегание использования НПВП"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Интенсивное пероральноеhydration",
+              "Покой",
+              "Немедленное обращение при признаках тревоги",
+              "Обязательное уведомление"
+            ],
+            "citations": [
+              {
+                "refId": "ms-dengue-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Анальгетик/антипиретик",
+                "medicamentos": [
+                  "Парацетамол",
+                  "Дипирон"
+                ],
+                "posologia": "Парацетамол 500-750 мг каждые 6 часов. Дипирон 500-1000 мг каждые 6 часов. НЕ ИСПОЛЬЗОВАТЬ АСК или НПВП!"
+              },
+              {
+                "classe": "Гидратация (группа A)",
+                "medicamentos": [
+                  "Оральный раствор"
+                ],
+                "posologia": "60 мл/кг/сутки (1/3 солевого раствора + 2/3 жидкости). Амбулаторно."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Инфузионная гидратация (группы C/D)",
+                "medicamentos": [
+                  "Физиологический раствор 0,9%",
+                  "Рингер лактат"
+                ],
+                "posologia": "C: 10-20 мл/кг за 1 час, переоценить. D (шок): 20 мл/кг за 20 минут болюс."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Беременные женщины",
+                "conduta": "Ранняя госпитализация, фетальный мониторинг. Увеличенный риск кровотечения."
+              },
+              {
+                "situacao": "Тяжелая форма денге с кровотечением",
+                "conduta": "Переливание эритроцитов/тромбоцитов по показаниям. Реанимационное отделение."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ms-dengue-2024"
+              }
+            ]
+          },
+          "duracao": "Острая фаза: 7-10 дней. Реконвалесценция: недели."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Ежедневно до 48 часов после снижения температуры (критическая фаза)",
+          "examesControle": [
+            "Ежедневный анализ крови на полную формулу в критическую фазу",
+            "Сериальный гематокрит",
+            "Клиническая переоценка"
+          ],
+          "metasTerapeuticas": [
+            "Гемодинамическая стабильность",
+            "Адекватный диурез",
+            "Восстановление тромбоцитов"
+          ],
+          "criteriosEncaminhamento": [
+            "Признаки тревоги (наблюдение/госпитализация)",
+            "Тяжелая форма денге (реанимационное отделение)",
+            "Беременные женщины",
+            "Декомпенсированные сопутствующие заболевания"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Контроль вектора (уничтожение личиночных водоемов)",
+            "Использование репеллентов",
+            "Москитные сетки и противомоскитные сетки",
+            "Вакцинация (Qdenga - серопозитивные)"
+          ],
+          "secundaria": [
+            "Эпидемиологический контроль",
+            "Обязательное уведомление"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "dengue-classificacao"
+      ],
+      "medicamentos": [
+        "paracetamol",
+        "dipirona",
+        "metoclopramida"
+      ],
+      "calculadoras": [
+        "prova-laco"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ms-dengue-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "денге",
+        "арбовироз",
+        "аэдес",
+        "лихорадка",
+        "гидратация"
+      ]
+    },
+    {
+      "id": "herpes-simples",
+      "titulo": "Герпес простой",
+      "ciap2": [
+        "S71"
+      ],
+      "cid10": [
+        "B00"
+      ],
+      "cid11": [
+        "1F00"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:8566",
+      "snomedCT": "88594005",
+      "meshId": "D006561",
+      "umlsCui": "C0019348",
+      "quickView": {
+        "definicao": "Вирусная инфекция, рецидивирующая под воздействием HSV-1 (губной) или HSV-2 (генитальный). Латентность в нервных ганглиях с периодами реактивации.",
+        "criteriosDiagnosticos": [
+          "Группированные пузырьки на эритематозной основе",
+          "Продромальные симптомы: покалывание, жжение",
+          "Переходит в корочки через 7-10 дней"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Избегать контакта в активную фазу",
+            "Избегать факторов, вызывающих обострение (солнце, стресс)"
+          ],
+          "farmacologico": [
+            "Эпизод: Ацикловир 400 мг 3 раза в день в течение 5 дней",
+            "Подавление (≥6 рецидивов в год): Ацикловир 400 мг 2 раза в день непрерывно"
+          ]
+        },
+        "redFlags": [
+          "Герпес глаз",
+          "Герпетический экзема",
+          "Диссеминированный герпес (у иммуносупрессированных пациентов)"
+        ]
+      },
+      "medicamentos": [
+        "aciclovir"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "herpes-zoster",
+      "titulo": "Герпес зостер",
+      "ciap2": [
+        "S70"
+      ],
+      "cid10": [
+        "B02"
+      ],
+      "cid11": [
+        "1E90"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:8536",
+      "snomedCT": "4740000",
+      "meshId": "D006562",
+      "umlsCui": "C0019360",
+      "quickView": {
+        "definicao": "Реактивация латентного вируса варцеллы-зостер в ганглиях. Риск увеличивается с возрастом и иммуносупрессией.",
+        "criteriosDiagnosticos": [
+          "Невропатическая боль, предшествующая высыпаниям",
+          "Везикулы в одностороннем дерматоме",
+          "Не пересекает срединную линию",
+          "Наиболее распространены торакальные дерматомы"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Поддерживать чистоту и сухость пораженных участков",
+            "Не вскрывать везикулы"
+          ],
+          "farmacologico": [
+            "Ацикловир 800 мг 5 раз в день в течение 7 дней (начать <72 ч)",
+            "Анальгезия: парацетамол + НПВП",
+            "Если >50 лет: добавить кортикостероид для снижения нейралгии"
+          ]
+        },
+        "redFlags": [
+          "Герпес зостер глазной (кончик носа)",
+          "Синдром Ремси-Ханта (ухо)",
+          "Рассеянный",
+          "Иммуносупрессия"
+        ]
+      },
+      "medicamentos": [
+        "aciclovir",
+        "paracetamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "escabiose",
+      "titulo": "Экшабиоз (Саркоидоз)",
+      "ciap2": [
+        "S72"
+      ],
+      "cid10": [
+        "B86"
+      ],
+      "cid11": [
+        "1G89"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:13234",
+      "snomedCT": "128869009",
+      "meshId": "D012532",
+      "umlsCui": "C0036262",
+      "quickView": {
+        "definicao": "Кожное поражение, вызванное клещом Sarcoptes scabiei. Передача происходит при длительном прямом контакте.",
+        "criteriosDiagnosticos": [
+          "Интенсивный зуд по ночам",
+          "Повреждения на пальцах, запястьях, подмышках, гениталиях",
+          "Характерные борозды/туннели",
+          "Семейный контакт с зудом"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Лечение всех домашних контактов",
+            "Постирать одежду и постельное белье в горячей воде",
+            "Поместить нелавабельную одежду в пакет на 72 часа"
+          ],
+          "farmacologico": [
+            "Перметрин 5% крем: нанести от шеи до стоп, смыть через 8-14 часов, повторить через 7 дней",
+            "Ивермектин 200 мкг/кг Внутрь однократно (при обширных случаях)"
+          ]
+        },
+        "redFlags": [
+          "Норвежская саркоидоз (коростный) - у иммуносупрессированных пациентов",
+          "Вторичная инфекция"
+        ]
+      },
+      "medicamentos": [
+        "ivermectina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gastroenterite-aguda",
+      "titulo": "Острый гастроэнтерит",
+      "ciap2": [
+        "D70"
+      ],
+      "cid10": [
+        "A09"
+      ],
+      "cid11": [
+        "1A40"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:4194",
+      "snomedCT": "235856003",
+      "meshId": "D005759",
+      "umlsCui": "C0017163",
+      "quickView": {
+        "definicao": "Воспаление желудочно-кишечного тракта, вызванное вирусами (ротавирус, норовирус), бактериями или паразитами. Продолжительность <2 недели.",
+        "criteriosDiagnosticos": [
+          "Острая диарея (<14 дней)",
+          "Рвота",
+          "Тошнота",
+          "Животные колики",
+          "Может быть лихорадка"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Оральная гидратация (SRO)",
+            "Легкая диета",
+            "Покой"
+          ],
+          "farmacologico": [
+            "Антибиотик только при: холера, шигеллез, амебиаз, или факторы риска",
+            "Противорвотное по мере необходимости: Ондансетрон (не использовать у детей <4 лет)"
+          ]
+        },
+        "redFlags": [
+          "Тяжелое обезвоживание",
+          "Признаки шока",
+          "Кровь в кале",
+          "Пожилые люди или маленькие дети"
+        ]
+      },
+      "medicamentos": [
+        "soro-oral"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "mononucleose-infecciosa",
+      "titulo": "Инфекционный мононуклеоз",
+      "ciap2": [
+        "A75"
+      ],
+      "cid10": [
+        "B27"
+      ],
+      "cid11": [
+        "1D81"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:8620",
+      "snomedCT": "186759007",
+      "meshId": "D007244",
+      "umlsCui": "C0026650",
+      "tags": [
+        "инфекционная",
+        "вирусная",
+        "педиатрическая"
+      ],
+      "quickView": {
+        "definicao": "Инфекция, вызванная Эпштейн-Барр вирусом (EBV). Характеризуется лихорадкой, фарингитом, лимфаденопатией, сplenомегалией.",
+        "criteriosDiagnosticos": [
+          "Экссудативный фарингит",
+          "Шейная лимфаденопатия",
+          "Атипическая лимфоцитоз",
+          "Положительный тест Поль-Баннеля"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Покой",
+            "Гидратация",
+            "Гргартирование"
+          ],
+          "farmacologico": [
+            "Симптоматическое лечение: Парацетамол или Ибупрофен",
+            "Кортикостероиды только при осложнениях"
+          ]
+        },
+        "redFlags": [
+          "Разрыв селезенки",
+          "Обструкция дыхательных путей",
+          "Тяжелая гепатит",
+          "Менингоэнцефалит"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hepatite-a",
+      "titulo": "Гепатит A",
+      "ciap2": [
+        "D72"
+      ],
+      "cid10": [
+        "B15"
+      ],
+      "cid11": [
+        "1E50.0"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:12549",
+      "snomedCT": "50711007",
+      "meshId": "D006506",
+      "umlsCui": "C0019158",
+      "tags": [
+        "инфекционная",
+        "вирусная",
+        "гепатит"
+      ],
+      "quickView": {
+        "definicao": "Инфекция, вызванная вирусом гепатита A. Трансмиссия фекально-оральная. Как правило, самокупирующаяся, редко протекает в фульминантной форме.",
+        "criteriosDiagnosticos": [
+          "Желтуха",
+          "Повышенные АСТ/АЛТ",
+          "Положительный Anti-HAV IgM"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Покой",
+            "Гидратация",
+            "Избегание алкоголя"
+          ],
+          "farmacologico": [
+            "Симптоматическое лечение",
+            "Специфического лечения нет"
+          ]
+        },
+        "redFlags": [
+          "Фульминантный гепатит",
+          "Печеночная недостаточность",
+          "Коагулопатия"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hepatite-b",
+      "titulo": "Гепатит B",
+      "ciap2": [
+        "D72"
+      ],
+      "cid10": [
+        "B16"
+      ],
+      "cid11": [
+        "1E50.1"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:2043",
+      "snomedCT": "66071002",
+      "meshId": "D006509",
+      "umlsCui": "C0019159",
+      "tags": [
+        "инфекционная",
+        "вирусная",
+        "гепатит",
+        "хроническая"
+      ],
+      "quickView": {
+        "definicao": "Инфекция, вызванная ВГБ. Может быть острой или хронической. Передается парентерально, половым путем или вертикально.",
+        "criteriosDiagnosticos": [
+          "Положительный HBsAg",
+          "Anti-HBc IgM (острая)",
+          "Вирусная нагрузка ВГБ"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Покой",
+            "Исключение алкоголя",
+            "Защита контактов"
+          ],
+          "farmacologico": [
+            "Острая: симптоматическое",
+            "Хроническая: тенофовир или энтекавир"
+          ]
+        },
+        "redFlags": [
+          "Фульминантный гепатит",
+          "Цирроз",
+          "Гепатоцеллюлярная карцинома"
+        ]
+      },
+      "medicamentos": [
+        "tenofovir",
+        "entecavir"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hepatite-e",
+      "titulo": "Гепатит E",
+      "ciap2": [
+        "D72"
+      ],
+      "cid10": [
+        "B17.2"
+      ],
+      "cid11": [
+        "1E50.0"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:12476",
+      "snomedCT": "240530008",
+      "meshId": "D006526",
+      "umlsCui": "C0019160",
+      "hpo": [
+        "HP:0002920",
+        "HP:0002901"
+      ],
+      "tags": [
+        "инфекционная",
+        "вирусная",
+        "гепатит"
+      ],
+      "quickView": {
+        "definicao": "Инфекция вирусом гепатита E (HEV). Передача фекально-оральным путем. Может быть тяжелой при беременности.",
+        "criteriosDiagnosticos": [
+          "Положительный Anti-HEV IgM",
+          "Положительный HEV RNA",
+          "Повышение трансаминаз"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Поддержка",
+            "Покой",
+            "Гидратация"
+          ],
+          "farmacologico": [
+            "Симптоматическое лечение",
+            "Рибавирин в тяжелых случаях/пересадке"
+          ]
+        },
+        "redFlags": [
+          "Фульминантная печеночная недостаточность",
+          "Беременность (высокая смертность)",
+          "Иммуносупрессированные пациенты"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "сифилис-третичный",
+      "titulo": "Сифилис третичный",
+      "ciap2": [
+        "Y77"
+      ],
+      "cid10": [
+        "A52"
+      ],
+      "cid11": [
+        "1C1Z"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:13240",
+      "snomedCT": "76272004",
+      "meshId": "D013592",
+      "umlsCui": "C0039102",
+      "hpo": [
+        "HP:0001250",
+        "HP:0002134"
+      ],
+      "tags": [
+        "инфекционная",
+        "бактериальная",
+        "неврологическая"
+      ],
+      "quickView": {
+        "definicao": "Поздний сифилис (через годы после заражения). Нейросифилис, сердечно-сосудистый сифилис, сифилитические гуммы.",
+        "criteriosDiagnosticos": [
+          "История сифилиса",
+          "Положительный VDRL/RPR",
+          "Положительный TPHA/FTA-ABS",
+          "Поздние проявления"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Неврологическое обследование",
+            "Кардиологическое обследование по мере необходимости"
+          ],
+          "farmacologico": [
+            "Кристаллическая пенициллин G 18-24 млн ЕД/сут IV 10-14 дней (нейросифилис)",
+            "Или цефтриаксон в качестве альтернативы"
+          ]
+        },
+        "redFlags": [
+          "Активный нейросифилис",
+          "Аортальная недостаточность",
+          "Аортический аневризм"
+        ]
+      },
+      "medicamentos": [
+        "penicilina-g"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "faringite-estreptococica",
+      "titulo": "Стрептококковая фарингит",
+      "sinonimos": [
+        "Стрептококковая ангин"
+      ],
+      "ciap2": [
+        "R72"
+      ],
+      "cid10": [
+        "J02.0"
+      ],
+      "cid11": [
+        "CA40"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:10763",
+      "snomedCT": "43878009",
+      "meshId": "D010996",
+      "umlsCui": "C0032285",
+      "hpo": [
+        "HP:0000347",
+        "HP:0025258"
+      ],
+      "tags": [
+        "инфекционная",
+        "бактериальная",
+        "педиатрическая"
+      ],
+      "quickView": {
+        "definicao": "Фарингит, вызванный Streptococcus pyogenes (группа A). Чаще встречается у детей в возрасте 5-15 лет. Может осложняться ревматической лихорадкой.",
+        "criteriosDiagnosticos": [
+          "Фарингит/ангин",
+          "Тонзиллярный экссудат",
+          "Цервикальная аденоидальная гипертрофия",
+          "Лихорадка",
+          "Положительный быстрый тест или культура"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Анальгетики: Парацетамол или Ибупрофен",
+            "Полоскания",
+            "Гидратация"
+          ],
+          "farmacologico": [
+            "Пенициллин V 250-500mg 6/6h на 10 дней",
+            "Или Амоксициллин 500mg 8/8h на 10 дней",
+            "Или Азитромицин при аллергии"
+          ]
+        },
+        "redFlags": [
+          "Перитонзиллярный абсцесс",
+          "Окклюзия дыхательных путей",
+          "Ревматическая лихорадка",
+          "Гломерулонефрит"
+        ]
+      },
+      "medicamentos": [
+        "penicilina-v",
+        "amoxicilina",
+        "azitromicina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "amigdalite",
+      "titulo": "Ангин",
+      "ciap2": [
+        "R72"
+      ],
+      "cid10": [
+        "J03"
+      ],
+      "cid11": [
+        "CA40"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:10763",
+      "snomedCT": "56717001",
+      "meshId": "D014069",
+      "umlsCui": "C0040425",
+      "hpo": [
+        "HP:0025258",
+        "HP:0012825"
+      ],
+      "tags": [
+        "инфекционная",
+        "ЛОР",
+        "распространенная"
+      ],
+      "quickView": {
+        "definicao": "Воспаление миндалин. Может быть вирусным (более распространено) или бактериальным. Симптомы: боль в горле, лихорадка, увеличение лимфоузлов.",
+        "criteriosDiagnosticos": [
+          "Боль в горле",
+          "Гиперемия/отек миндалин",
+          "Может присутствовать налет",
+          "Увеличение шейных лимфоузлов",
+          "Лихорадка"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Анальгетики: Парацетамол или Ибупрофен",
+            "Полоскания",
+            "Гидратация"
+          ],
+          "farmacologico": [
+            "При стрептококковой: Пенициллин V или Амоксициллин",
+            "Вирусная: только симптоматическое лечение"
+          ]
+        },
+        "redFlags": [
+          "Перитонзиллярный абсцесс",
+          "Обструкция дыхательных путей",
+          "Тризм",
+          "Отклонение увеи"
+        ]
+      },
+      "medicamentos": [
+        "penicilina-v",
+        "amoxicilina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gastroenterite-viral",
+      "titulo": "Вирусный гастроэнтерит",
+      "sinonimos": [
+        "Острая вирусная гастроэнтерит"
+      ],
+      "ciap2": [
+        "D73"
+      ],
+      "cid10": [
+        "A08"
+      ],
+      "cid11": [
+        "DD92"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:4374",
+      "snomedCT": "48866001",
+      "meshId": "D005759",
+      "umlsCui": "C0017168",
+      "tags": [
+        "инфекционная",
+        "вирусная",
+        "желудочно-кишечная",
+        "педиатрическая"
+      ],
+      "quickView": {
+        "definicao": "Вирусная инфекция желудочно-кишечного тракта. Причины: ротавирус, норовирус, аденовирус. Симптомы: диарея, рвота, тошнота, боли в животе.",
+        "criteriosDiagnosticos": [
+          "Острая диарея",
+          "Рвота",
+          "Тошнота",
+          "Боли в животе",
+          "Может быть лихорадка",
+          "Эпидемиологический анамнез"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Оральная гидратация: раствор для оральной регидратации",
+            "Легкая диета",
+            "Отдых",
+            "Профилактика: гигиена, вакцинация (против ротавируса)"
+          ],
+          "farmacologico": [
+            "Противорвотные средства при интенсивной рвоте: ондансетрон",
+            "Цинк у детей младше 5 лет",
+            "Пробиотики могут быть полезны"
+          ]
+        },
+        "redFlags": [
+          "Тяжелое обезвоживание",
+          "Кровь в кале",
+          "Пожилые люди/маленькие дети",
+          "Симптомы более 7 дней"
+        ]
+      },
+      "medicamentos": [
+        "ondansetrona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sepse",
+      "titulo": "Сепсис и септический шок",
+      "sinonimos": [
+        "Септицемия",
+        "Септический синдром",
+        "Септический шок",
+        "Общая инфекция"
+      ],
+      "doid": "DOID:0080009",
+      "snomedCT": "91302008",
+      "meshId": "D018805",
+      "umlsCui": "C0036690",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "A41",
+        "A41.9",
+        "R65.1",
+        "R57.2"
+      ],
+      "cid11": [
+        "1G40"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Потенциально смертельная дисфункция органов, вызванная дезрегулированной реакцией организма на инфекцию. Септический шок: сепсис + необходимость в вазопрессорах + лактат >2 ммоль/Л несмотря на восполнение объема.",
+        "criteriosDiagnosticos": [
+          "СЕПСИС: подозрение/подтверждение инфекции + SOFA ≥2 балла",
+          "qSOFA (тестирование): ≥2 из: ЧДД≥22, САД≤100, изменение сознания",
+          "ШОК СЕПТИЧЕСКИЙ: сепсис + вазопрессор для САД≥65 + Лактат>2 после восполнения объема",
+          "Определить источник инфекции",
+          "Кровь на посевы перед антибиотиками (без задержки АТБ)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Определить и контролировать источник (дренирование абсцесса, удаление катетера)",
+            "Ширококалиберный венозный доступ (желательно центральный)",
+            "Непрерывный мониторинг",
+            "Мочевой катетер для контроля диуреза"
+          ],
+          "farmacologico": [
+            "ЧАС 1 (Бандлы выживаемости при сепсисе):",
+            "Лактат (повторить, если начальный >2)",
+            "Кровь на посевы (2 набора) перед АТБ",
+            "Антибиотик широкого спектра <1 ч",
+            "Раствор физиологический 0,9% 30 мл/кг при гипотензии или лактате≥4",
+            "Норадреналин при САД<65 после восполнения объема",
+            "",
+            "Эмпирический АТБ в зависимости от предполагаемого источника:",
+            "Легочные: Цефтриаксон + Азитромицин",
+            "Абдоминальные: Пиперациллин-тазобактам или Меропенем",
+            "Мочевые: Цефтриаксон или Ципрофлоксацин",
+            "Кожные: Оксациллин + Клиндамицин"
+          ]
+        },
+        "metasTerapeuticas": [
+          "САД ≥65 мм рт. ст.",
+          "Диурез ≥0,5 мл/кг/ч",
+          "Нормализация лактата",
+          "Улучшение сознания",
+          "Контроль источника инфекции"
+        ],
+        "examesIniciais": [
+          "Лактат крови",
+          "Кровь на посевы (2 набора перед АТБ)",
+          "Клинический анализ крови, креатинин, билирубины",
+          "Артериальная газовая проба",
+          "Коагулограмма",
+          "Прокальцитонин (при наличии)",
+          "Рентген грудной клетки, мочевой анализ/посев, изображения в зависимости от источника"
+        ],
+        "redFlags": [
+          "Лактат >4 ммоль/Л",
+          "Гипотензия, не реагирующая на восполнение объема",
+          "Дисфункция множественных органов",
+          "Значительное изменение уровня сознания",
+          "Коагулопатия (ДВС-синдром)",
+          "Тяжелое иммуносупpression"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~30 миллионов случаев в год в мире",
+          "incidencia": "200-300 случаев на 100 000 человек в год в развитых странах",
+          "mortalidade": "25-30% при сепсисе, 40-50% при септическом шоке",
+          "faixaEtaria": "Экстремы возраста (новорожденные и пожилые) более уязвимы",
+          "fatoresRisco": [
+            "Пожилой возраст",
+            "Иммуносупpression",
+            "Сахарный диабет",
+            "Опухоли",
+            "Хронические почечные/печеночные заболевания",
+            "Инвазивные устройства (катетеры, зонды)",
+            "Недавняя госпитализация",
+            "Недавняя хирургия"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Дезрегулированная иммунная реакция на инфекцию с массовым высвобождением цитокинов (цитокиновый шторм), активацией каскада свертывания, эндотелиальной дисфункцией и вазодилатацией. Результатом является тканевая гипоперфузия, дисфункция органов и потенциальная смерть.",
+          "citations": [
+            {
+              "refId": "sepsis-3"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Жар или гипотермия",
+            "Озноб",
+            "Тахикардия, тахипноэ",
+            "Психические расстройства, агрессия или заторможенность",
+            "Олигурия",
+            "Признаки источника инфекции"
+          ],
+          "sinaisExameFisico": [
+            "Гипотензия",
+            "Тахикардия",
+            "Тахипноэ",
+            "Изменение сознания",
+            "Время заполнения капилляров >3 сек",
+            "Мраморная кожа/ливедо",
+            "Холодные конечности"
+          ],
+          "formasClinicas": [
+            "Сепсис без шока",
+            "Септический шок",
+            "Сепсис с дисфункцией конкретного органа (острая почечная недостаточность, острая дыхательная недостаточность и др.)"
+          ],
+          "citations": [
+            {
+              "refId": "sepsis-3"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Сепсис-3: SOFA ≥2 + инфекция",
+            "qSOFA для скрининга (не диагностики)",
+            "Определение источника и возбудителя"
+          ],
+          "diagnosticoDiferencial": [
+            "Кардиогенный шок",
+            "Гиповолемический шок",
+            "Ангионевротический шок",
+            "Невоспалительный СИРС (панкреатит, ожоги)",
+            "Острая надпочечниковая недостаточность"
+          ],
+          "examesLaboratoriais": [
+            "Кровь на посевы (2 набора)",
+            "Артериальный лактат",
+            "Прокальцитонин",
+            "Клинический анализ крови (лейкоцитоз или лейкопения)",
+            "Функция почек и печени",
+            "Коагулограмма (тромбоцитопения, удлинение времени протромбина)",
+            "Артериальная газовая проба"
+          ],
+          "examesImagem": [
+            "Рентген грудной клетки",
+            "КТ в зависимости от подозрения (абдоминальная, тазовая)",
+            "Эхокардиография (при дисфункции сердца или подозрении на эндокардит)"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Ранняя гемодинамическая ресусцитация",
+            "Адекватная антибактериальная терапия <1 ч",
+            "Контроль источника инфекции",
+            "Поддержка дисфункций органов"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Центральный венозный доступ",
+              "Инвазивный катетер для измерения САД",
+              "Контроль источника (дренирование, дебридмент, удаление устройства)",
+              "Защитная вентиляция легких при ОДН",
+              "Заместительная почечная терапия при необходимости"
+            ],
+            "citations": [
+              {
+                "refId": "surviving-sepsis-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Антибиотик",
+                "medicamentos": [
+                  "Пиперациллин-тазобактам",
+                  "Меропенем",
+                  "Цефтриаксон + Метронидазол"
+                ],
+                "posologia": "Максимальная доза, коррекция при почечной недостаточности",
+                "observacoes": "Начать <1 ч после выявления"
+              },
+              {
+                "classe": "Кристаллоид",
+                "medicamentos": [
+                  "Раствор физиологический 0,9%",
+                  "Раствор Рингера-лактат"
+                ],
+                "posologia": "30 мл/кг в первые 3 ч при гипотензии/лактате≥4"
+              },
+              {
+                "classe": "Вазопрессор",
+                "medicamentos": [
+                  "Норадреналин 0,1-2 мкг/кг/мин"
+                ],
+                "posologia": "Титровать до САД≥65",
+                "observacoes": "Первый выбор"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Дополнительный вазопрессор",
+                "medicamentos": [
+                  "Вазопрессин 0,01-0,04 ЕД/мин"
+                ],
+                "observacoes": "Если норадреналин недостаточен"
+              },
+              {
+                "classe": "Инотропное средство",
+                "medicamentos": [
+                  "Добутамин 2,5-20 мкг/кг/мин"
+                ],
+                "observacoes": "При низком сердечном выбросе"
+              },
+              {
+                "classe": "Кортикостероид",
+                "medicamentos": [
+                  "Гидрокортизон 200 мг/сут"
+                ],
+                "observacoes": "Если рефрактерно к вазопрессорам"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "surviving-sepsis-2021"
+              }
+            ]
+          },
+          "duracao": "АТБ 7-10 дней в большинстве случаев; корректировать в зависимости от источника и ответа"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Непрерывная переоценка в остром периоде",
+          "examesControle": [
+            "Сериальный лактат",
+            "Функция почек",
+            "Клинический анализ крови",
+            "Культуры для мониторинга"
+          ],
+          "metasTerapeuticas": [
+            "Нормализация лактата",
+            "Отмена вазопрессоров",
+            "Диурез >0,5 мл/кг/ч",
+            "Разрешение дисфункции органов"
+          ],
+          "criteriosEncaminhamento": [
+            "Все пациенты с сепсисом: реанимационное отделение или интенсивная терапия",
+            "Хирургия при хирургическом источнике",
+            "Инфекционист для сложных случаев"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Вакцинация (пневмококковая, грипп)",
+            "Гигиена рук",
+            "Профилактика нозокомиальных инфекций",
+            "Адекватное управление инвазивными устройствами"
+          ],
+          "secundaria": [
+            "Раннее выявление инфекций",
+            "Адекватное лечение коммунальных инфекций",
+            "Бандлы первого часа"
+          ],
+          "citations": [
+            {
+              "refId": "surviving-sepsis-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "sepse-bundle-1h",
+        "choque-septico",
+        "atb-empirico-sepse"
+      ],
+      "medicamentos": [
+        "noradrenalina",
+        "meropenem",
+        "piperacilina-tazobactam",
+        "vancomicina"
+      ],
+      "calculadoras": [
+        "sofa",
+        "qsofa",
+        "apache-ii"
+      ],
+      "citations": [
+        {
+          "refId": "sepsis-3"
+        },
+        {
+          "refId": "surviving-sepsis-2021"
+        },
+        {
+          "refId": "ilas-sepse-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "malaria",
+      "titulo": "Малярия",
+      "sinonimos": [
+        "Палудизм",
+        "Третья лихорадка",
+        "Четвертая лихорадка",
+        "Импалаудизм"
+      ],
+      "doid": "DOID:12365",
+      "snomedCT": "61462000",
+      "meshId": "D008288",
+      "umlsCui": "C0024530",
+      "ciap2": [
+        "A73"
+      ],
+      "cid10": [
+        "B50",
+        "B51",
+        "B52",
+        "B53",
+        "B54"
+      ],
+      "cid11": [
+        "1F40"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Инфекционное заболевание, вызываемое протозойами рода Plasmodium, передаваемыми комарами Anopheles. P. falciparum вызывает наиболее тяжелую форму. Эндемична в Легальном Амазонском регионе Бразилии.",
+        "criteriosDiagnosticos": [
+          "Лихорадка (обычно прерывистая/циклическая)",
+          "Интенсивные ознобы, обильный пот",
+          "Головная боль, мышечные боли, артралгия",
+          "Гепатоспленомегалия",
+          "История экспозиции в эндемичной области",
+          "Положительный результат толстой капли или быстрого теста",
+          "Периодичность: P. vivax/ovale (48 ч), P. malariae (72 ч), P. falciparum (нерегулярная)"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "низкий",
+            "criterios": [
+              "P. vivax неосложненная",
+              "Отсутствие признаков тревоги"
+            ],
+            "conduta": "Амбулаторное лечение"
+          },
+          {
+            "nivel": "высокий",
+            "criterios": [
+              "P. falciparum",
+              "Признаки тяжести",
+              "Беременные",
+              "Экстремы возраста"
+            ],
+            "conduta": "Госпитализация и внутривенное лечение"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Адекватное гидратирование",
+            "Антипиретики (дипирона, парацетамол)",
+            "Покой",
+            "Срочное обязательное уведомление"
+          ],
+          "farmacologico": [
+            "P. VIVAX (неосложненная):",
+            "Хлорохин 25 мг/кг в 3 дня + Примахин 0,5 мг/кг/день в течение 7 дней",
+            "",
+            "P. FALCIPARUM (неосложненная):",
+            "Артеметер-Лумефантрина (Coartem®) 6 доз в 3 дня",
+            "ИЛИ Артесунат-Мефлохина",
+            "",
+            "МАЛЯРИЯ ТЯЖЕЛАЯ (любой вид):",
+            "Артесунат В/в 2,4 мг/кг в 0 ч, 12 ч, 24 ч, затем 1 раз в день",
+            "После улучшения завершить курс Coartem®"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Устранение паразита (клиническое и паразитологическое излечение)",
+          "Профилактика рецидивов (P. vivax/ovale - гипнозоиты)",
+          "Профилактика тяжелых осложнений",
+          "Радикальное излечение с примахином"
+        ],
+        "examesIniciais": [
+          "Толстая капля (золотой стандарт)",
+          "Быстрый тест (HRP2 для P. falciparum)",
+          "Гемограмма (анемия, тромбоцитопения)",
+          "Функция почек и печени",
+          "Глюкоза крови",
+          "Билирубины",
+          "Газовый анализ крови (при тяжелом состоянии)"
+        ],
+        "redFlags": [
+          "Изменение уровня сознания (церебральная малярия)",
+          "Дыхательная недостаточность (ARDS)",
+          "Интенсивная желтуха (Бб>3 мг/дл)",
+          "Гемоглобинурия (\"черная водная лихорадка\")",
+          "Гипогликемия (<40 мг/дл)",
+          "Метаболический ацидоз",
+          "Гиперпаразитемия (>250.000/мм³)",
+          "Острая почечная недостаточность",
+          "Тяжелая анемия (Hb<5 г/дл)",
+          "Спонтанное кровотечение"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~140.000 случаев/год в Бразилии (>99% в Амазонии)",
+          "incidencia": "229 миллионов случаев/год в мире (ВОЗ)",
+          "mortalidade": "~400.000 смертей/год в мире; в Бразилии <100/год",
+          "faixaEtaria": "Все возрастные группы; дети <5 лет более уязвимы",
+          "fatoresRisco": [
+            "Проживание/путешествие в эндемичную область",
+            "Отсутствие использования москитных сеток",
+            "Пребывание на открытом воздухе в сумерках без защиты",
+            "Беременные",
+            "Иммуносупрессия",
+            "Первичное заражение"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Эспорозоиты, введенные комаром, инфицируют гепатоциты, размножаются и освобождают мерозоиты, которые вторгаются в эритроциты. Эритроцитарный цикл вызывает гемолиз, высвобождение цитокинов и симптоматику. P. vivax/ovale образуют гепатические гипнозоиты (рецидивы). P. falciparum вызывает цитоадгезию и микроциркуляторную обструкцию.",
+          "citations": [
+            {
+              "refId": "who-malaria-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Высокая лихорадка (39-41°C)",
+            "Озноб (холодная фаза)",
+            "Обильный пот (потная фаза)",
+            "Интенсивная головная боль",
+            "Мышечные боли, артралгия",
+            "Тошнота, рвота",
+            "Астения"
+          ],
+          "sinaisExameFisico": [
+            "Спленомегалия (часто)",
+            "Гепатомегалия",
+            "Бледность (анемия)",
+            "Легкая до умеренной желтуха",
+            "Тахикардия"
+          ],
+          "formasClinicas": [
+            "Неосложненная малярия",
+            "Тяжелая/осложненная малярия",
+            "Церебральная малярия",
+            "Малярия у беременных"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Подозрительная клиника + эпидемиологическая экспозиция",
+            "Обязательное подтверждение паразитологическим методом"
+          ],
+          "diagnosticoDiferencial": [
+            "Денге",
+            "Тифоидная лихорадка",
+            "Лептоспироса",
+            "Вирусный гепатит",
+            "Желтая лихорадка",
+            "Менингит",
+            "Сепсис"
+          ],
+          "examesLaboratoriais": [
+            "Толстая капля (идентифицирует вид и паразитемию)",
+            "Тонкая капля",
+            "Иммуннохроматографический быстрый тест",
+            "Гемограмма",
+            "Билирубины, трансаминазы",
+            "Функция почек",
+            "Глюкоза крови, лактат"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Устранение паразита",
+            "Профилактика осложнений",
+            "Профилактика передачи",
+            "Предотвращение рецидивов (гипнозоиты)"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Гидратация",
+              "Антипиретики",
+              "Мониторинг",
+              "Переливание крови при Hb<5 г/дл"
+            ],
+            "citations": [
+              {
+                "refId": "ms-malaria-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "P. vivax",
+                "medicamentos": [
+                  "Хлорохин 25 мг/кг в 3 дня",
+                  "Примахин 0,5 мг/кг/день в течение 7 дней"
+                ],
+                "observacoes": "Проверить дефицит Г6ФД"
+              },
+              {
+                "classe": "P. falciparum",
+                "medicamentos": [
+                  "Артеметер-Лумефантрина",
+                  "Артесунат-Мефлохина"
+                ],
+                "posologia": "6 доз в 3 дня"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Тяжелая малярия",
+                "medicamentos": [
+                  "Артесунат В/в 2,4 мг/кг"
+                ],
+                "posologia": "0 ч, 12 ч, 24 ч, затем ежедневно"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Беременные",
+                "conduta": "Не использовать примахин; предпочтительно квинин+клиндамицин в 1-м триместре"
+              },
+              {
+                "situacao": "Дефицит Г6ФД",
+                "conduta": "Примахин 0,75 мг/кг/неделя в течение 8 недель"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-malaria-2023"
+              }
+            ]
+          },
+          "duracao": "Краткосрочное лечение (3-7 дней); примахин в течение 7-14 дней"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Контроль излечения: толстая капля на Д3, Д7, Д14, Д28, Д42",
+          "metasTerapeuticas": [
+            "Отрицательный результат паразитемии",
+            "Клиническое выздоровление",
+            "Профилактика рецидива (радикальное излечение)"
+          ],
+          "criteriosEncaminhamento": [
+            "Тяжелая малярия: реанимационное отделение/специализированная больница",
+            "Малярия у беременных",
+            "Лечение неэффективно"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Использование москитных сеток, пропитанных инсектицидами",
+            "Репелленты",
+            "Избегать пребывания на открытом воздухе в сумерках",
+            "Химиопрофилактика для путешественников (мефлохина, доксициклина, атоваквон-прогуанил)",
+            "Векторный контроль"
+          ],
+          "secundaria": [
+            "Ранний диагноз и лечение",
+            "Активный поиск случаев",
+            "Срочное обязательное уведомление"
+          ],
+          "citations": [
+            {
+              "refId": "who-malaria-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "malaria-tratamento",
+        "malaria-grave"
+      ],
+      "medicamentos": [
+        "cloroquina",
+        "primaquina",
+        "artemeter-lumefantrina",
+        "artesunato"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-malaria-2022"
+        },
+        {
+          "refId": "who-malaria-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "doenca-chagas",
+      "titulo": "Doença de Chagas",
+      "sinonimos": [
+        "Tripanossomíase americana",
+        "Chagas",
+        "Mal de Chagas"
+      ],
+      "doid": "DOID:12140",
+      "snomedCT": "77506005",
+      "meshId": "D014355",
+      "umlsCui": "C0041234",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "B57",
+        "B57.0",
+        "B57.1",
+        "B57.2",
+        "B57.3",
+        "B57.4",
+        "B57.5"
+      ],
+      "cid11": [
+        "1F51"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Doença parasitária causada pelo Trypanosoma cruzi, transmitida principalmente pelo triatomíneo (\"barbeiro\"). Fase aguda frequentemente assintomática; fase crônica com cardiopatia e/ou megaesôfago/megacólon.",
+        "criteriosDiagnosticos": [
+          "FASE AGUDA: Febre, hepatoesplenomegalia, edema, sinal de Romaña/chagoma",
+          "Parasitemia detectável (gota espessa, QBC, PCR)",
+          "FASE CRÔNICA: Sorologia positiva (2 métodos diferentes)",
+          "Cardiopatia chagásica: BRD + BDAS, arritmias, ICC",
+          "Megaesôfago: disfagia, regurgitação",
+          "Megacólon: constipação crônica, fecaloma"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Suporte clínico na fase aguda",
+            "Controle de arritmias e ICC na fase crônica",
+            "Dieta pastosa no megaesôfago",
+            "Dieta laxativa no megacólon"
+          ],
+          "farmacologico": [
+            "FASE AGUDA (obrigatório tratar):",
+            "Benznidazol 5mg/kg/dia por 60 dias (adultos: 2x/dia)",
+            "OU Nifurtimox 8-10mg/kg/dia por 60-90 dias",
+            "",
+            "FASE CRÔNICA INDETERMINADA:",
+            "Benznidazol: indicado em <50 anos, mulheres idade fértil",
+            "",
+            "FASE CRÔNICA CARDÍACA:",
+            "Tratamento da ICC (IECA, BB, espironolactona)",
+            "Amiodarona se arritmias",
+            "Marcapasso se bloqueio avançado",
+            "Considerar CDI se alto risco de morte súbita"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Fase aguda: eliminar parasita, prevenir evolução",
+          "Fase crônica: controle de sintomas, prevenir complicações",
+          "Prevenção de transmissão vertical"
+        ],
+        "examesIniciais": [
+          "Sorologia (ELISA + IFI ou ELISA + HAI)",
+          "Gota espessa/QBC (fase aguda)",
+          "PCR para T. cruzi",
+          "ECG 12 derivações",
+          "Ecocardiograma",
+          "Rx de tórax",
+          "EDA/esofagograma (se disfagia)",
+          "Enema opaco (se constipação)"
+        ],
+        "redFlags": [
+          "Miocardite aguda grave",
+          "Meningoencefalite",
+          "ICC descompensada",
+          "Arritmias malignas (TV sustentada)",
+          "Bloqueio AV avançado",
+          "Reativação em imunossuprimidos",
+          "Perfuração/volvo intestinal"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "6-7 milhões infectados no mundo; 1-3 milhões no Brasil",
+          "incidencia": "Casos agudos: ~200/ano no Brasil (transmissão oral)",
+          "mortalidade": "~12.000 mortes/ano no Brasil (fase crônica cardíaca)",
+          "faixaEtaria": "Infecção em qualquer idade; manifestações crônicas após décadas",
+          "fatoresRisco": [
+            "Residência em área rural endêmica",
+            "Moradia com frestas (pau-a-pique)",
+            "Consumo de alimentos contaminados (açaí, caldo de cana)",
+            "Transfusão de sangue não testado",
+            "Mãe portadora (transmissão vertical)"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "T. cruzi invade células do hospedeiro (miócitos, neurônios), multiplica-se e causa destruição celular direta e inflamação crônica. Na fase crônica, há destruição progressiva do miocárdio e do plexo mioentérico (denervação autonômica), levando a cardiomiopatia dilatada e megas.",
+          "citations": [
+            {
+              "refId": "who-chagas-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "AGUDA: Febre, mal-estar, hepatoesplenomegalia, edema, miocardite",
+            "Sinal de Romaña (edema palpebral unilateral)",
+            "Chagoma de inoculação (lesão cutânea no local da picada)",
+            "CRÔNICA: Palpitações, dispneia, síncope, disfagia, constipação"
+          ],
+          "sinaisExameFisico": [
+            "Hepatoesplenomegalia (fase aguda)",
+            "Sinais de ICC",
+            "Arritmias",
+            "Dilatação de câmaras cardíacas",
+            "Aneurisma apical de VE"
+          ],
+          "formasClinicas": [
+            "Fase aguda (sintomática ou assintomática)",
+            "Fase crônica indeterminada (assintomática, sorologia positiva)",
+            "Fase crônica cardíaca",
+            "Fase crônica digestiva (megaesôfago/megacólon)",
+            "Forma mista (cardíaca + digestiva)"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Fase aguda: exame parasitológico positivo",
+            "Fase crônica: 2 testes sorológicos positivos com métodos diferentes"
+          ],
+          "diagnosticoDiferencial": [
+            "Cardiomiopatia dilatada idiopática",
+            "Cardiomiopatia isquêmica",
+            "Acalasia",
+            "Doença de Hirschsprung",
+            "Outras parasitoses"
+          ],
+          "examesLaboratoriais": [
+            "Sorologia (ELISA, IFI, HAI) - 2 métodos",
+            "Exame parasitológico direto (fase aguda)",
+            "PCR",
+            "Xenodiagnóstico (histórico)",
+            "Hemocultura para T. cruzi"
+          ],
+          "examesImagem": [
+            "ECG (BRD, BDAS, extrassístoles, bloqueios)",
+            "Ecocardiograma (dilatação, aneurisma apical)",
+            "Holter 24h",
+            "Rx de tórax (cardiomegalia)",
+            "Esofagograma/EDA",
+            "Enema opaco/colonoscopia"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Fase aguda: eliminar parasita",
+            "Fase crônica: controlar manifestações, prevenir complicações"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Dieta para disfagia (megaesôfago)",
+              "Dieta laxativa e hidratação (megacólon)",
+              "Exercício físico supervisionado (cardiopatia leve)",
+              "Cirurgia para megas avançados"
+            ],
+            "citations": [
+              {
+                "refId": "consenso-chagas-2016"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Tripanocida",
+                "medicamentos": [
+                  "Benznidazol 5mg/kg/dia"
+                ],
+                "posologia": "60 dias, dividido em 2 tomadas",
+                "observacoes": "Obrigatório na fase aguda"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Alternativa",
+                "medicamentos": [
+                  "Nifurtimox 8-10mg/kg/dia"
+                ],
+                "posologia": "60-90 dias",
+                "observacoes": "Mais efeitos adversos"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Cardiopatia chagásica",
+                "conduta": "Tratamento de ICC: IECA, BB, espironolactona, diuréticos"
+              },
+              {
+                "situacao": "Arritmias",
+                "conduta": "Amiodarona; CDI se alto risco de morte súbita"
+              },
+              {
+                "situacao": "Megaesôfago avançado",
+                "conduta": "Cardiomiotomia de Heller ou esofagectomia"
+              },
+              {
+                "situacao": "Megacólon",
+                "conduta": "Sigmoidectomia se volvo recorrente ou fecaloma"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-chagas-2023"
+              }
+            ]
+          },
+          "duracao": "Tripanocida: 60 dias; tratamento de complicações: contínuo"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Anual na fase indeterminada; semestral/trimestral na cardiopatia",
+          "examesControle": [
+            "ECG anual",
+            "Ecocardiograma anual",
+            "Holter",
+            "Sorologia de controle"
+          ],
+          "metasTerapeuticas": [
+            "Negativação da PCR (cura parasitológica)",
+            "Estabilização da cardiopatia",
+            "Prevenção de morte súbita"
+          ],
+          "criteriosEncaminhamento": [
+            "Cardiologia: cardiopatia chagásica",
+            "Arritmia: eletrofisiologia",
+            "Megas: gastroenterologia/cirurgia",
+            "Reativação: infectologia"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Melhoria habitacional",
+            "Controle do vetor (borrifação, telas)",
+            "Triagem em bancos de sangue",
+            "Cuidados com alimentos (evitar contaminação)"
+          ],
+          "secundaria": [
+            "Triagem de gestantes",
+            "Tratamento de casos agudos",
+            "Acompanhamento de crônicos"
+          ],
+          "citations": [
+            {
+              "refId": "who-chagas-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "chagas-tratamento",
+        "cardiopatia-chagasica"
+      ],
+      "medicamentos": [
+        "benznidazol",
+        "nifurtimox",
+        "amiodarona"
+      ],
+      "calculadoras": [
+        "rassi-score"
+      ],
+      "citations": [
+        {
+          "refId": "consenso-chagas-2016"
+        },
+        {
+          "refId": "who-chagas-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "leishmaniose-visceral",
+      "titulo": "Висцеральный лейшманиоз",
+      "sinonimos": [
+        "Кала-азар",
+        "Черная лихорадка",
+        "LV"
+      ],
+      "doid": "DOID:9146",
+      "snomedCT": "186802003",
+      "meshId": "D007898",
+      "umlsCui": "C0023290",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "B55.0"
+      ],
+      "cid11": [
+        "1F54.0"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Заболевание, вызванное Leishmania infantum (Бразилия), передаваемое через укус флеботомины Lutzomyia longipalpis. Основное поражение затрагивает ретикулоэндотелиальную систему. Потенциально смертельное, если не лечить.",
+        "criteriosDiagnosticos": [
+          "Длительная лихорадка (>2 недели)",
+          "Объемная сplenomegalia",
+          "Гепатомегалия",
+          "Панцитопения (анемия, лейкопения, тромбоцитопения)",
+          "Гипергаммаглобулинемия",
+          "Потеря веса, астения",
+          "Подтверждение: паразитологическое (пункция костного мозга) или серология (rK39) + клиника"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "умеренная",
+            "criterios": [
+              "Возраст 1-40 лет",
+              "Без сопутствующих заболеваний",
+              "Без признаков тяжести"
+            ],
+            "conduta": "Амбулаторное лечение под наблюдением"
+          },
+          {
+            "nivel": "высокий",
+            "criterios": [
+              "<1 или >50 лет",
+              "Желтуха",
+              "Отек",
+              "Кровотечение",
+              "HIV+",
+              "Сопутствующая инфекция"
+            ],
+            "conduta": "Стационарное лечение"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Нутритивная поддержка",
+            "Переливание крови при тяжелой анемии или кровотечении",
+            "Лечение сопутствующих бактериальных инфекций",
+            "Обязательное уведомление"
+          ],
+          "farmacologico": [
+            "ПЕРВЫЙ ВЫБОР:",
+            "Липосомальная амфотерисин B 3mg/kg/день на 7 дней (20mg/kg всего)",
+            "",
+            "АЛЬТЕРНАТИВЫ:",
+            "Амфотерисин B деоксиколат 1mg/kg/день на 14-20 дней",
+            "N-метилглюкаминовый антимониат (Glucantime®) 20mg Sb/kg/день на 20-40 дней",
+            "",
+            "Предпочтительно липосомальный в: <1 год, >50 лет, ИБС, почечная, печеночная, ВИЧ, беременность"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Клиническое излечение (ликвидация лихорадки, сplenomegalia)",
+          "Нормализация гематологических показателей",
+          "Паразитологическое излечение"
+        ],
+        "examesIniciais": [
+          "Полный анализ крови",
+          "Функция почек и печени",
+          "Общий белок и фракции",
+          "Коагулограмма",
+          "Серология rK39 (быстрый тест)",
+          "Пункция костного мозга (миелограмма + культура)",
+          "Серология на ВИЧ",
+          "Рентгенография грудной клетки, ЭКГ (перед антимонием)"
+        ],
+        "redFlags": [
+          "Возраст <1 или >50 лет",
+          "Желтуха (Bb>2mg/dL)",
+          "Общий отек",
+          "Кровотечение",
+          "Сопутствующая инфекция ВИЧ",
+          "Тяжелая бактериальная инфекция",
+          "Тяжелая дистрофия",
+          "Почечная или печеночная недостаточность"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~3.000 случаев/год в Бразилии",
+          "mortalidade": "~8% смертность в Бразилии; до 95% без лечения",
+          "faixaEtaria": "Дети <10 лет наиболее подвержены",
+          "fatoresRisco": [
+            "Проживание в эндемичном районе",
+            "Наличие зараженных собак",
+            "Дистрофия",
+            "Иммуносупрессия (ВИЧ)",
+            "Неблагополучные социально-экономические условия"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Промастиготы, внедренные флеботоминой, фагоцитируются макрофагами, превращаясь в амастиготы. Происходит распространение по ретикулоэндотелиальной системе (сплен, печень, костный мозг), вызывая гиперплазию и инфильтрацию, что приводит к органомегалии и медуллярной супрессии.",
+          "citations": [
+            {
+              "refId": "who-leishmaniasis-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Длительная нерегулярная лихорадка",
+            "Прогрессирующая потеря веса",
+            "Интенсивная астения",
+            "Абдоминальное увеличение (спленомегалия)",
+            "Палитость (анемия)",
+            "Кровотечение из носа, десен"
+          ],
+          "sinaisExameFisico": [
+            "Объемная спленомегалия (может превышать пупочную рубцу)",
+            "Гепатомегалия",
+            "Палитость слизистых и кожи",
+            "Дистрофия",
+            "Отек",
+            "Желтуха (при тяжелых формах)"
+          ],
+          "formasClinicas": [
+            "Классическая форма (лихорадка, гепатосplenомегалия, панцитопения)",
+            "Олигосимптоматическая форма",
+            "Сопутствующая инфекция ВИЧ-лейшманиоз"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Клиника + эпидемиология + лабораторное подтверждение",
+            "Серология rK39 или RIFI ≥1:80",
+            "Паразитологическое исследование костного мозга (золотой стандарт)"
+          ],
+          "diagnosticoDiferencial": [
+            "Малярия",
+            "Тиф",
+            "Гепатоспленная шистосомиаз",
+            "Лейкемии и лимфомы",
+            "Гистоплазмоз",
+            "Бруцеллез",
+            "Мононуклеоз"
+          ],
+          "examesLaboratoriais": [
+            "Полный анализ крови (панцитопения)",
+            "Повышенная СОЭ",
+            "Белки (инверсия А/Г)",
+            "Серология rK39, ELISA, RIFI",
+            "Миелограмма с поиском лейшманий",
+            "ПЦР на лейшманию"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Устранение паразита",
+            "Ликвидация клинических и лабораторных изменений",
+            "Профилактика рецидивов"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Нутритивная поддержка",
+              "Переливание крови при необходимости",
+              "Антибиотикотерапия для вторичных инфекций"
+            ],
+            "citations": [
+              {
+                "refId": "ms-lv-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Липосомальный амфотерисин B",
+                "medicamentos": [
+                  "AmBisome®"
+                ],
+                "posologia": "3mg/kg/день В/в на 7 дней",
+                "observacoes": "Предпочтительно для групп риска"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Пентавалентный антимоний",
+                "medicamentos": [
+                  "Glucantime® 20mg Sb/kg/день"
+                ],
+                "posologia": "В/м или В/в на 20-40 дней",
+                "observacoes": "Кардиотоксичность (мониторинг ЭКГ)"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Сопутствующая инфекция ВИЧ",
+                "conduta": "Липосомальный амфотерисин B + вторичная профилактика + АРТ"
+              },
+              {
+                "situacao": "Беременность",
+                "conduta": "Липосомальный амфотерисин B (антимоний противопоказан)"
+              },
+              {
+                "situacao": "Рецидив",
+                "conduta": "Липосомальный амфотерисин B в большей дозе или на более длительный срок"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-leishmaniasis-2023"
+              }
+            ]
+          },
+          "duracao": "Липосомальный амфотерисин B: 7 дней; Антимоний: 20-40 дней"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Во время лечения: ежедневно; после: 3, 6, 12 месяцев",
+          "examesControle": [
+            "Полный анализ крови",
+            "Функция почек",
+            "Размер селезенки"
+          ],
+          "metasTerapeuticas": [
+            "Клиническое излечение в течение 2-3 месяцев",
+            "Нормализация гематологических показателей",
+            "Отсутствие рецидива в течение 1 года"
+          ],
+          "criteriosEncaminhamento": [
+            "Тяжелые случаи: референсный госпиталь",
+            "Сопутствующая инфекция ВИЧ: инфекционист",
+            "Рецидивы: референсный центр"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Контроль переносчика (обработка инсектицидами)",
+            "Использование сеток и репеллентов",
+            "Идентификация и управление зараженными собаками",
+            "Импрегнированные ошейники для собак"
+          ],
+          "secundaria": [
+            "Ранняя диагностика и лечение",
+            "Эпидемиологический надзор"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "leishmaniose-visceral-tratamento",
+        "lv-grave"
+      ],
+      "medicamentos": [
+        "anfotericina-b-lipossomal",
+        "glucantime"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-lv-2022"
+        },
+        {
+          "refId": "who-leishmaniasis-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "leptospirose",
+      "titulo": "Лептоспироз",
+      "sinonimos": [
+        "Болезнь Вейля",
+        "Лихорадка затопленных территорий",
+        "Лихорадка рисовых полей"
+      ],
+      "doid": "DOID:2297",
+      "snomedCT": "77377001",
+      "meshId": "D007919",
+      "umlsCui": "C0023364",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "A27",
+        "A27.0",
+        "A27.8",
+        "A27.9"
+      ],
+      "cid11": [
+        "1B91"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Зооноз, вызываемый спирохетами рода Leptospira, передается через мочу грызунов. Анниктерическая форма (90%) является самолимитирующей; иктерическая форма (Вейля) имеет высокую смертность.",
+        "criteriosDiagnosticos": [
+          "Высокая лихорадка внезапного начала",
+          "Интенсивная миалгия (голени)",
+          "Конъюнктивальная гиперемия (красные глаза без выделений)",
+          "Желтуха (тяжелая форма)",
+          "История контакта: наводнения, канализация, очистка выгребных ям",
+          "Подтверждение: серология (MAT) или ПЦР"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "низкий",
+            "criterios": [
+              "Аниктерическая форма",
+              "Отсутствие признаков тревоги"
+            ],
+            "conduta": "Амбулаторное лечение"
+          },
+          {
+            "nivel": "высокий",
+            "criterios": [
+              "Желтуха",
+              "Острая почечная недостаточность",
+              "Легочное кровотечение",
+              "Нарушение сознания"
+            ],
+            "conduta": "Реанимационное отделение"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Адекватное гидратирование",
+            "Респираторная поддержка при альвеолярном кровотечении",
+            "Диализ при острой почечной недостаточности",
+            "Переливание крови при коагулопатии/кровотечении"
+          ],
+          "farmacologico": [
+            "ЛЕГКАЯ ФОРМА (амбулаторно):",
+            "Доксициклин 100 мг каждые 12 часов на 7 дней ИЛИ",
+            "Амоксициллин 500 мг каждые 8 часов на 7 дней",
+            "",
+            "ТЯЖЕЛАЯ ФОРМА (стационар):",
+            "Кристаллическая пенициллин Г 1,5 млн ЕД В/в каждые 6 часов ИЛИ",
+            "Цефтриаксон 1 г В/в один раз в день ИЛИ",
+            "Ампициллин 1 г В/в каждые 6 часов",
+            "",
+            "Не откладывать антибактериальную терапию, ожидая подтверждения!"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Контроль инфекции",
+          "Поддержка функций органов",
+          "Профилактика легочного кровотечения"
+        ],
+        "examesIniciais": [
+          "Гемограмма (лейкоцитоз с сдвигом, тромбоцитопения)",
+          "Функция почек (острая почечная недостаточность неолигурического типа)",
+          "Билирубины (повышен прямой билирубин)",
+          "КФК (растворение мышц)",
+          "Коагулограмма",
+          "Рентген грудной клетки (альвеолярный инфильтрат)",
+          "Серология (MAT) - забор в острой и реконвалесценции",
+          "ПЦР в крови (начальная фаза)"
+        ],
+        "redFlags": [
+          "Желтуха (Бб>3 мг/дл)",
+          "Острая почечная недостаточность",
+          "Легочное кровотечение (кровохарканье, диффузный инфильтрат)",
+          "Одышка/гипоксемия",
+          "Аритмии (миокардит)",
+          "Нарушение уровня сознания",
+          "Шок"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~4.000 случаев/год в Бразилии",
+          "incidencia": "Пики в периоды дождей/наводнений",
+          "mortalidade": "Аниктерическая форма: <1%; Синдром Вейля: 10-40%",
+          "faixaEtaria": "Молодые взрослые, работники группы риска",
+          "fatoresRisco": [
+            "Контакт с водой во время наводнений",
+            "Канализация, мусор, выгребные ямы",
+            "Работники коммунального хозяйства, городской уборки",
+            "Сельскохозяйственные рабочие (рисовые поля, сахарный тростник)",
+            "Контакт с грызунами"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "fisiopатология": {
+          "texto": "Лептоспиры проникают через слизистые или поврежденную кожу, распространяются гематогенным путем. Они вызывают васкулит и эндотелиальный повреждение, особенно в почках (интерстициальный нефрит, острая почечная недостаточность неолигурического типа), печени (холестаз), легких (альвеолярное кровотечение) и мышцах.",
+          "citations": [
+            {
+              "refId": "who-leptospirosis-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Высокая лихорадка внезапного начала",
+            "Интенсивная миалгия (особенно голени)",
+            "Головная боль",
+            "Конъюнктивальная гиперемия",
+            "Тошнота, рвота, диарея",
+            "Желтуха (тяжелая форма)",
+            "Кровохарканье (легочное кровотечение)"
+          ],
+          "sinaisExameFisico": [
+            "Конъюнктивальная гиперемия (краснота)",
+            "Рубиновая желтуха (оранжевая кожа)",
+            "Болезненная гепатомегалия",
+            "Петехии",
+            "Влажные хрипы в легких"
+          ],
+          "formasClinicas": [
+            "Аниктерическая форма (90%) - самолимитирующаяся",
+            "Синдром Вейля (желтуха + острая почечная недостаточность + кровотечения)",
+            "Тяжелый геморрагический синдром легких"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Клиника + эпидемиологический контакт",
+            "Подтверждение методом MAT (сывороточная конверсия) или ПЦР"
+          ],
+          "diagnosticoDiferencial": [
+            "Тяжелая денге",
+            "Желтая лихорадка",
+            "Малярия",
+            "Вирусные гепатиты",
+            "Сепсис",
+            "Гантовируроз",
+            "Риккетсиозы"
+          ],
+          "examesLaboratoriais": [
+            "Гемограмма",
+            "Билирубины (повышен прямой билирубин)",
+            "Трансаминазы (обычно <500)",
+            "Урея, креатинин (острая почечная недостаточность)",
+            "КФК (повышена)",
+            "Потassium (гипокалиемия)",
+            "Коагулограмма",
+            "MAT (2 образца с интервалом 14 дней)",
+            "ПЦР крови (начальная фаза)"
+          ],
+          "examesImagem": [
+            "Рентген грудной клетки (альвеолярный инфильтрат при легочном кровотечении)",
+            "КТ грудной клетки при гипоксемии"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Устранение лептоспиры",
+            "Поддержка функций органов",
+            "Профилактика легочного кровотечения"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Осторожное гидратирование",
+              "Защитная вентиляция при легочном кровотечении",
+              "Ранний диализ при острой почечной недостаточности",
+              "Переливание крови при коагулопатии"
+            ],
+            "citations": [
+              {
+                "refId": "ms-leptospirose-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Амбулаторно",
+                "medicamentos": [
+                  "Доксициклин 100 мг каждые 12 часов",
+                  "Амоксициллин 500 мг каждые 8 часов"
+                ],
+                "posologia": "7 дней"
+              },
+              {
+                "classe": "Стационарно",
+                "medicamentos": [
+                  "Кристаллическая пенициллин Г 1,5 млн ЕД В/в каждые 6 часов",
+                  "Цефтриаксон 1 г/день В/в"
+                ],
+                "posologia": "7 дней"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Легочное кровотечение",
+                "conduta": "Ранняя интубация, защитная вентиляция, рассмотреть метилпреднизолон"
+              },
+              {
+                "situacao": "Острая почечная недостаточность",
+                "conduta": "Ранний диализ, избегать гипергидратации"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-leptospirosis-2023"
+              }
+            ]
+          },
+          "duracao": "7 дней антибактериальной терапии"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Переоценка через 48-72 часа; контроль через 1-2 недели",
+          "metasTerapeuticas": [
+            "Разрешение лихорадки в течение 24-48 часов",
+            "Восстановление функции почек (может занять недели)",
+            "Разрешение желтухи"
+          ],
+          "criteriosEncaminhamento": [
+            "Тяжелая форма: реанимационное отделение",
+            "Постоянная острая почечная недостаточность: нефрология",
+            "Легочное кровотечение: интенсивная терапия"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Избегать контакта с водой во время наводнений",
+            "Использование сапог и перчаток",
+            "Контроль грызунов",
+            "Основное санитарное благоустройство",
+            "Доксициклин 200 мг/неделя при высоком риске экспозиции"
+          ],
+          "secundaria": [
+            "Ранний диагноз и лечение",
+            "Обязательное уведомление"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "leptospirose-tratamento",
+        "leptospirose-grave"
+      ],
+      "medicamentos": [
+        "doxiciclina",
+        "penicilina-g-cristalina",
+        "ceftriaxona"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-leptospirose-2022"
+        },
+        {
+          "refId": "who-leptospirosis-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "febre-amarela",
+      "titulo": "Желтая лихорадка",
+      "sinonimos": [
+        "ЖЛ",
+        "Yellow fever",
+        "Тифоидная желтуха"
+      ],
+      "doid": "DOID:9682",
+      "snomedCT": "16541001",
+      "meshId": "D015004",
+      "umlsCui": "C0043395",
+      "ciap2": [
+        "A77"
+      ],
+      "cid10": [
+        "A95",
+        "A95.0",
+        "A95.1",
+        "A95.9"
+      ],
+      "cid11": [
+        "1D40"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Острая вирусная болезнь, вызванная флавивирусом, передающаяся комарами Haemagogus/Sabethes (лесная) или Aedes aegypti (городская). Может прогрессировать до тяжелой формы с желтухой, кровотечениями и недостаточностью множественных органов.",
+        "criteriosDiagnosticos": [
+          "Острая лихорадка (≤7 дней)",
+          "Желтуха и/или кровотечения",
+          "Совместимая эпидемиология (зона риска, не вакцинированный)",
+          "Симптом Фаже (относительная брадикардия при лихорадке)",
+          "Подтверждение: RT-PCR, изоляция вируса, IgM (после 5-го дня)",
+          "Гистопатология: тельца Канслимана (печеночная некроз)"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "baixo",
+            "criterios": [
+              "Легкая/умеренная форма",
+              "Без желтухи",
+              "Без кровотечений"
+            ],
+            "conduta": "Амбулаторное наблюдение"
+          },
+          {
+            "nivel": "muito_alto",
+            "criterios": [
+              "Желтуха",
+              "Кровотечения",
+              "Олигурия",
+              "Энцефалопатия"
+            ],
+            "conduta": "ИЦТ"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "СПЕЦИФИЧЕСКОГО ЛЕЧЕНИЯ НЕТ",
+            "Интенсивная клиническая поддержка",
+            "Изоляция (для предотвращения передачи через Aedes)",
+            "Покой, гидратация"
+          ],
+          "farmacologico": [
+            "ПОДДЕРЖКА:",
+            "Гидратация В/в",
+            "Антипирики (ИЗБЕГАТЬ АСК и НПВС)",
+            "Витамин K при коагулопатии",
+            "Плазма/тромбоциты при кровотечении",
+            "Диализ при ОПН",
+            "Защита желудка",
+            "N-ацетилцистеин (в исследовании)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Поддержка функции органов",
+          "Профилактика кровотечений",
+          "Поддержание объема циркулирующей крови",
+          "Профилактика передачи"
+        ],
+        "examesIniciais": [
+          "Клинический анализ крови (лейкопения, тромбоцитопения)",
+          "Билирубин (интенсивная желтуха)",
+          "Трансаминазы (значительно повышены, >1000)",
+          "Коагулограмма (продолжительность)",
+          "Урея, креатинин",
+          "RT-PCR на желтую лихорадку (до 5-го дня)",
+          "IgM (после 5-го дня)",
+          "Биопсия печени (пост-мортем)"
+        ],
+        "redFlags": [
+          "Желтуха",
+          "Кровотечения (мелена, гематемез, гингиворрагия)",
+          "Олигурия/анурия",
+          "Печеночная энцефалопатия",
+          "Гипотензия/шок",
+          "Трансаминазы >1000",
+          "Тяжелая коагулопатия"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Недавние вспышки в Бразилии (2016-2018): >2.000 случаев",
+          "mortalidade": "Тяжелая форма: смертность 20-50%",
+          "faixaEtaria": "Все возрастные группы, не вакцинированные",
+          "fatoresRisco": [
+            "Невакцинированность",
+            "Проживание/путешествие в зоне риска",
+            "Активность в лесной зоне",
+            "Период максимальной передачи: январь-май"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "fisiopатология": {
+          "texto": "Флавивирус с тропизмом к гепатоцитам и эндотелиальным клеткам. Вызывает мидзоцональную некроз печени (тельца Канслимана), эндотелиальную дисфункцию, ДВС-синдром, шок и недостаточность множественных органов. Цитокиновый шторм способствует тяжести.",
+          "citations": [
+            {
+              "refId": "who-yellowfever-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Высокая лихорадка внезапного начала",
+            "Интенсивная головная боль",
+            "Миалгия",
+            "Тошнота, рвота",
+            "Желтуха (тяжелая форма)",
+            "Кровотечения (гингивальные, ЖКТ)",
+            "Олигурия"
+          ],
+          "sinaisExameFisico": [
+            "Рубиновая желтуха",
+            "Симптом Фаже (диссоциация пульс-температура)",
+            "Больная гепатомегалия",
+            "Петехии, экхимозы",
+            "Сонливость, спутанность сознания (энцефалопатия)"
+          ],
+          "formasClinicas": [
+            "Легкая форма (большинство)",
+            "Умеренная форма",
+            "Тяжелая форма (печеночно-почечно-кровоточивая)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Клиника + эпидемиология",
+            "Лабораторное подтверждение (RT-PCR, серология)"
+          ],
+          "diagnosticoDiferencial": [
+            "Лептоспироз",
+            "Тяжелая малярия",
+            "Тяжелые вирусные гепатиты",
+            "Сепсис",
+            "Другие геморрагические лихорадки"
+          ],
+          "examesLaboratoriais": [
+            "RT-PCR (до 5-го дня болезни)",
+            "MAC-ELISA IgM (после 5-го дня)",
+            "Клинический анализ крови (лейкопения)",
+            "Трансаминазы (значительно повышены)",
+            "Билирубин",
+            "Коагулограмма (ДВС-синдром)",
+            "Функция почек"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Клиническая поддержка",
+            "Профилактика осложнений",
+            "Лечение дисфункции органов"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "ИЦТ для тяжелых случаев",
+              "Осторожная гидратация",
+              "Защита желудка",
+              "Диализ при ОПН",
+              "Переливание при кровотечениях",
+              "Изоляция (векторный контроль)"
+            ],
+            "citations": [
+              {
+                "refId": "ms-fa-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Поддержка",
+                "medicamentos": [
+                  "Гидратация В/в",
+                  "Витамин K",
+                  "Свежезамороженная плазма"
+                ],
+                "observacoes": "Специфического противовирусного лечения нет"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Избегать",
+                "conduta": "АСК и НПВС (риск кровотечения)"
+              },
+              {
+                "situacao": "Энцефалопатия",
+                "conduta": "Лактулоза, белковая диета"
+              },
+              {
+                "situacao": "Экспериментально",
+                "conduta": "N-ацетилцистеин, софосбувир (в исследовании)"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-yellowfever-2023"
+              }
+            ]
+          },
+          "duracao": "Поддержка до разрешения болезни"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Непрерывное наблюдение в течение 14 дней после начала",
+          "metasTerapeuticas": [
+            "Разрешение желтухи",
+            "Восстановление функции почек",
+            "Нормализация трансаминаз (может занять недели)"
+          ],
+          "criteriosEncaminhamento": [
+            "Тяжелая форма: ИЦТ/специализированный госпиталь",
+            "Немедленное обязательное уведомление"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "ВАКЦИНАЦИЯ (самая эффективная мера)",
+            "Однократная доза в 9 месяцев и ревакцинация в 4 года",
+            "Путешественники: вакцинация за 10 дней до поездки",
+            "Векторный контроль",
+            "Индивидуальная защита (репелленты, длинная одежда)"
+          ],
+          "secundaria": [
+            "Эпидемиологический контроль",
+            "Активный поиск при вспышках",
+            "Блокирующая вакцинация"
+          ],
+          "citations": [
+            {
+              "refId": "who-yellowfever-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "febre-amarela-manejo",
+        "fa-grave"
+      ],
+      "medicamentos": [],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-fa-2022"
+        },
+        {
+          "refId": "who-yellowfever-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "esquistossomose",
+      "titulo": "Шистосомиаз Мансони",
+      "sinonimos": [
+        "Болезнь водяного живота",
+        "Шистоз",
+        "Бильгарциоз",
+        "Кишечный шистосомиаз"
+      ],
+      "doid": "DOID:1395",
+      "snomedCT": "28019009",
+      "meshId": "D012552",
+      "umlsCui": "C0036323",
+      "ciap2": [
+        "D96"
+      ],
+      "cid10": [
+        "B65.1"
+      ],
+      "cid11": [
+        "1F83.1"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Паразитарное заболевание, вызываемое Schistosoma mansoni, передаваемое улитками рода Biomphalaria. Острая форма редко диагностируется; хроническая печеночно-спленическая форма может вызывать портальную гипертензию.",
+        "criteriosDiagnosticos": [
+          "ОСТАЯ ФОРМА (Лихорадка Катайама): Лихорадка, крапивница, эозинофилия, недавнее воздействие",
+          "КИШЕЧНАЯ ФОРМА: Прерывистая диарея, боли в животе",
+          "ПЕЧЕНОЧНО-СПЛЕНИЧЕСКАЯ ФОРМА: Печено-спленомегалия, портальная гипертензия",
+          "Воздействие: купание/контакт с пресной водой в эндемичном районе",
+          "Подтверждение: яйца в кале (метод Като-Катц) или ректальная биопсия"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Образование о передаче",
+            "Основы санитарии",
+            "Обработка воды",
+            "Контроль улиток"
+          ],
+          "farmacologico": [
+            "ПРАЗИКВАНТЕЛ 50мг/кг однократно (дети: 60мг/кг)",
+            "",
+            "Противопоказания:",
+            "- Беременные (лечить после родов)",
+            "- Острая тяжелая форма (кортикостероиды перед лечением)",
+            "",
+            "ОСТАЯ ФОРМА (Катайама):",
+            "Преднизон 1мг/кг/сутки в течение 5-7 дней, затем празиквантел"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Устранение паразита",
+          "Профилактика прогрессирования до печено-спленической формы",
+          "Контроль портальной гипертензии (если уже установлена)"
+        ],
+        "examesIniciais": [
+          "ЭПФ методом Като-Катц (3 образца)",
+          "Гемограмма (эозинофилия)",
+          "УЗИ брюшной полости (перипортальная фиброзная ткань)",
+          "Функция печени",
+          "Ректальная биопсия (если ЭПФ отрицательная)",
+          "ЭДА (варикозные расширения пищевода при печено-спленической форме)"
+        ],
+        "redFlags": [
+          "Гематемез (разрыв варикозных вен)",
+          "Объемная спленомегалия с гиперспленизмом",
+          "Асцит",
+          "Печеночная энцефалопатия",
+          "Шистосоматозный гломерулонефрит",
+          "Шистосоматозная миелопатия"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~1,5 миллиона инфицированных в Бразилии",
+          "faixaEtaria": "Молодые и взрослые из эндемичных районов",
+          "fatoresRisco": [
+            "Проживание в эндемичном районе (Северо-Восток, МГ)",
+            "Контакт с природными водами (реки, озера)",
+            "Отсутствие санитарии",
+            "Сельскохозяйственные работы в затопляемых районах"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistossomose-2022"
+            }
+          ]
+        },
+        "fisiopатология": {
+          "texto": "Церкарии проникают через кожу, превращаются в шистосомулы и мигрируют до печеночно-портальной системы. Взрослые черви живут в мезентериальных венах; яйца вызывают гранулематозную реакцию. При печено-спленической форме перипортальная фиброзная ткань (Симмерс) вызывает портальную гипертензию.",
+          "citations": [
+            {
+              "refId": "who-schistosomiasis-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "ОСТАЯ: Лихорадка, зуд, крапивница, диарея, кашель",
+            "КИШЕЧНАЯ: Прерывистая диарея, колики, кровь/слизь в кале",
+            "ПЕЧЕНОЧНО-СПЛЕНИЧЕСКАЯ: Увеличение живота, коллатеральное кровообращение, гематемез"
+          ],
+          "sinaisExameFisico": [
+            "Эозинофилия (острая фаза)",
+            "Гепатомегалия левой доли",
+            "Спленомегалия",
+            "Коллатеральное кровообращение",
+            "Асцит"
+          ],
+          "formasClinicas": [
+            "Острая форма (Катайама)",
+            "Кишечная форма",
+            "Печеночно-кишечная форма",
+            "Компенсированная печено-спленическая форма",
+            "Декомпенсированная печено-спленическая форма",
+            "Эктопические формы (нейрошистосомиаз, легочная)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistossомose-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Эпидемиология + положительный паразитологический анализ",
+            "УЗИ с перипортальной фиброзной тканью"
+          ],
+          "diagnosticoDiferencial": [
+            "Печеночная цирроз",
+            "Висцеральный лейшманиоз",
+            "Лейкемии/лимфомы",
+            "Другие причины портальной гипертензии"
+          ],
+          "examesLaboratoriais": [
+            "ЭПФ Като-Катц (3 образца)",
+            "Ректальная биопсия",
+            "Гемограмма (эозинофилия, панцитопения при гиперспленизме)",
+            "Функция печени (обычно нормальная)",
+            "Серология (IgG)"
+          ],
+          "examesImagem": [
+            "УЗИ брюшной полости (перипортальная фиброзная ткань, спленомегалия)",
+            "ЭДА (варикозные расширения пищевода)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistосомose-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Устранение паразита",
+            "Профилактика прогрессирования",
+            "Лечение осложнений портальной гипертензии"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Санитарное образование",
+              "Улучшение санитарии",
+              "Лечение варикозных вен (лигирование, ТИПС)",
+              "Спленэктомия с азигопортальной дисконнекцией (выбранные случаи)"
+            ],
+            "citations": [
+              {
+                "refId": "ms-esquistосомose-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Антишистосоматозное средство",
+                "medicamentos": [
+                  "Празиквантел 50-60мг/кг"
+                ],
+                "posologia": "Однократно",
+                "observacoes": "Выздоровление ~80%"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Альтернатива",
+                "medicamentos": [
+                  "Оксамниquina 15мг/кг"
+                ],
+                "posologia": "Однократно",
+                "observacoes": "При непереносимости празиквантела"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Острая форма",
+                "conduta": "Кортикостероиды в течение 5-7 дней перед празиквантелом"
+              },
+              {
+                "situacao": "Высокий риск варикозных вен",
+                "conduta": "Бета-блокатор (первичная профилактика), эластическое лигирование"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-schistosomiasis-2023"
+              }
+            ]
+          },
+          "duracao": "Однократно; контроль выздоровления через 6 месяцев"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Контроль выздоровления: ЭПФ через 30, 90, 180 дней после лечения",
+          "metasTerapeuticas": [
+            "Отрицательный результат ЭПФ",
+            "Стабилизация фиброза",
+            "Контроль варикозных вен"
+          ],
+          "criteriosEncaminhamento": [
+            "Печено-спленическая форма: гастроэнтерология/гепатология",
+            "Нейрошистосомиаз: неврология",
+            "Высокий риск варикозных вен: эндоскопия"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistосомose-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Основы санитарии",
+            "Образование в области здравоохранения",
+            "Контроль улиток",
+            "Избегание контакта с природными водами в эндемичных районах"
+          ],
+          "secundaria": [
+            "Ранний диагноз и лечение",
+            "Копроскопические исследования в эндемичных районах",
+            "Коллективное лечение в районах высокой распространенности"
+          ],
+          "citations": [
+            {
+              "refId": "who-schistosomiasis-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "esquistossomose-tratamento",
+        "hipertensao-portal-esquistossomotica"
+      ],
+      "medicamentos": [
+        "praziquantel",
+        "oxamniquina"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-esquistossomose-2022"
+        },
+        {
+          "refId": "who-schistosomiasis-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "hanseniase",
+      "titulo": "Hanseníase",
+      "sinonimos": [
+        "Lepra",
+        "Mal de Hansen",
+        "Morféia"
+      ],
+      "doid": "DOID:1024",
+      "snomedCT": "81004002",
+      "meshId": "D007918",
+      "umlsCui": "C0023343",
+      "ciap2": [
+        "S76"
+      ],
+      "cid10": [
+        "A30",
+        "A30.0",
+        "A30.1",
+        "A30.2",
+        "A30.3",
+        "A30.4",
+        "A30.5",
+        "A30.8",
+        "A30.9"
+      ],
+      "cid11": [
+        "1B21"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Doença infecciosa crônica causada pelo Mycobacterium leprae, afetando pele e nervos periféricos. Classificada em paucibacilar (PB) ou multibacilar (MB) para fins de tratamento.",
+        "criteriosDiagnosticos": [
+          "Lesão(óes) de pele com alteração de sensibilidade",
+          "Espessamento de nervo periférico",
+          "Baciloscopia positiva (em MB)",
+          "CASO DEFINIDO: égual ou superior a 1 dos sinais cardinais:",
+          "1. Lesão hipocrômica/eritematosa com perda de sensibilidade",
+          "2. Espessamento de tronco nervoso periférico",
+          "3. Baciloscopia positiva",
+          "Classificação operacional: PB (leós de 5) vs MB (mais de 5 leós ou baciloscopia +)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Educação sobre a doença (combate ao estigma)",
+            "Cuidados com pés e måos insensíveis",
+            "Prevenção de incapacidades",
+            "Exame de contatos domiciliares"
+          ],
+          "farmacologico": [
+            "PAUCIBACILAR (PB - Às de 5 leós):",
+            "Rifampicina 600mg dose mensal supervisionada",
+            "Dapsona 100mg/dia (autoadministrada)",
+            "DuraÅo: 6 doses mensais em Átõ 9 meses",
+            "",
+            "MULTIBACILAR (MB - Às de 5 leós):",
+            "Rifampicina 600mg dose mensal supervisionada",
+            "Clofazimina 300mg mensal + 50mg/dia",
+            "Dapsona 100mg/dia",
+            "DuraÅo: 12 doses mensais em Átõ 18 meses"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Cura bacteriológica",
+          "Prevenção de incapacidades",
+          "Interrupção da cadeia de transmissão"
+        ],
+        "examesIniciais": [
+          "Exame dermatoneurológico completo",
+          "Teste de sensibilidade (térmica, dolorosa, tátil)",
+          "Baciloscopia de raspado dérmico",
+          "AvaliaÇão de grau de incapacidade física (0, I, II)",
+          "Bíopsia de pele (casos duvidosos)",
+          "Eletroneuromiografia (se comprometimento neural)"
+        ],
+        "redFlags": [
+          "REAÇãO TIPO 1 (reversa): eritema e edema de leóes, neurite",
+          "REAÇãO TIPO 2 (ENH): febre, nódulos dolorosos, neurite, irite, artrite",
+          "Neurite aguda (risco de sequela)",
+          "Mão em garra, pé caído",
+          "Úlceras tróficas"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~30.000 casos novos/ano no Brasil (2º no mundo)",
+          "faixaEtaria": "Todas as idades, pico em adultos jovens",
+          "fatoresRisco": [
+            "Contato domiciliar prolongado com caso MB nó tratado",
+            "Condições socioeconômicas precárias",
+            "Imunossupressão relativa",
+            "Predisposição genética"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "M. leprae tem tropismo por macrófagos e células de Schwann. A resposta imune do hospedeiro determina a forma clínica: resposta Th1 (paucibacilar) vs Th2 (multibacilar). A destruição neural leva a perda de sensibilidade e incapacidades.",
+          "citations": [
+            {
+              "refId": "who-leprosy-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Manchas hipocrômicas ou eritematosas",
+            "Perda de sensibilidade nas lesões",
+            "Formigamento, dormência em extremidades",
+            "Fraqueza muscular",
+            "Espessamento de nervos",
+            "Lesões nodulares (forma virchowiana)"
+          ],
+          "sinaisExameFisico": [
+            "Lesões de pele com anestesia",
+            "Nervos espessados e dolorosos à palpação",
+            "Madarose (perda de sobrancelhas)",
+            "Infiltração de face (fácies leonina)",
+            "Atrofia muscular (interósseos, tenar, hipotenar)",
+            "Mão em garra, pé caído"
+          ],
+          "formasClinicas": [
+            "Indeterminada (forma inicial)",
+            "Tuberculoide (paucibacilar)",
+            "Dimorfa (borderline)",
+            "Virchowiana (multibacilar)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínico (sinais cardinais)",
+            "Baciloscopia (+ em MB)",
+            "Histopatologia (se dúvida)"
+          ],
+          "diagnosticoDiferencial": [
+            "Pitiríase versicolor",
+            "Vitiligo",
+            "Dermatofitoses",
+            "Sífilis secundária",
+            "Leishmaniose cutânea",
+            "Neurofibromatose",
+            "Neuropatias periféricas outras"
+          ],
+          "examesLaboratoriais": [
+            "Baciloscopia de raspado dérmico",
+            "Biópsia de pele com estudo histopatológico",
+            "Teste de Mitsuda (valor prognóstico)",
+            "PCR para M. leprae (se disponível)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Cura da infecção",
+            "Prevenção de incapacidades",
+            "Tratamento de reações",
+            "Vigilância de contatos"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Autocuidado (pés, mãos, olhos)",
+              "Fisioterapia",
+              "Cirurgia reparadora (se necessário)",
+              "Órteses e próteses"
+            ],
+            "citations": [
+              {
+                "refId": "ms-hanseniase-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "PQT-PB",
+                "medicamentos": [
+                  "Rifampicina 600mg/mês",
+                  "Dapsona 100mg/dia"
+                ],
+                "posologia": "6 doses em até 9 meses"
+              },
+              {
+                "classe": "PQT-MB",
+                "medicamentos": [
+                  "Rifampicina 600mg/mês",
+                  "Clofazimina 300mg/mês + 50mg/dia",
+                  "Dapsona 100mg/dia"
+                ],
+                "posologia": "12 doses em até 18 meses"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Reação tipo 1 (reversa)",
+                "conduta": "Prednisona 1-2mg/kg/dia com redução gradual"
+              },
+              {
+                "situacao": "Reação tipo 2 (ENH)",
+                "conduta": "Talidomida 100-400mg/dia (contraindicada em mulheres em idade fértil) OU Prednisona"
+              },
+              {
+                "situacao": "Neurite aguda",
+                "conduta": "Prednisona + imobilização; considerar descompressão neural"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-leprosy-2023"
+              }
+            ]
+          },
+          "duracao": "PB: 6 meses; MB: 12 meses"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Mensal durante tratamento; semestral por 5 anos após alta",
+          "examesControle": [
+            "Avaliação neurológica",
+            "Grau de incapacidade",
+            "Baciloscopia (MB)"
+          ],
+          "metasTerapeuticas": [
+            "Completar esquema terapêutico",
+            "Manter grau de incapacidade",
+            "Identificar e tratar reações",
+            "Examinar e tratar contatos"
+          ],
+          "criteriosEncaminhamento": [
+            "Reações graves: centro de referência",
+            "Incapacidades: fisioterapia/cirurgia",
+            "Resistência medicamentosa: centro de referência"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Exame de contatos domiciliares",
+            "BCG em contatos",
+            "Educação em saúde",
+            "Melhoria das condições de vida"
+          ],
+          "secundaria": [
+            "Diagnóstico precoce",
+            "Tratamento adequado",
+            "Prevenção de incapacidades"
+          ],
+          "citations": [
+            {
+              "refId": "who-leprosy-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "hanseniase-tratamento",
+        "reacao-hanseniase"
+      ],
+      "medicamentos": [
+        "rifampicina",
+        "dapsona",
+        "clofazimina",
+        "prednisona",
+        "talidomida"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-hanseniase-2022"
+        },
+        {
+          "refId": "who-leprosy-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "raiva-humana",
+      "titulo": "Бешенство человека",
+      "sinonimos": [
+        "Гидрофобия",
+        "Бешенство"
+      ],
+      "doid": "DOID:11260",
+      "snomedCT": "14168008",
+      "meshId": "D011818",
+      "umlsCui": "C0034494",
+      "ciap2": [
+        "A77"
+      ],
+      "cid10": [
+        "A82",
+        "A82.0",
+        "A82.1",
+        "A82.9"
+      ],
+      "cid11": [
+        "1C82"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Острая вирусная энцефалит, вызванная вирусом бешенства (Lyssavirus), передающаяся укусом зараженных животных. Виртуально 100% смертельна после начала симптомов. ПРЕДУПРЕЖДАЕМА профилактикой после воздействия.",
+        "criteriosDiagnosticos": [
+          "История воздействия: укус/царапина подозрительного или летучей мыши",
+          "Период инкубации: 20-90 дней (вариабельный: от 4 дней до нескольких лет)",
+          "Продромальные симптомы: лихорадка, недомогание, онемение в месте укуса",
+          "Неврологическая фаза: возбуждение, гидрофобия, аэрофобия, повышенное слюноотделение",
+          "Подтверждение: ИФА, изоляция вируса, РТ-ПЦР, метод Селлерса посмертно"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ПРОФИЛАКТИКА ПОСЛЕ ВОЗДЕЙСТВИЯ (до появления симптомов):",
+            "Немедленное промывание раны водой и мылом (15 минут)",
+            "НЕ шить рану",
+            "Оценка состояния животного (наблюдение 10 дней, если это собака или кошка)",
+            "Профилактика согласно схеме МЗ"
+          ],
+          "farmacologico": [
+            "ПРОФИЛАКТИКА ПОСЛЕ ВОЗДЕЙСТВИЯ:",
+            "ВАКЦИНА: 4 дозы (D0, D3, D7, D14) В/м дельтовидной мышцы",
+            "СЕРУМ/ИММУНОГЛОБУЛИН: САР или ИГХАР в место повреждения",
+            "Показания к применению сыворотки: тяжелые повреждения (голова, шея, руки), слизистые, укусы летучих мышей",
+            "",
+            "После начала симптомов: КОМПЛЕКСНАЯ ТЕРАПИЯ",
+            "Протокол Милуоки (спорный, крайне редкие выжившие)",
+            "Реанимационное отделение, глубокая седация, противовирусные препараты"
+          ]
+        },
+        "metasTerapeuticas": [
+          "ПРЕДУПРЕЖДЕНИЕ: адекватная профилактика после воздействия",
+          "Если симптоматично: паллиативная поддержка",
+          "Защита медицинского персонала"
+        ],
+        "examesIniciais": [
+          "Импринт роговицы с ИФА",
+          "Биопсия кожи затылка (волосяного фолликула)",
+          "РТ-ПЦР слюны, спинномозговой жидкости",
+          "Некropsия агрессивного животного (при возможности)",
+          "Спинномозговая жидкость: лимфоцитарная плевроцитозия"
+        ],
+        "redFlags": [
+          "Укус летучей мыши (даже без видимых повреждений)",
+          "Животное, которое умерло или исчезло",
+          "Повреждения лица, головы, шеи, рук",
+          "Множественные укусы",
+          "Задержка в профилактике"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~60.000 смертей/год в мире (большинство в Азии/Африке)",
+          "incidencia": "В Бразилии: <10 случаев/год (большинство передача через летучих мышей)",
+          "mortalidade": "~100% после начала симптомов",
+          "fatoresRisco": [
+            "Контакт с дикими животными (летучие мыши)",
+            "Невакцинированные собаки и кошки",
+            "Сельские районы",
+            "Профессионалы, подверженные риску (ветеринары, биологи)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-raiva-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Вирус проникает через рану, реплицируется в мышце, распространяется по периферическим нервам до ЦНС. В мозге вызывает диффузную энцефалит с корпускулами Негри. Распространяется на слюнные железы (передача). Смерть наступает из-за дыхательной и сердечно-сосудистой недостаточности.",
+          "citations": [
+            {
+              "refId": "who-rabies-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Продром: лихорадка, головная боль, недомогание, онемение в месте укуса",
+            "Буйная фаза: возбуждение, гидрофобия, аэрофобия, повышенное слюноотделение",
+            "Паралитическая фаза: восходящая фланцевая паралич",
+            "Кома и смерть"
+          ],
+          "sinaisExameFisico": [
+            "Глоточные спазмы при попытке пить (гидрофобия)",
+            "Спазмы при воздушной струе (аэрофобия)",
+            "Повышенное слюноотделение",
+            "Психомоторное возбуждение",
+            "Паралич, арефлексия (паралитическая форма)",
+            "Автономная дисфункция"
+          ],
+          "formasClinicas": [
+            "Буйная (энцефальная) форма - наиболее распространенная",
+            "Паралитическая форма (похожая на синдром Гийена-Барре)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-raiva-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Клиника + эпидемиологическое воздействие",
+            "Лабораторное подтверждение (ИФА, ПЦР, изоляция)"
+          ],
+          "diagnosticoDiferencial": [
+            "Другие вирусные энцефалиты",
+            "Столбняк",
+            "Синдром Гийена-Барре",
+            "Ботулизм",
+            "Истерия (редко)"
+          ],
+          "examesLaboratoriais": [
+            "ИФА импринта роговицы или биопсии затылка",
+            "РТ-ПЦР слюны, биопсии, спинномозговой жидкости",
+            "Изоляция вируса",
+            "Спинномозговая жидкость: лимфоцитарная плевроцитозия, повышенный белок",
+            "Нейтрализующие антитела (у невакцинированных)",
+            "Посмертно: корпускулы Негри"
+          ],
+          "citations": [
+            {
+              "refId": "who-rabies-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "ПРЕДУПРЕЖДЕНИЕ является главным приоритетом",
+            "Паллиативная поддержка при наличии симптомов"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Промывание раны (очень важно)",
+              "Наблюдение за животным (10 дней для собаки/кошки)",
+              "Интенсивная поддержка (если симптоматично)"
+            ],
+            "citations": [
+              {
+                "refId": "ms-raiva-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Противобешенственная вакцина",
+                "medicamentos": [
+                  "Культуральная вакцина (Vero или HDCV)"
+                ],
+                "posologia": "D0, D3, D7, D14 (или альтернативная схема)"
+              },
+              {
+                "classe": "Пассивная иммунизация",
+                "medicamentos": [
+                  "САР (противобешенственная сыворотка) 40 ЕД/кг",
+                  "ИГХАР 20 ЕД/кг"
+                ],
+                "posologia": "Однократная доза, вводится в место укуса"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Укус летучей мыши",
+                "conduta": "Всегда назначать вакцину + сыворотку"
+              },
+              {
+                "situacao": "Иммуносупрессированный",
+                "conduta": "5 доз вакцины + сыворотка + контрольная серология"
+              },
+              {
+                "situacao": "Повторное воздействие",
+                "conduta": "2 дозы (D0, D3) при полной предварительной вакцинации"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-rabies-2023"
+              }
+            ]
+          },
+          "duracao": "Профилактика: полный курс; Симптоматическое лечение: до смерти"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Наблюдение до завершения вакцинального курса",
+          "metasTerapeuticas": [
+            "Завершение профилактики после воздействия",
+            "Мониторинг побочных эффектов вакцины/сыворотки"
+          ],
+          "criteriosEncaminhamento": [
+            "Симптоматический: референсное больница",
+            "Тяжелая аллергическая реакция: ЦРИЭ"
+          ],
+          "citations": [
+            {
+              "refId": "ms-raiva-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Вакцинация собак и кошек",
+            "Избегание контакта с дикими животными",
+            "Профилактика предвакцинации для лиц, подверженных риску",
+            "Контроль летучих мышей в городских районах"
+          ],
+          "secundaria": [
+            "Адекватная и своевременная профилактика после воздействия",
+            "Наблюдение за агрессивным животным",
+            "Обязательное уведомление"
+          ],
+          "citations": [
+            {
+              "refId": "who-rabies-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "raiva-profilaxia-pos-exposicao",
+        "esquema-vacinal-raiva"
+      ],
+      "medicamentos": [
+        "vacina-antirrabica",
+        "soro-antirrabico",
+        "imunoglobulina-antirrabica"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-raiva-2022"
+        },
+        {
+          "refId": "who-rabies-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

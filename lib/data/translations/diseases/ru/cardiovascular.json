@@ -1,0 +1,2354 @@
+{
+  "locale": "ru",
+  "category": "cardiovascular",
+  "generatedAt": "2025-12-28T02:36:49.935Z",
+  "count": 14,
+  "diseases": [
+    {
+      "id": "hipertensao-arterial",
+      "titulo": "Hipertensón Arterial Sistêmica (HAS)",
+      "sinonimos": [
+        "Pressão alta",
+        "HAS",
+        "Hipertensón"
+      ],
+      "doid": "DOID:10763",
+      "snomedCT": "38341003",
+      "meshId": "D006973",
+      "umlsCui": "C0020538",
+      "ciap2": [
+        "K86",
+        "K87"
+      ],
+      "cid10": [
+        "I10",
+        "I11",
+        "I12",
+        "I13"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Condição clínica multifatorial caracterizada por elevação sustentada dos níveis pressóricos àge140/90 mmHg. é o principal fator de risco modificável para doenças cardiovasculares, cerebrovasculares e renais.",
+        "criteriosDiagnosticos": [
+          "PA de consultório àge140/90 mmHg em 2 ou mais ocasiões distintas",
+          "MAPA: média 24h àge130/80 mmHg, vigília àge135/85 mmHg, sono àge120/70 mmHg",
+          "MRPA: média àge130/80 mmHg (7 dias, 2 medidas/dia)",
+          "Afastar hipertensão do jaleco branco e mascarada"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Redução de sódio (<2g/dia ou 5g sal/dia)",
+            "Dieta DASH (frutas, vegetais, laticíns desnatados)",
+            "Atividade fízica: 150 min/semana (moderada) ou 75 min (intensa)",
+            "Perda de peso se IMC >25 (meta: perda de 5-10%)",
+            "Moderação do álcool (≤2 doses/dia homens, ≤1 mulheres)",
+            "Cessão do tabagismo"
+          ],
+          "farmacologico": [
+            "IECA (Enalapril 5-20mg 12/12h) ou BRA (Losartana 50-100mg/dia)",
+            "BCC (Anlodipino 5-10mg/dia)",
+            "Diurético tiazídico (HCTZ 12,5-25mg/dia ou Clortalidona 12,5-25mg)",
+            "Combinações preferidas: IECA/BRA + BCC ou IECA/BRA + Diurético",
+            "Evitar monoterapia em ástigo 2 ou alto risco CV"
+          ]
+        },
+        "metasTerapeuticas": [
+          "PA <140/90 mmHg (geral)",
+          "PA <130/80 mmHg se alto risco CV, DM ou DRC",
+          "PA <130/80 mmHg em idosos hígidos (<80 anos)",
+          "PA <150/90 mmHg em idosos frágeis (>80 anos)"
+        ],
+        "examesIniciais": [
+          "Glicemia de jejum e HbA1c",
+          "Creatinina e TFG (CKD-EPI)",
+          "Potássio sérico",
+          "Perfil lipídico (CT, LDL, HDL, TG)",
+          "Ácido úrico",
+          "Exame de urina (EAS) e relação albumina/creatinina",
+          "ECG de repouso"
+        ],
+        "redFlags": [
+          "PA ≥180/120 mmHg com sintomas (cefaleia intensa, alteração visual, dispneia)",
+          "Suspeita de HAS secundária (início <30 anos, refratária, hipocalemia)",
+          "Lesão de órgão-alvo aguda (IAM, AVC, EAP, dissecção)",
+          "Gestante com PA ≥140/90 mmHg"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "32% da população adulta brasileira",
+          "incidencia": "~500 mil novos casos/ano",
+          "mortalidade": "~300 mil mortes CV/ano (principal FR)",
+          "faixaEtaria": "Aumenta progressivamente com idade (>60% em >65 anos)",
+          "fatoresRisco": [
+            "Idade avançada",
+            "História familiar de HAS",
+            "Etnia negra",
+            "Excesso de sódio",
+            "Obesidade/sobrepeso",
+            "Sedentarismo",
+            "Consumo excessivo de álcool",
+            "Tabagismo",
+            "Estresse crónico"
+          ],
+          "citations": [
+            {
+              "refId": "vigitel-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Frequentemente assintomática (\"assassina silenciosa\")",
+            "Cefaleia occipital (geralmente matinal)",
+            "Tontura",
+            "Epistaxe (não específico)",
+            "Dispneia aos esforços (se ICC)",
+            "Alterações visuais (se retinopatia)"
+          ],
+          "sinaisExameFisico": [
+            "PA elevada em ambos os braços",
+            "Sopros abdominais (HAS renovascular)",
+            "Pulsos femorais diminúis (coarctação)",
+            "Fundo de olho alterado (retinopatia)",
+            "B4 (sobrecarga ventricular)",
+            "Edema de MMII (se ICC)"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "PA ≥140/90 mmHg em 2+ consultas com técnica adequada",
+            "MAPA ou MRPA para confirmação (excluir jaleco branco)",
+            "Classificação: Ótima (<120/80), Normal (120-129/80-84), Pré-HAS (130-139/85-89)",
+            "Estágios: 1 (140-159/90-99), 2 (160-179/100-109), 3 (≥180/110)"
+          ],
+          "diagnosticoDiferencial": [
+            "Hipertensão do jaleco branco",
+            "Hipertensão mascarada",
+            "HAS secundária (renal, endócrina, medicamentosa)",
+            "Síndrome de apneia do sono"
+          ],
+          "examesLaboratoriais": [
+            "Glicemia jejum, HbA1c, creatinina, potássio, ácido úrico",
+            "Perfil lipídico, EAS, microalbuminúria"
+          ],
+          "outrosExames": [
+            "ECG de repouso",
+            "Ecocardiograma se suspeita de cardiopatia",
+            "USG renal se suspeita de HAS secundária"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Reduzir morbimortalidade CV",
+            "Atingir metas pressóricas individualizadas",
+            "Controlar fatores de risco associados",
+            "Prevenir/regredir lesões de órgão-alvo"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Dieta DASH: rica em frutas, vegetais, grãos integrais, laticínios desnatados",
+              "Restrição de sódio: <2g/dia (5g sal)",
+              "Atividade física aeróbica: 150 min/semana moderada",
+              "Exercício resistido: 2-3x/semana",
+              "Perda de peso: meta 5-10% se sobrepeso/obesidade",
+              "Moderação do álcool",
+              "Cessação do tabagismo",
+              "Controle do estresse"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-has-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "IECA",
+                "medicamentos": [
+                  "Enalapril 5-40mg/dia",
+                  "Captopril 25-150mg/dia",
+                  "Ramipril 2,5-10mg/dia"
+                ],
+                "posologia": "1-2x/dia",
+                "observações": "Tosse seca em 5-20%. CI: gestação, K>5,5, estenose bilateral renal"
+              },
+              {
+                "classe": "BRA",
+                "medicamentos": [
+                  "Losartana 50-100mg/dia",
+                  "Valsartana 80-320mg/dia"
+                ],
+                "posologia": "1x/dia",
+                "observações": "Alternativa se intolerância a IECA"
+              },
+              {
+                "classe": "BCC",
+                "medicamentos": [
+                  "Anlodipino 5-10mg/dia",
+                  "Nifedipino Retard 20-60mg/dia"
+                ],
+                "posologia": "1x/dia",
+                "observações": "Edema de MMII dose-dependente"
+              },
+              {
+                "classe": "Diurético tiazídico",
+                "medicamentos": [
+                  "HCTZ 12,5-25mg/dia",
+                  "Clortalidona 12,5-25mg/dia",
+                  "Indapamida 1,5mg/dia"
+                ],
+                "posologia": "1x/dia pela manhã",
+                "observações": "Monitorar K+, glicemia, ácido úrico"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Betabloqueador",
+                "medicamentos": [
+                  "Atenolol 25-100mg/dia",
+                  "Carvedilol 12,5-50mg/dia",
+                  "Metoprolol 50-200mg/dia"
+                ],
+                "observações": "Preferir se ICC, FA, pós-IAM. Evitar em DPOC descompensada"
+              },
+              {
+                "classe": "Diurético de alça",
+                "medicamentos": [
+                  "Furosemida 20-80mg/dia"
+                ],
+                "observações": "Se TFG <30 ou edema refratário"
+              },
+              {
+                "classe": "Poupador de potássio",
+                "medicamentos": [
+                  "Espironolactona 25-50mg/dia"
+                ],
+                "observações": "HAS resistente. Monitorar K+"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Diabetes",
+                "conduta": "IECA ou BRA (nefroproteção). Meta <130/80"
+              },
+              {
+                "situacao": "DRC",
+                "conduta": "IECA ou BRA se albuminúria. Meta <130/80"
+              },
+              {
+                "situacao": "ICC FEr",
+                "conduta": "IECA/BRA + BB + espironolactona + iSGLT2"
+              },
+              {
+                "situacao": "Gestação",
+                "conduta": "Metildopa, Nifedipino, Labetalol. CI: IECA, BRA"
+              },
+              {
+                "situacao": "Negro",
+                "conduta": "BCC ou Tiazídico como 1ª linha (melhor resposta)"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbc-has-2020"
+              }
+            ]
+          },
+          "duracao": "Tratamento contínuo. Descontinuação apenas em casos selecionados (MEV bem-sucedida, HAS inicial leve)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Mensal até controle, depois trimestral/semestral",
+          "examesControle": [
+            "Creatinina e K+ (1-2 semanas após iniciar/ajustar IECA/BRA/diurético)",
+            "Perfil lipídico, glicemia: anual",
+            "Microalbuminúria: anual se DM ou DRC"
+          ],
+          "metasTerapeuticas": [
+            "PA <140/90 mmHg (geral)",
+            "PA <130/80 mmHg se alto risco, DM, DRC",
+            "Controle de DM, dislipidemia, tabagismo"
+          ],
+          "criteriosEncaminhamento": [
+            "HAS resistente (não controlada com 3 drogas incluindo diurético)",
+            "Suspeita de HAS secundária",
+            "Lesão de órgão-alvo avançada",
+            "DRC TFG <30 mL/min",
+            "Emergências hipertensivas"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Alimentação saudável desde infância",
+            "Manutenção de peso adequado",
+            "Atividade física regular",
+            "Moderação do sódio e álcool",
+            "Não iniciar tabagismo"
+          ],
+          "secundaria": [
+            "Adesão ao tratamento",
+            "Automonitorização da PA",
+            "Controle de fatores de risco associados"
+          ],
+          "citations": [
+            {
+              "refId": "ms-cab-37-2013"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-has",
+        "estratificacao-rcv"
+      ],
+      "medicamentos": [
+        "losartana",
+        "enalapril",
+        "anlodipino",
+        "hctz",
+        "atenolol"
+      ],
+      "calculadoras": [
+        "framingham",
+        "score",
+        "ckdepi"
+      ],
+      "rastreamentos": [
+        "hipertensao-arterial"
+      ],
+      "citations": [
+        {
+          "refId": "sbc-has-2020"
+        },
+        {
+          "refId": "ms-cab-37-2013"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "cardiovascular",
+        "cronica",
+        "prevalente",
+        "dcnt"
+      ]
+    },
+    {
+      "id": "insuficiencia-cardiaca",
+      "titulo": "Недостаточность сердца",
+      "sinonimos": [
+        "НС",
+        "НСК",
+        "Недостаточность сердца с застоем"
+      ],
+      "doid": "DOID:6000",
+      "snomedCT": "84114007",
+      "meshId": "D006333",
+      "umlsCui": "C0018801",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "I50",
+        "I50.0",
+        "I50.1",
+        "I50.9"
+      ],
+      "cid11": [
+        "BD10"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Клинический синдром, характеризующийся неспособностью сердца насосать достаточное количество крови для удовлетворения метаболических потребностей тканей или выполнением этой функции только при повышенных давлениях заполнения.",
+        "criteriosDiagnosticos": [
+          "Типичные симптомы: одышка, ортопноэ, ДПН, утомляемость, отек нижних конечностей",
+          "Признаки: венозное наполнение, гепатомегалия, хрипы в легких",
+          "Объективные доказательства дисфункции сердца (эхокардиография)",
+          "Критерии Фрамингема: 2 основных ИЛИ 1 основной + 2 второстепенных"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ограничение натрия (<2г/день)",
+            "Ограничение жидкости при гипонатриемии (<1,5Л/день)",
+            "Контролируемая физическая активность (кардиореабилитация)",
+            "Отказ от курения и алкоголя",
+            "Вакцинация (грипп, пневмококк)"
+          ],
+          "farmacologico": [
+            "ИЭЦА или БРА (например: Эналаприл 2,5-20мг 12/12ч)",
+            "Бета-блокатор (например: Карведилол 3,125-25мг 12/12ч)",
+            "Диуретик петлевого действия при застое (Фуросемид 20-80мг/день)",
+            "Спиронолактон 25-50мг/день при ФВЭ ≤35%"
+          ]
+        },
+        "metasTerapeuticas": [
+          "ФВЭ: стабилизация или улучшение",
+          "Класс функциональной способности NYHA: улучшение на 1 класс",
+          "АД адекватное, ЧСС 60-70 уд/мин",
+          "Евоволемия (без отеков, сухой вес)",
+          "Снижение госпитализаций"
+        ],
+        "examesIniciais": [
+          "Трансторакальная эхокардиография",
+          "ЭКГ",
+          "Рентген грудной клетки",
+          "Клинический анализ крови, функция почек, электролиты",
+          "БНП или НТ-проБНП",
+          "Липидный профиль, глюкоза, ТШ"
+        ],
+        "redFlags": [
+          "Симптоматическая гипотензия (САД <90)",
+          "Кардиогенный шок",
+          "Острый отек легких",
+          "Тяжелые аритмии (ФА, ТВНС)",
+          "Обморок",
+          "Быстрое ухудшение класса функциональной способности"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2% взрослого населения, увеличивается с возрастом (>10% у >70 лет)",
+          "incidencia": "2-5 новых случаев/1000 человек-год",
+          "faixaEtaria": "Чаще всего >65 лет",
+          "fatoresRisco": [
+            "Артериальная гипертензия (основной)",
+            "Ишемическая болезнь сердца",
+            "Сахарный диабет",
+            "Ожирение",
+            "Пороки клапанов",
+            "Кардиомиопатии",
+            "Курение, алкоголизм"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Систолическая (ФВЭ снижена) или диастолическая (ФВЭ сохранена) дисфункция приводит к компенсаторной активации нейрогормональных систем (РААС, симпатическая система), прогрессирующему ремоделированию сердца и системному/легочному застою.",
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Одышка при физической нагрузке (прогрессирующая)",
+            "Ортопноэ",
+            "Ночная пароксизмальная одышка (ДПН)",
+            "Утомляемость и непереносимость физической нагрузки",
+            "Отек нижних конечностей",
+            "Прибавка в весе (задержка жидкости)"
+          ],
+          "sinaisExameFisico": [
+            "Венозное наполнение при 45°",
+            "Гепатожюглярный рефлюкс",
+            "Хрипы в легких",
+            "Галопный ритм (B3)",
+            "Больная гепатомегалия",
+            "Отек нижних конечностей с ямочковой индурацией"
+          ],
+          "formasClinicas": [
+            "НС с ФВЭр (ФВЭ <40%): систолическая НС",
+            "НС с ФВЭи (ФВЭ 40-49%): промежуточная НС",
+            "НС с ФВЭп (ФВЭ ≥50%): диастолическая НС"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Критерии Фрамингема",
+            "Эхокардиография с ФВЭ и диастолической функцией",
+            "БНП >100 пг/мл или НТ-проБНП >300 пг/мл"
+          ],
+          "diagnosticoDiferencial": [
+            "ХОБЛ",
+            "Пневмония",
+            "Эмболия легочной артерии",
+            "Недостаточность почек с гиперволемией",
+            "Цирроз печени с асцитом",
+            "Нефротический синдром"
+          ],
+          "examesLaboratoriais": [
+            "БНП/НТ-проБНП",
+            "Клинический анализ крови, функция почек, электролиты",
+            "Гепатограмма",
+            "Липидный профиль, глюкоза, HbA1c",
+            "Ферритин, насыщение трансферрина"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Облегчение симптомов и улучшение качества жизни",
+            "Снижение смертности и госпитализаций",
+            "Профилактика прогрессирования ремоделирования"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Образовательные мероприятия по НС и самоконтролю",
+              "Ежедневный мониторинг веса",
+              "Ограничение натрия и жидкости",
+              "Кардиореабилитация",
+              "Ежегодная вакцинация"
+            ],
+            "citations": [
+              {
+                "refId": "diretriz-ic-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "ИЭЦА/БРА",
+                "medicamentos": [
+                  "Эналаприл",
+                  "Лозартан"
+                ],
+                "posologia": "Эналаприл 2,5-20мг 12/12ч | Лозартан 25-100мг/день"
+              },
+              {
+                "classe": "Бета-блокатор",
+                "medicamentos": [
+                  "Карведилол",
+                  "Бисопролол",
+                  "Метопролол сукцинат"
+                ],
+                "posologia": "Карведилол 3,125-25мг 12/12ч (титруйте медленно)"
+              },
+              {
+                "classe": "Антагонист минералокортикоидных рецепторов",
+                "medicamentos": [
+                  "Спиронолактон"
+                ],
+                "posologia": "25-50мг/день при ФВЭ ≤35% и симптоматическом течении"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Застой",
+                "conduta": "Фуросемид 20-80мг/день Внутрь или В/в"
+              },
+              {
+                "situacao": "ФА с РВР",
+                "conduta": "Контроль частоты сердечных сокращений с помощью бета-блокатора или дигоксина"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "diretriz-ic-2021"
+              }
+            ]
+          },
+          "duracao": "Пожизненное лечение"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Ежемесячно до стабилизации, затем каждые 3-6 месяцев",
+          "examesControle": [
+            "Функция почек и электролиты (1-2 недели после коррекции ИЭЦА/диуретика)",
+            "БНП/НТ-проБНП при наличии",
+            "Ежегодная эхокардиография или при клиническом ухудшении"
+          ],
+          "metasTerapeuticas": [
+            "Класс NYHA I-II",
+            "Стабильный сухой вес",
+            "Отсутствие госпитализаций"
+          ],
+          "criteriosEncaminhamento": [
+            "ФВЭ <30%",
+            "Прогрессирующая НС (NYHA III-IV резистентная)",
+            "Рассмотрение ИК/ТРС",
+            "Оценка для трансплантации"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Контроль АГ, СД, дислипидемии",
+            "Отказ от курения",
+            "Регулярная физическая активность"
+          ],
+          "secundaria": [
+            "Соблюдение медикаментозного лечения",
+            "Ежедневный мониторинг веса",
+            "Гипонатриевая диета"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-ic"
+      ],
+      "medicamentos": [
+        "enalapril",
+        "losartana",
+        "carvedilol",
+        "furosemida",
+        "espironolactona"
+      ],
+      "calculadoras": [
+        "nyha",
+        "ckd-epi"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "diretriz-ic-2021"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "ic",
+        "insuficiencia-cardiaca",
+        "dispneia",
+        "edema",
+        "cardiopatia"
+      ]
+    },
+    {
+      "id": "fibrilacao-atrial",
+      "titulo": "Fibrilação Atrial",
+      "sinonimos": [
+        "FA",
+        "Arritmia",
+        "Fibrilação auricular"
+      ],
+      "doid": "DOID:0060224",
+      "snomedCT": "49436004",
+      "meshId": "D001281",
+      "umlsCui": "C0004238",
+      "ciap2": [
+        "K78"
+      ],
+      "cid10": [
+        "I48",
+        "I48.0",
+        "I48.1",
+        "I48.9"
+      ],
+      "cid11": [
+        "BC81.1"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Arritmia supraventricular caracterizada por ativação atrial desorganizada, irregular e rápida, com perda da contração atrial efetiva. É a arritmia sustentada mais comum.",
+        "criteriosDiagnosticos": [
+          "ECG: ausência de onda P, presença de ondas f irregulares",
+          "Intervalos RR irregularmente irregulares",
+          "Frequência atrial 350-600 bpm",
+          "Pode ser paroxística, persistente ou permanente"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Controle de fatores precipitantes (álcool, cafeína)",
+            "Tratamento de causas reversíveis (hipertireoidismo)",
+            "Perda de peso se obesidade",
+            "Tratamento de apneia do sono"
+          ],
+          "farmacologico": [
+            "Controle de frequência: Betabloqueador (Atenolol 25-100mg/dia) ou BCC (Diltiazem)",
+            "Anticoagulação se CHA2DS2-VASc ≥2 (homens) ou ≥3 (mulheres)",
+            "Varfarina (INR 2-3) ou DOACs (Rivaroxabana, Apixabana)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "FC em repouso 60-110 bpm",
+          "Anticoagulação adequada (INR 2-3 ou aderência a DOAC)",
+          "Prevenção de AVC e eventos tromboembólicos",
+          "Controle de sintomas"
+        ],
+        "examesIniciais": [
+          "ECG de 12 derivações",
+          "Ecocardiograma transtorácico",
+          "TSH",
+          "Função renal, eletrólitos",
+          "Hemograma",
+          "Holter 24h se paroxística"
+        ],
+        "redFlags": [
+          "FA com RVR e instabilidade hemodinâmica",
+          "Sinais de AVC/AIT",
+          "Síncope",
+          "Dor torácica sugestiva de SCA",
+          "IC descompensada",
+          "Pré-excitação (WPW + FA)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2-4% da população adulta, aumenta com idade",
+          "incidencia": "Dobra a cada década após 55 anos",
+          "faixaEtaria": "Rara antes dos 50 anos, comum >75 anos",
+          "fatoresRisco": [
+            "Idade avançada",
+            "Hipertensão arterial",
+            "Doença valvar (principalmente mitral)",
+            "IC, DAC",
+            "Diabetes mellitus",
+            "Obesidade",
+            "Apneia obstrutiva do sono",
+            "Hipertireoidismo",
+            "Consumo excessivo de álcool"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Múltiplos circuitos de reentrada nos átrios, frequentemente iniciados por focos ectópicos nas veias pulmonares. Remodelamento atrial elétrico e estrutural perpetua a arritmia. Estase atrial predispõe à formação de trombos, principalmente no apêndice atrial esquerdo.",
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Palpitações irregulares",
+            "Dispneia aos esforços",
+            "Fadiga",
+            "Tontura",
+            "Desconforto torácico",
+            "Pode ser assintomática (30%)"
+          ],
+          "sinaisExameFisico": [
+            "Pulso irregular e geralmente rápido",
+            "Déficit de pulso (FC apical > FC radial)",
+            "Variação da intensidade de B1",
+            "Ausência de onda a no pulso jugular"
+          ],
+          "formasClinicas": [
+            "Paroxística: episódios <7 dias, autolimitados",
+            "Persistente: >7 dias ou requer cardioversão",
+            "Persistente de longa duração: >1 ano",
+            "Permanente: aceita, sem tentativa de restaurar ritmo"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "ECG com ritmo irregularmente irregular",
+            "Ausência de ondas P definidas",
+            "Ondas f de fibrilação (melhor vistas em V1)"
+          ],
+          "diagnosticoDiferencial": [
+            "Flutter atrial",
+            "Taquicardia atrial multifocal",
+            "Extrassístoles atriais frequentes",
+            "Taquicardia sinusal com extrassístoles"
+          ],
+          "examesLaboratoriais": [
+            "TSH (descartar hipertireoidismo)",
+            "Função renal (ajuste de anticoagulantes)",
+            "Eletrólitos",
+            "Hemograma",
+            "Coagulograma se varfarina"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Prevenção de tromboembolismo (AVC)",
+            "Controle de sintomas",
+            "Tratamento de comorbidades"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Modificação do estilo de vida",
+              "Controle de peso",
+              "Redução de álcool",
+              "Tratamento de apneia do sono",
+              "Ablação por cateter em casos selecionados"
+            ],
+            "citations": [
+              {
+                "refId": "esc-fa-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Controle de frequência",
+                "medicamentos": [
+                  "Atenolol",
+                  "Metoprolol",
+                  "Diltiazem",
+                  "Verapamil",
+                  "Digoxina"
+                ],
+                "posologia": "Atenolol 25-100mg/dia | Metoprolol 50-200mg/dia"
+              },
+              {
+                "classe": "Anticoagulação (se CHA2DS2-VASc indicar)",
+                "medicamentos": [
+                  "Varfarina",
+                  "Rivaroxabana",
+                  "Apixabana",
+                  "Dabigatrana",
+                  "Edoxabana"
+                ],
+                "posologia": "Varfarina (INR 2-3) ou DOAC conforme função renal"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "FA + IC com FEVE reduzida",
+                "conduta": "Preferir betabloqueador ou digoxina (evitar BCC)"
+              },
+              {
+                "situacao": "FA + WPW",
+                "conduta": "EVITAR digoxina, BCC, betabloqueador. Encaminhar urgente."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-fa-2020"
+              }
+            ]
+          },
+          "duracao": "Anticoagulação geralmente contínua se indicada"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "A cada 3-6 meses, ou mais frequente se instável",
+          "examesControle": [
+            "INR mensal se varfarina",
+            "Função renal anual (ajuste de DOAC)",
+            "ECG se mudança de sintomas"
+          ],
+          "metasTerapeuticas": [
+            "FC 60-110 bpm em repouso",
+            "TTR >70% se varfarina",
+            "Ausência de eventos tromboembólicos"
+          ],
+          "criteriosEncaminhamento": [
+            "FA com instabilidade hemodinâmica",
+            "Candidato a ablação",
+            "FA + WPW",
+            "FA refratária ao controle de frequência"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Controle de HAS",
+            "Tratamento de apneia do sono",
+            "Controle de peso",
+            "Moderação no consumo de álcool"
+          ],
+          "secundaria": [
+            "Anticoagulação adequada",
+            "Controle de fatores precipitantes"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "atenolol",
+        "metoprolol",
+        "varfarina",
+        "rivaroxabana"
+      ],
+      "calculadoras": [
+        "cha2ds2-vasc",
+        "has-bled"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "esc-fa-2020"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "fa",
+        "fibrilacao-atrial",
+        "arritmia",
+        "anticoagulacao",
+        "avc"
+      ]
+    },
+    {
+      "id": "doenca-arterial-coronariana",
+      "titulo": "Стабильная коронарная артериальная болезнь",
+      "sinonimos": [
+        "СКАБ",
+        "Стабильная стенокардия",
+        "Хроническая ишемическая болезнь сердца"
+      ],
+      "doid": "DOID:3393",
+      "snomedCT": "53741008",
+      "meshId": "D003324",
+      "umlsCui": "C0010054",
+      "ciap2": [
+        "K74",
+        "K76"
+      ],
+      "cid10": [
+        "I25",
+        "I25.1",
+        "I25.9",
+        "I20.8"
+      ],
+      "cid11": [
+        "BA80"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Атеросклеротическое сужение коронарных артерий, приводящее к миокардиальной ишемии при физической нагрузке или стрессе. Характеризуется типичной предсказуемой стенокардией, стабильной по частоте и интенсивности.",
+        "criteriosDiagnosticos": [
+          "Типичная грудная боль: за грудиной, сжимающая, вызванная физической нагрузкой/стрессом",
+          "Облегчение при отдыхе или под языком нитратами (1-3 мин)",
+          "Продолжительность 2-10 минут",
+          "Положительный стресс-тест или функциональное изображение с ишемией"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Прекращение курения (необходимо)",
+            "Средиземноморская диета",
+            "Регулярная контролируемая физическая активность",
+            "Контроль веса",
+            "Контроль стресса"
+          ],
+          "farmacologico": [
+            "Ацетилсалициловая кислота 100 мг/день (антиагрегантное)",
+            "Высокоинтенсивная статина (Аторвастатин 40-80 мг)",
+            "Бета-блокатор (Атенолол, Метопролол) для контроля стенокардии",
+            "Подъязычные нитраты для купирования приступов"
+          ]
+        },
+        "metasTerapeuticas": [
+          "ЛДЛ-холестерин <50 мг/дл (очень высокий риск) или <70 мг/дл (высокий риск)",
+          "АД <130/80 мм рт. ст.",
+          "Гликированный гемоглобин <7% при СД",
+          "Полное прекращение курения",
+          "Контроль стенокардии (класс CCS I-II)"
+        ],
+        "examesIniciais": [
+          "ЭКГ в покое",
+          "Эхокардиография",
+          "Липидный профиль",
+          "Глюкоза крови, гликированный гемоглобин",
+          "Функция почек",
+          "Стресс-тест или сцинтиграфия"
+        ],
+        "redFlags": [
+          "Стенокардия в покое или продолжительная (>20 мин)",
+          "Стенокардия недавнего начала (<2 месяца)",
+          "Прогрессирующая стенокардия (постепенное ухудшение)",
+          "Динамические изменения ЭКГ",
+          "Гемодинамическая нестабильность",
+          "Обморок с грудной болью"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "5-8% взрослых старше 40 лет",
+          "incidencia": "Основная причина смерти в мире",
+          "faixaEtaria": "Увеличивается с возрастом, мужчины старше 45 лет, женщины старше 55 лет",
+          "fatoresRisco": [
+            "Артериальная гипертензия",
+            "Дислипидемия (повышенный ЛПНП, низкий ЛПВП)",
+            "Сахарный диабет",
+            "Курение",
+            "Ожирение",
+            "Гиподинамия",
+            "Семейный анамнез ранней СКАБ",
+            "Пожилой возраст"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Коронарная атеросклероз с образованием бляшек, сужающих просвет артерий. Когда степень сужения превышает 70%, коронарный кровоток становится недостаточным при физической нагрузке, что вызывает ишемию и стенокардию.",
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Боль/неприятные ощущения за грудиной, сжимающие/давящие",
+            "Иррадиация в левую руку, челюсть, спину",
+            "Вызывается физической нагрузкой, эмоциональным стрессом, холодом",
+            "Облегчается при отдыхе (1-5 мин) или подъязычных нитратах",
+            "Эквиваленты стенокардии: одышка, слабость"
+          ],
+          "sinaisExameFisico": [
+            "Обычно нормальные в межприступный период",
+            "Может быть присутствие B4",
+            "Транзиторный систолический шум митрального регургитации во время приступа"
+          ],
+          "formasClinicas": [
+            "Типичная стенокардия: 3 характеристики (типичное расположение, вызвана усилием, облегчается при отдыхе/нитратах)",
+            "Атипичная стенокардия: 2 характеристики",
+            "Некардиальная грудная боль: 0-1 характеристика"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Клиническая история, соответствующая заболеванию",
+            "Положительный функциональный тест на ишемию",
+            "Или анатомия коронарных артерий с значимым стенозом (>50% ТКЕ или >70% других)"
+          ],
+          "diagnosticoDiferencial": [
+            "Острая коронарная синдром",
+            "Расслоение аорты",
+            "Тромбоэмболия легочной артерии",
+            "Перикардит",
+            "Эзофагальный спазм",
+            "Мышечно-скелетная боль"
+          ],
+          "examesLaboratoriais": [
+            "Полный липидный профиль",
+            "Глюкоза крови, гликированный гемоглобин",
+            "Функция почек",
+            "Кровь на общие показатели",
+            "Тропонин (для исключения ОКС)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Устранение симптомов",
+            "Предотвращение кардиоваскулярных событий (ИМ, смерть)",
+            "Улучшение качества жизни",
+            "Контроль факторов риска"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Абсолютное прекращение курения",
+              "Средиземноморская диета или DASH",
+              "Регулярная аэробная физическая активность (150 мин/неделя)",
+              "Поддержание идеального веса",
+              "Кардиореабилитация"
+            ],
+            "citations": [
+              {
+                "refId": "esc-dac-2019"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Антиагрегант",
+                "medicamentos": [
+                  "Ацетилсалициловая кислота"
+                ],
+                "posologia": "Ацетилсалициловая кислота 100 мг/день"
+              },
+              {
+                "classe": "Статина",
+                "medicamentos": [
+                  "Аторвастатин",
+                  "Розувастатин"
+                ],
+                "posologia": "Аторвастатин 40-80 мг/день (высокая интенсивность)"
+              },
+              {
+                "classe": "Антиангинозное",
+                "medicamentos": [
+                  "Атенолол",
+                  "Метопролол",
+                  "Бисопролол"
+                ],
+                "posologia": "Атенолол 25-100 мг/день | Подъязычные нитраты для купирования приступов"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Непереносимость бета-блокаторов",
+                "conduta": "Кальциевый антагонист (Амлодипин, Дилтиазем) или Ивабрадин"
+              },
+              {
+                "situacao": "СКАБ + СД",
+                "conduta": "Рассмотреть iSGLT2 или GLP-1RA с кардиоваскулярной выгодой"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-dac-2019"
+              }
+            ]
+          },
+          "duracao": "Непрерывное лечение"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Каждые 3-6 месяцев",
+          "examesControle": [
+            "Липидный профиль каждые 6-12 месяцев",
+            "Функция почек ежегодно",
+            "ЭКГ при изменении клиники"
+          ],
+          "metasTerapeuticas": [
+            "ЛДЛ-холестерин в целевом диапазоне",
+            "АД <130/80",
+            "Отсутствие стенокардии или контролируемая стенокардия (класс CCS I)"
+          ],
+          "criteriosEncaminhamento": [
+            "Стенокардия, не поддающаяся клиническому лечению",
+            "Нестабильная стенокардия",
+            "Функциональный тест с большой областью ишемии",
+            "Дисфункция левого желудочка"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Строгий контроль кардиоваскулярных факторов риска",
+            "Статины при высоком риске",
+            "Прекращение курения"
+          ],
+          "secundaria": [
+            "Ацетилсалициловая кислота + высокоинтенсивная статина",
+            "Агрессивный контроль ЛДЛ",
+            "Кардиореабилитация"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "aas",
+        "atorvastatina",
+        "atenolol",
+        "isossorbida"
+      ],
+      "calculadoras": [
+        "risco-cv",
+        "cha2ds2-vasc"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "esc-dac-2019"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "скаб",
+        "стенокардия",
+        "коронарная болезнь",
+        "атеросклероз",
+        "ишемия"
+      ]
+    },
+    {
+      "id": "hipotensao-ortostatica",
+      "titulo": "Ортостатическая гипотензия",
+      "ciap2": [
+        "K88"
+      ],
+      "cid10": [
+        "I95.1"
+      ],
+      "cid11": [
+        "BA81"
+      ],
+      "categoria": "cardiovascular",
+      "doid": "DOID:10763",
+      "snomedCT": "28651003",
+      "meshId": "D007024",
+      "umlsCui": "C0020651",
+      "quickView": {
+        "definicao": "Падение систолического АД ≥20 мм рт. ст. или диастолического АД ≥10 мм рт. ст. при переходе из горизонтального положения в вертикальное. Распространенность 20-30% у лиц старше 65 лет. Важная причина падений.",
+        "criteriosDiagnosticos": [
+          "Падение АД при ортостатизме (1-3 мин)",
+          "Симптомы: головокружение, потемнение в глазах",
+          "Воспроизводимость при постуральном тесте",
+          "Оценка лекарственных препаратов, вызывающих ортостатическую гипотензию"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Подниматься постепенно",
+            "Поднять изголовье кровати",
+            "Носить компрессионные чулки",
+            "Обеспечить достаточное количество жидкости",
+            "Увеличить потребление соли (если нет тяжелой артериальной гипертензии)"
+          ],
+          "farmacologico": [
+            "Пересмотреть и уменьшить дозировку антигипертензивных средств",
+            "Флудрокортизон 0,1 мг/день (при неэффективности других мер)",
+            "Мидодрин 2,5-10 мг 3 раза в день"
+          ]
+        },
+        "redFlags": [
+          "Обморок",
+          "Частые падения",
+          "Сопутствующие неврологические симптомы",
+          "Анемия"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "endocardite-infecciosa",
+      "titulo": "Инфекционный эндокардит",
+      "ciap2": [
+        "K71"
+      ],
+      "cid10": [
+        "I33"
+      ],
+      "cid11": [
+        "BC40"
+      ],
+      "categoria": "cardiovascular",
+      "doid": "DOID:846",
+      "snomedCT": "84114007",
+      "meshId": "D004696",
+      "umlsCui": "C0014118",
+      "tags": [
+        "сердечно-сосудистая",
+        "инфекционная",
+        "тяжелая"
+      ],
+      "quickView": {
+        "definicao": "Инфекция эндокарда/сердечных клапанов. Может быть острой (S. aureus) или подострой (стрептококки).",
+        "criteriosDiagnosticos": [
+          "Лихорадка",
+          "Новый или измененный сердечный шум",
+          "Положительные кровяные культуры",
+          "Эхокардиографические вегетации",
+          "Критерии Дьюка"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Госпитализация",
+            "Эхокардиография",
+            "Кардиологическая оценка"
+          ],
+          "farmacologico": [
+            "Парентеральная антибиотикотерапия в соответствии с кровяными культурами",
+            "Ванкомицин + Гентамицин эмпирически"
+          ]
+        },
+        "redFlags": [
+          "Сердечная недостаточность",
+          "Системные эмболии",
+          "Абсцессы",
+          "Тяжелая недостаточность клапана"
+        ]
+      },
+      "medicamentos": [
+        "vancomycin",
+        "gentamicin"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "miocardiopatia-dilatada",
+      "titulo": "Дилатационная кардиомиопатия",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "I42.0"
+      ],
+      "cid11": [
+        "BC43.0"
+      ],
+      "categoria": "cardiovascular",
+      "doid": "DOID:12930",
+      "snomedCT": "84114007",
+      "meshId": "D002311",
+      "umlsCui": "C0027051",
+      "tags": [
+        "сердечно-сосудистая",
+        "хроническая"
+      ],
+      "quickView": {
+        "definicao": "Расширение желудочков с систолической дисфункцией. Уменьшение фракции выброса.",
+        "criteriosDiagnosticos": [
+          "ХСН с уменьшенной фракцией выброса",
+          "Расширение желудочков",
+          "Эхокардиография: ФВ <40%"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ограничение соли",
+            "Ограничение жидкости",
+            "Контролируемые физические упражнения"
+          ],
+          "farmacologico": [
+            "ИЭЦА или БРА: Эналаприл или Лозартан",
+            "Бета-блокатор: Карведилол",
+            "Диуретик по мере необходимости"
+          ]
+        },
+        "redFlags": [
+          "ХСН, не поддающаяся лечению",
+          "Аритмии",
+          "Сudden death",
+          "Тромбоэмболизм"
+        ]
+      },
+      "medicamentos": [
+        "enalapril",
+        "losartana",
+        "carvedilol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-arterial-periferica",
+      "titulo": "Периферическая артериальная болезнь",
+      "sinonimos": [
+        "ПАБ",
+        "ПАБС",
+        "Интерmittентная хромота",
+        "Периферическая сосудистая болезнь"
+      ],
+      "ciap2": [
+        "K92"
+      ],
+      "cid10": [
+        "I73.9",
+        "I70.2"
+      ],
+      "cid11": [
+        "BD40"
+      ],
+      "doid": "DOID:0050830",
+      "snomedCT": "399957001",
+      "meshId": "D058729",
+      "umlsCui": "C1704436",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Атеросклероз периферических артерий (особенно нижних конечностей) с развитием ишемии. ИТБ <0,9 является диагностическим критерием. Является маркером системной атеросклеротической болезни.",
+        "criteriosDiagnosticos": [
+          "ИТБ (Индекс лодыжка-плечо) <0,9",
+          "Интерmittентная хромота: боль в икроножной мышце при ходьбе, исчезает при отдыхе",
+          "Уменьшение или отсутствие периферических пульсов",
+          "ИТБ <0,4 или боль в покое: критическая ишемия"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Надзор за ходьбой (основной метод)",
+            "Отказ от курения (обязательный)",
+            "Уход за ногами"
+          ],
+          "farmacologico": [
+            "Аспирин 100 мг/день или Клопидогрель 75 мг/день",
+            "Высокопotent статины",
+            "ИЕКА при АГ или СД",
+            "Цилостазол 100 мг 2 раза в день (при ограничивающей хромоте)"
+          ]
+        },
+        "redFlags": [
+          "Боль в покое",
+          "Артериальная язва",
+          "Гангрена",
+          "ИТБ <0,4"
+        ],
+        "metasTerapeuticas": [
+          "ЛПНП <70 мг/дл",
+          "АД <130/80",
+          "HbA1c <7%",
+          "Отказ от курения"
+        ],
+        "examesIniciais": [
+          "ИТБ",
+          "Допплер артерий",
+          "Липидный профиль",
+          "Глюкоза крови/HbA1c",
+          "Креатинина"
+        ]
+      },
+      "protocolos": [
+        "has",
+        "dm2"
+      ],
+      "medicamentos": [
+        "aas",
+        "clopidogrel",
+        "atorvastatina",
+        "cilostazol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "сосудистая",
+        "атеросклероз",
+        "курение"
+      ]
+    },
+    {
+      "id": "insuficiencia-mitral",
+      "titulo": "Митральная недостаточность",
+      "sinonimos": [
+        "МН",
+        "Митральная регургитация"
+      ],
+      "ciap2": [
+        "K83"
+      ],
+      "cid10": [
+        "I34.0",
+        "I05.1"
+      ],
+      "cid11": [
+        "BB61.1"
+      ],
+      "doid": "DOID:11719",
+      "snomedCT": "48724000",
+      "meshId": "D008944",
+      "umlsCui": "C0026266",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Рефлюкс крови из ЛЖ в ЛП во время систолы. Первичная (клапанная) или вторичная (функциональная из-за дилатации ЛЖ).",
+        "criteriosDiagnosticos": [
+          "Холосистолический шум в митральном фокусе, иррадиирующий в подмышечную область",
+          "ЭхоКГ: тяжесть по объему регургитата, площади струи, вене контрактной",
+          "Тяжелая МН: ФВЛЖ ↓, дилатация ЛЖ/ЛП, легочная гипертензия"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ограничение соли и жидкости при ХСН",
+            "Физическая активность в пределах переносимости"
+          ],
+          "farmacologico": [
+            "Вторичная МН: оптимизация лечения ХСН (ИЕЦА/БРА, бета-блокатор, спиронолактон)",
+            "Первичная МН: ограниченное клиническое лечение",
+            "Диуретики при застое",
+            "Антикоагуляция при ФП"
+          ]
+        },
+        "redFlags": [
+          "Рефрактерная ХСН",
+          "ФВЛЖ <60%",
+          "Систолический диаметр ЛЖ >40 мм",
+          "Недавно начавшаяся ФП"
+        ],
+        "metasTerapeuticas": [
+          "Поддержание ФВЛЖ",
+          "Контроль симптомов",
+          "Хирургия при необходимости"
+        ],
+        "examesIniciais": [
+          "ЭхоКГ",
+          "ЭКГ",
+          "BNP"
+        ]
+      },
+      "protocolos": [
+        "insuficiencia-cardiaca"
+      ],
+      "medicamentos": [
+        "enalapril",
+        "carvedilol",
+        "furosemida"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "вальвулопатия",
+        "шум",
+        "сердечная недостаточность"
+      ]
+    },
+    {
+      "id": "flutter-atrial",
+      "titulo": "Атриальная flutter-тахикардия",
+      "sinonimos": [
+        "FLA"
+      ],
+      "ciap2": [
+        "K78"
+      ],
+      "cid10": [
+        "I48.3",
+        "I48.4"
+      ],
+      "cid11": [
+        "BC81.0"
+      ],
+      "doid": "DOID:0060675",
+      "snomedCT": "5370000",
+      "meshId": "D001282",
+      "umlsCui": "C0004239",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Атриальная тахиаритмия с макросупервентрикулярной реэнтри. Типичный ЭКГ: волны F в виде зубцов пилы, ЧСС атриумов ~300 уд/мин, АВ-проводимость обычно 2:1 (ЧСС ~150 уд/мин).",
+        "criteriosDiagnosticos": [
+          "ЭКГ: волны F (зубцы пилы) в отведениях DII, DIII, aVF",
+          "Частота атриумов 250-350 уд/мин",
+          "АВ-проводимость 2:1, 3:1, 4:1 или переменная",
+          "ЧСС желудочков регулярная (кроме при переменной проводимости)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Электрическая кардиоверсия при нестабильности (50-100 Дж)",
+            "Абляция катетером (высокая эффективность)"
+          ],
+          "farmacologico": [
+            "Контроль ЧСС: бета-блокатор или не-дигидропиридиновый блокатор кальциевых каналов",
+            "Антикоагуляция: те же правила, что и при фибрилляции предсердий (CHA2DS2-VASc)",
+            "Фармакологическая кардиоверсия менее эффективна, чем при фибрилляции предсердий",
+            "Ибутилิด IV для кардиоверсии (в стационаре)"
+          ]
+        },
+        "redFlags": [
+          "Нестабильность гемодинамики",
+          "Некомпенсированная сердечная недостаточность",
+          "Синдром предвозбуждения"
+        ],
+        "metasTerapeuticas": [
+          "Восстановление синусового ритма или контроль ЧСС",
+          "Профилактика тромбоэмболии"
+        ],
+        "examesIniciais": [
+          "ЭКГ 12 отведений",
+          "Эхокардиография",
+          "ТШГ",
+          "Электролиты"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "metopролол",
+        "дилтиазем",
+        "амиодарон"
+      ],
+      "calculadoras": [
+        "cha2ds2-vasc"
+      ],
+      "tags": [
+        "аритмия",
+        "антикоагуляция",
+        "абляция"
+      ]
+    },
+    {
+      "id": "bloqueio-atrioventricular",
+      "titulo": "Атриовентрикулярная блокада",
+      "sinonimos": [
+        "АВБ",
+        "АВ блокада"
+      ],
+      "ciap2": [
+        "K84"
+      ],
+      "cid10": [
+        "I44.0",
+        "I44.1",
+        "I44.2"
+      ],
+      "cid11": [
+        "BC61"
+      ],
+      "doid": "DOID:0110687",
+      "snomedCT": "233916004",
+      "meshId": "D054537",
+      "umlsCui": "C0004245",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Нарушение проведения между предсердиями и желудочками. 1-я степень: удлинение интервала PR. 2-я степень: некоторые импульсы P заблокированы. 3-я степень (АВБТ): полная диссоциация AV.",
+        "criteriosDiagnosticos": [
+          "АВБ 1-я степень: PR >200мс, все импульсы P проводятся",
+          "АВБ 2-я степень Мобитца I: постепенное удлинение PR до блокировки импульса P (Венке bach)",
+          "АВБ 2-я степень Мобитца II: блокировка импульса P без предшествующего удлинения PR",
+          "АВБ 3-я степень (АВБТ): ни один импульс P не проводится, желудочковый экстрасистолический ритм"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "АВБ 1-я степень и Мобитца I: наблюдение, отмена брадикардизирующих препаратов",
+            "АВБТ и Мобитца II: временный → постоянный кардиостимулятор"
+          ],
+          "farmacologico": [
+            "Атропин 0,5-1мг В/в (в случае экстренной ситуации, симптоматическая АВБТ)",
+            "Изопротеренол (временное применение)",
+            "Отмена препаратов: бета-блокаторы, блокаторы кальциевых каналов, дигоксин, амиодарон",
+            "Лечение причины: ишемия, болезнь Лайма, гиперкалиемия"
+          ]
+        },
+        "redFlags": [
+          "Обморок",
+          "Симптоматическая брадикардия",
+          "АВБТ",
+          "Мобитца II",
+          "Широкий QRS в экстрасистолическом ритме"
+        ],
+        "metasTerapeuticas": [
+          "Установка кардиостимулятора при необходимости",
+          "Адекватная ЧСС",
+          "Отсутствие симптомов"
+        ],
+        "examesIniciais": [
+          "ЭКГ 12 отведений",
+          "Холтер 24 часа",
+          "Электролиты",
+          "Функция щитовидной железы",
+          "Концентрация дигоксина при его применении"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "atropina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "аритмия",
+        "кардиостимулятор",
+        "экстренная ситуация"
+      ]
+    },
+    {
+      "id": "hipertensao-pulmonar",
+      "titulo": "Пульмонарная гипертензия",
+      "sinonimos": [
+        "ПГ",
+        "Пульмонарная артериальная гипертензия"
+      ],
+      "ciap2": [
+        "K82"
+      ],
+      "cid10": [
+        "I27.0",
+        "I27.2"
+      ],
+      "cid11": [
+        "BB01"
+      ],
+      "doid": "DOID:6432",
+      "snomedCT": "70995007",
+      "meshId": "D006976",
+      "umlsCui": "C0020542",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Среднее артериальное давление в легочной артерии ≥25 мм рт. ст. в покое. Классификация: Группа 1 (ПАГ), 2 (заболевания левого сердца), 3 (легочные), 4 (ХТЭПГ), 5 (множественные факторы).",
+        "criteriosDiagnosticos": [
+          "Симптомы: прогрессирующая одышка, усталость, обмороки",
+          "Эхокардиография: оценка ПСП ≥35-40 мм рт. ст., дилатация правого желудочка",
+          "Правосторонний катетеризм: САД ≥25 мм рт. ст. (окончательный диагноз)",
+          "BNP/NT-proBNP повышены"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ограничение интенсивной физической нагрузки",
+            "Кислородотерапия при гипоксемии",
+            "Противозачаточные средства (беременность противопоказана)"
+          ],
+          "farmacologico": [
+            "Группа 2: лечение основного заболевания сердца",
+            "Группа 3: лечение патологии легких, кислород",
+            "Группа 4 (ХТЭПГ): антикоагуляция, рассмотрение хирургического вмешательства",
+            "ПАГ: специфические терапии (силденафил, босентан, простаноиды)"
+          ]
+        },
+        "redFlags": [
+          "Обмороки",
+          "Признаки правожелудочковой недостаточности",
+          "Очень высокий BNP",
+          "Перикардиальный выпот"
+        ],
+        "metasTerapeuticas": [
+          "Класс функциональной способности OMS I-II",
+          "Низкий BNP",
+          "Дистанция в 6-минутной ходьбе"
+        ],
+        "examesIniciais": [
+          "Эхокардиография",
+          "BNP",
+          "КТ грудной клетки",
+          "Сцинтиграфия вентиляции/перфузии",
+          "Правосторонний катетеризм"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "sildenafil"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "одышка",
+        "сердечная недостаточность",
+        "специализированный"
+      ]
+    },
+    {
+      "id": "sindrome-coronariana-aguda",
+      "titulo": "Синдром коронарной недостаточности",
+      "sinonimos": [
+        "СКН",
+        "Острый инфаркт миокарда",
+        "ИМ",
+        "ИМ с подъемом сегмента ST",
+        "ИМ без подъема сегмента ST",
+        "Нестабильная стенокардия"
+      ],
+      "doid": "DOID:0060158",
+      "snomedCT": "394659003",
+      "meshId": "D054058",
+      "umlsCui": "C0948089",
+      "ciap2": [
+        "K74",
+        "K75",
+        "K76"
+      ],
+      "cid10": [
+        "I20.0",
+        "I21",
+        "I21.0",
+        "I21.1",
+        "I21.2",
+        "I21.3",
+        "I21.4",
+        "I21.9"
+      ],
+      "cid11": [
+        "BA41",
+        "BA42",
+        "BA80"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Спектр острой миокардиальной ишемии, включающий нестабильную стенокардию, ИМ без подъема сегмента ST (ИМБПСТ) и ИМ с подъемом сегмента ST (ИМСПСТ). Представляет собой сердечно-сосудистую экстренную ситуацию, требующую немедленного вмешательства.",
+        "criteriosDiagnosticos": [
+          "Типичная грудная боль: сжимающая, за грудиной, иррадиирующая в левую руку/челюсть, >20 минут",
+          "Одышка, холодный пот, тошнота, обморок",
+          "ЭКГ: подъем сегмента ST ≥1 мм в 2 смежных отведениях (ИМСПСТ)",
+          "ЭКГ: депрессия сегмента ST, инверсия зубца T (ИМБПСТ)",
+          "Повышенный тропонин (возрастающая кривая)",
+          "Оценка HEART ≥4 балла указывает на высокий риск"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "много_высокий",
+            "criterios": [
+              "ИМСПСТ",
+              "Гемодинамическая нестабильность",
+              "Злокачественная аритмия"
+            ],
+            "conduta": "Экстренная ангиография <90 минут"
+          },
+          {
+            "nivel": "высокий",
+            "criterios": [
+              "ИМБПСТ с положительным тропонином",
+              "GRACE >140"
+            ],
+            "conduta": "Ангиография <24 часа"
+          },
+          {
+            "nivel": "умеренный",
+            "criterios": [
+              "Нестабильная стенокардия",
+              "GRACE 109-140"
+            ],
+            "conduta": "Инвазивная оценка в течение 72 часов"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "MONABCH: мониторинг, кислород (если SatO2<90%), венозный доступ",
+            "Полный покой",
+            "Дефибриллятор под рукой"
+          ],
+          "farmacologico": [
+            "Аспирин 300 мг жевательный немедленно",
+            "Клопидогрел 300-600 мг (или Тикагрелор 180 мг)",
+            "Гепарин (непрямой или Эnoxапарин)",
+            "Морфин 2-4 мг В/в, если боль не купируется",
+            "Нитраты под язык (не использовать при САД<90, приеме силденафила, ИМ правого желудочка)",
+            "ИМСПСТ: тромболитик (Тенектеплаза) если >120 минут до ИКП"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Реинфузия в течение <90 минут (первичная ИКП)",
+          "Контроль боли",
+          "Профилактика аритмий",
+          "Гемодинамическая стабилизация"
+        ],
+        "examesIniciais": [
+          "ЭКГ 12 отведений в течение <10 минут",
+          "Тропонин (0 ч, 1 ч, 3 ч)",
+          "Клинический анализ крови, функция почек, электролиты",
+          "Коагулограмма",
+          "BNP/NT-proBNP",
+          "Рентген грудной клетки"
+        ],
+        "redFlags": [
+          "Гипотензия (САД<90 мм рт.ст.) - кардиогенный шок",
+          "Тахи- или брадиаритмия",
+          "Пulмoнaрный застой (Killip ≥II)",
+          "Кардиореспираторная арrest",
+          "Сопутствующая диссекция аорты",
+          "Активное кровотечение (противопоказано антикоагуляция)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Основная причина смерти в Бразилии",
+          "incidencia": "~350.000 случаев/год в Бразилии",
+          "mortalidade": "30% в острой фазе без адекватного лечения",
+          "faixaEtaria": "Постепенно увеличивается с возрастом, пик >60 лет",
+          "fatoresRisco": [
+            "Артериальная гипертензия",
+            "Сахарный диабет",
+            "Дислипидемия",
+            "Курение",
+            "Ожирение",
+            "Семейный анамнез ранней ИБС",
+            "Гиподинамия"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        },
+        "fisiopатология": {
+          "texto": "Разрыв или эрозия уязвимой атеросклеротической бляшки с экспозицией липидного ядра и образованием тромба. При ИМСПСТ наблюдается полная окклюзия; при ИМБПСТ/нестабильной стенокардии — частичная окклюзия или микротромбоз.",
+          "citations": [
+            {
+              "refId": "esc-stemi-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Сжимающая/давящая грудная боль",
+            "Иррадиация в левую руку, челюсть, эпигастрий, спину",
+            "Одышка",
+            "Холодный пот (диафорез)",
+            "Тошнота и рвота",
+            "Обморок",
+            "Чувство неминуемой смерти"
+          ],
+          "sinaisExameFisico": [
+            "Побледнение кожи",
+            "Тахикардия или брадикардия",
+            "B4 (жесткость желудочка)",
+            "Хрипы в легких (застой)",
+            "Гипотензия (плохой прогноз)",
+            "Дилатация вен шеи (ИМ правого желудочка)"
+          ],
+          "formasClinicas": [
+            "Нестабильная стенокардия: без повышения тропонина",
+            "ИМБПСТ: повышенный тропонин, без подъема сегмента ST",
+            "ИМСПСТ: подъем сегмента ST на ЭКГ"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Клиническая история, указывающая на заболевание",
+            "Изменения на ЭКГ, свидетельствующие о ишемии",
+            "Повышение тропонина (кривая)"
+          ],
+          "diagnosticoDiferencial": [
+            "Диссекция аорты",
+            "Пulмoнaрная эмболия",
+            "Острый перикардит",
+            "Эзофагальный спазм",
+            "Пневмоторакс",
+            "Костохондрит"
+          ],
+          "examesLaboratoriais": [
+            "Тропонин I или T (высокая чувствительность)",
+            "КФК-МВ (если тропонин недоступен)",
+            "Клинический анализ крови, креатинин, электролиты",
+            "Глюкоза, HbA1c",
+            "Липидный профиль"
+          ],
+          "examesImagem": [
+            "ЭКГ 12 отведений",
+            "Транstoracic echocardiogram",
+            "Рентген грудной клетки",
+            "Коронарная ангиография (цинезография)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-stemi-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Ранняя коронарная реинфузия",
+            "Устранение боли",
+            "Профилактика осложнений",
+            "Вторичная профилактика"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Полный покой",
+              "Непрерывный мониторинг",
+              "Кислородотерапия при SatO2<90%",
+              "Начальный голод"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-sca-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Антиагреганты",
+                "medicamentos": [
+                  "Аспирин 300 мг",
+                  "Клопидогрел 600 мг или Тикагрелор 180 мг"
+                ],
+                "posologia": "Начальная доза"
+              },
+              {
+                "classe": "Антикоагулянты",
+                "medicamentos": [
+                  "Эnoxапарин 1 мг/кг П/к 12/12 ч",
+                  "Непрямой гепарин В/в"
+                ],
+                "posologia": "До реваскуляризации"
+              },
+              {
+                "classe": "Анальгетики",
+                "medicamentos": [
+                  "Морфин 2-4 мг В/в"
+                ],
+                "observacoes": "Если боль не купируется нитратами"
+              },
+              {
+                "classe": "Бета-блокаторы",
+                "medicamentos": [
+                  "Метопролол 5 мг В/в"
+                ],
+                "observacoes": "Если нет противопоказаний"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-stemi-2023"
+              }
+            ]
+          },
+          "duracao": "Госпитализация + двойная антиагрегантная терапия в течение 12 месяцев"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Первый визит через 7-14 дней после выписки, затем ежемесячно в течение 3 месяцев",
+          "examesControle": [
+            "Эхокардиограмма через 4-6 недель",
+            "Липидный профиль",
+            "HbA1c",
+            "Функция почек"
+          ],
+          "metasTerapeuticas": [
+            "ЛДЛ <55 мг/дл",
+            "АД <130/80 мм рт.ст.",
+            "HbA1c <7% при диабете",
+            "Прекращение курения",
+            "Кардиореабилитация"
+          ],
+          "criteriosEncaminhamento": [
+            "Все случаи ИМСПСТ: экстренная/интервенционная кардиология",
+            "ИМБПСТ высокого риска",
+            "Механические осложнения",
+            "Устойчивые аритмии"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Контроль факторов риска",
+            "Статины при высоком сердечно-сосудистом риске",
+            "Аспирин в первичной профилактике (спорно)"
+          ],
+          "secundaria": [
+            "Двойная антиагрегантная терапия",
+            "Статины высокой мощности",
+            "Бета-блокаторы",
+            "ИЕКА/БРА",
+            "Кардиореабилитация"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "manejo-sca",
+        "anticoagulacao-sca"
+      ],
+      "medicamentos": [
+        "aas",
+        "clopidogrel",
+        "ticagrelor",
+        "enoxaparina",
+        "morfina"
+      ],
+      "calculadoras": [
+        "heart-score",
+        "grace-score",
+        "timi-score"
+      ],
+      "citations": [
+        {
+          "refId": "sbc-sca-2020"
+        },
+        {
+          "refId": "esc-stemi-2023"
+        },
+        {
+          "refId": "aha-ua-nstemi-2021"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "edema-agudo-pulmao",
+      "titulo": "Острый отек легких",
+      "sinonimos": [
+        "ООЛ",
+        "Кардиогенный отек легких",
+        "Острая легочная гиперемия"
+      ],
+      "doid": "DOID:11396",
+      "snomedCT": "67782005",
+      "meshId": "D011654",
+      "umlsCui": "C0034063",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "J81",
+        "I50.1"
+      ],
+      "cid11": [
+        "CB01"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Абruptное накопление жидкости в интерстиции и альвеолах легких вследствие повышения капиллярного давления (кардиогенного происхождения) или увеличения проницаемости (некардиогенного происхождения). Экстренное состояние с острым дыхательным недостатком.",
+        "criteriosDiagnosticos": [
+          "Интенсивная одышка внезапного начала",
+          "Ортопноэ (не переносит лежачее положение)",
+          "Диффузные крепитирующие хрипы",
+          "Розовая пенистая мокрота (тяжелые случаи)",
+          "Тахипноэ, использование вспомогательных мышц дыхания",
+          "Рентгенограмма грудной клетки: бilateral infiltrate \"bat wing\"",
+          "BNP/NT-proBNP повышенный (кардиогенного происхождения)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "LEMON: Lasix, Поднять головной конец, Морфина, Кислород, Нитраты",
+            "Головной конец поднят на 90° (или сидя с опущенными ногами)",
+            "Кислород (маска, НИРВ, если доступно)",
+            "НИРВ (CPAP или BiPAP) - снижает смертность",
+            "Венозный доступ, мониторинг"
+          ],
+          "farmacologico": [
+            "FUROSEMIDA 40-80mg В/в (0,5-1мг/кг)",
+            "Повторить при необходимости; удвоить дозу при предшествующем использовании диуретика",
+            "",
+            "NITROGLICERINA SL 0,4мг или спрей (если САД>90)",
+            "При возможности: NTG В/в 10-200мкг/мин",
+            "",
+            "MORFINA 2-4мг В/в (спорный вопрос, осторожно)",
+            "",
+            "При тяжелой АГ: Нитропруссид В/в",
+            "При гипотензии: Норадреналин + Добутамин"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Уменьшение легочной гиперемии",
+          "Улучшение оксигенации (SatO2>92%)",
+          "Контроль артериального давления",
+          "Идентификация и лечение причины"
+        ],
+        "examesIniciais": [
+          "ЭКГ 12 отведений (ишемия, аритмия)",
+          "Рентгенограмма грудной клетки",
+          "BNP или NT-proBNP",
+          "Тропонин",
+          "Артериальная газовая кровь",
+          "Электролиты, функция почек",
+          "Эхокардиография (как можно скорее)"
+        ],
+        "redFlags": [
+          "Кардиогенный шок (низкое АД, холодные конечности)",
+          "Тяжелая аритмия (быстрая ФА, ТВ)",
+          "Сопутствующий ИМ",
+          "Необходимость ИВЛ",
+          "Сатурация <80% несмотря на кислород",
+          "Нет ответа на НИРВ в течение 30-60 мин"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Распространенная осложнение ХСН (1 миллион госпитализаций/год в США)",
+          "faixaEtaria": "Чаще встречается у пожилых",
+          "fatoresRisco": [
+            "Предшествующая сердечная недостаточность",
+            "Ишемическая болезнь сердца",
+            "Артериальная гипертензия",
+            "Пороки сердца",
+            "Кардиомиопатии",
+            "Фибрилляция предсердий",
+            "Хроническая почечная болезнь"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Повышение давления наполнения ЛЖ → повышение капиллярного давления легких → транссудация жидкости в интерстиций и альвеолы → нарушение газового обмена и гипоксемия. При некардиогенном отеке легких происходит повреждение альвеоло-капиллярного барьера.",
+          "citations": [
+            {
+              "refId": "esc-hf-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Интенсивная одышка",
+            "Ортопноэ",
+            "Ночная пароксизмальная одышка",
+            "Кашель с розовой пенистой мокротой",
+            "Анксиозность, чувство неминуемой смерти"
+          ],
+          "sinaisExameFisico": [
+            "Тахипноэ",
+            "Использование вспомогательных мышц дыхания",
+            "Диффузные крепитирующие хрипы",
+            "Свистящее дыхание (\"кардиогенная астма\")",
+            "Дистензия яремных вен",
+            "B3/B4, шумы",
+            "Отек нижних конечностей"
+          ],
+          "formasClinicas": [
+            "Гипертензивный ОЛ (повышенное АД)",
+            "Нормотензивный ОЛ",
+            "ОЛ с кардиогенным шоком (низкое АД)",
+            "Некардиогенный ОЛ (ОДН)"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Клиника + рентгенограмма, совместимая с ОЛ",
+            "Повышенный BNP/NT-proBNP",
+            "Исключение некардиогенных причин"
+          ],
+          "diagnosticoDiferencial": [
+            "ОДН (некардиогенный)",
+            "Тяжелая пневмония",
+            "Обострение ХОБЛ/астмы",
+            "Эмболия легочной артерии",
+            "Криз тревоги/гипервентиляция"
+          ],
+          "examesLaboratoriais": [
+            "BNP (>400pg/mL) или NT-proBNP (>2000pg/mL)",
+            "Тропонин (сопутствующий ИМ?)",
+            "Артериальная газовая кровь",
+            "Клинический анализ крови, функция почек, электролиты",
+            "D-димер (при подозрении на ТЭЛА)"
+          ],
+          "examesImagem": [
+            "Рентгенограмма грудной клетки (вазодилатация, инфильтрат, кардиомегалия)",
+            "Эхокардиография (дисфункция ЛЖ, пороки сердца)",
+            "КТ грудной клетки (при диагностической неопределенности)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-hf-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Уменьшение гиперемии",
+            "Улучшение оксигенации",
+            "Лечение причины",
+            "Профилактика рецидива"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Усадить пациента (опущенные ноги)",
+              "Кислородотерапия",
+              "НИРВ (CPAP 5-10смH2O или BiPAP)",
+              "Интубация при неэффективности НИРВ"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-ic-2018"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Диуретик петлевого действия",
+                "medicamentos": [
+                  "Фуросемид 40-80мг В/в"
+                ],
+                "posologia": "Начальная доза; повторить по ответу"
+              },
+              {
+                "classe": "Вазодилататор",
+                "medicamentos": [
+                  "Нитроглицерин SL или В/в",
+                  "Нитропруссид В/в (при АГ)"
+                ],
+                "posologia": "NTG В/в 10-200мкг/мин"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Инотропное средство",
+                "medicamentos": [
+                  "Добутамин 2,5-20мкг/кг/мин"
+                ],
+                "observacoes": "При низком КО"
+              },
+              {
+                "classe": "Вазопрессор",
+                "medicamentos": [
+                  "Норадреналин"
+                ],
+                "observacoes": "При шоке"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-hf-2021"
+              }
+            ]
+          },
+          "duracao": "Острая фаза: часы до нескольких дней; хроническая оптимизация ХСН"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Непрерывная реоценка в отделении неотложной помощи; кардиологическое наблюдение",
+          "metasTerapeuticas": [
+            "Евоволемия",
+            "Оптимизация ИЭГ/БРА, ББ, антагониста минералокортикоидов",
+            "Контроль провоцирующих факторов"
+          ],
+          "criteriosEncaminhamento": [
+            "Реанимационное отделение при шоке, ИВЛ или рефрактерности",
+            "Кардиология для исследования и оптимизации",
+            "Хирургия при тяжелых пороках сердца"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "eap-emergencia",
+        "ic-descompensada"
+      ],
+      "medicamentos": [
+        "furosemida",
+        "nitroglicerina",
+        "nitroprussiato",
+        "dobutamina"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "sbc-ic-2018"
+        },
+        {
+          "refId": "esc-hf-2021"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}
