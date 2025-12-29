@@ -1,0 +1,4130 @@
+{
+  "locale": "ar",
+  "category": "infecciosas",
+  "generatedAt": "2025-12-29T01:22:43.945Z",
+  "count": 24,
+  "diseases": [
+    {
+      "id": "infeccao-urinaria",
+      "titulo": "عدوى المسالك البولية (ITU)",
+      "sinonimos": [
+        "التهاب المثانة",
+        "ITU",
+        "عدوى بولية"
+      ],
+      "doid": "DOID:13148",
+      "snomedCT": "68566005",
+      "meshId": "D014552",
+      "umlsCui": "C0042029",
+      "ciap2": [
+        "U71"
+      ],
+      "cid10": [
+        "N30",
+        "N39.0"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "عدوى بكتيرية في المسالك البولية، تحدث بشكل أكثر شيوعًا في التهاب المثانة (العدوى السفلية) لدى النساء. تحدث عدوى المسالك البولية غير المعقدة في النساء الأصحاء، غير الحوامل، اللواتي لديهن تشريح بولي طبيعي.",
+        "criteriosDiagnosticos": [
+          "أعراض نموذجية: صعوبة التبول، التبول المتكرر، الرغبة الملحة في التبول",
+          "ألم فوق العانة",
+          "تحليل البول: زيادة خلايا الدم البيضاء، نترات إيجابية، بكتيريا في البول",
+          "زرع البول + حساسية المضادات الحيوية إذا كانت العدوى معقدة، متكررة، فشلت العلاج، أو لدى الحوامل",
+          "يمكن أن يكون التشخيص سريريًا في عدوى المسالك البولية غير المعقدة"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "الترطيب بكثرة",
+            "التبول بعد الجماع (للوقاية)",
+            "تجنب مبيدات الحيوانات المنوية",
+            "النظافة الجيدة (تجنب الاستحمام)",
+            "علاج الإمساك إذا كان مرتبطًا"
+          ],
+          "farmacologico": [
+            "نيتروفورانتوين 100 مغ كل 6 ساعات لمدة 5-7 أيام (خيار أول)",
+            "فوسفوميسين 3 غ جرعة واحدة (الالتزام جيد، خيار ثاني)",
+            "سولفاميثوكازول-تريميثوبريم 800/160 مغ كل 12 ساعة لمدة 3 أيام (إذا كانت الحساسية المحلية)",
+            "تجنب الفلوروكينولونات في عدوى المسالك البولية غير المعقدة"
+          ]
+        },
+        "metasTerapeuticas": [
+          "حل الأعراض في غضون 48-72 ساعة",
+          "تعقيم البول",
+          "منع التكرار"
+        ],
+        "examesIniciais": [
+          "تحليل البول (تحليل البول من النوع الأول)",
+          "زراعة البول + حساسية المضادات الحيوية إذا كانت: عدوى المسالك البولية معقدة، متكررة، حامل، فشلت العلاج",
+          "كرياتينين إذا كان هناك شكوك في التهاب الكلى الحاد"
+        ],
+        "redFlags": [
+          "حرارة >38°C، قشعريرة (تشير إلى التهاب الكلى الحاد)",
+          "ألم في الظهر (اختبار جوردانو إيجابي)",
+          "غثيان/قيء",
+          "حوامل (خطر المضاعفات)",
+          "المناعة المثبطة، السكري غير المنضبط",
+          "عدوى المسالك البولية لدى الرجال (يجب دائمًا التحقيق)",
+          "السepsis"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "50-60% من النساء سيواجهن عدوى المسالك البولية في حياتهن",
+          "incidencia": "25-30% تكرار في غضون 6 أشهر بعد أول حلقة",
+          "faixaEtaria": "ذروة في النساء الشابات النشيطات جنسياً والمسنات",
+          "fatoresRisco": [
+            "الجنس الأنثوي (الإحليل قصير)",
+            "النشاط الجنسي",
+            "استخدام مبيدات الحيوانات المنوية/السدادة الرحمية",
+            "الانقطاع عن الحيض (ضمور الأعضاء التناسلية)",
+            "تاريخ سابق لعدوى المسالك البولية",
+            "السكري",
+            "القثطرة البولية",
+            "التشوهات البولية"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "صعوبة التبول (ألم/حرقة أثناء التبول)",
+            "التبول المتكرر (التبول المتكرر)",
+            "الرغبة الملحة في التبول",
+            "ألم فوق العانة",
+            "الدم في البول (قد يحدث)",
+            "بول كثيف أو رائحته كريهة"
+          ],
+          "sinaisExameFisico": [
+            "عادة ما يكون الفحص السريري طبيعيًا في التهاب المثانة",
+            "ألم عند لمس منطقة فوق العانة",
+            "عدم وجود حمى (التهاب المثانة)",
+            "إذا كانت الحمى + اختبار جوردانو +: التهاب الكلى الحاد"
+          ],
+          "formasClinicas": [
+            "التهاب المثانة (العدوى السفلية)",
+            "التهاب الكلى الحاد (العدوى العلوية)",
+            "بكتيريا البول غير المصحوبة بأعراض",
+            "عدوى المسالك البولية المتكررة (≥3/سنة أو ≥2/6 أشهر)"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "سريري في عدوى المسالك البولية غير المعقدة (الأعراض النموذجية)",
+            "تحليل البول: زيادة خلايا الدم البيضاء (>10 خلايا دم بيضاء/حقل)، نترات +",
+            "زراعة البول: >10⁵ وحدة تكوين مستعمرات/مل (أو >10² إذا كانت مصحوبة بأعراض)"
+          ],
+          "diagnosticoDiferencial": [
+            "التهاب المهبل/المهبل والمهبل",
+            "التهاب الإحليل (العدوى المنقولة جنسياً)",
+            "المثانة النشطة",
+            "التهاب المثانة التقرحي",
+            "حصى الكلى"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "إبادة العدوى",
+            "تخفيف الأعراض",
+            "منع المضاعفات",
+            "منع التكرار"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "الترطيب بكثرة",
+              "التبول بعد الجماع",
+              "تجنب احتباس البول",
+              "علاج الإمساك"
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "نيتروفورانتوين",
+                "medicamentos": [
+                  "نيتروفورانتوين 100 مغ كل 6 ساعات لمدة 5-7 أيام"
+                ],
+                "observacoes": "خيار أول. تجنب إذا كان GFR <30"
+              },
+              {
+                "classe": "فوسفوميسين",
+                "medicamentos": [
+                  "فوسفوميسين ترومتامول 3 غ جرعة واحدة"
+                ],
+                "observacoes": "الالتزام جيد. أكثر تكلفة"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "سولفاميثوكازول-تريميثوبريم",
+                "medicamentos": [
+                  "SMX-TMP 800/160 مغ كل 12 ساعة لمدة 3 أيام"
+                ],
+                "observacoes": "إذا كانت الحساسية المحلية >80%. تجنب في الثلث الثالث"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "حوامل",
+                "conduta": "نيتروفورانتوين (لا في الثلث الثالث)، سيفalexin، أموكسيسيلين. علاج بكتيريا البول غير المصحوبة بأعراض"
+              },
+              {
+                "situacao": "التهاب الكلى الحاد",
+                "conduta": "فلوروكينولون أو سيفتريаксون. 7-14 يومًا. النظر في الدخول إلى المستشفى"
+              },
+              {
+                "situacao": "عدوى المسالك البولية المتكررة",
+                "conduta": "الوقاية: نيتروفورانتوين 50-100 مغ ليلاً أو بعد الجماع"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "duracao": "التهاب المثانة: 3-7 أيام. التهاب الكلى الحاد: 7-14 يومًا"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "إعادة التقييم في غضون 48-72 ساعة إذا لم تتحسن الحالة",
+          "metasTerapeuticas": [
+            "حل الأعراض",
+            "زراعة البول التالية غير موصى بها بشكل روتيني"
+          ],
+          "criteriosEncaminhamento": [
+            "التهاب الكلى الحاد الشديد (sepsis، غثيان، حامل)",
+            "عدوى المسالك البولية المتكررة دون سبب محدد",
+            "شك في تشوه تشريحي",
+            "عدوى المسالك البولية لدى الرجال (الجراحة البولية)"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-itu"
+      ],
+      "medicamentos": [
+        "نيتروفورانتوين",
+        "فوسفوميسين",
+        "سولفاميثوكازول-تريميثوبريم"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "idsa-itu-2011"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "infecciosas",
+        "aguda",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "infeccao-trato-urinario",
+      "titulo": "Infecção do Trato Urinário",
+      "sinonimos": [
+        "ITU",
+        "Cistite",
+        "Pielonefrite",
+        "Infecção urinária"
+      ],
+      "doid": "DOID:13148",
+      "snomedCT": "68566005",
+      "meshId": "D014552",
+      "umlsCui": "C0042029",
+      "ciap2": [
+        "U71",
+        "U70"
+      ],
+      "cid10": [
+        "N39.0",
+        "N10",
+        "N30"
+      ],
+      "cid11": [
+        "GC08",
+        "GB60"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Infecção bacteriana do trato urinário, classificada como cistite (baixa) ou pielonefrite (alta). E. coli é o agente em 80-90% dos casos não complicados.",
+        "criteriosDiagnosticos": [
+          "CISTITE: Disúria + Polaciúria + Urgência + Dor suprapúbica",
+          "Urina turva ou odor fétido",
+          "Ausência de febre/dor lombar (cistite)",
+          "PIELONEFRITE: Febre + Dor lombar + Sinal de Giordano positivo",
+          "Sintomas de cistite podem ou não estar presentes",
+          "EAS: Piúria (>10 leucócitos/campo), nitrito +, esterase leucocitária +",
+          "Urocultura: >100.000 UFC/mL (ou >1.000 em sintomáticos)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hidratação adequada",
+            "Esvaziamento vesical frequente",
+            "Higiene adequada (limpar frente para trás)"
+          ],
+          "farmacologico": [
+            "CISTITE NÃO COMPLICADA (mulher):",
+            "Fosfomicina 3g dose única (1ª escolha) OU",
+            "Nitrofurantoína 100mg 6/6h por 5 dias OU",
+            "Sulfametoxazol-Trimetoprima 800/160mg 12/12h por 3 dias",
+            "",
+            "PIELONEFRITE LEVE (ambulatorial):",
+            "Ciprofloxacino 500mg 12/12h por 7 dias OU",
+            "Ceftriaxona 1g IM/IV + Cefuroxima VO por 10-14 dias"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Resolução dos sintomas em 24-48h",
+          "Erradicação bacteriana",
+          "Prevenção de recorrência",
+          "Evitar progressão para sepse"
+        ],
+        "examesIniciais": [
+          "EAS (urina tipo I)",
+          "Urocultura + antibiograma (se complicada, recorrente, homem, gestante, falha tratamento)",
+          "Hemograma, creatinina, PCR (se pielonefrite)",
+          "USG rins e vias urinárias (se pielonefrite ou suspeita de complicação)"
+        ],
+        "redFlags": [
+          "Febre alta, toxemia (sepse urinária)",
+          "Vômitos (internação para ATB IV)",
+          "Dor lombar intensa, massa palpável",
+          "Anúria ou oligúria",
+          "Imunossupressão, DM descompensado, gestante",
+          "Homem (sempre considerar complicada)",
+          "ITU de repetição (≥3/ano)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "11% das mulheres/ano têm cistite",
+          "incidencia": "150 milhões de casos/ano no mundo",
+          "faixaEtaria": "Mais comum em mulheres em idade reprodutiva",
+          "fatoresRisco": [
+            "Sexo feminino (uretra curta)",
+            "Atividade sexual",
+            "Uso de espermicidas",
+            "Cateterismo vesical",
+            "Menopausa (atrofia vaginal)",
+            "Diabetes mellitus",
+            "Obstrução urinária",
+            "Gravidez"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Colonização periuretral por uropatógenos intestinais (principalmente E. coli uropatogênica) que ascendem pela uretra até a bexiga. Adesinas bacterianas (fímbrias P) permitem adesão ao urotélio. Pielonefrite ocorre por ascensão ao trato superior.",
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Disúria (dor/ardência ao urinar)",
+            "Polaciúria (aumento da frequência)",
+            "Urgência urinária",
+            "Dor suprapúbica (cistite)",
+            "Febre, calafrios (pielonefrite)",
+            "Dor lombar (pielonefrite)"
+          ],
+          "sinaisExameFisico": [
+            "Sensibilidade suprapúbica (cistite)",
+            "Febre (pielonefrite)",
+            "Punho-percussão lombar positiva (Giordano)",
+            "Ausência de corrimento vaginal"
+          ],
+          "formasClinicas": [
+            "ITU não complicada (cistite em mulher saudável)",
+            "ITU complicada (homem, gestante, cateter, DM, alteração anatômica)",
+            "Pielonefrite aguda",
+            "ITU recorrente (≥3/ano ou ≥2 em 6 meses)",
+            "Bacteriúria assintomática (só tratar em gestante/pré-procedimento)"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínico (cistite não complicada): pode tratar empiricamente",
+            "EAS: piúria, nitrito, esterase",
+            "Urocultura: >100.000 UFC/mL"
+          ],
+          "diagnosticoDiferencial": [
+            "Vaginite/vaginose",
+            "Uretrite (DST: clamídia, gonorreia)",
+            "Prostatite",
+            "Síndrome da bexiga dolorosa",
+            "Nefrolitíase",
+            "Apendicite (dor suprapúbica)"
+          ],
+          "examesLaboratoriais": [
+            "EAS (sumário de urina)",
+            "Urocultura + antibiograma",
+            "Hemograma, PCR (pielonefrite)",
+            "Função renal"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Erradicar infecção",
+            "Aliviar sintomas",
+            "Prevenir complicações",
+            "Prevenir recorrência"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hidratação",
+              "Esvaziamento vesical frequente",
+              "Evitar espermicidas"
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Cistite não complicada",
+                "medicamentos": [
+                  "Fosfomicina",
+                  "Nitrofurantoína",
+                  "SMX-TMP"
+                ],
+                "posologia": "Fosfomicina 3g dose única. Nitrofurantoína 100mg 6/6h 5d. SMX-TMP 800/160mg 12/12h 3d."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Fluoroquinolona (reservar)",
+                "medicamentos": [
+                  "Ciprofloxacino",
+                  "Norfloxacino"
+                ],
+                "posologia": "Ciprofloxacino 500mg 12/12h 3 dias. Reservar para pielonefrite ou resistência."
+              },
+              {
+                "classe": "Pielonefrite ambulatorial",
+                "medicamentos": [
+                  "Ciprofloxacino",
+                  "Ceftriaxona"
+                ],
+                "posologia": "Cipro 500mg 12/12h 7d. Ceftriaxona 1g IM/IV 1x + oral por 10-14d."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Gestante",
+                "conduta": "Nitrofurantoína (evitar 3º tri), Cefalexina, Amoxicilina. Tratamento obrigatório, 7 dias. Urocultura de controle."
+              },
+              {
+                "situacao": "ITU recorrente",
+                "conduta": "Profilaxia: Nitrofurantoína 50-100mg/noite OU SMX-TMP 400/80mg/noite. Ou profilaxia pós-coito."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "duracao": "Cistite: 1-5 dias. Pielonefrite: 7-14 dias."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Reavaliação em 48-72h se sintomas persistirem",
+          "examesControle": [
+            "Urocultura de controle apenas em gestante ou sintomas persistentes",
+            "Não repetir EAS/urocultura de rotina"
+          ],
+          "metasTerapeuticas": [
+            "Resolução de sintomas",
+            "Urocultura negativa (quando indicada)"
+          ],
+          "criteriosEncaminhamento": [
+            "Pielonefrite com vômitos/toxemia (internação)",
+            "ITU recorrente para investigação",
+            "Homem jovem com ITU",
+            "Suspeita de alteração anatômica"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Hidratação",
+            "Micção pós-coito",
+            "Higiene adequada"
+          ],
+          "secundaria": [
+            "Profilaxia antibiótica (se recorrente)",
+            "Estrogênio tópico (pós-menopausa)"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "itu-manejo"
+      ],
+      "medicamentos": [
+        "fosfomicina",
+        "nitrofurantoina",
+        "sulfametoxazol-trimetoprima",
+        "ciprofloxacino"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "idsa-itu-2011"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "itu",
+        "cistite",
+        "pielonefrite",
+        "disuria",
+        "e-coli"
+      ]
+    },
+    {
+      "id": "faringoamigdalite",
+      "titulo": "التهاب الحلق واللوزتين الحاد",
+      "ciap2": [
+        "R76"
+      ],
+      "cid10": [
+        "J02",
+        "J03"
+      ],
+      "cid11": [
+        "CA02"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:3083",
+      "snomedCT": "195666003",
+      "meshId": "D010612",
+      "umlsCui": "C0031350",
+      "quickView": {
+        "definicao": "التهاب الحلق واللوزتين. فيروسي (الأغلبية) مقابل بكتيري (Streptococcus pyogenes - 15-30%). الذروة: 5-15 سنة.",
+        "criteriosDiagnosticos": [
+          "Centor/McIsaac: حمى >38°C، غياب السعال، تضخم الغدد الليمفاوية الرقبية الأمامية، انتان اللوزتين"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "الترطيب",
+            "غرغرة بالماء المالح الدافئ",
+            "الراحة"
+          ],
+          "farmacologico": [
+            "إذا كان EBHGA: البنسلين البنزاتين 600.000U (<27kg) أو 1.200.000U (>27kg) IM DU",
+            "بديل: الأموكسيسيلين 50mg/kg/يوم ÷2 لمدة 10 أيام"
+          ]
+        },
+        "redFlags": [
+          "الخراج المحيط باللوزتين (الشد، الصوت المكتوم)",
+          "صعوبة التنفس",
+          "المنونوكليوز (تضخم الطحال)"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "penicilina-benzatina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dengue",
+      "titulo": "الدنكي",
+      "sinonimos": [
+        "حمى الدنكي",
+        "الدنكي النزفي",
+        "الدنكي الشديد"
+      ],
+      "doid": "DOID:11205",
+      "snomedCT": "38362002",
+      "meshId": "D003715",
+      "umlsCui": "C0011311",
+      "ciap2": [
+        "A77"
+      ],
+      "cid10": [
+        "A90",
+        "A91"
+      ],
+      "cid11": [
+        "1D20"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "فيروس يسببه فيروس الدنكي (DENV 1-4)، ويُنقل بواسطة البعوض Aedes aegypti. طيف سريري واسع: حمى غير متمايزة إلى الدنكي الشديد مع الصدمة والنزف. البرازيل هي منطقة ذات انتشار مرتفع جدًا.",
+        "criteriosDiagnosticos": [
+          "حالة مشتبه بها: حمى (2-7 أيام) + ≥2 مما يلي في منطقة وبائية:",
+          "ألم العضلات، ألم المفاصل، صداع خلف العين",
+          "طفح جلدي بقعوي",
+          "إعياء شديد",
+          "بثور صغيرة/اختبار الحلقة إيجابي",
+          "غثيان/قيء",
+          "",
+          "تأكيد: NS1 (حتى اليوم الخامس) أو IgM (بعد اليوم السادس) أو PCR"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ترطيب شديد عن طريق الفم (60-80 مل/كغ/يوم)",
+            "راحة",
+            "توجيه حول علامات الإنذار"
+          ],
+          "farmacologico": [
+            "باراسيتامول 500-750 مغ كل 6 ساعات (لا تستخدم مضادات الالتهاب غير الستيرويدية/أسبرين!)",
+            "ديبيرونا 500-1000 مغ كل 6 ساعات (مسكن/مضاد حمّى بديل)",
+            "مضادات الغثيان: ميتوكلوبراميد، أوندانسيترون",
+            "",
+            "ترطيب حسب المجموعة:",
+            "A: 60 مل/كغ/يوم عن طريق الفم في العيادة",
+            "B (مع خطر أو أمراض مصاحبة): 60-80 مل/كغ/يوم، مراقبة لمدة 6-8 ساعات",
+            "C (علامات الإنذار): ترطيب IV 10-20 مل/كغ في الساعة، تكرار إذا لزم الأمر",
+            "D (صدمة): توسيع 20 مل/كغ في 20 دقيقة، وحدة العناية المركزة"
+          ]
+        },
+        "metasTerapeuticas": [
+          "الحفاظ على الترطيب المناسب (البول ≥0.5 مل/كغ/ساعة)",
+          "تجنب التقدم إلى الدنكي الشديد",
+          "التعرف على علامات الإنذار في وقت مبكر",
+          "التعافي دون آثار جانبية"
+        ],
+        "examesIniciais": [
+          "فحص الدم الكامل مع الصفائح الدموية (تركيز الدم، نقص الصفائح الدموية)",
+          "NS1 (حتى اليوم الخامس من الأعراض)",
+          "-serologia IgM/IgG (بعد اليوم السادس)",
+          "AST, ALT, الألبومين إذا كانت هناك علامات إنذار",
+          "اختبار الحلقة"
+        ],
+        "redFlags": [
+          "علامات الإنذار (تشير إلى الدنكي الشديد الوشيك):",
+          "ألم بطني شديد ومستمر",
+          "قيء متكرر",
+          "تراكم السوائل (استسقاء، تجمع صدري)",
+          "نزف من الغشاء المخاطي",
+          "كسل أو تهييج",
+          "تكبر الكبد >2 سم",
+          "زيادة تدريجية في الهيماتوكريت",
+          "انخفاض مفاجئ في الصفائح الدموية"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "البرازيل: البلد الأكثر تسجيلًا للحالات في العالم",
+          "incidencia": "ملايين الحالات سنويًا، ذروات وبائية دورية",
+          "faixaEtaria": "جميع الأعمار، قد تكون الحدة أكبر في الأطراف",
+          "fatoresRisco": [
+            "العيش في منطقة وبائية",
+            "الإصابة السابقة بأنواع أخرى من الفيروس (خطر الشدة)",
+            "الأطفال وكبار السن (شدّة أكبر)",
+            "الأمراض المصاحبة",
+            "الحوامل"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "يُدخل الفيروس بواسطة البعوض Aedes aegypti ويُصيب الخلايا الشجرية والخلايا المناعية. يسبب الفيروemia الحمى. في المرحلة الحرجة (الانكسار الحراري)، زيادة في نفاذية الأوعية الدموية الصغيرة بسبب الاستجابة المناعية (السيتوكينات، مكملات) تؤدي إلى تسرب بلاسمي. يمكن أن تزيد الأجسام المضادة المتنوعة من الإصابة السابقة من خطورة العدوى (ADE).",
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "حمى عالية مفاجئة (2-7 أيام)",
+            "صداع شديد، خلف العين",
+            "ألم العضلات (\"حمى كسر العظام\")",
+            "ألم المفاصل",
+            "طفح جلدي (اليوم الثالث-الرابع، بقعوي)",
+            "إعياء شديد",
+            "غثيان، قيء، فقدان الشهية"
+          ],
+          "sinaisExameFisico": [
+            "حمى",
+            "طفح جلدي بقعوي حكة",
+            "اختبار الحلقة إيجابي (≥20 بثرة في 2.5 سم²)",
+            "بثور تلقائية",
+            "تكبر الكبد (علامة خطورة)",
+            "تراكم السوائل (استسقاء، تجمع صدري) - المرحلة الحرجة"
+          ],
+          "formasClinicas": [
+            "الدنكي بدون علامات الإنذار (الأغلبية)",
+            "الدنكي مع علامات الإنذار",
+            "الدنكي الشديد (صدمة، نزف شديد، فشل عضوي)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "تشخيص سريري وبائي + مخبري",
+            "NS1 المستضد (اليوم الأول-الخامس): حساسية 60-90%",
+            "IgM (بعد اليوم السادس): يظل إيجابيًا لأسابيع",
+            "PCR: المعيار الذهبي، يحدد النوع"
+          ],
+          "diagnosticoDiferencial": [
+            "شينكونغونيا",
+            "زيكا",
+            "ليبتوسبيروز",
+            "كوفيد-19",
+            "إنفلونزا",
+            "حمى القرمزية",
+            "منجوكوكيميا"
+          ],
+          "examesLaboratoriais": [
+            "فحص الدم الكامل (تركيز الدم: Ht ↑20%，نقص الصفائح الدموية)",
+            "NS1 أو IgM",
+            "AST, ALT, الألبومين (حالات معتدلة/شديدة)",
+            "فحص تخثر الدم (شك في النزف)",
+            "الكهارل، وظائف الكلى"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "الحفاظ على الترطيب",
+            "التعرف على علامات الإنذار",
+            "منع وعلاج الصدمة",
+            "تجنب استخدام مضادات الالتهاب غير الستيرويدية"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "ترطيب شديد عن طريق الفم",
+              "راحة",
+              "العودة الفورية إذا كانت هناك علامات الإنذار",
+              "إبلاغ إلزامي"
+            ],
+            "citations": [
+              {
+                "refId": "ms-dengue-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "مسكن ألم/مضاد حمّى",
+                "medicamentos": [
+                  "باراسيتامول",
+                  "ديبيرونا"
+                ],
+                "posologia": "باراسيتامول 500-750 مغ كل 6 ساعات. ديبيرونا 500-1000 مغ كل 6 ساعات. لا تستخدم أسبرين أو مضادات الالتهاب غير الستيرويدية!"
+              },
+              {
+                "classe": "ترطيب (المجموعة A)",
+                "medicamentos": [
+                  "السوائل الفموية"
+                ],
+                "posologia": "60 مل/كغ/يوم (1/3 محلول ملحي + 2/3 سوائل). في العيادة."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "ترطيب IV (المجموعات C/D)",
+                "medicamentos": [
+                  "SF 0.9%",
+                  "رينجر لاكتات"
+                ],
+                "posologia": "C: 10-20 مل/كغ في الساعة، إعادة التقييم. D (صدمة): 20 مل/كغ في 20 دقيقة بالحقن السريع."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "الحوامل",
+                "conduta": "الدخول المبكر، مراقبة الجنين. خطر أعلى للنزف."
+              },
+              {
+                "situacao": "الدنكي الشديد مع النزف",
+                "conduta": "نقل الدم والصفائح الدموية حسب الحاجة. وحدة العناية المركزة."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ms-dengue-2024"
+              }
+            ]
+          },
+          "duracao": "المرحلة الحادة: 7-10 أيام. فترة النقاهة: أسابيع."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "يوميًا حتى 48 ساعة بعد الانكسار الحراري (المرحلة الحرجة)",
+          "examesControle": [
+            "فحص الدم الكامل يوميًا في المرحلة الحرجة",
+            "نسب الهيماتوكريت المتتابعة",
+            "إعادة التقييم السريري"
+          ],
+          "metasTerapeuticas": [
+            "استقرار الحالة الدموية",
+            "بول كافٍ",
+            "تعافي الصفائح الدموية"
+          ],
+          "criteriosEncaminhamento": [
+            "علامات الإنذار (مراقبة/الدخول)",
+            "الدنكي الشديد (وحدة العناية المركزة)",
+            "الحوامل",
+            "الأمراض المصاحبة غير المستقرة"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "التحكم في الناقل (إزالة أماكن التكاثر)",
+            "استخدام المبيدات الحشرية",
+            "الشبكات والشبكات الواقية",
+            "التطعيم (Qdenga - المصابون سابقًا)"
+          ],
+          "secundaria": [
+            "الرقابة الوبائية",
+            "الإبلاغ الإلزامي"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "dengue-classificacao"
+      ],
+      "medicamentos": [
+        "paracetamol",
+        "dipirona",
+        "metoclopramida"
+      ],
+      "calculadoras": [
+        "prova-laco"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ms-dengue-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "الدنكي",
+        "فيروس ناقل",
+        "aedes",
+        "حمى",
+        "ترطيب"
+      ]
+    },
+    {
+      "id": "herpes-simples",
+      "titulo": "الهربس البسيط",
+      "ciap2": [
+        "S71"
+      ],
+      "cid10": [
+        "B00"
+      ],
+      "cid11": [
+        "1F00"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:8566",
+      "snomedCT": "88594005",
+      "meshId": "D006561",
+      "umlsCui": "C0019348",
+      "quickView": {
+        "definicao": "عدوى فيروسية متكررة بفيروس HSV-1 (شفاهي) أو HSV-2 (جنسي). الكمون في العقد العصبية مع إعادة تنشيط.",
+        "criteriosDiagnosticos": [
+          "بثور مجمعة على قاعدة حمراء",
+          "علامات سابقة: وخز، حرقان",
+          "تطور إلى قشور في 7-10 أيام"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "تجنب الاتصال في المرحلة النشطة",
+            "تجنب عوامل التحفيز (الشمس، الضغط النفسي)"
+          ],
+          "farmacologico": [
+            "الحلقة: أسيكلوفير 400 ملغ 3 مرات يوميًا لمدة 5 أيام",
+            "القمع (≥6 حالات تكرار/سنة): أسيكلوفير 400 ملغ مرتين يوميًا بشكل مستمر"
+          ]
+        },
+        "redFlags": [
+          "الهربس العيني",
+          "الهربس الإكزيماي",
+          "الهربس المنتشر (مناعة منخفضة)"
+        ]
+      },
+      "medicamentos": [
+        "aciclovir"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "escabiose",
+      "titulo": "العثة (السَّرَنجة)",
+      "ciap2": [
+        "S72"
+      ],
+      "cid10": [
+        "B86"
+      ],
+      "cid11": [
+        "1G89"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:13234",
+      "snomedCT": "128869009",
+      "meshId": "D012532",
+      "umlsCui": "C0036262",
+      "quickView": {
+        "definicao": "الإصابات الجلدية بالقراد Sarcoptes scabiei. تحدث العدوى عن طريق التواصل المباشر المطول.",
+        "criteriosDiagnosticos": [
+          "حكة شديدة ليلاً",
+          "البثور في المساحات بين الأصابع، المعصم، الإبط، الأعضاء التناسلية",
+          "الخطوط/الأنفاق المميزة",
+          "التواصل العائلي مع الحكة"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "علاج جميع الأشخاص الذين يعيشون في المنزل نفسه",
+            "غسل الملابس والبطانيات بالماء الساخن",
+            "وضع الملابس غير القابلة للغسل في أكياس لمدة 72 ساعة"
+          ],
+          "farmacologico": [
+            "كريم بيرميثرين 5%: تطبيق من الرقبة إلى القدمين، غسل بعد 8-14 ساعة، تكرار بعد 7 أيام",
+            "إيفيرمكتين 200 ميكروغرام/كغ عن طريق الفم جرعة واحدة (في الحالات الواسعة الانتشار)"
+          ]
+        },
+        "redFlags": [
+          "السَّرَنجة النرويجية (القشرية) - لدى المرضى المناعيين",
+          "العدوى الثانوية"
+        ]
+      },
+      "medicamentos": [
+        "ivermectina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gastroenterite-aguda",
+      "titulo": "التهاب المعدة والأمعاء الحاد",
+      "ciap2": [
+        "D70"
+      ],
+      "cid10": [
+        "A09"
+      ],
+      "cid11": [
+        "1A40"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:4194",
+      "snomedCT": "235856003",
+      "meshId": "D005759",
+      "umlsCui": "C0017163",
+      "quickView": {
+        "definicao": "التهاب في الجهاز الهضمي يسببه الفيروسات (مثل فيروس الروتا وفيروس النوروفيروس)، البكتيريا أو الطفيليات. المدة <2 أسابيع.",
+        "criteriosDiagnosticos": [
+          "إسهال حاد (<14 يومًا)",
+          "غثيان",
+          "تشنجات بطنية",
+          "قد تظهر الحمى"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "الترطيب الفموي (SRO)",
+            "حمية خفيفة",
+            "الراحة"
+          ],
+          "farmacologico": [
+            "ATB فقط في حالة: الكوليرا، الشيجيلا، الأميبا، أو عوامل الخطر",
+            "مضاد الغثيان عند الحاجة: أوندانسيترون (تجنب في الأطفال دون 4 سنوات)"
+          ]
+        },
+        "redFlags": [
+          "الجفاف الشديد",
+          "علامات الصدمة",
+          "دم في البراز",
+          "المسنين أو الأطفال الصغار"
+        ]
+      },
+      "medicamentos": [
+        "soro-oral"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "mononucleose-infecciosa",
+      "titulo": "العدوى الأحادية النواة",
+      "ciap2": [
+        "A75"
+      ],
+      "cid10": [
+        "B27"
+      ],
+      "cid11": [
+        "1D81"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:8620",
+      "snomedCT": "186759007",
+      "meshId": "D007244",
+      "umlsCui": "C0026650",
+      "tags": [
+        "infecciosa",
+        "viral",
+        "pediatrica"
+      ],
+      "quickView": {
+        "definicao": "العدوى بفيروس إيبشتاين-بار. تتميز بالحمى، التهاب الحلق، تضخم الغدد الليمفاوية، تضخم الطحال.",
+        "criteriosDiagnosticos": [
+          "التهاب حنجري صديدي",
+          "تضخم الغدد الليمفاوية الرقبية",
+          "زيادة خلايا الليمفوسايت غير الطبيعية",
+          "اختبار بول-بونيل إيجابي"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "الراحة",
+            "الترطيب",
+            "غرغرة الحلق"
+          ],
+          "farmacologico": [
+            "علاج أعراضي: باراسيتامول أو إيبوبروفين",
+            "كورتيكوستيرويد فقط في حالة المضاعفات"
+          ]
+        },
+        "redFlags": [
+          "تمزق الطحال",
+          "انسداد المسالك الهوائية",
+          "تهاب كبد شديد",
+          "تهاب السحايا الدماغية"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hepatite-a",
+      "titulo": "التهاب الكبد أ",
+      "ciap2": [
+        "D72"
+      ],
+      "cid10": [
+        "B15"
+      ],
+      "cid11": [
+        "1E50.0"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:12549",
+      "snomedCT": "50711007",
+      "meshId": "D006506",
+      "umlsCui": "C0019158",
+      "tags": [
+        "infecciosa",
+        "فيروسية",
+        "التهاب الكبد"
+      ],
+      "quickView": {
+        "definicao": "عدوى بفيروس HAV. انتقال عن طريق الفم والبراز. عادة ما تكون ذاتية الانتهاء، نادراً ما تكون حادة.",
+        "criteriosDiagnosticos": [
+          "الصفير",
+          "ارتفاع AST/ALT",
+          "إيجابية Anti-HAV IgM"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "الراحة",
+            "الترطيب",
+            "تجنب الكحول"
+          ],
+          "farmacologico": [
+            "علاج الأعراض فقط",
+            "لا يوجد علاج محدد"
+          ]
+        },
+        "redFlags": [
+          "التهاب الكبد الحاد",
+          "فشل كبدي",
+          "اضطراب في تخثر الدم"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hepatite-b",
+      "titulo": "التهاب الكبد ب",
+      "ciap2": [
+        "D72"
+      ],
+      "cid10": [
+        "B16"
+      ],
+      "cid11": [
+        "1E50.1"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:2043",
+      "snomedCT": "66071002",
+      "meshId": "D006509",
+      "umlsCui": "C0019159",
+      "tags": [
+        "عدوى",
+        "فيروسي",
+        "التهاب الكبد",
+        "مزمن"
+      ],
+      "quickView": {
+        "definicao": "عدوى بفيروس HBV. يمكن أن تكون حادة أو مزمنة. تنتقل عبر المسارات الدموية، أو الجنسية، أو الرأسية.",
+        "criteriosDiagnosticos": [
+          "إيجابي HBsAg",
+          "Anti-HBc IgM (حادة)",
+          "حمل فيروس HBV"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "الراحة",
+            "تجنب الكحول",
+            "حماية المخالطين"
+          ],
+          "farmacologico": [
+            "حادة: علاج الأعراض",
+            "مزمنة: تينوفوير أو إنتيكافير"
+          ]
+        },
+        "redFlags": [
+          "التهاب الكبد العنيف",
+          "التصلب الكبدي",
+          "سرطان الكبد الخلايا الكبدية"
+        ]
+      },
+      "medicamentos": [
+        "tenofovir",
+        "entecavir"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hepatite-e",
+      "titulo": "التهاب الكبد الفيروسي من النوع E",
+      "ciap2": [
+        "D72"
+      ],
+      "cid10": [
+        "B17.2"
+      ],
+      "cid11": [
+        "1E50.0"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:12476",
+      "snomedCT": "240530008",
+      "meshId": "D006526",
+      "umlsCui": "C0019160",
+      "hpo": [
+        "HP:0002920",
+        "HP:0002901"
+      ],
+      "tags": [
+        "عدوى",
+        "فيروسي",
+        "التهاب الكبد"
+      ],
+      "quickView": {
+        "definicao": "عدوى بفيروس التهاب الكبد من النوع E (HEV). انتقال فecal-فموي. قد تكون حادة أثناء الحمل.",
+        "criteriosDiagnosticos": [
+          "Anti-HEV IgM إيجابي",
+          "HEV RNA إيجابي",
+          "ارتفاع ترانسامينازات"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "دعم",
+            "راحة",
+            "ترطيب"
+          ],
+          "farmacologico": [
+            "علاج أعراضي فقط",
+            "ريباويرين في الحالات الشديدة/الزرع"
+          ]
+        },
+        "redFlags": [
+          "فشل كبدي حاد",
+          "الحمل (وفيات عالية)",
+          "المصابون بنقص المناعة"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sífilis-terciaria",
+      "titulo": "السفلس الثالثي",
+      "ciap2": [
+        "Y77"
+      ],
+      "cid10": [
+        "A52"
+      ],
+      "cid11": [
+        "1C1Z"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:13240",
+      "snomedCT": "76272004",
+      "meshId": "D013592",
+      "umlsCui": "C0039102",
+      "hpo": [
+        "HP:0001250",
+        "HP:0002134"
+      ],
+      "tags": [
+        "عدوى",
+        "بكتيرية",
+        "عصبية"
+      ],
+      "quickView": {
+        "definicao": "السفلس المتأخر (سنوات بعد العدوى). السفلس العصبي، السفلس القلب والأوعية الدموية، الغومات السفلسية.",
+        "criteriosDiagnosticos": [
+          "تاريخ السفلس",
+          "VDRL/RPR إيجابي",
+          "TPHA/FTA-ABS إيجابي",
+          "الظواهر المتأخرة"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "تقييم عصبي",
+            "تقييم قلبي عند الحاجة"
+          ],
+          "farmacologico": [
+            "بنسلين G بلوري 18-24 مليون وحدة دولية/يوم IV 10-14 يوم (للسفلس العصبي)",
+            "أو سيفترياكسون بديل"
+          ]
+        },
+        "redFlags": [
+          "سفلس عصبي نشط",
+          "قصور صمام الأورطي",
+          "تمدد الأورطي"
+        ]
+      },
+      "medicamentos": [
+        "penicilina-g"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "faringite-estreptococica",
+      "titulo": "فaringيت استربتوكوكية",
+      "sinonimos": [
+        "تهاب اللوزتين الاستربتوكوكية"
+      ],
+      "ciap2": [
+        "R72"
+      ],
+      "cid10": [
+        "J02.0"
+      ],
+      "cid11": [
+        "CA40"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:10763",
+      "snomedCT": "43878009",
+      "meshId": "D010996",
+      "umlsCui": "C0032285",
+      "hpo": [
+        "HP:0000347",
+        "HP:0025258"
+      ],
+      "tags": [
+        "infecciosa",
+        "بكتيرية",
+        "طفولية"
+      ],
+      "quickView": {
+        "definicao": "فaringيت ناجمة عن Streptococcus pyogenes (المجموعة A). أكثر شيوعًا في الأطفال من عمر 5-15 سنة. يمكن أن تتطور إلى حمى روماتيزمية.",
+        "criteriosDiagnosticos": [
+          "فaringيت/تهاب اللوزتين",
+          "تسرب اللوزتين",
+          "تضخم الغدد الليمفاوية الرقبية",
+          "حمى",
+          "نتيجة إيجابية للاختبار السريع أو الزراعة"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "مسكن ألم: باراسيتامول أو إيبوبروفين",
+            "غرغرة",
+            "ترطيب"
+          ],
+          "farmacologico": [
+            "بنسلين V 250-500mg كل 6 ساعات لمدة 10 أيام",
+            "أو أموكسيسيلين 500mg كل 8 ساعات لمدة 10 أيام",
+            "أو أزيثروميسين في حالة الحساسية"
+          ]
+        },
+        "redFlags": [
+          "الخراج المحيط باللوزتين",
+          "انسداد المسالك الهوائية",
+          "حمى روماتيزمية",
+          "تهاب الكلى الكبيبي"
+        ]
+      },
+      "medicamentos": [
+        "penicilina-v",
+        "amoxicilina",
+        "azitromicina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "amigdalite",
+      "titulo": "اللوزتان",
+      "ciap2": [
+        "R72"
+      ],
+      "cid10": [
+        "J03"
+      ],
+      "cid11": [
+        "CA40"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:10763",
+      "snomedCT": "56717001",
+      "meshId": "D014069",
+      "umlsCui": "C0040425",
+      "hpo": [
+        "HP:0025258",
+        "HP:0012825"
+      ],
+      "tags": [
+        "infecciosa",
+        "orl",
+        "comum"
+      ],
+      "quickView": {
+        "definicao": "التهاب اللوزتين. يمكن أن تكون فيروسية (الأكثر شيوعًا) أو بكتيرية. الأعراض: ألم في الحلق، حمى، تضخم الغدد الليمفاوية.",
+        "criteriosDiagnosticos": [
+          "ألم في الحلق",
+          "اللوزتان محمرة/منتفخة",
+          "قد يكون هناك إفرازات",
+          "تضخم الغدد الليمفاوية الرقبية",
+          "حمى"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "مسكنات الألم: باراسيتامول أو إيبوبروفين",
+            "غرغرة",
+            "الترطيب"
+          ],
+          "farmacologico": [
+            "إذا كانت سلسلة: البنسلين V أو آموكسيسيلين",
+            "فيروسية: علاج أعراضي فقط"
+          ]
+        },
+        "redFlags": [
+          "الخراج المحيط باللوزتين",
+          "انسداد المسالك الهوائية",
+          "الشد العضلي للفك",
+          "انحراف الحنك"
+        ]
+      },
+      "medicamentos": [
+        "penicilina-v",
+        "amoxicilina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gastroenterite-viral",
+      "titulo": " gastroenteritis virale",
+      "sinonimos": [
+        " gastroenteritis virale حادة"
+      ],
+      "ciap2": [
+        "D73"
+      ],
+      "cid10": [
+        "A08"
+      ],
+      "cid11": [
+        "DD92"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:4374",
+      "snomedCT": "48866001",
+      "meshId": "D005759",
+      "umlsCui": "C0017168",
+      "tags": [
+        "infecciosa",
+        "viral",
+        "الجهاز الهضمي",
+        "pediatrica"
+      ],
+      "quickView": {
+        "definicao": "عدوى فيروسية للجهاز الهضمي. الأسباب: الروتا فيروس، النورو فيروس، الأدينو فيروس. الأعراض: الإسهال، الغثيان، القيء، آلام البطن.",
+        "criteriosDiagnosticos": [
+          "إسهال حاد",
+          "القيء",
+          "الغثيان",
+          "آلام البطن",
+          "قد تظهر الحمى",
+          "التاريخ الوبائي"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "الترطيب الفموي: محلول إعادة الترطيب الفموي",
+            "حمية خفيفة",
+            "الراحة",
+            "الوقاية: النظافة، التطعيم (روتا فيروس)"
+          ],
+          "farmacologico": [
+            "مضادات الغثيان إذا كان القيء شديدًا: أوندانسيترون",
+            "الزنك للأطفال دون سن 5 سنوات",
+            "قد تساعد البروبيوتيك"
+          ]
+        },
+        "redFlags": [
+          "الجفاف الشديد",
+          "الدم في البراز",
+          "المسنين/الأطفال الصغار",
+          "الأعراض >7 أيام"
+        ]
+      },
+      "medicamentos": [
+        "ondansetrona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sepse",
+      "titulo": "السُّepsة والصُّدم السُّepsِي",
+      "sinonimos": [
+        "السُّepsة",
+        "الحالة السُّepsِية",
+        "الصُّدم السُّepsِي",
+        "العدوى الشاملة"
+      ],
+      "doid": "DOID:0080009",
+      "snomedCT": "91302008",
+      "meshId": "D018805",
+      "umlsCui": "C0036690",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "A41",
+        "A41.9",
+        "R65.1",
+        "R57.2"
+      ],
+      "cid11": [
+        "1G40"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "خلل وظيفي عضوي محتمل مميت ناجم عن استجابة غير منظمة للمضيف للعدوى. الصُّدم السُّepsِي: السُّepsة + الحاجة إلى مُضيّقات الأوعية الدموية + اللاكتات >2 ملمول/لتر رغم استبدال الحجم.",
+        "criteriosDiagnosticos": [
+          "السُّepsة: عدوى مشتبه بها/مؤكدة + SOFA ≥2 نقاط",
+          "qSOFA (فرز): ≥2 من: معدل التنفس ≥22، ضغط الدم الانقباضي ≤100، تغير في الحالة العقلية",
+          "الصُّدم السُّepsِي: السُّepsة + مُضيّقات الأوعية الدموية للحفاظ على ضغط الدم المتوسط ≥65 + اللاكتات >2 بعد استبدال الحجم",
+          "تحديد مصدر العدوى",
+          "أخذ عينات الدم للزرع قبل المضادات الحيوية (دون تأخير)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "تحديد ومراقبة المصدر (تصريف القيح، إزالة القسطرة)",
+            "وصول وريدي كبير (مثاليًا مركزيًا)",
+            "المراقبة المستمرة",
+            "القسطرة البولية لقياس تدفق البول"
+          ],
+          "farmacologico": [
+            "الساعة 1 (حزم البقاء على قيد الحياة في السُّepsة):",
+            "اللاكتات (إعادة الفحص إذا كان الأول >2)",
+            "أخذ عينات الدم للزرع (2 مجموعة) قبل المضادات الحيوية",
+            "مضاد حيوي واسع الطيف <1 ساعة",
+            "محلول كلوريد الصوديوم 0.9% 30 مل/كغ إذا كان الضغط الانقباضي منخفضًا أو اللاكتات ≥4",
+            "النورادرينالين إذا كان ضغط الدم المتوسط <65 بعد استبدال الحجم",
+            "",
+            "مضادات حيوية تجريبية حسب المصدر المشتبه به:",
+            "رئوي: سيفترياكسون + أزيثروميسين",
+            "بطني: بيبراسيلين-تازوباكتام أو ميروبينيم",
+            "بولوي: سيفترياكسون أو سيبروفلوكساسين",
+            "جلدي: أوكسيسيلين + كلينداميسين"
+          ]
+        },
+        "metasTerapeuticas": [
+          "ضغط الدم المتوسط ≥65 ملم زئبق",
+          "تدفق البول ≥0.5 مل/كغ/ساعة",
+          "تطبيع اللاكتات",
+          "تحسين الوعي",
+          "التحكم في مصدر العدوى"
+        ],
+        "examesIniciais": [
+          "اللاكتات في الدم",
+          "أخذ عينات الدم للزرع (2 مجموعة قبل المضادات الحيوية)",
+          "الفحص الدموي الكامل، الكرياتينين، البيليروبين",
+          "غازات الدم الشريانية",
+          "فحص تخثر الدم",
+          "بروكالسيتونين (إذا كان متاحًا)",
+          "أشعة الصدر، تحليل البول/زرع البول، صورة حسب المصدر"
+        ],
+        "redFlags": [
+          "اللاكتات >4 ملمول/لتر",
+          "انخفاض الضغط الدموي المستمر رغم استبدال الحجم",
+          "خلل وظيفي متعدد الأعضاء",
+          "تغير كبير في مستوى الوعي",
+          "خلل في تخثر الدم (CIVD)",
+          "المناعة المثبطة الشديدة"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~30 مليون حالة/سنة في العالم",
+          "incidencia": "200-300 حالة/100,000 نسمة/سنة في البلدان المتقدمة",
+          "mortalidade": "25-30% في السُّepsة، 40-50% في الصُّدم السُّepsِي",
+          "faixaEtaria": "الأعمار المتطرفة (حديثي الولادة والمسنون) أكثر عرضة",
+          "fatoresRisco": [
+            "العمر المتقدم",
+            "المناعة المثبطة",
+            "داء السكري",
+            "الأورام",
+            "المرض الكلوي/الكبد المزمن",
+            "الأجهزة الغازية (قسطرة، أنبوب)",
+            "ال入院近期",
+            "近期手术"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "استجابة مناعية غير منظمة للعدوى مع إطلاق كميات كبيرة من السيتوكينات (عاصفة السيتوكينات)، تنشيط سلسلة تخثر الدم، خلل وظيفي في بطانة الأوعية الدموية وتوسع الأوعية الدموية. يؤدي ذلك إلى نقص تروية الأنسجة، خلل وظيفي في الأعضاء والوفاة المحتملة.",
+          "citations": [
+            {
+              "refId": "sepsis-3"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "الحمى أو انخفاض درجة الحرارة",
+            "القشعريرة",
+            "تسارع ضربات القلب، تسارع التنفس",
+            "الارتباك العقلي، الاضطراب أو الكسل",
+            "قلة البول",
+            "علامات المصدر العدوي"
+          ],
+          "sinaisExameFisico": [
+            "انخفاض الضغط الدموي",
+            "تسارع ضربات القلب",
+            "تسارع التنفس",
+            "تغير في الحالة العقلية",
+            "زمن ملء الأوعية الدموية >3 ثوانٍ",
+            "جلد مُشَبَّك/أزرق",
+            "أطراف باردة"
+          ],
+          "formasClinicas": [
+            "السُّepsة دون الصُّدم",
+            "الصُّدم السُّepsِي",
+            "السُّepsة مع خلل وظيفي في عضو معين (فشل كلوي حاد، فشل رئوي حاد، إلخ)"
+          ],
+          "citations": [
+            {
+              "refId": "sepsis-3"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Sepsis-3: SOFA ≥2 + عدوى",
+            "qSOFA للفرز (ليس التشخيص)",
+            "تحديد المصدر والكائن المسبب"
+          ],
+          "diagnosticoDiferencial": [
+            "الصُّدم القلبي",
+            "الصُّدم النقصي",
+            "الصُّدم الحساسية",
+            "SIRS غير عدوي (التهاب البنكرياس، الحروق)",
+            "الفشل الغدي الكاذب الحاد"
+          ],
+          "examesLaboratoriais": [
+            "أخذ عينات الدم للزرع (2 مجموعة)",
+            "اللاكتات في الدم الشرياني",
+            "بروكالسيتونين",
+            "الفحص الدموي الكامل (زيادة أو نقصان الكريات البيضاء)",
+            "وظائف الكلى والكبد",
+            "فحص تخثر الدم (نقص الصفائح الدموية، زيادة زمن البروثرومبين)",
+            "غازات الدم الشريانية"
+          ],
+          "examesImagem": [
+            "أشعة الصدر",
+            "التصوير المقطعي المحوسب حسب الاشتباه (البطن، الحوض)",
+            "الصدى القلبي (إذا كان هناك خلل في وظيفة القلب أو الاشتباه بالتهاب التامور)"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "إعادة تأهيل الحالة الدموية المبكرة",
+            "العلاج المضاد للبكتيريا المناسب <1 ساعة",
+            "التحكم في مصدر العدوى",
+            "دعم خلل وظائف الأعضاء"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "وصول وريدي مركزي",
+              "قسطرة ضغط الدم المتوسط الغازية",
+              "التحكم في المصدر (تصريف، إزالة الأنسجة الميتة، إزالة الجهاز)",
+              "التنفس الحماية إذا كان هناك فشل رئوي حاد",
+              "علاج استبدال الكلى إذا لزم الأمر"
+            ],
+            "citations": [
+              {
+                "refId": "surviving-sepsis-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "مضاد حيوي",
+                "medicamentos": [
+                  "بيبراسيلين-تازوباكتام",
+                  "ميروبينيم",
+                  "سيفترياكسون + مترونيدازول"
+                ],
+                "posologia": "الجرعة القصوى، تعديل الكلوي",
+                "observacoes": "بدء <1 ساعة من التعرف"
+              },
+              {
+                "classe": "كريستالويد",
+                "medicamentos": [
+                  "محلول كلوريد الصوديوم 0.9%",
+                  "رينجر لاكتات"
+                ],
+                "posologia": "30 مل/كغ في أول 3 ساعات إذا كان الضغط الانقباضي منخفضًا/اللاكتات ≥4"
+              },
+              {
+                "classe": "مُضيّقات الأوعية الدموية",
+                "medicamentos": [
+                  "النورادرينالين 0.1-2 ميكروغرام/كغ/دقيقة"
+                ],
+                "posologia": "ضبط للحفاظ على ضغط الدم المتوسط ≥65",
+                "observacoes": "الخيار الأول"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "مُضيّقات الأوعية الدموية إضافية",
+                "medicamentos": [
+                  "الفيزوبريسين 0.01-0.04 وحدة/دقيقة"
+                ],
+                "observacoes": "إذا كانت النورادرينالين غير كافية"
+              },
+              {
+                "classe": "مُحفِّز القلب",
+                "medicamentos": [
+                  "الدوبتامين 2.5-20 ميكروغرام/كغ/دقيقة"
+                ],
+                "observacoes": "إذا كان التدفق القلبي منخفضًا"
+              },
+              {
+                "classe": "كورتيكوستيرويد",
+                "medicamentos": [
+                  "الهيدروكورتيزون 200 ملغ/يوم"
+                ],
+                "observacoes": "إذا كان غير مستجيب لمُضيّقات الأوعية الدموية"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "surviving-sepsis-2021"
+              }
+            ]
+          },
+          "duracao": "العلاج المضاد للبكتيريا لمدة 7-10 أيام في معظم الحالات؛ تعديل حسب المصدر والاستجابة"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "إعادة التقييم المستمر في المرحلة الحادة",
+          "examesControle": [
+            "اللاكتات المتتابع",
+            "وظائف الكلى",
+            "الفحص الدموي الكامل",
+            "زرع المراقبة"
+          ],
+          "metasTerapeuticas": [
+            "تطبيع اللاكتات",
+            "التوقف عن استخدام مُضيّقات الأوعية الدموية",
+            "تدفق البول >0.5 مل/كغ/ساعة",
+            "حل خلل وظائف الأعضاء"
+          ],
+          "criteriosEncaminhamento": [
+            "كل مريض مع السُّepsة: وحدة العناية المركزة أو وحدة الرعاية المركزة",
+            "الجراحة إذا كان هناك مصدر جراحي",
+            "طبيب الأمراض المعدية للحالات المعقدة"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "التطعيم (الرئوي، الإنفلونزا)",
+            "نظافة اليدين",
+            "منع العدوى المستشفى",
+            "التعامل المناسب مع الأجهزة الغازية"
+          ],
+          "secundaria": [
+            "التعرف المبكر على العدوى",
+            "العلاج المناسب للعدوى المجتمعية",
+            "حزمة الساعة 1"
+          ],
+          "citations": [
+            {
+              "refId": "surviving-sepsis-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "sepse-bundle-1h",
+        "choque-septico",
+        "atb-empirico-sepse"
+      ],
+      "medicamentos": [
+        "noradrenalina",
+        "meropenem",
+        "piperacilina-tazobactam",
+        "vancomicina"
+      ],
+      "calculadoras": [
+        "sofa",
+        "qsofa",
+        "apache-ii"
+      ],
+      "citations": [
+        {
+          "refId": "sepsis-3"
+        },
+        {
+          "refId": "surviving-sepsis-2021"
+        },
+        {
+          "refId": "ilas-sepse-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "malaria",
+      "titulo": "Malária",
+      "sinonimos": [
+        "Paludismo",
+        "Febre terçã",
+        "Febre quartá",
+        "Impaludismo"
+      ],
+      "doid": "DOID:12365",
+      "snomedCT": "61462000",
+      "meshId": "D008288",
+      "umlsCui": "C0024530",
+      "ciap2": [
+        "A73"
+      ],
+      "cid10": [
+        "B50",
+        "B51",
+        "B52",
+        "B53",
+        "B54"
+      ],
+      "cid11": [
+        "1F40"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Doãncia infecciosa causada por protozoários do gãnero Plasmodium, transmitida por mosquitos Anopheles. P. falciparum causa a forma mais grave. Endémica na Amazónia Legal brasileira.",
+        "criteriosDiagnosticos": [
+          "Febre (geralmente intermitente/cíclica)",
+          "Calafrios intensos, sudorese profusa",
+          "Cefaleia, mialgia, artralgia",
+          "Hepatoesplenomegalia",
+          "Histórico de exposição em área endêmica",
+          "Gota espessa ou teste rápido positivo",
+          "Periodicidade: P. vivax/ovale (48h), P. malariae (72h), P. falciparum (irregular)"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "baixo",
+            "criterios": [
+              "P. vivax não complicada",
+              "Sem sinais de alarme"
+            ],
+            "conduta": "Tratamento ambulatorial"
+          },
+          {
+            "nivel": "alto",
+            "criterios": [
+              "P. falciparum",
+              "Sinais de gravidade",
+              "Gestante",
+              "Extremos de idade"
+            ],
+            "conduta": "Internação e tratamento IV"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hidratação adequada",
+            "Antitérmicos (dipirona, paracetamol)",
+            "Repouso",
+            "Notificação compulsória imediata"
+          ],
+          "farmacologico": [
+            "P. VIVAX (não complicada):",
+            "Cloroquina 25mg/kg em 3 dias + Primaquina 0,5mg/kg/dia por 7 dias",
+            "",
+            "P. FALCIPARUM (não complicada):",
+            "Arteméter-Lumefantrina (Coartem®) 6 doses em 3 dias",
+            "OU Artesunato-Mefloquina",
+            "",
+            "MALÁRIA GRAVE (qualquer espécie):",
+            "Artesunato IV 2,4mg/kg em 0h, 12h, 24h, depois 1x/dia",
+            "Completar com Coartem® após melhora"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Eliminação do parasita",
+          "Prevenção de recaídas (P. vivax/ovale - hipnozoítos)",
+          "Prevenção de complicações graves",
+          "Cura radical com primaquina"
+        ],
+        "examesIniciais": [
+          "Gota espessa (padrão-ouro)",
+          "Teste rápido (HRP2 para P. falciparum)",
+          "Hemograma (anemia, plaquetopenia)",
+          "Função renal e hepática",
+          "Glicemia",
+          "Bilirrubinas",
+          "Gasometria (se grave)"
+        ],
+        "redFlags": [
+          "Alteração do nível de consciência (malária cerebral)",
+          "Insuficiência respiratória (SDRA)",
+          "Icterícia intensa (Bb>3mg/dL)",
+          "Hemoglobinúria (\"black water fever\")",
+          "Hipoglicemia (<40mg/dL)",
+          "Acidose metabólica",
+          "Hiperparasitemia (>250.000/mm³)",
+          "Insuficiência renal aguda",
+          "Anemia grave (Hb<5g/dL)",
+          "Sangramento espontâneo"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~140.000 casos/ano no Brasil (>99% na Amazónia)",
+          "incidencia": "229 milhões de casos/ano no mundo (OMS)",
+          "mortalidade": "~400.000 mortes/ano no mundo; no Brasil <100/ano",
+          "faixaEtaria": "Todas as idades; crianças <5 anos mais vulneráveis",
+          "fatoresRisco": [
+            "Residência/viagem para área endêmica",
+            "Falta de uso de mosquiteiros",
+            "Horário crepuscular sem proteção",
+            "Gestantes",
+            "Imunossupressão",
+            "Primoinfecção"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Esporozoítos inoculados pelo mosquito infectam hepatócitos, multiplicam-se e liberam merozoítos que invadem hemácias. O ciclo eritrocítico causa hemólise, liberação de citocinas e a sintomatologia. P. vivax/ovale formam hipnozoítos hepáticos (recaídas). P. falciparum causa citoaderência e obstrução microvascular.",
+          "citations": [
+            {
+              "refId": "who-malaria-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Febre alta (39-41°C)",
+            "Calafrios (fase fria)",
+            "Sudorese profusa (fase de suor)",
+            "Cefaleia intensa",
+            "Mialgia, artralgia",
+            "Náuseas, vômitos",
+            "Astenia"
+          ],
+          "sinaisExameFisico": [
+            "Esplenomegalia (comum)",
+            "Hepatomegalia",
+            "Palidez (anemia)",
+            "Icterícia leve a moderada",
+            "Taquicardia"
+          ],
+          "formasClinicas": [
+            "Malária não complicada",
+            "Malária grave/complicada",
+            "Malária cerebral",
+            "Malária na gestação"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínica sugestiva + exposição epidemiológica",
+            "Confirmação parasitológica obrigatória"
+          ],
+          "diagnosticoDiferencial": [
+            "Dengue",
+            "Febre tifoide",
+            "Leptospirose",
+            "Hepatite viral",
+            "Febre amarela",
+            "Meningite",
+            "Sepse"
+          ],
+          "examesLaboratoriais": [
+            "Gota espessa (identifica espécie e parasitemia)",
+            "Esfregaço delgado",
+            "Teste rápido imunocromatográfico",
+            "Hemograma",
+            "Bilirrubinas, transaminases",
+            "Função renal",
+            "Glicemia, lactato"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Eliminar o parasita",
+            "Prevenir complicações",
+            "Prevenir transmissão",
+            "Evitar recaídas (hipnozoítos)"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hidratação",
+              "Antitérmicos",
+              "Monitorização",
+              "Transfusão se Hb<5g/dL"
+            ],
+            "citations": [
+              {
+                "refId": "ms-malaria-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "P. vivax",
+                "medicamentos": [
+                  "Cloroquina 25mg/kg em 3 dias",
+                  "Primaquina 0,5mg/kg/dia por 7 dias"
+                ],
+                "observacoes": "Verificar deficiência de G6PD"
+              },
+              {
+                "classe": "P. falciparum",
+                "medicamentos": [
+                  "Arteméter-Lumefantrina",
+                  "Artesunato-Mefloquina"
+                ],
+                "posologia": "6 doses em 3 dias"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Malária grave",
+                "medicamentos": [
+                  "Artesunato IV 2,4mg/kg"
+                ],
+                "posologia": "0h, 12h, 24h, depois diário"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Gestante",
+                "conduta": "Não usar primaquina; preferir quinina+clindamicina no 1º tri"
+              },
+              {
+                "situacao": "G6PD deficiente",
+                "conduta": "Primaquina 0,75mg/kg/semana por 8 semanas"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-malaria-2023"
+              }
+            ]
+          },
+          "duracao": "Tratamento curto (3-7 dias); primaquina por 7-14 dias"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Controle de cura: gota espessa em D3, D7, D14, D28, D42",
+          "metasTerapeuticas": [
+            "Negativação da parasitemia",
+            "Resolução clínica",
+            "Prevenção de recaída (cura radical)"
+          ],
+          "criteriosEncaminhamento": [
+            "Malária grave: UTI/Hospital de referência",
+            "Gestante com malária",
+            "Falha terapêutica"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Uso de mosquiteiros impregnados com inseticida",
+            "Repelentes",
+            "Evitar exposição no crepúsculo",
+            "Quimioprofilaxia para viajantes (mefloquina, doxiciclina, atovaquona-proguanil)",
+            "Controle vetorial"
+          ],
+          "secundaria": [
+            "Diagnóstico e tratamento precoces",
+            "Busca ativa de casos",
+            "Notificação compulsória"
+          ],
+          "citations": [
+            {
+              "refId": "who-malaria-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "malaria-tratamento",
+        "malaria-grave"
+      ],
+      "medicamentos": [
+        "cloroquina",
+        "primaquina",
+        "artemeter-lumefantrina",
+        "artesunato"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-malaria-2022"
+        },
+        {
+          "refId": "who-malaria-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "doenca-chagas",
+      "titulo": "Doença de Chagas",
+      "sinonimos": [
+        "Tripanossomíase americana",
+        "Chagas",
+        "Mal de Chagas"
+      ],
+      "doid": "DOID:12140",
+      "snomedCT": "77506005",
+      "meshId": "D014355",
+      "umlsCui": "C0041234",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "B57",
+        "B57.0",
+        "B57.1",
+        "B57.2",
+        "B57.3",
+        "B57.4",
+        "B57.5"
+      ],
+      "cid11": [
+        "1F51"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Doença parasitária causada pelo Trypanosoma cruzi, transmitida principalmente pelo triatomíneo (\"barbeiro\"). Fase aguda frequentemente assintomática; fase crônica com cardiopatia e/ou megaesôfago/megacólon.",
+        "criteriosDiagnosticos": [
+          "FASE AGUDA: Febre, hepatoesplenomegalia, edema, sinal de Romaña/chagoma",
+          "Parasitemia detectável (gota espessa, QBC, PCR)",
+          "FASE CRÔNICA: Sorologia positiva (2 métodos diferentes)",
+          "Cardiopatia chagásica: BRD + BDAS, arritmias, ICC",
+          "Megaesôfago: disfagia, regurgitação",
+          "Megacólon: constipação crônica, fecaloma"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Suporte clínico na fase aguda",
+            "Controle de arritmias e ICC na fase crônica",
+            "Dieta pastosa no megaesôfago",
+            "Dieta laxativa no megacólon"
+          ],
+          "farmacologico": [
+            "FASE AGUDA (obrigatório tratar):",
+            "Benznidazol 5mg/kg/dia por 60 dias (adultos: 2x/dia)",
+            "OU Nifurtimox 8-10mg/kg/dia por 60-90 dias",
+            "",
+            "FASE CRÔNICA INDETERMINADA:",
+            "Benznidazol: indicado em <50 anos, mulheres idade fértil",
+            "",
+            "FASE CRÔNICA CARDÍACA:",
+            "Tratamento da ICC (IECA, BB, espironolactona)",
+            "Amiodarona se arritmias",
+            "Marcapasso se bloqueio avançado",
+            "Considerar CDI se alto risco de morte súbita"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Fase aguda: eliminar parasita, prevenir evolução",
+          "Fase crônica: controle de sintomas, prevenir complicações",
+          "Prevenção de transmissão vertical"
+        ],
+        "examesIniciais": [
+          "Sorologia (ELISA + IFI ou ELISA + HAI)",
+          "Gota espessa/QBC (fase aguda)",
+          "PCR para T. cruzi",
+          "ECG 12 derivações",
+          "Ecocardiograma",
+          "Rx de tórax",
+          "EDA/esofagograma (se disfagia)",
+          "Enema opaco (se constipação)"
+        ],
+        "redFlags": [
+          "Miocardite aguda grave",
+          "Meningoencefalite",
+          "ICC descompensada",
+          "Arritmias malignas (TV sustentada)",
+          "Bloqueio AV avançado",
+          "Reativação em imunossuprimidos",
+          "Perfuração/volvo intestinal"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "6-7 milhões infectados no mundo; 1-3 milhões no Brasil",
+          "incidencia": "Casos agudos: ~200/ano no Brasil (transmissão oral)",
+          "mortalidade": "~12.000 mortes/ano no Brasil (fase crônica cardíaca)",
+          "faixaEtaria": "Infecção em qualquer idade; manifestações crônicas após décadas",
+          "fatoresRisco": [
+            "Residência em área rural endêmica",
+            "Moradia com frestas (pau-a-pique)",
+            "Consumo de alimentos contaminados (açaí, caldo de cana)",
+            "Transfusão de sangue não testado",
+            "Mãe portadora (transmissão vertical)"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "T. cruzi invade células do hospedeiro (miócitos, neurônios), multiplica-se e causa destruição celular direta e inflamação crônica. Na fase crônica, há destruição progressiva do miocárdio e do plexo mioentérico (denervação autonômica), levando a cardiomiopatia dilatada e megas.",
+          "citations": [
+            {
+              "refId": "who-chagas-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "AGUDA: Febre, mal-estar, hepatoesplenomegalia, edema, miocardite",
+            "Sinal de Romaña (edema palpebral unilateral)",
+            "Chagoma de inoculação (lesão cutânea no local da picada)",
+            "CRÔNICA: Palpitações, dispneia, síncope, disfagia, constipação"
+          ],
+          "sinaisExameFisico": [
+            "Hepatoesplenomegalia (fase aguda)",
+            "Sinais de ICC",
+            "Arritmias",
+            "Dilatação de câmaras cardíacas",
+            "Aneurisma apical de VE"
+          ],
+          "formasClinicas": [
+            "Fase aguda (sintomática ou assintomática)",
+            "Fase crônica indeterminada (assintomática, sorologia positiva)",
+            "Fase crônica cardíaca",
+            "Fase crônica digestiva (megaesôfago/megacólon)",
+            "Forma mista (cardíaca + digestiva)"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Fase aguda: exame parasitológico positivo",
+            "Fase crônica: 2 testes sorológicos positivos com métodos diferentes"
+          ],
+          "diagnosticoDiferencial": [
+            "Cardiomiopatia dilatada idiopática",
+            "Cardiomiopatia isquêmica",
+            "Acalasia",
+            "Doença de Hirschsprung",
+            "Outras parasitoses"
+          ],
+          "examesLaboratoriais": [
+            "Sorologia (ELISA, IFI, HAI) - 2 métodos",
+            "Exame parasitológico direto (fase aguda)",
+            "PCR",
+            "Xenodiagnóstico (histórico)",
+            "Hemocultura para T. cruzi"
+          ],
+          "examesImagem": [
+            "ECG (BRD, BDAS, extrassístoles, bloqueios)",
+            "Ecocardiograma (dilatação, aneurisma apical)",
+            "Holter 24h",
+            "Rx de tórax (cardiomegalia)",
+            "Esofagograma/EDA",
+            "Enema opaco/colonoscopia"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Fase aguda: eliminar parasita",
+            "Fase crônica: controlar manifestações, prevenir complicações"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Dieta para disfagia (megaesôfago)",
+              "Dieta laxativa e hidratação (megacólon)",
+              "Exercício físico supervisionado (cardiopatia leve)",
+              "Cirurgia para megas avançados"
+            ],
+            "citations": [
+              {
+                "refId": "consenso-chagas-2016"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Tripanocida",
+                "medicamentos": [
+                  "Benznidazol 5mg/kg/dia"
+                ],
+                "posologia": "60 dias, dividido em 2 tomadas",
+                "observacoes": "Obrigatório na fase aguda"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Alternativa",
+                "medicamentos": [
+                  "Nifurtimox 8-10mg/kg/dia"
+                ],
+                "posologia": "60-90 dias",
+                "observacoes": "Mais efeitos adversos"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Cardiopatia chagásica",
+                "conduta": "Tratamento de ICC: IECA, BB, espironolactona, diuréticos"
+              },
+              {
+                "situacao": "Arritmias",
+                "conduta": "Amiodarona; CDI se alto risco de morte súbita"
+              },
+              {
+                "situacao": "Megaesôfago avançado",
+                "conduta": "Cardiomiotomia de Heller ou esofagectomia"
+              },
+              {
+                "situacao": "Megacólon",
+                "conduta": "Sigmoidectomia se volvo recorrente ou fecaloma"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-chagas-2023"
+              }
+            ]
+          },
+          "duracao": "Tripanocida: 60 dias; tratamento de complicações: contínuo"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Anual na fase indeterminada; semestral/trimestral na cardiopatia",
+          "examesControle": [
+            "ECG anual",
+            "Ecocardiograma anual",
+            "Holter",
+            "Sorologia de controle"
+          ],
+          "metasTerapeuticas": [
+            "Negativação da PCR (cura parasitológica)",
+            "Estabilização da cardiopatia",
+            "Prevenção de morte súbita"
+          ],
+          "criteriosEncaminhamento": [
+            "Cardiologia: cardiopatia chagásica",
+            "Arritmia: eletrofisiologia",
+            "Megas: gastroenterologia/cirurgia",
+            "Reativação: infectologia"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Melhoria habitacional",
+            "Controle do vetor (borrifação, telas)",
+            "Triagem em bancos de sangue",
+            "Cuidados com alimentos (evitar contaminação)"
+          ],
+          "secundaria": [
+            "Triagem de gestantes",
+            "Tratamento de casos agudos",
+            "Acompanhamento de crônicos"
+          ],
+          "citations": [
+            {
+              "refId": "who-chagas-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "chagas-tratamento",
+        "cardiopatia-chagasica"
+      ],
+      "medicamentos": [
+        "benznidazol",
+        "nifurtimox",
+        "amiodarona"
+      ],
+      "calculadoras": [
+        "rassi-score"
+      ],
+      "citations": [
+        {
+          "refId": "consenso-chagas-2016"
+        },
+        {
+          "refId": "who-chagas-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "leishmaniose-visceral",
+      "titulo": "الليشمانيا الوعائية",
+      "sinonimos": [
+        "الكالازار",
+        "كالا-ازار",
+        "الحمى السوداء",
+        "LV"
+      ],
+      "doid": "DOID:9146",
+      "snomedCT": "186802003",
+      "meshId": "D007898",
+      "umlsCui": "C0023290",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "B55.0"
+      ],
+      "cid11": [
+        "1F54.0"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "مرض يسببه Leishmania infantum (البرازيل)، ينقل بواسطة البرغوث Lutzomyia longipalpis. يصيب بشكل أساسي الجهاز الشبكي الوعائي. قاتل محتمل إذا لم يتم علاجه.",
+        "criteriosDiagnosticos": [
+          "حمى طويلة الأمد (>2 أسابيع)",
+          "تكبر الطحال بشكل كبير",
+          "تكبر الكبد",
+          "نقص الدم الشامل (فقر الدم، نقص الكريات البيضاء، نقص الصفائح الدموية)",
+          "فرط غاما غلوبولين الدم",
+          "فقدان الوزن، ضعف عام",
+          "التأكيد: فحص طفيليات (خزعة من النخاع العظمي) أو فحص الدم (rK39) + السريرية"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "معتدل",
+            "criterios": [
+              "العمر 1-40 سنة",
+              "بدون أمراض مصاحبة",
+              "بدون علامات خطورة"
+            ],
+            "conduta": "علاج خارج المستشفى تحت الإشراف"
+          },
+          {
+            "nivel": "عالٍ",
+            "criterios": [
+              "<1 أو >50 سنة",
+              "صفير",
+              "وذمة",
+              "نزف",
+              "HIV+",
+              "عدوى مصاحبة"
+            ],
+            "conduta": "ال入院治疗"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "دعم غذائي",
+            "نقل الدم في حالة فقر الدم الشديد أو النزف",
+            "علاج العدوى البكتيرية المصاحبة",
+            "إبلاغ إلزامي"
+          ],
+          "farmacologico": [
+            "الخيار الأول:",
+            "الأمホテسين B الدهني 3mg/kg/يوم لمدة 7 أيام (20mg/kg إجمالي)",
+            "",
+            "البدائل:",
+            "الأمホテسين B الديوكسيكولات 1mg/kg/يوم لمدة 14-20 يوم",
+            "N-ميثيلجلوكامين الأنتيمونات (Glucantime®) 20mg Sb/kg/يوم لمدة 20-40 يوم",
+            "",
+            "يفضل الدهني في: <1 سنة، >50 سنة، قصور القلب، الكلوي، الكبدي، HIV، الحامل"
+          ]
+        },
+        "metasTerapeuticas": [
+          "الشفاء السريري (انتهاء الحمى، تقلص الطحال)",
+          "تطبيع الفحوصات المخبرية",
+          "الشفاء الطفيلي"
+        ],
+        "examesIniciais": [
+          "فحص الدم الكامل",
+          "وظائف الكلى والكبد",
+          "البروتينات الكلية وجزئياتها",
+          "فحص تخثر الدم",
+          "فحص الدم السريع rK39",
+          "خزعة من النخاع العظمي (فحص النخاع + زراعة)",
+          "فحص الدم لفيروس نقص المناعة البشرية",
+          "أشعة الصدر، تخطيط القلب (قبل الأنتيمونات)"
+        ],
+        "redFlags": [
+          "العمر <1 أو >50 سنة",
+          "صفير (Bb>2mg/dL)",
+          "وذمة شاملة",
+          "نزف",
+          "عدوى مصاحبة بفيروس نقص المناعة البشرية",
+          "عدوى بكتيرية شديدة",
+          "سوء التغذية الشديد",
+          "قصور كلوي أو كبدي"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~3.000 حالة/سنة في البرازيل",
+          "mortalidade": "~8% معدل الوفيات في البرازيل؛ حتى 95% إذا لم يتم علاجها",
+          "faixaEtaria": "الأطفال <10 سنوات الأكثر تأثراً",
+          "fatoresRisco": [
+            "الإقامة في المناطق الوبائية",
+            "وجود كلاب مصابة",
+            "سوء التغذية",
+            "المناعة المكتسبة (HIV)",
+            "الظروف الاجتماعية والاقتصادية الصعبة"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "تُغرس البروستيجوتات بواسطة البرغوث في الخلايا البلعمية، حيث تتحول إلى أماستيجوتات. تنتشر عبر الجهاز الشبكي الوعائي (الطحال، الكبد، النخاع العظمي)، مما يؤدي إلى تضخم وتكاثر، مما يسبب تضخم الأعضاء وقمع النخاع.",
+          "citations": [
+            {
+              "refId": "who-leishmaniasis-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "حمى طويلة الأمد غير منتظمة",
+            "فقدان الوزن التدريجي",
+            "ضعف شديد",
+            "انتفاخ بطني (تكبر الطحال)",
+            "شحوب (فقر الدم)",
+            "نزف الأنف، نزف اللثة"
+          ],
+          "sinaisExameFisico": [
+            "تكبر الطحال بشكل كبير (قد يتجاوز ندبة السرة)",
+            "تكبر الكبد",
+            "شحوب الجلد والغشاء المخاطي",
+            "سوء التغذية",
+            "وذمة",
+            "صفير (في الحالات الشديدة)"
+          ],
+          "formasClinicas": [
+            "الشكل الكلاسيكي (حمى، تضخم الكبد والطحال، نقص الدم الشامل)",
+            "الشكل الخفيف الأعراض",
+            "عدوى مصاحبة بفيروس نقص المناعة البشرية"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "السريرية + الوبائية + التأكيد المخبري",
+            "فحص الدم السريع rK39 أو RIFI ≥1:80",
+            "فحص طفيليات من النخاع العظمي (المعيار الذهبي)"
+          ],
+          "diagnosticoDiferencial": [
+            "الملاريا",
+            "حمى التيفوئيد",
+            "الشريسة الكبدية والطحالية",
+            "اللوكيميا واللمفوما",
+            "الهستوبلوموز",
+            "البروسلوز",
+            "المنونوكليوز"
+          ],
+          "examesLaboratoriais": [
+            "فحص الدم (نقص الدم الشامل)",
+            "ارتفاع سرعة الترسيب",
+            "البروتينات (عكس A/G)",
+            "فحص الدم السريع rK39، ELISA، RIFI",
+            "فحص النخاع للبحث عن الليشمانيا",
+            "PCR لليشمانيا"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "إبادة الطفيلي",
+            "حل الأعراض السريرية والمخبرية",
+            "منع الانتكاسات"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "دعم غذائي",
+              "نقل الدم عند الحاجة",
+              "مضادات حيوية للعدوى الثانوية"
+            ],
+            "citations": [
+              {
+                "refId": "ms-lv-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "الأمホテسين B الدهني",
+                "medicamentos": [
+                  "AmBisome®"
+                ],
+                "posologia": "3mg/kg/يوم IV لمدة 7 أيام",
+                "observacoes": "مفضل للأفراد المعرضين للخطر"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "الأنتيمونات البنتا فالينت",
+                "medicamentos": [
+                  "Glucantime® 20mg Sb/kg/يوم"
+                ],
+                "posologia": "IM أو IV لمدة 20-40 يوم",
+                "observacoes": "سُمية القلب (مراقبة ECG)"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "عدوى مصاحبة بفيروس نقص المناعة البشرية",
+                "conduta": "الأمホテسين B الدهني + الوقاية الثانوية + العلاج المضاد للفيروسات القهقرية"
+              },
+              {
+                "situacao": "الحامل",
+                "conduta": "الأمホテسين B الدهني (الأنتيمونات موانع استعمال)"
+              },
+              {
+                "situacao": "الانتكاسة",
+                "conduta": "الأمホテسين B الدهني بجرعة أعلى أو لمدة أطول"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-leishmaniasis-2023"
+              }
+            ]
+          },
+          "duracao": "الأمホテسين B الدهني: 7 أيام؛ الأنتيمونات: 20-40 يوم"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "خلال العلاج: يوميًا؛ بعد: 3، 6، 12 شهر",
+          "examesControle": [
+            "فحص الدم",
+            "وظائف الكلى",
+            "حجم الطحال"
+          ],
+          "metasTerapeuticas": [
+            "الشفاء السريري في 2-3 أشهر",
+            "تطبيع الفحوصات المخبرية",
+            "عدم حدوث انتكاسة في غضون سنة"
+          ],
+          "criteriosEncaminhamento": [
+            "الحالات الشديدة: مستشفى مرجعي",
+            "عدوى مصاحبة بفيروس نقص المناعة البشرية: مختص بأمراض العدوى",
+            "الانتكاسات: مركز مرجعي"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "التحكم في الناقل (الرش)",
+            "استخدام الشبكات والمواد الطاردة للحشرات",
+            "تحديد وإدارة الكلاب المصابة",
+            "استخدام الأغطية المغطسة بالمواد الطاردة للحشرات للكلاب"
+          ],
+          "secundaria": [
+            "تشخيص وعلاج مبكر",
+            "الرقابة الوبائية"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "leishmaniose-visceral-tratamento",
+        "lv-grave"
+      ],
+      "medicamentos": [
+        "anfotericina-b-lipossomal",
+        "glucantime"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-lv-2022"
+        },
+        {
+          "refId": "who-leishmaniasis-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "leptospirose",
+      "titulo": "لبتسبيروز",
+      "sinonimos": [
+        "مرض وايل",
+        "حمى الفيضانات",
+        "حمى الأرز"
+      ],
+      "doid": "DOID:2297",
+      "snomedCT": "77377001",
+      "meshId": "D007919",
+      "umlsCui": "C0023364",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "A27",
+        "A27.0",
+        "A27.8",
+        "A27.9"
+      ],
+      "cid11": [
+        "1B91"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "زونوز تسببه سبيروكيتات من جنس لبتسبيرا، وتنتقل عن طريق بول القوارض. الشكل الأنكتيريكي (90%) هو ذاتي الانتهاء؛ الشكل الإكتيريكي (وايل) له معدل وفيات مرتفع.",
+        "criteriosDiagnosticos": [
+          "حمى عالية مفاجئة",
+          "ألم عضلي شديد (في الساقين)",
+          "احمرار الملتحمة (عينان حمراوان دون إفراز)",
+          "صفار (في الحالات الشديدة)",
+          "تاريخ التعرض: الفيضانات، المجاري، تنظيف الحفر",
+          "التثبيت: فحوصات الدم (MAT) أو PCR"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "منخفض",
+            "criterios": [
+              "الشكل الأنكتيريكي",
+              "بدون علامات تحذيرية"
+            ],
+            "conduta": "علاج خارج المستشفى"
+          },
+          {
+            "nivel": "عالٍ",
+            "criterios": [
+              "صفار",
+              "فشل كلوي حاد",
+              "نزف رئوي",
+              "اضطراب في الوعي"
+            ],
+            "conduta": "وحدة العناية المركزة"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ترطيب كافٍ",
+            "دعم التنفس إذا كان هناك نزف حويصلي",
+            "الغسيل الكلوي إذا كان هناك فشل كلوي قليل البول",
+            "نقل الدم إذا كانت هناك اضطرابات تخثرية / نزف"
+          ],
+          "farmacologico": [
+            "الSHAPE خفيفة (خارجي):",
+            "دوكسيسيكلين 100 ملغ كل 12 ساعة لمدة 7 أيام أو",
+            "آموكسيسيلين 500 ملغ كل 8 ساعات لمدة 7 أيام",
+            "",
+            "الSHAPE شديدة (داخل المستشفى):",
+            "بنسلين G كريستالي 1.5 مليون وحدة IV كل 6 ساعات أو",
+            "سيفترياكسون 1 غرام IV مرة واحدة يوميًا أو",
+            "آمبيسيلين 1 غرام IV كل 6 ساعات",
+            "",
+            "لا تؤخر العلاج المضاد للبكتيريا انتظارًا للتأكيد!"
+          ]
+        },
+        "metasTerapeuticas": [
+          "التحكم في العدوى",
+          "دعم اضطرابات الأعضاء",
+          "منع النزف الرئوي"
+        ],
+        "examesIniciais": [
+          "صورة الدم الكاملة (زيادة الكريات البيضاء مع انحراف، نقص الصفائح الدموية)",
+          "وظائف الكلى (فشل كلوي حاد غير قليل البول)",
+          "بيليروبين (ارتفاع البيليروبين المباشر)",
+          "إنزيم الكرياتين فوسفوكيناز (الرhabdomiolysis)",
+          "فحص التخثر",
+          "أشعة صدر (تجمع في الحويصلات الرئوية)",
+          "فحوصات الدم (MAT) - جمع في المرحلة الحادة والتعافي",
+          "PCR في الدم (المرحلة الأولية)"
+        ],
+        "redFlags": [
+          "صفار (Bb>3mg/dL)",
+          "فشل كلوي حاد",
+          "نزف رئوي (الرذاذ، تجمع في الحويصلات)",
+          "ضيق في التنفس / نقص الأكسجين",
+          "ارitmias (التهاب عضلة القلب)",
+          "اضطراب في مستوى الوعي",
+          "صدمة"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~4.000 حالة سنويًا في البرازيل",
+          "incidencia": "ذروات في فترات الأمطار / الفيضانات",
+          "mortalidade": "الشكل الأنكتيريكي: <1٪؛ متلازمة وايل: 10-40٪",
+          "faixaEtaria": "البالغون الشباب، العمال المعرضون للخطر",
+          "fatoresRisco": [
+            "التعرض لمياه الفيضانات",
+            "المجاري، النفايات، الحفر",
+            "عمال الصرف الصحي، التنظيف الحضري",
+            "المزارعون (الأرز، القصب)",
+            "التعرض للقوارض"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "ت النفاذ إلى الغشاء المخاطي أو الجلد المصاب، وتنتشر عبر الدم. تسبب التهاب الأوعية الدموية وتلف الغشاء الداخلي، خاصة في الكلى (التهاب الكلى بين الأنبوبية، فشل كلوي حاد غير قليل البول)، الكبد (الاستسقاء الصفراوي)، الرئتين (نزف حويصلي) والعضلات.",
+          "citations": [
+            {
+              "refId": "who-leptospirosis-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "حمى عالية مفاجئة",
+            "ألم عضلي شديد (خاصة في الساقين)",
+            "صداع",
+            "احمرار الملتحمة",
+            "غثيان، قيء، إسهال",
+            "صفار (في الحالات الشديدة)",
+            "رذاذ (نزف رئوي)"
+          ],
+          "sinaisExameFisico": [
+            "احمرار الملتحمة (احمرار)",
+            "صفار حجري (جلد برتقالي)",
+            "تضخم الكبد المؤلم",
+            "البقع الدموية",
+            "الصفير الرئوي"
+          ],
+          "formasClinicas": [
+            "الشكل الأنكتيريكي (90%) - ذاتي الانتهاء",
+            "متلازمة وايل (صفار + فشل كلوي حاد + نزف)",
+            "متلازمة نزف رئوي شديدة"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "الحالة السريرية + التعرض الوبائي",
+            "التثبيت بواسطة MAT (تحول الدم) أو PCR"
+          ],
+          "diagnosticoDiferencial": [
+            "الدنج الشديد",
+            "حمى الصفراء",
+            "الملاريا",
+            "التهاب الكبد الفيروسي",
+            "السepsis",
+            "هانتافيروس",
+            "الركيتسيا"
+          ],
+          "examesLaboratoriais": [
+            "صورة الدم الكاملة",
+            "بيليروبين (ارتفاع البيليروبين المباشر)",
+            "الترانساميناز (عادةً <500)",
+            "اليوريا، الكرياتينين (فشل كلوي حاد)",
+            "إنزيم الكرياتين فوسفوكيناز (ارتفاع)",
+            "البوتاسيوم (نقص البوتاسيوم)",
+            "فحص التخثر",
+            "MAT (عينتان بفترة 14 يومًا)",
+            "PCR في الدم (المرحلة الأولية)"
+          ],
+          "examesImagem": [
+            "أشعة صدر (تجمع في الحويصلات الرئوية إذا كان هناك نزف رئوي)",
+            "تصوير مقطعي محوسب للصدر إذا كان هناك نقص الأكسجين"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "إبادة اللبتسبيرا",
+            "دعم اضطرابات الأعضاء",
+            "منع النزف الرئوي"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "ترطيب دقيق",
+              "تنفس حماية إذا كان هناك نزف رئوي",
+              "الغسيل الكلوي المبكر إذا كان هناك فشل كلوي حاد",
+              "نقل الدم إذا كانت هناك اضطرابات تخثرية"
+            ],
+            "citations": [
+              {
+                "refId": "ms-leptospirose-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "خارجي",
+                "medicamentos": [
+                  "دوكسيسيكلين 100 ملغ كل 12 ساعة",
+                  "آموكسيسيلين 500 ملغ كل 8 ساعات"
+                ],
+                "posologia": "7 أيام"
+              },
+              {
+                "classe": "داخلي",
+                "medicamentos": [
+                  "بنسلين G كريستالي 1.5 مليون وحدة كل 6 ساعات IV",
+                  "سيفترياكسون 1 غرام يوميًا IV"
+                ],
+                "posologia": "7 أيام"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "نزف رئوي",
+                "conduta": "التنفس الصناعي المبكر، التنفس الحماية، النظر في الميثيلبريديزولون"
+              },
+              {
+                "situacao": "فشل كلوي حاد",
+                "conduta": "الغسيل الكلوي المبكر، تجنب الإفراط في الترطيب"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-leptospirosis-2023"
+              }
+            ]
+          },
+          "duracao": "7 أيام من العلاج المضاد للبكتيريا"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "إعادة التقييم بعد 48-72 ساعة؛ المتابعة بعد 1-2 أسابيع",
+          "metasTerapeuticas": [
+            "انحسار الحمى في 24-48 ساعة",
+            "استعادة وظائف الكلى (قد تستغرق أسابيع)",
+            "انحسار الصفار"
+          ],
+          "criteriosEncaminhamento": [
+            "الشكل الشديد: وحدة العناية المركزة",
+            "فشل كلوي حاد مستمر: طب الكلى",
+            "نزف رئوي: العناية المركزة"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "تجنب التعرض لمياه الفيضانات",
+            "استخدام الأحذية والقفازات",
+            "التحكم في القوارض",
+            "الصرف الصحي الأساسي",
+            "دوكسيسيكلين 200 ملغ أسبوعيًا في التعرضات عالية الخطورة"
+          ],
+          "secundaria": [
+            "تشخيص وعلاج مبكر",
+            "إبلاغ إلزامي"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "leptospirose-tratamento",
+        "leptospirose-grave"
+      ],
+      "medicamentos": [
+        "doxiciclina",
+        "penicilina-g-cristalina",
+        "ceftriaxona"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-leptospirose-2022"
+        },
+        {
+          "refId": "who-leptospirosis-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "febre-amarela",
+      "titulo": "Febre Amarela",
+      "sinonimos": [
+        "FA",
+        "Yellow fever",
+        "Tifo icteroides"
+      ],
+      "doid": "DOID:9682",
+      "snomedCT": "16541001",
+      "meshId": "D015004",
+      "umlsCui": "C0043395",
+      "ciap2": [
+        "A77"
+      ],
+      "cid10": [
+        "A95",
+        "A95.0",
+        "A95.1",
+        "A95.9"
+      ],
+      "cid11": [
+        "1D40"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Doença viral aguda causada por flavivírus, transmitida por mosquitos Haemagogus/Sabethes (silvestre) ou Aedes aegypti (urbana). Pode evoluir para forma grave com icterícia, hemorragias e falência de múltiplos órgãos.",
+        "criteriosDiagnosticos": [
+          "Febre de início súbito (≤7 dias)",
+          "Icterícia e/ou hemorragias",
+          "Epidemiologia compatível (área de risco, não vacinado)",
+          "Sinal de Faget (bradicardia relativa apesar de febre)",
+          "Confirmação: RT-PCR, isolamento viral, IgM (após 5º dia)",
+          "Histopatologia: corpúsculos de Councilman (necrose hepática)"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "baixo",
+            "criterios": [
+              "Forma leve/moderada",
+              "Sem icterícia",
+              "Sem hemorragias"
+            ],
+            "conduta": "Ambulatorial com vigilância"
+          },
+          {
+            "nivel": "muito_alto",
+            "criterios": [
+              "Icterícia",
+              "Hemorragias",
+              "Oligúria",
+              "Encefalopatia"
+            ],
+            "conduta": "UTI"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "NÃO HÁ TRATAMENTO ESPECÍFICO",
+            "Suporte clínico intensivo",
+            "Isolamento (evitar transmissão por Aedes)",
+            "Repouso, hidratação"
+          ],
+          "farmacologico": [
+            "SUPORTE:",
+            "Hidratação IV",
+            "Antitérmicos (EVITAR AAS e AINEs)",
+            "Vitamina K se coagulopatia",
+            "Plasma/plaquetas se sangramento",
+            "Diálise se IRA",
+            "Proteção gástrica",
+            "N-acetilcisteína (em estudo)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Suporte de disfunções orgânicas",
+          "Prevenção de hemorragias",
+          "Manutenção da volemia",
+          "Prevenção de transmissão"
+        ],
+        "examesIniciais": [
+          "Hemograma (leucopenia, plaquetopenia)",
+          "Bilirrubinas (icterícia intensa)",
+          "Transaminases (muito elevadas, >1000)",
+          "Coagulograma (alargado)",
+          "Ureia, creatinina",
+          "RT-PCR para febre amarela (até 5º dia)",
+          "IgM (após 5º dia)",
+          "Biópsia hepática (post-mortem)"
+        ],
+        "redFlags": [
+          "Icterícia",
+          "Hemorragias (melena, hematêmese, gengivorragia)",
+          "Oligúria/anúria",
+          "Encefalopatia hepática",
+          "Hipotensão/choque",
+          "Transaminases >1000",
+          "Coagulopatia grave"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Surtos recentes no Brasil (2016-2018): >2.000 casos",
+          "mortalidade": "Forma grave: 20-50% letalidade",
+          "faixaEtaria": "Todas as idades não vacinadas",
+          "fatoresRisco": [
+            "Não vacinação",
+            "Residência/viagem em área de risco",
+            "Atividade em área de mata",
+            "Período de maior transmissão: jan-maio"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Flavivírus com tropismo por hepatócitos e células endoteliais. Causa necrose hepática mediozonal (corpúsculos de Councilman), disfunção endotelial, CIVD, choque e falência de múltiplos órgãos. A tempestade de citocinas contribui para gravidade.",
+          "citations": [
+            {
+              "refId": "who-yellowfever-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Febre alta de início súbito",
+            "Cefaleia intensa",
+            "Mialgia",
+            "Náuseas, vômitos",
+            "Icterícia (forma grave)",
+            "Hemorragias (gengival, TGI)",
+            "Oligúria"
+          ],
+          "sinaisExameFisico": [
+            "Icterícia rubínica",
+            "Sinal de Faget (dissociação pulso-temperatura)",
+            "Hepatomegalia dolorosa",
+            "Petéquias, equimoses",
+            "Sonolência, confusão (encefalopatia)"
+          ],
+          "formasClinicas": [
+            "Forma leve (maioria)",
+            "Forma moderada",
+            "Forma grave (hepato-nefro-hemorrágica)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínica + epidemiologia",
+            "Confirmação laboratorial (RT-PCR, sorologia)"
+          ],
+          "diagnosticoDiferencial": [
+            "Leptospirose",
+            "Malária grave",
+            "Dengue grave",
+            "Hepatites virais fulminantes",
+            "Sepse",
+            "Outras febres hemorrágicas"
+          ],
+          "examesLaboratoriais": [
+            "RT-PCR (até 5º dia de doença)",
+            "MAC-ELISA IgM (após 5º dia)",
+            "Hemograma (leucopenia)",
+            "Transaminases (muito elevadas)",
+            "Bilirrubinas",
+            "Coagulograma (CIVD)",
+            "Função renal"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Suporte clínico",
+            "Prevenção de complicações",
+            "Tratamento de disfunções orgânicas"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "UTI para casos graves",
+              "Hidratação cuidadosa",
+              "Proteção gástrica",
+              "Diálise se IRA",
+              "Transfusão se hemorragias",
+              "Isolamento (controle vetorial)"
+            ],
+            "citations": [
+              {
+                "refId": "ms-fa-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Suporte",
+                "medicamentos": [
+                  "Hidratação IV",
+                  "Vitamina K",
+                  "Plasma fresco congelado"
+                ],
+                "observacoes": "Não há antiviral específico"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Evitar",
+                "conduta": "AAS e AINEs (risco de sangramento)"
+              },
+              {
+                "situacao": "Encefalopatia",
+                "conduta": "Lactulose, restrição proteica"
+              },
+              {
+                "situacao": "Experimental",
+                "conduta": "N-acetilcisteína, sofosbuvir (em estudo)"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-yellowfever-2023"
+              }
+            ]
+          },
+          "duracao": "Suporte até resolução da doença"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Vigilância contínua até 14 dias após início",
+          "metasTerapeuticas": [
+            "Resolução da icterícia",
+            "Recuperação renal",
+            "Normalização de transaminases (pode levar semanas)"
+          ],
+          "criteriosEncaminhamento": [
+            "Forma grave: UTI/hospital de referência",
+            "Notificação compulsória imediata"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "VACINAÇÃO (medida mais eficaz)",
+            "Dose única aos 9 meses e reforço aos 4 anos",
+            "Viajantes: vacinar 10 dias antes",
+            "Controle vetorial",
+            "Proteção individual (repelentes, roupas longas)"
+          ],
+          "secundaria": [
+            "Vigilância epidemiológica",
+            "Busca ativa em surtos",
+            "Vacinação de bloqueio"
+          ],
+          "citations": [
+            {
+              "refId": "who-yellowfever-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "febre-amarela-manejo",
+        "fa-grave"
+      ],
+      "medicamentos": [],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-fa-2022"
+        },
+        {
+          "refId": "who-yellowfever-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "esquistossomose",
+      "titulo": "الشستوزومياس المانسونية",
+      "sinonimos": [
+        "بطن الماء",
+        "الشستوزومياس",
+        "بيلهارزيا",
+        "الشستوزومياس المعوية"
+      ],
+      "doid": "DOID:1395",
+      "snomedCT": "28019009",
+      "meshId": "D012552",
+      "umlsCui": "C0036323",
+      "ciap2": [
+        "D96"
+      ],
+      "cid10": [
+        "B65.1"
+      ],
+      "cid11": [
+        "1F83.1"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "مرض طفيلي يسببه شيستوسوما مانسوني، ينقل بواسطة الحلزونات من جنس بيومفاراليا. الشكل الحاد نادر التشخيص؛ الشكل الكروني الكبدية الطحالية يمكن أن يسبب ارتفاع ضغط الوريد البابي.",
+        "criteriosDiagnosticos": [
+          "الشكل الحاد (حمى كاتاياما): حمى، حكة، زيادة الكريات البيضاء الحمضية، التعرض الحديث",
+          "الشكل المعوي: إسهال متقطع، ألم بطني",
+          "الشكل الكبدية الطحالية: تضخم الكبد والطحال، ارتفاع ضغط الوريد البابي",
+          "التعرض: الاستحمام/الاتصال بالمياه العذبة في المناطق الوبائية",
+          "التأكيد: بيض في البراز (كاتو-كاتز) أو خزعة الشرج"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "التعليم عن النقل",
+            "الصرف الصحي الأساسي",
+            "معالجة المياه",
+            "التحكم في الحلزونات"
+          ],
+          "farmacologico": [
+            "برازيكوانتل 50 ملغ/كغ جرعة واحدة (الأطفال: 60 ملغ/كغ)",
+            "",
+            "موانع الاستعمال:",
+            "- الحوامل (العلاج بعد الولادة)",
+            "- الشكل الحاد الشديد (كورتيكوستيرويد قبل)",
+            "",
+            "الشكل الحاد (كاتاياما):",
+            "البريدنيزون 1 ملغ/كغ/يوم لمدة 5-7 أيام، ثم البرازيكوانتل"
+          ]
+        },
+        "metasTerapeuticas": [
+          "إبادة الطفيلي",
+          "منع التطور إلى الشكل الكبدية الطحالية",
+          "التحكم في ارتفاع ضغط الوريد البابي (إذا كان موجودًا)"
+        ],
+        "examesIniciais": [
+          "EPF بطريقة كاتو-كاتز (3 عينات)",
+          "فحص الدم الكامل (زيادة الكريات البيضاء الحمضية)",
+          "التصوير بالموجات فوق الصوتية للبطن (الترسب الليفي حول الوريد البابي)",
+          "وظائف الكبد",
+          "خزعة الشرج (إذا كانت EPF سلبية)",
+          "التنظير الداخلي (الدوالي المريئية في الشكل الكبدية الطحالية)"
+        ],
+        "redFlags": [
+          "القيء الدموي (تمزق الدوالي)",
+          "تضخم الطحال الكبير مع زيادة الكريات البيضاء الحمضية",
+          "الاستسقاء",
+          "الخلل العصبي الكبدي",
+          "التهاب الكلى الغلомерولي بسبب الشستوزومياس",
+          "الاعتلال النخاعي بسبب الشستوزومياس"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~1,5 مليون مصاب في البرازيل",
+          "faixaEtaria": "الشباب والبالغون في المناطق الوبائية",
+          "fatoresRisco": [
+            "الإقامة في المناطق الوبائية (الشمال الشرقي، ميناس جيرايس)",
+            "الاتصال بالمياه الطبيعية (الأنهار، البحيرات)",
+            "نقص الصرف الصحي",
+            "العمل الزراعي في المناطق المغمورة بالمياه"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistossomose-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "ت النفاذية تدخل الجلد، تتحول إلى شيستوسومولات وتهاجر حتى الجهاز الوريد البابي الكبدي. تعيش الديدان البالغة في الأوردة المعوية؛ يسبب البيض رد فعل غرانولوماتي. في الشكل الكبدية الطحالية، يسبب الترسب الليفي حول الوريد البابي (سيمرز) ارتفاع ضغط الوريد البابي.",
+          "citations": [
+            {
+              "refId": "who-schistosomiasis-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "حاد: حمى، حكة، حكة، إسهال، سعال",
+            "معوي: إسهال متقطع، تشنجات، دم/مخاط في البراز",
+            "كبدية طحالية: زيادة حجم البطن، الدورة الدموية الجانبية، القيء الدموي"
+          ],
+          "sinaisExameFisico": [
+            "زيادة الكريات البيضاء الحمضية (المرحلة الحادة)",
+            "تضخم الكبد في الفص الأيسر",
+            "تضخم الطحال",
+            "الدورة الدموية الجانبية",
+            "الاستسقاء"
+          ],
+          "formasClinicas": [
+            "الشكل الحاد (كاتاياما)",
+            "الشكل المعوي",
+            "الشكل الكبد المعوي",
+            "الشكل الكبدية الطحالية المتعوضة",
+            "الشكل الكبدية الطحالية غير المتعوضة",
+            "الأشكال الطرفية (الشستوزومياس العصبية، الرئوية)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistossomose-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "الوبائيات + فحص طفيلي إيجابي",
+            "التصوير بالموجات فوق الصوتية مع الترسب الليفي حول الوريد البابي"
+          ],
+          "diagnosticoDiferencial": [
+            "تليف الكبد",
+            "الليشمانيا الوعائية",
+            "اللوكيميا/الليمفومة",
+            "أسباب أخرى لارتفاع ضغط الوريد البابي"
+          ],
+          "examesLaboratoriais": [
+            "EPF كاتو-كاتز (3 عينات)",
+            "خزعة الشرج",
+            "فحص الدم الكامل (زيادة الكريات البيضاء الحمضية، نقص الكريات الدموية إذا كان هناك زيادة الكريات البيضاء الحمضية)",
+            "وظائف الكبد (غالبًا ما تكون طبيعية)",
+            "الفحوصات المناعية (IgG)"
+          ],
+          "examesImagem": [
+            "التصوير بالموجات فوق الصوتية للبطن (الترسب الليفي حول الوريد البابي، تضخم الطحال)",
+            "التنظير الداخلي (الدوالي المريئية)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistossomose-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "إبادة الطفيلي",
+            "منع التطور",
+            "علاج مضاعفات ارتفاع ضغط الوريد البابي"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "التعليم الصحي",
+              "تحسين الصرف الصحي",
+              "علاج الدوالي (ربط، TIPS)",
+              "استئصال الطحال مع قطع الوريد الأزغي البابي (حالات مختارة)"
+            ],
+            "citations": [
+              {
+                "refId": "ms-esquistossomose-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "مضاد الشستوزومياس",
+                "medicamentos": [
+                  "برازيكوانتل 50-60 ملغ/كغ"
+                ],
+                "posologia": "جرعة واحدة",
+                "observacoes": "شفاء ~80%"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "بديل",
+                "medicamentos": [
+                  "أكسامنيكين 15 ملغ/كغ"
+                ],
+                "posologia": "جرعة واحدة",
+                "observacoes": "إذا كان هناك عدم تحمل للبرازيكوانتل"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "الشكل الحاد",
+                "conduta": "كورتيكوستيرويد لمدة 5-7 أيام قبل البرازيكوانتل"
+              },
+              {
+                "situacao": "دوالي عالية الخطورة",
+                "conduta": "بيتا-حاصر (وقاية أولية)، ربط مرن"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-schistosomiasis-2023"
+              }
+            ]
+          },
+          "duracao": "جرعة واحدة؛ متابعة الشفاء بعد 6 أشهر"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "متابعة الشفاء: EPF بعد 30، 90، 180 يومًا من العلاج",
+          "metasTerapeuticas": [
+            "سلبية EPF",
+            "ثبات الترسب الليفي",
+            "التحكم في الدوالي"
+          ],
+          "criteriosEncaminhamento": [
+            "الشكل الكبدية الطحالية: أمراض الجهاز الهضمي/الكبد",
+            "الشستوزومياس العصبية: الأمراض العصبية",
+            "دوالي عالية الخطورة: التنظير الداخلي"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistossomose-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "الصرف الصحي الأساسي",
+            "التعليم الصحي",
+            "التحكم في الحلزونات",
+            "تجنب الاتصال بالمياه الطبيعية في المناطق الوبائية"
+          ],
+          "secundaria": [
+            "تشخيص وعلاج مبكر",
+            "استطلاعات البراز في المناطق الوبائية",
+            "علاج جماعي في المناطق ذات الانتشار العالي"
+          ],
+          "citations": [
+            {
+              "refId": "who-schistosomiasis-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "esquistossomose-tratamento",
+        "hipertensao-portal-esquistossomotica"
+      ],
+      "medicamentos": [
+        "praziquantel",
+        "oxamniquina"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-esquistossomose-2022"
+        },
+        {
+          "refId": "who-schistosomiasis-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "hanseniase",
+      "titulo": "Hanseníase",
+      "sinonimos": [
+        "Lepra",
+        "Mal de Hansen",
+        "Morféia"
+      ],
+      "doid": "DOID:1024",
+      "snomedCT": "81004002",
+      "meshId": "D007918",
+      "umlsCui": "C0023343",
+      "ciap2": [
+        "S76"
+      ],
+      "cid10": [
+        "A30",
+        "A30.0",
+        "A30.1",
+        "A30.2",
+        "A30.3",
+        "A30.4",
+        "A30.5",
+        "A30.8",
+        "A30.9"
+      ],
+      "cid11": [
+        "1B21"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Doença infecciosa crônica causada pelo Mycobacterium leprae, afetando pele e nervos periféricos. Classificada em paucibacilar (PB) ou multibacilar (MB) para fins de tratamento.",
+        "criteriosDiagnosticos": [
+          "Lesão(ões) de pele com alteração de sensibilidade",
+          "Espessamento de nervo periférico",
+          "Baciloscopia positiva (em MB)",
+          "CASO DEFINIDO: ≥1 dos sinais cardinais:",
+          "1. Lesão hipocrômica/eritematosa com perda de sensibilidade",
+          "2. Espessamento de tronco nervoso periférico",
+          "3. Baciloscopia positiva",
+          "Classificação operacional: PB (≤5 lesões) vs MB (>5 lesões ou baciloscopia +)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Educação sobre a doença (combate ao estigma)",
+            "Cuidados com pés e mãos insensíveis",
+            "Prevenção de incapacidades",
+            "Exame de contatos domiciliares"
+          ],
+          "farmacologico": [
+            "PAUCIBACILAR (PB - ≤5 lesões):",
+            "Rifampicina 600mg dose mensal supervisionada",
+            "Dapsona 100mg/dia (autoadministrada)",
+            "Duração: 6 doses mensais em até 9 meses",
+            "",
+            "MULTIBACILAR (MB - >5 lesões):",
+            "Rifampicina 600mg dose mensal supervisionada",
+            "Clofazimina 300mg mensal + 50mg/dia",
+            "Dapsona 100mg/dia",
+            "Duração: 12 doses mensais em até 18 meses"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Cura bacteriológica",
+          "Prevenção de incapacidades",
+          "Interrupção da cadeia de transmissão"
+        ],
+        "examesIniciais": [
+          "Exame dermatoneurológico completo",
+          "Teste de sensibilidade (térmica, dolorosa, tátil)",
+          "Baciloscopia de raspado dérmico",
+          "Avaliação de grau de incapacidade física (0, I, II)",
+          "Biópsia de pele (casos duvidosos)",
+          "Eletroneuromiografia (se comprometimento neural)"
+        ],
+        "redFlags": [
+          "REAÇÃO TIPO 1 (reversa): eritema e edema de lesões, neurite",
+          "REAÇÃO TIPO 2 (ENH): febre, nódulos dolorosos, neurite, irite, artrite",
+          "Neurite aguda (risco de sequela)",
+          "Mão em garra, pé caído",
+          "Úlceras tróficas"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~30.000 casos novos/ano no Brasil (2º no mundo)",
+          "faixaEtaria": "Todas as idades, pico em adultos jovens",
+          "fatoresRisco": [
+            "Contato domiciliar prolongado com caso MB não tratado",
+            "Condições socioeconômicas precárias",
+            "Imunossupressão relativa",
+            "Predisposição genética"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "M. leprae tem tropismo por macrófagos e células de Schwann. A resposta imune do hospedeiro determina a forma clínica: resposta Th1 (paucibacilar) vs Th2 (multibacilar). A destruição neural leva a perda de sensibilidade e incapacidades.",
+          "citations": [
+            {
+              "refId": "who-leprosy-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Manchas hipocrômicas ou eritematosas",
+            "Perda de sensibilidade nas lesões",
+            "Formigamento, dormência em extremidades",
+            "Fraqueza muscular",
+            "Espessamento de nervos",
+            "Lesões nodulares (forma virchowiana)"
+          ],
+          "sinaisExameFisico": [
+            "Lesões de pele com anestesia",
+            "Nervos espessados e dolorosos à palpação",
+            "Madarose (perda de sobrancelhas)",
+            "Infiltração de face (fácies leonina)",
+            "Atrofia muscular (interósseos, tenar, hipotenar)",
+            "Mão em garra, pé caído"
+          ],
+          "formasClinicas": [
+            "Indeterminada (forma inicial)",
+            "Tuberculoide (paucibacilar)",
+            "Dimorfa (borderline)",
+            "Virchowiana (multibacilar)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínico (sinais cardinais)",
+            "Baciloscopia (+ em MB)",
+            "Histopatologia (se dúvida)"
+          ],
+          "diagnosticoDiferencial": [
+            "Pitiríase versicolor",
+            "Vitiligo",
+            "Dermatofitoses",
+            "Sífilis secundária",
+            "Leishmaniose cutânea",
+            "Neurofibromatose",
+            "Neuropatias periféricas outras"
+          ],
+          "examesLaboratoriais": [
+            "Baciloscopia de raspado dérmico",
+            "Biópsia de pele com estudo histopatológico",
+            "Teste de Mitsuda (valor prognóstico)",
+            "PCR para M. leprae (se disponível)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Cura da infecção",
+            "Prevenção de incapacidades",
+            "Tratamento de reações",
+            "Vigilância de contatos"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Autocuidado (pés, mãos, olhos)",
+              "Fisioterapia",
+              "Cirurgia reparadora (se necessário)",
+              "Órteses e próteses"
+            ],
+            "citations": [
+              {
+                "refId": "ms-hanseniase-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "PQT-PB",
+                "medicamentos": [
+                  "Rifampicina 600mg/mês",
+                  "Dapsona 100mg/dia"
+                ],
+                "posologia": "6 doses em até 9 meses"
+              },
+              {
+                "classe": "PQT-MB",
+                "medicamentos": [
+                  "Rifampicina 600mg/mês",
+                  "Clofazimina 300mg/mês + 50mg/dia",
+                  "Dapsona 100mg/dia"
+                ],
+                "posologia": "12 doses em até 18 meses"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Reação tipo 1 (reversa)",
+                "conduta": "Prednisona 1-2mg/kg/dia com redução gradual"
+              },
+              {
+                "situacao": "Reação tipo 2 (ENH)",
+                "conduta": "Talidomida 100-400mg/dia (contraindicada em mulheres em idade fértil) OU Prednisona"
+              },
+              {
+                "situacao": "Neurite aguda",
+                "conduta": "Prednisona + imobilização; considerar descompressão neural"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-leprosy-2023"
+              }
+            ]
+          },
+          "duracao": "PB: 6 meses; MB: 12 meses"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Mensal durante tratamento; semestral por 5 anos após alta",
+          "examesControle": [
+            "Avaliação neurológica",
+            "Grau de incapacidade",
+            "Baciloscopia (MB)"
+          ],
+          "metasTerapeuticas": [
+            "Completar esquema terapêutico",
+            "Manter grau de incapacidade",
+            "Identificar e tratar reações",
+            "Examinar e tratar contatos"
+          ],
+          "criteriosEncaminhamento": [
+            "Reações graves: centro de referência",
+            "Incapacidades: fisioterapia/cirurgia",
+            "Resistência medicamentosa: centro de referência"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Exame de contatos domiciliares",
+            "BCG em contatos",
+            "Educação em saúde",
+            "Melhoria das condições de vida"
+          ],
+          "secundaria": [
+            "Diagnóstico precoce",
+            "Tratamento adequado",
+            "Prevenção de incapacidades"
+          ],
+          "citations": [
+            {
+              "refId": "who-leprosy-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "hanseniase-tratamento",
+        "reacao-hanseniase"
+      ],
+      "medicamentos": [
+        "rifampicina",
+        "dapsona",
+        "clofazimina",
+        "prednisona",
+        "talidomida"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-hanseniase-2022"
+        },
+        {
+          "refId": "who-leprosy-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "raiva-humana",
+      "titulo": "ال Rage البشري",
+      "sinonimos": [
+        "هيدروفوبيا",
+        "ال Rage"
+      ],
+      "doid": "DOID:11260",
+      "snomedCT": "14168008",
+      "meshId": "D011818",
+      "umlsCui": "C0034494",
+      "ciap2": [
+        "A77"
+      ],
+      "cid10": [
+        "A82",
+        "A82.0",
+        "A82.1",
+        "A82.9"
+      ],
+      "cid11": [
+        "1C82"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "التهاب فيروسي حاد للدماغ يسببه فيروس ال Rage (Lyssavirus)، يُنقل عبر عضة الحيوانات المصابة. يصبح شبه مميت بنسبة 100٪ بعد بدء الأعراض. قابل للوقاية من خلال الوقاية ما بعد التعرض.",
+        "criteriosDiagnosticos": [
+          "تاريخ التعرض: عضة أو خدش حيوان مشتبه به أو خفاش",
+          "فترة الحضانة: 20-90 يومًا (متغير: 4 أيام إلى سنوات)",
+          "الأعراض المبكرة: حمى، عدم راحة، وخز في مكان العضة",
+          "المرحلة العصبية: اضطراب، هيدروفوبيا، هواءفوبيا، زيادة اللعاب"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "الوقاية ما بعد التعرض (قبل الأعراض):",
+            "غسل الجرح فورًا بالماء والصابون (15 دقيقة)",
+            "لا تُخيط الجرح",
+            "تقييم الحيوان (مراقبة لمدة 10 أيام إذا كان الكلب أو القط)",
+            "الوقاية وفقًا لخطة وزارة الصحة"
+          ],
+          "farmacologico": [
+            "الوقاية ما بعد التعرض:",
+            "اللقاح: 4 جرعات (D0, D3, D7, D14) IM في العضلة الدلتا",
+            "السرم / المناعة الغلوبولينية: SAR أو IGHAR في موقع الإصابة",
+            "مؤشر السرم: الإصابات الشديدة (الرأس، الرقبة، اليدين)، الأغشية المخاطية، عضة الخفافيش",
+            "",
+            "بعد بدء الأعراض: العلاج الداعم",
+            "بروتوكول ميلووكي (مثير للجدل، نادرًا ما ينجو)",
+            "وحدة العناية المركزة، التهدئة العميقة، مضادات الفيروسات"
+          ]
+        },
+        "metasTerapeuticas": [
+          "الوقاية: الوقاية المناسبة ما بعد التعرض",
+          "إذا كان مصابًا بالأعراض: الدعم التلطيفي",
+          "حماية فريق الرعاية الصحية"
+        ],
+        "examesIniciais": [
+          "طباعة القرنية بـ IFD",
+          "خزعة من الجلد في مؤخرة الرأس (البصيلة الشعرية)",
+          "RT-PCR لللعاب، السائل النخاعي",
+          "تشريح الحيوان المعتدي (إن أمكن)",
+          "السائل النخاعي: زيادة الخلايا الليمفاوية"
+        ],
+        "redFlags": [
+          "عضة الخفافيش (حتى بدون إصابة مرئية)",
+          "حيوان مات أو اختفى",
+          "الإصابات في الوجه، الرأس، الرقبة، اليدين",
+          "عضات متعددة",
+          "تأخير في الوقاية"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~60.000 حالة وفاة/سنة في العالم (الأغلبية في آسيا/أفريقيا)",
+          "incidencia": "في البرازيل: <10 حالات/سنة (الأغلبية نقل بواسطة الخفافيش)",
+          "mortalidade": "~100% بعد بدء الأعراض",
+          "fatoresRisco": [
+            "التواصل مع الحيوانات البرية (الخفافيش)",
+            "الكلاب والقطط غير الملقحة",
+            "المناطق الريفية",
+            "المهنيون المعرضون (البيطريون، البيولوجيون)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-raiva-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "يدخل الفيروس عبر الجرح، يتكاثر في العضلات، يصعد عبر الأعصاب الطرفية حتى الجهاز العصبي المركزي. في الدماغ، يسبب التهاب الدماغ المنتشر مع جسيمات نغري. ينتشر إلى الغدد اللعابية (النقل). تحدث الوفاة بسبب فشل الجهاز التنفسي/القلب والأوعية الدموية.",
+          "citations": [
+            {
+              "refId": "who-rabies-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "الحالة المبكرة: حمى، صداع، عدم راحة، وخز محلي",
+            "المرحلة العصبية العصبية: اضطراب، هيدروفوبيا، هواءفوبيا، زيادة اللعاب",
+            "المرحلة الشللية: شلل رخو تصاعدي",
+            "coma و الوفاة"
+          ],
+          "sinaisExameFisico": [
+            "تشنج الحلق عند محاولة الشرب (هيدروفوبيا)",
+            "تشنج مع تيار الهواء (هواءفوبيا)",
+            "زيادة اللعاب",
+            "اضطراب نفسي حركي",
+            "شلل، انخفاض الانعكاسات (الشكل الشللية)",
+            "خلل في الوظائف الذاتية"
+          ],
+          "formasClinicas": [
+            "الشكل العصبي العصبي (الدماغي) - الأكثر شيوعًا",
+            "الشكل الشللية (متشابهة مع متلازمة غيلان-باريه)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-raiva-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "الحالة السريرية + التعرض الوبائي",
+            "تأكيد مخبري (IFD، PCR، العزل)"
+          ],
+          "diagnosticoDiferencial": [
+            "التهابات الدماغ الفيروسية الأخرى",
+            "الكزاز",
+            "متلازمة غيلان-باريه",
+            "البوتوليزم",
+            "الهستيريا (نادرًا)"
+          ],
+          "examesLaboratoriais": [
+            "IFD لطباعة القرنية أو خزعة من مؤخرة الرأس",
+            "RT-PCR لللعاب، الخزعة، السائل النخاعي",
+            "عزل الفيروس",
+            "السائل النخاعي: زيادة الخلايا الليمفاوية، بروتين مرتفع",
+            "الanticorpos neutralizantes (في غير الملقحين)",
+            "بعد الوفاة: جسيمات نغري"
+          ],
+          "citations": [
+            {
+              "refId": "who-rabies-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "الوقاية هي الهدف الرئيسي",
+            "الدعم التلطيفي إذا كان مصابًا بالأعراض"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "غسل الجرح (مهم جدًا)",
+              "مراقبة الحيوان (10 أيام للكلاب والقطط)",
+              "الدعم المكثف (إذا كان مصابًا بالأعراض)"
+            ],
+            "citations": [
+              {
+                "refId": "ms-raiva-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "لقاح ضد ال Rage",
+                "medicamentos": [
+                  "لقاح الزراعة الخلوية (Vero أو HDCV)"
+                ],
+                "posologia": "D0, D3, D7, D14 (أو خطة بديلة)"
+              },
+              {
+                "classe": "الوقاية المناعية السلبية",
+                "medicamentos": [
+                  "SAR (السرم المضاد لل Rage) 40UI/kg",
+                  "IGHAR 20UI/kg"
+                ],
+                "posologia": "جرعة واحدة، تُحقن في موقع الإصابة"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "عضة الخفافيش",
+                "conduta": "يجب دائمًا إعطاء اللقاح + السرم"
+              },
+              {
+                "situacao": "مناعة ضعيفة",
+                "conduta": "5 جرعات من اللقاح + السرم + فحوصات السيروlogy التحكمية"
+              },
+              {
+                "situacao": "إعادة التعرض",
+                "conduta": "2 جرعات (D0, D3) إذا كانت التطعيم السابق كامل"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-rabies-2023"
+              }
+            ]
+          },
+          "duracao": "الوقاية: خطة كاملة؛ العلاج التحفظي: حتى الوفاة"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "متابعة حتى إكمال خطة التطعيم",
+          "metasTerapeuticas": [
+            "إكمال الوقاية ما بعد التعرض",
+            "مراقبة الآثار الجانبية للقاح/السرم"
+          ],
+          "criteriosEncaminhamento": [
+            "مصاب بالأعراض: مستشفى مرجعي",
+            "رد فعل عكسي شديد: مركز الإحالات الطارئة"
+          ],
+          "citations": [
+            {
+              "refId": "ms-raiva-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "تطعيم الكلاب والقطط",
+            "تجنب التواصل مع الحيوانات البرية",
+            "الوقاية ما قبل التعرض للمهنيين المعرضين للخطر",
+            "التحكم في الخفافيش في المناطق الحضرية"
+          ],
+          "secundaria": [
+            "الوقاية المناسبة والفرصة ما بعد التعرض",
+            "مراقبة الحيوان المعتدي",
+            "الإبلاغ الإلزامي"
+          ],
+          "citations": [
+            {
+              "refId": "who-rabies-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "raiva-profilaxia-pos-exposicao",
+        "esquema-vacinal-raiva"
+      ],
+      "medicamentos": [
+        "vacina-antirrabica",
+        "soro-antirrabico",
+        "imunoglobulina-antirrabica"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-raiva-2022"
+        },
+        {
+          "refId": "who-rabies-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

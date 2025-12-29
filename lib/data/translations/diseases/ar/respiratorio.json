@@ -1,0 +1,1348 @@
+{
+  "locale": "ar",
+  "category": "respiratorio",
+  "generatedAt": "2025-12-28T22:43:57.241Z",
+  "count": 12,
+  "diseases": [
+    {
+      "id": "asma",
+      "titulo": "Asma Brônquica",
+      "sinonimos": [
+        "Asma",
+        "Bronquite asmática",
+        "Hiperreatividade brônquica"
+      ],
+      "doid": "DOID:2841",
+      "snomedCT": "195967001",
+      "meshId": "D001249",
+      "umlsCui": "C0004096",
+      "ciap2": [
+        "R96"
+      ],
+      "cid10": [
+        "J45",
+        "J46"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "Doãncia inflamatória crónica das vias aéreas caracterizada por hiperresponsividade brônquica e obstrôo variável ao fluxo aéreo, manifestando-se por episódios recorrentes de sibiláncia, dispneia, opressão torácica e tosse.",
+        "criteriosDiagnosticos": [
+          "Sintomas variáveis (sibilos, dispneia, tosse, opressão torácica)",
+          "Piora noturna/matinal, com exercício, alérgenos, infecções",
+          "Espirometria: VEF1/CVF <0,7 + melhora é12% e 200ml pós-BD",
+          "PFE: variabilidade >10% em adultos",
+          "Se espirometria normal: teste de broncoprovocação positivo"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Afastamento de alérgenos (ácaros, mofo, pelos de animais)",
+            "Controle ambiental (encapar colchônes, lavar roupas de cama)",
+            "Cessão do tabagismo (próprio e passivo)",
+            "Evitar AINEs e betabloqueadores se hipersensibilidade",
+            "VacinaÃó (influenza anual, pneumococo)",
+            "Plano de açõo por escrito"
+          ],
+          "farmacologico": [
+            "Etapa 1-2: CI dose baixa-média (Beclometasona 200-400mcg) + SABA se necessário",
+            "Etapa 3: CI dose média + LABA (Formoterol) ou LAMA",
+            "Etapa 4-5: CI dose alta + LABA, considerar anti-IgE/IL-5",
+            "Resgate: Formoterol-CI (preferido) ou SABA (Salbutamol)",
+            "ExacerbaÃó: Prednisona 40-60mg/dia 5-7 dias"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Controle de sintomas: ACT é20, sem limitaçõ de atividades",
+          "Reduzir risco de exacerbaÅões",
+          "Minimizar uso de SABA (<2x/més para sintomas)",
+          "Função pulmonar normal ou próxima do normal",
+          "Minimizar efeitos adversos do tratamento"
+        ],
+        "examesIniciais": [
+          "Espirometria com prova broncodilatadora",
+          "Peak Flow (PFE) para monitorização domiciliar",
+          "Hemograma (eosinofilia sugere asma alérgica)",
+          "IgE total",
+          "Radiografia de tórax (na avaliação inicial)"
+        ],
+        "redFlags": [
+          "ExacerbaÃó grave: fala entrecortada, FR >30, FC >120, SpO2 <90%",
+          "Uso de musculatura acessória, cianose",
+          "PFE <50% do previsto ou melhor pessoal",
+          "Falta de resposta ao broncodilatador",
+          "História de intubação por asma",
+          "Pneumotórax"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "10-15% em crianÃas, 5-10% em adultos no Brasil",
+          "mortalidade": "~2.500 mortes/ano no Brasil (maioria evitável)",
+          "faixaEtaria": "InÌião frequente na infáncia, pode iniciar em qualquer idade",
+          "fatoresRisco": [
+            "Atopia (rinite, eczema)",
+            "História familiar de asma",
+            "Exposição a alérgenos (ácaros, mofo, pelos)",
+            "Infecções respiratórias na infância",
+            "Tabagismo passivo",
+            "Polução ambiental",
+            "Obesidade"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Sibiláncia (chiado no peito)",
+            "Dispneia episódica",
+            "Tosse, especialmente noturna/matinal",
+            "Opressão torácica",
+            "Sintomas variáveis no tempo e intensidade",
+            "Piora com infecções, exercício, alérgenos, mudanças climáticas"
+          ],
+          "sinaisExameFisico": [
+            "Sibilos expiratórios difusos na crise",
+            "Fase expiratória prolongada",
+            "Uso de musculatura acessória (crise grave)",
+            "Intercrises: exame frequentemente normal",
+            "Rinite alérgica associada"
+          ],
+          "formasClinicas": [
+            "Asma alérgica (mais comum)",
+            "Asma não alérgica",
+            "Asma de início tardio",
+            "Asma com limitação fixa ao fluxo aéreo",
+            "Asma com obesidade"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "História de sintomas respiratórios variáveis",
+            "Limitação variável ao fluxo expiratório (espirometria)",
+            "Resposta ao broncodilatador (≥12% e 200ml no VEF1)",
+            "Ou variabilidade do PFE >10%",
+            "Ou teste de broncoprovocação positivo"
+          ],
+          "diagnosticoDiferencial": [
+            "DPOC",
+            "Disfunção de cordas vocais",
+            "Insuficiência cardíaca",
+            "Bronquiectasias",
+            "Corpo estranho",
+            "DRGE com tosse"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Controle dos sintomas",
+            "Prevenção de exacerbações",
+            "Manutenção da função pulmonar normal",
+            "Minimizar efeitos adversos"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Educação em asma e plano de ação",
+              "Técnica inalatória correta",
+              "Controle ambiental",
+              "Cessação do tabagismo",
+              "Atividade física regular",
+              "Controle do peso",
+              "Vacinação"
+            ],
+            "citations": [
+              {
+                "refId": "gina-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "CI dose baixa",
+                "medicamentos": [
+                  "Beclometasona 200-400mcg/dia",
+                  "Budesonida 200-400mcg/dia"
+                ],
+                "observacoes": "Base do tratamento. Etapas 1-2"
+              },
+              {
+                "classe": "CI + Formoterol",
+                "medicamentos": [
+                  "Budesonida/Formoterol 200-400/6-12mcg"
+                ],
+                "observacoes": "Manutenção e resgate (MART). Preferido pelo GINA"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "CI dose média-alta + LABA",
+                "medicamentos": [
+                  "Budesonida/Formoterol 400-800/12-24mcg"
+                ],
+                "observacoes": "Etapas 3-4"
+              },
+              {
+                "classe": "LAMA",
+                "medicamentos": [
+                  "Tiotrópio 5mcg (Respimat)"
+                ],
+                "observacoes": "Adicional em etapa 4-5"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Exacerbação",
+                "conduta": "SABA + corticoide oral (prednisona 40-60mg 5-7 dias)"
+              },
+              {
+                "situacao": "Gestação",
+                "conduta": "Manter tratamento. CI seguros. Controle é prioridade"
+              },
+              {
+                "situacao": "Asma grave",
+                "conduta": "Encaminhar. Imunobiológicos (anti-IgE, anti-IL5)"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "gina-2024"
+              }
+            ]
+          },
+          "duracao": "Tratamento contínuo. Step down após 3 meses de controle"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "A cada 1-3 meses até controle, depois a cada 3-6 meses",
+          "examesControle": [
+            "Espirometria anual",
+            "ACT (Asthma Control Test) a cada consulta",
+            "PFE domiciliar"
+          ],
+          "metasTerapeuticas": [
+            "ACT ≥20",
+            "Sem exacerbações",
+            "SABA <2x/mês",
+            "VEF1 normal ou próxima"
+          ],
+          "criteriosEncaminhamento": [
+            "Asma de difícil controle (etapa 4-5)",
+            "Exacerbação grave/quase fatal",
+            "Dúvida diagnóstica",
+            "Suspeita de asma ocupacional",
+            "Necessidade de imunobiológico"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-asma",
+        "crise-asma"
+      ],
+      "medicamentos": [
+        "beclometasona",
+        "budesonida",
+        "salbutamol",
+        "formoterol"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "gina-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "respiratorio",
+        "cronica",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "dpoc",
+      "titulo": "مرض الرئة المزمن الانسدادي",
+      "sinonimos": [
+        "DPOC",
+        "انتفاخ الرئة",
+        "التهاب القصبات المزمن"
+      ],
+      "doid": "DOID:3083",
+      "snomedCT": "13645005",
+      "meshId": "D029424",
+      "umlsCui": "C0024117",
+      "ciap2": [
+        "R95"
+      ],
+      "cid10": [
+        "J44",
+        "J44.0",
+        "J44.1",
+        "J44.9"
+      ],
+      "cid11": [
+        "CA22"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "مرض تنفسي مزمن قابل للوقاية والعلاج، يتميز بحدوث تقييد مستمر في تدفق الهواء، وهو عادة ما يكون تدريجيًا ومرتبطًا بالاستجابة الالتهابية المزمنة للمسالك الهوائية والرئة لجسيمات أو غازات ضارة.",
+        "criteriosDiagnosticos": [
+          "ضيق النفس المستمر والتدريجي",
+          "سعال مزمن مع أو بدون إفرازات",
+          "تاريخ التعرض لعوامل الخطر (التدخين)",
+          "القياس الرئوي بعد موسع القصبات: VEF1/CVF <0,70"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "إعادة التدخين (ضروري)",
+            "التطعيم (الإنفلونزا السنوية، الالتهاب الرئوي)",
+            "تأهيل الرئة",
+            "نشاط بدني منتظم",
+            "علاج الأكسجين المنزلي إذا لزم الأمر"
+          ],
+          "farmacologico": [
+            "GOLD A-B: موسع قصبي قصير أو طويل المفعول",
+            "LABA أو LAMA (تيوتروبيو 18mcg/يوم أو فورموترول)",
+            "GOLD C-D: LABA + LAMA أو LABA + كورتيكوستيرويد",
+            "كورتيكوستيرويد إذا كان عدد الكريات البيضاء الحمضية >300 أو تاريخ الحساسية"
+          ]
+        },
+        "metasTerapeuticas": [
+          "تقليل الأعراض (mMRC <2، CAT <10)",
+          "منع التفاقم",
+          "تحسين قدرة التمرين",
+          "تأخير تقدم المرض",
+          "تقليل الوفيات"
+        ],
+        "examesIniciais": [
+          "القياس الرئوي مع اختبار موسع القصبات",
+          "تصوير صدري",
+          "قياس الأكسجين بالنبض",
+          "غازومتريا إذا كان SpO2 <92%",
+          "فحص الدم الكامل (البوليسياemia)",
+          "ألفا-1 مضاد التربسين إذا كان العمر <45 سنة أو وجود تاريخ عائلي"
+        ],
+        "redFlags": [
+          "تفاقم شديد (ضيق النفس الشديد، تردد التنفس >25)",
+          "تغيير مستوى الوعي",
+          "SpO2 <88% أو الزرقة",
+          "استخدام العضلات المساعدة",
+          "تورم الساقين (cor pulmonale)",
+          "حمى عالية (عدوى شديدة)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "10-15% من البالغين >40 سنة، أعلى بين المدخنين",
+          "incidencia": "ثالث سبب للوفاة في العالم",
+          "faixaEtaria": "غالبًا >40 سنة",
+          "fatoresRisco": [
+            "التدخين (90% من الحالات)",
+            "التعرض المهني (الغبار، المواد الكيميائية)",
+            "تلوث الهواء",
+            "نقص ألفا-1 مضاد التربسين",
+            "الالتهابات التنفسية في الطفولة",
+            "الكتلة الحيوية (فرن الخشب)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "التهاب مزمن للمسالك الهوائية والأنسجة الرئوية الناجم عن استنشاق جسيمات ضارة، خاصة دخان السجائر. يؤدي إلى التهاب القصبات المزمن (زيادة إفراز المخاط) و/أو انتفاخ الرئة (تدمير الحويصلات)، مما يؤدي إلى تقييد ثابت في تدفق الهواء.",
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "ضيق النفس التدريجي (في البداية أثناء بذل جهد كبير)",
+            "سعال مزمن، غالبًا في الصباح",
+            "إفرازات مزمنة (مخاطية أو صديدية)",
+            "صفير",
+            "شعور بالضغط في الصدر",
+            "تعب وعدم تحمل الجهد"
+          ],
+          "sinaisExameFisico": [
+            "صدر برميلي (التمدد الهوائي)",
+            "استخدام العضلات المساعدة",
+            "زفير مطول",
+            "انخفاض الصوت الرئوي",
+            "صفير وصفير",
+            "الزرقة (في الحالات المتقدمة)"
+          ],
+          "formasClinicas": [
+            "نوع انتفاخي (pink puffer): نحيف، ضيق نفس شديد",
+            "نوع التهاب القصبات (blue bloater): زرقة، تورم، سعال منتج",
+            "التداخل بين الحساسية ومرض الرئة المزمن الانسدادي (ACO)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "الحالة السريرية المتوافقة + عوامل الخطر",
+            "القياس الرئوي بعد موسع القصبات: VEF1/CVF <0,70",
+            "تصنيف GOLD (VEF1% المتوقع)"
+          ],
+          "diagnosticoDiferencial": [
+            "الحساسية",
+            "توسع القصبات",
+            "السل",
+            "قصور القلب",
+            "سرطان الرئة",
+            "تليف الرئة"
+          ],
+          "examesLaboratoriais": [
+            "القياس الرئوي مع اختبار موسع القصبات",
+            "غازومتريا شريانية (إذا كان SpO2 <92%)",
+            "فحص الدم الكامل",
+            "ألفا-1 مضاد التربسين (إذا لزم الأمر)",
+            "تصوير مقطعي للصدر (في الحالات المختارة)"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "تخفيف الأعراض",
+            "منع التفاقم",
+            "تحسين تحمل الجهد وجودة الحياة",
+            "منع التقدم",
+            "تقليل الوفيات"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "إعادة التدخين (الأكثر فعالية)",
+              "التطعيم السنوي (الإنفلونزا) والالتهاب الرئوي",
+              "تأهيل الرئة",
+              "علاج الأكسجين إذا كان PaO2 ≤55 أو SpO2 ≤88%",
+              "دعم التغذية إذا كان الوزن منخفضًا"
+            ],
+            "citations": [
+              {
+                "refId": "gold-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "LAMA",
+                "medicamentos": [
+                  "تيوتروبيو",
+                  "جليكوبيرونيوم"
+                ],
+                "posologia": "تيوتروبيو 18mcg مرة واحدة يوميًا عن طريق الاستنشاق"
+              },
+              {
+                "classe": "LABA",
+                "medicamentos": [
+                  "فورموترول",
+                  "سالميتيرول",
+                  "إنداكاتيرول"
+                ],
+                "posologia": "فورموترول 12mcg كل 12 ساعة عن طريق الاستنشاق"
+              },
+              {
+                "classe": "LABA + LAMA (إذا استمرت الأعراض)",
+                "medicamentos": [
+                  "تيوتروبيو + فورموترول"
+                ],
+                "posologia": "مزيج في جهاز واحد أو منفصل"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "تفاقم متكرر (≥2/سنة)",
+                "conduta": "اعتبار إضافة كورتيكوستيرويد إذا كان عدد الكريات البيضاء الحمضية ≥300"
+              },
+              {
+                "situacao": "التداخل بين الحساسية ومرض الرئة المزمن الانسدادي",
+                "conduta": "LABA + كورتيكوستيرويد، عدم استخدام LABA بمفرده"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "gold-2024"
+              }
+            ]
+          },
+          "duracao": "علاج مستمر"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "كل 3-6 أشهر، أو أكثر تكرارًا إذا كانت الحالة غير مستقرة",
+          "examesControle": [
+            "القياس الرئوي سنويًا",
+            "قياس الأكسجين في كل زيارة",
+            "تقييم الأعراض (mMRC، CAT)"
+          ],
+          "metasTerapeuticas": [
+            "mMRC 0-1، CAT <10",
+            "0-1 تفاقم/سنة",
+            "الحفاظ على القدرة الوظيفية"
+          ],
+          "criteriosEncaminhamento": [
+            "مرض الرئة المزمن الانسدادي الشديد (GOLD 3-4)",
+            "تفاقمات متكررة رغم العلاج",
+            "مرشح لعلاج الأكسجين المنزلي",
+            "تقييم للجراحة التخفيضية أو زراعة الرئة"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "عدم بدء التدخين",
+            "حماية الصحة المهنية",
+            "تقليل التلوث البيئي"
+          ],
+          "secundaria": [
+            "إعادة التدخين",
+            "التطعيم",
+            "العلاج المبكر"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-dpoc"
+      ],
+      "medicamentos": [
+        "تيوتروبيو",
+        "فورموترول",
+        "سالبوتامول",
+        "بيكلوميتازون"
+      ],
+      "calculadoras": [
+        "gold-copd",
+        "bode-index"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "gold-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "dpoc",
+        "انتفاخ الرئة",
+        "التهاب القصبات",
+        "التدخين",
+        "ضيق النفس"
+      ]
+    },
+    {
+      "id": "pneumonia-comunitaria",
+      "titulo": "التهاب رئوي مجتمعي",
+      "sinonimos": [
+        "التهاب رئوي مجتمعي",
+        "التهاب رئوي مجتمعي",
+        "التهاب رئوي"
+      ],
+      "doid": "DOID:552",
+      "snomedCT": "385093006",
+      "meshId": "D018410",
+      "umlsCui": "C0694549",
+      "ciap2": [
+        "R81"
+      ],
+      "cid10": [
+        "J18",
+        "J15",
+        "J13",
+        "J14"
+      ],
+      "cid11": [
+        "CA40"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "عدوى حادة في نسيج الرئة الحبيبي تُكتسب خارج البيئة المستشفى، مُميزة بأعراض تنفسية حادة وظهور تجمع جديد في الصورة الشعاعية للرئة.",
+        "criteriosDiagnosticos": [
+          "أعراض حادة: السعال، التفريغ، الحمى، ضيق التنفس، ألم صدري صدري",
+          "علامات: زيادة معدل التنفس، صفير الرئة، صوت أنبوب الرئة",
+          "ظهور تجمع جديد في الصورة الشعاعية للصدر",
+          "عدم وجود تواجد مستشفى حديث (>48 ساعة في الـ90 يوم الماضية)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ترطيب كافٍ",
+            "راحة نسبية",
+            "مضادات الحمى إذا كانت هناك حمى",
+            "مراقبة SpO2"
+          ],
+          "farmacologico": [
+            "التهاب رئوي مجتمعي خفيف (العلاج العيادي): أموكسيسيلين 500 مغ كل 8 ساعات عن طريق الفم لمدة 5-7 أيام",
+            "أو أزيثرومايسين 500 مغ/يوم لمدة 3-5 أيام (إذا كان هناك حساسية من البنسلين)",
+            "التهاب رئوي مجتمعي معتدل: أموكسيسيلين-كلافولانات + ماكروليد أو كينولون تنفسي",
+            "المدة: 5-7 أيام (حد أدنى 5 أيام، بدون حمى لمدة 48-72 ساعة)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "حل الأعراض في 48-72 ساعة",
+          "انخفاض درجة الحرارة في 48-72 ساعة",
+          "تحسن في الصورة الشعاعية (قد يستغرق أسابيع)",
+          "SpO2 >90%"
+        ],
+        "examesIniciais": [
+          "صورة شعاعية للصدر (PA وملف)",
+          "قياس الأكسجين في الدم بالنبض",
+          "فحص الدم الكامل، PCR",
+          "وظائف الكلى إذا كانت الحالة معتدلة/شديدة",
+          "غازات الدم إذا كان SpO2 <92%"
+        ],
+        "redFlags": [
+          "SpO2 <90% في الهواء الجوي",
+          "انخفاض ضغط الدم (الضغط الانقباضي <90)",
+          "الارتباك العقلي",
+          "معدل التنفسس >30 في الدقيقة",
+          "اليور >50 مغ/دي",
+          "تسرب صدري كبير",
+          "تجمع متعدد"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "سبب شائع شائعة للزيارة والاستشارة",
+          "incidencia": "5-11 حالة/1000 نسمي/سنة",
+          "faixaEtaria": "جميع الأعمار، أكثر خطورة في كباري وكبار",
+          "fatoresRisco": [
+            "العمر >65 سنة",
+            "مرض الانسدود الرئة، الربو",
+            "قصور القلب",
+            "داء السكري",
+            "القمعية المناعية",
+            "التدخين، الإدمان",
+            "التوثيق في مؤسسات رعاية"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "عدوى نسيجية في نسيج الرئة الحبيبي من قبليات (بكتيريا، فيروس، فطري). الأكثر شيوعية هي سترباكوكوكوس الرئة، هيموفيلوس الإنفل، ميكوبلازما و فيروس الرئة. الرد فعلية يسبب تجمع في نسيج الرئة وتعطل تبادل الغازات.",
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "السعال (غالبًا منتج)",
+            "الحر (قد يكون غائبة في كباري)",
+            "ضيق التنفس",
+            "ألم صدري صدري",
+            "القشعر",
+            "الشعور العام"
+          ],
+          "sinaisExameFisico": [
+            "زيادة التنفس (معدل التنفس >20)",
+            "الحر",
+            "صفير الرئة المتكسر",
+            "صوت أنبوب الرئة (تجمع)",
+            "صلابة الصوت الرئة الصوتية",
+            "زيادة الصوت الرئة الصوتية"
+          ],
+          "formasClinicas": [
+            "التهاب رئوي مجتمعي: بداية حادة، حر عالية، سعال منتج",
+            "التهاب رئوي غير مجتمعي: بداية خفية، سعال جافة، أعراض خارجية خارجية"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "حالة سريرية متوافقة",
+            "ظهور تجمع جديد في الصورة الشعاعية للصدر",
+            "استبعاد أعراض أخرى"
+          ],
+          "diagnosticoDiferencial": [
+            "التهاب القصبات الحادة",
+            "تفاقير مرض الانسدود الرئة/الربو",
+            "قصور القلب",
+            "انسداد رئة الرئة",
+            "السلالة الرئة",
+            "سرطان الرئة"
+          ],
+          "examesLaboratoriais": [
+            "صورة شعاعية للصدر",
+            "فحص الدم الكامل",
+            "PCR أو البروتينين",
+            "اليور، الكرياتين",
+            "زرع الدم (إذا كانت هناك استشفارة)",
+            "بحث عن مضاد البول (الرئة، الليجونيلا) إذا كانت الحالة شديدة"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "إبادة البكتير",
+            "حل الأعراض",
+            "منع حدوث المضاعات",
+            "تجنب حدوث مقاوم المضادات"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "ترطيب",
+              "راحة",
+              "علاج الأكسجين إذا كان SpO2 <90%",
+              "مسكنات/مضادات الحمى"
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-pac-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "بيتالاكتام",
+                "medicamentos": [
+                  "أموكسيلين",
+                  "أموكسيلين-كلافولانات"
+                ],
+                "posologia": "أموك سيلين 500 مغ كل 8 ساعات عن طريق الفم لمدة 5-7 أيام"
+              },
+              {
+                "classe": "ماكروليد (بديل بديل أو مكمل)",
+                "medicamentos": [
+                  "أزيثرومايسين",
+                  "كلارثرومايسين"
+                ],
+                "posologia": "أزيثرومايسين 500 مغ/يوم لمدة 3-5 أيام"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "حساسية من البنسلين",
+                "conduta": "أزيثرومايسين أو كينولون تنفسي (ليفوفلوكسين)"
+              },
+              {
+                "situacao": "التهاب رئوي شديدة (الاستشفارة)",
+                "conduta": "أموك سيلين-كلافولانات IV + أزيثرومايسين أو كينولون IV"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-pac-2022"
+              }
+            ]
+          },
+          "duracao": "5-7 أيام (حد أدنى 5 أيام، بدون حمى لمدة 48-72 ساعة قبل الإيقاف)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "العودة في 48-72 ساعة إذا كانت الحالة عيادية",
+          "examesControle": [
+            "صورة شعاعية للتحكم في 4-6 أسابيع (إذا كان عمر >50 سنة أو مدخن)",
+            "إعادة سريرية سريرية إذا لم تتحسن الأعراض في 48-72 ساعة"
+          ],
+          "metasTerapeuticas": [
+            "انخفاض درجة الحرارة في 48-72 ساعة",
+            "تحسن الأعراض التنفسية"
+          ],
+          "criteriosEncaminhamento": [
+            "CURB-65 ≥2 (اعتبار الاستشفارة)",
+            "SpO2 <90%",
+            "المضاعات (تسرب صدري، تجمع)",
+            "فشل العلاج العيادي"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "التطعيم الرئة (إذا كان عمر >65 سنة ومجموعات خطر)",
+            "التطعيم الإنفل سنويا سنوية",
+            "وقف التدخين"
+          ],
+          "secundaria": [
+            "علاج مناسب مرضي مناسب",
+            "التطعيم بعد الالتهاب الرئوي مجتمعي"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-pac"
+      ],
+      "medicamentos": [
+        "amoxicilina",
+        "azitromicina",
+        "levofloxacino"
+      ],
+      "calculadoras": [
+        "curb-65",
+        "psi-port"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "sbpt-pac-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "التهاب رئوي",
+        "pac",
+        "عدوى تنفسية",
+        "السعال",
+        "الحر"
+      ]
+    },
+    {
+      "id": "rinite-alergica",
+      "titulo": "الربو التحسسي",
+      "sinonimos": [
+        "الربو التحسسي الدائم",
+        "الربو التحسسي الموسمي",
+        "حساسية اللقاح"
+      ],
+      "ciap2": [
+        "R97"
+      ],
+      "cid10": [
+        "J30"
+      ],
+      "cid11": [
+        "CA08.0"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:8819",
+      "snomedCT": "47758005",
+      "meshId": "D012221",
+      "umlsCui": "C0035384",
+      "hpo": [
+        "HP:0002197",
+        "HP:0000422"
+      ],
+      "tags": [
+        "الجهاز التنفسي",
+        "الحساسية",
+        "شائع"
+      ],
+      "quickView": {
+        "definicao": "التهاب الغشاء المخاطي للأنف الذي يُسببه IgE، ويتم تهيجه بواسطة مسببات الحساسية. الأعراض: سيلان الأنف، العطس، حكة الأنف، احتقان الأنف.",
+        "criteriosDiagnosticos": [
+          "سيلان الأنف المائي",
+          "العطس",
+          "حكة الأنف/العين",
+          "احتقان الأنف",
+          "الأعراض التي تظهر عند التعرض لمسببات الحساسية المعروفة",
+          "اختبار الجلد أو IgE الخاصة إيجابي"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "تجنب مسببات الحساسية",
+            "غسل الأنف بالمحلول الفسيولوجي",
+            "اللقاحات المضادة للحساسية (العلاج المناعي) إذا لزم الأمر"
+          ],
+          "farmacologico": [
+            "مضادات الهيستامين الفموية: سيتيريزين 10 ملغ/يوم أو لوراتادين 10 ملغ/يوم",
+            "الكورتيكوستيرويدات الأنفية: بوديسونيد أو فلوتيكازون",
+            "مضادات الهيستامين الأنفية الموضعية إذا لزم الأمر"
+          ]
+        },
+        "redFlags": [
+          "الجيوب الأنفية",
+          "احتقان الأنف أحادي الجانب",
+          "نزف الأنف المستمر",
+          "البولييبات الأنفية"
+        ]
+      },
+      "medicamentos": [
+        "cetirizine",
+        "loratadine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "ivas-pediatrica",
+      "titulo": "IVAS (التهابات المسالك الهوائية العلوية)",
+      "ciap2": [
+        "R74"
+      ],
+      "cid10": [
+        "J00",
+        "J06"
+      ],
+      "cid11": [
+        "CA07"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:0050117",
+      "snomedCT": "54150009",
+      "meshId": "D012141",
+      "umlsCui": "C0041912",
+      "quickView": {
+        "definicao": "البرد الشائع. أكثر الأسباب شيوعًا لزيارة الطبيب في طب الأطفال. سببها فيروسي (>200 فيروس). تنتهي من تلقاء نفسها في غضون 7-10 أيام.",
+        "criteriosDiagnosticos": [
+          "سيلان الأنف الشفاف → القيحي",
+          "انسداد الأنف",
+          "حمى خفيفة",
+          "سعال جاف/منتج"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "غسل الأنف بالمحلول الملحي الفسيولوجي",
+            "الترطيب",
+            "رفع رأس السرير",
+            "العسل (>1 سنة) للسعال"
+          ],
+          "farmacologico": [
+            "مضاد للحرارة إذا كانت هناك حمى",
+            "لا تستخدم المزيلات الاحتقانية لأقل من 6 سنوات",
+            "لا تستخدم المضادات السعال"
+          ]
+        },
+        "redFlags": [
+          "حمى >72 ساعة أو متكررة",
+          "صعوبة في التنفس",
+          "تفاقم بعد تحسن أولي",
+          "ألم الأذن"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [
+        "ivas"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "asma-infantil",
+      "titulo": "الربو في الطفولة",
+      "ciap2": [
+        "R96"
+      ],
+      "cid10": [
+        "J45"
+      ],
+      "cid11": [
+        "CA23"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:2841",
+      "snomedCT": "195967001",
+      "meshId": "D001249",
+      "umlsCui": "C0004096",
+      "quickView": {
+        "definicao": "مرض مزمن التهابي في المسالك الهوائية مع نوبات متكررة من الصفير. تشخيص صعب في سن أقل من 5 سنوات. أكثر الأمراض المزمنة شيوعًا في الطفولة.",
+        "criteriosDiagnosticos": [
+          "صفير متكرر (≥3 نوبات)",
+          "سعال ليلي/صباحي",
+          "ضيق في التنفس أثناء الجهد",
+          "تحسن مع موسع القصبات",
+          "اختبار IPA المعدل (متنبئ في سن أقل من 5 سنوات)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "التحكم البيئي",
+            "تجنب التدخين السلبي",
+            "التحصين حسب الجدول"
+          ],
+          "farmacologico": [
+            "خفيف متقطع: SABA للطوارئ",
+            "مستمر: CI جرعة منخفضة (بوديسونيد 100-200 ميكروغرام)",
+            "زيادة الجرعة إذا لم يتم السيطرة"
+          ]
+        },
+        "redFlags": [
+          "الزرقة",
+          "استخدام العضلات المساعدة",
+          "صعوبة في الكلام",
+          "SpO2 <92%",
+          "صمت صدري"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol",
+        "budesonida",
+        "prednisolona"
+      ],
+      "protocolos": [
+        "asma-exacerbacao"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "sinusite-aguda",
+      "titulo": "التهاب الجيوب الأنفية الحاد",
+      "ciap2": [
+        "R75"
+      ],
+      "cid10": [
+        "J01"
+      ],
+      "cid11": [
+        "CA12"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:0050127",
+      "snomedCT": "15805002",
+      "meshId": "D012852",
+      "umlsCui": "C0037199",
+      "quickView": {
+        "definicao": "التهاب في الجيوب الأنفية، غالبًا فيروسي. المدة <4 أسابيع. بكتيري إذا استمرت الأعراض >10 أيام أو تفاقمت بعد تحسن أولي.",
+        "criteriosDiagnosticos": [
+          "ازدحام الأنف",
+          "سيلان الأنف القيحي",
+          "ألم وجهي / ضغط",
+          "فقدان الشم الجزئي",
+          "المدة 7-10 أيام (فيروسي) أو >10 أيام (بكتيري)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "غسل الأنف بالمحلول الملحي الفيزيولوجي",
+            "الترطيب",
+            "ترطيب الهواء"
+          ],
+          "farmacologico": [
+            "علاج الأعراض: مسكن ألم + مزيل احتقان موضعي (حد أقصى 5 أيام)",
+            "مضاد حيوي إذا كان البكتيريا: أموكسيسيلين 500 مغ كل 8 ساعات لمدة 7-10 أيام"
+          ]
+        },
+        "redFlags": [
+          "وذمة حول العين",
+          "تغيير في الرؤية",
+          "صداع شديد",
+          "علامات منجلية"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "paracetamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "faringite-aguda",
+      "titulo": "التهاب الحلق الحاد",
+      "ciap2": [
+        "R72"
+      ],
+      "cid10": [
+        "J02"
+      ],
+      "cid11": [
+        "CA02"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:974",
+      "snomedCT": "363746003",
+      "meshId": "D010612",
+      "umlsCui": "C0031350",
+      "quickView": {
+        "definicao": "التهاب في الحلق. الأغلبية فيروسية (70-90%). ستربتوكوكية (GABHS) في 15-30% من الأطفال، 5-15% من البالغين.",
+        "criteriosDiagnosticos": [
+          "ألم في الحلق",
+          "احمرار الحلق",
+          "إفرازات اللوزتين",
+          "تضخم الغدد الليمفاوية الرقبية",
+          "معايير Centor المعدلة"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "مسكنات الألم (باراسيتامول/إيبوبروفين)",
+            "غرغرة بالماء الدافئ والملح"
+          ],
+          "farmacologico": [
+            "فيروسي: علاج أعراض فقط",
+            "بكتيري (GABHS): البنسلين V 250-500mg كل 6 ساعات لمدة 10 أيام أو آموكسيسيلين 500mg كل 8 ساعات"
+          ]
+        },
+        "redFlags": [
+          "شد العضلات",
+          "انحراف الحنك",
+          "ضيق التنفس الحاد",
+          "الخراج حول اللوزتين"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquite-aguda",
+      "titulo": "التهاب القصبات الحاد",
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J20"
+      ],
+      "cid11": [
+        "CA20"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:6132",
+      "snomedCT": "32398004",
+      "meshId": "D001991",
+      "umlsCui": "C0006267",
+      "quickView": {
+        "definicao": "التهاب القصبات من مدة أقل من 3 أسابيع. غالبًا فيروسي (90%). قد تستمر السعال لمدة 2-3 أسابيع.",
+        "criteriosDiagnosticos": [
+          "سعال منتج",
+          "بدون أدلة على الالتهاب الرئوي",
+          "مدة أقل من 3 أسابيع",
+          "أعراض الجهاز التنفسي العلوي"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "الترطيب",
+            "الراحة",
+            "تجنب المهيجات"
+          ],
+          "farmacologico": [
+            "علاج أعراض: مضادات السعال إذا كان السعال جافًا ومزعجًا",
+            "مضاد حيوي غير موصى به بشكل روتيني",
+            "موسع قصبي إذا كان هناك صفير (جهاز استنشاق السالبوتامول)"
+          ]
+        },
+        "redFlags": [
+          "سعال يستمر لأكثر من 3 أسابيع",
+          "علامات الالتهاب الرئوي",
+          "الرذاذ الدموي",
+          "ضيق التنفس"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquite-cronica",
+      "titulo": "البرونكيت المزمن",
+      "sinonimos": [
+        "البرونكيت المزمن البسيط",
+        "مرض رئوي مزمن من النوع البرونكيتي"
+      ],
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J41"
+      ],
+      "cid11": [
+        "CA22.0"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:6132",
+      "snomedCT": "13645005",
+      "meshId": "D001991",
+      "umlsCui": "C0006277",
+      "tags": [
+        "cronica",
+        "respiratorio",
+        "tabagismo"
+      ],
+      "quickView": {
+        "definicao": "سعال وإفرازات لمدة ≥3 أشهر/سنة في ≥2 سنة متتالية، دون أسباب أخرى. غالباً ما تكون مرتبطة بالتدخين.",
+        "criteriosDiagnosticos": [
+          "سعال إنتاجي ≥3 أشهر/سنة",
+          "≥2 سنة متتالية",
+          "استبعاد الأسباب الأخرى (السل، التوسع البرونكي، إلخ)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "إيقاف التدخين",
+            "التطعيم (الإنفلونزا، الرئة)",
+            "تأهيل الرئة"
+          ],
+          "farmacologico": [
+            "موسع قصبي استنشاقي: بخاخ سالبوتامول 2 نفخة 4 مرات/يوم",
+            "إذا كانت الأعراض متكررة: إضافة كورتيكوستيرويد استنشاقي"
+          ]
+        },
+        "redFlags": [
+          "السعال الدموي",
+          "فقدان الوزن",
+          "حمى مستمرة",
+          "ضيق تنفس تدريجي"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol",
+        "budesonida"
+      ],
+      "protocolos": [
+        "dpoc"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "enfisema-pulmonar",
+      "titulo": "الانفصال الرئوي",
+      "ciap2": [
+        "R95"
+      ],
+      "cid10": [
+        "J43"
+      ],
+      "cid11": [
+        "CA22.1"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:3119",
+      "snomedCT": "196494001",
+      "meshId": "D004656",
+      "umlsCui": "C0014120",
+      "tags": [
+        "cronica",
+        "respiratorio",
+        "dpoc"
+      ],
+      "quickView": {
+        "definicao": "تدمير دائم للحويصلات الهوائية مع زيادة التهوية. نوع الانفصال الرئوي من مرض الانسداد الرئوي المزمن (DPOC).",
+        "criteriosDiagnosticos": [
+          "ضيق التنفس التدريجي",
+          "صدر برميلي",
+          "انخفاض صوت التنفس الرئوي",
+          "أشعة سينية: زيادة التهوية"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "الإقلاع عن التدخين",
+            "العلاج بالأكسجين إذا كان SpO2 <88%",
+            "تأهيل الرئة"
+          ],
+          "farmacologico": [
+            "موسع قصبي: تيوتروبيو 18 ميكروغرام مرة واحدة يوميًا",
+            "إذا كانت هناك تفاقمات: إضافة كورتيكوستيرويد استنشاقي"
+          ]
+        },
+        "redFlags": [
+          "قصور الجهاز التنفسي",
+          "انفصال الرئة",
+          "فقدان كبير في الوزن"
+        ]
+      },
+      "medicamentos": [
+        "تيوتروبيو"
+      ],
+      "protocolos": [
+        "dpoc"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "tosse-cronica",
+      "titulo": "السعال المزمن",
+      "sinonimos": [
+        "السعال المستمر"
+      ],
+      "ciap2": [
+        "R05"
+      ],
+      "cid10": [
+        "R05"
+      ],
+      "cid11": [
+        "MD11.1"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:12759",
+      "snomedCT": "49727002",
+      "meshId": "D003371",
+      "umlsCui": "C0010200",
+      "tags": [
+        "respiratorio",
+        "symptom",
+        "chronic"
+      ],
+      "quickView": {
+        "definicao": "السعال المستمر لمدة >8 أسابيع. الأسباب الرئيسية: متلازمة تسرب الأنف الخلفي، الربو، ارتجاع المريء، استخدام مثبطات الإنزيم المحول للأنجيوتنسين.",
+        "criteriosDiagnosticos": [
+          "السعال >8 أسابيع",
+          "فحص الأسباب: ارتجاع المريء، الربو، التهاب الأنف، مثبطات الإنزيم المحول للأنجيوتنسين",
+          "أشعة سينية على الصدر طبيعية",
+          "استبعاد الأسباب الأخرى"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "علاج السبب الأساسي",
+            "وقف مثبطات الإنزيم المحول للأنجيوتنسين إذا كان الاستخدام حديثًا",
+            "تجنب المهيجين"
+          ],
+          "farmacologico": [
+            "إذا كان ارتجاع المريء: حاصرات H2",
+            "إذا كان الربو: موسعات قصبية + كورتيكوستيرويدات استنشاقية",
+            "إذا كان التهاب الأنف: مضادات الهيستامين + كورتيكوستيرويدات أنفية",
+            "الكوديين أو الدكستروميتورفان فقط لفترة قصيرة عند الحاجة"
+          ]
+        },
+        "redFlags": [
+          "نزف",
+          "فقدان الوزن",
+          "حمى",
+          "تضخم الغدد الليمفاوية",
+          "تدخين",
+          "العمر >50 سنة"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

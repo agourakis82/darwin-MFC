@@ -1,0 +1,452 @@
+{
+  "locale": "ar",
+  "category": "endocrino",
+  "generatedAt": "2025-12-29T01:22:43.944Z",
+  "count": 4,
+  "diseases": [
+    {
+      "id": "hiperparatireoidismo",
+      "titulo": "فرط نشاط الغدة الدرقية الأولي",
+      "ciap2": [
+        "T93"
+      ],
+      "cid10": [
+        "E21.0"
+      ],
+      "cid11": [
+        "5A51.0"
+      ],
+      "categoria": "endocrino",
+      "doid": "DOID:2723",
+      "snomedCT": "363478007",
+      "meshId": "D049950",
+      "umlsCui": "C0020507",
+      "tags": [
+        "endocrino",
+        "metابولي"
+      ],
+      "quickView": {
+        "definicao": "زيادة هرمون الغدة الدرقية. عادة بسبب ورم حميد. تسبب فرط كالسيوم الدم ومعقدات العظام والكلى.",
+        "criteriosDiagnosticos": [
+          "فرط كالسيوم الدم",
+          "هرمون الغدة الدرقية مرتفع أو طبيعي بشكل غير مناسب",
+          "استبعاد الأسباب الثانوية"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "الترطيب",
+            "تقييد الكالسيوم الغذائي"
+          ],
+          "farmacologico": [
+            "استئصال الغدة الدرقية إذا كان المريض مصابًا بالأعراض أو المعقدات",
+            "سيناكالسيت إذا لم يكن الجراحة ممكنة"
+          ]
+        },
+        "redFlags": [
+          "أزمة فرط كالسيوم الدم",
+          "قصور الكلى",
+          "حصى الكلى المتكررة"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-graves",
+      "titulo": "مرض غريفز",
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E05.0"
+      ],
+      "cid11": [
+        "5A00.0"
+      ],
+      "categoria": "endocrino",
+      "doid": "DOID:4194",
+      "snomedCT": "56294001",
+      "meshId": "D006111",
+      "umlsCui": "C0018213",
+      "tags": [
+        "الغدد الصماء",
+        "مناعي ذاتي"
+      ],
+      "quickView": {
+        "definicao": "فرط نشاط الغدة الدرقية مناعي ذاتي. مضادات TSHR. مرتبطة بالتهاب العين والذُبَيْحَة المنتشرة.",
+        "criteriosDiagnosticos": [
+          "فرط نشاط الغدة الدرقية",
+          "الذُبَيْحَة المنتشرة",
+          "التهاب العين (50%)",
+          "مضادات TSHR إيجابية"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "تجنب اليود",
+            "حماية العين إذا كان هناك التهاب العين"
+          ],
+          "farmacologico": [
+            "ميتيمازول 10-40 ملغ/يوم",
+            "مثبط بيتا للأعراض"
+          ]
+        },
+        "redFlags": [
+          "عاصفة الدرقية",
+          "التهاب العين الشديد",
+          "ضغط على القصبة الهوائية"
+        ]
+      },
+      "medicamentos": [
+        "metimazol",
+        "propranolol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bocio-simples",
+      "titulo": "بوزي بسيط",
+      "sinonimos": [
+        "بوزي غير سام"
+      ],
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E04"
+      ],
+      "cid11": [
+        "5A01"
+      ],
+      "categoria": "endocrino",
+      "doid": "DOID:11981",
+      "snomedCT": "367460001",
+      "meshId": "D006042",
+      "umlsCui": "C0018021",
+      "tags": [
+        "الغدد الصماء",
+        "الغدة الدرقية"
+      ],
+      "quickView": {
+        "definicao": "زيادة متناثرة في الغدة الدرقية دون فرط نشاط الغدة الدرقية أو قلة نشاطها. وظيفة الغدة الدرقية طبيعية. الأسباب: نقص اليود، عوامل وراثية.",
+        "criteriosDiagnosticos": [
+          "زيادة الغدة الدرقية",
+          "وظيفة الغدة الدرقية طبيعية (TSH، T4 الحر)",
+          "غياب العقد",
+          "قد تكون الأعراض الضاغطة موجودة"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "إذا كان هناك نقص في اليود: تكميل اليود",
+            "المتابعة السريرية"
+          ],
+          "farmacologico": [
+            "ليفوتيروكسين إذا كان TSH في الحد الأعلى (الوقاية)",
+            "عادة لا يتطلب العلاج إذا كانت الوظيفة طبيعية"
+          ]
+        },
+        "redFlags": [
+          "عقد الغدة الدرقية",
+          "أعراض ضاغطة مهمة",
+          "تغيير في وظيفة الغدة الدرقية",
+          "تاريخ عائلي للسرطان الدرقي"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "cetoacidose-diabetica",
+      "titulo": "Cetoacidose Diabética",
+      "sinonimos": [
+        "CAD",
+        "Cetoacidose",
+        "Descompensação diabética aguda"
+      ],
+      "doid": "DOID:11716",
+      "snomedCT": "420422005",
+      "meshId": "D016883",
+      "umlsCui": "C0011880",
+      "ciap2": [
+        "T89"
+      ],
+      "cid10": [
+        "E10.1",
+        "E11.1",
+        "E13.1",
+        "E14.1"
+      ],
+      "cid11": [
+        "5A10.1",
+        "5A11.1"
+      ],
+      "categoria": "endocrino",
+      "quickView": {
+        "definicao": "Emergência metabólica caracterizada por hiperglicemia, acidose metabólica e cetonemia, causada por deficiência absoluta ou relativa de insulina. Mais comum em DM1, mas pode ocorrer em DM2.",
+        "criteriosDiagnosticos": [
+          "TRÍADE: Hiperglicemia + Acidose + Cetonemia",
+          "Glicemia >250 mg/dL",
+          "pH arterial <7,3",
+          "Bicarbonato <18 mEq/L",
+          "Cetonúria ++ ou cetonemia >3 mmol/L",
+          "Ânion gap aumentado (>12)",
+          "GRAVIDADE: Leve (pH 7,25-7,3), Moderada (pH 7,0-7,24), Grave (pH<7,0)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Acesso venoso calibroso (2 acessos)",
+            "Sondagem vesical de demora",
+            "Monitorização contínua",
+            "Glicemia capilar 1/1h"
+          ],
+          "farmacologico": [
+            "1. HIDRATAÇÃO (Prioridade):",
+            "SF 0,9% 1-1,5L na 1ª hora",
+            "SF 0,9% 250-500mL/h nas próximas horas",
+            "Trocar para SF 0,45% se Na corrigido >135",
+            "",
+            "2. INSULINA (após 1h de hidratação):",
+            "Insulina Regular 0,1U/kg em bolus IV",
+            "Depois: 0,1U/kg/h em BIC",
+            "Meta: queda de glicemia 50-70mg/dL/h",
+            "",
+            "3. POTÁSSIO:",
+            "K <3,3: NÃO iniciar insulina até repor K",
+            "K 3,3-5,3: KCl 20-30mEq/L no SF",
+            "K >5,3: Aguardar para repor",
+            "",
+            "4. BICARBONATO (apenas se pH<6,9):",
+            "NaHCO3 100mEq em 400mL SF em 2h"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Glicemia 150-200 mg/dL",
+          "pH >7,3",
+          "Bicarbonato >18 mEq/L",
+          "Ânion gap <12",
+          "Cetonemia <0,6 mmol/L",
+          "Potássio normal"
+        ],
+        "examesIniciais": [
+          "Glicemia",
+          "Gasometria arterial",
+          "Eletrólitos (Na, K, Cl)",
+          "Ureia, creatinina",
+          "Hemograma",
+          "EAS + cetonúria",
+          "Beta-hidroxibutirato (se disponível)",
+          "ECG (avaliar K)",
+          "Rx de tórax, culturas (se suspeita de infecção)"
+        ],
+        "redFlags": [
+          "pH <7,0 (CAD grave)",
+          "Hipocalemia grave (K<3,3)",
+          "Alteração do nível de consciência",
+          "Choque hipovolêmico",
+          "Edema cerebral (principalmente crianças)",
+          "Insuficiência renal aguda"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~4-8 episódios/1000 diabéticos/ano",
+          "mortalidade": "<1% em centros especializados; até 5% em países em desenvolvimento",
+          "faixaEtaria": "Mais comum em jovens com DM1; primeiro diagnóstico em até 30%",
+          "fatoresRisco": [
+            "DM1 (principalmente)",
+            "Omissão ou redução de insulina",
+            "Infecções (principal precipitante)",
+            "IAM, AVC",
+            "Primeiro diagnóstico de DM",
+            "Uso de SGLT2i (CAD euglicêmica)",
+            "Uso de corticoides"
+          ],
+          "citations": [
+            {
+              "refId": "ada-diabetes-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Deficiência de insulina + excesso de hormônios contrarreguladores → lipólise aumentada → excesso de ácidos graxos livres → cetogênese hepática → acúmulo de corpos cetônicos (acetoacetato, beta-hidroxibutirato) → acidose metabólica. Hiperglicemia causa diurese osmótica e desidratação.",
+          "citations": [
+            {
+              "refId": "sbd-cad-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Poliúria, polidipsia",
+            "Náuseas, vômitos, dor abdominal",
+            "Desidratação",
+            "Taquipneia (respiração de Kussmaul)",
+            "Hálito cetônico (maçã podre)",
+            "Confusão mental, letargia"
+          ],
+          "sinaisExameFisico": [
+            "Desidratação (mucosas secas, turgor diminuído)",
+            "Taquicardia, hipotensão",
+            "Respiração de Kussmaul",
+            "Hálito cetônico",
+            "Alteração do nível de consciência"
+          ],
+          "formasClinicas": [
+            "CAD leve (pH 7,25-7,3)",
+            "CAD moderada (pH 7,0-7,24)",
+            "CAD grave (pH <7,0)",
+            "CAD euglicêmica (glicemia <250, uso de SGLT2i)"
+          ],
+          "citations": [
+            {
+              "refId": "ada-diabetes-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Glicemia >250 mg/dL",
+            "pH <7,3 e/ou HCO3 <18",
+            "Cetonemia ou cetonúria",
+            "Ânion gap aumentado"
+          ],
+          "diagnosticoDiferencial": [
+            "Estado hiperglicêmico hiperosmolar",
+            "Acidose lática",
+            "Cetose de jejum",
+            "Cetoacidose alcoólica",
+            "Intoxicação (metanol, etilenoglicol, salicilatos)",
+            "Acidose urêmica"
+          ],
+          "examesLaboratoriais": [
+            "Glicemia",
+            "Gasometria arterial",
+            "Eletrólitos com cálculo de ânion gap",
+            "Beta-hidroxibutirato sérico",
+            "Ureia, creatinina",
+            "Hemograma, PCR",
+            "Amilase, lipase (se dor abdominal)",
+            "Culturas (se suspeita de infecção)"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-cad-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Correção da volemia",
+            "Correção da hiperglicemia",
+            "Correção da acidose e cetose",
+            "Correção de distúrbios eletrolíticos",
+            "Tratamento do fator precipitante"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Monitorização em UTI ou unidade intensiva",
+              "Balanço hídrico rigoroso",
+              "Glicemia capilar 1/1h",
+              "Eletrólitos e gasometria 2-4h",
+              "Identificar e tratar precipitante"
+            ],
+            "citations": [
+              {
+                "refId": "ada-diabetes-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Cristaloide",
+                "medicamentos": [
+                  "SF 0,9%"
+                ],
+                "posologia": "1-1,5L na 1ª hora; depois 250-500mL/h"
+              },
+              {
+                "classe": "Insulina",
+                "medicamentos": [
+                  "Insulina Regular IV"
+                ],
+                "posologia": "0,1U/kg bolus + 0,1U/kg/h em BIC"
+              },
+              {
+                "classe": "Potássio",
+                "medicamentos": [
+                  "KCl"
+                ],
+                "posologia": "20-40mEq/L no soro, conforme K sérico"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Glicemia <200 com acidose persistente",
+                "conduta": "Adicionar SG 5% ao SF e manter insulina"
+              },
+              {
+                "situacao": "pH <6,9",
+                "conduta": "Considerar NaHCO3 100mEq em 400mL em 2h"
+              },
+              {
+                "situacao": "K <3,3",
+                "conduta": "Adiar insulina e repor K primeiro"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbd-cad-2022"
+              }
+            ]
+          },
+          "duracao": "Até resolução da acidose e cetose (geralmente 12-24h)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "UTI até resolução; depois endocrinologia ambulatorial",
+          "metasTerapeuticas": [
+            "Transição para insulina SC",
+            "Educação do paciente",
+            "Ajuste do esquema de insulina",
+            "Prevenção de recorrência"
+          ],
+          "criteriosEncaminhamento": [
+            "UTI se CAD grave",
+            "Endocrinologia para ajuste",
+            "Psicologia se omissão intencional de insulina"
+          ],
+          "citations": [
+            {
+              "refId": "ada-diabetes-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "cad-emergencia",
+        "insulinizacao-cad"
+      ],
+      "medicamentos": [
+        "insulina-regular",
+        "sf-0,9",
+        "kcl"
+      ],
+      "calculadoras": [
+        "anion-gap",
+        "sodio-corrigido",
+        "osmolaridade"
+      ],
+      "citations": [
+        {
+          "refId": "ada-diabetes-2024"
+        },
+        {
+          "refId": "sbd-cad-2022"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

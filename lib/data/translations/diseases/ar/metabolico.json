@@ -1,0 +1,893 @@
+{
+  "locale": "ar",
+  "category": "metabolico",
+  "generatedAt": "2025-12-28T22:43:57.240Z",
+  "count": 6,
+  "diseases": [
+    {
+      "id": "diabetes-mellitus-2",
+      "titulo": "Diabetes Mellitus tipo 2 (DM2)",
+      "sinonimos": [
+        "Diabetes tipo 2",
+        "DM2",
+        "Diabetes do adulto"
+      ],
+      "doid": "DOID:9351",
+      "snomedCT": "44054006",
+      "meshId": "D003924",
+      "umlsCui": "C0011860",
+      "ciap2": [
+        "T90"
+      ],
+      "cid10": [
+        "E11"
+      ],
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "Doãncia metabólica caracterizada por hiperglicemia crónica resultante de defeitos na secreção e/ou ação da insulina. Representa 90-95% dos casos de diabetes e ç fortemente associada á obesidade e sedentarismo.",
+        "criteriosDiagnosticos": [
+          "Glicemia de jejum à126 mg/dL (confirmada em 2 ocasiões)",
+          "Glicemia 2h pós TOTG 75g à200 mg/dL",
+          "HbA1c à6,5%",
+          "Glicemia casual à200 + sintomas clássicos (poliúria, polidipsia, perda de peso)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Dieta: redução calórica se sobrepeso, carboidratos complexos, fibras",
+            "Atividade fízica: 150 min/semana aeróbico + resistido 2-3x",
+            "Perda de 7-10% do peso se sobrepeso/obesidade",
+            "Educação em diabetes e automonitorização",
+            "Cessão do tabagismo"
+          ],
+          "farmacologico": [
+            "Metformina 500-2550mg/dia (1ç linha se TFG >30)",
+            "Se HbA1c >7,5% ou sintomático: associar 2âo agente",
+            "iSGLT2 se DCV ou DRC (empagliflozina, dapagliflozina)",
+            "GLP-1 se obesidade ou DCV (semaglutida, liraglutida)",
+            "Insulina se HbA1c >10% ou sintomas graves"
+          ]
+        },
+        "metasTerapeuticas": [
+          "HbA1c <7%",
+          "HbA1c <6,5% se DM recente, jovem, sem hipoglicemias",
+          "HbA1c <8% se idoso frágil, comorbidades, risco hipoglicemia",
+          "Glicemia jejum 80-130 mg/dL",
+          "Glicemia pós-prandial <180 mg/dL"
+        ],
+        "examesIniciais": [
+          "HbA1c (a cada 3-6 meses)",
+          "Glicemia de jejum",
+          "Perfil lipídico (LDL, HDL, TG)",
+          "Creatinina e TFG",
+          "Relação albumina/creatinina urinária",
+          "Exame de fundo de olho",
+          "Exame dos pés (sensibilidade, pulsos)",
+          "ECG"
+        ],
+        "redFlags": [
+          "Cetoacidose diabética (glicemia >250, cetonúria, acidose)",
+          "Estado hiperglicêmico hiperosmolar (glicemia >600, desidratação grave)",
+          "Hipoglicemia grave (<54 mg/dL com sintomas neurológicos)",
+          "Infecção grave (pé diabético infectado, sepse)",
+          "Síndrome coronariana aguda"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "9,4% da população adulta brasileira (~16 milhões)",
+          "incidencia": "~500 mil novos casos/ano",
+          "mortalidade": "~70 mil mortes/ano atribuídas ao DM",
+          "faixaEtaria": "Pico 45-64 anos, crescente em jovens",
+          "fatoresRisco": [
+            "Obesidade/sobrepeso (IMC ≥25)",
+            "Sedentarismo",
+            "História familiar de DM",
+            "Pré-diabetes (GJ 100-125, TOTG 140-199, HbA1c 5,7-6,4%)",
+            "Diabetes gestacional prévio",
+            "Síndrome dos ovários policísticos",
+            "HAS, dislipidemia",
+            "Uso de corticoides, antipsicóticos"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Frequentemente oligossintomático ou assintomático",
+            "Poliúria (micção frequente)",
+            "Polidipsia (sede excessiva)",
+            "Perda de peso não intencional",
+            "Fadiga",
+            "Turvação visual",
+            "Infecções de repetição (candidíase, ITU)"
+          ],
+          "sinaisExameFisico": [
+            "Obesidade central (circunferência abdominal aumentada)",
+            "Acantose nigricans (pescoço, axilas)",
+            "Alterações de sensibilidade em pés (neuropatia)",
+            "Pulsos pediais diminuídos (DAP)",
+            "Retinopatia ao exame de fundo de olho"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Glicemia jejum ≥126 mg/dL (2 ocasiões ou 1 + sintomas)",
+            "TOTG 75g ≥200 mg/dL às 2h",
+            "HbA1c ≥6,5%",
+            "Glicemia casual ≥200 + sintomas clássicos"
+          ],
+          "diagnosticoDiferencial": [
+            "Diabetes tipo 1 (autoimune, insulinopenia absoluta)",
+            "LADA (autoimune tardio)",
+            "MODY (genético)",
+            "Diabetes secundário (pancreatite, Cushing, medicamentos)"
+          ],
+          "examesLaboratoriais": [
+            "HbA1c, glicemia jejum",
+            "Perfil lipídico",
+            "Creatinina, TFG, relação albumina/creatinina",
+            "Transaminases",
+            "TSH"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Alcançar e manter metas glicêmicas individualizadas",
+            "Prevenir complicações micro e macrovasculares",
+            "Reduzir mortalidade cardiovascular",
+            "Melhorar qualidade de vida"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Terapia nutricional individualizada",
+              "Redução de carboidratos simples e açúcar",
+              "Aumento de fibras, vegetais, proteínas",
+              "Atividade física: 150 min/semana aeróbico + resistido",
+              "Perda de 7-10% do peso se sobrepeso",
+              "Educação em diabetes estruturada",
+              "Automonitorização da glicemia capilar"
+            ],
+            "citations": [
+              {
+                "refId": "sbd-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Biguanida",
+                "medicamentos": [
+                  "Metformina 500-2550mg/dia"
+                ],
+                "posologia": "2-3x/dia às refeições (XR 1x/dia)",
+                "observacoes": "Iniciar 500mg 1-2x/dia, titular a cada 1-2 semanas. CI: TFG <30, acidose, desidratação"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "iSGLT2",
+                "medicamentos": [
+                  "Empagliflozina 10-25mg/dia",
+                  "Dapagliflozina 10mg/dia"
+                ],
+                "observacoes": "Preferir se DCV aterosclerótica ou ICC ou DRC. CI: TFG <20-25"
+              },
+              {
+                "classe": "Agonista GLP-1",
+                "medicamentos": [
+                  "Semaglutida 0,25-1mg SC/semana",
+                  "Liraglutida 0,6-1,8mg SC/dia"
+                ],
+                "observacoes": "Preferir se obesidade ou DCV. Alto custo, não disponível SUS"
+              },
+              {
+                "classe": "Sulfonilureia",
+                "medicamentos": [
+                  "Glibenclamida 2,5-20mg/dia",
+                  "Gliclazida MR 30-120mg/dia"
+                ],
+                "observacoes": "Disponível SUS. Risco de hipoglicemia e ganho de peso"
+              },
+              {
+                "classe": "Insulina",
+                "medicamentos": [
+                  "NPH 10 UI noturna",
+                  "Regular pré-prandial"
+                ],
+                "observacoes": "Se HbA1c >10%, sintomas catabólicos, falha de ADOs"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "DCV estabelecida",
+                "conduta": "Preferir iSGLT2 ou GLP-1 com benefício CV comprovado"
+              },
+              {
+                "situacao": "ICC",
+                "conduta": "iSGLT2 obrigatório (empagliflozina, dapagliflozina)"
+              },
+              {
+                "situacao": "DRC",
+                "conduta": "iSGLT2 se TFG >20-25. Ajustar metformina/suspender se TFG <30"
+              },
+              {
+                "situacao": "Idoso frágil",
+                "conduta": "Meta HbA1c <8%. Evitar sulfonilureias. Preferir iDPP4"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbd-2024"
+              }
+            ]
+          },
+          "duracao": "Tratamento contínuo e progressivo"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "A cada 3-4 meses se descontrolado; 6 meses se estável",
+          "examesControle": [
+            "HbA1c a cada 3-6 meses",
+            "Perfil lipídico, creatinina, TFG, microalbuminúria: anual",
+            "Fundo de olho: anual (a cada 2 anos se sem retinopatia e bom controle)",
+            "Exame dos pés: a cada consulta",
+            "ECG: anual se >40 anos ou fatores de risco"
+          ],
+          "metasTerapeuticas": [
+            "HbA1c individualizada (geralmente <7%)",
+            "PA <130/80 mmHg",
+            "LDL <100 mg/dL (ou <70 se alto risco CV)",
+            "Cessação do tabagismo",
+            "Peso saudável"
+          ],
+          "criteriosEncaminhamento": [
+            "Retinopatia diabética (para oftalmologia)",
+            "Pé diabético com lesão/infecção",
+            "DRC TFG <30 ou albuminúria progressiva",
+            "Descompensação refratária",
+            "Necessidade de insulinização complexa"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Identificação e tratamento do pré-diabetes",
+            "Programa de mudança de estilo de vida",
+            "Metformina em pré-diabetes de alto risco"
+          ],
+          "secundaria": [
+            "Controle glicêmico adequado",
+            "Rastreamento e tratamento de complicações",
+            "Vacinação (influenza, pneumococo, hepatite B)"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-dm2",
+        "insulinizacao-dm2"
+      ],
+      "medicamentos": [
+        "metformina",
+        "glibenclamida",
+        "insulina-nph",
+        "empagliflozina"
+      ],
+      "calculadoras": [
+        "findrisc",
+        "ckdepi",
+        "framingham"
+      ],
+      "rastreamentos": [
+        "diabetes-mellitus-2"
+      ],
+      "citations": [
+        {
+          "refId": "sbd-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "metabolico",
+        "cronica",
+        "prevalente",
+        "dcnt"
+      ]
+    },
+    {
+      "id": "obesidade",
+      "titulo": "سمنة",
+      "sinonimos": [
+        "زيادة الوزن",
+        "زيادة الوزن المفرطة"
+      ],
+      "doid": "DOID:9970",
+      "snomedCT": "414916001",
+      "meshId": "D009765",
+      "umlsCui": "C0028754",
+      "ciap2": [
+        "T82",
+        "T83"
+      ],
+      "cid10": [
+        "E66",
+        "E66.0",
+        "E66.9"
+      ],
+      "cid11": [
+        "5B81"
+      ],
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "مرض مزمن يتميز بتراكم الدهون في الجسم بشكل مفرط، مما له آثار سلبية على الصحة. يُعرَّف بـ BMI ≥30 كجم/م².",
+        "criteriosDiagnosticos": [
+          "BMI ≥25 كجم/م²: زيادة الوزن",
+          "BMI ≥30 كجم/م²: سمنة من الدرجة الأولى",
+          "BMI ≥35 كجم/م²: سمنة من الدرجة الثانية",
+          "BMI ≥40 كجم/م²: سمنة من الدرجة الثالثة (شديدة)",
+          "محيط الخصر: >94 سم (للرجال) أو >80 سم (للنساء) - زيادة في المخاطر"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "تغيير نمط الحياة (MEV) هو أساس العلاج",
+            "حمية منخفضة السعرات الحرارية (نقص 500-1000 سعر حراري/يوم)",
+            "نشاط بدني: 150-300 دقيقة/أسبوع من التمارين الهوائية",
+            "علاج معرفي سلوكي",
+            "دعم تغذوي مع اختصاصي تغذية"
+          ],
+          "farmacologico": [
+            "يجب النظر فيه إذا كان BMI ≥30، أو BMI ≥27 مع مرض مصاحب",
+            "بعد فشل MEV لمدة 3-6 أشهر",
+            "خيارات: أورليستات، سيماجلوتيد، ليراغلوتيد، سيبيترامين (بقيود)",
+            "الجراحة السمنية إذا كان BMI ≥40 أو ≥35 مع مرض مصاحب شديد"
+          ]
+        },
+        "metasTerapeuticas": [
+          "فقدان 5-10% من الوزن الأولي في 6 أشهر (مهم سريرياً)",
+          "تحسين الأمراض المصاحبة (داء السكري، ارتفاع ضغط الدم، اضطرابات الدهون)",
+          "الحفاظ على الوزن على المدى الطويل",
+          "تحسين جودة الحياة"
+        ],
+        "examesIniciais": [
+          "سكر الصيام، HbA1c",
+          "ملف الدهون",
+          "وظيفة الكبد (الدهون الكبدية)",
+          "TSH (استبعاد قلة نشاط الغدة الدرقية)",
+          "وظيفة الكلى",
+          "حامض اليوريك"
+        ],
+        "redFlags": [
+          "زيادة الوزن السريعة وغير المبررة",
+          "متلازمة كوشينغ (وجه القمر، خطوط تمدد بنفسجية)",
+          "انقطاع النفس أثناء النوم شديد",
+          "ارتفاع ضغط الدم داخل الجمجمة غير المعروف السبب",
+          "متلازمة الأيض الشديدة"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "30% من البالغين في البرازيل (سمنة)، 55% زيادة الوزن",
+          "incidencia": "وباء عالمي في تزايد",
+          "faixaEtaria": "جميع الأعمار، يزيد في منتصف العمر",
+          "fatoresRisco": [
+            "حمية عالية السعرات الحرارية والمنتجات المصنعة للغاية",
+            "قلة الحركة",
+            "الوراثة (60-70% من القابلية للوراثة)",
+            "العوامل الاجتماعية والاقتصادية",
+            "اضطرابات النوم",
+            "الإجهاد المزمن",
+            "الأدوية (الكورتيكوستيرويدات، مضادات الذهان، بعض مضادات الاكتئاب)"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "اختلال مزمن بين استهلاك الطاقة وحرقها، مُؤثر عليه عوامل وراثية، بيئية، هرمونية ونفسية. ليس نسيج الدهون خاملًا: يفرز أديبوكينات التي تسبب التهابًا مزمنًا منخفض الدرجة، مقاومة الأنسولين وخللًا أيضيًا.",
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "زيادة الوزن المرئية",
+            "ضيق في التنفس عند بذل مجهود",
+            "تعب",
+            "ألم بالمفاصل (ركبتين، عمود فقري)",
+            "شخير، انقطاع النفس أثناء النوم",
+            "منخفض تقدير الذات"
+          ],
+          "sinaisExameFisico": [
+            "BMI مرتفع",
+            "محيط الخصر مIncreased",
+            "السماجة السوداء (مقاومة الأنسولين)",
+            "خطوط تمدد",
+            "وذمة في الساقين السفلية"
+          ],
+          "formasClinicas": [
+            "سمنة ذكرية (مركزية/بطنية): خطر أيضي أعلى",
+            "سمنة أنثوية (طرفية): خطر أيضي أقل"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "BMI ≥30 كجم/م² (سمنة)",
+            "محيط الخصر مIncreased",
+            "تقييم الأمراض المصاحبة"
+          ],
+          "diagnosticoDiferencial": [
+            "وذمة (الانتفاخ الشديد)",
+            "قلة نشاط الغدة الدرقية",
+            "متلازمة كوشينغ",
+            "استخدام الأدوية",
+            "متلازمات وراثية نادرة"
+          ],
+          "examesLaboratoriais": [
+            "سكر، HbA1c، TOTG",
+            "ملف الدهون الكامل",
+            "وظيفة الكبد، سونار بطني (الدهون الكبدية)",
+            "TSH",
+            "وظيفة الكلى، حامض اليوريك",
+            "QRS، صورة القلب بالموجات فوق الصوتية إذا لزم الأمر"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "فقدان الوزن المستدام",
+            "تحسين الأمراض المصاحبة",
+            "منع المضاعفات",
+            "تحسين جودة الحياة"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "حمية منخفضة السعرات الحرارية المتوازنة (نقص 500-1000 سعر حراري/يوم)",
+              "نشاط بدني: 150-300 دقيقة/أسبوع من التمارين الهوائية + مقاومة",
+              "علاج معرفي سلوكي",
+              "متابعة مع فريق متعدد التخصصات"
+            ],
+            "citations": [
+              {
+                "refId": "abeso-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "مثبط الليباز",
+                "medicamentos": [
+                  "أورليستات"
+                ],
+                "posologia": "120 ملغ 3 مرات يوميًا مع الوجبات الرئيسية"
+              },
+              {
+                "classe": "محفز GLP-1",
+                "medicamentos": [
+                  "سيماغلوتيد",
+                  "ليراغلوتيد"
+                ],
+                "posologia": "سيماغلوتيد SC: بدء بـ 0.25 ملغ/أسبوع، زيادة حتى 2.4 ملغ/أسبوع"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "BMI ≥40 أو ≥35 مع مرض مصاحب شديد",
+                "conduta": "تقييم الجراحة السمنية"
+              },
+              {
+                "situacao": "سمنة + داء السكري من النوع الثاني",
+                "conduta": "التفضيل لمحفزات GLP-1 أو iSGLT2"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "abeso-2022"
+              }
+            ]
+          },
+          "duracao": "علاج مزمن"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "شهريًا في الأشهر الستة الأولى، ثم كل 3 أشهر",
+          "examesControle": [
+            "الوزن، BMI، محيط الخصر",
+            "سكر، HbA1c",
+            "ملف الدهون",
+            "وظيفة الكبد"
+          ],
+          "metasTerapeuticas": [
+            "فقدان 5-10% من الوزن الأولي هو مهم سريرياً",
+            "الحفاظ على الوزن المفقود"
+          ],
+          "criteriosEncaminhamento": [
+            "تقييم للجراحة السمنية",
+            "شك في سبب ثانوي",
+            "مضاعفات شديدة"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "غذاء صحي منذ الطفولة",
+            "نشاط بدني منتظم",
+            "تقليل المنتجات المصنعة للغاية"
+          ],
+          "secundaria": [
+            "تدخل مبكر في زيادة الوزن",
+            "علاج الأمراض المصاحبة"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-obesidade"
+      ],
+      "medicamentos": [
+        "orlistate",
+        "semaglutida",
+        "liraglutida"
+      ],
+      "calculadoras": [
+        "imc",
+        "risco-cv"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "abeso-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "سمنة",
+        "زيادة الوزن",
+        "BMI",
+        "خسارة الوزن",
+        "جراحة السمنة"
+      ]
+    },
+    {
+      "id": "sindrome-metabolica",
+      "titulo": "المتلازمة الأيضية",
+      "sinonimos": [
+        "متلازمة X",
+        "متلازمة مقاومة الأنسولين"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E88.81"
+      ],
+      "cid11": [
+        "5C80.Z"
+      ],
+      "doid": "DOID:14221",
+      "snomedCT": "237602007",
+      "meshId": "D024821",
+      "umlsCui": "C0524620",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "مجموعة من عوامل الخطر الأيضية التي تزيد من خطر أمراض القلب والأوعية الدموية والسكري من النوع الثاني. انتشارها بين البالغين يتراوح بين 20-25%.",
+        "criteriosDiagnosticos": [
+          "معايير NCEP-ATPIII (≥3 من 5):",
+          "محيط الخصر: >102 سم (للرجال) أو >88 سم (للنساء)",
+          "التريلسيرويد ≥150 مجم/ديسيليتر",
+          "HDL-c <40 (للرجال) أو <50 (للنساء) مجم/ديسيليتر",
+          "BP ≥130/85 مم زئبق أو تحت العلاج",
+          "سكر الصيام ≥100 مجم/ديسيليتر أو السكري"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "خسارة الوزن 7-10% (التدخل الرئيسي)",
+            "تمارين الهوائية والمقاومة",
+            "حمية منخفضة السعرات الحرارية، منخفضة GI",
+            "الإقلاع عن التدخين"
+          ],
+          "farmacologico": [
+            "علاج كل مكون بشكل فردي",
+            "الميتفورمين إذا كان هناك ما قبل السكري + خطر عالٍ",
+            "الستاتين حسب خطر القلب والأوعية الدموية",
+            "خافض ضغط الدم إذا كان هناك ارتفاع ضغط الدم"
+          ]
+        },
+        "redFlags": [
+          "السكري من النوع الثاني المعلن",
+          "أمراض القلب والأوعية الدموية المتأصلة",
+          "التهاب الكبد الدهني الغير الكحولي/الدورة"
+        ],
+        "metasTerapeuticas": [
+          "خسارة الوزن المستدامة",
+          "تطبيع المكونات"
+        ],
+        "examesIniciais": [
+          "سكر الصيام",
+          "اختبار التحمل للكربوهيدرات إذا كان سكر الصيام 100-125",
+          "الملف الدهني",
+          "AST/ALT",
+          "التصوير بالموجات فوق الصوتية للبطن"
+        ]
+      },
+      "protocolos": [
+        "dm2",
+        "has"
+      ],
+      "medicamentos": [
+        "metformina"
+      ],
+      "calculadoras": [
+        "imc"
+      ],
+      "tags": [
+        "السمنة",
+        "السكري",
+        "القلب والأوعية الدموية"
+      ]
+    },
+    {
+      "id": "dislipidemia",
+      "titulo": "اضطرابات الدهون في الدم",
+      "sinonimos": [
+        "فرط الدهون في الدم",
+        "فرط الكوليسترول في الدم",
+        "فرط الدهون الثلاثية في الدم"
+      ],
+      "ciap2": [
+        "T93"
+      ],
+      "cid10": [
+        "E78.0",
+        "E78.1",
+        "E78.2",
+        "E78.5"
+      ],
+      "cid11": [
+        "5C80"
+      ],
+      "doid": "DOID:1168",
+      "snomedCT": "370992007",
+      "meshId": "D050171",
+      "umlsCui": "C0242339",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "اضطراب في أيض الدهون مع ارتفاع LDL-c، الدهون الثلاثية و/أو انخفاض HDL-c. يعتبر العامل الرئيسي القابل للتعديل لخطر أمراض القلب والأوعية الدموية الأترjuvenية.",
+        "criteriosDiagnosticos": [
+          "LDL-c ≥160 mg/dL (عالي) أو ≥130 mg/dL (حدي)",
+          "HDL-c <40 mg/dL (للرجال) أو <50 mg/dL (للنساء)",
+          "الدهون الثلاثية ≥150 mg/dL",
+          "الكوليسترول الكلي ≥240 mg/dL",
+          "حساب خطر الإصابة بأمراض القلب والأوعية الدموية (ASCVD، Framingham)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "النظام الغذائي المتوسطي أو DASH",
+            "التمارين الهوائية 150 دقيقة/الأسبوع",
+            "خسارة الوزن إذا كان هناك زيادة في الوزن أو السمنة",
+            "الإقلاع عن التدخين",
+            "تقليل الكحول"
+          ],
+          "farmacologico": [
+            "الستاتينات: سيمفاستاتين 20-40 مجم، أتورفاستاتين 10-80 مجم، روزوفاستاتين 5-20 مجم",
+            "هدف LDL-c حسب الخطر: <70 (عالي جدًا)، <100 (عالي)، <130 (معتدل)",
+            "إيزيتيميب 10 مجم إذا لم يتم تحقيق الهدف مع الستاتينات",
+            "فibrate إذا كانت الدهون الثلاثية >500 mg/dL"
+          ]
+        },
+        "redFlags": [
+          "الكسيمات",
+          "قوس القرنية <45 سنة",
+          "تاريخ عائلي لأحداث القلب والأوعية الدموية المبكرة",
+          "التهاب البنكرياس (الدهون الثلاثية >1000)"
+        ],
+        "metasTerapeuticas": [
+          "خفض 30-50% من LDL-c أو الهدف المطلق حسب الخطر"
+        ],
+        "examesIniciais": [
+          "مخطط الدهون في الدم على معدة فارغة",
+          "مستوى السكر في الدم",
+          "الكرياتينين",
+          "TSH",
+          "AST/ALT"
+        ]
+      },
+      "protocolos": [
+        "has",
+        "dm2"
+      ],
+      "medicamentos": [
+        "sinvastatina",
+        "atorvastatina",
+        "rosuvastatina"
+      ],
+      "calculadoras": [
+        "risco-cardiovascular"
+      ],
+      "tags": [
+        "القلب والأوعية الدموية",
+        "الوقاية",
+        "الستاتين"
+      ]
+    },
+    {
+      "id": "deficiencia-vitamina-d",
+      "titulo": "نقص فيتامين D",
+      "sinonimos": [
+        "نقص فيتامين D",
+        "نقص فيتامين D"
+      ],
+      "ciap2": [
+        "T91"
+      ],
+      "cid10": [
+        "E55.9"
+      ],
+      "cid11": [
+        "5B57.4"
+      ],
+      "doid": "DOID:10609",
+      "snomedCT": "34713006",
+      "meshId": "D014808",
+      "umlsCui": "C0042870",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "مستويات غير كافية من 25(OH)D مرتبطة بخلل في العظام وآثار خارج العظم المحتملة. انتشار >50% في بعض السكان.",
+        "criteriosDiagnosticos": [
+          "25(OH)D <20 نانوغرام/مل: نقص",
+          "25(OH)D 20-29 نانوغرام/مل: نقص معتدل",
+          "25(OH)D ≥30 نانوغرام/مل: كفاية",
+          "تعقب المجموعات المعرضة للخطر: كبار السن، الأشخاص البدينون، البشرة الداكنة، القليل من التعرض لأشعة الشمس"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "التعرض المعتدل لأشعة الشمس (10-15 دقيقة/يوم)",
+            "الأطعمة المعززة",
+            "الأسماك الدهنية، صفار البيض"
+          ],
+          "farmacologico": [
+            "نقص: كوليكالسيفيرول 50,000 وحدة دولية/أسبوع لمدة 8 أسابيع",
+            "الصيانة: 1,000-2,000 وحدة دولية/يوم",
+            "قد يحتاج كبار السن والأشخاص البدينون إلى جرعات أكبر"
+          ]
+        },
+        "redFlags": [
+          "نقص كالسيوم الدم المصحوب بأعراض",
+          "كسور هشة",
+          "الترهل العظمي"
+        ],
+        "metasTerapeuticas": [
+          "25(OH)D ≥30 نانوغرام/مل"
+        ],
+        "examesIniciais": [
+          "25(OH)D الدموية",
+          "الكالسيوم، الفوسفات",
+          "PTH",
+          "الكرياتينين"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "colecalciferol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "العظام",
+        "التكملة",
+        "الكشف المبكر"
+      ]
+    },
+    {
+      "id": "hiperuricemia-assintomatica",
+      "titulo": "فرط حمض اليوريا غير المصحوب بأعراض",
+      "sinonimos": [
+        "ارتفاع حمض اليوريا"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E79.0"
+      ],
+      "cid11": [
+        "5C64.0"
+      ],
+      "doid": "DOID:9245",
+      "snomedCT": "35885006",
+      "meshId": "D033461",
+      "umlsCui": "C0740394",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "حمض اليوريا في الدم مرتفع (>7 مجم/ديسيلتر عند الرجال، >6 مجم/ديسيلتر عند النساء) دون تاريخ من النقرس أو حصى الكلى بسبب اليورات.",
+        "criteriosDiagnosticos": [
+          "حمض اليوريا >7 مجم/ديسيلتر (رجال) أو >6 مجم/ديسيلتر (نساء)",
+          "غياب التهاب المفاصل النقوي",
+          "غياب حصى الكلى بسبب اليورات",
+          "تقييم الأمراض المرافقة: ارتفاع ضغط الدم، مرض الكلى المزمن، متلازمة الأيض"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "خفض الوزن",
+            "تقليل الكحول (خاصة البيرة)",
+            "تجنب المشروبات المحلاة",
+            "تقليل اللحوم الحمراء والمخ",
+            "زيادة تناول منتجات الألبان الخالية من الدسم"
+          ],
+          "farmacologico": [
+            "لا يجب معالجة زيادة حمض اليوريا فقط",
+            "اعتبار العلاج إذا كان: مرض الكلى المزمن التقدمي، خطورة القلب والأوعية الدموية عالية جدًا",
+            "إذا تم تحديده: ألوبرينول 100 مجم، زيادة الجرعة حتى الوصول إلى الهدف",
+            "الفيبيوكسيستات كبديل"
+          ]
+        },
+        "redFlags": [
+          "الحلقة الأولى من النقرس",
+          "حصى الكلى",
+          "مرض الكلى بسبب اليورات",
+          "متلازمة تحلل الورم"
+        ],
+        "metasTerapeuticas": [
+          "حمض اليوريا <6 مجم/ديسيلتر إذا تم العلاج"
+        ],
+        "examesIniciais": [
+          "حمض اليوريا في الدم",
+          "الكرياتينين",
+          "ملف الدهون",
+          "مستوى السكر في الدم",
+          "تحليل الدم الشامل"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "alopurinol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "النقرس",
+        "الكلى",
+        "الأيضي"
+      ]
+    }
+  ]
+}

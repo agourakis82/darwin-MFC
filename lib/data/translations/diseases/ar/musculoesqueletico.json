@@ -1,0 +1,517 @@
+{
+  "locale": "ar",
+  "category": "musculoesqueletico",
+  "generatedAt": "2025-12-28T22:43:57.242Z",
+  "count": 6,
+  "diseases": [
+    {
+      "id": "lombalgia",
+      "titulo": "Lombalgia",
+      "sinonimos": [
+        "Dor lombar",
+        "Dor nas costas",
+        "Lumbago"
+      ],
+      "doid": "DOID:0060167",
+      "snomedCT": "279039007",
+      "meshId": "D017116",
+      "umlsCui": "C0024031",
+      "ciap2": [
+        "L03",
+        "L84",
+        "L86"
+      ],
+      "cid10": [
+        "M54.5",
+        "M54.4"
+      ],
+      "categoria": "musculoesqueletico",
+      "quickView": {
+        "definicao": "Dor localizada na região lombar (entre o último arco costal e as pregas glúteas), podendo ou não irradiar para membros inferiores. É a principal causa de incapacidade no mundo.",
+        "criteriosDiagnosticos": [
+          "Dor na região lombar com ou sem irradiação",
+          "Classificar: inespecífica (>90%), com irradiação radicular, ou específica",
+          "Duração: aguda (<6 semanas), subaguda (6-12 sem), crônica (>12 sem)",
+          "Excluir red flags (fratura, infecção, tumor, síndrome de cauda equina)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Educação: tranquilizar, prognóstico geralmente bom",
+            "Manter atividades habituais (evitar repouso prolongado)",
+            "Calor local",
+            "Exercícios de fortalecimento e alongamento",
+            "Fisioterapia se persistência >4 semanas"
+          ],
+          "farmacologico": [
+            "Paracetamol 500-1000mg 6/6h (1ª linha se tolerado)",
+            "AINE: Ibuprofeno 400-600mg 8/8h ou Diclofenaco 50mg 8/8h (ciclo curto)",
+            "Relaxante muscular: Ciclobenzaprina 5-10mg à noite (espasmo associado)",
+            "Opioide fraco: Tramadol 50-100mg 6/6h (dor intensa, curto prazo)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Alívio da dor",
+          "Retorno às atividades habituais",
+          "Prevenção de cronificação",
+          "Evitar uso prolongado de medicamentos"
+        ],
+        "examesIniciais": [
+          "Exames de imagem NÃO indicados de rotina na lombalgia inespecífica",
+          "Solicitar RX/RM se red flags ou persistência >6 semanas sem melhora"
+        ],
+        "redFlags": [
+          "Trauma significativo",
+          "Idade <20 ou >55 anos com primeiro episódio",
+          "Dor noturna que acorda, dor em repouso",
+          "Perda de peso inexplicada",
+          "História de câncer, imunossupressão, uso de corticoides",
+          "Síndrome de cauda equina (anestesia em sela, incontinência, fraqueza MMII)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "60-80%",
+          "incidencia": "Principal causa de incapacidade laboral",
+          "faixaEtaria": "Pico 35-55 anos",
+          "fatoresRisco": [
+            "Trabalho braçal pesado",
+            "Posturas inadequadas",
+            "Sedentarismo",
+            "Obesidade",
+            "Tabagismo",
+            "Fatores psicossociais (estresse, insatisfação laboral)",
+            "Depressão, ansiedade"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dor lombar localizada",
+            "Piora com movimento, melhora com repouso (mecânica)",
+            "Rigidez matinal breve (<30 min)",
+            "Irradiação para nádega ou coxa (sem dermátomo)",
+            "Se radiculopatia: dor irradiada para MMII em dermátomo"
+          ],
+          "sinaisExameFisico": [
+            "Limitação de amplitude de movimento lombar",
+            "Contratura muscular paravertebral",
+            "Lasègue positivo se radiculopatia",
+            "Exame neurológico normal na lombalgia inespecífica",
+            "Avaliar força, sensibilidade, reflexos em MMII"
+          ],
+          "formasClinicas": [
+            "Lombalgia mecânica/inespecífica (>90%)",
+            "Lombalgia com radiculopatia (hérnia de disco)",
+            "Lombalgia específica (fratura, tumor, infecção, espondiloartrite)"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Diagnóstico clínico",
+            "Classificar por duração e presença de red flags",
+            "Exames de imagem apenas se red flags ou refratariedade"
+          ],
+          "diagnosticoDiferencial": [
+            "Hérnia de disco com radiculopatia",
+            "Estenose de canal",
+            "Espondilolistese",
+            "Espondilite anquilosante",
+            "Fratura vertebral",
+            "Metástase óssea",
+            "Infecção (discite, abscesso)"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Alívio da dor",
+            "Manutenção da função",
+            "Prevenção de cronificação",
+            "Retorno ao trabalho"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Educação e reasseguramento",
+              "Manter atividade física",
+              "Exercícios supervisionados",
+              "Calor superficial",
+              "Terapia cognitivo-comportamental se cronicidade"
+            ],
+            "citations": [
+              {
+                "refId": "lancet-lombalgia-2018"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Analgésico simples",
+                "medicamentos": [
+                  "Paracetamol 500-1000mg 6/6h"
+                ],
+                "observacoes": "Eficácia limitada, mas seguro"
+              },
+              {
+                "classe": "AINE",
+                "medicamentos": [
+                  "Ibuprofeno 400-600mg 8/8h",
+                  "Naproxeno 250-500mg 12/12h"
+                ],
+                "observacoes": "Eficaz. Uso curto (7-14 dias). Atenção a riscos GI/CV/renal"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Relaxante muscular",
+                "medicamentos": [
+                  "Ciclobenzaprina 5-10mg à noite"
+                ],
+                "observacoes": "Se espasmo muscular. Curto prazo. Sonolência"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Dor crônica",
+                "conduta": "Abordagem multimodal. Considerar duloxetina, amitriptilina. Encaminhar"
+              },
+              {
+                "situacao": "Radiculopatia",
+                "conduta": "AINE + fisioterapia. Se refratário, encaminhar para avaliação cirúrgica"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "lancet-lombalgia-2018"
+              }
+            ]
+          },
+          "duracao": "Maioria resolve em 4-6 semanas"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Reavaliação em 2-4 semanas se não melhora",
+          "metasTerapeuticas": [
+            "Resolução da dor",
+            "Retorno às atividades",
+            "Sem uso crônico de medicamentos"
+          ],
+          "criteriosEncaminhamento": [
+            "Red flags (urgente)",
+            "Déficit neurológico progressivo",
+            "Dor refratária >6 semanas",
+            "Síndrome de cauda equina (emergência)",
+            "Necessidade de fisioterapia especializada"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno",
+        "ciclobenzaprina"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "lancet-lombalgia-2018"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "musculoesqueletico",
+        "aguda",
+        "cronica",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "osteoartrite",
+      "titulo": "الarthrose (التهاب المفاصل العظمي)",
+      "ciap2": [
+        "L91"
+      ],
+      "cid10": [
+        "M15",
+        "M19"
+      ],
+      "cid11": [
+        "FA00"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:8398",
+      "snomedCT": "396275006",
+      "meshId": "D010003",
+      "umlsCui": "C0029408",
+      "quickView": {
+        "definicao": "مرض تحليلي للمفاصل. أكثر شيوعًا في كبار السن. الركبتان، الأرداف، اليدين هي الأكثر تأثيرًا.",
+        "criteriosDiagnosticos": [
+          "ألم مفصلي يزداد مع النشاط",
+          "الترهل الصباحي <30 دقيقة",
+          "الصرير",
+          "الأشعة السينية: تضيق المسافة، نتوءات عظمية"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "تمارين (تعزيز، تمديد)",
+            "فقدان الوزن إذا كان الشخص سمينًا",
+            "العلاج الطبيعي",
+            "الأجهزة التعويضية عند الحاجة"
+          ],
+          "farmacologico": [
+            "باراسيتامول 1g كل 6 ساعات (الأولى)",
+            "إذا لم يكن كافيًا: مضادات الالتهاب غير الستيرويدية موضعية أو فموية",
+            "حقن داخل المفصل بالكورتيكوستيرويد عند الحاجة"
+          ]
+        },
+        "redFlags": [
+          "التهاب مفصلي عدوي",
+          "كسر",
+          "ARTHROPATHY التهاب مفصلي"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "fibromialgia",
+      "titulo": "فibriوميالجيا",
+      "ciap2": [
+        "L18"
+      ],
+      "cid10": [
+        "M79.3"
+      ],
+      "cid11": [
+        "MG30.0"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:3634",
+      "snomedCT": "23867004",
+      "meshId": "D005356",
+      "umlsCui": "C0016053",
+      "hpo": [
+        "HP:0003327",
+        "HP:0003324"
+      ],
+      "tags": [
+        "musculoesكيلي",
+        "chronic",
+        "pain"
+      ],
+      "quickView": {
+        "definicao": "متلازمة الألم المزمن الشامل. نقاط مؤلمة عند اللمس. الإرهاق، اضطرابات النوم.",
+        "criteriosDiagnosticos": [
+          "ألم مزمن شامل ≥3 أشهر",
+          "≥11 نقطة مؤلمة في 18 نقطة (معايير ACR 1990)",
+          "أو معايير ACR 2010/2016"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "تمارين (هوائية، تمديد)",
+            "التثقيف حول المرض",
+            "العلاج المعرفي السلوكي",
+            "تحسين النوم"
+          ],
+          "farmacologico": [
+            "دوكسيتينا 60 ملغ/يوم",
+            "أو بريغالين",
+            "أو أميتريبتيلين 10-50 ملغ قبل النوم"
+          ]
+        },
+        "redFlags": [
+          "أعراض عصبية محصورة",
+          "التهاب مفاصل حقيقي",
+          "مرض روماتيزمي"
+        ]
+      },
+      "medicamentos": [
+        "دوكسيتينا",
+        "بريغالين",
+        "أميتريبتيلين"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "fascite-plantar",
+      "titulo": "فاسكيت النسيج الشبكي النباتي",
+      "ciap2": [
+        "L99"
+      ],
+      "cid10": [
+        "M72.2"
+      ],
+      "cid11": [
+        "FB06.1"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:0060041",
+      "snomedCT": "202882003",
+      "meshId": "D036981",
+      "umlsCui": "C0238698",
+      "quickView": {
+        "definicao": "تدهور النسيج الشبكي النباتي عند نقطة تثبيته في العقب. السبب الأكثر شيوعًا للألم في العقب. الذروة: 40-60 سنة.",
+        "criteriosDiagnosticos": [
+          "ألم في العقب الداخلي",
+          "يزداد سوءًا في الخطوات الأولى صباحًا",
+          "يتحسن مع النشاط الخفيف، يزداد سوءًا مع النشاط المطول",
+          "ألم عند لمس التبثر الداخلي للعقب"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "تمديد النسيج الشبكي النباتي والعضلة السمانية",
+            "شرائط داخل الأحذية مع دعم القوس",
+            "الثلج المحلي",
+            "أحذية مناسبة"
+          ],
+          "farmacologico": [
+            "مضادات الالتهاب غير الستيرويدية لفترة قصيرة",
+            "الحقن بالكورتيكوستيرويد إذا كان مقاومًا"
+          ]
+        },
+        "redFlags": [
+          "ألم ليلي",
+          "الشعور بالخدر أو الوخز",
+          "احمرار وتورم",
+          "حمى"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "lupus-eritematoso-sistemico",
+      "titulo": "اللوكيميا الحمامية الشاملة",
+      "ciap2": [
+        "L99"
+      ],
+      "cid10": [
+        "M32"
+      ],
+      "cid11": [
+        "4A40"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:9074",
+      "snomedCT": "55464009",
+      "meshId": "D008180",
+      "umlsCui": "C0024141",
+      "tags": [
+        "chronic",
+        "autoimmune",
+        "systemic"
+      ],
+      "quickView": {
+        "definicao": "مرض مناعي ذاتي شامل. قد يصيب الجلد والمفاصل والكلى والنظام العصبي. أكثر شيوعًا عند النساء.",
+        "criteriosDiagnosticos": [
+          "معايير SLICC أو ACR",
+          "احمرار الخدين",
+          "حساسية الضوء",
+          "anticorpos antinucleares"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "حماية من الشمس",
+            "الراحة أثناء التفاقم"
+          ],
+          "farmacologico": [
+            "هيدروكسيكلوروكين 200-400 ملغ/يوم",
+            "برودنيزون حسب شدة الحالة",
+            "مثبطات المناعة إذا لزم الأمر"
+          ]
+        },
+        "redFlags": [
+          "نفريت اللوكيميا",
+          "نوروالوكيميا",
+          "أزمة اللوكيميا",
+          "نقص الصفائح الدموية الشديد"
+        ]
+      },
+      "medicamentos": [
+        "هيدروكسيكلوروكين",
+        "برودنيزون"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "espondilite-anquilosante",
+      "titulo": "السُّلالة القَفْوِيَّة المُلْتَصِدَة",
+      "ciap2": [
+        "L88"
+      ],
+      "cid10": [
+        "M45"
+      ],
+      "cid11": [
+        "FA92.0"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:7149",
+      "snomedCT": "59670000",
+      "meshId": "D013167",
+      "umlsCui": "C0003879",
+      "tags": [
+        "chronic",
+        "autoimmune",
+        "rheumatologic"
+      ],
+      "quickView": {
+        "definicao": "السُّلالة القَفْوِيَّة السالبة للسيرولوغ. التهاب مزمن في العمود الفقري والمسامير الوركية. أكثر شيوعًا لدى الرجال الشباب.",
+        "criteriosDiagnosticos": [
+          "ألم قطني التهابي",
+          "صلابة صباحية",
+          "تحسن مع التمرين",
+          "التهاب مساريقي شعاعي",
+          "إيجابية HLA-B27 (90%)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "العلاج الطبيعي",
+            "التمارين",
+            "الوضعية الصحيحة"
+          ],
+          "farmacologico": [
+            "مضادات الالتهاب غير الستيرويدية: نابروكسين 500 مغ مرتين يوميًا",
+            "مضادات TNF إذا لم يستجب"
+          ]
+        },
+        "redFlags": [
+          "كسر فقري",
+          "حُدَب شديدة",
+          "مضاعفات قلبية"
+        ]
+      },
+      "medicamentos": [
+        "naproxeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}
