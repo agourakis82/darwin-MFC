@@ -1,0 +1,636 @@
+{
+  "locale": "zh",
+  "category": "hematologico",
+  "generatedAt": "2025-12-30T12:23:17.432Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "anemia-ferropriva",
+      "titulo": "缺铁性贫血",
+      "sinonimos": [
+        "铁缺乏性贫血"
+      ],
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D50"
+      ],
+      "cid11": [
+        "3A00"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:2355",
+      "snomedCT": "399096004",
+      "meshId": "D000740",
+      "umlsCui": "C0002871",
+      "hpo": [
+        "HP:0001875",
+        "HP:0001892"
+      ],
+      "tags": [
+        "hematologico",
+        "anemia",
+        "deficiencia",
+        "comum"
+      ],
+      "quickView": {
+        "definicao": "缺铁性贫血。最常见的贫血类型。特征为小细胞低色素。铁蛋白低，转铁蛋白高。",
+        "criteriosDiagnosticos": [
+          "小细胞低色素性贫血",
+          "铁蛋白低",
+          "转铁蛋白/转铁蛋白饱和度低",
+          "调查原因：出血、吸收不良、营养缺乏"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "富含铁的饮食",
+            "治疗潜在原因（出血、吸收不良）",
+            "避免餐后饮用咖啡/茶"
+          ],
+          "farmacologico": [
+            "硫酸亚铁 200mg（65mg 元素铁）1-2次/日",
+            "或螯合铁",
+            "联合维生素 C 可提高吸收",
+            "治疗持续 3-6 个月直至恢复正常"
+          ]
+        },
+        "redFlags": [
+          "消化道出血",
+          "持续失血",
+          "对治疗无反应",
+          "吸收不良"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anemia-megaloblastica",
+      "titulo": "巨幼细胞性贫血",
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D51",
+        "D52"
+      ],
+      "cid11": [
+        "3A00",
+        "3A01"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:13636",
+      "snomedCT": "840580004",
+      "meshId": "D000749",
+      "umlsCui": "C0002878",
+      "hpo": [
+        "HP:0001875",
+        "HP:0002901"
+      ],
+      "tags": [
+        "hematologico",
+        "anemia",
+        "deficiencia"
+      ],
+      "quickView": {
+        "definicao": "由于维生素B12或叶酸缺乏引起的贫血。表现为大细胞贫血、骨髓巨幼红细胞性变。可能伴有神经症状（维生素B12缺乏）。",
+        "criteriosDiagnosticos": [
+          "大细胞贫血",
+          "维生素B12低或叶酸低",
+          "骨髓巨幼红细胞性变",
+          "乳酸脱氢酶升高",
+          "同型半胱氨酸升高"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "治疗病因（营养缺乏，吸收不良）",
+            "合理饮食"
+          ],
+          "farmacologico": [
+            "维生素B12: 氰钴胺肌内注射或口服",
+            "叶酸: 5mg/天"
+          ]
+        },
+        "redFlags": [
+          "神经症状（维生素B12缺乏）",
+          "联合缺乏",
+          "吸收不良"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "trombocitopenia",
+      "titulo": "血小板减少症",
+      "sinonimos": [
+        "血小板减少",
+        "PTI",
+        "免疫性血小板减少性紫癜"
+      ],
+      "doid": "DOID:1588",
+      "snomedCT": "302215000",
+      "meshId": "D013921",
+      "umlsCui": "C0040034",
+      "ciap2": [
+        "B83"
+      ],
+      "cid10": [
+        "D69.3",
+        "D69.6"
+      ],
+      "cid11": [
+        "3B64"
+      ],
+      "categoria": "hematologico",
+      "quickView": {
+        "definicao": "血小板计数 <150,000/µL。可能是轻度且无症状，或严重伴有出血。原因：免疫破坏（PTI），消耗（DIC, PTT），脾脏滞留，生成减少。",
+        "criteriosDiagnosticos": [
+          "血小板 <150,000/µL（血小板减少）",
+          "轻度：100,000-150,000/µL",
+          "中度：50,000-100,000/µL",
+          "重度：<50,000/µL",
+          "极重度：<20,000/µL（自发性出血风险）",
+          "",
+          "PTI：排除性诊断（孤立性血小板减少，无明确原因）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免影响血小板的药物（阿司匹林，非甾体抗炎药）",
+            "避免有创伤风险的活动",
+            "避免侵入性操作，如果血小板 <50,000"
+          ],
+          "farmacologico": [
+            "急性 PTI（成人有出血或 <20,000-30,000）：",
+            "泼尼松 1-2 mg/kg/天，持续 2-4 周，然后逐渐减量",
+            "或 地塞米松 40 mg/天，连续 4 天（周期）",
+            "静脉注射免疫球蛋白 1 g/kg x1-2 天（快速反应）",
+            "",
+            "慢性难治性 PTI：",
+            "血小板生成素受体激动剂（艾曲波帕，罗米司亭）",
+            "利妥昔单抗",
+            "脾切除术"
+          ]
+        },
+        "metasTerapeuticas": [
+          "血小板 >30,000/µL（大多数情况下安全）",
+          "血小板 >50,000/µL 进行操作",
+          "血小板 >100,000/µL 进行大手术",
+          "无出血"
+        ],
+        "examesIniciais": [
+          "全血细胞计数（确认孤立性血小板减少）",
+          "外周血涂片（排除假性血小板减少）",
+          "凝血功能（PT, APTT）",
+          "肝肾功能",
+          "血清学检测：HIV, HCV, HBV",
+          "TSH",
+          "抗血小板抗体（不敏感）",
+          "骨髓检查（怀疑中心性原因）"
+        ],
+        "redFlags": [
+          "显著的活动性出血",
+          "血小板 <10,000/µL（颅内出血风险）",
+          "微血管溶血性贫血（裂细胞）：PTT/SHU - 紧急！",
+          "全血细胞减少（骨髓疾病）",
+          "发热 + 血小板减少：败血症，登革热，PTT",
+          "妊娠期血小板减少（子痫前期，HELLP 综合征）"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "PTI：3-4/100,000 成人",
+          "incidencia": "PTI 在儿童中最常见（病毒后）",
+          "faixaEtaria": "儿童：急性 PTI。成人：慢性 PTI",
+          "fatoresRisco": [
+            "近期病毒感染（儿童）",
+            "自身免疫性疾病（SLE）",
+            "HIV, HCV",
+            "药物（肝素，奎宁，磺胺类）",
+            "妊娠",
+            "肝病（脾脏滞留）"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "PTI：针对血小板糖蛋白（GPIIb/IIIa, GPIb/IX）的自身抗体（IgG）导致血小板在网状内皮系统（脾脏）中被破坏。同时还有巨核细胞生成抑制。其他原因：消耗（DIC, PTT），脾脏滞留，骨髓衰竭。",
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "通常无症状（偶然发现）",
+            "瘀点和瘀斑",
+            "鼻衄",
+            "牙龈出血",
+            "月经过多",
+            "胃肠道或泌尿道出血（严重）"
+          ],
+          "sinaisExameFisico": [
+            "瘀点（主要在四肢）",
+            "瘀斑",
+            "紫癜",
+            "黏膜出血",
+            "典型 PTI 中无脾肿大"
+          ],
+          "formasClinicas": [
+            "原发性 PTI（特发性）",
+            "继发性 PTI（HIV, HCV, SLE, 药物）",
+            "急性 PTI（儿童，病毒后）",
+            "慢性 PTI（>12 个月）"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "孤立性血小板减少",
+            "排除其他原因",
+            "涂片无裂细胞或原始细胞"
+          ],
+          "diagnosticoDiferencial": [
+            "假性血小板减少（EDTA 聚集）",
+            "PTT/SHU（微血管溶血性贫血）",
+            "DIC",
+            "脾功能亢进",
+            "白血病，骨髓增生异常",
+            "药物（肝素）",
+            "登革热"
+          ],
+          "examesLaboratoriais": [
+            "全血细胞计数 + 涂片",
+            "PT, APTT, 纤维蛋白原",
+            "HIV, HCV, HBV",
+            "ANA, 补体（怀疑 SLE）",
+            "骨髓检查（不典型时）",
+            "直接 Coombs 试验（贫血时）"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "预防出血",
+            "维持血小板在安全水平",
+            "最小化治疗毒性"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "避免创伤",
+              "停用抗血小板药物",
+              "如果无症状且血小板 >30,000，则观察等待"
+            ],
+            "citations": [
+              {
+                "refId": "ash-itp-2019"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "皮质类固醇",
+                "medicamentos": [
+                  "泼尼松",
+                  "地塞米松"
+                ],
+                "posologia": "泼尼松 1-2 mg/kg/天，持续 2-4 周，逐渐减量。或 地塞米松 40 mg/天 x4 天。"
+              },
+              {
+                "classe": "静脉注射免疫球蛋白（快速反应）",
+                "medicamentos": [
+                  "IVIg"
+                ],
+                "posologia": "1 g/kg x1-2 天。24-48 小时内见效。暂时性。"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "血小板生成素受体激动剂",
+                "medicamentos": [
+                  "艾曲波帕",
+                  "罗米司亭"
+                ],
+                "posologia": "艾曲波帕 50 mg/天 口服。罗米司亭 皮下注射 每周一次。慢性 PTI。"
+              },
+              {
+                "classe": "利妥昔单抗",
+                "medicamentos": [
+                  "利妥昔单抗"
+                ],
+                "posologia": "375 mg/m² 每周 x4 剂量。几周内见效。"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "严重的活动性出血",
+                "conduta": "静脉注射免疫球蛋白 + 皮质类固醇 + 血小板输注 + 氨甲环酸。"
+              },
+              {
+                "situacao": "妊娠",
+                "conduta": "首选静脉注射免疫球蛋白而非皮质类固醇。阴道分娩时血小板 >30,000，剖宫产时 >50,000。"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ash-itp-2019"
+              }
+            ]
+          },
+          "duracao": "根据反应。血小板生成素受体激动剂可能需要长期使用。"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "每周直至稳定，之后每月一次",
+          "examesControle": [
+            "系列全血细胞计数",
+            "临床变化时涂片"
+          ],
+          "metasTerapeuticas": [
+            "稳定的血小板 >30,000",
+            "无出血"
+          ],
+          "criteriosEncaminhamento": [
+            "慢性或难治性 PTI",
+            "需要脾切除术",
+            "适合使用血小板生成素受体激动剂或利妥昔单抗",
+            "严重出血"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "无一级预防措施"
+          ],
+          "secundaria": [
+            "避免诱因",
+            "维持血小板在安全水平"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "prednisona",
+        "dexametasona",
+        "imunoglobulina-iv",
+        "eltrombopag"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ash-itp-2019"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "血小板减少症",
+        "pti",
+        "血小板",
+        "紫癜",
+        "出血"
+      ]
+    },
+    {
+      "id": "anemia-ferropriva-pediatrica",
+      "titulo": "儿童缺铁性贫血",
+      "ciap2": [
+        "B80"
+      ],
+      "cid10": [
+        "D50"
+      ],
+      "cid11": [
+        "3A00"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:11758",
+      "snomedCT": "87522002",
+      "meshId": "D018798",
+      "umlsCui": "C0085576",
+      "quickView": {
+        "definicao": "儿童中最常见的贫血。巴西5岁以下儿童的患病率为20-30%。原因：铁的供需失衡。",
+        "criteriosDiagnosticos": [
+          "Hb <11g/dL (6个月-5岁) 或 <11.5g/dL (5-11岁)",
+          "MCV低（小细胞）",
+          "RDW高（异形红细胞）",
+          "铁蛋白 <12ng/mL (或在炎症情况下 <30)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "富含铁的饮食",
+            "餐后补充维生素C",
+            "避免过量饮用牛奶"
+          ],
+          "farmacologico": [
+            "硫酸亚铁 3-5mg/kg/天 铁元素",
+            "远离餐食",
+            "持续时间：3-6个月（补充储备）"
+          ]
+        },
+        "redFlags": [
+          "重度贫血 (Hb <7)",
+          "对治疗无反应",
+          "神经系统症状",
+          "胃肠道出血"
+        ]
+      },
+      "medicamentos": [
+        "sulfato-ferroso"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anemia-hemolitica",
+      "titulo": "溶血性贫血",
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D59"
+      ],
+      "cid11": [
+        "3A10"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:9538",
+      "snomedCT": "955009",
+      "meshId": "D000743",
+      "umlsCui": "C0002878",
+      "tags": [
+        "hematologico",
+        "anemia"
+      ],
+      "quickView": {
+        "definicao": "因红细胞破坏增加导致的贫血。可能是自身免疫性、遗传性或获得性的。",
+        "criteriosDiagnosticos": [
+          "贫血",
+          "网织红细胞增多",
+          "LDH升高",
+          "间接胆红素升高",
+          "血清结合珠蛋白降低"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "治疗基础病因",
+            "避免诱因"
+          ],
+          "farmacologico": [
+            "如为自身免疫性，使用皮质类固醇",
+            "如有症状，进行输血"
+          ]
+        },
+        "redFlags": [
+          "再生障碍危象",
+          "肾功能不全",
+          "凝血功能障碍"
+        ]
+      },
+      "medicamentos": [
+        "prednisona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "leucemia-linfocitica-cronica",
+      "titulo": "慢性淋巴细胞白血病",
+      "ciap2": [
+        "B73"
+      ],
+      "cid10": [
+        "C91.1"
+      ],
+      "cid11": [
+        "2A82.0"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:8552",
+      "snomedCT": "91857009",
+      "meshId": "D015451",
+      "umlsCui": "C0023418",
+      "tags": [
+        "hematologico",
+        "neoplasia",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "成熟B淋巴细胞的肿瘤。多见于老年人。通常为惰性。",
+        "criteriosDiagnosticos": [
+          "淋巴细胞计数 >5000/μL",
+          "形态学符合",
+          "特征性免疫表型"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "无症状且稳定者进行观察",
+            "定期血液肿瘤科随访"
+          ],
+          "farmacologico": [
+            "仅在有症状或进展时进行治疗",
+            "根据分期进行化疗"
+          ]
+        },
+        "redFlags": [
+          "血细胞减少",
+          "淋巴结肿大",
+          "器官肿大",
+          "反复感染"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "deficiencia-vitamina-b12",
+      "titulo": "维生素B12缺乏症",
+      "sinonimos": [
+        "维生素B12缺乏",
+        "钴胺素缺乏"
+      ],
+      "ciap2": [
+        "B81"
+      ],
+      "cid10": [
+        "E53.8"
+      ],
+      "cid11": [
+        "5B5C"
+      ],
+      "doid": "DOID:13381",
+      "snomedCT": "190634004",
+      "meshId": "D014806",
+      "umlsCui": "C0042847",
+      "categoria": "hematologico",
+      "quickView": {
+        "definicao": "钴胺素缺乏导致巨幼细胞性贫血和神经症状。常见于老年人、素食者和长期使用二甲双胍/质子泵抑制剂。",
+        "criteriosDiagnosticos": [
+          "血清B12 <200 pg/mL：缺乏",
+          "B12 200-300 pg/mL：灰区 - 测定MMA和同型半胱氨酸",
+          "MCV >100 fL（大细胞性贫血）",
+          "神经症状：感觉异常、共济失调、认知改变"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "调查原因：饮食、恶性贫血、萎缩性胃炎",
+            "为素食者提供饮食指导"
+          ],
+          "farmacologico": [
+            "严重缺乏/神经症状：氰钴胺1000mcg IM 每日一次，连续7天，然后每周一次4周，之后每月一次",
+            "轻度缺乏：氰钴胺口服1000-2000mcg/日",
+            "如果为恶性贫血，则终身维持"
+          ]
+        },
+        "redFlags": [
+          "全血细胞减少",
+          "严重的神经症状",
+          "快速的认知衰退"
+        ],
+        "metasTerapeuticas": [
+          "B12 >400 pg/mL",
+          "贫血的解决",
+          "神经功能改善"
+        ],
+        "examesIniciais": [
+          "血常规包括MCV",
+          "血清B12",
+          "网织红细胞",
+          "LDH",
+          "叶酸"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "cianocobalamina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "anemia",
+        "neurologia",
+        "idoso"
+      ]
+    }
+  ]
+}

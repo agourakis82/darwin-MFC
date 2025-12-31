@@ -1,0 +1,1057 @@
+{
+  "locale": "zh",
+  "category": "respiratorio",
+  "generatedAt": "2025-12-30T12:23:17.428Z",
+  "count": 11,
+  "diseases": [
+    {
+      "id": "asma",
+      "titulo": "支气管哮喘",
+      "sinonimos": [
+        "哮喘",
+        "哮喘性支气管炎",
+        "支气管高反应性"
+      ],
+      "doid": "DOID:2841",
+      "snomedCT": "195967001",
+      "meshId": "D001249",
+      "umlsCui": "C0004096",
+      "ciap2": [
+        "R96"
+      ],
+      "cid10": [
+        "J45",
+        "J46"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "一种慢性气道炎症性疾病，特征为支气管高反应性和可变的气流受限，表现为反复发作的哮鸣、呼吸困难、胸闷和咳嗽。",
+        "criteriosDiagnosticos": [
+          "可变的症状（哮鸣、呼吸困难、咳嗽、胸闷）",
+          "夜间/清晨加重，运动、过敏原、感染时加重",
+          "肺功能测试：FEV1/FVC <0.7 + 支气管扩张剂后改善 ≥12% 和 200ml",
+          "成人峰流速：变异率 >10%",
+          "如果肺功能正常：阳性支气管激发试验"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免过敏原（尘螨、霉菌、动物毛发）",
+            "环境控制（包裹床垫、洗涤床上用品）",
+            "戒烟（主动和被动）",
+            "避免非甾体抗炎药和β受体阻滞剂（如有过敏反应）",
+            "疫苗接种（每年流感疫苗、肺炎球菌疫苗）",
+            "书面行动计划"
+          ],
+          "farmacologico": [
+            "第1-2阶段：低至中等剂量ICS（Beclometasona 200-400mcg）+ 按需SABA",
+            "第3阶段：中等剂量ICS + LABA（Formoterol）或LAMA",
+            "第4-5阶段：高剂量ICS + LABA，考虑使用抗IgE/IL-5",
+            "缓解：首选Formoterol-ICS或SABA（Salbutamol）",
+            "急性加重：Prednisona 40-60mg/天 5-7天"
+          ]
+        },
+        "metasTerapeuticas": [
+          "症状控制：ACT ≥20，无活动限制",
+          "减少急性加重的风险",
+          "最小化SABA的使用（<2次/月用于症状）",
+          "肺功能正常或接近正常",
+          "最小化治疗的不良反应"
+        ],
+        "examesIniciais": [
+          "肺功能测试（包括支气管扩张试验）",
+          "峰流速（PFE）用于家庭监测",
+          "血常规（嗜酸性粒细胞增多提示过敏性哮喘）",
+          "总IgE",
+          "胸部X光（初始评估时）"
+        ],
+        "redFlags": [
+          "严重急性加重：说话断断续续，RR >30，HR >120，SpO2 <90%",
+          "辅助肌使用，发绀",
+          "峰流速 <50% 预期值或个人最佳值",
+          "对支气管扩张剂无反应",
+          "有因哮喘插管的历史",
+          "气胸"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "儿童10-15%，成人5-10%（巴西）",
+          "mortalidade": "每年约2,500人死亡（巴西，多数可预防）",
+          "faixaEtaria": "常在儿童期开始，但可在任何年龄发病",
+          "fatoresRisco": [
+            "特应性（鼻炎、湿疹）",
+            "哮喘家族史",
+            "暴露于过敏原（尘螨、霉菌、动物毛发）",
+            "儿童期呼吸道感染",
+            "被动吸烟",
+            "环境污染",
+            "肥胖"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "哮鸣（胸部喘息声）",
+            "间歇性呼吸困难",
+            "咳嗽，尤其是夜间/清晨",
+            "胸闷",
+            "症状的时间和强度可变",
+            "感染、运动、过敏原、气候变化时加重"
+          ],
+          "sinaisExameFisico": [
+            "发作时弥漫性呼气哮鸣音",
+            "呼气相延长",
+            "严重发作时使用辅助肌",
+            "间歇期：体检通常正常",
+            "伴有过敏性鼻炎"
+          ],
+          "formasClinicas": [
+            "过敏性哮喘（最常见）",
+            "非过敏性哮喘",
+            "晚发型哮喘",
+            "固定气流受限哮喘",
+            "肥胖型哮喘"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "可变的呼吸道症状病史",
+            "可变的呼气气流受限（肺功能测试）",
+            "对支气管扩张剂的反应（FEV1 ≥12% 和 200ml）",
+            "或峰流速变异率 >10%",
+            "或阳性支气管激发试验"
+          ],
+          "diagnosticoDiferencial": [
+            "慢性阻塞性肺疾病",
+            "声带功能障碍",
+            "心力衰竭",
+            "支气管扩张",
+            "异物",
+            "GERD伴咳嗽"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "症状控制",
+            "预防急性加重",
+            "维持正常的肺功能",
+            "最小化不良反应"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "哮喘教育和行动计划",
+              "正确的吸入技术",
+              "环境控制",
+              "戒烟",
+              "定期体育活动",
+              "体重管理",
+              "疫苗接种"
+            ],
+            "citations": [
+              {
+                "refId": "gina-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "低剂量ICS",
+                "medicamentos": [
+                  "Beclometasona 200-400mcg/天",
+                  "Budesonida 200-400mcg/天"
+                ],
+                "observacoes": "治疗基础。第1-2阶段"
+              },
+              {
+                "classe": "ICS + Formoterol",
+                "medicamentos": [
+                  "Budesonida/Formoterol 200-400/6-12mcg"
+                ],
+                "observacoes": "维持和缓解（MART）。GINA推荐首选"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "中高剂量ICS + LABA",
+                "medicamentos": [
+                  "Budesonida/Formoterol 400-800/12-24mcg"
+                ],
+                "observacoes": "第3-4阶段"
+              },
+              {
+                "classe": "LAMA",
+                "medicamentos": [
+                  "Tiot罗皮 5mcg (Respimat)"
+                ],
+                "observacoes": "第4-5阶段附加"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "急性加重",
+                "conduta": "SABA + 口服皮质类固醇（Prednisona 40-60mg 5-7天）"
+              },
+              {
+                "situacao": "妊娠",
+                "conduta": "维持治疗。使用安全的ICS。控制是首要任务"
+              },
+              {
+                "situacao": "重症哮喘",
+                "conduta": "转诊。使用生物制剂（抗IgE，抗IL5）"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "gina-2024"
+              }
+            ]
+          },
+          "duracao": "持续治疗。控制3个月后逐步减量"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "每1-3个月直至控制，之后每3-6个月一次",
+          "examesControle": [
+            "年度肺功能测试",
+            "每次就诊时进行ACT（哮喘控制测试）",
+            "家庭峰流速监测"
+          ],
+          "metasTerapeuticas": [
+            "ACT ≥20",
+            "无急性加重",
+            "SABA <2次/月",
+            "FEV1正常或接近正常"
+          ],
+          "criteriosEncaminhamento": [
+            "难以控制的哮喘（第4-5阶段）",
+            "严重/几乎致命的急性加重",
+            "诊断怀疑",
+            "疑似职业性哮喘",
+            "需要生物制剂"
+          ],
+          "citations": [
+            {
+              "refId": "gina-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-asma",
+        "crise-asma"
+      ],
+      "medicamentos": [
+        "beclometasona",
+        "budesonida",
+        "salbutamol",
+        "formoterol"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "gina-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "respiratorio",
+        "cronica",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "pneumonia-comunitaria",
+      "titulo": "社区获得性肺炎",
+      "sinonimos": [
+        "CAP",
+        "社区肺炎",
+        "肺炎"
+      ],
+      "doid": "DOID:552",
+      "snomedCT": "385093006",
+      "meshId": "D018410",
+      "umlsCui": "C0694549",
+      "ciap2": [
+        "R81"
+      ],
+      "cid10": [
+        "J18",
+        "J15",
+        "J13",
+        "J14"
+      ],
+      "cid11": [
+        "CA40"
+      ],
+      "categoria": "respiratorio",
+      "quickView": {
+        "definicao": "在医院外获得的肺实质急性感染，以急性呼吸道症状和胸部X光新出现的浸润影为特征。",
+        "criteriosDiagnosticos": [
+          "急性症状：咳嗽、咳痰、发热、呼吸困难、胸膜性胸痛",
+          "体征：呼吸急促、啰音、管状呼吸音",
+          "胸部X光新出现的浸润影",
+          "近期无住院史（>90天内无住院超过48小时）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "适当补水",
+            "相对休息",
+            "如有发热使用退热药",
+            "监测SpO2"
+          ],
+          "farmacologico": [
+            "轻度CAP（门诊）：阿莫西林 500mg 每8小时 口服 × 5-7天",
+            "或 阿奇霉素 500mg/天 × 3-5天（如对青霉素过敏）",
+            "中度CAP：阿莫西林-克拉维酸 + 大环内酯类或呼吸喹诺酮类",
+            "疗程：5-7天（至少5天，无发热48-72小时后停药）"
+          ]
+        },
+        "metasTerapeuticas": [
+          "48-72小时内症状缓解",
+          "48-72小时内退热",
+          "影像学改善（可能需要数周）",
+          "SpO2 >90%"
+        ],
+        "examesIniciais": [
+          "胸部X光（正位和侧位）",
+          "脉搏血氧饱和度",
+          "血常规，CRP",
+          "如中度/重度需检查肾功能",
+          "如SpO2 <92%需进行血气分析"
+        ],
+        "redFlags": [
+          "SpO2 <90%（在空气中）",
+          "低血压（收缩压 <90）",
+          "精神错乱",
+          "呼吸频率 >30次/分钟",
+          "尿素 >50 mg/dL",
+          "大量胸腔积液",
+          "多叶浸润"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "常见的就诊和住院原因",
+          "incidencia": "5-11例/1000人/年",
+          "faixaEtaria": "所有年龄段，老年人和儿童病情更严重",
+          "fatoresRisco": [
+            "年龄 >65岁",
+            "慢性阻塞性肺疾病，哮喘",
+            "心力衰竭",
+            "糖尿病",
+            "免疫抑制",
+            "吸烟，酗酒",
+            "机构化生活"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "由微生物（细菌、病毒、真菌）引起的肺实质感染。最常见的病原体是肺炎链球菌、流感嗜血杆菌、肺炎支原体和呼吸道病毒。炎症反应导致肺泡实变和气体交换受损。",
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "咳嗽（通常有痰）",
+            "发热（老年人可能无发热）",
+            "呼吸困难",
+            "胸膜性胸痛",
+            "寒战",
+            "全身不适"
+          ],
+          "sinaisExameFisico": [
+            "呼吸急促（呼吸频率 >20次/分钟）",
+            "发热",
+            "细湿啰音",
+            "管状呼吸音（实变）",
+            "叩诊浊音",
+            "胸语音增强"
+          ],
+          "formasClinicas": [
+            "典型CAP：急性起病，高热，有痰咳嗽",
+            "非典型CAP：隐匿起病，干咳，肺外表现"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "临床表现符合",
+            "胸部X光新出现的浸润影",
+            "排除其他原因"
+          ],
+          "diagnosticoDiferencial": [
+            "急性支气管炎",
+            "慢性阻塞性肺疾病/哮喘急性加重",
+            "心力衰竭",
+            "肺栓塞",
+            "结核病",
+            "肺癌"
+          ],
+          "examesLaboratoriais": [
+            "胸部X光",
+            "血常规",
+            "CRP或降钙素原",
+            "尿素，肌酐",
+            "血培养（如住院）",
+            "尿抗原检测（肺炎链球菌、军团菌）如病情严重"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "根除病原体",
+            "缓解症状",
+            "预防并发症",
+            "避免抗菌药物耐药"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "补水",
+              "休息",
+              "如SpO2 <90%给予氧气治疗",
+              "镇痛药/退热药"
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-pac-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "β-内酰胺类",
+                "medicamentos": [
+                  "阿莫西林",
+                  "阿莫西林-克拉维酸"
+                ],
+                "posologia": "阿莫西林 500mg 每8小时 口服 × 5-7天"
+              },
+              {
+                "classe": "大环内酯类（替代或联合用药）",
+                "medicamentos": [
+                  "阿奇霉素",
+                  "克拉霉素"
+                ],
+                "posologia": "阿奇霉素 500mg/天 × 3-5天"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "青霉素过敏",
+                "conduta": "阿奇霉素或呼吸喹诺酮类（左氧氟沙星）"
+              },
+              {
+                "situacao": "重症CAP（住院）",
+                "conduta": "阿莫西林-克拉维酸 静脉注射 + 阿奇霉素或静脉注射喹诺酮类"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-pac-2022"
+              }
+            ]
+          },
+          "duracao": "5-7天（至少5天，无发热48-72小时后停药）"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "门诊患者48-72小时后复诊",
+          "examesControle": [
+            "4-6周后复查胸部X光（如年龄 >50岁或吸烟者）",
+            "如48-72小时内未见好转需重新评估"
+          ],
+          "metasTerapeuticas": [
+            "48-72小时内退热",
+            "呼吸症状改善"
+          ],
+          "criteriosEncaminhamento": [
+            "CURB-65 ≥2（考虑住院）",
+            "SpO2 <90%",
+            "并发症（胸腔积液、脓肿）",
+            "门诊治疗失败"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "肺炎球菌疫苗接种（>65岁及高危人群）",
+            "每年接种流感疫苗",
+            "戒烟"
+          ],
+          "secundaria": [
+            "适当治疗呼吸道感染",
+            "CAP后接种疫苗"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-pac-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-pac"
+      ],
+      "medicamentos": [
+        "amoxicilina",
+        "azitromicina",
+        "levofloxacino"
+      ],
+      "calculadoras": [
+        "curb-65",
+        "psi-port"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "sbpt-pac-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "pneumonia",
+        "pac",
+        "infeccao-respiratoria",
+        "tosse",
+        "febre"
+      ]
+    },
+    {
+      "id": "rinite-alergica",
+      "titulo": "过敏性鼻炎",
+      "sinonimos": [
+        "常年性过敏性鼻炎",
+        "季节性过敏性鼻炎",
+        "花粉症"
+      ],
+      "ciap2": [
+        "R97"
+      ],
+      "cid10": [
+        "J30"
+      ],
+      "cid11": [
+        "CA08.0"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:8819",
+      "snomedCT": "47758005",
+      "meshId": "D012221",
+      "umlsCui": "C0035384",
+      "hpo": [
+        "HP:0002197",
+        "HP:0000422"
+      ],
+      "tags": [
+        "respiratorio",
+        "过敏",
+        "常见"
+      ],
+      "quickView": {
+        "definicao": "由IgE介导的鼻黏膜炎症，由过敏原触发。症状：流涕、打喷嚏、鼻痒、鼻塞。",
+        "criteriosDiagnosticos": [
+          "水样鼻涕",
+          "打喷嚏",
+          "鼻/眼痒",
+          "鼻塞",
+          "已知过敏原引起的症状",
+          "皮肤测试或特异性IgE阳性"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免过敏原",
+            "用生理盐水冲洗鼻腔",
+            "如有指征，进行抗过敏疫苗（免疫疗法）"
+          ],
+          "farmacologico": [
+            "口服抗组胺药：西替利嗪 10mg/天 或 氯雷他定 10mg/天",
+            "鼻用皮质类固醇：布地奈德或氟替卡松",
+            "必要时使用鼻用抗组胺药"
+          ]
+        },
+        "redFlags": [
+          "鼻窦炎",
+          "单侧鼻塞",
+          "持续性鼻出血",
+          "鼻息肉"
+        ]
+      },
+      "medicamentos": [
+        "cetirizine",
+        "loratadine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "ivas-pediatrica",
+      "titulo": "IVAS（上呼吸道感染）",
+      "ciap2": [
+        "R74"
+      ],
+      "cid10": [
+        "J00",
+        "J06"
+      ],
+      "cid11": [
+        "CA07"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:0050117",
+      "snomedCT": "54150009",
+      "meshId": "D012141",
+      "umlsCui": "C0041912",
+      "quickView": {
+        "definicao": "普通感冒。最常见的儿科就诊原因。病毒性病因（>200种病毒）。通常在7-10天内自限。",
+        "criteriosDiagnosticos": [
+          "清水样鼻涕 → 脓性鼻涕",
+          "鼻塞",
+          "低热",
+          "干咳/有痰咳嗽"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "用生理盐水冲洗鼻腔",
+            "保持水分",
+            "抬高头部",
+            "1岁以上儿童使用蜂蜜缓解咳嗽"
+          ],
+          "farmacologico": [
+            "发热时使用退热药",
+            "不使用<6岁儿童的去充血剂",
+            "不使用止咳药"
+          ]
+        },
+        "redFlags": [
+          "发热>72小时或反复出现",
+          "呼吸困难",
+          "初始好转后病情恶化",
+          "耳痛"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [
+        "ivas"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "asma-infantil",
+      "titulo": "儿童哮喘",
+      "ciap2": [
+        "R96"
+      ],
+      "cid10": [
+        "J45"
+      ],
+      "cid11": [
+        "CA23"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:2841",
+      "snomedCT": "195967001",
+      "meshId": "D001249",
+      "umlsCui": "C0004096",
+      "quickView": {
+        "definicao": "气道的慢性炎症性疾病，伴有反复发作的喘息。5岁以下儿童诊断具有挑战性。是儿童最常见的慢性疾病。",
+        "criteriosDiagnosticos": [
+          "反复喘息（≥3次）",
+          "夜间/晨间咳嗽",
+          "活动时呼吸困难",
+          "使用支气管扩张剂后症状改善",
+          "改良的哮喘预测指数（<5岁预测）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "环境控制",
+            "避免被动吸烟",
+            "按时接种疫苗"
+          ],
+          "farmacologico": [
+            "轻度间歇：按需使用SABA",
+            "持续性：低剂量ICS（布地奈德100-200mcg）",
+            "如未控制则升级治疗"
+          ]
+        },
+        "redFlags": [
+          "发绀",
+          "辅助肌使用",
+          "说话困难",
+          "SpO2 <92%",
+          "胸部沉默"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol",
+        "budesonida",
+        "prednisolona"
+      ],
+      "protocolos": [
+        "asma-exacerbacao"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "sinusite-aguda",
+      "titulo": "急性鼻窦炎",
+      "ciap2": [
+        "R75"
+      ],
+      "cid10": [
+        "J01"
+      ],
+      "cid11": [
+        "CA12"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:0050127",
+      "snomedCT": "15805002",
+      "meshId": "D012852",
+      "umlsCui": "C0037199",
+      "quickView": {
+        "definicao": "鼻旁窦的炎症，通常为病毒性。持续时间<4周。如果症状>10天或在初始改善后恶化，则为细菌性。",
+        "criteriosDiagnosticos": [
+          "鼻塞",
+          "脓性鼻漏",
+          "面部疼痛/压力",
+          "嗅觉减退",
+          "持续7-10天（病毒性）或>10天（细菌性）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "用生理盐水冲洗鼻腔",
+            "保持水分",
+            "空气加湿"
+          ],
+          "farmacologico": [
+            "对症治疗：镇痛药 + 局部去充血剂（最多使用5天）",
+            "如为细菌性：阿莫西林 500mg 每8小时 7-10天"
+          ]
+        },
+        "redFlags": [
+          "眶周水肿",
+          "视力改变",
+          "剧烈头痛",
+          "脑膜刺激征"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "paracetamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "faringite-aguda",
+      "titulo": "急性咽炎",
+      "ciap2": [
+        "R72"
+      ],
+      "cid10": [
+        "J02"
+      ],
+      "cid11": [
+        "CA02"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:974",
+      "snomedCT": "363746003",
+      "meshId": "D010612",
+      "umlsCui": "C0031350",
+      "quickView": {
+        "definicao": "咽部炎症。大多数为病毒性（70-90%）。链球菌性（GABHS）占儿童的15-30%，成人的5-15%。",
+        "criteriosDiagnosticos": [
+          "咽喉痛",
+          "咽部充血",
+          "扁桃体渗出物",
+          "颈部淋巴结肿大",
+          "改良Centor标准"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "镇痛药（对乙酰氨基酚/布洛芬）",
+            "温盐水漱口"
+          ],
+          "farmacologico": [
+            "病毒性：仅对症治疗",
+            "细菌性（GABHS）：青霉素V 250-500mg 每6小时 10天 或 阿莫西林 500mg 每8小时"
+          ]
+        },
+        "redFlags": [
+          "张口困难",
+          "悬雍垂偏移",
+          "喘鸣",
+          "周围扁桃体脓肿"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquite-aguda",
+      "titulo": "急性支气管炎",
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J20"
+      ],
+      "cid11": [
+        "CA20"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:6132",
+      "snomedCT": "32398004",
+      "meshId": "D001991",
+      "umlsCui": "C0006267",
+      "quickView": {
+        "definicao": "持续时间<3周的支气管炎症。通常为病毒性（90%）。咳嗽可能持续2-3周。",
+        "criteriosDiagnosticos": [
+          "有痰咳嗽",
+          "无肺炎证据",
+          "持续时间<3周",
+          "上呼吸道症状"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "补水",
+            "休息",
+            "避免刺激物"
+          ],
+          "farmacologico": [
+            "对症治疗：如果干咳影响睡眠，可使用止咳药",
+            "不常规使用抗生素",
+            "如果有哮鸣音，可使用支气管扩张剂（沙丁胺醇吸入剂）"
+          ]
+        },
+        "redFlags": [
+          "咳嗽>3周",
+          "肺炎迹象",
+          "咯血",
+          "呼吸困难"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquite-cronica",
+      "titulo": "慢性支气管炎",
+      "sinonimos": [
+        "单纯性慢性支气管炎",
+        "慢性阻塞性肺疾病 - 支气管型"
+      ],
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J41"
+      ],
+      "cid11": [
+        "CA22.0"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:6132",
+      "snomedCT": "13645005",
+      "meshId": "D001991",
+      "umlsCui": "C0006277",
+      "tags": [
+        "chronic",
+        "respiratorio",
+        "smoking"
+      ],
+      "quickView": {
+        "definicao": "每年至少3个月，连续2年或以上出现咳嗽和咳痰，排除其他原因。常与吸烟有关。",
+        "criteriosDiagnosticos": [
+          "每年至少3个月的多痰咳嗽",
+          "连续2年或以上",
+          "排除其他原因（如结核、支气管扩张等）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "戒烟",
+            "疫苗接种（流感、肺炎）",
+            "肺康复"
+          ],
+          "farmacologico": [
+            "吸入支气管扩张剂：沙丁胺醇喷雾 2喷 每日4次",
+            "如有频繁症状：加用吸入皮质类固醇"
+          ]
+        },
+        "redFlags": [
+          "咯血",
+          "体重下降",
+          "持续发热",
+          "进行性呼吸困难"
+        ]
+      },
+      "medicamentos": [
+        "salbutamol",
+        "budesonida"
+      ],
+      "protocolos": [
+        "dpoc"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "enfisema-pulmonar",
+      "titulo": "肺气肿",
+      "ciap2": [
+        "R95"
+      ],
+      "cid10": [
+        "J43"
+      ],
+      "cid11": [
+        "CA22.1"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:3119",
+      "snomedCT": "196494001",
+      "meshId": "D004656",
+      "umlsCui": "C0014120",
+      "tags": [
+        "慢性",
+        "呼吸系统",
+        "慢性阻塞性肺疾病"
+      ],
+      "quickView": {
+        "definicao": "肺泡永久性破坏伴过度充气。慢性阻塞性肺疾病的肺气肿型。",
+        "criteriosDiagnosticos": [
+          "进行性呼吸困难",
+          "桶状胸",
+          "呼吸音减弱",
+          "X线：过度充气"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "戒烟",
+            "如果SpO2 <88%，进行氧疗",
+            "肺康复"
+          ],
+          "farmacologico": [
+            "支气管扩张剂：噻托溴铵 18mcg 每日一次",
+            "如有急性加重：加用吸入皮质类固醇"
+          ]
+        },
+        "redFlags": [
+          "呼吸衰竭",
+          "气胸",
+          "显著体重下降"
+        ]
+      },
+      "medicamentos": [
+        "tiotropio"
+      ],
+      "protocolos": [
+        "dpoc"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "tosse-cronica",
+      "titulo": "慢性咳嗽",
+      "sinonimos": [
+        "持续性咳嗽"
+      ],
+      "ciap2": [
+        "R05"
+      ],
+      "cid10": [
+        "R05"
+      ],
+      "cid11": [
+        "MD11.1"
+      ],
+      "categoria": "respiratorio",
+      "doid": "DOID:12759",
+      "snomedCT": "49727002",
+      "meshId": "D003371",
+      "umlsCui": "C0010200",
+      "tags": [
+        "respiratorio",
+        "症状",
+        "慢性"
+      ],
+      "quickView": {
+        "definicao": "持续超过8周的咳嗽。主要病因：鼻后滴漏综合征、哮喘、GERD、使用ACE抑制剂。",
+        "criteriosDiagnosticos": [
+          "咳嗽超过8周",
+          "调查病因：GERD、哮喘、鼻炎、ACE抑制剂",
+          "胸部X光正常",
+          "排除其他病因"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "治疗潜在病因",
+            "如果近期使用ACE抑制剂，停用",
+            "避免刺激物"
+          ],
+          "farmacologico": [
+            "如果是GERD：质子泵抑制剂",
+            "如果是哮喘：支气管扩张剂 + 吸入性皮质类固醇",
+            "如果是鼻炎：抗组胺药 + 鼻用皮质类固醇",
+            "仅在必要时短期使用可待因或右美沙芬"
+          ]
+        },
+        "redFlags": [
+          "出血",
+          "体重下降",
+          "发热",
+          "淋巴结肿大",
+          "吸烟",
+          "年龄>50岁"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

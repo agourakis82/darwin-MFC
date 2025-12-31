@@ -1,0 +1,2390 @@
+{
+  "locale": "zh",
+  "category": "neurologico",
+  "generatedAt": "2025-12-30T12:23:17.431Z",
+  "count": 18,
+  "diseases": [
+    {
+      "id": "enxaqueca",
+      "titulo": "偏头痛（Migrânea）",
+      "sinonimos": [
+        "Migrânea",
+        "头痛",
+        "Migraine"
+      ],
+      "doid": "DOID:6364",
+      "snomedCT": "37796009",
+      "meshId": "D008881",
+      "umlsCui": "C0149931",
+      "ciap2": [
+        "N89"
+      ],
+      "cid10": [
+        "G43",
+        "G43.0",
+        "G43.1",
+        "G43.9"
+      ],
+      "cid11": [
+        "8A80"
+      ],
+      "categoria": "neurologico",
+      "quickView": {
+        "definicao": "原发性反复发作的头痛，特征为搏动性疼痛，通常单侧，中到重度，伴有恶心、畏光和畏声。可能有先兆。",
+        "criteriosDiagnosticos": [
+          "ICHD-3标准（无先兆偏头痛）：",
+          "≥5次发作，持续4-72小时",
+          "≥2项：单侧、搏动性、中/重度、体力活动加重",
+          "≥1项：恶心/呕吐，畏光和畏声",
+          "不能归因于其他疾病",
+          "",
+          "先兆：完全可逆的视觉、感觉或言语症状（5-60分钟）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "识别并避免触发因素（压力、饥饿、睡眠不足、酒精）",
+            "睡眠卫生",
+            "规律的体育活动",
+            "放松技巧",
+            "头痛日记"
+          ],
+          "farmacologico": [
+            "急性期（止痛）：",
+            "简单镇痛药：对乙酰氨基酚 1g 或安乃近 1g（轻度发作）",
+            "非甾体抗炎药：布洛芬 400-600mg 或萘普生 500-550mg",
+            "曲坦类（中/重度）：舒马曲坦 50-100mg 口服或 6mg 皮下注射",
+            "",
+            "预防（≥4次/月或致残）：",
+            "普萘洛尔 40-160mg/天 或 阿米替林 25-75mg/晚",
+            "托吡酯 50-100mg/天 或 丙戊酸 500-1500mg/天"
+          ]
+        },
+        "metasTerapeuticas": [
+          "发作频率减少≥50%",
+          "减轻发作强度和持续时间",
+          "提高生活质量（MIDAS/HIT-6）",
+          "避免过度使用镇痛药引起的头痛"
+        ],
+        "examesIniciais": [
+          "临床诊断（无特定检查）",
+          "神经影像学（CT/MRI）如果：起病年龄>50岁，非典型头痛，局灶性神经体征，模式改变，雷击样头痛"
+        ],
+        "redFlags": [
+          "“一生中最严重的”或雷击样头痛（蛛网膜下腔出血）",
+          "持续的局灶性神经体征",
+          "发热+颈项强直（脑膜炎）",
+          "视盘水肿（颅内高压）",
+          "头痛模式突然改变",
+          "50岁以后起病（颞动脉炎）",
+          "免疫抑制或癌症"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "女性15%，男性6%",
+          "incidencia": "发病高峰在30-40岁",
+          "faixaEtaria": "通常在青少年/年轻成人期开始",
+          "fatoresRisco": [
+            "女性（3:1）",
+            "家族史（40-60%）",
+            "激素变化（月经、避孕药）",
+            "压力",
+            "睡眠障碍",
+            "肥胖"
+          ],
+          "citations": [
+            {
+              "refId": "ichd-3"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "涉及三叉神经血管系统的激活，释放血管活性神经肽（CGRP）和神经源性炎症。皮层扩散性抑制解释了先兆。中枢敏化导致慢性化。",
+          "citations": [
+            {
+              "refId": "ichd-3"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "搏动性疼痛，通常为单侧",
+            "中到重度",
+            "持续4-72小时",
+            "恶心和/或呕吐",
+            "畏光和畏声",
+            "日常体力活动加重"
+          ],
+          "sinaisExameFisico": [
+            "间歇期神经检查正常",
+            "发作期间可能出现皮肤痛觉过敏",
+            "视觉先兆（暗点、闪光、偏盲）"
+          ],
+          "formasClinicas": [
+            "无先兆偏头痛（最常见）",
+            "有先兆偏头痛",
+            "慢性偏头痛（≥15天/月超过3个月）",
+            "月经性偏头痛",
+            "前庭性偏头痛"
+          ],
+          "citations": [
+            {
+              "refId": "ichd-3"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "ICHD-3标准（临床）",
+            "头痛日记以描述特征",
+            "神经影像学排除继发性原因"
+          ],
+          "diagnosticoDiferencial": [
+            "紧张型头痛",
+            "丛集性头痛",
+            "药物过度使用性头痛",
+            "蛛网膜下腔出血",
+            "颞动脉炎",
+            "脑肿瘤",
+            "脑静脉血栓形成"
+          ],
+          "examesLaboratoriais": [
+            "无实验室诊断检查",
+            "血常规、ESR（怀疑颞动脉炎）",
+            "腰椎穿刺（怀疑蛛网膜下腔出血或脑膜炎）"
+          ],
+          "citations": [
+            {
+              "refId": "ichd-3"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "迅速终止发作",
+            "减少发作频率和严重程度",
+            "提高生活质量",
+            "预防慢性化"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "避免已识别的触发因素",
+              "规律的睡眠和饮食",
+              "规律的体育锻炼",
+              "放松技巧/生物反馈",
+              "认知行为疗法管理压力"
+            ],
+            "citations": [
+              {
+                "refId": "abs-cefaleia-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "镇痛药/非甾体抗炎药（轻中度发作）",
+                "medicamentos": [
+                  "对乙酰氨基酚",
+                  "安乃近",
+                  "布洛芬",
+                  "萘普生"
+                ],
+                "posologia": "布洛芬 400-600mg 或 萘普生 500mg。在发作早期使用。"
+              },
+              {
+                "classe": "曲坦类（中重度发作）",
+                "medicamentos": [
+                  "舒马曲坦",
+                  "利扎曲坦",
+                  "佐米曲坦"
+                ],
+                "posologia": "舒马曲坦 50-100mg 口服，2小时后可重复（最大200mg/天）。"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "预防性β受体阻滞剂",
+                "medicamentos": [
+                  "普萘洛尔",
+                  "阿替洛尔"
+                ],
+                "posologia": "普萘洛尔 40-160mg/天。禁忌症：哮喘、心动过缓。"
+              },
+              {
+                "classe": "预防性抗抑郁药",
+                "medicamentos": [
+                  "阿米替林",
+                  "诺米替林"
+                ],
+                "posologia": "阿米替林 25-75mg 晚上。适用于失眠或抑郁。"
+              },
+              {
+                "classe": "预防性抗癫痫药",
+                "medicamentos": [
+                  "托吡酯",
+                  "丙戊酸"
+                ],
+                "posologia": "托吡酯 50-100mg/天。可能导致体重减轻。"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "难治性慢性偏头痛",
+                "conduta": "A型肉毒杆菌毒素。抗CGRP抗体（埃瑞纳单抗，弗雷马单抗）。"
+              },
+              {
+                "situacao": "孕妇",
+                "conduta": "对乙酰氨基酚作为镇痛药。普萘洛尔可用作预防药。避免麦角胺和非甾体抗炎药在第三孕期使用。"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "abs-cefaleia-2022"
+              }
+            ]
+          },
+          "duracao": "预防：至少6个月，逐渐减量。"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "每月直至控制，之后每3-6个月一次",
+          "examesControle": [
+            "头痛日记",
+            "残疾量表（MIDAS，HIT-6）"
+          ],
+          "metasTerapeuticas": [
+            "发作频率减少≥50%",
+            "MIDAS <11（轻度残疾）"
+          ],
+          "criteriosEncaminhamento": [
+            "对≥2种预防药无效",
+            "慢性偏头痛",
+            "警报信号",
+            "需要抗CGRP治疗"
+          ],
+          "citations": [
+            {
+              "refId": "abs-cefaleia-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "健康生活方式",
+            "压力管理"
+          ],
+          "secundaria": [
+            "识别并避免触发因素",
+            "必要时进行药物预防"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "cefaleia-alarme"
+      ],
+      "medicamentos": [
+        "sumatriptano",
+        "ibuprofeno",
+        "propranolol",
+        "amitriptilina",
+        "topiramato"
+      ],
+      "calculadoras": [
+        "midas",
+        "hit-6"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ichd-3"
+        },
+        {
+          "refId": "abs-cefaleia-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "enxaqueca",
+        "头痛",
+        "migranea",
+        "triptano",
+        "profilaxia"
+      ]
+    },
+    {
+      "id": "cefaleia-tensional",
+      "titulo": "紧张型头痛",
+      "categoria": "neurologico",
+      "cid10": [
+        "G44.2"
+      ],
+      "cid11": [
+        "8A81"
+      ],
+      "ciap2": [
+        "N89"
+      ],
+      "snomedCT": "398057008",
+      "doid": "DOID:9565",
+      "meshId": "D018781",
+      "umlsCui": "C0033893",
+      "classificacao": {
+        "tipo": "头痛",
+        "subtipo": "原发性",
+        "classificacaoEspecifica": {
+          "sistema": "ICHD-3",
+          "codigo": "2.1",
+          "descricao": "发作性紧张型头痛"
+        }
+      },
+      "quickView": {
+        "definicao": "以压迫/紧缩感为特征的原发性头痛，双侧分布，轻至中度疼痛，不因体力活动而加重。",
+        "criteriosDiagnosticos": [
+          "≥10次头痛发作",
+          "持续时间：30分钟至7天",
+          "≥2项：双侧，压迫/紧缩感，轻至中度强度，不因体力活动而加重",
+          "无恶心/呕吐",
+          "畏光或畏声（但不是两者都有）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "识别并减少压力源",
+            "放松技巧",
+            "肌肉紧张的物理治疗",
+            "定期体育锻炼"
+          ],
+          "farmacologico": [
+            "急性发作：对乙酰氨基酚 1g 或非甾体抗炎药（布洛芬 400mg，萘普生 500mg）",
+            "预防（如频繁发作）：阿米替林 10-75mg/天"
+          ]
+        },
+        "redFlags": [
+          "突然且严重的头痛发作（蛛网膜下腔出血）",
+          "伴有发热和颈部僵硬的头痛（脑膜炎）",
+          "早晨加重的头痛（颅内高压）",
+          "头痛模式改变"
+        ],
+        "examesIniciais": [
+          "全面神经学检查",
+          "血压"
+        ]
+      },
+      "sinaisNeurologicos": [
+        "颅周肌肉紧张",
+        "触痛敏感"
+      ],
+      "tags": [
+        "头痛",
+        "紧张型",
+        "原发性",
+        "阿米替林"
+      ]
+    },
+    {
+      "id": "acidente-vascular-cerebral",
+      "titulo": "Acidente Vascular Cerebral Isquêmico",
+      "sinonimos": [
+        "AVC",
+        "AVCi",
+        "Derrame",
+        "Stroke",
+        "Infarto cerebral"
+      ],
+      "doid": "DOID:3455",
+      "snomedCT": "422504002",
+      "meshId": "D002544",
+      "umlsCui": "C0038454",
+      "ciap2": [
+        "K90"
+      ],
+      "cid10": [
+        "I63",
+        "I64"
+      ],
+      "cid11": [
+        "8B11"
+      ],
+      "categoria": "neurologico",
+      "quickView": {
+        "definicao": "\\u00c0rteso neurológico focal de inÇó sóbito causado por isquémia cerebral (oclusão arterial por trombose ou embolia). EmergÃncia médica - “tempo é cérebro”. Tratável com trombólise se <4,5h do inÇó.",
+        "criteriosDiagnosticos": [
+          "\\u00c0rteso neurológico focal de inÇó sóbito:",
+          "Hemiparesia/hemiplegia",
+          "Alteração de fala (afasia, disartria)",
+          "Alteração visual (hemianopsia)",
+          "Ataxia, vertigem",
+          "",
+          "TC de crânio sem contraste: exclui hemorragia, pode mostrar sinais precoces de isquemia"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "EMERGÊNCIA: Chamar SAMU (192)",
+            "Tempo de início dos sintomas (fundamental!)",
+            "Manter via aérea pérvia",
+            "Oximetria, monitorização",
+            "Glicemia capilar (tratar hipo/hiperglicemia)",
+            "Não baixar PA agressivamente (exceto se >220/120)"
+          ],
+          "farmacologico": [
+            "TROMBÓLISE IV (se <4,5h do início e sem CI):",
+            "Alteplase (rtPA) 0,9 mg/kg (máx 90mg) - 10% bolus + 90% em 1h",
+            "",
+            "TROMBECTOMIA MECÂNICA: até 24h em casos selecionados (oclusão de grande vaso)",
+            "",
+            "PREVENÇÃO SECUNDÁRIA:",
+            "AAS 100-300mg/dia + Estatina alta potência",
+            "Anticoagulação se FA (após 2-14 dias): Apixabana, Rivaroxabana"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Porta-agulha <60 min (trombólise)",
+          "Minimizar déficit neurológico residual",
+          "Prevenir complicações (pneumonia, TVP)",
+          "Prevenir recorrência"
+        ],
+        "examesIniciais": [
+          "TC de crânio sem contraste (IMEDIATA)",
+          "Glicemia capilar",
+          "ECG (FA?)",
+          "TP, TTPa, plaquetas (antes de trombolítico)",
+          "Hemograma, eletrólitos, função renal",
+          "AngioTC se candidato a trombectomia"
+        ],
+        "redFlags": [
+          "\\u00c0rteso neurológico focal sóbito = AVC até prova em contrário",
+          "FAST: Face (assimetria), Arms (fraqueza braço), Speech (fala arrastada), Time (ligar 192)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2-3% da população já teve AVC",
+          "incidencia": "200-300 casos/100.000 habitantes/ano no Brasil",
+          "faixaEtaria": "Aumenta com idade, mas pode ocorrer em jovens",
+          "fatoresRisco": [
+            "Hipertensão arterial (principal - 70% dos AVCs)",
+            "Fibrilação atrial (cardioembólico)",
+            "Diabetes mellitus",
+            "Dislipidemia",
+            "Tabagismo",
+            "Obesidade",
+            "Sedentarismo",
+            "AVC prévio ou AIT"
+          ],
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Oclusão arterial (trombótica ou embólica) causa isquemia do território irrigado. Núcleo isquêmico sofre necrose rapidamente. Penumbra isquêmica é potencialmente salvável com reperfusão precoce. Cascata isquêmica com excitotoxicidade, inflamação e apoptose.",
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Hemiparesia ou hemiplegia súbita",
+            "Alteração de fala (afasia, disartria)",
+            "Hemianestesia",
+            "Hemianopsia",
+            "Confusão mental",
+            "Ataxia, vertigem (AVC de fossa posterior)"
+          ],
+          "sinaisExameFisico": [
+            "Déficit motor assimétrico",
+            "Reflexos alterados (hiperreflexia, Babinski)",
+            "Paralisia facial central",
+            "Desvio do olhar conjugado",
+            "Alteração de sensibilidade",
+            "NIHSS para quantificar gravidade"
+          ],
+          "formasClinicas": [
+            "AVC isquêmico (85%): territorial, lacunar, hemodinâmico",
+            "AVC hemorrágico (15%): hemorragia intraparenquimatosa, HSA",
+            "AIT: déficit <24h (geralmente minutos), sem lesão em imagem"
+          ],
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínico + neuroimagem",
+            "TC sem contraste: exclui hemorragia",
+            "RM (difusão): mais sensível para isquemia precoce"
+          ],
+          "diagnosticoDiferencial": [
+            "Hipoglicemia",
+            "Crise epiléptica (paralisia de Todd)",
+            "Enxaqueca com aura",
+            "Tumor cerebral",
+            "Encefalite",
+            "Conversão"
+          ],
+          "examesLaboratoriais": [
+            "Glicemia (obrigatório antes de trombolítico)",
+            "Hemograma, coagulação, função renal",
+            "ECG, ecocardiograma",
+            "Doppler de carótidas",
+            "Holter se suspeita de FA paroxística"
+          ],
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Reperfusão precoce",
+            "Minimizar lesão cerebral",
+            "Prevenir complicações",
+            "Reabilitar"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Unidade de AVC (reduz mortalidade)",
+              "Posicionamento (cabeceira 30°)",
+              "Prevenção de broncoaspiração",
+              "Fisioterapia precoce",
+              "Fonoaudiologia (disfagia)",
+              "Controle de temperatura e glicemia"
+            ],
+            "citations": [
+              {
+                "refId": "aha-stroke-2019"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Trombólise IV",
+                "medicamentos": [
+                  "Alteplase"
+                ],
+                "posologia": "rtPA 0,9 mg/kg (máx 90mg). 10% bolus, 90% em 1h. Janela <4,5h."
+              },
+              {
+                "classe": "Antiagregante plaquetário",
+                "medicamentos": [
+                  "AAS",
+                  "Clopidogrel"
+                ],
+                "posologia": "AAS 100-300mg/dia. Se não trombólise: iniciar em 24-48h."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Estatina de alta potência",
+                "medicamentos": [
+                  "Atorvastatina",
+                  "Rosuvastatina"
+                ],
+                "posologia": "Atorvastatina 40-80mg/dia. Iniciar precocemente."
+              },
+              {
+                "classe": "Anticoagulante (se FA)",
+                "medicamentos": [
+                  "Apixabana",
+                  "Rivaroxabana",
+                  "Dabigatrana"
+                ],
+                "posologia": "Iniciar após 2-14 dias (conforme tamanho do AVC). Apixabana 5mg 12/12h."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Oclusão de grande vaso",
+                "conduta": "Trombectomia mecânica até 24h (seleção por imagem)."
+              },
+              {
+                "situacao": "AVC hemorrágico",
+                "conduta": "Controle de PA, reverter anticoagulação, neurocirurgia se indicado."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "aha-stroke-2019"
+              }
+            ]
+          },
+          "duracao": "Prevenção secundária: indefinida."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Mensal nos primeiros 3 meses, depois trimestral",
+          "examesControle": [
+            "RM de controle",
+            "Doppler de carótidas",
+            "Perfil lipídico",
+            "HbA1c, PA"
+          ],
+          "metasTerapeuticas": [
+            "PA <130/80 mmHg",
+            "LDL <70 mg/dL",
+            "HbA1c <7%",
+            "Ausência de recorrência"
+          ],
+          "criteriosEncaminhamento": [
+            "Neurologia para todos",
+            "Reabilitação multidisciplinar",
+            "Cirurgia vascular se estenose carotídea >70%"
+          ],
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Controle de HAS, DM, dislipidemia",
+            "Cessação do tabagismo",
+            "Anticoagulação se FA"
+          ],
+          "secundaria": [
+            "Antiagregantes ou anticoagulantes",
+            "Estatinas",
+            "Controle intensivo de fatores de risco"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "nihss",
+        "avc-agudo"
+      ],
+      "medicamentos": [
+        "alteplase",
+        "aas",
+        "clopidogrel",
+        "atorvastatina",
+        "apixabana"
+      ],
+      "calculadoras": [
+        "nihss",
+        "cha2ds2-vasc",
+        "has-bled"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "aha-stroke-2019"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "avc",
+        "derrame",
+        "stroke",
+        "trombólise",
+        "emergência"
+      ]
+    },
+    {
+      "id": "epilepsia",
+      "titulo": "癫痫",
+      "sinonimos": [
+        "抽搐",
+        "癫痫发作",
+        "癫痫综合征"
+      ],
+      "doid": "DOID:1826",
+      "snomedCT": "84757009",
+      "meshId": "D004827",
+      "umlsCui": "C0014544",
+      "ciap2": [
+        "N88"
+      ],
+      "cid10": [
+        "G40",
+        "G41"
+      ],
+      "cid11": [
+        "8A60"
+      ],
+      "categoria": "neurologico",
+      "quickView": {
+        "definicao": "一种脑部疾病，特征为持续性产生癫痫发作的倾向及其神经生物学、认知、心理和社会后果。诊断标准：≥2次非诱发性发作且间隔>24小时，或1次发作+复发风险>60%。",
+        "criteriosDiagnosticos": [
+          "ILAE 2014定义:",
+          "≥2次非诱发性（或反射性）发作且间隔>24小时，或",
+          "1次非诱发性发作+复发概率≥60%（如：结构性损伤，癫痫样EEG），或",
+          "诊断为癫痫综合征"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "疾病教育",
+            "避免睡眠剥夺和酒精",
+            "安全措施（浴室门敞开，不单独游泳）",
+            "驾驶限制（根据法律规定）"
+          ],
+          "farmacologico": [
+            "局灶性发作：卡马西平 400-1200mg/天 或 拉莫三嗪 100-400mg/天",
+            "全面性发作：丙戊酸钠 500-2000mg/天（注意女性患者） 或 拉莫三嗪",
+            "老年人：拉莫三嗪或左乙拉西坦（较少相互作用）",
+            "从低剂量开始，逐渐增加",
+            "尽可能单药治疗"
+          ]
+        },
+        "metasTerapeuticas": [
+          "完全控制发作（70%的患者）",
+          "最小化不良反应",
+          "维持生活质量",
+          "可能停药（选择性病例）"
+        ],
+        "examesIniciais": [
+          "EEG（间歇期可能正常）",
+          "颅脑MRI（癫痫协议）",
+          "基本实验室检查（电解质、血糖、肝肾功能）",
+          "ECG（长QT综合征）",
+          "如有诊断疑问，考虑视频EEG"
+        ],
+        "redFlags": [
+          "癫痫持续状态（发作>5分钟或连续发作）",
+          "成人首次发作（需调查原因）",
+          "难治性发作（≥2种抗癫痫药物无效）",
+          "持续性发作后神经功能缺损",
+          "疑似结构性损伤（肿瘤、卒中）"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "0.5-1%的人口",
+          "incidencia": "50-70例新发病例/10万人年",
+          "faixaEtaria": "双峰分布：儿童和>60岁",
+          "fatoresRisco": [
+            "结构性脑损伤（卒中、TBI、肿瘤）",
+            "中枢神经系统感染（脑膜炎、脑炎）",
+            "家族史",
+            "皮层发育异常",
+            "海马硬化",
+            "神经退行性疾病"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "过度同步的神经元放电，由兴奋（谷氨酸）和抑制（GABA）之间的失衡引起。可以起源于皮层病灶（局灶性）或从一开始就涉及双侧半球（全面性）。",
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "局灶性发作：先兆，自动症，意识改变",
+            "全面性强直-阵挛发作：意识丧失，僵硬，抽搐",
+            "失神发作：短暂意识丧失，茫然凝视",
+            "肌阵挛发作：短暂突然的抽搐",
+            "发作后阶段：混乱，嗜睡，头痛"
+          ],
+          "sinaisExameFisico": [
+            "间歇期检查通常正常",
+            "可能有局灶性缺陷（结构性损伤）",
+            "舌侧咬伤（提示全面性强直-阵挛发作）",
+            "尿失禁"
+          ],
+          "formasClinicas": [
+            "局灶性癫痫（颞叶、额叶等）",
+            "遗传性全面性癫痫",
+            "局灶性和全面性结合的癫痫",
+            "癫痫综合征（Lennox-Gastaut、West、Dravet等）"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "ILAE 2014标准",
+            "EEG（首次检查可能正常）",
+            "MRI以调查结构性病因"
+          ],
+          "diagnosticoDiferencial": [
+            "晕厥",
+            "非癫痫性心理性发作",
+            "运动障碍",
+            "偏头痛伴先兆",
+            "TIA",
+            "睡眠障碍"
+          ],
+          "examesLaboratoriais": [
+            "EEG（发作期/间歇期）",
+            "颅脑MRI",
+            "视频EEG（疑难病例或术前评估）",
+            "基因检测（综合征）"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "完全控制发作",
+            "最小化不良反应",
+            "维持生活质量"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "患者和家属教育",
+              "避免睡眠剥夺",
+              "避免过量饮酒",
+              "安全措施",
+              "生酮饮食（难治性病例，尤其是儿科）"
+            ],
+            "citations": [
+              {
+                "refId": "ilae-2017"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "局灶性发作",
+                "medicamentos": [
+                  "卡马西平",
+                  "奥卡西平",
+                  "拉莫三嗪",
+                  "左乙拉西坦"
+                ],
+                "posologia": "卡马西平 400-1200mg/天。左乙拉西坦 500-3000mg/天。"
+              },
+              {
+                "classe": "全面性发作",
+                "medicamentos": [
+                  "丙戊酸钠",
+                  "拉莫三嗪",
+                  "左乙拉西坦"
+                ],
+                "posologia": "丙戊酸钠 500-2000mg/天。避免用于育龄妇女（致畸性）。"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "联合或替换",
+                "medicamentos": [
+                  "氯巴占",
+                  "托吡酯",
+                  "拉科萨米",
+                  "培美曲塞"
+                ],
+                "posologia": "根据反应添加或替换。合理联合用药。"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "癫痫持续状态",
+                "conduta": "地西泮 10mg 静脉注射 或 咪达唑仑 10mg 肌肉注射。如无效：苯妥英钠/磷苯妥英钠 静脉注射。"
+              },
+              {
+                "situacao": "育龄妇女",
+                "conduta": "避免使用丙戊酸钠。首选拉莫三嗪或左乙拉西坦。补充叶酸。"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ilae-2017"
+              }
+            ]
+          },
+          "duracao": "通常数年。考虑在无发作2-5年后停药（选择性病例）。"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "每3-6个月",
+          "examesControle": [
+            "定期EEG",
+            "抗癫痫药物血药浓度测定（如可用）",
+            "肝肾功能，血常规"
+          ],
+          "metasTerapeuticas": [
+            "控制发作",
+            "无显著不良反应"
+          ],
+          "criteriosEncaminhamento": [
+            "难治性癫痫（≥2种抗癫痫药物无效）",
+            "癫痫手术候选人",
+            "特定癫痫综合征",
+            "计划怀孕的女性"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "预防TBI（戴头盔）",
+            "控制中枢神经系统感染",
+            "围产期护理"
+          ],
+          "secundaria": [
+            "依从治疗",
+            "避免诱发因素"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "estado-mal-epileptico"
+      ],
+      "medicamentos": [
+        "carbamazepina",
+        "valproato",
+        "lamotrigina",
+        "levetiracetam",
+        "diazepam"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ilae-2017"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "epilepsia",
+        "convulsao",
+        "crise",
+        "antiepileptico",
+        "eeg"
+      ]
+    },
+    {
+      "id": "doenca-parkinson",
+      "titulo": "帕金森病",
+      "ciap2": [
+        "N87"
+      ],
+      "cid10": [
+        "G20"
+      ],
+      "cid11": [
+        "8A00.0"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:14330",
+      "snomedCT": "49049000",
+      "meshId": "D010300",
+      "umlsCui": "C0030567",
+      "hpo": [
+        "HP:0001300",
+        "HP:0001260",
+        "HP:0002072"
+      ],
+      "tags": [
+        "neurologico",
+        "慢性",
+        "运动"
+      ],
+      "quickView": {
+        "definicao": "神经退行性疾病。黑质多巴胺能神经元丢失。震颤、强直、运动迟缓。",
+        "criteriosDiagnosticos": [
+          "静止性震颤",
+          "强直",
+          "运动迟缓",
+          "姿势不稳",
+          "对左旋多巴的反应"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "物理治疗",
+            "言语治疗",
+            "职业治疗",
+            "锻炼"
+          ],
+          "farmacologico": [
+            "左旋多巴/卡比多巴",
+            "多巴胺受体激动剂：普拉克索或罗匹尼罗",
+            "MAO-B抑制剂"
+          ]
+        },
+        "redFlags": [
+          "痴呆",
+          "幻觉",
+          "开-关现象",
+          "肌张力障碍"
+        ]
+      },
+      "medicamentos": [
+        "levodopa"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "epilepsia-focal",
+      "titulo": "局灶性癫痫（以前称为：部分性）",
+      "categoria": "neurologico",
+      "cid10": [
+        "G40.0",
+        "G40.1",
+        "G40.2"
+      ],
+      "cid11": [
+        "8A60"
+      ],
+      "ciap2": [
+        "N88"
+      ],
+      "snomedCT": "69480007",
+      "doid": "DOID:4469",
+      "meshId": "D004828",
+      "umlsCui": "C0014547",
+      "classificacao": {
+        "tipo": "癫痫",
+        "subtipo": "局灶性",
+        "classificacaoEspecifica": {
+          "sistema": "ILAE 2017",
+          "codigo": "Focal",
+          "descricao": "局灶性癫痫，伴或不伴继发性全面性发作"
+        }
+      },
+      "quickView": {
+        "definicao": "以大脑皮层某一区域为起源的癫痫发作，可能保持局灶性或继发性全面性发作。",
+        "criteriosDiagnosticos": [
+          "≥2次非诱发性癫痫发作，间隔>24小时",
+          "局灶性症状的发作：运动性（面部肌肉、手臂/腿部），感觉性，自主神经性，精神症状",
+          "EEG：局灶性癫痫样活动",
+          "MRI：可能显示结构性病变（瘢痕、肿瘤、畸形）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免诱发因素（睡眠剥夺、酒精）",
+            "急救教育",
+            "评估手术适应证（如耐药）"
+          ],
+          "farmacologico": [
+            "一线抗惊厥药：",
+            "- 卡马西平 200-1200mg/天",
+            "- 拉莫三嗪 100-400mg/天",
+            "- 左乙拉西坦 1000-3000mg/天",
+            "- 奥卡西平 600-2400mg/天"
+          ]
+        },
+        "redFlags": [
+          "频繁发作（>1/周）",
+          "癫痫持续状态",
+          "夜间发作",
+          "局灶性神经症状",
+          "治疗抵抗"
+        ],
+        "examesIniciais": [
+          "EEG（脑电图）- 金标准",
+          "颅脑MRI带特殊序列",
+          "血常规，肝功能，肾功能"
+        ]
+      },
+      "examesNeurologicos": [
+        {
+          "tipo": "EEG",
+          "indicacao": "确认诊断并定位病灶",
+          "quandoSolicitar": "首次疑似发作后"
+        },
+        {
+          "tipo": "颅脑MRI",
+          "indicacao": "检测结构性病变",
+          "quandoSolicitar": "新发局灶性癫痫"
+        }
+      ],
+      "escalasNeurologicas": [
+        {
+          "name": "癫痫严重程度量表",
+          "description": "评估发作频率和类型",
+          "uso": "治疗监测"
+        }
+      ],
+      "tratamentoNeurologico": {
+        "primeiraLinha": {
+          "medicamentos": [
+            "carbamazepina",
+            "lamotrigina",
+            "levetiracetam",
+            "oxcarbazepina"
+          ]
+        },
+        "segundaLinha": {
+          "medicamentos": [
+            "topiramato",
+            "lacosamida",
+            "zonisamida"
+          ]
+        },
+        "cirurgia": {
+          "indicacao": "对≥2种适当药物耐药的局灶性癫痫",
+          "tipo": "癫痫灶切除术"
+        }
+      },
+      "prognostico": {
+        "curso": "慢性",
+        "expectativa": "60-70%的病例通过药物控制",
+        "fatoresPrognosticos": [
+          "结构性病变的存在",
+          "病变类型",
+          "病灶位置"
+        ]
+      },
+      "tags": [
+        "癫痫",
+        "发作",
+        "局灶性",
+        "卡马西平",
+        "左乙拉西坦"
+      ]
+    },
+    {
+      "id": "epilepsia-generalizada",
+      "titulo": "全面性癫痫",
+      "categoria": "neurologico",
+      "cid10": [
+        "G40.3",
+        "G40.4",
+        "G40.6"
+      ],
+      "cid11": [
+        "8A61"
+      ],
+      "ciap2": [
+        "N88"
+      ],
+      "snomedCT": "84757009",
+      "doid": "DOID:1826",
+      "meshId": "D020936",
+      "umlsCui": "C0270786",
+      "classificacao": {
+        "tipo": "epilepsia",
+        "subtipo": "generalizada",
+        "classificacaoEspecifica": {
+          "sistema": "ILAE 2017",
+          "codigo": "Generalized",
+          "descricao": "全面性癫痫（强直-阵挛、失神、肌阵挛）"
+        }
+      },
+      "quickView": {
+        "definicao": "以双侧大脑半球同时起源的发作特征为特点的癫痫，无局灶性起始。",
+        "criteriosDiagnosticos": [
+          "≥2次非诱发性癫痫发作，间隔>24小时",
+          "全面性发作：强直-阵挛、失神、肌阵挛、强直、失张力",
+          "EEG：广泛性癫痫样活动（棘波/多棘波）",
+          "EEG无局灶性病灶"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免诱发因素",
+            "急救教育",
+            "活动限制（驾驶、游泳）"
+          ],
+          "farmacologico": [
+            "强直-阵挛发作：Valproato, Lamotrigina, Levetiracetam",
+            "失神发作：Etosuximida, Valproato",
+            "肌阵挛发作：Valproato, Levetiracetam, Topiramato"
+          ]
+        },
+        "redFlags": [
+          "癫痫持续状态",
+          "夜间发作",
+          "特定癫痫综合征",
+          "治疗抵抗"
+        ],
+        "examesIniciais": [
+          "EEG（基本）",
+          "颅脑MRI（排除）",
+          "血常规、肝功能"
+        ]
+      },
+      "examesNeurologicos": [
+        {
+          "tipo": "EEG",
+          "indicacao": "确认诊断和发作类型",
+          "quandoSolicitar": "首次发作后"
+        }
+      ],
+      "tratamentoNeurologico": {
+        "primeiraLinha": {
+          "medicamentos": [
+            "valproato",
+            "lamotrigina",
+            "levetiracetam"
+          ],
+          "outrasIntervencoes": []
+        }
+      },
+      "prognostico": {
+        "curso": "chronico",
+        "expectativa": "70-80%的病例通过药物控制",
+        "fatoresPrognosticos": [
+          "发作类型",
+          "癫痫综合征",
+          "发病年龄"
+        ]
+      },
+      "tags": [
+        "epilepsia",
+        "generalizada",
+        "crises",
+        "valproato",
+        "lamotrigina"
+      ]
+    },
+    {
+      "id": "sindrome-tunel-carpiano",
+      "titulo": "腕管综合征",
+      "ciap2": [
+        "N92"
+      ],
+      "cid10": [
+        "G56.0"
+      ],
+      "cid11": [
+        "8C11.0"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:11696",
+      "snomedCT": "57406009",
+      "meshId": "D002349",
+      "umlsCui": "C0007286",
+      "tags": [
+        "neurologico",
+        "职业性"
+      ],
+      "quickView": {
+        "definicao": "正中神经在腕管内的压迫。通常与重复性活动有关。",
+        "criteriosDiagnosticos": [
+          "前三个手指的刺痛感",
+          "夜间加重",
+          "Phalen试验阳性",
+          "Tinel试验阳性"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "夜间固定",
+            "改变活动",
+            "物理治疗"
+          ],
+          "farmacologico": [
+            "非甾体抗炎药：Ibuprofeno 400mg 每日三次",
+            "必要时进行皮质类固醇注射"
+          ]
+        },
+        "redFlags": [
+          "鱼际肌萎缩",
+          "运动功能丧失",
+          "双侧伴有其他神经病变"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "esclerose-multipla",
+      "titulo": "多发性硬化",
+      "ciap2": [
+        "N99"
+      ],
+      "cid10": [
+        "G35"
+      ],
+      "cid11": [
+        "8A40"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:2377",
+      "snomedCT": "24700007",
+      "meshId": "D009103",
+      "umlsCui": "C0026769",
+      "tags": [
+        "neurologico",
+        "慢性",
+        "自身免疫"
+      ],
+      "quickView": {
+        "definicao": "中枢神经系统的脱髓鞘疾病。病变在时间和空间上广泛分布。",
+        "criteriosDiagnosticos": [
+          "麦当劳标准",
+          "多种神经系统症状",
+          "MRI：脱髓鞘病变",
+          "脑脊液：寡克隆带"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "物理治疗",
+            "职业治疗",
+            "心理支持"
+          ],
+          "farmacologico": [
+            "急性发作时使用皮质类固醇",
+            "使用干扰素β或芬戈莫德减少发作"
+          ]
+        },
+        "redFlags": [
+          "严重发作",
+          "快速进展",
+          "延髓症状"
+        ]
+      },
+      "medicamentos": [
+        "metilprednisolona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "miastenia-gravis",
+      "titulo": "重症肌无力",
+      "categoria": "neurologico",
+      "cid10": [
+        "G70.0"
+      ],
+      "cid11": [
+        "8C60"
+      ],
+      "ciap2": [
+        "N87"
+      ],
+      "snomedCT": "17097001",
+      "doid": "DOID:437",
+      "meshId": "D009157",
+      "umlsCui": "C0026896",
+      "classificacao": {
+        "tipo": "肌病",
+        "subtipo": "自身免疫性疾病"
+      },
+      "quickView": {
+        "definicao": "一种神经肌肉接头的自身免疫性疾病，特征为肌肉无力和疲劳，活动后加重，休息后缓解，由针对乙酰胆碱受体的抗体引起。",
+        "criteriosDiagnosticos": [
+          "波动性肌肉无力",
+          "活动后加重，休息后缓解",
+          "典型模式：上睑下垂、复视、面部/球部/近端无力",
+          "腾喜龙试验（依酚氯铵）：暂时改善",
+          "抗AChR或抗MuSK抗体",
+          "重复刺激EMG：递减反应"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免过度运动",
+            "适当休息",
+            "避免加重病情的药物（氨基糖苷类、喹诺酮类）"
+          ],
+          "farmacologico": [
+            "胆碱酯酶抑制剂：吡啶斯的明 30-120mg 每日3-4次",
+            "免疫抑制：泼尼松、硫唑嘌呤、吗替麦考酚酯",
+            "重症肌无力危象：静脉注射免疫球蛋白或血浆置换"
+          ]
+        },
+        "redFlags": [
+          "重症肌无力危象（呼吸衰竭）",
+          "严重的球部无力（有误吸风险）",
+          "胸腺瘤（15%的病例）"
+        ],
+        "examesIniciais": [
+          "抗AChR抗体",
+          "抗MuSK抗体（如果AChR阴性）",
+          "重复刺激EMG",
+          "胸部CT（胸腺瘤）"
+        ]
+      },
+      "examesNeurologicos": [
+        {
+          "tipo": "腾喜龙试验",
+          "indicacao": "快速临床评估",
+          "quandoSolicitar": "怀疑重症肌无力"
+        },
+        {
+          "tipo": "重复刺激EMG",
+          "indicacao": "确诊",
+          "quandoSolicitar": "疑似确诊"
+        }
+      ],
+      "tratamentoNeurologico": {
+        "primeiraLinha": {
+          "medicamentos": [
+            "piridostigmina",
+            "prednisona",
+            "azatioprina"
+          ],
+          "outrasIntervencoes": [
+            "静脉注射免疫球蛋白",
+            "血浆置换",
+            "胸腺切除术"
+          ]
+        }
+      },
+      "prognostico": {
+        "curso": "慢性",
+        "expectativa": "治疗控制良好，但需要监测",
+        "fatoresPrognosticos": [
+          "胸腺瘤的存在",
+          "抗体类型",
+          "对治疗的反应"
+        ]
+      },
+      "tags": [
+        "重症肌无力",
+        "自身免疫",
+        "神经肌肉",
+        "吡啶斯的明",
+        "罕见"
+      ]
+    },
+    {
+      "id": "delirium",
+      "titulo": "谵妄（急性意识混乱状态）",
+      "ciap2": [
+        "P71"
+      ],
+      "cid10": [
+        "F05"
+      ],
+      "cid11": [
+        "6D70"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:0060164",
+      "snomedCT": "2776000",
+      "meshId": "D003693",
+      "umlsCui": "C0011206",
+      "quickView": {
+        "definicao": "急性神经精神综合征，伴有注意力和意识的波动性改变。住院老年人中约占10-30%。",
+        "criteriosDiagnosticos": [
+          "CAM：急性起病 + 波动性病程",
+          "注意力不集中（无法维持对话）",
+          "思维紊乱或意识改变",
+          "一天内波动"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "识别并治疗潜在原因",
+            "反复重新定向",
+            "家属陪伴",
+            "尽量减少约束"
+          ],
+          "farmacologico": [
+            "氟哌啶醇 0.5-1mg 仅在严重躁动时使用",
+            "避免使用苯二氮卓类药物"
+          ]
+        },
+        "redFlags": [
+          "高热",
+          "局灶性神经体征",
+          "低氧血症",
+          "低血糖",
+          "酒精戒断"
+        ]
+      },
+      "medicamentos": [
+        "haloperidol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "demencia",
+      "titulo": "痴呆（重度神经认知障碍）",
+      "ciap2": [
+        "P70"
+      ],
+      "cid10": [
+        "F00",
+        "F01",
+        "F02",
+        "F03",
+        "G30"
+      ],
+      "cid11": [
+        "6D80",
+        "6D81",
+        "6D82",
+        "8A20"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:1307",
+      "snomedCT": "52448006",
+      "meshId": "D003704",
+      "umlsCui": "C0497327",
+      "quickView": {
+        "definicao": "进行性认知功能下降综合征，伴有功能损害。阿尔茨海默病是最常见的原因（60-70%）。患病率每5年翻一番，超过65岁后。",
+        "criteriosDiagnosticos": [
+          "≥2个认知领域的下降",
+          "功能损害（日常生活活动能力）",
+          "不能用谵妄解释",
+          "不能用精神疾病解释",
+          "MEEM <24（根据教育水平调整）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "认知刺激",
+            "体育活动",
+            "照顾者支持",
+            "环境安全"
+          ],
+          "farmacologico": [
+            "胆碱酯酶抑制剂（多奈哌齐 5-10mg）- 轻度至中度",
+            "美金刚（中度至重度）",
+            "避免使用抗胆碱能药物"
+          ]
+        },
+        "redFlags": [
+          "快速下降（<6个月）",
+          "局灶性体征",
+          "起病年龄 <65 岁",
+          "早期人格改变"
+        ]
+      },
+      "medicamentos": [
+        "donepezila"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "meem"
+      ]
+    },
+    {
+      "id": "vertigem-posicional",
+      "titulo": "良性阵发性位置性眩晕 (BPPV)",
+      "ciap2": [
+        "N17"
+      ],
+      "cid10": [
+        "H81.1"
+      ],
+      "cid11": [
+        "AB31.0"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:10781",
+      "snomedCT": "111541001",
+      "meshId": "D014717",
+      "umlsCui": "C0155502",
+      "quickView": {
+        "definicao": "最常见的眩晕原因。耳石移位至半规管。由头部运动引发的短暂（<1分钟）发作。",
+        "criteriosDiagnosticos": [
+          "短暂旋转性眩晕",
+          "由头动引发",
+          "Dix-Hallpike 阳性",
+          "特征性眼震"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Epley 手法（后半规管）",
+            "Lempert 手法（水平半规管）",
+            "避免剧烈动作"
+          ],
+          "farmacologico": [
+            "抗眩晕药不是首选",
+            "美克洛嗪仅用于短暂症状缓解"
+          ]
+        },
+        "redFlags": [
+          "局灶性神经症状",
+          "持续性眩晕（>24小时）",
+          "突发性听力下降",
+          "剧烈头痛"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-guillain-barre",
+      "titulo": "吉兰-巴雷综合征",
+      "ciap2": [
+        "N94"
+      ],
+      "cid10": [
+        "G61.0"
+      ],
+      "cid11": [
+        "8C00.2"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:12849",
+      "snomedCT": "398102000",
+      "meshId": "D020275",
+      "umlsCui": "C0018379",
+      "tags": [
+        "neurologico",
+        "急性",
+        "重度"
+      ],
+      "quickView": {
+        "definicao": "急性脱髓鞘性多发性神经根神经病。通常为感染后发生。表现为上升性瘫痪。",
+        "criteriosDiagnosticos": [
+          "上升性瘫痪",
+          "腱反射消失",
+          "脑脊液：蛋白-细胞分离",
+          "肌电图：脱髓鞘"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "住院",
+            "必要时提供呼吸支持",
+            "早期物理治疗"
+          ],
+          "farmacologico": [
+            "IVIG 0.4g/kg/天，连续5天",
+            "或 血浆置换"
+          ]
+        },
+        "redFlags": [
+          "呼吸功能不全",
+          "心律失常",
+          "自主神经功能障碍"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "demencia-vascular",
+      "titulo": "血管性痴呆",
+      "ciap2": [
+        "P70"
+      ],
+      "cid10": [
+        "F01"
+      ],
+      "cid11": [
+        "6D80"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:6713",
+      "snomedCT": "52448006",
+      "meshId": "D003712",
+      "umlsCui": "C0011269",
+      "hpo": [
+        "HP:0000726",
+        "HP:0001263"
+      ],
+      "tags": [
+        "neurologico",
+        "chronic",
+        "认知"
+      ],
+      "quickView": {
+        "definicao": "由脑血管病变引起的痴呆。可以是缺血性的或出血性的。多灶性认知功能下降。",
+        "criteriosDiagnosticos": [
+          "痴呆",
+          "脑血管疾病证据",
+          "血管事件与痴呆之间的时间关系",
+          "影像学：血管病变"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "预防二次中风",
+            "控制危险因素",
+            "认知康复"
+          ],
+          "farmacologico": [
+            "胆碱酯酶抑制剂：多奈哌齐或利斯的明",
+            "美金刚"
+          ]
+        },
+        "redFlags": [
+          "快速进展",
+          "局灶性症状",
+          "反复中风"
+        ]
+      },
+      "medicamentos": [
+        "donepezila",
+        "rivastigmina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "labirintite",
+      "titulo": "前庭神经炎 / 周围性眩晕",
+      "ciap2": [
+        "H82"
+      ],
+      "cid10": [
+        "H83.0"
+      ],
+      "cid11": [
+        "AB51"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:14692",
+      "snomedCT": "193469007",
+      "meshId": "D007762",
+      "umlsCui": "C0022851",
+      "hpo": [
+        "HP:0002321"
+      ],
+      "tags": [
+        "neurologico",
+        "耳鼻喉科",
+        "眩晕"
+      ],
+      "quickView": {
+        "definicao": "周围性眩晕。迷路炎症。原因：病毒、细菌、良性阵发性位置性眩晕。旋转性眩晕伴恶心/呕吐。",
+        "criteriosDiagnosticos": [
+          "旋转性眩晕",
+          "恶心/呕吐",
+          "眼球震颤",
+          "无局灶性神经系统症状",
+          "听力可能受影响"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "休息",
+            "避免剧烈运动",
+            "如果是良性阵发性位置性眩晕，进行复位操作"
+          ],
+          "farmacologico": [
+            "抗眩晕药：美克洛嗪 25mg 每6小时一次",
+            "或二甲茚定",
+            "如果为炎症，使用皮质类固醇"
+          ]
+        },
+        "redFlags": [
+          "局灶性神经系统症状",
+          "突发单侧听力丧失",
+          "持续性眩晕 >24小时"
+        ]
+      },
+      "medicamentos": [
+        "meclizina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "avc-isquemico",
+      "titulo": "缺血性脑血管意外",
+      "sinonimos": [
+        "AVC",
+        "AVCi",
+        "脑卒中",
+        "缺血性中风",
+        "脑梗死"
+      ],
+      "doid": "DOID:3455",
+      "snomedCT": "422504002",
+      "meshId": "D002544",
+      "umlsCui": "C0007785",
+      "ciap2": [
+        "K90"
+      ],
+      "cid10": [
+        "I63",
+        "I63.0",
+        "I63.1",
+        "I63.2",
+        "I63.3",
+        "I63.4",
+        "I63.5",
+        "I63.8",
+        "I63.9"
+      ],
+      "cid11": [
+        "8B11"
+      ],
+      "categoria": "neurologico",
+      "quickView": {
+        "definicao": "突发的局灶性神经功能缺损，由脑缺血引起。神经急症，溶栓治疗的时间窗为4.5小时，机械取栓的时间窗为24小时（特定情况下）。",
+        "criteriosDiagnosticos": [
+          "突发的局灶性神经功能缺损",
+          "FAST：面部（不对称），手臂（无力），言语（说话障碍），时间",
+          "NIHSS评估严重程度",
+          "颅脑CT：排除出血（最初几小时内可能正常）",
+          "CT血管成像/MRI：识别大血管闭塞",
+          "症状开始时间至关重要"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ABC - 稳定临床状况",
+            "床头抬高0°（无颅内高压）",
+            "外周静脉通路（避免锁骨下静脉）",
+            "持续监测",
+            "毛细血糖"
+          ],
+          "farmacologico": [
+            "IV溶栓（如<4.5小时）：",
+            "Alteplase (rtPA) 0.9mg/kg（最大90mg） - 10%推注，90%在1小时内输注",
+            "或 Tenecteplase 0.25mg/kg 单次推注",
+            "",
+            "如BP <220/120（溶栓候选者：<185/110），不降低血压",
+            "溶栓后24小时给予阿司匹林100-300mg",
+            "高强度他汀类药物"
+          ]
+        },
+        "metasTerapeuticas": [
+          "溶栓治疗在到达后<60分钟内进行（门到针）",
+          "如需机械取栓，在90分钟内进行",
+          "预防出血转化",
+          "早期康复"
+        ],
+        "examesIniciais": [
+          "非增强颅脑CT（排除出血）",
+          "毛细血糖",
+          "12导联心电图",
+          "血常规，PT/INR，血小板",
+          "肾功能，电解质",
+          "CT血管成像（如大血管闭塞）"
+        ],
+        "redFlags": [
+          "溶栓候选者的BP >185/110",
+          "血糖 <50 或 >400 mg/dL",
+          "INR >1.7 或使用抗凝药物",
+          "血小板 <100,000",
+          "活动性出血",
+          "近3个月内有严重脑卒中/头部创伤",
+          "近14天内有大型手术"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "巴西第二大死因",
+          "incidencia": "每年约400,000例",
+          "mortalidade": "30天内死亡率为30%，主要致残原因",
+          "faixaEtaria": "随年龄增加，>55岁风险更高",
+          "fatoresRisco": [
+            "高血压（主要）",
+            "房颤",
+            "糖尿病",
+            "血脂异常",
+            "吸烟",
+            "结构性心脏病",
+            "既往脑卒中/TIA",
+            "颈动脉狭窄"
+          ],
+          "citations": [
+            {
+              "refId": "sbn-avc-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "动脉血栓（心源性栓塞、动脉粥样硬化性或腔隙性）导致脑缺血。缺血核心周围有一片潜在可挽救的半暗带。治疗时间窗旨在挽救这片半暗带。",
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "偏瘫/偏身瘫痪",
+            "偏身感觉减退",
+            "失语（运动性、感觉性、混合性）",
+            "构音障碍",
+            "偏盲",
+            "共济失调",
+            "眩晕",
+            "复视",
+            "意识水平改变"
+          ],
+          "sinaisExameFisico": [
+            "局灶性运动障碍",
+            "口角歪斜",
+            "巴宾斯基征",
+            "反射改变",
+            "空间忽视",
+            "颈动脉杂音"
+          ],
+          "formasClinicas": [
+            "颈动脉区域脑卒中（前循环）",
+            "椎基底动脉区域脑卒中（后循环）",
+            "腔隙性脑卒中（小血管）",
+            "短暂性脑缺血发作（症状<24小时且影像学正常）"
+          ],
+          "citations": [
+            {
+              "refId": "sbn-avc-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "突发的局灶性神经功能缺损",
+            "CT未见出血",
+            "排除类似疾病（低血糖、癫痫发作后）"
+          ],
+          "diagnosticoDiferencial": [
+            "出血性脑卒中",
+            "低血糖",
+            "癫痫发作后Todd麻痹",
+            "偏头痛伴先兆",
+            "脑肿瘤",
+            "脑炎",
+            "转换障碍"
+          ],
+          "examesLaboratoriais": [
+            "血糖（溶栓前必须）",
+            "全血细胞计数",
+            "PT/INR，APTT",
+            "肾功能，电解质",
+            "肌钙蛋白（怀疑心脏病）"
+          ],
+          "examesImagem": [
+            "非增强颅脑CT",
+            "颈部和颅内血管CT血管成像",
+            "颅脑MRI（弥散加权成像）",
+            "超声心动图（寻找栓子来源）",
+            "颈动脉多普勒"
+          ],
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "动脉再通",
+            "最小化梗死面积",
+            "预防并发症",
+            "确定病因以进行二级预防"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "密切神经监测",
+              "控制体温（避免高热）",
+              "床头抬高0-15°",
+              "早期物理治疗/语言治疗",
+              "预防吸入性肺炎"
+            ],
+            "citations": [
+              {
+                "refId": "sbn-avc-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "溶栓药",
+                "medicamentos": [
+                  "Alteplase 0.9mg/kg",
+                  "Tenecteplase 0.25mg/kg"
+                ],
+                "posologia": "单次剂量",
+                "observacoes": "时间窗<4.5小时"
+              },
+              {
+                "classe": "抗血小板药",
+                "medicamentos": [
+                  "阿司匹林 100-300mg/天"
+                ],
+                "posologia": "溶栓后24小时给予"
+              },
+              {
+                "classe": "他汀类药物",
+                "medicamentos": [
+                  "阿托伐他汀 40-80mg",
+                  "瑞舒伐他汀 20-40mg"
+                ],
+                "posologia": "每日一次"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "抗凝治疗",
+                "medicamentos": [
+                  "利伐沙班",
+                  "阿哌沙班",
+                  "华法林"
+                ],
+                "observacoes": "如有房颤，根据脑卒中大小在3-14天后给予"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "aha-stroke-2019"
+              }
+            ]
+          },
+          "duracao": "终身二级预防"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "脑卒中单元出院后5-7天，之后每月随访3个月",
+          "examesControle": [
+            "复查CT/MRI",
+            "超声心动图",
+            "24-72小时动态心电图",
+            "颈动脉多普勒"
+          ],
+          "metasTerapeuticas": [
+            "BP <130/80 mmHg",
+            "LDL <70 mg/dL（极高风险者<55）",
+            "HbA1c <7%",
+            "华法林治疗时INR 2-3",
+            "神经康复"
+          ],
+          "criteriosEncaminhamento": [
+            "所有急性脑卒中：脑卒中单元/神经科",
+            "有症状的颈动脉狭窄>50%：血管外科",
+            "无危险因素的年轻人：血栓形成倾向调查"
+          ],
+          "citations": [
+            {
+              "refId": "sbn-avc-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "控制高血压",
+            "房颤患者抗凝治疗（CHA2DS2-VASc评分）",
+            "高危患者使用他汀类药物",
+            "戒烟"
+          ],
+          "secundaria": [
+            "抗血小板治疗或抗凝治疗",
+            "高强度他汀类药物",
+            "严格控制危险因素",
+            "必要时进行颈动脉再血管化"
+          ],
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "codigo-avc",
+        "trombolise-avc",
+        "investigacao-avc-jovem"
+      ],
+      "medicamentos": [
+        "alteplase",
+        "aas",
+        "clopidogrel",
+        "atorvastatina",
+        "rivaroxabana"
+      ],
+      "calculadoras": [
+        "nihss",
+        "abcd2",
+        "chads2-vasc"
+      ],
+      "citations": [
+        {
+          "refId": "sbn-avc-2022"
+        },
+        {
+          "refId": "aha-stroke-2019"
+        },
+        {
+          "refId": "eso-stroke-2021"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "estado-de-mal-epileptico",
+      "titulo": "癫痫持续状态",
+      "sinonimos": [
+        "Status epilepticus",
+        "EME",
+        "持续性癫痫发作",
+        "难治性癫痫发作"
+      ],
+      "doid": "DOID:9188",
+      "snomedCT": "26184008",
+      "meshId": "D013226",
+      "umlsCui": "C0038220",
+      "ciap2": [
+        "N88"
+      ],
+      "cid10": [
+        "G41",
+        "G41.0",
+        "G41.1",
+        "G41.2",
+        "G41.9"
+      ],
+      "cid11": [
+        "8A62"
+      ],
+      "categoria": "neurologico",
+      "quickView": {
+        "definicao": "连续的癫痫活动超过5分钟或反复发作而无意识恢复。神经系统的紧急情况，如果不迅速治疗，可能导致永久性脑损伤和死亡。",
+        "criteriosDiagnosticos": [
+          "癫痫发作≥5分钟（操作定义）",
+          "两次或多次发作而无意识恢复",
+          "经典定义：>30分钟（有后遗症风险）",
+          "非惊厥性癫痫持续状态：意识改变+EEG上的癫痫样活动",
+          "确定可能的原因（代谢、结构性病变、戒断）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ABC - 口咽通气道（不要强行插入）",
+            "补充氧气",
+            "侧卧位（恢复体位）",
+            "建立静脉通路（或骨内通路）",
+            "立即进行毛细血糖检测",
+            "持续监测"
+          ],
+          "farmacologico": [
+            "第1阶段（0-5分钟）：苯二氮卓类药物",
+            "地西泮 10mg 静脉注射缓慢（0.2mg/kg，最大20mg） 或",
+            "咪达唑仑 10mg 肌肉注射（如无静脉通路） 或",
+            "劳拉西泮 4mg 静脉注射（如有条件）",
+            "",
+            "第2阶段（5-20分钟）：如无反应",
+            "苯妥英钠 20mg/kg 静脉注射（最大50mg/min） 或",
+            "丙戊酸钠 40mg/kg 静脉注射（最大10mg/kg/min） 或",
+            "左乙拉西坦 60mg/kg 静脉注射",
+            "",
+            "第3阶段（>20分钟）：难治性癫痫持续状态",
+            "麻醉诱导：异丙酚、咪达唑仑或硫喷妥钠在BIC中",
+            "气管插管和机械通气"
+          ]
+        },
+        "metasTerapeuticas": [
+          "停止癫痫活动",
+          "保护神经系统",
+          "稳定血流动力学",
+          "确定病因"
+        ],
+        "examesIniciais": [
+          "毛细血糖检测（必须）",
+          "血常规、电解质（Na, K, Ca, Mg）",
+          "动脉血气分析",
+          "尿素、肌酐",
+          "抗癫痫药物水平（如有使用史）",
+          "毒物筛查",
+          "头颅CT",
+          "腰椎穿刺（如怀疑感染，影像学检查后）"
+        ],
+        "redFlags": [
+          "癫痫持续状态>30分钟（神经损伤）",
+          "难治性癫痫持续状态（对两种FAE无反应）",
+          "超级难治性癫痫持续状态（>24小时麻醉）",
+          "急性结构性原因（中风、肿瘤）",
+          "发热（脑炎）",
+          "严重低钠血症",
+          "持续性代谢性酸中毒"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "50-150例/10万人口/年",
+          "incidencia": "难治性癫痫持续状态的死亡率为20-30%",
+          "faixaEtaria": "双峰分布：幼儿和老年人",
+          "fatoresRisco": [
+            "既往癫痫（依从性差、减少FAE）",
+            "急性中风或后遗症",
+            "中枢神经系统感染",
+            "脑肿瘤",
+            "代谢紊乱（低血糖、低钠血症）",
+            "酒精或苯二氮卓类药物戒断",
+            "中毒"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-status-2015"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "抑制机制（GABA能）失效，无法终止发作活动，导致持续的兴奋性活动（谷氨酸能）。这会导致兴奋毒性、神经元损伤、脑水肿和潜在的呼吸/心血管衰竭。",
+          "citations": [
+            {
+              "refId": "ilae-status-2015"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "全身性强直-阵挛运动",
+            "意识丧失",
+            "过多唾液分泌",
+            "发绀",
+            "失禁",
+            "长时间的发作后混乱"
+          ],
+          "sinaisExameFisico": [
+            "阵挛运动",
+            "肌张力增高",
+            "眼球偏斜",
+            "心动过速、高血压",
+            "发热（由于肌肉活动）",
+            "发作后的局灶性体征"
+          ],
+          "formasClinicas": [
+            "全面性惊厥性癫痫持续状态",
+            "局灶性意识保留的癫痫持续状态",
+            "局灶性意识受损的癫痫持续状态",
+            "非惊厥性癫痫持续状态（怀疑长时间意识改变）",
+            "细微性癫痫持续状态（最小运动，EEG上癫痫样活动）"
+          ],
+          "citations": [
+            {
+              "refId": "lbn-eme-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "时间标准：≥5分钟的发作或反复发作而无恢复",
+            "非惊厥性癫痫持续状态的EEG",
+            "确定病因"
+          ],
+          "diagnosticoDiferencial": [
+            "惊厥性昏厥",
+            "非癫痫性心理性发作",
+            "去大脑强直",
+            "不自主运动（扭转痉挛、舞蹈病）",
+            "中毒",
+            "低血糖"
+          ],
+          "examesLaboratoriais": [
+            "血糖",
+            "电解质（Na, K, Ca, Mg）",
+            "动脉血气分析",
+            "肾功能和肝功能",
+            "抗癫痫药物水平",
+            "乳酸"
+          ],
+          "examesImagem": [
+            "头颅CT（紧急）",
+            "头颅MRI（如CT正常且未确定病因）",
+            "连续EEG（重症监护室）"
+          ],
+          "outrosExames": [
+            "腰椎穿刺（如怀疑神经感染，影像学检查后）",
+            "抗神经元抗体（自身免疫性脑炎）"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-status-2015"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "迅速停止癫痫活动",
+            "预防神经元损伤",
+            "治疗潜在病因",
+            "预防复发"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "保持气道通畅",
+              "氧疗",
+              "必要时插管",
+              "持续监测",
+              "纠正代谢紊乱"
+            ],
+            "citations": [
+              {
+                "refId": "lbn-eme-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "苯二氮卓类药物",
+                "medicamentos": [
+                  "地西泮 10mg 静脉注射",
+                  "咪达唑仑 10mg 肌肉注射",
+                  "劳拉西泮 4mg 静脉注射"
+                ],
+                "posologia": "单次剂量，必要时重复1次",
+                "observacoes": "首选，有效率约65%"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "静脉抗癫痫药物",
+                "medicamentos": [
+                  "苯妥英钠 20mg/kg 静脉注射",
+                  "丙戊酸钠 40mg/kg 静脉注射",
+                  "左乙拉西坦 60mg/kg 静脉注射"
+                ],
+                "observacoes": "如苯二氮卓类药物无效"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "难治性癫痫持续状态",
+                "conduta": "麻醉药物：咪达唑仑、异丙酚或硫喷妥钠在BIC中；气管插管+机械通气；连续EEG"
+              },
+              {
+                "situacao": "低血糖",
+                "conduta": "50%葡萄糖 50mL 静脉注射 + 硫胺素 100mg"
+              },
+              {
+                "situacao": "酒精戒断",
+                "conduta": "高剂量苯二氮卓类药物 + 硫胺素"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ilae-status-2015"
+              }
+            ]
+          },
+          "duracao": "根据病因维持FAE"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "重症监护室直至控制；之后门诊神经科随访",
+          "metasTerapeuticas": [
+            "无发作",
+            "神经功能恢复",
+            "维持FAE的控制"
+          ],
+          "criteriosEncaminhamento": [
+            "所有癫痫持续状态：急诊 → 重症监护室",
+            "神经科进一步检查",
+            "如为难治性，转至癫痫专科医生"
+          ],
+          "citations": [
+            {
+              "refId": "lbn-eme-2020"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "eme-emergencia",
+        "crise-epileptica-aguda"
+      ],
+      "medicamentos": [
+        "diazepam",
+        "midazolam",
+        "fenitoina",
+        "valproato",
+        "levetiracetam"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ilae-status-2015"
+        },
+        {
+          "refId": "lbn-eme-2020"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

@@ -1,0 +1,4181 @@
+{
+  "locale": "zh",
+  "category": "infecciosas",
+  "generatedAt": "2025-12-30T12:23:17.428Z",
+  "count": 25,
+  "diseases": [
+    {
+      "id": "infeccao-urinaria",
+      "titulo": "泌尿道感染 (UTI)",
+      "sinonimos": [
+        "膀胱炎",
+        "UTI",
+        "尿路感染"
+      ],
+      "doid": "DOID:13148",
+      "snomedCT": "68566005",
+      "meshId": "D014552",
+      "umlsCui": "C0042029",
+      "ciap2": [
+        "U71"
+      ],
+      "cid10": [
+        "N30",
+        "N39.0"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "泌尿道的细菌感染，最常见的是女性的膀胱炎（下尿路感染）。非复杂性UTI发生在健康、非孕妇，且尿路解剖结构正常的情况下。",
+        "criteriosDiagnosticos": [
+          "典型症状：排尿疼痛、尿频、尿急",
+          "耻骨上疼痛",
+          "尿常规：白细胞尿、亚硝酸盐阳性、菌尿",
+          "复杂性、复发性UTI、治疗失败或孕妇时进行尿培养",
+          "非复杂性UTI可临床诊断"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "充分补水",
+            "性交后排尿（预防）",
+            "避免使用杀精剂",
+            "适当卫生（不使用冲洗器）",
+            "如有便秘，应治疗"
+          ],
+          "farmacologico": [
+            "Nitrofurantoína 100mg 每6小时 5-7天（首选）",
+            "Fosfomicina 3g 单次剂量（依从性好，次选）",
+            "Sulfametoxazol-TMP 800/160mg 每12小时 3天（如当地敏感性良好）",
+            "避免在非复杂性UTI中使用氟喹诺酮类"
+          ]
+        },
+        "metasTerapeuticas": [
+          "48-72小时内症状缓解",
+          "尿液无菌",
+          "预防复发"
+        ],
+        "examesIniciais": [
+          "尿常规（尿液类型1）",
+          "复杂性、复发性UTI、孕妇或治疗失败时进行尿培养+药敏试验",
+          "怀疑肾盂肾炎时检测肌酐"
+        ],
+        "redFlags": [
+          "体温 >38°C，寒战（提示肾盂肾炎）",
+          "腰痛（Giordano阳性）",
+          "恶心/呕吐",
+          "孕妇（并发症风险）",
+          "免疫抑制，糖尿病控制不佳",
+          "男性UTI（需进一步调查）",
+          "败血症"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "50-60%的女性一生中会有UTI",
+          "incidencia": "首次发作后6个月内有25-30%的复发率",
+          "faixaEtaria": "高峰出现在年轻性活跃女性和老年人",
+          "fatoresRisco": [
+            "女性（尿道短）",
+            "性活动",
+            "使用杀精剂/隔膜",
+            "绝经期（泌尿生殖萎缩）",
+            "既往UTI史",
+            "糖尿病",
+            "导尿",
+            "泌尿系统异常"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "排尿疼痛（尿痛）",
+            "尿频",
+            "尿急",
+            "耻骨上疼痛",
+            "可能有血尿",
+            "尿液浑浊或有异味"
+          ],
+          "sinaisExameFisico": [
+            "膀胱炎通常体格检查正常",
+            "耻骨上压痛",
+            "无发热（膀胱炎）",
+            "如发热 + Giordano +：肾盂肾炎"
+          ],
+          "formasClinicas": [
+            "膀胱炎（下尿路感染）",
+            "肾盂肾炎（上尿路感染）",
+            "无症状菌尿",
+            "复发性UTI（每年≥3次或每6个月≥2次）"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "非复杂性UTI的临床诊断（典型症状）",
+            "尿常规：白细胞尿（>10个白细胞/视野），亚硝酸盐阳性",
+            "尿培养：>10⁵ CFU/mL（或有症状时>10² CFU/mL）"
+          ],
+          "diagnosticoDiferencial": [
+            "阴道炎/外阴阴道炎",
+            "尿道炎（性传播疾病）",
+            "膀胱过度活动症",
+            "间质性膀胱炎",
+            "肾结石"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "根除感染",
+            "缓解症状",
+            "预防并发症",
+            "预防复发"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "充分补水",
+              "性交后排尿",
+              "避免尿潴留",
+              "治疗便秘"
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Nitrofurantoína",
+                "medicamentos": [
+                  "Nitrofurantoína 100mg 每6小时 5-7天"
+                ],
+                "observacoes": "首选。GFR <30时避免使用"
+              },
+              {
+                "classe": "Fosfomicina",
+                "medicamentos": [
+                  "Fosfomicina trometamol 3g 单次剂量"
+                ],
+                "observacoes": "依从性好。价格较高"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Sulfametoxazol-TMP",
+                "medicamentos": [
+                  "SMX-TMP 800/160mg 每12小时 3天"
+                ],
+                "observacoes": "如当地敏感性 >80%。避免在第三孕期使用"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "孕妇",
+                "conduta": "Nitrofurantoína（不在第三孕期），头孢氨苄，阿莫西林。治疗无症状菌尿"
+              },
+              {
+                "situacao": "肾盂肾炎",
+                "conduta": "氟喹诺酮类或头孢曲松。7-14天。考虑住院治疗"
+              },
+              {
+                "situacao": "复发性UTI",
+                "conduta": "预防：Nitrofurantoína 50-100mg 每晚或性交后"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "duracao": "膀胱炎：3-7天。肾盂肾炎：7-14天"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "48-72小时内未改善时重新评估",
+          "metasTerapeuticas": [
+            "症状缓解",
+            "常规不建议进行尿培养复查"
+          ],
+          "criteriosEncaminhamento": [
+            "严重肾盂肾炎（败血症、呕吐、孕妇）",
+            "原因不明的复发性UTI",
+            "怀疑解剖异常",
+            "男性UTI（泌尿外科）"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-itu"
+      ],
+      "medicamentos": [
+        "nitrofurantoina",
+        "fosfomicina",
+        "sulfametoxazol-tmp"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "idsa-itu-2011"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "infecciosas",
+        "aguda",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "infeccao-trato-urinario",
+      "titulo": "泌尿道感染",
+      "sinonimos": [
+        "ITU",
+        "膀胱炎",
+        "肾盂肾炎",
+        "尿路感染"
+      ],
+      "doid": "DOID:13148",
+      "snomedCT": "68566005",
+      "meshId": "D014552",
+      "umlsCui": "C0042029",
+      "ciap2": [
+        "U71",
+        "U70"
+      ],
+      "cid10": [
+        "N39.0",
+        "N10",
+        "N30"
+      ],
+      "cid11": [
+        "GC08",
+        "GB60"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "泌尿道的细菌感染，分为膀胱炎（下）或肾盂肾炎（上）。大肠杆菌是80-90%非复杂病例的病原体。",
+        "criteriosDiagnosticos": [
+          "膀胱炎：排尿困难 + 尿频 + 急迫感 + 耻骨上疼痛",
+          "尿液浑浊或有恶臭",
+          "无发热/腰痛（膀胱炎）",
+          "肾盂肾炎：发热 + 腰痛 + Giordano征阳性",
+          "膀胱炎症状可能或不存在",
+          "尿常规：白细胞尿（>10个白细胞/视野），亚硝酸盐 +，白细胞酯酶 +",
+          "尿培养：>100,000 CFU/mL（或在有症状者中>1,000）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "适当补水",
+            "频繁排尿",
+            "适当卫生（从前向后清洁）"
+          ],
+          "farmacologico": [
+            "非复杂性膀胱炎（女性）：",
+            "磷霉素 3g 单次剂量（首选） 或",
+            "呋喃妥因 100mg 每6小时 5天 或",
+            "复方磺胺甲噁唑 800/160mg 每12小时 3天",
+            "",
+            "轻度肾盂肾炎（门诊）：",
+            "环丙沙星 500mg 每12小时 7天 或",
+            "头孢曲松 1g 肌肉注射/静脉注射 + 头孢西丁 口服 10-14天"
+          ]
+        },
+        "metasTerapeuticas": [
+          "24-48小时内症状缓解",
+          "根除细菌",
+          "预防复发",
+          "避免进展为败血症"
+        ],
+        "examesIniciais": [
+          "尿常规（尿液类型I）",
+          "尿培养 + 药敏试验（如复杂、反复、男性、孕妇、治疗失败）",
+          "血常规、肌酐、CRP（如肾盂肾炎）",
+          "肾脏和泌尿系统超声（如肾盂肾炎或怀疑并发症）"
+        ],
+        "redFlags": [
+          "高热、中毒症状（尿源性败血症）",
+          "呕吐（住院进行静脉抗生素治疗）",
+          "剧烈腰痛、可触及肿块",
+          "无尿或少尿",
+          "免疫抑制、未控制的糖尿病、孕妇",
+          "男性（始终视为复杂）",
+          "反复尿路感染（≥3/年）"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "每年约11%的女性患有膀胱炎",
+          "incidencia": "全球每年约1.5亿例",
+          "faixaEtaria": "多见于育龄期女性",
+          "fatoresRisco": [
+            "女性（尿道短）",
+            "性活动",
+            "使用杀精剂",
+            "导尿",
+            "绝经期（阴道萎缩）",
+            "糖尿病",
+            "尿路梗阻",
+            "妊娠"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "由肠道致病菌（主要是致病性大肠杆菌）在尿道周围定植并沿尿道上行至膀胱。细菌粘附素（P菌毛）允许其粘附于尿路上皮。肾盂肾炎则通过上行至上尿路发生。",
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "排尿困难（排尿时疼痛/灼热感）",
+            "尿频（频率增加）",
+            "急迫性尿失禁",
+            "耻骨上疼痛（膀胱炎）",
+            "发热、寒战（肾盂肾炎）",
+            "腰痛（肾盂肾炎）"
+          ],
+          "sinaisExameFisico": [
+            "耻骨上压痛（膀胱炎）",
+            "发热（肾盂肾炎）",
+            "腰部叩击痛（Giordano征）",
+            "无阴道分泌物"
+          ],
+          "formasClinicas": [
+            "非复杂性尿路感染（健康女性的膀胱炎）",
+            "复杂性尿路感染（男性、孕妇、导尿、糖尿病、解剖异常）",
+            "急性肾盂肾炎",
+            "反复尿路感染（≥3/年或≥2/6个月）",
+            "无症状菌尿（仅在孕妇/术前治疗）"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "临床（非复杂性膀胱炎）：可以经验性治疗",
+            "尿常规：白细胞尿、亚硝酸盐、白细胞酯酶",
+            "尿培养：>100,000 CFU/mL"
+          ],
+          "diagnosticoDiferencial": [
+            "阴道炎/阴道病",
+            "尿道炎（性传播疾病：衣原体、淋病）",
+            "前列腺炎",
+            "间质性膀胱炎",
+            "肾结石",
+            "阑尾炎（耻骨上疼痛）"
+          ],
+          "examesLaboratoriais": [
+            "尿常规（尿液概要）",
+            "尿培养 + 药敏试验",
+            "血常规、CRP（肾盂肾炎）",
+            "肾功能"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "根除感染",
+            "缓解症状",
+            "预防并发症",
+            "预防复发"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "补水",
+              "频繁排尿",
+              "避免使用杀精剂"
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "非复杂性膀胱炎",
+                "medicamentos": [
+                  "磷霉素",
+                  "呋喃妥因",
+                  "复方磺胺甲噁唑"
+                ],
+                "posologia": "磷霉素 3g 单次剂量。呋喃妥因 100mg 每6小时 5天。复方磺胺甲噁唑 800/160mg 每12小时 3天。"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "氟喹诺酮类（保留使用）",
+                "medicamentos": [
+                  "环丙沙星",
+                  "诺氟沙星"
+                ],
+                "posologia": "环丙沙星 500mg 每12小时 3天。保留用于肾盂肾炎或耐药情况。"
+              },
+              {
+                "classe": "门诊肾盂肾炎",
+                "medicamentos": [
+                  "环丙沙星",
+                  "头孢曲松"
+                ],
+                "posologia": "环丙沙星 500mg 每12小时 7天。头孢曲松 1g 肌肉注射/静脉注射 1次 + 口服 10-14天。"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "孕妇",
+                "conduta": "呋喃妥因（避免第三孕期），头孢氨苄，阿莫西林。必须治疗，7天。复查尿培养。"
+              },
+              {
+                "situacao": "反复尿路感染",
+                "conduta": "预防：呋喃妥因 50-100mg 每晚 或 复方磺胺甲噁唑 400/80mg 每晚。或性交后预防。"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "idsa-itu-2011"
+              }
+            ]
+          },
+          "duracao": "膀胱炎：1-5天。肾盂肾炎：7-14天。"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "如果症状持续，48-72小时后重新评估",
+          "examesControle": [
+            "仅在孕妇或症状持续时复查尿培养",
+            "不常规重复尿常规/尿培养"
+          ],
+          "metasTerapeuticas": [
+            "症状缓解",
+            "尿培养阴性（如需）"
+          ],
+          "criteriosEncaminhamento": [
+            "伴有呕吐/中毒症状的肾盂肾炎（住院）",
+            "反复尿路感染进行调查",
+            "年轻男性的尿路感染",
+            "怀疑解剖异常"
+          ],
+          "citations": [
+            {
+              "refId": "idsa-itu-2011"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "补水",
+            "性交后排尿",
+            "适当卫生"
+          ],
+          "secundaria": [
+            "抗生素预防（如反复感染）",
+            "局部雌激素（绝经后）"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "itu-manejo"
+      ],
+      "medicamentos": [
+        "fos夫霉素",
+        "呋喃妥因",
+        "复方磺胺甲噁唑",
+        "环丙沙星"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "idsa-itu-2011"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "itu",
+        "cistite",
+        "pielonefrite",
+        "disuria",
+        "e-coli"
+      ]
+    },
+    {
+      "id": "faringoamigdalite",
+      "titulo": "急性咽扁桃体炎",
+      "ciap2": [
+        "R76"
+      ],
+      "cid10": [
+        "J02",
+        "J03"
+      ],
+      "cid11": [
+        "CA02"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:3083",
+      "snomedCT": "195666003",
+      "meshId": "D010612",
+      "umlsCui": "C0031350",
+      "quickView": {
+        "definicao": "咽部和扁桃体的炎症。病毒性（多数）与细菌性（链球菌 - 15-30%）。高发年龄：5-15岁。",
+        "criteriosDiagnosticos": [
+          "Centor/McIsaac: 体温 >38°C，无咳嗽，前颈部淋巴结肿大，扁桃体渗出物"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "补水",
+            "用温盐水漱口",
+            "休息"
+          ],
+          "farmacologico": [
+            "如果为EBHGA：苄星青霉素 600,000U (<27kg) 或 1,200,000U (>27kg) 肌肉注射 一次",
+            "替代方案：阿莫西林 50mg/kg/天 分2次服用 10天"
+          ]
+        },
+        "redFlags": [
+          "周围扁桃体脓肿（张口困难，声音沉闷）",
+          "呼吸困难",
+          "传染性单核细胞增多症（脾肿大）"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "penicilina-benzatina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dengue",
+      "titulo": "Dengue",
+      "sinonimos": [
+        "Febre dengue",
+        "Dengue hemorrágica",
+        "Dengue grave"
+      ],
+      "doid": "DOID:11205",
+      "snomedCT": "38362002",
+      "meshId": "D003715",
+      "umlsCui": "C0011311",
+      "ciap2": [
+        "A77"
+      ],
+      "cid10": [
+        "A90",
+        "A91"
+      ],
+      "cid11": [
+        "1D20"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "Arbovirose causada pelo vírus dengue (DENV 1-4), transmitida pelo Aedes aegypti. Espectro clínico amplo: febre indiferenciada a dengue grave com choque e hemorragia. Brasil é hiperendêmico.",
+        "criteriosDiagnosticos": [
+          "CASO SUSPEITO: Febre (2-7 dias) + ≥2 dos seguintes em área endêmica:",
+          "Mialgia, artralgia, cefaleia retro-orbitária",
+          "Exantema maculopapular",
+          "Prostração intensa",
+          "Petéquias/prova do laço positiva",
+          "",
+          "CONFIRMAÇÃO: NS1 (até 5º dia) ou IgM (após 6º dia) ou PCR"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Hidratação oral vigorosa (60-80 mL/kg/dia)",
+            "Repouso",
+            "Orientação sobre sinais de alarme"
+          ],
+          "farmacologico": [
+            "Paracetamol 500-750mg 6/6h (NÃO usar AINEs/AAS!)",
+            "Dipirona 500-1000mg 6/6h (analgésico/antipirético alternativo)",
+            "Antieméticos: Metoclopramida, Ondansetrona",
+            "",
+            "HIDRATAÇÃO CONFORME GRUPO:",
+            "A: 60 mL/kg/dia VO ambulatorial",
+            "B (com risco ou comorbidade): 60-80 mL/kg/dia, observação 6-8h",
+            "C (sinais de alarme): Hidratação IV 10-20 mL/kg em 1h, repetir se necessário",
+            "D (choque): Expansão 20 mL/kg em 20 min, UTI"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Manter hidratação adequada (diurese ≥0,5 mL/kg/h)",
+          "Evitar progressão para dengue grave",
+          "Reconhecer sinais de alarme precocemente",
+          "Recuperação sem sequelas"
+        ],
+        "examesIniciais": [
+          "Hemograma com plaquetas (hemoconcentração, plaquetopenia)",
+          "NS1 (até 5º dia de sintomas)",
+          "Sorologia IgM/IgG (após 6º dia)",
+          "TGO, TGP, albumina se sinais de alarme",
+          "Prova do laço"
+        ],
+        "redFlags": [
+          "SINAIS DE ALARME (indicam dengue grave iminente):",
+          "Dor abdominal intensa e contínua",
+          "Vômitos persistentes",
+          "Acúmulo de líquidos (ascite, derrame pleural)",
+          "Sangramento de mucosas",
+          "Letargia ou irritabilidade",
+          "Hepatomegalia >2cm",
+          "Aumento progressivo do hematócrito",
+          "Queda abrupta de plaquetas"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Brasil: país com maior número de casos no mundo",
+          "incidencia": "Milhões de casos/ano, picos epidêmicos cíclicos",
+          "faixaEtaria": "Todas as idades, gravidade pode ser maior em extremos",
+          "fatoresRisco": [
+            "Residir em área endêmica",
+            "Infecção prévia por outro sorotipo (risco de grave)",
+            "Crianças e idosos (maior gravidade)",
+            "Comorbidades",
+            "Gestantes"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Vírus inoculado por Aedes aegypti infecta células dendríticas e monócitos. Viremia provoca febre. Na fase crítica (defervescência), aumento de permeabilidade capilar por resposta imune (citocinas, complemento) leva a extravasamento plasmático. Anticorpos heterotípicos de infecção prévia podem potencializar infecção (ADE).",
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Febre alta de início súbito (2-7 dias)",
+            "Cefaleia intensa, retro-orbitária",
+            "Mialgia (\"febre quebra-ossos\")",
+            "Artralgia",
+            "Exantema (3º-4º dia, maculopapular)",
+            "Prostração intensa",
+            "Náuseas, vômitos, anorexia"
+          ],
+          "sinaisExameFisico": [
+            "Febre",
+            "Exantema maculopapular pruriginoso",
+            "Prova do laço positiva (≥20 petéquias em 2,5cm²)",
+            "Petéquias espontâneas",
+            "Hepatomegalia (sinal de gravidade)",
+            "Efusões (ascite, derrame pleural) - fase crítica"
+          ],
+          "formasClinicas": [
+            "Dengue sem sinais de alarme (maioria)",
+            "Dengue com sinais de alarme",
+            "Dengue grave (choque, hemorragia grave, disfunção orgânica)"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínico-epidemiológico + laboratorial",
+            "NS1 antígeno (1º-5º dia): sensibilidade 60-90%",
+            "IgM (após 6º dia): permanece positivo semanas",
+            "PCR: padrão-ouro, identifica sorotipo"
+          ],
+          "diagnosticoDiferencial": [
+            "Chikungunya",
+            "Zika",
+            "Leptospirose",
+            "COVID-19",
+            "Influenza",
+            "Febre maculosa",
+            "Meningococcemia"
+          ],
+          "examesLaboratoriais": [
+            "Hemograma (hemoconcentração: Ht ↑20%, plaquetopenia)",
+            "NS1 ou IgM",
+            "TGO, TGP, albumina (casos moderados/graves)",
+            "Coagulograma (suspeita de hemorragia)",
+            "Eletrólitos, função renal"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Manter hidratação",
+            "Reconhecer sinais de alarme",
+            "Prevenir e tratar choque",
+            "Evitar uso de AINEs"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Hidratação oral vigorosa",
+              "Repouso",
+              "Retorno imediato se sinais de alarme",
+              "Notificação compulsória"
+            ],
+            "citations": [
+              {
+                "refId": "ms-dengue-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Analgésico/antipirético",
+                "medicamentos": [
+                  "Paracetamol",
+                  "Dipirona"
+                ],
+                "posologia": "Paracetamol 500-750mg 6/6h. Dipirona 500-1000mg 6/6h. NÃO usar AAS ou AINEs!"
+              },
+              {
+                "classe": "Hidratação (Grupo A)",
+                "medicamentos": [
+                  "Soro oral"
+                ],
+                "posologia": "60 mL/kg/dia (1/3 salina + 2/3 líquidos). Ambulatorial."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Hidratação IV (Grupos C/D)",
+                "medicamentos": [
+                  "SF 0,9%",
+                  "Ringer Lactato"
+                ],
+                "posologia": "C: 10-20 mL/kg em 1h, reavaliar. D (choque): 20 mL/kg em 20 min bolus."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Gestante",
+                "conduta": "Internação precoce, monitorização fetal. Maior risco de hemorragia."
+              },
+              {
+                "situacao": "Dengue grave com hemorragia",
+                "conduta": "Transfusão de hemácias/plaquetas conforme indicação. UTI."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ms-dengue-2024"
+              }
+            ]
+          },
+          "duracao": "Fase aguda: 7-10 dias. Convalescença: semanas."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Diário até 48h após defervescência (fase crítica)",
+          "examesControle": [
+            "Hemograma diário na fase crítica",
+            "Hematócrito seriado",
+            "Reavaliação clínica"
+          ],
+          "metasTerapeuticas": [
+            "Estabilidade hemodinâmica",
+            "Diurese adequada",
+            "Recuperação de plaquetas"
+          ],
+          "criteriosEncaminhamento": [
+            "Sinais de alarme (observação/internação)",
+            "Dengue grave (UTI)",
+            "Gestante",
+            "Comorbidades descompensadas"
+          ],
+          "citations": [
+            {
+              "refId": "ms-dengue-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Controle do vetor (eliminar criadouros)",
+            "Uso de repelentes",
+            "Telas e mosquiteiros",
+            "Vacinação (Qdenga - soropositivos)"
+          ],
+          "secundaria": [
+            "Vigilância epidemiológica",
+            "Notificação compulsória"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "dengue-classificacao"
+      ],
+      "medicamentos": [
+        "paracetamol",
+        "dipirona",
+        "metoclopramida"
+      ],
+      "calculadoras": [
+        "prova-laco"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ms-dengue-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "dengue",
+        "arbovirose",
+        "aedes",
+        "febre",
+        "hidratacao"
+      ]
+    },
+    {
+      "id": "herpes-simples",
+      "titulo": "单纯疱疹",
+      "ciap2": [
+        "S71"
+      ],
+      "cid10": [
+        "B00"
+      ],
+      "cid11": [
+        "1F00"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:8566",
+      "snomedCT": "88594005",
+      "meshId": "D006561",
+      "umlsCui": "C0019348",
+      "quickView": {
+        "definicao": "由HSV-1（唇部）或HSV-2（生殖器）引起的复发性病毒感染。病毒潜伏在神经节中，可重新激活。",
+        "criteriosDiagnosticos": [
+          "成簇的水疱，基底红斑",
+          "前驱症状：刺痛、烧灼感",
+          "7-10天内发展为结痂"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免在活动期接触",
+            "避免诱发因素（阳光、压力）"
+          ],
+          "farmacologico": [
+            "发作期：阿昔洛韦 400mg 每日三次，持续5天",
+            "抑制治疗（≥6次/年复发）：阿昔洛韦 400mg 每日两次，持续使用"
+          ]
+        },
+        "redFlags": [
+          "眼部单纯疱疹",
+          "疱疹性湿疹",
+          "播散性疱疹（免疫抑制）"
+        ]
+      },
+      "medicamentos": [
+        "aciclovir"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "herpes-zoster",
+      "titulo": "带状疱疹",
+      "ciap2": [
+        "S70"
+      ],
+      "cid10": [
+        "B02"
+      ],
+      "cid11": [
+        "1E90"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:8536",
+      "snomedCT": "4740000",
+      "meshId": "D006562",
+      "umlsCui": "C0019360",
+      "quickView": {
+        "definicao": "潜伏在神经节中的水痘-带状疱疹病毒再激活。随着年龄增长和免疫抑制，风险增加。",
+        "criteriosDiagnosticos": [
+          "神经痛先于皮疹出现",
+          "单侧皮节上的水疱",
+          "不越过中线",
+          "胸段皮节最常见"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "保持病变部位清洁干燥",
+            "不要刺破水疱"
+          ],
+          "farmacologico": [
+            "阿昔洛韦 800mg 每日5次，持续7天（<72小时内开始）",
+            "镇痛：对乙酰氨基酚 + 非甾体抗炎药",
+            "如>50岁：联合使用皮质类固醇以减少神经痛"
+          ]
+        },
+        "redFlags": [
+          "眼部带状疱疹（鼻尖）",
+          "拉姆齐-亨特综合征（耳朵）",
+          "播散性",
+          "免疫抑制"
+        ]
+      },
+      "medicamentos": [
+        "aciclovir",
+        "paracetamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "escabiose",
+      "titulo": "疥疮（Scabies）",
+      "ciap2": [
+        "S72"
+      ],
+      "cid10": [
+        "B86"
+      ],
+      "cid11": [
+        "1G89"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:13234",
+      "snomedCT": "128869009",
+      "meshId": "D012532",
+      "umlsCui": "C0036262",
+      "quickView": {
+        "definicao": "由疥螨（Sarcoptes scabiei）引起的皮肤寄生虫感染。通过长时间直接接触传播。",
+        "criteriosDiagnosticos": [
+          "夜间剧烈瘙痒",
+          "指缝、手腕、腋窝、生殖器等部位的皮损",
+          "特征性的划痕/隧道",
+          "家庭成员有瘙痒症状"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "治疗所有家庭接触者",
+            "用热水清洗衣物和床单",
+            "将无法清洗的衣物密封72小时"
+          ],
+          "farmacologico": [
+            "Permetrina 5% 乳膏：从颈部涂抹至脚部，8-14小时后清洗，7天后重复使用",
+            "Ivermectina 200mcg/kg 口服 单次剂量（广泛病例）"
+          ]
+        },
+        "redFlags": [
+          "挪威疥疮（结痂型）- 免疫抑制患者",
+          "继发感染"
+        ]
+      },
+      "medicamentos": [
+        "ivermectina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gastroenterite-aguda",
+      "titulo": "急性胃肠炎",
+      "ciap2": [
+        "D70"
+      ],
+      "cid10": [
+        "A09"
+      ],
+      "cid11": [
+        "1A40"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:4194",
+      "snomedCT": "235856003",
+      "meshId": "D005759",
+      "umlsCui": "C0017163",
+      "quickView": {
+        "definicao": "由病毒（轮状病毒、诺如病毒）、细菌或寄生虫引起的胃肠道炎症。持续时间<2周。",
+        "criteriosDiagnosticos": [
+          "急性腹泻（<14天）",
+          "呕吐",
+          "恶心",
+          "腹痛",
+          "可能伴有发热"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "口服补液（SRO）",
+            "清淡饮食",
+            "休息"
+          ],
+          "farmacologico": [
+            "仅在以下情况下使用抗生素：霍乱、志贺菌病、阿米巴病，或存在危险因素",
+            "必要时使用止吐药：昂丹司琼（避免用于<4岁的儿童）"
+          ]
+        },
+        "redFlags": [
+          "严重脱水",
+          "休克迹象",
+          "便血",
+          "老年人或婴幼儿"
+        ]
+      },
+      "medicamentos": [
+        "soro-oral"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "mononucleose-infecciosa",
+      "titulo": "传染性单核细胞增多症",
+      "ciap2": [
+        "A75"
+      ],
+      "cid10": [
+        "B27"
+      ],
+      "cid11": [
+        "1D81"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:8620",
+      "snomedCT": "186759007",
+      "meshId": "D007244",
+      "umlsCui": "C0026650",
+      "tags": [
+        "infecciosa",
+        "viral",
+        "pediatrica"
+      ],
+      "quickView": {
+        "definicao": "EBV感染。特征为发热、咽炎、淋巴结病、脾肿大。",
+        "criteriosDiagnosticos": [
+          "渗出性咽炎",
+          "颈部淋巴结病",
+          "异型淋巴细胞增多",
+          "Paul-Bunnell试验阳性"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "休息",
+            "补水",
+            "漱口"
+          ],
+          "farmacologico": [
+            "对症治疗：Paracetamol或Ibuprofeno",
+            "仅在并发症时使用皮质类固醇"
+          ]
+        },
+        "redFlags": [
+          "脾破裂",
+          "气道阻塞",
+          "重度肝炎",
+          "脑膜脑炎"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hepatite-a",
+      "titulo": "甲型肝炎",
+      "ciap2": [
+        "D72"
+      ],
+      "cid10": [
+        "B15"
+      ],
+      "cid11": [
+        "1E50.0"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:12549",
+      "snomedCT": "50711007",
+      "meshId": "D006506",
+      "umlsCui": "C0019158",
+      "tags": [
+        "感染性",
+        "病毒性",
+        "肝炎"
+      ],
+      "quickView": {
+        "definicao": "HAV感染。粪-口传播。通常自限性，极少情况下为暴发性。",
+        "criteriosDiagnosticos": [
+          "黄疸",
+          "AST/ALT升高",
+          "Anti-HAV IgM阳性"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "休息",
+            "补水",
+            "避免饮酒"
+          ],
+          "farmacologico": [
+            "仅对症治疗",
+            "无特异性治疗"
+          ]
+        },
+        "redFlags": [
+          "暴发性肝炎",
+          "肝功能衰竭",
+          "凝血障碍"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hepatite-b",
+      "titulo": "乙型肝炎",
+      "ciap2": [
+        "D72"
+      ],
+      "cid10": [
+        "B16"
+      ],
+      "cid11": [
+        "1E50.1"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:2043",
+      "snomedCT": "66071002",
+      "meshId": "D006509",
+      "umlsCui": "C0019159",
+      "tags": [
+        "感染性",
+        "病毒性",
+        "肝炎",
+        "慢性"
+      ],
+      "quickView": {
+        "definicao": "HBV感染。可以是急性的或慢性的。通过血液、性接触或垂直传播。",
+        "criteriosDiagnosticos": [
+          "HBsAg阳性",
+          "Anti-HBc IgM（急性）",
+          "HBV病毒载量"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "休息",
+            "避免饮酒",
+            "保护接触者"
+          ],
+          "farmacologico": [
+            "急性：对症治疗",
+            "慢性：替诺福韦或恩替卡韦"
+          ]
+        },
+        "redFlags": [
+          "暴发性肝炎",
+          "肝硬化",
+          "肝细胞癌"
+        ]
+      },
+      "medicamentos": [
+        "tenofovir",
+        "entecavir"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hepatite-e",
+      "titulo": "戊型肝炎",
+      "ciap2": [
+        "D72"
+      ],
+      "cid10": [
+        "B17.2"
+      ],
+      "cid11": [
+        "1E50.0"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:12476",
+      "snomedCT": "240530008",
+      "meshId": "D006526",
+      "umlsCui": "C0019160",
+      "hpo": [
+        "HP:0002920",
+        "HP:0002901"
+      ],
+      "tags": [
+        "感染性",
+        "病毒性",
+        "肝炎"
+      ],
+      "quickView": {
+        "definicao": "戊型肝炎病毒 (HEV) 感染。通过粪-口途径传播。在妊娠期间可能严重。",
+        "criteriosDiagnosticos": [
+          "抗-HEV IgM 阳性",
+          "HEV RNA 阳性",
+          "转氨酶升高"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "支持治疗",
+            "休息",
+            "补水"
+          ],
+          "farmacologico": [
+            "仅对症治疗",
+            "重症/移植患者使用利巴韦林"
+          ]
+        },
+        "redFlags": [
+          "急性肝功能衰竭",
+          "妊娠（高死亡率）",
+          "免疫抑制者"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sífilis-terciaria",
+      "titulo": "三期梅毒",
+      "ciap2": [
+        "Y77"
+      ],
+      "cid10": [
+        "A52"
+      ],
+      "cid11": [
+        "1C1Z"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:13240",
+      "snomedCT": "76272004",
+      "meshId": "D013592",
+      "umlsCui": "C0039102",
+      "hpo": [
+        "HP:0001250",
+        "HP:0002134"
+      ],
+      "tags": [
+        "感染性",
+        "细菌性",
+        "神经系统"
+      ],
+      "quickView": {
+        "definicao": "晚期梅毒（感染多年后）。神经梅毒、心血管梅毒、梅毒树胶肿。",
+        "criteriosDiagnosticos": [
+          "梅毒病史",
+          "VDRL/RPR 阳性",
+          "TPHA/FTA-ABS 阳性",
+          "晚期表现"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "神经学评估",
+            "必要时进行心脏评估"
+          ],
+          "farmacologico": [
+            "青霉素 G 晶体 18-24 百万单位/天 静脉注射 10-14 天（神经梅毒）",
+            "或头孢曲松作为替代"
+          ]
+        },
+        "redFlags": [
+          "活动性神经梅毒",
+          "主动脉瓣关闭不全",
+          "主动脉瘤"
+        ]
+      },
+      "medicamentos": [
+        "penicilina-g"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "faringite-estreptococica",
+      "titulo": "链球菌性咽炎",
+      "sinonimos": [
+        "链球菌性扁桃体炎"
+      ],
+      "ciap2": [
+        "R72"
+      ],
+      "cid10": [
+        "J02.0"
+      ],
+      "cid11": [
+        "CA40"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:10763",
+      "snomedCT": "43878009",
+      "meshId": "D010996",
+      "umlsCui": "C0032285",
+      "hpo": [
+        "HP:0000347",
+        "HP:0025258"
+      ],
+      "tags": [
+        "感染性疾病",
+        "细菌性",
+        "儿科"
+      ],
+      "quickView": {
+        "definicao": "由A组β-溶血性链球菌（Streptococcus pyogenes）引起的咽炎。常见于5-15岁的儿童。可能并发风湿热。",
+        "criteriosDiagnosticos": [
+          "咽炎/扁桃体炎",
+          "扁桃体渗出物",
+          "颈部淋巴结肿大",
+          "发热",
+          "快速检测或培养阳性"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "镇痛药：对乙酰氨基酚或布洛芬",
+            "漱口",
+            "保持水分"
+          ],
+          "farmacologico": [
+            "青霉素V 250-500mg 每6小时 10天",
+            "或阿莫西林 500mg 每8小时 10天",
+            "或阿奇霉素（如过敏）"
+          ]
+        },
+        "redFlags": [
+          "周围扁桃体脓肿",
+          "呼吸道阻塞",
+          "风湿热",
+          "急性肾小球肾炎"
+        ]
+      },
+      "medicamentos": [
+        "penicilina-v",
+        "amoxicilina",
+        "azitromicina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "amigdalite",
+      "titulo": "扁桃体炎",
+      "ciap2": [
+        "R72"
+      ],
+      "cid10": [
+        "J03"
+      ],
+      "cid11": [
+        "CA40"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:10763",
+      "snomedCT": "56717001",
+      "meshId": "D014069",
+      "umlsCui": "C0040425",
+      "hpo": [
+        "HP:0025258",
+        "HP:0012825"
+      ],
+      "tags": [
+        "感染性",
+        "耳鼻喉",
+        "常见"
+      ],
+      "quickView": {
+        "definicao": "扁桃体的炎症。可能是病毒性的（更常见）或细菌性的。症状：咽痛、发热、淋巴结肿大。",
+        "criteriosDiagnosticos": [
+          "咽痛",
+          "扁桃体充血/水肿",
+          "可能有渗出物",
+          "颈部淋巴结肿大",
+          "发热"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "镇痛药：对乙酰氨基酚或布洛芬",
+            "漱口",
+            "保持水分"
+          ],
+          "farmacologico": [
+            "如为链球菌性：青霉素V或阿莫西林",
+            "病毒性：仅对症治疗"
+          ]
+        },
+        "redFlags": [
+          "扁桃周围脓肿",
+          "呼吸道阻塞",
+          "张口困难",
+          "悬雍垂偏移"
+        ]
+      },
+      "medicamentos": [
+        "penicilina-v",
+        "amoxicilina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gastroenterite-viral",
+      "titulo": "病毒性胃肠炎",
+      "sinonimos": [
+        "急性病毒性胃肠炎"
+      ],
+      "ciap2": [
+        "D73"
+      ],
+      "cid10": [
+        "A08"
+      ],
+      "cid11": [
+        "DD92"
+      ],
+      "categoria": "infecciosas",
+      "doid": "DOID:4374",
+      "snomedCT": "48866001",
+      "meshId": "D005759",
+      "umlsCui": "C0017168",
+      "tags": [
+        "感染性",
+        "病毒性",
+        "胃肠道",
+        "儿科"
+      ],
+      "quickView": {
+        "definicao": "胃肠道病毒感染。原因：轮状病毒、诺如病毒、腺病毒。症状：腹泻、呕吐、恶心、腹痛。",
+        "criteriosDiagnosticos": [
+          "急性腹泻",
+          "呕吐",
+          "恶心",
+          "腹痛",
+          "可能有发热",
+          "流行病学史"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "口服补水：口服补液盐",
+            "清淡饮食",
+            "休息",
+            "预防：卫生、疫苗接种（轮状病毒）"
+          ],
+          "farmacologico": [
+            "严重呕吐时使用止吐药：昂丹司琼",
+            "5岁以下儿童补充锌",
+            "益生菌可能有帮助"
+          ]
+        },
+        "redFlags": [
+          "严重脱水",
+          "便血",
+          "老年人/幼儿",
+          "症状持续>7天"
+        ]
+      },
+      "medicamentos": [
+        "ondansetrona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sepse",
+      "titulo": "脓毒症和脓毒性休克",
+      "sinonimos": [
+        "败血症",
+        "脓毒综合征",
+        "脓毒性休克",
+        "全身性感染"
+      ],
+      "doid": "DOID:0080009",
+      "snomedCT": "91302008",
+      "meshId": "D018805",
+      "umlsCui": "C0036690",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "A41",
+        "A41.9",
+        "R65.1",
+        "R57.2"
+      ],
+      "cid11": [
+        "1G40"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "由宿主对感染的失调反应引起的潜在致命的器官功能障碍。脓毒性休克：脓毒症 + 需要血管加压药 + 尽管补液后乳酸 >2mmol/L。",
+        "criteriosDiagnosticos": [
+          "脓毒症：疑似/确诊感染 + SOFA ≥2 分",
+          "qSOFA（筛查）：≥2 项：呼吸频率≥22，收缩压≤100，意识改变",
+          "脓毒性休克：脓毒症 + 血管加压药维持平均动脉压≥65 + 补液后乳酸>2",
+          "确定感染源",
+          "在使用抗生素前进行血培养（不要延迟抗生素治疗）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "识别并控制感染源（引流脓肿，移除导管）",
+            "建立大口径静脉通路（最好是中心静脉）",
+            "持续监测",
+            "留置导尿以监测尿量"
+          ],
+          "farmacologico": [
+            "第1小时（拯救脓毒症运动捆绑措施）：",
+            "乳酸（如果初始值 >2 则重复）",
+            "血培养（2 套）在使用抗生素前",
+            "广谱抗生素 <1 小时内使用",
+            "0.9% 生理盐水 30mL/kg 如果低血压或乳酸≥4",
+            "如果补液后平均动脉压<65 使用去甲肾上腺素",
+            "",
+            "根据疑似感染源选择经验性抗生素：",
+            "肺部：头孢曲松 + 阿奇霉素",
+            "腹部：哌拉西林-他唑巴坦 或 美罗培南",
+            "泌尿系：头孢曲松 或 左氧氟沙星",
+            "皮肤：苯唑西林 + 克林霉素"
+          ]
+        },
+        "metasTerapeuticas": [
+          "平均动脉压 ≥65 mmHg",
+          "尿量 ≥0.5 mL/kg/h",
+          "乳酸正常化",
+          "意识改善",
+          "控制感染源"
+        ],
+        "examesIniciais": [
+          "血清乳酸",
+          "血培养（2 套在使用抗生素前）",
+          "血常规，肌酐，胆红素",
+          "动脉血气",
+          "凝血功能",
+          "降钙素原（如有条件）",
+          "胸部 X 光，尿常规/尿培养，影像学检查根据感染源"
+        ],
+        "redFlags": [
+          "乳酸 >4 mmol/L",
+          "补液后低血压持续存在",
+          "多器官功能障碍",
+          "意识水平显著改变",
+          "凝血病（DIC）",
+          "严重免疫抑制"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~30 百万例/年全球",
+          "incidencia": "发达国家每年每 10 万人 200-300 例",
+          "mortalidade": "脓毒症 25-30%，脓毒性休克 40-50%",
+          "faixaEtaria": "年龄极端（新生儿和老年人）更易受影响",
+          "fatoresRisco": [
+            "高龄",
+            "免疫抑制",
+            "糖尿病",
+            "肿瘤",
+            "慢性肾/肝病",
+            "侵入性装置（导管，导尿管）",
+            "近期住院",
+            "近期手术"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "对感染的免疫反应失调，导致大量细胞因子释放（细胞因子风暴），凝血级联激活，内皮功能障碍和血管舒张。结果是组织灌注不足，器官功能障碍，可能导致死亡。",
+          "citations": [
+            {
+              "refId": "sepsis-3"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "发热或低体温",
+            "寒战",
+            "心动过速，呼吸急促",
+            "精神错乱，躁动或嗜睡",
+            "少尿",
+            "感染源的症状"
+          ],
+          "sinaisExameFisico": [
+            "低血压",
+            "心动过速",
+            "呼吸急促",
+            "意识改变",
+            "毛细血管充盈时间 >3 秒",
+            "皮肤花斑/紫绀",
+            "四肢冰冷"
+          ],
+          "formasClinicas": [
+            "无休克的脓毒症",
+            "脓毒性休克",
+            "特定器官功能障碍的脓毒症（急性肾损伤，急性呼吸窘迫综合征等）"
+          ],
+          "citations": [
+            {
+              "refId": "sepsis-3"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Sepsis-3：SOFA ≥2 + 感染",
+            "qSOFA 用于筛查（非诊断）",
+            "确定感染源和病原体"
+          ],
+          "diagnosticoDiferencial": [
+            "心源性休克",
+            "低血容量性休克",
+            "过敏性休克",
+            "非感染性 SIRS（胰腺炎，烧伤）",
+            "急性肾上腺功能不全"
+          ],
+          "examesLaboratoriais": [
+            "血培养（2 套）",
+            "动脉乳酸",
+            "降钙素原",
+            "血常规（白细胞增多或减少）",
+            "肾功能和肝功能",
+            "凝血功能（血小板减少，凝血酶原时间延长）",
+            "动脉血气"
+          ],
+          "examesImagem": [
+            "胸部 X 光",
+            "根据怀疑部位进行 CT（腹部，骨盆）",
+            "超声心动图（如果有心脏功能障碍或怀疑心内膜炎）"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "早期血流动力学复苏",
+            "在 1 小时内给予适当的抗生素",
+            "控制感染源",
+            "支持器官功能障碍"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "中心静脉通路",
+              "有创平均动脉压导管",
+              "控制感染源（引流，清创，移除装置）",
+              "如果发生急性呼吸窘迫综合征则采用保护性通气",
+              "必要时进行肾脏替代治疗"
+            ],
+            "citations": [
+              {
+                "refId": "surviving-sepsis-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "抗生素",
+                "medicamentos": [
+                  "哌拉西林-他唑巴坦",
+                  "美罗培南",
+                  "头孢曲松 + 甲硝唑"
+                ],
+                "posologia": "最大剂量，肾功能调整",
+                "observacoes": "在识别后 <1 小时内开始"
+              },
+              {
+                "classe": "晶体液",
+                "medicamentos": [
+                  "0.9% 生理盐水",
+                  "乳酸林格液"
+                ],
+                "posologia": "如果低血压/乳酸≥4，在最初的 3 小时内给予 30mL/kg"
+              },
+              {
+                "classe": "血管加压药",
+                "medicamentos": [
+                  "去甲肾上腺素 0.1-2mcg/kg/min"
+                ],
+                "posologia": "滴定至平均动脉压≥65",
+                "observacoes": "首选"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "额外血管加压药",
+                "medicamentos": [
+                  "去甲肾上腺素 0.01-0.04 U/min"
+                ],
+                "observacoes": "如果去甲肾上腺素不足"
+              },
+              {
+                "classe": "正性肌力药",
+                "medicamentos": [
+                  "多巴酚丁胺 2.5-20mcg/kg/min"
+                ],
+                "observacoes": "如果心输出量低"
+              },
+              {
+                "classe": "皮质类固醇",
+                "medicamentos": [
+                  "氢化可的松 200mg/天"
+                ],
+                "observacoes": "如果对血管加压药耐药"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "surviving-sepsis-2021"
+              }
+            ]
+          },
+          "duracao": "大多数情况下抗生素治疗 7-10 天；根据感染源和反应进行调整"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "急性期持续重新评估",
+          "examesControle": [
+            "连续乳酸",
+            "肾功能",
+            "血常规",
+            "监测培养"
+          ],
+          "metasTerapeuticas": [
+            "乳酸清除",
+            "停用血管加压药",
+            "尿量 >0.5mL/kg/h",
+            "器官功能障碍解决"
+          ],
+          "criteriosEncaminhamento": [
+            "所有脓毒症患者：重症监护室或重症监护病房",
+            "需要手术的感染源：外科手术",
+            "复杂病例：传染病专家"
+          ],
+          "citations": [
+            {
+              "refId": "ilas-sepse-2023"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "疫苗接种（肺炎球菌，流感）",
+            "手卫生",
+            "预防医院感染",
+            "适当管理侵入性装置"
+          ],
+          "secundaria": [
+            "早期识别感染",
+            "适当治疗社区获得性感染",
+            "1 小时捆绑措施"
+          ],
+          "citations": [
+            {
+              "refId": "surviving-sepsis-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "sepse-bundle-1h",
+        "choque-septico",
+        "atb-empirico-sepse"
+      ],
+      "medicamentos": [
+        "noradrenalina",
+        "meropenem",
+        "piperacilina-tazobactam",
+        "vancomicina"
+      ],
+      "calculadoras": [
+        "sofa",
+        "qsofa",
+        "apache-ii"
+      ],
+      "citations": [
+        {
+          "refId": "sepsis-3"
+        },
+        {
+          "refId": "surviving-sepsis-2021"
+        },
+        {
+          "refId": "ilas-sepse-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "malaria",
+      "titulo": "疟疾",
+      "sinonimos": [
+        "疟疾",
+        "三日热",
+        "四日热",
+        "疟疾感染"
+      ],
+      "doid": "DOID:12365",
+      "snomedCT": "61462000",
+      "meshId": "D008288",
+      "umlsCui": "C0024530",
+      "ciap2": [
+        "A73"
+      ],
+      "cid10": [
+        "B50",
+        "B51",
+        "B52",
+        "B53",
+        "B54"
+      ],
+      "cid11": [
+        "1F40"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "由疟原虫属（Plasmodium）的原生动物引起的传染病，通过按蚊传播。恶性疟原虫（P. falciparum）引起最严重的类型。在巴西法定亚马逊地区流行。",
+        "criteriosDiagnosticos": [
+          "发热（通常是间歇性/周期性的）",
+          "剧烈寒战，大量出汗",
+          "头痛、肌痛、关节痛",
+          "肝脾肿大",
+          "有流行区域暴露史",
+          "厚血涂片或快速检测阳性",
+          "周期性：P. vivax/ovale（48小时），P. malariae（72小时），P. falciparum（不规则）"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "低",
+            "criterios": [
+              "非复杂性P. vivax",
+              "无警报迹象"
+            ],
+            "conduta": "门诊治疗"
+          },
+          {
+            "nivel": "高",
+            "criterios": [
+              "P. falciparum",
+              "严重症状",
+              "孕妇",
+              "年龄极端"
+            ],
+            "conduta": "住院和静脉注射治疗"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "适当补水",
+            "退热药（安乃近、对乙酰氨基酚）",
+            "休息",
+            "立即强制报告"
+          ],
+          "farmacologico": [
+            "P. VIVAX（非复杂性）:",
+            "氯喹 25mg/kg 分3天服用 + 伯氨喹 0.5mg/kg/天 连续7天",
+            "",
+            "P. FALCIPARUM（非复杂性）:",
+            "青蒿琥酯-卢菲特林（Coartem®） 6次分3天服用",
+            "或 阿莫地喹-甲氟喹",
+            "",
+            "重症疟疾（任何种类）:",
+            "阿莫地喹 IV 2.4mg/kg 在0小时、12小时、24小时，之后每日一次",
+            "好转后继续使用Coartem®"
+          ]
+        },
+        "metasTerapeuticas": [
+          "消除寄生虫（临床和寄生虫学治愈）",
+          "预防复发（P. vivax/ovale - 休眠子）",
+          "预防严重并发症",
+          "用伯氨喹根治"
+        ],
+        "examesIniciais": [
+          "厚血涂片（金标准）",
+          "快速检测（HRP2用于P. falciparum）",
+          "血常规（贫血、血小板减少）",
+          "肾功能和肝功能",
+          "血糖",
+          "胆红素",
+          "血气分析（如严重）"
+        ],
+        "redFlags": [
+          "意识水平改变（脑型疟疾）",
+          "呼吸衰竭（ARDS）",
+          "严重黄疸（Bb>3mg/dL）",
+          "血红蛋白尿（“黑水热”）",
+          "低血糖（<40mg/dL）",
+          "代谢性酸中毒",
+          "高寄生虫血症（>250,000/mm³）",
+          "急性肾功能衰竭",
+          "严重贫血（Hb<5g/dL）",
+          "自发性出血"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~140,000例/年在巴西（>99%在亚马逊地区）",
+          "incidencia": "全球每年约2.29亿例（WHO）",
+          "mortalidade": "全球每年约40万例死亡；巴西每年<100例",
+          "faixaEtaria": "所有年龄段；5岁以下儿童更易感",
+          "fatoresRisco": [
+            "居住/旅行到流行区域",
+            "未使用蚊帐",
+            "黄昏时段无保护",
+            "孕妇",
+            "免疫抑制",
+            "初次感染"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "被蚊子注入的子孢子感染肝细胞，繁殖并释放裂殖子侵入红细胞。红细胞周期导致溶血，细胞因子释放和症状出现。P. vivax/ovale形成肝内休眠子（复发）。P. falciparum引起细胞粘附和微血管阻塞。",
+          "citations": [
+            {
+              "refId": "who-malaria-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "高热（39-41°C）",
+            "寒战（冷期）",
+            "大量出汗（汗期）",
+            "剧烈头痛",
+            "肌痛、关节痛",
+            "恶心、呕吐",
+            "乏力"
+          ],
+          "sinaisExameFisico": [
+            "脾肿大（常见）",
+            "肝肿大",
+            "苍白（贫血）",
+            "轻至中度黄疸",
+            "心动过速"
+          ],
+          "formasClinicas": [
+            "非复杂性疟疾",
+            "重症/复杂性疟疾",
+            "脑型疟疾",
+            "妊娠期疟疾"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "临床提示 + 流行病学暴露",
+            "必须进行寄生虫学确认"
+          ],
+          "diagnosticoDiferencial": [
+            "登革热",
+            "伤寒",
+            "钩端螺旋体病",
+            "病毒性肝炎",
+            "黄热病",
+            "脑膜炎",
+            "败血症"
+          ],
+          "examesLaboratoriais": [
+            "厚血涂片（确定种类和寄生虫血症）",
+            "薄血涂片",
+            "免疫色谱快速检测",
+            "血常规",
+            "胆红素、转氨酶",
+            "肾功能",
+            "血糖、乳酸"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "消除寄生虫",
+            "预防并发症",
+            "防止传播",
+            "避免复发（休眠子）"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "补水",
+              "退热药",
+              "监测",
+              "Hb<5g/dL时输血"
+            ],
+            "citations": [
+              {
+                "refId": "ms-malaria-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "P. vivax",
+                "medicamentos": [
+                  "氯喹 25mg/kg 分3天服用",
+                  "伯氨喹 0.5mg/kg/天 连续7天"
+                ],
+                "observacoes": "检查G6PD缺乏"
+              },
+              {
+                "classe": "P. falciparum",
+                "medicamentos": [
+                  "青蒿琥酯-卢菲特林",
+                  "阿莫地喹-甲氟喹"
+                ],
+                "posologia": "6次分3天服用"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "重症疟疾",
+                "medicamentos": [
+                  "阿莫地喹 IV 2.4mg/kg"
+                ],
+                "posologia": "0小时、12小时、24小时，之后每日一次"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "孕妇",
+                "conduta": "不使用伯氨喹；首选奎宁+克林霉素在第一孕期"
+              },
+              {
+                "situacao": "G6PD缺乏",
+                "conduta": "伯氨喹 0.75mg/kg/周 连续8周"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-malaria-2023"
+              }
+            ]
+          },
+          "duracao": "短期治疗（3-7天）；伯氨喹7-14天"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "治愈监控：D3、D7、D14、D28、D42的厚血涂片",
+          "metasTerapeuticas": [
+            "寄生虫血症阴性",
+            "临床症状缓解",
+            "预防复发（根治）"
+          ],
+          "criteriosEncaminhamento": [
+            "重症疟疾：ICU/参考医院",
+            "孕妇疟疾",
+            "治疗失败"
+          ],
+          "citations": [
+            {
+              "refId": "ms-malaria-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "使用浸药蚊帐",
+            "驱蚊剂",
+            "避免黄昏时段暴露",
+            "旅行者化学预防（甲氟喹、多西环素、阿托伐醌-普罗瓜尼尔）",
+            "媒介控制"
+          ],
+          "secundaria": [
+            "早期诊断和治疗",
+            "主动寻找病例",
+            "强制报告"
+          ],
+          "citations": [
+            {
+              "refId": "who-malaria-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "malaria-tratamento",
+        "malaria-grave"
+      ],
+      "medicamentos": [
+        "cloroquina",
+        "primaquina",
+        "artemeter-lumefantrina",
+        "artesunato"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-malaria-2022"
+        },
+        {
+          "refId": "who-malaria-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "doenca-chagas",
+      "titulo": "查加斯病",
+      "sinonimos": [
+        "美洲锥虫病",
+        "查加斯病",
+        "查加斯病"
+      ],
+      "doid": "DOID:12140",
+      "snomedCT": "77506005",
+      "meshId": "D014355",
+      "umlsCui": "C0041234",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "B57",
+        "B57.0",
+        "B57.1",
+        "B57.2",
+        "B57.3",
+        "B57.4",
+        "B57.5"
+      ],
+      "cid11": [
+        "1F51"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "由克鲁兹锥虫引起的寄生虫病，主要通过三斑锥蝽（\"巴贝罗\"）传播。急性期常无症状；慢性期可出现心脏病和/或巨食管/巨结肠。",
+        "criteriosDiagnosticos": [
+          "急性期：发热、肝脾肿大、水肿、罗马尼亚征/查加斯瘤",
+          "可检测到寄生虫血症（厚血涂片、QBC、PCR）",
+          "慢性期：血清学阳性（2种不同方法）",
+          "查加斯心脏病：BRD + BDAS，心律失常，充血性心力衰竭",
+          "巨食管：吞咽困难，反流",
+          "巨结肠：慢性便秘，粪便嵌塞"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "急性期的临床支持",
+            "慢性期控制心律失常和充血性心力衰竭",
+            "巨食管患者采用糊状饮食",
+            "巨结肠患者采用通便饮食"
+          ],
+          "farmacologico": [
+            "急性期（必须治疗）：",
+            "苯并咪唑 5mg/kg/天，持续60天（成人：每日两次）",
+            "或 尼福尔托莫克斯 8-10mg/kg/天，持续60-90天",
+            "",
+            "慢性期不定型：",
+            "苯并咪唑：建议用于<50岁，育龄妇女",
+            "",
+            "慢性期心脏型：",
+            "充血性心力衰竭的治疗（ACEI，β受体阻滞剂，螺内酯）",
+            "如有心律失常使用胺碘酮",
+            "如有高度房室传导阻滞考虑安装起搏器",
+            "如高风险猝死考虑植入ICD"
+          ]
+        },
+        "metasTerapeuticas": [
+          "急性期：消除寄生虫，防止病情进展",
+          "慢性期：控制症状，预防并发症",
+          "预防垂直传播"
+        ],
+        "examesIniciais": [
+          "血清学（ELISA + IFI 或 ELISA + HAI）",
+          "厚血涂片/QBC（急性期）",
+          "T. cruzi 的 PCR",
+          "12导联心电图",
+          "超声心动图",
+          "胸部X光",
+          "食管造影/食管钡餐（如有吞咽困难）",
+          "不透明灌肠（如有便秘）"
+        ],
+        "redFlags": [
+          "严重的急性心肌炎",
+          "脑膜脑炎",
+          "失代偿性充血性心力衰竭",
+          "恶性心律失常（持续性VT）",
+          "高度房室传导阻滞",
+          "免疫抑制患者的再激活",
+          "肠道穿孔/扭转"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "全球约有6-7百万感染者；巴西约有1-3百万感染者",
+          "incidencia": "急性病例：每年约200例（经口传播）",
+          "mortalidade": "每年约12,000人死亡（慢性心脏期）",
+          "faixaEtaria": "任何年龄均可感染；慢性表现可能在数十年后出现",
+          "fatoresRisco": [
+            "居住在流行区的农村地区",
+            "住房有缝隙（木板墙）",
+            "食用被污染的食物（如巴西莓、甘蔗汁）",
+            "输注未经检测的血液",
+            "携带者母亲（垂直传播）"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "克鲁兹锥虫侵入宿主细胞（心肌细胞、神经元），繁殖并导致直接的细胞破坏和慢性炎症。在慢性期，心肌和自主神经丛的进行性破坏（自主神经去神经化）导致扩张型心肌病和巨器官病变。",
+          "citations": [
+            {
+              "refId": "who-chagas-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "急性期：发热、不适、肝脾肿大、水肿、心肌炎",
+            "罗马尼亚征（单侧眼睑水肿）",
+            "接种查加斯瘤（叮咬部位的皮肤损伤）",
+            "慢性期：心悸、呼吸困难、晕厥、吞咽困难、便秘"
+          ],
+          "sinaisExameFisico": [
+            "肝脾肿大（急性期）",
+            "充血性心力衰竭的体征",
+            "心律失常",
+            "心脏腔室扩大",
+            "左心室顶壁瘤"
+          ],
+          "formasClinicas": [
+            "急性期（有症状或无症状）",
+            "慢性期不定型（无症状，血清学阳性）",
+            "慢性期心脏型",
+            "慢性期消化型（巨食管/巨结肠）",
+            "混合型（心脏型+消化型）"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "急性期：寄生虫学检查阳性",
+            "慢性期：2种不同方法的血清学试验阳性"
+          ],
+          "diagnosticoDiferencial": [
+            "特发性扩张型心肌病",
+            "缺血性心肌病",
+            "贲门失弛缓症",
+            "先天性巨结肠病",
+            "其他寄生虫病"
+          ],
+          "examesLaboratoriais": [
+            "血清学（ELISA、IFI、HAI）- 2种方法",
+            "直接寄生虫学检查（急性期）",
+            "PCR",
+            "异种诊断（历史）",
+            "克鲁兹锥虫的血培养"
+          ],
+          "examesImagem": [
+            "心电图（BRD、BDAS、早搏、传导阻滞）",
+            "超声心动图（扩大、顶壁瘤）",
+            "24小时动态心电图",
+            "胸部X光（心脏扩大）",
+            "食管造影/食管钡餐",
+            "不透明灌肠/结肠镜检查"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "急性期：消除寄生虫",
+            "慢性期：控制症状，预防并发症"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "吞咽困难（巨食管）的饮食",
+              "通便饮食和水化（巨结肠）",
+              "轻度心脏病的监督运动",
+              "严重巨器官病变的手术"
+            ],
+            "citations": [
+              {
+                "refId": "consenso-chagas-2016"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "抗锥虫药",
+                "medicamentos": [
+                  "苯并咪唑 5mg/kg/天"
+                ],
+                "posologia": "60天，分2次服用",
+                "observacoes": "急性期必须使用"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "替代药物",
+                "medicamentos": [
+                  "尼福尔托莫克斯 8-10mg/kg/天"
+                ],
+                "posologia": "60-90天",
+                "observacoes": "不良反应更多"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "查加斯心脏病",
+                "conduta": "充血性心力衰竭的治疗：ACEI，β受体阻滞剂，螺内酯，利尿剂"
+              },
+              {
+                "situacao": "心律失常",
+                "conduta": "胺碘酮；如高风险猝死考虑植入ICD"
+              },
+              {
+                "situacao": "严重巨食管",
+                "conduta": "Heller肌切开术或食管切除术"
+              },
+              {
+                "situacao": "巨结肠",
+                "conduta": "如反复扭转或粪便嵌塞考虑乙状结肠切除术"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-chagas-2023"
+              }
+            ]
+          },
+          "duracao": "抗锥虫药：60天；并发症治疗：持续"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "不定型期每年一次；心脏病期每半年/每季度一次",
+          "examesControle": [
+            "年度心电图",
+            "年度超声心动图",
+            "24小时动态心电图",
+            "血清学复查"
+          ],
+          "metasTerapeuticas": [
+            "PCR阴转（寄生虫学治愈）",
+            "心脏病稳定",
+            "预防猝死"
+          ],
+          "criteriosEncaminhamento": [
+            "心脏病：心血管科",
+            "心律失常：电生理科",
+            "巨器官病变：胃肠科/外科",
+            "再激活：传染病科"
+          ],
+          "citations": [
+            {
+              "refId": "consenso-chagas-2016"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "改善住房条件",
+            "控制媒介（喷洒、纱窗）",
+            "血液库筛查",
+            "注意食品安全（避免污染）"
+          ],
+          "secundaria": [
+            "孕妇筛查",
+            "急性病例治疗",
+            "慢性病例随访"
+          ],
+          "citations": [
+            {
+              "refId": "who-chagas-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "chagas-tratamento",
+        "cardiopatia-chagasica"
+      ],
+      "medicamentos": [
+        "benznidazol",
+        "nifurtimox",
+        "amiodarona"
+      ],
+      "calculadoras": [
+        "rassi-score"
+      ],
+      "citations": [
+        {
+          "refId": "consenso-chagas-2016"
+        },
+        {
+          "refId": "who-chagas-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "leishmaniose-visceral",
+      "titulo": "内脏利什曼病",
+      "sinonimos": [
+        "黑热病",
+        "卡氏锥虫病",
+        "黑热病",
+        "LV"
+      ],
+      "doid": "DOID:9146",
+      "snomedCT": "186802003",
+      "meshId": "D007898",
+      "umlsCui": "C0023290",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "B55.0"
+      ],
+      "cid11": [
+        "1F54.0"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "由利什曼原虫（巴西为利什曼原虫婴儿型）引起的疾病，通过白蛉（Lutzomyia longipalpis）传播。主要影响网状内皮系统。如不治疗，可能致命。",
+        "criteriosDiagnosticos": [
+          "持续发热（>2周）",
+          "巨大脾肿大",
+          "肝肿大",
+          "全血细胞减少（贫血、白细胞减少、血小板减少）",
+          "高免疫球蛋白血症",
+          "消瘦、乏力",
+          "确诊：骨髓穿刺寄生虫学检查或血清学（rK39）+临床表现"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "中度",
+            "criterios": [
+              "年龄1-40岁",
+              "无合并症",
+              "无严重症状"
+            ],
+            "conduta": "门诊监督治疗"
+          },
+          {
+            "nivel": "高度",
+            "criterios": [
+              "<1岁或>50岁",
+              "黄疸",
+              "水肿",
+              "出血",
+              "HIV阳性",
+              "合并感染"
+            ],
+            "conduta": "住院治疗"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "营养支持",
+            "如有严重贫血或出血则输血",
+            "治疗相关细菌感染",
+            "强制报告"
+          ],
+          "farmacologico": [
+            "首选：",
+            "两性霉素B脂质体 3mg/kg/天，连续7天（总剂量20mg/kg）",
+            "",
+            "备选：",
+            "两性霉素B脱氧胆酸盐 1mg/kg/天，连续14-20天",
+            "甲基葡萄糖胺锑酸盐（Glucantime®） 20mg Sb/kg/天，连续20-40天",
+            "",
+            "在以下情况下优先使用脂质体：<1岁，>50岁，心脏、肾脏、肝脏疾病，HIV，孕妇"
+          ]
+        },
+        "metasTerapeuticas": [
+          "临床治愈（退热、脾肿大缓解）",
+          "血液学指标恢复正常",
+          "寄生虫学治愈"
+        ],
+        "examesIniciais": [
+          "全血细胞计数",
+          "肾功能和肝功能",
+          "总蛋白及分项",
+          "凝血功能",
+          "血清学rK39（快速测试）",
+          "骨髓穿刺（骨髓涂片+培养）",
+          "HIV血清学",
+          "胸部X光、心电图（使用锑剂前）"
+        ],
+        "redFlags": [
+          "年龄<1岁或>50岁",
+          "黄疸（Bb>2mg/dL）",
+          "全身水肿",
+          "出血",
+          "HIV合并感染",
+          "严重细菌感染",
+          "严重营养不良",
+          "肾或肝功能不全"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~3.000病例/年在巴西",
+          "mortalidade": "~8%致死率在巴西；如不治疗，最高可达95%",
+          "faixaEtaria": "10岁以下儿童受影响最大",
+          "fatoresRisco": [
+            "居住在疫区",
+            "存在感染的狗",
+            "营养不良",
+            "免疫抑制（HIV）",
+            "社会经济条件差"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "由白蛉注入的前鞭毛体被巨噬细胞吞噬，转化为无鞭毛体。这些无鞭毛体在网状内皮系统（脾、肝、骨髓）中扩散，导致增生和浸润，引起器官肿大和骨髓抑制。",
+          "citations": [
+            {
+              "refId": "who-leishmaniasis-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "不规则持续发热",
+            "进行性消瘦",
+            "严重乏力",
+            "腹部增大（脾肿大）",
+            "苍白（贫血）",
+            "鼻出血、牙龈出血"
+          ],
+          "sinaisExameFisico": [
+            "巨大脾肿大（可超过脐痕）",
+            "肝肿大",
+            "皮肤黏膜苍白",
+            "营养不良",
+            "水肿",
+            "黄疸（重症病例）"
+          ],
+          "formasClinicas": [
+            "典型形式（发热、肝脾肿大、全血细胞减少）",
+            "寡症状形式",
+            "内脏利什曼病-HIV合并感染"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "临床表现+流行病学+实验室确诊",
+            "血清学rK39或RIFI ≥1:80",
+            "骨髓穿刺寄生虫学检查（金标准）"
+          ],
+          "diagnosticoDiferencial": [
+            "疟疾",
+            "伤寒",
+            "肝脾型血吸虫病",
+            "白血病和淋巴瘤",
+            "组织胞浆菌病",
+            "布鲁氏菌病",
+            "传染性单核细胞增多症"
+          ],
+          "examesLaboratoriais": [
+            "全血细胞计数（全血细胞减少）",
+            "ESR升高",
+            "蛋白质（A/G比值倒置）",
+            "血清学rK39、ELISA、RIFI",
+            "骨髓涂片查找利什曼原虫",
+            "利什曼原虫PCR"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "消除寄生虫",
+            "解决临床和实验室异常",
+            "预防复发"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "营养支持",
+              "必要时输血",
+              "抗生素治疗继发感染"
+            ],
+            "citations": [
+              {
+                "refId": "ms-lv-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "两性霉素B脂质体",
+                "medicamentos": [
+                  "AmBisome®"
+                ],
+                "posologia": "3mg/kg/天 IV 连续7天",
+                "observacoes": "优先用于高危人群"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "五价锑剂",
+                "medicamentos": [
+                  "Glucantime® 20mg Sb/kg/天"
+                ],
+                "posologia": "IM 或 IV 连续20-40天",
+                "observacoes": "心脏毒性（监测心电图）"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "HIV合并感染",
+                "conduta": "两性霉素B脂质体 + 二级预防 + 抗逆转录病毒治疗"
+              },
+              {
+                "situacao": "孕妇",
+                "conduta": "两性霉素B脂质体（五价锑剂禁忌）"
+              },
+              {
+                "situacao": "复发",
+                "conduta": "增加两性霉素B脂质体剂量或延长治疗时间"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-leishmaniasis-2023"
+              }
+            ]
+          },
+          "duracao": "两性霉素B脂质体：7天；五价锑剂：20-40天"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "治疗期间：每日；之后：3个月、6个月、12个月",
+          "examesControle": [
+            "全血细胞计数",
+            "肾功能",
+            "脾脏大小"
+          ],
+          "metasTerapeuticas": [
+            "2-3个月内临床治愈",
+            "血液学指标恢复正常",
+            "1年内无复发"
+          ],
+          "criteriosEncaminhamento": [
+            "重症病例：转至参考医院",
+            "HIV合并感染：转至传染病科",
+            "复发：转至参考中心"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "控制媒介（喷洒）",
+            "使用纱窗和驱蚊剂",
+            "识别和管理感染的狗",
+            "给狗佩戴浸药项圈"
+          ],
+          "secundaria": [
+            "早期诊断和治疗",
+            "流行病学监测"
+          ],
+          "citations": [
+            {
+              "refId": "ms-lv-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "leishmaniose-visceral-tratamento",
+        "lv-grave"
+      ],
+      "medicamentos": [
+        "anfotericina-b-lipossomal",
+        "glucantime"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-lv-2022"
+        },
+        {
+          "refId": "who-leishmaniasis-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "leptospirose",
+      "titulo": "钩端螺旋体病",
+      "sinonimos": [
+        "魏尔病",
+        "洪水热",
+        "稻田热"
+      ],
+      "doid": "DOID:2297",
+      "snomedCT": "77377001",
+      "meshId": "D007919",
+      "umlsCui": "C0023364",
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "A27",
+        "A27.0",
+        "A27.8",
+        "A27.9"
+      ],
+      "cid11": [
+        "1B91"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "由钩端螺旋体属的螺旋体引起的动物源性疾病，通过啮齿动物的尿液传播。无黄疸型（90%）是自限性的；黄疸型（魏尔病）有高死亡率。",
+        "criteriosDiagnosticos": [
+          "突发高热",
+          "剧烈肌痛（小腿）",
+          "结膜充血（眼睛红但无分泌物）",
+          "黄疸（重症）",
+          "暴露史：洪水、污水、清理化粪池",
+          "确认：血清学（MAT）或PCR"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "低",
+            "criterios": [
+              "无黄疸型",
+              "无警报征象"
+            ],
+            "conduta": "门诊治疗"
+          },
+          {
+            "nivel": "高",
+            "criterios": [
+              "黄疸",
+              "急性肾损伤",
+              "肺出血",
+              "意识改变"
+            ],
+            "conduta": "重症监护"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "适当补水",
+            "肺出血时提供呼吸支持",
+            "急性肾损伤少尿时进行透析",
+            "凝血病/出血时输血"
+          ],
+          "farmacologico": [
+            "轻度（门诊）：",
+            "多西环素 100mg 每12小时一次，共7天 或",
+            "阿莫西林 500mg 每8小时一次，共7天",
+            "",
+            "重症（住院）：",
+            "青霉素G 1,5百万单位 静脉注射 每6小时一次 或",
+            "头孢曲松 1g 静脉注射 每日一次 或",
+            "氨苄西林 1g 静脉注射 每6小时一次",
+            "",
+            "不要因等待确认而延迟抗生素治疗！"
+          ]
+        },
+        "metasTerapeuticas": [
+          "控制感染",
+          "支持器官功能障碍",
+          "预防肺出血"
+        ],
+        "examesIniciais": [
+          "血常规（白细胞增多伴左移，血小板减少）",
+          "肾功能（非少尿性急性肾损伤）",
+          "胆红素（直接胆红素升高）",
+          "肌酸激酶（横纹肌溶解）",
+          "凝血功能",
+          "胸部X光（肺泡浸润）",
+          "血清学（MAT）- 急性期和恢复期采样",
+          "血液PCR（初期）"
+        ],
+        "redFlags": [
+          "黄疸（Bb>3mg/dL）",
+          "急性肾损伤",
+          "肺出血（咯血，弥漫性浸润）",
+          "呼吸困难/低氧血症",
+          "心律失常（心肌炎）",
+          "意识水平改变",
+          "休克"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~4,000例/年在巴西",
+          "incidencia": "雨季/洪水期间高发",
+          "mortalidade": "无黄疸型：<1%；魏尔综合征：10-40%",
+          "faixaEtaria": "年轻成人，高风险职业",
+          "fatoresRisco": [
+            "接触洪水",
+            "污水、垃圾、化粪池",
+            "环境卫生工作者、城市清洁工",
+            "农民（稻田、甘蔗）",
+            "接触啮齿动物"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "钩端螺旋体通过受损的黏膜或皮肤侵入，通过血液传播。引起血管炎和内皮损伤，尤其是在肾脏（间质性肾炎，非少尿性急性肾损伤）、肝脏（胆汁淤积）、肺部（肺泡出血）和肌肉。",
+          "citations": [
+            {
+              "refId": "who-leptospirosis-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "突发高热",
+            "剧烈肌痛（尤其是小腿）",
+            "头痛",
+            "结膜充血",
+            "恶心、呕吐、腹泻",
+            "黄疸（重症）",
+            "咯血（肺出血）"
+          ],
+          "sinaisExameFisico": [
+            "结膜充血（红眼）",
+            "橙色皮肤黄疸",
+            "疼痛性肝肿大",
+            "瘀点",
+            "肺部啰音"
+          ],
+          "formasClinicas": [
+            "无黄疸型（90%）- 自限性",
+            "魏尔综合征（黄疸 + 急性肾损伤 + 出血）",
+            "重症肺出血综合征"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "临床表现 + 流行病学暴露",
+            "通过MAT（血清转换）或PCR确认"
+          ],
+          "diagnosticoDiferencial": [
+            "重症登革热",
+            "黄热病",
+            "疟疾",
+            "病毒性肝炎",
+            "败血症",
+            "汉坦病毒感染",
+            "立克次体病"
+          ],
+          "examesLaboratoriais": [
+            "血常规",
+            "胆红素（直接胆红素升高）",
+            "转氨酶（通常<500）",
+            "尿素、肌酐（急性肾损伤）",
+            "肌酸激酶（升高）",
+            "钾（低钾血症）",
+            "凝血功能",
+            "MAT（两次采样间隔14天）",
+            "血液PCR（初期）"
+          ],
+          "examesImagem": [
+            "胸部X光（肺泡浸润，如肺出血）",
+            "胸部CT（如低氧血症）"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "消除钩端螺旋体",
+            "支持器官功能障碍",
+            "预防肺出血"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "谨慎补水",
+              "肺出血时提供保护性通气",
+              "急性肾损伤时早期透析",
+              "凝血病时输血"
+            ],
+            "citations": [
+              {
+                "refId": "ms-leptospirose-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "门诊",
+                "medicamentos": [
+                  "多西环素 100mg 每12小时一次",
+                  "阿莫西林 500mg 每8小时一次"
+                ],
+                "posologia": "7天"
+              },
+              {
+                "classe": "住院",
+                "medicamentos": [
+                  "青霉素G 1,5百万单位 静脉注射 每6小时一次",
+                  "头孢曲松 1g/天 静脉注射"
+                ],
+                "posologia": "7天"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "肺出血",
+                "conduta": "早期气管插管，保护性通气，考虑使用甲基强的松龙"
+              },
+              {
+                "situacao": "急性肾损伤",
+                "conduta": "早期透析，避免过度补水"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-leptospirosis-2023"
+              }
+            ]
+          },
+          "duracao": "7天抗生素治疗"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "48-72小时后重新评估；1-2周后随访",
+          "metasTerapeuticas": [
+            "24-48小时内退热",
+            "肾功能恢复（可能需要数周）",
+            "黄疸消退"
+          ],
+          "criteriosEncaminhamento": [
+            "重症：重症监护",
+            "持续急性肾损伤：肾病科",
+            "肺出血：重症监护"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "避免接触洪水",
+            "使用防水靴和手套",
+            "控制啮齿动物",
+            "基本卫生设施",
+            "高风险暴露时每周服用多西环素 200mg"
+          ],
+          "secundaria": [
+            "早期诊断和治疗",
+            "强制报告"
+          ],
+          "citations": [
+            {
+              "refId": "ms-leptospirose-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "leptospirose-tratamento",
+        "leptospirose-grave"
+      ],
+      "medicamentos": [
+        "doxiciclina",
+        "penicilina-g-cristalina",
+        "ceftriaxona"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-leptospirose-2022"
+        },
+        {
+          "refId": "who-leptospirosis-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "febre-amarela",
+      "titulo": "黄热病",
+      "sinonimos": [
+        "FA",
+        "Yellow fever",
+        "黄疸型伤寒"
+      ],
+      "doid": "DOID:9682",
+      "snomedCT": "16541001",
+      "meshId": "D015004",
+      "umlsCui": "C0043395",
+      "ciap2": [
+        "A77"
+      ],
+      "cid10": [
+        "A95",
+        "A95.0",
+        "A95.1",
+        "A95.9"
+      ],
+      "cid11": [
+        "1D40"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "由黄病毒引起的急性病毒性疾病，通过哈马戈古斯/萨贝特斯蚊（丛林型）或埃及伊蚊（城市型）传播。可发展为重症，伴有黄疸、出血和多器官功能衰竭。",
+        "criteriosDiagnosticos": [
+          "突发高热（≤7天）",
+          "黄疸和/或出血",
+          "流行病学符合（风险区域，未接种疫苗）",
+          "法热特征（相对心动过缓）",
+          "确认：RT-PCR，病毒分离，IgM（第5天后）",
+          "组织病理学：康塞尔曼颗粒（肝细胞坏死）"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "低",
+            "criterios": [
+              "轻度/中度",
+              "无黄疸",
+              "无出血"
+            ],
+            "conduta": "门诊观察"
+          },
+          {
+            "nivel": "极高",
+            "criterios": [
+              "黄疸",
+              "出血",
+              "少尿",
+              "脑病"
+            ],
+            "conduta": "ICU"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "无特异性治疗",
+            "强化临床支持",
+            "隔离（防止通过埃及伊蚊传播）",
+            "休息，补水"
+          ],
+          "farmacologico": [
+            "支持：",
+            "静脉补液",
+            "退热药（避免使用阿司匹林和非甾体抗炎药）",
+            "维生素K（如有凝血障碍）",
+            "输血小板/血浆（如有出血）",
+            "透析（如有急性肾损伤）",
+            "胃黏膜保护",
+            "N-乙酰半胱氨酸（研究中）"
+          ]
+        },
+        "metasTerapeuticas": [
+          "支持器官功能障碍",
+          "预防出血",
+          "维持血容量",
+          "防止传播"
+        ],
+        "examesIniciais": [
+          "血常规（白细胞减少，血小板减少）",
+          "胆红素（严重黄疸）",
+          "转氨酶（显著升高，>1000）",
+          "凝血功能（延长）",
+          "尿素，肌酐",
+          "RT-PCR检测黄热病（第5天前）",
+          "IgM（第5天后）",
+          "肝活检（尸检）"
+        ],
+        "redFlags": [
+          "黄疸",
+          "出血（黑便，呕血，牙龈出血）",
+          "少尿/无尿",
+          "肝性脑病",
+          "低血压/休克",
+          "转氨酶>1000",
+          "严重凝血障碍"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "巴西近期疫情（2016-2018年）：>2,000例",
+          "mortalidade": "重症：20-50%致死率",
+          "faixaEtaria": "所有未接种疫苗的年龄段",
+          "fatoresRisco": [
+            "未接种疫苗",
+            "居住/旅行在风险区域",
+            "森林活动",
+            "高发期：1月至5月"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "黄病毒具有对肝细胞和内皮细胞的嗜性。导致中区带肝细胞坏死（康塞尔曼颗粒），内皮功能障碍，弥漫性血管内凝血，休克和多器官功能衰竭。细胞因子风暴加剧病情严重程度。",
+          "citations": [
+            {
+              "refId": "who-yellowfever-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "突发高热",
+            "剧烈头痛",
+            "肌痛",
+            "恶心，呕吐",
+            "黄疸（重症）",
+            "出血（牙龈，胃肠道）",
+            "少尿"
+          ],
+          "sinaisExameFisico": [
+            "深黄色黄疸",
+            "法热特征（脉搏与体温不一致）",
+            "疼痛性肝肿大",
+            "瘀点，瘀斑",
+            "嗜睡，意识模糊（脑病）"
+          ],
+          "formasClinicas": [
+            "轻度（多数）",
+            "中度",
+            "重症（肝肾出血型）"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "临床表现+流行病学",
+            "实验室确诊（RT-PCR，血清学）"
+          ],
+          "diagnosticoDiferencial": [
+            "钩端螺旋体病",
+            "重症疟疾",
+            "重症登革热",
+            "暴发性病毒性肝炎",
+            "败血症",
+            "其他出血热"
+          ],
+          "examesLaboratoriais": [
+            "RT-PCR（疾病第5天前）",
+            "MAC-ELISA IgM（第5天后）",
+            "血常规（白细胞减少）",
+            "转氨酶（显著升高）",
+            "胆红素",
+            "凝血功能（弥漫性血管内凝血）",
+            "肾功能"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "临床支持",
+            "预防并发症",
+            "治疗器官功能障碍"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "重症患者入住ICU",
+              "谨慎补水",
+              "胃黏膜保护",
+              "透析（如有急性肾损伤）",
+              "输血（如有出血）",
+              "隔离（媒介控制）"
+            ],
+            "citations": [
+              {
+                "refId": "ms-fa-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "支持",
+                "medicamentos": [
+                  "静脉补液",
+                  "维生素K",
+                  "新鲜冰冻血浆"
+                ],
+                "observacoes": "无特异性抗病毒药物"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "避免",
+                "conduta": "阿司匹林和非甾体抗炎药（出血风险）"
+              },
+              {
+                "situacao": "脑病",
+                "conduta": "乳果糖，蛋白质限制"
+              },
+              {
+                "situacao": "实验性",
+                "conduta": "N-乙酰半胱氨酸，索非布韦（研究中）"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-yellowfever-2023"
+              }
+            ]
+          },
+          "duracao": "支持治疗直至疾病缓解"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "持续监测至发病后14天",
+          "metasTerapeuticas": [
+            "黄疸消退",
+            "肾功能恢复",
+            "转氨酶正常化（可能需要数周）"
+          ],
+          "criteriosEncaminhamento": [
+            "重症：ICU/参考医院",
+            "立即强制报告"
+          ],
+          "citations": [
+            {
+              "refId": "ms-fa-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "疫苗接种（最有效的措施）",
+            "9个月单次接种，4岁时加强",
+            "旅行者：提前10天接种",
+            "媒介控制",
+            "个人防护（驱蚊剂，长袖衣物）"
+          ],
+          "secundaria": [
+            "流行病学监测",
+            "疫情爆发时主动搜索",
+            "阻断免疫"
+          ],
+          "citations": [
+            {
+              "refId": "who-yellowfever-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "febre-amarela-manejo",
+        "fa-grave"
+      ],
+      "medicamentos": [],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-fa-2022"
+        },
+        {
+          "refId": "who-yellowfever-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "esquistossomose",
+      "titulo": "曼氏血吸虫病",
+      "sinonimos": [
+        "水肚",
+        "血吸虫病",
+        "血吸虫病",
+        "肠血吸虫病"
+      ],
+      "doid": "DOID:1395",
+      "snomedCT": "28019009",
+      "meshId": "D012552",
+      "umlsCui": "C0036323",
+      "ciap2": [
+        "D96"
+      ],
+      "cid10": [
+        "B65.1"
+      ],
+      "cid11": [
+        "1F83.1"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "由曼氏血吸虫（Schistosoma mansoni）引起的寄生虫病，通过扁卷螺属的蜗牛传播。急性形式很少被诊断；慢性肝脾型可导致门脉高压。",
+        "criteriosDiagnosticos": [
+          "急性形式（卡塔亚玛热）：发热、荨麻疹、嗜酸性粒细胞增多、近期暴露史",
+          "肠型：间歇性腹泻、腹痛",
+          "肝脾型：肝脾肿大、门脉高压",
+          "暴露史：在流行区接触淡水",
+          "确诊：粪便中的虫卵（Kato-Katz法）或直肠活检"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "关于传播的教育",
+            "基本卫生设施",
+            "水处理",
+            "控制蜗牛"
+          ],
+          "farmacologico": [
+            "吡喹酮 50mg/kg 单次剂量（儿童：60mg/kg）",
+            "",
+            "禁忌症：",
+            "- 孕妇（产后治疗）",
+            "- 严重急性形式（使用皮质类固醇前）",
+            "",
+            "急性形式（卡塔亚玛）：",
+            "泼尼松 1mg/kg/天，持续5-7天，然后使用吡喹酮"
+          ]
+        },
+        "metasTerapeuticas": [
+          "消除寄生虫",
+          "预防发展为肝脾型",
+          "控制已存在的门脉高压"
+        ],
+        "examesIniciais": [
+          "粪便检查 Kato-Katz 法（3个样本）",
+          "血常规（嗜酸性粒细胞增多）",
+          "腹部超声（门周纤维化）",
+          "肝功能",
+          "直肠活检（如果粪便检查阴性）",
+          "食管胃十二指肠镜检查（肝脾型的食管静脉曲张）"
+        ],
+        "redFlags": [
+          "呕血（静脉曲张破裂）",
+          "巨大脾肿大伴脾功能亢进",
+          "腹水",
+          "肝性脑病",
+          "血吸虫病性肾小球肾炎",
+          "血吸虫病性脊髓病"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~1,5 百万巴西感染者",
+          "faixaEtaria": "流行区的年轻人和成年人",
+          "fatoresRisco": [
+            "居住在流行区（东北部、米纳斯吉拉斯州）",
+            "接触自然水域（河流、湖泊）",
+            "缺乏卫生设施",
+            "在积水地区从事农业工作"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistossomose-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "尾蚴穿透皮肤，转变为童虫并迁移到门脉-肝系统。成虫生活在肠系膜静脉中；虫卵引起肉芽肿反应。在肝脾型中，门周纤维化（Symmers）导致门脉高压。",
+          "citations": [
+            {
+              "refId": "who-schistosomiasis-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "急性：发热、瘙痒、荨麻疹、腹泻、咳嗽",
+            "肠型：间歇性腹泻、绞痛、粪便带血/黏液",
+            "肝脾型：腹部增大、侧支循环、呕血"
+          ],
+          "sinaisExameFisico": [
+            "嗜酸性粒细胞增多（急性期）",
+            "左叶肝肿大",
+            "脾肿大",
+            "侧支循环",
+            "腹水"
+          ],
+          "formasClinicas": [
+            "急性形式（卡塔亚玛）",
+            "肠型",
+            "肝肠型",
+            "代偿性肝脾型",
+            "失代偿性肝脾型",
+            "异位形式（神经血吸虫病、肺型）"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistossomose-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "流行病学 + 阳性寄生虫检查",
+            "超声显示门周纤维化"
+          ],
+          "diagnosticoDiferencial": [
+            "肝硬化",
+            "内脏利什曼病",
+            "白血病/淋巴瘤",
+            "其他门脉高压原因"
+          ],
+          "examesLaboratoriais": [
+            "粪便检查 Kato-Katz 法（3个样本）",
+            "直肠活检",
+            "血常规（嗜酸性粒细胞增多，脾功能亢进时全血细胞减少）",
+            "肝功能（通常正常）",
+            "血清学（IgG）"
+          ],
+          "examesImagem": [
+            "腹部超声（门周纤维化、脾肿大）",
+            "食管胃十二指肠镜检查（食管静脉曲张）"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistossomose-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "消除寄生虫",
+            "预防进展",
+            "治疗门脉高压并发症"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "卫生教育",
+              "改善卫生设施",
+              "治疗静脉曲张（结扎、TIPS）",
+              "选择性病例的脾切除术加奇静脉-门静脉断流术"
+            ],
+            "citations": [
+              {
+                "refId": "ms-esquistossomose-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "抗血吸虫药",
+                "medicamentos": [
+                  "吡喹酮 50-60mg/kg"
+                ],
+                "posologia": "单次剂量",
+                "observacoes": "治愈率约80%"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "替代药物",
+                "medicamentos": [
+                  "奥沙尼奎 15mg/kg"
+                ],
+                "posologia": "单次剂量",
+                "observacoes": "对吡喹酮不耐受时使用"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "急性形式",
+                "conduta": "使用皮质类固醇5-7天后再使用吡喹酮"
+              },
+              {
+                "situacao": "高风险静脉曲张",
+                "conduta": "β阻滞剂（一级预防），弹性结扎"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-schistosomiasis-2023"
+              }
+            ]
+          },
+          "duracao": "单次剂量；治疗后6个月复查疗效"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "疗效复查：治疗后30天、90天、180天进行粪便检查",
+          "metasTerapeuticas": [
+            "粪便检查转阴",
+            "纤维化稳定",
+            "控制静脉曲张"
+          ],
+          "criteriosEncaminhamento": [
+            "肝脾型：胃肠病学/肝病学",
+            "神经血吸虫病：神经病学",
+            "高风险静脉曲张：内镜检查"
+          ],
+          "citations": [
+            {
+              "refId": "ms-esquistossomose-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "基本卫生设施",
+            "健康教育",
+            "控制蜗牛",
+            "避免在流行区接触自然水域"
+          ],
+          "secundaria": [
+            "早期诊断和治疗",
+            "在流行区进行粪便检查",
+            "在高患病率地区进行集体治疗"
+          ],
+          "citations": [
+            {
+              "refId": "who-schistosomiasis-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "esquistossomose-tratamento",
+        "hipertensao-portal-esquistossomotica"
+      ],
+      "medicamentos": [
+        "praziquantel",
+        "oxamniquina"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-esquistossomose-2022"
+        },
+        {
+          "refId": "who-schistosomiasis-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "hanseniase",
+      "titulo": "汉森病",
+      "sinonimos": [
+        "麻风病",
+        "汉森病",
+        "象皮病"
+      ],
+      "doid": "DOID:1024",
+      "snomedCT": "81004002",
+      "meshId": "D007918",
+      "umlsCui": "C0023343",
+      "ciap2": [
+        "S76"
+      ],
+      "cid10": [
+        "A30",
+        "A30.0",
+        "A30.1",
+        "A30.2",
+        "A30.3",
+        "A30.4",
+        "A30.5",
+        "A30.8",
+        "A30.9"
+      ],
+      "cid11": [
+        "1B21"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "由Mycobacterium leprae引起的慢性传染病，影响皮肤和周围神经。根据治疗目的分为少菌型（PB）或多菌型（MB）。",
+        "criteriosDiagnosticos": [
+          "皮肤病变伴有感觉改变",
+          "周围神经增厚",
+          "多菌型（MB）的杆菌镜检阳性",
+          "确诊病例：≥1个主要体征：",
+          "1. 色素减退/红斑性病变伴感觉丧失",
+          "2. 周围神经干增厚",
+          "3. 杆菌镜检阳性",
+          "操作分类：少菌型（PB，≤5个病变）vs 多菌型（MB，>5个病变或杆菌镜检+）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "疾病教育（对抗歧视）",
+            "照顾无感觉的脚和手",
+            "预防残疾",
+            "家庭接触者的检查"
+          ],
+          "farmacologico": [
+            "少菌型（PB - ≤5个病变）：",
+            "利福平 600mg 每月一次监督给药",
+            "氨苯砜 100mg/天（自行服用）",
+            "疗程：6次每月剂量，最长9个月",
+            "",
+            "多菌型（MB - >5个病变）：",
+            "利福平 600mg 每月一次监督给药",
+            "氯法齐明 300mg 每月一次 + 50mg/天",
+            "氨苯砜 100mg/天",
+            "疗程：12次每月剂量，最长18个月"
+          ]
+        },
+        "metasTerapeuticas": [
+          "细菌学治愈",
+          "预防残疾",
+          "中断传播链"
+        ],
+        "examesIniciais": [
+          "完整的皮肤神经检查",
+          "感觉测试（温度、疼痛、触觉）",
+          "皮肤刮片杆菌镜检",
+          "评估身体残疾程度（0, I, II级）",
+          "皮肤活检（疑似病例）",
+          "神经电生理检查（如有神经受累）"
+        ],
+        "redFlags": [
+          "1型反应（逆转）：病变红肿，神经炎",
+          "2型反应（ENL）：发热，疼痛结节，神经炎，虹膜炎，关节炎",
+          "急性神经炎（有后遗症风险）",
+          "爪形手，足下垂",
+          "营养性溃疡"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~30,000新病例/年在巴西（全球第二）",
+          "faixaEtaria": "所有年龄段，高峰在年轻成人",
+          "fatoresRisco": [
+            "与未治疗的多菌型患者长期家庭接触",
+            "社会经济条件差",
+            "相对免疫抑制",
+            "遗传易感性"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "M. leprae对巨噬细胞和施万细胞有亲和力。宿主的免疫反应决定了临床形式：Th1反应（少菌型）vs Th2反应（多菌型）。神经破坏导致感觉丧失和残疾。",
+          "citations": [
+            {
+              "refId": "who-leprosy-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "色素减退或红斑性斑块",
+            "病变处感觉丧失",
+            "四肢麻木、刺痛",
+            "肌无力",
+            "神经增厚",
+            "结节性病变（Virchow型）"
+          ],
+          "sinaisExameFisico": [
+            "皮肤病变伴麻醉",
+            "触诊时增厚且疼痛的神经",
+            "眉毛脱落",
+            "面部浸润（狮面）",
+            "肌肉萎缩（骨间肌、鱼际肌、小鱼际肌）",
+            "爪形手，足下垂"
+          ],
+          "formasClinicas": [
+            "未定型（初期）",
+            "结核样型（少菌型）",
+            "双相型（边界型）",
+            "Virchow型（多菌型）"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "临床（主要体征）",
+            "杆菌镜检（多菌型阳性）",
+            "组织病理学（如有疑问）"
+          ],
+          "diagnosticoDiferencial": [
+            "花斑癣",
+            "白癜风",
+            "皮肤真菌感染",
+            "二期梅毒",
+            "皮肤利什曼病",
+            "神经纤维瘤病",
+            "其他周围神经病"
+          ],
+          "examesLaboratoriais": [
+            "皮肤刮片杆菌镜检",
+            "皮肤活检及组织病理学研究",
+            "Mitsuda试验（预后价值）",
+            "M. leprae PCR（如可用）"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "治愈感染",
+            "预防残疾",
+            "治疗反应",
+            "监测接触者"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "自我护理（脚、手、眼睛）",
+              "物理治疗",
+              "必要时进行修复手术",
+              "矫形器和假肢"
+            ],
+            "citations": [
+              {
+                "refId": "ms-hanseniase-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "PQT-PB",
+                "medicamentos": [
+                  "利福平 600mg/月",
+                  "氨苯砜 100mg/天"
+                ],
+                "posologia": "6次剂量，最长9个月"
+              },
+              {
+                "classe": "PQT-MB",
+                "medicamentos": [
+                  "利福平 600mg/月",
+                  "氯法齐明 300mg/月 + 50mg/天",
+                  "氨苯砜 100mg/天"
+                ],
+                "posologia": "12次剂量，最长18个月"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "1型反应（逆转）",
+                "conduta": "泼尼松 1-2mg/kg/天，逐渐减量"
+              },
+              {
+                "situacao": "2型反应（ENL）",
+                "conduta": "沙利度胺 100-400mg/天（育龄妇女禁用）或泼尼松"
+              },
+              {
+                "situacao": "急性神经炎",
+                "conduta": "泼尼松 + 固定；考虑神经减压"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-leprosy-2023"
+              }
+            ]
+          },
+          "duracao": "PB: 6个月；MB: 12个月"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "治疗期间每月一次；出院后每半年一次，持续5年",
+          "examesControle": [
+            "神经评估",
+            "残疾程度",
+            "杆菌镜检（多菌型）"
+          ],
+          "metasTerapeuticas": [
+            "完成治疗方案",
+            "维持残疾程度",
+            "识别和治疗反应",
+            "检查和治疗接触者"
+          ],
+          "criteriosEncaminhamento": [
+            "严重反应：转至参考中心",
+            "残疾：物理治疗/手术",
+            "药物耐药：转至参考中心"
+          ],
+          "citations": [
+            {
+              "refId": "ms-hanseniase-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "家庭接触者的检查",
+            "接触者接种BCG",
+            "健康教育",
+            "改善生活条件"
+          ],
+          "secundaria": [
+            "早期诊断",
+            "适当治疗",
+            "预防残疾"
+          ],
+          "citations": [
+            {
+              "refId": "who-leprosy-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "hanseniase-tratamento",
+        "reacao-hanseniase"
+      ],
+      "medicamentos": [
+        "rifampicina",
+        "dapsona",
+        "clofazimina",
+        "prednisona",
+        "talidomida"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-hanseniase-2022"
+        },
+        {
+          "refId": "who-leprosy-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "raiva-humana",
+      "titulo": "人类狂犬病",
+      "sinonimos": [
+        "恐水症",
+        "狂犬病"
+      ],
+      "doid": "DOID:11260",
+      "snomedCT": "14168008",
+      "meshId": "D011818",
+      "umlsCui": "C0034494",
+      "ciap2": [
+        "A77"
+      ],
+      "cid10": [
+        "A82",
+        "A82.0",
+        "A82.1",
+        "A82.9"
+      ],
+      "cid11": [
+        "1C82"
+      ],
+      "categoria": "infecciosas",
+      "quickView": {
+        "definicao": "由狂犬病毒（Lyssavirus）引起的急性病毒性脑炎，通过感染动物的咬伤传播。症状出现后几乎100%致命。可通过暴露后预防预防。",
+        "criteriosDiagnosticos": [
+          "暴露史：被疑似感染的动物咬伤或抓伤",
+          "潜伏期：20-90天（可变：4天至数年）",
+          "前驱症状：发热、不适、局部感觉异常",
+          "神经期：躁动、恐水、恐风、流涎",
+          "确诊：IFD、病毒分离、RT-PCR、Sellers尸检"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "暴露后预防（在出现症状前）：",
+            "立即用肥皂和水清洗伤口（15分钟）",
+            "不要缝合伤口",
+            "评估动物（观察10天，如果为狗或猫）",
+            "根据卫生部方案进行预防"
+          ],
+          "farmacologico": [
+            "暴露后预防：",
+            "疫苗：4剂（D0, D3, D7, D14）肌肉注射",
+            "免疫球蛋白：SAR或IGHAR局部注射",
+            "免疫球蛋白适应症：严重伤口（头部、颈部、手部），黏膜，蝙蝠咬伤",
+            "",
+            "出现症状后：支持治疗",
+            "密尔沃基方案（有争议，极少幸存者）",
+            "重症监护、深度镇静、抗病毒药物"
+          ]
+        },
+        "metasTerapeuticas": [
+          "预防：适当的暴露后预防",
+          "有症状：支持性治疗",
+          "保护医护人员"
+        ],
+        "examesIniciais": [
+          "角膜印迹IFD",
+          "颈后皮肤活检（毛囊）",
+          "唾液、脑脊液RT-PCR",
+          "攻击动物的尸检（如可能）",
+          "脑脊液：淋巴细胞增多"
+        ],
+        "redFlags": [
+          "蝙蝠咬伤（即使没有明显伤口）",
+          "动物死亡或失踪",
+          "面部、头部、颈部、手部的伤口",
+          "多处咬伤",
+          "预防延迟"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~60,000死亡/年（多数在亚洲/非洲）",
+          "incidencia": "巴西：<10例/年（多数由蝙蝠传播）",
+          "mortalidade": "~100%在症状出现后",
+          "fatoresRisco": [
+            "接触野生动物（蝙蝠）",
+            "未接种疫苗的狗和猫",
+            "农村地区",
+            "暴露职业（兽医、生物学家）"
+          ],
+          "citations": [
+            {
+              "refId": "ms-raiva-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "病毒通过伤口进入，复制于肌肉，沿周围神经上升至中枢神经系统。在脑内引起弥漫性脑炎，形成Negri小体。病毒扩散至唾液腺（传播）。死亡由呼吸和心血管衰竭引起。",
+          "citations": [
+            {
+              "refId": "who-rabies-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "前驱期：发热、头痛、不适、局部感觉异常",
+            "狂躁期：躁动、恐水、恐风、流涎",
+            "麻痹期：上升性弛缓性麻痹",
+            "昏迷和死亡"
+          ],
+          "sinaisExameFisico": [
+            "尝试饮水时的咽部痉挛（恐水）",
+            "气流引起的痉挛（恐风）",
+            "流涎",
+            "精神运动性躁动",
+            "麻痹、反射消失（麻痹型）",
+            "自主神经功能障碍"
+          ],
+          "formasClinicas": [
+            "狂躁型（脑炎型）- 最常见",
+            "麻痹型（类似吉兰-巴雷综合征）"
+          ],
+          "citations": [
+            {
+              "refId": "ms-raiva-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "临床表现 + 流行病学暴露",
+            "实验室确诊（IFD、PCR、分离）"
+          ],
+          "diagnosticoDiferencial": [
+            "其他病毒性脑炎",
+            "破伤风",
+            "吉兰-巴雷综合征",
+            "肉毒中毒",
+            "癔症（罕见）"
+          ],
+          "examesLaboratoriais": [
+            "角膜印迹或颈后活检IFD",
+            "唾液、活检、脑脊液RT-PCR",
+            "病毒分离",
+            "脑脊液：淋巴细胞增多，蛋白升高",
+            "未接种疫苗者的中和抗体",
+            "尸检：Negri小体"
+          ],
+          "citations": [
+            {
+              "refId": "who-rabies-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "预防是主要目标",
+            "有症状时支持性治疗"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "清洗伤口（非常重要）",
+              "观察动物（狗或猫10天）",
+              "重症监护（有症状时）"
+            ],
+            "citations": [
+              {
+                "refId": "ms-raiva-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "狂犬病疫苗",
+                "medicamentos": [
+                  "细胞培养疫苗（Vero或HDCV）"
+                ],
+                "posologia": "D0, D3, D7, D14（或替代方案）"
+              },
+              {
+                "classe": "被动免疫预防",
+                "medicamentos": [
+                  "SAR（狂犬病血清）40UI/kg",
+                  "IGHAR 20UI/kg"
+                ],
+                "posologia": "单次剂量，局部注射"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "蝙蝠咬伤",
+                "conduta": "始终建议疫苗+血清"
+              },
+              {
+                "situacao": "免疫抑制",
+                "conduta": "5剂疫苗+血清+控制血清学"
+              },
+              {
+                "situacao": "再暴露",
+                "conduta": "2剂（D0, D3）如已完成疫苗接种"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "who-rabies-2023"
+              }
+            ]
+          },
+          "duracao": "预防：完成全程方案；症状治疗：直至死亡"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "直至完成疫苗接种方案",
+          "metasTerapeuticas": [
+            "完成暴露后预防",
+            "监测疫苗/血清的不良反应"
+          ],
+          "criteriosEncaminhamento": [
+            "有症状：转至参考医院",
+            "严重不良反应：转至CRIE"
+          ],
+          "citations": [
+            {
+              "refId": "ms-raiva-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "狗和猫的疫苗接种",
+            "避免接触野生动物",
+            "高风险职业的暴露前预防",
+            "城市地区蝙蝠控制"
+          ],
+          "secundaria": [
+            "及时适当的暴露后预防",
+            "观察攻击动物",
+            "强制报告"
+          ],
+          "citations": [
+            {
+              "refId": "who-rabies-2023"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "raiva-profilaxia-pos-exposicao",
+        "esquema-vacinal-raiva"
+      ],
+      "medicamentos": [
+        "vacina-antirrabica",
+        "soro-antirrabico",
+        "imunoglobulina-antirrabica"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ms-raiva-2022"
+        },
+        {
+          "refId": "who-rabies-2023"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

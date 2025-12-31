@@ -1,0 +1,881 @@
+{
+  "locale": "zh",
+  "category": "ginecologico",
+  "generatedAt": "2025-12-30T12:23:17.432Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "sindrome-ovarios-policisticos",
+      "titulo": "多囊卵巢综合征 (PCOS)",
+      "ciap2": [
+        "X99"
+      ],
+      "cid10": [
+        "E28.2"
+      ],
+      "cid11": [
+        "GA34.4Y"
+      ],
+      "categoria": "ginecologico",
+      "doid": "DOID:11612",
+      "snomedCT": "237055002",
+      "meshId": "D011085",
+      "umlsCui": "C0032460",
+      "quickView": {
+        "definicao": "育龄妇女中最常见的内分泌综合征（5-10%）。与胰岛素抵抗和代谢风险相关。",
+        "criteriosDiagnosticos": [
+          "鹿特丹标准：3项中的2项",
+          "稀发排卵或无排卵",
+          "临床或实验室高雄激素血症",
+          "超声显示多囊卵巢",
+          "排除其他原因"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "减重（5-10%可改善排卵）",
+            "规律饮食和锻炼"
+          ],
+          "farmacologico": [
+            "调节月经：复方口服避孕药",
+            "如有妊娠愿望：二甲双胍 + 促排卵",
+            "多毛症：螺内酯 100mg/天"
+          ]
+        },
+        "redFlags": [
+          "快速男性化",
+          "原发性闭经",
+          "库欣综合征症状"
+        ]
+      },
+      "medicamentos": [
+        "metformina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "vulvovaginite-candidíase",
+      "titulo": "念珠菌性外阴阴道炎",
+      "sinonimos": [
+        "CVV",
+        "念珠菌性阴道炎",
+        "假丝酵母菌性阴道炎"
+      ],
+      "doid": "DOID:13842",
+      "snomedCT": "78048006",
+      "meshId": "D002181",
+      "umlsCui": "C0006840",
+      "ciap2": [
+        "X72"
+      ],
+      "cid10": [
+        "B37.3"
+      ],
+      "cid11": [
+        "1F23.1"
+      ],
+      "categoria": "ginecologico",
+      "quickView": {
+        "definicao": "由念珠菌属（主要是白色念珠菌）引起的外阴阴道感染。特征为剧烈的外阴瘙痒、白色块状分泌物和外部排尿困难。非常常见 - 75% 的女性至少会有 1 次发作。",
+        "criteriosDiagnosticos": [
+          "临床诊断 + 实验室检查：",
+          "剧烈的外阴瘙痒（主要症状）",
+          "白色、块状、\"凝乳样\"分泌物",
+          "外阴红斑和水肿",
+          "阴道 pH 值正常（4.0-4.5）",
+          "KOH 试验：显微镜下可见菌丝和假菌丝",
+          "如果反复或不典型，进行真菌培养"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免穿合成内裤（选择棉质）",
+            "避免阴道冲洗",
+            "保持生殖器干燥",
+            "仅在有症状时治疗伴侣（包皮炎）"
+          ],
+          "farmacologico": [
+            "非复杂性 CVV：",
+            "氟康唑 150mg 口服 单次剂量 或",
+            "克霉唑 阴道乳膏 1% 每晚使用 7 天 或",
+            "咪康唑 栓剂 200mg 每晚使用 3 天",
+            "",
+            "复发性 CVV（≥4 次/年）：",
+            "氟康唑 150mg 口服 第 1 天、第 4 天、第 7 天（诱导期）",
+            "之后 氟康唑 150mg 每周一次 使用 6 个月（维持期）"
+          ]
+        },
+        "metasTerapeuticas": [
+          "缓解症状",
+          "根除真菌",
+          "预防复发"
+        ],
+        "examesIniciais": [
+          "阴道 pH 值（念珠菌感染时正常）",
+          "新鲜涂片 + KOH 试验（菌丝、假菌丝、孢子）",
+          "如果反复或难治性，进行真菌培养（确定菌种）",
+          "如果反复，检测血糖（排除糖尿病）"
+        ],
+        "redFlags": [
+          "复发性 CVV（≥4 次/年）：调查糖尿病、免疫抑制",
+          "非白色念珠菌（光滑念珠菌）：对唑类药物耐药",
+          "孕妇：避免口服氟康唑（使用局部治疗）",
+          "严重的外阴阴道炎伴溃疡"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "75% 的女性至少会有 1 次发作，40-45% 的女性会有 ≥2 次",
+          "incidencia": "5-8% 有复发性 CVV",
+          "faixaEtaria": "生育年龄",
+          "fatoresRisco": [
+            "近期使用抗生素",
+            "糖尿病",
+            "妊娠",
+            "免疫抑制",
+            "使用皮质类固醇",
+            "高雌激素避孕药",
+            "频繁的性活动"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "念珠菌是 20-50% 女性的正常阴道微生物群的一部分。抗生素、免疫抑制、雌激素等导致的平衡改变会促进真菌增殖。局部炎症反应引起症状。",
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "剧烈的外阴瘙痒（最具特征性）",
+            "外阴灼热感",
+            "白色、块状、无异味的分泌物",
+            "外部排尿困难",
+            "浅表性性交疼痛"
+          ],
+          "sinaisExameFisico": [
+            "外阴红斑和水肿",
+            "因抓挠而出现的擦伤",
+            "分泌物附着于阴道壁",
+            "阴道黏膜红斑"
+          ],
+          "formasClinicas": [
+            "非复杂性 CVV（大多数）",
+            "复杂性 CVV：严重、复发、非白色念珠菌、孕妇、免疫抑制"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "临床表现 + 显微镜检查或培养",
+            "正常的阴道 pH 值有助于与细菌性阴道病区分"
+          ],
+          "diagnosticoDiferencial": [
+            "细菌性阴道病（pH >4.5，鱼腥味）",
+            "滴虫性阴道炎（黄色或绿色泡沫状分泌物）",
+            "生殖器疱疹（水疱、溃疡）",
+            "接触性皮炎",
+            "硬化性苔藓"
+          ],
+          "examesLaboratoriais": [
+            "新鲜涂片加 KOH 试验",
+            "真菌培养（沙堡培养基）",
+            "阴道 pH 值"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "缓解症状",
+            "根除真菌",
+            "预防复发"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "穿棉质内裤",
+              "避免阴道冲洗",
+              "保持干燥"
+            ],
+            "citations": [
+              {
+                "refId": "cdc-sti-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "口服唑类",
+                "medicamentos": [
+                  "氟康唑"
+                ],
+                "posologia": "150mg 口服 单次剂量。有效率 90%。"
+              },
+              {
+                "classe": "局部唑类",
+                "medicamentos": [
+                  "克霉唑",
+                  "咪康唑",
+                  "特康唑"
+                ],
+                "posologia": "克霉唑 乳膏 1% 每晚使用 7 天 或 咪康唑 栓剂 200mg 每晚使用 3 天。"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "维持方案（复发性）",
+                "medicamentos": [
+                  "氟康唑"
+                ],
+                "posologia": "150mg 每周一次 使用 6 个月，在诱导期后。"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "孕妇",
+                "conduta": "仅使用局部治疗（7 天）。口服氟康唑禁忌。"
+              },
+              {
+                "situacao": "光滑念珠菌（耐药）",
+                "conduta": "硼酸 600mg 阴道给药 每晚使用 14 天。"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "cdc-sti-2021"
+              }
+            ]
+          },
+          "duracao": "发作期：1-7 天。维持期：6 个月。"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "如果 72 小时内未见好转或复发，需复诊",
+          "examesControle": [
+            "如果反复或难治性，进行真菌培养"
+          ],
+          "metasTerapeuticas": [
+            "症状缓解",
+            "<4 次/年"
+          ],
+          "criteriosEncaminhamento": [
+            "难治性复发性 CVV",
+            "免疫抑制",
+            "需要评估合并症"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "避免不必要的抗生素使用",
+            "控制糖尿病患者的血糖"
+          ],
+          "secundaria": [
+            "如果复发，使用维持方案"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "fluconazol",
+        "clotrimazol",
+        "miconazol"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "cdc-sti-2021"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "念珠菌病",
+        "外阴阴道炎",
+        "瘙痒",
+        "氟康唑",
+        "分泌物"
+      ]
+    },
+    {
+      "id": "pre-eclampsia",
+      "titulo": "Pré-eclámpsia",
+      "sinonimos": [
+        "PE",
+        "Toxemia gravídica",
+        "Doènse hipertensiva séspica da gestação"
+      ],
+      "doid": "DOID:10591",
+      "snomedCT": "398254007",
+      "meshId": "D011225",
+      "umlsCui": "C0032914",
+      "ciap2": [
+        "W81"
+      ],
+      "cid10": [
+        "O14",
+        "O14.0",
+        "O14.1"
+      ],
+      "cid11": [
+        "JA24"
+      ],
+      "categoria": "ginecologico",
+      "quickView": {
+        "definicao": "Síndrome multissistémica exclusiva da gestação, caracterizada por hipertensão arterial (\\u00e2 140/90) após 20 semanas + proteinúria OU disfunçô de ôrgão-alvo. Emergência obstétrica - principal causa de mortalidade materna.",
+        "criteriosDiagnosticos": [
+          "PA \\u00e0 140/90 mmHg após 20 semanas de gestação (2 medidas com intervalo \\u00e0 4h)",
+          "+",
+          "Proteinúria \\u00e0 300mg/24h (ou relação proteéina/creatinina \\u00e0 0,3) OU",
+          "Na ausência de proteinúria: disfunçô de órgão-alvo:",
+          "- Plaquetopenia <100.000/\\u00c5L",
+          "- Creatinina >1,1 mg/dL ou dobro do basal",
+          "- TGO/TGP >2x limite superior",
+          "- Edema pulmonar",
+          "- Sintomas cerebrais (cefaleia, escotomas)",
+          "- Dor epigástrica/hipocôndrio direito (distensão hepática)",
+          "- Oligúria <500 mL/24h",
+          "- HELLP (hemólise, enzimas hepáticas elevadas, plaquetopenia)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Internâo hospitalar",
+            "Repouso relativo",
+            "Monitorização materno-fetal intensiva",
+            "Avaliação de gravidade (critérios de gravidade)",
+            "Definição de momento do parto (única cura definitiva)"
+          ],
+          "farmacologico": [
+            "ANTI-HIPERTENSIVO (PA \\u00e0 160/110):",
+            "Nifedipina 10-20mg VO a cada 30 min (máx 60mg)",
+            "Hidralazina 5mg IV a cada 20 min (máx 20mg)",
+            "Meta: PAS 140-155, PAD 90-100 mmHg",
+            "",
+            "PROFILAXIA DE ECLÂMPSIA (PE grave):",
+            "Sulfato de magnésio: Ataque 4g IV + Manutenção 1-2g/h IV",
+            "",
+            "CORTICOIDE (maturação pulmonar se <34 sem):",
+            "Betametasona 12mg IM, 2 doses com intervalo de 24h"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Prevenir eclâmpsia (convulsão)",
+          "Prevenir AVC materno",
+          "Manter perfusão placentária adequada",
+          "Definir momento ideal do parto",
+          "Otimizar condições fetais (maturação pulmonar)"
+        ],
+        "examesIniciais": [
+          "Hemograma com plaquetas",
+          "Creatinina, ureia",
+          "TGO, TGP, LDH, bilirrubinas",
+          "Proteinúria 24h ou relação P/C",
+          "Ácido úrico",
+          "Coagulograma",
+          "USG obstétrico + Doppler",
+          "CTG (cardiotocografia)"
+        ],
+        "redFlags": [
+          "CRITÉRIOS DE GRAVIDADE (PE grave):",
+          "PA \\u00e0 160/110 mmHg",
+          "Plaquetas <100.000/\\u00c5L",
+          "TGO/TGP >2x normal",
+          "Creatinina >1,1 mg/dL",
+          "Edema pulmonar",
+          "Sintomas cerebrais: cefaleia intensa, escotomas, confusão",
+          "Dor epigástrica/hipocôndrio direito (distensão hepática)",
+          "Oligúria <500 mL/24h",
+          "HELLP (hemólise, enzimas hepáticas elevadas, plaquetopenia)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2-8% das gestações",
+          "incidencia": "Principal causa de mortalidade materna",
+          "faixaEtaria": "Qualquer gestante, mais comum em extremos reprodutivos",
+          "fatoresRisco": [
+            "Primigesta (principal)",
+            "Gestação múltipla",
+            "História pessoal ou familiar de PE",
+            "HAS crônica, DM, DRC, LES",
+            "Obesidade",
+            "Idade materna >35 ou <18 anos",
+            "Raça negra",
+            "Novo parceiro",
+            "Longo intervalo interpartal"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Placentação deficiente no 1º trimestre com falha no remodelamento das artérias espiraladas. Hipóxia placentária libera fatores antiangiogênicos (sFlt-1) que causam disfunção endotelial sistêmica, vasoespasmo, ativação da coagulação e lesão de múltiplos órgãos.",
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Hipertensão arterial",
+            "Edema (não específico)",
+            "Cefaleia frontal ou occipital intensa",
+            "Escotomas, fotopsias",
+            "Dor epigástrica/hipocôndrio direito",
+            "Oligúria"
+          ],
+          "sinaisExameFisico": [
+            "PA \\u00e0 140/90 mmHg",
+            "Edema de face e mãos",
+            "Hiperreflexia",
+            "Dor à palpação de hipocôndrio direito",
+            "Ganho ponderal excessivo"
+          ],
+          "formasClinicas": [
+            "PE sem critérios de gravidade",
+            "PE com critérios de gravidade",
+            "Eclâmpsia (convulsão)",
+            "Síndrome HELLP",
+            "PE superimposta à HAS crônica"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "PA \\u00e0 140/90 após 20 semanas + proteinúria ou disfunção de órgão-alvo",
+            "Classificar gravidade"
+          ],
+          "diagnosticoDiferencial": [
+            "HAS crônica",
+            "HAS gestacional (sem proteinúria/disfunção)",
+            "Síndrome hemolítico-urêmica",
+            "PTT",
+            "Esteatose hepática aguda da gestação"
+          ],
+          "examesLaboratoriais": [
+            "Hemograma, plaquetas, esfregaço (esquizócitos?)",
+            "Creatinina, ureia",
+            "TGO, TGP, LDH, bilirrubinas",
+            "Ácido úrico",
+            "Proteinúria 24h",
+            "Coagulograma"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Prevenir complicações maternas",
+            "Prevenir eclâmpsia",
+            "Otimizar condições fetais",
+            "Definir momento do parto"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Internação",
+              "Monitorização intensiva",
+              "Balanço hídrico",
+              "Repouso relativo"
+            ],
+            "citations": [
+              {
+                "refId": "acog-hyp-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Anti-hipertensivo (se PA \\u00e0 160/110)",
+                "medicamentos": [
+                  "Nifedipina",
+                  "Hidralazina",
+                  "Labetalol"
+                ],
+                "posologia": "Nifedipina 10-20mg VO. Hidralazina 5-10mg IV. Meta: 140-155/90-100."
+              },
+              {
+                "classe": "Anticonvulsivante (profilaxia de eclâmpsia)",
+                "medicamentos": [
+                  "Sulfato de magnésio"
+                ],
+                "posologia": "Ataque: 4-6g IV em 20 min. Manutenção: 1-2g/h IV. Monitorar reflexos, FR, diurese."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Corticoide (maturação pulmonar)",
+                "medicamentos": [
+                  "Betametasona",
+                  "Dexametasona"
+                ],
+                "posologia": "Betametasona 12mg IM, repetir em 24h (se <34 semanas)."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "PE grave ou HELLP",
+                "conduta": "Estabilização materna + Parto (única cura). Geralmente interrupção se >34 sem."
+              },
+              {
+                "situacao": "Eclâmpsia",
+                "conduta": "MgSO4 imediato. Estabilização. Parto após estabilização (não cesariana de emergência)."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "acog-hyp-2020"
+              }
+            ]
+          },
+          "duracao": "Até o parto (cura definitiva)."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Internação na PE grave. PE sem gravidade: ambulatorial rigoroso.",
+          "examesControle": [
+            "Hemograma, função hepática, renal diário se grave",
+            "CTG diária",
+            "Doppler fetal seriado"
+          ],
+          "metasTerapeuticas": [
+            "Ausência de eclâmpsia",
+            "PA controlada",
+            "Bem-estar fetal"
+          ],
+          "criteriosEncaminhamento": [
+            "Toda PE deve ser acompanhada em centro de referência",
+            "UTI materna se HELLP ou eclâmpsia"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "AAS baixa dose (100-150mg/noite) a partir de 12-16 sem em alto risco",
+            "Suplementação de cálcio (1-2g/dia) em populações com baixa ingesta"
+          ],
+          "secundaria": [
+            "Pré-natal adequado",
+            "Diagnóstico precoce"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "pre-eclampsia-manejo",
+        "sulfato-magnesio"
+      ],
+      "medicamentos": [
+        "nifedipina",
+        "hidralazina",
+        "sulfato-magnesio",
+        "betametasona"
+      ],
+      "calculadoras": [
+        "risco-pre-eclampsia"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "acog-hyp-2020"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "pre-eclampsia",
+        "hellp",
+        "eclampsia",
+        "gestacao",
+        "hipertensao"
+      ]
+    },
+    {
+      "id": "candidose-vulvovaginal",
+      "titulo": "外阴阴道念珠菌病",
+      "ciap2": [
+        "X72"
+      ],
+      "cid10": [
+        "B37.3"
+      ],
+      "cid11": [
+        "1F23.00"
+      ],
+      "categoria": "ginecologico",
+      "doid": "DOID:1304",
+      "snomedCT": "78048006",
+      "meshId": "D002181",
+      "umlsCui": "C0006840",
+      "quickView": {
+        "definicao": "由念珠菌属（主要是白色念珠菌，占90%）引起的真菌感染。影响75%的女性。不是性传播疾病。",
+        "criteriosDiagnosticos": [
+          "剧烈的外阴阴道瘙痒",
+          "白色块状分泌物（类似凝乳）",
+          "外阴充血",
+          "排尿痛和性交痛"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "穿棉质内衣",
+            "避免紧身衣物",
+            "保持局部干燥"
+          ],
+          "farmacologico": [
+            "氟康唑 150mg 口服 单次剂量",
+            "或 克霉唑 阴道乳膏 1% 每日一次 连用7天",
+            "复发性（≥4/年）：氟康唑 150mg 每周一次 连用6个月"
+          ]
+        },
+        "redFlags": [
+          "血糖控制不佳的糖尿病",
+          "免疫抑制",
+          "妊娠",
+          "治疗无效"
+        ]
+      },
+      "medicamentos": [
+        "fluconazol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "menopausa-climatério",
+      "titulo": "绝经和围绝经期",
+      "sinonimos": [
+        "围绝经期综合征",
+        "绝经过渡期"
+      ],
+      "ciap2": [
+        "X11"
+      ],
+      "cid10": [
+        "N95.1"
+      ],
+      "cid11": [
+        "GA31.0"
+      ],
+      "doid": "DOID:0111805",
+      "snomedCT": "161712005",
+      "meshId": "D008593",
+      "umlsCui": "C0025320",
+      "categoria": "ginecologico",
+      "quickView": {
+        "definicao": "停经12个月后的永久性月经停止。平均年龄51岁。围绝经期：绝经前和绝经后的过渡期。",
+        "criteriosDiagnosticos": [
+          "连续12个月无月经（>45岁）",
+          "FSH >25-30 mUI/mL（必要时确认）",
+          "血管舒缩症状：潮热、夜间出汗",
+          "泌尿生殖系统症状：阴道萎缩、性交疼痛"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "定期进行体育锻炼",
+            "避免潮热的触发因素（酒精、咖啡、辛辣食物）",
+            "使用阴道润滑剂",
+            "身心疗法"
+          ],
+          "farmacologico": [
+            "激素替代疗法（HRT）适用于中度至重度症状且无禁忌症者",
+            "子宫完整者使用雌激素+孕激素",
+            "局部阴道雌激素用于泌尿生殖系统症状",
+            "替代方案：SSRIs、加巴喷丁、可乐定"
+          ]
+        },
+        "redFlags": [
+          "绝经后出血",
+          "既往血栓栓塞",
+          "乳腺癌",
+          "已确诊的心血管疾病"
+        ],
+        "metasTerapeuticas": [
+          "控制症状",
+          "提高生活质量",
+          "预防骨质疏松"
+        ],
+        "examesIniciais": [
+          "FSH（如有疑问）",
+          "乳腺X线摄影",
+          "经阴道超声",
+          "骨密度测定",
+          "血脂谱"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "estradiol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "妇科",
+        "骨质疏松",
+        "激素"
+      ]
+    },
+    {
+      "id": "mioma-uterino",
+      "titulo": "子宫肌瘤",
+      "sinonimos": [
+        "平滑肌瘤",
+        "子宫纤维瘤"
+      ],
+      "ciap2": [
+        "X78"
+      ],
+      "cid10": [
+        "D25"
+      ],
+      "cid11": [
+        "2E86"
+      ],
+      "doid": "DOID:13223",
+      "snomedCT": "95315005",
+      "meshId": "D007889",
+      "umlsCui": "C0042133",
+      "categoria": "ginecologico",
+      "quickView": {
+        "definicao": "子宫肌层的良性肿瘤。在生育年龄女性中的患病率为20-40%。类型：黏膜下、肌壁间、浆膜下。",
+        "criteriosDiagnosticos": [
+          "异常子宫出血（月经过多）",
+          "盆腔疼痛/压迫感",
+          "压迫症状：尿频、便秘",
+          "超声或磁共振成像：边界清晰的肌层结节"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "无症状者观察",
+            "子宫动脉栓塞术（手术替代方案）"
+          ],
+          "farmacologico": [
+            "出血：氨甲环酸、非甾体抗炎药",
+            "激素控制：复方口服避孕药、左炔诺孕酮宫内节育器、孕激素",
+            "促性腺激素释放激素类似物（术前）：缩小体积",
+            "手术：肌瘤切除术或子宫切除术（如耐药）"
+          ]
+        },
+        "redFlags": [
+          "重度贫血",
+          "绝经后快速生长",
+          "输尿管压迫"
+        ],
+        "metasTerapeuticas": [
+          "控制出血",
+          "如需保留生育能力"
+        ],
+        "examesIniciais": [
+          "经阴道超声",
+          "血常规",
+          "铁蛋白",
+          "宫腔镜检查（如为黏膜下）"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "acido-tranexamico"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "出血",
+        "手术",
+        "贫血"
+      ]
+    },
+    {
+      "id": "mastite-lactacional",
+      "titulo": "哺乳期乳腺炎",
+      "sinonimos": [
+        "产褥期乳腺炎"
+      ],
+      "ciap2": [
+        "W94"
+      ],
+      "cid10": [
+        "O91.1"
+      ],
+      "cid11": [
+        "JB42.2"
+      ],
+      "doid": "DOID:10690",
+      "snomedCT": "45198002",
+      "meshId": "D008413",
+      "umlsCui": "C0024894",
+      "categoria": "ginecologico",
+      "quickView": {
+        "definicao": "哺乳期间的乳房炎症，通常由乳汁淤积和/或细菌感染（金黄色葡萄球菌）引起。高峰：产后2-3周。",
+        "criteriosDiagnosticos": [
+          "局部乳房疼痛、红斑、发热",
+          "体温≥38.5°C、不适",
+          "波动性肿块提示脓肿",
+          "通常单侧"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "继续哺乳（至关重要）",
+            "频繁排空乳房",
+            "哺乳前使用温敷",
+            "哺乳后使用冷敷以缓解不适"
+          ],
+          "farmacologico": [
+            "镇痛药：布洛芬 400mg 每8小时一次 或 对乙酰氨基酚",
+            "如果24-48小时内未改善或有全身症状：头孢氨苄 500mg 每6小时一次，持续10-14天",
+            "替代方案：阿莫西林-克拉维酸钾"
+          ]
+        },
+        "redFlags": [
+          "脓肿（引流）",
+          "败血症",
+          "对抗生素无反应"
+        ],
+        "metasTerapeuticas": [
+          "炎症消退",
+          "维持哺乳"
+        ],
+        "examesIniciais": [
+          "临床检查通常足够",
+          "怀疑脓肿时进行超声检查"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "cefalexina",
+        "ibuprofeno"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "哺乳",
+        "产褥期",
+        "感染"
+      ]
+    }
+  ]
+}

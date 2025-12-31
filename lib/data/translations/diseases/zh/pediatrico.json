@@ -1,0 +1,708 @@
+{
+  "locale": "zh",
+  "category": "pediatrico",
+  "generatedAt": "2025-12-30T12:23:17.433Z",
+  "count": 11,
+  "diseases": [
+    {
+      "id": "bronquiolite",
+      "titulo": "毛细支气管炎",
+      "sinonimos": [
+        "急性病毒性毛细支气管炎"
+      ],
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J21"
+      ],
+      "cid11": [
+        "CA40.1"
+      ],
+      "doid": "DOID:2942",
+      "snomedCT": "4120002",
+      "meshId": "D001988",
+      "umlsCui": "C0006271",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "婴儿（<2岁）下呼吸道病毒感染。RSV是最常见的病原体。高峰：冬季。",
+        "criteriosDiagnosticos": [
+          "年龄<24个月",
+          "首次出现喘息",
+          "上呼吸道感染的前驱症状（流涕、咳嗽）",
+          "呼吸急促、胸凹、喘鸣、湿啰音",
+          "临床诊断 - 检查很少需要"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "适当补水",
+            "鼻腔吸引",
+            "如果SpO2 <90-92%，给予氧气治疗",
+            "抬高体位"
+          ],
+          "farmacologico": [
+            "不常规使用：支气管扩张剂、皮质类固醇、抗生素",
+            "可以尝试3%高渗盐水雾化",
+            "帕利珠单抗（高风险预防 - 早产儿、心脏病）"
+          ]
+        },
+        "redFlags": [
+          "呼吸暂停",
+          "发绀",
+          "脱水",
+          "嗜睡",
+          "SpO2 <90%"
+        ],
+        "metasTerapeuticas": [
+          "维持氧合",
+          "补水",
+          "支持治疗直至痊愈"
+        ],
+        "examesIniciais": [
+          "脉搏血氧饱和度测定",
+          "仅在诊断有疑问时进行X光检查"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [],
+      "calculadoras": [],
+      "tags": [
+        "婴儿",
+        "病毒",
+        "冬季"
+      ]
+    },
+    {
+      "id": "laringite-aguda",
+      "titulo": "急性喉炎/病毒性喉炎",
+      "sinonimos": [
+        "喉气管支气管炎",
+        "喉炎"
+      ],
+      "ciap2": [
+        "R77"
+      ],
+      "cid10": [
+        "J05.0",
+        "J04.0"
+      ],
+      "cid11": [
+        "CA03.0"
+      ],
+      "doid": "DOID:9396",
+      "snomedCT": "6142004",
+      "meshId": "D003440",
+      "umlsCui": "C0010380",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "喉部和气管的炎症，通常由病毒（副流感病毒）引起。高发年龄：6个月至3岁。特征性吸气性喘鸣。",
+        "criteriosDiagnosticos": [
+          "犬吠样咳嗽（“狗叫”）",
+          "吸气性喘鸣（夜间加重）",
+          "声音嘶哑",
+          "低热，上呼吸道感染前驱症状",
+          "X线片显示塔状征（声门下狭窄）- 非必需"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "冷空气或湿化空气",
+            "保持冷静（哭泣会加重）",
+            "监测病情进展"
+          ],
+          "farmacologico": [
+            "轻度：观察，可能不需要药物",
+            "中度：地塞米松 0.15-0.6mg/kg 口服 单次给药",
+            "重度：地塞米松 + 肾上腺素雾化（1:1000）3-5mL - 急诊",
+            "肾上腺素：效果短暂（2小时）- 观察后"
+          ]
+        },
+        "redFlags": [
+          "静息时喘鸣",
+          "明显凹陷",
+          "发绀",
+          "烦躁/嗜睡",
+          "流涎（会厌炎？）"
+        ],
+        "metasTerapeuticas": [
+          "缓解喘鸣",
+          "预防阻塞"
+        ],
+        "examesIniciais": [
+          "临床检查 - 避免操作口咽部",
+          "脉搏氧饱和度测定"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "dexametasona"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "急诊",
+        "病毒",
+        "喘鸣"
+      ]
+    },
+    {
+      "id": "otite-media-aguda",
+      "titulo": "急性中耳炎",
+      "sinonimos": [
+        "OMA"
+      ],
+      "ciap2": [
+        "H71"
+      ],
+      "cid10": [
+        "H66"
+      ],
+      "cid11": [
+        "AA80.0"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:10727",
+      "snomedCT": "194267006",
+      "meshId": "D006639",
+      "umlsCui": "C0029879",
+      "hpo": [
+        "HP:0000388",
+        "HP:0000379"
+      ],
+      "tags": [
+        "orl",
+        "pediatrica",
+        "infecciosa"
+      ],
+      "quickView": {
+        "definicao": "中耳的急性感染。常见于<5岁的儿童。症状：耳痛、发热、烦躁。如果鼓膜穿孔，可能有耳漏。",
+        "criteriosDiagnosticos": [
+          "急性耳痛",
+          "耳镜检查：鼓膜膨隆/充血",
+          "发热",
+          "儿童烦躁",
+          "可能有耳漏"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "镇痛药：对乙酰氨基酚或布洛芬",
+            "在轻度病例（>6个月的儿童）中密切观察48-72小时"
+          ],
+          "farmacologico": [
+            "如需治疗：阿莫西林 80-90mg/kg/天，持续7-10天",
+            "如近期使用过抗生素，则使用阿莫西林-克拉维酸",
+            "如过敏：阿奇霉素或头孢曲松"
+          ]
+        },
+        "redFlags": [
+          "乳突炎",
+          "面瘫",
+          "脑膜炎",
+          "颅内并发症"
+        ]
+      },
+      "medicamentos": [
+        "amoxicilina",
+        "azitromicina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquiolite-aguda",
+      "titulo": "急性细支气管炎",
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J21"
+      ],
+      "cid11": [
+        "CA20.1"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:6131",
+      "snomedCT": "6142004",
+      "meshId": "D001988",
+      "umlsCui": "C0006274",
+      "tags": [
+        "儿科",
+        "呼吸系统",
+        "病毒性"
+      ],
+      "quickView": {
+        "definicao": "2岁以下儿童的下呼吸道感染。主要由呼吸道合胞病毒引起。症状包括喘息和呼吸困难。",
+        "criteriosDiagnosticos": [
+          "<2岁",
+          "先有流涕，随后出现呼吸道症状",
+          "喘息",
+          "咳嗽",
+          "呼吸急促"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "必要时提供呼吸支持",
+            "保持水分",
+            "鼻腔吸引"
+          ],
+          "farmacologico": [
+            "对症治疗：Paracetamol",
+            "可尝试使用Salbutamol，但效果有限"
+          ]
+        },
+        "redFlags": [
+          "发绀",
+          "呼吸暂停",
+          "脱水",
+          "呼吸衰竭"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "salbutamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "convulsao-febril",
+      "titulo": "热性惊厥",
+      "ciap2": [
+        "N89"
+      ],
+      "cid10": [
+        "R56.0"
+      ],
+      "cid11": [
+        "8A62"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:8665",
+      "snomedCT": "85234005",
+      "meshId": "D012640",
+      "umlsCui": "C0038220",
+      "tags": [
+        "儿科",
+        "神经系统"
+      ],
+      "quickView": {
+        "definicao": "6个月至5岁儿童发热时出现的惊厥。通常为良性且自限性。",
+        "criteriosDiagnosticos": [
+          "6个月至5岁",
+          "体温≥38°C",
+          "全身性惊厥",
+          "无中枢神经系统感染",
+          "无既往无热惊厥史"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "退热：对乙酰氨基酚",
+            "惊厥期间保持侧卧位"
+          ],
+          "farmacologico": [
+            "直肠给药地西泮（若惊厥持续>5分钟）",
+            "解热药：对乙酰氨基酚"
+          ]
+        },
+        "redFlags": [
+          "局灶性惊厥",
+          "持续时间>15分钟",
+          "多次惊厥",
+          "长时间意识改变"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "diazepam"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-inflamatoria-intestinal-pediatrica",
+      "titulo": "儿童炎症性肠病",
+      "ciap2": [
+        "D93"
+      ],
+      "cid10": [
+        "K50",
+        "K51"
+      ],
+      "cid11": [
+        "DD90",
+        "DD91"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:8778",
+      "snomedCT": "64766004",
+      "meshId": "D015212",
+      "umlsCui": "C0021390",
+      "hpo": [
+        "HP:0002024",
+        "HP:0002583"
+      ],
+      "tags": [
+        "儿科",
+        "慢性",
+        "胃肠道"
+      ],
+      "quickView": {
+        "definicao": "18岁前出现的炎症性肠病。包括克罗恩病和溃疡性结肠炎。表现可能与成人不同。",
+        "criteriosDiagnosticos": [
+          "年龄<18岁",
+          "慢性胃肠道症状",
+          "内镜/结肠镜检查",
+          "组织病理学"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "营养支持",
+            "生长发育监测",
+            "多学科随访"
+          ],
+          "farmacologico": [
+            "根据类型使用5-ASA",
+            "诱导期使用皮质类固醇",
+            "根据严重程度使用免疫抑制剂"
+          ]
+        },
+        "redFlags": [
+          "生长迟缓",
+          "青春期延迟",
+          "严重营养不良"
+        ]
+      },
+      "medicamentos": [
+        "mesalazina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hipotireoidismo-congenito",
+      "titulo": "先天性甲状腺功能减退症",
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E03.0",
+        "E03.1"
+      ],
+      "cid11": [
+        "5A00.0"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:9502",
+      "snomedCT": "19031007",
+      "meshId": "D003409",
+      "umlsCui": "C0020509",
+      "hpo": [
+        "HP:0008230",
+        "HP:0001511"
+      ],
+      "tags": [
+        "儿科",
+        "内分泌",
+        "先天性"
+      ],
+      "quickView": {
+        "definicao": "自出生以来的甲状腺激素缺乏。在新生儿筛查中检测到。早期治疗至关重要。",
+        "criteriosDiagnosticos": [
+          "新生儿筛查：TSH升高/T4降低",
+          "通过血清检查确认",
+          "必要时进行甲状腺扫描"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "立即开始治疗",
+            "多学科随访"
+          ],
+          "farmacologico": [
+            "左旋甲状腺素 10-15 mcg/kg/天",
+            "根据游离T4和TSH调整剂量"
+          ]
+        },
+        "redFlags": [
+          "未在新生儿筛查中检测到",
+          "未经治疗会导致智力发育迟缓",
+          "呆小病"
+        ]
+      },
+      "medicamentos": [
+        "levotiroxina"
+      ],
+      "protocolos": [
+        "teste-pezinho"
+      ],
+      "calculadoras": []
+    },
+    {
+      "id": "bronquiolite-viral",
+      "titulo": "病毒性细支气管炎 (RSV)",
+      "ciap2": [
+        "R78"
+      ],
+      "cid10": [
+        "J21"
+      ],
+      "cid11": [
+        "CA40.0"
+      ],
+      "categoria": "pediatrico",
+      "doid": "DOID:6131",
+      "snomedCT": "6142004",
+      "meshId": "D001988",
+      "umlsCui": "C0006274",
+      "hpo": [
+        "HP:0002099",
+        "HP:0002780"
+      ],
+      "tags": [
+        "儿科",
+        "病毒",
+        "呼吸系统"
+      ],
+      "quickView": {
+        "definicao": "2岁以下儿童的下呼吸道感染。主要由RSV引起。症状包括喘息、呼吸急促、呼吸困难。",
+        "criteriosDiagnosticos": [
+          "<2岁",
+          "先有流涕",
+          "喘息",
+          "呼吸急促",
+          "呼吸困难",
+          "呼吸努力的体征"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "必要时提供呼吸支持",
+            "补充水分",
+            "鼻腔吸引",
+            "SpO2 <90%时给予氧气治疗"
+          ],
+          "farmacologico": [
+            "对症治疗：对乙酰氨基酚",
+            "可尝试使用沙丁胺醇，但证据有限"
+          ]
+        },
+        "redFlags": [
+          "发绀",
+          "呼吸暂停",
+          "脱水",
+          "呼吸衰竭",
+          "病情迅速恶化"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "salbutamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "coqueluche",
+      "titulo": "百日咳",
+      "sinonimos": [
+        "长期咳嗽",
+        "百日咳"
+      ],
+      "ciap2": [
+        "R71"
+      ],
+      "cid10": [
+        "A37"
+      ],
+      "cid11": [
+        "1C12"
+      ],
+      "doid": "DOID:1116",
+      "snomedCT": "27836007",
+      "meshId": "D014917",
+      "umlsCui": "C0043167",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "由百日咳博德特菌引起的呼吸道感染。阵发性咳嗽伴有吸气性哮鸣声。未接种疫苗的婴儿病情严重。",
+        "criteriosDiagnosticos": [
+          "咳嗽≥2周，且至少有以下一项：",
+          "阵发性咳嗽",
+          "吸气性哮鸣声（whoop）",
+          "咳嗽后呕吐",
+          "婴儿窒息",
+          "B. pertussis 的 PCR 或培养"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "使用抗生素隔离呼吸道5天",
+            "监测婴儿（窒息风险）"
+          ],
+          "farmacologico": [
+            "阿奇霉素 10mg/kg/天，连续5天（<1个月首选）",
+            "或 克拉霉素 15mg/kg/天，分每12小时一次，连续7天",
+            "或 红霉素（较少使用 - 胃肠道不耐受）",
+            "家庭接触者的化学预防"
+          ]
+        },
+        "redFlags": [
+          "婴儿<6个月",
+          "窒息",
+          "发绀",
+          "抽搐",
+          "肺炎"
+        ],
+        "metasTerapeuticas": [
+          "减少传染性",
+          "预防并发症"
+        ],
+        "examesIniciais": [
+          "B. pertussis 的 PCR",
+          "血常规（淋巴细胞增多）"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "azitromicina",
+        "claritromicina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "疫苗",
+        "报告",
+        "慢性咳嗽"
+      ]
+    },
+    {
+      "id": "escarlatina",
+      "titulo": "猩红热",
+      "sinonimos": [
+        "猩红热"
+      ],
+      "ciap2": [
+        "A78"
+      ],
+      "cid10": [
+        "A38"
+      ],
+      "cid11": [
+        "1B50"
+      ],
+      "doid": "DOID:4914",
+      "snomedCT": "30242009",
+      "meshId": "D012541",
+      "umlsCui": "C0036285",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "由产生红疹毒素的A组链球菌（Streptococcus pyogenes）引起的感染。咽炎 + 特征性皮疹。",
+        "criteriosDiagnosticos": [
+          "链球菌性咽炎（吞咽疼痛，渗出物）",
+          "皮疹：细小丘疹（“砂纸样”），口周苍白，Pastia线",
+          "草莓舌",
+          "1-2周后手指脱屑",
+          "链球菌快速检测或培养"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "补水",
+            "休息",
+            "使用抗生素24小时后恢复活动"
+          ],
+          "farmacologico": [
+            "青霉素V 250-500mg 每12小时一次，连续10天",
+            "或阿莫西林 50mg/kg/天，连续10天",
+            "对青霉素过敏：阿奇霉素 12mg/kg/天，连续5天"
+          ]
+        },
+        "redFlags": [
+          "48-72小时内无改善",
+          "扁桃周围脓肿",
+          "风湿热"
+        ],
+        "metasTerapeuticas": [
+          "根除链球菌",
+          "预防风湿热和急性肾小球肾炎"
+        ],
+        "examesIniciais": [
+          "链球菌快速检测",
+          "如果快速检测阴性，则进行咽部培养"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "amoxicilina",
+        "penicilina-v"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "皮疹",
+        "链球菌",
+        "咽炎"
+      ]
+    },
+    {
+      "id": "dermatite-fraldas",
+      "titulo": "尿布区皮炎",
+      "sinonimos": [
+        "红屁股",
+        "尿布皮炎"
+      ],
+      "ciap2": [
+        "S89"
+      ],
+      "cid10": [
+        "L22"
+      ],
+      "cid11": [
+        "ED52.0"
+      ],
+      "doid": "DOID:0060163",
+      "snomedCT": "91487003",
+      "meshId": "D003963",
+      "umlsCui": "C0011616",
+      "categoria": "pediatrico",
+      "quickView": {
+        "definicao": "尿布覆盖区域的接触性刺激性皮炎。可能有念珠菌的继发感染。",
+        "criteriosDiagnosticos": [
+          "凸起区域的红斑（皱褶处未受累 = 刺激性）",
+          "卫星病变，脓疱，皱褶处受累 = 念珠菌",
+          "严重病例的脱屑，糜烂",
+          "临床诊断"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "频繁更换尿布",
+            "保持干燥",
+            "暴露于空气中",
+            "使用水粉或氧化锌作为屏障"
+          ],
+          "farmacologico": [
+            "轻度刺激性：屏障（氧化锌）足够",
+            "如果念珠菌：克霉唑乳膏 4次/天，持续7-14天",
+            "或咪康唑乳膏 2次/天",
+            "如果炎症严重，短期使用低效皮质类固醇（1% 氢化可的松）"
+          ]
+        },
+        "redFlags": [
+          "治疗无效",
+          "广泛糜烂",
+          "继发细菌感染"
+        ],
+        "metasTerapeuticas": [
+          "红斑消退",
+          "预防复发"
+        ],
+        "examesIniciais": [
+          "临床 - 通常不需要检查",
+          "如有怀疑（念珠菌）进行刮片"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "nistatina",
+        "miconazol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "婴儿",
+        "念珠菌",
+        "皮肤"
+      ]
+    }
+  ]
+}

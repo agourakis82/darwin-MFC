@@ -1,0 +1,358 @@
+{
+  "locale": "zh",
+  "category": "musculoesquelético",
+  "generatedAt": "2025-12-30T12:23:17.429Z",
+  "count": 3,
+  "diseases": [
+    {
+      "id": "lombalgia",
+      "titulo": "腰痛",
+      "sinonimos": [
+        "腰部疼痛",
+        "背痛",
+        "腰背痛"
+      ],
+      "doid": "DOID:0060167",
+      "snomedCT": "279039007",
+      "meshId": "D017116",
+      "umlsCui": "C0024031",
+      "ciap2": [
+        "L03",
+        "L84",
+        "L86"
+      ],
+      "cid10": [
+        "M54.5",
+        "M54.4"
+      ],
+      "categoria": "musculoesquelético",
+      "quickView": {
+        "definicao": "位于腰部（最后一个肋弓和臀褶之间）的疼痛，可能或不向腿部放射。是全球主要的致残原因。",
+        "criteriosDiagnosticos": [
+          "腰部疼痛伴或不伴放射痛",
+          "分类：非特异性（>90%），有根性放射痛，或特异性",
+          "持续时间：急性（<6周），亚急性（6-12周），慢性（>12周）",
+          "排除红旗（骨折、感染、肿瘤、马尾综合征）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "教育：安抚，预后通常良好",
+            "保持日常活动（避免长时间休息）",
+            "局部热敷",
+            "加强和拉伸运动",
+            "如果持续>4周，进行物理治疗"
+          ],
+          "farmacologico": [
+            "对乙酰氨基酚 500-1000mg 每6小时一次（如能耐受，为一线用药）",
+            "非甾体抗炎药：布洛芬 400-600mg 每8小时一次 或 双氯芬酸 50mg 每8小时一次（短期使用）",
+            "肌肉松弛剂：环苯扎林 5-10mg 每晚（如有伴随痉挛）",
+            "弱阿片类：曲马多 50-100mg 每6小时一次（剧烈疼痛，短期使用）"
+          ]
+        },
+        "metasTerapeuticas": [
+          "缓解疼痛",
+          "恢复日常活动",
+          "预防慢性化",
+          "避免长期使用药物"
+        ],
+        "examesIniciais": [
+          "在非特异性腰痛中，常规影像学检查不推荐",
+          "如有红旗或持续>6周无改善，建议进行X光或MRI检查"
+        ],
+        "redFlags": [
+          "显著创伤",
+          "年龄<20岁或>55岁首次发作",
+          "夜间疼痛醒来，静息痛",
+          "不明原因的体重下降",
+          "癌症史、免疫抑制、使用皮质类固醇",
+          "马尾综合征（鞍区麻木、大小便失禁、下肢无力）"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "60-80%的人一生中会有腰痛",
+          "incidencia": "主要的劳动能力丧失原因",
+          "faixaEtaria": "高峰在35-55岁",
+          "fatoresRisco": [
+            "重体力劳动",
+            "姿势不当",
+            "久坐不动",
+            "肥胖",
+            "吸烟",
+            "心理社会因素（压力、工作不满）",
+            "抑郁，焦虑"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "定位的腰部疼痛",
+            "活动时加重，休息时缓解（机械性）",
+            "短暂的晨僵（<30分钟）",
+            "向臀部或大腿放射（无皮节分布）",
+            "如有根性病变：向小腿放射的疼痛（按皮节分布）"
+          ],
+          "sinaisExameFisico": [
+            "腰椎活动范围受限",
+            "旁脊肌紧张",
+            "如有根性病变，直腿抬高试验阳性",
+            "非特异性腰痛的神经检查正常",
+            "评估下肢的力量、感觉、反射"
+          ],
+          "formasClinicas": [
+            "机械性/非特异性腰痛（>90%）",
+            "有根性病变的腰痛（椎间盘突出）",
+            "特异性腰痛（骨折、肿瘤、感染、脊柱关节炎）"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "临床诊断",
+            "根据持续时间和红旗症状进行分类",
+            "仅在有红旗或难治性情况下进行影像学检查"
+          ],
+          "diagnosticoDiferencial": [
+            "有根性病变的椎间盘突出",
+            "椎管狭窄",
+            "脊椎滑脱",
+            "强直性脊柱炎",
+            "椎体骨折",
+            "骨转移",
+            "感染（椎间盘炎、脓肿）"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "缓解疼痛",
+            "维持功能",
+            "预防慢性化",
+            "重返工作岗位"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "教育和再保证",
+              "保持体育活动",
+              "监督下的锻炼",
+              "浅表热疗",
+              "如慢性化，进行认知行为疗法"
+            ],
+            "citations": [
+              {
+                "refId": "lancet-lombalgia-2018"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "简单镇痛药",
+                "medicamentos": [
+                  "对乙酰氨基酚 500-1000mg 每6小时一次"
+                ],
+                "observacoes": "疗效有限，但安全"
+              },
+              {
+                "classe": "非甾体抗炎药",
+                "medicamentos": [
+                  "布洛芬 400-600mg 每8小时一次",
+                  "萘普生 250-500mg 每12小时一次"
+                ],
+                "observacoes": "有效。短期使用（7-14天）。注意胃肠、心血管和肾脏风险"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "肌肉松弛剂",
+                "medicamentos": [
+                  "环苯扎林 5-10mg 每晚"
+                ],
+                "observacoes": "如有肌肉痉挛。短期使用。嗜睡"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "慢性疼痛",
+                "conduta": "多模式治疗。考虑使用度洛西汀、阿米替林。转诊"
+              },
+              {
+                "situacao": "根性病变",
+                "conduta": "非甾体抗炎药 + 物理治疗。如难治性，转诊进行手术评估"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "lancet-lombalgia-2018"
+              }
+            ]
+          },
+          "duracao": "大多数在4-6周内解决"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "如无改善，2-4周后复评",
+          "metasTerapeuticas": [
+            "疼痛缓解",
+            "恢复活动",
+            "无长期药物使用"
+          ],
+          "criteriosEncaminhamento": [
+            "红旗（紧急）",
+            "进行性神经功能缺损",
+            "持续>6周的难治性疼痛",
+            "马尾综合征（紧急）",
+            "需要专业物理治疗"
+          ],
+          "citations": [
+            {
+              "refId": "lancet-lombalgia-2018"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno",
+        "ciclobenzaprina"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "lancet-lombalgia-2018"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "musculoesquelético",
+        "急性",
+        "慢性",
+        "普遍"
+      ]
+    },
+    {
+      "id": "osteoporose",
+      "titulo": "骨质疏松症",
+      "ciap2": [
+        "L95"
+      ],
+      "cid10": [
+        "M80",
+        "M81"
+      ],
+      "cid11": [
+        "FB83"
+      ],
+      "categoria": "musculoesquelético",
+      "doid": "DOID:11476",
+      "snomedCT": "64859006",
+      "meshId": "D010024",
+      "umlsCui": "C0029456",
+      "quickView": {
+        "definicao": "骨骼疾病，骨量低且微结构退化，增加骨折风险。绝经后患病率：30-50%。",
+        "criteriosDiagnosticos": [
+          "DXA: T-评分 ≤-2.5 (脊柱/股骨)",
+          "或既往有脆性骨折",
+          "T-评分 -1 至 -2.5 = 骨量减少",
+          "使用 FRAX 计算风险"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "负重运动",
+            "防跌倒",
+            "戒烟",
+            "饮食钙 1000-1200mg/天"
+          ],
+          "farmacologico": [
+            "阿仑膦酸钠 70mg/周 或 利塞膦酸钠 35mg/周",
+            "维生素 D 800-2000IU/天",
+            "若对双膦酸盐不耐受，可使用地诺单抗"
+          ]
+        },
+        "redFlags": [
+          "椎体骨折",
+          "多发性骨折",
+          "身高减少 >4cm",
+          "弥漫性骨痛"
+        ]
+      },
+      "medicamentos": [
+        "alendronato",
+        "vitamina-d",
+        "carbonato-calcio"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "frax"
+      ]
+    },
+    {
+      "id": "artrite-reumatoide",
+      "titulo": "类风湿关节炎",
+      "ciap2": [
+        "L88"
+      ],
+      "cid10": [
+        "M06"
+      ],
+      "cid11": [
+        "FA20"
+      ],
+      "categoria": "musculoesquelético",
+      "doid": "DOID:7148",
+      "snomedCT": "69896004",
+      "meshId": "D001172",
+      "umlsCui": "C0003873",
+      "tags": [
+        "慢性",
+        "自身免疫",
+        "风湿病"
+      ],
+      "quickView": {
+        "definicao": "对称性多关节炎。全身性自身免疫疾病。可能有关节外表现。",
+        "criteriosDiagnosticos": [
+          "对称性多关节炎",
+          "晨僵 >1 小时",
+          "类风湿因子或抗-CCP 阳性",
+          "放射学改变"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "物理治疗",
+            "职业治疗",
+            "适应性锻炼"
+          ],
+          "farmacologico": [
+            "MTX 7.5-25mg/周",
+            "泼尼松 5-10mg/天 诱导期",
+            "DMARDs 按需使用"
+          ]
+        },
+        "redFlags": [
+          "血管炎",
+          "肺部并发症",
+          "淀粉样变性",
+          "快速关节侵蚀"
+        ]
+      },
+      "medicamentos": [
+        "metotrexate",
+        "prednisone"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

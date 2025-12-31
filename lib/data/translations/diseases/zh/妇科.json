@@ -1,0 +1,317 @@
+{
+  "locale": "zh",
+  "category": "妇科",
+  "generatedAt": "2025-12-30T12:23:17.433Z",
+  "count": 5,
+  "diseases": [
+    {
+      "id": "vaginose-bacteriana",
+      "titulo": "细菌性阴道病",
+      "ciap2": [
+        "X84"
+      ],
+      "cid10": [
+        "N76.0"
+      ],
+      "cid11": [
+        "GA0B.0"
+      ],
+      "categoria": "妇科",
+      "doid": "DOID:0080165",
+      "snomedCT": "419760006",
+      "meshId": "D016585",
+      "umlsCui": "C0085166",
+      "quickView": {
+        "definicao": "阴道微生物群失调，以乳酸杆菌被厌氧菌替代为特征。不是性传播疾病。最常见的白带原因。",
+        "criteriosDiagnosticos": [
+          "Amsel标准（4项中的3项）：灰白色均匀白带，pH >4.5，胺试验阳性（鱼腥味），湿片检查发现线索细胞"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免阴道冲洗",
+            "不使用私处清洁皂"
+          ],
+          "farmacologico": [
+            "甲硝唑 500mg 口服 每12小时 7天",
+            "或 甲硝唑凝胶 0.75% 阴道给药 每日一次 5天",
+            "孕妇：甲硝唑 250mg 每8小时 7天"
+          ]
+        },
+        "redFlags": [
+          "孕妇（早产风险）",
+          "治疗后症状持续"
+        ]
+      },
+      "medicamentos": [
+        "metronidazol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dismenorreia",
+      "titulo": "痛经",
+      "ciap2": [
+        "X02"
+      ],
+      "cid10": [
+        "N94.4"
+      ],
+      "cid11": [
+        "GA10.0"
+      ],
+      "categoria": "妇科",
+      "doid": "DOID:1596",
+      "snomedCT": "266599000",
+      "meshId": "D004412",
+      "umlsCui": "C0013390",
+      "quickView": {
+        "definicao": "月经期间的盆腔疼痛。分为原发性（无病理）和继发性（如子宫内膜异位症、腺肌病、子宫肌瘤）。",
+        "criteriosDiagnosticos": [
+          "耻骨上区绞痛",
+          "原发性：月经开始时出现；继发性：月经前出现",
+          "伴有恶心、腹泻、头痛等症状",
+          "原发性：初潮后6-12个月开始"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "定期进行体育锻炼",
+            "局部热敷（热水袋）",
+            "经皮神经电刺激（TENS）"
+          ],
+          "farmacologico": [
+            "非甾体抗炎药：布洛芬 400mg 每6小时一次，从月经前一天开始",
+            "连续或延长使用复方口服避孕药",
+            "左炔诺孕酮宫内节育器（如需避孕）"
+          ]
+        },
+        "redFlags": [
+          "25岁以后开始",
+          "疼痛逐渐加重",
+          "深部性交痛",
+          "非甾体抗炎药 + 复方口服避孕药无效"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "endometriose",
+      "titulo": "子宫内膜异位症",
+      "sinonimos": [
+        "子宫内膜瘤"
+      ],
+      "ciap2": [
+        "X99"
+      ],
+      "cid10": [
+        "N80"
+      ],
+      "cid11": [
+        "GA10"
+      ],
+      "doid": "DOID:289",
+      "snomedCT": "129103003",
+      "meshId": "D004715",
+      "umlsCui": "C0014175",
+      "categoria": "妇科",
+      "quickView": {
+        "definicao": "子宫外（卵巢、腹膜、直肠阴道隔）出现子宫内膜组织。影响10%的育龄妇女。",
+        "criteriosDiagnosticos": [
+          "进行性和致残性痛经",
+          "深部性交痛",
+          "慢性盆腔痛",
+          "不孕",
+          "腹腔镜检查和活检：金标准"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "定期进行体育活动",
+            "局部热敷以缓解疼痛"
+          ],
+          "farmacologico": [
+            "非甾体抗炎药用于止痛",
+            "连续使用复方激素避孕药",
+            "孕激素：地诺孕素 2mg/天，左炔诺孕酮宫内节育器",
+            "促性腺激素释放激素类似物（重症病例）：短期使用"
+          ]
+        },
+        "redFlags": [
+          "大的盆腔肿块",
+          "肠或输尿管梗阻",
+          "难治性不孕"
+        ],
+        "metasTerapeuticas": [
+          "控制疼痛",
+          "保护生育能力",
+          "提高生活质量"
+        ],
+        "examesIniciais": [
+          "经阴道超声",
+          "盆腔磁共振成像（映射）",
+          "CA-125（非特异性）"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "dienogeste",
+        "ibuprofeno"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "盆腔痛",
+        "不孕",
+        "激素"
+      ]
+    },
+    {
+      "id": "doenca-inflamatoria-pelvica",
+      "titulo": "盆腔炎症性疾病",
+      "sinonimos": [
+        "PID",
+        "输卵管炎",
+        "附件炎"
+      ],
+      "ciap2": [
+        "X74"
+      ],
+      "cid10": [
+        "N73",
+        "N74"
+      ],
+      "cid11": [
+        "GA06"
+      ],
+      "doid": "DOID:1003",
+      "snomedCT": "198130006",
+      "meshId": "D000292",
+      "umlsCui": "C0242172",
+      "categoria": "妇科",
+      "quickView": {
+        "definicao": "上生殖道（子宫内膜炎、输卵管炎、输卵管卵巢脓肿）的上行感染。通常为多微生物感染，包括衣原体和淋病。",
+        "criteriosDiagnosticos": [
+          "盆腔/下腹部疼痛",
+          "宫颈活动时疼痛",
+          "附件区触痛",
+          "附加标准：发热、黏液脓性分泌物、白细胞增多"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "休息",
+            "治疗期间禁欲",
+            "治疗伴侣"
+          ],
+          "farmacologico": [
+            "门诊（轻度/中度）：头孢曲松 500mg 肌肉注射 + 多西环素 100mg 每12小时一次，共14天 + 甲硝唑 500mg 每12小时一次，共14天",
+            "住院（重度）：静脉注射直至好转，然后改为口服",
+            "如脓肿无反应则进行手术"
+          ]
+        },
+        "redFlags": [
+          "输卵管卵巢脓肿",
+          "腹膜炎",
+          "败血症",
+          "72小时内无改善"
+        ],
+        "metasTerapeuticas": [
+          "根除感染",
+          "预防后遗症（不孕、异位妊娠）"
+        ],
+        "examesIniciais": [
+          "衣原体/淋病检测",
+          "经阴道超声",
+          "血常规",
+          "PCR"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "ceftriaxone",
+        "doxycycline",
+        "metronidazole"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "性传播感染",
+        "紧急",
+        "不孕"
+      ]
+    },
+    {
+      "id": "sangramento-uterino-anormal",
+      "titulo": "异常子宫出血",
+      "sinonimos": [
+        "SUA",
+        "月经过多",
+        "子宫出血",
+        "功能性子宫出血"
+      ],
+      "ciap2": [
+        "X06"
+      ],
+      "cid10": [
+        "N92",
+        "N93"
+      ],
+      "cid11": [
+        "GA20"
+      ],
+      "doid": "DOID:0081295",
+      "snomedCT": "64996003",
+      "meshId": "D008796",
+      "umlsCui": "C0025874",
+      "categoria": "妇科",
+      "quickView": {
+        "definicao": "月经模式（频率、持续时间、量）的改变。PALM-COEIN分类：息肉、腺肌病、平滑肌瘤、恶性肿瘤 - 凝血障碍、排卵性、子宫内膜、医源性、未分类。",
+        "criteriosDiagnosticos": [
+          "周期出血 >80mL 或 >7 天",
+          "周期 <21 或 >35 天",
+          "经间期出血或性交后出血",
+          "根据PALM-COEIN调查原因"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "月经日记",
+            "如有贫血补充铁剂"
+          ],
+          "farmacologico": [
+            "急性：氨甲环酸 1g 每8小时，高剂量口服避孕药",
+            "慢性排卵性：左炔诺孕酮宫内节育器，口服避孕药",
+            "慢性无排卵性：周期性孕激素，口服避孕药",
+            "治疗特定原因（息肉、肌瘤）"
+          ]
+        },
+        "redFlags": [
+          "绝经后出血",
+          "严重贫血",
+          "血流动力学不稳定"
+        ],
+        "metasTerapeuticas": [
+          "调节周期",
+          "纠正贫血"
+        ],
+        "examesIniciais": [
+          "血常规",
+          "铁蛋白",
+          "促甲状腺激素",
+          "经阴道超声",
+          "如有指征行宫腔镜检查"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "acido-tranexamico",
+        "medroxiprogesterona"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "月经",
+        "贫血",
+        "激素"
+      ]
+    }
+  ]
+}

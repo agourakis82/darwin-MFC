@@ -1,0 +1,2509 @@
+{
+  "locale": "zh",
+  "category": "saude_mental",
+  "generatedAt": "2025-12-30T12:23:17.427Z",
+  "count": 26,
+  "diseases": [
+    {
+      "id": "depressao",
+      "titulo": "重度抑郁症",
+      "sinonimos": [
+        "抑郁症",
+        "重度抑郁",
+        "抑郁发作"
+      ],
+      "doid": "DOID:1470",
+      "snomedCT": "35489007",
+      "meshId": "D003865",
+      "umlsCui": "C0011570",
+      "ciap2": [
+        "P76"
+      ],
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "categoria": "saude_mental",
+      "quickView": {
+        "definicao": "一种精神障碍，特征为持续的抑郁情绪和/或对活动失去兴趣，持续≥2周，并伴有认知、行为和身体症状，导致显著的功能损害。",
+        "criteriosDiagnosticos": [
+          "≥5个症状持续≥2周，其中必须包括：抑郁情绪或快感缺失",
+          "其他症状：体重/食欲改变，失眠/嗜睡，激动/迟缓",
+          "疲劳，无价值感/内疚感，注意力集中困难",
+          "自杀念头或自杀意念",
+          "显著的功能损害（工作、人际关系、自我照顾）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "疾病和治疗的心理教育",
+            "心理治疗（认知行为疗法、人际治疗）- 所有患者均推荐",
+            "定期进行体育活动（具有抗抑郁效果）",
+            "睡眠卫生",
+            "社会和家庭支持",
+            "远离酒精和毒品"
+          ],
+          "farmacologico": [
+            "SSRI一线药物：氟西汀 20-60mg，舍曲林 50-200mg，艾司西酞普兰 10-20mg",
+            "SNRI：文拉法辛 75-225mg，度洛西汀 60-120mg（如伴有疼痛）",
+            "三环类：阿米替林 25-150mg（如伴有疼痛、失眠、低成本）",
+            "在缓解后至少维持6-12个月。如有≥3次发作则需长期维持"
+          ]
+        },
+        "metasTerapeuticas": [
+          "完全缓解症状（PHQ-9 <5）",
+          "恢复到发病前的功能水平",
+          "预防复发",
+          "识别和管理共病"
+        ],
+        "examesIniciais": [
+          "TSH（排除甲状腺功能减退）",
+          "血常规（贫血）",
+          "血糖",
+          "肾功能和肝功能（基线用于药物治疗）",
+          "维生素B12和叶酸（老年人或营养不良者）"
+        ],
+        "redFlags": [
+          "有计划和意图的结构性自杀意念",
+          "近期有自杀未遂史",
+          "精神病性症状（妄想、幻觉）",
+          "躁狂/轻躁狂发作（提示双相情感障碍）",
+          "紧张症",
+          "异己攻击风险"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "成人人口的7-10%，女性是男性的2倍",
+          "incidencia": "高峰年龄为25-44岁",
+          "mortalidade": "未经治疗的重度病例中，自杀率为15%",
+          "fatoresRisco": [
+            "家族抑郁症史",
+            "童年不良事件",
+            "慢性压力、哀悼、失业",
+            "慢性疾病（糖尿病、慢性疼痛、癌症）",
+            "物质使用",
+            "先前的焦虑障碍",
+            "产后期"
+          ],
+          "citations": [
+            {
+              "refId": "who-depression-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "大部分时间情绪低落",
+            "快感缺失（丧失乐趣）",
+            "体重/食欲改变（增加或减少）",
+            "失眠或嗜睡",
+            "疲劳，能量丧失",
+            "无价值感或过度内疚感",
+            "注意力集中困难",
+            "死亡念头，自杀意念"
+          ],
+          "sinaisExameFisico": [
+            "外表不修边幅",
+            "精神运动迟缓或激动",
+            "面容悲伤，哭泣",
+            "语速缓慢，单调",
+            "难以保持眼神接触"
+          ],
+          "formasClinicas": [
+            "轻度：症状轻微，功能保持",
+            "中度：症状和功能损害明显",
+            "重度：症状严重，自杀风险高，可能有精神病"
+          ],
+          "citations": [
+            {
+              "refId": "dsm-5"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "≥5个症状持续≥2周（必须包括抑郁情绪或快感缺失）",
+            "显著的临床损害",
+            "不可归因于物质或医疗条件",
+            "无既往躁狂/轻躁狂发作"
+          ],
+          "diagnosticoDiferencial": [
+            "双相情感障碍",
+            "甲状腺功能减退",
+            "贫血",
+            "适应障碍",
+            "正常哀悼",
+            "继发性抑郁（药物、疾病）"
+          ],
+          "examesLaboratoriais": [
+            "TSH，血常规，血糖，肾功能和肝功能",
+            "维生素B12，叶酸（老年人）",
+            "毒物筛查（怀疑物质使用）"
+          ],
+          "citations": [
+            {
+              "refId": "dsm-5"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "症状缓解",
+            "功能恢复",
+            "预防复发和再发",
+            "提高生活质量"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "心理治疗：认知行为疗法（12-20次）或人际治疗",
+              "行为激活",
+              "体育锻炼：每次30-45分钟，每周3-5次",
+              "睡眠卫生",
+              "支持小组",
+              "正念"
+            ],
+            "citations": [
+              {
+                "refId": "nice-depression-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "SSRI",
+                "medicamentos": [
+                  "氟西汀 20-60mg/天",
+                  "舍曲林 50-200mg/天",
+                  "艾司西酞普兰 10-20mg/天"
+                ],
+                "posologia": "每日一次，早晨服用",
+                "observacoes": "从低剂量开始，每2周增加一次。2-4周见效"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "SNRI",
+                "medicamentos": [
+                  "文拉法辛 75-225mg/天",
+                  "度洛西汀 60-120mg/天"
+                ],
+                "observacoes": "如伴有慢性疼痛或SSRI失败"
+              },
+              {
+                "classe": "三环类",
+                "medicamentos": [
+                  "阿米替林 25-150mg/天",
+                  "诺米替林 25-150mg/天"
+                ],
+                "observacoes": "成本较低。副作用较多。>40岁者需做心电图"
+              },
+              {
+                "classe": "其他",
+                "medicamentos": [
+                  "布普品 150-300mg/天",
+                  "米氮平 15-45mg/天"
+                ],
+                "observacoes": "布普品：戒烟。米氮平：失眠，食欲不振"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "妊娠",
+                "conduta": "舍曲林更安全。避免在第一孕期使用帕罗西汀"
+              },
+              {
+                "situacao": "老年人",
+                "conduta": "从更低剂量开始。优先选择SSRI"
+              },
+              {
+                "situacao": "双相情感障碍",
+                "conduta": "抗抑郁药+情绪稳定剂。转介精神科"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "nice-depression-2022"
+              }
+            ]
+          },
+          "duracao": "在缓解后至少维持6-12个月。如有≥3次发作或危险因素，则需长期维持"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "初期每周/每两周一次，之后每月一次，稳定后每季度一次",
+          "examesControle": [
+            "每次随访时进行PHQ-9评估",
+            "评估不良反应",
+            "评估自杀风险",
+            ">40岁使用三环类药物时进行心电图检查"
+          ],
+          "metasTerapeuticas": [
+            "PHQ-9 <5（缓解）",
+            "重返工作/活动",
+            "睡眠和食欲恢复正常",
+            "无自杀意念"
+          ],
+          "criteriosEncaminhamento": [
+            "高自杀风险",
+            "精神病性症状",
+            "疑似双相情感障碍",
+            "难治性（对2种以上抗抑郁药无效）",
+            "需要ECT",
+            "严重的共病精神障碍"
+          ],
+          "citations": [
+            {
+              "refId": "nice-depression-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-depressao"
+      ],
+      "medicamentos": [
+        "fluoxetina",
+        "sertralina",
+        "amitriptilina",
+        "escitalopram"
+      ],
+      "calculadoras": [
+        "phq9",
+        "phq2"
+      ],
+      "citations": [
+        {
+          "refId": "dsm-5"
+        },
+        {
+          "refId": "nice-depression-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "saude_mental",
+        "cronica",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "transtorno-ansiedade-generalizada",
+      "titulo": "广泛性焦虑障碍 (GAD)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F41.1"
+      ],
+      "cid11": [
+        "6B00"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "21897009",
+      "doid": "DOID:14320",
+      "meshId": "D001008",
+      "umlsCui": "C0270458",
+      "dsm5": {
+        "code": "300.02",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.02",
+          "name": "Generalized Anxiety Disorder",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "过度的焦虑和担忧（预期性焦虑），在大多数日子里持续至少6个月，涉及多种事件或活动"
+            },
+            {
+              "letter": "B",
+              "text": "个体难以控制担忧"
+            },
+            {
+              "letter": "C",
+              "text": "焦虑和担忧与以下六个症状中的三个（或更多）相关：",
+              "subCriteria": [
+                {
+                  "text": "1. 焦躁不安或感觉神经紧张"
+                },
+                {
+                  "text": "2. 易疲劳"
+                },
+                {
+                  "text": "3. 难以集中注意力或感觉“大脑空白”"
+                },
+                {
+                  "text": "4. 易怒"
+                },
+                {
+                  "text": "5. 肌肉紧张"
+                },
+                {
+                  "text": "6. 睡眠障碍"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "一种以对多种事件或活动的过度和持久的焦虑和担忧为特征的障碍，难以控制，并伴有身体和认知症状。",
+        "criteriosDiagnosticos": [
+          "大多数日子里≥6个月的过度担忧",
+          "难以控制担忧",
+          "3个或更多症状：焦躁不安、疲劳、注意力不集中、易怒、肌肉紧张、睡眠障碍",
+          "显著的功能损害"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "认知行为疗法 (CBT) - 金标准",
+            "接纳与承诺疗法 (ACT)",
+            "正念",
+            "放松技巧"
+          ],
+          "farmacologico": [
+            "SSRIs: 埃斯西酞普兰, 舍曲林",
+            "SNRIs: 文拉法辛缓释剂",
+            "普瑞巴林 (替代选择)"
+          ]
+        },
+        "redFlags": [
+          "自杀意念",
+          "严重的共病焦虑障碍",
+          "治疗抵抗",
+          "物质使用"
+        ],
+        "examesIniciais": [
+          "TSH (排除甲状腺功能亢进)",
+          "血常规",
+          "GAD-7量表评估"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "GAD-7",
+          "description": "广泛性焦虑障碍-7：7项量表，评分0-21。≥10表示中度至重度GAD。",
+          "cutoff": "≥10",
+          "reference": "Spitzer et al., 2006"
+        }
+      ],
+      "tags": [
+        "焦虑",
+        "GAD",
+        "SSRIs",
+        "CBT",
+        "DSM-5",
+        "心理健康"
+      ]
+    },
+    {
+      "id": "transtorno-panico",
+      "titulo": "恐慌障碍",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F41.0"
+      ],
+      "cid11": [
+        "6B01"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "371631005",
+      "doid": "DOID:594",
+      "meshId": "D016584",
+      "umlsCui": "C0030319",
+      "dsm5": {
+        "code": "300.01",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.01",
+          "name": "Panic Disorder",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "反复且意外的恐慌发作"
+            },
+            {
+              "letter": "B",
+              "text": "至少有一次发作后持续1个月（或更长）的以下一种或两种情况：",
+              "subCriteria": [
+                {
+                  "text": "1. 对再次发作或其后果的持续担忧"
+                },
+                {
+                  "text": "2. 与发作相关的显著适应不良行为改变"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "以反复且意外的恐慌发作为特征，随后出现持续的担忧或适应不良的行为改变。",
+        "criteriosDiagnosticos": [
+          "反复且意外的恐慌发作",
+          "发作期间至少有4个症状：心悸、出汗、颤抖、呼吸困难、胸痛、恶心、头晕、非真实感、害怕失控、害怕死亡",
+          "持续担忧或行为改变≥1个月"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "认知行为疗法（CBT）伴内感受暴露",
+            "关于恐慌发作的心理教育",
+            "呼吸技巧"
+          ],
+          "farmacologico": [
+            "SSRIs: 舍曲林, 帕罗西汀, 艾司西酞普兰",
+            "阿普唑仑（短期使用，避免依赖）"
+          ]
+        },
+        "redFlags": [
+          "严重的广场恐惧症",
+          "自杀意念",
+          "物质使用",
+          "未治疗的共病"
+        ],
+        "examesIniciais": [
+          "心电图（排除心律失常）",
+          "TSH",
+          "空腹血糖",
+          "血常规"
+        ]
+      },
+      "tags": [
+        "panic",
+        "焦虑",
+        "发作",
+        "ssris",
+        "cbt",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "insonia",
+      "titulo": "失眠",
+      "ciap2": [
+        "P06"
+      ],
+      "cid10": [
+        "G47.0"
+      ],
+      "cid11": [
+        "7A00.0"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:193",
+      "snomedCT": "193462001",
+      "meshId": "D007319",
+      "umlsCui": "C0917801",
+      "quickView": {
+        "definicao": "入睡困难/维持睡眠或早醒，伴有日间功能障碍。慢性失眠定义为每周≥3次，持续≥3个月。",
+        "criteriosDiagnosticos": [
+          "尽管有机会但难以入睡",
+          "日间功能障碍（疲劳、易怒、注意力不集中）",
+          "排除睡眠呼吸暂停、不安腿综合征等其他原因"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "认知行为疗法（CBT-I）",
+            "睡眠卫生",
+            "刺激控制",
+            "限制床上时间"
+          ],
+          "farmacologico": [
+            "避免长期使用苯二氮卓类药物",
+            "短期使用：佐匹克隆 5-10mg 或 扎来普隆",
+            "如有共病：曲唑酮 25-100mg 或 米氮平"
+          ]
+        },
+        "redFlags": [
+          "日间过度嗜睡（睡眠呼吸暂停）",
+          "严重打鼾",
+          "不安腿综合征",
+          "猝倒"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "transtorno-depressivo-maior",
+      "titulo": "重度抑郁症 (MDD)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "cid11": [
+        "6A70",
+        "6A71"
+      ],
+      "ciap2": [
+        "P76"
+      ],
+      "snomedCT": "35489007",
+      "doid": "DOID:1470",
+      "meshId": "D003865",
+      "umlsCui": "C1269683",
+      "dsm5": {
+        "code": "296.33",
+        "codeAlternative": "F32",
+        "category": "Depressive Disorders",
+        "diagnosticCriteria": {
+          "code": "296.33",
+          "name": "Major Depressive Disorder",
+          "category": "Depressive Disorders",
+          "criteria": [
+            {
+              "text": "A. 在同一2周内出现以下症状中的五种（或更多），并且这些症状代表了与先前功能的改变；至少有一种症状是（1）情绪低落或（2）兴趣或乐趣丧失。"
+            },
+            {
+              "letter": "1",
+              "text": "几乎每天大部分时间情绪低落"
+            },
+            {
+              "letter": "2",
+              "text": "对所有或几乎所有活动的兴趣或乐趣显著减少"
+            },
+            {
+              "letter": "3",
+              "text": "体重显著减轻或增加（一个月内体重变化超过5%）"
+            },
+            {
+              "letter": "4",
+              "text": "几乎每天失眠或睡眠过多"
+            },
+            {
+              "letter": "5",
+              "text": "几乎每天精神运动性激越或迟缓"
+            },
+            {
+              "letter": "6",
+              "text": "几乎每天感到疲劳或能量丧失"
+            },
+            {
+              "letter": "7",
+              "text": "几乎每天感到无用或过度的、不适当的罪恶感"
+            },
+            {
+              "letter": "8",
+              "text": "思考能力或集中力下降，或犹豫不决"
+            },
+            {
+              "letter": "9",
+              "text": "反复出现死亡念头，自杀意念"
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "轻度",
+              "中度",
+              "重度",
+              "伴有精神病特征"
+            ],
+            "course": [
+              "单次发作",
+              "复发"
+            ],
+            "episode": [
+              "伴有忧郁特征",
+              "伴有非典型特征",
+              "伴有紧张症"
+            ],
+            "remission": [
+              "部分缓解",
+              "完全缓解"
+            ]
+          },
+          "exclusions": [
+            "物质/药物诱发",
+            "由其他医学状况引起"
+          ]
+        },
+        "specifiers": {
+          "severity": [
+            "轻度",
+            "中度",
+            "重度",
+            "伴有精神病特征"
+          ],
+          "course": [
+            "单次发作",
+            "复发"
+          ],
+          "episode": [
+            "伴有忧郁特征",
+            "伴有非典型特征",
+            "伴有紧张症"
+          ],
+          "remission": [
+            "部分缓解",
+            "完全缓解"
+          ],
+          "withAnxiousDistress": true,
+          "withMelancholicFeatures": true,
+          "withAtypicalFeatures": true,
+          "withPsychoticFeatures": true,
+          "withCatatonia": true,
+          "withPeripartumOnset": true,
+          "withSeasonalPattern": true
+        }
+      },
+      "quickView": {
+        "definicao": "一种情绪障碍，特征为情绪低落、兴趣或乐趣丧失，并伴有其他认知、神经植物性和精神运动症状，导致显著的痛苦或功能损害。",
+        "criteriosDiagnosticos": [
+          "情绪低落或兴趣/乐趣丧失",
+          "至少5种症状持续2周",
+          "症状：体重、睡眠、精神运动、能量、认知、罪恶感、自杀意念",
+          "显著的功能损害"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "心理治疗：CBT（认知行为疗法）- 金标准",
+            "心理治疗：IPT（人际疗法）",
+            "行为激活",
+            "定期体育锻炼"
+          ],
+          "farmacologico": [
+            "SSRIs: 舍曲林, 埃斯西酞普兰, 氟西汀 (一线)",
+            "SNRIs: 文拉法辛, 度洛西汀",
+            "三环类抗抑郁药: 阿米替林 (二线)"
+          ]
+        },
+        "redFlags": [
+          "活跃的自杀意念",
+          "自杀未遂",
+          "精神病（幻觉/妄想）",
+          "紧张症",
+          "治疗抵抗",
+          "重度MDD治疗反应不足"
+        ],
+        "examesIniciais": [
+          "TSH, 游离T4 (排除甲状腺功能减退)",
+          "维生素B12, 叶酸",
+          "全血细胞计数",
+          "PHQ-9 或 HAM-D 评估量表"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "PHQ-9",
+          "description": "患者健康问卷-9：9项量表，评分0-27。≥10表示中度至重度抑郁。",
+          "cutoff": "≥10",
+          "reference": "Kroenke et al., 2001"
+        },
+        {
+          "name": "HAM-D",
+          "description": "汉密尔顿抑郁评定量表：临床量表，评分0-52。≥17表示中度至重度抑郁。",
+          "cutoff": "≥17",
+          "reference": "Hamilton, 1960"
+        }
+      ],
+      "tags": [
+        "抑郁",
+        "情绪",
+        "ssris",
+        "cbt",
+        "dsm5",
+        "saude_mental"
+      ]
+    },
+    {
+      "id": "transtorno-bipolar-i",
+      "titulo": "双相情感障碍I型",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F31"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "ciap2": [
+        "P73"
+      ],
+      "snomedCT": "13746004",
+      "doid": "DOID:3312",
+      "meshId": "D001714",
+      "umlsCui": "C0853193",
+      "dsm5": {
+        "code": "296.43",
+        "category": "双相及相关障碍",
+        "diagnosticCriteria": {
+          "code": "296.43",
+          "name": "双相I型障碍",
+          "category": "双相及相关障碍",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "符合躁狂发作的标准"
+            },
+            {
+              "letter": "B",
+              "text": "躁狂发作不能更好地解释为精神分裂症、分裂情感性障碍或其他精神病性障碍"
+            }
+          ]
+        },
+        "specifiers": {
+          "severity": [
+            "轻度",
+            "中度",
+            "重度",
+            "伴有精神病性特征"
+          ],
+          "course": [
+            "单次躁狂发作",
+            "最近一次发作躁狂",
+            "最近一次发作轻躁狂",
+            "最近一次发作抑郁",
+            "最近一次发作未特指"
+          ],
+          "episode": [
+            "伴有紧张症",
+            "伴有围产期发作",
+            "伴有季节性模式"
+          ],
+          "remission": [
+            "部分缓解",
+            "完全缓解"
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "一种情绪障碍，特征为至少一次完整的躁狂发作，通常交替出现重度抑郁发作。",
+        "criteriosDiagnosticos": [
+          "至少一次躁狂发作（情绪高涨/易怒 + 3个症状 ≥1周）",
+          "躁狂症状：夸大、睡眠减少、多话、思维奔逸、注意力分散、活动增加、参与高风险活动",
+          "显著损害或需要住院治疗"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "疾病心理教育",
+            "家庭治疗",
+            "社会节律疗法"
+          ],
+          "farmacologico": [
+            "情绪稳定剂：锂盐（金标准）",
+            "抗惊厥药：丙戊酸、卡马西平",
+            "非典型抗精神病药：喹硫平、奥氮平"
+          ]
+        },
+        "redFlags": [
+          "伴有精神病性的严重躁狂发作",
+          "抑郁期间的自杀风险",
+          "不依从治疗",
+          "反复发作"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "首次躁狂发作",
+        "严重或伴有精神病性的躁狂发作",
+        "自杀风险",
+        "需要调整锂盐",
+        "尽管接受治疗仍反复发作"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "riscoAgressao": true,
+        "criterios": [
+          "严重躁狂发作",
+          "精神病性症状",
+          "自伤风险"
+        ]
+      },
+      "tags": [
+        "双相",
+        "躁狂",
+        "抑郁",
+        "锂盐",
+        "情绪稳定剂",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "esquizofrenia",
+      "titulo": "精神分裂症",
+      "ciap2": [
+        "P72"
+      ],
+      "cid10": [
+        "F20"
+      ],
+      "cid11": [
+        "6A20"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:5419",
+      "snomedCT": "58214004",
+      "meshId": "D012559",
+      "umlsCui": "C0036341",
+      "tags": [
+        "saude_mental",
+        "cronica",
+        "psicose"
+      ],
+      "quickView": {
+        "definicao": "一种精神疾病，表现为阳性症状（幻觉、妄想）和阴性症状（缺乏意志、情感迟钝）。",
+        "criteriosDiagnosticos": [
+          "阳性或阴性症状持续≥1个月",
+          "社会/职业功能障碍",
+          "病程≥6个月"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "心理治疗",
+            "心理教育",
+            "心理社会康复"
+          ],
+          "farmacologico": [
+            "抗精神病药：利培酮或奥氮平",
+            "长期维持治疗"
+          ]
+        },
+        "redFlags": [
+          "自杀意念/行为",
+          "精神运动性激越",
+          "自我照顾能力下降"
+        ]
+      },
+      "medicamentos": [
+        "risperidona",
+        "olanzapina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "transtorno-estresse-pos-traumatico",
+      "titulo": "创伤后应激障碍 (PTSD)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F43.1"
+      ],
+      "cid11": [
+        "6B40"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "47505003",
+      "doid": "DOID:2055",
+      "meshId": "D013313",
+      "umlsCui": "C0038436",
+      "dsm5": {
+        "code": "309.81",
+        "category": "Trauma- and Stressor-Related Disorders",
+        "diagnosticCriteria": {
+          "code": "309.81",
+          "name": "Posttraumatic Stress Disorder",
+          "category": "Trauma- and Stressor-Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "暴露于实际或威胁的死亡、严重伤害或性暴力"
+            },
+            {
+              "letter": "B",
+              "text": "存在以下一个（或多个）侵入症状：",
+              "subCriteria": [
+                {
+                  "text": "1. 反复出现痛苦的记忆"
+                },
+                {
+                  "text": "2. 反复出现痛苦的梦"
+                },
+                {
+                  "text": "3. 解离反应"
+                },
+                {
+                  "text": "4. 强烈的心理或生理痛苦"
+                }
+              ]
+            },
+            {
+              "letter": "C",
+              "text": "持续回避与创伤有关的刺激"
+            },
+            {
+              "letter": "D",
+              "text": "认知和情绪的负面变化"
+            },
+            {
+              "letter": "E",
+              "text": "显著的兴奋和反应性变化"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "在经历严重创伤事件后发展的一种障碍，特征为侵入症状、回避、认知/情绪改变和过度兴奋。",
+        "criteriosDiagnosticos": [
+          "暴露于创伤（死亡、严重伤害、暴力）",
+          "侵入症状：记忆、梦、闪回",
+          "持续回避",
+          "认知/情绪的负面变化",
+          "过度兴奋和反应性",
+          "持续时间 >1 个月"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "创伤聚焦疗法 (TFPT)：EMDR、延长暴露疗法",
+            "认知行为疗法 (CBT) 与暴露",
+            "创伤后应激障碍的认知疗法"
+          ],
+          "farmacologico": [
+            "SSRIs: 舍曲林, 帕罗西汀 (FDA 批准)",
+            "SNRIs: 文拉法辛",
+            "哌唑嗪 (用于噩梦)"
+          ]
+        },
+        "redFlags": [
+          "自杀风险",
+          "物质使用",
+          "严重共病",
+          "慢性 PTSD 无反应"
+        ],
+        "examesIniciais": [
+          "自杀风险评估",
+          "物质使用筛查",
+          "PCL-5 量表评估"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "PCL-5",
+          "description": "DSM-5 PTSD 检查表：20 项量表，评分 0-80。≥33 表示可能的 PTSD。",
+          "cutoff": "≥33",
+          "reference": "Weathers et al., 2013"
+        }
+      ],
+      "tags": [
+        "tept",
+        "trauma",
+        "estresse",
+        "emdr",
+        "isrs",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-obsessivo-compulsivo",
+      "titulo": "强迫障碍 (OCD)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F42"
+      ],
+      "cid11": [
+        "6B20"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "191736004",
+      "doid": "DOID:10933",
+      "meshId": "D009771",
+      "umlsCui": "C0028768",
+      "dsm5": {
+        "code": "300.3",
+        "category": "强迫障碍及相关障碍",
+        "diagnosticCriteria": {
+          "code": "300.3",
+          "name": "强迫障碍",
+          "category": "强迫障碍及相关障碍",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "存在强迫思维（反复和持久的思想、冲动或意象）和/或强迫行为（重复的行为或心理活动）"
+            },
+            {
+              "letter": "B",
+              "text": "强迫思维或强迫行为消耗时间（每天超过1小时）或导致显著痛苦或损害"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "一种以强迫思维（反复和持久的思想、冲动或意象）和/或强迫行为（重复的行为或心理活动）为特征的障碍，这些症状消耗时间或导致显著痛苦。",
+        "criteriosDiagnosticos": [
+          "强迫思维：反复和持久的、侵入性和不希望的思想、冲动或意象",
+          "强迫行为：对强迫思维作出的重复行为或心理活动",
+          "消耗 >1 小时/天或导致显著痛苦/损害"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "认知行为疗法结合反应预防和暴露 (ERP) - 金标准",
+            "接纳与承诺疗法 (ACT)"
+          ],
+          "farmacologico": [
+            "高剂量SSRIs：舍曲林 (≥200mg)，氟西汀 (≥60mg)，氟伏沙明",
+            "氯米帕明（三环类抗抑郁药，二线治疗）"
+          ]
+        },
+        "redFlags": [
+          "严重的强迫障碍伴严重功能损害",
+          "自杀意念",
+          "未治疗的共病",
+          "治疗抵抗"
+        ],
+        "examesIniciais": [
+          "功能评估",
+          "使用 Y-BOCS 量表进行评估"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "Y-BOCS",
+          "description": "耶鲁-布朗强迫症量表：10项量表，评分0-40。≥16 表示中度至重度强迫障碍。",
+          "cutoff": "≥16",
+          "reference": "Goodman et al., 1989"
+        }
+      ],
+      "tags": [
+        "toc",
+        "强迫",
+        "强迫行为",
+        "erp",
+        "ssris",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-distimico",
+      "titulo": "持续性抑郁症（恶劣心境）",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F34.1"
+      ],
+      "cid11": [
+        "6A71"
+      ],
+      "ciap2": [
+        "P76"
+      ],
+      "snomedCT": "78667006",
+      "doid": "DOID:1596",
+      "meshId": "D019263",
+      "umlsCui": "C0013415",
+      "dsm5": {
+        "code": "300.4",
+        "category": "Depressive Disorders",
+        "diagnosticCriteria": {
+          "code": "300.4",
+          "name": "Persistent Depressive Disorder (Dysthymia)",
+          "category": "Depressive Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "大部分时间情绪低落，大多数日子如此，由主观报告或他人观察证实，持续至少2年"
+            },
+            {
+              "letter": "B",
+              "text": "在情绪低落期间存在以下两项（或更多）症状：",
+              "subCriteria": [
+                {
+                  "text": "1. 食欲减退或过度"
+                },
+                {
+                  "text": "2. 失眠或嗜睡"
+                },
+                {
+                  "text": "3. 精力不足或疲劳"
+                },
+                {
+                  "text": "4. 自卑"
+                },
+                {
+                  "text": "5. 注意力难以集中或决策困难"
+                },
+                {
+                  "text": "6. 绝望感"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "慢性抑郁症，特征为持续≥2年的持久性情绪低落，症状较重度抑郁症轻，但功能影响显著。",
+        "criteriosDiagnosticos": [
+          "大部分时间情绪低落，≥2年",
+          "≥2项症状：食欲、睡眠、精力、自尊、注意力、绝望感",
+          "无症状缓解期>2个月",
+          "显著的功能损害"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "心理治疗：认知行为疗法（CBT）、人际治疗（IPT）",
+            "行为激活",
+            "体育锻炼"
+          ],
+          "farmacologico": [
+            "SSRIs: 舍曲林, 埃斯西酞普兰",
+            "SNRIs: 文拉法辛"
+          ]
+        },
+        "redFlags": [
+          "重叠的重度抑郁症",
+          "自杀意念",
+          "治疗抵抗"
+        ],
+        "examesIniciais": [
+          "TSH",
+          "PHQ-9"
+        ]
+      },
+      "tags": [
+        "恶劣心境",
+        "抑郁",
+        "慢性",
+        "ssris",
+        "cbt",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-bipolar-ii",
+      "titulo": "双相情感障碍II型",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F31.8"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "ciap2": [
+        "P73"
+      ],
+      "snomedCT": "83746006",
+      "doid": "DOID:540",
+      "meshId": "D001714",
+      "umlsCui": "C0236788",
+      "dsm5": {
+        "code": "296.89",
+        "category": "Bipolar and Related Disorders",
+        "diagnosticCriteria": {
+          "code": "296.89",
+          "name": "Bipolar II Disorder",
+          "category": "Bipolar and Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "符合当前或过去的轻躁狂发作和当前或过去的重度抑郁发作的标准"
+            },
+            {
+              "letter": "B",
+              "text": "从未有过完整的躁狂发作"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "一种情绪障碍，特征为至少一次轻躁狂发作和一次重度抑郁发作，无完整躁狂发作史。",
+        "criteriosDiagnosticos": [
+          "轻躁狂发作：情绪高涨/易怒 + 3个症状持续≥4天，无显著功能损害",
+          "重度抑郁发作：当前或过去",
+          "从未有过完整的躁狂发作"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "心理教育",
+            "家庭治疗",
+            "社会节奏调节"
+          ],
+          "farmacologico": [
+            "锂盐或拉莫三嗪（预防发作）",
+            "喹硫平（抑郁发作）",
+            "避免单独使用抗抑郁药（有转为躁狂的风险）"
+          ]
+        },
+        "redFlags": [
+          "使用抗抑郁药有转为躁狂的风险",
+          "抑郁期间自杀风险",
+          "反复发作"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "首次轻躁狂发作",
+        "重度抑郁",
+        "自杀风险",
+        "需要调整稳定剂"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "criterios": [
+          "重度抑郁",
+          "转为躁狂的风险"
+        ]
+      },
+      "tags": [
+        "双相情感障碍",
+        "轻躁狂",
+        "抑郁",
+        "锂盐",
+        "拉莫三嗪",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "fobia-social",
+      "titulo": "社交恐惧症（社交焦虑障碍）",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F40.1"
+      ],
+      "cid11": [
+        "6B04"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "25501002",
+      "doid": "DOID:11257",
+      "meshId": "D010698",
+      "umlsCui": "C0031572",
+      "dsm5": {
+        "code": "300.23",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.23",
+          "name": "Social Anxiety Disorder (Social Phobia)",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "对一个或多个社交场合的显著恐惧或焦虑，这些场合中个体可能受到他人的评价"
+            },
+            {
+              "letter": "B",
+              "text": "个体担心自己的行为会表现出焦虑症状，并被他人负面评价"
+            },
+            {
+              "letter": "C",
+              "text": "社交场合几乎总是引起恐惧或焦虑"
+            },
+            {
+              "letter": "D",
+              "text": "社交场合被避免或在强烈恐惧或焦虑的情况下忍受"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "一种以在可能受到他人评价的社交场合中出现显著恐惧或焦虑为特征的焦虑障碍。",
+        "criteriosDiagnosticos": [
+          "在社交场合中出现显著恐惧或焦虑",
+          "害怕被负面评价",
+          "社交场合几乎总是引起恐惧/焦虑",
+          "避免或在强烈恐惧/焦虑的情况下忍受社交场合",
+          "持续时间≥6个月",
+          "显著的功能损害"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "认知行为疗法（暴露疗法）- 金标准",
+            "社交技能训练",
+            "团体疗法"
+          ],
+          "farmacologico": [
+            "SSRIs: 帕罗西汀, 舍曲林, 艾司西酞普兰",
+            "SNRIs: 文拉法辛缓释剂"
+          ]
+        },
+        "redFlags": [
+          "严重回避导致社会孤立",
+          "共病抑郁症",
+          "使用物质应对社交场合"
+        ],
+        "examesIniciais": [
+          "功能评估",
+          "LSAS量表"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "LSAS",
+          "description": "Liebowitz 社交焦虑量表：用于评估社交恐惧症的24项量表。",
+          "reference": "Liebowitz, 1987"
+        }
+      ],
+      "tags": [
+        "fobia-social",
+        "ansiedade",
+        "tcc",
+        "isrs",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "agorafobia",
+      "titulo": "广场恐惧症",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F40.0"
+      ],
+      "cid11": [
+        "6B02"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "70691001",
+      "doid": "DOID:11259",
+      "meshId": "D000379",
+      "umlsCui": "C0001818",
+      "dsm5": {
+        "code": "300.22",
+        "category": "焦虑障碍",
+        "diagnosticCriteria": {
+          "code": "300.22",
+          "name": "广场恐惧症",
+          "category": "焦虑障碍",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "对以下两种（或更多）情况有显著的恐惧或焦虑：",
+              "subCriteria": [
+                {
+                  "text": "1. 使用公共交通工具"
+                },
+                {
+                  "text": "2. 处于开放空间"
+                },
+                {
+                  "text": "3. 处于封闭场所"
+                },
+                {
+                  "text": "4. 处于人群或排队中"
+                },
+                {
+                  "text": "5. 单独外出"
+                }
+              ]
+            },
+            {
+              "letter": "B",
+              "text": "个体因害怕无法逃脱或无法获得帮助而避免这些情况"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "一种焦虑障碍，其特征是在难以逃脱或在出现恐慌症状或其他致残症状时无法获得帮助的情况下，对特定情境产生显著的恐惧或焦虑。",
+        "criteriosDiagnosticos": [
+          "在≥2种情境中出现显著的恐惧/焦虑：使用公共交通工具、开放空间、封闭场所、人群、单独外出",
+          "因害怕无法逃脱或无法获得帮助而避免这些情境",
+          "持续时间≥6个月",
+          "显著的功能损害"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "认知行为疗法（CBT）结合渐进暴露 - 金标准",
+            "心理教育",
+            "呼吸技巧"
+          ],
+          "farmacologico": [
+            "SSRIs: 舍曲林, 帕罗西汀",
+            "SNRIs: 文拉法辛"
+          ]
+        },
+        "redFlags": [
+          "居家隔离",
+          "伴有恐慌障碍",
+          "严重的功能损害"
+        ],
+        "examesIniciais": [
+          "功能评估"
+        ]
+      },
+      "tags": [
+        "agorafobia",
+        "ansiedade",
+        "tcc",
+        "isrs",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-personalidade-borderline",
+      "titulo": "边缘型人格障碍",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F60.3"
+      ],
+      "cid11": [
+        "6D10"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "20010003",
+      "doid": "DOID:10930",
+      "meshId": "D001883",
+      "umlsCui": "C0006012",
+      "dsm5": {
+        "code": "301.83",
+        "category": "Personality Disorders",
+        "diagnosticCriteria": {
+          "code": "301.83",
+          "name": "Borderline Personality Disorder",
+          "category": "Personality Disorders",
+          "criteria": [
+            {
+              "text": "一种在人际关系、自我形象和情感方面不稳定的行为模式，以及显著的冲动性，始于成年早期，并在多种情境中表现出来，具体表现为以下五项（或更多）：",
+              "subCriteria": [
+                {
+                  "text": "1. 狂热地努力避免实际或想象中的被遗弃"
+                },
+                {
+                  "text": "2. 不稳定且强烈的人际关系模式，表现为理想化和贬低之间的极端变化"
+                },
+                {
+                  "text": "3. 身份认同障碍：自我形象或自我意识的持续不稳定性"
+                },
+                {
+                  "text": "4. 至少在两个领域内有潜在自毁性的冲动行为"
+                },
+                {
+                  "text": "5. 自杀行为、手势或威胁，或自残行为的反复出现"
+                },
+                {
+                  "text": "6. 情绪不稳定，情绪反应显著"
+                },
+                {
+                  "text": "7. 持续的空虚感"
+                },
+                {
+                  "text": "8. 强烈且不适当的愤怒，或难以控制愤怒"
+                },
+                {
+                  "text": "9. 与压力相关的短暂偏执想法或严重的解离症状"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "一种以人际关系、自我形象和情感显著不稳定为特征的人格障碍，伴有冲动性和自毁行为。",
+        "criteriosDiagnosticos": [
+          "≥5个标准：避免被遗弃的努力、不稳定的人际关系、身份认同障碍、冲动行为、自杀/自残行为、情绪不稳定、空虚感、强烈愤怒、解离/偏执症状",
+          "始于成年早期",
+          "在多种情境中存在"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "DBT（辩证行为疗法）- 金标准",
+            "专门的认知行为疗法",
+            "图式疗法",
+            "团体疗法"
+          ],
+          "farmacologico": [
+            "针对特定症状的药物：",
+            "- SSRI用于情绪不稳定",
+            "- 低剂量非典型抗精神病药用于认知症状",
+            "- 心境稳定剂用于冲动性"
+          ]
+        },
+        "redFlags": [
+          "高自杀风险",
+          "自伤行为",
+          "共病其他障碍"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "首次诊断",
+        "自杀风险",
+        "严重自伤行为",
+        "需要专门的DBT"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "riscoAutolesao": true,
+        "criterios": [
+          "自杀行为",
+          "自残",
+          "急性危机"
+        ]
+      },
+      "tags": [
+        "borderline",
+        "personality",
+        "dbt",
+        "instabilidade",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-uso-alcool",
+      "titulo": "酒精使用障碍",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F10"
+      ],
+      "cid11": [
+        "6C40"
+      ],
+      "ciap2": [
+        "P15",
+        "P16"
+      ],
+      "snomedCT": "7200002",
+      "doid": "DOID:0050741",
+      "meshId": "D000437",
+      "umlsCui": "C0001973",
+      "dsm5": {
+        "code": "305.00",
+        "category": "Substance-Related and Addictive Disorders",
+        "diagnosticCriteria": {
+          "code": "305.00",
+          "name": "Alcohol Use Disorder",
+          "category": "Substance-Related and Addictive Disorders",
+          "criteria": [
+            {
+              "text": "在12个月内，出现至少两项以下症状，表现为与酒精使用相关的临床显著损害或痛苦的模式：",
+              "subCriteria": [
+                {
+                  "text": "1. 酒精经常以比预期更大的量或更长的时间使用"
+                },
+                {
+                  "text": "2. 持续的愿望或不成功的努力减少或控制酒精使用"
+                },
+                {
+                  "text": "3. 花费大量时间进行获取酒精、使用酒精或从其影响中恢复的活动"
+                },
+                {
+                  "text": "4. 渴望（craving）或强烈的愿望或冲动使用酒精"
+                },
+                {
+                  "text": "5. 反复使用酒精导致无法履行主要义务"
+                },
+                {
+                  "text": "6. 尽管存在持续或反复的社会或人际问题，仍继续使用"
+                },
+                {
+                  "text": "7. 放弃或减少重要的社会、职业或娱乐活动"
+                },
+                {
+                  "text": "8. 在身体危险的情况下反复使用"
+                },
+                {
+                  "text": "9. 尽管知道身体或心理问题，仍继续使用"
+                },
+                {
+                  "text": "10. 耐受性（定义为以下任何一项）：",
+                  "subCriteria": [
+                    {
+                      "text": "a) 需要逐渐增加的量才能达到醉酒或所需效果"
+                    },
+                    {
+                      "text": "b) 使用相同量时效果明显减弱"
+                    }
+                  ]
+                },
+                {
+                  "text": "11. 戒断（定义为以下任何一项）：",
+                  "subCriteria": [
+                    {
+                      "text": "a) 特征性的戒断综合征"
+                    },
+                    {
+                      "text": "b) 使用酒精（或相关物质）以缓解或避免戒断症状"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "轻度（2-3个症状）",
+              "中度（4-5个症状）",
+              "重度（6+个症状）"
+            ],
+            "course": [
+              "早期缓解",
+              "持续缓解",
+              "维持治疗中",
+              "在受控环境中"
+            ]
+          }
+        }
+      },
+      "quickView": {
+        "definicao": "一种以酒精使用模式为特征的障碍，导致临床显著的损害或痛苦，表现为在12个月内出现≥2项标准。",
+        "criteriosDiagnosticos": [
+          "12个月内≥2项标准：",
+          "使用量大于预期，减少的努力，花费大量时间，渴望，无法履行义务，人际问题，放弃活动，危险情况下的使用，尽管存在身体或心理问题仍继续使用，耐受性，戒断",
+          "严重程度：轻度（2-3），中度（4-5），重度（6+）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "动机访谈",
+            "认知行为疗法",
+            "支持小组（AA）",
+            "防止复发"
+          ],
+          "farmacologico": [
+            "如有必要进行解毒（苯二氮卓类用于戒断）",
+            "防止复发：纳曲酮，阿坎酸",
+            "威慑：双硫仑"
+          ]
+        },
+        "redFlags": [
+          "严重的戒断症状，有癫痫发作风险",
+          "震颤谵妄",
+          "酒精性肝病",
+          "胰腺炎",
+          "韦尼克-科尔萨科夫综合征"
+        ],
+        "examesIniciais": [
+          "AST, ALT, GGT",
+          "胆红素",
+          "全血细胞计数",
+          "AUDIT（酒精使用障碍识别测试）"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "重度障碍",
+        "严重的戒断症状",
+        "震颤谵妄",
+        "临床并发症",
+        "门诊治疗无效"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "criterios": [
+          "严重的戒断症状",
+          "震颤谵妄",
+          "临床并发症"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "AUDIT",
+          "description": "酒精使用障碍识别测试：10项量表，用于筛查酒精使用问题。",
+          "cutoff": "≥8表示有问题使用",
+          "reference": "WHO, 2001"
+        }
+      ],
+      "tags": [
+        "酒精",
+        "物质",
+        "成瘾",
+        "纳曲酮",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-neurocognitivo-leve",
+      "titulo": "轻度神经认知障碍",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F06.7"
+      ],
+      "cid11": [
+        "6D70"
+      ],
+      "ciap2": [
+        "P70"
+      ],
+      "snomedCT": "386806002",
+      "doid": "DOID:0060469",
+      "meshId": "D060825",
+      "umlsCui": "C1270972",
+      "dsm5": {
+        "code": "331.83",
+        "category": "Neurocognitive Disorders",
+        "diagnosticCriteria": {
+          "code": "331.83",
+          "name": "Mild Neurocognitive Disorder",
+          "category": "Neurocognitive Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "一个或多个认知领域（复杂注意力、执行功能、学习和记忆、语言、感知运动、社会认知）的适度认知下降，与之前的绩效水平相比"
+            },
+            {
+              "letter": "B",
+              "text": "认知下降不影响日常生活活动的独立性"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "一个或多个认知领域（复杂注意力、执行功能、学习和记忆、语言、感知运动、社会认知）的适度认知下降，不影响功能性独立性。",
+        "criteriosDiagnosticos": [
+          "≥1个领域的适度认知下降",
+          "客观评估（神经心理测试）",
+          "不影响功能性独立性",
+          "不符合谵妄的标准"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "认知康复",
+            "认知训练",
+            "定期体育锻炼",
+            "控制心血管危险因素"
+          ],
+          "farmacologico": [
+            "治疗潜在原因",
+            "多奈哌齐或利瓦斯蒂明（如果为阿尔茨海默病）"
+          ]
+        },
+        "redFlags": [
+          "快速进展",
+          "功能下降",
+          "行为症状",
+          "未治疗的可逆原因"
+        ],
+        "examesIniciais": [
+          "神经心理评估",
+          "颅脑MRI",
+          "血常规、甲状腺功能、维生素B12、叶酸",
+          "排除可逆原因"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "MoCA",
+          "description": "蒙特利尔认知评估：认知筛查量表",
+          "cutoff": "<26提示受损",
+          "reference": "Nasreddine et al., 2005"
+        },
+        {
+          "name": "MMSE",
+          "description": "简易精神状态检查：经典筛查量表",
+          "cutoff": "<24提示受损",
+          "reference": "Folstein et al., 1975"
+        }
+      ],
+      "tags": [
+        "neurocognitivo",
+        "认知",
+        "痴呆",
+        "moca",
+        "mmse",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-identidade-dissociativo",
+      "titulo": "分离性身份障碍",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F44.81"
+      ],
+      "cid11": [
+        "6B64"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "32388005",
+      "doid": "DOID:1532",
+      "meshId": "D009105",
+      "umlsCui": "C0026847",
+      "dsm5": {
+        "code": "300.14",
+        "category": "Dissociative Disorders",
+        "diagnosticCriteria": {
+          "code": "300.14",
+          "name": "Dissociative Identity Disorder",
+          "category": "Dissociative Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "身份的中断，表现为两种或更多种不同的个性"
+            },
+            {
+              "letter": "B",
+              "text": "日常事件、重要个人信息或创伤事件记忆中的反复空白"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "以两种或更多种不同个性和记忆中断为特征的分离性障碍。",
+        "criteriosDiagnosticos": [
+          "≥2 种不同的个性（身份）",
+          "反复出现的记忆空白",
+          "导致痛苦或功能损害",
+          "不能归因于物质或医疗状况"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "长期专业心理治疗",
+            "身份整合",
+            "创伤处理",
+            "症状稳定"
+          ],
+          "farmacologico": [
+            "针对特定症状（如抑郁、焦虑）的药物",
+            "没有专门用于 DID 的药物"
+          ]
+        },
+        "redFlags": [
+          "身份危机",
+          "自残行为",
+          "自杀行为",
+          "严重的分离性失忆"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "始终转介至分离性障碍专家",
+        "首次诊断",
+        "严重症状"
+      ],
+      "tags": [
+        "分离性",
+        "身份",
+        "创伤",
+        "极罕见",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "anorexia-nervosa",
+      "titulo": "神经性厌食症",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F50.0"
+      ],
+      "cid11": [
+        "6B80"
+      ],
+      "ciap2": [
+        "P99"
+      ],
+      "snomedCT": "56882008",
+      "doid": "DOID:8689",
+      "meshId": "D000856",
+      "umlsCui": "C0003125",
+      "dsm5": {
+        "code": "307.1",
+        "category": "Feeding and Eating Disorders",
+        "diagnosticCriteria": {
+          "code": "307.1",
+          "name": "Anorexia Nervosa",
+          "category": "Feeding and Eating Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "食物摄入限制导致显著的体重过低"
+            },
+            {
+              "letter": "B",
+              "text": "对体重增加或变胖的强烈恐惧"
+            },
+            {
+              "letter": "C",
+              "text": "对体重或体型的体验方式存在障碍"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "一种进食障碍，特征为食物限制、对体重增加的强烈恐惧和对体重/体型的感知障碍，导致显著的体重过低。",
+        "criteriosDiagnosticos": [
+          "食物限制 → 体重显著过低（BMI <18.5 或体重 <85% 的预期值）",
+          "对体重增加的强烈恐惧",
+          "对体重/体型的感知障碍",
+          "类型：限制型或周期性暴食/清除型"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "多学科治疗：医生、营养师、心理学家",
+            "家庭治疗（针对青少年）",
+            "专门的认知行为疗法",
+            "营养康复（监督下进行）"
+          ],
+          "farmacologico": [
+            "奥氮平（体重增加，强迫症状）",
+            "SSRIs用于共病（抑郁症，焦虑症）",
+            "必要时补充营养"
+          ]
+        },
+        "redFlags": [
+          "BMI <15 或快速体重下降",
+          "心动过缓（<50 bpm）",
+          "直立性低血压",
+          "低体温",
+          "闭经",
+          "自杀行为"
+        ],
+        "examesIniciais": [
+          "体重、身高、BMI",
+          "生命体征",
+          "血常规、电解质、肝肾功能",
+          "心电图（心律失常）",
+          "骨密度（骨质疏松）"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "BMI <15",
+        "生命体征不稳定",
+        "严重营养不良",
+        "医学并发症",
+        "门诊治疗失败"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "criterios": [
+          "严重营养不良",
+          "生命体征不稳定",
+          "医学并发症"
+        ]
+      },
+      "tags": [
+        "anorexia",
+        "alimentar",
+        "restritivo",
+        "olanzapina",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "bulimia-nervosa",
+      "titulo": "神经性贪食症",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F50.2"
+      ],
+      "cid11": [
+        "6B81"
+      ],
+      "ciap2": [
+        "P99"
+      ],
+      "snomedCT": "78004001",
+      "doid": "DOID:8513",
+      "meshId": "D052018",
+      "umlsCui": "C0006370",
+      "dsm5": {
+        "code": "307.51",
+        "category": "Feeding and Eating Disorders",
+        "diagnosticCriteria": {
+          "code": "307.51",
+          "name": "Bulimia Nervosa",
+          "category": "Feeding and Eating Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "反复出现的暴食发作"
+            },
+            {
+              "letter": "B",
+              "text": "反复出现不适当的补偿行为以防止体重增加"
+            },
+            {
+              "letter": "C",
+              "text": "发作平均每周至少一次，持续3个月"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "一种进食障碍，特征为反复出现的暴食发作，随后是不适当的补偿行为（如呕吐、泻药使用、过度运动）。",
+        "criteriosDiagnosticos": [
+          "反复出现的暴食发作（短时间内大量进食，感觉失去控制）",
+          "反复出现的补偿行为：自我诱导的呕吐，使用泻药/利尿剂，过度运动，禁食",
+          "≥1次/周，持续≥3个月",
+          "身体形象和体重的不当自我评价"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "专门的认知行为疗法（CBT-BN）- 金标准",
+            "人际心理治疗（IPT）",
+            "营养心理教育"
+          ],
+          "farmacologico": [
+            "SSRIs: 氟西汀 60mg/天（批准用于BN）",
+            "其他高剂量SSRIs"
+          ]
+        },
+        "redFlags": [
+          "严重的电解质失衡",
+          "食管炎/牙齿侵蚀",
+          "自杀行为",
+          "过度使用泻药"
+        ],
+        "examesIniciais": [
+          "电解质（低钾血症，低钠血症）",
+          "肝肾功能",
+          "牙科评估（侵蚀）"
+        ]
+      },
+      "tags": [
+        "bulimia",
+        "compulsao",
+        "purga",
+        "fluoxetina",
+        "tcc",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-espectro-autista",
+      "titulo": "自闭症谱系障碍 (ASD)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F84.0"
+      ],
+      "cid11": [
+        "6A02"
+      ],
+      "ciap2": [
+        "P15"
+      ],
+      "snomedCT": "35919005",
+      "doid": "DOID:0060041",
+      "meshId": "D000067877",
+      "umlsCui": "C1510586",
+      "dsm5": {
+        "code": "299.00",
+        "category": "神经发育障碍",
+        "diagnosticCriteria": {
+          "code": "299.00",
+          "name": "自闭症谱系障碍",
+          "category": "神经发育障碍",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "在多种情境中持续存在的社交沟通和社交互动缺陷"
+            },
+            {
+              "letter": "B",
+              "text": "行为、兴趣或活动的受限和重复模式"
+            },
+            {
+              "letter": "C",
+              "text": "症状出现在发育早期"
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "1级（需要支持）",
+              "2级（需要大量支持）",
+              "3级（需要非常大量的支持）"
+            ]
+          }
+        }
+      },
+      "quickView": {
+        "definicao": "一种神经发育障碍，特征为在社交沟通和社交互动中持续存在缺陷，以及行为、兴趣或活动的受限和重复模式，这些症状自发育早期即已存在。",
+        "criteriosDiagnosticos": [
+          "社交沟通缺陷：社会情感互惠、非言语沟通、人际关系",
+          "受限/重复模式：≥2项：刻板动作、坚持常规、固定兴趣、感觉高/低反应性",
+          "症状出现在发育早期（可能直到社会需求超过能力时才明显）",
+          "支持水平：1级（轻度），2级（中度），3级（重度）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "早期密集行为干预",
+            "应用行为分析 (ABA)",
+            "社交沟通疗法",
+            "职业疗法（感觉统合）",
+            "特殊教育支持"
+          ],
+          "farmacologico": [
+            "针对特定症状的药物：",
+            "- 利培酮或阿立哌唑（攻击性、易怒）",
+            "- SSRIs用于焦虑/强迫行为",
+            "- 兴奋剂用于共病注意力缺陷多动障碍 (ADHD)"
+          ]
+        },
+        "redFlags": [
+          "技能退化",
+          "严重的自伤行为",
+          "攻击性",
+          "未治疗的精神疾病共病"
+        ],
+        "examesIniciais": [
+          "多学科评估：儿科医生、神经科医生、语言病理学家、心理学家",
+          "听力评估（排除听力损失）",
+          "基因检测（如需）",
+          "量表：ADOS, ADI-R"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "M-CHAT-R",
+          "description": "改良版幼儿自闭症筛查量表：用于16-30个月儿童的自闭症谱系障碍筛查",
+          "reference": "Robins et al., 2009"
+        },
+        {
+          "name": "ADOS",
+          "description": "自闭症诊断观察计划：自闭症谱系障碍诊断的金标准",
+          "reference": "Lord et al., 2012"
+        }
+      ],
+      "tags": [
+        "自闭症",
+        "ASD",
+        "神经发育",
+        "ABA",
+        "DSM-5"
+      ]
+    },
+    {
+      "id": "narcolepsia",
+      "titulo": "嗜睡症",
+      "categoria": "saude_mental",
+      "cid10": [
+        "G47.4"
+      ],
+      "cid11": [
+        "7A20"
+      ],
+      "ciap2": [
+        "P06"
+      ],
+      "snomedCT": "60380001",
+      "doid": "DOID:8986",
+      "meshId": "D009290",
+      "umlsCui": "C0027404",
+      "dsm5": {
+        "code": "347.00",
+        "category": "Sleep-Wake Disorders",
+        "diagnosticCriteria": {
+          "code": "347.00",
+          "name": "Narcolepsy",
+          "category": "Sleep-Wake Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "反复出现的无法抗拒的睡眠需求、打盹或睡眠中断"
+            },
+            {
+              "letter": "B",
+              "text": "存在≥1：猝倒，低水平的食欲素，REM睡眠潜伏期≤15分钟"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "一种以白天过度嗜睡、不可抗拒的睡眠发作为主要特征的睡眠障碍，常伴有猝倒（突然的肌肉张力丧失）。",
+        "criteriosDiagnosticos": [
+          "白天过度嗜睡≥3个月",
+          "在不适当的情况下反复出现睡眠发作",
+          "≥1：猝倒，脑脊液中食欲素水平低，多次睡眠潜伏期测试（MSLT）REM潜伏期≤15分钟"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "计划性小睡（每天2-3次，每次15-20分钟）",
+            "严格的睡眠卫生",
+            "心理社会支持"
+          ],
+          "farmacologico": [
+            "兴奋剂：莫达非尼 200-400mg/天 或 阿莫达非尼",
+            "用于猝倒：文拉法辛，氟西汀，或 氯化钠羟丁酸"
+          ]
+        },
+        "redFlags": [
+          "严重的猝倒有跌倒风险",
+          "入睡幻觉",
+          "睡眠瘫痪"
+        ],
+        "examesIniciais": [
+          "多次睡眠潜伏期测试（MSLT）",
+          "多导睡眠图",
+          "脑脊液中食欲素水平测定"
+        ]
+      },
+      "tags": [
+        "narcolepsia",
+        "sono",
+        "cataplexia",
+        "modafinil",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-uso-cannabis",
+      "titulo": "大麻使用障碍",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F12"
+      ],
+      "cid11": [
+        "6C41"
+      ],
+      "ciap2": [
+        "P15",
+        "P16"
+      ],
+      "snomedCT": "37344009",
+      "doid": "DOID:0050742",
+      "meshId": "D002189",
+      "umlsCui": "C0006870",
+      "dsm5": {
+        "code": "304.30",
+        "category": "Substance-Related and Addictive Disorders",
+        "diagnosticCriteria": {
+          "code": "304.30",
+          "name": "Cannabis Use Disorder",
+          "category": "Substance-Related and Addictive Disorders",
+          "criteria": [
+            {
+              "text": "在12个月内出现≥2项标准：使用量超过预期，尝试减少使用，花费大量时间，强烈渴望，未能履行义务，人际问题，放弃活动，危险情况下使用，尽管存在问题仍继续使用，耐受性增加，戒断症状"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "大麻使用模式导致临床显著的损害或痛苦。",
+        "criteriosDiagnosticos": [
+          "在12个月内出现≥2项标准：使用量超过预期，尝试减少使用，花费大量时间，强烈渴望，未能履行义务，人际问题，放弃活动，危险情况下使用，尽管存在问题仍继续使用，耐受性增加，戒断症状"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "动机访谈",
+            "认知行为疗法（CBT）",
+            "行为管理疗法",
+            "支持小组"
+          ],
+          "farmacologico": [
+            "必要时治疗戒断症状",
+            "纳曲酮可能有帮助"
+          ]
+        },
+        "redFlags": [
+          "大麻诱发的精神病",
+          "青少年使用（依赖风险更高）",
+          "共病精神疾病"
+        ],
+        "examesIniciais": [
+          "毒理学检测",
+          "评估共病精神疾病"
+        ]
+      },
+      "tags": [
+        "cannabis",
+        "大麻",
+        "物质",
+        "cbt",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "depressao-idoso",
+      "titulo": "老年人抑郁症",
+      "ciap2": [
+        "P76"
+      ],
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "cid11": [
+        "6A70",
+        "6A71"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:1596",
+      "snomedCT": "35489007",
+      "meshId": "D003866",
+      "umlsCui": "C0011570",
+      "quickView": {
+        "definicao": "老年人重度抑郁症，常被漏诊。可能表现为躯体主诉和“假性痴呆”。",
+        "criteriosDiagnosticos": [
+          "GDS-15 ≥5 (筛查)",
+          "常见非典型症状：躯体主诉",
+          "兴趣减退多于悲伤",
+          "假性痴呆：可逆的认知缺陷"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "体育活动",
+            "行为激活",
+            "社会支持",
+            "心理治疗"
+          ],
+          "farmacologico": [
+            "SSRIs: 舍曲林 25-50mg (首选)",
+            "避免使用三环类药物（抗胆碱能副作用）",
+            "起始低剂量，缓慢增加"
+          ]
+        },
+        "redFlags": [
+          "自杀意念（比年轻人风险更高）",
+          "拒食",
+          "精神病",
+          "功能迅速下降"
+        ]
+      },
+      "medicamentos": [
+        "sertralina",
+        "escitalopram"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "gds-15"
+      ]
+    },
+    {
+      "id": "tabagismo",
+      "titulo": "尼古丁依赖（吸烟）",
+      "ciap2": [
+        "P17"
+      ],
+      "cid10": [
+        "F17"
+      ],
+      "cid11": [
+        "6C4A"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:0050742",
+      "snomedCT": "89765005",
+      "meshId": "D014029",
+      "umlsCui": "C0040336",
+      "quickView": {
+        "definicao": "主要的可预防死亡原因。全球有10亿烟民。戒烟在任何年龄都能降低死亡率。",
+        "criteriosDiagnosticos": [
+          "Fagerström ≥6 = 高依赖",
+          "尽管知道风险仍每日使用",
+          "之前尝试戒烟未成功",
+          "戒断症状"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "简短干预（5 A's）",
+            "动机访谈",
+            "支持小组",
+            "电话热线（136）"
+          ],
+          "farmacologico": [
+            "一线治疗：布普品 150mg 每日两次，持续7-12周",
+            "或伐尼克兰 0.5mg → 1mg 每日两次",
+            "TRN：贴片 + 必要时使用锭剂/口香糖"
+          ]
+        },
+        "redFlags": [
+          "晚期肺部或心脏疾病",
+          "妊娠",
+          "严重精神疾病"
+        ]
+      },
+      "medicamentos": [
+        "bupropiona"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "fagerstrom"
+      ]
+    },
+    {
+      "id": "transtorno-bipolar",
+      "titulo": "双相障碍",
+      "ciap2": [
+        "P73"
+      ],
+      "cid10": [
+        "F31"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:3312",
+      "snomedCT": "13746004",
+      "meshId": "D001714",
+      "umlsCui": "C0005586",
+      "tags": [
+        "saude_mental",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "躁狂/轻躁狂和抑郁发作。I 型（躁狂 + 抑郁）或 II 型（轻躁狂 + 抑郁）。",
+        "criteriosDiagnosticos": [
+          "躁狂发作（I 型）或轻躁狂发作（II 型）",
+          "抑郁发作",
+          "情绪变化"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "心理治疗",
+            "疾病教育",
+            "家庭支持"
+          ],
+          "farmacologico": [
+            "心境稳定剂：锂盐或丙戊酸钠",
+            "躁狂期使用抗精神病药",
+            "谨慎使用抗抑郁药"
+          ]
+        },
+        "redFlags": [
+          "自杀意念",
+          "精神病症状",
+          "重度躁狂",
+          "需要住院治疗"
+        ]
+      },
+      "medicamentos": [
+        "lítio",
+        "valproato"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-ansiedade-generalizada",
+      "titulo": "广泛性焦虑障碍",
+      "ciap2": [
+        "P74"
+      ],
+      "cid10": [
+        "F41.1"
+      ],
+      "cid11": [
+        "6B00"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:1596",
+      "snomedCT": "48544008",
+      "meshId": "D001008",
+      "umlsCui": "C0003467",
+      "hpo": [
+        "HP:0000739"
+      ],
+      "tags": [
+        "saude_mental",
+        "ansiedade",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "持续≥6个月的过度焦虑。难以控制的担忧。伴随有身体症状。",
+        "criteriosDiagnosticos": [
+          "持续≥6个月的过度焦虑",
+          "难以控制的担忧",
+          "≥3个症状：不安、疲劳、注意力集中困难、易怒、肌肉紧张、睡眠障碍"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "认知行为疗法",
+            "心理治疗",
+            "放松技巧",
+            "锻炼"
+          ],
+          "farmacologico": [
+            "SSRIs: 舍曲林或艾司西酞普兰",
+            "仅在必要时短期使用苯二氮卓类药物"
+          ]
+        },
+        "redFlags": [
+          "自杀意念",
+          "惊恐发作",
+          "共病精神疾病"
+        ]
+      },
+      "medicamentos": [
+        "sertralina",
+        "escitalopram"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

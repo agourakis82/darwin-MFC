@@ -1,0 +1,105 @@
+{
+  "locale": "zh",
+  "category": "神经",
+  "generatedAt": "2025-12-30T12:23:17.432Z",
+  "count": 1,
+  "diseases": [
+    {
+      "id": "doenca-huntington",
+      "titulo": "亨廷顿病",
+      "categoria": "神经",
+      "cid10": [
+        "G10"
+      ],
+      "cid11": [
+        "8A01"
+      ],
+      "ciap2": [
+        "N87"
+      ],
+      "snomedCT": "58756001",
+      "doid": "DOID:12858",
+      "meshId": "D006816",
+      "umlsCui": "C0020179",
+      "classificacao": {
+        "tipo": "神经退行性疾病",
+        "subtipo": "运动障碍",
+        "classificacaoEspecifica": {
+          "sistema": "ICD-11",
+          "codigo": "8A01",
+          "descricao": "亨廷顿病 - 常染色体显性遗传的神经退行性疾病"
+        }
+      },
+      "quickView": {
+        "definicao": "常染色体显性遗传的神经退行性疾病，特征为舞蹈症（不自主运动）、认知功能下降和精神障碍，由HTT基因中的CAG重复扩展引起。",
+        "criteriosDiagnosticos": [
+          "家族史（常染色体显性遗传）",
+          "进行性舞蹈症",
+          "认知/精神功能下降",
+          "基因检测：HTT基因CAG重复≥36次"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "多学科支持",
+            "物理治疗",
+            "言语治疗",
+            "心理社会支持",
+            "遗传咨询"
+          ],
+          "farmacologico": [
+            "舞蹈症：四苯喹嗪，氘代四苯喹嗪",
+            "精神症状：抗精神病药，SSRIs",
+            "僵硬：左旋多巴"
+          ]
+        },
+        "redFlags": [
+          "快速进展",
+          "吞咽困难（肺炎风险）",
+          "严重的精神症状",
+          "频繁跌倒"
+        ],
+        "examesIniciais": [
+          "基因检测（确诊）",
+          "颅脑MRI（尾状核萎缩）",
+          "神经心理学评估"
+        ]
+      },
+      "sinaisNeurologicos": [
+        "舞蹈症（不自主运动）",
+        "步态障碍",
+        "吞咽困难",
+        "构音障碍",
+        "运动迟缓（晚期）",
+        "僵硬（晚期）"
+      ],
+      "tratamentoNeurologico": {
+        "primeiraLinha": {
+          "medicamentos": [
+            "tetrabenazine",
+            "deutetrabenazine"
+          ],
+          "outrasIntervencoes": [
+            "物理治疗",
+            "多学科支持"
+          ]
+        }
+      },
+      "prognostico": {
+        "curso": "进行性",
+        "expectativa": "不可避免的进展，发病后生存期15-20年",
+        "fatoresPrognosticos": [
+          "CAG重复次数",
+          "发病年龄",
+          "初始症状"
+        ]
+      },
+      "tags": [
+        "亨廷顿",
+        "舞蹈症",
+        "神经退行性",
+        "遗传",
+        "罕见"
+      ]
+    }
+  ]
+}

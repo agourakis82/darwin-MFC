@@ -1,0 +1,187 @@
+{
+  "locale": "zh",
+  "category": "神经学",
+  "generatedAt": "2025-12-30T12:23:17.432Z",
+  "count": 2,
+  "diseases": [
+    {
+      "id": "esclerose-lateral-amiotrofica",
+      "titulo": "肌萎缩侧索硬化症 (ALS)",
+      "categoria": "神经学",
+      "cid10": [
+        "G12.2"
+      ],
+      "cid11": [
+        "8B60"
+      ],
+      "ciap2": [
+        "N87"
+      ],
+      "snomedCT": "86044005",
+      "doid": "DOID:332",
+      "meshId": "D000690",
+      "umlsCui": "C0002736",
+      "classificacao": {
+        "tipo": "神经退行性疾病",
+        "subtipo": "运动神经元病"
+      },
+      "quickView": {
+        "definicao": "一种致命的神经退行性疾病，特征为上运动神经元和下运动神经元进行性退化，导致进行性肌无力、萎缩，最终出现呼吸麻痹。",
+        "criteriosDiagnosticos": [
+          "修订的埃尔埃斯科里亚尔标准：",
+          "上运动神经元退化的证据（痉挛、反射亢进）",
+          "下运动神经元退化的证据（萎缩、肌束震颤、肌无力）",
+          "疾病进展",
+          "排除其他原因"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "多学科护理",
+            "物理治疗和职业治疗",
+            "呼吸支持（必要时使用非侵入性通气）",
+            "营养（必要时进行胃造口术）",
+            "心理支持"
+          ],
+          "farmacologico": [
+            "利鲁唑 50mg 每日两次（延长生存期2-3个月）",
+            "依达拉奉（静脉注射 - 部分病例）",
+            "对症治疗：巴氯芬（痉挛），抗胆碱能药（流涎）"
+          ]
+        },
+        "redFlags": [
+          "呼吸功能不全",
+          "严重吞咽困难",
+          "快速进展",
+          "球部症状"
+        ],
+        "examesIniciais": [
+          "EMG/NCV（基本检查）",
+          "颅脑和脊髓MRI",
+          "排除其他原因的检查"
+        ]
+      },
+      "examesNeurologicos": [
+        {
+          "tipo": "EMG/NCV",
+          "indicacao": "确认下运动神经元退化",
+          "quandoSolicitar": "首次怀疑"
+        }
+      ],
+      "tratamentoNeurologico": {
+        "primeiraLinha": {
+          "medicamentos": [
+            "riluzol"
+          ],
+          "outrasIntervencoes": [
+            "非侵入性通气",
+            "胃造口术",
+            "多学科护理"
+          ]
+        }
+      },
+      "prognostico": {
+        "curso": "进行性",
+        "expectativa": "中位生存期2-5年，可变",
+        "fatoresPrognosticos": [
+          "发病年龄",
+          "临床类型（球部型 vs 脊髓型）",
+          "进展速度"
+        ]
+      },
+      "tags": [
+        "ela",
+        "als",
+        "运动神经元",
+        "退行性",
+        "罕见",
+        "利鲁唑"
+      ]
+    },
+    {
+      "id": "enxaqueca-hemiplegica",
+      "titulo": "偏瘫性偏头痛",
+      "categoria": "神经学",
+      "cid10": [
+        "G43.1"
+      ],
+      "cid11": [
+        "8A80.2"
+      ],
+      "ciap2": [
+        "N89"
+      ],
+      "snomedCT": "230461009",
+      "doid": "DOID:6364",
+      "meshId": "D020325",
+      "umlsCui": "C0338484",
+      "classificacao": {
+        "tipo": "头痛",
+        "subtipo": "原发性",
+        "classificacaoEspecifica": {
+          "sistema": "ICHD-3",
+          "codigo": "1.2",
+          "descricao": "伴有运动性先兆的偏头痛"
+        }
+      },
+      "quickView": {
+        "definicao": "一种罕见的偏头痛亚型，其特征是在先兆期间出现运动性无力（偏瘫），持续时间可从几分钟到几天不等。",
+        "criteriosDiagnosticos": [
+          "ICHD-3 偏头痛伴先兆的诊断标准",
+          "单侧运动性无力的先兆",
+          "完全可逆的先兆",
+          "家族性或散发性（遗传）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免触发因素",
+            "疾病教育"
+          ],
+          "farmacologico": [
+            "避免使用曲普坦和麦角胺（中风风险）",
+            "预防：维拉帕米，拉莫三嗪",
+            "急性发作：非甾体抗炎药，简单镇痛药"
+          ]
+        },
+        "redFlags": [
+          "首次发作（排除中风）",
+          "先兆 >60 分钟",
+          "持续症状"
+        ],
+        "examesIniciais": [
+          "颅脑 MRI（排除中风）",
+          "基因检测（如为家族性）"
+        ]
+      },
+      "sinaisNeurologicos": [
+        "单侧运动性无力（先兆）",
+        "其他先兆症状（视觉、感觉、言语）"
+      ],
+      "tratamentoNeurologico": {
+        "primeiraLinha": {
+          "medicamentos": [
+            "verapamil",
+            "lamotrigina"
+          ],
+          "outrasIntervencoes": [
+            "避免使用曲普坦"
+          ]
+        }
+      },
+      "prognostico": {
+        "curso": "复发-缓解",
+        "expectativa": "可变，通常可控",
+        "fatoresPrognosticos": [
+          "家族性与散发性",
+          "对治疗的反应"
+        ]
+      },
+      "tags": [
+        "偏头痛",
+        "偏瘫性",
+        "先兆",
+        "头痛",
+        "罕见"
+      ]
+    }
+  ]
+}

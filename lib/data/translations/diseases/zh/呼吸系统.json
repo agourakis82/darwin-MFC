@@ -1,0 +1,299 @@
+{
+  "locale": "zh",
+  "category": "呼吸系统",
+  "generatedAt": "2025-12-30T12:23:17.429Z",
+  "count": 1,
+  "diseases": [
+    {
+      "id": "dpoc",
+      "titulo": "慢性阻塞性肺疾病",
+      "sinonimos": [
+        "COPD",
+        "肺气肿",
+        "慢性支气管炎"
+      ],
+      "doid": "DOID:3083",
+      "snomedCT": "13645005",
+      "meshId": "D029424",
+      "umlsCui": "C0024117",
+      "ciap2": [
+        "R95"
+      ],
+      "cid10": [
+        "J44",
+        "J44.0",
+        "J44.1",
+        "J44.9"
+      ],
+      "cid11": [
+        "CA22"
+      ],
+      "categoria": "呼吸系统",
+      "quickView": {
+        "definicao": "一种可预防和治疗的慢性呼吸系统疾病，特征为持续性气流受限，通常呈进行性发展，并与气道和肺部对有害颗粒或气体的慢性炎症反应有关。",
+        "criteriosDiagnosticos": [
+          "持续且进行性的呼吸困难",
+          "慢性咳嗽伴或不伴咳痰",
+          "有危险因素暴露史（吸烟）",
+          "支气管扩张剂后FEV1/FVC <0.70"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "戒烟（至关重要）",
+            "疫苗接种（每年流感疫苗，肺炎球菌疫苗）",
+            "肺康复",
+            "定期体育活动",
+            "如有指征的家庭氧疗"
+          ],
+          "farmacologico": [
+            "GOLD A-B：短效或长效支气管扩张剂",
+            "LABA 或 LAMA（噻托溴铵 18mcg/天 或福莫特罗）",
+            "GOLD C-D：LABA + LAMA 或 LABA + CS",
+            "如嗜酸性粒细胞 >300 或有哮喘病史则使用CS"
+          ]
+        },
+        "metasTerapeuticas": [
+          "减少症状（mMRC <2, CAT <10）",
+          "预防急性加重",
+          "改善运动能力",
+          "延缓疾病进展",
+          "降低死亡率"
+        ],
+        "examesIniciais": [
+          "支气管扩张剂后的肺功能测试",
+          "胸部X光",
+          "脉搏血氧测定",
+          "如SpO2 <92%则进行血气分析",
+          "血常规（多血症）",
+          "如年龄<45岁或有家族史则检测α1-抗胰蛋白酶"
+        ],
+        "redFlags": [
+          "严重急性加重（剧烈呼吸困难，呼吸频率>25次/分钟）",
+          "意识水平改变",
+          "SpO2 <88%或发绀",
+          "辅助肌群使用",
+          "下肢水肿（肺心病）",
+          "高热（严重感染）"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "40岁以上成人中10-15%，吸烟者中更高",
+          "incidencia": "全球第三大死因",
+          "faixaEtaria": "通常>40岁",
+          "fatoresRisco": [
+            "吸烟（90%的病例）",
+            "职业暴露（粉尘、化学品）",
+            "空气污染",
+            "α1-抗胰蛋白酶缺乏",
+            "儿童期呼吸道感染",
+            "生物质燃料（木柴炉灶）"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "由吸入有害颗粒（主要是香烟烟雾）引起的气道和肺实质的慢性炎症。结果是慢性支气管炎（黏液过度分泌）和/或肺气肿（肺泡破坏），导致固定的气流受限。",
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "进行性呼吸困难（最初在剧烈运动时）",
+            "慢性咳嗽，通常在早晨",
+            "慢性咳痰（黏液或脓性）",
+            "哮鸣音",
+            "胸闷感",
+            "疲劳和运动不耐受"
+          ],
+          "sinaisExameFisico": [
+            "桶状胸（过度充气）",
+            "辅助肌群使用",
+            "呼气延长",
+            "呼吸音减弱",
+            "哮鸣音和啰音",
+            "发绀（晚期病例）"
+          ],
+          "formasClinicas": [
+            "肺气肿表型（粉红色喘息者）：消瘦，严重呼吸困难",
+            "支气管炎表型（蓝色肿胀者）：发绀，水肿，多痰咳嗽",
+            "哮喘-COPD重叠（ACO）"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "临床表现+危险因素",
+            "支气管扩张剂后FEV1/FVC <0.70",
+            "GOLD分类（预测FEV1%）"
+          ],
+          "diagnosticoDiferencial": [
+            "哮喘",
+            "支气管扩张",
+            "结核病",
+            "心力衰竭",
+            "肺癌",
+            "肺纤维化"
+          ],
+          "examesLaboratoriais": [
+            "支气管扩张剂后的肺功能测试",
+            "如SpO2 <92%则进行动脉血气分析",
+            "血常规",
+            "如需则检测α1-抗胰蛋白酶",
+            "胸部CT（选择性病例）"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "缓解症状",
+            "预防急性加重",
+            "改善运动耐受性和生活质量",
+            "预防疾病进展",
+            "降低死亡率"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "戒烟（最有效）",
+              "每年流感疫苗和肺炎球菌疫苗接种",
+              "肺康复",
+              "如PaO2 ≤55或SpO2 ≤88%则进行家庭氧疗",
+              "如体重偏低则提供营养支持"
+            ],
+            "citations": [
+              {
+                "refId": "gold-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "LAMA",
+                "medicamentos": [
+                  "噻托溴铵",
+                  "格隆溴铵"
+                ],
+                "posologia": "噻托溴铵 18mcg 每日一次 吸入剂"
+              },
+              {
+                "classe": "LABA",
+                "medicamentos": [
+                  "福莫特罗",
+                  "沙美特罗",
+                  "茚达特罗"
+                ],
+                "posologia": "福莫特罗 12mcg 每12小时一次 吸入剂"
+              },
+              {
+                "classe": "LABA + LAMA（如症状持续）",
+                "medicamentos": [
+                  "噻托溴铵 + 福莫特罗"
+                ],
+                "posologia": "单一装置或分开装置的组合"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "频繁急性加重（≥2/年）",
+                "conduta": "如嗜酸性粒细胞 ≥300 则考虑添加CS"
+              },
+              {
+                "situacao": "哮喘-COPD重叠",
+                "conduta": "LABA + CS，不单独使用LABA"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "gold-2024"
+              }
+            ]
+          },
+          "duracao": "持续治疗"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "每3-6个月一次，或不稳定时更频繁",
+          "examesControle": [
+            "年度肺功能测试",
+            "每次就诊时的脉搏血氧测定",
+            "症状评估（mMRC, CAT）"
+          ],
+          "metasTerapeuticas": [
+            "mMRC 0-1, CAT <10",
+            "每年0-1次急性加重",
+            "维持功能能力"
+          ],
+          "criteriosEncaminhamento": [
+            "重度COPD（GOLD 3-4）",
+            "尽管治疗仍频繁急性加重",
+            "家庭氧疗候选人",
+            "评估是否适合减容手术或移植"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "不开始吸烟",
+            "职业保护",
+            "减少环境污染物"
+          ],
+          "secundaria": [
+            "戒烟",
+            "疫苗接种",
+            "早期治疗"
+          ],
+          "citations": [
+            {
+              "refId": "gold-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-dpoc"
+      ],
+      "medicamentos": [
+        "tiotropio",
+        "formoterol",
+        "salbutamol",
+        "beclometasona"
+      ],
+      "calculadoras": [
+        "gold-copd",
+        "bode-index"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "gold-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "dpoc",
+        "enfisema",
+        "bronquite",
+        "tabagismo",
+        "dispneia"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "locale": "zh",
+  "category": "metabolico",
+  "generatedAt": "2025-12-30T12:23:17.433Z",
+  "count": 5,
+  "diseases": [
+    {
+      "id": "nodulo-tireoide",
+      "titulo": "甲状腺结节",
+      "ciap2": [
+        "T81"
+      ],
+      "cid10": [
+        "E04"
+      ],
+      "cid11": [
+        "5A00.1"
+      ],
+      "categoria": "metabolico",
+      "doid": "DOID:50",
+      "snomedCT": "237495005",
+      "meshId": "D016606",
+      "umlsCui": "C0040137",
+      "quickView": {
+        "definicao": "甲状腺内的局限性病变，非常常见（超声检查发现50%的人群有此病变）。大多数为良性。5-15%为甲状腺癌。",
+        "criteriosDiagnosticos": [
+          "可触及的结节或影像学偶然发现的结节",
+          "检测TSH以评估功能",
+          "甲状腺超声检查以确定特征",
+          "如果结节>1cm且有可疑特征，则进行细针穿刺活检"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "如果结节良性且较小，则进行观察",
+            "定期超声随访"
+          ],
+          "farmacologico": [
+            "良性结节无需药物治疗",
+            "左旋甲状腺素不能抑制结节"
+          ]
+        },
+        "redFlags": [
+          "快速生长",
+          "声音嘶哑",
+          "硬结",
+          "颈部淋巴结肿大",
+          "甲状腺癌家族史"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-metabolica",
+      "titulo": "代谢综合征",
+      "sinonimos": [
+        "X综合征",
+        "胰岛素抵抗综合征"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E88.81"
+      ],
+      "cid11": [
+        "5C80.Z"
+      ],
+      "doid": "DOID:14221",
+      "snomedCT": "237602007",
+      "meshId": "D024821",
+      "umlsCui": "C0524620",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "一组增加心血管疾病和2型糖尿病风险的代谢危险因素。成人患病率为20-25%。",
+        "criteriosDiagnosticos": [
+          "NCEP-ATPIII标准（≥5项中的3项）：",
+          "腰围：>102cm（男性）或>88cm（女性）",
+          "甘油三酯 ≥150 mg/dL",
+          "HDL-c <40（男性）或<50（女性）mg/dL",
+          "BP ≥130/85 mmHg 或正在接受治疗",
+          "空腹血糖 ≥100 mg/dL 或糖尿病"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "减重7-10%（主要干预措施）",
+            "有氧运动 + 抗阻训练",
+            "低热量、低GI饮食",
+            "戒烟"
+          ],
+          "farmacologico": [
+            "分别治疗每个成分",
+            "如果为糖尿病前期且高风险，使用二甲双胍",
+            "根据心血管风险使用他汀类药物",
+            "如果为高血压，使用抗高血压药"
+          ]
+        },
+        "redFlags": [
+          "明显的2型糖尿病",
+          "已确诊的心血管疾病",
+          "非酒精性脂肪性肝炎/肝硬化"
+        ],
+        "metasTerapeuticas": [
+          "持续减重",
+          "恢复正常成分"
+        ],
+        "examesIniciais": [
+          "空腹血糖",
+          "OGTT（空腹血糖100-125）",
+          "血脂谱",
+          "ALT/AST",
+          "腹部超声"
+        ]
+      },
+      "protocolos": [
+        "dm2",
+        "has"
+      ],
+      "medicamentos": [
+        "metformina"
+      ],
+      "calculadoras": [
+        "imc"
+      ],
+      "tags": [
+        "肥胖",
+        "糖尿病",
+        "心血管"
+      ]
+    },
+    {
+      "id": "dislipidemia",
+      "titulo": "血脂异常",
+      "sinonimos": [
+        "高脂血症",
+        "高胆固醇血症",
+        "高三酰甘油血症"
+      ],
+      "ciap2": [
+        "T93"
+      ],
+      "cid10": [
+        "E78.0",
+        "E78.1",
+        "E78.2",
+        "E78.5"
+      ],
+      "cid11": [
+        "5C80"
+      ],
+      "doid": "DOID:1168",
+      "snomedCT": "370992007",
+      "meshId": "D050171",
+      "umlsCui": "C0242339",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "脂质代谢紊乱，表现为低密度脂蛋白胆固醇（LDL-c）升高、三酰甘油升高和/或高密度脂蛋白胆固醇（HDL-c）降低。是动脉粥样硬化性心血管疾病的主要可改变危险因素。",
+        "criteriosDiagnosticos": [
+          "LDL-c ≥160 mg/dL（高）或≥130 mg/dL（临界）",
+          "HDL-c <40 mg/dL（男性）或<50 mg/dL（女性）",
+          "三酰甘油 ≥150 mg/dL",
+          "总胆固醇 ≥240 mg/dL",
+          "计算心血管风险（ASCVD, Framingham）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "地中海饮食或DASH饮食",
+            "每周150分钟有氧运动",
+            "如果超重/肥胖则减重",
+            "戒烟",
+            "减少酒精摄入"
+          ],
+          "farmacologico": [
+            "他汀类药物：辛伐他汀 20-40mg，阿托伐他汀 10-80mg，瑞舒伐他汀 5-20mg",
+            "根据风险设定LDL-c目标：<70（极高），<100（高），<130（中度）",
+            "如果他汀类药物未达到目标，则使用依折麦布 10mg",
+            "如果三酰甘油 >500 mg/dL，则使用贝特类药物"
+          ]
+        },
+        "redFlags": [
+          "黄色瘤",
+          "45岁以下出现角膜弓",
+          "早发心血管事件家族史",
+          "三酰甘油 >1000 mg/dL 的胰腺炎"
+        ],
+        "metasTerapeuticas": [
+          "降低30-50%的LDL-c或根据风险设定绝对目标"
+        ],
+        "examesIniciais": [
+          "空腹血脂谱",
+          "血糖",
+          "肌酐",
+          "促甲状腺激素",
+          "谷丙转氨酶/谷草转氨酶"
+        ]
+      },
+      "protocolos": [
+        "has",
+        "dm2"
+      ],
+      "medicamentos": [
+        "sinvastatina",
+        "atorvastatina",
+        "rosuvastatina"
+      ],
+      "calculadoras": [
+        "risco-cardiovascular"
+      ],
+      "tags": [
+        "心血管",
+        "预防",
+        "他汀类药物"
+      ]
+    },
+    {
+      "id": "deficiencia-vitamina-d",
+      "titulo": "维生素D缺乏",
+      "sinonimos": [
+        "维生素D不足",
+        "维生素D缺乏症"
+      ],
+      "ciap2": [
+        "T91"
+      ],
+      "cid10": [
+        "E55.9"
+      ],
+      "cid11": [
+        "5B57.4"
+      ],
+      "doid": "DOID:10609",
+      "snomedCT": "34713006",
+      "meshId": "D014808",
+      "umlsCui": "C0042870",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "25(OH)D水平不足，伴有骨质损害和可能的骨骼外效应。某些人群的患病率>50%。",
+        "criteriosDiagnosticos": [
+          "25(OH)D <20 ng/mL: 缺乏",
+          "25(OH)D 20-29 ng/mL: 不足",
+          "25(OH)D ≥30 ng/mL: 充足",
+          "筛查高风险群体：老年人、肥胖者、肤色深、日照少"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "适度日晒（每天10-15分钟）",
+            "强化食品",
+            "富含脂肪的鱼类、蛋黄"
+          ],
+          "farmacologico": [
+            "缺乏：每周一次 colecalciferol 50,000 IU，持续8周",
+            "维持：每日1,000-2,000 IU",
+            "老年人/肥胖者可能需要更大剂量"
+          ]
+        },
+        "redFlags": [
+          "症状性低钙血症",
+          "脆性骨折",
+          "骨软化症"
+        ],
+        "metasTerapeuticas": [
+          "25(OH)D ≥30 ng/mL"
+        ],
+        "examesIniciais": [
+          "血清25(OH)D",
+          "钙、磷",
+          "PTH",
+          "肌酐"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "colecalciferol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "骨",
+        "补充",
+        "筛查"
+      ]
+    },
+    {
+      "id": "hiperuricemia-assintomatica",
+      "titulo": "无症状高尿酸血症",
+      "sinonimos": [
+        "血尿酸升高"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E79.0"
+      ],
+      "cid11": [
+        "5C64.0"
+      ],
+      "doid": "DOID:9245",
+      "snomedCT": "35885006",
+      "meshId": "D033461",
+      "umlsCui": "C0740394",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "血清尿酸水平升高（男性 >7 mg/dL，女性 >6 mg/dL），无痛风或尿酸盐肾结石病史。",
+        "criteriosDiagnosticos": [
+          "血清尿酸 >7 mg/dL（男性）或 >6 mg/dL（女性）",
+          "无痛风性关节炎",
+          "无尿酸盐肾结石",
+          "评估合并症：高血压、慢性肾病、代谢综合征"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "减重",
+            "限制酒精（尤其是啤酒）",
+            "避免含糖饮料",
+            "减少红肉和内脏摄入",
+            "增加脱脂乳制品"
+          ],
+          "farmacologico": [
+            "不要仅因尿酸水平升高而治疗",
+            "如有以下情况考虑治疗：进行性慢性肾病、极高心血管风险",
+            "如需治疗：别嘌醇 100mg，逐渐调整至目标水平",
+            "非布司他作为替代选择"
+          ]
+        },
+        "redFlags": [
+          "首次痛风发作",
+          "尿酸盐肾结石",
+          "尿酸性肾病",
+          "肿瘤溶解综合征"
+        ],
+        "metasTerapeuticas": [
+          "如治疗，血尿酸 <6 mg/dL"
+        ],
+        "examesIniciais": [
+          "血清尿酸",
+          "肌酐",
+          "血脂谱",
+          "血糖",
+          "EAS"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "alopurinol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "痛风",
+        "肾脏",
+        "代谢"
+      ]
+    }
+  ]
+}

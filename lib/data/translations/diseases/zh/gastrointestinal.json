@@ -1,0 +1,776 @@
+{
+  "locale": "zh",
+  "category": "gastrointestinal",
+  "generatedAt": "2025-12-30T12:23:17.430Z",
+  "count": 13,
+  "diseases": [
+    {
+      "id": "doenca-refluxo-gastroesofagico",
+      "titulo": "胃食管反流病 (GERD)",
+      "sinonimos": [
+        "胃食管反流",
+        "GERD",
+        "食管反流"
+      ],
+      "ciap2": [
+        "D87"
+      ],
+      "cid10": [
+        "K21"
+      ],
+      "cid11": [
+        "DD90.3"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:77",
+      "snomedCT": "235595009",
+      "meshId": "D005764",
+      "umlsCui": "C0017158",
+      "hpo": [
+        "HP:0002585",
+        "HP:0000202"
+      ],
+      "tags": [
+        "胃肠道",
+        "常见",
+        "初级保健",
+        "慢性"
+      ],
+      "quickView": {
+        "definicao": "胃内容物病理性的反流入食管，引起症状或并发症。烧心和反酸是主要症状。",
+        "criteriosDiagnosticos": [
+          "频繁烧心",
+          "反酸",
+          "餐后/卧床时症状加重",
+          "使用抗酸药后症状缓解",
+          "症状≥每周2次且持续>4周"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "抬高床头",
+            "避免餐前2-3小时卧床",
+            "肥胖者减重",
+            "避免触发食物（脂肪、咖啡、酒精）"
+          ],
+          "farmacologico": [
+            "PPI: 奥美拉唑 20-40mg 每日一次至两次",
+            "或 泮托拉唑 40mg 每日一次",
+            "轻度症状可使用抗酸药"
+          ]
+        },
+        "redFlags": [
+          "吞咽困难",
+          "吞咽疼痛",
+          "呕血",
+          "体重下降",
+          "贫血",
+          "症状持续>5年"
+        ]
+      },
+      "medicamentos": [
+        "omeprazol",
+        "pantoprazol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-intestino-irritavel",
+      "titulo": "肠易激综合症 (SII)",
+      "sinonimos": [
+        "易激性结肠",
+        "SII"
+      ],
+      "ciap2": [
+        "D93"
+      ],
+      "cid10": [
+        "K58"
+      ],
+      "cid11": [
+        "DD91"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:10165",
+      "snomedCT": "10743008",
+      "meshId": "D043183",
+      "umlsCui": "C0022104",
+      "hpo": [
+        "HP:0002019",
+        "HP:0002023"
+      ],
+      "tags": [
+        "胃肠道",
+        "功能性疾病",
+        "慢性病"
+      ],
+      "quickView": {
+        "definicao": "功能性肠病，特征为反复发作的腹痛，伴有排便习惯改变，且无器质性疾病。",
+        "criteriosDiagnosticos": [
+          "罗马IV标准：过去3个月内每周至少1次腹痛",
+          "与≥2项相关：与排便有关，排便频率或形状改变",
+          "症状在诊断前持续≥6个月"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "低FODMAP饮食（暂时性）",
+            "可溶性纤维",
+            "运动",
+            "放松技巧",
+            "营养师随访"
+          ],
+          "farmacologico": [
+            "解痉药：莨菪碱或丁溴东莨菪碱",
+            "益生菌",
+            "纤维：便秘为主时使用车前子壳",
+            "腹泻为主时使用止泻药"
+          ]
+        },
+        "redFlags": [
+          "便血",
+          "体重下降",
+          "贫血",
+          "家族中有结直肠癌史",
+          "年龄>50岁且出现新症状"
+        ]
+      },
+      "medicamentos": [
+        "hioscina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gastrite",
+      "titulo": "胃炎",
+      "sinonimos": [
+        "慢性胃炎",
+        "急性胃炎"
+      ],
+      "ciap2": [
+        "D87"
+      ],
+      "cid10": [
+        "K29"
+      ],
+      "cid11": [
+        "DD90"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:7147",
+      "snomedCT": "235595009",
+      "meshId": "D005756",
+      "umlsCui": "C0017158",
+      "hpo": [
+        "HP:0002585",
+        "HP:0002028"
+      ],
+      "tags": [
+        "胃肠道",
+        "常见",
+        "初级保健"
+      ],
+      "quickView": {
+        "definicao": "胃黏膜炎症。可以是急性的或慢性的。幽门螺杆菌是慢性胃炎的常见原因。",
+        "criteriosDiagnosticos": [
+          "消化不良症状",
+          "上腹部疼痛",
+          "内镜检查：胃炎",
+          "如需进行幽门螺杆菌检测"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免刺激性食物",
+            "少量多餐",
+            "减少酒精/烟草摄入"
+          ],
+          "farmacologico": [
+            "质子泵抑制剂：奥美拉唑 20mg 每日一次（如幽门螺杆菌阴性）",
+            "如幽门螺杆菌阳性：三联疗法（质子泵抑制剂 + 阿莫西林 + 克拉霉素）"
+          ]
+        },
+        "redFlags": [
+          "便血/黑便",
+          "贫血",
+          "持续呕吐",
+          "年龄 >55 岁且出现新症状"
+        ]
+      },
+      "medicamentos": [
+        "omeprazol",
+        "amoxicilina",
+        "claritromicina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "diarreia-aguda-pediatrica",
+      "titulo": "急性儿童腹泻",
+      "ciap2": [
+        "D73"
+      ],
+      "cid10": [
+        "A09"
+      ],
+      "cid11": [
+        "1A40"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:13250",
+      "snomedCT": "409966000",
+      "meshId": "D003967",
+      "umlsCui": "C0011991",
+      "quickView": {
+        "definicao": "排便习惯改变，24小时内≥3次稀便/水样便，持续时间<14天。主要病因：轮状病毒。",
+        "criteriosDiagnosticos": [
+          "≥3次水样便/天",
+          "持续时间<14天（急性）",
+          "评估脱水程度",
+          "无血/黏液 = 可能为病毒性"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ORS（家庭口服补液盐或ORS）",
+            "维持饮食",
+            "按需母乳喂养"
+          ],
+          "farmacologico": [
+            "锌 10-20mg/天，持续10-14天",
+            "不使用止泻药",
+            "不常规使用止吐药"
+          ]
+        },
+        "redFlags": [
+          "重度脱水",
+          "嗜睡",
+          "眼球凹陷",
+          "皮肤皱褶恢复时间>2秒",
+          "无尿",
+          "便血"
+        ]
+      },
+      "medicamentos": [
+        "sais-reidratacao-oral"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "constipacao-pediatrica",
+      "titulo": "儿童功能性便秘",
+      "ciap2": [
+        "D12"
+      ],
+      "cid10": [
+        "K59.0"
+      ],
+      "cid11": [
+        "ME04"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:2089",
+      "snomedCT": "14760008",
+      "meshId": "D003248",
+      "umlsCui": "C0009806",
+      "quickView": {
+        "definicao": "排便次数少（<3次/周），疼痛或有粪便潴留。90%为功能性。高峰：括约肌训练和入学初期。",
+        "criteriosDiagnosticos": [
+          "罗马IV标准：≥2项标准持续1个月",
+          "≤2次排便/周",
+          "过度粪便潴留",
+          "排便疼痛",
+          "直肠内有大量粪便",
+          "粪便失禁（溢出）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "家庭教育（非惩罚性）",
+            "习惯训练",
+            "富含纤维的饮食",
+            "水分摄入"
+          ],
+          "farmacologico": [
+            "解除嵌塞：聚乙二醇（1-1.5g/kg/天）或灌肠",
+            "维持治疗：聚乙二醇 0.4-0.8g/kg/天",
+            "乳果糖作为替代"
+          ]
+        },
+        "redFlags": [
+          "严重腹胀",
+          "胆汁性呕吐",
+          "胎便排出延迟",
+          "生长发育迟缓"
+        ]
+      },
+      "medicamentos": [
+        "lactulose"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hemorroidas",
+      "titulo": "痔病",
+      "ciap2": [
+        "D95"
+      ],
+      "cid10": [
+        "K64"
+      ],
+      "cid11": [
+        "DB34"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:9277",
+      "snomedCT": "70153002",
+      "meshId": "D006484",
+      "umlsCui": "C0019112",
+      "quickView": {
+        "definicao": "痔静脉丛（内痔或外痔）充血。非常常见。便秘和排便用力会加重症状。",
+        "criteriosDiagnosticos": [
+          "排便时鲜红色出血",
+          "脱垂（I-IV度）",
+          "肛门瘙痒",
+          "血栓形成时疼痛"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "富含纤维的饮食",
+            "保持水分",
+            "避免排便用力",
+            "温水坐浴"
+          ],
+          "farmacologico": [
+            "对症治疗：利多卡因软膏 + 局部皮质类固醇，使用7天",
+            "地奥司明450mg + 橙皮苷50mg 每日两次",
+            "如有便秘，使用泻药"
+          ]
+        },
+        "redFlags": [
+          "持续出血",
+          "贫血",
+          "肠习惯改变",
+          "年龄>50岁且未进行结肠镜检查"
+        ]
+      },
+      "medicamentos": [
+        "lactulose"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "constipacao-intestinal",
+      "titulo": "便秘",
+      "ciap2": [
+        "D12"
+      ],
+      "cid10": [
+        "K59.0"
+      ],
+      "cid11": [
+        "ME05"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:10533",
+      "snomedCT": "14760008",
+      "meshId": "D003248",
+      "umlsCui": "C0009806",
+      "quickView": {
+        "definicao": "排便频率低（<3次/周）或排便困难超过3个月。功能性便秘（更常见）与器质性便秘。",
+        "criteriosDiagnosticos": [
+          "<3次/周排便",
+          "过度用力",
+          "大便硬化",
+          "感觉未完全排空",
+          "罗马IV标准"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "增加纤维摄入（25-30克/天）",
+            "适当水分摄入",
+            "体育活动",
+            "规律的肠道习惯"
+          ],
+          "farmacologico": [
+            "一线治疗：容积性泻药（车前子）或渗透性泻药（乳果糖 15-30ml/天）",
+            "如耐药：聚乙二醇或刺激性泻药（番泻叶）"
+          ]
+        },
+        "redFlags": [
+          "警报症状（出血、体重下降、贫血）",
+          "肠梗阻",
+          "巨结肠"
+        ]
+      },
+      "medicamentos": [
+        "lactulose",
+        "psyllium"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-crohn",
+      "titulo": "克罗恩病",
+      "ciap2": [
+        "D94"
+      ],
+      "cid10": [
+        "K50"
+      ],
+      "cid11": [
+        "DD70"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:8778",
+      "snomedCT": "34000006",
+      "meshId": "D003424",
+      "umlsCui": "C0010346",
+      "tags": [
+        "慢性",
+        "胃肠道",
+        "自身免疫"
+      ],
+      "quickView": {
+        "definicao": "慢性炎症性肠病。可影响消化道的任何部分。全层炎症。",
+        "criteriosDiagnosticos": [
+          "反复腹痛",
+          "慢性腹泻",
+          "体重下降",
+          "口腔溃疡",
+          "瘘管"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "专科随访",
+            "营养支持",
+            "避免吸烟"
+          ],
+          "farmacologico": [
+            "5-ASA: 美沙拉嗪按指导使用",
+            "急性发作时使用皮质类固醇"
+          ]
+        },
+        "redFlags": [
+          "肠梗阻",
+          "瘘管",
+          "脓肿",
+          "中毒性巨结肠"
+        ]
+      },
+      "medicamentos": [
+        "mesalazina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "colite-ulcerativa",
+      "titulo": "溃疡性结肠炎",
+      "ciap2": [
+        "D93"
+      ],
+      "cid10": [
+        "K51"
+      ],
+      "cid11": [
+        "DD71"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:0050589",
+      "snomedCT": "64766004",
+      "meshId": "D003093",
+      "umlsCui": "C0009324",
+      "tags": [
+        "慢性",
+        "胃肠道",
+        "自身免疫"
+      ],
+      "quickView": {
+        "definicao": "局限于结肠的炎症性肠病。黏膜表面溃疡。",
+        "criteriosDiagnosticos": [
+          "带血/黏液的腹泻",
+          "排便急迫感",
+          "腹痛",
+          "全身症状"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "专科随访",
+            "营养支持"
+          ],
+          "farmacologico": [
+            "5-ASA: 美沙拉嗪根据病变范围",
+            "急性发作时使用皮质类固醇"
+          ]
+        },
+        "redFlags": [
+          "中毒性巨结肠",
+          "严重出血",
+          "穿孔",
+          "硬化性胆管炎"
+        ]
+      },
+      "medicamentos": [
+        "mesalazina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-intestino-irritavel-diarréia",
+      "titulo": "肠易激综合症 - 腹泻型",
+      "ciap2": [
+        "D93"
+      ],
+      "cid10": [
+        "K58.0"
+      ],
+      "cid11": [
+        "DD91.0"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:10171",
+      "snomedCT": "107939000",
+      "meshId": "D043183",
+      "umlsCui": "C0022104",
+      "tags": [
+        "功能性疾病",
+        "胃肠道"
+      ],
+      "quickView": {
+        "definicao": "以腹泻（≥25%的排便）为主的肠易激综合症。符合罗马IV标准。",
+        "criteriosDiagnosticos": [
+          "每周至少1次反复出现的腹痛",
+          "与排便相关和/或频率/形态改变",
+          "持续≥6个月",
+          "以腹泻为主"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "低FODMAP饮食",
+            "可溶性纤维",
+            "压力管理"
+          ],
+          "farmacologico": [
+            "洛哌丁胺 2mg 餐后腹泻时使用（每日最大剂量16mg）",
+            "或利福昔明如存在细菌过度生长"
+          ]
+        },
+        "redFlags": [
+          "50岁以后起病的症状",
+          "体重下降",
+          "消化道出血",
+          "家族性结直肠癌史"
+        ]
+      },
+      "medicamentos": [
+        "loperamida"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-celíaca",
+      "titulo": "乳糜泻",
+      "sinonimos": [
+        "麸质肠病",
+        "乳糜泻"
+      ],
+      "ciap2": [
+        "D90"
+      ],
+      "cid10": [
+        "K90.0"
+      ],
+      "cid11": [
+        "DD90.0"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:13084",
+      "snomedCT": "396331005",
+      "meshId": "D002446",
+      "umlsCui": "C0007570",
+      "hpo": [
+        "HP:0002027",
+        "HP:0002583",
+        "HP:0004380"
+      ],
+      "tags": [
+        "自身免疫",
+        "胃肠道",
+        "麸质"
+      ],
+      "quickView": {
+        "definicao": "由麸质在遗传易感个体中引发的自身免疫性肠病。特征为绒毛萎缩。",
+        "criteriosDiagnosticos": [
+          "IgA 抗 tTG 升高",
+          "抗 EMA 阳性",
+          "十二指肠活检：绒毛萎缩",
+          "HLA-DQ2 或 DQ8 阳性"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "严格且永久的无麸质饮食",
+            "营养支持",
+            "营养监测"
+          ],
+          "farmacologico": [
+            "补充：铁、叶酸、维生素 D 根据缺乏情况"
+          ]
+        },
+        "redFlags": [
+          "肠淋巴瘤",
+          "对治疗无效",
+          "显微镜下结肠炎"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "constipacao",
+      "titulo": "肠便秘",
+      "sinonimos": [
+        "便秘"
+      ],
+      "ciap2": [
+        "D12"
+      ],
+      "cid10": [
+        "K59.0"
+      ],
+      "cid11": [
+        "DD91.0"
+      ],
+      "categoria": "gastrointestinal",
+      "doid": "DOID:1100",
+      "snomedCT": "14760008",
+      "meshId": "D003248",
+      "umlsCui": "C0009806",
+      "hpo": [
+        "HP:0002019",
+        "HP:0004383"
+      ],
+      "tags": [
+        "gastrointestinal",
+        "常见",
+        "功能性疾病"
+      ],
+      "quickView": {
+        "definicao": "排便次数减少（<3次/周）或排便困难。可能是功能性或继发性。",
+        "criteriosDiagnosticos": [
+          "<3次/周排便",
+          "过度用力",
+          "大便干硬",
+          "感觉排便不完全",
+          "罗马IV标准"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "增加纤维摄入（25-30g/天）",
+            "适当水分摄入",
+            "运动",
+            "建立规律的排便习惯"
+          ],
+          "farmacologico": [
+            "渗透性泻药：乳果糖 15-30mL/天",
+            "或聚乙二醇",
+            "仅在必要时使用刺激性泻药"
+          ]
+        },
+        "redFlags": [
+          "直肠出血",
+          "体重下降",
+          "贫血",
+          "肠梗阻",
+          "家族结直肠癌史"
+        ]
+      },
+      "medicamentos": [
+        "lactulona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "esteatose-hepatica",
+      "titulo": "非酒精性脂肪肝病 (NAFLD)",
+      "sinonimos": [
+        "NAFLD",
+        "脂肪肝",
+        "MASLD"
+      ],
+      "ciap2": [
+        "D97"
+      ],
+      "cid10": [
+        "K76.0"
+      ],
+      "cid11": [
+        "DB92.1"
+      ],
+      "doid": "DOID:0080547",
+      "snomedCT": "197315008",
+      "meshId": "D065626",
+      "umlsCui": "C0400966",
+      "categoria": "gastrointestinal",
+      "quickView": {
+        "definicao": "在无显著饮酒的情况下，肝脏脂肪积累（>5%）。全球患病率为25-30%，与代谢综合征相关。",
+        "criteriosDiagnosticos": [
+          "影像学检查（超声、CT、MRI）显示脂肪肝",
+          "排除显著饮酒（男性<20g/天，女性<30g/天）",
+          "排除其他肝病原因",
+          "使用FIB-4或NAFLD纤维化评分进行分层"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "减重7-10%（主要治疗措施）",
+            "有氧运动+抗阻训练",
+            "地中海饮食",
+            "避免果糖/含糖饮料"
+          ],
+          "farmacologico": [
+            "维生素E 800 IU/天（非糖尿病患者确诊为NASH）",
+            "吡格列酮（糖尿病患者确诊为NASH）",
+            "GLP-1受体激动剂（司美格鲁肽）- 新兴证据",
+            "治疗合并症：糖尿病、血脂异常"
+          ]
+        },
+        "redFlags": [
+          "肝硬化",
+          "门脉高压",
+          "肝细胞癌",
+          "转氨酶>10倍正常上限"
+        ],
+        "metasTerapeuticas": [
+          "持续减重",
+          "转氨酶正常化"
+        ],
+        "examesIniciais": [
+          "AST, ALT, GGT",
+          "血脂谱",
+          "血糖/HbA1c",
+          "腹部超声",
+          "FIB-4"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "pioglitazona",
+        "vitamina-e"
+      ],
+      "calculadoras": [
+        "fib-4"
+      ],
+      "tags": [
+        "肝脏",
+        "肥胖",
+        "代谢综合征"
+      ]
+    }
+  ]
+}

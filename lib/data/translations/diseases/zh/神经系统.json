@@ -1,0 +1,106 @@
+{
+  "locale": "zh",
+  "category": "神经系统",
+  "generatedAt": "2025-12-30T12:23:17.432Z",
+  "count": 1,
+  "diseases": [
+    {
+      "id": "neuromielite-optica",
+      "titulo": "视神经脊髓炎 (NMO / Devic病)",
+      "categoria": "神经系统",
+      "cid10": [
+        "G36.0"
+      ],
+      "cid11": [
+        "8A45"
+      ],
+      "ciap2": [
+        "N88"
+      ],
+      "snomedCT": "6368000",
+      "doid": "DOID:8869",
+      "meshId": "D009471",
+      "umlsCui": "C0027873",
+      "classificacao": {
+        "tipo": "脱髓鞘疾病",
+        "subtipo": "视神经脊髓炎"
+      },
+      "quickView": {
+        "definicao": "中枢神经系统脱髓鞘疾病，特征为双侧视神经炎和广泛性横贯性脊髓炎，与抗水通道蛋白-4 (AQP4) 抗体相关。",
+        "criteriosDiagnosticos": [
+          "Wingerchuk 2015标准：",
+          "视神经炎 + 横贯性脊髓炎",
+          "≥2 of 3:",
+          "- 连续性脊髓炎 ≥3个椎段",
+          "- 脑部MRI不符合多发性硬化标准",
+          "- 血清AQP4-IgG阳性"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "物理治疗",
+            "视觉支持",
+            "康复"
+          ],
+          "farmacologico": [
+            "急性发作：甲基泼尼松龙 1g/天 静脉注射 3-5天",
+            "如无反应：血浆置换",
+            "预防：硫唑嘌呤 + 泼尼松，或利妥昔单抗"
+          ]
+        },
+        "redFlags": [
+          "双侧视神经炎",
+          "广泛性脊髓炎",
+          "频繁发作",
+          "对皮质类固醇反应不足"
+        ],
+        "examesIniciais": [
+          "颅脑和脊髓MRI",
+          "AQP4-IgG抗体（血清）",
+          "MOG抗体（如AQP4阴性）",
+          "脑脊液（寡克隆带比多发性硬化少见）"
+        ]
+      },
+      "examesNeurologicos": [
+        {
+          "tipo": "脊髓MRI",
+          "indicacao": "评估脊髓炎的范围",
+          "quandoSolicitar": "脊髓炎发作"
+        },
+        {
+          "tipo": "AQP4-IgG抗体",
+          "indicacao": "确认诊断",
+          "quandoSolicitar": "怀疑NMO"
+        }
+      ],
+      "tratamentoNeurologico": {
+        "primeiraLinha": {
+          "medicamentos": [
+            "甲基泼尼松龙",
+            "利妥昔单抗",
+            "硫唑嘌呤"
+          ],
+          "outrasIntervencoes": [
+            "血浆置换"
+          ]
+        }
+      },
+      "prognostico": {
+        "curso": "复发-缓解型",
+        "expectativa": "可变，频繁发作时可能严重",
+        "fatoresPrognosticos": [
+          "AQP4-IgG滴度",
+          "发作频率",
+          "治疗反应"
+        ]
+      },
+      "tags": [
+        "nmo",
+        "视神经脊髓炎",
+        "devic",
+        "脱髓鞘",
+        "罕见",
+        "aqp4"
+      ]
+    }
+  ]
+}

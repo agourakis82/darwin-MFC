@@ -1,0 +1,2364 @@
+{
+  "locale": "zh",
+  "category": "cardiovascular",
+  "generatedAt": "2025-12-30T12:23:17.426Z",
+  "count": 17,
+  "diseases": [
+    {
+      "id": "hipertensao-arterial",
+      "titulo": "系统性动脉高血压 (HAS)",
+      "sinonimos": [
+        "高血压",
+        "HAS",
+        "高血压病"
+      ],
+      "doid": "DOID:10763",
+      "snomedCT": "38341003",
+      "meshId": "D006973",
+      "umlsCui": "C0020538",
+      "ciap2": [
+        "K86",
+        "K87"
+      ],
+      "cid10": [
+        "I10",
+        "I11",
+        "I12",
+        "I13"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "一种多因素临床状况，特征为持续的血压水平≥140/90 mmHg。它是心血管疾病、脑血管疾病和肾脏疾病的首要可改变危险因素。",
+        "criteriosDiagnosticos": [
+          "诊室血压≥140/90 mmHg，在2次或更多不同场合测量",
+          "动态血压监测：24小时平均≥130/80 mmHg，清醒时≥135/85 mmHg，睡眠时≥120/70 mmHg",
+          "家庭血压监测：平均≥130/80 mmHg（7天，每天2次）",
+          "排除白大衣高血压和隐匿性高血压"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "减少钠摄入（<2g/天或5g盐/天）",
+            "DASH饮食（水果、蔬菜、脱脂乳制品）",
+            "体力活动：每周150分钟（中等强度）或75分钟（高强度）",
+            "如果BMI >25，减重（目标：减重5-10%）",
+            "限制酒精（男性≤2份/天，女性≤1份/天）",
+            "戒烟"
+          ],
+          "farmacologico": [
+            "ACE抑制剂（依那普利 5-20mg 每12小时一次）或ARB（洛萨坦 50-100mg/天）",
+            "钙通道阻滞剂（氨氯地平 5-10mg/天）",
+            "噻嗪类利尿剂（氢氯噻嗪 12.5-25mg/天或氯噻酮 12.5-25mg）",
+            "首选组合：ACE抑制剂/ARB + 钙通道阻滞剂或ACE抑制剂/ARB + 利尿剂",
+            "避免在2级或高心血管风险时单药治疗"
+          ]
+        },
+        "metasTerapeuticas": [
+          "血压<140/90 mmHg（一般）",
+          "如果高心血管风险、糖尿病或慢性肾病，血压<130/80 mmHg",
+          "健康老年人（<80岁），血压<130/80 mmHg",
+          "虚弱老年人（>80岁），血压<150/90 mmHg"
+        ],
+        "examesIniciais": [
+          "空腹血糖和HbA1c",
+          "肌酐和GFR（CKD-EPI）",
+          "血清钾",
+          "血脂谱（总胆固醇、LDL、HDL、甘油三酯）",
+          "尿酸",
+          "尿常规（EAS）和尿蛋白/肌酐比值",
+          "静息心电图"
+        ],
+        "redFlags": [
+          "血压≥180/120 mmHg伴有症状（剧烈头痛、视力改变、呼吸困难）",
+          "怀疑继发性高血压（发病年龄<30岁、难治性、低钾血症）",
+          "急性靶器官损伤（心肌梗死、中风、主动脉夹层）",
+          "孕妇血压≥140/90 mmHg"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "巴西成年人口的32%",
+          "incidencia": "每年约50万新病例",
+          "mortalidade": "每年约30万心血管死亡（主要危险因素）",
+          "faixaEtaria": "随着年龄增长逐渐增加（>65岁超过60%）",
+          "fatoresRisco": [
+            "年龄较大",
+            "家族高血压史",
+            "黑人种族",
+            "钠摄入过多",
+            "肥胖/超重",
+            "缺乏运动",
+            "过度饮酒",
+            "吸烟",
+            "慢性压力"
+          ],
+          "citations": [
+            {
+              "refId": "vigitel-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "经常无症状（“沉默杀手”）",
+            "枕部头痛（通常在早晨）",
+            "头晕",
+            "鼻出血（非特异性）",
+            "劳力性呼吸困难（如果有心力衰竭）",
+            "视力改变（如果有视网膜病变）"
+          ],
+          "sinaisExameFisico": [
+            "双臂血压升高",
+            "腹部杂音（肾血管性高血压）",
+            "股动脉搏动减弱（主动脉缩窄）",
+            "眼底改变（视网膜病变）",
+            "B4（左室肥厚）",
+            "下肢水肿（如果有心力衰竭）"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "使用适当技术在2次或更多次就诊时血压≥140/90 mmHg",
+            "动态血压监测或家庭血压监测以确认（排除白大衣效应）",
+            "分类：理想（<120/80），正常（120-129/80-84），高血压前期（130-139/85-89）",
+            "分期：1期（140-159/90-99），2期（160-179/100-109），3期（≥180/110）"
+          ],
+          "diagnosticoDiferencial": [
+            "白大衣高血压",
+            "隐匿性高血压",
+            "继发性高血压（肾性、内分泌性、药物性）",
+            "睡眠呼吸暂停综合征"
+          ],
+          "examesLaboratoriais": [
+            "空腹血糖、HbA1c、肌酐、钾、尿酸",
+            "血脂谱、尿常规、微量白蛋白尿"
+          ],
+          "outrosExames": [
+            "静息心电图",
+            "如果怀疑心脏病，进行超声心动图",
+            "如果怀疑继发性高血压，进行肾脏超声"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "降低心血管病的发病率和死亡率",
+            "达到个体化的血压目标",
+            "控制相关危险因素",
+            "预防/逆转靶器官损伤"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "DASH饮食：富含水果、蔬菜、全谷物、脱脂乳制品",
+              "限制钠摄入：<2g/天（5g盐）",
+              "有氧运动：每周150分钟中等强度",
+              "抗阻训练：每周2-3次",
+              "减重：如果超重/肥胖，目标减重5-10%",
+              "限制酒精",
+              "戒烟",
+              "控制压力"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-has-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "ACE抑制剂",
+                "medicamentos": [
+                  "依那普利 5-40mg/天",
+                  "卡托普利 25-150mg/天",
+                  "赖诺普利 2.5-10mg/天"
+                ],
+                "posologia": "每日1-2次",
+                "observacoes": "5-20%干咳。禁忌：妊娠、K>5.5、双侧肾动脉狭窄"
+              },
+              {
+                "classe": "ARB",
+                "medicamentos": [
+                  "洛萨坦 50-100mg/天",
+                  "缬沙坦 80-320mg/天"
+                ],
+                "posologia": "每日一次",
+                "observacoes": "如果不能耐受ACE抑制剂，可作为替代"
+              },
+              {
+                "classe": "钙通道阻滞剂",
+                "medicamentos": [
+                  "氨氯地平 5-10mg/天",
+                  "缓释硝苯地平 20-60mg/天"
+                ],
+                "posologia": "每日一次",
+                "observacoes": "剂量依赖性下肢水肿"
+              },
+              {
+                "classe": "噻嗪类利尿剂",
+                "medicamentos": [
+                  "氢氯噻嗪 12.5-25mg/天",
+                  "氯噻酮 12.5-25mg/天",
+                  "吲达帕胺 1.5mg/天"
+                ],
+                "posologia": "每日早晨一次",
+                "observacoes": "监测K+、血糖、尿酸"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "β受体阻滞剂",
+                "medicamentos": [
+                  "阿替洛尔 25-100mg/天",
+                  "卡维地洛 12.5-50mg/天",
+                  "美托洛尔 50-200mg/天"
+                ],
+                "observacoes": "如果心力衰竭、房颤、心肌梗死后，优先选择。避免用于未控制的慢性阻塞性肺病"
+              },
+              {
+                "classe": "袢利尿剂",
+                "medicamentos": [
+                  "呋塞米 20-80mg/天"
+                ],
+                "observacoes": "如果GFR <30或难治性水肿"
+              },
+              {
+                "classe": "保钾利尿剂",
+                "medicamentos": [
+                  "螺内酯 25-50mg/天"
+                ],
+                "observacoes": "难治性高血压。监测K+"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "糖尿病",
+                "conduta": "ACE抑制剂或ARB（肾保护）。目标<130/80"
+              },
+              {
+                "situacao": "慢性肾病",
+                "conduta": "如果尿蛋白，使用ACE抑制剂或ARB。目标<130/80"
+              },
+              {
+                "situacao": "射血分数保留的心力衰竭",
+                "conduta": "ACE抑制剂/ARB + β受体阻滞剂 + 螺内酯 + SGLT2抑制剂"
+              },
+              {
+                "situacao": "妊娠",
+                "conduta": "甲基多巴、硝苯地平、拉贝洛尔。禁忌：ACE抑制剂、ARB"
+              },
+              {
+                "situacao": "黑人",
+                "conduta": "钙通道阻滞剂或噻嗪类利尿剂作为一线治疗（反应更好）"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbc-has-2020"
+              }
+            ]
+          },
+          "duracao": "持续治疗。仅在特定情况下停药（成功的代谢手术、初始轻度高血压）"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "每月直至控制，之后每季度/半年一次",
+          "examesControle": [
+            "肌酐和K+（开始/调整ACE抑制剂/ARB/利尿剂后1-2周）",
+            "血脂谱、血糖：每年一次",
+            "微量白蛋白尿：如果糖尿病或慢性肾病，每年一次"
+          ],
+          "metasTerapeuticas": [
+            "血压<140/90 mmHg（一般）",
+            "如果高风险、糖尿病、慢性肾病，血压<130/80 mmHg",
+            "控制糖尿病、血脂异常、吸烟"
+          ],
+          "criteriosEncaminhamento": [
+            "难治性高血压（使用3种药物包括利尿剂仍无法控制）",
+            "怀疑继发性高血压",
+            "严重的靶器官损伤",
+            "慢性肾病GFR <30 mL/min",
+            "高血压急症"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-has-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "从儿童时期开始健康饮食",
+            "保持适当体重",
+            "定期体力活动",
+            "限制钠和酒精摄入",
+            "不吸烟"
+          ],
+          "secundaria": [
+            "坚持治疗",
+            "自我监测血压",
+            "控制相关危险因素"
+          ],
+          "citations": [
+            {
+              "refId": "ms-cab-37-2013"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-has",
+        "estratificacao-rcv"
+      ],
+      "medicamentos": [
+        "losartana",
+        "enalapril",
+        "anlodipino",
+        "hctz",
+        "atenolol"
+      ],
+      "calculadoras": [
+        "framingham",
+        "score",
+        "ckdepi"
+      ],
+      "rastreamentos": [
+        "hipertensao-arterial"
+      ],
+      "citations": [
+        {
+          "refId": "sbc-has-2020"
+        },
+        {
+          "refId": "ms-cab-37-2013"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "cardiovascular",
+        "chronic",
+        "prevalent",
+        "dcnt"
+      ]
+    },
+    {
+      "id": "fibrilacao-atrial",
+      "titulo": "Fibrilação Atrial",
+      "sinonimos": [
+        "FA",
+        "Arritmia",
+        "Fibrilação auricular"
+      ],
+      "doid": "DOID:0060224",
+      "snomedCT": "49436004",
+      "meshId": "D001281",
+      "umlsCui": "C0004238",
+      "ciap2": [
+        "K78"
+      ],
+      "cid10": [
+        "I48",
+        "I48.0",
+        "I48.1",
+        "I48.9"
+      ],
+      "cid11": [
+        "BC81.1"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Arritmia supraventricular caracterizada por ativação atrial desorganizada, irregular e rápida, com perda da contração atrial efetiva. É a arritmia sustentada mais comum.",
+        "criteriosDiagnosticos": [
+          "ECG: ausência de onda P, presença de ondas f irregulares",
+          "Intervalos RR irregularmente irregulares",
+          "Frequência atrial 350-600 bpm",
+          "Pode ser paroxística, persistente ou permanente"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Controle de fatores precipitantes (álcool, cafeína)",
+            "Tratamento de causas reversíveis (hipertireoidismo)",
+            "Perda de peso se obesidade",
+            "Tratamento de apneia do sono"
+          ],
+          "farmacologico": [
+            "Controle de frequência: Betabloqueador (Atenolol 25-100mg/dia) ou BCC (Diltiazem)",
+            "Anticoagulação se CHA2DS2-VASc ≥2 (homens) ou ≥3 (mulheres)",
+            "Varfarina (INR 2-3) ou DOACs (Rivaroxabana, Apixabana)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "FC em repouso 60-110 bpm",
+          "Anticoagulação adequada (INR 2-3 ou aderência a DOAC)",
+          "Prevenção de AVC e eventos tromboembólicos",
+          "Controle de sintomas"
+        ],
+        "examesIniciais": [
+          "ECG de 12 derivações",
+          "Ecocardiograma transtorácico",
+          "TSH",
+          "Função renal, eletrólitos",
+          "Hemograma",
+          "Holter 24h se paroxística"
+        ],
+        "redFlags": [
+          "FA com RVR e instabilidade hemodinâmica",
+          "Sinais de AVC/AIT",
+          "Síncope",
+          "Dor torácica sugestiva de SCA",
+          "IC descompensada",
+          "Pré-excitação (WPW + FA)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2-4% da população adulta, aumenta com idade",
+          "incidencia": "Dobra a cada década após 55 anos",
+          "faixaEtaria": "Rara antes dos 50 anos, comum >75 anos",
+          "fatoresRisco": [
+            "Idade avançada",
+            "Hipertensão arterial",
+            "Doença valvar (principalmente mitral)",
+            "IC, DAC",
+            "Diabetes mellitus",
+            "Obesidade",
+            "Apneia obstrutiva do sono",
+            "Hipertireoidismo",
+            "Consumo excessivo de álcool"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Múltiplos circuitos de reentrada nos átrios, frequentemente iniciados por focos ectópicos nas veias pulmonares. Remodelamento atrial elétrico e estrutural perpetua a arritmia. Estase atrial predispõe à formação de trombos, principalmente no apêndice atrial esquerdo.",
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Palpitações irregulares",
+            "Dispneia aos esforços",
+            "Fadiga",
+            "Tontura",
+            "Desconforto torácico",
+            "Pode ser assintomática (30%)"
+          ],
+          "sinaisExameFisico": [
+            "Pulso irregular e geralmente rápido",
+            "Déficit de pulso (FC apical > FC radial)",
+            "Variação da intensidade de B1",
+            "Ausência de onda a no pulso jugular"
+          ],
+          "formasClinicas": [
+            "Paroxística: episódios <7 dias, autolimitados",
+            "Persistente: >7 dias ou requer cardioversão",
+            "Persistente de longa duração: >1 ano",
+            "Permanente: aceita, sem tentativa de restaurar ritmo"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "ECG com ritmo irregularmente irregular",
+            "Ausência de ondas P definidas",
+            "Ondas f de fibrilação (melhor vistas em V1)"
+          ],
+          "diagnosticoDiferencial": [
+            "Flutter atrial",
+            "Taquicardia atrial multifocal",
+            "Extrassístoles atriais frequentes",
+            "Taquicardia sinusal com extrassístoles"
+          ],
+          "examesLaboratoriais": [
+            "TSH (descartar hipertireoidismo)",
+            "Função renal (ajuste de anticoagulantes)",
+            "Eletrólitos",
+            "Hemograma",
+            "Coagulograma se varfarina"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Prevenção de tromboembolismo (AVC)",
+            "Controle de sintomas",
+            "Tratamento de comorbidades"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Modificação do estilo de vida",
+              "Controle de peso",
+              "Redução de álcool",
+              "Tratamento de apneia do sono",
+              "Ablação por cateter em casos selecionados"
+            ],
+            "citations": [
+              {
+                "refId": "esc-fa-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Controle de frequência",
+                "medicamentos": [
+                  "Atenolol",
+                  "Metoprolol",
+                  "Diltiazem",
+                  "Verapamil",
+                  "Digoxina"
+                ],
+                "posologia": "Atenolol 25-100mg/dia | Metoprolol 50-200mg/dia"
+              },
+              {
+                "classe": "Anticoagulação (se CHA2DS2-VASc indicar)",
+                "medicamentos": [
+                  "Varfarina",
+                  "Rivaroxabana",
+                  "Apixabana",
+                  "Dabigatrana",
+                  "Edoxabana"
+                ],
+                "posologia": "Varfarina (INR 2-3) ou DOAC conforme função renal"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "FA + IC com FEVE reduzida",
+                "conduta": "Preferir betabloqueador ou digoxina (evitar BCC)"
+              },
+              {
+                "situacao": "FA + WPW",
+                "conduta": "EVITAR digoxina, BCC, betabloqueador. Encaminhar urgente."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-fa-2020"
+              }
+            ]
+          },
+          "duracao": "Anticoagulação geralmente contínua se indicada"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "A cada 3-6 meses, ou mais frequente se instável",
+          "examesControle": [
+            "INR mensal se varfarina",
+            "Função renal anual (ajuste de DOAC)",
+            "ECG se mudança de sintomas"
+          ],
+          "metasTerapeuticas": [
+            "FC 60-110 bpm em repouso",
+            "TTR >70% se varfarina",
+            "Ausência de eventos tromboembólicos"
+          ],
+          "criteriosEncaminhamento": [
+            "FA com instabilidade hemodinâmica",
+            "Candidato a ablação",
+            "FA + WPW",
+            "FA refratária ao controle de frequência"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Controle de HAS",
+            "Tratamento de apneia do sono",
+            "Controle de peso",
+            "Moderação no consumo de álcool"
+          ],
+          "secundaria": [
+            "Anticoagulação adequada",
+            "Controle de fatores precipitantes"
+          ],
+          "citations": [
+            {
+              "refId": "esc-fa-2020"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "atenolol",
+        "metoprolol",
+        "varfarina",
+        "rivaroxabana"
+      ],
+      "calculadoras": [
+        "cha2ds2-vasc",
+        "has-bled"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "esc-fa-2020"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "fa",
+        "fibrilacao-atrial",
+        "arritmia",
+        "anticoagulacao",
+        "avc"
+      ]
+    },
+    {
+      "id": "doenca-arterial-coronariana",
+      "titulo": "Doáncia Arterial Coronariana Estável",
+      "sinonimos": [
+        "DAC",
+        "Angina estável",
+        "Cardiopatia isquémica crónica"
+      ],
+      "doid": "DOID:3393",
+      "snomedCT": "53741008",
+      "meshId": "D003324",
+      "umlsCui": "C0010054",
+      "ciap2": [
+        "K74",
+        "K76"
+      ],
+      "cid10": [
+        "I25",
+        "I25.1",
+        "I25.9",
+        "I20.8"
+      ],
+      "cid11": [
+        "BA80"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Obstrôão aterosclerótica das artérias coronárias levando a isquemia miocárdica durante esforço ou estresse. Caracteriza-se por angina típica previsível, estável em frequência e intensidade.",
+        "criteriosDiagnosticos": [
+          "Dor torácica típica: retroesternal, em aperto, desencadeada por esforço/estresse",
+          "Alívio com repouso ou nitrato sublingual (1-3 min)",
+          "Duração de 2-10 minutos",
+          "Teste ergométrico positivo ou imagem funcional com isquemia"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Cessação do tabagismo (essencial)",
+            "Dieta mediterrânea",
+            "Atividade física regular supervisionada",
+            "Controle de peso",
+            "Controle do estresse"
+          ],
+          "farmacologico": [
+            "AAS 100mg/dia (antiagregação)",
+            "Estatina de alta intensidade (Atorvastatina 40-80mg)",
+            "Betabloqueador (Atenolol, Metoprolol) para controle de angina",
+            "Nitrato sublingual para crises"
+          ]
+        },
+        "metasTerapeuticas": [
+          "LDL-C <50 mg/dL (muito alto risco) ou <70 mg/dL (alto risco)",
+          "PA <130/80 mmHg",
+          "HbA1c <7% se DM",
+          "Cessação completa do tabagismo",
+          "Controle de angina (CCS classe I-II)"
+        ],
+        "examesIniciais": [
+          "ECG de repouso",
+          "Ecocardiograma",
+          "Perfil lipídico",
+          "Glicemia, HbA1c",
+          "Função renal",
+          "Teste ergométrico ou cintilografia"
+        ],
+        "redFlags": [
+          "Angina em repouso ou prolongada (>20 min)",
+          "Angina de início recente (<2 meses)",
+          "Angina em crescendo (piora progressiva)",
+          "Alterações dinâmicas de ECG",
+          "Instabilidade hemodinâmica",
+          "Síncope com dor torácica"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "5-8% dos adultos >40 anos",
+          "incidencia": "Principal causa de morte no mundo",
+          "faixaEtaria": "Aumenta com idade, homens >45 anos, mulheres >55 anos",
+          "fatoresRisco": [
+            "Hipertensão arterial",
+            "Dislipidemia (LDL elevado, HDL baixo)",
+            "Diabetes mellitus",
+            "Tabagismo",
+            "Obesidade",
+            "Sedentarismo",
+            "História familiar de DAC precoce",
+            "Idade avançada"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Aterosclerose coronariana com formação de placas que reduzem o lúmen arterial. Quando a obstrução atinge >70%, o fluxo coronariano torna-se insuficiente durante esforço, causando isquemia e angina.",
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dor/desconforto torácico retroesternal em aperto/pressão",
+            "Irradiação para MSE, mandíbula, dorso",
+            "Desencadeada por esforço físico, estresse emocional, frio",
+            "Alivia com repouso (1-5 min) ou nitrato sublingual",
+            "Equivalentes anginosos: dispneia, fadiga"
+          ],
+          "sinaisExameFisico": [
+            "Geralmente normal no período intercrítico",
+            "B4 pode estar presente",
+            "Sopro de insuficiência mitral transitório durante crise"
+          ],
+          "formasClinicas": [
+            "Angina típica: 3 características (localização típica, desencadeada por esforço, alivia com repouso/nitrato)",
+            "Angina atípica: 2 características",
+            "Dor torácica não cardíaca: 0-1 característica"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "História clínica compatível",
+            "Teste funcional positivo para isquemia",
+            "Ou anatomia coronária com estenose significativa (>50% TCE ou >70% outras)"
+          ],
+          "diagnosticoDiferencial": [
+            "Síndrome coronariana aguda",
+            "Dissecção de aorta",
+            "TEP",
+            "Pericardite",
+            "Espasmo esofágico",
+            "Dor musculoesquelético"
+          ],
+          "examesLaboratoriais": [
+            "Perfil lipídico completo",
+            "Glicemia, HbA1c",
+            "Função renal",
+            "Hemograma",
+            "Troponina (para descartar SCA)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Aliviar sintomas",
+            "Prevenir eventos cardiovasculares (IAM, morte)",
+            "Melhorar qualidade de vida",
+            "Controlar fatores de risco"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Cessação absoluta do tabagismo",
+              "Dieta mediterrânea ou DASH",
+              "Exercício aeróbico regular (150 min/semana)",
+              "Manutenção do peso ideal",
+              "Reabilitação cardíaca"
+            ],
+            "citations": [
+              {
+                "refId": "esc-dac-2019"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Antiagregante",
+                "medicamentos": [
+                  "AAS"
+                ],
+                "posologia": "AAS 100mg/dia"
+              },
+              {
+                "classe": "Estatina",
+                "medicamentos": [
+                  "Atorvastatina",
+                  "Rosuvastatina"
+                ],
+                "posologia": "Atorvastatina 40-80mg/dia (alta intensidade)"
+              },
+              {
+                "classe": "Antianginoso",
+                "medicamentos": [
+                  "Atenolol",
+                  "Metoprolol",
+                  "Bisoprolol"
+                ],
+                "posologia": "Atenolol 25-100mg/dia | Nitrato SL para crises"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Intolerância a betabloqueador",
+                "conduta": "BCC (Anlodipino, Diltiazem) ou Ivabradina"
+              },
+              {
+                "situacao": "DAC + DM",
+                "conduta": "Considerar iSGLT2 ou GLP-1RA com benefício CV"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-dac-2019"
+              }
+            ]
+          },
+          "duracao": "Tratamento contínuo"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "A cada 3-6 meses",
+          "examesControle": [
+            "Perfil lipídico a cada 6-12 meses",
+            "Função renal anual",
+            "ECG se mudança clínica"
+          ],
+          "metasTerapeuticas": [
+            "LDL-C na meta",
+            "PA <130/80",
+            "Ausência de angina ou angina controlada (CCS I)"
+          ],
+          "criteriosEncaminhamento": [
+            "Angina refratária ao tratamento clínico",
+            "Angina instável",
+            "Teste funcional com grande área de isquemia",
+            "Disfunção ventricular esquerda"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Controle rigoroso de fatores de risco CV",
+            "Estatina em alto risco",
+            "Cessação do tabagismo"
+          ],
+          "secundaria": [
+            "AAS + estatina de alta intensidade",
+            "Controle agressivo de LDL",
+            "Reabilitação cardíaca"
+          ],
+          "citations": [
+            {
+              "refId": "esc-dac-2019"
+            }
+          ]
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "aas",
+        "atorvastatina",
+        "atenolol",
+        "isossorbida"
+      ],
+      "calculadoras": [
+        "risco-cv",
+        "cha2ds2-vasc"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "esc-dac-2019"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "dac",
+        "angina",
+        "coronariopatia",
+        "aterosclerose",
+        "isquemia"
+      ]
+    },
+    {
+      "id": "hipotensao-ortostatica",
+      "titulo": "直立性低血压",
+      "ciap2": [
+        "K88"
+      ],
+      "cid10": [
+        "I95.1"
+      ],
+      "cid11": [
+        "BA81"
+      ],
+      "categoria": "cardiovascular",
+      "doid": "DOID:10763",
+      "snomedCT": "28651003",
+      "meshId": "D007024",
+      "umlsCui": "C0020651",
+      "quickView": {
+        "definicao": "站立时收缩压下降≥20mmHg或舒张压下降≥10mmHg。在>65岁人群中患病率为20-30%。是跌倒的重要原因。",
+        "criteriosDiagnosticos": [
+          "站立时血压下降（1-3分钟内）",
+          "症状：头晕、视觉变暗",
+          "体位试验可重复",
+          "评估引起该症状的药物"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "分阶段起床",
+            "抬高床头",
+            "穿着压缩袜",
+            "适当补水",
+            "增加盐摄入量（如无严重高血压）"
+          ],
+          "farmacologico": [
+            "审查并减少抗高血压药",
+            "氟氢可的松 0.1mg/日（如难治性）",
+            "米多君 2.5-10mg 每日三次"
+          ]
+        },
+        "redFlags": [
+          "昏厥",
+          "反复跌倒",
+          "伴随神经症状",
+          "贫血"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "endocardite-infecciosa",
+      "titulo": "感染性心内膜炎",
+      "ciap2": [
+        "K71"
+      ],
+      "cid10": [
+        "I33"
+      ],
+      "cid11": [
+        "BC40"
+      ],
+      "categoria": "cardiovascular",
+      "doid": "DOID:846",
+      "snomedCT": "84114007",
+      "meshId": "D004696",
+      "umlsCui": "C0014118",
+      "tags": [
+        "心血管",
+        "感染性",
+        "重度"
+      ],
+      "quickView": {
+        "definicao": "心内膜/心脏瓣膜的感染。可以是急性（金黄色葡萄球菌）或亚急性（链球菌）。",
+        "criteriosDiagnosticos": [
+          "发热",
+          "新出现或改变的心脏杂音",
+          "血培养阳性",
+          "超声心动图显示赘生物",
+          "杜克标准"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "住院",
+            "超声心动图",
+            "心脏评估"
+          ],
+          "farmacologico": [
+            "根据血培养结果进行静脉抗生素治疗",
+            "经验性使用万古霉素 + 庆大霉素"
+          ]
+        },
+        "redFlags": [
+          "心力衰竭",
+          "系统性栓塞",
+          "脓肿",
+          "严重瓣膜功能不全"
+        ]
+      },
+      "medicamentos": [
+        "vancomycin",
+        "gentamicin"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "miocardiopatia-dilatada",
+      "titulo": "扩张型心肌病",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "I42.0"
+      ],
+      "cid11": [
+        "BC43.0"
+      ],
+      "categoria": "cardiovascular",
+      "doid": "DOID:12930",
+      "snomedCT": "84114007",
+      "meshId": "D002311",
+      "umlsCui": "C0027051",
+      "tags": [
+        "心血管",
+        "慢性"
+      ],
+      "quickView": {
+        "definicao": "心室扩张伴收缩功能障碍。射血分数降低。",
+        "criteriosDiagnosticos": [
+          "射血分数降低的心力衰竭",
+          "心室扩张",
+          "超声心动图：EF <40%"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "限盐",
+            "限水",
+            "控制性运动"
+          ],
+          "farmacologico": [
+            "ACEI或ARB：依那普利或洛沙坦",
+            "β受体阻滞剂：卡维地洛",
+            "必要时使用利尿剂"
+          ]
+        },
+        "redFlags": [
+          "难治性心力衰竭",
+          "心律失常",
+          "猝死",
+          "血栓栓塞"
+        ]
+      },
+      "medicamentos": [
+        "enalapril",
+        "losartana",
+        "carvedilol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-arterial-periferica",
+      "titulo": "外周动脉疾病",
+      "sinonimos": [
+        "PAD",
+        "PAOD",
+        "间歇性跛行",
+        "外周血管疾病"
+      ],
+      "ciap2": [
+        "K92"
+      ],
+      "cid10": [
+        "I73.9",
+        "I70.2"
+      ],
+      "cid11": [
+        "BD40"
+      ],
+      "doid": "DOID:0050830",
+      "snomedCT": "399957001",
+      "meshId": "D058729",
+      "umlsCui": "C1704436",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "外周动脉（尤其是下肢）的动脉粥样硬化导致缺血。ABI <0.9 是诊断标准。是全身动脉粥样硬化的标志。",
+        "criteriosDiagnosticos": [
+          "ABI（踝臂指数）<0.9",
+          "间歇性跛行：行走时小腿疼痛，休息后缓解",
+          "外周脉搏减弱/消失",
+          "ABI <0.4 或静息痛：临界缺血"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "监督步行锻炼（主要措施）",
+            "戒烟（必须）",
+            "足部护理"
+          ],
+          "farmacologico": [
+            "阿司匹林 100mg/天 或 氯吡格雷 75mg/天",
+            "高剂量他汀类药物",
+            "如果高血压或糖尿病使用ACE抑制剂",
+            "西洛他唑 100mg 每日两次（限于限制性间歇性跛行）"
+          ]
+        },
+        "redFlags": [
+          "静息痛",
+          "动脉溃疡",
+          "坏疽",
+          "ABI <0.4"
+        ],
+        "metasTerapeuticas": [
+          "LDL-c <70 mg/dL",
+          "BP <130/80",
+          "HbA1c <7%",
+          "戒烟"
+        ],
+        "examesIniciais": [
+          "ABI",
+          "动脉多普勒超声",
+          "血脂谱",
+          "血糖/HbA1c",
+          "肌酐"
+        ]
+      },
+      "protocolos": [
+        "has",
+        "dm2"
+      ],
+      "medicamentos": [
+        "aas",
+        "clopidogrel",
+        "atorvastatina",
+        "cilostazol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "vascular",
+        "atherosclerosis",
+        "smoking"
+      ]
+    },
+    {
+      "id": "estenose-aortica",
+      "titulo": "主动脉狭窄",
+      "sinonimos": [
+        "EAo",
+        "主动脉瓣病变"
+      ],
+      "ciap2": [
+        "K83"
+      ],
+      "cid10": [
+        "I35.0",
+        "I06.0"
+      ],
+      "cid11": [
+        "BB60.0"
+      ],
+      "doid": "DOID:1712",
+      "snomedCT": "60573004",
+      "meshId": "D001024",
+      "umlsCui": "C0003507",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "左心室通过主动脉瓣的射血受阻。退行性（钙化）是老年人最常见的原因。年轻人则多为二叶瓣。",
+        "criteriosDiagnosticos": [
+          "主动脉区喷射性收缩期杂音，向颈动脉传导",
+          "超声：重度主动脉狭窄 = 瓣口面积 <1.0 cm²，平均梯度 >40 mmHg，最大流速 >4 m/s",
+          "症状：呼吸困难、心绞痛、晕厥",
+          "脉搏迟缓且幅度低（迟缓而弱的脉搏）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "如有症状，避免剧烈运动",
+            "高风险者预防心内膜炎"
+          ],
+          "farmacologico": [
+            "临床治疗有限 - 手术是最终治疗",
+            "避免使用强效血管扩张剂（低血压风险）",
+            "如有房颤或心绞痛，使用β阻滞剂",
+            "他汀类药物不能减缓进展"
+          ]
+        },
+        "redFlags": [
+          "晕厥",
+          "心绞痛",
+          "失代偿性心力衰竭",
+          "有症状的重度主动脉狭窄"
+        ],
+        "metasTerapeuticas": [
+          "如有症状，早期转诊",
+          "瓣膜置换（TAVR 或手术）"
+        ],
+        "examesIniciais": [
+          "超声心动图",
+          "心电图",
+          "胸部X光"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [],
+      "calculadoras": [],
+      "tags": [
+        "瓣膜病",
+        "杂音",
+        "手术"
+      ]
+    },
+    {
+      "id": "insuficiencia-mitral",
+      "titulo": "二尖瓣反流",
+      "sinonimos": [
+        "IM",
+        "二尖瓣返流"
+      ],
+      "ciap2": [
+        "K83"
+      ],
+      "cid10": [
+        "I34.0",
+        "I05.1"
+      ],
+      "cid11": [
+        "BB61.1"
+      ],
+      "doid": "DOID:11719",
+      "snomedCT": "48724000",
+      "meshId": "D008944",
+      "umlsCui": "C0026266",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "收缩期左心室向左心房的血液反流。可分为原发性（瓣膜性）或继发性（因左心室扩张导致的功能性）。",
+        "criteriosDiagnosticos": [
+          "心尖区全收缩期杂音，向腋窝传导",
+          "超声：通过反流体积、射流面积、收缩口来评估严重程度",
+          "重度二尖瓣反流：射血分数↓，左心室/左心房扩张，肺动脉高压"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "如有心力衰竭，限制盐和液体摄入",
+            "根据耐受情况进行体力活动"
+          ],
+          "farmacologico": [
+            "继发性二尖瓣反流：优化心力衰竭治疗（ACEI/ARB、β阻滞剂、螺内酯）",
+            "原发性二尖瓣反流：临床治疗有限",
+            "如有充血，使用利尿剂",
+            "如有房颤，进行抗凝治疗"
+          ]
+        },
+        "redFlags": [
+          "难治性心力衰竭",
+          "射血分数<60%",
+          "左心室收缩直径>40mm",
+          "近期新发房颤"
+        ],
+        "metasTerapeuticas": [
+          "维持射血分数",
+          "控制症状",
+          "如需手术则进行手术"
+        ],
+        "examesIniciais": [
+          "超声心动图",
+          "心电图",
+          "BNP"
+        ]
+      },
+      "protocolos": [
+        "insuficiencia-cardiaca"
+      ],
+      "medicamentos": [
+        "enalapril",
+        "carvedilol",
+        "furosemida"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "瓣膜病",
+        "杂音",
+        "心力衰竭"
+      ]
+    },
+    {
+      "id": "trombose-venosa-profunda",
+      "titulo": "深静脉血栓形成",
+      "sinonimos": [
+        "DVT",
+        "深静脉血栓性静脉炎"
+      ],
+      "ciap2": [
+        "K94"
+      ],
+      "cid10": [
+        "I80.2"
+      ],
+      "cid11": [
+        "BD72.0"
+      ],
+      "doid": "DOID:1725",
+      "snomedCT": "128053003",
+      "meshId": "D020246",
+      "umlsCui": "C0149871",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "深静脉内血栓形成，通常发生在下肢。有肺栓塞和血栓后综合征的风险。",
+        "criteriosDiagnosticos": [
+          "Wells评分用于DVT（临床概率）",
+          "D-二聚体：低概率时阴性预测值高",
+          "静脉多普勒超声：确诊",
+          "单侧水肿、小腿疼痛、紧绷感"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "早期活动（不再卧床休息）",
+            "弹力压缩袜",
+            "抬高患肢"
+          ],
+          "farmacologico": [
+            "DOACs: 利伐沙班 15mg 每日两次，持续21天，之后 20mg 每日一次",
+            "或 阿哌沙班 10mg 每日两次，持续7天，之后 5mg 每日两次",
+            "替代方案：依诺肝素 + 华法林（桥接）",
+            "疗程：3-6个月（诱发），无限期（非诱发/复发）"
+          ]
+        },
+        "redFlags": [
+          "呼吸困难（怀疑肺栓塞）",
+          "广泛近端DVT",
+          "股青肿",
+          "筋膜室综合征"
+        ],
+        "metasTerapeuticas": [
+          "抗凝治疗",
+          "预防肺栓塞",
+          "预防复发"
+        ],
+        "examesIniciais": [
+          "静脉多普勒超声",
+          "D-二聚体",
+          "血常规",
+          "凝血功能",
+          "肌酐"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "rivaroxabana",
+        "apixabana",
+        "enoxaparina",
+        "varfarina"
+      ],
+      "calculadoras": [
+        "wells-tvp"
+      ],
+      "tags": [
+        "血栓栓塞",
+        "抗凝治疗",
+        "紧急情况"
+      ]
+    },
+    {
+      "id": "pericardite-aguda",
+      "titulo": "急性心包炎",
+      "sinonimos": [
+        "心包炎症"
+      ],
+      "ciap2": [
+        "K84"
+      ],
+      "cid10": [
+        "I30"
+      ],
+      "cid11": [
+        "BC80"
+      ],
+      "doid": "DOID:1787",
+      "snomedCT": "3238004",
+      "meshId": "D010493",
+      "umlsCui": "C0031046",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "心包的炎症，通常为特发性/病毒性。诊断：≥4个标准中的2个。",
+        "criteriosDiagnosticos": [
+          "典型胸痛：前胸，呼吸/仰卧时加重，坐位时缓解",
+          "心包摩擦音",
+          "心电图改变：ST段弥漫抬高，PR段压低",
+          "新出现或增加的心包积液"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "相对休息直至症状缓解",
+            "避免运动3个月（运动员）"
+          ],
+          "farmacologico": [
+            "阿司匹林 650-1000mg 每8小时 1-2周 或",
+            "布洛芬 600mg 每8小时 1-2周",
+            "秋水仙碱 0.5mg 每12小时 3个月（减少复发）",
+            "质子泵抑制剂用于胃保护"
+          ]
+        },
+        "redFlags": [
+          "高热",
+          "大量积液",
+          "心脏压塞",
+          "免疫抑制",
+          "抗凝治疗"
+        ],
+        "metasTerapeuticas": [
+          "疼痛缓解",
+          "炎症标志物正常化"
+        ],
+        "examesIniciais": [
+          "心电图",
+          "超声心动图",
+          "C反应蛋白",
+          "肌钙蛋白",
+          "胸部X光"
+        ]
+      },
+      "protocolos": [
+        "dor-toracica"
+      ],
+      "medicamentos": [
+        "aas",
+        "ibuprofeno",
+        "colchicina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "胸痛",
+        "炎症",
+        "病毒"
+      ]
+    },
+    {
+      "id": "cardiomiopatia-hipertrofica",
+      "titulo": "肥厚型心肌病",
+      "sinonimos": [
+        "CMH",
+        "肥厚性心肌病"
+      ],
+      "ciap2": [
+        "K84"
+      ],
+      "cid10": [
+        "I42.1",
+        "I42.2"
+      ],
+      "cid11": [
+        "BC43.0"
+      ],
+      "doid": "DOID:11984",
+      "snomedCT": "45227007",
+      "meshId": "D002312",
+      "umlsCui": "C0007194",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "原因不明的室壁增厚（≥15mm），通常不对称。遗传原因（肌节突变）。年轻运动员猝死的主要原因。",
+        "criteriosDiagnosticos": [
+          "超声：室壁厚度≥15mm，无其他原因",
+          "左室流出道动态梗阻（梯度≥30 mmHg）",
+          "二尖瓣前向运动（SAM）",
+          "心电图：室壁增厚，Q波，ST-T改变"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免高强度竞技运动",
+            "一级亲属筛查",
+            "遗传咨询"
+          ],
+          "farmacologico": [
+            "β受体阻滞剂（普萘洛尔，美托洛尔）- 首选",
+            "对β受体阻滞剂不耐受时使用维拉帕米",
+            "马伐卡坦（肌动蛋白抑制剂）- 新药",
+            "ICD（植入式心脏复律除颤器）如果猝死风险高"
+          ]
+        },
+        "redFlags": [
+          "晕厥",
+          "家族猝死史",
+          "非持续性室性心动过速",
+          "运动时血压异常反应"
+        ],
+        "metasTerapeuticas": [
+          "预防猝死",
+          "控制症状"
+        ],
+        "examesIniciais": [
+          "超声心动图",
+          "心电图",
+          "24小时动态心电图",
+          "心脏磁共振成像",
+          "基因检测"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "propranolol",
+        "metoprolol",
+        "verapamil"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "猝死",
+        "遗传",
+        "运动员"
+      ]
+    },
+    {
+      "id": "angina-estavel",
+      "titulo": "稳定型心绞痛",
+      "sinonimos": [
+        "慢性心绞痛",
+        "劳力性心绞痛"
+      ],
+      "ciap2": [
+        "K74"
+      ],
+      "cid10": [
+        "I20.8",
+        "I20.9"
+      ],
+      "cid11": [
+        "BA80.1"
+      ],
+      "doid": "DOID:0111052",
+      "snomedCT": "194828000",
+      "meshId": "D060050",
+      "umlsCui": "C0340288",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "由体力活动或情绪压力诱发的胸痛，休息或硝酸酯类药物可缓解。提示冠状动脉阻塞性病变。",
+        "criteriosDiagnosticos": [
+          "胸骨后疼痛，呈压迫感/压榨感",
+          "由体力活动/情绪压力诱发",
+          "休息或硝酸酯类药物在<10分钟内缓解",
+          "典型心绞痛：3/3标准。不典型心绞痛：2/3标准"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "危险因素的修正",
+            "监督下的运动（心脏康复）",
+            "戒烟"
+          ],
+          "farmacologico": [
+            "阿司匹林 100mg/天",
+            "高剂量他汀类药物（阿托伐他汀 40-80mg）",
+            "β受体阻滞剂（美托洛尔、比索洛尔）- 首选抗心绞痛药物",
+            "舌下含服硝酸甘油用于急救",
+            "如症状持续，加用钙通道阻滞剂"
+          ]
+        },
+        "redFlags": [
+          "不稳定型心绞痛",
+          "静息心绞痛",
+          "进行性心绞痛",
+          "心肌梗死后心绞痛"
+        ],
+        "metasTerapeuticas": [
+          "LDL-c <55 mg/dL",
+          "BP <130/80",
+          "HR 55-60 bpm",
+          "戒烟"
+        ],
+        "examesIniciais": [
+          "心电图",
+          "超声心动图",
+          "运动试验",
+          "血脂谱",
+          "血糖"
+        ]
+      },
+      "protocolos": [
+        "dor-toracica"
+      ],
+      "medicamentos": [
+        "aas",
+        "atorvastatina",
+        "metoprolol",
+        "isossorbida"
+      ],
+      "calculadoras": [
+        "risco-cardiovascular"
+      ],
+      "tags": [
+        "冠状动脉疾病",
+        "预防",
+        "胸痛"
+      ]
+    },
+    {
+      "id": "flutter-atrial",
+      "titulo": "心房扑动",
+      "sinonimos": [
+        "FLA"
+      ],
+      "ciap2": [
+        "K78"
+      ],
+      "cid10": [
+        "I48.3",
+        "I48.4"
+      ],
+      "cid11": [
+        "BC81.0"
+      ],
+      "doid": "DOID:0060675",
+      "snomedCT": "5370000",
+      "meshId": "D001282",
+      "umlsCui": "C0004239",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "心房快速性心律失常，伴有大环再入路。典型心电图：F波呈锯齿状，心房率约300次/分钟，AV传导通常为2:1（心率约150次/分钟）。",
+        "criteriosDiagnosticos": [
+          "心电图：DII、DIII、aVF导联的F波（锯齿状）",
+          "心房率250-350次/分钟",
+          "AV传导2:1、3:1、4:1或可变",
+          "心室率规则（除非传导可变）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "如果不稳定，进行电复律（50-100J）",
+            "导管消融（成功率高）"
+          ],
+          "farmacologico": [
+            "控制心率：β受体阻滞剂或非二氢吡啶类钙通道阻滞剂",
+            "抗凝：与房颤相同规则（CHA2DS2-VASc）",
+            "药物复律在房颤中效果较差",
+            "静脉注射伊布利特进行复律（住院）"
+          ]
+        },
+        "redFlags": [
+          "血流动力学不稳定",
+          "失代偿性心力衰竭",
+          "预激综合征"
+        ],
+        "metasTerapeuticas": [
+          "恢复窦性心律或控制心率",
+          "预防血栓栓塞"
+        ],
+        "examesIniciais": [
+          "12导联心电图",
+          "超声心动图",
+          "TSH",
+          "电解质"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "metop罗尔",
+        "地尔硫卓",
+        "胺碘酮"
+      ],
+      "calculadoras": [
+        "cha2ds2-vasc"
+      ],
+      "tags": [
+        "心律失常",
+        "抗凝",
+        "消融"
+      ]
+    },
+    {
+      "id": "bloqueio-atrioventricular",
+      "titulo": "房室传导阻滞",
+      "sinonimos": [
+        "BAV",
+        "房室阻滞"
+      ],
+      "ciap2": [
+        "K84"
+      ],
+      "cid10": [
+        "I44.0",
+        "I44.1",
+        "I44.2"
+      ],
+      "cid11": [
+        "BC61"
+      ],
+      "doid": "DOID:0110687",
+      "snomedCT": "233916004",
+      "meshId": "D054537",
+      "umlsCui": "C0004245",
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "心房和心室之间的传导障碍。1度：PR间期延长。2度：部分P波受阻。3度（完全性房室传导阻滞）：完全的房室分离。",
+        "criteriosDiagnosticos": [
+          "1度房室传导阻滞：PR >200ms，所有P波均传导",
+          "2度房室传导阻滞莫氏I型：PR间期逐渐延长直至P波受阻（文氏现象）",
+          "2度房室传导阻滞莫氏II型：P波受阻无前PR间期延长",
+          "3度房室传导阻滞（完全性房室传导阻滞）：无P波传导，室性逸搏"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "1度和莫氏I型：观察，停用减慢心率的药物",
+            "完全性房室传导阻滞和莫氏II型：临时起搏器 → 永久起搏器"
+          ],
+          "farmacologico": [
+            "阿托品 0.5-1mg 静脉注射（紧急情况，有症状的完全性房室传导阻滞）",
+            "异丙肾上腺素（暂时使用）",
+            "停用药物：β受体阻滞剂，钙通道阻滞剂，地高辛，胺碘酮",
+            "治疗病因：缺血，莱姆病，高钾血症"
+          ]
+        },
+        "redFlags": [
+          "晕厥",
+          "有症状的缓慢心率",
+          "完全性房室传导阻滞",
+          "莫氏II型",
+          "逸搏QRS波群增宽"
+        ],
+        "metasTerapeuticas": [
+          "如需安装起搏器",
+          "适当的心率",
+          "无症状"
+        ],
+        "examesIniciais": [
+          "12导联心电图",
+          "24小时动态心电图",
+          "电解质",
+          "甲状腺功能",
+          "地高辛浓度测定（如有使用）"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "atropina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "心律失常",
+        "起搏器",
+        "紧急情况"
+      ]
+    },
+    {
+      "id": "sindrome-coronariana-aguda",
+      "titulo": "Síndrome Coronariana Aguda",
+      "sinonimos": [
+        "SCA",
+        "Infarto agudo do miocárdio",
+        "IAM",
+        "IAMCSST",
+        "IAMSSST",
+        "Angina instável"
+      ],
+      "doid": "DOID:0060158",
+      "snomedCT": "394659003",
+      "meshId": "D054058",
+      "umlsCui": "C0948089",
+      "ciap2": [
+        "K74",
+        "K75",
+        "K76"
+      ],
+      "cid10": [
+        "I20.0",
+        "I21",
+        "I21.0",
+        "I21.1",
+        "I21.2",
+        "I21.3",
+        "I21.4",
+        "I21.9"
+      ],
+      "cid11": [
+        "BA41",
+        "BA42",
+        "BA80"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Espectro de isquemia miocárdica aguda incluindo angina instável, IAM sem supra de ST (IAMSSST) e IAM com supra de ST (IAMCSST). Representa emergência cardiovascular com necessidade de intervenção imediata.",
+        "criteriosDiagnosticos": [
+          "Dor torácica típica: opressiva, retroesternal, irradiação para MSE/mandíbula, >20min",
+          "Dispneia, sudorese fria, náuseas, síncope",
+          "ECG: Supra de ST ≥1mm em 2 derivações contíguas (IAMCSST)",
+          "ECG: Infra de ST, inversão de onda T (IAMSSST)",
+          "Troponina elevada (curva ascendente)",
+          "Escore HEART ≥4 pontos indica alto risco"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "muito_alto",
+            "criterios": [
+              "IAMCSST",
+              "Instabilidade hemodinâmica",
+              "Arritmia maligna"
+            ],
+            "conduta": "Cateterismo de emergência <90min"
+          },
+          {
+            "nivel": "alto",
+            "criterios": [
+              "IAMSSST com troponina +",
+              "GRACE >140"
+            ],
+            "conduta": "Cateterismo <24h"
+          },
+          {
+            "nivel": "moderado",
+            "criterios": [
+              "Angina instável",
+              "GRACE 109-140"
+            ],
+            "conduta": "Avaliação invasiva em 72h"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "MONABCH: Monitor, Oxigênio (se SatO2<90%), Acesso venoso",
+            "Repouso absoluto",
+            "Desfibrilador à disposição"
+          ],
+          "farmacologico": [
+            "AAS 300mg mastigável imediatamente",
+            "Clopidogrel 300-600mg (ou Ticagrelor 180mg)",
+            "Heparina (HNF ou Enoxaparina)",
+            "Morfina 2-4mg IV se dor refratária",
+            "Nitrato SL (não usar se PAS<90, uso de sildenafil, IAM de VD)",
+            "IAMCSST: Trombolítico (Tenecteplase) se >120min até ICP"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Reperfusão em <90min (ICP primária)",
+          "Controle da dor",
+          "Prevenção de arritmias",
+          "Estabilização hemodinâmica"
+        ],
+        "examesIniciais": [
+          "ECG 12 derivações em <10min",
+          "Troponina (0h, 1h, 3h)",
+          "Hemograma, função renal, eletrólitos",
+          "Coagulograma",
+          "BNP/NT-proBNP",
+          "Rx de tórax"
+        ],
+        "redFlags": [
+          "Hipotensão (PAS<90mmHg) - choque cardiogênico",
+          "Taquiarritmia ou bradiarritmia",
+          "Congestão pulmonar (Killip ≥II)",
+          "Parada cardiorrespiratória",
+          "Dissecção aórtica concomitante",
+          "Sangramento ativo (contraindicação a anticoagulação)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Principal causa de morte no Brasil",
+          "incidencia": "~350.000 casos/ano no Brasil",
+          "mortalidade": "30% na fase aguda sem tratamento adequado",
+          "faixaEtaria": "Aumenta progressivamente com idade, pico >60 anos",
+          "fatoresRisco": [
+            "Hipertensão arterial",
+            "Diabetes mellitus",
+            "Dislipidemia",
+            "Tabagismo",
+            "Obesidade",
+            "História familiar de DAC precoce",
+            "Sedentarismo"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Ruptura ou erosão de placa aterosclerótica vulnerável, com exposição do núcleo lipídico e formação de trombo. No IAMCSST há oclusão total; no IAMSSST/angina instável, oclusão parcial ou microembolização.",
+          "citations": [
+            {
+              "refId": "esc-stemi-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dor torácica opressiva/em aperto",
+            "Irradiação para MSE, mandíbula, epigástrio, dorso",
+            "Dispneia",
+            "Sudorese fria (diaforese)",
+            "Náuseas e vômitos",
+            "Síncope",
+            "Sensação de morte iminente"
+          ],
+          "sinaisExameFisico": [
+            "Palidez cutânea",
+            "Taquicardia ou bradicardia",
+            "B4 (rigidez ventricular)",
+            "Estertores pulmonares (congestão)",
+            "Hipotensão (mau prognóstico)",
+            "Turgência jugular (IAM de VD)"
+          ],
+          "formasClinicas": [
+            "Angina instável: sem elevação de troponina",
+            "IAMSSST: troponina elevada, sem supra de ST",
+            "IAMCSST: supra de ST no ECG"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "História clínica sugestiva",
+            "ECG com alterações isquêmicas",
+            "Elevação de troponina (curva)"
+          ],
+          "diagnosticoDiferencial": [
+            "Dissecção aórtica",
+            "Embolia pulmonar",
+            "Pericardite aguda",
+            "Espasmo esofágico",
+            "Pneumotórax",
+            "Costocondrite"
+          ],
+          "examesLaboratoriais": [
+            "Troponina I ou T (alta sensibilidade)",
+            "CK-MB (se troponina indisponível)",
+            "Hemograma, creatinina, eletrólitos",
+            "Glicemia, HbA1c",
+            "Perfil lipídico"
+          ],
+          "examesImagem": [
+            "ECG 12 derivações",
+            "Ecocardiograma transtorácico",
+            "Rx de tórax",
+            "Angiografia coronariana (cineangiocoronariografia)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-stemi-2023"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Reperfusão coronariana precoce",
+            "Alívio da dor",
+            "Prevenção de complicações",
+            "Prevenção secundária"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Repouso absoluto",
+              "Monitorização contínua",
+              "Oxigenoterapia se SatO2<90%",
+              "Jejum inicial"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-sca-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Antiagregantes",
+                "medicamentos": [
+                  "AAS 300mg",
+                  "Clopidogrel 600mg ou Ticagrelor 180mg"
+                ],
+                "posologia": "Dose de ataque"
+              },
+              {
+                "classe": "Anticoagulantes",
+                "medicamentos": [
+                  "Enoxaparina 1mg/kg SC 12/12h",
+                  "HNF IV"
+                ],
+                "posologia": "Até revascularização"
+              },
+              {
+                "classe": "Analgesia",
+                "medicamentos": [
+                  "Morfina 2-4mg IV"
+                ],
+                "observacoes": "Se dor refratária a nitrato"
+              },
+              {
+                "classe": "Betabloqueador",
+                "medicamentos": [
+                  "Metoprolol 5mg IV"
+                ],
+                "observacoes": "Se não houver contraindicação"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-stemi-2023"
+              }
+            ]
+          },
+          "duracao": "Internação + terapia dupla antiagregante por 12 meses"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Primeira consulta em 7-14 dias pós-alta, depois mensal por 3 meses",
+          "examesControle": [
+            "Ecocardiograma em 4-6 semanas",
+            "Perfil lipídico",
+            "HbA1c",
+            "Função renal"
+          ],
+          "metasTerapeuticas": [
+            "LDL <55 mg/dL",
+            "PA <130/80 mmHg",
+            "HbA1c <7% se diabético",
+            "Cessação tabágica",
+            "Reabilitação cardíaca"
+          ],
+          "criteriosEncaminhamento": [
+            "Todo IAMCSST: emergência/cardiologia intervencionista",
+            "IAMSSST de alto risco",
+            "Complicações mecânicas",
+            "Arritmias sustentadas"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Controle de fatores de risco",
+            "Estatina em alto risco cardiovascular",
+            "AAS em prevenção primária (controverso)"
+          ],
+          "secundaria": [
+            "Terapia dupla antiagregante",
+            "Estatina de alta potência",
+            "Betabloqueador",
+            "IECA/BRA",
+            "Reabilitação cardíaca"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-sca-2020"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "manejo-sca",
+        "anticoagulacao-sca"
+      ],
+      "medicamentos": [
+        "aas",
+        "clopidogrel",
+        "ticagrelor",
+        "enoxaparina",
+        "morfina"
+      ],
+      "calculadoras": [
+        "heart-score",
+        "grace-score",
+        "timi-score"
+      ],
+      "citations": [
+        {
+          "refId": "sbc-sca-2020"
+        },
+        {
+          "refId": "esc-stemi-2023"
+        },
+        {
+          "refId": "aha-ua-nstemi-2021"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "edema-agudo-pulmao",
+      "titulo": "Edema Agudo de Pulmão",
+      "sinonimos": [
+        "EAP",
+        "Edema pulmonar cardiogãnico",
+        "Congestão pulmonar aguda"
+      ],
+      "doid": "DOID:11396",
+      "snomedCT": "67782005",
+      "meshId": "D011654",
+      "umlsCui": "C0034063",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "J81",
+        "I50.1"
+      ],
+      "cid11": [
+        "CB01"
+      ],
+      "categoria": "cardiovascular",
+      "quickView": {
+        "definicao": "Acúmulo abrupto de líquido no interstício e alvéolos pulmonares por aumento da pressão capilar pulmonar (cardiogénico) ou aumento da permeabilidade (não cardiogénico). Emergência com insuficiência respiratória aguda.",
+        "criteriosDiagnosticos": [
+          "Dispneia intensa de inÇio sóbito",
+          "Ortopneia (não tolera decúbito)",
+          "Estertores crepitantes difusos bilaterais",
+          "Escarro róseo espumoso (casos graves)",
+          "Taquipneia, uso de musculatura acessória",
+          "Rx de tórax: infiltrado bilateral “em asa de morcego“",
+          "BNP/NT-proBNP elevado (cardiogénico)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "LEMON: Lasix, Elevar cabeceira, Morfina, Oxigénio, Nitrato",
+            "Cabeceira elevada a 90° (ou sentado com pernas pendentes)",
+            "Oxigénio (máscara nó reinalante, VNI se disponível)",
+            "VNI (CPAP ou BiPAP) - reduz mortalidade",
+            "Acesso venoso, monitorizaÅão"
+          ],
+          "farmacologico": [
+            "FUROSEMIDA 40-80mg IV (0,5-1mg/kg)",
+            "Repetir se necessário; dobrar dose se uso prévio de diurético",
+            "",
+            "NITROGLICERINA SL 0,4mg ou spray (se PAS>90)",
+            "Se possível: NTG IV 10-200mcg/min",
+            "",
+            "MORFINA 2-4mg IV (controverso, cautela)",
+            "",
+            "Se HAS grave: Nitroprussiato IV",
+            "Se hipotensão: Noradrenalina + Dobutamina"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Redução da congestão pulmonar",
+          "Melhora da oxigenação (SatO2>92%)",
+          "Controle da pressão arterial",
+          "Identificação e tratamento da causa"
+        ],
+        "examesIniciais": [
+          "ECG 12 derivaÅóes (isquemia, arritmia)",
+          "Rx de tórax",
+          "BNP ou NT-proBNP",
+          "Troponina",
+          "Gasometria arterial",
+          "Eletrólitos, função renal",
+          "Ecocardiograma (assim que possível)"
+        ],
+        "redFlags": [
+          "Choque cardiogénico (PA baixa, extremidades frias)",
+          "Arritmia grave (FA rãpida, TV)",
+          "IAM associado",
+          "Necessidade de IOT",
+          "Saturáção <80% apesar de O2",
+          "Não resposta a VNI em 30-60 min"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "Complicação comum de IC (1 milhão de internações/ano nos EUA)",
+          "faixaEtaria": "Mais comum em idosos",
+          "fatoresRisco": [
+            "Insuficiência cardíaca prévia",
+            "Cardiopatia isquémica",
+            "Hipertensão arterial",
+            "Valvopatias",
+            "Cardiomiopatias",
+            "Fibrilação atrial",
+            "Doånse renal crónico"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Aumento da pressão de enchimento do VE ça aumento da pressão capilar pulmonar ça transudaÇão de líquido para interstício e alvéolos ça comprometimento das trocas gasosas e hipoxemia. No não cardiogénico, há lesão da barreira alvéolo-capilar.",
+          "citations": [
+            {
+              "refId": "esc-hf-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dispneia intensa",
+            "Ortopneia",
+            "Dispneia paroxística noturna",
+            "Tosse com escarro róseo espumoso",
+            "Ansiedade, sensação de morte iminente"
+          ],
+          "sinaisExameFisico": [
+            "Taquipneia",
+            "Uso de musculatura acessória",
+            "Estertores crepitantes bilaterais",
+            "Sibilos (\"asma cardíaca\")",
+            "Turgçncia jugular",
+            "B3/B4, sopros",
+            "Edema de MMII"
+          ],
+          "formasClinicas": [
+            "EAP hipertensivo (PA elevada)",
+            "EAP normotensivo",
+            "EAP com choque cardiogénico (PA baixa)",
+            "EAP não cardiogénico (SDRA)"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínica + Rx compatível",
+            "BNP/NT-proBNP elevado",
+            "Exclusão de causas não cardiogénegas"
+          ],
+          "diagnosticoDiferencial": [
+            "SDRA (não cardiogénico)",
+            "Pneumonia grave",
+            "ExacerbaÇão de DPOC/asma",
+            "Embolia pulmonar",
+            "Crise de ansiedade/hiperventilaÇão"
+          ],
+          "examesLaboratoriais": [
+            "BNP (>400pg/mL) ou NT-proBNP (>2000pg/mL)",
+            "Troponina (SCA associada?)",
+            "Gasometria arterial",
+            "Hemograma, função renal, eletrólitos",
+            "D-dímero (se suspeita de TEP)"
+          ],
+          "examesImagem": [
+            "Rx de tórax (congestão vascular, infiltrado, cardiomegalia)",
+            "Ecocardiograma (disfunção VE, valvopatias)",
+            "TC de tórax (se dúvida diagnóstica)"
+          ],
+          "citations": [
+            {
+              "refId": "esc-hf-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Aliviar a congestão",
+            "Melhorar a oxigenação",
+            "Tratar a causa",
+            "Prevenir recorrção"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Sentar paciente (pernas pendentes)",
+              "Oxigénoterapia",
+              "VNI (CPAP 5-10cmH2O ou BiPAP)",
+              "Intubação se VNI falhar"
+            ],
+            "citations": [
+              {
+                "refId": "sbc-ic-2018"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Diurético de alça",
+                "medicamentos": [
+                  "Furosemida 40-80mg IV"
+                ],
+                "posologia": "Dose inicial; repetir conforme resposta"
+              },
+              {
+                "classe": "Vasodilatador",
+                "medicamentos": [
+                  "Nitroglicerina SL ou IV",
+                  "Nitroprussiato IV (se HAS)"
+                ],
+                "posologia": "NTG IV 10-200mcg/min"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Inotrópico",
+                "medicamentos": [
+                  "Dobutamina 2,5-20mcg/kg/min"
+                ],
+                "observacoes": "Se baixo débito"
+              },
+              {
+                "classe": "Vasopressor",
+                "medicamentos": [
+                  "Noradrenalina"
+                ],
+                "observacoes": "Se choque"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "esc-hf-2021"
+              }
+            ]
+          },
+          "duracao": "Fase aguda: horas a dias; otimização crônica da IC"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Reavaliação contínua na emergência; seguimento cardiológico",
+          "metasTerapeuticas": [
+            "Euvolemia",
+            "Otimização de IECA/BRA, BB, antagonista mineralocorticoide",
+            "Controle de fatores precipitantes"
+          ],
+          "criteriosEncaminhamento": [
+            "UTI se choque, IOT ou refratário",
+            "Cardiologia para investigação e otimização",
+            "Cirurgia cardíaca se valvopatia grave"
+          ],
+          "citations": [
+            {
+              "refId": "sbc-ic-2018"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "eap-emergencia",
+        "ic-descompensada"
+      ],
+      "medicamentos": [
+        "furosemida",
+        "nitroglicerina",
+        "nitroprussiato",
+        "dobutamina"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "sbc-ic-2018"
+        },
+        {
+          "refId": "esc-hf-2021"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

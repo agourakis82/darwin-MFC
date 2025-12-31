@@ -1,0 +1,1316 @@
+{
+  "locale": "zh",
+  "category": "outros",
+  "generatedAt": "2025-12-30T12:23:17.433Z",
+  "count": 11,
+  "diseases": [
+    {
+      "id": "sindrome-fragilidade",
+      "titulo": "脆弱综合征",
+      "ciap2": [
+        "A04"
+      ],
+      "cid10": [
+        "R54"
+      ],
+      "cid11": [
+        "MG2A"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:0080429",
+      "snomedCT": "248279007",
+      "meshId": "D000073496",
+      "umlsCui": "C0424594",
+      "quickView": {
+        "definicao": "老年人对压力源的易感性增加，由于生理储备下降。在>65岁人群中患病率为10-15%。",
+        "criteriosDiagnosticos": [
+          "Fried表型：≥3个标准=脆弱，1-2=前脆弱",
+          "非故意体重减轻>4.5kg/年",
+          "自我报告的疲劳",
+          "低体力活动",
+          "行走缓慢",
+          "力量减弱（握力）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "多组分锻炼（阻力+平衡）",
+            "蛋白质营养干预",
+            "全面老年评估"
+          ],
+          "farmacologico": [
+            "维生素D缺乏时补充维生素D",
+            "药物审查和去处方"
+          ]
+        },
+        "redFlags": [
+          "反复跌倒",
+          "显著体重减轻",
+          "频繁住院",
+          "功能快速下降"
+        ]
+      },
+      "medicamentos": [
+        "vitamina-d"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "incontinencia-urinaria-idoso",
+      "titulo": "老年人尿失禁",
+      "ciap2": [
+        "U04"
+      ],
+      "cid10": [
+        "N39.4"
+      ],
+      "cid11": [
+        "MF50"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:13580",
+      "snomedCT": "165232002",
+      "meshId": "D014549",
+      "umlsCui": "C0042024",
+      "quickView": {
+        "definicao": "非自愿性尿液丢失，导致社会或卫生影响。社区中30-50%的老年人受到影响。",
+        "criteriosDiagnosticos": [
+          "确定类型：急迫性、压力性、混合性、功能性",
+          "排尿日记",
+          "阳性压力试验",
+          "排尿后残余尿"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "凯格尔运动（盆底肌）",
+            "膀胱训练",
+            "定时排尿",
+            "减少咖啡因摄入"
+          ],
+          "farmacologico": [
+            "奥昔布宁或托特罗定（急迫性）",
+            "米拉贝隆（替代选择）",
+            "注意老年人使用抗胆碱能药物"
+          ]
+        },
+        "redFlags": [
+          "血尿",
+          "盆腔疼痛",
+          "反复尿路感染",
+          "尿潴留"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "quedas-idoso",
+      "titulo": "老年人跌倒综合征",
+      "ciap2": [
+        "A29"
+      ],
+      "cid10": [
+        "W19"
+      ],
+      "cid11": [
+        "NE01"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:14002",
+      "snomedCT": "56307009",
+      "meshId": "D000058",
+      "umlsCui": "C0000921",
+      "quickView": {
+        "definicao": "非故意的地面位移事件。65岁以上人群中约30%每年会发生跌倒。是老年人创伤性死亡的主要原因。",
+        "criteriosDiagnosticos": [
+          "12个月内≥2次跌倒 = 高风险",
+          "Timed Up and Go >12秒",
+          "详细的跌倒史",
+          "步态和平衡评估"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "平衡练习（太极）",
+            "视力矫正",
+            "环境适应",
+            "合适的鞋"
+          ],
+          "farmacologico": [
+            "维生素D 800-1000IU/天",
+            "审查镇静剂和抗高血压药"
+          ]
+        },
+        "redFlags": [
+          "跌倒伴骨折",
+          "头部损伤",
+          "伴随晕厥",
+          "反复跌倒"
+        ]
+      },
+      "medicamentos": [
+        "vitamina-d"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "polifarmacia",
+      "titulo": "老年人多重用药",
+      "ciap2": [
+        "A97"
+      ],
+      "cid10": [
+        "Y57.9"
+      ],
+      "cid11": [
+        "NE60"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:0111688",
+      "snomedCT": "182929008",
+      "meshId": "D019338",
+      "umlsCui": "C0032269",
+      "quickView": {
+        "definicao": "同时使用≥5种药物。65岁以上老年人中有40%。主要的可避免不良事件原因。",
+        "criteriosDiagnosticos": [
+          "药物计数≥5",
+          "通过Beers或STOPP/START识别潜在不适当用药（MPI）",
+          "评估处方瀑布效应",
+          "药物和解"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "药物和解",
+            "应用STOPP/START",
+            "在监督下逐步停药",
+            "涉及患者和家属"
+          ],
+          "farmacologico": [
+            "无 - 治疗是逐步停药"
+          ]
+        },
+        "redFlags": [
+          "不良反应",
+          "跌倒",
+          "认知下降",
+          "不依从",
+          "功能恶化"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "conjuntivite",
+      "titulo": "结膜炎",
+      "ciap2": [
+        "F70"
+      ],
+      "cid10": [
+        "H10"
+      ],
+      "cid11": [
+        "9A60"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:6195",
+      "snomedCT": "9826008",
+      "meshId": "D003231",
+      "umlsCui": "C0009763",
+      "quickView": {
+        "definicao": "结膜的炎症。常见类型包括病毒性（最常见）、细菌性和过敏性。如果感染性，传染性极强。",
+        "criteriosDiagnosticos": [
+          "结膜充血",
+          "分泌物（水样=病毒性，脓性=细菌性）",
+          "瘙痒（过敏性）",
+          "异物感"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "冷敷",
+            "手卫生",
+            "避免与他人接触"
+          ],
+          "farmacologico": [
+            "病毒性：自限性 7-14 天",
+            "细菌性：环丙沙星 滴眼液 1 滴 每日 4 次 7 天",
+            "过敏性：抗组胺药 滴眼液"
+          ]
+        },
+        "redFlags": [
+          "剧烈眼痛",
+          "畏光",
+          "视力下降",
+          "角膜混浊"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "olho-seco",
+      "titulo": "干眼综合征",
+      "ciap2": [
+        "F13"
+      ],
+      "cid10": [
+        "H04.1"
+      ],
+      "cid11": [
+        "9A0A"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:12895",
+      "snomedCT": "302896008",
+      "meshId": "D015352",
+      "umlsCui": "C0013238",
+      "quickView": {
+        "definicao": "一种多因素的ocular表面疾病，伴有泪膜不稳定。患病率随年龄增长和屏幕使用时间增加而升高。",
+        "criteriosDiagnosticos": [
+          "眼睛有沙粒感",
+          "灼热感",
+          "间歇性视力模糊",
+          "眼部疲劳",
+          "反射性流泪"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "使用屏幕时频繁休息（20-20-20规则）",
+            "使用加湿器",
+            "避免直吹空调"
+          ],
+          "farmacologico": [
+            "无防腐剂的人工泪液 4-6次/天",
+            "夜间使用润滑凝胶"
+          ]
+        },
+        "redFlags": [
+          "剧烈疼痛",
+          "视力下降",
+          "对治疗无反应"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "estomatite-aftosa",
+      "titulo": "复发性口腔溃疡",
+      "sinonimos": [
+        "口腔溃疡",
+        "口腔复发性溃疡"
+      ],
+      "ciap2": [
+        "D82"
+      ],
+      "cid10": [
+        "K12.0"
+      ],
+      "cid11": [
+        "DA01.0"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:10581",
+      "snomedCT": "54081009",
+      "meshId": "D013281",
+      "umlsCui": "C0038362",
+      "hpo": [
+        "HP:0000160"
+      ],
+      "tags": [
+        "口腔",
+        "常见",
+        "复发"
+      ],
+      "quickView": {
+        "definicao": "反复发作的口腔溃疡。疼痛性溃疡。病因尚未完全明确。可能与营养缺乏有关。",
+        "criteriosDiagnosticos": [
+          "反复发作的口腔溃疡",
+          "局部疼痛",
+          "持续数周",
+          "自发愈合"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免酸性/辛辣食物",
+            "保持良好的口腔卫生",
+            "补充：铁、B12、叶酸（如缺乏）"
+          ],
+          "farmacologico": [
+            "局部皮质类固醇",
+            "局部麻醉药",
+            "口腔抗菌药"
+          ]
+        },
+        "redFlags": [
+          "生殖器溃疡（贝赫切特病）",
+          "多发性大溃疡",
+          "无愈合迹象"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "cerume-impactado",
+      "titulo": "耳垢堵塞",
+      "sinonimos": [
+        "耳垢栓塞"
+      ],
+      "ciap2": [
+        "H82"
+      ],
+      "cid10": [
+        "H61.2"
+      ],
+      "cid11": [
+        "AB30.0"
+      ],
+      "categoria": "outros",
+      "doid": "DOID:14694",
+      "snomedCT": "69695003",
+      "meshId": "D002624",
+      "umlsCui": "C0007783",
+      "tags": [
+        "orl",
+        "common"
+      ],
+      "quickView": {
+        "definicao": "外耳道内耳垢过度积聚，导致阻塞并出现听力下降和耳闷等症状。",
+        "criteriosDiagnosticos": [
+          "听力下降",
+          "耳闷",
+          "耳镜检查：阻塞性耳垢",
+          "可能有瘙痒",
+          "可能有轻度耳痛"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "用耵聍钩手动清除",
+            "温水冲洗",
+            "耵聍溶解剂：Cerumin 或过氧化氢在清除前使用"
+          ],
+          "farmacologico": [
+            "清除前3-5天使用局部耵聍溶解剂"
+          ]
+        },
+        "redFlags": [
+          "鼓膜穿孔",
+          "外耳感染",
+          "剧烈疼痛"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anafilaxia",
+      "titulo": "过敏性休克",
+      "sinonimos": [
+        "过敏反应",
+        "过敏性休克",
+        "全身性过敏反应"
+      ],
+      "doid": "DOID:5841",
+      "snomedCT": "39579001",
+      "meshId": "D000707",
+      "umlsCui": "C0002792",
+      "ciap2": [
+        "A92"
+      ],
+      "cid10": [
+        "T78.2",
+        "T78.0",
+        "T80.5",
+        "T88.6"
+      ],
+      "cid11": [
+        "4A84"
+      ],
+      "categoria": "outros",
+      "quickView": {
+        "definicao": "一种严重的全身性过敏反应，可能致命，接触过敏原后迅速发生。需要立即识别并使用肾上腺素进行治疗。",
+        "criteriosDiagnosticos": [
+          "标准1：急性起病伴皮肤/黏膜受累 + 呼吸系统受累或低血压",
+          "标准2：接触可能的过敏原后出现≥2项以下症状：皮肤/黏膜、呼吸系统、低血压、胃肠道症状",
+          "标准3：已知过敏原接触后的低血压",
+          "时间：接触后几分钟到几小时",
+          "常见触发因素：药物、食物、昆虫、乳胶"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "如有可能，移除过敏原",
+            "患者体位（低血压时采用Trendelenburg体位）",
+            "ABC - 空气道、氧气",
+            "建立大口径静脉通路",
+            "持续监测"
+          ],
+          "farmacologico": [
+            "肾上腺素 肌肉注射 0.3-0.5mg (0.01mg/kg) 大腿前外侧",
+            "每5-15分钟重复一次，如必要",
+            "生理盐水 0.9% 20mL/kg 快速静脉注射，如低血压",
+            "苯海拉明 25-50mg 静脉注射（辅助治疗）",
+            "雷尼替丁 50mg 静脉注射（辅助治疗）",
+            "甲基强的松龙 1-2mg/kg 静脉注射（预防双相反应）"
+          ]
+        },
+        "metasTerapeuticas": [
+          "稳定血流动力学",
+          "逆转支气管痉挛",
+          "预防双相反应",
+          "识别过敏原"
+        ],
+        "examesIniciais": [
+          "血清组胺（接触后1小时内采集，24小时后重复）",
+          "心电图（如有心血管症状）",
+          "动脉血气分析（如有严重呼吸困难）",
+          "观察至少4-6小时"
+        ],
+        "redFlags": [
+          "严重喘鸣或哮鸣音（气道水肿）",
+          "对肾上腺素无反应的低血压",
+          "需要>2剂肾上腺素",
+          "使用β阻滞剂（反应减弱）",
+          "既往有严重哮喘",
+          "双相反应（1-72小时后复发）"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "0.05-2% 的普通人群",
+          "incidencia": "50-112 例/10万人年",
+          "mortalidade": "0.5-1% 的病例，青少年和年轻成人中更高",
+          "faixaEtaria": "任何年龄；儿童多见于食物，成人多见于药物",
+          "fatoresRisco": [
+            "既往有过敏性休克史",
+            "哮喘（尤其是控制不佳的）",
+            "系统性肥大细胞增多症",
+            "使用β阻滞剂或ACE抑制剂",
+            "餐后运动",
+            "花生/坚果过敏（死亡风险更高）"
+          ],
+          "citations": [
+            {
+              "refId": "wao-anaphylaxis-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "主要由IgE介导的反应或非IgE介导的反应，导致肥大细胞和嗜碱性粒细胞大量脱颗粒，释放组胺、组胺酶、白三烯和前列腺素。引起血管扩张、血管通透性增加、支气管收缩和神经末梢刺激。",
+          "citations": [
+            {
+              "refId": "eaaci-anaphylaxis-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "荨麻疹、瘙痒、潮红",
+            "血管性水肿（唇、舌、眼睑）",
+            "呼吸困难、哮鸣音、喘鸣",
+            "腹痛、恶心、呕吐、腹泻",
+            "头晕、昏厥",
+            "濒死感"
+          ],
+          "sinaisExameFisico": [
+            "全身性荨麻疹",
+            "唇/舌/悬雍垂水肿",
+            "哮鸣音、喘息、喘鸣",
+            "低血压、心动过速",
+            "意识水平改变",
+            "发绀"
+          ],
+          "formasClinicas": [
+            "单相过敏性休克（单一发作）",
+            "双相过敏性休克（1-72小时后复发）",
+            "持续性过敏性休克（症状持续）",
+            "运动诱发的过敏性休克"
+          ],
+          "citations": [
+            {
+              "refId": "wao-anaphylaxis-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "WAO（世界过敏组织）临床标准",
+            "接触后快速起病",
+            "对肾上腺素的反应支持诊断"
+          ],
+          "diagnosticoDiferencial": [
+            "孤立性荨麻疹/血管性水肿",
+            "哮喘发作",
+            "血管迷走性晕厥",
+            "恐慌发作",
+            "类癌综合征",
+            "系统性肥大细胞增多症",
+            "败血性休克"
+          ],
+          "examesLaboratoriais": [
+            "血清组胺酶（1-2小时达峰值）",
+            "血浆组胺（半衰期短）",
+            "随后检测特异性IgE"
+          ],
+          "citations": [
+            {
+              "refId": "eaaci-anaphylaxis-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "立即稳定",
+            "防止病情进展",
+            "预防双相反应",
+            "教育和二级预防"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "如有可能，移除触发因素",
+              "仰卧位，抬高下肢",
+              "补充氧气",
+              "建立大口径静脉通路",
+              "准备气管插管，如有气道水肿"
+            ],
+            "citations": [
+              {
+                "refId": "wao-anaphylaxis-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "肾上腺素",
+                "medicamentos": [
+                  "肾上腺素 1:1000 (1mg/mL)"
+                ],
+                "posologia": "0.3-0.5mg 肌肉注射（儿童0.01mg/kg，最大0.5mg）",
+                "observacoes": "大腿前外侧注射。每5-15分钟重复一次"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "H1抗组胺药",
+                "medicamentos": [
+                  "苯海拉明 25-50mg 静脉注射",
+                  "扑尔敏 25mg 肌肉注射"
+                ],
+                "observacoes": "辅助治疗，不替代肾上腺素"
+              },
+              {
+                "classe": "H2抗组胺药",
+                "medicamentos": [
+                  "雷尼替丁 50mg 静脉注射"
+                ],
+                "observacoes": "可能有助于皮肤症状"
+              },
+              {
+                "classe": "皮质类固醇",
+                "medicamentos": [
+                  "甲基强的松龙 1-2mg/kg 静脉注射",
+                  "氢化可的松 200mg 静脉注射"
+                ],
+                "observacoes": "可能预防双相反应，但无即刻效果"
+              },
+              {
+                "classe": "支气管扩张剂",
+                "medicamentos": [
+                  "沙丁胺醇 4-8喷或雾化"
+                ],
+                "observacoes": "如有支气管痉挛"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "使用β阻滞剂",
+                "conduta": "如对肾上腺素无反应，使用胰高血糖素 1-5mg 静脉注射"
+              },
+              {
+                "situacao": "难治性休克",
+                "conduta": "肾上腺素 静脉注射 0.1-0.5mcg/kg/min 持续输注"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "eaaci-anaphylaxis-2021"
+              }
+            ]
+          },
+          "duracao": "观察至少4-6小时（如严重或有双相反应史，观察24小时）"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "出院后2-4周内就诊过敏科",
+          "metasTerapeuticas": [
+            "识别过敏原",
+            "开具肾上腺素自动注射器",
+            "患者及家属教育",
+            "书面行动计划"
+          ],
+          "criteriosEncaminhamento": [
+            "所有患者：过敏科进行调查",
+            "考虑昆虫毒液免疫疗法",
+            "如为必需药物，考虑脱敏治疗"
+          ],
+          "citations": [
+            {
+              "refId": "wao-anaphylaxis-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "识别和避免过敏原",
+            "阅读食品标签",
+            "医疗记录中的过敏警报"
+          ],
+          "secundaria": [
+            "随身携带肾上腺素自动注射器",
+            "佩戴医疗警示手环",
+            "患者及照顾者教育",
+            "书面应急计划"
+          ],
+          "citations": [
+            {
+              "refId": "eaaci-anaphylaxis-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "anafilaxia-emergencia",
+        "choque-anafilatico"
+      ],
+      "medicamentos": [
+        "adrenalina",
+        "difenidramina",
+        "metilprednisolona",
+        "ranitidina"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "wao-anaphylaxis-2020"
+        },
+        {
+          "refId": "eaaci-anaphylaxis-2021"
+        },
+        {
+          "refId": "asbai-anafilaxia-2022"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "intoxicacao-exogena",
+      "titulo": "急性外源性中毒",
+      "sinonimos": [
+        "中毒",
+        "药物中毒",
+        "过量",
+        "药物中毒"
+      ],
+      "doid": "DOID:3571",
+      "snomedCT": "75478009",
+      "meshId": "D011041",
+      "umlsCui": "C0032343",
+      "ciap2": [
+        "A84",
+        "A86"
+      ],
+      "cid10": [
+        "T36-T65",
+        "T50.9",
+        "X40-X49"
+      ],
+      "cid11": [
+        "NE61"
+      ],
+      "categoria": "outros",
+      "quickView": {
+        "definicao": "暴露于有毒物质（药物、毒品、化学品、植物、有毒动物）导致潜在严重的临床表现。需要识别毒物并进行特定治疗。",
+        "criteriosDiagnosticos": [
+          "暴露史（有意或无意）",
+          "符合的临床表现（中毒综合征）",
+          "经典中毒综合征：",
+          "胆碱能：SLUDGE（流涎、流泪、尿失禁、腹泻、胃肠症状、呕吐）+ 瞳孔缩小 + 心动过缓",
+          "抗胆碱能：\"盲、红、干、热、狂\" + 瞳孔散大 + 心动过速",
+          "拟交感神经：心动过速、高血压、瞳孔散大、高热、躁动",
+          "阿片类：针尖样瞳孔、呼吸抑制、昏迷",
+          "镇静催眠：中枢神经系统抑制、低血压、低温"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ABC - 保持气道通畅优先",
+            "外部暴露时进行皮肤/眼部去污染",
+            "持续监测",
+            "建立静脉通路",
+            "心电图（评估QRS、QTc）"
+          ],
+          "farmacologico": [
+            "特异性解毒剂（如有）：",
+            "阿片类：纳洛酮 0.4-2mg 静脉注射（重复至10mg）",
+            "苯二氮卓类：氟马西尼 0.2-0.5mg 静脉注射（注意！）",
+            "有机磷：阿托品 2-4mg 静脉注射 + 氯解磷定",
+            "对乙酰氨基酚：N-乙酰半胱氨酸",
+            "三环类抗抑郁药：碳酸氢钠如QRS>100ms",
+            "β受体阻滞剂：胰高血糖素 5-10mg 静脉注射",
+            "活性炭 1g/kg 如摄入<1小时（无禁忌症）"
+          ]
+        },
+        "metasTerapeuticas": [
+          "稳定患者",
+          "识别毒物",
+          "必要时去污染",
+          "给予特异性解毒剂",
+          "预防并发症"
+        ],
+        "examesIniciais": [
+          "毛细血管血糖（始终）",
+          "12导联心电图",
+          "动脉血气",
+          "电解质（包括Ca、Mg）",
+          "肾功能和肝功能",
+          "血常规、凝血功能",
+          "毒物筛查（尿液）",
+          "如有条件测定特定血清水平（对乙酰氨基酚、水杨酸盐、锂、地高辛）"
+        ],
+        "redFlags": [
+          "呼吸抑制（RR<12）",
+          "心律失常（QRS>100ms，QTc>500ms）",
+          "抽搐",
+          "难治性低血压",
+          "恶性高热",
+          "横纹肌溶解",
+          "意识水平改变"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~2,5 million exposures/year in the USA",
+          "incidencia": "In Brazil: ~100,000 cases/year reported (underreported)",
+          "mortalidade": "Varies by agent; opioids and pesticides have higher mortality",
+          "faixaEtaria": "Children <6 years: mostly accidental; Adolescents/adults: intentional",
+          "fatoresRisco": [
+            "Access to medications",
+            "Psychiatric disorders",
+            "Use of illicit drugs",
+            "Agricultural work (pesticides)",
+            "Young children (oral exploration)"
+          ],
+          "citations": [
+            {
+              "refId": "aapcc-annual-report-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "根据毒物不同而异：与特定受体结合、酶抑制、离子通道改变、直接细胞损伤。每种中毒综合征反映了所涉毒物的主要机制。",
+          "citations": [
+            {
+              "refId": "goldfrank-toxicology"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "意识水平改变",
+            "恶心和呕吐",
+            "抽搐",
+            "心律失常",
+            "瞳孔改变",
+            "体温改变",
+            "神经肌肉改变"
+          ],
+          "sinaisExameFisico": [
+            "瞳孔大小（瞳孔缩小 vs 瞳孔散大）",
+            "出汗或黏膜干燥",
+            "心率和节律",
+            "体温",
+            "精神状态",
+            "肠蠕动（增加 vs 减少）",
+            "特殊气味"
+          ],
+          "formasClinicas": [
+            "胆碱能中毒综合征（有机磷、氨基甲酸酯）",
+            "抗胆碱能中毒综合征（抗组胺药、三环类抗抑郁药、东莨菪碱）",
+            "拟交感神经中毒综合征（可卡因、安非他明）",
+            "阿片类中毒综合征（吗啡、芬太尼、海洛因）",
+            "镇静催眠中毒综合征（苯二氮卓类、巴比妥类）"
+          ],
+          "citations": [
+            {
+              "refId": "goldfrank-toxicology"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "暴露史",
+            "符合的中毒综合征",
+            "排除其他原因",
+            "如有条件测定特定血清水平"
+          ],
+          "diagnosticoDiferencial": [
+            "低血糖",
+            "中风",
+            "代谢性脑病",
+            "中枢神经系统感染",
+            "精神障碍",
+            "颅脑创伤"
+          ],
+          "examesLaboratoriais": [
+            "血糖",
+            "血气分析（包括乳酸）",
+            "电解质、渗透压",
+            "肾功能和肝功能",
+            "肌酸激酶（横纹肌溶解）",
+            "凝血功能",
+            "毒物筛查",
+            "特定水平（对乙酰氨基酚、水杨酸盐、地高辛、锂等）"
+          ],
+          "examesImagem": [
+            "胸部X光（吸入）",
+            "腹部X光（体内藏毒者）",
+            "头颅CT扫描如持续意识改变"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-intoxicacoes-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "临床稳定",
+            "去污染",
+            "特异性解毒剂",
+            "支持器官功能障碍",
+            "心理评估（如为故意）"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "必要时进行气管插管",
+              "洗胃（禁忌症：腐蚀性物质、碳氢化合物、<1小时）",
+              "活性炭（如<1小时，可吸附物质，气道保护）",
+              "全肠道灌洗（体内藏毒者、铁、锂、缓释制剂）",
+              "血液透析（水杨酸盐、甲醇、乙二醇、锂）"
+            ],
+            "citations": [
+              {
+                "refId": "goldfrank-toxicology"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "解毒剂",
+                "medicamentos": [
+                  "纳洛酮（阿片类）",
+                  "阿托品（有机磷）",
+                  "N-乙酰半胱氨酸（对乙酰氨基酚）",
+                  "氟马西尼（苯二氮卓类）",
+                  "碳酸氢钠（三环类抗抑郁药）"
+                ],
+                "observacoes": "根据识别的毒物使用"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "对乙酰氨基酚",
+                "conduta": "如血药浓度高于治疗线在Nomogram上使用N-乙酰半胱氨酸"
+              },
+              {
+                "situacao": "有机磷",
+                "conduta": "阿托品直至分泌物干燥 + 前24-48小时内使用氯解磷定"
+              },
+              {
+                "situacao": "三环类抗抑郁药",
+                "conduta": "如QRS>100ms使用碳酸氢钠 1-2mEq/kg"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbpt-intoxicacoes-2021"
+              }
+            ]
+          },
+          "duracao": "观察时间至少6-24小时，具体取决于毒物；某些情况需要长期住院"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "根据严重程度和毒物",
+          "metasTerapeuticas": [
+            "症状缓解",
+            "实验室指标正常化",
+            "如为故意进行心理评估"
+          ],
+          "criteriosEncaminhamento": [
+            "如血流动力学不稳定或呼吸抑制转入ICU",
+            "如自杀企图转介精神科",
+            "联系中毒中心获取指导（0800 722 6001 - CEATOX-SP）"
+          ],
+          "citations": [
+            {
+              "refId": "sbpt-intoxicacoes-2021"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "安全储存药物和化学品",
+            "教育关于风险",
+            "使用安全包装"
+          ],
+          "secundaria": [
+            "早期识别",
+            "立即联系中毒中心",
+            "评估和治疗精神障碍"
+          ],
+          "citations": [
+            {
+              "refId": "aapcc-annual-report-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "intoxicacao-aguda",
+        "lavagem-gastrica",
+        "carvao-ativado"
+      ],
+      "medicamentos": [
+        "naloxona",
+        "atropina",
+        "n-acetilcisteina",
+        "flumazenil"
+      ],
+      "calculadoras": [
+        "nomograma-paracetamol"
+      ],
+      "citations": [
+        {
+          "refId": "goldfrank-toxicology"
+        },
+        {
+          "refId": "sbpt-intoxicacoes-2021"
+        },
+        {
+          "refId": "aapcc-annual-report-2022"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "queimaduras",
+      "titulo": "烧伤",
+      "sinonimos": [
+        "热烧伤",
+        "化学烧伤",
+        "电烧伤",
+        "烫伤"
+      ],
+      "doid": "DOID:0080312",
+      "snomedCT": "125666000",
+      "meshId": "D002056",
+      "umlsCui": "C0006434",
+      "ciap2": [
+        "S14"
+      ],
+      "cid10": [
+        "T20-T32",
+        "T30",
+        "T31"
+      ],
+      "cid11": [
+        "NB5"
+      ],
+      "categoria": "outros",
+      "quickView": {
+        "definicao": "由热、化学、电或放射性物质引起的组织损伤。严重程度取决于烧伤面积（% TBSA）、深度和位置。大面积烧伤需要液体复苏和专科治疗。",
+        "criteriosDiagnosticos": [
+          "深度：",
+          "1度：红斑，疼痛，无水泡（表皮）",
+          "浅2度：水泡，湿润基底，非常疼痛",
+          "深2度：破裂的水泡，苍白基底，疼痛较轻",
+          "3度：坏死，无痛，白色/黑色",
+          "",
+          "面积 - 成人九分法：",
+          "头部 9%，每个上肢 9%，前胸 18%，后背 18%，每个下肢 18%，会阴 1%",
+          "患者手掌 = 1% TBSA"
+        ],
+        "classificacaoRisco": [
+          {
+            "nivel": "低",
+            "criterios": [
+              "<10% TBSA 成人",
+              "浅2度",
+              "无面部/手部/足部/会阴"
+            ],
+            "conduta": "门诊治疗"
+          },
+          {
+            "nivel": "中",
+            "criterios": [
+              "10-20% TBSA",
+              "深2度",
+              "老年人或儿童"
+            ],
+            "conduta": "考虑住院"
+          },
+          {
+            "nivel": "高",
+            "criterios": [
+              ">20% TBSA",
+              "3度 >5%",
+              "面部、手部、足部、生殖器、关节",
+              "电烧伤、化学烧伤、吸入性损伤"
+            ],
+            "conduta": "烧伤中心"
+          }
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "用流动水冷却（10-20分钟） - 不使用冰",
+            "移除衣物和首饰（如未粘连）",
+            "覆盖无菌敷料",
+            "抬高四肢",
+            "保持体温（避免低体温）"
+          ],
+          "farmacologico": [
+            "液体复苏（Parkland）：",
+            "4mL x 体重(kg) x %TBSA 在最初的 24 小时内",
+            "前 8 小时 50%，接下来 16 小时 50%",
+            "目标：尿量 0.5-1mL/kg/h",
+            "",
+            "镇痛：吗啡或曲马多 静脉注射",
+            "破伤风预防",
+            "不常规使用抗生素预防",
+            "2度/3度烧伤使用银磺胺嘧啶敷料"
+          ]
+        },
+        "metasTerapeuticas": [
+          "适当的液体复苏",
+          "疼痛控制",
+          "感染预防",
+          "功能和美观的保存",
+          "定向愈合"
+        ],
+        "examesIniciais": [
+          "血常规，电解质，肾功能",
+          "动脉血气（如有吸入性损伤）",
+          "一氧化碳血红蛋白（如在封闭环境中发生火灾）",
+          "心电图（如电烧伤）",
+          "肌酸激酶（电烧伤中的横纹肌溶解）",
+          "胸部X光（如有吸入性损伤怀疑）"
+        ],
+        "redFlags": [
+          "呼吸道烧伤（声音嘶哑，喘鸣，鼻毛烧焦）",
+          "电烧伤（心律失常和隔室综合征的风险）",
+          "化学烧伤（持续冲洗）",
+          "环形损伤（隔室综合征）",
+          "TBSA >20%（低血容量休克）",
+          "年龄极端（<2 或 >60 岁）"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "全球每年数百万例",
+          "incidencia": "~1 百万例/年在巴西",
+          "mortalidade": "取决于烧伤面积；>50% TBSA 的死亡率很高",
+          "faixaEtaria": "幼儿（烫伤）和成人（工作）",
+          "fatoresRisco": [
+            "不安全的家庭环境",
+            "高风险工作（工业、建筑）",
+            "酒精和毒品",
+            "癫痫",
+            "年龄极端",
+            "虐待（儿童和老年人）"
+          ],
+          "citations": [
+            {
+              "refId": "sbq-queimaduras-2021"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "组织损伤分为三个区域：凝固区（中央坏死）、停滞区（可能挽救）和充血区（炎症）。大面积烧伤可引发全身炎症反应，增加毛细血管通透性，导致水肿和分布性休克。",
+          "citations": [
+            {
+              "refId": "aba-guidelines-2016"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "疼痛（根据深度不同）",
+            "红斑、水泡或坏死",
+            "局部或全身水肿",
+            "吸入症状（咳嗽、声音嘶哑、呼吸困难）"
+          ],
+          "sinaisExameFisico": [
+            "损伤外观（颜色、水泡、质地）",
+            "触觉敏感性",
+            "毛细血管充盈",
+            "呼吸道损伤迹象",
+            "远端脉搏（环形损伤）"
+          ],
+          "formasClinicas": [
+            "热烧伤（火焰、接触、烫伤）",
+            "化学烧伤（酸、碱）",
+            "电烧伤（低压或高压）",
+            "吸入性损伤"
+          ],
+          "citations": [
+            {
+              "refId": "sbq-queimaduras-2021"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "评估深度",
+            "计算面积（九分法或手掌法）",
+            "识别特殊区域",
+            "评估相关损伤"
+          ],
+          "diagnosticoDiferencial": [
+            "中毒性表皮坏死松解症（TEN）",
+            "Stevens-Johnson 综合征",
+            "严重接触性皮炎",
+            "天疱疮/副天疱疮"
+          ],
+          "examesLaboratoriais": [
+            "血常规",
+            "电解质、尿素、肌酐",
+            "动脉血气",
+            "乳酸",
+            "肌酸激酶（电烧伤）",
+            "一氧化碳血红蛋白（吸入性损伤）"
+          ],
+          "examesImagem": [
+            "胸部X光",
+            "支气管镜检查（如有吸入性损伤怀疑）"
+          ],
+          "citations": [
+            {
+              "refId": "aba-guidelines-2016"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "血液动力学复苏",
+            "充分镇痛",
+            "预防感染",
+            "适当愈合",
+            "功能和美观的保存"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "用流动水初步冷却",
+              "使用银磺胺嘧啶或生物敷料",
+              "必要时进行外科清创",
+              "如有隔室综合征进行切开减压/筋膜切开术",
+              "深烧伤进行植皮",
+              "早期物理治疗"
+            ],
+            "citations": [
+              {
+                "refId": "sbq-queimaduras-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "晶体液",
+                "medicamentos": [
+                  "乳酸林格液"
+                ],
+                "posologia": "4mL/kg/%TBSA 在 24 小时内（Parkland）",
+                "observacoes": "前 8 小时 50%"
+              },
+              {
+                "classe": "镇痛药",
+                "medicamentos": [
+                  "吗啡",
+                  "曲马多"
+                ],
+                "posologia": "根据疼痛强度"
+              },
+              {
+                "classe": "破伤风预防",
+                "medicamentos": [
+                  "破伤风疫苗 + 破伤风免疫球蛋白 如有需要"
+                ]
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "局部抗菌药",
+                "medicamentos": [
+                  "1% 银磺胺嘧啶"
+                ],
+                "observacoes": "用于 2度/3度烧伤"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "aba-guidelines-2016"
+              }
+            ]
+          },
+          "duracao": "根据面积和深度而定"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "每 24-72 小时更换敷料；长期随访",
+          "metasTerapeuticas": [
+            "2-3 周内愈合（浅2度）",
+            "预防增生性瘢痕",
+            "功能康复",
+            "心理支持"
+          ],
+          "criteriosEncaminhamento": [
+            "烧伤中心：>20% TBSA，3度，面部/手部/足部/生殖器，电烧伤，化学烧伤，吸入性损伤",
+            "整形手术：瘢痕，挛缩",
+            "心理学/精神病学"
+          ],
+          "citations": [
+            {
+              "refId": "sbq-queimaduras-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "queimaduras-atendimento-inicial",
+        "parkland-ressuscitacao"
+      ],
+      "medicamentos": [
+        "morfina",
+        "sulfadiazina-prata"
+      ],
+      "calculadoras": [
+        "regra-dos-9",
+        "parkland"
+      ],
+      "citations": [
+        {
+          "refId": "sbq-queimaduras-2021"
+        },
+        {
+          "refId": "aba-guidelines-2016"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

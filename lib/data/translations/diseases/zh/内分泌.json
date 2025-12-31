@@ -1,0 +1,290 @@
+{
+  "locale": "zh",
+  "category": "内分泌",
+  "generatedAt": "2025-12-30T12:23:17.433Z",
+  "count": 4,
+  "diseases": [
+    {
+      "id": "hipertireoidismo-subclinico",
+      "titulo": "亚临床甲状腺功能亢进",
+      "sinonimos": [
+        "亚临床甲状腺毒症"
+      ],
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E05.9"
+      ],
+      "cid11": [
+        "5A01.Z"
+      ],
+      "doid": "DOID:0080532",
+      "snomedCT": "237516002",
+      "meshId": "D000073058",
+      "umlsCui": "C0342157",
+      "categoria": "内分泌",
+      "quickView": {
+        "definicao": "促甲状腺激素（TSH）受抑制，游离T4和游离T3正常。可能是内源性的（如格雷夫斯病、毒性结节）或外源性的（如左旋甲状腺素过量）。",
+        "criteriosDiagnosticos": [
+          "TSH <0.1-0.4 mUI/L（根据实验室）",
+          "游离T4和游离T3正常",
+          "I级：TSH 0.1-0.4 mUI/L",
+          "II级：TSH <0.1 mUI/L"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "如果轻度且无症状，则观察",
+            "调查原因：甲状腺扫描、抗TRAB"
+          ],
+          "farmacologico": [
+            "如果：>65岁、房颤、骨质疏松、有症状，则治疗",
+            "内源性原因：甲巯咪唑或放射性碘",
+            "外源性原因：减少左旋甲状腺素剂量",
+            "如有肾上腺能症状，使用β阻滞剂"
+          ]
+        },
+        "redFlags": [
+          "房颤",
+          "骨质疏松",
+          "心血管症状",
+          "老年人>65岁"
+        ],
+        "metasTerapeuticas": [
+          "TSH正常",
+          "甲状腺功能正常"
+        ],
+        "examesIniciais": [
+          "TSH",
+          "游离T4",
+          "游离T3",
+          "抗TRAB",
+          "如需进行甲状腺扫描"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "propranolol",
+        "metimazol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "甲状腺",
+        "心律失常",
+        "骨质疏松"
+      ]
+    },
+    {
+      "id": "insuficiencia-adrenal",
+      "titulo": "肾上腺功能不全",
+      "sinonimos": [
+        "艾迪生病",
+        "肾上腺功能减退"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E27.1",
+        "E27.2",
+        "E27.4"
+      ],
+      "cid11": [
+        "5A74.1"
+      ],
+      "doid": "DOID:10493",
+      "snomedCT": "386584007",
+      "meshId": "D000309",
+      "umlsCui": "C0001623",
+      "categoria": "内分泌",
+      "quickView": {
+        "definicao": "皮质醇（原发性）或ACTH（继发性）产生不足。原发性：肾上腺破坏。继发性：外源性皮质类固醇抑制是常见原因。",
+        "criteriosDiagnosticos": [
+          "早晨皮质醇 <5 mcg/dL：提示功能不全",
+          "皮质醇 >18 mcg/dL：排除功能不全",
+          "ACTH刺激试验：皮质醇 <18 mcg/dL",
+          "ACTH：升高（原发性）或低/正常（继发性）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "疾病教育和识别危象",
+            "佩戴/携带医疗识别手环/卡片",
+            "教授自我注射氢化可的松"
+          ],
+          "farmacologico": [
+            "氢化可的松 15-25mg/天（分次：2/3 早晨，1/3 下午）",
+            "或 泼尼松 3-5mg/天",
+            "如为原发性，氟氢可的松 0.05-0.2mg/天",
+            "在应激/疾病时加倍剂量"
+          ]
+        },
+        "redFlags": [
+          "肾上腺危象：低血压、呕吐、腹痛",
+          "高钾血症",
+          "严重低钠血症"
+        ],
+        "metasTerapeuticas": [
+          "临床良好状态",
+          "BP 正常",
+          "电解质正常"
+        ],
+        "examesIniciais": [
+          "8小时皮质醇",
+          "ACTH",
+          "钠、钾",
+          "血糖",
+          "抗21-羟化酶"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "hydrocortisone",
+        "prednisone"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "紧急",
+        "皮质类固醇",
+        "内分泌学"
+      ]
+    },
+    {
+      "id": "hipogonadismo-masculino",
+      "titulo": "男性性腺功能减退症",
+      "sinonimos": [
+        "睾酮缺乏",
+        "男性更年期",
+        "DAEM"
+      ],
+      "ciap2": [
+        "Y99"
+      ],
+      "cid10": [
+        "E29.1"
+      ],
+      "cid11": [
+        "5A80.0"
+      ],
+      "doid": "DOID:1924",
+      "snomedCT": "48723006",
+      "meshId": "D007006",
+      "umlsCui": "C0020619",
+      "categoria": "内分泌",
+      "quickView": {
+        "definicao": "睾酮缺乏的临床综合征，伴有特征性的症状和体征。患病率随年龄增加而增加。",
+        "criteriosDiagnosticos": [
+          "早晨总睾酮 <300 ng/dL（重复测定）",
+          "症状：疲劳、勃起功能障碍、性欲减退、情绪低落",
+          "体征：肌肉质量减少、骨质疏松、乳房发育",
+          "LH：升高（原发性）或低/正常（继发性）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "如果肥胖则减肥",
+            "体育锻炼",
+            "优化睡眠",
+            "调查继发原因"
+          ],
+          "farmacologico": [
+            "明确指征：症状 + 确认睾酮低",
+            "睾酮环戊丙酸酯 200mg 肌肉注射 每2周一次",
+            "睾酮十一酸酯 1000mg 肌肉注射 每10-12周一次",
+            "监测血细胞比容、PSA、血脂"
+          ]
+        },
+        "redFlags": [
+          "前列腺癌",
+          "血细胞比容 >54%",
+          "PSA 升高",
+          "垂体瘤"
+        ],
+        "metasTerapeuticas": [
+          "睾酮 400-700 ng/dL",
+          "症状改善"
+        ],
+        "examesIniciais": [
+          "总睾酮（2次早晨测定）",
+          "LH, FSH",
+          "催乳素",
+          "PSA",
+          "血细胞比容"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [],
+      "calculadoras": [],
+      "tags": [
+        "男科学",
+        "勃起功能障碍",
+        "骨质疏松"
+      ]
+    },
+    {
+      "id": "hiperprolactinemia",
+      "titulo": "高泌乳素血症",
+      "sinonimos": [
+        "泌乳素升高"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E22.1"
+      ],
+      "cid11": [
+        "5A60.1"
+      ],
+      "doid": "DOID:10504",
+      "snomedCT": "237662005",
+      "meshId": "D006966",
+      "umlsCui": "C0020514",
+      "categoria": "内分泌",
+      "quickView": {
+        "definicao": "血清泌乳素升高。原因：泌乳素瘤、药物（抗精神病药、甲氧氯普胺）、甲状腺功能减退、妊娠。",
+        "criteriosDiagnosticos": [
+          "女性泌乳素 >25 ng/mL，男性 >20 ng/mL",
+          "排除继发原因：药物、甲状腺功能减退",
+          "如果泌乳素 >200 ng/mL：高度提示泌乳素瘤",
+          "如果泌乳素 >100 ng/mL 或有压迫症状：进行鞍区磁共振成像"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "如果可能，停用致病药物",
+            "治疗甲状腺功能减退"
+          ],
+          "farmacologico": [
+            "多巴胺激动剂：卡麦角林 0.25-1mg 1-2次/周",
+            "溴隐亭作为替代",
+            "如果药物耐药或视交叉压迫：手术治疗"
+          ]
+        },
+        "redFlags": [
+          "剧烈头痛",
+          "视觉改变（偏盲）",
+          "垂体卒中"
+        ],
+        "metasTerapeuticas": [
+          "泌乳素正常",
+          "恢复性腺功能",
+          "肿瘤缩小"
+        ],
+        "examesIniciais": [
+          "泌乳素（2次）",
+          "TSH",
+          "β-HCG",
+          "鞍区磁共振成像"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "cabergolina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "垂体",
+        "闭经",
+        "乳汁分泌"
+      ]
+    }
+  ]
+}

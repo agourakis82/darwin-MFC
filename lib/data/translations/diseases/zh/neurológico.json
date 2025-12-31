@@ -1,0 +1,258 @@
+{
+  "locale": "zh",
+  "category": "neurológico",
+  "generatedAt": "2025-12-30T12:23:17.432Z",
+  "count": 3,
+  "diseases": [
+    {
+      "id": "cefaleia-em-salvas",
+      "titulo": "丛集性头痛 (Cluster Headache)",
+      "categoria": "neurológico",
+      "cid10": [
+        "G44.0"
+      ],
+      "cid11": [
+        "8A82"
+      ],
+      "ciap2": [
+        "N89"
+      ],
+      "snomedCT": "193031009",
+      "doid": "DOID:9634",
+      "meshId": "D003027",
+      "umlsCui": "C0009043",
+      "classificacao": {
+        "tipo": "头痛",
+        "subtipo": "原发性",
+        "classificacaoEspecifica": {
+          "sistema": "ICHD-3",
+          "codigo": "3.1",
+          "descricao": "发作性丛集性头痛"
+        }
+      },
+      "quickView": {
+        "definicao": "原发性严重头痛，单侧，眶周/颞部，持续15-180分钟，伴有自主神经症状（流泪、流涕、眼睑下垂）。",
+        "criteriosDiagnosticos": [
+          "≥5次发作",
+          "单侧疼痛，眶周/颞部，严重或极严重",
+          "持续时间：15-180分钟",
+          "≥1个同侧症状：流泪、充血/流涕、面部出汗、瞳孔缩小/眼睑下垂、眼睑水肿",
+          "频率：从隔天1次到每天8次"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免在发作期间饮酒",
+            "吸入氧气治疗（100% O2，7-15L/min，持续15分钟）"
+          ],
+          "farmacologico": [
+            "急性发作：舒马曲坦 6mg 皮下注射 或 20mg 鼻喷剂",
+            "预防：维拉帕米 240-960mg/天（金标准）",
+            "替代方案：泼尼松、托吡酯"
+          ]
+        },
+        "redFlags": [
+          "首次发作（排除其他原因）",
+          "局灶性神经症状",
+          "模式改变"
+        ],
+        "examesIniciais": [
+          "颅脑MRI（排除病变）",
+          "神经学检查"
+        ]
+      },
+      "sinaisNeurologicos": [
+        "眼睑下垂",
+        "瞳孔缩小",
+        "流泪",
+        "流涕",
+        "面部出汗"
+      ],
+      "tratamentoNeurologico": {
+        "primeiraLinha": {
+          "medicamentos": [
+            "sumatriptano",
+            "verapamil"
+          ],
+          "outrasIntervencoes": [
+            "吸入氧气治疗"
+          ]
+        }
+      },
+      "tags": [
+        "头痛",
+        "丛集",
+        "cluster",
+        "舒马曲坦",
+        "维拉帕米"
+      ]
+    },
+    {
+      "id": "neuropatia-periferica-diabetica",
+      "titulo": "糖尿病周围神经病变",
+      "categoria": "neurológico",
+      "cid10": [
+        "G63.2",
+        "E11.4"
+      ],
+      "cid11": [
+        "8C03",
+        "5A10"
+      ],
+      "ciap2": [
+        "N94",
+        "T90"
+      ],
+      "snomedCT": "230572002",
+      "doid": "DOID:5682",
+      "meshId": "D003929",
+      "umlsCui": "C0011882",
+      "classificacao": {
+        "tipo": "神经病变",
+        "subtipo": "多发性神经病变"
+      },
+      "quickView": {
+        "definicao": "与糖尿病相关的周围神经病变，特征为感觉症状（疼痛、烧灼感、麻木）和/或运动障碍，通常呈“手套和袜子”模式。",
+        "criteriosDiagnosticos": [
+          "糖尿病病史",
+          "症状：疼痛、烧灼感、麻木、手脚刺痛",
+          "体格检查：振动觉、精细触觉减退，反射减弱",
+          "检查：Semmes-Weinstein 10g单丝",
+          "EMG/NCV：确认神经病变"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "严格血糖控制（HbA1c <7%）",
+            "足部护理（预防溃疡）",
+            "定期体育锻炼"
+          ],
+          "farmacologico": [
+            "神经痛：",
+            "- 加巴喷丁 300-3600mg/天",
+            "- 普瑞巴林 75-600mg/天",
+            "- 度洛西汀 60-120mg/天",
+            "- 阿米替林 25-100mg/天"
+          ]
+        },
+        "redFlags": [
+          "足部溃疡（截肢风险）",
+          "显著的运动障碍",
+          "自主神经病变（胃轻瘫、低血压）"
+        ],
+        "examesIniciais": [
+          "10g 单丝",
+          "128Hz 音叉",
+          "EMG/NCV（确认）",
+          "HbA1c"
+        ]
+      },
+      "examesNeurologicos": [
+        {
+          "tipo": "Semmes-Weinstein 单丝",
+          "indicacao": "筛查神经病变",
+          "quandoSolicitar": "所有糖尿病患者每年一次"
+        },
+        {
+          "tipo": "EMG/NCV",
+          "indicacao": "确认诊断和评估严重程度",
+          "quandoSolicitar": "有提示症状或单丝检查阳性"
+        }
+      ],
+      "escalasNeurologicas": [
+        {
+          "name": "糖尿病神经病变症状量表",
+          "description": "评估神经病变症状",
+          "uso": "监测"
+        }
+      ],
+      "tratamentoNeurologico": {
+        "primeiraLinha": {
+          "medicamentos": [
+            "加巴喷丁",
+            "普瑞巴林",
+            "度洛西汀"
+          ],
+          "outrasIntervencoes": []
+        }
+      },
+      "prognostico": {
+        "curso": "慢性",
+        "expectativa": "缓慢进展，可能进行症状控制",
+        "fatoresPrognosticos": [
+          "血糖控制",
+          "糖尿病持续时间",
+          "其他并发症的存在"
+        ]
+      },
+      "tags": [
+        "神经病变",
+        "糖尿病",
+        "多发性神经病变",
+        "加巴喷丁",
+        "普瑞巴林"
+      ]
+    },
+    {
+      "id": "neuropatia-periferica",
+      "titulo": "周围神经病变",
+      "sinonimos": [
+        "多发性神经病变"
+      ],
+      "ciap2": [
+        "N94"
+      ],
+      "cid10": [
+        "G62"
+      ],
+      "cid11": [
+        "8C02"
+      ],
+      "categoria": "neurológico",
+      "doid": "DOID:330",
+      "snomedCT": "302226006",
+      "meshId": "D010523",
+      "umlsCui": "C0027882",
+      "hpo": [
+        "HP:0009830",
+        "HP:0003470"
+      ],
+      "tags": [
+        "neurológico",
+        "慢性"
+      ],
+      "quickView": {
+        "definicao": "周围神经损伤。症状：感觉异常、麻木、烧灼感、无力、疼痛。原因：糖尿病、营养缺乏、毒素。",
+        "criteriosDiagnosticos": [
+          "感觉异常/麻木",
+          "神经性疼痛",
+          "肌力减弱",
+          "反射减弱",
+          "神经系统检查：感觉/运动功能障碍"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "治疗原发病",
+            "物理治疗",
+            "必要时使用矫形器支持"
+          ],
+          "farmacologico": [
+            "镇痛药：阿米替林 10-50mg/天",
+            "或加巴喷丁 300-1800mg/天",
+            "或普瑞巴林 75-300mg/天",
+            "补充：B12、B6、叶酸（如缺乏）"
+          ]
+        },
+        "redFlags": [
+          "快速进展",
+          "颅神经受累",
+          "自主神经症状",
+          "上行性无力"
+        ]
+      },
+      "medicamentos": [
+        "amitriptilina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

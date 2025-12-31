@@ -1,0 +1,579 @@
+{
+  "locale": "zh",
+  "category": "musculoesqueletico",
+  "generatedAt": "2025-12-30T12:23:17.430Z",
+  "count": 11,
+  "diseases": [
+    {
+      "id": "osteoartrite",
+      "titulo": "骨关节炎（退行性关节病）",
+      "ciap2": [
+        "L91"
+      ],
+      "cid10": [
+        "M15",
+        "M19"
+      ],
+      "cid11": [
+        "FA00"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:8398",
+      "snomedCT": "396275006",
+      "meshId": "D010003",
+      "umlsCui": "C0029408",
+      "quickView": {
+        "definicao": "关节的退行性疾病。老年人中最常见。膝关节、髋关节、手部最常受影响。",
+        "criteriosDiagnosticos": [
+          "活动时关节疼痛加剧",
+          "晨僵<30分钟",
+          "关节弹响",
+          "X线：关节间隙变窄，骨赘形成"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "锻炼（增强肌力，拉伸）",
+            "肥胖者减重",
+            "物理治疗",
+            "必要时使用矫形器"
+          ],
+          "farmacologico": [
+            "对乙酰氨基酚 1g 每6小时一次（首选）",
+            "若效果不佳：局部或口服非甾体抗炎药",
+            "必要时进行关节内注射皮质类固醇"
+          ]
+        },
+        "redFlags": [
+          "关节感染",
+          "骨折",
+          "炎症性关节病"
+        ]
+      },
+      "medicamentos": [
+        "paracetamol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "fibromialgia",
+      "titulo": "纤维肌痛综合征",
+      "ciap2": [
+        "L18"
+      ],
+      "cid10": [
+        "M79.3"
+      ],
+      "cid11": [
+        "MG30.0"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:3634",
+      "snomedCT": "23867004",
+      "meshId": "D005356",
+      "umlsCui": "C0016053",
+      "hpo": [
+        "HP:0003327",
+        "HP:0003324"
+      ],
+      "tags": [
+        "musculoesqueletico",
+        "慢性",
+        "疼痛"
+      ],
+      "quickView": {
+        "definicao": "慢性广泛性疼痛综合征。触痛点。疲劳，睡眠障碍。",
+        "criteriosDiagnosticos": [
+          "慢性广泛性疼痛 ≥3 个月",
+          "≥11 个触痛点在 18 个点（ACR 1990 标准）",
+          "或 ACR 2010/2016 标准"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "运动（有氧运动，拉伸）",
+            "疾病教育",
+            "认知行为疗法",
+            "改善睡眠"
+          ],
+          "farmacologico": [
+            "度洛西汀 60mg/天",
+            "或 普瑞巴林",
+            "或 阿米替林 10-50mg 睡前"
+          ]
+        },
+        "redFlags": [
+          "局灶性神经症状",
+          "真正的关节炎",
+          "风湿性疾病"
+        ]
+      },
+      "medicamentos": [
+        "duloxetina",
+        "pregabalina",
+        "amitriptilina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "gota",
+      "titulo": "痛风",
+      "ciap2": [
+        "T92"
+      ],
+      "cid10": [
+        "M10"
+      ],
+      "cid11": [
+        "FA25"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:13189",
+      "snomedCT": "90560007",
+      "meshId": "D006073",
+      "umlsCui": "C0018099",
+      "quickView": {
+        "definicao": "单钠尿酸盐晶体沉积引起的炎症性关节炎。血尿酸 >7mg/dL。男性更为常见。",
+        "criteriosDiagnosticos": [
+          "急性单关节炎（第1跖趾关节 = 足痛风是典型的）",
+          "剧烈疼痛，突然发作，12-24小时内达到高峰",
+          "红斑、水肿、剧烈发热",
+          "高尿酸血症（但发作时可能正常）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "关节休息",
+            "局部冷敷",
+            "避免酒精和富含嘌呤的饮食"
+          ],
+          "farmacologico": [
+            "急性期：NSAIDs（吲哚美辛 50mg 每8小时一次）或秋水仙碱 0.5mg 每日三次或泼尼松 30-40mg 每日一次",
+            "预防：别嘌醇 100-300mg 每日一次（不要在急性期开始使用）"
+          ]
+        },
+        "redFlags": [
+          "化脓性关节炎（高热，唯一症状）",
+          "肾功能不全",
+          "广泛痛风石"
+        ]
+      },
+      "medicamentos": [
+        "alopurinol",
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sarcopenia",
+      "titulo": "肌少症",
+      "ciap2": [
+        "L29"
+      ],
+      "cid10": [
+        "M62.84"
+      ],
+      "cid11": [
+        "FB32.3"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:0081310",
+      "snomedCT": "1172655006",
+      "meshId": "D055948",
+      "umlsCui": "C0872084",
+      "quickView": {
+        "definicao": "随着年龄增长，骨骼肌质量和力量的进行性丧失。60-70岁人群的患病率为5-13%，80岁以上人群可高达50%。",
+        "criteriosDiagnosticos": [
+          "EWGSOP2：力量下降（可能）",
+          "握力 <27kg（男性）或 <16kg（女性）",
+          "确认：低肌肉质量（DXA/BIA）",
+          "严重程度：低身体表现（SPPB <8）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "渐进性抗阻训练",
+            "蛋白质 1,0-1,2g/kg/天",
+            "亮氨酸/HMB作为辅助"
+          ],
+          "farmacologico": [
+            "维生素D如缺乏",
+            "没有特定批准的药物"
+          ]
+        },
+        "redFlags": [
+          "快速体重下降",
+          "反复跌倒",
+          "无法从椅子上站起来",
+          "肌少症 + 肥胖"
+        ]
+      },
+      "medicamentos": [
+        "vitamina-d"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "tendinite-ombro",
+      "titulo": "肩袖综合征",
+      "ciap2": [
+        "L92"
+      ],
+      "cid10": [
+        "M75"
+      ],
+      "cid11": [
+        "FA23.0"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:0080731",
+      "snomedCT": "239872009",
+      "meshId": "D000070636",
+      "umlsCui": "C0085551",
+      "quickView": {
+        "definicao": "肩袖肌腱病（最常见于冈上肌）。成人肩部疼痛的主要原因。",
+        "criteriosDiagnosticos": [
+          "前外侧肩痛",
+          "疼痛弧（60-120° 外展）",
+          "测试：Jobe、Neer、Hawkins 阳性",
+          "难以在患侧睡觉"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "相对休息（避免举高手臂的动作）",
+            "物理治疗（增强和活动）",
+            "冷疗"
+          ],
+          "farmacologico": [
+            "NSAIDs: Ibuprofeno 400mg 每8小时 7-10天",
+            "必要时使用镇痛药"
+          ]
+        },
+        "redFlags": [
+          "急性创伤",
+          "无法抬高手臂",
+          "肌肉萎缩",
+          "感觉异常"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno",
+        "paracetamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "epicondilite-lateral",
+      "titulo": "外侧上髁炎（网球肘）",
+      "ciap2": [
+        "L93"
+      ],
+      "cid10": [
+        "M77.1"
+      ],
+      "cid11": [
+        "FB53.2"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:9479",
+      "snomedCT": "202855006",
+      "meshId": "D013716",
+      "umlsCui": "C0039516",
+      "quickView": {
+        "definicao": "腕伸肌在肱骨外上髁处的肌腱病。是肘部疼痛的常见原因。",
+        "criteriosDiagnosticos": [
+          "肱骨外上髁疼痛",
+          "握拳和腕伸展时加重",
+          "Cozen试验阳性",
+          "Mill试验阳性"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免引起疼痛的活动",
+            "使用对抗力矫形器",
+            "拉伸和离心运动"
+          ],
+          "farmacologico": [
+            "局部非甾体抗炎药：双氯芬酸凝胶 每日三次",
+            "必要时短期口服非甾体抗炎药"
+          ]
+        },
+        "redFlags": [
+          "关节交锁",
+          "不稳定",
+          "可触及肿块"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno",
+        "diclofenaco"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "fascite-plantar",
+      "titulo": "足底筋膜炎",
+      "ciap2": [
+        "L99"
+      ],
+      "cid10": [
+        "M72.2"
+      ],
+      "cid11": [
+        "FB06.1"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:0060041",
+      "snomedCT": "202882003",
+      "meshId": "D036981",
+      "umlsCui": "C0238698",
+      "quickView": {
+        "definicao": "足底筋膜在跟骨附着处的退行性变。最常见的跟骨疼痛原因。高峰年龄：40-60岁。",
+        "criteriosDiagnosticos": [
+          "内侧跟骨疼痛",
+          "早晨第一步疼痛加剧",
+          "轻度活动后疼痛缓解，长时间活动后疼痛加剧",
+          "内侧跟骨结节触痛"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "足底筋膜和腓肠肌拉伸",
+            "带有足弓支撑的鞋垫",
+            "局部冰敷",
+            "合适的鞋子"
+          ],
+          "farmacologico": [
+            "短期使用非甾体抗炎药",
+            "如难治性可进行皮质类固醇注射"
+          ]
+        },
+        "redFlags": [
+          "夜间疼痛",
+          "感觉异常",
+          "红肿",
+          "发热"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "tendinite",
+      "titulo": "肌腱炎",
+      "ciap2": [
+        "L92"
+      ],
+      "cid10": [
+        "M65"
+      ],
+      "cid11": [
+        "FB51"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:13361",
+      "snomedCT": "42475007",
+      "meshId": "D052256",
+      "umlsCui": "C0039482",
+      "quickView": {
+        "definicao": "肌腱的炎症。通常由过度使用或创伤引起。肩部、肘部、腕部是常见部位。",
+        "criteriosDiagnosticos": [
+          "肌腱局部疼痛",
+          "运动加剧疼痛",
+          "局部水肿",
+          "功能受限"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "相对休息",
+            "前48-72小时内冷敷",
+            "物理治疗",
+            "拉伸"
+          ],
+          "farmacologico": [
+            "非甾体抗炎药：Ibuprofeno 400-600mg 每8小时 5-7天",
+            "如不缓解可进行局部皮质类固醇注射"
+          ]
+        },
+        "redFlags": [
+          "肌腱断裂",
+          "感染",
+          "反复性肌腱炎"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "lupus-eritematoso-sistemico",
+      "titulo": "系统性红斑狼疮",
+      "ciap2": [
+        "L99"
+      ],
+      "cid10": [
+        "M32"
+      ],
+      "cid11": [
+        "4A40"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:9074",
+      "snomedCT": "55464009",
+      "meshId": "D008180",
+      "umlsCui": "C0024141",
+      "tags": [
+        "慢性",
+        "自身免疫",
+        "系统性"
+      ],
+      "quickView": {
+        "definicao": "系统性自身免疫疾病。可能影响皮肤、关节、肾脏、神经系统。女性更为常见。",
+        "criteriosDiagnosticos": [
+          "SLICC或ACR标准",
+          "颧部红斑",
+          "光敏感",
+          "抗核抗体"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "防晒",
+            "急性发作期间休息"
+          ],
+          "farmacologico": [
+            "羟氯喹 200-400mg/天",
+            "根据病情严重程度使用泼尼松",
+            "必要时使用免疫抑制剂"
+          ]
+        },
+        "redFlags": [
+          "狼疮性肾炎",
+          "神经狼疮",
+          "狼疮危象",
+          "重度血小板减少"
+        ]
+      },
+      "medicamentos": [
+        "hydroxychloroquine",
+        "prednisone"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "espondilite-anquilosante",
+      "titulo": "强直性脊柱炎",
+      "ciap2": [
+        "L88"
+      ],
+      "cid10": [
+        "M45"
+      ],
+      "cid11": [
+        "FA92.0"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:7149",
+      "snomedCT": "59670000",
+      "meshId": "D013167",
+      "umlsCui": "C0003879",
+      "tags": [
+        "慢性",
+        "自身免疫",
+        "风湿病"
+      ],
+      "quickView": {
+        "definicao": "血清阴性脊柱关节炎。脊柱和骶髂关节的慢性炎症。多见于年轻男性。",
+        "criteriosDiagnosticos": [
+          "炎症性腰痛",
+          "晨僵",
+          "运动后改善",
+          "放射学骶髂关节炎",
+          "HLA-B27阳性（90%）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "物理治疗",
+            "锻炼",
+            "正确姿势"
+          ],
+          "farmacologico": [
+            "NSAIDs: Naproxen 500mg 每日两次",
+            "如无反应使用抗TNF药物"
+          ]
+        },
+        "redFlags": [
+          "椎骨骨折",
+          "严重驼背",
+          "心脏并发症"
+        ]
+      },
+      "medicamentos": [
+        "naproxeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-sjogren",
+      "titulo": "舍格伦综合征",
+      "ciap2": [
+        "L99"
+      ],
+      "cid10": [
+        "M35.0"
+      ],
+      "cid11": [
+        "4A01.0"
+      ],
+      "categoria": "musculoesqueletico",
+      "doid": "DOID:12858",
+      "snomedCT": "48271000",
+      "meshId": "D012859",
+      "umlsCui": "C0037243",
+      "tags": [
+        "慢性",
+        "自身免疫",
+        "系统性"
+      ],
+      "quickView": {
+        "definicao": "自身免疫性疾病，伴有黏膜干燥。可以是原发性或与其他自身免疫性疾病相关。",
+        "criteriosDiagnosticos": [
+          "干眼",
+          "口干",
+          "抗SSA/Ro或SSB/La阳性",
+          "唾液腺活检"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "眼部润滑剂",
+            "人工唾液",
+            "补水"
+          ],
+          "farmacologico": [
+            "匹罗卡品 5mg 3-4次/天",
+            "羟氯喹用于系统症状"
+          ]
+        },
+        "redFlags": [
+          "淋巴瘤",
+          "间质性肺病",
+          "血管炎"
+        ]
+      },
+      "medicamentos": [
+        "pilocarpine",
+        "hydroxychloroquine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

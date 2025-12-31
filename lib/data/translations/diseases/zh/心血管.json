@@ -1,0 +1,525 @@
+{
+  "locale": "zh",
+  "category": "心血管",
+  "generatedAt": "2025-12-30T12:23:17.429Z",
+  "count": 4,
+  "diseases": [
+    {
+      "id": "insuficiencia-cardiaca",
+      "titulo": "心力衰竭",
+      "sinonimos": [
+        "HF",
+        "CHF",
+        "充血性心力衰竭"
+      ],
+      "doid": "DOID:6000",
+      "snomedCT": "84114007",
+      "meshId": "D006333",
+      "umlsCui": "C0018801",
+      "ciap2": [
+        "K77"
+      ],
+      "cid10": [
+        "I50",
+        "I50.0",
+        "I50.1",
+        "I50.9"
+      ],
+      "cid11": [
+        "BD10"
+      ],
+      "categoria": "心血管",
+      "quickView": {
+        "definicao": "临床综合征，特征为心脏无法泵出足够的血液以满足组织的代谢需求，或仅在充盈压升高时才能完成。",
+        "criteriosDiagnosticos": [
+          "典型症状：呼吸困难、端坐呼吸、夜间阵发性呼吸困难、疲劳、下肢水肿",
+          "体征：颈静脉怒张、肝肿大、肺部啰音",
+          "客观的心脏功能障碍证据（超声心动图）",
+          "弗雷明汉标准：2个主要指标或1个主要指标+2个次要指标"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "限制钠摄入（<2g/天）",
+            "如低钠血症，限制液体摄入（<1.5L/天）",
+            "监督下的体力活动（心脏康复）",
+            "戒烟和戒酒",
+            "疫苗接种（流感、肺炎球菌）"
+          ],
+          "farmacologico": [
+            "ACE抑制剂或ARB（例如：依那普利 2.5-20mg 每12小时一次）",
+            "β受体阻滞剂（例如：卡维地洛 3.125-25mg 每12小时一次）",
+            "如充血，使用袢利尿剂（呋塞米 20-80mg/天）",
+            "如射血分数≤35%，使用螺内酯 25-50mg/天"
+          ]
+        },
+        "metasTerapeuticas": [
+          "射血分数：稳定或改善",
+          "NYHA功能分级：至少改善1级",
+          "血压适当，心率60-70次/分钟",
+          "等容状态（无水肿，干体重）",
+          "减少住院次数"
+        ],
+        "examesIniciais": [
+          "经胸超声心动图",
+          "心电图",
+          "胸部X光",
+          "血常规、肾功能、电解质",
+          "BNP或NT-proBNP",
+          "血脂谱、血糖、TSH"
+        ],
+        "redFlags": [
+          "症状性低血压（收缩压<90）",
+          "心源性休克",
+          "急性肺水肿",
+          "严重心律失常（房颤、室上速）",
+          "晕厥",
+          "功能分级迅速恶化"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "成人人口的2%，随年龄增长（>70岁超过10%）",
+          "incidencia": "2-5新病例/1000人-年",
+          "faixaEtaria": "最常见于>65岁",
+          "fatoresRisco": [
+            "高血压（主要）",
+            "冠状动脉疾病",
+            "糖尿病",
+            "肥胖",
+            "瓣膜病",
+            "心肌病",
+            "吸烟、酗酒"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "收缩功能障碍（射血分数降低）或舒张功能障碍（射血分数保留）导致代偿性神经激素激活（RAAS、交感神经系统），进行性心脏重塑和全身/肺部充血。",
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "劳力性呼吸困难（进行性）",
+            "端坐呼吸",
+            "夜间阵发性呼吸困难（DPN）",
+            "疲劳和运动不耐受",
+            "下肢水肿",
+            "体重增加（水潴留）"
+          ],
+          "sinaisExameFisico": [
+            "45°角颈静脉怒张",
+            "肝颈静脉回流征",
+            "双基底肺啰音",
+            "B3（奔马律）",
+            "疼痛性肝肿大",
+            "下肢凹陷性水肿"
+          ],
+          "formasClinicas": [
+            "HFrEF（射血分数<40%）：收缩性心力衰竭",
+            "HFmrEF（射血分数40-49%）：中间型心力衰竭",
+            "HFpEF（射血分数≥50%）：舒张性心力衰竭"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "弗雷明汉标准",
+            "超声心动图显示射血分数和舒张功能",
+            "BNP >100 pg/mL 或 NT-proBNP >300 pg/mL"
+          ],
+          "diagnosticoDiferencial": [
+            "慢性阻塞性肺疾病",
+            "肺炎",
+            "肺栓塞",
+            "肾功能不全伴高容量",
+            "肝硬化伴腹水",
+            "肾病综合征"
+          ],
+          "examesLaboratoriais": [
+            "BNP/NT-proBNP",
+            "血常规、肾功能、电解质",
+            "肝功能",
+            "血脂谱、血糖、HbA1c",
+            "TSH",
+            "铁蛋白、转铁蛋白饱和度"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "缓解症状，提高生活质量",
+            "减少死亡率和住院率",
+            "预防重塑进展"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "关于心力衰竭和自我护理的教育",
+              "每日体重监测",
+              "限制钠和液体摄入",
+              "心脏康复",
+              "年度疫苗接种"
+            ],
+            "citations": [
+              {
+                "refId": "diretriz-ic-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "ACE抑制剂/ARB",
+                "medicamentos": [
+                  "依那普利",
+                  "洛萨坦"
+                ],
+                "posologia": "依那普利 2.5-20mg 每12小时一次 | 洛萨坦 25-100mg/天"
+              },
+              {
+                "classe": "β受体阻滞剂",
+                "medicamentos": [
+                  "卡维地洛",
+                  "比索洛尔",
+                  "美托洛尔琥珀酸盐"
+                ],
+                "posologia": "卡维地洛 3.125-25mg 每12小时一次（缓慢滴定）"
+              },
+              {
+                "classe": "醛固酮拮抗剂",
+                "medicamentos": [
+                  "螺内酯"
+                ],
+                "posologia": "25-50mg/天，如射血分数≤35%且有症状"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "充血",
+                "conduta": "呋塞米 20-80mg/天 口服或静脉注射"
+              },
+              {
+                "situacao": "房颤伴快速心室反应",
+                "conduta": "使用β受体阻滞剂或地高辛控制心率"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "diretriz-ic-2021"
+              }
+            ]
+          },
+          "duracao": "终生持续治疗"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "每月直至稳定，之后每3-6个月一次",
+          "examesControle": [
+            "肾功能和电解质（调整ACE抑制剂/利尿剂后1-2周）",
+            "如有条件，检测BNP/NT-proBNP",
+            "每年或临床恶化时进行超声心动图检查"
+          ],
+          "metasTerapeuticas": [
+            "NYHA I-II级",
+            "干体重稳定",
+            "无住院"
+          ],
+          "criteriosEncaminhamento": [
+            "射血分数<30%",
+            "晚期心力衰竭（NYHA III-IV级难治性）",
+            "考虑植入式心脏复律除颤器/心脏再同步化治疗",
+            "评估移植"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "控制高血压、糖尿病、血脂异常",
+            "戒烟",
+            "定期体力活动"
+          ],
+          "secundaria": [
+            "坚持药物治疗",
+            "每日体重监测",
+            "低钠饮食"
+          ],
+          "citations": [
+            {
+              "refId": "diretriz-ic-2021"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-ic"
+      ],
+      "medicamentos": [
+        "enalapril",
+        "losartana",
+        "carvedilol",
+        "furosemida",
+        "espironolactona"
+      ],
+      "calculadoras": [
+        "nyha",
+        "ckd-epi"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "diretriz-ic-2021"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "hf",
+        "心力衰竭",
+        "呼吸困难",
+        "水肿",
+        "心脏病"
+      ]
+    },
+    {
+      "id": "embolia-pulmonar",
+      "titulo": "肺栓塞",
+      "sinonimos": [
+        "PE",
+        "肺血栓栓塞"
+      ],
+      "ciap2": [
+        "K93"
+      ],
+      "cid10": [
+        "I26"
+      ],
+      "cid11": [
+        "BB20"
+      ],
+      "doid": "DOID:9477",
+      "snomedCT": "59282003",
+      "meshId": "D011655",
+      "umlsCui": "C0034065",
+      "categoria": "心血管",
+      "quickView": {
+        "definicao": "肺动脉被血栓阻塞，通常源自下肢深静脉血栓。症状范围从无症状到血流动力学不稳定。",
+        "criteriosDiagnosticos": [
+          "Wells评分：高（>6），中（2-6），低（<2）",
+          "PERC规则：如果所有指标均为阴性且概率低，则排除",
+          "D-二聚体：如果概率低或中等，则阴性预测值高",
+          "胸部CT血管造影：金标准",
+          "突发呼吸困难、胸膜性胸痛、心动过速、低氧血症"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "血流动力学稳定",
+            "氧疗"
+          ],
+          "farmacologico": [
+            "低风险PE：DOAC（利伐沙班或阿哌沙班）",
+            "中等风险PE：抗凝治疗+监测",
+            "高风险PE（不稳定）：全身溶栓（阿替普酶）",
+            "持续时间：与DVT相同"
+          ]
+        },
+        "redFlags": [
+          "低血压",
+          "右心功能障碍",
+          "肌钙蛋白升高",
+          "BNP升高"
+        ],
+        "metasTerapeuticas": [
+          "早期抗凝",
+          "血流动力学稳定"
+        ],
+        "examesIniciais": [
+          "胸部CT血管造影",
+          "D-二聚体",
+          "心电图",
+          "血气分析",
+          "肌钙蛋白",
+          "BNP",
+          "超声心动图（如不稳定）"
+        ]
+      },
+      "protocolos": [
+        "dor-toracica"
+      ],
+      "medicamentos": [
+        "rivaroxabana",
+        "apixabana",
+        "enoxaparina",
+        "alteplase"
+      ],
+      "calculadoras": [
+        "wells-tep"
+      ],
+      "tags": [
+        "紧急",
+        "抗凝血药",
+        "血栓栓塞"
+      ]
+    },
+    {
+      "id": "sincope",
+      "titulo": "晕厥",
+      "sinonimos": [
+        "昏厥",
+        "短暂意识丧失"
+      ],
+      "ciap2": [
+        "A06"
+      ],
+      "cid10": [
+        "R55"
+      ],
+      "cid11": [
+        "MB40.1"
+      ],
+      "doid": "DOID:11091",
+      "snomedCT": "271594007",
+      "meshId": "D013575",
+      "umlsCui": "C0039070",
+      "categoria": "心血管",
+      "quickView": {
+        "definicao": "由于全脑低灌注导致的短暂意识丧失，伴有自发且完全的恢复。血管迷走神经性是最常见的原因。",
+        "criteriosDiagnosticos": [
+          "短暂意识丧失伴自发恢复",
+          "反射性晕厥（血管迷走神经性）：触发因素，前驱症状（恶心、出汗、视力模糊）",
+          "直立性低血压：直立位时BP下降≥20/10 mmHg",
+          "心脏性：运动时，心悸，异常ECG，结构性心脏病"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "血管迷走神经性：避免触发因素，识别前驱症状，进行反压操作",
+            "直立性：补充水分，摄入盐分，缓慢起身，穿着弹力袜"
+          ],
+          "farmacologico": [
+            "血管迷走神经性：通常为非药物治疗。若难治性可使用氟氢可的松、米多君",
+            "直立性：氟氢可的松 0.1-0.3mg/天，米多君 2.5-10mg 每日三次",
+            "心脏性：治疗病因（起搏器、ICD、抗心律失常药）"
+          ]
+        },
+        "redFlags": [
+          "运动时晕厥",
+          "心悸前",
+          "胸痛",
+          "异常ECG",
+          "已知心脏病"
+        ],
+        "metasTerapeuticas": [
+          "确定病因",
+          "预防复发",
+          "评估猝死风险"
+        ],
+        "examesIniciais": [
+          "ECG",
+          "直立位BP",
+          "血糖",
+          "血常规",
+          "如有心脏怀疑则进行超声心动图"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "fludrocortisona",
+        "midodrina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "急诊",
+        "心律失常",
+        "神经学"
+      ]
+    },
+    {
+      "id": "hipertensao-pulmonar",
+      "titulo": "肺动脉高压",
+      "sinonimos": [
+        "PAH",
+        "肺动脉高血压"
+      ],
+      "ciap2": [
+        "K82"
+      ],
+      "cid10": [
+        "I27.0",
+        "I27.2"
+      ],
+      "cid11": [
+        "BB01"
+      ],
+      "doid": "DOID:6432",
+      "snomedCT": "70995007",
+      "meshId": "D006976",
+      "umlsCui": "C0020542",
+      "categoria": "心血管",
+      "quickView": {
+        "definicao": "静息时平均肺动脉压 ≥25 mmHg。分类：第1组（PAH），第2组（左心病），第3组（肺部疾病），第4组（CTEPH），第5组（多因素）。",
+        "criteriosDiagnosticos": [
+          "症状：进行性劳力性呼吸困难，疲劳，晕厥",
+          "超声心动图：估计的右心室收缩压 >35-40 mmHg，右心室扩大",
+          "右心导管：平均肺动脉压 ≥25 mmHg（确诊）",
+          "BNP/NT-proBNP 升高"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "限制剧烈体力活动",
+            "如有低氧血症，进行氧疗",
+            "避孕（妊娠禁忌）"
+          ],
+          "farmacologico": [
+            "第2组：治疗基础心脏病",
+            "第3组：治疗肺病，吸氧",
+            "第4组（CTEPH）：抗凝治疗，考虑手术",
+            "PAH：特定疗法（西地那非，波生坦，前列腺素类药物）"
+          ]
+        },
+        "redFlags": [
+          "晕厥",
+          "右心衰竭的迹象",
+          "BNP 极高",
+          "心包积液"
+        ],
+        "metasTerapeuticas": [
+          "WHO 功能分级 I-II 级",
+          "BNP 低",
+          "6 分钟步行距离"
+        ],
+        "examesIniciais": [
+          "超声心动图",
+          "BNP",
+          "胸部 CT",
+          "V/Q 扫描",
+          "右心导管"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "sildenafil"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "呼吸困难",
+        "心力衰竭",
+        "专科"
+      ]
+    }
+  ]
+}

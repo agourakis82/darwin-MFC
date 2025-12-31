@@ -1,0 +1,553 @@
+{
+  "locale": "zh",
+  "category": "dermatologico",
+  "generatedAt": "2025-12-30T12:23:17.431Z",
+  "count": 10,
+  "diseases": [
+    {
+      "id": "dermatite-atopica",
+      "titulo": "特应性皮炎",
+      "sinonimos": [
+        "特应性湿疹"
+      ],
+      "ciap2": [
+        "S87"
+      ],
+      "cid10": [
+        "L20"
+      ],
+      "cid11": [
+        "EA80"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:3310",
+      "snomedCT": "24079001",
+      "meshId": "D003876",
+      "umlsCui": "C0011603",
+      "hpo": [
+        "HP:0000967",
+        "HP:0000962"
+      ],
+      "tags": [
+        "dermatologico",
+        "过敏性",
+        "慢性"
+      ],
+      "quickView": {
+        "definicao": "慢性复发性皮炎。剧烈瘙痒，湿疹样病变。常伴有哮喘和过敏性鼻炎。",
+        "criteriosDiagnosticos": [
+          "瘙痒",
+          "典型的形态和分布",
+          "慢性化",
+          "个人或家族特应性病史"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "大量润肤剂",
+            "避免刺激物",
+            "温水洗澡",
+            "保湿"
+          ],
+          "farmacologico": [
+            "外用皮质类固醇",
+            "外用钙调神经磷酸酶抑制剂",
+            "抗组胺药用于止痒"
+          ]
+        },
+        "redFlags": [
+          "继发感染",
+          "红皮病",
+          "脓疱病"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "psoriase",
+      "titulo": "银屑病",
+      "ciap2": [
+        "S91"
+      ],
+      "cid10": [
+        "L40"
+      ],
+      "cid11": [
+        "EA90"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:8893",
+      "snomedCT": "9014002",
+      "meshId": "D011565",
+      "umlsCui": "C0033860",
+      "hpo": [
+        "HP:0003765",
+        "HP:0003766"
+      ],
+      "tags": [
+        "dermatologico",
+        "自身免疫",
+        "慢性"
+      ],
+      "quickView": {
+        "definicao": "慢性皮肤炎症性疾病。红斑鳞屑性斑块。可能伴有银屑病关节炎。",
+        "criteriosDiagnosticos": [
+          "红斑鳞屑性斑块",
+          "典型部位（肘部、膝盖、头皮）",
+          "必要时进行组织病理学检查"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "润肤剂",
+            "光疗",
+            "避免诱发因素"
+          ],
+          "farmacologico": [
+            "外用皮质类固醇",
+            "外用维生素D类似物",
+            "广泛时使用系统治疗：甲氨蝶呤或生物制剂"
+          ]
+        },
+        "redFlags": [
+          "红皮病",
+          "脓疱",
+          "银屑病关节炎",
+          "继发感染"
+        ]
+      },
+      "medicamentos": [
+        "metotrexato"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "urticaria-cronica",
+      "titulo": "慢性荨麻疹",
+      "ciap2": [
+        "S99"
+      ],
+      "cid10": [
+        "L50"
+      ],
+      "cid11": [
+        "EB01"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:9119",
+      "snomedCT": "37796009",
+      "meshId": "D014581",
+      "umlsCui": "C0042109",
+      "tags": [
+        "dermatologico",
+        "cronica",
+        "alergica"
+      ],
+      "quickView": {
+        "definicao": "持续超过6周的荨麻疹。通常为特发性或自身免疫性。",
+        "criteriosDiagnosticos": [
+          "红斑瘙痒性丘疹",
+          "持续时间>6周",
+          "可能伴有血管性水肿"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免已知的触发因素",
+            "如果与非甾体抗炎药相关，避免使用"
+          ],
+          "farmacologico": [
+            "H1抗组胺药：西替利嗪 10mg 每日一次",
+            "如无效：增加剂量或加用H2"
+          ]
+        },
+        "redFlags": [
+          "呼吸道血管性水肿",
+          "过敏反应",
+          "全身症状"
+        ]
+      },
+      "medicamentos": [
+        "cetirizine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dermatite-atopica-pediatrica",
+      "titulo": "特应性皮炎",
+      "ciap2": [
+        "S87"
+      ],
+      "cid10": [
+        "L20"
+      ],
+      "cid11": [
+        "EA80"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:3310",
+      "snomedCT": "24079001",
+      "meshId": "D003876",
+      "umlsCui": "C0011615",
+      "quickView": {
+        "definicao": "慢性瘙痒性炎症性皮肤病。通常在<5岁开始。是特应性进程的一部分（皮炎 → 鼻炎 → 哮喘）。",
+        "criteriosDiagnosticos": [
+          "Hanifin-Rajka标准：瘙痒 + ≥3个标准",
+          "年龄典型的形态",
+          "婴儿：面部和伸展面",
+          "较大儿童：屈曲部位（窝）",
+          "慢性/复发病程"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "强化保湿（润肤剂每日2-3次）",
+            "短时间温水沐浴",
+            "避免触发因素",
+            "剪短指甲"
+          ],
+          "farmacologico": [
+            "低效价外用皮质类固醇（氢化可的松）",
+            "急性发作：短期使用中效价皮质类固醇",
+            "钙调神经磷酸酶抑制剂（>2岁）"
+          ]
+        },
+        "redFlags": [
+          "继发感染（脓疱疮）",
+          "疱疹性湿疹",
+          "红皮病",
+          "治疗无效"
+        ]
+      },
+      "medicamentos": [
+        "hidrocortisona-topica"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "acne-vulgar",
+      "titulo": "寻常痤疮",
+      "sinonimos": [
+        "普通痤疮"
+      ],
+      "ciap2": [
+        "S88"
+      ],
+      "cid10": [
+        "L70"
+      ],
+      "cid11": [
+        "ED80"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:654",
+      "snomedCT": "89765004",
+      "meshId": "D000152",
+      "umlsCui": "C0001053",
+      "hpo": [
+        "HP:0001061"
+      ],
+      "tags": [
+        "dermatologico",
+        "comum",
+        "adolescencia"
+      ],
+      "quickView": {
+        "definicao": "毛囊皮脂腺的慢性炎症性皮肤病。常见于青少年。病变：粉刺、丘疹、脓疱、结节。",
+        "criteriosDiagnosticos": [
+          "典型病变：粉刺、丘疹、脓疱、结节",
+          "部位：面部、胸部、背部",
+          "年龄：主要为青少年/年轻成人"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "适当清洁",
+            "避免挤压病变",
+            "使用非致痘防晒霜",
+            "饮食：减少糖和乳制品可能有帮助"
+          ],
+          "farmacologico": [
+            "轻度：2.5-10% 过氧苯甲酰外用",
+            "中度：过氧苯甲酰 + 外用维甲酸",
+            "重度：口服多西环素或米诺环素 + 外用维甲酸",
+            "女性：如适用，可使用复方口服避孕药"
+          ]
+        },
+        "redFlags": [
+          "暴发性痤疮",
+          "聚合性痤疮",
+          "广泛性瘢痕",
+          "治疗抵抗"
+        ]
+      },
+      "medicamentos": [
+        "doxiciclina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "impetigo",
+      "titulo": "脓疱疮",
+      "sinonimos": [
+        "浅表性化脓性皮肤病"
+      ],
+      "ciap2": [
+        "S72"
+      ],
+      "cid10": [
+        "L01"
+      ],
+      "cid11": [
+        "EA40"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:8406",
+      "snomedCT": "48277006",
+      "meshId": "D007169",
+      "umlsCui": "C0021099",
+      "tags": [
+        "dermatologico",
+        "infecciosa",
+        "bacteriana",
+        "pediatrica"
+      ],
+      "quickView": {
+        "definicao": "浅表性细菌性皮肤感染。病因：金黄色葡萄球菌、链球菌。病变：水疱/脓疱逐渐发展为蜜色结痂。",
+        "criteriosDiagnosticos": [
+          "水疱/脓疱病变",
+          "逐渐发展为蜜色结痂",
+          "部位：面部、四肢",
+          "儿童多见"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "局部清洁",
+            "去除结痂",
+            "避免接触"
+          ],
+          "farmacologico": [
+            "外用：莫匹罗星 2% 每日三次，持续7-10天",
+            "或外用夫西地酸",
+            "如广泛分布：口服头孢氨苄 25-50mg/kg/天，持续7天",
+            "或阿莫西林-克拉维酸钾"
+          ]
+        },
+        "redFlags": [
+          "蜂窝织炎",
+          "丹毒",
+          "淋巴管炎",
+          "链球菌后肾小球肾炎"
+        ]
+      },
+      "medicamentos": [
+        "cefalexina",
+        "amoxicilina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dermatite-contato",
+      "titulo": "接触性皮炎",
+      "ciap2": [
+        "S88"
+      ],
+      "cid10": [
+        "L25"
+      ],
+      "cid11": [
+        "EA80.1"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:13360",
+      "snomedCT": "40275004",
+      "meshId": "D017449",
+      "umlsCui": "C0011606",
+      "quickView": {
+        "definicao": "由直接接触刺激物或过敏原引起的皮肤疹。刺激性（80%）与过敏性（20%）。",
+        "criteriosDiagnosticos": [
+          "局部红斑",
+          "瘙痒",
+          "水疱/丘疹（过敏性）",
+          "暴露史",
+          "分布符合"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "识别并避免致病因子",
+            "冷敷",
+            "皮肤保湿"
+          ],
+          "farmacologico": [
+            "外用皮质类固醇：氢化可的松 1%（面部）或倍他米松（身体）每日两次直至痊愈",
+            "如有剧烈瘙痒，口服抗组胺药"
+          ]
+        },
+        "redFlags": [
+          "继发感染",
+          "泛发性湿疹",
+          "过敏性休克"
+        ]
+      },
+      "medicamentos": [
+        "hidrocortisona",
+        "betametasona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "urticaria",
+      "titulo": "荨麻疹",
+      "ciap2": [
+        "S97"
+      ],
+      "cid10": [
+        "L50"
+      ],
+      "cid11": [
+        "EB01"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:6945",
+      "snomedCT": "42702005",
+      "meshId": "D014581",
+      "umlsCui": "C0020538",
+      "quickView": {
+        "definicao": "一种以红斑性丘疹/斑块为特征的皮肤病，伴有瘙痒，持续时间短暂（<24小时）。急性（<6周）与慢性。",
+        "criteriosDiagnosticos": [
+          "红斑性丘疹/斑块",
+          "剧烈瘙痒",
+          "病变短暂（<24小时）",
+          "可能伴有血管性水肿"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "避免已知的诱因",
+            "冷敷"
+          ],
+          "farmacologico": [
+            "非镇静H1抗组胺药：Loratadina 10mg 每日一次 或 Cetirizina 10mg 每日一次",
+            "如无效：增加剂量或加用另一种抗组胺药"
+          ]
+        },
+        "redFlags": [
+          "呼吸道血管性水肿",
+          "过敏反应",
+          "慢性荨麻疹伴血管性水肿"
+        ]
+      },
+      "medicamentos": [
+        "loratadina",
+        "cetirizina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "vitiligo",
+      "titulo": "白癜风",
+      "ciap2": [
+        "S93"
+      ],
+      "cid10": [
+        "L80"
+      ],
+      "cid11": [
+        "ED70"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:9008",
+      "snomedCT": "9014002",
+      "meshId": "D014820",
+      "umlsCui": "C0042890",
+      "tags": [
+        "dermatologico",
+        "自身免疫"
+      ],
+      "quickView": {
+        "definicao": "由于黑色素细胞丢失导致的皮肤脱色。自身免疫性疾病。",
+        "criteriosDiagnosticos": [
+          "低色素/无色素斑块",
+          "边界清晰",
+          "伍德灯阳性"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "防晒",
+            "遮瑕化妆品"
+          ],
+          "farmacologico": [
+            "外用皮质类固醇",
+            "外用钙调神经磷酸酶抑制剂",
+            "光疗"
+          ]
+        },
+        "redFlags": [
+          "快速脱色",
+          "与其他自身免疫性疾病相关"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "dermatite-seborreica",
+      "titulo": "脂溢性皮炎",
+      "ciap2": [
+        "S89"
+      ],
+      "cid10": [
+        "L21"
+      ],
+      "cid11": [
+        "EA81"
+      ],
+      "categoria": "dermatologico",
+      "doid": "DOID:8725",
+      "snomedCT": "5960000",
+      "meshId": "D012628",
+      "umlsCui": "C0011616",
+      "hpo": [
+        "HP:0003765"
+      ],
+      "tags": [
+        "dermatologico",
+        "comum",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "慢性复发性皮炎。脂溢性区域：头皮、面部、胸部。黄色油腻鳞屑。",
+        "criteriosDiagnosticos": [
+          "脂溢性区域的脱屑性病变",
+          "轻度至中度瘙痒",
+          "红斑",
+          "典型分布"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "抗屑洗发水",
+            "适当清洁",
+            "避免使用油腻产品"
+          ],
+          "farmacologico": [
+            "酮康唑外用",
+            "温和的外用皮质类固醇",
+            "环吡酮外用"
+          ]
+        },
+        "redFlags": [
+          "广泛性病变",
+          "继发感染",
+          "治疗抵抗"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

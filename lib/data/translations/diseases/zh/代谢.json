@@ -1,0 +1,593 @@
+{
+  "locale": "zh",
+  "category": "代谢",
+  "generatedAt": "2025-12-30T12:23:17.427Z",
+  "count": 2,
+  "diseases": [
+    {
+      "id": "diabetes-mellitus-2",
+      "titulo": "2型糖尿病 (DM2)",
+      "sinonimos": [
+        "2型糖尿病",
+        "DM2",
+        "成人糖尿病"
+      ],
+      "doid": "DOID:9351",
+      "snomedCT": "44054006",
+      "meshId": "D003924",
+      "umlsCui": "C0011860",
+      "ciap2": [
+        "T90"
+      ],
+      "cid10": [
+        "E11"
+      ],
+      "categoria": "代谢",
+      "quickView": {
+        "definicao": "一种代谢性疾病，特征为由于胰岛素分泌和/或作用缺陷导致的慢性高血糖。占糖尿病病例的90-95%，与肥胖和久坐生活方式密切相关。",
+        "criteriosDiagnosticos": [
+          "空腹血糖 ≥126 mg/dL（在2次不同时间确认）",
+          "75g OGTT 2小时血糖 ≥200 mg/dL",
+          "HbA1c ≥6.5%（经认证的方法）",
+          "随机血糖 ≥200 mg/dL + 典型症状（多尿、多饮、体重下降）"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "饮食：如果超重，减少热量摄入，选择复杂碳水化合物和纤维",
+            "体育活动：每周150分钟有氧运动 + 2-3次抗阻训练",
+            "如果超重/肥胖，减重7-10%",
+            "糖尿病教育和自我监测",
+            "戒烟"
+          ],
+          "farmacologico": [
+            "二甲双胍 500-2550mg/天（如果GFR >30，作为一线治疗）",
+            "如果HbA1c >7.5%或有症状：联合使用第二种药物",
+            "SGLT2抑制剂用于心血管疾病或慢性肾脏病（恩格列净，达格列净）",
+            "GLP-1受体激动剂用于肥胖或心血管疾病（司美格鲁肽，利拉鲁肽）",
+            "如果HbA1c >10%或有严重症状：使用胰岛素"
+          ]
+        },
+        "metasTerapeuticas": [
+          "HbA1c <7%（一般）",
+          "HbA1c <6.5%（新发糖尿病，年轻，无低血糖史）",
+          "HbA1c <8%（老年脆弱，合并症，低血糖风险）",
+          "空腹血糖 80-130 mg/dL",
+          "餐后血糖 <180 mg/dL"
+        ],
+        "examesIniciais": [
+          "HbA1c（每3-6个月一次）",
+          "空腹血糖",
+          "血脂谱（LDL，HDL，TG）",
+          "肌酐和GFR",
+          "尿白蛋白/肌酐比值",
+          "眼底检查",
+          "足部检查（感觉，脉搏）",
+          "心电图"
+        ],
+        "redFlags": [
+          "糖尿病酮症酸中毒（血糖 >250，酮尿，酸中毒）",
+          "高渗性高血糖状态（血糖 >600，严重脱水）",
+          "严重低血糖（<54 mg/dL伴有神经症状）",
+          "严重感染（感染性糖尿病足，败血症）",
+          "急性冠状动脉综合征"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "巴西成年人口的9.4%（约1600万）",
+          "incidencia": "每年约50万新发病例",
+          "mortalidade": "每年约70万例死亡归因于DM",
+          "faixaEtaria": "高峰年龄45-64岁，年轻人中呈上升趋势",
+          "fatoresRisco": [
+            "肥胖/超重（BMI ≥25）",
+            "久坐不动",
+            "家族糖尿病史",
+            "前期糖尿病（空腹血糖 100-125，OGTT 140-199，HbA1c 5.7-6.4%）",
+            "既往妊娠糖尿病",
+            "多囊卵巢综合征",
+            "高血压，血脂异常",
+            "使用皮质类固醇，抗精神病药物"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "常无症状或少症状",
+            "多尿（频繁排尿）",
+            "多饮（极度口渴）",
+            "非故意体重下降",
+            "疲劳",
+            "视力模糊",
+            "反复感染（念珠菌感染，尿路感染）"
+          ],
+          "sinaisExameFisico": [
+            "中心性肥胖（腹部周长增加）",
+            "黑棘皮病（颈部，腋窝）",
+            "足部感觉异常（周围神经病变）",
+            "足背动脉搏动减弱（PAD）",
+            "眼底检查发现视网膜病变"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "空腹血糖 ≥126 mg/dL（2次不同时间或1次 + 症状）",
+            "75g OGTT 2小时血糖 ≥200 mg/dL",
+            "HbA1c ≥6.5%",
+            "随机血糖 ≥200 + 典型症状"
+          ],
+          "diagnosticoDiferencial": [
+            "1型糖尿病（自身免疫，绝对胰岛素缺乏）",
+            "LADA（迟发型自身免疫）",
+            "MODY（遗传性）",
+            "继发性糖尿病（胰腺炎，库欣综合征，药物）"
+          ],
+          "examesLaboratoriais": [
+            "HbA1c，空腹血糖",
+            "血脂谱",
+            "肌酐，GFR，尿白蛋白/肌酐比值",
+            "转氨酶",
+            "TSH"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "达到并维持个体化的血糖目标",
+            "预防微血管和大血管并发症",
+            "降低心血管死亡率",
+            "提高生活质量"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "个性化营养疗法",
+              "减少简单碳水化合物和糖的摄入",
+              "增加纤维、蔬菜和蛋白质的摄入",
+              "体育活动：每周150分钟有氧运动 + 抗阻训练",
+              "如果超重，减重7-10%",
+              "结构化糖尿病教育",
+              "毛细血管血糖自我监测"
+            ],
+            "citations": [
+              {
+                "refId": "sbd-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "双胍类",
+                "medicamentos": [
+                  "二甲双胍 500-2550mg/天"
+                ],
+                "posologia": "每日2-3次随餐（缓释片每日一次）",
+                "observacoes": "起始剂量500mg 1-2次/天，每1-2周调整一次。禁忌症：GFR <30，酸中毒，脱水"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "SGLT2抑制剂",
+                "medicamentos": [
+                  "恩格列净 10-25mg/天",
+                  "达格列净 10mg/天"
+                ],
+                "observacoes": "如果存在动脉粥样硬化性心血管疾病或心力衰竭或慢性肾脏病，优先使用。禁忌症：GFR <20-25"
+              },
+              {
+                "classe": "GLP-1受体激动剂",
+                "medicamentos": [
+                  "司美格鲁肽 0.25-1mg 皮下注射/周",
+                  "利拉鲁肽 0.6-1.8mg 皮下注射/天"
+                ],
+                "observacoes": "如果存在肥胖或心血管疾病，优先使用。成本高，不在SUS范围内"
+              },
+              {
+                "classe": "磺脲类",
+                "medicamentos": [
+                  "格列本脲 2.5-20mg/天",
+                  "格列齐特缓释片 30-120mg/天"
+                ],
+                "observacoes": "SUS提供。有低血糖和体重增加的风险"
+              },
+              {
+                "classe": "胰岛素",
+                "medicamentos": [
+                  "NPH 10 IU 夜间",
+                  "常规胰岛素 餐前"
+                ],
+                "observacoes": "如果HbA1c >10%，有分解代谢症状，或OADs失败"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "已确诊心血管疾病",
+                "conduta": "优先使用具有心血管获益证据的SGLT2抑制剂或GLP-1受体激动剂"
+              },
+              {
+                "situacao": "心力衰竭",
+                "conduta": "必须使用SGLT2抑制剂（恩格列净，达格列净）"
+              },
+              {
+                "situacao": "慢性肾脏病",
+                "conduta": "如果GFR >20-25，使用SGLT2抑制剂。如果GFR <30，调整或停用二甲双胍"
+              },
+              {
+                "situacao": "老年脆弱",
+                "conduta": "目标HbA1c <8%。避免使用磺脲类药物。优先使用DPP4抑制剂"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbd-2024"
+              }
+            ]
+          },
+          "duracao": "持续且逐步的治疗"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "如果控制不佳，每3-4个月一次；如果稳定，每6个月一次",
+          "examesControle": [
+            "每3-6个月一次HbA1c",
+            "每年一次血脂谱，肌酐，GFR，微量白蛋白尿",
+            "眼底检查：每年一次（如果没有视网膜病变且控制良好，每2年一次）",
+            "每次就诊检查足部",
+            "如果>40岁或有危险因素，每年一次心电图"
+          ],
+          "metasTerapeuticas": [
+            "个体化的HbA1c目标（通常<7%）",
+            "BP <130/80 mmHg",
+            "LDL <100 mg/dL（或如果心血管高风险<70）",
+            "戒烟",
+            "健康体重"
+          ],
+          "criteriosEncaminhamento": [
+            "糖尿病视网膜病变（转眼科）",
+            "糖尿病足伴损伤/感染",
+            "慢性肾脏病 GFR <30或进行性蛋白尿",
+            "难治性失代偿",
+            "需要复杂的胰岛素治疗"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "识别和治疗前期糖尿病",
+            "生活方式改变计划",
+            "高风险前期糖尿病患者使用二甲双胍"
+          ],
+          "secundaria": [
+            "适当的血糖控制",
+            "筛查和治疗并发症",
+            "疫苗接种（流感，肺炎球菌，乙型肝炎）"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-dm2",
+        "insulinizacao-dm2"
+      ],
+      "medicamentos": [
+        "metformina",
+        "glibenclamida",
+        "insulina-nph",
+        "empagliflozina"
+      ],
+      "calculadoras": [
+        "findrisc",
+        "ckdepi",
+        "framingham"
+      ],
+      "rastreamentos": [
+        "diabetes-mellitus-2"
+      ],
+      "citations": [
+        {
+          "refId": "sbd-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "代谢",
+        "慢性",
+        "常见",
+        "内分泌"
+      ]
+    },
+    {
+      "id": "obesidade",
+      "titulo": "肥胖",
+      "sinonimos": [
+        "体重过重",
+        "超重"
+      ],
+      "doid": "DOID:9970",
+      "snomedCT": "414916001",
+      "meshId": "D009765",
+      "umlsCui": "C0028754",
+      "ciap2": [
+        "T82",
+        "T83"
+      ],
+      "cid10": [
+        "E66",
+        "E66.0",
+        "E66.9"
+      ],
+      "cid11": [
+        "5B81"
+      ],
+      "categoria": "代谢",
+      "quickView": {
+        "definicao": "以体内脂肪过度积累为特征的慢性疾病，对健康有负面影响。定义为BMI ≥30 kg/m²。",
+        "criteriosDiagnosticos": [
+          "BMI ≥25 kg/m²: 超重",
+          "BMI ≥30 kg/m²: 肥胖I级",
+          "BMI ≥35 kg/m²: 肥胖II级",
+          "BMI ≥40 kg/m²: 肥胖III级（病态）",
+          "腰围：男性>94cm，女性>80cm - 风险增加"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "生活方式改变（MEV）是治疗的基础",
+            "低热量饮食（每天减少500-1000 kcal）",
+            "体力活动：每周150-300分钟有氧运动",
+            "认知行为疗法",
+            "营养师的支持"
+          ],
+          "farmacologico": [
+            "考虑BMI ≥30，或BMI ≥27伴有合并症",
+            "在MEV失败3-6个月后",
+            "选项：奥利司他，索马鲁肽，利拉鲁肽，西布曲明（有限制）",
+            "如果BMI ≥40或≥35伴有严重合并症，考虑减肥手术"
+          ]
+        },
+        "metasTerapeuticas": [
+          "6个月内减去初始体重的5-10%（具有临床意义）",
+          "改善合并症（糖尿病，高血压，血脂异常）",
+          "长期维持体重",
+          "提高生活质量"
+        ],
+        "examesIniciais": [
+          "空腹血糖，HbA1c",
+          "血脂谱",
+          "肝功能（脂肪肝）",
+          "TSH（排除甲状腺功能减退）",
+          "肾功能",
+          "尿酸"
+        ],
+        "redFlags": [
+          "快速且无法解释的体重增加",
+          "库欣综合征（满月脸，紫色条纹）",
+          "严重的睡眠呼吸暂停",
+          "特发性颅内高压",
+          "严重的代谢综合征"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "30%的巴西成年人（肥胖），55%超重",
+          "incidencia": "全球流行病正在增长",
+          "faixaEtaria": "所有年龄段，中年增加",
+          "fatoresRisco": [
+            "高热量和超加工食品的饮食",
+            "久坐不动",
+            "遗传（60-70%的遗传性）",
+            "社会经济因素",
+            "睡眠障碍",
+            "慢性压力",
+            "药物（皮质类固醇，抗精神病药，某些抗抑郁药）"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "能量摄入和消耗之间的慢性失衡，受遗传、环境、激素和心理因素的影响。脂肪组织不是惰性的：它分泌脂肪因子，促进低度慢性炎症、胰岛素抵抗和代谢功能障碍。",
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "可见的体重过重",
+            "劳力性呼吸困难",
+            "疲劳",
+            "关节疼痛（膝盖，脊柱）",
+            "打鼾，睡眠呼吸暂停",
+            "自尊心低下"
+          ],
+          "sinaisExameFisico": [
+            "BMI升高",
+            "腰围增加",
+            "黑棘皮病（胰岛素抵抗）",
+            "条纹",
+            "下肢水肿"
+          ],
+          "formasClinicas": [
+            "男性型肥胖（中心/内脏）：更高的代谢风险",
+            "女性型肥胖（外周）：较低的代谢风险"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "BMI ≥30 kg/m²（肥胖）",
+            "腰围增加",
+            "评估相关合并症"
+          ],
+          "diagnosticoDiferencial": [
+            "水肿（全身性水肿）",
+            "甲状腺功能减退",
+            "库欣综合征",
+            "药物使用",
+            "罕见的遗传综合征"
+          ],
+          "examesLaboratoriais": [
+            "血糖，HbA1c，总胆固醇",
+            "完整的血脂谱",
+            "肝功能，腹部超声（脂肪肝）",
+            "TSH",
+            "肾功能，尿酸",
+            "如有必要，进行心电图和超声心动图"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "持续减重",
+            "改善合并症",
+            "预防并发症",
+            "提高生活质量"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "均衡的低热量饮食（每天减少500-1000 kcal）",
+              "体力活动：每周150-300分钟有氧加抗阻运动",
+              "认知行为疗法",
+              "多学科团队的随访"
+            ],
+            "citations": [
+              {
+                "refId": "abeso-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "脂肪酶抑制剂",
+                "medicamentos": [
+                  "奥利司他"
+                ],
+                "posologia": "120mg 每日三次与主餐同服"
+              },
+              {
+                "classe": "GLP-1受体激动剂",
+                "medicamentos": [
+                  "索马鲁肽",
+                  "利拉鲁肽"
+                ],
+                "posologia": "索马鲁肽 SC：起始剂量0.25mg/周，逐渐增加至2.4mg/周"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "BMI ≥40或≥35伴有严重合并症",
+                "conduta": "评估减肥手术"
+              },
+              {
+                "situacao": "肥胖 + 2型糖尿病",
+                "conduta": "优先选择GLP-1受体激动剂或iSGLT2"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "abeso-2022"
+              }
+            ]
+          },
+          "duracao": "慢性治疗"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "前6个月每月一次，之后每3个月一次",
+          "examesControle": [
+            "体重，BMI，腰围",
+            "血糖，HbA1c",
+            "血脂谱",
+            "肝功能"
+          ],
+          "metasTerapeuticas": [
+            "减去初始体重的5-10%具有临床意义",
+            "维持减掉的体重"
+          ],
+          "criteriosEncaminhamento": [
+            "评估减肥手术",
+            "怀疑继发性原因",
+            "严重并发症"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "从儿童时期开始健康饮食",
+            "定期体力活动",
+            "减少超加工食品"
+          ],
+          "secundaria": [
+            "早期干预超重",
+            "治疗合并症"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-obesidade"
+      ],
+      "medicamentos": [
+        "orlistate",
+        "semaglutida",
+        "liraglutida"
+      ],
+      "calculadoras": [
+        "imc",
+        "risco-cv"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "abeso-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "obesidade",
+        "sobrepeso",
+        "imc",
+        "emagrecimento",
+        "cirurgia-bariatrica"
+      ]
+    }
+  ]
+}
