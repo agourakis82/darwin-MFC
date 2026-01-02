@@ -1,0 +1,2509 @@
+{
+  "locale": "hi",
+  "category": "saude_mental",
+  "generatedAt": "2026-01-02T14:53:33.467Z",
+  "count": 26,
+  "diseases": [
+    {
+      "id": "depressao",
+      "titulo": "Transtorno Depressivo Maior",
+      "sinonimos": [
+        "Depressão",
+        "Depressão maior",
+        "Episódio depressivo"
+      ],
+      "doid": "DOID:1470",
+      "snomedCT": "35489007",
+      "meshId": "D003865",
+      "umlsCui": "C0011570",
+      "ciap2": [
+        "P76"
+      ],
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "categoria": "saude_mental",
+      "quickView": {
+        "definicao": "Transtorno mental caracterizado por humor deprimido persistente e/ou perda de interesse por é22 semanas, acompanhado de sintomas cognitivos, comportamentais e físis, causando prejuízo funcional significativo.",
+        "criteriosDiagnosticos": [
+          "\\u00e05 sintomas por é22 semanas, sendo obrigatório: humor deprimido OU anedonia",
+          "Outros: alteração peso/apetite, insónia/hipersonia, agitação/retardo",
+          "Fadiga, sentimento de inutilidade/culpa, dificuldade de concentração",
+          "Pensamentos de morte ou ideação suicida",
+          "Prejuízo funcional significativo (trabalho, relações, autocuidado)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psicoeducação sobre a doenÇa e tratamento",
+            "Psicoterapia (TCC, interpessoal) - indicada para todos",
+            "Atividade fíisca regular (efeito antidepressivo)",
+            "Higiene do sono",
+            "Suporte social e familiar",
+            "Afastamento de álcool e drogas"
+          ],
+          "farmacologico": [
+            "ISRS 1º linha: Fluoxetina 20-60mg, Sertralina 50-200mg, Escitalopram 10-20mg",
+            "ISRSN: Venlafaxina 75-225mg, Duloxetina 60-120mg (se dor associada)",
+            "Tricílico: Amitriptilina 25-150mg (se dor, insónia, baixo custo)",
+            "Mínimo 6-12 meses após remissão. Manutenção se é33 episôdios"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Remissão completa dos sintomas (PHQ-9 <5)",
+          "Retorno ao funcionamento prévio",
+          "Prevenção de recorrççes",
+          "Identificação e manejo de comorbidades"
+        ],
+        "examesIniciais": [
+          "TSH (descartar hipotireoidismo)",
+          "Hemograma (anemia)",
+          "Glicemia",
+          "Função renal e hepática (baseline para medicamentos)",
+          "Vitamina B12 e ácido fólico (se idoso ou desnutrido)"
+        ],
+        "redFlags": [
+          "Ideiação suicida estruturada com plano e intenção",
+          "Tentativa de suicídio prévia recente",
+          "Sintomas psicóticos (delérios, alucinações)",
+          "Episódio maníaco/hipomaníaco (sugere bipolaridade)",
+          "Catatonia",
+          "Risco de heteroagressão"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "7-10% da populaÇão adulta, 2x mais em mulheres",
+          "incidencia": "Pico 25-44 anos",
+          "mortalidade": "Suicídio: 15% em casos graves nó tratados",
+          "fatoresRisco": [
+            "História familiar de depressão",
+            "Eventos adversos na infência",
+            "Estresse crónico, luto, desemprego",
+            "DoenÇas crónicas (DM, dor crónica, câncer)",
+            "Uso de substáncias",
+            "Transtorno de ansiedade prévio",
+            "Puerpério"
+          ],
+          "citations": [
+            {
+              "refId": "who-depression-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Humor deprimido na maior parte do dia",
+            "Anedonia (perda de prazer)",
+            "Alteração de peso/apetite (aumento ou diminuição)",
+            "Insónia ou hipersonia",
+            "Fadiga, perda de energia",
+            "Sentimento de inutilidade ou culpa excessiva",
+            "Dificuldade de concentração",
+            "Pensamentos de morte, ideação suicida"
+          ],
+          "sinaisExameFisico": [
+            "Aparçncia descuidada",
+            "Lentificação psicomotora ou agitação",
+            "Fácies triste, choro",
+            "Fala lenta, monotônica",
+            "Dificuldade de contato visual"
+          ],
+          "formasClinicas": [
+            "Leve: sintomas mínimos, funcionalidade preservada",
+            "Moderado: sintomas e prejuízo funcionais evidentes",
+            "Grave: sintomas intensos, risco de suicídio, possível psicose"
+          ],
+          "citations": [
+            {
+              "refId": "dsm-5"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "\\u00e05 sintomas por é22 semanas (humor deprimido ou anedonia obrigatório)",
+            "Prejuízo clínico significativo",
+            "Não atribuível a substância ou condição médica",
+            "Sem episôdio maníaco/hipomaníaco prévio"
+          ],
+          "diagnosticoDiferencial": [
+            "Transtorno bipolar",
+            "Hipotireoidismo",
+            "Anemia",
+            "Transtorno de ajustamento",
+            "Luto normal",
+            "Depressão secundária (medicamentos, doenÇas)"
+          ],
+          "examesLaboratoriais": [
+            "TSH, hemograma, glicemia, função renal e hepática",
+            "Vitamina B12, folato (idosos)",
+            "Exame toxicológico se suspeita de uso de substâncias"
+          ],
+          "citations": [
+            {
+              "refId": "dsm-5"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Remissão dos sintomas",
+            "Recuperação funcional",
+            "Prevenção de recaídas e recorrççes",
+            "Melhora da qualidade de vida"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Psicoterapia: TCC (12-20 sessões) ou terapia interpessoal",
+              "Ativação comportamental",
+              "Exercício físico: 30-45 min, 3-5x/semana",
+              "Higiene do sono",
+              "Grupos de apoio",
+              "Mindfulness"
+            ],
+            "citations": [
+              {
+                "refId": "nice-depression-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "ISRS",
+                "medicamentos": [
+                  "Fluoxetina 20-60mg/dia",
+                  "Sertralina 50-200mg/dia",
+                  "Escitalopram 10-20mg/dia"
+                ],
+                "posologia": "1x/dia, pela manhês",
+                "observaçães": "Iniciar dose baixa, aumentar a cada 2 semanas. Efeito em 2-4 semanas"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "ISRSN",
+                "medicamentos": [
+                  "Venlafaxina 75-225mg/dia",
+                  "Duloxetina 60-120mg/dia"
+                ],
+                "observaçães": "Se dor crónica associada ou falha de ISRS"
+              },
+              {
+                "classe": "Tricílico",
+                "medicamentos": [
+                  "Amitriptilina 25-150mg/dia",
+                  "Nortriptilina 25-150mg/dia"
+                ],
+                "observaçães": "Menor custo. Mais efeitos adversos. ECG prévio se >40 anos"
+              },
+              {
+                "classe": "Outros",
+                "medicamentos": [
+                  "Bupropiona 150-300mg/dia",
+                  "Mirtazapina 15-45mg/dia"
+                ],
+                "observaçães": "Bupropiona: cessão tabágica. Mirtazapina: insónia, inapetência"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Gestação",
+                "conduta": "Sertralina mais seguro. Evitar paroxetina no 1å trimestre"
+              },
+              {
+                "situacao": "Idoso",
+                "conduta": "Iniciar com doses mais baixas. Preferir ISRS"
+              },
+              {
+                "situacao": "Bipolaridade",
+                "conduta": "Antidepressivo + estabilizador de humor. Encaminhar psiquiatria"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "nice-depression-2022"
+              }
+            ]
+          },
+          "duracao": "Mínimo 6-12 meses após remissão. Manutenção indefinida se é33 episôdios ou fatores de risco"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Semanal/quinzenal inicial, depois mensal, trimestral quando estável",
+          "examesControle": [
+            "PHQ-9 a cada consulta",
+            "Avaliação de efeitos adversos",
+            "Avaliação de risco suicida",
+            "ECG se tricíclico em >40 anos"
+          ],
+          "metasTerapeuticas": [
+            "PHQ-9 <5 (remissão)",
+            "Retorno ao trabalho/atividades",
+            "Sono e apetite normalizados",
+            "Ausência de ideação suicida"
+          ],
+          "criteriosEncaminhamento": [
+            "Risco suicida alto",
+            "Sintomas psicóticos",
+            "Suspeita de bipolaridade",
+            "Refratariedade (falha a 2+ antidepressivos)",
+            "Necessidade de ECT",
+            "Comorbidade psiquiátrica grave"
+          ],
+          "citations": [
+            {
+              "refId": "nice-depression-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-depressao"
+      ],
+      "medicamentos": [
+        "fluoxetina",
+        "sertralina",
+        "amitriptilina",
+        "escitalopram"
+      ],
+      "calculadoras": [
+        "phq9",
+        "phq2"
+      ],
+      "citations": [
+        {
+          "refId": "dsm-5"
+        },
+        {
+          "refId": "nice-depression-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "saude_mental",
+        "cronica",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "transtorno-ansiedade-generalizada",
+      "titulo": "सामान्यीकृत चिंता विकार (GAD)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F41.1"
+      ],
+      "cid11": [
+        "6B00"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "21897009",
+      "doid": "DOID:14320",
+      "meshId": "D001008",
+      "umlsCui": "C0270458",
+      "dsm5": {
+        "code": "300.02",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.02",
+          "name": "Generalized Anxiety Disorder",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "अधिक चिंता और उद्वेग (प्रतीक्षापूर्ण आशंका), जो अधिकांश दिनों में कम से कम 6 महीने तक विभिन्न घटनाओं या गतिविधियों के बारे में होती है"
+            },
+            {
+              "letter": "B",
+              "text": "व्यक्ति को चिंता को नियंत्रित करना मुश्किल लगता है"
+            },
+            {
+              "letter": "C",
+              "text": "चिंता और उद्वेग के साथ तीन (या अधिक) निम्नलिखित छह लक्षणों में से जुड़े होते हैं:",
+              "subCriteria": [
+                {
+                  "text": "1. अशांति या नर्वस रहने की संवेदना"
+                },
+                {
+                  "text": "2. थकावट"
+                },
+                {
+                  "text": "3. सामंजस्य रखने में कठिनाई या मन में खालीपन की संवेदना"
+                },
+                {
+                  "text": "4. उत्तेजना"
+                },
+                {
+                  "text": "5. मांसपेशियों की तनाव"
+                },
+                {
+                  "text": "6. नींद की बीमारी"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "एक विकार जो विभिन्न घटनाओं या गतिविधियों के बारे में अधिक और लगातार चिंता और उद्वेग से लक्षित होता है, जिसे नियंत्रित करना मुश्किल होता है और इसके साथ शारीरिक और संज्ञानात्मक लक्षण जुड़े होते हैं।",
+        "criteriosDiagnosticos": [
+          "अधिकांश दिनों में ≥6 महीने तक अधिक चिंता",
+          "चिंता को नियंत्रित करने में कठिनाई",
+          "3 या अधिक लक्षण: अशांति, थकावट, सामंजस्य रखने में कठिनाई, उत्तेजना, मांसपेशियों की तनाव, नींद की बीमारी",
+          "कार्य करने में महत्वपूर्ण बाधा"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "TCC (संज्ञानात्मक-आचरणिक थेरेपी) - स्वर्ण मानदंड",
+            "स्वीकार और प्रतिबद्धता थेरेपी (ACT)",
+            "माइंडफुलनेस",
+            "रिलैक्सेशन तकनीक"
+          ],
+          "farmacologico": [
+            "SSRIs: एस्सिटालोप्राम, सर्ट्रालीन",
+            "SNRIs: वेन्लाफैक्सीन XR",
+            "प्रेगाबालिन (वैकल्पिक)"
+          ]
+        },
+        "redFlags": [
+          "स्वतंत्रता की विचारधारा",
+          "गंभीर सह-मौजूदा चिंता विकार",
+          "उपचार की प्रतिरोधता",
+          "द्रव्यों का उपयोग"
+        ],
+        "examesIniciais": [
+          "TSH (थायरोइड स्टिमुलेटिंग हॉर्मोन) (थायरोइड अतिरिक्तता को निकालने के लिए)",
+          "हीमोग्राम",
+          "GAD-7 स्केल लिए मूल्यांकन"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "GAD-7",
+          "description": "Generalized Anxiety Disorder-7: 7 आइटम की स्केल, स्कोर 0-21. ≥10 माध्यम से गंभीर GAD को दर्शाता है।",
+          "cutoff": "≥10",
+          "reference": "Spitzer et al., 2006"
+        }
+      ],
+      "tags": [
+        "चिंता",
+        "GAD",
+        "SSRIs",
+        "TCC",
+        "DSM-5",
+        "मानसिक स्वास्थ्य"
+      ]
+    },
+    {
+      "id": "transtorno-panico",
+      "titulo": "पैनिक डिसऑर्डर",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F41.0"
+      ],
+      "cid11": [
+        "6B01"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "371631005",
+      "doid": "DOID:594",
+      "meshId": "D016584",
+      "umlsCui": "C0030319",
+      "dsm5": {
+        "code": "300.01",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.01",
+          "name": "Panic Disorder",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "पुनरावृत्त और अप्रत्याशित पैनिक आक्रमण"
+            },
+            {
+              "letter": "B",
+              "text": "कम से कम एक आक्रमण के बाद 1 महीने (या अधिक) की अवधि तक एक या दोनों में से एक होना चाहिए:",
+              "subCriteria": [
+                {
+                  "text": "1. अतिरिक्त आक्रमणों या उनके परिणामों के बारे में लगातार चिंता"
+                },
+                {
+                  "text": "2. आक्रमणों से संबंधित महत्वपूर्ण अनुकूल नहीं होने वाले व्यवहार की परिवर्तन"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "पुनरावृत्त और अप्रत्याशित पैनिक आक्रमणों से चिह्नित डिसऑर्डर, जिसके बाद लगातार चिंता या अनुकूल नहीं होने वाले व्यवहार की परिवर्तन होती है।",
+        "criteriosDiagnosticos": [
+          "पुनरावृत्त और अप्रत्याशित पैनिक आक्रमण",
+          "आक्रमण के दौरान कम से कम 4 लक्षण: हृदय की धड़कन, पसीना, कांपन, सांस लेने की कठिनाई, छाती का दर्द, उल्टी, चक्कर, असाथ, नियंत्रण से बाहर जाने का डर, मरने का डर",
+          "≥1 महीने की अवधि तक लगातार चिंता या व्यवहार की परिवर्तन"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "इंटरोसेप्टिव एक्सपोजर के साथ कैबीटी",
+            "पैनिक आक्रमणों के बारे में साइकोएजुकेशन",
+            "सांस लेने की तकनीकें"
+          ],
+          "farmacologico": [
+            "SSRIs: सर्ट्रालीन, पैरोक्सेटीन, एस्सिटालोप्राम",
+            "अल्प्राजोलैम (संक्षिप्त उपयोग, निर्भरता से बचना)"
+          ]
+        },
+        "redFlags": [
+          "ग्रेव अगोराफोबिया",
+          "स्विचालन विचार",
+          "द्रव्यमान का उपयोग",
+          "अनुपचारित सह-मौजूदगी"
+        ],
+        "examesIniciais": [
+          "ECG (अरिथ्मियाओं को निकालने के लिए)",
+          "TSH",
+          "खाली पेट ग्लाइकेमिया",
+          "हीमोग्राम"
+        ]
+      },
+      "tags": [
+        "पैनिक",
+        "अंशिता",
+        "आक्रमण",
+        "SSRIs",
+        "कैबीटी",
+        "DSM5"
+      ]
+    },
+    {
+      "id": "insonia",
+      "titulo": "अनिद्रा",
+      "ciap2": [
+        "P06"
+      ],
+      "cid10": [
+        "G47.0"
+      ],
+      "cid11": [
+        "7A00.0"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:193",
+      "snomedCT": "193462001",
+      "meshId": "D007319",
+      "umlsCui": "C0917801",
+      "quickView": {
+        "definicao": "नींद लेने में कठिनाई या नींद को बनाए रखने में कठिनाई या सुबह से जागना, दिन में नुकसान। यदि ≥3 बार/सप्ताह से ≥3 महीनों तक तो यह चर्मिक होता है।",
+        "criteriosDiagnosticos": [
+          "उचित अवसर के बावजूद नींद लेने में कठिनाई",
+          "दिन में नुकसान (थकान, उतावलापन, सावधानी)",
+          "नींद की अपनी रोकथाम, RLS, अन्य कारणों को छोड़कर"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "TCC-I (अनिद्रा के लिए संज्ञात-व्यवहारिक चिकित्सा)",
+            "नींद की स्वच्छता",
+            "प्रेरण का नियंत्रण",
+            "बिस्तर पर समय की सीमा"
+          ],
+          "farmacologico": [
+            "बेंजोडाइएपाइन्स का लगातार उपयोग न करें",
+            "संक्षिप्त काल: Zolpidem 5-10mg या Zopiclona",
+            "यदि सहभागिता हो: Trazodone 25-100mg या Mirtazapine"
+          ]
+        },
+        "redFlags": [
+          "अतिरिक्त दिन में नींद (अपनी रोकथाम)",
+          "तीव्र गर्जना",
+          "बेचैन पैरों का सिंड्रोम",
+          "कैटप्लेक्सी"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "transtorno-depressivo-maior",
+      "titulo": "महत्वपूर्ण अवसाद विकार (TDM)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "cid11": [
+        "6A70",
+        "6A71"
+      ],
+      "ciap2": [
+        "P76"
+      ],
+      "snomedCT": "35489007",
+      "doid": "DOID:1470",
+      "meshId": "D003865",
+      "umlsCui": "C1269683",
+      "dsm5": {
+        "code": "296.33",
+        "codeAlternative": "F32",
+        "category": "Depressive Disorders",
+        "diagnosticCriteria": {
+          "code": "296.33",
+          "name": "Major Depressive Disorder",
+          "category": "Depressive Disorders",
+          "criteria": [
+            {
+              "text": "A. दो सप्ताह की अवधि के दौरान पाँच (या उससे अधिक) निम्नलिखित लक्षण मौजूद थे और इनमें पूर्व की स्थिति से एक परिवर्तन हुआ; इन लक्षणों में से कम से कम एक लक्षण (1) अवसादित मनोदशा या (2) रुचि या सुखद संवेदना की गुमाव है।"
+            },
+            {
+              "letter": "1",
+              "text": "दिन में अधिकांश समय और लगभग हर दिन अवसादित मनोदशा"
+            },
+            {
+              "letter": "2",
+              "text": "सभी या लगभग सभी कार्यों में रुचि या सुखद संवेदना की चरम सीमा तक की कमी"
+            },
+            {
+              "letter": "3",
+              "text": "सामान्य वजन से अधिक या कम वजन (एक महीने में वजन का 5% से अधिक)"
+            },
+            {
+              "letter": "4",
+              "text": "लगभग हर दिन बिना सोने की अवस्था या अधिक सोने की अवस्था"
+            },
+            {
+              "letter": "5",
+              "text": "लगभग हर दिन मानसिक या शारीरिक उत्तेजना या धीमी गति"
+            },
+            {
+              "letter": "6",
+              "text": "लगभग हर दिन थकावट या ऊर्जा की कमी"
+            },
+            {
+              "letter": "7",
+              "text": "निष्फलता का भाव या अतिरिक्त या अनुचित दोषारोपण"
+            },
+            {
+              "letter": "8",
+              "text": "सोचने या ध्यान केंद्रित करने की क्षमता की कमी, या अनिर्णयकारिता"
+            },
+            {
+              "letter": "9",
+              "text": "मौत के बारे में दोहराने वाले सोचने, स्वत: हत्या की विचारधारा"
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "Mild",
+              "Moderate",
+              "Severe",
+              "With Psychotic Features"
+            ],
+            "course": [
+              "Single Episode",
+              "Recurrent"
+            ],
+            "episode": [
+              "With Melancholic Features",
+              "With Atypical Features",
+              "With Catatonia"
+            ],
+            "remission": [
+              "In Partial Remission",
+              "In Full Remission"
+            ]
+          },
+          "exclusions": [
+            "Substance/Medication-Induced",
+            "Due to Another Medical Condition"
+          ]
+        },
+        "specifiers": {
+          "severity": [
+            "Mild",
+            "Moderate",
+            "Severe",
+            "With Psychotic Features"
+          ],
+          "course": [
+            "Single Episode",
+            "Recurrent"
+          ],
+          "episode": [
+            "With Melancholic Features",
+            "With Atypical Features",
+            "With Catatonia"
+          ],
+          "remission": [
+            "In Partial Remission",
+            "In Full Remission"
+          ],
+          "withAnxiousDistress": true,
+          "withMelancholicFeatures": true,
+          "withAtypicalFeatures": true,
+          "withPsychoticFeatures": true,
+          "withCatatonia": true,
+          "withPeripartumOnset": true,
+          "withSeasonalPattern": true
+        }
+      },
+      "quickView": {
+        "definicao": "मनोदशा विकार जो अवसादित मनोदशा, रुचि या सुखद संवेदना की गुमाव के एपिसोडों से चिह्नित है, जिनके साथ अन्य संज्ञात, न्यूरोवेजिटेटिव और मानसिक-शारीरिक लक्षण होते हैं, जो दर्द या महत्वपूर्ण नुकसान का कारण बनते हैं।",
+        "criteriosDiagnosticos": [
+          "अवसादित मनोदशा या रुचि/सुखद संवेदना की गुमाव",
+          "2 सप्ताह के लिए कम से कम 5 लक्षण",
+          "लक्षण: वजन, सोना, मानसिक-शारीरिक, ऊर्जा, संज्ञात, दोषारोपण, स्वत: हत्या की विचारधारा",
+          "महत्वपूर्ण नुकसान फंक्शनिंग में"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "प्रतिजैविक चिकित्सा: TCC (संज्ञात-आचरणिक चिकित्सा) - स्वर्ण मानक",
+            "प्रतिजैविक चिकित्सा: IPT (अंतर्व्यक्तिक चिकित्सा)",
+            "आचरणिक सक्रियता",
+            "नियमित शारीरिक सक्रियता"
+          ],
+          "farmacologico": [
+            "ISRS: सर्ट्रालीन, एस्सिटालोप्राम, फ्लुक्सेटीन (पहली लाइन)",
+            "ISRN: वेन्लाफेक्सीन, डुलोक्सेटीन",
+            "अवसादरोधी त्रिक चक्र: एमिट्रिप्टिलीन (दूसरी लाइन)"
+          ]
+        },
+        "redFlags": [
+          "सक्रिय स्वत: हत्या की विचारधारा",
+          "स्वत: हत्या का प्रयास",
+          "पागलपन (हल्लूसिनेशन/डेलिरियम)",
+          "कटाटोनिया",
+          "उपचार से प्रतिरोध",
+          "TDM गंभीर जो उपचार से अपर्याप्त प्रतिक्रिया देता है"
+        ],
+        "examesIniciais": [
+          "TSH, T4 स्वतंत्र (हाइपोथायरोइडिज़्म को छोड़ने के लिए)",
+          "विटामिन B12, फोलेट",
+          "पूर्ण हीमोग्राम",
+          "PHQ-9 या HAM-D आकलन के लिए"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "PHQ-9",
+          "description": "Patient Health Questionnaire-9: 9 आइटम की पैमाना, स्कोर 0-27. ≥10 मध्यम से गंभीर अवसाद को दर्शाता है।",
+          "cutoff": "≥10",
+          "reference": "Kroenke et al., 2001"
+        },
+        {
+          "name": "HAM-D",
+          "description": "Hamilton Depression Rating Scale: नैदानिक पैमाना, स्कोर 0-52. ≥17 मध्यम से गंभीर अवसाद को दर्शाता है।",
+          "cutoff": "≥17",
+          "reference": "Hamilton, 1960"
+        }
+      ],
+      "tags": [
+        "depressao",
+        "humor",
+        "isrs",
+        "tcc",
+        "dsm5",
+        "saude_mental"
+      ]
+    },
+    {
+      "id": "transtorno-bipolar-i",
+      "titulo": "बाइपोलर विकार प्रकार I",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F31"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "ciap2": [
+        "P73"
+      ],
+      "snomedCT": "13746004",
+      "doid": "DOID:3312",
+      "meshId": "D001714",
+      "umlsCui": "C0853193",
+      "dsm5": {
+        "code": "296.43",
+        "category": "Bipolar and Related Disorders",
+        "diagnosticCriteria": {
+          "code": "296.43",
+          "name": "Bipolar I Disorder",
+          "category": "Bipolar and Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "एक मानसिक उत्तेजना अवधि के लिए मानक पूरे हो गए हैं"
+            },
+            {
+              "letter": "B",
+              "text": "मानसिक उत्तेजना अवधि श्योथिका, श्योथिका-प्रभावित विकार या अन्य मनोवैज्ञानिक विकार से अधिक अच्छी तरह से समझाई नहीं जा सकती है"
+            }
+          ]
+        },
+        "specifiers": {
+          "severity": [
+            "Mild",
+            "Moderate",
+            "Severe",
+            "With Psychotic Features"
+          ],
+          "course": [
+            "Single Manic Episode",
+            "Most Recent Episode Manic",
+            "Most Recent Episode Hypomanic",
+            "Most Recent Episode Depressed",
+            "Most Recent Episode Unspecified"
+          ],
+          "episode": [
+            "With Catatonia",
+            "With Peripartum Onset",
+            "With Seasonal Pattern"
+          ],
+          "remission": [
+            "In Partial Remission",
+            "In Full Remission"
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "मानसिक उत्तेजना और गंभीर निराशा के अवधियों के बीच बार-बार बदलने वाला एक मानसिक विकार, जिसमें कम से कम एक पूरा मानसिक उत्तेजना अवधि शामिल होती है।",
+        "criteriosDiagnosticos": [
+          "कम से कम एक मानसिक उत्तेजना अवधि (उत्तेजित/उत्तेजक मनोदशा + 3 लक्षण ≥1 सप्ताह के लिए)",
+          "मानसिक उत्तेजना के लक्षण: आत्मविश्वास, कम नींद, बहुत बातचीत, विचारों का भाग जाना, ध्यान न लगाना, गतिविधियों में वृद्धि, जोखिम भरी गतिविधियों में शामिल होना",
+          "महत्वपूर्ण नुकसान या अस्पतालीकरण की आवश्यकता"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "विकार के बारे में मानसिक शिक्षा",
+            "परिवार की थेरेपी",
+            "सामाजिक रिदम थेरेपी"
+          ],
+          "farmacologico": [
+            "मानसिक स्थिरता देने वाले औषधियाँ: लिथियम (स्वर्ण मानक)",
+            "एंटीकंवल्सेंट्स: वैल्प्रोएट, कार्बामेजेपाइन",
+            "एटाइपिक एंटीप्साइकोटिक्स: क्वेटियापाइन, ओलानज़ापाइन"
+          ]
+        },
+        "redFlags": [
+          "मानसिक उत्तेजना की गंभीर अवधि जिसमें मनोवैज्ञानिक लक्षण होते हैं",
+          "निराशा के दौरान स्वत: हत्या का जोखिम",
+          "उपचार से अनुपलब्धता",
+          "बार-बार आने वाली संकटावस्थाएँ"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "पहली मानसिक उत्तेजना अवधि",
+        "गंभीर या मनोवैज्ञानिक लक्षणों वाली मानसिक उत्तेजना अवधि",
+        "स्वत: हत्या का जोखिम",
+        "लिथियम के तालिका के समायोजन की आवश्यकता",
+        "उपचार के बावजूद बार-बार आने वाली संकटावस्थाएँ"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "riscoAgressao": true,
+        "criterios": [
+          "गंभीर मानसिक उत्तेजना अवधि",
+          "मनोवैज्ञानिक लक्षण",
+          "स्वयं को चोट पहुंचाने का जोखिम"
+        ]
+      },
+      "tags": [
+        "बाइपोलर",
+        "मानसिक उत्तेजना",
+        "निराशा",
+        "लिथियम",
+        "मानसिक स्थिरता देने वाले औषधियाँ",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "esquizofrenia",
+      "titulo": "एसक्विजोफ्रेनिया",
+      "ciap2": [
+        "P72"
+      ],
+      "cid10": [
+        "F20"
+      ],
+      "cid11": [
+        "6A20"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:5419",
+      "snomedCT": "58214004",
+      "meshId": "D012559",
+      "umlsCui": "C0036341",
+      "tags": [
+        "saude_mental",
+        "cronica",
+        "psicose"
+      ],
+      "quickView": {
+        "definicao": "मानसिक रोग जिसमें सकारात्मक (हल्लूसिनेशन, डेलीरियम) और नकारात्मक (अबुलिया, भावनात्मक निरोध) लक्षण होते हैं।",
+        "criteriosDiagnosticos": [
+          "≥1 महीने के लिए सकारात्मक या नकारात्मक लक्षण",
+          "सामाजिक/कार्यकारी अक्षमता",
+          "≥6 महीने की अवधि"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "मानसिक चिकित्सा",
+            "मानसिक शिक्षा",
+            "मानसिक फिरस्तगी"
+          ],
+          "farmacologico": [
+            "एंटिप्साइकोटिक: रिस्पेरिडोन या ओलान्जपिन",
+            "लंबे समय तक बनाए रखना"
+          ]
+        },
+        "redFlags": [
+          "स्विचार/स्वयंहत्यात्मक आचरण",
+          "मानसिक चलचalan",
+          "स्वयं की देखभाल की उपेक्षा"
+        ]
+      },
+      "medicamentos": [
+        "risperidona",
+        "olanzapina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "transtorno-estresse-pos-traumatico",
+      "titulo": "त्राऊमा उपरांत स्ट्रेस विकार (TEPT)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F43.1"
+      ],
+      "cid11": [
+        "6B40"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "47505003",
+      "doid": "DOID:2055",
+      "meshId": "D013313",
+      "umlsCui": "C0038436",
+      "dsm5": {
+        "code": "309.81",
+        "category": "Trauma- and Stressor-Related Disorders",
+        "diagnosticCriteria": {
+          "code": "309.81",
+          "name": "Posttraumatic Stress Disorder",
+          "category": "Trauma- and Stressor-Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "वास्तविक या धमकी वाली मौत, गंभीर चोट या यौन हिंसा की एक्सपोजर"
+            },
+            {
+              "letter": "B",
+              "text": "निम्नलिखित आक्रमण संबंधी लक्षणों में से एक (या अधिक) की मौजूदगी:",
+              "subCriteria": [
+                {
+                  "text": "1. दोहराव वाली दुखद यादें"
+                },
+                {
+                  "text": "2. दोहराव वाले दुखद सपने"
+                },
+                {
+                  "text": "3. वियोजन अभिक्रियाएँ"
+                },
+                {
+                  "text": "4. तीव्र मानसिक या शारीरिक तनाव"
+                }
+              ]
+            },
+            {
+              "letter": "C",
+              "text": "ट्राऊमा से संबंधित उत्तेजकों की लगातार टालना"
+            },
+            {
+              "letter": "D",
+              "text": "ज्ञान और मूड में नकारात्मक परिवर्तन"
+            },
+            {
+              "letter": "E",
+              "text": "उत्तेजना और प्रतिक्रिया में चाहनीय परिवर्तन"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "गंभीर ट्राऊमाटिक घटना के बाद विकसित होने वाला विकार, जिसमें आक्रमण, टालना, ज्ञान/मूड और उत्तेजना के लक्षण शामिल होते हैं।",
+        "criteriosDiagnosticos": [
+          "ट्राऊमा (मौत, गंभीर चोट, हिंसा) की एक्सपोजर",
+          "आक्रमण संबंधी लक्षण: यादें, सपने, फ्लैशबैक",
+          "लगातार टालना",
+          "नकारात्मक ज्ञान/मूड परिवर्तन",
+          "उत्तेजना और प्रतिक्रिया",
+          ">1 महीने की अवधि"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "TEPT-F (ट्राऊमा फोकस्ड थेरेपी): EMDR, लंबी अवधि की एक्सपोजर थेरेपी",
+            "एक्सपोजर के साथ CBT",
+            "TEPT के लिए संज्ञानात्मक थेरेपी"
+          ],
+          "farmacologico": [
+            "SSRIs: सर्ट्रालीन, पैरोक्सेटीन (FDA द्वारा मंजूर)",
+            "SNRIs: वेन्लाफेक्सीन",
+            "प्राजोसिन (पेशेवर सपनों के लिए)"
+          ]
+        },
+        "redFlags": [
+          "स्वतंत्रता का जोखिम",
+          "द्रव्यमान का उपयोग",
+          "गंभीर सहभागिता",
+          "अप्रतिक्रियात्मक लंबी अवधि वाला TEPT"
+        ],
+        "examesIniciais": [
+          "स्वतंत्रता के जोखिम का मूल्यांकन",
+          "द्रव्यमान के उपयोग का स्क्रीनिंग",
+          "मूल्यांकन के लिए PCL-5 स्केल"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "PCL-5",
+          "description": "DSM-5 के लिए PTSD चेकलिस्ट: 20 आइटम वाली स्केल, 0-80 अंक। ≥33 संभावित TEPT को दर्शाता है।",
+          "cutoff": "≥33",
+          "reference": "Weathers et al., 2013"
+        }
+      ],
+      "tags": [
+        "tept",
+        "ट्राऊमा",
+        "स्ट्रेस",
+        "emdr",
+        "ssris",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-obsessivo-compulsivo",
+      "titulo": "ओब्सेसिव-कंप्यूल्सिव विकार (TOC)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F42"
+      ],
+      "cid11": [
+        "6B20"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "191736004",
+      "doid": "DOID:10933",
+      "meshId": "D009771",
+      "umlsCui": "C0028768",
+      "dsm5": {
+        "code": "300.3",
+        "category": "Obsessive-Compulsive and Related Disorders",
+        "diagnosticCriteria": {
+          "code": "300.3",
+          "name": "Obsessive-Compulsive Disorder",
+          "category": "Obsessive-Compulsive and Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "ओब्सेसियन (पुनरावर्ती और लगातार विचार, आवेग या छवियाँ) या कंप्यूल्सियन (पुनरावर्ती व्यवहार या मानसिक कार्य) या दोनों की मौजूदगी"
+            },
+            {
+              "letter": "B",
+              "text": "ओब्सेसियन या कंप्यूल्सियन समय लेते हैं (प्रतिदिन 1 घंटे से अधिक) या गंभीर दुःख या नुकसान का कारण बनते हैं"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "एक विकार जो ओब्सेसियन (पुनरावर्ती और लगातार विचार, आवेग या छवियाँ) और/या कंप्यूल्सियन (पुनरावर्ती व्यवहार या मानसिक कार्य) से लक्षित होता है, जो समय लेते हैं या गंभीर दुःख का कारण बनते हैं।",
+        "criteriosDiagnosticos": [
+          "ओब्सेसियन: पुनरावर्ती और लगातार, अनिच्छापूर्वक और अवांछित विचार, आवेग या छवियाँ",
+          "कंप्यूल्सियन: ओब्सेसियन के प्रतिक्रिया में पुनरावर्ती व्यवहार या मानसिक कार्य",
+          "1 घंटे/दिन से अधिक समय लेते हैं या गंभीर दुःख/नुकसान का कारण बनते हैं"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "प्रतिक्रिया प्रतिरोध और अनुभव (ERP) के साथ संज्ञानात्मक चिकित्सा - स्वर्ण मानक",
+            "स्वीकार और प्रतिबद्धता चिकित्सा (ACT)"
+          ],
+          "farmacologico": [
+            "उच्च खातों में ISRS: सर्ट्रालीन (≥200mg), फ्लुक्सेटीन (≥60mg), फ्लुवोक्सामीन",
+            "क्लोमिप्रामीन (अवसादरोधी ट्राइसाइक्लिक, दूसरी लाइन)"
+          ]
+        },
+        "redFlags": [
+          "गंभीर TOC जो गंभीर कार्यक्षमता नुकसान का कारण बनता है",
+          "स्विचालन विचार",
+          "नहीं उपचारित सह-मौजूदगी",
+          "उपचार से प्रतिरोध"
+        ],
+        "examesIniciais": [
+          "कार्यक्षमता का मूल्यांकन",
+          "Y-BOCS एकल के लिए मूल्यांकन"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "Y-BOCS",
+          "description": "येल-ब्राउन ओब्सेसिव कंप्यूल्सिव स्केल: 10 आइटम की स्केल, 0-40 का स्कोर। ≥16 गंभीर या गंभीर TOC को दर्शाता है।",
+          "cutoff": "≥16",
+          "reference": "Goodman et al., 1989"
+        }
+      ],
+      "tags": [
+        "toc",
+        "ओब्सेसिव",
+        "कंप्यूल्सिव",
+        "erp",
+        "isrs",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-distimico",
+      "titulo": "अवसादजनक विकार (दिस्थीमिया)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F34.1"
+      ],
+      "cid11": [
+        "6A71"
+      ],
+      "ciap2": [
+        "P76"
+      ],
+      "snomedCT": "78667006",
+      "doid": "DOID:1596",
+      "meshId": "D019263",
+      "umlsCui": "C0013415",
+      "dsm5": {
+        "code": "300.4",
+        "category": "Depressive Disorders",
+        "diagnosticCriteria": {
+          "code": "300.4",
+          "name": "Persistent Depressive Disorder (Dysthymia)",
+          "category": "Depressive Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "दिन के अधिकांश समय तक और अधिकांश दिनों में अवसादजनक मनोदशा, विषय के स्वयं के विचारों या दूसरों के अवलोकन से साबित होने वाला, कम से कम 2 साल तक"
+            },
+            {
+              "letter": "B",
+              "text": "अवसादजनक मनोदशा के दौरान निम्नलिखित में से दो (या अधिक) की मौजूदगी:",
+              "subCriteria": [
+                {
+                  "text": "1. कम या अधिक भोजन की इच्छा"
+                },
+                {
+                  "text": "2. नींद की कमी या अधिक नींद"
+                },
+                {
+                  "text": "3. कम ऊर्जा या थकावट"
+                },
+                {
+                  "text": "4. कम स्वयं का मूल्यांकन"
+                },
+                {
+                  "text": "5. सामंजस्य या निर्णय लेने में कठिनाई"
+                },
+                {
+                  "text": "6. निराशा के भाव"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "कम से कम 2 साल तक लगातार अवसादजनक मनोदशा वाला अवसादजनक विकार, जिसकी तीव्रता महत्वाकांक्षी अवसादजनक विकार (TDM) से कम होती है, लेकिन फ़ंक्शनल असर महत्वपूर्ण होता है।",
+        "criteriosDiagnosticos": [
+          "दिन के अधिकांश समय तक अवसादजनक मनोदशा, 2 साल से अधिक",
+          "≥2 लक्षण: भोजन, नींद, ऊर्जा, स्वयं का मूल्यांकन, सामंजस्य, निराशा",
+          "2 महीने से अधिक लक्षणों की मुक्ति की अवधि की कोई नहीं",
+          "महत्वपूर्ण फ़ंक्शनल नुकसान"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "मानसिक चिकित्सा: TCC, IPT",
+            "व्यवहारिक सक्रियता",
+            "शारीरिक व्यायाम"
+          ],
+          "farmacologico": [
+            "ISRS: सर्ट्रालीन, एस्सिटालोप्राम",
+            "ISRN: वेन्लाफैक्सीन"
+          ]
+        },
+        "redFlags": [
+          "संकुलित TDM",
+          "आत्महत्या की विचारधारा",
+          "चिकित्सा की प्रतिरोधता"
+        ],
+        "examesIniciais": [
+          "TSH",
+          "PHQ-9"
+        ]
+      },
+      "tags": [
+        "दिस्थीमिया",
+        "अवसाद",
+        "लगातार",
+        "ISRS",
+        "TCC",
+        "DSM5"
+      ]
+    },
+    {
+      "id": "transtorno-bipolar-ii",
+      "titulo": "बाइपोलर डिसऑर्डर टाइप II",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F31.8"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "ciap2": [
+        "P73"
+      ],
+      "snomedCT": "83746006",
+      "doid": "DOID:540",
+      "meshId": "D001714",
+      "umlsCui": "C0236788",
+      "dsm5": {
+        "code": "296.89",
+        "category": "Bipolar and Related Disorders",
+        "diagnosticCriteria": {
+          "code": "296.89",
+          "name": "Bipolar II Disorder",
+          "category": "Bipolar and Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "एक वर्तमान या भूतकालीन हाइपोमानिक एपिसोड और एक वर्तमान या भूतकालीन महत्वपूर्ण अवसादी एपिसोड के लिए मानदंड संतुष्ट होने चाहिए"
+            },
+            {
+              "letter": "B",
+              "text": "कभी भी एक पूर्ण मानिक एपिसोड नहीं हुआ"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "एक मानसिक विकार जो कम से कम एक हाइपोमानिक एपिसोड और एक महत्वपूर्ण अवसादी एपिसोड से चिह्नित होता है, जिसमें पूर्ण मानिक एपिसोड का इतिहास नहीं होता।",
+        "criteriosDiagnosticos": [
+          "हाइपोमानिक एपिसोड: उच्च/उत्तेजित मनोदशा + 3 लक्षण ≥4 दिनों तक, सामान्य फंक्शनिंग का गंभीर नुकसान नहीं",
+          "महत्वपूर्ण अवसादी एपिसोड: वर्तमान या भूतकालीन",
+          "कभी भी पूर्ण मानिक एपिसोड नहीं हुआ"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "मानसिक शिक्षा",
+            "परिवार की थेरेपी",
+            "सामाजिक छलने का नियमन"
+          ],
+          "farmacologico": [
+            "लिथियम या लामोट्रिजिन (एपिसोड की रोकथाम के लिए)",
+            "क्वेटियापिन (अवसादी एपिसोड के लिए)",
+            "अलग-अलग अवसादरोधी औषधियों का उपयोग नहीं करना (मानिक विपरीत के खतरे के कारण)"
+          ]
+        },
+        "redFlags": [
+          "अवसादरोधी औषधियों के साथ मानिक विपरीत का खतरा",
+          "अवसाद के दौरान स्वतंत्रता का खतरा",
+          "दोहराव वाली संकट"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "पहला हाइपोमानिक एपिसोड",
+        "गंभीर अवसाद",
+        "स्वतंत्रता का खतरा",
+        "स्थिरकर्ता के समायोजन की आवश्यकता"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "criterios": [
+          "गंभीर अवसाद",
+          "मानिक विपरीत का खतरा"
+        ]
+      },
+      "tags": [
+        "बाइपोलर",
+        "हाइपोमानिया",
+        "अवसाद",
+        "लिथियम",
+        "लामोट्रिजिन",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "fobia-social",
+      "titulo": "सामाजिक भय (सामाजिक चिंता विकार)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F40.1"
+      ],
+      "cid11": [
+        "6B04"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "25501002",
+      "doid": "DOID:11257",
+      "meshId": "D010698",
+      "umlsCui": "C0031572",
+      "dsm5": {
+        "code": "300.23",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.23",
+          "name": "Social Anxiety Disorder (Social Phobia)",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "एक या अधिक सामाजिक स्थितियों के बारे में जिनमें व्यक्ति अन्यों द्वारा संभावित मूल्यांकन के लिए उन्हें अपनाते हैं, उनका चिन्ताजनक भय या चिंता"
+            },
+            {
+              "letter": "B",
+              "text": "व्यक्ति का भय है कि वे ऐसा करेंगे जिससे उनकी चिंता के लक्षण नकारात्मक रूप से मूल्यांकित होंगे"
+            },
+            {
+              "letter": "C",
+              "text": "सामाजिक स्थितियाँ लगभग हमेशा भय या चिंता का कारण बनती हैं"
+            },
+            {
+              "letter": "D",
+              "text": "सामाजिक स्थितियाँ या तो टाली जाती हैं या उन्हें चिन्ताजनक भय या चिंता के साथ सहन किया जाता है"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "सामाजिक स्थितियों में चिन्ताजनक भय या चिंता जिनमें व्यक्ति अन्यों द्वारा संभावित मूल्यांकन के लिए उन्हें अपनाते हैं, इसका चिंता विकार।",
+        "criteriosDiagnosticos": [
+          "सामाजिक स्थितियों में चिन्ताजनक भय या चिंता",
+          "नकारात्मक मूल्यांकन का भय",
+          "सामाजिक स्थितियाँ लगभग हमेशा भय/चिंता का कारण बनती हैं",
+          "टालना या चिन्ताजनक भय/चिंता के साथ सहन करना",
+          "≥6 महीने की अवधि",
+          "महत्वपूर्ण कार्यक्षमता की कमी"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "प्रयोग सहित कार्यकारी संज्ञानात्मक चिकित्सा (TCC) - स्वर्ण मानक",
+            "सामाजिक कौशल प्रशिक्षण",
+            "समूह चिकित्सा"
+          ],
+          "farmacologico": [
+            "SSRIs: पैरोक्सेटीन, सर्ट्रालीन, एस्सिटालोप्राम",
+            "SNRIs: वेन्लाफैक्सीन XR"
+          ]
+        },
+        "redFlags": [
+          "गंभीर टालने के साथ सामाजिक अलगाव",
+          "निराशाजनक सहभागिता",
+          "स्थितियों को सामना करने के लिए पदार्थों का उपयोग"
+        ],
+        "examesIniciais": [
+          "कार्यक्षमता निरीक्षण",
+          "LSAS पैमाना"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "LSAS",
+          "description": "Liebowitz सामाजिक चिंता पैमाना: सामाजिक भय का मूल्यांकन करने के लिए 24 आइटम का पैमाना।",
+          "reference": "Liebowitz, 1987"
+        }
+      ],
+      "tags": [
+        "fobia-social",
+        "ansiedade",
+        "tcc",
+        "isrs",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "agorafobia",
+      "titulo": "अगोराफोबिया",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F40.0"
+      ],
+      "cid11": [
+        "6B02"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "70691001",
+      "doid": "DOID:11259",
+      "meshId": "D000379",
+      "umlsCui": "C0001818",
+      "dsm5": {
+        "code": "300.22",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.22",
+          "name": "Agoraphobia",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "दो (या अधिक) निम्न स्थितियों में चिह्नित डर या चिंता:",
+              "subCriteria": [
+                {
+                  "text": "1. सार्वजनिक परिवहन का उपयोग"
+                },
+                {
+                  "text": "2. खुले स्थानों में होना"
+                },
+                {
+                  "text": "3. बंद स्थानों में होना"
+                },
+                {
+                  "text": "4. भीड़ या लाइन में होना"
+                },
+                {
+                  "text": "5. अकेले घर से बाहर निकलना"
+                }
+              ]
+            },
+            {
+              "letter": "B",
+              "text": "व्यक्ति इन स्थितियों को उनके डर से बचने के लिए या मदद न मिलने के डर से टालता है"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "एक चिंता विकार जो ऐसी स्थितियों में चिह्नित डर या चिंता के रूप में दिखता है जहाँ बचना मुश्किल हो सकता है या पानी की बूंदों के लक्षण या अन्य अक्षम लक्षणों के मुकाबले मदद उपलब्ध नहीं हो सकती है।",
+        "criteriosDiagnosticos": [
+          "≥2 स्थितियों में चिह्नित डर/चिंता: सार्वजनिक परिवहन, खुले स्थान, बंद स्थान, भीड़, अकेले घर से बाहर",
+          "डर से बचने के लिए या मदद न मिलने के डर से टालना",
+          "≥6 महीने की अवधि",
+          "सामान्य फंक्शनिंग में महत्वपूर्ण नुकसान"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "प्रगत रूप से एक्सपोजर के साथ CBT - स्वर्ण मानक",
+            "मानसिक शिक्षा",
+            "सांस लेने की तकनीकें"
+          ],
+          "farmacologico": [
+            "SSRIs: सर्ट्रालीन, पैरोक्सेटीन",
+            "SNRIs: वेन्लाफेक्सीन"
+          ]
+        },
+        "redFlags": [
+          "घरेलू अलगाव",
+          "पैनिक के साथ सहभागिता",
+          "गंभीर फंक्शनिंग नुकसान"
+        ],
+        "examesIniciais": [
+          "फंक्शनल अवलोकन"
+        ]
+      },
+      "tags": [
+        "agorafobia",
+        "ansiedade",
+        "tcc",
+        "isrs",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-personalidade-borderline",
+      "titulo": "सीमांत व्यक्तित्व विकार",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F60.3"
+      ],
+      "cid11": [
+        "6D10"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "20010003",
+      "doid": "DOID:10930",
+      "meshId": "D001883",
+      "umlsCui": "C0006012",
+      "dsm5": {
+        "code": "301.83",
+        "category": "Personality Disorders",
+        "diagnosticCriteria": {
+          "code": "301.83",
+          "name": "Borderline Personality Disorder",
+          "category": "Personality Disorders",
+          "criteria": [
+            {
+              "text": "व्यक्तियों के बीच संबंधों, स्व-छवि और भावनाओं में अस्थिरता का एक व्यापक पैटर्न और उल्लेखनीय आवेगी, जो वय के प्रारंभ में शुरू होता है और विभिन्न संदर्भों में मौजूद होता है, जैसा कि निम्नलिखित में से पाँच (या अधिक) द्वारा संकेतित होता है:",
+              "subCriteria": [
+                {
+                  "text": "1. वास्तविक या काल्पनिक छोड़ने से बचने के लिए उत्साहित प्रयास"
+                },
+                {
+                  "text": "2. अस्थिर और तीव्र इंटरपर्सनल संबंधों का पैटर्न, जो आदर्शीकरण और अमूल्यांकन के चरमों के बीच बदलाव से चिह्नित है"
+                },
+                {
+                  "text": "3. संगति की अवस्था: स्व-छवि या सेल्फ संसार की अस्थिर और लगातार अस्थिरता"
+                },
+                {
+                  "text": "4. कम से कम दो क्षेत्रों में आवेगी, जो संभवतः आत्महत्यात्मक हो सकती हैं"
+                },
+                {
+                  "text": "5. आत्महत्यात्मक व्यवहार, इशारों या धमकियों या आत्म-क्षति के व्यवहार की दोहराव"
+                },
+                {
+                  "text": "6. भावनात्मक अस्थिरता के कारण उल्लेखनीय मूड रिएक्टिविटी"
+                },
+                {
+                  "text": "7. लगातार खालीपन का अहसास"
+                },
+                {
+                  "text": "8. तीव्र और अनुपयुक्त क्रोध या क्रोध को नियंत्रित करने में कठिनाई"
+                },
+                {
+                  "text": "9. तनाव से संबंधित अस्थायी पैरानोइड विचार या गंभीर वियोजन लक्षण"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "व्यक्तित्व विकार जो संबंधों, स्व-छवि और भावनाओं में तीव्र अस्थिरता और आत्महत्यात्मक व्यवहार सहित आवेगी के साथ चिह्नित होता है।",
+        "criteriosDiagnosticos": [
+          "≥5 लक्षणों में से 9 में से: छोड़ने से बचने के प्रयास, अस्थिर संबंध, संगति की अवस्था, आवेगी, आत्महत्यात्मक/आत्म-क्षति का व्यवहार, भावनात्मक अस्थिरता, खालीपन का अहसास, तीव्र क्रोध, वियोजन/पैरानोइड लक्षण",
+          "वय के प्रारंभ में शुरू",
+          "विभिन्न संदर्भों में मौजूद"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "DBT (Dialectical Behavior Therapy) - स्वर्ण मानदंड",
+            "विशेषज्ञ TCC",
+            "स्कीम थेरेपी",
+            "समूह थेरेपी"
+          ],
+          "farmacologico": [
+            "विशिष्ट लक्षणों के लिए दवा:",
+            "- ISRS भावनात्मक अस्थिरता के लिए",
+            "- निम्न डोज में अटाइपिकल एंटिप्साइकोटिक्स संज्ञानात्मक लक्षणों के लिए",
+            "- मूड स्टेबिलाइज़र आवेगी के लिए"
+          ]
+        },
+        "redFlags": [
+          "उच्च आत्महत्या का जोखिम",
+          "आत्म-क्षति का व्यवहार",
+          "अन्य विकारों के साथ सह-मौजूदगी"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "पहला निदान",
+        "आत्महत्या का जोखिम",
+        "गंभीर आत्म-क्षति का व्यवहार",
+        "विशेषज्ञ DBT की आवश्यकता"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "riscoAutolesao": true,
+        "criterios": [
+          "आत्महत्यात्मक व्यवहार",
+          "आत्म-क्षति",
+          "तीव्र संकट"
+        ]
+      },
+      "tags": [
+        "borderline",
+        "व्यक्तित्व",
+        "dbt",
+        "अस्थिरता",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-uso-alcool",
+      "titulo": "अल्कोहल उपयोग विकार",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F10"
+      ],
+      "cid11": [
+        "6C40"
+      ],
+      "ciap2": [
+        "P15",
+        "P16"
+      ],
+      "snomedCT": "7200002",
+      "doid": "DOID:0050741",
+      "meshId": "D000437",
+      "umlsCui": "C0001973",
+      "dsm5": {
+        "code": "305.00",
+        "category": "Substance-Related and Addictive Disorders",
+        "diagnosticCriteria": {
+          "code": "305.00",
+          "name": "Alcohol Use Disorder",
+          "category": "Substance-Related and Addictive Disorders",
+          "criteria": [
+            {
+              "text": "अल्कोहल का एक समस्यापूर्ण प्रयोग जो 12 महीनों की अवधि में क्लिनिकल रूप से सार्थक हानि या दर्द का कारण बनता है, इसका अभिव्यक्त होना निम्नलिखित में से कम से कम दो द्वारा होता है:",
+              "subCriteria": [
+                {
+                  "text": "1. अक्सर अल्कोहल का उपयोग उससे अधिक मात्रा में या उससे अधिक समय तक किया जाता है जितना इरादा किया गया था"
+                },
+                {
+                  "text": "2. अल्कोहल के प्रयोग को कम करने या नियंत्रित करने का लगातार इच्छुक होना या असफल प्रयास"
+                },
+                {
+                  "text": "3. अल्कोहल प्राप्त करने, इसका उपयोग करने या इसके प्रभावों से ठीक होने के लिए आवश्यक कार्यों में बहुत समय बिताना"
+                },
+                {
+                  "text": "4. फिस्सुरा (craving) या अल्कोहल का उपयोग करने की मजबूत इच्छा या आवश्यकता"
+                },
+                {
+                  "text": "5. अल्कोहल का लगातार उपयोग मुख्य दायित्वों को पूरा करने में असफलता का कारण बनना"
+                },
+                {
+                  "text": "6. सामाजिक या बीच-बीच में उत्पन्न समस्याओं के बावजूद अल्कोहल का लगातार उपयोग"
+                },
+                {
+                  "text": "7. महत्वपूर्ण सामाजिक, कार्यात्मक या मनोरंजन कार्यों को छोड़ देना या कम करना"
+                },
+                {
+                  "text": "8. ऐसी स्थितियों में अल्कोहल का लगातार उपयोग जहाँ यह शारीरिक रूप से खतरनाक है"
+                },
+                {
+                  "text": "9. शारीरिक या मानसिक समस्याओं के ज्ञान के बावजूद अल्कोहल का लगातार उपयोग"
+                },
+                {
+                  "text": "10. सहनशीलता (किसी भी निम्न के द्वारा परिभाषित):",
+                  "subCriteria": [
+                    {
+                      "text": "a) अल्कोहल की तीव्र रूप से बढ़ती मात्रा की आवश्यकता जहाँ तक मद्यासक्ति या इच्छित प्रभाव प्राप्त करना हो"
+                    },
+                    {
+                      "text": "b) लगातार उपयोग के साथ उसी मात्रा के साथ तीव्र रूप से कम प्रभाव"
+                    }
+                  ]
+                },
+                {
+                  "text": "11. विराम (किसी भी निम्न के द्वारा परिभाषित):",
+                  "subCriteria": [
+                    {
+                      "text": "a) विराम की विशेष स्थिति"
+                    },
+                    {
+                      "text": "b) अल्कोहल (या संबंधित द्रव्य) का उपयोग विराम के लक्षणों को दूर करने या उनसे बचने के लिए"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "हल्का (2-3 लक्षण)",
+              "मध्यम (4-5 लक्षण)",
+              "गंभीर (6+ लक्षण)"
+            ],
+            "course": [
+              "प्रारंभिक उपशम",
+              "निरंतर उपशम",
+              "नियंत्रित थेरेपी में",
+              "नियंत्रित पर्यावरण में"
+            ]
+          }
+        }
+      },
+      "quickView": {
+        "definicao": "अल्कोहल का एक समस्यापूर्ण प्रयोग जो 12 महीनों की अवधि में क्लिनिकल रूप से सार्थक हानि या दर्द का कारण बनता है, इसका अभिव्यक्त होना ≥2 लक्षणों द्वारा।",
+        "criteriosDiagnosticos": [
+          "≥2 लक्षणों द्वारा 12 महीनों में:",
+          "अधिक मात्रा में उपयोग, कम करने का प्रयास, बहुत समय बिताना, फिस्सुरा, दायित्वों में असफलता, बीच-बीच में समस्याएँ, कार्यों को छोड़ देना, खतरनाक स्थितियों में उपयोग, समस्याओं के बावजूद उपयोग, सहनशीलता, विराम",
+          "गंभीरता: हल्का (2-3), मध्यम (4-5), गंभीर (6+)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "प्रेरणात्मक साक्षात्कार",
+            "संज्ञानात्मक-व्यवहारिक चिकित्सा",
+            "समर्थन समूह (AA)",
+            "पुनरावृत्ति की रोकथाम"
+          ],
+          "farmacologico": [
+            "अगर आवश्यक हो तो विराम (बेंजोडाइएपाइन्स लगातार विराम के लिए)",
+            "पुनरावृत्ति की रोकथाम: नाल्ट्रेक्सोन, एकम्प्रोसेट",
+            "रोकथाम: डिसल्फिराम"
+          ]
+        },
+        "redFlags": [
+          "गंभीर विराम जो गुंजाइश के खतरे का कारण बनता है",
+          "डेलीरियम ट्रेमेंस",
+          "अल्कोहलिक हेपाटोपैथी",
+          "पैनक्रेटिटिस",
+          "वर्निके-कोर्साकोफ"
+        ],
+        "examesIniciais": [
+          "AST, ALT, GGT",
+          "बिलीरबिन",
+          "पूर्ण हीमोग्राम",
+          "AUDIT (Alcohol Use Disorders Identification Test)"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "गंभीर विकार",
+        "गंभीर विराम",
+        "डेलीरियम ट्रेमेंस",
+        "कैंप्लिकेशन्स",
+        "पारंपरिक उपचार की प्रतिरोधता"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "criterios": [
+          "गंभीर विराम",
+          "डेलीरियम ट्रेमेंस",
+          "कैंप्लिकेशन्स"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "AUDIT",
+          "description": "Alcohol Use Disorders Identification Test: 10 आइटम की स्केल जो अल्कोहल के समस्यापूर्ण उपयोग के लिए स्क्रीनिंग करती है।",
+          "cutoff": "≥8 समस्यापूर्ण उपयोग को दर्शाता है",
+          "reference": "WHO, 2001"
+        }
+      ],
+      "tags": [
+        "अल्कोहल",
+        "द्रव्य",
+        "निर्भरता",
+        "नाल्ट्रेक्सोन",
+        "DSM5"
+      ]
+    },
+    {
+      "id": "transtorno-neurocognitivo-leve",
+      "titulo": "लघु तंत्रिका संबंधी संज्ञानात्मक विकार",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F06.7"
+      ],
+      "cid11": [
+        "6D70"
+      ],
+      "ciap2": [
+        "P70"
+      ],
+      "snomedCT": "386806002",
+      "doid": "DOID:0060469",
+      "meshId": "D060825",
+      "umlsCui": "C1270972",
+      "dsm5": {
+        "code": "331.83",
+        "category": "Neurocognitive Disorders",
+        "diagnosticCriteria": {
+          "code": "331.83",
+          "name": "Mild Neurocognitive Disorder",
+          "category": "Neurocognitive Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "एक या अधिक संज्ञानात्मक क्षेत्रों (जटिल ध्यान, कार्यात्मक क्षमता, सीखना और स्मृति, भाषा, अनुभव-मोटर, सामाजिक संज्ञान) में पूर्व लेवल से थोड़ा सा संज्ञानात्मक अवनमन का साक्ष्य"
+            },
+            {
+              "letter": "B",
+              "text": "संज्ञानात्मक अवनमन दैनिक जीवन की वातावरणीय गतिविधियों में स्वतंत्रता को प्रभावित नहीं करता है"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "एक या अधिक क्षेत्रों (जटिल ध्यान, कार्यात्मक क्षमता, सीखना और स्मृति, भाषा, अनुभव-मोटर, सामाजिक संज्ञान) में थोड़ा सा संज्ञानात्मक अवनमन जो संचालन स्वतंत्रता को प्रभावित नहीं करता है।",
+        "criteriosDiagnosticos": [
+          "≥1 क्षेत्र में थोड़ा सा संज्ञानात्मक अवनमन",
+          "वस्तुनिष्ठ मूल्यांकन (तंत्रिका संबंधी मनोवैज्ञानिक परीक्षण)",
+          "संचालन स्वतंत्रता को नहीं प्रभावित करता",
+          "डेलिरियम के मानदंडों को पूरा नहीं करता"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "संज्ञानात्मक रीहबिलिटेशन",
+            "संज्ञानात्मक ट्रेनिंग",
+            "नियमित शारीरिक व्यायाम",
+            "कार्डिओवास्कुलर जोखिम कारकों का नियंत्रण"
+          ],
+          "farmacologico": [
+            "अंतर्निहित कारण का उपचार",
+            "डोनेपेजिल या रिवास्टिग्मिन (अगर अल्जाइमर)"
+          ]
+        },
+        "redFlags": [
+          "तेजी से प्रगति",
+          "कार्यात्मक अवनमन",
+          "व्यवहार संबंधी लक्षण",
+          "नहीं उपचारित उल्टा किया जा सकने वाला कारण"
+        ],
+        "examesIniciais": [
+          "तंत्रिका संबंधी मनोवैज्ञानिक मूल्यांकन",
+          "क्रानियो आरएम",
+          "हीमोग्राम, थायरॉइड कार्य, B12, फोलेट",
+          "उल्टा किया जा सकने वाले कारणों को छोड़ें"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "MoCA",
+          "description": "मोंट्रियल संज्ञानात्मक मूल्यांकन: संज्ञानात्मक स्क्रीनिंग पैमाना",
+          "cutoff": "<26 संकेतक देता है",
+          "reference": "Nasreddine et al., 2005"
+        },
+        {
+          "name": "MMSE",
+          "description": "मिनी-मेंटल स्टेट एक्सामिनेशन: श्रेणीबद्ध स्क्रीनिंग पैमाना",
+          "cutoff": "<24 संकेतक देता है",
+          "reference": "Folstein et al., 1975"
+        }
+      ],
+      "tags": [
+        "तंत्रिका संबंधी",
+        "संज्ञानात्मक",
+        "डेमेंशिया",
+        "moca",
+        "mmse",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-identidade-dissociativo",
+      "titulo": "वियुक्त आत्मा विकार",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F44.81"
+      ],
+      "cid11": [
+        "6B64"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "32388005",
+      "doid": "DOID:1532",
+      "meshId": "D009105",
+      "umlsCui": "C0026847",
+      "dsm5": {
+        "code": "300.14",
+        "category": "Dissociative Disorders",
+        "diagnosticCriteria": {
+          "code": "300.14",
+          "name": "Dissociative Identity Disorder",
+          "category": "Dissociative Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "आत्मा की वियोजन जिसमें दो या अधिक विभिन्न व्यक्तित्व होते हैं"
+            },
+            {
+              "letter": "B",
+              "text": "दैनिक घटनाओं, महत्वपूर्ण व्यक्तिगत जानकारी या त्रासद घटनाओं की याददाश्त में दोहरावश खोज"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "वियुक्त व्यक्तित्वों के साथ आत्मा की वियोजन और याददाश्त में खोज के साथ वियुक्त विकार।",
+        "criteriosDiagnosticos": [
+          "≥2 विभिन्न व्यक्तित्व (आत्माएं)",
+          "याददाश्त में दोहरावश खोज",
+          "दुख या कार्यक्षमता की कमी का कारण",
+          "पदार्थों या चिकित्सात्मक स्थिति से नहीं होना"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "विशेषज्ञ रूप से मनोचिकित्सा (लंबे समय तक)",
+            "आत्माओं का समावेश",
+            "त्रासदों का संसाधन",
+            "लक्षणों की स्थिरीकरण"
+          ],
+          "farmacologico": [
+            "विशिष्ट लक्षणों (दुख, चिंता) के लिए दवा",
+            "DID के लिए कोई विशिष्ट दवा नहीं है"
+          ]
+        },
+        "redFlags": [
+          "आत्मा की संकटावस्था",
+          "स्वयं की चोट",
+          "स्विचारण व्यवहार",
+          "गंभीर वियुक्त अमनेशिया"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "हमेशा वियुक्त विकारों के विशेषज्ञ के पास भेजें",
+        "पहला निदान",
+        "गंभीर लक्षण"
+      ],
+      "tags": [
+        "वियुक्त",
+        "आत्मा",
+        "त्रासद",
+        "अत्यंत दुर्लभ",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "anorexia-nervosa",
+      "titulo": "अनोरेक्सिया नर्वोसा",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F50.0"
+      ],
+      "cid11": [
+        "6B80"
+      ],
+      "ciap2": [
+        "P99"
+      ],
+      "snomedCT": "56882008",
+      "doid": "DOID:8689",
+      "meshId": "D000856",
+      "umlsCui": "C0003125",
+      "dsm5": {
+        "code": "307.1",
+        "category": "Feeding and Eating Disorders",
+        "diagnosticCriteria": {
+          "code": "307.1",
+          "name": "Anorexia Nervosa",
+          "category": "Feeding and Eating Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "अनाहार की सीमा लगाना जिससे शरीर का वजन अत्यधिक कम हो जाता है"
+            },
+            {
+              "letter": "B",
+              "text": "वजन बढ़ने का अत्यधिक डर या गुब्बारा होने का डर"
+            },
+            {
+              "letter": "C",
+              "text": "वजन या शरीर के आकार के अनुभव की विकृति"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "एक भोजन विकार जो अनाहार की सीमा लगाने, वजन बढ़ने का अत्यधिक डर और वजन/शरीर की अनुभूति में विकृति से चिह्नित होता है, जिसके परिणामस्वरूप वजन अत्यधिक कम हो जाता है।",
+        "criteriosDiagnosticos": [
+          "अनाहार की सीमा लगाना → वजन अत्यधिक कम (BMI <18.5 या अपेक्षित वजन से <85%)",
+          "वजन बढ़ने का अत्यधिक डर",
+          "वजन/शरीर की अनुभूति में विकृति",
+          "प्रकार: सीमित या अवधारित/परित्याग"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "बहुशाखीय उपचार: चिकित्सक, पोषणविज्ञानी, मनोवैज्ञानिक",
+            "परिवार की थेरेपी (किशोरों के लिए)",
+            "विशेषज्ञ कॉग्निटिव-ब्हेवियोरल थेरेपी",
+            "पोषण रीहैबिलिटेशन (निगरानी में)"
+          ],
+          "farmacologico": [
+            "ओलानज़पाइन (वजन बढ़ाने, आवश्यकतानुसार लक्षण)",
+            "ISRS के लिए सहभागिता (दुःख, चिंता)",
+            "आवश्यकतानुसार पोषण संपूरक"
+          ]
+        },
+        "redFlags": [
+          "BMI <15 या तेजी से वजन कम होना",
+          "ब्रेडीकार्डिया (<50 bpm)",
+          "ऑर्थोस्टैटिक हाइपोटेन्शन",
+          "हाइपोथर्मिया",
+          "अमेनोरिया",
+          "स्वतंत्रता की चालाकी"
+        ],
+        "examesIniciais": [
+          "वजन, ऊंचाई, BMI",
+          "जीवनीय संकेत",
+          "हीमोग्राम, इलेक्ट्रोलाइट, यकृत और किडनी की कार्यक्षमता",
+          "ECG (अरिथ्मिया)",
+          "हड्डियों का घनत्व (ऑस्टियोपोरोसिस)"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "BMI <15",
+        "अस्थिर जीवनीय संकेत",
+        "गंभीर अपोषण",
+        "चिकित्सकीय जटिलताएँ",
+        "पारिवारिक उपचार में असफलता"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "criterios": [
+          "गंभीर अपोषण",
+          "अस्थिर जीवनीय संकेत",
+          "चिकित्सकीय जटिलताएँ"
+        ]
+      },
+      "tags": [
+        "अनोरेक्सिया",
+        "भोजन",
+        "सीमित",
+        "ओलानज़पाइन",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "bulimia-nervosa",
+      "titulo": "बुलिमिया नर्वोसा",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F50.2"
+      ],
+      "cid11": [
+        "6B81"
+      ],
+      "ciap2": [
+        "P99"
+      ],
+      "snomedCT": "78004001",
+      "doid": "DOID:8513",
+      "meshId": "D052018",
+      "umlsCui": "C0006370",
+      "dsm5": {
+        "code": "307.51",
+        "category": "Feeding and Eating Disorders",
+        "diagnosticCriteria": {
+          "code": "307.51",
+          "name": "Bulimia Nervosa",
+          "category": "Feeding and Eating Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "भोजन की आवश्यकता के आवर्ती अवसर"
+            },
+            {
+              "letter": "B",
+              "text": "वजन बढ़ने से बचने के लिए आवर्ती और अनुचित व्यवहार"
+            },
+            {
+              "letter": "C",
+              "text": "अवसर औसतन हर 3 महीनों में कम से कम एक बार होते हैं"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "भोजन विकार जो भोजन की आवश्यकता के आवर्ती अवसरों और अनुचित व्यवहार (उल्टी, लैक्सेटिव्स, अतिरिक्त व्यायाम) के अनुसरण से चिह्नित होता है।",
+        "criteriosDiagnosticos": [
+          "भोजन की आवश्यकता के आवर्ती अवसर (छोटे समय में बड़ी मात्रा, नियंत्रण की भावना का नाश)",
+          "आवर्ती व्यवहार: स्वयं की उल्टी, लैक्सेटिव्स/मूत्रवर्धक का उपयोग, अतिरिक्त व्यायाम, उपवास",
+          "≥1 बार/सप्ताह से ≥3 महीनों तक",
+          "शरीर की आकृति और वजन से अनुचित रूप से प्रभावित स्वयं का मूल्यांकन"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "विशेषज्ञ TCC (TCC-BN) - स्वर्ण मानक",
+            "मानविक थेरेपी (IPT)",
+            "पोषण संबंधी मानसिक शिक्षा"
+          ],
+          "farmacologico": [
+            "ISRS: फ्लुओक्सेटीन 60mg/दिन (BN के लिए मंजूर)",
+            "उच्च डोस में अन्य ISRS"
+          ]
+        },
+        "redFlags": [
+          "गंभीर इलेक्ट्रोलाइट असंतुलन",
+          "एसोफाजिटिस/दांत की खराबी",
+          "स्वत:हत्या का व्यवहार",
+          "लैक्सेटिव्स का अतिरिक्त उपयोग"
+        ],
+        "examesIniciais": [
+          "इलेक्ट्रोलाइट (हाइपोकेलेमिया, हाइपोनेट्रेमिया)",
+          "यकृत और गुर्दे का कार्य",
+          "दंत संबंधी मूल्यांकन (खराबी)"
+        ]
+      },
+      "tags": [
+        "बुलिमिया",
+        "आवश्यकता",
+        "परिष्करण",
+        "फ्लुओक्सेटीन",
+        "TCC",
+        "DSM5"
+      ]
+    },
+    {
+      "id": "transtorno-espectro-autista",
+      "titulo": "ऑटिज्म स्पेक्ट्रम विकार (ओएसए)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F84.0"
+      ],
+      "cid11": [
+        "6A02"
+      ],
+      "ciap2": [
+        "P15"
+      ],
+      "snomedCT": "35919005",
+      "doid": "DOID:0060041",
+      "meshId": "D000067877",
+      "umlsCui": "C1510586",
+      "dsm5": {
+        "code": "299.00",
+        "category": "Neurodevelopmental Disorders",
+        "diagnosticCriteria": {
+          "code": "299.00",
+          "name": "Autism Spectrum Disorder",
+          "category": "Neurodevelopmental Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "सामाजिक संचार और सामाजिक अंतर्क्रिया में अनेक संदर्भों में लगातार दोष"
+            },
+            {
+              "letter": "B",
+              "text": "व्यवहार, रुचियों या गतिविधियों में सीमित और दोहराव वाले पैटर्न"
+            },
+            {
+              "letter": "C",
+              "text": "विकास के प्रारंभिक अवधि में लक्षण होने"
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "स्तर 1 (समर्थन की आवश्यकता)",
+              "स्तर 2 (महत्वपूर्ण समर्थन की आवश्यकता)",
+              "स्तर 3 (बहुत महत्वपूर्ण समर्थन की आवश्यकता)"
+            ]
+          }
+        }
+      },
+      "quickView": {
+        "definicao": "एक न्यूरोडेवलपमेंटल विकार जो सामाजिक संचार और सामाजिक अंतर्क्रिया में लगातार दोष और व्यवहार, रुचियों या गतिविधियों में सीमित और दोहराव वाले पैटर्न से चिह्नित होता है, जो विकास के प्रारंभिक अवधि से ही मौजूद होते हैं।",
+        "criteriosDiagnosticos": [
+          "सामाजिक संचार में दोष: सामाजिक-भावनात्मक विनिमय, अवाक संचार, संबंध",
+          "सीमित/दोहराव वाले पैटर्न: ≥2: स्टेरिओटाइपिक गतिविधियाँ, नियमितता में जोर, निश्चित रुचियाँ, संवेदनात्मक अतिसंवेदनशीलता/अंडरसंवेदनशीलता",
+          "विकास के प्रारंभिक अवधि में लक्षण (सामाजिक मांगें क्षमताओं से अधिक होने तक स्पष्ट नहीं हो सकते)",
+          "समर्थन का स्तर: 1 (हल्का), 2 (मध्यम), 3 (गंभीर)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "प्रारंभिक तीव्र व्यवहारिक अंतर्क्रियाएँ",
+            "अनुप्रयुक्त व्यवहार विश्लेषण (एबीए)",
+            "सामाजिक संचार थेरेपी",
+            "कार्यकारी थेरेपी (संवेदनात्मक एकीकरण)",
+            "विशेष शैक्षिक समर्थन"
+          ],
+          "farmacologico": [
+            "विशिष्ट लक्षणों के लिए औषधि:",
+            "- रिस्पेरिडोन या अरिपिप्राजोल (ताकत, उत्तेजना)",
+            "- आईएसआरएस लक्ष्य अनुसंधान (तनाव/ओब्सेसिव व्यवहार)",
+            "- उत्तेजक दवाएँ टीडीएचएस के साथ सहायक रूप से"
+          ]
+        },
+        "redFlags": [
+          "कौशलों का पीछे रहना",
+          "गंभीर स्वयं को चोट पहुंचाने वाले व्यवहार",
+          "ताकत",
+          "चिकित्सा न करने वाली मानसिक स्वास्थ्य सहायक रोग"
+        ],
+        "examesIniciais": [
+          "बहुशाखीय मूल्यांकन: बाल रोग विशेषज्ञ, तंत्रिका संबंधी विशेषज्ञ, भाषाविज्ञान विशेषज्ञ, मनोविज्ञान विशेषज्ञ",
+          "श्रवण मूल्यांकन (श्रवण खोज को छोड़ना)",
+          "जीनेटिक परीक्षण (यदि संकेतित)",
+          "स्केल्स: एडोस, एडी-आर"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "M-CHAT-R",
+          "description": "Modified Checklist for Autism in Toddlers, Revised: 16-30 महीने के बच्चों में ओएसए के लिए रास्त्रीय रूप से ट्रैकिंग",
+          "reference": "Robins et al., 2009"
+        },
+        {
+          "name": "ADOS",
+          "description": "Autism Diagnostic Observation Schedule: ओएसए के निदान के लिए स्टैंडर्ड-गोल्ड",
+          "reference": "Lord et al., 2012"
+        }
+      ],
+      "tags": [
+        "ऑटिज्म",
+        "ओएसए",
+        "न्यूरोडेवलपमेंटल",
+        "एबीए",
+        "डीएसएम5"
+      ]
+    },
+    {
+      "id": "narcolepsia",
+      "titulo": "नार्कोलेप्सी",
+      "categoria": "saude_mental",
+      "cid10": [
+        "G47.4"
+      ],
+      "cid11": [
+        "7A20"
+      ],
+      "ciap2": [
+        "P06"
+      ],
+      "snomedCT": "60380001",
+      "doid": "DOID:8986",
+      "meshId": "D009290",
+      "umlsCui": "C0027404",
+      "dsm5": {
+        "code": "347.00",
+        "category": "Sleep-Wake Disorders",
+        "diagnosticCriteria": {
+          "code": "347.00",
+          "name": "Narcolepsy",
+          "category": "Sleep-Wake Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "नींद लेने की अवरोधी आवश्यकता के दोहराव वाले अवसर"
+            },
+            {
+              "letter": "B",
+              "text": "≥1: कैटाप्लेक्सी, कम स्तर की ओरेक्सिन, REM नींद की लैटेंसी ≤15 मिनट"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "नींद का विकार जो दिवानींद अतिशय थकावट, नींद लेने की अवरोधी घटनाओं, अक्सर कैटाप्लेक्सी (मांसपेशियों की अचानक हानि) के साथ संबद्ध होता है।",
+        "criteriosDiagnosticos": [
+          "≥3 महीने तक दिवानींद अतिशय थकावट",
+          "अनुपयुक्त स्थितियों में नींद लेने की दोहराव वाली घटनाएँ",
+          "≥1: कैटाप्लेक्सी, लीकोरेनिया में कम स्तर की हाइपोक्रेटिन, नींद की लैटेंसी ≤15 मिनट टेस्ट में"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "सुनिश्चित नींद (2-3/दिन, 15-20 मिनट)",
+            "नींद की सावधानी का नियमित अनुसरण",
+            "मानसिक समर्थन"
+          ],
+          "farmacologico": [
+            "उत्तेजक: मोडाफिनिल 200-400mg/दिन या अर्मोडाफिनिल",
+            "कैटाप्लेक्सी के लिए: वेनलफाक्सीन, फ्लुक्सेटीन, या सोडियम ऑक्सिबेट"
+          ]
+        },
+        "redFlags": [
+          "गंभीर कैटाप्लेक्सी जो गिरने का खतरा लाती है",
+          "हिपनागोगिक हल्लुसिनेशन",
+          "नींद की अवस्था"
+        ],
+        "examesIniciais": [
+          "नींद की लैटेंसी का बहुल टेस्ट (MSLT)",
+          "पॉलिसोनोग्राफी",
+          "लीकोरेनिया में हाइपोक्रेटिन का मापन"
+        ]
+      },
+      "tags": [
+        "नार्कोलेप्सी",
+        "नींद",
+        "कैटाप्लेक्सी",
+        "मोडाफिनिल",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-uso-cannabis",
+      "titulo": "कैन्नाबिस के प्रयोग से उत्पन्न विकार",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F12"
+      ],
+      "cid11": [
+        "6C41"
+      ],
+      "ciap2": [
+        "P15",
+        "P16"
+      ],
+      "snomedCT": "37344009",
+      "doid": "DOID:0050742",
+      "meshId": "D002189",
+      "umlsCui": "C0006870",
+      "dsm5": {
+        "code": "304.30",
+        "category": "Substance-Related and Addictive Disorders",
+        "diagnosticCriteria": {
+          "code": "304.30",
+          "name": "Cannabis Use Disorder",
+          "category": "Substance-Related and Addictive Disorders",
+          "criteria": [
+            {
+              "text": "कैन्नाबिस का समस्यापूर्ण प्रयोग जो 12 महीनों में निरीक्षणीय नुकसान या तकलीफ का कारण बनता है, जो ≥2 मानदंडों द्वारा दर्शाया जाता है"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "कैन्नाबिस का समस्यापूर्ण प्रयोग जो निरीक्षणीय नुकसान या तकलीफ का कारण बनता है।",
+        "criteriosDiagnosticos": [
+          "12 महीनों में ≥2 मानदंड: अधिक से अधिक प्रयोग, कम करने के प्रयास, बहुत सा समय खर्च करना, लोभ, कर्तव्यों में असफलता, इंटरपर्सनल समस्याएँ, गतिविधियों को छोड़ना, खतरनाक स्थितियों में प्रयोग, समस्याओं के बावजूद प्रयोग, सहनशीलता, विच्छेदन"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "प्रेरणात्मक साक्षात्कार",
+            "द्रव्य उपयोग के लिए TCC",
+            "परिस्थिति नियंत्रण थेरेपी",
+            "समर्थन समूह"
+          ],
+          "farmacologico": [
+            "विच्छेदन लक्षणों का उपचार आवश्यकतानुसार",
+            "नाल्ट्रेक्सोन मदद कर सकता है"
+          ]
+        },
+        "redFlags": [
+          "कैन्नाबिस द्वारा उत्पन्न विकार",
+          "किशोरों में प्रयोग (अधिक निर्भरता का जोखिम)",
+          "मानसिक स्वास्थ्य संबंधी सहभागिता"
+        ],
+        "examesIniciais": [
+          "तकसीनामा परीक्षण",
+          "मानसिक स्वास्थ्य संबंधी सहभागिता का मूल्यांकन"
+        ]
+      },
+      "tags": [
+        "कैन्नाबिस",
+        "मारिजुआना",
+        "द्रव्य",
+        "TCC",
+        "DSM5"
+      ]
+    },
+    {
+      "id": "depressao-idoso",
+      "titulo": "उपचार और निदान: वृद्ध व्यक्तियों में अवसाद",
+      "ciap2": [
+        "P76"
+      ],
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "cid11": [
+        "6A70",
+        "6A71"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:1596",
+      "snomedCT": "35489007",
+      "meshId": "D003866",
+      "umlsCui": "C0011570",
+      "quickView": {
+        "definicao": "वृद्ध व्यक्तियों में अवसादी विकार, जो अक्सर उपनिहित रूप से निदानित होता है। इसमें सोमाटिक शिकायतें और 'कृत्रिम बुद्धिगत अक्षमता' के साथ प्रकट हो सकता है।",
+        "criteriosDiagnosticos": [
+          "GDS-15 ≥5 (रास्त्रीय स्तर पर निदान)",
+          "असामान्य लक्षण: सोमाटिक शिकायतें",
+          "उत्साह की कमी अधिक होती है तुलना में दुख",
+          "कृत्रिम बुद्धिगत अक्षमता: विपरीत बुद्धिगत संकट"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "शारीरिक गतिविधि",
+            "व्यवहारिक सक्रियता",
+            "सामाजिक समर्थन",
+            "मनोचिकित्सा"
+          ],
+          "farmacologico": [
+            "ISRS: सर्ट्रालीन 25-50mg (प्राथमिक)",
+            "ट्राइसाइक्लिक दवाओं का उपयोग न करें (एंटीकोलिनर्जिक प्रभाव)",
+            "कम से शुरू करें, धीरे-धीरे बढ़ाएं"
+          ]
+        },
+        "redFlags": [
+          "आत्महत्या की विचारधारा (युवाओं की तुलना में अधिक जोखिम)",
+          "खाने से इनकार",
+          "मनोविकार",
+          "फंक्शनल गिरावट की तेज़ गति"
+        ]
+      },
+      "medicamentos": [
+        "sertralina",
+        "escitalopram"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "gds-15"
+      ]
+    },
+    {
+      "id": "tabagismo",
+      "titulo": "निकोटिन आश्रितता (तमाचा सेवन)",
+      "ciap2": [
+        "P17"
+      ],
+      "cid10": [
+        "F17"
+      ],
+      "cid11": [
+        "6C4A"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:0050742",
+      "snomedCT": "89765005",
+      "meshId": "D014029",
+      "umlsCui": "C0040336",
+      "quickView": {
+        "definicao": "मृत्यु का प्रमुख टाल सकने वाला कारण। दुनिया में 1 अरब धूम्रपान करने वाले। किसी भी उम्र में धूम्रपान बंद करना मृत्यु दर को कम करता है।",
+        "criteriosDiagnosticos": [
+          "Fagerström ≥6 = उच्च आश्रितता",
+          "जोखिमों को जानते हुए भी दैनिक सेवन",
+          "पूर्व में धूम्रपान बंद करने की कोशिशें विफल",
+          "विच्छेदन लक्षण"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "संक्षिप्त दृष्टिकोण (5 As)",
+            "प्रेरणात्मक सलाह",
+            "समर्थन समूह",
+            "टेलीफोन लाइन (136)"
+          ],
+          "farmacologico": [
+            "पहली लाइन: बुप्रोपियोन 150mg 2x/दिन 7-12 सप्ताह तक",
+            "या वारेनिक्लिन 0,5mg → 1mg 2x/दिन",
+            "TRN: अड़चिन + गोली/चांचली आवश्यकतानुसार"
+          ]
+        },
+        "redFlags": [
+          "उन्नत फेफड़ों या हृदय संबंधी रोग",
+          "गर्भावस्था",
+          "गंभीर मानसिक विकार"
+        ]
+      },
+      "medicamentos": [
+        "bupropiona"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "fagerstrom"
+      ]
+    },
+    {
+      "id": "transtorno-bipolar",
+      "titulo": "द्विधात्मक विकार",
+      "ciap2": [
+        "P73"
+      ],
+      "cid10": [
+        "F31"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:3312",
+      "snomedCT": "13746004",
+      "meshId": "D001714",
+      "umlsCui": "C0005586",
+      "tags": [
+        "saude_mental",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "मनिया/हाइपोमानिया और दुःख के अवसर। प्रकार I (मनिया + दुःख) या II (हाइपोमानिया + दुःख)।",
+        "criteriosDiagnosticos": [
+          "मनिया अवसर (प्रकार I) या हाइपोमानिया (प्रकार II)",
+          "दुःख के अवसर",
+          "मनोवृत्ति का परिवर्तन"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "मनोचिकित्सा",
+            "रोग के बारे में शिक्षा",
+            "परिवार का समर्थन"
+          ],
+          "farmacologico": [
+            "मनोवृत्ति स्थिरीकरण: लिथियम या वैल्प्रोएट",
+            "मनिया में एंटीप्साइकोटिक्स",
+            "दुःख के लिए सावधानीपूर्वक अवसादरोधी"
+          ]
+        },
+        "redFlags": [
+          "स्वतंत्रता की इच्छा",
+          "प्रतिजैविक रोग",
+          "गंभीर मनिया",
+          "अस्पतालीकरण की आवश्यकता"
+        ]
+      },
+      "medicamentos": [
+        "लिथियम",
+        "वैल्प्रोएट"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-ansiedade-generalizada",
+      "titulo": "सामान्यीकृत चिंता विकार",
+      "ciap2": [
+        "P74"
+      ],
+      "cid10": [
+        "F41.1"
+      ],
+      "cid11": [
+        "6B00"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:1596",
+      "snomedCT": "48544008",
+      "meshId": "D001008",
+      "umlsCui": "C0003467",
+      "hpo": [
+        "HP:0000739"
+      ],
+      "tags": [
+        "saude_mental",
+        "ansiedade",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "≥6 महीनों से अतिरिक्त और लगातार चिंता। नियंत्रण से बाहर होने वाली चिंताएँ। साहचर्य संबंधी लक्षण।",
+        "criteriosDiagnosticos": [
+          "≥6 महीनों से अतिरिक्त चिंता",
+          "चिंताओं को नियंत्रित करने में कठिनाई",
+          "≥3 लक्षण: बेचैनी, थकान, सावधानी में कमी, उत्तेजना, मांसपेशी तनाव, नींद की बीमारी"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "कैबीटी",
+            "मनोचिकित्सा",
+            "रिलैक्सेशन तकनीकें",
+            "व्यायाम"
+          ],
+          "farmacologico": [
+            "SSRIs: सर्ट्रालीन या एस्सिटालोप्राम",
+            "बेंजोडाइएजेपाइन्स केवल आवश्यकता पर छोटी अवधि के लिए"
+          ]
+        },
+        "redFlags": [
+          "स्वतंत्रता की इच्छा",
+          "पैनिक अटैक",
+          "मानसिक स्वास्थ्य सहभागिता"
+        ]
+      },
+      "medicamentos": [
+        "sertralina",
+        "escitalopram"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

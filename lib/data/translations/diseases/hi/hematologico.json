@@ -1,0 +1,567 @@
+{
+  "locale": "hi",
+  "category": "hematologico",
+  "generatedAt": "2026-01-02T14:53:33.471Z",
+  "count": 6,
+  "diseases": [
+    {
+      "id": "anemia-ferropriva",
+      "titulo": "लोहा खाली रक्तपात",
+      "sinonimos": [
+        "लोहा की कमी से होने वाला रक्तपात"
+      ],
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D50"
+      ],
+      "cid11": [
+        "3A00"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:2355",
+      "snomedCT": "399096004",
+      "meshId": "D000740",
+      "umlsCui": "C0002871",
+      "hpo": [
+        "HP:0001875",
+        "HP:0001892"
+      ],
+      "tags": [
+        "हेमाटोलॉजिकल",
+        "रक्तपात",
+        "कमी",
+        "आम"
+      ],
+      "quickView": {
+        "definicao": "लोहा की कमी से होने वाला रक्तपात। रक्तपात का सबसे सामान्य कारण है। माइक्रोसाइटोसिस और हाइपोक्रोमिया से चिह्नित होता है। फेरिटिन कम, ट्रांसफेरिन ऊंचा।",
+        "criteriosDiagnosticos": [
+          "माइक्रोसाइटिक हाइपोक्रोमिक रक्तपात",
+          "फेरिटिन कम",
+          "ट्रांसफेरिन/ट्रांसफेरिन सैटुरेशन कम",
+          "कारण की जांच: रक्त की हानि, खराब अवशोषण, पोषण की कमी"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "लोहे से समृद्ध आहार",
+            "उपशय (रक्त स्राव, खराब अवशोषण) का उपचार",
+            "कॉफी/चाय को भोजन के साथ नहीं पीना"
+          ],
+          "farmacologico": [
+            "सल्फेट फेरोस 200mg (65mg लोहे के तत्व) 1-2x/दिन",
+            "या फेरो क्वेलेट",
+            "विटामिन C का संयोजन अवशोषण में सुधार कर सकता है",
+            "सामान्य होने के बाद 3-6 महीने तक उपचार"
+          ]
+        },
+        "redFlags": [
+          "पाचन तंत्र से रक्त स्राव",
+          "निरंतर रक्त की हानि",
+          "उपचार पर प्रतिक्रिया नहीं",
+          "खराब अवशोषण"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anemia-megaloblastica",
+      "titulo": "मेगालोब्लास्टिक एनीमिया",
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D51",
+        "D52"
+      ],
+      "cid11": [
+        "3A00",
+        "3A01"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:13636",
+      "snomedCT": "840580004",
+      "meshId": "D000749",
+      "umlsCui": "C0002878",
+      "hpo": [
+        "HP:0001875",
+        "HP:0002901"
+      ],
+      "tags": [
+        "हेमातोलॉजिकल",
+        "एनीमिया",
+        "कमी"
+      ],
+      "quickView": {
+        "definicao": "B12 या फोलिक एसिड की कमी के कारण होने वाली एनीमिया। मैक्रोसाइटोसिस, मजबूत मेडुलर मेगालोब्लास्टोसिस। इसमें तंत्रिका संबंधी लक्षण (B12) हो सकते हैं।",
+        "criteriosDiagnosticos": [
+          "मैक्रोसाइटिक एनीमिया",
+          "कम B12 या फोलिक एसिड",
+          "मजबूत मेडुलर मेगालोब्लास्टोसिस",
+          "उच्च LDH",
+          "उच्च होमोसिस्टीन"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "कारण का उपचार (पोषण की कमी, खराब अवशोषण)",
+            "उचित आहार"
+          ],
+          "farmacologico": [
+            "B12: साइनोकोबालामिन IM या मुंह से",
+            "फोलिक एसिड: 5mg/दिन"
+          ]
+        },
+        "redFlags": [
+          "तंत्रिका संबंधी लक्षण (B12)",
+          "संयुक्त कमी",
+          "खराब अवशोषण"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "trombocitopenia",
+      "titulo": "Trombocitopenia",
+      "sinonimos": [
+        "Plaquetopenia",
+        "PTI",
+        "Púrpura trombocitopênica imune"
+      ],
+      "doid": "DOID:1588",
+      "snomedCT": "302215000",
+      "meshId": "D013921",
+      "umlsCui": "C0040034",
+      "ciap2": [
+        "B83"
+      ],
+      "cid10": [
+        "D69.3",
+        "D69.6"
+      ],
+      "cid11": [
+        "3B64"
+      ],
+      "categoria": "hematologico",
+      "quickView": {
+        "definicao": "Redução da contagem de plaquetas <150.000/µL. Pode ser leve e assintomática ou grave com sangramento. Causas: destruição imune (PTI), consumo (CIVD, PTT), sequestro esplênico, produção diminuída.",
+        "criteriosDiagnosticos": [
+          "Plaquetas <150.000/µL (trombocitopenia)",
+          "Leve: 100.000-150.000/µL",
+          "Moderada: 50.000-100.000/µL",
+          "Grave: <50.000/µL",
+          "Muito grave: <20.000/µL (risco de sangramento espontãneo)",
+          "",
+          "PTI: Diagnóstico de exclusão (plaquetopenia isolada sem causa identificada)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Evitar medicamentos que afetam plaquetas (AAS, AINEs)",
+            "Evitar atividades com risco de trauma",
+            "Evitar procedimentos invasivos se plaquetas <50.000"
+          ],
+          "farmacologico": [
+            "PTI AGUDA (adulto com sangramento ou <20.000-30.000):",
+            "Prednisona 1-2 mg/kg/dia por 2-4 semanas, depois desmame",
+            "OU Dexametasona 40mg/dia por 4 dias (ciclos)",
+            "Imunoglobulina IV 1g/kg x1-2 dias (resposta rápida)",
+            "",
+            "PTI CRÔNICA REFRATÁRIA:",
+            "Agonistas de trombopoietina (Eltrombopag, Romiplostim)",
+            "Rituximabe",
+            "Esplenectomia"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Plaquetas >30.000/µL (seguro na maioria)",
+          "Plaquetas >50.000/µL para procedimentos",
+          "Plaquetas >100.000/µL para grandes cirurgias",
+          "Ausência de sangramento"
+        ],
+        "examesIniciais": [
+          "Hemograma completo (confirmar plaquetopenia isolada)",
+          "Esfregaço de sangue periférico (descartar pseudotrombocitopenia por aglutinação)",
+          "Coagulação (TP, TTPa)",
+          "Função hepática e renal",
+          "Sorologias: HIV, HCV, HBV",
+          "TSH",
+          "Anticorpos antiplaquetários (não sensíveis)",
+          "Mielograma se suspeita de causa central"
+        ],
+        "redFlags": [
+          "Sangramento ativo significativo",
+          "Plaquetas <10.000/µL (risco de sangramento intracraniano)",
+          "Anemia hemolítica microangiopática (esquizócitos): PTT/SHU - emergência!",
+          "Pancitopenia (doença medular)",
+          "Febre + plaquetopenia: sepse, dengue, PTT",
+          "Gestante com plaquetopenia (pré-eclâmpsia, HELLP)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "PTI: 3-4/100.000 adultos",
+          "incidencia": "PTI mais comum em crianças (pós-viral)",
+          "faixaEtaria": "Crianças: PTI aguda. Adultos: PTI crônica",
+          "fatoresRisco": [
+            "Infecções virais recentes (crianças)",
+            "Doenças autoimunes (LES)",
+            "HIV, HCV",
+            "Medicamentos (heparina, quinina, sulfas)",
+            "Gestação",
+            "Hepatopatia (sequestro esplênico)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "PTI: Autoanticorpos (IgG) contra glicoproteínas plaquetárias (GPIIb/IIIa, GPIb/IX) causam destruição de plaquetas pelo sistema reticuloendotelial (baço). Também há inibição da megacariopoiese. Outras causas: consumo (CIVD, PTT), sequestro esplênico, falência medular.",
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Frequentemente assintomática (achado incidental)",
+            "Petéquias e equimoses",
+            "Epistaxe",
+            "Gengivorragia",
+            "Menorragia",
+            "Sangramento GI ou urinário (grave)"
+          ],
+          "sinaisExameFisico": [
+            "Petéquias (principalmente em MMII)",
+            "Equimoses",
+            "Púrpura",
+            "Sangramento mucoso",
+            "AUSÊNCIA de esplenomegalia (na PTI típica)"
+          ],
+          "formasClinicas": [
+            "PTI primária (idiopática)",
+            "PTI secundária (HIV, HCV, LES, medicamentos)",
+            "PTI aguda (crianças, pós-viral)",
+            "PTI crônica (>12 meses)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Plaquetopenia isolada",
+            "Exclusão de outras causas",
+            "Esfregaço sem esquizócitos ou blastos"
+          ],
+          "diagnosticoDiferencial": [
+            "Pseudotrombocitopenia (aglutinação em EDTA)",
+            "PTT/SHU (anemia hemolítica microangiopática)",
+            "CIVD",
+            "Hiperesplenismo",
+            "Leucemia, mielodisplasia",
+            "Medicamentos (heparina)",
+            "Dengue"
+          ],
+          "examesLaboratoriais": [
+            "Hemograma + esfregaço",
+            "TP, TTPa, fibrinogênio",
+            "HIV, HCV, HBV",
+            "FAN, complemento (se suspeita de LES)",
+            "Mielograma (se atípico)",
+            "Coombs direto (se anemia)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Prevenir sangramento",
+            "Manter plaquetas em nível seguro",
+            "Minimizar toxicidade do tratamento"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Evitar trauma",
+              "Suspender medicamentos antiagregantes",
+              "Watchful waiting se assintomático e plaquetas >30.000"
+            ],
+            "citations": [
+              {
+                "refId": "ash-itp-2019"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Corticoide",
+                "medicamentos": [
+                  "Prednisona",
+                  "Dexametasona"
+                ],
+                "posologia": "Prednisona 1-2mg/kg/dia por 2-4 semanas, desmame. OU Dexametasona 40mg/dia x4 dias."
+              },
+              {
+                "classe": "Imunoglobulina IV (resposta rápida)",
+                "medicamentos": [
+                  "IVIg"
+                ],
+                "posologia": "1g/kg x1-2 dias. Resposta em 24-48h. Temporária."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Agonista de trombopoietina",
+                "medicamentos": [
+                  "Eltrombopag",
+                  "Romiplostim"
+                ],
+                "posologia": "Eltrombopag 50mg/dia VO. Romiplostim SC semanal. PTI crônica."
+              },
+              {
+                "classe": "Rituximabe",
+                "medicamentos": [
+                  "Rituximabe"
+                ],
+                "posologia": "375 mg/m² semanal x4 doses. Resposta em semanas."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Sangramento ativo grave",
+                "conduta": "IVIg + Corticoide + Transfusão de plaquetas + Ácido tranexâmico."
+              },
+              {
+                "situacao": "Gestante",
+                "conduta": "IVIg preferível a corticoide. Plaquetas >30.000 para parto vaginal, >50.000 para cesárea."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ash-itp-2019"
+              }
+            ]
+          },
+          "duracao": "Conforme resposta. Agonistas TPO podem ser necessários cronicamente."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Semanal até estabilização, depois mensal",
+          "examesControle": [
+            "Hemograma seriado",
+            "Esfregaço se mudança clínica"
+          ],
+          "metasTerapeuticas": [
+            "Plaquetas >30.000 estáveis",
+            "Ausência de sangramento"
+          ],
+          "criteriosEncaminhamento": [
+            "PTI crônica ou refratária",
+            "Necessidade de esplenectomia",
+            "Candidato a agonista TPO ou rituximabe",
+            "Sangramento grave"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Não há prevenção primária"
+          ],
+          "secundaria": [
+            "Evitar gatilhos",
+            "Manter plaquetas em nível seguro"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "prednisona",
+        "dexametasona",
+        "imunoglobulina-iv",
+        "eltrombopag"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ash-itp-2019"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "trombocitopenia",
+        "pti",
+        "plaqueta",
+        "purpura",
+        "sangramento"
+      ]
+    },
+    {
+      "id": "anemia-ferropriva-pediatrica",
+      "titulo": "बालकावस्था में लौह की कमी से होने वाली रक्तसंक्षारण",
+      "ciap2": [
+        "B80"
+      ],
+      "cid10": [
+        "D50"
+      ],
+      "cid11": [
+        "3A00"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:11758",
+      "snomedCT": "87522002",
+      "meshId": "D018798",
+      "umlsCui": "C0085576",
+      "quickView": {
+        "definicao": "बालकावस्था में सबसे आम रक्तसंक्षारण। भारत में <5 वर्ष के बच्चों में प्रसार 20-30%। कारण: लौह की आपूर्ति/मांग का असंतुलन।",
+        "criteriosDiagnosticos": [
+          "Hb <11g/dL (6m-5a) या <11,5g/dL (5-11a)",
+          "VCM कम (माइक्रोसाइटोसिस)",
+          "RDW ऊंचा (एनिसोसाइटोसिस)",
+          "फेरिटिन <12ng/mL (या <30 यदि सूजन हो)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "लौह से समृद्ध आहार",
+            "भोजन के साथ विटामिन C",
+            "गाय के दूध का अधिक सेवन न करना"
+          ],
+          "farmacologico": [
+            "सल्फेट फेरोस 3-5mg/kg/दिन लौह तत्व",
+            "भोजन से दूर",
+            "अवधि: 3-6 महीने (स्टॉक पूरा करने के लिए)"
+          ]
+        },
+        "redFlags": [
+          "गंभीर रक्तसंक्षारण (Hb <7)",
+          "उपचार पर प्रतिक्रिया नहीं",
+          "तंत्रिका संबंधी लक्षण",
+          "जठरांत्र रक्तस्राव"
+        ]
+      },
+      "medicamentos": [
+        "sulfato-ferroso"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anemia-hemolitica",
+      "titulo": "हीमोलिटिक एनीमिया",
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D59"
+      ],
+      "cid11": [
+        "3A10"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:9538",
+      "snomedCT": "955009",
+      "meshId": "D000743",
+      "umlsCui": "C0002878",
+      "tags": [
+        "हीमोलिटिक",
+        "एनीमिया"
+      ],
+      "quickView": {
+        "definicao": "हीमोलिसिस की बढ़ी हुई दर के कारण एनीमिया। यह स्व-अभिरक्षक, आनुवांशिक या अर्जित हो सकती है।",
+        "criteriosDiagnosticos": [
+          "एनीमिया",
+          "रेटिकुलोसाइट्स की संख्या में वृद्धि",
+          "LDH उच्च",
+          "प्रत्यक्ष बिलीरबिन उच्च",
+          "हैप्टोग्लोबिन कम"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "मूल कारण का उपचार",
+            "प्रेरकों से बचना"
+          ],
+          "farmacologico": [
+            "स्व-अभिरक्षक स्थितियों में कॉर्टिकोस्टेरॉइड",
+            "लक्षणात्मक स्थितियों में रक्त प्रत्यारोपण"
+          ]
+        },
+        "redFlags": [
+          "अप्लास्टिक संकट",
+          "गुर्दे की अक्षमता",
+          "थक्कावरोधी बीमारी"
+        ]
+      },
+      "medicamentos": [
+        "prednisona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "leucemia-linfocitica-cronica",
+      "titulo": "लीकेमिया लिम्फोसाइटिक क्रोनिक",
+      "ciap2": [
+        "B73"
+      ],
+      "cid10": [
+        "C91.1"
+      ],
+      "cid11": [
+        "2A82.0"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:8552",
+      "snomedCT": "91857009",
+      "meshId": "D015451",
+      "umlsCui": "C0023418",
+      "tags": [
+        "हेमाटोलॉजिकल",
+        "नियोप्लासिया",
+        "क्रोनिक"
+      ],
+      "quickView": {
+        "definicao": "परिपक्व B लिम्फोसाइट्स की नियोप्लासिया। ज्यादातर वृद्धों में होती है। आमतौर पर अनुकूल।",
+        "criteriosDiagnosticos": [
+          "लिम्फोसाइटोसिस >5000/μL",
+          "संगत मूर्तिकार रूप",
+          "विशेष इम्यूनोफिनोटाइप"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "यदि लक्षणरहित और स्थिर हो तो निगरानी",
+            "ऑन्को-हेमाटोलॉजिकल अनुसरण"
+          ],
+          "farmacologico": [
+            "केवल यदि लक्षणाकुल या प्रगतिशील हो तो उपचार",
+            "एस्टेजिंग के अनुसार केमोथेरेपी"
+          ]
+        },
+        "redFlags": [
+          "साइटोपेनियास",
+          "बड़े लिम्फोनोड्स",
+          "ऑर्गनोमेगाली",
+          "दोहरावशी इन्फेक्शन"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

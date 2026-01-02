@@ -1,0 +1,78 @@
+{
+  "locale": "hi",
+  "category": "हृदय संबंधी",
+  "generatedAt": "2026-01-02T14:53:33.473Z",
+  "count": 1,
+  "diseases": [
+    {
+      "id": "उच्चरक्तचापरोधी",
+      "titulo": "उच्चरक्तचापरोधी",
+      "sinonimos": [
+        "उच्चरक्तचापरोधी"
+      ],
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E05.9"
+      ],
+      "cid11": [
+        "5A01.Z"
+      ],
+      "doid": "DOID:0080532",
+      "snomedCT": "237516002",
+      "meshId": "D000073058",
+      "umlsCui": "C0342157",
+      "categoria": "हृदय संबंधी",
+      "quickView": {
+        "definicao": "TSH suprimido com T4 e T3 livres normais. Pode ser endógeno (Graves, nódulo tóxico) ou exógeno (excesso de levotiroxina).",
+        "criteriosDiagnosticos": [
+          "TSH <0,1-0,4 mUI/L (conforme laboratório)",
+          "T4 livre e T3 livre normais",
+          "Grau I: TSH 0,1-0,4 mUI/L",
+          "Grau II: TSH <0,1 mUI/L"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Observação se leve e assintomático",
+            "Investigar causa: cintilografia, anti-TRAB"
+          ],
+          "farmacologico": [
+            "Tratar se: >65 anos, FA, osteoporose, sintomas",
+            "Causa endógena: metimazol ou radioiodo",
+            "Causa exógena: reduzir dose de levotiroxina",
+            "Betabloqueador se sintomas adrenérgicos"
+          ]
+        },
+        "redFlags": [
+          "Fibrilação atrial",
+          "Osteoporose",
+          "Sintomas cardiovasculares",
+          "Idosos >65 anos"
+        ],
+        "metasTerapeuticas": [
+          "TSH normal",
+          "Eutireoidismo"
+        ],
+        "examesIniciais": [
+          "TSH",
+          "T4 livre",
+          "T3 livre",
+          "Anti-TRAB",
+          "Cintilografia se indicado"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "propranolol",
+        "metimazol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "तिरोइड",
+        "अरिथ्मिया",
+        "ऑस्टियोपोरोसिस"
+      ]
+    }
+  ]
+}
