@@ -1,12 +1,14 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { Search, Filter, X, BookOpen, Pill, FileText, Activity } from 'lucide-react';
+import { Search, Filter, X, BookOpen, Pill, Activity, Loader2 } from 'lucide-react';
 import Fuse from 'fuse.js';
+import { useLocale } from 'next-intl';
 import { getAllRastreamentos } from '@/lib/data/rastreamentos';
-import { doencas } from '@/lib/data/doencas';
+import { getAllDoencas } from '@/lib/data/doencas/index';
 import { medicamentos } from '@/lib/data/medicamentos';
 import { Link } from '@/i18n/routing';
+import { useLocalizedDiseases, LocalizedDoenca } from '@/lib/hooks/useLocalizedDisease';
 
 type SearchResultType = 'rastreamento' | 'doenca' | 'medicamento';
 
@@ -19,6 +21,10 @@ interface UnifiedSearchResult {
   path: string;
   badges: { label: string; color: string }[];
   lastUpdate?: string;
+  // Additional fields for search indexing (not displayed)
+  searchableText?: string;
+  originalTitle?: string;
+  tags?: string[];
 }
 
 export default function AdvancedSearch() {
@@ -28,9 +34,30 @@ export default function AdvancedSearch() {
     category: 'all',
   });
 
+  const locale = useLocale();
+
   const rastreamentos = getAllRastreamentos();
 
-  // Unificar todos os itens para busca
+  // Get all disease IDs for localization
+  const allDoencas = getAllDoencas();
+  const diseaseIds = useMemo(() =>
+    allDoencas.map(d => d.id).filter((id): id is string => !!id),
+    [allDoencas]
+  );
+
+  // Use localized diseases hook
+  const { diseases: localizedDiseases, isLoading: isLoadingDiseases } = useLocalizedDiseases(diseaseIds);
+
+  // Create a map for quick lookup of localized diseases
+  const localizedDiseaseMap = useMemo(() => {
+    const map = new Map<string, LocalizedDoenca>();
+    localizedDiseases.forEach(d => {
+      if (d.id) map.set(d.id, d);
+    });
+    return map;
+  }, [localizedDiseases]);
+
+  // Unify all items for search - now with localized disease content
   const allItems: UnifiedSearchResult[] = useMemo(() => {
     const items: UnifiedSearchResult[] = [];
 
@@ -51,21 +78,60 @@ export default function AdvancedSearch() {
       });
     });
 
-    // Doenças
-    doencas.forEach(d => {
+    // Diseases - use localized data if available, fall back to original
+    allDoencas.forEach(originalDisease => {
+      if (!originalDisease.id) return;
+
+      const localizedDisease = localizedDiseaseMap.get(originalDisease.id);
+      const disease = localizedDisease || originalDisease;
+
+      // Get display values (translated if available)
+      const displayTitle = disease.titulo || originalDisease.titulo || '';
+      const displayDefinition = disease.quickView?.definicao || originalDisease.quickView?.definicao || '';
+      const displayTags = disease.tags || originalDisease.tags || [];
+      const displaySynonyms = disease.sinonimos || originalDisease.sinonimos || [];
+
+      // Build searchable text combining translated AND original content for better search coverage
+      const searchableText = [
+        displayTitle,
+        originalDisease.titulo, // Always include original Portuguese title for search
+        displayDefinition,
+        originalDisease.quickView?.definicao, // Original definition
+        ...displayTags,
+        ...(originalDisease.tags || []), // Original tags
+        ...displaySynonyms,
+        ...(originalDisease.sinonimos || []), // Original synonyms
+        ...(originalDisease.ciap2 || []),
+        ...(originalDisease.cid10 || []),
+      ].filter(Boolean).join(' ');
+
+      // Get translated label for "Disease" badge
+      const diseaseBadgeLabel = locale === 'pt' ? 'Doenca' :
+                               locale === 'en' ? 'Disease' :
+                               locale === 'es' ? 'Enfermedad' :
+                               locale === 'fr' ? 'Maladie' :
+                               locale === 'ru' ? 'Болезнь' :
+                               locale === 'ar' ? 'مرض' :
+                               locale === 'zh' ? '疾病' :
+                               locale === 'el' ? 'Νόσος' :
+                               locale === 'hi' ? 'रोग' : 'Disease';
+
       items.push({
-        id: d.id,
+        id: originalDisease.id,
         type: 'doenca',
-        title: d.titulo,
-        subtitle: d.ciap2.join(', ') + ' | ' + d.cid10.join(', '),
-        description: d.quickView.definicao,
-        path: `/doencas/${d.id}`,
+        title: displayTitle,
+        subtitle: (originalDisease.ciap2?.join(', ') || '') + ' | ' + (originalDisease.cid10?.join(', ') || ''),
+        description: displayDefinition,
+        path: `/doencas/${originalDisease.id}`,
         badges: [
-          { label: 'Doença', color: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300' },
-          ...d.ciap2.slice(0, 1).map(c => ({ label: c, color: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-300' })),
-          ...d.cid10.slice(0, 1).map(c => ({ label: c, color: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900 dark:text-cyan-300' }))
+          { label: diseaseBadgeLabel, color: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300' },
+          ...(originalDisease.ciap2?.slice(0, 1).map(c => ({ label: c, color: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-300' })) || []),
+          ...(originalDisease.cid10?.slice(0, 1).map(c => ({ label: c, color: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900 dark:text-cyan-300' })) || [])
         ],
-        lastUpdate: d.lastUpdate
+        lastUpdate: originalDisease.lastUpdate,
+        searchableText,
+        originalTitle: originalDisease.titulo,
+        tags: [...displayTags, ...(originalDisease.tags || [])]
       });
     });
 
@@ -79,7 +145,7 @@ export default function AdvancedSearch() {
         description: m.indicacoes.slice(0, 2).join(' • '),
         path: `/medicamentos/${m.id}`,
         badges: [
-          { label: 'Medicamento', color: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-300' },
+          { label: locale === 'pt' ? 'Medicamento' : 'Medication', color: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-300' },
           ...(m.rename ? [{ label: 'RENAME', color: 'bg-green-500 text-white' }] : []),
           { label: `Cat. ${m.gestacao}`, color: 'bg-pink-100 text-pink-700 dark:bg-pink-900 dark:text-pink-300' }
         ],
@@ -88,18 +154,23 @@ export default function AdvancedSearch() {
     });
 
     return items;
-  }, [rastreamentos]);
+  }, [rastreamentos, allDoencas, localizedDiseaseMap, locale]);
 
-  // Configuração do Fuse.js para busca fuzzy
+  // Fuse.js configuration for fuzzy search - includes both translated and original content
   const fuse = useMemo(() => {
     return new Fuse(allItems, {
       keys: [
-        { name: 'title', weight: 3 },
+        { name: 'title', weight: 4 },
+        { name: 'originalTitle', weight: 3 },  // Original Portuguese title for search
         { name: 'subtitle', weight: 2 },
-        { name: 'description', weight: 1 },
+        { name: 'description', weight: 1.5 },
+        { name: 'searchableText', weight: 1 }, // Combined translated + original content
+        { name: 'tags', weight: 2 },           // Tags (translated + original)
       ],
-      threshold: 0.3,
+      threshold: 0.35,
       includeScore: true,
+      ignoreLocation: true,  // Search anywhere in the text
+      minMatchCharLength: 2, // Minimum characters to match
     });
   }, [allItems]);
 
@@ -118,7 +189,7 @@ export default function AdvancedSearch() {
       filtered = filtered.filter(r => r.type === filters.type);
     }
 
-    return filtered.slice(0, 50); // Limitar resultados
+    return filtered.slice(0, 50); // Limit results
   }, [searchTerm, filters, allItems, fuse]);
 
   const clearFilters = () => {
@@ -145,28 +216,218 @@ export default function AdvancedSearch() {
     }
   };
 
+  // Translated labels for UI
+  const labels = {
+    searchPlaceholder: locale === 'pt' ? 'Buscar doencas, medicamentos, rastreamentos, CIAP-2, CID-10...' :
+                       locale === 'en' ? 'Search diseases, medications, screenings, ICPC-2, ICD-10...' :
+                       locale === 'es' ? 'Buscar enfermedades, medicamentos, tamizajes, CIAP-2, CIE-10...' :
+                       locale === 'fr' ? 'Rechercher maladies, medicaments, depistages, CISP-2, CIM-10...' :
+                       locale === 'ru' ? 'Поиск болезней, лекарств, скринингов, ICPC-2, МКБ-10...' :
+                       locale === 'ar' ? 'البحث عن الامراض، الادوية، الفحوصات...' :
+                       locale === 'zh' ? '搜索疾病、药物、筛查、ICPC-2、ICD-10...' :
+                       locale === 'el' ? 'Αναζητηση νοσων, φαρμακων, διαλογων...' :
+                       locale === 'hi' ? 'रोग, दवाइयाँ, जाँच खोजें...' :
+                       'Search diseases, medications, screenings...',
+    filterBy: locale === 'pt' ? 'Filtrar por:' :
+              locale === 'en' ? 'Filter by:' :
+              locale === 'es' ? 'Filtrar por:' :
+              locale === 'fr' ? 'Filtrer par:' :
+              locale === 'ru' ? 'Фильтровать:' :
+              locale === 'ar' ? 'تصفية حسب:' :
+              locale === 'zh' ? '筛选:' :
+              locale === 'el' ? 'Φιλτραρισμα:' :
+              locale === 'hi' ? 'फ़िल्टर:' : 'Filter by:',
+    all: locale === 'pt' ? 'Todos' :
+         locale === 'en' ? 'All' :
+         locale === 'es' ? 'Todos' :
+         locale === 'fr' ? 'Tous' :
+         locale === 'ru' ? 'Все' :
+         locale === 'ar' ? 'الكل' :
+         locale === 'zh' ? '全部' :
+         locale === 'el' ? 'Ολα' :
+         locale === 'hi' ? 'सभी' : 'All',
+    diseases: locale === 'pt' ? 'Doencas' :
+              locale === 'en' ? 'Diseases' :
+              locale === 'es' ? 'Enfermedades' :
+              locale === 'fr' ? 'Maladies' :
+              locale === 'ru' ? 'Болезни' :
+              locale === 'ar' ? 'الامراض' :
+              locale === 'zh' ? '疾病' :
+              locale === 'el' ? 'Νοσοι' :
+              locale === 'hi' ? 'रोग' : 'Diseases',
+    medications: locale === 'pt' ? 'Medicamentos' :
+                 locale === 'en' ? 'Medications' :
+                 locale === 'es' ? 'Medicamentos' :
+                 locale === 'fr' ? 'Medicaments' :
+                 locale === 'ru' ? 'Лекарства' :
+                 locale === 'ar' ? 'الادوية' :
+                 locale === 'zh' ? '药物' :
+                 locale === 'el' ? 'Φαρμακα' :
+                 locale === 'hi' ? 'दवाइयाँ' : 'Medications',
+    screenings: locale === 'pt' ? 'Rastreamentos' :
+                locale === 'en' ? 'Screenings' :
+                locale === 'es' ? 'Tamizajes' :
+                locale === 'fr' ? 'Depistages' :
+                locale === 'ru' ? 'Скрининги' :
+                locale === 'ar' ? 'الفحوصات' :
+                locale === 'zh' ? '筛查' :
+                locale === 'el' ? 'Διαλογες' :
+                locale === 'hi' ? 'जाँच' : 'Screenings',
+    clear: locale === 'pt' ? 'Limpar' :
+           locale === 'en' ? 'Clear' :
+           locale === 'es' ? 'Limpiar' :
+           locale === 'fr' ? 'Effacer' :
+           locale === 'ru' ? 'Очистить' :
+           locale === 'ar' ? 'مسح' :
+           locale === 'zh' ? '清除' :
+           locale === 'el' ? 'Καθαρισμος' :
+           locale === 'hi' ? 'साफ़ करें' : 'Clear',
+    resultsFound: (count: number) => {
+      if (locale === 'pt') return `${count} ${count === 1 ? 'resultado encontrado' : 'resultados encontrados'}`;
+      if (locale === 'en') return `${count} ${count === 1 ? 'result found' : 'results found'}`;
+      if (locale === 'es') return `${count} ${count === 1 ? 'resultado encontrado' : 'resultados encontrados'}`;
+      if (locale === 'fr') return `${count} ${count === 1 ? 'resultat trouve' : 'resultats trouves'}`;
+      if (locale === 'ru') return `${count} ${count === 1 ? 'результат' : 'результатов'}`;
+      if (locale === 'ar') return `${count} نتيجة`;
+      if (locale === 'zh') return `找到 ${count} 个结果`;
+      if (locale === 'el') return `${count} αποτελεσματα`;
+      if (locale === 'hi') return `${count} परिणाम`;
+      return `${count} results found`;
+    },
+    forSearch: (term: string) => {
+      if (locale === 'pt') return `para "${term}"`;
+      if (locale === 'en') return `for "${term}"`;
+      if (locale === 'es') return `para "${term}"`;
+      if (locale === 'fr') return `pour "${term}"`;
+      if (locale === 'ru') return `для "${term}"`;
+      if (locale === 'ar') return `لـ "${term}"`;
+      if (locale === 'zh') return `"${term}"`;
+      if (locale === 'el') return `για "${term}"`;
+      if (locale === 'hi') return `"${term}" के लिए`;
+      return `for "${term}"`;
+    },
+    noResults: locale === 'pt' ? 'Nenhum resultado encontrado para sua busca.' :
+               locale === 'en' ? 'No results found for your search.' :
+               locale === 'es' ? 'No se encontraron resultados para su busqueda.' :
+               locale === 'fr' ? 'Aucun resultat trouve pour votre recherche.' :
+               locale === 'ru' ? 'По вашему запросу ничего не найдено.' :
+               locale === 'ar' ? 'لم يتم العثور على نتائج.' :
+               locale === 'zh' ? '未找到搜索结果。' :
+               locale === 'el' ? 'Δεν βρεθηκαν αποτελεσματα.' :
+               locale === 'hi' ? 'कोई परिणाम नहीं मिला।' : 'No results found.',
+    trySearching: locale === 'pt' ? 'Tente buscar por nome da doenca, CIAP-2, CID-10, medicamento ou rastreamento.' :
+                  locale === 'en' ? 'Try searching by disease name, ICPC-2, ICD-10, medication, or screening.' :
+                  locale === 'es' ? 'Intente buscar por nombre de enfermedad, CIAP-2, CIE-10, medicamento o tamizaje.' :
+                  locale === 'fr' ? 'Essayez de rechercher par nom de maladie, CISP-2, CIM-10, medicament ou depistage.' :
+                  locale === 'ru' ? 'Попробуйте искать по названию болезни, ICPC-2, МКБ-10, лекарству или скринингу.' :
+                  locale === 'ar' ? 'حاول البحث باسم المرض او الدواء او الفحص.' :
+                  locale === 'zh' ? '尝试按疾病名称、ICPC-2、ICD-10、药物或筛查搜索。' :
+                  locale === 'el' ? 'Δοκιμαστε αναζητηση με ονομα νοσου, ICPC-2, ICD-10, φαρμακο η διαλογη.' :
+                  locale === 'hi' ? 'रोग का नाम, ICPC-2, ICD-10, दवा या जाँच से खोजें।' :
+                  'Try searching by disease name, ICPC-2, ICD-10, medication, or screening.',
+    clearAndRetry: locale === 'pt' ? 'Limpar filtros e tentar novamente' :
+                   locale === 'en' ? 'Clear filters and try again' :
+                   locale === 'es' ? 'Limpiar filtros e intentar de nuevo' :
+                   locale === 'fr' ? 'Effacer les filtres et reessayer' :
+                   locale === 'ru' ? 'Очистить фильтры и повторить' :
+                   locale === 'ar' ? 'مسح الفلاتر والمحاولة مرة اخرى' :
+                   locale === 'zh' ? '清除筛选条件并重试' :
+                   locale === 'el' ? 'Καθαρισμος φιλτρων και επαναληψη' :
+                   locale === 'hi' ? 'फ़िल्टर साफ़ करें और पुनः प्रयास करें' :
+                   'Clear filters and try again',
+    searchTips: locale === 'pt' ? 'Dicas de Busca' :
+                locale === 'en' ? 'Search Tips' :
+                locale === 'es' ? 'Consejos de Busqueda' :
+                locale === 'fr' ? 'Conseils de Recherche' :
+                locale === 'ru' ? 'Советы по поиску' :
+                locale === 'ar' ? 'نصائح البحث' :
+                locale === 'zh' ? '搜索提示' :
+                locale === 'el' ? 'Συμβουλες Αναζητησης' :
+                locale === 'hi' ? 'खोज सुझाव' : 'Search Tips',
+    tipByCode: locale === 'pt' ? 'Por codigo: Digite "K86" (CIAP-2) ou "I10" (CID-10) para encontrar a doenca' :
+               locale === 'en' ? 'By code: Enter "K86" (ICPC-2) or "I10" (ICD-10) to find the disease' :
+               locale === 'es' ? 'Por codigo: Escriba "K86" (CIAP-2) o "I10" (CIE-10) para encontrar la enfermedad' :
+               locale === 'fr' ? 'Par code: Entrez "K86" (CISP-2) ou "I10" (CIM-10) pour trouver la maladie' :
+               locale === 'ru' ? 'По коду: Введите "K86" (ICPC-2) или "I10" (МКБ-10) чтобы найти болезнь' :
+               locale === 'ar' ? 'حسب الرمز: ادخل "K86" (ICPC-2) او "I10" (ICD-10) للعثور على المرض' :
+               locale === 'zh' ? '按代码：输入 "K86"（ICPC-2）或 "I10"（ICD-10）查找疾病' :
+               locale === 'el' ? 'Κατα κωδικο: Εισαγετε "K86" (ICPC-2) η "I10" (ICD-10) για να βρειτε τη νοσο' :
+               locale === 'hi' ? 'कोड से: "K86" (ICPC-2) या "I10" (ICD-10) दर्ज करें' :
+               'By code: Enter "K86" (ICPC-2) or "I10" (ICD-10) to find the disease',
+    tipByMedication: locale === 'pt' ? 'Por medicamento: Digite o nome generico (losartana) ou comercial (Cozaar)' :
+                     locale === 'en' ? 'By medication: Enter the generic name (losartan) or brand name (Cozaar)' :
+                     locale === 'es' ? 'Por medicamento: Escriba el nombre generico (losartan) o comercial (Cozaar)' :
+                     locale === 'fr' ? 'Par medicament: Entrez le nom generique (losartan) ou commercial (Cozaar)' :
+                     locale === 'ru' ? 'По лекарству: Введите генерическое (лозартан) или торговое название (Козаар)' :
+                     locale === 'ar' ? 'حسب الدواء: ادخل الاسم العلمي او التجاري' :
+                     locale === 'zh' ? '按药物：输入通用名（氯沙坦）或商品名（Cozaar）' :
+                     locale === 'el' ? 'Κατα φαρμακο: Εισαγετε το γενοσημο η εμπορικο ονομα' :
+                     locale === 'hi' ? 'दवा से: जेनेरिक नाम (losartan) या ब्रांड नाम (Cozaar) दर्ज करें' :
+                     'By medication: Enter the generic name (losartan) or brand name (Cozaar)',
+    tipByScreening: locale === 'pt' ? 'Por rastreamento: Digite a condicao (mama, prostata, pezinho)' :
+                    locale === 'en' ? 'By screening: Enter the condition (breast, prostate, newborn)' :
+                    locale === 'es' ? 'Por tamizaje: Escriba la condicion (mama, prostata, neonatal)' :
+                    locale === 'fr' ? 'Par depistage: Entrez la condition (sein, prostate, neonatal)' :
+                    locale === 'ru' ? 'По скринингу: Введите состояние (грудь, простата, новорожденный)' :
+                    locale === 'ar' ? 'حسب الفحص: ادخل الحالة (ثدي، بروستاتا، حديثي الولادة)' :
+                    locale === 'zh' ? '按筛查：输入病症（乳腺、前列腺、新生儿）' :
+                    locale === 'el' ? 'Κατα διαλογη: Εισαγετε την κατασταση (μαστος, προστατης, νεογνο)' :
+                    locale === 'hi' ? 'जाँच से: स्थिति दर्ज करें (स्तन, प्रोस्टेट, नवजात)' :
+                    'By screening: Enter the condition (breast, prostate, newborn)',
+    tipFuzzy: locale === 'pt' ? 'Busca fuzzy: Mesmo com erros de digitacao, a busca encontra resultados aproximados' :
+              locale === 'en' ? 'Fuzzy search: Even with typos, the search finds approximate matches' :
+              locale === 'es' ? 'Busqueda difusa: Incluso con errores de escritura, la busqueda encuentra coincidencias aproximadas' :
+              locale === 'fr' ? 'Recherche floue: Meme avec des fautes de frappe, la recherche trouve des correspondances approximatives' :
+              locale === 'ru' ? 'Нечеткий поиск: Даже с опечатками поиск находит приблизительные совпадения' :
+              locale === 'ar' ? 'بحث غامض: حتى مع الاخطاء الاملائية، يجد البحث نتائج تقريبية' :
+              locale === 'zh' ? '模糊搜索：即使有拼写错误，搜索也能找到近似匹配' :
+              locale === 'el' ? 'Ασαφης αναζητηση: Ακομα και με τυπογραφικα λαθη, βρισκει κοντινα αποτελεσματα' :
+              locale === 'hi' ? 'अस्पष्ट खोज: टाइपो के साथ भी, खोज अनुमानित मिलान खोजती है' :
+              'Fuzzy search: Even with typos, the search finds approximate matches',
+    loading: locale === 'pt' ? 'Carregando traducoes...' :
+             locale === 'en' ? 'Loading translations...' :
+             locale === 'es' ? 'Cargando traducciones...' :
+             locale === 'fr' ? 'Chargement des traductions...' :
+             locale === 'ru' ? 'Загрузка переводов...' :
+             locale === 'ar' ? 'جاري تحميل الترجمات...' :
+             locale === 'zh' ? '正在加载翻译...' :
+             locale === 'el' ? 'Φορτωση μεταφρασεων...' :
+             locale === 'hi' ? 'अनुवाद लोड हो रहे हैं...' : 'Loading translations...',
+  };
+
+  // Count diseases from the consolidated list
+  const diseaseCount = allDoencas.length;
+
   return (
     <div className="space-y-6">
-      {/* Barra de Busca */}
+      {/* Loading indicator for translations */}
+      {isLoadingDiseases && locale !== 'pt' && (
+        <div className="flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400">
+          <Loader2 className="w-4 h-4 animate-spin" />
+          {labels.loading}
+        </div>
+      )}
+
+      {/* Search Bar */}
       <div className="relative">
         <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400" />
         <input
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Buscar doenças, medicamentos, rastreamentos, CIAP-2, CID-10..."
+          placeholder={labels.searchPlaceholder}
           className="w-full pl-12 pr-4 py-4 border-2 border-neutral-300 dark:border-neutral-600 rounded-xl bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
         />
       </div>
 
-      {/* Filtros */}
+      {/* Filters */}
       <div className="flex flex-wrap gap-4 items-center">
         <div className="flex items-center gap-2">
           <Filter className="w-4 h-4 text-neutral-600 dark:text-neutral-400" />
-          <span className="text-sm font-semibold text-neutral-700 dark:text-neutral-300">Filtrar por:</span>
+          <span className="text-sm font-semibold text-neutral-700 dark:text-neutral-300">{labels.filterBy}</span>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setFilters({ ...filters, type: 'all' })}
             className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
@@ -175,7 +436,7 @@ export default function AdvancedSearch() {
                 : 'bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700'
             }`}
           >
-            Todos ({allItems.length})
+            {labels.all} ({allItems.length})
           </button>
           <button
             onClick={() => setFilters({ ...filters, type: 'doenca' })}
@@ -186,7 +447,7 @@ export default function AdvancedSearch() {
             }`}
           >
             <BookOpen className="w-4 h-4" />
-            Doenças ({doencas.length})
+            {labels.diseases} ({diseaseCount})
           </button>
           <button
             onClick={() => setFilters({ ...filters, type: 'medicamento' })}
@@ -197,7 +458,7 @@ export default function AdvancedSearch() {
             }`}
           >
             <Pill className="w-4 h-4" />
-            Medicamentos ({medicamentos.length})
+            {labels.medications} ({medicamentos.length})
           </button>
           <button
             onClick={() => setFilters({ ...filters, type: 'rastreamento' })}
@@ -208,7 +469,7 @@ export default function AdvancedSearch() {
             }`}
           >
             <Activity className="w-4 h-4" />
-            Rastreamentos ({rastreamentos.length})
+            {labels.screenings} ({rastreamentos.length})
           </button>
         </div>
 
@@ -218,15 +479,15 @@ export default function AdvancedSearch() {
             className="flex items-center gap-2 px-3 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
           >
             <X className="w-4 h-4" />
-            Limpar
+            {labels.clear}
           </button>
         )}
       </div>
 
-      {/* Contador de Resultados */}
+      {/* Results Counter */}
       <div className="text-sm text-neutral-600 dark:text-neutral-400">
-        {results.length} {results.length === 1 ? 'resultado encontrado' : 'resultados encontrados'}
-        {searchTerm && ` para "${searchTerm}"`}
+        {labels.resultsFound(results.length)}
+        {searchTerm && ` ${labels.forSearch(searchTerm)}`}
       </div>
 
       {/* Resultados */}
@@ -279,29 +540,29 @@ export default function AdvancedSearch() {
           <div className="text-center py-12">
             <Search className="w-16 h-16 mx-auto mb-4 text-neutral-300 dark:text-neutral-700" />
             <p className="text-neutral-500 dark:text-neutral-400">
-              Nenhum resultado encontrado para sua busca.
+              {labels.noResults}
             </p>
             <p className="text-sm text-neutral-400 dark:text-neutral-500 mt-2">
-              Tente buscar por nome da doença, CIAP-2, CID-10, medicamento ou rastreamento.
+              {labels.trySearching}
             </p>
             <button
               onClick={clearFilters}
               className="mt-4 text-blue-600 dark:text-blue-400 hover:underline"
             >
-              Limpar filtros e tentar novamente
+              {labels.clearAndRetry}
             </button>
           </div>
         )}
       </div>
 
-      {/* Quick Tips */}
+      {/* Search Tips */}
       <div className="mt-8 bg-neutral-50 dark:bg-neutral-800/50 rounded-xl p-6">
-        <h3 className="font-bold text-neutral-900 dark:text-neutral-100 mb-3">💡 Dicas de Busca</h3>
+        <h3 className="font-bold text-neutral-900 dark:text-neutral-100 mb-3">{labels.searchTips}</h3>
         <ul className="text-sm text-neutral-600 dark:text-neutral-400 space-y-2">
-          <li>• <strong>Por código:</strong> Digite "K86" (CIAP-2) ou "I10" (CID-10) para encontrar a doença</li>
-          <li>• <strong>Por medicamento:</strong> Digite o nome genérico (losartana) ou comercial (Cozaar)</li>
-          <li>• <strong>Por rastreamento:</strong> Digite a condição (mama, próstata, pezinho)</li>
-          <li>• <strong>Busca fuzzy:</strong> Mesmo com erros de digitação, a busca encontra resultados aproximados</li>
+          <li>&#8226; {labels.tipByCode}</li>
+          <li>&#8226; {labels.tipByMedication}</li>
+          <li>&#8226; {labels.tipByScreening}</li>
+          <li>&#8226; {labels.tipFuzzy}</li>
         </ul>
       </div>
     </div>
