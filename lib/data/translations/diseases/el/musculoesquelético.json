@@ -1,0 +1,58 @@
+{
+  "locale": "el",
+  "category": "musculoesquelético",
+  "generatedAt": "2025-12-31T18:08:56.704Z",
+  "count": 1,
+  "diseases": [
+    {
+      "id": "tendinite-ombro",
+      "titulo": "Συνδρομή του Ροτατορικού Μαντελιού",
+      "ciap2": [
+        "L92"
+      ],
+      "cid10": [
+        "M75"
+      ],
+      "cid11": [
+        "FA23.0"
+      ],
+      "categoria": "musculoesquelético",
+      "doid": "DOID:0080731",
+      "snomedCT": "239872009",
+      "meshId": "D000070636",
+      "umlsCui": "C0085551",
+      "quickView": {
+        "definicao": "Τενδινοπάθεια του ροτατορικού μαντελιού (η πιο κοινή είναι η supraespinal). Κύρια αιτία πόνου στο ώμο σε ενήλικες.",
+        "criteriosDiagnosticos": [
+          "Πόνος στο πρόσθιο-εξωτερικό μέρος του ώμου",
+          "Πόνος στην ανάθλιση (60-120° απόδοση)",
+          "Τεστ: Jobe, Neer, Hawkins θετικοί",
+          "Δυσκολία να κοιμηθείς στο ίδιο πλευρό"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Σχετική ηρεμία (αποφυγή κινήσεων overhead)",
+            "Φυσικοθεραπεία (ενδυνάμωση και κινητοποίηση)",
+            "Κρυοθεραπεία"
+          ],
+          "farmacologico": [
+            "ΑΙΝΕ: Ibuprofeno 400mg 8/8h για 7-10 ημέρες",
+            "Αναλγητικό όταν χρειάζεται"
+          ]
+        },
+        "redFlags": [
+          "Ακύρως Τραύμα",
+          "Αδυναμία να σηκώσει το χέρι",
+          "Μυϊκή ατροφία",
+          "Παραισθήσεις"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno",
+        "paracetamol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

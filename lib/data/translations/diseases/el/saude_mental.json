@@ -1,0 +1,2508 @@
+{
+  "locale": "el",
+  "category": "saude_mental",
+  "generatedAt": "2025-12-31T20:22:28.491Z",
+  "count": 26,
+  "diseases": [
+    {
+      "id": "depressao",
+      "titulo": "Transtorno Depressivo Maior",
+      "sinonimos": [
+        "Depressão",
+        "Depressão maior",
+        "Episódio depressivo"
+      ],
+      "doid": "DOID:1470",
+      "snomedCT": "35489007",
+      "meshId": "D003865",
+      "umlsCui": "C0011570",
+      "ciap2": [
+        "P76"
+      ],
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "categoria": "saude_mental",
+      "quickView": {
+        "definicao": "Transtorno mental caracterizado por humor deprimido persistente e/ou perda de interesse por é2 semanas, acompanhado de sintomas cognitivos, comportamentais e físis, causando prejuízo funcional significativo.",
+        "criteriosDiagnosticos": [
+          "≥5 sintomas por é2 semanas (humor deprimido ou anedonia obrigatório)",
+          "Prejuízo clínico significativo",
+          "Não atribuível a substância ou condição médica",
+          "Sem episódio maníaco/hipomaníaco prévio"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Psicoeducação sobre a doença e tratamento",
+            "Psicoterapia (TCC, interpessoal) - indicada para todos",
+            "Atividade física regular (efeito antidepressivo)",
+            "Higiene do sono",
+            "Suporte social e familiar",
+            "Afastamento de álcool e drogas"
+          ],
+          "farmacologico": [
+            "ISRS 1ª linha: Fluoxetina 20-60mg, Sertralina 50-200mg, Escitalopram 10-20mg",
+            "ISRSN: Venlafaxina 75-225mg, Duloxetina 60-120mg (se dor associada)",
+            "Tricíclico: Amitriptilina 25-150mg (se dor, insônia, baixo custo)",
+            "Mínimo 6-12 meses após remissão. Manutenção se ≥3 episódios"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Remissão completa dos sintomas (PHQ-9 <5)",
+          "Retorno ao funcionamento prévio",
+          "Prevenção de recorrências",
+          "Identificação e manejo de comorbidades"
+        ],
+        "examesIniciais": [
+          "TSH (descartar hipotireoidismo)",
+          "Hemograma (anemia)",
+          "Glicemia",
+          "Função renal e hepática (baseline para medicamentos)",
+          "Vitamina B12 e ácido fólico (se idoso ou desnutrido)"
+        ],
+        "redFlags": [
+          "Ideação suicida estruturada com plano e intenção",
+          "Tentativa de suicídio prévia recente",
+          "Sintomas psicóticos (delírios, alucinações)",
+          "Episódio maníaco/hipomaníaco (sugere bipolaridade)",
+          "Catatonia",
+          "Risco de heteroagressão"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "7-10% da população adulta, 2x mais em mulheres",
+          "incidencia": "Pico 25-44 anos",
+          "mortalidade": "Suicídio: 15% em casos graves não tratados",
+          "fatoresRisco": [
+            "História familiar de depressão",
+            "Eventos adversos na infância",
+            "Estresse crônico, luto, desemprego",
+            "Doenças crônicas (DM, dor crônica, câncer)",
+            "Uso de substâncias",
+            "Transtorno de ansiedade prévio",
+            "Puerpério"
+          ],
+          "citations": [
+            {
+              "refId": "who-depression-2023"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Humor deprimido na maior parte do dia",
+            "Anedonia (perda de prazer)",
+            "Alteração de peso/apetite (aumento ou diminuição)",
+            "Insônia ou hipersonia",
+            "Fadiga, perda de energia",
+            "Sentimento de inutilidade ou culpa excessiva",
+            "Dificuldade de concentração",
+            "Pensamentos de morte, ideação suicida"
+          ],
+          "sinaisExameFisico": [
+            "Aparência descuidada",
+            "Lentificação psicomotora ou agitação",
+            "Fácies triste, choro",
+            "Fala lenta, monotônica",
+            "Dificuldade de contato visual"
+          ],
+          "formasClinicas": [
+            "Leve: sintomas mínimos, funcionalidade preservada",
+            "Moderado: sintomas e prejuízo funcionais evidentes",
+            "Grave: sintomas intensos, risco de suicídio, possível psicose"
+          ],
+          "citations": [
+            {
+              "refId": "dsm-5"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "≥5 sintomas por ≥2 semanas (humor deprimido ou anedonia obrigatório)",
+            "Prejuízo clínico significativo",
+            "Não atribuível a substância ou condição médica",
+            "Sem episódio maníaco/hipomaníaco prévio"
+          ],
+          "diagnosticoDiferencial": [
+            "Transtorno bipolar",
+            "Hipotireoidismo",
+            "Anemia",
+            "Transtorno de ajustamento",
+            "Luto normal",
+            "Depressão secundária (medicamentos, doenças)"
+          ],
+          "examesLaboratoriais": [
+            "TSH, hemograma, glicemia, função renal e hepática",
+            "Vitamina B12, folato (idosos)",
+            "Exame toxicológico se suspeita de uso de substâncias"
+          ],
+          "citations": [
+            {
+              "refId": "dsm-5"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Remissão dos sintomas",
+            "Recuperação funcional",
+            "Prevenção de recaídas e recorrências",
+            "Melhora da qualidade de vida"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Psicoterapia: TCC (12-20 sessões) ou terapia interpessoal",
+              "Ativação comportamental",
+              "Exercício físico: 30-45 min, 3-5x/semana",
+              "Higiene do sono",
+              "Grupos de apoio",
+              "Mindfulness"
+            ],
+            "citations": [
+              {
+                "refId": "nice-depression-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "ISRS",
+                "medicamentos": [
+                  "Fluoxetina 20-60mg/dia",
+                  "Sertralina 50-200mg/dia",
+                  "Escitalopram 10-20mg/dia"
+                ],
+                "posologia": "1x/dia, pela manhã",
+                "observacoes": "Iniciar dose baixa, aumentar a cada 2 semanas. Efeito em 2-4 semanas"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "ISRSN",
+                "medicamentos": [
+                  "Venlafaxina 75-225mg/dia",
+                  "Duloxetina 60-120mg/dia"
+                ],
+                "observacoes": "Se dor crônica associada ou falha de ISRS"
+              },
+              {
+                "classe": "Tricíclico",
+                "medicamentos": [
+                  "Amitriptilina 25-150mg/dia",
+                  "Nortriptilina 25-150mg/dia"
+                ],
+                "observacoes": "Menor custo. Mais efeitos adversos. ECG prévio se >40 anos"
+              },
+              {
+                "classe": "Outros",
+                "medicamentos": [
+                  "Bupropiona 150-300mg/dia",
+                  "Mirtazapina 15-45mg/dia"
+                ],
+                "observacoes": "Bupropiona: cessação tabágica. Mirtazapina: insônia, inapetência"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Gestação",
+                "conduta": "Sertralina mais seguro. Evitar paroxetina no 1º trimestre"
+              },
+              {
+                "situacao": "Idoso",
+                "conduta": "Iniciar com doses mais baixas. Preferir ISRS"
+              },
+              {
+                "situacao": "Bipolaridade",
+                "conduta": "Antidepressivo + estabilizador de humor. Encaminhar psiquiatria"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "nice-depression-2022"
+              }
+            ]
+          },
+          "duracao": "Mínimo 6-12 meses após remissão. Manutenção indefinida se ≥3 episódios ou fatores de risco"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Semanal/quinzenal inicial, depois mensal, trimestral quando estável",
+          "examesControle": [
+            "PHQ-9 a cada consulta",
+            "Avaliação de efeitos adversos",
+            "Avaliação de risco suicida",
+            "ECG se tricíclico em >40 anos"
+          ],
+          "metasTerapeuticas": [
+            "PHQ-9 <5 (remissão)",
+            "Retorno ao trabalho/atividades",
+            "Sono e apetite normalizados",
+            "Ausência de ideação suicida"
+          ],
+          "criteriosEncaminhamento": [
+            "Risco suicida alto",
+            "Sintomas psicóticos",
+            "Suspeita de bipolaridade",
+            "Refratariedade (falha a 2+ antidepressivos)",
+            "Necessidade de ECT",
+            "Comorbidade psiquiátrica grave"
+          ],
+          "citations": [
+            {
+              "refId": "nice-depression-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-depressao"
+      ],
+      "medicamentos": [
+        "fluoxetina",
+        "sertralina",
+        "amitriptilina",
+        "escitalopram"
+      ],
+      "calculadoras": [
+        "phq9",
+        "phq2"
+      ],
+      "citations": [
+        {
+          "refId": "dsm-5"
+        },
+        {
+          "refId": "nice-depression-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "saude_mental",
+        "cronica",
+        "prevalente"
+      ]
+    },
+    {
+      "id": "transtorno-ansiedade-generalizada",
+      "titulo": "Ταραχή Γενικευμένης Ανησυχίας (ΤΓΑ)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F41.1"
+      ],
+      "cid11": [
+        "6B00"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "21897009",
+      "doid": "DOID:14320",
+      "meshId": "D001008",
+      "umlsCui": "C0270458",
+      "dsm5": {
+        "code": "300.02",
+        "category": "Ταραχές Ανησυχίας",
+        "diagnosticCriteria": {
+          "code": "300.02",
+          "name": "Ταραχή Γενικευμένης Ανησυχίας",
+          "category": "Ταραχές Ανησυχίας",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Ανησυχία και υπερηφάνεια υπερβολικές (αναμοντική ανησυχία), που παρατηρείται σε περισσότερες ημέρες για τουλάχιστον 6 μήνες, σχετικά με διάφορα γεγονότα ή δραστηριότητες"
+            },
+            {
+              "letter": "B",
+              "text": "Ο ατόμος θεωρεί δύσκολο να ελέγχει την ανησυχία"
+            },
+            {
+              "letter": "C",
+              "text": "Η ανησυχία και η υπερηφάνεια συνδέονται με τρία (ή περισσότερα) από τα εξής έξι συμπτώματα:",
+              "subCriteria": [
+                {
+                  "text": "1. Ανησυχία ή αίσθηση ότι τα ηρεμά είναι ευαίσθητα"
+                },
+                {
+                  "text": "2. Εξάντληση"
+                },
+                {
+                  "text": "3. Δυσκολία συγκέντρωσης ή αισθήσεις \"κενού\" στο μυαλό"
+                },
+                {
+                  "text": "4. Ενοργεία"
+                },
+                {
+                  "text": "5. Συντόνιση των μυών"
+                },
+                {
+                  "text": "6. Περιβόλαιο ύπνου"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Ταραχή που χαρακτηρίζεται από υπερβολική και προσωπική ανησυχία και υπερηφάνεια σχετικά με διάφορα γεγονότα ή δραστηριότητες, δύσκολη να ελεγχθεί, συνδεδεμένη με φυσικά και γνωστικά συμπτώματα.",
+        "criteriosDiagnosticos": [
+          "Υπερηφάνεια υπερβολική σε περισσότερες ημέρες για ≥6 μήνες",
+          "Δυσκολία συγκέντρωσης της ανησυχίας",
+          "3 ή περισσότερα συμπτώματα: ανησυχία, εξάντληση, δυσκολία συγκέντρωσης, ενοργεία, συντόνιση των μυών, περιβόλαιο ύπνου",
+          "Σημαντική βλάβη στη λειτουργία"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "TCC (θεραπεία κατανοητικής και συμπεριφορικής) - χρυσός πρότυπο",
+            "Θεραπεία αποδοχής και υποχρέωσης (ACT)",
+            "Mindfulness",
+            "Τεχνικές ξεκάθαρης"
+          ],
+          "farmacologico": [
+            "ΙΣΡΣ: Εσσιταλοπράμ, Σερτραλίνη",
+            "ΙΣΡΝ: Βενλαφαξίνη XR",
+            "Πρεγαβαλίνη (εναλλακτική)"
+          ]
+        },
+        "redFlags": [
+          "Ιδεολογία αυτοκτονίας",
+          "Σοβαρές συνδυασμένες ταραχές ανησυχίας",
+          "Αντίσταση στη θεραπεία",
+          "Χρήση ουσιών"
+        ],
+        "examesIniciais": [
+          "TSH (εξαίρεση υπερθυρεωϊδισμού)",
+          "Ηματογράφημα",
+          "Κλίμακα GAD-7 για αξιολόγηση"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "GAD-7",
+          "description": "Ταραχή Γενικευμένης Ανησυχίας-7: Κλίμακα 7 αντικειμένων, βαθμολογία 0-21. ≥10 δείχνει ΤΓΑ μέτρια ή σοβαρή.",
+          "cutoff": "≥10",
+          "reference": "Spitzer et al., 2006"
+        }
+      ],
+      "tags": [
+        "ανησυχία",
+        "τγα",
+        "ισρσ",
+        "τcc",
+        "dsm5",
+        "υγεία_ψυχής"
+      ]
+    },
+    {
+      "id": "transtorno-panico",
+      "titulo": "Ταραχή Πανικού",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F41.0"
+      ],
+      "cid11": [
+        "6B01"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "371631005",
+      "doid": "DOID:594",
+      "meshId": "D016584",
+      "umlsCui": "C0030319",
+      "dsm5": {
+        "code": "300.01",
+        "category": "Ταραχές Ανησυχίας",
+        "diagnosticCriteria": {
+          "code": "300.01",
+          "name": "Ταραχή Πανικού",
+          "category": "Ταραχές Ανησυχίας",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Επανειληπτικοί και απροσδόκητοι έπιπλοι πανικού"
+            },
+            {
+              "letter": "B",
+              "text": "Τουλάχιστον ένας από τους έπιπλους πανικού ακολουθήθηκε από 1 μήνα (ή περισσότερους) με ένα ή και τα δύο τα εξής:",
+              "subCriteria": [
+                {
+                  "text": "1. Παραμένουσα ανησυχία για επιπλούς πανικού ή τις συνέπειές τους"
+                },
+                {
+                  "text": "2. Σημαντική μη προσαρμοστική αλλαγή συμπεριφοράς σχετικά με τους έπιπλους"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Ταραχή που χαρακτηρίζεται από επανειληπτικούς και απροσδόκητους έπιπλους πανικού, ακολουθούμενους από παραμένουσα ανησυχία ή μη προσαρμοστική αλλαγή συμπεριφοράς.",
+        "criteriosDiagnosticos": [
+          "Επανειληπτικοί και απροσδόκητοι έπιπλοι πανικού",
+          "Τουλάχιστον 4 συμπτώματα κατά τη διάρκεια του έπιπλου: καρδιοπάθεια, ιδρώσιμο, τρόμος, αποδυσάνασα, στηθαλγία, ναυτία, κούραση, αποστασιοποίηση, φόβος απώλειας του έλεγχου, φόβος θανάτου",
+          "Παραμένουσα ανησυχία ή αλλαγή συμπεριφοράς για ≥1 μήνα"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Κογνιτιβο-συμπεριφορική θεραπεία (ΚΣΘ) με εκτίθεση εντός του σώματος",
+            "Ψυχοεκπαίδευση για τους έπιπλους πανικού",
+            "Τεχνικές αναπνοής"
+          ],
+          "farmacologico": [
+            "Ινιβίτορες της Επαναπρόσληψης της Σερονινίνης (ΙΕΣ): Σερτραλίνη, Παροξετίνη, Εσσιταλοπράμ",
+            "Αλπραζόλαμ (κούρτερη χρήση, αποφυγή εξάρτησης)"
+          ]
+        },
+        "redFlags": [
+          "Σοβαρή αγοραφοβία",
+          "Σκέψεις αυτοκτονίας",
+          "Χρήση ουσιών",
+          "Μη θεραπευμένη συνοχέα"
+        ],
+        "examesIniciais": [
+          "Η/Κ (εξαίρεση αρυθμιών)",
+          "TSH",
+          "Γλυκημία με άδειο στομάχι",
+          "Αιμογράμμα"
+        ]
+      },
+      "tags": [
+        "πανικός",
+        "ανησυχία",
+        "έπιπλοι",
+        "ιεσ",
+        "κσθ",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "insonia",
+      "titulo": "Άρρωστος ύπνος",
+      "ciap2": [
+        "P06"
+      ],
+      "cid10": [
+        "G47.0"
+      ],
+      "cid11": [
+        "7A00.0"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:193",
+      "snomedCT": "193462001",
+      "meshId": "D007319",
+      "umlsCui": "C0917801",
+      "quickView": {
+        "definicao": "Δυσκολία να ξεκινήσει/να διατηρήσει τον ύπνο ή να ξυπνάει πρωί, με ημερήσια ζημιά. Χρόνια αν εμφανίζεται ≥3 φορές την εβδομάδα για ≥3 μήνες.",
+        "criteriosDiagnosticos": [
+          "Δυσκολία να κοιμηθεί από παράλληλη ευκαιρία",
+          "Ημερήσια ζημιά (κουράση, θυμούχια, συγκέντρωση)",
+          "Εξαίρεση απνείας κατά την ύπνο, RLS, άλλες αιτίες"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ΤΚΧ-Ι (θεραπεία κατανοητικής-συμπεριφορικής για τον άρρωστο ύπνο)",
+            "Υγιεινή του ύπνου",
+            "Έλεγχος των κινήτρων",
+            "Περιορισμός του χρόνου στο κρεβάτι"
+          ],
+          "farmacologico": [
+            "Αποφυγή χρόνιας χρήσης βενζοδιαζεπίνων",
+            "Σύντομος χρόνος: Zolpidem 5-10mg ή Zopiclona",
+            "Εάν υπάρχει συμπάθεια: Trazodona 25-100mg ή Mirtazapina"
+          ]
+        },
+        "redFlags": [
+          "Υπερκορεσία κατά την ημέρα (απνεία)",
+          "Ισχυρό χρεμερισμός",
+          "Σύνδρομο των ανησυχημένων ποδιών",
+          "Κατάπληξη"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "transtorno-depressivo-maior",
+      "titulo": "Μεγάλο Διαθετικό Διαταραχμένο Σύνδρομο (ΜΔΔΣ)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "cid11": [
+        "6A70",
+        "6A71"
+      ],
+      "ciap2": [
+        "P76"
+      ],
+      "snomedCT": "35489007",
+      "doid": "DOID:1470",
+      "meshId": "D003865",
+      "umlsCui": "C1269683",
+      "dsm5": {
+        "code": "296.33",
+        "codeAlternative": "F32",
+        "category": "Depressive Disorders",
+        "diagnosticCriteria": {
+          "code": "296.33",
+          "name": "Major Depressive Disorder",
+          "category": "Depressive Disorders",
+          "criteria": [
+            {
+              "text": "Α. Πέντε (ή περισσότερα) από τα παρακάτω συμπτώματα υπήρξαν παρόντα κατά τη διάρκεια του ίδιου περιόδου 2 εβδομάδων και αποτελούν μεταβολή της προηγούμενης λειτουργίας· τουλάχιστον ένα από τα συμπτώματα είναι (1) καταθλιπτικός χαρακτήρας ή (2) απώλεια ενδιαφέροντος ή προσαρμογής."
+            },
+            {
+              "letter": "1",
+              "text": "Καταθλιπτικός χαρακτήρας για το μεγαλύτερο μέρος της ημέρας, σχεδόν κάθε μέρα"
+            },
+            {
+              "letter": "2",
+              "text": "Σημαντική μείωση του ενδιαφέροντος ή της προσαρμογής σε όλες ή σχεδόν όλες τις δραστηριότητες"
+            },
+            {
+              "letter": "3",
+              "text": "Σημαντική απώλεια ή αύξηση βάρους (πάνω από 5% του σωματικού βάρους σε 1 μήνα)"
+            },
+            {
+              "letter": "4",
+              "text": "Άνοια ή υπερνομιά σχεδόν κάθε μέρα"
+            },
+            {
+              "letter": "5",
+              "text": "Αναστροφή ή καθυστερημένη ψυχοκίνηση σχεδόν κάθε μέρα"
+            },
+            {
+              "letter": "6",
+              "text": "Κόπος ή απώλεια ενέργειας σχεδόν κάθε μέρα"
+            },
+            {
+              "letter": "7",
+              "text": "Ενδιαφέροντα αναποτελεσματικότητας ή υπερβολική ή ανεπαρκής ορέξης"
+            },
+            {
+              "letter": "8",
+              "text": "Μειωμένη ικανότητα να σκέφτεσαι ή να εστιάζεις, ή αποφασισμός"
+            },
+            {
+              "letter": "9",
+              "text": "Επανειλημμένα συμπτώματα θανάτου, ιδεολογία αυτοκτονίας"
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "Mild",
+              "Moderate",
+              "Severe",
+              "With Psychotic Features"
+            ],
+            "course": [
+              "Single Episode",
+              "Recurrent"
+            ],
+            "episode": [
+              "With Melancholic Features",
+              "With Atypical Features",
+              "With Catatonia"
+            ],
+            "remission": [
+              "In Partial Remission",
+              "In Full Remission"
+            ]
+          },
+          "exclusions": [
+            "Substance/Medication-Induced",
+            "Due to Another Medical Condition"
+          ]
+        },
+        "specifiers": {
+          "severity": [
+            "Mild",
+            "Moderate",
+            "Severe",
+            "With Psychotic Features"
+          ],
+          "course": [
+            "Single Episode",
+            "Recurrent"
+          ],
+          "episode": [
+            "With Melancholic Features",
+            "With Atypical Features",
+            "With Catatonia"
+          ],
+          "remission": [
+            "In Partial Remission",
+            "In Full Remission"
+          ],
+          "withAnxiousDistress": true,
+          "withMelancholicFeatures": true,
+          "withAtypicalFeatures": true,
+          "withPsychoticFeatures": true,
+          "withCatatonia": true,
+          "withPeripartumOnset": true,
+          "withSeasonalPattern": true
+        }
+      },
+      "quickView": {
+        "definicao": "Διαταραχή του χαρακτήρα που χαρακτηρίζεται από επεισόδια καταθλιπτικού χαρακτήρα, απώλειας ενδιαφέροντος ή προσαρμογής, συνοδευόμενα από άλλα γνωστικά, νευροβλαστικά και ψυχοκινητικά συμπτώματα, που προκαλούν οδυνηρότητα ή σημαντική ζημία.",
+        "criteriosDiagnosticos": [
+          "Καταθλιπτικός χαρακτήρας ή απώλεια ενδιαφέροντος/προσαρμογής",
+          "Τουλάχιστον 5 συμπτώματα για 2 εβδομάδες",
+          "Συμπτώματα: βάρος, ύπνος, ψυχοκίνηση, ενέργεια, γνωστική, ορέξη, ιδεολογία αυτοκτονίας",
+          "Σημαντική ζημία στη λειτουργία"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ψυχοθεραπεία: TCC (γνωστικο-συμπεριφορική θεραπεία) - χρυσός πρότυπο",
+            "Ψυχοθεραπεία: IPT (αντιμετώπιση των διαφορών)",
+            "Συμπεριφορική ενεργοποίηση",
+            "Κανονική φυσική ασκήση"
+          ],
+          "farmacologico": [
+            "ΙΣΡΣ: Σερτραλίνη, Εσσιταλοπράμ, Φλουοξετίνη (πρώτη γραμμή)",
+            "ΙΣΡΝ: Βενλαφαξίνη, Δουλοξετίνη",
+            "Αντικαταθλιπτικά τρικύκλια: Αμιτριπτιλίνη (δεύτερη γραμμή)"
+          ]
+        },
+        "redFlags": [
+          "Ενεργή ιδεολογία αυτοκτονίας",
+          "Προσπάθεια αυτοκτονίας",
+          "Ψυχωσις (αλλοχτοίνια/δελίρια)",
+          "Κατάτονος",
+          "Αντοχή στη θεραπεία",
+          "Σοβαρό ΜΔΔΣ με ανεπαρκή απάντηση"
+        ],
+        "examesIniciais": [
+          "TSH, T4 ελεύθερο (εξαίρεση υποθυρεοειδούς)",
+          "Βιταμίνη B12, φολικό οξύ",
+          "Ολοκληρωμένο αίμα",
+          "Κλίμακα PHQ-9 ή HAM-D για αξιολόγηση"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "PHQ-9",
+          "description": "Patient Health Questionnaire-9: Κλίμακα 9 αντικειμένων, βαθμολογία 0-27. ≥10 δείχνει μέτρια έως σοβαρή κατάθλιψη.",
+          "cutoff": "≥10",
+          "reference": "Kroenke et al., 2001"
+        },
+        {
+          "name": "HAM-D",
+          "description": "Hamilton Depression Rating Scale: Κλίμακα κλινικής αξιολόγησης, βαθμολογία 0-52. ≥17 δείχνει μέτρια έως σοβαρή κατάθλιψη.",
+          "cutoff": "≥17",
+          "reference": "Hamilton, 1960"
+        }
+      ],
+      "tags": [
+        "κατάθλιψη",
+        "χαρακτήρας",
+        "ισρσ",
+        "tcc",
+        "dsm5",
+        "υγεία_ψυχής"
+      ]
+    },
+    {
+      "id": "transtorno-bipolar-i",
+      "titulo": "Βιπόλαρος Διαταραχή Τύπου I",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F31"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "ciap2": [
+        "P73"
+      ],
+      "snomedCT": "13746004",
+      "doid": "DOID:3312",
+      "meshId": "D001714",
+      "umlsCui": "C0853193",
+      "dsm5": {
+        "code": "296.43",
+        "category": "Bipolar and Related Disorders",
+        "diagnosticCriteria": {
+          "code": "296.43",
+          "name": "Bipolar I Disorder",
+          "category": "Bipolar and Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Ικανοποιούνται τα κριτήρια για ένα μανιακό επεισόδιο"
+            },
+            {
+              "letter": "B",
+              "text": "Το μανιακό επεισόδιο δεν εξηγείται καλύτερα από σχιζοφρένεια, σχιζοαφεκτική διαταραχή ή άλλη ψυχωτική διαταραχή"
+            }
+          ]
+        },
+        "specifiers": {
+          "severity": [
+            "Mild",
+            "Moderate",
+            "Severe",
+            "With Psychotic Features"
+          ],
+          "course": [
+            "Single Manic Episode",
+            "Most Recent Episode Manic",
+            "Most Recent Episode Hypomanic",
+            "Most Recent Episode Depressed",
+            "Most Recent Episode Unspecified"
+          ],
+          "episode": [
+            "With Catatonia",
+            "With Peripartum Onset",
+            "With Seasonal Pattern"
+          ],
+          "remission": [
+            "In Partial Remission",
+            "In Full Remission"
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Διαταραχή των ορμοθυμιών χαρακτηριζόμενη από τουλάχιστον ένα πλήρες μανιακό επεισόδιο, συχνά εναλλασσόμενο με μεγάλα διαθυμικά επεισόδια.",
+        "criteriosDiagnosticos": [
+          "Τουλάχιστον ένα μανιακό επεισόδιο (υψηλή/ενοχλητική χαρακτηρική χαρά + 3 συμπτώματα για ≥1 εβδομάδα)",
+          "Μανιακά συμπτώματα: μεγαλοπρέπεια, μειωμένος ύπνος, λαλιά, αποδίωξη ιδεών, αποστροφή, αυξημένη δραστηριότητα, εμπλοκή σε κινδυνερές δραστηριότητες",
+          "Σημαντική βλάβη ή ανάγκη για νοσηλεία"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ψυχοεκπαίδευση για τη διαταραχή",
+            "Οικογενειακή θεραπεία",
+            "Θεραπεία κοινωνικών ρυθμών"
+          ],
+          "farmacologico": [
+            "Σταθεροποιητικά των χαρακτηρικών: Λίθιο (χρυσό πρότυπο)",
+            "Αντισυνυρωτικά: Βαλπροάτο, Καρμαμαζεπίνη",
+            "Αντιψυχωτικά ατυπικά: Κουετιαπίνη, Ολανζαπίνη"
+          ]
+        },
+        "redFlags": [
+          "Σοβαρό μανιακό επεισόδιο με ψυχωτικά συμπτώματα",
+          "Κίνδυνος αυτοκτονίας κατά τη δυσθυμία",
+          "Μη προσαρμογή στη θεραπεία",
+          "Επαναλαμβανόμενα επεισόδια"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "Πρώτο μανιακό επεισόδιο",
+        "Σοβαρό μανιακό επεισόδιο ή με ψυχωτικά συμπτώματα",
+        "Κίνδυνος αυτοκτονίας",
+        "Ανάγκη για προσαρμογή του Λίθιου",
+        "Επαναλαμβανόμενα επεισόδια παρά τη θεραπεία"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "riscoAgressao": true,
+        "criterios": [
+          "Σοβαρό μανιακό επεισόδιο",
+          "Ψυχωτικά συμπτώματα",
+          "Κίνδυνος αυτοζημίας"
+        ]
+      },
+      "tags": [
+        "bipolar",
+        "mania",
+        "depressao",
+        "lítio",
+        "estabilizadores",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "esquizofrenia",
+      "titulo": "Εσχιζοφρένεια",
+      "ciap2": [
+        "P72"
+      ],
+      "cid10": [
+        "F20"
+      ],
+      "cid11": [
+        "6A20"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:5419",
+      "snomedCT": "58214004",
+      "meshId": "D012559",
+      "umlsCui": "C0036341",
+      "tags": [
+        "saude_mental",
+        "cronica",
+        "psicose"
+      ],
+      "quickView": {
+        "definicao": "Νοσηρή κατάσταση με θετικά συμπτώματα (φαντασιώδεις αισθήσεις, παρανοίες) και αρνητικά (αβουλία, αναισθημία).",
+        "criteriosDiagnosticos": [
+          "Θετικά ή αρνητικά συμπτώματα για ≥1 μήνα",
+          "Κοινωνική/εργασιακή δυσλειτουργία",
+          "Διάρκεια ≥6 μήνων"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ψυχοθεραπεία",
+            "Ψυχοεκπαίδευση",
+            "Ψυχοσοσιαλική αναπαραγωγή"
+          ],
+          "farmacologico": [
+            "Αντιψυχωτικό: Risperidona ή Olanzapina",
+            "Μακροχρόνια διατήρηση"
+          ]
+        },
+        "redFlags": [
+          "Ιδεολογία/συμπεριφορά αυτοκτονίας",
+          "Ψυχοκίνητη ανησυχία",
+          "Αμελία των προσωπικών φροντίδων"
+        ]
+      },
+      "medicamentos": [
+        "risperidona",
+        "olanzapina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "transtorno-estresse-pos-traumatico",
+      "titulo": "Τραυματικό Διαταραχτικό Σύνδρομο Τραυματικού Στρες (TDSTS)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F43.1"
+      ],
+      "cid11": [
+        "6B40"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "47505003",
+      "doid": "DOID:2055",
+      "meshId": "D013313",
+      "umlsCui": "C0038436",
+      "dsm5": {
+        "code": "309.81",
+        "category": "Trauma- and Stressor-Related Disorders",
+        "diagnosticCriteria": {
+          "code": "309.81",
+          "name": "Posttraumatic Stress Disorder",
+          "category": "Trauma- and Stressor-Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Έκθεση σε πραγματική ή απειλητική θάνατο, σοβαρή βλάβη ή σεξουαλική βία"
+            },
+            {
+              "letter": "B",
+              "text": "Παρουσία ενός (ή περισσότερων) από τα εξής συμπτώματα εισβολής:",
+              "subCriteria": [
+                {
+                  "text": "1. Επανεμφανιζόμενες οδυνηρές μνήμες"
+                },
+                {
+                  "text": "2. Επανεμφανιζόμενα οδυνηρά ονειροπλανήματα"
+                },
+                {
+                  "text": "3. Διασπαστικές αντιδράσεις"
+                },
+                {
+                  "text": "4. Εντεινόμενη ψυχολογική ή φυσική οδύνη"
+                }
+              ]
+            },
+            {
+              "letter": "C",
+              "text": "Παραμονή αποφυγής στιμούλων που συνδέονται με το τραύμα"
+            },
+            {
+              "letter": "D",
+              "text": "Αρνητικές αλλαγές στη γνωστική και συναισθηματική συμπεριφορά"
+            },
+            {
+              "letter": "E",
+              "text": "Εξαιρετικές αλλαγές στην ενεργοποίηση και αντίδραση"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Σύνδρομο που αναπτύσσεται μετά την έκθεση σε σοβαρό τραυματικό γεγονός, χαρακτηριζόμενο από συμπτώματα εισβολής, αποφυγή, αρνητικές γνωστικές/συναισθηματικές αλλαγές και υπερενεργοποίηση.",
+        "criteriosDiagnosticos": [
+          "Έκθεση σε τραύμα (θάνατος, σοβαρή βλάβη, βία)",
+          "Συμπτώματα εισβολής: μνήμες, ονειροπλανήματα, ανακατασκευαστικά επεισόδια",
+          "Παραμονή αποφυγής",
+          "Αρνητικές γνωστικές/συναισθηματικές αλλαγές",
+          "Υπερενεργοποίηση και αντίδραση",
+          "Διάρκεια >1 μήνα"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "TDSTS-F (θεραπεία εστιασμένη στο τραύμα): EMDR, προεκτεταμένη θεραπεία εκτίθεσης",
+            "Κατευθυντήριες Κατευθυντήριες Προσαρμογές με εκτίθεση",
+            "Γνωστική θεραπεία για TDSTS"
+          ],
+          "farmacologico": [
+            "ΙΣΡΣ: Σερτραλίνη, Παροξετίνη (εγκεκριμένες από το FDA)",
+            "ΙΣΡΝ: Βενλαφαξίνη",
+            "Πραζοσίνη (για κακόυργα)"
+          ]
+        },
+        "redFlags": [
+          "Συντριπτικός κίνδυνος",
+          "Χρήση ουσιών",
+          "Σοβαρή συμπτωματολογία",
+          "Χρόνιος Αντίδρασης Τραυματικού Στρες (TDSTS) που δεν ανταποκρίνεται"
+        ],
+        "examesIniciais": [
+          "Αξιολόγηση κινδύνου συντριβής",
+          "Εντοπισμός χρήσης ουσιών",
+          "Κλίμακα PCL-5 για αξιολόγηση"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "PCL-5",
+          "description": "Checklist Τραυματικού Συνδρόμου Τραυματικού Στρες για DSM-5: Κλίμακα 20 αιτιολογικών, βαθμολογία 0-80. ≥33 δείχνει πιθανό TDSTS.",
+          "cutoff": "≥33",
+          "reference": "Weathers et al., 2013"
+        }
+      ],
+      "tags": [
+        "tdsts",
+        "τραύμα",
+        "στρες",
+        "emdr",
+        "isrs",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-obsessivo-compulsivo",
+      "titulo": "Τραυματικός Ομορφικός Διαταραγμός (ΤΟΔ)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F42"
+      ],
+      "cid11": [
+        "6B20"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "191736004",
+      "doid": "DOID:10933",
+      "meshId": "D009771",
+      "umlsCui": "C0028768",
+      "dsm5": {
+        "code": "300.3",
+        "category": "Obsessive-Compulsive and Related Disorders",
+        "diagnosticCriteria": {
+          "code": "300.3",
+          "name": "Obsessive-Compulsive Disorder",
+          "category": "Obsessive-Compulsive and Related Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Παρουσία ανακολούθησης, υποχρεωτικών πράξεων ή και των δύο"
+            },
+            {
+              "letter": "B",
+              "text": "Οι ανακολούθησης ή οι υποχρεωτικές πράξεις καταναλώνουν χρόνο (πάνω από 1 ώρα ανά ημέρα) ή προκαλούν έντονη θλίψη ή σημαντική βλάβη"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Τραυματικός διαταραγμός που χαρακτηρίζεται από ανακολούθηση (επαναλαμβανόμενες και μόνιμες σκέψεις, όρεξης ή εικόνες) και/ή υποχρεωτικές πράξεις (επαναλαμβανόμενα συμπεριφορικά ή νοητά πράξεις) που καταναλώνουν χρόνο ή προκαλούν έντονη θλίψη.",
+        "criteriosDiagnosticos": [
+          "Ανακολούθηση: επαναλαμβανόμενες και μόνιμες σκέψεις, όρεξης ή εικόνες, εισβολικές και απροσδόκητες",
+          "Υποχρεωτικές πράξεις: επαναλαμβανόμενες συμπεριφορικές ή νοητές πράξεις ως απάντηση στις ανακολούθησης",
+          "Καταναλώνουν >1 ώρα/ημέρα ή προκαλούν θλίψη/βλάβη"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Κογνιτιβο-συμπεριφορική θεραπεία με πρόληψη απάντησης και εκκίνηση (ERP) - χρυσό πρότυπο",
+            "Θεραπεία αποδοχής και υποχρέωσης (ACT)"
+          ],
+          "farmacologico": [
+            "Ινhibitores da recaptação de serotonina (ISRS) em altas doses: Sertralina (≥200mg), Fluoxetina (≥60mg), Fluvoxamina",
+            "Clomipramina (αντικαταθλιπτικό τρικύκλιο, δεύτερη γραμμή)"
+          ]
+        },
+        "redFlags": [
+          "ΤΟΔ σοβαρό με σημαντική λειτουργική βλάβη",
+          "Ιδεολογία αυτοκτονίας",
+          "Συνδυασμένη παθολογία χωρίς θεραπεία",
+          "Αντοχή στη θεραπεία"
+        ],
+        "examesIniciais": [
+          "Αξιολόγηση λειτουργίας",
+          "Κλίμακα Y-BOCS για αξιολόγηση"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "Y-BOCS",
+          "description": "Yale-Brown Obsessive Compulsive Scale: Κλίμακα 10 αντικειμένων, βαθμολογία 0-40. ≥16 δείχνει ΤΟΔ μέτριο ή σοβαρό.",
+          "cutoff": "≥16",
+          "reference": "Goodman et al., 1989"
+        }
+      ],
+      "tags": [
+        "toc",
+        "obsessivo",
+        "compulsivo",
+        "erp",
+        "isrs",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-distimico",
+      "titulo": "Χρόνιο Διαθετικό Διαταραχημένο Κατάθλιψης (Δισθυμία)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F34.1"
+      ],
+      "cid11": [
+        "6A71"
+      ],
+      "ciap2": [
+        "P76"
+      ],
+      "snomedCT": "78667006",
+      "doid": "DOID:1596",
+      "meshId": "D019263",
+      "umlsCui": "C0013415",
+      "dsm5": {
+        "code": "300.4",
+        "category": "Depressive Disorders",
+        "diagnosticCriteria": {
+          "code": "300.4",
+          "name": "Persistent Depressive Disorder (Dysthymia)",
+          "category": "Depressive Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Καταθλιπτικός χαρακτήρας για το μεγαλύτερο μέρος της ημέρας, στις περισσότερες ημέρες, όπως αποδεικνύεται από ιδιοκίνητη αναφορά ή παρατήρηση άλλων, για τουλάχιστον 2 χρόνια"
+            },
+            {
+              "letter": "B",
+              "text": "Παρουσία, κατά τη διάρκεια της κατάθλιψης, τουλάχιστον δύο (ή περισσότερα) από τα παρακάτω:",
+              "subCriteria": [
+                {
+                  "text": "1. Μειωμένη ή υπερβολική ζήλη"
+                },
+                {
+                  "text": "2. Ανοσμία ή υπερσόμνια"
+                },
+                {
+                  "text": "3. Χαμηλή ενέργεια ή κόπος"
+                },
+                {
+                  "text": "4. Χαμηλή αυτοεκτίμηση"
+                },
+                {
+                  "text": "5. Δυσκολία συγκέντρωσης ή λήψης αποφάσεων"
+                },
+                {
+                  "text": "6. Συναισθήματα απελπισίας"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Χρόνιο διαταραχημένο καταθλιπτικό διάθεμα, χαρακτηριζόμενο από προσκολλημένη καταθλιπτική χαρακτήρα για ≥2 χρόνια, με λιγότερο έντονα συμπτώματα από το ΤΚΚ, αλλά με σημαντική λειτουργική επίπτωση.",
+        "criteriosDiagnosticos": [
+          "Καταθλιπτικός χαρακτήρας για το μεγαλύτερο μέρος της ημέρας, ≥2 χρόνια",
+          "≥2 συμπτώματα: ζήλη, ύπνος, ενέργεια, αυτοεκτίμηση, συγκέντρωση, απελπισία",
+          "Χωρίς περίοδο απόστασης από συμπτώματα >2 μήνες",
+          "Σημαντική λειτουργική επίπτωση"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ψυχοθεραπεία: ΚΒΤ, ΙΠΤ",
+            "Συμπεριφορική ενεργοποίηση",
+            "Φυσική ασκήση"
+          ],
+          "farmacologico": [
+            "ΙΣΡΣ: Σερτραλίνη, Εσσιταλοπράμ",
+            "ΙΣΡΝ: Βενλαφαξίνη"
+          ]
+        },
+        "redFlags": [
+          "Επικαλυπτόμενο ΤΚΚ",
+          "Συναισθήματα αυτοκτονίας",
+          "Αντοχή στη θεραπεία"
+        ],
+        "examesIniciais": [
+          "TSH",
+          "PHQ-9"
+        ]
+      },
+      "tags": [
+        "δισθυμία",
+        "κατάθλιψη",
+        "χρόνια",
+        "ισρσ",
+        "κβτ",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-bipolar-ii",
+      "titulo": "Βιπόλαρος Διαταραχή Τύπου II",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F31.8"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "ciap2": [
+        "P73"
+      ],
+      "snomedCT": "83746006",
+      "doid": "DOID:540",
+      "meshId": "D001714",
+      "umlsCui": "C0236788",
+      "dsm5": {
+        "code": "296.89",
+        "category": "Βιπόλαρες και Σχετικές Διαταραχές",
+        "diagnosticCriteria": {
+          "code": "296.89",
+          "name": "Βιπόλαρος Διαταραχή Τύπου II",
+          "category": "Βιπόλαρες και Σχετικές Διαταραχές",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Κριτήρια για έναν υπομανικό ή προηγούμενο οξυμανικό Επεισόδιο και για ένα μεγάλο δυσφορικό ή προηγούμενο Επεισόδιο ικανοποιήθηκαν"
+            },
+            {
+              "letter": "B",
+              "text": "Ποτέ δεν υπήρξε ένα πλήρες μανικό Επεισόδιο"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Διαταραχή των συναισθημάτων που χαρακτηρίζεται από τουλάχιστον ένα υπομανικό Επεισόδιο και ένα μεγάλο δυσφορικό Επεισόδιο, χωρίς ιστορία πλήρους μανικού Επεισοδίου.",
+        "criteriosDiagnosticos": [
+          "Υπομανικό Επεισόδιο: υψηλή/ιριτική χαρακτηρική + 3 συμπτώματα για ≥4 ημέρες, χωρίς σημαντική λειτουργική ελλείψεια",
+          "Μεγάλο δυσφορικό Επεισόδιο: παρόν ή προηγούμενο",
+          "Ποτέ δεν υπήρξε πλήρες μανικό Επεισόδιο"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ψυχοεκπαίδευση",
+            "Οικογενειακή θεραπεία",
+            "Ρυθμισμός κοινωνικών ρυθμών"
+          ],
+          "farmacologico": [
+            "Λίθιο ή Λαμοτριγίνη (πρόληψη Επεισοδίων)",
+            "Κουετιαπίνη (δυσφορικό Επεισόδιο)",
+            "Αποφυγή αντικαταθλιπτικών μόνων (κίνδυνος μανικής αναστροφής)"
+          ]
+        },
+        "redFlags": [
+          "Κίνδυνος μανικής αναστροφής με αντικαταθλιπτικά",
+          "Κίνδυνος αυτοκτονίας κατά τη δυσφορία",
+          "Επαναλαμβανόμενα Επεισόδια"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "Πρώτο υπομανικό Επεισόδιο",
+        "Σοβαρή δυσφορία",
+        "Κίνδυνος αυτοκτονίας",
+        "Χρειαζόμενη προσαρμογή σταθεροποιητών"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "criterios": [
+          "Σοβαρή δυσφορία",
+          "Κίνδυνος μανικής αναστροφής"
+        ]
+      },
+      "tags": [
+        "bipolar",
+        "υπομανία",
+        "δυσφορία",
+        "λίθιο",
+        "λαμοτριγίνη",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "fobia-social",
+      "titulo": "Κοινωνική Φοβία (Τραύμα Ανησυχίας)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F40.1"
+      ],
+      "cid11": [
+        "6B04"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "25501002",
+      "doid": "DOID:11257",
+      "meshId": "D010698",
+      "umlsCui": "C0031572",
+      "dsm5": {
+        "code": "300.23",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.23",
+          "name": "Social Anxiety Disorder (Social Phobia)",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Φόβος ή ανησυχία που είναι σημαντική σε μία ή περισσότερες κοινωνικές καταστάσεις όπου ο άτομος εκτίθεται σε πιθανή αξιολόγηση από άλλους"
+            },
+            {
+              "letter": "B",
+              "text": "Ο άτομος φοβάται ότι θα ενεργήσει με τέτοιο τρόπο ώστε να εμφανίσει συμπτώματα ανησυχίας που θα αξιολογηθούν αρνητικά"
+            },
+            {
+              "letter": "C",
+              "text": "Οι κοινωνικές καταστάσεις σχεδόν πάντα προκαλούν φόβο ή ανησυχία"
+            },
+            {
+              "letter": "D",
+              "text": "Οι κοινωνικές καταστάσεις αποφεύγονται ή υποφέρουν με σημαντικό φόβο ή ανησυχία"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Τραύμα ανησυχίας που χαρακτηρίζεται από φόβο ή σημαντική ανησυχία σε κοινωνικές καταστάσεις όπου ο άτομος εκτίθεται σε πιθανή αξιολόγηση από άλλους.",
+        "criteriosDiagnosticos": [
+          "Φόβος ή σημαντική ανησυχία σε κοινωνικές καταστάσεις",
+          "Φόβος από αρνητική αξιολόγηση",
+          "Οι κοινωνικές καταστάσεις σχεδόν πάντα προκαλούν φόβο/ανησυχία",
+          "Αποφυγή ή υποφέρουν με σημαντικό φόβο/ανησυχία",
+          "Διάρκεια ≥6 μηνών",
+          "Σημαντική λειτουργική ελλείψεις"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Κογνιτιβο-συμπεριφορική θεραπεία (ΚΣΘ) με εκκίνηση - πρότυπο χρυσού",
+            "Εκπαίδευση σε κοινωνικές δεξιότητες",
+            "Ομαδική θεραπεία"
+          ],
+          "farmacologico": [
+            "Ινhibitores seletivos da recaptação de serotonina (ISRS): Paroxetina, Sertralina, Escitalopram",
+            "Inibidores da recaptação de serotonina e norepinefrina (ISRN): Venlafaxina XR"
+          ]
+        },
+        "redFlags": [
+          "Σοβαρή αποφυγή με κοινωνική απομόνωση",
+          "Συμπτώματα κατάθλιψης",
+          "Χρήση ουσιών για να αντιμετωπίσει καταστάσεις"
+        ],
+        "examesIniciais": [
+          "Λειτουργική αξιολόγηση",
+          "Κλίμακα LSAS"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "LSAS",
+          "description": "Liebowitz Social Anxiety Scale: Κλίμακα 24 αιτημάτων για την αξιολόγηση κοινωνικής φοβίας.",
+          "reference": "Liebowitz, 1987"
+        }
+      ],
+      "tags": [
+        "fobia-social",
+        "ανησυχία",
+        "κσθ",
+        "isrs",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "agorafobia",
+      "titulo": "Αγοραφοβία",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F40.0"
+      ],
+      "cid11": [
+        "6B02"
+      ],
+      "ciap2": [
+        "P74"
+      ],
+      "snomedCT": "70691001",
+      "doid": "DOID:11259",
+      "meshId": "D000379",
+      "umlsCui": "C0001818",
+      "dsm5": {
+        "code": "300.22",
+        "category": "Anxiety Disorders",
+        "diagnosticCriteria": {
+          "code": "300.22",
+          "name": "Agoraphobia",
+          "category": "Anxiety Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Σημαντικό φόβος ή άγχος για δύο (ή περισσότερες) από τις ακόλουθες καταστάσεις:",
+              "subCriteria": [
+                {
+                  "text": "1. Χρήση δημόσιου μεταφορικού μέσου"
+                },
+                {
+                  "text": "2. Βρίσκεστε σε ανοιχτά χώρους"
+                },
+                {
+                  "text": "3. Βρίσκεστε σε κλειστά χώρους"
+                },
+                {
+                  "text": "4. Βρίσκεστε σε έναν οχλήματος ή σε έναν ουρολόγο"
+                },
+                {
+                  "text": "5. Είστε έξω από το σπίτι μόνοι"
+                }
+              ]
+            },
+            {
+              "letter": "B",
+              "text": "Ο ατόμος αποφεύγει αυτές τις καταστάσεις λόγω φόβου να μην μπορεί να ξεφύγει ή να μην λάβει βοήθεια"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Ταραχή άγχους που χαρακτηρίζεται από σημαντικό φόβο ή άγχος σε καταστάσεις όπου η διαφυγή μπορεί να είναι δύσκολη ή όπου η βοήθεια μπορεί να μην είναι διαθέσιμη σε περίπτωση συμπτωμάτων πανικού ή άλλων ανικητών συμπτωμάτων.",
+        "criteriosDiagnosticos": [
+          "Σημαντικό φόβος/άγχος σε ≥2 καταστάσεις: δημόσιο μεταφορικό μέσο, ανοιχτά χώρους, κλειστά χώρους, οχλήματος, έξω από το σπίτι μόνοι",
+          "Αποφυγή λόγω φόβου να μην μπορεί να ξεφύγει ή να μην λάβει βοήθεια",
+          "Διάρκεια ≥6 μήνων",
+          "Σημαντική λειτουργική ελλείψη"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Κογνιτιβή Συμπεριφορική Θεραπεία (ΚΣΘ) με σταδιακή έκθεση - χρυσό πρότυπο",
+            "Ψυχοεκπαίδευση",
+            "Τεχνικές αναπνοής"
+          ],
+          "farmacologico": [
+            "Ιντρανευρονικά Αναβαθμιστές Σερονινίνης (ΙΑΣ): Σερτραλίνη, Παροξετίνη",
+            "Ιντρανευρονικά Αναβαθμιστές Σερονινίνης και Νορεπινεφρίνης (ΙΑΣΝ): Βενλαφαξίνη"
+          ]
+        },
+        "redFlags": [
+          "Οικιακή απομόνωση",
+          "Συμπαθής πανικός",
+          "Σημαντική λειτουργική ελλείψη"
+        ],
+        "examesIniciais": [
+          "Λειτουργική αξιολόγηση"
+        ]
+      },
+      "tags": [
+        "αγοραφοβία",
+        "άγχος",
+        "κσθ",
+        "ιασ",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-personalidade-borderline",
+      "titulo": "Εξωφρενικό Σύνδρομο Προσωπικότητας",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F60.3"
+      ],
+      "cid11": [
+        "6D10"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "20010003",
+      "doid": "DOID:10930",
+      "meshId": "D001883",
+      "umlsCui": "C0006012",
+      "dsm5": {
+        "code": "301.83",
+        "category": "Personality Disorders",
+        "diagnosticCriteria": {
+          "code": "301.83",
+          "name": "Borderline Personality Disorder",
+          "category": "Personality Disorders",
+          "criteria": [
+            {
+              "text": "Ένας αναμφισβήτητος μοτίβος αστάθειας στις διαπροσωπικές σχέσεις, την αυτοεικόνα και τα αισθήματα, και σημαντική αυτοκίνητη, αρχίζοντας από την αρχή της ενήλικης ηλικίας και παρούσα σε διάφορα πλαίσια, όπως είναι δείκτες πέντε (ή περισσότερα) από τα παρακάτω:",
+              "subCriteria": [
+                {
+                  "text": "1. Σπουδαίες προσπάθειες για την αποφυγή πραγματικής ή φαντασιακής παραγωγής"
+                },
+                {
+                  "text": "2. Αναμφισβήτητος μοτίβος ασταθών και έντονων διαπροσωπικών σχέσεων, χαρακτηριζόμενων από την αντικατάσταση μεταξύ ακρωτήριων ιδεαλισμού και αξιοθρύψιας"
+                },
+                {
+                  "text": "3. Παραταραχή της ταυτότητας: σημαντική και συνεχής αστάθεια της αυτοεικόνας ή της αίσθησης του self"
+                },
+                {
+                  "text": "4. Αυτοκίνητη συμπεριφορά σε τουλάχιστον δύο τομείς που είναι δυνητικά αυτοκαταστροφικοί"
+                },
+                {
+                  "text": "5. Επανεμφανιζόμενη συμπεριφορά, κινήσεις ή απειλές αυτοκτονίας ή αυτοκαταστροφική συμπεριφορά"
+                },
+                {
+                  "text": "6. Αστάθεια αισθημάτων λόγω σημαντικής αντιδραστικότητας του χαρακτήρα"
+                },
+                {
+                  "text": "7. Χρόνια αίσθηση κενότητας"
+                },
+                {
+                  "text": "8. Εντονή και άνευ λόγου οργή ή δυσκολία στον έλεγχο της οργής"
+                },
+                {
+                  "text": "9. Παροδική παρανοϊκή ιδέα σχετικά με το στρες ή σοβαρά διασπαστικά σύμπτωμα"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Σύνδρομο προσωπικότητας χαρακτηριζόμενο από σημαντική αστάθεια στις διαπροσωπικές σχέσεις, την αυτοεικόνα και τα αισθήματα, με αυτοκίνητη συμπεριφορά και αυτοκαταστροφικά συμπτώματα.",
+        "criteriosDiagnosticos": [
+          "≥5 από τα 9 κριτήρια: προσπάθειες για την αποφυγή παραγωγής, ασταθείς σχέσεις, ταυτοτική παραταραχή, αυτοκίνητη συμπεριφορά, συμπεριφορά αυτοκτονίας/αυτοκαταστροφής, αστάθεια αισθημάτων, αίσθηση κενότητας, έντονη οργή, διασπαστικά/παρανοϊκά σύμπτωμα",
+          "Αρχή στην αρχή της ενήλικης ηλικίας",
+          "Παρούσα σε διάφορα πλαίσια"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "DBT (Dialectical Behavior Therapy) - χρυσός πρότυπος",
+            "Κατευθυντήρια θεραπεία κατά της κατάστασης",
+            "Θεραπεία σχηματισμού",
+            "Ομαδική θεραπεία"
+          ],
+          "farmacologico": [
+            "Φάρμακα για συγκεκριμένα σύμπτωματα:",
+            "- ISRS για αστάθεια αισθημάτων",
+            "- Ατυπικά αντιψυχωτικά σε χαμηλή δόση για γνωστικά σύμπτωμα",
+            "- Σταθεροποιητές χαρακτήρα για αυτοκίνητη συμπεριφορά"
+          ]
+        },
+        "redFlags": [
+          "Υψηλός κίνδυνος αυτοκτονίας",
+          "Αυτοκαταστροφική συμπεριφορά",
+          "Συνδυασμός με άλλα συνδροματικά"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "Πρώτη διάγνωση",
+        "Κίνδυνος αυτοκτονίας",
+        "Σοβαρή αυτοκαταστροφική συμπεριφορά",
+        "Ανάγκη για εξειδικευμένη DBT"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "riscoAutolesao": true,
+        "criterios": [
+          "Συμπεριφορά αυτοκτονίας",
+          "Αυτοκαταστροφή",
+          "Ακύρες κρίσεις"
+        ]
+      },
+      "tags": [
+        "borderline",
+        "προσωπικότητα",
+        "dbt",
+        "αστάθεια",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-uso-alcool",
+      "titulo": "Transtorno por Uso de Álcool",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F10"
+      ],
+      "cid11": [
+        "6C40"
+      ],
+      "ciap2": [
+        "P15",
+        "P16"
+      ],
+      "snomedCT": "7200002",
+      "doid": "DOID:0050741",
+      "meshId": "D000437",
+      "umlsCui": "C0001973",
+      "dsm5": {
+        "code": "305.00",
+        "category": "Substance-Related and Addictive Disorders",
+        "diagnosticCriteria": {
+          "code": "305.00",
+          "name": "Alcohol Use Disorder",
+          "category": "Substance-Related and Addictive Disorders",
+          "criteria": [
+            {
+              "text": "Um padrão problemático de uso de álcool levando a prejuízo ou sofrimento clinicamente significativo, manifestado por pelo menos dois dos seguintes, ocorrendo em um período de 12 meses:",
+              "subCriteria": [
+                {
+                  "text": "1. Álcool frequentemente consumido em quantidades maiores ou por período mais longo que o pretendido"
+                },
+                {
+                  "text": "2. Desejo persistente ou esforços malsucedidos de reduzir ou controlar o uso de álcool"
+                },
+                {
+                  "text": "3. Muito tempo gasto em atividades necessárias para obter álcool, usá-lo ou se recuperar de seus efeitos"
+                },
+                {
+                  "text": "4. Fissura (craving) ou forte desejo ou impulso para usar álcool"
+                },
+                {
+                  "text": "5. Uso recorrente de álcool resultando em fracasso em cumprir obrigações principais"
+                },
+                {
+                  "text": "6. Uso continuado apesar de problemas sociais ou interpessoais persistentes ou recorrentes"
+                },
+                {
+                  "text": "7. Importantes atividades sociais, ocupacionais ou recreativas abandonadas ou reduzidas"
+                },
+                {
+                  "text": "8. Uso recorrente em situações em que é fisicamente perigoso"
+                },
+                {
+                  "text": "9. Uso continuado apesar de conhecimento de problema físico ou psicológico"
+                },
+                {
+                  "text": "10. Tolerância (definida por qualquer um dos seguintes):",
+                  "subCriteria": [
+                    {
+                      "text": "a) Necessidade de quantidades progressivamente maiores para alcançar intoxicação ou efeito desejado"
+                    },
+                    {
+                      "text": "b) Efeito marcadamente diminuído com uso continuado da mesma quantidade"
+                    }
+                  ]
+                },
+                {
+                  "text": "11. Abstinência (definida por qualquer um dos seguintes):",
+                  "subCriteria": [
+                    {
+                      "text": "a) Síndrome de abstinência característica"
+                    },
+                    {
+                      "text": "b) Álcool (ou substância relacionada) é consumido para aliviar ou evitar sintomas de abstinência"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "Mild (2-3 sintomas)",
+              "Moderate (4-5 sintomas)",
+              "Severe (6+ sintomas)"
+            ],
+            "course": [
+              "Early Remission",
+              "Sustained Remission",
+              "On Maintenance Therapy",
+              "In a Controlled Environment"
+            ]
+          }
+        }
+      },
+      "quickView": {
+        "definicao": "Transtorno caracterizado por padrão problemático de uso de álcool levando a prejuízo ou sofrimento clinicamente significativo, manifestado por ≥2 critérios em 12 meses.",
+        "criteriosDiagnosticos": [
+          "≥2 critérios em 12 meses:",
+          "Consumo maior que pretendido, esforços para reduzir, muito tempo gasto, fissura, fracasso em obrigações, problemas interpessoais, abandono de atividades, uso em situações perigosas, uso apesar de problemas, tolerância, abstinência",
+          "Gravidade: Leve (2-3), Moderada (4-5), Grave (6+)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Entrevista motivacional",
+            "Terapia cognitivo-comportamental",
+            "Grupos de apoio (AA)",
+            "Prevenção de recaída"
+          ],
+          "farmacologico": [
+            "Desintoxicação se necessário (benzodiazepínicos para abstinência)",
+            "Prevenção de recaída: Naltrexona, Acamprosato",
+            "Deterrência: Dissulfiram"
+          ]
+        },
+        "redFlags": [
+          "Abstinência grave com risco de convulsões",
+          "Delirium tremens",
+          "Hepatopatia alcoólica",
+          "Pancreatite",
+          "Wernicke-Korsakoff"
+        ],
+        "examesIniciais": [
+          "AST, ALT, GGT",
+          "Bilirrubina",
+          "Hemograma completo",
+          "AUDIT (Alcohol Use Disorders Identification Test)"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "Transtorno grave",
+        "Abstinência grave",
+        "Delirium tremens",
+        "Complicações clínicas",
+        "Resistência ao tratamento ambulatorial"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "criterios": [
+          "Abstinência grave",
+          "Delirium tremens",
+          "Complicações clínicas"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "AUDIT",
+          "description": "Alcohol Use Disorders Identification Test: Escala de 10 itens para rastreamento de uso problemático de álcool.",
+          "cutoff": "≥8 indica uso problemático",
+          "reference": "WHO, 2001"
+        }
+      ],
+      "tags": [
+        "alcool",
+        "substancia",
+        "adiccao",
+        "naltrexona",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-neurocognitivo-leve",
+      "titulo": "Ελαφρή Νευρογνωσιακή Διαταραχή",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F06.7"
+      ],
+      "cid11": [
+        "6D70"
+      ],
+      "ciap2": [
+        "P70"
+      ],
+      "snomedCT": "386806002",
+      "doid": "DOID:0060469",
+      "meshId": "D060825",
+      "umlsCui": "C1270972",
+      "dsm5": {
+        "code": "331.83",
+        "category": "Νευρογνωσιακές Διαταραχές",
+        "diagnosticCriteria": {
+          "code": "331.83",
+          "name": "Ελαφρή Νευρογνωσιακή Διαταραχή",
+          "category": "Νευρογνωσιακές Διαταραχές",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Ενδείξεις για μετριοπαθή κατάκλιση της γνωσιακής λειτουργίας από ένα προηγούμενο επίπεδο επιδόσεως σε ένα ή περισσότερα γνωσιακά πεδία"
+            },
+            {
+              "letter": "B",
+              "text": "Η γνωσιακή κατάκλιση δεν εμποδίζει την ανεξαρτησία στις ιδιοκτητικές δραστηριότητες της καθημερινής ζωής"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Μετριοπαθής κατάκλιση της γνωσιακής λειτουργίας σε ένα ή περισσότερα πεδία (περίπλοκη προσοχή, εκτελεστική λειτουργία, μάθηση και μνήμη, γλώσσα, αντιληπτική-κινητική, κοινωνική γνωσία) που δεν εμποδίζει την ανεξάρτητη λειτουργία.",
+        "criteriosDiagnosticos": [
+          "Μετριοπαθής κατάκλιση της γνωσιακής λειτουργίας σε ≥1 πεδίο",
+          "Οβικτιβή αξιολόγηση (νευροψυχολογικά τεστ)",
+          "ΔΕΝ εμποδίζει την ανεξάρτητη λειτουργία",
+          "ΔΕΝ ικανοποιεί τα κριτήρια του δελίριου"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Γνωσιακή αναπλάστηση",
+            "Γνωσιακό εκπαιδευτικό πρόγραμμα",
+            "Κανονική φυσική ασκήση",
+            "Έλεγχος των καρδιαγγειακών παραγόντων κινδύνου"
+          ],
+          "farmacologico": [
+            "Θεραπεία της υποκειμενικής αιτίας",
+            "Donepezil ή Rivastigmine (αν Alzheimer)"
+          ]
+        },
+        "redFlags": [
+          "Γρήγορη πρόοδος",
+          "Κατάκλιση της λειτουργίας",
+          "Συμπτώματα συμπεριφοράς",
+          "Χωρίς θεραπεία αναστρέψιμης αιτίας"
+        ],
+        "examesIniciais": [
+          "Νευροψυχολογική αξιολόγηση",
+          "Μαγνητική τομογράφηση του κεφαλίου",
+          "Ηματολογικό πλήρες, λειτουργία της χορδής, B12, φολικό οξέ",
+          "Εξαίρεση αναστρέψιμων αιτιών"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "MoCA",
+          "description": "Montreal Cognitive Assessment: Κλίμακα προσκομίας γνωσιακής λειτουργίας",
+          "cutoff": "<26 υποδεικνύει παρεξακολούθηση",
+          "reference": "Nasreddine et al., 2005"
+        },
+        {
+          "name": "MMSE",
+          "description": "Mini-Mental State Examination: Κλασική κλίμακα προσκομίας",
+          "cutoff": "<24 υποδεικνύει παρεξακολούθηση",
+          "reference": "Folstein et al., 1975"
+        }
+      ],
+      "tags": [
+        "νευρογνωσιακό",
+        "γνωσία",
+        "δεμέντια",
+        "moca",
+        "mmse",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-identidade-dissociativo",
+      "titulo": "Ταυτοτητικό Διασπαστικό Σύνδρομο",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F44.81"
+      ],
+      "cid11": [
+        "6B64"
+      ],
+      "ciap2": [
+        "P79"
+      ],
+      "snomedCT": "32388005",
+      "doid": "DOID:1532",
+      "meshId": "D009105",
+      "umlsCui": "C0026847",
+      "dsm5": {
+        "code": "300.14",
+        "category": "Dissociative Disorders",
+        "diagnosticCriteria": {
+          "code": "300.14",
+          "name": "Dissociative Identity Disorder",
+          "category": "Dissociative Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Διασπασμός της ταυτότητας χαρακτηριζόμενος από δύο ή περισσότερες διαφορετικές προσωπικότητες"
+            },
+            {
+              "letter": "B",
+              "text": "Επανειλημμένες λειμώνες στη μνήμη για καθημερινά γεγονότα, σημαντικές προσωπικές πληροφορίες ή τραυματικά γεγονότα"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Διασπαστικό σύνδρομο χαρακτηριζόμενο από διασπασμό της ταυτότητας με δύο ή περισσότερες διαφορετικές προσωπικότητες και λειμώνες στη μνήμη.",
+        "criteriosDiagnosticos": [
+          "≥2 διαφορετικές προσωπικότητες (ταυτότητες)",
+          "Επανειλημμένες λειμώνες στη μνήμη",
+          "Προκαλεί ψυχικό βάρος ή λειτουργική ανεπάρκεια",
+          "Δεν επιφέρεται από ουσίες ή ιατρική κατάσταση"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ειδική ψυχοθεραπεία (μακροχρόνια)",
+            "Ενσωμάτωση των ταυτοτήτεων",
+            "Επεξεργασία τραυμάτων",
+            "Σταθεροποίηση των συμπτωμάτων"
+          ],
+          "farmacologico": [
+            "Φάρμακα για συγκεκριμένα συμπτώματα (κατάθλιψη, άγχος)",
+            "ΔΕΝ υπάρχει συγκεκριμένο φάρμακο για DID"
+          ]
+        },
+        "redFlags": [
+          "Περιόδοι κρίσης ταυτότητας",
+          "Αυτοζημία",
+          "Συμπεριφορά αυτοκτονίας",
+          "Σοβαρή διασπαστική αμνησία"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "Πάντα προσαρμογή σε ειδικό σε διασπαστικά σύνδρομα",
+        "Πρώτη διάγνωση",
+        "Σοβαρά συμπτώματα"
+      ],
+      "tags": [
+        "διασπαστικό",
+        "ταυτότητα",
+        "τραύμα",
+        "πολύ σπάνιο",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "anorexia-nervosa",
+      "titulo": "Ανορεξία Νεύρων",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F50.0"
+      ],
+      "cid11": [
+        "6B80"
+      ],
+      "ciap2": [
+        "P99"
+      ],
+      "snomedCT": "56882008",
+      "doid": "DOID:8689",
+      "meshId": "D000856",
+      "umlsCui": "C0003125",
+      "dsm5": {
+        "code": "307.1",
+        "category": "Feeding and Eating Disorders",
+        "diagnosticCriteria": {
+          "code": "307.1",
+          "name": "Anorexia Nervosa",
+          "category": "Feeding and Eating Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Περιορισμός της τροφοδοσίας οδηγώντας σε σημαντικά χαμηλό σωματικό βάρος"
+            },
+            {
+              "letter": "B",
+              "text": "Εντονή φοβία για την αύξηση του βάρους ή την γέφυρανση"
+            },
+            {
+              "letter": "C",
+              "text": "Ταραχή στον τρόπο με τον οποίο το σωματικό βάρος ή η μορφή του σώματος εμπεριέχεται"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Ταραχή τροφοδοσίας που χαρακτηρίζεται από περιορισμό τροφοδοσίας, εντονή φοβία για την αύξηση του βάρους και ταραχή στην αντίληψη του βάρους/σώματος, με αποτέλεσμα σημαντικά χαμηλό βάρος.",
+        "criteriosDiagnosticos": [
+          "Περιορισμός τροφοδοσίας → σημαντικά χαμηλό βάρος (BMI <18,5 ή βάρος <85% του αναμενόμενου)",
+          "Εντονή φοβία για την αύξηση του βάρους",
+          "Ταραχή στην αντίληψη του βάρους/σώματος",
+          "Τύποι: Περιοριστικός ή Περιοδική Καθαριστική Πράξη/Εκκένωση"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Πολυειδική θεραπεία: γιατρός, διαιτητής, ψυχολόγος",
+            "Οικογενειακή θεραπεία (για νέους)",
+            "Ειδική κατανοητικο-συμπεριφορική θεραπεία",
+            "Διατροφική ανακατάσταση (υπό επίβλεψη)"
+          ],
+          "farmacologico": [
+            "Ολανζαπίνη (αύξηση βάρους, οχλιακά συμπτώματα)",
+            "ΙΣΡΣ για συνδυασμένες παθήσεις (κατάθλιψη, άγχος)",
+            "Διατροφική πρόσθετη υποστήριξη όταν χρειάζεται"
+          ]
+        },
+        "redFlags": [
+          "BMI <15 ή γρήγορη αώση βάρους",
+          "Βραδυκαρδία (<50 bpm)",
+          "Ορθοστατική υποτανισία",
+          "Υποθερμία",
+          "Αμενορροΐα",
+          "Συναισθηματική συμπεριφορά"
+        ],
+        "examesIniciais": [
+          "Βάρος, ύψος, BMI",
+          "Ζωτικά σημεία",
+          "Ηματολογικό, ηλεκτρολύτους, λειτουργία ήπαρος και νεφρών",
+          "Ηλεκτροκαρδιόγραμμα (αρυθμίες)",
+          "Οστική πυκνότητα (οστεοπόρωση)"
+        ]
+      },
+      "criteriosEncaminhamento": [
+        "BMI <15",
+        "Ασταθή ζωτικά σημεία",
+        "Σοβαρή διατροφική ανεπάρκεια",
+        "Ιατρικές επιπλοκές",
+        "Αποτυχία της αμβουλότερης θεραπείας"
+      ],
+      "urgencia": {
+        "riscosuicida": true,
+        "criterios": [
+          "Σοβαρή διατροφική ανεπάρκεια",
+          "Ασταθή ζωτικά σημεία",
+          "Ιατρικές επιπλοκές"
+        ]
+      },
+      "tags": [
+        "ανορεξία",
+        "τροφοδοσία",
+        "περιοριστικός",
+        "ολανζαπίνη",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "bulimia-nervosa",
+      "titulo": "Βουλιμία Νεύρωση",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F50.2"
+      ],
+      "cid11": [
+        "6B81"
+      ],
+      "ciap2": [
+        "P99"
+      ],
+      "snomedCT": "78004001",
+      "doid": "DOID:8513",
+      "meshId": "D052018",
+      "umlsCui": "C0006370",
+      "dsm5": {
+        "code": "307.51",
+        "category": "Feeding and Eating Disorders",
+        "diagnosticCriteria": {
+          "code": "307.51",
+          "name": "Bulimia Nervosa",
+          "category": "Feeding and Eating Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Επεισόδια επαναλαμβανόμενης διατροφικής κατανάλωσης"
+            },
+            {
+              "letter": "B",
+              "text": "Επαναλαμβανόμενες και μη κατάλληλες συμπεριφορές εξισορρόπησης για να αποφευχθεί η αύξηση βάρους"
+            },
+            {
+              "letter": "C",
+              "text": "Τα επεισόδια συμβαίνουν κατά μέσο λογισμό τουλάχιστον μία φορά την εβδομάδα για 3 μήνες"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Διαταραχή της διατροφής που χαρακτηρίζεται από επεισόδια επαναλαμβανόμενης διατροφικής κατανάλωσης ακολουθούμενα από μη κατάλληλες συμπεριφορές εξισορρόπησης (εμέτες, λαξαντικά, υπερβολική άσκηση).",
+        "criteriosDiagnosticos": [
+          "Επεισόδια επαναλαμβανόμενης διατροφικής κατανάλωσης (μεγάλη ποσότητα σε σύντομο χρονικό διάστημα, αίσθηση απώλειας ελέγχου)",
+          "Επαναλαμβανόμενες συμπεριφορές εξισορρόπησης: αυτοπροκαλούμενες εμέτες, χρήση λαξαντικών/διουρητικών, υπερβολική άσκηση, νηστεία",
+          "≥1 φορά/εβδομάδα για ≥3 μήνες",
+          "Η αυτοαξιολόγηση επηρεάζεται ανάλογα με τη μορφή και το βάρος του σώματος"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Εξειδικευμένη ΚΒΕ (ΚΒΕ-ΒΝ) - χρυσός πρότυπο",
+            "Ενδιάμεση θεραπεία (IPT)",
+            "Ψυχοεκπαίδευση στην ορθή διατροφή"
+          ],
+          "farmacologico": [
+            "ΙΣΡΣ: Φλουοξετίνη 60mg/μέρα (εγκεκριμένη για ΒΝ)",
+            "Άλλα ΙΣΡΣ σε υψηλές δόσεις"
+          ]
+        },
+        "redFlags": [
+          "Σοβαρή ηλεκτρολυτική ανισορροπία",
+          "Εσοφαγίτιδα/δοντική ερωσιογένεια",
+          "Συμπεριφορά αυτοκτονίας",
+          "Υπερβολική χρήση λαξαντικών"
+        ],
+        "examesIniciais": [
+          "Ηλεκτρόλυτα (υποκαλαιμία, υποναταιμία)",
+          "Λειτουργία του ήπαρ και των νεφρών",
+          "Οδοντιατρική αξιολόγηση (ερωσιογένεια)"
+        ]
+      },
+      "tags": [
+        "βουλιμία",
+        "διατροφική κατανάλωση",
+        "εξισορρόπηση",
+        "φλουοξετίνη",
+        "κβε",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-espectro-autista",
+      "titulo": "Τραύμα Τροπικού Φάσματος (ΤΤΦ)",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F84.0"
+      ],
+      "cid11": [
+        "6A02"
+      ],
+      "ciap2": [
+        "P15"
+      ],
+      "snomedCT": "35919005",
+      "doid": "DOID:0060041",
+      "meshId": "D000067877",
+      "umlsCui": "C1510586",
+      "dsm5": {
+        "code": "299.00",
+        "category": "Νευροαναπτυξιακά Διατάραξεις",
+        "diagnosticCriteria": {
+          "code": "299.00",
+          "name": "Αυτιστικό Φάσμα Διαταραχή",
+          "category": "Νευροαναπτυξιακά Διατάραξεις",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Προσωρινοί ή μόνιμοι έλλειπες στην κοινωνική επικοινωνία και στην κοινωνική αλληλεπίδραση σε πολλά περιβάλλοντα"
+            },
+            {
+              "letter": "B",
+              "text": "Περιορισμένα και επαναλαμβανόμενα μοτίβα συμπεριφοράς, ενδιαφέροντος ή δραστηριότητας"
+            },
+            {
+              "letter": "C",
+              "text": "Συμπτώματα παρουσιάζονται από την αρχή της ανάπτυξης"
+            }
+          ],
+          "specifiers": {
+            "severity": [
+              "Βαθμός 1 (Χρειάζεται υποστήριξη)",
+              "Βαθμός 2 (Χρειάζεται σημαντική υποστήριξη)",
+              "Βαθμός 3 (Χρειάζεται πολύ σημαντική υποστήριξη)"
+            ]
+          }
+        }
+      },
+      "quickView": {
+        "definicao": "Νευροαναπτυξιακή διαταραχή που χαρακτηρίζεται από προσωρινούς ή μόνιμους έλλειπες στην κοινωνική επικοινωνία και στην κοινωνική αλληλεπίδραση, καθώς και από περιορισμένα και επαναλαμβανόμενα μοτίβα συμπεριφοράς, παρούσα από την αρχή της ανάπτυξης.",
+        "criteriosDiagnosticos": [
+          "Έλλειπες στην κοινωνική επικοινωνία: ανταλλαγή κοινωνικών και συναισθηματικών πληροφοριών, μη λεκτική επικοινωνία, σχέσεις",
+          "Περιορισμένα/επαναλαμβανόμενα μοτίβα: ≥2: στερεότυπα κινήματα, επιμονή σε κανόνες, σταθερά ενδιαφέροντα, υπερ/υποαίσθηση",
+          "Συμπτώματα παρούσα από την αρχή της ανάπτυξης (μπορεί να μην είναι εμφανή από τότε που οι κοινωνικές απαιτήσεις υπερβαίνουν τις ικανότητες)",
+          "Βαθμός υποστήριξης: 1 (ήπιος), 2 (μέτριος), 3 (σοβαρός)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Εντατικές πρωτογενειακές συμπεριφορικές ενδιάμεσες",
+            "Εφαρμοσμένη Ανάλυση Συμπεριφοράς (ABA)",
+            "Κοινωνική επικοινωνιακή θεραπεία",
+            "Εργαλειοθεραπεία (αίσθησης ολοκλήρωσης)",
+            "Ειδική εκπαιδευτική υποστήριξη"
+          ],
+          "farmacologico": [
+            "Φάρμακα για συγκεκριμένα συμπτώματα:",
+            "- Risperidone ή Aripiprazole (αγγελία, ιριταβιλιτά)",
+            "- SSRI για την ανησυχία/ομορφιακή συμπεριφορά",
+            "- Ενθαρρυντικά για συνυπαρχόν ADHD"
+          ]
+        },
+        "redFlags": [
+          "Αναπόσπαστη υποχώρηση των δεξιοτήτων",
+          "Σοβαρή αυτοζημία",
+          "Αγγελία",
+          "Ανεπεξεργασμένες ψυχικές συμπεριφορές"
+        ],
+        "examesIniciais": [
+          "Επαγγελματική πολυειδική αξιολόγηση: παιδιάτρος, νευρολόγος, φωνοθεραπευτής, ψυχολόγος",
+          "Ακουστική αξιολόγηση (εξαίρεση ακουστικής απώλειας)",
+          "Γενετικά τεστ (αν υποδεικτικά)",
+          "Κλίμακες: ADOS, ADI-R"
+        ]
+      },
+      "escalasAvaliacao": [
+        {
+          "name": "M-CHAT-R",
+          "description": "Modified Checklist for Autism in Toddlers, Revised: Παρακολούθηση για ΤΤΦ σε παιδιά 16-30 μηνών",
+          "reference": "Robins et al., 2009"
+        },
+        {
+          "name": "ADOS",
+          "description": "Autism Diagnostic Observation Schedule: Χρυσός πρότυπος για τη διάγνωση ΤΤΦ",
+          "reference": "Lord et al., 2012"
+        }
+      ],
+      "tags": [
+        "αυτισμός",
+        "ΤΤΦ",
+        "νευροανάπτυξη",
+        "ABA",
+        "DSM5"
+      ]
+    },
+    {
+      "id": "narcolepsia",
+      "titulo": "Ναρκοληψία",
+      "categoria": "saude_mental",
+      "cid10": [
+        "G47.4"
+      ],
+      "cid11": [
+        "7A20"
+      ],
+      "ciap2": [
+        "P06"
+      ],
+      "snomedCT": "60380001",
+      "doid": "DOID:8986",
+      "meshId": "D009290",
+      "umlsCui": "C0027404",
+      "dsm5": {
+        "code": "347.00",
+        "category": "Sleep-Wake Disorders",
+        "diagnosticCriteria": {
+          "code": "347.00",
+          "name": "Narcolepsy",
+          "category": "Sleep-Wake Disorders",
+          "criteria": [
+            {
+              "letter": "A",
+              "text": "Επεισόδια επαναλαμβανόμενης αντισταθμιστικής ανάγκης για ύπνο, μικρούπνια ή αποστολές ύπνου"
+            },
+            {
+              "letter": "B",
+              "text": "Παρουσία ≥1: κατάπληξη, χαμηλά επίπεδα ορεξίνης, χρονική διάρκεια εμφάνισης REM ≤15 λεπτά"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Ταραχή του ύπνου που χαρακτηρίζεται από υπερυπνία διαχωριστική, επεισόδια αντισταθμιστικής ανάγκης για ύπνο, συχνά συνδεδεμένη με κατάπληξη (αιφνιδιαία απώλεια μυϊκής τόνωσης).",
+        "criteriosDiagnosticos": [
+          "Υπερυπνία διαχωριστική ≥3 μήνες",
+          "Επεισόδια επαναλαμβανόμενου ύπνου σε ανεπιθύμητες καταστάσεις",
+          "≥1: κατάπληξη, χαμηλά επίπεδα ορεξίνης στον ραχικό χυμό, χρονική διάρκεια εμφάνισης REM ≤15 λεπτά στον πολυπλοκό δοκιμαστικό τεστ χρονικής διάρκειας ύπνου"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Προγραμματισμένα μικρούπνια (2-3/ημέρα, 15-20 λεπτά)",
+            "Αυστηρή υγιεινή του ύπνου",
+            "Ψυχοσοσιαλική υποστήριξη"
+          ],
+          "farmacologico": [
+            "Ενθαρρυντικά: Modafinil 200-400mg/ημέρα ή Armodafinil",
+            "Για κατάπληξη: Venlafaxine, Fluoxetine, ή Sodium oxybate"
+          ]
+        },
+        "redFlags": [
+          "Σοβαρή κατάπληξη με κίνδυνο πτώσεων",
+          "Ημερονυκτικές αλλοκοίνωσης",
+          "Υπνική παράλυση"
+        ],
+        "examesIniciais": [
+          "Πολυπλοκός δοκιμαστικός τεστ χρονικής διάρκειας ύπνου (MSLT)",
+          "Πολυσόννυχη ανάλυση",
+          "Μέτρηση ορεξίνης στον ραχικό χυμό"
+        ]
+      },
+      "tags": [
+        "ναρκοληψία",
+        "ύπνος",
+        "κατάπληξη",
+        "modafinil",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "transtorno-uso-cannabis",
+      "titulo": "Ταραχή Χρήσης Κάνναβης",
+      "categoria": "saude_mental",
+      "cid10": [
+        "F12"
+      ],
+      "cid11": [
+        "6C41"
+      ],
+      "ciap2": [
+        "P15",
+        "P16"
+      ],
+      "snomedCT": "37344009",
+      "doid": "DOID:0050742",
+      "meshId": "D002189",
+      "umlsCui": "C0006870",
+      "dsm5": {
+        "code": "304.30",
+        "category": "Substance-Related and Addictive Disorders",
+        "diagnosticCriteria": {
+          "code": "304.30",
+          "name": "Cannabis Use Disorder",
+          "category": "Substance-Related and Addictive Disorders",
+          "criteria": [
+            {
+              "text": "Παράνομο μοτίβο χρήσης κάνναβης που οδηγεί σε κλινικά σημαντικά βλάβες ή οδυνηρότητες, που εκφράζονται με ≥2 κριτήρια σε 12 μήνες"
+            }
+          ]
+        }
+      },
+      "quickView": {
+        "definicao": "Παράνομο μοτίβο χρήσης κάνναβης που οδηγεί σε κλινικά σημαντικά βλάβες ή οδυνηρότητες.",
+        "criteriosDiagnosticos": [
+          "≥2 κριτήρια σε 12 μήνες: χρήση μεγαλύτερη από αυτή που είχε προσδιοριστεί, προσπάθειες για μείωση, πολύς χρόνος που δαπανάται, πόθος, αποτυχία σε υποχρεώσεις, προβλήματα μεταξύ ατόμων, εγκατάλειψη δραστηριοτήτων, χρήση σε καταστάσεις κινδύνου, χρήση παρά τα προβλήματα, ανεξικακία, αποσυνήθιση"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Μετακινητική συνέντευξη",
+            "Κατευθυντήρια θεραπεία για τη χρήση ουσιών",
+            "Θεραπεία διαχείρισης των περιστατικών",
+            "Ομάδες υποστήριξης"
+          ],
+          "farmacologico": [
+            "Θεραπεία των συμπτωμάτων αποσυνήθισης όταν χρειάζεται",
+            "Η Naltrexona μπορεί να βοηθήσει"
+          ]
+        },
+        "redFlags": [
+          "Ψυχωτική ταραχή που προκαλείται",
+          "Χρήση σε εφήβους (μεγαλύτερος κίνδυνος εξάρτησης)",
+          "Συμπαραλληλισμός ψυχικής υγείας"
+        ],
+        "examesIniciais": [
+          "Τοξικολογικό τεστ",
+          "Αξιολόγηση συμπαραλληλισμού ψυχικής υγείας"
+        ]
+      },
+      "tags": [
+        "κάνναβης",
+        "μαριχουάνα",
+        "ουσία",
+        "κατευθυντήρια θεραπεία",
+        "dsm5"
+      ]
+    },
+    {
+      "id": "depressao-idoso",
+      "titulo": "Η Κατάθλιψη στον Γηράσκοντα",
+      "ciap2": [
+        "P76"
+      ],
+      "cid10": [
+        "F32",
+        "F33"
+      ],
+      "cid11": [
+        "6A70",
+        "6A71"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:1596",
+      "snomedCT": "35489007",
+      "meshId": "D003866",
+      "umlsCui": "C0011570",
+      "quickView": {
+        "definicao": "Μεγάλο διαταρακτικό καταθλιπτικό σύνδρομο στον γηράσκοντα, πολλάκις υποδιαγνωστικό. Μπορεί να παρουσιαστεί με σωματικές παρεξηγήσεις και «ψευδοδεμέντια».",
+        "criteriosDiagnosticos": [
+          "GDS-15 ≥5 (αναζήτηση)",
+          "Ατύποι συμπτώματες: σωματικές παρεξηγήσεις",
+          "Απώλεια ενδιαφέροντος περισσότερο από τη λύπη",
+          "Ψευδοδεμέντια: αναστρέψιμος γνωστικός έλλειψη"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Φυσική δραστηριότητα",
+            "Κινητοποίηση συμπεριφοράς",
+            "Κοινωνική υποστήριξη",
+            "Ψυχοθεραπεία"
+          ],
+          "farmacologico": [
+            "Ινhibitores seletivos da recaptação de serotonina (ISRS): Sertralina 25-50mg (προτιμητικό)",
+            "Αποφυγή τρικύκλιων (αντιχολινεργικές ενέργειες)",
+            "Start low, go slow"
+          ]
+        },
+        "redFlags": [
+          "Ιδεατική κατάθλιψη (μεγαλύτερος κίνδυνος από τους νέους)",
+          "Αρνητική διατροφή",
+          "Ψυχωσις",
+          "Γρήγορος καταστροφικός υπολογισμός"
+        ]
+      },
+      "medicamentos": [
+        "sertralina",
+        "escitalopram"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "gds-15"
+      ]
+    },
+    {
+      "id": "tabagismo",
+      "titulo": "Εξάρτηση από Νικοτίνη (Ταμπακοκατάχρηση)",
+      "ciap2": [
+        "P17"
+      ],
+      "cid10": [
+        "F17"
+      ],
+      "cid11": [
+        "6C4A"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:0050742",
+      "snomedCT": "89765005",
+      "meshId": "D014029",
+      "umlsCui": "C0040336",
+      "quickView": {
+        "definicao": "Κύρια αποφεύγουμενη αιτία θανάτου. 1 δισεκατομμύριο καπνιστές στον κόσμο. Η διακοπή μειώνει τη θνησιμότητα σε οποιαδήποτε ηλικία.",
+        "criteriosDiagnosticos": [
+          "Fagerström ≥6 = υψηλή εξάρτηση",
+          "Ημερήσια χρήση από τότε που γνωρίζουν τα κινδύνια",
+          "Προηγούμενες προσπάθειες διακοπής χωρίς επιτυχία",
+          "Συμπτώματα αποσυνήθισης"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Σύντομη προσέγγιση (5 As)",
+            "Ορατικός συμβουλευτικός",
+            "Ομάδα υποστήριξης",
+            "Τηλεφωνική γραμμή (136)"
+          ],
+          "farmacologico": [
+            "Πρώτη γραμμή: Bupropiona 150mg 2x/ημέρα για 7-12 εβδομάδες",
+            "Η ΓΡΑΜΜΗ: Vareniclina 0,5mg → 1mg 2x/ημέρα",
+            "TRN: επιδερμικό ενδυτήριο + ζυμαράκι/χάμηλη σύμφυση κατά το χρειαζόμενο"
+          ]
+        },
+        "redFlags": [
+          "Προηγμένη πνευμονική ή καρδιακή νόσος",
+          "Εγκυμοσύνη",
+          "Σοβαρή ψυχική νόσος"
+        ]
+      },
+      "medicamentos": [
+        "bupropiona"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "fagerstrom"
+      ]
+    },
+    {
+      "id": "transtorno-bipolar",
+      "titulo": "Διπολική διαταραχή",
+      "ciap2": [
+        "P73"
+      ],
+      "cid10": [
+        "F31"
+      ],
+      "cid11": [
+        "6A60"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:3312",
+      "snomedCT": "13746004",
+      "meshId": "D001714",
+      "umlsCui": "C0005586",
+      "tags": [
+        "saude_mental",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "Επεισόδια μανίας/υπομανίας και καταθλίψης. Τύπος I (μανία + καταθλίψη) ή Τύπος II (υπομανία + καταθλίψη).",
+        "criteriosDiagnosticos": [
+          "Επεισόδιο μανίας (Τύπος I) ή υπομανίας (Τύπος II)",
+          "Επεισόδια καταθλίψης",
+          "Αλλαγή του χαρακτήρα"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ψυχοθεραπεία",
+            "Εκπαίδευση για τη νόσο",
+            "Οικογενειακή υποστήριξη"
+          ],
+          "farmacologico": [
+            "Σταθεροποιητής χυμωδικής: Lítio ή Valproato",
+            "Αντιψυχωτικά στη μανία",
+            "Αντικαταθλιπτικά με προσοχή"
+          ]
+        },
+        "redFlags": [
+          "Ιδεολογία αυτοκτονίας",
+          "Ψυχωσις",
+          "Σοβαρή μανία",
+          "Απαιτείται ιατρείο"
+        ]
+      },
+      "medicamentos": [
+        "lítio",
+        "valproato"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-ansiedade-generalizada",
+      "titulo": "Ταραχή Γενικευμένης Ανησυχίας",
+      "ciap2": [
+        "P74"
+      ],
+      "cid10": [
+        "F41.1"
+      ],
+      "cid11": [
+        "6B00"
+      ],
+      "categoria": "saude_mental",
+      "doid": "DOID:1596",
+      "snomedCT": "48544008",
+      "meshId": "D001008",
+      "umlsCui": "C0003467",
+      "hpo": [
+        "HP:0000739"
+      ],
+      "tags": [
+        "saude_mental",
+        "ansiedade",
+        "cronica"
+      ],
+      "quickView": {
+        "definicao": "Υπερβολική και προσκολλημένη ανησυχία για ≥6 μήνες. Δυσκολία στο να ελέγχεται η ανησυχία. Συνδυαστικά φυσικά συμπτώματα.",
+        "criteriosDiagnosticos": [
+          "Υπερβολική ανησυχία ≥6 μήνες",
+          "Δυσκολία στο να ελέγχεται η ανησυχία",
+          "≥3 συμπτώματα: ανησυχία, κόπος, δυσκολία συγκέντρωσης, ιρριτασιόνωση, συντονική τάση, διαταραχή ύπνου"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Κατευθυντική Κατανοητική Θεραπεία (ΚΚΘ)",
+            "Ψυχοθεραπεία",
+            "Τεχνικές ξεκάθαρσης",
+            "Άσκηση"
+          ],
+          "farmacologico": [
+            "Ιντρανευρονικά Αναφορικά Συντονιστικά Αναβαθμιστές (ΙΣΣ): Σερτραλίνη ή Εσσιταλοπράμ",
+            "Βενζοδιαζεπίνια μόνο για μικρή διάρκεια αν χρειάζεται"
+          ]
+        },
+        "redFlags": [
+          "Ιδεολογία αυτοκτονίας",
+          "Επιθέσεις πανικού",
+          "Συνδυαστικές ψυχιατρικές διαταραχές"
+        ]
+      },
+      "medicamentos": [
+        "sertralina",
+        "escitalopram"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}

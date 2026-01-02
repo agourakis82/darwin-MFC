@@ -1,0 +1,835 @@
+{
+  "locale": "el",
+  "category": "ginecologico",
+  "generatedAt": "2026-01-01T17:26:28.983Z",
+  "count": 6,
+  "diseases": [
+    {
+      "id": "vulvovaginite-candidíase",
+      "titulo": "Candidíase Vulvovaginal",
+      "sinonimos": [
+        "CVV",
+        "Candidose vaginal",
+        "Monilíase vaginal"
+      ],
+      "doid": "DOID:13842",
+      "snomedCT": "78048006",
+      "meshId": "D002181",
+      "umlsCui": "C0006840",
+      "ciap2": [
+        "X72"
+      ],
+      "cid10": [
+        "B37.3"
+      ],
+      "cid11": [
+        "1F23.1"
+      ],
+      "categoria": "ginecologico",
+      "quickView": {
+        "definicao": "Infecção vulvovaginal causada por leveduras do gênero Candida (principalmente C. albicans). Caracterizada por prurido vulvar intenso, corrimento branco grumoso e disúria externa. Muito comum - 75% das mulheres terão ao menos 1 episódio.",
+        "criteriosDiagnosticos": [
+          "DIAGNÓSTICO CLÍNICO + LABORATORIAL:",
+          "Prurido vulvar intenso (sintoma cardinal)",
+          "Corrimento branco, grumoso, “tipo leite coalhado”",
+          "Eritema e edema vulvar",
+          "pH vaginal normal (4,0-4,5)",
+          "Teste de KOH: hifas e pseudo-hifas na microscopia",
+          "Cultura fúngica se recorrente ou atípica"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Evitar roupas íntimas sintéticas (preferir algodão)",
+            "Evitar duchas vaginais",
+            "Manter área genital seca",
+            "Tratar parceiro apenas se sintomático (balanite)"
+          ],
+          "farmacologico": [
+            "CVV NÃO COMPLICADA:",
+            "Fluconazol 150mg VO dose única OU",
+            "Clotrimazol creme vaginal 1% por 7 noites OU",
+            "Miconazol óvulo 200mg por 3 noites",
+            "",
+            "CVV RECORRENTE (≥4 episódios/ano):",
+            "Fluconazol 150mg VO D1, D4, D7 (indução)",
+            "Depois Fluconazol 150mg 1x/semana por 6 meses (manutenção)"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Resolução dos sintomas",
+          "Erradicação fúngica",
+          "Prevenção de recorrência"
+        ],
+        "examesIniciais": [
+          "pH vaginal (normal na candidíase)",
+          "Exame a fresco + KOH (hifas, pseudo-hifas, esporos)",
+          "Cultura fúngica se recorrente ou refratária (identificar espécie)",
+          "Glicemia se recorrente (descartar DM)"
+        ],
+        "redFlags": [
+          "CVV recorrente (≥4/ano): investigar DM, imunossupressão",
+          "Candida não-albicans (C. glabrata): resistência a azóis",
+          "Gestante: evitar fluconazol oral (usar tópicos)",
+          "Vulvovaginite grave com ulceração"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "75% das mulheres terão ≥1 episódio, 40-45% terão ≥2",
+          "incidencia": "5-8% têm CVV recorrente",
+          "faixaEtaria": "Idade reprodutiva",
+          "fatoresRisco": [
+            "Uso recente de antibióticos",
+            "Diabetes mellitus",
+            "Gestação",
+            "Imunossupressão",
+            "Uso de corticoides",
+            "Contraceptivos com alto estrogênio",
+            "Atividade sexual frequente"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Candida faz parte da microbiota vaginal normal em 20-50% das mulheres. Alterações no equilíbrio (antibióticos, imunossupressão, estrogênio) permitem proliferação fúngica. Resposta inflamatória local causa os sintomas.",
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Prurido vulvar intenso (mais característico)",
+            "Ardência vulvar",
+            "Corrimento branco, grumoso, sem odor",
+            "Disúria externa",
+            "Dispareunia superficial"
+          ],
+          "sinaisExameFisico": [
+            "Eritema e edema vulvar",
+            "Escoriações por coçadura",
+            "Corrimento aderido às paredes vaginais",
+            "Mucosa vaginal eritematosa"
+          ],
+          "formasClinicas": [
+            "CVV não complicada (maioria)",
+            "CVV complicada: grave, recorrente, não-albicans, gestante, imunossuprimida"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínica + microscopia ou cultura",
+            "pH normal ajuda a diferenciar de VB"
+          ],
+          "diagnosticoDiferencial": [
+            "Vaginose bacteriana (pH >4,5, odor de peixe)",
+            "Tricomoníase (corrimento amarelo-esverdeado, espumoso)",
+            "Herpes genital (vesículas, úlceras)",
+            "Dermatite de contato",
+            "Líquen escleroso"
+          ],
+          "examesLaboratoriais": [
+            "Exame a fresco com KOH",
+            "Cultura fúngica (Sabouraud)",
+            "pH vaginal"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Aliviar sintomas",
+            "Erradicar fungo",
+            "Prevenir recorrência"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Roupas íntimas de algodão",
+              "Evitar duchas vaginais",
+              "Manter área seca"
+            ],
+            "citations": [
+              {
+                "refId": "cdc-sti-2021"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Azol oral",
+                "medicamentos": [
+                  "Fluconazol"
+                ],
+                "posologia": "150mg VO dose única. Eficácia 90%."
+              },
+              {
+                "classe": "Azol tópico",
+                "medicamentos": [
+                  "Clotrimazol",
+                  "Miconazol",
+                  "Terconazol"
+                ],
+                "posologia": "Clotrimazol creme 1% 7 noites ou Miconazol óvulo 200mg 3 noites."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Esquema de manutenção (recorrente)",
+                "medicamentos": [
+                  "Fluconazol"
+                ],
+                "posologia": "150mg semanal por 6 meses após indução."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Gestante",
+                "conduta": "Apenas tratamento tópico (7 dias). Fluconazol oral contraindicado."
+              },
+              {
+                "situacao": "C. glabrata (resistente)",
+                "conduta": "Ácido bórico 600mg intravaginal por 14 noites."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "cdc-sti-2021"
+              }
+            ]
+          },
+          "duracao": "Episódio: 1-7 dias. Manutenção: 6 meses."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Retorno se não melhora em 72h ou recorrência",
+          "examesControle": [
+            "Cultura se recorrente ou refratária"
+          ],
+          "metasTerapeuticas": [
+            "Resolução de sintomas",
+            "<4 episódios/ano"
+          ],
+          "criteriosEncaminhamento": [
+            "CVV recorrente refratária",
+            "Imunossupressão",
+            "Necessidade de avaliação de comorbidades"
+          ],
+          "citations": [
+            {
+              "refId": "cdc-sti-2021"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Evitar antibióticos desnecessários",
+            "Controle glicêmico em DM"
+          ],
+          "secundaria": [
+            "Esquema de manutenção se recorrente"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "fluconazol",
+        "clotrimazol",
+        "miconazol"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "cdc-sti-2021"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "candidiase",
+        "vulvovaginite",
+        "prurido",
+        "fluconazol",
+        "corrimento"
+      ]
+    },
+    {
+      "id": "pre-eclampsia",
+      "titulo": "Pré-eclâmpsia",
+      "sinonimos": [
+        "PE",
+        "Toxemia gravídica",
+        "Doença hipertensiva específica da gestação"
+      ],
+      "doid": "DOID:10591",
+      "snomedCT": "398254007",
+      "meshId": "D011225",
+      "umlsCui": "C0032914",
+      "ciap2": [
+        "W81"
+      ],
+      "cid10": [
+        "O14",
+        "O14.0",
+        "O14.1"
+      ],
+      "cid11": [
+        "JA24"
+      ],
+      "categoria": "ginecologico",
+      "quickView": {
+        "definicao": "Síndrome multissistêmica exclusiva da gestação, caracterizada por hipertensão arterial (≥140/90) após 20 semanas + proteinúria OU disfunção de órgão-alvo. Emergência obstétrica - principal causa de mortalidade materna.",
+        "criteriosDiagnosticos": [
+          "PA ≥140/90 mmHg após 20 semanas de gestação (2 medidas com intervalo ≥4h)",
+          "+",
+          "Proteinúria ≥300mg/24h (ou relação proteína/creatinina ≥0,3) OU",
+          "Na ausência de proteinúria: disfunção de órgão-alvo:",
+          "- Plaquetopenia <100.000/µL",
+          "- Creatinina >1,1 mg/dL ou dobro do basal",
+          "- TGO/TGP >2x limite superior",
+          "- Edema pulmonar",
+          "- Sintomas cerebrais (cefaleia, escotomas)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Internação hospitalar",
+            "Repouso relativo",
+            "Monitorização materno-fetal intensiva",
+            "Avaliação de gravidade (critérios de gravidade)",
+            "Definição de momento do parto (única cura definitiva)"
+          ],
+          "farmacologico": [
+            "ANTI-HIPERTENSIVO (PA ≥160/110):",
+            "Nifedipina 10-20mg VO a cada 30 min (máx 60mg)",
+            "Hidralazina 5mg IV a cada 20 min (máx 20mg)",
+            "Meta: PAS 140-155, PAD 90-100 mmHg",
+            "",
+            "PROFILAXIA DE ECLÂMPSIA (PE grave):",
+            "Sulfato de magnésio: Ataque 4g IV + Manutenção 1-2g/h IV",
+            "",
+            "CORTICOIDE (maturação pulmonar se <34 sem):",
+            "Betametasona 12mg IM, 2 doses com intervalo de 24h"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Prevenir eclâmpsia (convulsão)",
+          "Prevenir AVC materno",
+          "Manter perfusão placentária adequada",
+          "Definir momento ideal do parto",
+          "Otimizar condições fetais (maturação pulmonar)"
+        ],
+        "examesIniciais": [
+          "Hemograma com plaquetas",
+          "Creatinina, ureia",
+          "TGO, TGP, LDH, bilirrubinas",
+          "Proteinúria 24h ou relação P/C",
+          "Ácido úrico",
+          "Coagulograma",
+          "USG obstétrico + Doppler",
+          "CTG (cardiotocografia)"
+        ],
+        "redFlags": [
+          "CRITÉRIOS DE GRAVIDADE (PE grave):",
+          "PA ≥160/110 mmHg",
+          "Plaquetas <100.000/µL",
+          "TGO/TGP >2x normal",
+          "Creatinina >1,1 mg/dL",
+          "Edema pulmonar",
+          "Sintomas cerebrais: cefaleia intensa, escotomas, confusão",
+          "Dor epigástrica/hipocôndrio direito (distensão hepática)",
+          "Oligúria <500 mL/24h",
+          "HELLP (hemólise, enzimas hepáticas elevadas, plaquetopenia)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2-8% das gestações",
+          "incidencia": "Principal causa de mortalidade materna",
+          "faixaEtaria": "Qualquer gestante, mais comum em extremos reprodutivos",
+          "fatoresRisco": [
+            "Primigesta (principal)",
+            "Gestação múltipla",
+            "História pessoal ou familiar de PE",
+            "HAS crônica, DM, DRC, LES",
+            "Obesidade",
+            "Idade materna >35 ou <18 anos",
+            "Raça negra",
+            "Novo parceiro",
+            "Longo intervalo interpartal"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Placentação deficiente no 1º trimestre com falha no remodelamento das artérias espiraladas. Hipóxia placentária libera fatores antiangiogênicos (sFlt-1) que causam disfunção endotelial sistêmica, vasoespasmo, ativação da coagulação e lesão de múltiplos órgãos.",
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Hipertensão arterial",
+            "Edema (não específico)",
+            "Cefaleia frontal ou occipital intensa",
+            "Escotomas, fotopsias",
+            "Dor epigástrica/hipocôndrio direito",
+            "Oligúria"
+          ],
+          "sinaisExameFisico": [
+            "PA ≥140/90 mmHg",
+            "Edema de face e mãos",
+            "Hiperreflexia",
+            "Dor à palpação de hipocôndrio direito",
+            "Ganho ponderal excessivo"
+          ],
+          "formasClinicas": [
+            "PE sem critérios de gravidade",
+            "PE com critérios de gravidade",
+            "Eclâmpsia (convulsão)",
+            "Síndrome HELLP",
+            "PE superimposta à HAS crônica"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "PA ≥140/90 após 20 semanas + proteinúria ou disfunção de órgão-alvo",
+            "Classificar gravidade"
+          ],
+          "diagnosticoDiferencial": [
+            "HAS crônica",
+            "HAS gestacional (sem proteinúria/disfunção)",
+            "Síndrome hemolítico-urêmica",
+            "PTT",
+            "Esteatose hepática aguda da gestação"
+          ],
+          "examesLaboratoriais": [
+            "Hemograma, plaquetas, esfregaço (esquizócitos?)",
+            "Creatinina, ureia",
+            "TGO, TGP, LDH, bilirrubinas",
+            "Ácido úrico",
+            "Proteinúria 24h",
+            "Coagulograma"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Prevenir complicações maternas",
+            "Prevenir eclâmpsia",
+            "Otimizar condições fetais",
+            "Definir momento do parto",
+            "Otimizar condições fetais (maturação pulmonar)"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Internação",
+              "Monitorização intensiva",
+              "Balanço hídrico",
+              "Repouso relativo"
+            ],
+            "citations": [
+              {
+                "refId": "acog-hyp-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Anti-hipertensivo (se PA ≥160/110)",
+                "medicamentos": [
+                  "Nifedipina",
+                  "Hidralazina",
+                  "Labetalol"
+                ],
+                "posologia": "Nifedipina 10-20mg VO. Hidralazina 5-10mg IV. Meta: 140-155/90-100."
+              },
+              {
+                "classe": "Anticonvulsivante (profilaxia de eclâmpsia)",
+                "medicamentos": [
+                  "Sulfato de magnésio"
+                ],
+                "posologia": "Ataque: 4-6g IV em 20 min. Manutenção: 1-2g/h IV. Monitorar reflexos, FR, diurese."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Corticoide (maturação pulmonar)",
+                "medicamentos": [
+                  "Betametasona",
+                  "Dexametasona"
+                ],
+                "posologia": "Betametasona 12mg IM, repetir em 24h (se <34 semanas)."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "PE grave ou HELLP",
+                "conduta": "Estabilização materna + Parto (única cura). Geralmente interrupção se >34 sem."
+              },
+              {
+                "situacao": "Eclâmpsia",
+                "conduta": "MgSO4 imediato. Estabilização. Parto após estabilização (não cesariana de emergência)."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "acog-hyp-2020"
+              }
+            ]
+          },
+          "duracao": "Até o parto (cura definitiva)."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Internação na PE grave. PE sem gravidade: ambulatorial rigoroso.",
+          "examesControle": [
+            "Hemograma, função hepática, renal diário se grave",
+            "CTG diária",
+            "Doppler fetal seriado"
+          ],
+          "metasTerapeuticas": [
+            "Ausência de eclâmpsia",
+            "PA controlada",
+            "Bem-estar fetal"
+          ],
+          "criteriosEncaminhamento": [
+            "Toda PE deve ser acompanhada em centro de referência",
+            "UTI materna se HELLP ou eclâmpsia"
+          ],
+          "citations": [
+            {
+              "refId": "acog-hyp-2020"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "AAS baixa dose (100-150mg/noite) a partir de 12-16 sem em alto risco",
+            "Suplementação de cálcio (1-2g/dia) em populações com baixa ingesta"
+          ],
+          "secundaria": [
+            "Pré-natal adequado",
+            "Diagnóstico precoce"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "pre-eclampsia-manejo",
+        "sulfato-magnesio"
+      ],
+      "medicamentos": [
+        "nifedipina",
+        "hidralazina",
+        "sulfato-magnesio",
+        "betametasona"
+      ],
+      "calculadoras": [
+        "risco-pre-eclampsia"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "acog-hyp-2020"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "pre-eclampsia",
+        "hellp",
+        "eclampsia",
+        "gestacao",
+        "hipertensao"
+      ]
+    },
+    {
+      "id": "candidose-vulvovaginal",
+      "titulo": "Κανιδιάση Βουλβοβαγινίδα",
+      "ciap2": [
+        "X72"
+      ],
+      "cid10": [
+        "B37.3"
+      ],
+      "cid11": [
+        "1F23.00"
+      ],
+      "categoria": "ginecologico",
+      "doid": "DOID:1304",
+      "snomedCT": "78048006",
+      "meshId": "D002181",
+      "umlsCui": "C0006840",
+      "quickView": {
+        "definicao": "Πυρετόσφαιρη μύκητικη λοιμωξή από Candida sp. (C. albicans 90%). Επηρεάζει το 75% των γυναικών. Δεν είναι ΣΕΕ.",
+        "criteriosDiagnosticos": [
+          "Έντονο προύρωμα βουλβοβαγινίδας",
+          "Λευκορροΐα λευκή κυματιστή (συμπυκνωμένο γάλα)",
+          "Υπεραιμία βουλβικής περιοχής",
+          "Δυσουρία και δυσπαρευνία"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Εσωρούχα αλλοκότου",
+            "Αποφυγή στενών εσώρουχων",
+            "Διατήρηση της περιοχής ξερής"
+          ],
+          "farmacologico": [
+            "Fluconazol 150mg PO μία φορά",
+            "Η Clotrimazol κρέμα βαγινίδας 1% για 7 ημέρες",
+            "Επαναλαμβανόμενη (≥4/χρόνο): Fluconazol 150mg εβδομαδιαία για 6 μήνες"
+          ]
+        },
+        "redFlags": [
+          "Ανελέγχητος διαβήτης",
+          "Ανοσοκατάπληξη",
+          "Εγκυμοσύνη",
+          "Μη απάντηση στη θεραπεία"
+        ]
+      },
+      "medicamentos": [
+        "fluconazol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "menopausa-climatério",
+      "titulo": "Μενοπαύση και Κλιματήριο",
+      "sinonimos": [
+        "Σύνδρομο κλιματηρίου",
+        "Μεταβατική φάση μενοπαύσης"
+      ],
+      "ciap2": [
+        "X11"
+      ],
+      "cid10": [
+        "N95.1"
+      ],
+      "cid11": [
+        "GA31.0"
+      ],
+      "doid": "DOID:0111805",
+      "snomedCT": "161712005",
+      "meshId": "D008593",
+      "umlsCui": "C0025320",
+      "categoria": "ginecologico",
+      "quickView": {
+        "definicao": "Παρακοπή μόνιμη της μηνιαίας περιόδου μετά από 12 μήνες αμενορροΐας. Μέση ηλικία 51 χρόνια. Κλιματήριο: περίοδος μετάβασης περι- και μετά-μενοπαύσης.",
+        "criteriosDiagnosticos": [
+          "12 συνεχόμενοι μήνες αμενορροΐας σε >45 χρόνια",
+          "FSH >25-30 mUI/mL (όταν χρειάζεται επιβεβαίωση)",
+          "Συμπτώματα βασομοτορικά: θερμοκύματα, νυκτερινή ιδρώση",
+          "Συμπτώματα ουρογεννητικά: ενδονεκρινική ατροφία, δυσπαρευνία"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Κανονική φυσική ασκήση",
+            "Αποφυγή καταστιγμάτων θερμοκυμάτων (άλκοολ, καφέ, πικάντικη τροφή)",
+            "Ενδονεκρινικά λιπαστικά",
+            "Θεραπείες μυαλο-σώματος"
+          ],
+          "farmacologico": [
+            "Ορμονοθεραπεία (ΟΤ) αν ήπια/σοβαρά συμπτώματα και χωρίς αντένδειξη",
+            "Εστρογόνιο + προγεσταγόνιο αν ολόκληρο το ούτερο",
+            "Τοπικό εστρογόνιο για ουρογεννητικά συμπτώματα",
+            "Εναλλακτικές: ISRS, γαμπαπεντίνη, κλονιδίνη"
+          ]
+        },
+        "redFlags": [
+          "Ημορραγία μετά τη μενοπαύση",
+          "Προηγούμενη θρόμβηση",
+          "Καρκίνος μαστού",
+          "Καρδιαγγειακή νόσος"
+        ],
+        "metasTerapeuticas": [
+          "Έλεγχος των συμπτωμάτων",
+          "Ποιότητα ζωής",
+          "Πρόληψη οστεοπόρωσης"
+        ],
+        "examesIniciais": [
+          "FSH (εάν υπάρχει αμφιβολία)",
+          "Μαμμογραφία",
+          "Ενδονεκρινική ονυχογραφία",
+          "Οστεοδενσιτομετρία",
+          "Πρόφιλ λιπιδίων"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "estradiol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "γυναικολογία",
+        "οστεοπόρωση",
+        "ορμόνιο"
+      ]
+    },
+    {
+      "id": "doenca-inflamatoria-pelvica",
+      "titulo": "Πελβική Ενδοφλεγμονή",
+      "sinonimos": [
+        "DIP",
+        "Σαλπιγγίτις",
+        "Άνεξις"
+      ],
+      "ciap2": [
+        "X74"
+      ],
+      "cid10": [
+        "N73",
+        "N74"
+      ],
+      "cid11": [
+        "GA06"
+      ],
+      "doid": "DOID:1003",
+      "snomedCT": "198130006",
+      "meshId": "D000292",
+      "umlsCui": "C0242172",
+      "categoria": "ginecologico",
+      "quickView": {
+        "definicao": "Ανεπάρκεια επικλίνου του γεννητικού τρακτού υπερκάτω (ενδομετρίτις, σαλπιγγίτις, τροχαίο-οοφορικό αποστήματα). Γενικά πολυμικροβιακή, περιλαμβανομένων των Chlamydia και Gonorrhoeae.",
+        "criteriosDiagnosticos": [
+          "Πελβική/κάτω γαστρική οδυνή",
+          "Οδυνή κατά την κινητοποίηση του μήτριου κόλλου",
+          "Οδυνή τροχαίων κατά την απαλούργηση",
+          "Επιπλέον κριτήρια: πυρετός, μυκοπυρενική εκκρίνηση, λευκοσιτία"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Ανάπαυση",
+            "Αποχή από σεξουαλική δραστηριότητα κατά τη διάρκεια της θεραπείας",
+            "Θεραπεία του συντρόφου(ων)"
+          ],
+          "farmacologico": [
+            "Αμβουλατορική (ήπια/μέτρια): Ceftriaxone 500mg IM + Doxycycline 100mg 12/12h για 14 ημέρες + Metronidazole 500mg 12/12h για 14 ημέρες",
+            "Νοσηλευτική (σοβαρή): IV μέχρι βελτίωση, μετά περιστομαχικά",
+            "Χειρουργική επέμβαση αν το απόστημα δεν ανταποκρίνεται"
+          ]
+        },
+        "redFlags": [
+          "Τροχαίο-οοφορικό απόστημα",
+          "Περιτονίτιδα",
+          "Σέψη",
+          "Μη ανταπόκριση σε 72 ώρες"
+        ],
+        "metasTerapeuticas": [
+          "Εξάλειψη της ενδοφλεγμονής",
+          "Πρόληψη επιπτώσεων (αναπληξία, εκτόπινη εγκυμοσύνη)"
+        ],
+        "examesIniciais": [
+          "Τεστ για Chlamydia/Gonorrhoeae",
+          "Ενδογονάτικη οντοσκοπία",
+          "Ηματολογικό",
+          "PCR"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "ceftriaxona",
+        "doxiciclina",
+        "metronidazol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "ΙΣΤ",
+        "άκρη",
+        "αναπληξία"
+      ]
+    },
+    {
+      "id": "mastite-lactacional",
+      "titulo": "Μαστίτιδα Λακτατική",
+      "sinonimos": [
+        "Μαστίτιδα μεταγεννητική"
+      ],
+      "ciap2": [
+        "W94"
+      ],
+      "cid10": [
+        "O91.1"
+      ],
+      "cid11": [
+        "JB42.2"
+      ],
+      "doid": "DOID:10690",
+      "snomedCT": "45198002",
+      "meshId": "D008413",
+      "umlsCui": "C0024894",
+      "categoria": "ginecologico",
+      "quickView": {
+        "definicao": "Ενέφλεγμα του μαστού κατά τη λακτατική περίοδο, γενικά λόγω στάσης γάλακτος και/ή βακτηριακής επίδρασης (S. aureus). Κορύφα: 2-3 εβδομάδες μετά τη γέννα.",
+        "criteriosDiagnosticos": [
+          "Τοπική μαστική οδυνή, ερυθροδέσμιο, θερμότητα",
+          "Πυρετός ≥38,5°C, κακόσυνεση",
+          "Ελαστική μάζα υποδεικνύει αποστηματό",
+          "Γενικά μονοπλευρικό"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ΣΥΝΕΧΗΣ ΕΠΙΤΡΟΦΗ (απαραίτητη)",
+            "Συχνή κατάργηση του μαστού",
+            "Ζεστές συμπιέσεις πριν την επιτροφή",
+            "Ψυχρές συμπιέσεις μετά για άνεση"
+          ],
+          "farmacologico": [
+            "Αναλγητικό: Ιμπουφενάκιο 400mg 8/8h ή Παρακεταμόλ",
+            "Αντιβιοτικό αν δεν βελτιώνεται σε 24-48h ή συστημικά σύμπτωματα: Κεφαλεξίνη 500mg 6/6h για 10-14 ημέρες",
+            "Εναλλακτική: Αμοξικιλλίνη-κλαβουλανικό"
+          ]
+        },
+        "redFlags": [
+          "Αποστηματό (εκκένωση)",
+          "Σέψη",
+          "Άνευ απάντησης στο αντιβιοτικό"
+        ],
+        "metasTerapeuticas": [
+          "Επίλυση της φλεγμονής",
+          "Συνέχεια της επιτροφής"
+        ],
+        "examesIniciais": [
+          "Κλινική εξέταση γενικά αρκετή",
+          "Εικονογράφηση με ΥΠΕ αν υποπτεύεται αποστηματό"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "cefalexina",
+        "ibuprofeno"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "επιτροφή",
+        "μεταγεννητική",
+        "επίδραση"
+      ]
+    }
+  ]
+}

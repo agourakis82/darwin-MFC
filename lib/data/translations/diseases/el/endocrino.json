@@ -1,0 +1,635 @@
+{
+  "locale": "el",
+  "category": "endocrino",
+  "generatedAt": "2026-01-01T17:26:28.991Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "hipotireoidismo",
+      "titulo": "Υποθυρεοειδημία",
+      "ciap2": [
+        "T86"
+      ],
+      "cid10": [
+        "E03"
+      ],
+      "cid11": [
+        "5A00.0"
+      ],
+      "categoria": "endocrino",
+      "doid": "DOID:409",
+      "snomedCT": "40930008",
+      "meshId": "D007037",
+      "umlsCui": "C0020676",
+      "quickView": {
+        "definicao": "Έλλειψη ορμονών της σφαιροειδούς. Πρωταρχική (θυρεοειδίτιδα του Hashimoto, μετά από επέμβαση) πιο συχνή από τη δευτεραρχική.",
+        "criteriosDiagnosticos": [
+          "Ηλεκτρολυτική θυρεοειδής (TSH) υψηλή",
+          "Ελεύθερη Τ4 χαμηλή ή φυσιολογική",
+          "Συμπτώματα: κόπος, αύξηση βάρους, ανεξικακία στο κρύο, συνέχεια"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Περιοδική παρακολούθηση",
+            "Συμπλήρωση δόσης σύμφωνα με την απάντηση"
+          ],
+          "farmacologico": [
+            "Λεβοθυροξίνη (συνθετική Τ4): αρχική δόση 25-50μg/ημέρα, προσαρμογή μέχρι νορμοποίηση της ΤSH",
+            "Δόση διατήρησης: 1,6-1,8μg/kg/ημέρα"
+          ]
+        },
+        "redFlags": [
+          "Μιξεδήμα (σοβαρή υποθυρεοειδημία)",
+          "Κόμα μιξεδηματικό",
+          "Άνεστη αγγίνα"
+        ]
+      },
+      "medicamentos": [
+        "levotiroxina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hiperparatireoidismo",
+      "titulo": "Πρωτογενής Υπερπαραθυρεοειδημία",
+      "ciap2": [
+        "T93"
+      ],
+      "cid10": [
+        "E21.0"
+      ],
+      "cid11": [
+        "5A51.0"
+      ],
+      "categoria": "endocrino",
+      "doid": "DOID:2723",
+      "snomedCT": "363478007",
+      "meshId": "D049950",
+      "umlsCui": "C0020507",
+      "tags": [
+        "endocrino",
+        "metabolico"
+      ],
+      "quickView": {
+        "definicao": "Αύξηση του PTH. Γενικά λόγω αδενώματος. Προκαλεί υπερκαλαιμία και οστεοκακτικές/νεφρικές επιπτώσεις.",
+        "criteriosDiagnosticos": [
+          "Υπερκαλαιμία",
+          "Υψηλός ή ανεπαρκώς κανονικός PTH",
+          "Εξαίρεση δευτερογενών αιτιών"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Υδρατικοποίηση",
+            "Περιορισμός διαιτητικού καλσίου"
+          ],
+          "farmacologico": [
+            "Παραθυρεοειδεκτομία αν υπάρχουν συμπτώματα ή επιπτώσεις",
+            "Κινακαλκέτ αν μη χειρουργική θεραπεία"
+          ]
+        },
+        "redFlags": [
+          "Κρίση υπερκαλαιμίας",
+          "Νεφρική έλλειψη",
+          "Επαναλαμβανόμενη νεφρολιθίαση"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-graves",
+      "titulo": "Νόσος Graves",
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E05.0"
+      ],
+      "cid11": [
+        "5A00.0"
+      ],
+      "categoria": "endocrino",
+      "doid": "DOID:4194",
+      "snomedCT": "56294001",
+      "meshId": "D006111",
+      "umlsCui": "C0018213",
+      "tags": [
+        "ενδοκρινικό",
+        "αυτοάνοσο"
+      ],
+      "quickView": {
+        "definicao": "Αυτοάνοσο υπερθυρεοειδημία. Αντισώματα αντι-TSHR. Συνδεδεμένη με οφθαλμοπάθεια και διφθυροειδή γονάτωμα.",
+        "criteriosDiagnosticos": [
+          "Υπερθυρεοειδημία",
+          "Διφθυροειδή γονάτωμα",
+          "Οφθαλμοπάθεια (50%)",
+          "Αντι-TSHR θετικό"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Αποφυγή ιώδιου",
+            "Προστασία των ματιών αν υπάρχει οφθαλμοπάθεια"
+          ],
+          "farmacologico": [
+            "Μεθιμαζόλ 10-40mg/ημέρα",
+            "Βητα-βλοκερ για συμπτώματα"
+          ]
+        },
+        "redFlags": [
+          "Θυρεοειδική στορμός",
+          "Σοβαρή οφθαλμοπάθεια",
+          "Τραχειακή συμπίεση"
+        ]
+      },
+      "medicamentos": [
+        "methimazole",
+        "propranolol"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "bocio-simples",
+      "titulo": "Βόκιο Απλό",
+      "sinonimos": [
+        "Βόκιο μη Τοξικό"
+      ],
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E04"
+      ],
+      "cid11": [
+        "5A01"
+      ],
+      "categoria": "endocrino",
+      "doid": "DOID:11981",
+      "snomedCT": "367460001",
+      "meshId": "D006042",
+      "umlsCui": "C0018021",
+      "tags": [
+        "ενδοκρινικό",
+        "θυρεοειδές"
+      ],
+      "quickView": {
+        "definicao": "Αύξηση διαφοροποιημένης της γλάνδου θυρεοειδούς χωρίς υπερθυρεοειδισμό ή υποθυρεοειδισμό. Κανονική λειτουργία της θυρεοειδούς. Αιτίες: έλλειψη ιώδιου, γενετικοί παράγοντες.",
+        "criteriosDiagnosticos": [
+          "Αύξηση της θυρεοειδούς",
+          "Κανονική λειτουργία της θυρεοειδούς (TSH, T4 ελεύθερο)",
+          "Απсутία νόδων",
+          "Μπορεί να υπάρχουν συμπτώματα συμπίεσης"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Εάν έλλειψη ιώδιου: Πρόσθετη παροχή ιώδιου",
+            "Κλινική παρακολούθηση"
+          ],
+          "farmacologico": [
+            "Λεβοθυροξίνη αν η TSH βρίσκεται στο ανώτερο όριο (πρόληψη)",
+            "Συνήθως δεν απαιτείται θεραπεία αν η λειτουργία είναι κανονική"
+          ]
+        },
+        "redFlags": [
+          "Νόδους θυρεοειδούς",
+          "Σημαντικά συμπτώματα συμπίεσης",
+          "Αλλαγή της λειτουργίας της θυρεοειδούς",
+          "Ιστορία οικογένειας καρκίνου θυρεοειδούς"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "hipotireoidismo-subclinico",
+      "titulo": "Υποθυρεοειδημία Υποκλινική",
+      "sinonimos": [
+        "Υποκλινική δυσλειτουργία της σελίδας"
+      ],
+      "ciap2": [
+        "T86"
+      ],
+      "cid10": [
+        "E02"
+      ],
+      "cid11": [
+        "5A00.1"
+      ],
+      "doid": "DOID:0080530",
+      "snomedCT": "237519004",
+      "meshId": "D000073057",
+      "umlsCui": "C0271790",
+      "categoria": "endocrino",
+      "quickView": {
+        "definicao": "Υψηλός TSH με φυσιολογικό ελεύθερο T4. Επιπολασμός 4-10% σε ενήλικες, μεγαλύτερος σε γυναίκες και ηλικιωμένους. Πρόοδος σε υποθυρεοειδημία μανιфέστη ~2-5%/χρόνο.",
+        "criteriosDiagnosticos": [
+          "Υψηλός TSH (>4,0-4,5 mUI/L σύμφωνα με το εργαστήριο)",
+          "Φυσιολογικό ελεύθερο T4",
+          "Επιβεβαίωση με δεύτερη μέτρηση σε 2-3 μήνες",
+          "Έρευνα αντισώματος anti-TPO για την αξιολόγηση του κινδύνου πρόοδου"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Παρακολούθηση με επίβλεψη αν TSH <10 και ασυμπτωματικός",
+            "Επανάληψη TSH σε 6-12 μήνες"
+          ],
+          "farmacologico": [
+            "Θεραπεία αν TSH ≥10 mUI/L",
+            "Σκέψη για θεραπεία αν: TSH 7-10 + συμπτώματα, anti-TPO+, εγκυμοσύνη, προσπάθεια γέννησης",
+            "Levotiroxina: ξεκίνηση 25-50mcg/μέρα, προσαρμογή κάθε 6-8 εβδομάδες",
+            "Ηλικιωμένοι: ξεκίνηση με 12,5-25mcg"
+          ]
+        },
+        "redFlags": [
+          "Εγκυμοσύνη",
+          "Βότσιο μεγάλου όγκου",
+          "TSH >10",
+          "Σημαντικά συμπτώματα"
+        ],
+        "metasTerapeuticas": [
+          "TSH 0,5-4,0 mUI/L αν θεραπευτεί"
+        ],
+        "examesIniciais": [
+          "TSH",
+          "Ελεύθερο T4",
+          "Anti-TPO",
+          "Προφίλ λιπιδίων"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "levotiroxina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "σελίδα",
+        "επιμόνηση",
+        "ενδοκρινολογία"
+      ]
+    },
+    {
+      "id": "hipertireoidismo-subclinico",
+      "titulo": "Υπερυποφυσιακός Υπερθυρεοειδισμός",
+      "sinonimos": [
+        "Υπερθυρεοειδισμός υπερυποφυσιακός"
+      ],
+      "ciap2": [
+        "T85"
+      ],
+      "cid10": [
+        "E05.9"
+      ],
+      "cid11": [
+        "5A01.Z"
+      ],
+      "doid": "DOID:0080532",
+      "snomedCT": "237516002",
+      "meshId": "D000073058",
+      "umlsCui": "C0342157",
+      "categoria": "endocrino",
+      "quickView": {
+        "definicao": "Συντριμμένη TSH με φυσιολογικά ελεύθερα T4 και T3. Μπορεί να είναι ενδογενής (Graves, τοξικός κόκκλος) ή εξωγενής (υπερβολική λεβοτυροξίνη).",
+        "criteriosDiagnosticos": [
+          "TSH <0,1-0,4 mUI/L (σύμφωνα με το εργαστήριο)",
+          "Ελεύθερο T4 και ελεύθερο T3 φυσιολογικά",
+          "Βαθμός I: TSH 0,1-0,4 mUI/L",
+          "Βαθμός II: TSH <0,1 mUI/L"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Παρακολούθηση αν είναι ήπιος και ασυμπτωματικός",
+            "Έρευνα αιτίας: σκίαση, αντι-TRAB"
+          ],
+          "farmacologico": [
+            "Θεραπεία αν: >65 ετών, αρρυθμία, οστεοπόρωση, συμπτώματα",
+            "Ενδογενής αιτία: μεθιμαζόλ ή ραδιοϊόδιο",
+            "Εξωγενής αιτία: μείωση δόσης λεβοτυροξίνης",
+            "Βητα-ανταγωνιστής αν υπάρχουν αδρενεργά συμπτώματα"
+          ]
+        },
+        "redFlags": [
+          "Φιλίαση της ατρίας",
+          "Οστεοπόρωση",
+          "Καρδιακά συμπτώματα",
+          "Πρεσβύτεροι >65 ετών"
+        ],
+        "metasTerapeuticas": [
+          "Φυσιολογική TSH",
+          "Ευτυρεοειδισμός"
+        ],
+        "examesIniciais": [
+          "TSH",
+          "Ελεύθερο T4",
+          "Ελεύθερο T3",
+          "Αντι-TRAB",
+          "Σκίαση αν υποδεικτικό"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "propranolol",
+        "metimazol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "θυρεοειδής",
+        "αρρυθμία",
+        "οστεοπόρωση"
+      ]
+    },
+    {
+      "id": "cetoacidose-diabetica",
+      "titulo": "Cetoacidose Diabética",
+      "sinonimos": [
+        "CAD",
+        "Cetoacidose",
+        "Descompensação diabética aguda"
+      ],
+      "doid": "DOID:11716",
+      "snomedCT": "420422005",
+      "meshId": "D016883",
+      "umlsCui": "C0011880",
+      "ciap2": [
+        "T89"
+      ],
+      "cid10": [
+        "E10.1",
+        "E11.1",
+        "E13.1",
+        "E14.1"
+      ],
+      "cid11": [
+        "5A10.1",
+        "5A11.1"
+      ],
+      "categoria": "endocrino",
+      "quickView": {
+        "definicao": "Emergência metabólica caracterizada por hiperglicemia, acidose metabólica e cetonemia, causada por deficiência absoluta ou relativa de insulina. Mais comum em DM1, mas pode ocorrer em DM2.",
+        "criteriosDiagnosticos": [
+          "TRÍADE: Hiperglicemia + Acidose + Cetonemia",
+          "Glicemia >250 mg/dL",
+          "pH arterial <7,3",
+          "Bicarbonato <18 mEq/L",
+          "Cetonúria ++ ou cetonemia >3 mmol/L",
+          "Ânion gap aumentado (>12)",
+          "GRAVIDADE: Leve (pH 7,25-7,3), Moderada (pH 7,0-7,24), Grave (pH<7,0)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Acesso venoso calibroso (2 acessos)",
+            "Sondagem vesical de demora",
+            "Monitorização contínua",
+            "Glicemia capilar 1/1h"
+          ],
+          "farmacologico": [
+            "1. HIDRATAÇÃO (Prioridade):",
+            "SF 0,9% 1-1,5L na 1ª hora",
+            "SF 0,9% 250-500mL/h nas próximas horas",
+            "Trocar para SF 0,45% se Na corrigido >135",
+            "",
+            "2. INSULINA (após 1h de hidratação):",
+            "Insulina Regular 0,1U/kg em bolus IV",
+            "Depois: 0,1U/kg/h em BIC",
+            "Meta: queda de glicemia 50-70mg/dL/h",
+            "",
+            "3. POTÁSSIO:",
+            "K <3,3: NÃO iniciar insulina até repor K",
+            "K 3,3-5,3: KCl 20-30mEq/L no SF",
+            "K >5,3: Aguardar para repor",
+            "",
+            "4. BICARBONATO (apenas se pH<6,9):",
+            "NaHCO3 100mEq em 400mL SF em 2h"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Glicemia 150-200 mg/dL",
+          "pH >7,3",
+          "Bicarbonato >18 mEq/L",
+          "Ânion gap <12",
+          "Cetonemia <0,6 mmol/L",
+          "Potássio normal"
+        ],
+        "examesIniciais": [
+          "Glicemia",
+          "Gasometria arterial",
+          "Eletrólitos (Na, K, Cl)",
+          "Ureia, creatinina",
+          "Hemograma",
+          "EAS + cetonúria",
+          "Beta-hidroxibutirato (se disponível)",
+          "ECG (avaliar K)",
+          "Rx de tórax, culturas (se suspeita de infecção)"
+        ],
+        "redFlags": [
+          "pH <7,0 (CAD grave)",
+          "Hipocalemia grave (K<3,3)",
+          "Alteração do nível de consciência",
+          "Choque hipovolêmico",
+          "Edema cerebral (principalmente crianças)",
+          "Insuficiência renal aguda"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "~4-8 episódios/1000 diabéticos/ano",
+          "mortalidade": "<1% em centros especializados; até 5% em países em desenvolvimento",
+          "faixaEtaria": "Mais comum em jovens com DM1; primeiro diagnóstico em até 30%",
+          "fatoresRisco": [
+            "DM1 (principalmente)",
+            "Omissão ou redução de insulina",
+            "Infecções (principal precipitante)",
+            "IAM, AVC",
+            "Primeiro diagnóstico de DM",
+            "Uso de SGLT2i (CAD euglicêmica)",
+            "Uso de corticoides"
+          ],
+          "citations": [
+            {
+              "refId": "ada-diabetes-2024"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Deficiência de insulina + excesso de hormônios contrarreguladores → lipólise aumentada → excesso de ácidos graxos livres → cetogênese hepática → acúmulo de corpos cetônicos (acetoacetato, beta-hidroxibutirato) → acidose metabólica. Hiperglicemia causa diurese osmótica e desidratação.",
+          "citations": [
+            {
+              "refId": "sbd-cad-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Poliúria, polidipsia",
+            "Náuseas, vômitos, dor abdominal",
+            "Desidratação",
+            "Taquipneia (respiração de Kussmaul)",
+            "Hálito cetônico (maçã podre)",
+            "Confusão mental, letargia"
+          ],
+          "sinaisExameFisico": [
+            "Desidratação (mucosas secas, turgor diminuído)",
+            "Taquicardia, hipotensão",
+            "Respiração de Kussmaul",
+            "Hálito cetônico",
+            "Alteração do nível de consciência"
+          ],
+          "formasClinicas": [
+            "CAD leve (pH 7,25-7,3)",
+            "CAD moderada (pH 7,0-7,24)",
+            "CAD grave (pH <7,0)",
+            "CAD euglicêmica (glicemia <250, uso de SGLT2i)"
+          ],
+          "citations": [
+            {
+              "refId": "ada-diabetes-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Glicemia >250 mg/dL",
+            "pH <7,3 e/ou HCO3 <18",
+            "Cetonemia ou cetonúria",
+            "Ânion gap aumentado"
+          ],
+          "diagnosticoDiferencial": [
+            "Estado hiperglicêmico hiperosmolar",
+            "Acidose lática",
+            "Cetose de jejum",
+            "Cetoacidose alcoólica",
+            "Intoxicação (metanol, etilenoglicol, salicilatos)",
+            "Acidose urêmica"
+          ],
+          "examesLaboratoriais": [
+            "Glicemia",
+            "Gasometria arterial",
+            "Eletrólitos com cálculo de ânion gap",
+            "Beta-hidroxibutirato sérico",
+            "Ureia, creatinina",
+            "Hemograma, PCR",
+            "Amilase, lipase (se dor abdominal)",
+            "Culturas (se suspeita de infecção)"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-cad-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Correção da volemia",
+            "Correção da hiperglicemia",
+            "Correção da acidose e cetose",
+            "Correção de distúrbios eletrolíticos",
+            "Tratamento do fator precipitante"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Monitorização em UTI ou unidade intensiva",
+              "Balanço hídrico rigoroso",
+              "Glicemia capilar 1/1h",
+              "Eletrólitos e gasometria 2-4h",
+              "Identificar e tratar precipitante"
+            ],
+            "citations": [
+              {
+                "refId": "ada-diabetes-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Cristaloide",
+                "medicamentos": [
+                  "SF 0,9%"
+                ],
+                "posologia": "1-1,5L na 1ª hora; depois 250-500mL/h"
+              },
+              {
+                "classe": "Insulina",
+                "medicamentos": [
+                  "Insulina Regular IV"
+                ],
+                "posologia": "0,1U/kg bolus + 0,1U/kg/h em BIC"
+              },
+              {
+                "classe": "Potássio",
+                "medicamentos": [
+                  "KCl"
+                ],
+                "posologia": "20-40mEq/L no soro, conforme K sérico"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Glicemia <200 com acidose persistente",
+                "conduta": "Adicionar SG 5% ao SF e manter insulina"
+              },
+              {
+                "situacao": "pH <6,9",
+                "conduta": "Considerar NaHCO3 100mEq em 400mL em 2h"
+              },
+              {
+                "situacao": "K <3,3",
+                "conduta": "Adiar insulina e repor K primeiro"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbd-cad-2022"
+              }
+            ]
+          },
+          "duracao": "Até resolução da acidose e cetose (geralmente 12-24h)"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "UTI até resolução; depois endocrinologia ambulatorial",
+          "metasTerapeuticas": [
+            "Transição para insulina SC",
+            "Educação do paciente",
+            "Ajuste do esquema de insulina",
+            "Prevenção de recorrência"
+          ],
+          "criteriosEncaminhamento": [
+            "UTI se CAD grave",
+            "Endocrinologia para ajuste",
+            "Psicologia se omissão intencional de insulina"
+          ],
+          "citations": [
+            {
+              "refId": "ada-diabetes-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "cad-emergencia",
+        "insulinizacao-cad"
+      ],
+      "medicamentos": [
+        "insulina-regular",
+        "sf-0,9",
+        "kcl"
+      ],
+      "calculadoras": [
+        "anion-gap",
+        "sodio-corrigido",
+        "osmolaridade"
+      ],
+      "citations": [
+        {
+          "refId": "ada-diabetes-2024"
+        },
+        {
+          "refId": "sbd-cad-2022"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

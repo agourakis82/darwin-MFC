@@ -1,0 +1,636 @@
+{
+  "locale": "el",
+  "category": "hematologico",
+  "generatedAt": "2025-12-31T20:22:28.484Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "anemia-ferropriva",
+      "titulo": "Αναιμία λόγω έλλειψης σιδήρου",
+      "sinonimos": [
+        "Αναιμία λόγω έλλειψης σιδήρου"
+      ],
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D50"
+      ],
+      "cid11": [
+        "3A00"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:2355",
+      "snomedCT": "399096004",
+      "meshId": "D000740",
+      "umlsCui": "C0002871",
+      "hpo": [
+        "HP:0001875",
+        "HP:0001892"
+      ],
+      "tags": [
+        "hematologico",
+        "anemia",
+        "deficiencia",
+        "comum"
+      ],
+      "quickView": {
+        "definicao": "Αναιμία λόγω έλλειψης σιδήρου. Η πιο κοινή αιτία αναιμίας. Καταστροφική με μικροκυττάρια και υποχρωμικά ερυθροκύτταρα. Χαμηλή φερριτίνη, υψηλή τρανσφερίνη.",
+        "criteriosDiagnosticos": [
+          "Μικροκυττάρια υποχρωμική αναιμία",
+          "Χαμηλή φερριτίνη",
+          "Χαμηλή τρανσφερίνη/σατουράσιο τρανσφερίνης",
+          "Έρευνα της αιτίας: χρήματος ρύπανση, κακή απορρόφηση, ορεκτική έλλειψη"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Διατροφή πλούσια σε σίδηρο",
+            "Θεραπεία της υποκειμένης αιτίας (ρύπανση, κακή απορρόφηση)",
+            "Αποφυγή καφές/θείου με το φαγητό"
+          ],
+          "farmacologico": [
+            "Σουλφάτο σιδήρου 200mg (65mg σιδήρου στοιχείου) 1-2x/ημέρα",
+            "Ή Σιδήρου χηλάτο",
+            "Η συνδυασμένη χρήση βιταμίνης C μπορεί να βελτιώσει την απορρόφηση",
+            "Θεραπεία για 3-6 μήνες μετά την επαναφορά"
+          ]
+        },
+        "redFlags": [
+          "Ρύπανση από τον περιστατικό σύστημα",
+          "Παραμονή χρήματος ρύπανσης",
+          "Μη απάντηση στη θεραπεία",
+          "Κακή απορρόφηση"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anemia-megaloblastica",
+      "titulo": "Μεγαλοβλαστική Αναιμία",
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D51",
+        "D52"
+      ],
+      "cid11": [
+        "3A00",
+        "3A01"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:13636",
+      "snomedCT": "840580004",
+      "meshId": "D000749",
+      "umlsCui": "C0002878",
+      "hpo": [
+        "HP:0001875",
+        "HP:0002901"
+      ],
+      "tags": [
+        "hematologico",
+        "anemia",
+        "deficiencia"
+      ],
+      "quickView": {
+        "definicao": "Αναιμία λόγω έλλειψης B12 ή οξινικού φολικού. Μακροκυτταρικότητα, μεγαλοβλαστική μυελίτιδα. Μπορεί να παρουσιάζει νευρολογικά συμπτώματα (B12).",
+        "criteriosDiagnosticos": [
+          "Μακροκυτταρική αναιμία",
+          "Χαμηλή B12 ή χαμηλό οξινικό φολικό",
+          "Μεγαλοβλαστική μυελίτιδα",
+          "Η υψηλή LDH",
+          "Η υψηλή ομοκυστεϊνή"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Θεραπεία της αιτίας (έλλειψη θρεπτικών, κακή απορρόφηση)",
+            "Κατάλληλη διατροφή"
+          ],
+          "farmacologico": [
+            "B12: Κυανοκοβαλαμίνη IM ή PO",
+            "Οξινικό φολικό: 5mg/ημέρα"
+          ]
+        },
+        "redFlags": [
+          "Νευρολογικά συμπτώματα (B12)",
+          "Συνδυασμένη έλλειψη",
+          "Κακή απορρόφηση"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "trombocitopenia",
+      "titulo": "Trombocitopenia",
+      "sinonimos": [
+        "Plaquetopenia",
+        "PTI",
+        "Púrpura trombocitopênica imune"
+      ],
+      "doid": "DOID:1588",
+      "snomedCT": "302215000",
+      "meshId": "D013921",
+      "umlsCui": "C0040034",
+      "ciap2": [
+        "B83"
+      ],
+      "cid10": [
+        "D69.3",
+        "D69.6"
+      ],
+      "cid11": [
+        "3B64"
+      ],
+      "categoria": "hematologico",
+      "quickView": {
+        "definicao": "Redução da contagem de plaquetas <150.000/µL. Pode ser leve e assintomática ou grave com sangramento. Causas: destruição imune (PTI), consumo (CIVD, PTT), sequestro esplênico, produção diminuída.",
+        "criteriosDiagnosticos": [
+          "Plaquetas <150.000/µL (trombocitopenia)",
+          "Leve: 100.000-150.000/µL",
+          "Moderada: 50.000-100.000/µL",
+          "Grave: <50.000/µL",
+          "Muito grave: <20.000/µL (risco de sangramento espontâneo)",
+          "",
+          "PTI: Diagnóstico de exclusão (plaquetopenia isolada sem causa identificada)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Evitar medicamentos que afetam plaquetas (AAS, AINEs)",
+            "Evitar atividades com risco de trauma",
+            "Evitar procedimentos invasivos se plaquetas <50.000"
+          ],
+          "farmacologico": [
+            "PTI AGUDA (adulto com sangramento ou <20.000-30.000):",
+            "Prednisona 1-2 mg/kg/dia por 2-4 semanas, depois desmame",
+            "OU Dexametasona 40mg/dia por 4 dias (ciclos)",
+            "Imunoglobulina IV 1g/kg x1-2 dias (resposta rápida)",
+            "",
+            "PTI CRÔNICA REFRATÁRIA:",
+            "Agonistas de trombopoietina (Eltrombopag, Romiplostim)",
+            "Rituximabe",
+            "Esplenectomia"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Plaquetas >30.000/µL (seguro na maioria)",
+          "Plaquetas >50.000/µL para procedimentos",
+          "Plaquetas >100.000/µL para grandes cirurgias",
+          "Ausência de sangramento"
+        ],
+        "examesIniciais": [
+          "Hemograma completo (confirmar plaquetopenia isolada)",
+          "Esfregaço de sangue periférico (descartar pseudotrombocitopenia por aglutinação)",
+          "Coagulação (TP, TTPa)",
+          "Função hepática e renal",
+          "Sorologias: HIV, HCV, HBV",
+          "TSH",
+          "Anticorpos antiplaquetários (não sensíveis)",
+          "Mielograma se suspeita de causa central"
+        ],
+        "redFlags": [
+          "Sangramento ativo significativo",
+          "Plaquetas <10.000/µL (risco de sangramento intracraniano)",
+          "Anemia hemolítica microangiopática (esquizócitos): PTT/SHU - emergência!",
+          "Pancitopenia (doença medular)",
+          "Febre + plaquetopenia: sepse, dengue, PTT",
+          "Gestante com plaquetopenia (pré-eclâmpsia, HELLP)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "PTI: 3-4/100.000 adultos",
+          "incidencia": "PTI mais comum em crianças (pós-viral)",
+          "faixaEtaria": "Crianças: PTI aguda. Adultos: PTI crônica",
+          "fatoresRisco": [
+            "Infecções virais recentes (crianças)",
+            "Doenças autoimunes (LES)",
+            "HIV, HCV",
+            "Medicamentos (heparina, quinina, sulfas)",
+            "Gestação",
+            "Hepatopatia (sequestro esplênico)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "PTI: Autoanticorpos (IgG) contra glicoproteínas plaquetárias (GPIIb/IIIa, GPIb/IX) causam destruição de plaquetas pelo sistema reticuloendotelial (baço). Também há inibição da megacariopoiese. Outras causas: consumo (CIVD, PTT), sequestro esplênico, falência medular.",
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Frequentemente assintomática (achado incidental)",
+            "Petéquias e equimoses",
+            "Epistaxe",
+            "Gengivorragia",
+            "Menorragia",
+            "Sangramento GI ou urinário (grave)"
+          ],
+          "sinaisExameFisico": [
+            "Petéquias (principalmente em MMII)",
+            "Equimoses",
+            "Púrpura",
+            "Sangramento mucoso",
+            "AUSÊNCIA de esplenomegalia (na PTI típica)"
+          ],
+          "formasClinicas": [
+            "PTI primária (idiopática)",
+            "PTI secundária (HIV, HCV, LES, medicamentos)",
+            "PTI aguda (crianças, pós-viral)",
+            "PTI crônica (>12 meses)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Plaquetopenia isolada",
+            "Exclusão de outras causas",
+            "Esfregaço sem esquizócitos ou blastos"
+          ],
+          "diagnosticoDiferencial": [
+            "Pseudotrombocitopenia (aglutinação em EDTA)",
+            "PTT/SHU (anemia hemolítica microangiopática)",
+            "CIVD",
+            "Hiperesplenismo",
+            "Leucemia, mielodisplasia",
+            "Medicamentos (heparina)",
+            "Dengue"
+          ],
+          "examesLaboratoriais": [
+            "Hemograma + esfregaço",
+            "TP, TTPa, fibrinogênio",
+            "HIV, HCV, HBV",
+            "FAN, complemento (se suspeita de LES)",
+            "Mielograma (se atípico)",
+            "Coombs direto (se anemia)"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Prevenir sangramento",
+            "Manter plaquetas em nível seguro",
+            "Minimizar toxicidade do tratamento"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Evitar trauma",
+              "Suspender medicamentos antiagregantes",
+              "Watchful waiting se assintomático e plaquetas >30.000"
+            ],
+            "citations": [
+              {
+                "refId": "ash-itp-2019"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Corticoide",
+                "medicamentos": [
+                  "Prednisona",
+                  "Dexametasona"
+                ],
+                "posologia": "Prednisona 1-2mg/kg/dia por 2-4 semanas, desmame. OU Dexametasona 40mg/dia x4 dias."
+              },
+              {
+                "classe": "Imunoglobulina IV (resposta rápida)",
+                "medicamentos": [
+                  "IVIg"
+                ],
+                "posologia": "1g/kg x1-2 dias. Resposta em 24-48h. Temporária."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Agonista de trombopoietina",
+                "medicamentos": [
+                  "Eltrombopag",
+                  "Romiplostim"
+                ],
+                "posologia": "Eltrombopag 50mg/dia VO. Romiplostim SC semanal. PTI crônica."
+              },
+              {
+                "classe": "Rituximabe",
+                "medicamentos": [
+                  "Rituximabe"
+                ],
+                "posologia": "375 mg/m² semanal x4 doses. Resposta em semanas."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Sangramento ativo grave",
+                "conduta": "IVIg + Corticoide + Transfusão de plaquetas + Ácido tranexâmico."
+              },
+              {
+                "situacao": "Gestante",
+                "conduta": "IVIg preferível a corticoide. Plaquetas >30.000 para parto vaginal, >50.000 para cesárea."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ash-itp-2019"
+              }
+            ]
+          },
+          "duracao": "Conforme resposta. Agonistas TPO podem ser necessários cronicamente."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Semanal até estabilização, depois mensal",
+          "examesControle": [
+            "Hemograma seriado",
+            "Esfregaço se mudança clínica"
+          ],
+          "metasTerapeuticas": [
+            "Plaquetas >30.000 estáveis",
+            "Ausência de sangramento"
+          ],
+          "criteriosEncaminhamento": [
+            "PTI crônica ou refratária",
+            "Necessidade de esplenectomia",
+            "Candidato a agonista TPO ou rituximabe",
+            "Sangramento grave"
+          ],
+          "citations": [
+            {
+              "refId": "ash-itp-2019"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Não há prevenção primária"
+          ],
+          "secundaria": [
+            "Evitar gatilhos",
+            "Manter plaquetas em nível seguro"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "prednisona",
+        "dexametasona",
+        "imunoglobulina-iv",
+        "eltrombopag"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ash-itp-2019"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "trombocitopenia",
+        "pti",
+        "plaqueta",
+        "purpura",
+        "sangramento"
+      ]
+    },
+    {
+      "id": "anemia-ferropriva-pediatrica",
+      "titulo": "Σιδεροαναιμία στην παιδική ηλικία",
+      "ciap2": [
+        "B80"
+      ],
+      "cid10": [
+        "D50"
+      ],
+      "cid11": [
+        "3A00"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:11758",
+      "snomedCT": "87522002",
+      "meshId": "D018798",
+      "umlsCui": "C0085576",
+      "quickView": {
+        "definicao": "Η πιο συχνή αναιμία στην παιδική ηλικία. Επιπολασμός 20-30% σε παιδιά <5 ετών στο Βραζιλ. Αιτία: ανισορροπία προσφοράς/ζήτησης σιδήρου.",
+        "criteriosDiagnosticos": [
+          "Ηματοκρίνη <11g/dL (6m-5a) ή <11,5g/dL (5-11a)",
+          "Χαμηλό MCV (μικροκυτταρικότητα)",
+          "Υψηλό RDW (ανισοκυτταρικότητα)",
+          "Σιδεροπλάσματο <12ng/mL (ή <30 αν υπάρχει φλεγμονή)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Διατροφή πλούσια σε σίδηρο",
+            "Βιταμίνη C με το φαγητό",
+            "Αποφυγή υπερκατανάλωσης γάλακτος βοού"
+          ],
+          "farmacologico": [
+            "Σουλφάτο σιδήρου 3-5mg/kg/ημέρα σιδηρού στοιχείου",
+            "Μακριά από το φαγητό",
+            "Διάρκεια: 3-6 μήνες (ανατροφοδότηση αποθεμάτων)"
+          ]
+        },
+        "redFlags": [
+          "Σοβαρή αναιμία (Ηματοκρίνη <7)",
+          "Άνευ απάντησης στη θεραπεία",
+          "Νευρολογικά συμπτώματα",
+          "Αίματος στο γαστρεντερικό σύστημα"
+        ]
+      },
+      "medicamentos": [
+        "sulfato-ferroso"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "anemia-hemolitica",
+      "titulo": "Ημολυτική Αναιμία",
+      "ciap2": [
+        "B82"
+      ],
+      "cid10": [
+        "D59"
+      ],
+      "cid11": [
+        "3A10"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:9538",
+      "snomedCT": "955009",
+      "meshId": "D000743",
+      "umlsCui": "C0002878",
+      "tags": [
+        "hematologico",
+        "anemia"
+      ],
+      "quickView": {
+        "definicao": "Αναιμία λόγω αυξημένης ημολύσης. Μπορεί να είναι αυτοάνοσα, κληρονομημένη ή επίκτητη.",
+        "criteriosDiagnosticos": [
+          "Αναιμία",
+          "Αύξηση των ρετικοκυττάρων",
+          "Η υψηλή LDH",
+          "Η υψηλή ημολυτική βιλιρούβινη",
+          "Χαμηλή απορρόφηση αιμοσφαιρίνης"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Θεραπεία της βασικής αιτίας",
+            "Αποφυγή των παρακινητών"
+          ],
+          "farmacologico": [
+            "Κορτικοστεροειδή ανά ορισμόν αν είναι αυτοάνοσα",
+            "Μεταφορά αίματος αν είναι συμπτωματική"
+          ]
+        },
+        "redFlags": [
+          "Απλαστική κρίση",
+          "Ενδιάφερη νεφρική ανεπάρκεια",
+          "Συνδρομή υπεραναιμοκόγκυλης"
+        ]
+      },
+      "medicamentos": [
+        "prednisona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "leucemia-linfocitica-cronica",
+      "titulo": "Λευκαιμία Λεμφοκυτταρική Χρόνια",
+      "ciap2": [
+        "B73"
+      ],
+      "cid10": [
+        "C91.1"
+      ],
+      "cid11": [
+        "2A82.0"
+      ],
+      "categoria": "hematologico",
+      "doid": "DOID:8552",
+      "snomedCT": "91857009",
+      "meshId": "D015451",
+      "umlsCui": "C0023418",
+      "tags": [
+        "hematologico",
+        "νεοπλασία",
+        "χρόνια"
+      ],
+      "quickView": {
+        "definicao": "Νεοπλασία μεγάλων λεμφοκυττάρων B. Πιο κοινή σε γέροντες. Γενικά αναπτύσσεται αναπτυσσόμενη.",
+        "criteriosDiagnosticos": [
+          "Λεμφοκυτταρία >5000/μL",
+          "Συμβατή μορφολογία",
+          "Χαρακτηριστικός ιμμουνοφαινοτύπος"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Παρακολούθηση αν άσυμπτωματικός και σταθερός",
+            "Ονκοαιματολογική παρακολούθηση"
+          ],
+          "farmacologico": [
+            "Θεραπεία μόνο αν συμπτωματικός ή προοδευτικός",
+            "Χημειοθεραπεία σύμφωνα με την κατάσταση"
+          ]
+        },
+        "redFlags": [
+          "Ημοποιητικές ανεπάρκειες",
+          "Εξυπερβολικά μεγάλα λεμφοκυτταρικά κόκκαλα",
+          "Οργανομεγαλία",
+          "Επαναλαμβανόμενες επισκίδες"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "deficiencia-vitamina-b12",
+      "titulo": "Ζωηλούρεια Β12",
+      "sinonimos": [
+        "Υποζωηλούρεια Β12",
+        "Ζωηλούρεια κομβαλαμίνης"
+      ],
+      "ciap2": [
+        "B81"
+      ],
+      "cid10": [
+        "E53.8"
+      ],
+      "cid11": [
+        "5B5C"
+      ],
+      "doid": "DOID:13381",
+      "snomedCT": "190634004",
+      "meshId": "D014806",
+      "umlsCui": "C0042847",
+      "categoria": "hematologico",
+      "quickView": {
+        "definicao": "Ζωηλούρεια κομβαλαμίνης που προκαλεί μεγαλοβλαστική αναιμία και νευρολογικές εκδηλώσεις. Κοινή σε γηρική ηλικία, υπηρετικούς και χρόνια χρήση μετφορμίνης/ΙΒΠ.",
+        "criteriosDiagnosticos": [
+          "Ημιδανούρεια Β12 <200 pg/mL: ζωηλούρεια",
+          "Ημιδανούρεια Β12 200-300 pg/mL: ζώνη γκρέι - μέτρηση MMA και ωμοκυστεΐνης",
+          "MCV >100 fL (μεγάλη αναιμία)",
+          "Νευρολογικά συμπτώματα: παραισθήσεις, αταξία, γνωσιακή αλλαγή"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Έρευνα αιτίας: διατροφή, περνική αναιμία, ατροφική γαστρίτιδα",
+            "Διατροφική κατεύθυνση για υπηρετικούς"
+          ],
+          "farmacologico": [
+            "Ζωηλούρεια σοβαρή/νευρολογικά συμπτώματα: Κυανοκομβαλαμίνη 1000mcg IM 1x/ημέρα για 7 ημέρες, μετά εβδομαδιαία για 4 εβδ., μετά μηνιαία",
+            "Ζωηλούρεια ελαφρή: Κυανοκομβαλαμίνη οραλή 1000-2000mcg/ημέρα",
+            "Ζωήσιμη διατήρηση αν περνική αναιμία"
+          ]
+        },
+        "redFlags": [
+          "Πανκυτοπενία",
+          "Σοβαρά νευρολογικά συμπτώματα",
+          "Γρήγορη γνωσιακή υποβάθμιση"
+        ],
+        "metasTerapeuticas": [
+          "Ημιδανούρεια Β12 >400 pg/mL",
+          "Επίλυση της αναιμίας",
+          "Βελτίωση των νευρολογικών συμπτωμάτων"
+        ],
+        "examesIniciais": [
+          "Ηματογράφημα με MCV",
+          "Ημιδανούρεια Β12",
+          "Ρετικουλοκύτταρα",
+          "LDH",
+          "Αμινοζωηλούρεια"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "cianocobalamina"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "anemia",
+        "neurologia",
+        "idoso"
+      ]
+    }
+  ]
+}

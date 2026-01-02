@@ -1,0 +1,2411 @@
+{
+  "locale": "el",
+  "category": "neurologico",
+  "generatedAt": "2026-01-01T17:26:28.988Z",
+  "count": 18,
+  "diseases": [
+    {
+      "id": "enxaqueca",
+      "titulo": "Enxaqueca (Migrânea)",
+      "sinonimos": [
+        "Migrânea",
+        "Dor de cabeça",
+        "Migraine"
+      ],
+      "doid": "DOID:6364",
+      "snomedCT": "37796009",
+      "meshId": "D008881",
+      "umlsCui": "C0149931",
+      "ciap2": [
+        "N89"
+      ],
+      "cid10": [
+        "G43",
+        "G43.0",
+        "G43.1",
+        "G43.9"
+      ],
+      "cid11": [
+        "8A80"
+      ],
+      "categoria": "neurologico",
+      "quickView": {
+        "definicao": "Cefaleia primária recorrente, caracterizada por crises de dor pulsátil, geralmente unilateral, de intensidade moderada a grave, associada a náuseas, fotofobia e fonofobia. Pode ser precedida por aura.",
+        "criteriosDiagnosticos": [
+          "CRITéRIOS ICHD-3 (Enxaqueca sem aura):",
+          "≥5 crises com duraÃo de 4-72 horas",
+          "≥2: unilateral, pulsátil, moderada/grave, piora com atividade fízica",
+          "≥1: náusea/vômito, fotofobia E fonofobia",
+          "Não atribuível a outra doenÇa",
+          "",
+          "AURA: Sintomas visuais, sensitivos ou de fala totalmente reversíveis (5-60 min)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Identificar e evitar gatilhos (estresse, jejum, privaÇão de sono, álcool)",
+            "Higiene do sono",
+            "Atividade fízica regular",
+            "Técnicas de relaxamento",
+            "Diário de cefaleia"
+          ],
+          "farmacologico": [
+            "CRISE (abortivo):",
+            "Analgésicos simples: Paracetamol 1g ou Dipirona 1g (crises leves)",
+            "AINEs: Ibuprofeno 400-600mg ou Naproxeno 500-550mg",
+            "Triptanos (moderada/grave): Sumatriptano 50-100mg VO ou 6mg SC",
+            "",
+            "PROFILAXIA (≥4 crises/mês ou incapacitantes):",
+            "Propranolol 40-160mg/dia ou Amitriptilina 25-75mg/noite",
+            "Topiramato 50-100mg/dia ou Valproato 500-1500mg/dia"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Redução de ≥50% na frequência das crises",
+          "Redução da intensidade e duraÃo das crises",
+          "Melhora da qualidade de vida (MIDAS/HIT-6)",
+          "Evitar cefaleia por uso excessivo de analgésicos"
+        ],
+        "examesIniciais": [
+          "Diagnóstico clínico (não há exame específico)",
+          "Neuroimagem (TC/RM) se: início >50 anos, cefaleia atípica, sinais neurológicos focais, mudança no padrão, cefaleia em trovão"
+        ],
+        "redFlags": [
+          "Cefaleia \"a pior da vida\" ou em trovão (HSA)",
+          "Sinais neurológicos focais persistentes",
+          "Febre + rigidez de nuca (meningite)",
+          "Papiledema (HIC)",
+          "Mudança súbita do padrão de cefaleia",
+          "Início após 50 anos (arterite temporal)",
+          "Imunossupressão ou câncer"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "15% das mulheres, 6% dos homens",
+          "incidencia": "Pico na 3ª-4ª década de vida",
+          "faixaEtaria": "Início geralmente na adolescência/adulto jovem",
+          "fatoresRisco": [
+            "Sexo feminino (3:1)",
+            "História familiar (40-60%)",
+            "Alterações hormonais (menstruação, pílula)",
+            "Estresse",
+            "Distúrbios do sono",
+            "Obesidade"
+          ],
+          "citations": [
+            {
+              "refId": "ichd-3"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Envolve ativação do sistema trigeminovascular, com liberação de neuropeptídeos vasoativos (CGRP) e inflamação neurogênica. Depressão alastrante cortical explica a aura. Sensibilização central contribui para cronicidade.",
+          "citations": [
+            {
+              "refId": "ichd-3"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Dor pulsátil, geralmente hemicraniana",
+            "Intensidade moderada a grave",
+            "Duração 4-72 horas",
+            "Náuseas e/ou vômitos",
+            "Fotofobia e fonofobia",
+            "Piora com atividade física rotineira"
+          ],
+          "sinaisExameFisico": [
+            "Exame neurológico normal entre crises",
+            "Pode haver alodinia cutânea durante crise",
+            "Aura visual (escotomas, fosfenos, hemianopsia)"
+          ],
+          "formasClinicas": [
+            "Enxaqueca sem aura (mais comum)",
+            "Enxaqueca com aura",
+            "Enxaqueca crônica (≥15 dias/mês por >3 meses)",
+            "Enxaqueca menstrual",
+            "Enxaqueca vestibular"
+          ],
+          "citations": [
+            {
+              "refId": "ichd-3"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Critérios ICHD-3 (clínicos)",
+            "Diário de cefaleia para caracterização",
+            "Neuroimagem para excluir causas secundárias"
+          ],
+          "diagnosticoDiferencial": [
+            "Cefaleia tensional",
+            "Cefaleia em salvas",
+            "Cefaleia por uso excessivo de medicamentos",
+            "Hemorragia subaracnoidea",
+            "Arterite temporal",
+            "Tumor cerebral",
+            "Trombose venosa cerebral"
+          ],
+          "examesLaboratoriais": [
+            "Não há exame laboratorial diagnóstico",
+            "Hemograma, VHS se suspeita de arterite temporal",
+            "Punção lombar se suspeita de HSA ou meningite"
+          ],
+          "citations": [
+            {
+              "refId": "ichd-3"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Abortar crise rapidamente",
+            "Reduzir frequência e gravidade",
+            "Melhorar qualidade de vida",
+            "Prevenir cronicidade"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Evitar gatilhos identificados",
+              "Regularidade de sono e alimentação",
+              "Exercício físico regular",
+              "Técnicas de relaxamento/biofeedback",
+              "TCC para manejo do estresse"
+            ],
+            "citations": [
+              {
+                "refId": "abs-cefaleia-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Analgésico/AINE (crises leves-moderadas)",
+                "medicamentos": [
+                  "Paracetamol",
+                  "Dipirona",
+                  "Ibuprofeno",
+                  "Naproxeno"
+                ],
+                "posologia": "Ibuprofeno 400-600mg ou Naproxeno 500mg. Precocemente na crise."
+              },
+              {
+                "classe": "Triptano (crises moderadas-graves)",
+                "medicamentos": [
+                  "Sumatriptano",
+                  "Rizatriptano",
+                  "Zolmitriptano"
+                ],
+                "posologia": "Sumatriptano 50-100mg VO, pode repetir após 2h (máx 200mg/dia)."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Profilático betabloqueador",
+                "medicamentos": [
+                  "Propranolol",
+                  "Atenolol"
+                ],
+                "posologia": "Propranolol 40-160mg/dia. CI: asma, bradicardia."
+              },
+              {
+                "classe": "Profilático antidepressivo",
+                "medicamentos": [
+                  "Amitriptilina",
+                  "Nortriptilina"
+                ],
+                "posologia": "Amitriptilina 25-75mg à noite. Bom se insônia ou depressão."
+              },
+              {
+                "classe": "Profilático anticonvulsivante",
+                "medicamentos": [
+                  "Topiramato",
+                  "Valproato"
+                ],
+                "posologia": "Topiramato 50-100mg/dia. Pode causar perda de peso."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Enxaqueca crônica refratária",
+                "conduta": "Toxina botulínica tipo A. Anticorpos anti-CGRP (erenumabe, fremanezumabe)."
+              },
+              {
+                "situacao": "Gestante",
+                "conduta": "Paracetamol como analgésico. Propranolol pode ser usado como profilático. Evitar ergotamínicos e AINEs no 3º trimestre."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "abs-cefaleia-2022"
+              }
+            ]
+          },
+          "duracao": "Profilaxia: mínimo 6 meses, desmame gradual."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Mensal até controle, depois a cada 3-6 meses",
+          "examesControle": [
+            "Diário de cefaleia",
+            "Escalas de incapacidade (MIDAS, HIT-6)"
+          ],
+          "metasTerapeuticas": [
+            "Redução ≥50% das crises",
+            "MIDAS <11 (incapacidade leve)"
+          ],
+          "criteriosEncaminhamento": [
+            "Refratário a ≥2 profiláticos",
+            "Enxaqueca crônica",
+            "Sinais de alarme",
+            "Necessidade de anti-CGRP"
+          ],
+          "citations": [
+            {
+              "refId": "abs-cefaleia-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Estilo de vida saudável",
+            "Gerenciamento do estresse"
+          ],
+          "secundaria": [
+            "Identificar e evitar gatilhos",
+            "Profilaxia medicamentosa quando indicada"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "cefaleia-alarme"
+      ],
+      "medicamentos": [
+        "sumatriptano",
+        "ibuprofeno",
+        "propranolol",
+        "amitriptilina",
+        "topiramato"
+      ],
+      "calculadoras": [
+        "midas",
+        "hit-6"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ichd-3"
+        },
+        {
+          "refId": "abs-cefaleia-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "enxaqueca",
+        "cefaleia",
+        "migranea",
+        "triptano",
+        "profilaxia"
+      ]
+    },
+    {
+      "id": "cefaleia-tensional",
+      "titulo": "Κεφαλαλγία Τενσιογενής",
+      "categoria": "neurologico",
+      "cid10": [
+        "G44.2"
+      ],
+      "cid11": [
+        "8A81"
+      ],
+      "ciap2": [
+        "N89"
+      ],
+      "snomedCT": "398057008",
+      "doid": "DOID:9565",
+      "meshId": "D018781",
+      "umlsCui": "C0033893",
+      "classificacao": {
+        "tipo": "κεφαλαλγία",
+        "subtipo": "πρωταρχική",
+        "classificacaoEspecifica": {
+          "sistema": "ICHD-3",
+          "codigo": "2.1",
+          "descricao": "Κεφαλαλγία τενσιογενής επεισόδια"
+        }
+      },
+      "quickView": {
+        "definicao": "Πρωταρχική κεφαλαλγία χαρακτηριζόμενη από πόνο με πίεση/συμπεριλήψη, διπλόπλευρη, ήπια μέχρι μέτρια, μη επιδεινωμένη από φυσική δραστηριότητα.",
+        "criteriosDiagnosticos": [
+          "≥10 επεισόδια κεφαλαλγίας",
+          "Διάρκεια: 30 λεπτά έως 7 ημέρες",
+          "≥2: διπλόπλευρη, ποιότητα πίεσης/συμπεριλήψης, ήπια-μέτρια ένταση, μη επιδεινωμένη από φυσική δραστηριότητα",
+          "Χωρίς νόστια/βρωμορροΐα",
+          "Φωτοφοβία Ή φωνοφοβία (αλλά όχι και τα δύο)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Αναγνώριση και μείωση των επιθετικών παραγόντων",
+            "Τεχνικές ξεστρεσαρίσματος",
+            "Φυσικοθεραπεία για την τενσιογενή μυϊκή άνοιξη",
+            "Κανονική φυσική δραστηριότητα"
+          ],
+          "farmacologico": [
+            "Κρίση: Παρακεταμόλ 1g ή ΑΙΝΕs (Ιμπιρούφενο 400mg, Ναπροξένη 500mg)",
+            "Πρόληψη (αν συχνή): Αμιτριπτιλίνη 10-75mg/ημέρα"
+          ]
+        },
+        "redFlags": [
+          "Κεφαλαλγία με αιφνιδιαίο και σοβαρό έναρξη (υποαραχνοειδής αίμωση)",
+          "Κεφαλαλγία με πυρετό και σκληρότητα του ανατρώγονου (μενιγγίτιδα)",
+          "Κεφαλαλγία που επιδεινώνεται το πρωί (υπερτάση του εγκεφάλου)",
+          "Αλλαγή στο μοτίβο της κεφαλαλγίας"
+        ],
+        "examesIniciais": [
+          "Ολοκληρωμένη νευρολογική εξέταση",
+          "Αρτηριακή πίεση"
+        ]
+      },
+      "sinaisNeurologicos": [
+        "Τενσιογενής μυϊκή άνοιξη περικρανιακή",
+        "Ηλεκτρική αίσθηση κατά την αποσκευασία"
+      ],
+      "tags": [
+        "κεφαλαλγία",
+        "τενσιογενής",
+        "πρωταρχική",
+        "αμιτριπτιλίνη"
+      ]
+    },
+    {
+      "id": "acidente-vascular-cerebral",
+      "titulo": "Acidente Vascular Cerebral Isquêmico",
+      "sinonimos": [
+        "AVC",
+        "AVCi",
+        "Derrame",
+        "Stroke",
+        "Infarto cerebral"
+      ],
+      "doid": "DOID:3455",
+      "snomedCT": "422504002",
+      "meshId": "D002544",
+      "umlsCui": "C0038454",
+      "ciap2": [
+        "K90"
+      ],
+      "cid10": [
+        "I63",
+        "I64"
+      ],
+      "cid11": [
+        "8B11"
+      ],
+      "categoria": "neurologico",
+      "quickView": {
+        "definicao": "Déficit neurológico focal de início súbito causado por isquemia cerebral (oclusão arterial por trombose ou embolia). Emergência médica - “tempo é cérebro”. Tratável com trombólise se <4,5h do início.",
+        "criteriosDiagnosticos": [
+          "Déficit neurológico focal de início súbito:",
+          "Hemiparesia/hemiplegia",
+          "Alteração de fala (afasia, disartria)",
+          "Alteração visual (hemianopsia)",
+          "Ataxia, vertigem",
+          "",
+          "TC de crânio sem contraste: exclui hemorragia, pode mostrar sinais precoces de isquemia"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "EMERGÊNCIA: Chamar SAMU (192)",
+            "Tempo de início dos sintomas (fundamental!)",
+            "Manter via aérea pérvia",
+            "Oximetria, monitorização",
+            "Glicemia capilar (tratar hipo/hiperglicemia)",
+            "Não baixar PA agressivamente (exceto se >220/120)"
+          ],
+          "farmacologico": [
+            "TROMBÓLISE IV (se <4,5h do início e sem CI):",
+            "Alteplase (rtPA) 0,9 mg/kg (máx 90mg) - 10% bolus + 90% em 1h",
+            "",
+            "TROMBECTOMIA MECÂNICA: até 24h em casos selecionados (oclusão de grande vaso)",
+            "",
+            "PREVENÇÃO SECUNDÁRIA:",
+            "AAS 100-300mg/dia + Estatina alta potência",
+            "Anticoagulação se FA (após 2-14 dias): Apixabana, Rivaroxabana"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Porta-agulha <60 min (trombólise)",
+          "Minimizar déficit neurológico residual",
+          "Prevenir complicações (pneumonia, TVP)",
+          "Prevenir recorrência"
+        ],
+        "examesIniciais": [
+          "TC de crânio sem contraste (IMEDIATA)",
+          "Glicemia capilar",
+          "ECG (FA?)",
+          "TP, TTPa, plaquetas (antes de trombolítico)",
+          "Hemograma, eletrólitos, função renal",
+          "AngioTC se candidato a trombectomia"
+        ],
+        "redFlags": [
+          "ESTES SÃO OS RED FLAGS - AVC É SEMPRE EMERGÊNCIA",
+          "Qualquer déficit neurológico súbito = AVC até prova em contrário",
+          "FAST: Face (assimetria), Arms (fraqueza braço), Speech (fala arrastada), Time (ligar 192)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2-3% da população já teve AVC",
+          "incidencia": "200-300 casos/100.000 habitantes/ano no Brasil",
+          "faixaEtaria": "Aumenta com idade, mas pode ocorrer em jovens",
+          "fatoresRisco": [
+            "Hipertensão arterial (principal - 70% dos AVCs)",
+            "Fibrilação atrial (cardioembólico)",
+            "Diabetes mellitus",
+            "Dislipidemia",
+            "Tabagismo",
+            "Obesidade",
+            "Sedentarismo",
+            "AVC prévio ou AIT"
+          ],
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Oclusão arterial (trombótica ou embólica) causa isquemia do território irrigado. Núcleo isquêmico sofre necrose rapidamente. Penumbra isquêmica é potencialmente salvável com reperfusão precoce. Cascata isquêmica com excitotoxicidade, inflamação e apoptose.",
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Hemiparesia ou hemiplegia súbita",
+            "Alteração de fala (afasia, disartria)",
+            "Hemianestesia",
+            "Hemianopsia",
+            "Confusão mental",
+            "Ataxia, vertigem (AVC de fossa posterior)"
+          ],
+          "sinaisExameFisico": [
+            "Déficit motor assimétrico",
+            "Reflexos alterados (hiperreflexia, Babinski)",
+            "Paralisia facial central",
+            "Desvio do olhar conjugado",
+            "Alteração de sensibilidade",
+            "NIHSS para quantificar gravidade"
+          ],
+          "formasClinicas": [
+            "AVC isquêmico (85%): territorial, lacunar, hemodinâmico",
+            "AVC hemorrágico (15%): hemorragia intraparenquimatosa, HSA",
+            "AIT: déficit <24h (geralmente minutos), sem lesão em imagem"
+          ],
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Clínico + neuroimagem",
+            "TC sem contraste: exclui hemorragia",
+            "RM (difusão): mais sensível para isquemia precoce"
+          ],
+          "diagnosticoDiferencial": [
+            "Hipoglicemia",
+            "Crise epiléptica (paralisia de Todd)",
+            "Enxaqueca com aura",
+            "Tumor cerebral",
+            "Encefalite",
+            "Conversão"
+          ],
+          "examesLaboratoriais": [
+            "Glicemia (obrigatório antes de trombolítico)",
+            "Hemograma, coagulação, função renal",
+            "ECG, ecocardiograma",
+            "Doppler de carótidas",
+            "Holter se suspeita de FA paroxística"
+          ],
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Reperfusão precoce",
+            "Minimizar lesão cerebral",
+            "Prevenir complicações",
+            "Reabilitar"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Unidade de AVC (reduz mortalidade)",
+              "Posicionamento (cabeceira 30°)",
+              "Prevenção de broncoaspiração",
+              "Fisioterapia precoce",
+              "Fonoaudiologia (disfagia)",
+              "Controle de temperatura e glicemia"
+            ],
+            "citations": [
+              {
+                "refId": "aha-stroke-2019"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Trombólise IV",
+                "medicamentos": [
+                  "Alteplase"
+                ],
+                "posologia": "rtPA 0,9 mg/kg (máx 90mg). 10% bolus, 90% em 1h. Janela <4,5h."
+              },
+              {
+                "classe": "Antiagregante plaquetário",
+                "medicamentos": [
+                  "AAS",
+                  "Clopidogrel"
+                ],
+                "posologia": "AAS 100-300mg/dia. Se não trombólise: iniciar em 24-48h."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Estatina de alta potência",
+                "medicamentos": [
+                  "Atorvastatina",
+                  "Rosuvastatina"
+                ],
+                "posologia": "Atorvastatina 40-80mg/dia. Iniciar precocemente."
+              },
+              {
+                "classe": "Anticoagulante (se FA)",
+                "medicamentos": [
+                  "Apixabana",
+                  "Rivaroxabana",
+                  "Dabigatrana"
+                ],
+                "posologia": "Iniciar após 2-14 dias (conforme tamanho do AVC). Apixabana 5mg 12/12h."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Oclusão de grande vaso",
+                "conduta": "Trombectomia mecânica até 24h (seleção por imagem)."
+              },
+              {
+                "situacao": "AVC hemorrágico",
+                "conduta": "Controle de PA, reverter anticoagulação, neurocirurgia se indicado."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "aha-stroke-2019"
+              }
+            ]
+          },
+          "duracao": "Prevenção secundária: indefinida."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Mensal nos primeiros 3 meses, depois trimestral",
+          "examesControle": [
+            "RM de controle",
+            "Doppler de carótidas",
+            "Perfil lipídico",
+            "HbA1c, PA"
+          ],
+          "metasTerapeuticas": [
+            "PA <130/80 mmHg",
+            "LDL <70 mg/dL",
+            "HbA1c <7%",
+            "Ausência de recorrência"
+          ],
+          "criteriosEncaminhamento": [
+            "Neurologia para todos",
+            "Reabilitação multidisciplinar",
+            "Cirurgia vascular se estenose carotídea >70%"
+          ],
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Controle de HAS, DM, dislipidemia",
+            "Cessação do tabagismo",
+            "Anticoagulação se FA"
+          ],
+          "secundaria": [
+            "Antiagregantes ou anticoagulantes",
+            "Estatinas",
+            "Controle intensivo de fatores de risco"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "nihss",
+        "avc-agudo"
+      ],
+      "medicamentos": [
+        "alteplase",
+        "aas",
+        "clopidogrel",
+        "atorvastatina",
+        "apixabana"
+      ],
+      "calculadoras": [
+        "nihss",
+        "cha2ds2-vasc",
+        "has-bled"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "aha-stroke-2019"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "avc",
+        "derrame",
+        "stroke",
+        "trombólise",
+        "emergência"
+      ]
+    },
+    {
+      "id": "epilepsia",
+      "titulo": "Epilepsia",
+      "sinonimos": [
+        "Convulsão",
+        "Crises epilépticas",
+        "Síndrome epiléptica"
+      ],
+      "doid": "DOID:1826",
+      "snomedCT": "84757009",
+      "meshId": "D004827",
+      "umlsCui": "C0014544",
+      "ciap2": [
+        "N88"
+      ],
+      "cid10": [
+        "G40",
+        "G41"
+      ],
+      "cid11": [
+        "8A60"
+      ],
+      "categoria": "neurologico",
+      "quickView": {
+        "definicao": "Doença cerebral caracterizada por predisposição persistente a gerar crises epilépticas e pelas consequências neurobiológicas, cognitivas, psicológicas e sociais. Diagnóstico: ≥2 crises não provocadas com intervalo >24h, ou 1 crise + risco de recorrência >60%.",
+        "criteriosDiagnosticos": [
+          "DEFINIÇÃO ILAE 2014:",
+          "≥2 crises não provocadas (ou reflexas) com intervalo >24h, OU",
+          "1 crise não provocada + probabilidade de recorrência ≥60% (ex: lesão estrutural, EEG epileptiforme), OU",
+          "Diagnóstico de síndrome epiléptica"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Educação sobre a doença",
+            "Evitar privação de sono e álcool",
+            "Segurança (banho com porta aberta, não nadar sozinho)",
+            "Restrição para dirigir (conforme legislação)"
+          ],
+          "farmacologico": [
+            "CRISES FOCAIS: Carbamazepina 400-1200mg/dia ou Lamotrigina 100-400mg/dia",
+            "CRISES GENERALIZADAS: Valproato 500-2000mg/dia (cuidado em mulheres) ou Lamotrigina",
+            "IDOSO: Lamotrigina ou Levetiracetam (menos interações)",
+            "Iniciar com dose baixa, titular lentamente",
+            "Monoterapia sempre que possível"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Controle total de crises (70% dos pacientes)",
+          "Mínimo de efeitos adversos",
+          "Manter qualidade de vida",
+          "Possibilitar retirada da medicação (casos selecionados)"
+        ],
+        "examesIniciais": [
+          "EEG (interictal pode ser normal)",
+          "RM de crânio (protocolo para epilepsia)",
+          "Exames laboratoriais básicos (eletrólitos, glicemia, função hepática/renal)",
+          "ECG (síndrome de QT longo)",
+          "Considerar vídeo-EEG se dúvida diagnóstica"
+        ],
+        "redFlags": [
+          "Estado de mal epiléptico (crise >5 min ou crises subentrantes)",
+          "Primeira crise em adulto (investigar causa)",
+          "Crises refratárias (falha ≥2 antiepilépticos)",
+          "Déficit neurológico pós-ictal prolongado",
+          "Suspeita de lesão estrutural (tumor, AVC)"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "0,5-1% da população",
+          "incidencia": "50-70 novos casos/100.000 pessoas-ano",
+          "faixaEtaria": "Bimodal: infância e >60 anos",
+          "fatoresRisco": [
+            "Lesão cerebral estrutural (AVC, TCE, tumor)",
+            "Infecção do SNC (meningite, encefalite)",
+            "História familiar de epilepsia",
+            "Anomalias do desenvolvimento cortical",
+            "Esclerose mesial temporal",
+            "Doenças neurodegenerativas"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Descargas neuronais excessivas e hipersincronizadas resultantes de desequilíbrio entre excitação (glutamato) e inibição (GABA). Pode originar-se de foco cortical (focal) ou envolver ambos hemisférios desde o início (generalizada).",
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Crises focais: aura, automatismos, alteração de consciência",
+            "Crises generalizadas tônico-clônicas: perda de consciência, rigidez, abalos",
+            "Ausências: breve perda de consciência, olhar vago",
+            "Crises mioclônicas: abalos súbitos breves",
+            "Período pós-ictal: confusão, sonolência, cefaleia"
+          ],
+          "sinaisExameFisico": [
+            "Exame interictal geralmente normal",
+            "Pode haver déficits focais (lesão estrutural)",
+            "Mordedura lateral de língua (sugestivo de CTCG)",
+            "Incontinência urinária"
+          ],
+          "formasClinicas": [
+            "Epilepsia focal (temporal, frontal, etc.)",
+            "Epilepsia generalizada genética",
+            "Epilepsia combinada focal e generalizada",
+            "Síndromes epilépticas (Lennox-Gastaut, West, Dravet, etc.)"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Critérios ILAE 2014",
+            "EEG (pode ser normal em até 50% no primeiro exame)",
+            "RM para investigar etiologia estrutural"
+          ],
+          "diagnosticoDiferencial": [
+            "Síncope",
+            "Crise psicogênica não epiléptica (CPNE)",
+            "Distúrbios do movimento",
+            "Enxaqueca com aura",
+            "AIT",
+            "Parassonias"
+          ],
+          "examesLaboratoriais": [
+            "EEG (ictal/interictal)",
+            "RM de crânio",
+            "Vídeo-EEG (casos duvidosos ou pré-cirúrgicos)",
+            "Exames genéticos (síndromes)"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Controle total das crises",
+            "Minimizar efeitos adversos",
+            "Manter qualidade de vida"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Educação do paciente e família",
+              "Evitar privação de sono",
+              "Evitar álcool em excesso",
+              "Medidas de segurança",
+              "Dieta cetogênica (casos refratários, especialmente pediátricos)"
+            ],
+            "citations": [
+              {
+                "refId": "ilae-2017"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Crises focais",
+                "medicamentos": [
+                  "Carbamazepina",
+                  "Oxcarbazepina",
+                  "Lamotrigina",
+                  "Levetiracetam"
+                ],
+                "posologia": "Carbamazepina 400-1200mg/dia. Levetiracetam 500-3000mg/dia."
+              },
+              {
+                "classe": "Crises generalizadas",
+                "medicamentos": [
+                  "Valproato",
+                  "Lamotrigina",
+                  "Levetiracetam"
+                ],
+                "posologia": "Valproato 500-2000mg/dia. Evitar em mulheres em idade fértil (teratogênico)."
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Associação ou troca",
+                "medicamentos": [
+                  "Clobazam",
+                  "Topiramato",
+                  "Lacosamida",
+                  "Perampanel"
+                ],
+                "posologia": "Adicionar ou substituir conforme resposta. Politerapia racional."
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "Estado de mal epiléptico",
+                "conduta": "Diazepam 10mg IV ou Midazolam 10mg IM. Se refratário: Fenitoína/Fosfenitoína IV."
+              },
+              {
+                "situacao": "Mulher em idade fértil",
+                "conduta": "Evitar Valproato. Preferir Lamotrigina ou Levetiracetam. Suplementar ácido fólico."
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ilae-2017"
+              }
+            ]
+          },
+          "duracao": "Geralmente por anos. Considerar retirada após 2-5 anos sem crises (casos selecionados)."
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "A cada 3-6 meses",
+          "examesControle": [
+            "EEG periódico",
+            "Dosagem sérica de antiepilépticos (se disponível)",
+            "Função hepática/renal, hemograma"
+          ],
+          "metasTerapeuticas": [
+            "Controle de crises",
+            "Ausência de efeitos adversos significativos"
+          ],
+          "criteriosEncaminhamento": [
+            "Epilepsia refratária (falha ≥2 FAEs)",
+            "Candidato a cirurgia de epilepsia",
+            "Síndrome epiléptica específica",
+            "Mulher que deseja gestar"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-2017"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Prevenção de TCE (capacete)",
+            "Controle de infecções do SNC",
+            "Cuidados perinatais"
+          ],
+          "secundaria": [
+            "Adesão ao tratamento",
+            "Evitar fatores desencadeantes"
+          ],
+          "citations": []
+        }
+      },
+      "protocolos": [
+        "estado-mal-epileptico"
+      ],
+      "medicamentos": [
+        "carbamazepina",
+        "valproato",
+        "lamotrigina",
+        "levetiracetam",
+        "diazepam"
+      ],
+      "calculadoras": [],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "ilae-2017"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "epilepsia",
+        "convulsao",
+        "crise",
+        "antiepileptico",
+        "eeg"
+      ]
+    },
+    {
+      "id": "doenca-parkinson",
+      "titulo": "Νόσος Parkinson",
+      "ciap2": [
+        "N87"
+      ],
+      "cid10": [
+        "G20"
+      ],
+      "cid11": [
+        "8A00.0"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:14330",
+      "snomedCT": "49049000",
+      "meshId": "D010300",
+      "umlsCui": "C0030567",
+      "hpo": [
+        "HP:0001300",
+        "HP:0001260",
+        "HP:0002072"
+      ],
+      "tags": [
+        "νευρολογικό",
+        "χρόνια",
+        "κίνηση"
+      ],
+      "quickView": {
+        "definicao": "Νευροεξεικονιστική νόσος. Απώλεια νευρώνων δοπαμινεργικών της substantia nigra. Τρόμος, αρτηριοσκληρότητα, βραδυκινησία.",
+        "criteriosDiagnosticos": [
+          "Τρόμος κατά την ηρεμία",
+          "Αρτηριοσκληρότητα",
+          "Βραδυκινησία",
+          "Ημισφαιρική αστάθεια",
+          "Απάντηση στην λεβοντοπα"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Φυσικοθεραπεία",
+            "Φωνοθεραπεία",
+            "Εργαλειοθεραπεία",
+            "Άσκηση"
+          ],
+          "farmacologico": [
+            "Λεβοντοπα/Καρβιντοπα",
+            "Αγωνιστές δοπαμινεργικών: Πραμιπεξόλ ή Ροπινιρόλ",
+            "Ινιβίτορες MAO-B"
+          ]
+        },
+        "redFlags": [
+          "Δημέντια",
+          "Αλλοχασίες",
+          "Φαινόμενο ON-OFF",
+          "Διστονία"
+        ]
+      },
+      "medicamentos": [
+        "levodopa"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "epilepsia-generalizada",
+      "titulo": "Επιληψία Γενικευμένη",
+      "categoria": "neurologico",
+      "cid10": [
+        "G40.3",
+        "G40.4",
+        "G40.6"
+      ],
+      "cid11": [
+        "8A61"
+      ],
+      "ciap2": [
+        "N88"
+      ],
+      "snomedCT": "84757009",
+      "doid": "DOID:1826",
+      "meshId": "D020936",
+      "umlsCui": "C0270786",
+      "classificacao": {
+        "tipo": "epilepsia",
+        "subtipo": "generalizada",
+        "classificacaoEspecifica": {
+          "sistema": "ILAE 2017",
+          "codigo": "Generalized",
+          "descricao": "Επιληψία γενικευμένη (τονική-κλονική, απονοία, μυοκλονική)"
+        }
+      },
+      "quickView": {
+        "definicao": "Επιληψία χαρακτηριζόμενη από κρίσεις που προέρχονται αμέσως από τα δύο μεγάλα μισά του εγκεφάλου, χωρίς ιδιαίτερο ξεκούρασμα.",
+        "criteriosDiagnosticos": [
+          "≥2 μη προκλητικές επιληψιακές κρίσεις με διάλειμμα >24 ώρες",
+          "Γενικευμένες κρίσεις: τονική-κλονική, απονοία, μυοκλονική, τονική, ατονική",
+          "Η/ΚΕΕ: γενικευμένη επιληψιακή δραστηριότητα (σπίκες/πολυσπίκες)",
+          "Απсутία ιδιαίτερου ξεκούρασματος στο Η/ΚΕΕ"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Αποφυγή παραγόντων που προκαλούν κρίσεις",
+            "Εκπαίδευση για πρώτη βοήθεια",
+            "Περιορισμός δραστηριοτήτων (οδήγηση, υποβολή)"
+          ],
+          "farmacologico": [
+            "Κρίσεις τονικές-κλονικές: Valproato, Lamotrigina, Levetiracetam",
+            "Απονοία: Ethosuximide, Valproato",
+            "Μυοκλονικές: Valproato, Levetiracetam, Topiramate"
+          ]
+        },
+        "redFlags": [
+          "Επιληψιακός κατάσταση",
+          "Νυκτερινές κρίσεις",
+          "Ειδική επιληψιακή σύνδρομος",
+          "Αντίσταση στη θεραπεία"
+        ],
+        "examesIniciais": [
+          "Η/ΚΕΕ (υποχρεωτικό)",
+          "ΜΡ του κρανίου (για εξαίρεση)",
+          "Ηματογράφημα, λειτουργία του ήπαρ"
+        ]
+      },
+      "examesNeurologicos": [
+        {
+          "tipo": "Η/ΚΕΕ",
+          "indicacao": "Επιβεβαίωση διάγνωσης και τύπου κρίσης",
+          "quandoSolicitar": "Μετά την πρώτη κρίση"
+        }
+      ],
+      "tratamentoNeurologico": {
+        "primeiraLinha": {
+          "medicamentos": [
+            "valproato",
+            "lamotrigina",
+            "levetiracetam"
+          ],
+          "outrasIntervencoes": []
+        }
+      },
+      "prognostico": {
+        "curso": "chronico",
+        "expectativa": "Έλεγχος με φάρμακα σε 70-80% των περιπτώσεων",
+        "fatoresPrognosticos": [
+          "Τύπος κρίσης",
+          "Επιληψιακή σύνδρομος",
+          "Ηλικία ξεκούρασμα"
+        ]
+      },
+      "tags": [
+        "epilepsia",
+        "generalizada",
+        "crises",
+        "valproato",
+        "lamotrigina"
+      ]
+    },
+    {
+      "id": "cefaleia-em-salvas",
+      "titulo": "Κεφαλαλγία σε Σειρές (Cluster Headache)",
+      "categoria": "neurologico",
+      "cid10": [
+        "G44.0"
+      ],
+      "cid11": [
+        "8A82"
+      ],
+      "ciap2": [
+        "N89"
+      ],
+      "snomedCT": "193031009",
+      "doid": "DOID:9634",
+      "meshId": "D003027",
+      "umlsCui": "C0009043",
+      "classificacao": {
+        "tipo": "κεφαλαλγία",
+        "subtipo": "πρωταρχική",
+        "classificacaoEspecifica": {
+          "sistema": "ICHD-3",
+          "codigo": "3.1",
+          "descricao": "Κεφαλαλγία σε σειρές επεισόδια"
+        }
+      },
+      "quickView": {
+        "definicao": "Πρωταρχική σοβαρή κεφαλαλγία, μονοπλευρική, περιορβιταρία/περιεμπορική, με διάρκεια 15-180 λεπτά, συνδεδεμένη με αυτονομικά σύμπτωματα (δακρυρροΐα, ρινορροΐα, πτωση του βλέφαρου).",
+        "criteriosDiagnosticos": [
+          "≥5 κρίσεις",
+          "Πόνος μονοπλευρικός, περιορβιταρίος/περιεμπορικός, σοβαρός ή πολύ σοβαρός",
+          "Διάρκεια: 15-180 λεπτά",
+          "≥1 σύμπτωμα ισόπλευρο: δακρυρροΐα, συστολή/ρινορροΐα, υδατοδιακρίση προσώπου, μιόζη/πτωση του βλέφαρου, πλευριτικό οδηγητικό οδημα",
+          "Συχνότητα: από 1 σε διαδοχικές ημέρες έως 8/ημέρα"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Αποφυγή αλκοόλ κατά τη διάρκεια της σειράς",
+            "Οξυγόνοθεραπεία εισπνεόμενη (100% O2, 7-15L/min για 15 λεπτά)"
+          ],
+          "farmacologico": [
+            "Ακμαϊκή κρίση: Sumatriptano 6mg SC ή 20mg ενδορρινικά",
+            "Πρόληψη: Verapamil 240-960mg/ημέρα (χρυσό πρότυπο)",
+            "Εναλλακτικές: Prednisona, Topiramato"
+          ]
+        },
+        "redFlags": [
+          "Πρώτο επεισόδιο (εξαίρεση άλλων αιτιών)",
+          "Εστιασμένα νευρολογικά σύμπτωμα",
+          "Αλλαγή στο μοτίβο"
+        ],
+        "examesIniciais": [
+          "ΜΡ του κρανίου (εξαίρεση παθήσεων)",
+          "Κλινική εξέταση νευρολογικής"
+        ]
+      },
+      "sinaisNeurologicos": [
+        "Πτωση του βλέφαρου",
+        "Μιόζη",
+        "Δακρυρροΐα",
+        "Ρινορροΐα",
+        "Υδατοδιακρίση προσώπου"
+      ],
+      "tratamentoNeurologico": {
+        "primeiraLinha": {
+          "medicamentos": [
+            "sumatriptano",
+            "verapamil"
+          ],
+          "outrasIntervencoes": [
+            "Οξυγόνοθεραπεία εισπνεόμενη"
+          ]
+        }
+      },
+      "tags": [
+        "κεφαλαλγία",
+        "σειρές",
+        "cluster",
+        "sumatriptano",
+        "verapamil"
+      ]
+    },
+    {
+      "id": "sindrome-tunel-carpiano",
+      "titulo": "Συνδρομή του Καρπικού Τουνελού",
+      "ciap2": [
+        "N92"
+      ],
+      "cid10": [
+        "G56.0"
+      ],
+      "cid11": [
+        "8C11.0"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:11696",
+      "snomedCT": "57406009",
+      "meshId": "D002349",
+      "umlsCui": "C0007286",
+      "tags": [
+        "νευρολογικό",
+        "εργασιακό"
+      ],
+      "quickView": {
+        "definicao": "Συμπίεση του μεσού νεύρου στο καρπικό τουνελο. Συχνά συνδεδεμένη με επαναλαμβανόμενες δραστηριότητες.",
+        "criteriosDiagnosticos": [
+          "Παραισθήσεις στα 3 πρώτα δάχτυλα",
+          "Χειρότερη τη νύχτα",
+          "Θετικός δοκιμαστικός έλεγχος Phalen",
+          "Θετικός δοκιμαστικός έλεγχος Tinel"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Νυκτερινή ακίνηση",
+            "Αλλαγή δραστηριοτήτων",
+            "Φυσιοθεραπεία"
+          ],
+          "farmacologico": [
+            "ΑΝΤΙΦΛΕΓΜΟΝΩΔΕΙΣ: Ibuprofeno 400mg 3x/ημέρα",
+            "Ενέσιμη διατύπωση με κορτικοστεροειδές όταν χρειάζεται"
+          ]
+        },
+        "redFlags": [
+          "Ατροφία τηναρ",
+          "Απώλεια κινητικότητας",
+          "Δίδυμη με άλλες νευροπαθίες"
+        ]
+      },
+      "medicamentos": [
+        "ibuprofeno"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "esclerose-multipla",
+      "titulo": "Ελλειμματική πολυσκληρόση",
+      "ciap2": [
+        "N99"
+      ],
+      "cid10": [
+        "G35"
+      ],
+      "cid11": [
+        "8A40"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:2377",
+      "snomedCT": "24700007",
+      "meshId": "D009103",
+      "umlsCui": "C0026769",
+      "tags": [
+        "neurologico",
+        "cronica",
+        "autoimune"
+      ],
+      "quickView": {
+        "definicao": "Νοσηματική διάσπαση της μυελίνης του ΚΕΝ. Λεσίες διασπαρμένες στο χρόνο και το χώρο.",
+        "criteriosDiagnosticos": [
+          "Κριτήρια McDonald",
+          "Πολλαπλά νευρολογικά συμπτώματα",
+          "ΜΡΤ: λεσίες διάσπασης της μυελίνης",
+          "Χονδρούριο: ολιγοκλωνικές ζώνες"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Φυσικοθεραπεία",
+            "Εργοθεραπεία",
+            "Ψυχολογική υποστήριξη"
+          ],
+          "farmacologico": [
+            "Κορτικοστεροειδές κατά τα εξέλιξη",
+            "Βήτα-διακομματικό ή Fingolimode για μείωση των εξέλιξη"
+          ]
+        },
+        "redFlags": [
+          "Σοβαρή εξέλιξη",
+          "Γρήγορη πρόοδος",
+          "Βουλβικά συμπτώματα"
+        ]
+      },
+      "medicamentos": [
+        "metilprednisolone"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "doenca-huntington",
+      "titulo": "Νόσος Χάντινγκτον",
+      "categoria": "neurologico",
+      "cid10": [
+        "G10"
+      ],
+      "cid11": [
+        "8A01"
+      ],
+      "ciap2": [
+        "N87"
+      ],
+      "snomedCT": "58756001",
+      "doid": "DOID:12858",
+      "meshId": "D006816",
+      "umlsCui": "C0020179",
+      "classificacao": {
+        "tipo": "νοσημα_νευροδεγενερατικό",
+        "subtipo": "ταραχή_κίνησης",
+        "classificacaoEspecifica": {
+          "sistema": "CID-11",
+          "codigo": "8A01",
+          "descricao": "Νόσος Χάντινγκτον - Νευροδεγενερατικό νόσημα αυτόζυγο κυρίαρχο"
+        }
+      },
+      "quickView": {
+        "definicao": "Νευροδεγενερατικό νόσημα αυτόζυγο κυρίαρχο χαρακτηριζόμενο από χορεία (άρθρωσης κινήσεις), κατάρρευση γνωστικής λειτουργίας και ψυχικές ταραχές, προκαλούμενη από επέκταση των επαναλήψεων CAG στο γονίδιο HTT.",
+        "criteriosDiagnosticos": [
+          "Ιστορία οικογένειας (αυτόζυγο κυρίαρχο)",
+          "Προοδευτική χορεία",
+          "Κατάρρευση γνωστικής/ψυχικής λειτουργίας",
+          "Γενετικό τεστ: επέκταση CAG ≥36 επαναλήψεις στο γονίδιο HTT"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Πολυειδική υποστήριξη",
+            "Φυσικοθεραπεία",
+            "Φωνοθεραπεία",
+            "Ψυχοσοσιαλική υποστήριξη",
+            "Γενετική συμβουλευτική"
+          ],
+          "farmacologico": [
+            "Χορεία: Tetrabenazine, Deutetrabenazine",
+            "Ψυχικά συμπτώματα: Αντιψυχωτικά, SSRI",
+            "Σκληρότητα: Levodopa"
+          ]
+        },
+        "redFlags": [
+          "Γρήγορη πρόοδος",
+          "Δυσφαγία (κίνδυνο πνευμονίας)",
+          "Σοβαρά ψυχικά συμπτώματα",
+          "Συχνές πτώσεις"
+        ],
+        "examesIniciais": [
+          "Γενετικό τεστ (επιβεβαίωση)",
+          "ΜΡ του κρανίου (άτροφη του καυδατού νουκλίου)",
+          "Νευροψυχολογική αξιολόγηση"
+        ]
+      },
+      "sinaisNeurologicos": [
+        "Χορεία (άρθρωσης κινήσεις)",
+        "Ταραχές περιπάτησης",
+        "Δυσφαγία",
+        "Δυσφωνία",
+        "Βραδυκινησία (αργότερη φάση)",
+        "Σκληρότητα (αργότερη φάση)"
+      ],
+      "tratamentoNeurologico": {
+        "primeiraLinha": {
+          "medicamentos": [
+            "tetrabenazina",
+            "deutetrabenazina"
+          ],
+          "outrasIntervencoes": [
+            "Φυσικοθεραπεία",
+            "Πολυειδική υποστήριξη"
+          ]
+        }
+      },
+      "prognostico": {
+        "curso": "προοδευτικός",
+        "expectativa": "Αναπόφευκτη πρόοδος, επιβίωση 15-20 χρόνια μετά την έναρξη",
+        "fatoresPrognosticos": [
+          "Αριθμός επαναλήψεων CAG",
+          "Ηλικία έναρξης",
+          "Αρχικά συμπτώματα"
+        ]
+      },
+      "tags": [
+        "Χάντινγκτον",
+        "χορεία",
+        "νευροδεγενερατικό",
+        "γενετικό",
+        "σπάνιο"
+      ]
+    },
+    {
+      "id": "esclerose-lateral-amiotrofica",
+      "titulo": "Εσκλερόσειρα Λατεράλη Αμυοτρόφικη (ΕΛΑ)",
+      "categoria": "neurologico",
+      "cid10": [
+        "G12.2"
+      ],
+      "cid11": [
+        "8B60"
+      ],
+      "ciap2": [
+        "N87"
+      ],
+      "snomedCT": "86044005",
+      "doid": "DOID:332",
+      "meshId": "D000690",
+      "umlsCui": "C0002736",
+      "classificacao": {
+        "tipo": "νοσημα_νευροδεγενερατικό",
+        "subtipo": "νοσημα_μοτονευρώνων"
+      },
+      "quickView": {
+        "definicao": "Νευροδεγενερατική ασθένεια με θάνατο ως τελικό αποτέλεσμα, χαρακτηριζόμενη από προοδευτική διάβρωση των ανώτερων και κάτω μοτονευρών, με αποτέλεσμα προοδευτική μυϊκή αδυναμία, ατροφία και τελικά αναπνευστική παράλυση.",
+        "criteriosDiagnosticos": [
+          "Κριτήρια του Εl Escorial (Ενημερωμένα):",
+          "Σημεία διάβρωσης των ανώτερων μοτονευρών (σπαστικότητα, υπερρεφλεξία)",
+          "Σημεία διάβρωσης των κάτω μοτονευρών (ατροφία, μυοκλονίες, αδυναμία)",
+          "Προοδευτική εξέλιξη της ασθένειας",
+          "Εξαίρεση άλλων αιτιών"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Πολυειδική φροντίδα",
+            "Φυσικοθεραπεία και εργαλειοθεραπεία",
+            "Αναπνευστική υποστήριξη (μη εισπνευστική αναπνοή όταν χρειάζεται)",
+            "Διατροφή (γαστροστομία αν χρειάζεται)",
+            "Ψυχολογική υποστήριξη"
+          ],
+          "farmacologico": [
+            "Ριλουζολ 50mg 2x/ημέρα (προεκτείνει τη ζωή κατά 2-3 μήνες)",
+            "Εδαραβόνη (IV - σε μερικές περιπτώσεις)",
+            "Συμπτωματικά: Μπακλοφένο (σπαστικότητα), Αντιχολινεργικά (σιαλόρροια)"
+          ]
+        },
+        "redFlags": [
+          "Αναπνευστική ανεπάρκεια",
+          "Σοβαρή δυσφαγία",
+          "Γρήγορη πρόοδος",
+          "Συμπτώματα βουλβικής πηγής"
+        ],
+        "examesIniciais": [
+          "ΗΛΕΚΤΡΟΜΥΟΓΡΑΦΙΑ/ΝΕΥΡΟΚΙΝΗΤΙΚΗ ΤΑΧΥΤΗΤΑ (καίριος σημαντισμός)",
+          "ΤΟΜΟΓΡΑΦΙΑ ΜΕΓΑΛΟΥ ΜΑΓΝΗΤΟΥ του κεφαλίου και της μυελικής στήλης",
+          "Εξέταση για την εξαίρεση άλλων αιτιών"
+        ]
+      },
+      "examesNeurologicos": [
+        {
+          "tipo": "ΗΛΕΚΤΡΟΜΥΟΓΡΑΦΙΑ/ΝΕΥΡΟΚΙΝΗΤΙΚΗ ΤΑΧΥΤΗΤΑ",
+          "indicacao": "Επιβεβαίωση διάβρωσης των κάτω μοτονευρών",
+          "quandoSolicitar": "Πρώτη υποψία"
+        }
+      ],
+      "tratamentoNeurologico": {
+        "primeiraLinha": {
+          "medicamentos": [
+            "riluzol"
+          ],
+          "outrasIntervencoes": [
+            "Μη εισπνευστική αναπνοή",
+            "Γαστροστομία",
+            "Πολυειδική φροντίδα"
+          ]
+        }
+      },
+      "prognostico": {
+        "curso": "προοδευτικός",
+        "expectativa": "Μεσαία ζωή 2-5 χρόνια, μεταβλητή",
+        "fatoresPrognosticos": [
+          "Ηλικία έναρξης",
+          "Κλινική μορφή (βουλβική vs ραχική)",
+          "Ταχύτητα πρόοδου"
+        ]
+      },
+      "tags": [
+        "ela",
+        "als",
+        "μοτονευρών",
+        "δεγενερατική",
+        "σπάνια",
+        "ριλουζολ"
+      ]
+    },
+    {
+      "id": "demencia",
+      "titulo": "Δεμέντια (Μεγάλος Νευροκογνιτικός Διαταραγμός)",
+      "ciap2": [
+        "P70"
+      ],
+      "cid10": [
+        "F00",
+        "F01",
+        "F02",
+        "F03",
+        "G30"
+      ],
+      "cid11": [
+        "6D80",
+        "6D81",
+        "6D82",
+        "8A20"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:1307",
+      "snomedCT": "52448006",
+      "meshId": "D003704",
+      "umlsCui": "C0497327",
+      "quickView": {
+        "definicao": "Σύνδρομο προοδευτικής κογνιτιβικής υποδοχής με λειτουργική ζημιά. Η Αλτσχάιμερ είναι η πιο κοινή αιτία (60-70%). Ο επιπολασμός διπλασιάζεται κάθε 5 χρόνια μετά την ηλικία των 65 ετών.",
+        "criteriosDiagnosticos": [
+          "Κογνιτιβική υποδοχή σε ≥2 τομείς",
+          "Λειτουργική ζημιά (ΗΜΕ)",
+          "Δεν εξηγείται από δελίριο",
+          "Δεν εξηγείται από ψυχικό διαταραγμό",
+          "MEEM <24 (συμπλήρωση εκπαιδευτικής επίπεδου)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Κογνιτιβική ενθάρρυνση",
+            "Φυσική δραστηριότητα",
+            "Υποστήριξη του φροντιστή",
+            "Ασφάλεια του περιβάλλοντος"
+          ],
+          "farmacologico": [
+            "Ινιβίτορες χολινεστεράσης (donepezila 5-10mg) - ήπια έως μέτρια",
+            "Μεμαντίνη (μέτρια έως σοβαρή)",
+            "Αποφυγή αντιχολινεργικών"
+          ]
+        },
+        "redFlags": [
+          "Γρήγορη υποδοχή (<6 μήνες)",
+          "Τοπικά σημεία",
+          "Έναρξη <65 ετών",
+          "Πρόωρη αλλαγή προσωπικότητας"
+        ]
+      },
+      "medicamentos": [
+        "donepezila"
+      ],
+      "protocolos": [],
+      "calculadoras": [
+        "meem"
+      ]
+    },
+    {
+      "id": "neuropatia-periferica",
+      "titulo": "Περιφερική Νευροπάθεια",
+      "sinonimos": [
+        "Πολυνευροπάθεια"
+      ],
+      "ciap2": [
+        "N94"
+      ],
+      "cid10": [
+        "G62"
+      ],
+      "cid11": [
+        "8C02"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:330",
+      "snomedCT": "302226006",
+      "meshId": "D010523",
+      "umlsCui": "C0027882",
+      "hpo": [
+        "HP:0009830",
+        "HP:0003470"
+      ],
+      "tags": [
+        "νευρολογικό",
+        "χρόνια"
+      ],
+      "quickView": {
+        "definicao": "Ζημιά των περιφερικών νεύρων. Συμπτώματα: παραισθήσεις, καταχυσμός, καίγοντας, αδυναμία, οδύνη. Αιτίες: διαβήτης, ιατροδιαιτητικές ελλείψεις, δηλητηριώδη ουσίες.",
+        "criteriosDiagnosticos": [
+          "Παραισθήσεις/καταχυσμός",
+          "Νευροπαθική οδύνη",
+          "Μυϊκή αδυναμία",
+          "Μειωμένα ανακλάσεις",
+          "Κλινική εξέταση: αλλαγές αισθητικής/κινητικής λειτουργίας"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Θεραπεία της υποκείμενης αιτίας",
+            "Φυσικοθεραπεία",
+            "Ορθοπαιδική υποστήριξη όταν χρειάζεται"
+          ],
+          "farmacologico": [
+            "Αναλγητικά: Αμιτριπτιλίνη 10-50mg/ημέρα",
+            "Η Γαμαπεντίνη 300-1800mg/ημέρα",
+            "Η Πρεγαβαλίνη 75-300mg/ημέρα",
+            "Υποστήριξη: B12, B6, Φυλικό οξάλικο ανθράκιο αν ελλείψεις"
+          ]
+        },
+        "redFlags": [
+          "Γρήγορη πρόοδος",
+          "Εμπλοκή κρανιακών νεύρων",
+          "Αυτονομικά συμπτώματα",
+          "Ανεβαζόμενη αδυναμία"
+        ]
+      },
+      "medicamentos": [
+        "amitriptilina"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-guillain-barre",
+      "titulo": "Σύνδρομο Guillain-Barré",
+      "ciap2": [
+        "N94"
+      ],
+      "cid10": [
+        "G61.0"
+      ],
+      "cid11": [
+        "8C00.2"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:12849",
+      "snomedCT": "398102000",
+      "meshId": "D020275",
+      "umlsCui": "C0018379",
+      "tags": [
+        "νευρολογικό",
+        "ακύρωση",
+        "σοβαρή"
+      ],
+      "quickView": {
+        "definicao": "Πολυρραδικουρινοπάθεια άκυρης δημυελινοποίησης. Γενικά μετά από μια επίδροση. Ανεβαίνουσα παράλυση.",
+        "criteriosDiagnosticos": [
+          "Ανεβαίνουσα παράλυση",
+          "Αρεφλεξία",
+          "Χονδρόθελες: διάχυση πρωτεΐνης-κυττάρων",
+          "ΗΛΕΜ: δημυελινοποίηση"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Νοσηλεία σε νοσοκομείο",
+            "Πνευματική υποστήριξη όταν χρειάζεται",
+            "Πρόωρη φυσιοθεραπεία"
+          ],
+          "farmacologico": [
+            "IVIG 0,4g/kg/ημέρα για 5 ημέρες",
+            "Ή Πλασμαφερέση"
+          ]
+        },
+        "redFlags": [
+          "Πνευματική ανεπάρκεια",
+          "Αρρυθμίες",
+          "Αυτόνομη δυσλειτουργία"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "demencia-vascular",
+      "titulo": "Σκληρόκεφαλη πλαισίου εγκεφαλικής αγγειοπάθειας",
+      "ciap2": [
+        "P70"
+      ],
+      "cid10": [
+        "F01"
+      ],
+      "cid11": [
+        "6D80"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:6713",
+      "snomedCT": "52448006",
+      "meshId": "D003712",
+      "umlsCui": "C0011269",
+      "hpo": [
+        "HP:0000726",
+        "HP:0001263"
+      ],
+      "tags": [
+        "νευρολογικό",
+        "χρόνια",
+        "γνωστική"
+      ],
+      "quickView": {
+        "definicao": "Σκληρόκεφαλη λόγω εγκεφαλικών αγγειακών βλάβων. Μπορεί να είναι ισχαιμική ή αιμορραγική. Πολυκέντρια γνωστική διάβρωση.",
+        "criteriosDiagnosticos": [
+          "Σκληρόκεφαλη",
+          "Στοιχεία παθήσεως εγκεφαλικής αγγειοπάθειας",
+          "Χρονική σχέση μεταξύ εγκεφαλικού γεγονότος και σκληρόκεφαλης",
+          "Εικονογράφηση: αγγειακές βλάβες"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Επανατροφοδότηση δευτερογενούς ΕΓΚ",
+            "Έλεγχος παραγόντων κινδύνου",
+            "Γνωστική αναδιάρθρωση"
+          ],
+          "farmacologico": [
+            "Χολινεστεράσης εμποδιστές: Donepezil ή Rivastigmine",
+            "Memantine"
+          ]
+        },
+        "redFlags": [
+          "Ταχεία εξέλιξη",
+          "Ημισφαιρικά συμπτώματα",
+          "Επαναλαμβανόμενο ΕΓΚ"
+        ]
+      },
+      "medicamentos": [
+        "donepezil",
+        "rivastigmine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "labirintite",
+      "titulo": "Λαβυρίνθιτη / Περιφερική Κούρδα",
+      "ciap2": [
+        "H82"
+      ],
+      "cid10": [
+        "H83.0"
+      ],
+      "cid11": [
+        "AB51"
+      ],
+      "categoria": "neurologico",
+      "doid": "DOID:14692",
+      "snomedCT": "193469007",
+      "meshId": "D007762",
+      "umlsCui": "C0022851",
+      "hpo": [
+        "HP:0002321"
+      ],
+      "tags": [
+        "νευρολογικό",
+        "ορλ",
+        "κούρδα"
+      ],
+      "quickView": {
+        "definicao": "Περιφερική κούρδα. Ενδηλίαση του λαβύρινθου. Αιτίες: ιονική, βακτηρική, BPPV. Περιστροφική κούρδα με ναυτία/εμέτο.",
+        "criteriosDiagnosticos": [
+          "Περιστροφική κούρδα",
+          "Ναυτία/εμέτο",
+          "Νισταγμός",
+          "Χωρίς οξειαί συμπτώματα νευρολογικής φύσης",
+          "Η ακοή μπορεί να επηρεαστεί"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Άνεση",
+            "Αποφυγή από αιφνιδιακά κινήματα",
+            "Επαναθέτικες ενέργειες αν BPPV"
+          ],
+          "farmacologico": [
+            "Αντικούρδια: Meclizine 25mg 6/6h",
+            "Ή Dimenhydrinate",
+            "Κορτικοστεροειδή αν ενδηλιακή"
+          ]
+        },
+        "redFlags": [
+          "Οξειά νευρολογικά συμπτώματα",
+          "Αιφνιδιακή μονοπλευρική ακουστική απώλεια",
+          "Συνεχής κούρδα >24h"
+        ]
+      },
+      "medicamentos": [
+        "meclizine"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "avc-isquemico",
+      "titulo": "Acidente Vascular Cerebral Isquêmico",
+      "sinonimos": [
+        "AVC",
+        "AVCi",
+        "Derrame cerebral",
+        "Stroke isquêmico",
+        "Infarto cerebral"
+      ],
+      "doid": "DOID:3455",
+      "snomedCT": "422504002",
+      "meshId": "D002544",
+      "umlsCui": "C0007785",
+      "ciap2": [
+        "K90"
+      ],
+      "cid10": [
+        "I63",
+        "I63.0",
+        "I63.1",
+        "I63.2",
+        "I63.3",
+        "I63.4",
+        "I63.5",
+        "I63.8",
+        "I63.9"
+      ],
+      "cid11": [
+        "8B11"
+      ],
+      "categoria": "neurologico",
+      "quickView": {
+        "definicao": "Déficit neurológico focal de início súbito causado por isquemia cerebral. Emergência neurológica com janela terapêutica crítica para trombólise (4,5h) e trombectomia mecânica (até 24h em casos selecionados).",
+        "criteriosDiagnosticos": [
+          "Déficit neurológico focal de início súbito",
+          "FAST: Face (assimetria), Arm (fraqueza), Speech (alteração fala), Time",
+          "NIHSS para quantificar gravidade",
+          "TC sem hemorragia",
+          "Exclusão de mimetizadores (hipoglicemia, crise epiléptica)",
+          "Angio-TC/RM: identifica oclusão de grande vaso",
+          "Tempo de início dos sintomas é crítico"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ABC - estabilização clínica",
+            "Cabeceira a 0° (sem hipertensão intracraniana)",
+            "Acesso venoso periférico (evitar subclávia)",
+            "Monitorização contínua",
+            "Glicemia capilar"
+          ],
+          "farmacologico": [
+            "TROMBÓLISE IV (se <4,5h do início):",
+            "Alteplase (rtPA) 0,9mg/kg (máx 90mg) - 10% em bolus, 90% em 1h",
+            "OU Tenecteplase 0,25mg/kg em bolus único",
+            "",
+            "NÃO REDUZIR PA SE <220/120 (candidato a trombólise: <185/110)",
+            "AAS 100-300mg após 24h da trombólise",
+            "Estatina de alta potência"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Trombólise em <60min da chegada (door-to-needle)",
+          "Trombectomia em <90min se indicada",
+          "Prevenir transformação hemorrágica",
+          "Reabilitação precoce"
+        ],
+        "examesIniciais": [
+          "TC sem hemorragia",
+          "Glicemia capilar",
+          "ECG 12 derivações",
+          "Hemograma, TP/INR, plaquetas",
+          "Função renal, eletrólitos",
+          "Angio-TC (se oclusão de grande vaso)"
+        ],
+        "redFlags": [
+          "PA >185/110 em candidato a trombólise",
+          "Glicemia <50 ou >400 mg/dL",
+          "INR >1,7 ou uso de anticoagulante",
+          "Plaquetas <100.000",
+          "Sangramento ativo",
+          "AVC/TCE grave nos últimos 3 meses",
+          "Cirurgia de grande porte nos últimos 14 dias"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "2ª causa de morte no Brasil",
+          "incidencia": "~400.000 casos/ano no Brasil",
+          "mortalidade": "30% em 30 dias, principal causa de incapacidade",
+          "faixaEtaria": "Aumenta com idade, >55 anos maior risco",
+          "fatoresRisco": [
+            "Hipertensão arterial (principal)",
+            "Fibrilação atrial",
+            "Diabetes mellitus",
+            "Dislipidemia",
+            "Tabagismo",
+            "Cardiopatia estrutural",
+            "AVC/AIT prévio",
+            "Estenose carotídea"
+          ],
+          "citations": [
+            {
+              "refId": "sbn-avc-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Oclusão arterial por trombo (cardioembólico, aterotrómbico ou lacunar) levando a isquemia cerebral. Existe uma área de penumbra potencialmente salvável ao redor do core isquêmico. A janela terapêutica visa salvar essa penumbra.",
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Hemiparesia/hemiplegia",
+            "Hemi-hipoestesia",
+            "Afasia (motora, sensorial, mista)",
+            "Disartria",
+            "Hemianopsia",
+            "Ataxia",
+            "Vertigem",
+            "Diplopia",
+            "Alteração do nível de consciência"
+          ],
+          "sinaisExameFisico": [
+            "Déficit motor focal",
+            "Desvio de rima",
+            "Sinal de Babinski",
+            "Alteração de reflexos",
+            "Negligência hemiespacial",
+            "Sopro carotídeo"
+          ],
+          "formasClinicas": [
+            "AVC de território carotídeo (circulação anterior)",
+            "AVC de território vertebrobasilar (circulação posterior)",
+            "AVC lacunar (pequenos vasos)",
+            "AIT (sintomas <24h com neuroimagem normal)"
+          ],
+          "citations": [
+            {
+              "refId": "sbn-avc-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Déficit neurológico focal súbito",
+            "TC sem hemorragia",
+            "Exclusão de mimetizadores (hipoglicemia, crise epiléptica)"
+          ],
+          "diagnosticoDiferencial": [
+            "AVC hemorrágico",
+            "Hipoglicemia",
+            "Crise epiléptica pós-ictal (paralisia de Todd)",
+            "Enxaqueca com aura",
+            "Tumor cerebral",
+            "Encefalite",
+            "Transtorno conversivo"
+          ],
+          "examesLaboratoriais": [
+            "Glicemia (obrigatório antes de trombólise)",
+            "Hemograma completo",
+            "TP/INR, TTPa",
+            "Função renal, eletrólitos",
+            "Troponina (se suspeita de cardiopatia)"
+          ],
+          "examesImagem": [
+            "TC sem hemorragia",
+            "Angio-TC de vasos cervicais e intracranianos",
+            "RM de crânio (difusão)",
+            "Ecocardiograma (pesquisa fonte embólica)",
+            "Doppler de carótidas"
+          ],
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Recanalização arterial",
+            "Minimizar área de infarto",
+            "Prevenir complicações",
+            "Identificar etiologia para prevenção secundária"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Monitorização neurológica intensiva",
+              "Controle de temperatura (evitar hipertermia)",
+              "Cabeceira a 0-15°",
+              "Fisioterapia/fonoaudiologia precoce",
+              "Prevenção de broncoaspiração"
+            ],
+            "citations": [
+              {
+                "refId": "sbn-avc-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Trombolítico",
+                "medicamentos": [
+                  "Alteplase 0,9mg/kg",
+                  "Tenecteplase 0,25mg/kg"
+                ],
+                "posologia": "Dose única",
+                "observacoes": "Janela <4,5h"
+              },
+              {
+                "classe": "Antiagregante",
+                "medicamentos": [
+                  "AAS 100-300mg/dia"
+                ],
+                "posologia": "Após 24h da trombólise"
+              },
+              {
+                "classe": "Estatina",
+                "medicamentos": [
+                  "Atorvastatina 40-80mg",
+                  "Rosuvastatina 20-40mg"
+                ],
+                "posologia": "1x/dia"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Anticoagulação",
+                "medicamentos": [
+                  "Rivaroxabana",
+                  "Apixabana",
+                  "Varfarina"
+                ],
+                "observacoes": "Se FA, após 3-14 dias dependendo do tamanho do AVC"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "aha-stroke-2019"
+              }
+            ]
+          },
+          "duracao": "Prevenção secundária vitalícia"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Alta da unidade de AVC em 5-7 dias, depois mensal por 3 meses",
+          "examesControle": [
+            "TC/RM de controle",
+            "Ecocardiograma",
+            "Holter 24-72h",
+            "Doppler carotídeo"
+          ],
+          "metasTerapeuticas": [
+            "PA <130/80 mmHg",
+            "LDL <70 mg/dL (ou <55 se muito alto risco)",
+            "HbA1c <7%",
+            "INR 2-3 se varfarina",
+            "Reabilitação neurológica"
+          ],
+          "criteriosEncaminhamento": [
+            "Todo AVC agudo: Unidade de AVC/Neurologia",
+            "Estenose carotídea >50% sintomática: Cirurgia vascular",
+            "Jovem sem fator de risco: investigação de trombofilias"
+          ],
+          "citations": [
+            {
+              "refId": "sbn-avc-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Controle da HAS",
+            "Anticoagulação em FA (CHA2DS2-VASc)",
+            "Estatina em alto risco",
+            "Cessação do tabagismo"
+          ],
+          "secundaria": [
+            "Antiagregação ou anticoagulação",
+            "Estatina de alta potência",
+            "Controle rigoroso de fatores de risco",
+            "Revascularização carotídea se indicada"
+          ],
+          "citations": [
+            {
+              "refId": "aha-stroke-2019"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "codigo-avc",
+        "trombolise-avc",
+        "investigacao-avc-jovem"
+      ],
+      "medicamentos": [
+        "alteplase",
+        "aas",
+        "clopidogrel",
+        "atorvastatina",
+        "rivaroxabana"
+      ],
+      "calculadoras": [
+        "nihss",
+        "abcd2",
+        "chads2-vasc"
+      ],
+      "citations": [
+        {
+          "refId": "sbn-avc-2022"
+        },
+        {
+          "refId": "aha-stroke-2019"
+        },
+        {
+          "refId": "eso-stroke-2021"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    },
+    {
+      "id": "estado-de-mal-epileptico",
+      "titulo": "Estado de Mal Epiléptico",
+      "sinonimos": [
+        "Status epilepticus",
+        "EME",
+        "Crise epiléptica prolongada",
+        "Crise refratária"
+      ],
+      "doid": "DOID:9188",
+      "snomedCT": "26184008",
+      "meshId": "D013226",
+      "umlsCui": "C0038220",
+      "ciap2": [
+        "N88"
+      ],
+      "cid10": [
+        "G41",
+        "G41.0",
+        "G41.1",
+        "G41.2",
+        "G41.9"
+      ],
+      "cid11": [
+        "8A62"
+      ],
+      "categoria": "neurologico",
+      "quickView": {
+        "definicao": "Atividade epiléptica contínua por >5 minutos ou crises recorrentes sem recuperação da consciência entre elas. Emergência neurológica com risco de dano cerebral permanente e morte se não tratada rapidamente.",
+        "criteriosDiagnosticos": [
+          "Crise epiléptica por ≥5 minutos (definição operacional)",
+          "Duas ou mais crises sem recuperação da consciência",
+          "Definição clássica: >30 min (risco de sequela)",
+          "EME não convulsivo: alteração de consciência + atividade epileptiforme no EEG",
+          "Identificar possível causa (metabólica, lesional, abstinência)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "ABC - via aérea com cânula orofaríngea (não forçar)",
+            "O2 suplementar",
+            "Posição de recuperação (lateral)",
+            "Acesso venoso (ou intraósseo)",
+            "Glicemia capilar IMEDIATA",
+            "Monitorização contínua"
+          ],
+          "farmacologico": [
+            "FASE 1 (0-5 min): Benzodiazepínico",
+            "Diazepam 10mg IV lento (0,2mg/kg, máx 20mg) OU",
+            "Midazolam 10mg IM (se sem acesso venoso) OU",
+            "Lorazepam 4mg IV (se disponível)",
+            "",
+            "FASE 2 (5-20 min): Se não responder",
+            "Fenitoína 20mg/kg IV (máx 50mg/min) OU",
+            "Valproato 40mg/kg IV (máx 10mg/kg/min) OU",
+            "Levetiracetam 60mg/kg IV",
+            "",
+            "FASE 3 (>20 min): EME refratário",
+            "Indução anestésica: Propofol, Midazolam ou Tiopental em BIC",
+            "IOT e ventilação mecânica"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Cessação da atividade epiléptica",
+          "Proteção neurológica",
+          "Estabilização hemodinâmica",
+          "Identificação da causa"
+        ],
+        "examesIniciais": [
+          "Glicemia capilar (OBRIGATÓRIO)",
+          "Hemograma, eletrólitos (Na, K, Ca, Mg)",
+          "Gasometria arterial",
+          "Ureia, creatinina",
+          "Níveis de antiepilépticos (se uso prévio)",
+          "Screening toxicológico",
+          "TC de crânio",
+          "Punção lombar (se suspeita de infecção, após imagem)"
+        ],
+        "redFlags": [
+          "EME >30 minutos (dano neurológico)",
+          "EME refratário (não responde a 2 FAEs)",
+          "EME super-refratário (>24h em anestesia)",
+          "Causa estrutural aguda (AVC, tumor)",
+          "Febre (encefalite)",
+          "Hiponatremia grave",
+          "Acidose metabólica persistente"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "50-150 casos/100.000 habitantes/ano",
+          "incidencia": "Mortalidade de 20-30% no EME refratário",
+          "faixaEtaria": "Bimodal: crianças pequenas e idosos",
+          "fatoresRisco": [
+            "Epilepsia prévia (má aderência, redução de FAE)",
+            "AVC agudo ou sequela",
+            "Infecção do SNC",
+            "Tumor cerebral",
+            "Distúrbios metabólicos (hipoglicemia, hiponatremia)",
+            "Abstinência de álcool ou benzodiazepínicos",
+            "Intoxicação"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-status-2015"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Falha dos mecanismos inibitórios (GABAérgicos) em encerrar a atividade ictal, com hiperatividade excitatória (glutamatérgica) mantida. Leva a excitotoxicidade, dano neuronal, edema cerebral e potencial falência respiratória/cardiovascular.",
+          "citations": [
+            {
+              "refId": "ilae-status-2015"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Movimentos tônico-clônicos generalizados",
+            "Perda de consciência",
+            "Salivação excessiva",
+            "Cianose",
+            "Incontinência",
+            "Confusão pós-ictal prolongada"
+          ],
+          "sinaisExameFisico": [
+            "Movimentos clônicos",
+            "Hipertonia",
+            "Desvio ocular",
+            "Taquicardia, hipertensão",
+            "Febre (pela atividade muscular)",
+            "Sinais focais pós-ictais"
+          ],
+          "formasClinicas": [
+            "EME convulsivo generalizado",
+            "EME focal com consciência preservada",
+            "EME focal com comprometimento da consciência",
+            "EME não convulsivo (suspeitar em alteração de consciência prolongada)",
+            "EME sutil (movimentos mínimos, EEG epileptiforme)"
+          ],
+          "citations": [
+            {
+              "refId": "lbn-eme-2020"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Critério temporal: ≥5 minutos de crise ou crises recorrentes sem recuperação",
+            "EEG para EME não convulsivo",
+            "Identificação da etiologia"
+          ],
+          "diagnosticoDiferencial": [
+            "Síncope convulsiva",
+            "Crises psicogênicas não epilépticas",
+            "Rigidez de descerebração",
+            "Movimento involuntário (distonia, coreia)",
+            "Intoxicação",
+            "Hipoglicemia"
+          ],
+          "examesLaboratoriais": [
+            "Glicemia",
+            "Eletrólitos (Na, K, Ca, Mg)",
+            "Gasometria arterial",
+            "Função renal e hepática",
+            "Níveis de antiepilépticos",
+            "Lactato"
+          ],
+          "examesImagem": [
+            "TC de crânio (urgente)",
+            "RM de crânio (se TC normal e causa não identificada)",
+            "EEG contínuo (UTI)"
+          ],
+          "outrosExames": [
+            "Punção lombar (se suspeita de neuroinfecção, após imagem)",
+            "Anticorpos antineuronais (encefalite autoimune)"
+          ],
+          "citations": [
+            {
+              "refId": "ilae-status-2015"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Cessar a atividade epiléptica rapidamente",
+            "Prevenir dano neuronal",
+            "Tratar a causa subjacente",
+            "Prevenir recorrência"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Via aérea pérvia",
+              "Oxigenoterapia",
+              "Intubação se necessário",
+              "Monitorização contínua",
+              "Correção de distúrbios metabólicos"
+            ],
+            "citations": [
+              {
+                "refId": "lbn-eme-2020"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Benzodiazepínico",
+                "medicamentos": [
+                  "Diazepam 10mg IV",
+                  "Midazolam 10mg IM",
+                  "Lorazepam 4mg IV"
+                ],
+                "posologia": "Dose única, repetir 1x se necessário",
+                "observacoes": "Primeira linha, eficaz em ~65%"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "Antiepiléptico IV",
+                "medicamentos": [
+                  "Fenitoína 20mg/kg IV",
+                  "Valproato 40mg/kg IV",
+                  "Levetiracetam 60mg/kg IV"
+                ],
+                "observacoes": "Se BZD falhar"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "EME refratário",
+                "conduta": "Anestésicos: Midazolam, Propofol ou Tiopental em BIC; IOT + VM; EEG contínuo"
+              },
+              {
+                "situacao": "Hipoglicemia",
+                "conduta": "Glicose 50% 50mL IV + Tiamina 100mg"
+              },
+              {
+                "situacao": "Abstinência alcoólica",
+                "conduta": "Benzodiazepínicos em doses altas + Tiamina"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "ilae-status-2015"
+              }
+            ]
+          },
+          "duracao": "Manutenção com FAE conforme etiologia"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "UTI até controle; depois neurologia ambulatorial",
+          "metasTerapeuticas": [
+            "Ausência de crises",
+            "Recuperação neurológica",
+            "Controle do FAE de manutenção"
+          ],
+          "criteriosEncaminhamento": [
+            "Todo EME: Emergência → UTI",
+            "Neurologia para investigação",
+            "Epileptologista se refratário"
+          ],
+          "citations": [
+            {
+              "refId": "lbn-eme-2020"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "eme-emergencia",
+        "crise-epileptica-aguda"
+      ],
+      "medicamentos": [
+        "diazepam",
+        "midazolam",
+        "fenitoina",
+        "valproato",
+        "levetiracetam"
+      ],
+      "calculadoras": [],
+      "citations": [
+        {
+          "refId": "ilae-status-2015"
+        },
+        {
+          "refId": "lbn-eme-2020"
+        }
+      ],
+      "lastUpdate": "2024-12-23"
+    }
+  ]
+}

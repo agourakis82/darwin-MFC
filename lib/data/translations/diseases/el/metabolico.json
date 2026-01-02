@@ -1,0 +1,940 @@
+{
+  "locale": "el",
+  "category": "metabolico",
+  "generatedAt": "2025-12-31T20:22:28.493Z",
+  "count": 7,
+  "diseases": [
+    {
+      "id": "diabetes-mellitus-2",
+      "titulo": "Αντιυπερτασικό",
+      "sinonimos": [
+        "Αντιυπερτασικό",
+        "DM2",
+        "Αντιυπερτασικό"
+      ],
+      "doid": "DOID:9351",
+      "snomedCT": "44054006",
+      "meshId": "D003924",
+      "umlsCui": "C0011860",
+      "ciap2": [
+        "T90"
+      ],
+      "cid10": [
+        "E11"
+      ],
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "Δοença metabólica caracterizada από гипεργlicemia χρονοτική, που προκύπτει από defeκτες στην секретωση και/ή την aktyvität της insulinas. Representa 90-95% των περιπτώσεων diabetes και está στενά συνδεδεμένη με την obesidade και το sedentarismo.",
+        "criteriosDiagnosticos": [
+          "Glicemia de jejum ≥126 mg/dL (confirmada em 2 ocasiões)",
+          "Glicemia 2h após TOTG 75g ≥200 mg/dL",
+          "HbA1c ≥6,5%",
+          "Glicemia casual ≥200 + sintomas clássicos"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Διαιτοτική: rédução calórica se sobrepeso, carboidratos complexos, fibras",
+            "Atividade física: 150 min/semana aeróbico + resistido 2-3x",
+            "Perda de 7-10% do peso se sobrepeso/obesidade",
+            "Educação em diabetes e automonitorização",
+            "Cessação do tabagismo"
+          ],
+          "farmacologico": [
+            "Metformina 500-2550mg/dia (1ª linha se TFG >30)",
+            "Se HbA1c >7,5% ou sintomático: associar 2º agente",
+            "iSGLT2 se DCV ou DRC (empagliflozina, dapagliflozina)",
+            "GLP-1 se obesidade ou DCV (semaglutida, liraglutida)",
+            "Insulina se HbA1c >10% ou sintomas graves"
+          ]
+        },
+        "metasTerapeuticas": [
+          "HbA1c <7%",
+          "HbA1c <6,5% se DM recente, jovem, sem hipoglicemias",
+          "HbA1c <8% se idoso frágil, comorbidades, risco hipoglicemia",
+          "Glicemia jejum 80-130 mg/dL",
+          "Glicemia pós-prandial <180 mg/dL"
+        ],
+        "examesIniciais": [
+          "HbA1c (a cada 3-6 meses)",
+          "Glicemia de jejum",
+          "Perfil lipídico (LDL, HDL, TG)",
+          "Creatinina e TFG",
+          "Relação albumina/creatinina urinária",
+          "Exame de fundo de olho",
+          "Exame dos pés (sensibilidade, pulsos)",
+          "ECG"
+        ],
+        "redFlags": [
+          "Cetoacidose diabética (glicemia >250, cetonúria, acidose)",
+          "Estado hiperglicêmico hiperosmolar (glicemia >600, desidratação grave)",
+          "Hipoglicemia grave (<54 mg/dL com sintomas neurológicos)",
+          "Infecção grave (pé diabético infectado, sepse)",
+          "Síndrome coronariana aguda"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "9,4% da população adulta brasileira (~16 milhões)",
+          "incidencia": "~500 mil novos casos/ano",
+          "mortalidade": "~70 mil mortes/ano atribuídas ao DM",
+          "faixaEtaria": "Pico 45-64 anos, crescente em jovens",
+          "fatoresRisco": [
+            "Obesidade/sobrepeso (IMC ≥25)",
+            "Sedentarismo",
+            "História familiar de DM",
+            "Pré-diabetes (GJ 100-125, TOTG 140-199, HbA1c 5,7-6,4%)",
+            "Diabetes gestacional prévio",
+            "Síndrome dos ovários policísticos",
+            "HAS, dislipidemia",
+            "Uso de corticoides, antipsicóticos"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Frequentemente oligossintomático ou assintomático",
+            "Poliúria (micção frequente)",
+            "Polidipsia (sede excessiva)",
+            "Perda de peso não intencional",
+            "Fadiga",
+            "Turvação visual",
+            "Infecções de repetição (candidíase, ITU)"
+          ],
+          "sinaisExameFisico": [
+            "Obesidade central (circunferência abdominal aumentada)",
+            "Acantose nigricans (pescoço, axilas)",
+            "Alterações de sensibilidade em pés (neuropatia)",
+            "Pulsos pediais diminuídos (DAP)",
+            "Retinopatia ao exame de fundo de olho"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "Glicemia jejum ≥126 mg/dL (2 ocasiões ou 1 + sintomas)",
+            "TOTG 75g ≥200 mg/dL às 2h",
+            "HbA1c ≥6,5%",
+            "Glicemia casual ≥200 + sintomas clássicos"
+          ],
+          "diagnosticoDiferencial": [
+            "Diabetes tipo 1 (autoimune, insulinopenia absoluta)",
+            "LADA (autoimune tardio)",
+            "MODY (genético)",
+            "Diabetes secundário (pancreatite, Cushing, medicamentos)"
+          ],
+          "examesLaboratoriais": [
+            "HbA1c, glicemia jejum",
+            "Perfil lipídico",
+            "Creatinina, TFG, relação albumina/creatinina",
+            "Transaminases",
+            "TSH"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Alcançar e manter metas glicêmicas individualizadas",
+            "Prevenir complicações micro e macrovasculares",
+            "Reduzir mortalidade cardiovascular",
+            "Melhorar qualidade de vida"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Terapia nutricional individualizada",
+              "Redução de carboidratos simples e açúcar",
+              "Aumento de fibras, vegetais, proteínas",
+              "Atividade física: 150 min/semana aeróbico + resistido",
+              "Perda de 7-10% do peso se sobrepeso",
+              "Educação em diabetes estruturada",
+              "Automonitorização da glicemia capilar"
+            ],
+            "citations": [
+              {
+                "refId": "sbd-2024"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Biguanida",
+                "medicamentos": [
+                  "Metformina 500-2550mg/dia"
+                ],
+                "posologia": "2-3x/dia às refeições (XR 1x/dia)",
+                "observacoes": "Iniciar 500mg 1-2x/dia, titular a cada 1-2 semanas. CI: TFG <30, acidose, desidratação"
+              }
+            ],
+            "segundaLinha": [
+              {
+                "classe": "iSGLT2",
+                "medicamentos": [
+                  "Empagliflozina 10-25mg/dia",
+                  "Dapagliflozina 10mg/dia"
+                ],
+                "observacoes": "Preferir se DCV aterosclerótica ou ICC ou DRC. CI: TFG <20-25"
+              },
+              {
+                "classe": "Agonista GLP-1",
+                "medicamentos": [
+                  "Semaglutida 0,25-1mg SC/semana",
+                  "Liraglutida 0,6-1,8mg SC/dia"
+                ],
+                "observacoes": "Preferir se obesidade ou DCV. Alto custo, não disponível SUS"
+              },
+              {
+                "classe": "Sulfonilureia",
+                "medicamentos": [
+                  "Glibenclamida 2,5-20mg/dia",
+                  "Gliclazida MR 30-120mg/dia"
+                ],
+                "observacoes": "Disponível SUS. Risco de hipoglicemia e ganho de peso"
+              },
+              {
+                "classe": "Insulina",
+                "medicamentos": [
+                  "NPH 10 UI noturna",
+                  "Regular pré-prandial"
+                ],
+                "observacoes": "Se HbA1c >10%, sintomas catabólicos, falha de ADOs"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "DCV estabelecida",
+                "conduta": "Preferir iSGLT2 ou GLP-1 com benefício CV comprovado"
+              },
+              {
+                "situacao": "ICC",
+                "conduta": "iSGLT2 obrigatório (empagliflozina, dapagliflozina)"
+              },
+              {
+                "situacao": "DRC",
+                "conduta": "iSGLT2 se TFG >20-25. Ajustar metformina/suspender se TFG <30"
+              },
+              {
+                "situacao": "Idoso frágil",
+                "conduta": "Meta HbA1c <8%. Evitar sulfonilureias. Preferir iDPP4"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "sbd-2024"
+              }
+            ]
+          },
+          "duracao": "Tratamento contínuo e progressivo"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "A cada 3-4 meses se descontrolado; 6 meses se estável",
+          "examesControle": [
+            "HbA1c a cada 3-6 meses",
+            "Perfil lipídico, creatinina, TFG, microalbuminúria: anual",
+            "Fundo de olho: anual (a cada 2 anos se sem retinopatia e bom controle)",
+            "Exame dos pés: a cada consulta",
+            "ECG: anual se >40 anos ou fatores de risco"
+          ],
+          "metasTerapeuticas": [
+            "HbA1c individualizada (geralmente <7%)",
+            "PA <130/80 mmHg",
+            "LDL <100 mg/dL (ou <70 se alto risco CV)",
+            "Cessação do tabagismo",
+            "Peso saudável"
+          ],
+          "criteriosEncaminhamento": [
+            "Retinopatia diabética (para oftalmologia)",
+            "Pé diabético com lesão/infecção",
+            "DRC TFG <30 ou albuminúria progressiva",
+            "Descompensação refratária",
+            "Necessidade de insulinização complexa"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Identificação e tratamento do pré-diabetes",
+            "Programa de mudança de estilo de vida",
+            "Metformina em pré-diabetes de alto risco"
+          ],
+          "secundaria": [
+            "Controle glicêmico adequado",
+            "Rastreamento e tratamento de complicações",
+            "Vacinação (influenza, pneumococo, hepatite B)"
+          ],
+          "citations": [
+            {
+              "refId": "sbd-2024"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-dm2",
+        "insulinizacao-dm2"
+      ],
+      "medicamentos": [
+        "metformina",
+        "glibenclamida",
+        "insulina-nph",
+        "empagliflozina"
+      ],
+      "calculadoras": [
+        "findrisc",
+        "ckdepi",
+        "framingham"
+      ],
+      "rastreamentos": [
+        "diabetes-mellitus-2"
+      ],
+      "citations": [
+        {
+          "refId": "sbd-2024"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "metabolico",
+        "cronica",
+        "prevalente",
+        "dcnt"
+      ]
+    },
+    {
+      "id": "obesidade",
+      "titulo": "Obesidade",
+      "sinonimos": [
+        "Excesso de peso",
+        "Sobrepeso"
+      ],
+      "doid": "DOID:9970",
+      "snomedCT": "414916001",
+      "meshId": "D009765",
+      "umlsCui": "C0028754",
+      "ciap2": [
+        "T82",
+        "T83"
+      ],
+      "cid10": [
+        "E66",
+        "E66.0",
+        "E66.9"
+      ],
+      "cid11": [
+        "5B81"
+      ],
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "Doãnse crónica caracterizada pelo acúmulo excessivo de gordura corporal, com repercussóes negativas sobre a saúude. Definida por IMC ã30 kg/m².",
+        "criteriosDiagnosticos": [
+          "IMC ã25 kg/m²: sobrepeso",
+          "IMC ã30 kg/m²: obesidade grau I",
+          "IMC ã35 kg/m²: obesidade grau II",
+          "IMC ã40 kg/m²: obesidade grau III (mórbida)",
+          "Circunferência abdominal: >94cm (H) ou >80cm (M) - risco aumentado"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Mudança do estilo de vida (MEV) é a base do tratamento",
+            "Dieta hipocalórica (déficit de 500-1000 kcal/dia)",
+            "Atividade fízica: 150-300 min/semana de exercício aeróbico",
+            "Terapia cognitivo-comportamental",
+            "Suporte nutricional com nutricionista"
+          ],
+          "farmacologico": [
+            "Considerar se IMC ã30, ou IMC ç27 com comorbidade",
+            "Após falha de MEV por 3-6 meses",
+            "Opções: Orlistate, Semaglutida, Liraglutida, Sibutramina (com restrições)",
+            "Cirurgia bariátrica se IMC ç40 ou ç35 com comorbidade grave"
+          ]
+        },
+        "metasTerapeuticas": [
+          "Perda de 5-10% do peso inicial em 6 meses (clinicamente significativa)",
+          "Melhora das comorbidades (DM, HAS, dislipidemia)",
+          "Manutenção do peso a longo prazo",
+          "Melhora da qualidade de vida"
+        ],
+        "examesIniciais": [
+          "Glicemia de jejum, HbA1c",
+          "Perfil lipídico",
+          "Função hepática (esteatose)",
+          "TSH (descartar hipotireoidismo)",
+          "Função renal",
+          "Ácido úrico"
+        ],
+        "redFlags": [
+          "Ganho de peso rápido e inexplicado",
+          "Síndrome de Cushing (fácies em lua cheia, estrias violáceas)",
+          "Apneia do sono grave",
+          "Hipertensão intracraniana idiopática",
+          "Síndrome metabólica grave"
+        ]
+      },
+      "fullContent": {
+        "epidemiologia": {
+          "prevalencia": "30% dos adultos brasileiros (obesidade), 55% sobrepeso",
+          "incidencia": "Pandemia global em crescimento",
+          "faixaEtaria": "Todas as idades, aumenta na meia-idade",
+          "fatoresRisco": [
+            "Dieta hipercalórica e ultraprocessados",
+            "Sedentarismo",
+            "Genética (60-70% de herdabilidade)",
+            "Fatores socioeconômicos",
+            "Distúrbios do sono",
+            "Estresse crônico",
+            "Medicamentos (corticoides, antipsicóticos, alguns antidepressivos)"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "fisiopatologia": {
+          "texto": "Desequilíbrio crônico entre ingestão e gasto energético, modulado por fatores genéticos, ambientais, hormonais e psicológicos. O tecido adiposo não é inerte: secreta adipocinas que promovem inflamação crônica de baixo grau, resistência insulínica e disfunção metabólica.",
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "quadroClinico": {
+          "sintomasPrincipais": [
+            "Excesso de peso visível",
+            "Dispneia aos esforços",
+            "Fadiga",
+            "Dor articular (joelhos, coluna)",
+            "Ronco, apneia do sono",
+            "Baixa autoestima"
+          ],
+          "sinaisExameFisico": [
+            "IMC elevado",
+            "Circunferência abdominal aumentada",
+            "Acantose nigricans (resistência insulínica)",
+            "Estrias",
+            "Edema de MMII"
+          ],
+          "formasClinicas": [
+            "Obesidade androide (central/visceral): maior risco metabólico",
+            "Obesidade ginoide (periférica): menor risco metabólico"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "diagnostico": {
+          "criterios": [
+            "IMC ≥30 kg/m² (obesidade)",
+            "Circunferência abdominal aumentada",
+            "Avaliação de comorbidades associadas"
+          ],
+          "diagnosticoDiferencial": [
+            "Edema (anasarca)",
+            "Hipotireoidismo",
+            "Síndrome de Cushing",
+            "Uso de medicamentos",
+            "Síndromes genéticas raras"
+          ],
+          "examesLaboratoriais": [
+            "Glicemia, HbA1c, TOTG",
+            "Perfil lipídico completo",
+            "Função hepática, ultrassom abdominal (esteatose)",
+            "TSH",
+            "Função renal, ácido úrico",
+            "ECG, ecocardiograma se indicado"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "tratamento": {
+          "objetivos": [
+            "Perda de peso sustentada",
+            "Melhora das comorbidades",
+            "Prevenção de complicações",
+            "Melhora da qualidade de vida"
+          ],
+          "naoFarmacologico": {
+            "medidas": [
+              "Dieta hipocalórica equilibrada (déficit de 500-1000 kcal/dia)",
+              "Atividade física: 150-300 min/semana aeróbico + resistido",
+              "Terapia cognitivo-comportamental",
+              "Acompanhamento com equipe multidisciplinar"
+            ],
+            "citations": [
+              {
+                "refId": "abeso-2022"
+              }
+            ]
+          },
+          "farmacologico": {
+            "primeiraLinha": [
+              {
+                "classe": "Inibidor de lipases",
+                "medicamentos": [
+                  "Orlistate"
+                ],
+                "posologia": "120mg 3x/dia com refeições principais"
+              },
+              {
+                "classe": "Agonista GLP-1",
+                "medicamentos": [
+                  "Semaglutida",
+                  "Liraglutida"
+                ],
+                "posologia": "Semaglutida SC: iniciar 0,25mg/sem, titular até 2,4mg/sem"
+              }
+            ],
+            "situacoesEspeciais": [
+              {
+                "situacao": "IMC ≥40 ou ≥35 com comorbidade grave",
+                "conduta": "Avaliar cirurgia bariátrica"
+              },
+              {
+                "situacao": "Obesidade + DM2",
+                "conduta": "Preferir agonistas GLP-1 ou iSGLT2"
+              }
+            ],
+            "citations": [
+              {
+                "refId": "abeso-2022"
+              }
+            ]
+          },
+          "duracao": "Tratamento crônico"
+        },
+        "acompanhamento": {
+          "frequenciaConsultas": "Mensal nos primeiros 6 meses, depois a cada 3 meses",
+          "examesControle": [
+            "Peso, IMC, circunferência abdominal",
+            "Glicemia, HbA1c",
+            "Perfil lipídico",
+            "Função hepática"
+          ],
+          "metasTerapeuticas": [
+            "Perda de 5-10% do peso inicial é clinicamente significativa",
+            "Manutenção do peso perdido"
+          ],
+          "criteriosEncaminhamento": [
+            "Avaliação para cirurgia bariátrica",
+            "Suspeita de causa secundária",
+            "Complicações graves"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        },
+        "prevencao": {
+          "primaria": [
+            "Alimentação saudável desde a infância",
+            "Atividade física regular",
+            "Redução de ultraprocessados"
+          ],
+          "secundaria": [
+            "Intervenção precoce no sobrepeso",
+            "Tratamento de comorbidades"
+          ],
+          "citations": [
+            {
+              "refId": "abeso-2022"
+            }
+          ]
+        }
+      },
+      "protocolos": [
+        "protocolo-obesidade"
+      ],
+      "medicamentos": [
+        "orlistate",
+        "semaglutida",
+        "liraglutida"
+      ],
+      "calculadoras": [
+        "imc",
+        "risco-cv"
+      ],
+      "rastreamentos": [],
+      "citations": [
+        {
+          "refId": "abeso-2022"
+        }
+      ],
+      "lastUpdate": "2024-12",
+      "tags": [
+        "obesidade",
+        "sobrepeso",
+        "imc",
+        "emagrecimento",
+        "cirurgia-bariatrica"
+      ]
+    },
+    {
+      "id": "nodulo-tireoide",
+      "titulo": "Νόδουλος Σιττοειδούς",
+      "ciap2": [
+        "T81"
+      ],
+      "cid10": [
+        "E04"
+      ],
+      "cid11": [
+        "5A00.1"
+      ],
+      "categoria": "metabolico",
+      "doid": "DOID:50",
+      "snomedCT": "237495005",
+      "meshId": "D016606",
+      "umlsCui": "C0040137",
+      "quickView": {
+        "definicao": "Διακριτές λημφοκτήσεις στο σιττοειδές, πολύ κοινές (50% του πληθυσμού με ολισθηρόσκοπο). Η πλειοψηφία είναι καλές. 5-15% είναι καρκίνοι.",
+        "criteriosDiagnosticos": [
+          "Νόδουλος αναπαλπώνιμος ή επιπτωτικός σε εικονική",
+          "TSH για αξιολόγηση λειτουργίας",
+          "Ολισθηρόσκοπος σιττοειδούς για χαρακτηρισμό",
+          "ΠΑΑΦ αν >1cm με υποπτές χαρακτηριστικές"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Παρακολούθηση αν καλός και μικρός",
+            "Επανεξέταση με ολισθηρόσκοπο περιοδικά"
+          ],
+          "farmacologico": [
+            "Δεν υπάρχει φαρμακευτική θεραπεία για καλούς νόδουλους",
+            "Η Levotiroxine ΔΕΝ καταστέλλει τους νόδουλους"
+          ]
+        },
+        "redFlags": [
+          "Γρήγορη ανάπτυξη",
+          "Χασκαλιά",
+          "Πέτρινος νόδουλος",
+          "Τραχηλική λεμφοκτησική παθολογία",
+          "Ιστορία οικογενειακού καρκίνου σιττοειδούς"
+        ]
+      },
+      "medicamentos": [],
+      "protocolos": [],
+      "calculadoras": []
+    },
+    {
+      "id": "sindrome-metabolica",
+      "titulo": "Μεταβολικό Σύνδρομο",
+      "sinonimos": [
+        "Σύνδρομο X",
+        "Σύνδρομο αντοχής στην ινσουλίνη"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E88.81"
+      ],
+      "cid11": [
+        "5C80.Z"
+      ],
+      "doid": "DOID:14221",
+      "snomedCT": "237602007",
+      "meshId": "D024821",
+      "umlsCui": "C0524620",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "Συνδυασμός μεταβολικών παραγόντων κινδύνου που αυξάνουν τον κίνδυνο καρδιαγγειακών νοσημάτων και διαβήτη τύπου 2. Επιπολασμός 20-25% σε ενήλικες.",
+        "criteriosDiagnosticos": [
+          "Κριτήρια NCEP-ATPIII (≥3 από 5):",
+          "Περίμετρος κοιλιάς: >102cm (Ανδρες) ή >88cm (Γυναίκες)",
+          "Τριγλυκερίδια ≥150 mg/dL",
+          "HDL-c <40 (Ανδρες) ή <50 (Γυναίκες) mg/dL",
+          "BP ≥130/85 mmHg ή υπό θεραπεία",
+          "Γλυκόζημα άδειου στομάχου ≥100 mg/dL ή διαβήτης"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Χρειαστική απώλεια βάρους 7-10% (κύρια παρέμβαση)",
+            "Αεροβικός και αντοπαραστατικός άσκησης",
+            "Υποκαλορική διατροφή, χαμηλό IG",
+            "Κατάργηση καπνίσματος"
+          ],
+          "farmacologico": [
+            "Θεραπεία κάθε μεμονωμένου συστατικού",
+            "Μετφορμίνη αν προδιαβητική κατάσταση + υψηλός κίνδυνος",
+            "Στατίνη σύμφωνα με τον καρδιαγγειακό κίνδυνο",
+            "Αντιυπερτασικό αν υπέρταση"
+          ]
+        },
+        "redFlags": [
+          "Εκφανής διαβήτης τύπου 2",
+          "Εγκαίρως εγκαίρη καρδιαγγειακή ασθένεια",
+          "NASH/κίρρωση"
+        ],
+        "metasTerapeuticas": [
+          "Συνεχής απώλεια βάρους",
+          "Επαναφορά των συστατικών"
+        ],
+        "examesIniciais": [
+          "Γλυκόζημα άδειου στομάχου",
+          "Ορόσημα οριακής γλυκόζημα (OGTT) αν ΓΖ 100-125",
+          "Λιπιδικό προφίλ",
+          "Ασπαρτάτο οξιδασικό ένζυμο (ASAT)/Αλανίνη οξιδασικό ένζυμο (ALAT)",
+          "Εκτυπωμένη εικόνα κοιλιάς (US)"
+        ]
+      },
+      "protocolos": [
+        "dm2",
+        "has"
+      ],
+      "medicamentos": [
+        "metformina"
+      ],
+      "calculadoras": [
+        "imc"
+      ],
+      "tags": [
+        "παχυσαρκία",
+        "διαβήτης",
+        "καρδιαγγειακό"
+      ]
+    },
+    {
+      "id": "dislipidemia",
+      "titulo": "Δισλιπιδαιμία",
+      "sinonimos": [
+        "Υπερλιπιδαιμία",
+        "Υπερχοληστερολαιμία",
+        "Υπερτριγλυκεριδαιμία"
+      ],
+      "ciap2": [
+        "T93"
+      ],
+      "cid10": [
+        "E78.0",
+        "E78.1",
+        "E78.2",
+        "E78.5"
+      ],
+      "cid11": [
+        "5C80"
+      ],
+      "doid": "DOID:1168",
+      "snomedCT": "370992007",
+      "meshId": "D050171",
+      "umlsCui": "C0242339",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "Αλλαγή του λιπιδικού μεταβολισμού με αύξηση του LDL-c, τριγλυκερίδων και/ή μείωση του HDL-c. Κύριος τροποποιητός παράγοντας κινδύνου για καρδιαγγειακές αρτηριοσκλερωτικές παθήσεις.",
+        "criteriosDiagnosticos": [
+          "LDL-c ≥160 mg/dL (υψηλή) ή ≥130 mg/dL (οριακή)",
+          "HDL-c <40 mg/dL (άνδρες) ή <50 mg/dL (γυναίκες)",
+          "Τριγλυκερίδια ≥150 mg/dL",
+          "Συνολικό χοληστερόλη ≥240 mg/dL",
+          "Υπολογισμός καρδιαγγειακού κινδύνου (ASCVD, Framingham)"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Μεσογειακή διατροφή ή DASH",
+            "Αερόβιος άσκησης 150λεπτά/εβδομάδα",
+            "Χρειαστική μείωση βάρους σε περίπτωση υπερβάρυνσης/παχυσαρκίας",
+            "Κατάργηση του καπνίσματος",
+            "Μείωση του αλκοόλ"
+          ],
+          "farmacologico": [
+            "Εστατίνες: Σινβαστατίνη 20-40mg, Ατορβαστατίνη 10-80mg, Ροσυβαστατίνη 5-20mg",
+            "Στόχος LDL-c σύμφωνα με τον κίνδυνο: <70 (πολύ υψηλή), <100 (υψηλή), <130 (μέτρια)",
+            "Ζετιμίβη 10mg αν ο στόχος δεν επιτευχθεί με εστατίνες",
+            "Φιβρατό αν TG >500 mg/dL"
+          ]
+        },
+        "redFlags": [
+          "Ξανθώματα",
+          "Κορνεακός αρκούς <45 ετών",
+          "Ιστορία οικογενειακής πρώιμης καρδιαγγειακής παθήσεως",
+          "Πανκρεατίτιδα (TG>1000)"
+        ],
+        "metasTerapeuticas": [
+          "Μείωση 30-50% του LDL-c ή απόλυτος στόχος σύμφωνα με τον κίνδυνο"
+        ],
+        "examesIniciais": [
+          "Λιπιδικό προφίλ με άδειο στομάχι",
+          "Γλυκαιμία",
+          "Κρεατινίνη",
+          "TSH",
+          "ΤGO/ΤGP"
+        ]
+      },
+      "protocolos": [
+        "has",
+        "dm2"
+      ],
+      "medicamentos": [
+        "sinvastatina",
+        "atorvastatina",
+        "rosuvastatina"
+      ],
+      "calculadoras": [
+        "risco-cardiovascular"
+      ],
+      "tags": [
+        "καρδιαγγειακό",
+        "πρόληψη",
+        "εστατίνη"
+      ]
+    },
+    {
+      "id": "deficiencia-vitamina-d",
+      "titulo": "Έλλειψη Βιταμίνης D",
+      "sinonimos": [
+        "Υποβιταμινωση D",
+        "Ανεπαρκεία βιταμίνης D"
+      ],
+      "ciap2": [
+        "T91"
+      ],
+      "cid10": [
+        "E55.9"
+      ],
+      "cid11": [
+        "5B57.4"
+      ],
+      "doid": "DOID:10609",
+      "snomedCT": "34713006",
+      "meshId": "D014808",
+      "umlsCui": "C0042870",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "Άνευση αρκετών επιπέδων 25(OH)D συνδεδεμένη με οστική παθολογία και πιθανά εξωσκελετικά επιπτώματα. Επιπολασμός >50% σε κάποιες πληθυσμιακές ομάδες.",
+        "criteriosDiagnosticos": [
+          "25(OH)D <20 ng/mL: Έλλειψη",
+          "25(OH)D 20-29 ng/mL: Ανεπαρκεία",
+          "25(OH)D ≥30 ng/mL: Αρκετότητα",
+          "Ελέγχουμε ομάδες υψηλού κινδύνου: ηλικιωμένοι, παχυσαρκείς, σκουροδέρματοι, λίγη έκθεση στον ήλιο"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Μετριοπαθής έκθεση στον ήλιο (10-15λεπτά/ημέρα)",
+            "Ενισχυμένα τρόφιμα",
+            "Λιπαρά ψάρια, αυγά"
+          ],
+          "farmacologico": [
+            "Έλλειψη: Κολεκαλτσιφερόλ 50.000 UI/εβδομάδα για 8 εβδομάδες",
+            "Διατήρηση: 1.000-2.000 UI/μέρα",
+            "Ηλικιωμένοι/παχυσαρκείς μπορεί να χρειάζονται μεγαλύτερες δόσεις"
+          ]
+        },
+        "redFlags": [
+          "Συμπτωματική υποκαλαιμία",
+          "Χαλινοφυες οστεοκλάσεις",
+          "Οστεομαλακία"
+        ],
+        "metasTerapeuticas": [
+          "25(OH)D ≥30 ng/mL"
+        ],
+        "examesIniciais": [
+          "25(OH)D σερική",
+          "Κάλσιος, φωσφόρος",
+          "PTH",
+          "Κρεατινίνη"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "colecalciferol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "κόστος",
+        "υποστήριξη",
+        "ελέγχος"
+      ]
+    },
+    {
+      "id": "hiperuricemia-assintomatica",
+      "titulo": "Ασυμπτωματική Υπερουρικαιμία",
+      "sinonimos": [
+        "Υψηλός οξυδικός ουρικός"
+      ],
+      "ciap2": [
+        "T99"
+      ],
+      "cid10": [
+        "E79.0"
+      ],
+      "cid11": [
+        "5C64.0"
+      ],
+      "doid": "DOID:9245",
+      "snomedCT": "35885006",
+      "meshId": "D033461",
+      "umlsCui": "C0740394",
+      "categoria": "metabolico",
+      "quickView": {
+        "definicao": "Υψηλός οξυδικός ουρικός σερικός (>7 mg/dL σε άνδρες, >6 mg/dL σε γυναίκες) χωρίς ιστορία γούτας ή νεφρολιθίασης από ουρικό.",
+        "criteriosDiagnosticos": [
+          "Οξυδικός ουρικός >7 mg/dL (Α) ή >6 mg/dL (Γ)",
+          "Απουσία αρθρίτιδας γούτας",
+          "Απουσία νεφρολιθίασης από ουρικό",
+          "Αξιολόγηση συνοδευτικών νοσημάτων: Υπέρταση, Χρόνια Ανεπαρκεία Νεφρών, μεταβολικό σύνδρομο"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Μείωση βάρους",
+            "Περιορισμός αλκοόλ (ειδικά μπίρας)",
+            "Αποφυγή γλυκισμένων ποτών",
+            "Μείωση κρεατινών και εντέρων",
+            "Αύξηση αποδέψης γαλακτοπροϊόντων"
+          ],
+          "farmacologico": [
+            "ΔΕΝ θεραπεύεται μόνο για το επίπεδο οξυδικού ουρικού",
+            "Σκέψη για θεραπεία αν: Χρόνια Ανεπαρκεία Νεφρών, πολύ υψηλός καρδιαγγειακός κίνδυνος",
+            "Αν καταχρεωθεί: Αλοπούρινολ 100mg, αύξηση μέχρι στόχο",
+            "Φεμπουξοστάτ ως εναλλακτική λύση"
+          ]
+        },
+        "redFlags": [
+          "Πρώτο περιστατικό γούτας",
+          "Νεφρολιθίαση",
+          "Νεφροπάθεια από ουρικό",
+          "Μεταβολικό σύνδρομο λύσης τυμών"
+        ],
+        "metasTerapeuticas": [
+          "Οξυδικός ουρικός <6 mg/dL αν θεραπευτεί"
+        ],
+        "examesIniciais": [
+          "Οξυδικός ουρικός σερικός",
+          "Κρεατινίνη",
+          "Προφίλ λιπιδίων",
+          "Γλυκαιμία",
+          "ΕΑΣ"
+        ]
+      },
+      "protocolos": [],
+      "medicamentos": [
+        "alopurinol"
+      ],
+      "calculadoras": [],
+      "tags": [
+        "γούτας",
+        "νεφρικό",
+        "μεταβολικό"
+      ]
+    }
+  ]
+}

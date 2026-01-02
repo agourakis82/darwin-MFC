@@ -1,0 +1,58 @@
+{
+  "locale": "el",
+  "category": "Δερματολογικό",
+  "generatedAt": "2025-12-31T18:08:56.704Z",
+  "count": 1,
+  "diseases": [
+    {
+      "id": "dermatite-contato",
+      "titulo": "Δερματίτη του Kontakto",
+      "ciap2": [
+        "S88"
+      ],
+      "cid10": [
+        "L25"
+      ],
+      "cid11": [
+        "EA80.1"
+      ],
+      "categoria": "Δερματολογικό",
+      "doid": "DOID:13360",
+      "snomedCT": "40275004",
+      "meshId": "D017449",
+      "umlsCui": "C0011606",
+      "quickView": {
+        "definicao": "Ερупção cutânea causada από το direct contact με irritante ή alérgeno. Irritativa (80%) vs alérgica (20%).",
+        "criteriosDiagnosticos": [
+          "Εριθema localizado",
+          "Πραούδιο",
+          "Βεσículες/βόλες (αλέργica)",
+          "Ιστορία της exposición",
+          "Διστρίβωση compatível"
+        ],
+        "tratamentoPrimeiraLinha": {
+          "naoFarmacologico": [
+            "Identificar και evitar agentes causadores",
+            "Κρύστες σαβάνες",
+            "Ηδράνεια cutânea"
+          ],
+          "farmacologico": [
+            "Κορτικόειδο tópico: Hidrocortisona 1% (face) ή Betametasona (corpo) 2x/dia até resolução",
+            "Αντι-πραούδιο oral se πραούδιο intenso"
+          ]
+        },
+        "redFlags": [
+          "Superinfecção",
+          "Eczema generalizado",
+          "Anafilaxia"
+        ]
+      },
+      "medicamentos": [
+        "hidrocortisona",
+        "betametasona"
+      ],
+      "protocolos": [],
+      "calculadoras": []
+    }
+  ]
+}
