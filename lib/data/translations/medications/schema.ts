@@ -19,12 +19,8 @@ import { ClasseTerapeutica, GravidadeInteracao } from '@/lib/types/medicamento';
 // SHARED TYPES (re-export from disease schema)
 // =============================================================================
 
-export {
-  SupportedLocale,
-  SUPPORTED_LOCALES,
-  SCHEMA_VERSION,
-  type TranslationMeta
-} from '../diseases/schema';
+export type { SupportedLocale, TranslationMeta } from '../diseases/schema';
+export { SUPPORTED_LOCALES, SCHEMA_VERSION } from '../diseases/schema';
 
 import { SupportedLocale } from '../diseases/schema';
 

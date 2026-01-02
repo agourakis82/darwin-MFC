@@ -5,6 +5,7 @@ import { routing } from '@/i18n/routing';
 import { getDirection, formatLocaleForHTML } from '@/lib/i18n/utils';
 import { locales, type Locale } from '@/i18n/config';
 import LocaleHtmlAttributes from './LocaleHtmlAttributes';
+import { RegionProvider } from '@/lib/context/RegionContext';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -49,7 +50,9 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <LocaleHtmlAttributes lang={htmlLang} dir={direction} />
-      {children}
+      <RegionProvider>
+        {children}
+      </RegionProvider>
     </NextIntlClientProvider>
   );
 }

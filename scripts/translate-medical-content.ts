@@ -821,7 +821,7 @@ Examples:
         items = doencasModule.getAllDoencas();
       } else {
         const medsModule = await import('../lib/data/medicamentos/index');
-        items = medsModule.getAllMedicamentos();
+        items = medsModule.medicamentosConsolidados;
       }
     } catch (error) {
       console.error(`Failed to load data: ${error}`);

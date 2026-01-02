@@ -14,7 +14,7 @@
 
 import { useLocale } from 'next-intl';
 import { useMemo, useState, useEffect } from 'react';
-import { Doenca } from '@/lib/types/doenca';
+import { Doenca, CategoriaDoenca } from '@/lib/types/doenca';
 import { getDoencaById } from '@/lib/data/doencas/index';
 import {
   DiseaseTranslation,
@@ -160,7 +160,7 @@ function mergeTranslation(
           ? {
               ...original.fullContent.fisiopatologia,
               texto: translation.fullContent.fisiopatologia.texto,
-              citations: original.fullContent.fisiopatologia?.citations,
+              citations: original.fullContent.fisiopatologia?.citations ?? [],
             }
           : original.fullContent.fisiopatologia,
         quadroClinico: {
@@ -182,22 +182,29 @@ function mergeTranslation(
           farmacologico: {
             primeiraLinha:
               translation.fullContent.tratamento.farmacologico.primeiraLinha.map(
-                (t, i) => ({
-                  ...original.fullContent!.tratamento.farmacologico.primeiraLinha[i],
-                  classe: t.classe,
-                  posologia: t.posologia,
-                  observacoes: t.observacoes,
-                  // Keep medicamentos as-is (INN names)
-                })
+                (t, i) => {
+                  const orig = original.fullContent!.tratamento.farmacologico.primeiraLinha[i];
+                  return {
+                    ...orig,
+                    classe: t.classe,
+                    posologia: t.posologia,
+                    observacoes: t.observacoes,
+                    medicamentos: orig?.medicamentos ?? [],
+                  };
+                }
               ),
             segundaLinha:
               translation.fullContent.tratamento.farmacologico.segundaLinha?.map(
-                (t, i) => ({
-                  ...original.fullContent!.tratamento.farmacologico.segundaLinha?.[i],
-                  classe: t.classe,
-                  posologia: t.posologia,
-                  observacoes: t.observacoes,
-                })
+                (t, i) => {
+                  const orig = original.fullContent!.tratamento.farmacologico.segundaLinha?.[i];
+                  return {
+                    ...orig,
+                    classe: t.classe,
+                    posologia: t.posologia,
+                    observacoes: t.observacoes,
+                    medicamentos: orig?.medicamentos ?? [],
+                  };
+                }
               ),
             situacoesEspeciais:
               translation.fullContent.tratamento.farmacologico.situacoesEspeciais,
@@ -213,7 +220,7 @@ function mergeTranslation(
         prevencao: translation.fullContent.prevencao
           ? {
               ...translation.fullContent.prevencao,
-              citations: original.fullContent.prevencao?.citations,
+              citations: original.fullContent.prevencao?.citations ?? [],
             }
           : original.fullContent.prevencao,
         populacoesEspeciais: translation.fullContent.populacoesEspeciais,
@@ -340,7 +347,7 @@ export function useLocalizedDiseases(
       try {
         // Get unique categories
         const categories = new Set(
-          originals.map((d) => d.categoria).filter((c): c is string => !!c)
+          originals.map((d) => d.categoria).filter((c): c is CategoriaDoenca => !!c)
         );
 
         // Load all category files

@@ -1,16 +1,17 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Link } from '@/i18n/routing';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import {
   Search, Heart, Activity, Wind, Brain, Bug, Bone,
   Fingerprint, Utensils, Zap, Droplets, Baby, Users,
-  ChevronRight, BookOpen, ChevronDown, Filter, X
+  ChevronRight, BookOpen, Filter, X, Loader2
 } from 'lucide-react';
 import { doencasConsolidadas, getDoencasByCategoria } from '@/lib/data/doencas/index';
 import { CATEGORIAS_DOENCA, CategoriaDoenca } from '@/lib/types/doenca';
-import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
+import { useLocalizedDiseases, preloadDiseaseTranslations } from '@/lib/hooks/useLocalizedDisease';
+import { SupportedLocale, isValidLocale } from '@/lib/data/translations/diseases/schema';
 
 // Icon mapping
 const iconMap: Record<string, React.ElementType> = {
@@ -18,17 +19,43 @@ const iconMap: Record<string, React.ElementType> = {
   Fingerprint, Utensils, Zap, Droplets, Baby, Users
 };
 
+// Get all disease IDs from the original data
+const allDiseaseIds = doencasConsolidadas
+  .filter(d => d.id)
+  .map(d => d.id as string);
+
+// Get all unique categories for preloading
+const allCategories = Array.from(
+  new Set(
+    doencasConsolidadas
+      .map(d => d.categoria)
+      .filter((c): c is CategoriaDoenca => !!c)
+  )
+);
+
 export default function DoencasPage() {
   const t = useTranslations('doencas');
-  const { translateDisease } = useMedicalTerms();
+  const locale = useLocale();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategoria, setSelectedCategoria] = useState<CategoriaDoenca | 'todas'>('todas');
   const [showFilters, setShowFilters] = useState(false);
 
+  // Use localized diseases hook for translated content
+  const { diseases: localizedDiseases, isLoading } = useLocalizedDiseases(allDiseaseIds);
+
+  // Preload translations on mount for better performance
+  useEffect(() => {
+    if (locale !== 'pt' && isValidLocale(locale)) {
+      preloadDiseaseTranslations(locale as SupportedLocale, allCategories);
+    }
+  }, [locale]);
+
+  // Group diseases by category (using original data for grouping)
   const doencasAgrupadas = useMemo(() => getDoencasByCategoria(doencasConsolidadas), []);
 
+  // Filter localized diseases
   const doencasFiltradas = useMemo(() => {
-    let filtered = doencasConsolidadas;
+    let filtered = localizedDiseases;
 
     if (selectedCategoria !== 'todas') {
       filtered = filtered.filter(d => d.categoria === selectedCategoria);
@@ -46,7 +73,7 @@ export default function DoencasPage() {
     }
 
     return filtered;
-  }, [searchTerm, selectedCategoria]);
+  }, [searchTerm, selectedCategoria, localizedDiseases]);
 
   const selectedCategoriaInfo = selectedCategoria !== 'todas'
     ? CATEGORIAS_DOENCA[selectedCategoria]
@@ -149,11 +176,23 @@ export default function DoencasPage() {
 
       {/* Results Count */}
       <p className="text-sm text-neutral-500 mb-4">
-        {t('results', { count: doencasFiltradas.length })}
+        {isLoading ? (
+          <span className="flex items-center gap-2">
+            <Loader2 className="w-4 h-4 animate-spin" />
+            {t('loading') || 'Loading...'}
+          </span>
+        ) : (
+          t('results', { count: doencasFiltradas.length })
+        )}
       </p>
 
-      {/* Results */}
-      {doencasFiltradas.length === 0 ? (
+      {/* Loading State */}
+      {isLoading ? (
+        <div className="flex flex-col items-center justify-center py-16">
+          <Loader2 className="w-12 h-12 animate-spin text-blue-500 mb-4" />
+          <p className="text-neutral-500 dark:text-neutral-400">{t('loadingDiseases') || 'Loading diseases...'}</p>
+        </div>
+      ) : doencasFiltradas.length === 0 ? (
         <div className="text-center py-16">
           <Search className="w-12 h-12 mx-auto mb-3 text-neutral-300 dark:text-neutral-600" />
           <p className="text-lg text-neutral-500">{t('noResults')}</p>
@@ -177,13 +216,27 @@ export default function DoencasPage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-[#1d1d1f] dark:text-[#f5f5f7] mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-1">
-                      {translateDisease(doenca.cid10, doenca.titulo || '')}
+                      {doenca.titulo || ''}
                     </h3>
                     <p className="text-sm text-neutral-500 dark:text-neutral-400 line-clamp-2 mb-2">
                       {doenca.quickView?.definicao || t('noDescription')}
                     </p>
 
-                    {/* Single code badge - cleaner */}
+                    {/* Tags - show translated tags if available */}
+                    {doenca.tags && doenca.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-1 mb-2">
+                        {doenca.tags.slice(0, 2).map((tag, idx) => (
+                          <span
+                            key={idx}
+                            className="px-1.5 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-xs rounded"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Code badges */}
                     <div className="flex items-center justify-between">
                       <div className="flex gap-1.5">
                         {doenca.ciap2?.[0] && (
@@ -209,4 +262,3 @@ export default function DoencasPage() {
     </div>
   );
 }
-

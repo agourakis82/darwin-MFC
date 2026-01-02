@@ -8,33 +8,147 @@ import {
   CheckCircle, XCircle, Clock, Users, Heart, ChevronDown, ChevronUp,
   Stethoscope, Activity, Clipboard, Target, ExternalLink, ClipboardCheck
 } from 'lucide-react';
-import { getDoencaById } from '@/lib/data/doencas/index';
 import { CATEGORIAS_DOENCA } from '@/lib/types/doenca';
-import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
-import { 
-  getMedicamentosForDoenca, 
-  getProtocolosForDoenca, 
-  getCalculadorasForDoenca 
+import { useLocalizedDisease, LocalizedDoenca } from '@/lib/hooks/useLocalizedDisease';
+import {
+  getMedicamentosForDoenca,
+  getProtocolosForDoenca,
+  getCalculadorasForDoenca
 } from '@/lib/data/cross-references';
 import { notFound } from 'next/navigation';
 import ChecklistConsultaComponent from '@/app/components/Checklist/ChecklistConsulta';
 import { generateChecklistFromDoenca } from '@/lib/utils/checklist-generator';
 
+// Loading Skeleton Component
+function DoencaDetailSkeleton() {
+  return (
+    <div className="container mx-auto px-4 py-8 max-w-5xl animate-pulse">
+      {/* Breadcrumb skeleton */}
+      <div className="h-5 w-32 bg-neutral-200 dark:bg-neutral-700 rounded mb-6" />
+
+      {/* Header skeleton */}
+      <div className="mb-8">
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-16 h-16 bg-neutral-200 dark:bg-neutral-700 rounded-2xl" />
+          <div className="flex-1">
+            <div className="h-10 w-3/4 bg-neutral-200 dark:bg-neutral-700 rounded mb-2" />
+            <div className="flex flex-wrap gap-2">
+              <div className="h-7 w-24 bg-neutral-200 dark:bg-neutral-700 rounded-full" />
+              <div className="h-7 w-28 bg-neutral-200 dark:bg-neutral-700 rounded-full" />
+            </div>
+          </div>
+        </div>
+
+        {/* Toggle buttons skeleton */}
+        <div className="flex gap-2 mt-4">
+          <div className="h-10 w-32 bg-neutral-200 dark:bg-neutral-700 rounded-xl" />
+          <div className="h-10 w-36 bg-neutral-200 dark:bg-neutral-700 rounded-xl" />
+          <div className="h-10 w-28 bg-neutral-200 dark:bg-neutral-700 rounded-xl" />
+        </div>
+      </div>
+
+      {/* Content skeleton */}
+      <div className="space-y-6">
+        <div className="glass-strong rounded-2xl p-6">
+          <div className="h-6 w-40 bg-neutral-200 dark:bg-neutral-700 rounded mb-3" />
+          <div className="h-4 w-full bg-neutral-200 dark:bg-neutral-700 rounded mb-2" />
+          <div className="h-4 w-5/6 bg-neutral-200 dark:bg-neutral-700 rounded mb-2" />
+          <div className="h-4 w-4/5 bg-neutral-200 dark:bg-neutral-700 rounded" />
+        </div>
+        <div className="glass-strong rounded-2xl p-6">
+          <div className="h-6 w-48 bg-neutral-200 dark:bg-neutral-700 rounded mb-3" />
+          <div className="space-y-2">
+            <div className="h-4 w-full bg-neutral-200 dark:bg-neutral-700 rounded" />
+            <div className="h-4 w-11/12 bg-neutral-200 dark:bg-neutral-700 rounded" />
+            <div className="h-4 w-10/12 bg-neutral-200 dark:bg-neutral-700 rounded" />
+          </div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="glass-strong rounded-2xl p-6">
+            <div className="h-6 w-36 bg-neutral-200 dark:bg-neutral-700 rounded mb-3" />
+            <div className="space-y-2">
+              <div className="h-4 w-full bg-neutral-200 dark:bg-neutral-700 rounded" />
+              <div className="h-4 w-5/6 bg-neutral-200 dark:bg-neutral-700 rounded" />
+            </div>
+          </div>
+          <div className="glass-strong rounded-2xl p-6">
+            <div className="h-6 w-32 bg-neutral-200 dark:bg-neutral-700 rounded mb-3" />
+            <div className="space-y-2">
+              <div className="h-4 w-full bg-neutral-200 dark:bg-neutral-700 rounded" />
+              <div className="h-4 w-4/5 bg-neutral-200 dark:bg-neutral-700 rounded" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Error Display Component
+function DoencaDetailError({ error, onRetry }: { error: Error; onRetry?: () => void }) {
+  const t = useTranslations('diseaseDetail');
+
+  return (
+    <div className="container mx-auto px-4 py-8 max-w-5xl">
+      <Link
+        href="/doencas"
+        className="inline-flex items-center gap-2 text-[#86868b] hover:text-blue-600 mb-6 transition-colors"
+      >
+        <ArrowLeft className="w-4 h-4" />
+        {t('backToDiseases')}
+      </Link>
+
+      <div className="glass-strong rounded-2xl p-8 text-center">
+        <div className="w-16 h-16 mx-auto mb-4 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center">
+          <AlertTriangle className="w-8 h-8 text-red-500" />
+        </div>
+        <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-2">
+          {t('error.title')}
+        </h2>
+        <p className="text-[#86868b] mb-4">
+          {error.message || t('error.generic')}
+        </p>
+        {onRetry && (
+          <button
+            onClick={onRetry}
+            className="px-4 py-2 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-colors"
+          >
+            {t('error.retry')}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function DoencaDetailClient({ params }: { params: Promise<{ id: string }> }) {
   const t = useTranslations('diseaseDetail');
-  const { translateDisease } = useMedicalTerms();
   const { id } = use(params);
-  const doenca = getDoencaById(id);
+
+  // Use the localized disease hook instead of useMedicalTerms + getDoencaById
+  const { disease: doenca, isLoading, error } = useLocalizedDisease(id);
+
   const [showFullContent, setShowFullContent] = useState(false);
   const [showChecklist, setShowChecklist] = useState(false);
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['epidemiologia']));
-  
+
+  // Show loading skeleton while fetching translations
+  if (isLoading) {
+    return <DoencaDetailSkeleton />;
+  }
+
+  // Handle translation errors - show error UI with option to continue with original content
+  if (error) {
+    return <DoencaDetailError error={error} />;
+  }
+
+  // Handle disease not found
   if (!doenca) {
     notFound();
   }
 
   const categoriaInfo = doenca.categoria ? CATEGORIAS_DOENCA[doenca.categoria] : CATEGORIAS_DOENCA['outros'];
-  
+
   const toggleSection = (section: string) => {
     const newExpanded = new Set(expandedSections);
     if (newExpanded.has(section)) {
@@ -66,7 +180,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
           </div>
           <div className="flex-1">
             <h1 className="text-4xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-2">
-              {translateDisease(doenca.cid10, doenca.titulo || '')}
+              {doenca.titulo}
             </h1>
             <div className="flex flex-wrap gap-2">
               <span className={`px-3 py-1 bg-gradient-to-r ${categoriaInfo.color} text-white text-sm font-medium rounded-full`}>
@@ -82,10 +196,16 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                   CID-10: {code}
                 </span>
               ))}
+              {/* Translation indicator */}
+              {doenca._isTranslated && (
+                <span className="px-3 py-1 bg-purple-500/20 text-purple-700 dark:text-purple-300 text-xs font-medium rounded-full">
+                  {doenca._locale.toUpperCase()}
+                </span>
+              )}
             </div>
           </div>
         </div>
-        
+
         {/* Toggle View */}
         <div className="flex gap-2 mt-4 flex-wrap">
           <button
@@ -99,7 +219,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                 : 'bg-white/50 dark:bg-neutral-800/50 text-[#86868b] hover:bg-blue-100'
             }`}
           >
-            ⚡ {t('views.quickView')}
+            {t('views.quickView')}
           </button>
           <button
             onClick={() => {
@@ -112,7 +232,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                 : 'bg-white/50 dark:bg-neutral-800/50 text-[#86868b] hover:bg-purple-100'
             }`}
           >
-            📖 {t('views.fullVersion')}
+            {t('views.fullVersion')}
           </button>
           <button
             onClick={() => {
@@ -145,7 +265,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
         </div>
       ) : !showFullContent && doenca.quickView ? (
         <div className="space-y-6">
-          {/* Definição */}
+          {/* Definicao */}
           <div className="glass-strong rounded-2xl p-6">
             <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
               <Stethoscope className="w-5 h-5 text-blue-500" />
@@ -156,7 +276,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
             </p>
           </div>
 
-          {/* Critérios Diagnósticos */}
+          {/* Criterios Diagnosticos */}
           {doenca.quickView.criteriosDiagnosticos && (
             <div className="glass-strong rounded-2xl p-6">
               <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
@@ -177,7 +297,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
           {/* Tratamento */}
           {doenca.quickView.tratamentoPrimeiraLinha && (
             <div className="grid md:grid-cols-2 gap-6">
-              {/* Não Farmacológico */}
+              {/* Nao Farmacologico */}
               {doenca.quickView.tratamentoPrimeiraLinha.naoFarmacologico && (
                 <div className="glass-strong rounded-2xl p-6">
                   <h2 className="text-lg font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
@@ -187,7 +307,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                   <ul className="space-y-2">
                     {doenca.quickView.tratamentoPrimeiraLinha.naoFarmacologico.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm">
-                        <span className="text-pink-500">•</span>
+                        <span className="text-pink-500">-</span>
                         <span className="text-[#1d1d1f] dark:text-[#f5f5f7]">{item}</span>
                       </li>
                     ))}
@@ -195,7 +315,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                 </div>
               )}
 
-              {/* Farmacológico */}
+              {/* Farmacologico */}
               {doenca.quickView.tratamentoPrimeiraLinha.farmacologico && (
                 <div className="glass-strong rounded-2xl p-6">
                   <h2 className="text-lg font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
@@ -205,7 +325,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                   <ul className="space-y-2">
                     {doenca.quickView.tratamentoPrimeiraLinha.farmacologico.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm">
-                        <span className="text-blue-500">•</span>
+                        <span className="text-blue-500">-</span>
                         <span className="text-[#1d1d1f] dark:text-[#f5f5f7]">{item}</span>
                       </li>
                     ))}
@@ -220,7 +340,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
             <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-6">
               <h2 className="text-xl font-bold text-red-700 dark:text-red-400 mb-3 flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5" />
-                🚨 {t('sections.redFlags')}
+                {t('sections.redFlags')}
               </h2>
               <ul className="space-y-2">
                 {doenca.quickView.redFlags.map((flag, idx) => (
@@ -245,14 +365,14 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                   <ul className="space-y-2">
                     {doenca.quickView.metasTerapeuticas.map((meta, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm">
-                        <span className="text-amber-500">🎯</span>
+                        <span className="text-amber-500">*</span>
                         <span className="text-[#1d1d1f] dark:text-[#f5f5f7]">{meta}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               )}
-              
+
               {doenca.quickView.examesIniciais && (
                 <div className="glass-subtle rounded-2xl p-6">
                   <h2 className="text-lg font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
@@ -262,7 +382,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                   <ul className="space-y-2">
                     {doenca.quickView.examesIniciais.map((exame, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm">
-                        <span className="text-purple-500">📋</span>
+                        <span className="text-purple-500">+</span>
                         <span className="text-[#1d1d1f] dark:text-[#f5f5f7]">{exame}</span>
                       </li>
                     ))}
@@ -315,7 +435,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                   <ul className="grid md:grid-cols-2 gap-2">
                     {doenca.fullContent.epidemiologia.fatoresRisco.map((fator, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm">
-                        <span className="text-amber-500">⚠️</span>
+                        <span className="text-amber-500">!</span>
                         {fator}
                       </li>
                     ))}
@@ -325,7 +445,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
             </CollapsibleSection>
           )}
 
-          {/* Quadro Clínico */}
+          {/* Quadro Clinico */}
           {doenca.fullContent?.quadroClinico && (
             <CollapsibleSection
               title={t('sections.clinicalPresentation')}
@@ -339,7 +459,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                   <ul className="space-y-1">
                     {doenca.fullContent.quadroClinico.sintomasPrincipais?.map((s, idx) => (
                       <li key={idx} className="text-sm flex items-start gap-2">
-                        <span className="text-emerald-500">•</span> {s}
+                        <span className="text-emerald-500">-</span> {s}
                       </li>
                     ))}
                   </ul>
@@ -349,7 +469,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                   <ul className="space-y-1">
                     {doenca.fullContent.quadroClinico.sinaisExameFisico?.map((s, idx) => (
                       <li key={idx} className="text-sm flex items-start gap-2">
-                        <span className="text-blue-500">•</span> {s}
+                        <span className="text-blue-500">-</span> {s}
                       </li>
                     ))}
                   </ul>
@@ -358,7 +478,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
             </CollapsibleSection>
           )}
 
-          {/* Diagnóstico */}
+          {/* Diagnostico */}
           {doenca.fullContent?.diagnostico && (
             <CollapsibleSection
               title={t('sections.diagnosis')}
@@ -574,7 +694,7 @@ function CrossReferencesSection({ doencaId }: { doencaId: string }) {
   return (
     <div className="mt-8 glass-strong rounded-2xl p-6">
       <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-4 flex items-center gap-2">
-        🔗 {t('crossRefs.title')}
+        {t('crossRefs.title')}
       </h2>
 
       <div className="grid md:grid-cols-3 gap-4">
@@ -677,16 +797,16 @@ function CrossReferencesSection({ doencaId }: { doencaId: string }) {
 }
 
 // Collapsible Section Component
-function CollapsibleSection({ 
-  title, 
-  icon, 
-  isExpanded, 
-  onToggle, 
-  children 
-}: { 
-  title: string; 
-  icon: React.ReactNode; 
-  isExpanded: boolean; 
+function CollapsibleSection({
+  title,
+  icon,
+  isExpanded,
+  onToggle,
+  children
+}: {
+  title: string;
+  icon: React.ReactNode;
+  isExpanded: boolean;
   onToggle: () => void;
   children: React.ReactNode;
 }) {
@@ -714,4 +834,3 @@ function CollapsibleSection({
     </div>
   );
 }
-

@@ -14,7 +14,7 @@
 
 import { useLocale } from 'next-intl';
 import { useMemo, useState, useEffect } from 'react';
-import { Medicamento } from '@/lib/types/medicamento';
+import { Medicamento, ClasseTerapeutica } from '@/lib/types/medicamento';
 import {
   MedicationTranslation,
   SupportedLocale,
@@ -135,12 +135,12 @@ async function getMedicamentoById(id: string): Promise<Partial<Medicamento> | un
 /**
  * Get medications by IDs from the consolidated list
  */
-async function getMedicamentosByIds(ids: string[]): Promise<Partial<Medicamento>[]> {
+async function getMedicamentosByIds(ids: string[]): Promise<Medicamento[]> {
   try {
     const { getMedicamentoById: getMed } = await import('@/lib/data/medicamentos/index');
     return ids
       .map((id) => getMed(id))
-      .filter((m): m is Partial<Medicamento> => m !== undefined);
+      .filter((m): m is Medicamento => m !== undefined);
   } catch {
     return [];
   }
@@ -167,11 +167,9 @@ function mergeTranslation(
     };
   }
 
-  // Merge apresentacoes (keep concentracao, disponivelSUS; translate forma)
-  const mergedApresentacoes = original.apresentacoes?.map((ap, i) => ({
-    ...ap,
-    forma: translation.apresentacoes?.[i]?.forma || ap.forma,
-  }));
+  // Keep apresentacoes from original (forma is an enum, concentracao/quantidade are measurements)
+  // No translation needed for this field
+  const mergedApresentacoes = original.apresentacoes;
 
   // Merge posologias
   const mergedPosologias = original.posologias?.map((pos, i) => {
@@ -386,7 +384,7 @@ export function useLocalizedMedications(
         const classes = new Set(
           originals
             .map((m) => m.classeTerapeutica)
-            .filter((c): c is string => !!c)
+            .filter((c): c is ClasseTerapeutica => !!c)
         );
 
         // Load all class files
@@ -455,8 +453,8 @@ export function useLocalizedMedicationsByClass(
   useEffect(() => {
     const loadIds = async () => {
       try {
-        const { filterByClasse } = await import('@/lib/data/medicamentos/index');
-        const meds = filterByClasse(therapeuticClass) as Partial<Medicamento>[];
+        const { getMedicamentosByClasse } = await import('@/lib/data/medicamentos/index');
+        const meds = getMedicamentosByClasse(therapeuticClass) as Partial<Medicamento>[];
         setMedicationIds(
           meds.map((m) => m.id).filter((id): id is string => !!id)
         );
