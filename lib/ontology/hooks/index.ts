@@ -5,6 +5,7 @@
  * React hooks for interacting with ontology services.
  */
 
+// SNOMED-CT hooks
 export {
   useSnomedSearch,
   useSnomedConcept,
@@ -19,3 +20,16 @@ export {
   type UseSnomedHierarchyResult,
   type UseSnomedECLResult,
 } from './useSnomedBrowser';
+
+// LOINC hooks
+export {
+  useLoincSearch,
+  useLoincConcept,
+  useLoincPanel,
+  useLoincByClass,
+  useLoincValidation,
+  type UseLoincSearchOptions,
+  type UseLoincSearchResult,
+  type UseLoincConceptResult,
+  type UseLoincPanelResult,
+} from './useLoincBrowser';
