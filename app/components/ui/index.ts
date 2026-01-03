@@ -38,6 +38,30 @@ export {
   type CardGridProps,
 } from './Card';
 
+// GlassCard (SOTA+ 2026 Glassmorphism)
+export {
+  GlassCard,
+  GlassCardHeader,
+  GlassCardBody,
+  GlassCardFooter,
+  GlassCardGrid,
+  EvidenceGlassCard,
+  InteractionGlassCard,
+  ConvergenceGlassCard,
+  type GlassCardProps,
+  type GlassVariant,
+  type GlowVariant,
+  type HoverEffect,
+  type GlassCardPadding,
+  type GlassCardHeaderProps,
+  type GlassCardBodyProps,
+  type GlassCardFooterProps,
+  type GlassCardGridProps,
+  type EvidenceGlassCardProps,
+  type InteractionGlassCardProps,
+  type ConvergenceGlassCardProps,
+} from './GlassCard';
+
 // Badge
 export {
   Badge,

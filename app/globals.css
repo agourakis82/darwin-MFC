@@ -49,6 +49,72 @@
   --color-neutral-800: #27272a;
   --color-neutral-900: #18181b;
   --color-neutral-950: #09090b;
+
+  /* ============================================ */
+  /* SOTA+ 2026 MEDICAL DESIGN TOKENS            */
+  /* ============================================ */
+
+  /* Trust Colors (Apple-inspired Clinical Blue) */
+  --color-trust-primary: #0071E3;
+  --color-trust-primary-light: #3B9AED;
+  --color-trust-primary-dark: #0058B3;
+  --color-trust-secondary: #5E5CE6;
+  --color-trust-secondary-light: #8180EA;
+  --color-trust-secondary-dark: #4745C7;
+  --color-trust-tertiary: #30D158;
+  --color-trust-tertiary-light: #5DE07C;
+  --color-trust-tertiary-dark: #25A545;
+
+  /* Evidence Strength (GRADE-based) */
+  --color-evidence-meta: #10B981;
+  --color-evidence-rct: #3B82F6;
+  --color-evidence-cohort: #F59E0B;
+  --color-evidence-case: #F97316;
+  --color-evidence-expert: #EF4444;
+
+  /* Convergence Status */
+  --color-convergence-full: #22C55E;
+  --color-convergence-partial: #EAB308;
+  --color-convergence-divergence: #EF4444;
+  --color-convergence-disputed: #A855F7;
+
+  /* Drug Interaction Severity */
+  --color-interaction-contraindicated: #DC2626;
+  --color-interaction-major: #EA580C;
+  --color-interaction-moderate: #CA8A04;
+  --color-interaction-minor: #16A34A;
+
+  /* Surface Colors (Glassmorphism) */
+  --color-surface-glass: rgba(255, 255, 255, 0.72);
+  --color-surface-glass-dark: rgba(28, 28, 30, 0.72);
+  --color-surface-elevated: rgba(255, 255, 255, 0.9);
+  --color-surface-elevated-dark: rgba(44, 44, 46, 0.9);
+
+  /* Glow Shadows */
+  --shadow-glow-primary: 0 0 20px rgba(0, 113, 227, 0.3);
+  --shadow-glow-success: 0 0 20px rgba(34, 197, 94, 0.3);
+  --shadow-glow-warning: 0 0 20px rgba(245, 158, 11, 0.3);
+  --shadow-glow-danger: 0 0 20px rgba(239, 68, 68, 0.3);
+  --shadow-glow-purple: 0 0 20px rgba(168, 85, 247, 0.3);
+
+  /* Layout Tokens */
+  --layout-header-height: 4rem;
+  --layout-sidebar-collapsed: 4rem;
+  --layout-sidebar-expanded: 16rem;
+  --layout-touch-target: 2.75rem;
+  --layout-command-palette-width: 40rem;
+  --layout-ai-assistant-width: 24rem;
+
+  /* Z-Index Scale */
+  --z-dropdown: 20;
+  --z-sticky: 30;
+  --z-fixed: 40;
+  --z-overlay: 50;
+  --z-modal: 60;
+  --z-popover: 70;
+  --z-toast: 80;
+  --z-command-palette: 90;
+  --z-max: 100;
 }
 
 /* ============================================ */
