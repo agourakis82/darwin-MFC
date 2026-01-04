@@ -19,3 +19,10 @@ export {
   getLoincBrowser,
   createLoincBrowser,
 } from './loinc-browser';
+
+// ORDO browser service
+export {
+  OrdoBrowser,
+  getOrdoBrowser,
+  createOrdoBrowser,
+} from './ordo-browser';

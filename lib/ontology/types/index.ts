@@ -51,3 +51,36 @@ export {
   isValidLoincFormat,
   calculateLoincCheckDigit,
 } from './loinc';
+
+// ORDO types (explicit exports to avoid naming conflicts)
+export type {
+  OrdoStatus,
+  OrdoDiseaseType,
+  OrdoInheritance,
+  OrdoAgeOfOnset,
+  OrdoPrevalence,
+  OrdoPrevalenceType,
+  OrdoConcept,
+  OrdoConceptMini,
+  OrdoGeneAssociation,
+  OrdoGeneAssociationType,
+  OrdoCrossReference,
+  OrdoCrossReferenceSource,
+  OrdoPhenotypeAssociation,
+  OrdoPhenotypeFrequency,
+  OrdoPrevalenceInfo,
+  OrdoClassificationLevel,
+  OrdoClassificationCategory,
+  OrdoSearchParams,
+  OrdoSearchResult,
+  OrdoSearchResponse,
+} from './ordo';
+
+export {
+  ORDO_CATEGORIES,
+  ORDO_COMMON_DISEASES,
+  toUnifiedConcept as ordoToUnifiedConcept,
+  formatOrphaCode,
+  isValidOrphaCode,
+  extractOrphaCode,
+} from './ordo';
