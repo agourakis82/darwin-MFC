@@ -45,3 +45,22 @@ export {
   type UseOrdoConceptResult,
   type UseOrdoHierarchyResult,
 } from './useOrdoBrowser';
+
+// PharmGKB hooks
+export {
+  usePharmgkbSearch,
+  usePharmgkbGene,
+  useDrugInteractions,
+  useDosingRecommendation,
+  useGeneValidation,
+  useAllPharmacogenes,
+  useAllGeneDrugPairs,
+  type UsePharmgkbSearchOptions,
+  type UsePharmgkbSearchResult,
+  type UsePharmgkbGeneResult,
+  type UseDrugInteractionsResult,
+  type UseDosingRecommendationResult,
+  type UseGeneValidationResult,
+  type UseAllPharmacogenesResult,
+  type UseAllGeneDrugPairsResult,
+} from './usePharmgkbBrowser';

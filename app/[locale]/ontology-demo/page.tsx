@@ -4,25 +4,28 @@
  * ONTOLOGY PICKERS DEMO PAGE
  * ==========================
  *
- * Demo page to test all three ontology pickers:
+ * Demo page to test all four ontology pickers:
  * - ConceptPicker (SNOMED-CT)
  * - LoincPicker (LOINC laboratory codes)
  * - OrdoPicker (ORDO rare diseases)
+ * - PharmgkbPicker (Pharmacogenomics)
  */
 
 import { useState } from 'react';
 import { Link } from '@/i18n/routing';
-import { ArrowLeft, Stethoscope, FlaskConical, Dna, Check, Info } from 'lucide-react';
-import { ConceptPicker, LoincPicker, OrdoPicker } from '@/app/components/Ontology';
+import { ArrowLeft, Stethoscope, FlaskConical, Dna, Check, Info, Activity } from 'lucide-react';
+import { ConceptPicker, LoincPicker, OrdoPicker, PharmgkbPicker } from '@/app/components/Ontology';
 import type { SnomedConceptSimple } from '@/lib/ontology/types/snomed-ct';
 import type { LoincConceptMini } from '@/lib/ontology/types/loinc';
 import type { OrdoConceptMini } from '@/lib/ontology/types/ordo';
+import type { PharmacogeneMini } from '@/lib/ontology/types/pharmgkb';
 
 export default function OntologyDemoPage() {
   // State for each picker
   const [snomedConcept, setSnomedConcept] = useState<SnomedConceptSimple | null>(null);
   const [loincConcept, setLoincConcept] = useState<LoincConceptMini | null>(null);
   const [ordoConcept, setOrdoConcept] = useState<OrdoConceptMini | null>(null);
+  const [pharmgkbGene, setPharmgkbGene] = useState<PharmacogeneMini | null>(null);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -47,8 +50,8 @@ export default function OntologyDemoPage() {
               Ontology Pickers Demo
             </h1>
             <p className="text-gray-600 dark:text-gray-400">
-              Test the three ontology pickers integrated into Darwin-MFC: SNOMED-CT for clinical concepts,
-              LOINC for laboratory codes, and ORDO for rare diseases.
+              Test the four ontology pickers integrated into Darwin-MFC: SNOMED-CT for clinical concepts,
+              LOINC for laboratory codes, ORDO for rare diseases, and PharmGKB for pharmacogenomics.
             </p>
           </div>
 
@@ -62,6 +65,7 @@ export default function OntologyDemoPage() {
                   <li><strong>SNOMED-CT:</strong> "diabetes", "hypertension", "asthma", "pneumonia"</li>
                   <li><strong>LOINC:</strong> "glucose", "hemoglobin", "creatinine", "cholesterol"</li>
                   <li><strong>ORDO:</strong> "cystic fibrosis", "gaucher", "huntington", "sickle cell"</li>
+                  <li><strong>PharmGKB:</strong> "CYP2D6", "CYP2C19", "DPYD", "TPMT", "VKORC1"</li>
                 </ul>
               </div>
             </div>
@@ -211,12 +215,62 @@ export default function OntologyDemoPage() {
                 </div>
               )}
             </div>
+
+            {/* PharmGKB Picker */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+                  <Activity className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                </div>
+                <div>
+                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    PharmGKB Pharmacogenomics
+                  </h2>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Pharmacogenomics Knowledge Base - Gene-Drug Interactions
+                  </p>
+                </div>
+              </div>
+
+              <PharmgkbPicker
+                label="Select Pharmacogene"
+                value={pharmgkbGene}
+                onChange={setPharmgkbGene}
+                placeholder="Search for pharmacogenes..."
+                helperText="Search by gene symbol (e.g., CYP2D6, CYP2C19)"
+                showCpicLevel
+              />
+
+              {/* Selected Value Display */}
+              {pharmgkbGene && (
+                <div className="mt-4 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl">
+                  <div className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-emerald-500 mt-0.5" />
+                    <div className="text-sm">
+                      <p className="font-medium text-emerald-700 dark:text-emerald-300">Selected Gene:</p>
+                      <p className="text-emerald-600 dark:text-emerald-400 mt-1 font-bold">{pharmgkbGene.symbol}</p>
+                      <p className="text-xs text-emerald-500/70 dark:text-emerald-400/70 mt-0.5">{pharmgkbGene.name}</p>
+                      <div className="flex gap-3 mt-1">
+                        <code className="text-xs text-emerald-500/70 dark:text-emerald-400/70 font-mono">
+                          {pharmgkbGene.pharmgkbId}
+                        </code>
+                        {pharmgkbGene.cpicLevel && (
+                          <span className="text-xs text-emerald-500/70 dark:text-emerald-400/70">
+                            CPIC Level: {pharmgkbGene.cpicLevel}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Summary Card */}
           <div className="mt-8 bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 rounded-2xl p-6 text-white">
             <h3 className="text-lg font-semibold mb-4">Selection Summary</h3>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               <div className="bg-white/10 rounded-xl p-4">
                 <div className="text-sm text-gray-300 mb-1">SNOMED-CT</div>
                 <div className="font-medium truncate">
@@ -235,6 +289,12 @@ export default function OntologyDemoPage() {
                   {ordoConcept?.label || <span className="text-gray-500">Not selected</span>}
                 </div>
               </div>
+              <div className="bg-white/10 rounded-xl p-4">
+                <div className="text-sm text-gray-300 mb-1">PharmGKB</div>
+                <div className="font-medium truncate">
+                  {pharmgkbGene?.symbol || <span className="text-gray-500">Not selected</span>}
+                </div>
+              </div>
             </div>
           </div>
 
@@ -245,6 +305,7 @@ export default function OntologyDemoPage() {
               <li>SNOMED-CT: Uses IHTSDO Browser API (browser.ihtsdotools.org)</li>
               <li>LOINC: Local cache + search (50+ common lab tests)</li>
               <li>ORDO: Local cache + EBI OLS4 API (25+ rare diseases)</li>
+              <li>PharmGKB: Local cache (18 core pharmacogenes, 25+ gene-drug pairs with CPIC guidelines)</li>
             </ul>
           </div>
         </div>

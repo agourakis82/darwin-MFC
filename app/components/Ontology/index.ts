@@ -13,3 +13,6 @@ export { LoincPicker, type LoincPickerProps } from './LoincPicker';
 
 // ORDO rare disease picker
 export { OrdoPicker, type OrdoPickerProps } from './OrdoPicker';
+
+// PharmGKB pharmacogenomics picker
+export { PharmgkbPicker, type PharmgkbPickerProps } from './PharmgkbPicker';

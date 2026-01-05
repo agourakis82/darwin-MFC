@@ -26,3 +26,10 @@ export {
   getOrdoBrowser,
   createOrdoBrowser,
 } from './ordo-browser';
+
+// PharmGKB browser service
+export {
+  PharmgkbBrowser,
+  getPharmgkbBrowser,
+  createPharmgkbBrowser,
+} from './pharmgkb-browser';

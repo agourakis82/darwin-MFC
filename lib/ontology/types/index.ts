@@ -84,3 +84,39 @@ export {
   isValidOrphaCode,
   extractOrphaCode,
 } from './ordo';
+
+// PharmGKB types (explicit exports to avoid naming conflicts)
+export type {
+  MetabolizerPhenotype,
+  PhenotypeCode,
+  CpicLevel,
+  EvidenceLevel,
+  AlleleFunction,
+  InteractionType,
+  RecommendationStrength,
+  Pharmacogene,
+  PharmacogeneMini,
+  StarAllele,
+  AlleleFrequency,
+  Diplotype,
+  GeneDrugPair,
+  ClinicalAnnotation,
+  DosingGuideline,
+  PhenotypeGuidance,
+  PharmgkbCrossReference,
+  PharmgkbSearchParams,
+  PharmgkbSearchResult,
+  PharmgkbSearchResponse,
+  DrugInteractionResult,
+} from './pharmgkb';
+
+export {
+  CORE_PHARMACOGENES,
+  COMMON_GENE_DRUG_PAIRS,
+  PHENOTYPE_DISPLAY,
+  CPIC_LEVEL_INFO,
+  toUnifiedConcept as pharmgkbToUnifiedConcept,
+  getPhenotypeCode,
+  getPhenotypeName,
+  requiresClinicalAction,
+} from './pharmgkb';
