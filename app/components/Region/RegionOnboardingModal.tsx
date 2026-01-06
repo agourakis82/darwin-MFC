@@ -98,26 +98,39 @@ export function RegionOnboardingModal({
   const [isOpen, setIsOpen] = useState(false);
   const [selectedRegion, setSelectedRegion] = useState<Region | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [hasChecked, setHasChecked] = useState(false);
 
-  // Check localStorage on mount to determine if modal should show
+  // Wait for context to load, then check if modal should show
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  // Only check AFTER context has finished loading to avoid race conditions
+  useEffect(() => {
+    // Wait for context to finish loading
+    if (isLoading || hasChecked) return;
 
     if (typeof window !== 'undefined') {
       const hasRegion = localStorage.getItem(STORAGE_KEY);
       const onboardingCompleted = localStorage.getItem(ONBOARDING_COMPLETED_KEY);
 
-      // Show modal if no region is set and onboarding hasn't been completed
-      // OR if forceShow is true
-      if (forceShow || (!hasRegion && !onboardingCompleted)) {
+      // Show modal if:
+      // 1. forceShow is true, OR
+      // 2. Neither region NOR onboarding-completed flag is set in localStorage
+      // (This means user has never completed the onboarding flow)
+      const shouldShow = forceShow || (!hasRegion && !onboardingCompleted);
+
+      setHasChecked(true);
+
+      if (shouldShow) {
         // Small delay to prevent flash during page load
         const timer = setTimeout(() => {
           setIsOpen(true);
-        }, 500);
+        }, 300);
         return () => clearTimeout(timer);
       }
     }
-  }, [forceShow]);
+  }, [isLoading, forceShow, hasChecked]);
 
   // Handle region selection
   const handleSelectRegion = useCallback((region: Region) => {
