@@ -2,6 +2,7 @@
   "common": {
     "appName": "Darwin MFC",
     "appSubtitle": "Análise Sistêmica 2025",
+    "appDescription": "Medicina de Família e Comunidade baseada em evidências",
     "new": "Novo"
   },
   "nav": {
@@ -94,6 +95,7 @@
     "drugInteractions": "Interações Medicamentosas",
     "drugComparator": "Comparador de Medicamentos",
     "advancedSearch": "Busca Avançada",
+    "prenatalHighRisk": "Pré-natal Alto Risco",
     "q1Standard": "Padrão Q1 Acadêmico",
     "q1Description": "Todas as afirmações validadas com referências científicas",
     "lastUpdate": "Atualizado: Dez/2025"
@@ -1656,5 +1658,32 @@
       "alert": "Alerta"
     },
     "instructions": "Clique nos nós para ver detalhes • Use scroll para zoom • Arraste para mover"
+  },
+  "prenatal": {
+    "title": "Pré-natal de Alto Risco",
+    "subtitle": "{count} condições clínicas",
+    "searchPlaceholder": "Buscar por nome, CID-10 ou palavra-chave...",
+    "allCategories": "Todas as categorias",
+    "noResults": "Nenhuma condição encontrada",
+    "banner": {
+      "title": "Gestação de Alto Risco",
+      "description": "Aproximadamente 15% das gestações são classificadas como alto risco. O acompanhamento adequado reduz significativamente a morbimortalidade materna e perinatal."
+    },
+    "stats": {
+      "highRisk": "Alto Risco",
+      "infections": "Infecções",
+      "endocrine": "Endócrinas",
+      "cardiovascular": "Cardiovasculares"
+    },
+    "categories": {
+      "ginecologico": "Ginecológico/Obstétrico",
+      "endocrino": "Endócrino",
+      "cardiovascular": "Cardiovascular",
+      "infecciosas": "Infecciosas",
+      "hematologico": "Hematológico"
+    },
+    "references": {
+      "title": "Referências Principais"
+    }
   }
 }

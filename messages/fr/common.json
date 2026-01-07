@@ -2,6 +2,7 @@
   "common": {
     "appName": "Darwin MFC",
     "appSubtitle": "Analyse Systémique 2025",
+    "appDescription": "Médecine Familiale et Communautaire fondée sur des preuves",
     "new": "Nouveau"
   },
   "nav": {
@@ -94,6 +95,7 @@
     "drugInteractions": "Interactions Médicamenteuses",
     "drugComparator": "Comparateur de Médicaments",
     "advancedSearch": "Recherche Avancée",
+    "prenatalHighRisk": "Prénatal à Haut Risque",
     "q1Standard": "Standard Académique Q1",
     "q1Description": "Toutes les affirmations validées avec références scientifiques",
     "lastUpdate": "Mis à jour : Déc/2025"
@@ -1341,5 +1343,32 @@
       "alert": "Alerte"
     },
     "instructions": "Cliquez sur les nœuds pour voir les détails • Défilez pour zoomer • Faites glisser pour déplacer"
+  },
+  "prenatal": {
+    "title": "Soins Prénatals à Haut Risque",
+    "subtitle": "{count} conditions cliniques",
+    "searchPlaceholder": "Rechercher par nom, CIM-10 ou mot-clé...",
+    "allCategories": "Toutes les catégories",
+    "noResults": "Aucune condition trouvée",
+    "banner": {
+      "title": "Grossesse à Haut Risque",
+      "description": "Environ 15% des grossesses sont classées à haut risque. Un suivi adéquat réduit significativement la morbidité et la mortalité maternelle et périnatale."
+    },
+    "stats": {
+      "highRisk": "Haut Risque",
+      "infections": "Infections",
+      "endocrine": "Endocrines",
+      "cardiovascular": "Cardiovasculaires"
+    },
+    "categories": {
+      "ginecologico": "Gynécologique/Obstétrique",
+      "endocrino": "Endocrine",
+      "cardiovascular": "Cardiovasculaire",
+      "infecciosas": "Infectieuses",
+      "hematologico": "Hématologique"
+    },
+    "references": {
+      "title": "Références Principales"
+    }
   }
 }

@@ -2,6 +2,7 @@
   "common": {
     "appName": "Darwin MFC",
     "appSubtitle": "系统分析 2025",
+    "appDescription": "循证家庭与社区医学",
     "new": "新"
   },
   "nav": {
@@ -94,6 +95,7 @@
     "drugInteractions": "药物相互作用",
     "drugComparator": "药物比较",
     "advancedSearch": "高级搜索",
+    "prenatalHighRisk": "高危产前护理",
     "q1Standard": "Q1学术标准",
     "q1Description": "所有陈述均有科学参考文献支持",
     "lastUpdate": "更新：2025年12月"
@@ -1341,5 +1343,32 @@
       "alert": "警报"
     },
     "instructions": "点击节点查看详情 • 滚动缩放 • 拖动移动"
+  },
+  "prenatal": {
+    "title": "高危产前护理",
+    "subtitle": "{count} 种临床状况",
+    "searchPlaceholder": "按名称、ICD-10或关键词搜索...",
+    "allCategories": "所有类别",
+    "noResults": "未找到相关状况",
+    "banner": {
+      "title": "高危妊娠",
+      "description": "约15%的妊娠被归类为高危妊娠。适当的随访可显著降低孕产妇和围产期发病率和死亡率。"
+    },
+    "stats": {
+      "highRisk": "高风险",
+      "infections": "感染",
+      "endocrine": "内分泌",
+      "cardiovascular": "心血管"
+    },
+    "categories": {
+      "ginecologico": "妇科/产科",
+      "endocrino": "内分泌",
+      "cardiovascular": "心血管",
+      "infecciosas": "传染病",
+      "hematologico": "血液病"
+    },
+    "references": {
+      "title": "主要参考文献"
+    }
   }
 }

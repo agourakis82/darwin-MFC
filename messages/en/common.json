@@ -2,6 +2,7 @@
   "common": {
     "appName": "Darwin MFC",
     "appSubtitle": "Systemic Analysis 2025",
+    "appDescription": "Evidence-based Family and Community Medicine",
     "new": "New"
   },
   "nav": {
@@ -94,6 +95,7 @@
     "drugInteractions": "Drug Interactions",
     "drugComparator": "Drug Comparator",
     "advancedSearch": "Advanced Search",
+    "prenatalHighRisk": "High-Risk Prenatal",
     "q1Standard": "Q1 Academic Standard",
     "q1Description": "All statements validated with scientific references",
     "lastUpdate": "Updated: Dec/2025"
@@ -1656,5 +1658,32 @@
       "alert": "Alert"
     },
     "instructions": "Click nodes for details • Scroll to zoom • Drag to move"
+  },
+  "prenatal": {
+    "title": "High-Risk Prenatal Care",
+    "subtitle": "{count} clinical conditions",
+    "searchPlaceholder": "Search by name, ICD-10, or keyword...",
+    "allCategories": "All categories",
+    "noResults": "No conditions found",
+    "banner": {
+      "title": "High-Risk Pregnancy",
+      "description": "Approximately 15% of pregnancies are classified as high-risk. Adequate follow-up significantly reduces maternal and perinatal morbidity and mortality."
+    },
+    "stats": {
+      "highRisk": "High Risk",
+      "infections": "Infections",
+      "endocrine": "Endocrine",
+      "cardiovascular": "Cardiovascular"
+    },
+    "categories": {
+      "ginecologico": "Gynecological/Obstetric",
+      "endocrino": "Endocrine",
+      "cardiovascular": "Cardiovascular",
+      "infecciosas": "Infectious",
+      "hematologico": "Hematologic"
+    },
+    "references": {
+      "title": "Main References"
+    }
   }
 }

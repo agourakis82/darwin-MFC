@@ -76,6 +76,7 @@ export default function Sidebar() {
       title: t('sidebar.clinicalGuide'),
       sections: [
         { title: t('sidebar.diseasesAPS'), icon: BookOpen, path: '/doencas' },
+        { title: t('sidebar.prenatalHighRisk'), icon: Baby, path: '/prenatal-alto-risco', badge: t('common.new') },
         { title: t('sidebar.medicationGuide'), icon: Pill, path: '/medicamentos' },
         { title: t('sidebar.protocols'), icon: FileText, path: '/protocolos' },
         { title: t('sidebar.calculators'), icon: Calculator, path: '/calculadoras' },

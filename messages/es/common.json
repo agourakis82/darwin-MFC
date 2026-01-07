@@ -2,6 +2,7 @@
   "common": {
     "appName": "Darwin MFC",
     "appSubtitle": "Análisis Sistémico 2025",
+    "appDescription": "Medicina Familiar y Comunitaria basada en evidencias",
     "new": "Nuevo"
   },
   "nav": {
@@ -94,6 +95,7 @@
     "drugInteractions": "Interacciones Medicamentosas",
     "drugComparator": "Comparador de Medicamentos",
     "advancedSearch": "Búsqueda Avanzada",
+    "prenatalHighRisk": "Prenatal de Alto Riesgo",
     "q1Standard": "Estándar Académico Q1",
     "q1Description": "Todas las afirmaciones validadas con referencias científicas",
     "lastUpdate": "Actualizado: Dic/2025"
@@ -1341,5 +1343,32 @@
       "alert": "Alerta"
     },
     "instructions": "Clic en los nodos para ver detalles • Scroll para zoom • Arrastre para mover"
+  },
+  "prenatal": {
+    "title": "Prenatal de Alto Riesgo",
+    "subtitle": "{count} condiciones clínicas",
+    "searchPlaceholder": "Buscar por nombre, CIE-10 o palabra clave...",
+    "allCategories": "Todas las categorías",
+    "noResults": "No se encontraron condiciones",
+    "banner": {
+      "title": "Embarazo de Alto Riesgo",
+      "description": "Aproximadamente el 15% de los embarazos se clasifican como de alto riesgo. El seguimiento adecuado reduce significativamente la morbimortalidad materna y perinatal."
+    },
+    "stats": {
+      "highRisk": "Alto Riesgo",
+      "infections": "Infecciones",
+      "endocrine": "Endocrinas",
+      "cardiovascular": "Cardiovasculares"
+    },
+    "categories": {
+      "ginecologico": "Ginecológico/Obstétrico",
+      "endocrino": "Endocrino",
+      "cardiovascular": "Cardiovascular",
+      "infecciosas": "Infecciosas",
+      "hematologico": "Hematológico"
+    },
+    "references": {
+      "title": "Referencias Principales"
+    }
   }
 }

@@ -40,6 +40,7 @@ import { doencasCardiovascularesExpansao } from './expansao-sprint3-cardiovascul
 import { doencasEspecialidadesExpansao } from './expansao-sprint3-especialidades';
 import { doencasEmergencias } from './emergencias';
 import { doencasTropicais } from './tropicais';
+import { doencasPrenatalAltoRisco } from './prenatal-alto-risco';
 
 // Consolidar todas as doenças
 // Nota: Algumas categorias usam Partial<Doenca> para flexibilidade de expansão
@@ -74,6 +75,7 @@ export const todasDoencas: Partial<Doenca>[] = [
   ...doencasEspecialidadesExpansao,
   ...doencasEmergencias,
   ...doencasTropicais,
+  ...doencasPrenatalAltoRisco,
 ];
 
 // Remover duplicatas por ID (caso existam) e filtrar apenas doenças com ID

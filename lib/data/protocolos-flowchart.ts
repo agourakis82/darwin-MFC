@@ -1279,6 +1279,258 @@ export const protocoloDPOC: Protocolo = {
 };
 
 // =============================================================================
+// PROTOCOLO: DIABETES MELLITUS GESTACIONAL (DMG)
+// =============================================================================
+
+const dmgNodes: ProtocolNode[] = [
+  { id: 'dmg-start', type: 'custom', position: { x: 400, y: 0 }, data: { label: 'Início', description: 'Gestante em acompanhamento', nodeType: 'start', ciap2: 'W84', cid10: 'O24.4' } },
+  { id: 'dmg-gj', type: 'custom', position: { x: 400, y: 100 }, data: { label: 'Glicemia de Jejum', description: '1ª consulta pré-natal', nodeType: 'assessment', exams: ['Glicemia jejum'], details: ['Colher na 1ª consulta', 'Idealmente até 20 semanas'] } },
+  { id: 'dmg-gj-result', type: 'custom', position: { x: 400, y: 220 }, data: { label: 'Resultado GJ?', nodeType: 'decision' } },
+  { id: 'dmg-gj-normal', type: 'custom', position: { x: 150, y: 320 }, data: { label: 'GJ < 92 mg/dL', description: 'Normal - aguardar TOTG', nodeType: 'info' } },
+  { id: 'dmg-totg', type: 'custom', position: { x: 150, y: 440 }, data: { label: 'TOTG 75g', description: '24-28 semanas', nodeType: 'assessment', exams: ['TOTG 75g'], details: ['Jejum ≥92 = DMG', '1h ≥180 = DMG', '2h ≥153 = DMG', 'Um valor alterado = diagnóstico'] } },
+  { id: 'dmg-gj-dmg', type: 'custom', position: { x: 400, y: 320 }, data: { label: 'GJ 92-125 mg/dL', description: 'Diagnóstico de DMG', nodeType: 'alert', alertLevel: 'medium' } },
+  { id: 'dmg-gj-dm', type: 'custom', position: { x: 650, y: 320 }, data: { label: 'GJ ≥126 mg/dL', description: 'DM prévio ou overt', nodeType: 'alert', alertLevel: 'high' } },
+  { id: 'dmg-dieta', type: 'custom', position: { x: 400, y: 440 }, data: { label: 'Terapia Nutricional', description: '7-14 dias', nodeType: 'treatment', details: ['1800-2200 kcal/dia', '40-45% carboidratos', '3 refeições + 3 lanches', 'Evitar açúcar simples', 'Atividade física 30min/dia'] } },
+  { id: 'dmg-monitor', type: 'custom', position: { x: 400, y: 560 }, data: { label: 'Monitorar Glicemia', description: 'Perfil glicêmico 7 dias', nodeType: 'assessment', details: ['Jejum: <95 mg/dL', '1h pós: <140 mg/dL', '2h pós: <120 mg/dL', 'Medir 4-7x/dia'] } },
+  { id: 'dmg-metas', type: 'custom', position: { x: 400, y: 680 }, data: { label: 'Metas Atingidas?', nodeType: 'decision' } },
+  { id: 'dmg-manter', type: 'custom', position: { x: 150, y: 780 }, data: { label: 'Manter Dieta', description: 'Continuar acompanhamento', nodeType: 'action', details: ['Consultas quinzenais', 'USG mensal', 'CTG semanal após 32 sem'] } },
+  { id: 'dmg-insulina', type: 'custom', position: { x: 400, y: 780 }, data: { label: 'Iniciar Insulina', description: 'Dose inicial 0,5 UI/kg/dia', nodeType: 'treatment', medications: ['Insulina NPH', 'Insulina Regular'], details: ['NPH: 2/3 manhã + 1/3 noite', 'Regular: antes refeições se pós elevada', 'Ajustar a cada 1-2 semanas'] } },
+  { id: 'dmg-usg', type: 'custom', position: { x: 400, y: 900 }, data: { label: 'USG 28-32 sem', description: 'Avaliar CA fetal', nodeType: 'assessment', details: ['CA ≥P75 = macrossomia', 'Iniciar insulina se CA elevada'] } },
+  { id: 'dmg-parto', type: 'custom', position: { x: 400, y: 1020 }, data: { label: 'Timing do Parto', nodeType: 'action', details: ['Bom controle: 39-40 sem', 'Controle ruim/macrossomia: 37-39 sem', 'Complicações: individualizar'] } },
+  { id: 'dmg-end', type: 'custom', position: { x: 400, y: 1140 }, data: { label: 'Pós-parto', description: 'Suspender insulina, TOTG 6-12 sem', nodeType: 'end' } },
+];
+
+const dmgEdges: ProtocolEdge[] = [
+  { id: 'e-dmg-1', source: 'dmg-start', target: 'dmg-gj' },
+  { id: 'e-dmg-2', source: 'dmg-gj', target: 'dmg-gj-result' },
+  { id: 'e-dmg-3', source: 'dmg-gj-result', target: 'dmg-gj-normal', data: { label: '<92' } },
+  { id: 'e-dmg-4', source: 'dmg-gj-result', target: 'dmg-gj-dmg', data: { label: '92-125' } },
+  { id: 'e-dmg-5', source: 'dmg-gj-result', target: 'dmg-gj-dm', data: { label: '≥126' } },
+  { id: 'e-dmg-6', source: 'dmg-gj-normal', target: 'dmg-totg' },
+  { id: 'e-dmg-7', source: 'dmg-totg', target: 'dmg-dieta', data: { label: 'DMG' } },
+  { id: 'e-dmg-8', source: 'dmg-gj-dmg', target: 'dmg-dieta' },
+  { id: 'e-dmg-9', source: 'dmg-gj-dm', target: 'dmg-insulina' },
+  { id: 'e-dmg-10', source: 'dmg-dieta', target: 'dmg-monitor' },
+  { id: 'e-dmg-11', source: 'dmg-monitor', target: 'dmg-metas' },
+  { id: 'e-dmg-12', source: 'dmg-metas', target: 'dmg-manter', data: { label: 'Sim' } },
+  { id: 'e-dmg-13', source: 'dmg-metas', target: 'dmg-insulina', data: { label: 'Não' } },
+  { id: 'e-dmg-14', source: 'dmg-manter', target: 'dmg-usg' },
+  { id: 'e-dmg-15', source: 'dmg-insulina', target: 'dmg-usg' },
+  { id: 'e-dmg-16', source: 'dmg-usg', target: 'dmg-parto' },
+  { id: 'e-dmg-17', source: 'dmg-parto', target: 'dmg-end' },
+];
+
+export const protocoloDMG: Protocolo = {
+  id: 'dmg',
+  titulo: 'Diabetes Mellitus Gestacional',
+  subtitulo: 'Diagnóstico e Manejo',
+  categoria: 'materno_infantil',
+  complexidade: 'intermediario',
+  versao: '2025.1',
+  ultimaAtualizacao: '2025-01',
+  fonte: 'SBD 2024-2025 / ADA 2025',
+  ciap2: ['W84', 'W85'],
+  cid10: ['O24.4', 'O24.9'],
+  descricao: 'Protocolo para diagnóstico e manejo do diabetes mellitus gestacional na APS.',
+  objetivos: ['Rastrear DMG universalmente', 'Iniciar tratamento nutricional', 'Indicar insulina quando necessário', 'Prevenir complicações materno-fetais'],
+  populacaoAlvo: 'Gestantes',
+  nodes: dmgNodes,
+  edges: dmgEdges,
+  sinaisAlerta: ['Glicemia persistentemente elevada', 'Macrossomia fetal', 'Polidrâmnio', 'Pré-eclâmpsia associada'],
+  encaminhamento: { quando: ['DM prévio/overt', 'Controle inadequado após 2 semanas de insulina', 'Complicações'], paraCQuem: 'Pré-natal de Alto Risco' },
+  referencias: ['SBD Diretrizes 2024-2025', 'ADA Standards of Care 2025', 'HAPO Study 2008'],
+  doencasRelacionadas: ['diabetes-gestacional', 'pre-eclampsia'],
+  medicamentosRelacionados: ['insulina-nph', 'insulina-regular', 'metformina'],
+  calculadorasRelacionadas: [],
+  tags: ['gestacao', 'diabetes', 'alto-risco', 'insulina'],
+};
+
+// =============================================================================
+// PROTOCOLO: EMERGÊNCIA HIPERTENSIVA NA GESTAÇÃO (PRÉ-ECLÂMPSIA)
+// =============================================================================
+
+const preEclampsiaNodes: ProtocolNode[] = [
+  { id: 'pe-start', type: 'custom', position: { x: 400, y: 0 }, data: { label: 'Início', description: 'Gestante com PA elevada', nodeType: 'start', ciap2: 'W81', cid10: 'O14' } },
+  { id: 'pe-medir', type: 'custom', position: { x: 400, y: 100 }, data: { label: 'Medir PA', description: 'Técnica correta', nodeType: 'assessment', details: ['Repouso 5 minutos', 'Braço na altura do coração', 'Duas medidas'] } },
+  { id: 'pe-pa-nivel', type: 'custom', position: { x: 400, y: 220 }, data: { label: 'Nível da PA?', nodeType: 'decision' } },
+  { id: 'pe-grave', type: 'custom', position: { x: 650, y: 320 }, data: { label: 'PA ≥160/110', description: 'EMERGÊNCIA', nodeType: 'alert', alertLevel: 'critical' } },
+  { id: 'pe-mgso4', type: 'custom', position: { x: 650, y: 440 }, data: { label: 'Sulfato de Magnésio', description: 'Profilaxia de eclâmpsia', nodeType: 'treatment', medications: ['Sulfato de Magnésio'], details: ['Ataque: 4g IV em 20min', 'Manutenção: 1-2g/h IV', 'OU Pritchard: 4g IV + 10g IM', 'Monitorar reflexo patelar, FR, diurese'] } },
+  { id: 'pe-antihta', type: 'custom', position: { x: 650, y: 580 }, data: { label: 'Anti-hipertensivo', description: 'Reduzir PA em 15-25%', nodeType: 'treatment', medications: ['Hidralazina', 'Nifedipina', 'Labetalol'], details: ['Hidralazina 5mg IV a cada 20min', 'OU Nifedipina 10mg VO', 'Meta: <160/110 mmHg', 'Não reduzir >25%'] } },
+  { id: 'pe-leve', type: 'custom', position: { x: 150, y: 320 }, data: { label: 'PA 140-159/90-109', description: 'PE sem sinais de gravidade', nodeType: 'alert', alertLevel: 'medium' } },
+  { id: 'pe-exames', type: 'custom', position: { x: 400, y: 440 }, data: { label: 'Exames Laboratoriais', nodeType: 'assessment', exams: ['Hemograma + plaquetas', 'Creatinina', 'TGO/TGP', 'DHL', 'Bilirrubinas', 'Proteinúria 24h ou P/C'], details: ['Plaquetas <100.000 = gravidade', 'TGO/TGP >70 = gravidade', 'Creatinina >1.1 = gravidade'] } },
+  { id: 'pe-hellp', type: 'custom', position: { x: 400, y: 580 }, data: { label: 'Sinais de HELLP?', nodeType: 'decision', details: ['Hemólise (DHL >600)', 'Elevated Liver (TGO/TGP >70)', 'Low Platelets (<100.000)'] } },
+  { id: 'pe-internar', type: 'custom', position: { x: 400, y: 700 }, data: { label: 'Internar', description: 'Monitorização intensiva', nodeType: 'action', details: ['PA 6/6h', 'Proteinúria diária', 'Labs 12-24h', 'CTG diária', 'Avaliação fetal'] } },
+  { id: 'pe-cortico', type: 'custom', position: { x: 400, y: 820 }, data: { label: 'Corticoide', description: 'Se IG <34 semanas', nodeType: 'treatment', medications: ['Betametasona', 'Dexametasona'], details: ['Betametasona 12mg IM 2 doses 24/24h', 'OU Dexametasona 6mg IM 4 doses 12/12h', 'Maturação pulmonar fetal'] } },
+  { id: 'pe-parto', type: 'custom', position: { x: 400, y: 940 }, data: { label: 'Definir Parto', nodeType: 'action', details: ['<34 sem: considerar expectante se estável', '34-37 sem: parto em 24-48h', '≥37 sem: parto imediato', 'HELLP/eclâmpsia: parto em 24h'] } },
+  { id: 'pe-end', type: 'custom', position: { x: 400, y: 1060 }, data: { label: 'Pós-parto', description: 'MgSO4 por 24h, monitorar PA', nodeType: 'end' } },
+];
+
+const preEclampsiaEdges: ProtocolEdge[] = [
+  { id: 'e-pe-1', source: 'pe-start', target: 'pe-medir' },
+  { id: 'e-pe-2', source: 'pe-medir', target: 'pe-pa-nivel' },
+  { id: 'e-pe-3', source: 'pe-pa-nivel', target: 'pe-grave', data: { label: '≥160/110' } },
+  { id: 'e-pe-4', source: 'pe-pa-nivel', target: 'pe-leve', data: { label: '140-159' } },
+  { id: 'e-pe-5', source: 'pe-grave', target: 'pe-mgso4' },
+  { id: 'e-pe-6', source: 'pe-mgso4', target: 'pe-antihta' },
+  { id: 'e-pe-7', source: 'pe-antihta', target: 'pe-exames' },
+  { id: 'e-pe-8', source: 'pe-leve', target: 'pe-exames' },
+  { id: 'e-pe-9', source: 'pe-exames', target: 'pe-hellp' },
+  { id: 'e-pe-10', source: 'pe-hellp', target: 'pe-internar' },
+  { id: 'e-pe-11', source: 'pe-internar', target: 'pe-cortico' },
+  { id: 'e-pe-12', source: 'pe-cortico', target: 'pe-parto' },
+  { id: 'e-pe-13', source: 'pe-parto', target: 'pe-end' },
+];
+
+export const protocoloPreEclampsia: Protocolo = {
+  id: 'pre-eclampsia',
+  titulo: 'Pré-eclâmpsia e Emergência Hipertensiva',
+  subtitulo: 'Manejo na Urgência',
+  categoria: 'materno_infantil',
+  complexidade: 'avancado',
+  versao: '2025.1',
+  ultimaAtualizacao: '2025-01',
+  fonte: 'ACOG 2020 / RBEHG 2023 / MS 2022',
+  ciap2: ['W81'],
+  cid10: ['O14.0', 'O14.1', 'O14.2', 'O15.0'],
+  descricao: 'Protocolo para manejo de pré-eclâmpsia e emergência hipertensiva gestacional.',
+  objetivos: ['Identificar sinais de gravidade', 'Prevenir eclâmpsia com MgSO4', 'Controlar PA', 'Definir momento do parto'],
+  populacaoAlvo: 'Gestantes com hipertensão',
+  nodes: preEclampsiaNodes,
+  edges: preEclampsiaEdges,
+  sinaisAlerta: ['PA ≥160/110 mmHg', 'Cefaleia refratária', 'Escotomas', 'Epigastralgia', 'Plaquetas <100.000', 'Creatinina >1.1'],
+  encaminhamento: { quando: ['Sempre - emergência obstétrica'], paraCQuem: 'Maternidade de referência' },
+  referencias: ['ACOG Practice Bulletin 222 (2020)', 'RBEHG Protocolo 2023', 'MS Manual Gestação Alto Risco 2022'],
+  doencasRelacionadas: ['pre-eclampsia-eclampsia', 'hipertensao-cronica-gestacao'],
+  medicamentosRelacionados: ['sulfato-magnesio', 'hidralazina', 'nifedipina'],
+  calculadorasRelacionadas: [],
+  tags: ['gestacao', 'emergencia', 'hipertensao', 'alto-risco'],
+};
+
+// =============================================================================
+// PROTOCOLO: PREVENÇÃO DA TRANSMISSÃO VERTICAL DO HIV
+// =============================================================================
+
+const hivGestacaoNodes: ProtocolNode[] = [
+  { id: 'hiv-start', type: 'custom', position: { x: 400, y: 0 }, data: { label: 'Início', description: 'Gestante na 1ª consulta', nodeType: 'start', ciap2: 'B90', cid10: 'O98.7' } },
+  { id: 'hiv-teste', type: 'custom', position: { x: 400, y: 100 }, data: { label: 'Teste Rápido HIV', description: 'Na 1ª consulta', nodeType: 'assessment', exams: ['Teste rápido HIV'], details: ['Oferecer a toda gestante', 'Repetir no 3º trimestre', 'Repetir no parto se não testada'] } },
+  { id: 'hiv-result', type: 'custom', position: { x: 400, y: 220 }, data: { label: 'Resultado?', nodeType: 'decision' } },
+  { id: 'hiv-neg', type: 'custom', position: { x: 150, y: 320 }, data: { label: 'HIV Negativo', description: 'Repetir 3º tri + parto', nodeType: 'info' } },
+  { id: 'hiv-pos', type: 'custom', position: { x: 400, y: 320 }, data: { label: 'HIV Positivo', description: 'Confirmar e iniciar TARV', nodeType: 'alert', alertLevel: 'high' } },
+  { id: 'hiv-confirmar', type: 'custom', position: { x: 400, y: 440 }, data: { label: 'Confirmar Diagnóstico', description: '2º teste rápido diferente', nodeType: 'assessment', details: ['Coletar CV e CD4', 'Genotipagem se disponível', 'Sorologias: VDRL, HBV, HCV, Toxo'] } },
+  { id: 'hiv-tarv', type: 'custom', position: { x: 400, y: 560 }, data: { label: 'Iniciar TARV', description: 'Imediatamente', nodeType: 'treatment', medications: ['Dolutegravir', 'Tenofovir', 'Lamivudina'], details: ['TDF + 3TC + DTG', 'Independente de CD4 ou CV', 'Não suspender na gestação'] } },
+  { id: 'hiv-cv', type: 'custom', position: { x: 400, y: 680 }, data: { label: 'Monitorar CV', description: 'A cada 4-8 semanas', nodeType: 'assessment', details: ['Meta: CV indetectável', 'CV 34 sem define via de parto', 'CV <1000: vaginal possível', 'CV ≥1000: cesariana eletiva'] } },
+  { id: 'hiv-parto', type: 'custom', position: { x: 400, y: 800 }, data: { label: 'Definir Via de Parto', nodeType: 'decision', details: ['CV <1000 após 34 sem: vaginal', 'CV ≥1000 ou desconhecida: cesariana', 'AZT IV intraparto sempre'] } },
+  { id: 'hiv-vaginal', type: 'custom', position: { x: 150, y: 920 }, data: { label: 'Parto Vaginal', description: 'Se CV <1000', nodeType: 'action', details: ['AZT IV no TP', 'Evitar procedimentos invasivos', 'Clampeamento precoce do cordão'] } },
+  { id: 'hiv-cesarea', type: 'custom', position: { x: 400, y: 920 }, data: { label: 'Cesariana Eletiva', description: 'Se CV ≥1000', nodeType: 'action', details: ['AZT IV 3h antes', 'Bolsa íntegra', '38 semanas'] } },
+  { id: 'hiv-rn', type: 'custom', position: { x: 400, y: 1040 }, data: { label: 'Profilaxia RN', description: 'AZT + 3TC ± NVP', nodeType: 'treatment', medications: ['Zidovudina xarope', 'Lamivudina', 'Nevirapina'], details: ['Baixo risco: AZT 4 sem', 'Alto risco: AZT+3TC 4 sem + NVP', 'Contraindicar aleitamento', 'Inibir lactação'] } },
+  { id: 'hiv-end', type: 'custom', position: { x: 400, y: 1160 }, data: { label: 'Seguimento RN', description: 'CV 2 sem, 6 sem, 4 meses', nodeType: 'end' } },
+];
+
+const hivGestacaoEdges: ProtocolEdge[] = [
+  { id: 'e-hiv-1', source: 'hiv-start', target: 'hiv-teste' },
+  { id: 'e-hiv-2', source: 'hiv-teste', target: 'hiv-result' },
+  { id: 'e-hiv-3', source: 'hiv-result', target: 'hiv-neg', data: { label: 'Negativo' } },
+  { id: 'e-hiv-4', source: 'hiv-result', target: 'hiv-pos', data: { label: 'Positivo' } },
+  { id: 'e-hiv-5', source: 'hiv-pos', target: 'hiv-confirmar' },
+  { id: 'e-hiv-6', source: 'hiv-confirmar', target: 'hiv-tarv' },
+  { id: 'e-hiv-7', source: 'hiv-tarv', target: 'hiv-cv' },
+  { id: 'e-hiv-8', source: 'hiv-cv', target: 'hiv-parto' },
+  { id: 'e-hiv-9', source: 'hiv-parto', target: 'hiv-vaginal', data: { label: 'CV <1000' } },
+  { id: 'e-hiv-10', source: 'hiv-parto', target: 'hiv-cesarea', data: { label: 'CV ≥1000' } },
+  { id: 'e-hiv-11', source: 'hiv-vaginal', target: 'hiv-rn' },
+  { id: 'e-hiv-12', source: 'hiv-cesarea', target: 'hiv-rn' },
+  { id: 'e-hiv-13', source: 'hiv-rn', target: 'hiv-end' },
+];
+
+export const protocoloHIVGestacao: Protocolo = {
+  id: 'hiv-gestacao',
+  titulo: 'HIV na Gestação',
+  subtitulo: 'Prevenção da Transmissão Vertical',
+  categoria: 'materno_infantil',
+  complexidade: 'avancado',
+  versao: '2025.1',
+  ultimaAtualizacao: '2025-01',
+  fonte: 'PCDT MS 2022 / OMS 2024',
+  ciap2: ['B90', 'W78'],
+  cid10: ['O98.7', 'B20', 'Z21'],
+  descricao: 'Protocolo para prevenção da transmissão vertical do HIV.',
+  objetivos: ['Diagnóstico precoce na gestação', 'TARV universal', 'Definir via de parto segura', 'Profilaxia do RN'],
+  populacaoAlvo: 'Gestantes vivendo com HIV',
+  nodes: hivGestacaoNodes,
+  edges: hivGestacaoEdges,
+  sinaisAlerta: ['CV elevada próximo ao parto', 'Má adesão à TARV', 'Coinfecção HBV/HCV', 'Resistência documentada'],
+  encaminhamento: { quando: ['Sempre - acompanhamento compartilhado'], paraCQuem: 'SAE / Pré-natal de Alto Risco' },
+  referencias: ['PCDT Transmissão Vertical MS 2022', 'OMS Guidelines 2024'],
+  doencasRelacionadas: ['hiv-gestacao'],
+  medicamentosRelacionados: ['dolutegravir', 'tenofovir', 'lamivudina', 'zidovudina'],
+  calculadorasRelacionadas: [],
+  tags: ['gestacao', 'hiv', 'transmissao-vertical', 'alto-risco'],
+};
+
+// =============================================================================
+// PROTOCOLO: SÍFILIS NA GESTAÇÃO
+// =============================================================================
+
+const sifilisGestacaoNodes: ProtocolNode[] = [
+  { id: 'sif-start', type: 'custom', position: { x: 400, y: 0 }, data: { label: 'Início', description: 'Gestante na 1ª consulta', nodeType: 'start', ciap2: 'W70', cid10: 'O98.1' } },
+  { id: 'sif-teste', type: 'custom', position: { x: 400, y: 100 }, data: { label: 'Teste Rápido Sífilis', description: 'VDRL + Teste treponêmico', nodeType: 'assessment', exams: ['Teste rápido treponêmico', 'VDRL'], details: ['1ª consulta', '3º trimestre', 'Parto', 'Parceiro(s) também'] } },
+  { id: 'sif-result', type: 'custom', position: { x: 400, y: 220 }, data: { label: 'Resultado?', nodeType: 'decision' } },
+  { id: 'sif-neg', type: 'custom', position: { x: 150, y: 320 }, data: { label: 'Negativo', description: 'Repetir 3º tri + parto', nodeType: 'info' } },
+  { id: 'sif-pos', type: 'custom', position: { x: 400, y: 320 }, data: { label: 'Positivo', description: 'Estadiar e tratar', nodeType: 'alert', alertLevel: 'high' } },
+  { id: 'sif-estadio', type: 'custom', position: { x: 400, y: 440 }, data: { label: 'Estadiamento', nodeType: 'assessment', details: ['Primária: cancro duro', 'Secundária: lesões cutâneas', 'Latente recente: <1 ano', 'Latente tardia: >1 ano', 'Terciária: gomas, cardio, neuro'] } },
+  { id: 'sif-tipo', type: 'custom', position: { x: 400, y: 560 }, data: { label: 'Tipo de Sífilis?', nodeType: 'decision' } },
+  { id: 'sif-recente', type: 'custom', position: { x: 150, y: 680 }, data: { label: 'Recente', description: 'Primária, secundária, latente <1 ano', nodeType: 'info' } },
+  { id: 'sif-tardia', type: 'custom', position: { x: 400, y: 680 }, data: { label: 'Tardia', description: 'Latente >1 ano ou duração ignorada', nodeType: 'info' } },
+  { id: 'sif-tto-recente', type: 'custom', position: { x: 150, y: 800 }, data: { label: 'Penicilina Benzatina', description: '2,4 milhões UI IM dose única', nodeType: 'treatment', medications: ['Penicilina G Benzatina'] } },
+  { id: 'sif-tto-tardia', type: 'custom', position: { x: 400, y: 800 }, data: { label: 'Penicilina Benzatina', description: '2,4 milhões UI IM 3 doses', nodeType: 'treatment', medications: ['Penicilina G Benzatina'], details: ['1 dose por semana', 'Por 3 semanas consecutivas', 'Se perder dose: reiniciar'] } },
+  { id: 'sif-parceiro', type: 'custom', position: { x: 400, y: 920 }, data: { label: 'Tratar Parceiro(s)', description: 'Mesmo esquema', nodeType: 'action', alertLevel: 'medium', details: ['Testar e tratar parceiro', 'Notificar', 'Orientar uso de preservativo'] } },
+  { id: 'sif-controle', type: 'custom', position: { x: 400, y: 1040 }, data: { label: 'Controle de Cura', description: 'VDRL mensal', nodeType: 'assessment', details: ['VDRL mensal até o parto', 'Queda 2 diluições em 3 meses = cura', 'Se aumentar: retratar'] } },
+  { id: 'sif-end', type: 'custom', position: { x: 400, y: 1160 }, data: { label: 'Parto + RN', description: 'Avaliar necessidade de tratamento RN', nodeType: 'end' } },
+];
+
+const sifilisGestacaoEdges: ProtocolEdge[] = [
+  { id: 'e-sif-1', source: 'sif-start', target: 'sif-teste' },
+  { id: 'e-sif-2', source: 'sif-teste', target: 'sif-result' },
+  { id: 'e-sif-3', source: 'sif-result', target: 'sif-neg', data: { label: 'Negativo' } },
+  { id: 'e-sif-4', source: 'sif-result', target: 'sif-pos', data: { label: 'Positivo' } },
+  { id: 'e-sif-5', source: 'sif-pos', target: 'sif-estadio' },
+  { id: 'e-sif-6', source: 'sif-estadio', target: 'sif-tipo' },
+  { id: 'e-sif-7', source: 'sif-tipo', target: 'sif-recente', data: { label: 'Recente' } },
+  { id: 'e-sif-8', source: 'sif-tipo', target: 'sif-tardia', data: { label: 'Tardia' } },
+  { id: 'e-sif-9', source: 'sif-recente', target: 'sif-tto-recente' },
+  { id: 'e-sif-10', source: 'sif-tardia', target: 'sif-tto-tardia' },
+  { id: 'e-sif-11', source: 'sif-tto-recente', target: 'sif-parceiro' },
+  { id: 'e-sif-12', source: 'sif-tto-tardia', target: 'sif-parceiro' },
+  { id: 'e-sif-13', source: 'sif-parceiro', target: 'sif-controle' },
+  { id: 'e-sif-14', source: 'sif-controle', target: 'sif-end' },
+];
+
+export const protocoloSifilisGestacao: Protocolo = {
+  id: 'sifilis-gestacao',
+  titulo: 'Sífilis na Gestação',
+  subtitulo: 'Diagnóstico e Tratamento',
+  categoria: 'materno_infantil',
+  complexidade: 'intermediario',
+  versao: '2025.1',
+  ultimaAtualizacao: '2025-01',
+  fonte: 'PCDT MS 2022',
+  ciap2: ['W70'],
+  cid10: ['O98.1', 'A51', 'A52', 'A53'],
+  descricao: 'Protocolo para diagnóstico e tratamento de sífilis na gestação.',
+  objetivos: ['Diagnóstico precoce', 'Tratamento adequado e oportuno', 'Tratar parceiro', 'Prevenir sífilis congênita'],
+  populacaoAlvo: 'Gestantes',
+  nodes: sifilisGestacaoNodes,
+  edges: sifilisGestacaoEdges,
+  sinaisAlerta: ['Tratamento incompleto', 'Reinfecção', 'VDRL em ascensão', 'Parto antes de 30 dias do tratamento'],
+  encaminhamento: { quando: ['Alergia à penicilina (dessensibilização)', 'Neurossífilis'], paraCQuem: 'Referência em IST / Infectologia' },
+  referencias: ['PCDT Transmissão Vertical MS 2022', 'Caderno AB IST 2020'],
+  doencasRelacionadas: ['sifilis-gestacao'],
+  medicamentosRelacionados: ['penicilina-benzatina'],
+  calculadorasRelacionadas: [],
+  tags: ['gestacao', 'sifilis', 'ist', 'alto-risco'],
+};
+
+// =============================================================================
 // TODOS OS PROTOCOLOS
 // =============================================================================
 
@@ -1296,6 +1548,11 @@ export const todosProtocolosFlowchart: Protocolo[] = [
   protocoloPreNatal,
   protocoloPuericultura,
   protocoloDPOC,
+  // Protocolos de Alto Risco Gestacional
+  protocoloDMG,
+  protocoloPreEclampsia,
+  protocoloHIVGestacao,
+  protocoloSifilisGestacao,
 ];
 
 // Função para buscar protocolo por ID
