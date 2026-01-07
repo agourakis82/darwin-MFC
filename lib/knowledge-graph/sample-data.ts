@@ -725,6 +725,273 @@ const samplePathways: CreateNodeInput<PathwayNode>[] = [
 ];
 
 // =============================================================================
+// PRENATAL HIGH-RISK CONDITIONS
+// =============================================================================
+
+const prenatalDiseases: CreateNodeInput<DiseaseNode>[] = [
+  {
+    type: 'Disease',
+    label: 'Gestational Diabetes Mellitus',
+    synonyms: ['DMG', 'GDM', 'Diabetes Gestacional'],
+    ontologies: {
+      doid: 'DOID:11714',
+      icd10: ['O24.4', 'O24.9'],
+      icd11: ['JA63'],
+      snomedCT: '11687002',
+      ciap2: ['W84'],
+    },
+    category: 'obstetrico',
+    chronic: false,
+    epidemiology: {
+      prevalence: '7-18% of pregnancies',
+      incidence: '7-10% per pregnancy',
+      ageGroups: ['adults'],
+    },
+  },
+  {
+    type: 'Disease',
+    label: 'Preeclampsia',
+    synonyms: ['PE', 'Pré-eclâmpsia', 'Pregnancy-induced hypertension', 'PIH'],
+    ontologies: {
+      doid: 'DOID:10591',
+      icd10: ['O14', 'O14.0', 'O14.1', 'O14.9'],
+      icd11: ['JA24'],
+      snomedCT: '398254007',
+      ciap2: ['W81'],
+    },
+    category: 'obstetrico',
+    chronic: false,
+    epidemiology: {
+      prevalence: '3-8% of pregnancies',
+      incidence: '5-7% per pregnancy',
+      ageGroups: ['adults'],
+    },
+  },
+  {
+    type: 'Disease',
+    label: 'HELLP Syndrome',
+    synonyms: ['HELLP', 'Hemolysis Elevated Liver enzymes Low Platelets'],
+    ontologies: {
+      doid: 'DOID:13566',
+      icd10: ['O14.2'],
+      icd11: ['JA24.1'],
+      snomedCT: '95605009',
+      ciap2: ['W81'],
+    },
+    category: 'obstetrico',
+    chronic: false,
+    epidemiology: {
+      prevalence: '0.5-0.9% of pregnancies',
+      incidence: '10-20% of severe preeclampsia',
+      ageGroups: ['adults'],
+    },
+  },
+  {
+    type: 'Disease',
+    label: 'Gestational HIV',
+    synonyms: ['HIV na Gestação', 'HIV in Pregnancy', 'Maternal HIV'],
+    ontologies: {
+      doid: 'DOID:526',
+      icd10: ['O98.7', 'B20'],
+      icd11: ['1C62'],
+      snomedCT: '86406008',
+      ciap2: ['W78'],
+    },
+    category: 'obstetrico',
+    chronic: true,
+    epidemiology: {
+      prevalence: '0.3-0.5% of pregnancies in Brazil',
+      ageGroups: ['adults'],
+    },
+  },
+  {
+    type: 'Disease',
+    label: 'Gestational Syphilis',
+    synonyms: ['Sífilis na Gestação', 'Syphilis in Pregnancy', 'Maternal Syphilis'],
+    ontologies: {
+      doid: 'DOID:4166',
+      icd10: ['O98.1', 'A50', 'A51', 'A52'],
+      icd11: ['1A60'],
+      snomedCT: '76272004',
+      ciap2: ['W78'],
+    },
+    category: 'obstetrico',
+    chronic: false,
+    epidemiology: {
+      prevalence: '1.5-2% of pregnancies in Brazil',
+      ageGroups: ['adults'],
+    },
+  },
+  {
+    type: 'Disease',
+    label: 'Chronic Hypertension in Pregnancy',
+    synonyms: ['HAS Crônica na Gestação', 'Pre-existing Hypertension in Pregnancy'],
+    ontologies: {
+      icd10: ['O10', 'O10.0', 'O10.9'],
+      icd11: ['JA20'],
+      snomedCT: '48194001',
+      ciap2: ['W81'],
+    },
+    category: 'obstetrico',
+    chronic: true,
+    epidemiology: {
+      prevalence: '1-5% of pregnancies',
+      ageGroups: ['adults'],
+    },
+  },
+];
+
+const prenatalMedications: CreateNodeInput<MedicationNode>[] = [
+  {
+    type: 'Medication',
+    label: 'Insulin NPH',
+    genericName: 'Insulin NPH',
+    synonyms: ['NPH Insulin', 'Isophane Insulin', 'Insulina NPH'],
+    ontologies: {
+      atcCode: 'A10AC01',
+      rxNormCui: '5856',
+      drugBankId: 'DB00046',
+    },
+    therapeuticClass: 'Insulin',
+    rename: true,
+    pregnancyCategory: 'B',
+  },
+  {
+    type: 'Medication',
+    label: 'Insulin Regular',
+    genericName: 'Insulin Regular',
+    synonyms: ['Regular Insulin', 'Short-acting Insulin', 'Insulina Regular'],
+    ontologies: {
+      atcCode: 'A10AB01',
+      rxNormCui: '5856',
+      drugBankId: 'DB00030',
+    },
+    therapeuticClass: 'Insulin',
+    rename: true,
+    pregnancyCategory: 'B',
+  },
+  {
+    type: 'Medication',
+    label: 'Magnesium Sulfate',
+    genericName: 'Magnesium Sulfate',
+    synonyms: ['MgSO4', 'Sulfato de Magnésio'],
+    ontologies: {
+      atcCode: 'A12CC02',
+      rxNormCui: '6585',
+      drugBankId: 'DB00653',
+    },
+    therapeuticClass: 'Anticonvulsant',
+    rename: true,
+    pregnancyCategory: 'A',
+  },
+  {
+    type: 'Medication',
+    label: 'Methyldopa',
+    genericName: 'Methyldopa',
+    synonyms: ['Metildopa', 'Aldomet'],
+    ontologies: {
+      atcCode: 'C02AB01',
+      rxNormCui: '6876',
+      drugBankId: 'DB00968',
+    },
+    therapeuticClass: 'Antihypertensive',
+    rename: true,
+    pregnancyCategory: 'B',
+  },
+  {
+    type: 'Medication',
+    label: 'Nifedipine',
+    genericName: 'Nifedipine',
+    synonyms: ['Nifedipina', 'Adalat'],
+    ontologies: {
+      atcCode: 'C08CA05',
+      rxNormCui: '7417',
+      drugBankId: 'DB01115',
+    },
+    therapeuticClass: 'Calcium Channel Blocker',
+    rename: true,
+    pregnancyCategory: 'C',
+  },
+  {
+    type: 'Medication',
+    label: 'Hydralazine',
+    genericName: 'Hydralazine',
+    synonyms: ['Hidralazina', 'Apresolina'],
+    ontologies: {
+      atcCode: 'C02DB02',
+      rxNormCui: '5470',
+      drugBankId: 'DB01275',
+    },
+    therapeuticClass: 'Vasodilator',
+    rename: true,
+    pregnancyCategory: 'C',
+  },
+  {
+    type: 'Medication',
+    label: 'Benzathine Penicillin G',
+    genericName: 'Benzathine Penicillin G',
+    synonyms: ['Penicilina Benzatina', 'Benzetacil'],
+    ontologies: {
+      atcCode: 'J01CE08',
+      rxNormCui: '7980',
+      drugBankId: 'DB01053',
+    },
+    therapeuticClass: 'Antibiotic',
+    rename: true,
+    pregnancyCategory: 'B',
+  },
+  {
+    type: 'Medication',
+    label: 'Dolutegravir',
+    genericName: 'Dolutegravir',
+    synonyms: ['DTG', 'Tivicay'],
+    ontologies: {
+      atcCode: 'J05AJ03',
+      rxNormCui: '1433868',
+      drugBankId: 'DB08930',
+    },
+    therapeuticClass: 'Integrase Inhibitor',
+    rename: false,
+    pregnancyCategory: 'B',
+  },
+  {
+    type: 'Medication',
+    label: 'Tenofovir/Lamivudine',
+    genericName: 'Tenofovir/Lamivudine',
+    synonyms: ['TDF/3TC', 'Tenofovir + Lamivudina'],
+    ontologies: {
+      atcCode: 'J05AR13',
+    },
+    therapeuticClass: 'Nucleoside Reverse Transcriptase Inhibitor',
+    rename: false,
+    pregnancyCategory: 'B',
+  },
+  {
+    type: 'Medication',
+    label: 'Aspirin Low-Dose',
+    genericName: 'Aspirin Low-Dose',
+    synonyms: ['AAS 100mg', 'Low-dose Aspirin', 'Aspirina Baixa Dose'],
+    ontologies: {
+      atcCode: 'B01AC06',
+      rxNormCui: '1191',
+      drugBankId: 'DB00945',
+    },
+    therapeuticClass: 'Antiplatelet',
+    rename: true,
+    pregnancyCategory: 'C',
+  },
+];
+
+// Prenatal contraindicated medications (for CONTRAINDICATED_IN edges)
+const prenatalContraindications = [
+  { drug: 'Enalapril', condition: 'Pregnancy', reason: 'Teratogenic - fetal renal dysgenesis' },
+  { drug: 'Losartan', condition: 'Pregnancy', reason: 'Teratogenic - oligohydramnios, fetal death' },
+  { drug: 'Warfarin', condition: 'Pregnancy', reason: 'Teratogenic - warfarin embryopathy' },
+  { drug: 'Atorvastatin', condition: 'Pregnancy', reason: 'Contraindicated - potential fetal harm' },
+  { drug: 'Metformin', condition: 'Gestational Diabetes Mellitus', reason: 'Prefer insulin, metformin only if insulin refused' },
+];
+
+// =============================================================================
 // POPULATION FUNCTION
 // =============================================================================
 
@@ -737,6 +1004,11 @@ export function populateSampleData(service: KnowledgeGraphService): void {
     service.addNode(disease);
   });
 
+  // Add prenatal diseases
+  prenatalDiseases.forEach((disease) => {
+    service.addNode(disease);
+  });
+
   // Add all symptoms
   sampleSymptoms.forEach((symptom) => {
     service.addNode(symptom);
@@ -744,6 +1016,11 @@ export function populateSampleData(service: KnowledgeGraphService): void {
 
   // Add all medications
   sampleMedications.forEach((medication) => {
+    service.addNode(medication);
+  });
+
+  // Add prenatal medications
+  prenatalMedications.forEach((medication) => {
     service.addNode(medication);
   });
 
@@ -1073,6 +1350,59 @@ export function populateSampleData(service: KnowledgeGraphService): void {
     }
   });
 
+  // =============================================================================
+  // PRENATAL RELATIONSHIPS
+  // =============================================================================
+
+  // Prenatal Disease -> Medication (TREATS / FIRST_LINE_FOR)
+  const prenatalTreatments: { disease: string; medication: string; firstLine?: boolean }[] = [
+    // Gestational Diabetes
+    { disease: 'Gestational Diabetes Mellitus', medication: 'Insulin NPH', firstLine: true },
+    { disease: 'Gestational Diabetes Mellitus', medication: 'Insulin Regular', firstLine: true },
+    // Preeclampsia
+    { disease: 'Preeclampsia', medication: 'Magnesium Sulfate', firstLine: true },
+    { disease: 'Preeclampsia', medication: 'Methyldopa' },
+    { disease: 'Preeclampsia', medication: 'Nifedipine' },
+    { disease: 'Preeclampsia', medication: 'Hydralazine' },
+    { disease: 'Preeclampsia', medication: 'Aspirin Low-Dose' },
+    // HELLP
+    { disease: 'HELLP Syndrome', medication: 'Magnesium Sulfate', firstLine: true },
+    // Chronic HTN in Pregnancy
+    { disease: 'Chronic Hypertension in Pregnancy', medication: 'Methyldopa', firstLine: true },
+    { disease: 'Chronic Hypertension in Pregnancy', medication: 'Nifedipine' },
+    // HIV
+    { disease: 'Gestational HIV', medication: 'Dolutegravir', firstLine: true },
+    { disease: 'Gestational HIV', medication: 'Tenofovir/Lamivudine', firstLine: true },
+    // Syphilis
+    { disease: 'Gestational Syphilis', medication: 'Benzathine Penicillin G', firstLine: true },
+  ];
+
+  prenatalTreatments.forEach((rel) => {
+    const diseaseNode = service.getNodesByType('Disease').find((n) => n.label === rel.disease);
+    const medNode = service.getNodesByType('Medication').find((n) => n.label === rel.medication);
+
+    if (diseaseNode && medNode) {
+      service.addEdge({
+        source: medNode.id,
+        target: diseaseNode.id,
+        type: rel.firstLine ? 'FIRST_LINE_FOR' : 'TREATS',
+        weight: rel.firstLine ? 1.0 : 0.85,
+      });
+    }
+  });
+
+  // Progression: Preeclampsia -> HELLP
+  const preeclNode = service.getNodesByType('Disease').find((n) => n.label === 'Preeclampsia');
+  const hellpNode = service.getNodesByType('Disease').find((n) => n.label === 'HELLP Syndrome');
+  if (preeclNode && hellpNode) {
+    service.addEdge({
+      source: preeclNode.id,
+      target: hellpNode.id,
+      type: 'PROGRESSES_TO',
+      weight: 0.15,
+    });
+  }
+
   console.log(`Knowledge Graph populated with ${service.getStats().totalNodes} nodes and ${service.getStats().totalEdges} edges`);
 }
 
@@ -1092,4 +1422,6 @@ export {
   sampleMedications,
   sampleExaminations,
   samplePathways,
+  prenatalDiseases,
+  prenatalMedications,
 };
