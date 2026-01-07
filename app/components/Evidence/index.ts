@@ -33,3 +33,30 @@ export {
   type EvidenceConfidenceBarProps,
   type ConfidenceLevel,
 } from './EvidenceConfidenceBar';
+
+// GRADE Evidence Badge - Complete GRADE methodology components
+export {
+  GradeEvidenceBadge,
+  GradeEvidenceCard,
+  GradeIndicator,
+  GradeEvidenceLegend,
+  type GradeEvidenceBadgeProps,
+  type GradeEvidenceCardProps,
+  type GradeIndicatorProps,
+} from './GradeEvidenceBadge';
+
+// Re-export GRADE types from evidence module for convenience
+export type {
+  GradeEvidenceLevel,
+  GradeQualityOfEvidence,
+  GradeRecommendationStrength,
+  GradeAssessment,
+  GradeAssessmentSimple,
+  GradeDowngradingFactors,
+  GradeUpgradingFactors,
+  GradeRiskOfBias,
+  GradeInconsistency,
+  GradeIndirectness,
+  GradeImprecision,
+  GradePublicationBias,
+} from '@/lib/types/evidence';

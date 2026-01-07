@@ -18,14 +18,18 @@ export interface Reference {
   journal?: string; // Para artigos
   year: number;
   volume?: string;
+  issue?: string; // Issue/number within volume
   pages?: string;
   doi?: string;
+  pmid?: string; // PubMed ID
+  pmc?: string; // PubMed Central ID
   url?: string;
   accessDate?: string;
   legalNumber?: string; // Para portarias/leis (ex: "Portaria GM/MS nº 1.234")
   publisher?: string; // Para livros
   edition?: string; // Para livros
   note?: string; // Nota contextual opcional
+  abstract?: string; // Abstract for preview
 }
 
 // Interface para uso em citações inline (ex: [1], [2-4])

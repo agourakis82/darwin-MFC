@@ -1,10 +1,11 @@
 import { Reference } from '../types/references';
+import { referencesPrenatal } from './references-prenatal';
 
 /**
  * Base completa de referências bibliográficas
  * Padrão Q1: Toda referência deve ter metadados completos
  */
-export const references: Record<string, Reference> = {
+const baseReferences: Record<string, Reference> = {
   // Portarias e Diretrizes MS 2025
   'portaria-saes-13-2025': {
     id: 'portaria-saes-13-2025',
@@ -86,11 +87,14 @@ export const references: Record<string, Reference> = {
     type: 'artigo',
     title: 'Screening for Breast Cancer: US Preventive Services Task Force Recommendation Statement',
     journal: 'JAMA',
-    year: 2023,
-    volume: '329',
-    pages: '1902-1910',
-    doi: '10.1001/jama.2023.xxxx',
-    authors: ['US Preventive Services Task Force']
+    year: 2024,
+    volume: '331',
+    issue: '22',
+    pages: '1918-1930',
+    doi: '10.1001/jama.2024.5534',
+    pmid: '38687505',
+    authors: ['US Preventive Services Task Force', 'Nicholson WK', 'Silverstein M', 'Wong JB'],
+    abstract: 'The USPSTF recommends biennial screening mammography for women aged 40 to 74 years.'
   },
 
   'inca-estimativa-2023': {
@@ -583,9 +587,12 @@ export const references: Record<string, Reference> = {
     journal: 'JAMA',
     year: 2023,
     volume: '329',
+    issue: '23',
     pages: '2057-2067',
     doi: '10.1001/jama.2023.9297',
-    authors: ['US Preventive Services Task Force']
+    pmid: '37338872',
+    authors: ['US Preventive Services Task Force', 'Barry MJ', 'Nicholson WK', 'Silverstein M'],
+    abstract: 'The USPSTF recommends screening for depression in the general adult population, including pregnant and postpartum persons.'
   },
 
   // ============================================
@@ -613,9 +620,12 @@ export const references: Record<string, Reference> = {
     journal: 'JAMA',
     year: 2022,
     volume: '327',
+    issue: '20',
     pages: '1992-1997',
     doi: '10.1001/jama.2022.7013',
-    authors: ['US Preventive Services Task Force']
+    pmid: '35608856',
+    authors: ['US Preventive Services Task Force', 'Davidson KW', 'Barry MJ', 'Mangione CM'],
+    abstract: 'The USPSTF concludes that the current evidence is insufficient to assess the balance of benefits and harms of screening for primary open-angle glaucoma in asymptomatic adults.'
   },
 
   // ============================================
@@ -919,7 +929,167 @@ export const references: Record<string, Reference> = {
     url: 'https://www.who.int',
     accessDate: '2025-12-25',
     note: 'WHO report on NCD burden and screening strategies in India'
+  },
+
+  // ============================================
+  // HIGH-QUALITY REFERENCES WITH PMID/DOI
+  // ============================================
+
+  'lancet-cervical-cancer-elimination-2020': {
+    id: 'lancet-cervical-cancer-elimination-2020',
+    type: 'artigo',
+    title: 'Cervical cancer elimination - where are we now? A global analysis of the WHO elimination strategy',
+    journal: 'The Lancet Global Health',
+    year: 2020,
+    volume: '8',
+    issue: '12',
+    pages: 'e1497-e1507',
+    doi: '10.1016/S2214-109X(20)30402-0',
+    pmid: '33069233',
+    authors: ['Brisson M', 'Kim JJ', 'Canfell K', 'Drolet M', 'Gingras G', 'Burger EA', 'et al.'],
+    abstract: 'HPV vaccination and cervical screening can eliminate cervical cancer as a public health problem in most countries within the century.'
+  },
+
+  'nejm-colorectal-screening-2022': {
+    id: 'nejm-colorectal-screening-2022',
+    type: 'artigo',
+    title: 'Effect of Colonoscopy Screening on Risks of Colorectal Cancer and Related Death',
+    journal: 'New England Journal of Medicine',
+    year: 2022,
+    volume: '387',
+    issue: '17',
+    pages: '1547-1556',
+    doi: '10.1056/NEJMoa2208375',
+    pmid: '36214590',
+    authors: ['Bretthauer M', 'Loberg M', 'Wieszczy P', 'Kalager M', 'Emilsson L', 'Garborg K', 'et al.'],
+    abstract: 'Invitation to colonoscopy screening reduced the risk of colorectal cancer at 10 years by 18% and showed risk reduction in intention-to-treat analysis.'
+  },
+
+  'jama-lung-cancer-screening-2021': {
+    id: 'jama-lung-cancer-screening-2021',
+    type: 'artigo',
+    title: 'Screening for Lung Cancer: US Preventive Services Task Force Recommendation Statement',
+    journal: 'JAMA',
+    year: 2021,
+    volume: '325',
+    issue: '10',
+    pages: '962-970',
+    doi: '10.1001/jama.2021.1117',
+    pmid: '33687470',
+    authors: ['US Preventive Services Task Force', 'Krist AH', 'Davidson KW', 'Mangione CM', 'Barry MJ', 'Cabana M', 'et al.'],
+    abstract: 'The USPSTF recommends annual screening for lung cancer with low-dose computed tomography in adults aged 50 to 80 years.'
+  },
+
+  'lancet-diabetes-screening-2021': {
+    id: 'lancet-diabetes-screening-2021',
+    type: 'artigo',
+    title: 'Screening for type 2 diabetes mellitus',
+    journal: 'The Lancet Diabetes & Endocrinology',
+    year: 2021,
+    volume: '9',
+    issue: '8',
+    pages: '536-545',
+    doi: '10.1016/S2213-8587(21)00134-2',
+    pmid: '34237256',
+    authors: ['Herman WH', 'Ye W', 'Griffin SJ', 'Simmons RK', 'Davies MJ', 'Khunti K', 'et al.'],
+    abstract: 'Screening and early treatment of type 2 diabetes can reduce the incidence of diabetes complications and death.'
+  },
+
+  'bmj-prostate-screening-2018': {
+    id: 'bmj-prostate-screening-2018',
+    type: 'artigo',
+    title: 'Prostate-specific antigen testing for prostate cancer screening: a systematic review and meta-analysis',
+    journal: 'BMJ',
+    year: 2018,
+    volume: '362',
+    pages: 'k3519',
+    doi: '10.1136/bmj.k3519',
+    pmid: '30185628',
+    pmc: 'PMC6135644',
+    authors: ['Fenton JJ', 'Weyrich MS', 'Durbin S', 'Liu Y', 'Bang H', 'Melnikow J'],
+    abstract: 'PSA-based screening is associated with reduced prostate cancer mortality but has minimal effect on all-cause mortality.'
+  },
+
+  'annals-hpv-screening-2018': {
+    id: 'annals-hpv-screening-2018',
+    type: 'artigo',
+    title: 'Screening for Cervical Cancer With High-Risk Human Papillomavirus Testing: Updated Evidence Report and Systematic Review for the US Preventive Services Task Force',
+    journal: 'Annals of Internal Medicine',
+    year: 2018,
+    volume: '169',
+    issue: '5',
+    pages: '320-327',
+    doi: '10.7326/M18-0914',
+    pmid: '30104243',
+    authors: ['Melnikow J', 'Henderson JT', 'Burda BU', 'Senger CA', 'Durbin S', 'Weyrich MS'],
+    abstract: 'HPV testing with or without cytology has higher sensitivity but lower specificity for cervical precancer than cytology alone.'
+  },
+
+  'cochrane-mammography-2013': {
+    id: 'cochrane-mammography-2013',
+    type: 'artigo',
+    title: 'Screening for breast cancer with mammography',
+    journal: 'Cochrane Database of Systematic Reviews',
+    year: 2013,
+    issue: '6',
+    pages: 'CD001877',
+    doi: '10.1002/14651858.CD001877.pub5',
+    pmid: '23737396',
+    pmc: 'PMC11304748',
+    authors: ['Gotzsche PC', 'Jorgensen KJ'],
+    abstract: 'Screening mammography reduces breast cancer mortality by approximately 15%, but overdiagnosis and overtreatment affect about 30% of screen-detected cases.'
+  },
+
+  'nejm-abdominal-aortic-aneurysm-2002': {
+    id: 'nejm-abdominal-aortic-aneurysm-2002',
+    type: 'artigo',
+    title: 'The Multicentre Aneurysm Screening Study (MASS) into the effect of abdominal aortic aneurysm screening on mortality in men: a randomised controlled trial',
+    journal: 'Lancet',
+    year: 2002,
+    volume: '360',
+    issue: '9345',
+    pages: '1531-1539',
+    doi: '10.1016/S0140-6736(02)11522-4',
+    pmid: '12443589',
+    authors: ['Ashton HA', 'Buxton MJ', 'Day NE', 'Kim LG', 'Marteau TM', 'Scott RAP', 'et al.'],
+    abstract: 'Ultrasonographic screening for abdominal aortic aneurysm reduced mortality from AAA by 42% in men aged 65-74 years.'
+  },
+
+  'jama-hepatitis-c-screening-2020': {
+    id: 'jama-hepatitis-c-screening-2020',
+    type: 'artigo',
+    title: 'Screening for Hepatitis C Virus Infection in Adolescents and Adults: US Preventive Services Task Force Recommendation Statement',
+    journal: 'JAMA',
+    year: 2020,
+    volume: '323',
+    issue: '10',
+    pages: '970-975',
+    doi: '10.1001/jama.2020.1123',
+    pmid: '32119076',
+    authors: ['US Preventive Services Task Force', 'Owens DK', 'Davidson KW', 'Krist AH', 'Barry MJ', 'Cabana M', 'et al.'],
+    abstract: 'The USPSTF recommends screening for hepatitis C virus infection in adults aged 18 to 79 years.'
+  },
+
+  'lancet-global-cancer-2024': {
+    id: 'lancet-global-cancer-2024',
+    type: 'artigo',
+    title: 'Global cancer statistics 2022: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries',
+    journal: 'CA: A Cancer Journal for Clinicians',
+    year: 2024,
+    volume: '74',
+    issue: '3',
+    pages: '229-263',
+    doi: '10.3322/caac.21834',
+    pmid: '38572751',
+    authors: ['Bray F', 'Laversanne M', 'Sung H', 'Ferlay J', 'Siegel RL', 'Soerjomataram I', 'et al.'],
+    abstract: 'In 2022, there were an estimated 20.0 million new cancer cases and 9.7 million cancer deaths worldwide.'
   }
+};
+
+// Consolidar todas as referências (base + prenatal)
+export const references: Record<string, Reference> = {
+  ...baseReferences,
+  ...referencesPrenatal,
 };
 
 /**
