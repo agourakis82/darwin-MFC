@@ -92,9 +92,15 @@ export interface QuickViewContent {
   
   /** Metas terapêuticas */
   metasTerapeuticas?: string[];
-  
+
   /** Exames iniciais sugeridos */
   examesIniciais?: string[];
+
+  /** Exames de seguimento */
+  examesSeguimento?: string[];
+
+  /** GRADE evidence level for the main recommendation */
+  gradeLevel?: GradeEvidenceLevel;
 }
 
 // =============================================================================
