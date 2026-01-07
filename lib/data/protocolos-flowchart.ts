@@ -1531,6 +1531,409 @@ export const protocoloSifilisGestacao: Protocolo = {
 };
 
 // =============================================================================
+// PROTOCOLO: ESTRATIFICAÇÃO DE RISCO GESTACIONAL
+// =============================================================================
+
+const estratificacaoRiscoNodes: ProtocolNode[] = [
+  {
+    id: 'erg-start',
+    type: 'custom',
+    position: { x: 400, y: 0 },
+    data: {
+      label: 'Primeira Consulta Pré-Natal',
+      description: 'Estratificação de Risco Gestacional',
+      nodeType: 'start',
+      ciap2: 'W78',
+      cid10: 'Z34.0',
+    },
+  },
+  {
+    id: 'erg-anamnese',
+    type: 'custom',
+    position: { x: 400, y: 100 },
+    data: {
+      label: 'Anamnese Completa',
+      description: 'Avaliar história pessoal, obstétrica e condições prévias',
+      nodeType: 'assessment',
+      details: [
+        'Idade (<15 ou >35 anos)',
+        'IMC (<18,5 ou >30 kg/m²)',
+        'História obstétrica prévia',
+        'Condições clínicas pré-existentes',
+        'Uso de álcool, tabaco ou drogas',
+        'Situação socioeconômica',
+      ],
+      exams: ['βHCG', 'USG 1º trimestre'],
+    },
+  },
+  {
+    id: 'erg-fatores-pessoais',
+    type: 'custom',
+    position: { x: 400, y: 240 },
+    data: {
+      label: 'Fatores Pessoais de Risco?',
+      description: 'Idade extrema, IMC, tabagismo, drogas',
+      nodeType: 'decision',
+      details: [
+        'Idade <15 ou >35 anos',
+        'IMC <18,5 ou ≥30 kg/m²',
+        'Altura <1,45m',
+        'Tabagismo, etilismo, drogas',
+        'Dependência química',
+        'Situação de rua ou vulnerabilidade',
+      ],
+    },
+  },
+  {
+    id: 'erg-risco-pessoal',
+    type: 'custom',
+    position: { x: 650, y: 320 },
+    data: {
+      label: 'Risco Identificado',
+      description: 'Fator pessoal de risco presente',
+      nodeType: 'alert',
+      alertLevel: 'medium',
+    },
+  },
+  {
+    id: 'erg-historia-obstetrica',
+    type: 'custom',
+    position: { x: 400, y: 380 },
+    data: {
+      label: 'História Obstétrica de Risco?',
+      description: 'Avaliar gestações anteriores',
+      nodeType: 'decision',
+      details: [
+        'Morte perinatal ou natimorto prévio',
+        'Pré-eclâmpsia/Eclâmpsia prévia',
+        'Prematuridade prévia (<34 sem)',
+        'CIUR/PIG prévio',
+        'Abortamentos de repetição (≥3)',
+        'Isoimunização Rh',
+        'Malformação fetal prévia',
+        'Cesáreas anteriores (≥2)',
+        'Intervalo interpartal <2 anos',
+      ],
+    },
+  },
+  {
+    id: 'erg-risco-obstetrico',
+    type: 'custom',
+    position: { x: 650, y: 460 },
+    data: {
+      label: 'Risco Obstétrico Alto',
+      description: 'História obstétrica de risco',
+      nodeType: 'alert',
+      alertLevel: 'high',
+    },
+  },
+  {
+    id: 'erg-condicoes-previas',
+    type: 'custom',
+    position: { x: 400, y: 520 },
+    data: {
+      label: 'Condições Clínicas Prévias?',
+      description: 'Doenças pré-existentes',
+      nodeType: 'decision',
+      details: [
+        'Hipertensão arterial crônica',
+        'Diabetes mellitus (DM1 ou DM2)',
+        'Cardiopatias',
+        'Nefropatias',
+        'Tireopatias',
+        'Doenças autoimunes (LES, SAF)',
+        'Epilepsia',
+        'HIV/AIDS',
+        'Hepatites B/C',
+        'Doenças psiquiátricas graves',
+        'Trombofilia conhecida',
+        'Anemia falciforme',
+        'Neoplasias',
+      ],
+    },
+  },
+  {
+    id: 'erg-alto-risco-clinico',
+    type: 'custom',
+    position: { x: 650, y: 600 },
+    data: {
+      label: 'Alto Risco - Doença Prévia',
+      description: 'Condição clínica de alto risco',
+      nodeType: 'alert',
+      alertLevel: 'high',
+    },
+  },
+  {
+    id: 'erg-exames-iniciais',
+    type: 'custom',
+    position: { x: 400, y: 660 },
+    data: {
+      label: 'Exames Iniciais',
+      description: 'Rastreamento laboratorial',
+      nodeType: 'assessment',
+      exams: [
+        'Hemograma',
+        'Tipagem ABO/Rh',
+        'Coombs indireto',
+        'Glicemia jejum',
+        'EAS + Urocultura',
+        'VDRL/RPR',
+        'HIV',
+        'HBsAg',
+        'Toxoplasmose IgG/IgM',
+        'TSH',
+      ],
+      details: [
+        'Se glicemia jejum ≥92 mg/dL = DMG',
+        'Se Coombs indireto + = Isoimunização',
+        'Se TSH alterado = avaliar tireoide',
+      ],
+    },
+  },
+  {
+    id: 'erg-alteracao-exames',
+    type: 'custom',
+    position: { x: 400, y: 800 },
+    data: {
+      label: 'Alteração nos Exames?',
+      description: 'Resultados anormais',
+      nodeType: 'decision',
+    },
+  },
+  {
+    id: 'erg-risco-laboratorial',
+    type: 'custom',
+    position: { x: 650, y: 880 },
+    data: {
+      label: 'Risco por Exame Alterado',
+      description: 'DMG, sífilis, HIV ou outras',
+      nodeType: 'alert',
+      alertLevel: 'high',
+      details: [
+        'DMG: Glicemia jejum ≥92 mg/dL',
+        'Sífilis: VDRL+ → tratar imediato',
+        'HIV: Confirmar e iniciar TARV',
+        'Isoimunização: Coombs+ → referência',
+      ],
+    },
+  },
+  {
+    id: 'erg-classificacao',
+    type: 'custom',
+    position: { x: 400, y: 960 },
+    data: {
+      label: 'Classificação Final',
+      description: 'Definir nível de risco',
+      nodeType: 'assessment',
+    },
+  },
+  {
+    id: 'erg-baixo-risco',
+    type: 'custom',
+    position: { x: 150, y: 1080 },
+    data: {
+      label: 'Baixo Risco (Risco Habitual)',
+      description: 'Pré-natal na UBS',
+      nodeType: 'info',
+      details: [
+        'Gestação sem fatores de risco identificados',
+        'Mínimo 6 consultas',
+        'Acompanhamento na APS',
+        'Parto em maternidade de referência',
+      ],
+    },
+  },
+  {
+    id: 'erg-risco-intermediario',
+    type: 'custom',
+    position: { x: 400, y: 1080 },
+    data: {
+      label: 'Risco Intermediário',
+      description: 'Vigilância aumentada na UBS',
+      nodeType: 'alert',
+      alertLevel: 'medium',
+      details: [
+        'Fatores de risco modificáveis',
+        'Idade extrema isolada',
+        'Obesidade grau I sem complicações',
+        'Acompanhamento mais frequente',
+        'Possível matriciamento com especialista',
+      ],
+    },
+  },
+  {
+    id: 'erg-alto-risco',
+    type: 'custom',
+    position: { x: 650, y: 1080 },
+    data: {
+      label: 'Alto Risco Gestacional',
+      description: 'Encaminhar para referência',
+      nodeType: 'referral',
+      referTo: 'Pré-natal de Alto Risco',
+      details: [
+        'Condição clínica grave prévia',
+        'História obstétrica de risco',
+        'DMG ou hipertensão gestacional',
+        'Exame alterado significativo',
+        'Gestação múltipla',
+      ],
+    },
+  },
+  {
+    id: 'erg-follow-baixo',
+    type: 'custom',
+    position: { x: 150, y: 1200 },
+    data: {
+      label: 'Seguimento Baixo Risco',
+      description: 'Cronograma padrão',
+      nodeType: 'action',
+      details: [
+        'Mensal até 28 semanas',
+        'Quinzenal de 28-36 semanas',
+        'Semanal de 36-40 semanas',
+        'Total: mínimo 6 consultas',
+      ],
+    },
+  },
+  {
+    id: 'erg-follow-intermediario',
+    type: 'custom',
+    position: { x: 400, y: 1200 },
+    data: {
+      label: 'Seguimento Intermediário',
+      description: 'Vigilância intensificada',
+      nodeType: 'action',
+      details: [
+        'Consultas a cada 2-3 semanas',
+        'USG seriada se necessário',
+        'Matriciamento com especialista',
+        'Reavaliar risco a cada consulta',
+      ],
+    },
+  },
+  {
+    id: 'erg-follow-alto',
+    type: 'custom',
+    position: { x: 650, y: 1200 },
+    data: {
+      label: 'Pré-Natal Alto Risco',
+      description: 'Centro de Referência',
+      nodeType: 'action',
+      details: [
+        'Compartilhado com APS',
+        'Consultas semanais/quinzenais',
+        'Exames especializados',
+        'Vitalidade fetal seriada',
+        'Planejamento do parto',
+      ],
+    },
+  },
+  {
+    id: 'erg-end-baixo',
+    type: 'custom',
+    position: { x: 150, y: 1320 },
+    data: {
+      label: 'Parto Maternidade',
+      description: 'Via de parto conforme indicação obstétrica',
+      nodeType: 'end',
+    },
+  },
+  {
+    id: 'erg-end-alto',
+    type: 'custom',
+    position: { x: 650, y: 1320 },
+    data: {
+      label: 'Parto em Referência',
+      description: 'Hospital com UTI neonatal/materna',
+      nodeType: 'end',
+    },
+  },
+];
+
+const estratificacaoRiscoEdges: ProtocolEdge[] = [
+  { id: 'e-erg-1', source: 'erg-start', target: 'erg-anamnese' },
+  { id: 'e-erg-2', source: 'erg-anamnese', target: 'erg-fatores-pessoais' },
+  { id: 'e-erg-3', source: 'erg-fatores-pessoais', target: 'erg-risco-pessoal', sourceHandle: 'yes', label: 'Sim' },
+  { id: 'e-erg-4', source: 'erg-fatores-pessoais', target: 'erg-historia-obstetrica', sourceHandle: 'no', label: 'Não' },
+  { id: 'e-erg-5', source: 'erg-risco-pessoal', target: 'erg-historia-obstetrica' },
+  { id: 'e-erg-6', source: 'erg-historia-obstetrica', target: 'erg-risco-obstetrico', sourceHandle: 'yes', label: 'Sim' },
+  { id: 'e-erg-7', source: 'erg-historia-obstetrica', target: 'erg-condicoes-previas', sourceHandle: 'no', label: 'Não' },
+  { id: 'e-erg-8', source: 'erg-risco-obstetrico', target: 'erg-condicoes-previas' },
+  { id: 'e-erg-9', source: 'erg-condicoes-previas', target: 'erg-alto-risco-clinico', sourceHandle: 'yes', label: 'Sim' },
+  { id: 'e-erg-10', source: 'erg-condicoes-previas', target: 'erg-exames-iniciais', sourceHandle: 'no', label: 'Não' },
+  { id: 'e-erg-11', source: 'erg-alto-risco-clinico', target: 'erg-exames-iniciais' },
+  { id: 'e-erg-12', source: 'erg-exames-iniciais', target: 'erg-alteracao-exames' },
+  { id: 'e-erg-13', source: 'erg-alteracao-exames', target: 'erg-risco-laboratorial', sourceHandle: 'yes', label: 'Sim' },
+  { id: 'e-erg-14', source: 'erg-alteracao-exames', target: 'erg-classificacao', sourceHandle: 'no', label: 'Não' },
+  { id: 'e-erg-15', source: 'erg-risco-laboratorial', target: 'erg-classificacao' },
+  { id: 'e-erg-16', source: 'erg-classificacao', target: 'erg-baixo-risco', label: 'Sem fatores' },
+  { id: 'e-erg-17', source: 'erg-classificacao', target: 'erg-risco-intermediario', label: 'Fatores isolados' },
+  { id: 'e-erg-18', source: 'erg-classificacao', target: 'erg-alto-risco', label: 'Múltiplos fatores' },
+  { id: 'e-erg-19', source: 'erg-baixo-risco', target: 'erg-follow-baixo' },
+  { id: 'e-erg-20', source: 'erg-risco-intermediario', target: 'erg-follow-intermediario' },
+  { id: 'e-erg-21', source: 'erg-alto-risco', target: 'erg-follow-alto' },
+  { id: 'e-erg-22', source: 'erg-follow-baixo', target: 'erg-end-baixo' },
+  { id: 'e-erg-23', source: 'erg-follow-intermediario', target: 'erg-end-baixo' },
+  { id: 'e-erg-24', source: 'erg-follow-alto', target: 'erg-end-alto' },
+];
+
+export const protocoloEstratificacaoRisco: Protocolo = {
+  id: 'estratificacao-risco-gestacional',
+  titulo: 'Estratificação de Risco Gestacional',
+  subtitulo: 'Triagem e Classificação na Primeira Consulta',
+  categoria: 'materno_infantil',
+  complexidade: 'basico',
+  versao: '2025.1',
+  ultimaAtualizacao: '2025-01',
+  fonte: 'Manual de Gestação de Alto Risco MS 2022',
+  ciap2: ['W78', 'W79', 'W84'],
+  cid10: ['Z34.0', 'O09', 'Z35'],
+  descricao: 'Protocolo para estratificação de risco gestacional na primeira consulta de pré-natal, identificando gestantes de baixo, intermediário e alto risco.',
+  objetivos: [
+    'Identificar fatores de risco gestacional',
+    'Classificar gestante por nível de risco',
+    'Direcionar para acompanhamento adequado',
+    'Prevenir complicações materno-fetais',
+    'Garantir acesso ao nível de cuidado necessário',
+  ],
+  populacaoAlvo: 'Gestantes em primeira consulta de pré-natal',
+  nodes: estratificacaoRiscoNodes,
+  edges: estratificacaoRiscoEdges,
+  criteriosInclusao: [
+    'Toda gestante na primeira consulta pré-natal',
+    'Gestante sem estratificação prévia',
+    'Transferência de outra unidade',
+  ],
+  sinaisAlerta: [
+    'Sangramento vaginal',
+    'Dor abdominal intensa',
+    'Cefaleia intensa com alteração visual',
+    'PA ≥140/90 mmHg',
+    'Movimentação fetal reduzida (>28 sem)',
+    'Febre alta (≥38°C)',
+  ],
+  encaminhamento: {
+    quando: [
+      'Condição clínica grave prévia',
+      'História obstétrica de alto risco',
+      'Exame alterado significativo',
+      'Gestação múltipla',
+      'Malformação fetal diagnosticada',
+    ],
+    paraCQuem: 'Pré-natal de Alto Risco / Centro de Referência',
+  },
+  referencias: [
+    'Manual de Gestação de Alto Risco MS 2022',
+    'Caderno de Atenção Básica nº32 - Pré-Natal',
+    'FEBRASGO - Manual de Pré-Natal 2024',
+  ],
+  doencasRelacionadas: ['classificacao-risco-gestacional', 'diabetes-gestacional', 'pre-eclampsia-eclampsia', 'hipertensao-cronica-gestacao'],
+  medicamentosRelacionados: ['acido-folico-gestacao', 'sulfato-ferroso-gestacao'],
+  calculadorasRelacionadas: ['idade-gestacional', 'dpp'],
+  tags: ['gestacao', 'prenatal', 'estratificacao', 'triagem', 'alto-risco'],
+};
+
+// =============================================================================
 // TODOS OS PROTOCOLOS
 // =============================================================================
 
@@ -1553,6 +1956,7 @@ export const todosProtocolosFlowchart: Protocolo[] = [
   protocoloPreEclampsia,
   protocoloHIVGestacao,
   protocoloSifilisGestacao,
+  protocoloEstratificacaoRisco,
 ];
 
 // Função para buscar protocolo por ID
