@@ -12,6 +12,7 @@
  */
 
 import { Citation } from './references';
+import type { GradeAssessmentSimple, GradeEvidenceLevel } from './evidence';
 
 // =============================================================================
 // CATEGORIAS DE DOENÇAS
@@ -185,6 +186,10 @@ export interface TratamentoFarmacologico {
   medicamentos: string[];
   posologia?: string;
   observacoes?: string;
+  /** GRADE evidence level for this treatment recommendation */
+  gradeLevel?: GradeEvidenceLevel;
+  /** Full GRADE assessment if available */
+  gradeAssessment?: GradeAssessmentSimple;
 }
 
 // =============================================================================
@@ -284,12 +289,24 @@ export interface Doenca {
   
   /** Citações gerais */
   citations: Citation[];
-  
+
   /** Data da última atualização */
   lastUpdate: string;
-  
+
   /** Tags para busca */
   tags?: string[];
+
+  /**
+   * GRADE Evidence Assessments for key recommendations
+   * Maps recommendation ID/topic to GRADE assessment
+   */
+  gradeAssessments?: Record<string, GradeAssessmentSimple>;
+
+  /**
+   * Overall GRADE evidence level for the disease management
+   * Based on the highest quality evidence available
+   */
+  overallGradeLevel?: GradeEvidenceLevel;
 }
 
 // =============================================================================
