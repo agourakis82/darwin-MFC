@@ -96,6 +96,7 @@
     "drugComparator": "Σύγκριση Φαρμάκων",
     "advancedSearch": "Σύνθετη Αναζήτηση",
     "prenatalHighRisk": "Προγεννητική Υψηλού Κινδύνου",
+    "pediatricsAPS": "Παιδιατρική ΠΦΥ",
     "q1Standard": "Ακαδημαϊκό Πρότυπο Q1",
     "q1Description": "Όλες οι δηλώσεις τεκμηριώνονται με επιστημονικές αναφορές",
     "lastUpdate": "Ενημέρωση: Δεκ/2025"
@@ -1366,6 +1367,36 @@
       "cardiovascular": "Καρδιαγγειακό",
       "infecciosas": "Λοιμώδη",
       "hematologico": "Αιματολογικό"
+    },
+    "references": {
+      "title": "Κύριες Αναφορές"
+    }
+  },
+  "pediatria": {
+    "title": "Παιδιατρική στην ΠΦΥ",
+    "subtitle": "{count} κοινές παιδιατρικές καταστάσεις",
+    "searchPlaceholder": "Αναζήτηση με όνομα, ICD-10 ή λέξη-κλειδί...",
+    "allCategories": "Όλες οι κατηγορίες",
+    "noResults": "Δεν βρέθηκαν καταστάσεις",
+    "banner": {
+      "title": "Παιδιατρική στην Πρωτοβάθμια Φροντίδα Υγείας",
+      "description": "Οι πιο συχνές παιδιατρικές καταστάσεις στην Πρωτοβάθμια Φροντίδα Υγείας, βασισμένες σε κατευθυντήριες γραμμές της SBP, IMCI και Nelson Textbook of Pediatrics."
+    },
+    "stats": {
+      "respiratory": "Αναπνευστικές",
+      "ent": "ΩΡΛ",
+      "gi": "Γαστρεντερικές",
+      "urologic": "Ουρολογικές"
+    },
+    "categories": {
+      "respiratorio": "Αναπνευστικό",
+      "otorrinolaringologia": "Ωτορινολαρυγγολογία",
+      "gastrointestinal": "Γαστρεντερικό",
+      "urologico": "Ουρολογικό",
+      "neurologico": "Νευρολογικό",
+      "dermatologico": "Δερματολογικό",
+      "pediatrico": "Γενική Παιδιατρική",
+      "outros": "Άλλα"
     },
     "references": {
       "title": "Κύριες Αναφορές"

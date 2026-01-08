@@ -96,6 +96,7 @@
     "drugComparator": "Сравнение лекарств",
     "advancedSearch": "Расширенный поиск",
     "prenatalHighRisk": "Пренатальный высокий риск",
+    "pediatricsAPS": "Педиатрия ПМСП",
     "q1Standard": "Академический стандарт Q1",
     "q1Description": "Все утверждения подтверждены научными ссылками",
     "lastUpdate": "Обновлено: Дек/2025"
@@ -1366,6 +1367,36 @@
       "cardiovascular": "Сердечно-сосудистый",
       "infecciosas": "Инфекционный",
       "hematologico": "Гематологический"
+    },
+    "references": {
+      "title": "Основные ссылки"
+    }
+  },
+  "pediatria": {
+    "title": "Педиатрия в ПМСП",
+    "subtitle": "{count} распространенных педиатрических состояний",
+    "searchPlaceholder": "Поиск по названию, МКБ-10 или ключевому слову...",
+    "allCategories": "Все категории",
+    "noResults": "Состояния не найдены",
+    "banner": {
+      "title": "Педиатрия в Первичной Медико-Санитарной Помощи",
+      "description": "Наиболее распространенные педиатрические состояния в Первичной Медико-Санитарной Помощи на основе рекомендаций SBP, ИВБДВ и Nelson Textbook of Pediatrics."
+    },
+    "stats": {
+      "respiratory": "Респираторные",
+      "ent": "ЛОР",
+      "gi": "Желудочно-кишечные",
+      "urologic": "Урологические"
+    },
+    "categories": {
+      "respiratorio": "Респираторный",
+      "otorrinolaringologia": "Оториноларингология",
+      "gastrointestinal": "Желудочно-кишечный",
+      "urologico": "Урологический",
+      "neurologico": "Неврологический",
+      "dermatologico": "Дерматологический",
+      "pediatrico": "Общая Педиатрия",
+      "outros": "Другие"
     },
     "references": {
       "title": "Основные ссылки"

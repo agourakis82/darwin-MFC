@@ -96,6 +96,7 @@
     "drugComparator": "Comparador de Medicamentos",
     "advancedSearch": "Busca Avançada",
     "prenatalHighRisk": "Pré-natal Alto Risco",
+    "pediatricsAPS": "Pediatria APS",
     "q1Standard": "Padrão Q1 Acadêmico",
     "q1Description": "Todas as afirmações validadas com referências científicas",
     "lastUpdate": "Atualizado: Dez/2025"
@@ -1681,6 +1682,36 @@
       "cardiovascular": "Cardiovascular",
       "infecciosas": "Infecciosas",
       "hematologico": "Hematológico"
+    },
+    "references": {
+      "title": "Referências Principais"
+    }
+  },
+  "pediatria": {
+    "title": "Pediatria na APS",
+    "subtitle": "{count} condições pediátricas comuns",
+    "searchPlaceholder": "Buscar por nome, CID-10 ou palavra-chave...",
+    "allCategories": "Todas as categorias",
+    "noResults": "Nenhuma condição encontrada",
+    "banner": {
+      "title": "Pediatria na Atenção Primária",
+      "description": "Condições pediátricas mais prevalentes na Atenção Primária à Saúde, baseadas em diretrizes da SBP, AIDPI e Nelson Textbook of Pediatrics."
+    },
+    "stats": {
+      "respiratory": "Respiratórias",
+      "ent": "ORL",
+      "gi": "Gastrointestinais",
+      "urologic": "Urológicas"
+    },
+    "categories": {
+      "respiratorio": "Respiratório",
+      "otorrinolaringologia": "Otorrinolaringologia",
+      "gastrointestinal": "Gastrointestinal",
+      "urologico": "Urológico",
+      "neurologico": "Neurológico",
+      "dermatologico": "Dermatológico",
+      "pediatrico": "Pediátrico Geral",
+      "outros": "Outros"
     },
     "references": {
       "title": "Referências Principais"

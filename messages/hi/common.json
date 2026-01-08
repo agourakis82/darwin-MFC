@@ -96,6 +96,7 @@
     "drugComparator": "दवा तुलनाकर्ता",
     "advancedSearch": "उन्नत खोज",
     "prenatalHighRisk": "उच्च जोखिम प्रसवपूर्व",
+    "pediatricsAPS": "बाल रोग PHC",
     "q1Standard": "Q1 शैक्षणिक मानक",
     "q1Description": "सभी कथन वैज्ञानिक संदर्भों के साथ मान्य हैं",
     "lastUpdate": "अपडेट: दिसं/2025"
@@ -1366,6 +1367,36 @@
       "cardiovascular": "हृदय संबंधी",
       "infecciosas": "संक्रामक",
       "hematologico": "रुधिर संबंधी"
+    },
+    "references": {
+      "title": "मुख्य संदर्भ"
+    }
+  },
+  "pediatria": {
+    "title": "प्राथमिक स्वास्थ्य देखभाल में बाल रोग",
+    "subtitle": "{count} सामान्य बाल रोग स्थितियाँ",
+    "searchPlaceholder": "नाम, ICD-10 या कीवर्ड से खोजें...",
+    "allCategories": "सभी श्रेणियाँ",
+    "noResults": "कोई स्थिति नहीं मिली",
+    "banner": {
+      "title": "प्राथमिक स्वास्थ्य देखभाल में बाल रोग",
+      "description": "प्राथमिक स्वास्थ्य देखभाल में सबसे प्रचलित बाल रोग स्थितियाँ, SBP, IMCI और Nelson Textbook of Pediatrics दिशानिर्देशों पर आधारित।"
+    },
+    "stats": {
+      "respiratory": "श्वसन",
+      "ent": "ईएनटी",
+      "gi": "जठरांत्र",
+      "urologic": "मूत्र संबंधी"
+    },
+    "categories": {
+      "respiratorio": "श्वसन",
+      "otorrinolaringologia": "कान नाक गला",
+      "gastrointestinal": "जठरांत्र",
+      "urologico": "मूत्र संबंधी",
+      "neurologico": "तंत्रिका संबंधी",
+      "dermatologico": "त्वचा संबंधी",
+      "pediatrico": "सामान्य बाल रोग",
+      "outros": "अन्य"
     },
     "references": {
       "title": "मुख्य संदर्भ"

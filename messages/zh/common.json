@@ -96,6 +96,7 @@
     "drugComparator": "药物比较",
     "advancedSearch": "高级搜索",
     "prenatalHighRisk": "高危产前护理",
+    "pediatricsAPS": "儿科初级保健",
     "q1Standard": "Q1学术标准",
     "q1Description": "所有陈述均有科学参考文献支持",
     "lastUpdate": "更新：2025年12月"
@@ -1366,6 +1367,36 @@
       "cardiovascular": "心血管",
       "infecciosas": "传染病",
       "hematologico": "血液病"
+    },
+    "references": {
+      "title": "主要参考文献"
+    }
+  },
+  "pediatria": {
+    "title": "初级保健儿科",
+    "subtitle": "{count} 种常见儿科疾病",
+    "searchPlaceholder": "按名称、ICD-10或关键词搜索...",
+    "allCategories": "所有类别",
+    "noResults": "未找到相关状况",
+    "banner": {
+      "title": "初级卫生保健中的儿科",
+      "description": "初级卫生保健中最常见的儿科疾病，基于SBP、IMCI和Nelson儿科学教科书指南。"
+    },
+    "stats": {
+      "respiratory": "呼吸系统",
+      "ent": "耳鼻喉科",
+      "gi": "消化系统",
+      "urologic": "泌尿系统"
+    },
+    "categories": {
+      "respiratorio": "呼吸系统",
+      "otorrinolaringologia": "耳鼻喉科",
+      "gastrointestinal": "消化系统",
+      "urologico": "泌尿系统",
+      "neurologico": "神经系统",
+      "dermatologico": "皮肤科",
+      "pediatrico": "普通儿科",
+      "outros": "其他"
     },
     "references": {
       "title": "主要参考文献"

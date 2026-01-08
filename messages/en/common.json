@@ -96,6 +96,7 @@
     "drugComparator": "Drug Comparator",
     "advancedSearch": "Advanced Search",
     "prenatalHighRisk": "High-Risk Prenatal",
+    "pediatricsAPS": "Pediatrics PHC",
     "q1Standard": "Q1 Academic Standard",
     "q1Description": "All statements validated with scientific references",
     "lastUpdate": "Updated: Dec/2025"
@@ -1681,6 +1682,36 @@
       "cardiovascular": "Cardiovascular",
       "infecciosas": "Infectious",
       "hematologico": "Hematologic"
+    },
+    "references": {
+      "title": "Main References"
+    }
+  },
+  "pediatria": {
+    "title": "Pediatrics in PHC",
+    "subtitle": "{count} common pediatric conditions",
+    "searchPlaceholder": "Search by name, ICD-10, or keyword...",
+    "allCategories": "All categories",
+    "noResults": "No conditions found",
+    "banner": {
+      "title": "Pediatrics in Primary Health Care",
+      "description": "Most prevalent pediatric conditions in Primary Health Care, based on SBP, IMCI, and Nelson Textbook of Pediatrics guidelines."
+    },
+    "stats": {
+      "respiratory": "Respiratory",
+      "ent": "ENT",
+      "gi": "Gastrointestinal",
+      "urologic": "Urological"
+    },
+    "categories": {
+      "respiratorio": "Respiratory",
+      "otorrinolaringologia": "Otorhinolaryngology",
+      "gastrointestinal": "Gastrointestinal",
+      "urologico": "Urological",
+      "neurologico": "Neurological",
+      "dermatologico": "Dermatological",
+      "pediatrico": "General Pediatric",
+      "outros": "Others"
     },
     "references": {
       "title": "Main References"
