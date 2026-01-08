@@ -71,8 +71,11 @@ const insulinasGestacao: Medicamento[] = [
       graves: ['Hipoglicemia grave', 'Reação anafilática (raro)']
     },
     interacoes: [
-      { medicamento: 'Corticoides', gravidade: 'moderada', efeito: 'Hiperglicemia - aumento da necessidade de insulina', conduta: 'Aumentar dose de insulina, monitorar glicemia' },
-      { medicamento: 'Betabloqueadores', gravidade: 'moderada', efeito: 'Mascaram sintomas de hipoglicemia', conduta: 'Monitorar glicemia mais frequentemente' }
+      { medicamento: 'Corticoides', gravidade: 'moderada', efeito: 'Hiperglicemia - aumento da necessidade de insulina em 20-50%', mecanismo: 'Corticoides aumentam gliconeogênese hepática e resistência periférica à insulina', conduta: 'Aumentar dose de insulina 20-50%, monitorar glicemia capilar 6-8x/dia durante uso de corticoide' },
+      { medicamento: 'Betabloqueadores', gravidade: 'moderada', efeito: 'Mascaram sintomas adrenérgicos de hipoglicemia (tremor, taquicardia)', mecanismo: 'Bloqueio de receptores beta-adrenérgicos impede resposta simpática à hipoglicemia', conduta: 'Monitorar glicemia mais frequentemente, orientar sobre sintomas neuroglicopênicos' },
+      { medicamento: 'Sulfato de Magnésio', gravidade: 'leve', efeito: 'Pode alterar sensibilidade à insulina', mecanismo: 'Magnésio é cofator na sinalização da insulina', conduta: 'Monitorar glicemia durante infusão de MgSO4 em pré-eclâmpsia' },
+      { medicamento: 'Nifedipina', gravidade: 'leve', efeito: 'Pode causar hiperglicemia leve', mecanismo: 'Bloqueadores de cálcio podem reduzir liberação de insulina pelas células beta', conduta: 'Monitorar glicemia, ajustar insulina se necessário' },
+      { medicamento: 'Terbutalina', gravidade: 'moderada', efeito: 'Hiperglicemia significativa durante tocólise', mecanismo: 'Agonistas beta-2 estimulam glicogenólise e gliconeogênese', conduta: 'Aumentar dose de insulina 50-100% durante tocólise, monitorar glicemia horária' }
     ],
     gestacao: 'B',
     amamentacao: { compativel: true, observacao: 'Compatível - insulina não passa para o leite materno em quantidades significativas' },
@@ -133,7 +136,10 @@ const insulinasGestacao: Medicamento[] = [
       graves: ['Hipoglicemia grave']
     },
     interacoes: [
-      { medicamento: 'Corticoides', gravidade: 'moderada', efeito: 'Hiperglicemia', conduta: 'Ajustar dose' }
+      { medicamento: 'Corticoides', gravidade: 'moderada', efeito: 'Hiperglicemia - pode necessitar aumento de 30-50% na dose', mecanismo: 'Aumento da gliconeogênese e resistência insulínica', conduta: 'Ajustar dose de insulina, monitorar glicemia pré e pós-prandial' },
+      { medicamento: 'Betabloqueadores', gravidade: 'moderada', efeito: 'Mascaramento de sintomas hipoglicêmicos', mecanismo: 'Bloqueio de resposta adrenérgica à hipoglicemia', conduta: 'Monitorar glicemia com maior frequência' },
+      { medicamento: 'Terbutalina', gravidade: 'moderada', efeito: 'Hiperglicemia durante tocólise', mecanismo: 'Estimulação beta-2 aumenta glicogenólise', conduta: 'Monitorar glicemia horária durante tocólise' },
+      { medicamento: 'Sulfato de Magnésio', gravidade: 'leve', efeito: 'Alteração da sensibilidade insulínica', mecanismo: 'Magnésio afeta sinalização da insulina', conduta: 'Monitorar glicemia durante infusão' }
     ],
     gestacao: 'B',
     amamentacao: { compativel: true, observacao: 'Compatível com amamentação' },
@@ -176,12 +182,20 @@ const insulinasGestacao: Medicamento[] = [
       }
     ],
     contraindicacoes: ['Hipoglicemia'],
-    precaucoes: ['Não substituir 1:1 com insulina regular sem ajuste'],
+    precaucoes: [
+      'Não substituir 1:1 com insulina regular sem ajuste',
+      'Início de ação mais rápido - risco de hipoglicemia se refeição atrasada',
+      'Na gestação com hiperêmese: vantagem de poder aplicar após refeição'
+    ],
     efeitosAdversos: {
       comuns: ['Hipoglicemia', 'Reação no local da injeção'],
       graves: ['Hipoglicemia grave']
     },
-    interacoes: [],
+    interacoes: [
+      { medicamento: 'Corticoides', gravidade: 'moderada', efeito: 'Hiperglicemia com necessidade de ajuste de dose', mecanismo: 'Aumento da resistência insulínica', conduta: 'Aumentar doses prandiais conforme glicemia pós-prandial' },
+      { medicamento: 'Betabloqueadores', gravidade: 'moderada', efeito: 'Mascaramento de hipoglicemia', mecanismo: 'Bloqueio de sintomas adrenérgicos', conduta: 'Monitorar glicemia frequentemente' },
+      { medicamento: 'Terbutalina', gravidade: 'moderada', efeito: 'Hiperglicemia durante tocólise', mecanismo: 'Efeito hiperglicemiante dos beta-agonistas', conduta: 'Ajustar doses durante tocólise' }
+    ],
     gestacao: 'B',
     amamentacao: { compativel: true, observacao: 'Compatível' },
     monitorizacao: ['Glicemia pós-prandial'],
@@ -222,12 +236,21 @@ const insulinasGestacao: Medicamento[] = [
       }
     ],
     contraindicacoes: ['Hipoglicemia'],
-    precaucoes: ['Não diluir ou misturar com outras insulinas'],
+    precaucoes: [
+      'Não diluir ou misturar com outras insulinas',
+      'Pode necessitar 2 doses/dia na gestação devido ao metabolismo acelerado',
+      'Dose pode aumentar progressivamente durante a gestação (até 2x no 3º trimestre)'
+    ],
     efeitosAdversos: {
       comuns: ['Hipoglicemia', 'Ganho de peso'],
       graves: ['Hipoglicemia grave']
     },
-    interacoes: [],
+    interacoes: [
+      { medicamento: 'Corticoides', gravidade: 'moderada', efeito: 'Hiperglicemia com necessidade de aumento da dose basal', mecanismo: 'Aumento da gliconeogênese hepática e resistência insulínica', conduta: 'Aumentar dose de insulina basal 20-50%, monitorar glicemia' },
+      { medicamento: 'Betabloqueadores', gravidade: 'moderada', efeito: 'Mascaramento de sintomas hipoglicêmicos', mecanismo: 'Bloqueio beta-adrenérgico impede reconhecimento de hipoglicemia', conduta: 'Orientar sintomas neuroglicopênicos, monitorar mais' },
+      { medicamento: 'Terbutalina', gravidade: 'moderada', efeito: 'Hiperglicemia significativa durante tocólise', mecanismo: 'Agonismo beta-2 estimula liberação de glicose', conduta: 'Aumentar dose basal durante tocólise, monitorar frequentemente' },
+      { medicamento: 'Nifedipina', gravidade: 'leve', efeito: 'Possível hiperglicemia', mecanismo: 'BCC podem afetar secreção de insulina', conduta: 'Monitorar glicemia' }
+    ],
     gestacao: 'A',
     amamentacao: { compativel: true, observacao: 'Compatível' },
     monitorizacao: ['Glicemia de jejum', 'HbA1c mensal'],
@@ -286,15 +309,21 @@ const antiHipertensivosGestacao: Medicamento[] = [
     precaucoes: [
       'Monitorar função hepática',
       'Pode causar sedação (iniciar com dose baixa)',
-      'Teste de Coombs pode positivar'
+      'Teste de Coombs pode positivar',
+      'Não suspender abruptamente - risco de crise hipertensiva de rebote',
+      'Depressão perinatal: monitorar humor, especialmente no pós-parto',
+      'Pode causar hipotensão ortostática - orientar gestante a levantar devagar'
     ],
     efeitosAdversos: {
       comuns: ['Sedação', 'Boca seca', 'Cefaleia', 'Hipotensão ortostática'],
       graves: ['Hepatotoxicidade', 'Anemia hemolítica', 'Síndrome lúpus-like']
     },
     interacoes: [
-      { medicamento: 'Lítio', gravidade: 'moderada', efeito: 'Aumento dos níveis de lítio', conduta: 'Monitorar litemia' },
-      { medicamento: 'Levodopa', gravidade: 'grave', efeito: 'Redução do efeito da levodopa', conduta: 'Evitar associação' }
+      { medicamento: 'Lítio', gravidade: 'grave', efeito: 'Aumento significativo dos níveis de lítio com risco de toxicidade', mecanismo: 'Metildopa reduz excreção renal de lítio e pode aumentar sensibilidade a seus efeitos', conduta: 'EVITAR associação na gestação. Se necessário, monitorar litemia frequentemente e reduzir dose de lítio' },
+      { medicamento: 'Levodopa', gravidade: 'grave', efeito: 'Redução significativa do efeito antiparkinsoniano', mecanismo: 'Competição pelo transporte através da barreira hematoencefálica e inibição da descarboxilase', conduta: 'Contraindicada associação' },
+      { medicamento: 'Haloperidol', gravidade: 'moderada', efeito: 'Aumento do efeito sedativo e risco de demência', mecanismo: 'Sinergismo de efeitos no SNC', conduta: 'Evitar ou usar com cautela, monitorar sedação' },
+      { medicamento: 'Sulfato Ferroso', gravidade: 'moderada', efeito: 'Redução da absorção de metildopa em até 70%', mecanismo: 'Quelação com ferro no trato GI', conduta: 'Separar administração em pelo menos 2 horas' },
+      { medicamento: 'Antidepressivos tricíclicos', gravidade: 'moderada', efeito: 'Redução do efeito anti-hipertensivo', mecanismo: 'Bloqueio da captação de metildopa em terminações simpáticas', conduta: 'Monitorar PA, pode necessitar aumento da dose de metildopa' }
     ],
     ajusteDoseRenal: [
       { tfg: '>50', ajuste: 'Dose habitual a cada 8h' },
@@ -373,17 +402,23 @@ const antiHipertensivosGestacao: Medicamento[] = [
       'Uso de sulfato de magnésio (relativo - risco bloqueio NM)'
     ],
     precaucoes: [
-      'NUNCA usar sublingual - risco de hipotensão grave',
-      'Cuidado com associação a MgSO4 (potencialização)',
-      'Monitorar PA frequentemente na emergência'
+      'NUNCA usar sublingual - risco de hipotensão grave e sofrimento fetal',
+      'Cuidado extremo com associação a MgSO4 (potencialização de hipotensão e bloqueio NM)',
+      'Monitorar PA a cada 30 min na emergência, a cada 5-10 min se + MgSO4',
+      'Pode causar taquicardia reflexa - monitorar frequência cardíaca fetal',
+      'Tocólise: não é primeira linha, preferir atosiban ou indometacina <32sem',
+      'Ter gluconato de cálcio 10% disponível se associado a MgSO4'
     ],
     efeitosAdversos: {
       comuns: ['Cefaleia', 'Rubor facial', 'Edema de membros inferiores', 'Palpitações'],
       graves: ['Hipotensão grave', 'Taquicardia reflexa', 'Bloqueio neuromuscular (+ MgSO4)']
     },
     interacoes: [
-      { medicamento: 'Sulfato de Magnésio', gravidade: 'grave', efeito: 'Hipotensão severa, bloqueio neuromuscular', conduta: 'Monitorar PA rigorosamente, evitar doses altas' },
-      { medicamento: 'Betabloqueadores', gravidade: 'moderada', efeito: 'Bradicardia, hipotensão', conduta: 'Monitorar FC e PA' }
+      { medicamento: 'Sulfato de Magnésio', gravidade: 'grave', efeito: 'Hipotensão severa e profunda, bloqueio neuromuscular potencializado', mecanismo: 'Sinergismo de bloqueio de canais de cálcio: nifedipina bloqueia canais L, MgSO4 antagoniza cálcio. Efeito aditivo no músculo liso vascular e músculo esquelético', conduta: 'MONITORAR RIGOROSAMENTE PA a cada 5-10 min. Evitar nifedipina em bolus durante infusão de MgSO4. Preferir hidralazina IV se possível. Ter gluconato de cálcio disponível' },
+      { medicamento: 'Betabloqueadores', gravidade: 'grave', efeito: 'Bradicardia severa, bloqueio AV, hipotensão grave', mecanismo: 'Efeito inotrópico e cronotrópico negativo aditivo. Nifedipina causa taquicardia reflexa que é bloqueada pelos betabloqueadores', conduta: 'Evitar associação quando possível. Se necessário, monitorar ECG e PA continuamente, começar com doses baixas' },
+      { medicamento: 'Digoxina', gravidade: 'moderada', efeito: 'Aumento dos níveis de digoxina em 15-45%', mecanismo: 'Nifedipina reduz clearance renal e não-renal da digoxina', conduta: 'Monitorar digoxinemia, considerar redução da dose de digoxina' },
+      { medicamento: 'Fenitoína', gravidade: 'moderada', efeito: 'Redução dos níveis de nifedipina', mecanismo: 'Fenitoína induz CYP3A4, aumentando metabolismo da nifedipina', conduta: 'Pode necessitar aumento da dose de nifedipina' },
+      { medicamento: 'Rifampicina', gravidade: 'grave', efeito: 'Redução drástica (até 90%) dos níveis de nifedipina', mecanismo: 'Potente indução de CYP3A4', conduta: 'Evitar associação ou usar anti-hipertensivo alternativo' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Compatível - baixa excreção no leite' },
@@ -454,7 +489,10 @@ const antiHipertensivosGestacao: Medicamento[] = [
       graves: ['Hipotensão grave', 'Angina pectoris', 'Síndrome lúpus-like']
     },
     interacoes: [
-      { medicamento: 'Betabloqueadores', gravidade: 'moderada', efeito: 'Potencialização do efeito hipotensor', conduta: 'Usar com cautela' }
+      { medicamento: 'Betabloqueadores', gravidade: 'moderada', efeito: 'Potencialização do efeito hipotensor, redução da taquicardia reflexa', mecanismo: 'Sinergismo hipotensor. Betabloqueadores previnem taquicardia compensatória', conduta: 'Usar com cautela, pode ser benéfico para controlar taquicardia reflexa' },
+      { medicamento: 'Diazóxido', gravidade: 'grave', efeito: 'Hipotensão severa', mecanismo: 'Efeito vasodilatador aditivo', conduta: 'Evitar associação' },
+      { medicamento: 'Sulfato de Magnésio', gravidade: 'moderada', efeito: 'Hipotensão potencializada', mecanismo: 'Ambos são vasodilatadores', conduta: 'Monitorar PA rigorosamente' },
+      { medicamento: 'Anti-inflamatórios (AINEs)', gravidade: 'moderada', efeito: 'Redução do efeito anti-hipertensivo', mecanismo: 'AINEs causam retenção de sódio e água, antagonizando vasodilatação', conduta: 'Evitar AINEs na gestação de qualquer forma. Se necessário, monitorar PA' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Compatível' },
@@ -524,19 +562,23 @@ const antiHipertensivosGestacao: Medicamento[] = [
       'Insuficiência renal grave (relativo - ajustar dose)'
     ],
     precaucoes: [
-      'MONITORAR: Reflexo patelar, FR ≥16, Diurese ≥25mL/h',
-      'Ter antídoto à mão: Gluconato de Cálcio 10%',
-      'Reduzir dose se oligúria',
-      'Cuidado com associação a nifedipina'
+      'MONITORAR A CADA 15 MIN: Reflexo patelar (perda = Mg >10 mEq/L), FR ≥16 irpm, Diurese ≥25mL/h',
+      'ANTÍDOTO OBRIGATÓRIO à beira do leito: Gluconato de Cálcio 10% 10mL IV lento',
+      'Reduzir dose de manutenção para 0,5-1g/h se oligúria ou TFG reduzida',
+      'EVITAR nifedipina durante infusão - preferir hidralazina para crise hipertensiva',
+      'Depressão neonatal: monitorar RN nas primeiras 24-48h, especialmente se parto <4h após suspensão',
+      'Efeito tocolitico transitório - feto pode parecer menos reativo na CTG durante infusão'
     ],
     efeitosAdversos: {
       comuns: ['Rubor', 'Sudorese', 'Náusea', 'Sonolência', 'Hipotensão leve'],
       graves: ['Depressão respiratória', 'Parada cardiorrespiratória', 'Bloqueio neuromuscular']
     },
     interacoes: [
-      { medicamento: 'Nifedipina', gravidade: 'grave', efeito: 'Hipotensão grave, bloqueio NM', conduta: 'Monitorar rigorosamente, cautela' },
-      { medicamento: 'Bloqueadores neuromusculares', gravidade: 'grave', efeito: 'Bloqueio NM prolongado', conduta: 'Evitar ou reduzir dose' },
-      { medicamento: 'Aminoglicosídeos', gravidade: 'grave', efeito: 'Bloqueio NM', conduta: 'Evitar' }
+      { medicamento: 'Nifedipina', gravidade: 'grave', efeito: 'Hipotensão severa e profunda, bloqueio neuromuscular potencializado', mecanismo: 'Sinergismo de bloqueio de cálcio: MgSO4 antagoniza cálcio, nifedipina bloqueia canais L. Risco de colapso cardiovascular e fraqueza muscular profunda', conduta: 'MONITORAR PA a cada 5 min. Preferir hidralazina IV para crise hipertensiva. Ter gluconato de cálcio 10% pronto para uso. Se hipotensão: suspender nifedipina, administrar cálcio' },
+      { medicamento: 'Aminoglicosídeos', gravidade: 'grave', efeito: 'Bloqueio neuromuscular grave, risco de apneia', mecanismo: 'Aminoglicosídeos potencializam bloqueio pré-sináptico da junção neuromuscular pelo magnésio. Efeito sinérgico na placa motora', conduta: 'CONTRAINDICADO associação. Se necessário antibiótico, usar alternativas (cefalosporinas, penicilinas). Monitorar FR e reflexos' },
+      { medicamento: 'Bloqueadores neuromusculares', gravidade: 'grave', efeito: 'Bloqueio neuromuscular prolongado com risco de apneia prolongada', mecanismo: 'Magnésio reduz liberação de acetilcolina e diminui sensibilidade da placa motora', conduta: 'Se cesárea de emergência, reduzir dose do BNM em 50-75%. Monitorar com TOF. Disponibilizar sugamadex' },
+      { medicamento: 'Betabloqueadores', gravidade: 'moderada', efeito: 'Bradicardia e hipotensão potencializadas', mecanismo: 'Ambos reduzem condução e contratilidade cardíaca', conduta: 'Monitorar FC e PA. Cautela com doses altas de ambos' },
+      { medicamento: 'Digitálicos', gravidade: 'moderada', efeito: 'Potencialização de arritmias cardíacas', mecanismo: 'Hipermagnesemia pode causar alterações de condução similares à hipercalemia', conduta: 'Monitorar ECG, especialmente em pacientes digitalizadas' }
     ],
     ajusteDoseRenal: [
       { tfg: '>50', ajuste: 'Dose habitual - monitorar magnesemia' },
@@ -626,9 +668,12 @@ const tireoideGestacao: Medicamento[] = [
       graves: ['Arritmias (superdosagem)', 'Crise tireotóxica (superdosagem)']
     },
     interacoes: [
-      { medicamento: 'Sulfato ferroso', gravidade: 'moderada', efeito: 'Redução da absorção de levotiroxina', conduta: 'Tomar com 4h de intervalo' },
-      { medicamento: 'Carbonato de cálcio', gravidade: 'moderada', efeito: 'Redução da absorção', conduta: 'Tomar com 4h de intervalo' },
-      { medicamento: 'Omeprazol/IBPs', gravidade: 'leve', efeito: 'Redução da absorção', conduta: 'Monitorar TSH' }
+      { medicamento: 'Sulfato ferroso', gravidade: 'moderada', efeito: 'Redução da absorção de levotiroxina em até 50%', mecanismo: 'Ferro forma complexos insolúveis com levotiroxina no trato GI, impedindo absorção', conduta: 'SEPARAR em 4 horas. Tomar levotiroxina em jejum, ferro com almoço' },
+      { medicamento: 'Carbonato de cálcio', gravidade: 'moderada', efeito: 'Redução da absorção de levotiroxina em 20-25%', mecanismo: 'Cálcio forma quelatos com levotiroxina no pH gástrico, reduzindo biodisponibilidade', conduta: 'SEPARAR em 4 horas. Especialmente importante com polivitamínicos pré-natais contendo cálcio' },
+      { medicamento: 'Omeprazol/IBPs', gravidade: 'moderada', efeito: 'Redução da absorção por aumento do pH gástrico', mecanismo: 'Levotiroxina requer pH ácido para dissolução. IBPs aumentam pH e reduzem absorção', conduta: 'Monitorar TSH a cada 6-8 semanas. Pode necessitar aumento de dose' },
+      { medicamento: 'Antiácidos (hidróxido de alumínio/magnésio)', gravidade: 'moderada', efeito: 'Redução significativa da absorção', mecanismo: 'Quelação com cátions e aumento do pH gástrico', conduta: 'Separar em pelo menos 4 horas' },
+      { medicamento: 'Colestiramina', gravidade: 'grave', efeito: 'Redução drástica da absorção e da circulação entero-hepática', mecanismo: 'Resina de troca iônica liga-se à levotiroxina no TGI', conduta: 'Separar em pelo menos 4-6 horas. Monitorar TSH frequentemente' },
+      { medicamento: 'Sertralina', gravidade: 'leve', efeito: 'Pode aumentar necessidade de levotiroxina', mecanismo: 'Mecanismo não completamente elucidado', conduta: 'Monitorar TSH ao iniciar ou ajustar sertralina' }
     ],
     gestacao: 'A',
     amamentacao: { compativel: true, observacao: 'Compatível - essencial manter tratamento' },
@@ -697,7 +742,11 @@ const tireoideGestacao: Medicamento[] = [
       graves: ['Hepatotoxicidade (GRAVE)', 'Agranulocitose', 'Vasculite ANCA+']
     },
     interacoes: [
-      { medicamento: 'Varfarina', gravidade: 'moderada', efeito: 'Alteração do efeito anticoagulante', conduta: 'Monitorar INR' }
+      { medicamento: 'Varfarina', gravidade: 'moderada', efeito: 'Potencialização do efeito anticoagulante (aumento do INR)', mecanismo: 'PTU inibe metabolismo hepático da varfarina via CYP2C9. Também altera síntese de fatores de coagulação dependentes de vitamina K', conduta: 'Monitorar INR frequentemente (2x/semana) ao iniciar ou ajustar PTU. Ajustar dose de varfarina conforme necessário' },
+      { medicamento: 'Betabloqueadores', gravidade: 'leve', efeito: 'Efeito terapêutico do betabloqueador pode diminuir com controle do hipertireoidismo', mecanismo: 'Com correção do hipertireoidismo, há redução da sensibilidade a catecolaminas', conduta: 'Pode ser necessário reduzir dose do betabloqueador conforme controle tireoidiano' },
+      { medicamento: 'Digitálicos', gravidade: 'moderada', efeito: 'Níveis de digoxina podem aumentar com controle do hipertireoidismo', mecanismo: 'Hipertireoidismo aumenta clearance de digoxina. Com correção, níveis sobem', conduta: 'Monitorar digoxinemia ao ajustar PTU' },
+      { medicamento: 'Teofilina', gravidade: 'moderada', efeito: 'Níveis de teofilina podem aumentar com correção do hipertireoidismo', mecanismo: 'Hipertireoidismo acelera metabolismo da teofilina', conduta: 'Monitorar níveis de teofilina, reduzir dose se necessário' },
+      { medicamento: 'Anticoagulantes orais (todos)', gravidade: 'moderada', efeito: 'Alteração do efeito anticoagulante', mecanismo: 'Hipertireoidismo aumenta catabolismo de fatores de coagulação', conduta: 'Monitorar coagulação frequentemente durante ajustes' }
     ],
     gestacao: 'D',
     amamentacao: { compativel: true, observacao: 'Compatível em doses baixas (<200mg/dia)' },
@@ -764,7 +813,12 @@ const tireoideGestacao: Medicamento[] = [
       comuns: ['Rash', 'Artralgia', 'Náusea'],
       graves: ['Agranulocitose', 'Aplasia cutis (fetal)', 'Embriopatia metimazol']
     },
-    interacoes: [],
+    interacoes: [
+      { medicamento: 'Varfarina', gravidade: 'moderada', efeito: 'Alteração do efeito anticoagulante (geralmente aumento do INR)', mecanismo: 'Antitireoidianos alteram metabolismo de fatores de coagulação. Com correção do hipertireoidismo, há aumento da meia-vida dos fatores', conduta: 'Monitorar INR 2x/semana durante ajustes de dose' },
+      { medicamento: 'Betabloqueadores', gravidade: 'leve', efeito: 'Necessidade de ajuste do betabloqueador com controle tireoidiano', mecanismo: 'Hipertireoidismo aumenta resposta a catecolaminas. Com controle, pode haver bradicardia', conduta: 'Reduzir dose de betabloqueador conforme melhora clínica' },
+      { medicamento: 'Digoxina', gravidade: 'moderada', efeito: 'Aumento dos níveis de digoxina', mecanismo: 'Correção do hipertireoidismo reduz clearance de digoxina', conduta: 'Monitorar digoxinemia, pode necessitar redução de dose' },
+      { medicamento: 'Teofilina', gravidade: 'moderada', efeito: 'Aumento dos níveis de teofilina com correção do hipertireoidismo', mecanismo: 'Hipertireoidismo acelera clearance de teofilina', conduta: 'Monitorar níveis, ajustar dose' }
+    ],
     gestacao: 'D',
     amamentacao: { compativel: true, observacao: 'Compatível em doses baixas' },
     monitorizacao: [
@@ -842,18 +896,25 @@ const anticoagulantesGestacao: Medicamento[] = [
       'Endocardite bacteriana'
     ],
     precaucoes: [
-      'Suspender 12h antes do parto (profilática) ou 24h (terapêutica)',
-      'Reiniciar 6-12h após parto/cesárea',
-      'Anestesia neuroaxial: 12h após última dose',
-      'Ajustar dose no 3º trimestre (aumento do peso)'
+      'Suspender 12h antes do parto (dose profilática) ou 24h (dose terapêutica)',
+      'Reiniciar 6-12h após parto vaginal, 12h após cesárea (se hemostasia adequada)',
+      'Anestesia neuroaxial: aguardar 12h após última dose profilática, 24h após terapêutica',
+      'Após punção: aguardar 4h para próxima dose',
+      'Ajustar dose no 3º trimestre pelo aumento de peso e volume de distribuição',
+      'Em trabalho de parto iminente: reavaliar risco-benefício da anticoagulação',
+      'Risco de sangramento pós-parto aumentado - monitorar loquiação'
     ],
     efeitosAdversos: {
       comuns: ['Equimose no local da injeção', 'Hematoma'],
       graves: ['Hemorragia', 'Trombocitopenia (HIT)', 'Osteoporose (uso prolongado)']
     },
     interacoes: [
-      { medicamento: 'AINEs', gravidade: 'grave', efeito: 'Aumento do risco de sangramento', conduta: 'Evitar' },
-      { medicamento: 'AAS', gravidade: 'moderada', efeito: 'Aumento do sangramento', conduta: 'Usar com cautela' }
+      { medicamento: 'AINEs (ibuprofeno, diclofenaco, naproxeno)', gravidade: 'grave', efeito: 'Aumento significativo do risco de sangramento, incluindo hemorragia digestiva e hematoma epidural (se anestesia neuroaxial)', mecanismo: 'AINEs inibem função plaquetária via COX-1 e podem causar erosões gástricas. Efeito hemostático aditivo negativo', conduta: 'EVITAR. AINEs são contraindicados na gestação após 28 semanas de qualquer forma. Se absolutamente necessário antes de 28sem, suspender enoxaparina 24h antes' },
+      { medicamento: 'AAS (dose plena >300mg)', gravidade: 'grave', efeito: 'Risco aumentado de sangramento', mecanismo: 'AAS inibe irreversivelmente COX-1 plaquetária por 7-10 dias', conduta: 'Evitar AAS em doses anti-inflamatórias. AAS baixa dose (100-150mg) para pré-eclâmpsia pode ser usado com cautela e monitorização' },
+      { medicamento: 'AAS (baixa dose 75-150mg)', gravidade: 'moderada', efeito: 'Aumento leve do risco de sangramento', mecanismo: 'Efeito antiagregante aditivo', conduta: 'Associação pode ser necessária (ex: SAF). Monitorar sinais de sangramento. Pode ser seguro' },
+      { medicamento: 'Clopidogrel', gravidade: 'grave', efeito: 'Risco muito aumentado de sangramento', mecanismo: 'Inibição plaquetária por via diferente, efeito aditivo', conduta: 'Evitar. Se necessário (ex: stent), monitorização especializada' },
+      { medicamento: 'ISRS (fluoxetina, sertralina)', gravidade: 'moderada', efeito: 'Aumento do risco de sangramento', mecanismo: 'ISRS reduzem serotonina plaquetária, importante para agregação', conduta: 'Usar com cautela. Monitorar sinais de sangramento' },
+      { medicamento: 'Varfarina', gravidade: 'contraindicada', efeito: 'Risco muito alto de sangramento', mecanismo: 'Anticoagulação dupla com mecanismos diferentes', conduta: 'Não associar. Varfarina é contraindicada na gestação de qualquer forma' }
     ],
     ajusteDoseRenal: [
       { tfg: '>30', ajuste: 'Dose habitual' },
@@ -917,17 +978,23 @@ const anticoagulantesGestacao: Medicamento[] = [
       'Sangramento ativo'
     ],
     precaucoes: [
-      'Iniciar entre 12-16 semanas (antes de 16 para maior benefício)',
-      'Suspender 7-10 dias antes do parto (se cesárea programada)',
-      'Pode continuar até próximo ao parto se parto vaginal'
+      'TIMING CRÍTICO: Iniciar entre 11-16 semanas (antes de 16 semanas para máximo benefício)',
+      'Suspender 7-10 dias antes de cesárea programada para recuperação plaquetária',
+      'Parto vaginal: pode continuar até o trabalho de parto, suspender com dilatação',
+      'Em uso de AAS + enoxaparina (SAF): discussão multidisciplinar para parto',
+      'Não há evidência de benefício se iniciado após 28 semanas',
+      'Se esqueceu de iniciar no tempo certo: ainda há benefício se iniciado até 20 semanas'
     ],
     efeitosAdversos: {
       comuns: ['Dispepsia', 'Náusea'],
       graves: ['Hemorragia', 'Úlcera gástrica']
     },
     interacoes: [
-      { medicamento: 'Anticoagulantes', gravidade: 'moderada', efeito: 'Aumento do sangramento', conduta: 'Monitorar' },
-      { medicamento: 'Ibuprofeno', gravidade: 'moderada', efeito: 'Interferência no efeito antiagregante', conduta: 'Evitar' }
+      { medicamento: 'Enoxaparina/Heparina', gravidade: 'moderada', efeito: 'Aumento leve a moderado do risco de sangramento', mecanismo: 'Inibição plaquetária (AAS) + anticoagulação (heparina) = efeito hemostático aditivo', conduta: 'Associação pode ser necessária e segura (ex: SAF). Monitorar sinais de sangramento, evitar trauma' },
+      { medicamento: 'Ibuprofeno', gravidade: 'moderada', efeito: 'Interferência competitiva no efeito antiagregante do AAS', mecanismo: 'Ibuprofeno compete pelo mesmo sítio de ligação na COX-1, bloqueando AAS se tomado antes', conduta: 'EVITAR ibuprofeno na gestação (especialmente >28sem). Se absolutamente necessário, tomar AAS 2h antes do AINE' },
+      { medicamento: 'Outros AINEs', gravidade: 'moderada', efeito: 'Redução do efeito cardioprotetor do AAS', mecanismo: 'Competição pelo sítio de ligação da COX-1 plaquetária', conduta: 'Evitar. AINEs são contraindicados na gestação após 28 semanas' },
+      { medicamento: 'Corticoides', gravidade: 'moderada', efeito: 'Aumento do risco de sangramento GI', mecanismo: 'Corticoides reduzem produção de prostaglandinas protetoras gástricas. Efeito aditivo com AAS', conduta: 'Monitorar sintomas GI. Considerar proteção gástrica se uso prolongado de corticoide' },
+      { medicamento: 'ISRS', gravidade: 'leve', efeito: 'Aumento leve do risco de sangramento', mecanismo: 'ISRS reduzem serotonina plaquetária + efeito antiagregante do AAS', conduta: 'Associação geralmente segura em baixa dose. Monitorar' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Compatível em baixa dose' },
@@ -995,16 +1062,21 @@ const antiinfecciososGestacao: Medicamento[] = [
     ],
     contraindicacoes: ['Alergia grave a penicilinas (anafilaxia prévia)'],
     precaucoes: [
-      'Reação de Jarisch-Herxheimer possível (febre, mialgia)',
-      'Em alérgicas: dessensibilização (não há alternativa eficaz na gestação)',
-      'Tratar parceiro simultaneamente'
+      'ÚNICA droga eficaz para prevenir sífilis congênita - NÃO HÁ alternativa na gestação',
+      'Reação de Jarisch-Herxheimer possível nas primeiras 24h (febre, mialgia, contrações)',
+      'Em alérgicas: DESSENSIBILIZAÇÃO obrigatória em ambiente hospitalar - não usar outras drogas',
+      'Tratar parceiro simultaneamente para evitar reinfecção durante gestação',
+      'Intervalo entre doses semanais: máximo 14 dias. Se >14 dias: reiniciar esquema completo',
+      'Gestante: considerar repetir dose em 7 dias para garantir tratamento adequado'
     ],
     efeitosAdversos: {
       comuns: ['Dor no local da injeção', 'Reação de Jarisch-Herxheimer'],
       graves: ['Anafilaxia', 'Embolia por cristais (aplicação EV acidental)']
     },
     interacoes: [
-      { medicamento: 'Metotrexato', gravidade: 'grave', efeito: 'Aumento da toxicidade', conduta: 'Evitar' }
+      { medicamento: 'Metotrexato', gravidade: 'grave', efeito: 'Aumento significativo da toxicidade do metotrexato', mecanismo: 'Penicilinas competem com metotrexato pela secreção tubular renal, aumentando seus níveis', conduta: 'Evitar. Metotrexato é contraindicado na gestação de qualquer forma' },
+      { medicamento: 'Probenecida', gravidade: 'moderada', efeito: 'Aumento dos níveis de penicilina', mecanismo: 'Probenecida bloqueia secreção tubular de penicilinas', conduta: 'Pode ser usado intencionalmente para prolongar ação' },
+      { medicamento: 'Aminoglicosídeos', gravidade: 'leve', efeito: 'Inativação in vitro', mecanismo: 'Incompatibilidade física - penicilinas podem inativar aminoglicosídeos em solução', conduta: 'Administrar em acessos venosos separados se IV' }
     ],
     gestacao: 'B',
     amamentacao: { compativel: true, observacao: 'Compatível' },
@@ -1068,9 +1140,12 @@ const antiinfecciososGestacao: Medicamento[] = [
       graves: ['Hipersensibilidade (raro)', 'Hepatotoxicidade']
     },
     interacoes: [
-      { medicamento: 'Antiácidos (Al, Mg, Ca)', gravidade: 'grave', efeito: 'Redução drástica da absorção', conduta: 'Tomar 2h antes ou 6h após' },
-      { medicamento: 'Sulfato ferroso', gravidade: 'moderada', efeito: 'Redução da absorção', conduta: 'Tomar separado' },
-      { medicamento: 'Metformina', gravidade: 'moderada', efeito: 'Aumento dos níveis de metformina', conduta: 'Dose máx metformina 1g/dia' }
+      { medicamento: 'Antiácidos (Al, Mg, Ca)', gravidade: 'grave', efeito: 'Redução drástica da absorção de dolutegravir em 70-80%', mecanismo: 'Cátions polivalentes formam complexos com dolutegravir no TGI, impedindo absorção', conduta: 'Tomar dolutegravir 2h ANTES ou 6h APÓS antiácidos. Crítico para eficácia do tratamento' },
+      { medicamento: 'Sulfato ferroso', gravidade: 'moderada', efeito: 'Redução da absorção de dolutegravir em 54%', mecanismo: 'Ferro quelata dolutegravir no TGI', conduta: 'Separar em pelo menos 2h. Dolutegravir pode ser tomado junto com ferro se com alimentos' },
+      { medicamento: 'Carbonato de cálcio', gravidade: 'moderada', efeito: 'Redução da absorção se tomados juntos em jejum', mecanismo: 'Quelação com cálcio', conduta: 'Pode tomar junto SE com alimentos. Se em jejum, separar 2h antes ou 6h após' },
+      { medicamento: 'Metformina', gravidade: 'moderada', efeito: 'Aumento dos níveis de metformina em 79-145%', mecanismo: 'Dolutegravir inibe transportadores OCT2 e MATE1 renais', conduta: 'Limitar metformina a 1000mg/dia. Monitorar glicemia e sintomas GI' },
+      { medicamento: 'Rifampicina', gravidade: 'grave', efeito: 'Redução drástica dos níveis de dolutegravir', mecanismo: 'Rifampicina induz UGT1A1 e CYP3A4', conduta: 'Aumentar dolutegravir para 50mg 12/12h durante tratamento com rifampicina' },
+      { medicamento: 'Carbamazepina', gravidade: 'grave', efeito: 'Redução dos níveis de dolutegravir', mecanismo: 'Indução enzimática', conduta: 'Evitar ou usar dose dobrada de dolutegravir' }
     ],
     gestacao: 'B',
     amamentacao: { compativel: false, observacao: 'Amamentação contraindicada em HIV+ (Brasil)' },
@@ -1142,7 +1217,11 @@ const antiinfecciososGestacao: Medicamento[] = [
       graves: ['Nefrotoxicidade (TDF)', 'Acidose láctica (raro)', 'Desmineralização óssea']
     },
     interacoes: [
-      { medicamento: 'Aminoglicosídeos', gravidade: 'grave', efeito: 'Potencialização da nefrotoxicidade', conduta: 'Evitar ou monitorar' }
+      { medicamento: 'Aminoglicosídeos', gravidade: 'grave', efeito: 'Potencialização significativa da nefrotoxicidade', mecanismo: 'Ambos são nefrotóxicos por mecanismos diferentes: tenofovir causa tubulopatia proximal, aminoglicosídeos causam necrose tubular', conduta: 'EVITAR associação. Se absolutamente necessário, monitorar creatinina diariamente e suspender um deles ao primeiro sinal de nefrotoxicidade' },
+      { medicamento: 'AINEs', gravidade: 'moderada', efeito: 'Aumento do risco de lesão renal aguda', mecanismo: 'AINEs reduzem perfusão renal, potencializando nefrotoxicidade do tenofovir', conduta: 'Evitar AINEs. Na gestação são contraindicados após 28 semanas de qualquer forma' },
+      { medicamento: 'Aciclovir/Valaciclovir', gravidade: 'moderada', efeito: 'Competição pela secreção tubular renal', mecanismo: 'Ambos usam transportadores renais similares', conduta: 'Monitorar função renal se uso prolongado' },
+      { medicamento: 'Cidofovir', gravidade: 'grave', efeito: 'Nefrotoxicidade grave', mecanismo: 'Nefrotoxicidade aditiva', conduta: 'Contraindicada associação' },
+      { medicamento: 'Ledipasvir', gravidade: 'moderada', efeito: 'Aumento dos níveis de tenofovir', mecanismo: 'Inibição de P-glicoproteína', conduta: 'Monitorar função renal. Geralmente seguro' }
     ],
     ajusteDoseRenal: [
       { tfg: '>50', ajuste: 'Dose habitual' },
@@ -1216,8 +1295,10 @@ const suplementosGestacao: Medicamento[] = [
       graves: ['Reações alérgicas (raríssimo)']
     },
     interacoes: [
-      { medicamento: 'Metotrexato', gravidade: 'moderada', efeito: 'Antagonismo', conduta: 'Usado intencionalmente para reduzir toxicidade' },
-      { medicamento: 'Anticonvulsivantes', gravidade: 'moderada', efeito: 'Redução dos níveis de folato', conduta: 'Suplementar dose alta' }
+      { medicamento: 'Metotrexato', gravidade: 'moderada', efeito: 'Antagonismo - reduz eficácia do metotrexato', mecanismo: 'Ácido fólico repõe folato depletado pelo metotrexato. Usado para resgate de toxicidade', conduta: 'Metotrexato é CONTRAINDICADO na gestação. Ácido fólico é usado para resgate em doses altas' },
+      { medicamento: 'Anticonvulsivantes (fenitoína, carbamazepina, valproato)', gravidade: 'moderada', efeito: 'Anticonvulsivantes reduzem níveis de folato, aumentando risco de DTN', mecanismo: 'Interferem no metabolismo do folato por múltiplos mecanismos', conduta: 'Gestantes em uso de anticonvulsivantes devem receber ácido fólico 4-5mg/dia (dose alta)' },
+      { medicamento: 'Sulfassalazina', gravidade: 'moderada', efeito: 'Redução da absorção de ácido fólico', mecanismo: 'Sulfassalazina inibe absorção intestinal de folato', conduta: 'Suplementar ácido fólico em dose mais alta' },
+      { medicamento: 'Trimetoprima', gravidade: 'moderada', efeito: 'Antagonismo - trimetoprima depleta folato', mecanismo: 'Trimetoprima inibe di-hidrofolato redutase', conduta: 'Aumentar suplementação de ácido fólico se uso prolongado de trimetoprima' }
     ],
     gestacao: 'A',
     amamentacao: { compativel: true, observacao: 'Compatível - essencial' },
@@ -1282,9 +1363,13 @@ const suplementosGestacao: Medicamento[] = [
       graves: ['Intoxicação por ferro (superdosagem)']
     },
     interacoes: [
-      { medicamento: 'Levotiroxina', gravidade: 'moderada', efeito: 'Reduz absorção de T4', conduta: 'Separar 4h' },
-      { medicamento: 'Antiácidos', gravidade: 'moderada', efeito: 'Reduz absorção de ferro', conduta: 'Separar 2h' },
-      { medicamento: 'Dolutegravir', gravidade: 'moderada', efeito: 'Reduz absorção de DTG', conduta: 'Separar 2h' }
+      { medicamento: 'Levotiroxina', gravidade: 'moderada', efeito: 'Redução significativa da absorção de levotiroxina (até 50%)', mecanismo: 'Ferro forma complexos insolúveis com levotiroxina no TGI', conduta: 'SEPARAR em 4 horas. Levotiroxina em jejum, ferro com almoço' },
+      { medicamento: 'Antiácidos (hidróxido Al/Mg)', gravidade: 'moderada', efeito: 'Redução da absorção de ferro', mecanismo: 'Elevação do pH gástrico reduz solubilização do ferro', conduta: 'Separar em pelo menos 2 horas' },
+      { medicamento: 'Dolutegravir', gravidade: 'moderada', efeito: 'Redução da absorção de dolutegravir em 54%', mecanismo: 'Ferro quelata dolutegravir no TGI', conduta: 'Separar em 2h OU tomar junto COM alimentos (proteínas do alimento reduzem quelação)' },
+      { medicamento: 'Carbonato de cálcio', gravidade: 'moderada', efeito: 'Redução da absorção de ferro', mecanismo: 'Cálcio compete pela absorção intestinal', conduta: 'Separar em pelo menos 2 horas' },
+      { medicamento: 'Tetraciclinas', gravidade: 'moderada', efeito: 'Redução mútua de absorção', mecanismo: 'Formação de complexos quelados', conduta: 'Separar em 2-3 horas' },
+      { medicamento: 'Quinolonas (ciprofloxacino)', gravidade: 'moderada', efeito: 'Redução da absorção da quinolona', mecanismo: 'Quelação com ferro no TGI', conduta: 'Separar em 2-4 horas' },
+      { medicamento: 'Metildopa', gravidade: 'moderada', efeito: 'Redução da absorção de metildopa em até 70%', mecanismo: 'Quelação ferro-metildopa no TGI', conduta: 'Separar em pelo menos 2 horas' }
     ],
     gestacao: 'A',
     amamentacao: { compativel: true, observacao: 'Compatível' },
@@ -1550,8 +1635,12 @@ const metforminaGestacao: Medicamento[] = [
       graves: ['Acidose láctica (raro)', 'Deficiência de B12']
     },
     interacoes: [
-      { medicamento: 'Contraste iodado', gravidade: 'grave', efeito: 'Risco de acidose láctica', conduta: 'Suspender 48h antes e após' },
-      { medicamento: 'Dolutegravir', gravidade: 'moderada', efeito: 'Aumento da metformina', conduta: 'Dose máxima 1g/dia' }
+      { medicamento: 'Contraste iodado', gravidade: 'grave', efeito: 'Risco significativamente aumentado de acidose láctica', mecanismo: 'Contraste pode causar nefropatia aguda, reduzindo clearance de metformina e lactato', conduta: 'SUSPENDER 48h antes do exame contrastado e 48h após. Verificar função renal antes de reiniciar' },
+      { medicamento: 'Dolutegravir', gravidade: 'moderada', efeito: 'Aumento dos níveis de metformina em até 79-145%', mecanismo: 'Dolutegravir inibe transportadores OCT2 e MATE1 renais, reduzindo excreção de metformina', conduta: 'Limitar dose de metformina a 1000mg/dia. Monitorar glicemia e sintomas GI' },
+      { medicamento: 'Cimetidina', gravidade: 'moderada', efeito: 'Aumento dos níveis de metformina em 50%', mecanismo: 'Competição pelos transportadores catiônicos renais', conduta: 'Preferir outros antiácidos. Se necessário, reduzir dose de metformina' },
+      { medicamento: 'Álcool', gravidade: 'grave', efeito: 'Aumento do risco de acidose láctica e hipoglicemia', mecanismo: 'Álcool inibe gliconeogênese e potencializa efeito da metformina. Pode causar acidose láctica', conduta: 'Evitar álcool (abstinência já recomendada na gestação)' },
+      { medicamento: 'Topiramato', gravidade: 'moderada', efeito: 'Aumento dos níveis de metformina', mecanismo: 'Inibição de transportadores renais', conduta: 'Monitorar efeitos adversos GI e glicemia' },
+      { medicamento: 'Corticoides', gravidade: 'moderada', efeito: 'Antagonismo do efeito hipoglicemiante', mecanismo: 'Corticoides causam hiperglicemia por aumento da resistência insulínica', conduta: 'Pode necessitar ajuste de dose ou adição de insulina' }
     ],
     ajusteDoseRenal: [
       { tfg: '>45', ajuste: 'Dose habitual' },
