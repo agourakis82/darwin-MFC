@@ -9,6 +9,7 @@
  */
 
 import React, { useMemo, useState, useEffect, useRef, useCallback } from 'react';
+import DOMPurify from 'dompurify';
 import { useRouter } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import {
@@ -567,15 +568,15 @@ function CompletionModal({
             {certificate ? t('completion_modal.congratulations') : t('completion_modal.path_completed')}
           </h2>
 
-          {/* Description */}
+          {/* Description - HTML sanitized with DOMPurify for XSS prevention */}
           <p className="text-gray-600 dark:text-gray-400 mb-6">
             {certificate ? (
               <span dangerouslySetInnerHTML={{
-                __html: t('completion_modal.completed_with_cert', { pathTitle })
+                __html: DOMPurify.sanitize(t('completion_modal.completed_with_cert', { pathTitle }))
               }} />
             ) : (
               <span dangerouslySetInnerHTML={{
-                __html: t('completion_modal.completed_success', { pathTitle })
+                __html: DOMPurify.sanitize(t('completion_modal.completed_success', { pathTitle }))
               }} />
             )}
           </p>

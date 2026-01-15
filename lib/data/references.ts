@@ -81,6 +81,27 @@ const baseReferences: Record<string, Reference> = {
     accessDate: '2025-11-30'
   },
 
+  'sbu-prostata-2024': {
+    id: 'sbu-prostata-2024',
+    type: 'diretriz',
+    title: 'Diretrizes de Rastreamento do Câncer de Próstata - Atualização 2024',
+    year: 2024,
+    authors: ['Sociedade Brasileira de Urologia'],
+    url: 'https://www.sbu.org.br/diretrizes',
+    accessDate: '2025-11-30'
+  },
+
+  'conitec-prostata-2023': {
+    id: 'conitec-prostata-2023',
+    type: 'nota_tecnica',
+    title: 'Relatório de Recomendação: Rastreamento do Câncer de Próstata no SUS',
+    year: 2023,
+    authors: ['CONITEC', 'Ministério da Saúde'],
+    legalNumber: 'Relatório nº 876/2023',
+    url: 'https://www.gov.br/conitec/pt-br/midias/relatorios/2023/relatorio-prostata-2023.pdf',
+    accessDate: '2025-11-30'
+  },
+
   // Artigos e Evidências Científicas
   'uspstf-screening-2023': {
     id: 'uspstf-screening-2023',

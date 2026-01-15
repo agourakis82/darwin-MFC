@@ -16,48 +16,48 @@ export default function ComparisonCard({ title, recommendations }: ComparisonCar
     switch (status) {
       case 'convergencia':
         return {
-          color: 'emerald',
           icon: CheckCircle2,
           label: 'Convergência Total',
           gradient: 'from-emerald-500/10 to-teal-500/10',
           border: 'border-emerald-200 dark:border-emerald-800',
-          badge: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-emerald-300 dark:border-emerald-700'
+          badge: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-emerald-300 dark:border-emerald-700',
+          iconColor: 'text-emerald-600 dark:text-emerald-400'
         };
       case 'parcial':
         return {
-          color: 'amber',
           icon: HelpCircle,
           label: 'Convergência Parcial',
           gradient: 'from-amber-500/10 to-orange-500/10',
           border: 'border-amber-200 dark:border-amber-800',
-          badge: 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700'
+          badge: 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700',
+          iconColor: 'text-amber-600 dark:text-amber-400'
         };
       case 'divergencia':
         return {
-          color: 'red',
           icon: XCircle,
           label: 'Divergência',
           gradient: 'from-red-500/10 to-rose-500/10',
           border: 'border-red-200 dark:border-red-800',
-          badge: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-300 dark:border-red-700'
+          badge: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-300 dark:border-red-700',
+          iconColor: 'text-red-600 dark:text-red-400'
         };
       case 'em_disputa':
         return {
-          color: 'purple',
           icon: AlertTriangle,
           label: 'Em Disputa',
           gradient: 'from-purple-500/10 to-violet-500/10',
           border: 'border-purple-200 dark:border-purple-800',
-          badge: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-300 dark:border-purple-700'
+          badge: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-300 dark:border-purple-700',
+          iconColor: 'text-purple-600 dark:text-purple-400'
         };
       default:
         return {
-          color: 'neutral',
           icon: HelpCircle,
           label: status,
           gradient: 'from-neutral-500/10 to-gray-500/10',
           border: 'border-neutral-200 dark:border-neutral-800',
-          badge: 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-400 border-neutral-300 dark:border-neutral-700'
+          badge: 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-400 border-neutral-300 dark:border-neutral-700',
+          iconColor: 'text-neutral-600 dark:text-neutral-400'
         };
     }
   };
@@ -208,7 +208,7 @@ export default function ComparisonCard({ title, recommendations }: ComparisonCar
         <div className="relative px-8 py-6 bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-800/50 dark:to-neutral-900/50 border-t-2 border-neutral-200/50 dark:border-neutral-700/50">
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0 mt-0.5">
-              <StatusIcon className={`w-6 h-6 text-${statusConfig.color}-600 dark:text-${statusConfig.color}-400`} strokeWidth={2} />
+              <StatusIcon className={`w-6 h-6 ${statusConfig.iconColor}`} strokeWidth={2} />
             </div>
             <div className="flex-1">
               <h5 className="text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 mb-2">

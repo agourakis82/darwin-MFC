@@ -55,6 +55,13 @@ export default function Header() {
 
   return (
     <>
+      {/* Skip Navigation Link - Accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none"
+      >
+        Skip to main content
+      </a>
       <header className="sticky top-0 z-40 navbar-glass" role="banner">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">

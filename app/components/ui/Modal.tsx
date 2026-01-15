@@ -1,11 +1,68 @@
 'use client';
 
-import { forwardRef, HTMLAttributes, ReactNode, useEffect, useCallback } from 'react';
+import { forwardRef, HTMLAttributes, ReactNode, useEffect, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, AlertTriangle, CheckCircle, Info, XCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from './Button';
+
+// =============================================================================
+// FOCUS TRAP HOOK - Accessibility
+// =============================================================================
+
+function useFocusTrap(isOpen: boolean, containerRef: React.RefObject<HTMLDivElement | null>) {
+  const previousActiveElement = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (!isOpen || !containerRef.current) return;
+
+    // Store the previously focused element
+    previousActiveElement.current = document.activeElement as HTMLElement;
+
+    // Find all focusable elements within the modal
+    const focusableElements = containerRef.current.querySelectorAll<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+
+    // Focus the first focusable element
+    if (firstFocusable) {
+      firstFocusable.focus();
+    }
+
+    // Handle tab key to trap focus
+    const handleTabKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return;
+
+      if (e.shiftKey) {
+        // Shift + Tab
+        if (document.activeElement === firstFocusable) {
+          e.preventDefault();
+          lastFocusable?.focus();
+        }
+      } else {
+        // Tab
+        if (document.activeElement === lastFocusable) {
+          e.preventDefault();
+          firstFocusable?.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleTabKey);
+
+    return () => {
+      document.removeEventListener('keydown', handleTabKey);
+      // Restore focus to the previously focused element
+      if (previousActiveElement.current) {
+        previousActiveElement.current.focus();
+      }
+    };
+  }, [isOpen, containerRef]);
+}
 
 // =============================================================================
 // TYPES
@@ -27,6 +84,8 @@ export interface ModalProps {
   footer?: ReactNode;
   children?: ReactNode;
   className?: string;
+  /** Accessible label for screen readers when title is not provided */
+  ariaLabel?: string;
 }
 
 export interface DrawerProps extends Omit<ModalProps, 'size'> {
@@ -95,9 +154,17 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
       footer,
       children,
       className,
+      ariaLabel,
     },
     ref
   ) => {
+    // Internal ref for focus trap (combine with forwarded ref)
+    const internalRef = useRef<HTMLDivElement>(null);
+    const modalRef = (ref as React.RefObject<HTMLDivElement>) || internalRef;
+
+    // Focus trap for accessibility
+    useFocusTrap(isOpen, modalRef);
+
     // Handle ESC key
     const handleKeyDown = useCallback(
       (e: KeyboardEvent) => {
@@ -121,6 +188,9 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
 
     if (typeof window === 'undefined') return null;
 
+    // Determine aria-label: use provided ariaLabel, or title (if string), or fallback to 'Dialog'
+    const computedAriaLabel = ariaLabel || (typeof title === 'string' ? undefined : 'Dialog');
+
     return createPortal(
       <AnimatePresence>
         {isOpen && (
@@ -138,7 +208,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
 
             {/* Modal Content */}
             <motion.div
-              ref={ref}
+              ref={modalRef}
               initial={{ opacity: 0, scale: 0.95, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
@@ -153,6 +223,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
               )}
               role="dialog"
               aria-modal="true"
+              aria-label={computedAriaLabel}
               aria-labelledby={title ? 'modal-title' : undefined}
               aria-describedby={description ? 'modal-description' : undefined}
             >
