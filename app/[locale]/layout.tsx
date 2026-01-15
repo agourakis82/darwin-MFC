@@ -7,6 +7,7 @@ import { locales, type Locale } from '@/i18n/config';
 import LocaleHtmlAttributes from './LocaleHtmlAttributes';
 import { RegionProvider } from '@/lib/context/RegionContext';
 import RegionOnboardingModal from '@/app/components/Region/RegionOnboardingModal';
+import FloatingHub from '@/app/components/QuickActions/FloatingHub';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -54,6 +55,7 @@ export default async function LocaleLayout({
       <RegionProvider>
         {children}
         <RegionOnboardingModal />
+        <FloatingHub />
       </RegionProvider>
     </NextIntlClientProvider>
   );
