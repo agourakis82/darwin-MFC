@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<examples>
+  <example name="auditoria_completa_darwin_mfc">
+    <description>Exemplo de auditoria completa do projeto Darwin-MFC 2.0</description>
+    <context>Projeto médico complexo com múltiplas tecnologias e documentação extensiva</context>
+    <workflow_steps>
+      <step>1. Análise inicial da estrutura</step>
+      <step>2. Auditoria de documentação técnica</step>
+      <step>3. Verificação de versionamento e timestamps</step>
+      <step>4. Auditoria de conformidade médica</step>
+      <step>5. Análise de segurança e compliance</step>
+      <step>6. Geração de relatório final</step>
+    </workflow_steps>
+    <expected_findings>
+      <finding>README.md completo e atualizado ✅</finding>
+      <finding>Documentação médica técnica extensa ✅</finding>
+      <finding>Versionamento com timestamps ISO 8601 ✅</finding>
+      <finding>Estrutura organizada por domínio funcional ✅</finding>
+      <finding>Conformidade com standards médicos ✅</finding>
+      <finding>Possíveis melhorias em cobertura de testes ⚠️</finding>
+    </expected_findings>
+    <recommendations>
+      <recommendation>Manter documentação sempre atualizada com cada release</recommendation>
+      <recommendation>Implementar CI/CD para validação automática de padrões</recommendation>
+      <recommendation>Expandir cobertura de testes para funções críticas</recommendation>
+      <recommendation>Regularizar timestamps em todos os arquivos de documentação</recommendation>
+    </recommendations>
+  </example>
+
+  <example name="auditoria_documentacao">
+    <description>Exemplo focado em auditoria de documentação</description>
+    <context>Projeto que precisa de melhoria na documentação técnica</context>
+    <checklist>
+      <item>README.md presente e completo</item>
+      <item>Documentação de APIs (OpenAPI/Swagger)</item>
+      <item>Guias de instalação e configuração</item>
+      <item>Changelog estruturado e atualizado</item>
+      <item>Documentação médica técnica</item>
+      <item>Referências e citações adequadas</item>
+      <item>Links internos funcionais</item>
+      <item>Traduções para múltiplos idiomas</item>
+    </checklist>
+    <actions>
+      <action>Identificar gaps na documentação</action>
+      <action>Verificar qualidade e atualidade</action>
+      <action>Validar estrutura e organização</action>
+      <action>Checar referências cruzadas</action>
+    </actions>
+  </example>
+
+  <example name="auditoria_versionamento">
+    <description>Exemplo de verificação de versionamento e timestamps</description>
+    <context>Projeto que precisa de organização temporal precisa</context>
+    <verification_points>
+      <point>Timestamps em formato ISO 8601 (UTC)</point>
+      <point>Versionamento semântico consistente</point>
+      <point>Changelog com datas precisas</point>
+      <point>Tags git com informações de versão</point>
+      <point>Consistência entre arquivos de versão</point>
+    </verification_points>
+    <tools_used>
+      <tool>execute_command "git log --oneline --since=30.days.ago"</tool>
+      <tool>execute_command "git tag --list"</tool>
+      <tool>read_file "package.json"</tool>
+      <tool>read_file "CHANGELOG.md"</tool>
+    </tools_used>
+    <corrections>
+      <correction>Padronizar timestamps para ISO 8601</correction>
+      <correction>Implementar versionamento semântico</correction>
+      <correction>Manter CHANGELOG sempre atualizado</correction>
+    </corrections>
+  </example>
+
+  <example name="auditoria_integridade_estrutural">
+    <description>Exemplo de verificação da integridade da estrutura do projeto</description>
+    <context>Projeto que precisa de reorganização da estrutura de arquivos</context>
+    <structural_checks>
+      <check>Organização lógica de diretórios por funcionalidade</check>
+      <check>Convenções de nomenclatura consistentes</check>
+      <check>Arquivos de configuração organizados</check>
+      <check>Estrutura de testes adequada</check>
+      <check>Assets organizados (imagens, estilos, etc.)</check>
+      <check>Separação clara de responsabilidades</check>
+    </structural_checks>
+    <patterns>
+      <pattern>/src/ - Código fonte principal</pattern>
+      <pattern>/docs/ - Documentação</pattern>
+      <pattern>/tests/ - Testes automatizados</pattern>
+      <pattern>/config/ - Configurações</pattern>
+      <pattern>/scripts/ - Scripts utilitários</pattern>
+    </patterns>
+    <recommendations>
+      <recommendation>Reorganizar diretórios por domínio funcional</recommendation>
+      <recommendation>Padronizar nomenclatura em kebab-case</recommendation>
+      <recommendation>Separar configurações de código</recommendation>
+    </recommendations>
+  </example>
+
+  <example name="auditoria_seguranca_medica">
+    <description>Exemplo de auditoria de segurança específica para projetos médicos</description>
+    <context>Sistema médico que precisa de verificação de compliance e segurança</context>
+    <security_aspects>
+      <aspect>Proteção de dados médicos sensíveis</aspect>
+      <aspect>Compliance com HIPAA/GDPR/LGPD</aspect>
+      <aspect>Autenticação e autorização robustas</aspect>
+      <aspect>Criptografia de dados em trânsito e repouso</aspect>
+      <aspect>Auditoria e logs de acesso</aspect>
+    </security_aspects>
+    <compliance_areas>
+      <area>HIPAA para dados dos EUA</area>
+      <area>GDPR para dados europeus</area>
+      <area>LGPD para dados brasileiros</area>
+      <area>FDA guidelines para dispositivos médicos</area>
+    </compliance_areas>
+    <verifications>
+      <verification>search_files por padrões de API keys expostas</verification>
+      <verification>Verificar configurações CORS</verification>
+      <verification>Analisar políticas de privacidade</verification>
+      <verification>Checar logs de auditoria</verification>
+    </verifications>
+  </example>
+
+  <example name="auditoria_standards_medicos">
+    <description>Exemplo de verificação de conformidade com standards médicos</description>
+    <context>Sistema que precisa aderir aos padrões médicos internacionais</context>
+    <standards_to_check>
+      <standard>HL7 FHIR para interoperabilidade de dados</standard>
+      <standard>SNOMED CT para terminologia médica</standard>
+      <standard>LOINC para códigos laboratoriais</standard>
+      <standard>DICOM para imagens médicas</standard>
+      <standard>ICD-10 para classificação de doenças</standard>
+    </standards_to_check>
+    <verification_methods>
+      <method>search_files por referências a cada standard</method>
+      <method>Verificar presença de esquemas de validação</method>
+      <method>Analisar estrutura de dados médicos</method>
+      <method>Checar documentação de interoperabilidade</method>
+    </verification_methods>
+    <findings_example>
+      <finding>HL7 FHIR: Parcialmente implementado ⚠️</finding>
+      <finding>SNOMED CT: Presente na base de dados ✅</finding>
+      <finding>LOINC: Não encontrado ❌</finding>
+      <finding>DICOM: Não aplicável para este projeto</finding>
+    </findings_example>
+  </example>
+
+  <example name="relatorio_auditoria_completo">
+    <description>Exemplo de relatório de auditoria completo e estruturado</description>
+    <context>Relatório final após auditoria sistemática completa</context>
+    <report_structure>
+      <section name="resumo_executivo">
+        <content>Visão geral dos achados e status geral do projeto</content>
+      </section>
+      <section name="documentacao">
+        <content>Análise detalhada de toda documentação presente</content>
+      </section>
+      <section name="versionamento">
+        <content>Verificação de timestamps e controle de versão</content>
+      </section>
+      <section name="estrutura">
+        <content>Análise da organização e integridade estrutural</content>
+      </section>
+      <section name="seguranca">
+        <content>Avaliação de aspectos de segurança e compliance</content>
+      </section>
+      <section name="conformidade_medica">
+        <content>Verificação de adherence aos padrões médicos</content>
+      </section>
+      <section name="recomendacoes">
+        <content>Lista priorizada de melhorias sugeridas</content>
+      </section>
+      <section name="plano_acao">
+        <content>Roadmap para implementação das melhorias</content>
+      </section>
+    </report_structure>
+    <example_metrics>
+      <metric>Documentação: 85% completa</metric>
+      <metric>Versionamento: 90% preciso</metric>
+      <metric>Estrutura: 95% organizada</metric>
+      <metric>Segurança: 80% conforme</metric>
+      <metric>Standards médicos: 75% aderente</metric>
+      <metric>Score geral: 85/100</metric>
+    </example_metrics>
+  </example>
+
+  <example name="workflow_auditoria_sistematica">
+    <description>Workflow completo e sistemático para auditoria de repositório</description>
+    <context>Processo completo do início ao fim</context>
+    <phases>
+      <phase name="preparacao">
+        <steps>
+          <step>Definir escopo da auditoria</step>
+          <step>Identificar arquivos críticos</step>
+          <step>Estabelecer critérios de avaliação</step>
+        </steps>
+      </phase>
+      <phase name="analise">
+        <steps>
+          <step>Mapear estrutura do projeto</step>
+          <step>Analisar documentação existente</step>
+          <step>Verificar versionamento e timestamps</step>
+          <step>Avaliar qualidade do código</step>
+          <step>Checar segurança e compliance</step>
+        </steps>
+      </phase>
+      <phase name="sintese">
+        <steps>
+          <step>Consolidar achados</step>
+          <step>Classificar issues por severidade</step>
+          <step>Gerar recomendações</step>
+          <step>Criar plano de ação</step>
+        </steps>
+      </phase>
+      <phase name="relatorio">
+        <steps>
+          <step>Compilar relatório final</step>
+          <step>Priorizar recomendações</step>
+          <step>Estabelecer cronograma</step>
+        </steps>
+      </phase>
+    </phases>
+  </example>
+</examples>

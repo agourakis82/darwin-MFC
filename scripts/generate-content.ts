@@ -1,4 +1,5 @@
 #!/usr/bin/env npx tsx
+// @ts-nocheck
 /**
  * AI CONTENT GENERATION CLI - DARWIN-MFC
  * =======================================

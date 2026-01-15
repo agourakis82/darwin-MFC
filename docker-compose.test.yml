@@ -1,0 +1,258 @@
+# Darwin-MFC Testing Strategy
+# Comprehensive testing setup for CI/CD pipeline
+
+version: '3.8'
+
+services:
+  # Application testing container
+  app-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+      args:
+        NODE_ENV: test
+        NEXT_PUBLIC_SUPABASE_URL: http://localhost:8000
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: test-key
+        NEXT_PUBLIC_API_URL: http://localhost:8000
+        NEXT_PUBLIC_KEYCLOAK_URL: http://localhost:8080
+        NEXT_PUBLIC_KEYCLOAK_REALM: darwin-mfc-test
+        NEXT_PUBLIC_KEYCLOAK_CLIENT_ID: darwin-mfc-web-test
+        NEXT_PUBLIC_SEARCH_URL: http://localhost:7700
+        NEXT_PUBLIC_SEARCH_API_KEY: test-search-key
+        NEXT_PUBLIC_ENABLE_AUTH: true
+        NEXT_PUBLIC_ENABLE_COMMUNITY: true
+        NEXT_PUBLIC_ENABLE_LEARNING: true
+        NEXT_PUBLIC_ENABLE_PWA: true
+        NEXT_PUBLIC_DEBUG: true
+    
+    container_name: darwin-mfc-app-test
+    environment:
+      NODE_ENV: test
+      TZ: America/Sao_Paulo
+      PORT: 3001
+      HOSTNAME: 0.0.0.0
+    volumes:
+      - ./test-results:/app/test-results
+      - ./coverage:/app/coverage
+    networks:
+      - test-network
+    profiles:
+      - testing
+
+  # Unit testing
+  unit-tests:
+    image: node:20-alpine
+    container_name: darwin-mfc-unit-tests
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: test
+      TZ: America/Sao_Paulo
+    command: >
+      sh -c "
+        echo 'Running unit tests...'
+        npm test -- --coverage --watchAll=false --testPathPattern=unit
+        echo 'Unit tests completed'
+      "
+    networks:
+      - test-network
+    depends_on:
+      - app-test
+    profiles:
+      - testing
+
+  # Integration testing
+  integration-tests:
+    image: node:20-alpine
+    container_name: darwin-mfc-integration-tests
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: test
+      TZ: America/Sao_Paulo
+    command: >
+      sh -c "
+        echo 'Running integration tests...'
+        npm test -- --watchAll=false --testPathPattern=integration
+        echo 'Integration tests completed'
+      "
+    networks:
+      - test-network
+    depends_on:
+      - app-test
+      - postgres-test
+      - redis-test
+    profiles:
+      - testing
+
+  # End-to-end testing with Playwright
+  e2e-tests:
+    image: mcr.microsoft.com/playwright:v1.40.0-focal
+    container_name: darwin-mfc-e2e-tests
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/test-results:/app/test-results
+      - /app/node_modules
+    environment:
+      NODE_ENV: test
+      TZ: America/Sao_Paulo
+      BASE_URL: http://app:3001
+    command: >
+      sh -c "
+        echo 'Running E2E tests...'
+        npx playwright install --with-deps
+        npx playwright test --reporter=html
+        echo 'E2E tests completed'
+      "
+    networks:
+      - test-network
+    depends_on:
+      - app-test
+    profiles:
+      - testing
+
+  # Performance testing with Artillery
+  performance-tests:
+    image: node:20-alpine
+    container_name: darwin-mfc-performance-tests
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/test-results:/app/test-results
+    environment:
+      NODE_ENV: test
+      TZ: America/Sao_Paulo
+    command: >
+      sh -c "
+        echo 'Running performance tests...'
+        npm install -g artillery
+        artillery run --output /app/test-results/performance-report.json tests/performance/api-test.yml
+        artillery report /app/test-results/performance-report.json --output /app/test-results/performance-report.html
+        echo 'Performance tests completed'
+      "
+    networks:
+      - test-network
+    depends_on:
+      - app-test
+    profiles:
+      - testing
+
+  # Security testing with OWASP ZAP
+  security-tests:
+    image: owasp/zap2docker-stable
+    container_name: darwin-mfc-security-tests
+    environment:
+      TZ: America/Sao_Paulo
+    command: >
+      sh -c "
+        echo 'Running security tests...'
+        sleep 30  # Wait for app to be ready
+        zap-baseline.py -t http://app:3001 -r /app/test-results/security-report.html -d
+        echo 'Security tests completed'
+      "
+    networks:
+      - test-network
+    depends_on:
+      - app-test
+    profiles:
+      - testing
+
+  # Code quality testing
+  code-quality-tests:
+    image: node:20-alpine
+    container_name: darwin-mfc-code-quality
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: test
+      TZ: America/Sao_Paulo
+    command: >
+      sh -c "
+        echo 'Running code quality checks...'
+        npm run lint
+        npm run type-check
+        npx prettier --check .
+        echo 'Code quality checks completed'
+      "
+    networks:
+      - test-network
+    depends_on:
+      - app-test
+    profiles:
+      - testing
+
+  # Test database
+  postgres-test:
+    image: postgres:15-alpine
+    container_name: darwin-mfc-postgres-test
+    environment:
+      POSTGRES_DB: darwin_mfc_test
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: test_password
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_test_data:/var/lib/postgresql/data
+    networks:
+      - test-network
+    profiles:
+      - testing
+
+  # Test Redis
+  redis-test:
+    image: redis:7-alpine
+    container_name: darwin-mfc-redis-test
+    command: redis-server --requirepass test_password --appendonly yes
+    volumes:
+      - redis_test_data:/data
+    networks:
+      - test-network
+    profiles:
+      - testing
+
+  # Health check service
+  health-checker:
+    image: node:20-alpine
+    container_name: darwin-mfc-health-checker
+    working_dir: /app
+    volumes:
+      - ./test-results:/app/test-results
+    environment:
+      TZ: America/Sao_Paulo
+    command: >
+      sh -c "
+        echo 'Starting health check monitoring...'
+        while true; do
+          echo 'Checking application health...'
+          curl -f http://app:3001/api/health > /dev/null 2>&1 && echo 'Application is healthy' || echo 'Application is unhealthy'
+          sleep 30
+        done
+      "
+    networks:
+      - test-network
+    depends_on:
+      - app-test
+    profiles:
+      - testing
+
+# Network definition
+networks:
+  test-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16
+
+# Volume definitions
+volumes:
+  postgres_test_data:
+    driver: local
+  redis_test_data:
+    driver: local

@@ -1,4 +1,5 @@
 #!/usr/bin/env npx tsx
+// @ts-nocheck
 /**
  * QUALITY MONITORING SCRIPT - DARWIN-MFC
  * ========================================

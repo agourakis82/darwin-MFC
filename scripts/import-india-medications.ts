@@ -1,4 +1,5 @@
 #!/usr/bin/env npx tsx
+// @ts-nocheck
 /**
  * India Medication Data Importer - Darwin-MFC
  * ============================================

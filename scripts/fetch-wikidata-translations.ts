@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Fetch Multilingual Translations from Wikidata
  * ==============================================

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool_usage_guide>
+  <tool_priorities>
+    <priority level="1">
+      <tool>list_files</tool>
+      <when>Sempre use primeiro para entender a estrutura do projeto</when>
+      <why>Fornece visão geral completa da organização do repositório</why>
+    </priority>
+    <priority level="2">
+      <tool>read_file</tool>
+      <when>Após identificar arquivos críticos com list_files</when>
+      <why>Permite análise detalhada de conteúdo e qualidade</why>
+    </priority>
+    <priority level="3">
+      <tool>search_files</tool>
+      <when>Para encontrar padrões específicos ou arquivos relacionados</when>
+      <why>Localiza rapidamente elementos específicos em grandes bases de código</why>
+    </priority>
+  </tool_priorities>
+
+  <tool_specific_guidance>
+    <tool name="list_files">
+      <best_practices>
+        <practice>Use recursivo=true para análise completa inicial</practice>
+        <practice>Use recursivo=false para análise específica de diretórios</practice>
+        <practice>Identifique padrões de organização através dos nomes de diretórios</practice>
+        <practice>Note arquivos em múltiplos diretórios para detectar inconsistências</practice>
+      </best_practices>
+      <example>
+        <!-- Análise inicial completa -->
+        list_files com recursivo=true para mapear todo o projeto
+        list_files com recursivo=false em diretórios específicos para análise detalhada
+      </example>
+    </tool>
+
+    <tool name="read_file">
+      <best_practices>
+        <practice>Sempre leia arquivos de configuração críticos primeiro</practice>
+        <practice>Analise documentação principal (README, CHANGELOG) para entender o projeto</practice>
+        <practice>Compare timestamps entre arquivos relacionados</practice>
+        <practice>Verifique consistência de versões em múltiplos arquivos</practice>
+      </best_practices>
+      <example>
+        <!-- Análise de arquivos críticos -->
+        package.json, tsconfig.json, next.config.ts para configurações
+        README.md, CHANGELOG.md para documentação principal
+        Arquivos .env.example para configurações de ambiente
+      </example>
+    </tool>
+
+    <tool name="search_files">
+      <best_practices>
+        <practice>Use regex para encontrar padrões de código problemáticos</practice>
+        <practice>Combine file_pattern para focar em tipos específicos</practice>
+        <practice>Procure por TODO, FIXME, HACK para identificar workarounds</practice>
+        <practice>Use para encontrar referências a APIs ou funções específicas</practice>
+      </best_practices>
+      <example>
+        <!-- Exemplos de uso -->
+        regex="TODO|FIXME|HACK" para encontrar trabalho pendente
+        regex="console\.log" file_pattern="*.ts" para encontrar debug code
+        regex="import.*from" file_pattern="*.ts" para analisar dependências
+      </example>
+    </tool>
+
+    <tool name="execute_command">
+      <best_practices>
+        <practice>Use para verificar git history e timestamps precisos</practice>
+        <practice>Execute linting e testes para verificar qualidade</practice>
+        <practice>Use npm/yarn para verificar dependências</practice>
+        <practice>Execute scripts de build para verificar configuração</practice>
+      </best_practices>
+      <example>
+        <!-- Verificações via comando -->
+        git log --oneline para histórico de commits
+        npm audit para vulnerabilidades
+        npm run lint para verificar código
+        npm test para executar testes
+      </example>
+    </tool>
+  </tool_specific_guidance>
+
+  <verification_sequences>
+    <sequence name="auditoria_documentacao">
+      <steps>
+        <step>list_files recursivo para mapear arquivos de documentação</step>
+        <step>read_file de README.md, CHANGELOG.md, docs/</step>
+        <step>search_files por padrões de documentação (headers, links)</step>
+        <step>execute_command para verificar timestamps via git</step>
+      </steps>
+    </sequence>
+
+    <sequence name="auditoria_versionamento">
+      <steps>
+        <step>read_file de package.json, VERSION, ou arquivos de versão</step>
+        <step>execute_command "git tag" para verificar tags</step>
+        <step>read_file de CHANGELOG.md para verificar estrutura</step>
+        <step>search_files por padrões de data (ISO 8601)</step>
+      </steps>
+    </sequence>
+
+    <sequence name="auditoria_estrutura">
+      <steps>
+        <step>list_files recursivo para mapear estrutura</step>
+        <step>read_file de arquivos de configuração (package.json, tsconfig.json)</step>
+        <step>search_files por padrões de nomenclatura</step>
+        <step>execute_command para verificar integridade (npm run build)</step>
+      </steps>
+    </sequence>
+
+    <sequence name="auditoria_seguranca">
+      <steps>
+        <step>search_files por padrões problemáticos (API keys, passwords)</step>
+        <step>read_file de arquivos de configuração de segurança</step>
+        <step>execute_command "npm audit" para vulnerabilidades</step>
+        <step>Verificar configurações CORS e headers</step>
+      </steps>
+    </sequence>
+  </verification_sequences>
+
+  <medical_specific_tools>
+    <tool name="verificar_standards_medicos">
+      <description>Verifica conformidade com standards médicos</description>
+      <checks>
+        <check>HL7 FHIR para estrutura de dados</check>
+        <check>SNOMED CT para terminologia</check>
+        <check>LOINC para códigos laboratoriais</check>
+        <check>ICD-10 para classificação de doenças</check>
+      </checks>
+      <implementation>
+        search_files por "fhir", "hl7", "snomed", "loinc", "icd10"
+        read_file de arquivos de esquema e validação
+        Verificar presença de terminologias médicas
+      </implementation>
+    </tool>
+
+    <tool name="verificar_compliance_medico">
+      <description>Verifica conformidade com regulamentações médicas</description>
+      <requirements>
+        <requirement>HIPAA compliance para dados dos EUA</requirement>
+        <requirement>GDPR para dados europeus</requirement>
+        <requirement>LGPD para dados brasileiros</requirement>
+        <requirement>FDA guidelines para dispositivos médicos</requirement>
+      </requirements>
+      <implementation>
+        search_files por padrões de consentimento e privacidade
+        Verificar documentação de compliance
+        Analisar políticas de dados
+      </implementation>
+    </tool>
+  </medical_specific_tools>
+
+  <output_formats>
+    <format name="relatorio_auditoria">
+      <structure>
+        <section>Resumo Executivo</section>
+        <section>Auditoria de Documentação</section>
+        <section>Auditoria de Versionamento</section>
+        <section>Auditoria de Estrutura</section>
+        <section>Auditoria de Segurança</section>
+        <section>Auditoria Médica (se aplicável)</section>
+        <section>Recomendações Prioritárias</section>
+        <section>Plano de Ação</section>
+      </structure>
+    </format>
+
+    <format name="checklist_compliance">
+      <structure>
+        <category>Documentação Completa</category>
+        <category>Versionamento Preciso</category>
+        <category>Estrutura Organizada</category>
+        <category>Código Limpo</category>
+        <category>Segurança Adequada</category>
+        <category>Conformidade Médica</category>
+      </structure>
+    </format>
+  </output_formats>
+</tool_usage_guide>

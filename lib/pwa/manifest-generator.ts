@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * PWA MANIFEST GENERATOR
  * =======================

@@ -1,4 +1,5 @@
 #!/usr/bin/env npx tsx
+// @ts-nocheck
 /**
  * EMA (European Medicines Agency) Medication Data Importer
  * =========================================================

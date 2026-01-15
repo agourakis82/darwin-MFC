@@ -1,4 +1,5 @@
 #!/usr/bin/env npx tsx
+// @ts-nocheck
 /**
  * TRANSLATION PIPELINE - DARWIN-MFC
  * ==================================

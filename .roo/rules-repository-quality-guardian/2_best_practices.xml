@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<best_practices>
+  <general_principles>
+    <principle priority="high">
+      <name>Auditoria Sistemática</name>
+      <description>Todo repositório deve ser auditado de forma sistemática e completa, cobrindo todos os aspectos técnicos, documentais e estruturais.</description>
+      <rationale>Garante que nenhuma questão importante seja negligenciada e que o relatório final seja abrangente e confiável.</rationale>
+      <example>
+        <scenario>Auditoria de projeto médico</scenario>
+        <good>Verificar documentação técnica, compliance médico (HL7, FHIR), estrutura de dados, segurança de dados, e versionamento</good>
+        <bad>Focar apenas em código e ignorar aspectos médicos e de compliance</bad>
+      </example>
+    </principle>
+
+    <principle priority="high">
+      <name>Conformidade com Standards Médicos</name>
+      <description>Projetos médicos devem aderir rigorosamente aos padrões internacionais de healthcare (HL7, FHIR, SNOMED CT, LOINC).</description>
+      <rationale>Garantia de interoperabilidade, segurança do paciente e conformidade regulatória.</rationale>
+      <example>
+        <scenario>Sistema de prontuário eletrônico</scenario>
+        <good>Usar HL7 FHIR para estrutura de dados, SNOMED CT para terminologia, LOINC para laboratórios</good>
+        <bad>Usar estruturas proprietárias sem documentação de interoperabilidade</bad>
+      </example>
+    </principle>
+
+    <principle priority="medium">
+      <name>Documentação Autodocumentada</name>
+      <description>Código deve ser autoexplicativo, mas documentação adicional é sempre benvinda e necessária para contexto.</description>
+      <rationale>Reduz custos de manutenção e facilita onboarding de novos desenvolvedores.</rationale>
+      <example>
+        <scenario>Função médica complexa</scenario>
+        <good>Nomes descritivos + comentários explicativos + documentação externa</good>
+        <bad>Funções com nomes abreviados sem comentários</bad>
+      </example>
+    </principle>
+
+    <principle priority="medium">
+      <name>Versionamento Temporal Preciso</name>
+      <description>Todos os arquivos críticos devem ter timestamps precisos e versionamento consistente.</description>
+      <rationale>Rastreabilidade, auditoria e conformidade com regulamentações médicas.</rationale>
+      <example>
+        <scenario>Arquivo de protocolo médico</scenario>
+        <good>Timestamp ISO 8601, versionamento semântico, changelog detalhado</good>
+        <bad>Sem versionamento ou timestamps inconsistentes</bad>
+      </example>
+    </principle>
+  </general_principles>
+
+  <code_conventions>
+    <convention category="naming">
+      <rule>Usar kebab-case para arquivos e diretórios</rule>
+      <examples>
+        <good>patient-data-service.ts, medical-protocols/, clinical-decision-support/</good>
+        <bad>patientDataService.ts, Medical_Protocols/, clinicalDecisionSupport/</bad>
+      </examples>
+    </convention>
+    
+    <convention category="structure">
+      <rule>Organizar código médico por domínio funcional</rule>
+      <template>
+        /lib/
+          /medical/
+            /diseases/     # Dados e lógica de doenças
+            /medications/  # Base de medicamentos
+            /calculators/  # Calculadoras médicas
+            /protocols/    # Protocolos clínicos
+            /analytics/    # Análises e métricas
+          /ai/
+            /diagnostic/   # IA diagnóstica
+            /predictive/   # Modelos preditivos
+            /recommendation/ # Sistema de recomendações
+      </template>
+    </convention>
+
+    <convention category="documentation">
+      <rule>Documentar toda função pública com JSDoc</rule>
+      <template>
+        /**
+         * Calcula o score de risco cardiovascular baseado no Framingham Risk Score
+         * @param {Object} patientData - Dados do paciente (idade, sexo, colesterol, etc.)
+         * @param {string} patientData.age - Idade em anos
+         * @param {string} patientData.gender - 'M' ou 'F'
+         * @param {number} patientData.totalCholesterol - Colesterol total em mg/dL
+         * @returns {Object} Resultado com risco percentual e categoria
+         */
+        function calculateFraminghamRisk(patientData) { /* ... */ }
+      </template>
+    </convention>
+  </code_conventions>
+
+  <security_guidelines>
+    <guideline priority="high">
+      <name>Proteção de Dados Médicos</name>
+      <description>Implementar criptografia end-to-end para todos os dados médicos sensíveis</description>
+      <requirements>
+        <requirement>AES-256 para dados em repouso</requirement>
+        <requirement>TLS 1.3 para dados em trânsito</requirement>
+        <requirement>Anonimização de dados para analytics</requirement>
+        <requirement>Controle de acesso baseado em roles (RBAC)</requirement>
+      </requirements>
+    </guideline>
+
+    <guideline priority="high">
+      <name>Compliance HIPAA/GDPR</name>
+      <description>Sistemas médicos devem atender requisitos de compliance internacional</description>
+      <requirements>
+        <requirement>Consentimento explícito para uso de dados</requirement>
+        <requirement>Direito ao esquecimento (deletion)</requirement>
+        <requirement>Portabilidade de dados</requirement>
+        <requirement>Auditoria completa de acessos</requirement>
+      </requirements>
+    </guideline>
+  </security_guidelines>
+
+  <quality_checklist>
+    <category name="documentacao">
+      <item>README.md completo com instruções claras</item>
+      <item>Documentação de API (OpenAPI/Swagger)</item>
+      <item>Guias de instalação e configuração</item>
+      <item>Documentação de deployment</item>
+      <item>Changelog detalhado</item>
+      <item>Documentação médica (protocolos, guidelines)</item>
+    </category>
+    
+    <category name="estrutura">
+      <item>Organização lógica de diretórios</item>
+      <item>Convenções de nomenclatura consistentes</item>
+      <item>Arquivos de configuração organizados</item>
+      <item>Estrutura de testes clara</item>
+    </category>
+    
+    <category name="qualidade_codigo">
+      <item>Linting sem erros</item>
+      <item>Type checking (TypeScript)</item>
+      <item>Cobertura de testes > 80%</item>
+      <item>Sem código duplicado</item>
+      <item>Dependências atualizadas</item>
+    </category>
+
+    <category name="seguranca">
+      <item>Sem credenciais expostas</item>
+      <item>Configurações de CORS adequadas</item>
+      <item>Headers de segurança implementados</item>
+      <item>Validação de inputs</item>
+      <item>Rate limiting configurado</item>
+    </category>
+  </quality_checklist>
+</best_practices>

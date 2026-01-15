@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<common_patterns>
+  <verification_patterns>
+    <pattern name="documentacao_completa">
+      <description>Padrão para verificar completude da documentação</description>
+      <checklist>
+        <check>README.md principal existe e está atualizado</check>
+        <check>Documentação de API presente</check>
+        <check>Guias de instalação fornecidos</check>
+        <check>Changelog estruturado</check>
+        <check>Documentação médica técnica presente</check>
+      </checklist>
+    </pattern>
+
+    <pattern name="versionamento_temporal">
+      <description>Padrão para validação de versionamento e timestamps</description>
+      <validation>
+        <requirement>Timestamps em formato ISO 8601 (UTC)</requirement>
+        <requirement>Versionamento semântico consistente</requirement>
+        <requirement>Changelog com datas precisas</requirement>
+        <requirement>Tags git com timestamps</requirement>
+      </validation>
+    </pattern>
+
+    <pattern name="integridade_estrutural">
+      <description>Padrão para validação da integridade da estrutura do projeto</description>
+      <checks>
+        <check>Diretórios organizados por funcionalidade</check>
+        <check>Arquivos de configuração completos</check>
+        <check>Dependências declaradas corretamente</check>
+        <check>Estrutura de testes adequada</check>
+        <check>Assets organizados (imagens, estilos, etc.)</check>
+      </checks>
+    </pattern>
+
+    <pattern name="conformidade_medica">
+      <description>Padrão específico para projetos médicos</description>
+      <standards>
+        <standard>HL7 FHIR para interoperabilidade</standard>
+        <standard>SNOMED CT para terminologia médica</standard>
+        <standard>LOINC para laboratórios</standard>
+        <standard>DICOM para imagens médicas</standard>
+        <standard>ICD-10 para classificação de doenças</standard>
+      </standards>
+    </pattern>
+  </verification_patterns>
+
+  <quality_patterns>
+    <pattern name="clean_code">
+      <description>Padrões para código limpo e manutenível</description>
+      <principles>
+        <principle>Single Responsibility Principle</principle>
+        <principle>Open/Closed Principle</principle>
+        <principle>Dependency Inversion</principle>
+        <principle>Don't Repeat Yourself (DRY)</principle>
+      </principles>
+      <indicators>
+        <indicator>Funções pequenas e focadas</indicator>
+        <indicator>Nomes descritivos para variáveis e funções</indicator>
+        <indicator>Comentários explicativos apenas quando necessário</indicator>
+        <indicator>Separação clara de responsabilidades</indicator>
+      </indicators>
+    </pattern>
+
+    <pattern name="security_first">
+      <description>Padrões de segurança para aplicações médicas</description>
+      <requirements>
+        <requirement>Validação rigorosa de inputs</requirement>
+        <requirement>Sanitização de dados de entrada</requirement>
+        <requirement>Rate limiting em APIs</requirement>
+        <requirement>Logs de auditoria para ações críticas</requirement>
+        <requirement>Criptografia para dados sensíveis</requirement>
+      </requirements>
+    </pattern>
+
+    <pattern name="internationalization_ready">
+      <description>Padrões para suporte a múltiplos idiomas</description>
+      <implementation>
+        <approach>Usar next-intl ou similar para i18n</approach>
+        <approach>Separação de conteúdo da lógica</approach>
+        <approach>Considerações de layout para texto expandido</approach>
+        <approach>Suporte a idiomas RTL quando necessário</approach>
+      </implementation>
+    </pattern>
+  </quality_patterns>
+
+  <testing_patterns>
+    <pattern name="test_coverage_adequada">
+      <description>Padrões para cobertura de testes adequada</description>
+      <metrics>
+        <metric>Mínimo 80% de cobertura de código</metric>
+        <metric>100% de cobertura para funções críticas</metric>
+        <metric>Testes de integração para fluxos principais</metric>
+        <metric>Testes de unidade para lógica de negócio</metric>
+      </metrics>
+      <coverage_areas>
+        <area>Funções médicas críticas</area>
+        <area>Cálculos de risco</area>
+        <area>Validações de dados</area>
+        <area>APIs e endpoints</area>
+      </coverage_areas>
+    </pattern>
+
+    <pattern name="test_automatizados">
+      <description>Estrutura para testes automatizados</description>
+      <structure>
+        /tests/
+          /unit/          # Testes unitários
+          /integration/   # Testes de integração
+          /e2e/          # Testes end-to-end
+          /fixtures/     # Dados de teste
+      </structure>
+      <tools>
+        <tool>Jest para testes unitários</tool>
+        <tool>Cypress para testes E2E</tool>
+        <tool>Testing Library para componentes React</tool>
+      </tools>
+    </pattern>
+  </testing_patterns>
+
+  <documentation_patterns>
+    <pattern name="documentacao_api">
+      <description>Estrutura para documentação de APIs</description>
+      <components>
+        <component>OpenAPI/Swagger spec completo</component>
+        <component>Exemplos de requests/responses</component>
+        <component>Códigos de erro documentados</component>
+        <component>Autenticação e autorização explicadas</component>
+      </components>
+    </pattern>
+
+    <pattern name="documentacao_medica">
+      <description>Estrutura para documentação médica técnica</description>
+      <sections>
+        <section>Protocolos clínicos</section>
+        <section>Algoritmos diagnósticos</section>
+        <section>Referências científicas</section>
+        <section>Validações e estudos clínicos</section>
+        <section>Conformidade regulatória</section>
+      </sections>
+    </pattern>
+  </documentation_patterns>
+
+  <error_handling_patterns>
+    <pattern name="tratamento_erros_robusto">
+      <description>Padrões para tratamento de erros em aplicações médicas</description>
+      <strategies>
+        <strategy>Graceful degradation para funcionalidades não-críticas</strategy>
+        <strategy>Fallbacks para APIs externas</strategy>
+        <strategy>Logs estruturados para debugging</strategy>
+        <strategy>Recovery automático quando possível</strategy>
+        <strategy>Alertas para erros críticos</strategy>
+      </strategies>
+    </pattern>
+
+    <pattern name="monitoramento_saude">
+      <description>Padrões para monitoramento de saúde da aplicação</description>
+      <metrics>
+        <metric>Tempo de resposta da API</metric>
+        <metric>Taxa de erros</metric>
+        <metric>Uso de recursos (CPU, memória)</metric>
+        <metric>Disponibilidade de serviços</metric>
+        <metric>Métricas médicas específicas</metric>
+      </metrics>
+    </pattern>
+  </error_handling_patterns>
+</common_patterns>

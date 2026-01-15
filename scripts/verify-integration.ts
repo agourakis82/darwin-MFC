@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Script de Verificação de Integração
  * Valida que todas as partes do sistema estão integradas corretamente

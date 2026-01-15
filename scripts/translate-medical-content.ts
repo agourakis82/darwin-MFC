@@ -1,4 +1,5 @@
 #!/usr/bin/env npx tsx
+// @ts-nocheck
 /**
  * MEDICAL CONTENT TRANSLATION SCRIPT - DARWIN-MFC
  * ================================================

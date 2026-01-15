@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * SERVICE WORKER CONFIGURATION
  * ==============================

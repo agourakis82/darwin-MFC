@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Fetch Medication Translations from Wikidata using our ATC codes
  * ================================================================

@@ -42,6 +42,7 @@ import { doencasEmergencias } from './emergencias';
 import { doencasTropicais } from './tropicais';
 import { doencasPrenatalAltoRisco } from './prenatal-alto-risco';
 import { doencasPediatriaAPS } from './pediatria-aps';
+import { doencasGeriatriaAPS } from './geriatria-aps';
 
 // Consolidar todas as doenças
 // Nota: Algumas categorias usam Partial<Doenca> para flexibilidade de expansão
@@ -78,6 +79,7 @@ export const todasDoencas: Partial<Doenca>[] = [
   ...doencasTropicais,
   ...doencasPrenatalAltoRisco,
   ...doencasPediatriaAPS,
+  ...doencasGeriatriaAPS,
 ];
 
 // Remover duplicatas por ID (caso existam) e filtrar apenas doenças com ID

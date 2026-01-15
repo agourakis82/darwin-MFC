@@ -51,6 +51,8 @@ import { medicamentosFinal12 } from './expansao-final-12';
 import { medicamentos600Ultimo } from './expansao-600-ultimo';
 import { medicamentos600FinalBatch } from './expansao-600-final-batch';
 import { medicamentosGestacao } from './medicamentos-gestacao';
+import { medicamentosGeriatria } from './geriatria';
+import { medicamentosSaudeMental } from './saude-mental';
 
 // Consolidar todos os medicamentos
 // Filtrar apenas medicamentos completos (com campos obrigatórios)
@@ -93,6 +95,8 @@ const medicamentosFinal12Filtered = medicamentosFinal12.filter(isMedicamentoComp
 const medicamentos600UltimoFiltered = medicamentos600Ultimo.filter(isMedicamentoCompleto);
 const medicamentos600FinalBatchFiltered = medicamentos600FinalBatch.filter(isMedicamentoCompleto);
 const medicamentosGestacaoFiltered = medicamentosGestacao.filter(isMedicamentoCompleto);
+const medicamentosGeriatriaFiltered = medicamentosGeriatria.filter(isMedicamentoCompleto);
+const medicamentosSaudeMentalFiltered = medicamentosSaudeMental.filter(isMedicamentoCompleto);
 
 export const todosMedicamentos: Medicamento[] = [
   ...medicamentosBase,
@@ -138,6 +142,8 @@ export const todosMedicamentos: Medicamento[] = [
   ...medicamentos600UltimoFiltered,
   ...medicamentos600FinalBatchFiltered,
   ...medicamentosGestacaoFiltered,
+  ...medicamentosGeriatriaFiltered,
+  ...medicamentosSaudeMentalFiltered,
 ];
 
 // Remover duplicatas por ID

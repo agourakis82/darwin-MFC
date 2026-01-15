@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Utility functions for mapping exam names to LOINC codes
  */

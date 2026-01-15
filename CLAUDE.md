@@ -238,3 +238,36 @@ State persists automatically to localStorage.
 This is an academic/scientific project for the **Darwin Medical Foundation Cluster (Darwin-MFC)** platform. The goal is Nature/Cell-level academic rigor for analyzing healthcare screening guidelines globally. Priority is given to accuracy, citations, and critical systemic analysis over features.
 
 **Live Demo:** <https://mfc.agourakis.med.br>
+
+## Session Persistence (Coding em Transito)
+
+Para manter contexto entre sessoes de trabalho (especialmente util para coding em transito):
+
+### Arquivo SESSION.md
+
+O arquivo `SESSION.md` na raiz do projeto serve como scratchpad de persistencia:
+- Estado atual do trabalho
+- Arquivos em progresso
+- Proximos passos imediatos
+- Decisoes de arquitetura recentes
+- Historico de sessoes
+
+### Protocolo de Sessao
+
+**Ao iniciar nova sessao:**
+1. Ler `SESSION.md` para recuperar contexto
+2. Verificar `git status` para estado atual dos arquivos
+3. Perguntar ao usuario qual tarefa priorizar
+
+**Ao finalizar sessao (ou se conexao instavel):**
+1. Atualizar `SESSION.md` com estado atual
+2. Registrar decisoes importantes tomadas
+3. Listar proximos passos claros
+4. Commitar mudancas se solicitado
+
+### Recuperacao Rapida
+
+Se a sessao for interrompida, o usuario pode simplesmente dizer:
+- "continua" ou "continue" - para retomar do SESSION.md
+- "status" - para ver estado atual
+- "proximos passos" - para ver tarefas pendentes

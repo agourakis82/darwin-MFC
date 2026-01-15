@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow_instructions>
+  <mode_overview>
+    Modo especializado em auditoria completa de repositórios, focando em documentação, versionamento, integridade estrutural e conformidade com melhores práticas. Examina sistematicamente todos os aspectos do projeto para garantir qualidade e organização impecáveis.
+  </mode_overview>
+
+  <initialization_steps>
+    <step number="1">
+      <action>Análise Inicial do Repositório</action>
+      <details>
+        - Examinar estrutura geral do projeto
+        - Identificar tecnologias e frameworks utilizados
+        - Verificar presença de arquivos essenciais (README, package.json, etc.)
+        - Mapear diretórios principais e organização
+      </details>
+      <tools>
+        <tool>list_files</tool>
+        <tool>read_file</tool>
+      </tools>
+    </step>
+    
+    <step number="2">
+      <action>Verificação de Documentação</action>
+      <details>
+        - Analisar completude da documentação
+        - Verificar qualidade e atualidade das informações
+        - Validar estrutura e organização dos documentos
+        - Checar referências cruzadas e links
+      </details>
+      <tools>
+        <tool>search_files</tool>
+        <tool>read_file</tool>
+      </tools>
+    </step>
+
+    <step number="3">
+      <action>Auditoria de Versionamento</action>
+      <details>
+        - Verificar timestamps em arquivos críticos
+        - Analisar consistência de versões
+        - Validar estrutura de changelogs
+        - Examinar git history se disponível
+      </details>
+      <tools>
+        <tool>execute_command</tool>
+        <tool>search_files</tool>
+      </tools>
+    </step>
+  </initialization_steps>
+
+  <main_workflow>
+    <phase name="auditoria_estrutural">
+      <description>Análise da organização e integridade da estrutura do projeto</description>
+      <steps>
+        <step>Verificar convenções de nomenclatura</step>
+        <step>Validar estrutura de diretórios</step>
+        <step>Checar presence de arquivos obrigatórios</step>
+        <step>Analisar dependências e configurações</step>
+      </steps>
+    </phase>
+
+    <phase name="auditoria_codigo">
+      <description>Exame da qualidade e padrões do código</description>
+      <steps>
+        <step>Verificar conformidade com padrões (ESLint, Prettier)</step>
+        <step>Analisar cobertura de testes</step>
+        <step>Checar qualidade de comentários e documentação inline</step>
+        <step>Validar estrutura de componentes e módulos</step>
+      </steps>
+    </phase>
+
+    <phase name="auditoria_documentacao">
+      <description>Verificação completa da documentação técnica</description>
+      <steps>
+        <step>Analisar completude do README principal</step>
+        <step>Verificar documentação de APIs</step>
+        <step>Checar guias de instalação e uso</step>
+        <step>Validar documentação médica (se aplicável)</step>
+      </steps>
+    </phase>
+
+    <phase name="auditoria_seguranca">
+      <description>Análise de aspectos de segurança e compliance</description>
+      <steps>
+        <step>Verificar exposição de credenciais</step>
+        <step>Analisar configurações de segurança</step>
+        <step>Checar compliance com padrões médicos</step>
+        <step>Validar configurações de CORS e headers</step>
+      </steps>
+    </phase>
+  </main_workflow>
+
+  <reporting_phase>
+    <description>Geração de relatório detalhado com recomendações</description>
+    <steps>
+      <step>Consolidar todos os achados</step>
+      <step>Classificar issues por severidade</step>
+      <step>Gerar recomendações específicas</step>
+      <step>Criar plano de ação priorizado</step>
+    </steps>
+  </reporting_phase>
+
+  <completion_criteria>
+    <criterion>Auditoria completa de todos os aspectos do repositório realizada</criterion>
+    <criterion>Documentação verificada e validada</criterion>
+    <criterion>Versionamento com timestamps conferido</criterion>
+    <criterion>Integridade estrutural confirmada</criterion>
+    <criterion>Relatório detalhado com recomendações gerado</criterion>
+  </completion_criteria>
+</workflow_instructions>

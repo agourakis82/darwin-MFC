@@ -37,8 +37,12 @@ import { useAppStore } from '@/lib/store/appStore';
 import { getAllRastreamentos } from '@/lib/data/rastreamentos';
 import { doencas } from '@/lib/data/doencas';
 import { medicamentos } from '@/lib/data/medicamentos';
+import {
+  unifiedSearch,
+  type UnifiedSearchResult,
+} from '@/lib/ontology';
 
-type SearchResultType = 'rastreamento' | 'doenca' | 'medicamento' | 'action' | 'page';
+type SearchResultType = 'rastreamento' | 'doenca' | 'medicamento' | 'action' | 'page' | 'ontology';
 
 interface SearchItem {
   id: string;
@@ -239,6 +243,42 @@ export default function CommandPalette({ open, onOpenChange }: CommandPalettePro
     };
   }, [search]);
 
+  // Unified ontology search results
+  const ontologyResults = useMemo(() => {
+    if (!search.trim() || search.length < 2) return [];
+
+    try {
+      const response = unifiedSearch(search, {
+        language: 'pt',
+        limit: 8,
+        minScore: 40,
+      });
+
+      return response.results.map((r: UnifiedSearchResult): SearchItem => ({
+        id: `ontology-${r.id}`,
+        type: 'ontology',
+        title: r.title,
+        subtitle: [
+          r.codes.icd11?.[0] && `ICD-11: ${r.codes.icd11[0]}`,
+          r.codes.icd10?.[0] && `ICD-10: ${r.codes.icd10[0]}`,
+          r.codes.snomedCT && `SNOMED: ${r.codes.snomedCT}`,
+          r.codes.loinc && `LOINC: ${r.codes.loinc}`,
+        ].filter(Boolean).slice(0, 2).join(' | '),
+        path: r.type === 'disease' ? `/doencas` : r.type === 'lab-test' ? `/calculadoras` : `/medicamentos`,
+        icon: r.type === 'disease'
+          ? <Stethoscope className="w-4 h-4 text-rose-500" />
+          : r.type === 'lab-test'
+          ? <Activity className="w-4 h-4 text-cyan-500" />
+          : r.type === 'gene'
+          ? <Zap className="w-4 h-4 text-amber-500" />
+          : <BookOpen className="w-4 h-4 text-indigo-500" />,
+        keywords: [],
+      }));
+    } catch {
+      return [];
+    }
+  }, [search]);
+
   // Filter results
   const filteredItems = useMemo(() => {
     if (!search.trim()) {
@@ -254,15 +294,20 @@ export default function CommandPalette({ open, onOpenChange }: CommandPalettePro
     const groups: Record<string, SearchItem[]> = {
       action: [],
       page: [],
+      ontology: [],
       doenca: [],
       medicamento: [],
       rastreamento: [],
     };
+    // Add ontology results first (they appear at top when searching codes)
+    ontologyResults.forEach((item) => {
+      groups[item.type].push(item);
+    });
     filteredItems.forEach((item) => {
       groups[item.type].push(item);
     });
     return groups;
-  }, [filteredItems]);
+  }, [filteredItems, ontologyResults]);
 
   // Handle selection
   const handleSelect = useCallback(
@@ -297,6 +342,8 @@ export default function CommandPalette({ open, onOpenChange }: CommandPalettePro
         return t('commandPalette.quickActions');
       case 'page':
         return t('commandPalette.navigation');
+      case 'ontology':
+        return '🔬 Ontologias (ICD-11, SNOMED, LOINC)';
       case 'doenca':
         return t('commandPalette.diseases');
       case 'medicamento':
@@ -421,7 +468,7 @@ export default function CommandPalette({ open, onOpenChange }: CommandPalettePro
             )}
 
             {/* Grouped Results */}
-            {(['action', 'page', 'doenca', 'medicamento', 'rastreamento'] as const).map((type) => {
+            {(['action', 'page', 'ontology', 'doenca', 'medicamento', 'rastreamento'] as const).map((type) => {
               const items = groupedResults[type];
               if (items.length === 0) return null;
 

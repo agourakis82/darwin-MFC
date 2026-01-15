@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<error_handling>
+  <error_scenarios>
+    <scenario name="estrutura_inconsistente">
+      <description>Quando a estrutura do repositório não segue padrões esperados</description>
+      <indicators>
+        <indicator>Diretórios desorganizados ou com nomenclatura inconsistente</indicator>
+        <indicator>Arquivos importantes ausentes (README, package.json, etc.)</indicator>
+        <indicator>Organização lógica quebrada</indicator>
+      </indicators>
+      <recovery_strategy>
+        <step>Mapear estrutura atual completamente</step>
+        <step>Identificar padrões existentes</step>
+        <step>Propor reestruturação gradual</step>
+        <step>Criar roadmap de migração</step>
+      </recovery_strategy>
+      <escalation_level>medium</escalation_level>
+    </scenario>
+
+    <scenario name="documentacao_incompleta">
+      <description>Quando a documentação está incompleta ou desatualizada</description>
+      <indicators>
+        <indicator>README.md básico ou ausente</indicator>
+        <indicator>Falta de documentação de APIs</indicator>
+        <indicator>Changelog desatualizado</indicator>
+        <indicator>Instruções de instalação incompletas</indicator>
+      </indicators>
+      <recovery_strategy>
+        <step>Identificar gaps específicos na documentação</step>
+        <step>Priorizar documentação crítica</step>
+        <step>Gerar templates e estruturas</step>
+        <step>Criar cronograma de atualização</step>
+      </recovery_strategy>
+      <escalation_level>high</escalation_level>
+    </scenario>
+
+    <scenario name="versionamento_inconsistente">
+      <description>Quando o versionamento não segue padrões ou está inconsistente</description>
+      <indicators>
+        <indicator>Timestamps ausentes ou incorretos</indicator>
+        <indicator>Versionamento semântico inconsistente</indicator>
+        <indicator>Changelog sem estrutura clara</indicator>
+        <indicator>Tags git inconsistentes</indicator>
+      </indicators>
+      <recovery_strategy>
+        <step>Auditar histórico de versões</step>
+        <step>Padronizar formato de timestamps</step>
+        <step>Implementar versionamento semântico</step>
+        <step>Criar automação para versionamento</step>
+      </recovery_strategy>
+      <escalation_level>medium</escalation_level>
+    </scenario>
+
+    <scenario name="issues_seguranca">
+      <description>Quando são encontradas vulnerabilidades ou problemas de segurança</description>
+      <indicators>
+        <indicator>Credenciais expostas em código</indicator>
+        <indicator>Configurações de segurança inadequadas</indicator>
+        <indicator>Falta de validação de inputs</indicator>
+        <indicator>Dependências com vulnerabilidades conhecidas</indicator>
+      </indicators>
+      <recovery_strategy>
+        <step>Identificar e classificar vulnerabilidades</step>
+        <step>Priorizar issues críticos</step>
+        <step>Implementar correções imediatas</step>
+        <step>Estabelecer políticas de segurança</step>
+      </recovery_strategy>
+      <escalation_level>critical</escalation_level>
+    </scenario>
+
+    <scenario name="conformidade_medica_insuficiente">
+      <description>Quando padrões médicos não são seguidos adequadamente</description>
+      <indicators>
+        <indicator>Ausência de standards HL7, FHIR</indicator>
+        <indicator>Terminologia médica inconsistente</indicator>
+        <indicator>Falha em compliance HIPAA/GDPR</indicator>
+        <indicator>Dados médicos sem estrutura padronizada</indicator>
+      </indicators>
+      <recovery_strategy>
+        <step>Mapear gaps de conformidade</step>
+        <step>Implementar standards prioritários</step>
+        <step>Estabelecer validações automatizadas</step>
+        <step>Criar documentação de compliance</step>
+      </recovery_strategy>
+      <escalation_level>critical</escalation_level>
+    </scenario>
+  </error_scenarios>
+
+  <recovery_procedures>
+    <procedure name="graceful_degradation">
+      <description>Continuar auditoria mesmo com problemas identificados</description>
+      <steps>
+        <step>Documentar problemas encontrados</step>
+        <step>Continuar auditoria em outras áreas funcionais</step>
+        <step>Priorizar issues por impacto</step>
+        <step>Fornecer recomendações mesmo parciais</step>
+      </steps>
+    </procedure>
+
+    <procedure name="partial_audits">
+      <description>Realizar auditorias parciais quando completo não é viável</description>
+      <scope>
+        <option>Auditoria apenas de documentação</option>
+        <option>Auditoria apenas de estrutura</option>
+        <option>Auditoria apenas de segurança</option>
+        <option>Auditoria apenas de conformidade médica</option>
+      </scope>
+      <benefits>
+        <benefit>Resultados mais rápidos</benefit>
+        <benefit>Foco em áreas críticas</benefit>
+        <benefit>Menos interrupção do desenvolvimento</benefit>
+      </benefits>
+    </procedure>
+  </recovery_procedures>
+
+  <warning_categories>
+    <category name="low_risk">
+      <description>Warnings que não comprometem funcionamento mas devem ser resolvidos</description>
+      <examples>
+        <example>Comentários desatualizados</example>
+        <example>Nomenclatura inconsistente em áreas não-críticas</example>
+        <example>Dependências levemente desatualizadas</example>
+        <example>Documentação não-critica faltando</example>
+      </examples>
+      <action>Sugerir melhorias em cronograma de baixa prioridade</action>
+    </category>
+
+    <category name="medium_risk">
+      <description>Warnings que podem afetar manutenção ou qualidade</description>
+      <examples>
+        <example>Estrutura de diretórios não ideal</example>
+        <example>Falta de testes em funcionalidades não-críticas</example>
+        <example>Documentação de APIs incompleta</example>
+        <example>Versionamento inconsistente</example>
+      </examples>
+      <action>Incluir em plano de ação para próximo sprint</action>
+    </category>
+
+    <category name="high_risk">
+      <description>Warnings que podem afetar funcionalidade ou segurança</description>
+      <examples>
+        <example>Dependências com vulnerabilidades</example>
+        <example>Configurações de segurança inadequadas</example>
+        <example>Standards médicos não seguidos</example>
+        <example>Falta de validação de dados críticos</example>
+      </examples>
+      <action>Resolver imediatamente antes de release</action>
+    </category>
+
+    <category name="critical">
+      <description>Issues que comprometem funcionalidade, segurança ou compliance</description>
+      <examples>
+        <example>Credenciais expostas</example>
+        <example>Vulnerabilidades de segurança críticas</example>
+        <example>Falha completa em compliance médico</example>
+        <example>Dados não criptografados</example>
+      </examples>
+      <action>Resolver imediatamente e pausar releases</action>
+    </category>
+  </warning_categories>
+
+  <escalation_protocols>
+    <protocol name="critical_security_issue">
+      <trigger>Credenciais expostas ou vulnerabilidades críticas</trigger>
+      <immediate_actions>
+        <action>Documentar issue detalhadamente</action>
+        <action>Recomendar correção imediata</action>
+        <action>Sugerir processo de remediation</action>
+        <action>Priorizar no plano de ação</action>
+      </immediate_actions>
+      <follow_up>Verificar correção em próxima auditoria</follow_up>
+    </protocol>
+
+    <protocol name="compliance_failure">
+      <trigger>Falha em conformidade médica ou regulatória</trigger>
+      <immediate_actions>
+        <action>Mapear gaps de compliance</action>
+        <action>Recomendar implementação de standards</action>
+        <action>Sugerir auditoria legal</action>
+        <action>Criar roadmap de conformidade</action>
+      </immediate_actions>
+      <follow_up>Monitorar progresso de conformidade</follow_up>
+    </protocol>
+
+    <protocol name="structural_issues">
+      <trigger>Problemas estruturais que afetam manutenibilidade</trigger>
+      <immediate_actions>
+        <action>Analisar impacto na manutenibilidade</action>
+        <action>Propor reestruturação gradual</action>
+        <action>Criar migration plan</action>
+        <action>Estabelecer milestones</action>
+      </immediate_actions>
+      <follow_up>Revisar estrutura em sprints futuros</follow_up>
+    </protocol>
+  </escalation_protocols>
+
+  <logging_guidelines>
+    <guideline>Log todos os achados importantes com contexto suficiente</guideline>
+    <guideline>Categorize issues por severidade e impacto</guideline>
+    <guideline>Inclua timestamps em todas as entradas de log</guideline>
+    <guideline>Mantenha logs estruturados para análise posterior</guideline>
+    <guideline>Documente todas as recomendações com justificativa</guideline>
+  </logging_guidelines>
+</error_handling>
