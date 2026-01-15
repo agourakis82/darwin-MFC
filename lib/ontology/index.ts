@@ -126,3 +126,28 @@ export {
   searchGenes,
   searchByCodeWithMappings,
 } from './unified-search';
+
+// Extended PharmGKB with Dosing Recommendations
+export {
+  // Types
+  type DosingRecommendation,
+  type ActivityScoreResult,
+  type DrugGeneInteraction,
+  // Data
+  ALL_PHARMGKB_GENES,
+  EXTENDED_PHARMGKB_GENES,
+  DOSING_RECOMMENDATIONS,
+  // Functions
+  getAllGenes,
+  getExtendedGeneBySymbol,
+  getDosingRecommendation,
+  getDosingRecommendationsForDrug,
+  getDosingRecommendationsForGene,
+  calculateActivityScore,
+  getDrugInteractionSummary,
+  searchGenesByPhenotypeConcern,
+  getGenesRelevantForPopulation,
+  getContraindicatedPairs,
+  getRecommendedPanel,
+  getPharmGKBStats,
+} from './pharmgkb-extended';
