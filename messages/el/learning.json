@@ -40,6 +40,57 @@
       "advanced": "Προχωρημένος"
     },
 
+    "path_not_found": "Η διαδρομή δεν βρέθηκε",
+    "back_to_paths": "Επιστροφή στις διαδρομές",
+    "path_modules": "Ενότητες Διαδρομής",
+    "modules_completed": "{completed} από {total} ενότητες ολοκληρώθηκαν",
+    "minimum_score": "Ελάχιστη βαθμολογία για πιστοποίηση: {score}%",
+
+    "module_types": {
+      "content": "Περιεχόμενο",
+      "quiz": "Κουίζ",
+      "case_study": "Κλινική Περίπτωση",
+      "flashcards": "Κάρτες",
+      "video": "Βίντεο",
+      "interactive": "Διαδραστικό"
+    },
+
+    "module_not_found": "Η ενότητα δεν βρέθηκε",
+    "previous": "Προηγούμενο",
+    "next": "Επόμενο",
+    "complete_path": "Ολοκλήρωση Διαδρομής",
+    "completed_score": "{score}% - Ολοκληρώθηκε",
+    "completed": "Ολοκληρωμένο",
+    "congratulations": "Συγχαρητήρια!",
+    "path_completed": "Η Διαδρομή Ολοκληρώθηκε!",
+    "close": "Κλείσιμο",
+    "continue_btn": "Συνέχεια",
+    "default_user": "Επαγγελματίας Υγείας",
+    "mark_complete": "Σημείωση ως ολοκληρωμένο",
+    "mark_as_viewed": "Σημείωση ως προβεβλημένο",
+
+    "case_study_player": {
+      "title": "Διαδραστική Κλινική Περίπτωση",
+      "coming_soon": "Οι διαδραστικές κλινικές περιπτώσεις θα είναι διαθέσιμες σύντομα."
+    },
+
+    "flashcards_player": {
+      "title": "Κάρτες Διαστημικής Επανάληψης",
+      "coming_soon": "Το σύστημα καρτών θα είναι διαθέσιμο σύντομα."
+    },
+
+    "completion_modal": {
+      "congratulations": "Συγχαρητήρια!",
+      "path_completed": "Η Διαδρομή Ολοκληρώθηκε!",
+      "completed_with_cert": "Ολοκληρώσατε τη διαδρομή <strong>{pathTitle}</strong> και κερδίσατε πιστοποιητικό!",
+      "completed_success": "Ολοκληρώσατε επιτυχώς τη διαδρομή <strong>{pathTitle}</strong>.",
+      "certificate_issued": "Πιστοποιητικό Εκδόθηκε",
+      "score": "Βαθμολογία: {score}%",
+      "view_certificate": "Προβολή Πιστοποιητικού",
+      "close": "Κλείσιμο",
+      "continue": "Συνέχεια"
+    },
+
     "coming": {
       "emergency": "Επείγοντα στην ΠΦΥ",
       "emergency_desc": "Αρχική αντιμετώπιση επειγόντων στην πρωτοβάθμια φροντίδα.",

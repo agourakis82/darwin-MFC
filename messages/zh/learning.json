@@ -40,6 +40,57 @@
       "advanced": "高级"
     },
 
+    "path_not_found": "未找到路径",
+    "back_to_paths": "返回路径",
+    "path_modules": "路径模块",
+    "modules_completed": "已完成 {completed}/{total} 个模块",
+    "minimum_score": "认证最低分数：{score}%",
+
+    "module_types": {
+      "content": "内容",
+      "quiz": "测验",
+      "case_study": "临床案例",
+      "flashcards": "闪卡",
+      "video": "视频",
+      "interactive": "互动"
+    },
+
+    "module_not_found": "未找到模块",
+    "previous": "上一个",
+    "next": "下一个",
+    "complete_path": "完成路径",
+    "completed_score": "{score}% - 已完成",
+    "completed": "已完成",
+    "congratulations": "恭喜！",
+    "path_completed": "路径已完成！",
+    "close": "关闭",
+    "continue_btn": "继续",
+    "default_user": "医疗专业人员",
+    "mark_complete": "标记为完成",
+    "mark_as_viewed": "标记为已查看",
+
+    "case_study_player": {
+      "title": "互动临床案例",
+      "coming_soon": "互动临床案例即将推出。"
+    },
+
+    "flashcards_player": {
+      "title": "间隔重复闪卡",
+      "coming_soon": "闪卡系统即将推出。"
+    },
+
+    "completion_modal": {
+      "congratulations": "恭喜！",
+      "path_completed": "路径已完成！",
+      "completed_with_cert": "您已完成路径 <strong>{pathTitle}</strong> 并获得证书！",
+      "completed_success": "您已成功完成路径 <strong>{pathTitle}</strong>。",
+      "certificate_issued": "证书已颁发",
+      "score": "分数：{score}%",
+      "view_certificate": "查看证书",
+      "close": "关闭",
+      "continue": "继续"
+    },
+
     "coming": {
       "emergency": "初级保健急诊",
       "emergency_desc": "初级保健环境中急诊的初步处理。",

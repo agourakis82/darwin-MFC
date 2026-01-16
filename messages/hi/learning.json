@@ -40,6 +40,57 @@
       "advanced": "उन्नत"
     },
 
+    "path_not_found": "मार्ग नहीं मिला",
+    "back_to_paths": "मार्गों पर वापस जाएं",
+    "path_modules": "मार्ग मॉड्यूल",
+    "modules_completed": "{total} में से {completed} मॉड्यूल पूर्ण",
+    "minimum_score": "प्रमाणन के लिए न्यूनतम अंक: {score}%",
+
+    "module_types": {
+      "content": "सामग्री",
+      "quiz": "प्रश्नोत्तरी",
+      "case_study": "नैदानिक मामला",
+      "flashcards": "फ्लैशकार्ड",
+      "video": "वीडियो",
+      "interactive": "इंटरैक्टिव"
+    },
+
+    "module_not_found": "मॉड्यूल नहीं मिला",
+    "previous": "पिछला",
+    "next": "अगला",
+    "complete_path": "मार्ग पूर्ण करें",
+    "completed_score": "{score}% - पूर्ण",
+    "completed": "पूर्ण",
+    "congratulations": "बधाई हो!",
+    "path_completed": "मार्ग पूर्ण हुआ!",
+    "close": "बंद करें",
+    "continue_btn": "जारी रखें",
+    "default_user": "स्वास्थ्य पेशेवर",
+    "mark_complete": "पूर्ण के रूप में चिह्नित करें",
+    "mark_as_viewed": "देखा हुआ चिह्नित करें",
+
+    "case_study_player": {
+      "title": "इंटरैक्टिव नैदानिक मामला",
+      "coming_soon": "इंटरैक्टिव नैदानिक मामले जल्द उपलब्ध होंगे।"
+    },
+
+    "flashcards_player": {
+      "title": "अंतराल दोहराव फ्लैशकार्ड",
+      "coming_soon": "फ्लैशकार्ड सिस्टम जल्द उपलब्ध होगा।"
+    },
+
+    "completion_modal": {
+      "congratulations": "बधाई हो!",
+      "path_completed": "मार्ग पूर्ण हुआ!",
+      "completed_with_cert": "आपने मार्ग <strong>{pathTitle}</strong> पूर्ण किया और प्रमाणपत्र अर्जित किया!",
+      "completed_success": "आपने सफलतापूर्वक मार्ग <strong>{pathTitle}</strong> पूर्ण किया।",
+      "certificate_issued": "प्रमाणपत्र जारी किया गया",
+      "score": "अंक: {score}%",
+      "view_certificate": "प्रमाणपत्र देखें",
+      "close": "बंद करें",
+      "continue": "जारी रखें"
+    },
+
     "coming": {
       "emergency": "प्राथमिक स्वास्थ्य आपातकालीन",
       "emergency_desc": "प्राथमिक देखभाल में आपातकालीन स्थितियों का प्रारंभिक प्रबंधन।",

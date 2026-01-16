@@ -40,6 +40,57 @@
       "advanced": "Продвинутый"
     },
 
+    "path_not_found": "Траектория не найдена",
+    "back_to_paths": "Назад к траекториям",
+    "path_modules": "Модули Траектории",
+    "modules_completed": "{completed} из {total} модулей завершено",
+    "minimum_score": "Минимальный балл для сертификации: {score}%",
+
+    "module_types": {
+      "content": "Контент",
+      "quiz": "Тест",
+      "case_study": "Клинический Случай",
+      "flashcards": "Карточки",
+      "video": "Видео",
+      "interactive": "Интерактив"
+    },
+
+    "module_not_found": "Модуль не найден",
+    "previous": "Назад",
+    "next": "Далее",
+    "complete_path": "Завершить Траекторию",
+    "completed_score": "{score}% - Завершено",
+    "completed": "Завершено",
+    "congratulations": "Поздравляем!",
+    "path_completed": "Траектория Завершена!",
+    "close": "Закрыть",
+    "continue_btn": "Продолжить",
+    "default_user": "Медицинский Специалист",
+    "mark_complete": "Отметить как завершённое",
+    "mark_as_viewed": "Отметить как просмотренное",
+
+    "case_study_player": {
+      "title": "Интерактивный Клинический Случай",
+      "coming_soon": "Интерактивные клинические случаи скоро будут доступны."
+    },
+
+    "flashcards_player": {
+      "title": "Карточки с Интервальным Повторением",
+      "coming_soon": "Система карточек скоро будет доступна."
+    },
+
+    "completion_modal": {
+      "congratulations": "Поздравляем!",
+      "path_completed": "Траектория Завершена!",
+      "completed_with_cert": "Вы завершили траекторию <strong>{pathTitle}</strong> и получили сертификат!",
+      "completed_success": "Вы успешно завершили траекторию <strong>{pathTitle}</strong>.",
+      "certificate_issued": "Сертификат Выдан",
+      "score": "Результат: {score}%",
+      "view_certificate": "Просмотреть Сертификат",
+      "close": "Закрыть",
+      "continue": "Продолжить"
+    },
+
     "coming": {
       "emergency": "Неотложные Состояния в ПМСП",
       "emergency_desc": "Начальная помощь при неотложных состояниях в первичном звене.",

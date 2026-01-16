@@ -40,6 +40,57 @@
       "advanced": "Avancé"
     },
 
+    "path_not_found": "Parcours introuvable",
+    "back_to_paths": "Retour aux parcours",
+    "path_modules": "Modules du Parcours",
+    "modules_completed": "{completed} sur {total} modules terminés",
+    "minimum_score": "Score minimum pour la certification : {score}%",
+
+    "module_types": {
+      "content": "Contenu",
+      "quiz": "Quiz",
+      "case_study": "Cas Clinique",
+      "flashcards": "Flashcards",
+      "video": "Vidéo",
+      "interactive": "Interactif"
+    },
+
+    "module_not_found": "Module introuvable",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "complete_path": "Terminer le Parcours",
+    "completed_score": "{score}% - Terminé",
+    "completed": "Terminé",
+    "congratulations": "Félicitations !",
+    "path_completed": "Parcours Terminé !",
+    "close": "Fermer",
+    "continue_btn": "Continuer",
+    "default_user": "Professionnel de Santé",
+    "mark_complete": "Marquer comme terminé",
+    "mark_as_viewed": "Marquer comme vu",
+
+    "case_study_player": {
+      "title": "Cas Clinique Interactif",
+      "coming_soon": "Les cas cliniques interactifs seront bientôt disponibles."
+    },
+
+    "flashcards_player": {
+      "title": "Flashcards à Répétition Espacée",
+      "coming_soon": "Le système de flashcards sera bientôt disponible."
+    },
+
+    "completion_modal": {
+      "congratulations": "Félicitations !",
+      "path_completed": "Parcours Terminé !",
+      "completed_with_cert": "Vous avez terminé le parcours <strong>{pathTitle}</strong> et obtenu un certificat !",
+      "completed_success": "Vous avez terminé le parcours <strong>{pathTitle}</strong> avec succès.",
+      "certificate_issued": "Certificat Délivré",
+      "score": "Score : {score}%",
+      "view_certificate": "Voir le Certificat",
+      "close": "Fermer",
+      "continue": "Continuer"
+    },
+
     "coming": {
       "emergency": "Urgences en Soins Primaires",
       "emergency_desc": "Prise en charge initiale des urgences en soins primaires.",

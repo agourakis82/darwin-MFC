@@ -40,6 +40,57 @@
       "advanced": "متقدم"
     },
 
+    "path_not_found": "المسار غير موجود",
+    "back_to_paths": "العودة إلى المسارات",
+    "path_modules": "وحدات المسار",
+    "modules_completed": "{completed} من {total} وحدات مكتملة",
+    "minimum_score": "الحد الأدنى للدرجة للحصول على الشهادة: {score}%",
+
+    "module_types": {
+      "content": "محتوى",
+      "quiz": "اختبار",
+      "case_study": "حالة سريرية",
+      "flashcards": "بطاقات",
+      "video": "فيديو",
+      "interactive": "تفاعلي"
+    },
+
+    "module_not_found": "الوحدة غير موجودة",
+    "previous": "السابق",
+    "next": "التالي",
+    "complete_path": "إكمال المسار",
+    "completed_score": "{score}% - مكتمل",
+    "completed": "مكتمل",
+    "congratulations": "تهانينا!",
+    "path_completed": "تم إكمال المسار!",
+    "close": "إغلاق",
+    "continue_btn": "استمرار",
+    "default_user": "مهني صحي",
+    "mark_complete": "وضع علامة مكتمل",
+    "mark_as_viewed": "وضع علامة تم المشاهدة",
+
+    "case_study_player": {
+      "title": "حالة سريرية تفاعلية",
+      "coming_soon": "الحالات السريرية التفاعلية ستكون متاحة قريباً."
+    },
+
+    "flashcards_player": {
+      "title": "بطاقات التكرار المتباعد",
+      "coming_soon": "نظام البطاقات سيكون متاحاً قريباً."
+    },
+
+    "completion_modal": {
+      "congratulations": "تهانينا!",
+      "path_completed": "تم إكمال المسار!",
+      "completed_with_cert": "لقد أكملت المسار <strong>{pathTitle}</strong> وحصلت على شهادة!",
+      "completed_success": "لقد أكملت المسار <strong>{pathTitle}</strong> بنجاح.",
+      "certificate_issued": "تم إصدار الشهادة",
+      "score": "الدرجة: {score}%",
+      "view_certificate": "عرض الشهادة",
+      "close": "إغلاق",
+      "continue": "استمرار"
+    },
+
     "coming": {
       "emergency": "طوارئ الرعاية الأولية",
       "emergency_desc": "الإدارة الأولية للطوارئ في سياق الرعاية الأولية.",
