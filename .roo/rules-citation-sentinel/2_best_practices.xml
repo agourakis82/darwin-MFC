@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<best_practices>
+  <overview>
+    <title>Citation Sentinel - Best Practices</title>
+    <description>
+      Diretrizes para garantir rigor acadêmico Q1 nas citações do Darwin-MFC.
+    </description>
+  </overview>
+
+  <citation_principles>
+    <principle name="every_claim_cited">
+      <description>Toda claim factual deve ter citação</description>
+      <claim_types>
+        <type>Números e estatísticas</type>
+        <type>Taxas de incidência/prevalência/mortalidade</type>
+        <type>Eficácia de tratamentos</type>
+        <type>Recomendações de guidelines</type>
+        <type>Comparações entre intervenções</type>
+        <type>Afirmações de causalidade</type>
+      </claim_types>
+      <exceptions>
+        <exception>Definições universalmente aceitas</exception>
+        <exception>Fatos de conhecimento comum médico</exception>
+      </exceptions>
+    </principle>
+
+    <principle name="primary_sources">
+      <description>Priorizar fontes primárias e de alta qualidade</description>
+      <hierarchy>
+        <level priority="1">
+          <sources>Guidelines oficiais (SUS, USPSTF, WHO, NHS)</sources>
+          <reason>Autoridade institucional, revisão rigorosa</reason>
+        </level>
+        <level priority="2">
+          <sources>Meta-análises Cochrane, revisões sistemáticas</sources>
+          <reason>Síntese de evidências de alto nível</reason>
+        </level>
+        <level priority="3">
+          <sources>Ensaios clínicos randomizados (RCTs)</sources>
+          <reason>Evidência primária de qualidade</reason>
+        </level>
+        <level priority="4">
+          <sources>Estudos observacionais grandes</sources>
+          <reason>Dados epidemiológicos válidos</reason>
+        </level>
+        <level priority="5">
+          <sources>Série de casos, relatos, opinião de expert</sources>
+          <reason>Usar apenas quando não há melhor evidência</reason>
+        </level>
+      </hierarchy>
+    </principle>
+
+    <principle name="temporal_relevance">
+      <description>Priorizar literatura recente</description>
+      <guidelines>
+        <guideline>Preferir artigos dos últimos 5 anos</guideline>
+        <guideline>Atualizar referências quando nova evidência disponível</guideline>
+        <guideline>Manter estudos seminais/clássicos quando relevantes</guideline>
+      </guidelines>
+    </principle>
+
+    <principle name="identifier_mandatory">
+      <description>Incluir identificadores persistentes</description>
+      <required>
+        <identifier priority="1">DOI (Digital Object Identifier)</identifier>
+        <identifier priority="2">PMID (PubMed ID)</identifier>
+        <identifier priority="3">URL estável (para guidelines)</identifier>
+      </required>
+    </principle>
+  </citation_principles>
+
+  <vancouver_style>
+    <description>Formato Vancouver para citações biomédicas</description>
+
+    <format type="journal_article">
+      <template>
+        Autores. Título do artigo. Título Abrev do Periódico. Ano;Volume(Número):Páginas. doi:número
+      </template>
+      <example>
+        Smith AB, Jones CD, et al. Effectiveness of screening. N Engl J Med. 2024;390(5):445-56. doi:10.1056/NEJMoa2401234
+      </example>
+      <rules>
+        <rule>Listar até 6 autores, depois "et al"</rule>
+        <rule>Usar abreviação oficial do periódico (NLM)</rule>
+        <rule>Sempre incluir DOI quando disponível</rule>
+      </rules>
+    </format>
+
+    <format type="guideline">
+      <template>
+        Organização. Título do Documento. Cidade: Publicador; Ano.
+      </template>
+      <example>
+        Instituto Nacional de Câncer. Diretrizes para Detecção Precoce do Câncer de Mama. Rio de Janeiro: INCA; 2024.
+      </example>
+    </format>
+
+    <format type="website">
+      <template>
+        Organização. Título da Página [Internet]. Local; Ano [cited Ano Mês Dia]. Available from: URL
+      </template>
+      <example>
+        World Health Organization. Breast cancer screening [Internet]. Geneva: WHO; 2024 [cited 2025 Jan 15]. Available from: https://www.who.int/...
+      </example>
+    </format>
+  </vancouver_style>
+
+  <inline_citation>
+    <description>Formato de citação inline no Darwin-MFC</description>
+    <format>[n]</format>
+    <examples>
+      <single>"A incidência é de 50/100.000 [1]."</single>
+      <multiple>"Estudos mostram redução de mortalidade [1,2,3]."</multiple>
+      <range>"Diversos ensaios confirmam [4-7]."</range>
+    </examples>
+    <component>InlineCitation</component>
+  </inline_citation>
+
+  <reference_management>
+    <principle name="unique_ids">
+      <description>IDs de referência devem ser únicos e descritivos</description>
+      <format>autor-ano-keyword ou org-ano-topic</format>
+      <examples>
+        <example>smith-2024-screening</example>
+        <example>inca-2024-mama</example>
+        <example>uspstf-2023-breast</example>
+      </examples>
+    </principle>
+
+    <principle name="deduplication">
+      <description>Evitar referências duplicadas</description>
+      <check>Verificar DOI/PMID antes de adicionar nova referência</check>
+    </principle>
+
+    <principle name="completeness">
+      <description>Metadados devem estar completos</description>
+      <required_fields>
+        <field>autores ou organização</field>
+        <field>título</field>
+        <field>ano</field>
+        <field>doi ou pmid ou url</field>
+      </required_fields>
+    </principle>
+  </reference_management>
+</best_practices>

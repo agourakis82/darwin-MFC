@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<common_patterns>
+  <overview>
+    <title>Protocol Flowchart Builder - Common Patterns</title>
+    <description>
+      Padrões e estruturas para flowcharts no Darwin-MFC.
+    </description>
+  </overview>
+
+  <pattern name="flowchart_structure">
+    <description>Estrutura completa de um flowchart</description>
+    <file>lib/data/protocolos-flowchart.ts</file>
+    <structure>
+      <![CDATA[
+export interface FlowchartProtocol {
+  id: string;
+  title: LocalizedString;
+  description: LocalizedString;
+  source: {
+    name: string;
+    url?: string;
+    year: number;
+    citation: string;
+  };
+  nodes: FlowchartNode[];
+  edges: FlowchartEdge[];
+  metadata: {
+    category: string;
+    lastUpdated: string;
+    version: string;
+  };
+}
+
+export interface FlowchartNode {
+  id: string;
+  type: "start" | "decision" | "action" | "assessment" | "endpoint" | "reference";
+  content: LocalizedString;
+  position: { x: number; y: number };
+  metadata?: {
+    evidenceLevel?: "A" | "B" | "C" | "D";
+    citations?: string[];
+    notes?: LocalizedString;
+  };
+}
+
+export interface FlowchartEdge {
+  id: string;
+  source: string;
+  target: string;
+  label?: LocalizedString;
+  type?: "default" | "positive" | "negative";
+}
+
+export interface LocalizedString {
+  pt: string;
+  en: string;
+  es?: string;
+  fr?: string;
+  ru?: string;
+  ar?: string;
+  zh?: string;
+  el?: string;
+  hi?: string;
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="diabetes_screening">
+    <description>Exemplo: Flowchart de Rastreamento de Diabetes</description>
+    <example>
+      <![CDATA[
+{
+  id: "diabetes-screening",
+  title: {
+    pt: "Rastreamento de Diabetes Mellitus",
+    en: "Diabetes Mellitus Screening"
+  },
+  description: {
+    pt: "Protocolo de rastreamento de diabetes na atenção primária",
+    en: "Diabetes screening protocol in primary care"
+  },
+  source: {
+    name: "SUS - Ministério da Saúde",
+    year: 2024,
+    citation: "ms-2024-diabetes"
+  },
+  nodes: [
+    {
+      id: "start",
+      type: "start",
+      content: { pt: "Início", en: "Start" },
+      position: { x: 250, y: 0 }
+    },
+    {
+      id: "age-check",
+      type: "decision",
+      content: {
+        pt: "Idade ≥ 45 anos?",
+        en: "Age ≥ 45 years?"
+      },
+      position: { x: 250, y: 100 }
+    },
+    {
+      id: "risk-factors",
+      type: "decision",
+      content: {
+        pt: "Fatores de risco presentes?\n(IMC ≥25, HAS, história familiar)",
+        en: "Risk factors present?\n(BMI ≥25, HTN, family history)"
+      },
+      position: { x: 100, y: 200 }
+    },
+    {
+      id: "order-fasting",
+      type: "action",
+      content: {
+        pt: "Solicitar glicemia de jejum",
+        en: "Order fasting glucose"
+      },
+      position: { x: 250, y: 300 },
+      metadata: {
+        evidenceLevel: "A",
+        citations: ["ada-2024-screening"]
+      }
+    },
+    {
+      id: "result-check",
+      type: "assessment",
+      content: {
+        pt: "Resultado da glicemia",
+        en: "Glucose result"
+      },
+      position: { x: 250, y: 400 }
+    },
+    {
+      id: "normal",
+      type: "endpoint",
+      content: {
+        pt: "Normal: Repetir em 3 anos",
+        en: "Normal: Repeat in 3 years"
+      },
+      position: { x: 50, y: 500 }
+    },
+    {
+      id: "prediabetes",
+      type: "endpoint",
+      content: {
+        pt: "Pré-diabetes: MEV + repetir anual",
+        en: "Prediabetes: Lifestyle + repeat yearly"
+      },
+      position: { x: 250, y: 500 }
+    },
+    {
+      id: "diabetes",
+      type: "endpoint",
+      content: {
+        pt: "Diabetes: Confirmar e iniciar tratamento",
+        en: "Diabetes: Confirm and start treatment"
+      },
+      position: { x: 450, y: 500 }
+    }
+  ],
+  edges: [
+    { id: "e1", source: "start", target: "age-check" },
+    { id: "e2", source: "age-check", target: "order-fasting", label: { pt: "Sim", en: "Yes" }, type: "positive" },
+    { id: "e3", source: "age-check", target: "risk-factors", label: { pt: "Não", en: "No" }, type: "negative" },
+    { id: "e4", source: "risk-factors", target: "order-fasting", label: { pt: "Sim", en: "Yes" }, type: "positive" },
+    { id: "e5", source: "risk-factors", target: "normal", label: { pt: "Não", en: "No" }, type: "negative" },
+    { id: "e6", source: "order-fasting", target: "result-check" },
+    { id: "e7", source: "result-check", target: "normal", label: { pt: "<100 mg/dL", en: "<100 mg/dL" } },
+    { id: "e8", source: "result-check", target: "prediabetes", label: { pt: "100-125 mg/dL", en: "100-125 mg/dL" } },
+    { id: "e9", source: "result-check", target: "diabetes", label: { pt: "≥126 mg/dL", en: "≥126 mg/dL" } }
+  ],
+  metadata: {
+    category: "rastreamento",
+    lastUpdated: "2025-01-15",
+    version: "1.0"
+  }
+}
+      ]]>
+    </example>
+  </pattern>
+
+  <pattern name="translations_file">
+    <description>Estrutura do arquivo de traduções de flowcharts</description>
+    <file>lib/i18n/flowchart-translations.ts</file>
+    <structure>
+      <![CDATA[
+export const flowchartTranslations = {
+  common: {
+    start: { pt: "Início", en: "Start", es: "Inicio", ... },
+    end: { pt: "Fim", en: "End", es: "Fin", ... },
+    yes: { pt: "Sim", en: "Yes", es: "Sí", ... },
+    no: { pt: "Não", en: "No", es: "No", ... },
+    refer: { pt: "Encaminhar", en: "Refer", es: "Derivar", ... }
+  },
+  "diabetes-screening": {
+    // Traduções específicas do flowchart
+  }
+};
+      ]]>
+    </structure>
+  </pattern>
+</common_patterns>

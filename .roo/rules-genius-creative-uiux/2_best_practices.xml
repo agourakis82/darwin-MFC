@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<best_practices>
+  <general_principles>
+    <principle priority="high">
+      <name>Inovação com Propósito</name>
+      <description>Toda decisão criativa deve ter uma justificativa funcional e melhorar a experiência do usuário</description>
+      <rationale>Design experimental deve servir à usabilidade, não apenas impressionar visualmente</rationale>
+      <example>
+        <scenario>Implementando animações em botões</scenario>
+        <good>Usar micro-animações para confirmar ações e fornecer feedback visual</good>
+        <bad>Adicionar animações decorativas que distraem e atrasam o usuário</bad>
+      </example>
+    </principle>
+
+    <principle priority="high">
+      <name>Performance First</name>
+      <description>Animações e interações avançadas nunca devem comprometer a performance</description>
+      <rationale>Interfaces lentas quebram a experiência do usuário, independente da beleza visual</rationale>
+      <example>
+        <scenario>Otimizando animações complexas</scenario>
+        <good>Usar CSS transforms e opacity para animações hardware-accelerated</good>
+        <bad>Animar propriedades que forçam repaints (top, left, width, height)</bad>
+      </example>
+    </principle>
+
+    <principle priority="medium">
+      <name>Hierarquia Visual Clara</establishment>
+      <description>Usar princípios de design visual para guiar a atenção do usuário</description>
+      <rationale>Interfaces eficazes são intuitivas e não confundem o usuário com excesso de elementos</rationale>
+      <example>
+        <scenario>Organizando elementos em um dashboard</scenario>
+        <good>Usar tamanho, cor e espaçamento para criar fluxo visual claro</good>
+        <bad>Distribuir elementos de forma aleatória sem hierarquia</bad>
+      </example>
+    </principle>
+
+    <principle priority="medium">
+      <name>Feedback Constante</name>
+      <description>Usuário deve sempre saber o estado do sistema e resultado de suas ações</description>
+      <rationale>Interfaces que não respondem criam frustração e incerteza</rationale>
+      <example>
+        <scenario>Formulários de upload</scenario>
+        <good>Mostrar progresso, estados de loading, e confirmação de sucesso</good>
+        <bad>Deixar usuário sem saber se ação foi processada</bad>
+      </example>
+    </principle>
+  </general_principles>
+
+  <micro_interactions_guidelines>
+    <guideline>
+      <name>Timing Contextual</name>
+      <rule>Animações rápidas para ações comuns (150-300ms), mais lentas para transições importantes (400-600ms)</rule>
+      <examples>
+        <action>Hover states: 150-200ms</action>
+        <action>Loading states: 300-500ms</action>
+        <action>Page transitions: 400-600ms</action>
+        <action>Complex reveals: 600-800ms</action>
+      </examples>
+    </guideline>
+
+    <guideline>
+      <name>Easing Natural</name>
+      <rule>Usar curvas de easing que simulem física real</rule>
+      <examples>
+        <easing>Elementos que caem: ease-out para gravidade</easing>
+        <easing>Elementos que se expandem: ease-in-out para suavidade</easing>
+        <easing>Elementos que saltam: ease-out-bounce para efeito orgânico</easing>
+        <easing>Elementos que deslizam: ease-in-out para naturalidade</easing>
+      </examples>
+    </guideline>
+
+    <guideline>
+      <name>Feedback Multi-sensorial</name>
+      <rule>Combinar feedback visual, tátil e auditivo quando apropriado</rule>
+      <examples>
+        <combination>Visual (hover) + Tátil (press) + Auditivo (click)</combination>
+        <combination>Visual (loading) + Auditivo (notification)</combination>
+        <combination>Visual (success) + Tátil (confirmation)</combination>
+      </examples>
+    </guideline>
+  </micro_interactions_guidelines>
+
+  <accessibility_best_practices>
+    <practice priority="high">
+      <name>Motion Sensitivity</name>
+      <description>Respeitar preferências de movimento reduzido do sistema</description>
+      <implementation>
+        - Detectar prefers-reduced-motion
+        - Fornecer alternativas estáticas
+        - Manter animações essenciais funcionais
+      </implementation>
+    </practice>
+
+    <practice priority="high">
+      <name>Contraste Adequado</name>
+      <description>Garantir contraste mínimo de 4.5:1 para texto normal</description>
+      <implementation>
+        - Usar ferramentas de verificação de contraste
+        - Testar em diferentes condições de luz
+        - Fornecer modo de alto contraste
+      </implementation>
+    </practice>
+
+    <practice priority="medium">
+      <name>Navegação por Teclado</name>
+      <description>Todos elementos interativos devem ser acessíveis via teclado</description>
+      <implementation>
+        - Definir tabindex apropriado
+        - Fornecer indicadores visuais de foco
+        - Implementar skip links quando necessário
+      </implementation>
+    </practice>
+  </accessibility_best_practices>
+
+  <code_organization>
+    <convention category="naming">
+      <rule>Usar convenções consistentes para classes CSS</rule>
+      <examples>
+        <good>.ui-button--primary, .ui-card__header, .ui-animate__fade-in</good>
+        <bad>.button, .cardHeader, .fadein</bad>
+      </examples>
+    </convention>
+
+    <convention category="structure">
+      <rule>Organizar estilos em camadas (reset, base, componentes, utilitários)</rule>
+      <template>
+        <!-- Estrutura recomendada -->
+        reset.css      # Normalização e reset
+        base.css       # Tipografia, cores base
+        components/    # Componentes UI
+        utilities.css  # Classes utilitárias
+        animations.css # Animações e transições
+      </template>
+    </convention>
+
+    <convention category="variables">
+      <rule>Centralizar valores de design em variáveis CSS ou sistema de design</rule>
+      <template>
+        :root {
+          --color-primary: #007bff;
+          --spacing-unit: 8px;
+          --border-radius: 4px;
+          --animation-duration: 200ms;
+        }
+      </template>
+    </convention>
+  </code_organization>
+
+  <common_pitfalls>
+    <pitfall>
+      <description>Over-animation - excesso de movimento sem propósito</description>
+      <why_problematic>Cria distração e pode causar nausea ou fadiga visual</why_problematic>
+      <correct_approach>Animar apenas elementos que melhoram a compreensão da interface</correct_approach>
+    </pitfall>
+
+    <pitfall>
+      <description>Performance negligence - ignorar otimização de animações</description>
+      <why_problematic>Interface laggy compromete experiência e credibilidade</why_problematic>
+      <correct_approach>Sempre usar transform e opacity, evitar reflow, usar will-change sabiamente</correct_approach>
+    </pitfall>
+
+    <pitfall>
+      <description>Mobile-first blind spot - ignorar responsividade mobile</description>
+      <why_problematic>Maioria do tráfego web é mobile, ignorar mobile compromete usuário</why_problematic>
+      <correct_approach>Sempre começar design com mobile, testar em dispositivos reais</correct_approach>
+    </pitfall>
+  </common_pitfalls>
+
+  <quality_checklist>
+    <category name="before_starting">
+      <item>Analisar requisitos funcionais e estéticos</item>
+      <item>Definir personalidade visual e tom da interface</item>
+      <item>Identificar público-alvo e contexto de uso</item>
+      <item>Estabelecer padrões de performance e acessibilidade</item>
+    </category>
+
+    <category name="during_design">
+      <item>Usar sistema de design consistente</item>
+      <item>Implementar hierarquia visual clara</item>
+      <item>Criar micro-interações com propósito</item>
+      <item>Garantir responsividade em todos breakpoints</item>
+    </category>
+
+    <category name="before_delivery">
+      <item>Testar performance em dispositivos reais</item>
+      <item>Validar acessibilidade com ferramentas automatizadas</item>
+      <item>Verificar contraste e legibilidade</item>
+      <item>Documentar padrões e componentes criados</item>
+      <item>Implementar fallback para usuários com limitações</item>
+    </category>
+  </quality_checklist>
+</best_practices>

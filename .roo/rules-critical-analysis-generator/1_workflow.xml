@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow>
+  <overview>
+    <title>Critical Analysis Generator - Workflow Pipeline</title>
+    <description>
+      Pipeline SOTA++ para geração de análises críticas a partir de conteúdo
+      descritivo, produzindo insights de segunda e terceira ordem.
+    </description>
+  </overview>
+
+  <pipeline>
+    <phase name="comprehension" order="1">
+      <title>Fase de Compreensão</title>
+      <description>Analisar profundamente o conteúdo descritivo</description>
+      <steps>
+        <step>Ler conteúdo descritivo do rastreamento/doença</step>
+        <step>Identificar principais claims e dados</step>
+        <step>Mapear divergências entre fontes (SUS vs Sociedades)</step>
+        <step>Extrair contexto epidemiológico e histórico</step>
+        <step>Identificar stakeholders e interesses envolvidos</step>
+      </steps>
+      <outputs>
+        <output>Mapa de claims principais</output>
+        <output>Lista de divergências</output>
+        <output>Contexto sistêmico</output>
+      </outputs>
+    </phase>
+
+    <phase name="insight_generation" order="2">
+      <title>Fase de Geração de Insights</title>
+      <description>Produzir insights de diferentes ordens</description>
+      <steps>
+        <step>Gerar insights de primeira ordem (observações diretas)</step>
+        <step>Gerar insights de segunda ordem (padrões e conexões)</step>
+        <step>Gerar insights de terceira ordem (implicações sistêmicas)</step>
+        <step>Validar insights contra literatura</step>
+        <step>Adicionar citações para cada insight</step>
+      </steps>
+      <insight_types>
+        <type name="primeira_ordem">
+          <description>Observações diretas dos dados</description>
+          <example>O SUS recomenda início aos 50 anos, sociedades aos 40</example>
+        </type>
+        <type name="segunda_ordem">
+          <description>Padrões, conexões, paradoxos</description>
+          <example>A divergência reflete tensão entre custo-efetividade e detecção precoce</example>
+        </type>
+        <type name="terceira_ordem">
+          <description>Implicações sistêmicas, consequências de longo prazo</description>
+          <example>Essa divergência aprofunda desigualdades socioeconômicas em saúde</example>
+        </type>
+      </insight_types>
+    </phase>
+
+    <phase name="controversy_mapping" order="3">
+      <title>Fase de Mapeamento de Controvérsias</title>
+      <description>Estruturar debates e posições divergentes</description>
+      <steps>
+        <step>Identificar pontos de controvérsia ativa</step>
+        <step>Mapear posição A (argumentos, evidências)</step>
+        <step>Mapear posição B (argumentos, evidências)</step>
+        <step>Elaborar síntese equilibrada</step>
+        <step>Adicionar citações para cada posição</step>
+      </steps>
+      <controversy_structure>
+        <field>titulo - Nome da controvérsia</field>
+        <field>descricao - Contexto do debate</field>
+        <field>posicao_a - Argumentos e evidências da posição A</field>
+        <field>posicao_b - Argumentos e evidências da posição B</field>
+        <field>sintese - Análise equilibrada das posições</field>
+      </controversy_structure>
+    </phase>
+
+    <phase name="challenge_identification" order="4">
+      <title>Fase de Identificação de Desafios</title>
+      <description>Mapear desafios de implementação e oportunidades</description>
+      <steps>
+        <step>Identificar barreiras de implementação</step>
+        <step>Mapear desafios de acesso e equidade</step>
+        <step>Identificar gaps de conhecimento</step>
+        <step>Propor soluções potenciais</step>
+        <step>Citar evidências de intervenções bem-sucedidas</step>
+      </steps>
+      <challenge_categories>
+        <category>Acesso e cobertura</category>
+        <category>Recursos humanos</category>
+        <category>Infraestrutura</category>
+        <category>Financiamento</category>
+        <category>Educação e conscientização</category>
+        <category>Integração de sistemas</category>
+      </challenge_categories>
+    </phase>
+
+    <phase name="integration" order="5">
+      <title>Fase de Integração</title>
+      <description>Estruturar e inserir análise crítica</description>
+      <steps>
+        <step>Formatar análise conforme interface CriticalAnalysis</step>
+        <step>Linkar via rastreamentoId</step>
+        <step>Adicionar a lib/data/analise-critica.ts</step>
+        <step>Verificar build</step>
+        <step>Testar ContentModeWrapper alterna corretamente</step>
+      </steps>
+    </phase>
+  </pipeline>
+
+  <quality_criteria>
+    <criterion name="depth">
+      <description>Análise deve ir além do óbvio</description>
+      <requirement>Pelo menos 1 insight de terceira ordem</requirement>
+    </criterion>
+    <criterion name="balance">
+      <description>Controvérsias devem ser equilibradas</description>
+      <requirement>Ambas posições com evidências equivalentes</requirement>
+    </criterion>
+    <criterion name="actionability">
+      <description>Desafios devem ter propostas de solução</description>
+      <requirement>Cada desafio com pelo menos 1 proposta</requirement>
+    </criterion>
+    <criterion name="citation">
+      <description>Todo insight/controvérsia deve ser citado</description>
+      <requirement>100% de claims com citação</requirement>
+    </criterion>
+  </quality_criteria>
+</workflow>

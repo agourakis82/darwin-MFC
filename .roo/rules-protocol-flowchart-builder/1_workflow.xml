@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow>
+  <overview>
+    <title>Protocol Flowchart Builder - Workflow Pipeline</title>
+    <description>
+      Pipeline SOTA++ para conversão de protocolos clínicos textuais
+      em flowcharts interativos com suporte i18n.
+    </description>
+  </overview>
+
+  <pipeline>
+    <phase name="analysis" order="1">
+      <title>Fase de Análise</title>
+      <description>Analisar protocolo fonte e identificar estrutura</description>
+      <steps>
+        <step>Obter documento do protocolo (guideline SUS, sociedade médica)</step>
+        <step>Identificar pontos de decisão (se/então)</step>
+        <step>Mapear fluxo de ações sequenciais</step>
+        <step>Identificar endpoints (diagnósticos, tratamentos, encaminhamentos)</step>
+        <step>Extrair citações e níveis de evidência</step>
+      </steps>
+      <protocol_elements>
+        <element type="decision">Ponto de decisão binário ou múltiplo</element>
+        <element type="action">Ação a ser executada</element>
+        <element type="assessment">Avaliação/coleta de dados</element>
+        <element type="endpoint">Resultado final do fluxo</element>
+        <element type="reference">Encaminhamento para outro nível</element>
+      </protocol_elements>
+    </phase>
+
+    <phase name="structure" order="2">
+      <title>Fase de Estruturação</title>
+      <description>Converter texto em estrutura de grafo</description>
+      <steps>
+        <step>Criar nós (nodes) para cada elemento identificado</step>
+        <step>Criar arestas (edges) conectando nós</step>
+        <step>Definir condições para cada aresta</step>
+        <step>Atribuir IDs únicos a cada nó</step>
+        <step>Validar completude do grafo (todos caminhos terminam)</step>
+      </steps>
+      <node_structure>
+        <![CDATA[
+{
+  id: "node-unique-id",
+  type: "decision" | "action" | "assessment" | "endpoint" | "reference",
+  content: {
+    pt: "Texto em português",
+    en: "Text in English",
+    // ... outros idiomas
+  },
+  position: { x: number, y: number },  // Para renderização
+  metadata: {
+    evidenceLevel?: "A" | "B" | "C" | "D",
+    citation?: string[]
+  }
+}
+        ]]>
+      </node_structure>
+      <edge_structure>
+        <![CDATA[
+{
+  id: "edge-unique-id",
+  source: "node-id-1",
+  target: "node-id-2",
+  condition: {
+    pt: "Sim" | "Não" | "Valor específico",
+    en: "Yes" | "No" | "Specific value"
+  },
+  type: "default" | "positive" | "negative"
+}
+        ]]>
+      </edge_structure>
+    </phase>
+
+    <phase name="localization" order="3">
+      <title>Fase de Localização</title>
+      <description>Traduzir conteúdo para 9 idiomas</description>
+      <steps>
+        <step>Traduzir conteúdo de cada nó</step>
+        <step>Traduzir condições de cada aresta</step>
+        <step>Adaptar terminologia médica por idioma</step>
+        <step>Verificar consistência terminológica</step>
+      </steps>
+      <locales>pt, en, es, fr, ru, ar, zh, el, hi</locales>
+    </phase>
+
+    <phase name="integration" order="4">
+      <title>Fase de Integração</title>
+      <description>Inserir flowchart no projeto</description>
+      <steps>
+        <step>Adicionar estrutura a lib/data/protocolos-flowchart.ts</step>
+        <step>Adicionar traduções a lib/i18n/flowchart-translations.ts</step>
+        <step>Criar/atualizar página em app/[locale]/protocolos/flowchart/[id]</step>
+        <step>Verificar build e renderização</step>
+      </steps>
+      <files>
+        <file>lib/data/protocolos-flowchart.ts</file>
+        <file>lib/i18n/flowchart-translations.ts</file>
+        <file>app/[locale]/protocolos/flowchart/[id]/page.tsx</file>
+      </files>
+    </phase>
+
+    <phase name="validation" order="5">
+      <title>Fase de Validação</title>
+      <description>Verificar completude e correção do flowchart</description>
+      <steps>
+        <step>Verificar todos caminhos terminam em endpoint</step>
+        <step>Verificar não há nós órfãos</step>
+        <step>Validar citações existem</step>
+        <step>Testar navegação interativa</step>
+        <step>Validar traduções em todos idiomas</step>
+      </steps>
+    </phase>
+  </pipeline>
+</workflow>

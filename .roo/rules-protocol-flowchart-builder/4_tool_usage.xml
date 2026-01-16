@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool_usage>
+  <overview>
+    <title>Protocol Flowchart Builder - Tool Usage</title>
+    <description>
+      Estratégias de ferramentas para criação de flowcharts.
+    </description>
+  </overview>
+
+  <file_operations>
+    <key_files>
+      <file>lib/data/protocolos-flowchart.ts</file>
+      <file>lib/i18n/flowchart-translations.ts</file>
+      <file>app/[locale]/protocolos/flowchart/[id]/page.tsx</file>
+    </key_files>
+
+    <workflow>
+      <step order="1">
+        <action>Ler estrutura existente</action>
+        <command>Read lib/data/protocolos-flowchart.ts</command>
+        <purpose>Entender padrão e evitar duplicação</purpose>
+      </step>
+      <step order="2">
+        <action>Analisar protocolo fonte</action>
+        <command>WebFetch URL do guideline</command>
+        <purpose>Extrair estrutura de decisões</purpose>
+      </step>
+      <step order="3">
+        <action>Criar estrutura de flowchart</action>
+        <process>Mapear nodes e edges</process>
+      </step>
+      <step order="4">
+        <action>Traduzir conteúdo</action>
+        <command>Usar Polyglot Medical Translator skill</command>
+      </step>
+      <step order="5">
+        <action>Integrar ao projeto</action>
+        <command>Edit lib/data/protocolos-flowchart.ts</command>
+      </step>
+      <step order="6">
+        <action>Verificar renderização</action>
+        <command>npm run dev e navegar para /protocolos/flowchart/{id}</command>
+      </step>
+    </workflow>
+  </file_operations>
+
+  <protocol_parsing>
+    <description>Estratégias para extrair estrutura de protocolos textuais</description>
+
+    <patterns>
+      <pattern name="if_then">
+        <regex>Se\s+(.+),\s+(então\s+)?(.+)</regex>
+        <creates>Decision node + edges</creates>
+      </pattern>
+      <pattern name="numbered_steps">
+        <regex>^\d+\.\s+(.+)</regex>
+        <creates>Action nodes sequenciais</creates>
+      </pattern>
+      <pattern name="criteria">
+        <regex>(Critérios?|Indicaç[ãõ][oe]s?):?\s*(.+)</regex>
+        <creates>Assessment node</creates>
+      </pattern>
+      <pattern name="referral">
+        <regex>(Encaminhar|Referir)\s+(para\s+)?(.+)</regex>
+        <creates>Reference node</creates>
+      </pattern>
+    </patterns>
+
+    <prompt_template>
+      <![CDATA[
+Analyze this clinical protocol and extract the decision tree structure:
+
+{protocol_text}
+
+For each element, identify:
+1. Type (decision/action/assessment/endpoint/reference)
+2. Content (what the node says)
+3. Connections (what comes next, with conditions)
+4. Evidence level if mentioned
+
+Return as structured JSON with nodes and edges.
+      ]]>
+    </prompt_template>
+  </protocol_parsing>
+
+  <validation_checks>
+    <check name="completeness">
+      <description>Verificar todos caminhos terminam</description>
+      <algorithm>
+        <![CDATA[
+function validateCompleteness(flowchart) {
+  const nodeMap = new Map(flowchart.nodes.map(n => [n.id, n]));
+  const outgoingEdges = new Map();
+
+  flowchart.edges.forEach(e => {
+    if (!outgoingEdges.has(e.source)) {
+      outgoingEdges.set(e.source, []);
+    }
+    outgoingEdges.get(e.source).push(e.target);
+  });
+
+  flowchart.nodes.forEach(node => {
+    if (node.type !== 'endpoint' && node.type !== 'reference') {
+      if (!outgoingEdges.has(node.id) || outgoingEdges.get(node.id).length === 0) {
+        throw new Error(`Dead end at node: ${node.id}`);
+      }
+    }
+  });
+}
+        ]]>
+      </algorithm>
+    </check>
+
+    <check name="orphans">
+      <description>Verificar não há nós sem entrada (exceto start)</description>
+    </check>
+
+    <check name="translations">
+      <description>Verificar traduções completas</description>
+      <locales>pt, en, es, fr, ru, ar, zh, el, hi</locales>
+    </check>
+  </validation_checks>
+
+  <rendering_test>
+    <description>Testar renderização do flowchart</description>
+    <steps>
+      <step>npm run dev</step>
+      <step>Navegar para /pt/protocolos/flowchart/{id}</step>
+      <step>Verificar todos nós visíveis</step>
+      <step>Testar interação (clique nos nós)</step>
+      <step>Mudar idioma e verificar traduções</step>
+      <step>Testar em mobile</step>
+    </steps>
+  </rendering_test>
+</tool_usage>

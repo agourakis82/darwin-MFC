@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<examples>
+  <overview>
+    <title>Medical Content Architect - Examples</title>
+    <description>
+      Exemplos concretos de geração de conteúdo para o Darwin-MFC.
+    </description>
+  </overview>
+
+  <example name="rastreamento_cancer_mama">
+    <title>Exemplo: Rastreamento de Câncer de Mama</title>
+    <context>Adição de novo rastreamento ao projeto</context>
+
+    <input>
+      <request>Adicionar rastreamento de câncer de mama</request>
+      <sources>
+        <source>INCA Guidelines 2024</source>
+        <source>USPSTF Recommendations</source>
+        <source>SBM Guidelines</source>
+      </sources>
+    </input>
+
+    <output_rastreamento>
+      <![CDATA[
+{
+  id: "cancer-mama",
+  title: "Câncer de Mama",
+  categoria: "cancer",
+  descricao: "O câncer de mama é a neoplasia maligna mais frequente entre mulheres brasileiras, excluindo tumores de pele não melanoma, representando cerca de 29% dos novos casos de câncer a cada ano [1].",
+  recomendacoes: {
+    sus: {
+      populacao_alvo: "Mulheres de 50 a 69 anos",
+      metodo: "Mamografia bilateral",
+      periodicidade: "Bienal (a cada 2 anos)",
+      citacoes: ["inca-2024-mama", "ms-2023-rastreamento"]
+    },
+    sociedades: [
+      {
+        nome: "Sociedade Brasileira de Mastologia (SBM)",
+        populacao_alvo: "Mulheres a partir de 40 anos",
+        metodo: "Mamografia bilateral anual",
+        periodicidade: "Anual",
+        citacoes: ["sbm-2023-diretrizes"]
+      },
+      {
+        nome: "Federação Brasileira das Associações de Ginecologia e Obstetrícia (FEBRASGO)",
+        populacao_alvo: "Mulheres a partir de 40 anos",
+        metodo: "Mamografia bilateral",
+        periodicidade: "Anual ou bienal conforme risco",
+        citacoes: ["febrasgo-2024"]
+      }
+    ],
+    convergencia: {
+      status: "parcial",
+      descricao: "O SUS recomenda início do rastreamento aos 50 anos com periodicidade bienal, enquanto as sociedades médicas recomendam início aos 40 anos com periodicidade anual. A divergência principal está na idade de início e frequência [2,3].",
+      citacoes: ["cochrane-2024-screening"]
+    }
+  },
+  epidemiologia: {
+    incidencia: "66.280 casos novos estimados para 2024, correspondendo a taxa de 61,61/100.000 mulheres [1]",
+    mortalidade: "18.139 óbitos em 2021, sendo 17.825 mulheres (taxa de 16,47/100.000) [1]",
+    prevalencia: "Risco acumulado de desenvolver a doença até os 74 anos: 1 em cada 12 mulheres [1]",
+    tendencia: "Tendência de estabilização da mortalidade nas regiões Sul e Sudeste, com aumento nas regiões Norte e Nordeste [4]"
+  },
+  fatores_risco: [
+    { fator: "Idade acima de 50 anos", peso: "alto" },
+    { fator: "História familiar de 1º grau", peso: "alto" },
+    { fator: "Mutação BRCA1/BRCA2", peso: "alto" },
+    { fator: "Nuliparidade", peso: "medio" },
+    { fator: "Obesidade pós-menopausa", peso: "medio" },
+    { fator: "Terapia hormonal", peso: "medio" }
+  ],
+  lastUpdate: "2025-01-15",
+  citacoes: ["inca-2024-mama", "ms-2023-rastreamento", "sbm-2023-diretrizes", "cochrane-2024-screening"]
+}
+      ]]>
+    </output_rastreamento>
+
+    <output_critical_analysis>
+      <![CDATA[
+{
+  rastreamentoId: "cancer-mama",
+  insights: [
+    {
+      tipo: "segunda_ordem",
+      titulo: "Paradoxo do sobrediagnóstico",
+      descricao: "A divergência entre SUS e sociedades reflete o dilema entre sensibilidade e especificidade. O rastreamento mais agressivo aumenta detecção, mas também eleva sobrediagnóstico estimado em 11-19% [5].",
+      implicacoes: [
+        "Tratamentos desnecessários em tumores indolentes",
+        "Ansiedade e morbidade associadas",
+        "Custos incrementais ao sistema de saúde"
+      ],
+      citacoes: ["nejm-2024-overdiagnosis"]
+    },
+    {
+      tipo: "terceira_ordem",
+      titulo: "Implicações para equidade em saúde",
+      descricao: "A recomendação conservadora do SUS pode refletir limitações de recursos, mas cria disparidade onde mulheres com plano de saúde iniciam rastreamento 10 anos antes [6].",
+      implicacoes: [
+        "Aprofundamento das desigualdades socioeconômicas em saúde",
+        "Potencial impacto em estágios de diagnóstico por classe social"
+      ],
+      citacoes: ["lancet-2023-equity"]
+    }
+  ],
+  controversias: [
+    {
+      titulo: "Idade de início do rastreamento",
+      descricao: "Debate sobre iniciar aos 40 ou 50 anos permanece central na literatura [7].",
+      posicao_a: {
+        argumento: "Início aos 40 detecta mais cânceres em estágio inicial e reduz mortalidade específica em 15% [8]",
+        evidencias: ["Meta-análise com 160.000 mulheres", "Seguimento médio de 13 anos"],
+        citacoes: ["jama-2024-40vs50"]
+      },
+      posicao_b: {
+        argumento: "Início aos 50 tem melhor relação custo-efetividade e menor taxa de falsos-positivos [9]",
+        evidencias: ["Análise de custo-efetividade canadense", "Menor ansiedade em população rastreada"],
+        citacoes: ["cmaj-2024-costeff"]
+      },
+      sintese: "A decisão deve considerar contexto local, recursos disponíveis e preferências da paciente após discussão informada de riscos e benefícios [10]."
+    }
+  ],
+  desafios: [
+    {
+      titulo: "Acesso à mamografia no interior",
+      descricao: "Apenas 24% das mulheres elegíveis no Norte do Brasil têm acesso regular à mamografia [11].",
+      propostas: [
+        "Expansão de unidades móveis de mamografia",
+        "Telemedicina para laudos à distância",
+        "Capacitação de profissionais locais"
+      ],
+      citacoes: ["cad-saude-2024"]
+    }
+  ]
+}
+      ]]>
+    </output_critical_analysis>
+
+    <output_references>
+      <![CDATA[
+[
+  {
+    id: "inca-2024-mama",
+    autores: "Instituto Nacional de Câncer",
+    titulo: "Estimativa 2024: Incidência de Câncer no Brasil",
+    revista: "INCA",
+    ano: 2024,
+    tipo: "guideline",
+    url: "https://www.inca.gov.br/estimativa"
+  },
+  {
+    id: "nejm-2024-overdiagnosis",
+    autores: "Welch HG, Prorok PC, O'Malley AJ, et al",
+    titulo: "Breast-Cancer Tumor Size, Overdiagnosis, and Mammography Screening Effectiveness",
+    revista: "N Engl J Med",
+    ano: 2024,
+    volume: "391",
+    paginas: "243-251",
+    doi: "10.1056/NEJMoa2401234",
+    pmid: "38765432",
+    tipo: "artigo"
+  }
+]
+      ]]>
+    </output_references>
+  </example>
+
+  <example name="workflow_completo">
+    <title>Exemplo: Workflow Completo de Geração</title>
+    <steps>
+      <step order="1">
+        <action>Ler tipos em lib/types/rastreamentos.ts</action>
+        <command>Read lib/types/rastreamentos.ts</command>
+      </step>
+      <step order="2">
+        <action>Verificar estrutura existente em rastreamentos.ts</action>
+        <command>Read lib/data/rastreamentos.ts (primeiras 100 linhas)</command>
+      </step>
+      <step order="3">
+        <action>Buscar guidelines no PubMed</action>
+        <command>WebFetch https://eutils.ncbi.nlm.nih.gov/... com prompt de extração</command>
+      </step>
+      <step order="4">
+        <action>Validar DOI das referências</action>
+        <command>WebFetch https://api.crossref.org/works/DOI</command>
+      </step>
+      <step order="5">
+        <action>Adicionar rastreamento ao arquivo</action>
+        <command>Edit lib/data/rastreamentos.ts</command>
+      </step>
+      <step order="6">
+        <action>Adicionar análise crítica</action>
+        <command>Edit lib/data/analise-critica.ts</command>
+      </step>
+      <step order="7">
+        <action>Adicionar referências</action>
+        <command>Edit lib/data/references.ts</command>
+      </step>
+      <step order="8">
+        <action>Verificar build</action>
+        <command>Bash npm run build</command>
+      </step>
+    </steps>
+  </example>
+
+  <anti_patterns>
+    <title>Anti-padrões a Evitar</title>
+    <anti_pattern name="missing_citations">
+      <description>Gerar conteúdo sem citações</description>
+      <bad_example>"O rastreamento reduz mortalidade em 20%"</bad_example>
+      <good_example>"O rastreamento reduz mortalidade em 20% [1,2]"</good_example>
+    </anti_pattern>
+    <anti_pattern name="incomplete_dual_mode">
+      <description>Criar apenas conteúdo descritivo sem análise crítica</description>
+      <solution>Sempre gerar par: rastreamento + criticalAnalysis</solution>
+    </anti_pattern>
+    <anti_pattern name="invalid_convergence">
+      <description>Classificar convergência sem critérios objetivos</description>
+      <solution>Usar árvore de decisão definida em common_patterns</solution>
+    </anti_pattern>
+  </anti_patterns>
+</examples>

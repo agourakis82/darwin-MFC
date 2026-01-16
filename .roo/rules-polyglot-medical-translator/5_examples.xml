@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<examples>
+  <overview>
+    <title>Polyglot Medical Translator - Examples</title>
+    <description>
+      Exemplos de tradução médica multilíngue para o Darwin-MFC.
+    </description>
+  </overview>
+
+  <example name="disease_translation">
+    <title>Exemplo: Traduzir Doença para Todos os Idiomas</title>
+    <context>Adicionar tradução de "Diabetes Mellitus Tipo 2"</context>
+
+    <source locale="pt">
+      <![CDATA[
+{
+  id: "diabetes-tipo-2",
+  nome: "Diabetes Mellitus Tipo 2",
+  nomePopular: ["Diabetes do adulto", "Diabetes não insulinodependente"],
+  definicao: "Distúrbio metabólico caracterizado por hiperglicemia crônica...",
+  cid10: "E11.9",
+  ciap2: "T90"
+}
+      ]]>
+    </source>
+
+    <translations>
+      <translation locale="en">
+        <![CDATA[
+{
+  id: "diabetes-tipo-2",
+  name: "Type 2 Diabetes Mellitus",
+  popularNames: ["Adult-onset diabetes", "Non-insulin-dependent diabetes"],
+  definition: "A metabolic disorder characterized by chronic hyperglycemia...",
+  icd10: "E11.9",  // Preserved
+  icpc2: "T90"     // Preserved
+}
+        ]]>
+      </translation>
+
+      <translation locale="es">
+        <![CDATA[
+{
+  id: "diabetes-tipo-2",
+  name: "Diabetes Mellitus Tipo 2",
+  popularNames: ["Diabetes del adulto", "Diabetes no insulinodependiente"],
+  definition: "Trastorno metabólico caracterizado por hiperglucemia crónica...",
+  icd10: "E11.9",
+  icpc2: "T90"
+}
+        ]]>
+      </translation>
+
+      <translation locale="ar">
+        <![CDATA[
+{
+  id: "diabetes-tipo-2",
+  name: "داء السكري من النوع الثاني",
+  popularNames: ["سكري البالغين", "السكري غير المعتمد على الأنسولين"],
+  definition: "اضطراب أيضي يتميز بارتفاع مزمن في نسبة السكر في الدم...",
+  icd10: "E11.9",
+  icpc2: "T90"
+}
+        ]]>
+      </translation>
+
+      <translation locale="zh">
+        <![CDATA[
+{
+  id: "diabetes-tipo-2",
+  name: "2型糖尿病",
+  popularNames: ["成人型糖尿病", "非胰岛素依赖型糖尿病"],
+  definition: "一种以慢性高血糖为特征的代谢紊乱...",
+  icd10: "E11.9",
+  icpc2: "T90"
+}
+        ]]>
+      </translation>
+
+      <translation locale="hi">
+        <![CDATA[
+{
+  id: "diabetes-tipo-2",
+  name: "टाइप 2 मधुमेह",
+  popularNames: ["वयस्क मधुमेह", "गैर-इंसुलिन निर्भर मधुमेह"],
+  definition: "एक चयापचय विकार जो पुरानी hyperglycemia द्वारा विशेषता है...",
+  icd10: "E11.9",
+  icpc2: "T90"
+}
+        ]]>
+      </translation>
+    </translations>
+
+    <notes>
+      <note>ICD-10 (E11.9) e CIAP2 (T90) preservados em todos os idiomas</note>
+      <note>Termos populares adaptados culturalmente</note>
+      <note>Árabe usa direção RTL</note>
+    </notes>
+  </example>
+
+  <example name="ui_translation">
+    <title>Exemplo: Traduzir Strings de UI</title>
+    <context>Adicionar tradução da página de rastreamentos</context>
+
+    <source file="messages/pt/screening.json">
+      <![CDATA[
+{
+  "title": "Rastreamentos de Saúde",
+  "subtitle": "Compare recomendações oficiais e de sociedades médicas",
+  "filters": {
+    "all": "Todos",
+    "convergent": "Convergentes",
+    "partial": "Parciais",
+    "divergent": "Divergentes"
+  },
+  "results": "{count, plural, =0 {Nenhum rastreamento encontrado} one {# rastreamento} other {# rastreamentos}}"
+}
+      ]]>
+    </source>
+
+    <target file="messages/en/screening.json">
+      <![CDATA[
+{
+  "title": "Health Screenings",
+  "subtitle": "Compare official and medical society recommendations",
+  "filters": {
+    "all": "All",
+    "convergent": "Convergent",
+    "partial": "Partial",
+    "divergent": "Divergent"
+  },
+  "results": "{count, plural, =0 {No screenings found} one {# screening} other {# screenings}}"
+}
+      ]]>
+    </target>
+
+    <target file="messages/ar/screening.json">
+      <![CDATA[
+{
+  "title": "فحوصات الصحة",
+  "subtitle": "قارن التوصيات الرسمية وتوصيات الجمعيات الطبية",
+  "filters": {
+    "all": "الكل",
+    "convergent": "متوافقة",
+    "partial": "جزئية",
+    "divergent": "متباينة"
+  },
+  "results": "{count, plural, =0 {لم يتم العثور على فحوصات} one {فحص واحد} two {فحصان} few {# فحوصات} many {# فحصاً} other {# فحص}}"
+}
+      ]]>
+    </target>
+
+    <notes>
+      <note>Placeholder {count} preservado</note>
+      <note>Regras de plural adaptadas para cada idioma</note>
+      <note>Árabe tem 6 formas de plural</note>
+    </notes>
+  </example>
+
+  <example name="wikidata_query">
+    <title>Exemplo: Buscar Tradução via Wikidata</title>
+    <context>Validar tradução de termo médico</context>
+
+    <query>
+      <![CDATA[
+# Buscar traduções de "hypertension" em múltiplos idiomas
+SELECT ?item ?label_pt ?label_en ?label_ar ?label_zh WHERE {
+  ?item wdt:P31 wd:Q12136.  # instance of disease
+  ?item wdt:P493 "I10".     # ICD-10 code for hypertension
+  OPTIONAL { ?item rdfs:label ?label_pt. FILTER(LANG(?label_pt) = "pt") }
+  OPTIONAL { ?item rdfs:label ?label_en. FILTER(LANG(?label_en) = "en") }
+  OPTIONAL { ?item rdfs:label ?label_ar. FILTER(LANG(?label_ar) = "ar") }
+  OPTIONAL { ?item rdfs:label ?label_zh. FILTER(LANG(?label_zh) = "zh") }
+}
+LIMIT 1
+      ]]>
+    </query>
+
+    <expected_result>
+      <![CDATA[
+{
+  "item": "Q41861",
+  "label_pt": "hipertensão arterial",
+  "label_en": "hypertension",
+  "label_ar": "فرط ضغط الدم",
+  "label_zh": "高血压"
+}
+      ]]>
+    </expected_result>
+  </example>
+
+  <example name="medication_translation">
+    <title>Exemplo: Traduzir Medicamento</title>
+    <context>Adicionar metformina ao glossário multilíngue</context>
+
+    <entry>
+      <![CDATA[
+// lib/i18n/medication-mappings.ts
+export const medicationMappings = {
+  // ... existing entries
+  "metformina": {
+    dci: "Metformin",        // International Nonproprietary Name
+    atc: "A10BA02",          // ATC code preserved
+    translations: {
+      pt: {
+        name: "Metformina",
+        brandNames: ["Glifage", "Glucoformin"],
+        class: "Antidiabético oral"
+      },
+      en: {
+        name: "Metformin",
+        brandNames: ["Glucophage", "Fortamet"],
+        class: "Oral antidiabetic"
+      },
+      es: {
+        name: "Metformina",
+        brandNames: ["Glucophage", "Dianben"],
+        class: "Antidiabético oral"
+      },
+      ar: {
+        name: "ميتفورمين",
+        brandNames: ["جلوكوفاج"],
+        class: "مضاد السكري الفموي"
+      },
+      zh: {
+        name: "二甲双胍",
+        brandNames: ["格华止"],
+        class: "口服降糖药"
+      }
+    }
+  }
+};
+      ]]>
+    </entry>
+
+    <notes>
+      <note>DCI (Metformin) é o identificador universal</note>
+      <note>Código ATC (A10BA02) preservado</note>
+      <note>Nomes comerciais localizados por mercado</note>
+    </notes>
+  </example>
+
+  <anti_patterns>
+    <anti_pattern name="literal_translation">
+      <description>Tradução literal sem considerar contexto médico</description>
+      <bad_example>
+        <pt>Rastreamento</pt>
+        <en_wrong>Tracking (errado - significa rastreio de localização)</en_wrong>
+        <en_correct>Screening (correto - termo médico)</en_correct>
+      </bad_example>
+    </anti_pattern>
+
+    <anti_pattern name="code_translation">
+      <description>Traduzir códigos de ontologia</description>
+      <bad_example>
+        <pt>CID-10: E11.9</pt>
+        <en_wrong>ICD-10: E-eleven-point-nine</en_wrong>
+        <en_correct>ICD-10: E11.9 (código preservado)</en_correct>
+      </bad_example>
+    </anti_pattern>
+
+    <anti_pattern name="inconsistent_terms">
+      <description>Usar traduções diferentes para mesmo termo</description>
+      <bad_example>
+        Arquivo 1: "screening" → "tamizaje"
+        Arquivo 2: "screening" → "cribado"
+      </bad_example>
+      <solution>Usar glossário centralizado</solution>
+    </anti_pattern>
+  </anti_patterns>
+</examples>

@@ -1,4 +1,5 @@
 import { Citation } from './references';
+import { ScreeningOntologyMapping } from './ontologies';
 
 export type ConvergenciaStatus = 'convergencia' | 'parcial' | 'divergencia' | 'em_disputa';
 
@@ -47,5 +48,6 @@ export interface Rastreamento {
     citations: Citation[];
   };
   lastUpdate: string; // Data da última atualização da diretriz SUS (ex: "2025-11")
+  ontologies?: ScreeningOntologyMapping; // Mapeamento de ontologias médicas (ICD-10, LOINC, SNOMED-CT, etc.)
 }
 

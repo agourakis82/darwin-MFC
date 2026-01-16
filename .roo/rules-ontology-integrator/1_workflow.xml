@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow>
+  <overview>
+    <title>Ontology Integrator - Workflow Pipeline</title>
+    <description>
+      Pipeline SOTA++ para integração e validação de ontologias médicas
+      (LOINC, HPO, ORDO, PharmGKB, SNOMED-CT, ICD-10, CIAP2).
+    </description>
+  </overview>
+
+  <supported_ontologies>
+    <ontology code="LOINC" name="Logical Observation Identifiers Names and Codes">
+      <purpose>Códigos de exames laboratoriais</purpose>
+      <api>https://fhir.loinc.org/</api>
+    </ontology>
+    <ontology code="HPO" name="Human Phenotype Ontology">
+      <purpose>Fenótipos humanos e sintomas</purpose>
+      <api>https://hpo.jax.org/api/</api>
+    </ontology>
+    <ontology code="ORDO" name="Orphanet Rare Disease Ontology">
+      <purpose>Doenças raras</purpose>
+      <api>https://www.orpha.net/</api>
+    </ontology>
+    <ontology code="PharmGKB" name="Pharmacogenomics Knowledge Base">
+      <purpose>Farmacogenômica</purpose>
+      <api>https://api.pharmgkb.org/</api>
+    </ontology>
+    <ontology code="ICD-10" name="International Classification of Diseases">
+      <purpose>Classificação de doenças</purpose>
+      <api>https://icd.who.int/icdapi</api>
+    </ontology>
+    <ontology code="CIAP2" name="Classificação Internacional de Atenção Primária">
+      <purpose>Classificação para APS</purpose>
+    </ontology>
+    <ontology code="SNOMED-CT" name="Systematized Nomenclature of Medicine">
+      <purpose>Terminologia clínica abrangente</purpose>
+    </ontology>
+  </supported_ontologies>
+
+  <pipeline>
+    <phase name="identification" order="1">
+      <title>Fase de Identificação</title>
+      <description>Identificar entidades que precisam de códigos</description>
+      <steps>
+        <step>Analisar arquivos de dados (doenças, medicamentos, exames)</step>
+        <step>Identificar entidades sem código de ontologia</step>
+        <step>Identificar entidades com códigos potencialmente incorretos</step>
+        <step>Mapear cobertura atual de ontologias</step>
+      </steps>
+      <outputs>
+        <output>Lista de entidades sem código</output>
+        <output>Lista de códigos a validar</output>
+        <output>Relatório de cobertura</output>
+      </outputs>
+    </phase>
+
+    <phase name="lookup" order="2">
+      <title>Fase de Busca</title>
+      <description>Buscar códigos nas ontologias relevantes</description>
+      <steps>
+        <step>Para doenças: buscar ICD-10, CIAP2, ORDO (se rara), HPO</step>
+        <step>Para exames: buscar LOINC</step>
+        <step>Para medicamentos: buscar ATC, PharmGKB</step>
+        <step>Validar códigos encontrados</step>
+      </steps>
+      <strategies>
+        <strategy entity="doenca">
+          <primary>ICD-10</primary>
+          <secondary>CIAP2</secondary>
+          <tertiary>ORDO (doenças raras)</tertiary>
+          <phenotypes>HPO</phenotypes>
+        </strategy>
+        <strategy entity="exame">
+          <primary>LOINC</primary>
+        </strategy>
+        <strategy entity="medicamento">
+          <primary>ATC</primary>
+          <pharmacogenomics>PharmGKB</pharmacogenomics>
+        </strategy>
+      </strategies>
+    </phase>
+
+    <phase name="validation" order="3">
+      <title>Fase de Validação</title>
+      <description>Validar códigos contra APIs oficiais</description>
+      <steps>
+        <step>Verificar código existe na ontologia</step>
+        <step>Confirmar descrição corresponde à entidade</step>
+        <step>Verificar hierarquia/relacionamentos</step>
+        <step>Documentar fonte do código</step>
+      </steps>
+      <api_calls>
+        <call ontology="LOINC">
+          <url>https://fhir.loinc.org/CodeSystem/$lookup?code={code}</url>
+        </call>
+        <call ontology="HPO">
+          <url>https://hpo.jax.org/api/hpo/term/{code}</url>
+        </call>
+      </api_calls>
+    </phase>
+
+    <phase name="integration" order="4">
+      <title>Fase de Integração</title>
+      <description>Inserir códigos nos arquivos de dados</description>
+      <steps>
+        <step>Adicionar códigos às entidades</step>
+        <step>Atualizar arquivos de ontologia em lib/utils/ontologies/</step>
+        <step>Criar linkagens entre entidades</step>
+        <step>Verificar integridade referencial</step>
+      </steps>
+      <files>
+        <file>lib/data/doencas/*.ts</file>
+        <file>lib/data/medicamentos/*.ts</file>
+        <file>lib/utils/ontologies/loinc.ts</file>
+        <file>lib/utils/ontologies/pharmgkb.ts</file>
+      </files>
+    </phase>
+
+    <phase name="verification" order="5">
+      <title>Fase de Verificação</title>
+      <description>Verificar integração e consistência</description>
+      <steps>
+        <step>Executar npm run verify para validação de ontologias</step>
+        <step>Verificar build passa</step>
+        <step>Gerar relatório de cobertura atualizado</step>
+      </steps>
+    </phase>
+  </pipeline>
+</workflow>

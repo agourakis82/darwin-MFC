@@ -1934,6 +1934,88 @@ export const protocoloEstratificacaoRisco: Protocolo = {
 };
 
 // =============================================================================
+// PROTOCOLO: RASTREAMENTO DO CÂNCER COLORRETAL
+// =============================================================================
+
+const colorectalNodes: ProtocolNode[] = [
+  { id: 'ccr-start', type: 'custom', position: { x: 400, y: 0 }, data: { label: 'Início', description: 'Paciente 45+ anos sem sintomas', nodeType: 'start', ciap2: 'D80', cid10: 'Z12.3' } },
+  { id: 'ccr-idade', type: 'custom', position: { x: 400, y: 100 }, data: { label: 'Idade ≥45 anos?', nodeType: 'decision' } },
+  { id: 'ccr-risco', type: 'custom', position: { x: 400, y: 200 }, data: { label: 'Avaliar Fatores de Risco', description: 'História familiar, DII, polipose', nodeType: 'assessment' } },
+  { id: 'ccr-alto-risco', type: 'custom', position: { x: 200, y: 300 }, data: { label: 'Alto Risco', description: 'Familiar 1º grau <60 anos', nodeType: 'alert', alertLevel: 'high' } },
+  { id: 'ccr-risco-medio', type: 'custom', position: { x: 400, y: 300 }, data: { label: 'Risco Médio', nodeType: 'info' } },
+  { id: 'ccr-metodo', type: 'custom', position: { x: 400, y: 400 }, data: { label: 'Escolher Método', description: 'FIT anual ou Colonoscopia', nodeType: 'decision' } },
+  { id: 'ccr-fit', type: 'custom', position: { x: 200, y: 500 }, data: { label: 'Realizar FIT', description: 'Teste Imunoquímico Fecal', nodeType: 'action', exams: ['FIT'] } },
+  { id: 'ccr-colonoscopia', type: 'custom', position: { x: 600, y: 500 }, data: { label: 'Colonoscopia', description: 'Padrão-ouro', nodeType: 'action', exams: ['Colonoscopia'] } },
+  { id: 'ccr-fit-pos', type: 'custom', position: { x: 200, y: 600 }, data: { label: 'FIT Positivo?', nodeType: 'decision' } },
+  { id: 'ccr-colon-achados', type: 'custom', position: { x: 600, y: 600 }, data: { label: 'Achados?', nodeType: 'decision' } },
+  { id: 'ccr-normal', type: 'custom', position: { x: 400, y: 700 }, data: { label: 'Normal', description: 'Repetir em 10 anos', nodeType: 'end' } },
+  { id: 'ccr-adenoma', type: 'custom', position: { x: 600, y: 700 }, data: { label: 'Adenoma', description: 'Polipectomia + vigilância', nodeType: 'action' } },
+  { id: 'ccr-cancer', type: 'custom', position: { x: 800, y: 700 }, data: { label: 'Câncer Suspeito', description: 'Referir oncologia', nodeType: 'alert', alertLevel: 'critical' } },
+  { id: 'ccr-fit-neg', type: 'custom', position: { x: 100, y: 700 }, data: { label: 'FIT Negativo', description: 'Repetir em 1 ano', nodeType: 'end' } },
+];
+
+const colorectalEdges: ProtocolEdge[] = [
+  { id: 'e-ccr-1', source: 'ccr-start', target: 'ccr-idade' },
+  { id: 'e-ccr-2', source: 'ccr-idade', target: 'ccr-risco', sourceHandle: 'yes', label: 'Sim' },
+  { id: 'e-ccr-3', source: 'ccr-risco', target: 'ccr-alto-risco', label: 'Alto' },
+  { id: 'e-ccr-4', source: 'ccr-risco', target: 'ccr-risco-medio', label: 'Médio' },
+  { id: 'e-ccr-5', source: 'ccr-alto-risco', target: 'ccr-colonoscopia' },
+  { id: 'e-ccr-6', source: 'ccr-risco-medio', target: 'ccr-metodo' },
+  { id: 'e-ccr-7', source: 'ccr-metodo', target: 'ccr-fit', label: 'FIT' },
+  { id: 'e-ccr-8', source: 'ccr-metodo', target: 'ccr-colonoscopia', label: 'Colonoscopia' },
+  { id: 'e-ccr-9', source: 'ccr-fit', target: 'ccr-fit-pos' },
+  { id: 'e-ccr-10', source: 'ccr-fit-pos', target: 'ccr-fit-neg', sourceHandle: 'no', label: 'Não' },
+  { id: 'e-ccr-11', source: 'ccr-fit-pos', target: 'ccr-colonoscopia', sourceHandle: 'yes', label: 'Sim' },
+  { id: 'e-ccr-12', source: 'ccr-colonoscopia', target: 'ccr-colon-achados' },
+  { id: 'e-ccr-13', source: 'ccr-colon-achados', target: 'ccr-normal', label: 'Normal' },
+  { id: 'e-ccr-14', source: 'ccr-colon-achados', target: 'ccr-adenoma', label: 'Adenoma' },
+  { id: 'e-ccr-15', source: 'ccr-colon-achados', target: 'ccr-cancer', label: 'Câncer' },
+];
+
+export const protocoloColorectal: Protocolo = {
+  id: 'colorectal-screening',
+  titulo: 'Rastreamento do Câncer Colorretal',
+  subtitulo: 'Protocolo de Rastreamento Populacional',
+  categoria: 'preventivo',
+  complexidade: 'intermediario',
+  versao: '2026.1',
+  ultimaAtualizacao: '2026-01',
+  fonte: 'SBCP, SBCO, USPSTF 2021',
+  ciap2: ['D80', 'D94'],
+  cid10: ['C18', 'C19', 'C20', 'Z12.3'],
+  descricao: 'Protocolo para rastreamento do câncer colorretal na APS, incluindo estratificação de risco, seleção de métodos (FIT, colonoscopia) e conduta conforme achados.',
+  objetivos: [
+    'Detectar câncer colorretal precocemente',
+    'Identificar e remover adenomas pré-malignos',
+    'Estratificar risco individual',
+    'Reduzir mortalidade por CCR',
+  ],
+  populacaoAlvo: 'Adultos 45+ anos sem sintomas (risco médio); 40+ ou 10 anos antes do caso familiar (alto risco)',
+  nodes: colorectalNodes,
+  edges: colorectalEdges,
+  criteriosInclusao: [
+    'Idade ≥45 anos sem rastreamento prévio',
+    'História familiar de CCR em 1º grau',
+    'Seguimento de achados prévios',
+  ],
+  sinaisAlerta: [
+    'Sangramento nas fezes',
+    'Anemia ferropriva sem causa',
+    'Mudança do hábito intestinal >4 semanas',
+    'Perda de peso inexplicada',
+  ],
+  encaminhamento: {
+    quando: ['FIT positivo', 'Câncer suspeito', 'Polipose múltipla', 'Adenoma >20mm'],
+    paraCQuem: 'Gastroenterologia / Cirurgia Oncológica',
+  },
+  referencias: ['SBCP Colorretal 2024', 'USPSTF Colorectal Cancer Screening 2021', 'Lei Preta Gil PL 4153/2025'],
+  doencasRelacionadas: ['cancer-colorretal'],
+  medicamentosRelacionados: [],
+  calculadorasRelacionadas: [],
+  tags: ['cancer', 'colorretal', 'rastreamento', 'preventivo', 'fit', 'colonoscopia'],
+};
+
+// =============================================================================
 // TODOS OS PROTOCOLOS
 // =============================================================================
 
@@ -1957,6 +2039,8 @@ export const todosProtocolosFlowchart: Protocolo[] = [
   protocoloHIVGestacao,
   protocoloSifilisGestacao,
   protocoloEstratificacaoRisco,
+  // Protocolos Preventivos
+  protocoloColorectal,
 ];
 
 // Função para buscar protocolo por ID

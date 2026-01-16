@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow>
+  <overview>
+    <title>Medical Content Architect - Workflow Pipeline</title>
+    <description>
+      Pipeline SOTA++ para geração de conteúdo médico estruturado seguindo
+      padrões Darwin-MFC com rigor acadêmico Q1.
+    </description>
+  </overview>
+
+  <pipeline>
+    <phase name="discovery" order="1">
+      <title>Fase de Descoberta</title>
+      <description>Análise inicial e coleta de informações</description>
+      <steps>
+        <step>Identificar tipo de conteúdo (rastreamento, doença, medicamento)</step>
+        <step>Localizar arquivos de dados existentes em lib/data/</step>
+        <step>Verificar tipos TypeScript em lib/types/</step>
+        <step>Identificar padrões de estrutura no arquivo alvo</step>
+        <step>Mapear referências existentes em lib/data/references.ts</step>
+      </steps>
+      <outputs>
+        <output>Lista de arquivos a modificar</output>
+        <output>Estrutura de dados esperada</output>
+        <output>Gap analysis de conteúdo</output>
+      </outputs>
+    </phase>
+
+    <phase name="research" order="2">
+      <title>Fase de Pesquisa</title>
+      <description>Coleta de evidências e guidelines</description>
+      <steps>
+        <step>Buscar guidelines oficiais (SUS, USPSTF, NHS, WHO)</step>
+        <step>Consultar PubMed API para citações relevantes</step>
+        <step>Validar DOIs via CrossRef API</step>
+        <step>Extrair dados epidemiológicos (incidência, mortalidade, prevalência)</step>
+        <step>Identificar pontos de convergência/divergência entre fontes</step>
+      </steps>
+      <api_integrations>
+        <api name="PubMed">
+          <endpoint>https://eutils.ncbi.nlm.nih.gov/entrez/eutils/</endpoint>
+          <usage>esearch.fcgi para busca, efetch.fcgi para metadados</usage>
+        </api>
+        <api name="CrossRef">
+          <endpoint>https://api.crossref.org/works/</endpoint>
+          <usage>Validação de DOIs e extração de metadados</usage>
+        </api>
+      </api_integrations>
+      <outputs>
+        <output>Lista de citações Vancouver formatadas</output>
+        <output>Dados epidemiológicos verificados</output>
+        <output>Análise de convergência entre guidelines</output>
+      </outputs>
+    </phase>
+
+    <phase name="generation" order="3">
+      <title>Fase de Geração</title>
+      <description>Criação do conteúdo estruturado</description>
+      <steps>
+        <step>Gerar entry descritivo seguindo interface Rastreamento/Doenca/Medicamento</step>
+        <step>Criar análise crítica correspondente (CriticalAnalysis)</step>
+        <step>Formatar citações no padrão Vancouver</step>
+        <step>Adicionar referências a lib/data/references.ts</step>
+        <step>Determinar status de convergência (🟢🟡🔴🟣)</step>
+      </steps>
+      <templates>
+        <template name="rastreamento">lib/data/rastreamentos.ts</template>
+        <template name="analise_critica">lib/data/analise-critica.ts</template>
+        <template name="doenca">lib/data/doencas/*.ts</template>
+        <template name="medicamento">lib/data/medicamentos/*.ts</template>
+      </templates>
+      <outputs>
+        <output>Conteúdo descritivo completo</output>
+        <output>Análise crítica estruturada</output>
+        <output>Referências formatadas</output>
+      </outputs>
+    </phase>
+
+    <phase name="validation" order="4">
+      <title>Fase de Validação</title>
+      <description>Verificação de qualidade e consistência</description>
+      <steps>
+        <step>Verificar conformidade com tipos TypeScript</step>
+        <step>Validar todas as claims têm citações</step>
+        <step>Confirmar DOIs/PMIDs são válidos</step>
+        <step>Verificar consistência do dual-mode (descriptive + critical)</step>
+        <step>Executar build para verificar erros de tipo</step>
+      </steps>
+      <quality_checks>
+        <check>Cada claim factual tem citação [n]</check>
+        <check>Todos DOIs resolvem corretamente</check>
+        <check>Estrutura segue interface TypeScript</check>
+        <check>Conteúdo crítico complementa descritivo</check>
+      </quality_checks>
+      <outputs>
+        <output>Relatório de validação</output>
+        <output>Lista de correções necessárias</output>
+      </outputs>
+    </phase>
+
+    <phase name="integration" order="5">
+      <title>Fase de Integração</title>
+      <description>Inserção no projeto e verificação final</description>
+      <steps>
+        <step>Inserir conteúdo nos arquivos de dados</step>
+        <step>Atualizar exports em index.ts quando aplicável</step>
+        <step>Executar npm run build para verificar</step>
+        <step>Executar npm run lint para validar código</step>
+        <step>Documentar mudanças para commit</step>
+      </steps>
+      <outputs>
+        <output>Conteúdo integrado ao projeto</output>
+        <output>Build passando sem erros</output>
+        <output>Mensagem de commit preparada</output>
+      </outputs>
+    </phase>
+  </pipeline>
+
+  <convergence_status>
+    <status code="convergencia" emoji="🟢">
+      <description>SUS e Sociedades concordam plenamente</description>
+      <criteria>Mesma população-alvo, método e periodicidade</criteria>
+    </status>
+    <status code="parcial" emoji="🟡">
+      <description>Concordância parcial entre fontes</description>
+      <criteria>Diferenças em população OU método OU periodicidade</criteria>
+    </status>
+    <status code="divergencia" emoji="🔴">
+      <description>Discordância significativa entre fontes</description>
+      <criteria>Recomendações contraditórias ou ausentes</criteria>
+    </status>
+    <status code="em_disputa" emoji="🟣">
+      <description>Debate ativo na literatura</description>
+      <criteria>Controvérsia científica não resolvida</criteria>
+    </status>
+  </convergence_status>
+</workflow>

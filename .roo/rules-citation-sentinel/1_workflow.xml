@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow>
+  <overview>
+    <title>Citation Sentinel - Workflow Pipeline</title>
+    <description>
+      Pipeline SOTA++ para validação e enriquecimento de citações acadêmicas
+      com rigor Q1 (Nature/Cell level).
+    </description>
+  </overview>
+
+  <pipeline>
+    <phase name="audit" order="1">
+      <title>Fase de Auditoria</title>
+      <description>Identificar claims e verificar citações existentes</description>
+      <steps>
+        <step>Localizar arquivos de dados a auditar</step>
+        <step>Identificar claims factuais (números, estatísticas, afirmações)</step>
+        <step>Mapear citações existentes [n] para cada claim</step>
+        <step>Identificar claims sem citação (gaps)</step>
+        <step>Verificar referências em lib/data/references.ts</step>
+      </steps>
+      <claim_patterns>
+        <pattern type="numerical">Qualquer número ou estatística</pattern>
+        <pattern type="comparative">Comparações (maior, menor, mais eficaz)</pattern>
+        <pattern type="causal">Afirmações de causa-efeito</pattern>
+        <pattern type="efficacy">Eficácia de tratamentos/intervenções</pattern>
+        <pattern type="epidemiology">Dados de incidência/prevalência/mortalidade</pattern>
+      </claim_patterns>
+      <outputs>
+        <output>Lista de claims com status de citação</output>
+        <output>Gaps identificados</output>
+        <output>Mapa de referências utilizadas</output>
+      </outputs>
+    </phase>
+
+    <phase name="validation" order="2">
+      <title>Fase de Validação</title>
+      <description>Verificar validade das citações existentes</description>
+      <steps>
+        <step>Extrair DOIs de lib/data/references.ts</step>
+        <step>Validar DOIs via CrossRef API</step>
+        <step>Extrair PMIDs e validar via PubMed</step>
+        <step>Verificar URLs de guidelines ainda ativas</step>
+        <step>Identificar referências com metadados incompletos</step>
+      </steps>
+      <api_integrations>
+        <api name="CrossRef">
+          <endpoint>https://api.crossref.org/works/{doi}</endpoint>
+          <validation>HTTP 200 = DOI válido</validation>
+        </api>
+        <api name="PubMed">
+          <endpoint>https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi</endpoint>
+          <params>db=pubmed&amp;id={pmid}&amp;retmode=xml</params>
+        </api>
+      </api_integrations>
+      <outputs>
+        <output>Relatório de DOIs válidos/inválidos</output>
+        <output>Relatório de PMIDs válidos/inválidos</output>
+        <output>Lista de URLs quebradas</output>
+      </outputs>
+    </phase>
+
+    <phase name="enrichment" order="3">
+      <title>Fase de Enriquecimento</title>
+      <description>Completar metadados e sugerir citações</description>
+      <steps>
+        <step>Buscar metadados completos via CrossRef para DOIs</step>
+        <step>Buscar metadados via PubMed para PMIDs</step>
+        <step>Para gaps, buscar literatura relevante no PubMed</step>
+        <step>Formatar novas referências em Vancouver</step>
+        <step>Sugerir citações por relevância de contexto</step>
+      </steps>
+      <pubmed_search>
+        <strategy>Usar termos do contexto da claim + filtros de qualidade</strategy>
+        <filters>
+          <filter>Systematic Review[pt]</filter>
+          <filter>Meta-Analysis[pt]</filter>
+          <filter>Guideline[pt]</filter>
+          <filter>últimos 5 anos</filter>
+        </filters>
+      </pubmed_search>
+      <outputs>
+        <output>Referências com metadados completos</output>
+        <output>Sugestões de citações para gaps</output>
+        <output>Score de relevância por sugestão</output>
+      </outputs>
+    </phase>
+
+    <phase name="formatting" order="4">
+      <title>Fase de Formatação</title>
+      <description>Formatar citações no padrão Vancouver</description>
+      <steps>
+        <step>Aplicar formato Vancouver a todas referências</step>
+        <step>Gerar ID único para novas referências</step>
+        <step>Organizar referências em ordem de aparição</step>
+        <step>Verificar consistência de abreviações de periódicos</step>
+      </steps>
+      <vancouver_format>
+        <article>
+          Autores. Título. Revista Abrev. Ano;Volume(Número):Páginas. doi:DOI
+        </article>
+        <guideline>
+          Organização. Título do Documento. Local: Publicador; Ano.
+        </guideline>
+        <website>
+          Organização. Título da Página [Internet]. Local; Ano [cited Ano Mês Dia]. Available from: URL
+        </website>
+      </vancouver_format>
+    </phase>
+
+    <phase name="integration" order="5">
+      <title>Fase de Integração</title>
+      <description>Inserir citações e referências no projeto</description>
+      <steps>
+        <step>Adicionar [n] às claims sem citação</step>
+        <step>Adicionar novas referências a lib/data/references.ts</step>
+        <step>Atualizar arrays de citações nos arquivos de dados</step>
+        <step>Verificar build passa</step>
+        <step>Gerar relatório de mudanças</step>
+      </steps>
+      <outputs>
+        <output>Arquivos de dados atualizados com citações</output>
+        <output>references.ts atualizado</output>
+        <output>Relatório de auditoria final</output>
+      </outputs>
+    </phase>
+  </pipeline>
+
+  <quality_thresholds>
+    <threshold name="citation_coverage">
+      <target>100% de claims factuais citadas</target>
+      <minimum>95%</minimum>
+    </threshold>
+    <threshold name="doi_validity">
+      <target>100% de DOIs válidos</target>
+    </threshold>
+    <threshold name="temporal_currency">
+      <target>70%+ de referências dos últimos 5 anos</target>
+    </threshold>
+    <threshold name="source_diversity">
+      <target>Mínimo 3 fontes independentes por tópico</target>
+    </threshold>
+  </quality_thresholds>
+</workflow>

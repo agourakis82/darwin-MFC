@@ -165,6 +165,78 @@ export const rastreamentos: Record<string, Rastreamento> = {
     lastUpdate: '2025-12'
   },
 
+  'cancer-colorretal': {
+    id: 'cancer-colorretal',
+    title: 'Rastreamento do Câncer Colorretal',
+    category: 'cancer',
+    description: 'O câncer colorretal é o 3º mais incidente no Brasil (~46 mil casos novos/ano) e 2º mais mortal. Rastreamento é altamente eficaz, porém Brasil não possui programa nacional estruturado. Lei Preta Gil (PL 4153/2025) propõe rastreamento obrigatório a partir de 35-45 anos.',
+    recommendations: {
+      sus: {
+        population: 'Não há programa de rastreamento populacional estruturado no SUS atualmente',
+        method: 'Pesquisa de Sangue Oculto nas Fezes (PSOF/FIT) disponível; colonoscopia para casos positivos ou alto risco',
+        periodicity: 'Não há periodicidade definida (rastreamento oportunístico)',
+        justification: 'Apesar de evidências robustas de eficácia, Brasil não implementou programa organizado. Grupo de trabalho INCA/MS desde 2023 prepara diretrizes. Proposta deve ser enviada à CONITEC em 2025, com implementação prevista para 2026.',
+        coverage: '<25% da população 50-75 anos realiza exames preventivos regularmente',
+        citations: [
+          { refId: 'inca-estimativa-2023' },
+          { refId: 'ms-colorretal-gt-2025' }
+        ]
+      },
+      societies: {
+        organization: ['SBCP', 'SBCO', 'FBG', 'CBR'],
+        population: 'Adultos a partir de 45 anos (risco médio); 40 anos ou 10 anos antes do caso familiar mais jovem (alto risco)',
+        method: 'FIT anual OU colonoscopia a cada 10 anos OU retossigmoidoscopia a cada 5 anos + FIT a cada 3 anos',
+        periodicity: 'FIT: anual; Colonoscopia: decenial (se normal); Grupos de risco: individualizado',
+        recommendation: 'SBCP e SBCO recomendam início aos 45 anos, alinhando-se com American Cancer Society e USPSTF 2021. Colonoscopia é padrão-ouro, mas FIT é alternativa custo-efetiva para rastreamento populacional.',
+        citations: [
+          { refId: 'sbcp-colorretal-2024' },
+          { refId: 'uspstf-colorretal-2021' }
+        ]
+      },
+      india: {
+        organization: ['NP-NCD', 'MoHFW'],
+        population: 'Câncer colorretal NÃO está incluído no programa de rastreamento populacional NP-NCD',
+        method: 'Não há método de rastreamento populacional definido',
+        periodicity: 'Não aplicável',
+        justification: 'NP-NCD 2023-2030 prioriza câncer oral, mama e colo do útero devido à alta carga dessas doenças na Índia. Câncer colorretal, embora emergente, ainda tem incidência menor que outros cânceres prioritários. Rastreamento disponível em centros terciários urbanos.',
+        citations: [
+          { refId: 'np-ncd-operational-guidelines-2023' }
+        ]
+      },
+      convergence: {
+        status: 'divergencia',
+        description: 'Divergência significativa. Sociedades médicas recomendam rastreamento populacional a partir de 45 anos desde 2021, mas SUS não possui programa estruturado. Lei Preta Gil (PL 4153/2025) propõe obrigar SUS e planos privados a oferecer PSOF (35+) e colonoscopia (45+). Índia não inclui colorretal no NP-NCD, focando em cânceres de maior carga (oral, mama, colo do útero).',
+        citations: [
+          { refId: 'uspstf-colorretal-2021' },
+          { refId: 'lei-preta-gil-2025' }
+        ]
+      }
+    },
+    epidemiology: {
+      incidence: '~46.000 casos novos/ano (2023-25), 3º mais incidente (excluindo pele não-melanoma)',
+      mortality: '~21.000 óbitos/ano, 2º mais letal',
+      prevalence: '~65% dos casos diagnosticados em estágios avançados (III/IV) devido à ausência de rastreamento organizado',
+      citations: [
+        { refId: 'inca-estimativa-2023' },
+        { refId: 'fundacao-cancer-2025' }
+      ]
+    },
+    lastUpdate: '2026-01',
+    ontologies: {
+      icd10: ['C18', 'C18.0', 'C18.2', 'C18.3', 'C18.4', 'C18.5', 'C18.6', 'C18.7', 'C18.9', 'C19', 'C20'],
+      icdO3: [
+        { morphology: '8140/3', topography: ['C18', 'C19', 'C20'], description: 'Adenocarcinoma, NOS' },
+        { morphology: '8480/3', topography: ['C18', 'C19', 'C20'], description: 'Mucinous adenocarcinoma' },
+        { morphology: '8490/3', topography: ['C18', 'C19', 'C20'], description: 'Signet ring cell carcinoma' }
+      ],
+      loinc: ['57905-2', '29771-3', '14539-0'],
+      snomedCT: ['363346000', '93876005', '403944002'],
+      snomedProcedure: ['73761001', '446745002', '271093002', '412792006'],
+      ciap2: ['D97'],
+      cid11: ['BA50.0', 'BA50.1', 'BA50.2']
+    }
+  },
+
   'cancer-prostata': {
     id: 'cancer-prostata',
     title: 'Rastreamento do Câncer de Próstata',

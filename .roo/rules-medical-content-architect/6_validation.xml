@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validation>
+  <overview>
+    <title>Medical Content Architect - Validation Rules</title>
+    <description>
+      Regras de validação para garantir qualidade Q1 do conteúdo gerado.
+    </description>
+  </overview>
+
+  <validation_rules>
+    <rule name="citation_completeness" severity="error">
+      <description>Toda claim factual deve ter citação</description>
+      <check>
+        <pattern>Números, estatísticas, percentuais sem [n]</pattern>
+        <pattern>Afirmações de eficácia/risco sem citação</pattern>
+        <pattern>Dados epidemiológicos sem fonte</pattern>
+      </check>
+      <fix>Adicionar citação no formato [n] após cada claim</fix>
+      <example>
+        <invalid>"A incidência é de 50/100.000"</invalid>
+        <valid>"A incidência é de 50/100.000 [1]"</valid>
+      </example>
+    </rule>
+
+    <rule name="doi_validity" severity="warning">
+      <description>DOIs devem resolver corretamente</description>
+      <check>
+        <method>Verificar via CrossRef API</method>
+        <endpoint>https://api.crossref.org/works/{doi}</endpoint>
+        <expected_status>200</expected_status>
+      </check>
+      <fix>Corrigir DOI ou remover se inválido</fix>
+    </rule>
+
+    <rule name="pmid_validity" severity="warning">
+      <description>PMIDs devem existir no PubMed</description>
+      <check>
+        <method>Verificar via PubMed efetch</method>
+        <endpoint>https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id={pmid}</endpoint>
+        <expected>Retorno de metadados válidos</expected>
+      </check>
+      <fix>Corrigir PMID ou remover se inválido</fix>
+    </rule>
+
+    <rule name="dual_mode_completeness" severity="error">
+      <description>Todo rastreamento deve ter análise crítica correspondente</description>
+      <check>
+        <method>Verificar se existe entry em analise-critica.ts com mesmo rastreamentoId</method>
+        <match>rastreamento.id === criticalAnalysis.rastreamentoId</match>
+      </check>
+      <fix>Criar análise crítica com insights, controvérsias e desafios</fix>
+    </rule>
+
+    <rule name="typescript_compliance" severity="error">
+      <description>Conteúdo deve seguir interfaces TypeScript</description>
+      <check>
+        <method>npm run build deve passar sem erros de tipo</method>
+        <interfaces>
+          <interface>Rastreamento (lib/types/rastreamentos.ts)</interface>
+          <interface>CriticalAnalysis (lib/types/analysis.ts)</interface>
+          <interface>Citation (lib/types/references.ts)</interface>
+        </interfaces>
+      </check>
+      <fix>Ajustar estrutura para conformar com interface</fix>
+    </rule>
+
+    <rule name="id_format" severity="warning">
+      <description>IDs devem seguir kebab-case</description>
+      <check>
+        <pattern>/^[a-z0-9]+(-[a-z0-9]+)*$/</pattern>
+      </check>
+      <fix>Converter para kebab-case</fix>
+      <examples>
+        <valid>cancer-mama, diabetes-tipo-2, hiv-screening</valid>
+        <invalid>CancerMama, diabetes_tipo_2, HIVScreening</invalid>
+      </examples>
+    </rule>
+
+    <rule name="convergence_justification" severity="warning">
+      <description>Status de convergência deve ser justificado</description>
+      <check>
+        <requirement>convergencia.descricao deve explicar a classificação</requirement>
+        <requirement>convergencia.citacoes deve ter pelo menos 1 referência</requirement>
+      </check>
+      <fix>Adicionar descrição detalhada e citações</fix>
+    </rule>
+
+    <rule name="epidemiology_currency" severity="info">
+      <description>Dados epidemiológicos devem ser recentes (últimos 5 anos)</description>
+      <check>
+        <method>Verificar ano das citações de epidemiologia</method>
+        <threshold>Ano atual - 5</threshold>
+      </check>
+      <fix>Atualizar com dados mais recentes quando disponíveis</fix>
+    </rule>
+
+    <rule name="reference_uniqueness" severity="warning">
+      <description>IDs de referência devem ser únicos</description>
+      <check>
+        <method>Verificar duplicatas em lib/data/references.ts</method>
+        <unique_field>id</unique_field>
+      </check>
+      <fix>Usar ID único para cada referência</fix>
+    </rule>
+  </validation_rules>
+
+  <validation_workflow>
+    <phase name="pre_generation">
+      <title>Validações Pré-Geração</title>
+      <checks>
+        <check>Verificar se ID não existe (evitar duplicação)</check>
+        <check>Confirmar categoria é válida</check>
+        <check>Verificar referências citadas existem</check>
+      </checks>
+    </phase>
+
+    <phase name="post_generation">
+      <title>Validações Pós-Geração</title>
+      <checks>
+        <check>npm run build passa</check>
+        <check>npm run lint passa</check>
+        <check>Todas claims têm citações</check>
+        <check>DOIs/PMIDs são válidos</check>
+        <check>Análise crítica existe</check>
+      </checks>
+    </phase>
+
+    <phase name="integration">
+      <title>Validações de Integração</title>
+      <checks>
+        <check>Conteúdo aparece corretamente na UI</check>
+        <check>ContentModeWrapper alterna entre modos</check>
+        <check>Citações renderizam com tooltip</check>
+        <check>Links de navegação funcionam</check>
+      </checks>
+    </phase>
+  </validation_workflow>
+
+  <quality_metrics>
+    <metric name="citation_density">
+      <description>Densidade de citações por parágrafo</description>
+      <target>Mínimo 1 citação por claim factual</target>
+      <calculation>Número de citações / Número de claims</calculation>
+      <acceptable_range>0.8 - 1.5</acceptable_range>
+    </metric>
+
+    <metric name="source_diversity">
+      <description>Diversidade de fontes citadas</description>
+      <target>Múltiplas fontes independentes</target>
+      <minimum>3 fontes diferentes por rastreamento</minimum>
+    </metric>
+
+    <metric name="temporal_currency">
+      <description>Atualidade das referências</description>
+      <target>Maioria das referências dos últimos 5 anos</target>
+      <calculation>Referências recentes / Total de referências</calculation>
+      <acceptable_range>>0.7</acceptable_range>
+    </metric>
+  </quality_metrics>
+
+  <error_handling>
+    <error type="api_failure">
+      <description>Falha na API PubMed/CrossRef</description>
+      <action>Tentar novamente com backoff exponencial</action>
+      <fallback>Usar dados disponíveis e marcar para revisão manual</fallback>
+    </error>
+
+    <error type="build_failure">
+      <description>Erro de compilação TypeScript</description>
+      <action>Analisar mensagem de erro</action>
+      <common_causes>
+        <cause>Campo obrigatório faltando</cause>
+        <cause>Tipo incorreto de valor</cause>
+        <cause>ID duplicado</cause>
+      </common_causes>
+    </error>
+
+    <error type="missing_reference">
+      <description>Citação referencia ID inexistente</description>
+      <action>Adicionar referência a lib/data/references.ts</action>
+    </error>
+  </error_handling>
+</validation>

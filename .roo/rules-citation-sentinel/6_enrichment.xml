@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enrichment>
+  <overview>
+    <title>Citation Sentinel - Enrichment Strategies</title>
+    <description>
+      Estratégias para enriquecer e completar metadados de referências.
+    </description>
+  </overview>
+
+  <enrichment_sources>
+    <source name="CrossRef">
+      <description>Fonte primária para metadados de artigos com DOI</description>
+      <fields_available>
+        <field>title</field>
+        <field>author</field>
+        <field>container-title (journal)</field>
+        <field>published (date)</field>
+        <field>volume, issue, page</field>
+        <field>ISSN</field>
+        <field>subject (keywords)</field>
+        <field>license</field>
+        <field>reference (cited references)</field>
+      </fields_available>
+      <api_endpoint>https://api.crossref.org/works/{doi}</api_endpoint>
+    </source>
+
+    <source name="PubMed">
+      <description>Fonte para artigos biomédicos com PMID</description>
+      <fields_available>
+        <field>ArticleTitle</field>
+        <field>AuthorList</field>
+        <field>Journal (title, abbreviation, ISSN)</field>
+        <field>PubDate</field>
+        <field>Volume, Issue, Pagination</field>
+        <field>Abstract</field>
+        <field>MeshHeadingList</field>
+        <field>ArticleIdList (DOI, PMC)</field>
+      </fields_available>
+      <api_endpoint>https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi</api_endpoint>
+    </source>
+
+    <source name="Semantic Scholar">
+      <description>Fonte alternativa com métricas de citação</description>
+      <fields_available>
+        <field>title, authors</field>
+        <field>year, venue</field>
+        <field>citationCount</field>
+        <field>influentialCitationCount</field>
+        <field>abstract</field>
+      </fields_available>
+      <api_endpoint>https://api.semanticscholar.org/v1/paper/{id}</api_endpoint>
+    </source>
+  </enrichment_sources>
+
+  <enrichment_workflow>
+    <step name="identify_incomplete">
+      <description>Identificar referências com metadados incompletos</description>
+      <criteria>
+        <criterion>Falta DOI ou PMID</criterion>
+        <criterion>Falta volume/páginas</criterion>
+        <criterion>Falta ano</criterion>
+        <criterion>Autores incompletos</criterion>
+      </criteria>
+    </step>
+
+    <step name="fetch_by_doi">
+      <description>Se tem DOI, buscar metadados no CrossRef</description>
+      <process>
+        <![CDATA[
+1. Fazer request para CrossRef API
+2. Extrair campos relevantes
+3. Formatar autores (Sobrenome AB, et al)
+4. Abreviar nome do periódico (NLM style)
+5. Atualizar referência
+        ]]>
+      </process>
+    </step>
+
+    <step name="fetch_by_pmid">
+      <description>Se tem PMID, buscar metadados no PubMed</description>
+      <process>
+        <![CDATA[
+1. Fazer request para PubMed efetch
+2. Parsear XML response
+3. Extrair DOI se disponível
+4. Formatar em Vancouver
+5. Atualizar referência
+        ]]>
+      </process>
+    </step>
+
+    <step name="search_if_neither">
+      <description>Se não tem DOI nem PMID, buscar por título/autores</description>
+      <process>
+        <![CDATA[
+1. Construir query com título + primeiro autor
+2. Buscar no PubMed esearch
+3. Buscar no CrossRef works
+4. Selecionar match mais provável
+5. Confirmar com usuário se necessário
+        ]]>
+      </process>
+    </step>
+  </enrichment_workflow>
+
+  <journal_abbreviation>
+    <description>Abreviação de nomes de periódicos (NLM style)</description>
+    <common_abbreviations>
+      <abbr full="New England Journal of Medicine" short="N Engl J Med"/>
+      <abbr full="Journal of the American Medical Association" short="JAMA"/>
+      <abbr full="The Lancet" short="Lancet"/>
+      <abbr full="British Medical Journal" short="BMJ"/>
+      <abbr full="Annals of Internal Medicine" short="Ann Intern Med"/>
+      <abbr full="Cadernos de Saúde Pública" short="Cad Saude Publica"/>
+      <abbr full="Revista Brasileira de Ginecologia e Obstetrícia" short="Rev Bras Ginecol Obstet"/>
+    </common_abbreviations>
+    <resource>https://www.ncbi.nlm.nih.gov/nlmcatalog/journals</resource>
+  </journal_abbreviation>
+
+  <author_formatting>
+    <description>Formatação de autores no estilo Vancouver</description>
+    <rules>
+      <rule>Sobrenome seguido de iniciais sem pontos</rule>
+      <rule>Listar até 6 autores</rule>
+      <rule>Se mais de 6, usar "et al" após o sexto</rule>
+      <rule>Separar autores por vírgula</rule>
+    </rules>
+    <examples>
+      <example>
+        <input>John Smith, Jane Doe, Robert Johnson</input>
+        <output>Smith J, Doe J, Johnson R</output>
+      </example>
+      <example>
+        <input>7+ authors</input>
+        <output>Smith J, Doe J, Johnson R, Williams A, Brown B, Davis C, et al</output>
+      </example>
+    </examples>
+  </author_formatting>
+
+  <quality_indicators>
+    <indicator name="journal_impact">
+      <description>Verificar se periódico tem fator de impacto</description>
+      <note>Preferir periódicos Q1/Q2</note>
+    </indicator>
+
+    <indicator name="citation_count">
+      <description>Verificar número de citações do artigo</description>
+      <note>Artigos muito citados tendem a ser mais confiáveis</note>
+    </indicator>
+
+    <indicator name="recency">
+      <description>Verificar se referência é recente</description>
+      <threshold>Últimos 5 anos para dados epidemiológicos</threshold>
+    </indicator>
+
+    <indicator name="study_type">
+      <description>Identificar tipo de estudo</description>
+      <hierarchy>
+        <type rank="1">Meta-análise, Revisão sistemática</type>
+        <type rank="2">RCT</type>
+        <type rank="3">Coorte</type>
+        <type rank="4">Caso-controle</type>
+        <type rank="5">Série de casos</type>
+      </hierarchy>
+    </indicator>
+  </quality_indicators>
+
+  <automation_opportunities>
+    <opportunity name="batch_validation">
+      <description>Validar múltiplos DOIs em lote</description>
+      <implementation>
+        <![CDATA[
+async function batchValidateDOIs(dois: string[]): Promise<ValidationResult[]> {
+  const results = [];
+  for (const doi of dois) {
+    await delay(350); // Rate limiting
+    const result = await validateDOI(doi);
+    results.push(result);
+  }
+  return results;
+}
+        ]]>
+      </implementation>
+    </opportunity>
+
+    <opportunity name="auto_update">
+      <description>Detectar atualizações de guidelines</description>
+      <implementation>
+        Check websites de guidelines periodicamente para novas versões
+      </implementation>
+    </opportunity>
+
+    <opportunity name="duplicate_detection">
+      <description>Detectar referências duplicadas</description>
+      <implementation>
+        Comparar DOIs/PMIDs/títulos para encontrar duplicatas
+      </implementation>
+    </opportunity>
+  </automation_opportunities>
+</enrichment>

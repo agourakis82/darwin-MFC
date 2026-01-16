@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<common_patterns>
+  <micro_interaction_patterns>
+    <pattern name="button_hover_reveal">
+      <description>Padrão de hover com revelação de conteúdo adicional</description>
+      <use_case>Botões com informações expandidas, ícones contextuais</use_case>
+      <code language="css"><![CDATA[
+/* Estrutura HTML */
+<button class="btn-reveal">
+  <span class="btn-text">Ação</span>
+  <span class="btn-icon">→</span>
+</button>
+
+/* CSS Patterns */
+.btn-reveal {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-text {
+  transition: transform 0.3s ease;
+}
+
+.btn-icon {
+  position: absolute;
+  right: 16px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-reveal:hover .btn-text {
+  transform: translateX(-8px);
+}
+
+.btn-reveal:hover .btn-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+      ]]></code>
+      <animation_principles>
+        <principle>Staggered entrance - ícone entra depois do texto</principle>
+        <principle>Easing suave para movimento natural</principle>
+        <principle>Estado hover retorna gradualmente ao normal</principle>
+      </animation_principles>
+    </pattern>
+
+    <pattern name="loading_skeleton">
+      <description>Estrutura de esqueleto para loading states elegantes</description>
+      <use_case>Cards, listas, formulários com carregamento assíncrono</use_case>
+      <code language="css"><![CDATA[
+/* HTML Structure */
+<div class="skeleton-card">
+  <div class="skeleton-avatar"></div>
+  <div class="skeleton-content">
+    <div class="skeleton-line skeleton-title"></div>
+    <div class="skeleton-line skeleton-text"></div>
+    <div class="skeleton-line skeleton-text short"></div>
+  </div>
+</div>
+
+/* CSS Implementation */
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton-line {
+  height: 16px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.skeleton-title {
+  height: 20px;
+  width: 70%;
+  margin-bottom: 12px;
+}
+
+.skeleton-text.short {
+  width: 50%;
+}
+
+.skeleton-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s infinite;
+  margin-right: 12px;
+}
+      ]]></code>
+      <accessibility_note>
+        - Usar aria-busy="true" durante carregamento
+        - Adicionar aria-label explicativo
+        - Garantir que conteúdo real substitua esqueleto
+      </accessibility_note>
+    </pattern>
+
+    <pattern name="card_flip_interaction">
+      <description>Animação de virada de cartão com perspectiva 3D</description>
+      <use_case>Cards informativos, produtos, perfis de usuário</use_case>
+      <code language="css"><![CDATA[
+/* HTML Structure */
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <h3>Frente</h3>
+      <p>Conteúdo visível</p>
+    </div>
+    <div class="flip-card-back">
+      <h3>Verso</h3>
+      <p>Conteúdo oculto</p>
+    </div>
+  </div>
+</div>
+
+/* CSS Implementation */
+.flip-card {
+  perspective: 1000px;
+  width: 300px;
+  height: 200px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+      ]]></code>
+      <performance_note>
+        - Usar transform3d() para hardware acceleration
+        - Adicionar will-change: transform para otimização
+        - Considerar prefere-reduced-motion para acessibilidade
+      </performance_note>
+    </pattern>
+  </micro_interaction_patterns>
+
+  <layout_patterns>
+    <pattern name="adaptive_grid">
+      <description>Grid responsivo que se adapta dinamicamente ao conteúdo</description>
+      <use_case>Galeria de produtos, cards de notícias, portfólios</use_case>
+      <code language="css"><![CDATA[
+/* CSS Grid com auto-fit */
+.adaptive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 24px;
+}
+
+/* breakpoints customizados */
+@media (max-width: 480px) {
+  .adaptive-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .adaptive-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+  }
+}
+
+/* Animações de entrada em stagger */
+.grid-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.grid-item:nth-child(1) { animation-delay: 0.1s; }
+.grid-item:nth-child(2) { animation-delay: 0.2s; }
+.grid-item:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+      ]]></code>
+      <responsive_principles>
+        <principle>Mobile-first approach com enhancement progressivo</principle>
+        <principle>Content-driven sizing baseado no menor item</principle>
+        <principle>Staggered animations para engagement visual</principle>
+      </responsive_principles>
+    </pattern>
+
+    <pattern name="floating_action_button">
+      <description>Botão de ação flutuante com comportamento contextual</description>
+      <use_case>Ações primárias em interfaces mobile, chat, configurações</use_case>
+      <code language="css"><![CDATA[
+/* HTML Structure */
+<div class="fab-container">
+  <button class="fab-main" aria-label="Adicionar novo item">
+    <svg class="fab-icon">...</svg>
+  </button>
+  <div class="fab-menu">
+    <button class="fab-item" aria-label="Criar documento">
+      <svg>...</svg>
+    </button>
+    <button class="fab-item" aria-label="Upload arquivo">
+      <svg>...</svg>
+    </button>
+  </div>
+</div>
+
+/* CSS Implementation */
+.fab-main {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.fab-main:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.fab-menu {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fab-container.active .fab-menu {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fab-item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fab-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+      ]]></code>
+      <interaction_patterns>
+        <pattern>Single tap para ação principal, long press para menu</pattern>
+        <pattern>Backdrop click para fechar menu</pattern>
+        <pattern>Gesture support para swipe actions</pattern>
+      </interaction_patterns>
+    </pattern>
+  </layout_patterns>
+
+  <animation_libraries>
+    <library name="CSS_Custom_Properties_Animation">
+      <description>Usando CSS custom properties para animações complexas</description>
+      <code language="css"><![CDATA[
+/* Definição de variáveis */
+.element {
+  --animation-progress: 0;
+  --animation-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 300ms;
+}
+
+/* Animação usando custom properties */
+.animate-progress {
+  transition: transform var(--animation-duration) var(--animation-ease);
+  transform: scale(calc(0.5 + var(--animation-progress) * 0.5));
+}
+
+/* Controle via JavaScript */
+element.style.setProperty('--animation-progress', '1');
+element.style.setProperty('--animation-duration', '500ms');
+      ]]></code>
+    </library>
+
+    <library name="Intersection_Observer_Animations">
+      <description>Animations triggered by scroll position</description>
+      <code language="javascript"><![CDATA[
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate-in');
+    } else {
+      entry.target.classList.remove('animate-in');
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '50px'
+});
+
+// Observar todos elementos animáveis
+document.querySelectorAll('.animate-on-scroll').forEach(el => {
+  observer.observe(el);
+});
+      ]]></code>
+    </library>
+  </animation_libraries>
+
+  <responsive_design_patterns>
+    <pattern name="fluid_typography">
+      <description>Tipografia que escala fluidamente entre breakpoints</description>
+      <implementation>
+        <code language="css"><![CDATA[
+/* Fluid typography using clamp() */
+.heading-primary {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+.text-body {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+}
+
+/* Viewport-based spacing */
+.container {
+  padding: clamp(16px, 5vw, 64px);
+}
+
+.grid-gap {
+  gap: clamp(8px, 3vw, 32px);
+}
+        ]]></code>
+      </implementation>
+    </pattern>
+
+    <pattern name="container_queries">
+      <description>Styling baseado no tamanho do container, não viewport</description>
+      <implementation>
+        <code language="css"><![CDATA[
+/* Container queries para componentes adaptativos */
+.card-container {
+  container-type: inline-size;
+}
+
+@container (min-width: 300px) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+  }
+}
+
+@container (min-width: 500px) {
+  .card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+        ]]></code>
+      </implementation>
+    </pattern>
+  </responsive_design_patterns>
+
+  <accessibility_patterns>
+    <pattern name="focus_indicators">
+      <description>Sistema robusto de indicadores de foco</description>
+      <code language="css"><![CDATA[
+/* Focus visible para acessibilidade */
+.focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip links para navegação rápida */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .button {
+    border: 2px solid;
+  }
+}
+      ]]></code>
+    </pattern>
+
+    <pattern name="reduced_motion">
+      <description>Respeitar preferências de movimento reduzido</description>
+      <code language="css"><![CDATA[
+/* Default animations */
+.animate-element {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-element {
+    animation: none;
+    transition: none;
+  }
+  
+  .animate-element:hover {
+    transform: none;
+  }
+}
+
+/* JavaScript detection */
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  // Disable JavaScript animations
+  document.body.classList.add('reduce-motion');
+}
+      ]]></code>
+    </pattern>
+  </accessibility_patterns>
+</common_patterns>

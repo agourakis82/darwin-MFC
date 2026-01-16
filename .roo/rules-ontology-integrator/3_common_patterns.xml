@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<common_patterns>
+  <overview>
+    <title>Ontology Integrator - Common Patterns</title>
+    <description>
+      Padrões de codificação e estruturas de ontologia no Darwin-MFC.
+    </description>
+  </overview>
+
+  <pattern name="disease_coding">
+    <description>Codificação de doenças</description>
+    <structure>
+      <![CDATA[
+interface DoencaCoding {
+  icd10: string;           // Código ICD-10 (obrigatório)
+  ciap2?: string;          // Código CIAP2 (APS)
+  ordo?: string;           // ORPHA para doenças raras
+  snomed?: string;         // SNOMED-CT quando disponível
+  hpo?: string[];          // Fenótipos HPO associados
+}
+
+// Exemplo em lib/data/doencas/
+{
+  id: "diabetes-tipo-2",
+  nome: "Diabetes Mellitus Tipo 2",
+  codigos: {
+    icd10: "E11.9",
+    ciap2: "T90",
+    snomed: "44054006"
+  },
+  fenotipos: ["HP:0000842", "HP:0001988", "HP:0000831"]  // Hiperglicemia, etc.
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="lab_test_coding">
+    <description>Codificação de exames laboratoriais</description>
+    <structure>
+      <![CDATA[
+interface ExameLOINC {
+  loinc: string;           // Código LOINC
+  component: string;       // O que está sendo medido
+  property: string;        // Tipo de medição
+  timing: string;          // Ponto no tempo
+  system: string;          // Tipo de amostra
+  scale: string;           // Escala de resultado
+}
+
+// Exemplo em lib/utils/ontologies/loinc.ts
+{
+  id: "glicemia-jejum",
+  loinc: "1558-6",
+  nome: "Glicemia de Jejum",
+  component: "Glucose",
+  property: "MCnc",
+  timing: "Pt",
+  system: "Ser/Plas",
+  scale: "Qn",
+  unidade: "mg/dL",
+  valorReferencia: {
+    normal: { min: 70, max: 99 },
+    alterado: { min: 100, max: 125 },
+    diabetes: { min: 126 }
+  }
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="medication_coding">
+    <description>Codificação de medicamentos</description>
+    <structure>
+      <![CDATA[
+interface MedicamentoCoding {
+  atc: string;             // Código ATC
+  dci: string;             // Denominação Comum Internacional
+  rxnorm?: string;         // RxNorm (US)
+  pharmgkb?: string;       // PharmGKB ID
+}
+
+// Exemplo em lib/data/medicamentos/
+{
+  id: "metformina",
+  nome: "Metformina",
+  codigos: {
+    atc: "A10BA02",
+    dci: "metformin",
+    pharmgkb: "PA450657"
+  },
+  farmacogenetica: {
+    gene: "SLC22A1",
+    variantes: ["rs12208357", "rs72552763"],
+    impacto: "Redução de resposta em poor metabolizers"
+  }
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="ontology_file">
+    <description>Estrutura de arquivo de ontologia</description>
+    <file>lib/utils/ontologies/loinc.ts</file>
+    <structure>
+      <![CDATA[
+export interface LOINCCode {
+  code: string;
+  component: string;
+  property: string;
+  timeAspect: string;
+  system: string;
+  scaleType: string;
+  shortName: string;
+  longName: string;
+  relatedCodes?: string[];
+}
+
+export const loincCodes: Record<string, LOINCCode> = {
+  "2339-0": {
+    code: "2339-0",
+    component: "Glucose",
+    property: "MCnc",
+    timeAspect: "Pt",
+    system: "Bld",
+    scaleType: "Qn",
+    shortName: "Glucose Bld-mCnc",
+    longName: "Glucose [Mass/volume] in Blood"
+  },
+  // ... mais códigos
+};
+
+export function getLOINCByCode(code: string): LOINCCode | undefined {
+  return loincCodes[code];
+}
+
+export function searchLOINC(term: string): LOINCCode[] {
+  return Object.values(loincCodes).filter(
+    c => c.shortName.toLowerCase().includes(term.toLowerCase()) ||
+         c.longName.toLowerCase().includes(term.toLowerCase())
+  );
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="pharmgkb_structure">
+    <description>Estrutura de dados PharmGKB</description>
+    <file>lib/utils/ontologies/pharmgkb.ts</file>
+    <structure>
+      <![CDATA[
+export interface PharmGKBAnnotation {
+  geneId: string;
+  geneName: string;
+  drugId: string;
+  drugName: string;
+  phenotypeCategory: "Dosage" | "Efficacy" | "Toxicity" | "PK";
+  evidenceLevel: "1A" | "1B" | "2A" | "2B" | "3" | "4";
+  summary: string;
+  clinicalRecommendation?: string;
+  citations: string[];
+}
+
+export const pharmgkbAnnotations: PharmGKBAnnotation[] = [
+  {
+    geneId: "PA267",
+    geneName: "CYP2D6",
+    drugId: "PA449053",
+    drugName: "Codeine",
+    phenotypeCategory: "Dosage",
+    evidenceLevel: "1A",
+    summary: "Poor metabolizers have reduced analgesic effect; ultrarapid metabolizers at risk for toxicity",
+    clinicalRecommendation: "Use alternative analgesic in poor and ultrarapid metabolizers",
+    citations: ["pharmgkb-codeine-cpic"]
+  }
+];
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="linkage">
+    <description>Linkagem entre entidades via ontologias</description>
+    <example>
+      <![CDATA[
+// Doença → Exames relacionados via LOINC
+{
+  id: "diabetes-tipo-2",
+  examesRelacionados: [
+    { loinc: "1558-6", nome: "Glicemia de jejum", periodicidade: "Trimestral" },
+    { loinc: "4548-4", nome: "HbA1c", periodicidade: "Trimestral" },
+    { loinc: "2339-0", nome: "Glicemia aleatória", contexto: "Emergência" }
+  ]
+}
+
+// Medicamento → Gene via PharmGKB
+{
+  id: "clopidogrel",
+  farmacogenetica: {
+    gene: "CYP2C19",
+    pharmgkbId: "PA124",
+    recomendacao: "Testar antes de prescrever em SCA"
+  }
+}
+      ]]>
+    </example>
+  </pattern>
+</common_patterns>

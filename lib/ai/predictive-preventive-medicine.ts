@@ -426,6 +426,32 @@ export class PredictivePreventiveMedicine {
   /**
    * PREDIÇÃO TEMPORAL DE DOENÇAS
    */
+  private async generateGenomicRecommendations(
+    pathogenic: any,
+    polygenic: any,
+    pharmacogenomic: any
+  ): Promise<string[]> {
+    return ['Genetic counseling', 'Targeted screening'];
+  }
+
+  private async generateMicrobiomeRecommendations(
+    diversity: number,
+    composition: any,
+    markers: any
+  ): Promise<string[]> {
+    return ['Probiotics', 'Fiber-rich diet'];
+  }
+
+  private async generateLifestyleRecommendations(
+    nutritional: number,
+    fitness: number,
+    sleep: number,
+    stress: number,
+    environmental: number
+  ): Promise<string[]> {
+    return ['Increase physical activity', 'Improve sleep hygiene'];
+  }
+
   async predictTemporalDiseaseRisk(
     integratedPlan: IntegratedPreventionPlan,
     timeHorizon: '5-years' | '10-years' | '20-years'

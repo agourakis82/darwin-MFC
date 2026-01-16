@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<examples>
+  <overview>
+    <title>Protocol Flowchart Builder - Examples</title>
+    <description>
+      Exemplos de criação de flowcharts de protocolos clínicos.
+    </description>
+  </overview>
+
+  <example name="hypertension_screening">
+    <title>Exemplo: Flowchart de Rastreamento de Hipertensão</title>
+
+    <source_protocol>
+      <![CDATA[
+Protocolo de Rastreamento de Hipertensão Arterial (SUS 2024):
+
+1. Todo adulto ≥18 anos deve ter PA aferida em consulta
+2. Se PA ≥140/90 mmHg:
+   a. Confirmar em 2 medidas adicionais
+   b. Se confirmada, classificar estágio
+3. Se PA 130-139/85-89 mmHg (pré-hipertensão):
+   a. Avaliar risco cardiovascular
+   b. Orientar MEV
+   c. Reavaliação em 1 ano
+4. Se PA <130/85 mmHg:
+   - Reavaliar em 2 anos
+      ]]>
+    </source_protocol>
+
+    <output_flowchart>
+      <![CDATA[
+{
+  id: "hipertensao-screening",
+  title: {
+    pt: "Rastreamento de Hipertensão Arterial",
+    en: "Hypertension Screening"
+  },
+  source: {
+    name: "Ministério da Saúde - Cadernos de Atenção Básica",
+    year: 2024,
+    citation: "ms-2024-has"
+  },
+  nodes: [
+    {
+      id: "start",
+      type: "start",
+      content: { pt: "Adulto ≥18 anos em consulta", en: "Adult ≥18 years in visit" },
+      position: { x: 250, y: 0 }
+    },
+    {
+      id: "measure-bp",
+      type: "action",
+      content: { pt: "Aferir pressão arterial", en: "Measure blood pressure" },
+      position: { x: 250, y: 80 }
+    },
+    {
+      id: "bp-classification",
+      type: "assessment",
+      content: { pt: "Classificar PA", en: "Classify BP" },
+      position: { x: 250, y: 160 }
+    },
+    {
+      id: "confirm-elevated",
+      type: "action",
+      content: {
+        pt: "Confirmar com 2 medidas adicionais",
+        en: "Confirm with 2 additional measurements"
+      },
+      position: { x: 450, y: 240 },
+      metadata: { evidenceLevel: "A" }
+    },
+    {
+      id: "evaluate-risk",
+      type: "action",
+      content: {
+        pt: "Avaliar risco cardiovascular + MEV",
+        en: "Assess CV risk + lifestyle changes"
+      },
+      position: { x: 250, y: 240 }
+    },
+    {
+      id: "normal-followup",
+      type: "endpoint",
+      content: {
+        pt: "Normal: Reavaliar em 2 anos",
+        en: "Normal: Reassess in 2 years"
+      },
+      position: { x: 50, y: 240 }
+    },
+    {
+      id: "prehypertension",
+      type: "endpoint",
+      content: {
+        pt: "Pré-HAS: Reavaliar em 1 ano",
+        en: "Prehypertension: Reassess in 1 year"
+      },
+      position: { x: 250, y: 340 }
+    },
+    {
+      id: "hypertension-confirmed",
+      type: "endpoint",
+      content: {
+        pt: "HAS confirmada: Iniciar tratamento",
+        en: "HTN confirmed: Start treatment"
+      },
+      position: { x: 450, y: 340 }
+    }
+  ],
+  edges: [
+    { id: "e1", source: "start", target: "measure-bp" },
+    { id: "e2", source: "measure-bp", target: "bp-classification" },
+    { id: "e3", source: "bp-classification", target: "normal-followup",
+      label: { pt: "<130/85", en: "<130/85" } },
+    { id: "e4", source: "bp-classification", target: "evaluate-risk",
+      label: { pt: "130-139/85-89", en: "130-139/85-89" } },
+    { id: "e5", source: "bp-classification", target: "confirm-elevated",
+      label: { pt: "≥140/90", en: "≥140/90" } },
+    { id: "e6", source: "evaluate-risk", target: "prehypertension" },
+    { id: "e7", source: "confirm-elevated", target: "hypertension-confirmed",
+      label: { pt: "Confirmada", en: "Confirmed" }, type: "positive" },
+    { id: "e8", source: "confirm-elevated", target: "evaluate-risk",
+      label: { pt: "Não confirmada", en: "Not confirmed" }, type: "negative" }
+  ]
+}
+      ]]>
+    </output_flowchart>
+  </example>
+
+  <example name="conversion_process">
+    <title>Processo de Conversão de Texto para Flowchart</title>
+
+    <input_text>
+      <![CDATA[
+"Se glicemia de jejum ≥126 mg/dL, confirmar com segundo exame.
+Se confirmada, diagnóstico de Diabetes e iniciar tratamento.
+Se não confirmada, avaliar fatores de risco e repetir em 1 ano."
+      ]]>
+    </input_text>
+
+    <extraction>
+      <decisions>
+        <decision id="d1">Glicemia de jejum ≥126 mg/dL?</decision>
+        <decision id="d2">Confirmada no segundo exame?</decision>
+      </decisions>
+      <actions>
+        <action id="a1">Confirmar com segundo exame</action>
+        <action id="a2">Avaliar fatores de risco</action>
+      </actions>
+      <endpoints>
+        <endpoint id="e1">Diagnóstico de Diabetes - iniciar tratamento</endpoint>
+        <endpoint id="e2">Repetir em 1 ano</endpoint>
+      </endpoints>
+    </extraction>
+
+    <resulting_structure>
+      <![CDATA[
+nodes: [
+  { id: "d1", type: "decision", content: "Glicemia jejum ≥126?" },
+  { id: "a1", type: "action", content: "Confirmar com 2º exame" },
+  { id: "d2", type: "decision", content: "Confirmada?" },
+  { id: "e1", type: "endpoint", content: "DM - Iniciar tratamento" },
+  { id: "a2", type: "action", content: "Avaliar fatores de risco" },
+  { id: "e2", type: "endpoint", content: "Repetir em 1 ano" }
+],
+edges: [
+  { source: "d1", target: "a1", label: "Sim" },
+  { source: "d1", target: "a2", label: "Não" },
+  { source: "a1", target: "d2" },
+  { source: "d2", target: "e1", label: "Sim" },
+  { source: "d2", target: "a2", label: "Não" },
+  { source: "a2", target: "e2" }
+]
+      ]]>
+    </resulting_structure>
+  </example>
+
+  <anti_patterns>
+    <anti_pattern name="oversimplification">
+      <description>Simplificar demais e omitir decisões importantes</description>
+      <risk>Usuário pode seguir caminho incorreto</risk>
+    </anti_pattern>
+    <anti_pattern name="dead_ends">
+      <description>Nós sem saída que não são endpoints</description>
+      <solution>Todo nó não-endpoint deve ter pelo menos uma aresta de saída</solution>
+    </anti_pattern>
+    <anti_pattern name="missing_translations">
+      <description>Flowchart apenas em um idioma</description>
+      <solution>Sempre incluir pt e en no mínimo</solution>
+    </anti_pattern>
+  </anti_patterns>
+</examples>

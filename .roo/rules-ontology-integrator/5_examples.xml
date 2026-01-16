@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<examples>
+  <overview>
+    <title>Ontology Integrator - Examples</title>
+    <description>
+      Exemplos de integração de ontologias no Darwin-MFC.
+    </description>
+  </overview>
+
+  <example name="disease_coding">
+    <title>Exemplo: Codificar Doença com Múltiplas Ontologias</title>
+    <context>Adicionar códigos a Diabetes Mellitus Tipo 2</context>
+
+    <before>
+      <![CDATA[
+{
+  id: "diabetes-tipo-2",
+  nome: "Diabetes Mellitus Tipo 2",
+  // Sem códigos de ontologia
+}
+      ]]>
+    </before>
+
+    <process>
+      <step order="1">
+        <action>Buscar ICD-10</action>
+        <result>E11 - Non-insulin-dependent diabetes mellitus</result>
+        <specific>E11.9 - Without complications</specific>
+      </step>
+      <step order="2">
+        <action>Buscar CIAP2</action>
+        <result>T90 - Diabetes não insulino dependente</result>
+      </step>
+      <step order="3">
+        <action>Buscar SNOMED-CT</action>
+        <result>44054006 - Diabetes mellitus type 2</result>
+      </step>
+      <step order="4">
+        <action>Buscar HPO para fenótipos</action>
+        <results>
+          <result>HP:0000842 - Hyperinsulinemia</result>
+          <result>HP:0001988 - Recurrent hypoglycemia</result>
+          <result>HP:0000831 - Insulin-resistant diabetes mellitus</result>
+          <result>HP:0003074 - Hyperglycemia</result>
+        </results>
+      </step>
+    </process>
+
+    <after>
+      <![CDATA[
+{
+  id: "diabetes-tipo-2",
+  nome: "Diabetes Mellitus Tipo 2",
+  codigos: {
+    icd10: "E11.9",
+    ciap2: "T90",
+    snomed: "44054006"
+  },
+  fenotipos: [
+    { hpo: "HP:0003074", nome: "Hiperglicemia" },
+    { hpo: "HP:0000831", nome: "Resistência insulínica" },
+    { hpo: "HP:0000842", nome: "Hiperinsulinemia" }
+  ],
+  examesRelacionados: [
+    { loinc: "1558-6", nome: "Glicemia de jejum" },
+    { loinc: "4548-4", nome: "Hemoglobina glicada (HbA1c)" },
+    { loinc: "14749-6", nome: "Glicose 2h pós-TOTG" }
+  ]
+}
+      ]]>
+    </after>
+  </example>
+
+  <example name="loinc_integration">
+    <title>Exemplo: Integrar Exames LOINC</title>
+    <context>Adicionar códigos LOINC a painel de exames</context>
+
+    <api_call>
+      <![CDATA[
+// Buscar LOINC para "HbA1c"
+GET https://fhir.loinc.org/CodeSystem/$lookup?system=http://loinc.org&code=4548-4
+
+// Response
+{
+  "parameter": [
+    { "name": "display", "valueString": "Hemoglobin A1c/Hemoglobin.total in Blood" },
+    { "name": "property", "part": [
+      { "name": "code", "valueCode": "COMPONENT" },
+      { "name": "value", "valueString": "Hemoglobin A1c/Hemoglobin.total" }
+    ]}
+  ]
+}
+      ]]>
+    </api_call>
+
+    <integration>
+      <![CDATA[
+// lib/utils/ontologies/loinc.ts
+export const loincCodes = {
+  "4548-4": {
+    code: "4548-4",
+    component: "Hemoglobin A1c/Hemoglobin.total",
+    property: "MFr",
+    timeAspect: "Pt",
+    system: "Bld",
+    scaleType: "Qn",
+    shortName: "HbA1c MFr Bld",
+    longName: "Hemoglobin A1c/Hemoglobin.total in Blood",
+    unit: "%",
+    referenceRanges: {
+      normal: { max: 5.6 },
+      prediabetes: { min: 5.7, max: 6.4 },
+      diabetes: { min: 6.5 }
+    }
+  }
+};
+      ]]>
+    </integration>
+  </example>
+
+  <example name="pharmgkb_integration">
+    <title>Exemplo: Integrar Farmacogenômica PharmGKB</title>
+    <context>Adicionar dados de farmacogenômica a Clopidogrel</context>
+
+    <search>
+      <![CDATA[
+// Buscar PharmGKB para Clopidogrel + CYP2C19
+{
+  "drug": "Clopidogrel",
+  "gene": "CYP2C19",
+  "clinicalAnnotation": {
+    "evidenceLevel": "1A",
+    "phenotypeCategory": "Dosage",
+    "summary": "CYP2C19 poor metabolizers have reduced formation of active metabolite...",
+    "recommendation": "Consider alternative antiplatelet therapy"
+  }
+}
+      ]]>
+    </search>
+
+    <integration>
+      <![CDATA[
+// lib/data/medicamentos/cardiovascular.ts
+{
+  id: "clopidogrel",
+  nome: "Clopidogrel",
+  codigos: {
+    atc: "B01AC04",
+    pharmgkb: "PA449053"
+  },
+  farmacogenetica: {
+    gene: {
+      nome: "CYP2C19",
+      pharmgkbId: "PA124"
+    },
+    evidenceLevel: "1A",
+    fenotipos: [
+      {
+        tipo: "Poor Metabolizer (*2/*2, *2/*3, *3/*3)",
+        impacto: "Redução significativa de eficácia",
+        recomendacao: "Considerar prasugrel ou ticagrelor",
+        citacao: "cpic-2013-clopidogrel"
+      },
+      {
+        tipo: "Intermediate Metabolizer (*1/*2, *1/*3)",
+        impacto: "Redução moderada de eficácia",
+        recomendacao: "Considerar dose maior ou agente alternativo",
+        citacao: "cpic-2013-clopidogrel"
+      }
+    ],
+    testeRecomendado: "Genotipar CYP2C19 antes de prescrever em SCA/ICP"
+  }
+}
+      ]]>
+    </integration>
+  </example>
+
+  <example name="rare_disease">
+    <title>Exemplo: Doença Rara com ORDO</title>
+    <context>Codificar doença rara com Orphanet</context>
+
+    <disease>Fibrose Cística</disease>
+
+    <codes>
+      <![CDATA[
+{
+  id: "fibrose-cistica",
+  nome: "Fibrose Cística",
+  codigos: {
+    icd10: "E84.9",
+    ciap2: "T99",
+    ordo: "ORPHA:586",  // Código Orphanet
+    omim: "219700"
+  },
+  fenotipos: [
+    { hpo: "HP:0002110", nome: "Bronquiectasia" },
+    { hpo: "HP:0100750", nome: "Atelectasia" },
+    { hpo: "HP:0001738", nome: "Insuficiência pancreática" },
+    { hpo: "HP:0002613", nome: "Cirrose biliar" }
+  ],
+  prevalencia: "1:2500 a 1:6000 nascidos vivos",
+  incidencia: "Mais comum em caucasianos"
+}
+      ]]>
+    </codes>
+  </example>
+
+  <anti_patterns>
+    <anti_pattern name="wrong_specificity">
+      <description>Usar código genérico quando específico disponível</description>
+      <bad>E11 (diabetes tipo 2 - genérico)</bad>
+      <good>E11.9 (diabetes tipo 2 sem complicações - específico)</good>
+    </anti_pattern>
+
+    <anti_pattern name="unvalidated_code">
+      <description>Usar código sem validar na fonte oficial</description>
+      <risk>Código pode não existir ou ter significado diferente</risk>
+    </anti_pattern>
+
+    <anti_pattern name="missing_source">
+      <description>Não documentar fonte do código</description>
+      <solution>Sempre incluir system URI e version quando disponível</solution>
+    </anti_pattern>
+  </anti_patterns>
+</examples>

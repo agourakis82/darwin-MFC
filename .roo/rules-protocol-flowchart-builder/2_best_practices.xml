@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<best_practices>
+  <overview>
+    <title>Protocol Flowchart Builder - Best Practices</title>
+    <description>
+      Diretrizes para criação de flowcharts de protocolos clínicos.
+    </description>
+  </overview>
+
+  <design_principles>
+    <principle name="clinical_accuracy">
+      <description>Flowchart deve refletir fielmente o protocolo original</description>
+      <guidelines>
+        <guideline>Não simplificar a ponto de omitir decisões críticas</guideline>
+        <guideline>Manter níveis de evidência quando disponíveis</guideline>
+        <guideline>Citar fonte do protocolo em cada seção</guideline>
+      </guidelines>
+    </principle>
+
+    <principle name="user_navigation">
+      <description>Facilitar navegação e compreensão</description>
+      <guidelines>
+        <guideline>Máximo de 15-20 nós por flowchart</guideline>
+        <guideline>Dividir protocolos complexos em sub-flowcharts</guideline>
+        <guideline>Usar cores consistentes por tipo de nó</guideline>
+        <guideline>Fluxo top-to-bottom ou left-to-right</guideline>
+      </guidelines>
+    </principle>
+
+    <principle name="complete_paths">
+      <description>Todos os caminhos devem ter conclusão</description>
+      <requirements>
+        <requirement>Cada caminho termina em endpoint ou referência</requirement>
+        <requirement>Sem "dead ends" (nós sem saída)</requirement>
+        <requirement>Loops devem ter condição de saída clara</requirement>
+      </requirements>
+    </principle>
+  </design_principles>
+
+  <node_guidelines>
+    <node_type name="decision">
+      <color>#3B82F6 (blue)</color>
+      <shape>Diamond</shape>
+      <content_guidelines>
+        <guideline>Formulado como pergunta</guideline>
+        <guideline>Resposta binária (Sim/Não) ou categórica</guideline>
+        <guideline>Critério objetivo quando possível</guideline>
+      </content_guidelines>
+      <example>Idade ≥ 50 anos?</example>
+    </node_type>
+
+    <node_type name="action">
+      <color>#10B981 (green)</color>
+      <shape>Rectangle</shape>
+      <content_guidelines>
+        <guideline>Verbo no imperativo</guideline>
+        <guideline>Ação específica e mensurável</guideline>
+      </content_guidelines>
+      <example>Solicitar mamografia bilateral</example>
+    </node_type>
+
+    <node_type name="assessment">
+      <color>#F59E0B (amber)</color>
+      <shape>Rounded rectangle</shape>
+      <content_guidelines>
+        <guideline>Coleta de informação</guideline>
+        <guideline>Pode ter múltiplas saídas baseadas em resultado</guideline>
+      </content_guidelines>
+      <example>Avaliar fatores de risco cardiovascular</example>
+    </node_type>
+
+    <node_type name="endpoint">
+      <color>#EF4444 (red) ou #22C55E (green)</color>
+      <shape>Rounded rectangle</shape>
+      <content_guidelines>
+        <guideline>Conclusão do fluxo</guideline>
+        <guideline>Diagnóstico, tratamento ou conduta final</guideline>
+      </content_guidelines>
+      <example>Diagnóstico: Diabetes Mellitus Tipo 2</example>
+    </node_type>
+
+    <node_type name="reference">
+      <color>#8B5CF6 (purple)</color>
+      <shape>Rectangle with arrow</shape>
+      <content_guidelines>
+        <guideline>Encaminhamento para outro nível de atenção</guideline>
+        <guideline>Ou link para outro flowchart</guideline>
+      </content_guidelines>
+      <example>Encaminhar para especialista (endocrinologista)</example>
+    </node_type>
+  </node_guidelines>
+
+  <edge_guidelines>
+    <guideline name="labels">
+      <description>Arestas devem ter labels claros</description>
+      <examples>
+        <example>Sim / Não</example>
+        <example>Normal / Alterado</example>
+        <example>&lt; 140 mg/dL / ≥ 140 mg/dL</example>
+      </examples>
+    </guideline>
+
+    <guideline name="consistency">
+      <description>Manter consistência de direção</description>
+      <convention>Sim/Positivo → direita ou baixo</convention>
+      <convention>Não/Negativo → esquerda</convention>
+    </guideline>
+  </edge_guidelines>
+
+  <evidence_integration>
+    <principle name="evidence_levels">
+      <description>Incluir níveis de evidência quando disponíveis</description>
+      <levels>
+        <level code="A">Múltiplos RCTs ou meta-análise</level>
+        <level code="B">Um RCT ou estudos não randomizados</level>
+        <level code="C">Consenso de especialistas</level>
+        <level code="D">Opinião de especialista</level>
+      </levels>
+    </principle>
+
+    <principle name="citations">
+      <description>Citar fonte em nós de decisão crítica</description>
+      <format>[guideline-id] ou [pmid]</format>
+    </principle>
+  </evidence_integration>
+</best_practices>

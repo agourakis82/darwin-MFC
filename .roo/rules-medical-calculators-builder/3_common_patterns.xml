@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<common_patterns>
+  <overview>
+    <title>Medical Calculators Builder - Common Patterns</title>
+    <description>
+      Padrões e estruturas para calculadoras clínicas no Darwin-MFC.
+    </description>
+  </overview>
+
+  <pattern name="calculator_structure">
+    <description>Estrutura de uma calculadora clínica</description>
+    <structure>
+      <![CDATA[
+interface Calculator {
+  id: string;
+  name: LocalizedString;
+  description: LocalizedString;
+  category: CalculatorCategory;
+  inputs: CalculatorInput[];
+  formula: (inputs: Record<string, number | string>) => CalculatorResult;
+  interpretation: InterpretationRange[];
+  citations: string[];
+  limitations: LocalizedString[];
+  disclaimer: LocalizedString;
+}
+
+interface CalculatorInput {
+  id: string;
+  label: LocalizedString;
+  type: "number" | "select" | "radio" | "checkbox";
+  unit?: string;
+  options?: { value: string | number; label: LocalizedString }[];
+  validation: {
+    required: boolean;
+    min?: number;
+    max?: number;
+  };
+  placeholder?: string;
+  helpText?: LocalizedString;
+}
+
+interface CalculatorResult {
+  value: number;
+  unit: string;
+  interpretation: string;
+  severity: "normal" | "warning" | "danger";
+  details?: LocalizedString;
+}
+
+interface InterpretationRange {
+  min?: number;
+  max?: number;
+  label: LocalizedString;
+  severity: "normal" | "warning" | "danger";
+  description: LocalizedString;
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="bmi_calculator">
+    <description>Exemplo: Calculadora de IMC</description>
+    <example>
+      <![CDATA[
+{
+  id: "imc",
+  name: { pt: "Índice de Massa Corporal (IMC)", en: "Body Mass Index (BMI)" },
+  description: {
+    pt: "Calcula o IMC a partir do peso e altura",
+    en: "Calculates BMI from weight and height"
+  },
+  category: "anthropometric",
+  inputs: [
+    {
+      id: "weight",
+      label: { pt: "Peso", en: "Weight" },
+      type: "number",
+      unit: "kg",
+      validation: { required: true, min: 20, max: 300 },
+      placeholder: "70"
+    },
+    {
+      id: "height",
+      label: { pt: "Altura", en: "Height" },
+      type: "number",
+      unit: "cm",
+      validation: { required: true, min: 100, max: 250 },
+      placeholder: "170"
+    }
+  ],
+  formula: ({ weight, height }) => {
+    const heightM = height / 100;
+    const bmi = weight / (heightM * heightM);
+    return {
+      value: Math.round(bmi * 10) / 10,
+      unit: "kg/m²",
+      interpretation: getInterpretation(bmi),
+      severity: getSeverity(bmi)
+    };
+  },
+  interpretation: [
+    { max: 18.5, label: { pt: "Baixo peso", en: "Underweight" }, severity: "warning" },
+    { min: 18.5, max: 24.9, label: { pt: "Peso normal", en: "Normal weight" }, severity: "normal" },
+    { min: 25, max: 29.9, label: { pt: "Sobrepeso", en: "Overweight" }, severity: "warning" },
+    { min: 30, max: 34.9, label: { pt: "Obesidade grau I", en: "Obesity class I" }, severity: "warning" },
+    { min: 35, max: 39.9, label: { pt: "Obesidade grau II", en: "Obesity class II" }, severity: "danger" },
+    { min: 40, label: { pt: "Obesidade grau III", en: "Obesity class III" }, severity: "danger" }
+  ],
+  citations: ["who-2000-obesity"],
+  limitations: [
+    { pt: "Não diferencia massa magra de gordura", en: "Does not differentiate lean mass from fat" },
+    { pt: "Menos acurado em atletas e idosos", en: "Less accurate in athletes and elderly" }
+  ],
+  disclaimer: {
+    pt: "O IMC é uma estimativa. A composição corporal deve ser avaliada por outros métodos quando necessário.",
+    en: "BMI is an estimate. Body composition should be assessed by other methods when necessary."
+  }
+}
+      ]]>
+    </example>
+  </pattern>
+
+  <pattern name="creatinine_clearance">
+    <description>Exemplo: Clearance de Creatinina (Cockcroft-Gault)</description>
+    <example>
+      <![CDATA[
+{
+  id: "cockcroft-gault",
+  name: {
+    pt: "Clearance de Creatinina (Cockcroft-Gault)",
+    en: "Creatinine Clearance (Cockcroft-Gault)"
+  },
+  category: "renal",
+  inputs: [
+    { id: "age", label: { pt: "Idade", en: "Age" }, type: "number", unit: "anos", validation: { required: true, min: 18, max: 120 } },
+    { id: "weight", label: { pt: "Peso", en: "Weight" }, type: "number", unit: "kg", validation: { required: true, min: 30, max: 200 } },
+    { id: "creatinine", label: { pt: "Creatinina sérica", en: "Serum creatinine" }, type: "number", unit: "mg/dL", validation: { required: true, min: 0.1, max: 20 } },
+    {
+      id: "sex",
+      label: { pt: "Sexo", en: "Sex" },
+      type: "radio",
+      options: [
+        { value: "M", label: { pt: "Masculino", en: "Male" } },
+        { value: "F", label: { pt: "Feminino", en: "Female" } }
+      ],
+      validation: { required: true }
+    }
+  ],
+  formula: ({ age, weight, creatinine, sex }) => {
+    // ClCr = [(140 - idade) × peso] / (72 × Cr)
+    // × 0.85 se mulher
+    let clcr = ((140 - age) * weight) / (72 * creatinine);
+    if (sex === "F") clcr *= 0.85;
+
+    return {
+      value: Math.round(clcr),
+      unit: "mL/min",
+      interpretation: getInterpretation(clcr),
+      severity: getSeverity(clcr)
+    };
+  },
+  interpretation: [
+    { min: 90, label: { pt: "Função renal normal", en: "Normal renal function" }, severity: "normal" },
+    { min: 60, max: 89, label: { pt: "DRC estágio 2 (leve)", en: "CKD stage 2 (mild)" }, severity: "normal" },
+    { min: 30, max: 59, label: { pt: "DRC estágio 3 (moderada)", en: "CKD stage 3 (moderate)" }, severity: "warning" },
+    { min: 15, max: 29, label: { pt: "DRC estágio 4 (grave)", en: "CKD stage 4 (severe)" }, severity: "danger" },
+    { max: 15, label: { pt: "DRC estágio 5 (falência)", en: "CKD stage 5 (kidney failure)" }, severity: "danger" }
+  ],
+  citations: ["cockcroft-1976"],
+  limitations: [
+    { pt: "Superestima em obesos, subestima em desnutridos", en: "Overestimates in obese, underestimates in malnourished" },
+    { pt: "Usar peso ideal em obesos", en: "Use ideal body weight in obese patients" }
+  ]
+}
+      ]]>
+    </example>
+  </pattern>
+
+  <pattern name="cardiovascular_score">
+    <description>Exemplo: Score de Risco Cardiovascular</description>
+    <scoring_pattern>
+      <![CDATA[
+// Padrão para scores baseados em pontos
+interface ScoreCalculator {
+  items: ScoreItem[];
+  calculateTotal: () => number;
+  interpretScore: (score: number) => RiskLevel;
+}
+
+interface ScoreItem {
+  id: string;
+  question: LocalizedString;
+  options: {
+    value: string;
+    label: LocalizedString;
+    points: number;
+  }[];
+}
+
+// Exemplo: CURB-65
+const curb65 = {
+  items: [
+    { id: "confusion", question: "Confusão mental?", options: [{ value: "no", points: 0 }, { value: "yes", points: 1 }] },
+    { id: "urea", question: "Ureia > 50 mg/dL?", options: [{ value: "no", points: 0 }, { value: "yes", points: 1 }] },
+    { id: "respiratory", question: "FR ≥ 30/min?", options: [{ value: "no", points: 0 }, { value: "yes", points: 1 }] },
+    { id: "blood_pressure", question: "PAS < 90 ou PAD ≤ 60?", options: [{ value: "no", points: 0 }, { value: "yes", points: 1 }] },
+    { id: "age", question: "Idade ≥ 65 anos?", options: [{ value: "no", points: 0 }, { value: "yes", points: 1 }] }
+  ],
+  interpretScore: (score) => {
+    if (score <= 1) return { risk: "low", management: "ambulatorial" };
+    if (score === 2) return { risk: "intermediate", management: "considerar internação" };
+    return { risk: "high", management: "internação, considerar UTI se ≥4" };
+  }
+};
+      ]]>
+    </scoring_pattern>
+  </pattern>
+</common_patterns>

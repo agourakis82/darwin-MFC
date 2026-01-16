@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool_usage>
+  <overview>
+    <title>Medical Content Architect - Tool Usage</title>
+    <description>
+      Estratégias de uso de ferramentas e APIs para geração de conteúdo médico.
+    </description>
+  </overview>
+
+  <file_operations>
+    <priority_order>
+      <priority rank="1">Read - Para entender estruturas existentes</priority>
+      <priority rank="2">Grep - Para buscar padrões em múltiplos arquivos</priority>
+      <priority rank="3">Glob - Para localizar arquivos por padrão</priority>
+      <priority rank="4">Edit - Para modificar arquivos existentes</priority>
+      <priority rank="5">Write - Apenas quando necessário criar arquivo novo</priority>
+    </priority_order>
+
+    <key_files>
+      <file purpose="rastreamentos">lib/data/rastreamentos.ts</file>
+      <file purpose="analise_critica">lib/data/analise-critica.ts</file>
+      <file purpose="referencias">lib/data/references.ts</file>
+      <file purpose="tipos_rastreamento">lib/types/rastreamentos.ts</file>
+      <file purpose="tipos_analise">lib/types/analysis.ts</file>
+      <file purpose="doencas">lib/data/doencas/*.ts</file>
+      <file purpose="medicamentos">lib/data/medicamentos/*.ts</file>
+    </key_files>
+
+    <workflow>
+      <step order="1">
+        <action>Read lib/types/ para entender interfaces</action>
+        <reason>Garantir conformidade com tipos TypeScript</reason>
+      </step>
+      <step order="2">
+        <action>Read arquivo de dados alvo para ver padrão existente</action>
+        <reason>Manter consistência com conteúdo existente</reason>
+      </step>
+      <step order="3">
+        <action>Read lib/data/references.ts para mapear citações</action>
+        <reason>Evitar duplicação de referências</reason>
+      </step>
+      <step order="4">
+        <action>Edit para adicionar novo conteúdo</action>
+        <reason>Preservar conteúdo existente</reason>
+      </step>
+    </workflow>
+  </file_operations>
+
+  <api_integrations>
+    <api name="PubMed E-utilities">
+      <description>Busca de artigos científicos e metadados</description>
+      <base_url>https://eutils.ncbi.nlm.nih.gov/entrez/eutils/</base_url>
+
+      <endpoint name="esearch">
+        <url>esearch.fcgi</url>
+        <purpose>Buscar IDs de artigos por termo</purpose>
+        <params>
+          <param name="db">pubmed</param>
+          <param name="term">termo de busca</param>
+          <param name="retmax">número máximo de resultados</param>
+          <param name="retmode">json</param>
+        </params>
+        <example>
+          <query>esearch.fcgi?db=pubmed&amp;term=breast+cancer+screening&amp;retmax=10&amp;retmode=json</query>
+        </example>
+      </endpoint>
+
+      <endpoint name="efetch">
+        <url>efetch.fcgi</url>
+        <purpose>Obter metadados completos de artigos</purpose>
+        <params>
+          <param name="db">pubmed</param>
+          <param name="id">PMID(s) separados por vírgula</param>
+          <param name="rettype">abstract</param>
+          <param name="retmode">xml</param>
+        </params>
+        <example>
+          <query>efetch.fcgi?db=pubmed&amp;id=12345678&amp;rettype=abstract&amp;retmode=xml</query>
+        </example>
+      </endpoint>
+
+      <rate_limiting>
+        <limit>3 requests por segundo sem API key</limit>
+        <limit>10 requests por segundo com API key</limit>
+      </rate_limiting>
+    </api>
+
+    <api name="CrossRef">
+      <description>Validação de DOIs e metadados de publicações</description>
+      <base_url>https://api.crossref.org/</base_url>
+
+      <endpoint name="works">
+        <url>works/{doi}</url>
+        <purpose>Obter metadados por DOI</purpose>
+        <example>
+          <query>works/10.1001/jama.2020.5269</query>
+        </example>
+        <response_fields>
+          <field>title - Título do artigo</field>
+          <field>author - Lista de autores</field>
+          <field>container-title - Nome do periódico</field>
+          <field>published-print - Data de publicação</field>
+          <field>volume, issue, page - Localização</field>
+        </response_fields>
+      </endpoint>
+
+      <rate_limiting>
+        <limit>50 requests por segundo (polite pool)</limit>
+        <header>User-Agent deve incluir mailto:email</header>
+      </rate_limiting>
+    </api>
+  </api_integrations>
+
+  <webfetch_strategies>
+    <strategy name="guideline_extraction">
+      <description>Extrair informações de guidelines oficiais</description>
+      <sources>
+        <source name="SUS">
+          <urls>
+            <url>https://www.gov.br/saude/</url>
+            <url>https://bvsms.saude.gov.br/</url>
+          </urls>
+        </source>
+        <source name="USPSTF">
+          <url>https://www.uspreventiveservicestaskforce.org/</url>
+        </source>
+        <source name="NHS">
+          <url>https://www.nhs.uk/conditions/</url>
+        </source>
+        <source name="WHO">
+          <url>https://www.who.int/</url>
+        </source>
+      </sources>
+      <prompt_template>
+        Extract the following from this guideline page:
+        1. Target population (age, sex, risk factors)
+        2. Recommended screening method
+        3. Recommended frequency/interval
+        4. Evidence level/grade
+        5. Publication/update date
+      </prompt_template>
+    </strategy>
+
+    <strategy name="pubmed_search">
+      <description>Buscar literatura relevante via PubMed</description>
+      <prompt_template>
+        Search PubMed for recent systematic reviews or meta-analyses on:
+        [topic] screening guidelines
+        Focus on articles from the last 5 years.
+        Extract: authors, title, journal, year, DOI, PMID, key findings.
+      </prompt_template>
+    </strategy>
+  </webfetch_strategies>
+
+  <bash_usage>
+    <allowed>
+      <command>npm run build - Verificar erros de compilação</command>
+      <command>npm run lint - Verificar erros de linting</command>
+      <command>npm run verify - Executar verificação de integridade</command>
+    </allowed>
+    <avoid>
+      <command>Não usar grep/cat/sed - usar ferramentas nativas</command>
+      <command>Não modificar configurações do projeto</command>
+    </avoid>
+  </bash_usage>
+
+  <validation_commands>
+    <command purpose="type_check">
+      <bash>npm run build</bash>
+      <expected>Build completo sem erros de tipo</expected>
+    </command>
+    <command purpose="lint_check">
+      <bash>npm run lint</bash>
+      <expected>Nenhum erro de linting</expected>
+    </command>
+    <command purpose="integration_check">
+      <bash>npm run verify</bash>
+      <expected>Todas as verificações passam</expected>
+    </command>
+  </validation_commands>
+</tool_usage>

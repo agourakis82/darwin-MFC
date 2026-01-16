@@ -6,7 +6,7 @@
  * Demonstração interativa do poder transformador do ecossistema
  */
 
-import { ecosystemDemonstration } from '../lib/demo/ecosystem-demo';
+import { ecosystemDemonstration } from '../lib/demo/ecosystem-demo.ts';
 
 async function runEcosystemDemonstration() {
   console.log('🌍 DEMONSTRAÇÃO DO ECOSSISTEMA DARWIN-MFC 2.0');
@@ -74,7 +74,9 @@ async function runEcosystemDemonstration() {
 }
 
 // Executar demonstração se chamado diretamente
-if (require.main === module) {
+import { fileURLToPath } from 'url';
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
   runEcosystemDemonstration()
     .then(() => {
       console.log('\n✅ Demonstração executada com sucesso!');

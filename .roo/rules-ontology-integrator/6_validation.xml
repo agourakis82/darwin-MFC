@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validation>
+  <overview>
+    <title>Ontology Integrator - Validation Rules</title>
+    <description>
+      Regras de validação para integridade de ontologias no Darwin-MFC.
+    </description>
+  </overview>
+
+  <validation_rules>
+    <rule name="icd10_format" severity="error">
+      <description>ICD-10 deve seguir formato correto</description>
+      <pattern>^[A-Z]\d{2}(\.\d{1,2})?$</pattern>
+      <examples>
+        <valid>E11.9, I10, C50.1, F32.0</valid>
+        <invalid>E119, e11.9, 11.9, E11.999</invalid>
+      </examples>
+    </rule>
+
+    <rule name="ciap2_format" severity="error">
+      <description>CIAP2 deve seguir formato correto</description>
+      <pattern>^[A-Z]\d{2}$</pattern>
+      <examples>
+        <valid>T90, K86, X76</valid>
+        <invalid>T901, t90, 90</invalid>
+      </examples>
+    </rule>
+
+    <rule name="loinc_format" severity="error">
+      <description>LOINC deve seguir formato correto</description>
+      <pattern>^\d{1,5}-\d$</pattern>
+      <examples>
+        <valid>2339-0, 4548-4, 718-7</valid>
+        <invalid>2339, 23390, LOINC:2339-0</invalid>
+      </examples>
+    </rule>
+
+    <rule name="hpo_format" severity="error">
+      <description>HPO deve seguir formato correto</description>
+      <pattern>^HP:\d{7}$</pattern>
+      <examples>
+        <valid>HP:0001250, HP:0000822</valid>
+        <invalid>HP0001250, HP:1250, 0001250</invalid>
+      </examples>
+    </rule>
+
+    <rule name="ordo_format" severity="error">
+      <description>ORDO deve seguir formato correto</description>
+      <pattern>^ORPHA:\d+$</pattern>
+      <examples>
+        <valid>ORPHA:558, ORPHA:1653</valid>
+        <invalid>ORPHA558, Orpha:558</invalid>
+      </examples>
+    </rule>
+
+    <rule name="atc_format" severity="error">
+      <description>ATC deve seguir formato correto</description>
+      <pattern>^[A-Z]\d{2}[A-Z]{2}\d{2}$</pattern>
+      <examples>
+        <valid>A10BA02, C09AA01, N02BE01</valid>
+        <invalid>A10BA2, A10BA022, a10ba02</invalid>
+      </examples>
+    </rule>
+
+    <rule name="code_exists" severity="warning">
+      <description>Código deve existir na ontologia oficial</description>
+      <validation_method>API lookup</validation_method>
+    </rule>
+
+    <rule name="code_matches_entity" severity="warning">
+      <description>Descrição do código deve corresponder à entidade</description>
+      <validation_method>Compare display name with entity name</validation_method>
+    </rule>
+
+    <rule name="disease_has_icd10" severity="warning">
+      <description>Toda doença deve ter código ICD-10</description>
+      <target_coverage>100%</target_coverage>
+    </rule>
+
+    <rule name="lab_has_loinc" severity="warning">
+      <description>Todo exame laboratorial deve ter código LOINC</description>
+      <target_coverage>100%</target_coverage>
+    </rule>
+
+    <rule name="drug_has_atc" severity="warning">
+      <description>Todo medicamento deve ter código ATC</description>
+      <target_coverage>100%</target_coverage>
+    </rule>
+  </validation_rules>
+
+  <coverage_targets>
+    <target ontology="ICD-10" entity="doencas">100%</target>
+    <target ontology="CIAP2" entity="doencas_aps">90%</target>
+    <target ontology="LOINC" entity="exames">100%</target>
+    <target ontology="ATC" entity="medicamentos">100%</target>
+    <target ontology="HPO" entity="doencas_geneticas">80%</target>
+    <target ontology="ORDO" entity="doencas_raras">100%</target>
+    <target ontology="PharmGKB" entity="farmacos_pgx">70%</target>
+  </coverage_targets>
+
+  <integrity_checks>
+    <check name="referential_integrity">
+      <description>Códigos referenciados devem existir em ontology files</description>
+      <validation>
+        <![CDATA[
+// Para cada doença com examesRelacionados
+doenca.examesRelacionados.forEach(exame => {
+  if (!loincCodes[exame.loinc]) {
+    throw new Error(`LOINC ${exame.loinc} not found in ontology file`);
+  }
+});
+        ]]>
+      </validation>
+    </check>
+
+    <check name="no_duplicates">
+      <description>Não deve haver códigos duplicados</description>
+      <validation>
+        <![CDATA[
+const seenCodes = new Set();
+diseases.forEach(d => {
+  if (seenCodes.has(d.codigos.icd10)) {
+    throw new Error(`Duplicate ICD-10: ${d.codigos.icd10}`);
+  }
+  seenCodes.add(d.codigos.icd10);
+});
+        ]]>
+      </validation>
+    </check>
+
+    <check name="linkage_consistency">
+      <description>Linkagens entre entidades devem ser bidirecionais</description>
+    </check>
+  </integrity_checks>
+
+  <report_format>
+    <![CDATA[
+## Ontology Coverage Report
+
+### Diseases
+- Total: 600
+- With ICD-10: 598 (99.7%)
+- With CIAP2: 540 (90%)
+- With HPO: 200 (33%)
+
+### Lab Tests
+- Total: 120
+- With LOINC: 118 (98.3%)
+
+### Medications
+- Total: 250
+- With ATC: 248 (99.2%)
+- With PharmGKB: 45 (18%)
+
+### Issues Found
+1. Missing ICD-10: [list]
+2. Invalid format: [list]
+3. Unverified codes: [list]
+    ]]>
+  </report_format>
+</validation>

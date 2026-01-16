@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool_usage_guide>
+  <tool_priorities>
+    <priority level="1">
+      <tool>list_files</tool>
+      <when>Sempre começar analisando a estrutura do projeto</when>
+      <why>Compreender organização facilita implementação consistente</why>
+    </priority>
+    
+    <priority level="2">
+      <tool>search_files</tool>
+      <when>Encontrar padrões existentes e evitar duplicação</when>
+      <why>Manter consistência com código existente é crucial</why>
+    </priority>
+
+    <priority level="3">
+      <tool>read_file</tool>
+      <when>Examinar código similar para inspiração e padrões</when>
+      <why>Compreender contexto atual evita breaking changes</why>
+    </priority>
+  </tool_priorities>
+
+  <frontend_tool_specific_guidance>
+    <tool name="apply_diff">
+      <best_practices>
+        <practice>Sempre ler arquivo primeiro para garantir contexto correto</practice>
+        <practice>Usar indentação consistente e seguir padrões do projeto</practice>
+        <practice>Incluir comentários explicativos para animações complexas</practice>
+        <practice>Testar mudanças em múltiplos breakpoints</practice>
+      </best_practices>
+      
+      <css_animation_examples>
+        <example><![CDATA[
+<apply_diff>
+<path>components/Button.css</path>
+<diff>
+<<<<<<< SEARCH
+:start_line:15
+-------
+.button {
+  transition: all 0.2s ease;
+}
+=======
+.button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.button:active::before {
+  width: 300px;
+  height: 300px;
+}
+>>>>>>> REPLACE
+</diff>
+</apply_diff>
+        ]]></example>
+      </css_animation_examples>
+
+      <javascript_interaction_examples>
+        <example><![CDATA[
+<apply_diff>
+<path>components/Modal.jsx</path>
+<diff>
+<<<<<<< SEARCH
+:start_line:25
+-------
+const Modal = ({ isOpen, onClose, children }) => {
+  return (
+    <div className={`modal ${isOpen ? 'modal--open' : ''}`}>
+      {children}
+    </div>
+  );
+};
+=======
+import { useEffect, useRef } from 'react';
+
+const Modal = ({ isOpen, onClose, children }) => {
+  const modalRef = useRef(null);
+  const previousActiveElement = useRef(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      previousActiveElement.current = document.activeElement;
+      modalRef.current?.focus();
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+      previousActiveElement.current?.focus();
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Escape') {
+      onClose();
+    }
+  };
+
+  return (
+    <div 
+      ref={modalRef}
+      className={`modal ${isOpen ? 'modal--open' : ''}`}
+      role="dialog"
+      aria-modal="true"
+      tabIndex={-1}
+      onKeyDown={handleKeyDown}
+    >
+      <div className="modal__backdrop" onClick={onClose} />
+      <div className="modal__content">
+        {children}
+      </div>
+    </div>
+  );
+};
+>>>>>>> REPLACE
+</diff>
+</apply_diff>
+        ]]></example>
+      </javascript_interaction_examples>
+    </tool>
+
+    <tool name="write_to_file">
+      <when_to_use>
+        - Criar novos componentes UI/UX do zero
+        - Implementar sistemas de design
+        - Adicionar animações CSS complexas
+        - Criar configurações de build (webpack, vite, etc.)
+      </when_to_use>
+      
+      <file_organization>
+        <component_structure>
+          <component_name>ComponentName.jsx</component_name>
+          <style_file>ComponentName.module.css ou ComponentName.css</style_file>
+          <test_file>ComponentName.test.jsx</test_file>
+          <index_file>index.js (para re-exportação)</index_file>
+        </component_structure>
+      </file_organization>
+
+      <css_architecture>
+        <layer>Reset/Normalize</layer>
+        <layer>Base (tipografia, cores)</layer>
+        <layer>Components</layer>
+        <layer>Utilities</layer>
+        <layer>Animations</layer>
+      </css_architecture>
+    </tool>
+
+    <tool name="search_files">
+      <patterns_to_search>
+        <pattern>animation|css-transition|@keyframes</pattern>
+        <description>Encontrar animações existentes para manter consistência</description>
+      </patterns_to_search>
+      
+      <pattern>\.module\.css$|\.css$</pattern>
+      <description>Analisar estrutura de estilos do projeto</description>
+      
+      <pattern>component(ComponentName)</pattern>
+      <description>Encontrar componentes similares para seguir padrões</description>
+      
+      <pattern>theme|design-system|style-guide</pattern>
+      <description>Identificar sistemas de design existentes</description>
+      <description>Garantir consistência visual</description>
+      <description>Encontrar guidelines de projeto</description>
+    </tool>
+  </frontend_tool_specific_guidance>
+
+  <browser_interaction_guidance>
+    <tool name="browser_use">
+      <when_to_use>
+        - Testar animações em tempo real
+        - Validar responsividade
+        - Verificar acessibilidade
+        - Debug de micro-interações
+        - Performance testing
+      </when_to_use>
+
+      <testing_workflow>
+        <step>Carregar página com componentes implementados</step>
+        <step>Testar animações de hover, focus, active states</step>
+        <step>Verificar responsividade em diferentes breakpoints</step>
+        <step>Validar navegação por teclado</step>
+        <step>Testar performance das animações</step>
+        <step>Verificar contraste e legibilidade</step>
+      </testing_workflow>
+
+      <accessibility_validation>
+        <check>Tab navigation funciona corretamente</check>
+        <check>Focus indicators são visíveis</check>
+        <check>Aria labels estão presentes</check>
+        <check>Contraste atende WCAG 2.1 AA</check>
+        <check>Screen reader compatibility</check>
+        <check>Motion reduction preferences</check>
+      </accessibility_validation>
+    </tool>
+  </browser_interaction_guidance>
+
+  <command_execution_guidance>
+    <tool name="execute_command">
+      <when_to_use>
+        - Instalar dependências (npm, yarn, pnpm)
+        - Executar testes de componentes
+        - Build e deploy de protótipos
+        - Otimização de assets
+        - Performance analysis
+      </when_to_use>
+
+      <common_commands>
+        <command>npm run dev</command>
+        <purpose>Iniciar servidor de desenvolvimento para testing</purpose>
+        <note>Sempre executar após mudanças significativas</note>
+        
+        <command>npm run build</command>
+        <purpose>Build de produção para validação final</purpose>
+        <note>Verificar bundle size e otimizações</note>
+        
+        <command>npm run test</command>
+        <purpose>Executar testes de componentes</purpose>
+        <note>Importante para garantir não regression</note>
+        
+        <command>npm run lint</command>
+        <purpose>Validar qualidade do código</purpose>
+        <note>Seguir padrões estabelecidos do projeto</note>
+      </common_commands>
+
+      <performance_analysis>
+        <command>npx lighthouse http://localhost:3000</command>
+        <purpose>Analisar performance, acessibilidade e SEO</purpose>
+        <note>Focar em Core Web Vitals</note>
+        
+        <command>npx web-vitals-cli</command>
+        <purpose>Medir métricas reais de performance</purpose>
+        <note>Usar em dispositivos reais</note>
+      </performance_analysis>
+    </tool>
+  </command_execution_guidance>
+
+  <mcp_integration_guidance>
+    <tool name="mcp_tools">
+      <when_to_use>
+        - Acessar ferramentas de design
+        - Consultar guidelines de acessibilidade
+        - Gerar assets de design
+        - Validar padrões WCAG
+        - Consultar bibliotecas de componentes
+      </when_to_use>
+
+      <sequential_thinking_integration>
+        <tool>sequentialthinking</tool>
+        <use_case>Planejar arquitetura complexa de componentes</use_case>
+        <benefit>Explorar soluções criativas passo a passo</benefit>
+      </sequential_thinking_integration>
+    </tool>
+  </mcp_integration_guidance>
+
+  <workflow_integration>
+    <phase name="initialization">
+      <tool_sequence>
+        <tool>list_files</tool> - Analisar estrutura do projeto
+        <tool>search_files</tool> - Encontrar padrões existentes
+        <tool>read_file</tool> - Compreender código similar
+      </tool_sequence>
+    </phase>
+
+    <phase name="creation">
+      <tool_sequence>
+        <tool>write_to_file</tool> - Criar componentes base
+        <tool>apply_diff</tool> - Refinar e iterar
+        <tool>execute_command</tool> - Testar mudanças
+        <tool>browser_use</tool> - Validar visualmente
+      </tool_sequence>
+    </phase>
+
+    <phase name="optimization">
+      <tool_sequence>
+        <tool>search_files</tool> - Encontrar oportunidades de otimização
+        <tool>apply_diff</tool> - Implementar melhorias
+        <tool>execute_command</tool> - Executar testes de performance
+        <tool>browser_use</tool> - Validar acessibilidade
+      </tool_sequence>
+    </phase>
+  </workflow_integration>
+
+  <debugging_workflows>
+    <scenario name="animation_performance_issues">
+      <symptoms>Janky animations, frame drops, CPU spikes</symptoms>
+      <tools>
+        <tool>execute_command</tool> - Perf profiler no browser
+        <tool>browser_use</tool> - DevTools Performance tab
+        <tool>search_files</tool> - Identificar propriedades animadas
+      </tools>
+      <solutions>
+        <solution>Usar transform e opacity apenas</solution>
+        <solution>Adicionar will-change apropriadamente</solution>
+        <solution>Implementar requestAnimationFrame para JS animations</solution>
+        <solution>Usar GPU acceleration (transform3d)</solution>
+      </solutions>
+    </scenario>
+
+    <scenario name="accessibility_conflicts">
+      <symptoms>Contraste baixo, navegação por teclado quebrada</symptoms>
+      <tools>
+        <tool>browser_use</tool> - AXe DevTools extension
+        <tool>execute_command</tool> - Lighthouse accessibility audit
+      </tools>
+      <solutions>
+        <solution>Verificar contrast ratios com ferramentas</solution>
+        <solution>Implementar focus indicators visíveis</solution>
+        <solution>Adicionar skip links e ARIA labels</solution>
+        <solution>Testar com screen readers</solution>
+      </solutions>
+    </scenario>
+
+    <scenario name="responsive_layout_breaks">
+      <symptoms>Layout quebrado em mobile, overflow, elementos sobrepostos</symptoms>
+      <tools>
+        <tool>browser_use</tool> - Device emulation testing
+        <tool>search_files</tool> - Revisar media queries
+      </tools>
+      <solutions>
+        <solution>Usar fluid layouts (flexbox, grid)</solution>
+        <solution>Implementar container queries quando possível</solution>
+        <solution>Testar em dispositivos reais</solution>
+        <solution>Usar viewport units apropriadamente</solution>
+      </solutions>
+    </scenario>
+  </debugging_workflows>
+
+  <quality_assurance_workflow>
+    <step name="pre_implementation">
+      <checklist>
+        <item>Analisar requisitos funcionais e estéticos</item>
+        <item>Identificar padrões de design existentes</item>
+        <item>Definir critérios de performance</item>
+        <item>Estabelecer metas de acessibilidade</item>
+      </checklist>
+    </step>
+
+    <step name="during_implementation">
+      <checklist>
+        <item>Seguir sistema de design estabelecido</item>
+        <item>Implementar animações com performance em mente</item>
+        <item>Manter acessibilidade desde o início</item>
+        <item>Testar frequentemente em browser</item>
+      </checklist>
+    </step>
+
+    <step name="post_implementation">
+      <checklist>
+        <item>Executar audit completo de acessibilidade</item>
+        <item>Testar performance em dispositivos reais</item>
+        <item>Validar responsividade em múltiplos breakpoints</item>
+        <item>Documentar padrões e componentes criados</item>
+        <item>Implementar fallbacks para limitações de usuário</item>
+      </checklist>
+    </step>
+  </quality_assurance_workflow>
+</tool_usage_guide>

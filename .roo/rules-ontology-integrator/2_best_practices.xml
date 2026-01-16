@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<best_practices>
+  <overview>
+    <title>Ontology Integrator - Best Practices</title>
+    <description>
+      Diretrizes para integração de ontologias médicas no Darwin-MFC.
+    </description>
+  </overview>
+
+  <coding_principles>
+    <principle name="specificity">
+      <description>Usar código mais específico disponível</description>
+      <example>
+        <general>I10 (Hipertensão essencial)</general>
+        <specific>I10.0 (Hipertensão essencial benigna) - preferir quando aplicável</specific>
+      </example>
+    </principle>
+
+    <principle name="primary_classification">
+      <description>Priorizar classificação primária para cada tipo de entidade</description>
+      <priorities>
+        <entity type="doenca">
+          <priority order="1">ICD-10 (padrão internacional)</priority>
+          <priority order="2">CIAP2 (contexto APS)</priority>
+          <priority order="3">ORDO (doenças raras)</priority>
+        </entity>
+        <entity type="exame">
+          <priority order="1">LOINC (padrão laboratorial)</priority>
+        </entity>
+        <entity type="medicamento">
+          <priority order="1">ATC (classificação terapêutica)</priority>
+          <priority order="2">DCI (nome genérico internacional)</priority>
+        </entity>
+      </priorities>
+    </principle>
+
+    <principle name="validation_required">
+      <description>Validar códigos contra fonte oficial</description>
+      <methods>
+        <method ontology="LOINC">Verificar via FHIR API</method>
+        <method ontology="ICD-10">Verificar via WHO ICD-11 browser</method>
+        <method ontology="HPO">Verificar via HPO API</method>
+      </methods>
+    </principle>
+
+    <principle name="source_documentation">
+      <description>Documentar fonte de cada código</description>
+      <fields>
+        <field>code - O código em si</field>
+        <field>system - URI da ontologia</field>
+        <field>display - Nome descritivo</field>
+        <field>version - Versão da ontologia (quando relevante)</field>
+      </fields>
+    </principle>
+  </coding_principles>
+
+  <ontology_specific>
+    <ontology name="ICD-10">
+      <format>Letra + 2 dígitos[.dígito]</format>
+      <examples>E11.9, I10, C50.9, F32.0</examples>
+      <notes>
+        <note>Usar ponto decimal para subcategorias</note>
+        <note>Códigos brasileiros podem ter extensões específicas</note>
+      </notes>
+    </ontology>
+
+    <ontology name="CIAP2">
+      <format>Letra + 2 dígitos</format>
+      <examples>T90, K86, X76, P76</examples>
+      <chapters>
+        <chapter code="A">Geral e inespecífico</chapter>
+        <chapter code="K">Cardiovascular</chapter>
+        <chapter code="T">Endócrino/metabólico</chapter>
+        <chapter code="X">Genital feminino</chapter>
+      </chapters>
+    </ontology>
+
+    <ontology name="LOINC">
+      <format>Número-Dígito verificador</format>
+      <examples>2339-0, 4548-4, 718-7</examples>
+      <parts>
+        <part name="component">O que está sendo medido</part>
+        <part name="property">Tipo de medição (massa, concentração)</part>
+        <part name="time">Ponto no tempo</part>
+        <part name="system">Amostra (sangue, urina)</part>
+        <part name="scale">Escala (quantitativo, ordinal)</part>
+        <part name="method">Método (quando relevante)</part>
+      </parts>
+    </ontology>
+
+    <ontology name="HPO">
+      <format>HP:7 dígitos</format>
+      <examples>HP:0001250, HP:0000822</examples>
+      <usage>Usar para fenótipos/sintomas de doenças</usage>
+    </ontology>
+
+    <ontology name="ORDO">
+      <format>ORPHA:número</format>
+      <examples>ORPHA:558, ORPHA:1653</examples>
+      <usage>Apenas para doenças raras (prevalência &lt;1:2000)</usage>
+    </ontology>
+
+    <ontology name="ATC">
+      <format>Letra + 2 dígitos + Letra + Letra + 2 dígitos</format>
+      <examples>A10BA02 (metformina), C09AA01 (captopril)</examples>
+      <levels>
+        <level n="1">Grupo anatômico principal</level>
+        <level n="2">Subgrupo terapêutico</level>
+        <level n="3">Subgrupo farmacológico</level>
+        <level n="4">Subgrupo químico</level>
+        <level n="5">Substância química</level>
+      </levels>
+    </ontology>
+  </ontology_specific>
+
+  <interoperability>
+    <principle name="fhir_compatibility">
+      <description>Manter compatibilidade com FHIR R4</description>
+      <coding_structure>
+        <![CDATA[
+{
+  "coding": [
+    {
+      "system": "http://loinc.org",
+      "code": "2339-0",
+      "display": "Glucose [Mass/volume] in Blood"
+    }
+  ]
+}
+        ]]>
+      </coding_structure>
+    </principle>
+
+    <principle name="multilingual_display">
+      <description>Manter display em múltiplos idiomas quando possível</description>
+    </principle>
+  </interoperability>
+</best_practices>

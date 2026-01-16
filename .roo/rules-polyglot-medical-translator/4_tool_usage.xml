@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool_usage>
+  <overview>
+    <title>Polyglot Medical Translator - Tool Usage</title>
+    <description>
+      Estratégias de ferramentas para tradução médica multilíngue.
+    </description>
+  </overview>
+
+  <file_operations>
+    <priority_order>
+      <priority rank="1">Read - Analisar arquivos de tradução existentes</priority>
+      <priority rank="2">Grep - Buscar termos específicos em múltiplos locales</priority>
+      <priority rank="3">Glob - Localizar todos arquivos de um locale</priority>
+      <priority rank="4">Edit - Atualizar traduções existentes</priority>
+      <priority rank="5">Write - Criar novo arquivo de locale</priority>
+    </priority_order>
+
+    <key_directories>
+      <directory>messages/</directory>
+      <directory>lib/i18n/</directory>
+      <directory>lib/data/translations/</directory>
+    </key_directories>
+
+    <search_patterns>
+      <pattern purpose="find_missing_translations">
+        Grep para key em messages/pt/*.json, verificar se existe em messages/{locale}/*.json
+      </pattern>
+      <pattern purpose="find_term_usage">
+        Grep termo médico em todos arquivos lib/i18n/*.ts
+      </pattern>
+    </search_patterns>
+  </file_operations>
+
+  <api_integrations>
+    <api name="Wikidata SPARQL">
+      <description>Validar e buscar traduções de termos médicos</description>
+      <endpoint>https://query.wikidata.org/sparql</endpoint>
+
+      <query name="translate_by_icd10">
+        <purpose>Traduzir doença por código ICD-10</purpose>
+        <sparql>
+          <![CDATA[
+SELECT ?itemLabel WHERE {
+  ?item wdt:P493 "E11".  # ICD-10 code
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "ar,en". }
+}
+          ]]>
+        </sparql>
+      </query>
+
+      <query name="translate_by_name">
+        <purpose>Buscar traduções por nome em português</purpose>
+        <sparql>
+          <![CDATA[
+SELECT ?item ?itemLabel ?itemLabel_en ?itemLabel_ar WHERE {
+  ?item rdfs:label "diabetes mellitus tipo 2"@pt.
+  OPTIONAL { ?item rdfs:label ?itemLabel_en. FILTER(LANG(?itemLabel_en) = "en") }
+  OPTIONAL { ?item rdfs:label ?itemLabel_ar. FILTER(LANG(?itemLabel_ar) = "ar") }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "pt". }
+}
+          ]]>
+        </sparql>
+      </query>
+
+      <query name="drug_translations">
+        <purpose>Traduzir medicamentos por DCI</purpose>
+        <sparql>
+          <![CDATA[
+SELECT ?item ?itemLabel WHERE {
+  ?item wdt:P31 wd:Q12140.  # instance of medication
+  ?item rdfs:label "metformin"@en.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[LANG]". }
+}
+          ]]>
+        </sparql>
+      </query>
+    </api>
+
+    <api name="WHO ICD-11 API">
+      <description>Terminologia oficial OMS multilíngue</description>
+      <endpoint>https://icd.who.int/icdapi</endpoint>
+      <note>Requer autenticação OAuth2</note>
+    </api>
+  </api_integrations>
+
+  <translation_workflow>
+    <step order="1">
+      <action>Identificar conteúdo fonte</action>
+      <command>Read messages/pt/common.json</command>
+    </step>
+    <step order="2">
+      <action>Verificar traduções existentes</action>
+      <command>Read messages/{locale}/common.json para cada locale</command>
+    </step>
+    <step order="3">
+      <action>Identificar keys faltando</action>
+      <method>Comparar keys entre pt e outros locales</method>
+    </step>
+    <step order="4">
+      <action>Consultar Wikidata para termos médicos</action>
+      <command>WebFetch query.wikidata.org com SPARQL</command>
+    </step>
+    <step order="5">
+      <action>Aplicar traduções</action>
+      <command>Edit messages/{locale}/common.json</command>
+    </step>
+    <step order="6">
+      <action>Verificar build</action>
+      <command>npm run build</command>
+    </step>
+  </translation_workflow>
+
+  <consistency_checks>
+    <check name="key_parity">
+      <description>Verificar se todas as keys existem em todos os locales</description>
+      <script>
+        <![CDATA[
+// Pseudo-código para verificação
+const ptKeys = extractKeys('messages/pt/*.json');
+for (const locale of ['en', 'es', 'fr', 'ar', 'zh', 'el', 'hi', 'ru']) {
+  const localeKeys = extractKeys(`messages/${locale}/*.json`);
+  const missing = ptKeys.filter(k => !localeKeys.includes(k));
+  if (missing.length > 0) {
+    report(`${locale} missing: ${missing.join(', ')}`);
+  }
+}
+        ]]>
+      </script>
+    </check>
+
+    <check name="term_consistency">
+      <description>Verificar consistência de termos entre arquivos</description>
+      <method>Grep termo em lib/i18n/*.ts e verificar mesmo valor</method>
+    </check>
+
+    <check name="placeholder_preservation">
+      <description>Verificar placeholders preservados</description>
+      <pattern>\{[a-zA-Z0-9_]+\}</pattern>
+    </check>
+  </consistency_checks>
+
+  <bash_commands>
+    <command purpose="validate_json">
+      <bash>npm run build</bash>
+      <expected>JSON válido em todos os arquivos de mensagens</expected>
+    </command>
+    <command purpose="test_locale_switch">
+      <bash>npm run dev</bash>
+      <test>Navegar para /ar/ e verificar RTL</test>
+    </command>
+  </bash_commands>
+
+  <glossary_management>
+    <description>Manter glossário centralizado de termos técnicos</description>
+    <location>lib/i18n/medical-terms.ts</location>
+    <workflow>
+      <step>Antes de traduzir termo médico, verificar glossário</step>
+      <step>Se termo não existe, consultar Wikidata/WHO</step>
+      <step>Adicionar termo ao glossário com todas traduções</step>
+      <step>Usar termo do glossário consistentemente</step>
+    </workflow>
+  </glossary_management>
+</tool_usage>

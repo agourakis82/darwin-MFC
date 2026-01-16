@@ -162,6 +162,121 @@ const analiseCancerProstata: CriticalAnalysis = {
   conclusion: 'Próstata é o rastreamento onde o conflito entre sociedade médica e gestão pública é mais agudo. A solução atual - decisão compartilhada sem recomendação populacional - é um compromisso que preserva autonomia do paciente sem desperdiçar recursos públicos.'
 };
 
+const analiseCancerColorretal: CriticalAnalysis = {
+  rastreamentoId: 'cancer-colorretal',
+  context: 'O câncer colorretal é o único entre os mais prevalentes que não possui programa de rastreamento estruturado no SUS, apesar de evidências robustas de que rastreamento reduz mortalidade em 15-30%. A morte de Preta Gil (2025) catalisou debate público e proposta legislativa (PL 4153/2025).',
+  paradigmShift: true,
+  insights: [
+    {
+      id: 'insight-colorretal-1',
+      type: 'segunda_ordem',
+      title: 'A Inércia Institucional como Fator de Mortalidade',
+      description: 'Desde 2016, USPSTF recomenda rastreamento de colorretal. Desde 2021, idade foi reduzida para 45 anos. Brasil, em 2026, ainda não tem programa estruturado. Cada ano de atraso significa ~21.000 mortes evitáveis, sendo ~30% em pessoas abaixo de 65 anos.',
+      implication: 'A ausência de programa não é acidental - reflete limitação de capacidade endoscópica do SUS. Implementar rastreamento exigiria 5-10x mais colonoscopias que a oferta atual.',
+      citations: [{ refId: 'uspstf-colorretal-2021' }, { refId: 'inca-estimativa-2023' }]
+    },
+    {
+      id: 'insight-colorretal-2',
+      type: 'terceira_ordem',
+      title: 'FIT como Tecnologia Disruptiva Subutilizada',
+      description: 'Teste imunoquímico fecal (FIT) custa R$15-30, pode ser distribuído em UBS, e detecta >70% dos cânceres e >30% dos adenomas avançados. Colonoscopia (R$500-1.500) seria reservada para FIT positivos (~5%). Esta estratégia é usada por UK, Holanda, Austrália.',
+      implication: 'Brasil poderia implementar rastreamento FIT-first imediatamente, sem expansão massiva de endoscopia. A escolha por esperar "programa ideal" custa vidas.',
+      citations: [{ refId: 'sbcp-colorretal-2024' }]
+    },
+    {
+      id: 'insight-colorretal-3',
+      type: 'segunda_ordem',
+      title: 'Lei Preta Gil: Legislação Catalisada por Celebridade',
+      description: 'O PL 4153/2025 surgiu após morte da cantora Preta Gil (50 anos) por câncer colorretal metastático. Propõe PSOF gratuito aos 35+ e colonoscopia aos 45+. Legislação reativa a tragédias midiáticas é padrão brasileiro (Lei Maria da Penha, Lei Romeo Mion, Lei Henry Borel).',
+      implication: 'Leis catalisadas por celebridades podem criar direitos sem orçamento vinculado. Risco: judicialização massiva por colonoscopias que o SUS não pode ofertar.',
+      citations: [{ refId: 'lei-preta-gil-2025' }]
+    },
+    {
+      id: 'insight-colorretal-4',
+      type: 'terceira_ordem',
+      title: 'Epidemiologia Emergente: Câncer Colorretal em Jovens',
+      description: 'Incidência de câncer colorretal em adultos <50 anos aumentou 2% ao ano desde 2000 globalmente. Preta Gil (50 anos), Chadwick Boseman (43 anos) são exemplos midiáticos. Causas hipotéticas: dieta ultraprocessada, obesidade, microbioma alterado.',
+      implication: 'A decisão da USPSTF de baixar idade para 45 anos (2021) antecipou tendência epidemiológica. Brasil, ao não implementar, acumula diagnósticos tardios em jovens.',
+      citations: [{ refId: 'uspstf-colorretal-2021' }, { refId: 'fundacao-cancer-2025' }]
+    }
+  ],
+  controversies: [
+    {
+      id: 'contro-colorretal-1',
+      topic: 'Idade de Início: 45 vs 50 anos',
+      positionA: {
+        entity: 'SBCP/SBCO/American Cancer Society',
+        argument: 'Recomendam início aos 45 anos, citando aumento de incidência em jovens e modelagem que mostra benefício líquido. USPSTF adotou 45 anos em 2021 com grau B.',
+        citations: [{ refId: 'uspstf-colorretal-2021' }, { refId: 'sbcp-colorretal-2024' }]
+      },
+      positionB: {
+        entity: 'OMS/Programas Europeus',
+        argument: 'Mantêm início aos 50 anos, argumentando que a relação custo-benefício é mais favorável nessa faixa e que recursos são limitados para expandir para faixas mais jovens.',
+        citations: [{ refId: 'who-cancer-screening-2022' }]
+      },
+      synthesis: 'A diferença reflete contextos: países ricos podem absorver custo de rastrear 45-49; países com recursos limitados priorizam 50+. Brasil, sem programa algum, deveria começar por qualquer idade.'
+    },
+    {
+      id: 'contro-colorretal-2',
+      topic: 'Método Primário: FIT vs Colonoscopia',
+      positionA: {
+        entity: 'Programas Populacionais (UK, Holanda, Austrália)',
+        argument: 'FIT como método primário é mais custo-efetivo para rastreamento populacional. Colonoscopia reservada para FIT positivos. Permite alta cobertura com infraestrutura limitada.',
+        citations: [{ refId: 'sbcp-colorretal-2024' }]
+      },
+      positionB: {
+        entity: 'Sociedades de Gastroenterologia/Endoscopia',
+        argument: 'Colonoscopia é padrão-ouro, detecta e remove pólipos em único procedimento. FIT perde adenomas não-sangrantes e requer repetição anual.',
+        citations: [{ refId: 'sbcp-colorretal-2024' }]
+      },
+      synthesis: 'Para rastreamento populacional em sistemas com recursos limitados, FIT-first é a escolha pragmática. Colonoscopia primária é ideal para rastreamento individual com acesso garantido.'
+    }
+  ],
+  challenges: [
+    {
+      operational: 'Brasil tem ~3.000 colonoscopistas ativos para 40 milhões de pessoas elegíveis (50-75 anos). Rastreamento colonoscópico exigiria 4-8 milhões de exames/ano. Capacidade atual: ~500.000/ano.',
+      financial: 'Programa FIT-first custaria ~R$600 milhões/ano (40M pessoas × R$15). Programa colonoscopia-first: R$6-12 bilhões/ano. Diferença de 10-20x justifica estratégia FIT.',
+      equity: 'Colonoscopistas concentrados em capitais e Sul/Sudeste. Interior Norte/Nordeste tem filas de 6-24 meses. FIT permitiria rastreamento universal; colonoscopia exigiria centralização e transporte de pacientes.',
+      citations: [{ refId: 'ms-colorretal-gt-2025' }, { refId: 'inca-estimativa-2023' }]
+    }
+  ],
+  conclusion: 'O câncer colorretal representa o maior gap entre evidência científica e política pública no rastreamento oncológico brasileiro. A solução técnica existe (FIT-first), o custo é viável, e a mortalidade é prevenível. A pergunta não é "se" implementar, mas "por que ainda não".'
+};
+
+const analiseCancerOral: CriticalAnalysis = {
+  rastreamentoId: 'cancer-oral',
+  context: 'O câncer oral representa um paradigma interessante de comparação internacional: alta carga na Índia (uso de tabaco/betel) vs menor prioridade no Brasil, onde tabagismo declinou. NP-NCD inclui rastreamento organizado; Brasil mantém abordagem oportunística.',
+  paradigmShift: false,
+  insights: [
+    {
+      id: 'insight-oral-1',
+      type: 'segunda_ordem',
+      title: 'Lições da Índia: ASHA Workers como Força de Rastreamento',
+      description: 'Índia tem ~1 milhão de ASHA workers (agentes comunitários) treinados para OVI (Oral Visual Inspection). Custo por exame: <$1. Cobertura em áreas rurais: 60-70%. Brasil tem ACS (Agentes Comunitários de Saúde) mas sem treinamento sistemático para rastreamento oral.',
+      implication: 'Modelo indiano demonstra que rastreamento oral é viável em larga escala com métodos simples. Brasil poderia adaptar: treinar ACS para inspeção visual básica durante visitas domiciliares.',
+      citations: [{ refId: 'np-ncd-operational-guidelines-2023' }]
+    },
+    {
+      id: 'insight-oral-2',
+      type: 'terceira_ordem',
+      title: 'Carga de Doença como Determinante de Política',
+      description: 'Na Índia, câncer oral é o #1 em homens (uso de tabaco mascado, betel quid). No Brasil, é #5-6 (declínio do tabagismo desde anos 2000). Priorização de políticas segue carga de doença local, não evidência universal.',
+      implication: 'Ausência de programa brasileiro não significa falha técnica, mas priorização racional: recursos limitados vão para cânceres de maior impacto (mama, colo, colorretal, próstata).',
+      citations: [{ refId: 'np-ncd-operational-guidelines-2023' }, { refId: 'inca-estimativa-2023' }]
+    }
+  ],
+  controversies: [],
+  challenges: [
+    {
+      operational: 'Integrar exame oral às consultas odontológicas de rotina no SUS. Cobertura de saúde bucal no Brasil: ~40% da população tem acesso regular.',
+      financial: 'Custo marginal do exame oral em consulta odontológica: próximo de zero. Barreira é acesso ao dentista, não custo do rastreamento.',
+      equity: 'Populações de alto risco (fumantes, etilistas pesados) frequentemente têm menor acesso a dentistas. Rastreamento oportunístico perde justamente quem mais se beneficiaria.',
+      citations: [{ refId: 'inca-estimativa-2023' }]
+    }
+  ],
+  conclusion: 'Câncer oral ilustra como contexto epidemiológico local determina políticas de rastreamento. O modelo indiano de OVI por ASHA workers oferece lições para países com alta carga de doença e recursos limitados.'
+};
+
 const analiseTEA: CriticalAnalysis = {
   rastreamentoId: 'tea-autismo',
   context: 'A Lei Romeo Mion (2019) e a Lei 14.626/2023 tornaram obrigatória a aplicação do M-CHAT-R na atenção primária. É o primeiro rastreamento de transtorno do neurodesenvolvimento a ter caráter universal no SUS.',
@@ -200,6 +315,8 @@ const analiseTEA: CriticalAnalysis = {
 const analisesMap: Record<string, CriticalAnalysis> = {
   'cancer-mama': analiseCancerMama,
   'cancer-colo-utero': analiseCancerColoUtero,
+  'cancer-colorretal': analiseCancerColorretal,
+  'cancer-oral': analiseCancerOral,
   'cancer-prostata': analiseCancerProstata,
   'tea-autismo': analiseTEA,
 };

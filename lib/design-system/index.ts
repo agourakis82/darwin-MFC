@@ -136,6 +136,13 @@ export * from './personalization';
 // export * from './patterns';
 
 // =============================================================================
+// EMOTIONAL INTERFACE ANTI-BURNOUT - SOTA 2026
+// =============================================================================
+
+// Emotional Interface System - Monitoramento emocional e prevenção de burnout
+export * from './emotional-interface';
+
+// =============================================================================
 // COMBINED DESIGN SYSTEM OBJECT
 // =============================================================================
 

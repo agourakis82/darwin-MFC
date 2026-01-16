@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<error_handling>
+  <overview>
+    Guia completo para tratamento de erros, debugging e recuperação em projetos de UI/UX criativos, garantindo que interfaces elegantes também sejam robustas e confiáveis.
+  </overview>
+
+  <common_error_scenarios>
+    <scenario name="animation_performance_degradation">
+      <description>Animações causam lag, jank ou queda de frame rate</description>
+      <symptoms>
+        <symptom>Movimentos não fluidos</symptom>
+        <symptom>Interface não responsiva durante animações</symptom>
+        <symptom>CPU usage elevado durante transições</symptom>
+        <symptom>Bateria drenando rapidamente em mobile</symptom>
+      </symptoms>
+      
+      <diagnosis_steps>
+        <step>Usar DevTools Performance tab para identificar bottlenecks</step>
+        <step>Verificar se propriedades animadas forçam reflow (top, left, width, height)</step>
+        <step>Analisar se animações usam GPU acceleration</step>
+        <step>Verificar complexidade de CSS selectors durante animações</step>
+      </diagnosis_steps>
+
+      <solutions>
+        <solution priority="high">
+          <name>Migrar para propriedades GPU-friendly</name>
+          <implementation>
+            - Usar transform: translate3d() em vez de top/left
+            - Usar opacity em vez de visibility
+            - Usar scale em vez de width/height
+            - Adicionar will-change: transform quando apropriado
+          </implementation>
+          <code_example><![CDATA[
+/* ❌ Problemático */
+.animate-element {
+  left: 100px;
+  top: 50px;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+/* ✅ Otimizado */
+.animate-element {
+  transform: translate3d(100px, 50px, 0) scaleX(2);
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+          ]]></code_example>
+        </solution>
+
+        <solution priority="medium">
+          <name>Implementar animation throttling</name>
+          <implementation>
+            - Usar requestAnimationFrame para animações JS complexas
+            - Implementar Intersection Observer para animar apenas elementos visíveis
+            - Debounce animações scroll-based
+          </implementation>
+          <code_example><![CDATA[
+// Throttling com requestAnimationFrame
+let animationFrameId = null;
+
+const updateAnimation = (timestamp) => {
+  // Lógica de animação
+  if (animationFrameId) {
+    requestAnimationFrame(updateAnimation);
+  }
+};
+
+// Iniciar animação
+animationFrameId = requestAnimationFrame(updateAnimation);
+
+// Parar quando não necessário
+cancelAnimationFrame(animationFrameId);
+animationFrameId = null;
+          ]]></code_example>
+        </solution>
+
+        <solution priority="low">
+          <name>Implementar graceful degradation</name>
+          <implementation>
+            - Detectar dispositivos de baixa performance
+            - Reduzir complexidade de animações em hardware limitado
+            - Fornecer versões estáticas quando necessário
+          </implementation>
+        </solution>
+      </solutions>
+    </scenario>
+
+    <scenario name="accessibility_compliance_failures">
+      <description>Interface falha em atender padrões de acessibilidade</description>
+      <symptoms>
+        <symptom>Navegação por teclado quebrada</symptom>
+        <symptom>Contraste insuficiente</symptom>
+        <symptom>Screen readers não conseguem interpretar conteúdo</symptom>
+        <symptom>Animações causam problemas para usuários sensíveis</symptom>
+      </symptoms>
+
+      <diagnosis_steps>
+        <step>Executar audit automático com Axe DevTools</step>
+        <step>Testar navegação completa por teclado (Tab, Enter, Escape)</step>
+        <step>Verificar contraste com Color Contrast Analyzer</step>
+        <step>Testar com screen reader real (NVDA, JAWS, VoiceOver)</step>
+      </diagnosis_steps>
+
+      <solutions>
+        <solution priority="critical">
+          <name>Implementar foco robusto</name>
+          <implementation>
+            - Garantir que todos elementos interativos tenham tabindex apropriado
+            - Implementar indicadores de foco visíveis e consistentes
+            - Gerenciar foco corretamente em modais e overlays
+            - Adicionar skip links para navegação rápida
+          </implementation>
+          <code_example><![CDATA[
+/* Estilos de foco robustos */
+.focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip links */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+          ]]></code_example>
+        </solution>
+
+        <solution priority="high">
+          <name>Implementar contraste adequado</name>
+          <implementation>
+            - Verificar ratios de contraste para todos os estados
+            - Usar cores de fallback para dispositivos de baixo contraste
+            - Testar em diferentes condições de luz
+            - Implementar modo de alto contraste
+          </implementation>
+          <code_example><![CDATA[
+/* Contraste responsivo */
+@media (prefers-contrast: high) {
+  .button {
+    border: 2px solid currentColor;
+    background: white;
+    color: black;
+  }
+}
+
+/* Fallback para texto de baixa importância */
+.text-secondary {
+  color: #64748b; /* Contraste 4.5:1 mínimo */
+}
+
+@media (prefers-contrast: less) {
+  .text-secondary {
+    color: #374151; /* Contraste melhorado */
+  }
+}
+          ]]></code_example>
+        </solution>
+
+        <solution priority="medium">
+          <name>Respeitar preferências de movimento</name>
+          <implementation>
+            - Detectar prefers-reduced-motion
+            - Fornecer animações simplificadas ou estáticas
+            - Manter funcionalidades essenciais
+          </implementation>
+          <code_example><![CDATA[
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    animation: none;
+    transition: none;
+  }
+  
+  .loading-spinner {
+    animation: none;
+    /* Usar indicador estático */
+  }
+}
+
+/* JavaScript detection */
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.body.classList.add('reduce-motion');
+}
+          ]]></code_example>
+        </solution>
+      </solutions>
+    </scenario>
+
+    <scenario name="responsive_layout_breakdown">
+      <description>Layout quebra em diferentes dispositivos ou orientações</description>
+      <symptoms>
+        <symptom>Elementos sobrepostos em mobile</symptom>
+        <symptom>Conteúdo cortado ou não visível</symptom>
+        <symptom>Scroll horizontal indesejado</symptom>
+        <symptom>Imagens distorcidas ou muito pequenas</symptom>
+      </symptoms>
+
+      <diagnosis_steps>
+        <step>Testar em diferentes breakpoints usando DevTools</step>
+        <step>Verificar viewport meta tag</step>
+        <step>Analisar flexbox/grid properties</step>
+        <step>Testar orientação portrait/landscape</step>
+      </diagnosis_steps>
+
+      <solutions>
+        <solution priority="high">
+          <name>Implementar mobile-first design</name>
+          <implementation>
+            - Começar com estilos mobile base
+            - Usar min-width media queries para enhancement progressivo
+            - Testar em dispositivos reais, não apenas simuladores
+          </implementation>
+          <code_example><![CDATA[
+/* Mobile-first approach */
+.card {
+  padding: 16px;
+  margin: 8px;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 24px;
+    margin: 16px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    padding: 32px;
+    margin: 24px;
+    font-size: 18px;
+  }
+}
+          ]]></code_example>
+        </solution>
+
+        <solution priority="medium">
+          <name>Usar container queries para componentes adaptativos</name>
+          <implementation>
+            - Styling baseado no tamanho do container, não viewport
+            - Componentes que se adaptam ao espaço disponível
+            - Grid systems que reorganizam dinamicamente
+          </implementation>
+          <code_example><![CDATA[
+.card-container {
+  container-type: inline-size;
+}
+
+@container (min-width: 300px) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+  }
+}
+
+@container (min-width: 500px) {
+  .card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+          ]]></code_example>
+        </solution>
+      </solutions>
+    </scenario>
+
+    <scenario name="state_management_errors">
+      <description>Estados de UI não sincronizados ou inconsistentes</description>
+      <symptoms>
+        <symptom>Componentes mostram estados contraditórios</symptom>
+        <symptom>Loading states que nunca terminam</symptom>
+        <symptom>Formulários que não validam corretamente</symptom>
+        <symptom>Persistência de estado entre sessões</symptom>
+      </symptoms>
+
+      <diagnosis_steps>
+        <step>Implementar logging de mudanças de estado</step>
+        <step>Usar React DevTools para inspecionar state</step>
+        <step>Verificar se estados iniciais são definidos corretamente</step>
+        <step>Analisar race conditions em async operations</step>
+      </diagnosis_steps>
+
+      <solutions>
+        <solution priority="high">
+          <name>Implementar error boundaries robustos</name>
+          <implementation>
+            - Capturar erros de renderização
+            - Fornecer fallbacks elegantes
+            - Log de erros para debugging
+            - Recovery mechanisms para estados corrompidos
+          </implementation>
+          <code_example><![CDATA[
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error('UI Error:', error, errorInfo);
+    // Log to monitoring service
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="error-fallback">
+          <h2>Algo deu errado</h2>
+          <button onClick={() => window.location.reload()}>
+            Tentar novamente
+          </button>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+          ]]></code_example>
+        </solution>
+
+        <solution priority="medium">
+          <name>Implementar loading states robustos</name>
+          <implementation>
+            - Timeouts para operations que demoram muito
+            - Estados de loading com indicadores visuais claros
+            - Cancellation para requests obsoletos
+            - Retry mechanisms com backoff exponencial
+          </implementation>
+          <code_example><![CDATA[
+const useAsyncOperation = (asyncFunction, dependencies = []) => {
+  const [state, setState] = useState({
+    loading: false,
+    error: null,
+    data: null
+  });
+
+  useEffect(() => {
+    let isCancelled = false;
+    
+    const execute = async () => {
+      setState(prev => ({ ...prev, loading: true, error: null }));
+      
+      try {
+        // Timeout para evitar loading infinito
+        const timeoutPromise = new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Timeout')), 10000)
+        );
+        
+        const result = await Promise.race([asyncFunction(), timeoutPromise]);
+        
+        if (!isCancelled) {
+          setState({ loading: false, error: null, data: result });
+        }
+      } catch (error) {
+        if (!isCancelled) {
+          setState({ loading: false, error, data: null });
+        }
+      }
+    };
+
+    execute();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, dependencies);
+
+  return state;
+};
+          ]]></code_example>
+        </solution>
+      </solutions>
+    </scenario>
+  </common_error_scenarios>
+
+  <debugging_workflows>
+    <workflow name="performance_debugging">
+      <steps>
+        <step>Identificar performance bottlenecks</step>
+        <step>Analisar animations performance impact</step>
+        <step>Verificar memory leaks em componentes</step>
+        <step>Otimizar bundle size e loading times</step>
+        <step>Implementar monitoring contínuo</step>
+      </steps>
+      
+      <tools>
+        <tool>DevTools Performance tab</tool>
+        <tool>Lighthouse performance audit</tool>
+        <tool>React DevTools Profiler</tool>
+        <tool>Bundle analyzer</tool>
+        <tool>Web Vitals monitoring</tool>
+      </tools>
+    </workflow>
+
+    <workflow name="accessibility_debugging">
+      <steps>
+        <step>Executar audit automático de acessibilidade</step>
+        <step>Testar navegação por teclado completa</step>
+        <step>Verificar contraste em todos os estados</step>
+        <step>Testar com screen readers</step>
+        <step>Validar semantic HTML</step>
+      </steps>
+      
+      <tools>
+        <tool>AxE DevTools</tool>
+        <tool>WAVE Web Accessibility Evaluator</tool>
+        <tool>Color Contrast Analyzer</tool>
+        <tool>NVDA/JAWS/VoiceOver</tool>
+        <tool>Lighthouse accessibility audit</tool>
+      </tools>
+    </workflow>
+
+    <workflow name="responsive_debugging">
+      <steps>
+        <step>Testar em múltiplos breakpoints</step>
+        <step>Verificar orientation changes</step>
+        <step>Analisar touch interactions</step>
+        <step>Validar viewport settings</step>
+        <step>Testar em dispositivos reais</step>
+      </steps>
+      
+      <tools>
+        <tool>Chrome DevTools Device Mode</tool>
+        <tool>Responsive Design Checker</tool>
+        <tool>BrowserStack for real device testing</tool>
+        <tool>Viewport meta tag validator</tool>
+      </tools>
+    </workflow>
+  </debugging_workflows>
+
+  <recovery_strategies>
+    <strategy name="graceful_degradation">
+      <description>Interface continua funcionando mesmo com recursos limitados</description>
+      <implementation>
+        <principle>Core functionality sempre disponível</principle>
+        <principle>Enhancements são opcionais e não bloqueiam</principle>
+        <principle>Fallbacks elegantes para recursos avançados</principle>
+      </implementation>
+      
+      <examples>
+        <example>
+          <feature>Animações avançadas</feature>
+          <fallback>Transições simples ou estáticas</fallback>
+          <detection>Detectar hardware capabilities</detection>
+        </example>
+        
+        <example>
+          <feature>WebGL graphics</feature>
+          <fallback>Canvas 2D ou imagens estáticas</fallback>
+          <detection>Detectar WebGL support</detection>
+        </example>
+        
+        <example>
+          <feature>Gestos complexos</feature>
+          <fallback>Botões e links tradicionais</fallback>
+          <detection>Detectar touch capabilities</detection>
+        </example>
+      </examples>
+    </strategy>
+
+    <strategy name="progressive_enhancement">
+      <description>Funcionalidade básica funciona, enhancements adicionam valor</description>
+      <implementation>
+        <principle>Start with semantic HTML</principle>
+        <principle>Add CSS for styling</principle>
+        <principle>Enhance with JavaScript</principle>
+        <principle>Add advanced features last</principle>
+      </implementation>
+      
+      <code_example><![CDATA[
+<!-- Base HTML - sempre funcional -->
+<form class="contact-form">
+  <input type="email" required>
+  <button type="submit">Enviar</button>
+</form>
+
+<!-- CSS enhancement -->
+<style>
+.contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input:invalid {
+  border-color: #ef4444;
+}
+</style>
+
+<!-- JavaScript enhancement -->
+<script>
+document.querySelector('.contact-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  // Enhanced form handling
+});
+</script>
+      ]]></code_example>
+    </strategy>
+
+    <strategy name="error_recovery">
+      <description>Interface se recupera automaticamente de erros</description>
+      <implementation>
+        <principle>Detect errors early</principle>
+        <principle>Provide clear error feedback</principle>
+        <principle>Enable user recovery</principle>
+        <principle>Log errors for analysis</principle>
+      </implementation>
+      
+      <code_example><![CDATA[
+class ResilientComponent extends React.Component {
+  state = {
+    hasError: false,
+    retryCount: 0,
+    lastError: null
+  };
+
+  handleRetry = () => {
+    this.setState(prevState => ({
+      hasError: false,
+      retryCount: prevState.retryCount + 1,
+      lastError: null
+    }));
+  };
+
+  static getDerivedStateFromError(error) {
+    return {
+      hasError: true,
+      lastError: error.message
+    };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error('Component error:', error, errorInfo);
+    // Send to monitoring service
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="error-state">
+          <h3>Algo deu errado</h3>
+          <p>{this.state.lastError}</p>
+          <button onClick={this.handleRetry}>
+            Tentar novamente ({this.state.retryCount})
+          </button>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+      ]]></code_example>
+    </strategy>
+  </recovery_strategies>
+
+  <monitoring_and_alerting>
+    <metrics_to_track>
+      <metric>Core Web Vitals (LCP, FID, CLS)</metric>
+      <metric>Error rates in UI components</metric>
+      <metric>Accessibility compliance score</metric>
+      <metric>Performance metrics by device type</metric>
+      <metric>User interaction success rates</metric>
+      <metric>Animation frame rates</metric>
+    </metrics_to_track>
+
+    <alert_conditions>
+      <condition>Performance degradation > 20%</condition>
+      <condition>Error rate > 1%</condition>
+      <condition>Accessibility score drops below AA</condition>
+      <condition>Frame rate drops below 30fps</condition>
+      <condition>Time to interactive > 3s</condition>
+    </alert_conditions>
+
+    <tools>
+      <tool>Google Analytics for user behavior</tool>
+      <tool>Sentry for error monitoring</tool>
+      <tool>Lighthouse CI for automated audits</tool>
+      <tool>Custom performance monitoring</tool>
+      <tool>User feedback collection</tool>
+    </tools>
+  </monitoring_and_alerting>
+
+  <testing_strategies>
+    <test_types>
+      <test_type name="unit_tests">
+        <focus>Individual components and functions</focus>
+        <tools>Jest, React Testing Library</tools>
+        <coverage>State management, event handlers, utilities</coverage>
+      </test_type>
+      
+      <test_type name="integration_tests">
+        <focus>Component interactions and data flow</focus>
+        <tools>Cypress, Testing Library</tools>
+        <coverage>User workflows, API integration</coverage>
+      </test_type>
+      
+      <test_type name="visual_regression_tests">
+        <focus>UI consistency and visual changes</focus>
+        <tools>Percy, Chromatic, Loki</tools>
+        <coverage>Layout, styling, animations</coverage>
+      </test_type>
+      
+      <test_type name="accessibility_tests">
+        <focus>WCAG compliance and usability</focus>
+        <tools>axe-core, pa11y</tools>
+        <coverage>Navigation, contrast, semantic HTML</coverage>
+      </test_type>
+      
+      <test_type name="performance_tests">
+        <focus>Load times and runtime performance</focus>
+        <tools>Lighthouse, WebPageTest</tools>
+        <coverage>Core Web Vitals, bundle size</coverage>
+      </test_type>
+    </test_types>
+
+    <testing_workflow>
+      <phase>Pre-commit hooks para linting e testes básicos</phase>
+      <phase>CI pipeline com testes automatizados</phase>
+      <phase>Staging environment com testes manuais</phase>
+      <phase>Production monitoring e feedback loops</phase>
+    </testing_workflow>
+  </testing_strategies>
+</error_handling>

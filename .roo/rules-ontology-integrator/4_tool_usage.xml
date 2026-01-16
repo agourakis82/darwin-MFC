@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool_usage>
+  <overview>
+    <title>Ontology Integrator - Tool Usage</title>
+    <description>
+      Estratégias de ferramentas e APIs para integração de ontologias.
+    </description>
+  </overview>
+
+  <api_integrations>
+    <api name="LOINC FHIR">
+      <description>API FHIR para códigos LOINC</description>
+      <base_url>https://fhir.loinc.org/</base_url>
+
+      <endpoint name="lookup">
+        <purpose>Buscar código específico</purpose>
+        <url>CodeSystem/$lookup?system=http://loinc.org&amp;code={code}</url>
+        <response_fields>
+          <field>display - Nome do código</field>
+          <field>property - Propriedades adicionais</field>
+        </response_fields>
+      </endpoint>
+
+      <endpoint name="search">
+        <purpose>Buscar códigos por termo</purpose>
+        <url>CodeSystem?name:contains={term}</url>
+      </endpoint>
+
+      <authentication>
+        <type>API Key (gratuito com registro)</type>
+        <register>https://loinc.org/get-loinc/</register>
+      </authentication>
+    </api>
+
+    <api name="HPO">
+      <description>Human Phenotype Ontology API</description>
+      <base_url>https://hpo.jax.org/api/hpo/</base_url>
+
+      <endpoint name="term">
+        <purpose>Buscar termo HPO</purpose>
+        <url>term/{hpo_id}</url>
+        <example>term/HP:0001250</example>
+      </endpoint>
+
+      <endpoint name="search">
+        <purpose>Buscar por texto</purpose>
+        <url>search?q={term}&amp;max=10</url>
+      </endpoint>
+
+      <endpoint name="disease">
+        <purpose>Fenótipos associados a doença</purpose>
+        <url>disease/{disease_id}/phenotypes</url>
+      </endpoint>
+    </api>
+
+    <api name="PharmGKB">
+      <description>Pharmacogenomics Knowledge Base API</description>
+      <base_url>https://api.pharmgkb.org/v1/</base_url>
+
+      <endpoint name="drug">
+        <purpose>Informações de medicamento</purpose>
+        <url>data/drug/{id}</url>
+      </endpoint>
+
+      <endpoint name="gene">
+        <purpose>Informações de gene</purpose>
+        <url>data/gene/{id}</url>
+      </endpoint>
+
+      <endpoint name="annotation">
+        <purpose>Anotações clínicas</purpose>
+        <url>data/clinicalAnnotation</url>
+      </endpoint>
+
+      <authentication>
+        <type>API Key (gratuito para acadêmico)</type>
+      </authentication>
+    </api>
+
+    <api name="WHO ICD-11">
+      <description>API da OMS para ICD-10/11</description>
+      <base_url>https://icd.who.int/icdapi</base_url>
+      <note>Requer OAuth2 authentication</note>
+
+      <endpoint name="search">
+        <purpose>Buscar código</purpose>
+        <url>entity/search?q={term}</url>
+      </endpoint>
+    </api>
+  </api_integrations>
+
+  <file_operations>
+    <key_files>
+      <file>lib/utils/ontologies/loinc.ts</file>
+      <file>lib/utils/ontologies/pharmgkb.ts</file>
+      <file>lib/utils/ontologies/hpo.ts</file>
+      <file>lib/data/doencas/*.ts</file>
+      <file>lib/data/medicamentos/*.ts</file>
+    </key_files>
+
+    <workflow>
+      <step order="1">
+        <action>Identificar entidades sem código</action>
+        <command>Grep para campos sem icd10/loinc/atc</command>
+      </step>
+      <step order="2">
+        <action>Buscar código na API</action>
+        <command>WebFetch para API apropriada</command>
+      </step>
+      <step order="3">
+        <action>Validar código</action>
+        <command>Verificar descrição corresponde</command>
+      </step>
+      <step order="4">
+        <action>Adicionar código</action>
+        <command>Edit arquivo de dados</command>
+      </step>
+      <step order="5">
+        <action>Verificar integração</action>
+        <command>npm run verify</command>
+      </step>
+    </workflow>
+  </file_operations>
+
+  <webfetch_prompts>
+    <prompt name="loinc_lookup">
+      <![CDATA[
+Fetch LOINC FHIR API for code: {code}
+URL: https://fhir.loinc.org/CodeSystem/$lookup?system=http://loinc.org&code={code}
+
+Extract:
+1. Is the code valid?
+2. Full display name
+3. Component, property, system, scale
+4. Any related codes
+      ]]>
+    </prompt>
+
+    <prompt name="hpo_search">
+      <![CDATA[
+Search HPO for phenotype: {symptom}
+URL: https://hpo.jax.org/api/hpo/search?q={symptom}&max=5
+
+Return:
+1. HPO ID (HP:XXXXXXX)
+2. Term name
+3. Definition
+4. Synonyms
+      ]]>
+    </prompt>
+
+    <prompt name="pharmgkb_drug">
+      <![CDATA[
+Search PharmGKB for drug: {drug_name}
+
+Return:
+1. PharmGKB ID
+2. Associated genes
+3. Clinical annotations (dosing, efficacy, toxicity)
+4. Evidence level
+      ]]>
+    </prompt>
+  </webfetch_prompts>
+
+  <validation_script>
+    <description>Script de verificação de ontologias</description>
+    <location>scripts/verify-integration.ts</location>
+    <checks>
+      <check>LOINC codes resolve correctly</check>
+      <check>ICD-10 codes are valid format</check>
+      <check>PharmGKB annotations have citations</check>
+      <check>HPO codes exist in ontology</check>
+    </checks>
+    <command>npm run verify</command>
+  </validation_script>
+
+  <coverage_report>
+    <description>Relatório de cobertura de ontologias</description>
+    <metrics>
+      <metric>% de doenças com ICD-10</metric>
+      <metric>% de doenças com CIAP2</metric>
+      <metric>% de exames com LOINC</metric>
+      <metric>% de medicamentos com ATC</metric>
+      <metric>% de genes com PharmGKB</metric>
+    </metrics>
+  </coverage_report>
+</tool_usage>

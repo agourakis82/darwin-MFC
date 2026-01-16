@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool_usage>
+  <overview>
+    <title>Critical Analysis Generator - Tool Usage</title>
+    <description>
+      Estratégias de ferramentas para geração de análises críticas.
+    </description>
+  </overview>
+
+  <file_operations>
+    <priority_order>
+      <priority rank="1">Read - Ler conteúdo descritivo fonte</priority>
+      <priority rank="2">Read - Verificar análises existentes</priority>
+      <priority rank="3">Grep - Buscar controvérsias na literatura</priority>
+      <priority rank="4">Edit - Adicionar análise crítica</priority>
+    </priority_order>
+
+    <key_files>
+      <file purpose="source">lib/data/rastreamentos.ts</file>
+      <file purpose="target">lib/data/analise-critica.ts</file>
+      <file purpose="types">lib/types/analysis.ts</file>
+      <file purpose="references">lib/data/references.ts</file>
+    </key_files>
+  </file_operations>
+
+  <analysis_workflow>
+    <step order="1">
+      <title>Ler Conteúdo Descritivo</title>
+      <action>Read lib/data/rastreamentos.ts</action>
+      <extract>
+        <item>ID do rastreamento</item>
+        <item>Recomendações SUS vs Sociedades</item>
+        <item>Status de convergência</item>
+        <item>Dados epidemiológicos</item>
+      </extract>
+    </step>
+
+    <step order="2">
+      <title>Verificar Análise Existente</title>
+      <action>Grep "rastreamentoId.*{id}" em lib/data/analise-critica.ts</action>
+      <decision>
+        <if_exists>Complementar ou atualizar</if_exists>
+        <if_not_exists>Criar nova análise</if_not_exists>
+      </decision>
+    </step>
+
+    <step order="3">
+      <title>Buscar Literatura para Insights</title>
+      <action>WebSearch para controvérsias e debates na literatura</action>
+      <queries>
+        <query>"{topic} controversy debate evidence"</query>
+        <query>"{topic} challenges implementation Brazil"</query>
+        <query>"{topic} cost-effectiveness analysis"</query>
+      </queries>
+    </step>
+
+    <step order="4">
+      <title>Gerar Insights</title>
+      <prompts>
+        <prompt type="segunda_ordem">
+          Analisando as divergências entre SUS e sociedades médicas sobre {topic}:
+          - Quais padrões subjacentes explicam essa divergência?
+          - Que tensões sistêmicas estão em jogo?
+          - Que paradoxos existem nas recomendações?
+        </prompt>
+        <prompt type="terceira_ordem">
+          Considerando as implicações de longo prazo:
+          - Como essas políticas afetam equidade em saúde?
+          - Quais consequências não intencionadas podem surgir?
+          - Como isso impacta a sustentabilidade do sistema?
+        </prompt>
+      </prompts>
+    </step>
+
+    <step order="5">
+      <title>Mapear Controvérsias</title>
+      <prompts>
+        <prompt>
+          Para a controvérsia sobre {specific_issue}:
+          - Quais são os principais argumentos a favor?
+          - Quais são os principais argumentos contra?
+          - Quais evidências suportam cada posição?
+          - Qual síntese equilibrada pode ser feita?
+        </prompt>
+      </prompts>
+    </step>
+
+    <step order="6">
+      <title>Identificar Desafios</title>
+      <prompts>
+        <prompt>
+          Considerando a implementação de {topic} no Brasil:
+          - Quais são as principais barreiras?
+          - Onde há maiores disparidades de acesso?
+          - Que soluções têm funcionado em outros contextos?
+        </prompt>
+      </prompts>
+    </step>
+
+    <step order="7">
+      <title>Formatar e Inserir</title>
+      <action>Edit lib/data/analise-critica.ts</action>
+      <validation>
+        <check>rastreamentoId corresponde ao rastreamento</check>
+        <check>Todos insights têm citações</check>
+        <check>Controvérsias são equilibradas</check>
+        <check>Desafios têm propostas</check>
+      </validation>
+    </step>
+
+    <step order="8">
+      <title>Verificar Integração</title>
+      <action>npm run build</action>
+      <test>Verificar ContentModeWrapper alterna corretamente</test>
+    </step>
+  </analysis_workflow>
+
+  <research_strategies>
+    <strategy name="controversy_research">
+      <description>Pesquisar controvérsias na literatura</description>
+      <search_terms>
+        <term>"{topic} controversy"</term>
+        <term>"{topic} debate"</term>
+        <term>"{topic} guidelines disagreement"</term>
+        <term>"{topic} recommendations comparison"</term>
+      </search_terms>
+    </strategy>
+
+    <strategy name="impact_research">
+      <description>Pesquisar impactos e consequências</description>
+      <search_terms>
+        <term>"{topic} health equity"</term>
+        <term>"{topic} implementation challenges"</term>
+        <term>"{topic} barriers access"</term>
+        <term>"{topic} Brazil disparities"</term>
+      </search_terms>
+    </strategy>
+  </research_strategies>
+
+  <quality_validation>
+    <check name="depth">
+      <description>Verificar profundidade da análise</description>
+      <criteria>
+        <criterion>Pelo menos 2 insights de segunda ordem</criterion>
+        <criterion>Pelo menos 1 insight de terceira ordem</criterion>
+        <criterion>Controvérsias com síntese substantiva</criterion>
+      </criteria>
+    </check>
+
+    <check name="balance">
+      <description>Verificar equilíbrio nas controvérsias</description>
+      <criteria>
+        <criterion>Posições A e B com argumentos equivalentes</criterion>
+        <criterion>Evidências comparáveis para ambos lados</criterion>
+        <criterion>Síntese não enviesada</criterion>
+      </criteria>
+    </check>
+
+    <check name="actionability">
+      <description>Verificar propostas são acionáveis</description>
+      <criteria>
+        <criterion>Cada desafio tem pelo menos 2 propostas</criterion>
+        <criterion>Propostas são específicas e viáveis</criterion>
+        <criterion>Há exemplos de sucesso citados</criterion>
+      </criteria>
+    </check>
+  </quality_validation>
+</tool_usage>

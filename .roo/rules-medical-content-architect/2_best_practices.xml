@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<best_practices>
+  <overview>
+    <title>Medical Content Architect - Best Practices</title>
+    <description>
+      Diretrizes de qualidade Q1 para geração de conteúdo médico no Darwin-MFC.
+    </description>
+  </overview>
+
+  <academic_rigor>
+    <principle name="citation_mandatory">
+      <description>Toda claim factual DEVE ter citação</description>
+      <format>Vancouver style com número sequencial [n]</format>
+      <examples>
+        <good>"A incidência é de 50/100.000 [1,2]"</good>
+        <bad>"A incidência é de 50/100.000" (sem citação)</bad>
+      </examples>
+    </principle>
+
+    <principle name="primary_sources">
+      <description>Priorizar fontes primárias e guidelines oficiais</description>
+      <hierarchy>
+        <source priority="1">Guidelines oficiais (SUS, USPSTF, NHS, WHO)</source>
+        <source priority="2">Meta-análises e revisões sistemáticas</source>
+        <source priority="3">Ensaios clínicos randomizados</source>
+        <source priority="4">Estudos observacionais de qualidade</source>
+      </hierarchy>
+    </principle>
+
+    <principle name="doi_pmid_required">
+      <description>Incluir DOI ou PMID quando disponível</description>
+      <format>
+        <doi>https://doi.org/10.xxxx/xxxxx</doi>
+        <pmid>PMID: 12345678</pmid>
+      </format>
+    </principle>
+
+    <principle name="temporal_relevance">
+      <description>Priorizar literatura dos últimos 5 anos</description>
+      <exceptions>
+        <exception>Estudos seminais/clássicos</exception>
+        <exception>Guidelines não atualizados recentemente</exception>
+      </exceptions>
+    </principle>
+  </academic_rigor>
+
+  <dual_mode_architecture>
+    <principle name="always_dual">
+      <description>Todo conteúdo deve ter versão descriptive E critical_analysis</description>
+      <descriptive>
+        <focus>Dados factuais, protocolos, epidemiologia</focus>
+        <tone>Objetivo, informativo</tone>
+        <structure>Recomendações SUS vs Sociedades, dados epidemiológicos</structure>
+      </descriptive>
+      <critical_analysis>
+        <focus>Insights sistêmicos, controvérsias, desafios</focus>
+        <tone>Analítico, reflexivo</tone>
+        <structure>Insights (2ª e 3ª ordem), controvérsias, desafios</structure>
+      </critical_analysis>
+    </principle>
+
+    <principle name="linking">
+      <description>Critical analysis deve linkar via rastreamentoId</description>
+      <example>
+        <code>
+          {
+            rastreamentoId: "cancer-mama",
+            insights: [...],
+            controversias: [...],
+            desafios: [...]
+          }
+        </code>
+      </example>
+    </principle>
+  </dual_mode_architecture>
+
+  <data_quality>
+    <principle name="epidemiology_precision">
+      <description>Dados epidemiológicos devem ser precisos e citados</description>
+      <required_fields>
+        <field>incidencia (por 100.000 habitantes)</field>
+        <field>mortalidade (taxa ou número absoluto)</field>
+        <field>prevalencia (quando aplicável)</field>
+        <field>fonte e ano do dado</field>
+      </required_fields>
+    </principle>
+
+    <principle name="guideline_accuracy">
+      <description>Reproduzir fielmente recomendações das guidelines</description>
+      <fields>
+        <field>populacao_alvo (idade, sexo, fatores de risco)</field>
+        <field>metodo (exame recomendado)</field>
+        <field>periodicidade (intervalo entre exames)</field>
+        <field>nivel_evidencia (quando disponível)</field>
+      </fields>
+    </principle>
+
+    <principle name="convergence_objectivity">
+      <description>Análise de convergência deve ser objetiva</description>
+      <criteria>
+        <convergencia>Mesma recomendação em todos aspectos</convergencia>
+        <parcial>Diferença em pelo menos 1 aspecto</parcial>
+        <divergencia>Recomendações contraditórias</divergencia>
+        <em_disputa>Debate ativo sem consenso</em_disputa>
+      </criteria>
+    </principle>
+  </data_quality>
+
+  <typescript_compliance>
+    <principle name="type_safety">
+      <description>Todo conteúdo deve seguir interfaces definidas</description>
+      <key_types>
+        <type file="lib/types/rastreamentos.ts">Rastreamento, Recommendations</type>
+        <type file="lib/types/analysis.ts">CriticalAnalysis, Insight, Controversy</type>
+        <type file="lib/types/references.ts">Citation</type>
+        <type file="lib/types/doenca.ts">Doenca</type>
+        <type file="lib/types/medicamento.ts">Medicamento</type>
+      </key_types>
+    </principle>
+
+    <principle name="id_conventions">
+      <description>IDs devem seguir kebab-case</description>
+      <examples>
+        <good>cancer-mama, diabetes-tipo-2, hiv-screening</good>
+        <bad>CancerMama, diabetes_tipo_2, HIVScreening</bad>
+      </examples>
+    </principle>
+  </typescript_compliance>
+
+  <internationalization>
+    <principle name="translation_ready">
+      <description>Conteúdo deve estar pronto para tradução</description>
+      <guidelines>
+        <guideline>Evitar expressões idiomáticas</guideline>
+        <guideline>Manter termos técnicos em português</guideline>
+        <guideline>Incluir códigos de ontologia (ICD-10, CIAP2, LOINC)</guideline>
+      </guidelines>
+    </principle>
+  </internationalization>
+</best_practices>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool_usage>
+  <overview>
+    <title>Medical Calculators Builder - Tool Usage</title>
+    <description>
+      Estratégias de ferramentas para criação de calculadoras clínicas.
+    </description>
+  </overview>
+
+  <file_operations>
+    <key_files>
+      <file>app/[locale]/calculadoras/page.tsx</file>
+      <file>app/[locale]/calculadoras/[id]/page.tsx</file>
+      <file>lib/calculators/</file>
+      <file>app/components/Calculators/</file>
+    </key_files>
+
+    <workflow>
+      <step order="1">
+        <action>Verificar calculadoras existentes</action>
+        <command>Read app/[locale]/calculadoras/</command>
+      </step>
+      <step order="2">
+        <action>Pesquisar fórmula oficial</action>
+        <command>WebSearch/WebFetch para artigo original</command>
+      </step>
+      <step order="3">
+        <action>Validar contra MDCalc</action>
+        <command>WebFetch https://www.mdcalc.com/{calculator}</command>
+      </step>
+      <step order="4">
+        <action>Implementar calculadora</action>
+        <command>Write/Edit arquivos</command>
+      </step>
+      <step order="5">
+        <action>Testar cálculos</action>
+        <command>npm run dev + teste manual</command>
+      </step>
+    </workflow>
+  </file_operations>
+
+  <research_sources>
+    <source name="MDCalc">
+      <url>https://www.mdcalc.com/</url>
+      <purpose>Referência para fórmulas e validação</purpose>
+      <usage>Comparar resultado da calculadora com MDCalc</usage>
+    </source>
+
+    <source name="PubMed">
+      <purpose>Artigo original da fórmula</purpose>
+      <query>"{formula name}" AND "original" AND "validation"</query>
+    </source>
+
+    <source name="UpToDate">
+      <purpose>Contexto clínico e interpretação</purpose>
+    </source>
+  </research_sources>
+
+  <validation_process>
+    <step name="formula_verification">
+      <description>Verificar fórmula está correta</description>
+      <method>Comparar com artigo original</method>
+    </step>
+
+    <step name="calculation_test">
+      <description>Testar cálculos contra valores conhecidos</description>
+      <test_cases>
+        <case>Usar exemplos do artigo original</case>
+        <case>Comparar com MDCalc</case>
+        <case>Testar edge cases</case>
+      </test_cases>
+    </step>
+
+    <step name="interpretation_test">
+      <description>Verificar interpretação está correta</description>
+      <method>Comparar faixas com guidelines</method>
+    </step>
+  </validation_process>
+
+  <webfetch_prompts>
+    <prompt name="mdcalc_validation">
+      <![CDATA[
+Fetch MDCalc page for {calculator_name}.
+Extract:
+1. Formula used
+2. Input variables and units
+3. Interpretation ranges
+4. Original citation
+5. Limitations mentioned
+
+Compare with our implementation.
+      ]]>
+    </prompt>
+
+    <prompt name="pubmed_formula">
+      <![CDATA[
+Search PubMed for the original article describing {formula_name}.
+Extract:
+1. Full formula
+2. Validation cohort
+3. Reference ranges
+4. When to use / when not to use
+      ]]>
+    </prompt>
+  </webfetch_prompts>
+
+  <component_template>
+    <description>Template React para calculadora</description>
+    <structure>
+      <![CDATA[
+// app/[locale]/calculadoras/[id]/page.tsx
+'use client';
+
+import { useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { Calculator } from '@/lib/calculators/{id}';
+
+export default function CalculatorPage() {
+  const t = useTranslations('calculators');
+  const [inputs, setInputs] = useState({});
+  const [result, setResult] = useState(null);
+
+  const handleCalculate = () => {
+    const calculatedResult = Calculator.formula(inputs);
+    setResult(calculatedResult);
+  };
+
+  return (
+    <div className="calculator-container">
+      <h1>{t('name')}</h1>
+      <p>{t('description')}</p>
+
+      {/* Input fields */}
+      {Calculator.inputs.map(input => (
+        <InputField key={input.id} {...input} onChange={handleChange} />
+      ))}
+
+      <button onClick={handleCalculate}>{t('calculate')}</button>
+
+      {/* Result display */}
+      {result && (
+        <ResultDisplay result={result} interpretation={Calculator.interpretation} />
+      )}
+
+      {/* Citations */}
+      <Citations refs={Calculator.citations} />
+
+      {/* Disclaimer */}
+      <Disclaimer text={Calculator.disclaimer} />
+    </div>
+  );
+}
+      ]]>
+    </structure>
+  </component_template>
+
+  <testing_checklist>
+    <check>Fórmula calcula corretamente</check>
+    <check>Inputs validam corretamente</check>
+    <check>Interpretação corresponde ao valor</check>
+    <check>Alertas aparecem para valores críticos</check>
+    <check>Funciona em mobile</check>
+    <check>Traduções completas (pt, en)</check>
+    <check>Citações são válidas</check>
+    <check>Disclaimer está presente</check>
+  </testing_checklist>
+</tool_usage>

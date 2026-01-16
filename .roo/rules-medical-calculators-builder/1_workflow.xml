@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow>
+  <overview>
+    <title>Medical Calculators Builder - Workflow Pipeline</title>
+    <description>
+      Pipeline SOTA++ para criação de calculadoras clínicas validadas
+      com citações e limites de normalidade por população.
+    </description>
+  </overview>
+
+  <calculator_types>
+    <type name="anthropometric">Cálculos antropométricos (IMC, SC, peso ideal)</type>
+    <type name="renal">Função renal (Clearance, CKD-EPI, MDRD)</type>
+    <type name="cardiovascular">Risco CV (Framingham, ASCVD, HEART)</type>
+    <type name="obstetric">Gestacionais (DUM, IG, DPP)</type>
+    <type name="pediatric">Pediátricos (peso/altura, doses)</type>
+    <type name="drug_dosing">Dosagem de medicamentos</type>
+    <type name="scoring">Scores clínicos (CURB-65, Wells, CHADS2)</type>
+  </calculator_types>
+
+  <pipeline>
+    <phase name="research" order="1">
+      <title>Fase de Pesquisa</title>
+      <description>Pesquisar e validar fórmula</description>
+      <steps>
+        <step>Identificar calculadora a criar</step>
+        <step>Buscar fórmula original na literatura</step>
+        <step>Verificar validação do score/fórmula</step>
+        <step>Identificar população de validação</step>
+        <step>Buscar limites de normalidade por faixa etária/sexo</step>
+      </steps>
+      <sources>
+        <source>MDCalc (referência de scores)</source>
+        <source>PubMed (artigo original)</source>
+        <source>UpToDate (interpretação clínica)</source>
+      </sources>
+    </phase>
+
+    <phase name="design" order="2">
+      <title>Fase de Design</title>
+      <description>Projetar interface e lógica</description>
+      <steps>
+        <step>Definir inputs necessários (variáveis)</step>
+        <step>Definir tipo de cada input (número, select, radio)</step>
+        <step>Definir unidades de medida</step>
+        <step>Criar fórmula de cálculo</step>
+        <step>Definir faixas de interpretação</step>
+      </steps>
+      <input_types>
+        <type name="number">Valor numérico (idade, peso, creatinina)</type>
+        <type name="select">Seleção única (sexo, raça)</type>
+        <type name="radio">Opções excludentes</type>
+        <type name="checkbox">Presença/ausência de condição</type>
+      </input_types>
+    </phase>
+
+    <phase name="implementation" order="3">
+      <title>Fase de Implementação</title>
+      <description>Criar calculadora no projeto</description>
+      <steps>
+        <step>Criar componente React</step>
+        <step>Implementar lógica de cálculo</step>
+        <step>Adicionar validação de inputs</step>
+        <step>Criar interpretação de resultado</step>
+        <step>Adicionar citações e referências</step>
+      </steps>
+      <files>
+        <file>app/[locale]/calculadoras/[id]/page.tsx</file>
+        <file>lib/calculators/{id}.ts</file>
+      </files>
+    </phase>
+
+    <phase name="validation" order="4">
+      <title>Fase de Validação</title>
+      <description>Validar cálculo e interpretação</description>
+      <steps>
+        <step>Comparar resultado com MDCalc</step>
+        <step>Testar casos extremos (edge cases)</step>
+        <step>Verificar alertas de valores críticos</step>
+        <step>Validar em múltiplos idiomas</step>
+      </steps>
+      <test_cases>
+        <case>Valores normais (esperado: resultado normal)</case>
+        <case>Valores extremos baixos</case>
+        <case>Valores extremos altos</case>
+        <case>Valores limítrofes</case>
+      </test_cases>
+    </phase>
+
+    <phase name="documentation" order="5">
+      <title>Fase de Documentação</title>
+      <description>Documentar fórmula e uso</description>
+      <steps>
+        <step>Adicionar descrição da calculadora</step>
+        <step>Documentar fórmula utilizada</step>
+        <step>Adicionar citação do artigo original</step>
+        <step>Incluir limitações e quando não usar</step>
+      </steps>
+    </phase>
+  </pipeline>
+</workflow>

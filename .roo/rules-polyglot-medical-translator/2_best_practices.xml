@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<best_practices>
+  <overview>
+    <title>Polyglot Medical Translator - Best Practices</title>
+    <description>
+      Diretrizes para tradução médica de qualidade no Darwin-MFC.
+    </description>
+  </overview>
+
+  <terminology_principles>
+    <principle name="official_terminology">
+      <description>Usar terminologia médica oficial de cada país/região</description>
+      <sources>
+        <source locale="pt">ANVISA, MS Brasil, terminologia SUS</source>
+        <source locale="en">FDA, NIH, medical terminology standards</source>
+        <source locale="es">RAE médico, terminología OMS español</source>
+        <source locale="fr">HAS, terminologie médicale française</source>
+        <source locale="ar">WHO EMRO Arabic medical terms</source>
+        <source locale="zh">国家卫生健康委员会 medical terminology</source>
+      </sources>
+    </principle>
+
+    <principle name="consistency">
+      <description>Manter consistência terminológica entre arquivos</description>
+      <rules>
+        <rule>Mesmo termo = mesma tradução em todos os arquivos</rule>
+        <rule>Criar glossário centralizado para referência</rule>
+        <rule>Documentar decisões de tradução controversas</rule>
+      </rules>
+    </principle>
+
+    <principle name="clarity_over_literality">
+      <description>Priorizar clareza sobre tradução literal</description>
+      <examples>
+        <example>
+          <pt>Rastreamento</pt>
+          <en>Screening (não "tracking")</en>
+          <es>Tamizaje/Cribado (não "rastreo")</es>
+        </example>
+        <example>
+          <pt>Diabetes mellitus tipo 2</pt>
+          <ar>داء السكري من النوع الثاني</ar>
+          <zh>2型糖尿病</zh>
+        </example>
+      </examples>
+    </principle>
+  </terminology_principles>
+
+  <code_preservation>
+    <principle name="ontology_codes">
+      <description>Códigos de ontologia NUNCA são traduzidos</description>
+      <preserve>
+        <code_type>ICD-10: E11.9, I10, C50.9</code_type>
+        <code_type>CIAP2: T90, K86, X76</code_type>
+        <code_type>LOINC: 2339-0, 4548-4</code_type>
+        <code_type>SNOMED CT: 73211009</code_type>
+      </preserve>
+    </principle>
+
+    <principle name="drug_names">
+      <description>Usar DCI (Denominação Comum Internacional)</description>
+      <examples>
+        <example>
+          <dci>Metformin</dci>
+          <pt>Metformina</pt>
+          <es>Metformina</es>
+          <ar>ميتفورمين</ar>
+        </example>
+      </examples>
+      <note>Nomes comerciais são localizados quando necessário</note>
+    </principle>
+
+    <principle name="international_acronyms">
+      <description>Acrônimos internacionais mantidos</description>
+      <examples>HIV, AIDS, DNA, RNA, PCR, CT, MRI</examples>
+      <exceptions>
+        <exception>Alguns acrônimos têm versão local (OMS/WHO, ONU/UN)</exception>
+      </exceptions>
+    </principle>
+  </code_preservation>
+
+  <formatting_rules>
+    <principle name="placeholders">
+      <description>Preservar placeholders de interpolação</description>
+      <formats>
+        <format type="next-intl">{variableName}</format>
+        <format type="numbered">{0}, {1}, {2}</format>
+      </formats>
+      <example>
+        <pt>Paciente tem {age} anos</pt>
+        <en>Patient is {age} years old</en>
+      </example>
+    </principle>
+
+    <principle name="markdown">
+      <description>Preservar formatação markdown</description>
+      <elements>**bold**, *italic*, [links](url), `code`</elements>
+    </principle>
+
+    <principle name="html">
+      <description>Preservar tags HTML quando presentes</description>
+      <elements>&lt;br/&gt;, &lt;strong&gt;, &lt;em&gt;</elements>
+    </principle>
+  </formatting_rules>
+
+  <regional_adaptations>
+    <principle name="units">
+      <description>Adaptar unidades de medida quando necessário</description>
+      <conversions>
+        <conversion from="mg/dL" to="mmol/L" regions="UK, EU">Glicemia</conversion>
+        <conversion from="kg" to="lb" regions="US">Peso (opcional)</conversion>
+      </conversions>
+      <note>Manter unidades SI como padrão quando possível</note>
+    </principle>
+
+    <principle name="date_formats">
+      <description>Adaptar formato de data por região</description>
+      <formats>
+        <format locale="pt">DD/MM/YYYY</format>
+        <format locale="en">MM/DD/YYYY (US) ou DD/MM/YYYY (UK)</format>
+        <format locale="zh">YYYY年MM月DD日</format>
+      </formats>
+    </principle>
+
+    <principle name="number_formats">
+      <description>Adaptar separadores numéricos</description>
+      <formats>
+        <format locale="pt">1.000,50</format>
+        <format locale="en">1,000.50</format>
+        <format locale="ar">١٬٠٠٠٫٥٠ ou 1,000.50</format>
+      </formats>
+    </principle>
+  </regional_adaptations>
+
+  <quality_assurance>
+    <principle name="native_review">
+      <description>Idealmente revisar com falante nativo médico</description>
+    </principle>
+
+    <principle name="back_translation">
+      <description>Para termos críticos, verificar retradução</description>
+    </principle>
+
+    <principle name="context_awareness">
+      <description>Considerar contexto de uso (clínico vs. paciente)</description>
+      <examples>
+        <example context="clinical">Hipertensão arterial sistêmica</example>
+        <example context="patient">Pressão alta</example>
+      </examples>
+    </principle>
+  </quality_assurance>
+</best_practices>

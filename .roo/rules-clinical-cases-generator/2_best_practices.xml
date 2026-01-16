@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<best_practices>
+  <overview>
+    <title>Clinical Cases Generator - Best Practices</title>
+    <description>
+      Diretrizes para criação de casos clínicos educacionais de qualidade.
+    </description>
+  </overview>
+
+  <educational_principles>
+    <principle name="constructive_alignment">
+      <description>Alinhar caso com objetivos de aprendizagem</description>
+      <guidelines>
+        <guideline>Definir objetivos claros antes de criar o caso</guideline>
+        <guideline>Cada questão deve testar objetivo específico</guideline>
+        <guideline>Feedback deve reforçar aprendizagem</guideline>
+      </guidelines>
+    </principle>
+
+    <principle name="authentic_learning">
+      <description>Casos devem refletir prática clínica real</description>
+      <guidelines>
+        <guideline>Usar apresentações epidemiologicamente comuns</guideline>
+        <guideline>Incluir informações irrelevantes como na vida real</guideline>
+        <guideline>Simular incerteza diagnóstica realista</guideline>
+      </guidelines>
+    </principle>
+
+    <principle name="scaffolding">
+      <description>Fornecer suporte progressivo</description>
+      <guidelines>
+        <guideline>Hints disponíveis em níveis progressivos</guideline>
+        <guideline>Feedback imediato após cada resposta</guideline>
+        <guideline>Explicação do raciocínio correto</guideline>
+      </guidelines>
+    </principle>
+
+    <principle name="deliberate_practice">
+      <description>Permitir prática deliberada</description>
+      <guidelines>
+        <guideline>Permitir refazer casos</guideline>
+        <guideline>Variar dificuldade progressivamente</guideline>
+        <guideline>Forcar áreas de fraqueza</guideline>
+      </guidelines>
+    </principle>
+  </educational_principles>
+
+  <clinical_accuracy>
+    <principle name="evidence_based">
+      <description>Casos devem ser baseados em evidências</description>
+      <requirements>
+        <requirement>Apresentação clínica condizente com literatura</requirement>
+        <requirement>Valores de exames realistas</requirement>
+        <requirement>Condutas alinhadas com guidelines</requirement>
+      </requirements>
+    </principle>
+
+    <principle name="realistic_demographics">
+      <description>Pacientes devem ter perfis realistas</description>
+      <considerations>
+        <consideration>Idade típica para a condição</consideration>
+        <consideration>Fatores de risco plausíveis</consideration>
+        <consideration>Comorbidades prevalentes</consideration>
+      </considerations>
+    </principle>
+
+    <principle name="valid_differential">
+      <description>Diagnósticos diferenciais devem ser clinicamente válidos</description>
+      <guidelines>
+        <guideline>Incluir diagnósticos que realmente confundem</guideline>
+        <guideline>Explicar por que cada diferencial é/não é o diagnóstico</guideline>
+        <guideline>Evitar distraidores absurdos</guideline>
+      </guidelines>
+    </principle>
+  </clinical_accuracy>
+
+  <question_design>
+    <principle name="clear_stem">
+      <description>Enunciado claro e conciso</description>
+      <guidelines>
+        <guideline>Pergunta direta e sem ambiguidade</guideline>
+        <guideline>Informação suficiente para responder</guideline>
+        <guideline>Evitar negativas duplas</guideline>
+      </guidelines>
+    </principle>
+
+    <principle name="plausible_distractors">
+      <description>Opções incorretas devem ser plausíveis</description>
+      <guidelines>
+        <guideline>Distraidores baseados em erros comuns</guideline>
+        <guideline>Todas opções com mesma estrutura gramatical</guideline>
+        <guideline>Evitar "todas as anteriores" / "nenhuma das anteriores"</guideline>
+      </guidelines>
+    </principle>
+
+    <principle name="educational_feedback">
+      <description>Feedback deve ensinar, não apenas corrigir</description>
+      <structure>
+        <item>Por que a resposta correta está certa</item>
+        <item>Por que cada distraidor está errado</item>
+        <item>Pérola clínica relacionada</item>
+        <item>Citação para aprofundamento</item>
+      </structure>
+    </principle>
+  </question_design>
+
+  <gamification_integration>
+    <principle name="meaningful_points">
+      <description>Pontuação deve refletir dificuldade real</description>
+    </principle>
+    <principle name="achievement_unlocks">
+      <description>Integrar com sistema de conquistas</description>
+    </principle>
+    <principle name="progress_tracking">
+      <description>Salvar progresso do usuário</description>
+    </principle>
+  </gamification_integration>
+</best_practices>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow>
+  <overview>
+    <title>Clinical Cases Generator - Workflow Pipeline</title>
+    <description>
+      Pipeline SOTA++ para geração de casos clínicos interativos
+      educacionais alinhados com o sistema de gamificação.
+    </description>
+  </overview>
+
+  <pipeline>
+    <phase name="planning" order="1">
+      <title>Fase de Planejamento</title>
+      <description>Definir objetivos educacionais e estrutura do caso</description>
+      <steps>
+        <step>Definir doença/condição alvo</step>
+        <step>Identificar objetivos de aprendizagem</step>
+        <step>Mapear diagnósticos diferenciais relevantes</step>
+        <step>Definir nível de dificuldade</step>
+        <step>Alinhar com doenças existentes em lib/data/doencas/</step>
+      </steps>
+      <learning_objectives>
+        <objective type="knowledge">Reconhecer apresentação clínica</objective>
+        <objective type="skill">Solicitar exames apropriados</objective>
+        <objective type="reasoning">Desenvolver raciocínio diagnóstico</objective>
+      </learning_objectives>
+    </phase>
+
+    <phase name="case_design" order="2">
+      <title>Fase de Design do Caso</title>
+      <description>Criar estrutura narrativa do caso clínico</description>
+      <steps>
+        <step>Criar perfil do paciente (idade, sexo, ocupação)</step>
+        <step>Definir queixa principal e HDA</step>
+        <step>Criar antecedentes pessoais e familiares</step>
+        <step>Definir exame físico inicial</step>
+        <step>Criar resultados de exames complementares</step>
+        <step>Estruturar evolução do caso</step>
+      </steps>
+      <case_structure>
+        <section>Apresentação inicial</section>
+        <section>Coleta de história</section>
+        <section>Exame físico</section>
+        <section>Hipóteses diagnósticas</section>
+        <section>Exames complementares</section>
+        <section>Diagnóstico e conduta</section>
+      </case_structure>
+    </phase>
+
+    <phase name="interaction_design" order="3">
+      <title>Fase de Design de Interações</title>
+      <description>Criar pontos de decisão e feedback</description>
+      <steps>
+        <step>Criar questões de múltipla escolha para cada fase</step>
+        <step>Definir feedback para cada opção (correta e incorretas)</step>
+        <step>Criar hints progressivos</step>
+        <step>Definir pontuação por resposta</step>
+        <step>Integrar com gamificationStore</step>
+      </steps>
+      <question_types>
+        <type name="diagnostic">Qual o diagnóstico mais provável?</type>
+        <type name="exam">Qual exame solicitar?</type>
+        <type name="treatment">Qual a conduta inicial?</type>
+        <type name="differential">Qual diagnóstico pode ser descartado?</type>
+      </question_types>
+    </phase>
+
+    <phase name="content_generation" order="4">
+      <title>Fase de Geração de Conteúdo</title>
+      <description>Criar conteúdo baseado em evidências</description>
+      <steps>
+        <step>Buscar casos similares na literatura (PubMed)</step>
+        <step>Validar apresentação clínica contra literatura</step>
+        <step>Criar feedback educacional com citações</step>
+        <step>Adicionar "pearls" clínicas</step>
+      </steps>
+    </phase>
+
+    <phase name="integration" order="5">
+      <title>Fase de Integração</title>
+      <description>Integrar caso ao projeto</description>
+      <steps>
+        <step>Adicionar a lib/data/clinical-cases/ ou messages/</step>
+        <step>Criar página em app/[locale]/casos-clinicos/[id]</step>
+        <step>Integrar com stores de gamificação</step>
+        <step>Verificar build e testar interatividade</step>
+      </steps>
+      <files>
+        <file>messages/{locale}/clinical-cases.json</file>
+        <file>lib/data/clinical-cases/</file>
+        <file>app/[locale]/casos-clinicos/[id]/page.tsx</file>
+      </files>
+    </phase>
+  </pipeline>
+
+  <difficulty_levels>
+    <level name="beginner">
+      <characteristics>
+        <item>Apresentação típica da doença</item>
+        <item>Poucos diagnósticos diferenciais</item>
+        <item>Dicas frequentes</item>
+      </characteristics>
+      <points>10-30 por questão</points>
+    </level>
+    <level name="intermediate">
+      <characteristics>
+        <item>Apresentação atípica ou comorbidades</item>
+        <item>Múltiplos diagnósticos diferenciais</item>
+        <item>Dicas moderadas</item>
+      </characteristics>
+      <points>30-50 por questão</points>
+    </level>
+    <level name="advanced">
+      <characteristics>
+        <item>Caso complexo ou raro</item>
+        <item>Diagnóstico não óbvio</item>
+        <item>Poucas dicas</item>
+      </characteristics>
+      <points>50-100 por questão</points>
+    </level>
+  </difficulty_levels>
+</workflow>

@@ -161,8 +161,8 @@ export class LivingMedicalNetwork {
   /**
    * REGISTRO DE NOVO MÉDICO NA REDE
    */
-  async registerMedicalNeuron(neuronData: Partial<MedicalNeuron>): Promise<string> {
-    const neuronId = this.generateNeuronId();
+  async registerMedicalNeuron(neuronData: Partial<MedicalNeuron>, customId?: string): Promise<string> {
+    const neuronId = customId || this.generateNeuronId();
     
     const newNeuron: MedicalNeuron = {
       id: neuronId,

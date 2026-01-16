@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<examples>
+  <overview>
+    <title>Critical Analysis Generator - Examples</title>
+    <description>
+      Exemplos completos de análises críticas para o Darwin-MFC.
+    </description>
+  </overview>
+
+  <example name="complete_analysis">
+    <title>Exemplo: Análise Crítica de Câncer de Mama</title>
+    <context>Geração completa de análise crítica a partir de rastreamento</context>
+
+    <input>
+      <rastreamento_summary>
+        <id>cancer-mama</id>
+        <sus_recommendation>Mulheres 50-69, mamografia bienal</sus_recommendation>
+        <societies_recommendation>Mulheres 40+, mamografia anual</societies_recommendation>
+        <convergence_status>parcial</convergence_status>
+      </rastreamento_summary>
+    </input>
+
+    <output>
+      <![CDATA[
+{
+  rastreamentoId: "cancer-mama",
+  insights: [
+    {
+      tipo: "segunda_ordem",
+      titulo: "Tensão entre universalidade e sustentabilidade",
+      descricao: "A divergência entre SUS e sociedades médicas reflete uma tensão fundamental entre dois princípios: a universalidade do acesso (que exige priorização de recursos) e a maximização da detecção precoce (que demanda rastreamento mais amplo). O SUS, com recursos finitos para 210 milhões de habitantes, opta por estratégia cost-effective, enquanto sociedades médicas, orientadas pela melhor prática individual, recomendam abordagem mais agressiva [1,2].",
+      implicacoes: [
+        "Criação de dois padrões de cuidado baseados em capacidade de pagamento",
+        "Pressão constante sobre o SUS para expandir cobertura",
+        "Debate político recorrente sobre financiamento da saúde"
+      ],
+      citacoes: ["paim-2024-sus", "victora-2024-lancet"]
+    },
+    {
+      tipo: "segunda_ordem",
+      titulo: "Paradoxo do sobrediagnóstico",
+      descricao: "O rastreamento mais agressivo aumenta detecção de tumores, mas também de lesões que nunca evoluiriam clinicamente (carcinoma ductal in situ). Estima-se que 11-19% dos cânceres de mama detectados por rastreamento representam sobrediagnóstico, resultando em tratamentos desnecessários com morbidade associada [3].",
+      implicacoes: [
+        "Mastectomias e quimioterapias potencialmente desnecessárias",
+        "Impacto psicológico significativo em pacientes tratadas desnecessariamente",
+        "Custos ao sistema sem benefício de mortalidade"
+      ],
+      citacoes: ["welch-2024-overdiagnosis"]
+    },
+    {
+      tipo: "terceira_ordem",
+      titulo: "Aprofundamento das desigualdades socioeconômicas",
+      descricao: "A diferença de 10 anos no início do rastreamento entre SUS (50 anos) e planos privados (40 anos) cria uma disparidade estrutural onde mulheres de maior renda têm diagnóstico mais precoce. Dados sugerem que estágio ao diagnóstico varia significativamente por tipo de cobertura, com potencial impacto em sobrevida [4,5].",
+      implicacoes: [
+        "Perpetuação de desigualdades em saúde por década",
+        "Possível aumento do gap de sobrevida entre classes sociais",
+        "Questionamento ético das políticas públicas"
+      ],
+      citacoes: ["guerra-2024-inequity", "ibge-2023-saude"]
+    }
+  ],
+  controversias: [
+    {
+      titulo: "Idade ideal de início do rastreamento",
+      descricao: "O debate sobre quando iniciar o rastreamento mamográfico é uma das questões mais polarizadas em oncologia preventiva, com implicações diretas para políticas públicas globalmente [1].",
+      posicao_a: {
+        argumento: "Início aos 40 anos maximiza detecção precoce e reduz mortalidade nessa faixa. Meta-análise com 160.000 mulheres demonstrou redução de 15% na mortalidade específica por câncer de mama quando rastreamento inicia aos 40 [6].",
+        evidencias: [
+          "Meta-análise de 8 RCTs com seguimento de 13 anos",
+          "Tumores detectados em estágio mais precoce",
+          "NNS de 1.904 para prevenir uma morte na faixa 40-49"
+        ],
+        citacoes: ["nelson-2024-uspstf", "jama-2024-mammography"]
+      },
+      posicao_b: {
+        argumento: "Início aos 50 anos oferece melhor relação custo-efetividade, menor taxa de falsos-positivos e evita ansiedade desnecessária em população de risco relativamente baixo [7].",
+        evidencias: [
+          "Custo por ano de vida salvo 3x maior na faixa 40-49",
+          "Taxa de falsos-positivos 50% maior em mamas densas (mais comum em jovens)",
+          "Análise NICE favorece início aos 50"
+        ],
+        citacoes: ["cochrane-2024-screening", "nice-2024-breast"]
+      },
+      sintese: "Não há resposta universalmente correta. A decisão deve balancear recursos disponíveis, preferências individuais e fatores de risco específicos. Políticas de rastreamento estratificado por risco podem representar um meio-termo promissor [8]."
+    }
+  ],
+  desafios: [
+    {
+      titulo: "Disparidade regional de acesso à mamografia",
+      descricao: "A cobertura de mamografia de rastreamento varia de 24% no Norte a 68% no Sudeste, refletindo profundas desigualdades de infraestrutura e recursos humanos [9].",
+      propostas: [
+        "Expansão de mamógrafos móveis com rotas otimizadas por algoritmos de demanda",
+        "Implementação de telessaúde para laudos à distância, reduzindo necessidade de radiologistas locais",
+        "Programa de capacitação acelerada de técnicos de radiologia para regiões prioritárias",
+        "Parcerias com universidades para extensão em áreas desassistidas"
+      ],
+      citacoes: ["datasus-2024-cobertura", "ms-2024-mamografo"]
+    },
+    {
+      titulo: "Baixa adesão ao rastreamento mesmo quando disponível",
+      descricao: "Mesmo em regiões com boa oferta, apenas 60% das mulheres elegíveis realizam mamografia no intervalo recomendado. Fatores incluem medo do diagnóstico, desinformação e barreiras logísticas [10].",
+      propostas: [
+        "Campanhas de comunicação adaptadas culturalmente",
+        "Agentes comunitárias de saúde com foco em busca ativa",
+        "Flexibilização de horários de atendimento",
+        "Sistemas de lembrete por SMS/WhatsApp"
+      ],
+      citacoes: ["pns-2023-adesao"]
+    }
+  ]
+}
+      ]]>
+    </output>
+  </example>
+
+  <example name="insight_progression">
+    <title>Progressão de Insights: De Primeira a Terceira Ordem</title>
+    <topic>Rastreamento de Diabetes</topic>
+
+    <progression>
+      <primeira_ordem>
+        <observation>SUS recomenda rastreamento a partir de 45 anos ou se fatores de risco. USPSTF recomenda 35-70 com sobrepeso.</observation>
+      </primeira_ordem>
+
+      <segunda_ordem>
+        <insight>A diferença de 10 anos (45 vs 35) reflete uma tensão entre custo-efetividade populacional e prevenção individual. Em contexto de epidemia de obesidade, a recomendação brasileira pode estar subestimando o risco em adultos jovens com sobrepeso.</insight>
+      </segunda_ordem>
+
+      <terceira_ordem>
+        <insight>Se a prevalência de diabetes em adultos jovens continuar aumentando, a recomendação atual do SUS resultará em diagnósticos tardios com complicações já instaladas. Isso criará um paradoxo onde o sistema economiza no rastreamento mas paga mais caro em tratamento de complicações (nefropatia, retinopatia, pé diabético).</insight>
+      </terceira_ordem>
+    </progression>
+  </example>
+
+  <anti_patterns>
+    <anti_pattern name="superficial_analysis">
+      <description>Análise que não vai além da descrição</description>
+      <bad_example>
+        "O SUS recomenda X e as sociedades recomendam Y, o que representa uma divergência parcial."
+      </bad_example>
+      <good_example>
+        "A divergência entre SUS e sociedades reflete tensão estrutural entre universalidade e otimização individual, com implicações para equidade em saúde."
+      </good_example>
+    </anti_pattern>
+
+    <anti_pattern name="biased_controversy">
+      <description>Apresentar um lado de forma mais favorável</description>
+      <bad_example>
+        "A posição A tem evidências robustas de múltiplos estudos. A posição B é defendida por alguns grupos."
+      </bad_example>
+      <good_example>
+        "A posição A é suportada por meta-análise de X estudos. A posição B é suportada por análise de custo-efetividade de Y países."
+      </good_example>
+    </anti_pattern>
+
+    <anti_pattern name="vague_challenges">
+      <description>Desafios sem propostas específicas</description>
+      <bad_example>
+        "É preciso melhorar o acesso à saúde."
+      </bad_example>
+      <good_example>
+        "Expandir cobertura de mamógrafos móveis com rotas otimizadas nas microrregiões X, Y e Z, priorizando municípios com cobertura &lt;30%."
+      </good_example>
+    </anti_pattern>
+  </anti_patterns>
+</examples>

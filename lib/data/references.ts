@@ -39,6 +39,61 @@ const baseReferences: Record<string, Reference> = {
     authors: ['Congresso Nacional']
   },
 
+  'ms-colorretal-gt-2025': {
+    id: 'ms-colorretal-gt-2025',
+    type: 'nota_tecnica',
+    title: 'Grupo de Trabalho para Diretrizes de Rastreamento do Câncer Colorretal no SUS',
+    year: 2025,
+    authors: ['Ministério da Saúde', 'INCA'],
+    url: 'https://www.gov.br/inca',
+    accessDate: '2026-01-15'
+  },
+
+  'uspstf-colorretal-2021': {
+    id: 'uspstf-colorretal-2021',
+    type: 'artigo',
+    title: 'Screening for Colorectal Cancer: US Preventive Services Task Force Recommendation Statement',
+    journal: 'JAMA',
+    year: 2021,
+    volume: '325',
+    issue: '19',
+    pages: '1965-1977',
+    doi: '10.1001/jama.2021.6238',
+    pmid: '34003218',
+    authors: ['US Preventive Services Task Force', 'Davidson KW', 'Barry MJ', 'Mangione CM', 'et al.'],
+    abstract: 'The USPSTF recommends screening for colorectal cancer in all adults aged 45 to 75 years (Grade B for 45-49; Grade A for 50-75).'
+  },
+
+  'sbcp-colorretal-2024': {
+    id: 'sbcp-colorretal-2024',
+    type: 'diretriz',
+    title: 'Diretrizes Brasileiras para Rastreamento do Câncer Colorretal',
+    year: 2024,
+    authors: ['Sociedade Brasileira de Coloproctologia', 'Sociedade Brasileira de Cirurgia Oncológica'],
+    url: 'https://www.sbcp.org.br',
+    accessDate: '2026-01-15'
+  },
+
+  'fundacao-cancer-2025': {
+    id: 'fundacao-cancer-2025',
+    type: 'relatorio',
+    title: 'Projeções de Incidência de Câncer Colorretal no Brasil 2025-2040',
+    year: 2025,
+    authors: ['Fundação do Câncer'],
+    url: 'https://www.cancer.org.br',
+    accessDate: '2026-01-15'
+  },
+
+  'who-cancer-screening-2022': {
+    id: 'who-cancer-screening-2022',
+    type: 'diretriz',
+    title: 'WHO guideline for screening and treatment of cervical pre-cancer lesions for cervical cancer prevention, 2nd edition',
+    year: 2022,
+    authors: ['World Health Organization'],
+    url: 'https://www.who.int',
+    accessDate: '2026-01-15'
+  },
+
   'ms-tea-2025': {
     id: 'ms-tea-2025',
     type: 'diretriz',

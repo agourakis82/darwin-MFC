@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gamification>
+  <overview>
+    <title>Clinical Cases Generator - Gamification Integration</title>
+    <description>
+      Integração de casos clínicos com sistema de gamificação do Darwin-MFC.
+    </description>
+  </overview>
+
+  <stores>
+    <store name="gamificationStore">
+      <location>lib/store/gamificationStore.ts</location>
+      <purpose>Gerenciar pontuação, conquistas e progresso</purpose>
+      <key_functions>
+        <function>addPoints(amount: number)</function>
+        <function>unlockAchievement(id: string)</function>
+        <function>updateCaseProgress(caseId: string, progress: CaseProgress)</function>
+      </key_functions>
+    </store>
+
+    <store name="learningStore">
+      <location>lib/store/learningStore.ts</location>
+      <purpose>Rastrear aprendizado e flashcards</purpose>
+    </store>
+  </stores>
+
+  <scoring_system>
+    <base_points>
+      <correct_answer>
+        <beginner>10-20 pontos</beginner>
+        <intermediate>20-40 pontos</intermediate>
+        <advanced>40-80 pontos</advanced>
+      </correct_answer>
+      <hint_penalty>-25% do valor da questão</hint_penalty>
+      <second_attempt>50% do valor original</second_attempt>
+    </base_points>
+
+    <bonuses>
+      <bonus name="perfect_case">
+        <description>Todas questões corretas na primeira tentativa</description>
+        <multiplier>1.5x</multiplier>
+      </bonus>
+      <bonus name="speed_bonus">
+        <description>Completar caso em menos de 50% do tempo estimado</description>
+        <bonus_points>+20%</bonus_points>
+      </bonus>
+      <bonus name="streak">
+        <description>3+ respostas corretas consecutivas</description>
+        <bonus_points>+10% por questão adicional</bonus_points>
+      </bonus>
+    </bonuses>
+  </scoring_system>
+
+  <achievements>
+    <achievement id="first-case">
+      <name>{ pt: "Primeiro Diagnóstico", en: "First Diagnosis" }</name>
+      <description>Complete seu primeiro caso clínico</description>
+      <icon>🏥</icon>
+      <condition>casesCompleted >= 1</condition>
+      <points>50</points>
+    </achievement>
+
+    <achievement id="perfect-diagnosis">
+      <name>{ pt: "Diagnóstico Perfeito", en: "Perfect Diagnosis" }</name>
+      <description>100% de acerto em um caso</description>
+      <icon>⭐</icon>
+      <condition>caseScore === 100</condition>
+      <points>100</points>
+    </achievement>
+
+    <achievement id="case-master">
+      <name>{ pt: "Mestre dos Casos", en: "Case Master" }</name>
+      <description>Complete 10 casos clínicos</description>
+      <icon>🎓</icon>
+      <condition>casesCompleted >= 10</condition>
+      <points>200</points>
+    </achievement>
+
+    <achievement id="specialist">
+      <name>{ pt: "Especialista", en: "Specialist" }</name>
+      <description>Complete 5 casos de uma mesma especialidade</description>
+      <icon>🔬</icon>
+      <condition>categoryCount >= 5</condition>
+      <points>150</points>
+    </achievement>
+
+    <achievement id="no-hints">
+      <name>{ pt: "Sem Dicas", en: "No Hints" }</name>
+      <description>Complete um caso avançado sem usar dicas</description>
+      <icon>🧠</icon>
+      <condition>advancedCase && hintsUsed === 0</condition>
+      <points>250</points>
+    </achievement>
+  </achievements>
+
+  <progress_tracking>
+    <metrics>
+      <metric>Total de casos completados</metric>
+      <metric>Pontuação total</metric>
+      <metric>Média de acertos</metric>
+      <metric>Casos por categoria</metric>
+      <metric>Sequência atual de acertos</metric>
+      <metric>Tempo médio por caso</metric>
+    </metrics>
+
+    <persistence>
+      <storage>localStorage (via Zustand persist)</storage>
+      <key>darwin-mfc-gamification</key>
+    </persistence>
+  </progress_tracking>
+
+  <ui_integration>
+    <components>
+      <component>PointsDisplay - Mostra pontos atuais</component>
+      <component>AchievementBadge - Mostra conquistas desbloqueadas</component>
+      <component>ProgressBar - Progresso no caso atual</component>
+      <component>Leaderboard - Ranking (futuro)</component>
+    </components>
+
+    <feedback_animations>
+      <animation trigger="correct_answer">
+        <effect>Confetti + sound + points floating</effect>
+      </animation>
+      <animation trigger="achievement_unlocked">
+        <effect>Badge reveal + celebration</effect>
+      </animation>
+      <animation trigger="case_completed">
+        <effect>Summary screen + score breakdown</effect>
+      </animation>
+    </feedback_animations>
+  </ui_integration>
+
+  <implementation_example>
+    <![CDATA[
+// Uso no componente de caso clínico
+import { useGamificationStore } from '@/lib/store/gamificationStore';
+
+function CaseQuestion({ question, onAnswer }) {
+  const { addPoints, updateCaseProgress } = useGamificationStore();
+
+  const handleAnswer = (answerId: string) => {
+    const isCorrect = answerId === question.correctAnswer;
+
+    if (isCorrect) {
+      addPoints(question.points);
+    }
+
+    updateCaseProgress(caseId, {
+      questionsAnswered: {
+        [question.id]: { answerId, correct: isCorrect }
+      }
+    });
+
+    onAnswer(answerId, isCorrect);
+  };
+
+  return (
+    // ... render question UI
+  );
+}
+    ]]>
+  </implementation_example>
+</gamification>

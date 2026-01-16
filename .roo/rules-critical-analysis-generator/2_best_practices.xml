@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<best_practices>
+  <overview>
+    <title>Critical Analysis Generator - Best Practices</title>
+    <description>
+      Diretrizes para geração de análises críticas de qualidade acadêmica.
+    </description>
+  </overview>
+
+  <analytical_principles>
+    <principle name="systemic_thinking">
+      <description>Pensar sistemicamente, não apenas pontualmente</description>
+      <approach>
+        <step>Identificar todos os stakeholders</step>
+        <step>Mapear incentivos e interesses</step>
+        <step>Considerar consequências de segunda ordem</step>
+        <step>Avaliar impactos de longo prazo</step>
+      </approach>
+      <example>
+        <surface>SUS recomenda mamografia bienal a partir de 50 anos</surface>
+        <systemic>Essa recomendação reflete tensão entre universalidade e sustentabilidade do sistema, podendo criar disparidades onde planos privados oferecem rastreamento mais agressivo</systemic>
+      </example>
+    </principle>
+
+    <principle name="multi_perspective">
+      <description>Considerar múltiplas perspectivas</description>
+      <perspectives>
+        <perspective>Paciente/cidadão</perspective>
+        <perspective>Profissional de saúde</perspective>
+        <perspective>Gestor/formulador de políticas</perspective>
+        <perspective>Sistema de saúde como um todo</perspective>
+        <perspective>Sociedade/economia</perspective>
+      </perspectives>
+    </principle>
+
+    <principle name="evidence_based_critique">
+      <description>Críticas devem ser baseadas em evidências</description>
+      <requirements>
+        <requirement>Não fazer críticas sem fundamento</requirement>
+        <requirement>Citar fontes para cada afirmação crítica</requirement>
+        <requirement>Reconhecer limitações das evidências</requirement>
+      </requirements>
+    </principle>
+
+    <principle name="constructive_approach">
+      <description>Críticas devem ser construtivas</description>
+      <guidelines>
+        <guideline>Identificar problema E propor solução</guideline>
+        <guideline>Reconhecer restrições práticas</guideline>
+        <guideline>Sugerir melhorias incrementais viáveis</guideline>
+      </guidelines>
+    </principle>
+  </analytical_principles>
+
+  <insight_generation>
+    <principle name="segunda_ordem">
+      <description>Insights de segunda ordem revelam padrões</description>
+      <characteristics>
+        <characteristic>Conectam dados aparentemente não relacionados</characteristic>
+        <characteristic>Identificam paradoxos e tensões</characteristic>
+        <characteristic>Revelam causas subjacentes</characteristic>
+      </characteristics>
+      <prompts>
+        <prompt>O que esse dado revela sobre o sistema?</prompt>
+        <prompt>Qual padrão conecta essas observações?</prompt>
+        <prompt>Por que essa divergência existe?</prompt>
+      </prompts>
+    </principle>
+
+    <principle name="terceira_ordem">
+      <description>Insights de terceira ordem projetam consequências</description>
+      <characteristics>
+        <characteristic>Implicações de longo prazo</characteristic>
+        <characteristic>Efeitos em outros sistemas</characteristic>
+        <characteristic>Consequências não intencionadas</characteristic>
+      </characteristics>
+      <prompts>
+        <prompt>Quais as consequências de longo prazo?</prompt>
+        <prompt>Como isso afeta outros aspectos do sistema?</prompt>
+        <prompt>Quais efeitos não intencionados podem surgir?</prompt>
+      </prompts>
+    </principle>
+  </insight_generation>
+
+  <controversy_handling>
+    <principle name="balanced_presentation">
+      <description>Apresentar ambos lados equilibradamente</description>
+      <guidelines>
+        <guideline>Quantidade similar de argumentos para cada lado</guideline>
+        <guideline>Qualidade similar de evidências</guideline>
+        <guideline>Não usar linguagem pejorativa</guideline>
+      </guidelines>
+    </principle>
+
+    <principle name="synthesis_quality">
+      <description>Síntese deve adicionar valor</description>
+      <requirements>
+        <requirement>Não apenas resumir - analisar</requirement>
+        <requirement>Identificar onde posições concordam</requirement>
+        <requirement>Sugerir como resolver ou avançar</requirement>
+      </requirements>
+    </principle>
+
+    <principle name="acknowledge_uncertainty">
+      <description>Reconhecer incertezas e limitações</description>
+      <phrases>
+        <phrase>"As evidências são inconclusivas..."</phrase>
+        <phrase>"Há necessidade de mais pesquisas..."</phrase>
+        <phrase>"O debate permanece aberto..."</phrase>
+      </phrases>
+    </principle>
+  </controversy_handling>
+
+  <brazilian_context>
+    <principle name="sus_specific">
+      <description>Considerar especificidades do SUS</description>
+      <factors>
+        <factor>Universalidade vs. recursos limitados</factor>
+        <factor>Descentralização e variação regional</factor>
+        <factor>Transição epidemiológica</factor>
+        <factor>Desigualdades socioeconômicas</factor>
+        <factor>Relação público-privado</factor>
+      </factors>
+    </principle>
+
+    <principle name="regional_disparities">
+      <description>Considerar disparidades regionais</description>
+      <regions>
+        <region>Norte - menor acesso, maior distância</region>
+        <region>Nordeste - transição epidemiológica</region>
+        <region>Sul/Sudeste - maior cobertura, envelhecimento</region>
+      </regions>
+    </principle>
+  </brazilian_context>
+</best_practices>

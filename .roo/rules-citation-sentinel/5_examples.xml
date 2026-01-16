@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<examples>
+  <overview>
+    <title>Citation Sentinel - Examples</title>
+    <description>
+      Exemplos de auditoria e enriquecimento de citações.
+    </description>
+  </overview>
+
+  <example name="gap_detection">
+    <title>Exemplo: Detectar Claims Sem Citação</title>
+    <context>Auditar seção de epidemiologia</context>
+
+    <input>
+      <![CDATA[
+{
+  epidemiologia: {
+    incidencia: "66.280 casos novos estimados para 2024, correspondendo a taxa de 61,61/100.000 mulheres",
+    mortalidade: "18.139 óbitos em 2021",
+    prevalencia: "Risco acumulado de 1 em cada 12 mulheres"
+  }
+}
+      ]]>
+    </input>
+
+    <analysis>
+      <claim text="66.280 casos novos" has_citation="false" type="numerical"/>
+      <claim text="taxa de 61,61/100.000" has_citation="false" type="numerical"/>
+      <claim text="18.139 óbitos" has_citation="false" type="numerical"/>
+      <claim text="1 em cada 12 mulheres" has_citation="false" type="numerical"/>
+    </analysis>
+
+    <output>
+      <![CDATA[
+// Relatório de gaps
+{
+  file: "lib/data/rastreamentos.ts",
+  section: "epidemiologia",
+  gaps: [
+    { claim: "66.280 casos novos", line: 45, severity: "error" },
+    { claim: "61,61/100.000", line: 45, severity: "error" },
+    { claim: "18.139 óbitos", line: 46, severity: "error" },
+    { claim: "1 em cada 12", line: 47, severity: "error" }
+  ],
+  recommendation: "Adicionar citação do INCA 2024 para todos os dados epidemiológicos"
+}
+      ]]>
+    </output>
+
+    <fix>
+      <![CDATA[
+{
+  epidemiologia: {
+    incidencia: "66.280 casos novos estimados para 2024, correspondendo a taxa de 61,61/100.000 mulheres [1]",
+    mortalidade: "18.139 óbitos em 2021 [1]",
+    prevalencia: "Risco acumulado de 1 em cada 12 mulheres [1]",
+    citacoes: ["inca-2024-estimativa"]
+  }
+}
+      ]]>
+    </fix>
+  </example>
+
+  <example name="doi_validation">
+    <title>Exemplo: Validar DOI via CrossRef</title>
+    <context>Verificar DOI de artigo existente</context>
+
+    <input>
+      <![CDATA[
+{
+  id: "smith-2024-screening",
+  doi: "10.1056/NEJMoa2401234"
+}
+      ]]>
+    </input>
+
+    <api_call>
+      <url>https://api.crossref.org/works/10.1056/NEJMoa2401234</url>
+      <method>GET</method>
+    </api_call>
+
+    <response>
+      <![CDATA[
+{
+  "status": "ok",
+  "message": {
+    "DOI": "10.1056/nejmoa2401234",
+    "title": ["Effectiveness of Mammography Screening"],
+    "author": [
+      { "given": "John", "family": "Smith" },
+      { "given": "Jane", "family": "Doe" }
+    ],
+    "container-title": ["New England Journal of Medicine"],
+    "published": { "date-parts": [[2024, 3, 15]] },
+    "volume": "390",
+    "issue": "5",
+    "page": "445-456"
+  }
+}
+      ]]>
+    </response>
+
+    <validation_result>
+      <valid>true</valid>
+      <enriched_reference>
+        <![CDATA[
+{
+  id: "smith-2024-screening",
+  autores: "Smith J, Doe J",
+  titulo: "Effectiveness of Mammography Screening",
+  revista: "N Engl J Med",
+  ano: 2024,
+  volume: "390",
+  numero: "5",
+  paginas: "445-456",
+  doi: "10.1056/NEJMoa2401234",
+  tipo: "artigo"
+}
+        ]]>
+      </enriched_reference>
+    </validation_result>
+  </example>
+
+  <example name="pubmed_search">
+    <title>Exemplo: Buscar Citação no PubMed</title>
+    <context>Encontrar citação para claim sobre eficácia de rastreamento</context>
+
+    <claim>
+      "O rastreamento mamográfico reduz mortalidade por câncer de mama em aproximadamente 20%"
+    </claim>
+
+    <search_query>
+      <![CDATA[
+esearch.fcgi?db=pubmed&term=(mammography+screening+mortality+reduction)+AND+(Systematic+Review[pt]+OR+Meta-Analysis[pt])&retmax=5&retmode=json&sort=relevance
+      ]]>
+    </search_query>
+
+    <results>
+      <![CDATA[
+[
+  {
+    pmid: "38765432",
+    title: "Breast Cancer Mortality Reduction with Mammography Screening: Updated Meta-Analysis",
+    authors: "Nelson HD, et al",
+    journal: "JAMA",
+    year: 2024,
+    relevance_score: 0.95
+  },
+  {
+    pmid: "37654321",
+    title: "Systematic Review of Mammography Screening Effectiveness",
+    authors: "Cochrane Collaboration",
+    journal: "Cochrane Database Syst Rev",
+    year: 2023,
+    relevance_score: 0.92
+  }
+]
+      ]]>
+    </results>
+
+    <recommendation>
+      <![CDATA[
+Sugestão: Citar PMID 38765432 (Nelson et al, JAMA 2024) como fonte primária
+para a afirmação de redução de 20% na mortalidade.
+
+Referência formatada:
+{
+  id: "nelson-2024-mortality",
+  autores: "Nelson HD, Cantor A, Humphrey L, et al",
+  titulo: "Breast Cancer Mortality Reduction with Mammography Screening: Updated Meta-Analysis",
+  revista: "JAMA",
+  ano: 2024,
+  volume: "331",
+  numero: "8",
+  paginas: "678-689",
+  doi: "10.1001/jama.2024.1234",
+  pmid: "38765432",
+  tipo: "artigo"
+}
+      ]]>
+    </recommendation>
+  </example>
+
+  <example name="full_audit">
+    <title>Exemplo: Auditoria Completa de Arquivo</title>
+    <context>Auditar rastreamento de câncer de mama</context>
+
+    <workflow>
+      <step order="1">
+        <action>Ler arquivo</action>
+        <result>Identificados 15 claims factuais</result>
+      </step>
+      <step order="2">
+        <action>Verificar citações</action>
+        <result>12 com citação, 3 gaps</result>
+      </step>
+      <step order="3">
+        <action>Validar DOIs</action>
+        <result>10 válidos, 1 inválido, 1 sem DOI</result>
+      </step>
+      <step order="4">
+        <action>Buscar citações para gaps</action>
+        <result>3 sugestões encontradas</result>
+      </step>
+      <step order="5">
+        <action>Aplicar correções</action>
+        <result>Gaps preenchidos, DOI inválido corrigido</result>
+      </step>
+    </workflow>
+
+    <report>
+      <![CDATA[
+## Relatório de Auditoria de Citações
+
+### Arquivo: lib/data/rastreamentos.ts (cancer-mama)
+
+#### Resumo
+- Total de claims: 15
+- Com citação: 12 (80%)
+- Gaps identificados: 3 (20%)
+- DOIs validados: 10/11 (91%)
+
+#### Gaps Corrigidos
+1. Linha 45: "66.280 casos novos" → adicionado [1]
+2. Linha 52: "redução de 20%" → adicionado [2]
+3. Linha 67: "início aos 40 anos" → adicionado [3]
+
+#### DOIs Corrigidos
+1. smith-2024-screening: DOI atualizado de "10.1056/NEJMoa240123" para "10.1056/NEJMoa2401234"
+
+#### Referências Adicionadas
+- inca-2024-estimativa
+- nelson-2024-mortality
+- uspstf-2024-breast
+
+#### Status Final
+✅ 100% de claims citadas
+✅ 100% de DOIs válidos
+✅ Build passando
+      ]]>
+    </report>
+  </example>
+
+  <anti_patterns>
+    <anti_pattern name="self_citation">
+      <description>Evitar auto-citação excessiva ou circular</description>
+    </anti_pattern>
+    <anti_pattern name="predatory_journals">
+      <description>Evitar periódicos predatórios</description>
+      <check>Verificar se periódico está indexado no PubMed/Scopus</check>
+    </anti_pattern>
+    <anti_pattern name="outdated_references">
+      <description>Evitar usar referências antigas quando há atualizações</description>
+      <check>Verificar se há versão mais recente de guideline</check>
+    </anti_pattern>
+  </anti_patterns>
+</examples>

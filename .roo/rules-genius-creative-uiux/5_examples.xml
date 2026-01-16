@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<examples>
+  <example name="dashboard_medical_innovativo">
+    <description>Criação de dashboard médico com micro-interações avançadas</description>
+    <context>Interface para sistema de saúde com dados de pacientes em tempo real</context>
+    <workflow>
+      <step>Análise de requisitos médicos e compliance</step>
+      <step>Design de hierarquia de dados crítica</step>
+      <step>Implementação de visualizações animadas</step>
+      <step>Otimização para performance e acessibilidade</step>
+    </workflow>
+    <code language="typescript"><![CDATA[
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+interface PatientData {
+  id: string;
+  name: string;
+  vitalSigns: {
+    heartRate: number;
+    bloodPressure: string;
+    temperature: number;
+    oxygenSaturation: number;
+  };
+  lastUpdate: Date;
+  status: 'stable' | 'warning' | 'critical';
+}
+
+const MedicalDashboard = () => {
+  const [patients, setPatients] = useState<PatientData[]>([]);
+  const [selectedPatient, setSelectedPatient] = useState<string | null>(null);
+
+  // Animação de entrada para cards de pacientes
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 20,
+      scale: 0.95
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    },
+    hover: {
+      scale: 1.02,
+      boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 20
+      }
+    }
+  };
+
+  const pulseVariants = {
+    normal: {
+      scale: 1,
+      opacity: 1
+    },
+    warning: {
+      scale: [1, 1.05, 1],
+      opacity: [1, 0.7, 1],
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  return (
+    <motion.div
+      className="medical-dashboard"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <div className="dashboard-header">
+        <h1>Pacientes Internados</h1>
+        <motion.div 
+          className="live-indicator"
+          animate={{ 
+            opacity: [1, 0.5, 1],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ 
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <div className="pulse-dot" />
+          <span>Dados em tempo real</span>
+        </motion.div>
+      </div>
+
+      <motion.div 
+        className="patients-grid"
+        layout
+      >
+        <AnimatePresence>
+          {patients.map((patient) => (
+            <motion.div
+              key={patient.id}
+              className={`patient-card ${patient.status}`}
+              variants={cardVariants}
+              whileHover="hover"
+              layout
+              onClick={() => setSelectedPatient(patient.id)}
+            >
+              <motion.div 
+                className="patient-avatar"
+                variants={pulseVariants}
+                animate={patient.status === 'warning' ? 'warning' : 'normal'}
+              >
+                <span>{patient.name.charAt(0)}</span>
+              </motion.div>
+
+              <div className="patient-info">
+                <h3>{patient.name}</h3>
+                <div className="vitals">
+                  <motion.div 
+                    className="vital-item"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    <span className="vital-label">FC</span>
+                    <span className="vital-value">{patient.vitalSigns.heartRate}</span>
+                  </motion.div>
+                  <motion.div 
+                    className="vital-item"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    <span className="vital-label">PA</span>
+                    <span className="vital-value">{patient.vitalSigns.bloodPressure}</span>
+                  </motion.div>
+                  <motion.div 
+                    className="vital-item"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    <span className="vital-label">SpO₂</span>
+                    <span className="vital-value">{patient.vitalSigns.oxygenSaturation}%</span>
+                  </motion.div>
+                </div>
+              </div>
+
+              <motion.div 
+                className="status-indicator"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.5, type: "spring" }}
+              >
+                <div className={`status-dot ${patient.status}`} />
+              </motion.div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
+
+      <AnimatePresence>
+        {selectedPatient && (
+          <motion.div
+            className="patient-detail-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedPatient(null)}
+          >
+            <motion.div
+              className="patient-detail-modal"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 500 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal de detalhes do paciente */}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
+
+export default MedicalDashboard;
+    ]]></code>
+    <css_innovations>
+      <feature>Indicadores visuais animados para status crítico</feature>
+      <feature>Transições suaves entre estados de dados</feature>
+      <feature>Feedback imediato para ações do usuário</feature>
+      <feature>Micro-interações que guiam a atenção</feature>
+      <feature>Performance otimizada para updates em tempo real</feature>
+    </css_innovations>
+    <accessibility_features>
+      <feature>Indicadores de foco para navegação por teclado</feature>
+      <feature>Animações respeitam prefers-reduced-motion</feature>
+      <feature>Contraste adequado para todos os indicadores</feature>
+      <feature>Texto alternativo para indicadores visuais</feature>
+      <feature>Estados anunciados para screen readers</feature>
+    </accessibility_features>
+  </example>
+
+  <example name="sistema_design_modular">
+    <description>Sistema de design modular para aplicações escaláveis</description>
+    <context>Design system para múltiplos produtos médicos</context>
+    <workflow>
+      <step>Definição de tokens de design</step>
+      <step>Criação de componentes base</step>
+      <step>Implementação de variações e estados</step>
+      <step>Documentação interativa</step>
+    </workflow>
+    <code language="css"><![CDATA[
+/* Design Tokens */
+:root {
+  /* Cores - Sistema harmonioso para contexto médico */
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-primary-light: #3b82f6;
+  
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #06b6d4;
+  
+  /* Gradientes contextuais */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-success: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+  --gradient-medical: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  
+  /* Espaçamentos - Ritmo harmonioso */
+  --space-xs: 0.25rem;  /* 4px */
+  --space-sm: 0.5rem;   /* 8px */
+  --space-md: 1rem;     /* 16px */
+  --space-lg: 1.5rem;   /* 24px */
+  --space-xl: 2rem;     /* 32px */
+  --space-2xl: 3rem;    /* 48px */
+  
+  /* Tipografia - Hierarquia clara */
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-lg: 1.125rem;  /* 18px */
+  --font-size-xl: 1.25rem;   /* 20px */
+  --font-size-2xl: 1.5rem;   /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  
+  /* Sombras - Profundidade e elevação */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  /* Animações - Consistência temporal */
+  --animation-fast: 150ms;
+  --animation-normal: 300ms;
+  --animation-slow: 500ms;
+  --animation-delay: 100ms;
+  
+  /* Easing - Movimentos naturais */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Componente Base - Medical Card */
+.medical-card {
+  background: var(--color-surface, white);
+  border-radius: var(--radius-lg, 12px);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-lg);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--animation-normal) var(--ease-out-expo);
+  border: 1px solid var(--color-border, #e5e7eb);
+}
+
+.medical-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-medical);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--animation-normal) var(--ease-out-expo);
+}
+
+.medical-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.medical-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Estados interativos */
+.medical-card--interactive {
+  cursor: pointer;
+  user-select: none;
+}
+
+.medical-card--interactive:active {
+  transform: translateY(0);
+  transition-duration: var(--animation-fast);
+}
+
+/* Variantes contextuais */
+.medical-card--emergency {
+  border-color: var(--color-error);
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+}
+
+.medical-card--success {
+  border-color: var(--color-success);
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.medical-card--warning {
+  border-color: var(--color-warning);
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+}
+
+/* Animações de entrada */
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseAttention {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.medical-card--attention {
+  animation: pulseAttention 2s ease-in-out infinite;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .medical-card {
+    padding: var(--space-md);
+    margin: var(--space-sm);
+  }
+}
+
+/* Suporte a modo escuro */
+@media (prefers-color-scheme: dark) {
+  .medical-card {
+    --color-surface: #1f2937;
+    --color-border: #374151;
+    color: #f9fafb;
+  }
+}
+
+/* Respeitar movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .medical-card {
+    transition: none;
+    transform: none !important;
+  }
+  
+  .medical-card:hover {
+    transform: none !important;
+  }
+  
+  .medical-card--attention {
+    animation: none;
+  }
+}
+    ]]></code>
+    <design_principles>
+      <principle>Consistência visual através de tokens</principle>
+      <principle>Flexibilidade através de variações</principle>
+      <principle>Acessibilidade como padrão</principle>
+      <principle>Performance otimizada</principle>
+      <principle>Manutenibilidade através de modularidade</principle>
+    </design_principles>
+  </example>
+
+  <example name="interface_gestos_avancados">
+    <description>Interface que suporta gestos avançados para produtividade</description>
+    <context>Interface para tablets médicos com interação por toque</context>
+    <workflow>
+      <step>Definição de gestos contextuais</step>
+      <step>Implementação de feedback tátil</step>
+      <step>Otimização para diferentes tamanhos de tela</step>
+      <step>Validação com usuários médicos</step>
+    </workflow>
+    <code language="typescript"><![CDATA[
+import { useEffect, useRef, useState } from 'react';
+import { motion, PanInfo, useAnimation } from 'framer-motion';
+
+interface GestureInterfaceProps {
+  children: React.ReactNode;
+  onSwipeLeft?: () => void;
+  onSwipeRight?: () => void;
+  onPinch?: (scale: number) => void;
+  onRotate?: (angle: number) => void;
+  onLongPress?: () => void;
+}
+
+const GestureInterface = ({ 
+  children, 
+  onSwipeLeft, 
+  onSwipeRight, 
+  onPinch, 
+  onRotate, 
+  onLongPress 
+}: GestureInterfaceProps) => {
+  const [isPressed, setIsPressed] = useState(false);
+  const [longPressTimer, setLongPressTimer] = useState<NodeJS.Timeout | null>(null);
+  const controls = useAnimation();
+  const scaleRef = useRef(1);
+  const rotationRef = useRef(0);
+
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    const swipeThreshold = 50;
+    const swipeVelocity = 500;
+
+    if (Math.abs(info.offset.x) > swipeThreshold || Math.abs(info.velocity.x) > swipeVelocity) {
+      if (info.offset.x > 0) {
+        onSwipeRight?.();
+        // Feedback visual para swipe right
+        controls.start({ 
+          x: 100, 
+          opacity: 0.5,
+          transition: { duration: 0.2 }
+        }).then(() => {
+          controls.start({ x: 0, opacity: 1, transition: { duration: 0.3 } });
+        });
+      } else {
+        onSwipeLeft?.();
+        // Feedback visual para swipe left
+        controls.start({ 
+          x: -100, 
+          opacity: 0.5,
+          transition: { duration: 0.2 }
+        }).then(() => {
+          controls.start({ x: 0, opacity: 1, transition: { duration: 0.3 } });
+        });
+      }
+    }
+  };
+
+  const handlePinch = (event: any) => {
+    const newScale = event.scale;
+    scaleRef.current = newScale;
+    onPinch?.(newScale);
+  };
+
+  const handleRotate = (event: any, info: PanInfo) => {
+    const newRotation = info.offset.x * 0.5;
+    rotationRef.current = newRotation;
+    onRotate?.(newRotation);
+  };
+
+  const handlePointerDown = () => {
+    setIsPressed(true);
+    
+    // Long press detection
+    const timer = setTimeout(() => {
+      onLongPress?.();
+      // Visual feedback para long press
+      controls.start({ 
+        scale: 0.95,
+        transition: { duration: 0.1 }
+      });
+    }, 800);
+    
+    setLongPressTimer(timer);
+  };
+
+  const handlePointerUp = () => {
+    setIsPressed(false);
+    
+    if (longPressTimer) {
+      clearTimeout(longPressTimer);
+      setLongPressTimer(null);
+    }
+    
+    controls.start({ 
+      scale: 1,
+      transition: { duration: 0.2 }
+    });
+  };
+
+  // Haptic feedback para dispositivos suportados
+  const triggerHaptic = (type: 'light' | 'medium' | 'heavy' = 'light') => {
+    if ('vibrate' in navigator) {
+      const patterns = {
+        light: [10],
+        medium: [20],
+        heavy: [30]
+      };
+      navigator.vibrate(patterns[type]);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (longPressTimer) {
+        clearTimeout(longPressTimer);
+      }
+    };
+  }, [longPressTimer]);
+
+  return (
+    <motion.div
+      className="gesture-interface"
+      animate={controls}
+      drag
+      dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+      dragElastic={0.2}
+      onDragEnd={handleDragEnd}
+      onPinch={handlePinch}
+      onRotate={handleRotate}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      whileTap={{ scale: 0.98 }}
+      style={{
+        touchAction: 'none',
+        userSelect: 'none'
+      }}
+    >
+      <motion.div
+        className="gesture-feedback"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ 
+          opacity: isPressed ? 0.1 : 0,
+          scale: isPressed ? 1.1 : 1
+        }}
+        transition={{ duration: 0.2 }}
+      />
+      
+      <div className="gesture-hints">
+        <motion.div 
+          className="hint-swipe-left"
+          initial={{ x: -20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 1, duration: 0.5 }}
+        >
+          ← Deslize para ação anterior
+        </motion.div>
+        
+        <motion.div 
+          className="hint-swipe-right"
+          initial={{ x: 20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
+        >
+          Deslize para próxima ação →
+        </motion.div>
+        
+        <motion.div 
+          className="hint-long-press"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 2, duration: 0.5 }}
+        >
+          Pressione e segure para menu
+        </motion.div>
+      </div>
+
+      {children}
+    </motion.div>
+  );
+};
+
+export default GestureInterface;
+
+// CSS adicional para feedback visual
+const gestureStyles = `
+.gesture-interface {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gesture-feedback {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.gesture-hints {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #64748b;
+  opacity: 0;
+  animation: fadeInHints 0.5s ease-out 1s forwards;
+}
+
+@keyframes fadeInHints {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gesture-hints {
+    animation: none;
+  }
+  
+  .gesture-interface {
+    transition: none !important;
+  }
+}
+`;
+
+export { gestureStyles };
+    ]]></code>
+    <gesture_patterns>
+      <pattern>Swipe left/right para navegação entre seções</pattern>
+      <pattern>Long press para menu contextual</pattern>
+      <pattern>Pinch para zoom em visualizações</pattern>
+      <pattern>Drag para reordenação de elementos</pattern>
+      <pattern>Double tap para ações rápidas</pattern>
+    </gesture_patterns>
+    <accessibility_notes>
+      <note>Todos os gestos têm equivalentes por teclado</note>
+      <note>Feedback visual substitui feedback tátil quando necessário</note>
+      <note>Animações podem ser desabilitadas via preferências</note>
+    </accessibility_notes>
+  </example>
+
+  <complete_workflow_examples>
+    <example name="projeto_completo_dashboard">
+      <title>Desenvolvimento Completo de Dashboard Médico Interativo</title>
+      <description>Workflow end-to-end para criação de dashboard com componentes avançados</description>
+      
+      <phases>
+        <phase name="análise">
+          <tools_used>
+            <tool>list_files</tool> - Analisar estrutura do projeto
+            <tool>search_files</tool> - Encontrar padrões de UI existentes
+            <tool>read_file</tool> - Examinar componentes similares
+          </tools_used>
+          
+          <deliverables>
+            <item>Requisitos funcionais documentados</item>
+            <item>Mapeamento de componentes necessários</item>
+            <item>Estratégia de performance definida</item>
+            <item>Padrões de acessibilidade estabelecidos</item>
+          </deliverables>
+        </phase>
+
+        <phase name="design_system">
+          <tools_used>
+            <tool>write_to_file</tool> - Criar tokens de design
+            <tool>apply_diff</tool> - Implementar componentes base
+            <tool>execute_command</tool> - Validar com ferramenta de design
+          </tools_used>
+          
+          <deliverables>
+            <item>Sistema de cores e tipografia</item>
+            <item>Componentes base implementados</item>
+            <item>Variantes e estados definidos</item>
+            <item>Documentação de padrões</item>
+          </deliverables>
+        </phase>
+
+        <phase name="componentes_interativos">
+          <tools_used>
+            <tool>write_to_file</tool> - Criar componentes React avançados
+            <tool>apply_diff</tool> - Refinar animações e interações
+            <tool>browser_use</tool> - Testar em tempo real
+          </tools_used>
+          
+          <deliverables>
+            <item>Componentes com micro-interações</item>
+            <item>Animações fluidas implementadas</item>
+            <item>Estados de loading e error handling</item>
+            <item>Performance otimizada</item>
+          </deliverables>
+        </phase>
+
+        <phase name="integração">
+          <tools_used>
+            <tool>apply_diff</tool> - Integrar com dados reais
+            <tool>execute_command</tool> - Executar testes completos
+            <tool>browser_use</tool> - Validação final de UX
+          </tools_used>
+          
+          <deliverables>
+            <item>Dashboard funcional completo</item>
+            <item>Dados em tempo real integrados</item>
+            <item>Testes de acessibilidade aprovados</item>
+            <item>Documentação de uso finalizada</item>
+          </deliverables>
+        </phases>
+      </phases>
+
+      <key_learnings>
+        <learning>Importância da análise inicial para evitar retrabalho</learning>
+        <learning>Value de começar com design system robusto</learning>
+        <learning>Testes constantes evitam problemas de performance</learning>
+        <learning>Acessibilidade deve ser considerada desde o início</learning>
+        <learning>Documentação é crucial para manutenção futura</learning>
+      </key_learnings>
+    </example>
+  </complete_workflow_examples>
+</examples>

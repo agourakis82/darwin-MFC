@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<formulas>
+  <overview>
+    <title>Medical Calculators Builder - Formula Reference</title>
+    <description>
+      Referência de fórmulas médicas comuns validadas cientificamente.
+    </description>
+  </overview>
+
+  <category name="anthropometric">
+    <formula id="bmi">
+      <name>Índice de Massa Corporal (IMC)</name>
+      <equation>IMC = peso (kg) / altura² (m²)</equation>
+      <citation>WHO Technical Report Series 894, 2000</citation>
+      <units>
+        <input name="peso" unit="kg"/>
+        <input name="altura" unit="m ou cm (dividir por 100)"/>
+        <output unit="kg/m²"/>
+      </units>
+      <interpretation>
+        <range max="18.5">Baixo peso</range>
+        <range min="18.5" max="24.9">Normal</range>
+        <range min="25" max="29.9">Sobrepeso</range>
+        <range min="30" max="34.9">Obesidade I</range>
+        <range min="35" max="39.9">Obesidade II</range>
+        <range min="40">Obesidade III</range>
+      </interpretation>
+    </formula>
+
+    <formula id="bsa">
+      <name>Superfície Corporal (SC)</name>
+      <equation>SC = √[(altura × peso) / 3600] (Mosteller)</equation>
+      <citation>Mosteller RD. N Engl J Med. 1987;317:1098</citation>
+      <units>
+        <input name="altura" unit="cm"/>
+        <input name="peso" unit="kg"/>
+        <output unit="m²"/>
+      </units>
+    </formula>
+
+    <formula id="ibw">
+      <name>Peso Ideal (Devine)</name>
+      <equation>
+        Homem: 50 + 2.3 × (altura_in - 60)
+        Mulher: 45.5 + 2.3 × (altura_in - 60)
+      </equation>
+      <citation>Devine BJ. Drug Intell Clin Pharm. 1974;8:650-655</citation>
+    </formula>
+  </category>
+
+  <category name="renal">
+    <formula id="cockcroft-gault">
+      <name>Clearance de Creatinina (Cockcroft-Gault)</name>
+      <equation>
+        ClCr = [(140 - idade) × peso] / (72 × Cr)
+        Se mulher: × 0.85
+      </equation>
+      <citation>Cockcroft DW, Gault MH. Nephron. 1976;16:31-41</citation>
+      <units>
+        <input name="idade" unit="anos"/>
+        <input name="peso" unit="kg"/>
+        <input name="creatinina" unit="mg/dL"/>
+        <output unit="mL/min"/>
+      </units>
+      <notes>
+        <note>Usar peso real ou peso ideal em obesos</note>
+        <note>Superestima em obesos</note>
+      </notes>
+    </formula>
+
+    <formula id="ckd-epi-2021">
+      <name>CKD-EPI 2021 (sem ajuste racial)</name>
+      <equation>
+        <![CDATA[
+        eGFR = 142 × min(Scr/κ, 1)^α × max(Scr/κ, 1)^-1.200 × 0.9938^age × (1.012 se mulher)
+        κ = 0.7 (mulher), 0.9 (homem)
+        α = -0.241 (mulher), -0.302 (homem)
+        ]]>
+      </equation>
+      <citation>Inker LA, et al. N Engl J Med. 2021;385:1737-1749</citation>
+      <units>
+        <output unit="mL/min/1.73m²"/>
+      </units>
+    </formula>
+  </category>
+
+  <category name="cardiovascular">
+    <formula id="framingham">
+      <name>Framingham Risk Score (10-year CVD risk)</name>
+      <citation>D'Agostino RB Sr, et al. Circulation. 2008;117:743-753</citation>
+      <note>Score baseado em pontos - ver tabela original</note>
+    </formula>
+
+    <formula id="chads2">
+      <name>CHADS2 Score (AVC em FA)</name>
+      <equation>
+        C - ICC (1 ponto)
+        H - Hipertensão (1 ponto)
+        A - Idade ≥75 (1 ponto)
+        D - Diabetes (1 ponto)
+        S - AVC prévio (2 pontos)
+      </equation>
+      <citation>Gage BF, et al. JAMA. 2001;285:2864-2870</citation>
+    </formula>
+
+    <formula id="hasbled">
+      <name>HAS-BLED Score (risco de sangramento)</name>
+      <equation>
+        H - Hipertensão (1)
+        A - Anormal função renal/hepática (1-2)
+        S - AVC (1)
+        B - Sangramento prévio (1)
+        L - INR lábil (1)
+        E - Idoso >65 (1)
+        D - Drogas/álcool (1-2)
+      </equation>
+      <citation>Pisters R, et al. Chest. 2010;138:1093-1100</citation>
+    </formula>
+  </category>
+
+  <category name="pulmonary">
+    <formula id="curb65">
+      <name>CURB-65 (pneumonia)</name>
+      <equation>
+        C - Confusão mental (1)
+        U - Ureia > 7 mmol/L ou 20 mg/dL (1)
+        R - FR ≥ 30/min (1)
+        B - PAS &lt; 90 ou PAD ≤ 60 (1)
+        65 - Idade ≥ 65 (1)
+      </equation>
+      <citation>Lim WS, et al. Thorax. 2003;58:377-382</citation>
+      <interpretation>
+        <range max="1">Baixo risco - ambulatorial</range>
+        <range value="2">Intermediário - considerar internação</range>
+        <range min="3">Alto risco - internar, UTI se ≥4</range>
+      </interpretation>
+    </formula>
+  </category>
+
+  <category name="hepatic">
+    <formula id="child-pugh">
+      <name>Child-Pugh Score (cirrose)</name>
+      <criteria>
+        <criterion name="bilirubin" values="&lt;2: 1pt, 2-3: 2pt, &gt;3: 3pt"/>
+        <criterion name="albumin" values="&gt;3.5: 1pt, 2.8-3.5: 2pt, &lt;2.8: 3pt"/>
+        <criterion name="INR" values="&lt;1.7: 1pt, 1.7-2.3: 2pt, &gt;2.3: 3pt"/>
+        <criterion name="ascites" values="nenhuma: 1pt, leve: 2pt, moderada: 3pt"/>
+        <criterion name="encephalopathy" values="nenhuma: 1pt, I-II: 2pt, III-IV: 3pt"/>
+      </criteria>
+      <interpretation>
+        <class name="A" range="5-6">Boa função, sobrevida 100% 1 ano</class>
+        <class name="B" range="7-9">Moderada, sobrevida 80% 1 ano</class>
+        <class name="C" range="10-15">Grave, sobrevida 45% 1 ano</class>
+      </interpretation>
+      <citation>Pugh RN, et al. Br J Surg. 1973;60:646-649</citation>
+    </formula>
+
+    <formula id="meld">
+      <name>MELD Score (fila de transplante hepático)</name>
+      <equation>
+        MELD = 3.78 × ln(bilirrubina) + 11.2 × ln(INR) + 9.57 × ln(creatinina) + 6.43
+      </equation>
+      <citation>Kamath PS, et al. Hepatology. 2001;33:464-470</citation>
+    </formula>
+  </category>
+
+  <validation_sources>
+    <source name="MDCalc">
+      <url>https://www.mdcalc.com/</url>
+      <note>Usar para validar implementações</note>
+    </source>
+    <source name="ClinCalc">
+      <url>https://clincalc.com/</url>
+    </source>
+    <source name="QxMD">
+      <url>https://qxmd.com/calculate/</url>
+    </source>
+  </validation_sources>
+</formulas>

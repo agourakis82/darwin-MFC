@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<common_patterns>
+  <overview>
+    <title>Clinical Cases Generator - Common Patterns</title>
+    <description>
+      Padrões e estruturas para casos clínicos no Darwin-MFC.
+    </description>
+  </overview>
+
+  <pattern name="clinical_case_structure">
+    <description>Estrutura completa de um caso clínico</description>
+    <structure>
+      <![CDATA[
+interface ClinicalCase {
+  id: string;
+  title: LocalizedString;
+  difficulty: "beginner" | "intermediate" | "advanced";
+  category: string;  // Alinhado com categorias de doenças
+  linkedDiseaseId?: string;  // Link para lib/data/doencas/
+  estimatedTime: number;  // minutos
+  learningObjectives: LocalizedString[];
+  patient: PatientProfile;
+  sections: CaseSection[];
+  summary: CaseSummary;
+  metadata: {
+    author?: string;
+    lastUpdated: string;
+    citations: string[];
+  };
+}
+
+interface PatientProfile {
+  name: string;  // Nome fictício
+  age: number;
+  sex: "M" | "F";
+  occupation?: LocalizedString;
+  chiefComplaint: LocalizedString;
+}
+
+interface CaseSection {
+  id: string;
+  type: "presentation" | "history" | "exam" | "differential" | "workup" | "diagnosis" | "treatment";
+  title: LocalizedString;
+  content: LocalizedString;
+  questions: CaseQuestion[];
+  hints?: LocalizedString[];
+}
+
+interface CaseQuestion {
+  id: string;
+  stem: LocalizedString;
+  options: QuestionOption[];
+  correctAnswer: string;  // ID da opção correta
+  feedback: {
+    correct: LocalizedString;
+    incorrect: Record<string, LocalizedString>;  // Por opção
+  };
+  points: number;
+  hint?: LocalizedString;
+}
+
+interface QuestionOption {
+  id: string;
+  text: LocalizedString;
+}
+
+interface CaseSummary {
+  finalDiagnosis: LocalizedString;
+  keyLearningPoints: LocalizedString[];
+  clinicalPearls: LocalizedString[];
+  relatedCases?: string[];  // IDs de casos relacionados
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="diabetes_case_example">
+    <description>Exemplo: Caso de Diabetes Tipo 2</description>
+    <example>
+      <![CDATA[
+{
+  id: "diabetes-t2-classico",
+  title: {
+    pt: "Poliúria e Perda de Peso",
+    en: "Polyuria and Weight Loss"
+  },
+  difficulty: "beginner",
+  category: "endocrinologia",
+  linkedDiseaseId: "diabetes-tipo-2",
+  estimatedTime: 15,
+  learningObjectives: [
+    { pt: "Reconhecer sintomas clássicos de diabetes", en: "Recognize classic diabetes symptoms" },
+    { pt: "Solicitar exames diagnósticos apropriados", en: "Order appropriate diagnostic tests" },
+    { pt: "Interpretar glicemia de jejum e HbA1c", en: "Interpret fasting glucose and HbA1c" }
+  ],
+  patient: {
+    name: "José Silva",
+    age: 52,
+    sex: "M",
+    occupation: { pt: "Motorista de caminhão", en: "Truck driver" },
+    chiefComplaint: { pt: "Muita sede e vontade de urinar", en: "Excessive thirst and urination" }
+  },
+  sections: [
+    {
+      id: "presentation",
+      type: "presentation",
+      title: { pt: "Apresentação", en: "Presentation" },
+      content: {
+        pt: "José, 52 anos, procura a UBS com queixa de sede excessiva, urinando muito (inclusive à noite), e perda de 5kg nos últimos 2 meses mesmo comendo normalmente. Nega febre, dor ou outros sintomas.",
+        en: "José, 52 years old, presents to the primary care clinic with excessive thirst, frequent urination (including at night), and 5kg weight loss over the past 2 months despite normal eating. Denies fever, pain, or other symptoms."
+      },
+      questions: [
+        {
+          id: "q1",
+          stem: {
+            pt: "Qual a tríade clássica que o paciente apresenta?",
+            en: "What classic triad does the patient present?"
+          },
+          options: [
+            { id: "a", text: { pt: "Poliúria, polidipsia, polifagia", en: "Polyuria, polydipsia, polyphagia" } },
+            { id: "b", text: { pt: "Febre, calafrios, sudorese", en: "Fever, chills, sweating" } },
+            { id: "c", text: { pt: "Dor, rubor, calor", en: "Pain, redness, heat" } },
+            { id: "d", text: { pt: "Náusea, vômito, diarreia", en: "Nausea, vomiting, diarrhea" } }
+          ],
+          correctAnswer: "a",
+          feedback: {
+            correct: {
+              pt: "Correto! A tríade clássica do diabetes (poliúria, polidipsia, polifagia) está presente. A perda de peso apesar da polifagia sugere diabetes descompensado.",
+              en: "Correct! The classic diabetes triad (polyuria, polydipsia, polyphagia) is present. Weight loss despite polyphagia suggests uncontrolled diabetes."
+            },
+            incorrect: {
+              "b": { pt: "Incorreto. Febre e calafrios sugerem processo infeccioso, não presente neste caso.", en: "Incorrect. Fever and chills suggest infection, not present in this case." },
+              "c": { pt: "Incorreto. Sinais flogísticos sugerem inflamação local.", en: "Incorrect. Inflammatory signs suggest local inflammation." },
+              "d": { pt: "Incorreto. Sintomas GI não são típicos de diabetes inicial.", en: "Incorrect. GI symptoms are not typical of early diabetes." }
+            }
+          },
+          points: 20,
+          hint: { pt: "Pense nos 4 'Ps' do diabetes", en: "Think about the 4 'P's of diabetes" }
+        }
+      ]
+    }
+  ],
+  summary: {
+    finalDiagnosis: {
+      pt: "Diabetes Mellitus Tipo 2",
+      en: "Type 2 Diabetes Mellitus"
+    },
+    keyLearningPoints: [
+      { pt: "Tríade clássica: poliúria, polidipsia, perda de peso", en: "Classic triad: polyuria, polydipsia, weight loss" },
+      { pt: "Glicemia de jejum ≥126 mg/dL confirma diagnóstico", en: "Fasting glucose ≥126 mg/dL confirms diagnosis" }
+    ],
+    clinicalPearls: [
+      { pt: "Até 50% dos diabéticos são assintomáticos ao diagnóstico", en: "Up to 50% of diabetics are asymptomatic at diagnosis" }
+    ]
+  }
+}
+      ]]>
+    </example>
+  </pattern>
+
+  <pattern name="gamification_integration">
+    <description>Integração com sistema de gamificação</description>
+    <structure>
+      <![CDATA[
+// lib/store/gamificationStore.ts
+interface CaseProgress {
+  caseId: string;
+  completed: boolean;
+  score: number;
+  maxScore: number;
+  attempts: number;
+  lastAttempt: string;
+  questionsAnswered: Record<string, {
+    answerId: string;
+    correct: boolean;
+    attempts: number;
+  }>;
+}
+
+// Achievements relacionados a casos
+const caseAchievements = [
+  { id: "first-case", name: "Primeiro Caso", condition: "complete 1 case" },
+  { id: "perfect-case", name: "Diagnóstico Perfeito", condition: "100% score on any case" },
+  { id: "specialist", name: "Especialista", condition: "complete 10 cases in same category" }
+];
+      ]]>
+    </structure>
+  </pattern>
+</common_patterns>

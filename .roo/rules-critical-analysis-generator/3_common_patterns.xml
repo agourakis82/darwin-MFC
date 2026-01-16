@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<common_patterns>
+  <overview>
+    <title>Critical Analysis Generator - Common Patterns</title>
+    <description>
+      Templates e estruturas para análise crítica no Darwin-MFC.
+    </description>
+  </overview>
+
+  <pattern name="critical_analysis_structure">
+    <description>Estrutura completa de CriticalAnalysis</description>
+    <file>lib/data/analise-critica.ts</file>
+    <interface>lib/types/analysis.ts</interface>
+    <structure>
+      <![CDATA[
+interface CriticalAnalysis {
+  rastreamentoId: string;  // Deve corresponder a Rastreamento.id
+  insights: Insight[];
+  controversias: Controversy[];
+  desafios: Challenge[];
+}
+
+interface Insight {
+  tipo: "primeira_ordem" | "segunda_ordem" | "terceira_ordem";
+  titulo: string;
+  descricao: string;
+  implicacoes: string[];
+  citacoes: string[];  // IDs de referências
+}
+
+interface Controversy {
+  titulo: string;
+  descricao: string;
+  posicao_a: Position;
+  posicao_b: Position;
+  sintese: string;
+}
+
+interface Position {
+  argumento: string;
+  evidencias: string[];
+  citacoes: string[];
+}
+
+interface Challenge {
+  titulo: string;
+  descricao: string;
+  propostas: string[];
+  citacoes: string[];
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="insight_template">
+    <description>Template para geração de insights</description>
+    <examples>
+      <example type="segunda_ordem">
+        <![CDATA[
+{
+  tipo: "segunda_ordem",
+  titulo: "Paradoxo do sobrediagnóstico",
+  descricao: "A divergência entre SUS e sociedades médicas reflete o dilema entre sensibilidade e especificidade do rastreamento. O rastreamento mais agressivo (sociedades) aumenta a detecção, mas também eleva o sobrediagnóstico, estimado em 11-19% para câncer de mama [1].",
+  implicacoes: [
+    "Tratamentos potencialmente desnecessários em tumores indolentes",
+    "Ansiedade e morbidade associadas a falsos positivos",
+    "Custos incrementais ao sistema de saúde sem benefício proporcional"
+  ],
+  citacoes: ["welch-2024-overdiagnosis"]
+}
+        ]]>
+      </example>
+      <example type="terceira_ordem">
+        <![CDATA[
+{
+  tipo: "terceira_ordem",
+  titulo: "Implicações para equidade em saúde",
+  descricao: "A recomendação mais conservadora do SUS, embora justificada por análises de custo-efetividade, cria uma disparidade de facto onde mulheres com plano de saúde privado iniciam rastreamento 10 anos antes de usuárias exclusivas do SUS [2].",
+  implicacoes: [
+    "Aprofundamento das desigualdades socioeconômicas em saúde",
+    "Potencial impacto em estágios de diagnóstico por classe social",
+    "Pressão política para mudança de guidelines públicos"
+  ],
+  citacoes: ["lancet-2023-equity"]
+}
+        ]]>
+      </example>
+    </examples>
+  </pattern>
+
+  <pattern name="controversy_template">
+    <description>Template para controvérsias estruturadas</description>
+    <example>
+      <![CDATA[
+{
+  titulo: "Idade de início do rastreamento mamográfico",
+  descricao: "O debate sobre iniciar rastreamento mamográfico aos 40 ou 50 anos permanece uma das controvérsias mais discutidas em saúde pública, com implicações significativas para políticas de rastreamento globalmente [1].",
+  posicao_a: {
+    argumento: "Início aos 40 anos detecta mais cânceres em estágio inicial, resultando em redução de mortalidade específica de aproximadamente 15% nessa faixa etária [2].",
+    evidencias: [
+      "Meta-análise com 160.000 mulheres mostrou benefício estatisticamente significativo",
+      "Seguimento médio de 13 anos demonstrou persistência do benefício",
+      "Canceres detectados em estágio mais precoce (I/II vs III/IV)"
+    ],
+    citacoes: ["jama-2024-40vs50", "nelson-2024-meta"]
+  },
+  posicao_b: {
+    argumento: "Início aos 50 anos tem melhor relação custo-efetividade, menor taxa de falsos-positivos, e evita ansiedade desnecessária em população de menor risco [3].",
+    evidencias: [
+      "Análise de custo-efetividade canadense favorece início aos 50",
+      "Taxa de falsos-positivos 50% menor na faixa 50-69 vs 40-49",
+      "Menor número de biópsias desnecessárias"
+    ],
+    citacoes: ["cmaj-2024-costeff", "cochrane-2024-screening"]
+  },
+  sintese: "Ambas posições têm mérito científico. A decisão ideal deve considerar o contexto local (recursos, infraestrutura), preferências individuais após discussão informada, e fatores de risco específicos da paciente. Não há resposta universalmente correta [4]."
+}
+      ]]>
+    </example>
+  </pattern>
+
+  <pattern name="challenge_template">
+    <description>Template para desafios e propostas</description>
+    <example>
+      <![CDATA[
+{
+  titulo: "Acesso à mamografia no interior do Brasil",
+  descricao: "Apenas 24% das mulheres elegíveis nas regiões Norte e Nordeste têm acesso regular à mamografia de rastreamento, comparado a 68% no Sul e Sudeste, evidenciando profunda desigualdade regional [1].",
+  propostas: [
+    "Expansão de unidades móveis de mamografia com rotas otimizadas por demanda",
+    "Implementação de telemedicina para laudos à distância, reduzindo necessidade de especialistas locais",
+    "Capacitação de técnicos de radiologia locais com certificação nacional",
+    "Parcerias público-privadas para ampliar oferta em regiões desassistidas"
+  ],
+  citacoes: ["cad-saude-2024-acesso", "ibge-2023-pns"]
+}
+      ]]>
+    </example>
+  </pattern>
+
+  <pattern name="linking">
+    <description>Linkagem entre rastreamento e análise crítica</description>
+    <requirement>
+      <![CDATA[
+// Em lib/data/rastreamentos.ts
+{ id: "cancer-mama", ... }
+
+// Em lib/data/analise-critica.ts (DEVE corresponder)
+{ rastreamentoId: "cancer-mama", ... }
+
+// ContentModeWrapper usa o mesmo ID para alternar
+<ContentModeWrapper
+  descriptiveContent={<RastreamentoView id="cancer-mama" />}
+  criticalAnalysisContent={<CriticalAnalysisView rastreamentoId="cancer-mama" />}
+/>
+      ]]>
+    </requirement>
+  </pattern>
+</common_patterns>

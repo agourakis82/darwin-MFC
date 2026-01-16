@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<common_patterns>
+  <overview>
+    <title>Medical Content Architect - Common Patterns</title>
+    <description>
+      Templates e padrões estruturais para geração de conteúdo no Darwin-MFC.
+    </description>
+  </overview>
+
+  <pattern name="rastreamento">
+    <description>Template para rastreamentos de saúde</description>
+    <file>lib/data/rastreamentos.ts</file>
+    <structure>
+      <![CDATA[
+{
+  id: "screening-id-kebab-case",
+  title: "Título do Rastreamento",
+  categoria: "cancer" | "neonatal" | "infantil" | "adultos" | "gestacao" | "outros",
+  descricao: "Descrição concisa do rastreamento e sua importância [1].",
+  recomendacoes: {
+    sus: {
+      populacao_alvo: "Descrição da população (ex: mulheres 50-69 anos)",
+      metodo: "Método de rastreamento (ex: mamografia bilateral)",
+      periodicidade: "Intervalo recomendado (ex: bienal)",
+      citacoes: ["ref-id-1", "ref-id-2"]
+    },
+    sociedades: [
+      {
+        nome: "Nome da Sociedade (ex: SBOC, SBM)",
+        populacao_alvo: "População recomendada",
+        metodo: "Método recomendado",
+        periodicidade: "Periodicidade recomendada",
+        citacoes: ["ref-id-3"]
+      }
+    ],
+    convergencia: {
+      status: "convergencia" | "parcial" | "divergencia" | "em_disputa",
+      descricao: "Análise objetiva das diferenças/semelhanças [n].",
+      citacoes: ["ref-id-4"]
+    }
+  },
+  epidemiologia: {
+    incidencia: "X por 100.000 habitantes/ano [n]",
+    mortalidade: "Y mortes/ano ou taxa [n]",
+    prevalencia: "Z% da população (quando aplicável) [n]",
+    tendencia: "Descrição da tendência temporal [n]"
+  },
+  fatores_risco: [
+    { fator: "Nome do fator", peso: "alto" | "medio" | "baixo" }
+  ],
+  lastUpdate: "2025-01-15",
+  citacoes: ["ref-id-1", "ref-id-2", "ref-id-3", "ref-id-4"]
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="critical_analysis">
+    <description>Template para análise crítica</description>
+    <file>lib/data/analise-critica.ts</file>
+    <structure>
+      <![CDATA[
+{
+  rastreamentoId: "screening-id-kebab-case",
+  insights: [
+    {
+      tipo: "segunda_ordem",
+      titulo: "Título do insight",
+      descricao: "Análise de padrões e conexões não óbvias [n].",
+      implicacoes: ["Implicação 1", "Implicação 2"],
+      citacoes: ["ref-id"]
+    },
+    {
+      tipo: "terceira_ordem",
+      titulo: "Implicação sistêmica",
+      descricao: "Análise de impactos no sistema de saúde [n].",
+      implicacoes: ["Impacto sistêmico 1"],
+      citacoes: ["ref-id"]
+    }
+  ],
+  controversias: [
+    {
+      titulo: "Título da controvérsia",
+      descricao: "Contexto do debate [n].",
+      posicao_a: {
+        argumento: "Posição favorável [n]",
+        evidencias: ["Evidência 1"],
+        citacoes: ["ref-id"]
+      },
+      posicao_b: {
+        argumento: "Posição contrária [n]",
+        evidencias: ["Evidência 2"],
+        citacoes: ["ref-id"]
+      },
+      sintese: "Análise equilibrada das posições [n]."
+    }
+  ],
+  desafios: [
+    {
+      titulo: "Título do desafio",
+      descricao: "Descrição do desafio de implementação [n].",
+      propostas: ["Proposta de solução 1"],
+      citacoes: ["ref-id"]
+    }
+  ]
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="doenca">
+    <description>Template para doenças</description>
+    <file>lib/data/doencas/*.ts</file>
+    <structure>
+      <![CDATA[
+{
+  id: "doenca-id-kebab-case",
+  nome: "Nome da Doença",
+  nomePopular: ["Nome popular 1", "Nome popular 2"],
+  categoria: "cardiologia" | "pneumologia" | "infectologia" | ...,
+  ciap2: "Código CIAP2",
+  cid10: "Código CID-10",
+  definicao: "Definição clínica completa [n].",
+  epidemiologia: {
+    prevalencia: "Dados de prevalência [n]",
+    incidencia: "Dados de incidência [n]",
+    mortalidade: "Dados de mortalidade [n]"
+  },
+  fisiopatologia: "Descrição da fisiopatologia [n].",
+  quadroClinico: {
+    sintomas: ["Sintoma 1", "Sintoma 2"],
+    sinais: ["Sinal 1", "Sinal 2"],
+    complicacoes: ["Complicação 1"]
+  },
+  diagnostico: {
+    criterios: ["Critério 1"],
+    examesComplementares: ["Exame 1"],
+    diagnosticosDiferenciais: ["DD 1"]
+  },
+  tratamento: {
+    naoFarmacologico: ["Medida 1"],
+    farmacologico: ["Medicamento 1"],
+    cirurgico: ["Procedimento 1"] // quando aplicável
+  },
+  prevencao: ["Medida preventiva 1"],
+  prognostico: "Descrição do prognóstico [n].",
+  referencias: ["ref-id-1", "ref-id-2"]
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="medicamento">
+    <description>Template para medicamentos</description>
+    <file>lib/data/medicamentos/*.ts</file>
+    <structure>
+      <![CDATA[
+{
+  id: "medicamento-id-kebab-case",
+  nome: "Nome genérico",
+  nomeComercial: ["Nome comercial 1", "Nome comercial 2"],
+  classe: "Classe terapêutica",
+  mecanismoAcao: "Descrição do mecanismo de ação [n].",
+  indicacoes: ["Indicação 1", "Indicação 2"],
+  contraindicacoes: ["Contraindicação 1"],
+  posologia: {
+    adulto: "Dose adulto",
+    pediatrico: "Dose pediátrica",
+    idoso: "Ajustes para idosos"
+  },
+  efeitosAdversos: {
+    comuns: ["Efeito 1"],
+    raros: ["Efeito raro 1"],
+    graves: ["Efeito grave 1"]
+  },
+  interacoes: [
+    {
+      medicamento: "Nome do medicamento",
+      tipo: "grave" | "moderada" | "leve",
+      descricao: "Descrição da interação"
+    }
+  ],
+  gravidez: "A" | "B" | "C" | "D" | "X",
+  apresentacoes: ["Apresentação 1"],
+  custo: "alto" | "medio" | "baixo",
+  disponibilidadeSUS: true | false,
+  referencias: ["ref-id-1"]
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="reference">
+    <description>Template para referências Vancouver</description>
+    <file>lib/data/references.ts</file>
+    <structure>
+      <![CDATA[
+{
+  id: "ref-unique-id",
+  autores: "Sobrenome AB, Sobrenome CD, et al",
+  titulo: "Título completo do artigo",
+  revista: "Nome da Revista Abreviado",
+  ano: 2024,
+  volume: "45",
+  numero: "3",
+  paginas: "123-145",
+  doi: "10.1000/xyz123",
+  pmid: "12345678",
+  tipo: "artigo" | "guideline" | "livro" | "website"
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="convergence_analysis">
+    <description>Padrão para análise de convergência</description>
+    <decision_tree>
+      <![CDATA[
+SE SUS.populacao == Sociedades.populacao
+   E SUS.metodo == Sociedades.metodo
+   E SUS.periodicidade == Sociedades.periodicidade
+ENTÃO status = "convergencia" 🟢
+
+SE (SUS.populacao != Sociedades.populacao)
+   OU (SUS.metodo != Sociedades.metodo)
+   OU (SUS.periodicidade != Sociedades.periodicidade)
+   E não há contradição direta
+ENTÃO status = "parcial" 🟡
+
+SE SUS recomenda X e Sociedades recomenda contrário de X
+   OU ausência de recomendação em uma das partes
+ENTÃO status = "divergencia" 🔴
+
+SE há debate ativo na literatura
+   E não há consenso estabelecido
+ENTÃO status = "em_disputa" 🟣
+      ]]>
+    </decision_tree>
+  </pattern>
+</common_patterns>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<examples>
+  <overview>
+    <title>Medical Calculators Builder - Examples</title>
+    <description>
+      Exemplos de calculadoras clínicas para o Darwin-MFC.
+    </description>
+  </overview>
+
+  <example name="wells_dvt">
+    <title>Exemplo: Score de Wells para TVP</title>
+
+    <calculator>
+      <![CDATA[
+{
+  id: "wells-dvt",
+  name: {
+    pt: "Score de Wells para TVP",
+    en: "Wells Score for DVT"
+  },
+  description: {
+    pt: "Estima a probabilidade pré-teste de trombose venosa profunda",
+    en: "Estimates pre-test probability of deep vein thrombosis"
+  },
+  category: "cardiovascular",
+  inputs: [
+    {
+      id: "active_cancer",
+      label: { pt: "Câncer ativo (tratamento nos últimos 6 meses)", en: "Active cancer" },
+      type: "checkbox",
+      points: 1
+    },
+    {
+      id: "paralysis",
+      label: { pt: "Paralisia, paresia ou imobilização recente de MMII", en: "Paralysis or recent immobilization of legs" },
+      type: "checkbox",
+      points: 1
+    },
+    {
+      id: "bedridden",
+      label: { pt: "Acamado > 3 dias ou cirurgia maior nas últimas 12 sem", en: "Bedridden > 3 days or major surgery in last 12 weeks" },
+      type: "checkbox",
+      points: 1
+    },
+    {
+      id: "tenderness",
+      label: { pt: "Dor localizada ao longo do sistema venoso profundo", en: "Localized tenderness along deep venous system" },
+      type: "checkbox",
+      points: 1
+    },
+    {
+      id: "swelling",
+      label: { pt: "Edema de toda a perna", en: "Entire leg swollen" },
+      type: "checkbox",
+      points: 1
+    },
+    {
+      id: "calf_swelling",
+      label: { pt: "Panturrilha > 3cm maior que contralateral", en: "Calf > 3cm larger than contralateral" },
+      type: "checkbox",
+      points: 1
+    },
+    {
+      id: "pitting_edema",
+      label: { pt: "Edema com cacifo na perna sintomática", en: "Pitting edema in symptomatic leg" },
+      type: "checkbox",
+      points: 1
+    },
+    {
+      id: "collateral_veins",
+      label: { pt: "Veias superficiais colaterais (não varicosas)", en: "Collateral superficial veins (non-varicose)" },
+      type: "checkbox",
+      points: 1
+    },
+    {
+      id: "previous_dvt",
+      label: { pt: "TVP prévia documentada", en: "Previous documented DVT" },
+      type: "checkbox",
+      points: 1
+    },
+    {
+      id: "alternative_diagnosis",
+      label: { pt: "Diagnóstico alternativo pelo menos tão provável", en: "Alternative diagnosis at least as likely" },
+      type: "checkbox",
+      points: -2
+    }
+  ],
+  formula: (inputs) => {
+    const score = Object.entries(inputs)
+      .filter(([_, value]) => value === true)
+      .reduce((sum, [key, _]) => {
+        const item = this.inputs.find(i => i.id === key);
+        return sum + (item?.points || 0);
+      }, 0);
+
+    return {
+      value: score,
+      unit: "pontos",
+      interpretation: getInterpretation(score),
+      severity: getSeverity(score)
+    };
+  },
+  interpretation: [
+    {
+      max: 0,
+      label: { pt: "Baixa probabilidade", en: "Low probability" },
+      severity: "normal",
+      description: {
+        pt: "Probabilidade de TVP ~5%. D-dímero pode descartar se negativo.",
+        en: "DVT probability ~5%. D-dimer can rule out if negative."
+      }
+    },
+    {
+      min: 1,
+      max: 2,
+      label: { pt: "Moderada probabilidade", en: "Moderate probability" },
+      severity: "warning",
+      description: {
+        pt: "Probabilidade de TVP ~17%. Considerar D-dímero + USG se positivo.",
+        en: "DVT probability ~17%. Consider D-dimer + US if positive."
+      }
+    },
+    {
+      min: 3,
+      label: { pt: "Alta probabilidade", en: "High probability" },
+      severity: "danger",
+      description: {
+        pt: "Probabilidade de TVP ~53%. Realizar USG. Considerar anticoagulação.",
+        en: "DVT probability ~53%. Perform ultrasound. Consider anticoagulation."
+      }
+    }
+  ],
+  citations: ["wells-1997-dvt", "wells-2003-validation"],
+  limitations: [
+    { pt: "Validado em pacientes ambulatoriais", en: "Validated in outpatients" },
+    { pt: "Não validado em gestantes", en: "Not validated in pregnancy" }
+  ]
+}
+      ]]>
+    </calculator>
+  </example>
+
+  <example name="ckd_epi">
+    <title>Exemplo: CKD-EPI (Taxa de Filtração Glomerular)</title>
+
+    <calculator>
+      <![CDATA[
+{
+  id: "ckd-epi",
+  name: {
+    pt: "CKD-EPI 2021 (TFG estimada)",
+    en: "CKD-EPI 2021 (eGFR)"
+  },
+  category: "renal",
+  inputs: [
+    { id: "age", label: "Idade", type: "number", unit: "anos" },
+    { id: "creatinine", label: "Creatinina", type: "number", unit: "mg/dL" },
+    { id: "sex", label: "Sexo", type: "radio", options: [
+      { value: "M", label: "Masculino" },
+      { value: "F", label: "Feminino" }
+    ]}
+  ],
+  formula: ({ age, creatinine, sex }) => {
+    // CKD-EPI 2021 (race-free equation)
+    const A = sex === "F" ? 0.7 : 0.9;
+    const B = sex === "F" ? -0.241 : -0.302;
+    const min_term = Math.min(creatinine / A, 1);
+    const max_term = Math.max(creatinine / A, 1);
+
+    let egfr = 142 * Math.pow(min_term, B) * Math.pow(max_term, -1.200) * Math.pow(0.9938, age);
+    if (sex === "F") egfr *= 1.012;
+
+    return {
+      value: Math.round(egfr),
+      unit: "mL/min/1.73m²"
+    };
+  },
+  interpretation: [
+    { min: 90, label: "G1 - Normal ou alta", severity: "normal" },
+    { min: 60, max: 89, label: "G2 - Levemente diminuída", severity: "normal" },
+    { min: 45, max: 59, label: "G3a - Leve a moderadamente diminuída", severity: "warning" },
+    { min: 30, max: 44, label: "G3b - Moderada a gravemente diminuída", severity: "warning" },
+    { min: 15, max: 29, label: "G4 - Gravemente diminuída", severity: "danger" },
+    { max: 15, label: "G5 - Falência renal", severity: "danger" }
+  ],
+  citations: ["inker-2021-ckdepi"]
+}
+      ]]>
+    </calculator>
+  </example>
+
+  <example name="gestational_age">
+    <title>Exemplo: Idade Gestacional</title>
+
+    <calculator>
+      <![CDATA[
+{
+  id: "idade-gestacional",
+  name: {
+    pt: "Calculadora de Idade Gestacional",
+    en: "Gestational Age Calculator"
+  },
+  category: "obstetric",
+  inputs: [
+    {
+      id: "lmp",
+      label: { pt: "Data da Última Menstruação (DUM)", en: "Last Menstrual Period (LMP)" },
+      type: "date",
+      validation: { required: true }
+    },
+    {
+      id: "reference_date",
+      label: { pt: "Data de referência", en: "Reference date" },
+      type: "date",
+      validation: { required: true },
+      defaultValue: "today"
+    }
+  ],
+  formula: ({ lmp, reference_date }) => {
+    const lmpDate = new Date(lmp);
+    const refDate = new Date(reference_date);
+    const diffDays = Math.floor((refDate - lmpDate) / (1000 * 60 * 60 * 24));
+
+    const weeks = Math.floor(diffDays / 7);
+    const days = diffDays % 7;
+
+    // Data provável do parto (DPP) = DUM + 280 dias
+    const edd = new Date(lmpDate);
+    edd.setDate(edd.getDate() + 280);
+
+    return {
+      gestationalAge: { weeks, days },
+      edd: edd.toISOString().split('T')[0],
+      trimester: weeks < 13 ? 1 : weeks < 27 ? 2 : 3
+    };
+  },
+  interpretation: [
+    { max: 12, label: "Primeiro trimestre", severity: "normal" },
+    { min: 13, max: 26, label: "Segundo trimestre", severity: "normal" },
+    { min: 27, max: 36, label: "Terceiro trimestre (pré-termo)", severity: "warning" },
+    { min: 37, max: 41, label: "Termo", severity: "normal" },
+    { min: 42, label: "Pós-termo", severity: "danger" }
+  ],
+  citations: ["acog-2017-gestational"]
+}
+      ]]>
+    </calculator>
+  </example>
+
+  <anti_patterns>
+    <anti_pattern name="unvalidated_formula">
+      <description>Usar fórmula sem validação científica</description>
+      <solution>Sempre citar artigo original</solution>
+    </anti_pattern>
+    <anti_pattern name="missing_units">
+      <description>Não especificar unidades de medida</description>
+      <solution>Unidade obrigatória em inputs e outputs</solution>
+    </anti_pattern>
+    <anti_pattern name="no_limits">
+      <description>Aceitar qualquer valor de input</description>
+      <solution>Definir min/max plausíveis</solution>
+    </anti_pattern>
+  </anti_patterns>
+</examples>

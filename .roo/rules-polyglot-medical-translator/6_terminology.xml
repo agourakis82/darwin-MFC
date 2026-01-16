@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<terminology>
+  <overview>
+    <title>Polyglot Medical Translator - Terminology Management</title>
+    <description>
+      Gestão de terminologia médica multilíngue para consistência e precisão.
+    </description>
+  </overview>
+
+  <glossary_structure>
+    <description>Estrutura do glossário de termos médicos</description>
+    <location>lib/i18n/medical-terms.ts</location>
+    <schema>
+      <![CDATA[
+interface MedicalTerm {
+  id: string;           // Identificador único (kebab-case)
+  category: string;     // Categoria (anatomy, disease, procedure, etc.)
+  codes?: {
+    icd10?: string;
+    ciap2?: string;
+    snomed?: string;
+    loinc?: string;
+  };
+  translations: {
+    [locale: string]: {
+      term: string;
+      synonyms?: string[];
+      context?: string;  // Uso clínico vs. leigo
+    };
+  };
+}
+      ]]>
+    </schema>
+  </glossary_structure>
+
+  <core_medical_terms>
+    <category name="general">
+      <term id="screening">
+        <pt>rastreamento</pt>
+        <en>screening</en>
+        <es>tamizaje, cribado</es>
+        <fr>dépistage</fr>
+        <ar>الفحص الدوري</ar>
+        <zh>筛查</zh>
+        <el>προληπτικός έλεγχος</el>
+        <hi>जांच</hi>
+        <ru>скрининг</ru>
+      </term>
+      <term id="diagnosis">
+        <pt>diagnóstico</pt>
+        <en>diagnosis</en>
+        <es>diagnóstico</es>
+        <fr>diagnostic</fr>
+        <ar>التشخيص</ar>
+        <zh>诊断</zh>
+        <el>διάγνωση</el>
+        <hi>निदान</hi>
+        <ru>диагноз</ru>
+      </term>
+      <term id="treatment">
+        <pt>tratamento</pt>
+        <en>treatment</en>
+        <es>tratamiento</es>
+        <fr>traitement</fr>
+        <ar>العلاج</ar>
+        <zh>治疗</zh>
+        <el>θεραπεία</el>
+        <hi>उपचार</hi>
+        <ru>лечение</ru>
+      </term>
+      <term id="prognosis">
+        <pt>prognóstico</pt>
+        <en>prognosis</en>
+        <es>pronóstico</es>
+        <fr>pronostic</fr>
+        <ar>التوقعات</ar>
+        <zh>预后</zh>
+        <el>πρόγνωση</el>
+        <hi>पूर्वानुमान</hi>
+        <ru>прогноз</ru>
+      </term>
+    </category>
+
+    <category name="epidemiology">
+      <term id="prevalence">
+        <pt>prevalência</pt>
+        <en>prevalence</en>
+        <es>prevalencia</es>
+        <fr>prévalence</fr>
+        <ar>الانتشار</ar>
+        <zh>患病率</zh>
+        <el>επιπολασμός</el>
+        <hi>प्रसार</hi>
+        <ru>распространённость</ru>
+      </term>
+      <term id="incidence">
+        <pt>incidência</pt>
+        <en>incidence</en>
+        <es>incidencia</es>
+        <fr>incidence</fr>
+        <ar>معدل الإصابة</ar>
+        <zh>发病率</zh>
+        <el>επίπτωση</el>
+        <hi>घटना</hi>
+        <ru>заболеваемость</ru>
+      </term>
+      <term id="mortality">
+        <pt>mortalidade</pt>
+        <en>mortality</en>
+        <es>mortalidad</es>
+        <fr>mortalité</fr>
+        <ar>معدل الوفيات</ar>
+        <zh>死亡率</zh>
+        <el>θνησιμότητα</el>
+        <hi>मृत्यु दर</hi>
+        <ru>смертность</ru>
+      </term>
+    </category>
+
+    <category name="guidelines">
+      <term id="recommendation">
+        <pt>recomendação</pt>
+        <en>recommendation</en>
+        <es>recomendación</es>
+        <fr>recommandation</fr>
+        <ar>التوصية</ar>
+        <zh>建议</zh>
+        <el>σύσταση</el>
+        <hi>सिफारिश</hi>
+        <ru>рекомендация</ru>
+      </term>
+      <term id="evidence-level">
+        <pt>nível de evidência</pt>
+        <en>evidence level</en>
+        <es>nivel de evidencia</es>
+        <fr>niveau de preuve</fr>
+        <ar>مستوى الدليل</ar>
+        <zh>证据等级</zh>
+        <el>επίπεδο τεκμηρίωσης</el>
+        <hi>साक्ष्य स्तर</hi>
+        <ru>уровень доказательности</ru>
+      </term>
+    </category>
+
+    <category name="convergence">
+      <term id="convergence">
+        <pt>convergência</pt>
+        <en>convergence</en>
+        <es>convergencia</es>
+        <fr>convergence</fr>
+        <ar>التوافق</ar>
+        <zh>趋同</zh>
+        <el>σύγκλιση</el>
+        <hi>अभिसरण</hi>
+        <ru>конвергенция</ru>
+      </term>
+      <term id="divergence">
+        <pt>divergência</pt>
+        <en>divergence</en>
+        <es>divergencia</es>
+        <fr>divergence</fr>
+        <ar>التباين</ar>
+        <zh>分歧</zh>
+        <el>απόκλιση</el>
+        <hi>विचलन</hi>
+        <ru>расхождение</ru>
+      </term>
+    </category>
+  </core_medical_terms>
+
+  <regional_variations>
+    <description>Variações regionais de terminologia</description>
+
+    <variation term="rastreamento">
+      <region code="BR">rastreamento</region>
+      <region code="PT">rastreio</region>
+      <region code="ES">tamizaje (LA), cribado (ES)</region>
+    </variation>
+
+    <variation term="pressure">
+      <context>Blood pressure terminology</context>
+      <pt_clinical>Hipertensão arterial sistêmica</pt_clinical>
+      <pt_popular>Pressão alta</pt_popular>
+      <en_clinical>Systemic arterial hypertension</en_clinical>
+      <en_popular>High blood pressure</en_popular>
+    </variation>
+  </regional_variations>
+
+  <abbreviations>
+    <description>Siglas e abreviações médicas</description>
+
+    <abbreviation id="SUS">
+      <pt>Sistema Único de Saúde</pt>
+      <en>Unified Health System (Brazil)</en>
+      <note>Manter "SUS" em todos os idiomas com explicação</note>
+    </abbreviation>
+
+    <abbreviation id="WHO">
+      <pt>OMS (Organização Mundial da Saúde)</pt>
+      <en>WHO (World Health Organization)</en>
+      <es>OMS (Organización Mundial de la Salud)</es>
+      <fr>OMS (Organisation Mondiale de la Santé)</fr>
+      <ar>منظمة الصحة العالمية</ar>
+      <zh>世界卫生组织</zh>
+    </abbreviation>
+
+    <universal_abbreviations>
+      <note>Siglas mantidas em todos os idiomas</note>
+      <abbr>HIV</abbr>
+      <abbr>AIDS</abbr>
+      <abbr>DNA</abbr>
+      <abbr>RNA</abbr>
+      <abbr>PCR</abbr>
+      <abbr>CT</abbr>
+      <abbr>MRI</abbr>
+      <abbr>ECG/EKG</abbr>
+    </universal_abbreviations>
+  </abbreviations>
+
+  <validation_rules>
+    <rule name="consistency">
+      <description>Mesmo termo deve ter mesma tradução em todos os arquivos</description>
+      <check>Grep termo em todos arquivos de um locale</check>
+    </rule>
+
+    <rule name="completeness">
+      <description>Termo no glossário deve ter tradução para todos os 9 locales</description>
+    </rule>
+
+    <rule name="code_preservation">
+      <description>Códigos ICD-10, CIAP2, LOINC nunca traduzidos</description>
+    </rule>
+  </validation_rules>
+</terminology>

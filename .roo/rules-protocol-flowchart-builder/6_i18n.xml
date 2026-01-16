@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<i18n>
+  <overview>
+    <title>Protocol Flowchart Builder - Internationalization</title>
+    <description>
+      Diretrizes para localização de flowcharts em 9 idiomas.
+    </description>
+  </overview>
+
+  <localization_workflow>
+    <step order="1">
+      <title>Criar conteúdo em português</title>
+      <description>Base para todas as traduções</description>
+    </step>
+    <step order="2">
+      <title>Traduzir para inglês</title>
+      <description>Segunda prioridade, referência internacional</description>
+    </step>
+    <step order="3">
+      <title>Traduzir demais idiomas</title>
+      <priority>es, fr, ar, zh, ru, el, hi</priority>
+    </step>
+    <step order="4">
+      <title>Validar terminologia médica</title>
+      <description>Consultar glossário médico por idioma</description>
+    </step>
+  </localization_workflow>
+
+  <common_terms>
+    <description>Termos comuns em flowcharts médicos</description>
+
+    <term id="start">
+      <pt>Início</pt>
+      <en>Start</en>
+      <es>Inicio</es>
+      <fr>Début</fr>
+      <ar>البداية</ar>
+      <zh>开始</zh>
+      <el>Έναρξη</el>
+      <hi>शुरू</hi>
+      <ru>Начало</ru>
+    </term>
+
+    <term id="end">
+      <pt>Fim</pt>
+      <en>End</en>
+      <es>Fin</es>
+      <fr>Fin</fr>
+      <ar>النهاية</ar>
+      <zh>结束</zh>
+      <el>Τέλος</el>
+      <hi>अंत</hi>
+      <ru>Конец</ru>
+    </term>
+
+    <term id="yes">
+      <pt>Sim</pt>
+      <en>Yes</en>
+      <es>Sí</es>
+      <fr>Oui</fr>
+      <ar>نعم</ar>
+      <zh>是</zh>
+      <el>Ναι</el>
+      <hi>हां</hi>
+      <ru>Да</ru>
+    </term>
+
+    <term id="no">
+      <pt>Não</pt>
+      <en>No</en>
+      <es>No</es>
+      <fr>Non</fr>
+      <ar>لا</ar>
+      <zh>否</zh>
+      <el>Όχι</el>
+      <hi>नहीं</hi>
+      <ru>Нет</ru>
+    </term>
+
+    <term id="refer">
+      <pt>Encaminhar</pt>
+      <en>Refer</en>
+      <es>Derivar</es>
+      <fr>Référer</fr>
+      <ar>إحالة</ar>
+      <zh>转诊</zh>
+      <el>Παραπομπή</el>
+      <hi>रेफर करें</hi>
+      <ru>Направить</ru>
+    </term>
+
+    <term id="evaluate">
+      <pt>Avaliar</pt>
+      <en>Evaluate</en>
+      <es>Evaluar</es>
+      <fr>Évaluer</fr>
+      <ar>تقييم</ar>
+      <zh>评估</zh>
+      <el>Αξιολογήστε</el>
+      <hi>मूल्यांकन करें</hi>
+      <ru>Оценить</ru>
+    </term>
+
+    <term id="order_test">
+      <pt>Solicitar exame</pt>
+      <en>Order test</en>
+      <es>Solicitar examen</es>
+      <fr>Prescrire examen</fr>
+      <ar>طلب فحص</ar>
+      <zh>开检查单</zh>
+      <el>Ζητήστε εξέταση</el>
+      <hi>परीक्षण मंगाएं</hi>
+      <ru>Назначить анализ</ru>
+    </term>
+
+    <term id="normal">
+      <pt>Normal</pt>
+      <en>Normal</en>
+      <es>Normal</es>
+      <fr>Normal</fr>
+      <ar>طبيعي</ar>
+      <zh>正常</zh>
+      <el>Φυσιολογικό</el>
+      <hi>सामान्य</hi>
+      <ru>Норма</ru>
+    </term>
+
+    <term id="altered">
+      <pt>Alterado</pt>
+      <en>Abnormal</en>
+      <es>Alterado</es>
+      <fr>Anormal</fr>
+      <ar>غير طبيعي</ar>
+      <zh>异常</zh>
+      <el>Μη φυσιολογικό</el>
+      <hi>असामान्य</hi>
+      <ru>Отклонение</ru>
+    </term>
+  </common_terms>
+
+  <rtl_considerations>
+    <description>Considerações especiais para árabe (RTL)</description>
+    <guidelines>
+      <guideline>Flowchart deve ser espelhado horizontalmente</guideline>
+      <guideline>Setas de decisão invertidas (Sim à esquerda, Não à direita)</guideline>
+      <guideline>Texto dentro dos nós alinhado à direita</guideline>
+    </guidelines>
+    <implementation>
+      <![CDATA[
+// Detectar locale RTL
+const isRTL = locale === 'ar';
+
+// Ajustar posições dos nós
+if (isRTL) {
+  nodes = nodes.map(node => ({
+    ...node,
+    position: {
+      x: maxWidth - node.position.x,
+      y: node.position.y
+    }
+  }));
+}
+      ]]>
+    </implementation>
+  </rtl_considerations>
+
+  <validation>
+    <check name="all_locales">
+      <description>Verificar todas as traduções existem</description>
+      <minimum_locales>pt, en</minimum_locales>
+      <recommended_locales>pt, en, es, fr, ar, zh</recommended_locales>
+    </check>
+
+    <check name="content_length">
+      <description>Verificar textos não são muito longos</description>
+      <max_characters>80 por linha</max_characters>
+      <recommendation>Usar quebras de linha (\n) para textos longos</recommendation>
+    </check>
+
+    <check name="medical_terminology">
+      <description>Validar termos médicos são corretos em cada idioma</description>
+      <resource>lib/i18n/medical-terms.ts</resource>
+    </check>
+  </validation>
+</i18n>

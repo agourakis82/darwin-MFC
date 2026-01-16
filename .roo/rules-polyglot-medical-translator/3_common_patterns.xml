@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<common_patterns>
+  <overview>
+    <title>Polyglot Medical Translator - Common Patterns</title>
+    <description>
+      Padrões de tradução e estruturas de arquivos do Darwin-MFC.
+    </description>
+  </overview>
+
+  <pattern name="messages_json">
+    <description>Arquivos de tradução next-intl</description>
+    <location>messages/{locale}/*.json</location>
+    <structure>
+      <![CDATA[
+// messages/pt/common.json
+{
+  "navigation": {
+    "home": "Início",
+    "screening": "Rastreamentos",
+    "diseases": "Doenças",
+    "medications": "Medicamentos"
+  },
+  "actions": {
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "export": "Exportar"
+  }
+}
+
+// messages/en/common.json
+{
+  "navigation": {
+    "home": "Home",
+    "screening": "Screening",
+    "diseases": "Diseases",
+    "medications": "Medications"
+  },
+  "actions": {
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export"
+  }
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="disease_translations">
+    <description>Traduções de doenças</description>
+    <location>lib/data/translations/diseases/{locale}.ts</location>
+    <structure>
+      <![CDATA[
+// lib/data/translations/diseases/en.ts
+export const diseaseTranslations = {
+  "diabetes-tipo-2": {
+    name: "Type 2 Diabetes Mellitus",
+    popularNames: ["Type 2 Diabetes", "Adult-onset Diabetes"],
+    definition: "A metabolic disorder characterized by...",
+    symptoms: ["Polyuria", "Polydipsia", "Unexplained weight loss"],
+    // ICD-10 code preserved: E11.9
+  },
+  "hipertensao-arterial": {
+    name: "Arterial Hypertension",
+    popularNames: ["High Blood Pressure"],
+    definition: "Persistent elevation of systemic arterial pressure...",
+    // ICD-10 code preserved: I10
+  }
+};
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="medication_mappings">
+    <description>Mapeamento de medicamentos multilíngue</description>
+    <location>lib/i18n/medication-mappings.ts</location>
+    <structure>
+      <![CDATA[
+export const medicationMappings = {
+  "metformina": {
+    pt: "Metformina",
+    en: "Metformin",
+    es: "Metformina",
+    fr: "Metformine",
+    ar: "ميتفورمين",
+    zh: "二甲双胍",
+    el: "Μετφορμίνη",
+    hi: "मेटफॉर्मिन",
+    ru: "Метформин",
+    // DCI preserved
+    dci: "Metformin",
+    atc: "A10BA02"
+  }
+};
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="flowchart_translations">
+    <description>Traduções de flowcharts de protocolo</description>
+    <location>lib/i18n/flowchart-translations.ts</location>
+    <structure>
+      <![CDATA[
+export const flowchartTranslations = {
+  "diabetes-screening": {
+    pt: {
+      title: "Rastreamento de Diabetes",
+      nodes: {
+        "start": "Início",
+        "age-check": "Idade ≥ 45 anos?",
+        "risk-factors": "Fatores de risco presentes?",
+        "order-test": "Solicitar glicemia de jejum",
+        "normal": "Normal - Repetir em 3 anos",
+        "altered": "Alterado - Investigar"
+      },
+      edges: {
+        "yes": "Sim",
+        "no": "Não"
+      }
+    },
+    en: {
+      title: "Diabetes Screening",
+      nodes: {
+        "start": "Start",
+        "age-check": "Age ≥ 45 years?",
+        "risk-factors": "Risk factors present?",
+        "order-test": "Order fasting glucose",
+        "normal": "Normal - Repeat in 3 years",
+        "altered": "Abnormal - Investigate"
+      },
+      edges: {
+        "yes": "Yes",
+        "no": "No"
+      }
+    }
+  }
+};
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="medical_terms">
+    <description>Glossário de termos médicos</description>
+    <location>lib/i18n/medical-terms.ts</location>
+    <structure>
+      <![CDATA[
+export const medicalTerms = {
+  "screening": {
+    pt: "rastreamento",
+    en: "screening",
+    es: "tamizaje",
+    fr: "dépistage",
+    ar: "الفحص",
+    zh: "筛查",
+    el: "προληπτικός έλεγχος",
+    hi: "जांच",
+    ru: "скрининг"
+  },
+  "prevalence": {
+    pt: "prevalência",
+    en: "prevalence",
+    es: "prevalencia",
+    fr: "prévalence",
+    ar: "الانتشار",
+    zh: "患病率",
+    el: "επιπολασμός",
+    hi: "प्रसार",
+    ru: "распространённость"
+  }
+};
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="rtl_arabic">
+    <description>Padrão específico para árabe (RTL)</description>
+    <considerations>
+      <![CDATA[
+// Arquivo em árabe deve ter marcação RTL
+// messages/ar/common.json
+{
+  "navigation": {
+    "home": "الرئيسية",
+    "screening": "الفحص الدوري",
+    "diseases": "الأمراض",
+    "medications": "الأدوية"
+  },
+  "directions": {
+    "next": "التالي", // Aparece à esquerda em RTL
+    "previous": "السابق" // Aparece à direita em RTL
+  }
+}
+
+// CSS para RTL
+[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+      ]]>
+    </considerations>
+  </pattern>
+
+  <pattern name="plural_handling">
+    <description>Tratamento de plurais por idioma</description>
+    <examples>
+      <![CDATA[
+// next-intl plural handling
+{
+  "results": "{count, plural, =0 {Nenhum resultado} one {# resultado} other {# resultados}}"
+}
+
+// English
+{
+  "results": "{count, plural, =0 {No results} one {# result} other {# results}}"
+}
+
+// Arabic (complex plural rules)
+{
+  "results": "{count, plural, =0 {لا نتائج} one {نتيجة واحدة} two {نتيجتان} few {# نتائج} many {# نتيجة} other {# نتيجة}}"
+}
+      ]]>
+    </examples>
+  </pattern>
+</common_patterns>

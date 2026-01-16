@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<common_patterns>
+  <overview>
+    <title>Citation Sentinel - Common Patterns</title>
+    <description>
+      Padrões de citação e estruturas de referência do Darwin-MFC.
+    </description>
+  </overview>
+
+  <pattern name="reference_structure">
+    <description>Estrutura de referência em lib/data/references.ts</description>
+    <structure>
+      <![CDATA[
+export interface Citation {
+  id: string;                    // Identificador único
+  autores: string;               // "Sobrenome AB, Sobrenome CD, et al"
+  titulo: string;                // Título completo
+  revista?: string;              // Nome abreviado do periódico
+  ano: number;                   // Ano de publicação
+  volume?: string;               // Volume
+  numero?: string;               // Número/Issue
+  paginas?: string;              // "123-145"
+  doi?: string;                  // "10.1000/xyz123"
+  pmid?: string;                 // "12345678"
+  url?: string;                  // URL para websites/guidelines
+  tipo: "artigo" | "guideline" | "livro" | "website" | "relatorio";
+  acessado?: string;             // Data de acesso para websites
+}
+
+// Exemplo de referência completa
+{
+  id: "inca-2024-mama",
+  autores: "Instituto Nacional de Câncer",
+  titulo: "Diretrizes para a Detecção Precoce do Câncer de Mama no Brasil",
+  ano: 2024,
+  tipo: "guideline",
+  url: "https://www.inca.gov.br/publicacoes/livros/diretrizes-para-deteccao-precoce-do-cancer-de-mama-no-brasil",
+  acessado: "2025-01-15"
+}
+      ]]>
+    </structure>
+  </pattern>
+
+  <pattern name="inline_citation_usage">
+    <description>Uso do componente InlineCitation</description>
+    <location>app/components/Bibliography/InlineCitation.tsx</location>
+    <usage>
+      <![CDATA[
+import { InlineCitation } from '@/app/components/Bibliography/InlineCitation';
+
+// Uso simples
+<p>
+  A incidência é de 50/100.000 habitantes
+  <InlineCitation citation="[1]" references={references} />
+</p>
+
+// Múltiplas citações
+<p>
+  Estudos demonstram eficácia
+  <InlineCitation citation="[1,2,3]" references={references} />
+</p>
+
+// Com tooltip automático
+// O componente mostra tooltip com referência completa no hover
+      ]]>
+    </usage>
+  </pattern>
+
+  <pattern name="claim_identification">
+    <description>Padrões para identificar claims que precisam citação</description>
+    <regex_patterns>
+      <pattern name="numbers">
+        <regex>\d+[,.]?\d*\s*(%|por\s*100\.?000|casos|mortes|óbitos)</regex>
+        <example>"50% dos pacientes", "10,5 por 100.000"</example>
+        <requires_citation>true</requires_citation>
+      </pattern>
+      <pattern name="comparatives">
+        <regex>(maior|menor|mais|menos)\s+(eficaz|efetivo|comum|frequente|raro)</regex>
+        <example>"mais eficaz que", "menos comum em"</example>
+        <requires_citation>true</requires_citation>
+      </pattern>
+      <pattern name="causation">
+        <regex>(causa|provoca|leva a|resulta em|associado a)</regex>
+        <example>"causa aumento de", "está associado a maior risco"</example>
+        <requires_citation>true</requires_citation>
+      </pattern>
+      <pattern name="recommendations">
+        <regex>(recomenda|indica|sugere|deve ser|é indicado)</regex>
+        <example>"SUS recomenda", "deve ser realizado a cada 2 anos"</example>
+        <requires_citation>true</requires_citation>
+      </pattern>
+    </regex_patterns>
+  </pattern>
+
+  <pattern name="gap_detection">
+    <description>Detectar claims sem citação</description>
+    <algorithm>
+      <![CDATA[
+1. Identificar todas claims usando regex_patterns
+2. Para cada claim, verificar se seguida de [n]
+3. Se não seguida de citação, marcar como gap
+4. Gerar relatório de gaps com contexto
+
+// Pseudo-código
+function detectGaps(text: string): Gap[] {
+  const claims = findClaims(text, patterns);
+  return claims.filter(claim => {
+    const afterClaim = text.slice(claim.end, claim.end + 10);
+    return !afterClaim.match(/\[\d+/);
+  });
+}
+      ]]>
+    </algorithm>
+  </pattern>
+
+  <pattern name="pubmed_search">
+    <description>Padrão de busca no PubMed para sugerir citações</description>
+    <query_construction>
+      <![CDATA[
+// Construir query baseada no contexto da claim
+function buildPubMedQuery(claim: Claim): string {
+  const terms = extractKeyTerms(claim.text);
+  const filters = [
+    "Systematic Review[pt]",
+    "Meta-Analysis[pt]",
+    "Guideline[pt]"
+  ];
+
+  // Limitar aos últimos 5 anos
+  const dateFilter = `("${currentYear - 5}"[Date - Publication] : "3000"[Date - Publication])`;
+
+  return `(${terms.join(' AND ')}) AND (${filters.join(' OR ')}) AND ${dateFilter}`;
+}
+
+// Exemplo de query gerada
+// (breast cancer screening) AND (Systematic Review[pt] OR Meta-Analysis[pt]) AND ("2020"[Date - Publication] : "3000"[Date - Publication])
+      ]]>
+    </query_construction>
+  </pattern>
+
+  <pattern name="doi_validation">
+    <description>Validar DOI via CrossRef</description>
+    <workflow>
+      <![CDATA[
+async function validateDOI(doi: string): Promise<ValidationResult> {
+  const url = `https://api.crossref.org/works/${encodeURIComponent(doi)}`;
+
+  try {
+    const response = await fetch(url);
+    if (response.status === 200) {
+      const data = await response.json();
+      return {
+        valid: true,
+        metadata: {
+          title: data.message.title[0],
+          authors: data.message.author,
+          journal: data.message['container-title'][0],
+          year: data.message.published['date-parts'][0][0],
+          volume: data.message.volume,
+          page: data.message.page
+        }
+      };
+    }
+    return { valid: false, error: 'DOI not found' };
+  } catch (e) {
+    return { valid: false, error: e.message };
+  }
+}
+      ]]>
+    </workflow>
+  </pattern>
+
+  <pattern name="vancouver_formatting">
+    <description>Formatar referência no padrão Vancouver</description>
+    <formatter>
+      <![CDATA[
+function formatVancouver(ref: Citation): string {
+  if (ref.tipo === 'artigo') {
+    const authors = ref.autores;
+    const title = ref.titulo;
+    const journal = ref.revista;
+    const year = ref.ano;
+    const volume = ref.volume ? `;${ref.volume}` : '';
+    const issue = ref.numero ? `(${ref.numero})` : '';
+    const pages = ref.paginas ? `:${ref.paginas}` : '';
+    const doi = ref.doi ? ` doi:${ref.doi}` : '';
+
+    return `${authors}. ${title}. ${journal}. ${year}${volume}${issue}${pages}.${doi}`;
+  }
+
+  if (ref.tipo === 'guideline') {
+    return `${ref.autores}. ${ref.titulo}. ${ref.ano}.`;
+  }
+
+  if (ref.tipo === 'website') {
+    return `${ref.autores}. ${ref.titulo} [Internet]. ${ref.ano} [cited ${ref.acessado}]. Available from: ${ref.url}`;
+  }
+}
+      ]]>
+    </formatter>
+  </pattern>
+</common_patterns>

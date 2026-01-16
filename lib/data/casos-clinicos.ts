@@ -2492,6 +2492,142 @@ export const casoOtite: CasoClinico = {
 };
 
 // ============================================================================
+// CASO: RASTREAMENTO CÂNCER COLORRETAL
+// ============================================================================
+
+export const casoCancerColorretal: CasoClinico = {
+  id: 'caso-cancer-colorretal-001',
+  titulo: 'Rastreamento de Câncer Colorretal na APS',
+  subtitulo: 'Estratificação de risco e tomada de decisão',
+  categoria: 'gastro',
+  dificuldade: 'intermediario',
+  tempoEstimado: 20,
+  ultimaAtualizacao: '2026-01',
+
+  apresentacao: {
+    paciente: {
+      nome: 'Carlos Alberto Mendes',
+      idade: 52,
+      sexo: 'M',
+      profissao: 'Gerente administrativo',
+      estadoCivil: 'Casado'
+    },
+    queixaPrincipal: 'Consulta de rotina',
+    historiaDoencaAtual: 'Paciente procura a UBS para consulta de rotina. Refere estar bem, sem queixas gastrointestinais. Nega alterações no hábito intestinal, presença de sangue nas fezes ou perda ponderal. Nunca foi investigado para câncer colorretal. História familiar: pai diagnosticado com câncer colorretal aos 58 anos. Tabagista ativo (20 cigarros/dia há 30 anos). Sedentário. IMC 29 kg/m².'
+  },
+
+  etapas: [
+    {
+      id: 'etapa-1-risco',
+      titulo: 'Estratificação de Risco',
+      tipo: 'anamnese',
+      conteudo: {
+        texto: 'Você coleta informações sobre fatores de risco para câncer colorretal. Carlos refere histórico familiar de CCR no pai aos 58 anos, tabagismo ativo, sedentarismo e sobrepeso.',
+        dicas: ['Considere a idade de diagnóstico do familiar', 'Histórico familiar antes dos 60 anos é significativo']
+      },
+      pergunta: {
+        enunciado: 'Qual é a categoria de risco deste paciente para câncer colorretal?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Risco aumentado - pai com CCR aos 58 anos coloca o paciente em categoria de risco aumentado', correta: true },
+          { id: 'b', texto: 'Risco padrão - apenas fatores de estilo de vida modificáveis', correta: false },
+          { id: 'c', texto: 'Risco muito elevado - necessita colonoscopia imediata', correta: false },
+          { id: 'd', texto: 'Sem risco - aos 52 anos ainda não está indicado rastreamento', correta: false }
+        ],
+        respostaCorreta: 'a',
+        explicacao: 'Histórico familiar de CCR em parente de 1º grau diagnosticado antes dos 60 anos classifica o paciente em categoria de risco aumentado. USPSTF recomenda que pacientes com histórico familiar iniciem rastreamento aos 40 anos ou 10 anos antes do diagnóstico do familiar.',
+        pontos: 15
+      }
+    },
+    {
+      id: 'etapa-2-metodo',
+      titulo: 'Escolha do Método de Rastreamento',
+      tipo: 'exames_complementares',
+      conteudo: {
+        texto: 'Você discute com Carlos as opções de rastreamento: FIT anual ou colonoscopia.',
+        dados: {
+          'Teste FIT': 'Sensibilidade ~95% para CCR, ~40% para adenomas avançados',
+          'Colonoscopia': 'Sensibilidade ~90-95% para CCR, ~85% para adenomas avançados'
+        },
+        dicas: ['Pacientes com risco familiar preferem investigação direta', 'FIT é alternativa menos invasiva']
+      },
+      pergunta: {
+        enunciado: 'Qual estratégia de rastreamento você recomendaria para Carlos?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: 'Colonoscopia de entrada, pois tem risco aumentado e nunca foi rastreado', correta: true },
+          { id: 'b', texto: 'FIT anual por ser menos invasivo', correta: false },
+          { id: 'c', texto: 'Sigmoidoscopia flexível', correta: false },
+          { id: 'd', texto: 'Não rastrear, reavaliar em 5 anos', correta: false }
+        ],
+        respostaCorreta: 'a',
+        explicacao: 'Para paciente com risco aumentado por história familiar e nunca rastreado, a recomendação é colonoscopia diagnóstica de entrada. Permite visualizar todo o cólon e remover pólipos.',
+        pontos: 15
+      }
+    },
+    {
+      id: 'etapa-3-achados',
+      titulo: 'Achados da Colonoscopia',
+      tipo: 'tratamento',
+      conteudo: {
+        texto: 'A colonoscopia foi realizada. Achados: pólipo de 12mm pediculado em cólon descendente e pólipo de 8mm séssil em sigmóide. Ambos removidos.',
+        dados: {
+          'Preparo': 'Boston 8 (excelente)',
+          'Pólipo 1': '12mm pediculado, aspecto adenomatoso',
+          'Pólipo 2': '8mm séssil',
+          'Remoção': 'Polipectomia com ansa de diatermia'
+        },
+        dicas: ['A histopatologia define o seguimento', 'Displasia de alto grau requer vigilância mais próxima']
+      },
+      pergunta: {
+        enunciado: 'O histopatológico mostra adenoma tubular com displasia de alto grau no pólipo de 12mm. Qual o intervalo de seguimento?',
+        tipo: 'multipla_escolha',
+        opcoes: [
+          { id: 'a', texto: '10 anos', correta: false },
+          { id: 'b', texto: '3-5 anos', correta: true },
+          { id: 'c', texto: '1 ano', correta: false },
+          { id: 'd', texto: '6 meses', correta: false }
+        ],
+        respostaCorreta: 'b',
+        explicacao: 'Adenomas com displasia de alto grau requerem vigilância mais próxima (3-5 anos). Se fossem apenas adenomas com displasia baixa, seria 10 anos.',
+        pontos: 15
+      }
+    }
+  ],
+
+  desfecho: {
+    resumo: 'Carlos foi rastreado adequadamente com colonoscopia devido a risco aumentado. Dois adenomas foram removidos com sucesso.',
+    diagnosticoFinal: 'Adenomas tubulares removidos (um com displasia de alto grau)',
+    tratamentoRealizado: 'Polipectomia endoscópica. Cessação de tabagismo. Colonoscopia de vigilância em 5 anos.',
+    evolucao: 'Risco reduzido de progressão a carcinoma pela remoção dos adenomas.',
+    licoesPrincipais: [
+      'Histórico familiar de CCR em <60 anos indica rastreamento precoce',
+      'Colonoscopia é primeira escolha em pacientes de risco aumentado',
+      'Adenomas com displasia de alto grau exigem vigilância mais próxima (3-5 anos)',
+      'Polipectomia é medida eficaz de prevenção de CCR'
+    ],
+    errosComuns: [
+      'Ignorar história familiar e considerar risco padrão',
+      'Recomendar FIT em paciente de risco aumentado nunca rastreado',
+      'Usar intervalo de 10 anos para adenomas com displasia de alto grau'
+    ]
+  },
+
+  objetivosAprendizagem: [
+    'Identificar pacientes com risco aumentado para CCR',
+    'Conhecer recomendações de rastreamento USPSTF/SBCP',
+    'Interpretar achados de colonoscopia',
+    'Definir intervalos de vigilância após polipectomia'
+  ],
+  competencias: ['Avaliação de risco oncológico', 'Medicina preventiva', 'Interpretação de exames'],
+  doencasRelacionadas: ['cancer-colorretal'],
+  medicamentosRelacionados: [],
+  calculadorasRelacionadas: [],
+  referencias: ['USPSTF Colorectal Cancer Screening 2021', 'SBCP Diretrizes 2024'],
+  tags: ['rastreamento', 'câncer-colorretal', 'colonoscopia', 'adenoma', 'prevenção']
+};
+
+// ============================================================================
 // TODOS OS CASOS
 // ============================================================================
 
@@ -2511,6 +2647,7 @@ export const todosCasosClinicos: CasoClinico[] = [
   casoIVAS,
   casoObesidade,
   casoOtite,
+  casoCancerColorretal,
 ];
 
 // Funções auxiliares

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow>
+  <overview>
+    <title>Polyglot Medical Translator - Workflow Pipeline</title>
+    <description>
+      Pipeline SOTA++ para tradução médica especializada em 9 idiomas
+      com preservação de terminologia técnica e códigos de ontologia.
+    </description>
+  </overview>
+
+  <supported_locales>
+    <locale code="pt" name="Português" default="true" direction="ltr"/>
+    <locale code="en" name="English" direction="ltr"/>
+    <locale code="es" name="Español" direction="ltr"/>
+    <locale code="fr" name="Français" direction="ltr"/>
+    <locale code="ru" name="Русский" direction="ltr"/>
+    <locale code="ar" name="العربية" direction="rtl"/>
+    <locale code="zh" name="中文" direction="ltr"/>
+    <locale code="el" name="Ελληνικά" direction="ltr"/>
+    <locale code="hi" name="हिन्दी" direction="ltr"/>
+  </supported_locales>
+
+  <pipeline>
+    <phase name="analysis" order="1">
+      <title>Fase de Análise</title>
+      <description>Identificar conteúdo a traduzir e estrutura de arquivos</description>
+      <steps>
+        <step>Identificar tipo de conteúdo (disease, medication, screening, ui)</step>
+        <step>Localizar arquivos fonte em português</step>
+        <step>Mapear arquivos de tradução em lib/i18n/ e messages/</step>
+        <step>Identificar termos técnicos que requerem tratamento especial</step>
+        <step>Extrair códigos de ontologia (ICD-10, CIAP2, LOINC) para preservar</step>
+      </steps>
+      <file_locations>
+        <location type="ui_strings">messages/{locale}/*.json</location>
+        <location type="diseases">lib/data/translations/diseases/{locale}.ts</location>
+        <location type="medications">lib/i18n/medication-mappings.ts</location>
+        <location type="flowcharts">lib/i18n/flowchart-translations.ts</location>
+        <location type="medical_terms">lib/i18n/medical-terms.ts</location>
+      </file_locations>
+    </phase>
+
+    <phase name="extraction" order="2">
+      <title>Fase de Extração</title>
+      <description>Extrair termos e conteúdo para tradução</description>
+      <steps>
+        <step>Extrair strings de UI de messages/pt/*.json</step>
+        <step>Extrair termos médicos de lib/i18n/</step>
+        <step>Identificar termos com tradução existente (evitar duplicação)</step>
+        <step>Criar glossário de termos técnicos para consistência</step>
+        <step>Mapear sinônimos regionais quando aplicável</step>
+      </steps>
+      <outputs>
+        <output>Lista de termos para tradução</output>
+        <output>Glossário de termos técnicos</output>
+        <output>Mapa de sinônimos regionais</output>
+      </outputs>
+    </phase>
+
+    <phase name="translation" order="3">
+      <title>Fase de Tradução</title>
+      <description>Traduzir conteúdo para idiomas alvo</description>
+      <steps>
+        <step>Traduzir preservando formatação markdown/html</step>
+        <step>Manter códigos de ontologia inalterados</step>
+        <step>Aplicar terminologia médica oficial do país/região</step>
+        <step>Adaptar unidades de medida quando necessário</step>
+        <step>Tratar direção RTL para árabe</step>
+      </steps>
+      <api_integration>
+        <api name="Wikidata SPARQL">
+          <endpoint>https://query.wikidata.org/sparql</endpoint>
+          <purpose>Validar traduções de termos médicos</purpose>
+          <query_template>
+            SELECT ?itemLabel WHERE {
+              ?item wdt:P486 "ICD10_CODE".
+              SERVICE wikibase:label { bd:serviceParam wikibase:language "[LANG]". }
+            }
+          </query_template>
+        </api>
+      </api_integration>
+      <preservation_rules>
+        <rule>Códigos ICD-10, CIAP2, LOINC não são traduzidos</rule>
+        <rule>Nomes de medicamentos mantêm DCI (Denominação Comum Internacional)</rule>
+        <rule>Acrônimos médicos internacionais preservados (HIV, AIDS, etc.)</rule>
+      </preservation_rules>
+    </phase>
+
+    <phase name="validation" order="4">
+      <title>Fase de Validação</title>
+      <description>Verificar qualidade e consistência das traduções</description>
+      <steps>
+        <step>Verificar completude (todas as keys traduzidas)</step>
+        <step>Validar terminologia médica contra glossários oficiais</step>
+        <step>Confirmar preservação de códigos de ontologia</step>
+        <step>Verificar formatação e placeholders</step>
+        <step>Testar renderização RTL para árabe</step>
+      </steps>
+      <quality_checks>
+        <check>Nenhuma key de tradução faltando</check>
+        <check>Termos médicos consistentes cross-file</check>
+        <check>Placeholders {0}, {1} preservados</check>
+        <check>Formatação markdown/html intacta</check>
+      </quality_checks>
+    </phase>
+
+    <phase name="integration" order="5">
+      <title>Fase de Integração</title>
+      <description>Inserir traduções nos arquivos do projeto</description>
+      <steps>
+        <step>Atualizar arquivos em messages/{locale}/</step>
+        <step>Atualizar lib/i18n/ quando aplicável</step>
+        <step>Executar npm run build para verificar</step>
+        <step>Testar mudança de idioma na UI</step>
+      </steps>
+    </phase>
+  </pipeline>
+
+  <rtl_handling>
+    <description>Tratamento especial para árabe (RTL)</description>
+    <considerations>
+      <consideration>Direção de texto: right-to-left</consideration>
+      <consideration>Numerais: usar numerais árabes orientais (٠١٢٣٤٥٦٧٨٩) ou ocidentais conforme contexto</consideration>
+      <consideration>Pontuação: invertida em alguns casos</consideration>
+      <consideration>Layout: espelhado horizontalmente</consideration>
+    </considerations>
+    <css_classes>
+      <class>[dir="rtl"]</class>
+      <class>.rtl</class>
+    </css_classes>
+  </rtl_handling>
+</workflow>

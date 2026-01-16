@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<best_practices>
+  <overview>
+    <title>Medical Calculators Builder - Best Practices</title>
+    <description>
+      Diretrizes para criação de calculadoras clínicas seguras e precisas.
+    </description>
+  </overview>
+
+  <accuracy_principles>
+    <principle name="validated_formulas">
+      <description>Usar apenas fórmulas validadas cientificamente</description>
+      <requirements>
+        <requirement>Fórmula publicada em periódico peer-reviewed</requirement>
+        <requirement>Validada em população adequada</requirement>
+        <requirement>Citação do artigo original obrigatória</requirement>
+      </requirements>
+    </principle>
+
+    <principle name="precision">
+      <description>Manter precisão adequada nos cálculos</description>
+      <guidelines>
+        <guideline>Usar aritmética de ponto flutuante com cuidado</guideline>
+        <guideline>Arredondar apenas no resultado final</guideline>
+        <guideline>Documentar número de casas decimais</guideline>
+      </guidelines>
+    </principle>
+
+    <principle name="units_clarity">
+      <description>Unidades de medida devem ser claras</description>
+      <guidelines>
+        <guideline>Exibir unidade junto ao input</guideline>
+        <guideline>Permitir conversão quando relevante (mg/dL ↔ mmol/L)</guideline>
+        <guideline>Documentar qual unidade a fórmula espera</guideline>
+      </guidelines>
+    </principle>
+  </accuracy_principles>
+
+  <safety_principles>
+    <principle name="critical_values">
+      <description>Alertar para valores críticos</description>
+      <implementation>
+        <alert type="warning">Valores fora do intervalo validado</alert>
+        <alert type="danger">Valores que requerem ação imediata</alert>
+      </implementation>
+      <example>
+        <calculator>Clearance de creatinina</calculator>
+        <warning>ClCr &lt; 30 mL/min - Risco de acúmulo de drogas</warning>
+        <danger>ClCr &lt; 15 mL/min - Considerar diálise</danger>
+      </example>
+    </principle>
+
+    <principle name="limitations">
+      <description>Documentar limitações claramente</description>
+      <common_limitations>
+        <limitation>População de validação (idade, etnia)</limitation>
+        <limitation>Situações onde não usar (gravidez, extremos de peso)</limitation>
+        <limitation>Condições que afetam acurácia</limitation>
+      </common_limitations>
+    </principle>
+
+    <principle name="disclaimer">
+      <description>Incluir disclaimer de uso clínico</description>
+      <text>Esta calculadora é uma ferramenta auxiliar. O julgamento clínico deve sempre prevalecer. Não substitui avaliação médica.</text>
+    </principle>
+  </safety_principles>
+
+  <ux_principles>
+    <principle name="input_validation">
+      <description>Validar inputs em tempo real</description>
+      <validations>
+        <validation>Valores numéricos dentro de faixa plausível</validation>
+        <validation>Campos obrigatórios preenchidos</validation>
+        <validation>Formato correto (ex: data)</validation>
+      </validations>
+    </principle>
+
+    <principle name="clear_output">
+      <description>Resultado claro e interpretável</description>
+      <elements>
+        <element>Valor numérico calculado</element>
+        <element>Unidade do resultado</element>
+        <element>Interpretação categórica (Normal, Alterado, etc.)</element>
+        <element>Código de cor (verde/amarelo/vermelho)</element>
+      </elements>
+    </principle>
+
+    <principle name="accessibility">
+      <description>Acessível em dispositivos móveis</description>
+      <guidelines>
+        <guideline>Inputs com tamanho adequado para touch</guideline>
+        <guideline>Teclado numérico para campos numéricos</guideline>
+        <guideline>Funciona offline após carregamento</guideline>
+      </guidelines>
+    </principle>
+  </ux_principles>
+
+  <citation_requirements>
+    <principle name="original_source">
+      <description>Citar artigo original da fórmula</description>
+      <format>Vancouver style com DOI/PMID</format>
+    </principle>
+
+    <principle name="reference_ranges">
+      <description>Citar fonte dos valores de referência</description>
+    </principle>
+
+    <principle name="mdcalc_comparison">
+      <description>Validar contra MDCalc quando disponível</description>
+      <url>https://www.mdcalc.com/</url>
+    </principle>
+  </citation_requirements>
+</best_practices>

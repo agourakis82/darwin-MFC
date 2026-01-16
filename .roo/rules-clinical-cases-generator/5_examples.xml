@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<examples>
+  <overview>
+    <title>Clinical Cases Generator - Examples</title>
+    <description>
+      Exemplos de casos clínicos para o Darwin-MFC.
+    </description>
+  </overview>
+
+  <example name="hypertension_case">
+    <title>Caso: Hipertensão em Jovem</title>
+    <difficulty>intermediate</difficulty>
+
+    <case>
+      <![CDATA[
+{
+  id: "has-jovem-secundaria",
+  title: {
+    pt: "Hipertensão em Paciente Jovem",
+    en: "Hypertension in Young Patient"
+  },
+  difficulty: "intermediate",
+  category: "cardiologia",
+  linkedDiseaseId: "hipertensao-arterial",
+  estimatedTime: 20,
+  learningObjectives: [
+    { pt: "Identificar sinais de HAS secundária", en: "Identify signs of secondary HTN" },
+    { pt: "Solicitar investigação apropriada em HAS jovem", en: "Order appropriate workup for young HTN" }
+  ],
+  patient: {
+    name: "Maria Santos",
+    age: 28,
+    sex: "F",
+    chiefComplaint: { pt: "Dor de cabeça frequente", en: "Frequent headaches" }
+  },
+  sections: [
+    {
+      id: "presentation",
+      type: "presentation",
+      title: { pt: "Apresentação", en: "Presentation" },
+      content: {
+        pt: "Maria, 28 anos, professora, procura consulta por cefaleia occipital matinal há 3 meses. Nega tabagismo ou uso de ACO. IMC 22. Na aferição, PA = 180/110 mmHg em ambos os braços.",
+        en: "Maria, 28 years old, teacher, presents with 3-month history of morning occipital headache. Denies smoking or OCP use. BMI 22. BP = 180/110 mmHg in both arms."
+      },
+      questions: [
+        {
+          id: "q1",
+          stem: {
+            pt: "Qual característica mais sugere HAS secundária?",
+            en: "Which feature most suggests secondary HTN?"
+          },
+          options: [
+            { id: "a", text: { pt: "Idade < 30 anos com HAS estágio 2", en: "Age < 30 with stage 2 HTN" } },
+            { id: "b", text: { pt: "Presença de cefaleia", en: "Presence of headache" } },
+            { id: "c", text: { pt: "Ser do sexo feminino", en: "Being female" } },
+            { id: "d", text: { pt: "PA igual em ambos os braços", en: "Equal BP in both arms" } }
+          ],
+          correctAnswer: "a",
+          feedback: {
+            correct: {
+              pt: "Correto! HAS estágio 2 em paciente < 30 anos, sem fatores de risco, é forte indicação de investigar causa secundária. Principais causas: doença renal, estenose de artéria renal, feocromocitoma, hiperaldosteronismo.",
+              en: "Correct! Stage 2 HTN in patient < 30 years without risk factors strongly indicates secondary cause investigation. Main causes: renal disease, renal artery stenosis, pheochromocytoma, hyperaldosteronism."
+            },
+            incorrect: {
+              "b": { pt: "Cefaleia é comum em HAS, mas não específica para secundária", en: "Headache is common in HTN but not specific for secondary" },
+              "c": { pt: "Sexo não é critério para investigar secundária", en: "Sex is not a criterion for secondary investigation" },
+              "d": { pt: "PA igual nos braços é normal e esperado", en: "Equal BP in both arms is normal and expected" }
+            }
+          },
+          points: 30
+        }
+      ]
+    },
+    {
+      id: "workup",
+      type: "workup",
+      title: { pt: "Investigação", en: "Workup" },
+      content: {
+        pt: "Você decide investigar HAS secundária. Exames iniciais mostram: Cr 0.8, K 2.9, Na 145.",
+        en: "You decide to investigate secondary HTN. Initial tests show: Cr 0.8, K 2.9, Na 145."
+      },
+      questions: [
+        {
+          id: "q2",
+          stem: {
+            pt: "O que o potássio baixo sugere como etiologia?",
+            en: "What does low potassium suggest as etiology?"
+          },
+          options: [
+            { id: "a", text: { pt: "Feocromocitoma", en: "Pheochromocytoma" } },
+            { id: "b", text: { pt: "Hiperaldosteronismo primário", en: "Primary hyperaldosteronism" } },
+            { id: "c", text: { pt: "Coarctação de aorta", en: "Coarctation of aorta" } },
+            { id: "d", text: { pt: "Glomerulonefrite", en: "Glomerulonephritis" } }
+          ],
+          correctAnswer: "b",
+          feedback: {
+            correct: {
+              pt: "Correto! Hiperaldosteronismo primário (Síndrome de Conn) causa HAS + hipocalemia + hipernatremia leve. A aldosterona aumentada causa retenção de Na e excreção de K.",
+              en: "Correct! Primary hyperaldosteronism (Conn syndrome) causes HTN + hypokalemia + mild hypernatremia. Increased aldosterone causes Na retention and K excretion."
+            },
+            incorrect: {
+              "a": { pt: "Feocromocitoma causa HAS paroxística, geralmente com K normal", en: "Pheochromocytoma causes paroxysmal HTN, usually with normal K" },
+              "c": { pt: "Coarctação causa diferença de PA entre MMSS e MMII", en: "Coarctation causes BP difference between arms and legs" },
+              "d": { pt: "Glomerulonefrite causa elevação de creatinina", en: "Glomerulonephritis causes elevated creatinine" }
+            }
+          },
+          points: 40
+        }
+      ]
+    }
+  ],
+  summary: {
+    finalDiagnosis: {
+      pt: "Hiperaldosteronismo Primário (Síndrome de Conn)",
+      en: "Primary Hyperaldosteronism (Conn Syndrome)"
+    },
+    keyLearningPoints: [
+      { pt: "HAS em jovem sem FR → investigar secundária", en: "HTN in young without RF → investigate secondary" },
+      { pt: "HAS + hipocalemia → pensar em hiperaldosteronismo", en: "HTN + hypokalemia → think hyperaldosteronism" }
+    ],
+    clinicalPearls: [
+      { pt: "Hiperaldosteronismo é mais comum do que se pensava (5-10% das HAS)", en: "Hyperaldosteronism is more common than previously thought (5-10% of HTN)" }
+    ]
+  }
+}
+      ]]>
+    </case>
+  </example>
+
+  <example name="feedback_design">
+    <title>Design de Feedback Educacional</title>
+
+    <good_feedback>
+      <![CDATA[
+{
+  correct: {
+    pt: "Correto! A tríade de Whipple (hipoglicemia documentada + sintomas + resolução com glicose) é patognomônica de insulinoma. O próximo passo é localizar o tumor com TC/RNM de abdome.",
+    en: "Correct! Whipple's triad (documented hypoglycemia + symptoms + resolution with glucose) is pathognomonic for insulinoma. Next step is to localize the tumor with abdominal CT/MRI."
+  },
+  incorrect: {
+    "b": {
+      pt: "Incorreto. Diabetes tipo 2 causa hiperglicemia, não hipoglicemia. O paciente apresenta episódios de glicose baixa.",
+      en: "Incorrect. Type 2 diabetes causes hyperglycemia, not hypoglycemia. The patient has episodes of low glucose."
+    }
+  }
+}
+      ]]>
+    </good_feedback>
+
+    <bad_feedback>
+      <![CDATA[
+// Evitar feedback não educativo
+{
+  correct: { pt: "Correto!", en: "Correct!" },
+  incorrect: { "b": { pt: "Errado", en: "Wrong" } }
+}
+      ]]>
+    </bad_feedback>
+  </example>
+
+  <anti_patterns>
+    <anti_pattern name="unrealistic_presentation">
+      <description>Apresentação não condizente com a doença</description>
+    </anti_pattern>
+    <anti_pattern name="trivial_distractors">
+      <description>Distraidores obviamente incorretos</description>
+    </anti_pattern>
+    <anti_pattern name="no_educational_feedback">
+      <description>Feedback que não ensina</description>
+    </anti_pattern>
+  </anti_patterns>
+</examples>

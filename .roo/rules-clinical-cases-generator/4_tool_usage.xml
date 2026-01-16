@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool_usage>
+  <overview>
+    <title>Clinical Cases Generator - Tool Usage</title>
+    <description>
+      Estratégias de ferramentas para criação de casos clínicos.
+    </description>
+  </overview>
+
+  <file_operations>
+    <key_files>
+      <file>messages/{locale}/clinical-cases.json</file>
+      <file>lib/data/doencas/*.ts</file>
+      <file>lib/store/gamificationStore.ts</file>
+      <file>app/[locale]/casos-clinicos/[id]/page.tsx</file>
+    </key_files>
+  </file_operations>
+
+  <research_workflow>
+    <step order="1">
+      <action>Identificar doença alvo</action>
+      <command>Read lib/data/doencas/ para doenças existentes</command>
+    </step>
+    <step order="2">
+      <action>Pesquisar apresentação clínica</action>
+      <method>WebSearch/WebFetch PubMed para case reports</method>
+      <query>"{disease} clinical presentation case report"</query>
+    </step>
+    <step order="3">
+      <action>Validar sintomas e sinais</action>
+      <source>Verificar contra dados em lib/data/doencas/</source>
+    </step>
+    <step order="4">
+      <action>Criar diagnósticos diferenciais</action>
+      <method>Buscar DDx na literatura</method>
+    </step>
+  </research_workflow>
+
+  <pubmed_search>
+    <description>Buscar casos na literatura para inspiração</description>
+    <queries>
+      <query purpose="case_reports">
+        "{disease}"[Title] AND "case report"[Publication Type]
+      </query>
+      <query purpose="clinical_features">
+        "{disease}"[Title] AND "clinical features"[Title/Abstract]
+      </query>
+      <query purpose="differential">
+        "{disease}"[Title] AND "differential diagnosis"[Title/Abstract]
+      </query>
+    </queries>
+  </pubmed_search>
+
+  <validation_checks>
+    <check name="clinical_validity">
+      <description>Verificar apresentação é realista</description>
+      <criteria>
+        <criterion>Sintomas condizem com literatura</criterion>
+        <criterion>Valores de exames são plausíveis</criterion>
+        <criterion>Evolução temporal faz sentido</criterion>
+      </criteria>
+    </check>
+
+    <check name="educational_validity">
+      <description>Verificar valor educacional</description>
+      <criteria>
+        <criterion>Objetivos de aprendizagem claros</criterion>
+        <criterion>Feedback educativo adequado</criterion>
+        <criterion>Dificuldade apropriada</criterion>
+      </criteria>
+    </check>
+
+    <check name="technical_validity">
+      <description>Verificar integração técnica</description>
+      <criteria>
+        <criterion>JSON válido</criterion>
+        <criterion>Todos IDs são únicos</criterion>
+        <criterion>Traduções completas (pt, en mínimo)</criterion>
+        <criterion>Links para doenças existentes válidos</criterion>
+      </criteria>
+    </check>
+  </validation_checks>
+
+  <case_testing>
+    <description>Testar caso interativamente</description>
+    <steps>
+      <step>npm run dev</step>
+      <step>Navegar para /pt/casos-clinicos/{id}</step>
+      <step>Testar todas as respostas (corretas e incorretas)</step>
+      <step>Verificar feedback para cada opção</step>
+      <step>Verificar pontuação atualiza corretamente</step>
+      <step>Testar em múltiplos idiomas</step>
+    </steps>
+  </case_testing>
+</tool_usage>

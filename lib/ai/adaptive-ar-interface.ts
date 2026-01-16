@@ -454,7 +454,13 @@ export class AdaptiveARInterface {
 
 // Classes auxiliares
 export class ARDiagnosticSession {
-  constructor(private patientData: ARDiagnosticData, private userProfile: UserProfile) {}
+  private patientData: ARDiagnosticData;
+  private userProfile: UserProfile;
+
+  constructor(patientData: ARDiagnosticData, userProfile: UserProfile) {
+    this.patientData = patientData;
+    this.userProfile = userProfile;
+  }
   
   async loadAnatomicalModels(): Promise<void> {}
   async enableRealTimeVitals(): Promise<void> {}
@@ -477,14 +483,22 @@ export class MedicalProcedureSimulation {
 }
 
 class VoiceRecognition {
-  constructor(private config: any) {}
+  private config: any;
+
+  constructor(config: any) {
+    this.config = config;
+  }
   
   async enableCommands(commands: string[]): Promise<void> {}
   async startListening(): Promise<void> {}
 }
 
 class GestureRecognition {
-  constructor(private config: any) {}
+  private config: any;
+
+  constructor(config: any) {
+    this.config = config;
+  }
 }
 
 class RealTimeTranslation {

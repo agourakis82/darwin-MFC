@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<systemic_analysis>
+  <overview>
+    <title>Critical Analysis Generator - Systemic Analysis Framework</title>
+    <description>
+      Framework para análise sistêmica de políticas de saúde no contexto brasileiro.
+    </description>
+  </overview>
+
+  <systemic_dimensions>
+    <dimension name="health_equity">
+      <title>Equidade em Saúde</title>
+      <description>Análise de como políticas afetam distribuição de saúde na população</description>
+      <questions>
+        <question>Quem se beneficia mais/menos dessa política?</question>
+        <question>Como a política interage com desigualdades existentes?</question>
+        <question>Há disparidades regionais, socioeconômicas ou raciais?</question>
+      </questions>
+      <indicators>
+        <indicator>Cobertura por quintil de renda</indicator>
+        <indicator>Acesso por região geográfica</indicator>
+        <indicator>Resultados por raça/etnia</indicator>
+      </indicators>
+    </dimension>
+
+    <dimension name="sustainability">
+      <title>Sustentabilidade do Sistema</title>
+      <description>Impacto de longo prazo nos recursos e funcionamento do sistema</description>
+      <questions>
+        <question>A política é financeiramente sustentável?</question>
+        <question>Quais são os custos de oportunidade?</question>
+        <question>Como a política se comportará com mudanças demográficas?</question>
+      </questions>
+      <indicators>
+        <indicator>Custo por QALY/DALY</indicator>
+        <indicator>Impacto orçamentário de médio/longo prazo</indicator>
+        <indicator>Capacidade instalada necessária</indicator>
+      </indicators>
+    </dimension>
+
+    <dimension name="quality">
+      <title>Qualidade do Cuidado</title>
+      <description>Impacto nos desfechos de saúde e experiência do paciente</description>
+      <questions>
+        <question>A política melhora desfechos clínicos?</question>
+        <question>Há riscos de sobrediagnóstico/sobretratamento?</question>
+        <question>Como afeta a experiência do paciente?</question>
+      </questions>
+      <indicators>
+        <indicator>Mortalidade específica</indicator>
+        <indicator>Qualidade de vida</indicator>
+        <indicator>Taxa de complicações</indicator>
+      </indicators>
+    </dimension>
+
+    <dimension name="integration">
+      <title>Integração do Sistema</title>
+      <description>Como a política se integra com outras políticas e níveis de atenção</description>
+      <questions>
+        <question>A política é coerente com outras políticas de saúde?</question>
+        <question>Como afeta a coordenação entre níveis de atenção?</question>
+        <question>Há fragmentação ou duplicação de esforços?</question>
+      </questions>
+      <indicators>
+        <indicator>Fluxo de referência/contrarreferência</indicator>
+        <indicator>Interoperabilidade de sistemas</indicator>
+        <indicator>Continuidade do cuidado</indicator>
+      </indicators>
+    </dimension>
+  </systemic_dimensions>
+
+  <stakeholder_analysis>
+    <description>Framework para análise de stakeholders</description>
+    <stakeholders>
+      <stakeholder name="pacientes">
+        <interests>Acesso, qualidade, conveniência, custo</interests>
+        <power>Voto, pressão social, demanda</power>
+        <considerations>Diversidade de necessidades, vulnerabilidades</considerations>
+      </stakeholder>
+      <stakeholder name="profissionais">
+        <interests>Condições de trabalho, remuneração, autonomia técnica</interests>
+        <power>Lobby, greves, opinião pública</power>
+        <considerations>Conflitos de interesse, formação</considerations>
+      </stakeholder>
+      <stakeholder name="gestores">
+        <interests>Eficiência, indicadores, sustentabilidade</interests>
+        <power>Alocação de recursos, regulação</power>
+        <considerations>Ciclo eleitoral, pressões orçamentárias</considerations>
+      </stakeholder>
+      <stakeholder name="industria">
+        <interests>Mercado, inovação, lucro</interests>
+        <power>Lobby, pesquisa, marketing</power>
+        <considerations>Conflitos de interesse, evidências enviesadas</considerations>
+      </stakeholder>
+      <stakeholder name="sociedades_medicas">
+        <interests>Qualidade técnica, autonomia profissional</interests>
+        <power>Opinião especializada, guidelines</power>
+        <considerations>Potencial viés para recomendações expansivas</considerations>
+      </stakeholder>
+    </stakeholders>
+  </stakeholder_analysis>
+
+  <brazilian_health_system>
+    <description>Especificidades do sistema de saúde brasileiro</description>
+
+    <sus_principles>
+      <principle name="universalidade">
+        <description>Acesso universal a todos os cidadãos</description>
+        <tension>Recursos finitos vs demanda infinita</tension>
+      </principle>
+      <principle name="integralidade">
+        <description>Atenção em todos os níveis de complexidade</description>
+        <tension>Priorização entre prevenção e tratamento</tension>
+      </principle>
+      <principle name="equidade">
+        <description>Tratar desigualmente os desiguais</description>
+        <tension>Focalização vs universalização</tension>
+      </principle>
+    </sus_principles>
+
+    <structural_characteristics>
+      <characteristic>Descentralização tripartite (União, Estados, Municípios)</characteristic>
+      <characteristic>Financiamento subótimo (~4% PIB público)</characteristic>
+      <characteristic>Transição epidemiológica (DCNTs + infecciosas)</characteristic>
+      <characteristic>Envelhecimento populacional acelerado</characteristic>
+      <characteristic>Sistema suplementar paralelo (~25% população)</characteristic>
+    </structural_characteristics>
+
+    <regional_disparities>
+      <region name="Norte">
+        <characteristics>Vazios assistenciais, distâncias, população ribeirinha</characteristics>
+        <challenges>Acesso, recursos humanos, infraestrutura</challenges>
+      </region>
+      <region name="Nordeste">
+        <characteristics>Pobreza, seca, migração, transição epidemiológica</characteristics>
+        <challenges>Financiamento, equipes incompletas</challenges>
+      </region>
+      <region name="Sul_Sudeste">
+        <characteristics>Maior renda, envelhecimento, urbanização</characteristics>
+        <challenges>Custos crescentes, superlotação</challenges>
+      </region>
+    </regional_disparities>
+  </brazilian_health_system>
+
+  <analysis_prompts>
+    <prompt name="equity_impact">
+      <![CDATA[
+Analisando a política de {topic}:
+1. Como ela afeta diferentes grupos socioeconômicos?
+2. Há disparidades regionais no acesso/resultados?
+3. A política reduz ou amplia desigualdades existentes?
+4. Que grupos vulneráveis podem ser deixados para trás?
+      ]]>
+    </prompt>
+
+    <prompt name="system_sustainability">
+      <![CDATA[
+Considerando a sustentabilidade do sistema:
+1. Qual o custo-efetividade da política?
+2. Como ela se comportará com o envelhecimento populacional?
+3. Há capacidade instalada para implementação?
+4. Quais os custos de oportunidade (o que deixará de ser feito)?
+      ]]>
+    </prompt>
+
+    <prompt name="unintended_consequences">
+      <![CDATA[
+Mapeando consequências não intencionadas:
+1. Que comportamentos a política pode incentivar?
+2. Há risco de efeitos perversos?
+3. Como diferentes stakeholders podem responder?
+4. Que adaptações/evasões podem ocorrer?
+      ]]>
+    </prompt>
+  </analysis_prompts>
+</systemic_analysis>
