@@ -16,6 +16,7 @@ import {
 import { api } from '../api/client';
 import { ENDPOINTS } from '../api/endpoints';
 import type { SyncOperation } from '../db/schemas';
+import { debugLog } from '../utils';
 
 // =============================================================================
 // TYPES
@@ -109,12 +110,12 @@ export const useSyncStore = create<SyncState & SyncActions>()((set, get) => ({
     const { isSyncing, isOnline } = get();
 
     if (isSyncing) {
-      console.log('[Sync] Already syncing');
+      debugLog.log('[Sync] Already syncing');
       return;
     }
 
     if (!isOnline) {
-      console.log('[Sync] Offline, cannot sync');
+      debugLog.log('[Sync] Offline, cannot sync');
       set({ lastError: 'Cannot sync while offline' });
       return;
     }
@@ -141,7 +142,7 @@ export const useSyncStore = create<SyncState & SyncActions>()((set, get) => ({
 
       for (const operation of pending) {
         if (syncAbortController.signal.aborted) {
-          console.log('[Sync] Sync cancelled');
+          debugLog.log('[Sync] Sync cancelled');
           break;
         }
 
@@ -180,7 +181,7 @@ export const useSyncStore = create<SyncState & SyncActions>()((set, get) => ({
       console.log(`[Sync] Completed: ${completed} success, ${failed} failed`);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unknown error';
-      console.error('[Sync] Sync failed:', message);
+      debugLog.error('[Sync] Sync failed:', message);
       set({
         isSyncing: false,
         lastError: message,
@@ -212,7 +213,7 @@ export const useSyncStore = create<SyncState & SyncActions>()((set, get) => ({
         failedCount: failed.length,
       });
     } catch (error) {
-      console.error('[Sync] Failed to refresh queue count:', error);
+      debugLog.error('[Sync] Failed to refresh queue count:', error);
     }
   },
 
@@ -227,7 +228,7 @@ export const useSyncStore = create<SyncState & SyncActions>()((set, get) => ({
 
       await get().refreshQueueCount();
     } catch (error) {
-      console.error('[Sync] Failed to clear failed queue:', error);
+      debugLog.error('[Sync] Failed to clear failed queue:', error);
     }
   },
 
@@ -253,7 +254,7 @@ export const useSyncStore = create<SyncState & SyncActions>()((set, get) => ({
       // Start sync
       await get().startSync();
     } catch (error) {
-      console.error('[Sync] Failed to retry failed operations:', error);
+      debugLog.error('[Sync] Failed to retry failed operations:', error);
     }
   },
 
@@ -302,7 +303,7 @@ export const useSyncStore = create<SyncState & SyncActions>()((set, get) => ({
         conflicts: state.conflicts.filter((c) => c.id !== conflictId),
       }));
     } catch (error) {
-      console.error('[Sync] Failed to resolve conflict:', error);
+      debugLog.error('[Sync] Failed to resolve conflict:', error);
       throw error;
     }
   },
@@ -324,7 +325,7 @@ export const useSyncStore = create<SyncState & SyncActions>()((set, get) => ({
 
     // Auto-sync when coming back online
     if (isOnline && wasOffline) {
-      console.log('[Sync] Back online, starting sync');
+      debugLog.log('[Sync] Back online, starting sync');
       get().startSync();
     }
   },

@@ -4,9 +4,11 @@ import { useState, useMemo } from 'react';
 import { Link } from '@/i18n/routing';
 import { usePathname } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
+import { cn } from '@/lib/utils';
 import {
   ChevronDown,
   ChevronRight,
+  ChevronLeft,
   Home,
   Baby,
   Users,
@@ -30,7 +32,9 @@ import {
   AlertTriangle,
   Printer,
   Search,
-  Keyboard
+  Keyboard,
+  PanelLeftClose,
+  PanelLeft
 } from 'lucide-react';
 import { getRastreamentosByCategory } from '@/lib/data/rastreamentos';
 
@@ -59,10 +63,16 @@ function getSubsectionsForCategory(category: string, path: string) {
   }));
 }
 
-export default function Sidebar() {
+interface SidebarProps {
+  /** Start in collapsed state (tablet mode) */
+  defaultCollapsed?: boolean;
+}
+
+export default function Sidebar({ defaultCollapsed = false }: SidebarProps) {
   const t = useTranslations();
   const pathname = usePathname();
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set([pathname?.split('#')[0] || '/']));
+  const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed);
 
   const navigationGroups: NavGroup[] = useMemo(() => [
     {
@@ -250,59 +260,126 @@ export default function Sidebar() {
     );
   };
 
+  // Render collapsed sidebar with icons only
+  const renderCollapsedSection = (section: NavSection) => {
+    const Icon = section.icon;
+    const isActive = pathname === section.path;
+
+    return (
+      <div key={section.title} className="relative group">
+        <Link
+          href={section.path || '#'}
+          className={cn(
+            'flex items-center justify-center w-10 h-10 rounded-xl transition-all',
+            isActive
+              ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20'
+              : 'text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800/80'
+          )}
+          aria-current={isActive ? 'page' : undefined}
+          title={section.title}
+        >
+          <Icon className="w-5 h-5" aria-hidden="true" />
+          {section.badge && (
+            <span className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-500 rounded-full" />
+          )}
+        </Link>
+        {/* Tooltip */}
+        <div className="absolute left-full ml-2 px-2 py-1 bg-neutral-900 dark:bg-neutral-700 text-white text-xs rounded-md whitespace-nowrap opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+          {section.title}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <aside
-      className="w-72 lg:w-80 glass border-r border-neutral-200/80 dark:border-neutral-700/50 h-screen sticky top-0 overflow-y-auto shadow-sm"
+      className={cn(
+        'glass border-r border-neutral-200/80 dark:border-neutral-700/50 h-screen sticky top-0 overflow-y-auto shadow-sm transition-all duration-300',
+        isCollapsed ? 'w-16' : 'w-72 lg:w-80'
+      )}
       role="complementary"
       aria-label="Sidebar navigation"
     >
-      <div className="p-6">
-        {/* Sidebar Header */}
-        <div className="mb-6 pb-4 border-b border-neutral-200 dark:border-neutral-700">
-          <h2 className="text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-1">
-            {t('common.appName')}
-          </h2>
-          <p className="text-xs text-neutral-600 dark:text-neutral-400">
-            {t('common.appDescription')}
-          </p>
+      {/* Collapsed View */}
+      {isCollapsed ? (
+        <div className="p-3 flex flex-col items-center">
+          {/* Expand Button */}
+          <button
+            onClick={() => setIsCollapsed(false)}
+            className="w-10 h-10 flex items-center justify-center rounded-xl text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors mb-4"
+            aria-label="Expand sidebar"
+          >
+            <PanelLeft className="w-5 h-5" />
+          </button>
+
+          {/* Collapsed Navigation */}
+          <nav className="space-y-2" role="navigation" aria-label="Clinical guide navigation">
+            {navigationGroups.flatMap((group) =>
+              group.sections.map(renderCollapsedSection)
+            )}
+          </nav>
         </div>
-
-        <nav className="space-y-6" role="navigation" aria-label="Clinical guide navigation">
-          {navigationGroups.map((group) => (
-            <div key={group.title}>
-              <h3 className="text-xs font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-wider mb-2 px-4">
-                {group.title}
-              </h3>
-              <div className="space-y-1">
-                {group.sections.map(renderSection)}
-              </div>
-            </div>
-          ))}
-        </nav>
-
-        {/* Footer - Professional Medical Style */}
-        <div className="mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-700">
-          <div className="px-4 py-3 bg-neutral-50 dark:bg-neutral-800/50 rounded-xl">
-            <div className="flex items-start gap-3 mb-3">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                <BookOpen className="w-4 h-4 text-white" />
-              </div>
+      ) : (
+        /* Expanded View */
+        <div className="p-6">
+          {/* Sidebar Header with Collapse Button */}
+          <div className="mb-6 pb-4 border-b border-neutral-200 dark:border-neutral-700">
+            <div className="flex items-start justify-between">
               <div>
-                <p className="text-xs font-bold text-neutral-900 dark:text-neutral-100 mb-1">
-                  {t('sidebar.q1Standard')}
-                </p>
-                <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  {t('sidebar.q1Description')}
+                <h2 className="text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-1">
+                  {t('common.appName')}
+                </h2>
+                <p className="text-xs text-neutral-600 dark:text-neutral-400">
+                  {t('common.appDescription')}
                 </p>
               </div>
+              <button
+                onClick={() => setIsCollapsed(true)}
+                className="p-1.5 rounded-lg text-neutral-500 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors hidden md:flex lg:hidden"
+                aria-label="Collapse sidebar"
+              >
+                <PanelLeftClose className="w-4 h-4" />
+              </button>
             </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-              <span>{t('sidebar.lastUpdate')}</span>
+          </div>
+
+          <nav className="space-y-6" role="navigation" aria-label="Clinical guide navigation">
+            {navigationGroups.map((group) => (
+              <div key={group.title}>
+                <h3 className="text-xs font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-wider mb-2 px-4">
+                  {group.title}
+                </h3>
+                <div className="space-y-1">
+                  {group.sections.map(renderSection)}
+                </div>
+              </div>
+            ))}
+          </nav>
+
+          {/* Footer - Professional Medical Style */}
+          <div className="mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-700">
+            <div className="px-4 py-3 bg-neutral-50 dark:bg-neutral-800/50 rounded-xl">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <BookOpen className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-neutral-900 dark:text-neutral-100 mb-1">
+                    {t('sidebar.q1Standard')}
+                  </p>
+                  <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                    {t('sidebar.q1Description')}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                <span>{t('sidebar.lastUpdate')}</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </aside>
   );
 }

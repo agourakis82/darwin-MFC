@@ -376,7 +376,7 @@ export default async function RootLayout({
           <div className="min-h-screen flex flex-col">
             <Header />
             <div className="flex flex-1">
-              <div className="hidden lg:block">
+              <div className="hidden md:block">
                 <Sidebar />
               </div>
               <main id="main-content" className="flex-1 overflow-x-hidden" role="main" aria-label="Conteúdo principal">

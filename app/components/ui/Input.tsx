@@ -48,7 +48,9 @@ const baseInputStyles = `
   text-[#1d1d1f] dark:text-[#f5f5f7]
   placeholder:text-[#86868b]
   transition-all duration-200
-  disabled:opacity-50 disabled:cursor-not-allowed
+  disabled:opacity-60 disabled:cursor-not-allowed
+  disabled:bg-gray-100 dark:disabled:bg-white/5
+  disabled:text-gray-500 dark:disabled:text-gray-400
 `;
 
 const variantStyles: Record<InputVariant, string> = {
