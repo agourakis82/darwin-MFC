@@ -90,6 +90,34 @@ const hoverStyles = {
 // CARD COMPONENT
 // =============================================================================
 
+/**
+ * @description A flexible card container component with multiple visual variants and interaction states.
+ * Supports glass morphism, premium gradients, and optional Framer Motion animations.
+ *
+ * @param props - The card properties
+ * @param props.variant - Visual style: 'base' | 'premium' | 'interactive' | 'glass' | 'bordered'. Defaults to 'base'.
+ * @param props.padding - Internal padding: 'none' | 'sm' | 'md' | 'lg'. Defaults to 'md'.
+ * @param props.hoverable - Enables hover effects without making the card clickable. Defaults to false.
+ * @param props.clickable - Makes the card appear interactive with cursor and hover effects. Defaults to false.
+ * @param props.animate - Enables Framer Motion entrance and hover animations. Defaults to false.
+ * @param props.className - Additional CSS classes to apply.
+ * @param props.children - Card content, typically CardHeader, CardBody, and CardFooter components.
+ *
+ * @example
+ * // Basic card with header and body
+ * <Card>
+ *   <CardHeader title="Card Title" subtitle="Optional subtitle" />
+ *   <CardBody>Card content goes here</CardBody>
+ * </Card>
+ *
+ * @example
+ * // Interactive glass card with animation
+ * <Card variant="glass" clickable animate>
+ *   <CardBody>Click me!</CardBody>
+ * </Card>
+ *
+ * @returns {JSX.Element} A styled card container element
+ */
 export const Card = forwardRef<HTMLDivElement, CardProps>(
   (
     {
@@ -145,6 +173,35 @@ Card.displayName = 'Card';
 // CARD HEADER
 // =============================================================================
 
+/**
+ * @description Header section for Card components with built-in title, subtitle, icon, and action support.
+ * Can also accept custom children for full layout control.
+ *
+ * @param props - The card header properties
+ * @param props.title - Main title text or element displayed prominently.
+ * @param props.subtitle - Secondary text displayed below the title in muted color.
+ * @param props.action - Element (typically a button) displayed on the right side.
+ * @param props.icon - Icon element displayed in a styled container on the left.
+ * @param props.children - Custom content that replaces the default title/subtitle layout.
+ * @param props.className - Additional CSS classes to apply.
+ *
+ * @example
+ * // Header with title, subtitle, and action button
+ * <CardHeader
+ *   title="Patient Information"
+ *   subtitle="Last updated: Today"
+ *   action={<Button size="sm">Edit</Button>}
+ * />
+ *
+ * @example
+ * // Header with icon
+ * <CardHeader
+ *   icon={<HeartIcon />}
+ *   title="Cardiovascular"
+ * />
+ *
+ * @returns {JSX.Element} A styled header section for cards
+ */
 export const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>(
   ({ title, subtitle, action, icon, className, children, ...props }, ref) => {
     if (children) {
@@ -194,6 +251,20 @@ CardHeader.displayName = 'CardHeader';
 // CARD BODY
 // =============================================================================
 
+/**
+ * @description Main content area for Card components with appropriate text styling.
+ *
+ * @param props - The card body properties
+ * @param props.children - Content to display in the card body.
+ * @param props.className - Additional CSS classes to apply.
+ *
+ * @example
+ * <CardBody>
+ *   <p>This is the main content of the card.</p>
+ * </CardBody>
+ *
+ * @returns {JSX.Element} A styled content container for cards
+ */
 export const CardBody = forwardRef<HTMLDivElement, CardBodyProps>(
   ({ className, children, ...props }, ref) => {
     return (
@@ -214,6 +285,31 @@ CardBody.displayName = 'CardBody';
 // CARD FOOTER
 // =============================================================================
 
+/**
+ * @description Footer section for Card components with flexible content alignment.
+ * Includes a top border separator from the card body.
+ *
+ * @param props - The card footer properties
+ * @param props.justify - Horizontal alignment of footer content: 'start' | 'center' | 'end' | 'between'. Defaults to 'end'.
+ * @param props.children - Footer content, typically action buttons.
+ * @param props.className - Additional CSS classes to apply.
+ *
+ * @example
+ * // Footer with right-aligned buttons (default)
+ * <CardFooter>
+ *   <Button variant="ghost">Cancel</Button>
+ *   <Button>Save</Button>
+ * </CardFooter>
+ *
+ * @example
+ * // Footer with space-between alignment
+ * <CardFooter justify="between">
+ *   <span>Step 1 of 3</span>
+ *   <Button>Next</Button>
+ * </CardFooter>
+ *
+ * @returns {JSX.Element} A styled footer section for cards
+ */
 export const CardFooter = forwardRef<HTMLDivElement, CardFooterProps>(
   ({ justify = 'end', className, children, ...props }, ref) => {
     const justifyStyles = {
@@ -250,6 +346,26 @@ export interface CardGridProps extends HTMLAttributes<HTMLDivElement> {
   gap?: 'sm' | 'md' | 'lg';
 }
 
+/**
+ * @description A responsive grid layout component for arranging Card components.
+ * Automatically adjusts columns based on viewport size.
+ *
+ * @param props - The card grid properties
+ * @param props.columns - Maximum number of columns at largest breakpoint: 1 | 2 | 3 | 4. Defaults to 3.
+ * @param props.gap - Spacing between grid items: 'sm' | 'md' | 'lg'. Defaults to 'md'.
+ * @param props.children - Card components to arrange in the grid.
+ * @param props.className - Additional CSS classes to apply.
+ *
+ * @example
+ * // 3-column grid of cards
+ * <CardGrid columns={3} gap="md">
+ *   <Card>Card 1</Card>
+ *   <Card>Card 2</Card>
+ *   <Card>Card 3</Card>
+ * </CardGrid>
+ *
+ * @returns {JSX.Element} A responsive grid container for cards
+ */
 export function CardGrid({
   columns = 3,
   gap = 'md',

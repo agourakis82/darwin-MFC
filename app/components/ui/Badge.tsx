@@ -86,6 +86,39 @@ const sizeStyles: Record<BadgeSize, string> = {
 // BADGE COMPONENT
 // =============================================================================
 
+/**
+ * @description A versatile badge/tag component for displaying labels, statuses, and categories.
+ * Supports multiple color variants, sizes, icons, dot indicators, and removable functionality.
+ *
+ * @param props - The badge properties
+ * @param props.variant - Color variant: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'outline'. Defaults to 'default'.
+ * @param props.size - Badge size: 'sm' | 'md' | 'lg'. Defaults to 'md'.
+ * @param props.icon - Icon element to display before the badge text.
+ * @param props.removable - Shows a remove button on the right side. Defaults to false.
+ * @param props.onRemove - Callback function when the remove button is clicked.
+ * @param props.dot - Shows a small dot indicator before the text. Defaults to false.
+ * @param props.pulse - Animates the dot indicator with a pulsing effect. Defaults to false.
+ * @param props.children - Badge text content.
+ * @param props.className - Additional CSS classes to apply.
+ *
+ * @example
+ * // Simple status badge
+ * <Badge variant="success">Active</Badge>
+ *
+ * @example
+ * // Badge with pulsing dot indicator
+ * <Badge variant="warning" dot pulse>
+ *   Processing
+ * </Badge>
+ *
+ * @example
+ * // Removable tag badge
+ * <Badge removable onRemove={() => handleRemove()}>
+ *   Tag Name
+ * </Badge>
+ *
+ * @returns {JSX.Element} A styled badge element
+ */
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
   (
     {
@@ -158,6 +191,25 @@ const statusConfig: Record<StatusType, { variant: BadgeVariant; label: string; p
   pending: { variant: 'warning', label: 'Pending', pulse: true },
 };
 
+/**
+ * @description A specialized badge for displaying online/offline and activity statuses.
+ * Automatically applies appropriate colors and pulsing animations based on status type.
+ *
+ * @param props - The status badge properties
+ * @param props.status - Status type: 'online' | 'offline' | 'busy' | 'away' | 'active' | 'inactive' | 'pending'.
+ * @param props.showLabel - Whether to display the status text label. Defaults to true.
+ * @param props.size - Badge size. Defaults to 'sm'.
+ *
+ * @example
+ * // Online status with label
+ * <StatusBadge status="online" />
+ *
+ * @example
+ * // Dot-only offline indicator
+ * <StatusBadge status="offline" showLabel={false} />
+ *
+ * @returns {JSX.Element} A status indicator badge with dot and optional label
+ */
 export function StatusBadge({ status, showLabel = true, size = 'sm', ...props }: StatusBadgeProps) {
   const config = statusConfig[status];
 
@@ -223,6 +275,24 @@ const categoryLabels: Record<CategoryType, string> = {
   other: 'Other',
 };
 
+/**
+ * @description A specialized badge for medical/health categories with built-in emoji icons.
+ * Automatically applies appropriate colors and icons based on the category type.
+ *
+ * @param props - The category badge properties
+ * @param props.category - Medical category: 'cardiovascular' | 'respiratory' | 'neurological' | 'gastrointestinal' | 'endocrine' | 'infectious' | 'mental_health' | 'musculoskeletal' | 'dermatological' | 'pediatric' | 'geriatric' | 'oncology' | 'other'.
+ * @param props.children - Optional custom label text. If not provided, uses the category's default label.
+ *
+ * @example
+ * // Cardiovascular category badge
+ * <CategoryBadge category="cardiovascular" />
+ *
+ * @example
+ * // Custom label for pediatric category
+ * <CategoryBadge category="pediatric">Child Health</CategoryBadge>
+ *
+ * @returns {JSX.Element} A category badge with emoji icon and label
+ */
 export function CategoryBadge({ category, children, ...props }: CategoryBadgeProps) {
   const config = categoryConfig[category];
   const label = children || categoryLabels[category];
@@ -254,6 +324,25 @@ const evidenceConfig: Record<EvidenceLevel, { variant: BadgeVariant; label: stri
   GPP: { variant: 'info', label: 'GPP', description: 'Good practice point' },
 };
 
+/**
+ * @description A specialized badge for displaying GRADE evidence levels in academic/medical contexts.
+ * Automatically applies appropriate colors based on evidence strength.
+ *
+ * @param props - The evidence badge properties
+ * @param props.level - Evidence level: 'A' (strong) | 'B' (moderate) | 'C' (weak) | 'D' (expert opinion) | 'GPP' (good practice point).
+ * @param props.showDescription - Whether to display the evidence description alongside the level. Defaults to false.
+ * @param props.size - Badge size. Defaults to 'sm'.
+ *
+ * @example
+ * // Level A evidence badge
+ * <EvidenceBadge level="A" />
+ *
+ * @example
+ * // Evidence badge with description
+ * <EvidenceBadge level="B" showDescription />
+ *
+ * @returns {JSX.Element} An evidence level badge with optional description
+ */
 export function EvidenceBadge({ level, showDescription = false, size = 'sm', ...props }: EvidenceBadgeProps) {
   const config = evidenceConfig[level];
 
@@ -274,6 +363,29 @@ export interface BadgeGroupProps extends HTMLAttributes<HTMLDivElement> {
   size?: BadgeSize;
 }
 
+/**
+ * @description A container component for grouping multiple badges with optional truncation.
+ * Shows a "+N" badge when the number of badges exceeds the specified maximum.
+ *
+ * @param props - The badge group properties
+ * @param props.max - Maximum number of badges to display before truncating. Remaining count shown as "+N".
+ * @param props.size - Size applied to the overflow "+N" badge. Defaults to 'sm'.
+ * @param props.children - Badge elements to display in the group.
+ * @param props.className - Additional CSS classes to apply.
+ *
+ * @example
+ * // Badge group with truncation
+ * <BadgeGroup max={3}>
+ *   <Badge>Tag 1</Badge>
+ *   <Badge>Tag 2</Badge>
+ *   <Badge>Tag 3</Badge>
+ *   <Badge>Tag 4</Badge>
+ *   <Badge>Tag 5</Badge>
+ * </BadgeGroup>
+ * // Renders: Tag 1, Tag 2, Tag 3, +2
+ *
+ * @returns {JSX.Element} A flex container with grouped badges and optional overflow indicator
+ */
 export function BadgeGroup({ max, size = 'sm', className, children, ...props }: BadgeGroupProps) {
   const items = Array.isArray(children) ? children : [children];
   const visibleItems = max ? items.slice(0, max) : items;

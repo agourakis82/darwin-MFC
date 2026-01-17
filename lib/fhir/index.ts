@@ -156,6 +156,31 @@ export {
 } from './importer';
 
 // ============================================================================
+// BUNDLE BUILDER (Class-based API)
+// ============================================================================
+
+export {
+  // Main class
+  FHIRBundleBuilder,
+
+  // Types
+  type SupportedBundleType,
+  type FHIRBundleType,
+  type BundleEntry,
+  type ValidationResult,
+  type ValidationError,
+  type ValidationWarning,
+  type BundleCreateOptions,
+  type AddEntryOptions,
+
+  // Factory functions
+  createDocumentBundle,
+  createCollectionBundle,
+  createTransactionBundle as createTransactionBundleBuilder,
+  fromJSON as createBundleFromJSON,
+} from './bundle';
+
+// ============================================================================
 // CONSTANTS
 // ============================================================================
 

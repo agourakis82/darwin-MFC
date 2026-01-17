@@ -192,16 +192,22 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
     const computedAriaLabel = ariaLabel || (typeof title === 'string' ? undefined : 'Dialog');
 
     return createPortal(
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+              transition={{ duration: 0.15 }}
+              className="absolute inset-0 z-0 bg-black/50 backdrop-blur-sm"
               onClick={closeOnOverlayClick ? onClose : undefined}
               aria-hidden="true"
             />
@@ -212,9 +218,9 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
               initial={{ opacity: 0, scale: 0.95, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300, duration: 0.2 }}
               className={cn(
-                'relative w-full',
+                'relative z-10 w-full',
                 sizeStyles[size],
                 'bg-white dark:bg-[#1c1c1e]',
                 'rounded-2xl shadow-2xl',
@@ -267,7 +273,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
                 </div>
               )}
             </motion.div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>,
       document.body
@@ -336,16 +342,22 @@ export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
     if (typeof window === 'undefined') return null;
 
     return createPortal(
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isOpen && (
-          <div className="fixed inset-0 z-50">
+          <motion.div
+            className="fixed inset-0 z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+              transition={{ duration: 0.15 }}
+              className="absolute inset-0 z-0 bg-black/50 backdrop-blur-sm"
               onClick={closeOnOverlayClick ? onClose : undefined}
               aria-hidden="true"
             />
@@ -356,9 +368,9 @@ export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
               initial={{ opacity: 0, ...getInitialPosition() }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               exit={{ opacity: 0, ...getInitialPosition() }}
-              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+              transition={{ type: 'spring', damping: 30, stiffness: 300, duration: 0.2 }}
               className={cn(
-                'absolute',
+                'absolute z-10',
                 drawerPositionStyles[position],
                 drawerSizeStyles[position][size],
                 'bg-white dark:bg-[#1c1c1e]',
@@ -404,7 +416,7 @@ export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
                 </div>
               )}
             </motion.div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>,
       document.body

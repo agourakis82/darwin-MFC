@@ -9,6 +9,10 @@ export interface Recommendations {
     method: string;
     periodicity: string;
     justification: string;
+    /**
+     * Current screening coverage percentage or rate in Brazil.
+     * When omitted, coverage data is not available or not applicable for this screening.
+     */
     coverage?: string;
     citations: Citation[]; // Citações para cada campo se necessário, ou global
   };
@@ -20,6 +24,10 @@ export interface Recommendations {
     recommendation: string;
     citations: Citation[];
   };
+  /**
+   * India National Programme for Prevention and Control of Non-Communicable Diseases (NP-NCD) guidelines.
+   * When omitted, no specific Indian guidelines are available for this screening.
+   */
   india?: {
     organization: string[]; // Ex: ["NP-NCD", "MoHFW"]
     population: string;
@@ -42,12 +50,28 @@ export interface Rastreamento {
   description: string; // Introdução/Resumo
   recommendations: Recommendations;
   epidemiology: {
+    /**
+     * Incidence rate of the condition being screened.
+     * When omitted, incidence data is not available or not the primary epidemiological metric.
+     */
     incidence?: string;
+    /**
+     * Mortality rate or death statistics related to the condition.
+     * When omitted, mortality data is not available or not applicable.
+     */
     mortality?: string;
+    /**
+     * Prevalence of the condition in the target population.
+     * When omitted, prevalence data is not available or not the primary epidemiological metric.
+     */
     prevalence?: string;
     citations: Citation[];
   };
   lastUpdate: string; // Data da última atualização da diretriz SUS (ex: "2025-11")
-  ontologies?: ScreeningOntologyMapping; // Mapeamento de ontologias médicas (ICD-10, LOINC, SNOMED-CT, etc.)
+  /**
+   * Medical ontology mappings (ICD-10, LOINC, SNOMED-CT, etc.) for interoperability.
+   * When omitted, ontology mappings have not been assigned to this screening.
+   */
+  ontologies?: ScreeningOntologyMapping;
 }
 

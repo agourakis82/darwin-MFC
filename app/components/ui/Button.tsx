@@ -94,6 +94,42 @@ const sizeStyles: Record<ButtonSize, string> = {
 // COMPONENT
 // =============================================================================
 
+/**
+ * @description A versatile button component with multiple variants, sizes, and animation support.
+ * Supports loading states, icons, and full-width layouts. Uses Framer Motion for smooth animations.
+ *
+ * @param props - The button properties
+ * @param props.variant - Visual style variant: 'primary' | 'secondary' | 'ghost' | 'danger' | 'success' | 'outline'. Defaults to 'primary'.
+ * @param props.size - Button size: 'sm' | 'md' | 'lg' | 'icon'. Defaults to 'md'.
+ * @param props.isLoading - Shows a loading spinner and disables the button. Defaults to false.
+ * @param props.isDisabled - Disables the button. Defaults to false.
+ * @param props.leftIcon - Icon element to display on the left side of the button text.
+ * @param props.rightIcon - Icon element to display on the right side of the button text.
+ * @param props.children - Button content/label.
+ * @param props.fullWidth - Makes the button take full width of its container. Defaults to false.
+ * @param props.animate - Enables Framer Motion hover/tap animations. Defaults to true.
+ * @param props.className - Additional CSS classes to apply.
+ *
+ * @example
+ * // Primary button with loading state
+ * <Button variant="primary" isLoading>
+ *   Saving...
+ * </Button>
+ *
+ * @example
+ * // Danger button with left icon
+ * <Button variant="danger" leftIcon={<TrashIcon />}>
+ *   Delete
+ * </Button>
+ *
+ * @example
+ * // Full-width secondary button
+ * <Button variant="secondary" fullWidth>
+ *   Cancel
+ * </Button>
+ *
+ * @returns {JSX.Element} A styled button element with optional animations
+ */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -176,6 +212,25 @@ export interface ButtonGroupProps {
   className?: string;
 }
 
+/**
+ * @description A container component for grouping multiple buttons together.
+ * Supports attached mode where buttons visually connect without gaps.
+ *
+ * @param props - The button group properties
+ * @param props.children - Button elements to group together.
+ * @param props.attached - When true, buttons are visually connected. Defaults to false.
+ * @param props.className - Additional CSS classes to apply.
+ *
+ * @example
+ * // Attached button group for segmented control
+ * <ButtonGroup attached>
+ *   <Button variant="secondary">Left</Button>
+ *   <Button variant="secondary">Middle</Button>
+ *   <Button variant="secondary">Right</Button>
+ * </ButtonGroup>
+ *
+ * @returns {JSX.Element} A flex container with grouped buttons
+ */
 export function ButtonGroup({ children, attached = false, className }: ButtonGroupProps) {
   return (
     <div
@@ -200,6 +255,26 @@ export interface IconButtonProps extends Omit<ButtonProps, 'leftIcon' | 'rightIc
   'aria-label': string;
 }
 
+/**
+ * @description A button component designed specifically for icon-only actions.
+ * Requires an aria-label for accessibility.
+ *
+ * @param props - The icon button properties
+ * @param props.icon - The icon element to display.
+ * @param props.aria-label - Required accessibility label describing the button action.
+ * @param props.size - Button size, defaults to 'icon' for square proportions.
+ * @param props.variant - Visual style variant inherited from Button.
+ *
+ * @example
+ * // Icon button for settings
+ * <IconButton
+ *   icon={<SettingsIcon />}
+ *   aria-label="Open settings"
+ *   variant="ghost"
+ * />
+ *
+ * @returns {JSX.Element} A square button containing only an icon
+ */
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ icon, size = 'icon', ...props }, ref) => {
     return (
