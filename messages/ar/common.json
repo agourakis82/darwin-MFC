@@ -199,6 +199,321 @@
       "calculators": "الآلات الحاسبة"
     }
   },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "username": "اسم المستخدم",
+    "username_placeholder": "أدخل اسم المستخدم",
+    "username_hint": "3 أحرف على الأقل، حروف وأرقام وشرطات سفلية فقط",
+    "email": "البريد الإلكتروني",
+    "email_placeholder": "your@email.com",
+    "email_hint": "اختياري. يُستخدم لاستعادة كلمة المرور.",
+    "password": "كلمة المرور",
+    "password_placeholder": "أدخل كلمة المرور",
+    "confirm_password": "تأكيد كلمة المرور",
+    "confirm_password_placeholder": "أكد كلمة المرور",
+    "language": "اللغة المفضلة",
+    "optional": "اختياري",
+    "forgot_password": "نسيت كلمة المرور؟",
+    "create_account": "إنشاء حساب",
+    "already_have_account": "لديك حساب بالفعل؟",
+    "logging_in": "جارٍ تسجيل الدخول...",
+    "creating_account": "جارٍ إنشاء الحساب...",
+    "terms_agreement": "أوافق على",
+    "terms_link": "شروط الخدمة",
+    "and": "و",
+    "privacy_link": "سياسة الخصوصية",
+    "password_weak": "ضعيفة",
+    "password_fair": "مقبولة",
+    "password_good": "جيدة",
+    "password_strong": "قوية",
+    "password_excellent": "ممتازة",
+    "errors": {
+      "username_required": "اسم المستخدم مطلوب",
+      "username_min_length": "يجب أن يكون اسم المستخدم 3 أحرف على الأقل",
+      "username_invalid": "يمكن أن يحتوي اسم المستخدم على حروف وأرقام وشرطات سفلية فقط",
+      "password_required": "كلمة المرور مطلوبة",
+      "password_min_length": "يجب أن تكون كلمة المرور 8 أحرف على الأقل",
+      "password_mismatch": "كلمات المرور غير متطابقة",
+      "email_invalid": "عنوان بريد إلكتروني غير صالح",
+      "terms_required": "يجب الموافقة على الشروط والأحكام"
+    },
+    "offline": {
+      "title": "أنت غير متصل",
+      "login_message": "تحتاج إلى اتصال بالإنترنت لتسجيل الدخول.",
+      "register_message": "تحتاج إلى اتصال بالإنترنت للتسجيل.",
+      "info_title": "يعمل بدون اتصال!",
+      "info_description": "بمجرد تسجيل الدخول، يمكنك استخدام التطبيق بدون اتصال لمدة تصل إلى 7 أيام.",
+      "valid_for": "صالح بدون اتصال لـ {days} أيام أخرى"
+    },
+    "menu": {
+      "progress": "تقدمي",
+      "certificates": "الشهادات",
+      "favorites": "المفضلة",
+      "settings": "الإعدادات"
+    }
+  },
+  "profile": {
+    "title": "ملفي الشخصي",
+    "edit_profile": "تعديل الملف الشخصي",
+    "mentor_badge": "مُرشد",
+    "member_since": "عضو منذ {date}",
+    "offline_valid": "صالح بدون اتصال لـ {days} أيام أخرى",
+    "username": "اسم المستخدم",
+    "username_cannot_change": "لا يمكن تغيير اسم المستخدم",
+    "email": "البريد الإلكتروني",
+    "email_placeholder": "your@email.com",
+    "language": "اللغة",
+    "country": "البلد",
+    "country_placeholder": "مثال: SA، EG، AE",
+    "specialization": "التخصص",
+    "specialization_placeholder": "مثال: طب الأسرة",
+    "bio": "نبذة",
+    "bio_placeholder": "أخبرنا عن نفسك...",
+    "optional": "اختياري",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "saving": "جارٍ الحفظ...",
+    "profile_updated": "تم تحديث الملف الشخصي بنجاح!",
+    "errors": {
+      "email_invalid": "عنوان بريد إلكتروني غير صالح",
+      "bio_too_long": "يجب أن تكون النبذة 500 حرف أو أقل"
+    },
+    "stats": {
+      "courses": "الدورات",
+      "certificates": "الشهادات",
+      "favorites": "المفضلة"
+    }
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "appearance": {
+      "title": "المظهر",
+      "theme": "السمة",
+      "dark": "الوضع الداكن",
+      "light": "الوضع الفاتح",
+      "toggle": "تبديل"
+    },
+    "notifications": {
+      "title": "الإشعارات",
+      "email": "إشعارات البريد الإلكتروني",
+      "email_desc": "تلقي التحديثات عبر البريد الإلكتروني",
+      "push": "الإشعارات الفورية",
+      "push_desc": "تلقي الإشعارات الفورية",
+      "reminders": "تذكيرات التقدم",
+      "reminders_desc": "الحصول على تذكيرات حول الدورات غير المكتملة",
+      "community": "تحديثات المجتمع",
+      "community_desc": "تحديثات من المنتدى والإرشاد"
+    },
+    "privacy": {
+      "title": "الخصوصية",
+      "show_profile": "الملف الشخصي العام",
+      "show_profile_desc": "السماح للآخرين برؤية ملفك الشخصي",
+      "show_progress": "إظهار التقدم",
+      "show_progress_desc": "عرض تقدمك التعليمي علنياً",
+      "show_activity": "إظهار النشاط",
+      "show_activity_desc": "إظهار نشاطك في المنتدى والمجتمع"
+    },
+    "data": {
+      "title": "البيانات والحساب",
+      "export": "تصدير بياناتي",
+      "export_desc": "تنزيل جميع بياناتك بصيغة JSON",
+      "logout": "تسجيل الخروج",
+      "logout_desc": "الخروج من حسابك",
+      "delete": "حذف الحساب",
+      "delete_desc": "حذف حسابك وبياناتك نهائياً"
+    },
+    "delete_confirm": {
+      "title": "حذف الحساب؟",
+      "subtitle": "لا يمكن التراجع عن هذا الإجراء",
+      "message": "سيتم حذف جميع بياناتك، بما في ذلك التقدم والشهادات والمفضلة والملاحظات نهائياً.",
+      "confirm": "حذف الحساب"
+    },
+    "cancel": "إلغاء",
+    "deleting": "جارٍ الحذف..."
+  },
+  "community": {
+    "title": "المجتمع",
+    "subtitle": "تواصل وتعلم وشارك مع المهنيين الصحيين حول العالم",
+    "forums": "منتديات النقاش",
+    "forums_desc": "انضم إلى النقاشات السريرية واحصل على نصائح الزملاء",
+    "cases": {
+      "title": "الحالات السريرية",
+      "subtitle": "شارك وناقش عروض المرضى المجهولة الهوية",
+      "submit_case": "إرسال حالة",
+      "submitting": "جارٍ الإرسال...",
+      "step1_title": "المعلومات الأساسية",
+      "step1_desc": "قدم البيانات الديموغرافية المجهولة ونوع الحالة",
+      "step2_title": "المحتوى السريري",
+      "step2_desc": "صف العرض السريري (سيتم الكشف عن أي معلومات شخصية)",
+      "step3_title": "المراجعة والإرسال",
+      "step3_desc": "تحقق من إخفاء الهوية وأرسل للمراجعة",
+      "field_title": "عنوان الحالة",
+      "placeholder_title": "عنوان وصفي بدون معلومات تعريفية",
+      "field_age_range": "الفئة العمرية",
+      "field_sex": "الجنس",
+      "field_occupation": "المهنة (عامة)",
+      "placeholder_occupation": "مثال: موظف مكتب، عمل يدوي",
+      "field_case_type": "نوع الحالة",
+      "field_difficulty": "مستوى الصعوبة",
+      "field_presentation": "الشكوى الرئيسية / العرض",
+      "placeholder_presentation": "صف شكاوى المريض الرئيسية والعرض...",
+      "field_history": "التاريخ ذو الصلة",
+      "placeholder_history": "التاريخ الطبي السابق، الأدوية، التاريخ الاجتماعي...",
+      "field_physical_exam": "الفحص البدني",
+      "placeholder_physical_exam": "نتائج الفحص البدني ذات الصلة...",
+      "field_lab_results": "نتائج المختبر",
+      "placeholder_lab_results": "قيم المختبر ذات الصلة...",
+      "field_imaging": "دراسات التصوير",
+      "placeholder_imaging": "نتائج الأشعة السينية، CT، MRI...",
+      "field_diagnosis_codes": "رموز التشخيص (ICD-11، ICPC-2)",
+      "placeholder_code": "أدخل الرمز (مثال: J06.9)",
+      "add": "إضافة",
+      "characters": "أحرف",
+      "min_50": "الحد الأدنى 50",
+      "years": "سنوات",
+      "male": "ذكر",
+      "female": "أنثى",
+      "other": "آخر",
+      "type": {
+        "diagnostic_challenge": "تحدي تشخيصي",
+        "treatment_decision": "قرار علاجي",
+        "management_dilemma": "معضلة إدارية",
+        "ethical_question": "سؤال أخلاقي",
+        "educational": "حالة تعليمية"
+      },
+      "difficulty": {
+        "straightforward": "مباشرة",
+        "moderate": "متوسطة",
+        "complex": "معقدة"
+      },
+      "difficulty_label": "الصعوبة",
+      "age": "العمر",
+      "sex": "الجنس",
+      "status": {
+        "verified": "موثقة",
+        "pending_review": "قيد المراجعة"
+      },
+      "pii_warning_title": "تم اكتشاف معلومات يمكن تحديد الهوية",
+      "pii_warning_desc": "قد يحتوي ما يلي على معلومات تحدد هوية المريض. يرجى إزالتها أو إخفاء هويتها:",
+      "pii_type": {
+        "name": "الاسم",
+        "date": "تاريخ محدد",
+        "location": "الموقع",
+        "phone": "رقم الهاتف",
+        "email": "عنوان البريد الإلكتروني",
+        "id_number": "رقم الهوية",
+        "address": "العنوان",
+        "institution": "اسم المؤسسة"
+      },
+      "more_issues": "مشاكل إضافية",
+      "anonymization_passed": "نجح فحص إخفاء الهوية",
+      "anonymization_passed_desc": "لم يتم اكتشاف معلومات تحدد الهوية. ستخضع الحالة لمراجعة الأقران قبل النشر.",
+      "anonymization_failed": "فشل فحص إخفاء الهوية",
+      "anonymization_failed_desc": "يرجى إصلاح {count} مشاكل محتملة في المعلومات الشخصية قبل الإرسال.",
+      "preview_title": "معاينة الحالة",
+      "show_preview": "إظهار المعاينة",
+      "hide_preview": "إخفاء المعاينة",
+      "preview_hidden": "انقر على 'إظهار المعاينة' لرؤية النسخة المجهولة",
+      "review_notice": "تخضع جميع الحالات لمراجعة الأقران قبل النشر لضمان إخفاء الهوية الكامل والدقة السريرية.",
+      "error_validation": "يرجى إكمال جميع الحقول المطلوبة",
+      "error_generic": "فشل إرسال الحالة. يرجى المحاولة مرة أخرى.",
+      "next": "التالي",
+      "back": "رجوع",
+      "cancel": "إلغاء"
+    },
+    "cases_desc": "شارك وتعلم من حالات المرضى المجهولة الهوية",
+    "mentorship": {
+      "title": "برنامج الإرشاد",
+      "subtitle": "تواصل مع ممارسين ذوي خبرة للحصول على التوجيه",
+      "find_mentor": "البحث عن مُرشد",
+      "become_mentor": "كن مُرشداً",
+      "my_mentors": "مُرشدوني",
+      "my_mentees": "المتدربون",
+      "step1_title": "تفضيلاتك",
+      "step1_desc": "أخبرنا ما تبحث عنه في المُرشد",
+      "step2_title": "تصفح المُرشدين",
+      "step2_desc": "وُجد {count} مُرشدين يطابقون معاييرك",
+      "step3_title": "إرسال الطلب",
+      "step3_desc": "قدم نفسك واشرح ما تأمل أن تتعلمه",
+      "field_specialization": "مجال الاهتمام",
+      "field_languages": "اللغات المفضلة",
+      "field_experience": "مستوى خبرة المُرشد",
+      "field_message": "رسالة التقديم",
+      "placeholder_message": "قدم نفسك، اشرح أهدافك التعليمية، وما تأمل أن تحصل عليه من الإرشاد...",
+      "specialization": {
+        "family_medicine": "طب الأسرة",
+        "internal_medicine": "الطب الباطني",
+        "pediatrics": "طب الأطفال",
+        "obstetrics": "أمراض النساء والتوليد",
+        "emergency": "طب الطوارئ",
+        "mental_health": "الصحة النفسية",
+        "geriatrics": "طب الشيخوخة",
+        "public_health": "الصحة العامة",
+        "nursing": "التمريض",
+        "other": "أخرى"
+      },
+      "experience": {
+        "student": "طالب",
+        "resident": "طبيب مقيم",
+        "early_career": "بداية المهنة (0-5 سنوات)",
+        "mid_career": "منتصف المهنة (5-15 سنة)",
+        "senior": "خبير (15+ سنة)"
+      },
+      "any": "أي",
+      "available": "متاح",
+      "limited": "توفر محدود",
+      "unavailable": "غير متاح",
+      "find_mentors": "البحث عن مُرشدين",
+      "no_mentors_found": "لم يتم العثور على مُرشدين",
+      "no_mentors_found_desc": "حاول تعديل الفلاتر لرؤية المزيد من النتائج.",
+      "adjust_filters": "تعديل الفلاتر",
+      "continue": "متابعة",
+      "back": "رجوع",
+      "cancel": "إلغاء",
+      "characters": "أحرف",
+      "response_time_notice": "يرد المُرشدون عادةً خلال 3-7 أيام. كن صبوراً وتحقق للحصول على التحديثات.",
+      "sending": "جارٍ الإرسال...",
+      "send_request": "إرسال الطلب",
+      "request_sent": "تم إرسال الطلب!",
+      "request_sent_desc": "تم إرسال طلب الإرشاد الخاص بك إلى {mentor}. سيتم إعلامك عندما يردون.",
+      "done": "تم",
+      "error_missing_fields": "يرجى اختيار مُرشد وكتابة رسالة تقديم",
+      "error_generic": "فشل إرسال الطلب. يرجى المحاولة مرة أخرى."
+    },
+    "mentorship_desc": "ابحث عن مُرشدين أو كن واحداً للممارسين الزملاء",
+    "categories": {
+      "clinical": "النقاشات السريرية",
+      "clinical_desc": "أسئلة ونقاشات سريرية عامة",
+      "cases": "مناقشات الحالات",
+      "cases_desc": "عروض الحالات السريرية المجهولة الهوية",
+      "study_groups": "مجموعات الدراسة",
+      "study_groups_desc": "التحضير للامتحانات ومجتمعات التعلم",
+      "regional": "المنتديات الإقليمية",
+      "regional_desc": "نقاشات خاصة بالدول والمناطق"
+    },
+    "posts": "{count, plural, =0 {لا توجد منشورات} =1 {منشور واحد} other {# منشورات}}",
+    "replies": "{count, plural, =0 {لا توجد ردود} =1 {رد واحد} other {# ردود}}",
+    "views": "{count, plural, =0 {لا توجد مشاهدات} =1 {مشاهدة واحدة} other {# مشاهدات}}",
+    "reply": {
+      "placeholder": "اكتب ردك...",
+      "placeholder_text": "نص",
+      "submit": "رد",
+      "submitting": "جارٍ النشر...",
+      "chars_remaining": "أحرف متبقية",
+      "error_empty": "لا يمكن أن يكون الرد فارغاً",
+      "error_too_short": "يجب أن يكون الرد 10 أحرف على الأقل",
+      "error_generic": "فشل نشر الرد",
+      "format": {
+        "bold": "عريض",
+        "italic": "مائل",
+        "code": "كود",
+        "list": "قائمة",
+        "link": "رابط"
+      }
+    }
+  },
   "commandPalette": {
     "placeholder": "البحث عن الأمراض والأدوية والبروتوكولات...",
     "noResults": "لم يتم العثور على نتائج.",
@@ -262,100 +577,100 @@
     }
   },
   "gamification": {
-    "title": "Gamification",
-    "xp": "XP",
-    "level": "Level",
-    "streak": "Streak",
+    "title": "التلعيب",
+    "xp": "نقاط الخبرة",
+    "level": "المستوى",
+    "streak": "السلسلة",
     "badges": {
-      "title": "Badges",
-      "earned": "Earned",
-      "locked": "Locked",
-      "progress": "Progress",
+      "title": "الشارات",
+      "earned": "مكتسبة",
+      "locked": "مقفلة",
+      "progress": "التقدم",
       "first_steps": {
-        "name": "First Steps",
-        "description": "Complete your first learning module"
+        "name": "الخطوات الأولى",
+        "description": "أكمل أول وحدة تعليمية لك"
       },
       "dedicated_learner": {
-        "name": "Dedicated Learner",
-        "description": "Complete 10 learning modules"
+        "name": "المتعلم المتفاني",
+        "description": "أكمل 10 وحدات تعليمية"
       },
       "knowledge_seeker": {
-        "name": "Knowledge Seeker",
-        "description": "Complete 50 learning modules"
+        "name": "طالب المعرفة",
+        "description": "أكمل 50 وحدة تعليمية"
       },
       "path_pioneer": {
-        "name": "Path Pioneer",
-        "description": "Complete your first learning path"
+        "name": "رائد المسار",
+        "description": "أكمل أول مسار تعليمي لك"
       },
       "perfectionist": {
-        "name": "Perfectionist",
-        "description": "Get 100% on 5 quizzes"
+        "name": "الساعي للكمال",
+        "description": "احصل على 100% في 5 اختبارات"
       },
       "streak_starter": {
-        "name": "Streak Starter",
-        "description": "Maintain a 3-day streak"
+        "name": "بداية السلسلة",
+        "description": "حافظ على سلسلة 3 أيام"
       },
       "week_warrior": {
-        "name": "Week Warrior",
-        "description": "Maintain a 7-day streak"
+        "name": "محارب الأسبوع",
+        "description": "حافظ على سلسلة 7 أيام"
       },
       "month_master": {
-        "name": "Month Master",
-        "description": "Maintain a 30-day streak"
+        "name": "سيد الشهر",
+        "description": "حافظ على سلسلة 30 يوماً"
       },
       "disease_explorer": {
-        "name": "Disease Explorer",
-        "description": "View 25 different diseases"
+        "name": "مستكشف الأمراض",
+        "description": "استعرض 25 مرضاً مختلفاً"
       },
       "pharmacology_fan": {
-        "name": "Pharmacology Fan",
-        "description": "View 20 different medications"
+        "name": "محب الصيدلة",
+        "description": "استعرض 20 دواءً مختلفاً"
       },
       "protocol_pro": {
-        "name": "Protocol Pro",
-        "description": "View 10 clinical protocols"
+        "name": "محترف البروتوكولات",
+        "description": "استعرض 10 بروتوكولات سريرية"
       },
       "citation_scholar": {
-        "name": "Citation Scholar",
-        "description": "Read 50 citations"
+        "name": "باحث الاستشهادات",
+        "description": "اقرأ 50 استشهاداً"
       },
       "data_exporter": {
-        "name": "Data Exporter",
-        "description": "Export 5 documents"
+        "name": "مصدّر البيانات",
+        "description": "صدّر 5 مستندات"
       },
       "early_adopter": {
-        "name": "Early Adopter",
-        "description": "Join Darwin MFC in 2025"
+        "name": "المتبني المبكر",
+        "description": "انضم إلى Darwin MFC في 2025"
       }
     },
     "levels": {
-      "novice": "Novice",
-      "apprentice": "Apprentice",
-      "student": "Student",
-      "scholar": "Scholar",
-      "practitioner": "Practitioner",
-      "expert": "Expert",
-      "master": "Master",
-      "specialist": "Specialist",
-      "authority": "Authority",
-      "legend": "Legend"
+      "novice": "مبتدئ",
+      "apprentice": "متدرب",
+      "student": "طالب",
+      "scholar": "باحث",
+      "practitioner": "ممارس",
+      "expert": "خبير",
+      "master": "متمكن",
+      "specialist": "أخصائي",
+      "authority": "مرجع",
+      "legend": "أسطورة"
     },
     "challenges": {
-      "title": "Daily Challenges",
+      "title": "التحديات اليومية",
       "daily_quiz": {
-        "title": "Daily Quiz",
-        "description": "Complete 1 quiz today"
+        "title": "اختبار يومي",
+        "description": "أكمل اختبار واحد اليوم"
       },
       "daily_reading": {
-        "title": "Daily Reading",
-        "description": "View 3 disease pages"
+        "title": "قراءة يومية",
+        "description": "استعرض 3 صفحات أمراض"
       }
     },
     "notifications": {
-      "badge_earned": "Badge Earned!",
-      "level_up": "Level Up!",
-      "streak_milestone": "Streak Milestone!",
-      "challenge_complete": "Challenge Complete!"
+      "badge_earned": "حصلت على شارة!",
+      "level_up": "ارتقيت مستوى!",
+      "streak_milestone": "إنجاز سلسلة!",
+      "challenge_complete": "تم إكمال التحدي!"
     }
   },
   "ai": {
@@ -747,7 +1062,9 @@
       "pediatrico": "أطفال",
       "respiratorio": "تنفسي",
       "gastro": "معدي معوي",
-      "psiquiatrico": "نفسي"
+      "psiquiatrico": "نفسي",
+      "cronico": "مزمن",
+      "gineco_obstetricia": "أمراض النساء والتوليد"
     },
     "difficulty": {
       "beginner": "مبتدئ",

@@ -199,6 +199,321 @@
       "calculators": "Calculatrices"
     }
   },
+  "auth": {
+    "login": "Connexion",
+    "register": "Créer un Compte",
+    "logout": "Déconnexion",
+    "username": "Nom d'utilisateur",
+    "username_placeholder": "Entrez votre nom d'utilisateur",
+    "username_hint": "3+ caractères, lettres, chiffres et tirets bas uniquement",
+    "email": "E-mail",
+    "email_placeholder": "votre@email.com",
+    "email_hint": "Optionnel. Utilisé pour la récupération du mot de passe.",
+    "password": "Mot de passe",
+    "password_placeholder": "Entrez votre mot de passe",
+    "confirm_password": "Confirmer le Mot de Passe",
+    "confirm_password_placeholder": "Confirmez votre mot de passe",
+    "language": "Langue Préférée",
+    "optional": "optionnel",
+    "forgot_password": "Mot de passe oublié ?",
+    "create_account": "Créer un compte",
+    "already_have_account": "Vous avez déjà un compte ?",
+    "logging_in": "Connexion en cours...",
+    "creating_account": "Création du compte...",
+    "terms_agreement": "J'accepte les",
+    "terms_link": "Conditions d'Utilisation",
+    "and": "et",
+    "privacy_link": "Politique de Confidentialité",
+    "password_weak": "Faible",
+    "password_fair": "Passable",
+    "password_good": "Bon",
+    "password_strong": "Fort",
+    "password_excellent": "Excellent",
+    "errors": {
+      "username_required": "Le nom d'utilisateur est requis",
+      "username_min_length": "Le nom d'utilisateur doit contenir au moins 3 caractères",
+      "username_invalid": "Le nom d'utilisateur ne peut contenir que des lettres, des chiffres et des tirets bas",
+      "password_required": "Le mot de passe est requis",
+      "password_min_length": "Le mot de passe doit contenir au moins 8 caractères",
+      "password_mismatch": "Les mots de passe ne correspondent pas",
+      "email_invalid": "Adresse e-mail invalide",
+      "terms_required": "Vous devez accepter les conditions générales"
+    },
+    "offline": {
+      "title": "Vous êtes hors ligne",
+      "login_message": "Vous avez besoin d'une connexion Internet pour vous connecter.",
+      "register_message": "Vous avez besoin d'une connexion Internet pour vous inscrire.",
+      "info_title": "Fonctionne hors ligne !",
+      "info_description": "Une fois connecté, vous pouvez utiliser l'application hors ligne pendant 7 jours.",
+      "valid_for": "Valide hors ligne pendant encore {days} jours"
+    },
+    "menu": {
+      "progress": "Ma Progression",
+      "certificates": "Certificats",
+      "favorites": "Favoris",
+      "settings": "Paramètres"
+    }
+  },
+  "profile": {
+    "title": "Mon Profil",
+    "edit_profile": "Modifier le Profil",
+    "mentor_badge": "Mentor",
+    "member_since": "Membre depuis {date}",
+    "offline_valid": "Valide hors ligne pendant encore {days} jours",
+    "username": "Nom d'utilisateur",
+    "username_cannot_change": "Le nom d'utilisateur ne peut pas être modifié",
+    "email": "E-mail",
+    "email_placeholder": "votre@email.com",
+    "language": "Langue",
+    "country": "Pays",
+    "country_placeholder": "ex : FR, BE, CH",
+    "specialization": "Spécialisation",
+    "specialization_placeholder": "ex : Médecine de Famille",
+    "bio": "Biographie",
+    "bio_placeholder": "Parlez-nous de vous...",
+    "optional": "optionnel",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "saving": "Enregistrement...",
+    "profile_updated": "Profil mis à jour avec succès !",
+    "errors": {
+      "email_invalid": "Adresse e-mail invalide",
+      "bio_too_long": "La biographie doit contenir 500 caractères ou moins"
+    },
+    "stats": {
+      "courses": "Cours",
+      "certificates": "Certificats",
+      "favorites": "Favoris"
+    }
+  },
+  "settings": {
+    "title": "Paramètres",
+    "appearance": {
+      "title": "Apparence",
+      "theme": "Thème",
+      "dark": "Mode sombre",
+      "light": "Mode clair",
+      "toggle": "Basculer"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "email": "Notifications par e-mail",
+      "email_desc": "Recevoir des mises à jour par e-mail",
+      "push": "Notifications push",
+      "push_desc": "Recevoir des notifications push",
+      "reminders": "Rappels de progression",
+      "reminders_desc": "Être rappelé des cours incomplets",
+      "community": "Mises à jour communautaires",
+      "community_desc": "Mises à jour du forum et du mentorat"
+    },
+    "privacy": {
+      "title": "Confidentialité",
+      "show_profile": "Profil public",
+      "show_profile_desc": "Permettre aux autres de voir votre profil",
+      "show_progress": "Afficher la progression",
+      "show_progress_desc": "Afficher publiquement votre progression d'apprentissage",
+      "show_activity": "Afficher l'activité",
+      "show_activity_desc": "Afficher votre activité sur le forum et la communauté"
+    },
+    "data": {
+      "title": "Données & Compte",
+      "export": "Exporter mes données",
+      "export_desc": "Télécharger toutes vos données en JSON",
+      "logout": "Se déconnecter",
+      "logout_desc": "Déconnexion de votre compte",
+      "delete": "Supprimer le compte",
+      "delete_desc": "Supprimer définitivement votre compte et vos données"
+    },
+    "delete_confirm": {
+      "title": "Supprimer le Compte ?",
+      "subtitle": "Cette action est irréversible",
+      "message": "Toutes vos données, y compris la progression, les certificats, les favoris et les notes seront définitivement supprimés.",
+      "confirm": "Supprimer le Compte"
+    },
+    "cancel": "Annuler",
+    "deleting": "Suppression..."
+  },
+  "community": {
+    "title": "Communauté",
+    "subtitle": "Connectez-vous, apprenez et partagez avec des professionnels de santé du monde entier",
+    "forums": "Forums de Discussion",
+    "forums_desc": "Participez aux discussions cliniques et obtenez des conseils de pairs",
+    "cases": {
+      "title": "Cas Cliniques",
+      "subtitle": "Partagez et discutez de présentations de patients anonymisées",
+      "submit_case": "Soumettre un Cas",
+      "submitting": "Envoi en cours...",
+      "step1_title": "Informations de Base",
+      "step1_desc": "Fournissez les données démographiques anonymisées du patient et le type de cas",
+      "step2_title": "Contenu Clinique",
+      "step2_desc": "Décrivez la présentation clinique (toutes les IPI seront détectées)",
+      "step3_title": "Révision & Soumission",
+      "step3_desc": "Vérifiez l'anonymisation et soumettez pour révision par les pairs",
+      "field_title": "Titre du Cas",
+      "placeholder_title": "Titre descriptif sans informations identifiantes",
+      "field_age_range": "Tranche d'Âge",
+      "field_sex": "Sexe",
+      "field_occupation": "Profession (générale)",
+      "placeholder_occupation": "ex : Employé de bureau, Travail manuel",
+      "field_case_type": "Type de Cas",
+      "field_difficulty": "Niveau de Difficulté",
+      "field_presentation": "Motif de Consultation / Présentation",
+      "placeholder_presentation": "Décrivez les principales plaintes et la présentation du patient...",
+      "field_history": "Antécédents Pertinents",
+      "placeholder_history": "Antécédents médicaux, médicaments, histoire sociale...",
+      "field_physical_exam": "Examen Physique",
+      "placeholder_physical_exam": "Résultats pertinents de l'examen physique...",
+      "field_lab_results": "Résultats de Laboratoire",
+      "placeholder_lab_results": "Valeurs de laboratoire pertinentes...",
+      "field_imaging": "Études d'Imagerie",
+      "placeholder_imaging": "Résultats radiographie, scanner, IRM...",
+      "field_diagnosis_codes": "Codes Diagnostiques (CIM-11, CISP-2)",
+      "placeholder_code": "Entrez le code (ex : J06.9)",
+      "add": "Ajouter",
+      "characters": "caractères",
+      "min_50": "minimum 50",
+      "years": "ans",
+      "male": "Masculin",
+      "female": "Féminin",
+      "other": "Autre",
+      "type": {
+        "diagnostic_challenge": "Défi Diagnostique",
+        "treatment_decision": "Décision de Traitement",
+        "management_dilemma": "Dilemme de Prise en Charge",
+        "ethical_question": "Question Éthique",
+        "educational": "Cas Éducatif"
+      },
+      "difficulty": {
+        "straightforward": "Simple",
+        "moderate": "Modéré",
+        "complex": "Complexe"
+      },
+      "difficulty_label": "Difficulté",
+      "age": "Âge",
+      "sex": "Sexe",
+      "status": {
+        "verified": "Vérifié",
+        "pending_review": "En Attente de Révision"
+      },
+      "pii_warning_title": "Informations Potentiellement Identifiables Détectées",
+      "pii_warning_desc": "Les éléments suivants peuvent contenir des informations identifiant le patient. Veuillez les supprimer ou les anonymiser :",
+      "pii_type": {
+        "name": "Nom",
+        "date": "Date Spécifique",
+        "location": "Lieu",
+        "phone": "Numéro de Téléphone",
+        "email": "Adresse E-mail",
+        "id_number": "Numéro d'Identification",
+        "address": "Adresse",
+        "institution": "Nom de l'Institution"
+      },
+      "more_issues": "problèmes supplémentaires",
+      "anonymization_passed": "Vérification d'Anonymisation Réussie",
+      "anonymization_passed_desc": "Aucune information identifiable détectée. Le cas sera soumis à une révision par les pairs avant publication.",
+      "anonymization_failed": "Échec de la Vérification d'Anonymisation",
+      "anonymization_failed_desc": "Veuillez corriger {count} problèmes potentiels d'IPI avant de soumettre.",
+      "preview_title": "Aperçu du Cas",
+      "show_preview": "Afficher l'Aperçu",
+      "hide_preview": "Masquer l'Aperçu",
+      "preview_hidden": "Cliquez sur 'Afficher l'Aperçu' pour voir la version anonymisée",
+      "review_notice": "Tous les cas sont soumis à une révision par les pairs avant publication pour garantir une anonymisation complète et une exactitude clinique.",
+      "error_validation": "Veuillez compléter tous les champs requis",
+      "error_generic": "Échec de la soumission du cas. Veuillez réessayer.",
+      "next": "Suivant",
+      "back": "Retour",
+      "cancel": "Annuler"
+    },
+    "cases_desc": "Partagez et apprenez à partir de cas de patients anonymisés",
+    "mentorship": {
+      "title": "Programme de Mentorat",
+      "subtitle": "Connectez-vous avec des praticiens expérimentés pour obtenir des conseils",
+      "find_mentor": "Trouver un Mentor",
+      "become_mentor": "Devenir Mentor",
+      "my_mentors": "Mes Mentors",
+      "my_mentees": "Mes Mentorés",
+      "step1_title": "Vos Préférences",
+      "step1_desc": "Dites-nous ce que vous recherchez chez un mentor",
+      "step2_title": "Parcourir les Mentors",
+      "step2_desc": "{count} mentors trouvés correspondant à vos critères",
+      "step3_title": "Envoyer une Demande",
+      "step3_desc": "Présentez-vous et expliquez ce que vous espérez apprendre",
+      "field_specialization": "Domaine d'Intérêt",
+      "field_languages": "Langues Préférées",
+      "field_experience": "Niveau d'Expérience du Mentor",
+      "field_message": "Message d'Introduction",
+      "placeholder_message": "Présentez-vous, expliquez vos objectifs d'apprentissage et ce que vous espérez tirer du mentorat...",
+      "specialization": {
+        "family_medicine": "Médecine de Famille",
+        "internal_medicine": "Médecine Interne",
+        "pediatrics": "Pédiatrie",
+        "obstetrics": "Obstétrique & Gynécologie",
+        "emergency": "Médecine d'Urgence",
+        "mental_health": "Santé Mentale",
+        "geriatrics": "Gériatrie",
+        "public_health": "Santé Publique",
+        "nursing": "Soins Infirmiers",
+        "other": "Autre"
+      },
+      "experience": {
+        "student": "Étudiant",
+        "resident": "Interne",
+        "early_career": "Début de Carrière (0-5 ans)",
+        "mid_career": "Mi-Carrière (5-15 ans)",
+        "senior": "Senior (15+ ans)"
+      },
+      "any": "Tous",
+      "available": "Disponible",
+      "limited": "Disponibilité Limitée",
+      "unavailable": "Non Disponible",
+      "find_mentors": "Trouver des Mentors",
+      "no_mentors_found": "Aucun Mentor Trouvé",
+      "no_mentors_found_desc": "Essayez d'ajuster vos filtres pour voir plus de résultats.",
+      "adjust_filters": "Ajuster les Filtres",
+      "continue": "Continuer",
+      "back": "Retour",
+      "cancel": "Annuler",
+      "characters": "caractères",
+      "response_time_notice": "Les mentors répondent généralement sous 3 à 7 jours. Soyez patient et revenez vérifier les mises à jour.",
+      "sending": "Envoi...",
+      "send_request": "Envoyer la Demande",
+      "request_sent": "Demande Envoyée !",
+      "request_sent_desc": "Votre demande de mentorat a été envoyée à {mentor}. Vous serez notifié quand il/elle répondra.",
+      "done": "Terminé",
+      "error_missing_fields": "Veuillez sélectionner un mentor et écrire un message d'introduction",
+      "error_generic": "Échec de l'envoi de la demande. Veuillez réessayer."
+    },
+    "mentorship_desc": "Trouvez des mentors ou devenez-en un pour d'autres praticiens",
+    "categories": {
+      "clinical": "Discussions Cliniques",
+      "clinical_desc": "Questions et discussions cliniques générales",
+      "cases": "Discussions de Cas",
+      "cases_desc": "Présentations de cas cliniques anonymisés",
+      "study_groups": "Groupes d'Étude",
+      "study_groups_desc": "Préparation aux examens et communautés d'apprentissage",
+      "regional": "Forums Régionaux",
+      "regional_desc": "Discussions spécifiques à un pays ou une région"
+    },
+    "posts": "{count, plural, =0 {Aucune publication} =1 {1 publication} other {# publications}}",
+    "replies": "{count, plural, =0 {Aucune réponse} =1 {1 réponse} other {# réponses}}",
+    "views": "{count, plural, =0 {Aucune vue} =1 {1 vue} other {# vues}}",
+    "reply": {
+      "placeholder": "Écrivez votre réponse...",
+      "placeholder_text": "texte",
+      "submit": "Répondre",
+      "submitting": "Publication...",
+      "chars_remaining": "caractères restants",
+      "error_empty": "La réponse ne peut pas être vide",
+      "error_too_short": "La réponse doit contenir au moins 10 caractères",
+      "error_generic": "Échec de la publication de la réponse",
+      "format": {
+        "bold": "Gras",
+        "italic": "Italique",
+        "code": "Code",
+        "list": "Liste",
+        "link": "Lien"
+      }
+    }
+  },
   "commandPalette": {
     "placeholder": "Rechercher maladies, médicaments, protocoles...",
     "noResults": "Aucun résultat trouvé.",
@@ -264,98 +579,98 @@
   "gamification": {
     "title": "Gamification",
     "xp": "XP",
-    "level": "Level",
-    "streak": "Streak",
+    "level": "Niveau",
+    "streak": "Série",
     "badges": {
       "title": "Badges",
-      "earned": "Earned",
-      "locked": "Locked",
-      "progress": "Progress",
+      "earned": "Obtenus",
+      "locked": "Verrouillés",
+      "progress": "Progression",
       "first_steps": {
-        "name": "First Steps",
-        "description": "Complete your first learning module"
+        "name": "Premiers Pas",
+        "description": "Complétez votre premier module d'apprentissage"
       },
       "dedicated_learner": {
-        "name": "Dedicated Learner",
-        "description": "Complete 10 learning modules"
+        "name": "Apprenant Dévoué",
+        "description": "Complétez 10 modules d'apprentissage"
       },
       "knowledge_seeker": {
-        "name": "Knowledge Seeker",
-        "description": "Complete 50 learning modules"
+        "name": "Chercheur de Connaissances",
+        "description": "Complétez 50 modules d'apprentissage"
       },
       "path_pioneer": {
-        "name": "Path Pioneer",
-        "description": "Complete your first learning path"
+        "name": "Pionnier du Parcours",
+        "description": "Complétez votre premier parcours d'apprentissage"
       },
       "perfectionist": {
-        "name": "Perfectionist",
-        "description": "Get 100% on 5 quizzes"
+        "name": "Perfectionniste",
+        "description": "Obtenez 100% à 5 quiz"
       },
       "streak_starter": {
-        "name": "Streak Starter",
-        "description": "Maintain a 3-day streak"
+        "name": "Début de Série",
+        "description": "Maintenez une série de 3 jours"
       },
       "week_warrior": {
-        "name": "Week Warrior",
-        "description": "Maintain a 7-day streak"
+        "name": "Guerrier de la Semaine",
+        "description": "Maintenez une série de 7 jours"
       },
       "month_master": {
-        "name": "Month Master",
-        "description": "Maintain a 30-day streak"
+        "name": "Maître du Mois",
+        "description": "Maintenez une série de 30 jours"
       },
       "disease_explorer": {
-        "name": "Disease Explorer",
-        "description": "View 25 different diseases"
+        "name": "Explorateur de Maladies",
+        "description": "Consultez 25 maladies différentes"
       },
       "pharmacology_fan": {
-        "name": "Pharmacology Fan",
-        "description": "View 20 different medications"
+        "name": "Fan de Pharmacologie",
+        "description": "Consultez 20 médicaments différents"
       },
       "protocol_pro": {
-        "name": "Protocol Pro",
-        "description": "View 10 clinical protocols"
+        "name": "Pro des Protocoles",
+        "description": "Consultez 10 protocoles cliniques"
       },
       "citation_scholar": {
-        "name": "Citation Scholar",
-        "description": "Read 50 citations"
+        "name": "Érudit des Citations",
+        "description": "Lisez 50 citations"
       },
       "data_exporter": {
-        "name": "Data Exporter",
-        "description": "Export 5 documents"
+        "name": "Exportateur de Données",
+        "description": "Exportez 5 documents"
       },
       "early_adopter": {
-        "name": "Early Adopter",
-        "description": "Join Darwin MFC in 2025"
+        "name": "Adopteur Précoce",
+        "description": "Rejoignez Darwin MFC en 2025"
       }
     },
     "levels": {
       "novice": "Novice",
-      "apprentice": "Apprentice",
-      "student": "Student",
-      "scholar": "Scholar",
-      "practitioner": "Practitioner",
+      "apprentice": "Apprenti",
+      "student": "Étudiant",
+      "scholar": "Érudit",
+      "practitioner": "Praticien",
       "expert": "Expert",
-      "master": "Master",
-      "specialist": "Specialist",
-      "authority": "Authority",
-      "legend": "Legend"
+      "master": "Maître",
+      "specialist": "Spécialiste",
+      "authority": "Autorité",
+      "legend": "Légende"
     },
     "challenges": {
-      "title": "Daily Challenges",
+      "title": "Défis Quotidiens",
       "daily_quiz": {
-        "title": "Daily Quiz",
-        "description": "Complete 1 quiz today"
+        "title": "Quiz Quotidien",
+        "description": "Complétez 1 quiz aujourd'hui"
       },
       "daily_reading": {
-        "title": "Daily Reading",
-        "description": "View 3 disease pages"
+        "title": "Lecture Quotidienne",
+        "description": "Consultez 3 pages de maladies"
       }
     },
     "notifications": {
-      "badge_earned": "Badge Earned!",
-      "level_up": "Level Up!",
-      "streak_milestone": "Streak Milestone!",
-      "challenge_complete": "Challenge Complete!"
+      "badge_earned": "Badge Obtenu !",
+      "level_up": "Niveau Supérieur !",
+      "streak_milestone": "Étape de Série !",
+      "challenge_complete": "Défi Terminé !"
     }
   },
   "ai": {
@@ -747,7 +1062,9 @@
       "pediatrico": "Pédiatrique",
       "respiratorio": "Respiratoire",
       "gastro": "Gastro-intestinal",
-      "psiquiatrico": "Psychiatrique"
+      "psiquiatrico": "Psychiatrique",
+      "cronico": "Chronique",
+      "gineco_obstetricia": "Gynécologie et Obstétrique"
     },
     "difficulty": {
       "beginner": "Débutant",

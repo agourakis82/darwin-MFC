@@ -138,6 +138,321 @@
     "csvComingSoon": "CSV导出功能即将推出",
     "jsonComingSoon": "JSON导出功能即将推出"
   },
+  "auth": {
+    "login": "登录",
+    "register": "创建账户",
+    "logout": "退出登录",
+    "username": "用户名",
+    "username_placeholder": "输入您的用户名",
+    "username_hint": "至少3个字符，仅限字母、数字和下划线",
+    "email": "电子邮件",
+    "email_placeholder": "your@email.com",
+    "email_hint": "可选。用于密码恢复。",
+    "password": "密码",
+    "password_placeholder": "输入您的密码",
+    "confirm_password": "确认密码",
+    "confirm_password_placeholder": "确认您的密码",
+    "language": "首选语言",
+    "optional": "可选",
+    "forgot_password": "忘记密码？",
+    "create_account": "创建账户",
+    "already_have_account": "已有账户？",
+    "logging_in": "登录中...",
+    "creating_account": "创建账户中...",
+    "terms_agreement": "我同意",
+    "terms_link": "服务条款",
+    "and": "和",
+    "privacy_link": "隐私政策",
+    "password_weak": "弱",
+    "password_fair": "一般",
+    "password_good": "良好",
+    "password_strong": "强",
+    "password_excellent": "极强",
+    "errors": {
+      "username_required": "用户名为必填项",
+      "username_min_length": "用户名至少需要3个字符",
+      "username_invalid": "用户名只能包含字母、数字和下划线",
+      "password_required": "密码为必填项",
+      "password_min_length": "密码至少需要8个字符",
+      "password_mismatch": "密码不匹配",
+      "email_invalid": "无效的电子邮件地址",
+      "terms_required": "您必须同意服务条款"
+    },
+    "offline": {
+      "title": "您处于离线状态",
+      "login_message": "登录需要网络连接。",
+      "register_message": "注册需要网络连接。",
+      "info_title": "离线可用！",
+      "info_description": "登录后，您可以在没有互联网的情况下使用应用程序长达7天。",
+      "valid_for": "离线有效期还剩{days}天"
+    },
+    "menu": {
+      "progress": "我的进度",
+      "certificates": "证书",
+      "favorites": "收藏",
+      "settings": "设置"
+    }
+  },
+  "profile": {
+    "title": "我的个人资料",
+    "edit_profile": "编辑个人资料",
+    "mentor_badge": "导师",
+    "member_since": "注册于{date}",
+    "offline_valid": "离线有效期还剩{days}天",
+    "username": "用户名",
+    "username_cannot_change": "用户名不可更改",
+    "email": "电子邮件",
+    "email_placeholder": "your@email.com",
+    "language": "语言",
+    "country": "国家/地区",
+    "country_placeholder": "例如：CN、US、IN",
+    "specialization": "专业领域",
+    "specialization_placeholder": "例如：家庭医学",
+    "bio": "个人简介",
+    "bio_placeholder": "介绍一下您自己...",
+    "optional": "可选",
+    "cancel": "取消",
+    "save": "保存",
+    "saving": "保存中...",
+    "profile_updated": "个人资料更新成功！",
+    "errors": {
+      "email_invalid": "无效的电子邮件地址",
+      "bio_too_long": "个人简介最多500个字符"
+    },
+    "stats": {
+      "courses": "课程",
+      "certificates": "证书",
+      "favorites": "收藏"
+    }
+  },
+  "settings": {
+    "title": "设置",
+    "appearance": {
+      "title": "外观",
+      "theme": "主题",
+      "dark": "深色模式",
+      "light": "浅色模式",
+      "toggle": "切换"
+    },
+    "notifications": {
+      "title": "通知",
+      "email": "电子邮件通知",
+      "email_desc": "通过电子邮件接收更新",
+      "push": "推送通知",
+      "push_desc": "接收推送通知",
+      "reminders": "进度提醒",
+      "reminders_desc": "未完成课程的提醒",
+      "community": "社区更新",
+      "community_desc": "论坛和导师项目的更新"
+    },
+    "privacy": {
+      "title": "隐私",
+      "show_profile": "公开个人资料",
+      "show_profile_desc": "允许其他人查看您的个人资料",
+      "show_progress": "显示进度",
+      "show_progress_desc": "公开显示您的学习进度",
+      "show_activity": "显示活动",
+      "show_activity_desc": "显示您在论坛和社区的活动"
+    },
+    "data": {
+      "title": "数据和账户",
+      "export": "导出我的数据",
+      "export_desc": "以JSON格式下载您的所有数据",
+      "logout": "退出登录",
+      "logout_desc": "退出您的账户",
+      "delete": "删除账户",
+      "delete_desc": "永久删除您的账户和数据"
+    },
+    "delete_confirm": {
+      "title": "删除账户？",
+      "subtitle": "此操作无法撤销",
+      "message": "您的所有数据，包括进度、证书、收藏和笔记，将被永久删除。",
+      "confirm": "删除账户"
+    },
+    "cancel": "取消",
+    "deleting": "删除中..."
+  },
+  "community": {
+    "title": "社区",
+    "subtitle": "与全球医疗专业人员联系、学习和分享",
+    "forums": "讨论论坛",
+    "forums_desc": "参与临床讨论并获得同行建议",
+    "cases": {
+      "title": "临床病例",
+      "subtitle": "分享和讨论匿名化的患者病例",
+      "submit_case": "提交病例",
+      "submitting": "提交中...",
+      "step1_title": "基本信息",
+      "step1_desc": "提供匿名化的患者人口统计信息和病例类型",
+      "step2_title": "临床内容",
+      "step2_desc": "描述临床表现（个人身份信息将被检测）",
+      "step3_title": "审核并提交",
+      "step3_desc": "检查匿名化处理并提交审核",
+      "field_title": "病例标题",
+      "placeholder_title": "描述性标题，不含可识别信息",
+      "field_age_range": "年龄范围",
+      "field_sex": "性别",
+      "field_occupation": "职业（一般性描述）",
+      "placeholder_occupation": "例如：办公室职员、体力劳动者",
+      "field_case_type": "病例类型",
+      "field_difficulty": "难度级别",
+      "field_presentation": "主诉/表现",
+      "placeholder_presentation": "描述患者的主要症状和表现...",
+      "field_history": "相关病史",
+      "placeholder_history": "病史、用药、社会史...",
+      "field_physical_exam": "体格检查",
+      "placeholder_physical_exam": "相关检查发现...",
+      "field_lab_results": "实验室结果",
+      "placeholder_lab_results": "相关化验结果...",
+      "field_imaging": "影像学检查",
+      "placeholder_imaging": "X光、CT、MRI结果...",
+      "field_diagnosis_codes": "诊断代码（ICD-11、ICPC-2）",
+      "placeholder_code": "输入代码（例如：J06.9）",
+      "add": "添加",
+      "characters": "字符",
+      "min_50": "最少50",
+      "years": "岁",
+      "male": "男",
+      "female": "女",
+      "other": "其他",
+      "type": {
+        "diagnostic_challenge": "诊断挑战",
+        "treatment_decision": "治疗决策",
+        "management_dilemma": "管理困境",
+        "ethical_question": "伦理问题",
+        "educational": "教学病例"
+      },
+      "difficulty": {
+        "straightforward": "简单",
+        "moderate": "中等",
+        "complex": "复杂"
+      },
+      "difficulty_label": "难度",
+      "age": "年龄",
+      "sex": "性别",
+      "status": {
+        "verified": "已验证",
+        "pending_review": "待审核"
+      },
+      "pii_warning_title": "检测到潜在的可识别信息",
+      "pii_warning_desc": "以下内容可能包含患者个人信息。请删除或匿名化：",
+      "pii_type": {
+        "name": "姓名",
+        "date": "具体日期",
+        "location": "地点",
+        "phone": "电话号码",
+        "email": "电子邮件地址",
+        "id_number": "证件号码",
+        "address": "地址",
+        "institution": "机构名称"
+      },
+      "more_issues": "更多问题",
+      "anonymization_passed": "匿名化检查通过",
+      "anonymization_passed_desc": "未检测到可识别信息。病例将在发布前经过人工审核。",
+      "anonymization_failed": "匿名化检查未通过",
+      "anonymization_failed_desc": "请在提交前解决{count}个潜在的个人信息问题。",
+      "preview_title": "病例预览",
+      "show_preview": "显示预览",
+      "hide_preview": "隐藏预览",
+      "preview_hidden": "点击'显示预览'查看匿名化版本",
+      "review_notice": "所有病例在发布前都将经过人工审核，以确保完全匿名化和临床准确性。",
+      "error_validation": "请填写所有必填字段",
+      "error_generic": "提交病例失败。请重试。",
+      "next": "下一步",
+      "back": "返回",
+      "cancel": "取消"
+    },
+    "cases_desc": "分享匿名化的患者病例并从中学习",
+    "mentorship": {
+      "title": "导师计划",
+      "subtitle": "与经验丰富的专业人员建立联系以获得指导",
+      "find_mentor": "寻找导师",
+      "become_mentor": "成为导师",
+      "my_mentors": "我的导师",
+      "my_mentees": "我的学员",
+      "step1_title": "您的偏好",
+      "step1_desc": "告诉我们您希望从导师那里获得什么",
+      "step2_title": "浏览导师",
+      "step2_desc": "根据您的条件找到{count}位导师",
+      "step3_title": "发送请求",
+      "step3_desc": "介绍自己并说明您想学习什么",
+      "field_specialization": "感兴趣的领域",
+      "field_languages": "首选语言",
+      "field_experience": "导师经验水平",
+      "field_message": "介绍信息",
+      "placeholder_message": "介绍您自己，说明您的学习目标以及您希望从导师关系中获得什么...",
+      "specialization": {
+        "family_medicine": "家庭医学",
+        "internal_medicine": "内科学",
+        "pediatrics": "儿科学",
+        "obstetrics": "妇产科",
+        "emergency": "急诊医学",
+        "mental_health": "心理健康",
+        "geriatrics": "老年医学",
+        "public_health": "公共卫生",
+        "nursing": "护理学",
+        "other": "其他"
+      },
+      "experience": {
+        "student": "学生",
+        "resident": "住院医师",
+        "early_career": "职业早期（0-5年）",
+        "mid_career": "职业中期（5-15年）",
+        "senior": "资深专家（15年以上）"
+      },
+      "any": "任何",
+      "available": "可接受",
+      "limited": "有限接受",
+      "unavailable": "不可接受",
+      "find_mentors": "查找导师",
+      "no_mentors_found": "未找到导师",
+      "no_mentors_found_desc": "尝试调整筛选条件以获得更多结果。",
+      "adjust_filters": "调整筛选条件",
+      "continue": "继续",
+      "back": "返回",
+      "cancel": "取消",
+      "characters": "字符",
+      "response_time_notice": "导师通常在3-7天内回复。请耐心等待并查看更新。",
+      "sending": "发送中...",
+      "send_request": "发送请求",
+      "request_sent": "请求已发送！",
+      "request_sent_desc": "您的导师请求已发送给{mentor}。当他们回复时，您将收到通知。",
+      "done": "完成",
+      "error_missing_fields": "请选择一位导师并填写介绍信息",
+      "error_generic": "发送请求失败。请重试。"
+    },
+    "mentorship_desc": "寻找导师或成为他人的导师",
+    "categories": {
+      "clinical": "临床讨论",
+      "clinical_desc": "一般临床问题和讨论",
+      "cases": "病例讨论",
+      "cases_desc": "匿名化临床病例",
+      "study_groups": "学习小组",
+      "study_groups_desc": "考试准备和学习社区",
+      "regional": "地区论坛",
+      "regional_desc": "按国家和地区的讨论"
+    },
+    "posts": "{count, plural, =0 {暂无帖子} =1 {1个帖子} other {#个帖子}}",
+    "replies": "{count, plural, =0 {暂无回复} =1 {1条回复} other {#条回复}}",
+    "views": "{count, plural, =0 {暂无浏览} =1 {1次浏览} other {#次浏览}}",
+    "reply": {
+      "placeholder": "写下您的回复...",
+      "placeholder_text": "文本",
+      "submit": "发布回复",
+      "submitting": "发布中...",
+      "chars_remaining": "剩余字符",
+      "error_empty": "回复不能为空",
+      "error_too_short": "回复至少需要10个字符",
+      "error_generic": "发布回复失败",
+      "format": {
+        "bold": "粗体",
+        "italic": "斜体",
+        "code": "代码",
+        "list": "列表",
+        "link": "链接"
+      }
+    }
+  },
   "about": {
     "title": "关于作者",
     "subtitle": "创建者和开发者",
@@ -262,100 +577,100 @@
     }
   },
   "gamification": {
-    "title": "Gamification",
-    "xp": "XP",
-    "level": "Level",
-    "streak": "Streak",
+    "title": "游戏化",
+    "xp": "经验值",
+    "level": "等级",
+    "streak": "连续天数",
     "badges": {
-      "title": "Badges",
-      "earned": "Earned",
-      "locked": "Locked",
-      "progress": "Progress",
+      "title": "徽章",
+      "earned": "已获得",
+      "locked": "未解锁",
+      "progress": "进度",
       "first_steps": {
-        "name": "First Steps",
-        "description": "Complete your first learning module"
+        "name": "第一步",
+        "description": "完成您的第一个学习模块"
       },
       "dedicated_learner": {
-        "name": "Dedicated Learner",
-        "description": "Complete 10 learning modules"
+        "name": "勤奋学习者",
+        "description": "完成10个学习模块"
       },
       "knowledge_seeker": {
-        "name": "Knowledge Seeker",
-        "description": "Complete 50 learning modules"
+        "name": "知识探索者",
+        "description": "完成50个学习模块"
       },
       "path_pioneer": {
-        "name": "Path Pioneer",
-        "description": "Complete your first learning path"
+        "name": "路径先锋",
+        "description": "完成您的第一个学习路径"
       },
       "perfectionist": {
-        "name": "Perfectionist",
-        "description": "Get 100% on 5 quizzes"
+        "name": "完美主义者",
+        "description": "在5次测验中获得100%"
       },
       "streak_starter": {
-        "name": "Streak Starter",
-        "description": "Maintain a 3-day streak"
+        "name": "连续起步者",
+        "description": "保持3天连续学习"
       },
       "week_warrior": {
-        "name": "Week Warrior",
-        "description": "Maintain a 7-day streak"
+        "name": "周冠军",
+        "description": "保持7天连续学习"
       },
       "month_master": {
-        "name": "Month Master",
-        "description": "Maintain a 30-day streak"
+        "name": "月度大师",
+        "description": "保持30天连续学习"
       },
       "disease_explorer": {
-        "name": "Disease Explorer",
-        "description": "View 25 different diseases"
+        "name": "疾病探索者",
+        "description": "浏览25种不同的疾病"
       },
       "pharmacology_fan": {
-        "name": "Pharmacology Fan",
-        "description": "View 20 different medications"
+        "name": "药理学爱好者",
+        "description": "浏览20种不同的药物"
       },
       "protocol_pro": {
-        "name": "Protocol Pro",
-        "description": "View 10 clinical protocols"
+        "name": "协议专家",
+        "description": "浏览10个临床协议"
       },
       "citation_scholar": {
-        "name": "Citation Scholar",
-        "description": "Read 50 citations"
+        "name": "引用学者",
+        "description": "阅读50条引用"
       },
       "data_exporter": {
-        "name": "Data Exporter",
-        "description": "Export 5 documents"
+        "name": "数据导出者",
+        "description": "导出5个文档"
       },
       "early_adopter": {
-        "name": "Early Adopter",
-        "description": "Join Darwin MFC in 2025"
+        "name": "早期用户",
+        "description": "在2025年加入Darwin MFC"
       }
     },
     "levels": {
-      "novice": "Novice",
-      "apprentice": "Apprentice",
-      "student": "Student",
-      "scholar": "Scholar",
-      "practitioner": "Practitioner",
-      "expert": "Expert",
-      "master": "Master",
-      "specialist": "Specialist",
-      "authority": "Authority",
-      "legend": "Legend"
+      "novice": "新手",
+      "apprentice": "学徒",
+      "student": "学生",
+      "scholar": "学者",
+      "practitioner": "执业者",
+      "expert": "专家",
+      "master": "大师",
+      "specialist": "专科医师",
+      "authority": "权威",
+      "legend": "传奇"
     },
     "challenges": {
-      "title": "Daily Challenges",
+      "title": "每日挑战",
       "daily_quiz": {
-        "title": "Daily Quiz",
-        "description": "Complete 1 quiz today"
+        "title": "每日测验",
+        "description": "今天完成1个测验"
       },
       "daily_reading": {
-        "title": "Daily Reading",
-        "description": "View 3 disease pages"
+        "title": "每日阅读",
+        "description": "浏览3个疾病页面"
       }
     },
     "notifications": {
-      "badge_earned": "Badge Earned!",
-      "level_up": "Level Up!",
-      "streak_milestone": "Streak Milestone!",
-      "challenge_complete": "Challenge Complete!"
+      "badge_earned": "获得徽章！",
+      "level_up": "升级了！",
+      "streak_milestone": "连续里程碑！",
+      "challenge_complete": "挑战完成！"
     }
   },
   "ai": {
@@ -747,7 +1062,9 @@
       "pediatrico": "儿科",
       "respiratorio": "呼吸",
       "gastro": "胃肠",
-      "psiquiatrico": "精神"
+      "psiquiatrico": "精神",
+      "cronico": "慢性病",
+      "gineco_obstetricia": "妇产科"
     },
     "difficulty": {
       "beginner": "初级",

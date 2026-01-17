@@ -138,6 +138,321 @@
     "csvComingSoon": "Функция экспорта CSV скоро будет доступна",
     "jsonComingSoon": "Функция экспорта JSON скоро будет доступна"
   },
+  "auth": {
+    "login": "Вход",
+    "register": "Создать аккаунт",
+    "logout": "Выход",
+    "username": "Имя пользователя",
+    "username_placeholder": "Введите имя пользователя",
+    "username_hint": "Минимум 3 символа, только буквы, цифры и подчёркивания",
+    "email": "Электронная почта",
+    "email_placeholder": "your@email.com",
+    "email_hint": "Необязательно. Используется для восстановления пароля.",
+    "password": "Пароль",
+    "password_placeholder": "Введите пароль",
+    "confirm_password": "Подтвердите пароль",
+    "confirm_password_placeholder": "Подтвердите ваш пароль",
+    "language": "Предпочитаемый язык",
+    "optional": "необязательно",
+    "forgot_password": "Забыли пароль?",
+    "create_account": "Создать аккаунт",
+    "already_have_account": "Уже есть аккаунт?",
+    "logging_in": "Входим...",
+    "creating_account": "Создаём аккаунт...",
+    "terms_agreement": "Я согласен с",
+    "terms_link": "Условиями использования",
+    "and": "и",
+    "privacy_link": "Политикой конфиденциальности",
+    "password_weak": "Слабый",
+    "password_fair": "Средний",
+    "password_good": "Хороший",
+    "password_strong": "Сильный",
+    "password_excellent": "Отличный",
+    "errors": {
+      "username_required": "Имя пользователя обязательно",
+      "username_min_length": "Имя пользователя должно содержать минимум 3 символа",
+      "username_invalid": "Имя пользователя может содержать только буквы, цифры и подчёркивания",
+      "password_required": "Пароль обязателен",
+      "password_min_length": "Пароль должен содержать минимум 8 символов",
+      "password_mismatch": "Пароли не совпадают",
+      "email_invalid": "Неверный адрес электронной почты",
+      "terms_required": "Вы должны согласиться с условиями использования"
+    },
+    "offline": {
+      "title": "Вы не в сети",
+      "login_message": "Для входа требуется подключение к интернету.",
+      "register_message": "Для регистрации требуется подключение к интернету.",
+      "info_title": "Работает офлайн!",
+      "info_description": "После входа вы можете использовать приложение офлайн до 7 дней.",
+      "valid_for": "Действительно офлайн ещё {days} дней"
+    },
+    "menu": {
+      "progress": "Мой прогресс",
+      "certificates": "Сертификаты",
+      "favorites": "Избранное",
+      "settings": "Настройки"
+    }
+  },
+  "profile": {
+    "title": "Мой профиль",
+    "edit_profile": "Редактировать профиль",
+    "mentor_badge": "Наставник",
+    "member_since": "Участник с {date}",
+    "offline_valid": "Действительно офлайн ещё {days} дней",
+    "username": "Имя пользователя",
+    "username_cannot_change": "Имя пользователя нельзя изменить",
+    "email": "Электронная почта",
+    "email_placeholder": "your@email.com",
+    "language": "Язык",
+    "country": "Страна",
+    "country_placeholder": "напр., RU, US, IN",
+    "specialization": "Специализация",
+    "specialization_placeholder": "напр., Семейная медицина",
+    "bio": "О себе",
+    "bio_placeholder": "Расскажите о себе...",
+    "optional": "необязательно",
+    "cancel": "Отмена",
+    "save": "Сохранить",
+    "saving": "Сохраняем...",
+    "profile_updated": "Профиль успешно обновлён!",
+    "errors": {
+      "email_invalid": "Неверный адрес электронной почты",
+      "bio_too_long": "Описание должно содержать не более 500 символов"
+    },
+    "stats": {
+      "courses": "Курсы",
+      "certificates": "Сертификаты",
+      "favorites": "Избранное"
+    }
+  },
+  "settings": {
+    "title": "Настройки",
+    "appearance": {
+      "title": "Внешний вид",
+      "theme": "Тема",
+      "dark": "Тёмный режим",
+      "light": "Светлый режим",
+      "toggle": "Переключить"
+    },
+    "notifications": {
+      "title": "Уведомления",
+      "email": "Email-уведомления",
+      "email_desc": "Получать обновления по email",
+      "push": "Push-уведомления",
+      "push_desc": "Получать push-уведомления",
+      "reminders": "Напоминания о прогрессе",
+      "reminders_desc": "Напоминания о незавершённых курсах",
+      "community": "Обновления сообщества",
+      "community_desc": "Обновления с форума и наставничества"
+    },
+    "privacy": {
+      "title": "Конфиденциальность",
+      "show_profile": "Публичный профиль",
+      "show_profile_desc": "Разрешить другим видеть ваш профиль",
+      "show_progress": "Показывать прогресс",
+      "show_progress_desc": "Отображать ваш прогресс обучения публично",
+      "show_activity": "Показывать активность",
+      "show_activity_desc": "Показывать вашу активность на форуме и в сообществе"
+    },
+    "data": {
+      "title": "Данные и аккаунт",
+      "export": "Экспортировать мои данные",
+      "export_desc": "Скачать все данные в формате JSON",
+      "logout": "Выйти",
+      "logout_desc": "Выйти из аккаунта",
+      "delete": "Удалить аккаунт",
+      "delete_desc": "Безвозвратно удалить аккаунт и данные"
+    },
+    "delete_confirm": {
+      "title": "Удалить аккаунт?",
+      "subtitle": "Это действие нельзя отменить",
+      "message": "Все ваши данные, включая прогресс, сертификаты, избранное и заметки, будут безвозвратно удалены.",
+      "confirm": "Удалить аккаунт"
+    },
+    "cancel": "Отмена",
+    "deleting": "Удаляем..."
+  },
+  "community": {
+    "title": "Сообщество",
+    "subtitle": "Общайтесь, учитесь и делитесь опытом с медицинскими специалистами по всему миру",
+    "forums": "Форумы обсуждений",
+    "forums_desc": "Присоединяйтесь к клиническим обсуждениям и получайте советы коллег",
+    "cases": {
+      "title": "Клинические случаи",
+      "subtitle": "Делитесь и обсуждайте анонимизированные случаи пациентов",
+      "submit_case": "Отправить случай",
+      "submitting": "Отправляем...",
+      "step1_title": "Основная информация",
+      "step1_desc": "Укажите анонимизированные данные пациента и тип случая",
+      "step2_title": "Клиническое содержание",
+      "step2_desc": "Опишите клиническую картину (все персональные данные будут обнаружены)",
+      "step3_title": "Проверка и отправка",
+      "step3_desc": "Проверьте анонимизацию и отправьте на рецензию",
+      "field_title": "Название случая",
+      "placeholder_title": "Описательное название без идентифицирующей информации",
+      "field_age_range": "Возрастной диапазон",
+      "field_sex": "Пол",
+      "field_occupation": "Род занятий (общий)",
+      "placeholder_occupation": "напр., Офисный работник, Физический труд",
+      "field_case_type": "Тип случая",
+      "field_difficulty": "Уровень сложности",
+      "field_presentation": "Основная жалоба / Презентация",
+      "placeholder_presentation": "Опишите основные жалобы и презентацию пациента...",
+      "field_history": "Релевантный анамнез",
+      "placeholder_history": "Медицинский анамнез, лекарства, социальный анамнез...",
+      "field_physical_exam": "Физикальное обследование",
+      "placeholder_physical_exam": "Релевантные данные осмотра...",
+      "field_lab_results": "Лабораторные результаты",
+      "placeholder_lab_results": "Релевантные лабораторные показатели...",
+      "field_imaging": "Визуализационные исследования",
+      "placeholder_imaging": "Результаты рентгена, КТ, МРТ...",
+      "field_diagnosis_codes": "Коды диагноза (МКБ-11, МКПЗ-2)",
+      "placeholder_code": "Введите код (напр., J06.9)",
+      "add": "Добавить",
+      "characters": "символов",
+      "min_50": "минимум 50",
+      "years": "лет",
+      "male": "Мужской",
+      "female": "Женский",
+      "other": "Другой",
+      "type": {
+        "diagnostic_challenge": "Диагностическая задача",
+        "treatment_decision": "Решение по лечению",
+        "management_dilemma": "Дилемма ведения",
+        "ethical_question": "Этический вопрос",
+        "educational": "Обучающий случай"
+      },
+      "difficulty": {
+        "straightforward": "Простой",
+        "moderate": "Умеренный",
+        "complex": "Сложный"
+      },
+      "difficulty_label": "Сложность",
+      "age": "Возраст",
+      "sex": "Пол",
+      "status": {
+        "verified": "Проверено",
+        "pending_review": "На рецензии"
+      },
+      "pii_warning_title": "Обнаружена потенциально идентифицирующая информация",
+      "pii_warning_desc": "Следующее может содержать персональные данные пациента. Пожалуйста, удалите или анонимизируйте:",
+      "pii_type": {
+        "name": "Имя",
+        "date": "Конкретная дата",
+        "location": "Местоположение",
+        "phone": "Номер телефона",
+        "email": "Адрес электронной почты",
+        "id_number": "Номер документа",
+        "address": "Адрес",
+        "institution": "Название учреждения"
+      },
+      "more_issues": "ещё проблем",
+      "anonymization_passed": "Проверка анонимизации пройдена",
+      "anonymization_passed_desc": "Идентифицирующая информация не обнаружена. Случай пройдёт рецензию перед публикацией.",
+      "anonymization_failed": "Проверка анонимизации не пройдена",
+      "anonymization_failed_desc": "Пожалуйста, исправьте {count} потенциальных проблем с персональными данными перед отправкой.",
+      "preview_title": "Предпросмотр случая",
+      "show_preview": "Показать предпросмотр",
+      "hide_preview": "Скрыть предпросмотр",
+      "preview_hidden": "Нажмите 'Показать предпросмотр' для просмотра анонимизированной версии",
+      "review_notice": "Все случаи проходят рецензию перед публикацией для обеспечения полной анонимизации и клинической точности.",
+      "error_validation": "Пожалуйста, заполните все обязательные поля",
+      "error_generic": "Не удалось отправить случай. Пожалуйста, попробуйте снова.",
+      "next": "Далее",
+      "back": "Назад",
+      "cancel": "Отмена"
+    },
+    "cases_desc": "Делитесь анонимизированными случаями пациентов и учитесь на них",
+    "mentorship": {
+      "title": "Программа наставничества",
+      "subtitle": "Свяжитесь с опытными специалистами для получения руководства",
+      "find_mentor": "Найти наставника",
+      "become_mentor": "Стать наставником",
+      "my_mentors": "Мои наставники",
+      "my_mentees": "Мои подопечные",
+      "step1_title": "Ваши предпочтения",
+      "step1_desc": "Расскажите, что вы ищете в наставнике",
+      "step2_title": "Просмотр наставников",
+      "step2_desc": "Найдено {count} наставников по вашим критериям",
+      "step3_title": "Отправить заявку",
+      "step3_desc": "Представьтесь и объясните, чему хотите научиться",
+      "field_specialization": "Область интереса",
+      "field_languages": "Предпочитаемые языки",
+      "field_experience": "Уровень опыта наставника",
+      "field_message": "Вступительное сообщение",
+      "placeholder_message": "Представьтесь, объясните ваши цели обучения и что вы надеетесь получить от наставничества...",
+      "specialization": {
+        "family_medicine": "Семейная медицина",
+        "internal_medicine": "Терапия",
+        "pediatrics": "Педиатрия",
+        "obstetrics": "Акушерство и гинекология",
+        "emergency": "Скорая помощь",
+        "mental_health": "Психическое здоровье",
+        "geriatrics": "Гериатрия",
+        "public_health": "Общественное здравоохранение",
+        "nursing": "Медсестринство",
+        "other": "Другое"
+      },
+      "experience": {
+        "student": "Студент",
+        "resident": "Ординатор",
+        "early_career": "Начало карьеры (0-5 лет)",
+        "mid_career": "Середина карьеры (5-15 лет)",
+        "senior": "Старший специалист (15+ лет)"
+      },
+      "any": "Любой",
+      "available": "Доступен",
+      "limited": "Ограниченная доступность",
+      "unavailable": "Недоступен",
+      "find_mentors": "Найти наставников",
+      "no_mentors_found": "Наставники не найдены",
+      "no_mentors_found_desc": "Попробуйте изменить фильтры для получения большего количества результатов.",
+      "adjust_filters": "Изменить фильтры",
+      "continue": "Продолжить",
+      "back": "Назад",
+      "cancel": "Отмена",
+      "characters": "символов",
+      "response_time_notice": "Наставники обычно отвечают в течение 3-7 дней. Будьте терпеливы и проверяйте обновления.",
+      "sending": "Отправляем...",
+      "send_request": "Отправить заявку",
+      "request_sent": "Заявка отправлена!",
+      "request_sent_desc": "Ваша заявка на наставничество отправлена {mentor}. Вы получите уведомление, когда он ответит.",
+      "done": "Готово",
+      "error_missing_fields": "Пожалуйста, выберите наставника и напишите вступительное сообщение",
+      "error_generic": "Не удалось отправить заявку. Пожалуйста, попробуйте снова."
+    },
+    "mentorship_desc": "Найдите наставника или станьте им для коллег",
+    "categories": {
+      "clinical": "Клинические обсуждения",
+      "clinical_desc": "Общие клинические вопросы и обсуждения",
+      "cases": "Обсуждения случаев",
+      "cases_desc": "Анонимизированные клинические случаи",
+      "study_groups": "Учебные группы",
+      "study_groups_desc": "Подготовка к экзаменам и учебные сообщества",
+      "regional": "Региональные форумы",
+      "regional_desc": "Обсуждения по странам и регионам"
+    },
+    "posts": "{count, plural, =0 {Нет постов} =1 {1 пост} few {# поста} many {# постов} other {# постов}}",
+    "replies": "{count, plural, =0 {Нет ответов} =1 {1 ответ} few {# ответа} many {# ответов} other {# ответов}}",
+    "views": "{count, plural, =0 {Нет просмотров} =1 {1 просмотр} few {# просмотра} many {# просмотров} other {# просмотров}}",
+    "reply": {
+      "placeholder": "Напишите ваш ответ...",
+      "placeholder_text": "текст",
+      "submit": "Ответить",
+      "submitting": "Публикуем...",
+      "chars_remaining": "символов осталось",
+      "error_empty": "Ответ не может быть пустым",
+      "error_too_short": "Ответ должен содержать минимум 10 символов",
+      "error_generic": "Не удалось опубликовать ответ",
+      "format": {
+        "bold": "Жирный",
+        "italic": "Курсив",
+        "code": "Код",
+        "list": "Список",
+        "link": "Ссылка"
+      }
+    }
+  },
   "about": {
     "title": "Об авторе",
     "subtitle": "Создатель и разработчик",
@@ -262,100 +577,100 @@
     }
   },
   "gamification": {
-    "title": "Gamification",
-    "xp": "XP",
-    "level": "Level",
-    "streak": "Streak",
+    "title": "Геймификация",
+    "xp": "Опыт",
+    "level": "Уровень",
+    "streak": "Серия",
     "badges": {
-      "title": "Badges",
-      "earned": "Earned",
-      "locked": "Locked",
-      "progress": "Progress",
+      "title": "Значки",
+      "earned": "Получено",
+      "locked": "Заблокировано",
+      "progress": "Прогресс",
       "first_steps": {
-        "name": "First Steps",
-        "description": "Complete your first learning module"
+        "name": "Первые шаги",
+        "description": "Завершите свой первый учебный модуль"
       },
       "dedicated_learner": {
-        "name": "Dedicated Learner",
-        "description": "Complete 10 learning modules"
+        "name": "Преданный ученик",
+        "description": "Завершите 10 учебных модулей"
       },
       "knowledge_seeker": {
-        "name": "Knowledge Seeker",
-        "description": "Complete 50 learning modules"
+        "name": "Искатель знаний",
+        "description": "Завершите 50 учебных модулей"
       },
       "path_pioneer": {
-        "name": "Path Pioneer",
-        "description": "Complete your first learning path"
+        "name": "Первопроходец",
+        "description": "Завершите свой первый учебный путь"
       },
       "perfectionist": {
-        "name": "Perfectionist",
-        "description": "Get 100% on 5 quizzes"
+        "name": "Перфекционист",
+        "description": "Получите 100% в 5 тестах"
       },
       "streak_starter": {
-        "name": "Streak Starter",
-        "description": "Maintain a 3-day streak"
+        "name": "Начало серии",
+        "description": "Поддерживайте серию 3 дня"
       },
       "week_warrior": {
-        "name": "Week Warrior",
-        "description": "Maintain a 7-day streak"
+        "name": "Недельный воин",
+        "description": "Поддерживайте серию 7 дней"
       },
       "month_master": {
-        "name": "Month Master",
-        "description": "Maintain a 30-day streak"
+        "name": "Месячный мастер",
+        "description": "Поддерживайте серию 30 дней"
       },
       "disease_explorer": {
-        "name": "Disease Explorer",
-        "description": "View 25 different diseases"
+        "name": "Исследователь болезней",
+        "description": "Просмотрите 25 различных заболеваний"
       },
       "pharmacology_fan": {
-        "name": "Pharmacology Fan",
-        "description": "View 20 different medications"
+        "name": "Фанат фармакологии",
+        "description": "Просмотрите 20 различных препаратов"
       },
       "protocol_pro": {
-        "name": "Protocol Pro",
-        "description": "View 10 clinical protocols"
+        "name": "Профи протоколов",
+        "description": "Просмотрите 10 клинических протоколов"
       },
       "citation_scholar": {
-        "name": "Citation Scholar",
-        "description": "Read 50 citations"
+        "name": "Учёный-цитатчик",
+        "description": "Прочитайте 50 цитат"
       },
       "data_exporter": {
-        "name": "Data Exporter",
-        "description": "Export 5 documents"
+        "name": "Экспортёр данных",
+        "description": "Экспортируйте 5 документов"
       },
       "early_adopter": {
-        "name": "Early Adopter",
-        "description": "Join Darwin MFC in 2025"
+        "name": "Ранний последователь",
+        "description": "Присоединитесь к Darwin MFC в 2025"
       }
     },
     "levels": {
-      "novice": "Novice",
-      "apprentice": "Apprentice",
-      "student": "Student",
-      "scholar": "Scholar",
-      "practitioner": "Practitioner",
-      "expert": "Expert",
-      "master": "Master",
-      "specialist": "Specialist",
-      "authority": "Authority",
-      "legend": "Legend"
+      "novice": "Новичок",
+      "apprentice": "Ученик",
+      "student": "Студент",
+      "scholar": "Учёный",
+      "practitioner": "Практик",
+      "expert": "Эксперт",
+      "master": "Мастер",
+      "specialist": "Специалист",
+      "authority": "Авторитет",
+      "legend": "Легенда"
     },
     "challenges": {
-      "title": "Daily Challenges",
+      "title": "Ежедневные задания",
       "daily_quiz": {
-        "title": "Daily Quiz",
-        "description": "Complete 1 quiz today"
+        "title": "Ежедневный тест",
+        "description": "Пройдите 1 тест сегодня"
       },
       "daily_reading": {
-        "title": "Daily Reading",
-        "description": "View 3 disease pages"
+        "title": "Ежедневное чтение",
+        "description": "Просмотрите 3 страницы заболеваний"
       }
     },
     "notifications": {
-      "badge_earned": "Badge Earned!",
-      "level_up": "Level Up!",
-      "streak_milestone": "Streak Milestone!",
-      "challenge_complete": "Challenge Complete!"
+      "badge_earned": "Значок получен!",
+      "level_up": "Новый уровень!",
+      "streak_milestone": "Достижение серии!",
+      "challenge_complete": "Задание выполнено!"
     }
   },
   "ai": {
@@ -747,7 +1062,9 @@
       "pediatrico": "Педиатрические",
       "respiratorio": "Респираторные",
       "gastro": "Гастроинтестинальные",
-      "psiquiatrico": "Психиатрические"
+      "psiquiatrico": "Психиатрические",
+      "cronico": "Хронические",
+      "gineco_obstetricia": "Гинекология и Акушерство"
     },
     "difficulty": {
       "beginner": "Начинающий",
