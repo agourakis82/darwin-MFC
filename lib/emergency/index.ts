@@ -57,6 +57,21 @@ export {
 // Critical emergency drugs
 export * from './drugs/critical-drugs';
 
+// Respiratory emergencies
+export * from './respiratory-emergencies';
+
+// Toxicology and overdose
+export * from './toxicology-overdose';
+
+// Pediatric emergencies (expanded)
+export * from './pediatric-emergencies';
+
+// Airway management
+export * from './airway-management';
+
+// Mass casualty incident management
+export * from './mass-casualty';
+
 // Re-export commonly used types
 export type {
   EmergencyProtocol,
@@ -98,17 +113,64 @@ export type {
   DoseRegimen
 } from './drugs/critical-drugs';
 
+export type {
+  RespiratoryProtocol,
+  DiagnosticCriteria,
+  VitalCriteria,
+  TreatmentStep,
+  MedicationDose,
+  RespiratoryMonitoringParameter
+} from './respiratory-emergencies';
+
+export type {
+  ToxicologyProtocol,
+  Toxidrome,
+  DecontaminationStrategy,
+  Antidote
+} from './toxicology-overdose';
+
+export type {
+  PediatricProtocol,
+  AgeGroup,
+  VitalRanges,
+  TreatmentByAge,
+  PediatricMedication,
+  PediatricMonitoringParameter
+} from './pediatric-emergencies';
+
+export type {
+  AirwayProtocol,
+  EquipmentItem,
+  ProcedureStep,
+  TroubleshootingItem,
+  AirwayAssessment,
+  DifficultyFactor
+} from './airway-management';
+
+export type {
+  MCIProtocol,
+  PersonnelRole,
+  MCIProcedure,
+  ResourcePlan,
+  CommunicationPlan,
+  MCIScenario
+} from './mass-casualty';
+
 /**
  * Quick access to all emergency protocols by category
  */
 export const EMERGENCY_PROTOCOL_CATEGORIES = {
   resuscitation: ['cardiac-arrest', 'neonatal-resuscitation'],
+  airway: ['head-tilt-chin-lift', 'jaw-thrust', 'opa', 'npa', 'bvm', 'lma', 'ett-intubation', 'cricothyrotomy'],
   trauma: ['trauma-primary', 'ballistic-trauma', 'blast-lung'],
   shock: ['anaphylactic-shock', 'cardiogenic-shock', 'hypovolemic-shock', 'septic-shock'],
-  neurological: ['stroke-acute'],
+  neurological: ['stroke-acute', 'status-epilepticus'],
+  respiratory: ['asthma-severe', 'copd-exacerbation', 'ards', 'pulmonary-embolism', 'tension-pneumothorax', 'airway-obstruction'],
   obstetric: ['pph', 'eclampsia', 'shoulder-dystocia', 'cord-prolapse'],
-  pediatric: ['pediatric-emergency', 'pediatric-dehydration'],
-  triage: ['start-triage', 'salt-triage', 'jumpstart-triage']
+  pediatric: ['pediatric-shock', 'pediatric-sepsis', 'pediatric-seizure', 'pediatric-respiratory', 'pediatric-dehydration'],
+  toxicology: ['opioid-overdose', 'benzodiazepine-overdose', 'acetaminophen-overdose', 'tca-overdose', 'beta-blocker-overdose', 'ccb-overdose', 'organophosphate-poisoning'],
+  triage: ['start-triage', 'salt-triage', 'jumpstart-triage'],
+  massCasualty: ['mci-management', 'hospital-surge', 'incident-command']
 } as const;
 
 /**
@@ -121,17 +183,34 @@ export const PROTOCOLS_BY_SEVERITY = {
     'anaphylactic-shock',
     'massive-hemorrhage',
     'eclampsia',
-    'blast-lung'
+    'blast-lung',
+    'ards',
+    'pulmonary-embolism',
+    'airway-obstruction',
+    'pediatric-shock',
+    'organophosphate-poisoning',
+    'tca-overdose'
   ],
   emergent: [
     'stroke-acute',
     'septic-shock',
     'pph',
-    'status-epilepticus'
+    'status-epilepticus',
+    'asthma-severe',
+    'copd-exacerbation',
+    'pediatric-sepsis',
+    'pediatric-seizure',
+    'opioid-overdose',
+    'beta-blocker-overdose',
+    'ccb-overdose',
+    'acetaminophen-overdose'
   ],
   urgent: [
     'pneumonia',
     'dehydration-moderate',
-    'febrile-seizure'
+    'febrile-seizure',
+    'pediatric-respiratory',
+    'pediatric-dehydration',
+    'benzodiazepine-overdose'
   ]
 } as const;
