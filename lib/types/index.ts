@@ -53,6 +53,7 @@ export interface AppState {
   favoritosDoencas: string[]; // IDs das doenças favoritas
   favoritosMedicamentos: string[]; // IDs dos medicamentos favoritos
   favoritosProtocolos: string[]; // IDs dos protocolos favoritos
+  favoritosCalculadoras: string[]; // IDs das calculadoras favoritas
   notes: Record<string, string>; // { itemId: nota }
 }
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import { showErrorToast } from '@/app/components/ui/Toast';
 import {
   ReactFlow,
   type Node,
@@ -313,7 +314,7 @@ export default function EcomapaEditor() {
       }
     } catch (error) {
       console.error('Error exporting ecomapa:', error);
-      alert('Erro ao exportar ecomapa. Tente novamente.');
+      showErrorToast('Erro ao exportar', 'Não foi possível exportar o ecomapa. Tente novamente.');
     }
   };
 

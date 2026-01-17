@@ -28,6 +28,7 @@ import {
 import { cn } from '@/lib/utils';
 import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
+import { showSuccessToast } from '@/app/components/ui/Toast';
 
 // Calculator imports
 import {
@@ -154,7 +155,7 @@ export default function CalculatorDetailPage() {
       }
     } else {
       await navigator.clipboard.writeText(url);
-      alert('Link copied to clipboard!');
+      showSuccessToast('Link copiado!', 'O link foi copiado para a área de transferência');
     }
   };
 

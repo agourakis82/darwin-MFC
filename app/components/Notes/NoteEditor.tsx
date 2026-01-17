@@ -7,9 +7,11 @@
 
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { createNote, updateNote, type Note, type NoteType } from '@/lib/notes';
 import { useNoteTracking } from '@/lib/analytics/hooks';
+import { showErrorToast, showSuccessToast } from '@/app/components/ui/Toast';
+import { useAutoSave, type AutoSaveStatus } from '@/lib/hooks/useAutoSave';
 
 interface NoteEditorProps {
   note?: Note;
@@ -42,6 +44,28 @@ const COLORS = [
   { value: '#f3e8ff', label: 'Roxo' },
 ];
 
+// Auto-save status indicator component
+function AutoSaveIndicator({ status }: { status: AutoSaveStatus }) {
+  const statusConfig = {
+    idle: { text: '', icon: '', className: 'text-transparent' },
+    dirty: { text: 'Alterações não salvas', icon: '○', className: 'text-amber-500' },
+    saving: { text: 'Salvando...', icon: '◌', className: 'text-blue-500 animate-pulse' },
+    saved: { text: 'Salvo', icon: '✓', className: 'text-green-500' },
+    error: { text: 'Erro ao salvar', icon: '✕', className: 'text-red-500' },
+  };
+
+  const config = statusConfig[status];
+
+  if (status === 'idle') return null;
+
+  return (
+    <span className={`text-sm flex items-center gap-1 ${config.className}`}>
+      <span>{config.icon}</span>
+      <span>{config.text}</span>
+    </span>
+  );
+}
+
 export default function NoteEditor({ note, onSave, onCancel, linkedTo }: NoteEditorProps) {
   const [title, setTitle] = useState(note?.title || '');
   const [content, setContent] = useState(note?.content || '');
@@ -55,6 +79,48 @@ export default function NoteEditor({ note, onSave, onCancel, linkedTo }: NoteEdi
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const trackNote = useNoteTracking();
 
+  // Current form data for auto-save
+  const currentFormData = useMemo(() => ({
+    title: title.trim(),
+    content: content.trim(),
+    type,
+    tags,
+    color,
+    isPinned,
+    linkedTo: linkedTo || note?.linkedTo,
+  }), [title, content, type, tags, color, isPinned, linkedTo, note?.linkedTo]);
+
+  // Auto-save callback (only for existing notes)
+  const handleAutoSave = useCallback(async (data: typeof currentFormData) => {
+    if (!note || !data.title) return;
+
+    const updated = updateNote(note.id, data);
+    if (!updated) {
+      throw new Error('Failed to auto-save note');
+    }
+    trackNote('update', updated.id, linkedTo?.id);
+  }, [note, linkedTo?.id, trackNote]);
+
+  // Auto-save hook (only enabled for existing notes with a title)
+  const {
+    status: autoSaveStatus,
+    setValue: triggerAutoSave,
+    save: saveNow,
+  } = useAutoSave({
+    delay: 2000,
+    onSave: handleAutoSave,
+    onError: () => showErrorToast('Auto-save falhou', 'Suas alterações não foram salvas automaticamente.'),
+    enabled: !!note && !!title.trim(),
+    savedDuration: 3000,
+  });
+
+  // Trigger auto-save when form data changes (for existing notes)
+  useEffect(() => {
+    if (note && title.trim()) {
+      triggerAutoSave(currentFormData);
+    }
+  }, [currentFormData, note, title, triggerAutoSave]);
+
   // Auto-resize textarea
   useEffect(() => {
     const textarea = textareaRef.current;
@@ -66,7 +132,7 @@ export default function NoteEditor({ note, onSave, onCancel, linkedTo }: NoteEdi
 
   const handleSave = async () => {
     if (!title.trim()) {
-      alert('O título não pode estar vazio');
+      showErrorToast('Título obrigatório', 'O título não pode estar vazio');
       return;
     }
 
@@ -76,7 +142,10 @@ export default function NoteEditor({ note, onSave, onCancel, linkedTo }: NoteEdi
       let savedNote: Note;
 
       if (note) {
-        // Update existing note
+        // For existing notes, ensure any pending auto-save completes
+        await saveNow();
+
+        // Update existing note with final values
         const updated = updateNote(note.id, {
           title: title.trim(),
           content: content.trim(),
@@ -93,6 +162,7 @@ export default function NoteEditor({ note, onSave, onCancel, linkedTo }: NoteEdi
 
         savedNote = updated;
         trackNote('update', savedNote.id, linkedTo?.id);
+        showSuccessToast('Nota atualizada', 'Suas alterações foram salvas.');
       } else {
         // Create new note
         savedNote = createNote({
@@ -106,12 +176,13 @@ export default function NoteEditor({ note, onSave, onCancel, linkedTo }: NoteEdi
         });
 
         trackNote('create', savedNote.id, linkedTo?.id);
+        showSuccessToast('Nota criada', 'Sua nota foi salva com sucesso.');
       }
 
       onSave(savedNote);
     } catch (error) {
       console.error('Failed to save note:', error);
-      alert('Erro ao salvar nota');
+      showErrorToast('Erro ao salvar', 'Não foi possível salvar a nota. Tente novamente.');
     } finally {
       setIsSaving(false);
     }
@@ -301,8 +372,11 @@ export default function NoteEditor({ note, onSave, onCancel, linkedTo }: NoteEdi
 
       {/* Footer */}
       <div className="p-4 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between">
-        <div className="text-sm text-gray-500 dark:text-gray-400">
-          Ctrl+Enter para salvar
+        <div className="flex items-center gap-4">
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            Ctrl+Enter para salvar
+          </span>
+          {note && <AutoSaveIndicator status={autoSaveStatus} />}
         </div>
         <div className="flex gap-3">
           <button
@@ -316,7 +390,7 @@ export default function NoteEditor({ note, onSave, onCancel, linkedTo }: NoteEdi
             disabled={isSaving || !title.trim()}
             className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
-            {isSaving ? 'Salvando...' : 'Salvar'}
+            {isSaving ? 'Salvando...' : note ? 'Salvar e Fechar' : 'Criar'}
           </button>
         </div>
       </div>

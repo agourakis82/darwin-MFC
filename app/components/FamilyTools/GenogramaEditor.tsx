@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef } from 'react';
+import { showErrorToast } from '@/app/components/ui/Toast';
 import {
   ReactFlow,
   type Node,
@@ -241,7 +242,7 @@ export default function GenogramaEditor() {
       }
     } catch (error) {
       console.error('Error exporting genograma:', error);
-      alert('Erro ao exportar genograma. Tente novamente.');
+      showErrorToast('Erro ao exportar', 'Não foi possível exportar o genograma. Tente novamente.');
     }
   };
 

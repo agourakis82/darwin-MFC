@@ -353,12 +353,20 @@ export default function ComparadorClient() {
                             <div className="text-xs font-medium text-purple-600 dark:text-purple-400">
                               {medicamento.posologias[0].indicacao}
                             </div>
-                            <div className="text-xs">
-                              {medicamento.posologias[0].adultos.dose}
-                            </div>
-                            <div className="text-xs text-slate-500">
-                              {medicamento.posologias[0].adultos.frequencia}
-                            </div>
+                            {medicamento.posologias[0].adultos ? (
+                              <>
+                                <div className="text-xs">
+                                  {medicamento.posologias[0].adultos.dose}
+                                </div>
+                                <div className="text-xs text-slate-500">
+                                  {medicamento.posologias[0].adultos.frequencia}
+                                </div>
+                              </>
+                            ) : medicamento.posologias[0].pediatrico ? (
+                              <div className="text-xs text-slate-500">
+                                {medicamento.posologias[0].pediatrico.dose}
+                              </div>
+                            ) : null}
                           </div>
                         )}
                       </td>

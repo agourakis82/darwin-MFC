@@ -120,14 +120,16 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
                   {pos.indicacao}
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <span className="font-medium">{t('dosage.adults')}:</span> {pos.adultos.dose}
-                    <br />
-                    <span className="text-[#86868b]">{t('dosage.frequency')}: {pos.adultos.frequencia}</span>
-                    {pos.adultos.doseMaxima && (
-                      <><br /><span className="text-[#86868b]">{t('dosage.maxDose')}: {pos.adultos.doseMaxima}</span></>
-                    )}
-                  </div>
+                  {pos.adultos && (
+                    <div>
+                      <span className="font-medium">{t('dosage.adults')}:</span> {pos.adultos.dose}
+                      <br />
+                      <span className="text-[#86868b]">{t('dosage.frequency')}: {pos.adultos.frequencia}</span>
+                      {pos.adultos.doseMaxima && (
+                        <><br /><span className="text-[#86868b]">{t('dosage.maxDose')}: {pos.adultos.doseMaxima}</span></>
+                      )}
+                    </div>
+                  )}
                   {pos.pediatrico && (
                     <div>
                       <span className="font-medium">{t('dosage.pediatric')}:</span> {pos.pediatrico.dose}

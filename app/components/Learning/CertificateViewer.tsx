@@ -20,6 +20,7 @@ import {
   ExternalLink,
   Loader2,
 } from 'lucide-react';
+import { showErrorToast, showSuccessToast } from '@/app/components/ui/Toast';
 import type { Certificate, LearningPath } from '@/lib/types/learning';
 
 // =============================================================================
@@ -193,7 +194,7 @@ export function CertificateViewer({ certificate, learningPath }: CertificateView
       pdf.save(`certificado-darwin-mfc-${learningPath.id}-${certificate.verificationCode}.pdf`);
     } catch (error) {
       console.error('Error generating certificate PDF:', error);
-      alert('Erro ao gerar certificado. Por favor, tente novamente.');
+      showErrorToast('Erro ao gerar certificado', 'Por favor, tente novamente.');
     } finally {
       setIsGenerating(false);
     }
@@ -219,7 +220,7 @@ export function CertificateViewer({ certificate, learningPath }: CertificateView
     } else {
       // Fallback: copy to clipboard
       await navigator.clipboard.writeText(shareData.url);
-      alert(t('link_copied'));
+      showSuccessToast('Link copiado!', t('link_copied'));
     }
   }, [certificate, learningPath, t]);
 

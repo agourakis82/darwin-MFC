@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { FileText, FileSpreadsheet, FileJson, Printer } from 'lucide-react';
+import { showWarningToast } from '@/app/components/ui/Toast';
 
 interface ExportToolsProps {
   contentId?: string;
@@ -17,11 +18,11 @@ export default function ExportTools({ contentId, contentTitle }: ExportToolsProp
   };
 
   const handleExportCSV = () => {
-    alert(t('export.csvComingSoon') || 'Funcionalidade de exportação CSV será implementada com papaparse');
+    showWarningToast('Em breve', t('export.csvComingSoon') || 'Exportação CSV será implementada com papaparse');
   };
 
   const handleExportJSON = () => {
-    alert(t('export.jsonComingSoon') || 'Funcionalidade de exportação JSON será implementada');
+    showWarningToast('Em breve', t('export.jsonComingSoon') || 'Exportação JSON será implementada');
   };
 
   return (

@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import { Download, Upload, FileText, FileSpreadsheet, FileJson, FileCode, Check, X, AlertCircle } from 'lucide-react';
+import { showWarningToast, showErrorToast } from '@/app/components/ui/Toast';
 import {
   exportDiseasesToJSON,
   exportMedicationsToJSON,
@@ -72,7 +73,7 @@ export default function AdvancedExportImport({
             filename = 'darwin-mfc-medications.json';
             mimeType = 'application/json';
           } else {
-            alert('Nenhum dado para exportar');
+            showWarningToast('Sem dados', 'Nenhum dado para exportar');
             setIsExporting(false);
             return;
           }
@@ -88,7 +89,7 @@ export default function AdvancedExportImport({
             filename = 'darwin-mfc-medications.csv';
             mimeType = 'text/csv';
           } else {
-            alert('Nenhum dado para exportar');
+            showWarningToast('Sem dados', 'Nenhum dado para exportar');
             setIsExporting(false);
             return;
           }
@@ -104,7 +105,7 @@ export default function AdvancedExportImport({
             filename = 'darwin-mfc-medications.xml';
             mimeType = 'application/xml';
           } else {
-            alert('Nenhum dado para exportar');
+            showWarningToast('Sem dados', 'Nenhum dado para exportar');
             setIsExporting(false);
             return;
           }
@@ -133,14 +134,14 @@ export default function AdvancedExportImport({
             filename = `medicamento-${medications[0].id || 'documento'}.pdf`;
             mimeType = 'application/pdf';
           } else {
-            alert('Nenhum dado para exportar');
+            showWarningToast('Sem dados', 'Nenhum dado para exportar');
             setIsExporting(false);
             return;
           }
           break;
 
         default:
-          alert('Formato não suportado');
+          showErrorToast('Formato inválido', 'Formato de exportação não suportado');
           setIsExporting(false);
           return;
       }
@@ -149,7 +150,7 @@ export default function AdvancedExportImport({
       setIsExporting(false);
     } catch (error) {
       console.error('Erro ao exportar:', error);
-      alert(`Erro ao exportar: ${error instanceof Error ? error.message : 'Erro desconhecido'}`);
+      showErrorToast('Erro ao exportar', error instanceof Error ? error.message : 'Erro desconhecido');
       setIsExporting(false);
     }
   };

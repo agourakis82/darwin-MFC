@@ -151,6 +151,13 @@ const categoryColors: Record<CalculatorCategory, {
     text: 'text-teal-700 dark:text-teal-400',
     gradient: 'from-teal-500 to-emerald-500',
   },
+  endocrinology: {
+    bg: 'bg-yellow-50 dark:bg-yellow-950/30',
+    bgHover: 'hover:bg-yellow-100 dark:hover:bg-yellow-950/50',
+    border: 'border-yellow-200 dark:border-yellow-800',
+    text: 'text-yellow-700 dark:text-yellow-400',
+    gradient: 'from-yellow-500 to-amber-500',
+  },
   general: {
     bg: 'bg-gray-50 dark:bg-gray-800/30',
     bgHover: 'hover:bg-gray-100 dark:hover:bg-gray-800/50',

@@ -98,6 +98,37 @@
   --shadow-glow-danger: 0 0 20px rgba(239, 68, 68, 0.3);
   --shadow-glow-purple: 0 0 20px rgba(168, 85, 247, 0.3);
 
+  /* ============================================ */
+  /* APPLE-STYLE COMPONENT COLOR TOKENS          */
+  /* Used across Button, Badge, Input, Modal     */
+  /* ============================================ */
+
+  /* Brand Primary (Apple Blue) */
+  --color-brand-primary: #007aff;
+  --color-brand-primary-light: #5ac8fa;
+  --color-brand-primary-hover: #0066cc;
+
+  /* Text Colors */
+  --color-text-primary: #1d1d1f;
+  --color-text-primary-dark: #f5f5f7;
+  --color-text-muted: #86868b;
+
+  /* Intent Colors (Clinical Semantics) */
+  --color-intent-info: #007aff;
+  --color-intent-info-bg: rgba(0, 122, 255, 0.1);
+  --color-intent-success: #34c759;
+  --color-intent-success-bg: rgba(52, 199, 89, 0.1);
+  --color-intent-warning: #ff9500;
+  --color-intent-warning-bg: rgba(255, 149, 0, 0.1);
+  --color-intent-critical: #ff3b30;
+  --color-intent-critical-bg: rgba(255, 59, 48, 0.1);
+
+  /* Secondary/Accent Colors */
+  --color-accent-purple: #5856d6;
+  --color-accent-purple-light: #bf5af2;
+  --color-accent-cyan: #5ac8fa;
+  --color-accent-cyan-light: #64d2ff;
+
   /* Layout Tokens */
   --layout-header-height: 4rem;
   --layout-sidebar-collapsed: 4rem;

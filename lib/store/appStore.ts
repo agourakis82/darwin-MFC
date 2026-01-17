@@ -24,6 +24,10 @@ interface AppStore extends AppState {
   removeFavoritoMedicamento: (id: string) => void;
   addFavoritoProtocolo: (id: string) => void;
   removeFavoritoProtocolo: (id: string) => void;
+  // Calculadoras favorites
+  addFavoritoCalculadora: (id: string) => void;
+  removeFavoritoCalculadora: (id: string) => void;
+  toggleFavoritoCalculadora: (id: string) => void;
   // i18n
   locale?: Locale;
   setLocale: (locale: Locale) => void;
@@ -40,34 +44,38 @@ export const useAppStore = create<AppStore>()(
       favoritosDoencas: [],
       favoritosMedicamentos: [],
       favoritosProtocolos: [],
+      favoritosCalculadoras: [],
       notes: {},
 
       // Actions
       setTheme: (theme) => set({ theme }),
-      
-      toggleTheme: () => set((state) => ({ 
-        theme: state.theme === 'light' ? 'dark' : 'light' 
+
+      toggleTheme: () => set((state) => ({
+        theme: state.theme === 'light' ? 'dark' : 'light',
       })),
 
       setContentMode: (mode) => set({ contentMode: mode }),
-      
+
       toggleContentMode: () => set((state) => ({
-        contentMode: state.contentMode === 'descriptive' ? 'critical_analysis' : 'descriptive'
+        contentMode:
+          state.contentMode === 'descriptive'
+            ? 'critical_analysis'
+            : 'descriptive',
       })),
 
       // View mode (High-Yield)
       setViewMode: (viewMode) => set({ viewMode }),
 
       toggleHighYieldMode: () => set((state) => ({
-        viewMode: state.viewMode === 'high_yield' ? 'full' : 'high_yield'
+        viewMode: state.viewMode === 'high_yield' ? 'full' : 'high_yield',
       })),
 
       addFavorite: (id) => set((state) => ({
-        favorites: [...new Set([...state.favorites, id])]
+        favorites: [...new Set([...state.favorites, id])],
       })),
 
       removeFavorite: (id) => set((state) => ({
-        favorites: state.favorites.filter(fav => fav !== id)
+        favorites: state.favorites.filter((fav) => fav !== id),
       })),
 
       toggleFavorite: (id) => {
@@ -80,7 +88,7 @@ export const useAppStore = create<AppStore>()(
       },
 
       setNote: (id, note) => set((state) => ({
-        notes: { ...state.notes, [id]: note }
+        notes: { ...state.notes, [id]: note },
       })),
 
       removeNote: (id) => set((state) => {
@@ -91,30 +99,48 @@ export const useAppStore = create<AppStore>()(
 
       // Doenças favorites
       addFavoritoDoenca: (id) => set((state) => ({
-        favoritosDoencas: [...new Set([...state.favoritosDoencas, id])]
+        favoritosDoencas: [...new Set([...state.favoritosDoencas, id])],
       })),
 
       removeFavoritoDoenca: (id) => set((state) => ({
-        favoritosDoencas: state.favoritosDoencas.filter(fav => fav !== id)
+        favoritosDoencas: state.favoritosDoencas.filter((fav) => fav !== id),
       })),
 
       // Medicamentos favorites
       addFavoritoMedicamento: (id) => set((state) => ({
-        favoritosMedicamentos: [...new Set([...state.favoritosMedicamentos, id])]
+        favoritosMedicamentos: [...new Set([...state.favoritosMedicamentos, id])],
       })),
 
       removeFavoritoMedicamento: (id) => set((state) => ({
-        favoritosMedicamentos: state.favoritosMedicamentos.filter(fav => fav !== id)
+        favoritosMedicamentos: state.favoritosMedicamentos.filter((fav) => fav !== id),
       })),
 
       // Protocolos favorites
       addFavoritoProtocolo: (id) => set((state) => ({
-        favoritosProtocolos: [...new Set([...state.favoritosProtocolos, id])]
+        favoritosProtocolos: [...new Set([...state.favoritosProtocolos, id])],
       })),
 
       removeFavoritoProtocolo: (id) => set((state) => ({
-        favoritosProtocolos: state.favoritosProtocolos.filter(fav => fav !== id)
+        favoritosProtocolos: state.favoritosProtocolos.filter((fav) => fav !== id),
       })),
+
+      // Calculadoras favorites
+      addFavoritoCalculadora: (id) => set((state) => ({
+        favoritosCalculadoras: [...new Set([...state.favoritosCalculadoras, id])],
+      })),
+
+      removeFavoritoCalculadora: (id) => set((state) => ({
+        favoritosCalculadoras: state.favoritosCalculadoras.filter((fav) => fav !== id),
+      })),
+
+      toggleFavoritoCalculadora: (id) => {
+        const { favoritosCalculadoras } = get();
+        if (favoritosCalculadoras.includes(id)) {
+          get().removeFavoritoCalculadora(id);
+        } else {
+          get().addFavoritoCalculadora(id);
+        }
+      },
 
       // i18n
       locale: undefined,
@@ -130,6 +156,7 @@ export const useAppStore = create<AppStore>()(
         favoritosDoencas: state.favoritosDoencas,
         favoritosMedicamentos: state.favoritosMedicamentos,
         favoritosProtocolos: state.favoritosProtocolos,
+        favoritosCalculadoras: state.favoritosCalculadoras,
         notes: state.notes,
         locale: state.locale,
       }),

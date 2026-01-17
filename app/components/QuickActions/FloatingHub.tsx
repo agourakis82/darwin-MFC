@@ -292,7 +292,7 @@ export function FloatingHub({
   return (
     <div
       data-floating-hub
-      className="fixed z-40"
+      className="fixed z-40 hidden md:block"
       style={{
         bottom: `${bottom * 4}px`,
         right: `${right * 4}px`,

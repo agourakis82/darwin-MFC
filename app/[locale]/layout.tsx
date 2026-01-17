@@ -8,7 +8,10 @@ import LocaleHtmlAttributes from './LocaleHtmlAttributes';
 import { RegionProvider } from '@/lib/context/RegionContext';
 import RegionOnboardingModal from '@/app/components/Region/RegionOnboardingModal';
 import FloatingHub from '@/app/components/QuickActions/FloatingHub';
+import MobileBottomNav from '@/app/components/Navigation/MobileBottomNav';
 import LocaleSync from '@/app/components/LocaleSync';
+import CrossTabSyncProvider from '@/app/components/Providers/CrossTabSyncProvider';
+import { ErrorBoundary } from '@/app/components/ErrorBoundary';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -54,11 +57,16 @@ export default async function LocaleLayout({
     <NextIntlClientProvider messages={messages}>
       <LocaleHtmlAttributes lang={htmlLang} dir={direction} />
       <LocaleSync />
-      <RegionProvider>
-        {children}
-        <RegionOnboardingModal />
-        <FloatingHub />
-      </RegionProvider>
+      <CrossTabSyncProvider>
+        <ErrorBoundary>
+          <RegionProvider>
+            {children}
+            <RegionOnboardingModal />
+            <FloatingHub />
+            <MobileBottomNav />
+          </RegionProvider>
+        </ErrorBoundary>
+      </CrossTabSyncProvider>
     </NextIntlClientProvider>
   );
 }

@@ -36,6 +36,7 @@ const fallbackTranslations: Record<string, string> = {
   'sidebar.new': 'Novo',
   'contentMode.descriptive': 'Modo Descritivo',
   'contentMode.criticalAnalysis': 'Modo Análise Crítica',
+  'accessibility.skipToContent': 'Pular para o conteúdo principal',
 };
 
 function useSafeTranslations() {
@@ -58,9 +59,9 @@ export default function Header() {
       {/* Skip Navigation Link - Accessibility */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:start-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none"
       >
-        Skip to main content
+        {t('accessibility.skipToContent')}
       </a>
       <header className="sticky top-0 z-40 navbar-glass" role="banner">
         <div className="container mx-auto px-4">
@@ -69,7 +70,7 @@ export default function Header() {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 apple-transition-fast"
+                className="md:hidden p-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 apple-transition-fast"
                 aria-label="Menu"
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu"
@@ -97,7 +98,7 @@ export default function Header() {
           </div>
 
           {/* Navegação Desktop - Simplified */}
-          <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
+          <nav className="hidden md:flex items-center gap-1" role="navigation" aria-label="Main navigation">
             <Link
               href="/doencas"
               className="px-3.5 py-2 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
@@ -164,7 +165,7 @@ export default function Header() {
               className="sm:hidden p-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 apple-transition-fast"
               aria-label={t('header.search')}
             >
-              <Search className="w-5 h-5 text-[#1d1d1f] dark:text-[#f5f5f7]" />
+              <Search className="w-5 h-5 text-[#1d1d1f] dark:text-[#f5f5f7]" aria-hidden="true" />
             </button>
 
             {/* High-Yield Mode Toggle */}
@@ -215,7 +216,7 @@ export default function Header() {
         {mobileMenuOpen && (
           <div
             id="mobile-menu"
-            className="lg:hidden pb-6 border-t border-black/10 dark:border-white/10 mt-4 pt-4 animate-fade-in max-h-[80vh] overflow-y-auto"
+            className="md:hidden pb-6 border-t border-black/10 dark:border-white/10 mt-4 pt-4 animate-fade-in max-h-[80vh] overflow-y-auto"
             role="navigation"
             aria-label="Mobile navigation"
           >

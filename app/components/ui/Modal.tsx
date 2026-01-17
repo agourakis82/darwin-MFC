@@ -123,10 +123,10 @@ const drawerSizeStyles: Record<DrawerPosition, Record<'sm' | 'md' | 'lg', string
 };
 
 const drawerPositionStyles: Record<DrawerPosition, string> = {
-  left: 'left-0 top-0 bottom-0 rounded-r-2xl',
-  right: 'right-0 top-0 bottom-0 rounded-l-2xl',
-  top: 'top-0 left-0 right-0 rounded-b-2xl',
-  bottom: 'bottom-0 left-0 right-0 rounded-t-2xl',
+  left: 'start-0 top-0 bottom-0 rounded-e-2xl',
+  right: 'end-0 top-0 bottom-0 rounded-s-2xl',
+  top: 'top-0 start-0 end-0 rounded-b-2xl',
+  bottom: 'bottom-0 start-0 end-0 rounded-t-2xl',
 };
 
 const alertTypeConfig: Record<AlertType, { icon: typeof Info; color: string; bgColor: string }> = {
@@ -305,6 +305,13 @@ export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
     },
     ref
   ) => {
+    // Internal ref for focus trap (combine with forwarded ref)
+    const internalRef = useRef<HTMLDivElement>(null);
+    const drawerRef = (ref as React.RefObject<HTMLDivElement>) || internalRef;
+
+    // Focus trap for accessibility
+    useFocusTrap(isOpen, drawerRef);
+
     // Handle ESC key
     const handleKeyDown = useCallback(
       (e: KeyboardEvent) => {
@@ -364,7 +371,7 @@ export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
 
             {/* Drawer Content */}
             <motion.div
-              ref={ref}
+              ref={drawerRef}
               initial={{ opacity: 0, ...getInitialPosition() }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               exit={{ opacity: 0, ...getInitialPosition() }}
@@ -380,18 +387,20 @@ export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
               )}
               role="dialog"
               aria-modal="true"
+              aria-labelledby={title ? 'drawer-title' : undefined}
+              aria-describedby={description ? 'drawer-description' : undefined}
             >
               {/* Header */}
               {(title || showCloseButton) && (
                 <div className="flex items-start justify-between p-6 border-b border-gray-200 dark:border-white/10">
                   <div>
                     {title && (
-                      <h2 className="text-lg font-semibold text-[#1d1d1f] dark:text-[#f5f5f7]">
+                      <h2 id="drawer-title" className="text-lg font-semibold text-[#1d1d1f] dark:text-[#f5f5f7]">
                         {title}
                       </h2>
                     )}
                     {description && (
-                      <p className="mt-1 text-sm text-[#86868b]">{description}</p>
+                      <p id="drawer-description" className="mt-1 text-sm text-[#86868b]">{description}</p>
                     )}
                   </div>
                   {showCloseButton && (

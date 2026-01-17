@@ -12,6 +12,7 @@ export * from './spacing';
 export * from './animations';
 export * from './breakpoints';
 export * from './shadows';
+export * from './z-index';
 
 // Re-export as a single tokens object for convenience
 import { colors } from './colors';
@@ -20,6 +21,7 @@ import { spacing } from './spacing';
 import { animations } from './animations';
 import { breakpoints } from './breakpoints';
 import { shadows } from './shadows';
+import { zIndex } from './z-index';
 
 export const tokens = {
   colors,
@@ -28,6 +30,7 @@ export const tokens = {
   animations,
   breakpoints,
   shadows,
+  zIndex,
 } as const;
 
 export type Tokens = typeof tokens;

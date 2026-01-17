@@ -42,5 +42,14 @@ export interface Citation {
   qualityScore?: number; // Score de qualidade (0-10)
   limitations?: string[]; // Limitações do estudo
   conflictsOfInterest?: string; // Conflitos de interesse
+  // Optional inline reference data (for self-contained citations)
+  authors?: string[];
+  title?: string;
+  journal?: string;
+  year?: number;
+  volume?: string;
+  pages?: string;
+  doi?: string;
+  pmid?: string;
 }
 

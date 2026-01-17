@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { showErrorToast } from '@/app/components/ui/Toast';
 import {
   Network, Plus, Trash2, Upload, ZoomIn, ZoomOut,
   X, Home, Heart, Briefcase, GraduationCap, Church, Hospital,
@@ -191,7 +192,7 @@ export default function EcomapaClient() {
       link.href = canvas.toDataURL('image/png');
       link.click();
     } catch (error) {
-      alert(t('alerts.exportImageError'));
+      showErrorToast('Erro ao exportar', t('alerts.exportImageError'));
     }
   }, [t]);
 
@@ -206,7 +207,7 @@ export default function EcomapaClient() {
           setRecursos(data.recursos || []);
           setNomeFamilia(data.nomeFamilia || t('nuclearFamily'));
         } catch (err) {
-          alert(t('alerts.importError'));
+          showErrorToast('Erro ao importar', t('alerts.importError'));
         }
       };
       reader.readAsText(file);

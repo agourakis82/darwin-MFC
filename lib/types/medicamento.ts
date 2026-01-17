@@ -284,7 +284,7 @@ export type SubclasseMedicamento =
   // Neurológicos
   | 'precursor_dopamina' | 'agonista_dopaminergico' | 'imao_b' | 'inibidor_comt'
   // Enxaqueca
-  | 'triptano' | 'anticorpo_cgrp' | 'antagonista_ampa'
+  | 'triptano' | 'anticorpo_cgrp' | 'antagonista_cgrp' | 'agonista_5ht1f' | 'antagonista_ampa'
   // Nefrologia
   | 'resina' | 'calcio' | 'calcimimetico'
   // Gastrointestinal adicional
@@ -391,7 +391,8 @@ export type FormaFarmaceutica =
 
 export interface Posologia {
   indicacao: string;
-  adultos: {
+  /** Adult dosing (optional for pediatric-only indications) */
+  adultos?: {
     dose: string;
     frequencia: string;
     doseMaxima?: string;

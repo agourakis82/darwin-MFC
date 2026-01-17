@@ -8,6 +8,7 @@
 'use client';
 
 import { useState } from 'react';
+import { showErrorToast } from '@/app/components/ui/Toast';
 
 export type ExportFormat = 'csv' | 'pdf' | 'json';
 
@@ -51,7 +52,7 @@ export default function ExportButton({
       await onExport(format);
     } catch (error) {
       console.error('Export error:', error);
-      alert('Erro ao exportar. Tente novamente.');
+      showErrorToast('Erro ao exportar', 'Não foi possível exportar. Tente novamente.');
     } finally {
       setExporting(false);
     }

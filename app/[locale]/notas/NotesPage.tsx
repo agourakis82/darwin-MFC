@@ -8,6 +8,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { showSuccessToast, showErrorToast } from '@/app/components/ui/Toast';
 import NoteEditor from '@/app/components/Notes/NoteEditor';
 import NoteCard from '@/app/components/Notes/NoteCard';
 import ExportButton, { type ExportFormat } from '@/app/components/Export/ExportButton';
@@ -132,10 +133,10 @@ export default function NotesPage() {
         try {
           const imported = JSON.parse(event.target?.result as string);
           const count = importNotes(imported, true);
-          alert(`${count} notas importadas com sucesso!`);
+          showSuccessToast('Importação concluída', `${count} notas importadas com sucesso!`);
           loadNotes();
         } catch (error) {
-          alert('Erro ao importar notas. Verifique o formato do arquivo.');
+          showErrorToast('Erro ao importar', 'Verifique o formato do arquivo.');
         }
       };
       reader.readAsText(file);

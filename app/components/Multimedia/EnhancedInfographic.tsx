@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { ZoomIn, Download, ExternalLink, Share2, Info } from 'lucide-react';
+import { showSuccessToast } from '@/app/components/ui/Toast';
 
 export interface InfographicData {
   id: string;
@@ -65,7 +66,7 @@ export default function EnhancedInfographic({
     } else {
       // Fallback: copiar URL para clipboard
       await navigator.clipboard.writeText(window.location.href);
-      alert('Link copiado para a área de transferência!');
+      showSuccessToast('Link copiado!', 'O link foi copiado para a área de transferência');
     }
   };
 

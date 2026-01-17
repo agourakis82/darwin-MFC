@@ -144,7 +144,9 @@ export default function ConsultaRapidaClient() {
               <div key={i} className="mb-3 pb-3 border-b border-slate-100 dark:border-slate-700 last:border-0 last:pb-0 last:mb-0">
                 <p className="text-xs font-medium text-blue-600 dark:text-blue-400 mb-1">{pos.indicacao}</p>
                 <div className="text-sm text-slate-700 dark:text-slate-300">
-                  <p><strong>{t('medDetail.adults')}:</strong> {pos.adultos.dose} - {pos.adultos.frequencia}</p>
+                  {pos.adultos && (
+                    <p><strong>{t('medDetail.adults')}:</strong> {pos.adultos.dose} - {pos.adultos.frequencia}</p>
+                  )}
                   {pos.pediatrico && (
                     <p className="text-xs text-slate-500 mt-1">
                       <strong>{t('medDetail.pediatric')}:</strong> {pos.pediatrico.dose}

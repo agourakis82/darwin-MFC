@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useRef } from 'react';
+import { showSuccessToast, showErrorToast } from '@/app/components/ui/Toast';
 import { Link } from '@/i18n/routing';
 import { Copy, Download, Check, FileText, ClipboardList, Stethoscope, Pill, Target, User, ChevronDown, ChevronUp, Users, Network, ExternalLink } from 'lucide-react';
 import type { ChecklistProgress, ChecklistConsulta } from '@/lib/types/checklist';
@@ -414,10 +415,10 @@ export default function SOAPExport({
   const handleSaveToHistory = () => {
     try {
       const consultId = saveConsultationToHistory(data);
-      alert(`Consulta salva no histórico! (ID: ${consultId})`);
+      showSuccessToast('Consulta salva!', `ID: ${consultId}`);
     } catch (error) {
       console.error('Erro ao salvar consulta:', error);
-      alert('Erro ao salvar consulta no histórico');
+      showErrorToast('Erro', 'Não foi possível salvar a consulta no histórico');
     }
   };
 

@@ -113,6 +113,11 @@ const categoryColors: Record<CalculatorCategory, {
     border: 'border-teal-200 dark:border-teal-800',
     text: 'text-teal-700 dark:text-teal-400',
   },
+  endocrinology: {
+    bg: 'bg-yellow-50 dark:bg-yellow-950/30',
+    border: 'border-yellow-200 dark:border-yellow-800',
+    text: 'text-yellow-700 dark:text-yellow-400',
+  },
   general: {
     bg: 'bg-gray-50 dark:bg-gray-800/30',
     border: 'border-gray-200 dark:border-gray-700',

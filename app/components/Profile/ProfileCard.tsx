@@ -61,9 +61,10 @@ export default function ProfileCard({ onEdit, showStats = true }: ProfileCardPro
         {onEdit && (
           <button
             onClick={onEdit}
-            className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-lg text-white transition-colors"
+            className="absolute top-4 end-4 p-2 bg-white/10 hover:bg-white/20 rounded-lg text-white transition-colors"
+            aria-label="Edit profile"
           >
-            <Edit2 className="w-4 h-4" />
+            <Edit2 className="w-4 h-4" aria-hidden="true" />
           </button>
         )}
 

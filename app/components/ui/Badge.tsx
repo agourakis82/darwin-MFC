@@ -2,6 +2,7 @@
 
 import { forwardRef, HTMLAttributes, ReactNode } from 'react';
 import { cn } from '@/lib/utils';
+import { useReducedMotion } from '@/lib/hooks/useReducedMotion';
 
 // =============================================================================
 // TYPES
@@ -9,6 +10,7 @@ import { cn } from '@/lib/utils';
 
 export type BadgeVariant =
   | 'default'
+  | 'neutral'  // Alias for default (preferred)
   | 'primary'
   | 'secondary'
   | 'success'
@@ -19,13 +21,25 @@ export type BadgeVariant =
 
 export type BadgeSize = 'sm' | 'md' | 'lg';
 
+/**
+ * Clinical intent for semantic badge colors
+ * - info: Informational (blue) - educational content
+ * - success: Safe/positive (green) - normal results
+ * - warning: Caution (amber) - requires attention
+ * - critical: Urgent/danger (red) - emergencies, alerts
+ */
+export type BadgeIntent = 'neutral' | 'info' | 'success' | 'warning' | 'critical';
+
 export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   variant?: BadgeVariant;
+  /** Clinical intent - overrides variant color when set */
+  intent?: BadgeIntent;
   size?: BadgeSize;
   icon?: ReactNode;
   removable?: boolean;
   onRemove?: () => void;
   dot?: boolean;
+  /** Pulsing dot (respects prefers-reduced-motion) */
   pulse?: boolean;
 }
 
@@ -40,11 +54,14 @@ const baseStyles = `
   transition-colors duration-150
 `;
 
+const neutralStyle = `
+  bg-gray-100 dark:bg-white/10
+  text-gray-700 dark:text-gray-300
+`;
+
 const variantStyles: Record<BadgeVariant, string> = {
-  default: `
-    bg-gray-100 dark:bg-white/10
-    text-gray-700 dark:text-gray-300
-  `,
+  default: neutralStyle,
+  neutral: neutralStyle,  // Preferred name (alias)
   primary: `
     bg-[#007aff]/10 dark:bg-[#5ac8fa]/15
     text-[#007aff] dark:text-[#5ac8fa]
@@ -73,6 +90,30 @@ const variantStyles: Record<BadgeVariant, string> = {
     bg-transparent
     border border-current
     text-gray-600 dark:text-gray-400
+  `,
+};
+
+/**
+ * Intent styles for clinical contexts
+ * Maps to semantic colors with medical meaning
+ */
+const intentStyles: Record<BadgeIntent, string> = {
+  neutral: neutralStyle,
+  info: `
+    bg-[#007aff]/10 dark:bg-[#5ac8fa]/15
+    text-[#007aff] dark:text-[#5ac8fa]
+  `,
+  success: `
+    bg-[#34c759]/10 dark:bg-[#30d158]/15
+    text-[#34c759] dark:text-[#30d158]
+  `,
+  warning: `
+    bg-[#ff9500]/10 dark:bg-[#ff9f0a]/15
+    text-[#ff9500] dark:text-[#ff9f0a]
+  `,
+  critical: `
+    bg-[#ff3b30]/10 dark:bg-[#ff453a]/15
+    text-[#ff3b30] dark:text-[#ff453a]
   `,
 };
 
@@ -123,6 +164,7 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
   (
     {
       variant = 'default',
+      intent,
       size = 'md',
       icon,
       removable = false,
@@ -135,21 +177,29 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
     },
     ref
   ) => {
+    const prefersReducedMotion = useReducedMotion();
+
+    // Intent overrides variant styles when set
+    const colorStyles = intent ? intentStyles[intent] : variantStyles[variant];
+
+    // Respect reduced motion preference for pulse animation
+    const shouldPulse = pulse && !prefersReducedMotion;
+
     return (
       <span
         ref={ref}
-        className={cn(baseStyles, variantStyles[variant], sizeStyles[size], className)}
+        className={cn(baseStyles, colorStyles, sizeStyles[size], className)}
         {...props}
       >
         {dot && (
           <span className="relative flex h-2 w-2">
-            {pulse && (
+            {shouldPulse && (
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-current opacity-75" />
             )}
             <span className="relative inline-flex rounded-full h-2 w-2 bg-current" />
           </span>
         )}
-        {icon && <span className="flex-shrink-0 -ml-0.5">{icon}</span>}
+        {icon && <span className="flex-shrink-0 -ml-0.5" aria-hidden="true">{icon}</span>}
         {children}
         {removable && (
           <button
@@ -158,7 +208,7 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
             className="flex-shrink-0 -mr-1 ml-0.5 h-4 w-4 rounded-full flex items-center justify-center hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
             aria-label="Remove"
           >
-            <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>

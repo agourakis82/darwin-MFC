@@ -144,14 +144,14 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 
         <div className="relative flex items-stretch">
           {leftAddon && (
-            <span className="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-gray-300 dark:border-white/20 bg-gray-50 dark:bg-white/5 text-[#86868b] text-sm">
+            <span className="inline-flex items-center px-3 rounded-s-xl border border-e-0 border-gray-300 dark:border-white/20 bg-gray-50 dark:bg-white/5 text-[#86868b] text-sm">
               {leftAddon}
             </span>
           )}
 
           <div className="relative flex-1">
             {leftElement && (
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#86868b] pointer-events-none">
+              <span className="absolute start-3 top-1/2 -translate-y-1/2 text-[#86868b] pointer-events-none">
                 {leftElement}
               </span>
             )}
@@ -166,10 +166,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                 variantStyles[variant],
                 sizeStyles[size].input,
                 hasError && invalidStyles,
-                leftElement && 'pl-10',
-                (rightElement || showClear) && 'pr-10',
-                leftAddon && 'rounded-l-none',
-                rightAddon && 'rounded-r-none',
+                leftElement && 'ps-10',
+                (rightElement || showClear) && 'pe-10',
+                leftAddon && 'rounded-s-none',
+                rightAddon && 'rounded-e-none',
                 className
               )}
               aria-invalid={hasError}
@@ -180,7 +180,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             />
 
             {(rightElement || showClear) && (
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
+              <span className="absolute end-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
                 {showClear && (
                   <button
                     type="button"
@@ -197,7 +197,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           </div>
 
           {rightAddon && (
-            <span className="inline-flex items-center px-3 rounded-r-xl border border-l-0 border-gray-300 dark:border-white/20 bg-gray-50 dark:bg-white/5 text-[#86868b] text-sm">
+            <span className="inline-flex items-center px-3 rounded-e-xl border border-s-0 border-gray-300 dark:border-white/20 bg-gray-50 dark:bg-white/5 text-[#86868b] text-sm">
               {rightAddon}
             </span>
           )}
@@ -332,10 +332,10 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
           min={min}
           max={max}
           step={step}
-          className="pr-10 [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden"
+          className="pe-10 [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden"
           {...props}
         />
-        <div className="absolute right-1 top-1/2 -translate-y-1/2 flex flex-col">
+        <div className="absolute end-1 top-1/2 -translate-y-1/2 flex flex-col">
           <button
             type="button"
             onClick={increment}

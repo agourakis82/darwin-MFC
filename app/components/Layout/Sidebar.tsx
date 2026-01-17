@@ -52,6 +52,10 @@ interface NavSection {
 interface NavGroup {
   title: string;
   sections: NavSection[];
+  /** If true, group starts collapsed and must be expanded */
+  collapsedByDefault?: boolean;
+  /** If true, this is a primary navigation group (always visible) */
+  isPrimary?: boolean;
 }
 
 // Dynamically generate subsections from actual rastreamentos data
@@ -73,29 +77,35 @@ export default function Sidebar({ defaultCollapsed = false }: SidebarProps) {
   const pathname = usePathname();
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set([pathname?.split('#')[0] || '/']));
   const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed);
+  const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
 
   const navigationGroups: NavGroup[] = useMemo(() => [
+    // PRIMARY NAVIGATION - Always visible
     {
       title: t('sidebar.main'),
+      isPrimary: true,
       sections: [
         { title: t('sidebar.home'), icon: Home, path: '/' },
+        { title: t('sidebar.diseasesAPS'), icon: BookOpen, path: '/doencas' },
+        { title: t('sidebar.medicationGuide'), icon: Pill, path: '/medicamentos' },
+        { title: t('sidebar.protocols'), icon: FileText, path: '/protocolos' },
+        { title: t('sidebar.calculators'), icon: Calculator, path: '/calculadoras' },
+      ]
+    },
+    // SECONDARY NAVIGATION - Collapsed by default
+    {
+      title: t('sidebar.clinicalGuide'),
+      collapsedByDefault: true,
+      sections: [
+        { title: t('sidebar.prenatalHighRisk'), icon: Baby, path: '/prenatal-alto-risco', badge: t('common.new') },
+        { title: t('sidebar.pediatricsAPS'), icon: Baby, path: '/pediatria-aps', badge: t('common.new') },
+        { title: t('sidebar.clinicalCases'), icon: GraduationCap, path: '/casos-clinicos', badge: t('common.new') },
         { title: t('sidebar.clinicalCase'), icon: GraduationCap, path: '/aula' },
       ]
     },
     {
-      title: t('sidebar.clinicalGuide'),
-      sections: [
-        { title: t('sidebar.diseasesAPS'), icon: BookOpen, path: '/doencas' },
-        { title: t('sidebar.prenatalHighRisk'), icon: Baby, path: '/prenatal-alto-risco', badge: t('common.new') },
-        { title: t('sidebar.pediatricsAPS'), icon: Baby, path: '/pediatria-aps', badge: t('common.new') },
-        { title: t('sidebar.medicationGuide'), icon: Pill, path: '/medicamentos' },
-        { title: t('sidebar.protocols'), icon: FileText, path: '/protocolos' },
-        { title: t('sidebar.calculators'), icon: Calculator, path: '/calculadoras' },
-        { title: t('sidebar.clinicalCases'), icon: GraduationCap, path: '/casos-clinicos', badge: t('common.new') },
-      ]
-    },
-    {
       title: t('sidebar.susScreenings'),
+      collapsedByDefault: true,
       sections: [
         {
           title: t('sidebar.neonatalScreening'),
@@ -130,15 +140,8 @@ export default function Sidebar({ defaultCollapsed = false }: SidebarProps) {
       ]
     },
     {
-      title: t('sidebar.fundamentals'),
-      sections: [
-        { title: t('sidebar.susAPS'), icon: Shield, path: '/sus', badge: t('common.new') },
-        { title: t('sidebar.timeline'), icon: Clock, path: '/timeline' },
-        { title: t('sidebar.bibliography'), icon: BookMarked, path: '/bibliografia' },
-      ]
-    },
-    {
       title: t('sidebar.clinicalTools'),
+      collapsedByDefault: true,
       sections: [
         { title: t('sidebar.quickConsultation'), icon: Zap, path: '/consulta-rapida' },
         { title: t('sidebar.soapRecord'), icon: ClipboardList, path: '/prontuario' },
@@ -149,8 +152,35 @@ export default function Sidebar({ defaultCollapsed = false }: SidebarProps) {
         { title: t('sidebar.drugComparator'), icon: Pill, path: '/medicamentos/comparador' },
         { title: t('sidebar.advancedSearch'), icon: FileSearch, path: '/busca' },
       ]
-    }
+    },
+    {
+      title: t('sidebar.fundamentals'),
+      collapsedByDefault: true,
+      sections: [
+        { title: t('sidebar.susAPS'), icon: Shield, path: '/sus', badge: t('common.new') },
+        { title: t('sidebar.timeline'), icon: Clock, path: '/timeline' },
+        { title: t('sidebar.bibliography'), icon: BookMarked, path: '/bibliografia' },
+      ]
+    },
   ], [t]);
+
+  const toggleGroup = (groupTitle: string) => {
+    const newExpanded = new Set(expandedGroups);
+    if (newExpanded.has(groupTitle)) {
+      newExpanded.delete(groupTitle);
+    } else {
+      newExpanded.add(groupTitle);
+    }
+    setExpandedGroups(newExpanded);
+  };
+
+  const isGroupExpanded = (group: NavGroup) => {
+    if (group.isPrimary) return true;
+    if (group.collapsedByDefault) {
+      return expandedGroups.has(group.title);
+    }
+    return true;
+  };
 
   const toggleSection = (title: string) => {
     const newExpanded = new Set(expandedSections);
@@ -192,7 +222,7 @@ export default function Sidebar({ defaultCollapsed = false }: SidebarProps) {
               <span className="text-sm font-medium">{section.title}</span>
             </div>
             {section.badge && (
-              <span className="px-1.5 py-0.5 bg-emerald-500 text-white text-[10px] font-bold rounded-full ml-auto mr-2">
+              <span className="px-1.5 py-0.5 bg-emerald-500 text-white text-[10px] font-bold rounded-full ms-auto me-2">
                 {section.badge}
               </span>
             )}
@@ -235,7 +265,7 @@ export default function Sidebar({ defaultCollapsed = false }: SidebarProps) {
         )}
 
         {hasSubsections && isExpanded && (
-          <div className="ml-10 mt-2 space-y-1 border-l-2 border-neutral-200 dark:border-neutral-700 pl-4" role="group">
+          <div className="ms-10 mt-2 space-y-1 border-s-2 border-neutral-200 dark:border-neutral-700 ps-4" role="group">
             {section.subsections!.map((subsection) => {
               const isSubActive = pathname + (typeof window !== 'undefined' ? window.location.hash : '') === subsection.path;
 
@@ -245,7 +275,7 @@ export default function Sidebar({ defaultCollapsed = false }: SidebarProps) {
                   href={subsection.path}
                   className={`block px-3 py-2 text-sm rounded-lg transition-all ${
                     isSubActive
-                      ? 'text-blue-700 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900/30 border-l-2 border-blue-600 -ml-[18px] pl-4'
+                      ? 'text-blue-700 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900/30 border-s-2 border-blue-600 -ms-[18px] ps-4'
                       : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-800/50'
                   }`}
                   aria-current={isSubActive ? 'page' : undefined}
@@ -280,11 +310,11 @@ export default function Sidebar({ defaultCollapsed = false }: SidebarProps) {
         >
           <Icon className="w-5 h-5" aria-hidden="true" />
           {section.badge && (
-            <span className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-500 rounded-full" />
+            <span className="absolute -top-1 -end-1 w-2 h-2 bg-emerald-500 rounded-full" />
           )}
         </Link>
         {/* Tooltip */}
-        <div className="absolute left-full ml-2 px-2 py-1 bg-neutral-900 dark:bg-neutral-700 text-white text-xs rounded-md whitespace-nowrap opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+        <div className="absolute start-full ms-2 px-2 py-1 bg-neutral-900 dark:bg-neutral-700 text-white text-xs rounded-md whitespace-nowrap opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
           {section.title}
         </div>
       </div>
@@ -294,7 +324,7 @@ export default function Sidebar({ defaultCollapsed = false }: SidebarProps) {
   return (
     <aside
       className={cn(
-        'glass border-r border-neutral-200/80 dark:border-neutral-700/50 h-screen sticky top-0 overflow-y-auto shadow-sm transition-all duration-300',
+        'glass border-e border-neutral-200/80 dark:border-neutral-700/50 h-screen sticky top-0 overflow-y-auto shadow-sm transition-all duration-300',
         isCollapsed ? 'w-16' : 'w-72 lg:w-80'
       )}
       role="complementary"
@@ -335,7 +365,7 @@ export default function Sidebar({ defaultCollapsed = false }: SidebarProps) {
               </div>
               <button
                 onClick={() => setIsCollapsed(true)}
-                className="p-1.5 rounded-lg text-neutral-500 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors hidden md:flex lg:hidden"
+                className="p-1.5 rounded-lg text-neutral-500 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors hidden md:flex"
                 aria-label="Collapse sidebar"
               >
                 <PanelLeftClose className="w-4 h-4" />
@@ -343,17 +373,41 @@ export default function Sidebar({ defaultCollapsed = false }: SidebarProps) {
             </div>
           </div>
 
-          <nav className="space-y-6" role="navigation" aria-label="Clinical guide navigation">
-            {navigationGroups.map((group) => (
-              <div key={group.title}>
-                <h3 className="text-xs font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-wider mb-2 px-4">
-                  {group.title}
-                </h3>
-                <div className="space-y-1">
-                  {group.sections.map(renderSection)}
+          <nav className="space-y-4" role="navigation" aria-label="Clinical guide navigation">
+            {navigationGroups.map((group) => {
+              const isExpanded = isGroupExpanded(group);
+              const isCollapsible = group.collapsedByDefault && !group.isPrimary;
+
+              return (
+                <div key={group.title}>
+                  {isCollapsible ? (
+                    // Collapsible group header
+                    <button
+                      onClick={() => toggleGroup(group.title)}
+                      className="w-full flex items-center justify-between px-4 py-2 text-xs font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
+                      aria-expanded={isExpanded}
+                    >
+                      <span>{group.title}</span>
+                      {isExpanded ? (
+                        <ChevronDown className="w-4 h-4" aria-hidden="true" />
+                      ) : (
+                        <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                      )}
+                    </button>
+                  ) : (
+                    // Primary group header (non-collapsible)
+                    <h3 className="text-xs font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-wider mb-2 px-4">
+                      {group.title}
+                    </h3>
+                  )}
+                  {isExpanded && (
+                    <div className={cn("space-y-1", isCollapsible && "mt-1 mb-2")}>
+                      {group.sections.map(renderSection)}
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </nav>
 
           {/* Footer - Professional Medical Style */}
