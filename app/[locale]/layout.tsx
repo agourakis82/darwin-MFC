@@ -8,6 +8,7 @@ import LocaleHtmlAttributes from './LocaleHtmlAttributes';
 import { RegionProvider } from '@/lib/context/RegionContext';
 import RegionOnboardingModal from '@/app/components/Region/RegionOnboardingModal';
 import FloatingHub from '@/app/components/QuickActions/FloatingHub';
+import LocaleSync from '@/app/components/LocaleSync';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -52,6 +53,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <LocaleHtmlAttributes lang={htmlLang} dir={direction} />
+      <LocaleSync />
       <RegionProvider>
         {children}
         <RegionOnboardingModal />

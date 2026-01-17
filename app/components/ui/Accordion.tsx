@@ -4,9 +4,12 @@ import {
   createContext,
   useContext,
   useState,
+  useRef,
+  useCallback,
   ReactNode,
   HTMLAttributes,
   forwardRef,
+  KeyboardEvent,
 } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Plus, Minus } from 'lucide-react';
@@ -25,6 +28,9 @@ interface AccordionContextValue {
   toggleItem: (value: string) => void;
   variant: AccordionVariant;
   iconType: 'chevron' | 'plus';
+  // WAI-ARIA keyboard navigation
+  registerTrigger: (value: string, ref: HTMLButtonElement | null) => void;
+  handleKeyDown: (e: KeyboardEvent<HTMLButtonElement>, value: string) => void;
 }
 
 export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
@@ -118,6 +124,10 @@ export const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
       Array.isArray(defaultValue) ? defaultValue : defaultValue ? [defaultValue] : []
     );
 
+    // WAI-ARIA: Track all trigger refs for keyboard navigation
+    const triggersRef = useRef<Map<string, HTMLButtonElement>>(new Map());
+    const triggerOrderRef = useRef<string[]>([]);
+
     const expandedItems = controlledValue
       ? Array.isArray(controlledValue)
         ? controlledValue
@@ -147,13 +157,60 @@ export const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
       onValueChange?.(type === 'single' ? newValue[0] || '' : newValue);
     };
 
+    // WAI-ARIA: Register trigger buttons for keyboard navigation
+    const registerTrigger = useCallback((value: string, buttonRef: HTMLButtonElement | null) => {
+      if (buttonRef) {
+        triggersRef.current.set(value, buttonRef);
+        if (!triggerOrderRef.current.includes(value)) {
+          triggerOrderRef.current.push(value);
+        }
+      } else {
+        triggersRef.current.delete(value);
+        triggerOrderRef.current = triggerOrderRef.current.filter(v => v !== value);
+      }
+    }, []);
+
+    // WAI-ARIA: Handle keyboard navigation
+    const handleKeyDown = useCallback((e: KeyboardEvent<HTMLButtonElement>, currentValue: string) => {
+      const triggers = triggerOrderRef.current;
+      const currentIndex = triggers.indexOf(currentValue);
+
+      let targetIndex: number | null = null;
+
+      switch (e.key) {
+        case 'ArrowDown':
+          e.preventDefault();
+          targetIndex = currentIndex < triggers.length - 1 ? currentIndex + 1 : 0;
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          targetIndex = currentIndex > 0 ? currentIndex - 1 : triggers.length - 1;
+          break;
+        case 'Home':
+          e.preventDefault();
+          targetIndex = 0;
+          break;
+        case 'End':
+          e.preventDefault();
+          targetIndex = triggers.length - 1;
+          break;
+      }
+
+      if (targetIndex !== null) {
+        const targetValue = triggers[targetIndex];
+        const targetButton = triggersRef.current.get(targetValue);
+        targetButton?.focus();
+      }
+    }, []);
+
     return (
       <AccordionContext.Provider
-        value={{ type, expandedItems, toggleItem, variant, iconType }}
+        value={{ type, expandedItems, toggleItem, variant, iconType, registerTrigger, handleKeyDown }}
       >
         <div
           ref={ref}
           className={cn(accordionVariantStyles[variant].root, className)}
+          role="presentation"
           {...props}
         >
           {children}
@@ -202,17 +259,35 @@ AccordionItem.displayName = 'AccordionItem';
 
 export const AccordionTrigger = forwardRef<HTMLButtonElement, AccordionTriggerProps>(
   ({ icon, className, children, ...props }, ref) => {
-    const { toggleItem, variant, iconType } = useAccordionContext();
+    const { toggleItem, variant, iconType, registerTrigger, handleKeyDown } = useAccordionContext();
     const { value, isExpanded } = useAccordionItemContext();
+    const internalRef = useRef<HTMLButtonElement>(null);
+
+    // Combine refs and register for keyboard navigation
+    const setRef = useCallback((node: HTMLButtonElement | null) => {
+      // Handle internal ref
+      (internalRef as React.MutableRefObject<HTMLButtonElement | null>).current = node;
+      // Handle forwarded ref
+      if (typeof ref === 'function') {
+        ref(node);
+      } else if (ref) {
+        (ref as React.MutableRefObject<HTMLButtonElement | null>).current = node;
+      }
+      // Register for keyboard navigation
+      registerTrigger(value, node);
+    }, [ref, registerTrigger, value]);
 
     const IconComponent = iconType === 'plus' ? (isExpanded ? Minus : Plus) : ChevronDown;
 
     return (
       <button
-        ref={ref}
+        ref={setRef}
         type="button"
         aria-expanded={isExpanded}
+        aria-controls={`accordion-content-${value}`}
+        id={`accordion-trigger-${value}`}
         onClick={() => toggleItem(value)}
+        onKeyDown={(e) => handleKeyDown(e, value)}
         className={cn(
           'flex items-center justify-between w-full py-4 px-4',
           'text-left font-medium text-[#1d1d1f] dark:text-[#f5f5f7]',
@@ -247,13 +322,16 @@ AccordionTrigger.displayName = 'AccordionTrigger';
 
 export const AccordionContent = forwardRef<HTMLDivElement, AccordionContentProps>(
   ({ className, children, ...props }, ref) => {
-    const { isExpanded } = useAccordionItemContext();
+    const { value, isExpanded } = useAccordionItemContext();
 
     return (
       <AnimatePresence initial={false}>
         {isExpanded && (
           <motion.div
             ref={ref}
+            id={`accordion-content-${value}`}
+            role="region"
+            aria-labelledby={`accordion-trigger-${value}`}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}

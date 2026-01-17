@@ -820,6 +820,90 @@ p {
     padding: 0.75rem !important;
     margin: 1rem 0 !important;
   }
+
+  /* ============================================ */
+  /* PRINT UTILITY CLASSES                        */
+  /* ============================================ */
+
+  /* Page break utilities */
+  .print-break-before {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+
+  .print-break-after {
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .print-no-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Column layout for dense content */
+  .print-columns-2 {
+    column-count: 2 !important;
+    column-gap: 2rem !important;
+  }
+
+  /* Bibliography/References styling */
+  .print-references {
+    font-size: 9pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .print-references li {
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Citation markers */
+  .print-citation {
+    font-size: 8pt !important;
+    vertical-align: super !important;
+  }
+
+  /* Medical dosage emphasis */
+  .print-dosage {
+    font-weight: 600 !important;
+    background: #fff9c4 !important;
+    padding: 0.1rem 0.25rem !important;
+  }
+
+  /* GRADE evidence level indicators */
+  .print-evidence-high {
+    border-left: 3px solid #22c55e !important;
+    padding-left: 0.5rem !important;
+  }
+
+  .print-evidence-moderate {
+    border-left: 3px solid #eab308 !important;
+    padding-left: 0.5rem !important;
+  }
+
+  .print-evidence-low {
+    border-left: 3px solid #f97316 !important;
+    padding-left: 0.5rem !important;
+  }
+
+  /* Watermark for drafts */
+  .print-watermark {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) rotate(-45deg) !important;
+    font-size: 72pt !important;
+    color: rgba(0, 0, 0, 0.1) !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+  }
+
+  /* Force QR code visibility */
+  .print-qr {
+    display: block !important;
+    width: 80px !important;
+    height: 80px !important;
+  }
 }
 
 /* ============================================ */
