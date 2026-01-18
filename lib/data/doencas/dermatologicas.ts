@@ -23,6 +23,27 @@ export const doencasDermatologicas: Doenca[] = [
     ciap2: ['S87'],
     cid10: ['L20'],
     cid11: ['EA80'],
+    loinc: [
+      // Complete Blood Count - inflammatory markers
+      { code: '58410-2', name: 'CBC panel - Blood by Automated count' },
+      { code: '6690-2', name: 'Leukocytes [#/volume] in Blood by Automated count' },
+      { code: '26515-7', name: 'Platelets [#/volume] in Blood' },
+      { code: '711-2', name: 'Eosinophils [#/volume] in Blood by Automated count' },
+      { code: '713-8', name: 'Eosinophils/100 leukocytes in Blood by Automated count' },
+      // IgE for allergic/atopic conditions
+      { code: '2579-1', name: 'IgE [Units/volume] in Serum or Plasma' },
+      { code: '19113-0', name: 'IgE [Units/volume] in Serum or Plasma by Immunoassay' },
+      { code: '6095-4', name: 'Allergen specific IgE Ab panel - Serum' },
+      // Skin culture for secondary infection
+      { code: '630-4', name: 'Bacteria identified in Specimen by Culture' },
+      { code: '6462-6', name: 'Bacteria identified in Wound by Culture' },
+      { code: '43411-8', name: 'Staphylococcus aureus [Presence] in Specimen by Culture' },
+      // Patch testing for contact dermatitis association
+      { code: '35352-8', name: 'Patch test panel' },
+      // Skin biopsy/pathology
+      { code: '66746-9', name: 'Pathology report - Skin' },
+      { code: '33746-9', name: 'Histopathology study report' },
+    ],
     categoria: 'dermatologico',
     quickView: {
       definicao: 'Doença inflamatória cutânea crônica, recidivante, intensamente pruriginosa, caracterizada por disfunção da barreira epidérmica e resposta imune Th2 exacerbada. Faz parte da marcha atópica.',
@@ -78,11 +99,11 @@ export const doencasDermatologicas: Doenca[] = [
           'Ambiente urbano',
           'Nível socioeconômico elevado (hipótese da higiene)'
         ],
-        citations: [{ refId: 'aad-ad-2022' }]
+        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       fisiopatologia: {
         texto: 'Defeito na barreira epidérmica (mutações em filagrina) permite penetração de alérgenos e irritantes. Resposta imune Th2 exacerbada com produção de IL-4, IL-13, IL-31 (prurido). Disbiose cutânea com colonização por S. aureus.',
-        citations: [{ refId: 'aad-ad-2022' }]
+        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -105,7 +126,7 @@ export const doencasDermatologicas: Doenca[] = [
           'DA intrínseca (IgE normal)',
           'DA extrínseca (IgE elevada)'
         ],
-        citations: [{ refId: 'aad-ad-2022' }]
+        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -126,7 +147,7 @@ export const doencasDermatologicas: Doenca[] = [
           'IgE total e específica se dúvida',
           'Cultura de lesão se infecção secundária'
         ],
-        citations: [{ refId: 'aad-ad-2022' }]
+        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -144,7 +165,7 @@ export const doencasDermatologicas: Doenca[] = [
             'Evitar alérgenos conhecidos',
             'Controle ambiental (temperatura, umidade)'
           ],
-          citations: [{ refId: 'aad-ad-2022' }]
+          citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -181,7 +202,7 @@ export const doencasDermatologicas: Doenca[] = [
               conduta: 'Mupirocina tópica ou antibiótico oral (cefalexina) se extenso.'
             }
           ],
-          citations: [{ refId: 'aad-ad-2022' }]
+          citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         duracao: 'Crônica, com ajuste conforme atividade da doença.'
       },
@@ -203,7 +224,7 @@ export const doencasDermatologicas: Doenca[] = [
           'Infecções recorrentes',
           'Necessidade de biológicos/imunossupressores'
         ],
-        citations: [{ refId: 'aad-ad-2022' }]
+        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       prevencao: {
         primaria: [
@@ -221,7 +242,7 @@ export const doencasDermatologicas: Doenca[] = [
     medicamentos: ['hidrocortisona', 'mometasona', 'tacrolimo', 'hidroxizina'],
     calculadoras: ['scorad', 'easi'],
     rastreamentos: [],
-    citations: [{ refId: 'aad-ad-2022' }],
+    citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }],
     lastUpdate: '2024-12',
     tags: ['dermatite-atopica', 'eczema', 'prurido', 'atopia', 'pele'],
   },
@@ -236,6 +257,30 @@ export const doencasDermatologicas: Doenca[] = [
     ciap2: ['S91'],
     cid10: ['L40'],
     cid11: ['EA90'],
+    loinc: [
+      // Complete Blood Count - inflammatory monitoring
+      { code: '58410-2', name: 'CBC panel - Blood by Automated count' },
+      { code: '6690-2', name: 'Leukocytes [#/volume] in Blood by Automated count' },
+      { code: '718-7', name: 'Hemoglobin [Mass/volume] in Blood' },
+      { code: '777-3', name: 'Platelets [#/volume] in Blood by Automated count' },
+      // Inflammatory markers
+      { code: '1988-5', name: 'C reactive protein [Mass/volume] in Serum or Plasma' },
+      { code: '30341-2', name: 'Erythrocyte sedimentation rate' },
+      // Liver function - methotrexate monitoring
+      { code: '1742-6', name: 'Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1920-8', name: 'Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1975-2', name: 'Bilirubin.total [Mass/volume] in Serum or Plasma' },
+      { code: '6768-6', name: 'Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma' },
+      // Renal function - systemic therapy monitoring
+      { code: '2160-0', name: 'Creatinine [Mass/volume] in Serum or Plasma' },
+      { code: '33914-3', name: 'Glomerular filtration rate/1.73 sq M.predicted' },
+      // Autoimmune markers - psoriatic arthritis workup
+      { code: '5291-0', name: 'Rheumatoid factor [Units/volume] in Serum by Latex agglutination' },
+      { code: '32218-0', name: 'Cyclic citrullinated peptide Ab [Units/volume] in Serum' },
+      // Skin biopsy/pathology
+      { code: '66746-9', name: 'Pathology report - Skin' },
+      { code: '33746-9', name: 'Histopathology study report' },
+    ],
     categoria: 'dermatologico',
     quickView: {
       definicao: 'Doença inflamatória crônica, imunomediada, sistêmica, caracterizada por placas eritematodescamativas bem delimitadas. Associada a artrite psoriásica, síndrome metabólica e impacto significativo na qualidade de vida.',
@@ -296,11 +341,11 @@ export const doencasDermatologicas: Doenca[] = [
           'Infecções (streptocócica - gatilho)',
           'Medicamentos (beta-bloqueadores, lítio, anti-maláricos)'
         ],
-        citations: [{ refId: 'aad-pso-2021' }]
+        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       fisiopatologia: {
         texto: 'Doença imunomediada com resposta Th17/Th1 aberrante. Eixo IL-23/IL-17 central na patogênese. Hiperproliferação de queratinócitos (ciclo de 4 dias vs 28 normais). Inflamação sistêmica associada a comorbidades cardiometabólicas.',
-        citations: [{ refId: 'aad-pso-2021' }]
+        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -327,7 +372,7 @@ export const doencasDermatologicas: Doenca[] = [
           'Psoríase ungueal',
           'Artrite psoriásica (30%)'
         ],
-        citations: [{ refId: 'aad-pso-2021' }]
+        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -348,7 +393,7 @@ export const doencasDermatologicas: Doenca[] = [
           'FR, anti-CCP se artrite (negativos na artrite psoriásica)',
           'Baseline antes de sistêmicos'
         ],
-        citations: [{ refId: 'aad-pso-2021' }]
+        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -366,7 +411,7 @@ export const doencasDermatologicas: Doenca[] = [
             'Perda de peso',
             'Suporte psicológico'
           ],
-          citations: [{ refId: 'aad-pso-2021' }]
+          citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -394,7 +439,7 @@ export const doencasDermatologicas: Doenca[] = [
               conduta: 'Biológicos: anti-TNF (adalimumabe), anti-IL-17 (secuquinumabe), anti-IL-23 (guselcumabe).'
             }
           ],
-          citations: [{ refId: 'aad-pso-2021' }]
+          citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         duracao: 'Tratamento crônico com ajustes conforme atividade.'
       },
@@ -418,7 +463,7 @@ export const doencasDermatologicas: Doenca[] = [
           'Necessidade de sistêmico/biológico',
           'Formas especiais (eritrodérmica, pustulosa)'
         ],
-        citations: [{ refId: 'aad-pso-2021' }]
+        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       prevencao: {
         primaria: [
@@ -438,7 +483,7 @@ export const doencasDermatologicas: Doenca[] = [
     medicamentos: ['betametasona', 'calcipotriol', 'metotrexato', 'acitretina'],
     calculadoras: ['pasi', 'bsa', 'dlqi'],
     rastreamentos: [],
-    citations: [{ refId: 'aad-pso-2021' }],
+    citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }],
     lastUpdate: '2024-12',
     tags: ['psoriase', 'placas', 'escamas', 'imunomediada', 'metotrexato'],
   },
@@ -453,6 +498,30 @@ export const doencasDermatologicas: Doenca[] = [
     ciap2: ['S98'],
     cid10: ['L50.1', 'L50.8'],
     cid11: ['EB05'],
+    loinc: [
+      // Complete Blood Count with differential
+      { code: '58410-2', name: 'CBC panel - Blood by Automated count' },
+      { code: '6690-2', name: 'Leukocytes [#/volume] in Blood by Automated count' },
+      { code: '711-2', name: 'Eosinophils [#/volume] in Blood by Automated count' },
+      { code: '731-0', name: 'Lymphocytes [#/volume] in Blood by Automated count' },
+      // Inflammatory markers
+      { code: '1988-5', name: 'C reactive protein [Mass/volume] in Serum or Plasma' },
+      { code: '30341-2', name: 'Erythrocyte sedimentation rate' },
+      // Thyroid function - autoimmune thyroiditis association
+      { code: '3016-3', name: 'Thyrotropin [Units/volume] in Serum or Plasma' },
+      { code: '5385-0', name: 'Thyroperoxidase Ab [Units/volume] in Serum' },
+      { code: '8098-6', name: 'Thyroglobulin Ab [Units/volume] in Serum' },
+      // Complement - vasculitis workup
+      { code: '4485-9', name: 'Complement C3 [Mass/volume] in Serum or Plasma' },
+      { code: '4498-2', name: 'Complement C4 [Mass/volume] in Serum or Plasma' },
+      // IgE (although not typically elevated in chronic spontaneous urticaria)
+      { code: '2579-1', name: 'IgE [Units/volume] in Serum or Plasma' },
+      // Parasitology (endemic areas)
+      { code: '10701-1', name: 'Ova and parasites identified in Stool by Concentration' },
+      // Skin biopsy - urticarial vasculitis workup
+      { code: '66746-9', name: 'Pathology report - Skin' },
+      { code: '33746-9', name: 'Histopathology study report' },
+    ],
     categoria: 'dermatologico',
     quickView: {
       definicao: 'Urticária (urticas pruriginosas) que persiste por mais de 6 semanas. Pode ser espontânea (sem gatilho identificável) ou induzível (física). Mastócitos cutâneos liberando histamina são centrais.',
@@ -509,11 +578,11 @@ export const doencasDermatologicas: Doenca[] = [
           'Estresse',
           'Infecções crônicas'
         ],
-        citations: [{ refId: 'eaaci-urt-2022' }]
+        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       fisiopatologia: {
         texto: 'Degranulação de mastócitos cutâneos com liberação de histamina e outros mediadores. Na urticária crônica espontânea, autoanticorpos anti-FcεRI ou anti-IgE podem estar presentes (30-50%). Não é alergia clássica mediada por IgE.',
-        citations: [{ refId: 'eaaci-urt-2022' }]
+        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -533,7 +602,7 @@ export const doencasDermatologicas: Doenca[] = [
           'Urticária crônica espontânea (mais comum)',
           'Urticárias induzíveis: dermográfica, frio, pressão tardia, solar, colinérgica, aquagênica'
         ],
-        citations: [{ refId: 'eaaci-urt-2022' }]
+        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -557,7 +626,7 @@ export const doencasDermatologicas: Doenca[] = [
           'Complemento (C3, C4) se suspeita de vasculite',
           'Biópsia se lesão >24h'
         ],
-        citations: [{ refId: 'eaaci-urt-2022' }]
+        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -571,7 +640,7 @@ export const doencasDermatologicas: Doenca[] = [
             'Evitar AINEs',
             'Controle do estresse'
           ],
-          citations: [{ refId: 'eaaci-urt-2022' }]
+          citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -599,7 +668,7 @@ export const doencasDermatologicas: Doenca[] = [
               conduta: 'Adrenalina se vias aéreas. Corticoide + anti-H1 VO.'
             }
           ],
-          citations: [{ refId: 'eaaci-urt-2022' }]
+          citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         duracao: 'Média 2-5 anos. Tentar reduzir medicação após controle sustentado.'
       },
@@ -619,7 +688,7 @@ export const doencasDermatologicas: Doenca[] = [
           'Angioedema sem urticária',
           'Suspeita de vasculite'
         ],
-        citations: [{ refId: 'eaaci-urt-2022' }]
+        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       prevencao: {
         primaria: [
@@ -636,7 +705,7 @@ export const doencasDermatologicas: Doenca[] = [
     medicamentos: ['cetirizina', 'loratadina', 'bilastina', 'omalizumabe'],
     calculadoras: ['uas7'],
     rastreamentos: [],
-    citations: [{ refId: 'eaaci-urt-2022' }],
+    citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }],
     lastUpdate: '2024-12',
     tags: ['urticaria', 'angioedema', 'prurido', 'anti-histaminico', 'omalizumabe'],
   }

@@ -99,11 +99,17 @@ export const doencasCardiovasculares: Doenca[] = [
           'Cardiomiopatias',
           'Tabagismo, alcoolismo'
         ],
-        citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'diretriz-ic-2021', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'solvd-treatment-1991', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       fisiopatologia: {
         texto: 'Disfunção sistólica (FEVE reduzida) ou diastólica (FEVE preservada) leva a ativação neuro-hormonal compensatória (SRAA, sistema simpático), remodelamento cardíaco progressivo e congestão sistêmica/pulmonar.',
-        citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'diretriz-ic-2021', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'paradigm-hf-2014', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -127,7 +133,10 @@ export const doencasCardiovasculares: Doenca[] = [
           'ICFEi (FEVE 40-49%): IC intermediária',
           'ICFEp (FEVE ≥50%): IC diastólica'
         ],
-        citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'diretriz-ic-2021', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'dapa-hf-2019', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       diagnostico: {
         criterios: [
@@ -151,7 +160,10 @@ export const doencasCardiovasculares: Doenca[] = [
           'TSH',
           'Ferritina, saturação de transferrina'
         ],
-        citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'diretriz-ic-2021', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'emperor-reduced-2020', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       tratamento: {
         objetivos: [
@@ -167,7 +179,9 @@ export const doencasCardiovasculares: Doenca[] = [
             'Reabilitação cardíaca',
             'Vacinação anual'
           ],
-          citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [
+            { refId: 'diretriz-ic-2021', evidenceLevel: 'high', studyType: 'guideline' }
+          ]
         },
         farmacologico: {
           primeiraLinha: [
@@ -197,7 +211,16 @@ export const doencasCardiovasculares: Doenca[] = [
               conduta: 'Controle de frequência com betabloqueador ou digoxina'
             }
           ],
-          citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [
+            { refId: 'diretriz-ic-2021', evidenceLevel: 'high', studyType: 'guideline' },
+            { refId: 'paradigm-hf-2014', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'dapa-hf-2019', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'emperor-reduced-2020', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'rales-1999', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'cibis-ii-1999', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'copernicus-2001', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'solvd-treatment-1991', evidenceLevel: 'high', studyType: 'rct' }
+          ]
         },
         duracao: 'Tratamento contínuo por toda a vida'
       },
@@ -219,7 +242,10 @@ export const doencasCardiovasculares: Doenca[] = [
           'Considerar CDI/TRC',
           'Avaliação para transplante'
         ],
-        citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'diretriz-ic-2021', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'paradigm-hf-2014', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       prevencao: {
         primaria: [
@@ -232,14 +258,23 @@ export const doencasCardiovasculares: Doenca[] = [
           'Monitorização do peso diário',
           'Dieta hipossódica'
         ],
-        citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'diretriz-ic-2021', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'empa-reg-2015', evidenceLevel: 'high', studyType: 'rct' },
+          { refId: 'leader-2016', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
     },
     protocolos: ['protocolo-ic'],
     medicamentos: ['enalapril', 'losartana', 'carvedilol', 'furosemida', 'espironolactona'],
     calculadoras: ['nyha', 'ckd-epi'],
     rastreamentos: [],
-    citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }],
+    citations: [
+      { refId: 'diretriz-ic-2021', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'paradigm-hf-2014', evidenceLevel: 'high', studyType: 'rct' },
+      { refId: 'dapa-hf-2019', evidenceLevel: 'high', studyType: 'rct' },
+      { refId: 'emperor-reduced-2020', evidenceLevel: 'high', studyType: 'rct' }
+    ],
     lastUpdate: '2024-12',
     tags: ['ic', 'insuficiencia-cardiaca', 'dispneia', 'edema', 'cardiopatia'],
   },
@@ -329,11 +364,17 @@ export const doencasCardiovasculares: Doenca[] = [
           'Hipertireoidismo',
           'Consumo excessivo de álcool'
         ],
-        citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'esc-fa-2020', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'affirm-2002', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       fisiopatologia: {
         texto: 'Múltiplos circuitos de reentrada nos átrios, frequentemente iniciados por focos ectópicos nas veias pulmonares. Remodelamento atrial elétrico e estrutural perpetua a arritmia. Estase atrial predispõe à formação de trombos, principalmente no apêndice atrial esquerdo.',
-        citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'esc-fa-2020', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'castle-af-2018', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -356,7 +397,10 @@ export const doencasCardiovasculares: Doenca[] = [
           'Persistente de longa duração: >1 ano',
           'Permanente: aceita, sem tentativa de restaurar ritmo'
         ],
-        citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'esc-fa-2020', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 're-ly-2009', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       diagnostico: {
         criterios: [
@@ -377,7 +421,10 @@ export const doencasCardiovasculares: Doenca[] = [
           'Hemograma',
           'Coagulograma se varfarina'
         ],
-        citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'esc-fa-2020', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'rocket-af-2011', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       tratamento: {
         objetivos: [
@@ -393,7 +440,10 @@ export const doencasCardiovasculares: Doenca[] = [
             'Tratamento de apneia do sono',
             'Ablação por cateter em casos selecionados'
           ],
-          citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [
+            { refId: 'esc-fa-2020', evidenceLevel: 'high', studyType: 'guideline' },
+            { refId: 'castle-af-2018', evidenceLevel: 'high', studyType: 'rct' }
+          ]
         },
         farmacologico: {
           primeiraLinha: [
@@ -418,7 +468,14 @@ export const doencasCardiovasculares: Doenca[] = [
               conduta: 'EVITAR digoxina, BCC, betabloqueador. Encaminhar urgente.'
             }
           ],
-          citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [
+            { refId: 'esc-fa-2020', evidenceLevel: 'high', studyType: 'guideline' },
+            { refId: 're-ly-2009', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'rocket-af-2011', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'aristotle-2011', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'engage-af-2013', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'affirm-2002', evidenceLevel: 'high', studyType: 'rct' }
+          ]
         },
         duracao: 'Anticoagulação geralmente contínua se indicada'
       },
@@ -440,7 +497,11 @@ export const doencasCardiovasculares: Doenca[] = [
           'FA + WPW',
           'FA refratária ao controle de frequência'
         ],
-        citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'esc-fa-2020', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 're-ly-2009', evidenceLevel: 'high', studyType: 'rct' },
+          { refId: 'aristotle-2011', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       prevencao: {
         primaria: [
@@ -453,14 +514,22 @@ export const doencasCardiovasculares: Doenca[] = [
           'Anticoagulação adequada',
           'Controle de fatores precipitantes'
         ],
-        citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'esc-fa-2020', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'sprint-2015', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
     },
     protocolos: [],
     medicamentos: ['atenolol', 'metoprolol', 'varfarina', 'rivaroxabana'],
     calculadoras: ['cha2ds2-vasc', 'has-bled'],
     rastreamentos: [],
-    citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }],
+    citations: [
+      { refId: 'esc-fa-2020', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 're-ly-2009', evidenceLevel: 'high', studyType: 'rct' },
+      { refId: 'rocket-af-2011', evidenceLevel: 'high', studyType: 'rct' },
+      { refId: 'aristotle-2011', evidenceLevel: 'high', studyType: 'rct' }
+    ],
     lastUpdate: '2024-12',
     tags: ['fa', 'fibrilacao-atrial', 'arritmia', 'anticoagulacao', 'avc'],
   },
@@ -555,11 +624,18 @@ export const doencasCardiovasculares: Doenca[] = [
           'História familiar de DAC precoce',
           'Idade avançada'
         ],
-        citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'esc-dac-2019', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: '4s-1994', evidenceLevel: 'high', studyType: 'rct' },
+          { refId: 'sprint-2015', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       fisiopatologia: {
         texto: 'Aterosclerose coronariana com formação de placas que reduzem o lúmen arterial. Quando a obstrução atinge >70%, o fluxo coronariano torna-se insuficiente durante esforço, causando isquemia e angina.',
-        citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'esc-dac-2019', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'ischemia-2020', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -579,7 +655,10 @@ export const doencasCardiovasculares: Doenca[] = [
           'Angina atípica: 2 características',
           'Dor torácica não cardíaca: 0-1 característica'
         ],
-        citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'esc-dac-2019', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'compass-2017', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       diagnostico: {
         criterios: [
@@ -602,7 +681,10 @@ export const doencasCardiovasculares: Doenca[] = [
           'Hemograma',
           'Troponina (para descartar SCA)'
         ],
-        citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'esc-dac-2019', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'ischemia-2020', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       tratamento: {
         objetivos: [
@@ -619,7 +701,10 @@ export const doencasCardiovasculares: Doenca[] = [
             'Manutenção do peso ideal',
             'Reabilitação cardíaca'
           ],
-          citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [
+            { refId: 'esc-dac-2019', evidenceLevel: 'high', studyType: 'guideline' },
+            { refId: 'ischemia-2020', evidenceLevel: 'high', studyType: 'rct' }
+          ]
         },
         farmacologico: {
           primeiraLinha: [
@@ -649,7 +734,17 @@ export const doencasCardiovasculares: Doenca[] = [
               conduta: 'Considerar iSGLT2 ou GLP-1RA com benefício CV'
             }
           ],
-          citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [
+            { refId: 'esc-dac-2019', evidenceLevel: 'high', studyType: 'guideline' },
+            { refId: '4s-1994', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'prove-it-2004', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'tnt-2005', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'fourier-2017', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'odyssey-2018', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'compass-2017', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'empa-reg-2015', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'leader-2016', evidenceLevel: 'high', studyType: 'rct' }
+          ]
         },
         duracao: 'Tratamento contínuo'
       },
@@ -671,7 +766,11 @@ export const doencasCardiovasculares: Doenca[] = [
           'Teste funcional com grande área de isquemia',
           'Disfunção ventricular esquerda'
         ],
-        citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'esc-dac-2019', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'fourier-2017', evidenceLevel: 'high', studyType: 'rct' },
+          { refId: 'tnt-2005', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
       prevencao: {
         primaria: [
@@ -684,14 +783,25 @@ export const doencasCardiovasculares: Doenca[] = [
           'Controle agressivo de LDL',
           'Reabilitação cardíaca'
         ],
-        citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'esc-dac-2019', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: '4s-1994', evidenceLevel: 'high', studyType: 'rct' },
+          { refId: 'sprint-2015', evidenceLevel: 'high', studyType: 'rct' },
+          { refId: 'allhat-2002', evidenceLevel: 'high', studyType: 'rct' }
+        ]
       },
     },
     protocolos: [],
     medicamentos: ['aas', 'atorvastatina', 'atenolol', 'isossorbida'],
     calculadoras: ['risco-cv', 'cha2ds2-vasc'],
     rastreamentos: [],
-    citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }],
+    citations: [
+      { refId: 'esc-dac-2019', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'fourier-2017', evidenceLevel: 'high', studyType: 'rct' },
+      { refId: 'odyssey-2018', evidenceLevel: 'high', studyType: 'rct' },
+      { refId: '4s-1994', evidenceLevel: 'high', studyType: 'rct' },
+      { refId: 'prove-it-2004', evidenceLevel: 'high', studyType: 'rct' }
+    ],
     lastUpdate: '2024-12',
     tags: ['dac', 'angina', 'coronariopatia', 'aterosclerose', 'isquemia'],
   }

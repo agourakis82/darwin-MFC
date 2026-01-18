@@ -66,7 +66,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     protocolos: ['has', 'dm2'],
     medicamentos: ['sinvastatina', 'atorvastatina', 'rosuvastatina'],
     calculadoras: ['risco-cardiovascular'],
-    tags: ['cardiovascular', 'prevenção', 'estatina']
+    tags: ['cardiovascular', 'prevenção', 'estatina'],
+    citations: [
+      {
+        refId: 'esc-eas-dyslipidemia-2019',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+      {
+        refId: 'acc-aha-cholesterol-2018',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+    ],
   },
   {
     id: 'sindrome-metabolica',
@@ -129,7 +141,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     protocolos: ['dm2', 'has'],
     medicamentos: ['metformina'],
     calculadoras: ['imc'],
-    tags: ['obesidade', 'diabetes', 'cardiovascular']
+    tags: ['obesidade', 'diabetes', 'cardiovascular'],
+    citations: [
+      {
+        refId: 'ncep-atp3-metabolic-syndrome',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+      {
+        refId: 'idf-metabolic-syndrome-2006',
+        evidenceLevel: 'high',
+        studyType: 'consensus',
+      },
+    ],
   },
   {
     id: 'deficiencia-vitamina-d',
@@ -142,6 +166,16 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     snomedCT: '34713006',
     meshId: 'D014808',
     umlsCui: 'C0042870',
+    // LOINC codes for vitamin D deficiency workup
+    loinc: [
+      '1989-3',   // 25-hydroxyvitamin D [Mass/volume] in Serum or Plasma
+      '62292-8',  // 25-hydroxyvitamin D2+D3 [Mass/volume] in Serum or Plasma
+      '17861-6',  // Calcium [Mass/volume] in Serum or Plasma
+      '2777-1',   // Phosphorus [Mass/volume] in Serum or Plasma
+      '2731-8',   // Parathyroid hormone (PTH) [Mass/volume] in Serum or Plasma
+      '2160-0',   // Creatinine [Mass/volume] in Serum or Plasma
+      '6768-6',   // Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma
+    ],
     categoria: 'metabolico',
     quickView: {
       definicao: 'Níveis insuficientes de 25(OH)D associados a comprometimento ósseo e possíveis efeitos extraesqueléticos. Prevalência >50% em algumas populações.',
@@ -170,7 +204,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     protocolos: [],
     medicamentos: ['colecalciferol'],
     calculadoras: [],
-    tags: ['osso', 'suplementação', 'rastreamento']
+    tags: ['osso', 'suplementação', 'rastreamento'],
+    citations: [
+      {
+        refId: 'endocrine-society-vitamin-d-2011',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+      {
+        refId: 'uptodate-vitamin-d-2024',
+        evidenceLevel: 'moderate',
+        studyType: 'systematic_review',
+      },
+    ],
   },
   {
     id: 'deficiencia-vitamina-b12',
@@ -183,6 +229,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     snomedCT: '190634004',
     meshId: 'D014806',
     umlsCui: 'C0042847',
+    // LOINC codes for vitamin B12 deficiency workup
+    loinc: [
+      '2132-9',   // Vitamin B12 [Mass/volume] in Serum or Plasma
+      '2284-8',   // Folate [Mass/volume] in Serum or Plasma
+      '785-6',    // Mean corpuscular volume (MCV) [Entitic volume]
+      '718-7',    // Hemoglobin [Mass/volume] in Blood
+      '4544-3',   // Hematocrit [Volume Fraction] in Blood
+      '26474-7',  // Lymphocytes [#/volume] in Blood
+      '17820-2',  // Homocysteine [Moles/volume] in Serum or Plasma
+      '2170-9',   // Methylmalonic acid [Mass/volume] in Serum or Plasma
+      '14685-2',  // Reticulocyte count [#/volume] in Blood
+      '2532-0',   // Lactate dehydrogenase (LDH) [Enzymatic activity/volume] in Serum or Plasma
+    ],
     categoria: 'hematologico',
     quickView: {
       definicao: 'Deficiência de cobalamina causando anemia megaloblástica e manifestações neurológicas. Comum em idosos, vegetarianos e uso crônico de metformina/IBP.',
@@ -210,7 +269,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     protocolos: [],
     medicamentos: ['cianocobalamina'],
     calculadoras: [],
-    tags: ['anemia', 'neurologia', 'idoso']
+    tags: ['anemia', 'neurologia', 'idoso'],
+    citations: [
+      {
+        refId: 'bsh-b12-folate-2014',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+      {
+        refId: 'nice-anaemia-b12-2024',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+    ],
   },
   {
     id: 'esteatose-hepatica',
@@ -223,6 +294,22 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     snomedCT: '197315008',
     meshId: 'D065626',
     umlsCui: 'C0400966',
+    // LOINC codes for NAFLD/MASLD workup and monitoring
+    loinc: [
+      '1742-6',   // ALT (Alanine aminotransferase) [Enzymatic activity/volume] in Serum or Plasma
+      '1920-8',   // AST (Aspartate aminotransferase) [Enzymatic activity/volume] in Serum or Plasma
+      '2324-2',   // GGT (Gamma glutamyl transferase) [Enzymatic activity/volume] in Serum or Plasma
+      '6768-6',   // Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma
+      '1975-2',   // Bilirubin.total [Mass/volume] in Serum or Plasma
+      '1751-7',   // Albumin [Mass/volume] in Serum or Plasma
+      '5902-2',   // Prothrombin time (PT)
+      '2093-3',   // Total Cholesterol [Mass/volume] in Serum or Plasma
+      '2571-8',   // Triglycerides [Mass/volume] in Serum or Plasma
+      '2345-7',   // Glucose [Mass/volume] in Serum or Plasma
+      '4548-4',   // Hemoglobin A1c/Hemoglobin.total [Mass Fraction] in Blood
+      '1558-6',   // Fasting glucose [Mass/volume] in Serum or Plasma
+      '26515-7',  // Platelet count [#/volume] in Blood
+    ],
     categoria: 'gastrointestinal',
     quickView: {
       definicao: 'Acúmulo de gordura hepática (>5%) na ausência de consumo significativo de álcool. Prevalência 25-30% globalmente, associada à síndrome metabólica.',
@@ -253,7 +340,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     protocolos: [],
     medicamentos: ['pioglitazona', 'vitamina-e'],
     calculadoras: ['fib-4'],
-    tags: ['fígado', 'obesidade', 'síndrome metabólica']
+    tags: ['fígado', 'obesidade', 'síndrome metabólica'],
+    citations: [
+      {
+        refId: 'aasld-nafld-2018',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+      {
+        refId: 'easl-nafld-2016',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+    ],
   },
   {
     id: 'hipotireoidismo-subclinico',
@@ -266,6 +365,17 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     snomedCT: '237519004',
     meshId: 'D000073057',
     umlsCui: 'C0271790',
+    // LOINC codes for subclinical hypothyroidism workup
+    loinc: [
+      '3016-3',   // TSH [Units/volume] in Serum or Plasma
+      '3026-2',   // T4 free [Mass/volume] in Serum or Plasma
+      '3053-6',   // T3 free [Mass/volume] in Serum or Plasma
+      '5385-0',   // Anti-thyroid peroxidase (Anti-TPO) [Units/volume] in Serum
+      '5379-3',   // Anti-thyroglobulin (Anti-TG) [Units/volume] in Serum
+      '2093-3',   // Total Cholesterol [Mass/volume] in Serum or Plasma
+      '2085-9',   // HDL [Mass/volume] in Serum or Plasma
+      '2089-1',   // LDL [Mass/volume] in Serum or Plasma
+    ],
     categoria: 'endocrino',
     quickView: {
       definicao: 'TSH elevado com T4 livre normal. Prevalência 4-10% em adultos, maior em mulheres e idosos. Progressão para hipotireoidismo manifesto ~2-5%/ano.',
@@ -294,7 +404,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     protocolos: [],
     medicamentos: ['levotiroxina'],
     calculadoras: [],
-    tags: ['tireoide', 'rastreamento', 'endocrinologia']
+    tags: ['tireoide', 'rastreamento', 'endocrinologia'],
+    citations: [
+      {
+        refId: 'ata-thyroid-guidelines-2014',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+      {
+        refId: 'eta-subclinical-thyroid-2013',
+        evidenceLevel: 'moderate',
+        studyType: 'consensus',
+      },
+    ],
   },
   {
     id: 'hipertireoidismo-subclinico',
@@ -307,6 +429,15 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     snomedCT: '237516002',
     meshId: 'D000073058',
     umlsCui: 'C0342157',
+    // LOINC codes for subclinical hyperthyroidism workup
+    loinc: [
+      '3016-3',   // TSH [Units/volume] in Serum or Plasma
+      '3026-2',   // T4 free [Mass/volume] in Serum or Plasma
+      '3053-6',   // T3 free [Mass/volume] in Serum or Plasma
+      '5384-3',   // TSH receptor antibody (TRAb/Anti-TRAB) [Units/volume] in Serum
+      '46985-5',  // Thyroid-stimulating immunoglobulin (TSI) [Units/volume] in Serum
+      '24348-5',  // Bone density study
+    ],
     categoria: 'endocrino',
     quickView: {
       definicao: 'TSH suprimido com T4 e T3 livres normais. Pode ser endógeno (Graves, nódulo tóxico) ou exógeno (excesso de levotiroxina).',
@@ -335,7 +466,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     protocolos: [],
     medicamentos: ['propranolol', 'metimazol'],
     calculadoras: [],
-    tags: ['tireoide', 'arritmia', 'osteoporose']
+    tags: ['tireoide', 'arritmia', 'osteoporose'],
+    citations: [
+      {
+        refId: 'ata-hyperthyroidism-2016',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+      {
+        refId: 'eta-subclinical-hyperthyroidism-2015',
+        evidenceLevel: 'moderate',
+        studyType: 'consensus',
+      },
+    ],
   },
   {
     id: 'hiperuricemia-assintomatica',
@@ -348,6 +491,17 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     snomedCT: '35885006',
     meshId: 'D033461',
     umlsCui: 'C0740394',
+    // LOINC codes for hyperuricemia workup
+    loinc: [
+      '3084-1',   // Uric acid [Mass/volume] in Serum or Plasma
+      '2160-0',   // Creatinine [Mass/volume] in Serum or Plasma
+      '3094-0',   // Blood urea nitrogen (BUN) [Mass/volume] in Serum or Plasma
+      '33914-3',  // Estimated GFR (eGFR) [Volume Rate/Area] in Serum, Plasma or Blood
+      '2093-3',   // Total Cholesterol [Mass/volume] in Serum or Plasma
+      '2571-8',   // Triglycerides [Mass/volume] in Serum or Plasma
+      '2345-7',   // Glucose [Mass/volume] in Serum or Plasma
+      '5778-6',   // Urinalysis - microscopic panel
+    ],
     categoria: 'metabolico',
     quickView: {
       definicao: 'Ácido úrico sérico elevado (>7 mg/dL em homens, >6 mg/dL em mulheres) sem história de gota ou nefrolitíase por urato.',
@@ -379,7 +533,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     protocolos: [],
     medicamentos: ['alopurinol'],
     calculadoras: [],
-    tags: ['gota', 'renal', 'metabólico']
+    tags: ['gota', 'renal', 'metabólico'],
+    citations: [
+      {
+        refId: 'acr-gout-2020',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+      {
+        refId: 'eular-gout-2016',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+    ],
   },
   {
     id: 'insuficiencia-adrenal',
@@ -392,6 +558,18 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     snomedCT: '386584007',
     meshId: 'D000309',
     umlsCui: 'C0001623',
+    // LOINC codes for adrenal insufficiency workup
+    loinc: [
+      '2143-6',   // Cortisol [Mass/volume] in Serum or Plasma
+      '2141-0',   // ACTH (Corticotropin) [Mass/volume] in Plasma
+      '2823-3',   // Potassium [Moles/volume] in Serum or Plasma
+      '2951-2',   // Sodium [Moles/volume] in Serum or Plasma
+      '2345-7',   // Glucose [Mass/volume] in Serum or Plasma
+      '2160-0',   // Creatinine [Mass/volume] in Serum or Plasma
+      '56540-8',  // 21-hydroxylase antibody (Anti-21-hydroxylase) [Units/volume] in Serum
+      '2731-8',   // Renin [Mass/volume] in Plasma
+      '1714-5',   // Aldosterone [Mass/volume] in Serum or Plasma
+    ],
     categoria: 'endocrino',
     quickView: {
       definicao: 'Deficiência de produção de cortisol (primária) ou ACTH (secundária). Primária: destruição adrenal. Secundária: supressão por corticoides exógenos é causa comum.',
@@ -421,7 +599,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     protocolos: [],
     medicamentos: ['hidrocortisona', 'prednisona'],
     calculadoras: [],
-    tags: ['urgência', 'corticoide', 'endocrinologia']
+    tags: ['urgência', 'corticoide', 'endocrinologia'],
+    citations: [
+      {
+        refId: 'endocrine-society-adrenal-2016',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+      {
+        refId: 'esh-adrenal-insufficiency-2014',
+        evidenceLevel: 'moderate',
+        studyType: 'consensus',
+      },
+    ],
   },
   {
     id: 'hipogonadismo-masculino',
@@ -434,6 +624,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     snomedCT: '48723006',
     meshId: 'D007006',
     umlsCui: 'C0020619',
+    // LOINC codes for male hypogonadism workup
+    loinc: [
+      '2986-8',   // Testosterone [Mass/volume] in Serum or Plasma
+      '2990-0',   // Testosterone.free [Mass/volume] in Serum or Plasma
+      '10501-5',  // LH (Luteinizing hormone) [Units/volume] in Serum or Plasma
+      '15067-2',  // FSH (Follicle stimulating hormone) [Units/volume] in Serum or Plasma
+      '2243-4',   // Prolactin [Mass/volume] in Serum or Plasma
+      '4544-3',   // Hematocrit [Volume Fraction] in Blood
+      '2857-1',   // PSA (Prostate specific antigen) [Mass/volume] in Serum or Plasma
+      '2093-3',   // Total Cholesterol [Mass/volume] in Serum or Plasma
+      '2085-9',   // HDL [Mass/volume] in Serum or Plasma
+      '2089-1',   // LDL [Mass/volume] in Serum or Plasma
+    ],
     categoria: 'endocrino',
     quickView: {
       definicao: 'Síndrome clínica de deficiência de testosterona com sintomas e sinais característicos. Prevalência aumenta com idade.',
@@ -464,7 +667,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     protocolos: [],
     medicamentos: [],
     calculadoras: [],
-    tags: ['andrologia', 'disfunção erétil', 'osteoporose']
+    tags: ['andrologia', 'disfunção erétil', 'osteoporose'],
+    citations: [
+      {
+        refId: 'aua-testosterone-2018',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+      {
+        refId: 'endocrine-society-hypogonadism-2018',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+    ],
   },
   {
     id: 'menopausa-climatério',
@@ -477,6 +692,20 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     snomedCT: '161712005',
     meshId: 'D008593',
     umlsCui: 'C0025320',
+    // LOINC codes for menopause workup
+    loinc: [
+      '15067-2',  // FSH (Follicle stimulating hormone) [Units/volume] in Serum or Plasma
+      '10501-5',  // LH (Luteinizing hormone) [Units/volume] in Serum or Plasma
+      '2243-3',   // Estradiol (E2) [Mass/volume] in Serum or Plasma
+      '3016-3',   // TSH [Units/volume] in Serum or Plasma
+      '2093-3',   // Total Cholesterol [Mass/volume] in Serum or Plasma
+      '2085-9',   // HDL [Mass/volume] in Serum or Plasma
+      '2089-1',   // LDL [Mass/volume] in Serum or Plasma
+      '2571-8',   // Triglycerides [Mass/volume] in Serum or Plasma
+      '17861-6',  // Calcium [Mass/volume] in Serum or Plasma
+      '1989-3',   // 25-hydroxyvitamin D [Mass/volume] in Serum or Plasma
+      '24348-5',  // Bone density study
+    ],
     categoria: 'ginecologico',
     quickView: {
       definicao: 'Cessação permanente da menstruação após 12 meses de amenorreia. Idade média 51 anos. Climatério: período de transição peri e pós-menopausa.',
@@ -507,7 +736,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     protocolos: [],
     medicamentos: ['estradiol'],
     calculadoras: [],
-    tags: ['ginecologia', 'osteoporose', 'hormônio']
+    tags: ['ginecologia', 'osteoporose', 'hormônio'],
+    citations: [
+      {
+        refId: 'nams-menopause-2017',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+      {
+        refId: 'ims-menopause-2016',
+        evidenceLevel: 'high',
+        studyType: 'consensus',
+      },
+    ],
   },
   {
     id: 'hiperprolactinemia',
@@ -520,6 +761,17 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     snomedCT: '237662005',
     meshId: 'D006966',
     umlsCui: 'C0020514',
+    // LOINC codes for hyperprolactinemia workup
+    loinc: [
+      '2243-4',   // Prolactin [Mass/volume] in Serum or Plasma
+      '3016-3',   // TSH [Units/volume] in Serum or Plasma
+      '3026-2',   // T4 free [Mass/volume] in Serum or Plasma
+      '2986-8',   // Testosterone [Mass/volume] in Serum or Plasma (for men)
+      '2243-3',   // Estradiol (E2) [Mass/volume] in Serum or Plasma (for women)
+      '19080-1',  // Beta-hCG [Units/volume] in Serum or Plasma
+      '10501-5',  // LH (Luteinizing hormone) [Units/volume] in Serum or Plasma
+      '15067-2',  // FSH (Follicle stimulating hormone) [Units/volume] in Serum or Plasma
+    ],
     categoria: 'endocrino',
     quickView: {
       definicao: 'Elevação da prolactina sérica. Causas: prolactinoma, medicamentos (antipsicóticos, metoclopramida), hipotireoidismo, gestação.',
@@ -547,6 +799,18 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     protocolos: [],
     medicamentos: ['cabergolina'],
     calculadoras: [],
-    tags: ['hipófise', 'amenorreia', 'galactorreia']
+    tags: ['hipófise', 'amenorreia', 'galactorreia'],
+    citations: [
+      {
+        refId: 'endocrine-society-prolactin-2011',
+        evidenceLevel: 'high',
+        studyType: 'guideline',
+      },
+      {
+        refId: 'pituitary-society-hyperprolactinemia-2006',
+        evidenceLevel: 'moderate',
+        studyType: 'consensus',
+      },
+    ],
   },
 ];

@@ -101,11 +101,11 @@ export const doencasHematologicas: Doenca[] = [
           'Uso de AINEs',
           'Cirurgia bariátrica'
         ],
-        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       fisiopatologia: {
         texto: 'O ferro é essencial para síntese de hemoglobina. A deficiência progressiva depleta primeiro os estoques (ferritina), depois o ferro circulante, e por fim a eritropoiese fica comprometida, resultando em hemácias microcíticas e hipocrômicas.',
-        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -131,7 +131,7 @@ export const doencasHematologicas: Doenca[] = [
           'Anemia grave (Hb <7 g/dL)',
           'Síndrome de Plummer-Vinson (disfagia + anemia + glossite)'
         ],
-        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -152,7 +152,7 @@ export const doencasHematologicas: Doenca[] = [
           'EDA/Colonoscopia se indicado',
           'Pesquisa de sangue oculto nas fezes'
         ],
-        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -165,7 +165,7 @@ export const doencasHematologicas: Doenca[] = [
             'Orientação dietética',
             'Identificar e corrigir causa (ex: tratar menorragia, investigar sangramento GI)'
           ],
-          citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -197,7 +197,11 @@ export const doencasHematologicas: Doenca[] = [
               conduta: 'Considerar transfusão se Hb <7 g/dL ou sintomas intensos.'
             }
           ],
-          citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [
+            { refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' },
+            { refId: 'cochrane-iron-supplementation', evidenceLevel: 'high', studyType: 'systematic_review' },
+            { refId: 'bsh-iron-deficiency-2021', evidenceLevel: 'high', studyType: 'guideline' }
+          ]
         },
         duracao: '3-6 meses após normalização de Hb para repor estoques.'
       },
@@ -218,7 +222,7 @@ export const doencasHematologicas: Doenca[] = [
           'Necessidade de ferro IV',
           'Anemia grave sintomática'
         ],
-        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       prevencao: {
         primaria: [
@@ -229,14 +233,18 @@ export const doencasHematologicas: Doenca[] = [
           'Tratamento da causa',
           'Suplementação contínua se perda crônica'
         ],
-        citations: []
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' }]
       },
     },
     protocolos: ['anemia-investigacao'],
     medicamentos: ['sulfato-ferroso', 'ferro-polimaltosado', 'acido-folico'],
     calculadoras: [],
     rastreamentos: ['rastreamento-anemia-gestante'],
-    citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }],
+    citations: [
+      { refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'cochrane-iron-supplementation', evidenceLevel: 'high', studyType: 'systematic_review' },
+      { refId: 'bsh-iron-deficiency-2021', evidenceLevel: 'high', studyType: 'guideline' }
+    ],
     lastUpdate: '2024-12',
     tags: ['anemia', 'ferro', 'ferritina', 'microcítica', 'deficiência'],
   },
@@ -251,6 +259,26 @@ export const doencasHematologicas: Doenca[] = [
     ciap2: ['B81'],
     cid10: ['D51', 'D52'],
     cid11: ['3A01'],
+    // LOINC codes for megaloblastic anemia diagnosis and monitoring
+    loinc: [
+      { code: '58410-2', name: 'CBC panel with differential' },
+      { code: '718-7', name: 'Hemoglobin [Mass/volume] in Blood' },
+      { code: '4544-3', name: 'Hematocrit [Volume fraction] of Blood' },
+      { code: '787-2', name: 'MCV [Entitic volume] of RBCs' },
+      { code: '785-6', name: 'MCH [Entitic mass]' },
+      { code: '786-4', name: 'MCHC [Mass/volume]' },
+      { code: '788-0', name: 'RDW [Ratio]' },
+      { code: '4679-7', name: 'Reticulocytes [%] of RBCs' },
+      { code: '2132-9', name: 'Cobalamin (Vitamin B12) [Mass/volume] in Serum or Plasma' },
+      { code: '2284-8', name: 'Folate [Mass/volume] in Serum or Plasma' },
+      { code: '14628-2', name: 'Folate [Mass/volume] in RBCs' },
+      { code: '2030-5', name: 'Homocysteine [Moles/volume] in Serum or Plasma' },
+      { code: '2128-7', name: 'Methylmalonic acid [Moles/volume] in Serum or Plasma' },
+      { code: '14879-1', name: 'LDH [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1975-2', name: 'Bilirubin indirect [Mass/volume] in Serum or Plasma' },
+      { code: '5140-9', name: 'Intrinsic factor blocking antibody' },
+      { code: '5130-0', name: 'Gastric parietal cell antibody' },
+    ],
     categoria: 'hematologico',
     quickView: {
       definicao: 'Anemia macrocítica causada por síntese deficiente de DNA, geralmente por deficiência de vitamina B12 ou ácido fólico. Caracterizada por megaloblastos na medula óssea e neutrófilos hipersegmentados no sangue periférico.',
@@ -315,11 +343,11 @@ export const doencasHematologicas: Doenca[] = [
           'Etilismo crônico (folato)',
           'Uso de metotrexato, fenitoína, sulfassalazina'
         ],
-        citations: [{ refId: 'bsh-b12-2014' }]
+        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
       fisiopatologia: {
         texto: 'B12 e folato são cofatores na síntese de timidina para o DNA. A deficiência causa assincronia núcleo-citoplasma (megaloblastose), eritropoiese ineficaz com hemólise intramedular, e anemia macrocítica. B12 também é essencial para mielinização (sintomas neurológicos).',
-        citations: [{ refId: 'bsh-b12-2014' }]
+        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -342,7 +370,7 @@ export const doencasHematologicas: Doenca[] = [
           'Deficiência por má absorção (doença ileal, pós-gastrectomia)',
           'Deficiência de folato (etilismo, gestação, hemólise crônica)'
         ],
-        citations: [{ refId: 'bsh-b12-2014' }]
+        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -365,7 +393,7 @@ export const doencasHematologicas: Doenca[] = [
           'Anticorpos (anemia perniciosa)',
           'Mielograma se dúvida (megaloblastos)'
         ],
-        citations: [{ refId: 'bsh-b12-2014' }]
+        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -380,7 +408,7 @@ export const doencasHematologicas: Doenca[] = [
             'Cessar álcool',
             'Tratar doença GI subjacente'
           ],
-          citations: [{ refId: 'bsh-b12-2014' }]
+          citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -412,7 +440,10 @@ export const doencasHematologicas: Doenca[] = [
               conduta: 'Transfusão cautelosa (risco de sobrecarga). Suplementar potássio (captação celular durante correção).'
             }
           ],
-          citations: [{ refId: 'bsh-b12-2014' }]
+          citations: [
+            { refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' },
+            { refId: 'cochrane-b12-oral-parenteral', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          ]
         },
         duracao: 'B12 em anemia perniciosa: para sempre. Folato: conforme causa.'
       },
@@ -434,7 +465,7 @@ export const doencasHematologicas: Doenca[] = [
           'Não resposta ao tratamento',
           'Pancitopenia'
         ],
-        citations: [{ refId: 'bsh-b12-2014' }]
+        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
       prevencao: {
         primaria: [
@@ -445,14 +476,17 @@ export const doencasHematologicas: Doenca[] = [
           'B12 vitalícia em anemia perniciosa',
           'Rastreio de câncer gástrico'
         ],
-        citations: []
+        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
     },
     protocolos: [],
     medicamentos: ['cianocobalamina', 'acido-folico', 'hidroxocobalamina'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'bsh-b12-2014' }],
+    citations: [
+      { refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' },
+      { refId: 'cochrane-b12-oral-parenteral', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+    ],
     lastUpdate: '2024-12',
     tags: ['anemia', 'b12', 'folato', 'megaloblástica', 'perniciosa'],
   },
@@ -467,6 +501,28 @@ export const doencasHematologicas: Doenca[] = [
     ciap2: ['B83'],
     cid10: ['D69.3', 'D69.6'],
     cid11: ['3B64'],
+    // LOINC codes for thrombocytopenia diagnosis and evaluation
+    loinc: [
+      { code: '58410-2', name: 'CBC panel with differential' },
+      { code: '777-3', name: 'Platelets [#/volume] in Blood' },
+      { code: '32623-1', name: 'Mean platelet volume [Entitic volume]' },
+      { code: '718-7', name: 'Hemoglobin [Mass/volume] in Blood' },
+      { code: '6690-2', name: 'WBC [#/volume] in Blood' },
+      { code: '4679-7', name: 'Reticulocytes [%] of RBCs' },
+      { code: '5902-2', name: 'Prothrombin time (PT)' },
+      { code: '3173-2', name: 'Activated partial thromboplastin time (aPTT)' },
+      { code: '3255-7', name: 'Fibrinogen [Mass/volume] in Platelet poor plasma' },
+      { code: '48065-7', name: 'D-dimer [Mass/volume] in Platelet poor plasma' },
+      { code: '14879-1', name: 'LDH [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1975-2', name: 'Bilirubin indirect [Mass/volume] in Serum or Plasma' },
+      { code: '4542-7', name: 'Haptoglobin [Mass/volume] in Serum or Plasma' },
+      { code: '2160-0', name: 'Creatinine [Mass/volume] in Serum or Plasma' },
+      { code: '7918-6', name: 'HIV 1+2 Ab+Ag [Presence] in Serum or Plasma' },
+      { code: '5199-5', name: 'Hepatitis C virus Ab [Presence] in Serum or Plasma' },
+      { code: '5195-3', name: 'Hepatitis B surface Ag [Presence] in Serum' },
+      { code: '3016-3', name: 'TSH [Moles/volume] in Serum or Plasma' },
+      { code: '4499-0', name: 'Antinuclear antibody (ANA)' },
+    ],
     categoria: 'hematologico',
     quickView: {
       definicao: 'Redução da contagem de plaquetas <150.000/µL. Pode ser leve e assintomática ou grave com sangramento. Causas: destruição imune (PTI), consumo (CIVD, PTT), sequestro esplênico, produção diminuída.',
@@ -535,11 +591,11 @@ export const doencasHematologicas: Doenca[] = [
           'Gestação',
           'Hepatopatia (sequestro esplênico)'
         ],
-        citations: [{ refId: 'ash-itp-2019' }]
+        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       fisiopatologia: {
         texto: 'PTI: Autoanticorpos (IgG) contra glicoproteínas plaquetárias (GPIIb/IIIa, GPIb/IX) causam destruição de plaquetas pelo sistema reticuloendotelial (baço). Também há inibição da megacariopoiese. Outras causas: consumo (CIVD, PTT), sequestro esplênico, falência medular.',
-        citations: [{ refId: 'ash-itp-2019' }]
+        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -563,7 +619,7 @@ export const doencasHematologicas: Doenca[] = [
           'PTI aguda (crianças, pós-viral)',
           'PTI crônica (>12 meses)'
         ],
-        citations: [{ refId: 'ash-itp-2019' }]
+        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -588,7 +644,7 @@ export const doencasHematologicas: Doenca[] = [
           'Mielograma (se atípico)',
           'Coombs direto (se anemia)'
         ],
-        citations: [{ refId: 'ash-itp-2019' }]
+        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -602,7 +658,7 @@ export const doencasHematologicas: Doenca[] = [
             'Suspender medicamentos antiagregantes',
             'Watchful waiting se assintomático e plaquetas >30.000'
           ],
-          citations: [{ refId: 'ash-itp-2019' }]
+          citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -639,7 +695,12 @@ export const doencasHematologicas: Doenca[] = [
               conduta: 'IVIg preferível a corticoide. Plaquetas >30.000 para parto vaginal, >50.000 para cesárea.'
             }
           ],
-          citations: [{ refId: 'ash-itp-2019' }]
+          citations: [
+            { refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' },
+            { refId: 'romiplostim-rct', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'eltrombopag-rct', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'rituximab-itp-cochrane', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          ]
         },
         duracao: 'Conforme resposta. Agonistas TPO podem ser necessários cronicamente.'
       },
@@ -659,7 +720,7 @@ export const doencasHematologicas: Doenca[] = [
           'Candidato a agonista TPO ou rituximabe',
           'Sangramento grave'
         ],
-        citations: [{ refId: 'ash-itp-2019' }]
+        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       prevencao: {
         primaria: [
@@ -669,14 +730,18 @@ export const doencasHematologicas: Doenca[] = [
           'Evitar gatilhos',
           'Manter plaquetas em nível seguro'
         ],
-        citations: []
+        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
     },
     protocolos: [],
     medicamentos: ['prednisona', 'dexametasona', 'imunoglobulina-iv', 'eltrombopag'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'ash-itp-2019' }],
+    citations: [
+      { refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'romiplostim-rct', evidenceLevel: 'high', studyType: 'rct' },
+      { refId: 'eltrombopag-rct', evidenceLevel: 'high', studyType: 'rct' }
+    ],
     lastUpdate: '2024-12',
     tags: ['trombocitopenia', 'pti', 'plaqueta', 'purpura', 'sangramento'],
   }

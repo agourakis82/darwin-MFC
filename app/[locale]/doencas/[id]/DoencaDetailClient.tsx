@@ -18,6 +18,7 @@ import {
 import { notFound } from 'next/navigation';
 import ChecklistConsultaComponent from '@/app/components/Checklist/ChecklistConsulta';
 import { generateChecklistFromDoenca } from '@/lib/utils/checklist-generator';
+import { OntologyCodesDisplay } from '@/app/components/Ontology';
 
 // Loading Skeleton Component
 function DoencaDetailSkeleton() {
@@ -250,6 +251,23 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
           </button>
         </div>
       </div>
+
+      {/* Ontology Codes Section */}
+      {(doenca.loinc || doenca.hpo || doenca.ordo || doenca.snomedCT || doenca.meshId || doenca.doid || doenca.umlsCui) && (
+        <div className="glass-strong rounded-2xl p-6 mb-8">
+          <OntologyCodesDisplay
+            loinc={doenca.loinc}
+            hpo={doenca.hpo}
+            ordo={doenca.ordo}
+            icd10={doenca.cid10}
+            ciap2={doenca.ciap2}
+            snomedCT={doenca.snomedCT}
+            meshId={doenca.meshId}
+            doid={doenca.doid}
+            umlsCui={doenca.umlsCui}
+          />
+        </div>
+      )}
 
       {/* Checklist Content */}
       {showChecklist ? (

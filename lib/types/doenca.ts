@@ -253,7 +253,7 @@ export interface Doenca {
   hpo?: string[];
   
   /** LOINC codes for laboratory exams related to this disease */
-  loinc?: string[];
+  loinc?: { code: string; name: string }[];
   
   /** ORDO (Orphanet Rare Disease Ontology) codes - for rare diseases */
   ordo?: string[];

@@ -919,6 +919,382 @@ export const references: Record<string, Reference> = {
     url: 'https://www.who.int',
     accessDate: '2025-12-25',
     note: 'WHO report on NCD burden and screening strategies in India'
+  },
+
+  // ============================================
+  // DOENÇAS CARDIOVASCULARES - Referências Q1+
+  // ============================================
+
+  // --- INSUFICIÊNCIA CARDÍACA ---
+  'diretriz-ic-2021': {
+    id: 'diretriz-ic-2021',
+    type: 'diretriz',
+    title: 'Diretriz Brasileira de Insuficiência Cardíaca Crônica e Aguda',
+    year: 2021,
+    authors: ['Marcondes-Braga FG', 'Moura LAZ', 'Issa VS', 'Vieira JL', 'Rohde LE', 'et al'],
+    journal: 'Arquivos Brasileiros de Cardiologia',
+    volume: '116',
+    pages: '1174-1212',
+    doi: '10.36660/abc.20210062',
+    url: 'https://abccardiol.org/article/brazilian-guideline-on-heart-failure/',
+    accessDate: '2025-01-15'
+  },
+  'paradigm-hf-2014': {
+    id: 'paradigm-hf-2014',
+    type: 'artigo',
+    title: 'Angiotensin-Neprilysin Inhibition versus Enalapril in Heart Failure (PARADIGM-HF)',
+    year: 2014,
+    authors: ['McMurray JJ', 'Packer M', 'Desai AS', 'Gong J', 'Lefkowitz MP', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '371',
+    pages: '993-1004',
+    doi: '10.1056/NEJMoa1409077',
+    pmid: '25176015'
+  },
+  'dapa-hf-2019': {
+    id: 'dapa-hf-2019',
+    type: 'artigo',
+    title: 'Dapagliflozin in Patients with Heart Failure and Reduced Ejection Fraction (DAPA-HF)',
+    year: 2019,
+    authors: ['McMurray JJV', 'Solomon SD', 'Inzucchi SE', 'Køber L', 'Kosiborod MN', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '381',
+    pages: '1995-2008',
+    doi: '10.1056/NEJMoa1911303',
+    pmid: '31535829'
+  },
+  'emperor-reduced-2020': {
+    id: 'emperor-reduced-2020',
+    type: 'artigo',
+    title: 'Empagliflozin in Heart Failure with a Reduced Ejection Fraction (EMPEROR-Reduced)',
+    year: 2020,
+    authors: ['Packer M', 'Anker SD', 'Butler J', 'Filippatos G', 'Pocock SJ', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '383',
+    pages: '1413-1424',
+    doi: '10.1056/NEJMoa2022190',
+    pmid: '32865377'
+  },
+  'rales-1999': {
+    id: 'rales-1999',
+    type: 'artigo',
+    title: 'The Effect of Spironolactone on Morbidity and Mortality in Patients with Severe Heart Failure (RALES)',
+    year: 1999,
+    authors: ['Pitt B', 'Zannad F', 'Remme WJ', 'Cody R', 'Castaigne A', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '341',
+    pages: '709-717',
+    doi: '10.1056/NEJM199909023411001',
+    pmid: '10471456'
+  },
+  'cibis-ii-1999': {
+    id: 'cibis-ii-1999',
+    type: 'artigo',
+    title: 'The Cardiac Insufficiency Bisoprolol Study II (CIBIS-II): a randomised trial',
+    year: 1999,
+    authors: ['CIBIS-II Investigators and Committees'],
+    journal: 'Lancet',
+    volume: '353',
+    pages: '9-13',
+    doi: '10.1016/S0140-6736(98)11181-9',
+    pmid: '10023943'
+  },
+  'copernicus-2001': {
+    id: 'copernicus-2001',
+    type: 'artigo',
+    title: 'Effect of Carvedilol on Survival in Severe Chronic Heart Failure (COPERNICUS)',
+    year: 2001,
+    authors: ['Packer M', 'Coats AJ', 'Fowler MB', 'Katus HA', 'Krum H', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '344',
+    pages: '1651-1658',
+    doi: '10.1056/NEJM200105313442201',
+    pmid: '11386263'
+  },
+  'solvd-treatment-1991': {
+    id: 'solvd-treatment-1991',
+    type: 'artigo',
+    title: 'Effect of Enalapril on Survival in Patients with Reduced Left Ventricular Ejection Fractions and Congestive Heart Failure (SOLVD-Treatment)',
+    year: 1991,
+    authors: ['The SOLVD Investigators'],
+    journal: 'New England Journal of Medicine',
+    volume: '325',
+    pages: '293-302',
+    doi: '10.1056/NEJM199108013250501',
+    pmid: '2057034'
+  },
+
+  // --- FIBRILAÇÃO ATRIAL ---
+  'esc-fa-2020': {
+    id: 'esc-fa-2020',
+    type: 'diretriz',
+    title: '2020 ESC Guidelines for the diagnosis and management of atrial fibrillation',
+    year: 2020,
+    authors: ['Hindricks G', 'Potpara T', 'Dagres N', 'Arbelo E', 'Bax JJ', 'et al'],
+    journal: 'European Heart Journal',
+    volume: '42',
+    pages: '373-498',
+    doi: '10.1093/eurheartj/ehaa612',
+    pmid: '32860505'
+  },
+  're-ly-2009': {
+    id: 're-ly-2009',
+    type: 'artigo',
+    title: 'Dabigatran versus Warfarin in Patients with Atrial Fibrillation (RE-LY)',
+    year: 2009,
+    authors: ['Connolly SJ', 'Ezekowitz MD', 'Yusuf S', 'Eikelboom J', 'Oldgren J', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '361',
+    pages: '1139-1151',
+    doi: '10.1056/NEJMoa0905561',
+    pmid: '19717844'
+  },
+  'rocket-af-2011': {
+    id: 'rocket-af-2011',
+    type: 'artigo',
+    title: 'Rivaroxaban versus Warfarin in Nonvalvular Atrial Fibrillation (ROCKET AF)',
+    year: 2011,
+    authors: ['Patel MR', 'Mahaffey KW', 'Garg J', 'Pan G', 'Singer DE', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '365',
+    pages: '883-891',
+    doi: '10.1056/NEJMoa1009638',
+    pmid: '21830957'
+  },
+  'aristotle-2011': {
+    id: 'aristotle-2011',
+    type: 'artigo',
+    title: 'Apixaban versus Warfarin in Patients with Atrial Fibrillation (ARISTOTLE)',
+    year: 2011,
+    authors: ['Granger CB', 'Alexander JH', 'McMurray JJ', 'Lopes RD', 'Hylek EM', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '365',
+    pages: '981-992',
+    doi: '10.1056/NEJMoa1107039',
+    pmid: '21870978'
+  },
+  'engage-af-2013': {
+    id: 'engage-af-2013',
+    type: 'artigo',
+    title: 'Edoxaban versus Warfarin in Patients with Atrial Fibrillation (ENGAGE AF-TIMI 48)',
+    year: 2013,
+    authors: ['Giugliano RP', 'Ruff CT', 'Braunwald E', 'Murphy SA', 'Wiviott SD', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '369',
+    pages: '2093-2104',
+    doi: '10.1056/NEJMoa1310907',
+    pmid: '24251359'
+  },
+  'affirm-2002': {
+    id: 'affirm-2002',
+    type: 'artigo',
+    title: 'A Comparison of Rate Control and Rhythm Control in Patients with Atrial Fibrillation (AFFIRM)',
+    year: 2002,
+    authors: ['AFFIRM Investigators'],
+    journal: 'New England Journal of Medicine',
+    volume: '347',
+    pages: '1825-1833',
+    doi: '10.1056/NEJMoa021328',
+    pmid: '12466506'
+  },
+  'castle-af-2018': {
+    id: 'castle-af-2018',
+    type: 'artigo',
+    title: 'Catheter Ablation for Atrial Fibrillation with Heart Failure (CASTLE-AF)',
+    year: 2018,
+    authors: ['Marrouche NF', 'Brachmann J', 'Andresen D', 'Siebels J', 'Boersma L', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '378',
+    pages: '417-427',
+    doi: '10.1056/NEJMoa1707855',
+    pmid: '29385358'
+  },
+
+  // --- DOENÇA ARTERIAL CORONARIANA ---
+  'esc-dac-2019': {
+    id: 'esc-dac-2019',
+    type: 'diretriz',
+    title: '2019 ESC Guidelines for the diagnosis and management of chronic coronary syndromes',
+    year: 2019,
+    authors: ['Knuuti J', 'Wijns W', 'Saraste A', 'Capodanno D', 'Barbato E', 'et al'],
+    journal: 'European Heart Journal',
+    volume: '41',
+    pages: '407-477',
+    doi: '10.1093/eurheartj/ehz425',
+    pmid: '31504439'
+  },
+  'fourier-2017': {
+    id: 'fourier-2017',
+    type: 'artigo',
+    title: 'Evolocumab and Clinical Outcomes in Patients with Cardiovascular Disease (FOURIER)',
+    year: 2017,
+    authors: ['Sabatine MS', 'Giugliano RP', 'Keech AC', 'Honarpour N', 'Wiviott SD', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '376',
+    pages: '1713-1722',
+    doi: '10.1056/NEJMoa1615664',
+    pmid: '28304224'
+  },
+  'odyssey-2018': {
+    id: 'odyssey-2018',
+    type: 'artigo',
+    title: 'Alirocumab and Cardiovascular Outcomes after Acute Coronary Syndrome (ODYSSEY Outcomes)',
+    year: 2018,
+    authors: ['Schwartz GG', 'Steg PG', 'Szarek M', 'Bhatt DL', 'Bittner VA', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '379',
+    pages: '2097-2107',
+    doi: '10.1056/NEJMoa1801174',
+    pmid: '30403574'
+  },
+  '4s-1994': {
+    id: '4s-1994',
+    type: 'artigo',
+    title: 'Randomised trial of cholesterol lowering in 4444 patients with coronary heart disease: the Scandinavian Simvastatin Survival Study (4S)',
+    year: 1994,
+    authors: ['Scandinavian Simvastatin Survival Study Group'],
+    journal: 'Lancet',
+    volume: '344',
+    pages: '1383-1389',
+    doi: '10.1016/S0140-6736(94)90566-5',
+    pmid: '7968073'
+  },
+  'prove-it-2004': {
+    id: 'prove-it-2004',
+    type: 'artigo',
+    title: 'Intensive versus Moderate Lipid Lowering with Statins after Acute Coronary Syndromes (PROVE IT-TIMI 22)',
+    year: 2004,
+    authors: ['Cannon CP', 'Braunwald E', 'Murphy SA', 'Rader DJ', 'Ganz P', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '350',
+    pages: '1495-1504',
+    doi: '10.1056/NEJMoa040583',
+    pmid: '15007110'
+  },
+  'tnt-2005': {
+    id: 'tnt-2005',
+    type: 'artigo',
+    title: 'Intensive Lipid Lowering with Atorvastatin in Patients with Stable Coronary Disease (TNT)',
+    year: 2005,
+    authors: ['LaRosa JC', 'Grundy SM', 'Waters DD', 'Shear C', 'Barter P', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '352',
+    pages: '1425-1435',
+    doi: '10.1056/NEJMoa050461',
+    pmid: '15755765'
+  },
+  'ischemia-2020': {
+    id: 'ischemia-2020',
+    type: 'artigo',
+    title: 'Initial Invasive or Conservative Strategy for Stable Coronary Disease (ISCHEMIA)',
+    year: 2020,
+    authors: ['Maron DJ', 'Hochman JS', 'Reynolds HR', 'Bangalore S', 'O\'Brien SM', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '382',
+    pages: '1395-1407',
+    doi: '10.1056/NEJMoa1915922',
+    pmid: '32227755'
+  },
+  'compass-2017': {
+    id: 'compass-2017',
+    type: 'artigo',
+    title: 'Rivaroxaban with or without Aspirin in Stable Cardiovascular Disease (COMPASS)',
+    year: 2017,
+    authors: ['Eikelboom JW', 'Connolly SJ', 'Bosch J', 'Dagenais GR', 'Hart RG', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '377',
+    pages: '1319-1330',
+    doi: '10.1056/NEJMoa1709118',
+    pmid: '28844192'
+  },
+
+  // --- HIPERTENSÃO ARTERIAL ---
+  'sprint-2015': {
+    id: 'sprint-2015',
+    type: 'artigo',
+    title: 'A Randomized Trial of Intensive versus Standard Blood-Pressure Control (SPRINT)',
+    year: 2015,
+    authors: ['SPRINT Research Group'],
+    journal: 'New England Journal of Medicine',
+    volume: '373',
+    pages: '2103-2116',
+    doi: '10.1056/NEJMoa1511939',
+    pmid: '26551272'
+  },
+  'allhat-2002': {
+    id: 'allhat-2002',
+    type: 'artigo',
+    title: 'Major Outcomes in High-Risk Hypertensive Patients Randomized to Angiotensin-Converting Enzyme Inhibitor or Calcium Channel Blocker vs Diuretic (ALLHAT)',
+    year: 2002,
+    authors: ['ALLHAT Officers and Coordinators'],
+    journal: 'JAMA',
+    volume: '288',
+    pages: '2981-2997',
+    doi: '10.1001/jama.288.23.2981',
+    pmid: '12479763'
+  },
+  'accomplish-2008': {
+    id: 'accomplish-2008',
+    type: 'artigo',
+    title: 'Benazepril plus Amlodipine or Hydrochlorothiazide for Hypertension in High-Risk Patients (ACCOMPLISH)',
+    year: 2008,
+    authors: ['Jamerson K', 'Weber MA', 'Bakris GL', 'Dahlöf B', 'Pitt B', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '359',
+    pages: '2417-2428',
+    doi: '10.1056/NEJMoa0806182',
+    pmid: '19052124'
+  },
+  'diretriz-has-2020': {
+    id: 'diretriz-has-2020',
+    type: 'diretriz',
+    title: 'Diretrizes Brasileiras de Hipertensão Arterial - 2020',
+    year: 2020,
+    authors: ['Barroso WKS', 'Rodrigues CIS', 'Bortolotto LA', 'Mota-Gomes MA', 'Brandão AA', 'et al'],
+    journal: 'Arquivos Brasileiros de Cardiologia',
+    volume: '116',
+    pages: '516-658',
+    doi: '10.36660/abc.20201238',
+    url: 'https://abccardiol.org/article/brazilian-guidelines-of-hypertension-2020/',
+    accessDate: '2025-01-15'
+  },
+
+  // --- DIABETES E DOENÇA CARDIOVASCULAR ---
+  'empa-reg-2015': {
+    id: 'empa-reg-2015',
+    type: 'artigo',
+    title: 'Empagliflozin, Cardiovascular Outcomes, and Mortality in Type 2 Diabetes (EMPA-REG OUTCOME)',
+    year: 2015,
+    authors: ['Zinman B', 'Wanner C', 'Lachin JM', 'Fitchett D', 'Bluhmki E', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '373',
+    pages: '2117-2128',
+    doi: '10.1056/NEJMoa1504720',
+    pmid: '26378978'
+  },
+  'leader-2016': {
+    id: 'leader-2016',
+    type: 'artigo',
+    title: 'Liraglutide and Cardiovascular Outcomes in Type 2 Diabetes (LEADER)',
+    year: 2016,
+    authors: ['Marso SP', 'Daniels GH', 'Tanaka K', 'Poulter N', 'Bain SC', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '375',
+    pages: '311-322',
+    doi: '10.1056/NEJMoa1603827',
+    pmid: '27295427'
+  },
+  'canvas-2017': {
+    id: 'canvas-2017',
+    type: 'artigo',
+    title: 'Canagliflozin and Cardiovascular and Renal Events in Type 2 Diabetes (CANVAS Program)',
+    year: 2017,
+    authors: ['Neal B', 'Perkovic V', 'Mahaffey KW', 'de Zeeuw D', 'Fulcher G', 'et al'],
+    journal: 'New England Journal of Medicine',
+    volume: '377',
+    pages: '644-657',
+    doi: '10.1056/NEJMoa1611925',
+    pmid: '28605608'
   }
 };
 

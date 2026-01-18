@@ -23,6 +23,24 @@ export const doencasGinecoObstetricas: Doenca[] = [
     ciap2: ['X99'],
     cid10: ['E28.2'],
     cid11: ['5A80'],
+    loinc: [
+      { code: '3028-8', name: 'FSH (Follicle stimulating hormone)' },
+      { code: '3029-6', name: 'LH (Luteinizing hormone)' },
+      { code: '2243-4', name: 'Estradiol (E2)' },
+      { code: '2839-9', name: 'Progesterone' },
+      { code: '2986-8', name: 'Testosterone, total' },
+      { code: '2991-8', name: 'Testosterone, free' },
+      { code: '13967-5', name: 'SHBG (Sex hormone binding globulin)' },
+      { code: '1668-3', name: '17-Hydroxyprogesterone' },
+      { code: '2842-3', name: 'Prolactin' },
+      { code: '3016-3', name: 'TSH (Thyroid stimulating hormone)' },
+      { code: '14749-6', name: 'Glucose, fasting' },
+      { code: '20448-7', name: 'Insulin, fasting' },
+      { code: '2085-9', name: 'HDL cholesterol' },
+      { code: '2089-1', name: 'LDL cholesterol' },
+      { code: '2571-8', name: 'Triglycerides' },
+      { code: '1558-6', name: 'DHEA-S (Dehydroepiandrosterone sulfate)' },
+    ],
     categoria: 'ginecologico',
     quickView: {
       definicao: 'Distúrbio endócrino-metabólico heterogêneo caracterizado por hiperandrogenismo, disfunção ovariana e morfologia policística dos ovários. Causa mais comum de anovulação e infertilidade feminina.',
@@ -89,11 +107,11 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Baixo peso ao nascer',
           'Pubarca precoce'
         ],
-        citations: [{ refId: 'eshre-pcos-2023' }]
+        citations: [{ refId: 'eshre-pcos-2023', evidenceLevel: 'moderate', studyType: 'cohort' }]
       },
       fisiopatologia: {
         texto: 'Disfunção neuroendócrina com aumento de pulsos de GnRH, elevando LH e produção ovariana de androgênios. Resistência insulínica agrava hiperandrogenismo (insulina estimula tecal e reduz SHBG). Anovulação crônica causa oligo/amenorreia e infertilidade.',
-        citations: [{ refId: 'eshre-pcos-2023' }]
+        citations: [{ refId: 'eshre-pcos-2023', evidenceLevel: 'moderate', studyType: 'systematic_review' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -117,7 +135,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Fenótipo C (ovulatório): Hiperandrogenismo + USG policístico',
           'Fenótipo D: Anovulação + USG policístico'
         ],
-        citations: [{ refId: 'eshre-pcos-2023' }]
+        citations: [{ refId: 'eshre-pcos-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -142,7 +160,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Glicemia, insulina, HOMA-IR',
           'Perfil lipídico'
         ],
-        citations: [{ refId: 'eshre-pcos-2023' }]
+        citations: [{ refId: 'eshre-pcos-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -158,7 +176,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
             'Exercício aeróbico regular',
             'Cessação do tabagismo'
           ],
-          citations: [{ refId: 'eshre-pcos-2023' }]
+          citations: [{ refId: 'eshre-pcos-2023', evidenceLevel: 'high', studyType: 'systematic_review' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -191,7 +209,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
               conduta: 'Gonadotrofinas, drilling ovariano laparoscópico, FIV.'
             }
           ],
-          citations: [{ refId: 'eshre-pcos-2023' }]
+          citations: [{ refId: 'eshre-pcos-2023', evidenceLevel: 'high', studyType: 'rct' }]
         },
         duracao: 'Crônico, ajustado conforme objetivos e fase da vida.'
       },
@@ -214,7 +232,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Suspeita de tumor',
           'Síndrome metabólica'
         ],
-        citations: [{ refId: 'eshre-pcos-2023' }]
+        citations: [{ refId: 'eshre-pcos-2023', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       prevencao: {
         primaria: [
@@ -225,14 +243,14 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Rastreio de DM2 a cada 1-3 anos',
           'Proteção endometrial se anovulação'
         ],
-        citations: []
+        citations: [{ refId: 'eshre-pcos-2023', evidenceLevel: 'moderate', studyType: 'cohort' }]
       },
     },
     protocolos: [],
     medicamentos: ['metformina', 'letrozol', 'clomifeno', 'espironolactona'],
     calculadoras: ['homa-ir', 'ferriman-gallwey'],
     rastreamentos: ['rastreamento-dm2'],
-    citations: [{ refId: 'eshre-pcos-2023' }],
+    citations: [{ refId: 'eshre-pcos-2023', evidenceLevel: 'moderate', studyType: 'guideline' }],
     lastUpdate: '2024-12',
     tags: ['sop', 'ovarios-policisticos', 'hirsutismo', 'anovulacao', 'infertilidade'],
   },
@@ -247,6 +265,16 @@ export const doencasGinecoObstetricas: Doenca[] = [
     ciap2: ['X72'],
     cid10: ['B37.3'],
     cid11: ['1F23.1'],
+    loinc: [
+      { code: '630-4', name: 'Fungal culture' },
+      { code: '621-3', name: 'Candida species identified' },
+      { code: '660-1', name: 'Microscopy for yeast' },
+      { code: '5778-6', name: 'Vaginal pH' },
+      { code: '14749-6', name: 'Glucose, fasting' },
+      { code: '4548-4', name: 'Hemoglobin A1c' },
+      { code: '21613-5', name: 'Chlamydia trachomatis DNA' },
+      { code: '21415-5', name: 'Neisseria gonorrhoeae DNA' },
+    ],
     categoria: 'ginecologico',
     quickView: {
       definicao: 'Infecção vulvovaginal causada por leveduras do gênero Candida (principalmente C. albicans). Caracterizada por prurido vulvar intenso, corrimento branco grumoso e disúria externa. Muito comum - 75% das mulheres terão ao menos 1 episódio.',
@@ -309,11 +337,11 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Contraceptivos com alto estrogênio',
           'Atividade sexual frequente'
         ],
-        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       fisiopatologia: {
         texto: 'Candida faz parte da microbiota vaginal normal em 20-50% das mulheres. Alterações no equilíbrio (antibióticos, imunossupressão, estrogênio) permitem proliferação fúngica. Resposta inflamatória local causa os sintomas.',
-        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -333,7 +361,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'CVV não complicada (maioria)',
           'CVV complicada: grave, recorrente, não-albicans, gestante, imunossuprimida'
         ],
-        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -352,7 +380,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Cultura fúngica (Sabouraud)',
           'pH vaginal'
         ],
-        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -366,7 +394,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
             'Evitar duchas vaginais',
             'Manter área seca'
           ],
-          citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -398,7 +426,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
               conduta: 'Ácido bórico 600mg intravaginal por 14 noites.'
             }
           ],
-          citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         duracao: 'Episódio: 1-7 dias. Manutenção: 6 meses.'
       },
@@ -416,7 +444,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Imunossupressão',
           'Necessidade de avaliação de comorbidades'
         ],
-        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       prevencao: {
         primaria: [
@@ -433,7 +461,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
     medicamentos: ['fluconazol', 'clotrimazol', 'miconazol'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }],
+    citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }],
     lastUpdate: '2024-12',
     tags: ['candidiase', 'vulvovaginite', 'prurido', 'fluconazol', 'corrimento'],
   },
@@ -448,6 +476,16 @@ export const doencasGinecoObstetricas: Doenca[] = [
     ciap2: ['X84'],
     cid10: ['N76.0'],
     cid11: ['1A95.3'],
+    loinc: [
+      { code: '5778-6', name: 'Vaginal pH' },
+      { code: '664-3', name: 'Microscopy, Gram stain' },
+      { code: '690-8', name: 'Bacterial vaginosis screen' },
+      { code: '91895-3', name: 'Gardnerella vaginalis DNA' },
+      { code: '21613-5', name: 'Chlamydia trachomatis DNA' },
+      { code: '21415-5', name: 'Neisseria gonorrhoeae DNA' },
+      { code: '32198-4', name: 'Trichomonas vaginalis DNA' },
+      { code: '7918-6', name: 'HIV-1 Ab' },
+    ],
     categoria: 'ginecologico',
     quickView: {
       definicao: 'Desequilíbrio da microbiota vaginal com redução de Lactobacillus e proliferação de anaeróbios (Gardnerella vaginalis, Prevotella, Mobiluncus). Causa mais comum de corrimento vaginal. NÃO é IST clássica.',
@@ -508,11 +546,11 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'DIU',
           'Tabagismo'
         ],
-        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       fisiopatologia: {
         texto: 'Substituição da microbiota dominada por Lactobacillus (produtores de ácido lático e H2O2) por flora anaeróbia mista. O pH sobe >4,5 e as bactérias anaeróbias produzem aminas (odor de peixe) e formam biofilme aderente ao epitélio vaginal.',
-        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -531,7 +569,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'VB assintomática',
           'VB recorrente (≥3 episódios/ano)'
         ],
-        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -550,7 +588,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Microscopia (clue cells)',
           'Gram + Nugent'
         ],
-        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -564,7 +602,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
             'Evitar fumo',
             'Parceiro não precisa tratar de rotina'
           ],
-          citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -596,7 +634,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
               conduta: 'Metronidazol gel 2x/semana por 4-6 meses. Probióticos vaginais podem ajudar.'
             }
           ],
-          citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         duracao: 'Episódio: 5-7 dias. Manutenção: 4-6 meses.'
       },
@@ -612,7 +650,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Recorrência frequente',
           'Falha ao tratamento'
         ],
-        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       prevencao: {
         primaria: [
@@ -629,7 +667,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
     medicamentos: ['metronidazol', 'clindamicina'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }],
+    citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'high', studyType: 'guideline' }],
     lastUpdate: '2024-12',
     tags: ['vaginose', 'corrimento', 'gardnerella', 'metronidazol', 'odor'],
   },
@@ -644,6 +682,27 @@ export const doencasGinecoObstetricas: Doenca[] = [
     ciap2: ['W81'],
     cid10: ['O14', 'O14.0', 'O14.1'],
     cid11: ['JA24'],
+    loinc: [
+      { code: '2106-3', name: 'hCG quantitative (pregnancy confirmation)' },
+      { code: '2160-0', name: 'Creatinine, serum' },
+      { code: '1751-7', name: 'Albumin, urine' },
+      { code: '2823-3', name: 'Potassium, serum' },
+      { code: '2951-2', name: 'Sodium, serum' },
+      { code: '777-3', name: 'Platelet count' },
+      { code: '1920-8', name: 'AST (SGOT)' },
+      { code: '1742-6', name: 'ALT (SGPT)' },
+      { code: '2532-0', name: 'LDH (Lactate dehydrogenase)' },
+      { code: '1975-2', name: 'Total bilirubin' },
+      { code: '5909-7', name: 'Protein/Creatinine ratio, urine' },
+      { code: '21482-5', name: 'Protein, 24h urine' },
+      { code: '3084-1', name: 'Uric acid, serum' },
+      { code: '30352-9', name: 'Complete blood count (CBC)' },
+      { code: '6301-6', name: 'Coagulation (INR)' },
+      { code: '3173-2', name: 'aPTT' },
+      { code: '3243-3', name: 'Fibrinogen' },
+      { code: '30525-0', name: 'Peripheral blood smear (schistocytes)' },
+      { code: '1753-3', name: 'Albumin, serum' },
+    ],
     categoria: 'ginecologico',
     quickView: {
       definicao: 'Síndrome multissistêmica exclusiva da gestação, caracterizada por hipertensão arterial (≥140/90) após 20 semanas + proteinúria OU disfunção de órgão-alvo. Emergência obstétrica - principal causa de mortalidade materna.',
@@ -725,11 +784,11 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Novo parceiro',
           'Longo intervalo interpartal'
         ],
-        citations: [{ refId: 'acog-hyp-2020' }]
+        citations: [{ refId: 'acog-hyp-2020', evidenceLevel: 'high', studyType: 'cohort' }]
       },
       fisiopatologia: {
         texto: 'Placentação deficiente no 1º trimestre com falha no remodelamento das artérias espiraladas. Hipóxia placentária libera fatores antiangiogênicos (sFlt-1) que causam disfunção endotelial sistêmica, vasoespasmo, ativação da coagulação e lesão de múltiplos órgãos.',
-        citations: [{ refId: 'acog-hyp-2020' }]
+        citations: [{ refId: 'acog-hyp-2020', evidenceLevel: 'moderate', studyType: 'systematic_review' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -754,7 +813,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Síndrome HELLP',
           'PE superimposta à HAS crônica'
         ],
-        citations: [{ refId: 'acog-hyp-2020' }]
+        citations: [{ refId: 'acog-hyp-2020', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -776,7 +835,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Proteinúria 24h',
           'Coagulograma'
         ],
-        citations: [{ refId: 'acog-hyp-2020' }]
+        citations: [{ refId: 'acog-hyp-2020', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -792,7 +851,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
             'Balanço hídrico',
             'Repouso relativo'
           ],
-          citations: [{ refId: 'acog-hyp-2020' }]
+          citations: [{ refId: 'acog-hyp-2020', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -824,7 +883,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
               conduta: 'MgSO4 imediato. Estabilização. Parto após estabilização (não cesariana de emergência).'
             }
           ],
-          citations: [{ refId: 'acog-hyp-2020' }]
+          citations: [{ refId: 'acog-hyp-2020', evidenceLevel: 'high', studyType: 'rct' }]
         },
         duracao: 'Até o parto (cura definitiva).'
       },
@@ -844,7 +903,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Toda PE deve ser acompanhada em centro de referência',
           'UTI materna se HELLP ou eclâmpsia'
         ],
-        citations: [{ refId: 'acog-hyp-2020' }]
+        citations: [{ refId: 'acog-hyp-2020', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       prevencao: {
         primaria: [
@@ -855,14 +914,14 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Pré-natal adequado',
           'Diagnóstico precoce'
         ],
-        citations: []
+        citations: [{ refId: 'acog-hyp-2020', evidenceLevel: 'high', studyType: 'rct' }]
       },
     },
     protocolos: ['pre-eclampsia-manejo', 'sulfato-magnesio'],
     medicamentos: ['nifedipina', 'hidralazina', 'sulfato-magnesio', 'betametasona'],
     calculadoras: ['risco-pre-eclampsia'],
     rastreamentos: [],
-    citations: [{ refId: 'acog-hyp-2020' }],
+    citations: [{ refId: 'acog-hyp-2020', evidenceLevel: 'high', studyType: 'guideline' }],
     lastUpdate: '2024-12',
     tags: ['pre-eclampsia', 'hellp', 'eclampsia', 'gestacao', 'hipertensao'],
   }

@@ -1,12 +1,13 @@
 /**
  * DOENÇAS MUSCULOESQUELÉTICAS - DARWIN-MFC
  * =========================================
- * 
+ *
  * Ontologias integradas:
  * - DOID (Disease Ontology)
  * - SNOMED-CT (Systematized Nomenclature of Medicine)
  * - MeSH (Medical Subject Headings)
  * - UMLS CUI (Unified Medical Language System)
+ * - LOINC (Logical Observation Identifiers Names and Codes)
  */
 
 import { Doenca } from '../../types/doenca';
@@ -23,6 +24,14 @@ export const doencasMusculoesqueleticas: Doenca[] = [
     ciap2: ['L89', 'L90', 'L91'],
     cid10: ['M15', 'M16', 'M17', 'M18', 'M19'],
     cid11: ['FA00-FA02'],
+    // LOINC codes for osteoarthritis workup (primarily to exclude inflammatory arthritis)
+    loinc: [
+      '4537-7',   // ESR (Erythrocyte sedimentation rate)
+      '1988-5',   // CRP (C-reactive protein)
+      '5041-9',   // RF (Rheumatoid Factor) - to exclude RA
+      '32218-0',  // Anti-CCP (Anti-cyclic citrullinated peptide) - to exclude RA
+      '3084-1',   // Uric acid - to exclude gout
+    ],
     categoria: 'musculoesqueletico',
     quickView: {
       definicao: 'Doença articular degenerativa caracterizada por deterioração da cartilagem articular, alterações ósseas subcondrais e inflamação sinovial secundária. Causa mais comum de dor articular em adultos.',
@@ -83,11 +92,11 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Genética',
           'Deformidades articulares'
         ],
-        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
       fisiopatologia: {
         texto: 'Desequilíbrio entre síntese e degradação da matriz cartilaginosa, com perda progressiva de cartilagem hialina, esclerose óssea subcondral, formação de osteófitos e sinovite secundária. Envolve fatores mecânicos e bioquímicos.',
-        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'systematic_review' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -110,7 +119,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'OA de mãos (IFD, IFP, CMC do polegar)',
           'OA de coluna (espondilose)'
         ],
-        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -131,7 +140,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'VHS, PCR, FR, anti-CCP para descartar AR',
           'Ácido úrico se suspeita de gota'
         ],
-        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -150,7 +159,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
             'Termoterapia (calor ou frio)',
             'Órteses, palmilhas, bengala'
           ],
-          citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'systematic_review' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -187,7 +196,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
               conduta: 'Infiltração intra-articular com corticoide ou ácido hialurônico. Considerar cirurgia.'
             }
           ],
-          citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'rct' }]
         },
         duracao: 'Tratamento crônico, ajustado conforme sintomas.'
       },
@@ -208,7 +217,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Candidato a artroplastia',
           'Dúvida diagnóstica'
         ],
-        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       prevencao: {
         primaria: [
@@ -221,14 +230,14 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Fortalecimento muscular',
           'Controle de peso'
         ],
-        citations: []
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'low', studyType: 'expert_opinion' }]
       },
     },
     protocolos: [],
     medicamentos: ['paracetamol', 'ibuprofeno', 'diclofenaco', 'duloxetina'],
     calculadoras: ['womac', 'koos'],
     rastreamentos: [],
-    citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }],
+    citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'guideline' }],
     lastUpdate: '2024-12',
     tags: ['osteoartrite', 'artrose', 'joelho', 'quadril', 'dor-articular'],
   },
@@ -243,6 +252,18 @@ export const doencasMusculoesqueleticas: Doenca[] = [
     ciap2: ['L18'],
     cid10: ['M79.7'],
     cid11: ['MG30.01'],
+    // LOINC codes for fibromyalgia workup (to exclude other conditions)
+    loinc: [
+      '4537-7',   // ESR (Erythrocyte sedimentation rate)
+      '1988-5',   // CRP (C-reactive protein)
+      '3016-3',   // TSH (Thyroid stimulating hormone)
+      '1989-3',   // Vitamin D (25-hydroxyvitamin D)
+      '2157-6',   // CPK (Creatine kinase)
+      '5048-4',   // ANA (Antinuclear antibodies) - to exclude SLE
+      '5041-9',   // RF (Rheumatoid Factor) - to exclude RA
+      '718-7',    // Hemoglobin
+      '4544-3',   // Hematocrit
+    ],
     categoria: 'musculoesqueletico',
     quickView: {
       definicao: 'Síndrome de dor crônica generalizada associada a fadiga, distúrbios do sono, disfunção cognitiva e sintomas somáticos múltiplos. Caracterizada por sensibilização central do sistema nervoso.',
@@ -300,11 +321,11 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Outras síndromes de dor crônica',
           'História familiar'
         ],
-        citations: [{ refId: 'acr-fibro-2016' }]
+        citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'moderate', studyType: 'cohort' }]
       },
       fisiopatologia: {
         texto: 'Sensibilização central com amplificação do processamento da dor no SNC. Disfunção de sistemas moduladores descendentes (serotonina, noradrenalina). Alterações do sono não-REM. Fatores psicossociais modulam a expressão clínica.',
-        citations: [{ refId: 'acr-fibro-2016' }]
+        citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'moderate', studyType: 'systematic_review' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -325,7 +346,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Fibromialgia primária',
           'Fibromialgia secundária/concomitante (AR, LES, OA)'
         ],
-        citations: [{ refId: 'acr-fibro-2016' }]
+        citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -349,7 +370,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Vitamina D',
           'FR, anti-CCP, FAN se suspeita de doença autoimune'
         ],
-        citations: [{ refId: 'acr-fibro-2016' }]
+        citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -367,7 +388,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
             'Higiene do sono',
             'Hidroterapia'
           ],
-          citations: [{ refId: 'eular-fibro-2017' }]
+          citations: [{ refId: 'eular-fibro-2017', evidenceLevel: 'high', studyType: 'systematic_review' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -404,7 +425,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
               conduta: 'Amitriptilina ou ciclobenzaprina à noite'
             }
           ],
-          citations: [{ refId: 'eular-fibro-2017' }]
+          citations: [{ refId: 'eular-fibro-2017', evidenceLevel: 'high', studyType: 'rct' }]
         },
         duracao: 'Tratamento crônico, geralmente por anos.'
       },
@@ -424,7 +445,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Refratário ao tratamento',
           'Necessidade de abordagem multidisciplinar'
         ],
-        citations: [{ refId: 'eular-fibro-2017' }]
+        citations: [{ refId: 'eular-fibro-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       prevencao: {
         primaria: [
@@ -435,14 +456,14 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Tratamento precoce',
           'Exercício contínuo'
         ],
-        citations: []
+        citations: [{ refId: 'eular-fibro-2017', evidenceLevel: 'low', studyType: 'expert_opinion' }]
       },
     },
     protocolos: [],
     medicamentos: ['amitriptilina', 'duloxetina', 'pregabalina', 'ciclobenzaprina'],
     calculadoras: ['fiq'],
     rastreamentos: [],
-    citations: [{ refId: 'acr-fibro-2016' }, { refId: 'eular-fibro-2017' }],
+    citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'moderate', studyType: 'guideline' }, { refId: 'eular-fibro-2017', evidenceLevel: 'high', studyType: 'systematic_review' }],
     lastUpdate: '2024-12',
     tags: ['fibromialgia', 'dor-cronica', 'fadiga', 'sono', 'duloxetina'],
   },
@@ -457,6 +478,22 @@ export const doencasMusculoesqueleticas: Doenca[] = [
     ciap2: ['T92'],
     cid10: ['M10'],
     cid11: ['FA25'],
+    // LOINC codes for gout workup
+    loinc: [
+      '3084-1',   // Uric acid (serum)
+      '3085-8',   // Uric acid (urine)
+      '2160-0',   // Creatinine (serum)
+      '33914-3',  // eGFR (Estimated glomerular filtration rate)
+      '1988-5',   // CRP (C-reactive protein)
+      '4537-7',   // ESR (Erythrocyte sedimentation rate)
+      '718-7',    // Hemoglobin
+      '6690-2',   // WBC (White blood cell count)
+      '2345-7',   // Glucose (serum)
+      '2571-8',   // Triglycerides
+      '2093-3',   // Total cholesterol
+      '2085-9',   // HDL cholesterol
+      '13457-7',  // LDL cholesterol (calculated)
+    ],
     categoria: 'musculoesqueletico',
     quickView: {
       definicao: 'Artropatia inflamatória causada pela deposição de cristais de urato monossódico nas articulações e tecidos periarticulares, associada à hiperuricemia crônica.',
@@ -520,11 +557,11 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'DRC',
           'Diuréticos tiazídicos'
         ],
-        citations: [{ refId: 'acr-gout-2020' }]
+        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'high', studyType: 'cohort' }]
       },
       fisiopatologia: {
         texto: 'Hiperuricemia crônica leva à supersaturação e precipitação de cristais de urato monossódico em articulações e tecidos. Os cristais ativam o inflamassoma NLRP3, liberando IL-1β e desencadeando inflamação aguda intensa.',
-        citations: [{ refId: 'acr-gout-2020' }]
+        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'high', studyType: 'systematic_review' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -546,7 +583,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Gota crônica tofácea',
           'Artropatia gotosa crônica'
         ],
-        citations: [{ refId: 'acr-gout-2020' }]
+        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -568,7 +605,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Líquido sinovial (se disponível)',
           'Perfil lipídico, glicemia (síndrome metabólica)'
         ],
-        citations: [{ refId: 'acr-gout-2020' }]
+        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -585,7 +622,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
             'Perda de peso',
             'Evitar jejum prolongado'
           ],
-          citations: [{ refId: 'acr-gout-2020' }]
+          citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -610,7 +647,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
               conduta: 'Colchicina 0,5mg 1-2x/dia por 3-6 meses para prevenir flares.'
             }
           ],
-          citations: [{ refId: 'acr-gout-2020' }]
+          citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'high', studyType: 'rct' }]
         },
         duracao: 'Crise: 5-10 dias. Hipouricemiante: geralmente contínuo.'
       },
@@ -632,7 +669,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Gota tofácea grave',
           'DRC avançada'
         ],
-        citations: [{ refId: 'acr-gout-2020' }]
+        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       prevencao: {
         primaria: [
@@ -644,16 +681,1038 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Manter ácido úrico <6 mg/dL',
           'Adesão ao alopurinol'
         ],
-        citations: []
+        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'moderate', studyType: 'cohort' }]
       },
     },
     protocolos: ['protocolo-gota'],
     medicamentos: ['colchicina', 'alopurinol', 'naproxeno', 'prednisona'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'acr-gout-2020' }],
+    citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'high', studyType: 'guideline' }],
     lastUpdate: '2024-12',
     tags: ['gota', 'acido-urico', 'artrite', 'alopurinol', 'podagra'],
-  }
+  },
+  {
+    id: 'lupus-eritematoso-sistemico',
+    titulo: 'Lúpus Eritematoso Sistêmico',
+    sinonimos: ['LES', 'Lúpus', 'Lupus eritematoso disseminado'],
+    doid: 'DOID:9074',
+    snomedCT: '55464009',
+    meshId: 'D008180',
+    umlsCui: 'C0024141',
+    ciap2: ['L99'],
+    cid10: ['M32', 'M32.1', 'M32.8', 'M32.9'],
+    cid11: ['4A40'],
+    // LOINC codes for SLE diagnostic workup and monitoring
+    loinc: [
+      '5048-4',   // ANA (Antinuclear antibodies)
+      '11235-1',  // Anti-dsDNA (Anti-double stranded DNA)
+      '13963-4',  // Anti-Smith antibodies
+      '5105-2',   // Anti-SSA/Ro antibodies
+      '5106-0',   // Anti-SSB/La antibodies
+      '31030-5',  // Anti-RNP antibodies
+      '33935-8',  // Antiphospholipid antibodies panel
+      '4485-9',   // Complement C3
+      '4498-2',   // Complement C4
+      '4532-8',   // CH50 (Total complement)
+      '4537-7',   // ESR (Erythrocyte sedimentation rate)
+      '1988-5',   // CRP (C-reactive protein)
+      '718-7',    // Hemoglobin
+      '6690-2',   // WBC (White blood cell count)
+      '777-3',    // Platelet count
+      '26515-7',  // Platelets (automated)
+      '731-0',    // Lymphocyte count
+      '2160-0',   // Creatinine (serum)
+      '33914-3',  // eGFR
+      '5804-0',   // Urinalysis protein
+      '20454-5',  // Urine protein/creatinine ratio
+      '2889-9',   // Urine protein 24h
+      '5794-3',   // Urinalysis RBC
+      '11277-3',  // Anti-cardiolipin IgG
+      '11278-1',  // Anti-cardiolipin IgM
+      '34915-7',  // Lupus anticoagulant
+    ],
+    categoria: 'musculoesqueletico',
+    quickView: {
+      definicao: 'Doença autoimune sistêmica crônica caracterizada por produção de autoanticorpos e deposição de imunocomplexos, causando inflamação em múltiplos órgãos (pele, articulações, rins, sistema nervoso, sistema hematológico).',
+      criteriosDiagnosticos: [
+        'Critérios ACR/EULAR 2019:',
+        'FAN positivo ≥1:80 (critério de entrada obrigatório)',
+        'Score ≥10 pontos nos domínios clínicos e imunológicos',
+        'Domínios: constitucional, hematológico, neuropsiquiátrico, mucocutâneo, serosas, musculoesquelético, renal',
+        'Anti-dsDNA, anti-Smith, baixo complemento são altamente específicos'
+      ],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: [
+          'Proteção solar rigorosa (FPS ≥30, reaplicar)',
+          'Cessação do tabagismo',
+          'Exercício físico regular',
+          'Dieta balanceada',
+          'Suporte psicológico'
+        ],
+        farmacologico: [
+          'Hidroxicloroquina 5mg/kg/dia (TODOS os pacientes - base do tratamento)',
+          'AINEs para sintomas musculoesqueléticos leves',
+          'Prednisona em doses variáveis conforme atividade',
+          'Imunossupressores conforme gravidade (azatioprina, metotrexato, micofenolato)'
+        ]
+      },
+      metasTerapeuticas: [
+        'Remissão clínica (SLEDAI <4) ou baixa atividade',
+        'Prednisona ≤7,5mg/dia ou descontinuação',
+        'Prevenção de flares',
+        'Preservação da função renal'
+      ],
+      examesIniciais: [
+        'FAN (screening), Anti-dsDNA, Anti-Smith, Anti-Ro/La',
+        'Complemento C3, C4',
+        'Hemograma completo com plaquetas',
+        'Função renal, EAS, proteinúria 24h ou relação prot/creat',
+        'Perfil lipídico, glicemia'
+      ],
+      redFlags: [
+        'Proteinúria >500mg/24h (nefrite lúpica)',
+        'Alterações neurológicas (convulsões, psicose)',
+        'Citopenias graves',
+        'Síndrome antifosfolípide',
+        'Serosite grave (pericardite, pleurite)',
+        'Hemorragia alveolar'
+      ]
+    },
+    fullContent: {
+      epidemiologia: {
+        prevalencia: '20-150/100.000 habitantes (varia por região)',
+        incidencia: '1-10/100.000/ano',
+        faixaEtaria: 'Pico 15-45 anos',
+        fatoresRisco: [
+          'Sexo feminino (9:1)',
+          'Idade fértil',
+          'Afrodescendentes e latinos',
+          'História familiar de LES ou doenças autoimunes',
+          'Exposição solar',
+          'Certas drogas (lúpus induzido)'
+        ],
+        citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      fisiopatologia: {
+        texto: 'Perda de tolerância imunológica com produção de autoanticorpos contra antígenos nucleares. Formação de imunocomplexos que se depositam em tecidos, ativando complemento e causando inflamação. Participação de linfócitos B e T autorreativos, interferon tipo I e citocinas pró-inflamatórias.',
+        citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'high', studyType: 'systematic_review' }]
+      },
+      quadroClinico: {
+        sintomasPrincipais: [
+          'Artralgia/artrite (90%)',
+          'Fadiga (80%)',
+          'Rash malar (eritema em asa de borboleta)',
+          'Fotossensibilidade',
+          'Alopecia',
+          'Úlceras orais',
+          'Febre',
+          'Serosite (pleurite, pericardite)'
+        ],
+        sinaisExameFisico: [
+          'Rash malar poupando sulcos nasolabiais',
+          'Rash discoide',
+          'Sinovite (artrite não erosiva)',
+          'Alopecia difusa ou em placas',
+          'Úlceras orais/nasais indolores',
+          'Livedo reticular',
+          'Fenômeno de Raynaud'
+        ],
+        formasClinicas: [
+          'LES cutâneo agudo',
+          'LES cutâneo subagudo',
+          'LES cutâneo crônico (discoide)',
+          'LES sistêmico',
+          'LES neonatal'
+        ],
+        citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      diagnostico: {
+        criterios: [
+          'Critérios ACR/EULAR 2019',
+          'FAN positivo ≥1:80 é obrigatório',
+          'Pontuação ≥10 em domínios clínicos/imunológicos',
+          'Considerar biópsia renal se proteinúria'
+        ],
+        diagnosticoDiferencial: [
+          'Artrite reumatoide',
+          'Doença mista do tecido conjuntivo',
+          'Síndrome de Sjögren',
+          'Dermatomiosite',
+          'Fibromialgia',
+          'Lúpus induzido por drogas',
+          'Vasculites'
+        ],
+        examesLaboratoriais: [
+          'FAN (screening - alta sensibilidade)',
+          'Anti-dsDNA (específico, correlaciona com atividade)',
+          'Anti-Smith (muito específico)',
+          'Complemento C3, C4, CH50',
+          'Hemograma, função renal',
+          'EAS, proteinúria',
+          'Anticorpos antifosfolípides'
+        ],
+        citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      tratamento: {
+        objetivos: [
+          'Controlar atividade da doença',
+          'Prevenir dano orgânico',
+          'Minimizar efeitos adversos do tratamento',
+          'Melhorar qualidade de vida'
+        ],
+        naoFarmacologico: {
+          medidas: [
+            'Fotoproteção rigorosa',
+            'Cessação do tabagismo',
+            'Exercício físico regular',
+            'Controle de fatores de risco cardiovascular',
+            'Suplementação de vitamina D e cálcio',
+            'Vacinação (evitar vacinas vivas em imunossuprimidos)'
+          ],
+          citations: [{ refId: 'eular-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        },
+        farmacologico: {
+          primeiraLinha: [
+            {
+              classe: 'Antimalárico',
+              medicamentos: ['Hidroxicloroquina'],
+              posologia: '5mg/kg/dia (máx 400mg/dia). BASE do tratamento - todos devem receber.'
+            },
+            {
+              classe: 'Corticoide',
+              medicamentos: ['Prednisona'],
+              posologia: 'Dose conforme gravidade: leve 0-7,5mg/dia, moderada 7,5-30mg/dia, grave pulsos IV.'
+            }
+          ],
+          segundaLinha: [
+            {
+              classe: 'Imunossupressor',
+              medicamentos: ['Azatioprina', 'Metotrexato', 'Micofenolato'],
+              posologia: 'Conforme manifestação e gravidade. Micofenolato preferido para nefrite.'
+            },
+            {
+              classe: 'Biológico',
+              medicamentos: ['Belimumab', 'Rituximabe'],
+              posologia: 'Para casos refratários ou graves.'
+            }
+          ],
+          situacoesEspeciais: [
+            {
+              situacao: 'Nefrite lúpica',
+              conduta: 'Pulsoterapia com metilprednisolona + micofenolato ou ciclofosfamida. Encaminhar ao nefrologista.'
+            },
+            {
+              situacao: 'Gravidez',
+              conduta: 'Manter hidroxicloroquina. Azatioprina é segura. Suspender metotrexato e micofenolato.'
+            },
+            {
+              situacao: 'Síndrome antifosfolípide',
+              conduta: 'Anticoagulação conforme indicação (warfarin se trombose prévia).'
+            }
+          ],
+          citations: [{ refId: 'eular-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        },
+        duracao: 'Tratamento crônico, ajustado conforme atividade da doença.'
+      },
+      acompanhamento: {
+        frequenciaConsultas: 'A cada 1-3 meses se ativo, a cada 6 meses se estável',
+        examesControle: [
+          'Hemograma, função renal, EAS a cada consulta',
+          'Complemento e anti-dsDNA para avaliar atividade',
+          'Proteinúria se envolvimento renal',
+          'Exame oftalmológico anual (hidroxicloroquina)',
+          'Densitometria óssea se corticoide crônico'
+        ],
+        metasTerapeuticas: [
+          'Remissão clínica (SLEDAI ≤4)',
+          'Prednisona ≤7,5mg/dia',
+          'Sem novos flares',
+          'Preservação da função renal'
+        ],
+        criteriosEncaminhamento: [
+          'Nefrite lúpica',
+          'Manifestações neuropsiquiátricas',
+          'Citopenias graves',
+          'Refratário ao tratamento inicial',
+          'Gravidez em paciente com LES'
+        ],
+        citations: [{ refId: 'eular-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      prevencao: {
+        primaria: [
+          'Não há prevenção primária estabelecida',
+          'Evitar exposição solar em predispostos'
+        ],
+        secundaria: [
+          'Hidroxicloroquina previne flares',
+          'Fotoproteção',
+          'Controle de fatores de risco cardiovascular',
+          'Vacinação adequada'
+        ],
+        citations: [{ refId: 'eular-sle-2019', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+      },
+    },
+    protocolos: ['protocolo-les'],
+    medicamentos: ['hidroxicloroquina', 'prednisona', 'azatioprina', 'micofenolato'],
+    calculadoras: ['sledai', 'slicc'],
+    rastreamentos: [],
+    citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }, { refId: 'eular-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }],
+    lastUpdate: '2024-12',
+    tags: ['lupus', 'les', 'autoimune', 'fan', 'nefrite', 'hidroxicloroquina'],
+  },
+  {
+    id: 'artrite-reumatoide',
+    titulo: 'Artrite Reumatoide',
+    sinonimos: ['AR', 'Poliartrite reumatoide'],
+    doid: 'DOID:7148',
+    snomedCT: '69896004',
+    meshId: 'D001172',
+    umlsCui: 'C0003873',
+    ciap2: ['L88'],
+    cid10: ['M05', 'M06', 'M06.0', 'M06.9'],
+    cid11: ['FA20', 'FA21'],
+    // LOINC codes for RA diagnostic workup and monitoring
+    loinc: [
+      '5041-9',   // RF (Rheumatoid Factor)
+      '32218-0',  // Anti-CCP (Anti-cyclic citrullinated peptide)
+      '53027-8',  // Anti-CCP IgG
+      '4537-7',   // ESR (Erythrocyte sedimentation rate)
+      '1988-5',   // CRP (C-reactive protein)
+      '30522-7',  // CRP high sensitivity
+      '5048-4',   // ANA (Antinuclear antibodies) - for overlap syndromes
+      '718-7',    // Hemoglobin
+      '4544-3',   // Hematocrit
+      '6690-2',   // WBC (White blood cell count)
+      '777-3',    // Platelet count
+      '2160-0',   // Creatinine (serum)
+      '33914-3',  // eGFR
+      '1742-6',   // ALT (Alanine aminotransferase)
+      '1920-8',   // AST (Aspartate aminotransferase)
+      '17861-6',  // Calcium (serum)
+      '1989-3',   // Vitamin D (25-hydroxyvitamin D)
+      '10466-1',  // HBsAg (Hepatitis B surface antigen)
+      '16128-1',  // Anti-HCV (Hepatitis C antibody)
+    ],
+    categoria: 'musculoesqueletico',
+    quickView: {
+      definicao: 'Doença autoimune sistêmica crônica caracterizada por poliartrite simétrica erosiva, afetando predominantemente pequenas articulações das mãos e pés, com potencial para destruição articular e manifestações extra-articulares.',
+      criteriosDiagnosticos: [
+        'Critérios ACR/EULAR 2010 (score ≥6/10):',
+        'Envolvimento articular (0-5 pontos)',
+        'Sorologia: FR e/ou anti-CCP (0-3 pontos)',
+        'Reagentes de fase aguda: VHS e/ou PCR (0-1 ponto)',
+        'Duração dos sintomas ≥6 semanas (1 ponto)',
+        'Pelo menos 1 articulação com sinovite clínica definida'
+      ],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: [
+          'Educação do paciente',
+          'Fisioterapia e terapia ocupacional',
+          'Exercícios de amplitude de movimento',
+          'Repouso durante flares',
+          'Órteses quando indicado'
+        ],
+        farmacologico: [
+          'Metotrexato 15-25mg/semana (1ª linha - iniciar precocemente)',
+          'Ácido fólico 5mg/semana (suplementação obrigatória)',
+          'Prednisona 5-10mg/dia como ponte (curto prazo)',
+          'Se refratário: associar ou trocar para leflunomida, sulfassalazina ou biológicos'
+        ]
+      },
+      metasTerapeuticas: [
+        'Remissão clínica (DAS28 <2,6) ou baixa atividade',
+        'Controle precoce (<3-6 meses do diagnóstico)',
+        'Ausência de progressão radiológica',
+        'Preservação da função'
+      ],
+      examesIniciais: [
+        'FR (Fator Reumatoide) e Anti-CCP',
+        'VHS e PCR',
+        'Hemograma, função renal e hepática',
+        'RX de mãos e pés (baseline)',
+        'Sorologias para hepatite B e C (antes de imunossupressão)'
+      ],
+      redFlags: [
+        'Nódulos reumatoides',
+        'Vasculite reumatoide',
+        'Doença pulmonar intersticial',
+        'Subluxação atlantoaxial (risco de compressão medular)',
+        'Síndrome de Felty (AR + esplenomegalia + neutropenia)'
+      ]
+    },
+    fullContent: {
+      epidemiologia: {
+        prevalencia: '0,5-1% da população mundial',
+        incidencia: '20-50/100.000/ano',
+        faixaEtaria: 'Pico 40-60 anos, mas pode ocorrer em qualquer idade',
+        fatoresRisco: [
+          'Sexo feminino (3:1)',
+          'História familiar',
+          'Tabagismo (principal fator modificável)',
+          'HLA-DR4 (shared epitope)',
+          'Doença periodontal',
+          'Exposição à sílica'
+        ],
+        citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      fisiopatologia: {
+        texto: 'Inflamação sinovial crônica com proliferação de fibroblastos (pannus), produção de citocinas pró-inflamatórias (TNF-α, IL-6, IL-1), autoanticorpos (FR, anti-CCP) e destruição progressiva de cartilagem e osso por ativação de osteoclastos e metaloproteinases.',
+        citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'high', studyType: 'systematic_review' }]
+      },
+      quadroClinico: {
+        sintomasPrincipais: [
+          'Poliartrite simétrica de pequenas articulações',
+          'Rigidez matinal prolongada (>60 minutos)',
+          'Dor articular inflamatória',
+          'Fadiga',
+          'Sintomas constitucionais (febre baixa, perda de peso)'
+        ],
+        sinaisExameFisico: [
+          'Sinovite (edema articular, calor, dor à palpação)',
+          'Deformidades: desvio ulnar, pescoço de cisne, boutonnière',
+          'Nódulos reumatoides (cotovelos, dedos)',
+          'Atrofia muscular periarticular',
+          'Tenossinovite (especialmente extensores dos dedos)'
+        ],
+        formasClinicas: [
+          'AR soropositiva (FR+/anti-CCP+) - mais agressiva',
+          'AR soronegativa',
+          'AR de início tardio (>60 anos)',
+          'AR com manifestações extra-articulares'
+        ],
+        citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      diagnostico: {
+        criterios: [
+          'Critérios ACR/EULAR 2010',
+          'Score ≥6/10 pontos classifica como AR',
+          'Importante diagnóstico precoce (janela de oportunidade)'
+        ],
+        diagnosticoDiferencial: [
+          'Lúpus eritematoso sistêmico',
+          'Artrite psoriásica',
+          'Artrite viral',
+          'Osteoartrite erosiva',
+          'Artrite por cristais (gota, pseudogota)',
+          'Polimialgia reumática'
+        ],
+        examesLaboratoriais: [
+          'FR (sensibilidade 70-80%)',
+          'Anti-CCP (especificidade >95%)',
+          'VHS e PCR elevados',
+          'Anemia de doença crônica',
+          'Trombocitose reativa'
+        ],
+        examesImagem: [
+          'RX mãos e pés (erosões periarticulares)',
+          'US articular (sinovite, erosões precoces)',
+          'RNM (sinovite, edema ósseo precoce)'
+        ],
+        citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      tratamento: {
+        objetivos: [
+          'Remissão ou baixa atividade em 6 meses',
+          'Prevenir destruição articular',
+          'Preservar função e qualidade de vida',
+          'Tratar comorbidades'
+        ],
+        naoFarmacologico: {
+          medidas: [
+            'Educação do paciente',
+            'Fisioterapia',
+            'Terapia ocupacional',
+            'Cessação do tabagismo (fundamental)',
+            'Exercícios de baixo impacto',
+            'Suporte psicológico'
+          ],
+          citations: [{ refId: 'eular-ra-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        },
+        farmacologico: {
+          primeiraLinha: [
+            {
+              classe: 'DMARD convencional',
+              medicamentos: ['Metotrexato'],
+              posologia: 'Iniciar 10-15mg/semana, titular até 25mg. Associar ácido fólico 5mg/semana.'
+            },
+            {
+              classe: 'Corticoide (ponte)',
+              medicamentos: ['Prednisona'],
+              posologia: '5-10mg/dia como ponte, desmame em 3-6 meses.'
+            }
+          ],
+          segundaLinha: [
+            {
+              classe: 'DMARD convencional alternativo',
+              medicamentos: ['Leflunomida', 'Sulfassalazina', 'Hidroxicloroquina'],
+              posologia: 'Leflunomida 20mg/dia. Sulfassalazina 2-3g/dia. Combinação se monoterapia insuficiente.'
+            },
+            {
+              classe: 'DMARD biológico',
+              medicamentos: ['Adalimumabe', 'Etanercepte', 'Infliximabe', 'Tocilizumabe', 'Abatacepte'],
+              posologia: 'Se falha a DMARDs convencionais. Anti-TNF mais utilizados.'
+            },
+            {
+              classe: 'JAK inibidor',
+              medicamentos: ['Tofacitinibe', 'Baricitinibe', 'Upadacitinibe'],
+              posologia: 'Alternativa a biológicos. Atenção a eventos cardiovasculares.'
+            }
+          ],
+          situacoesEspeciais: [
+            {
+              situacao: 'Doença pulmonar intersticial',
+              conduta: 'Evitar metotrexato. Considerar rituximabe ou abatacepte.'
+            },
+            {
+              situacao: 'Gravidez',
+              conduta: 'Suspender metotrexato e leflunomida. Manter sulfassalazina e hidroxicloroquina.'
+            }
+          ],
+          citations: [{ refId: 'eular-ra-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        },
+        duracao: 'Tratamento crônico, com ajustes conforme atividade.'
+      },
+      acompanhamento: {
+        frequenciaConsultas: 'A cada 1-3 meses até remissão, depois a cada 3-6 meses',
+        examesControle: [
+          'Hemograma, função hepática e renal a cada 4-8 semanas inicialmente',
+          'VHS e PCR para monitorar atividade',
+          'RX de mãos e pés anual (progressão)',
+          'Rastreamento de comorbidades (DCV, osteoporose, infecções)'
+        ],
+        metasTerapeuticas: [
+          'Remissão (DAS28 <2,6) ou baixa atividade (DAS28 <3,2)',
+          'Ausência de progressão radiológica',
+          'HAQ estável ou melhorando'
+        ],
+        criteriosEncaminhamento: [
+          'Diagnóstico inicial (para confirmação e início de DMARD)',
+          'Falha a DMARDs convencionais',
+          'Manifestações extra-articulares graves',
+          'Necessidade de biológicos'
+        ],
+        citations: [{ refId: 'eular-ra-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      prevencao: {
+        primaria: [
+          'Cessação do tabagismo',
+          'Tratamento de doença periodontal'
+        ],
+        secundaria: [
+          'Tratamento precoce e agressivo (treat-to-target)',
+          'Controle de fatores de risco cardiovascular',
+          'Prevenção de osteoporose'
+        ],
+        citations: [{ refId: 'eular-ra-2022', evidenceLevel: 'moderate', studyType: 'cohort' }]
+      },
+    },
+    protocolos: ['protocolo-ar'],
+    medicamentos: ['metotrexato', 'leflunomida', 'sulfassalazina', 'prednisona', 'adalimumabe'],
+    calculadoras: ['das28', 'cdai', 'sdai', 'haq'],
+    rastreamentos: [],
+    citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'high', studyType: 'guideline' }, { refId: 'eular-ra-2022', evidenceLevel: 'high', studyType: 'guideline' }],
+    lastUpdate: '2024-12',
+    tags: ['artrite-reumatoide', 'ar', 'autoimune', 'metotrexato', 'anti-ccp', 'fator-reumatoide'],
+  },
+  {
+    id: 'osteoporose',
+    titulo: 'Osteoporose',
+    sinonimos: ['Doença óssea metabólica', 'Fragilidade óssea'],
+    doid: 'DOID:11476',
+    snomedCT: '64859006',
+    meshId: 'D010024',
+    umlsCui: 'C0029456',
+    ciap2: ['L95'],
+    cid10: ['M80', 'M81', 'M82'],
+    cid11: ['FB83'],
+    // LOINC codes for osteoporosis workup
+    loinc: [
+      '17861-6',  // Calcium (serum)
+      '2777-1',   // Phosphorus (serum)
+      '1989-3',   // Vitamin D (25-hydroxyvitamin D)
+      '2731-8',   // PTH (Parathyroid hormone)
+      '2132-9',   // Vitamin B12
+      '3016-3',   // TSH (Thyroid stimulating hormone)
+      '2160-0',   // Creatinine (serum)
+      '33914-3',  // eGFR
+      '718-7',    // Hemoglobin
+      '6690-2',   // WBC (White blood cell count)
+      '4537-7',   // ESR (Erythrocyte sedimentation rate)
+      '1988-5',   // CRP (C-reactive protein)
+      '2885-7',   // Protein total (serum)
+      '13986-5',  // Albumin (serum)
+      '1742-6',   // ALT (Alanine aminotransferase)
+      '1920-8',   // AST (Aspartate aminotransferase)
+      '6768-6',   // Alkaline phosphatase (ALP)
+      '11042-0',  // Osteocalcin (bone formation marker)
+      '57368-6',  // CTX (C-terminal telopeptide - bone resorption marker)
+      '46126-1',  // P1NP (Procollagen type 1 N-terminal propeptide)
+      '2502-3',   // Transferrin saturation
+      '2276-4',   // Ferritin
+    ],
+    categoria: 'musculoesqueletico',
+    quickView: {
+      definicao: 'Doença esquelética sistêmica caracterizada por baixa massa óssea e deterioração da microarquitetura do tecido ósseo, levando a fragilidade óssea e aumento do risco de fraturas.',
+      criteriosDiagnosticos: [
+        'Critérios OMS (densitometria - DXA):',
+        'T-score ≤-2,5 DP = Osteoporose',
+        'T-score entre -1,0 e -2,5 DP = Osteopenia',
+        'Fratura por fragilidade em quadril ou vértebra = Osteoporose clínica',
+        'FRAX com alto risco de fratura também indica tratamento'
+      ],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: [
+          'Cálcio 1000-1200mg/dia (dieta + suplemento se necessário)',
+          'Vitamina D 800-2000 UI/dia (manter 25(OH)D >30 ng/mL)',
+          'Exercício físico com carga (fortalecimento)',
+          'Prevenção de quedas',
+          'Cessação de tabagismo e álcool'
+        ],
+        farmacologico: [
+          'Bisfosfonatos (1ª linha): Alendronato 70mg/semana OU Risedronato 35mg/semana',
+          'Denosumabe 60mg SC semestral (se intolerância ou CI a bisfosfonatos)',
+          'Teriparatida para osteoporose grave',
+          'TRH em mulheres pós-menopausa precoce (<60 anos)'
+        ]
+      },
+      metasTerapeuticas: [
+        'Prevenção de fraturas',
+        'Estabilização ou aumento do T-score',
+        'Vitamina D ≥30 ng/mL',
+        'Redução de risco de quedas'
+      ],
+      examesIniciais: [
+        'Densitometria óssea (DXA) de coluna lombar e fêmur',
+        'Cálcio sérico, fósforo, fosfatase alcalina',
+        'Vitamina D (25-OH)',
+        'PTH se vitamina D baixa ou hipercalcemia',
+        'TSH, função renal',
+        'Hemograma, VHS (descartar mieloma)'
+      ],
+      redFlags: [
+        'Fratura vertebral aguda com dor intensa',
+        'Hipercalcemia (pensar em hiperparatireoidismo ou malignidade)',
+        'Perda óssea muito rápida',
+        'Osteoporose em homem jovem',
+        'Múltiplas fraturas por fragilidade'
+      ]
+    },
+    fullContent: {
+      epidemiologia: {
+        prevalencia: '10% da população >50 anos, 30-50% das mulheres pós-menopausa',
+        incidencia: '200.000 fraturas de quadril/ano no Brasil',
+        faixaEtaria: 'Aumenta progressivamente após 50 anos',
+        fatoresRisco: [
+          'Sexo feminino',
+          'Idade avançada',
+          'Menopausa precoce',
+          'Baixo IMC (<19 kg/m²)',
+          'História familiar de fratura de quadril',
+          'Corticoterapia crônica',
+          'Tabagismo',
+          'Alcoolismo',
+          'Sedentarismo',
+          'Deficiência de vitamina D'
+        ],
+        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      fisiopatologia: {
+        texto: 'Desequilíbrio entre reabsorção (osteoclastos) e formação óssea (osteoblastos), com predomínio de reabsorção. Na pós-menopausa, deficiência de estrogênio aumenta atividade osteoclástica. Fatores contribuintes: deficiência de vitamina D, hiperparatireoidismo secundário, envelhecimento.',
+        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'systematic_review' }]
+      },
+      quadroClinico: {
+        sintomasPrincipais: [
+          'Frequentemente assintomática até ocorrer fratura',
+          'Dor após fratura (especialmente vertebral)',
+          'Perda de altura (fraturas vertebrais compressivas)',
+          'Cifose (corcunda de viúva)',
+          'Limitação funcional após fraturas'
+        ],
+        sinaisExameFisico: [
+          'Geralmente normal até ocorrerem fraturas',
+          'Cifose dorsal',
+          'Redução da altura',
+          'Dor à palpação de vértebras (fratura aguda)',
+          'Fraqueza muscular pode estar associada'
+        ],
+        formasClinicas: [
+          'Osteoporose pós-menopausa (tipo I)',
+          'Osteoporose senil (tipo II)',
+          'Osteoporose secundária (corticoides, hiperparatireoidismo, etc.)',
+          'Osteoporose masculina'
+        ],
+        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      diagnostico: {
+        criterios: [
+          'DXA: T-score ≤-2,5 DP',
+          'Fratura por fragilidade (quadril, vértebra, antebraço)',
+          'FRAX elevado mesmo sem T-score de osteoporose'
+        ],
+        diagnosticoDiferencial: [
+          'Osteomalacia',
+          'Mieloma múltiplo',
+          'Metástases ósseas',
+          'Hiperparatireoidismo',
+          'Doença de Paget',
+          'Osteogênese imperfeita'
+        ],
+        examesLaboratoriais: [
+          'Cálcio sérico (normal na osteoporose primária)',
+          'Fósforo',
+          'Vitamina D 25(OH)',
+          'PTH',
+          'Fosfatase alcalina',
+          'TSH',
+          'Hemograma, VHS, proteínas séricas (descartar mieloma)',
+          'Função renal',
+          'Marcadores de turnover ósseo (CTX, P1NP) se disponíveis'
+        ],
+        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      tratamento: {
+        objetivos: [
+          'Prevenir fraturas',
+          'Aumentar ou estabilizar massa óssea',
+          'Corrigir deficiência de vitamina D',
+          'Reduzir risco de quedas'
+        ],
+        naoFarmacologico: {
+          medidas: [
+            'Cálcio 1000-1200mg/dia (dieta preferencial)',
+            'Vitamina D 800-2000 UI/dia',
+            'Exercício físico com carga',
+            'Prevenção de quedas (avaliação multifatorial)',
+            'Cessação de tabagismo',
+            'Moderação no álcool'
+          ],
+          citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+        },
+        farmacologico: {
+          primeiraLinha: [
+            {
+              classe: 'Bisfosfonato oral',
+              medicamentos: ['Alendronato', 'Risedronato'],
+              posologia: 'Alendronato 70mg/semana ou Risedronato 35mg/semana. Em jejum, com água, permanecer em pé 30 min.'
+            },
+            {
+              classe: 'Bisfosfonato IV',
+              medicamentos: ['Ácido zoledrônico'],
+              posologia: '5mg IV anual. Útil se intolerância GI ou baixa adesão.'
+            }
+          ],
+          segundaLinha: [
+            {
+              classe: 'Anticorpo monoclonal',
+              medicamentos: ['Denosumabe'],
+              posologia: '60mg SC a cada 6 meses. Não usar se DRC avançada.'
+            },
+            {
+              classe: 'Anabólico (formador de osso)',
+              medicamentos: ['Teriparatida', 'Romosozumabe'],
+              posologia: 'Teriparatida 20mcg SC/dia. Para osteoporose grave, múltiplas fraturas. Uso por 2 anos.'
+            }
+          ],
+          situacoesEspeciais: [
+            {
+              situacao: 'DRC (TFG <30)',
+              conduta: 'Evitar bisfosfonatos. Corrigir deficiência de vitamina D primeiro. Considerar denosumabe com cautela.'
+            },
+            {
+              situacao: 'Pós-fratura de quadril',
+              conduta: 'Iniciar tratamento assim que estável. Ácido zoledrônico IV tem evidência forte.'
+            }
+          ],
+          citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'rct' }]
+        },
+        duracao: '5 anos de bisfosfonatos, depois reavaliar (drug holiday se baixo risco). Denosumabe: não interromper abruptamente.'
+      },
+      acompanhamento: {
+        frequenciaConsultas: 'A cada 6-12 meses',
+        examesControle: [
+          'DXA a cada 1-2 anos (inicialmente), depois a cada 2-3 anos se estável',
+          'Vitamina D anual',
+          'Cálcio sérico',
+          'Função renal (se em bisfosfonato)',
+          'Altura a cada consulta',
+          'RX de coluna se suspeita de fratura vertebral'
+        ],
+        metasTerapeuticas: [
+          'Ausência de novas fraturas',
+          'T-score estável ou melhorando',
+          'Vitamina D >30 ng/mL',
+          'Boa adesão ao tratamento'
+        ],
+        criteriosEncaminhamento: [
+          'Osteoporose em homem jovem (<50 anos)',
+          'Osteoporose secundária complexa',
+          'Falha terapêutica (novas fraturas em tratamento)',
+          'Intolerância a múltiplos tratamentos',
+          'Necessidade de teriparatida ou romosozumabe'
+        ],
+        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      prevencao: {
+        primaria: [
+          'Ingesta adequada de cálcio e vitamina D desde a juventude',
+          'Exercício físico regular com carga',
+          'Evitar tabagismo',
+          'Uso criterioso de corticoides'
+        ],
+        secundaria: [
+          'Densitometria em populações de risco',
+          'Tratamento da osteopenia de alto risco',
+          'Prevenção de quedas'
+        ],
+        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'moderate', studyType: 'cohort' }]
+      },
+    },
+    protocolos: ['protocolo-osteoporose'],
+    medicamentos: ['alendronato', 'risedronato', 'denosumabe', 'calcio', 'vitamina-d'],
+    calculadoras: ['frax', 'nogg'],
+    rastreamentos: ['rastreamento-osteoporose'],
+    citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'guideline' }],
+    lastUpdate: '2024-12',
+    tags: ['osteoporose', 'fratura', 'densitometria', 'bisfosfonato', 'vitamina-d', 'calcio'],
+  },
+  {
+    id: 'espondilite-anquilosante',
+    titulo: 'Espondilite Anquilosante',
+    sinonimos: ['EA', 'Espondiloartrite axial', 'Espondilite anquilopoiética'],
+    doid: 'DOID:7147',
+    snomedCT: '9631008',
+    meshId: 'D013167',
+    umlsCui: 'C0038013',
+    ciap2: ['L88'],
+    cid10: ['M45', 'M45.0', 'M45.9'],
+    cid11: ['FA92.0'],
+    // LOINC codes for ankylosing spondylitis workup
+    loinc: [
+      '4537-7',   // ESR (Erythrocyte sedimentation rate)
+      '1988-5',   // CRP (C-reactive protein)
+      '30522-7',  // CRP high sensitivity
+      '13303-0',  // HLA-B27 (genetic marker)
+      '718-7',    // Hemoglobin
+      '4544-3',   // Hematocrit
+      '6690-2',   // WBC (White blood cell count)
+      '5048-4',   // ANA (to exclude other conditions)
+      '5041-9',   // RF (Rheumatoid Factor - typically negative)
+      '2160-0',   // Creatinine (serum)
+      '1742-6',   // ALT
+      '1920-8',   // AST
+    ],
+    categoria: 'musculoesqueletico',
+    quickView: {
+      definicao: 'Espondiloartrite axial crônica caracterizada por inflamação das articulações sacroilíacas e coluna vertebral, podendo evoluir para anquilose (fusão óssea). Faz parte do espectro das espondiloartrites.',
+      criteriosDiagnosticos: [
+        'Critérios ASAS para espondiloartrite axial:',
+        'Dor lombar crônica (≥3 meses) com início <45 anos',
+        'Sacroileíte em imagem (RX ou RNM) + ≥1 característica de SpA, OU',
+        'HLA-B27 positivo + ≥2 características de SpA',
+        'Características: dor lombar inflamatória, artrite, entesite, uveíte, dactilite, psoríase, DII, boa resposta a AINE, PCR elevada, HLA-B27'
+      ],
+      tratamentoPrimeiraLinha: {
+        naoFarmacologico: [
+          'Exercício físico regular (especialmente natação)',
+          'Fisioterapia com ênfase em extensão da coluna',
+          'Cessação do tabagismo',
+          'Manutenção da postura'
+        ],
+        farmacologico: [
+          'AINEs em dose plena (1ª linha): Naproxeno, Indometacina, Celecoxibe',
+          'Se falha a 2 AINEs por 4 semanas cada: Anti-TNF (Adalimumabe, Etanercepte)',
+          'Sulfassalazina 2-3g/dia apenas se artrite periférica',
+          'Metotrexato NÃO é eficaz para doença axial'
+        ]
+      },
+      metasTerapeuticas: [
+        'Controle da dor e rigidez',
+        'Manutenção da mobilidade espinhal',
+        'ASDAS <1,3 (remissão) ou <2,1 (baixa atividade)',
+        'Prevenção de dano estrutural'
+      ],
+      examesIniciais: [
+        'PCR e VHS',
+        'HLA-B27',
+        'RX de sacroilíacas e coluna',
+        'RNM de sacroilíacas se RX normal',
+        'Hemograma, função renal e hepática'
+      ],
+      redFlags: [
+        'Uveíte aguda (encaminhar urgente à oftalmologia)',
+        'Fratura vertebral (coluna rígida é frágil)',
+        'Síndrome da cauda equina',
+        'Doença pulmonar restritiva (fibrose apical)',
+        'Insuficiência aórtica'
+      ]
+    },
+    fullContent: {
+      epidemiologia: {
+        prevalencia: '0,1-1,4% da população',
+        incidencia: '7/100.000/ano',
+        faixaEtaria: 'Início típico 15-30 anos',
+        fatoresRisco: [
+          'Sexo masculino (2-3:1)',
+          'HLA-B27 positivo (90-95% dos pacientes)',
+          'História familiar de espondiloartrite',
+          'Infecções gastrointestinais ou geniturinárias prévias'
+        ],
+        citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      fisiopatologia: {
+        texto: 'Inflamação crônica nas ênteses (inserções de tendões e ligamentos no osso) e articulações sacroilíacas/coluna. Processo inflamatório mediado por IL-17 e TNF-α leva à formação óssea reativa (sindesmófitos) e eventual anquilose. Forte associação com HLA-B27.',
+        citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'high', studyType: 'systematic_review' }]
+      },
+      quadroClinico: {
+        sintomasPrincipais: [
+          'Dor lombar inflamatória (insidiosa, >3 meses, melhora com exercício, piora com repouso)',
+          'Rigidez matinal prolongada (>30 minutos)',
+          'Dor noturna (acordar na 2ª metade da noite)',
+          'Fadiga',
+          'Dor glútea alternante'
+        ],
+        sinaisExameFisico: [
+          'Redução da mobilidade da coluna lombar',
+          'Teste de Schober diminuído',
+          'Redução da expansibilidade torácica',
+          'Retificação da lordose lombar',
+          'Hipercifose dorsal em casos avançados',
+          'Entesite (especialmente calcâneo)'
+        ],
+        formasClinicas: [
+          'Espondiloartrite axial não radiográfica (RNM+ / RX-)',
+          'Espondilite anquilosante (RX com sacroileíte definida)',
+          'Espondiloartrite com manifestações extra-articulares'
+        ],
+        citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      diagnostico: {
+        criterios: [
+          'Critérios ASAS para SpA axial',
+          'RNM de sacroilíacas pode detectar doença precoce',
+          'HLA-B27 positivo em >90% dos casos'
+        ],
+        diagnosticoDiferencial: [
+          'Dor lombar mecânica',
+          'Hérnia de disco',
+          'Artrite psoriásica',
+          'Artrite reativa',
+          'Espondiloartrite associada a DII',
+          'Hiperostose esquelética idiopática difusa (DISH)'
+        ],
+        examesLaboratoriais: [
+          'PCR e VHS (podem estar normais em 40%)',
+          'HLA-B27',
+          'Hemograma',
+          'Função renal e hepática'
+        ],
+        examesImagem: [
+          'RX de bacia (sacroilíacas) e coluna',
+          'RNM de sacroilíacas (edema ósseo precoce)',
+          'RX de coluna em fases avançadas (coluna em bambu)'
+        ],
+        citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      tratamento: {
+        objetivos: [
+          'Controlar dor e inflamação',
+          'Preservar mobilidade espinhal',
+          'Prevenir anquilose',
+          'Manter qualidade de vida'
+        ],
+        naoFarmacologico: {
+          medidas: [
+            'Exercício físico diário (fundamental)',
+            'Fisioterapia especializada',
+            'Natação e hidroterapia',
+            'Cessação do tabagismo (acelera progressão)',
+            'Educação postural'
+          ],
+          citations: [{ refId: 'asas-eular-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+        },
+        farmacologico: {
+          primeiraLinha: [
+            {
+              classe: 'AINE',
+              medicamentos: ['Naproxeno', 'Indometacina', 'Celecoxibe', 'Etoricoxibe'],
+              posologia: 'Dose plena contínua se sintomático. Naproxeno 500mg 12/12h ou Celecoxibe 200mg 12/12h.'
+            }
+          ],
+          segundaLinha: [
+            {
+              classe: 'Anti-TNF',
+              medicamentos: ['Adalimumabe', 'Etanercepte', 'Infliximabe', 'Golimumabe', 'Certolizumabe'],
+              posologia: 'Se falha a ≥2 AINEs por 4 semanas cada. Adalimumabe 40mg SC quinzenal.'
+            },
+            {
+              classe: 'Inibidor de IL-17',
+              medicamentos: ['Secuquinumabe', 'Ixequizumabe'],
+              posologia: 'Alternativa a anti-TNF ou se falha.'
+            },
+            {
+              classe: 'JAK inibidor',
+              medicamentos: ['Upadacitinibe', 'Tofacitinibe'],
+              posologia: 'Opção se falha a biológicos.'
+            }
+          ],
+          situacoesEspeciais: [
+            {
+              situacao: 'Artrite periférica associada',
+              conduta: 'Sulfassalazina 2-3g/dia pode ajudar. Anti-TNF também eficaz.'
+            },
+            {
+              situacao: 'Uveíte recorrente',
+              conduta: 'Preferir anti-TNF monoclonal (adalimumabe, infliximabe). Etanercepte menos eficaz para uveíte.'
+            }
+          ],
+          citations: [{ refId: 'asas-eular-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+        },
+        duracao: 'Tratamento crônico.'
+      },
+      acompanhamento: {
+        frequenciaConsultas: 'A cada 3-6 meses',
+        examesControle: [
+          'PCR e VHS',
+          'Avaliação da mobilidade espinhal (Schober, expansibilidade torácica)',
+          'ASDAS ou BASDAI',
+          'RX de coluna a cada 2-3 anos se doença ativa',
+          'Exame oftalmológico se sintomas oculares'
+        ],
+        metasTerapeuticas: [
+          'ASDAS <1,3 (remissão) ou <2,1 (baixa atividade)',
+          'BASDAI <4',
+          'Preservação da mobilidade',
+          'Ausência de manifestações extra-articulares'
+        ],
+        criteriosEncaminhamento: [
+          'Diagnóstico inicial (reumatologista)',
+          'Falha a AINEs (considerar biológico)',
+          'Uveíte (oftalmologista urgente)',
+          'Suspeita de fratura vertebral',
+          'Manifestações extra-articulares graves'
+        ],
+        citations: [{ refId: 'asas-eular-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+      },
+      prevencao: {
+        primaria: [
+          'Não há prevenção primária estabelecida'
+        ],
+        secundaria: [
+          'Tratamento precoce',
+          'Exercício regular',
+          'Cessação do tabagismo',
+          'Controle de comorbidades'
+        ],
+        citations: [{ refId: 'asas-eular-2016', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+      },
+    },
+    protocolos: ['protocolo-ea'],
+    medicamentos: ['naproxeno', 'indometacina', 'celecoxibe', 'adalimumabe', 'etanercepte'],
+    calculadoras: ['basdai', 'asdas', 'basfi'],
+    rastreamentos: [],
+    citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'high', studyType: 'guideline' }, { refId: 'asas-eular-2016', evidenceLevel: 'high', studyType: 'guideline' }],
+    lastUpdate: '2024-12',
+    tags: ['espondilite', 'espondiloartrite', 'hla-b27', 'sacroileite', 'dor-lombar-inflamatoria'],
+  },
 ];
-

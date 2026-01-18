@@ -31,7 +31,13 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     },
     medicamentos: [],
     protocolos: [],
-    calculadoras: []
+    calculadoras: [],
+    citations: [
+      { refId: 'aap-bronchiolitis-2014', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'ralston-bronchiolitis-cochrane-2014', evidenceLevel: 'high', studyType: 'systematic_review' },
+      { refId: 'florin-bronchiolitis-management-2017', evidenceLevel: 'moderate', studyType: 'systematic_review' },
+      { refId: 'hasegawa-rsv-bronchiolitis-2013', evidenceLevel: 'moderate', studyType: 'cohort' }
+    ]
   },
   {
     id: 'laringite-aguda',
@@ -55,7 +61,13 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     },
     medicamentos: ['dexametasona'],
     protocolos: [],
-    calculadoras: []
+    calculadoras: [],
+    citations: [
+      { refId: 'bjornson-croup-cochrane-2013', evidenceLevel: 'high', studyType: 'systematic_review' },
+      { refId: 'russell-croup-glucocorticoids-2011', evidenceLevel: 'high', studyType: 'systematic_review' },
+      { refId: 'waisman-nebulized-epinephrine-croup-rct-1992', evidenceLevel: 'moderate', studyType: 'rct' },
+      { refId: 'cherry-croup-current-diagnosis-2008', evidenceLevel: 'moderate', studyType: 'guideline' }
+    ]
   },
   {
     id: 'otite-media-aguda',
@@ -79,7 +91,13 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     },
     medicamentos: ['amoxicilina', 'ibuprofeno', 'paracetamol'],
     protocolos: [],
-    calculadoras: []
+    calculadoras: [],
+    citations: [
+      { refId: 'aap-otitis-media-2013', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'lieberthal-aom-diagnosis-management-2013', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'rovers-aom-antibiotics-cochrane-2006', evidenceLevel: 'high', studyType: 'systematic_review' },
+      { refId: 'venekamp-aom-antibiotics-cochrane-2015', evidenceLevel: 'high', studyType: 'systematic_review' }
+    ]
   },
   {
     id: 'faringoamigdalite',
@@ -103,7 +121,13 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     },
     medicamentos: ['amoxicilina', 'penicilina-benzatina'],
     protocolos: [],
-    calculadoras: []
+    calculadoras: [],
+    citations: [
+      { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'spinks-penicillin-pharyngitis-cochrane-2013', evidenceLevel: 'high', studyType: 'systematic_review' },
+      { refId: 'mcisaac-centor-validation-1998', evidenceLevel: 'moderate', studyType: 'cohort' },
+      { refId: 'shulman-gas-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' }
+    ]
   },
   {
     id: 'ivas-pediatrica',
@@ -127,7 +151,13 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     },
     medicamentos: ['paracetamol', 'ibuprofeno'],
     protocolos: ['ivas'],
-    calculadoras: []
+    calculadoras: [],
+    citations: [
+      { refId: 'heikkinen-common-cold-lancet-2003', evidenceLevel: 'moderate', studyType: 'systematic_review' },
+      { refId: 'smith-cold-symptoms-children-cochrane-2014', evidenceLevel: 'high', studyType: 'systematic_review' },
+      { refId: 'aap-cough-cold-children-2008', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'de-sutter-antihistamines-common-cold-cochrane-2015', evidenceLevel: 'high', studyType: 'systematic_review' }
+    ]
   },
   // ===============================================
   // DOENÇAS PEDIÁTRICAS ADICIONAIS
@@ -164,7 +194,13 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     },
     medicamentos: ['salbutamol', 'budesonida', 'prednisolona'],
     protocolos: ['asma-exacerbacao'],
-    calculadoras: []
+    calculadoras: [],
+    citations: [
+      { refId: 'gina-2023', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'castro-rodriguez-api-asthma-2010', evidenceLevel: 'moderate', studyType: 'cohort' },
+      { refId: 'ducharme-ics-asthma-children-cochrane-2014', evidenceLevel: 'high', studyType: 'systematic_review' },
+      { refId: 'brand-ers-asthma-preschool-2008', evidenceLevel: 'high', studyType: 'guideline' }
+    ]
   },
   {
     id: 'diarreia-aguda-pediatrica',
@@ -193,7 +229,13 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     },
     medicamentos: ['sais-reidratacao-oral'],
     protocolos: [],
-    calculadoras: []
+    calculadoras: [],
+    citations: [
+      { refId: 'who-diarrhea-management-2005', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'guarino-espghan-acute-gastroenteritis-2014', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'lazzerini-ors-diarrhea-cochrane-2016', evidenceLevel: 'high', studyType: 'systematic_review' },
+      { refId: 'lukacik-zinc-diarrhea-meta-analysis-2008', evidenceLevel: 'high', studyType: 'systematic_review' }
+    ]
   },
   {
     id: 'constipacao-pediatrica',
@@ -224,7 +266,13 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     },
     medicamentos: ['lactulose'],
     protocolos: [],
-    calculadoras: []
+    calculadoras: [],
+    citations: [
+      { refId: 'tabbers-espghan-constipation-2014', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'naspghan-constipation-evaluation-2006', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'gordon-peg-constipation-cochrane-2016', evidenceLevel: 'high', studyType: 'systematic_review' },
+      { refId: 'benninga-childhood-constipation-rome-iv-2016', evidenceLevel: 'high', studyType: 'guideline' }
+    ]
   },
   {
     id: 'dermatite-atopica-pediatrica',
@@ -254,7 +302,13 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     },
     medicamentos: ['hidrocortisona-topica'],
     protocolos: [],
-    calculadoras: []
+    calculadoras: [],
+    citations: [
+      { refId: 'aad-atopic-dermatitis-2014', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'eichenfield-atopic-dermatitis-guidelines-2014', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'el-batawy-topical-corticosteroids-ad-cochrane-2015', evidenceLevel: 'high', studyType: 'systematic_review' },
+      { refId: 'wollenberg-eaaci-atopic-eczema-2018', evidenceLevel: 'high', studyType: 'guideline' }
+    ]
   },
   {
     id: 'anemia-ferropriva-pediatrica',
@@ -283,6 +337,12 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     },
     medicamentos: ['sulfato-ferroso'],
     protocolos: [],
-    calculadoras: []
+    calculadoras: [],
+    citations: [
+      { refId: 'who-iron-deficiency-2001', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'baker-aap-iron-deficiency-2010', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'pasricha-iron-supplementation-cochrane-2013', evidenceLevel: 'high', studyType: 'systematic_review' },
+      { refId: 'ms-anemia-ferropriva-2013', evidenceLevel: 'moderate', studyType: 'guideline' }
+    ]
   }
 ];

@@ -23,6 +23,19 @@ export const doencasNeurologicas: Doenca[] = [
     ciap2: ['N89'],
     cid10: ['G43', 'G43.0', 'G43.1', 'G43.9'],
     cid11: ['8A80'],
+    loinc: [
+      // Para exclusão de causas secundárias de cefaleia
+      { code: '2951-2', name: 'Sodium [Moles/volume] in Serum or Plasma' },
+      { code: '2823-3', name: 'Potassium [Moles/volume] in Serum or Plasma' },
+      { code: '2160-0', name: 'Creatinine [Mass/volume] in Serum or Plasma' },
+      { code: '3016-3', name: 'Thyrotropin [Units/volume] in Serum or Plasma' },
+      { code: '30341-2', name: 'Erythrocyte sedimentation rate' },
+      { code: '1988-5', name: 'C reactive protein [Mass/volume] in Serum or Plasma' },
+      // Se suspeita de HSA ou meningite - punção lombar
+      { code: '2880-3', name: 'Protein [Mass/volume] in Cerebral spinal fluid' },
+      { code: '2342-4', name: 'Glucose [Mass/volume] in Cerebral spinal fluid' },
+      { code: '26449-9', name: 'Leukocytes [#/volume] in Cerebral spinal fluid' },
+    ],
     categoria: 'neurologico',
     quickView: {
       definicao: 'Cefaleia primária recorrente, caracterizada por crises de dor pulsátil, geralmente unilateral, de intensidade moderada a grave, associada a náuseas, fotofobia e fonofobia. Pode ser precedida por aura.',
@@ -87,11 +100,11 @@ export const doencasNeurologicas: Doenca[] = [
           'Distúrbios do sono',
           'Obesidade'
         ],
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       fisiopatologia: {
         texto: 'Envolve ativação do sistema trigeminovascular, com liberação de neuropeptídeos vasoativos (CGRP) e inflamação neurogênica. Depressão alastrante cortical explica a aura. Sensibilização central contribui para cronicidade.',
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -114,7 +127,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Enxaqueca menstrual',
           'Enxaqueca vestibular'
         ],
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       diagnostico: {
         criterios: [
@@ -136,7 +149,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Hemograma, VHS se suspeita de arterite temporal',
           'Punção lombar se suspeita de HSA ou meningite'
         ],
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       tratamento: {
         objetivos: [
@@ -153,7 +166,7 @@ export const doencasNeurologicas: Doenca[] = [
             'Técnicas de relaxamento/biofeedback',
             'TCC para manejo do estresse'
           ],
-          citations: [{ refId: 'abs-cefaleia-2022' }]
+          citations: [{ refId: 'abs-cefaleia-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -195,7 +208,7 @@ export const doencasNeurologicas: Doenca[] = [
               conduta: 'Paracetamol como analgésico. Propranolol pode ser usado como profilático. Evitar ergotamínicos e AINEs no 3º trimestre.'
             }
           ],
-          citations: [{ refId: 'abs-cefaleia-2022' }]
+          citations: [{ refId: 'abs-cefaleia-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
         },
         duracao: 'Profilaxia: mínimo 6 meses, desmame gradual.'
       },
@@ -215,7 +228,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Sinais de alarme',
           'Necessidade de anti-CGRP'
         ],
-        citations: [{ refId: 'abs-cefaleia-2022' }]
+        citations: [{ refId: 'abs-cefaleia-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
       },
       prevencao: {
         primaria: [
@@ -233,7 +246,7 @@ export const doencasNeurologicas: Doenca[] = [
     medicamentos: ['sumatriptano', 'ibuprofeno', 'propranolol', 'amitriptilina', 'topiramato'],
     calculadoras: ['midas', 'hit-6'],
     rastreamentos: [],
-    citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'Consensus' }, { refId: 'abs-cefaleia-2022' }],
+    citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }, { refId: 'abs-cefaleia-2022', evidenceLevel: 'moderate', studyType: 'guideline' }],
     lastUpdate: '2024-12',
     tags: ['enxaqueca', 'cefaleia', 'migranea', 'triptano', 'profilaxia'],
   },
@@ -248,6 +261,16 @@ export const doencasNeurologicas: Doenca[] = [
     ciap2: ['N95'],
     cid10: ['G44.2'],
     cid11: ['8A81'],
+    loinc: [
+      // Para exclusão de causas secundárias
+      { code: '2951-2', name: 'Sodium [Moles/volume] in Serum or Plasma' },
+      { code: '2823-3', name: 'Potassium [Moles/volume] in Serum or Plasma' },
+      { code: '2160-0', name: 'Creatinine [Mass/volume] in Serum or Plasma' },
+      { code: '3016-3', name: 'Thyrotropin [Units/volume] in Serum or Plasma' },
+      { code: '2132-9', name: 'Cobalamin (Vitamin B12) [Mass/volume] in Serum or Plasma' },
+      { code: '2284-8', name: 'Folate [Mass/volume] in Serum or Plasma' },
+      { code: '30341-2', name: 'Erythrocyte sedimentation rate' },
+    ],
     categoria: 'neurologico',
     quickView: {
       definicao: 'Cefaleia primária mais comum. Dor em pressão/aperto, bilateral, leve a moderada, sem náuseas significativas, sem piora com atividade física. Diferencia-se da enxaqueca pela menor intensidade e ausência de sintomas associados.',
@@ -305,11 +328,11 @@ export const doencasNeurologicas: Doenca[] = [
           'Depressão/ansiedade',
           'Uso de telas prolongado'
         ],
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       fisiopatologia: {
         texto: 'Mecanismos periféricos (sensibilização de nociceptores miofasciais pericraniais) e centrais (sensibilização do núcleo trigeminal) contribuem. Estresse e tensão muscular são fatores moduladores importantes.',
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -328,7 +351,7 @@ export const doencasNeurologicas: Doenca[] = [
           'CTT episódica frequente (1-14 dias/mês)',
           'CTT crônica (≥15 dias/mês por >3 meses)'
         ],
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       diagnostico: {
         criterios: [
@@ -344,7 +367,7 @@ export const doencasNeurologicas: Doenca[] = [
         examesLaboratoriais: [
           'Não necessários para diagnóstico'
         ],
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       tratamento: {
         objetivos: [
@@ -360,7 +383,7 @@ export const doencasNeurologicas: Doenca[] = [
             'Técnicas de relaxamento',
             'Biofeedback'
           ],
-          citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'Consensus' }]
+          citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -378,7 +401,7 @@ export const doencasNeurologicas: Doenca[] = [
             }
           ],
           situacoesEspeciais: [],
-          citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'Consensus' }]
+          citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
         },
         duracao: 'Agudo: conforme crises. Profilático: 6-12 meses.'
       },
@@ -395,7 +418,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Refratária ao tratamento',
           'Sinais de alarme'
         ],
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       prevencao: {
         primaria: [
@@ -413,7 +436,7 @@ export const doencasNeurologicas: Doenca[] = [
     medicamentos: ['paracetamol', 'dipirona', 'ibuprofeno', 'amitriptilina'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'Consensus' }],
+    citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }],
     lastUpdate: '2024-12',
     tags: ['cefaleia-tensional', 'tensao', 'estresse', 'dor-cabeca'],
   },
@@ -428,6 +451,38 @@ export const doencasNeurologicas: Doenca[] = [
     ciap2: ['K90'],
     cid10: ['I63', 'I64'],
     cid11: ['8B11'],
+    loinc: [
+      // Avaliação inicial de emergência
+      { code: '2345-7', name: 'Glucose [Mass/volume] in Serum or Plasma' },
+      { code: '2951-2', name: 'Sodium [Moles/volume] in Serum or Plasma' },
+      { code: '2823-3', name: 'Potassium [Moles/volume] in Serum or Plasma' },
+      { code: '2160-0', name: 'Creatinine [Mass/volume] in Serum or Plasma' },
+      { code: '3094-0', name: 'Urea nitrogen [Mass/volume] in Serum or Plasma' },
+      // Coagulação (antes de trombólise)
+      { code: '5902-2', name: 'Prothrombin time (PT)' },
+      { code: '3173-2', name: 'aPTT in Blood by Coagulation assay' },
+      { code: '6301-6', name: 'INR in Platelet poor plasma by Coagulation assay' },
+      { code: '777-3', name: 'Platelets [#/volume] in Blood by Automated count' },
+      { code: '3255-7', name: 'Fibrinogen [Mass/volume] in Platelet poor plasma by Coagulation assay' },
+      // Hemograma
+      { code: '718-7', name: 'Hemoglobin [Mass/volume] in Blood' },
+      { code: '4544-3', name: 'Hematocrit [Volume Fraction] of Blood by Automated count' },
+      { code: '6690-2', name: 'Leukocytes [#/volume] in Blood by Automated count' },
+      // Perfil lipídico (prevenção secundária)
+      { code: '2093-3', name: 'Cholesterol [Mass/volume] in Serum or Plasma' },
+      { code: '2571-8', name: 'Triglyceride [Mass/volume] in Serum or Plasma' },
+      { code: '2085-9', name: 'Cholesterol in HDL [Mass/volume] in Serum or Plasma' },
+      { code: '13457-7', name: 'Cholesterol in LDL [Mass/volume] in Serum or Plasma (calculated)' },
+      // Marcadores cardíacos (FA, infarto)
+      { code: '10839-9', name: 'Troponin I.cardiac [Mass/volume] in Serum or Plasma' },
+      { code: '30522-7', name: 'Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method' },
+      { code: '33762-6', name: 'Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma' },
+      // Controle glicêmico (prevenção)
+      { code: '4548-4', name: 'Hemoglobin A1c/Hemoglobin.total in Blood' },
+      // Função hepática
+      { code: '1742-6', name: 'Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1920-8', name: 'Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma' },
+    ],
     categoria: 'neurologico',
     quickView: {
       definicao: 'Déficit neurológico focal de início súbito causado por isquemia cerebral (oclusão arterial por trombose ou embolia). Emergência médica - "tempo é cérebro". Tratável com trombólise se <4,5h do início.',
@@ -496,11 +551,11 @@ export const doencasNeurologicas: Doenca[] = [
           'Sedentarismo',
           'AVC prévio ou AIT'
         ],
-        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       fisiopatologia: {
         texto: 'Oclusão arterial (trombótica ou embólica) causa isquemia do território irrigado. Núcleo isquêmico sofre necrose rapidamente. Penumbra isquêmica é potencialmente salvável com reperfusão precoce. Cascata isquêmica com excitotoxicidade, inflamação e apoptose.',
-        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -524,7 +579,7 @@ export const doencasNeurologicas: Doenca[] = [
           'AVC hemorrágico (15%): hemorragia intraparenquimatosa, HSA',
           'AIT: déficit <24h (geralmente minutos), sem lesão em imagem'
         ],
-        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -547,7 +602,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Doppler de carótidas',
           'Holter se suspeita de FA paroxística'
         ],
-        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -565,7 +620,7 @@ export const doencasNeurologicas: Doenca[] = [
             'Fonoaudiologia (disfagia)',
             'Controle de temperatura e glicemia'
           ],
-          citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -602,7 +657,7 @@ export const doencasNeurologicas: Doenca[] = [
               conduta: 'Controle de PA, reverter anticoagulação, neurocirurgia se indicado.'
             }
           ],
-          citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         duracao: 'Prevenção secundária: indefinida.'
       },
@@ -625,7 +680,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Reabilitação multidisciplinar',
           'Cirurgia vascular se estenose carotídea >70%'
         ],
-        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       prevencao: {
         primaria: [
@@ -645,7 +700,7 @@ export const doencasNeurologicas: Doenca[] = [
     medicamentos: ['alteplase', 'aas', 'clopidogrel', 'atorvastatina', 'apixabana'],
     calculadoras: ['nihss', 'cha2ds2-vasc', 'has-bled'],
     rastreamentos: [],
-    citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }],
+    citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }],
     lastUpdate: '2024-12',
     tags: ['avc', 'derrame', 'stroke', 'trombólise', 'emergência'],
   },
@@ -660,6 +715,39 @@ export const doencasNeurologicas: Doenca[] = [
     ciap2: ['N88'],
     cid10: ['G40', 'G41'],
     cid11: ['8A60'],
+    loinc: [
+      // Avaliação inicial e exclusão de causas metabólicas
+      { code: '2345-7', name: 'Glucose [Mass/volume] in Serum or Plasma' },
+      { code: '2951-2', name: 'Sodium [Moles/volume] in Serum or Plasma' },
+      { code: '2823-3', name: 'Potassium [Moles/volume] in Serum or Plasma' },
+      { code: '17861-6', name: 'Calcium [Mass/volume] in Serum or Plasma' },
+      { code: '2601-3', name: 'Magnesium [Mass/volume] in Serum or Plasma' },
+      { code: '2160-0', name: 'Creatinine [Mass/volume] in Serum or Plasma' },
+      { code: '3094-0', name: 'Urea nitrogen [Mass/volume] in Serum or Plasma' },
+      // Níveis de antiepilépticos (monitorização terapêutica)
+      { code: '3968-5', name: 'Carbamazepine [Mass/volume] in Serum or Plasma' },
+      { code: '3969-3', name: 'Phenytoin [Mass/volume] in Serum or Plasma' },
+      { code: '4086-5', name: 'Valproate [Mass/volume] in Serum or Plasma' },
+      { code: '3432-3', name: 'Phenobarbital [Mass/volume] in Serum or Plasma' },
+      { code: '14749-6', name: 'Levetiracetam [Mass/volume] in Serum or Plasma' },
+      { code: '4090-7', name: 'Lamotrigine [Mass/volume] in Serum or Plasma' },
+      // Prolactina (diferenciação crise epiléptica vs psicogênica)
+      { code: '2842-3', name: 'Prolactin [Mass/volume] in Serum or Plasma' },
+      // Função hepática (monitorar hepatotoxicidade de FAEs)
+      { code: '1742-6', name: 'Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1920-8', name: 'Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '2324-2', name: 'Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma' },
+      // Hemograma (monitorar discrasias sanguíneas)
+      { code: '718-7', name: 'Hemoglobin [Mass/volume] in Blood' },
+      { code: '6690-2', name: 'Leukocytes [#/volume] in Blood by Automated count' },
+      { code: '777-3', name: 'Platelets [#/volume] in Blood by Automated count' },
+      // Amônia (encefalopatia por valproato)
+      { code: '1925-7', name: 'Ammonia [Mass/volume] in Plasma' },
+      // Análise do LCR (se suspeita de encefalite/meningite)
+      { code: '2880-3', name: 'Protein [Mass/volume] in Cerebral spinal fluid' },
+      { code: '2342-4', name: 'Glucose [Mass/volume] in Cerebral spinal fluid' },
+      { code: '26449-9', name: 'Leukocytes [#/volume] in Cerebral spinal fluid' },
+    ],
     categoria: 'neurologico',
     quickView: {
       definicao: 'Doença cerebral caracterizada por predisposição persistente a gerar crises epilépticas e pelas consequências neurobiológicas, cognitivas, psicológicas e sociais. Diagnóstico: ≥2 crises não provocadas com intervalo >24h, ou 1 crise + risco de recorrência >60%.',
@@ -718,11 +806,11 @@ export const doencasNeurologicas: Doenca[] = [
           'Esclerose mesial temporal',
           'Doenças neurodegenerativas'
         ],
-        citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       fisiopatologia: {
         texto: 'Descargas neuronais excessivas e hipersincronizadas resultantes de desequilíbrio entre excitação (glutamato) e inibição (GABA). Pode originar-se de foco cortical (focal) ou envolver ambos hemisférios desde o início (generalizada).',
-        citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -744,7 +832,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Epilepsia combinada focal e generalizada',
           'Síndromes epilépticas (Lennox-Gastaut, West, Dravet, etc.)'
         ],
-        citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       diagnostico: {
         criterios: [
@@ -766,7 +854,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Vídeo-EEG (casos duvidosos ou pré-cirúrgicos)',
           'Exames genéticos (síndromes)'
         ],
-        citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       tratamento: {
         objetivos: [
@@ -782,7 +870,7 @@ export const doencasNeurologicas: Doenca[] = [
             'Medidas de segurança',
             'Dieta cetogênica (casos refratários, especialmente pediátricos)'
           ],
-          citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'Consensus' }]
+          citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -814,7 +902,7 @@ export const doencasNeurologicas: Doenca[] = [
               conduta: 'Evitar Valproato. Preferir Lamotrigina ou Levetiracetam. Suplementar ácido fólico.'
             }
           ],
-          citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'Consensus' }]
+          citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
         },
         duracao: 'Geralmente por anos. Considerar retirada após 2-5 anos sem crises (casos selecionados).'
       },
@@ -835,7 +923,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Síndrome epiléptica específica',
           'Mulher que deseja gestar'
         ],
-        citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       prevencao: {
         primaria: [
@@ -854,7 +942,7 @@ export const doencasNeurologicas: Doenca[] = [
     medicamentos: ['carbamazepina', 'valproato', 'lamotrigina', 'levetiracetam', 'diazepam'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'Consensus' }],
+    citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }],
     lastUpdate: '2024-12',
     tags: ['epilepsia', 'convulsao', 'crise', 'antiepileptico', 'eeg'],
   },
@@ -869,6 +957,35 @@ export const doencasNeurologicas: Doenca[] = [
     ciap2: ['N87'],
     cid10: ['G20'],
     cid11: ['8A00.0'],
+    loinc: [
+      // Exclusão de causas secundárias de parkinsonismo
+      { code: '3016-3', name: 'Thyrotropin [Units/volume] in Serum or Plasma' },
+      { code: '3024-7', name: 'Thyroxine (T4) free [Mass/volume] in Serum or Plasma' },
+      { code: '2132-9', name: 'Cobalamin (Vitamin B12) [Mass/volume] in Serum or Plasma' },
+      { code: '2284-8', name: 'Folate [Mass/volume] in Serum or Plasma' },
+      // Perfil metabólico básico
+      { code: '2951-2', name: 'Sodium [Moles/volume] in Serum or Plasma' },
+      { code: '2823-3', name: 'Potassium [Moles/volume] in Serum or Plasma' },
+      { code: '17861-6', name: 'Calcium [Mass/volume] in Serum or Plasma' },
+      { code: '2160-0', name: 'Creatinine [Mass/volume] in Serum or Plasma' },
+      { code: '2345-7', name: 'Glucose [Mass/volume] in Serum or Plasma' },
+      // Função hepática (parkinsonismo por doença hepática/Wilson)
+      { code: '1742-6', name: 'Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1920-8', name: 'Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1975-2', name: 'Bilirubin.total [Mass/volume] in Serum or Plasma' },
+      // Doença de Wilson (parkinsonismo jovem)
+      { code: '1952-1', name: 'Ceruloplasmin [Mass/volume] in Serum or Plasma' },
+      { code: '2508-0', name: 'Copper [Mass/volume] in Serum or Plasma' },
+      { code: '2509-8', name: 'Copper [Mass/volume] in 24 hour Urine' },
+      // Hemograma
+      { code: '718-7', name: 'Hemoglobin [Mass/volume] in Blood' },
+      { code: '6690-2', name: 'Leukocytes [#/volume] in Blood by Automated count' },
+      { code: '777-3', name: 'Platelets [#/volume] in Blood by Automated count' },
+      // Análise do LCR (parkinsonismos atípicos, hidrocefalia)
+      { code: '2880-3', name: 'Protein [Mass/volume] in Cerebral spinal fluid' },
+      { code: '2342-4', name: 'Glucose [Mass/volume] in Cerebral spinal fluid' },
+      { code: '26449-9', name: 'Leukocytes [#/volume] in Cerebral spinal fluid' },
+    ],
     categoria: 'neurologico',
     quickView: {
       definicao: 'Doença neurodegenerativa progressiva caracterizada por bradicinesia associada a tremor de repouso e/ou rigidez. Resulta da degeneração de neurônios dopaminérgicos da substância negra.',
@@ -931,11 +1048,11 @@ export const doencasNeurologicas: Doenca[] = [
           'Exposição a pesticidas',
           'Fatores genéticos (LRRK2, PARK2, SNCA)'
         ],
-        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       fisiopatologia: {
         texto: 'Degeneração de neurônios dopaminérgicos da pars compacta da substância negra, com acúmulo de alfa-sinucleína formando corpos de Lewy. A perda de dopamina no estriado causa desequilíbrio dos circuitos motores dos núcleos da base.',
-        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -960,7 +1077,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Misto',
           'Parkinson de início jovem (<40 anos)'
         ],
-        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       diagnostico: {
         criterios: [
@@ -980,7 +1097,7 @@ export const doencasNeurologicas: Doenca[] = [
           'RM para excluir outras causas',
           'DaTSCAN (SPECT) se dúvida'
         ],
-        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       tratamento: {
         objetivos: [
@@ -997,7 +1114,7 @@ export const doencasNeurologicas: Doenca[] = [
             'Fonoaudiologia',
             'Suporte nutricional'
           ],
-          citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'Consensus' }]
+          citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -1034,7 +1151,7 @@ export const doencasNeurologicas: Doenca[] = [
               conduta: 'Reduzir levodopa, adicionar amantadina. Considerar DBS em refratários.'
             }
           ],
-          citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'Consensus' }]
+          citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
         },
         duracao: 'Tratamento contínuo e progressivo.'
       },
@@ -1056,7 +1173,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Candidato a DBS (estimulação cerebral profunda)',
           'Sintomas não motores de difícil manejo'
         ],
-        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'Consensus' }]
+        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
       },
       prevencao: {
         primaria: [
@@ -1074,7 +1191,7 @@ export const doencasNeurologicas: Doenca[] = [
     medicamentos: ['levodopa', 'carbidopa', 'pramipexol', 'selegilina', 'entacapona'],
     calculadoras: ['updrs'],
     rastreamentos: [],
-    citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'Consensus' }],
+    citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }],
     lastUpdate: '2024-12',
     tags: ['parkinson', 'tremor', 'bradicinesia', 'levodopa', 'degenerativo'],
   }

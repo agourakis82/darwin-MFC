@@ -21,13 +21,36 @@ export const doencasGastrointestinais: Doenca[] = [
     cid11: ['DA22'],
     // LOINC codes for GERD workup (rule out complications)
     loinc: [
-      '718-7',    // Hemoglobin (GI bleeding)
-      '4544-3',   // Hematocrit
-      '2276-4',   // Ferritin (iron deficiency from chronic bleeding)
-      '2498-4',   // Iron
-      '1920-8',   // AST
-      '1742-6',   // ALT
-      '600-7',    // H. pylori (if dyspepsia)
+      // Hematology - GI bleeding assessment
+      { code: '718-7', name: 'Hemoglobin [Mass/volume] in Blood' },
+      { code: '4544-3', name: 'Hematocrit [Volume Fraction] in Blood' },
+      { code: '789-8', name: 'Erythrocytes [#/volume] in Blood by Automated count' },
+      { code: '787-2', name: 'MCV [Entitic volume] by Automated count' },
+      { code: '785-6', name: 'MCH [Entitic mass] by Automated count' },
+      // Iron studies - chronic blood loss
+      { code: '2276-4', name: 'Ferritin [Mass/volume] in Serum or Plasma' },
+      { code: '2498-4', name: 'Iron [Mass/volume] in Serum or Plasma' },
+      { code: '2500-7', name: 'Iron binding capacity [Mass/volume] in Serum or Plasma' },
+      { code: '2502-3', name: 'Iron saturation [Mass Fraction] in Serum or Plasma' },
+      // Liver function - rule out hepatobiliary disease
+      { code: '1920-8', name: 'AST [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1742-6', name: 'ALT [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1975-2', name: 'Total Bilirubin [Mass/volume] in Serum or Plasma' },
+      { code: '6768-6', name: 'Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '2324-2', name: 'Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma' },
+      // H. pylori - if dyspepsia or refractory GERD
+      { code: '600-7', name: 'H. pylori antibody [Units/volume] in Serum by Immunoassay' },
+      { code: '16124-8', name: 'H. pylori antigen [Presence] in Stool' },
+      { code: '13949-1', name: 'H. pylori [Presence] in Stomach by Organism specific culture' },
+      // Inflammatory markers
+      { code: '1988-5', name: 'C reactive protein [Mass/volume] in Serum or Plasma' },
+      { code: '30341-2', name: 'Erythrocyte sedimentation rate' },
+      // Stool tests
+      { code: '2335-8', name: 'Fecal occult blood [Presence] in Stool' },
+      { code: '57905-2', name: 'Fecal occult blood [Presence] in Stool by Immunologic method' },
+      // Celiac screening (if atypical symptoms)
+      { code: '31017-7', name: 'Anti-tissue transglutaminase IgA [Units/volume] in Serum' },
+      { code: '19162-7', name: 'IgA [Mass/volume] in Serum or Plasma' },
     ],
     categoria: 'gastrointestinal',
     quickView: {
@@ -84,11 +107,11 @@ export const doencasGastrointestinais: Doenca[] = [
           'Medicamentos (AINEs, BCC, nitratos)',
           'Dieta gordurosa'
         ],
-        citations: [{ refId: 'acg-gerd-2022' }]
+        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       fisiopatologia: {
         texto: 'Falha na barreira antirrefluxo (EEI incompetente, hérnia hiatal), associada a fatores como relaxamentos transitórios do EEI, aumento da pressão intra-abdominal e retardo do esvaziamento gástrico. O ácido causa lesão esofágica.',
-        citations: [{ refId: 'acg-gerd-2022' }]
+        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -106,7 +129,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'DRGE não erosiva (NERD)',
           'Manifestações extraesofágicas'
         ],
-        citations: [{ refId: 'acg-gerd-2022' }]
+        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -126,7 +149,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'pHmetria 24h (casos duvidosos)',
           'Manometria esofágica (pré-cirurgia)'
         ],
-        citations: [{ refId: 'acg-gerd-2022' }]
+        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -142,7 +165,7 @@ export const doencasGastrointestinais: Doenca[] = [
             'Evitar deitar após refeições',
             'Cessação do tabagismo'
           ],
-          citations: [{ refId: 'acg-gerd-2022' }]
+          citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -174,7 +197,7 @@ export const doencasGastrointestinais: Doenca[] = [
               conduta: 'IBP contínuo + vigilância endoscópica'
             }
           ],
-          citations: [{ refId: 'acg-gerd-2022' }]
+          citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         duracao: 'DRGE erosiva: IBP por 8 semanas. NERD: 4-8 semanas. Manutenção se recidiva.'
       },
@@ -194,7 +217,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'Esôfago de Barrett',
           'Candidato a cirurgia antirrefluxo'
         ],
-        citations: [{ refId: 'acg-gerd-2022' }]
+        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       prevencao: {
         primaria: [
@@ -213,7 +236,7 @@ export const doencasGastrointestinais: Doenca[] = [
     medicamentos: ['omeprazol', 'pantoprazol', 'ranitidina'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'acg-gerd-2022' }],
+    citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }],
     lastUpdate: '2024-12',
     tags: ['drge', 'refluxo', 'pirose', 'ibp', 'omeprazol'],
   },
@@ -228,6 +251,42 @@ export const doencasGastrointestinais: Doenca[] = [
     ciap2: ['D93'],
     cid10: ['K58', 'K58.0', 'K58.9'],
     cid11: ['DD91'],
+    // LOINC codes for IBS workup (rule out organic causes)
+    loinc: [
+      // Hematology - anemia screening
+      { code: '718-7', name: 'Hemoglobin [Mass/volume] in Blood' },
+      { code: '4544-3', name: 'Hematocrit [Volume Fraction] in Blood' },
+      { code: '789-8', name: 'Erythrocytes [#/volume] in Blood by Automated count' },
+      { code: '787-2', name: 'MCV [Entitic volume] by Automated count' },
+      { code: '6690-2', name: 'Leukocytes [#/volume] in Blood by Automated count' },
+      // Inflammatory markers - rule out IBD
+      { code: '30341-2', name: 'Erythrocyte sedimentation rate' },
+      { code: '1988-5', name: 'C reactive protein [Mass/volume] in Serum or Plasma' },
+      { code: '83993-0', name: 'Calprotectin [Mass/volume] in Stool' },
+      { code: '48058-2', name: 'Lactoferrin [Mass/volume] in Stool' },
+      // Thyroid function - rule out thyroid disease
+      { code: '3016-3', name: 'TSH [Units/volume] in Serum or Plasma' },
+      { code: '3024-7', name: 'Thyroxine (T4) free [Mass/volume] in Serum or Plasma' },
+      // Celiac disease screening
+      { code: '31017-7', name: 'Anti-tissue transglutaminase IgA [Units/volume] in Serum' },
+      { code: '19162-7', name: 'IgA [Mass/volume] in Serum or Plasma' },
+      { code: '56455-9', name: 'Anti-deamidated gliadin peptide IgG [Units/volume] in Serum' },
+      // Iron and nutritional status
+      { code: '2276-4', name: 'Ferritin [Mass/volume] in Serum or Plasma' },
+      { code: '2498-4', name: 'Iron [Mass/volume] in Serum or Plasma' },
+      { code: '2132-9', name: 'Vitamin B12 [Mass/volume] in Serum or Plasma' },
+      { code: '2284-8', name: 'Folate [Mass/volume] in Serum or Plasma' },
+      // H. pylori
+      { code: '16124-8', name: 'H. pylori antigen [Presence] in Stool' },
+      // Stool tests
+      { code: '2335-8', name: 'Fecal occult blood [Presence] in Stool' },
+      { code: '625-4', name: 'Bacteria identified in Stool by Culture' },
+      { code: '6463-4', name: 'Ova and parasites identified in Stool by Light microscopy' },
+      // Liver function - rule out hepatobiliary causes
+      { code: '1920-8', name: 'AST [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1742-6', name: 'ALT [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1975-2', name: 'Total Bilirubin [Mass/volume] in Serum or Plasma' },
+    ],
     categoria: 'gastrointestinal',
     quickView: {
       definicao: 'Distúrbio funcional gastrointestinal caracterizado por dor abdominal recorrente associada a alteração do hábito intestinal, sem causa orgânica identificável.',
@@ -286,11 +345,11 @@ export const doencasGastrointestinais: Doenca[] = [
           'Gastroenterite prévia (SII pós-infeccioso)',
           'Abuso na infância'
         ],
-        citations: [{ refId: 'rome-iv-2016' }]
+        citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       fisiopatologia: {
         texto: 'Interação complexa entre eixo cérebro-intestino, alterações na motilidade, hipersensibilidade visceral, inflamação de baixo grau, disbiose intestinal e fatores psicossociais.',
-        citations: [{ refId: 'rome-iv-2016' }]
+        citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -312,7 +371,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'SII-M (misto)',
           'SII-U (não classificado)'
         ],
-        citations: [{ refId: 'rome-iv-2016' }]
+        citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -336,7 +395,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'Calprotectina fecal (se diarreia)',
           'Colonoscopia se >50 anos ou sinais de alarme'
         ],
-        citations: [{ refId: 'rome-iv-2016' }]
+        citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -353,7 +412,7 @@ export const doencasGastrointestinais: Doenca[] = [
             'Terapia cognitivo-comportamental',
             'Hipnoterapia gut-directed'
           ],
-          citations: [{ refId: 'acg-sii-2021' }]
+          citations: [{ refId: 'acg-sii-2021', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -395,7 +454,7 @@ export const doencasGastrointestinais: Doenca[] = [
               conduta: 'Considerar linaclotida ou prucaloprida'
             }
           ],
-          citations: [{ refId: 'acg-sii-2021' }]
+          citations: [{ refId: 'acg-sii-2021', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         duracao: 'Tratamento crônico, ajustado conforme sintomas'
       },
@@ -414,7 +473,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'Refratário ao tratamento',
           'Dúvida diagnóstica'
         ],
-        citations: [{ refId: 'acg-sii-2021' }]
+        citations: [{ refId: 'acg-sii-2021', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       prevencao: {
         primaria: [
@@ -432,7 +491,7 @@ export const doencasGastrointestinais: Doenca[] = [
     medicamentos: ['hioscina', 'loperamida', 'amitriptilina', 'macrogol'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'rome-iv-2016' }, { refId: 'acg-sii-2021' }],
+    citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'high', studyType: 'guideline' }, { refId: 'acg-sii-2021', evidenceLevel: 'high', studyType: 'guideline' }],
     lastUpdate: '2024-12',
     tags: ['sii', 'intestino-irritavel', 'colica', 'diarreia', 'constipacao', 'fodmap'],
   },
@@ -447,6 +506,44 @@ export const doencasGastrointestinais: Doenca[] = [
     ciap2: ['D87'],
     cid10: ['K29', 'K30'],
     cid11: ['DA42', 'DA40'],
+    // LOINC codes for gastritis/dyspepsia workup
+    loinc: [
+      // H. pylori testing
+      { code: '16124-8', name: 'H. pylori antigen [Presence] in Stool' },
+      { code: '600-7', name: 'H. pylori antibody [Units/volume] in Serum by Immunoassay' },
+      { code: '17780-8', name: 'H. pylori IgG Ab [Units/volume] in Serum' },
+      { code: '13949-1', name: 'H. pylori [Presence] in Stomach by Organism specific culture' },
+      { code: '16123-0', name: 'H. pylori IgA Ab [Units/volume] in Serum' },
+      // Hematology - anemia/bleeding assessment
+      { code: '718-7', name: 'Hemoglobin [Mass/volume] in Blood' },
+      { code: '4544-3', name: 'Hematocrit [Volume Fraction] in Blood' },
+      { code: '789-8', name: 'Erythrocytes [#/volume] in Blood by Automated count' },
+      { code: '787-2', name: 'MCV [Entitic volume] by Automated count' },
+      { code: '6690-2', name: 'Leukocytes [#/volume] in Blood by Automated count' },
+      // Iron studies - chronic blood loss
+      { code: '2276-4', name: 'Ferritin [Mass/volume] in Serum or Plasma' },
+      { code: '2498-4', name: 'Iron [Mass/volume] in Serum or Plasma' },
+      { code: '2500-7', name: 'Iron binding capacity [Mass/volume] in Serum or Plasma' },
+      // Liver function - rule out hepatobiliary disease
+      { code: '1920-8', name: 'AST [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1742-6', name: 'ALT [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1975-2', name: 'Total Bilirubin [Mass/volume] in Serum or Plasma' },
+      { code: '6768-6', name: 'Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '2324-2', name: 'Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma' },
+      // Pancreatic enzymes - rule out pancreatitis
+      { code: '1798-8', name: 'Amylase [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '3040-3', name: 'Lipase [Enzymatic activity/volume] in Serum or Plasma' },
+      // Inflammatory markers
+      { code: '1988-5', name: 'C reactive protein [Mass/volume] in Serum or Plasma' },
+      { code: '30341-2', name: 'Erythrocyte sedimentation rate' },
+      // Stool tests
+      { code: '2335-8', name: 'Fecal occult blood [Presence] in Stool' },
+      { code: '57905-2', name: 'Fecal occult blood [Presence] in Stool by Immunologic method' },
+      // Autoimmune gastritis workup
+      { code: '5124-3', name: 'Intrinsic factor Ab [Presence] in Serum' },
+      { code: '5173-0', name: 'Parietal cell Ab [Units/volume] in Serum' },
+      { code: '2132-9', name: 'Vitamin B12 [Mass/volume] in Serum or Plasma' },
+    ],
     categoria: 'gastrointestinal',
     quickView: {
       definicao: 'Gastrite: inflamação da mucosa gástrica. Dispepsia: sintomas de dor/desconforto epigástrico sem causa orgânica identificável (funcional) ou secundária a doença (orgânica).',
@@ -502,11 +599,11 @@ export const doencasGastrointestinais: Doenca[] = [
           'Estresse',
           'Idade avançada'
         ],
-        citations: [{ refId: 'acg-dispepsia-2022' }]
+        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       fisiopatologia: {
         texto: 'Gastrite: inflamação por H. pylori, AINEs, autoimune ou outras causas. Dispepsia funcional: hipersensibilidade visceral, dismotilidade gástrica, alteração do eixo cérebro-intestino.',
-        citations: [{ refId: 'acg-dispepsia-2022' }]
+        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -526,7 +623,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'Gastrite por H. pylori',
           'Gastrite por AINEs'
         ],
-        citations: [{ refId: 'acg-dispepsia-2022' }]
+        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -548,7 +645,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'Sorologia H. pylori (menos específica)',
           'EDA com biópsia se indicada'
         ],
-        citations: [{ refId: 'acg-dispepsia-2022' }]
+        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -563,7 +660,7 @@ export const doencasGastrointestinais: Doenca[] = [
             'Reduzir álcool',
             'Fracionar refeições'
           ],
-          citations: [{ refId: 'acg-dispepsia-2022' }]
+          citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -595,7 +692,7 @@ export const doencasGastrointestinais: Doenca[] = [
               conduta: 'TCA em baixa dose (Amitriptilina 10-25mg)'
             }
           ],
-          citations: [{ refId: 'acg-dispepsia-2022' }]
+          citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }]
         },
         duracao: 'Erradicação: 14 dias. IBP: 4-8 semanas ou conforme sintomas.'
       },
@@ -613,7 +710,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'Falha de erradicação múltipla',
           'Dispepsia refratária'
         ],
-        citations: [{ refId: 'acg-dispepsia-2022' }]
+        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }]
       },
       prevencao: {
         primaria: [
@@ -631,7 +728,7 @@ export const doencasGastrointestinais: Doenca[] = [
     medicamentos: ['omeprazol', 'amoxicilina', 'claritromicina', 'domperidona'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'acg-dispepsia-2022' }],
+    citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }],
     lastUpdate: '2024-12',
     tags: ['gastrite', 'dispepsia', 'h-pylori', 'ibp', 'ulcera'],
   }

@@ -25,20 +25,42 @@ export const doencasInfecciosas: Doenca[] = [
     cid11: ['GC08', 'GB60'],
     // LOINC codes for UTI diagnosis
     loinc: [
-      '24356-8',  // Complete urinalysis
-      '5778-6',   // Urine color
-      '5811-5',   // Specific gravity
-      '5803-2',   // pH
-      '5804-0',   // Protein
-      '5802-4',   // Nitrite
-      '5799-2',   // Leukocyte esterase
-      '5821-4',   // WBC microscopy
-      '5808-7',   // RBC microscopy
-      '5769-5',   // Bacteria
-      '630-4',    // Urine culture
-      '6690-2',   // WBC (if systemic)
-      '1988-5',   // CRP
-      '2160-0',   // Creatinine (if pyelonephritis)
+      // Urinalysis panel
+      { code: '24356-8', name: 'Urinalysis complete panel - Urine' },
+      { code: '5778-6', name: 'Color of Urine' },
+      { code: '5767-9', name: 'Appearance of Urine' },
+      { code: '5811-5', name: 'Specific gravity of Urine by Test strip' },
+      { code: '5803-2', name: 'pH of Urine by Test strip' },
+      { code: '5804-0', name: 'Protein [Mass/volume] in Urine by Test strip' },
+      { code: '5802-4', name: 'Nitrite [Presence] in Urine by Test strip' },
+      { code: '5799-2', name: 'Leukocyte esterase [Presence] in Urine by Test strip' },
+      { code: '5821-4', name: 'Leukocytes [#/area] in Urine sediment by Microscopy high power field' },
+      { code: '5808-7', name: 'Erythrocytes [#/area] in Urine sediment by Microscopy high power field' },
+      { code: '5769-5', name: 'Bacteria [Presence] in Urine sediment by Light microscopy' },
+      { code: '25145-4', name: 'Epithelial cells [#/area] in Urine sediment by Microscopy high power field' },
+      // Urine culture
+      { code: '630-4', name: 'Bacteria identified in Urine by Culture' },
+      { code: '6463-4', name: 'Bacteria identified in Urine by Culture (Colony count)' },
+      { code: '18868-0', name: 'Escherichia coli [Presence] in Urine by Organism specific culture' },
+      // CBC
+      { code: '58410-2', name: 'CBC panel - Blood by Automated count' },
+      { code: '6690-2', name: 'Leukocytes [#/volume] in Blood by Automated count' },
+      { code: '26515-7', name: 'Platelets [#/volume] in Blood' },
+      { code: '718-7', name: 'Hemoglobin [Mass/volume] in Blood' },
+      { code: '770-8', name: 'Neutrophils/100 leukocytes in Blood by Automated count' },
+      // Inflammatory markers
+      { code: '1988-5', name: 'C reactive protein [Mass/volume] in Serum or Plasma' },
+      { code: '30522-7', name: 'C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method' },
+      { code: '4537-7', name: 'Erythrocyte sedimentation rate by Westergren method' },
+      { code: '33959-8', name: 'Procalcitonin [Mass/volume] in Serum or Plasma' },
+      // Renal function (important for pyelonephritis)
+      { code: '2160-0', name: 'Creatinine [Mass/volume] in Serum or Plasma' },
+      { code: '3094-0', name: 'Urea nitrogen [Mass/volume] in Serum or Plasma' },
+      { code: '33914-3', name: 'Glomerular filtration rate/1.73 sq M.predicted [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (CKD-EPI)' },
+      // Basic metabolic panel
+      { code: '2951-2', name: 'Sodium [Moles/volume] in Serum or Plasma' },
+      { code: '2823-3', name: 'Potassium [Moles/volume] in Serum or Plasma' },
+      { code: '2075-0', name: 'Chloride [Moles/volume] in Serum or Plasma' },
     ],
     categoria: 'infecciosas',
     quickView: {
@@ -106,11 +128,17 @@ export const doencasInfecciosas: Doenca[] = [
           'Obstrução urinária',
           'Gravidez'
         ],
-        citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
+          { refId: 'foxman-uti-epidemiology-2014', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+        ]
       },
       fisiopatologia: {
         texto: 'Colonização periuretral por uropatógenos intestinais (principalmente E. coli uropatogênica) que ascendem pela uretra até a bexiga. Adesinas bacterianas (fímbrias P) permitem adesão ao urotélio. Pielonefrite ocorre por ascensão ao trato superior.',
-        citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
+          { refId: 'flores-mireles-uti-pathogenesis-2015', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+        ]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -134,7 +162,10 @@ export const doencasInfecciosas: Doenca[] = [
           'ITU recorrente (≥3/ano ou ≥2 em 6 meses)',
           'Bacteriúria assintomática (só tratar em gestante/pré-procedimento)'
         ],
-        citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
+          { refId: 'hooton-uti-clinical-practice-2012', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+        ]
       },
       diagnostico: {
         criterios: [
@@ -156,7 +187,10 @@ export const doencasInfecciosas: Doenca[] = [
           'Hemograma, PCR (pielonefrite)',
           'Função renal'
         ],
-        citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
+          { refId: 'bent-uti-diagnosis-2002', evidenceLevel: 'high', studyType: 'systematic_review' }
+        ]
       },
       tratamento: {
         objetivos: [
@@ -171,7 +205,10 @@ export const doencasInfecciosas: Doenca[] = [
             'Esvaziamento vesical frequente',
             'Evitar espermicidas'
           ],
-          citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [
+            { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
+            { refId: 'jepson-cranberries-uti-2012', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          ]
         },
         farmacologico: {
           primeiraLinha: [
@@ -203,7 +240,12 @@ export const doencasInfecciosas: Doenca[] = [
               conduta: 'Profilaxia: Nitrofurantoína 50-100mg/noite OU SMX-TMP 400/80mg/noite. Ou profilaxia pós-coito.'
             }
           ],
-          citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [
+            { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
+            { refId: 'gupta-fosfomycin-uti-rct-2011', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'raz-nitrofurantoin-rct-2005', evidenceLevel: 'high', studyType: 'rct' },
+            { refId: 'hooton-trimethoprim-sulfamethoxazole-2010', evidenceLevel: 'high', studyType: 'rct' }
+          ]
         },
         duracao: 'Cistite: 1-5 dias. Pielonefrite: 7-14 dias.'
       },
@@ -223,7 +265,10 @@ export const doencasInfecciosas: Doenca[] = [
           'Homem jovem com ITU',
           'Suspeita de alteração anatômica'
         ],
-        citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
+          { refId: 'nicolle-asymptomatic-bacteriuria-2019', evidenceLevel: 'moderate', studyType: 'guideline' }
+        ]
       },
       prevencao: {
         primaria: [
@@ -235,14 +280,22 @@ export const doencasInfecciosas: Doenca[] = [
           'Profilaxia antibiótica (se recorrente)',
           'Estrogênio tópico (pós-menopausa)'
         ],
-        citations: []
+        citations: [
+          { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
+          { refId: 'albert-uti-prevention-2004', evidenceLevel: 'moderate', studyType: 'rct' },
+          { refId: 'raz-vaginal-estrogen-2011', evidenceLevel: 'moderate', studyType: 'rct' }
+        ]
       },
     },
     protocolos: ['itu-manejo'],
     medicamentos: ['fosfomicina', 'nitrofurantoina', 'sulfametoxazol-trimetoprima', 'ciprofloxacino'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }],
+    citations: [
+      { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
+      { refId: 'foxman-uti-epidemiology-2014', evidenceLevel: 'moderate', studyType: 'systematic_review' },
+      { refId: 'gupta-fosfomycin-uti-rct-2011', evidenceLevel: 'high', studyType: 'rct' }
+    ],
     lastUpdate: '2024-12',
     tags: ['itu', 'cistite', 'pielonefrite', 'disuria', 'e-coli'],
   },
@@ -259,11 +312,37 @@ export const doencasInfecciosas: Doenca[] = [
     cid11: ['CA02'],
     // LOINC codes for pharyngitis workup
     loinc: [
-      '626-2',    // Throat culture
-      '6690-2',   // WBC
-      '1988-5',   // CRP
-      '4537-7',   // ESR
-      '5036-9',   // Rapid strep test
+      // Streptococcus diagnostic tests
+      { code: '5036-9', name: 'Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay' },
+      { code: '626-2', name: 'Bacteria identified in Throat by Culture' },
+      { code: '17898-8', name: 'Streptococcus pyogenes [Presence] in Throat by Organism specific culture' },
+      { code: '49610-9', name: 'Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection' },
+      { code: '18481-2', name: 'Anti-streptolysin O Ab [Titer] in Serum or Plasma' },
+      { code: '5126-8', name: 'Anti-DNase B Ab [Titer] in Serum' },
+      // Mononucleosis tests (differential diagnosis)
+      { code: '7902-3', name: 'Heterophile Ab [Presence] in Serum by Latex agglutination' },
+      { code: '30504-5', name: 'Epstein Barr virus capsid IgM Ab [Presence] in Serum by Immunoassay' },
+      { code: '30503-7', name: 'Epstein Barr virus capsid IgG Ab [Presence] in Serum by Immunoassay' },
+      // CBC
+      { code: '58410-2', name: 'CBC panel - Blood by Automated count' },
+      { code: '6690-2', name: 'Leukocytes [#/volume] in Blood by Automated count' },
+      { code: '731-0', name: 'Lymphocytes [#/volume] in Blood by Automated count' },
+      { code: '26477-0', name: 'Lymphocytes/100 leukocytes in Blood by Automated count' },
+      { code: '713-8', name: 'Atypical lymphocytes [#/volume] in Blood by Manual count' },
+      { code: '770-8', name: 'Neutrophils/100 leukocytes in Blood by Automated count' },
+      { code: '26515-7', name: 'Platelets [#/volume] in Blood' },
+      { code: '718-7', name: 'Hemoglobin [Mass/volume] in Blood' },
+      // Inflammatory markers
+      { code: '1988-5', name: 'C reactive protein [Mass/volume] in Serum or Plasma' },
+      { code: '4537-7', name: 'Erythrocyte sedimentation rate by Westergren method' },
+      { code: '33959-8', name: 'Procalcitonin [Mass/volume] in Serum or Plasma' },
+      // Liver function (relevant for mononucleosis)
+      { code: '1920-8', name: 'AST [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1742-6', name: 'ALT [Enzymatic activity/volume] in Serum or Plasma' },
+      // Basic metabolic
+      { code: '2160-0', name: 'Creatinine [Mass/volume] in Serum or Plasma' },
+      { code: '2951-2', name: 'Sodium [Moles/volume] in Serum or Plasma' },
+      { code: '2823-3', name: 'Potassium [Moles/volume] in Serum or Plasma' },
     ],
     categoria: 'infecciosas',
     quickView: {
@@ -330,11 +409,17 @@ export const doencasInfecciosas: Doenca[] = [
           'Tabagismo passivo',
           'IVAS recente'
         ],
-        citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'shaikh-pharyngitis-epidemiology-2010', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+        ]
       },
       fisiopatologia: {
         texto: 'Vírus (rinovírus, adenovírus, EBV) ou bactérias (S. pyogenes/GAS) infectam epitélio faríngeo. GAS produz toxinas e enzimas que causam inflamação local intensa. Risco de febre reumática (mimetismo molecular) e glomerulonefrite pós-estreptocócica.',
-        citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'cunningham-gas-pathogenesis-2000', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+        ]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -359,7 +444,10 @@ export const doencasInfecciosas: Doenca[] = [
           'Herpangina (Coxsackie)',
           'Escarlatina (GAS + exantema)'
         ],
-        citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'centor-pharyngitis-clinical-1981', evidenceLevel: 'moderate', studyType: 'cohort' }
+        ]
       },
       diagnostico: {
         criterios: [
@@ -381,7 +469,11 @@ export const doencasInfecciosas: Doenca[] = [
           'Monoteste (se suspeita de mono)',
           'Hemograma (linfocitose atípica na mono)'
         ],
-        citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'mcisaac-centor-validation-1998', evidenceLevel: 'moderate', studyType: 'cohort' },
+          { refId: 'gerber-rapid-strep-test-2004', evidenceLevel: 'high', studyType: 'systematic_review' }
+        ]
       },
       tratamento: {
         objetivos: [
@@ -397,7 +489,9 @@ export const doencasInfecciosas: Doenca[] = [
             'Alimentação fria/pastosa',
             'Gargarejos'
           ],
-          citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [
+            { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' }
+          ]
         },
         farmacologico: {
           primeiraLinha: [
@@ -429,7 +523,11 @@ export const doencasInfecciosas: Doenca[] = [
               conduta: 'Drenagem + ATB IV. Encaminhamento urgente ORL.'
             }
           ],
-          citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }]
+          citations: [
+            { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
+            { refId: 'spinks-penicillin-pharyngitis-cochrane-2013', evidenceLevel: 'high', studyType: 'systematic_review' },
+            { refId: 'van-driel-azithromycin-pharyngitis-rct-2006', evidenceLevel: 'high', studyType: 'rct' }
+          ]
         },
         duracao: 'ATB para GAS: 10 dias (exceto azitromicina 3-5d ou Pen Benzatina DU).'
       },
@@ -448,7 +546,10 @@ export const doencasInfecciosas: Doenca[] = [
           'Amigdalite recorrente (≥7/ano para amigdalectomia)',
           'Estridor ou obstrução de via aérea'
         ],
-        citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'burton-tonsillectomy-cochrane-2014', evidenceLevel: 'high', studyType: 'systematic_review' }
+        ]
       },
       prevencao: {
         primaria: [
@@ -459,14 +560,22 @@ export const doencasInfecciosas: Doenca[] = [
           'Profilaxia secundária de febre reumática (se história prévia)',
           'Penicilina Benzatina 1.200.000 UI IM a cada 21 dias'
         ],
-        citations: []
+        citations: [
+          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
+          { refId: 'carapetis-rheumatic-fever-lancet-2005', evidenceLevel: 'moderate', studyType: 'systematic_review' },
+          { refId: 'manyemba-penicillin-rheumatic-fever-cochrane-2002', evidenceLevel: 'high', studyType: 'systematic_review' }
+        ]
       },
     },
     protocolos: ['centor-score'],
     medicamentos: ['penicilina-benzatina', 'amoxicilina', 'azitromicina', 'paracetamol'],
     calculadoras: ['centor'],
     rastreamentos: [],
-    citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }],
+    citations: [
+      { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
+      { refId: 'spinks-penicillin-pharyngitis-cochrane-2013', evidenceLevel: 'high', studyType: 'systematic_review' },
+      { refId: 'mcisaac-centor-validation-1998', evidenceLevel: 'moderate', studyType: 'cohort' }
+    ],
     lastUpdate: '2024-12',
     tags: ['faringite', 'amigdalite', 'streptococcus', 'dor-garganta', 'centor'],
   },
@@ -481,6 +590,26 @@ export const doencasInfecciosas: Doenca[] = [
     ciap2: ['A77'],
     cid10: ['A90', 'A91'],
     cid11: ['1D20'],
+    // LOINC codes for dengue diagnosis and monitoring
+    loinc: [
+      { code: '58410-2', name: 'CBC panel with differential' },
+      { code: '718-7', name: 'Hemoglobin [Mass/volume] in Blood' },
+      { code: '4544-3', name: 'Hematocrit [Volume fraction] of Blood' },
+      { code: '777-3', name: 'Platelets [#/volume] in Blood' },
+      { code: '6690-2', name: 'WBC [#/volume] in Blood' },
+      { code: '31208-2', name: 'Dengue virus NS1 Ag [Presence] in Serum or Plasma' },
+      { code: '29676-4', name: 'Dengue virus IgM Ab [Presence] in Serum' },
+      { code: '29661-6', name: 'Dengue virus IgG Ab [Presence] in Serum' },
+      { code: '60260-3', name: 'Dengue virus RNA [Presence] in Serum by NAA' },
+      { code: '1920-8', name: 'AST [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1742-6', name: 'ALT [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1751-7', name: 'Albumin [Mass/volume] in Serum or Plasma' },
+      { code: '5902-2', name: 'Prothrombin time (PT)' },
+      { code: '3173-2', name: 'Activated partial thromboplastin time (aPTT)' },
+      { code: '2160-0', name: 'Creatinine [Mass/volume] in Serum or Plasma' },
+      { code: '2951-2', name: 'Sodium [Moles/volume] in Serum or Plasma' },
+      { code: '2823-3', name: 'Potassium [Moles/volume] in Serum or Plasma' },
+    ],
     categoria: 'infecciosas',
     quickView: {
       definicao: 'Arbovirose causada pelo vírus dengue (DENV 1-4), transmitida pelo Aedes aegypti. Espectro clínico amplo: febre indiferenciada a dengue grave com choque e hemorragia. Brasil é hiperendêmico.',
@@ -549,11 +678,18 @@ export const doencasInfecciosas: Doenca[] = [
           'Comorbidades',
           'Gestantes'
         ],
-        citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
+          { refId: 'who-dengue-2009', evidenceLevel: 'moderate', studyType: 'guideline' },
+          { refId: 'bhatt-dengue-global-burden-2013', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+        ]
       },
       fisiopatologia: {
         texto: 'Vírus inoculado por Aedes aegypti infecta células dendríticas e monócitos. Viremia provoca febre. Na fase crítica (defervescência), aumento de permeabilidade capilar por resposta imune (citocinas, complemento) leva a extravasamento plasmático. Anticorpos heterotípicos de infecção prévia podem potencializar infecção (ADE).',
-        citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
+          { refId: 'halstead-dengue-ade-2007', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+        ]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -578,7 +714,10 @@ export const doencasInfecciosas: Doenca[] = [
           'Dengue com sinais de alarme',
           'Dengue grave (choque, hemorragia grave, disfunção orgânica)'
         ],
-        citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
+          { refId: 'who-dengue-2009', evidenceLevel: 'moderate', studyType: 'guideline' }
+        ]
       },
       diagnostico: {
         criterios: [
@@ -603,7 +742,11 @@ export const doencasInfecciosas: Doenca[] = [
           'Coagulograma (suspeita de hemorragia)',
           'Eletrólitos, função renal'
         ],
-        citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
+          { refId: 'peeling-ns1-dengue-diagnostic-2010', evidenceLevel: 'moderate', studyType: 'systematic_review' },
+          { refId: 'hunsperger-dengue-serology-2009', evidenceLevel: 'moderate', studyType: 'cohort' }
+        ]
       },
       tratamento: {
         objetivos: [
@@ -619,7 +762,10 @@ export const doencasInfecciosas: Doenca[] = [
             'Retorno imediato se sinais de alarme',
             'Notificação compulsória'
           ],
-          citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }]
+          citations: [
+            { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
+            { refId: 'who-dengue-2009', evidenceLevel: 'moderate', studyType: 'guideline' }
+          ]
         },
         farmacologico: {
           primeiraLinha: [
@@ -651,7 +797,11 @@ export const doencasInfecciosas: Doenca[] = [
               conduta: 'Transfusão de hemácias/plaquetas conforme indicação. UTI.'
             }
           ],
-          citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }]
+          citations: [
+            { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
+            { refId: 'who-dengue-2009', evidenceLevel: 'moderate', studyType: 'guideline' },
+            { refId: 'wills-fluid-resuscitation-dengue-rct-2005', evidenceLevel: 'high', studyType: 'rct' }
+          ]
         },
         duracao: 'Fase aguda: 7-10 dias. Convalescença: semanas.'
       },
@@ -673,7 +823,10 @@ export const doencasInfecciosas: Doenca[] = [
           'Gestante',
           'Comorbidades descompensadas'
         ],
-        citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }]
+        citations: [
+          { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
+          { refId: 'who-dengue-2009', evidenceLevel: 'moderate', studyType: 'guideline' }
+        ]
       },
       prevencao: {
         primaria: [
@@ -686,14 +839,22 @@ export const doencasInfecciosas: Doenca[] = [
           'Vigilância epidemiológica',
           'Notificação compulsória'
         ],
-        citations: []
+        citations: [
+          { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
+          { refId: 'sridhar-dengue-vaccine-safety-2018', evidenceLevel: 'high', studyType: 'rct' },
+          { refId: 'bowman-dengue-vector-control-cochrane-2016', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+        ]
       },
     },
     protocolos: ['dengue-classificacao'],
     medicamentos: ['paracetamol', 'dipirona', 'metoclopramida'],
     calculadoras: ['prova-laco'],
     rastreamentos: [],
-    citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }],
+    citations: [
+      { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
+      { refId: 'who-dengue-2009', evidenceLevel: 'moderate', studyType: 'guideline' },
+      { refId: 'wills-fluid-resuscitation-dengue-rct-2005', evidenceLevel: 'high', studyType: 'rct' }
+    ],
     lastUpdate: '2024-12',
     tags: ['dengue', 'arbovirose', 'aedes', 'febre', 'hidratacao'],
   }

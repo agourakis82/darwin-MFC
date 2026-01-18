@@ -6,12 +6,13 @@ import { Link } from '@/i18n/routing';
 import {
   ArrowLeft, Pill, AlertTriangle, Baby, Heart, TestTube,
   Clock, Shield, BookOpen, ChevronRight, Activity, XCircle,
-  CheckCircle, Info, Stethoscope
+  CheckCircle, Info, Stethoscope, Dna
 } from 'lucide-react';
 import { medicamentos, getMedicamentoById } from '@/lib/data/medicamentos';
 import { CLASSES_TERAPEUTICAS, CLASSIFICACAO_GESTACAO } from '@/lib/types/medicamento';
 import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
 import { notFound } from 'next/navigation';
+import { PharmGKBDisplay } from '@/app/components/Ontology';
 
 export default function MedicamentoDetailClient({ params }: { params: Promise<{ id: string }> }) {
   const t = useTranslations('medicationDetail');
@@ -231,6 +232,14 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
             </div>
           </div>
         )}
+
+        {/* Pharmacogenomics (PharmGKB) */}
+        <div className="glass-strong rounded-2xl p-6">
+          <PharmGKBDisplay
+            medicationName={medicamento.nomeGenerico}
+            pharmgkbData={medicamento.pharmgkb}
+          />
+        </div>
 
         {/* Ajuste Renal */}
         {medicamento.ajusteDoseRenal && medicamento.ajusteDoseRenal.length > 0 && (
