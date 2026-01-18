@@ -23,6 +23,23 @@ export const doencasInfecciosas: Doenca[] = [
     ciap2: ['U71', 'U70'],
     cid10: ['N39.0', 'N10', 'N30'],
     cid11: ['GC08', 'GB60'],
+    // LOINC codes for UTI diagnosis
+    loinc: [
+      '24356-8',  // Complete urinalysis
+      '5778-6',   // Urine color
+      '5811-5',   // Specific gravity
+      '5803-2',   // pH
+      '5804-0',   // Protein
+      '5802-4',   // Nitrite
+      '5799-2',   // Leukocyte esterase
+      '5821-4',   // WBC microscopy
+      '5808-7',   // RBC microscopy
+      '5769-5',   // Bacteria
+      '630-4',    // Urine culture
+      '6690-2',   // WBC (if systemic)
+      '1988-5',   // CRP
+      '2160-0',   // Creatinine (if pyelonephritis)
+    ],
     categoria: 'infecciosas',
     quickView: {
       definicao: 'Infecção bacteriana do trato urinário, classificada como cistite (baixa) ou pielonefrite (alta). E. coli é o agente em 80-90% dos casos não complicados.',
@@ -89,11 +106,11 @@ export const doencasInfecciosas: Doenca[] = [
           'Obstrução urinária',
           'Gravidez'
         ],
-        citations: [{ refId: 'idsa-itu-2011' }]
+        citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Colonização periuretral por uropatógenos intestinais (principalmente E. coli uropatogênica) que ascendem pela uretra até a bexiga. Adesinas bacterianas (fímbrias P) permitem adesão ao urotélio. Pielonefrite ocorre por ascensão ao trato superior.',
-        citations: [{ refId: 'idsa-itu-2011' }]
+        citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -117,7 +134,7 @@ export const doencasInfecciosas: Doenca[] = [
           'ITU recorrente (≥3/ano ou ≥2 em 6 meses)',
           'Bacteriúria assintomática (só tratar em gestante/pré-procedimento)'
         ],
-        citations: [{ refId: 'idsa-itu-2011' }]
+        citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -139,7 +156,7 @@ export const doencasInfecciosas: Doenca[] = [
           'Hemograma, PCR (pielonefrite)',
           'Função renal'
         ],
-        citations: [{ refId: 'idsa-itu-2011' }]
+        citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -154,7 +171,7 @@ export const doencasInfecciosas: Doenca[] = [
             'Esvaziamento vesical frequente',
             'Evitar espermicidas'
           ],
-          citations: [{ refId: 'idsa-itu-2011' }]
+          citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -186,7 +203,7 @@ export const doencasInfecciosas: Doenca[] = [
               conduta: 'Profilaxia: Nitrofurantoína 50-100mg/noite OU SMX-TMP 400/80mg/noite. Ou profilaxia pós-coito.'
             }
           ],
-          citations: [{ refId: 'idsa-itu-2011' }]
+          citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Cistite: 1-5 dias. Pielonefrite: 7-14 dias.'
       },
@@ -206,7 +223,7 @@ export const doencasInfecciosas: Doenca[] = [
           'Homem jovem com ITU',
           'Suspeita de alteração anatômica'
         ],
-        citations: [{ refId: 'idsa-itu-2011' }]
+        citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -225,7 +242,7 @@ export const doencasInfecciosas: Doenca[] = [
     medicamentos: ['fosfomicina', 'nitrofurantoina', 'sulfametoxazol-trimetoprima', 'ciprofloxacino'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'idsa-itu-2011' }],
+    citations: [{ refId: 'idsa-itu-2011', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['itu', 'cistite', 'pielonefrite', 'disuria', 'e-coli'],
   },
@@ -240,6 +257,14 @@ export const doencasInfecciosas: Doenca[] = [
     ciap2: ['R76', 'R72'],
     cid10: ['J02', 'J03'],
     cid11: ['CA02'],
+    // LOINC codes for pharyngitis workup
+    loinc: [
+      '626-2',    // Throat culture
+      '6690-2',   // WBC
+      '1988-5',   // CRP
+      '4537-7',   // ESR
+      '5036-9',   // Rapid strep test
+    ],
     categoria: 'infecciosas',
     quickView: {
       definicao: 'Inflamação aguda da faringe e/ou amígdalas. Etiologia viral (70-80%) ou bacteriana (15-30%, principalmente Streptococcus pyogenes - GAS). Importante diferenciar para evitar ATB desnecessário ou não tratar febre reumática.',
@@ -305,11 +330,11 @@ export const doencasInfecciosas: Doenca[] = [
           'Tabagismo passivo',
           'IVAS recente'
         ],
-        citations: [{ refId: 'idsa-pharyngitis-2012' }]
+        citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Vírus (rinovírus, adenovírus, EBV) ou bactérias (S. pyogenes/GAS) infectam epitélio faríngeo. GAS produz toxinas e enzimas que causam inflamação local intensa. Risco de febre reumática (mimetismo molecular) e glomerulonefrite pós-estreptocócica.',
-        citations: [{ refId: 'idsa-pharyngitis-2012' }]
+        citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -334,7 +359,7 @@ export const doencasInfecciosas: Doenca[] = [
           'Herpangina (Coxsackie)',
           'Escarlatina (GAS + exantema)'
         ],
-        citations: [{ refId: 'idsa-pharyngitis-2012' }]
+        citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -356,7 +381,7 @@ export const doencasInfecciosas: Doenca[] = [
           'Monoteste (se suspeita de mono)',
           'Hemograma (linfocitose atípica na mono)'
         ],
-        citations: [{ refId: 'idsa-pharyngitis-2012' }]
+        citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -372,7 +397,7 @@ export const doencasInfecciosas: Doenca[] = [
             'Alimentação fria/pastosa',
             'Gargarejos'
           ],
-          citations: [{ refId: 'idsa-pharyngitis-2012' }]
+          citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -404,7 +429,7 @@ export const doencasInfecciosas: Doenca[] = [
               conduta: 'Drenagem + ATB IV. Encaminhamento urgente ORL.'
             }
           ],
-          citations: [{ refId: 'idsa-pharyngitis-2012' }]
+          citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'ATB para GAS: 10 dias (exceto azitromicina 3-5d ou Pen Benzatina DU).'
       },
@@ -423,7 +448,7 @@ export const doencasInfecciosas: Doenca[] = [
           'Amigdalite recorrente (≥7/ano para amigdalectomia)',
           'Estridor ou obstrução de via aérea'
         ],
-        citations: [{ refId: 'idsa-pharyngitis-2012' }]
+        citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -441,7 +466,7 @@ export const doencasInfecciosas: Doenca[] = [
     medicamentos: ['penicilina-benzatina', 'amoxicilina', 'azitromicina', 'paracetamol'],
     calculadoras: ['centor'],
     rastreamentos: [],
-    citations: [{ refId: 'idsa-pharyngitis-2012' }],
+    citations: [{ refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['faringite', 'amigdalite', 'streptococcus', 'dor-garganta', 'centor'],
   },
@@ -524,11 +549,11 @@ export const doencasInfecciosas: Doenca[] = [
           'Comorbidades',
           'Gestantes'
         ],
-        citations: [{ refId: 'ms-dengue-2024' }]
+        citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Vírus inoculado por Aedes aegypti infecta células dendríticas e monócitos. Viremia provoca febre. Na fase crítica (defervescência), aumento de permeabilidade capilar por resposta imune (citocinas, complemento) leva a extravasamento plasmático. Anticorpos heterotípicos de infecção prévia podem potencializar infecção (ADE).',
-        citations: [{ refId: 'ms-dengue-2024' }]
+        citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -553,7 +578,7 @@ export const doencasInfecciosas: Doenca[] = [
           'Dengue com sinais de alarme',
           'Dengue grave (choque, hemorragia grave, disfunção orgânica)'
         ],
-        citations: [{ refId: 'ms-dengue-2024' }]
+        citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -578,7 +603,7 @@ export const doencasInfecciosas: Doenca[] = [
           'Coagulograma (suspeita de hemorragia)',
           'Eletrólitos, função renal'
         ],
-        citations: [{ refId: 'ms-dengue-2024' }]
+        citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -594,7 +619,7 @@ export const doencasInfecciosas: Doenca[] = [
             'Retorno imediato se sinais de alarme',
             'Notificação compulsória'
           ],
-          citations: [{ refId: 'ms-dengue-2024' }]
+          citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -626,7 +651,7 @@ export const doencasInfecciosas: Doenca[] = [
               conduta: 'Transfusão de hemácias/plaquetas conforme indicação. UTI.'
             }
           ],
-          citations: [{ refId: 'ms-dengue-2024' }]
+          citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         duracao: 'Fase aguda: 7-10 dias. Convalescença: semanas.'
       },
@@ -648,7 +673,7 @@ export const doencasInfecciosas: Doenca[] = [
           'Gestante',
           'Comorbidades descompensadas'
         ],
-        citations: [{ refId: 'ms-dengue-2024' }]
+        citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -668,7 +693,7 @@ export const doencasInfecciosas: Doenca[] = [
     medicamentos: ['paracetamol', 'dipirona', 'metoclopramida'],
     calculadoras: ['prova-laco'],
     rastreamentos: [],
-    citations: [{ refId: 'ms-dengue-2024' }],
+    citations: [{ refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['dengue', 'arbovirose', 'aedes', 'febre', 'hidratacao'],
   }

@@ -153,7 +153,30 @@ export const analgesicosAines: Medicamento[] = [
     calculadoras: ['ckdepi'],
     citations: [{ refId: 'rename-2024' }],
     lastUpdate: '2024-12',
-    tags: ['aine', 'anti-inflamatorio', 'dor', 'febre']
+    tags: ['aine', 'anti-inflamatorio', 'dor', 'febre'],
+    pharmgkb: [
+      {
+        gene: 'CYP2C9',
+        variant: '*1/*1',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal ibuprofen metabolism', 'Standard clearance and exposure'],
+        dosageRecommendations: ['Standard dosing appropriate', 'Use lowest effective dose for shortest duration'],
+      },
+      {
+        gene: 'CYP2C9',
+        variant: '*2/*2, *3/*3, *2/*3',
+        phenotype: 'poor_metabolizer',
+        implications: ['Reduced ibuprofen clearance', 'Increased drug exposure (up to 2x)', 'Higher risk of GI and renal adverse effects'],
+        dosageRecommendations: ['Consider 50% dose reduction', 'Use shortest duration possible', 'Increased monitoring for GI and renal effects'],
+      },
+      {
+        gene: 'CYP2C9',
+        variant: '*1/*2, *1/*3',
+        phenotype: 'intermediate_metabolizer',
+        implications: ['Moderately reduced clearance', 'May have 1.5x increased exposure'],
+        dosageRecommendations: ['Consider lower dose', 'Monitor for GI symptoms and renal function'],
+      },
+    ]
   },
   {
     id: 'naproxeno',
@@ -203,7 +226,30 @@ export const analgesicosAines: Medicamento[] = [
     calculadoras: ['ckdepi'],
     citations: [{ refId: 'rename-2024' }],
     lastUpdate: '2024-12',
-    tags: ['aine', 'anti-inflamatorio', 'artrite', 'gota']
+    tags: ['aine', 'anti-inflamatorio', 'artrite', 'gota'],
+    pharmgkb: [
+      {
+        gene: 'CYP2C9',
+        variant: '*1/*1',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal naproxen metabolism', 'Standard drug clearance'],
+        dosageRecommendations: ['Standard dosing appropriate', 'Use lowest effective dose'],
+      },
+      {
+        gene: 'CYP2C9',
+        variant: '*2/*2, *3/*3, *2/*3',
+        phenotype: 'poor_metabolizer',
+        implications: ['Reduced naproxen clearance', 'Increased drug exposure', 'Higher risk of GI bleeding and renal effects'],
+        dosageRecommendations: ['Consider 25-50% dose reduction', 'Shorter treatment duration', 'Enhanced monitoring for adverse effects'],
+      },
+      {
+        gene: 'CYP2C9',
+        variant: '*1/*2, *1/*3',
+        phenotype: 'intermediate_metabolizer',
+        implications: ['Moderately reduced clearance', 'May have increased exposure'],
+        dosageRecommendations: ['Standard dosing with monitoring', 'Consider lower dose if prolonged use'],
+      },
+    ]
   },
   {
     id: 'diclofenaco',
@@ -249,7 +295,30 @@ export const analgesicosAines: Medicamento[] = [
     calculadoras: ['ckdepi'],
     citations: [{ refId: 'rename-2024' }],
     lastUpdate: '2024-12',
-    tags: ['aine', 'anti-inflamatorio', 'dor']
+    tags: ['aine', 'anti-inflamatorio', 'dor'],
+    pharmgkb: [
+      {
+        gene: 'CYP2C9',
+        variant: '*1/*1',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal diclofenac metabolism', 'Standard drug clearance'],
+        dosageRecommendations: ['Standard dosing appropriate', 'Use lowest effective dose for shortest duration'],
+      },
+      {
+        gene: 'CYP2C9',
+        variant: '*2/*2, *3/*3, *2/*3',
+        phenotype: 'poor_metabolizer',
+        implications: ['Reduced diclofenac clearance (up to 3x AUC increase)', 'Increased drug exposure', 'Higher risk of GI bleeding, CV events, and hepatotoxicity'],
+        dosageRecommendations: ['Consider 50% dose reduction', 'Avoid prolonged use', 'Consider alternative NSAID or non-NSAID analgesic'],
+      },
+      {
+        gene: 'CYP2C9',
+        variant: '*1/*2, *1/*3',
+        phenotype: 'intermediate_metabolizer',
+        implications: ['Moderately reduced clearance', 'May have 1.5-2x increased exposure'],
+        dosageRecommendations: ['Consider lower dose', 'Monitor for GI and hepatic adverse effects'],
+      },
+    ]
   },
   {
     id: 'tramadol',
@@ -296,6 +365,22 @@ export const analgesicosAines: Medicamento[] = [
     monitorizacao: ['Sinais de dependência', 'Nível de dor'],
     orientacoesPaciente: ['Pode causar dependência', 'Não dirigir inicialmente', 'Não usar com álcool'],
     doencasRelacionadas: ['dor-cronica', 'neuropatia-diabetica'],
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*4/*4, *4/*5, *5/*5',
+        phenotype: 'poor_metabolizer',
+        implications: ['Reduced tramadol activation to O-desmethyltramadol', 'Decreased analgesic efficacy', 'May still have serotonergic/noradrenergic effects'],
+        dosageRecommendations: ['Consider 25-50% dose reduction', 'Monitor for reduced efficacy', 'Alternative opioids may be needed'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1xN, *2/*2xN',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: ['Increased O-desmethyltramadol formation', 'Enhanced opioid effects', 'Higher risk of respiratory depression and seizures'],
+        dosageRecommendations: ['Use with caution', 'Consider lower doses', 'Monitor for adverse effects'],
+      },
+    ],
     calculadoras: [],
     citations: [{ refId: 'rename-2024' }],
     lastUpdate: '2024-12',
@@ -345,6 +430,22 @@ export const analgesicosAines: Medicamento[] = [
     monitorizacao: ['Padrão respiratório', 'Constipação'],
     orientacoesPaciente: ['Pode causar constipação', 'Não usar com álcool'],
     doencasRelacionadas: ['dor-moderada'],
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*4/*4, *4/*5, *5/*5',
+        phenotype: 'poor_metabolizer',
+        implications: ['Minimal conversion to morphine (<1%)', 'No analgesic effect', 'Still may cause constipation and nausea'],
+        dosageRecommendations: ['AVOID codeine - ineffective', 'Use alternative analgesic (not tramadol)', 'Consider morphine, oxycodone, or non-opioid'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1xN, *2/*2xN',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: ['Rapid conversion to morphine', 'HIGH RISK of respiratory depression', 'Risk of fatal toxicity especially in children'],
+        dosageRecommendations: ['CONTRAINDICATED - avoid codeine', 'Use alternative analgesic with known pharmacokinetics', 'FDA black box warning for this population'],
+      },
+    ],
     calculadoras: [],
     citations: [{ refId: 'rename-2024' }],
     lastUpdate: '2024-12',

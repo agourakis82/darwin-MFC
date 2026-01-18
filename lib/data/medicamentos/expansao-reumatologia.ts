@@ -179,7 +179,37 @@ export const medicamentosReumatologia: Partial<Medicamento>[] = [
     monitorizacao: ['Hemograma semanal inicial, depois mensal', 'Função hepática', 'TPMT genotipagem'],
     doencasRelacionadas: ['lupus-eritematoso', 'vasculites'],
     citations: [],
-    lastUpdate: '2024-01-15'
+    lastUpdate: '2024-01-15',
+    pharmgkb: [
+      {
+        gene: 'TPMT',
+        variant: '*1/*1',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal TPMT activity', 'Standard azathioprine metabolism', 'Lower risk of myelosuppression'],
+        dosageRecommendations: ['Standard dosing (1-3mg/kg/day)', 'Regular CBC monitoring', 'No genetic adjustment needed'],
+      },
+      {
+        gene: 'TPMT',
+        variant: '*1/*3A, *1/*3C, *1/*2',
+        phenotype: 'intermediate_metabolizer',
+        implications: ['Moderately reduced TPMT activity (30-70%)', 'Increased risk of myelosuppression', 'Requires dose reduction'],
+        dosageRecommendations: ['Reduce dose by 30-50%', 'Start at 1-1.5mg/kg/day', 'Increase CBC monitoring frequency', 'Consider alternative if recurrent cytopenia'],
+      },
+      {
+        gene: 'TPMT',
+        variant: '*3A/*3A, *3C/*3C, *2/*3A',
+        phenotype: 'poor_metabolizer',
+        implications: ['Severely reduced or absent TPMT activity', 'HIGH RISK of life-threatening myelosuppression', 'Accumulation of cytotoxic thioguanine nucleotides'],
+        dosageRecommendations: ['Use only 10% of standard dose (0.1-0.3mg/kg/day) if essential', 'AVOID azathioprine if possible', 'Consider alternative immunosuppressant (mycophenolate)', 'Mandatory frequent CBC monitoring if used'],
+      },
+      {
+        gene: 'NUDT15',
+        variant: '*3/*3',
+        phenotype: 'poor_metabolizer',
+        implications: ['Reduced NUDT15 activity', 'Higher risk of myelosuppression (especially in Asian populations)', 'Complements TPMT testing'],
+        dosageRecommendations: ['Reduce dose by 50-80%', 'Consider alternative immunosuppressant', 'Enhanced CBC monitoring'],
+      },
+    ]
   },
   {
     id: 'ciclosporina',
@@ -788,6 +818,27 @@ export const medicamentosReumatologia: Partial<Medicamento>[] = [
     ],
     monitorizacao: ['Ácido úrico sérico', 'Função hepática', 'Hemograma'],
     doencasRelacionadas: ['gota', 'hiperuricemia'],
+    pharmgkb: [
+      {
+        gene: 'HLA-B*58:01',
+        variant: 'Positive carrier',
+        phenotype: 'high_risk_scar',
+        implications: [
+          'HIGH RISK of severe cutaneous adverse reactions (SCAR)',
+          'Includes Stevens-Johnson syndrome (SJS) and toxic epidermal necrolysis (TEN)',
+          'Also DRESS syndrome (Drug Reaction with Eosinophilia and Systemic Symptoms)',
+          'Risk up to 5% in carriers vs 0.1% in non-carriers',
+          'Most prevalent in Han Chinese, Thai, Korean populations (10-20% carrier frequency)',
+        ],
+        dosageRecommendations: [
+          'Screen for HLA-B*58:01 before initiating in at-risk populations',
+          'DO NOT USE allopurinol if HLA-B*58:01 positive',
+          'Consider febuxostat as alternative in positive patients',
+          'If testing unavailable, consider risk/benefit and start very low dose',
+          'Educate all patients about early signs of hypersensitivity',
+        ],
+      },
+    ],
     citations: [],
     lastUpdate: '2024-01-15'
   },

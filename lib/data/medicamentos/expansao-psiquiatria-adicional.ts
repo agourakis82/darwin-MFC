@@ -157,6 +157,55 @@ export const medicamentosPsiquiatriaAdicional: Partial<Medicamento>[] = [
       { medicamento: 'IMAO', gravidade: 'contraindicada', efeito: 'Risco hipertensivo', conduta: 'Aguardar 14 dias' },
       { medicamento: 'Fluoxetina/Paroxetina', gravidade: 'moderada', efeito: 'Inibição CYP2D6', conduta: 'Reduzir dose atomoxetina' },
     ],
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*3, *4, *5, *6',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Severely reduced atomoxetine metabolism',
+          '5-10x higher plasma levels vs extensive metabolizers',
+          'Increased risk of adverse effects (nausea, insomnia, tachycardia)',
+          'Slower achievement of steady state',
+        ],
+        dosageRecommendations: [
+          'Start at 0.5mg/kg/day and titrate slowly',
+          'Target dose 1.2mg/kg/day (vs standard 1.4mg/kg/day)',
+          'Consider alternative ADHD medications if poor tolerance',
+          'Monitor closely for cardiovascular effects (HR, BP)',
+        ],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*2, *1/*41, *2/*2',
+        phenotype: 'intermediate_metabolizer',
+        implications: [
+          'Moderately reduced atomoxetine metabolism',
+          '2-3x higher plasma levels than extensive metabolizers',
+          'May have increased side effects',
+        ],
+        dosageRecommendations: [
+          'Start at lower end of dosing range',
+          'Titrate more slowly',
+          'Consider lower maximum dose',
+        ],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1xN, *2xN',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: [
+          'Rapid atomoxetine metabolism',
+          'Lower plasma levels',
+          'May have reduced therapeutic response',
+        ],
+        dosageRecommendations: [
+          'Standard dosing may be insufficient',
+          'May need higher doses within approved range',
+          'Consider alternative medications if poor response at max dose',
+        ],
+      },
+    ],
     gestacao: 'C',
     amamentacao: { compativel: false, observacao: 'Dados insuficientes' },
     monitorizacao: ['Função hepática', 'Crescimento', 'Ideação suicida'],

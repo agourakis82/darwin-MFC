@@ -20,6 +20,19 @@ export const doencasSaudeMental: Doenca[] = [
     ciap2: ['P74'],
     cid10: ['F41.1'],
     cid11: ['6B00'],
+    // LOINC codes for anxiety disorder workup (rule out medical causes)
+    loinc: [
+      '3016-3',   // TSH (hyperthyroidism)
+      '3024-7',   // T4 free
+      '1558-6',   // Fasting glucose (hypoglycemia)
+      '718-7',    // Hemoglobin (anemia)
+      '2951-2',   // Sodium
+      '2823-3',   // Potassium
+      '17861-6',  // Calcium (hypercalcemia)
+      '2132-9',   // Vitamin B12
+      '1989-3',   // Vitamin D
+      '1988-5',   // CRP (inflammation)
+    ],
     categoria: 'saude_mental',
     quickView: {
       definicao: 'Transtorno caracterizado por ansiedade e preocupação excessivas e persistentes, difíceis de controlar, ocorrendo na maioria dos dias por pelo menos 6 meses, acompanhadas de sintomas somáticos.',
@@ -78,11 +91,11 @@ export const doencasSaudeMental: Doenca[] = [
           'Abuso na infância',
           'Condições médicas crônicas'
         ],
-        citations: [{ refId: 'dsm5-tr' }]
+        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Envolve disfunção em circuitos neurais relacionados ao medo e à preocupação, incluindo amígdala, córtex pré-frontal e sistema límbico. Há desregulação de neurotransmissores (serotonina, noradrenalina, GABA) e hiperatividade do eixo HPA.',
-        citations: [{ refId: 'dsm5-tr' }]
+        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -105,7 +118,7 @@ export const doencasSaudeMental: Doenca[] = [
           'TAG + Depressão (comórbido - muito comum)',
           'TAG + outros transtornos de ansiedade'
         ],
-        citations: [{ refId: 'dsm5-tr' }]
+        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -128,7 +141,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Glicemia',
           'Toxicológico se suspeita'
         ],
-        citations: [{ refId: 'dsm5-tr' }]
+        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -216,7 +229,7 @@ export const doencasSaudeMental: Doenca[] = [
     medicamentos: ['sertralina', 'escitalopram', 'venlafaxina', 'duloxetina'],
     calculadoras: ['gad-7', 'phq-9'],
     rastreamentos: ['rastreamento-ansiedade'],
-    citations: [{ refId: 'dsm5-tr' }, { refId: 'canmat-2024' }],
+    citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }, { refId: 'canmat-2024' }],
     lastUpdate: '2024-12',
     tags: ['ansiedade', 'tag', 'saude-mental', 'isrs', 'tcc'],
   },
@@ -285,11 +298,11 @@ export const doencasSaudeMental: Doenca[] = [
           'Sensibilidade à ansiedade',
           'Abuso na infância'
         ],
-        citations: [{ refId: 'dsm5-tr' }]
+        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Hiperatividade do sistema de alarme (locus coeruleus, amígdala). Sensibilidade aumentada a CO2 e lactato. Condicionamento interoceptivo: sintomas corporais normais são interpretados como perigosos, desencadeando o ataque.',
-        citations: [{ refId: 'dsm5-tr' }]
+        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -312,7 +325,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Transtorno de pânico sem agorafobia',
           'Transtorno de pânico com agorafobia'
         ],
-        citations: [{ refId: 'dsm5-tr' }]
+        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -336,7 +349,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Eletrólitos',
           'Troponina se dor torácica atípica'
         ],
-        citations: [{ refId: 'dsm5-tr' }]
+        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -422,7 +435,7 @@ export const doencasSaudeMental: Doenca[] = [
     medicamentos: ['sertralina', 'paroxetina', 'clonazepam', 'escitalopram'],
     calculadoras: ['pdss'],
     rastreamentos: [],
-    citations: [{ refId: 'dsm5-tr' }, { refId: 'canmat-2024' }],
+    citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }, { refId: 'canmat-2024' }],
     lastUpdate: '2024-12',
     tags: ['panico', 'ataque-panico', 'agorafobia', 'ansiedade', 'isrs'],
   },

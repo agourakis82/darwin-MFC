@@ -316,7 +316,7 @@ export const doencasEmergencias: Doenca[] = [
       },
       fisiopatologia: {
         texto: 'Oclusão arterial por trombo (cardioembólico, aterotrómbico ou lacunar) levando a isquemia cerebral. Existe uma área de penumbra potencialmente salvável ao redor do core isquêmico. A janela terapêutica visa salvar essa penumbra.',
-        citations: [{ refId: 'aha-stroke-2019' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -375,7 +375,7 @@ export const doencasEmergencias: Doenca[] = [
           'Ecocardiograma (pesquisa fonte embólica)',
           'Doppler de carótidas'
         ],
-        citations: [{ refId: 'aha-stroke-2019' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -403,7 +403,7 @@ export const doencasEmergencias: Doenca[] = [
           segundaLinha: [
             { classe: 'Anticoagulação', medicamentos: ['Rivaroxabana', 'Apixabana', 'Varfarina'], observacoes: 'Se FA, após 3-14 dias dependendo do tamanho do AVC' }
           ],
-          citations: [{ refId: 'aha-stroke-2019' }]
+          citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Prevenção secundária vitalícia'
       },
@@ -437,7 +437,7 @@ export const doencasEmergencias: Doenca[] = [
           'Controle rigoroso de fatores de risco',
           'Revascularização carotídea se indicada'
         ],
-        citations: [{ refId: 'aha-stroke-2019' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       }
     },
     protocolos: ['codigo-avc', 'trombolise-avc', 'investigacao-avc-jovem'],
@@ -445,7 +445,7 @@ export const doencasEmergencias: Doenca[] = [
     calculadoras: ['nihss', 'abcd2', 'chads2-vasc'],
     citations: [
       { refId: 'sbn-avc-2022' },
-      { refId: 'aha-stroke-2019' },
+      { refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' },
       { refId: 'eso-stroke-2021' }
     ],
     lastUpdate: '2024-12-23'

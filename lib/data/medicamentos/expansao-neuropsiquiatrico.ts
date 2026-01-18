@@ -64,7 +64,43 @@ export const medicamentosNeuropsiquiatricos: Partial<Medicamento>[] = [
       { tfg: '<15', ajuste: 'Cautela' }
     ],
     gestacao: 'D',
-    amamentacao: { compativel: true, observacao: 'Compatível com monitoramento do lactente' }
+    amamentacao: { compativel: true, observacao: 'Compatível com monitoramento do lactente' },
+    pharmgkb: [
+      {
+        gene: 'HLA-B*15:02',
+        variant: 'Positive carrier',
+        phenotype: 'high_risk_sjs_ten',
+        implications: [
+          'HIGH RISK of Stevens-Johnson syndrome (SJS) and toxic epidermal necrolysis (TEN)',
+          '5-10% risk of severe cutaneous reaction in carriers',
+          'Most common in Southeast Asian populations (Thai, Han Chinese, Malaysian)',
+          'FDA requires screening before starting carbamazepine in at-risk populations',
+        ],
+        dosageRecommendations: [
+          'DO NOT USE carbamazepine if HLA-B*15:02 positive',
+          'Screen for HLA-B*15:02 before initiating therapy in at-risk populations',
+          'Consider alternative: levetiracetam, lamotrigine (with caution), valproate',
+          'If unavoidable and tested negative, still monitor for rash in first 8 weeks',
+        ],
+      },
+      {
+        gene: 'HLA-A*31:01',
+        variant: 'Positive carrier',
+        phenotype: 'increased_risk_hypersensitivity',
+        implications: [
+          'Increased risk of carbamazepine-induced hypersensitivity reactions',
+          'May present as DRESS syndrome, maculopapular exanthema, or SJS/TEN',
+          'More common in European, Japanese, and Korean populations',
+          'Overall risk ~5% in carriers vs <1% in non-carriers',
+        ],
+        dosageRecommendations: [
+          'Consider HLA-A*31:01 testing in European and Asian patients',
+          'If positive, consider alternative anticonvulsant',
+          'If used, counsel about early signs of hypersensitivity',
+          'Discontinue immediately at first sign of rash',
+        ],
+      },
+    ],
   },
 
   {
@@ -170,7 +206,40 @@ export const medicamentosNeuropsiquiatricos: Partial<Medicamento>[] = [
       { medicamento: 'Contraceptivos orais', gravidade: 'moderada', efeito: 'Reduzem níveis LTG', conduta: 'Ajustar dose na pausa do CO' }
     ],
     gestacao: 'C',
-    amamentacao: { compativel: true, observacao: 'Níveis no lactente podem ser significativos. Monitorar.' }
+    amamentacao: { compativel: true, observacao: 'Níveis no lactente podem ser significativos. Monitorar.' },
+    pharmgkb: [
+      {
+        gene: 'HLA-B*15:02',
+        variant: 'Positive carrier',
+        phenotype: 'increased_risk_sjs',
+        implications: [
+          'Increased risk of Stevens-Johnson syndrome (SJS) and toxic epidermal necrolysis (TEN)',
+          'Risk lower than for carbamazepine but still significant',
+          'Most relevant in Asian populations (Han Chinese, Thai)',
+          'FDA recommends considering screening in at-risk populations',
+        ],
+        dosageRecommendations: [
+          'Consider HLA-B*15:02 screening in high-risk populations',
+          'If positive, weigh risks vs benefits carefully',
+          'Ensure very slow titration (risk is dose-escalation related)',
+          'Educate about early signs of rash - stop immediately if rash appears',
+        ],
+      },
+      {
+        gene: 'HLA-A*24:02',
+        variant: 'Positive carrier',
+        phenotype: 'increased_risk_sjs',
+        implications: [
+          'Associated with lamotrigine-induced SJS/TEN in some populations',
+          'Particularly in Korean and Japanese patients',
+        ],
+        dosageRecommendations: [
+          'Consider testing in Asian patients',
+          'Strict adherence to titration schedule',
+          'Stop immediately at first sign of rash',
+        ],
+      },
+    ],
   },
 
   {
@@ -326,7 +395,40 @@ export const medicamentosNeuropsiquiatricos: Partial<Medicamento>[] = [
       { medicamento: 'Varfarina', gravidade: 'moderada', efeito: 'Aumento sangramento', conduta: 'Monitorar INR' }
     ],
     gestacao: 'C',
-    amamentacao: { compativel: true, observacao: 'Preferir outros ISRS (sertralina)' }
+    amamentacao: { compativel: true, observacao: 'Preferir outros ISRS (sertralina)' },
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: 'Any variant',
+        phenotype: 'inhibitor_effect',
+        implications: [
+          'Fluoxetine is a STRONG CYP2D6 inhibitor (not substrate)',
+          'Causes phenoconversion: normal metabolizers become poor metabolizers',
+          'Persists for weeks after stopping (long half-life of norfluoxetine)',
+          'Affects metabolism of CYP2D6 substrates (codeine, tramadol, TCAs, atomoxetine)',
+        ],
+        dosageRecommendations: [
+          'When combining with CYP2D6 substrates, treat patient as if CYP2D6 poor metabolizer',
+          'Avoid codeine (ineffective due to blocked conversion to morphine)',
+          'Avoid tamoxifen (blocked conversion to endoxifen - contraindicated)',
+          'Reduce doses of TCAs by 50-75%',
+        ],
+      },
+      {
+        gene: 'CYP2C9',
+        variant: '*2, *3',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced fluoxetine metabolism',
+          'Modestly higher plasma levels',
+          'Clinical significance usually limited due to wide therapeutic window',
+        ],
+        dosageRecommendations: [
+          'Generally no dose adjustment needed',
+          'Monitor for side effects in combined poor metabolizers',
+        ],
+      },
+    ],
   },
 
   {
@@ -373,7 +475,40 @@ export const medicamentosNeuropsiquiatricos: Partial<Medicamento>[] = [
       { medicamento: 'Pimozida', gravidade: 'grave', efeito: 'Aumento pimozida e prolongamento QT', conduta: 'Contraindicado' }
     ],
     gestacao: 'C',
-    amamentacao: { compativel: true, observacao: 'ISRS de escolha na amamentação' }
+    amamentacao: { compativel: true, observacao: 'ISRS de escolha na amamentação' },
+    pharmgkb: [
+      {
+        gene: 'CYP2C19',
+        variant: '*2/*2, *2/*3, *3/*3',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced sertraline metabolism',
+          'Higher plasma levels (up to 2x)',
+          'May have increased side effects',
+        ],
+        dosageRecommendations: [
+          'Start at lower dose (25mg)',
+          'Titrate slowly',
+          'Consider lower maintenance dose',
+          'Monitor for side effects',
+        ],
+      },
+      {
+        gene: 'CYP2C19',
+        variant: '*17/*17',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: [
+          'Rapid sertraline metabolism',
+          'Lower plasma levels',
+          'May have reduced efficacy',
+        ],
+        dosageRecommendations: [
+          'May need higher doses',
+          'Consider therapeutic drug monitoring if poor response',
+          'Alternative SSRI may be considered',
+        ],
+      },
+    ],
   },
 
   {
@@ -461,7 +596,30 @@ export const medicamentosNeuropsiquiatricos: Partial<Medicamento>[] = [
       { medicamento: 'Tramadol', gravidade: 'grave', efeito: 'Síndrome serotoninérgica + convulsões', conduta: 'Evitar' }
     ],
     gestacao: 'C',
-    amamentacao: { compativel: true, observacao: 'Com cautela. Preferir sertralina.' }
+    amamentacao: { compativel: true, observacao: 'Com cautela. Preferir sertralina.' },
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1, *1/*2, *2/*2',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal venlafaxine metabolism to active metabolite O-desmethylvenlafaxine', 'Balanced ratio of parent drug to metabolite'],
+        dosageRecommendations: ['Standard dosing appropriate', 'Active metabolite contributes significantly to effect'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*4/*4, *4/*5, *5/*5',
+        phenotype: 'poor_metabolizer',
+        implications: ['Reduced conversion to O-desmethylvenlafaxine', 'Higher parent drug levels', 'May have increased noradrenergic effects'],
+        dosageRecommendations: ['Standard dosing usually appropriate', 'Total active moiety similar', 'Consider desvenlafaxine if tolerability issues'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1xN, *2/*2xN',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: ['Increased conversion to O-desmethylvenlafaxine', 'Lower parent drug levels', 'Clinical significance less clear'],
+        dosageRecommendations: ['Standard dosing usually appropriate', 'Monitor clinical response'],
+      },
+    ]
   },
 
   {
@@ -571,7 +729,41 @@ export const medicamentosNeuropsiquiatricos: Partial<Medicamento>[] = [
       { medicamento: 'Fluoxetina', gravidade: 'moderada', efeito: 'Aumenta risperidona', conduta: 'Pode necessitar redução' }
     ],
     gestacao: 'C',
-    amamentacao: { compativel: false, observacao: 'Excreção significativa no leite' }
+    amamentacao: { compativel: false, observacao: 'Excreção significativa no leite' },
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*3, *4, *5, *6',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced metabolism of risperidone to 9-hydroxyrisperidone',
+          'Higher risperidone:paliperidone ratio',
+          'Higher total active moiety levels (up to 1.7x)',
+          'Increased risk of extrapyramidal symptoms and hyperprolactinemia',
+        ],
+        dosageRecommendations: [
+          'Start with lower doses (0.5-1mg)',
+          'Titrate slowly',
+          'Consider lower maintenance dose',
+          'Monitor for EPS and prolactin-related effects',
+        ],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1xN, *2xN',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: [
+          'Rapid conversion to 9-hydroxyrisperidone',
+          'Lower parent drug levels but similar total active moiety',
+          'Clinical effect usually unchanged',
+        ],
+        dosageRecommendations: [
+          'Standard dosing usually adequate',
+          'Monitor response',
+          'May need dose adjustment based on clinical response',
+        ],
+      },
+    ],
   },
 
   {
@@ -727,7 +919,40 @@ export const medicamentosNeuropsiquiatricos: Partial<Medicamento>[] = [
       { medicamento: 'Indutores CYP3A4', gravidade: 'moderada', efeito: 'Redução aripiprazol', conduta: 'Dobrar dose' }
     ],
     gestacao: 'C',
-    amamentacao: { compativel: false, observacao: 'Dados limitados. Evitar.' }
+    amamentacao: { compativel: false, observacao: 'Dados limitados. Evitar.' },
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*3, *4, *5, *6',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced aripiprazole metabolism',
+          'Higher plasma levels (up to 60% increase)',
+          'Increased risk of akathisia and other side effects',
+        ],
+        dosageRecommendations: [
+          'Reduce dose to 50-75% of standard',
+          'Start at 2-5mg/day',
+          'Target maintenance 10-15mg/day',
+          'Monitor closely for akathisia',
+        ],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1xN, *2xN',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: [
+          'Increased aripiprazole metabolism',
+          'Lower plasma levels',
+          'May have reduced efficacy',
+        ],
+        dosageRecommendations: [
+          'May need higher doses within approved range',
+          'Monitor clinical response',
+          'Consider therapeutic drug monitoring if poor response',
+        ],
+      },
+    ],
   },
 
   // ============================================================================

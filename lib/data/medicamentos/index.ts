@@ -13,6 +13,7 @@ import { medicamentosExpanded } from '../medicamentos-expanded';
 import { antibioticos } from './antibioticos';
 import { analgesicosAines } from './analgesicos-aines';
 import { psicofarmacos } from './psicofarmacos';
+import { cardiovasculares } from './cardiovasculares';
 import { medicamentosDiversos } from './diversos';
 import { medicamentosComplementares } from './complementares';
 import { medicamentosExpansaoSOTA } from './expansao-sota';
@@ -92,12 +93,16 @@ const medicamentosFinal12Filtered = medicamentosFinal12.filter(isMedicamentoComp
 const medicamentos600UltimoFiltered = medicamentos600Ultimo.filter(isMedicamentoCompleto);
 const medicamentos600FinalBatchFiltered = medicamentos600FinalBatch.filter(isMedicamentoCompleto);
 
+// Filter cardiovasculares (Partial<Medicamento>)
+const cardiovascularesCompletos2 = cardiovasculares.filter(isMedicamentoCompleto);
+
 export const todosMedicamentos: Medicamento[] = [
   ...medicamentosBase,
   ...expandedCompletos,
   ...antibioticos,
   ...analgesicosAines,
   ...psicofarmacos,
+  ...cardiovascularesCompletos2,
   ...medicamentosDiversos,
   ...medicamentosComplementares,
   ...medicamentosExpansaoSOTA,
@@ -137,11 +142,25 @@ export const todosMedicamentos: Medicamento[] = [
   ...medicamentos600FinalBatchFiltered,
 ];
 
-// Remover duplicatas por ID
+// Remover duplicatas por ID, preferindo entradas com dados mais completos (PharmGKB, LOINC)
 const medicamentosMap = new Map<string, Medicamento>();
 todosMedicamentos.forEach(med => {
-  if (!medicamentosMap.has(med.id)) {
+  const existing = medicamentosMap.get(med.id);
+  if (!existing) {
     medicamentosMap.set(med.id, med);
+  } else {
+    // Prefer entry with pharmgkb data
+    const newHasPharmGKB = med.pharmgkb !== undefined && med.pharmgkb.length > 0;
+    const existingHasPharmGKB = existing.pharmgkb !== undefined && existing.pharmgkb.length > 0;
+
+    if (newHasPharmGKB && !existingHasPharmGKB) {
+      // New entry has PharmGKB, existing doesn't - merge and use new
+      medicamentosMap.set(med.id, { ...existing, ...med });
+    } else if (!newHasPharmGKB && existingHasPharmGKB) {
+      // Keep existing (has PharmGKB), but merge any missing fields from new
+      medicamentosMap.set(med.id, { ...med, ...existing });
+    }
+    // If both have or both don't have PharmGKB, keep existing (first wins)
   }
 });
 

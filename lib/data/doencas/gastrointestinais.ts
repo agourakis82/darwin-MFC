@@ -19,6 +19,16 @@ export const doencasGastrointestinais: Doenca[] = [
     ciap2: ['D84'],
     cid10: ['K21', 'K21.0'],
     cid11: ['DA22'],
+    // LOINC codes for GERD workup (rule out complications)
+    loinc: [
+      '718-7',    // Hemoglobin (GI bleeding)
+      '4544-3',   // Hematocrit
+      '2276-4',   // Ferritin (iron deficiency from chronic bleeding)
+      '2498-4',   // Iron
+      '1920-8',   // AST
+      '1742-6',   // ALT
+      '600-7',    // H. pylori (if dyspepsia)
+    ],
     categoria: 'gastrointestinal',
     quickView: {
       definicao: 'Condição que se desenvolve quando o refluxo do conteúdo gástrico causa sintomas incômodos e/ou complicações. Manifestações típicas: pirose e regurgitação.',

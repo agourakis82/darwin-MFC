@@ -18,6 +18,22 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     snomedCT: '370992007',
     meshId: 'D050171',
     umlsCui: 'C0242339',
+    // LOINC codes for dyslipidemia workup and monitoring
+    loinc: [
+      '2093-3',   // Total cholesterol
+      '2085-9',   // HDL
+      '13457-7',  // LDL calculated
+      '18262-6',  // LDL direct
+      '2571-8',   // Triglycerides
+      '13458-5',  // VLDL
+      '1558-6',   // Fasting glucose
+      '4548-4',   // HbA1c
+      '2160-0',   // Creatinine
+      '3016-3',   // TSH
+      '1920-8',   // AST
+      '1742-6',   // ALT
+      '2157-6',   // CK total (for statin monitoring)
+    ],
     categoria: 'metabolico',
     quickView: {
       definicao: 'Alteração do metabolismo lipídico com elevação de LDL-c, triglicérides e/ou redução de HDL-c. Principal fator de risco modificável para DCV aterosclerótica.',
@@ -63,6 +79,24 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     snomedCT: '237602007',
     meshId: 'D024821',
     umlsCui: 'C0524620',
+    // LOINC codes for metabolic syndrome assessment
+    loinc: [
+      '1558-6',   // Fasting glucose
+      '4548-4',   // HbA1c
+      '2093-3',   // Total cholesterol
+      '2085-9',   // HDL
+      '2571-8',   // Triglycerides
+      '13457-7',  // LDL calculated
+      '8280-0',   // Waist circumference
+      '8480-6',   // Systolic BP
+      '8462-4',   // Diastolic BP
+      '39156-5',  // BMI
+      '2160-0',   // Creatinine
+      '9318-7',   // Albumin/creatinine ratio (microalbuminuria)
+      '1920-8',   // AST
+      '1742-6',   // ALT
+      '3084-1',   // Uric acid
+    ],
     categoria: 'metabolico',
     quickView: {
       definicao: 'Constelação de fatores de risco metabólicos que aumentam risco de DCV e DM2. Prevalência de 20-25% em adultos.',

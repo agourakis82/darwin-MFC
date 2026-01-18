@@ -170,7 +170,30 @@ export const medicamentosCardiovascularesCompleto: Partial<Medicamento>[] = [
       { medicamento: 'Suplementos de K', gravidade: 'moderada', efeito: 'Hipercalemia', conduta: 'Evitar' }
     ],
     gestacao: 'D',
-    amamentacao: { compativel: false, observacao: 'Evitar - dados insuficientes' }
+    amamentacao: { compativel: false, observacao: 'Evitar - dados insuficientes' },
+    pharmgkb: [
+      {
+        gene: 'CYP2C9',
+        variant: '*1/*1',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal conversion to active metabolite E-3174', 'Standard antihypertensive efficacy'],
+        dosageRecommendations: ['Standard dosing (50-100mg/day)', 'No genetic adjustment needed'],
+      },
+      {
+        gene: 'CYP2C9',
+        variant: '*2/*2, *3/*3, *2/*3',
+        phenotype: 'poor_metabolizer',
+        implications: ['Reduced conversion to active metabolite E-3174', 'Decreased antihypertensive effect', 'Higher parent drug levels'],
+        dosageRecommendations: ['May need higher dose for adequate BP control', 'Consider alternative ARB (valsartan, candesartan)', 'Monitor blood pressure closely'],
+      },
+      {
+        gene: 'CYP2C9',
+        variant: '*1/*2, *1/*3',
+        phenotype: 'intermediate_metabolizer',
+        implications: ['Moderately reduced conversion to E-3174', 'May have decreased efficacy'],
+        dosageRecommendations: ['Standard dosing, monitor BP', 'Consider dose increase if inadequate response'],
+      },
+    ]
   },
   {
     id: 'valsartana',
@@ -443,7 +466,37 @@ export const medicamentosCardiovascularesCompleto: Partial<Medicamento>[] = [
       { medicamento: 'Clonidina', gravidade: 'moderada', efeito: 'Crise hipertensiva na retirada', conduta: 'Retirar BB antes da clonidina' }
     ],
     gestacao: 'C',
-    amamentacao: { compativel: true, observacao: 'Compatível, monitorar bradicardia no lactente' }
+    amamentacao: { compativel: true, observacao: 'Compatível, monitorar bradicardia no lactente' },
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1, *1/*2, *2/*2',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal metoprolol metabolism', 'Standard drug exposure'],
+        dosageRecommendations: ['Standard dosing appropriate', 'Titrate based on heart rate and blood pressure'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*4/*4, *4/*5, *5/*5',
+        phenotype: 'poor_metabolizer',
+        implications: ['3-5x higher metoprolol plasma levels', 'Increased risk of bradycardia', 'Increased risk of hypotension and fatigue'],
+        dosageRecommendations: ['Start with 25% of standard dose', 'Titrate slowly based on response', 'Consider bisoprolol or carvedilol (less CYP2D6 dependent)'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*4, *2/*4',
+        phenotype: 'intermediate_metabolizer',
+        implications: ['Moderately increased metoprolol levels', 'May have enhanced beta-blockade'],
+        dosageRecommendations: ['Start with lower dose (50% of standard)', 'Monitor for bradycardia and hypotension'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1xN, *2/*2xN',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: ['Reduced metoprolol exposure', 'May have inadequate beta-blockade'],
+        dosageRecommendations: ['May need higher doses', 'Consider alternative beta-blocker', 'Monitor for treatment efficacy'],
+      },
+    ]
   },
   {
     id: 'bisoprolol',
@@ -908,7 +961,30 @@ export const medicamentosCardiovascularesCompleto: Partial<Medicamento>[] = [
       { tfg: '<30', ajuste: 'Iniciar 5mg, máximo 10mg' }
     ],
     gestacao: 'X',
-    amamentacao: { compativel: false, observacao: 'Contraindicado' }
+    amamentacao: { compativel: false, observacao: 'Contraindicado' },
+    pharmgkb: [
+      {
+        gene: 'SLCO1B1',
+        variant: '*1/*1',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal rosuvastatin transport', 'Standard drug exposure'],
+        dosageRecommendations: ['Standard dosing appropriate', 'Rosuvastatin preferred over simvastatin for SLCO1B1 poor metabolizers'],
+      },
+      {
+        gene: 'SLCO1B1',
+        variant: '*5/*5, *15/*15',
+        phenotype: 'poor_metabolizer',
+        implications: ['Moderately increased rosuvastatin levels', 'Lower myopathy risk than simvastatin', 'Still considered safer option'],
+        dosageRecommendations: ['Start with lower dose (5mg)', 'Can usually use standard doses', 'Monitor for muscle symptoms'],
+      },
+      {
+        gene: 'ABCG2',
+        variant: '421C>A (CA or AA)',
+        phenotype: 'poor_metabolizer',
+        implications: ['Increased rosuvastatin levels (up to 2x with AA genotype)', 'Higher drug exposure', 'More common in Asian populations'],
+        dosageRecommendations: ['Consider lower starting dose', 'Asian populations: start 5mg', 'Monitor for myopathy'],
+      },
+    ]
   },
 
   // ============================================================================

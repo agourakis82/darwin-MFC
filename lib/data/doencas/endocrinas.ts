@@ -17,6 +17,20 @@ export const doencasEndocrinas: Doenca[] = [
     ciap2: ['T86'],
     cid10: ['E03', 'E03.9', 'E06.3'],
     cid11: ['5A00'],
+    // LOINC codes for hypothyroidism diagnosis and monitoring
+    loinc: [
+      '3016-3',   // TSH
+      '3024-7',   // T4 free
+      '3051-0',   // T3 free
+      '3026-2',   // T4 total
+      '3053-6',   // T3 total
+      '5382-7',   // Anti-TPO antibodies
+      '5385-0',   // Anti-thyroglobulin antibodies
+      '2093-3',   // Total cholesterol (often elevated)
+      '2160-0',   // Creatinine
+      '718-7',    // Hemoglobin (anemia common)
+      '2951-2',   // Sodium (hyponatremia risk)
+    ],
     categoria: 'metabolico',
     quickView: {
       definicao: 'Síndrome clínica resultante da deficiência de hormônios tireoidianos (T3 e T4), com consequente lentificação generalizada dos processos metabólicos.',
@@ -75,11 +89,11 @@ export const doencasEndocrinas: Doenca[] = [
           'Radioterapia cervical',
           'Cirurgia ou radioablação de tireoide'
         ],
-        citations: [{ refId: 'sbem-tireoide-2023' }]
+        citations: [{ refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'A causa mais comum é a tireoidite de Hashimoto (autoimune), com destruição gradual da glândula por autoanticorpos (anti-TPO, anti-Tg). Outras causas incluem tireoidectomia, radioablação, medicamentos e deficiência de iodo. A deficiência de T3/T4 reduz o metabolismo basal de todos os tecidos.',
-        citations: [{ refId: 'sbem-tireoide-2023' }]
+        citations: [{ refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -104,7 +118,7 @@ export const doencasEndocrinas: Doenca[] = [
           'Hipotireoidismo manifesto: TSH alto, T4L baixo',
           'Hipotireoidismo central: TSH normal/baixo, T4L baixo'
         ],
-        citations: [{ refId: 'sbem-tireoide-2023' }]
+        citations: [{ refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -127,7 +141,7 @@ export const doencasEndocrinas: Doenca[] = [
           'T3 (geralmente não necessário)',
           'Ultrassom de tireoide (se bócio ou nódulo)'
         ],
-        citations: [{ refId: 'sbem-tireoide-2023' }]
+        citations: [{ refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -142,7 +156,7 @@ export const doencasEndocrinas: Doenca[] = [
             'Tomar em jejum absoluto (30-60 min antes café)',
             'Separar de medicamentos que interferem na absorção'
           ],
-          citations: [{ refId: 'sbem-tireoide-2023' }]
+          citations: [{ refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -166,7 +180,7 @@ export const doencasEndocrinas: Doenca[] = [
               conduta: 'Tratar se TSH >10, ou TSH 5-10 com sintomas, anti-TPO+, dislipidemia, gestação'
             }
           ],
-          citations: [{ refId: 'sbem-tireoide-2023' }]
+          citations: [{ refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         duracao: 'Tratamento contínuo (maioria dos casos é permanente)'
       },
@@ -188,7 +202,7 @@ export const doencasEndocrinas: Doenca[] = [
           'Refratário ao tratamento',
           'Gestação de alto risco'
         ],
-        citations: [{ refId: 'sbem-tireoide-2023' }]
+        citations: [{ refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: ['Não há prevenção primária específica'],
@@ -200,7 +214,7 @@ export const doencasEndocrinas: Doenca[] = [
     medicamentos: ['levotiroxina'],
     calculadoras: [],
     rastreamentos: ['rastreamento-tireoide'],
-    citations: [{ refId: 'sbem-tireoide-2023' }],
+    citations: [{ refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['hipotireoidismo', 'tireoide', 'hashimoto', 'levotiroxina', 'tsh'],
   },
@@ -215,6 +229,24 @@ export const doencasEndocrinas: Doenca[] = [
     ciap2: ['T82', 'T83'],
     cid10: ['E66', 'E66.0', 'E66.9'],
     cid11: ['5B81'],
+    // LOINC codes for obesity assessment and complications screening
+    loinc: [
+      '39156-5',  // BMI
+      '29463-7',  // Body weight
+      '8302-2',   // Height
+      '8280-0',   // Waist circumference
+      '1558-6',   // Fasting glucose
+      '4548-4',   // HbA1c
+      '2093-3',   // Total cholesterol
+      '2085-9',   // HDL
+      '13457-7',  // LDL calculated
+      '2571-8',   // Triglycerides
+      '1920-8',   // AST
+      '1742-6',   // ALT
+      '3016-3',   // TSH (rule out hypothyroidism)
+      '2160-0',   // Creatinine
+      '9318-7',   // Albumin/creatinine ratio
+    ],
     categoria: 'metabolico',
     quickView: {
       definicao: 'Doença crônica caracterizada pelo acúmulo excessivo de gordura corporal, com repercussões negativas sobre a saúde. Definida por IMC ≥30 kg/m².',
@@ -276,11 +308,11 @@ export const doencasEndocrinas: Doenca[] = [
           'Estresse crônico',
           'Medicamentos (corticoides, antipsicóticos, alguns antidepressivos)'
         ],
-        citations: [{ refId: 'abeso-2022' }]
+        citations: [{ refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Desequilíbrio crônico entre ingestão e gasto energético, modulado por fatores genéticos, ambientais, hormonais e psicológicos. O tecido adiposo não é inerte: secreta adipocinas que promovem inflamação crônica de baixo grau, resistência insulínica e disfunção metabólica.',
-        citations: [{ refId: 'abeso-2022' }]
+        citations: [{ refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -302,7 +334,7 @@ export const doencasEndocrinas: Doenca[] = [
           'Obesidade androide (central/visceral): maior risco metabólico',
           'Obesidade ginoide (periférica): menor risco metabólico'
         ],
-        citations: [{ refId: 'abeso-2022' }]
+        citations: [{ refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -325,7 +357,7 @@ export const doencasEndocrinas: Doenca[] = [
           'Função renal, ácido úrico',
           'ECG, ecocardiograma se indicado'
         ],
-        citations: [{ refId: 'abeso-2022' }]
+        citations: [{ refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -341,7 +373,7 @@ export const doencasEndocrinas: Doenca[] = [
             'Terapia cognitivo-comportamental',
             'Acompanhamento com equipe multidisciplinar'
           ],
-          citations: [{ refId: 'abeso-2022' }]
+          citations: [{ refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -366,7 +398,7 @@ export const doencasEndocrinas: Doenca[] = [
               conduta: 'Preferir agonistas GLP-1 ou iSGLT2'
             }
           ],
-          citations: [{ refId: 'abeso-2022' }]
+          citations: [{ refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         duracao: 'Tratamento crônico'
       },
@@ -387,7 +419,7 @@ export const doencasEndocrinas: Doenca[] = [
           'Suspeita de causa secundária',
           'Complicações graves'
         ],
-        citations: [{ refId: 'abeso-2022' }]
+        citations: [{ refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -399,14 +431,14 @@ export const doencasEndocrinas: Doenca[] = [
           'Intervenção precoce no sobrepeso',
           'Tratamento de comorbidades'
         ],
-        citations: [{ refId: 'abeso-2022' }]
+        citations: [{ refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
     },
     protocolos: ['protocolo-obesidade'],
     medicamentos: ['orlistate', 'semaglutida', 'liraglutida'],
     calculadoras: ['imc', 'risco-cv'],
     rastreamentos: [],
-    citations: [{ refId: 'abeso-2022' }],
+    citations: [{ refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['obesidade', 'sobrepeso', 'imc', 'emagrecimento', 'cirurgia-bariatrica'],
   }

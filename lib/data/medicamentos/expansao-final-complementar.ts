@@ -396,7 +396,30 @@ export const medicamentosComplementoFinal: Partial<Medicamento>[] = [
     amamentacao: { compativel: true, observacao: 'Compatível com monitorização' },
     doencasRelacionadas: ['depressao', 'ansiedade', 'toc'],
     citations: [],
-    lastUpdate: '2024-01-15'
+    lastUpdate: '2024-01-15',
+    pharmgkb: [
+      {
+        gene: 'CYP2C19',
+        variant: '*1/*1, *1/*17',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal escitalopram metabolism', 'Standard drug clearance'],
+        dosageRecommendations: ['Standard dosing (10-20mg/day)', 'Preferred over citalopram due to active enantiomer'],
+      },
+      {
+        gene: 'CYP2C19',
+        variant: '*2/*2, *3/*3',
+        phenotype: 'poor_metabolizer',
+        implications: ['Reduced escitalopram clearance (up to 2x exposure)', 'May have enhanced effect', 'Slightly increased QT risk'],
+        dosageRecommendations: ['Start with 5mg/day', 'Maximum dose 10mg/day', 'Monitor for side effects'],
+      },
+      {
+        gene: 'CYP2C19',
+        variant: '*17/*17',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: ['Increased escitalopram clearance', 'May have reduced efficacy'],
+        dosageRecommendations: ['May need dose at upper end of range (20mg)', 'Monitor treatment response closely'],
+      },
+    ]
   },
   {
     id: 'paroxetina',
@@ -431,7 +454,30 @@ export const medicamentosComplementoFinal: Partial<Medicamento>[] = [
     amamentacao: { compativel: true, observacao: 'Compatível' },
     doencasRelacionadas: ['depressao', 'ansiedade', 'toc'],
     citations: [],
-    lastUpdate: '2024-01-15'
+    lastUpdate: '2024-01-15',
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1, *1/*2, *2/*2',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal paroxetine metabolism', 'Standard drug clearance', 'Strong CYP2D6 inhibitor - inhibits own metabolism'],
+        dosageRecommendations: ['Standard dosing (20-50mg/day)', 'Note: paroxetine inhibits CYP2D6, causing auto-inhibition'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*4/*4, *4/*5, *5/*5',
+        phenotype: 'poor_metabolizer',
+        implications: ['Reduced paroxetine metabolism', 'Higher steady-state levels', 'Clinical significance limited by auto-inhibition'],
+        dosageRecommendations: ['Start with lower dose (10mg)', 'Titrate slowly', 'Monitor for side effects'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1xN, *2/*2xN',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: ['Faster initial metabolism', 'Auto-inhibition develops over time', 'May have lower initial response'],
+        dosageRecommendations: ['Standard dosing', 'May need higher initial dose', 'Auto-inhibition equilibrates over 1-2 weeks'],
+      },
+    ]
   },
   {
     id: 'citalopram',
@@ -465,7 +511,30 @@ export const medicamentosComplementoFinal: Partial<Medicamento>[] = [
     monitorizacao: ['ECG se dose >40mg ou fatores de risco QT'],
     doencasRelacionadas: ['depressao', 'panico'],
     citations: [],
-    lastUpdate: '2024-01-15'
+    lastUpdate: '2024-01-15',
+    pharmgkb: [
+      {
+        gene: 'CYP2C19',
+        variant: '*1/*1, *1/*17',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal citalopram metabolism', 'Standard drug clearance'],
+        dosageRecommendations: ['Standard dosing (20-40mg/day)', 'Max 40mg/day due to QT risk'],
+      },
+      {
+        gene: 'CYP2C19',
+        variant: '*2/*2, *3/*3',
+        phenotype: 'poor_metabolizer',
+        implications: ['Reduced citalopram clearance (2-3x exposure)', 'Increased QT prolongation risk', 'Higher steady-state levels'],
+        dosageRecommendations: ['Reduce maximum dose to 20mg/day', 'Consider escitalopram as alternative', 'ECG monitoring recommended'],
+      },
+      {
+        gene: 'CYP2C19',
+        variant: '*17/*17',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: ['Increased citalopram clearance', 'May have reduced efficacy', 'Faster metabolism'],
+        dosageRecommendations: ['May need higher dose within approved range', 'Consider escitalopram (active S-enantiomer)', 'Monitor treatment response'],
+      },
+    ]
   },
   {
     id: 'desvenlafaxina',
@@ -539,7 +608,30 @@ export const medicamentosComplementoFinal: Partial<Medicamento>[] = [
     monitorizacao: ['ECG em idosos e cardiopatas'],
     doencasRelacionadas: ['depressao', 'dor-neuropatica', 'enxaqueca'],
     citations: [],
-    lastUpdate: '2024-01-15'
+    lastUpdate: '2024-01-15',
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1, *1/*2, *2/*2',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal nortriptyline metabolism', 'Standard drug clearance'],
+        dosageRecommendations: ['Standard dosing (25-150mg/day)', 'Use TDM if available', 'Target level: 50-150 ng/mL'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*4/*4, *4/*5, *5/*5',
+        phenotype: 'poor_metabolizer',
+        implications: ['Increased nortriptyline levels (2-4x)', 'Higher risk of cardiotoxicity', 'Increased anticholinergic effects'],
+        dosageRecommendations: ['Reduce dose by 50%', 'Start with 10mg/day', 'Mandatory ECG monitoring', 'Use TDM to guide dosing'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1xN, *2/*2xN',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: ['Decreased nortriptyline levels', 'Reduced efficacy possible'],
+        dosageRecommendations: ['May need higher doses', 'Use TDM to guide dosing', 'Monitor for treatment response'],
+      },
+    ]
   },
   {
     id: 'clomipramina',
@@ -573,7 +665,30 @@ export const medicamentosComplementoFinal: Partial<Medicamento>[] = [
     amamentacao: { compativel: true, observacao: 'Compatível' },
     doencasRelacionadas: ['toc', 'depressao'],
     citations: [],
-    lastUpdate: '2024-01-15'
+    lastUpdate: '2024-01-15',
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1, *1/*2, *2/*2',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal clomipramine metabolism', 'Standard drug clearance'],
+        dosageRecommendations: ['Standard dosing (25-250mg/day for TOC)', 'Use TDM if available'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*4/*4, *4/*5, *5/*5',
+        phenotype: 'poor_metabolizer',
+        implications: ['Increased clomipramine levels', 'Higher desmethylclomipramine ratio', 'Increased risk of cardiotoxicity and seizures'],
+        dosageRecommendations: ['Reduce dose by 50%', 'Mandatory ECG monitoring', 'Use TDM to guide dosing', 'Consider alternative for TOC (SSRI)'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1xN, *2/*2xN',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: ['Decreased clomipramine levels', 'May have reduced efficacy'],
+        dosageRecommendations: ['May need higher doses', 'Use TDM to guide dosing', 'Monitor for treatment response'],
+      },
+    ]
   },
 
   // Antipsicóticos adicionais

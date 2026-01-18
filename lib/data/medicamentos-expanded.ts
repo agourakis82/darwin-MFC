@@ -678,6 +678,55 @@ export const antidepressivos: Partial<Medicamento>[] = [
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Compatível, preferir ISRS' },
     doencasRelacionadas: ['depressao', 'cefaleia-tensional', 'enxaqueca'],
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*3, *4, *5, *6',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced conversion of amitriptyline to nortriptyline',
+          'Higher amitriptyline plasma levels (up to 2-3x)',
+          'Increased risk of adverse effects (sedation, QTc prolongation, anticholinergic effects)',
+          'Cardiotoxicity risk at high levels',
+        ],
+        dosageRecommendations: [
+          'Reduce starting dose by 50%',
+          'Titrate slowly with therapeutic drug monitoring (TDM)',
+          'Consider alternative antidepressant (SSRI)',
+          'Monitor ECG for QTc prolongation',
+        ],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1xN, *2xN',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: [
+          'Rapid metabolism of amitriptyline',
+          'Lower plasma levels, potentially subtherapeutic',
+          'May have reduced efficacy',
+        ],
+        dosageRecommendations: [
+          'May need higher doses for therapeutic effect',
+          'Use TDM to guide dosing',
+          'Consider alternative if poor response despite adequate doses',
+        ],
+      },
+      {
+        gene: 'CYP2C19',
+        variant: '*2/*2, *2/*3, *3/*3',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced hepatic demethylation of amitriptyline',
+          'Higher parent drug levels',
+          'Combined with CYP2D6 PM status increases toxicity risk significantly',
+        ],
+        dosageRecommendations: [
+          'Consider 50% dose reduction especially if also CYP2D6 PM',
+          'TDM recommended',
+          'Alternative antidepressant may be preferred',
+        ],
+      },
+    ],
     citations: [{ refId: 'canmat-2024' }],
     lastUpdate: '2024-12'
   },

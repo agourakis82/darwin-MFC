@@ -17,6 +17,21 @@ export const doencasRespiratorias: Doenca[] = [
     ciap2: ['R95'],
     cid10: ['J44', 'J44.0', 'J44.1', 'J44.9'],
     cid11: ['CA22'],
+    // LOINC codes for COPD assessment and monitoring
+    loinc: [
+      '2708-6',   // Oxygen saturation
+      '59408-5',  // Oxygen saturation by pulse oximetry
+      '718-7',    // Hemoglobin
+      '4544-3',   // Hematocrit
+      '789-8',    // RBC (polycythemia screening)
+      '6690-2',   // WBC
+      '1988-5',   // CRP (exacerbation)
+      '33959-8',  // Procalcitonin (bacterial infection)
+      '30934-4',  // BNP (heart failure screening)
+      '2093-3',   // Total cholesterol
+      '4548-4',   // HbA1c (comorbidity)
+      '3016-3',   // TSH
+    ],
     categoria: 'respiratorio',
     quickView: {
       definicao: 'Doença respiratória crônica prevenível e tratável, caracterizada por limitação persistente ao fluxo aéreo, geralmente progressiva e associada a resposta inflamatória crônica das vias aéreas e pulmões a partículas ou gases nocivos.',
@@ -78,11 +93,11 @@ export const doencasRespiratorias: Doenca[] = [
           'Infecções respiratórias na infância',
           'Biomassa (fogão a lenha)'
         ],
-        citations: [{ refId: 'gold-2024' }]
+        citations: [{ refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Inflamação crônica das vias aéreas e parênquima pulmonar induzida por inalação de partículas nocivas, principalmente fumaça de cigarro. Resulta em bronquite crônica (hipersecreção de muco) e/ou enfisema (destruição alveolar), levando a limitação fixa ao fluxo aéreo.',
-        citations: [{ refId: 'gold-2024' }]
+        citations: [{ refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -106,7 +121,7 @@ export const doencasRespiratorias: Doenca[] = [
           'Fenótipo bronquítico (blue bloater): cianose, edema, tosse produtiva',
           'Sobreposição asma-DPOC (ACO)'
         ],
-        citations: [{ refId: 'gold-2024' }]
+        citations: [{ refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -129,7 +144,7 @@ export const doencasRespiratorias: Doenca[] = [
           'Alfa-1 antitripsina (se indicado)',
           'TC de tórax (casos selecionados)'
         ],
-        citations: [{ refId: 'gold-2024' }]
+        citations: [{ refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -147,7 +162,7 @@ export const doencasRespiratorias: Doenca[] = [
             'Oxigenoterapia se PaO2 ≤55 ou SpO2 ≤88%',
             'Suporte nutricional se baixo peso'
           ],
-          citations: [{ refId: 'gold-2024' }]
+          citations: [{ refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -177,7 +192,7 @@ export const doencasRespiratorias: Doenca[] = [
               conduta: 'LABA + CI, não usar LABA isolado'
             }
           ],
-          citations: [{ refId: 'gold-2024' }]
+          citations: [{ refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Tratamento contínuo'
       },
@@ -199,7 +214,7 @@ export const doencasRespiratorias: Doenca[] = [
           'Candidato a oxigenoterapia domiciliar',
           'Avaliação para cirurgia redutora ou transplante'
         ],
-        citations: [{ refId: 'gold-2024' }]
+        citations: [{ refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -212,14 +227,14 @@ export const doencasRespiratorias: Doenca[] = [
           'Vacinação',
           'Tratamento precoce'
         ],
-        citations: [{ refId: 'gold-2024' }]
+        citations: [{ refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
     },
     protocolos: ['protocolo-dpoc'],
     medicamentos: ['tiotropio', 'formoterol', 'salbutamol', 'beclometasona'],
     calculadoras: ['gold-copd', 'bode-index'],
     rastreamentos: [],
-    citations: [{ refId: 'gold-2024' }],
+    citations: [{ refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['dpoc', 'enfisema', 'bronquite', 'tabagismo', 'dispneia'],
   },
@@ -234,6 +249,21 @@ export const doencasRespiratorias: Doenca[] = [
     ciap2: ['R81'],
     cid10: ['J18', 'J15', 'J13', 'J14'],
     cid11: ['CA40'],
+    // LOINC codes for community-acquired pneumonia
+    loinc: [
+      '6690-2',   // WBC
+      '751-8',    // Neutrophils absolute
+      '1988-5',   // CRP
+      '33959-8',  // Procalcitonin
+      '2160-0',   // Creatinine
+      '3094-0',   // BUN
+      '2951-2',   // Sodium
+      '2708-6',   // Oxygen saturation
+      '600-7',    // Blood culture
+      '624-7',    // Sputum culture
+      '718-7',    // Hemoglobin
+      '1558-6',   // Glucose
+    ],
     categoria: 'respiratorio',
     quickView: {
       definicao: 'Infecção aguda do parênquima pulmonar adquirida fora do ambiente hospitalar, caracterizada por sintomas respiratórios agudos e infiltrado pulmonar novo à radiografia.',
@@ -294,11 +324,11 @@ export const doencasRespiratorias: Doenca[] = [
           'Tabagismo, alcoolismo',
           'Institucionalização'
         ],
-        citations: [{ refId: 'sbpt-pac-2022' }]
+        citations: [{ refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Infecção do parênquima pulmonar por microorganismos (bactérias, vírus, fungos). Os mais comuns são Streptococcus pneumoniae, Haemophilus influenzae, Mycoplasma pneumoniae e vírus respiratórios. A resposta inflamatória causa consolidação alveolar e comprometimento das trocas gasosas.',
-        citations: [{ refId: 'sbpt-pac-2022' }]
+        citations: [{ refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -321,7 +351,7 @@ export const doencasRespiratorias: Doenca[] = [
           'PAC típica: início agudo, febre alta, tosse produtiva',
           'PAC atípica: início insidioso, tosse seca, manifestações extrapulmonares'
         ],
-        citations: [{ refId: 'sbpt-pac-2022' }]
+        citations: [{ refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -345,7 +375,7 @@ export const doencasRespiratorias: Doenca[] = [
           'Hemocultura (se internação)',
           'Pesquisa de antígeno urinário (pneumococo, legionella) se grave'
         ],
-        citations: [{ refId: 'sbpt-pac-2022' }]
+        citations: [{ refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -361,7 +391,7 @@ export const doencasRespiratorias: Doenca[] = [
             'Oxigenoterapia se SpO2 <90%',
             'Analgésicos/antitérmicos'
           ],
-          citations: [{ refId: 'sbpt-pac-2022' }]
+          citations: [{ refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -386,7 +416,7 @@ export const doencasRespiratorias: Doenca[] = [
               conduta: 'Amoxicilina-clavulanato IV + Azitromicina ou Quinolona IV'
             }
           ],
-          citations: [{ refId: 'sbpt-pac-2022' }]
+          citations: [{ refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: '5-7 dias (mínimo 5 dias, afebril por 48-72h antes de suspender)'
       },
@@ -406,7 +436,7 @@ export const doencasRespiratorias: Doenca[] = [
           'Complicações (derrame pleural, abscesso)',
           'Falha do tratamento ambulatorial'
         ],
-        citations: [{ refId: 'sbpt-pac-2022' }]
+        citations: [{ refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -418,14 +448,14 @@ export const doencasRespiratorias: Doenca[] = [
           'Tratamento adequado de infecções respiratórias',
           'Vacinação pós-PAC'
         ],
-        citations: [{ refId: 'sbpt-pac-2022' }]
+        citations: [{ refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
     },
     protocolos: ['protocolo-pac'],
     medicamentos: ['amoxicilina', 'azitromicina', 'levofloxacino'],
     calculadoras: ['curb-65', 'psi-port'],
     rastreamentos: [],
-    citations: [{ refId: 'sbpt-pac-2022' }],
+    citations: [{ refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['pneumonia', 'pac', 'infeccao-respiratoria', 'tosse', 'febre'],
   },
@@ -495,11 +525,11 @@ export const doencasRespiratorias: Doenca[] = [
           'Exposição precoce a alérgenos',
           'Tabagismo passivo na infância'
         ],
-        citations: [{ refId: 'aria-2020' }]
+        citations: [{ refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Reação de hipersensibilidade tipo I mediada por IgE. Após sensibilização, a reexposição ao alérgeno desencadeia degranulação de mastócitos e liberação de histamina, leucotrienos e citocinas, causando os sintomas.',
-        citations: [{ refId: 'aria-2020' }]
+        citations: [{ refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -523,7 +553,7 @@ export const doencasRespiratorias: Doenca[] = [
           'Leve: sintomas não afetam sono nem atividades',
           'Moderada/grave: sintomas afetam qualidade de vida'
         ],
-        citations: [{ refId: 'aria-2020' }]
+        citations: [{ refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -545,7 +575,7 @@ export const doencasRespiratorias: Doenca[] = [
           'IgE total (pode estar elevada)',
           'Citologia nasal (eosinofilia)'
         ],
-        citations: [{ refId: 'aria-2020' }]
+        citations: [{ refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -561,7 +591,7 @@ export const doencasRespiratorias: Doenca[] = [
             'Evitar alérgenos identificados',
             'Imunoterapia específica (casos selecionados)'
           ],
-          citations: [{ refId: 'aria-2020' }]
+          citations: [{ refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -586,7 +616,7 @@ export const doencasRespiratorias: Doenca[] = [
               conduta: 'Corticoide nasal é mais efetivo que anti-histamínico'
             }
           ],
-          citations: [{ refId: 'aria-2020' }]
+          citations: [{ refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Conforme necessidade, corticoide nasal pode ser contínuo se persistente'
       },
@@ -606,7 +636,7 @@ export const doencasRespiratorias: Doenca[] = [
           'Suspeita de complicações (pólipos, sinusite crônica)',
           'Sintomas atípicos ou unilaterais'
         ],
-        citations: [{ refId: 'aria-2020' }]
+        citations: [{ refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -617,14 +647,14 @@ export const doencasRespiratorias: Doenca[] = [
           'Controle ambiental',
           'Imunoterapia específica'
         ],
-        citations: [{ refId: 'aria-2020' }]
+        citations: [{ refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
     },
     protocolos: [],
     medicamentos: ['loratadina', 'cetirizina', 'budesonida-nasal'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'aria-2020' }],
+    citations: [{ refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['rinite', 'alergia', 'espirros', 'coriza', 'anti-histaminico'],
   }

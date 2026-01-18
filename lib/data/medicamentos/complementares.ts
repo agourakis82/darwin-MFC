@@ -41,7 +41,30 @@ export const medicamentosComplementares: Medicamento[] = [
     orientacoesPaciente: ['Pode causar constipação'],
     doencasRelacionadas: [], calculadoras: [],
     citations: [{ refId: 'rename-2024' }], lastUpdate: '2024-12',
-    tags: ['antiemetico', 'nausea', 'vomito']
+    tags: ['antiemetico', 'nausea', 'vomito'],
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1, *1/*2, *2/*2',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal ondansetron metabolism', 'Standard drug clearance'],
+        dosageRecommendations: ['Standard dosing (4-8mg every 8 hours)', 'No genetic adjustment needed'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*4/*4, *4/*5, *5/*5',
+        phenotype: 'poor_metabolizer',
+        implications: ['Reduced ondansetron metabolism', 'Moderately increased drug exposure', 'Slightly higher QT prolongation risk'],
+        dosageRecommendations: ['Standard dosing usually appropriate', 'ECG monitoring in high-risk patients', 'Consider lower doses if QT concerns'],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1xN, *2/*2xN',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: ['Increased ondansetron clearance', 'May have reduced antiemetic efficacy'],
+        dosageRecommendations: ['May need higher doses or shorter intervals', 'Monitor for treatment failure', 'Consider granisetron or palonosetron as alternatives'],
+      },
+    ]
   },
   {
     id: 'metoclopramida',
@@ -328,7 +351,37 @@ export const medicamentosComplementares: Medicamento[] = [
     orientacoesPaciente: ['Higiene oral rigorosa (hiperplasia gengival)', 'Não parar abruptamente', 'Suplementar vitamina D'],
     doencasRelacionadas: ['epilepsia'], calculadoras: [],
     citations: [{ refId: 'rename-2024' }], lastUpdate: '2024-12',
-    tags: ['anticonvulsivante', 'epilepsia', 'estado-de-mal']
+    tags: ['anticonvulsivante', 'epilepsia', 'estado-de-mal'],
+    pharmgkb: [
+      {
+        gene: 'CYP2C9',
+        variant: '*1/*1',
+        phenotype: 'extensive_metabolizer',
+        implications: ['Normal phenytoin metabolism', 'Standard clearance'],
+        dosageRecommendations: ['Standard dosing with TDM', 'Target level: 10-20 mcg/mL'],
+      },
+      {
+        gene: 'CYP2C9',
+        variant: '*2/*2, *3/*3, *2/*3',
+        phenotype: 'poor_metabolizer',
+        implications: ['Reduced phenytoin clearance (50-75%)', 'Risk of toxicity at standard doses', 'Non-linear kinetics more pronounced'],
+        dosageRecommendations: ['Start with 25-50% of standard dose', 'More frequent TDM', 'Consider alternative anticonvulsant (levetiracetam, lamotrigine)'],
+      },
+      {
+        gene: 'CYP2C9',
+        variant: '*1/*2, *1/*3',
+        phenotype: 'intermediate_metabolizer',
+        implications: ['Moderately reduced clearance', 'May require lower maintenance dose'],
+        dosageRecommendations: ['Start with lower dose', 'Close TDM monitoring', 'Adjust based on serum levels'],
+      },
+      {
+        gene: 'HLA-B',
+        variant: '*15:02',
+        phenotype: 'poor_metabolizer',
+        implications: ['HIGH RISK of Stevens-Johnson Syndrome/TEN', 'Common in Asian populations (Han Chinese, Thai, Malaysian)', 'Life-threatening hypersensitivity'],
+        dosageRecommendations: ['AVOID phenytoin if HLA-B*15:02 positive', 'Screen before initiating in at-risk populations', 'Alternative anticonvulsants recommended'],
+      },
+    ]
   },
   {
     id: 'fenobarbital',

@@ -259,6 +259,50 @@ export const medicamentosExpansaoSOTA: Medicamento[] = [
     monitorizacao: ['Hemograma', 'Função hepática', 'Creatinina', 'Radiografia de tórax'],
     orientacoesPaciente: ['Tomar ácido fólico', 'Evitar álcool', 'Evitar gravidez', 'Monitorar sintomas de toxicidade'],
     doencasRelacionadas: ['artrite-reumatoide', 'psoriase'], calculadoras: [],
+    pharmgkb: [
+      {
+        gene: 'MTHFR',
+        variant: 'C677T (TT homozygous)',
+        phenotype: 'reduced_enzyme_activity',
+        implications: [
+          'Reduced MTHFR enzyme activity (30% of normal)',
+          'Increased methotrexate toxicity risk',
+          'Higher risk of mucositis, myelosuppression, hepatotoxicity',
+          'Elevated homocysteine levels',
+        ],
+        dosageRecommendations: [
+          'Ensure adequate folic acid supplementation (5mg/day)',
+          'Consider lower starting doses',
+          'Monitor more closely for toxicity',
+          'Consider alternative DMARD if recurrent toxicity',
+        ],
+      },
+      {
+        gene: 'MTHFR',
+        variant: 'A1298C (CC homozygous)',
+        phenotype: 'reduced_enzyme_activity',
+        implications: [
+          'Moderately reduced MTHFR activity',
+          'Increased toxicity risk, especially with C677T compound heterozygosity',
+        ],
+        dosageRecommendations: [
+          'Higher folic acid doses may be needed',
+          'Monitor for toxicity',
+        ],
+      },
+      {
+        gene: 'SLCO1B1',
+        variant: '*5, *15',
+        phenotype: 'reduced_transport',
+        implications: [
+          'Reduced hepatic uptake of methotrexate',
+          'May have altered efficacy and toxicity profile',
+        ],
+        dosageRecommendations: [
+          'Standard dosing, but monitor response and toxicity',
+        ],
+      },
+    ],
     citations: [{ refId: 'rename-2024' }], lastUpdate: '2024-12',
     tags: ['imunossupressor', 'reumatologia']
   },

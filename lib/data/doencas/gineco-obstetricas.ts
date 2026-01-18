@@ -309,11 +309,11 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Contraceptivos com alto estrogênio',
           'Atividade sexual frequente'
         ],
-        citations: [{ refId: 'cdc-sti-2021' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Candida faz parte da microbiota vaginal normal em 20-50% das mulheres. Alterações no equilíbrio (antibióticos, imunossupressão, estrogênio) permitem proliferação fúngica. Resposta inflamatória local causa os sintomas.',
-        citations: [{ refId: 'cdc-sti-2021' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -333,7 +333,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'CVV não complicada (maioria)',
           'CVV complicada: grave, recorrente, não-albicans, gestante, imunossuprimida'
         ],
-        citations: [{ refId: 'cdc-sti-2021' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -352,7 +352,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Cultura fúngica (Sabouraud)',
           'pH vaginal'
         ],
-        citations: [{ refId: 'cdc-sti-2021' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -366,7 +366,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
             'Evitar duchas vaginais',
             'Manter área seca'
           ],
-          citations: [{ refId: 'cdc-sti-2021' }]
+          citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -398,7 +398,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
               conduta: 'Ácido bórico 600mg intravaginal por 14 noites.'
             }
           ],
-          citations: [{ refId: 'cdc-sti-2021' }]
+          citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Episódio: 1-7 dias. Manutenção: 6 meses.'
       },
@@ -416,7 +416,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Imunossupressão',
           'Necessidade de avaliação de comorbidades'
         ],
-        citations: [{ refId: 'cdc-sti-2021' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -433,7 +433,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
     medicamentos: ['fluconazol', 'clotrimazol', 'miconazol'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'cdc-sti-2021' }],
+    citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['candidiase', 'vulvovaginite', 'prurido', 'fluconazol', 'corrimento'],
   },
@@ -508,11 +508,11 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'DIU',
           'Tabagismo'
         ],
-        citations: [{ refId: 'cdc-sti-2021' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Substituição da microbiota dominada por Lactobacillus (produtores de ácido lático e H2O2) por flora anaeróbia mista. O pH sobe >4,5 e as bactérias anaeróbias produzem aminas (odor de peixe) e formam biofilme aderente ao epitélio vaginal.',
-        citations: [{ refId: 'cdc-sti-2021' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -531,7 +531,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'VB assintomática',
           'VB recorrente (≥3 episódios/ano)'
         ],
-        citations: [{ refId: 'cdc-sti-2021' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -550,7 +550,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Microscopia (clue cells)',
           'Gram + Nugent'
         ],
-        citations: [{ refId: 'cdc-sti-2021' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -564,7 +564,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
             'Evitar fumo',
             'Parceiro não precisa tratar de rotina'
           ],
-          citations: [{ refId: 'cdc-sti-2021' }]
+          citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -596,7 +596,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
               conduta: 'Metronidazol gel 2x/semana por 4-6 meses. Probióticos vaginais podem ajudar.'
             }
           ],
-          citations: [{ refId: 'cdc-sti-2021' }]
+          citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Episódio: 5-7 dias. Manutenção: 4-6 meses.'
       },
@@ -612,7 +612,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
           'Recorrência frequente',
           'Falha ao tratamento'
         ],
-        citations: [{ refId: 'cdc-sti-2021' }]
+        citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -629,7 +629,7 @@ export const doencasGinecoObstetricas: Doenca[] = [
     medicamentos: ['metronidazol', 'clindamicina'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'cdc-sti-2021' }],
+    citations: [{ refId: 'cdc-sti-2021', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['vaginose', 'corrimento', 'gardnerella', 'metronidazol', 'odor'],
   },

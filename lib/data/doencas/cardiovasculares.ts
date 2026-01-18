@@ -17,6 +17,26 @@ export const doencasCardiovasculares: Doenca[] = [
     ciap2: ['K77'],
     cid10: ['I50', 'I50.0', 'I50.1', 'I50.9'],
     cid11: ['BD10'],
+    // LOINC codes for heart failure diagnostic workup
+    loinc: [
+      '30934-4',  // BNP
+      '33762-6',  // NT-proBNP
+      '2160-0',   // Creatinine
+      '2951-2',   // Sodium
+      '2823-3',   // Potassium
+      '718-7',    // Hemoglobin
+      '4544-3',   // Hematocrit
+      '1920-8',   // AST
+      '1742-6',   // ALT
+      '1751-7',   // Albumin
+      '3016-3',   // TSH
+      '2093-3',   // Total cholesterol
+      '2085-9',   // HDL
+      '2571-8',   // Triglycerides
+      '4548-4',   // HbA1c
+      '2276-4',   // Ferritin
+      '2502-3',   // Transferrin saturation
+    ],
     categoria: 'cardiovascular',
     quickView: {
       definicao: 'Síndrome clínica caracterizada pela incapacidade do coração de bombear sangue suficiente para atender às necessidades metabólicas dos tecidos, ou fazê-lo apenas com pressões de enchimento elevadas.',
@@ -79,11 +99,11 @@ export const doencasCardiovasculares: Doenca[] = [
           'Cardiomiopatias',
           'Tabagismo, alcoolismo'
         ],
-        citations: [{ refId: 'diretriz-ic-2021' }]
+        citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Disfunção sistólica (FEVE reduzida) ou diastólica (FEVE preservada) leva a ativação neuro-hormonal compensatória (SRAA, sistema simpático), remodelamento cardíaco progressivo e congestão sistêmica/pulmonar.',
-        citations: [{ refId: 'diretriz-ic-2021' }]
+        citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -107,7 +127,7 @@ export const doencasCardiovasculares: Doenca[] = [
           'ICFEi (FEVE 40-49%): IC intermediária',
           'ICFEp (FEVE ≥50%): IC diastólica'
         ],
-        citations: [{ refId: 'diretriz-ic-2021' }]
+        citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -131,7 +151,7 @@ export const doencasCardiovasculares: Doenca[] = [
           'TSH',
           'Ferritina, saturação de transferrina'
         ],
-        citations: [{ refId: 'diretriz-ic-2021' }]
+        citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -147,7 +167,7 @@ export const doencasCardiovasculares: Doenca[] = [
             'Reabilitação cardíaca',
             'Vacinação anual'
           ],
-          citations: [{ refId: 'diretriz-ic-2021' }]
+          citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -177,7 +197,7 @@ export const doencasCardiovasculares: Doenca[] = [
               conduta: 'Controle de frequência com betabloqueador ou digoxina'
             }
           ],
-          citations: [{ refId: 'diretriz-ic-2021' }]
+          citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Tratamento contínuo por toda a vida'
       },
@@ -199,7 +219,7 @@ export const doencasCardiovasculares: Doenca[] = [
           'Considerar CDI/TRC',
           'Avaliação para transplante'
         ],
-        citations: [{ refId: 'diretriz-ic-2021' }]
+        citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -212,14 +232,14 @@ export const doencasCardiovasculares: Doenca[] = [
           'Monitorização do peso diário',
           'Dieta hipossódica'
         ],
-        citations: [{ refId: 'diretriz-ic-2021' }]
+        citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
     },
     protocolos: ['protocolo-ic'],
     medicamentos: ['enalapril', 'losartana', 'carvedilol', 'furosemida', 'espironolactona'],
     calculadoras: ['nyha', 'ckd-epi'],
     rastreamentos: [],
-    citations: [{ refId: 'diretriz-ic-2021' }],
+    citations: [{ refId: 'diretriz-ic-2021', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['ic', 'insuficiencia-cardiaca', 'dispneia', 'edema', 'cardiopatia'],
   },
@@ -234,6 +254,20 @@ export const doencasCardiovasculares: Doenca[] = [
     ciap2: ['K78'],
     cid10: ['I48', 'I48.0', 'I48.1', 'I48.9'],
     cid11: ['BC81.1'],
+    // LOINC codes for atrial fibrillation workup and monitoring
+    loinc: [
+      '3016-3',   // TSH (rule out hyperthyroidism)
+      '2160-0',   // Creatinine (for anticoagulant dosing)
+      '33914-3',  // GFR (CKD-EPI)
+      '2951-2',   // Sodium
+      '2823-3',   // Potassium
+      '2601-3',   // Magnesium
+      '718-7',    // Hemoglobin
+      '777-3',    // Platelets
+      '6301-6',   // INR (warfarin monitoring)
+      '5902-2',   // PT
+      '30934-4',  // BNP (heart failure screening)
+    ],
     categoria: 'cardiovascular',
     quickView: {
       definicao: 'Arritmia supraventricular caracterizada por ativação atrial desorganizada, irregular e rápida, com perda da contração atrial efetiva. É a arritmia sustentada mais comum.',
@@ -295,11 +329,11 @@ export const doencasCardiovasculares: Doenca[] = [
           'Hipertireoidismo',
           'Consumo excessivo de álcool'
         ],
-        citations: [{ refId: 'esc-fa-2020' }]
+        citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Múltiplos circuitos de reentrada nos átrios, frequentemente iniciados por focos ectópicos nas veias pulmonares. Remodelamento atrial elétrico e estrutural perpetua a arritmia. Estase atrial predispõe à formação de trombos, principalmente no apêndice atrial esquerdo.',
-        citations: [{ refId: 'esc-fa-2020' }]
+        citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -322,7 +356,7 @@ export const doencasCardiovasculares: Doenca[] = [
           'Persistente de longa duração: >1 ano',
           'Permanente: aceita, sem tentativa de restaurar ritmo'
         ],
-        citations: [{ refId: 'esc-fa-2020' }]
+        citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -343,7 +377,7 @@ export const doencasCardiovasculares: Doenca[] = [
           'Hemograma',
           'Coagulograma se varfarina'
         ],
-        citations: [{ refId: 'esc-fa-2020' }]
+        citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -359,7 +393,7 @@ export const doencasCardiovasculares: Doenca[] = [
             'Tratamento de apneia do sono',
             'Ablação por cateter em casos selecionados'
           ],
-          citations: [{ refId: 'esc-fa-2020' }]
+          citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -384,7 +418,7 @@ export const doencasCardiovasculares: Doenca[] = [
               conduta: 'EVITAR digoxina, BCC, betabloqueador. Encaminhar urgente.'
             }
           ],
-          citations: [{ refId: 'esc-fa-2020' }]
+          citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Anticoagulação geralmente contínua se indicada'
       },
@@ -406,7 +440,7 @@ export const doencasCardiovasculares: Doenca[] = [
           'FA + WPW',
           'FA refratária ao controle de frequência'
         ],
-        citations: [{ refId: 'esc-fa-2020' }]
+        citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -419,14 +453,14 @@ export const doencasCardiovasculares: Doenca[] = [
           'Anticoagulação adequada',
           'Controle de fatores precipitantes'
         ],
-        citations: [{ refId: 'esc-fa-2020' }]
+        citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
     },
     protocolos: [],
     medicamentos: ['atenolol', 'metoprolol', 'varfarina', 'rivaroxabana'],
     calculadoras: ['cha2ds2-vasc', 'has-bled'],
     rastreamentos: [],
-    citations: [{ refId: 'esc-fa-2020' }],
+    citations: [{ refId: 'esc-fa-2020', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['fa', 'fibrilacao-atrial', 'arritmia', 'anticoagulacao', 'avc'],
   },
@@ -441,6 +475,23 @@ export const doencasCardiovasculares: Doenca[] = [
     ciap2: ['K74', 'K76'],
     cid10: ['I25', 'I25.1', 'I25.9', 'I20.8'],
     cid11: ['BA80'],
+    // LOINC codes for coronary artery disease workup and monitoring
+    loinc: [
+      '2093-3',   // Total cholesterol
+      '2085-9',   // HDL
+      '13457-7',  // LDL calculated
+      '2571-8',   // Triglycerides
+      '4548-4',   // HbA1c
+      '1558-6',   // Fasting glucose
+      '2160-0',   // Creatinine
+      '6598-7',   // Troponin T (rule out ACS)
+      '33762-6',  // NT-proBNP
+      '718-7',    // Hemoglobin
+      '3016-3',   // TSH
+      '30522-7',  // hs-CRP
+      '1920-8',   // AST
+      '1742-6',   // ALT
+    ],
     categoria: 'cardiovascular',
     quickView: {
       definicao: 'Obstrução aterosclerótica das artérias coronárias levando a isquemia miocárdica durante esforço ou estresse. Caracteriza-se por angina típica previsível, estável em frequência e intensidade.',
@@ -504,11 +555,11 @@ export const doencasCardiovasculares: Doenca[] = [
           'História familiar de DAC precoce',
           'Idade avançada'
         ],
-        citations: [{ refId: 'esc-dac-2019' }]
+        citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Aterosclerose coronariana com formação de placas que reduzem o lúmen arterial. Quando a obstrução atinge >70%, o fluxo coronariano torna-se insuficiente durante esforço, causando isquemia e angina.',
-        citations: [{ refId: 'esc-dac-2019' }]
+        citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -528,7 +579,7 @@ export const doencasCardiovasculares: Doenca[] = [
           'Angina atípica: 2 características',
           'Dor torácica não cardíaca: 0-1 característica'
         ],
-        citations: [{ refId: 'esc-dac-2019' }]
+        citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -551,7 +602,7 @@ export const doencasCardiovasculares: Doenca[] = [
           'Hemograma',
           'Troponina (para descartar SCA)'
         ],
-        citations: [{ refId: 'esc-dac-2019' }]
+        citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -568,7 +619,7 @@ export const doencasCardiovasculares: Doenca[] = [
             'Manutenção do peso ideal',
             'Reabilitação cardíaca'
           ],
-          citations: [{ refId: 'esc-dac-2019' }]
+          citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -598,7 +649,7 @@ export const doencasCardiovasculares: Doenca[] = [
               conduta: 'Considerar iSGLT2 ou GLP-1RA com benefício CV'
             }
           ],
-          citations: [{ refId: 'esc-dac-2019' }]
+          citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Tratamento contínuo'
       },
@@ -620,7 +671,7 @@ export const doencasCardiovasculares: Doenca[] = [
           'Teste funcional com grande área de isquemia',
           'Disfunção ventricular esquerda'
         ],
-        citations: [{ refId: 'esc-dac-2019' }]
+        citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -633,14 +684,14 @@ export const doencasCardiovasculares: Doenca[] = [
           'Controle agressivo de LDL',
           'Reabilitação cardíaca'
         ],
-        citations: [{ refId: 'esc-dac-2019' }]
+        citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
     },
     protocolos: [],
     medicamentos: ['aas', 'atorvastatina', 'atenolol', 'isossorbida'],
     calculadoras: ['risco-cv', 'cha2ds2-vasc'],
     rastreamentos: [],
-    citations: [{ refId: 'esc-dac-2019' }],
+    citations: [{ refId: 'esc-dac-2019', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['dac', 'angina', 'coronariopatia', 'aterosclerose', 'isquemia'],
   }

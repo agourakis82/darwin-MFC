@@ -23,6 +23,26 @@ export const doencasRenaisUrologicas: Doenca[] = [
     ciap2: ['U99'],
     cid10: ['N18'],
     cid11: ['GB61'],
+    // LOINC codes for CKD diagnosis, staging and monitoring
+    loinc: [
+      '2160-0',   // Creatinine serum
+      '62238-1',  // GFR CKD-EPI
+      '33914-3',  // GFR MDRD
+      '9318-7',   // Albumin/creatinine ratio
+      '2890-2',   // Protein/creatinine ratio
+      '2951-2',   // Sodium
+      '2823-3',   // Potassium
+      '2028-9',   // CO2 (bicarbonate)
+      '2777-1',   // Phosphorus
+      '17861-6',  // Calcium total
+      '718-7',    // Hemoglobin
+      '2276-4',   // Ferritin
+      '2502-3',   // Transferrin saturation
+      '1989-3',   // Vitamin D 25-OH
+      '2132-9',   // Vitamin B12
+      '2093-3',   // Total cholesterol
+      '4548-4',   // HbA1c
+    ],
     categoria: 'urologico',
     quickView: {
       definicao: 'Anormalidade da estrutura ou função renal presente por >3 meses, com implicações para a saúde. Definida por TFG <60 mL/min/1,73m² e/ou marcadores de lesão renal (albuminúria, alterações sedimento, histopatologia, imagem, transplante).',
@@ -96,11 +116,11 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'História familiar',
           'Nefrotóxicos (AINEs, contrastes)'
         ],
-        citations: [{ refId: 'kdigo-ckd-2024' }]
+        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Perda progressiva de néfrons leva a hiperfiltração adaptativa dos remanescentes, resultando em esclerose glomerular e fibrose intersticial. Sistema renina-angiotensina-aldosterona e hiperglicemia agravam lesão. Progressão causa uremia, distúrbios hidroeletrolíticos, anemia, doença óssea e risco cardiovascular elevado.',
-        citations: [{ refId: 'kdigo-ckd-2024' }]
+        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -128,7 +148,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'DRC estágio 4: TFG 15-29',
           'DRC estágio 5: TFG <15 (DRT)'
         ],
-        citations: [{ refId: 'kdigo-ckd-2024' }]
+        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -150,7 +170,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'Hemograma, ferritina, saturação de transferrina',
           'Perfil lipídico, HbA1c'
         ],
-        citations: [{ refId: 'kdigo-ckd-2024' }]
+        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -168,7 +188,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
             'Cessação do tabagismo',
             'Evitar nefrotóxicos'
           ],
-          citations: [{ refId: 'kdigo-ckd-2024' }]
+          citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -210,7 +230,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
               conduta: 'Ferro IV se ferritina <100 ou sat <20%. EPO se Hb <10.'
             }
           ],
-          citations: [{ refId: 'kdigo-ckd-2024' }]
+          citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Tratamento crônico e progressivo.'
       },
@@ -236,7 +256,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'Hipercalemia recorrente',
           'Preparação para diálise/transplante'
         ],
-        citations: [{ refId: 'kdigo-ckd-2024' }]
+        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -255,7 +275,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
     medicamentos: ['enalapril', 'losartana', 'dapagliflozina', 'atorvastatina'],
     calculadoras: ['ckd-epi', 'mdrd', 'cockcroft-gault'],
     rastreamentos: ['rastreamento-drc'],
-    citations: [{ refId: 'kdigo-ckd-2024' }],
+    citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['drc', 'insuficiencia-renal', 'tfg', 'albuminuria', 'isglt2'],
   },

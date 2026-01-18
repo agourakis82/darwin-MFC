@@ -83,11 +83,11 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Genética',
           'Deformidades articulares'
         ],
-        citations: [{ refId: 'oarsi-2019' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Desequilíbrio entre síntese e degradação da matriz cartilaginosa, com perda progressiva de cartilagem hialina, esclerose óssea subcondral, formação de osteófitos e sinovite secundária. Envolve fatores mecânicos e bioquímicos.',
-        citations: [{ refId: 'oarsi-2019' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -110,7 +110,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'OA de mãos (IFD, IFP, CMC do polegar)',
           'OA de coluna (espondilose)'
         ],
-        citations: [{ refId: 'oarsi-2019' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -131,7 +131,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'VHS, PCR, FR, anti-CCP para descartar AR',
           'Ácido úrico se suspeita de gota'
         ],
-        citations: [{ refId: 'oarsi-2019' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -150,7 +150,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
             'Termoterapia (calor ou frio)',
             'Órteses, palmilhas, bengala'
           ],
-          citations: [{ refId: 'oarsi-2019' }]
+          citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -187,7 +187,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
               conduta: 'Infiltração intra-articular com corticoide ou ácido hialurônico. Considerar cirurgia.'
             }
           ],
-          citations: [{ refId: 'oarsi-2019' }]
+          citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Tratamento crônico, ajustado conforme sintomas.'
       },
@@ -208,7 +208,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Candidato a artroplastia',
           'Dúvida diagnóstica'
         ],
-        citations: [{ refId: 'oarsi-2019' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -228,7 +228,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
     medicamentos: ['paracetamol', 'ibuprofeno', 'diclofenaco', 'duloxetina'],
     calculadoras: ['womac', 'koos'],
     rastreamentos: [],
-    citations: [{ refId: 'oarsi-2019' }],
+    citations: [{ refId: 'oarsi-2019', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['osteoartrite', 'artrose', 'joelho', 'quadril', 'dor-articular'],
   },

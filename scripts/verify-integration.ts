@@ -61,10 +61,49 @@ if (diseasesWithHPO.length > 0) {
 // Verificar PharmGKB
 const medicationsWithPharmGKB = medicamentosConsolidados.filter((m): m is Medicamento => m.pharmgkb !== undefined);
 
-if (medicationsWithPharmGKB.length > 0) {
-  pass('PharmGKB', `PharmGKB integrado em ${medicationsWithPharmGKB.length} medicamentos`, { count: medicationsWithPharmGKB.length });
+if (medicationsWithPharmGKB.length >= 50) {
+  pass('PharmGKB', `PharmGKB integrado em ${medicationsWithPharmGKB.length} medicamentos (meta: 50+)`, { count: medicationsWithPharmGKB.length });
+} else if (medicationsWithPharmGKB.length > 0) {
+  warn('PharmGKB', `PharmGKB integrado em ${medicationsWithPharmGKB.length} medicamentos (meta: 50+, progresso: ${Math.round(medicationsWithPharmGKB.length/50*100)}%)`, { count: medicationsWithPharmGKB.length, target: 50, progress: `${Math.round(medicationsWithPharmGKB.length/50*100)}%` });
 } else {
   warn('PharmGKB', 'Nenhum medicamento com dados PharmGKB encontrado');
+}
+
+// Count total LOINC codes across diseases
+const totalLoincCodes = diseasesWithLOINC.reduce((sum, d) => sum + (d.loinc?.length || 0), 0);
+if (totalLoincCodes >= 500) {
+  pass('LOINC Coverage', `${totalLoincCodes} códigos LOINC mapeados (meta: 500+)`, { count: totalLoincCodes });
+} else if (totalLoincCodes > 0) {
+  warn('LOINC Coverage', `${totalLoincCodes} códigos LOINC mapeados (meta: 500+, progresso: ${Math.round(totalLoincCodes/500*100)}%)`, { count: totalLoincCodes, target: 500, progress: `${Math.round(totalLoincCodes/500*100)}%` });
+}
+
+// Count citations with GRADE evidence levels
+type CitationWithEvidence = { evidenceLevel?: string; studyType?: string };
+const countCitationsWithGrade = (obj: any): number => {
+  let count = 0;
+  if (Array.isArray(obj)) {
+    for (const item of obj) {
+      if (item && typeof item === 'object') {
+        if ('evidenceLevel' in item) count++;
+        count += countCitationsWithGrade(item);
+      }
+    }
+  } else if (obj && typeof obj === 'object') {
+    for (const value of Object.values(obj)) {
+      count += countCitationsWithGrade(value);
+    }
+  }
+  return count;
+};
+
+const totalCitationsWithGrade = doencasConsolidadas.reduce((sum, d) => sum + countCitationsWithGrade(d), 0);
+const gradeTarget = 500; // Target: 500+ citations with evidence levels
+if (totalCitationsWithGrade >= gradeTarget) {
+  pass('GRADE Evidence', `${totalCitationsWithGrade} citações com nível de evidência GRADE (meta: ${gradeTarget}+)`, { count: totalCitationsWithGrade });
+} else if (totalCitationsWithGrade > 0) {
+  warn('GRADE Evidence', `${totalCitationsWithGrade} citações com nível de evidência GRADE (meta: ${gradeTarget}+, progresso: ${Math.round(totalCitationsWithGrade/gradeTarget*100)}%)`, { count: totalCitationsWithGrade, target: gradeTarget, progress: `${Math.round(totalCitationsWithGrade/gradeTarget*100)}%` });
+} else {
+  warn('GRADE Evidence', 'Nenhuma citação com nível de evidência GRADE encontrado');
 }
 
 // 2. Verificar Grafo de Conhecimento

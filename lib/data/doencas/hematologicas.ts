@@ -23,6 +23,23 @@ export const doencasHematologicas: Doenca[] = [
     ciap2: ['B80'],
     cid10: ['D50', 'D50.0', 'D50.9'],
     cid11: ['3A00'],
+    // LOINC codes for iron deficiency anemia diagnosis and monitoring
+    loinc: [
+      '718-7',    // Hemoglobin
+      '4544-3',   // Hematocrit
+      '789-8',    // RBC
+      '787-2',    // MCV
+      '785-6',    // MCH
+      '786-4',    // MCHC
+      '788-0',    // RDW
+      '777-3',    // Platelets
+      '2276-4',   // Ferritin
+      '2498-4',   // Iron
+      '2500-7',   // TIBC
+      '2502-3',   // Transferrin saturation
+      '4679-7',   // Reticulocytes %
+      '14196-0',  // Reticulocytes absolute
+    ],
     categoria: 'hematologico',
     quickView: {
       definicao: 'Anemia causada por deficiência de ferro, o tipo mais comum de anemia no mundo. Caracterizada por hemácias microcíticas e hipocrômicas. Sempre investigar a causa subjacente (perda sanguínea, má absorção, demanda aumentada).',
@@ -84,11 +101,11 @@ export const doencasHematologicas: Doenca[] = [
           'Uso de AINEs',
           'Cirurgia bariátrica'
         ],
-        citations: [{ refId: 'who-anemia-2023' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'O ferro é essencial para síntese de hemoglobina. A deficiência progressiva depleta primeiro os estoques (ferritina), depois o ferro circulante, e por fim a eritropoiese fica comprometida, resultando em hemácias microcíticas e hipocrômicas.',
-        citations: [{ refId: 'who-anemia-2023' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -114,7 +131,7 @@ export const doencasHematologicas: Doenca[] = [
           'Anemia grave (Hb <7 g/dL)',
           'Síndrome de Plummer-Vinson (disfagia + anemia + glossite)'
         ],
-        citations: [{ refId: 'who-anemia-2023' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -135,7 +152,7 @@ export const doencasHematologicas: Doenca[] = [
           'EDA/Colonoscopia se indicado',
           'Pesquisa de sangue oculto nas fezes'
         ],
-        citations: [{ refId: 'who-anemia-2023' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -148,7 +165,7 @@ export const doencasHematologicas: Doenca[] = [
             'Orientação dietética',
             'Identificar e corrigir causa (ex: tratar menorragia, investigar sangramento GI)'
           ],
-          citations: [{ refId: 'who-anemia-2023' }]
+          citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -180,7 +197,7 @@ export const doencasHematologicas: Doenca[] = [
               conduta: 'Considerar transfusão se Hb <7 g/dL ou sintomas intensos.'
             }
           ],
-          citations: [{ refId: 'who-anemia-2023' }]
+          citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: '3-6 meses após normalização de Hb para repor estoques.'
       },
@@ -201,7 +218,7 @@ export const doencasHematologicas: Doenca[] = [
           'Necessidade de ferro IV',
           'Anemia grave sintomática'
         ],
-        citations: [{ refId: 'who-anemia-2023' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -219,7 +236,7 @@ export const doencasHematologicas: Doenca[] = [
     medicamentos: ['sulfato-ferroso', 'ferro-polimaltosado', 'acido-folico'],
     calculadoras: [],
     rastreamentos: ['rastreamento-anemia-gestante'],
-    citations: [{ refId: 'who-anemia-2023' }],
+    citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['anemia', 'ferro', 'ferritina', 'microcítica', 'deficiência'],
   },

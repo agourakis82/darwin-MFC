@@ -61,7 +61,23 @@ export const medicamentosGastrointestinais: Partial<Medicamento>[] = [
       { medicamento: 'Tacrolimus', gravidade: 'moderada', efeito: 'Aumento níveis tacrolimus', conduta: 'Monitorar' }
     ],
     gestacao: 'C',
-    amamentacao: { compativel: true, observacao: 'Excreção mínima. Provavelmente seguro.' }
+    amamentacao: { compativel: true, observacao: 'Excreção mínima. Provavelmente seguro.' },
+    pharmgkb: [
+      {
+        gene: 'CYP2C19',
+        variant: '*2/*2, *3/*3',
+        phenotype: 'poor_metabolizer',
+        implications: ['Increased omeprazole exposure (5-10x)', 'Enhanced acid suppression', 'May need lower dose', 'Important when used with clopidogrel'],
+        dosageRecommendations: ['Consider 50% dose reduction', 'If combined with clopidogrel: switch to pantoprazol', 'Monitor for adverse effects'],
+      },
+      {
+        gene: 'CYP2C19',
+        variant: '*17/*17',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: ['Reduced omeprazole exposure', 'Decreased acid suppression efficacy', 'May need higher dose or alternative PPI'],
+        dosageRecommendations: ['Consider higher dose (40mg vs 20mg)', 'Consider switch to pantoprazol or rabeprazol', 'Monitor H. pylori eradication success'],
+      },
+    ]
   },
 
   {
@@ -100,7 +116,16 @@ export const medicamentosGastrointestinais: Partial<Medicamento>[] = [
       { medicamento: 'Rilpivirina', gravidade: 'grave', efeito: 'Reduz absorção rilpivirina', conduta: 'Contraindicado' }
     ],
     gestacao: 'B',
-    amamentacao: { compativel: true, observacao: 'Provavelmente seguro' }
+    amamentacao: { compativel: true, observacao: 'Provavelmente seguro' },
+    pharmgkb: [
+      {
+        gene: 'CYP2C19',
+        variant: '*2/*2, *3/*3',
+        phenotype: 'poor_metabolizer',
+        implications: ['Minimal impact on pantoprazol pharmacokinetics', 'Primarily non-enzymatic metabolism', 'Preferred PPI for use with clopidogrel'],
+        dosageRecommendations: ['Standard dosing appropriate', 'First-line choice when clopidogrel co-administered', 'No genetic testing required'],
+      },
+    ]
   },
 
   {
@@ -135,7 +160,23 @@ export const medicamentosGastrointestinais: Partial<Medicamento>[] = [
       { medicamento: 'Clopidogrel', gravidade: 'moderada', efeito: 'Menor inibição CYP2C19 que omeprazol', conduta: 'Preferir pantoprazol' }
     ],
     gestacao: 'C',
-    amamentacao: { compativel: true, observacao: 'Provavelmente seguro' }
+    amamentacao: { compativel: true, observacao: 'Provavelmente seguro' },
+    pharmgkb: [
+      {
+        gene: 'CYP2C19',
+        variant: '*2/*2, *3/*3',
+        phenotype: 'poor_metabolizer',
+        implications: ['Increased esomeprazole exposure (3-6x)', 'S-enantiomer of omeprazol with more predictable metabolism', 'Enhanced acid suppression'],
+        dosageRecommendations: ['Consider lower dose (20mg instead of 40mg)', 'If combined with clopidogrel: prefer pantoprazol', 'Monitor for adverse effects'],
+      },
+      {
+        gene: 'CYP2C19',
+        variant: '*17/*17',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: ['Reduced esomeprazole exposure', 'May have decreased therapeutic efficacy', 'More common in Scandinavian populations'],
+        dosageRecommendations: ['Consider higher dose', 'Consider switch to pantoprazol or rabeprazol', 'Monitor treatment success'],
+      },
+    ]
   },
 
   // ============================================================================

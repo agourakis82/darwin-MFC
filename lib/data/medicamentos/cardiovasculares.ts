@@ -69,6 +69,20 @@ export const cardiovasculares: Partial<Medicamento>[] = [
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Compatível' },
     doencasRelacionadas: ['insuficiencia-cardiaca', 'hipertensao-arterial'],
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        phenotype: 'poor_metabolizer',
+        implications: ['Increased carvedilol plasma levels', 'Enhanced beta-blockade effect'],
+        dosageRecommendations: ['Start with lower dose', 'Monitor for bradycardia and hypotension'],
+      },
+      {
+        gene: 'CYP2D6',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: ['Decreased carvedilol plasma levels', 'May have reduced efficacy'],
+        dosageRecommendations: ['Standard dosing, may need dose increase', 'Monitor clinical response'],
+      },
+    ],
     lastUpdate: '2024-12',
     tags: ['betabloqueador', 'IC', 'carvedilol']
   },
@@ -104,6 +118,40 @@ export const cardiovasculares: Partial<Medicamento>[] = [
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Compatível' },
     doencasRelacionadas: ['enxaqueca', 'hipertensao-arterial'],
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*3, *4, *5, *6',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced propranolol metabolism',
+          'Higher plasma levels (2-3x increase)',
+          'More pronounced beta-blockade effects',
+          'Increased risk of bradycardia and hypotension',
+        ],
+        dosageRecommendations: [
+          'Start with lower doses (10-20mg)',
+          'Titrate based on heart rate and blood pressure',
+          'May need dose reduction',
+          'Monitor for excessive bradycardia',
+        ],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1xN, *2xN',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: [
+          'Rapid propranolol metabolism',
+          'Lower plasma levels',
+          'May have reduced efficacy',
+        ],
+        dosageRecommendations: [
+          'May need higher doses for effect',
+          'Consider shorter dosing intervals',
+          'Alternative beta-blocker may be considered if poor response',
+        ],
+      },
+    ],
     lastUpdate: '2024-12',
     tags: ['betabloqueador', 'enxaqueca', 'tremor']
   },
@@ -242,6 +290,22 @@ export const cardiovasculares: Partial<Medicamento>[] = [
     gestacao: 'X',
     amamentacao: { compativel: false, observacao: 'Não recomendado' },
     doencasRelacionadas: ['dislipidemia', 'doenca-arterial-coronariana'],
+    pharmgkb: [
+      {
+        gene: 'SLCO1B1',
+        variant: '*5/*5, *15/*15',
+        phenotype: 'poor_metabolizer',
+        implications: ['Significantly increased simvastatin plasma levels', 'High risk of myopathy and rhabdomyolysis'],
+        dosageRecommendations: ['Avoid simvastatin >20mg', 'Consider pravastatin or rosuvastatin', 'Monitor CK levels'],
+      },
+      {
+        gene: 'SLCO1B1',
+        variant: '*1/*5, *1/*15',
+        phenotype: 'intermediate_metabolizer',
+        implications: ['Increased simvastatin levels', 'Elevated myopathy risk'],
+        dosageRecommendations: ['Limit dose to 40mg/day', 'Monitor for muscle symptoms'],
+      },
+    ],
     lastUpdate: '2024-12',
     tags: ['estatina', 'hipolipemiante', 'colesterol']
   },
@@ -275,6 +339,22 @@ export const cardiovasculares: Partial<Medicamento>[] = [
     gestacao: 'X',
     amamentacao: { compativel: false, observacao: 'Não recomendado' },
     doencasRelacionadas: ['dislipidemia', 'doenca-arterial-coronariana', 'acidente-vascular-cerebral'],
+    pharmgkb: [
+      {
+        gene: 'SLCO1B1',
+        variant: '*5/*5, *15/*15',
+        phenotype: 'poor_metabolizer',
+        implications: ['Increased atorvastatin plasma levels', 'Elevated myopathy risk'],
+        dosageRecommendations: ['Start with lower dose (10-20mg)', 'Consider pravastatin or rosuvastatin', 'Monitor CK levels'],
+      },
+      {
+        gene: 'SLCO1B1',
+        variant: '*1/*5, *1/*15',
+        phenotype: 'intermediate_metabolizer',
+        implications: ['Moderately increased atorvastatin levels'],
+        dosageRecommendations: ['Standard dosing with monitoring', 'Monitor for muscle symptoms'],
+      },
+    ],
     lastUpdate: '2024-12',
     tags: ['estatina', 'alta-intensidade', 'prevenção-CV']
   },
@@ -341,6 +421,29 @@ export const cardiovasculares: Partial<Medicamento>[] = [
     gestacao: 'B',
     amamentacao: { compativel: false, observacao: 'Não recomendado' },
     doencasRelacionadas: ['doenca-arterial-coronariana', 'acidente-vascular-cerebral'],
+    pharmgkb: [
+      {
+        gene: 'CYP2C19',
+        variant: '*2/*2, *3/*3',
+        phenotype: 'poor_metabolizer',
+        implications: ['Reduced conversion to active metabolite', 'Higher risk of cardiovascular events', 'Increased stent thrombosis risk'],
+        dosageRecommendations: ['Consider prasugrel or ticagrelor', 'If clopidogrel required: consider higher loading dose (600mg)', 'Genetic testing recommended for ACS/PCI patients'],
+      },
+      {
+        gene: 'CYP2C19',
+        variant: '*1/*2, *1/*3',
+        phenotype: 'intermediate_metabolizer',
+        implications: ['Moderately reduced active metabolite formation', 'Slightly elevated cardiovascular risk'],
+        dosageRecommendations: ['Consider alternative P2Y12 inhibitor for high-risk patients', 'Standard dosing may be suboptimal'],
+      },
+      {
+        gene: 'CYP2C19',
+        variant: '*17/*17',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: ['Increased active metabolite formation', 'Elevated bleeding risk'],
+        dosageRecommendations: ['Standard dosing', 'Monitor for bleeding complications'],
+      },
+    ],
     lastUpdate: '2024-12',
     tags: ['antiagregante', 'P2Y12', 'stent']
   },
@@ -372,6 +475,29 @@ export const cardiovasculares: Partial<Medicamento>[] = [
     gestacao: 'X',
     amamentacao: { compativel: true, observacao: 'Compatível' },
     doencasRelacionadas: ['fibrilacao-atrial'],
+    pharmgkb: [
+      {
+        gene: 'CYP2C9',
+        variant: '*2/*2, *3/*3, *2/*3',
+        phenotype: 'poor_metabolizer',
+        implications: ['Reduced warfarin metabolism', 'Higher bleeding risk', 'Longer time to stable INR'],
+        dosageRecommendations: ['Reduce initial dose by 30-50%', 'Start with 2-3mg/day instead of 5mg', 'More frequent INR monitoring (2-3x/week initially)'],
+      },
+      {
+        gene: 'CYP2C9',
+        variant: '*1/*2, *1/*3',
+        phenotype: 'intermediate_metabolizer',
+        implications: ['Moderately reduced warfarin metabolism', 'Increased bleeding risk'],
+        dosageRecommendations: ['Consider 20-30% dose reduction', 'Closer INR monitoring'],
+      },
+      {
+        gene: 'VKORC1',
+        variant: '-1639G>A (AA)',
+        phenotype: 'poor_metabolizer',
+        implications: ['Increased warfarin sensitivity', 'Lower dose requirements'],
+        dosageRecommendations: ['Reduce dose by 25-50%', 'Combined with CYP2C9 variants: use FDA warfarin dosing table'],
+      },
+    ],
     lastUpdate: '2024-12',
     tags: ['anticoagulante', 'varfarina', 'INR']
   },

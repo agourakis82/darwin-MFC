@@ -17,16 +17,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Development
 ```bash
-npm run dev          # Start development server (localhost:3000)
-npm run build        # Build for production (static export)
-npm run start        # Serve production build locally
-npm run lint         # ESLint static analysis
-npm run verify       # Run integration verification script
-npm run test:integration  # Same as verify
+npm run dev              # Start development server (localhost:3000)
+npm run build            # Build for production (static export)
+npm run build:custom-domain  # Build for custom domain deployment
+npm run start            # Serve production build locally
+npm run type-check       # TypeScript type checking
+npm run verify           # Integration verification (ontologies, graph, translations)
+npm run test:integration # Same as verify
 ```
 
+### Environment Variables
+- `USE_BASE_PATH=true` - Build with `/darwin-MFC` base path for github.io subdirectory deployment
+
 ### Deployment
-The app is configured for static export (`output: "export"` in next.config.ts) suitable for GitHub Pages or similar static hosting.
+The app is configured for static export (`output: "export"` in next.config.ts). Default build targets custom domain (no basePath), set `USE_BASE_PATH=true` for github.io subdirectory.
 
 ## Architecture & Code Structure
 
@@ -162,6 +166,96 @@ All content is stored as TypeScript constants (no database):
 
 **Data Linking:** Critical analyses link to screenings via `rastreamentoId` field.
 
+### Knowledge Graph System
+
+**Location:** `lib/graph/`
+
+A semantic graph connecting all medical entities:
+
+- `builder.ts`: Constructs graph from disease/medication data
+- `types.ts`: Node and edge type definitions
+
+**Node Types:** `doenca`, `medicamento`, `sintoma`, `exame`, `gene`, `protocolo`
+
+**Edge Types:**
+- `causa`: disease → symptom
+- `diagnostica`: exam → disease
+- `trata`: medication → disease
+- `interage`: medication ↔ medication (drug interactions)
+- `metaboliza`: gene → medication (pharmacogenomics)
+- `associado`: protocol → disease
+
+**Usage:**
+```tsx
+import { buildKnowledgeGraph } from '@/lib/graph/builder';
+const graph = buildKnowledgeGraph();
+// graph.nodes, graph.edges
+```
+
+### Semantic Search
+
+**Location:** `lib/search/`
+
+Enhanced search with synonym expansion and medical terminology:
+
+- `semantic.ts`: Fuse.js-based search with synonym expansion
+- `synonyms.ts`: Medical synonym mappings
+
+**Key Functions:**
+- `semanticSearch()`: Search with automatic synonym expansion
+- `facetedSearch()`: Combined filter + search
+- `calculateSemanticSimilarity()`: String similarity scoring
+
+**Usage:**
+```tsx
+import { semanticSearch } from '@/lib/search/semantic';
+const results = semanticSearch(items, 'diabetes', [
+  { name: 'titulo', weight: 2 },
+  { name: 'descricao', weight: 1 }
+]);
+```
+
+### Clinical Calculators
+
+**Location:** `lib/calculators/`
+
+25+ validated clinical scoring calculators:
+
+- `types.ts`: Calculator interface definitions
+- `registry.ts`: Central calculator registry
+- `formulas.ts`: Shared calculation formulas
+- `calculators/`: Individual calculator implementations
+
+**Available Calculators:** APGAR, APACHE II, ASCVD, Bishop, Centor, CHA₂DS₂-VASc, Child-Pugh, CURB-65, Framingham, GAD-7, GCS, HAS-BLED, HEART, 4Ts HIT, MELD-Na, MMSE, NEWS2, Ottawa Ankle, PESI, PHQ-9, qSOFA, SOFA, TIMI, Wells PE, Apfel
+
+**Pattern for adding calculators:**
+```tsx
+// lib/calculators/calculators/new-score.ts
+export const newScoreCalculator: Calculator = {
+  id: 'new-score',
+  name: 'New Score',
+  category: 'cardiology',
+  calculate: (inputs) => ({ score, interpretation }),
+};
+```
+
+### Ontology Integration
+
+Medical data includes standardized ontology codes:
+
+**Disease Ontologies:**
+- `cid10`: ICD-10 codes (required for all diseases)
+- `ciap2`: ICPC-2 codes for primary care
+- `loinc`: LOINC codes for laboratory tests
+- `ordo`: ORDO codes for rare diseases
+- `hpo`: Human Phenotype Ontology codes
+
+**Medication Ontologies:**
+- `atcCode`: ATC classification
+- `pharmgkb`: PharmGKB pharmacogenomics data
+
+The verification script (`npm run verify`) validates ontology coverage.
+
 ### Styling & Theme System
 
 **Global Styles:** `app/globals.css`
@@ -224,6 +318,15 @@ State persists automatically to localStorage.
 - Tailwind breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
 - Test print styles for academic PDF export
 
+### Testing
+
+**Design System Tests:** `lib/design-system/__tests__/`
+- `accessibility.test.tsx`: WCAG compliance tests
+- `integration.test.tsx`: Component integration tests
+- `performance.test.tsx`: Rendering performance tests
+
+**Note:** Tests are excluded from TypeScript compilation (see `tsconfig.json` excludes) but can be run with Jest.
+
 ## Key Technical Decisions
 
 1. **Static Export:** App is fully static (no server-side runtime) for easy deployment
@@ -238,3 +341,11 @@ State persists automatically to localStorage.
 This is an academic/scientific project for the **Darwin Medical Foundation Cluster (Darwin-MFC)** platform. The goal is Nature/Cell-level academic rigor for analyzing healthcare screening guidelines globally. Priority is given to accuracy, citations, and critical systemic analysis over features.
 
 **Live Demo:** <https://mfc.agourakis.med.br>
+
+## Strategic Planning
+
+For implementation roadmap and strategic direction, see:
+- `ROADMAP.md` - 12-month implementation plan with 4 phases
+- `PLANO_SUPERACAO_SOTA_DARWIN.md` - Strategic 6-dimension expansion plan
+- `SOTA_COMPETITIVE_ANALYSIS.md` - Competitive analysis vs. UpToDate, Medscape, etc.
+- `APS_MFC_FOCUS.md` - Strategic repositioning for Primary Care focus
