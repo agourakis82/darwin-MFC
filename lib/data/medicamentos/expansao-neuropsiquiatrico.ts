@@ -674,7 +674,39 @@ export const medicamentosNeuropsiquiatricos: Partial<Medicamento>[] = [
       { tfg: '<15', ajuste: 'Contraindicado' }
     ],
     gestacao: 'C',
-    amamentacao: { compativel: false, observacao: 'Dados limitados. Preferir outros.' }
+    amamentacao: { compativel: false, observacao: 'Dados limitados. Preferir outros.' },
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*3, *4, *5, *6',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced duloxetine metabolism',
+          'Higher plasma levels (up to 3x)',
+          'Increased nausea and other adverse effects',
+        ],
+        dosageRecommendations: [
+          'Start at 30mg/day',
+          'May not need dose escalation',
+          'Monitor for adverse effects carefully',
+        ],
+      },
+      {
+        gene: 'CYP1A2',
+        variant: '*1F/*1F (induced by smoking)',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: [
+          'Increased duloxetine metabolism in smokers',
+          'Lower plasma levels',
+          'May have reduced efficacy',
+        ],
+        dosageRecommendations: [
+          'May need higher doses (90-120mg/day)',
+          'If patient quits smoking: reduce dose by 30%',
+          'Monitor for treatment response',
+        ],
+      },
+    ]
   },
 
   // ============================================================================
@@ -816,7 +848,39 @@ export const medicamentosNeuropsiquiatricos: Partial<Medicamento>[] = [
       { medicamento: 'Carbamazepina/Fenitoína', gravidade: 'grave', efeito: 'Redução 80% quetiapina', conduta: 'Aumentar quetiapina 5x' }
     ],
     gestacao: 'C',
-    amamentacao: { compativel: false, observacao: 'Evitar. Sedação no lactente.' }
+    amamentacao: { compativel: false, observacao: 'Evitar. Sedação no lactente.' },
+    pharmgkb: [
+      {
+        gene: 'CYP3A4',
+        variant: '*22/*22',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced quetiapine metabolism',
+          'Higher plasma levels (2-3x increase)',
+          'Increased sedation and metabolic effects',
+        ],
+        dosageRecommendations: [
+          'Start at 50% of standard dose',
+          'Slower titration required',
+          'Monitor for excessive sedation',
+        ],
+      },
+      {
+        gene: 'CYP3A4',
+        variant: '*1B/*1B',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: [
+          'Increased quetiapine metabolism',
+          'Lower plasma levels',
+          'May require higher doses for efficacy',
+        ],
+        dosageRecommendations: [
+          'May need higher maintenance dose',
+          'Monitor clinical response',
+          'Consider TDM if poor response',
+        ],
+      },
+    ]
   },
 
   {
@@ -868,7 +932,39 @@ export const medicamentosNeuropsiquiatricos: Partial<Medicamento>[] = [
       { medicamento: 'Benzodiazepínicos IM', gravidade: 'grave', efeito: 'Depressão cardiorrespiratória', conduta: 'Não administrar IM juntos' }
     ],
     gestacao: 'C',
-    amamentacao: { compativel: false, observacao: 'Excreção significativa. Sedação e ganho peso no lactente.' }
+    amamentacao: { compativel: false, observacao: 'Excreção significativa. Sedação e ganho peso no lactente.' },
+    pharmgkb: [
+      {
+        gene: 'CYP1A2',
+        variant: '*1F/*1F',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: [
+          'Increased olanzapine metabolism',
+          'Lower plasma levels (especially in smokers)',
+          'Smokers have 30-40% lower olanzapine levels',
+        ],
+        dosageRecommendations: [
+          'May need higher doses (15-20mg/day)',
+          'Monitor for treatment response',
+          'If patient quits smoking: reduce dose by 30-50%',
+        ],
+      },
+      {
+        gene: 'CYP1A2',
+        variant: '*1C/*1C',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced olanzapine metabolism',
+          'Higher plasma levels',
+          'Increased sedation and metabolic effects',
+        ],
+        dosageRecommendations: [
+          'Start at lower dose (5mg/day)',
+          'Monitor for excessive sedation',
+          'Consider TDM to guide dosing',
+        ],
+      },
+    ]
   },
 
   {

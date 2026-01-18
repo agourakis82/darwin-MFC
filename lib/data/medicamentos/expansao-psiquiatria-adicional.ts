@@ -828,7 +828,38 @@ export const medicamentosPsiquiatriaAdicional: Partial<Medicamento>[] = [
     amamentacao: { compativel: true, observacao: 'Provavelmente compatível' },
     doencasRelacionadas: ['depressao', 'insonia'],
     citations: [],
-    lastUpdate: '2024-01-15'
+    lastUpdate: '2024-01-15',
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*3, *4, *5, *6',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced mirtazapine metabolism',
+          'Higher plasma levels',
+          'Increased sedation risk',
+        ],
+        dosageRecommendations: [
+          'Start at 15mg (standard)',
+          'May have enhanced sedation at lower doses',
+          'Monitor for excessive drowsiness',
+        ],
+      },
+      {
+        gene: 'CYP1A2',
+        variant: '*1F/*1F (induced by smoking)',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: [
+          'Increased mirtazapine metabolism in smokers',
+          'Lower plasma levels',
+          'May have reduced efficacy',
+        ],
+        dosageRecommendations: [
+          'May need higher doses',
+          'If patient quits smoking: monitor for increased sedation',
+        ],
+      },
+    ]
   },
   {
     id: 'buspirona',
@@ -863,7 +894,24 @@ export const medicamentosPsiquiatriaAdicional: Partial<Medicamento>[] = [
     amamentacao: { compativel: false, observacao: 'Dados insuficientes' },
     doencasRelacionadas: ['ansiedade', 'tag'],
     citations: [],
-    lastUpdate: '2024-01-15'
+    lastUpdate: '2024-01-15',
+    pharmgkb: [
+      {
+        gene: 'CYP3A4',
+        variant: '*22/*22',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced buspirone metabolism',
+          'Higher plasma levels (up to 4-5x)',
+          'Enhanced anxiolytic effect but more dizziness',
+        ],
+        dosageRecommendations: [
+          'Start at lower dose (5mg 2x/day)',
+          'Slower dose titration',
+          'Monitor for dizziness and sedation',
+        ],
+      },
+    ]
   },
   {
     id: 'trazodona',
@@ -903,7 +951,24 @@ export const medicamentosPsiquiatriaAdicional: Partial<Medicamento>[] = [
     amamentacao: { compativel: true, observacao: 'Provavelmente compatível em baixas doses' },
     doencasRelacionadas: ['depressao', 'insonia'],
     citations: [],
-    lastUpdate: '2024-01-15'
+    lastUpdate: '2024-01-15',
+    pharmgkb: [
+      {
+        gene: 'CYP3A4',
+        variant: '*22/*22',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced trazodone metabolism',
+          'Higher plasma levels',
+          'Increased sedation and orthostatic hypotension',
+        ],
+        dosageRecommendations: [
+          'Start at lower dose (25mg for insomnia)',
+          'Slower titration for depression',
+          'Monitor for excessive sedation and priapism risk',
+        ],
+      },
+    ]
   },
   {
     id: 'agomelatina',
@@ -938,7 +1003,39 @@ export const medicamentosPsiquiatriaAdicional: Partial<Medicamento>[] = [
     monitorizacao: ['Transaminases: basal, 3, 6, 12 e 24 semanas'],
     doencasRelacionadas: ['depressao'],
     citations: [],
-    lastUpdate: '2024-01-15'
+    lastUpdate: '2024-01-15',
+    pharmgkb: [
+      {
+        gene: 'CYP1A2',
+        variant: '*1F/*1F (induced by smoking)',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: [
+          'Smokers have markedly increased CYP1A2 activity',
+          'Agomelatine levels reduced 50-75% in smokers',
+          'May have inadequate therapeutic response',
+        ],
+        dosageRecommendations: [
+          'Consider 50mg instead of 25mg in heavy smokers',
+          'If patient quits smoking: reduce dose within 1 week',
+          'Non-smokers: standard 25mg dosing',
+        ],
+      },
+      {
+        gene: 'CYP1A2',
+        variant: '*1C/*1C',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced agomelatine metabolism',
+          'Higher plasma levels',
+          'Increased hepatotoxicity risk',
+        ],
+        dosageRecommendations: [
+          'Start at 25mg',
+          'More frequent liver function monitoring',
+          'Avoid in combination with CYP1A2 inhibitors',
+        ],
+      },
+    ]
   },
   {
     id: 'vortioxetina',
@@ -973,6 +1070,38 @@ export const medicamentosPsiquiatriaAdicional: Partial<Medicamento>[] = [
     amamentacao: { compativel: false, observacao: 'Dados insuficientes' },
     doencasRelacionadas: ['depressao'],
     citations: [],
-    lastUpdate: '2024-01-15'
+    lastUpdate: '2024-01-15',
+    pharmgkb: [
+      {
+        gene: 'CYP2D6',
+        variant: '*3, *4, *5, *6',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced vortioxetine metabolism',
+          'Approximately 2x higher plasma levels',
+          'Increased nausea and other adverse effects',
+        ],
+        dosageRecommendations: [
+          'Consider maximum dose of 10mg/day',
+          'Start at 5mg/day',
+          'Monitor closely for adverse effects',
+        ],
+      },
+      {
+        gene: 'CYP2D6',
+        variant: '*1/*1xN, *2/*2xN',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: [
+          'Increased vortioxetine metabolism',
+          'Lower plasma levels',
+          'May have reduced therapeutic response',
+        ],
+        dosageRecommendations: [
+          'May need higher doses (15-20mg/day)',
+          'If inadequate response at 10mg, increase dose',
+          'Monitor for treatment response',
+        ],
+      },
+    ]
   },
 ];

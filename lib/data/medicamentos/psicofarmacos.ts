@@ -261,7 +261,38 @@ export const psicofarmacos: Medicamento[] = [
     calculadoras: ['gad-7'],
     citations: [{ refId: 'rename-2024' }],
     lastUpdate: '2024-12',
-    tags: ['benzodiazepínico', 'ansiolitico', 'anticonvulsivante']
+    tags: ['benzodiazepínico', 'ansiolitico', 'anticonvulsivante'],
+    pharmgkb: [
+      {
+        gene: 'CYP2C19',
+        variant: '*2/*2, *3/*3',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced diazepam metabolism',
+          'Prolonged half-life (up to 2-4x longer)',
+          'Increased sedation and risk of accumulation',
+        ],
+        dosageRecommendations: [
+          'Start at 50% of standard dose',
+          'Extend dosing intervals',
+          'Monitor for oversedation, especially in elderly',
+        ],
+      },
+      {
+        gene: 'CYP2C19',
+        variant: '*17/*17',
+        phenotype: 'ultra_rapid_metabolizer',
+        implications: [
+          'Increased diazepam metabolism',
+          'Shorter half-life',
+          'May have reduced efficacy or duration',
+        ],
+        dosageRecommendations: [
+          'May need higher or more frequent dosing',
+          'Consider alternative benzodiazepine (lorazepam)',
+        ],
+      },
+    ]
   },
   {
     id: 'clonazepam',
@@ -312,7 +343,24 @@ export const psicofarmacos: Medicamento[] = [
     calculadoras: [],
     citations: [{ refId: 'rename-2024' }],
     lastUpdate: '2024-12',
-    tags: ['benzodiazepínico', 'ansiolitico', 'anticonvulsivante', 'panico']
+    tags: ['benzodiazepínico', 'ansiolitico', 'anticonvulsivante', 'panico'],
+    pharmgkb: [
+      {
+        gene: 'CYP3A4',
+        variant: '*22/*22',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced clonazepam metabolism',
+          'Higher plasma levels',
+          'Prolonged sedation and increased dependence risk',
+        ],
+        dosageRecommendations: [
+          'Start at 0.25mg or less',
+          'Slower dose titration',
+          'Extended intervals between dose increases',
+        ],
+      },
+    ]
   },
   {
     id: 'haloperidol',

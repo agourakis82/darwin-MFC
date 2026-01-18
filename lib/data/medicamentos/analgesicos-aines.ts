@@ -498,6 +498,36 @@ export const analgesicosAines: Medicamento[] = [
     calculadoras: ['conversao-opioides'],
     citations: [{ refId: 'rename-2024' }],
     lastUpdate: '2024-12',
-    tags: ['opioide', 'dor-oncologica', 'paliativos']
+    tags: ['opioide', 'dor-oncologica', 'paliativos'],
+    pharmgkb: [
+      {
+        gene: 'OPRM1',
+        variant: 'A118G (rs1799971)',
+        phenotype: 'reduced_response',
+        implications: [
+          'Reduced mu-opioid receptor binding',
+          'May require higher morphine doses for pain control',
+          'Lower risk of opioid-induced nausea',
+        ],
+        dosageRecommendations: [
+          'May need 10-30% higher doses for adequate analgesia',
+          'Titrate to effect more aggressively',
+          'Consider pharmacogenomics panel before opioid therapy',
+        ],
+      },
+      {
+        gene: 'COMT',
+        variant: 'Val158Met (rs4680)',
+        phenotype: 'met_met_high_pain_sensitivity',
+        implications: [
+          'Met/Met: Higher pain sensitivity, better morphine response',
+          'Val/Val: Lower pain sensitivity, may need less morphine',
+        ],
+        dosageRecommendations: [
+          'Met/Met carriers may respond better to opioids',
+          'Val/Val carriers may need alternative approaches',
+        ],
+      },
+    ]
   }
 ];

@@ -227,7 +227,38 @@ export const medicamentosEmergencia: Partial<Medicamento>[] = [
       { medicamento: 'Inibidores CYP3A4', gravidade: 'moderada', efeito: 'Aumenta níveis midazolam', conduta: 'Reduzir dose' }
     ],
     gestacao: 'D',
-    amamentacao: { compativel: false, observacao: 'Evitar, especialmente doses repetidas' }
+    amamentacao: { compativel: false, observacao: 'Evitar, especialmente doses repetidas' },
+    pharmgkb: [
+      {
+        gene: 'CYP3A4',
+        variant: '*22/*22',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced midazolam metabolism',
+          'Higher plasma levels (up to 3x)',
+          'Prolonged sedation and respiratory depression risk',
+        ],
+        dosageRecommendations: [
+          'Start at 50% of standard dose',
+          'Longer titration intervals',
+          'Have flumazenil readily available',
+        ],
+      },
+      {
+        gene: 'CYP3A5',
+        variant: '*3/*3',
+        phenotype: 'non_expressor',
+        implications: [
+          'No CYP3A5 activity (common in Caucasians)',
+          'Relies entirely on CYP3A4 for metabolism',
+          'Standard midazolam pharmacokinetics',
+        ],
+        dosageRecommendations: [
+          'Standard dosing in CYP3A5 non-expressors',
+          'Consider CYP3A4 status more important',
+        ],
+      },
+    ]
   },
 
   {

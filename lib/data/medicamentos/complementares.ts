@@ -419,7 +419,37 @@ export const medicamentosComplementares: Medicamento[] = [
     orientacoesPaciente: ['Causa sonolência', 'Alto risco de dependência', 'Não parar abruptamente'],
     doencasRelacionadas: ['epilepsia'], calculadoras: [],
     citations: [{ refId: 'rename-2024' }], lastUpdate: '2024-12',
-    tags: ['anticonvulsivante', 'barbiturico', 'sedativo']
+    tags: ['anticonvulsivante', 'barbiturico', 'sedativo'],
+    pharmgkb: [
+      {
+        gene: 'CYP2C9',
+        variant: '*2/*2, *3/*3, *2/*3',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced phenobarbital metabolism',
+          'Higher plasma levels',
+          'Increased sedation and CNS depression risk',
+        ],
+        dosageRecommendations: [
+          'Consider lower starting dose',
+          'Monitor for excessive sedation',
+          'Use therapeutic drug monitoring (target: 15-40 mcg/mL)',
+        ],
+      },
+      {
+        gene: 'CYP2C19',
+        variant: '*2/*2, *3/*3',
+        phenotype: 'poor_metabolizer',
+        implications: [
+          'Reduced secondary metabolism pathway',
+          'Slightly higher drug levels',
+        ],
+        dosageRecommendations: [
+          'Standard dosing with monitoring',
+          'Adjust based on clinical response and levels',
+        ],
+      },
+    ]
   },
   // VITAMINAS E SUPLEMENTOS
   {
