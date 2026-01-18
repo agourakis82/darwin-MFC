@@ -43,8 +43,8 @@ import { cn } from '@/lib/utils';
 // =============================================================================
 
 export interface OntologyCodesDisplayProps {
-  /** LOINC codes for laboratory exams */
-  loinc?: string[];
+  /** LOINC codes for laboratory exams - supports both string[] and {code, name}[] formats */
+  loinc?: string[] | { code: string; name: string }[];
 
   /** Human Phenotype Ontology codes */
   hpo?: string[];
@@ -383,7 +383,9 @@ export function OntologyCodesDisplay({
   const sections: Array<{ type: OntologyType; codes: string[] }> = [];
 
   if (loinc && loinc.length > 0) {
-    sections.push({ type: 'loinc', codes: loinc });
+    // Normalize LOINC codes - handle both string[] and {code, name}[] formats
+    const loincCodes = loinc.map(item => typeof item === 'string' ? item : item.code);
+    sections.push({ type: 'loinc', codes: loincCodes });
   }
   if (hpo && hpo.length > 0) {
     sections.push({ type: 'hpo', codes: hpo });

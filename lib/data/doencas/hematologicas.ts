@@ -25,20 +25,20 @@ export const doencasHematologicas: Doenca[] = [
     cid11: ['3A00'],
     // LOINC codes for iron deficiency anemia diagnosis and monitoring
     loinc: [
-      '718-7',    // Hemoglobin
-      '4544-3',   // Hematocrit
-      '789-8',    // RBC
-      '787-2',    // MCV
-      '785-6',    // MCH
-      '786-4',    // MCHC
-      '788-0',    // RDW
-      '777-3',    // Platelets
-      '2276-4',   // Ferritin
-      '2498-4',   // Iron
-      '2500-7',   // TIBC
-      '2502-3',   // Transferrin saturation
-      '4679-7',   // Reticulocytes %
-      '14196-0',  // Reticulocytes absolute
+      { code: '718-7', name: 'Hemoglobin' },
+      { code: '4544-3', name: 'Hematocrit' },
+      { code: '789-8', name: 'RBC' },
+      { code: '787-2', name: 'MCV' },
+      { code: '785-6', name: 'MCH' },
+      { code: '786-4', name: 'MCHC' },
+      { code: '788-0', name: 'RDW' },
+      { code: '777-3', name: 'Platelets' },
+      { code: '2276-4', name: 'Ferritin' },
+      { code: '2498-4', name: 'Iron' },
+      { code: '2500-7', name: 'TIBC' },
+      { code: '2502-3', name: 'Transferrin saturation' },
+      { code: '4679-7', name: 'Reticulocytes %' },
+      { code: '14196-0', name: 'Reticulocytes absolute' },
     ],
     categoria: 'hematologico',
     quickView: {
@@ -101,11 +101,11 @@ export const doencasHematologicas: Doenca[] = [
           'Uso de AINEs',
           'Cirurgia bariátrica'
         ],
-        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'O ferro é essencial para síntese de hemoglobina. A deficiência progressiva depleta primeiro os estoques (ferritina), depois o ferro circulante, e por fim a eritropoiese fica comprometida, resultando em hemácias microcíticas e hipocrômicas.',
-        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -131,7 +131,7 @@ export const doencasHematologicas: Doenca[] = [
           'Anemia grave (Hb <7 g/dL)',
           'Síndrome de Plummer-Vinson (disfagia + anemia + glossite)'
         ],
-        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -152,7 +152,7 @@ export const doencasHematologicas: Doenca[] = [
           'EDA/Colonoscopia se indicado',
           'Pesquisa de sangue oculto nas fezes'
         ],
-        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -165,7 +165,7 @@ export const doencasHematologicas: Doenca[] = [
             'Orientação dietética',
             'Identificar e corrigir causa (ex: tratar menorragia, investigar sangramento GI)'
           ],
-          citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -198,9 +198,9 @@ export const doencasHematologicas: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'cochrane-iron-supplementation', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'bsh-iron-deficiency-2021', evidenceLevel: 'high', studyType: 'guideline' }
+            { refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'cochrane-iron-supplementation', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'bsh-iron-deficiency-2021', evidenceLevel: 'A', studyType: 'Guideline' }
           ]
         },
         duracao: '3-6 meses após normalização de Hb para repor estoques.'
@@ -222,7 +222,7 @@ export const doencasHematologicas: Doenca[] = [
           'Necessidade de ferro IV',
           'Anemia grave sintomática'
         ],
-        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -233,7 +233,7 @@ export const doencasHematologicas: Doenca[] = [
           'Tratamento da causa',
           'Suplementação contínua se perda crônica'
         ],
-        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
     },
     protocolos: ['anemia-investigacao'],
@@ -241,9 +241,9 @@ export const doencasHematologicas: Doenca[] = [
     calculadoras: [],
     rastreamentos: ['rastreamento-anemia-gestante'],
     citations: [
-      { refId: 'who-anemia-2023', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'cochrane-iron-supplementation', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'bsh-iron-deficiency-2021', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'who-anemia-2023', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'cochrane-iron-supplementation', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'bsh-iron-deficiency-2021', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12',
     tags: ['anemia', 'ferro', 'ferritina', 'microcítica', 'deficiência'],
@@ -343,11 +343,11 @@ export const doencasHematologicas: Doenca[] = [
           'Etilismo crônico (folato)',
           'Uso de metotrexato, fenitoína, sulfassalazina'
         ],
-        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'B12 e folato são cofatores na síntese de timidina para o DNA. A deficiência causa assincronia núcleo-citoplasma (megaloblastose), eritropoiese ineficaz com hemólise intramedular, e anemia macrocítica. B12 também é essencial para mielinização (sintomas neurológicos).',
-        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -370,7 +370,7 @@ export const doencasHematologicas: Doenca[] = [
           'Deficiência por má absorção (doença ileal, pós-gastrectomia)',
           'Deficiência de folato (etilismo, gestação, hemólise crônica)'
         ],
-        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -393,7 +393,7 @@ export const doencasHematologicas: Doenca[] = [
           'Anticorpos (anemia perniciosa)',
           'Mielograma se dúvida (megaloblastos)'
         ],
-        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -408,7 +408,7 @@ export const doencasHematologicas: Doenca[] = [
             'Cessar álcool',
             'Tratar doença GI subjacente'
           ],
-          citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -441,8 +441,8 @@ export const doencasHematologicas: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' },
-            { refId: 'cochrane-b12-oral-parenteral', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+            { refId: 'bsh-b12-2014', evidenceLevel: 'B', studyType: 'Guideline' },
+            { refId: 'cochrane-b12-oral-parenteral', evidenceLevel: 'B', studyType: 'SystematicReview' }
           ]
         },
         duracao: 'B12 em anemia perniciosa: para sempre. Folato: conforme causa.'
@@ -465,7 +465,7 @@ export const doencasHematologicas: Doenca[] = [
           'Não resposta ao tratamento',
           'Pancitopenia'
         ],
-        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -476,7 +476,7 @@ export const doencasHematologicas: Doenca[] = [
           'B12 vitalícia em anemia perniciosa',
           'Rastreio de câncer gástrico'
         ],
-        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'bsh-b12-2014', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
     },
     protocolos: [],
@@ -484,8 +484,8 @@ export const doencasHematologicas: Doenca[] = [
     calculadoras: [],
     rastreamentos: [],
     citations: [
-      { refId: 'bsh-b12-2014', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'cochrane-b12-oral-parenteral', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+      { refId: 'bsh-b12-2014', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'cochrane-b12-oral-parenteral', evidenceLevel: 'B', studyType: 'SystematicReview' }
     ],
     lastUpdate: '2024-12',
     tags: ['anemia', 'b12', 'folato', 'megaloblástica', 'perniciosa'],
@@ -591,11 +591,11 @@ export const doencasHematologicas: Doenca[] = [
           'Gestação',
           'Hepatopatia (sequestro esplênico)'
         ],
-        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'PTI: Autoanticorpos (IgG) contra glicoproteínas plaquetárias (GPIIb/IIIa, GPIb/IX) causam destruição de plaquetas pelo sistema reticuloendotelial (baço). Também há inibição da megacariopoiese. Outras causas: consumo (CIVD, PTT), sequestro esplênico, falência medular.',
-        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -619,7 +619,7 @@ export const doencasHematologicas: Doenca[] = [
           'PTI aguda (crianças, pós-viral)',
           'PTI crônica (>12 meses)'
         ],
-        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -644,7 +644,7 @@ export const doencasHematologicas: Doenca[] = [
           'Mielograma (se atípico)',
           'Coombs direto (se anemia)'
         ],
-        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -658,7 +658,7 @@ export const doencasHematologicas: Doenca[] = [
             'Suspender medicamentos antiagregantes',
             'Watchful waiting se assintomático e plaquetas >30.000'
           ],
-          citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -696,10 +696,10 @@ export const doencasHematologicas: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'romiplostim-rct', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'eltrombopag-rct', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'rituximab-itp-cochrane', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+            { refId: 'ash-itp-2019', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'romiplostim-rct', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'eltrombopag-rct', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'rituximab-itp-cochrane', evidenceLevel: 'B', studyType: 'SystematicReview' }
           ]
         },
         duracao: 'Conforme resposta. Agonistas TPO podem ser necessários cronicamente.'
@@ -720,7 +720,7 @@ export const doencasHematologicas: Doenca[] = [
           'Candidato a agonista TPO ou rituximabe',
           'Sangramento grave'
         ],
-        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -730,7 +730,7 @@ export const doencasHematologicas: Doenca[] = [
           'Evitar gatilhos',
           'Manter plaquetas em nível seguro'
         ],
-        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ash-itp-2019', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
     },
     protocolos: [],
@@ -738,9 +738,9 @@ export const doencasHematologicas: Doenca[] = [
     calculadoras: [],
     rastreamentos: [],
     citations: [
-      { refId: 'ash-itp-2019', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'romiplostim-rct', evidenceLevel: 'high', studyType: 'rct' },
-      { refId: 'eltrombopag-rct', evidenceLevel: 'high', studyType: 'rct' }
+      { refId: 'ash-itp-2019', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'romiplostim-rct', evidenceLevel: 'A', studyType: 'RCT' },
+      { refId: 'eltrombopag-rct', evidenceLevel: 'A', studyType: 'RCT' }
     ],
     lastUpdate: '2024-12',
     tags: ['trombocitopenia', 'pti', 'plaqueta', 'purpura', 'sangramento'],

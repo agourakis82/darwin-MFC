@@ -71,6 +71,16 @@ function getPhenotypeLabel(phenotype: Phenotype): string {
     intermediate_metabolizer: 'Intermediate Metabolizer',
     extensive_metabolizer: 'Normal/Extensive Metabolizer',
     ultra_rapid_metabolizer: 'Ultra-rapid Metabolizer',
+    reduced_response: 'Reduced Response',
+    met_met_high_pain_sensitivity: 'High Pain Sensitivity (Met/Met)',
+    non_expressor: 'Non-Expressor',
+    high_risk_sjs_ten: 'High Risk SJS/TEN',
+    increased_risk_hypersensitivity: 'Increased Hypersensitivity Risk',
+    increased_risk_sjs: 'Increased SJS Risk',
+    inhibitor_effect: 'Inhibitor Effect',
+    high_risk_scar: 'High Risk SCAR',
+    reduced_enzyme_activity: 'Reduced Enzyme Activity',
+    reduced_transport: 'Reduced Transport',
   };
   return labels[phenotype];
 }

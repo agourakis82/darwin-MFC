@@ -99,11 +99,11 @@ export const doencasDermatologicas: Doenca[] = [
           'Ambiente urbano',
           'Nível socioeconômico elevado (hipótese da higiene)'
         ],
-        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Defeito na barreira epidérmica (mutações em filagrina) permite penetração de alérgenos e irritantes. Resposta imune Th2 exacerbada com produção de IL-4, IL-13, IL-31 (prurido). Disbiose cutânea com colonização por S. aureus.',
-        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -126,7 +126,7 @@ export const doencasDermatologicas: Doenca[] = [
           'DA intrínseca (IgE normal)',
           'DA extrínseca (IgE elevada)'
         ],
-        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -147,7 +147,7 @@ export const doencasDermatologicas: Doenca[] = [
           'IgE total e específica se dúvida',
           'Cultura de lesão se infecção secundária'
         ],
-        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -165,7 +165,7 @@ export const doencasDermatologicas: Doenca[] = [
             'Evitar alérgenos conhecidos',
             'Controle ambiental (temperatura, umidade)'
           ],
-          citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -202,7 +202,7 @@ export const doencasDermatologicas: Doenca[] = [
               conduta: 'Mupirocina tópica ou antibiótico oral (cefalexina) se extenso.'
             }
           ],
-          citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Crônica, com ajuste conforme atividade da doença.'
       },
@@ -224,7 +224,7 @@ export const doencasDermatologicas: Doenca[] = [
           'Infecções recorrentes',
           'Necessidade de biológicos/imunossupressores'
         ],
-        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -242,7 +242,7 @@ export const doencasDermatologicas: Doenca[] = [
     medicamentos: ['hidrocortisona', 'mometasona', 'tacrolimo', 'hidroxizina'],
     calculadoras: ['scorad', 'easi'],
     rastreamentos: [],
-    citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'high', studyType: 'guideline' }],
+    citations: [{ refId: 'aad-ad-2022', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['dermatite-atopica', 'eczema', 'prurido', 'atopia', 'pele'],
   },
@@ -341,11 +341,11 @@ export const doencasDermatologicas: Doenca[] = [
           'Infecções (streptocócica - gatilho)',
           'Medicamentos (beta-bloqueadores, lítio, anti-maláricos)'
         ],
-        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Doença imunomediada com resposta Th17/Th1 aberrante. Eixo IL-23/IL-17 central na patogênese. Hiperproliferação de queratinócitos (ciclo de 4 dias vs 28 normais). Inflamação sistêmica associada a comorbidades cardiometabólicas.',
-        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -372,7 +372,7 @@ export const doencasDermatologicas: Doenca[] = [
           'Psoríase ungueal',
           'Artrite psoriásica (30%)'
         ],
-        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -393,7 +393,7 @@ export const doencasDermatologicas: Doenca[] = [
           'FR, anti-CCP se artrite (negativos na artrite psoriásica)',
           'Baseline antes de sistêmicos'
         ],
-        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -411,7 +411,7 @@ export const doencasDermatologicas: Doenca[] = [
             'Perda de peso',
             'Suporte psicológico'
           ],
-          citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -439,7 +439,7 @@ export const doencasDermatologicas: Doenca[] = [
               conduta: 'Biológicos: anti-TNF (adalimumabe), anti-IL-17 (secuquinumabe), anti-IL-23 (guselcumabe).'
             }
           ],
-          citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Tratamento crônico com ajustes conforme atividade.'
       },
@@ -463,7 +463,7 @@ export const doencasDermatologicas: Doenca[] = [
           'Necessidade de sistêmico/biológico',
           'Formas especiais (eritrodérmica, pustulosa)'
         ],
-        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -483,7 +483,7 @@ export const doencasDermatologicas: Doenca[] = [
     medicamentos: ['betametasona', 'calcipotriol', 'metotrexato', 'acitretina'],
     calculadoras: ['pasi', 'bsa', 'dlqi'],
     rastreamentos: [],
-    citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'high', studyType: 'guideline' }],
+    citations: [{ refId: 'aad-pso-2021', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['psoriase', 'placas', 'escamas', 'imunomediada', 'metotrexato'],
   },
@@ -578,11 +578,11 @@ export const doencasDermatologicas: Doenca[] = [
           'Estresse',
           'Infecções crônicas'
         ],
-        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Degranulação de mastócitos cutâneos com liberação de histamina e outros mediadores. Na urticária crônica espontânea, autoanticorpos anti-FcεRI ou anti-IgE podem estar presentes (30-50%). Não é alergia clássica mediada por IgE.',
-        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -602,7 +602,7 @@ export const doencasDermatologicas: Doenca[] = [
           'Urticária crônica espontânea (mais comum)',
           'Urticárias induzíveis: dermográfica, frio, pressão tardia, solar, colinérgica, aquagênica'
         ],
-        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -626,7 +626,7 @@ export const doencasDermatologicas: Doenca[] = [
           'Complemento (C3, C4) se suspeita de vasculite',
           'Biópsia se lesão >24h'
         ],
-        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -640,7 +640,7 @@ export const doencasDermatologicas: Doenca[] = [
             'Evitar AINEs',
             'Controle do estresse'
           ],
-          citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -668,7 +668,7 @@ export const doencasDermatologicas: Doenca[] = [
               conduta: 'Adrenalina se vias aéreas. Corticoide + anti-H1 VO.'
             }
           ],
-          citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Média 2-5 anos. Tentar reduzir medicação após controle sustentado.'
       },
@@ -688,7 +688,7 @@ export const doencasDermatologicas: Doenca[] = [
           'Angioedema sem urticária',
           'Suspeita de vasculite'
         ],
-        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -705,7 +705,7 @@ export const doencasDermatologicas: Doenca[] = [
     medicamentos: ['cetirizina', 'loratadina', 'bilastina', 'omalizumabe'],
     calculadoras: ['uas7'],
     rastreamentos: [],
-    citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'high', studyType: 'guideline' }],
+    citations: [{ refId: 'eaaci-urt-2022', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['urticaria', 'angioedema', 'prurido', 'anti-histaminico', 'omalizumabe'],
   }

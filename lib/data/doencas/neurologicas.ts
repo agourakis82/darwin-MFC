@@ -100,11 +100,11 @@ export const doencasNeurologicas: Doenca[] = [
           'Distúrbios do sono',
           'Obesidade'
         ],
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       fisiopatologia: {
         texto: 'Envolve ativação do sistema trigeminovascular, com liberação de neuropeptídeos vasoativos (CGRP) e inflamação neurogênica. Depressão alastrante cortical explica a aura. Sensibilização central contribui para cronicidade.',
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -127,7 +127,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Enxaqueca menstrual',
           'Enxaqueca vestibular'
         ],
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       diagnostico: {
         criterios: [
@@ -149,7 +149,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Hemograma, VHS se suspeita de arterite temporal',
           'Punção lombar se suspeita de HSA ou meningite'
         ],
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       tratamento: {
         objetivos: [
@@ -166,7 +166,7 @@ export const doencasNeurologicas: Doenca[] = [
             'Técnicas de relaxamento/biofeedback',
             'TCC para manejo do estresse'
           ],
-          citations: [{ refId: 'abs-cefaleia-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'abs-cefaleia-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -208,7 +208,7 @@ export const doencasNeurologicas: Doenca[] = [
               conduta: 'Paracetamol como analgésico. Propranolol pode ser usado como profilático. Evitar ergotamínicos e AINEs no 3º trimestre.'
             }
           ],
-          citations: [{ refId: 'abs-cefaleia-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'abs-cefaleia-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         duracao: 'Profilaxia: mínimo 6 meses, desmame gradual.'
       },
@@ -228,7 +228,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Sinais de alarme',
           'Necessidade de anti-CGRP'
         ],
-        citations: [{ refId: 'abs-cefaleia-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'abs-cefaleia-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -246,7 +246,7 @@ export const doencasNeurologicas: Doenca[] = [
     medicamentos: ['sumatriptano', 'ibuprofeno', 'propranolol', 'amitriptilina', 'topiramato'],
     calculadoras: ['midas', 'hit-6'],
     rastreamentos: [],
-    citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }, { refId: 'abs-cefaleia-2022', evidenceLevel: 'moderate', studyType: 'guideline' }],
+    citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'ExpertOpinion' }, { refId: 'abs-cefaleia-2022', evidenceLevel: 'B', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['enxaqueca', 'cefaleia', 'migranea', 'triptano', 'profilaxia'],
   },
@@ -328,11 +328,11 @@ export const doencasNeurologicas: Doenca[] = [
           'Depressão/ansiedade',
           'Uso de telas prolongado'
         ],
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       fisiopatologia: {
         texto: 'Mecanismos periféricos (sensibilização de nociceptores miofasciais pericraniais) e centrais (sensibilização do núcleo trigeminal) contribuem. Estresse e tensão muscular são fatores moduladores importantes.',
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -351,7 +351,7 @@ export const doencasNeurologicas: Doenca[] = [
           'CTT episódica frequente (1-14 dias/mês)',
           'CTT crônica (≥15 dias/mês por >3 meses)'
         ],
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       diagnostico: {
         criterios: [
@@ -367,7 +367,7 @@ export const doencasNeurologicas: Doenca[] = [
         examesLaboratoriais: [
           'Não necessários para diagnóstico'
         ],
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       tratamento: {
         objetivos: [
@@ -383,7 +383,7 @@ export const doencasNeurologicas: Doenca[] = [
             'Técnicas de relaxamento',
             'Biofeedback'
           ],
-          citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+          citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -401,7 +401,7 @@ export const doencasNeurologicas: Doenca[] = [
             }
           ],
           situacoesEspeciais: [],
-          citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+          citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
         },
         duracao: 'Agudo: conforme crises. Profilático: 6-12 meses.'
       },
@@ -418,7 +418,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Refratária ao tratamento',
           'Sinais de alarme'
         ],
-        citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       prevencao: {
         primaria: [
@@ -436,7 +436,7 @@ export const doencasNeurologicas: Doenca[] = [
     medicamentos: ['paracetamol', 'dipirona', 'ibuprofeno', 'amitriptilina'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'ichd-3', evidenceLevel: 'moderate', studyType: 'expert_opinion' }],
+    citations: [{ refId: 'ichd-3', evidenceLevel: 'B', studyType: 'ExpertOpinion' }],
     lastUpdate: '2024-12',
     tags: ['cefaleia-tensional', 'tensao', 'estresse', 'dor-cabeca'],
   },
@@ -551,11 +551,11 @@ export const doencasNeurologicas: Doenca[] = [
           'Sedentarismo',
           'AVC prévio ou AIT'
         ],
-        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Oclusão arterial (trombótica ou embólica) causa isquemia do território irrigado. Núcleo isquêmico sofre necrose rapidamente. Penumbra isquêmica é potencialmente salvável com reperfusão precoce. Cascata isquêmica com excitotoxicidade, inflamação e apoptose.',
-        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -579,7 +579,7 @@ export const doencasNeurologicas: Doenca[] = [
           'AVC hemorrágico (15%): hemorragia intraparenquimatosa, HSA',
           'AIT: déficit <24h (geralmente minutos), sem lesão em imagem'
         ],
-        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -602,7 +602,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Doppler de carótidas',
           'Holter se suspeita de FA paroxística'
         ],
-        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -620,7 +620,7 @@ export const doencasNeurologicas: Doenca[] = [
             'Fonoaudiologia (disfagia)',
             'Controle de temperatura e glicemia'
           ],
-          citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -657,7 +657,7 @@ export const doencasNeurologicas: Doenca[] = [
               conduta: 'Controle de PA, reverter anticoagulação, neurocirurgia se indicado.'
             }
           ],
-          citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Prevenção secundária: indefinida.'
       },
@@ -680,7 +680,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Reabilitação multidisciplinar',
           'Cirurgia vascular se estenose carotídea >70%'
         ],
-        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -700,7 +700,7 @@ export const doencasNeurologicas: Doenca[] = [
     medicamentos: ['alteplase', 'aas', 'clopidogrel', 'atorvastatina', 'apixabana'],
     calculadoras: ['nihss', 'cha2ds2-vasc', 'has-bled'],
     rastreamentos: [],
-    citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }],
+    citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['avc', 'derrame', 'stroke', 'trombólise', 'emergência'],
   },
@@ -806,11 +806,11 @@ export const doencasNeurologicas: Doenca[] = [
           'Esclerose mesial temporal',
           'Doenças neurodegenerativas'
         ],
-        citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       fisiopatologia: {
         texto: 'Descargas neuronais excessivas e hipersincronizadas resultantes de desequilíbrio entre excitação (glutamato) e inibição (GABA). Pode originar-se de foco cortical (focal) ou envolver ambos hemisférios desde o início (generalizada).',
-        citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -832,7 +832,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Epilepsia combinada focal e generalizada',
           'Síndromes epilépticas (Lennox-Gastaut, West, Dravet, etc.)'
         ],
-        citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       diagnostico: {
         criterios: [
@@ -854,7 +854,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Vídeo-EEG (casos duvidosos ou pré-cirúrgicos)',
           'Exames genéticos (síndromes)'
         ],
-        citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       tratamento: {
         objetivos: [
@@ -870,7 +870,7 @@ export const doencasNeurologicas: Doenca[] = [
             'Medidas de segurança',
             'Dieta cetogênica (casos refratários, especialmente pediátricos)'
           ],
-          citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+          citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -902,7 +902,7 @@ export const doencasNeurologicas: Doenca[] = [
               conduta: 'Evitar Valproato. Preferir Lamotrigina ou Levetiracetam. Suplementar ácido fólico.'
             }
           ],
-          citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+          citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
         },
         duracao: 'Geralmente por anos. Considerar retirada após 2-5 anos sem crises (casos selecionados).'
       },
@@ -923,7 +923,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Síndrome epiléptica específica',
           'Mulher que deseja gestar'
         ],
-        citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       prevencao: {
         primaria: [
@@ -942,7 +942,7 @@ export const doencasNeurologicas: Doenca[] = [
     medicamentos: ['carbamazepina', 'valproato', 'lamotrigina', 'levetiracetam', 'diazepam'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'ilae-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }],
+    citations: [{ refId: 'ilae-2017', evidenceLevel: 'B', studyType: 'ExpertOpinion' }],
     lastUpdate: '2024-12',
     tags: ['epilepsia', 'convulsao', 'crise', 'antiepileptico', 'eeg'],
   },
@@ -1048,11 +1048,11 @@ export const doencasNeurologicas: Doenca[] = [
           'Exposição a pesticidas',
           'Fatores genéticos (LRRK2, PARK2, SNCA)'
         ],
-        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       fisiopatologia: {
         texto: 'Degeneração de neurônios dopaminérgicos da pars compacta da substância negra, com acúmulo de alfa-sinucleína formando corpos de Lewy. A perda de dopamina no estriado causa desequilíbrio dos circuitos motores dos núcleos da base.',
-        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -1077,7 +1077,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Misto',
           'Parkinson de início jovem (<40 anos)'
         ],
-        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       diagnostico: {
         criterios: [
@@ -1097,7 +1097,7 @@ export const doencasNeurologicas: Doenca[] = [
           'RM para excluir outras causas',
           'DaTSCAN (SPECT) se dúvida'
         ],
-        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       tratamento: {
         objetivos: [
@@ -1114,7 +1114,7 @@ export const doencasNeurologicas: Doenca[] = [
             'Fonoaudiologia',
             'Suporte nutricional'
           ],
-          citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+          citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -1151,7 +1151,7 @@ export const doencasNeurologicas: Doenca[] = [
               conduta: 'Reduzir levodopa, adicionar amantadina. Considerar DBS em refratários.'
             }
           ],
-          citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+          citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
         },
         duracao: 'Tratamento contínuo e progressivo.'
       },
@@ -1173,7 +1173,7 @@ export const doencasNeurologicas: Doenca[] = [
           'Candidato a DBS (estimulação cerebral profunda)',
           'Sintomas não motores de difícil manejo'
         ],
-        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       prevencao: {
         primaria: [
@@ -1191,7 +1191,7 @@ export const doencasNeurologicas: Doenca[] = [
     medicamentos: ['levodopa', 'carbidopa', 'pramipexol', 'selegilina', 'entacapona'],
     calculadoras: ['updrs'],
     rastreamentos: [],
-    citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'moderate', studyType: 'expert_opinion' }],
+    citations: [{ refId: 'mds-pd-2015', evidenceLevel: 'B', studyType: 'ExpertOpinion' }],
     lastUpdate: '2024-12',
     tags: ['parkinson', 'tremor', 'bradicinesia', 'levodopa', 'degenerativo'],
   }

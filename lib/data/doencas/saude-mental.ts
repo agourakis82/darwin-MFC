@@ -94,14 +94,14 @@ export const doencasSaudeMental: Doenca[] = [
           'Condições médicas crônicas'
         ],
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'anxiety-epidemiology-meta', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'anxiety-epidemiology-meta', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
       fisiopatologia: {
         texto: 'Envolve disfunção em circuitos neurais relacionados ao medo e à preocupação, incluindo amígdala, córtex pré-frontal e sistema límbico. Há desregulação de neurotransmissores (serotonina, noradrenalina, GABA) e hiperatividade do eixo HPA.',
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
       quadroClinico: {
@@ -126,7 +126,7 @@ export const doencasSaudeMental: Doenca[] = [
           'TAG + outros transtornos de ansiedade'
         ],
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
       diagnostico: {
@@ -151,8 +151,8 @@ export const doencasSaudeMental: Doenca[] = [
           'Toxicológico se suspeita'
         ],
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'gad7-validation-study', evidenceLevel: 'high', studyType: 'cohort' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'gad7-validation-study', evidenceLevel: 'A', studyType: 'Cohort' }
         ]
       },
       tratamento: {
@@ -170,8 +170,8 @@ export const doencasSaudeMental: Doenca[] = [
             'Higiene do sono'
           ],
           citations: [
-            { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'cbt-anxiety-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' }
+            { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'cbt-anxiety-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' }
           ]
         },
         farmacologico: {
@@ -205,9 +205,9 @@ export const doencasSaudeMental: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'ssri-gad-meta-analysis', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'venlafaxine-gad-rct', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'ssri-gad-meta-analysis', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'venlafaxine-gad-rct', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         duracao: 'Mínimo 12 meses após remissão. Considerar tratamento de longo prazo se recorrente.'
@@ -230,7 +230,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Necessidade de psicoterapia especializada'
         ],
         citations: [
-          { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       prevencao: {
@@ -244,7 +244,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Psicoterapia de manutenção'
         ],
         citations: [
-          { refId: 'anxiety-prevention-review', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'anxiety-prevention-review', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
     },
@@ -253,9 +253,9 @@ export const doencasSaudeMental: Doenca[] = [
     calculadoras: ['gad-7', 'phq-9'],
     rastreamentos: ['rastreamento-ansiedade'],
     citations: [
-      { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'cbt-anxiety-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' }
+      { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'cbt-anxiety-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' }
     ],
     lastUpdate: '2024-12',
     tags: ['ansiedade', 'tag', 'saude-mental', 'isrs', 'tcc'],
@@ -341,15 +341,15 @@ export const doencasSaudeMental: Doenca[] = [
           'Abuso na infância'
         ],
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'panic-epidemiology-meta', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'panic-epidemiology-meta', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
       fisiopatologia: {
         texto: 'Hiperatividade do sistema de alarme (locus coeruleus, amígdala). Sensibilidade aumentada a CO2 e lactato. Condicionamento interoceptivo: sintomas corporais normais são interpretados como perigosos, desencadeando o ataque.',
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'panic-neurobiology-review', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'panic-neurobiology-review', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       quadroClinico: {
@@ -373,7 +373,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Transtorno de pânico sem agorafobia',
           'Transtorno de pânico com agorafobia'
         ],
-        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -398,8 +398,8 @@ export const doencasSaudeMental: Doenca[] = [
           'Troponina se dor torácica atípica'
         ],
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'pdss-validation', evidenceLevel: 'high', studyType: 'cohort' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'pdss-validation', evidenceLevel: 'A', studyType: 'Cohort' }
         ]
       },
       tratamento: {
@@ -417,9 +417,9 @@ export const doencasSaudeMental: Doenca[] = [
             'Relaxamento muscular progressivo'
           ],
           citations: [
-            { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'cbt-panic-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'interoceptive-exposure-rct', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'cbt-panic-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'interoceptive-exposure-rct', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         farmacologico: {
@@ -453,9 +453,9 @@ export const doencasSaudeMental: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'ssri-panic-meta-analysis', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'paroxetine-panic-rct', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'ssri-panic-meta-analysis', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'paroxetine-panic-rct', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         duracao: 'Mínimo 12-24 meses após remissão'
@@ -477,8 +477,8 @@ export const doencasSaudeMental: Doenca[] = [
           'Risco suicida'
         ],
         citations: [
-          { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'panic-relapse-prevention', evidenceLevel: 'moderate', studyType: 'cohort' }
+          { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'panic-relapse-prevention', evidenceLevel: 'B', studyType: 'Cohort' }
         ]
       },
       prevencao: {
@@ -491,7 +491,7 @@ export const doencasSaudeMental: Doenca[] = [
           'TCC para prevenir recaídas'
         ],
         citations: [
-          { refId: 'panic-prevention-review', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'panic-prevention-review', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
     },
@@ -500,10 +500,10 @@ export const doencasSaudeMental: Doenca[] = [
     calculadoras: ['pdss'],
     rastreamentos: [],
     citations: [
-      { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'cbt-panic-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'ssri-panic-meta-analysis', evidenceLevel: 'high', studyType: 'systematic_review' }
+      { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'cbt-panic-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'ssri-panic-meta-analysis', evidenceLevel: 'A', studyType: 'SystematicReview' }
     ],
     lastUpdate: '2024-12',
     tags: ['panico', 'ataque-panico', 'agorafobia', 'ansiedade', 'isrs'],
@@ -593,15 +593,15 @@ export const doencasSaudeMental: Doenca[] = [
           'Eventos estressantes'
         ],
         citations: [
-          { refId: 'aasm-insonia-2017', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'insomnia-epidemiology-meta', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'aasm-insonia-2017', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'insomnia-epidemiology-meta', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
       fisiopatologia: {
         texto: 'Modelo 3P: Fatores Predisponentes (genética, hiperativação), Precipitantes (estresse, doença) e Perpetuantes (comportamentos mal-adaptativos, crenças disfuncionais). A hiperestimulação do sistema de alerta impede a transição para o sono.',
         citations: [
-          { refId: 'aasm-insonia-2017', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'insomnia-hyperarousal-review', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'aasm-insonia-2017', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'insomnia-hyperarousal-review', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       quadroClinico: {
@@ -625,7 +625,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Insônia terminal (despertar precoce)',
           'Mista'
         ],
-        citations: [{ refId: 'aasm-insonia-2017', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aasm-insonia-2017', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -648,8 +648,8 @@ export const doencasSaudeMental: Doenca[] = [
           'Actigrafia (opcional)'
         ],
         citations: [
-          { refId: 'aasm-insonia-2017', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'isi-validation-study', evidenceLevel: 'high', studyType: 'cohort' }
+          { refId: 'aasm-insonia-2017', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'isi-validation-study', evidenceLevel: 'A', studyType: 'Cohort' }
         ]
       },
       tratamento: {
@@ -667,9 +667,9 @@ export const doencasSaudeMental: Doenca[] = [
             'Técnicas de relaxamento'
           ],
           citations: [
-            { refId: 'aasm-insonia-2017', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'cbti-cochrane-2015', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'cbti-vs-medication-rct', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'aasm-insonia-2017', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'cbti-cochrane-2015', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'cbti-vs-medication-rct', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         farmacologico: {
@@ -703,9 +703,9 @@ export const doencasSaudeMental: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'aasm-insonia-2017', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'zolpidem-efficacy-meta', evidenceLevel: 'moderate', studyType: 'systematic_review' },
-            { refId: 'melatonin-insomnia-cochrane', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+            { refId: 'aasm-insonia-2017', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'zolpidem-efficacy-meta', evidenceLevel: 'B', studyType: 'SystematicReview' },
+            { refId: 'melatonin-insomnia-cochrane', evidenceLevel: 'B', studyType: 'SystematicReview' }
           ]
         },
         duracao: 'TCC-I: efeito duradouro. Farmacoterapia: curto prazo quando possível.'
@@ -728,8 +728,8 @@ export const doencasSaudeMental: Doenca[] = [
           'Narcolepsia'
         ],
         citations: [
-          { refId: 'aasm-insonia-2017', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'insomnia-outcomes-study', evidenceLevel: 'moderate', studyType: 'cohort' }
+          { refId: 'aasm-insonia-2017', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'insomnia-outcomes-study', evidenceLevel: 'B', studyType: 'Cohort' }
         ]
       },
       prevencao: {
@@ -742,7 +742,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Evitar uso crônico de hipnóticos'
         ],
         citations: [
-          { refId: 'sleep-hygiene-prevention-review', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'sleep-hygiene-prevention-review', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
     },
@@ -751,9 +751,9 @@ export const doencasSaudeMental: Doenca[] = [
     calculadoras: ['isi', 'epworth'],
     rastreamentos: [],
     citations: [
-      { refId: 'aasm-insonia-2017', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'cbti-cochrane-2015', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'insomnia-epidemiology-meta', evidenceLevel: 'high', studyType: 'systematic_review' }
+      { refId: 'aasm-insonia-2017', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'cbti-cochrane-2015', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'insomnia-epidemiology-meta', evidenceLevel: 'A', studyType: 'SystematicReview' }
     ],
     lastUpdate: '2024-12',
     tags: ['insonia', 'sono', 'tcc-i', 'higiene-sono', 'zolpidem'],
@@ -852,16 +852,16 @@ export const doencasSaudeMental: Doenca[] = [
           'Uso de substâncias'
         ],
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'depression-global-burden', evidenceLevel: 'high', studyType: 'systematic_review' },
-          { refId: 'mdd-epidemiology-lancet', evidenceLevel: 'high', studyType: 'cohort' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'depression-global-burden', evidenceLevel: 'A', studyType: 'SystematicReview' },
+          { refId: 'mdd-epidemiology-lancet', evidenceLevel: 'A', studyType: 'Cohort' }
         ]
       },
       fisiopatologia: {
         texto: 'Envolve desregulação de sistemas de neurotransmissores (serotonina, noradrenalina, dopamina), disfunção do eixo HPA, neuroinflamação e alterações em circuitos neurais límbicos e pré-frontais.',
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'depression-neurobiology-review', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'depression-neurobiology-review', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       quadroClinico: {
@@ -889,7 +889,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Com características psicóticas',
           'Com padrão sazonal'
         ],
-        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -914,8 +914,8 @@ export const doencasSaudeMental: Doenca[] = [
           'Função renal e hepática'
         ],
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'phq9-validation-jama', evidenceLevel: 'high', studyType: 'cohort' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'phq9-validation-jama', evidenceLevel: 'A', studyType: 'Cohort' }
         ]
       },
       tratamento: {
@@ -933,9 +933,9 @@ export const doencasSaudeMental: Doenca[] = [
             'Fototerapia (se padrão sazonal)'
           ],
           citations: [
-            { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'cbt-depression-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'exercise-depression-meta', evidenceLevel: 'high', studyType: 'systematic_review' }
+            { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'cbt-depression-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'exercise-depression-meta', evidenceLevel: 'A', studyType: 'SystematicReview' }
           ]
         },
         farmacologico: {
@@ -969,10 +969,10 @@ export const doencasSaudeMental: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'star-d-trial', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'ssri-efficacy-lancet-meta', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'ect-depression-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' }
+            { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'star-d-trial', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'ssri-efficacy-lancet-meta', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'ect-depression-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' }
           ]
         },
         duracao: 'Mínimo 6-12 meses após remissão. Tratamento prolongado se recorrente.'
@@ -995,8 +995,8 @@ export const doencasSaudeMental: Doenca[] = [
           'Suspeita de bipolar'
         ],
         citations: [
-          { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'depression-relapse-prevention-rct', evidenceLevel: 'high', studyType: 'rct' }
+          { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'depression-relapse-prevention-rct', evidenceLevel: 'A', studyType: 'RCT' }
         ]
       },
       prevencao: {
@@ -1010,7 +1010,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Psicoterapia de manutenção'
         ],
         citations: [
-          { refId: 'depression-prevention-meta', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'depression-prevention-meta', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
     },
@@ -1019,11 +1019,11 @@ export const doencasSaudeMental: Doenca[] = [
     calculadoras: ['phq-9', 'ham-d'],
     rastreamentos: ['rastreamento-depressao'],
     citations: [
-      { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'star-d-trial', evidenceLevel: 'high', studyType: 'rct' },
-      { refId: 'ssri-efficacy-lancet-meta', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'cbt-depression-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' }
+      { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'star-d-trial', evidenceLevel: 'A', studyType: 'RCT' },
+      { refId: 'ssri-efficacy-lancet-meta', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'cbt-depression-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' }
     ],
     lastUpdate: '2024-12',
     tags: ['depressao', 'tdm', 'saude-mental', 'isrs', 'tcc'],
@@ -1121,15 +1121,15 @@ export const doencasSaudeMental: Doenca[] = [
           'Trauma na infância'
         ],
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'bipolar-epidemiology-lancet', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'bipolar-epidemiology-lancet', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
       fisiopatologia: {
         texto: 'Alta herdabilidade genética. Envolve desregulação de sistemas de neurotransmissores, ritmos circadianos, sensibilização a estressores e alterações em circuitos pré-frontais e límbicos.',
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'bipolar-genetics-review', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'bipolar-genetics-review', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       quadroClinico: {
@@ -1147,7 +1147,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Ciclotimia',
           'Com ciclagem rápida (≥4 episódios/ano)'
         ],
-        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -1170,8 +1170,8 @@ export const doencasSaudeMental: Doenca[] = [
           'Toxicológico'
         ],
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'mdq-validation-study', evidenceLevel: 'high', studyType: 'cohort' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'mdq-validation-study', evidenceLevel: 'A', studyType: 'Cohort' }
         ]
       },
       tratamento: {
@@ -1190,9 +1190,9 @@ export const doencasSaudeMental: Doenca[] = [
             'Evitar álcool e drogas'
           ],
           citations: [
-            { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'bipolar-psychoeducation-rct', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'ipsrt-bipolar-trial', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'bipolar-psychoeducation-rct', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'ipsrt-bipolar-trial', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         farmacologico: {
@@ -1230,10 +1230,10 @@ export const doencasSaudeMental: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'lithium-maintenance-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'balance-trial-lithium', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'quetiapina-bipolar-depression-rct', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'lithium-maintenance-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'balance-trial-lithium', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'quetiapina-bipolar-depression-rct', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         duracao: 'Tratamento de manutenção por tempo indefinido'
@@ -1259,8 +1259,8 @@ export const doencasSaudeMental: Doenca[] = [
           'Gestação'
         ],
         citations: [
-          { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'lithium-monitoring-review', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'lithium-monitoring-review', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       prevencao: {
@@ -1274,7 +1274,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Monitorização de pródromos'
         ],
         citations: [
-          { refId: 'bipolar-early-intervention-review', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'bipolar-early-intervention-review', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
     },
@@ -1283,11 +1283,11 @@ export const doencasSaudeMental: Doenca[] = [
     calculadoras: ['mdq', 'ymrs'],
     rastreamentos: [],
     citations: [
-      { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'canmat-2024', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'lithium-maintenance-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'balance-trial-lithium', evidenceLevel: 'high', studyType: 'rct' },
-      { refId: 'bipolar-psychoeducation-rct', evidenceLevel: 'high', studyType: 'rct' }
+      { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'canmat-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'lithium-maintenance-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'balance-trial-lithium', evidenceLevel: 'A', studyType: 'RCT' },
+      { refId: 'bipolar-psychoeducation-rct', evidenceLevel: 'A', studyType: 'RCT' }
     ],
     lastUpdate: '2024-12',
     tags: ['bipolar', 'mania', 'litio', 'estabilizador-humor', 'ciclotimia'],
@@ -1388,15 +1388,15 @@ export const doencasSaudeMental: Doenca[] = [
           'Trauma na infância'
         ],
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'schizophrenia-epidemiology-lancet', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'schizophrenia-epidemiology-lancet', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
       fisiopatologia: {
         texto: 'Hipótese dopaminérgica: hiperatividade mesolímbica (sintomas positivos) e hipoatividade mesocortical (sintomas negativos/cognitivos). Alterações glutamatérgicas, neurodesenvolvimentais e neuroinflamatórias.',
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'schizophrenia-neurobiology-review', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'schizophrenia-neurobiology-review', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       quadroClinico: {
@@ -1419,7 +1419,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Indiferenciada',
           'Residual'
         ],
-        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -1444,8 +1444,8 @@ export const doencasSaudeMental: Doenca[] = [
           'EEG se suspeita de epilepsia'
         ],
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'first-episode-psychosis-workup', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'first-episode-psychosis-workup', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
       tratamento: {
@@ -1464,9 +1464,9 @@ export const doencasSaudeMental: Doenca[] = [
             'Suporte ao emprego'
           ],
           citations: [
-            { refId: 'nice-esquizofrenia-2014', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'cbt-psychosis-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'family-intervention-schizophrenia', evidenceLevel: 'high', studyType: 'systematic_review' }
+            { refId: 'nice-esquizofrenia-2014', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'cbt-psychosis-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'family-intervention-schizophrenia', evidenceLevel: 'A', studyType: 'SystematicReview' }
           ]
         },
         farmacologico: {
@@ -1504,10 +1504,10 @@ export const doencasSaudeMental: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'nice-esquizofrenia-2014', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'catie-trial', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'clozapine-refractory-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'lai-antipsychotic-meta', evidenceLevel: 'high', studyType: 'systematic_review' }
+            { refId: 'nice-esquizofrenia-2014', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'catie-trial', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'clozapine-refractory-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'lai-antipsychotic-meta', evidenceLevel: 'A', studyType: 'SystematicReview' }
           ]
         },
         duracao: 'Tratamento contínuo. Após 1º episódio: mínimo 1-2 anos. Recorrente: indefinido.'
@@ -1533,8 +1533,8 @@ export const doencasSaudeMental: Doenca[] = [
           'Alto risco'
         ],
         citations: [
-          { refId: 'nice-esquizofrenia-2014', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'metabolic-monitoring-antipsychotic', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'nice-esquizofrenia-2014', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'metabolic-monitoring-antipsychotic', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
       prevencao: {
@@ -1547,7 +1547,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Tratamento de manutenção'
         ],
         citations: [
-          { refId: 'early-intervention-psychosis-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'early-intervention-psychosis-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
     },
@@ -1556,11 +1556,11 @@ export const doencasSaudeMental: Doenca[] = [
     calculadoras: ['panss', 'cgi'],
     rastreamentos: [],
     citations: [
-      { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'nice-esquizofrenia-2014', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'catie-trial', evidenceLevel: 'high', studyType: 'rct' },
-      { refId: 'clozapine-refractory-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'cbt-psychosis-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' }
+      { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'nice-esquizofrenia-2014', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'catie-trial', evidenceLevel: 'A', studyType: 'RCT' },
+      { refId: 'clozapine-refractory-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'cbt-psychosis-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' }
     ],
     lastUpdate: '2024-12',
     tags: ['esquizofrenia', 'psicose', 'antipsicotico', 'clozapina', 'delirio', 'alucinacao'],
@@ -1667,15 +1667,15 @@ export const doencasSaudeMental: Doenca[] = [
           'Pares usuários'
         ],
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'substance-use-global-burden', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'substance-use-global-burden', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
       fisiopatologia: {
         texto: 'Sistema de recompensa dopaminérgico mesolímbico. Neuroadaptações levam a tolerância e dependência. Alterações no córtex pré-frontal prejudicam controle inibitório. O estresse e pistas ambientais podem desencadear fissura e recaída.',
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'addiction-neurobiology-review', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'addiction-neurobiology-review', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       quadroClinico: {
@@ -1700,7 +1700,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Transtorno por uso de sedativos',
           'Politoxicomania'
         ],
-        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -1722,8 +1722,8 @@ export const doencasSaudeMental: Doenca[] = [
           'Sorologias: HIV, HBV, HCV'
         ],
         citations: [
-          { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'audit-validation-study', evidenceLevel: 'high', studyType: 'cohort' }
+          { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'audit-validation-study', evidenceLevel: 'A', studyType: 'Cohort' }
         ]
       },
       tratamento: {
@@ -1743,9 +1743,9 @@ export const doencasSaudeMental: Doenca[] = [
             'CAPS-AD'
           ],
           citations: [
-            { refId: 'ms-drogas-2021', evidenceLevel: 'moderate', studyType: 'guideline' },
-            { refId: 'motivational-interviewing-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'contingency-management-meta', evidenceLevel: 'high', studyType: 'systematic_review' }
+            { refId: 'ms-drogas-2021', evidenceLevel: 'B', studyType: 'Guideline' },
+            { refId: 'motivational-interviewing-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'contingency-management-meta', evidenceLevel: 'A', studyType: 'SystematicReview' }
           ]
         },
         farmacologico: {
@@ -1789,10 +1789,10 @@ export const doencasSaudeMental: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'ms-drogas-2021', evidenceLevel: 'moderate', studyType: 'guideline' },
-            { refId: 'naltrexone-alcohol-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'buprenorphine-opioid-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'varenicline-smoking-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' }
+            { refId: 'ms-drogas-2021', evidenceLevel: 'B', studyType: 'Guideline' },
+            { refId: 'naltrexone-alcohol-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'buprenorphine-opioid-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'varenicline-smoking-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' }
           ]
         },
         duracao: 'Tratamento de longo prazo. Dependência é condição crônica.'
@@ -1817,8 +1817,8 @@ export const doencasSaudeMental: Doenca[] = [
           'Falha em tratamento ambulatorial'
         ],
         citations: [
-          { refId: 'ms-drogas-2021', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'substance-use-monitoring-review', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'ms-drogas-2021', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'substance-use-monitoring-review', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       prevencao: {
@@ -1832,7 +1832,7 @@ export const doencasSaudeMental: Doenca[] = [
           'Tratamento precoce'
         ],
         citations: [
-          { refId: 'brief-intervention-alcohol-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'brief-intervention-alcohol-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
     },
@@ -1841,11 +1841,11 @@ export const doencasSaudeMental: Doenca[] = [
     calculadoras: ['audit', 'cage', 'dast'],
     rastreamentos: ['rastreamento-alcool'],
     citations: [
-      { refId: 'dsm5-tr', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'ms-drogas-2021', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'naltrexone-alcohol-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'buprenorphine-opioid-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'motivational-interviewing-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' }
+      { refId: 'dsm5-tr', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'ms-drogas-2021', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'naltrexone-alcohol-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'buprenorphine-opioid-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'motivational-interviewing-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' }
     ],
     lastUpdate: '2024-12',
     tags: ['dependencia', 'alcool', 'drogas', 'adiccao', 'abstinencia', 'caps-ad'],

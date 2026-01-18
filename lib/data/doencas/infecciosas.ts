@@ -129,15 +129,15 @@ export const doencasInfecciosas: Doenca[] = [
           'Gravidez'
         ],
         citations: [
-          { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'foxman-uti-epidemiology-2014', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'idsa-itu-2011', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'foxman-uti-epidemiology-2014', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       fisiopatologia: {
         texto: 'Colonização periuretral por uropatógenos intestinais (principalmente E. coli uropatogênica) que ascendem pela uretra até a bexiga. Adesinas bacterianas (fímbrias P) permitem adesão ao urotélio. Pielonefrite ocorre por ascensão ao trato superior.',
         citations: [
-          { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'flores-mireles-uti-pathogenesis-2015', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'idsa-itu-2011', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'flores-mireles-uti-pathogenesis-2015', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       quadroClinico: {
@@ -163,8 +163,8 @@ export const doencasInfecciosas: Doenca[] = [
           'Bacteriúria assintomática (só tratar em gestante/pré-procedimento)'
         ],
         citations: [
-          { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'hooton-uti-clinical-practice-2012', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'idsa-itu-2011', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'hooton-uti-clinical-practice-2012', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       diagnostico: {
@@ -188,8 +188,8 @@ export const doencasInfecciosas: Doenca[] = [
           'Função renal'
         ],
         citations: [
-          { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'bent-uti-diagnosis-2002', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'idsa-itu-2011', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'bent-uti-diagnosis-2002', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
       tratamento: {
@@ -206,8 +206,8 @@ export const doencasInfecciosas: Doenca[] = [
             'Evitar espermicidas'
           ],
           citations: [
-            { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
-            { refId: 'jepson-cranberries-uti-2012', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+            { refId: 'idsa-itu-2011', evidenceLevel: 'B', studyType: 'Guideline' },
+            { refId: 'jepson-cranberries-uti-2012', evidenceLevel: 'B', studyType: 'SystematicReview' }
           ]
         },
         farmacologico: {
@@ -241,10 +241,10 @@ export const doencasInfecciosas: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
-            { refId: 'gupta-fosfomycin-uti-rct-2011', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'raz-nitrofurantoin-rct-2005', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'hooton-trimethoprim-sulfamethoxazole-2010', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'idsa-itu-2011', evidenceLevel: 'B', studyType: 'Guideline' },
+            { refId: 'gupta-fosfomycin-uti-rct-2011', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'raz-nitrofurantoin-rct-2005', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'hooton-trimethoprim-sulfamethoxazole-2010', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         duracao: 'Cistite: 1-5 dias. Pielonefrite: 7-14 dias.'
@@ -266,8 +266,8 @@ export const doencasInfecciosas: Doenca[] = [
           'Suspeita de alteração anatômica'
         ],
         citations: [
-          { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'nicolle-asymptomatic-bacteriuria-2019', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'idsa-itu-2011', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'nicolle-asymptomatic-bacteriuria-2019', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
       prevencao: {
@@ -281,9 +281,9 @@ export const doencasInfecciosas: Doenca[] = [
           'Estrogênio tópico (pós-menopausa)'
         ],
         citations: [
-          { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'albert-uti-prevention-2004', evidenceLevel: 'moderate', studyType: 'rct' },
-          { refId: 'raz-vaginal-estrogen-2011', evidenceLevel: 'moderate', studyType: 'rct' }
+          { refId: 'idsa-itu-2011', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'albert-uti-prevention-2004', evidenceLevel: 'B', studyType: 'RCT' },
+          { refId: 'raz-vaginal-estrogen-2011', evidenceLevel: 'B', studyType: 'RCT' }
         ]
       },
     },
@@ -292,9 +292,9 @@ export const doencasInfecciosas: Doenca[] = [
     calculadoras: [],
     rastreamentos: [],
     citations: [
-      { refId: 'idsa-itu-2011', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'foxman-uti-epidemiology-2014', evidenceLevel: 'moderate', studyType: 'systematic_review' },
-      { refId: 'gupta-fosfomycin-uti-rct-2011', evidenceLevel: 'high', studyType: 'rct' }
+      { refId: 'idsa-itu-2011', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'foxman-uti-epidemiology-2014', evidenceLevel: 'B', studyType: 'SystematicReview' },
+      { refId: 'gupta-fosfomycin-uti-rct-2011', evidenceLevel: 'A', studyType: 'RCT' }
     ],
     lastUpdate: '2024-12',
     tags: ['itu', 'cistite', 'pielonefrite', 'disuria', 'e-coli'],
@@ -410,15 +410,15 @@ export const doencasInfecciosas: Doenca[] = [
           'IVAS recente'
         ],
         citations: [
-          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'shaikh-pharyngitis-epidemiology-2010', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'shaikh-pharyngitis-epidemiology-2010', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       fisiopatologia: {
         texto: 'Vírus (rinovírus, adenovírus, EBV) ou bactérias (S. pyogenes/GAS) infectam epitélio faríngeo. GAS produz toxinas e enzimas que causam inflamação local intensa. Risco de febre reumática (mimetismo molecular) e glomerulonefrite pós-estreptocócica.',
         citations: [
-          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'cunningham-gas-pathogenesis-2000', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'cunningham-gas-pathogenesis-2000', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       quadroClinico: {
@@ -445,8 +445,8 @@ export const doencasInfecciosas: Doenca[] = [
           'Escarlatina (GAS + exantema)'
         ],
         citations: [
-          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'centor-pharyngitis-clinical-1981', evidenceLevel: 'moderate', studyType: 'cohort' }
+          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'centor-pharyngitis-clinical-1981', evidenceLevel: 'B', studyType: 'Cohort' }
         ]
       },
       diagnostico: {
@@ -470,9 +470,9 @@ export const doencasInfecciosas: Doenca[] = [
           'Hemograma (linfocitose atípica na mono)'
         ],
         citations: [
-          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'mcisaac-centor-validation-1998', evidenceLevel: 'moderate', studyType: 'cohort' },
-          { refId: 'gerber-rapid-strep-test-2004', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'mcisaac-centor-validation-1998', evidenceLevel: 'B', studyType: 'Cohort' },
+          { refId: 'gerber-rapid-strep-test-2004', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
       tratamento: {
@@ -490,7 +490,7 @@ export const doencasInfecciosas: Doenca[] = [
             'Gargarejos'
           ],
           citations: [
-            { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' }
+            { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }
           ]
         },
         farmacologico: {
@@ -524,9 +524,9 @@ export const doencasInfecciosas: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'spinks-penicillin-pharyngitis-cochrane-2013', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'van-driel-azithromycin-pharyngitis-rct-2006', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'spinks-penicillin-pharyngitis-cochrane-2013', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'van-driel-azithromycin-pharyngitis-rct-2006', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         duracao: 'ATB para GAS: 10 dias (exceto azitromicina 3-5d ou Pen Benzatina DU).'
@@ -547,8 +547,8 @@ export const doencasInfecciosas: Doenca[] = [
           'Estridor ou obstrução de via aérea'
         ],
         citations: [
-          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'burton-tonsillectomy-cochrane-2014', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'burton-tonsillectomy-cochrane-2014', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
       prevencao: {
@@ -561,9 +561,9 @@ export const doencasInfecciosas: Doenca[] = [
           'Penicilina Benzatina 1.200.000 UI IM a cada 21 dias'
         ],
         citations: [
-          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'carapetis-rheumatic-fever-lancet-2005', evidenceLevel: 'moderate', studyType: 'systematic_review' },
-          { refId: 'manyemba-penicillin-rheumatic-fever-cochrane-2002', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'carapetis-rheumatic-fever-lancet-2005', evidenceLevel: 'B', studyType: 'SystematicReview' },
+          { refId: 'manyemba-penicillin-rheumatic-fever-cochrane-2002', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
     },
@@ -572,9 +572,9 @@ export const doencasInfecciosas: Doenca[] = [
     calculadoras: ['centor'],
     rastreamentos: [],
     citations: [
-      { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'spinks-penicillin-pharyngitis-cochrane-2013', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'mcisaac-centor-validation-1998', evidenceLevel: 'moderate', studyType: 'cohort' }
+      { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'spinks-penicillin-pharyngitis-cochrane-2013', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'mcisaac-centor-validation-1998', evidenceLevel: 'B', studyType: 'Cohort' }
     ],
     lastUpdate: '2024-12',
     tags: ['faringite', 'amigdalite', 'streptococcus', 'dor-garganta', 'centor'],
@@ -679,16 +679,16 @@ export const doencasInfecciosas: Doenca[] = [
           'Gestantes'
         ],
         citations: [
-          { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'who-dengue-2009', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'bhatt-dengue-global-burden-2013', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'who-dengue-2009', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'bhatt-dengue-global-burden-2013', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       fisiopatologia: {
         texto: 'Vírus inoculado por Aedes aegypti infecta células dendríticas e monócitos. Viremia provoca febre. Na fase crítica (defervescência), aumento de permeabilidade capilar por resposta imune (citocinas, complemento) leva a extravasamento plasmático. Anticorpos heterotípicos de infecção prévia podem potencializar infecção (ADE).',
         citations: [
-          { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'halstead-dengue-ade-2007', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'halstead-dengue-ade-2007', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       quadroClinico: {
@@ -715,8 +715,8 @@ export const doencasInfecciosas: Doenca[] = [
           'Dengue grave (choque, hemorragia grave, disfunção orgânica)'
         ],
         citations: [
-          { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'who-dengue-2009', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'who-dengue-2009', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
       diagnostico: {
@@ -743,9 +743,9 @@ export const doencasInfecciosas: Doenca[] = [
           'Eletrólitos, função renal'
         ],
         citations: [
-          { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'peeling-ns1-dengue-diagnostic-2010', evidenceLevel: 'moderate', studyType: 'systematic_review' },
-          { refId: 'hunsperger-dengue-serology-2009', evidenceLevel: 'moderate', studyType: 'cohort' }
+          { refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'peeling-ns1-dengue-diagnostic-2010', evidenceLevel: 'B', studyType: 'SystematicReview' },
+          { refId: 'hunsperger-dengue-serology-2009', evidenceLevel: 'B', studyType: 'Cohort' }
         ]
       },
       tratamento: {
@@ -763,8 +763,8 @@ export const doencasInfecciosas: Doenca[] = [
             'Notificação compulsória'
           ],
           citations: [
-            { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
-            { refId: 'who-dengue-2009', evidenceLevel: 'moderate', studyType: 'guideline' }
+            { refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' },
+            { refId: 'who-dengue-2009', evidenceLevel: 'B', studyType: 'Guideline' }
           ]
         },
         farmacologico: {
@@ -798,9 +798,9 @@ export const doencasInfecciosas: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
-            { refId: 'who-dengue-2009', evidenceLevel: 'moderate', studyType: 'guideline' },
-            { refId: 'wills-fluid-resuscitation-dengue-rct-2005', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' },
+            { refId: 'who-dengue-2009', evidenceLevel: 'B', studyType: 'Guideline' },
+            { refId: 'wills-fluid-resuscitation-dengue-rct-2005', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         duracao: 'Fase aguda: 7-10 dias. Convalescença: semanas.'
@@ -824,8 +824,8 @@ export const doencasInfecciosas: Doenca[] = [
           'Comorbidades descompensadas'
         ],
         citations: [
-          { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'who-dengue-2009', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'who-dengue-2009', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
       prevencao: {
@@ -840,9 +840,9 @@ export const doencasInfecciosas: Doenca[] = [
           'Notificação compulsória'
         ],
         citations: [
-          { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'sridhar-dengue-vaccine-safety-2018', evidenceLevel: 'high', studyType: 'rct' },
-          { refId: 'bowman-dengue-vector-control-cochrane-2016', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'sridhar-dengue-vaccine-safety-2018', evidenceLevel: 'A', studyType: 'RCT' },
+          { refId: 'bowman-dengue-vector-control-cochrane-2016', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
     },
@@ -851,9 +851,9 @@ export const doencasInfecciosas: Doenca[] = [
     calculadoras: ['prova-laco'],
     rastreamentos: [],
     citations: [
-      { refId: 'ms-dengue-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'who-dengue-2009', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'wills-fluid-resuscitation-dengue-rct-2005', evidenceLevel: 'high', studyType: 'rct' }
+      { refId: 'ms-dengue-2024', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'who-dengue-2009', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'wills-fluid-resuscitation-dengue-rct-2005', evidenceLevel: 'A', studyType: 'RCT' }
     ],
     lastUpdate: '2024-12',
     tags: ['dengue', 'arbovirose', 'aedes', 'febre', 'hidratacao'],

@@ -20,6 +20,7 @@ export interface Reference {
   volume?: string;
   pages?: string;
   doi?: string;
+  pmid?: string; // PubMed ID
   url?: string;
   accessDate?: string;
   legalNumber?: string; // Para portarias/leis (ex: "Portaria GM/MS nº 1.234")

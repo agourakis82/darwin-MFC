@@ -26,11 +26,11 @@ export const doencasMusculoesqueleticas: Doenca[] = [
     cid11: ['FA00-FA02'],
     // LOINC codes for osteoarthritis workup (primarily to exclude inflammatory arthritis)
     loinc: [
-      '4537-7',   // ESR (Erythrocyte sedimentation rate)
-      '1988-5',   // CRP (C-reactive protein)
-      '5041-9',   // RF (Rheumatoid Factor) - to exclude RA
-      '32218-0',  // Anti-CCP (Anti-cyclic citrullinated peptide) - to exclude RA
-      '3084-1',   // Uric acid - to exclude gout
+      { code: '4537-7', name: 'ESR (Erythrocyte sedimentation rate)' },
+      { code: '1988-5', name: 'CRP (C-reactive protein)' },
+      { code: '5041-9', name: 'RF (Rheumatoid Factor) - to exclude RA' },
+      { code: '32218-0', name: 'Anti-CCP (Anti-cyclic citrullinated peptide) - to exclude RA' },
+      { code: '3084-1', name: 'Uric acid - to exclude gout' },
     ],
     categoria: 'musculoesqueletico',
     quickView: {
@@ -92,11 +92,11 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Genética',
           'Deformidades articulares'
         ],
-        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Desequilíbrio entre síntese e degradação da matriz cartilaginosa, com perda progressiva de cartilagem hialina, esclerose óssea subcondral, formação de osteófitos e sinovite secundária. Envolve fatores mecânicos e bioquímicos.',
-        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'systematic_review' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'B', studyType: 'SystematicReview' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -119,7 +119,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'OA de mãos (IFD, IFP, CMC do polegar)',
           'OA de coluna (espondilose)'
         ],
-        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -140,7 +140,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'VHS, PCR, FR, anti-CCP para descartar AR',
           'Ácido úrico se suspeita de gota'
         ],
-        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -159,7 +159,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
             'Termoterapia (calor ou frio)',
             'Órteses, palmilhas, bengala'
           ],
-          citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'systematic_review' }]
+          citations: [{ refId: 'oarsi-2019', evidenceLevel: 'B', studyType: 'SystematicReview' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -196,7 +196,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
               conduta: 'Infiltração intra-articular com corticoide ou ácido hialurônico. Considerar cirurgia.'
             }
           ],
-          citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'rct' }]
+          citations: [{ refId: 'oarsi-2019', evidenceLevel: 'B', studyType: 'RCT' }]
         },
         duracao: 'Tratamento crônico, ajustado conforme sintomas.'
       },
@@ -217,7 +217,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Candidato a artroplastia',
           'Dúvida diagnóstica'
         ],
-        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       prevencao: {
         primaria: [
@@ -230,14 +230,14 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Fortalecimento muscular',
           'Controle de peso'
         ],
-        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'low', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'oarsi-2019', evidenceLevel: 'C', studyType: 'ExpertOpinion' }]
       },
     },
     protocolos: [],
     medicamentos: ['paracetamol', 'ibuprofeno', 'diclofenaco', 'duloxetina'],
     calculadoras: ['womac', 'koos'],
     rastreamentos: [],
-    citations: [{ refId: 'oarsi-2019', evidenceLevel: 'moderate', studyType: 'guideline' }],
+    citations: [{ refId: 'oarsi-2019', evidenceLevel: 'B', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['osteoartrite', 'artrose', 'joelho', 'quadril', 'dor-articular'],
   },
@@ -254,15 +254,15 @@ export const doencasMusculoesqueleticas: Doenca[] = [
     cid11: ['MG30.01'],
     // LOINC codes for fibromyalgia workup (to exclude other conditions)
     loinc: [
-      '4537-7',   // ESR (Erythrocyte sedimentation rate)
-      '1988-5',   // CRP (C-reactive protein)
-      '3016-3',   // TSH (Thyroid stimulating hormone)
-      '1989-3',   // Vitamin D (25-hydroxyvitamin D)
-      '2157-6',   // CPK (Creatine kinase)
-      '5048-4',   // ANA (Antinuclear antibodies) - to exclude SLE
-      '5041-9',   // RF (Rheumatoid Factor) - to exclude RA
-      '718-7',    // Hemoglobin
-      '4544-3',   // Hematocrit
+      { code: '4537-7', name: 'ESR (Erythrocyte sedimentation rate)' },
+      { code: '1988-5', name: 'CRP (C-reactive protein)' },
+      { code: '3016-3', name: 'TSH (Thyroid stimulating hormone)' },
+      { code: '1989-3', name: 'Vitamin D (25-hydroxyvitamin D)' },
+      { code: '2157-6', name: 'CPK (Creatine kinase)' },
+      { code: '5048-4', name: 'ANA (Antinuclear antibodies) - to exclude SLE' },
+      { code: '5041-9', name: 'RF (Rheumatoid Factor) - to exclude RA' },
+      { code: '718-7', name: 'Hemoglobin' },
+      { code: '4544-3', name: 'Hematocrit' },
     ],
     categoria: 'musculoesqueletico',
     quickView: {
@@ -321,11 +321,11 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Outras síndromes de dor crônica',
           'História familiar'
         ],
-        citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'moderate', studyType: 'cohort' }]
+        citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'B', studyType: 'Cohort' }]
       },
       fisiopatologia: {
         texto: 'Sensibilização central com amplificação do processamento da dor no SNC. Disfunção de sistemas moduladores descendentes (serotonina, noradrenalina). Alterações do sono não-REM. Fatores psicossociais modulam a expressão clínica.',
-        citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'moderate', studyType: 'systematic_review' }]
+        citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'B', studyType: 'SystematicReview' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -346,7 +346,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Fibromialgia primária',
           'Fibromialgia secundária/concomitante (AR, LES, OA)'
         ],
-        citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -370,7 +370,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Vitamina D',
           'FR, anti-CCP, FAN se suspeita de doença autoimune'
         ],
-        citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -388,7 +388,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
             'Higiene do sono',
             'Hidroterapia'
           ],
-          citations: [{ refId: 'eular-fibro-2017', evidenceLevel: 'high', studyType: 'systematic_review' }]
+          citations: [{ refId: 'eular-fibro-2017', evidenceLevel: 'A', studyType: 'SystematicReview' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -425,7 +425,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
               conduta: 'Amitriptilina ou ciclobenzaprina à noite'
             }
           ],
-          citations: [{ refId: 'eular-fibro-2017', evidenceLevel: 'high', studyType: 'rct' }]
+          citations: [{ refId: 'eular-fibro-2017', evidenceLevel: 'A', studyType: 'RCT' }]
         },
         duracao: 'Tratamento crônico, geralmente por anos.'
       },
@@ -445,7 +445,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Refratário ao tratamento',
           'Necessidade de abordagem multidisciplinar'
         ],
-        citations: [{ refId: 'eular-fibro-2017', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'eular-fibro-2017', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       prevencao: {
         primaria: [
@@ -456,14 +456,14 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Tratamento precoce',
           'Exercício contínuo'
         ],
-        citations: [{ refId: 'eular-fibro-2017', evidenceLevel: 'low', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'eular-fibro-2017', evidenceLevel: 'C', studyType: 'ExpertOpinion' }]
       },
     },
     protocolos: [],
     medicamentos: ['amitriptilina', 'duloxetina', 'pregabalina', 'ciclobenzaprina'],
     calculadoras: ['fiq'],
     rastreamentos: [],
-    citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'moderate', studyType: 'guideline' }, { refId: 'eular-fibro-2017', evidenceLevel: 'high', studyType: 'systematic_review' }],
+    citations: [{ refId: 'acr-fibro-2016', evidenceLevel: 'B', studyType: 'Guideline' }, { refId: 'eular-fibro-2017', evidenceLevel: 'A', studyType: 'SystematicReview' }],
     lastUpdate: '2024-12',
     tags: ['fibromialgia', 'dor-cronica', 'fadiga', 'sono', 'duloxetina'],
   },
@@ -480,19 +480,19 @@ export const doencasMusculoesqueleticas: Doenca[] = [
     cid11: ['FA25'],
     // LOINC codes for gout workup
     loinc: [
-      '3084-1',   // Uric acid (serum)
-      '3085-8',   // Uric acid (urine)
-      '2160-0',   // Creatinine (serum)
-      '33914-3',  // eGFR (Estimated glomerular filtration rate)
-      '1988-5',   // CRP (C-reactive protein)
-      '4537-7',   // ESR (Erythrocyte sedimentation rate)
-      '718-7',    // Hemoglobin
-      '6690-2',   // WBC (White blood cell count)
-      '2345-7',   // Glucose (serum)
-      '2571-8',   // Triglycerides
-      '2093-3',   // Total cholesterol
-      '2085-9',   // HDL cholesterol
-      '13457-7',  // LDL cholesterol (calculated)
+      { code: '3084-1', name: 'Uric acid (serum)' },
+      { code: '3085-8', name: 'Uric acid (urine)' },
+      { code: '2160-0', name: 'Creatinine (serum)' },
+      { code: '33914-3', name: 'eGFR (Estimated glomerular filtration rate)' },
+      { code: '1988-5', name: 'CRP (C-reactive protein)' },
+      { code: '4537-7', name: 'ESR (Erythrocyte sedimentation rate)' },
+      { code: '718-7', name: 'Hemoglobin' },
+      { code: '6690-2', name: 'WBC (White blood cell count)' },
+      { code: '2345-7', name: 'Glucose (serum)' },
+      { code: '2571-8', name: 'Triglycerides' },
+      { code: '2093-3', name: 'Total cholesterol' },
+      { code: '2085-9', name: 'HDL cholesterol' },
+      { code: '13457-7', name: 'LDL cholesterol (calculated)' },
     ],
     categoria: 'musculoesqueletico',
     quickView: {
@@ -557,11 +557,11 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'DRC',
           'Diuréticos tiazídicos'
         ],
-        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'high', studyType: 'cohort' }]
+        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'A', studyType: 'Cohort' }]
       },
       fisiopatologia: {
         texto: 'Hiperuricemia crônica leva à supersaturação e precipitação de cristais de urato monossódico em articulações e tecidos. Os cristais ativam o inflamassoma NLRP3, liberando IL-1β e desencadeando inflamação aguda intensa.',
-        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'high', studyType: 'systematic_review' }]
+        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'A', studyType: 'SystematicReview' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -583,7 +583,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Gota crônica tofácea',
           'Artropatia gotosa crônica'
         ],
-        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -605,7 +605,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Líquido sinovial (se disponível)',
           'Perfil lipídico, glicemia (síndrome metabólica)'
         ],
-        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -622,7 +622,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
             'Perda de peso',
             'Evitar jejum prolongado'
           ],
-          citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+          citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -647,7 +647,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
               conduta: 'Colchicina 0,5mg 1-2x/dia por 3-6 meses para prevenir flares.'
             }
           ],
-          citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'high', studyType: 'rct' }]
+          citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'A', studyType: 'RCT' }]
         },
         duracao: 'Crise: 5-10 dias. Hipouricemiante: geralmente contínuo.'
       },
@@ -669,7 +669,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Gota tofácea grave',
           'DRC avançada'
         ],
-        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -681,14 +681,14 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Manter ácido úrico <6 mg/dL',
           'Adesão ao alopurinol'
         ],
-        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'moderate', studyType: 'cohort' }]
+        citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'B', studyType: 'Cohort' }]
       },
     },
     protocolos: ['protocolo-gota'],
     medicamentos: ['colchicina', 'alopurinol', 'naproxeno', 'prednisona'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'high', studyType: 'guideline' }],
+    citations: [{ refId: 'acr-gout-2020', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['gota', 'acido-urico', 'artrite', 'alopurinol', 'podagra'],
   },
@@ -705,32 +705,32 @@ export const doencasMusculoesqueleticas: Doenca[] = [
     cid11: ['4A40'],
     // LOINC codes for SLE diagnostic workup and monitoring
     loinc: [
-      '5048-4',   // ANA (Antinuclear antibodies)
-      '11235-1',  // Anti-dsDNA (Anti-double stranded DNA)
-      '13963-4',  // Anti-Smith antibodies
-      '5105-2',   // Anti-SSA/Ro antibodies
-      '5106-0',   // Anti-SSB/La antibodies
-      '31030-5',  // Anti-RNP antibodies
-      '33935-8',  // Antiphospholipid antibodies panel
-      '4485-9',   // Complement C3
-      '4498-2',   // Complement C4
-      '4532-8',   // CH50 (Total complement)
-      '4537-7',   // ESR (Erythrocyte sedimentation rate)
-      '1988-5',   // CRP (C-reactive protein)
-      '718-7',    // Hemoglobin
-      '6690-2',   // WBC (White blood cell count)
-      '777-3',    // Platelet count
-      '26515-7',  // Platelets (automated)
-      '731-0',    // Lymphocyte count
-      '2160-0',   // Creatinine (serum)
-      '33914-3',  // eGFR
-      '5804-0',   // Urinalysis protein
-      '20454-5',  // Urine protein/creatinine ratio
-      '2889-9',   // Urine protein 24h
-      '5794-3',   // Urinalysis RBC
-      '11277-3',  // Anti-cardiolipin IgG
-      '11278-1',  // Anti-cardiolipin IgM
-      '34915-7',  // Lupus anticoagulant
+      { code: '5048-4', name: 'ANA (Antinuclear antibodies)' },
+      { code: '11235-1', name: 'Anti-dsDNA (Anti-double stranded DNA)' },
+      { code: '13963-4', name: 'Anti-Smith antibodies' },
+      { code: '5105-2', name: 'Anti-SSA/Ro antibodies' },
+      { code: '5106-0', name: 'Anti-SSB/La antibodies' },
+      { code: '31030-5', name: 'Anti-RNP antibodies' },
+      { code: '33935-8', name: 'Antiphospholipid antibodies panel' },
+      { code: '4485-9', name: 'Complement C3' },
+      { code: '4498-2', name: 'Complement C4' },
+      { code: '4532-8', name: 'CH50 (Total complement)' },
+      { code: '4537-7', name: 'ESR (Erythrocyte sedimentation rate)' },
+      { code: '1988-5', name: 'CRP (C-reactive protein)' },
+      { code: '718-7', name: 'Hemoglobin' },
+      { code: '6690-2', name: 'WBC (White blood cell count)' },
+      { code: '777-3', name: 'Platelet count' },
+      { code: '26515-7', name: 'Platelets (automated)' },
+      { code: '731-0', name: 'Lymphocyte count' },
+      { code: '2160-0', name: 'Creatinine (serum)' },
+      { code: '33914-3', name: 'eGFR' },
+      { code: '5804-0', name: 'Urinalysis protein' },
+      { code: '20454-5', name: 'Urine protein/creatinine ratio' },
+      { code: '2889-9', name: 'Urine protein 24h' },
+      { code: '5794-3', name: 'Urinalysis RBC' },
+      { code: '11277-3', name: 'Anti-cardiolipin IgG' },
+      { code: '11278-1', name: 'Anti-cardiolipin IgM' },
+      { code: '34915-7', name: 'Lupus anticoagulant' },
     ],
     categoria: 'musculoesqueletico',
     quickView: {
@@ -792,11 +792,11 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Exposição solar',
           'Certas drogas (lúpus induzido)'
         ],
-        citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Perda de tolerância imunológica com produção de autoanticorpos contra antígenos nucleares. Formação de imunocomplexos que se depositam em tecidos, ativando complemento e causando inflamação. Participação de linfócitos B e T autorreativos, interferon tipo I e citocinas pró-inflamatórias.',
-        citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'high', studyType: 'systematic_review' }]
+        citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'A', studyType: 'SystematicReview' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -825,7 +825,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'LES sistêmico',
           'LES neonatal'
         ],
-        citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -852,7 +852,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'EAS, proteinúria',
           'Anticorpos antifosfolípides'
         ],
-        citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -870,7 +870,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
             'Suplementação de vitamina D e cálcio',
             'Vacinação (evitar vacinas vivas em imunossuprimidos)'
           ],
-          citations: [{ refId: 'eular-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'eular-sle-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -911,7 +911,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
               conduta: 'Anticoagulação conforme indicação (warfarin se trombose prévia).'
             }
           ],
-          citations: [{ refId: 'eular-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'eular-sle-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Tratamento crônico, ajustado conforme atividade da doença.'
       },
@@ -937,7 +937,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Refratário ao tratamento inicial',
           'Gravidez em paciente com LES'
         ],
-        citations: [{ refId: 'eular-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'eular-sle-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -950,14 +950,14 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Controle de fatores de risco cardiovascular',
           'Vacinação adequada'
         ],
-        citations: [{ refId: 'eular-sle-2019', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'eular-sle-2019', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
     },
     protocolos: ['protocolo-les'],
     medicamentos: ['hidroxicloroquina', 'prednisona', 'azatioprina', 'micofenolato'],
     calculadoras: ['sledai', 'slicc'],
     rastreamentos: [],
-    citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }, { refId: 'eular-sle-2019', evidenceLevel: 'high', studyType: 'guideline' }],
+    citations: [{ refId: 'acr-sle-2019', evidenceLevel: 'A', studyType: 'Guideline' }, { refId: 'eular-sle-2019', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['lupus', 'les', 'autoimune', 'fan', 'nefrite', 'hidroxicloroquina'],
   },
@@ -974,25 +974,25 @@ export const doencasMusculoesqueleticas: Doenca[] = [
     cid11: ['FA20', 'FA21'],
     // LOINC codes for RA diagnostic workup and monitoring
     loinc: [
-      '5041-9',   // RF (Rheumatoid Factor)
-      '32218-0',  // Anti-CCP (Anti-cyclic citrullinated peptide)
-      '53027-8',  // Anti-CCP IgG
-      '4537-7',   // ESR (Erythrocyte sedimentation rate)
-      '1988-5',   // CRP (C-reactive protein)
-      '30522-7',  // CRP high sensitivity
-      '5048-4',   // ANA (Antinuclear antibodies) - for overlap syndromes
-      '718-7',    // Hemoglobin
-      '4544-3',   // Hematocrit
-      '6690-2',   // WBC (White blood cell count)
-      '777-3',    // Platelet count
-      '2160-0',   // Creatinine (serum)
-      '33914-3',  // eGFR
-      '1742-6',   // ALT (Alanine aminotransferase)
-      '1920-8',   // AST (Aspartate aminotransferase)
-      '17861-6',  // Calcium (serum)
-      '1989-3',   // Vitamin D (25-hydroxyvitamin D)
-      '10466-1',  // HBsAg (Hepatitis B surface antigen)
-      '16128-1',  // Anti-HCV (Hepatitis C antibody)
+      { code: '5041-9', name: 'RF (Rheumatoid Factor)' },
+      { code: '32218-0', name: 'Anti-CCP (Anti-cyclic citrullinated peptide)' },
+      { code: '53027-8', name: 'Anti-CCP IgG' },
+      { code: '4537-7', name: 'ESR (Erythrocyte sedimentation rate)' },
+      { code: '1988-5', name: 'CRP (C-reactive protein)' },
+      { code: '30522-7', name: 'CRP high sensitivity' },
+      { code: '5048-4', name: 'ANA (Antinuclear antibodies) - for overlap syndromes' },
+      { code: '718-7', name: 'Hemoglobin' },
+      { code: '4544-3', name: 'Hematocrit' },
+      { code: '6690-2', name: 'WBC (White blood cell count)' },
+      { code: '777-3', name: 'Platelet count' },
+      { code: '2160-0', name: 'Creatinine (serum)' },
+      { code: '33914-3', name: 'eGFR' },
+      { code: '1742-6', name: 'ALT (Alanine aminotransferase)' },
+      { code: '1920-8', name: 'AST (Aspartate aminotransferase)' },
+      { code: '17861-6', name: 'Calcium (serum)' },
+      { code: '1989-3', name: 'Vitamin D (25-hydroxyvitamin D)' },
+      { code: '10466-1', name: 'HBsAg (Hepatitis B surface antigen)' },
+      { code: '16128-1', name: 'Anti-HCV (Hepatitis C antibody)' },
     ],
     categoria: 'musculoesqueletico',
     quickView: {
@@ -1054,11 +1054,11 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Doença periodontal',
           'Exposição à sílica'
         ],
-        citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Inflamação sinovial crônica com proliferação de fibroblastos (pannus), produção de citocinas pró-inflamatórias (TNF-α, IL-6, IL-1), autoanticorpos (FR, anti-CCP) e destruição progressiva de cartilagem e osso por ativação de osteoclastos e metaloproteinases.',
-        citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'high', studyType: 'systematic_review' }]
+        citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'A', studyType: 'SystematicReview' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -1081,7 +1081,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'AR de início tardio (>60 anos)',
           'AR com manifestações extra-articulares'
         ],
-        citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -1109,7 +1109,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'US articular (sinovite, erosões precoces)',
           'RNM (sinovite, edema ósseo precoce)'
         ],
-        citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -1127,7 +1127,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
             'Exercícios de baixo impacto',
             'Suporte psicológico'
           ],
-          citations: [{ refId: 'eular-ra-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'eular-ra-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -1169,7 +1169,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
               conduta: 'Suspender metotrexato e leflunomida. Manter sulfassalazina e hidroxicloroquina.'
             }
           ],
-          citations: [{ refId: 'eular-ra-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'eular-ra-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Tratamento crônico, com ajustes conforme atividade.'
       },
@@ -1192,7 +1192,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Manifestações extra-articulares graves',
           'Necessidade de biológicos'
         ],
-        citations: [{ refId: 'eular-ra-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'eular-ra-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -1204,14 +1204,14 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Controle de fatores de risco cardiovascular',
           'Prevenção de osteoporose'
         ],
-        citations: [{ refId: 'eular-ra-2022', evidenceLevel: 'moderate', studyType: 'cohort' }]
+        citations: [{ refId: 'eular-ra-2022', evidenceLevel: 'B', studyType: 'Cohort' }]
       },
     },
     protocolos: ['protocolo-ar'],
     medicamentos: ['metotrexato', 'leflunomida', 'sulfassalazina', 'prednisona', 'adalimumabe'],
     calculadoras: ['das28', 'cdai', 'sdai', 'haq'],
     rastreamentos: [],
-    citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'high', studyType: 'guideline' }, { refId: 'eular-ra-2022', evidenceLevel: 'high', studyType: 'guideline' }],
+    citations: [{ refId: 'acr-ra-2021', evidenceLevel: 'A', studyType: 'Guideline' }, { refId: 'eular-ra-2022', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['artrite-reumatoide', 'ar', 'autoimune', 'metotrexato', 'anti-ccp', 'fator-reumatoide'],
   },
@@ -1228,28 +1228,28 @@ export const doencasMusculoesqueleticas: Doenca[] = [
     cid11: ['FB83'],
     // LOINC codes for osteoporosis workup
     loinc: [
-      '17861-6',  // Calcium (serum)
-      '2777-1',   // Phosphorus (serum)
-      '1989-3',   // Vitamin D (25-hydroxyvitamin D)
-      '2731-8',   // PTH (Parathyroid hormone)
-      '2132-9',   // Vitamin B12
-      '3016-3',   // TSH (Thyroid stimulating hormone)
-      '2160-0',   // Creatinine (serum)
-      '33914-3',  // eGFR
-      '718-7',    // Hemoglobin
-      '6690-2',   // WBC (White blood cell count)
-      '4537-7',   // ESR (Erythrocyte sedimentation rate)
-      '1988-5',   // CRP (C-reactive protein)
-      '2885-7',   // Protein total (serum)
-      '13986-5',  // Albumin (serum)
-      '1742-6',   // ALT (Alanine aminotransferase)
-      '1920-8',   // AST (Aspartate aminotransferase)
-      '6768-6',   // Alkaline phosphatase (ALP)
-      '11042-0',  // Osteocalcin (bone formation marker)
-      '57368-6',  // CTX (C-terminal telopeptide - bone resorption marker)
-      '46126-1',  // P1NP (Procollagen type 1 N-terminal propeptide)
-      '2502-3',   // Transferrin saturation
-      '2276-4',   // Ferritin
+      { code: '17861-6', name: 'Calcium (serum)' },
+      { code: '2777-1', name: 'Phosphorus (serum)' },
+      { code: '1989-3', name: 'Vitamin D (25-hydroxyvitamin D)' },
+      { code: '2731-8', name: 'PTH (Parathyroid hormone)' },
+      { code: '2132-9', name: 'Vitamin B12' },
+      { code: '3016-3', name: 'TSH (Thyroid stimulating hormone)' },
+      { code: '2160-0', name: 'Creatinine (serum)' },
+      { code: '33914-3', name: 'eGFR' },
+      { code: '718-7', name: 'Hemoglobin' },
+      { code: '6690-2', name: 'WBC (White blood cell count)' },
+      { code: '4537-7', name: 'ESR (Erythrocyte sedimentation rate)' },
+      { code: '1988-5', name: 'CRP (C-reactive protein)' },
+      { code: '2885-7', name: 'Protein total (serum)' },
+      { code: '13986-5', name: 'Albumin (serum)' },
+      { code: '1742-6', name: 'ALT (Alanine aminotransferase)' },
+      { code: '1920-8', name: 'AST (Aspartate aminotransferase)' },
+      { code: '6768-6', name: 'Alkaline phosphatase (ALP)' },
+      { code: '11042-0', name: 'Osteocalcin (bone formation marker)' },
+      { code: '57368-6', name: 'CTX (C-terminal telopeptide - bone resorption marker)' },
+      { code: '46126-1', name: 'P1NP (Procollagen type 1 N-terminal propeptide)' },
+      { code: '2502-3', name: 'Transferrin saturation' },
+      { code: '2276-4', name: 'Ferritin' },
     ],
     categoria: 'musculoesqueletico',
     quickView: {
@@ -1315,11 +1315,11 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Sedentarismo',
           'Deficiência de vitamina D'
         ],
-        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Desequilíbrio entre reabsorção (osteoclastos) e formação óssea (osteoblastos), com predomínio de reabsorção. Na pós-menopausa, deficiência de estrogênio aumenta atividade osteoclástica. Fatores contribuintes: deficiência de vitamina D, hiperparatireoidismo secundário, envelhecimento.',
-        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'systematic_review' }]
+        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'A', studyType: 'SystematicReview' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -1342,7 +1342,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Osteoporose secundária (corticoides, hiperparatireoidismo, etc.)',
           'Osteoporose masculina'
         ],
-        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -1369,7 +1369,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Função renal',
           'Marcadores de turnover ósseo (CTX, P1NP) se disponíveis'
         ],
-        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -1387,7 +1387,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
             'Cessação de tabagismo',
             'Moderação no álcool'
           ],
-          citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -1424,7 +1424,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
               conduta: 'Iniciar tratamento assim que estável. Ácido zoledrônico IV tem evidência forte.'
             }
           ],
-          citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'rct' }]
+          citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'A', studyType: 'RCT' }]
         },
         duracao: '5 anos de bisfosfonatos, depois reavaliar (drug holiday se baixo risco). Denosumabe: não interromper abruptamente.'
       },
@@ -1451,7 +1451,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Intolerância a múltiplos tratamentos',
           'Necessidade de teriparatida ou romosozumabe'
         ],
-        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -1465,14 +1465,14 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Tratamento da osteopenia de alto risco',
           'Prevenção de quedas'
         ],
-        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'moderate', studyType: 'cohort' }]
+        citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'B', studyType: 'Cohort' }]
       },
     },
     protocolos: ['protocolo-osteoporose'],
     medicamentos: ['alendronato', 'risedronato', 'denosumabe', 'calcio', 'vitamina-d'],
     calculadoras: ['frax', 'nogg'],
     rastreamentos: ['rastreamento-osteoporose'],
-    citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'high', studyType: 'guideline' }],
+    citations: [{ refId: 'nof-osteoporosis-2020', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['osteoporose', 'fratura', 'densitometria', 'bisfosfonato', 'vitamina-d', 'calcio'],
   },
@@ -1489,18 +1489,18 @@ export const doencasMusculoesqueleticas: Doenca[] = [
     cid11: ['FA92.0'],
     // LOINC codes for ankylosing spondylitis workup
     loinc: [
-      '4537-7',   // ESR (Erythrocyte sedimentation rate)
-      '1988-5',   // CRP (C-reactive protein)
-      '30522-7',  // CRP high sensitivity
-      '13303-0',  // HLA-B27 (genetic marker)
-      '718-7',    // Hemoglobin
-      '4544-3',   // Hematocrit
-      '6690-2',   // WBC (White blood cell count)
-      '5048-4',   // ANA (to exclude other conditions)
-      '5041-9',   // RF (Rheumatoid Factor - typically negative)
-      '2160-0',   // Creatinine (serum)
-      '1742-6',   // ALT
-      '1920-8',   // AST
+      { code: '4537-7', name: 'ESR (Erythrocyte sedimentation rate)' },
+      { code: '1988-5', name: 'CRP (C-reactive protein)' },
+      { code: '30522-7', name: 'CRP high sensitivity' },
+      { code: '13303-0', name: 'HLA-B27 (genetic marker)' },
+      { code: '718-7', name: 'Hemoglobin' },
+      { code: '4544-3', name: 'Hematocrit' },
+      { code: '6690-2', name: 'WBC (White blood cell count)' },
+      { code: '5048-4', name: 'ANA (to exclude other conditions)' },
+      { code: '5041-9', name: 'RF (Rheumatoid Factor - typically negative)' },
+      { code: '2160-0', name: 'Creatinine (serum)' },
+      { code: '1742-6', name: 'ALT' },
+      { code: '1920-8', name: 'AST' },
     ],
     categoria: 'musculoesqueletico',
     quickView: {
@@ -1558,11 +1558,11 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'História familiar de espondiloartrite',
           'Infecções gastrointestinais ou geniturinárias prévias'
         ],
-        citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Inflamação crônica nas ênteses (inserções de tendões e ligamentos no osso) e articulações sacroilíacas/coluna. Processo inflamatório mediado por IL-17 e TNF-α leva à formação óssea reativa (sindesmófitos) e eventual anquilose. Forte associação com HLA-B27.',
-        citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'high', studyType: 'systematic_review' }]
+        citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'A', studyType: 'SystematicReview' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -1585,7 +1585,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Espondilite anquilosante (RX com sacroileíte definida)',
           'Espondiloartrite com manifestações extra-articulares'
         ],
-        citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -1612,7 +1612,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'RNM de sacroilíacas (edema ósseo precoce)',
           'RX de coluna em fases avançadas (coluna em bambu)'
         ],
-        citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -1629,7 +1629,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
             'Cessação do tabagismo (acelera progressão)',
             'Educação postural'
           ],
-          citations: [{ refId: 'asas-eular-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'asas-eular-2016', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -1666,7 +1666,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
               conduta: 'Preferir anti-TNF monoclonal (adalimumabe, infliximabe). Etanercepte menos eficaz para uveíte.'
             }
           ],
-          citations: [{ refId: 'asas-eular-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'asas-eular-2016', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Tratamento crônico.'
       },
@@ -1692,7 +1692,7 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Suspeita de fratura vertebral',
           'Manifestações extra-articulares graves'
         ],
-        citations: [{ refId: 'asas-eular-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'asas-eular-2016', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -1704,14 +1704,14 @@ export const doencasMusculoesqueleticas: Doenca[] = [
           'Cessação do tabagismo',
           'Controle de comorbidades'
         ],
-        citations: [{ refId: 'asas-eular-2016', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'asas-eular-2016', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
     },
     protocolos: ['protocolo-ea'],
     medicamentos: ['naproxeno', 'indometacina', 'celecoxibe', 'adalimumabe', 'etanercepte'],
     calculadoras: ['basdai', 'asdas', 'basfi'],
     rastreamentos: [],
-    citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'high', studyType: 'guideline' }, { refId: 'asas-eular-2016', evidenceLevel: 'high', studyType: 'guideline' }],
+    citations: [{ refId: 'asas-spa-2016', evidenceLevel: 'A', studyType: 'Guideline' }, { refId: 'asas-eular-2016', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['espondilite', 'espondiloartrite', 'hla-b27', 'sacroileite', 'dor-lombar-inflamatoria'],
   },

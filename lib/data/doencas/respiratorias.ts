@@ -116,15 +116,15 @@ export const doencasRespiratorias: Doenca[] = [
           'Biomassa (fogão a lenha)'
         ],
         citations: [
-          { refId: 'gold-2024', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'torch-trial-copd', evidenceLevel: 'high', studyType: 'rct' }
+          { refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'torch-trial-copd', evidenceLevel: 'A', studyType: 'RCT' }
         ]
       },
       fisiopatologia: {
         texto: 'Inflamação crônica das vias aéreas e parênquima pulmonar induzida por inalação de partículas nocivas, principalmente fumaça de cigarro. Resulta em bronquite crônica (hipersecreção de muco) e/ou enfisema (destruição alveolar), levando a limitação fixa ao fluxo aéreo.',
         citations: [
-          { refId: 'gold-2024', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'copd-pathophysiology-review', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'copd-pathophysiology-review', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
       quadroClinico: {
@@ -150,7 +150,7 @@ export const doencasRespiratorias: Doenca[] = [
           'Sobreposição asma-DPOC (ACO)'
         ],
         citations: [
-          { refId: 'gold-2024', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       diagnostico: {
@@ -175,8 +175,8 @@ export const doencasRespiratorias: Doenca[] = [
           'TC de tórax (casos selecionados)'
         ],
         citations: [
-          { refId: 'gold-2024', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'spirometry-copd-diagnosis', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'spirometry-copd-diagnosis', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
       tratamento: {
@@ -196,9 +196,9 @@ export const doencasRespiratorias: Doenca[] = [
             'Suporte nutricional se baixo peso'
           ],
           citations: [
-            { refId: 'gold-2024', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'pulmonary-rehab-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'smoking-cessation-copd', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'pulmonary-rehab-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'smoking-cessation-copd', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         farmacologico: {
@@ -230,10 +230,10 @@ export const doencasRespiratorias: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'gold-2024', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'uplift-trial', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'torch-trial-copd', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'lama-laba-meta-analysis', evidenceLevel: 'high', studyType: 'systematic_review' }
+            { refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'uplift-trial', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'torch-trial-copd', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'lama-laba-meta-analysis', evidenceLevel: 'A', studyType: 'SystematicReview' }
           ]
         },
         duracao: 'Tratamento contínuo'
@@ -257,7 +257,7 @@ export const doencasRespiratorias: Doenca[] = [
           'Avaliação para cirurgia redutora ou transplante'
         ],
         citations: [
-          { refId: 'gold-2024', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       prevencao: {
@@ -272,8 +272,8 @@ export const doencasRespiratorias: Doenca[] = [
           'Tratamento precoce'
         ],
         citations: [
-          { refId: 'gold-2024', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'copd-prevention-strategies', evidenceLevel: 'moderate', studyType: 'cohort' }
+          { refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'copd-prevention-strategies', evidenceLevel: 'B', studyType: 'Cohort' }
         ]
       },
     },
@@ -282,9 +282,9 @@ export const doencasRespiratorias: Doenca[] = [
     calculadoras: ['gold-copd', 'bode-index'],
     rastreamentos: [],
     citations: [
-      { refId: 'gold-2024', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'torch-trial-copd', evidenceLevel: 'high', studyType: 'rct' },
-      { refId: 'uplift-trial', evidenceLevel: 'high', studyType: 'rct' }
+      { refId: 'gold-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'torch-trial-copd', evidenceLevel: 'A', studyType: 'RCT' },
+      { refId: 'uplift-trial', evidenceLevel: 'A', studyType: 'RCT' }
     ],
     lastUpdate: '2024-12',
     tags: ['dpoc', 'enfisema', 'bronquite', 'tabagismo', 'dispneia'],
@@ -399,14 +399,14 @@ export const doencasRespiratorias: Doenca[] = [
           'Institucionalização'
         ],
         citations: [
-          { refId: 'sbpt-pac-2022', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'idsa-ats-cap-2019', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'idsa-ats-cap-2019', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       fisiopatologia: {
         texto: 'Infecção do parênquima pulmonar por microorganismos (bactérias, vírus, fungos). Os mais comuns são Streptococcus pneumoniae, Haemophilus influenzae, Mycoplasma pneumoniae e vírus respiratórios. A resposta inflamatória causa consolidação alveolar e comprometimento das trocas gasosas.',
         citations: [
-          { refId: 'sbpt-pac-2022', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       quadroClinico: {
@@ -431,8 +431,8 @@ export const doencasRespiratorias: Doenca[] = [
           'PAC atípica: início insidioso, tosse seca, manifestações extrapulmonares'
         ],
         citations: [
-          { refId: 'sbpt-pac-2022', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'cap-clinical-features-review', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'cap-clinical-features-review', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       diagnostico: {
@@ -458,9 +458,9 @@ export const doencasRespiratorias: Doenca[] = [
           'Pesquisa de antígeno urinário (pneumococo, legionella) se grave'
         ],
         citations: [
-          { refId: 'sbpt-pac-2022', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'idsa-ats-cap-2019', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'procalcitonin-cap-meta', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'idsa-ats-cap-2019', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'procalcitonin-cap-meta', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
       tratamento: {
@@ -478,7 +478,7 @@ export const doencasRespiratorias: Doenca[] = [
             'Analgésicos/antitérmicos'
           ],
           citations: [
-            { refId: 'sbpt-pac-2022', evidenceLevel: 'high', studyType: 'guideline' }
+            { refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' }
           ]
         },
         farmacologico: {
@@ -505,9 +505,9 @@ export const doencasRespiratorias: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'sbpt-pac-2022', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'idsa-ats-cap-2019', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'cap-antibiotic-duration-rct', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'idsa-ats-cap-2019', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'cap-antibiotic-duration-rct', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         duracao: '5-7 dias (mínimo 5 dias, afebril por 48-72h antes de suspender)'
@@ -529,8 +529,8 @@ export const doencasRespiratorias: Doenca[] = [
           'Falha do tratamento ambulatorial'
         ],
         citations: [
-          { refId: 'sbpt-pac-2022', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'curb65-validation-study', evidenceLevel: 'high', studyType: 'cohort' }
+          { refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'curb65-validation-study', evidenceLevel: 'A', studyType: 'Cohort' }
         ]
       },
       prevencao: {
@@ -544,8 +544,8 @@ export const doencasRespiratorias: Doenca[] = [
           'Vacinação pós-PAC'
         ],
         citations: [
-          { refId: 'sbpt-pac-2022', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'pneumococcal-vaccine-efficacy', evidenceLevel: 'high', studyType: 'rct' }
+          { refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'pneumococcal-vaccine-efficacy', evidenceLevel: 'A', studyType: 'RCT' }
         ]
       },
     },
@@ -554,8 +554,8 @@ export const doencasRespiratorias: Doenca[] = [
     calculadoras: ['curb-65', 'psi-port'],
     rastreamentos: [],
     citations: [
-      { refId: 'sbpt-pac-2022', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'idsa-ats-cap-2019', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'sbpt-pac-2022', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'idsa-ats-cap-2019', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12',
     tags: ['pneumonia', 'pac', 'infeccao-respiratoria', 'tosse', 'febre'],
@@ -661,14 +661,14 @@ export const doencasRespiratorias: Doenca[] = [
           'Tabagismo passivo na infância'
         ],
         citations: [
-          { refId: 'aria-2020', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'allergic-rhinitis-epidemiology', evidenceLevel: 'moderate', studyType: 'cohort' }
+          { refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'allergic-rhinitis-epidemiology', evidenceLevel: 'B', studyType: 'Cohort' }
         ]
       },
       fisiopatologia: {
         texto: 'Reação de hipersensibilidade tipo I mediada por IgE. Após sensibilização, a reexposição ao alérgeno desencadeia degranulação de mastócitos e liberação de histamina, leucotrienos e citocinas, causando os sintomas.',
         citations: [
-          { refId: 'aria-2020', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       quadroClinico: {
@@ -694,7 +694,7 @@ export const doencasRespiratorias: Doenca[] = [
           'Moderada/grave: sintomas afetam qualidade de vida'
         ],
         citations: [
-          { refId: 'aria-2020', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       diagnostico: {
@@ -718,8 +718,8 @@ export const doencasRespiratorias: Doenca[] = [
           'Citologia nasal (eosinofilia)'
         ],
         citations: [
-          { refId: 'aria-2020', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'skin-prick-test-accuracy', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'skin-prick-test-accuracy', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
       tratamento: {
@@ -737,8 +737,8 @@ export const doencasRespiratorias: Doenca[] = [
             'Imunoterapia específica (casos selecionados)'
           ],
           citations: [
-            { refId: 'aria-2020', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'nasal-saline-irrigation-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' }
+            { refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'nasal-saline-irrigation-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' }
           ]
         },
         farmacologico: {
@@ -765,9 +765,9 @@ export const doencasRespiratorias: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'aria-2020', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'intranasal-corticosteroids-meta', evidenceLevel: 'high', studyType: 'systematic_review' },
-            { refId: 'antihistamines-allergic-rhinitis-rct', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'intranasal-corticosteroids-meta', evidenceLevel: 'A', studyType: 'SystematicReview' },
+            { refId: 'antihistamines-allergic-rhinitis-rct', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         duracao: 'Conforme necessidade, corticoide nasal pode ser contínuo se persistente'
@@ -789,7 +789,7 @@ export const doencasRespiratorias: Doenca[] = [
           'Sintomas atípicos ou unilaterais'
         ],
         citations: [
-          { refId: 'aria-2020', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       prevencao: {
@@ -802,8 +802,8 @@ export const doencasRespiratorias: Doenca[] = [
           'Imunoterapia específica'
         ],
         citations: [
-          { refId: 'aria-2020', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'allergen-immunotherapy-cochrane', evidenceLevel: 'high', studyType: 'systematic_review' }
+          { refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'allergen-immunotherapy-cochrane', evidenceLevel: 'A', studyType: 'SystematicReview' }
         ]
       },
     },
@@ -812,8 +812,8 @@ export const doencasRespiratorias: Doenca[] = [
     calculadoras: [],
     rastreamentos: [],
     citations: [
-      { refId: 'aria-2020', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'intranasal-corticosteroids-meta', evidenceLevel: 'high', studyType: 'systematic_review' }
+      { refId: 'aria-2020', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'intranasal-corticosteroids-meta', evidenceLevel: 'A', studyType: 'SystematicReview' }
     ],
     lastUpdate: '2024-12',
     tags: ['rinite', 'alergia', 'espirros', 'coriza', 'anti-histaminico'],

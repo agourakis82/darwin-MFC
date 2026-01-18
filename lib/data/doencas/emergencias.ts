@@ -120,11 +120,11 @@ export const doencasEmergencias: Doenca[] = [
           'História familiar de DAC precoce',
           'Sedentarismo'
         ],
-        citations: [{ refId: 'sbc-sca-2020', evidenceLevel: 'high', studyType: 'cohort' }]
+        citations: [{ refId: 'sbc-sca-2020', evidenceLevel: 'A', studyType: 'Cohort' }]
       },
       fisiopatologia: {
         texto: 'Ruptura ou erosão de placa aterosclerótica vulnerável, com exposição do núcleo lipídico e formação de trombo. No IAMCSST há oclusão total; no IAMSSST/angina instável, oclusão parcial ou microembolização.',
-        citations: [{ refId: 'esc-stemi-2023', evidenceLevel: 'high', studyType: 'systematic_review' }]
+        citations: [{ refId: 'esc-stemi-2023', evidenceLevel: 'A', studyType: 'SystematicReview' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -149,7 +149,7 @@ export const doencasEmergencias: Doenca[] = [
           'IAMSSST: troponina elevada, sem supra de ST',
           'IAMCSST: supra de ST no ECG'
         ],
-        citations: [{ refId: 'sbc-sca-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'sbc-sca-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -178,7 +178,7 @@ export const doencasEmergencias: Doenca[] = [
           'Rx de tórax',
           'Angiografia coronariana (cineangiocoronariografia)'
         ],
-        citations: [{ refId: 'esc-stemi-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'esc-stemi-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -194,7 +194,7 @@ export const doencasEmergencias: Doenca[] = [
             'Oxigenoterapia se SatO2<90%',
             'Jejum inicial'
           ],
-          citations: [{ refId: 'sbc-sca-2020', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+          citations: [{ refId: 'sbc-sca-2020', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -203,7 +203,7 @@ export const doencasEmergencias: Doenca[] = [
             { classe: 'Analgesia', medicamentos: ['Morfina 2-4mg IV'], observacoes: 'Se dor refratária a nitrato' },
             { classe: 'Betabloqueador', medicamentos: ['Metoprolol 5mg IV'], observacoes: 'Se não houver contraindicação' }
           ],
-          citations: [{ refId: 'esc-stemi-2023', evidenceLevel: 'high', studyType: 'rct' }]
+          citations: [{ refId: 'esc-stemi-2023', evidenceLevel: 'A', studyType: 'RCT' }]
         },
         duracao: 'Internação + terapia dupla antiagregante por 12 meses'
       },
@@ -223,7 +223,7 @@ export const doencasEmergencias: Doenca[] = [
           'Complicações mecânicas',
           'Arritmias sustentadas'
         ],
-        citations: [{ refId: 'sbc-sca-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'sbc-sca-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -238,16 +238,16 @@ export const doencasEmergencias: Doenca[] = [
           'IECA/BRA',
           'Reabilitação cardíaca'
         ],
-        citations: [{ refId: 'sbc-sca-2020', evidenceLevel: 'high', studyType: 'rct' }]
+        citations: [{ refId: 'sbc-sca-2020', evidenceLevel: 'A', studyType: 'RCT' }]
       }
     },
     protocolos: ['manejo-sca', 'anticoagulacao-sca'],
     medicamentos: ['aas', 'clopidogrel', 'ticagrelor', 'enoxaparina', 'morfina'],
     calculadoras: ['heart-score', 'grace-score', 'timi-score'],
     citations: [
-      { refId: 'sbc-sca-2020', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'esc-stemi-2023', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'aha-ua-nstemi-2021', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'sbc-sca-2020', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'esc-stemi-2023', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'aha-ua-nstemi-2021', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -352,11 +352,11 @@ export const doencasEmergencias: Doenca[] = [
           'AVC/AIT prévio',
           'Estenose carotídea'
         ],
-        citations: [{ refId: 'sbn-avc-2022', evidenceLevel: 'high', studyType: 'cohort' }]
+        citations: [{ refId: 'sbn-avc-2022', evidenceLevel: 'A', studyType: 'Cohort' }]
       },
       fisiopatologia: {
         texto: 'Oclusão arterial por trombo (cardioembólico, aterotrómbico ou lacunar) levando a isquemia cerebral. Existe uma área de penumbra potencialmente salvável ao redor do core isquêmico. A janela terapêutica visa salvar essa penumbra.',
-        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'systematic_review' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'SystematicReview' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -384,7 +384,7 @@ export const doencasEmergencias: Doenca[] = [
           'AVC lacunar (pequenos vasos)',
           'AIT (sintomas <24h com neuroimagem normal)'
         ],
-        citations: [{ refId: 'sbn-avc-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'sbn-avc-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -415,7 +415,7 @@ export const doencasEmergencias: Doenca[] = [
           'Ecocardiograma (pesquisa fonte embólica)',
           'Doppler de carótidas'
         ],
-        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -432,7 +432,7 @@ export const doencasEmergencias: Doenca[] = [
             'Fisioterapia/fonoaudiologia precoce',
             'Prevenção de broncoaspiração'
           ],
-          citations: [{ refId: 'sbn-avc-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'sbn-avc-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -443,7 +443,7 @@ export const doencasEmergencias: Doenca[] = [
           segundaLinha: [
             { classe: 'Anticoagulação', medicamentos: ['Rivaroxabana', 'Apixabana', 'Varfarina'], observacoes: 'Se FA, após 3-14 dias dependendo do tamanho do AVC' }
           ],
-          citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Prevenção secundária vitalícia'
       },
@@ -462,7 +462,7 @@ export const doencasEmergencias: Doenca[] = [
           'Estenose carotídea >50% sintomática: Cirurgia vascular',
           'Jovem sem fator de risco: investigação de trombofilias'
         ],
-        citations: [{ refId: 'sbn-avc-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'sbn-avc-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -477,16 +477,16 @@ export const doencasEmergencias: Doenca[] = [
           'Controle rigoroso de fatores de risco',
           'Revascularização carotídea se indicada'
         ],
-        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' }]
       }
     },
     protocolos: ['codigo-avc', 'trombolise-avc', 'investigacao-avc-jovem'],
     medicamentos: ['alteplase', 'aas', 'clopidogrel', 'atorvastatina', 'rivaroxabana'],
     calculadoras: ['nihss', 'abcd2', 'chads2-vasc'],
     citations: [
-      { refId: 'sbn-avc-2022', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'aha-stroke-2019', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'eso-stroke-2021', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'sbn-avc-2022', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'aha-stroke-2019', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'eso-stroke-2021', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -567,11 +567,11 @@ export const doencasEmergencias: Doenca[] = [
           'Exercício pós-prandial',
           'Alergia a amendoim/nozes (maior risco de fatal)'
         ],
-        citations: [{ refId: 'wao-anaphylaxis-2020', evidenceLevel: 'high', studyType: 'cohort' }]
+        citations: [{ refId: 'wao-anaphylaxis-2020', evidenceLevel: 'A', studyType: 'Cohort' }]
       },
       fisiopatologia: {
         texto: 'Reação mediada por IgE (maioria) ou não-IgE com degranulação maciça de mastócitos e basófilos, liberando histamina, triptase, leucotrienos e prostaglandinas. Causa vasodilatação, aumento da permeabilidade vascular, broncoconstrição e estímulo de terminações nervosas.',
-        citations: [{ refId: 'eaaci-anaphylaxis-2021', evidenceLevel: 'high', studyType: 'systematic_review' }]
+        citations: [{ refId: 'eaaci-anaphylaxis-2021', evidenceLevel: 'A', studyType: 'SystematicReview' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -596,7 +596,7 @@ export const doencasEmergencias: Doenca[] = [
           'Anafilaxia protaída (sintomas persistentes)',
           'Anafilaxia induzida por exercício'
         ],
-        citations: [{ refId: 'wao-anaphylaxis-2020', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'wao-anaphylaxis-2020', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -618,7 +618,7 @@ export const doencasEmergencias: Doenca[] = [
           'Histamina plasmática (meia-vida curta)',
           'IgE específica posteriormente'
         ],
-        citations: [{ refId: 'eaaci-anaphylaxis-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'eaaci-anaphylaxis-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -635,7 +635,7 @@ export const doencasEmergencias: Doenca[] = [
             'Acesso venoso calibroso',
             'Preparo para IOT se edema de via aérea'
           ],
-          citations: [{ refId: 'wao-anaphylaxis-2020', evidenceLevel: 'high', studyType: 'expert_opinion' }]
+          citations: [{ refId: 'wao-anaphylaxis-2020', evidenceLevel: 'A', studyType: 'ExpertOpinion' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -651,7 +651,7 @@ export const doencasEmergencias: Doenca[] = [
             { situacao: 'Uso de betabloqueador', conduta: 'Glucagon 1-5mg IV se refratário a adrenalina' },
             { situacao: 'Choque refratário', conduta: 'Adrenalina IV 0,1-0,5mcg/kg/min em BIC' }
           ],
-          citations: [{ refId: 'eaaci-anaphylaxis-2021', evidenceLevel: 'high', studyType: 'rct' }]
+          citations: [{ refId: 'eaaci-anaphylaxis-2021', evidenceLevel: 'A', studyType: 'RCT' }]
         },
         duracao: 'Observação mínima 4-6h (até 24h se grave ou bifásica prévia)'
       },
@@ -668,7 +668,7 @@ export const doencasEmergencias: Doenca[] = [
           'Considerar imunoterapia se veneno de inseto',
           'Dessensibilização se medicamento essencial'
         ],
-        citations: [{ refId: 'wao-anaphylaxis-2020', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'wao-anaphylaxis-2020', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       prevencao: {
         primaria: [
@@ -682,16 +682,16 @@ export const doencasEmergencias: Doenca[] = [
           'Educação de familiares e cuidadores',
           'Plano de emergência escrito'
         ],
-        citations: [{ refId: 'eaaci-anaphylaxis-2021', evidenceLevel: 'moderate', studyType: 'cohort' }]
+        citations: [{ refId: 'eaaci-anaphylaxis-2021', evidenceLevel: 'B', studyType: 'Cohort' }]
       }
     },
     protocolos: ['anafilaxia-emergencia', 'choque-anafilatico'],
     medicamentos: ['adrenalina', 'difenidramina', 'metilprednisolona', 'ranitidina'],
     calculadoras: [],
     citations: [
-      { refId: 'wao-anaphylaxis-2020', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'eaaci-anaphylaxis-2021', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'asbai-anafilaxia-2022', evidenceLevel: 'moderate', studyType: 'consensus' }
+      { refId: 'wao-anaphylaxis-2020', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'eaaci-anaphylaxis-2021', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'asbai-anafilaxia-2022', evidenceLevel: 'B', studyType: 'Consensus' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -804,11 +804,11 @@ export const doencasEmergencias: Doenca[] = [
           'Hospitalização recente',
           'Cirurgia recente'
         ],
-        citations: [{ refId: 'ilas-sepse-2023', evidenceLevel: 'high', studyType: 'cohort' }]
+        citations: [{ refId: 'ilas-sepse-2023', evidenceLevel: 'A', studyType: 'Cohort' }]
       },
       fisiopatologia: {
         texto: 'Resposta imune desregulada à infecção com liberação maciça de citocinas (tempestade de citocinas), ativação de cascata de coagulação, disfunção endotelial e vasodilatação. Resulta em hipoperfusão tecidual, disfunção orgânica e potencial óbito.',
-        citations: [{ refId: 'sepsis-3', evidenceLevel: 'high', studyType: 'systematic_review' }]
+        citations: [{ refId: 'sepsis-3', evidenceLevel: 'A', studyType: 'SystematicReview' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -833,7 +833,7 @@ export const doencasEmergencias: Doenca[] = [
           'Choque séptico',
           'Sepse com disfunção de órgão específico (IRA, SDRA, etc.)'
         ],
-        citations: [{ refId: 'sepsis-3', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'sepsis-3', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -862,7 +862,7 @@ export const doencasEmergencias: Doenca[] = [
           'TC conforme suspeita (abdome, pelve)',
           'Ecocardiograma (se disfunção cardíaca ou suspeita de endocardite)'
         ],
-        citations: [{ refId: 'ilas-sepse-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'ilas-sepse-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -879,7 +879,7 @@ export const doencasEmergencias: Doenca[] = [
             'Ventilação protetora se SDRA',
             'Terapia de substituição renal se necessário'
           ],
-          citations: [{ refId: 'surviving-sepsis-2021', evidenceLevel: 'high', studyType: 'systematic_review' }]
+          citations: [{ refId: 'surviving-sepsis-2021', evidenceLevel: 'A', studyType: 'SystematicReview' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -892,7 +892,7 @@ export const doencasEmergencias: Doenca[] = [
             { classe: 'Inotrópico', medicamentos: ['Dobutamina 2,5-20mcg/kg/min'], observacoes: 'Se baixo débito cardíaco' },
             { classe: 'Corticoide', medicamentos: ['Hidrocortisona 200mg/dia'], observacoes: 'Se refratário a vasopressores' }
           ],
-          citations: [{ refId: 'surviving-sepsis-2021', evidenceLevel: 'high', studyType: 'rct' }]
+          citations: [{ refId: 'surviving-sepsis-2021', evidenceLevel: 'A', studyType: 'RCT' }]
         },
         duracao: 'ATB por 7-10 dias na maioria; ajustar conforme foco e resposta'
       },
@@ -910,7 +910,7 @@ export const doencasEmergencias: Doenca[] = [
           'Cirurgia se foco cirúrgico',
           'Infectologista para casos complexos'
         ],
-        citations: [{ refId: 'ilas-sepse-2023', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'ilas-sepse-2023', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       prevencao: {
         primaria: [
@@ -924,16 +924,16 @@ export const doencasEmergencias: Doenca[] = [
           'Tratamento adequado de infecções comunitárias',
           'Bundle da hora 1'
         ],
-        citations: [{ refId: 'surviving-sepsis-2021', evidenceLevel: 'high', studyType: 'systematic_review' }]
+        citations: [{ refId: 'surviving-sepsis-2021', evidenceLevel: 'A', studyType: 'SystematicReview' }]
       }
     },
     protocolos: ['sepse-bundle-1h', 'choque-septico', 'atb-empirico-sepse'],
     medicamentos: ['noradrenalina', 'meropenem', 'piperacilina-tazobactam', 'vancomicina'],
     calculadoras: ['sofa', 'qsofa', 'apache-ii'],
     citations: [
-      { refId: 'sepsis-3', evidenceLevel: 'high', studyType: 'consensus' },
-      { refId: 'surviving-sepsis-2021', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'ilas-sepse-2023', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'sepsis-3', evidenceLevel: 'A', studyType: 'Consensus' },
+      { refId: 'surviving-sepsis-2021', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'ilas-sepse-2023', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -1024,11 +1024,11 @@ export const doencasEmergencias: Doenca[] = [
           'Trabalho agrícola (pesticidas)',
           'Crianças pequenas (exploração oral)'
         ],
-        citations: [{ refId: 'aapcc-annual-report-2022', evidenceLevel: 'moderate', studyType: 'cohort' }]
+        citations: [{ refId: 'aapcc-annual-report-2022', evidenceLevel: 'B', studyType: 'Cohort' }]
       },
       fisiopatologia: {
         texto: 'Varia conforme o agente: ligação a receptores específicos, inibição enzimática, alteração de canais iônicos, dano celular direto. Cada toxíndrome reflete o mecanismo predominante do agente envolvido.',
-        citations: [{ refId: 'goldfrank-toxicology', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'goldfrank-toxicology', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -1056,7 +1056,7 @@ export const doencasEmergencias: Doenca[] = [
           'Toxíndrome opioidérgica (morfina, fentanil, heroína)',
           'Toxíndrome sedativo-hipnótica (benzodiazepínicos, barbitúricos)'
         ],
-        citations: [{ refId: 'goldfrank-toxicology', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+        citations: [{ refId: 'goldfrank-toxicology', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
       },
       diagnostico: {
         criterios: [
@@ -1088,7 +1088,7 @@ export const doencasEmergencias: Doenca[] = [
           'Rx de abdome (body packer)',
           'TC de crânio se alteração persistente do sensório'
         ],
-        citations: [{ refId: 'sbpt-intoxicacoes-2021', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'sbpt-intoxicacoes-2021', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -1106,7 +1106,7 @@ export const doencasEmergencias: Doenca[] = [
             'Irrigação intestinal total (body packer, Fe, Li, liberação prolongada)',
             'Hemodiálise (salicilatos, metanol, etilenoglicol, lítio)'
           ],
-          citations: [{ refId: 'goldfrank-toxicology', evidenceLevel: 'moderate', studyType: 'expert_opinion' }]
+          citations: [{ refId: 'goldfrank-toxicology', evidenceLevel: 'B', studyType: 'ExpertOpinion' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -1117,7 +1117,7 @@ export const doencasEmergencias: Doenca[] = [
             { situacao: 'Organofosforados', conduta: 'Atropina até secar secreções + Pralidoxima nas primeiras 24-48h' },
             { situacao: 'Antidepressivos tricíclicos', conduta: 'Bicarbonato 1-2mEq/kg se QRS>100ms' }
           ],
-          citations: [{ refId: 'sbpt-intoxicacoes-2021', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'sbpt-intoxicacoes-2021', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         duracao: 'Observação mínima 6-24h conforme agente; alguns requerem internação prolongada'
       },
@@ -1133,7 +1133,7 @@ export const doencasEmergencias: Doenca[] = [
           'Psiquiatria se tentativa de suicídio',
           'Centro de Intoxicação para orientação (0800 722 6001 - CEATOX-SP)'
         ],
-        citations: [{ refId: 'sbpt-intoxicacoes-2021', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'sbpt-intoxicacoes-2021', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -1146,16 +1146,16 @@ export const doencasEmergencias: Doenca[] = [
           'Contato imediato com centro de intoxicação',
           'Avaliação e tratamento de transtornos psiquiátricos'
         ],
-        citations: [{ refId: 'aapcc-annual-report-2022', evidenceLevel: 'moderate', studyType: 'cohort' }]
+        citations: [{ refId: 'aapcc-annual-report-2022', evidenceLevel: 'B', studyType: 'Cohort' }]
       }
     },
     protocolos: ['intoxicacao-aguda', 'lavagem-gastrica', 'carvao-ativado'],
     medicamentos: ['naloxona', 'atropina', 'n-acetilcisteina', 'flumazenil'],
     calculadoras: ['nomograma-paracetamol'],
     citations: [
-      { refId: 'goldfrank-toxicology', evidenceLevel: 'high', studyType: 'textbook' },
-      { refId: 'sbpt-intoxicacoes-2021', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'aapcc-annual-report-2022', evidenceLevel: 'moderate', studyType: 'observational' }
+      { refId: 'goldfrank-toxicology', evidenceLevel: 'A', studyType: 'ExpertOpinion' },
+      { refId: 'sbpt-intoxicacoes-2021', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'aapcc-annual-report-2022', evidenceLevel: 'B', studyType: 'Observational' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -1251,11 +1251,11 @@ export const doencasEmergencias: Doenca[] = [
           'Extremos de idade',
           'Maus-tratos (crianças e idosos)'
         ],
-        citations: [{ refId: 'sbq-queimaduras-2021', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'sbq-queimaduras-2021', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Lesão tecidual com três zonas: coagulação (necrose central), estase (potencialmente salvável) e hiperemia (inflamação). Grande queimado desenvolve resposta inflamatória sistêmica com aumento da permeabilidade capilar, edema e choque distributivo.',
-        citations: [{ refId: 'aba-guidelines-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aba-guidelines-2016', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -1277,7 +1277,7 @@ export const doencasEmergencias: Doenca[] = [
           'Queimadura elétrica (baixa ou alta tensão)',
           'Lesão por inalação'
         ],
-        citations: [{ refId: 'sbq-queimaduras-2021', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'sbq-queimaduras-2021', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -1304,7 +1304,7 @@ export const doencasEmergencias: Doenca[] = [
           'Rx de tórax',
           'Broncoscopia (se suspeita de lesão inalatória)'
         ],
-        citations: [{ refId: 'aba-guidelines-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'aba-guidelines-2016', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -1323,7 +1323,7 @@ export const doencasEmergencias: Doenca[] = [
             'Enxertia de pele em queimaduras profundas',
             'Fisioterapia precoce'
           ],
-          citations: [{ refId: 'sbq-queimaduras-2021', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'sbq-queimaduras-2021', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -1334,7 +1334,7 @@ export const doencasEmergencias: Doenca[] = [
           segundaLinha: [
             { classe: 'Antimicrobiano tópico', medicamentos: ['Sulfadiazina de prata 1%'], observacoes: 'Em queimaduras de 2º/3º grau' }
           ],
-          citations: [{ refId: 'aba-guidelines-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'aba-guidelines-2016', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Variável conforme extensão e profundidade'
       },
@@ -1351,15 +1351,15 @@ export const doencasEmergencias: Doenca[] = [
           'Cirurgia plástica: cicatrizes, retraturas',
           'Psicologia/Psiquiatria'
         ],
-        citations: [{ refId: 'sbq-queimaduras-2021', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'sbq-queimaduras-2021', evidenceLevel: 'B', studyType: 'Guideline' }]
       }
     },
     protocolos: ['queimaduras-atendimento-inicial', 'parkland-ressuscitacao'],
     medicamentos: ['morfina', 'sulfadiazina-prata'],
     calculadoras: ['regra-dos-9', 'parkland'],
     citations: [
-      { refId: 'sbq-queimaduras-2021', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'aba-guidelines-2016', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'sbq-queimaduras-2021', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'aba-guidelines-2016', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -1453,11 +1453,11 @@ export const doencasEmergencias: Doenca[] = [
           'Abstinência de álcool ou benzodiazepínicos',
           'Intoxicação'
         ],
-        citations: [{ refId: 'ilae-status-2015', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'ilae-status-2015', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Falha dos mecanismos inibitórios (GABAérgicos) em encerrar a atividade ictal, com hiperatividade excitatória (glutamatérgica) mantida. Leva a excitotoxicidade, dano neuronal, edema cerebral e potencial falência respiratória/cardiovascular.',
-        citations: [{ refId: 'ilae-status-2015', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'ilae-status-2015', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -1483,7 +1483,7 @@ export const doencasEmergencias: Doenca[] = [
           'EME não convulsivo (suspeitar em alteração de consciência prolongada)',
           'EME sutil (movimentos mínimos, EEG epileptiforme)'
         ],
-        citations: [{ refId: 'lbn-eme-2020', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'lbn-eme-2020', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -1516,7 +1516,7 @@ export const doencasEmergencias: Doenca[] = [
           'Punção lombar (se suspeita de neuroinfecção, após imagem)',
           'Anticorpos antineuronais (encefalite autoimune)'
         ],
-        citations: [{ refId: 'ilae-status-2015', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'ilae-status-2015', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -1533,7 +1533,7 @@ export const doencasEmergencias: Doenca[] = [
             'Monitorização contínua',
             'Correção de distúrbios metabólicos'
           ],
-          citations: [{ refId: 'lbn-eme-2020', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'lbn-eme-2020', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -1547,7 +1547,7 @@ export const doencasEmergencias: Doenca[] = [
             { situacao: 'Hipoglicemia', conduta: 'Glicose 50% 50mL IV + Tiamina 100mg' },
             { situacao: 'Abstinência alcoólica', conduta: 'Benzodiazepínicos em doses altas + Tiamina' }
           ],
-          citations: [{ refId: 'ilae-status-2015', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'ilae-status-2015', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Manutenção com FAE conforme etiologia'
       },
@@ -1563,15 +1563,15 @@ export const doencasEmergencias: Doenca[] = [
           'Neurologia para investigação',
           'Epileptologista se refratário'
         ],
-        citations: [{ refId: 'lbn-eme-2020', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'lbn-eme-2020', evidenceLevel: 'B', studyType: 'Guideline' }]
       }
     },
     protocolos: ['eme-emergencia', 'crise-epileptica-aguda'],
     medicamentos: ['diazepam', 'midazolam', 'fenitoina', 'valproato', 'levetiracetam'],
     calculadoras: [],
     citations: [
-      { refId: 'ilae-status-2015', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'lbn-eme-2020', evidenceLevel: 'moderate', studyType: 'consensus' }
+      { refId: 'ilae-status-2015', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'lbn-eme-2020', evidenceLevel: 'B', studyType: 'Consensus' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -1660,11 +1660,11 @@ export const doencasEmergencias: Doenca[] = [
           'Fibrilação atrial',
           'Doença renal crônica'
         ],
-        citations: [{ refId: 'sbc-ic-2018', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'sbc-ic-2018', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Aumento da pressão de enchimento do VE → aumento da pressão capilar pulmonar → transudação de líquido para interstício e alvéolos → comprometimento das trocas gasosas e hipoxemia. No não cardiogênico, há lesão da barreira alvéolo-capilar.',
-        citations: [{ refId: 'esc-hf-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'esc-hf-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -1689,7 +1689,7 @@ export const doencasEmergencias: Doenca[] = [
           'EAP com choque cardiogênico (PA baixa)',
           'EAP não cardiogênico (SDRA)'
         ],
-        citations: [{ refId: 'sbc-ic-2018', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'sbc-ic-2018', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -1716,7 +1716,7 @@ export const doencasEmergencias: Doenca[] = [
           'Ecocardiograma (disfunção VE, valvopatias)',
           'TC de tórax (se dúvida diagnóstica)'
         ],
-        citations: [{ refId: 'esc-hf-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'esc-hf-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -1732,7 +1732,7 @@ export const doencasEmergencias: Doenca[] = [
             'VNI (CPAP 5-10cmH2O ou BiPAP)',
             'Intubação se VNI falhar'
           ],
-          citations: [{ refId: 'sbc-ic-2018', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'sbc-ic-2018', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -1743,7 +1743,7 @@ export const doencasEmergencias: Doenca[] = [
             { classe: 'Inotrópico', medicamentos: ['Dobutamina 2,5-20mcg/kg/min'], observacoes: 'Se baixo débito' },
             { classe: 'Vasopressor', medicamentos: ['Noradrenalina'], observacoes: 'Se choque' }
           ],
-          citations: [{ refId: 'esc-hf-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'esc-hf-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Fase aguda: horas a dias; otimização crônica da IC'
       },
@@ -1759,15 +1759,15 @@ export const doencasEmergencias: Doenca[] = [
           'Cardiologia para investigação e otimização',
           'Cirurgia cardíaca se valvopatia grave'
         ],
-        citations: [{ refId: 'sbc-ic-2018', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'sbc-ic-2018', evidenceLevel: 'A', studyType: 'Guideline' }]
       }
     },
     protocolos: ['eap-emergencia', 'ic-descompensada'],
     medicamentos: ['furosemida', 'nitroglicerina', 'nitroprussiato', 'dobutamina'],
     calculadoras: [],
     citations: [
-      { refId: 'sbc-ic-2018', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'esc-hf-2021', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'sbc-ic-2018', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'esc-hf-2021', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -1888,11 +1888,11 @@ export const doencasEmergencias: Doenca[] = [
           'Uso de SGLT2i (CAD euglicêmica)',
           'Uso de corticoides'
         ],
-        citations: [{ refId: 'ada-diabetes-2024', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'ada-diabetes-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Deficiência de insulina + excesso de hormônios contrarreguladores → lipólise aumentada → excesso de ácidos graxos livres → cetogênese hepática → acúmulo de corpos cetônicos (acetoacetato, beta-hidroxibutirato) → acidose metabólica. Hiperglicemia causa diurese osmótica e desidratação.',
-        citations: [{ refId: 'sbd-cad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'sbd-cad-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -1916,7 +1916,7 @@ export const doencasEmergencias: Doenca[] = [
           'CAD grave (pH <7,0)',
           'CAD euglicêmica (glicemia <250, uso de SGLT2i)'
         ],
-        citations: [{ refId: 'ada-diabetes-2024', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'ada-diabetes-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -1943,7 +1943,7 @@ export const doencasEmergencias: Doenca[] = [
           'Amilase, lipase (se dor abdominal)',
           'Culturas (se suspeita de infecção)'
         ],
-        citations: [{ refId: 'sbd-cad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'sbd-cad-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -1961,7 +1961,7 @@ export const doencasEmergencias: Doenca[] = [
             'Eletrólitos e gasometria 2-4h',
             'Identificar e tratar precipitante'
           ],
-          citations: [{ refId: 'ada-diabetes-2024', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'ada-diabetes-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -1974,7 +1974,7 @@ export const doencasEmergencias: Doenca[] = [
             { situacao: 'pH <6,9', conduta: 'Considerar NaHCO3 100mEq em 400mL em 2h' },
             { situacao: 'K <3,3', conduta: 'Adiar insulina e repor K primeiro' }
           ],
-          citations: [{ refId: 'sbd-cad-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'sbd-cad-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Até resolução da acidose e cetose (geralmente 12-24h)'
       },
@@ -1991,15 +1991,15 @@ export const doencasEmergencias: Doenca[] = [
           'Endocrinologia para ajuste',
           'Psicologia se omissão intencional de insulina'
         ],
-        citations: [{ refId: 'ada-diabetes-2024', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'ada-diabetes-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       }
     },
     protocolos: ['cad-emergencia', 'insulinizacao-cad'],
     medicamentos: ['insulina-regular', 'sf-0,9', 'kcl'],
     calculadoras: ['anion-gap', 'sodio-corrigido', 'osmolaridade'],
     citations: [
-      { refId: 'ada-diabetes-2024', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'sbd-cad-2022', evidenceLevel: 'moderate', studyType: 'guideline' }
+      { refId: 'ada-diabetes-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'sbd-cad-2022', evidenceLevel: 'B', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12-23'
   }

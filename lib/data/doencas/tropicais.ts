@@ -107,11 +107,11 @@ export const doencasTropicais: Doenca[] = [
           'Imunossupressão',
           'Primoinfecção'
         ],
-        citations: [{ refId: 'ms-malaria-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-malaria-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Esporozoítos inoculados pelo mosquito infectam hepatócitos, multiplicam-se e liberam merozoítos que invadem hemácias. O ciclo eritrocítico causa hemólise, liberação de citocinas e a sintomatologia. P. vivax/ovale formam hipnozoítos hepáticos (recaídas). P. falciparum causa citoaderência e obstrução microvascular.',
-        citations: [{ refId: 'who-malaria-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-malaria-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -136,7 +136,7 @@ export const doencasTropicais: Doenca[] = [
           'Malária cerebral',
           'Malária na gestação'
         ],
-        citations: [{ refId: 'ms-malaria-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-malaria-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -161,7 +161,7 @@ export const doencasTropicais: Doenca[] = [
           'Função renal',
           'Glicemia, lactato'
         ],
-        citations: [{ refId: 'ms-malaria-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-malaria-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -177,7 +177,7 @@ export const doencasTropicais: Doenca[] = [
             'Monitorização',
             'Transfusão se Hb<5g/dL'
           ],
-          citations: [{ refId: 'ms-malaria-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'ms-malaria-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -191,7 +191,7 @@ export const doencasTropicais: Doenca[] = [
             { situacao: 'Gestante', conduta: 'Não usar primaquina; preferir quinina+clindamicina no 1º tri' },
             { situacao: 'G6PD deficiente', conduta: 'Primaquina 0,75mg/kg/semana por 8 semanas' }
           ],
-          citations: [{ refId: 'who-malaria-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'who-malaria-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Tratamento curto (3-7 dias); primaquina por 7-14 dias'
       },
@@ -207,7 +207,7 @@ export const doencasTropicais: Doenca[] = [
           'Gestante com malária',
           'Falha terapêutica'
         ],
-        citations: [{ refId: 'ms-malaria-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-malaria-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -222,15 +222,15 @@ export const doencasTropicais: Doenca[] = [
           'Busca ativa de casos',
           'Notificação compulsória'
         ],
-        citations: [{ refId: 'who-malaria-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-malaria-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       }
     },
     protocolos: ['malaria-tratamento', 'malaria-grave'],
     medicamentos: ['cloroquina', 'primaquina', 'artemeter-lumefantrina', 'artesunato'],
     calculadoras: [],
     citations: [
-      { refId: 'ms-malaria-2022', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'who-malaria-2023', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'ms-malaria-2022', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'who-malaria-2023', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -320,11 +320,11 @@ export const doencasTropicais: Doenca[] = [
           'Transfusão de sangue não testado',
           'Mãe portadora (transmissão vertical)'
         ],
-        citations: [{ refId: 'consenso-chagas-2016', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'consenso-chagas-2016', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'T. cruzi invade células do hospedeiro (miócitos, neurônios), multiplica-se e causa destruição celular direta e inflamação crônica. Na fase crônica, há destruição progressiva do miocárdio e do plexo mioentérico (denervação autonômica), levando a cardiomiopatia dilatada e megas.',
-        citations: [{ refId: 'who-chagas-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-chagas-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -347,7 +347,7 @@ export const doencasTropicais: Doenca[] = [
           'Fase crônica digestiva (megaesôfago/megacólon)',
           'Forma mista (cardíaca + digestiva)'
         ],
-        citations: [{ refId: 'consenso-chagas-2016', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'consenso-chagas-2016', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -376,7 +376,7 @@ export const doencasTropicais: Doenca[] = [
           'Esofagograma/EDA',
           'Enema opaco/colonoscopia'
         ],
-        citations: [{ refId: 'consenso-chagas-2016', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'consenso-chagas-2016', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -390,7 +390,7 @@ export const doencasTropicais: Doenca[] = [
             'Exercício físico supervisionado (cardiopatia leve)',
             'Cirurgia para megas avançados'
           ],
-          citations: [{ refId: 'consenso-chagas-2016', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'consenso-chagas-2016', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -405,7 +405,7 @@ export const doencasTropicais: Doenca[] = [
             { situacao: 'Megaesôfago avançado', conduta: 'Cardiomiotomia de Heller ou esofagectomia' },
             { situacao: 'Megacólon', conduta: 'Sigmoidectomia se volvo recorrente ou fecaloma' }
           ],
-          citations: [{ refId: 'who-chagas-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'who-chagas-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Tripanocida: 60 dias; tratamento de complicações: contínuo'
       },
@@ -423,7 +423,7 @@ export const doencasTropicais: Doenca[] = [
           'Megas: gastroenterologia/cirurgia',
           'Reativação: infectologia'
         ],
-        citations: [{ refId: 'consenso-chagas-2016', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'consenso-chagas-2016', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -437,15 +437,15 @@ export const doencasTropicais: Doenca[] = [
           'Tratamento de casos agudos',
           'Acompanhamento de crônicos'
         ],
-        citations: [{ refId: 'who-chagas-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-chagas-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       }
     },
     protocolos: ['chagas-tratamento', 'cardiopatia-chagasica'],
     medicamentos: ['benznidazol', 'nifurtimox', 'amiodarona'],
     calculadoras: ['rassi-score'],
     citations: [
-      { refId: 'consenso-chagas-2016', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'who-chagas-2023', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'consenso-chagas-2016', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'who-chagas-2023', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -536,11 +536,11 @@ export const doencasTropicais: Doenca[] = [
           'Imunossupressão (HIV)',
           'Condições socioeconômicas precárias'
         ],
-        citations: [{ refId: 'ms-lv-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-lv-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Promastigotas inoculados pelo flebotomíneo são fagocitados por macrófagos, transformando-se em amastigotas. Há disseminação pelo sistema reticuloendotelial (baço, fígado, medula óssea), causando hiperplasia e infiltração, resultando em organomegalias e supressão medular.',
-        citations: [{ refId: 'who-leishmaniasis-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-leishmaniasis-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -564,7 +564,7 @@ export const doencasTropicais: Doenca[] = [
           'Forma oligossintomática',
           'Coinfecção LV-HIV'
         ],
-        citations: [{ refId: 'ms-lv-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-lv-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -589,7 +589,7 @@ export const doencasTropicais: Doenca[] = [
           'Mielograma com pesquisa de Leishmania',
           'PCR para Leishmania'
         ],
-        citations: [{ refId: 'ms-lv-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-lv-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -603,7 +603,7 @@ export const doencasTropicais: Doenca[] = [
             'Transfusão se necessário',
             'Antibioticoterapia para infecções secundárias'
           ],
-          citations: [{ refId: 'ms-lv-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'ms-lv-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -617,7 +617,7 @@ export const doencasTropicais: Doenca[] = [
             { situacao: 'Gestante', conduta: 'AnfoB lipossomal (antimonial contraindicado)' },
             { situacao: 'Recidiva', conduta: 'AnfoB lipossomal em dose maior ou tempo maior' }
           ],
-          citations: [{ refId: 'who-leishmaniasis-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'who-leishmaniasis-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'AnfoB lipossomal: 7 dias; Antimonial: 20-40 dias'
       },
@@ -634,7 +634,7 @@ export const doencasTropicais: Doenca[] = [
           'Coinfecção HIV: infectologia',
           'Recidivas: centro de referência'
         ],
-        citations: [{ refId: 'ms-lv-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-lv-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -647,15 +647,15 @@ export const doencasTropicais: Doenca[] = [
           'Diagnóstico e tratamento precoces',
           'Vigilância epidemiológica'
         ],
-        citations: [{ refId: 'ms-lv-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-lv-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       }
     },
     protocolos: ['leishmaniose-visceral-tratamento', 'lv-grave'],
     medicamentos: ['anfotericina-b-lipossomal', 'glucantime'],
     calculadoras: [],
     citations: [
-      { refId: 'ms-lv-2022', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'who-leishmaniasis-2023', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'ms-lv-2022', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'who-leishmaniasis-2023', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -747,11 +747,11 @@ export const doencasTropicais: Doenca[] = [
           'Agricultores (arrozais, cana)',
           'Contato com roedores'
         ],
-        citations: [{ refId: 'ms-leptospirose-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-leptospirose-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Leptospiras penetram por mucosas ou pele lesada, disseminam-se por via hematogênica. Causam vasculite e dano endotelial, especialmente em rins (nefrite intersticial, IRA não oligúrica), fígado (colestase), pulmões (hemorragia alveolar) e músculos.',
-        citations: [{ refId: 'who-leptospirosis-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-leptospirosis-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -775,7 +775,7 @@ export const doencasTropicais: Doenca[] = [
           'Síndrome de Weil (icterícia + IRA + hemorragias)',
           'Síndrome hemorrágica pulmonar grave'
         ],
-        citations: [{ refId: 'ms-leptospirose-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-leptospirose-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -806,7 +806,7 @@ export const doencasTropicais: Doenca[] = [
           'Rx de tórax (infiltrado alveolar se hemorragia pulmonar)',
           'TC de tórax se hipoxemia'
         ],
-        citations: [{ refId: 'ms-leptospirose-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-leptospirose-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -821,7 +821,7 @@ export const doencasTropicais: Doenca[] = [
             'Diálise precoce se IRA',
             'Transfusão se coagulopatia'
           ],
-          citations: [{ refId: 'ms-leptospirose-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'ms-leptospirose-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -832,7 +832,7 @@ export const doencasTropicais: Doenca[] = [
             { situacao: 'Hemorragia pulmonar', conduta: 'IOT precoce, ventilação protetora, considerar metilprednisolona' },
             { situacao: 'IRA', conduta: 'Diálise precoce, evitar hiperhidratação' }
           ],
-          citations: [{ refId: 'who-leptospirosis-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'who-leptospirosis-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: '7 dias de antibioticoterapia'
       },
@@ -848,7 +848,7 @@ export const doencasTropicais: Doenca[] = [
           'IRA persistente: nefrologia',
           'Hemorragia pulmonar: terapia intensiva'
         ],
-        citations: [{ refId: 'ms-leptospirose-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-leptospirose-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -862,15 +862,15 @@ export const doencasTropicais: Doenca[] = [
           'Diagnóstico e tratamento precoces',
           'Notificação compulsória'
         ],
-        citations: [{ refId: 'ms-leptospirose-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-leptospirose-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       }
     },
     protocolos: ['leptospirose-tratamento', 'leptospirose-grave'],
     medicamentos: ['doxiciclina', 'penicilina-g-cristalina', 'ceftriaxona'],
     calculadoras: [],
     citations: [
-      { refId: 'ms-leptospirose-2022', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'who-leptospirosis-2023', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'ms-leptospirose-2022', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'who-leptospirosis-2023', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -959,11 +959,11 @@ export const doencasTropicais: Doenca[] = [
           'Atividade em área de mata',
           'Período de maior transmissão: jan-maio'
         ],
-        citations: [{ refId: 'ms-fa-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-fa-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Flavivírus com tropismo por hepatócitos e células endoteliais. Causa necrose hepática mediozonal (corpúsculos de Councilman), disfunção endotelial, CIVD, choque e falência de múltiplos órgãos. A tempestade de citocinas contribui para gravidade.',
-        citations: [{ refId: 'who-yellowfever-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-yellowfever-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -987,7 +987,7 @@ export const doencasTropicais: Doenca[] = [
           'Forma moderada',
           'Forma grave (hepato-nefro-hemorrágica)'
         ],
-        citations: [{ refId: 'ms-fa-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-fa-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -1011,7 +1011,7 @@ export const doencasTropicais: Doenca[] = [
           'Coagulograma (CIVD)',
           'Função renal'
         ],
-        citations: [{ refId: 'ms-fa-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-fa-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -1028,7 +1028,7 @@ export const doencasTropicais: Doenca[] = [
             'Transfusão se hemorragias',
             'Isolamento (controle vetorial)'
           ],
-          citations: [{ refId: 'ms-fa-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'ms-fa-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -1039,7 +1039,7 @@ export const doencasTropicais: Doenca[] = [
             { situacao: 'Encefalopatia', conduta: 'Lactulose, restrição proteica' },
             { situacao: 'Experimental', conduta: 'N-acetilcisteína, sofosbuvir (em estudo)' }
           ],
-          citations: [{ refId: 'who-yellowfever-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'who-yellowfever-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Suporte até resolução da doença'
       },
@@ -1054,7 +1054,7 @@ export const doencasTropicais: Doenca[] = [
           'Forma grave: UTI/hospital de referência',
           'Notificação compulsória imediata'
         ],
-        citations: [{ refId: 'ms-fa-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-fa-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -1069,15 +1069,15 @@ export const doencasTropicais: Doenca[] = [
           'Busca ativa em surtos',
           'Vacinação de bloqueio'
         ],
-        citations: [{ refId: 'who-yellowfever-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-yellowfever-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       }
     },
     protocolos: ['febre-amarela-manejo', 'fa-grave'],
     medicamentos: [],
     calculadoras: [],
     citations: [
-      { refId: 'ms-fa-2022', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'who-yellowfever-2023', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'ms-fa-2022', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'who-yellowfever-2023', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -1156,11 +1156,11 @@ export const doencasTropicais: Doenca[] = [
           'Falta de saneamento',
           'Trabalho agrícola em áreas alagadas'
         ],
-        citations: [{ refId: 'ms-esquistossomose-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-esquistossomose-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Cercárias penetram a pele, transformam-se em esquistossômulos e migram até o sistema porta-hepático. Vermes adultos vivem nas veias mesentéricas; ovos causam reação granulomatosa. Na forma hepatoesplênica, fibrose periportal (Symmers) causa hipertensão portal.',
-        citations: [{ refId: 'who-schistosomiasis-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-schistosomiasis-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -1183,7 +1183,7 @@ export const doencasTropicais: Doenca[] = [
           'Forma hepatoesplênica descompensada',
           'Formas ectópicas (neuroesquistossomose, pulmonar)'
         ],
-        citations: [{ refId: 'ms-esquistossomose-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-esquistossomose-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -1207,7 +1207,7 @@ export const doencasTropicais: Doenca[] = [
           'USG de abdome (fibrose periportal, esplenomegalia)',
           'EDA (varizes esofágicas)'
         ],
-        citations: [{ refId: 'ms-esquistossomose-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-esquistossomose-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -1222,7 +1222,7 @@ export const doencasTropicais: Doenca[] = [
             'Tratamento de varizes (ligadura, TIPS)',
             'Esplenectomia com desconexão ázigo-portal (casos selecionados)'
           ],
-          citations: [{ refId: 'ms-esquistossomose-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'ms-esquistossomose-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -1235,7 +1235,7 @@ export const doencasTropicais: Doenca[] = [
             { situacao: 'Forma aguda', conduta: 'Corticoide por 5-7 dias antes do praziquantel' },
             { situacao: 'Varizes de alto risco', conduta: 'Betabloqueador (profilaxia primária), ligadura elástica' }
           ],
-          citations: [{ refId: 'who-schistosomiasis-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'who-schistosomiasis-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Dose única; controle de cura após 6 meses'
       },
@@ -1251,7 +1251,7 @@ export const doencasTropicais: Doenca[] = [
           'Neuroesquistossomose: neurologia',
           'Varizes de alto risco: endoscopia'
         ],
-        citations: [{ refId: 'ms-esquistossomose-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-esquistossomose-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -1265,15 +1265,15 @@ export const doencasTropicais: Doenca[] = [
           'Inquéritos coproscópicos em áreas endêmicas',
           'Tratamento coletivo em áreas de alta prevalência'
         ],
-        citations: [{ refId: 'who-schistosomiasis-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-schistosomiasis-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       }
     },
     protocolos: ['esquistossomose-tratamento', 'hipertensao-portal-esquistossomotica'],
     medicamentos: ['praziquantel', 'oxamniquina'],
     calculadoras: [],
     citations: [
-      { refId: 'ms-esquistossomose-2022', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'who-schistosomiasis-2023', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'ms-esquistossomose-2022', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'who-schistosomiasis-2023', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -1356,11 +1356,11 @@ export const doencasTropicais: Doenca[] = [
           'Imunossupressão relativa',
           'Predisposição genética'
         ],
-        citations: [{ refId: 'ms-hanseniase-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-hanseniase-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'M. leprae tem tropismo por macrófagos e células de Schwann. A resposta imune do hospedeiro determina a forma clínica: resposta Th1 (paucibacilar) vs Th2 (multibacilar). A destruição neural leva a perda de sensibilidade e incapacidades.',
-        citations: [{ refId: 'who-leprosy-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-leprosy-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -1385,7 +1385,7 @@ export const doencasTropicais: Doenca[] = [
           'Dimorfa (borderline)',
           'Virchowiana (multibacilar)'
         ],
-        citations: [{ refId: 'ms-hanseniase-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-hanseniase-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -1408,7 +1408,7 @@ export const doencasTropicais: Doenca[] = [
           'Teste de Mitsuda (valor prognóstico)',
           'PCR para M. leprae (se disponível)'
         ],
-        citations: [{ refId: 'ms-hanseniase-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-hanseniase-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -1424,7 +1424,7 @@ export const doencasTropicais: Doenca[] = [
             'Cirurgia reparadora (se necessário)',
             'Órteses e próteses'
           ],
-          citations: [{ refId: 'ms-hanseniase-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'ms-hanseniase-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -1436,7 +1436,7 @@ export const doencasTropicais: Doenca[] = [
             { situacao: 'Reação tipo 2 (ENH)', conduta: 'Talidomida 100-400mg/dia (contraindicada em mulheres em idade fértil) OU Prednisona' },
             { situacao: 'Neurite aguda', conduta: 'Prednisona + imobilização; considerar descompressão neural' }
           ],
-          citations: [{ refId: 'who-leprosy-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'who-leprosy-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'PB: 6 meses; MB: 12 meses'
       },
@@ -1454,7 +1454,7 @@ export const doencasTropicais: Doenca[] = [
           'Incapacidades: fisioterapia/cirurgia',
           'Resistência medicamentosa: centro de referência'
         ],
-        citations: [{ refId: 'ms-hanseniase-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-hanseniase-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -1468,15 +1468,15 @@ export const doencasTropicais: Doenca[] = [
           'Tratamento adequado',
           'Prevenção de incapacidades'
         ],
-        citations: [{ refId: 'who-leprosy-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-leprosy-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       }
     },
     protocolos: ['hanseniase-tratamento', 'reacao-hanseniase'],
     medicamentos: ['rifampicina', 'dapsona', 'clofazimina', 'prednisona', 'talidomida'],
     calculadoras: [],
     citations: [
-      { refId: 'ms-hanseniase-2022', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'who-leprosy-2023', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'ms-hanseniase-2022', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'who-leprosy-2023', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12-23'
   },
@@ -1555,11 +1555,11 @@ export const doencasTropicais: Doenca[] = [
           'Áreas rurais',
           'Profissionais expostos (veterinários, biólogos)'
         ],
-        citations: [{ refId: 'ms-raiva-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-raiva-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Vírus entra por ferimento, replica-se em músculo, ascende por nervos periféricos até SNC. No encéfalo, causa encefalite difusa com corpúsculos de Negri. Dissemina-se para glândulas salivares (transmissão). A morte ocorre por falência respiratória/cardiovascular.',
-        citations: [{ refId: 'who-rabies-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-rabies-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -1580,7 +1580,7 @@ export const doencasTropicais: Doenca[] = [
           'Forma furiosa (encefálica) - mais comum',
           'Forma paralítica (similar a Guillain-Barré)'
         ],
-        citations: [{ refId: 'ms-raiva-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-raiva-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -1602,7 +1602,7 @@ export const doencasTropicais: Doenca[] = [
           'Anticorpos neutralizantes (em não vacinados)',
           'Post-mortem: corpúsculos de Negri'
         ],
-        citations: [{ refId: 'who-rabies-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-rabies-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -1615,7 +1615,7 @@ export const doencasTropicais: Doenca[] = [
             'Observação do animal (10 dias para cão/gato)',
             'Suporte intensivo (se sintomático)'
           ],
-          citations: [{ refId: 'ms-raiva-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'ms-raiva-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -1627,7 +1627,7 @@ export const doencasTropicais: Doenca[] = [
             { situacao: 'Imunodeprimido', conduta: '5 doses de vacina + soro + sorologia de controle' },
             { situacao: 'Reexposição', conduta: '2 doses (D0, D3) se vacinação prévia completa' }
           ],
-          citations: [{ refId: 'who-rabies-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'who-rabies-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Profilaxia: esquema completo; Tratamento sintomático: até óbito'
       },
@@ -1641,7 +1641,7 @@ export const doencasTropicais: Doenca[] = [
           'Sintomático: hospital de referência',
           'Reação adversa grave: CRIE'
         ],
-        citations: [{ refId: 'ms-raiva-2022', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'ms-raiva-2022', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -1655,15 +1655,15 @@ export const doencasTropicais: Doenca[] = [
           'Observação do animal agressor',
           'Notificação compulsória'
         ],
-        citations: [{ refId: 'who-rabies-2023', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'who-rabies-2023', evidenceLevel: 'A', studyType: 'Guideline' }]
       }
     },
     protocolos: ['raiva-profilaxia-pos-exposicao', 'esquema-vacinal-raiva'],
     medicamentos: ['vacina-antirrabica', 'soro-antirrabico', 'imunoglobulina-antirrabica'],
     calculadoras: [],
     citations: [
-      { refId: 'ms-raiva-2022', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'who-rabies-2023', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'ms-raiva-2022', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'who-rabies-2023', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12-23'
   }

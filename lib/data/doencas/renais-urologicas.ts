@@ -25,23 +25,23 @@ export const doencasRenaisUrologicas: Doenca[] = [
     cid11: ['GB61'],
     // LOINC codes for CKD diagnosis, staging and monitoring
     loinc: [
-      '2160-0',   // Creatinine serum
-      '62238-1',  // GFR CKD-EPI
-      '33914-3',  // GFR MDRD
-      '9318-7',   // Albumin/creatinine ratio
-      '2890-2',   // Protein/creatinine ratio
-      '2951-2',   // Sodium
-      '2823-3',   // Potassium
-      '2028-9',   // CO2 (bicarbonate)
-      '2777-1',   // Phosphorus
-      '17861-6',  // Calcium total
-      '718-7',    // Hemoglobin
-      '2276-4',   // Ferritin
-      '2502-3',   // Transferrin saturation
-      '1989-3',   // Vitamin D 25-OH
-      '2132-9',   // Vitamin B12
-      '2093-3',   // Total cholesterol
-      '4548-4',   // HbA1c
+      { code: '2160-0', name: 'Creatinine serum' },
+      { code: '62238-1', name: 'GFR CKD-EPI' },
+      { code: '33914-3', name: 'GFR MDRD' },
+      { code: '9318-7', name: 'Albumin/creatinine ratio' },
+      { code: '2890-2', name: 'Protein/creatinine ratio' },
+      { code: '2951-2', name: 'Sodium' },
+      { code: '2823-3', name: 'Potassium' },
+      { code: '2028-9', name: 'CO2 (bicarbonate)' },
+      { code: '2777-1', name: 'Phosphorus' },
+      { code: '17861-6', name: 'Calcium total' },
+      { code: '718-7', name: 'Hemoglobin' },
+      { code: '2276-4', name: 'Ferritin' },
+      { code: '2502-3', name: 'Transferrin saturation' },
+      { code: '1989-3', name: 'Vitamin D 25-OH' },
+      { code: '2132-9', name: 'Vitamin B12' },
+      { code: '2093-3', name: 'Total cholesterol' },
+      { code: '4548-4', name: 'HbA1c' },
     ],
     categoria: 'urologico',
     quickView: {
@@ -116,11 +116,11 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'História familiar',
           'Nefrotóxicos (AINEs, contrastes)'
         ],
-        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Perda progressiva de néfrons leva a hiperfiltração adaptativa dos remanescentes, resultando em esclerose glomerular e fibrose intersticial. Sistema renina-angiotensina-aldosterona e hiperglicemia agravam lesão. Progressão causa uremia, distúrbios hidroeletrolíticos, anemia, doença óssea e risco cardiovascular elevado.',
-        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -148,7 +148,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'DRC estágio 4: TFG 15-29',
           'DRC estágio 5: TFG <15 (DRT)'
         ],
-        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -170,7 +170,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'Hemograma, ferritina, saturação de transferrina',
           'Perfil lipídico, HbA1c'
         ],
-        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -188,7 +188,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
             'Cessação do tabagismo',
             'Evitar nefrotóxicos'
           ],
-          citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -231,10 +231,10 @@ export const doencasRenaisUrologicas: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'kdigo-ckd-2024', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'dapa-ckd-trial', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'credence-trial', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'fidelio-dkd-trial', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'dapa-ckd-trial', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'credence-trial', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'fidelio-dkd-trial', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         duracao: 'Tratamento crônico e progressivo.'
@@ -261,7 +261,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'Hipercalemia recorrente',
           'Preparação para diálise/transplante'
         ],
-        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -273,7 +273,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'Rastreamento de DRC em DM, HAS',
           'Tratamento precoce agressivo'
         ],
-        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
     },
     protocolos: ['drc-estagiamento'],
@@ -281,9 +281,9 @@ export const doencasRenaisUrologicas: Doenca[] = [
     calculadoras: ['ckd-epi', 'mdrd', 'cockcroft-gault'],
     rastreamentos: ['rastreamento-drc'],
     citations: [
-      { refId: 'kdigo-ckd-2024', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'dapa-ckd-trial', evidenceLevel: 'high', studyType: 'rct' },
-      { refId: 'credence-trial', evidenceLevel: 'high', studyType: 'rct' }
+      { refId: 'kdigo-ckd-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'dapa-ckd-trial', evidenceLevel: 'A', studyType: 'RCT' },
+      { refId: 'credence-trial', evidenceLevel: 'A', studyType: 'RCT' }
     ],
     lastUpdate: '2024-12',
     tags: ['drc', 'insuficiencia-renal', 'tfg', 'albuminuria', 'isglt2'],
@@ -386,11 +386,11 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'Infecções urinárias de repetição',
           'Algumas cirurgias (bariátrica)'
         ],
-        citations: [{ refId: 'eau-urolithiasis-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'eau-urolithiasis-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Supersaturação urinária com sais litogênicos (cálcio, oxalato, ácido úrico, fosfato) supera os inibidores naturais (citrato, magnésio). Nucleação, agregação e crescimento cristalino formam o cálculo. Fatores metabólicos (hipercalciúria, hiperuricosúria, hipocitratúria) e anatômicos contribuem.',
-        citations: [{ refId: 'eau-urolithiasis-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'eau-urolithiasis-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -413,7 +413,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'Cálculo de estruvita (infeccioso) - 5-15%',
           'Cálculo de cistina - 1-2%'
         ],
-        citations: [{ refId: 'eau-urolithiasis-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'eau-urolithiasis-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -437,7 +437,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'Urocultura',
           'Investigação metabólica: Ca, P, ácido úrico, PTH, citrato urinário, oxalato urinário'
         ],
-        citations: [{ refId: 'eau-urolithiasis-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'eau-urolithiasis-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -454,7 +454,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
             'Reduzir sódio <2g/dia',
             'Reduzir proteína animal'
           ],
-          citations: [{ refId: 'eau-urolithiasis-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'eau-urolithiasis-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -492,8 +492,8 @@ export const doencasRenaisUrologicas: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'eau-urolithiasis-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-            { refId: 'aua-met-guideline', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+            { refId: 'eau-urolithiasis-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+            { refId: 'aua-met-guideline', evidenceLevel: 'B', studyType: 'SystematicReview' }
           ]
         },
         duracao: 'Agudo: dias. Prevenção: contínua.'
@@ -517,7 +517,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'Cálculos recorrentes',
           'Rim único ou transplantado'
         ],
-        citations: [{ refId: 'eau-urolithiasis-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'eau-urolithiasis-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -530,7 +530,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'Tratamento específico conforme tipo de cálculo',
           'Citrato de potássio'
         ],
-        citations: [{ refId: 'eau-urolithiasis-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'eau-urolithiasis-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
     },
     protocolos: [],
@@ -538,8 +538,8 @@ export const doencasRenaisUrologicas: Doenca[] = [
     calculadoras: [],
     rastreamentos: [],
     citations: [
-      { refId: 'eau-urolithiasis-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'aua-stone-guideline', evidenceLevel: 'moderate', studyType: 'guideline' }
+      { refId: 'eau-urolithiasis-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'aua-stone-guideline', evidenceLevel: 'B', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12',
     tags: ['nefrolitiase', 'calculo-renal', 'colica', 'urologia', 'oxalato'],
@@ -631,11 +631,11 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'Síndrome metabólica',
           'Fatores genéticos'
         ],
-        citations: [{ refId: 'eau-bph-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'eau-bph-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Hiperplasia nodular do estroma e epitélio da zona de transição prostática, sob influência de DHT (diidrotestosterona). Compressão uretral causa obstrução mecânica. Componente dinâmico (contração da musculatura lisa mediada por receptores alfa-1) contribui para STUI.',
-        citations: [{ refId: 'eau-bph-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'eau-bph-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -656,7 +656,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'STUI grave (IPSS 20-35)',
           'HPB com complicações (retenção, ITU, cálculo vesical, hidronefrose)'
         ],
-        citations: [{ refId: 'eau-bph-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'eau-bph-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -680,7 +680,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'IPSS',
           'USG prostático, renal e resíduo pós-miccional'
         ],
-        citations: [{ refId: 'eau-bph-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'eau-bph-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -696,7 +696,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
             'Evitar cafeína e álcool',
             'Revisão de medicamentos'
           ],
-          citations: [{ refId: 'eau-bph-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
+          citations: [{ refId: 'eau-bph-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -729,9 +729,9 @@ export const doencasRenaisUrologicas: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'eau-bph-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-            { refId: 'mtops-trial', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'combat-trial', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'eau-bph-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+            { refId: 'mtops-trial', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'combat-trial', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         duracao: 'Tratamento crônico, geralmente por vida.'
@@ -757,7 +757,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'PSA elevado/suspeita de câncer',
           'Falha do tratamento clínico'
         ],
-        citations: [{ refId: 'eau-bph-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'eau-bph-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -768,7 +768,7 @@ export const doencasRenaisUrologicas: Doenca[] = [
           'Tratamento precoce',
           'Acompanhamento regular'
         ],
-        citations: [{ refId: 'eau-bph-2023', evidenceLevel: 'moderate', studyType: 'guideline' }]
+        citations: [{ refId: 'eau-bph-2023', evidenceLevel: 'B', studyType: 'Guideline' }]
       },
     },
     protocolos: [],
@@ -776,9 +776,9 @@ export const doencasRenaisUrologicas: Doenca[] = [
     calculadoras: ['ipss'],
     rastreamentos: ['rastreamento-prostata'],
     citations: [
-      { refId: 'eau-bph-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'aua-bph-guideline', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'mtops-trial', evidenceLevel: 'high', studyType: 'rct' }
+      { refId: 'eau-bph-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'aua-bph-guideline', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'mtops-trial', evidenceLevel: 'A', studyType: 'RCT' }
     ],
     lastUpdate: '2024-12',
     tags: ['hpb', 'prostata', 'stui', 'tansulosina', 'finasterida'],

@@ -349,3 +349,15 @@ For implementation roadmap and strategic direction, see:
 - `PLANO_SUPERACAO_SOTA_DARWIN.md` - Strategic 6-dimension expansion plan
 - `SOTA_COMPETITIVE_ANALYSIS.md` - Competitive analysis vs. UpToDate, Medscape, etc.
 - `APS_MFC_FOCUS.md` - Strategic repositioning for Primary Care focus
+
+## LLM Offload
+
+Use `llm-offload` for bulk generation to save Anthropic tokens:
+- `llm-offload -t expand -p local` - Expand outline (free, local Mistral)
+- `llm-offload -t paraphrase -p grok` - Rewrite text (Grok)
+- `llm-offload -t scaffold -p local` - Code boilerplate
+- `llm-offload -t variations -p minimax` - Generate alternatives
+- `llm-offload --list-templates` - See all templates
+
+**Workflow**: Claude designs → llm-offload expands → Claude critiques
+

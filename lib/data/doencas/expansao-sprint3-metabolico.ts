@@ -20,19 +20,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     umlsCui: 'C0242339',
     // LOINC codes for dyslipidemia workup and monitoring
     loinc: [
-      '2093-3',   // Total cholesterol
-      '2085-9',   // HDL
-      '13457-7',  // LDL calculated
-      '18262-6',  // LDL direct
-      '2571-8',   // Triglycerides
-      '13458-5',  // VLDL
-      '1558-6',   // Fasting glucose
-      '4548-4',   // HbA1c
-      '2160-0',   // Creatinine
-      '3016-3',   // TSH
-      '1920-8',   // AST
-      '1742-6',   // ALT
-      '2157-6',   // CK total (for statin monitoring)
+      { code: '2093-3', name: 'Total cholesterol' },
+      { code: '2085-9', name: 'HDL' },
+      { code: '13457-7', name: 'LDL calculated' },
+      { code: '18262-6', name: 'LDL direct' },
+      { code: '2571-8', name: 'Triglycerides' },
+      { code: '13458-5', name: 'VLDL' },
+      { code: '1558-6', name: 'Fasting glucose' },
+      { code: '4548-4', name: 'HbA1c' },
+      { code: '2160-0', name: 'Creatinine' },
+      { code: '3016-3', name: 'TSH' },
+      { code: '1920-8', name: 'AST' },
+      { code: '1742-6', name: 'ALT' },
+      { code: '2157-6', name: 'CK total (for statin monitoring)' },
     ],
     categoria: 'metabolico',
     quickView: {
@@ -70,13 +70,13 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     citations: [
       {
         refId: 'esc-eas-dyslipidemia-2019',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
       {
         refId: 'acc-aha-cholesterol-2018',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
     ],
   },
@@ -93,21 +93,21 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     umlsCui: 'C0524620',
     // LOINC codes for metabolic syndrome assessment
     loinc: [
-      '1558-6',   // Fasting glucose
-      '4548-4',   // HbA1c
-      '2093-3',   // Total cholesterol
-      '2085-9',   // HDL
-      '2571-8',   // Triglycerides
-      '13457-7',  // LDL calculated
-      '8280-0',   // Waist circumference
-      '8480-6',   // Systolic BP
-      '8462-4',   // Diastolic BP
-      '39156-5',  // BMI
-      '2160-0',   // Creatinine
-      '9318-7',   // Albumin/creatinine ratio (microalbuminuria)
-      '1920-8',   // AST
-      '1742-6',   // ALT
-      '3084-1',   // Uric acid
+      { code: '1558-6', name: 'Fasting glucose' },
+      { code: '4548-4', name: 'HbA1c' },
+      { code: '2093-3', name: 'Total cholesterol' },
+      { code: '2085-9', name: 'HDL' },
+      { code: '2571-8', name: 'Triglycerides' },
+      { code: '13457-7', name: 'LDL calculated' },
+      { code: '8280-0', name: 'Waist circumference' },
+      { code: '8480-6', name: 'Systolic BP' },
+      { code: '8462-4', name: 'Diastolic BP' },
+      { code: '39156-5', name: 'BMI' },
+      { code: '2160-0', name: 'Creatinine' },
+      { code: '9318-7', name: 'Albumin/creatinine ratio (microalbuminuria)' },
+      { code: '1920-8', name: 'AST' },
+      { code: '1742-6', name: 'ALT' },
+      { code: '3084-1', name: 'Uric acid' },
     ],
     categoria: 'metabolico',
     quickView: {
@@ -145,13 +145,13 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     citations: [
       {
         refId: 'ncep-atp3-metabolic-syndrome',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
       {
         refId: 'idf-metabolic-syndrome-2006',
-        evidenceLevel: 'high',
-        studyType: 'consensus',
+        evidenceLevel: 'A',
+        studyType: 'Consensus',
       },
     ],
   },
@@ -168,13 +168,13 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     umlsCui: 'C0042870',
     // LOINC codes for vitamin D deficiency workup
     loinc: [
-      '1989-3',   // 25-hydroxyvitamin D [Mass/volume] in Serum or Plasma
-      '62292-8',  // 25-hydroxyvitamin D2+D3 [Mass/volume] in Serum or Plasma
-      '17861-6',  // Calcium [Mass/volume] in Serum or Plasma
-      '2777-1',   // Phosphorus [Mass/volume] in Serum or Plasma
-      '2731-8',   // Parathyroid hormone (PTH) [Mass/volume] in Serum or Plasma
-      '2160-0',   // Creatinine [Mass/volume] in Serum or Plasma
-      '6768-6',   // Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma
+      { code: '1989-3', name: '25-hydroxyvitamin D [Mass/volume] in Serum or Plasma' },
+      { code: '62292-8', name: '25-hydroxyvitamin D2+D3 [Mass/volume] in Serum or Plasma' },
+      { code: '17861-6', name: 'Calcium [Mass/volume] in Serum or Plasma' },
+      { code: '2777-1', name: 'Phosphorus [Mass/volume] in Serum or Plasma' },
+      { code: '2731-8', name: 'Parathyroid hormone (PTH) [Mass/volume] in Serum or Plasma' },
+      { code: '2160-0', name: 'Creatinine [Mass/volume] in Serum or Plasma' },
+      { code: '6768-6', name: 'Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma' },
     ],
     categoria: 'metabolico',
     quickView: {
@@ -208,13 +208,13 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     citations: [
       {
         refId: 'endocrine-society-vitamin-d-2011',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
       {
         refId: 'uptodate-vitamin-d-2024',
-        evidenceLevel: 'moderate',
-        studyType: 'systematic_review',
+        evidenceLevel: 'B',
+        studyType: 'SystematicReview',
       },
     ],
   },
@@ -231,16 +231,16 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     umlsCui: 'C0042847',
     // LOINC codes for vitamin B12 deficiency workup
     loinc: [
-      '2132-9',   // Vitamin B12 [Mass/volume] in Serum or Plasma
-      '2284-8',   // Folate [Mass/volume] in Serum or Plasma
-      '785-6',    // Mean corpuscular volume (MCV) [Entitic volume]
-      '718-7',    // Hemoglobin [Mass/volume] in Blood
-      '4544-3',   // Hematocrit [Volume Fraction] in Blood
-      '26474-7',  // Lymphocytes [#/volume] in Blood
-      '17820-2',  // Homocysteine [Moles/volume] in Serum or Plasma
-      '2170-9',   // Methylmalonic acid [Mass/volume] in Serum or Plasma
-      '14685-2',  // Reticulocyte count [#/volume] in Blood
-      '2532-0',   // Lactate dehydrogenase (LDH) [Enzymatic activity/volume] in Serum or Plasma
+      { code: '2132-9', name: 'Vitamin B12 [Mass/volume] in Serum or Plasma' },
+      { code: '2284-8', name: 'Folate [Mass/volume] in Serum or Plasma' },
+      { code: '785-6', name: 'Mean corpuscular volume (MCV) [Entitic volume]' },
+      { code: '718-7', name: 'Hemoglobin [Mass/volume] in Blood' },
+      { code: '4544-3', name: 'Hematocrit [Volume Fraction] in Blood' },
+      { code: '26474-7', name: 'Lymphocytes [#/volume] in Blood' },
+      { code: '17820-2', name: 'Homocysteine [Moles/volume] in Serum or Plasma' },
+      { code: '2170-9', name: 'Methylmalonic acid [Mass/volume] in Serum or Plasma' },
+      { code: '14685-2', name: 'Reticulocyte count [#/volume] in Blood' },
+      { code: '2532-0', name: 'Lactate dehydrogenase (LDH) [Enzymatic activity/volume] in Serum or Plasma' },
     ],
     categoria: 'hematologico',
     quickView: {
@@ -273,13 +273,13 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     citations: [
       {
         refId: 'bsh-b12-folate-2014',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
       {
         refId: 'nice-anaemia-b12-2024',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
     ],
   },
@@ -296,19 +296,19 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     umlsCui: 'C0400966',
     // LOINC codes for NAFLD/MASLD workup and monitoring
     loinc: [
-      '1742-6',   // ALT (Alanine aminotransferase) [Enzymatic activity/volume] in Serum or Plasma
-      '1920-8',   // AST (Aspartate aminotransferase) [Enzymatic activity/volume] in Serum or Plasma
-      '2324-2',   // GGT (Gamma glutamyl transferase) [Enzymatic activity/volume] in Serum or Plasma
-      '6768-6',   // Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma
-      '1975-2',   // Bilirubin.total [Mass/volume] in Serum or Plasma
-      '1751-7',   // Albumin [Mass/volume] in Serum or Plasma
-      '5902-2',   // Prothrombin time (PT)
-      '2093-3',   // Total Cholesterol [Mass/volume] in Serum or Plasma
-      '2571-8',   // Triglycerides [Mass/volume] in Serum or Plasma
-      '2345-7',   // Glucose [Mass/volume] in Serum or Plasma
-      '4548-4',   // Hemoglobin A1c/Hemoglobin.total [Mass Fraction] in Blood
-      '1558-6',   // Fasting glucose [Mass/volume] in Serum or Plasma
-      '26515-7',  // Platelet count [#/volume] in Blood
+      { code: '1742-6', name: 'ALT (Alanine aminotransferase) [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1920-8', name: 'AST (Aspartate aminotransferase) [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '2324-2', name: 'GGT (Gamma glutamyl transferase) [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '6768-6', name: 'Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma' },
+      { code: '1975-2', name: 'Bilirubin.total [Mass/volume] in Serum or Plasma' },
+      { code: '1751-7', name: 'Albumin [Mass/volume] in Serum or Plasma' },
+      { code: '5902-2', name: 'Prothrombin time (PT)' },
+      { code: '2093-3', name: 'Total Cholesterol [Mass/volume] in Serum or Plasma' },
+      { code: '2571-8', name: 'Triglycerides [Mass/volume] in Serum or Plasma' },
+      { code: '2345-7', name: 'Glucose [Mass/volume] in Serum or Plasma' },
+      { code: '4548-4', name: 'Hemoglobin A1c/Hemoglobin.total [Mass Fraction] in Blood' },
+      { code: '1558-6', name: 'Fasting glucose [Mass/volume] in Serum or Plasma' },
+      { code: '26515-7', name: 'Platelet count [#/volume] in Blood' },
     ],
     categoria: 'gastrointestinal',
     quickView: {
@@ -344,13 +344,13 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     citations: [
       {
         refId: 'aasld-nafld-2018',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
       {
         refId: 'easl-nafld-2016',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
     ],
   },
@@ -367,14 +367,14 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     umlsCui: 'C0271790',
     // LOINC codes for subclinical hypothyroidism workup
     loinc: [
-      '3016-3',   // TSH [Units/volume] in Serum or Plasma
-      '3026-2',   // T4 free [Mass/volume] in Serum or Plasma
-      '3053-6',   // T3 free [Mass/volume] in Serum or Plasma
-      '5385-0',   // Anti-thyroid peroxidase (Anti-TPO) [Units/volume] in Serum
-      '5379-3',   // Anti-thyroglobulin (Anti-TG) [Units/volume] in Serum
-      '2093-3',   // Total Cholesterol [Mass/volume] in Serum or Plasma
-      '2085-9',   // HDL [Mass/volume] in Serum or Plasma
-      '2089-1',   // LDL [Mass/volume] in Serum or Plasma
+      { code: '3016-3', name: 'TSH [Units/volume] in Serum or Plasma' },
+      { code: '3026-2', name: 'T4 free [Mass/volume] in Serum or Plasma' },
+      { code: '3053-6', name: 'T3 free [Mass/volume] in Serum or Plasma' },
+      { code: '5385-0', name: 'Anti-thyroid peroxidase (Anti-TPO) [Units/volume] in Serum' },
+      { code: '5379-3', name: 'Anti-thyroglobulin (Anti-TG) [Units/volume] in Serum' },
+      { code: '2093-3', name: 'Total Cholesterol [Mass/volume] in Serum or Plasma' },
+      { code: '2085-9', name: 'HDL [Mass/volume] in Serum or Plasma' },
+      { code: '2089-1', name: 'LDL [Mass/volume] in Serum or Plasma' },
     ],
     categoria: 'endocrino',
     quickView: {
@@ -408,13 +408,13 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     citations: [
       {
         refId: 'ata-thyroid-guidelines-2014',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
       {
         refId: 'eta-subclinical-thyroid-2013',
-        evidenceLevel: 'moderate',
-        studyType: 'consensus',
+        evidenceLevel: 'B',
+        studyType: 'Consensus',
       },
     ],
   },
@@ -431,12 +431,12 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     umlsCui: 'C0342157',
     // LOINC codes for subclinical hyperthyroidism workup
     loinc: [
-      '3016-3',   // TSH [Units/volume] in Serum or Plasma
-      '3026-2',   // T4 free [Mass/volume] in Serum or Plasma
-      '3053-6',   // T3 free [Mass/volume] in Serum or Plasma
-      '5384-3',   // TSH receptor antibody (TRAb/Anti-TRAB) [Units/volume] in Serum
-      '46985-5',  // Thyroid-stimulating immunoglobulin (TSI) [Units/volume] in Serum
-      '24348-5',  // Bone density study
+      { code: '3016-3', name: 'TSH [Units/volume] in Serum or Plasma' },
+      { code: '3026-2', name: 'T4 free [Mass/volume] in Serum or Plasma' },
+      { code: '3053-6', name: 'T3 free [Mass/volume] in Serum or Plasma' },
+      { code: '5384-3', name: 'TSH receptor antibody (TRAb/Anti-TRAB) [Units/volume] in Serum' },
+      { code: '46985-5', name: 'Thyroid-stimulating immunoglobulin (TSI) [Units/volume] in Serum' },
+      { code: '24348-5', name: 'Bone density study' },
     ],
     categoria: 'endocrino',
     quickView: {
@@ -470,13 +470,13 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     citations: [
       {
         refId: 'ata-hyperthyroidism-2016',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
       {
         refId: 'eta-subclinical-hyperthyroidism-2015',
-        evidenceLevel: 'moderate',
-        studyType: 'consensus',
+        evidenceLevel: 'B',
+        studyType: 'Consensus',
       },
     ],
   },
@@ -493,14 +493,14 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     umlsCui: 'C0740394',
     // LOINC codes for hyperuricemia workup
     loinc: [
-      '3084-1',   // Uric acid [Mass/volume] in Serum or Plasma
-      '2160-0',   // Creatinine [Mass/volume] in Serum or Plasma
-      '3094-0',   // Blood urea nitrogen (BUN) [Mass/volume] in Serum or Plasma
-      '33914-3',  // Estimated GFR (eGFR) [Volume Rate/Area] in Serum, Plasma or Blood
-      '2093-3',   // Total Cholesterol [Mass/volume] in Serum or Plasma
-      '2571-8',   // Triglycerides [Mass/volume] in Serum or Plasma
-      '2345-7',   // Glucose [Mass/volume] in Serum or Plasma
-      '5778-6',   // Urinalysis - microscopic panel
+      { code: '3084-1', name: 'Uric acid [Mass/volume] in Serum or Plasma' },
+      { code: '2160-0', name: 'Creatinine [Mass/volume] in Serum or Plasma' },
+      { code: '3094-0', name: 'Blood urea nitrogen (BUN) [Mass/volume] in Serum or Plasma' },
+      { code: '33914-3', name: 'Estimated GFR (eGFR) [Volume Rate/Area] in Serum, Plasma or Blood' },
+      { code: '2093-3', name: 'Total Cholesterol [Mass/volume] in Serum or Plasma' },
+      { code: '2571-8', name: 'Triglycerides [Mass/volume] in Serum or Plasma' },
+      { code: '2345-7', name: 'Glucose [Mass/volume] in Serum or Plasma' },
+      { code: '5778-6', name: 'Urinalysis - microscopic panel' },
     ],
     categoria: 'metabolico',
     quickView: {
@@ -537,13 +537,13 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     citations: [
       {
         refId: 'acr-gout-2020',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
       {
         refId: 'eular-gout-2016',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
     ],
   },
@@ -560,15 +560,15 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     umlsCui: 'C0001623',
     // LOINC codes for adrenal insufficiency workup
     loinc: [
-      '2143-6',   // Cortisol [Mass/volume] in Serum or Plasma
-      '2141-0',   // ACTH (Corticotropin) [Mass/volume] in Plasma
-      '2823-3',   // Potassium [Moles/volume] in Serum or Plasma
-      '2951-2',   // Sodium [Moles/volume] in Serum or Plasma
-      '2345-7',   // Glucose [Mass/volume] in Serum or Plasma
-      '2160-0',   // Creatinine [Mass/volume] in Serum or Plasma
-      '56540-8',  // 21-hydroxylase antibody (Anti-21-hydroxylase) [Units/volume] in Serum
-      '2731-8',   // Renin [Mass/volume] in Plasma
-      '1714-5',   // Aldosterone [Mass/volume] in Serum or Plasma
+      { code: '2143-6', name: 'Cortisol [Mass/volume] in Serum or Plasma' },
+      { code: '2141-0', name: 'ACTH (Corticotropin) [Mass/volume] in Plasma' },
+      { code: '2823-3', name: 'Potassium [Moles/volume] in Serum or Plasma' },
+      { code: '2951-2', name: 'Sodium [Moles/volume] in Serum or Plasma' },
+      { code: '2345-7', name: 'Glucose [Mass/volume] in Serum or Plasma' },
+      { code: '2160-0', name: 'Creatinine [Mass/volume] in Serum or Plasma' },
+      { code: '56540-8', name: '21-hydroxylase antibody (Anti-21-hydroxylase) [Units/volume] in Serum' },
+      { code: '2731-8', name: 'Renin [Mass/volume] in Plasma' },
+      { code: '1714-5', name: 'Aldosterone [Mass/volume] in Serum or Plasma' },
     ],
     categoria: 'endocrino',
     quickView: {
@@ -603,13 +603,13 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     citations: [
       {
         refId: 'endocrine-society-adrenal-2016',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
       {
         refId: 'esh-adrenal-insufficiency-2014',
-        evidenceLevel: 'moderate',
-        studyType: 'consensus',
+        evidenceLevel: 'B',
+        studyType: 'Consensus',
       },
     ],
   },
@@ -626,16 +626,16 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     umlsCui: 'C0020619',
     // LOINC codes for male hypogonadism workup
     loinc: [
-      '2986-8',   // Testosterone [Mass/volume] in Serum or Plasma
-      '2990-0',   // Testosterone.free [Mass/volume] in Serum or Plasma
-      '10501-5',  // LH (Luteinizing hormone) [Units/volume] in Serum or Plasma
-      '15067-2',  // FSH (Follicle stimulating hormone) [Units/volume] in Serum or Plasma
-      '2243-4',   // Prolactin [Mass/volume] in Serum or Plasma
-      '4544-3',   // Hematocrit [Volume Fraction] in Blood
-      '2857-1',   // PSA (Prostate specific antigen) [Mass/volume] in Serum or Plasma
-      '2093-3',   // Total Cholesterol [Mass/volume] in Serum or Plasma
-      '2085-9',   // HDL [Mass/volume] in Serum or Plasma
-      '2089-1',   // LDL [Mass/volume] in Serum or Plasma
+      { code: '2986-8', name: 'Testosterone [Mass/volume] in Serum or Plasma' },
+      { code: '2990-0', name: 'Testosterone.free [Mass/volume] in Serum or Plasma' },
+      { code: '10501-5', name: 'LH (Luteinizing hormone) [Units/volume] in Serum or Plasma' },
+      { code: '15067-2', name: 'FSH (Follicle stimulating hormone) [Units/volume] in Serum or Plasma' },
+      { code: '2243-4', name: 'Prolactin [Mass/volume] in Serum or Plasma' },
+      { code: '4544-3', name: 'Hematocrit [Volume Fraction] in Blood' },
+      { code: '2857-1', name: 'PSA (Prostate specific antigen) [Mass/volume] in Serum or Plasma' },
+      { code: '2093-3', name: 'Total Cholesterol [Mass/volume] in Serum or Plasma' },
+      { code: '2085-9', name: 'HDL [Mass/volume] in Serum or Plasma' },
+      { code: '2089-1', name: 'LDL [Mass/volume] in Serum or Plasma' },
     ],
     categoria: 'endocrino',
     quickView: {
@@ -671,13 +671,13 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     citations: [
       {
         refId: 'aua-testosterone-2018',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
       {
         refId: 'endocrine-society-hypogonadism-2018',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
     ],
   },
@@ -694,17 +694,17 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     umlsCui: 'C0025320',
     // LOINC codes for menopause workup
     loinc: [
-      '15067-2',  // FSH (Follicle stimulating hormone) [Units/volume] in Serum or Plasma
-      '10501-5',  // LH (Luteinizing hormone) [Units/volume] in Serum or Plasma
-      '2243-3',   // Estradiol (E2) [Mass/volume] in Serum or Plasma
-      '3016-3',   // TSH [Units/volume] in Serum or Plasma
-      '2093-3',   // Total Cholesterol [Mass/volume] in Serum or Plasma
-      '2085-9',   // HDL [Mass/volume] in Serum or Plasma
-      '2089-1',   // LDL [Mass/volume] in Serum or Plasma
-      '2571-8',   // Triglycerides [Mass/volume] in Serum or Plasma
-      '17861-6',  // Calcium [Mass/volume] in Serum or Plasma
-      '1989-3',   // 25-hydroxyvitamin D [Mass/volume] in Serum or Plasma
-      '24348-5',  // Bone density study
+      { code: '15067-2', name: 'FSH (Follicle stimulating hormone) [Units/volume] in Serum or Plasma' },
+      { code: '10501-5', name: 'LH (Luteinizing hormone) [Units/volume] in Serum or Plasma' },
+      { code: '2243-3', name: 'Estradiol (E2) [Mass/volume] in Serum or Plasma' },
+      { code: '3016-3', name: 'TSH [Units/volume] in Serum or Plasma' },
+      { code: '2093-3', name: 'Total Cholesterol [Mass/volume] in Serum or Plasma' },
+      { code: '2085-9', name: 'HDL [Mass/volume] in Serum or Plasma' },
+      { code: '2089-1', name: 'LDL [Mass/volume] in Serum or Plasma' },
+      { code: '2571-8', name: 'Triglycerides [Mass/volume] in Serum or Plasma' },
+      { code: '17861-6', name: 'Calcium [Mass/volume] in Serum or Plasma' },
+      { code: '1989-3', name: '25-hydroxyvitamin D [Mass/volume] in Serum or Plasma' },
+      { code: '24348-5', name: 'Bone density study' },
     ],
     categoria: 'ginecologico',
     quickView: {
@@ -740,13 +740,13 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     citations: [
       {
         refId: 'nams-menopause-2017',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
       {
         refId: 'ims-menopause-2016',
-        evidenceLevel: 'high',
-        studyType: 'consensus',
+        evidenceLevel: 'A',
+        studyType: 'Consensus',
       },
     ],
   },
@@ -763,14 +763,14 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     umlsCui: 'C0020514',
     // LOINC codes for hyperprolactinemia workup
     loinc: [
-      '2243-4',   // Prolactin [Mass/volume] in Serum or Plasma
-      '3016-3',   // TSH [Units/volume] in Serum or Plasma
-      '3026-2',   // T4 free [Mass/volume] in Serum or Plasma
-      '2986-8',   // Testosterone [Mass/volume] in Serum or Plasma (for men)
-      '2243-3',   // Estradiol (E2) [Mass/volume] in Serum or Plasma (for women)
-      '19080-1',  // Beta-hCG [Units/volume] in Serum or Plasma
-      '10501-5',  // LH (Luteinizing hormone) [Units/volume] in Serum or Plasma
-      '15067-2',  // FSH (Follicle stimulating hormone) [Units/volume] in Serum or Plasma
+      { code: '2243-4', name: 'Prolactin [Mass/volume] in Serum or Plasma' },
+      { code: '3016-3', name: 'TSH [Units/volume] in Serum or Plasma' },
+      { code: '3026-2', name: 'T4 free [Mass/volume] in Serum or Plasma' },
+      { code: '2986-8', name: 'Testosterone [Mass/volume] in Serum or Plasma (for men)' },
+      { code: '2243-3', name: 'Estradiol (E2) [Mass/volume] in Serum or Plasma (for women)' },
+      { code: '19080-1', name: 'Beta-hCG [Units/volume] in Serum or Plasma' },
+      { code: '10501-5', name: 'LH (Luteinizing hormone) [Units/volume] in Serum or Plasma' },
+      { code: '15067-2', name: 'FSH (Follicle stimulating hormone) [Units/volume] in Serum or Plasma' },
     ],
     categoria: 'endocrino',
     quickView: {
@@ -803,13 +803,13 @@ export const doencasMetabolicasExpansao: Partial<Doenca>[] = [
     citations: [
       {
         refId: 'endocrine-society-prolactin-2011',
-        evidenceLevel: 'high',
-        studyType: 'guideline',
+        evidenceLevel: 'A',
+        studyType: 'Guideline',
       },
       {
         refId: 'pituitary-society-hyperprolactinemia-2006',
-        evidenceLevel: 'moderate',
-        studyType: 'consensus',
+        evidenceLevel: 'B',
+        studyType: 'Consensus',
       },
     ],
   },

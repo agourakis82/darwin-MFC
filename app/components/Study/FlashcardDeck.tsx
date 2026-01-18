@@ -15,8 +15,9 @@ interface FlashcardDeckProps {
 
 export default function FlashcardDeck({ flashcards, onComplete, mode = 'all' }: FlashcardDeckProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  
-  const { 
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  const {
     flashcardSchedules, 
     initializeFlashcard, 
     updateFlashcardReview,
@@ -69,18 +70,26 @@ export default function FlashcardDeck({ flashcards, onComplete, mode = 'all' }: 
   useEffect(() => {
     setShuffled([...filteredFlashcards]);
     setCurrentIndex(0);
+    setShowAnswer(false);
   }, [filteredFlashcards]);
 
   const handleShuffle = () => {
     const newShuffled = [...shuffled].sort(() => Math.random() - 0.5);
     setShuffled(newShuffled);
     setCurrentIndex(0);
+    setShowAnswer(false);
   };
 
-  const handleMasteryChange = (level: number) => {
+  const handleResponse = (quality: 0 | 1 | 2 | 3 | 4 | 5) => {
     const cardId = shuffled[currentIndex].id;
     // Update review using spaced repetition algorithm
-    updateFlashcardReview(cardId, level as Quality);
+    updateFlashcardReview(cardId, quality as Quality);
+    // Move to next card
+    handleNext();
+  };
+
+  const handleFlip = () => {
+    setShowAnswer(!showAnswer);
   };
 
   // Calculate stats
@@ -94,6 +103,7 @@ export default function FlashcardDeck({ flashcards, onComplete, mode = 'all' }: 
   const handleNext = () => {
     if (currentIndex < shuffled.length - 1) {
       setCurrentIndex(currentIndex + 1);
+      setShowAnswer(false);
     } else {
       onComplete?.();
     }
@@ -102,6 +112,7 @@ export default function FlashcardDeck({ flashcards, onComplete, mode = 'all' }: 
   const handlePrevious = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
+      setShowAnswer(false);
     }
   };
 
@@ -153,9 +164,11 @@ export default function FlashcardDeck({ flashcards, onComplete, mode = 'all' }: 
 
       {/* Flashcard */}
       <Flashcard
-        flashcard={currentFlashcard}
-        onMasteryChange={handleMasteryChange}
-        onNext={handleNext}
+        front={currentFlashcard.front}
+        back={currentFlashcard.back}
+        onResponse={handleResponse}
+        showAnswer={showAnswer}
+        onFlip={handleFlip}
       />
 
       {/* Navigation */}

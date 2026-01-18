@@ -107,11 +107,11 @@ export const doencasGastrointestinais: Doenca[] = [
           'Medicamentos (AINEs, BCC, nitratos)',
           'Dieta gordurosa'
         ],
-        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Falha na barreira antirrefluxo (EEI incompetente, hérnia hiatal), associada a fatores como relaxamentos transitórios do EEI, aumento da pressão intra-abdominal e retardo do esvaziamento gástrico. O ácido causa lesão esofágica.',
-        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -129,7 +129,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'DRGE não erosiva (NERD)',
           'Manifestações extraesofágicas'
         ],
-        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -149,7 +149,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'pHmetria 24h (casos duvidosos)',
           'Manometria esofágica (pré-cirurgia)'
         ],
-        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -165,7 +165,7 @@ export const doencasGastrointestinais: Doenca[] = [
             'Evitar deitar após refeições',
             'Cessação do tabagismo'
           ],
-          citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -197,7 +197,7 @@ export const doencasGastrointestinais: Doenca[] = [
               conduta: 'IBP contínuo + vigilância endoscópica'
             }
           ],
-          citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'DRGE erosiva: IBP por 8 semanas. NERD: 4-8 semanas. Manutenção se recidiva.'
       },
@@ -217,7 +217,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'Esôfago de Barrett',
           'Candidato a cirurgia antirrefluxo'
         ],
-        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -236,7 +236,7 @@ export const doencasGastrointestinais: Doenca[] = [
     medicamentos: ['omeprazol', 'pantoprazol', 'ranitidina'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'high', studyType: 'guideline' }],
+    citations: [{ refId: 'acg-gerd-2022', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['drge', 'refluxo', 'pirose', 'ibp', 'omeprazol'],
   },
@@ -345,11 +345,11 @@ export const doencasGastrointestinais: Doenca[] = [
           'Gastroenterite prévia (SII pós-infeccioso)',
           'Abuso na infância'
         ],
-        citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Interação complexa entre eixo cérebro-intestino, alterações na motilidade, hipersensibilidade visceral, inflamação de baixo grau, disbiose intestinal e fatores psicossociais.',
-        citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -371,7 +371,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'SII-M (misto)',
           'SII-U (não classificado)'
         ],
-        citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -395,7 +395,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'Calprotectina fecal (se diarreia)',
           'Colonoscopia se >50 anos ou sinais de alarme'
         ],
-        citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -412,7 +412,7 @@ export const doencasGastrointestinais: Doenca[] = [
             'Terapia cognitivo-comportamental',
             'Hipnoterapia gut-directed'
           ],
-          citations: [{ refId: 'acg-sii-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'acg-sii-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -454,7 +454,7 @@ export const doencasGastrointestinais: Doenca[] = [
               conduta: 'Considerar linaclotida ou prucaloprida'
             }
           ],
-          citations: [{ refId: 'acg-sii-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'acg-sii-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Tratamento crônico, ajustado conforme sintomas'
       },
@@ -473,7 +473,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'Refratário ao tratamento',
           'Dúvida diagnóstica'
         ],
-        citations: [{ refId: 'acg-sii-2021', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acg-sii-2021', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -491,7 +491,7 @@ export const doencasGastrointestinais: Doenca[] = [
     medicamentos: ['hioscina', 'loperamida', 'amitriptilina', 'macrogol'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'high', studyType: 'guideline' }, { refId: 'acg-sii-2021', evidenceLevel: 'high', studyType: 'guideline' }],
+    citations: [{ refId: 'rome-iv-2016', evidenceLevel: 'A', studyType: 'Guideline' }, { refId: 'acg-sii-2021', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['sii', 'intestino-irritavel', 'colica', 'diarreia', 'constipacao', 'fodmap'],
   },
@@ -599,11 +599,11 @@ export const doencasGastrointestinais: Doenca[] = [
           'Estresse',
           'Idade avançada'
         ],
-        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       fisiopatologia: {
         texto: 'Gastrite: inflamação por H. pylori, AINEs, autoimune ou outras causas. Dispepsia funcional: hipersensibilidade visceral, dismotilidade gástrica, alteração do eixo cérebro-intestino.',
-        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -623,7 +623,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'Gastrite por H. pylori',
           'Gastrite por AINEs'
         ],
-        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       diagnostico: {
         criterios: [
@@ -645,7 +645,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'Sorologia H. pylori (menos específica)',
           'EDA com biópsia se indicada'
         ],
-        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       tratamento: {
         objetivos: [
@@ -660,7 +660,7 @@ export const doencasGastrointestinais: Doenca[] = [
             'Reduzir álcool',
             'Fracionar refeições'
           ],
-          citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -692,7 +692,7 @@ export const doencasGastrointestinais: Doenca[] = [
               conduta: 'TCA em baixa dose (Amitriptilina 10-25mg)'
             }
           ],
-          citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+          citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
         },
         duracao: 'Erradicação: 14 dias. IBP: 4-8 semanas ou conforme sintomas.'
       },
@@ -710,7 +710,7 @@ export const doencasGastrointestinais: Doenca[] = [
           'Falha de erradicação múltipla',
           'Dispepsia refratária'
         ],
-        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }]
+        citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'A', studyType: 'Guideline' }]
       },
       prevencao: {
         primaria: [
@@ -728,7 +728,7 @@ export const doencasGastrointestinais: Doenca[] = [
     medicamentos: ['omeprazol', 'amoxicilina', 'claritromicina', 'domperidona'],
     calculadoras: [],
     rastreamentos: [],
-    citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'high', studyType: 'guideline' }],
+    citations: [{ refId: 'acg-dispepsia-2022', evidenceLevel: 'A', studyType: 'Guideline' }],
     lastUpdate: '2024-12',
     tags: ['gastrite', 'dispepsia', 'h-pylori', 'ibp', 'ulcera'],
   }

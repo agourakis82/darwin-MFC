@@ -33,10 +33,10 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     protocolos: [],
     calculadoras: [],
     citations: [
-      { refId: 'aap-bronchiolitis-2014', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'ralston-bronchiolitis-cochrane-2014', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'florin-bronchiolitis-management-2017', evidenceLevel: 'moderate', studyType: 'systematic_review' },
-      { refId: 'hasegawa-rsv-bronchiolitis-2013', evidenceLevel: 'moderate', studyType: 'cohort' }
+      { refId: 'aap-bronchiolitis-2014', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'ralston-bronchiolitis-cochrane-2014', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'florin-bronchiolitis-management-2017', evidenceLevel: 'B', studyType: 'SystematicReview' },
+      { refId: 'hasegawa-rsv-bronchiolitis-2013', evidenceLevel: 'B', studyType: 'Cohort' }
     ]
   },
   {
@@ -63,10 +63,10 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     protocolos: [],
     calculadoras: [],
     citations: [
-      { refId: 'bjornson-croup-cochrane-2013', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'russell-croup-glucocorticoids-2011', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'waisman-nebulized-epinephrine-croup-rct-1992', evidenceLevel: 'moderate', studyType: 'rct' },
-      { refId: 'cherry-croup-current-diagnosis-2008', evidenceLevel: 'moderate', studyType: 'guideline' }
+      { refId: 'bjornson-croup-cochrane-2013', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'russell-croup-glucocorticoids-2011', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'waisman-nebulized-epinephrine-croup-rct-1992', evidenceLevel: 'B', studyType: 'RCT' },
+      { refId: 'cherry-croup-current-diagnosis-2008', evidenceLevel: 'B', studyType: 'Guideline' }
     ]
   },
   {
@@ -93,10 +93,10 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     protocolos: [],
     calculadoras: [],
     citations: [
-      { refId: 'aap-otitis-media-2013', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'lieberthal-aom-diagnosis-management-2013', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'rovers-aom-antibiotics-cochrane-2006', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'venekamp-aom-antibiotics-cochrane-2015', evidenceLevel: 'high', studyType: 'systematic_review' }
+      { refId: 'aap-otitis-media-2013', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'lieberthal-aom-diagnosis-management-2013', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'rovers-aom-antibiotics-cochrane-2006', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'venekamp-aom-antibiotics-cochrane-2015', evidenceLevel: 'A', studyType: 'SystematicReview' }
     ]
   },
   {
@@ -123,10 +123,10 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     protocolos: [],
     calculadoras: [],
     citations: [
-      { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'spinks-penicillin-pharyngitis-cochrane-2013', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'mcisaac-centor-validation-1998', evidenceLevel: 'moderate', studyType: 'cohort' },
-      { refId: 'shulman-gas-pharyngitis-2012', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'idsa-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'spinks-penicillin-pharyngitis-cochrane-2013', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'mcisaac-centor-validation-1998', evidenceLevel: 'B', studyType: 'Cohort' },
+      { refId: 'shulman-gas-pharyngitis-2012', evidenceLevel: 'A', studyType: 'Guideline' }
     ]
   },
   {
@@ -153,10 +153,10 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     protocolos: ['ivas'],
     calculadoras: [],
     citations: [
-      { refId: 'heikkinen-common-cold-lancet-2003', evidenceLevel: 'moderate', studyType: 'systematic_review' },
-      { refId: 'smith-cold-symptoms-children-cochrane-2014', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'aap-cough-cold-children-2008', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'de-sutter-antihistamines-common-cold-cochrane-2015', evidenceLevel: 'high', studyType: 'systematic_review' }
+      { refId: 'heikkinen-common-cold-lancet-2003', evidenceLevel: 'B', studyType: 'SystematicReview' },
+      { refId: 'smith-cold-symptoms-children-cochrane-2014', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'aap-cough-cold-children-2008', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'de-sutter-antihistamines-common-cold-cochrane-2015', evidenceLevel: 'A', studyType: 'SystematicReview' }
     ]
   },
   // ===============================================
@@ -196,10 +196,10 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     protocolos: ['asma-exacerbacao'],
     calculadoras: [],
     citations: [
-      { refId: 'gina-2023', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'castro-rodriguez-api-asthma-2010', evidenceLevel: 'moderate', studyType: 'cohort' },
-      { refId: 'ducharme-ics-asthma-children-cochrane-2014', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'brand-ers-asthma-preschool-2008', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'gina-2023', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'castro-rodriguez-api-asthma-2010', evidenceLevel: 'B', studyType: 'Cohort' },
+      { refId: 'ducharme-ics-asthma-children-cochrane-2014', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'brand-ers-asthma-preschool-2008', evidenceLevel: 'A', studyType: 'Guideline' }
     ]
   },
   {
@@ -231,10 +231,10 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     protocolos: [],
     calculadoras: [],
     citations: [
-      { refId: 'who-diarrhea-management-2005', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'guarino-espghan-acute-gastroenteritis-2014', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'lazzerini-ors-diarrhea-cochrane-2016', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'lukacik-zinc-diarrhea-meta-analysis-2008', evidenceLevel: 'high', studyType: 'systematic_review' }
+      { refId: 'who-diarrhea-management-2005', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'guarino-espghan-acute-gastroenteritis-2014', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'lazzerini-ors-diarrhea-cochrane-2016', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'lukacik-zinc-diarrhea-meta-analysis-2008', evidenceLevel: 'A', studyType: 'SystematicReview' }
     ]
   },
   {
@@ -268,10 +268,10 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     protocolos: [],
     calculadoras: [],
     citations: [
-      { refId: 'tabbers-espghan-constipation-2014', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'naspghan-constipation-evaluation-2006', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'gordon-peg-constipation-cochrane-2016', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'benninga-childhood-constipation-rome-iv-2016', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'tabbers-espghan-constipation-2014', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'naspghan-constipation-evaluation-2006', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'gordon-peg-constipation-cochrane-2016', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'benninga-childhood-constipation-rome-iv-2016', evidenceLevel: 'A', studyType: 'Guideline' }
     ]
   },
   {
@@ -304,10 +304,10 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     protocolos: [],
     calculadoras: [],
     citations: [
-      { refId: 'aad-atopic-dermatitis-2014', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'eichenfield-atopic-dermatitis-guidelines-2014', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'el-batawy-topical-corticosteroids-ad-cochrane-2015', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'wollenberg-eaaci-atopic-eczema-2018', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'aad-atopic-dermatitis-2014', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'eichenfield-atopic-dermatitis-guidelines-2014', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'el-batawy-topical-corticosteroids-ad-cochrane-2015', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'wollenberg-eaaci-atopic-eczema-2018', evidenceLevel: 'A', studyType: 'Guideline' }
     ]
   },
   {
@@ -339,10 +339,10 @@ export const doencasPediatricas: Partial<Doenca>[] = [
     protocolos: [],
     calculadoras: [],
     citations: [
-      { refId: 'who-iron-deficiency-2001', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'baker-aap-iron-deficiency-2010', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'pasricha-iron-supplementation-cochrane-2013', evidenceLevel: 'high', studyType: 'systematic_review' },
-      { refId: 'ms-anemia-ferropriva-2013', evidenceLevel: 'moderate', studyType: 'guideline' }
+      { refId: 'who-iron-deficiency-2001', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'baker-aap-iron-deficiency-2010', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'pasricha-iron-supplementation-cochrane-2013', evidenceLevel: 'A', studyType: 'SystematicReview' },
+      { refId: 'ms-anemia-ferropriva-2013', evidenceLevel: 'B', studyType: 'Guideline' }
     ]
   }
 ];

@@ -482,7 +482,7 @@ export interface Medicamento {
   pharmgkb?: {
     gene: string; // Gene name (e.g., "CYP2D6")
     variant?: string; // Genetic variant
-    phenotype?: 'poor_metabolizer' | 'intermediate_metabolizer' | 'extensive_metabolizer' | 'ultra_rapid_metabolizer';
+    phenotype?: 'poor_metabolizer' | 'intermediate_metabolizer' | 'extensive_metabolizer' | 'ultra_rapid_metabolizer' | 'reduced_response' | 'met_met_high_pain_sensitivity' | 'non_expressor' | 'high_risk_sjs_ten' | 'increased_risk_hypersensitivity' | 'increased_risk_sjs' | 'inhibitor_effect' | 'high_risk_scar' | 'reduced_enzyme_activity' | 'reduced_transport';
     implications?: string[]; // Clinical implications
     dosageRecommendations?: string[]; // Dosage recommendations based on phenotype
   }[];

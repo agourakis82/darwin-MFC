@@ -2,42 +2,47 @@
  * SERVICE WORKER - DARWIN-MFC
  * ===========================
  *
- * Comprehensive offline-first caching for LMICs and low-bandwidth areas.
+ * Comprehensive offline-first caching for medical data and static assets.
  *
  * Features:
- * - Precache critical resources on install
- * - Stale-while-revalidate for dynamic content
- * - Network-first for API calls (with cache fallback)
- * - Offline page for navigation failures
- * - Cache size management (50MB limit)
- * - Automatic cache cleanup on version change
+ * - Cache-first for static assets (JS, CSS, images, fonts)
+ * - Stale-while-revalidate for medical data JSON files
+ * - Offline fallback page for navigation failures
+ * - Cache versioning and automatic cleanup
  * - Support for all 9 locales
  *
- * Designed for: 3G connections, intermittent connectivity, low-end devices
+ * Cache Strategy Summary:
+ * - Static Assets (JS, CSS, fonts, images): Cache-first
+ * - Medical Data JSON: Stale-while-revalidate
+ * - Navigation (HTML pages): Network-first with cache fallback
  */
 
 // =============================================================================
-// CONFIGURATION
+// CACHE VERSIONING
 // =============================================================================
 
-const CACHE_VERSION = 'v3';
-const CACHE_NAME = `darwin-mfc-${CACHE_VERSION}`;
-const STATIC_CACHE = `darwin-mfc-static-${CACHE_VERSION}`;
-const DYNAMIC_CACHE = `darwin-mfc-dynamic-${CACHE_VERSION}`;
-const IMAGE_CACHE = `darwin-mfc-images-${CACHE_VERSION}`;
-const API_CACHE = `darwin-mfc-api-${CACHE_VERSION}`;
+const CACHE_VERSION = 'darwin-mfc-v1';
+const DATA_CACHE = 'darwin-mfc-data-v1';
 
-// Maximum cache sizes (in bytes)
-const MAX_DYNAMIC_CACHE_SIZE = 50 * 1024 * 1024; // 50MB
-const MAX_IMAGE_CACHE_SIZE = 20 * 1024 * 1024;   // 20MB
+// Additional cache names for organization
+const STATIC_CACHE = `${CACHE_VERSION}-static`;
+const IMAGE_CACHE = `${CACHE_VERSION}-images`;
+const FONT_CACHE = `${CACHE_VERSION}-fonts`;
+
+// Cache size limits
 const MAX_CACHE_ITEMS = 200;
+const MAX_DATA_CACHE_ITEMS = 100;
 
 // Supported locales
 const LOCALES = ['pt', 'en', 'es', 'fr', 'ru', 'ar', 'zh', 'el', 'hi'];
 
-// Detect basePath from service worker location (for GitHub Pages)
+// =============================================================================
+// BASE PATH DETECTION (for GitHub Pages compatibility)
+// =============================================================================
+
 const getBasePath = () => {
   const swPath = self.location.pathname;
+  // Check for GitHub Pages deployment
   if (swPath.includes('/darwin-MFC/')) {
     return '/darwin-MFC';
   }
@@ -53,12 +58,11 @@ const OFFLINE_URL = path('/offline.html');
 // RESOURCES TO PRECACHE
 // =============================================================================
 
-// Critical resources cached on install
 const PRECACHE_RESOURCES = [
   path('/'),
   path('/offline.html'),
   path('/manifest.json'),
-  // Core pages (default locale)
+  // Core pages (default locale - pt)
   path('/doencas'),
   path('/medicamentos'),
   path('/calculadoras'),
@@ -68,7 +72,7 @@ const PRECACHE_RESOURCES = [
   path('/logos/sus-logo.svg'),
 ];
 
-// Generate locale-specific URLs
+// Generate locale-specific URLs for precaching
 const LOCALE_PAGES = [
   '/doencas',
   '/medicamentos',
@@ -77,7 +81,6 @@ const LOCALE_PAGES = [
   '/busca',
 ];
 
-// Add locale versions to precache
 LOCALES.forEach(locale => {
   LOCALE_PAGES.forEach(page => {
     PRECACHE_RESOURCES.push(path(`/${locale}${page}`));
@@ -90,23 +93,30 @@ LOCALES.forEach(locale => {
 
 self.addEventListener('install', (event) => {
   console.log('[SW] Installing service worker...');
+  console.log('[SW] Cache version:', CACHE_VERSION);
 
   event.waitUntil(
     caches.open(STATIC_CACHE)
       .then((cache) => {
         console.log('[SW] Precaching critical resources...');
-        // Use addAll with error handling for each resource
+        // Use Promise.allSettled to handle individual failures gracefully
         return Promise.allSettled(
           PRECACHE_RESOURCES.map(url =>
             cache.add(url).catch(err => {
-              console.warn(`[SW] Failed to cache: ${url}`, err);
+              console.warn(`[SW] Failed to cache: ${url}`, err.message);
+              return null;
             })
           )
         );
       })
-      .then(() => {
-        console.log('[SW] Precaching complete');
+      .then((results) => {
+        const succeeded = results.filter(r => r.status === 'fulfilled').length;
+        const failed = results.filter(r => r.status === 'rejected').length;
+        console.log(`[SW] Precaching complete: ${succeeded} cached, ${failed} failed`);
         return self.skipWaiting();
+      })
+      .catch((error) => {
+        console.error('[SW] Install failed:', error);
       })
   );
 });
@@ -125,8 +135,13 @@ self.addEventListener('activate', (event) => {
         return Promise.all(
           cacheNames
             .filter((name) => {
-              return name.startsWith('darwin-mfc-') &&
-                     !name.includes(CACHE_VERSION);
+              // Delete caches that don't match current versions
+              return (name.startsWith('darwin-mfc-') || name.startsWith(CACHE_VERSION)) &&
+                     name !== CACHE_VERSION &&
+                     name !== DATA_CACHE &&
+                     name !== STATIC_CACHE &&
+                     name !== IMAGE_CACHE &&
+                     name !== FONT_CACHE;
             })
             .map((name) => {
               console.log('[SW] Deleting old cache:', name);
@@ -136,12 +151,14 @@ self.addEventListener('activate', (event) => {
       }),
       // Take control of all clients immediately
       self.clients.claim(),
-    ])
+    ]).then(() => {
+      console.log('[SW] Activation complete');
+    })
   );
 });
 
 // =============================================================================
-// FETCH EVENT
+// FETCH EVENT - MAIN ROUTING LOGIC
 // =============================================================================
 
 self.addEventListener('fetch', (event) => {
@@ -149,253 +166,263 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
 
   // Skip non-GET requests
-  if (request.method !== 'GET') return;
+  if (request.method !== 'GET') {
+    return;
+  }
 
-  // Skip external requests
-  if (url.origin !== self.location.origin) return;
+  // Skip external requests (different origin)
+  if (url.origin !== self.location.origin) {
+    return;
+  }
 
   // Skip chrome-extension and other special protocols
-  if (!url.protocol.startsWith('http')) return;
+  if (!url.protocol.startsWith('http')) {
+    return;
+  }
 
   // Determine caching strategy based on request type
   if (isNavigationRequest(request)) {
     event.respondWith(handleNavigationRequest(request));
-  } else if (isImageRequest(request)) {
-    event.respondWith(handleImageRequest(request));
-  } else if (isStaticAsset(request)) {
-    event.respondWith(handleStaticRequest(request));
+  } else if (isDataRequest(request, url)) {
+    event.respondWith(handleDataRequest(request));
+  } else if (isImageRequest(request, url)) {
+    event.respondWith(handleStaticRequest(request, IMAGE_CACHE));
+  } else if (isFontRequest(request, url)) {
+    event.respondWith(handleStaticRequest(request, FONT_CACHE));
+  } else if (isStaticAsset(request, url)) {
+    event.respondWith(handleStaticRequest(request, STATIC_CACHE));
   } else {
     event.respondWith(handleDynamicRequest(request));
   }
 });
 
 // =============================================================================
-// REQUEST HANDLERS
+// REQUEST TYPE DETECTION
 // =============================================================================
 
-/**
- * Navigation requests: Network-first with offline fallback
- */
-async function handleNavigationRequest(request) {
+function isNavigationRequest(request) {
+  return request.mode === 'navigate' || request.destination === 'document';
+}
+
+function isDataRequest(request, url) {
+  // Medical data JSON files
+  return url.pathname.endsWith('.json') ||
+         url.pathname.includes('/api/') ||
+         url.pathname.includes('/data/');
+}
+
+function isStaticAsset(request, url) {
+  return url.pathname.includes('/_next/static/') ||
+         url.pathname.endsWith('.js') ||
+         url.pathname.endsWith('.css') ||
+         url.pathname.endsWith('.map');
+}
+
+function isImageRequest(request, url) {
+  return request.destination === 'image' ||
+         /\.(png|jpg|jpeg|gif|svg|webp|ico|avif)$/i.test(url.pathname);
+}
+
+function isFontRequest(request, url) {
+  return request.destination === 'font' ||
+         /\.(woff|woff2|ttf|eot|otf)$/i.test(url.pathname);
+}
+
+// =============================================================================
+// CACHE-FIRST STRATEGY (for static assets)
+// =============================================================================
+
+async function handleStaticRequest(request, cacheName = STATIC_CACHE) {
   try {
-    // Try network first
-    const networkResponse = await fetch(request);
-
-    // Cache successful responses
-    if (networkResponse.ok) {
-      const cache = await caches.open(DYNAMIC_CACHE);
-      cache.put(request, networkResponse.clone());
-    }
-
-    return networkResponse;
-  } catch (error) {
-    // Try cache
+    // Try cache first
     const cachedResponse = await caches.match(request);
     if (cachedResponse) {
       return cachedResponse;
     }
 
-    // Return offline page
-    const offlinePage = await caches.match(OFFLINE_URL);
-    return offlinePage || new Response('Offline', {
-      status: 503,
-      statusText: 'Service Unavailable',
-    });
-  }
-}
-
-/**
- * Static assets: Cache-first (fonts, JS, CSS)
- */
-async function handleStaticRequest(request) {
-  const cachedResponse = await caches.match(request);
-  if (cachedResponse) {
-    return cachedResponse;
-  }
-
-  try {
+    // If not in cache, fetch from network
     const networkResponse = await fetch(request);
+
     if (networkResponse.ok) {
-      const cache = await caches.open(STATIC_CACHE);
+      const cache = await caches.open(cacheName);
+      // Clone response before caching (response can only be read once)
       cache.put(request, networkResponse.clone());
     }
+
     return networkResponse;
   } catch (error) {
+    console.warn('[SW] Static request failed:', request.url, error.message);
+
+    // Return a minimal error response for static assets
     return new Response('Resource unavailable offline', {
       status: 503,
       statusText: 'Service Unavailable',
+      headers: { 'Content-Type': 'text/plain' },
     });
   }
 }
 
-/**
- * Images: Cache-first with size limits
- */
-async function handleImageRequest(request) {
-  const cachedResponse = await caches.match(request);
-  if (cachedResponse) {
-    return cachedResponse;
-  }
+// =============================================================================
+// STALE-WHILE-REVALIDATE STRATEGY (for medical data)
+// =============================================================================
+
+async function handleDataRequest(request) {
+  const cache = await caches.open(DATA_CACHE);
 
   try {
-    const networkResponse = await fetch(request);
-    if (networkResponse.ok) {
-      const cache = await caches.open(IMAGE_CACHE);
-      cache.put(request, networkResponse.clone());
+    // Get cached response (stale)
+    const cachedResponse = await cache.match(request);
 
-      // Cleanup if cache is too large
-      trimCache(IMAGE_CACHE, MAX_CACHE_ITEMS / 2);
+    // Start network fetch (revalidate) in parallel
+    const fetchPromise = fetch(request)
+      .then(async (networkResponse) => {
+        if (networkResponse.ok) {
+          // Update cache with fresh data
+          await cache.put(request, networkResponse.clone());
+
+          // Trim cache if too large
+          trimCache(DATA_CACHE, MAX_DATA_CACHE_ITEMS);
+        }
+        return networkResponse;
+      })
+      .catch((error) => {
+        console.warn('[SW] Data fetch failed:', request.url, error.message);
+        return null;
+      });
+
+    // Return cached response immediately if available (stale)
+    // Otherwise wait for network response
+    if (cachedResponse) {
+      // Don't await fetchPromise - let it update cache in background
+      fetchPromise.catch(() => {}); // Prevent unhandled rejection
+      return cachedResponse;
     }
+
+    // No cache available, must wait for network
+    const networkResponse = await fetchPromise;
+    if (networkResponse) {
+      return networkResponse;
+    }
+
+    // Both cache and network failed
+    return new Response(JSON.stringify({ error: 'Data unavailable offline' }), {
+      status: 503,
+      statusText: 'Service Unavailable',
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } catch (error) {
+    console.error('[SW] Data request error:', error);
+
+    // Try cache as last resort
+    const cachedResponse = await cache.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+
+    return new Response(JSON.stringify({ error: 'Data unavailable offline' }), {
+      status: 503,
+      statusText: 'Service Unavailable',
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+}
+
+// =============================================================================
+// NETWORK-FIRST STRATEGY (for navigation/HTML pages)
+// =============================================================================
+
+async function handleNavigationRequest(request) {
+  try {
+    // Try network first for fresh content
+    const networkResponse = await fetch(request);
+
+    if (networkResponse.ok) {
+      // Cache the successful response
+      const cache = await caches.open(STATIC_CACHE);
+      cache.put(request, networkResponse.clone());
+    }
+
     return networkResponse;
   } catch (error) {
-    // Return placeholder for images
-    return new Response('', { status: 404 });
+    console.warn('[SW] Navigation fetch failed:', request.url, error.message);
+
+    // Network failed, try cache
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+
+    // No cache available, return offline page
+    const offlinePage = await caches.match(OFFLINE_URL);
+    if (offlinePage) {
+      return offlinePage;
+    }
+
+    // Absolute fallback
+    return new Response(
+      '<!DOCTYPE html><html><head><title>Offline</title></head><body><h1>You are offline</h1><p>Please check your internet connection.</p></body></html>',
+      {
+        status: 503,
+        statusText: 'Service Unavailable',
+        headers: { 'Content-Type': 'text/html' },
+      }
+    );
   }
 }
 
-/**
- * Dynamic content: Stale-while-revalidate
- */
+// =============================================================================
+// DYNAMIC REQUEST HANDLER (fallback)
+// =============================================================================
+
 async function handleDynamicRequest(request) {
-  const cache = await caches.open(DYNAMIC_CACHE);
-  const cachedResponse = await cache.match(request);
+  const cache = await caches.open(STATIC_CACHE);
 
-  const fetchPromise = fetch(request)
-    .then((networkResponse) => {
-      if (networkResponse.ok) {
-        cache.put(request, networkResponse.clone());
-        trimCache(DYNAMIC_CACHE, MAX_CACHE_ITEMS);
-      }
-      return networkResponse;
-    })
-    .catch(() => null);
+  try {
+    // Try network first
+    const networkResponse = await fetch(request);
 
-  // Return cached immediately, update in background
-  return cachedResponse || fetchPromise;
+    if (networkResponse.ok) {
+      cache.put(request, networkResponse.clone());
+    }
+
+    return networkResponse;
+  } catch (error) {
+    // Network failed, try cache
+    const cachedResponse = await cache.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+
+    return new Response('Resource unavailable offline', {
+      status: 503,
+      statusText: 'Service Unavailable',
+      headers: { 'Content-Type': 'text/plain' },
+    });
+  }
 }
 
 // =============================================================================
-// HELPER FUNCTIONS
+// CACHE MANAGEMENT UTILITIES
 // =============================================================================
-
-function isNavigationRequest(request) {
-  return request.mode === 'navigate' ||
-         request.destination === 'document';
-}
-
-function isStaticAsset(request) {
-  const url = request.url;
-  return url.includes('/_next/static/') ||
-         url.endsWith('.js') ||
-         url.endsWith('.css') ||
-         url.endsWith('.woff2') ||
-         url.endsWith('.woff');
-}
-
-function isImageRequest(request) {
-  return request.destination === 'image' ||
-         request.url.match(/\.(png|jpg|jpeg|gif|svg|webp|ico)$/i);
-}
 
 /**
- * Trim cache to maximum number of items (LRU-style)
+ * Trim cache to maximum number of items (LRU-style removal)
  */
 async function trimCache(cacheName, maxItems) {
-  const cache = await caches.open(cacheName);
-  const keys = await cache.keys();
-
-  if (keys.length > maxItems) {
-    const deleteCount = keys.length - maxItems;
-    for (let i = 0; i < deleteCount; i++) {
-      await cache.delete(keys[i]);
-    }
-    console.log(`[SW] Trimmed ${deleteCount} items from ${cacheName}`);
-  }
-}
-
-// =============================================================================
-// MESSAGE HANDLING
-// =============================================================================
-
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
-
-  if (event.data && event.data.type === 'CACHE_URLS') {
-    const urls = event.data.urls || [];
-    caches.open(DYNAMIC_CACHE).then((cache) => {
-      urls.forEach(url => {
-        cache.add(url).catch(err => {
-          console.warn('[SW] Failed to cache:', url, err);
-        });
-      });
-    });
-  }
-
-  if (event.data && event.data.type === 'CLEAR_CACHE') {
-    caches.keys().then((names) => {
-      names.forEach(name => caches.delete(name));
-    });
-  }
-
-  if (event.data && event.data.type === 'GET_CACHE_SIZE') {
-    getCacheSize().then(size => {
-      event.ports[0].postMessage({ size });
-    });
-  }
-
-  // Register background sync
-  if (event.data && event.data.type === 'REGISTER_SYNC') {
-    const tag = event.data.tag || SYNC_TAGS.USER_DATA;
-    self.registration.sync.register(tag).then(() => {
-      console.log('[SW] Sync registered:', tag);
-    }).catch(err => {
-      console.error('[SW] Sync registration failed:', err);
-    });
-  }
-
-  // Force sync now
-  if (event.data && event.data.type === 'SYNC_NOW') {
-    syncAllUserData().then(() => {
-      event.ports[0]?.postMessage({ success: true });
-    }).catch(err => {
-      event.ports[0]?.postMessage({ success: false, error: err.message });
-    });
-  }
-
-  // Get sync status
-  if (event.data && event.data.type === 'GET_SYNC_STATUS') {
-    Promise.all([
-      getSyncQueueCount(),
-      getAuthToken().then(t => !!t),
-    ]).then(([queueCount, hasAuth]) => {
-      event.ports[0]?.postMessage({
-        queueCount,
-        hasAuth,
-        isOnline: navigator.onLine,
-      });
-    });
-  }
-});
-
-/**
- * Get sync queue count
- */
-async function getSyncQueueCount() {
   try {
-    const db = await openUserDB();
-    const tx = db.transaction('syncQueue', 'readonly');
-    const store = tx.objectStore('syncQueue');
-    const index = store.index('status');
+    const cache = await caches.open(cacheName);
+    const keys = await cache.keys();
 
-    return new Promise((resolve, reject) => {
-      const request = index.count('pending');
-      request.onerror = () => reject(request.error);
-      request.onsuccess = () => resolve(request.result);
-    });
+    if (keys.length > maxItems) {
+      const deleteCount = keys.length - maxItems;
+      // Delete oldest entries (first in array)
+      for (let i = 0; i < deleteCount; i++) {
+        await cache.delete(keys[i]);
+      }
+      console.log(`[SW] Trimmed ${deleteCount} items from ${cacheName}`);
+    }
   } catch (error) {
-    return 0;
+    console.error('[SW] Cache trim failed:', error);
   }
 }
 
@@ -404,447 +431,137 @@ async function getSyncQueueCount() {
  */
 async function getCacheSize() {
   let totalSize = 0;
-  const cacheNames = await caches.keys();
 
-  for (const cacheName of cacheNames) {
-    const cache = await caches.open(cacheName);
-    const keys = await cache.keys();
+  try {
+    const cacheNames = await caches.keys();
 
-    for (const request of keys) {
-      const response = await cache.match(request);
-      if (response) {
-        const blob = await response.clone().blob();
-        totalSize += blob.size;
+    for (const cacheName of cacheNames) {
+      if (!cacheName.startsWith('darwin-mfc')) continue;
+
+      const cache = await caches.open(cacheName);
+      const keys = await cache.keys();
+
+      for (const request of keys) {
+        const response = await cache.match(request);
+        if (response) {
+          const blob = await response.clone().blob();
+          totalSize += blob.size;
+        }
       }
     }
+  } catch (error) {
+    console.error('[SW] Cache size calculation failed:', error);
   }
 
   return totalSize;
 }
 
 // =============================================================================
-// BACKGROUND SYNC (for user data synchronization)
+// MESSAGE HANDLING
 // =============================================================================
 
-// Sync tags
-const SYNC_TAGS = {
-  USER_DATA: 'sync-user-data',
-  FAVORITES: 'sync-favorites',
-  NOTES: 'sync-notes',
-  PROGRESS: 'sync-progress',
-  QUEUE: 'sync-queue',
-};
+self.addEventListener('message', (event) => {
+  const { type, payload } = event.data || {};
 
-self.addEventListener('sync', (event) => {
-  console.log('[SW] Background sync triggered:', event.tag);
-
-  switch (event.tag) {
-    case SYNC_TAGS.USER_DATA:
-      event.waitUntil(syncAllUserData());
+  switch (type) {
+    case 'SKIP_WAITING':
+      // Activate new service worker immediately
+      self.skipWaiting();
       break;
-    case SYNC_TAGS.FAVORITES:
-      event.waitUntil(syncFavorites());
-      break;
-    case SYNC_TAGS.NOTES:
-      event.waitUntil(syncNotes());
-      break;
-    case SYNC_TAGS.PROGRESS:
-      event.waitUntil(syncProgress());
-      break;
-    case SYNC_TAGS.QUEUE:
-      event.waitUntil(processSyncQueue());
-      break;
-    default:
-      console.log('[SW] Unknown sync tag:', event.tag);
-  }
-});
 
-/**
- * Sync all pending user data
- */
-async function syncAllUserData() {
-  console.log('[SW] Syncing all user data...');
-
-  try {
-    await Promise.all([
-      syncFavorites(),
-      syncNotes(),
-      syncProgress(),
-      processSyncQueue(),
-    ]);
-    console.log('[SW] All user data synced successfully');
-  } catch (error) {
-    console.error('[SW] Failed to sync user data:', error);
-    throw error; // Retry later
-  }
-}
-
-/**
- * Sync favorites with server
- */
-async function syncFavorites() {
-  console.log('[SW] Syncing favorites...');
-
-  try {
-    // Get pending favorites from IndexedDB
-    const db = await openUserDB();
-    const tx = db.transaction('favorites', 'readonly');
-    const store = tx.objectStore('favorites');
-    const index = store.index('syncStatus');
-    const pending = await getAllFromIndex(index, 'pending');
-
-    if (pending.length === 0) {
-      console.log('[SW] No pending favorites to sync');
-      return;
-    }
-
-    // Get auth token
-    const token = await getAuthToken();
-    if (!token) {
-      console.log('[SW] No auth token, skipping favorites sync');
-      return;
-    }
-
-    // Push to server
-    const response = await fetch(getApiUrl('/favorites/sync'), {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-      body: JSON.stringify({ items: pending }),
-    });
-
-    if (response.ok) {
-      // Mark as synced
-      const txWrite = db.transaction('favorites', 'readwrite');
-      const storeWrite = txWrite.objectStore('favorites');
-      for (const item of pending) {
-        item.syncStatus = 'synced';
-        storeWrite.put(item);
-      }
-      console.log(`[SW] Synced ${pending.length} favorites`);
-    } else {
-      throw new Error(`Favorites sync failed: ${response.status}`);
-    }
-  } catch (error) {
-    console.error('[SW] Favorites sync error:', error);
-    throw error;
-  }
-}
-
-/**
- * Sync notes with server
- */
-async function syncNotes() {
-  console.log('[SW] Syncing notes...');
-
-  try {
-    const db = await openUserDB();
-    const tx = db.transaction('notes', 'readonly');
-    const store = tx.objectStore('notes');
-    const index = store.index('syncStatus');
-    const pending = await getAllFromIndex(index, 'pending');
-
-    if (pending.length === 0) {
-      console.log('[SW] No pending notes to sync');
-      return;
-    }
-
-    const token = await getAuthToken();
-    if (!token) {
-      console.log('[SW] No auth token, skipping notes sync');
-      return;
-    }
-
-    const response = await fetch(getApiUrl('/notes/sync'), {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-      body: JSON.stringify({ items: pending }),
-    });
-
-    if (response.ok) {
-      const txWrite = db.transaction('notes', 'readwrite');
-      const storeWrite = txWrite.objectStore('notes');
-      for (const item of pending) {
-        item.syncStatus = 'synced';
-        storeWrite.put(item);
-      }
-      console.log(`[SW] Synced ${pending.length} notes`);
-    } else {
-      throw new Error(`Notes sync failed: ${response.status}`);
-    }
-  } catch (error) {
-    console.error('[SW] Notes sync error:', error);
-    throw error;
-  }
-}
-
-/**
- * Sync learning progress with server
- */
-async function syncProgress() {
-  console.log('[SW] Syncing progress...');
-
-  try {
-    const db = await openUserDB();
-    const tx = db.transaction('progress', 'readonly');
-    const store = tx.objectStore('progress');
-    const index = store.index('syncStatus');
-    const pending = await getAllFromIndex(index, 'pending');
-
-    if (pending.length === 0) {
-      console.log('[SW] No pending progress to sync');
-      return;
-    }
-
-    const token = await getAuthToken();
-    if (!token) {
-      console.log('[SW] No auth token, skipping progress sync');
-      return;
-    }
-
-    const response = await fetch(getApiUrl('/sync/push'), {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-      body: JSON.stringify({ store: 'progress', items: pending }),
-    });
-
-    if (response.ok) {
-      const txWrite = db.transaction('progress', 'readwrite');
-      const storeWrite = txWrite.objectStore('progress');
-      for (const item of pending) {
-        item.syncStatus = 'synced';
-        storeWrite.put(item);
-      }
-      console.log(`[SW] Synced ${pending.length} progress records`);
-    } else {
-      throw new Error(`Progress sync failed: ${response.status}`);
-    }
-  } catch (error) {
-    console.error('[SW] Progress sync error:', error);
-    throw error;
-  }
-}
-
-/**
- * Process the sync queue
- */
-async function processSyncQueue() {
-  console.log('[SW] Processing sync queue...');
-
-  try {
-    const db = await openUserDB();
-    const tx = db.transaction('syncQueue', 'readonly');
-    const store = tx.objectStore('syncQueue');
-    const index = store.index('status');
-    const pending = await getAllFromIndex(index, 'pending');
-
-    if (pending.length === 0) {
-      console.log('[SW] No pending operations in queue');
-      return;
-    }
-
-    const token = await getAuthToken();
-    if (!token) {
-      console.log('[SW] No auth token, skipping queue processing');
-      return;
-    }
-
-    let processed = 0;
-    let failed = 0;
-
-    for (const operation of pending) {
-      try {
-        const { endpoint, method, body } = operation.payload;
-
-        const response = await fetch(getApiUrl(endpoint), {
-          method: method || 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`,
-          },
-          body: body ? JSON.stringify(body) : undefined,
-        });
-
-        if (response.ok) {
-          // Remove from queue
-          const txWrite = db.transaction('syncQueue', 'readwrite');
-          txWrite.objectStore('syncQueue').delete(operation.id);
-          processed++;
-        } else {
-          throw new Error(`Operation failed: ${response.status}`);
-        }
-      } catch (error) {
-        // Mark as failed after 3 attempts
-        const txWrite = db.transaction('syncQueue', 'readwrite');
-        const storeWrite = txWrite.objectStore('syncQueue');
-        operation.attempts = (operation.attempts || 0) + 1;
-        operation.lastAttempt = new Date().toISOString();
-        operation.error = error.message;
-
-        if (operation.attempts >= 3) {
-          operation.status = 'failed';
-        }
-
-        storeWrite.put(operation);
-        failed++;
-      }
-    }
-
-    console.log(`[SW] Queue processed: ${processed} success, ${failed} failed`);
-  } catch (error) {
-    console.error('[SW] Queue processing error:', error);
-    throw error;
-  }
-}
-
-// =============================================================================
-// INDEXEDDB HELPERS (for service worker context)
-// =============================================================================
-
-const USER_DB_NAME = 'darwin-mfc-db';
-const USER_DB_VERSION = 1;
-
-function openUserDB() {
-  return new Promise((resolve, reject) => {
-    const request = indexedDB.open(USER_DB_NAME, USER_DB_VERSION);
-    request.onerror = () => reject(request.error);
-    request.onsuccess = () => resolve(request.result);
-  });
-}
-
-function getAllFromIndex(index, value) {
-  return new Promise((resolve, reject) => {
-    const request = index.getAll(value);
-    request.onerror = () => reject(request.error);
-    request.onsuccess = () => resolve(request.result);
-  });
-}
-
-async function getAuthToken() {
-  try {
-    const db = await openUserDB();
-    const tx = db.transaction('authTokens', 'readonly');
-    const store = tx.objectStore('authTokens');
-
-    return new Promise((resolve, reject) => {
-      const request = store.get('current');
-      request.onerror = () => reject(request.error);
-      request.onsuccess = () => {
-        const tokens = request.result;
-        if (tokens && new Date(tokens.offlineValidUntil) > new Date()) {
-          resolve(tokens.accessToken);
-        } else {
-          resolve(null);
-        }
-      };
-    });
-  } catch (error) {
-    console.error('[SW] Failed to get auth token:', error);
-    return null;
-  }
-}
-
-function getApiUrl(endpoint) {
-  // API URL - should match the app configuration
-  const API_BASE = self.location.origin.includes('localhost')
-    ? 'http://localhost:8090'
-    : 'https://api.darwin-mfc.com'; // Production API
-  return `${API_BASE}/api/v1${endpoint}`;
-}
-
-// =============================================================================
-// PERIODIC SYNC (for content updates)
-// =============================================================================
-
-self.addEventListener('periodicsync', (event) => {
-  if (event.tag === 'content-update') {
-    event.waitUntil(checkContentUpdates());
-  }
-});
-
-async function checkContentUpdates() {
-  console.log('[SW] Checking for content updates...');
-
-  try {
-    const response = await fetch(getApiUrl('/content/version'));
-    if (response.ok) {
-      const data = await response.json();
-      const currentVersion = await getCachedContentVersion();
-
-      if (data.version !== currentVersion) {
-        console.log('[SW] New content available:', data.version);
-        // Notify the app
-        const clients = await self.clients.matchAll();
-        clients.forEach((client) => {
-          client.postMessage({
-            type: 'CONTENT_UPDATE_AVAILABLE',
-            version: data.version,
+    case 'CACHE_URLS':
+      // Cache specific URLs on demand
+      if (payload && Array.isArray(payload.urls)) {
+        caches.open(DATA_CACHE).then((cache) => {
+          payload.urls.forEach(url => {
+            cache.add(url).catch(err => {
+              console.warn('[SW] Failed to cache URL:', url, err.message);
+            });
           });
         });
       }
-    }
-  } catch (error) {
-    console.error('[SW] Content update check failed:', error);
+      break;
+
+    case 'CLEAR_CACHE':
+      // Clear all caches
+      caches.keys().then((names) => {
+        Promise.all(
+          names
+            .filter(name => name.startsWith('darwin-mfc'))
+            .map(name => caches.delete(name))
+        ).then(() => {
+          console.log('[SW] All caches cleared');
+          if (event.ports && event.ports[0]) {
+            event.ports[0].postMessage({ success: true });
+          }
+        });
+      });
+      break;
+
+    case 'CLEAR_DATA_CACHE':
+      // Clear only the data cache
+      caches.delete(DATA_CACHE).then((deleted) => {
+        console.log('[SW] Data cache cleared:', deleted);
+        if (event.ports && event.ports[0]) {
+          event.ports[0].postMessage({ success: deleted });
+        }
+      });
+      break;
+
+    case 'GET_CACHE_SIZE':
+      // Return total cache size
+      getCacheSize().then(size => {
+        if (event.ports && event.ports[0]) {
+          event.ports[0].postMessage({ size });
+        }
+      });
+      break;
+
+    case 'GET_CACHE_VERSION':
+      // Return current cache version
+      if (event.ports && event.ports[0]) {
+        event.ports[0].postMessage({
+          version: CACHE_VERSION,
+          dataCache: DATA_CACHE,
+        });
+      }
+      break;
+
+    case 'PREFETCH_LOCALE':
+      // Prefetch pages for a specific locale
+      if (payload && payload.locale && LOCALES.includes(payload.locale)) {
+        const urls = LOCALE_PAGES.map(page => path(`/${payload.locale}${page}`));
+        caches.open(STATIC_CACHE).then((cache) => {
+          Promise.allSettled(urls.map(url => cache.add(url))).then((results) => {
+            const succeeded = results.filter(r => r.status === 'fulfilled').length;
+            console.log(`[SW] Prefetched ${succeeded}/${urls.length} pages for locale: ${payload.locale}`);
+          });
+        });
+      }
+      break;
+
+    default:
+      console.log('[SW] Unknown message type:', type);
   }
-}
-
-async function getCachedContentVersion() {
-  try {
-    const cache = await caches.open(DYNAMIC_CACHE);
-    const response = await cache.match('/content-version');
-    if (response) {
-      const data = await response.json();
-      return data.version;
-    }
-  } catch (error) {
-    // Ignore
-  }
-  return null;
-}
-
-// =============================================================================
-// PUSH NOTIFICATIONS (for updates)
-// =============================================================================
-
-self.addEventListener('push', (event) => {
-  const data = event.data?.json() || {};
-
-  const options = {
-    body: data.body || 'New content available!',
-    icon: path('/icons/icon-192x192.png'),
-    badge: path('/icons/icon-72x72.png'),
-    vibrate: [100, 50, 100],
-    data: {
-      url: data.url || '/',
-    },
-    actions: [
-      { action: 'open', title: 'Open' },
-      { action: 'dismiss', title: 'Dismiss' },
-    ],
-  };
-
-  event.waitUntil(
-    self.registration.showNotification(data.title || 'Darwin MFC', options)
-  );
 });
 
-self.addEventListener('notificationclick', (event) => {
-  event.notification.close();
+// =============================================================================
+// ERROR HANDLING
+// =============================================================================
 
-  if (event.action === 'open' || !event.action) {
-    const url = event.notification.data?.url || '/';
-    event.waitUntil(
-      clients.openWindow(url)
-    );
-  }
+self.addEventListener('error', (event) => {
+  console.error('[SW] Error:', event.error);
 });
+
+self.addEventListener('unhandledrejection', (event) => {
+  console.error('[SW] Unhandled rejection:', event.reason);
+});
+
+// =============================================================================
+// INITIALIZATION LOG
+// =============================================================================
 
 console.log('[SW] Service worker loaded');
+console.log('[SW] Cache version:', CACHE_VERSION);
+console.log('[SW] Data cache:', DATA_CACHE);
+console.log('[SW] Base path:', BASE_PATH || '(root)');

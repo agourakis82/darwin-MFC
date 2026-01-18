@@ -31,19 +31,19 @@ export const doencasEndocrinas: Doenca[] = [
     cid10: ['E11', 'E11.0', 'E11.9'],
     cid11: ['5A11'],
     loinc: [
-      '4548-4',   // HbA1c
-      '1558-6',   // Fasting glucose
-      '2345-7',   // Glucose
-      '14771-0',  // 2-hour OGTT glucose
-      '2160-0',   // Creatinine
-      '33914-3',  // eGFR
-      '9318-7',   // Albumin/creatinine ratio
-      '2093-3',   // Total cholesterol
-      '2085-9',   // HDL cholesterol
-      '13457-7',  // LDL calculated
-      '2571-8',   // Triglycerides
-      '1920-8',   // AST
-      '1742-6',   // ALT
+      { code: '4548-4', name: 'HbA1c' },
+      { code: '1558-6', name: 'Fasting glucose' },
+      { code: '2345-7', name: 'Glucose' },
+      { code: '14771-0', name: '2-hour OGTT glucose' },
+      { code: '2160-0', name: 'Creatinine' },
+      { code: '33914-3', name: 'eGFR' },
+      { code: '9318-7', name: 'Albumin/creatinine ratio' },
+      { code: '2093-3', name: 'Total cholesterol' },
+      { code: '2085-9', name: 'HDL cholesterol' },
+      { code: '13457-7', name: 'LDL calculated' },
+      { code: '2571-8', name: 'Triglycerides' },
+      { code: '1920-8', name: 'AST' },
+      { code: '1742-6', name: 'ALT' },
     ],
     categoria: 'metabolico',
     quickView: {
@@ -115,15 +115,15 @@ export const doencasEndocrinas: Doenca[] = [
           'Síndrome dos ovários policísticos'
         ],
         citations: [
-          { refId: 'sbd-epidemiologia-2024', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'vigitel-2023', evidenceLevel: 'moderate', studyType: 'cohort' }
+          { refId: 'sbd-epidemiologia-2024', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'vigitel-2023', evidenceLevel: 'B', studyType: 'Cohort' }
         ]
       },
       fisiopatologia: {
         texto: 'O DM2 resulta de resistência insulínica progressiva associada a disfunção das células beta pancreáticas. A resistência insulínica (principalmente hepática e muscular) antecede a hiperglicemia por anos. A lipotoxicidade, glicotoxicidade e inflamação crônica contribuem para falência progressiva das células beta. Fatores genéticos (poligênico) e ambientais (obesidade, sedentarismo) interagem na patogênese.',
         citations: [
-          { refId: 'sbd-diretrizes-2023', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'ukpds-1998', evidenceLevel: 'high', studyType: 'rct' }
+          { refId: 'sbd-diretrizes-2023', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'ukpds-1998', evidenceLevel: 'A', studyType: 'RCT' }
         ]
       },
       quadroClinico: {
@@ -152,8 +152,8 @@ export const doencasEndocrinas: Doenca[] = [
           'LADA (Latent Autoimmune Diabetes in Adults): autoimune de início tardio'
         ],
         citations: [
-          { refId: 'sbd-diretrizes-2023', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'ada-standards-2024', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'sbd-diretrizes-2023', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'ada-standards-2024', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       diagnostico: {
@@ -182,8 +182,8 @@ export const doencasEndocrinas: Doenca[] = [
           'TSH (comorbidade comum)'
         ],
         citations: [
-          { refId: 'sbd-diagnostico-2024', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'ada-standards-2024', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'sbd-diagnostico-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'ada-standards-2024', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       tratamento: {
@@ -204,9 +204,9 @@ export const doencasEndocrinas: Doenca[] = [
             'Automonitorização glicêmica (se insulinizado)'
           ],
           citations: [
-            { refId: 'sbd-diretrizes-2023', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'look-ahead-2013', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'direct-trial-2018', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'sbd-diretrizes-2023', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'look-ahead-2013', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'direct-trial-2018', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         farmacologico: {
@@ -273,15 +273,15 @@ export const doencasEndocrinas: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'ukpds-1998', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'dcct-1993', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'empa-reg-2015', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'leader-2016', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'credence-2019', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'dapa-hf-2019', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'sustain-6-2016', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'sbd-diretrizes-2023', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'ada-standards-2024', evidenceLevel: 'high', studyType: 'guideline' }
+            { refId: 'ukpds-1998', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'dcct-1993', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'empa-reg-2015', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'leader-2016', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'credence-2019', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'dapa-hf-2019', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'sustain-6-2016', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'sbd-diretrizes-2023', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'ada-standards-2024', evidenceLevel: 'A', studyType: 'Guideline' }
           ]
         },
         duracao: 'Tratamento contínuo e progressivo ao longo da vida'
@@ -314,9 +314,9 @@ export const doencasEndocrinas: Doenca[] = [
           'Gestação (pré-natal de alto risco)'
         ],
         citations: [
-          { refId: 'sbd-diretrizes-2023', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'ada-standards-2024', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'ukpds-follow-up-2008', evidenceLevel: 'high', studyType: 'rct' }
+          { refId: 'sbd-diretrizes-2023', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'ada-standards-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'ukpds-follow-up-2008', evidenceLevel: 'A', studyType: 'RCT' }
         ]
       },
       prevencao: {
@@ -334,9 +334,9 @@ export const doencasEndocrinas: Doenca[] = [
           'Vacinação (influenza, pneumococo, COVID-19)'
         ],
         citations: [
-          { refId: 'dpp-2002', evidenceLevel: 'high', studyType: 'rct' },
-          { refId: 'finnish-dps-2001', evidenceLevel: 'high', studyType: 'rct' },
-          { refId: 'sbd-rastreamento-2025', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'dpp-2002', evidenceLevel: 'A', studyType: 'RCT' },
+          { refId: 'finnish-dps-2001', evidenceLevel: 'A', studyType: 'RCT' },
+          { refId: 'sbd-rastreamento-2025', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
     },
@@ -345,10 +345,10 @@ export const doencasEndocrinas: Doenca[] = [
     calculadoras: ['findrisc', 'risco-cv', 'tfge'],
     rastreamentos: ['rastreamento-dm2', 'retinopatia-diabetica', 'pe-diabetico'],
     citations: [
-      { refId: 'sbd-diretrizes-2023', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'ada-standards-2024', evidenceLevel: 'high', studyType: 'guideline' },
-      { refId: 'ukpds-1998', evidenceLevel: 'high', studyType: 'rct' },
-      { refId: 'empa-reg-2015', evidenceLevel: 'high', studyType: 'rct' }
+      { refId: 'sbd-diretrizes-2023', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'ada-standards-2024', evidenceLevel: 'A', studyType: 'Guideline' },
+      { refId: 'ukpds-1998', evidenceLevel: 'A', studyType: 'RCT' },
+      { refId: 'empa-reg-2015', evidenceLevel: 'A', studyType: 'RCT' }
     ],
     lastUpdate: '2024-12',
     tags: ['diabetes', 'dm2', 'hiperglicemia', 'insulina', 'metformina', 'isglt2', 'glp1'],
@@ -365,17 +365,17 @@ export const doencasEndocrinas: Doenca[] = [
     cid10: ['E03', 'E03.9', 'E06.3'],
     cid11: ['5A00'],
     loinc: [
-      '3016-3',   // TSH
-      '3024-7',   // T4 free
-      '3051-0',   // T3 free
-      '3026-2',   // T4 total
-      '3053-6',   // T3 total
-      '5382-7',   // Anti-TPO antibodies
-      '5385-0',   // Anti-thyroglobulin antibodies
-      '2093-3',   // Total cholesterol (often elevated)
-      '2160-0',   // Creatinine
-      '718-7',    // Hemoglobin (anemia common)
-      '2951-2',   // Sodium (hyponatremia risk)
+      { code: '3016-3', name: 'TSH' },
+      { code: '3024-7', name: 'T4 free' },
+      { code: '3051-0', name: 'T3 free' },
+      { code: '3026-2', name: 'T4 total' },
+      { code: '3053-6', name: 'T3 total' },
+      { code: '5382-7', name: 'Anti-TPO antibodies' },
+      { code: '5385-0', name: 'Anti-thyroglobulin antibodies' },
+      { code: '2093-3', name: 'Total cholesterol (often elevated)' },
+      { code: '2160-0', name: 'Creatinine' },
+      { code: '718-7', name: 'Hemoglobin (anemia common)' },
+      { code: '2951-2', name: 'Sodium (hyponatremia risk)' },
     ],
     categoria: 'metabolico',
     quickView: {
@@ -436,15 +436,15 @@ export const doencasEndocrinas: Doenca[] = [
           'Cirurgia ou radioablação de tireoide'
         ],
         citations: [
-          { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'ata-hypothyroidism-2014', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'ata-hypothyroidism-2014', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       fisiopatologia: {
         texto: 'A causa mais comum é a tireoidite de Hashimoto (autoimune), com destruição gradual da glândula por autoanticorpos (anti-TPO, anti-Tg). Outras causas incluem tireoidectomia, radioablação, medicamentos e deficiência de iodo. A deficiência de T3/T4 reduz o metabolismo basal de todos os tecidos.',
         citations: [
-          { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'pearce-2013', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+          { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'pearce-2013', evidenceLevel: 'B', studyType: 'SystematicReview' }
         ]
       },
       quadroClinico: {
@@ -471,8 +471,8 @@ export const doencasEndocrinas: Doenca[] = [
           'Hipotireoidismo central: TSH normal/baixo, T4L baixo'
         ],
         citations: [
-          { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'ata-hypothyroidism-2014', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'ata-hypothyroidism-2014', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       diagnostico: {
@@ -497,8 +497,8 @@ export const doencasEndocrinas: Doenca[] = [
           'Ultrassom de tireoide (se bócio ou nódulo)'
         ],
         citations: [
-          { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'ata-hypothyroidism-2014', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'ata-hypothyroidism-2014', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       tratamento: {
@@ -515,7 +515,7 @@ export const doencasEndocrinas: Doenca[] = [
             'Separar de medicamentos que interferem na absorção'
           ],
           citations: [
-            { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' }
+            { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' }
           ]
         },
         farmacologico: {
@@ -541,9 +541,9 @@ export const doencasEndocrinas: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-            { refId: 'ata-hypothyroidism-2014', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'trust-thyroid-2017', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+            { refId: 'ata-hypothyroidism-2014', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'trust-thyroid-2017', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         duracao: 'Tratamento contínuo (maioria dos casos é permanente)'
@@ -567,15 +567,15 @@ export const doencasEndocrinas: Doenca[] = [
           'Gestação de alto risco'
         ],
         citations: [
-          { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'ata-hypothyroidism-2014', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'ata-hypothyroidism-2014', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       prevencao: {
         primaria: ['Não há prevenção primária específica para hipotireoidismo autoimune'],
         secundaria: ['Tratamento precoce para evitar complicações cardiovasculares e metabólicas'],
         citations: [
-          { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
     },
@@ -584,8 +584,8 @@ export const doencasEndocrinas: Doenca[] = [
     calculadoras: [],
     rastreamentos: ['rastreamento-tireoide'],
     citations: [
-      { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'ata-hypothyroidism-2014', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'ata-hypothyroidism-2014', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12',
     tags: ['hipotireoidismo', 'tireoide', 'hashimoto', 'levotiroxina', 'tsh'],
@@ -602,16 +602,16 @@ export const doencasEndocrinas: Doenca[] = [
     cid10: ['E05', 'E05.0', 'E05.9'],
     cid11: ['5A02'],
     loinc: [
-      '3016-3',   // TSH
-      '3024-7',   // T4 free
-      '3051-0',   // T3 free
-      '3026-2',   // T4 total
-      '3053-6',   // T3 total
-      '5384-3',   // TRAb (TSH receptor antibodies)
-      '5382-7',   // Anti-TPO antibodies
-      '718-7',    // Hemoglobin
-      '1920-8',   // AST
-      '1742-6',   // ALT
+      { code: '3016-3', name: 'TSH' },
+      { code: '3024-7', name: 'T4 free' },
+      { code: '3051-0', name: 'T3 free' },
+      { code: '3026-2', name: 'T4 total' },
+      { code: '3053-6', name: 'T3 total' },
+      { code: '5384-3', name: 'TRAb (TSH receptor antibodies)' },
+      { code: '5382-7', name: 'Anti-TPO antibodies' },
+      { code: '718-7', name: 'Hemoglobin' },
+      { code: '1920-8', name: 'AST' },
+      { code: '1742-6', name: 'ALT' },
     ],
     categoria: 'metabolico',
     quickView: {
@@ -670,15 +670,15 @@ export const doencasEndocrinas: Doenca[] = [
           'Excesso de iodo (contraste, amiodarona)'
         ],
         citations: [
-          { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       fisiopatologia: {
         texto: 'Na doença de Graves, autoanticorpos (TRAb) estimulam o receptor de TSH, causando produção excessiva de T3/T4 independente do feedback hipofisário. No bócio multinodular tóxico, nódulos autônomos produzem hormônios independentemente. O excesso de hormônios tireoidianos aumenta o metabolismo basal, termogênese e ação catecolaminérgica.',
         citations: [
-          { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       quadroClinico: {
@@ -708,8 +708,8 @@ export const doencasEndocrinas: Doenca[] = [
           'Tireoidite subaguda: hipertireoidismo transitório, dor cervical'
         ],
         citations: [
-          { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       diagnostico: {
@@ -734,8 +734,8 @@ export const doencasEndocrinas: Doenca[] = [
           'Cintilografia de tireoide (definir causa)'
         ],
         citations: [
-          { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'high', studyType: 'guideline' }
+          { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'A', studyType: 'Guideline' }
         ]
       },
       tratamento: {
@@ -753,7 +753,7 @@ export const doencasEndocrinas: Doenca[] = [
             'Suplementação de cálcio e vitamina D se necessário'
           ],
           citations: [
-            { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'high', studyType: 'guideline' }
+            { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'A', studyType: 'Guideline' }
           ]
         },
         farmacologico: {
@@ -800,9 +800,9 @@ export const doencasEndocrinas: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'high', studyType: 'guideline' },
-            { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-            { refId: 'abraham-2005', evidenceLevel: 'moderate', studyType: 'systematic_review' }
+            { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'A', studyType: 'Guideline' },
+            { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+            { refId: 'abraham-2005', evidenceLevel: 'B', studyType: 'SystematicReview' }
           ]
         },
         duracao: 'Antitireoidianos: 12-18 meses, depois avaliar remissão ou tratamento definitivo'
@@ -828,8 +828,8 @@ export const doencasEndocrinas: Doenca[] = [
           'Gestação com hipertireoidismo'
         ],
         citations: [
-          { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'high', studyType: 'guideline' },
-          { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'A', studyType: 'Guideline' },
+          { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
       prevencao: {
@@ -839,7 +839,7 @@ export const doencasEndocrinas: Doenca[] = [
           'Diagnóstico e tratamento precoce para prevenir complicações'
         ],
         citations: [
-          { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
     },
@@ -848,8 +848,8 @@ export const doencasEndocrinas: Doenca[] = [
     calculadoras: [],
     rastreamentos: [],
     citations: [
-      { refId: 'sbem-tireoide-2023', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'high', studyType: 'guideline' }
+      { refId: 'sbem-tireoide-2023', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'ata-hyperthyroidism-2016', evidenceLevel: 'A', studyType: 'Guideline' }
     ],
     lastUpdate: '2024-12',
     tags: ['hipertireoidismo', 'graves', 'tireotoxicose', 'tireoide', 'metimazol', 'tsh'],
@@ -866,21 +866,21 @@ export const doencasEndocrinas: Doenca[] = [
     cid10: ['E66', 'E66.0', 'E66.9'],
     cid11: ['5B81'],
     loinc: [
-      '39156-5',  // BMI
-      '29463-7',  // Body weight
-      '8302-2',   // Height
-      '8280-0',   // Waist circumference
-      '1558-6',   // Fasting glucose
-      '4548-4',   // HbA1c
-      '2093-3',   // Total cholesterol
-      '2085-9',   // HDL
-      '13457-7',  // LDL calculated
-      '2571-8',   // Triglycerides
-      '1920-8',   // AST
-      '1742-6',   // ALT
-      '3016-3',   // TSH (rule out hypothyroidism)
-      '2160-0',   // Creatinine
-      '9318-7',   // Albumin/creatinine ratio
+      { code: '39156-5', name: 'BMI' },
+      { code: '29463-7', name: 'Body weight' },
+      { code: '8302-2', name: 'Height' },
+      { code: '8280-0', name: 'Waist circumference' },
+      { code: '1558-6', name: 'Fasting glucose' },
+      { code: '4548-4', name: 'HbA1c' },
+      { code: '2093-3', name: 'Total cholesterol' },
+      { code: '2085-9', name: 'HDL' },
+      { code: '13457-7', name: 'LDL calculated' },
+      { code: '2571-8', name: 'Triglycerides' },
+      { code: '1920-8', name: 'AST' },
+      { code: '1742-6', name: 'ALT' },
+      { code: '3016-3', name: 'TSH (rule out hypothyroidism)' },
+      { code: '2160-0', name: 'Creatinine' },
+      { code: '9318-7', name: 'Albumin/creatinine ratio' },
     ],
     categoria: 'metabolico',
     quickView: {
@@ -944,14 +944,14 @@ export const doencasEndocrinas: Doenca[] = [
           'Medicamentos (corticoides, antipsicóticos, alguns antidepressivos)'
         ],
         citations: [
-          { refId: 'abeso-2022', evidenceLevel: 'moderate', studyType: 'guideline' },
-          { refId: 'vigitel-2023', evidenceLevel: 'moderate', studyType: 'cohort' }
+          { refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' },
+          { refId: 'vigitel-2023', evidenceLevel: 'B', studyType: 'Cohort' }
         ]
       },
       fisiopatologia: {
         texto: 'Desequilíbrio crônico entre ingestão e gasto energético, modulado por fatores genéticos, ambientais, hormonais e psicológicos. O tecido adiposo não é inerte: secreta adipocinas que promovem inflamação crônica de baixo grau, resistência insulínica e disfunção metabólica.',
         citations: [
-          { refId: 'abeso-2022', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
       quadroClinico: {
@@ -975,7 +975,7 @@ export const doencasEndocrinas: Doenca[] = [
           'Obesidade ginoide (periférica): menor risco metabólico'
         ],
         citations: [
-          { refId: 'abeso-2022', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
       diagnostico: {
@@ -1000,7 +1000,7 @@ export const doencasEndocrinas: Doenca[] = [
           'ECG, ecocardiograma se indicado'
         ],
         citations: [
-          { refId: 'abeso-2022', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
       tratamento: {
@@ -1018,8 +1018,8 @@ export const doencasEndocrinas: Doenca[] = [
             'Acompanhamento com equipe multidisciplinar'
           ],
           citations: [
-            { refId: 'abeso-2022', evidenceLevel: 'moderate', studyType: 'guideline' },
-            { refId: 'look-ahead-2013', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' },
+            { refId: 'look-ahead-2013', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         farmacologico: {
@@ -1054,10 +1054,10 @@ export const doencasEndocrinas: Doenca[] = [
             }
           ],
           citations: [
-            { refId: 'abeso-2022', evidenceLevel: 'moderate', studyType: 'guideline' },
-            { refId: 'step-1-2021', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'surmount-1-2022', evidenceLevel: 'high', studyType: 'rct' },
-            { refId: 'select-2023', evidenceLevel: 'high', studyType: 'rct' }
+            { refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' },
+            { refId: 'step-1-2021', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'surmount-1-2022', evidenceLevel: 'A', studyType: 'RCT' },
+            { refId: 'select-2023', evidenceLevel: 'A', studyType: 'RCT' }
           ]
         },
         duracao: 'Tratamento crônico'
@@ -1080,7 +1080,7 @@ export const doencasEndocrinas: Doenca[] = [
           'Complicações graves'
         ],
         citations: [
-          { refId: 'abeso-2022', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
       prevencao: {
@@ -1094,7 +1094,7 @@ export const doencasEndocrinas: Doenca[] = [
           'Tratamento de comorbidades'
         ],
         citations: [
-          { refId: 'abeso-2022', evidenceLevel: 'moderate', studyType: 'guideline' }
+          { refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' }
         ]
       },
     },
@@ -1103,9 +1103,9 @@ export const doencasEndocrinas: Doenca[] = [
     calculadoras: ['imc', 'risco-cv'],
     rastreamentos: [],
     citations: [
-      { refId: 'abeso-2022', evidenceLevel: 'moderate', studyType: 'guideline' },
-      { refId: 'step-1-2021', evidenceLevel: 'high', studyType: 'rct' },
-      { refId: 'select-2023', evidenceLevel: 'high', studyType: 'rct' }
+      { refId: 'abeso-2022', evidenceLevel: 'B', studyType: 'Guideline' },
+      { refId: 'step-1-2021', evidenceLevel: 'A', studyType: 'RCT' },
+      { refId: 'select-2023', evidenceLevel: 'A', studyType: 'RCT' }
     ],
     lastUpdate: '2024-12',
     tags: ['obesidade', 'sobrepeso', 'imc', 'emagrecimento', 'cirurgia-bariatrica', 'semaglutida'],
