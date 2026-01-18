@@ -14,6 +14,7 @@ export interface Reference {
   id: string;
   type: ReferenceType;
   authors?: string[];
+  organization?: string[]; // Ex: ["NHS", "NICE"], ["WHO"], ["USPSTF"]
   title: string;
   journal?: string; // Para artigos
   year: number;

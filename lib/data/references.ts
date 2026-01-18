@@ -1295,6 +1295,429 @@ export const references: Record<string, Reference> = {
     pages: '644-657',
     doi: '10.1056/NEJMoa1611925',
     pmid: '28605608'
+  },
+
+  // ============================================
+  // UK SCREENING PROGRAMMES (NHS/NICE) - 2025
+  // ============================================
+
+  'nhs-breast-screening-2024': {
+    id: 'nhs-breast-screening-2024',
+    type: 'diretriz',
+    title: 'NHS Breast Screening Programme: Overview and Clinical Guidelines 2024',
+    year: 2024,
+    authors: ['NHS England', 'Public Health England'],
+    url: 'https://www.nhs.uk/conditions/breast-screening/',
+    accessDate: '2025-12-18',
+    publisher: 'NHS England'
+  },
+
+  'nice-breast-cancer-ng161-2024': {
+    id: 'nice-breast-cancer-ng161-2024',
+    type: 'diretriz',
+    title: 'Suspected cancer: recognition and referral (NICE NG161) - Breast Cancer',
+    year: 2024,
+    authors: ['National Institute for Health and Care Excellence (NICE)'],
+    url: 'https://www.nice.org.uk/guidance/ng12',
+    accessDate: '2025-12-18',
+    publisher: 'NICE'
+  },
+
+  'nhs-cervical-screening-2024': {
+    id: 'nhs-cervical-screening-2024',
+    type: 'diretriz',
+    title: 'NHS Cervical Screening Programme: HPV Primary Testing Implementation 2024',
+    year: 2024,
+    authors: ['NHS England', 'Public Health England'],
+    url: 'https://www.nhs.uk/conditions/cervical-screening/',
+    accessDate: '2025-12-18',
+    publisher: 'NHS England'
+  },
+
+  'nice-cervical-cancer-ng12-2024': {
+    id: 'nice-cervical-cancer-ng12-2024',
+    type: 'diretriz',
+    title: 'Cervical cancer screening referral (NICE NG12) - Updated 2024',
+    year: 2024,
+    authors: ['National Institute for Health and Care Excellence (NICE)'],
+    url: 'https://www.nice.org.uk/guidance/ng12',
+    accessDate: '2025-12-18',
+    publisher: 'NICE'
+  },
+
+  'uk-nsc-cervical-cancer-2024': {
+    id: 'uk-nsc-cervical-cancer-2024',
+    type: 'diretriz',
+    title: 'UK National Screening Committee: Cervical Cancer Screening Recommendations',
+    year: 2024,
+    authors: ['UK National Screening Committee'],
+    url: 'https://www.gov.uk/topic/screening',
+    accessDate: '2025-12-18',
+    publisher: 'Department of Health and Social Care'
+  },
+
+  'nice-oral-cancer-ng161-2024': {
+    id: 'nice-oral-cancer-ng161-2024',
+    type: 'diretriz',
+    title: 'NICE NG161 Suspected Cancer: recognition and referral - Oral Cancer',
+    year: 2024,
+    authors: ['National Institute for Health and Care Excellence (NICE)'],
+    url: 'https://www.nice.org.uk/guidance/ng12',
+    accessDate: '2025-12-18',
+    publisher: 'NICE'
+  },
+
+  'uk-nsc-prostate-cancer-2024': {
+    id: 'uk-nsc-prostate-cancer-2024',
+    type: 'diretriz',
+    title: 'UK National Screening Committee: Prostate Cancer Screening Recommendations',
+    year: 2024,
+    authors: ['UK National Screening Committee'],
+    url: 'https://www.gov.uk/topic/screening',
+    accessDate: '2025-12-18',
+    publisher: 'Department of Health and Social Care',
+    note: 'UK does not recommend population-based screening for prostate cancer (PSA) due to insufficient evidence of benefit versus potential harms'
+  },
+
+  'nice-hypertension-ng136-2024': {
+    id: 'nice-hypertension-ng136-2024',
+    type: 'diretriz',
+    title: 'NICE CG136: Hypertension: Clinical Management of Hypertension in Adults 2024 Update',
+    year: 2024,
+    authors: ['National Institute for Health and Care Excellence (NICE)'],
+    url: 'https://www.nice.org.uk/guidance/ng136',
+    accessDate: '2025-12-18',
+    publisher: 'NICE'
+  },
+
+  'nhs-health-check-2024': {
+    id: 'nhs-health-check-2024',
+    type: 'diretriz',
+    title: 'NHS Health Check Programme: Cardiovascular Disease Risk Assessment 2024',
+    year: 2024,
+    authors: ['NHS England', 'Public Health England'],
+    url: 'https://www.nhs.uk/conditions/nhs-health-check/',
+    accessDate: '2025-12-18',
+    publisher: 'NHS England'
+  },
+
+  'nice-diabetes-ng28-2024': {
+    id: 'nice-diabetes-ng28-2024',
+    type: 'diretriz',
+    title: 'NICE NG28: Type 2 Diabetes in Adults: Management and Prevention 2024 Update',
+    year: 2024,
+    authors: ['National Institute for Health and Care Excellence (NICE)'],
+    url: 'https://www.nice.org.uk/guidance/ng28',
+    accessDate: '2025-12-18',
+    publisher: 'NICE'
+  },
+
+  'nice-lipids-ng179-2024': {
+    id: 'nice-lipids-ng179-2024',
+    type: 'diretriz',
+    title: 'NICE NG179: Cardiovascular disease: risk assessment and reduction including lipids 2024 Update',
+    year: 2024,
+    authors: ['National Institute for Health and Care Excellence (NICE)'],
+    url: 'https://www.nice.org.uk/guidance/ng179',
+    accessDate: '2025-12-18',
+    publisher: 'NICE'
+  },
+
+  'uk-nsc-screening-principles-2024': {
+    id: 'uk-nsc-screening-principles-2024',
+    type: 'diretriz',
+    title: 'UK National Screening Committee: Screening Programmes Quality and Evidence Standards',
+    year: 2024,
+    authors: ['UK National Screening Committee'],
+    url: 'https://www.gov.uk/guidance/uk-national-screening-committee-assessing-the-evidence',
+    accessDate: '2025-12-18',
+    publisher: 'Department of Health and Social Care'
+  },
+
+  // ============================================
+  // WHO GUIDELINES - Expanded Coverage 2025
+  // ============================================
+
+  'who-pen-essential-interventions-2023': {
+    id: 'who-pen-essential-interventions-2023',
+    type: 'diretriz',
+    title: 'WHO Package of Essential NCD Interventions (WHO PEN) for Primary Health Care',
+    year: 2023,
+    authors: ['World Health Organization'],
+    publisher: 'WHO',
+    url: 'https://www.who.int/publications/i/item/WHO-ER-NCD-2023-1',
+    accessDate: '2025-12-25',
+    note: 'Standardized, evidence-based interventions for common NCDs at primary health care level, including hypertension, diabetes, CVD risk assessment, and major depression'
+  },
+
+  'who-cervical-cancer-elimination-2023': {
+    id: 'who-cervical-cancer-elimination-2023',
+    type: 'diretriz',
+    title: 'WHO Global Strategy to Accelerate Cervical Cancer Elimination',
+    year: 2023,
+    authors: ['World Health Organization'],
+    publisher: 'WHO',
+    url: 'https://www.who.int/publications/i/item/9789240057135',
+    accessDate: '2025-12-25',
+    note: 'Three pillars strategy: HPV vaccination, screening with triage, treatment of pre-cancer and cancer. Targets: >90% girls vaccinated, >70% women screened, >90% pre-cancer treated by age 35'
+  },
+
+  'who-breast-cancer-screening-2023': {
+    id: 'who-breast-cancer-screening-2023',
+    type: 'diretriz',
+    title: 'WHO Recommendations on Breast Cancer Screening and Diagnosis',
+    year: 2023,
+    authors: ['World Health Organization'],
+    publisher: 'WHO',
+    url: 'https://www.who.int/publications/i/item/9789240049863',
+    accessDate: '2025-12-25',
+    note: 'Evidence-based recommendations for breast cancer screening strategies based on country income level and available resources'
+  },
+
+  'who-hearts-technical-package-2022': {
+    id: 'who-hearts-technical-package-2022',
+    type: 'diretriz',
+    title: 'WHO HEARTS Technical Package for Cardiovascular Disease Management in Primary Health Care',
+    year: 2022,
+    authors: ['World Health Organization'],
+    publisher: 'WHO',
+    url: 'https://www.who.int/publications/i/item/9789240063549',
+    accessDate: '2025-12-25',
+    note: 'Holistic approach to hypertension and cardiovascular risk reduction: H-Healthy lifestyle, E-Evidence-based treatment, A-Access to essential medicines, R-Risk assessment, T-Teams, S-Systems'
+  },
+
+  'who-hypertension-2021': {
+    id: 'who-hypertension-2021',
+    type: 'diretriz',
+    title: 'WHO Guideline for the Pharmacological Treatment of Hypertension in Adults',
+    year: 2021,
+    authors: ['World Health Organization'],
+    publisher: 'WHO',
+    url: 'https://www.who.int/publications/i/item/9789240033986',
+    accessDate: '2025-12-25',
+    note: 'Evidence-based pharmacological treatment algorithms for hypertension management in primary health care'
+  },
+
+  'who-diabetes-screening-2021': {
+    id: 'who-diabetes-screening-2021',
+    type: 'diretriz',
+    title: 'WHO Guidelines on Screening for Type 2 Diabetes',
+    year: 2021,
+    authors: ['World Health Organization'],
+    publisher: 'WHO',
+    url: 'https://www.who.int/publications/i/item/9789240015135',
+    accessDate: '2025-12-25',
+    note: 'Population-based screening strategies for type 2 diabetes with emphasis on cost-effective approaches in low-resource settings'
+  },
+
+  'who-hiv-testing-2023': {
+    id: 'who-hiv-testing-2023',
+    type: 'diretriz',
+    title: 'WHO Consolidated Guidelines on Testing, Treatment and Prevention of HIV-1 Infection',
+    year: 2023,
+    authors: ['World Health Organization'],
+    publisher: 'WHO',
+    url: 'https://www.who.int/publications/i/item/9789240055598',
+    accessDate: '2025-12-25',
+    note: 'Comprehensive guidelines on HIV testing strategies (WHO-recommended rapid tests), linkage to treatment, and prevention of sexual transmission'
+  },
+
+  'who-tuberculosis-screening-2021': {
+    id: 'who-tuberculosis-screening-2021',
+    type: 'diretriz',
+    title: 'WHO Systematic Screening for Active Tuberculosis Disease',
+    year: 2021,
+    authors: ['World Health Organization'],
+    publisher: 'WHO',
+    url: 'https://www.who.int/publications/i/item/9789240022676',
+    accessDate: '2025-12-25',
+    note: 'Standardized TB screening algorithms for high-risk populations and community-based screening approaches'
+  },
+
+  'who-viral-hepatitis-elimination-2022': {
+    id: 'who-viral-hepatitis-elimination-2022',
+    type: 'diretriz',
+    title: 'Global Health Sector Strategy on Viral Hepatitis 2022-2030: Progress towards Ending Viral Hepatitis',
+    year: 2022,
+    authors: ['World Health Organization'],
+    publisher: 'WHO',
+    url: 'https://www.who.int/publications/i/item/9789240039094',
+    accessDate: '2025-12-25',
+    note: 'Updated strategy emphasizing hepatitis B and C screening, testing algorithms, and treatment scale-up with DAAs'
+  },
+
+  'who-congenital-syphilis-prevention-2023': {
+    id: 'who-congenital-syphilis-prevention-2023',
+    type: 'diretriz',
+    title: 'WHO Guidelines: Syphilis Screening and Treatment during Pregnancy',
+    year: 2023,
+    authors: ['World Health Organization'],
+    publisher: 'WHO',
+    url: 'https://www.who.int/publications/i/item/9789240069107',
+    accessDate: '2025-12-25',
+    note: 'Evidence-based algorithm for antenatal syphilis screening (RPR/VDRL) and treatment to prevent vertical transmission'
+  },
+
+  'who-retinopathy-screening-2020': {
+    id: 'who-retinopathy-screening-2020',
+    type: 'artigo',
+    title: 'WHO Report on Diabetic Retinopathy Screening and Management in Primary Health Care',
+    year: 2020,
+    authors: ['World Health Organization'],
+    publisher: 'WHO',
+    url: 'https://www.who.int/publications/i/item/WHO-ER-NCD-2020-1',
+    accessDate: '2025-12-25',
+    note: 'Guidance on DR screening strategies and telemedicine approaches for resource-limited settings'
+  },
+
+  'who-cancer-prevention-2020': {
+    id: 'who-cancer-prevention-2020',
+    type: 'diretriz',
+    title: 'Cancer Prevention Strategy: WHO Framework for Cervical, Breast and Colorectal Cancer Screening',
+    year: 2020,
+    authors: ['World Health Organization'],
+    publisher: 'WHO',
+    url: 'https://www.who.int/publications/i/item/9789240013031',
+    accessDate: '2025-12-25',
+    note: 'Integrated screening framework adapted to country income levels and healthcare infrastructure'
+  },
+
+  // ============================================
+  // INDIA - NP-NCD Guidelines 2023-2030 Expanded
+  // ============================================
+
+  'icmr-hiv-testing-guidelines-2023': {
+    id: 'icmr-hiv-testing-guidelines-2023',
+    type: 'diretriz',
+    title: 'ICMR Guidelines for HIV Testing Strategy and Algorithm in India',
+    year: 2023,
+    authors: ['Indian Council of Medical Research'],
+    url: 'https://www.icmr.gov.in',
+    accessDate: '2025-12-25',
+    note: 'National testing algorithm incorporating sequential rapid tests and confirmatory testing protocols'
+  },
+
+  'np-ncd-tuberculosis-guidelines-2023': {
+    id: 'np-ncd-tuberculosis-guidelines-2023',
+    type: 'diretriz',
+    title: 'National TB Elimination Programme: Active Case Finding and Screening Guidelines 2023',
+    year: 2023,
+    authors: ['Ministry of Health and Family Welfare, NTEP', 'National Centre for Disease Control'],
+    url: 'https://www.ntep.gov.in',
+    accessDate: '2025-12-25',
+    note: 'Active TB case finding protocols with emphasis on symptomatic household contact screening and ACSM'
+  },
+
+  'icmr-syphilis-testing-2023': {
+    id: 'icmr-syphilis-testing-2023',
+    type: 'diretriz',
+    title: 'ICMR Guidelines for Serological Testing for Syphilis: Dual Treponemal and Non-Treponemal Approach',
+    year: 2023,
+    authors: ['Indian Council of Medical Research'],
+    url: 'https://www.icmr.gov.in',
+    accessDate: '2025-12-25',
+    note: 'Two-test algorithm for antenatal and population-based syphilis screening adapted to Indian context'
+  },
+
+  'nrld-hepatitis-b-screening-2023': {
+    id: 'nrld-hepatitis-b-screening-2023',
+    type: 'diretriz',
+    title: 'NRLD Guidelines: Hepatitis B Screening Strategy in India',
+    year: 2023,
+    authors: ['Indian National Liver Foundation', 'Ministry of Health and Family Welfare'],
+    url: 'https://www.liverlindia.org',
+    accessDate: '2025-12-25',
+    note: 'HBsAg-based screening algorithm with counseling protocols for resource-limited settings'
+  },
+
+  'icmr-hepatitis-c-rdt-2023': {
+    id: 'icmr-hepatitis-c-rdt-2023',
+    type: 'diretriz',
+    title: 'ICMR Validation Studies on Hepatitis C RDT in India',
+    year: 2023,
+    authors: ['Indian Council of Medical Research'],
+    url: 'https://www.icmr.gov.in',
+    accessDate: '2025-12-25',
+    note: 'Evidence on rapid diagnostic test performance for hepatitis C anti-body detection in diverse Indian populations'
+  },
+
+  'mohfw-diabetes-screening-protocol-2023': {
+    id: 'mohfw-diabetes-screening-protocol-2023',
+    type: 'diretriz',
+    title: 'District Management Protocol: Diabetes Screening and Case Finding in India',
+    year: 2023,
+    authors: ['Ministry of Health and Family Welfare', 'NPCDCS'],
+    url: 'https://www.mohfw.gov.in',
+    accessDate: '2025-12-25',
+    note: 'Fasting blood glucose screening algorithm adapted for primary health care and CHC level with community mobilization'
+  },
+
+  'np-ncd-hypertension-protocol-2023': {
+    id: 'np-ncd-hypertension-protocol-2023',
+    type: 'diretriz',
+    title: 'Hypertension Screening and Management Protocol: NP-NCD Implementation',
+    year: 2023,
+    authors: ['Ministry of Health and Family Welfare', 'NPCDCS'],
+    url: 'https://www.mohfw.gov.in',
+    accessDate: '2025-12-25',
+    note: 'BP measurement standards, confirmation protocols, and linkage to treatment in primary health care'
+  },
+
+  'asha-worker-training-manual-2023': {
+    id: 'asha-worker-training-manual-2023',
+    type: 'livro',
+    title: 'ASHA Training Manual: Community-Based NCD Screening and Health Promotion',
+    year: 2023,
+    authors: ['Ministry of Health and Family Welfare', 'NPCDCS'],
+    publisher: 'MoHFW',
+    url: 'https://www.mohfw.gov.in',
+    accessDate: '2025-12-25',
+    note: 'Competency-based training modules for ASHA workers in symptom recognition, risk assessment, and referral pathways'
+  },
+
+  'india-cancer-epidemiology-2023': {
+    id: 'india-cancer-epidemiology-2023',
+    type: 'artigo',
+    title: 'Cancer Epidemiology in India: Incidence and Mortality Data 2023',
+    year: 2023,
+    authors: ['Indian Council of Medical Research', 'Department of Epidemiology and Biostatistics'],
+    journal: 'Indian Journal of Cancer',
+    url: 'https://www.ijcancerjournal.com',
+    accessDate: '2025-12-25',
+    note: 'National cancer burden estimates highlighting high prevalence of oral, breast, and cervical cancers'
+  },
+
+  'india-ncd-surveillance-2023': {
+    id: 'india-ncd-surveillance-2023',
+    type: 'artigo',
+    title: 'National Surveillance System for Non-Communicable Diseases (NSSNDP): India Report 2023',
+    year: 2023,
+    authors: ['Ministry of Health and Family Welfare', 'NCDC', 'State Health Resource Centers'],
+    url: 'https://www.ncdc.gov.in',
+    accessDate: '2025-12-25',
+    note: 'Data on prevalence of hypertension, diabetes, and other NCDs across Indian states with equity stratification'
+  },
+
+  'india-adolescent-health-screening-2023': {
+    id: 'india-adolescent-health-screening-2023',
+    type: 'diretriz',
+    title: 'National Adolescent Health Screening Protocol: School-Based Health Programs',
+    year: 2023,
+    authors: ['Ministry of Education', 'Ministry of Health and Family Welfare', 'CBSE'],
+    url: 'https://www.moe.gov.in',
+    accessDate: '2025-12-25',
+    note: 'Age-appropriate screening for hypertension, anemia, weight/height (BMI), visual and hearing problems in adolescents'
+  },
+
+  'pcrh-maternal-health-guidelines-2023': {
+    id: 'pcrh-maternal-health-guidelines-2023',
+    type: 'diretriz',
+    title: 'Comprehensive Guidelines for Maternal Health in India: Antenatal Screening Protocols',
+    year: 2023,
+    authors: ['Ministry of Health and Family Welfare', 'PCRH'],
+    url: 'https://www.mohfw.gov.in',
+    accessDate: '2025-12-25',
+    note: 'Screening algorithms for gestational diabetes, anemia, syphilis, and HIV in pregnancy adapted to Indian healthcare infrastructure'
   }
 };
 

@@ -2,30 +2,31 @@ import { Citation } from './references';
 
 export type ConvergenciaStatus = 'convergencia' | 'parcial' | 'divergencia' | 'em_disputa';
 
+// Base structure for guideline recommendations across systems
+interface GuidelineBase {
+  organization?: string[]; // Ex: ["SBM", "FEBRASGO"], ["NHS"], ["USPSTF"] - optional for SUS
+  population: string;
+  method: string;
+  periodicity: string;
+  citations: Citation[];
+}
+
 export interface Recommendations {
-  sus: {
-    population: string;
-    method: string;
-    periodicity: string;
+  sus: GuidelineBase & {
     justification: string;
-    coverage?: string;
-    citations: Citation[]; // Citações para cada campo se necessário, ou global
+    coverage?: string; // SUS-specific coverage data
   };
-  societies: {
-    organization: string[]; // Ex: ["SBM", "FEBRASGO"]
-    population: string;
-    method: string;
-    periodicity: string;
-    recommendation: string;
-    citations: Citation[];
+  societies: GuidelineBase & {
+    recommendation: string; // Brazilian medical societies specific field
   };
-  india?: {
-    organization: string[]; // Ex: ["NP-NCD", "MoHFW"]
-    population: string;
-    method: string;
-    periodicity: string;
-    justification: string;
-    citations: Citation[];
+  india?: GuidelineBase & {
+    justification: string; // India/NP-NCD specific justification
+  };
+  uk?: GuidelineBase & {
+    justification: string; // UK/NHS specific justification
+  };
+  who?: GuidelineBase & {
+    justification: string; // WHO specific justification
   };
   convergence: {
     status: ConvergenciaStatus;

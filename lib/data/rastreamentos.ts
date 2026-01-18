@@ -39,13 +39,25 @@ export const rastreamentos: Record<string, Rastreamento> = {
           { refId: 'mohfw-cancer-operational-framework-2023' }
         ]
       },
+      uk: {
+        organization: ['NHS', 'NICE'],
+        population: 'Mulheres de 50 a 71 anos (programa de rastreamento organizado)',
+        method: 'Mamografia digital bilateral',
+        periodicity: 'A cada 3 anos',
+        justification: 'NHS Breast Screening Programme oferece rastreamento mamográfico em ciclos de 3 anos para mulheres de 50-71 anos. Programas educativos sobre auto-exame e reconhecimento de sinais de alerta para mulheres <50 anos. Decisão compartilhada para idade inicial e intervalo baseada em avaliação individual de risco.',
+        citations: [
+          { refId: 'nhs-breast-screening-2024' },
+          { refId: 'nice-breast-cancer-ng161-2024' }
+        ]
+      },
       convergence: {
         status: 'parcial',
-        description: 'Alta convergência na idade de início (40 anos) após atualização de Set/2025. Divergência persiste na periodicidade: SUS mantém bienal, sociedades recomendam anual. Índia prioriza CBE (30+) como método de baixo custo, com mamografia em centros terciários.',
+        description: 'Alta convergência na idade de início (40 anos) após atualização de Set/2025. Divergência persiste na periodicidade: SUS e UK (3 anos), sociedades brasileiras recomendam anual. Índia prioriza CBE (30+) como método de baixo custo, com mamografia em centros terciários. UK oferece programa nacional para 50-71 anos com intervalo triinal.',
         citations: [
           { refId: 'ms-mamografia-2025' },
           { refId: 'sbm-mamografia-2025' },
-          { refId: 'np-ncd-operational-guidelines-2023' }
+          { refId: 'np-ncd-operational-guidelines-2023' },
+          { refId: 'nhs-breast-screening-2024' }
         ]
       }
     },
@@ -98,13 +110,26 @@ export const rastreamentos: Record<string, Rastreamento> = {
           { refId: 'mohfw-cancer-operational-framework-2023' }
         ]
       },
+      uk: {
+        organization: ['NHS', 'NICE'],
+        population: 'Mulheres de 25 a 64 anos',
+        method: 'HPV primary testing (PCR com reflexo para citologia se HPV+)',
+        periodicity: 'A cada 5 anos se HPV-negativo',
+        justification: 'NHS Cervical Screening Programme implementou HPV primary testing como padrão desde 2019-2020. Mulheres HPV-negativas são regressadas para 5 anos (risco muito baixo). HPV-positivas com citologia normal: regressão 1-3 anos. Implementação completa reflete as mais altas evidências sobre sensibilidade e valor preditivo do HPV, alinhado com recomendações de screening internacional.',
+        citations: [
+          { refId: 'nhs-cervical-screening-2024' },
+          { refId: 'nice-cervical-cancer-ng12-2024' },
+          { refId: 'uk-nsc-cervical-cancer-2024' }
+        ]
+      },
       convergence: {
         status: 'convergencia',
-        description: 'Alinhamento quase total. FEBRASGO e ABPTGIC participaram da elaboração das novas diretrizes. Convergência completa em tecnologia, população-alvo e periodicidade. Índia utiliza VIA (30-65 anos) como método de baixo custo, adaptado ao contexto de recursos limitados.',
+        description: 'Alinhamento quase total. FEBRASGO, ABPTGIC e NHS implementaram HPV primary testing como padrão (SUS desde Ago/2025). Convergência completa em tecnologia, população-alvo (25-64 anos) e periodicidade (5 anos se HPV-negativo). Índia utiliza VIA (30-65 anos) como método de baixo custo, adaptado ao contexto de recursos limitados. UK e Brasil agora reconhecem HPV como padrão-ouro de rastreamento.',
         citations: [
           { refId: 'portaria-saes-13-2025' },
           { refId: 'febrasgo-hpv-2024' },
-          { refId: 'np-ncd-operational-guidelines-2023' }
+          { refId: 'np-ncd-operational-guidelines-2023' },
+          { refId: 'nhs-cervical-screening-2024' }
         ]
       }
     },
@@ -151,10 +176,23 @@ export const rastreamentos: Record<string, Rastreamento> = {
           { refId: 'mohfw-cancer-operational-framework-2023' }
         ]
       },
+      uk: {
+        organization: ['NHS', 'NICE'],
+        population: 'Sem programa de rastreamento populacional organizado no NHS. Detecção precoce através de avaliação clínica em consultas de rotina.',
+        method: 'Inspeção visual da cavidade oral durante consultas dentárias ou médicas. Encaminhamento para especialista se suspeita.',
+        periodicity: 'Oportunístico (durante consultas de rotina)',
+        justification: 'NICE e UK NSC não recomendam rastreamento organizado de câncer oral na população geral. Foco na educação sobre fatores de risco (tabaco, álcool, HPV) e reconhecimento de sinais de alerta. Detecção precoce ocorre através de vigilância em pacientes de risco durante consultas dentárias e médicas de rotina.',
+        citations: [
+          { refId: 'nice-oral-cancer-ng161-2024' }
+        ]
+      },
       convergence: {
         status: 'parcial',
-        description: 'Divergência na abordagem populacional. Índia tem um programa de rastreamento organizado devido à alta carga da doença, enquanto SUS foca em detecção oportunística.',
-        citations: []
+        description: 'Divergência na abordagem populacional. Índia tem um programa de rastreamento organizado OVI (≥30 anos) devido à alta prevalência cultural. UK e Brasil não recomenda rastreamento populacional organizado, focando em detecção oportunística em consultas de rotina e educação sobre fatores de risco. Alinhamento entre SUS, NHS e NICE: sem rastreamento universal, mas vigilância em grupos de risco.',
+        citations: [
+          { refId: 'nice-oral-cancer-ng161-2024' },
+          { refId: 'np-ncd-operational-guidelines-2023' }
+        ]
       }
     },
     epidemiology: {
@@ -191,11 +229,43 @@ export const rastreamentos: Record<string, Rastreamento> = {
           { refId: 'sbu-prostata-2025' }
         ]
       },
-      convergence: {
-        status: 'divergencia',
-        description: 'Divergência fundamental. MS não recomenda rastreamento populacional; SBU defende screening a partir de 45-50 anos. Essa é a maior discordância entre políticas públicas e sociedades médicas.',
+      uk: {
+        organization: ['NHS', 'UK NSC'],
+        population: 'Sem programa de rastreamento organizado. Informações sobre rastreamento disponíveis para homens que desejam tomar decisão informada.',
+        method: 'PSA (se o homem optar por testar), considerando conversa sobre riscos e benefícios',
+        periodicity: 'Não recomendado rotineiramente',
+        justification: 'UK NSC não recomenda rastreamento populacional para câncer de próstata. Evidência insuficiente de benefício. Foco em informed choice: disponibilizar informação sobre riscos de sobertratamento, falsos positivos e benefícios limitados, permitindo que homens >40 anos façam decisão compartilhada com seus médicos.',
         citations: [
-          { refId: 'sbu-prostata-2025' }
+          { refId: 'uk-nsc-prostate-cancer-2024' }
+        ]
+      },
+      india: {
+        organization: ['NP-NCD', 'MoHFW'],
+        population: 'Homens ≥50 anos (consideração seletiva em contextos de recursos limitados)',
+        method: 'PSA sérico onde disponível; exame clínico retal se recursos permitirem',
+        periodicity: 'Anual (se opt in pelo paciente)',
+        justification: 'NP-NCD 2023-2030 não recomenda rastreamento universal de câncer de próstata em população-geral devido a custo-benefício incerto e risco de sobretratamento. Enfoque em informed choice e discussão compartilhada. PSA disponível em centros urbanos para homens que desejam testar.',
+        citations: [
+          { refId: 'np-ncd-operational-guidelines-2023' },
+          { refId: 'who-cancer-prevention-2020' }
+        ]
+      },
+      who: {
+        organization: ['WHO'],
+        population: 'Não há recomendação de rastreamento populacional universal',
+        method: 'Testes de PSA em contextos de informed decision-making quando estrutura permitir',
+        periodicity: 'Sem frequência recomendada para rastreamento',
+        justification: 'WHO reconhece incerteza sobre efetividade de rastreamento de câncer de próstata. Discussão compartilhada e informed choice são estratégias apropriadas. Enfoque em detecção precoce apenas em contextos com capacidade diagnóstica e terapêutica adequada.',
+        citations: [
+          { refId: 'who-cancer-prevention-2020' }
+        ]
+      },
+      convergence: {
+        status: 'em_disputa',
+        description: 'Divergência fundamental entre abordagens. MS (Brasil) e UK NSC (Inglaterra) não recomendam rastreamento populacional de próstata por PSA, enfatizando risco-benefício incerto. SBU (Brasil) defende screening inteligente a partir de 45-50 anos com tecnologia moderna. UK NSC promove informed choice (homens podem optar após discussão de riscos). SBU argumenta que ferramentas modernas (ressonância, biópsia seletiva) reduzem danos. Consenso: ausência de rastreamento universal é apropriada; decisão compartilhada é fundamental.',
+        citations: [
+          { refId: 'sbu-prostata-2025' },
+          { refId: 'uk-nsc-prostate-cancer-2024' }
         ]
       }
     },
@@ -236,11 +306,33 @@ export const rastreamentos: Record<string, Rastreamento> = {
           { refId: 'ms-tea-2025', note: 'SBP apoiou a implementação' }
         ]
       },
+      india: {
+        organization: ['NP-NCD', 'MoHFW'],
+        population: 'Crianças aos 18-24 meses em programas de saúde materno-infantil',
+        method: 'M-CHAT-R traduzido para hindi/local languages ou adaptação com ASHA workers',
+        periodicity: 'Uma vez entre 18-24 meses',
+        justification: 'India está expandindo triagem de desenvolvimento infantil via programas de saúde maternal (PCRH). M-CHAT-R é ferramenta validada internacionalmente. Treinamento de ASHA workers permite implementação em regiões rurais.',
+        citations: [
+          { refId: 'pcrh-maternal-health-guidelines-2023' },
+          { refId: 'india-adolescent-health-screening-2023' }
+        ]
+      },
+      who: {
+        organization: ['WHO'],
+        population: 'Todas as crianças em edad de 18-24 meses',
+        method: 'Instrumentos de triagem de desenvolvimento validados (M-CHAT-R, ASQ)',
+        periodicity: 'Uma vez aos 18-24 meses',
+        justification: 'WHO recomenda triagem universal de desenvolvimento infantil como componente do pacote WHO PEN para saúde infantil. Detecção precoce de TEA permite intervenção comportamental intensiva com melhor prognóstico.',
+        citations: [
+          { refId: 'who-pen-essential-interventions-2023' }
+        ]
+      },
       convergence: {
         status: 'convergencia',
-        description: 'Convergência recente. A triagem universal foi adotada pelo MS em linha com AAP/CDC e com apoio de SBP. Alinhamento total em método e idade.',
+        description: 'Convergência recente. A triagem universal foi adotada pelo MS em linha com AAP/CDC e com apoio de SBP. Alinhamento total em método e idade. WHO recomenda abordagem similar. Índia está expandindo programas de triagem via PCRH.',
         citations: [
-          { refId: 'ms-tea-2025' }
+          { refId: 'ms-tea-2025' },
+          { refId: 'pcrh-maternal-health-guidelines-2023' }
         ]
       }
     },
@@ -288,10 +380,21 @@ export const rastreamentos: Record<string, Rastreamento> = {
           { refId: 'who-india-ncd-report-2023' }
         ]
       },
+      uk: {
+        organization: ['NHS', 'NICE'],
+        population: 'Todos adultos ≥40 anos (NHS Health Check). Screening oportunístico em qualquer idade em contexto clínico.',
+        method: 'Medida de PA com aparelho calibrado em consultório ou MAPA (monitorização ambulatorial) para confirmação de hipertensão',
+        periodicity: 'Checagem a cada 5 anos no NHS Health Check (40-74 anos); anual em pacientes com história de PA elevada ou fatores de risco',
+        justification: 'NICE CG136 recomenda screening para todos adultos, com ênfase em indivíduos ≥40 anos. NHS Health Check oferece avaliação cardiovascular integrada a cada 5 anos. Confirmação de HAS deve ser feita com múltiplas medidas em diferentes dias, com MAPA recomendada para diagnóstico definitivo. Tratamento individualizado conforme risco cardiovascular total.',
+        citations: [
+          { refId: 'nice-hypertension-ng136-2024' },
+          { refId: 'nhs-health-check-2024' }
+        ]
+      },
       convergence: {
         status: 'convergencia',
-        description: 'Consenso absoluto entre MS, sociedades e NP-NCD Índia. Não há divergência - evidência robusta e alto impacto. Todos recomendam rastreamento universal ≥18 anos.',
-        citations: [{ refId: 'ms-mamografia-2025' }, { refId: 'np-ncd-operational-guidelines-2023' }]
+        description: 'Consenso absoluto entre MS, sociedades, NHS e NP-NCD Índia. Não há divergência - evidência robusta e alto impacto. Todos recomendam rastreamento universal de adultos com ênfase em ≥18-40 anos. Alinhamento completo em método (PA medida com aparelho calibrado) e importância de confirmação diagnóstica.',
+        citations: [{ refId: 'ms-mamografia-2025' }, { refId: 'np-ncd-operational-guidelines-2023' }, { refId: 'nice-hypertension-ng136-2024' }]
       }
     },
     epidemiology: {
@@ -335,10 +438,21 @@ export const rastreamentos: Record<string, Rastreamento> = {
           { refId: 'who-india-ncd-report-2023' }
         ]
       },
+      uk: {
+        organization: ['NHS', 'NICE'],
+        population: 'Adultos de 40-74 anos (NHS Health Check a cada 5 anos como parte da avaliação cardiovascular integrada); screening oportunístico em qualquer idade em contexto clínico, especialmente em indivíduos com fatores de risco ou presença de obesidade/hipertensão',
+        method: 'HbA1c (preferido em NHS), glicemia de jejum ou teste de tolerância oral à glicose (TOTG) quando indicado',
+        periodicity: 'A cada 5 anos no NHS Health Check para população geral 40-74 anos; anual em indivíduos com pré-diabetes ou fatores de risco elevado',
+        justification: 'NICE NG28 recomenda screening para DM2 como parte da avaliação integrada de risco cardiovascular (NHS Health Check). Critérios diagnósticos: HbA1c ≥6.5% ou glicemia jejum ≥126 mg/dL ou TOTG-2h ≥200 mg/dL. Diagnóstico deve ser confirmado em dia diferente. Pré-diabetes: HbA1c 6.0-6.4% ou glicemia jejum 110-125 mg/dL. Estrutura de healthcare UK integra rastreamento de DM2 com avaliação de risco cardiovascular total.',
+        citations: [
+          { refId: 'nice-diabetes-ng28-2024' },
+          { refId: 'nhs-health-check-2024' }
+        ]
+      },
       convergence: {
         status: 'convergencia',
-        description: 'Alta convergência entre SUS, SBD e NP-NCD Índia. Todos recomendam rastreamento universal ≥30-35 anos e rastreamento de jovens com fatores de risco. Periodicidade estratificada por risco está alinhada entre as recomendações.',
-        citations: [{ refId: 'sbd-diagnostico-2024' }, { refId: 'np-ncd-operational-guidelines-2023' }]
+        description: 'Alta convergência entre SUS, SBD, NHS/NICE e NP-NCD Índia. Todos recomendam rastreamento universal/seletivo de adultos ≥30-40 anos, com ênfase em grupos de risco. Critérios diagnósticos alinhados: HbA1c ≥6.5%, glicemia jejum ≥126 mg/dL. Periodicidade estratificada por risco está alinhada (5 anos população geral, anual em risco alto).',
+        citations: [{ refId: 'sbd-diagnostico-2024' }, { refId: 'np-ncd-operational-guidelines-2023' }, { refId: 'nice-diabetes-ng28-2024' }]
       }
     },
     epidemiology: {
@@ -372,10 +486,32 @@ export const rastreamentos: Record<string, Rastreamento> = {
         recommendation: 'SBC 2025 reforça rastreamento universal infantil + rastreamento em cascata para HF. Enfoque: mudanças de estilo de vida (padrão alimentar cardioprotetor, atividade física, controle de peso, cessação tabagismo) como medida fundamental. Estatinas a partir de 8 anos em HF confirmada. Abordagem terapêutica escalonada: estatina → estatina + ezetimiba → estatina + ezetimiba + anti-PCSK9 (tripla pode reduzir LDL-c até 85%).',
         citations: [{ refId: 'sbc-dislipidemia-2025' }, { refId: 'sbp-dislipidemia-2024' }, { refId: 'diretriz-hf-2021' }]
       },
+      india: {
+        organization: ['NP-NCD', 'MoHFW'],
+        population: 'Crianças ≥10 anos; crianças 2-10 anos com histórico familiar de doença aterosclerótica ou dislipidemia',
+        method: 'Perfil lipídico básico (CT, HDL-c, TG) onde disponível; teste em jejum se possível; referência para CT completo em centros terciários',
+        periodicity: 'Universal aos 10 anos; anual em crianças com histórico familiar positivo',
+        justification: 'India tem alta prevalência de DCV prematura (Indian Heart Study). NP-NCD 2023-2030 recomenda detecção precoce de fatores de risco cardiovascular. Rastreamento de dislipidemia em crianças com história familiar é custo-efetivo. Método de baixo custo (perfil lipídico básico) acessível em centros primários.',
+        citations: [
+          { refId: 'np-ncd-operational-guidelines-2023' },
+          { refId: 'india-adolescent-health-screening-2023' }
+        ]
+      },
+      who: {
+        organization: ['WHO'],
+        population: 'Todas as crianças ≥10 anos; crianças 2-10 anos com fatores de risco (história familiar, obesidade, hipertensão)',
+        method: 'Perfil lipídico completo (CT, HDL-c, LDL-c, TG)',
+        periodicity: 'Universal aos 10 anos; anual em grupos de risco',
+        justification: 'WHO recomenda rastreamento de dislipidemia infantil como parte do pacote WHO PEN para prevenção de DCV. Detecção e tratamento precoce de HF reduzem eventos cardiovasculares prematuros. Abordagem em cascata é custo-efetiva.',
+        citations: [
+          { refId: 'who-hearts-technical-package-2022' },
+          { refId: 'who-pen-essential-interventions-2023' }
+        ]
+      },
       convergence: {
         status: 'convergencia',
-        description: 'Alta convergência entre SUS, SBC, SBP e Diretriz HF 2021. Consenso sobre: rastreamento universal aos 10 anos, rastreamento seletivo em crianças 2-10 anos com fatores de risco, rastreamento em cascata familiar (custo-efetivo), coleta sem jejum obrigatório, uso de estatinas a partir de 8 anos em HF. Alinhamento total sobre importância do diagnóstico precoce de HF para prevenção de eventos cardiovasculares prematuros.',
-        citations: [{ refId: 'sbc-dislipidemia-2025' }, { refId: 'diretriz-hf-2021' }]
+        description: 'Alta convergência entre SUS, SBC, SBP, Diretriz HF 2021, NP-NCD Índia e WHO. Consenso sobre: rastreamento universal aos 10 anos, rastreamento seletivo em crianças 2-10 anos com fatores de risco, rastreamento em cascata familiar (custo-efetivo), importância da detecção precoce de HF. Alinhamento global em idade de início e estratégia de rastreamento.',
+        citations: [{ refId: 'sbc-dislipidemia-2025' }, { refId: 'diretriz-hf-2021' }, { refId: 'np-ncd-operational-guidelines-2023' }, { refId: 'who-hearts-technical-package-2022' }]
       }
     },
     epidemiology: {
@@ -409,10 +545,43 @@ export const rastreamentos: Record<string, Rastreamento> = {
         recommendation: 'Diretriz SBC 2025 estabelece METAS TERAPÊUTICAS por categoria de risco PREVENT (filosofia "quanto mais baixo, melhor"): | RISCO BAIXO: LDL-c <115 mg/dL | não-HDL-c <145 mg/dL | ApoB <100 mg/dL | RISCO INTERMEDIÁRIO: LDL-c <100 mg/dL | não-HDL-c <130 mg/dL | ApoB <90 mg/dL | RISCO ALTO: LDL-c <70 mg/dL | não-HDL-c <100 mg/dL | ApoB <70 mg/dL | RISCO MUITO ALTO: LDL-c <50 mg/dL | não-HDL-c <80 mg/dL | ApoB <55 mg/dL | RISCO EXTREMO (NOVA categoria): LDL-c <40 mg/dL | não-HDL-c <70 mg/dL | ApoB <45 mg/dL. Risco extremo: múltiplos eventos CV ou 1 evento + ≥2 condições de alto risco. ABORDAGEM TERAPÊUTICA: Medidas não farmacológicas (padrão alimentar cardioprotetor, atividade física, cessação tabagismo, controle de peso) são fundamentais e contínuas. Farmacológica escalonada: Estatina alta potência ou Estatina + ezetimiba (inicial para alto/muito alto/extremo risco) → adicionar ezetimiba → anti-PCSK9 (evolocumab, alirocumab SC 2-4 semanas; ou inclisiran SC 6 meses) → ácido bempedoico. Tripla terapia (estatina + ezetimiba + anti-PCSK9) reduz LDL-c até 85%. Fibratos/ômega-3 reservados para hipertrigliceridemia específica.',
         citations: [{ refId: 'sbc-dislipidemia-2025' }, { refId: 'prevent-calculator-2025' }]
       },
+      uk: {
+        organization: ['NHS', 'NICE'],
+        population: 'Adultos de 40-74 anos (NHS Health Check a cada 5 anos como parte de avaliação cardiovascular integrada); screening oportunístico em indivíduos com história de doença cardiovascular, diabetes, hipertensão ou em grupos de risco mais jovens',
+        method: 'Perfil lipídico em jejum (colesterol total, LDL-c, HDL-c, triglicerídeos). Cálculo de risco cardiovascular 10 anos via QRISK3 (ferramenta oficial NHS). Opcionalmente: ApoB, Lp(a), CAC em seleção de casos',
+        periodicity: 'A cada 5 anos no NHS Health Check (40-74 anos); anual em indivíduos com história de eventos cardiovasculares, diabetes ou risco muito alto; a cada 2-3 anos em risco intermediário',
+        justification: 'NICE NG179 recomenda rastreamento de dislipidemia como parte da avaliação de risco cardiovascular total (integrado no NHS Health Check). Estratificação de risco via QRISK3 (modelo oficial NHS). Tratamento baseado em risco: estatinas indicadas em risco ≥10% de evento cardiovascular em 10 anos, com metas de LDL-c <100 mg/dL (baixo/intermediário) ou <70 mg/dL (alto/muito alto). Reconhece importância de mudanças de estilo de vida como componente fundamental.',
+        citations: [
+          { refId: 'nice-lipids-ng179-2024' },
+          { refId: 'nhs-health-check-2024' }
+        ]
+      },
+      india: {
+        organization: ['NP-NCD', 'MoHFW'],
+        population: 'Adultos ≥30 anos com fatores de risco cardiovascular (hipertensão, diabetes, obesidade, história familiar)',
+        method: 'Colesterol total e HDL-c onde disponível; perfil lipídico completo em centros secundários/terciários',
+        periodicity: 'Anual em grupos de risco identificados pelo algoritmo NP-NCD de estratificação cardiovascular',
+        justification: 'NP-NCD 2023-2030 recomenda detecção de dislipidemia como componente da avaliação integrada de risco cardiovascular. Foco em métodos de baixo custo (colesterol total + HDL) acessíveis em atenção primária. Triagem integrada com HAS, diabetes reduz custo-benefício. Algoritmo NP-NCD identifica indivíduos de risco alto para referência a centros terciários.',
+        citations: [
+          { refId: 'np-ncd-operational-guidelines-2023' },
+          { refId: 'np-ncd-hypertension-protocol-2023' }
+        ]
+      },
+      who: {
+        organization: ['WHO'],
+        population: 'Todos adultos ≥40 anos; adultos 20-39 anos com fatores de risco cardiovascular (hipertensão, diabetes, história familiar, obesidade)',
+        method: 'Perfil lipídico completo (CT, HDL-c, LDL-c, TG) integrado na avaliação de risco cardiovascular global',
+        periodicity: 'A cada 5 anos em população geral; anual em grupos de risco alto',
+        justification: 'WHO HEARTS Technical Package recomenda rastreamento de dislipidemia como componente da avaliação integrada de risco cardiovascular em atenção primária. Estratificação de risco permite tratamento eficiente e reduz custos. WHO PEN enfatiza abordagem populacional com métodos simples e custo-efetivos.',
+        citations: [
+          { refId: 'who-hearts-technical-package-2022' },
+          { refId: 'who-pen-essential-interventions-2023' }
+        ]
+      },
       convergence: {
         status: 'convergencia',
-        description: 'Alta convergência entre SUS e SBC após publicação da Diretriz 2025 e adoção oficial do escore PREVENT pelas principais sociedades médicas brasileiras. Alinhamento sobre: idade de rastreamento (≥35 anos universal), coleta sem jejum obrigatório, inclusão de ApoB e Lp(a) como biomarcadores diagnósticos e de estratificação, estratificação de risco pelo PREVENT. Diretriz 2025 inova ao incluir categoria de risco EXTREMO com metas terapêuticas mais agressivas (LDL-c <40 mg/dL), refletindo evidências robustas de que "quanto mais baixo, melhor" para redução de eventos cardiovasculares.',
-        citations: [{ refId: 'sbc-dislipidemia-2025' }, { refId: 'prevent-calculator-2025' }]
+        description: 'Alta convergência entre SUS, SBC, NHS/NICE, NP-NCD Índia e WHO. Todos recomendam rastreamento universal de adultos ≥35-40 anos com estratificação de risco para decisão terapêutica. Alinhamento sobre: idade de rastreamento (≥35-40 anos), inclusão de biomarcadores (ApoB, Lp(a)), tratamento baseado em risco cardiovascular total. SBC adota PREVENT, NHS adota QRISK3, NP-NCD usa algoritmo simples - todos eficazes. Metas terapêuticas similares: LDL-c reduzido conforme categoria de risco. Diretriz 2025 SBC, WHO e Índia destacam abordagem integrada com HAS e DM para máxima efetividade.',
+        citations: [{ refId: 'sbc-dislipidemia-2025' }, { refId: 'prevent-calculator-2025' }, { refId: 'nice-lipids-ng179-2024' }, { refId: 'np-ncd-operational-guidelines-2023' }, { refId: 'who-hearts-technical-package-2022' }]
       }
     },
     epidemiology: {

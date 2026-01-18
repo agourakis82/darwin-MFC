@@ -1,16 +1,103 @@
 'use client';
 
+import { useState } from 'react';
 import { Recommendations } from '@/lib/types/rastreamentos';
 import InlineCitation from '../Bibliography/InlineCitation';
-import { CheckCircle2, AlertTriangle, XCircle, HelpCircle, Building2, Hospital } from 'lucide-react';
+import { CheckCircle2, AlertTriangle, XCircle, HelpCircle, Building2, Hospital, Globe, Flag, Users, Menu } from 'lucide-react';
 
 interface ComparisonCardProps {
   title: string;
   recommendations: Recommendations;
 }
 
+// Type for available guideline systems
+type GuidelineKey = 'sus' | 'societies' | 'india' | 'uk' | 'who';
+
+interface GuidelineConfig {
+  key: GuidelineKey;
+  label: string;
+  shortLabel: string;
+  icon: typeof Hospital;
+  bgColor: string; // gradient start color
+  shadowColor: string; // shadow color
+  badge: string;
+  borderColor: string; // for focus/selection
+  country?: string; // flag emoji or identifier
+}
+
+// Configuration for each guideline system
+const guidelineConfigs: Record<GuidelineKey, GuidelineConfig> = {
+  sus: {
+    key: 'sus',
+    label: 'Sistema Único de Saúde',
+    shortLabel: 'SUS',
+    icon: Hospital,
+    bgColor: 'from-blue-600 to-blue-700',
+    shadowColor: 'shadow-blue-600/30',
+    badge: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-300 dark:border-blue-700',
+    borderColor: 'border-blue-500',
+    country: '🇧🇷'
+  },
+  societies: {
+    key: 'societies',
+    label: 'Sociedades Médicas',
+    shortLabel: 'Sociedades',
+    icon: Building2,
+    bgColor: 'from-emerald-600 to-teal-700',
+    shadowColor: 'shadow-emerald-600/30',
+    badge: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-emerald-300 dark:border-emerald-700',
+    borderColor: 'border-emerald-500',
+    country: '🇧🇷'
+  },
+  india: {
+    key: 'india',
+    label: 'Diretriz Índia (NP-NCD)',
+    shortLabel: 'Índia',
+    icon: Users,
+    bgColor: 'from-orange-600 to-amber-700',
+    shadowColor: 'shadow-orange-600/30',
+    badge: 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 border-orange-300 dark:border-orange-700',
+    borderColor: 'border-orange-500',
+    country: '🇮🇳'
+  },
+  uk: {
+    key: 'uk',
+    label: 'Diretrizes Reino Unido (NHS)',
+    shortLabel: 'Reino Unido',
+    icon: Flag,
+    bgColor: 'from-red-600 to-rose-700',
+    shadowColor: 'shadow-red-600/30',
+    badge: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-300 dark:border-red-700',
+    borderColor: 'border-red-500',
+    country: '🇬🇧'
+  },
+  who: {
+    key: 'who',
+    label: 'Organização Mundial de Saúde (WHO)',
+    shortLabel: 'WHO',
+    icon: Globe,
+    bgColor: 'from-cyan-600 to-blue-700',
+    shadowColor: 'shadow-cyan-600/30',
+    badge: 'bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-400 border-cyan-300 dark:border-cyan-700',
+    borderColor: 'border-cyan-500',
+    country: '🌍'
+  }
+};
+
 export default function ComparisonCard({ title, recommendations }: ComparisonCardProps) {
-  const { sus, societies, convergence } = recommendations;
+  const { sus, societies, india, uk, who, convergence } = recommendations;
+
+  // Determine available guidelines (always include SUS and Societies)
+  const availableGuidelines: GuidelineKey[] = ['sus', 'societies'];
+  if (india) availableGuidelines.push('india');
+  if (uk) availableGuidelines.push('uk');
+  if (who) availableGuidelines.push('who');
+
+  const hasMultipleGuidelines = availableGuidelines.length > 2;
+  const [selectedMobileTab, setSelectedMobileTab] = useState<GuidelineKey>('sus');
+
+  // Determine layout: for 3+ guidelines, use tabs on mobile, grid on desktop
+  const isCompactView = availableGuidelines.length >= 3;
 
   const getStatusConfig = (status: string) => {
     switch (status) {
@@ -65,6 +152,24 @@ export default function ComparisonCard({ title, recommendations }: ComparisonCar
   const statusConfig = getStatusConfig(convergence.status);
   const StatusIcon = statusConfig.icon;
 
+  // Get guideline data by key
+  const getGuidelineData = (key: GuidelineKey) => {
+    switch (key) {
+      case 'sus':
+        return sus;
+      case 'societies':
+        return societies;
+      case 'india':
+        return india;
+      case 'uk':
+        return uk;
+      case 'who':
+        return who;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="group">
       {/* Main Card Container */}
@@ -97,112 +202,85 @@ export default function ComparisonCard({ title, recommendations }: ComparisonCar
           </div>
         </div>
 
-        {/* Comparison Grid */}
-        <div className="grid lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-neutral-200/50 dark:divide-neutral-700/50">
-          {/* SUS Column */}
-          <div className="relative p-8 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-sm">
-            {/* SUS Header */}
-            <div className="mb-6 pb-5 border-b border-neutral-200 dark:border-neutral-700">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/30">
-                  <Hospital className="w-6 h-6 text-white" strokeWidth={2.5} />
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-neutral-900 dark:text-neutral-50">
-                    Sistema Único de Saúde
-                  </h4>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 font-medium">
-                    Protocolo Ministério da Saúde
-                  </p>
-                </div>
-              </div>
+        {/* Mobile Tab Navigation (for 3+ guidelines) */}
+        {isCompactView && (
+          <div className="lg:hidden relative px-6 py-4 bg-white/80 dark:bg-neutral-900/80 border-b border-neutral-200/50 dark:border-neutral-700/50 overflow-x-auto">
+            <div className="flex gap-2 whitespace-nowrap">
+              {availableGuidelines.map((guideKey) => {
+                const config = guidelineConfigs[guideKey];
+                const isSelected = selectedMobileTab === guideKey;
+                return (
+                  <button
+                    key={guideKey}
+                    onClick={() => setSelectedMobileTab(guideKey)}
+                    className={`
+                      px-4 py-2.5 rounded-lg font-bold text-sm transition-all whitespace-nowrap border-2
+                      ${isSelected
+                        ? `${config.badge} border-${config.borderColor.split('-')[1]}-500`
+                        : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border-neutral-300 dark:border-neutral-600'
+                      }
+                    `}
+                  >
+                    <span>{config.country}</span> {config.shortLabel}
+                  </button>
+                );
+              })}
             </div>
-
-            {/* SUS Content */}
-            <dl className="space-y-5">
-              <DataField
-                label="População-alvo"
-                value={sus.population}
-                citations={sus.citations}
-              />
-              <DataField
-                label="Método"
-                value={sus.method}
-              />
-              <DataField
-                label="Periodicidade"
-                value={sus.periodicity}
-              />
-              {sus.coverage && (
-                <DataField
-                  label="Cobertura Atual"
-                  value={sus.coverage}
-                  highlight
-                />
-              )}
-              <div className="pt-4 mt-4 border-t border-neutral-200 dark:border-neutral-700">
-                <dt className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
-                  Justificativa Técnica
-                </dt>
-                <dd className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed italic bg-neutral-50 dark:bg-neutral-800/50 px-4 py-3 rounded-lg">
-                  {sus.justification}
-                </dd>
-              </div>
-            </dl>
           </div>
+        )}
 
-          {/* Societies Column */}
-          <div className="relative p-8 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-sm">
-            {/* Societies Header */}
-            <div className="mb-6 pb-5 border-b border-neutral-200 dark:border-neutral-700">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-700 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-600/30">
-                  <Building2 className="w-6 h-6 text-white" strokeWidth={2.5} />
-                </div>
-                <div className="flex-1">
-                  <h4 className="text-lg font-bold text-neutral-900 dark:text-neutral-50">
-                    Sociedades Médicas
-                  </h4>
-                  <div className="flex flex-wrap gap-1.5 mt-2">
-                    {societies.organization.map((org) => (
-                      <span
-                        key={org}
-                        className="px-2.5 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-md text-xs font-bold border border-emerald-300 dark:border-emerald-700"
-                      >
-                        {org}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+        {/* Comparison Grid - Desktop: side-by-side, Mobile: single tab */}
+        <div className={`
+          ${isCompactView
+            ? 'hidden lg:grid'
+            : ''
+          }
+          grid
+          ${availableGuidelines.length === 2
+            ? 'lg:grid-cols-2'
+            : availableGuidelines.length === 3
+            ? 'lg:grid-cols-3'
+            : availableGuidelines.length === 4
+            ? 'lg:grid-cols-4'
+            : 'lg:grid-cols-5'
+          }
+          divide-y lg:divide-y-0 lg:divide-x divide-neutral-200/50 dark:divide-neutral-700/50
+        `}>
+          {availableGuidelines.map((guideKey) => {
+            const config = guidelineConfigs[guideKey];
+            const data = getGuidelineData(guideKey);
+            if (!data) return null;
 
-            {/* Societies Content */}
-            <dl className="space-y-5">
-              <DataField
-                label="População-alvo"
-                value={societies.population}
-                citations={societies.citations}
+            return (
+              <GuidelineColumn
+                key={guideKey}
+                config={config}
+                data={data}
+                guideKey={guideKey}
               />
-              <DataField
-                label="Método"
-                value={societies.method}
-              />
-              <DataField
-                label="Periodicidade"
-                value={societies.periodicity}
-              />
-              <div className="pt-4 mt-4 border-t border-neutral-200 dark:border-neutral-700">
-                <dt className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
-                  Recomendação Detalhada
-                </dt>
-                <dd className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed italic bg-neutral-50 dark:bg-neutral-800/50 px-4 py-3 rounded-lg">
-                  {societies.recommendation}
-                </dd>
-              </div>
-            </dl>
-          </div>
+            );
+          })}
         </div>
+
+        {/* Mobile Single Column View (for 3+ guidelines) */}
+        {isCompactView && (
+          <div className="lg:hidden">
+            {availableGuidelines.map((guideKey) => {
+              const config = guidelineConfigs[guideKey];
+              const data = getGuidelineData(guideKey);
+              if (!data || selectedMobileTab !== guideKey) return null;
+
+              return (
+                <GuidelineColumn
+                  key={guideKey}
+                  config={config}
+                  data={data}
+                  guideKey={guideKey}
+                />
+              );
+            })}
+          </div>
+        )}
 
         {/* Convergence Analysis Footer */}
         <div className="relative px-8 py-6 bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-800/50 dark:to-neutral-900/50 border-t-2 border-neutral-200/50 dark:border-neutral-700/50">
@@ -222,6 +300,89 @@ export default function ComparisonCard({ title, recommendations }: ComparisonCar
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+// Reusable Guideline Column Component
+interface GuidelineColumnProps {
+  config: GuidelineConfig;
+  data: any; // Guideline data
+  guideKey: GuidelineKey;
+}
+
+function GuidelineColumn({ config, data, guideKey }: GuidelineColumnProps) {
+  const Icon = config.icon;
+  const hasJustification = 'justification' in data;
+  const hasRecommendation = 'recommendation' in data;
+  const hasCoverage = 'coverage' in data;
+
+  return (
+    <div className="relative p-6 lg:p-8 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-sm">
+      {/* Header */}
+      <div className="mb-6 pb-5 border-b border-neutral-200 dark:border-neutral-700">
+        <div className="flex items-center gap-3 mb-3">
+          <div className={`w-12 h-12 bg-gradient-to-br ${config.bgColor} rounded-xl flex items-center justify-center shadow-lg ${config.shadowColor}`}>
+            <Icon className="w-6 h-6 text-white" strokeWidth={2.5} />
+          </div>
+          <div className="flex-1 min-w-0">
+            <h4 className="text-base lg:text-lg font-bold text-neutral-900 dark:text-neutral-50 leading-tight">
+              {config.label}
+            </h4>
+            <p className="text-xs text-neutral-500 dark:text-neutral-400 font-medium mt-0.5">
+              {config.country}
+            </p>
+          </div>
+        </div>
+
+        {/* Organization badges */}
+        {data.organization && data.organization.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mt-3">
+            {data.organization.map((org: string) => (
+              <span
+                key={org}
+                className={`px-2.5 py-1 ${config.badge} rounded-md text-xs font-bold border`}
+              >
+                {org}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Content */}
+      <dl className="space-y-4 lg:space-y-5">
+        <DataField
+          label="População-alvo"
+          value={data.population}
+          citations={data.citations}
+        />
+        <DataField
+          label="Método"
+          value={data.method}
+        />
+        <DataField
+          label="Periodicidade"
+          value={data.periodicity}
+        />
+        {hasCoverage && (
+          <DataField
+            label="Cobertura Atual"
+            value={data.coverage}
+            highlight
+          />
+        )}
+        {(hasJustification || hasRecommendation) && (
+          <div className="pt-4 mt-4 border-t border-neutral-200 dark:border-neutral-700">
+            <dt className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
+              {hasRecommendation ? 'Recomendação Detalhada' : 'Justificativa Técnica'}
+            </dt>
+            <dd className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed italic bg-neutral-50 dark:bg-neutral-800/50 px-3 lg:px-4 py-3 rounded-lg">
+              {hasRecommendation ? data.recommendation : data.justification}
+            </dd>
+          </div>
+        )}
+      </dl>
     </div>
   );
 }
