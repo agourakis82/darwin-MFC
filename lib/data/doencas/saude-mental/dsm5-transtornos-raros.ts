@@ -102,6 +102,7 @@ export const transtornosMentalRaros: Array<Partial<DoencaMental> & Pick<DoencaMe
     cid10: ['F44.81'],
     cid11: ['6B64'],
     ciap2: ['P79'],
+    ordo: ['ORPHA:95345'],
     snomedCT: '32388005', // Dissociative identity disorder (disorder)
     doid: 'DOID:1532',
     meshId: 'D009105',
@@ -171,6 +172,7 @@ export const transtornosMentalRaros: Array<Partial<DoencaMental> & Pick<DoencaMe
     cid10: ['F50.0'],
     cid11: ['6B80'],
     ciap2: ['P99'],
+    ordo: ['ORPHA:36297'],
     snomedCT: '56882008', // Anorexia nervosa (disorder)
     doid: 'DOID:8689',
     meshId: 'D000856',
@@ -420,6 +422,7 @@ export const transtornosMentalRaros: Array<Partial<DoencaMental> & Pick<DoencaMe
     cid10: ['G47.4'],
     cid11: ['7A20'],
     ciap2: ['P06'],
+    ordo: ['ORPHA:2073'],
     snomedCT: '60380001', // Narcolepsy (disorder)
     doid: 'DOID:8986',
     meshId: 'D009290',

@@ -17,6 +17,7 @@ export const doencasNeurologicasRaras: Array<Partial<TranstornoNeurologico> & Pi
     cid10: ['G10'],
     cid11: ['8A01'],
     ciap2: ['N87'],
+    ordo: ['ORPHA:399'],
     snomedCT: '58756001', // Huntington disease (disorder)
     doid: 'DOID:12858',
     meshId: 'D006816',
@@ -93,6 +94,7 @@ export const doencasNeurologicasRaras: Array<Partial<TranstornoNeurologico> & Pi
     cid10: ['G12.2'],
     cid11: ['8B60'],
     ciap2: ['N87'],
+    ordo: ['ORPHA:803'],
     snomedCT: '86044005', // Amyotrophic lateral sclerosis (disorder)
     doid: 'DOID:332',
     meshId: 'D000690',
@@ -168,6 +170,7 @@ export const doencasNeurologicasRaras: Array<Partial<TranstornoNeurologico> & Pi
     cid10: ['G36.0'],
     cid11: ['8A45'],
     ciap2: ['N88'],
+    ordo: ['ORPHA:71211'],
     snomedCT: '6368000', // Neuromyelitis optica (disorder)
     doid: 'DOID:8869',
     meshId: 'D009471',
@@ -248,6 +251,7 @@ export const doencasNeurologicasRaras: Array<Partial<TranstornoNeurologico> & Pi
     cid10: ['G70.0'],
     cid11: ['8C60'],
     ciap2: ['N87'],
+    ordo: ['ORPHA:589'],
     snomedCT: '17097001', // Myasthenia gravis (disorder)
     doid: 'DOID:437',
     meshId: 'D009157',
@@ -327,6 +331,7 @@ export const doencasNeurologicasRaras: Array<Partial<TranstornoNeurologico> & Pi
     cid10: ['G43.1'],
     cid11: ['8A80.2'],
     ciap2: ['N89'],
+    ordo: ['ORPHA:569'],
     snomedCT: '230461009', // Hemiplegic migraine (disorder)
     doid: 'DOID:6364',
     meshId: 'D020325',
