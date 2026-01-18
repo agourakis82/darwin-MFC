@@ -1,21 +1,52 @@
 /**
- * Tipos para API RESTful
+ * Tipos para API RESTful v1 - Darwin-MFC
  * Compatível com padrões REST e preparado para migração para endpoints server-side
+ *
+ * Standard response wrappers para todos os endpoints da API.
+ * Suporta paginação, tratamento de erros e metadados.
  */
 
+/**
+ * Response padrão da API
+ */
 export interface APIResponse<T> {
+  /** Status de sucesso da requisição */
   success: boolean;
+
+  /** Dados da resposta */
   data?: T;
+
+  /** Objeto de erro se falhou */
   error?: {
+    /** Código do erro para tratamento programático */
     code: string;
+
+    /** Mensagem de erro legível */
     message: string;
+
+    /** Detalhes adicionais sobre o erro */
     details?: unknown;
   };
+
+  /** Metadados da resposta */
   meta?: {
+    /** Total de itens disponíveis */
     total?: number;
+
+    /** Número da página atual (1-indexed) */
     page?: number;
+
+    /** Quantidade de itens por página */
     pageSize?: number;
+
+    /** Total de páginas */
     totalPages?: number;
+
+    /** Timestamp da resposta */
+    timestamp?: string;
+
+    /** Versão da API */
+    version?: string;
   };
 }
 

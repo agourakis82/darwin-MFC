@@ -1,18 +1,25 @@
 /**
  * FHIR (Fast Healthcare Interoperability Resources) Support
  * Conversores para recursos FHIR R4
- * 
+ *
  * @see https://www.hl7.org/fhir/
  */
 
 // Types
 export * from './types';
 
-// Condition (Doenças)
-export * from './condition';
+// Builders
+export * from './patient';
+export * from './observation';
+export * from './encounter';
+export * from './bundle';
 
-// Medication (Medicamentos)
+// Converters
+export * from './condition';
 export * from './medication';
+
+// Utilities
+export * from './utils';
 
 /**
  * Versão FHIR suportada

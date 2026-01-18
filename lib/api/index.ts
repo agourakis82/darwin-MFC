@@ -3,11 +3,15 @@
  * =====================
  *
  * Exports all API utilities, types, and backend client.
+ * Provides REST API v1 endpoints for diseases, medications, and calculators.
  */
 
 // =============================================================================
-// EXISTING API (Static Data)
+// API v1 - Static Data Layer
 // =============================================================================
+
+// OpenAPI Specification
+export { openApiSpec } from './openapi';
 
 // Types
 export * from './types';
@@ -17,6 +21,9 @@ export * from './diseases';
 
 // Medications API
 export * from './medications';
+
+// Calculators API
+export * from './calculators';
 
 // Re-export types para conveniência
 export type { Doenca } from '@/lib/types/doenca';
