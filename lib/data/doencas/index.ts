@@ -41,6 +41,15 @@ import { doencasEspecialidadesExpansao } from './expansao-sprint3-especialidades
 import { doencasEmergencias } from './emergencias';
 import { doencasTropicais } from './tropicais';
 
+// Importar novas expansões v1.6.0
+import { doencasRarasParte1 } from './expansao-doencas-raras-parte1';
+import { doencasRarasParte2 } from './expansao-doencas-raras-parte2';
+import { doencasRarasParte3 } from './expansao-doencas-raras-parte3';
+import { doencasPediatricas as doencasPediatricasExpansao } from './expansao-pediatria-completo';
+import { doencasTropicais as doencasTropicaisExpansao } from './expansao-tropicais-completo';
+import { doencasOncologicas } from './expansao-oncologia';
+import { doencasGeneticasOcupacionais } from './expansao-genetica-ocupacional';
+
 // Consolidar todas as doenças
 // Nota: Algumas categorias usam Partial<Doenca> para flexibilidade de expansão
 export const todasDoencas: Partial<Doenca>[] = [
@@ -74,6 +83,14 @@ export const todasDoencas: Partial<Doenca>[] = [
   ...doencasEspecialidadesExpansao,
   ...doencasEmergencias,
   ...doencasTropicais,
+  // v1.6.0 expansions
+  ...doencasRarasParte1,
+  ...doencasRarasParte2,
+  ...doencasRarasParte3,
+  ...doencasPediatricasExpansao,
+  ...doencasTropicaisExpansao,
+  ...doencasOncologicas,
+  ...doencasGeneticasOcupacionais,
 ];
 
 // Remover duplicatas por ID (caso existam) e filtrar apenas doenças com ID

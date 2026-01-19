@@ -52,6 +52,14 @@ import { medicamentosFinal12 } from './expansao-final-12';
 import { medicamentos600Ultimo } from './expansao-600-ultimo';
 import { medicamentos600FinalBatch } from './expansao-600-final-batch';
 
+// v1.6.0 expansions
+import { medicamentosOncologiaQuimio } from './expansao-oncologia-quimio';
+import { medicamentosOncologiaAlvo } from './expansao-oncologia-alvo';
+import { medicamentosBiologicos } from './expansao-biologicos';
+import { vacinas } from './expansao-vacinas';
+// TODO: Fix type issues in expansao-anestesia.ts (classeTerapeutica, posologia structure)
+// import { medicamentosAnestesia } from './expansao-anestesia';
+
 // Consolidar todos os medicamentos
 // Filtrar apenas medicamentos completos (com campos obrigatórios)
 const isMedicamentoCompleto = (med: Partial<Medicamento>): med is Medicamento =>
@@ -92,6 +100,13 @@ const medicamentos600CompleteFiltered = medicamentos600Complete.filter(isMedicam
 const medicamentosFinal12Filtered = medicamentosFinal12.filter(isMedicamentoCompleto);
 const medicamentos600UltimoFiltered = medicamentos600Ultimo.filter(isMedicamentoCompleto);
 const medicamentos600FinalBatchFiltered = medicamentos600FinalBatch.filter(isMedicamentoCompleto);
+
+// v1.6.0 filtered
+const oncologiaQuimioCompletos = medicamentosOncologiaQuimio.filter(isMedicamentoCompleto);
+const oncologiaAlvoCompletos = medicamentosOncologiaAlvo.filter(isMedicamentoCompleto);
+const biologicosCompletos = medicamentosBiologicos.filter(isMedicamentoCompleto);
+const vacinasCompletos = vacinas.filter(isMedicamentoCompleto);
+// const anestesiaCompletos = medicamentosAnestesia.filter(isMedicamentoCompleto);
 
 // Filter cardiovasculares (Partial<Medicamento>)
 const cardiovascularesCompletos2 = cardiovasculares.filter(isMedicamentoCompleto);
@@ -140,6 +155,12 @@ export const todosMedicamentos: Medicamento[] = [
   ...medicamentosFinal12Filtered,
   ...medicamentos600UltimoFiltered,
   ...medicamentos600FinalBatchFiltered,
+  // v1.6.0 expansions
+  ...oncologiaQuimioCompletos,
+  ...oncologiaAlvoCompletos,
+  ...biologicosCompletos,
+  ...vacinasCompletos,
+  // ...anestesiaCompletos, // TODO: Re-enable after fixing type issues
 ];
 
 // Remover duplicatas por ID, preferindo entradas com dados mais completos (PharmGKB, LOINC)
