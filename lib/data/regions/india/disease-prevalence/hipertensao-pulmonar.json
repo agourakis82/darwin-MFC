@@ -1,0 +1,51 @@
+{
+  "diseaseId": "hipertensao-pulmonar",
+  "region": "IN",
+  "diseaseName": "Pulmonary hypertension",
+  "prevalence": {
+    "value": "0.5-1% of adults (higher with chronic lung disease)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "CSI/ICMR cardiopulmonary reports",
+    "trend": "increasing with chronic lung disease"
+  },
+  "incidence": {
+    "value": "2-4 per million/year (PAH)",
+    "population": "General population",
+    "year": 2024,
+    "source": "PAH registry data"
+  },
+  "burden": {
+    "dalyPerCapita": "high in advanced disease; right heart failure burden",
+    "mortalityRate": "Moderate to high in advanced cases",
+    "year": 2024,
+    "source": "IHME/GBD cardiopulmonary context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "left heart disease",
+      "chronic lung disease (biomass/COPD)",
+      "tuberculosis sequelae",
+      "congenital heart disease",
+      "chronic thromboembolic disease"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with chronic lung disease",
+      "people with congenital heart disease"
+    ],
+    "diagnosticCriteria": "Echocardiography screening; confirm with right heart catheterization when available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; referral-based diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "4-6 million (all causes)",
+    "controlRate": "Low; access to PH centers is limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Echo access varies; right heart catheterization limited",
+    "treatmentProtocol": "Treat underlying cause; PAH therapy with PDE5 inhibitors/endothelin antagonists when available",
+    "regionalChallenges": "Delayed diagnosis, cost barriers, and limited specialized centers",
+    "strongPoints": "Availability of low-cost sildenafil and expanding cardiopulmonary services"
+  }
+}

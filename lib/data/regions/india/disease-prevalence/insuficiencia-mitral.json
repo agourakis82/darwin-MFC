@@ -1,0 +1,51 @@
+{
+  "diseaseId": "insuficiencia-mitral",
+  "region": "IN",
+  "diseaseName": "Mitral regurgitation",
+  "prevalence": {
+    "value": "~1% of adults (higher with rheumatic disease)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "CSI reports; echocardiography registries",
+    "trend": "stable to increasing with rheumatic and ischemic disease"
+  },
+  "incidence": {
+    "value": "1-2 per 1,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Cardiology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; contributes to heart failure",
+    "mortalityRate": "Elevated in severe untreated disease",
+    "year": 2024,
+    "source": "IHME/GBD cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "rheumatic heart disease",
+      "degenerative mitral disease",
+      "ischemic cardiomyopathy",
+      "left ventricular dilation",
+      "aging"
+    ],
+    "vulnerablePopulations": [
+      "people with rheumatic heart disease",
+      "older adults",
+      "patients with ischemic heart disease"
+    ],
+    "diagnosticCriteria": "Echocardiography to grade severity and LV function; assess symptoms"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis via auscultation and echo",
+    "treatmentAvailable": true,
+    "estimatedPatients": "7-10 million",
+    "controlRate": "Low to moderate; surgical access varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Echo access largely in urban/tertiary centers",
+    "treatmentProtocol": "Medical therapy for heart failure; surgical repair/replacement when feasible",
+    "regionalChallenges": "Late presentation and limited access to valve repair",
+    "strongPoints": "Growing cardiac surgery capacity and low-cost generics"
+  }
+}

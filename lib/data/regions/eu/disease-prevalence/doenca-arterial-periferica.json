@@ -1,0 +1,52 @@
+{
+  "diseaseId": "doenca-arterial-periferica",
+  "region": "EU",
+  "diseaseName": "Peripheral arterial disease",
+  "prevalence": {
+    "value": "5-8% of adults >45 years; 15-20% in >70",
+    "population": "EU adults >45 years",
+    "year": 2024,
+    "source": "ESC/ESVS guidelines; Eurostat health surveys",
+    "trend": "stable to increasing with aging"
+  },
+  "incidence": {
+    "value": "3-6 per 1,000/year",
+    "population": "Adults >45 years",
+    "year": 2024,
+    "source": "European cardiovascular cohorts"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; high cardiovascular morbidity",
+    "mortalityRate": "20-30 per 100,000",
+    "year": 2024,
+    "source": "WHO Europe cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "smoking",
+      "diabetes",
+      "hypertension",
+      "dyslipidemia",
+      "age >65",
+      "chronic kidney disease"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "smokers",
+      "people with diabetes"
+    ],
+    "diagnosticCriteria": "Ankle-brachial index <0.90; confirm with duplex ultrasound or imaging"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "risk-based ABI screening in high-risk patients",
+    "treatmentAvailable": true,
+    "estimatedPatients": "20-30 million adults",
+    "controlRate": "Moderate to high with structured vascular care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ABI and vascular imaging widely available",
+    "treatmentProtocol": "Antiplatelets, statins, supervised exercise, and revascularization when indicated",
+    "regionalChallenges": "High burden in smokers and socioeconomic disparities",
+    "strongPoints": "Comprehensive ESC/ESVS guidelines and broad access to vascular services"
+  }
+}

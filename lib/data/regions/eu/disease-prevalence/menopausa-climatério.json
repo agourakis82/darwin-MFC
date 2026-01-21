@@ -1,0 +1,51 @@
+{
+  "diseaseId": "menopausa-climatério",
+  "region": "EU",
+  "diseaseName": "Menopause and climacteric",
+  "prevalence": {
+    "value": "60-75% symptomatic among women 45-60 years",
+    "population": "EU women 45-60 years",
+    "year": 2024,
+    "source": "EMAS/IMS guidance; Eurostat health surveys",
+    "trend": "stable; absolute numbers rising with aging"
+  },
+  "incidence": {
+    "value": "~4-6% per year entering menopause",
+    "population": "Women 45-55 years",
+    "year": 2024,
+    "source": "Population cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "quality-of-life impact from vasomotor and urogenital symptoms",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe women's health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "smoking",
+      "surgical menopause",
+      "chemotherapy/radiation",
+      "low BMI"
+    ],
+    "vulnerablePopulations": [
+      "women with surgical menopause",
+      "smokers",
+      "women with premature ovarian insufficiency"
+    ],
+    "diagnosticCriteria": "12 months of amenorrhea after age 45; FSH testing if early or atypical"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; clinical diagnosis in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "70-90 million women in peri/post-menopause",
+    "controlRate": "Moderate to high with access to counseling and hormone therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis supported by labs when early or atypical",
+    "treatmentProtocol": "Menopausal hormone therapy when eligible; non-hormonal therapies and lifestyle programs; vaginal estrogen for urogenital symptoms",
+    "regionalChallenges": "Variable access to specialist menopause services and concerns about HRT risks",
+    "strongPoints": "EMAS guidelines, broad access to HRT, and structured counseling programs"
+  }
+}

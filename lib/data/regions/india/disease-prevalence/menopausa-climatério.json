@@ -1,0 +1,51 @@
+{
+  "diseaseId": "menopausa-climatério",
+  "region": "IN",
+  "diseaseName": "Menopause and climacteric",
+  "prevalence": {
+    "value": "50-70% symptomatic among women 40-55 years",
+    "population": "Indian women 40-55 years",
+    "year": 2024,
+    "source": "Indian Menopause Society reports; ICMR surveys",
+    "trend": "stable; earlier mean menopause age in India"
+  },
+  "incidence": {
+    "value": "~5-7% per year entering menopause",
+    "population": "Women 40-50 years",
+    "year": 2024,
+    "source": "Community cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "quality-of-life impact from vasomotor, sleep, and urogenital symptoms",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO SEAR women's health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "smoking or tobacco chewing",
+      "undernutrition/low BMI",
+      "surgical menopause",
+      "chemotherapy/radiation"
+    ],
+    "vulnerablePopulations": [
+      "rural women with limited access to care",
+      "women with surgical menopause",
+      "women with thyroid disorders"
+    ],
+    "diagnosticCriteria": "12 months of amenorrhea; FSH testing if diagnosis uncertain; exclude pregnancy and thyroid disease"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; opportunistic counseling in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "80-100 million women in peri/post-menopause",
+    "controlRate": "Low to moderate; limited access to menopause clinics and HRT"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care or gynecology; labs used when atypical",
+    "treatmentProtocol": "Lifestyle measures, calcium/vitamin D, non-hormonal therapies; menopausal hormone therapy when eligible",
+    "regionalChallenges": "Low awareness, cultural stigma, and limited access to specialists",
+    "strongPoints": "Growing menopause societies and availability of low-cost generics"
+  }
+}

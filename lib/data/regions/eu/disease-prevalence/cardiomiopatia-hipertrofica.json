@@ -1,0 +1,51 @@
+{
+  "diseaseId": "cardiomiopatia-hipertrofica",
+  "region": "EU",
+  "diseaseName": "Hypertrophic cardiomyopathy",
+  "prevalence": {
+    "value": "~0.2% (1 in 500)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ESC HCM guidelines; registry data",
+    "trend": "stable; detection increasing with imaging"
+  },
+  "incidence": {
+    "value": "2-3 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "European cardiomyopathy registries"
+  },
+  "burden": {
+    "dalyPerCapita": "low population burden; sudden cardiac death risk in high-risk groups",
+    "mortalityRate": "Low overall; higher in high-risk subsets",
+    "year": 2024,
+    "source": "WHO Europe cardiomyopathy context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "sarcomere gene mutations",
+      "family history",
+      "male sex",
+      "hypertension (as confounder)",
+      "athletic screening detection"
+    ],
+    "vulnerablePopulations": [
+      "families with known HCM",
+      "young adults",
+      "athletes"
+    ],
+    "diagnosticCriteria": "Unexplained LV wall thickness on echocardiography or MRI; family history and genetic testing support"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "family-based screening programs",
+    "treatmentAvailable": true,
+    "estimatedPatients": "0.8-0.9 million",
+    "controlRate": "High with access to genetics and ICDs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Echo and MRI widely available; genetic counseling for families",
+    "treatmentProtocol": "Beta-blockers, septal reduction therapies, ICDs for high-risk",
+    "regionalChallenges": "Care coordination for family screening",
+    "strongPoints": "Specialized HCM centers and robust guideline adherence"
+  }
+}

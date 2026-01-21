@@ -1,0 +1,51 @@
+{
+  "diseaseId": "hipertensao-pulmonar",
+  "region": "EU",
+  "diseaseName": "Pulmonary hypertension",
+  "prevalence": {
+    "value": "~1% of adults; 5-10% in >65",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ESC/ERS guidelines; European registries",
+    "trend": "increasing with aging"
+  },
+  "incidence": {
+    "value": "5-10 per million/year (PAH)",
+    "population": "General population",
+    "year": 2024,
+    "source": "PAH registry data"
+  },
+  "burden": {
+    "dalyPerCapita": "high in advanced disease; right heart failure burden",
+    "mortalityRate": "Moderate to high in advanced cases",
+    "year": 2024,
+    "source": "WHO Europe cardiopulmonary context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "left heart disease",
+      "chronic lung disease",
+      "chronic thromboembolic disease",
+      "connective tissue disease",
+      "sleep-disordered breathing"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with COPD or ILD",
+      "people with connective tissue disease"
+    ],
+    "diagnosticCriteria": "Echocardiography screening; confirm with right heart catheterization and hemodynamic criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; referral-based diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "4-5 million (all causes)",
+    "controlRate": "Moderate to high with specialized PH centers"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Right heart catheterization and PH centers widely available",
+    "treatmentProtocol": "Etiology-driven care; PAH-specific therapy per ESC/ERS guidelines",
+    "regionalChallenges": "High resource use and complex multimorbidity",
+    "strongPoints": "Specialized PH centers and broad access to advanced therapies"
+  }
+}

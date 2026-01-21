@@ -1,0 +1,52 @@
+{
+  "diseaseId": "doenca-arterial-periferica",
+  "region": "BR",
+  "diseaseName": "Doenca arterial periferica",
+  "prevalence": {
+    "value": "4-7% of adults >40 years",
+    "population": "Brazilian adults >40 years",
+    "year": 2024,
+    "source": "SBC/SBACV guidance; DataSUS risk factor surveys",
+    "trend": "increasing with aging and diabetes"
+  },
+  "incidence": {
+    "value": "3-5 per 1,000/year",
+    "population": "Adults >40 years",
+    "year": 2024,
+    "source": "Cardiovascular cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; high cardiovascular risk and disability",
+    "mortalityRate": "20-30 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "smoking",
+      "diabetes",
+      "hypertension",
+      "dyslipidemia",
+      "age >60",
+      "chronic kidney disease"
+    ],
+    "vulnerablePopulations": [
+      "smokers",
+      "people with diabetes",
+      "older adults"
+    ],
+    "diagnosticCriteria": "Ankle-brachial index <0.90; confirm with Doppler ultrasound or imaging"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited ABI screening in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "5-8 million adults",
+    "controlRate": "Low to moderate; risk factor control varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ABI and Doppler available mainly in referral centers",
+    "treatmentProtocol": "Smoking cessation, antiplatelets, statins, supervised walking; revascularization when indicated",
+    "regionalChallenges": "Underdiagnosis and limited vascular surgery access outside major cities",
+    "strongPoints": "SUS coverage for antiplatelets/statins and chronic disease programs"
+  }
+}

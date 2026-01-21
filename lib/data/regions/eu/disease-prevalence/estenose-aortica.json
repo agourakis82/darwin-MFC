@@ -1,0 +1,51 @@
+{
+  "diseaseId": "estenose-aortica",
+  "region": "EU",
+  "diseaseName": "Aortic stenosis",
+  "prevalence": {
+    "value": "2-4% of adults >65 years (severe 0.5-1%)",
+    "population": "EU adults >65 years",
+    "year": 2024,
+    "source": "ESC/EACTS valve guidelines; European echo registries",
+    "trend": "increasing with aging"
+  },
+  "incidence": {
+    "value": "0.3-0.6% per year in older adults",
+    "population": "Adults >65 years",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "high in severe disease; major heart failure burden",
+    "mortalityRate": "High without valve replacement",
+    "year": 2024,
+    "source": "WHO Europe cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "aging",
+      "bicuspid aortic valve",
+      "chronic kidney disease",
+      "hyperlipidemia",
+      "hypertension"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with bicuspid valves",
+      "people with chronic kidney disease"
+    ],
+    "diagnosticCriteria": "Echocardiography with valve area/gradient assessment; symptoms of dyspnea, angina, syncope"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic auscultation; echo access is widespread",
+    "treatmentAvailable": true,
+    "estimatedPatients": "2-3 million",
+    "controlRate": "High with access to SAVR and TAVR"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Echo-based staging and heart-team evaluation",
+    "treatmentProtocol": "SAVR or TAVR based on risk and anatomy; comprehensive heart-team care",
+    "regionalChallenges": "Rising demand from aging populations and system costs",
+    "strongPoints": "Broad access to TAVR and specialized valve centers"
+  }
+}

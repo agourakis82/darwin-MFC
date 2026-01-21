@@ -1,0 +1,52 @@
+{
+  "diseaseId": "sincope",
+  "region": "IN",
+  "diseaseName": "Syncope",
+  "prevalence": {
+    "value": "2-4% annual episodes; underreported",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Emergency care studies; CSI guidance",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "5-8 per 1,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Emergency department cohorts"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to injuries and lost productivity",
+    "mortalityRate": "Low overall; higher when cardiac causes",
+    "year": 2024,
+    "source": "IHME/GBD injury context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "orthostatic hypotension",
+      "dehydration",
+      "cardiac arrhythmias",
+      "structural heart disease",
+      "anemia",
+      "medications"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with heart disease",
+      "people with anemia"
+    ],
+    "diagnosticCriteria": "History and exam, orthostatic BP, ECG; targeted testing when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; evaluated in emergency/primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "15-25 million episodes/year",
+    "controlRate": "Low to moderate; limited access to advanced cardiac evaluation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ECG access varies; advanced testing mainly in urban centers",
+    "treatmentProtocol": "Treat underlying cause; hydration and medication review; pacemaker for conduction disease",
+    "regionalChallenges": "Limited EMS coverage and diagnostic resources in rural areas",
+    "strongPoints": "Expanding emergency care services and cardiology capacity"
+  }
+}

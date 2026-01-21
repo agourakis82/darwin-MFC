@@ -1,0 +1,52 @@
+{
+  "diseaseId": "hiperprolactinemia",
+  "region": "BR",
+  "diseaseName": "Hiperprolactinemia",
+  "prevalence": {
+    "value": "~0.4-1% of adults; higher in women with amenorrhea/infertility",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBEM endocrine guidance; clinic-based studies",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "10-30 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "Endocrinology cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low population burden; reproductive and sexual health impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD endocrine context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prolactinoma",
+      "antipsychotic or dopamine-blocking drugs",
+      "hypothyroidism",
+      "pregnancy/lactation",
+      "pituitary stalk lesions",
+      "chronic kidney disease"
+    ],
+    "vulnerablePopulations": [
+      "women of reproductive age",
+      "patients on antipsychotics",
+      "people with pituitary tumors"
+    ],
+    "diagnosticCriteria": "Elevated prolactin on repeat testing; exclude pregnancy and hypothyroidism; assess macroprolactin; pituitary MRI"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven testing",
+    "treatmentAvailable": true,
+    "estimatedPatients": "0.8-1.5 million adults",
+    "controlRate": "High with dopamine agonists when adherence is good"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care referral for endocrine workup and imaging",
+    "treatmentProtocol": "Dopamine agonists (cabergoline or bromocriptine); surgery for refractory macroadenomas",
+    "regionalChallenges": "Limited MRI access and specialist availability in some SUS regions",
+    "strongPoints": "Clear SBEM guidance and availability of low-cost dopamine agonists"
+  }
+}

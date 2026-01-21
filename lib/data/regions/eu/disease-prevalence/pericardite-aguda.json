@@ -1,0 +1,51 @@
+{
+  "diseaseId": "pericardite-aguda",
+  "region": "EU",
+  "diseaseName": "Acute pericarditis",
+  "prevalence": {
+    "value": "15-25 per 100,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ESC pericardial guidelines; European registries",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "15-25 per 100,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European hospital registries"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; recurrent cases drive morbidity",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "WHO Europe cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral infections",
+      "post-myocardial infarction",
+      "autoimmune disease",
+      "uremia",
+      "neoplastic disease"
+    ],
+    "vulnerablePopulations": [
+      "immunosuppressed patients",
+      "recent MI patients",
+      "patients with autoimmune disease"
+    ],
+    "diagnosticCriteria": "At least two of: pleuritic chest pain, pericardial rub, typical ECG changes, or pericardial effusion"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis in emergency settings",
+    "treatmentAvailable": true,
+    "estimatedPatients": "70,000-110,000 cases/year",
+    "controlRate": "High with guideline-based therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Rapid access to ECG and echocardiography",
+    "treatmentProtocol": "NSAIDs plus colchicine; etiologic workup for recurrent cases",
+    "regionalChallenges": "Recurrent pericarditis and healthcare utilization",
+    "strongPoints": "ESC guideline adherence and access to colchicine"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "diseaseId": "flutter-atrial",
+  "region": "EU",
+  "diseaseName": "Atrial flutter",
+  "prevalence": {
+    "value": "0.2% of adults",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ESC arrhythmia guidelines; European registries",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "20-40 per 100,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "European electrophysiology registries"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to stroke risk and hospitalizations",
+    "mortalityRate": "Low to moderate (stroke-related)",
+    "year": 2024,
+    "source": "WHO Europe cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "structural heart disease",
+      "hypertension",
+      "COPD",
+      "thyroid disease",
+      "post-cardiac surgery",
+      "alcohol use"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with heart failure",
+      "post-surgical cardiac patients"
+    ],
+    "diagnosticCriteria": "ECG with sawtooth flutter waves; rhythm monitoring if intermittent"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic ECG screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "0.7-0.9 million",
+    "controlRate": "High with access to catheter ablation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ECG and ambulatory monitoring widely available",
+    "treatmentProtocol": "Rate control, anticoagulation, and catheter ablation as definitive therapy",
+    "regionalChallenges": "Rising arrhythmia burden with aging",
+    "strongPoints": "Strong guideline adherence and broad EP access"
+  }
+}

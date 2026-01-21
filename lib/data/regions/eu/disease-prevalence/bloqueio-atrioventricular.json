@@ -1,0 +1,51 @@
+{
+  "diseaseId": "bloqueio-atrioventricular",
+  "region": "EU",
+  "diseaseName": "Atrioventricular block",
+  "prevalence": {
+    "value": "0.15-0.3% of adults (higher in elderly)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ESC pacing guidelines; registries",
+    "trend": "increasing with aging"
+  },
+  "incidence": {
+    "value": "30-50 per 100,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "European pacemaker registries"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; syncope and heart failure risk",
+    "mortalityRate": "Low to moderate; higher without pacing",
+    "year": 2024,
+    "source": "WHO Europe cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age-related conduction system fibrosis",
+      "ischemic heart disease",
+      "medications (beta-blockers, calcium channel blockers)",
+      "myocarditis",
+      "infiltrative disease"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with ischemic heart disease",
+      "people on AV node blocking drugs"
+    ],
+    "diagnosticCriteria": "ECG showing PR prolongation, dropped beats, or complete AV dissociation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic ECG screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "0.7-1.2 million",
+    "controlRate": "High with broad access to pacing"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ECG and Holter widely available",
+    "treatmentProtocol": "Permanent pacemaker for high-grade AV block; medication review",
+    "regionalChallenges": "Rising device demand with aging populations",
+    "strongPoints": "Strong pacing programs and follow-up infrastructure"
+  }
+}

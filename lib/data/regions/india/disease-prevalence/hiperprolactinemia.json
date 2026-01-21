@@ -1,0 +1,51 @@
+{
+  "diseaseId": "hiperprolactinemia",
+  "region": "IN",
+  "diseaseName": "Hyperprolactinemia",
+  "prevalence": {
+    "value": "~0.3-0.8% of adults; higher in infertility clinics",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Endocrine Society of India reports; ICMR clinic studies",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "8-20 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "Endocrine clinic registries"
+  },
+  "burden": {
+    "dalyPerCapita": "low population burden; reproductive and bone health impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD endocrine context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prolactinoma",
+      "antipsychotic or dopamine-blocking drugs",
+      "hypothyroidism",
+      "pregnancy/lactation",
+      "pituitary stalk lesions"
+    ],
+    "vulnerablePopulations": [
+      "women with infertility or amenorrhea",
+      "patients on antipsychotics",
+      "people with pituitary disease"
+    ],
+    "diagnosticCriteria": "Repeat elevated prolactin; exclude pregnancy and thyroid disease; assess macroprolactin; pituitary MRI when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "4-8 million adults",
+    "controlRate": "Moderate; access depends on MRI and specialist availability"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Gynecology/endocrine referral with lab confirmation; MRI mainly in urban centers",
+    "treatmentProtocol": "Bromocriptine or cabergoline; surgery for resistant macroadenomas",
+    "regionalChallenges": "Limited imaging access and out-of-pocket costs",
+    "strongPoints": "Availability of low-cost generics and expanding endocrine services"
+  }
+}

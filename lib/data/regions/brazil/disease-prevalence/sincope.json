@@ -1,0 +1,52 @@
+{
+  "diseaseId": "sincope",
+  "region": "BR",
+  "diseaseName": "Sincope",
+  "prevalence": {
+    "value": "3-5% annual episodes; lifetime 30-40%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBC/ESC syncope guidance; emergency data",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "6-10 per 1,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Emergency department cohorts"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to injuries and hospitalizations",
+    "mortalityRate": "Low overall; higher when cardiac causes",
+    "year": 2024,
+    "source": "IHME/GBD injury context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "orthostatic hypotension",
+      "dehydration",
+      "cardiac arrhythmias",
+      "structural heart disease",
+      "medications (antihypertensives)",
+      "older age"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with heart disease",
+      "people on multiple medications"
+    ],
+    "diagnosticCriteria": "History and physical exam, orthostatic BP, ECG; further testing (Holter, tilt test) when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; evaluated in urgent care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "5-8 million episodes/year",
+    "controlRate": "Moderate; depends on access to cardiac evaluation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ECG available widely; advanced testing concentrated in referral centers",
+    "treatmentProtocol": "Treat underlying cause; hydration and medication review; pacemaker for conduction disease",
+    "regionalChallenges": "Limited access to tilt-table testing and long-term rhythm monitoring",
+    "strongPoints": "Emergency protocols and cardiology referral pathways in SUS"
+  }
+}

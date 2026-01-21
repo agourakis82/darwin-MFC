@@ -1,0 +1,51 @@
+{
+  "diseaseId": "bloqueio-atrioventricular",
+  "region": "BR",
+  "diseaseName": "Bloqueio atrioventricular",
+  "prevalence": {
+    "value": "0.1-0.2% of adults (higher in elderly)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBC pacing guidelines; ECG registries",
+    "trend": "increasing with aging"
+  },
+  "incidence": {
+    "value": "20-40 per 100,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Pacemaker registry data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; syncope and sudden death risk in high-grade block",
+    "mortalityRate": "Low to moderate; higher in untreated high-grade block",
+    "year": 2024,
+    "source": "IHME/GBD cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age-related conduction system fibrosis",
+      "ischemic heart disease",
+      "medications (beta-blockers, calcium channel blockers)",
+      "myocarditis",
+      "Chagas disease"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with ischemic heart disease",
+      "people with Chagas cardiomyopathy"
+    ],
+    "diagnosticCriteria": "ECG showing PR prolongation, dropped beats, or complete AV dissociation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic ECG screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "0.2-0.4 million",
+    "controlRate": "Moderate; pacemaker access varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ECG widely available; Holter for intermittent block",
+    "treatmentProtocol": "Permanent pacemaker for Mobitz II or complete AV block; medication review",
+    "regionalChallenges": "Uneven pacemaker access in remote regions",
+    "strongPoints": "SUS provides pacemaker implantation in referral centers"
+  }
+}

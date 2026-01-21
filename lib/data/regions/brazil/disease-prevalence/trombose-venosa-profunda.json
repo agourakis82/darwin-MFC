@@ -1,0 +1,53 @@
+{
+  "diseaseId": "trombose-venosa-profunda",
+  "region": "BR",
+  "diseaseName": "Trombose venosa profunda",
+  "prevalence": {
+    "value": "0.1-0.2% point prevalence; lifetime risk 5-8%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBACV/VTE epidemiology reports; DataSUS",
+    "trend": "increasing with aging and cancer burden"
+  },
+  "incidence": {
+    "value": "1-2 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "VTE cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; risk of PE and post-thrombotic syndrome",
+    "mortalityRate": "5-10 per 100,000 (including PE-related deaths)",
+    "year": 2024,
+    "source": "IHME/GBD VTE context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "recent surgery or trauma",
+      "immobility",
+      "cancer",
+      "pregnancy/postpartum",
+      "estrogen therapy",
+      "prior VTE"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "post-operative patients",
+      "cancer patients",
+      "pregnant/postpartum people"
+    ],
+    "diagnosticCriteria": "Wells score assessment, D-dimer when appropriate, confirmation by venous duplex ultrasound"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; hospital prophylaxis varies",
+    "treatmentAvailable": true,
+    "estimatedPatients": "120,000-200,000 VTE events/year",
+    "controlRate": "Variable; depends on timely diagnosis and anticoagulation access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Ultrasound access better in urban centers; delays in rural areas",
+    "treatmentProtocol": "Heparin/LMWH then DOACs or warfarin; compression therapy",
+    "regionalChallenges": "Uneven access to D-dimer/ultrasound and long-term anticoagulation follow-up",
+    "strongPoints": "SUS provides inpatient anticoagulation and expanding DOAC availability"
+  }
+}

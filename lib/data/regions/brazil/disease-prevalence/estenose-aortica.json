@@ -1,0 +1,51 @@
+{
+  "diseaseId": "estenose-aortica",
+  "region": "BR",
+  "diseaseName": "Estenose aortica",
+  "prevalence": {
+    "value": "2-4% of adults >65 years (severe 0.5-1%)",
+    "population": "Brazilian adults >65 years",
+    "year": 2024,
+    "source": "SBC valvular guidelines; echocardiography registries",
+    "trend": "increasing with aging"
+  },
+  "incidence": {
+    "value": "0.3-0.5% per year in older adults",
+    "population": "Adults >65 years",
+    "year": 2024,
+    "source": "Cardiac echo cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "high in severe disease; major impact on heart failure",
+    "mortalityRate": "High without valve replacement",
+    "year": 2024,
+    "source": "IHME/GBD cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "aging",
+      "bicuspid aortic valve",
+      "rheumatic heart disease",
+      "chronic kidney disease",
+      "hyperlipidemia"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with bicuspid valves",
+      "people with rheumatic disease history"
+    ],
+    "diagnosticCriteria": "Echocardiography with valve area and gradient assessment; symptoms of exertional dyspnea, angina, or syncope"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic auscultation; echo when symptomatic",
+    "treatmentAvailable": true,
+    "estimatedPatients": "0.4-0.6 million",
+    "controlRate": "Low to moderate; access to valve replacement is variable"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Echocardiography access concentrated in referral centers",
+    "treatmentProtocol": "Surgical aortic valve replacement (SAVR); TAVR limited in SUS",
+    "regionalChallenges": "Long wait times for surgery and limited TAVR availability",
+    "strongPoints": "SBC guidelines and expanding cardiac surgery capacity"
+  }
+}

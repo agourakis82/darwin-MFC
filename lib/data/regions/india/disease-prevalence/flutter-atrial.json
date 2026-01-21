@@ -1,0 +1,52 @@
+{
+  "diseaseId": "flutter-atrial",
+  "region": "IN",
+  "diseaseName": "Atrial flutter",
+  "prevalence": {
+    "value": "~0.1% of adults",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "CSI/Heart Rhythm Society of India reports",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "15-30 per 100,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Electrophysiology registry data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to stroke risk and hospitalization",
+    "mortalityRate": "Low to moderate (stroke-related)",
+    "year": 2024,
+    "source": "IHME/GBD cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "structural heart disease",
+      "hypertension",
+      "COPD",
+      "thyroid disease",
+      "post-cardiac surgery",
+      "alcohol use"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with heart failure",
+      "post-surgical cardiac patients"
+    ],
+    "diagnosticCriteria": "ECG with sawtooth flutter waves; rhythm monitoring when intermittent"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic ECG screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "1-1.5 million",
+    "controlRate": "Low to moderate; ablation access limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ECG access variable; Holter mostly in urban centers",
+    "treatmentProtocol": "Rate control and anticoagulation; catheter ablation when available",
+    "regionalChallenges": "Limited EP labs and affordability barriers",
+    "strongPoints": "Expanding cardiac electrophysiology services"
+  }
+}

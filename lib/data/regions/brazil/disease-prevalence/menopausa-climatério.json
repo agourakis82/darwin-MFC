@@ -1,0 +1,51 @@
+{
+  "diseaseId": "menopausa-climatério",
+  "region": "BR",
+  "diseaseName": "Menopausa e climaterio",
+  "prevalence": {
+    "value": "60-80% symptomatic among women 45-60 years",
+    "population": "Brazilian women 45-60 years",
+    "year": 2024,
+    "source": "FEBRASGO/IMS menopause guidance; women's health surveys",
+    "trend": "stable; absolute numbers rising with aging"
+  },
+  "incidence": {
+    "value": "~4-6% per year entering menopause",
+    "population": "Women 45-55 years",
+    "year": 2024,
+    "source": "Gynecology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "quality-of-life impact from vasomotor and urogenital symptoms",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO women's health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "smoking",
+      "oophorectomy or ovarian failure",
+      "chemotherapy/radiation",
+      "low BMI"
+    ],
+    "vulnerablePopulations": [
+      "women with surgical menopause",
+      "smokers",
+      "cancer survivors"
+    ],
+    "diagnosticCriteria": "12 months of amenorrhea after age 45; FSH testing if diagnosis uncertain"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; clinical diagnosis in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "15-20 million women in peri/post-menopause",
+    "controlRate": "Moderate; symptom control depends on access to counseling and hormone therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis; rule out pregnancy, thyroid disease, and other causes of amenorrhea",
+    "treatmentProtocol": "Lifestyle measures, non-hormonal options, and menopausal hormone therapy when eligible; vaginal estrogen for urogenital symptoms",
+    "regionalChallenges": "Unequal access to gynecology care and persistent fear of hormone therapy",
+    "strongPoints": "SUS offers basic gynecologic care and widely available non-hormonal therapies"
+  }
+}

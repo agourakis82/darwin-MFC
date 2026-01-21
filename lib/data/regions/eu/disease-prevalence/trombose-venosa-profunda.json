@@ -1,0 +1,53 @@
+{
+  "diseaseId": "trombose-venosa-profunda",
+  "region": "EU",
+  "diseaseName": "Deep vein thrombosis (DVT)",
+  "prevalence": {
+    "value": "0.1-0.2% point prevalence; lifetime risk 5-8%",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ESC/ESVS VTE guidance; European registries",
+    "trend": "stable to increasing with aging"
+  },
+  "incidence": {
+    "value": "1-2 per 1,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European VTE registries"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; risk of PE and post-thrombotic syndrome",
+    "mortalityRate": "5-10 per 100,000 (including PE-related deaths)",
+    "year": 2024,
+    "source": "WHO Europe VTE context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "surgery or trauma",
+      "immobility",
+      "cancer",
+      "pregnancy/postpartum",
+      "estrogen therapy",
+      "prior VTE"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "post-operative patients",
+      "cancer patients",
+      "pregnant/postpartum people"
+    ],
+    "diagnosticCriteria": "Clinical pre-test probability, D-dimer, confirmation by venous duplex ultrasound"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; standardized hospital prophylaxis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "0.4-0.8 million VTE events/year",
+    "controlRate": "High with standardized anticoagulation pathways"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Rapid access to ultrasound and D-dimer testing",
+    "treatmentProtocol": "DOACs first-line for most patients; LMWH for cancer-related VTE",
+    "regionalChallenges": "Aging population increases VTE burden",
+    "strongPoints": "Strong guideline adherence and anticoagulation clinics"
+  }
+}

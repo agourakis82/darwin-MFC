@@ -1,0 +1,52 @@
+{
+  "diseaseId": "flutter-atrial",
+  "region": "BR",
+  "diseaseName": "Flutter atrial",
+  "prevalence": {
+    "value": "0.1-0.2% of adults",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBC arrhythmia guidance; ECG registries",
+    "trend": "stable to increasing with aging"
+  },
+  "incidence": {
+    "value": "20-40 per 100,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Electrophysiology registry data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to stroke risk and hospitalization",
+    "mortalityRate": "Low to moderate (stroke-related)",
+    "year": 2024,
+    "source": "IHME/GBD cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "structural heart disease",
+      "hypertension",
+      "COPD",
+      "thyroid disease",
+      "post-cardiac surgery",
+      "alcohol use"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with heart failure",
+      "post-surgical cardiac patients"
+    ],
+    "diagnosticCriteria": "ECG with sawtooth flutter waves; confirm with rhythm monitoring if intermittent"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic ECG screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "0.2-0.4 million",
+    "controlRate": "Moderate; access to ablation varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ECG widely available; Holter in referral centers",
+    "treatmentProtocol": "Rate control and anticoagulation; catheter ablation is definitive",
+    "regionalChallenges": "Limited electrophysiology centers and ablation access",
+    "strongPoints": "SBC guidelines and growing EP capacity"
+  }
+}

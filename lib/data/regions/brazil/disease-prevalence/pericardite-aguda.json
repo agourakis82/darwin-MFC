@@ -1,0 +1,51 @@
+{
+  "diseaseId": "pericardite-aguda",
+  "region": "BR",
+  "diseaseName": "Pericardite aguda",
+  "prevalence": {
+    "value": "20-30 per 100,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBC/ESC pericardial guidance; hospital data",
+    "trend": "stable with occasional post-viral spikes"
+  },
+  "incidence": {
+    "value": "20-30 per 100,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Hospital-based cardiology series"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality but significant hospitalization burden",
+    "mortalityRate": "Low; higher with purulent or tuberculous pericarditis",
+    "year": 2024,
+    "source": "IHME/GBD cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral infections",
+      "tuberculosis",
+      "post-myocardial infarction",
+      "autoimmune disease",
+      "uremia"
+    ],
+    "vulnerablePopulations": [
+      "patients with TB",
+      "immunosuppressed patients",
+      "recent MI patients"
+    ],
+    "diagnosticCriteria": "At least two of: pleuritic chest pain, pericardial rub, typical ECG changes, or pericardial effusion"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis in emergency settings",
+    "treatmentAvailable": true,
+    "estimatedPatients": "40,000-60,000 cases/year",
+    "controlRate": "High with NSAIDs/colchicine; recurrence in a subset"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ECG and echocardiography available in referral centers",
+    "treatmentProtocol": "NSAIDs plus colchicine; treat underlying cause; steroids for select cases",
+    "regionalChallenges": "Delayed diagnosis in remote areas and TB-related cases",
+    "strongPoints": "Colchicine availability and standardized cardiology protocols"
+  }
+}

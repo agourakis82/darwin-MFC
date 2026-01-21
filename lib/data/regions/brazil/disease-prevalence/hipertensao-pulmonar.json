@@ -1,0 +1,51 @@
+{
+  "diseaseId": "hipertensao-pulmonar",
+  "region": "BR",
+  "diseaseName": "Hipertensao pulmonar",
+  "prevalence": {
+    "value": "~1% of adults (all causes; higher in >65)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBC/ERS guidance; cardiopulmonary registries",
+    "trend": "increasing with aging and chronic lung disease"
+  },
+  "incidence": {
+    "value": "2-5 per million/year (PAH)",
+    "population": "General population",
+    "year": 2024,
+    "source": "PAH registries"
+  },
+  "burden": {
+    "dalyPerCapita": "high in advanced disease; right heart failure burden",
+    "mortalityRate": "Moderate to high in advanced cases",
+    "year": 2024,
+    "source": "IHME/GBD cardiopulmonary context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "left heart disease",
+      "chronic lung disease",
+      "chronic thromboembolic disease",
+      "schistosomiasis",
+      "connective tissue disease"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with COPD or ILD",
+      "people with schistosomiasis exposure"
+    ],
+    "diagnosticCriteria": "Echocardiography screening; confirm with right heart catheterization and hemodynamic criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; referral-based diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "1-2 million (all causes)",
+    "controlRate": "Low to moderate; access to PH centers varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Echocardiography available; right heart catheterization limited to referral centers",
+    "treatmentProtocol": "Treat underlying cause; PAH therapy with PDE5 inhibitors/endothelin antagonists in select centers",
+    "regionalChallenges": "Limited specialized centers and schistosomiasis-associated disease",
+    "strongPoints": "Growing PH referral networks and access to generic sildenafil"
+  }
+}

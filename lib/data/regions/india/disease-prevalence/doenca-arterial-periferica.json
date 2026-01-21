@@ -1,0 +1,52 @@
+{
+  "diseaseId": "doenca-arterial-periferica",
+  "region": "IN",
+  "diseaseName": "Peripheral arterial disease",
+  "prevalence": {
+    "value": "3-5% of adults >40 years (higher in diabetes)",
+    "population": "Indian adults >40 years",
+    "year": 2024,
+    "source": "ICMR/CSI cardiovascular reports",
+    "trend": "increasing with diabetes and smoking"
+  },
+  "incidence": {
+    "value": "2-4 per 1,000/year",
+    "population": "Adults >40 years",
+    "year": 2024,
+    "source": "Cardiovascular cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; limb ischemia and high CV risk",
+    "mortalityRate": "15-25 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "diabetes",
+      "smoking",
+      "hypertension",
+      "dyslipidemia",
+      "age >60",
+      "chronic kidney disease"
+    ],
+    "vulnerablePopulations": [
+      "people with diabetes",
+      "smokers",
+      "older adults"
+    ],
+    "diagnosticCriteria": "Ankle-brachial index <0.90; Doppler ultrasound for confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "very limited ABI screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "15-25 million adults",
+    "controlRate": "Low; underdiagnosis and late presentation are common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ABI and Doppler mostly available in urban or tertiary centers",
+    "treatmentProtocol": "Risk factor control, antiplatelets/statins, supervised exercise; revascularization when feasible",
+    "regionalChallenges": "Late presentation, limited vascular surgery access, and cost barriers",
+    "strongPoints": "Availability of low-cost generics for antiplatelets and statins"
+  }
+}

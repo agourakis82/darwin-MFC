@@ -1,0 +1,51 @@
+{
+  "diseaseId": "hiperprolactinemia",
+  "region": "EU",
+  "diseaseName": "Hyperprolactinemia",
+  "prevalence": {
+    "value": "~0.4-1% of adults",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European Society of Endocrinology (ESE) guidance",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "10-20 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "European endocrine registries"
+  },
+  "burden": {
+    "dalyPerCapita": "low population burden; reproductive and bone health impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe endocrine context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prolactinoma",
+      "antipsychotic or dopamine-blocking drugs",
+      "hypothyroidism",
+      "pregnancy/lactation",
+      "pituitary stalk lesions"
+    ],
+    "vulnerablePopulations": [
+      "women of reproductive age",
+      "patients on antipsychotics",
+      "people with pituitary disease"
+    ],
+    "diagnosticCriteria": "Repeat elevated prolactin; exclude pregnancy and thyroid disease; assess macroprolactin; pituitary MRI"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "2-4 million adults",
+    "controlRate": "High with access to dopamine agonists and imaging"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ESE guideline-based workup with MRI access",
+    "treatmentProtocol": "Cabergoline first-line; surgery for resistant macroadenomas",
+    "regionalChallenges": "Medication-induced cases from antipsychotics and polypharmacy",
+    "strongPoints": "Specialist endocrine centers and broad access to imaging"
+  }
+}

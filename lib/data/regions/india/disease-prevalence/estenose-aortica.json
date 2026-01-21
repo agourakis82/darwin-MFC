@@ -1,0 +1,51 @@
+{
+  "diseaseId": "estenose-aortica",
+  "region": "IN",
+  "diseaseName": "Aortic stenosis",
+  "prevalence": {
+    "value": "1-2% of adults >65 years",
+    "population": "Indian adults >65 years",
+    "year": 2024,
+    "source": "CSI reports; echocardiography clinic data",
+    "trend": "increasing with aging"
+  },
+  "incidence": {
+    "value": "0.2-0.3% per year in older adults",
+    "population": "Adults >65 years",
+    "year": 2024,
+    "source": "Cardiac cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "high in severe disease; significant heart failure burden",
+    "mortalityRate": "High without valve replacement",
+    "year": 2024,
+    "source": "IHME/GBD cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "aging",
+      "bicuspid aortic valve",
+      "rheumatic heart disease",
+      "chronic kidney disease",
+      "hypertension"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with rheumatic heart disease",
+      "people with bicuspid valves"
+    ],
+    "diagnosticCriteria": "Echocardiography with valve area/gradient assessment; symptomatic triad of dyspnea, angina, syncope"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic auscultation; echo when symptomatic",
+    "treatmentAvailable": true,
+    "estimatedPatients": "1-2 million",
+    "controlRate": "Low; limited access to valve replacement"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Echocardiography mainly in urban or tertiary centers",
+    "treatmentProtocol": "Surgical valve replacement; TAVR available in select centers",
+    "regionalChallenges": "Late presentation and affordability barriers",
+    "strongPoints": "Growing network of cardiac surgery centers"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "diseaseId": "cardiomiopatia-hipertrofica",
+  "region": "IN",
+  "diseaseName": "Hypertrophic cardiomyopathy",
+  "prevalence": {
+    "value": "~0.2% (1 in 500); underdiagnosed",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "CSI cardiomyopathy reports",
+    "trend": "stable; detection increasing"
+  },
+  "incidence": {
+    "value": "2-4 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "Cardiology registry data"
+  },
+  "burden": {
+    "dalyPerCapita": "low population burden; sudden cardiac death risk in young",
+    "mortalityRate": "Low overall; higher in high-risk subsets",
+    "year": 2024,
+    "source": "IHME/GBD cardiomyopathy context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "sarcomere gene mutations",
+      "family history",
+      "male sex",
+      "hypertension (as confounder)",
+      "athletic screening detection"
+    ],
+    "vulnerablePopulations": [
+      "families with known HCM",
+      "young adults",
+      "athletes"
+    ],
+    "diagnosticCriteria": "Unexplained LV wall thickness on echocardiography or MRI; family history and genetic testing support"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no population screening; family-based evaluation",
+    "treatmentAvailable": true,
+    "estimatedPatients": "2-3 million",
+    "controlRate": "Low to moderate; limited access to MRI/genetics and ICDs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Echo access in urban centers; MRI/genetics limited",
+    "treatmentProtocol": "Beta-blockers, calcium channel blockers, ICD for high-risk; septal reduction in select centers",
+    "regionalChallenges": "Underdiagnosis and limited advanced care access",
+    "strongPoints": "Growing cardiology centers and increasing awareness"
+  }
+}

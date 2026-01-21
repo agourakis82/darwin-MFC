@@ -1,0 +1,51 @@
+{
+  "diseaseId": "bloqueio-atrioventricular",
+  "region": "IN",
+  "diseaseName": "Atrioventricular block",
+  "prevalence": {
+    "value": "0.08-0.15% of adults",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "CSI pacing reports",
+    "trend": "increasing with aging"
+  },
+  "incidence": {
+    "value": "15-30 per 100,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Pacemaker registry data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; syncope and heart failure risk",
+    "mortalityRate": "Low to moderate; higher without pacing",
+    "year": 2024,
+    "source": "IHME/GBD cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age-related conduction system fibrosis",
+      "ischemic heart disease",
+      "medications (beta-blockers, calcium channel blockers)",
+      "myocarditis",
+      "infiltrative disease"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with ischemic heart disease",
+      "people on AV node blocking drugs"
+    ],
+    "diagnosticCriteria": "ECG showing PR prolongation, dropped beats, or complete AV dissociation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic ECG screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "1-2 million",
+    "controlRate": "Low to moderate; pacemaker access limited by cost"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ECG access variable; Holter mainly in urban centers",
+    "treatmentProtocol": "Permanent pacemaker for high-grade AV block; medication review",
+    "regionalChallenges": "Pacemaker affordability and limited follow-up infrastructure",
+    "strongPoints": "Expanding cardiology services and local device availability"
+  }
+}

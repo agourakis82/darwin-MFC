@@ -1,0 +1,52 @@
+{
+  "diseaseId": "sincope",
+  "region": "EU",
+  "diseaseName": "Syncope",
+  "prevalence": {
+    "value": "3-5% annual episodes; lifetime 30-40%",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ESC syncope guidelines; European cohort data",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "6-10 per 1,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "European emergency care cohorts"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to injuries and hospitalizations",
+    "mortalityRate": "Low overall; higher when cardiac causes",
+    "year": 2024,
+    "source": "WHO Europe injury context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "orthostatic hypotension",
+      "dehydration",
+      "cardiac arrhythmias",
+      "structural heart disease",
+      "medications",
+      "older age"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with heart disease",
+      "people on polypharmacy"
+    ],
+    "diagnosticCriteria": "History and exam, orthostatic BP, ECG; ambulatory monitoring or tilt testing when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; evaluated in emergency/primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "15-20 million episodes/year",
+    "controlRate": "High with syncope units and guideline pathways"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Access to ambulatory ECG monitoring and syncope units",
+    "treatmentProtocol": "Treat underlying cause; pacemaker for conduction disease; targeted therapy for reflex syncope",
+    "regionalChallenges": "High healthcare utilization and recurrent cases",
+    "strongPoints": "ESC guideline adherence and specialized syncope clinics"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "diseaseId": "trombose-venosa-profunda",
+  "region": "IN",
+  "diseaseName": "Deep vein thrombosis (DVT)",
+  "prevalence": {
+    "value": "0.05-0.1% point prevalence; underdiagnosed",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "ICMR/VTE hospital studies",
+    "trend": "increasing with aging, cancer, and surgery"
+  },
+  "incidence": {
+    "value": "0.7-1.5 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Hospital-based VTE registries"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; risk of PE and post-thrombotic syndrome",
+    "mortalityRate": "4-8 per 100,000 (including PE-related deaths)",
+    "year": 2024,
+    "source": "IHME/GBD VTE context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "surgery or trauma",
+      "immobility",
+      "cancer",
+      "pregnancy/postpartum",
+      "estrogen therapy",
+      "prior VTE"
+    ],
+    "vulnerablePopulations": [
+      "post-operative patients",
+      "cancer patients",
+      "older adults",
+      "pregnant/postpartum people"
+    ],
+    "diagnosticCriteria": "Clinical pre-test probability, D-dimer when available, confirmation by venous duplex ultrasound"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; prophylaxis variable in hospitals",
+    "treatmentAvailable": true,
+    "estimatedPatients": "0.5-1.0 million VTE events/year",
+    "controlRate": "Low to moderate; delayed diagnosis is common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Ultrasound access mainly in urban centers",
+    "treatmentProtocol": "Heparin/LMWH then warfarin or DOACs when affordable",
+    "regionalChallenges": "Limited D-dimer/ultrasound access and anticoagulation monitoring constraints",
+    "strongPoints": "Availability of low-cost heparin and warfarin"
+  }
+}
