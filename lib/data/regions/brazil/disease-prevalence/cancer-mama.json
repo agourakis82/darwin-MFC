@@ -1,0 +1,52 @@
+{
+  "diseaseId": "cancer-mama",
+  "region": "BR",
+  "diseaseName": "Cancer de mama",
+  "prevalence": {
+    "value": "5-year prevalence 900-1200 per 100,000",
+    "population": "Brazilian women",
+    "year": 2024,
+    "source": "INCA/GLOBOCAN",
+    "trend": "stable to increasing"
+  },
+  "incidence": {
+    "value": "60-75 per 100,000/year",
+    "population": "Brazilian women",
+    "year": 2024,
+    "source": "INCA/GLOBOCAN"
+  },
+  "burden": {
+    "dalyPerCapita": "0.02-0.03",
+    "mortalityRate": "15-20 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "age >50",
+      "family history/BRCA",
+      "obesity",
+      "late first pregnancy",
+      "alcohol"
+    ],
+    "vulnerablePopulations": [
+      "women >50",
+      "women with family history",
+      "low screening access"
+    ],
+    "diagnosticCriteria": "Mammography/ultrasound with biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate mammography coverage",
+    "treatmentAvailable": true,
+    "estimatedPatients": "1.5-2.0 million survivors",
+    "controlRate": "Moderate; late diagnosis in some regions"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Mammography in SUS and referral centers",
+    "treatmentProtocol": "Surgery, radiotherapy, chemotherapy, and hormonal therapy",
+    "regionalChallenges": "Screening delays and regional disparities",
+    "strongPoints": "National screening recommendations and oncology centers"
+  }
+}

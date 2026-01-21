@@ -1,0 +1,52 @@
+{
+  "diseaseId": "cancer-colorretal",
+  "region": "IN",
+  "diseaseName": "Colorectal cancer",
+  "prevalence": {
+    "value": "5-year prevalence 60-120 per 100,000",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "ICMR/NCRP/GLOBOCAN",
+    "trend": "increasing with urbanization"
+  },
+  "incidence": {
+    "value": "7-12 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "ICMR/NCRP"
+  },
+  "burden": {
+    "dalyPerCapita": "0.006-0.01",
+    "mortalityRate": "6-8 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age >50",
+      "obesity",
+      "low fiber diet",
+      "smoking",
+      "family history",
+      "inflammatory bowel disease"
+    ],
+    "vulnerablePopulations": [
+      "urban populations",
+      "older adults",
+      "people with family history"
+    ],
+    "diagnosticCriteria": "Colonoscopy with biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "very limited",
+    "treatmentAvailable": true,
+    "estimatedPatients": "350,000-600,000",
+    "controlRate": "Low; late presentation common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Colonoscopy mainly in urban centers",
+    "treatmentProtocol": "Surgery and chemotherapy; radiotherapy for rectal cancer",
+    "regionalChallenges": "Limited screening and diagnostic capacity",
+    "strongPoints": "Expanding oncology services"
+  }
+}

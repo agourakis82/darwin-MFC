@@ -1,0 +1,51 @@
+{
+  "diseaseId": "cancer-pancreas",
+  "region": "BR",
+  "diseaseName": "Cancer de pancreas",
+  "prevalence": {
+    "value": "5-year prevalence 10-20 per 100,000",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "INCA/GLOBOCAN",
+    "trend": "stable to increasing"
+  },
+  "incidence": {
+    "value": "6-8 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "INCA/GLOBOCAN"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.015",
+    "mortalityRate": "5-7 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "smoking",
+      "chronic pancreatitis",
+      "diabetes",
+      "age >60",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "smokers",
+      "people with chronic pancreatitis"
+    ],
+    "diagnosticCriteria": "CT/MRI imaging with biopsy confirmation; CA 19-9 supportive"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "20,000-40,000",
+    "controlRate": "Low; late diagnosis common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Imaging and biopsy in referral centers",
+    "treatmentProtocol": "Surgical resection when resectable; systemic chemotherapy",
+    "regionalChallenges": "Late presentation and limited surgical capacity",
+    "strongPoints": "Oncology referral centers"
+  }
+}

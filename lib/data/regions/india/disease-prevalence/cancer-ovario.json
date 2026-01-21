@@ -1,0 +1,49 @@
+{
+  "diseaseId": "cancer-ovario",
+  "region": "IN",
+  "diseaseName": "Ovarian cancer",
+  "prevalence": {
+    "value": "5-year prevalence 60-80 per 100,000",
+    "population": "Indian women",
+    "year": 2024,
+    "source": "ICMR/NCRP/GLOBOCAN",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "5-7 per 100,000/year",
+    "population": "Indian women",
+    "year": 2024,
+    "source": "ICMR/NCRP"
+  },
+  "burden": {
+    "dalyPerCapita": "0.004-0.008",
+    "mortalityRate": "4-6 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age >50",
+      "family history/BRCA",
+      "nulliparity",
+      "endometriosis"
+    ],
+    "vulnerablePopulations": [
+      "older women",
+      "women with family history"
+    ],
+    "diagnosticCriteria": "Pelvic imaging with CA-125 support; definitive diagnosis by surgery/biopsy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "300,000-400,000",
+    "controlRate": "Low to moderate; late diagnosis common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Ultrasound and CA-125 in tertiary centers",
+    "treatmentProtocol": "Surgery and platinum-based chemotherapy",
+    "regionalChallenges": "Late presentation and limited specialized surgery",
+    "strongPoints": "Expanding oncology services"
+  }
+}

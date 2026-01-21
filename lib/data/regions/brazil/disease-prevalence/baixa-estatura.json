@@ -1,0 +1,51 @@
+{
+  "diseaseId": "baixa-estatura",
+  "region": "BR",
+  "diseaseName": "Baixa estatura",
+  "prevalence": {
+    "value": "2-3% of children (height < -2 SD)",
+    "population": "Brazilian children",
+    "year": 2024,
+    "source": "SISVAN/child growth surveys",
+    "trend": "stable to decreasing with nutrition programs"
+  },
+  "incidence": {
+    "value": "2-4 per 1,000 children/year",
+    "population": "Children",
+    "year": 2024,
+    "source": "Primary care growth monitoring"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; impacts growth and development",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO child health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "chronic malnutrition",
+      "endocrine disorders (GH deficiency, hypothyroidism)",
+      "chronic systemic disease",
+      "genetic syndromes",
+      "prematurity"
+    ],
+    "vulnerablePopulations": [
+      "low-income children",
+      "preterm infants",
+      "children with chronic disease"
+    ],
+    "diagnosticCriteria": "Height < -2 SD for age/sex or poor growth velocity; evaluate endocrine and systemic causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "routine growth monitoring in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "2-3 million children",
+    "controlRate": "Moderate; depends on access to endocrine evaluation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Growth charts used in UBS; referral for endocrine workup",
+    "treatmentProtocol": "Nutritional support and treatment of underlying causes; GH therapy for select cases",
+    "regionalChallenges": "Limited pediatric endocrinology access",
+    "strongPoints": "Primary care growth surveillance and nutrition programs"
+  }
+}

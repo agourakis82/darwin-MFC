@@ -1,0 +1,49 @@
+{
+  "diseaseId": "atrofia-muscular-espinhal",
+  "region": "EU",
+  "diseaseName": "Spinal muscular atrophy",
+  "prevalence": {
+    "value": "1-2 per 100,000",
+    "population": "EU population",
+    "year": 2024,
+    "source": "Orphanet/European rare disease registries",
+    "trend": "stable; improved detection"
+  },
+  "incidence": {
+    "value": "~1 per 10,000 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "European newborn screening reports"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case disability; low population burden",
+    "mortalityRate": "Low with early therapy; higher in untreated severe forms",
+    "year": 2024,
+    "source": "WHO Europe rare disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "SMN1 gene deletion",
+      "autosomal recessive inheritance",
+      "family history",
+      "consanguinity"
+    ],
+    "vulnerablePopulations": [
+      "infants and young children",
+      "families with carrier status"
+    ],
+    "diagnosticCriteria": "Clinical hypotonia/weakness plus genetic confirmation of SMN1 deletion"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "increasing pilot newborn screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "8,000-12,000",
+    "controlRate": "Moderate to high in specialized centers"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Genetic testing and neuromuscular centers widely available",
+    "treatmentProtocol": "Nusinersen/risdiplam and gene therapy where approved; multidisciplinary care",
+    "regionalChallenges": "High cost and access variation across countries",
+    "strongPoints": "Specialized neuromuscular networks and early treatment"
+  }
+}

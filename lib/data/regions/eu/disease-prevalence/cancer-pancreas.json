@@ -1,0 +1,51 @@
+{
+  "diseaseId": "cancer-pancreas",
+  "region": "EU",
+  "diseaseName": "Pancreatic cancer",
+  "prevalence": {
+    "value": "5-year prevalence 20-30 per 100,000",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ECIS/GLOBOCAN",
+    "trend": "increasing"
+  },
+  "incidence": {
+    "value": "10-12 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECIS/GLOBOCAN"
+  },
+  "burden": {
+    "dalyPerCapita": "0.012-0.02",
+    "mortalityRate": "9-11 per 100,000",
+    "year": 2024,
+    "source": "WHO Europe cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "smoking",
+      "chronic pancreatitis",
+      "diabetes",
+      "age >60",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "smokers",
+      "people with chronic pancreatitis"
+    ],
+    "diagnosticCriteria": "CT/MRI imaging with biopsy confirmation; CA 19-9 supportive"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "150,000-200,000",
+    "controlRate": "Low to moderate; late diagnosis common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist imaging and biopsy services",
+    "treatmentProtocol": "Surgery for resectable disease; systemic chemotherapy and palliative care",
+    "regionalChallenges": "High mortality and resource-intensive care",
+    "strongPoints": "Specialized cancer centers and clinical trials"
+  }
+}

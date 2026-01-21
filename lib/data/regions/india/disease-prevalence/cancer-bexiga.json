@@ -1,0 +1,51 @@
+{
+  "diseaseId": "cancer-bexiga",
+  "region": "IN",
+  "diseaseName": "Bladder cancer",
+  "prevalence": {
+    "value": "5-year prevalence 40-70 per 100,000",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "ICMR/NCRP/GLOBOCAN",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "3-5 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "ICMR/NCRP"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.004",
+    "mortalityRate": "2-4 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "smoking",
+      "occupational exposures",
+      "male sex",
+      "age >60",
+      "chronic cystitis"
+    ],
+    "vulnerablePopulations": [
+      "older men",
+      "smokers",
+      "industrial workers"
+    ],
+    "diagnosticCriteria": "Painless hematuria with cystoscopy and biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "80,000-120,000 survivors",
+    "controlRate": "Low to moderate; late presentation common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Cystoscopy mainly in tertiary centers",
+    "treatmentProtocol": "TURBT, intravesical therapy, cystectomy when feasible",
+    "regionalChallenges": "Limited cystoscopy access and cost barriers",
+    "strongPoints": "Expanding oncology services and generics"
+  }
+}

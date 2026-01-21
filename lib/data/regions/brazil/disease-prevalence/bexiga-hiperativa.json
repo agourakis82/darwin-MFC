@@ -1,0 +1,52 @@
+{
+  "diseaseId": "bexiga-hiperativa",
+  "region": "BR",
+  "diseaseName": "Bexiga hiperativa",
+  "prevalence": {
+    "value": "12-16% of adults",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "ICS/urogynecology surveys",
+    "trend": "increasing with aging"
+  },
+  "incidence": {
+    "value": "3-5 per 1,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Urology clinic data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; quality-of-life impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO bladder health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "female sex",
+      "obesity",
+      "diabetes",
+      "neurologic disease",
+      "menopause"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "women",
+      "people with neurologic disease"
+    ],
+    "diagnosticCriteria": "Urgency with or without urge incontinence for >3 months; exclude infection; bladder diary"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-based diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "20-25 million adults",
+    "controlRate": "Moderate; adherence to behavioral therapy varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and urology evaluation; rule out UTI",
+    "treatmentProtocol": "Behavioral therapy, pelvic floor training, antimuscarinics (oxybutynin) via SUS; mirabegron in select centers",
+    "regionalChallenges": "Limited urogynecology access and medication adherence",
+    "strongPoints": "Primary care access and low-cost antimuscarinics"
+  }
+}

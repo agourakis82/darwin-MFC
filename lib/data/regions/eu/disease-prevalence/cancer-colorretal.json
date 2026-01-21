@@ -1,0 +1,52 @@
+{
+  "diseaseId": "cancer-colorretal",
+  "region": "EU",
+  "diseaseName": "Colorectal cancer",
+  "prevalence": {
+    "value": "5-year prevalence 400-600 per 100,000",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ECIS/GLOBOCAN",
+    "trend": "stable with screening impact"
+  },
+  "incidence": {
+    "value": "50-70 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECIS/GLOBOCAN"
+  },
+  "burden": {
+    "dalyPerCapita": "0.015-0.025",
+    "mortalityRate": "20-25 per 100,000",
+    "year": 2024,
+    "source": "WHO Europe cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age >50",
+      "obesity",
+      "low fiber/high red meat diet",
+      "smoking",
+      "family history",
+      "inflammatory bowel disease"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "people with family history",
+      "low screening participation"
+    ],
+    "diagnosticCriteria": "Colonoscopy with biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate to high FIT/colonoscopy coverage",
+    "treatmentAvailable": true,
+    "estimatedPatients": "2-3 million",
+    "controlRate": "High with screening and multidisciplinary care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Organized screening programs with colonoscopy referral",
+    "treatmentProtocol": "Surgery, chemotherapy, radiotherapy, and biologics when indicated",
+    "regionalChallenges": "Resource intensity and regional disparities",
+    "strongPoints": "Structured screening programs and oncology networks"
+  }
+}

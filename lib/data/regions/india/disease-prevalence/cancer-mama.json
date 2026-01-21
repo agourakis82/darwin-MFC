@@ -1,0 +1,52 @@
+{
+  "diseaseId": "cancer-mama",
+  "region": "IN",
+  "diseaseName": "Breast cancer",
+  "prevalence": {
+    "value": "5-year prevalence 300-500 per 100,000",
+    "population": "Indian women",
+    "year": 2024,
+    "source": "ICMR/NCRP/GLOBOCAN",
+    "trend": "increasing"
+  },
+  "incidence": {
+    "value": "30-40 per 100,000/year",
+    "population": "Indian women",
+    "year": 2024,
+    "source": "ICMR/NCRP"
+  },
+  "burden": {
+    "dalyPerCapita": "0.02-0.03",
+    "mortalityRate": "15-20 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "age >45",
+      "family history/BRCA",
+      "obesity",
+      "late first pregnancy",
+      "alcohol"
+    ],
+    "vulnerablePopulations": [
+      "urban women",
+      "women with family history",
+      "low screening access"
+    ],
+    "diagnosticCriteria": "Clinical exam and imaging with biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; limited mammography coverage",
+    "treatmentAvailable": true,
+    "estimatedPatients": "2-3 million survivors",
+    "controlRate": "Low to moderate; late diagnosis common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical breast exam and imaging in urban centers",
+    "treatmentProtocol": "Surgery, chemotherapy, radiotherapy, and hormonal therapy",
+    "regionalChallenges": "Low screening coverage and late presentation",
+    "strongPoints": "Expanding oncology networks and generic therapies"
+  }
+}

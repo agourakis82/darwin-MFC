@@ -1,0 +1,49 @@
+{
+  "diseaseId": "cancer-colo-utero",
+  "region": "EU",
+  "diseaseName": "Cervical cancer",
+  "prevalence": {
+    "value": "5-year prevalence 100-150 per 100,000",
+    "population": "EU women",
+    "year": 2024,
+    "source": "ECIS/GLOBOCAN",
+    "trend": "decreasing with screening and HPV vaccination"
+  },
+  "incidence": {
+    "value": "10-12 per 100,000/year",
+    "population": "EU women",
+    "year": 2024,
+    "source": "ECIS/GLOBOCAN"
+  },
+  "burden": {
+    "dalyPerCapita": "0.004-0.008",
+    "mortalityRate": "3-4 per 100,000",
+    "year": 2024,
+    "source": "WHO Europe cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "HPV infection",
+      "smoking",
+      "immunosuppression",
+      "low screening participation"
+    ],
+    "vulnerablePopulations": [
+      "women with low screening access",
+      "migrant populations"
+    ],
+    "diagnosticCriteria": "HPV/Pap screening with colposcopy and biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "high HPV/Pap screening coverage",
+    "treatmentAvailable": true,
+    "estimatedPatients": "300,000-400,000",
+    "controlRate": "High with organized screening programs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Organized screening and colposcopy services",
+    "treatmentProtocol": "Excisional procedures, surgery, and chemoradiation",
+    "regionalChallenges": "Coverage gaps in some regions",
+    "strongPoints": "Comprehensive screening and HPV vaccination"
+  }
+}

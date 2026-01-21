@@ -1,0 +1,52 @@
+{
+  "diseaseId": "bexiga-hiperativa",
+  "region": "EU",
+  "diseaseName": "Overactive bladder",
+  "prevalence": {
+    "value": "12-17% of adults",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ICS/European urology surveys",
+    "trend": "stable to increasing with aging"
+  },
+  "incidence": {
+    "value": "3-5 per 1,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Urology registry data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; quality-of-life impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe bladder health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "female sex",
+      "obesity",
+      "diabetes",
+      "neurologic disease",
+      "menopause"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "women",
+      "people with neurologic disease"
+    ],
+    "diagnosticCriteria": "Urgency with or without urge incontinence; bladder diary; exclude infection"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-based diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "60-70 million adults",
+    "controlRate": "Moderate to high with access to urology care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Urology evaluation with urodynamics when needed",
+    "treatmentProtocol": "Behavioral therapy, antimuscarinics, beta-3 agonists, botulinum toxin or neuromodulation when indicated",
+    "regionalChallenges": "High healthcare utilization",
+    "strongPoints": "Broad access to specialist care and medications"
+  }
+}

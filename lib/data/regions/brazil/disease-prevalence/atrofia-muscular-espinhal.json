@@ -1,0 +1,49 @@
+{
+  "diseaseId": "atrofia-muscular-espinhal",
+  "region": "BR",
+  "diseaseName": "Atrofia muscular espinhal (AME)",
+  "prevalence": {
+    "value": "1-2 per 100,000",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Orphanet/rare disease registries",
+    "trend": "stable; detection increasing with genetic testing"
+  },
+  "incidence": {
+    "value": "~1 per 10,000 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "Rare disease surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case disability; low population burden",
+    "mortalityRate": "Low with therapy; higher in untreated severe infantile forms",
+    "year": 2024,
+    "source": "IHME/GBD rare disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "SMN1 gene deletion",
+      "autosomal recessive inheritance",
+      "family history",
+      "consanguinity"
+    ],
+    "vulnerablePopulations": [
+      "infants and young children",
+      "families with carrier status"
+    ],
+    "diagnosticCriteria": "Clinical hypotonia/weakness plus genetic confirmation of SMN1 deletion"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited; pilot newborn screening in select states",
+    "treatmentAvailable": true,
+    "estimatedPatients": "2,000-4,000",
+    "controlRate": "Low to moderate; access to disease-modifying therapy is limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Genetic testing in referral centers",
+    "treatmentProtocol": "Nusinersen or risdiplam when available; multidisciplinary respiratory/nutritional care",
+    "regionalChallenges": "High therapy cost and limited access outside reference centers",
+    "strongPoints": "Rare disease centers and growing diagnostic capacity"
+  }
+}

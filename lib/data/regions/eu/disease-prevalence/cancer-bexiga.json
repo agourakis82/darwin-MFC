@@ -1,0 +1,51 @@
+{
+  "diseaseId": "cancer-bexiga",
+  "region": "EU",
+  "diseaseName": "Bladder cancer",
+  "prevalence": {
+    "value": "5-year prevalence 120-180 per 100,000",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ECIS/GLOBOCAN",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "15-20 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECIS/GLOBOCAN"
+  },
+  "burden": {
+    "dalyPerCapita": "0.004-0.006",
+    "mortalityRate": "5-7 per 100,000",
+    "year": 2024,
+    "source": "WHO Europe cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "smoking",
+      "occupational aromatic amine exposure",
+      "male sex",
+      "age >65",
+      "chronic bladder inflammation"
+    ],
+    "vulnerablePopulations": [
+      "older men",
+      "smokers",
+      "industrial workers"
+    ],
+    "diagnosticCriteria": "Painless hematuria with cystoscopy and biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "500,000-700,000 survivors",
+    "controlRate": "High with structured follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Cystoscopy and imaging widely available",
+    "treatmentProtocol": "TURBT, intravesical BCG, cystectomy, and immunotherapy",
+    "regionalChallenges": "High follow-up burden and costs",
+    "strongPoints": "Comprehensive oncology networks"
+  }
+}

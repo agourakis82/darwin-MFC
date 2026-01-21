@@ -1,0 +1,52 @@
+{
+  "diseaseId": "avc-isquemico",
+  "region": "EU",
+  "diseaseName": "Ischemic stroke",
+  "prevalence": {
+    "value": "1-2% of adults (stroke survivors; ischemic majority)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "WHO Europe/GBD stroke estimates",
+    "trend": "stable with improved prevention"
+  },
+  "incidence": {
+    "value": "100-150 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "WHO Europe/GBD stroke estimates"
+  },
+  "burden": {
+    "dalyPerCapita": "0.008-0.015",
+    "mortalityRate": "30-40 per 100,000",
+    "year": 2024,
+    "source": "WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "hypertension",
+      "atrial fibrillation",
+      "diabetes",
+      "smoking",
+      "dyslipidemia",
+      "age >65"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "people with atrial fibrillation",
+      "low socioeconomic groups"
+    ],
+    "diagnosticCriteria": "Acute neurologic deficit with CT/MRI evidence of ischemia"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "risk factor screening and AF detection in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "7-9 million stroke survivors",
+    "controlRate": "Moderate to high with stroke units and rehab access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Rapid imaging and stroke unit pathways",
+    "treatmentProtocol": "Thrombolysis and thrombectomy; structured secondary prevention",
+    "regionalChallenges": "Aging populations increasing demand",
+    "strongPoints": "Wide stroke unit coverage and rehabilitation services"
+  }
+}

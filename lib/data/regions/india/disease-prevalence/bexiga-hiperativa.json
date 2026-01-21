@@ -1,0 +1,52 @@
+{
+  "diseaseId": "bexiga-hiperativa",
+  "region": "IN",
+  "diseaseName": "Overactive bladder",
+  "prevalence": {
+    "value": "8-12% of adults",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Urology surveys",
+    "trend": "increasing with aging"
+  },
+  "incidence": {
+    "value": "2-4 per 1,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Urology clinic data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; quality-of-life impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO bladder health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "female sex",
+      "obesity",
+      "diabetes",
+      "neurologic disease",
+      "menopause"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "women",
+      "people with diabetes"
+    ],
+    "diagnosticCriteria": "Urgency with or without urge incontinence; exclude infection and obstruction"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-based diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "80-120 million adults",
+    "controlRate": "Low to moderate; stigma and limited specialist care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and urology evaluation; limited urodynamics",
+    "treatmentProtocol": "Behavioral therapy, antimuscarinics; mirabegron in urban centers",
+    "regionalChallenges": "Underreporting and limited access to urology services",
+    "strongPoints": "Availability of low-cost generics"
+  }
+}

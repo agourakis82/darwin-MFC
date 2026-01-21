@@ -1,0 +1,51 @@
+{
+  "diseaseId": "cancer-gastrico",
+  "region": "BR",
+  "diseaseName": "Cancer gastrico",
+  "prevalence": {
+    "value": "5-year prevalence 120-180 per 100,000",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "INCA/GLOBOCAN",
+    "trend": "stable to decreasing"
+  },
+  "incidence": {
+    "value": "12-18 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "INCA/GLOBOCAN"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.02",
+    "mortalityRate": "8-10 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "H. pylori infection",
+      "smoked/salted foods",
+      "smoking",
+      "age >60",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "people with H. pylori",
+      "low-income communities"
+    ],
+    "diagnosticCriteria": "Upper endoscopy with biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "200,000-300,000",
+    "controlRate": "Low to moderate; late diagnosis common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Endoscopy access in referral centers",
+    "treatmentProtocol": "Gastrectomy with perioperative chemotherapy",
+    "regionalChallenges": "Delayed diagnosis and limited endoscopy access",
+    "strongPoints": "Oncology centers and H. pylori treatment"
+  }
+}

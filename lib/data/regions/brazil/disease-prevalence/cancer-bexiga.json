@@ -1,0 +1,51 @@
+{
+  "diseaseId": "cancer-bexiga",
+  "region": "BR",
+  "diseaseName": "Cancer de bexiga",
+  "prevalence": {
+    "value": "5-year prevalence 70-100 per 100,000",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "INCA/GLOBOCAN",
+    "trend": "stable; higher in men"
+  },
+  "incidence": {
+    "value": "8-12 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "INCA/GLOBOCAN"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.005",
+    "mortalityRate": "3-5 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "smoking",
+      "occupational aromatic amine exposure",
+      "male sex",
+      "age >60",
+      "schistosomiasis (regional)"
+    ],
+    "vulnerablePopulations": [
+      "older men",
+      "smokers",
+      "industrial workers"
+    ],
+    "diagnosticCriteria": "Painless hematuria with cystoscopy and biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "120,000-180,000 survivors",
+    "controlRate": "Moderate; recurrence monitoring varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Cystoscopy and imaging in referral centers",
+    "treatmentProtocol": "TURBT, intravesical BCG, cystectomy for invasive disease",
+    "regionalChallenges": "Limited cystoscopy access and delayed diagnosis",
+    "strongPoints": "Oncology referral centers and BCG availability"
+  }
+}

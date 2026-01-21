@@ -1,0 +1,51 @@
+{
+  "diseaseId": "cancer-gastrico",
+  "region": "IN",
+  "diseaseName": "Gastric cancer",
+  "prevalence": {
+    "value": "5-year prevalence 80-120 per 100,000",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "ICMR/NCRP/GLOBOCAN",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "10-15 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "ICMR/NCRP"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.02",
+    "mortalityRate": "9-12 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "H. pylori infection",
+      "smoked/salted foods",
+      "smoking",
+      "age >60",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "people with H. pylori",
+      "low-income communities"
+    ],
+    "diagnosticCriteria": "Upper endoscopy with biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "300,000-500,000",
+    "controlRate": "Low; late-stage presentation common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Endoscopy primarily in urban centers",
+    "treatmentProtocol": "Gastrectomy with perioperative chemotherapy",
+    "regionalChallenges": "Delayed diagnosis and limited endoscopy availability",
+    "strongPoints": "Expanding oncology services"
+  }
+}

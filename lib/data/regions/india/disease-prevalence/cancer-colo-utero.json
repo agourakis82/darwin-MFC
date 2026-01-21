@@ -1,0 +1,51 @@
+{
+  "diseaseId": "cancer-colo-utero",
+  "region": "IN",
+  "diseaseName": "Cervical cancer",
+  "prevalence": {
+    "value": "5-year prevalence 200-300 per 100,000",
+    "population": "Indian women",
+    "year": 2024,
+    "source": "ICMR/NCRP/GLOBOCAN",
+    "trend": "slowly decreasing"
+  },
+  "incidence": {
+    "value": "18-24 per 100,000/year",
+    "population": "Indian women",
+    "year": 2024,
+    "source": "ICMR/NCRP"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.015",
+    "mortalityRate": "10-12 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "HPV infection",
+      "early sexual activity",
+      "multiple partners",
+      "smoking",
+      "HIV"
+    ],
+    "vulnerablePopulations": [
+      "women with low screening access",
+      "rural populations",
+      "women with HIV"
+    ],
+    "diagnosticCriteria": "Screening test abnormality with colposcopy and biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; opportunistic screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "1.2-1.6 million",
+    "controlRate": "Low; late-stage presentation common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Screening via VIA/Pap in public programs; limited colposcopy in rural areas",
+    "treatmentProtocol": "Surgery or chemoradiation based on stage",
+    "regionalChallenges": "Low screening coverage and delayed diagnosis",
+    "strongPoints": "National programs expanding HPV vaccination and screening"
+  }
+}

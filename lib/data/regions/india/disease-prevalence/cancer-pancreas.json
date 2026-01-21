@@ -1,0 +1,51 @@
+{
+  "diseaseId": "cancer-pancreas",
+  "region": "IN",
+  "diseaseName": "Pancreatic cancer",
+  "prevalence": {
+    "value": "5-year prevalence 5-10 per 100,000",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "ICMR/NCRP/GLOBOCAN",
+    "trend": "increasing"
+  },
+  "incidence": {
+    "value": "2-4 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "ICMR/NCRP"
+  },
+  "burden": {
+    "dalyPerCapita": "0.008-0.012",
+    "mortalityRate": "2-4 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "smoking",
+      "chronic pancreatitis",
+      "diabetes",
+      "age >60",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "smokers",
+      "people with chronic pancreatitis"
+    ],
+    "diagnosticCriteria": "CT/MRI imaging with biopsy confirmation; CA 19-9 supportive"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "50,000-80,000",
+    "controlRate": "Low; late diagnosis common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Imaging and biopsy in tertiary centers",
+    "treatmentProtocol": "Surgery when feasible; systemic chemotherapy",
+    "regionalChallenges": "Limited surgical capacity and late presentation",
+    "strongPoints": "Expanding oncology services"
+  }
+}

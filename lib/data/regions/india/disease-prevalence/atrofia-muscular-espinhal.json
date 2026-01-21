@@ -1,0 +1,49 @@
+{
+  "diseaseId": "atrofia-muscular-espinhal",
+  "region": "IN",
+  "diseaseName": "Spinal muscular atrophy",
+  "prevalence": {
+    "value": "1-2 per 100,000",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Orphanet/rare disease registries",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~1 per 10,000 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "Rare disease surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case disability; low population burden",
+    "mortalityRate": "Low with therapy; higher in untreated severe infantile forms",
+    "year": 2024,
+    "source": "IHME/GBD rare disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "SMN1 gene deletion",
+      "autosomal recessive inheritance",
+      "family history",
+      "consanguinity"
+    ],
+    "vulnerablePopulations": [
+      "infants and young children",
+      "families with carrier status"
+    ],
+    "diagnosticCriteria": "Clinical hypotonia/weakness plus genetic confirmation of SMN1 deletion"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "very limited; newborn screening not routine",
+    "treatmentAvailable": true,
+    "estimatedPatients": "10,000-20,000",
+    "controlRate": "Low; access to disease-modifying therapy is limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Genetic testing largely in urban tertiary centers",
+    "treatmentProtocol": "Supportive care; limited access to nusinersen/risdiplam; rehab services",
+    "regionalChallenges": "High cost, limited coverage, and delayed diagnosis",
+    "strongPoints": "Growing rare disease awareness and specialist networks"
+  }
+}

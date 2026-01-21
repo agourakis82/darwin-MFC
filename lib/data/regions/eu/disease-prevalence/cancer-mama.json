@@ -1,0 +1,52 @@
+{
+  "diseaseId": "cancer-mama",
+  "region": "EU",
+  "diseaseName": "Breast cancer",
+  "prevalence": {
+    "value": "5-year prevalence 1200-1600 per 100,000",
+    "population": "EU women",
+    "year": 2024,
+    "source": "ECIS/GLOBOCAN",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "90-110 per 100,000/year",
+    "population": "EU women",
+    "year": 2024,
+    "source": "ECIS/GLOBOCAN"
+  },
+  "burden": {
+    "dalyPerCapita": "0.02-0.03",
+    "mortalityRate": "12-15 per 100,000",
+    "year": 2024,
+    "source": "WHO Europe cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "age >50",
+      "family history/BRCA",
+      "obesity",
+      "late first pregnancy",
+      "alcohol"
+    ],
+    "vulnerablePopulations": [
+      "women >50",
+      "women with family history",
+      "low screening participation"
+    ],
+    "diagnosticCriteria": "Mammography/ultrasound with biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "high mammography coverage",
+    "treatmentAvailable": true,
+    "estimatedPatients": "3-4 million survivors",
+    "controlRate": "High with screening and multidisciplinary care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Organized screening and fast-track diagnostics",
+    "treatmentProtocol": "Surgery, radiotherapy, chemotherapy, hormonal and targeted therapies",
+    "regionalChallenges": "Rising costs of advanced therapies",
+    "strongPoints": "Comprehensive screening and oncology networks"
+  }
+}

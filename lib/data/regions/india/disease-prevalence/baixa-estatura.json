@@ -1,0 +1,51 @@
+{
+  "diseaseId": "baixa-estatura",
+  "region": "IN",
+  "diseaseName": "Short stature",
+  "prevalence": {
+    "value": "3-5% of children (pathologic short stature)",
+    "population": "Indian children",
+    "year": 2024,
+    "source": "ICMR/child growth surveys",
+    "trend": "slowly decreasing with nutrition programs"
+  },
+  "incidence": {
+    "value": "3-5 per 1,000 children/year",
+    "population": "Children",
+    "year": 2024,
+    "source": "Community growth monitoring"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; impacts development and schooling",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO SEAR child health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "chronic malnutrition",
+      "endocrine disorders",
+      "chronic infections",
+      "genetic syndromes",
+      "prematurity"
+    ],
+    "vulnerablePopulations": [
+      "low-income children",
+      "rural populations",
+      "children with chronic disease"
+    ],
+    "diagnosticCriteria": "Height < -2 SD for age/sex or poor growth velocity; evaluate endocrine and systemic causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "growth monitoring in maternal/child programs",
+    "treatmentAvailable": true,
+    "estimatedPatients": "15-25 million children",
+    "controlRate": "Low to moderate; specialist access limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care growth charts; referral for endocrine workup",
+    "treatmentProtocol": "Nutrition optimization, treat underlying disease; GH therapy for select cases",
+    "regionalChallenges": "Limited endocrine services and high stunting burden",
+    "strongPoints": "Large-scale nutrition programs and community health workers"
+  }
+}

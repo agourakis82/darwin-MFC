@@ -1,0 +1,49 @@
+{
+  "diseaseId": "cancer-ovario",
+  "region": "EU",
+  "diseaseName": "Ovarian cancer",
+  "prevalence": {
+    "value": "5-year prevalence 100-130 per 100,000",
+    "population": "EU women",
+    "year": 2024,
+    "source": "ECIS/GLOBOCAN",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "12-15 per 100,000/year",
+    "population": "EU women",
+    "year": 2024,
+    "source": "ECIS/GLOBOCAN"
+  },
+  "burden": {
+    "dalyPerCapita": "0.006-0.01",
+    "mortalityRate": "7-9 per 100,000",
+    "year": 2024,
+    "source": "WHO Europe cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age >50",
+      "family history/BRCA",
+      "nulliparity",
+      "endometriosis"
+    ],
+    "vulnerablePopulations": [
+      "older women",
+      "women with BRCA mutations"
+    ],
+    "diagnosticCriteria": "Pelvic imaging and CA-125; definitive diagnosis by surgery/biopsy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "400,000-500,000",
+    "controlRate": "Moderate with specialist centers"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist gynecologic oncology evaluation",
+    "treatmentProtocol": "Cytoreductive surgery and platinum-based chemotherapy; PARP inhibitors in selected cases",
+    "regionalChallenges": "High costs and complex care pathways",
+    "strongPoints": "Specialized gynecologic oncology centers"
+  }
+}

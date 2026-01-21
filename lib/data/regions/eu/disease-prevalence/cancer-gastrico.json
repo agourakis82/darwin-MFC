@@ -1,0 +1,51 @@
+{
+  "diseaseId": "cancer-gastrico",
+  "region": "EU",
+  "diseaseName": "Gastric cancer",
+  "prevalence": {
+    "value": "5-year prevalence 150-200 per 100,000",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ECIS/GLOBOCAN",
+    "trend": "decreasing"
+  },
+  "incidence": {
+    "value": "15-20 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECIS/GLOBOCAN"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.02",
+    "mortalityRate": "12-15 per 100,000",
+    "year": 2024,
+    "source": "WHO Europe cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "H. pylori infection",
+      "smoked/salted foods",
+      "smoking",
+      "age >60",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "people with H. pylori",
+      "migrant populations"
+    ],
+    "diagnosticCriteria": "Upper endoscopy with biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "600,000-800,000",
+    "controlRate": "Moderate; improved with early detection in some regions"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Endoscopy widely available",
+    "treatmentProtocol": "Gastrectomy with perioperative chemotherapy and targeted therapy",
+    "regionalChallenges": "Late presentation and resource-intensive care",
+    "strongPoints": "Comprehensive oncology networks"
+  }
+}

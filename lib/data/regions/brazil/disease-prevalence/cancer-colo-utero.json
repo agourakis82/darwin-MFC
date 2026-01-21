@@ -1,0 +1,51 @@
+{
+  "diseaseId": "cancer-colo-utero",
+  "region": "BR",
+  "diseaseName": "Cancer de colo do utero",
+  "prevalence": {
+    "value": "5-year prevalence 180-250 per 100,000",
+    "population": "Brazilian women",
+    "year": 2024,
+    "source": "INCA/GLOBOCAN",
+    "trend": "stable to decreasing with screening"
+  },
+  "incidence": {
+    "value": "15-20 per 100,000/year",
+    "population": "Brazilian women",
+    "year": 2024,
+    "source": "INCA/GLOBOCAN"
+  },
+  "burden": {
+    "dalyPerCapita": "0.006-0.01",
+    "mortalityRate": "6-8 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "HPV infection",
+      "early sexual activity",
+      "multiple partners",
+      "smoking",
+      "HIV"
+    ],
+    "vulnerablePopulations": [
+      "women with low screening access",
+      "women with HIV",
+      "low-income communities"
+    ],
+    "diagnosticCriteria": "Abnormal cytology or HPV testing with colposcopy and biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate Pap/HPV screening coverage",
+    "treatmentAvailable": true,
+    "estimatedPatients": "250,000-350,000",
+    "controlRate": "Moderate; depends on screening and follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Pap smear and colposcopy in referral services",
+    "treatmentProtocol": "Excisional procedures for precancer; surgery and chemoradiation for invasive disease",
+    "regionalChallenges": "Uneven screening and HPV vaccine uptake",
+    "strongPoints": "SUS screening programs and HPV vaccination"
+  }
+}

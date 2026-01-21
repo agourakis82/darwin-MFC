@@ -1,0 +1,52 @@
+{
+  "diseaseId": "avc-isquemico",
+  "region": "IN",
+  "diseaseName": "Ischemic stroke",
+  "prevalence": {
+    "value": "1-2% of adults (stroke survivors; ischemic majority)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "ICMR/GBD stroke estimates",
+    "trend": "increasing with hypertension and diabetes"
+  },
+  "incidence": {
+    "value": "150-220 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "ICMR/GBD stroke estimates"
+  },
+  "burden": {
+    "dalyPerCapita": "0.015-0.025",
+    "mortalityRate": "60-80 per 100,000",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "hypertension",
+      "diabetes",
+      "smoking",
+      "atrial fibrillation",
+      "dyslipidemia",
+      "age >60"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "people with uncontrolled hypertension",
+      "rural populations with delayed care"
+    ],
+    "diagnosticCriteria": "Acute focal neurologic deficit plus CT/MRI confirming ischemia"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "risk factor screening in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "8-10 million stroke survivors",
+    "controlRate": "Low; limited stroke unit access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "CT access mainly in urban/tertiary centers",
+    "treatmentProtocol": "Thrombolysis where available; secondary prevention with antiplatelets/statins",
+    "regionalChallenges": "Late presentation and limited rehabilitation",
+    "strongPoints": "Expanding stroke networks in major cities"
+  }
+}

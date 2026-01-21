@@ -1,0 +1,52 @@
+{
+  "diseaseId": "cancer-colorretal",
+  "region": "BR",
+  "diseaseName": "Cancer colorretal",
+  "prevalence": {
+    "value": "5-year prevalence 250-350 per 100,000",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "INCA/GLOBOCAN",
+    "trend": "increasing with aging and lifestyle"
+  },
+  "incidence": {
+    "value": "25-35 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "INCA/GLOBOCAN"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.02",
+    "mortalityRate": "12-15 per 100,000",
+    "year": 2024,
+    "source": "IHME/GBD cancer context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age >50",
+      "obesity",
+      "low fiber/high red meat diet",
+      "smoking",
+      "family history",
+      "inflammatory bowel disease"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "people with family history",
+      "urban populations"
+    ],
+    "diagnosticCriteria": "Colonoscopy with biopsy confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; opportunistic FIT/colonoscopy",
+    "treatmentAvailable": true,
+    "estimatedPatients": "450,000-600,000",
+    "controlRate": "Moderate; late presentation common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Colonoscopy access in referral centers",
+    "treatmentProtocol": "Surgery, chemotherapy, and radiotherapy when indicated",
+    "regionalChallenges": "Limited screening coverage and diagnostic delays",
+    "strongPoints": "Oncology centers and access to essential chemotherapy"
+  }
+}

@@ -5,10 +5,10 @@
 ## Milestones
 
 - **Canonical target (from `doencasConsolidadas`):** 368 diseases × 3 regions = **1,104** prevalence overlay files
-- **Current canonical coverage:** **210/368 diseases complete** (**630/1,104 files**) across BR/IN/EU
+- **Current canonical coverage:** **222/368 diseases complete** (**666/1,104 files**) across BR/IN/EU
 - **Non-canonical files present (not in `doencasConsolidadas`):** `doenca-hepatica-cronica`, `ulcera-peptica`
 
-## Completed canonical disease IDs (210)
+## Completed canonical disease IDs (222)
 
 - `acidemia-metilmalonica`
 - `acidemia-propionica`
@@ -37,6 +37,11 @@
 - `asma-infantil`
 - `asma-ocupacional`
 - `ataxia-friedreich`
+- `atrofia-muscular-espinhal`
+- `avc-isquemico`
+- `baixa-estatura`
+- `bexiga-hiperativa`
+- `bissinose`
 - `bloqueio-atrioventricular`
 - `bocio-simples`
 - `bronquiolite`
@@ -45,6 +50,13 @@
 - `bronquite-aguda`
 - `bronquite-cronica`
 - `bulimia-nervosa`
+- `cancer-bexiga`
+- `cancer-colo-utero`
+- `cancer-colorretal`
+- `cancer-gastrico`
+- `cancer-mama`
+- `cancer-ovario`
+- `cancer-pancreas`
 - `candidose-vulvovaginal`
 - `cardiomiopatia-hipertrofica`
 - `cefaleia-em-salvas`

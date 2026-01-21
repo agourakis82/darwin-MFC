@@ -1,0 +1,50 @@
+{
+  "diseaseId": "bissinose",
+  "region": "BR",
+  "diseaseName": "Bissinose",
+  "prevalence": {
+    "value": "1-4% of cotton textile workers",
+    "population": "Exposed textile workers",
+    "year": 2024,
+    "source": "Occupational health reports",
+    "trend": "decreasing with improved workplace controls"
+  },
+  "incidence": {
+    "value": "0.5-1 per 1,000 exposed workers/year",
+    "population": "Textile workers",
+    "year": 2024,
+    "source": "Occupational surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "low population burden; chronic respiratory morbidity",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "WHO occupational health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "cotton dust exposure",
+      "poor ventilation",
+      "smoking",
+      "long duration of exposure"
+    ],
+    "vulnerablePopulations": [
+      "textile workers",
+      "smokers",
+      "older workers"
+    ],
+    "diagnosticCriteria": "Work-related chest tightness with airflow limitation on spirometry"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "occupational surveillance in regulated workplaces",
+    "treatmentAvailable": true,
+    "estimatedPatients": "10,000-20,000",
+    "controlRate": "Moderate; depends on workplace enforcement"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Occupational history plus spirometry",
+    "treatmentProtocol": "Exposure reduction, bronchodilators, smoking cessation",
+    "regionalChallenges": "Informal work settings and limited enforcement",
+    "strongPoints": "Established occupational health regulations"
+  }
+}

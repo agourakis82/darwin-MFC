@@ -1,0 +1,52 @@
+{
+  "diseaseId": "avc-isquemico",
+  "region": "BR",
+  "diseaseName": "AVC isquemico",
+  "prevalence": {
+    "value": "1-2% of adults (stroke survivors; ischemic majority)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBC/DataSUS/GBD stroke estimates",
+    "trend": "stable; absolute numbers rising with aging"
+  },
+  "incidence": {
+    "value": "120-180 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "DataSUS/GBD stroke estimates"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.02",
+    "mortalityRate": "40-60 per 100,000",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "hypertension",
+      "diabetes",
+      "smoking",
+      "atrial fibrillation",
+      "dyslipidemia",
+      "age >65"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "people with uncontrolled hypertension",
+      "low socioeconomic groups"
+    ],
+    "diagnosticCriteria": "Acute focal neurologic deficit plus CT/MRI confirming ischemia and excluding hemorrhage"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "risk factor screening in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "2-3 million stroke survivors",
+    "controlRate": "Low to moderate; rehab access varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "CT available in referral hospitals; MRI limited",
+    "treatmentProtocol": "Thrombolysis within window; thrombectomy in select centers; secondary prevention with antiplatelets/statins",
+    "regionalChallenges": "Delayed presentation, limited stroke units, and rehab gaps",
+    "strongPoints": "SUS coverage for acute care and secondary prevention"
+  }
+}

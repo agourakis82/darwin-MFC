@@ -1,0 +1,51 @@
+{
+  "diseaseId": "baixa-estatura",
+  "region": "EU",
+  "diseaseName": "Short stature",
+  "prevalence": {
+    "value": "2-3% of children (height < -2 SD)",
+    "population": "EU children",
+    "year": 2024,
+    "source": "Eurostat/child growth surveys",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "2-3 per 1,000 children/year",
+    "population": "Children",
+    "year": 2024,
+    "source": "Primary care growth monitoring"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; impacts growth and psychosocial health",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe child health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "endocrine disorders",
+      "chronic disease",
+      "genetic syndromes",
+      "prematurity",
+      "nutritional deficits"
+    ],
+    "vulnerablePopulations": [
+      "children with chronic illness",
+      "preterm infants",
+      "migrants with limited access to care"
+    ],
+    "diagnosticCriteria": "Height < -2 SD for age/sex or poor growth velocity; endocrine workup when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "routine growth monitoring in pediatric care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "3-5 million children",
+    "controlRate": "Moderate to high with pediatric endocrine access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Standardized growth charts and referral pathways",
+    "treatmentProtocol": "Treat underlying causes; GH therapy for eligible cases",
+    "regionalChallenges": "Access variation across countries",
+    "strongPoints": "Established pediatric endocrine services"
+  }
+}
