@@ -1,0 +1,53 @@
+{
+  "diseaseId": "transtorno-uso-substancias",
+  "region": "IN",
+  "diseaseName": "Substance Use Disorders",
+  "prevalence": {
+    "value": "4-7% (any SUD; excluding nicotine)",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "National surveys on substance use + IHME GBD context",
+    "trend": "increasing in some regions; opioid and alcohol-related harms remain major concerns"
+  },
+  "incidence": {
+    "value": "6-12 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "GBD context extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.015-0.04",
+    "mortalityRate": "Elevated (injury, overdose, liver disease; indirect)",
+    "year": 2024,
+    "source": "IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "early initiation",
+      "psychiatric comorbidity",
+      "peer influence and availability",
+      "unemployment and social stress",
+      "trauma"
+    ],
+    "vulnerablePopulations": [
+      "young men",
+      "migrant workers",
+      "people with mental illness",
+      "incarcerated populations"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 substance use disorder criteria; clinical assessment and withdrawal risk evaluation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited; many cases present late",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~40-80 million (varies by definitions and substance mix)",
+    "controlRate": "Low; treatment gap is large and follow-up fragmented"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialized addiction services are limited and concentrated in urban centers; community identification varies",
+    "treatmentProtocol": "Detoxification and psychosocial interventions; harm reduction; opioid substitution therapy in some programs; management of comorbid mental illness",
+    "regionalChallenges": "High stigma, limited service capacity, and out-of-pocket costs",
+    "strongPoints": "Growing de-addiction services and public health harm reduction initiatives in some states"
+  }
+}
+

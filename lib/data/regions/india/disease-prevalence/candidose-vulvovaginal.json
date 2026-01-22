@@ -1,0 +1,52 @@
+{
+  "diseaseId": "candidose-vulvovaginal",
+  "region": "IN",
+  "diseaseName": "Vulvovaginal candidiasis",
+  "prevalence": {
+    "value": "~70-75% lifetime risk; ~5-8% recurrent",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "FOGSI and gynecology epidemiology syntheses",
+    "trend": "stable; recurrent cases linked to diabetes and antibiotic use"
+  },
+  "incidence": {
+    "value": "~20-40 episodes per 100 women-years (symptomatic)",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "Gynecology outpatient cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; high discomfort and recurrence burden",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO/IHME reproductive health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "antibiotic use",
+      "diabetes",
+      "pregnancy",
+      "immunosuppression",
+      "high estrogen states",
+      "poor genital hygiene"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people",
+      "women with diabetes",
+      "women with recurrent VVC"
+    ],
+    "diagnosticCriteria": "Clinical symptoms with microscopy (KOH/wet mount) when available; culture for recurrent or nonresponsive cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of symptomatic episodes annually",
+    "controlRate": "Moderate; recurrent cases require longer regimens"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often clinical; microscopy and culture mostly in urban centers",
+    "treatmentProtocol": "Topical azoles or oral fluconazole; extended regimens for recurrent disease; address diabetes control",
+    "regionalChallenges": "Self-medication, misdiagnosis with BV, and limited lab confirmation",
+    "strongPoints": "Low-cost azoles widely available in pharmacies and clinics"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "diseaseId": "mononucleose-infecciosa",
+  "region": "BR",
+  "diseaseName": "Mononucleose infecciosa (EBV)",
+  "prevalence": {
+    "value": "Common in adolescents and young adults; most adults seropositive",
+    "population": "Brazilian adolescents and young adults",
+    "year": 2024,
+    "source": "Infectious disease epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~5-15 per 1,000 adolescents/year",
+    "population": "Adolescents and young adults",
+    "year": 2024,
+    "source": "Primary care and school health cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; short-term fatigue and school/work absence",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO infectious disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "close contact and saliva exposure",
+      "adolescent/young adult age",
+      "crowding"
+    ],
+    "vulnerablePopulations": [
+      "adolescents and young adults",
+      "college students"
+    ],
+    "diagnosticCriteria": "Clinical syndrome with lymphadenopathy and fatigue; heterophile antibody test or EBV serology"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands of episodes annually",
+    "controlRate": "High with supportive care and activity restriction"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care; serology in reference labs",
+    "treatmentProtocol": "Supportive care, hydration, avoid contact sports if splenomegaly; corticosteroids only for complications",
+    "regionalChallenges": "Limited access to confirmatory testing in primary care",
+    "strongPoints": "Clear clinical management and low-cost supportive care"
+  }
+}

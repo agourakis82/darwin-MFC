@@ -1,0 +1,50 @@
+{
+  "diseaseId": "enfisema-pulmonar",
+  "region": "EU",
+  "diseaseName": "Pulmonary emphysema",
+  "prevalence": {
+    "value": "~1-2% (adults; subset of COPD)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "WHO Europe COPD epidemiology context",
+    "trend": "stable; burden tied to smoking history"
+  },
+  "incidence": {
+    "value": "~1-2 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Respiratory cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to chronic respiratory disability",
+    "mortalityRate": "Elevated (linked to COPD complications)",
+    "year": 2024,
+    "source": "WHO Europe/IHME COPD burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "tobacco smoking",
+      "air pollution",
+      "alpha-1 antitrypsin deficiency (rare)",
+      "occupational dust exposure"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "long-term smokers",
+      "patients with COPD"
+    ],
+    "diagnosticCriteria": "Spirometry with airflow limitation and imaging findings; assess COPD phenotype"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis based on symptoms and spirometry",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions with COPD; emphysema subset",
+    "controlRate": "High with smoking cessation and guideline-based inhaler therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Spirometry and imaging widely available in pulmonary services",
+    "treatmentProtocol": "Smoking cessation, inhaled bronchodilators, pulmonary rehab, vaccinations; oxygen for advanced disease",
+    "regionalChallenges": "Smoking cessation adherence and comorbidities",
+    "strongPoints": "Strong access to diagnostics and COPD management programs"
+  }
+}

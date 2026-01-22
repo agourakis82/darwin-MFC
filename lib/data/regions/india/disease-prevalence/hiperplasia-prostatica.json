@@ -1,0 +1,51 @@
+{
+  "diseaseId": "hiperplasia-prostatica",
+  "region": "IN",
+  "diseaseName": "Benign prostatic hyperplasia",
+  "prevalence": {
+    "value": "~40-45% (men >50 years)",
+    "population": "Indian men >50 years",
+    "year": 2024,
+    "source": "Urological Society of India (USI) context",
+    "trend": "increasing with aging population"
+  },
+  "incidence": {
+    "value": "~10-15 per 1,000 men/year (>50 years)",
+    "population": "Men >50 years",
+    "year": 2024,
+    "source": "Urology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant LUTS burden and QOL impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD urologic disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age >50 years",
+      "family history",
+      "obesity and metabolic syndrome",
+      "diabetes",
+      "sedentary lifestyle"
+    ],
+    "vulnerablePopulations": [
+      "men >60 years",
+      "men with diabetes",
+      "rural men with limited urology access"
+    ],
+    "diagnosticCriteria": "DRE and PSA evaluation, IPSS symptom score, urinalysis; ultrasound and uroflowmetry when available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic evaluation only",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of men with LUTS",
+    "controlRate": "Low to moderate; access to urologists limits care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical evaluation in primary care; PSA and ultrasound more available in urban centers",
+    "treatmentProtocol": "Alpha-blockers and 5-ARIs; TURP for refractory cases; limited access to newer minimally invasive options",
+    "regionalChallenges": "Urologist shortages and delayed presentation due to stigma",
+    "strongPoints": "Affordable generic medications widely available"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "diseaseId": "polifarmacia",
+  "region": "EU",
+  "diseaseName": "Polypharmacy in Older Adults",
+  "prevalence": {
+    "value": "40-60% (≥5 medications among adults >65 years)",
+    "population": "EU adults >65 years",
+    "year": 2024,
+    "source": "European geriatrics pharmacology epidemiology syntheses",
+    "trend": "increasing with aging and multimorbidity"
+  },
+  "incidence": {
+    "value": "high (accumulates over time)",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "indirect; linked to falls and adverse drug events",
+    "mortalityRate": "Indirect",
+    "year": 2024,
+    "source": "WHO Europe medication safety context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "multimorbidity",
+      "multiple prescribers",
+      "care fragmentation",
+      "cognitive impairment"
+    ],
+    "vulnerablePopulations": [
+      "frail older adults",
+      "care home residents",
+      "older adults with cognitive impairment"
+    ],
+    "diagnosticCriteria": "Medication count with assessment using Beers/STOPP-START and medication reconciliation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; medication review programs exist in many systems",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of older adults",
+    "controlRate": "Moderate to high where medication review and deprescribing programs are implemented"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Medication review often integrated in primary care and pharmacy services",
+    "treatmentProtocol": "Structured medication review, deprescribing, and regimen simplification with pharmacist involvement",
+    "regionalChallenges": "Implementation variability across member states",
+    "strongPoints": "Strong primary care and pharmacy integration in many systems"
+  }
+}
+

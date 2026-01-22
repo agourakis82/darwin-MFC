@@ -1,0 +1,49 @@
+{
+  "diseaseId": "leucemia-linfocitica-cronica",
+  "region": "IN",
+  "diseaseName": "Chronic lymphocytic leukemia (CLL)",
+  "prevalence": {
+    "value": "~5-15 per 100,000",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Hematology registry syntheses",
+    "trend": "increasing prevalence with aging and improved survival"
+  },
+  "incidence": {
+    "value": "~0.5-2 per 100,000/year",
+    "population": "Adults (older age)",
+    "year": 2024,
+    "source": "Cancer registry and hematology cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; chronic disease with treatment-related morbidity",
+    "mortalityRate": "Moderate",
+    "year": 2024,
+    "source": "IHME/GBD hematologic malignancy context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "older age",
+      "male sex",
+      "family history",
+      "immune dysregulation"
+    ],
+    "vulnerablePopulations": [
+      "adults >60 years",
+      "patients with family history of CLL"
+    ],
+    "diagnosticCriteria": "Persistent lymphocytosis with immunophenotyping by flow cytometry; staging by Rai/Binet"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; incidental diagnosis common",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands",
+    "controlRate": "Low to moderate; access to targeted therapies limited by cost"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Flow cytometry available in tertiary centers",
+    "treatmentProtocol": "Watchful waiting for early-stage; chemoimmunotherapy or targeted agents for progression",
+    "regionalChallenges": "Cost of targeted therapies and access to specialized hematology care",
+    "strongPoints": "Growing cancer centers and registry coverage"
+  }
+}

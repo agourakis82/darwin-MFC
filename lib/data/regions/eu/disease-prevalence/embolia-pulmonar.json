@@ -1,0 +1,54 @@
+{
+  "diseaseId": "embolia-pulmonar",
+  "region": "EU",
+  "diseaseName": "Pulmonary Embolism (PE)",
+  "prevalence": {
+    "value": "0.1-0.2% (point prevalence)",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "ESC/European VTE epidemiology syntheses",
+    "trend": "increasing due to aging populations and improved detection"
+  },
+  "incidence": {
+    "value": "100-200 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European VTE cohort syntheses / ESC context"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0005-0.0012",
+    "mortalityRate": "5-15 per 100,000",
+    "year": 2024,
+    "source": "WHO Europe / IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "major surgery/trauma",
+      "cancer",
+      "immobility",
+      "prior VTE/thrombophilia",
+      "pregnancy/postpartum",
+      "estrogen therapy"
+    ],
+    "vulnerablePopulations": [
+      "older adults (>70 years)",
+      "post-operative patients",
+      "cancer patients",
+      "hospitalized and frail patients"
+    ],
+    "diagnosticCriteria": "Pre-test probability (Wells/Geneva), D-dimer, confirmation with CTPA; risk stratification per ESC guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; strong inpatient prophylaxis programs in many countries",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands/year across EU",
+    "controlRate": "High with prompt diagnosis and standardized anticoagulation pathways"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Broad access to D-dimer/CTPA and risk stratification tools in emergency care",
+    "treatmentProtocol": "DOAC-first strategies common for many patients; LMWH in cancer/pregnancy contexts; thrombolysis/thrombectomy for high-risk PE in specialist centers",
+    "regionalChallenges": "Rising burden with aging and care variability across member states",
+    "strongPoints": "ESC guideline-driven pathways, high diagnostic access, and widespread anticoagulant availability"
+  }
+}
+

@@ -1,0 +1,51 @@
+{
+  "diseaseId": "anemia-ferropriva-pediatrica",
+  "region": "EU",
+  "diseaseName": "Pediatric Iron Deficiency Anemia",
+  "prevalence": {
+    "value": "5-15% (toddlers; higher in low-income groups and migrants)",
+    "population": "EU children <5 years",
+    "year": 2024,
+    "source": "European pediatric nutrition epidemiology syntheses",
+    "trend": "stable; disparities persist"
+  },
+  "incidence": {
+    "value": "10-30 per 1,000 children/year",
+    "population": "Children <5 years",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.006",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO Europe iron deficiency context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low dietary iron intake",
+      "early cow's milk excess",
+      "prematurity",
+      "food insecurity"
+    ],
+    "vulnerablePopulations": [
+      "toddlers",
+      "low-income households",
+      "migrant populations"
+    ],
+    "diagnosticCriteria": "Low hemoglobin with microcytosis; ferritin and TSAT confirm; evaluate diet and blood loss"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; screening policies differ by member state",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of children",
+    "controlRate": "High with supplementation and dietary counseling"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care access is high; lab testing availability is strong",
+    "treatmentProtocol": "Oral iron supplementation and dietary counseling; follow-up response testing",
+    "regionalChallenges": "Ensuring screening and follow-up in vulnerable groups",
+    "strongPoints": "Robust primary care and nutrition support programs in many member states"
+  }
+}
+

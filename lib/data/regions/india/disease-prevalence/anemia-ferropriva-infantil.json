@@ -1,0 +1,53 @@
+{
+  "diseaseId": "anemia-ferropriva-infantil",
+  "region": "IN",
+  "diseaseName": "Iron Deficiency Anemia in Children",
+  "prevalence": {
+    "value": "~40-60% (children under 5; varies by state)",
+    "population": "Indian children (<5 years)",
+    "year": 2024,
+    "source": "National family and nutrition survey syntheses; WHO anemia estimates context",
+    "trend": "slowly decreasing with supplementation programs; remains high"
+  },
+  "incidence": {
+    "value": "Very common; peak risk in 6-24 months",
+    "population": "Infants and young children",
+    "year": 2024,
+    "source": "Pediatric nutrition cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "high population burden due to very high prevalence; impacts development and growth",
+    "mortalityRate": "Indirect; increases vulnerability to infections and adverse developmental outcomes",
+    "year": 2024,
+    "source": "IHME/GBD anemia context; WHO child nutrition"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low dietary iron intake",
+      "maternal anemia",
+      "prematurity/low birth weight",
+      "parasite infections",
+      "food insecurity and poor diet diversity",
+      "rapid growth in infancy"
+    ],
+    "vulnerablePopulations": [
+      "infants 6-24 months",
+      "low-income households",
+      "children with recurrent infections",
+      "rural areas with limited access to supplementation"
+    ],
+    "diagnosticCriteria": "Hemoglobin below age thresholds with iron studies when available (ferritin with inflammation context); dietary assessment; evaluate parasites and chronic disease contributors"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; anemia screening and supplementation programs exist but coverage is inconsistent",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of children affected",
+    "controlRate": "Moderate; depends on adherence and program continuity"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and community health worker programs screen and supplement; lab confirmation uneven",
+    "treatmentProtocol": "Oral iron supplementation, nutrition counseling, food fortification where available, deworming and infection control; treat underlying causes",
+    "regionalChallenges": "Adherence issues, supply chain interruptions, high baseline malnutrition and infection burden",
+    "strongPoints": "Large-scale public programs can reach high-risk children when resourced and sustained"
+  }
+}

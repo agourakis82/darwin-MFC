@@ -1,0 +1,51 @@
+{
+  "diseaseId": "acidemia-metilmalonica",
+  "region": "BR",
+  "diseaseName": "Acidemia Metilmalônica (MMA)",
+  "prevalence": {
+    "value": "~0.3-0.8 per 100,000",
+    "population": "General population (rare inherited metabolic disorder)",
+    "year": 2024,
+    "source": "Orphanet rare disease summaries; Brazilian inborn errors of metabolism reporting (specialty centers)",
+    "trend": "stable; detection improving with expanded metabolic testing/newborn screening pilots"
+  },
+  "incidence": {
+    "value": "~1 per 50,000-100,000 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "International IEM incidence syntheses; tertiary metabolic clinic case series"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare), but high per-patient morbidity (neurodevelopmental injury, renal disease)",
+    "mortalityRate": "Low overall; higher in untreated severe neonatal-onset forms",
+    "year": 2024,
+    "source": "IHME/GBD rare disease context (modeled); Orphanet clinical burden summaries"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autosomal recessive inheritance",
+      "consanguinity (increases risk)",
+      "family history of inborn errors of metabolism",
+      "catabolic stress (infection/fasting) triggering decompensation",
+      "cobalamin metabolism defects"
+    ],
+    "vulnerablePopulations": [
+      "newborns/infants",
+      "families with previous affected child",
+      "patients with limited access to specialized metabolic care"
+    ],
+    "diagnosticCriteria": "Elevated methylmalonic acid (plasma/urine), metabolic acidosis and hyperammonemia during crises, acylcarnitine profile (C3), confirmatory enzymatic/genetic testing; assess B12 responsiveness"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; expanded newborn screening and confirmatory testing concentrated in reference centers",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds to low thousands (rare disease; uncertain)",
+    "controlRate": "Moderate when diagnosed early and followed by metabolic teams; poor if diagnosis delayed"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Referral to metabolic genetics centers; confirmatory MS/MS and genetic testing may require out-of-state travel",
+    "treatmentProtocol": "Emergency sick-day plans, protein-restricted diet with medical formulas, carnitine; B12 (hydroxocobalamin) if responsive; management of renal/neurologic complications",
+    "regionalChallenges": "Delayed diagnosis, uneven availability of metabolic formulas and specialized follow-up, limited adult-transition care",
+    "strongPoints": "Growing rare disease networks and reference centers; improved access to tandem mass spectrometry in major cities"
+  }
+}

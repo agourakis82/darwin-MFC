@@ -1,0 +1,48 @@
+{
+  "diseaseId": "sindrome-guillain-barre",
+  "region": "BR",
+  "diseaseName": "Sindrome de Guillain-Barre",
+  "prevalence": {
+    "value": "Rare (point prevalence <0.01%)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Neurology surveillance and cohort studies",
+    "trend": "stable; occasional post-infectious spikes"
+  },
+  "incidence": {
+    "value": "~1-2 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "Neurology epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case disability; requires ICU in severe cases",
+    "mortalityRate": "Low to moderate (3-7% in severe cases)",
+    "year": 2024,
+    "source": "IHME/GBD neurologic burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "recent infection (Campylobacter, influenza, Zika)",
+      "surgery or vaccination (rare)",
+      "older age"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with recent GI or respiratory infection"
+    ],
+    "diagnosticCriteria": "Progressive symmetric weakness and areflexia; CSF albuminocytologic dissociation; EMG/NCS support diagnosis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; acute presentation",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Thousands of cases over time",
+    "controlRate": "Moderate; improves with early IVIG or plasmapheresis"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Neurology evaluation in tertiary hospitals; EMG availability varies",
+    "treatmentProtocol": "IVIG or plasmapheresis; respiratory monitoring and ICU support when needed",
+    "regionalChallenges": "Access to ICU beds and IVIG in some regions",
+    "strongPoints": "Established neurology centers and protocols for acute management"
+  }
+}

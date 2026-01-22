@@ -1,0 +1,49 @@
+{
+  "diseaseId": "vitiligo",
+  "region": "IN",
+  "diseaseName": "Vitiligo",
+  "prevalence": {
+    "value": "~1-2% (adults)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "IADVL and dermatology epidemiology syntheses",
+    "trend": "stable; high social stigma in some regions"
+  },
+  "incidence": {
+    "value": "~0.2-0.4 per 1,000 person-years",
+    "population": "General population",
+    "year": 2024,
+    "source": "Dermatology cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; substantial psychosocial impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD skin disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "autoimmune disease",
+      "skin trauma (Koebner phenomenon)",
+      "stress"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with autoimmune thyroid disease"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis of depigmented macules; Wood lamp to confirm"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of individuals",
+    "controlRate": "Moderate; response depends on early treatment and phototherapy access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in dermatology; Wood lamp in specialty clinics",
+    "treatmentProtocol": "Topical steroids or calcineurin inhibitors, phototherapy (NB-UVB), camouflage; systemic therapy for extensive disease",
+    "regionalChallenges": "Stigma and limited phototherapy access outside metros",
+    "strongPoints": "Large dermatology workforce in urban centers and availability of topical treatments"
+  }
+}

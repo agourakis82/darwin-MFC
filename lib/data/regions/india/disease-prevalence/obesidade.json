@@ -1,0 +1,51 @@
+{
+  "diseaseId": "obesidade",
+  "region": "IN",
+  "diseaseName": "Obesity",
+  "prevalence": {
+    "value": "5.3% (BMI ≥30 kg/m²; note: for Asian populations, WHO recommends lower cutoff of BMI ≥25 kg/m² for obesity, yielding ~21-24% prevalence)",
+    "population": "Indian adults (~1.4 billion total population, ~70% adults)",
+    "year": 2024,
+    "source": "ICMR-INDIAB Study (2023 update) / NFHS-5 (2019-2021)",
+    "trend": "Increasing from 3.9% in 2016 (WHO data)"
+  },
+  "incidence": {
+    "value": "Annual incidence ~1-2% among adults (new cases of obesity onset)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Estimated from NFHS trends and ICMR reports"
+  },
+  "burden": {
+    "dalyPerCapita": "~150 DALYs per 100,000 population attributable to obesity",
+    "mortalityRate": "Obesity-attributable mortality ~4-5% of total CVD deaths (~0.5% crude rate)",
+    "year": 2024,
+    "source": "Global Burden of Disease Study 2019 (IHME) / ICMR 2023"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Sedentary lifestyle and urbanization",
+      "High-calorie diet rich in refined carbs and fats",
+      "Genetic predisposition (e.g., thrifty gene hypothesis in South Asians)",
+      "Socioeconomic factors including rising income"
+    ],
+    "vulnerablePopulations": [
+      "Urban residents (prevalence 2-3x higher than rural)",
+      "Higher socioeconomic status groups",
+      "Women (slightly higher prevalence than men)",
+      "Young adults aged 30-50 years"
+    ],
+    "diagnosticCriteria": "BMI ≥30 kg/m² (WHO standard); for Asians, adjusted criteria: overweight BMI ≥23, obesity BMI ≥25 kg/m² (WHO 2004 expert consultation)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Low (~20-30% in urban areas via routine health checks; minimal in rural)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~70-80 million adults with obesity (BMI ≥30)",
+    "controlRate": "~10-15% achieve sustained weight loss through interventions"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR recommends Asian-specific BMI cutoffs (obesity ≥25 kg/m²) alongside waist circumference (>90 cm men, >80 cm women) for abdominal obesity",
+    "treatmentProtocol": "Lifestyle modification (diet, exercise) per ICMR guidelines; pharmacotherapy (e.g., orlistat) and bariatric surgery in severe cases; integrated with NCD programs like NPCDCS",
+    "regionalChallenges": "Underdiagnosis in rural areas due to limited access; cultural stigma and preference for traditional diets; high glycemic load in Indian cuisine exacerbating risk",
+    "strongPoints": "National programs like POSHAN Abhiyaan for nutrition; increasing telemedicine for urban-rural outreach; growing research via ICMR on South Asian phenotypes"
+  }
+}

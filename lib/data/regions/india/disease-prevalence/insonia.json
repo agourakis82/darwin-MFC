@@ -1,0 +1,55 @@
+{
+  "diseaseId": "insonia",
+  "region": "IN",
+  "diseaseName": "Insomnia",
+  "prevalence": {
+    "value": "8-12% (chronic insomnia symptoms)",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "Indian sleep epidemiology studies + WHO context",
+    "trend": "increasing with urbanization, shift work, and stress"
+  },
+  "incidence": {
+    "value": "15-35 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Sleep cohort syntheses extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.004-0.012",
+    "mortalityRate": "Negligible (indirect via accidents and metabolic risk)",
+    "year": 2024,
+    "source": "IHME/WHO context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "stress and anxiety",
+      "depression",
+      "shift work",
+      "high screen time",
+      "caffeine/tobacco use",
+      "chronic pain"
+    ],
+    "vulnerablePopulations": [
+      "urban working professionals",
+      "students",
+      "women",
+      "older adults",
+      "patients with depression/anxiety"
+    ],
+    "diagnosticCriteria": "Insomnia disorder criteria with daytime impairment; rule out OSA and other sleep disorders; somatic complaints may predominate"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; largely symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~90-140 million with significant symptoms",
+    "controlRate": "Low to moderate; CBT-I limited and sedative use varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care evaluation often limited; sleep labs concentrated in urban tertiary centers",
+    "treatmentProtocol": "Sleep hygiene and CBT-I where available; short-term hypnotics; address comorbid anxiety/depression and OSA when suspected",
+    "regionalChallenges": "Limited CBT-I access, high self-medication, and low specialist sleep medicine availability",
+    "strongPoints": "Integration of lifestyle approaches (yoga/meditation) and expanding telehealth services for counseling"
+  }
+}
+

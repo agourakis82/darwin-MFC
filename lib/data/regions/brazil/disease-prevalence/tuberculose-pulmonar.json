@@ -1,0 +1,55 @@
+{
+  "diseaseId": "tuberculose-pulmonar",
+  "region": "BR",
+  "diseaseName": "Tuberculose Pulmonar",
+  "prevalence": {
+    "value": "45 per 100,000 (active TB)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde (Boletim Epidemiológico de Tuberculose 2024) / SINAN",
+    "trend": "stable to slightly decreasing overall; persistent hotspots in large cities and prisons"
+  },
+  "incidence": {
+    "value": "35 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde / SINAN- TB"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.004",
+    "mortalityRate": "~2.0 per 100,000",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "close-contact exposure (household, shelters)",
+      "HIV co-infection",
+      "diabetes mellitus",
+      "smoking and alcohol use disorder",
+      "malnutrition",
+      "incarceration and overcrowded housing"
+    ],
+    "vulnerablePopulations": [
+      "people living with HIV",
+      "people deprived of liberty (prisons)",
+      "people experiencing homelessness",
+      "indigenous and peri-urban populations",
+      "household contacts of infectious cases"
+    ],
+    "diagnosticCriteria": "Sputum smear and/or rapid molecular test (TRM-TB/Xpert), culture when available; chest X-ray supportive; notification per Ministério da Saúde guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "targeted screening of respiratory symptomatic patients in APS; contact tracing coverage variable by municipality",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~100,000 active cases",
+    "controlRate": "~70% treatment success; lower in TB-HIV and social vulnerability contexts"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "TRM-TB prioritized in SUS; smear microscopy and radiography widely used; culture/ DST concentrated in reference labs",
+    "treatmentProtocol": "SUS standard regimen for drug-susceptible TB (rifampicin/isoniazid/pyrazinamide/ethambutol) with directly observed therapy when indicated; MDR-TB managed in reference centers",
+    "regionalChallenges": "Social determinants (overcrowding, homelessness), high prison burden, delayed diagnosis in primary care, and MDR-TB management capacity outside capitals",
+    "strongPoints": "Universal access to diagnosis and treatment via SUS, compulsory notification and surveillance, and national TB control program infrastructure"
+  }
+}
+

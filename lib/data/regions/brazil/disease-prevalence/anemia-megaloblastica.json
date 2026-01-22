@@ -1,0 +1,53 @@
+{
+  "diseaseId": "anemia-megaloblastica",
+  "region": "BR",
+  "diseaseName": "Anemia Megaloblástica (B12/Folato)",
+  "prevalence": {
+    "value": "0.3-1.0% (higher in older adults and malabsorption risk groups)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Hematology/nutrition epidemiology syntheses",
+    "trend": "stable; detection increasing with routine CBC and B12 testing"
+  },
+  "incidence": {
+    "value": "0.5-2 per 1,000/year (diagnosed cases)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0005-0.002",
+    "mortalityRate": "Low; neurologic complications possible if untreated",
+    "year": 2024,
+    "source": "IHME/WHO anemia and nutrition context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "dietary B12 deficiency",
+      "malabsorption (pernicious anemia, bariatric surgery)",
+      "metformin use (B12 association)",
+      "alcohol use",
+      "folate deficiency"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "vegetarians/low animal intake",
+      "post-bariatric surgery patients",
+      "patients with chronic gastritis"
+    ],
+    "diagnosticCriteria": "Macrocytic anemia (MCV elevated) with low B12 and/or folate; elevated MMA/homocysteine supportive; evaluate for pernicious anemia and malabsorption; neurologic exam"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; detected via CBC and symptom evaluation",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands",
+    "controlRate": "High when treated; neurologic recovery depends on early therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "CBC widely available; MMA testing limited; B12/folate availability varies",
+    "treatmentProtocol": "B12 replacement (IM/PO depending on cause) and folate when indicated; treat underlying malabsorption",
+    "regionalChallenges": "Delayed diagnosis of neurologic symptoms and limited confirmatory testing for pernicious anemia in some settings",
+    "strongPoints": "Low-cost effective treatment and broad CBC availability"
+  }
+}
+

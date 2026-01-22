@@ -1,0 +1,49 @@
+{
+  "diseaseId": "sindrome-sjogren",
+  "region": "IN",
+  "diseaseName": "Sjogren syndrome",
+  "prevalence": {
+    "value": "~0.1-0.3% (adults; mostly women)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Rheumatology epidemiology syntheses",
+    "trend": "stable; underdiagnosis likely"
+  },
+  "incidence": {
+    "value": "~1-3 per 100,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Autoimmune disease cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; chronic sicca symptoms and fatigue",
+    "mortalityRate": "Low (increased lymphoma risk in subset)",
+    "year": 2024,
+    "source": "IHME/GBD autoimmune context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "middle age",
+      "other autoimmune disease",
+      "family history of autoimmunity"
+    ],
+    "vulnerablePopulations": [
+      "women 40-60 years",
+      "patients with RA or lupus"
+    ],
+    "diagnosticCriteria": "Sicca symptoms with anti-SSA/SSB or salivary gland biopsy; Schirmer test and salivary flow"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands",
+    "controlRate": "Moderate; symptomatic management improves QOL"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Rheumatology referral for autoantibodies and biopsy when needed",
+    "treatmentProtocol": "Artificial tears/saliva, pilocarpine where available, hydroxychloroquine for systemic symptoms",
+    "regionalChallenges": "Limited rheumatology access and specialty testing outside metros",
+    "strongPoints": "Core symptomatic treatments available"
+  }
+}

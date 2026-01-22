@@ -1,0 +1,25 @@
+{
+  "diseaseId": "sindrome-intestino-irritavel",
+  "region": "EU",
+  "diseaseName": "Irritable Bowel Syndrome (IBS)",
+  "prevalence": {"value": "11-12%", "population": "EU adults (~447 million)", "year": 2024, "source": "UEG Week 2023 Report", "trend": "stable with improved awareness"},
+  "incidence": {"value": "1.5 per 1000", "population": "EU adults", "year": 2024, "source": "WHO Europe"},
+  "burden": {"dalyPerCapita": "0.02", "mortalityRate": "Negligible", "year": 2024, "source": "WHO Europe"},
+  "epidemiology": {
+    "riskFactors": ["Stress and psychological factors", "Dietary triggers (high FODMAP foods)", "Gut microbiota dysbiosis", "Post-infectious changes", "Family history", "Female gender"],
+    "vulnerablePopulations": ["Women (2-3x higher)", "Adults 20-40 years", "Individuals with anxiety or depression"],
+    "diagnosticCriteria": "Rome IV criteria, UEG guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "50-55 million",
+    "controlRate": "65% with multimodal treatment"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "UEG/Rome IV guidelines, clinical diagnosis, fecal calprotectin to rule out IBD",
+    "treatmentProtocol": "Dietary: low FODMAP diet widely available; Medical: antispasmodics, rifaximin for IBS-D, linaclotide for IBS-C; Psychological: gut-directed hypnotherapy, CBT",
+    "regionalChallenges": "High healthcare utilization costs, overlap with functional disorders, limited awareness in primary care",
+    "strongPoints": "UEG guidelines, low FODMAP dietitian programs, gut-directed hypnotherapy access, comprehensive multimodal care"
+  }
+}

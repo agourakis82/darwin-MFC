@@ -1,0 +1,25 @@
+{
+  "diseaseId": "hiperplasia-prostatica-benigna",
+  "region": "EU",
+  "diseaseName": "Benign Prostatic Hyperplasia (BPH)",
+  "prevalence": {"value": "50-80%", "population": "EU men >50 years (~120 million)", "year": 2024, "source": "EAU Guidelines on BPH", "trend": "increasing due to aging population"},
+  "incidence": {"value": "10-15 per 1000", "population": "EU men >50", "year": 2024, "source": "EAU Epidemiological Data"},
+  "burden": {"dalyPerCapita": "0.05-0.1", "mortalityRate": "Negligible", "year": 2024, "source": "WHO Europe"},
+  "epidemiology": {
+    "riskFactors": ["Age (>50 years)", "Family history", "Obesity", "Diabetes", "Metabolic syndrome", "Western diet"],
+    "vulnerablePopulations": ["Men >70 years", "Men with metabolic syndrome", "Men with cardiovascular disease"],
+    "diagnosticCriteria": "EAU guidelines, DRE, PSA, IPSS, uroflowmetry, TRUS"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic PSA screening common",
+    "treatmentAvailable": true,
+    "estimatedPatients": "50-60 million",
+    "controlRate": "75% [high due to advanced urological care]"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EAU guidelines, comprehensive urodynamic evaluation available",
+    "treatmentProtocol": "Medical: alpha-blockers, 5-ARIs, combination therapy, PDE5 inhibitors for LUTS/ED; Surgical: TURP, HoLEP, Rezum, UroLift",
+    "regionalChallenges": ["Aging demographics increasing burden", "overtreatment concerns with PSA screening", "healthcare costs"],
+    "strongPoints": ["EAU comprehensive guidelines", "wide access to minimally invasive procedures (HoLEP, Rezum, UroLift)", "shared decision-making protocols"]
+  }
+}

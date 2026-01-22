@@ -1,0 +1,53 @@
+{
+  "diseaseId": "sindrome-tunel-carpiano",
+  "region": "IN",
+  "diseaseName": "Carpal Tunnel Syndrome",
+  "prevalence": {
+    "value": "2-5% (adults; higher in some occupations)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Occupational epidemiology syntheses",
+    "trend": "increasing in urban office workers and with diabetes prevalence"
+  },
+  "incidence": {
+    "value": "1-3 per 1,000/year",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "CTS occupational cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.003",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO disability context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "repetitive wrist use",
+      "female sex",
+      "pregnancy",
+      "diabetes and hypothyroidism",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "manual and factory workers",
+      "office workers with high keyboard use",
+      "women",
+      "patients with diabetes"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis supported by nerve conduction studies when available; exclude radiculopathy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions",
+    "controlRate": "Variable; dependent on access to splints, injections, and surgery"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "NCS access concentrated in urban centers; many diagnoses are clinical",
+    "treatmentProtocol": "Splinting, activity modification, NSAIDs; steroid injection; surgical release for severe cases",
+    "regionalChallenges": "Out-of-pocket costs and delayed access to surgery in many settings",
+    "strongPoints": "Availability of low-cost conservative management and expanding orthopedic services"
+  }
+}
+

@@ -1,0 +1,52 @@
+{
+  "diseaseId": "hepatite-e",
+  "region": "EU",
+  "diseaseName": "Hepatitis E",
+  "prevalence": {
+    "value": "seroprevalence often 5-20% (country-dependent); most infections asymptomatic",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "ECDC / WHO Europe (hepatitis E epidemiology summaries)",
+    "trend": "increasing recognition of zoonotic HEV (genotype 3) in several countries"
+  },
+  "incidence": {
+    "value": "reported cases increasing; true incidence higher due to under-testing",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECDC surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; higher in immunosuppressed and chronic liver disease",
+    "mortalityRate": "Low overall; higher in acute-on-chronic liver disease",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "consumption of undercooked pork/wild game",
+      "occupational exposure to swine",
+      "immunosuppression (chronic infection risk)",
+      "pre-existing chronic liver disease",
+      "transfusion-related risk (rare; mitigated by screening in some countries)"
+    ],
+    "vulnerablePopulations": [
+      "immunosuppressed patients (transplant, hematologic malignancy)",
+      "people with chronic liver disease",
+      "older adults"
+    ],
+    "diagnosticCriteria": "Anti-HEV IgM and/or HEV RNA; evaluation in acute hepatitis and unexplained transaminitis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; testing often performed in hepatitis workups and in immunosuppressed patients",
+    "treatmentAvailable": true,
+    "estimatedPatients": "substantial silent exposure; symptomatic cases are a minority",
+    "controlRate": "Most cases self-limited; chronic HEV managed in specialist services"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Reference lab access for HEV RNA common; increasing routine testing in many hepatology services",
+    "treatmentProtocol": "Supportive care; ribavirin for chronic HEV in immunosuppressed; food safety counseling (avoid undercooked pork)",
+    "regionalChallenges": "Under-recognition in primary care and variability in routine testing between countries",
+    "strongPoints": "Strong laboratory capacity and specialist hepatology networks to manage chronic cases"
+  }
+}
+

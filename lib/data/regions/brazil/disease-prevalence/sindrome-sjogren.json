@@ -1,0 +1,49 @@
+{
+  "diseaseId": "sindrome-sjogren",
+  "region": "BR",
+  "diseaseName": "Sindrome de Sjogren",
+  "prevalence": {
+    "value": "~0.1-0.5% (adults; mostly women)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Rheumatology epidemiology syntheses",
+    "trend": "stable; improved recognition in rheumatology clinics"
+  },
+  "incidence": {
+    "value": "~2-5 per 100,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Autoimmune disease cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; chronic sicca symptoms and fatigue",
+    "mortalityRate": "Low (increased lymphoma risk in subset)",
+    "year": 2024,
+    "source": "IHME/GBD autoimmune context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "middle age",
+      "other autoimmune disease (RA, lupus)",
+      "family history of autoimmunity"
+    ],
+    "vulnerablePopulations": [
+      "women 40-60 years",
+      "patients with RA or lupus"
+    ],
+    "diagnosticCriteria": "Sicca symptoms with positive anti-SSA/SSB or salivary gland biopsy; ocular tests (Schirmer) and salivary flow"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands",
+    "controlRate": "Moderate; symptomatic management improves QOL"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Rheumatology referral for autoantibodies and biopsy when needed",
+    "treatmentProtocol": "Artificial tears/saliva, pilocarpine when available, hydroxychloroquine for systemic symptoms; monitor lymphoma risk",
+    "regionalChallenges": "Limited access to rheumatology and specialty testing in some regions",
+    "strongPoints": "Core symptomatic treatments available and expanding rheumatology services"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "amigdalite",
+  "region": "EU",
+  "diseaseName": "Acute Tonsillitis",
+  "prevalence": {
+    "value": "Common episodic condition (especially children)",
+    "population": "EU children and adolescents",
+    "year": 2024,
+    "source": "European primary care and pediatric infection epidemiology syntheses",
+    "trend": "stable; seasonal peaks"
+  },
+  "incidence": {
+    "value": "~40-120 per 1,000 children/year (episodes)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Primary care cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; high healthcare utilization and school absenteeism",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe URI context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "school/daycare exposure",
+      "viral respiratory infections",
+      "group A streptococcus exposure",
+      "crowding"
+    ],
+    "vulnerablePopulations": [
+      "children (5-15 years)",
+      "patients with recurrent tonsillitis",
+      "immunocompromised patients"
+    ],
+    "diagnosticCriteria": "Clinical assessment; rapid antigen testing/culture used in many settings to guide antibiotics; evaluate for peritonsillar abscess and other complications"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually across the EU",
+    "controlRate": "High; antibiotic stewardship supported by rapid testing in many systems"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Rapid strep testing widely available in many primary care settings; culture when needed",
+    "treatmentProtocol": "Supportive care for viral; antibiotics for confirmed streptococcal infection; ENT referral for recurrent severe disease and tonsillectomy evaluation",
+    "regionalChallenges": "Balancing antibiotic stewardship with patient expectations; variable primary care access across countries",
+    "strongPoints": "High availability of diagnostics and effective antibiotics; structured referral pathways"
+  }
+}

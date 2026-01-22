@@ -1,0 +1,51 @@
+{
+  "diseaseId": "nodulo-tireoide",
+  "region": "EU",
+  "diseaseName": "Thyroid nodule",
+  "prevalence": {
+    "value": "~5-7% (palpable); ~25-45% (ultrasound)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European Thyroid Association (ETA) context; ultrasound epidemiology",
+    "trend": "increasing detection due to imaging use"
+  },
+  "incidence": {
+    "value": "~5-10 per 1,000 adults/year (new detected nodules)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Endocrinology outpatient cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; burden driven by work-up and overdiagnosis",
+    "mortalityRate": "Negligible (most nodules benign)",
+    "year": 2024,
+    "source": "WHO Europe endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "older age",
+      "iodine intake variation",
+      "prior neck radiation",
+      "family history of thyroid disease"
+    ],
+    "vulnerablePopulations": [
+      "women >40 years",
+      "patients with radiation exposure history",
+      "families with thyroid cancer history"
+    ],
+    "diagnosticCriteria": "TSH and thyroid ultrasound; risk stratification by ultrasound features; FNA for suspicious nodules (Bethesda)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; incidental detection common",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions with nodules",
+    "controlRate": "High; structured surveillance reduces unnecessary surgery"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ETA-aligned ultrasound risk stratification and FNA when indicated",
+    "treatmentProtocol": "Observation for low-risk nodules; FNA and surgery for suspicious/malignant nodules",
+    "regionalChallenges": "Overdiagnosis and variable FNA thresholds across countries",
+    "strongPoints": "Broad access to ultrasound and endocrinology services"
+  }
+}

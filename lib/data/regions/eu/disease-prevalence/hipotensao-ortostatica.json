@@ -1,0 +1,52 @@
+{
+  "diseaseId": "hipotensao-ortostatica",
+  "region": "EU",
+  "diseaseName": "Orthostatic Hypotension",
+  "prevalence": {
+    "value": "10-20% (older adults; higher in frail and autonomic disease)",
+    "population": "EU adults >65 years",
+    "year": 2024,
+    "source": "European cardiology/geriatrics epidemiology syntheses",
+    "trend": "increasing with aging and polypharmacy"
+  },
+  "incidence": {
+    "value": "10-25 per 1,000 person-years",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.01",
+    "mortalityRate": "Indirect",
+    "year": 2024,
+    "source": "IHME/WHO Europe injury context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "polypharmacy",
+      "dehydration",
+      "autonomic failure (Parkinson disease)",
+      "diabetes",
+      "frailty"
+    ],
+    "vulnerablePopulations": [
+      "frail older adults",
+      "patients with Parkinson disease",
+      "patients with diabetes"
+    ],
+    "diagnosticCriteria": "Orthostatic BP criteria with evaluation for causes and medication contributors"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; orthostatic vitals used in many geriatric pathways",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of older adults",
+    "controlRate": "Moderate with medication review and non-pharmacologic interventions"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Integrated falls/syncope pathways in many systems",
+    "treatmentProtocol": "Hydration, compression, medication adjustment; pharmacotherapy for refractory cases in specialist care",
+    "regionalChallenges": "Care variability across member states",
+    "strongPoints": "Strong guideline-based syncope/falls management in many systems"
+  }
+}
+

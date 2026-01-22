@@ -1,0 +1,25 @@
+{
+  "diseaseId": "enxaqueca",
+  "region": "EU",
+  "diseaseName": "Migraine",
+  "prevalence": {"value": "14.7%", "population": "EU adults (~447 million)", "year": 2024, "source": "EHF - European Headache Federation", "trend": "stable with increasing recognition due to improved diagnostics"},
+  "incidence": {"value": "18 per 1000", "population": "EU adults", "year": 2024, "source": "WHO Europe"},
+  "burden": {"dalyPerCapita": "High - leading cause of disability in adults <50", "mortalityRate": "Negligible", "year": 2024, "source": "WHO Europe/Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Female gender", "Family history/genetics", "Stress and anxiety", "Sleep disturbances", "Hormonal changes", "Environmental triggers (e.g., weather, diet)"],
+    "vulnerablePopulations": ["Women (2-3x higher)", "Adults 25-55 years", "Individuals with low socioeconomic status"],
+    "diagnosticCriteria": "ICHD-3 International Classification"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "No routine screening; diagnosis primarily through clinical assessment in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "66 million",
+    "controlRate": "45% adequately controlled with current therapies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICHD-3 widely adopted across EU",
+    "treatmentProtocol": "Acute: triptans, NSAIDs; Prophylaxis: beta-blockers, topiramate, CGRP mAbs (erenumab, fremanezumab); EHF guidelines",
+    "regionalChallenges": "High disability burden, undertreatment despite available therapies",
+    "strongPoints": "Wide access to triptans and CGRP inhibitors, specialized headache centers, EHF consensus guidelines"
+  }
+}

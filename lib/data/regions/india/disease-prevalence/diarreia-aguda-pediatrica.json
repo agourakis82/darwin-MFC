@@ -1,0 +1,52 @@
+{
+  "diseaseId": "diarreia-aguda-pediatrica",
+  "region": "IN",
+  "diseaseName": "Acute Pediatric Diarrhea",
+  "prevalence": {
+    "value": "common; multiple episodes per child-year in early childhood in high-risk settings",
+    "population": "Indian children <5 years",
+    "year": 2024,
+    "source": "WHO/UNICEF + Indian child health program context",
+    "trend": "decreasing mortality with ORS/zinc scale-up; high morbidity persists"
+  },
+  "incidence": {
+    "value": "2-4 episodes per child-year (higher in high-burden districts)",
+    "population": "Children <5 years",
+    "year": 2024,
+    "source": "WHO/UNICEF diarrhea epidemiology context"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case; major contributor to child morbidity and some mortality",
+    "mortalityRate": "declining but still significant in vulnerable districts",
+    "year": 2024,
+    "source": "IHME GBD / WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "contaminated water and sanitation gaps",
+      "malnutrition",
+      "rotavirus/norovirus and bacterial pathogens",
+      "lack of breastfeeding (association)"
+    ],
+    "vulnerablePopulations": [
+      "children <2 years",
+      "malnourished children",
+      "rural low-income households",
+      "districts with poor WASH infrastructure"
+    ],
+    "diagnosticCriteria": "Clinical dehydration assessment per WHO; stool testing reserved for severe/bloody/persistent cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high episode burden annually",
+    "controlRate": "Variable; improved with ORS/zinc and timely referral for severe dehydration"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and community health worker assessment focused on dehydration and danger signs",
+    "treatmentProtocol": "ORS + zinc, continued feeding; IV fluids for severe dehydration; antibiotics only for dysentery/cholera suspicion",
+    "regionalChallenges": "WASH gaps, malnutrition, and limited access to facilities during severe dehydration",
+    "strongPoints": "Large-scale ORS/zinc programs and rotavirus vaccination scale-up in many states"
+  }
+}
+

@@ -1,0 +1,51 @@
+{
+  "diseaseId": "transtorno-espectro-autista",
+  "region": "EU",
+  "diseaseName": "Autism Spectrum Disorder (ASD)",
+  "prevalence": {
+    "value": "1-2% (children)",
+    "population": "EU children",
+    "year": 2024,
+    "source": "European child development epidemiology syntheses / WHO Europe",
+    "trend": "increasing due to expanded diagnostic criteria and improved detection"
+  },
+  "incidence": {
+    "value": "3-6 per 1,000 live births (diagnosed over early childhood)",
+    "population": "EU live births",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.01",
+    "mortalityRate": "Low; indirect risks via comorbidities",
+    "year": 2024,
+    "source": "IHME/WHO Europe context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic susceptibility",
+      "male sex",
+      "perinatal complications",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "boys",
+      "children with developmental delays",
+      "children with limited access to specialist assessment in underserved regions"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria with multidisciplinary assessment; standardized tools commonly used in specialist services"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; developmental screening and school pathways differ by member state",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of children across EU",
+    "controlRate": "Not applicable; focus is functional support and inclusion"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Structured referral pathways through pediatric and educational services in many countries",
+    "treatmentProtocol": "Early intervention, speech/occupational therapy, educational accommodations, caregiver support; medication for comorbidities when indicated",
+    "regionalChallenges": "Service demand and wait times for diagnostic assessment in some member states",
+    "strongPoints": "Established multidisciplinary services and school-based supports in many health systems"
+  }
+}
+

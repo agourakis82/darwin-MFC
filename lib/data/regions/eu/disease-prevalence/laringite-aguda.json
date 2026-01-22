@@ -1,0 +1,49 @@
+{
+  "diseaseId": "laringite-aguda",
+  "region": "EU",
+  "diseaseName": "Viral Croup (Laryngotracheitis)",
+  "prevalence": {
+    "value": "common seasonal illness; highest in children 6 months to 3 years",
+    "population": "EU children",
+    "year": 2024,
+    "source": "European pediatric respiratory epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "5-20 per 100 children/year (episodes; season-dependent)",
+    "population": "Children 0-5 years",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall",
+    "mortalityRate": "Very low with treatment",
+    "year": 2024,
+    "source": "WHO Europe pediatric respiratory context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral infections",
+      "young age",
+      "crowding"
+    ],
+    "vulnerablePopulations": [
+      "children 6-36 months",
+      "children with airway anomalies"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; severity scoring; imaging rarely required"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "high seasonal episode burden",
+    "controlRate": "High with steroids and guideline-based emergency care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Strong pediatric emergency care pathways",
+    "treatmentProtocol": "Dexamethasone for most; nebulized epinephrine for moderate-severe cases; observation protocols",
+    "regionalChallenges": "Seasonal ED crowding",
+    "strongPoints": "Robust emergency pathways and high access to effective treatments"
+  }
+}
+

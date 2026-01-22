@@ -1,0 +1,51 @@
+{
+  "diseaseId": "transtorno-bipolar-i",
+  "region": "BR",
+  "diseaseName": "Transtorno Bipolar Tipo I",
+  "prevalence": {
+    "value": "0.6-1.0%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "IHME GBD (bipolar disorder) + subtype distribution syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "0.5-1.2 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Bipolar spectrum epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.008-0.02",
+    "mortalityRate": "Indirect; elevated suicide risk",
+    "year": 2024,
+    "source": "IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "sleep disruption",
+      "substance use",
+      "stressful life events"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with substance use",
+      "patients with prior severe depression"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: at least one manic episode; may include major depressive episodes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1-2 million",
+    "controlRate": "Variable; depends on maintenance adherence and psychosocial supports"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often diagnosed in specialist settings after severe episodes",
+    "treatmentProtocol": "Mood stabilizers and antipsychotics; relapse prevention and psychoeducation; crisis care via CAPS/hospital services",
+    "regionalChallenges": "Adherence and continuity of care, especially outside urban centers",
+    "strongPoints": "Availability of core mood stabilizers and public mental health service network"
+  }
+}
+

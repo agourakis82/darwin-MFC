@@ -1,0 +1,51 @@
+{
+  "diseaseId": "hepatite-e",
+  "region": "BR",
+  "diseaseName": "Hepatite E",
+  "prevalence": {
+    "value": "low recognized incidence; seroprevalence suggests silent exposure in some populations",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde / published Brazilian seroprevalence studies (HEV) / WHO",
+    "trend": "likely stable; improved recognition with expanded testing in hepatitis workups"
+  },
+  "incidence": {
+    "value": "rare; mostly sporadic cases (often underdiagnosed)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde hepatitis surveillance summaries"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; severe in pregnancy and immunosuppression",
+    "mortalityRate": "Low overall; higher in pregnancy with genotype 1/2 outbreaks (rare in Brazil)",
+    "year": 2024,
+    "source": "IHME GBD / WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "contaminated water exposure (fecal-oral transmission)",
+      "consumption of undercooked pork/wild game (zoonotic genotypes)",
+      "travel to endemic regions",
+      "immunosuppression (chronic infection risk)"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people (severe disease risk in some settings)",
+      "immunosuppressed patients (transplant, HIV)",
+      "people with chronic liver disease"
+    ],
+    "diagnosticCriteria": "Anti-HEV IgM and/or HEV RNA PCR; evaluation in acute hepatitis with negative HAV/HBV/HCV"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; tested in selected hepatitis cases",
+    "treatmentAvailable": true,
+    "estimatedPatients": "low; sporadic cases",
+    "controlRate": "Supportive care generally sufficient; chronic HEV in immunosuppressed requires specialist management"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Testing availability varies; often diagnosed in reference centers and research-supported labs",
+    "treatmentProtocol": "Supportive management; ribavirin considered for chronic HEV in immunosuppressed under specialist care",
+    "regionalChallenges": "Underdiagnosis due to limited routine testing and low clinician suspicion",
+    "strongPoints": "Specialist hepatology services in major centers can manage complex cases and improve detection"
+  }
+}
+

@@ -1,0 +1,53 @@
+{
+  "diseaseId": "leptospirose",
+  "region": "IN",
+  "diseaseName": "Leptospirosis",
+  "prevalence": {
+    "value": "variable; 1-10 per 100,000/year in high-risk coastal/monsoon areas (often underdiagnosed)",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR / NCDC epidemiological reports",
+    "trend": "stable with monsoon-linked peaks; increased risk with flooding events"
+  },
+  "incidence": {
+    "value": "1-10 per 100,000/year (highly regional)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "ICMR/NCDC reports and state surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "0.00005-0.0003",
+    "mortalityRate": "Case-fatality ~5-15% in severe disease",
+    "year": 2024,
+    "source": "IHME GBD / WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "monsoon flooding and waterlogging",
+      "rodent exposure and poor sanitation",
+      "agricultural work and barefoot exposure",
+      "occupational exposure (sewage, waste)",
+      "delayed access to antibiotics"
+    ],
+    "vulnerablePopulations": [
+      "coastal and flood-prone districts",
+      "farmers and agricultural laborers",
+      "sanitation workers",
+      "urban slum populations"
+    ],
+    "diagnosticCriteria": "Clinical suspicion with lab confirmation (IgM ELISA, MAT, PCR where available); differential includes dengue, malaria, viral hepatitis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; seasonal/outbreak surveillance in high-risk districts",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of thousands/year in high-burden states (including underrecognized cases)",
+    "controlRate": "Moderate; outcomes depend on early antibiotics and supportive care access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "IgM ELISA commonly used; MAT/PCR in reference labs; clinical diagnosis often in peripheral centers",
+    "treatmentProtocol": "Doxycycline/amoxicillin for mild disease; IV penicillin/ceftriaxone for severe cases; renal support when needed",
+    "regionalChallenges": "Underdiagnosis and overlap with dengue/malaria; limited lab access in rural areas during monsoon surges",
+    "strongPoints": "ICMR and state programmes support outbreak detection and clinical management guidance in high-risk regions"
+  }
+}
+

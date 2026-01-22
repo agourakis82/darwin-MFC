@@ -1,0 +1,51 @@
+{
+  "diseaseId": "endocardite-infecciosa",
+  "region": "EU",
+  "diseaseName": "Infective endocarditis",
+  "prevalence": {
+    "value": "Rare (point prevalence <0.01%)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ESC/WHO Europe endocarditis surveillance context",
+    "trend": "stable; increased risk with prosthetic valves and devices"
+  },
+  "incidence": {
+    "value": "~3-10 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "European endocarditis registries"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case morbidity and mortality",
+    "mortalityRate": "Moderate to high (in-hospital 15-25%)",
+    "year": 2024,
+    "source": "WHO Europe/IHME infectious and cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prosthetic valves or devices",
+      "prior endocarditis",
+      "degenerative valvular disease",
+      "injection drug use",
+      "poor dental health"
+    ],
+    "vulnerablePopulations": [
+      "patients with valvular disease",
+      "hemodialysis patients",
+      "people who inject drugs"
+    ],
+    "diagnosticCriteria": "Modified Duke criteria; blood cultures and echocardiography (TTE/TEE)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; case-based detection",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands of cases annually across EU",
+    "controlRate": "High with early diagnosis and access to surgery"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "TEE and blood cultures widely available; multidisciplinary endocarditis teams in many centers",
+    "treatmentProtocol": "Prolonged IV antibiotics; surgery for complications or prosthetic infection",
+    "regionalChallenges": "Complex care coordination and comorbidity management",
+    "strongPoints": "Strong cardiology and cardiac surgery networks"
+  }
+}

@@ -250,17 +250,17 @@ export default function Sidebar() {
 
   return (
     <aside
-      className="w-72 lg:w-80 glass border-r border-neutral-200/80 dark:border-neutral-700/50 h-screen sticky top-0 overflow-y-auto shadow-sm"
+      className="w-72 lg:w-80 card-darwin border-r border-carbon-200 dark:border-carbon-700 h-screen sticky top-0 overflow-y-auto"
       role="complementary"
       aria-label="Sidebar navigation"
     >
       <div className="p-6">
-        {/* Sidebar Header */}
-        <div className="mb-6 pb-4 border-b border-neutral-200 dark:border-neutral-700">
-          <h2 className="text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-1">
-            {t('common.appName')}
+        {/* Sidebar Header - Darwin Medical Hub */}
+        <div className="mb-6 pb-4 border-b border-carbon-200 dark:border-carbon-700">
+          <h2 className="text-lg font-bold text-helix-navy dark:text-white mb-1">
+            {t('common.appName')} <span className="text-adenine-teal">{t('common.appSubtitle')}</span>
           </h2>
-          <p className="text-xs text-neutral-600 dark:text-neutral-400">
+          <p className="text-xs text-carbon-500 dark:text-carbon-400">
             {t('common.appDescription')}
           </p>
         </div>
@@ -268,7 +268,7 @@ export default function Sidebar() {
         <nav className="space-y-6" role="navigation" aria-label="Clinical guide navigation">
           {navigationGroups.map((group) => (
             <div key={group.title}>
-              <h3 className="text-xs font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-wider mb-2 px-4">
+              <h3 className="text-xs font-bold text-carbon-400 dark:text-carbon-500 uppercase tracking-wider mb-2 px-4">
                 {group.title}
               </h3>
               <div className="space-y-1">
@@ -278,24 +278,24 @@ export default function Sidebar() {
           ))}
         </nav>
 
-        {/* Footer - Professional Medical Style */}
-        <div className="mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-700">
-          <div className="px-4 py-3 bg-neutral-50 dark:bg-neutral-800/50 rounded-xl">
+        {/* Footer - Darwin Medical Hub Style */}
+        <div className="mt-8 pt-6 border-t border-carbon-200 dark:border-carbon-700">
+          <div className="px-4 py-3 bg-adenine-teal/5 dark:bg-adenine-teal/10 rounded-xl border border-adenine-teal/10 dark:border-adenine-teal/20">
             <div className="flex items-start gap-3 mb-3">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-8 h-8 bg-gradient-to-br from-adenine-teal to-guanine-green rounded-lg flex items-center justify-center flex-shrink-0">
                 <BookOpen className="w-4 h-4 text-white" />
               </div>
               <div>
-                <p className="text-xs font-bold text-neutral-900 dark:text-neutral-100 mb-1">
+                <p className="text-xs font-bold text-helix-navy dark:text-white mb-1">
                   {t('sidebar.q1Standard')}
                 </p>
-                <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                <p className="text-xs text-carbon-600 dark:text-carbon-400 leading-relaxed">
                   {t('sidebar.q1Description')}
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            <div className="flex items-center gap-2 text-xs text-carbon-500 dark:text-carbon-400">
+              <div className="w-2 h-2 rounded-full bg-guanine-green animate-pulse"></div>
               <span>{t('sidebar.lastUpdate')}</span>
             </div>
           </div>

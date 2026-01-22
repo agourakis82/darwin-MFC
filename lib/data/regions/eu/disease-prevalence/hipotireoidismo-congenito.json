@@ -1,0 +1,49 @@
+{
+  "diseaseId": "hipotireoidismo-congenito",
+  "region": "EU",
+  "diseaseName": "Congenital hypothyroidism",
+  "prevalence": {
+    "value": "~1 per 2,000-3,500 live births",
+    "population": "Newborns in the EU",
+    "year": 2024,
+    "source": "European newborn screening program reports",
+    "trend": "stable; high detection via screening"
+  },
+  "incidence": {
+    "value": "~1 per 2,000-3,500 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "Newborn screening data"
+  },
+  "burden": {
+    "dalyPerCapita": "low with early treatment; high disability without treatment",
+    "mortalityRate": "Low with treatment",
+    "year": 2024,
+    "source": "WHO Europe child health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "thyroid dysgenesis",
+      "iodine deficiency/excess",
+      "family history",
+      "prematurity"
+    ],
+    "vulnerablePopulations": [
+      "newborns",
+      "preterm infants"
+    ],
+    "diagnosticCriteria": "Elevated TSH/low T4 on newborn screening; confirmatory serum testing"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "high; universal newborn screening in most countries",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands of children across EU",
+    "controlRate": "High with early levothyroxine therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Newborn screening with rapid confirmatory testing",
+    "treatmentProtocol": "Early levothyroxine replacement with regular monitoring",
+    "regionalChallenges": "Ensuring timely follow-up in remote areas",
+    "strongPoints": "Strong screening programs and pediatric endocrine follow-up"
+  }
+}

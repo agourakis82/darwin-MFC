@@ -1,0 +1,50 @@
+{
+  "diseaseId": "fascite-plantar",
+  "region": "IN",
+  "diseaseName": "Plantar Fasciitis",
+  "prevalence": {
+    "value": "3-7% (adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Musculoskeletal epidemiology syntheses",
+    "trend": "increasing with obesity and prolonged standing work"
+  },
+  "incidence": {
+    "value": "5-15 per 1,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Foot/ankle cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "obesity",
+      "prolonged standing",
+      "poor footwear",
+      "tight calf/Achilles"
+    ],
+    "vulnerablePopulations": [
+      "workers with prolonged standing",
+      "people with obesity"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; imaging for atypical/refractory cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of episodic cases",
+    "controlRate": "Variable; physio and footwear access affect outcomes"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis; many self-manage",
+    "treatmentProtocol": "Stretching, footwear changes, NSAIDs; physiotherapy; injections selectively",
+    "regionalChallenges": "Limited access to physiotherapy and orthotics and delayed care",
+    "strongPoints": "Low-cost stretching and activity modification can be effective"
+  }
+}
+

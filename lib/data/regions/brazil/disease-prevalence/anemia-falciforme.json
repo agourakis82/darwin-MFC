@@ -1,0 +1,52 @@
+{
+  "diseaseId": "anemia-falciforme",
+  "region": "BR",
+  "diseaseName": "Doença Falciforme (Anemia Falciforme)",
+  "prevalence": {
+    "value": "~0.02-0.05% (SCD); trait higher (~2-8% in some populations)",
+    "population": "Brazilian population (higher in Afro-descendant communities)",
+    "year": 2024,
+    "source": "Brazilian newborn screening (triagem neonatal) and hematology program syntheses",
+    "trend": "stable births; improved survival increases prevalent population"
+  },
+  "incidence": {
+    "value": "~1 per 1,000-2,000 live births (varies by state)",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "National newborn screening program reports (PNTN) and hematology networks"
+  },
+  "burden": {
+    "dalyPerCapita": "low nationally; high per-patient burden (pain crises, organ damage)",
+    "mortalityRate": "Elevated vs general population; reduced with early care, vaccination and hydroxyurea",
+    "year": 2024,
+    "source": "IHME/GBD hemoglobinopathies context; clinical cohort outcomes"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "inherited HbS (autosomal recessive)",
+      "family history",
+      "limited access to early prophylaxis and comprehensive care",
+      "infections and dehydration (trigger crises)",
+      "cold exposure and hypoxia (triggers)"
+    ],
+    "vulnerablePopulations": [
+      "children (infection risk)",
+      "patients with poor access to hematology services",
+      "pregnant people with SCD",
+      "patients in low-income settings"
+    ],
+    "diagnosticCriteria": "Newborn screening or hemoglobin electrophoresis/HPLC; confirm genotype; monitor complications (stroke risk, pulmonary hypertension, renal disease)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "newborn screening widely implemented; follow-up varies by region",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands living with SCD",
+    "controlRate": "Moderate; improves with comprehensive care, prophylaxis and hydroxyurea access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "PNTN newborn screening with confirmatory testing; referral to hematology services for longitudinal care",
+    "treatmentProtocol": "Penicillin prophylaxis in childhood, vaccination, hydroxyurea when indicated, transfusion protocols for acute complications, pain management, stroke prevention and TCD screening where available",
+    "regionalChallenges": "Care fragmentation, limited specialized centers in some states, under-resourced pain management and transition to adult care",
+    "strongPoints": "Established newborn screening pathway and national clinical experience; hydroxyurea widely used in public hematology programs"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "diseaseId": "ulcera-peptica",
+  "region": "BR",
+  "diseaseName": "Úlcera Péptica",
+  "prevalence": {"value": "7.5%", "population": "Brazilian adults", "year": 2024, "source": "FBG (Federação Brasileira de Gastroenterologia)", "trend": "stable due to improved H. pylori eradication programs"},
+  "incidence": {"value": "1.2 per 1000", "population": "Brazilian adults", "year": 2024, "source": "DataSUS"},
+  "burden": {"dalyPerCapita": "85", "mortalityRate": "6.5 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["H. pylori infection", "NSAID use", "smoking", "alcohol consumption", "stress", "family history"],
+    "vulnerablePopulations": ["elderly population", "low socioeconomic groups", "rural communities", "chronic NSAID users"],
+    "diagnosticCriteria": "Endoscopy with biopsy for H. pylori, clinical symptoms"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "H. pylori testing available via SUS",
+    "treatmentAvailable": true,
+    "estimatedPatients": "11.25 million",
+    "controlRate": "65% H. pylori eradication rate"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "FBG guidelines, endoscopy when available, H. pylori testing",
+    "treatmentProtocol": "PPIs + triple therapy (clarithromycin, amoxicillin) for H. pylori eradication via SUS",
+    "regionalChallenges": "High H. pylori prevalence (50-70%), NSAID overuse, limited endoscopy access",
+    "strongPoints": "Free H. pylori treatment via SUS, PPIs widely available"
+  }
+}

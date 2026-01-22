@@ -1,0 +1,55 @@
+{
+  "diseaseId": "embolia-pulmonar",
+  "region": "IN",
+  "diseaseName": "Pulmonary Embolism (PE)",
+  "prevalence": {
+    "value": "0.05-0.1% (point prevalence; underdiagnosis likely)",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR-informed hospital epidemiology + IHME GBD (VTE) context",
+    "trend": "increasing recognition with expanding CT availability in tertiary hospitals"
+  },
+  "incidence": {
+    "value": "40-80 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "IHME GBD (VTE) extrapolated; Indian tertiary-center registries"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0002-0.0007",
+    "mortalityRate": "5-20 per 100,000 (higher with delayed diagnosis and limited ICU access)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "recent surgery/trauma",
+      "immobility and long travel",
+      "cancer",
+      "pregnancy/postpartum",
+      "estrogen exposure",
+      "prior VTE/thrombophilia"
+    ],
+    "vulnerablePopulations": [
+      "post-operative patients",
+      "cancer patients",
+      "older adults",
+      "pregnant/postpartum people",
+      "patients with prolonged hospitalization"
+    ],
+    "diagnosticCriteria": "Clinical probability scoring (Wells), D-dimer where available, confirmation by CTPA; lower-extremity ultrasound for DVT; Indian practice aligned with international/ESC approaches"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; inpatient prophylaxis implementation varies widely",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~500,000-1,000,000 VTE events/year (including PE/DVT; underrecognized)",
+    "controlRate": "Variable; affected by out-of-pocket costs for diagnostics and anticoagulants"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "CTPA mainly in tertiary centers; peripheral facilities rely on clinical suspicion and referral",
+    "treatmentProtocol": "Anticoagulation with heparin/LMWH followed by DOACs or warfarin; thrombolysis for high-risk PE when available; hospital VTE prophylaxis protocols",
+    "regionalChallenges": "Underdiagnosis, limited CTPA/ICU access outside metros, and adherence challenges due to cost and follow-up fragmentation",
+    "strongPoints": "Growing tertiary hospital capacity and increasing availability of affordable generic anticoagulants"
+  }
+}
+

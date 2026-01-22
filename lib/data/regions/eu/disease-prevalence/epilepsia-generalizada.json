@@ -1,0 +1,49 @@
+{
+  "diseaseId": "epilepsia-generalizada",
+  "region": "EU",
+  "diseaseName": "Generalized Epilepsy",
+  "prevalence": {
+    "value": "0.2-0.5%",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ILAE/European epilepsy epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "10-25 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Elevated vs general population",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic epilepsy syndromes",
+      "sleep deprivation triggers",
+      "photosensitivity (subset)"
+    ],
+    "vulnerablePopulations": [
+      "children and adolescents",
+      "women of childbearing age (medication choice considerations)"
+    ],
+    "diagnosticCriteria": "ILAE criteria with EEG patterns; syndrome-based classification and risk counseling"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1-2 million",
+    "controlRate": "Moderate to high with access to specialist care and broad ASM formulary"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to EEG and specialist epilepsy clinics in many member states",
+    "treatmentProtocol": "Syndrome-based ASM selection with pregnancy risk management; structured counseling and follow-up",
+    "regionalChallenges": "Cross-country variability in services and medication reimbursement",
+    "strongPoints": "Strong specialist networks and access to modern ASMs"
+  }
+}
+

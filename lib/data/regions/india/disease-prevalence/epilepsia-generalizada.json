@@ -1,0 +1,49 @@
+{
+  "diseaseId": "epilepsia-generalizada",
+  "region": "IN",
+  "diseaseName": "Generalized Epilepsy",
+  "prevalence": {
+    "value": "0.2-0.5%",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "ILAE/ICMR-informed epilepsy epidemiology syntheses",
+    "trend": "stable; underdiagnosis persists"
+  },
+  "incidence": {
+    "value": "12-30 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Epilepsy cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.006",
+    "mortalityRate": "Elevated vs general population",
+    "year": 2024,
+    "source": "IHME GBD epilepsy context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic epilepsy syndromes",
+      "perinatal injury (some cases)",
+      "sleep deprivation triggers"
+    ],
+    "vulnerablePopulations": [
+      "children and adolescents",
+      "rural populations with limited access to pediatric neurology"
+    ],
+    "diagnosticCriteria": "ILAE criteria; EEG patterns supportive; syndrome-based classification"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~3-6 million",
+    "controlRate": "Variable; treatment gap affects outcomes"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EEG access limited outside cities; many diagnoses are clinical",
+    "treatmentProtocol": "Valproate and other ASMs (with pregnancy considerations); counseling on triggers; school and safety guidance",
+    "regionalChallenges": "Treatment gap and limited specialist services",
+    "strongPoints": "Availability of low-cost generic ASMs"
+  }
+}
+

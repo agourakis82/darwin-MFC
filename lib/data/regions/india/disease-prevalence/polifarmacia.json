@@ -1,0 +1,52 @@
+{
+  "diseaseId": "polifarmacia",
+  "region": "IN",
+  "diseaseName": "Polypharmacy in Older Adults",
+  "prevalence": {
+    "value": "25-45% (≥5 medications among older adults; varies by setting)",
+    "population": "Indian older adults",
+    "year": 2024,
+    "source": "Geriatrics pharmacology epidemiology syntheses",
+    "trend": "increasing with multimorbidity and chronic disease treatment"
+  },
+  "incidence": {
+    "value": "high (accumulates with chronic disease management)",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "indirect",
+    "mortalityRate": "Indirect",
+    "year": 2024,
+    "source": "WHO medication safety context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "multimorbidity",
+      "self-medication and OTC use",
+      "multiple prescribers",
+      "fragmented follow-up",
+      "low health literacy"
+    ],
+    "vulnerablePopulations": [
+      "older adults with diabetes/hypertension",
+      "frail older adults",
+      "older adults with limited access to medication review"
+    ],
+    "diagnosticCriteria": "Medication count with assessment for inappropriate meds and adverse effects; reconciliation is key"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of older adults",
+    "controlRate": "Low to moderate; structured medication review is limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often discovered after adverse events; limited pharmacist involvement",
+    "treatmentProtocol": "Medication reconciliation, deprescribing, simplify regimens, avoid high-risk sedatives",
+    "regionalChallenges": "OTC use, fragmented care, and limited follow-up",
+    "strongPoints": "Community programs and family support can aid adherence and reconciliation"
+  }
+}
+

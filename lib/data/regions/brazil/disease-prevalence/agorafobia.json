@@ -1,0 +1,52 @@
+{
+  "diseaseId": "agorafobia",
+  "region": "BR",
+  "diseaseName": "Agorafobia",
+  "prevalence": {
+    "value": "1-2%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "IHME GBD / psychiatric epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "1-3 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Anxiety disorder epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.006",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "history of panic attacks",
+      "anxiety sensitivity",
+      "female sex",
+      "prior trauma",
+      "comorbid depression"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "young adults",
+      "patients with panic disorder"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: fear/avoidance of situations where escape may be difficult; persistent (≥6 months) with impairment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2-4 million",
+    "controlRate": "Moderate; CBT access limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often co-diagnosed with panic disorder; identification in APS/CAPS varies",
+    "treatmentProtocol": "CBT with exposure and SSRIs; gradual functional rehabilitation",
+    "regionalChallenges": "Limited access to exposure-based CBT and functional support services",
+    "strongPoints": "Availability of SSRIs and psychosocial services in CAPS where present"
+  }
+}
+

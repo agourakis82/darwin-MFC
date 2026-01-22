@@ -1,0 +1,50 @@
+{
+  "diseaseId": "escabiose",
+  "region": "EU",
+  "diseaseName": "Scabies",
+  "prevalence": {
+    "value": "~0.2-1% (higher in institutions and outbreaks)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECDC/WHO Europe scabies context; dermatology surveillance",
+    "trend": "stable; outbreaks in long-term care and shelters"
+  },
+  "incidence": {
+    "value": "~2-8 per 1,000 person-years in high-risk settings",
+    "population": "General population; higher in institutions",
+    "year": 2024,
+    "source": "Outbreak investigations and primary care data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; itch burden and secondary infection risk",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO/IHME skin disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "close contact and crowding",
+      "institutional living",
+      "delayed treatment of contacts",
+      "immunosuppression (crusted scabies risk)"
+    ],
+    "vulnerablePopulations": [
+      "long-term care residents",
+      "shelter populations",
+      "migrant/refugee populations in crowded settings"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis based on pruritus and distribution; dermoscopy/microscopy for confirmation when needed"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands across the EU (outbreak-dependent)",
+    "controlRate": "High with coordinated outbreak response and contact treatment"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Dermatology and primary care pathways with confirmatory testing available",
+    "treatmentProtocol": "Topical permethrin or oral ivermectin; treat close contacts; environmental cleaning protocols in institutions",
+    "regionalChallenges": "Coordinating outbreak control in institutional settings",
+    "strongPoints": "Strong public health outbreak response capacity and access to effective therapies"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "diseaseId": "hipotireoidismo-congenito",
+  "region": "BR",
+  "diseaseName": "Hipotireoidismo congenito",
+  "prevalence": {
+    "value": "~1 per 2,000-3,500 live births",
+    "population": "Newborns in Brazil",
+    "year": 2024,
+    "source": "PNTN newborn screening reports; endocrine epidemiology",
+    "trend": "stable; early detection via screening"
+  },
+  "incidence": {
+    "value": "~1 per 2,000-3,500 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "Newborn screening program data"
+  },
+  "burden": {
+    "dalyPerCapita": "low with early treatment; high disability without treatment",
+    "mortalityRate": "Low with treatment",
+    "year": 2024,
+    "source": "WHO child health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "thyroid dysgenesis",
+      "iodine deficiency/excess",
+      "family history of thyroid disease",
+      "prematurity (transient hypothyroidism)"
+    ],
+    "vulnerablePopulations": [
+      "newborns",
+      "preterm infants"
+    ],
+    "diagnosticCriteria": "Elevated TSH/low T4 on newborn screening; confirmatory serum testing"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "high via national newborn screening (PNTN)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Thousands of children",
+    "controlRate": "High with early levothyroxine therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Screening in maternity services; confirmatory testing in referral labs",
+    "treatmentProtocol": "Early levothyroxine replacement with regular monitoring",
+    "regionalChallenges": "Timely follow-up in remote areas",
+    "strongPoints": "Established newborn screening pathway and effective treatment"
+  }
+}

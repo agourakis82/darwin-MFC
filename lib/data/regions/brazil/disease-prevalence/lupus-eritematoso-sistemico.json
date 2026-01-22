@@ -1,0 +1,52 @@
+{
+  "diseaseId": "lupus-eritematoso-sistemico",
+  "region": "BR",
+  "diseaseName": "Lúpus Eritematoso Sistêmico (LES)",
+  "prevalence": {
+    "value": "30-60 per 100,000",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "SBR + Latin America SLE epidemiology syntheses",
+    "trend": "stable; diagnosis increasing with improved access to rheumatology and labs"
+  },
+  "incidence": {
+    "value": "2-6 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "SLE cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0006-0.002",
+    "mortalityRate": "Elevated vs general population (renal/CV/infection complications)",
+    "year": 2024,
+    "source": "IHME GBD / cohort mortality context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "genetic susceptibility",
+      "UV exposure (trigger)",
+      "smoking",
+      "certain medications (drug-induced lupus forms)"
+    ],
+    "vulnerablePopulations": [
+      "women of childbearing age",
+      "Afro-descendant and mixed ancestry populations (higher severity in some cohorts)",
+      "patients with limited specialist access"
+    ],
+    "diagnosticCriteria": "ACR/EULAR classification criteria supported by ANA positivity, immunologic markers (anti-dsDNA, anti-Sm), complement, and clinical organ involvement; diagnosis is clinical"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~70,000-130,000",
+    "controlRate": "Variable; outcomes depend on early nephritis detection and access to immunosuppression"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ANA and basic immunology tests available; complement/autoantibody panels and renal biopsy access vary by region",
+    "treatmentProtocol": "Hydroxychloroquine for most; corticosteroids and immunosuppressants for organ disease; biologics in selected cases; pregnancy planning and nephritis management in specialist centers",
+    "regionalChallenges": "Unequal access to rheumatology and renal biopsy, infection risk with immunosuppression, and adherence challenges",
+    "strongPoints": "SUS access to core therapies (HCQ, steroids) and specialized centers in major cities"
+  }
+}
+

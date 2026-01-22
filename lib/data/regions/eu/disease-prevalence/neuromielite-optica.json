@@ -1,0 +1,49 @@
+{
+  "diseaseId": "neuromielite-optica",
+  "region": "EU",
+  "diseaseName": "Neuromyelitis Optica Spectrum Disorder (NMOSD)",
+  "prevalence": {
+    "value": "0.8-2 per 100,000",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European neuroimmunology epidemiology syntheses",
+    "trend": "stable; recognition improved with antibody testing"
+  },
+  "incidence": {
+    "value": "0.1-0.3 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0003-0.0012",
+    "mortalityRate": "Indirect; disability driven by relapses",
+    "year": 2024,
+    "source": "IHME/WHO Europe context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "AQP4-IgG autoimmunity",
+      "female sex",
+      "autoimmune comorbidity"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "patients with relapsing disease requiring high-efficacy prevention"
+    ],
+    "diagnosticCriteria": "International NMOSD criteria with antibody testing and MRI features; differentiation from MS is standard"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~3,500-9,000",
+    "controlRate": "Moderate to high with access to specialized care and biologics; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to AQP4 testing, MRI, and plasmapheresis in specialist centers",
+    "treatmentProtocol": "Relapse steroids/plasmapheresis; maintenance immunotherapy including biologics in specialized care pathways",
+    "regionalChallenges": "Access variability across member states and high cost of newer agents",
+    "strongPoints": "Specialist neuroimmunology services and structured relapse-prevention pathways in many systems"
+  }
+}
+

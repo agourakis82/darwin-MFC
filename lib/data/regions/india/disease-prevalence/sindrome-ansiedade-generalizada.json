@@ -1,0 +1,51 @@
+{
+  "diseaseId": "sindrome-ansiedade-generalizada",
+  "region": "IN",
+  "diseaseName": "Generalized anxiety syndrome",
+  "prevalence": {
+    "value": "~3-5% (adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Mental health epidemiology syntheses; WHO context",
+    "trend": "stable to increasing with stress and urbanization"
+  },
+  "incidence": {
+    "value": "~4-7 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Primary care and mental health cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to chronic symptoms and functional impairment",
+    "mortalityRate": "Low (indirect via comorbidity and suicide risk)",
+    "year": 2024,
+    "source": "IHME/GBD mental health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "prior anxiety/depression",
+      "chronic stress",
+      "family history",
+      "substance use"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "young adults",
+      "people with chronic illness"
+    ],
+    "diagnosticCriteria": "Persistent excessive worry for >6 months with functional impairment; DSM-5 criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited screening in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "Low to moderate; limited access to psychotherapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care and psychiatry",
+    "treatmentProtocol": "CBT when available, SSRIs/SNRIs, lifestyle interventions",
+    "regionalChallenges": "Stigma and limited mental health workforce",
+    "strongPoints": "Affordable medications and growing community mental health programs"
+  }
+}

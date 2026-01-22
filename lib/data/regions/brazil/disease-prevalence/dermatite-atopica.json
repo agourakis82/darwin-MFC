@@ -1,0 +1,52 @@
+{
+  "diseaseId": "dermatite-atopica",
+  "region": "BR",
+  "diseaseName": "Dermatite Atópica",
+  "prevalence": {
+    "value": "10-15% (children); 2-5% (adults)",
+    "population": "Brazilian population (age-dependent)",
+    "year": 2024,
+    "source": "SBD + ISAAC-aligned epidemiology syntheses",
+    "trend": "stable to increasing in urban areas"
+  },
+  "incidence": {
+    "value": "5-15 per 1,000/year (children; diagnosis over early childhood)",
+    "population": "Brazilian children",
+    "year": 2024,
+    "source": "Dermatology epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.01",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD (atopic dermatitis)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history of atopy",
+      "asthma/allergic rhinitis comorbidity",
+      "urban pollution",
+      "skin barrier dysfunction",
+      "early-life exposures"
+    ],
+    "vulnerablePopulations": [
+      "children",
+      "patients with asthma/allergic rhinitis",
+      "low-income families with limited access to emollients and dermatology care"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis based on pruritic eczema with typical distribution and chronic/relapsing course; validated criteria (e.g., UK Working Party) used in research; rule out scabies and contact dermatitis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions (children and adults)",
+    "controlRate": "Variable; basic control possible, severe disease requires specialist access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS manages mild cases; dermatology referral for moderate-severe disease",
+    "treatmentProtocol": "Emollients, topical corticosteroids/calcineurin inhibitors; phototherapy and systemic immunomodulators for severe disease; biologics (e.g., dupilumab) limited to specialized access",
+    "regionalChallenges": "Access to emollients and specialists; limited biologic availability in SUS",
+    "strongPoints": "Primary care coverage and availability of topical corticosteroids in SUS"
+  }
+}
+

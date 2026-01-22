@@ -1,0 +1,51 @@
+{
+  "diseaseId": "dismenorreia",
+  "region": "BR",
+  "diseaseName": "Dismenorreia",
+  "prevalence": {
+    "value": "~50-80% (menstruating adolescents and women)",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "Gynecology epidemiology syntheses; adolescent health surveys",
+    "trend": "stable; underreported due to normalization of symptoms"
+  },
+  "incidence": {
+    "value": "Common at menarche and adolescence; recurrent monthly episodes",
+    "population": "Adolescents and young adults",
+    "year": 2024,
+    "source": "Adolescent gynecology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate QOL and productivity impact; low mortality",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO/IHME reproductive health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "young age and early menarche",
+      "heavy menstrual bleeding",
+      "family history",
+      "endometriosis (secondary dysmenorrhea)",
+      "smoking"
+    ],
+    "vulnerablePopulations": [
+      "adolescents",
+      "women with suspected endometriosis",
+      "women with limited access to gynecology care"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis for primary dysmenorrhea; evaluate for secondary causes (endometriosis, fibroids) when severe, progressive, or refractory"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of women affected",
+    "controlRate": "Moderate to high with NSAIDs and hormonal therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and gynecology assessment; pelvic ultrasound for suspected secondary causes",
+    "treatmentProtocol": "NSAIDs, combined oral contraceptives or progestins, heat/exercise; referral for suspected endometriosis",
+    "regionalChallenges": "Delayed diagnosis of secondary causes and stigma around menstrual pain",
+    "strongPoints": "Effective low-cost treatments available in SUS and private care"
+  }
+}

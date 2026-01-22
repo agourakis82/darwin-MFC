@@ -1,0 +1,11 @@
+{
+  "diseaseId": "fibrilacao-atrial",
+  "region": "BR",
+  "diseaseName": "Fibrilação Atrial",
+  "prevalence": {"value": "1.4%", "population": "Brazilian adults aged 45+", "year": 2024, "source": "SBC/DataSUS/VIGITEL", "trend": "Increasing by 0.2% annually due to aging population"},
+  "incidence": {"value": "0.15%", "population": "Brazilian adults aged 45+", "year": 2024, "source": "Global Burden of Disease Study 2019 (IHME), adapted for Brazil"},
+  "burden": {"dalyPerCapita": "45.2 per 100,000", "mortalityRate": "12.5 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {"riskFactors": ["Hypertension", "Diabetes", "Obesity", "Age >65", "Chagas disease", "Alcohol consumption", "Valvular heart disease"], "vulnerablePopulations": ["Elderly population", "Patients with Chagas cardiomyopathy", "Individuals in rural Northeast and Centro-Oeste regions"], "diagnosticCriteria": "Diagnosis based on 12-lead ECG showing irregular RR intervals with no discernible P waves, per ESC 2020 guidelines adapted by SBC"},
+  "publicHealthSystem": {"screeningCoverage": "35% in primary care via SUS", "treatmentAvailable": true, "estimatedPatients": "1.8 million", "controlRate": "45% rate of anticoagulation in diagnosed cases"},
+  "regionalSpecificities": {"diagnosisCriteria": "Standard ECG and Holter monitoring, with emphasis on Chagas screening in endemic areas", "treatmentProtocol": "Rate/rhythm control per SBC guidelines; anticoagulation with DOACs or warfarin via SUS", "regionalChallenges": "Limited access in rural areas; high Chagas prevalence complicating management", "strongPoints": "Robust SUS coverage for urban centers; national Chagas surveillance program aiding early detection"}
+}

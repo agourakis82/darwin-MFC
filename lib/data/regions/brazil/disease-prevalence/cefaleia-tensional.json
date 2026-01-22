@@ -1,0 +1,53 @@
+{
+  "diseaseId": "cefaleia-tensional",
+  "region": "BR",
+  "diseaseName": "Cefaleia Tensional",
+  "prevalence": {
+    "value": "15-25% (1-year prevalence)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "IHME GBD (tension-type headache) + national survey context",
+    "trend": "stable; high underreporting in primary care"
+  },
+  "incidence": {
+    "value": "high (recurrent episodic); ~50-150 per 1,000/year reporting clinically significant episodes",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Headache epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.005-0.02",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "stress",
+      "sleep deprivation",
+      "poor ergonomics",
+      "neck muscle tension",
+      "anxiety/depression comorbidity"
+    ],
+    "vulnerablePopulations": [
+      "working-age adults",
+      "women",
+      "people with high occupational stress",
+      "patients with insomnia"
+    ],
+    "diagnosticCriteria": "ICHD-3: bilateral pressing/tightening headache, mild-moderate intensity, not aggravated by routine activity; no nausea/vomiting; may have photophobia or phonophobia (not both)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions with episodic symptoms",
+    "controlRate": "Moderate with lifestyle and appropriate analgesic use; medication overuse risk exists"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often diagnosed clinically in APS; red flag screening to exclude secondary causes",
+    "treatmentProtocol": "Education, stress management, sleep hygiene, NSAIDs/analgesics as needed; preventive strategies (e.g., amitriptyline) for chronic forms",
+    "regionalChallenges": "Medication overuse headache and limited access to non-pharmacologic therapies",
+    "strongPoints": "APS can deliver lifestyle counseling and manage comorbid anxiety/insomnia"
+  }
+}
+

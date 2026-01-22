@@ -1,0 +1,52 @@
+{
+  "diseaseId": "urticaria-cronica",
+  "region": "BR",
+  "diseaseName": "Urticária Crônica",
+  "prevalence": {
+    "value": "0.5-1.0%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBD/dermatology epidemiology syntheses (chronic urticaria)",
+    "trend": "stable; improved recognition"
+  },
+  "incidence": {
+    "value": "1-3 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Urticaria epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO skin disease burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autoimmune mechanisms (common in CSU)",
+      "female sex",
+      "thyroid disease association",
+      "stress",
+      "NSAID intolerance (trigger)"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "patients with autoimmune thyroid disease",
+      "patients with high psychosocial stress"
+    ],
+    "diagnosticCriteria": "Wheals/angioedema for >6 weeks; identify triggers and exclude urticarial vasculitis; basic labs guided by history; align with EAACI/GA2LEN/EuroGuiDerm guidance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1-2 million",
+    "controlRate": "Moderate; refractory cases need specialist access and biologics"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care often treats with antihistamines; specialist referral for refractory cases",
+    "treatmentProtocol": "Second-generation antihistamines (up-dosing), short corticosteroid bursts for flares; omalizumab or cyclosporine for refractory CSU in specialist care",
+    "regionalChallenges": "Limited access to omalizumab and specialist allergy/dermatology services in SUS",
+    "strongPoints": "Antihistamines widely available and clear stepwise guideline frameworks"
+  }
+}
+

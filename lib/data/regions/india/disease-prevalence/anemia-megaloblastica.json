@@ -1,0 +1,53 @@
+{
+  "diseaseId": "anemia-megaloblastica",
+  "region": "IN",
+  "diseaseName": "Megaloblastic Anemia (B12/Folate Deficiency)",
+  "prevalence": {
+    "value": "1-5% (higher in vegetarians, older adults, and low-income groups)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Indian nutrition/hematology epidemiology syntheses",
+    "trend": "stable; high background B12 deficiency in some groups"
+  },
+  "incidence": {
+    "value": "2-8 per 1,000/year (diagnosed cases)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Low; neurologic complications possible",
+    "year": 2024,
+    "source": "IHME/WHO anemia and nutrition context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "dietary B12 deficiency (vegetarian diets)",
+      "folate deficiency",
+      "malabsorption",
+      "metformin use",
+      "alcohol use"
+    ],
+    "vulnerablePopulations": [
+      "vegetarians",
+      "older adults",
+      "pregnant people (folate needs)",
+      "low-income groups with poor diet diversity"
+    ],
+    "diagnosticCriteria": "Macrocytosis with low B12/folate; clinical features include glossitis and neuropathy; MMA testing limited"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions (including subclinical deficiency)",
+    "controlRate": "Moderate; depends on adherence and addressing dietary causes"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "CBC available; B12 testing varies; folate supplementation common in pregnancy programs",
+    "treatmentProtocol": "B12 replacement and folate supplementation when indicated; dietary counseling and evaluation for malabsorption",
+    "regionalChallenges": "High underlying B12 deficiency burden and limited lab confirmation in some settings",
+    "strongPoints": "Low-cost supplementation and widespread clinical recognition of nutritional anemia"
+  }
+}
+

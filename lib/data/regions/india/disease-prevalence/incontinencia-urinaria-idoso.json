@@ -1,0 +1,54 @@
+{
+  "diseaseId": "incontinencia-urinaria-idoso",
+  "region": "IN",
+  "diseaseName": "Urinary Incontinence in Older Adults",
+  "prevalence": {
+    "value": "15-35% (older adults; underreported)",
+    "population": "Indian adults >60 years",
+    "year": 2024,
+    "source": "Geriatrics/urology epidemiology syntheses",
+    "trend": "increasing with aging"
+  },
+  "incidence": {
+    "value": "20-50 per 1,000 person-years",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "Geriatric cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.005-0.02 (older-adult concentrated)",
+    "mortalityRate": "Indirect",
+    "year": 2024,
+    "source": "IHME/WHO older adult context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "pelvic floor weakness",
+      "BPH/LUTS",
+      "diabetes",
+      "mobility impairment",
+      "cognitive impairment"
+    ],
+    "vulnerablePopulations": [
+      "older women",
+      "frail older adults",
+      "older adults with dementia",
+      "older adults with diabetes"
+    ],
+    "diagnosticCriteria": "Clinical assessment and urinalysis; categorize stress/urge/mixed; assess post-void residual when possible; exclude UTI"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; stigma leads to underreporting",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of older adults",
+    "controlRate": "Low to moderate; pelvic floor rehab access is limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often managed in primary care without full evaluation; referral access variable",
+    "treatmentProtocol": "Bladder training, pelvic floor exercises, manage constipation and diabetes; medications when available; address BPH contributors",
+    "regionalChallenges": "Stigma and limited pelvic floor physiotherapy and geriatric services",
+    "strongPoints": "Low-cost behavioral interventions can reduce symptoms when implemented"
+  }
+}
+

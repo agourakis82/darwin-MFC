@@ -1,0 +1,52 @@
+{
+  "diseaseId": "tendinite",
+  "region": "EU",
+  "diseaseName": "Tendinitis",
+  "prevalence": {
+    "value": "~5-10% (working-age adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "Occupational health and musculoskeletal epidemiology syntheses",
+    "trend": "stable; higher in repetitive and manual work"
+  },
+  "incidence": {
+    "value": "~8-14 per 1,000 workers/year",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "Occupational cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant pain and work limitation",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe/IHME musculoskeletal context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "repetitive motion and overuse",
+      "manual labor",
+      "sports overuse",
+      "poor ergonomics",
+      "diabetes and obesity"
+    ],
+    "vulnerablePopulations": [
+      "manual workers",
+      "athletes",
+      "older adults",
+      "patients with diabetes"
+    ],
+    "diagnosticCriteria": "Clinical tendon pain with activity and focal tenderness; ultrasound or MRI if diagnosis uncertain"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of cases across musculoskeletal clinics",
+    "controlRate": "High with physiotherapy and ergonomic measures"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and sports medicine evaluation; imaging widely available",
+    "treatmentProtocol": "Activity modification, NSAIDs, physiotherapy, ergonomic interventions; injections for selected cases",
+    "regionalChallenges": "Workplace prevention and recurrent overuse in some industries",
+    "strongPoints": "Strong rehabilitation services and occupational health support"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "diseaseId": "doenca-renal-cronica",
+  "region": "EU",
+  "diseaseName": "Chronic Kidney Disease",
+  "prevalence": {
+    "value": "6-10% (all stages; stage 3-5: ~4-5%)",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "ERA-EDTA/ECDC; based on ERA-EDTA Registry 2022 data extrapolated",
+    "trend": "Increasing (1-2% annually due to aging and diabetes rise)"
+  },
+  "incidence": {
+    "value": "~120 per million population (for end-stage renal disease; overall CKD incidence ~2% in high-risk groups)",
+    "population": "EU general population",
+    "year": 2024,
+    "source": "ERA-EDTA Registry 2023"
+  },
+  "burden": {
+    "dalyPerCapita": "~150 DALYs per 100,000 population",
+    "mortalityRate": "~25 per 100,000 population",
+    "year": 2024,
+    "source": "Global Burden of Disease Study 2021 (IHME); EU-specific adjustments"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Diabetes mellitus",
+      "Hypertension",
+      "Obesity",
+      "Smoking",
+      "Advanced age (>60 years)",
+      "Cardiovascular disease",
+      "Family history of CKD"
+    ],
+    "vulnerablePopulations": [
+      "Elderly individuals (>65 years)",
+      "Patients with type 2 diabetes",
+      "Individuals with uncontrolled hypertension",
+      "Low socioeconomic status groups",
+      "Ethnic minorities (e.g., South Asian, African descent)"
+    ],
+    "diagnosticCriteria": "KDIGO 2012 guidelines: Persistent eGFR <60 mL/min/1.73m² for >3 months or evidence of kidney damage (e.g., albuminuria >30 mg/24h, structural abnormalities)."
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Varies; ~25-40% in high-risk groups (e.g., diabetics) across EU countries",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~30-45 million adults",
+    "controlRate": "~45% achieve target blood pressure control; ~30% on renin-angiotensin system blockers"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Uniform adoption of KDIGO 2012/2024 updates across EU; eGFR calculated using CKD-EPI equation",
+    "treatmentProtocol": "KDIGO-recommended: Blood pressure control (<130/80 mmHg), use of ACEi/ARBs/SGLT2 inhibitors, lifestyle interventions; progression to dialysis/transplant for stage 5",
+    "regionalChallenges": "Aging population driving prevalence; east-west disparities in access to nephrology care; rising comorbidities like obesity/diabetes",
+    "strongPoints": "Comprehensive renal registries (e.g., ERA-EDTA); high transplant rates (~40 per million); integrated care models in countries like Spain and Netherlands"
+  }
+}

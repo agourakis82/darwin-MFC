@@ -1,0 +1,50 @@
+{
+  "diseaseId": "rinite-alergica",
+  "region": "BR",
+  "diseaseName": "Rinite Alérgica",
+  "prevalence": {
+    "value": "25.3%",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "ASBAI/DataSUS",
+    "trend": "Increasing due to urbanization and climate change"
+  },
+  "incidence": {
+    "value": "8-10% new cases annually",
+    "population": "At-risk urban populations",
+    "year": 2024,
+    "source": "Brazilian Society of Allergology and Immunology (ASBAI)"
+  },
+  "burden": {
+    "dalyPerCapita": "0.15 DALYs per 100,000",
+    "mortalityRate": "<0.01 per 100,000",
+    "year": 2024,
+    "source": "Global Burden of Disease Study (IHME, adapted for Brazil)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Genetic predisposition and family history",
+      "Exposure to environmental allergens (dust mites, pollen, mold, animal dander)",
+      "Air pollution and urban environmental factors",
+      "Comorbidities with asthma (up to 80% co-occurrence)"
+    ],
+    "vulnerablePopulations": [
+      "Children and adolescents (prevalence up to 40% in urban areas)",
+      "Urban residents in polluted cities like São Paulo and Rio de Janeiro",
+      "Individuals with atopic dermatitis or family history of allergies"
+    ],
+    "diagnosticCriteria": "Based on ARIA guidelines: Persistent or intermittent symptoms including sneezing, nasal itching, rhinorrhea, and congestion triggered by allergens; confirmed by skin prick tests or serum IgE levels"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Low (estimated 20-30% in primary care via SUS)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Approximately 53 million (based on 25% prevalence in 214 million population)",
+    "controlRate": "Around 60% with access to treatment, lower in rural areas"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Adapted ARIA criteria with emphasis on local allergens like house dust mites prevalent in humid tropical climate",
+    "treatmentProtocol": "SUS protocol includes intranasal corticosteroids, oral antihistamines, and allergen immunotherapy; guidelines from ASBAI",
+    "regionalChallenges": "High urban pollution exacerbating symptoms; limited access in remote Amazon regions; year-round allergens due to tropical environment",
+    "strongPoints": "Universal coverage via SUS for basic treatments; strong research from institutions like Fiocruz; growing awareness campaigns"
+  }
+}

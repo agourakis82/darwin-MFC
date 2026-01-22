@@ -1,0 +1,53 @@
+{
+  "diseaseId": "acne-vulgar",
+  "region": "IN",
+  "diseaseName": "Acne Vulgaris",
+  "prevalence": {
+    "value": "~60-80% (adolescents); ~10-15% (adults)",
+    "population": "Indian adolescents and adults",
+    "year": 2024,
+    "source": "Dermatology epidemiology syntheses; Indian dermatology clinic data",
+    "trend": "stable; increasing recognition of adult and female acne"
+  },
+  "incidence": {
+    "value": "High; onset peaks in puberty",
+    "population": "Adolescents",
+    "year": 2024,
+    "source": "Dermatology cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; high psychosocial burden and scarring risk",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD skin disease burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "pubertal androgens",
+      "family history",
+      "cosmetic occlusion/comedogenic products",
+      "high glycemic diet (association)",
+      "polycystic ovary syndrome (in females)",
+      "medications (steroids, lithium)"
+    ],
+    "vulnerablePopulations": [
+      "adolescents",
+      "women with hormonal acne/PCOS",
+      "patients prone to post-inflammatory hyperpigmentation",
+      "patients with limited access to dermatology care"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; grade severity and identify scarring; consider endocrine evaluation for severe/refractory or hyperandrogenism signs"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; care through primary care and dermatology",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions",
+    "controlRate": "Moderate; improves with adherence and access to topical/systemic regimens"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis; dermatology referral for severe nodulocystic acne or scarring",
+    "treatmentProtocol": "Topicals (benzoyl peroxide, retinoids), antibiotics when indicated, hormonal therapy for selected women, isotretinoin for severe cases with monitoring",
+    "regionalChallenges": "Over-the-counter steroid misuse in some settings, antibiotic overuse, uneven access to dermatologists outside metros",
+    "strongPoints": "Wide availability of affordable generics and established dermatology services in urban centers"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "diseaseId": "acidemia-propionica",
+  "region": "IN",
+  "diseaseName": "Propionic Acidemia",
+  "prevalence": {
+    "value": "~0.3-0.9 per 100,000",
+    "population": "General population (rare inherited metabolic disorder)",
+    "year": 2024,
+    "source": "Orphanet; Indian IEM center reports and registry syntheses",
+    "trend": "stable; increased diagnosis with improved metabolic testing capacity"
+  },
+  "incidence": {
+    "value": "~1 per 60,000-120,000 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "IEM incidence syntheses; tertiary center case series"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare), but high per-patient burden (recurrent metabolic crises, neurodevelopmental injury)",
+    "mortalityRate": "Higher without early diagnosis and emergency protocols",
+    "year": 2024,
+    "source": "Orphanet and metabolic registry outcomes"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autosomal recessive inheritance",
+      "consanguinity (increases risk)",
+      "family history",
+      "catabolic stress triggers (infection/fasting)",
+      "dietary protein load in infancy without management"
+    ],
+    "vulnerablePopulations": [
+      "newborns/infants",
+      "patients in areas without metabolic specialists",
+      "patients with recurrent infections/malnutrition"
+    ],
+    "diagnosticCriteria": "Elevated C3 on MS/MS, metabolic acidosis and hyperammonemia, urine organic acids (methylcitrate, 3-hydroxypropionate), confirmatory genetics/enzymes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited and mostly private/tertiary programs; not universal",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds (rare; underdiagnosed)",
+    "controlRate": "Variable; improved with consistent diet/medication and emergency management plans"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often diagnosed after severe neonatal/infant presentation; confirmatory testing centralized",
+    "treatmentProtocol": "Emergency metabolic crisis protocol, protein restriction with formulas, carnitine, intermittent gut decontamination antibiotics, cardiology/neuro follow-up",
+    "regionalChallenges": "Newborn screening gaps, cost of medical nutrition, limited metabolic ICU protocols outside tertiary centers",
+    "strongPoints": "Tertiary pediatric hospitals increasingly equipped for IEM diagnosis and emergency care"
+  }
+}

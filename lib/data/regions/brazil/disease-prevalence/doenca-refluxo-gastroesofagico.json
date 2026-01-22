@@ -1,0 +1,25 @@
+{
+  "diseaseId": "doenca-refluxo-gastroesofagico",
+  "region": "BR",
+  "diseaseName": "Doença do Refluxo Gastroesofágico (DRGE)",
+  "prevalence": {"value": "25%", "population": "Brazilian adults", "year": 2024, "source": "FBG (Federação Brasileira de Gastroenterologia) e DataSUS", "trend": "increasing due to obesity epidemic and westernized dietary habits"},
+  "incidence": {"value": "6 per 1000", "population": "Brazilian adults", "year": 2024, "source": "FBG epidemiological studies"},
+  "burden": {"dalyPerCapita": "0.045", "mortalityRate": "0.2 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["obesity", "hiatal hernia", "dietary habits (high-fat meals, common in Brazilian churrasco culture)", "smoking", "alcohol consumption", "pregnancy"],
+    "vulnerablePopulations": ["obese adults", "elderly population", "pregnant women", "individuals with low socioeconomic status in urban areas"],
+    "diagnosticCriteria": "Lyon Consensus criteria adapted for Brazil, incorporating Rome IV for functional dyspepsia overlap"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "37.5 million",
+    "controlRate": "65% with PPI therapy adherence via SUS"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis based on symptoms, endoscopy recommended when alarm symptoms (e.g., weight loss, dysphagia) present",
+    "treatmentProtocol": "PPIs (omeprazole) first-line via SUS, lifestyle modifications (weight loss, dietary changes), H2 blockers as alternatives",
+    "regionalChallenges": "Limited endoscopy access in rural and northern regions, obesity epidemic (prevalence >20% in adults) increasing cases, high consumption of trigger foods like fatty meats",
+    "strongPoints": "Free PPI access via SUS for low-income patients, FBG clinical guidelines promoting evidence-based management"
+  }
+}

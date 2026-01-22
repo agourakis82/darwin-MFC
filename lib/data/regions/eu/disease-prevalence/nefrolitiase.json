@@ -1,0 +1,25 @@
+{
+  "diseaseId": "nefrolitiase",
+  "region": "EU",
+  "diseaseName": "Kidney Stones (Nephrolithiasis)",
+  "prevalence": {"value": "6-8%", "population": "EU adults (~447 million)", "year": 2024, "source": "EAU Guidelines 2023", "trend": "increasing due to dietary changes, obesity"},
+  "incidence": {"value": "1.5-2 per 1000", "population": "EU adults", "year": 2024, "source": "EAU Epidemiology Report"},
+  "burden": {"dalyPerCapita": "0.05-0.1", "mortalityRate": "0.2 per 100,000", "year": 2024, "source": "WHO Europe"},
+  "epidemiology": {
+    "riskFactors": ["Low fluid intake", "High sodium and animal protein diet", "Obesity", "Diabetes mellitus", "Family history", "Metabolic disorders (e.g., hypercalciuria)"],
+    "vulnerablePopulations": ["Men (2-3x higher)", "Southern European populations (higher prevalence)", "Obese individuals", "Patients with gout or IBD"],
+    "diagnosticCriteria": "EAU guidelines, non-contrast CT gold standard"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "25-35 million",
+    "controlRate": "85% high with comprehensive management"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EAU guidelines, low-dose CT protocol widely adopted",
+    "treatmentProtocol": "Conservative: medical expulsive therapy (alpha-blockers); Surgical: ESWL, flexible ureteroscopy, PCNL; Metabolic evaluation for recurrent stones",
+    "regionalChallenges": "Rising prevalence in Southern EU, obesity epidemic, high recurrence rates, healthcare costs",
+    "strongPoints": "EAU comprehensive guidelines, high lithotripsy access, metabolic stone clinics, preventive counseling programs"
+  }
+}

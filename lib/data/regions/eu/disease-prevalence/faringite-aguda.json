@@ -1,0 +1,49 @@
+{
+  "diseaseId": "faringite-aguda",
+  "region": "EU",
+  "diseaseName": "Acute pharyngitis",
+  "prevalence": {
+    "value": "Common episodic condition (children and adolescents)",
+    "population": "EU children and adolescents",
+    "year": 2024,
+    "source": "European primary care respiratory infection syntheses",
+    "trend": "stable; seasonal peaks"
+  },
+  "incidence": {
+    "value": "~80-180 per 1,000 children/year (episodes)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Primary care cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low; high healthcare utilization",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe URI context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral respiratory infections",
+      "group A streptococcus exposure",
+      "school/daycare attendance",
+      "crowding"
+    ],
+    "vulnerablePopulations": [
+      "children 5-15 years",
+      "patients with recurrent pharyngitis"
+    ],
+    "diagnosticCriteria": "Clinical assessment with rapid antigen testing or culture to guide antibiotics"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually across EU",
+    "controlRate": "High with supportive care and targeted antibiotics"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Rapid strep testing commonly available in primary care",
+    "treatmentProtocol": "Supportive care; penicillin for confirmed streptococcal pharyngitis",
+    "regionalChallenges": "Antibiotic stewardship and patient expectations",
+    "strongPoints": "Wide access to diagnostics and guideline-based care"
+  }
+}

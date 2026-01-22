@@ -1,0 +1,52 @@
+{
+  "diseaseId": "esquizofrenia",
+  "region": "IN",
+  "diseaseName": "Schizophrenia",
+  "prevalence": {
+    "value": "0.3-0.7%",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "NMHS/ICMR + IHME GBD (schizophrenia)",
+    "trend": "stable; underdiagnosis in rural areas"
+  },
+  "incidence": {
+    "value": "1-2 per 10,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Global schizophrenia epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.03",
+    "mortalityRate": "Elevated (indirect; comorbidity and suicide risk)",
+    "year": 2024,
+    "source": "IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic risk",
+      "early-life adversity",
+      "urbanicity",
+      "substance use (risk modifier)",
+      "perinatal complications"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "rural populations with limited psychiatric services",
+      "socially marginalized groups"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 psychotic disorder criteria; clinical assessment with exclusion of substance-induced psychosis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis often delayed",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~4-10 million",
+    "controlRate": "Low to moderate; affected by treatment gap and adherence barriers"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist diagnosis concentrated in district/tertiary hospitals; community recognition variable",
+    "treatmentProtocol": "Antipsychotics (generics widely available) with community support where possible; long-acting injectables limited outside tertiary centers",
+    "regionalChallenges": "Stigma, delayed care, and limited community rehabilitation services",
+    "strongPoints": "Affordable generic antipsychotics and increasing community mental health initiatives in some states"
+  }
+}
+

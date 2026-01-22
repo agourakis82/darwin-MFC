@@ -1,0 +1,55 @@
+{
+  "diseaseId": "diabetes-mellitus-tipo-2",
+  "region": "EU",
+  "diseaseName": "Type 2 Diabetes Mellitus (T2DM)",
+  "prevalence": {
+    "value": "7-9%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "IDF Diabetes Atlas / WHO Europe",
+    "trend": "increasing slowly with aging and obesity trends"
+  },
+  "incidence": {
+    "value": "4-8 per 1,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "WHO Europe / European cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.02-0.05",
+    "mortalityRate": "Indirect; elevated via cardiovascular and renal complications",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "obesity",
+      "sedentary lifestyle",
+      "age >45 years",
+      "family history",
+      "history of gestational diabetes",
+      "hypertension and dyslipidemia"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "people with obesity",
+      "lower socioeconomic groups",
+      "some ethnic minority populations with higher risk",
+      "patients with established CVD"
+    ],
+    "diagnosticCriteria": "FPG ≥126 mg/dL, HbA1c ≥6.5%, 2h OGTT ≥200 mg/dL, or random glucose ≥200 mg/dL with symptoms; per ADA/EASD-aligned criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "risk-based screening common in primary care; varies by member state",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~30-40 million",
+    "controlRate": "Moderate to high with structured follow-up; varies across countries"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Strong primary care detection and complication screening programs in many countries",
+    "treatmentProtocol": "Lifestyle + metformin; early use of SGLT2i/GLP-1RA for cardio-renal benefit per ADA/EASD; broad access to modern insulin and monitoring technologies",
+    "regionalChallenges": "Increasing burden with aging and healthcare costs, plus variability across member states",
+    "strongPoints": "High access to modern therapies, multidisciplinary diabetes care, and systematic complication screening"
+  }
+}
+

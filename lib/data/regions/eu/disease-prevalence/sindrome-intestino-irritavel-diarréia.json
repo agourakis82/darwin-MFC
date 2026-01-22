@@ -1,0 +1,51 @@
+{
+  "diseaseId": "sindrome-intestino-irritavel-diarréia",
+  "region": "EU",
+  "diseaseName": "IBS with diarrhea (IBS-D)",
+  "prevalence": {
+    "value": "~3-4% (adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "UEG/Rome IV epidemiology syntheses",
+    "trend": "stable; improved awareness and diagnosis"
+  },
+  "incidence": {
+    "value": "~1-2 per 1,000 adults/year (new IBS-D diagnoses)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Gastroenterology cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant QOL and work impairment",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe/IHME digestive disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "post-infectious IBS",
+      "stress and anxiety",
+      "food triggers (FODMAPs)",
+      "female sex",
+      "gut microbiota dysbiosis"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "young adults",
+      "patients with anxiety or depression"
+    ],
+    "diagnosticCriteria": "Rome IV criteria for IBS-D; exclude alarm features and inflammatory bowel disease"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of adults across the EU",
+    "controlRate": "High with dietitian support and multimodal therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis with access to fecal calprotectin to rule out IBD",
+    "treatmentProtocol": "Dietary modification (low FODMAP), antispasmodics, rifaximin, loperamide; CBT when available",
+    "regionalChallenges": "Variation in dietitian access across countries",
+    "strongPoints": "Strong guideline support and multimodal care pathways"
+  }
+}

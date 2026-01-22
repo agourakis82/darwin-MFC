@@ -1,0 +1,51 @@
+{
+  "diseaseId": "transtorno-obsessivo-compulsivo",
+  "region": "BR",
+  "diseaseName": "Transtorno Obsessivo-Compulsivo (TOC)",
+  "prevalence": {
+    "value": "1-2%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "IHME GBD / psychiatric epidemiology syntheses",
+    "trend": "stable; increased detection with mental health awareness"
+  },
+  "incidence": {
+    "value": "1-3 per 1,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "OCD epidemiology syntheses extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.01",
+    "mortalityRate": "Negligible (indirect via comorbidity)",
+    "year": 2024,
+    "source": "IHME GBD (OCD) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "childhood-onset anxiety traits",
+      "stressful life events",
+      "comorbid depression/anxiety"
+    ],
+    "vulnerablePopulations": [
+      "adolescents and young adults",
+      "patients with comorbid depression/anxiety",
+      "patients with limited access to exposure therapy"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: obsessions and/or compulsions that are time-consuming or cause impairment; differentiate from psychosis and tics"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; diagnosis usually specialist-led",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2-4 million",
+    "controlRate": "Moderate; ERP therapy availability limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often diagnosed in psychiatric services; APS recognition variable",
+    "treatmentProtocol": "SSRIs (often higher doses) + CBT with exposure and response prevention (ERP); augmentation strategies in specialist care",
+    "regionalChallenges": "Limited availability of ERP-trained therapists and long wait times for specialized psychotherapy",
+    "strongPoints": "Availability of SSRIs via SUS and growing CBT capacity in some centers"
+  }
+}
+

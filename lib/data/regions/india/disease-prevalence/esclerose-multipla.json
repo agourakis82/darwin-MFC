@@ -1,0 +1,51 @@
+{
+  "diseaseId": "esclerose-multipla",
+  "region": "IN",
+  "diseaseName": "Multiple Sclerosis (MS)",
+  "prevalence": {
+    "value": "5-20 per 100,000 (regional variability; underdiagnosis likely)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Indian neurology epidemiology reports + MS cohort syntheses",
+    "trend": "increasing recognition with expanding MRI access"
+  },
+  "incidence": {
+    "value": "0.5-2 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "MS cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0005-0.002",
+    "mortalityRate": "Low; indirect via disability and complications",
+    "year": 2024,
+    "source": "IHME GBD (MS)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "genetic susceptibility",
+      "smoking",
+      "EBV association",
+      "vitamin D status (association)"
+    ],
+    "vulnerablePopulations": [
+      "women 20-40 years",
+      "patients with limited access to MRI/neurology"
+    ],
+    "diagnosticCriteria": "McDonald criteria with MRI; CSF oligoclonal bands supportive; differentiation from NMO/MOGAD important"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~70,000-250,000",
+    "controlRate": "Variable; DMT access and follow-up differ widely"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnosis concentrated in urban tertiary neurology centers",
+    "treatmentProtocol": "Corticosteroids for relapses; DMTs in specialist care (often private/tertiary); rehabilitation",
+    "regionalChallenges": "High cost of DMTs and uneven access to MRI and specialist follow-up",
+    "strongPoints": "Growing tertiary neurology services and increasing MRI availability in cities"
+  }
+}
+

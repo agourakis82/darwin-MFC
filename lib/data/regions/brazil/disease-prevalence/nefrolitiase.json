@@ -1,0 +1,25 @@
+{
+  "diseaseId": "nefrolitiase",
+  "region": "BR",
+  "diseaseName": "Nefrolitíase (Cálculo Renal)",
+  "prevalence": {"value": "8%", "population": "Brazilian adults", "year": 2024, "source": "SBU - Sociedade Brasileira de Urologia (based on national surveys)", "trend": "increasing due to rising obesity and dietary changes"},
+  "incidence": {"value": "1.5 per 1000", "population": "Brazilian adults", "year": 2024, "source": "DataSUS epidemiological reports"},
+  "burden": {"dalyPerCapita": "0.015", "mortalityRate": "0.2 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["dehydration", "high sodium intake", "low water intake", "hot climate", "obesity", "high animal protein diet"],
+    "vulnerablePopulations": ["Men (2-3x higher)", "Adults 30-50 years", "Residents in tropical regions"],
+    "diagnosticCriteria": "Non-contrast CT for diagnosis, ultrasound, urinalysis, SBU guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "8 million",
+    "controlRate": "65% successful stone passage with conservative management"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SBU guidelines, non-contrast CT gold standard, ultrasound via SUS",
+    "treatmentProtocol": "Conservative: hydration, dietary changes; Medical: alpha-blockers, pain management; Surgical: lithotripsy, ureteroscopy via SUS",
+    "regionalChallenges": "Hot tropical climate increasing risk, limited lithotripsy access outside major cities, long wait times for procedures",
+    "strongPoints": "SBU guidelines, surgical treatment available via SUS, pain management accessible"
+  }
+}

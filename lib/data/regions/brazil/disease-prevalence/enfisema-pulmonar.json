@@ -1,0 +1,51 @@
+{
+  "diseaseId": "enfisema-pulmonar",
+  "region": "BR",
+  "diseaseName": "Enfisema pulmonar",
+  "prevalence": {
+    "value": "~1-2% (adults; subset of COPD)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBPT and COPD epidemiology syntheses",
+    "trend": "stable; burden reflects smoking history and aging"
+  },
+  "incidence": {
+    "value": "~1-3 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Respiratory cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to chronic respiratory disability",
+    "mortalityRate": "Elevated (linked to COPD complications)",
+    "year": 2024,
+    "source": "IHME/GBD COPD burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "tobacco smoking",
+      "biomass fuel exposure",
+      "air pollution",
+      "alpha-1 antitrypsin deficiency (rare)",
+      "occupational dust exposure"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "long-term smokers",
+      "rural households using biomass fuels"
+    ],
+    "diagnosticCriteria": "Spirometry with airflow limitation and imaging findings (hyperinflation); assess COPD phenotype"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis based on symptoms and spirometry",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands to low millions (subset of COPD)",
+    "controlRate": "Moderate; depends on smoking cessation and inhaler access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Spirometry access in pulmonary clinics; chest imaging for emphysema pattern",
+    "treatmentProtocol": "Smoking cessation, inhaled bronchodilators, pulmonary rehab, vaccinations; oxygen for advanced disease",
+    "regionalChallenges": "Underdiagnosis due to limited spirometry in primary care",
+    "strongPoints": "COPD medications and pulmonary rehab available in reference centers"
+  }
+}

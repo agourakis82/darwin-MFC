@@ -1,0 +1,53 @@
+{
+  "diseaseId": "fobia-social",
+  "region": "BR",
+  "diseaseName": "Fobia Social (Transtorno de Ansiedade Social)",
+  "prevalence": {
+    "value": "2-4%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "IHME GBD / WHO (anxiety disorders) + psychiatric epidemiology syntheses",
+    "trend": "stable; increased recognition in young adults"
+  },
+  "incidence": {
+    "value": "3-6 per 1,000/year",
+    "population": "Brazilian adolescents and young adults",
+    "year": 2024,
+    "source": "Anxiety disorder cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.008",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "behavioral inhibition and anxiety traits",
+      "bullying and social trauma",
+      "family history",
+      "comorbid depression",
+      "substance use as coping"
+    ],
+    "vulnerablePopulations": [
+      "adolescents",
+      "young adults",
+      "students",
+      "people with comorbid depression"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: marked fear/anxiety in social situations with avoidance and impairment for ≥6 months"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~4-8 million",
+    "controlRate": "Moderate; CBT access is limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often underdiagnosed; recognized during broader anxiety/depression assessments in APS/CAPS",
+    "treatmentProtocol": "CBT (exposure-based) and SSRIs; group therapy when available",
+    "regionalChallenges": "Limited CBT access and stigma delaying care",
+    "strongPoints": "SUS availability of SSRIs and psychosocial care pathways in CAPS"
+  }
+}
+

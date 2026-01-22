@@ -1,0 +1,49 @@
+{
+  "diseaseId": "labirintite",
+  "region": "IN",
+  "diseaseName": "Labyrinthitis",
+  "prevalence": {
+    "value": "~1-2% (adults; episodic)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "ENT and vestibular disorder epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~3-6 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "ENT outpatient cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; dizziness and fall risk",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD neurologic burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral infections",
+      "otitis media",
+      "migraine",
+      "older age"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with recurrent ear infections"
+    ],
+    "diagnosticCriteria": "Acute vertigo with hearing symptoms; exclude stroke; audiometry/vestibular testing when available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands of cases",
+    "controlRate": "Moderate; improves with vestibular rehab and symptomatic therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care/ENT; limited vestibular testing outside tertiary centers",
+    "treatmentProtocol": "Vestibular suppressants short-term, antiemetics, vestibular rehabilitation; treat otitis if present",
+    "regionalChallenges": "Delayed ENT access and limited rehab services",
+    "strongPoints": "Symptomatic medications widely available"
+  }
+}

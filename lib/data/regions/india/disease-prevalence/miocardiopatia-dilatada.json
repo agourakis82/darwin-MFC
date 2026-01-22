@@ -1,0 +1,51 @@
+{
+  "diseaseId": "miocardiopatia-dilatada",
+  "region": "IN",
+  "diseaseName": "Dilated cardiomyopathy",
+  "prevalence": {
+    "value": "~20-40 per 100,000",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Cardiology epidemiology syntheses",
+    "trend": "stable; improved survival increases prevalence"
+  },
+  "incidence": {
+    "value": "~3-7 per 100,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Cardiology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate to high due to heart failure and arrhythmias",
+    "mortalityRate": "Moderate",
+    "year": 2024,
+    "source": "IHME/GBD cardiovascular burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic predisposition",
+      "viral myocarditis",
+      "alcohol use",
+      "chemotherapy",
+      "peripartum cardiomyopathy"
+    ],
+    "vulnerablePopulations": [
+      "adults 30-60 years",
+      "patients with family history",
+      "postpartum women"
+    ],
+    "diagnosticCriteria": "Echocardiography showing LV dilation and reduced EF; exclude ischemic and secondary causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands",
+    "controlRate": "Moderate; limited access to devices and transplant"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Echo in cardiology centers; MRI limited to tertiary hospitals",
+    "treatmentProtocol": "Guideline-directed HF therapy, ICD/CRT for selected patients, transplant in advanced cases",
+    "regionalChallenges": "Limited access to advanced devices and transplant programs",
+    "strongPoints": "Growing cardiology networks and access to essential HF medications"
+  }
+}

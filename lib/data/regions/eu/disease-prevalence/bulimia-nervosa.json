@@ -1,0 +1,50 @@
+{
+  "diseaseId": "bulimia-nervosa",
+  "region": "EU",
+  "diseaseName": "Bulimia Nervosa",
+  "prevalence": {
+    "value": "1-2%",
+    "population": "EU adolescents and young adults",
+    "year": 2024,
+    "source": "European eating disorder epidemiology syntheses / WHO Europe",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "5-15 per 10,000/year",
+    "population": "Adolescents and young adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Elevated vs general population (indirect)",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "body image pressures",
+      "dieting behavior",
+      "female sex",
+      "comorbid mood/anxiety disorders"
+    ],
+    "vulnerablePopulations": [
+      "adolescents and young adults",
+      "patients with depression/anxiety"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria with medical monitoring for purging complications"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; detection often via primary care and school health services",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions across EU",
+    "controlRate": "Moderate with CBT and multidisciplinary care; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist eating disorder pathways in many health systems",
+    "treatmentProtocol": "CBT as first-line, nutritional counseling, SSRIs when indicated, and medical monitoring",
+    "regionalChallenges": "Wait times for specialist services and variable access across member states",
+    "strongPoints": "Established evidence-based psychotherapy capacity and multidisciplinary services in many countries"
+  }
+}
+

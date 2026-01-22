@@ -1,0 +1,52 @@
+{
+  "diseaseId": "doenca-renal-cronica",
+  "region": "BR",
+  "diseaseName": "Doença Renal Crônica",
+  "prevalence": {
+    "value": "12.5% (stages 1-5)",
+    "population": "Brazilian adults aged 18+",
+    "year": 2024,
+    "source": "SBN/DataSUS",
+    "trend": "Increasing by 2-3% annually due to rising diabetes and hypertension"
+  },
+  "incidence": {
+    "value": "150 per 100,000 adults",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBN/DataSUS"
+  },
+  "burden": {
+    "dalyPerCapita": "45 DALYs per 1,000 population",
+    "mortalityRate": "25 per 100,000",
+    "year": 2024,
+    "source": "Global Burden of Disease Study (IHME) adapted for Brazil"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Diabetes mellitus (primary cause, 45% of cases)",
+      "Hypertension (secondary cause, 30% of cases)",
+      "Obesity and metabolic syndrome",
+      "Cardiovascular disease",
+      "Aging population"
+    ],
+    "vulnerablePopulations": [
+      "Elderly (over 60 years)",
+      "Low socioeconomic status groups",
+      "Indigenous and rural populations",
+      "Patients with uncontrolled diabetes or hypertension"
+    ],
+    "diagnosticCriteria": "eGFR <60 mL/min/1.73m² for >3 months or markers of kidney damage (albuminuria); classified by KDIGO stages 1-5"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "35% among high-risk adults via SUS",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Approximately 15 million adults affected, 120,000 on dialysis",
+    "controlRate": "45% for early stages; 70% access to dialysis/ transplant via SUS"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Follows KDIGO guidelines, with emphasis on eGFR and albuminuria testing in primary care",
+    "treatmentProtocol": "Multidisciplinary approach via SUS: ACE inhibitors/ARBs for early stages, dialysis or transplant for ESRD; protocols from SBN",
+    "regionalChallenges": "Disparities in access between urban (South/Southeast) and rural/North/Northeast regions; high costs for dialysis in remote areas",
+    "strongPoints": "Robust SUS coverage for dialysis (universal access); national registries like Caderno de Informações de Saúde da Atenção Básica (CISAB) for monitoring"
+  }
+}

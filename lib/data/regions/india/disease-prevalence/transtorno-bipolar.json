@@ -1,0 +1,52 @@
+{
+  "diseaseId": "transtorno-bipolar",
+  "region": "IN",
+  "diseaseName": "Bipolar Disorder",
+  "prevalence": {
+    "value": "0.8-1.5%",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR/NMHS + IHME GBD (bipolar disorder)",
+    "trend": "stable; underdiagnosis persists"
+  },
+  "incidence": {
+    "value": "1-2 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Epidemiological syntheses (bipolar disorder) extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.025",
+    "mortalityRate": "Indirect; elevated suicide risk",
+    "year": 2024,
+    "source": "IHME GBD (bipolar disorder)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "sleep disruption",
+      "substance use",
+      "stressful life events",
+      "early life adversity"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients misdiagnosed with depression",
+      "people with substance use"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: manic/hypomanic episodes with functional impact; differentiate from substance-induced mood symptoms"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; diagnosis often after severe episodes",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10-20 million",
+    "controlRate": "Low to moderate due to treatment gaps and follow-up constraints"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist services concentrated in urban centers; clinical diagnosis in general hospitals common",
+    "treatmentProtocol": "Lithium/valproate and antipsychotics; psychoeducation; relapse prevention; inpatient care for acute mania when needed",
+    "regionalChallenges": "Stigma, specialist shortage, and medication monitoring barriers (e.g., lithium labs) in rural settings",
+    "strongPoints": "Affordable generic mood stabilizers and expanding tertiary psychiatry services"
+  }
+}
+

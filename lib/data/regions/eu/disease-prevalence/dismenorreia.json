@@ -1,0 +1,50 @@
+{
+  "diseaseId": "dismenorreia",
+  "region": "EU",
+  "diseaseName": "Dysmenorrhea",
+  "prevalence": {
+    "value": "~50-80% (menstruating adolescents and women)",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "European adolescent health surveys and gynecology studies",
+    "trend": "stable; improved recognition of secondary causes"
+  },
+  "incidence": {
+    "value": "Common at menarche; recurrent monthly episodes",
+    "population": "Adolescents and young adults",
+    "year": 2024,
+    "source": "Adolescent gynecology cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate QOL and productivity impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe reproductive health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "young age and early menarche",
+      "heavy menstrual bleeding",
+      "family history",
+      "endometriosis (secondary dysmenorrhea)"
+    ],
+    "vulnerablePopulations": [
+      "adolescents",
+      "women with suspected endometriosis",
+      "women with limited access to specialist care"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis for primary dysmenorrhea; investigate secondary causes when severe or refractory"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of women affected",
+    "controlRate": "High with NSAIDs and hormonal therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and gynecology assessment; pelvic ultrasound for secondary causes",
+    "treatmentProtocol": "NSAIDs, combined oral contraceptives/progestins, non-pharmacologic measures; referral for suspected endometriosis",
+    "regionalChallenges": "Delays in diagnosing secondary causes in some systems",
+    "strongPoints": "Broad access to effective medications and gynecology services"
+  }
+}

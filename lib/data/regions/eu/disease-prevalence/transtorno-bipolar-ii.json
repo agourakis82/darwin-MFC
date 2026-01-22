@@ -1,0 +1,50 @@
+{
+  "diseaseId": "transtorno-bipolar-ii",
+  "region": "EU",
+  "diseaseName": "Bipolar II Disorder",
+  "prevalence": {
+    "value": "0.5-1.0%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "WHO Europe / European psychiatric epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "0.4-1.0 per 1,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.006-0.015",
+    "mortalityRate": "Indirect; elevated suicide risk",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "sleep disruption",
+      "stressful life events",
+      "substance use"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with recurrent depression"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: hypomania + major depression; no manic episode"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2-4 million",
+    "controlRate": "Moderate to high with access to specialist care and maintenance therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Structured assessment reduces misdiagnosis in many systems",
+    "treatmentProtocol": "Mood stabilizers (including lamotrigine) and atypical antipsychotics; psychoeducation and relapse prevention",
+    "regionalChallenges": "Access variability and comorbid substance use",
+    "strongPoints": "Broad access to evidence-based care in many member states"
+  }
+}
+

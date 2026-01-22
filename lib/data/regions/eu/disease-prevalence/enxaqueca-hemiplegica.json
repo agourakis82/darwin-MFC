@@ -1,0 +1,48 @@
+{
+  "diseaseId": "enxaqueca-hemiplegica",
+  "region": "EU",
+  "diseaseName": "Hemiplegic Migraine",
+  "prevalence": {
+    "value": "rare (<0.01%)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European headache epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "very low",
+    "population": "EU population",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "minimal at population level",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO Europe headache context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic susceptibility (familial forms)",
+      "migraine history"
+    ],
+    "vulnerablePopulations": [
+      "patients with recurrent motor aura",
+      "patients undergoing repeated stroke evaluations"
+    ],
+    "diagnosticCriteria": "ICHD-3 criteria; imaging to exclude stroke at first presentation; specialist headache services often involved"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very low",
+    "controlRate": "Moderate with specialist care and preventive therapy; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to neuroimaging and headache specialists in many member states",
+    "treatmentProtocol": "Individualized acute therapy; preventive options and genetic counseling in familial cases",
+    "regionalChallenges": "Ensuring appropriate differentiation from stroke and avoiding unnecessary repeated ED visits",
+    "strongPoints": "Robust emergency imaging and specialist headache pathways"
+  }
+}
+

@@ -1,0 +1,52 @@
+{
+  "diseaseId": "espondilite-anquilosante",
+  "region": "IN",
+  "diseaseName": "Ankylosing Spondylitis (Axial Spondyloarthritis)",
+  "prevalence": {
+    "value": "0.1-0.4%",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Indian rheumatology epidemiology syntheses",
+    "trend": "stable; underdiagnosis common"
+  },
+  "incidence": {
+    "value": "4-12 per 100,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Spondyloarthritis cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Low; indirect disability burden",
+    "year": 2024,
+    "source": "IHME GBD context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "HLA-B27 positivity",
+      "male sex",
+      "family history",
+      "smoking",
+      "IBD/psoriasis association"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "men",
+      "rural populations with limited specialist access"
+    ],
+    "diagnosticCriteria": "Inflammatory back pain and ASAS criteria; imaging for sacroiliitis (X-ray/MRI) where available; HLA-B27 supportive"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1-4 million",
+    "controlRate": "Low to moderate due to delayed diagnosis and limited biologic access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "MRI access concentrated in urban centers; diagnosis often delayed",
+    "treatmentProtocol": "Exercise and NSAIDs; biologics for refractory disease mainly in tertiary/urban private settings; physiotherapy access variable",
+    "regionalChallenges": "Specialist scarcity, cost barriers for biologics, and limited rehab services",
+    "strongPoints": "Affordable NSAIDs and growing tertiary rheumatology services"
+  }
+}
+

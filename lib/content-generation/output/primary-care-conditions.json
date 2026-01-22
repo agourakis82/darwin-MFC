@@ -1,0 +1,991 @@
+[
+  {
+    "id": "hipertensao-arterial",
+    "titulo": "Hipertensão Arterial Sistêmica (HAS)",
+    "sinonimos": [
+      "Pressão alta",
+      "HAS",
+      "Hipertensão"
+    ],
+    "categoria": "cardiovascular",
+    "cid10": "I10",
+    "prevalencia": "32% da população adulta brasileira"
+  },
+  {
+    "id": "diabetes-mellitus-2",
+    "titulo": "Diabetes Mellitus tipo 2 (DM2)",
+    "sinonimos": [
+      "Diabetes tipo 2",
+      "DM2",
+      "Diabetes do adulto"
+    ],
+    "categoria": "metabolico",
+    "cid10": "E11",
+    "prevalencia": "9,4% da população adulta brasileira (~16 milhões)"
+  },
+  {
+    "id": "depressao",
+    "titulo": "Transtorno Depressivo Maior",
+    "sinonimos": [
+      "Depressão",
+      "Depressão maior",
+      "Episódio depressivo"
+    ],
+    "categoria": "saude_mental",
+    "cid10": "F32",
+    "prevalencia": "7-10% da população adulta, 2x mais em mulheres"
+  },
+  {
+    "id": "asma",
+    "titulo": "Asma Brônquica",
+    "sinonimos": [
+      "Asma",
+      "Bronquite asmática",
+      "Hiper-reatividade brônquica"
+    ],
+    "categoria": "respiratorio",
+    "cid10": "J45",
+    "prevalencia": "5-10% da população adulta, mais comum em crianças"
+  },
+  {
+    "id": "infeccao-urinaria",
+    "titulo": "Infecção do Trato Urinário (ITU)",
+    "sinonimos": [
+      "Cistite",
+      "ITU",
+      "Infecção urinária"
+    ],
+    "categoria": "infecciosas",
+    "cid10": "N30",
+    "prevalencia": "50-60% das mulheres terão ITU na vida"
+  },
+  {
+    "id": "lombalgia",
+    "titulo": "Lombalgia",
+    "sinonimos": [
+      "Dor lombar",
+      "Dor nas costas",
+      "Lumbago"
+    ],
+    "categoria": "musculoesqueletico",
+    "cid10": "M54.5",
+    "prevalencia": "60-80% terão lombalgia na vida"
+  },
+  {
+    "id": "insuficiencia-cardiaca",
+    "titulo": "Insuficiência Cardíaca",
+    "sinonimos": [
+      "IC",
+      "ICC",
+      "Insuficiência cardíaca congestiva"
+    ],
+    "categoria": "cardiovascular",
+    "cid10": "I50",
+    "prevalencia": "2% da população adulta, aumenta com idade (>10% em >70 anos)"
+  },
+  {
+    "id": "fibrilacao-atrial",
+    "titulo": "Fibrilação Atrial",
+    "sinonimos": [
+      "FA",
+      "Arritmia",
+      "Fibrilação auricular"
+    ],
+    "categoria": "cardiovascular",
+    "cid10": "I48",
+    "prevalencia": "2-4% da população adulta, aumenta com idade"
+  },
+  {
+    "id": "dpoc",
+    "titulo": "Doença Pulmonar Obstrutiva Crônica",
+    "sinonimos": [
+      "DPOC",
+      "Enfisema",
+      "Bronquite crônica"
+    ],
+    "categoria": "respiratorio",
+    "cid10": "J44",
+    "prevalencia": "10-15% dos adultos >40 anos, maior em tabagistas"
+  },
+  {
+    "id": "pneumonia-comunitaria",
+    "titulo": "Pneumonia Adquirida na Comunidade",
+    "sinonimos": [
+      "PAC",
+      "Pneumonia comunitária",
+      "Pneumonia"
+    ],
+    "categoria": "respiratorio",
+    "cid10": "J18",
+    "prevalencia": "Causa comum de consulta e internação"
+  },
+  {
+    "id": "rinite-alergica",
+    "titulo": "Rinite Alérgica",
+    "sinonimos": [
+      "Rinite alérgica perene",
+      "Rinite alérgica sazonal",
+      "Polinose"
+    ],
+    "categoria": "respiratorio",
+    "cid10": "J30",
+    "prevalencia": ""
+  },
+  {
+    "id": "tuberculose-pulmonar",
+    "titulo": "Tuberculose Pulmonar",
+    "sinonimos": [
+      "TB",
+      "Tísica"
+    ],
+    "categoria": "respiratorio",
+    "cid10": "A15",
+    "prevalencia": ""
+  },
+  {
+    "id": "diabetes-mellitus-tipo-2",
+    "titulo": "Diabetes Mellitus Tipo 2",
+    "sinonimos": [
+      "DM2",
+      "Diabetes do adulto",
+      "Diabetes não insulino-dependente"
+    ],
+    "categoria": "metabolico",
+    "cid10": "E11",
+    "prevalencia": "16,8 milhões de brasileiros (7,7% da população adulta)"
+  },
+  {
+    "id": "hipotireoidismo",
+    "titulo": "Hipotireoidismo",
+    "categoria": "endocrino",
+    "cid10": "E03",
+    "prevalencia": ""
+  },
+  {
+    "id": "obesidade",
+    "titulo": "Obesidade",
+    "sinonimos": [
+      "Excesso de peso",
+      "Sobrepeso"
+    ],
+    "categoria": "metabolico",
+    "cid10": "E66",
+    "prevalencia": "30% dos adultos brasileiros (obesidade), 55% sobrepeso"
+  },
+  {
+    "id": "transtorno-ansiedade-generalizada",
+    "titulo": "Transtorno de Ansiedade Generalizada (TAG)",
+    "categoria": "saude_mental",
+    "cid10": "F41.1",
+    "prevalencia": ""
+  },
+  {
+    "id": "transtorno-bipolar",
+    "titulo": "Transtorno Bipolar",
+    "categoria": "saude_mental",
+    "cid10": "F31",
+    "prevalencia": ""
+  },
+  {
+    "id": "fobia-social",
+    "titulo": "Fobia Social (Transtorno de Ansiedade Social)",
+    "categoria": "saude_mental",
+    "cid10": "F40.1",
+    "prevalencia": ""
+  },
+  {
+    "id": "agorafobia",
+    "titulo": "Agorafobia",
+    "categoria": "saude_mental",
+    "cid10": "F40.0",
+    "prevalencia": ""
+  },
+  {
+    "id": "transtorno-personalidade-borderline",
+    "titulo": "Transtorno de Personalidade Borderline",
+    "categoria": "saude_mental",
+    "cid10": "F60.3",
+    "prevalencia": ""
+  },
+  {
+    "id": "transtorno-neurocognitivo-leve",
+    "titulo": "Transtorno Neurocognitivo Leve",
+    "categoria": "saude_mental",
+    "cid10": "F06.7",
+    "prevalencia": ""
+  },
+  {
+    "id": "transtorno-espectro-autista",
+    "titulo": "Transtorno do Espectro Autista (TEA)",
+    "categoria": "saude_mental",
+    "cid10": "F84.0",
+    "prevalencia": ""
+  },
+  {
+    "id": "doenca-refluxo-gastroesofagico",
+    "titulo": "Doença do Refluxo Gastroesofágico (DRGE)",
+    "sinonimos": [
+      "Refluxo gastroesofágico",
+      "DRGE",
+      "Refluxo esofágico"
+    ],
+    "categoria": "gastrointestinal",
+    "cid10": "K21",
+    "prevalencia": ""
+  },
+  {
+    "id": "gastrite",
+    "titulo": "Gastrite",
+    "sinonimos": [
+      "Gastrite Crônica",
+      "Gastrite Aguda"
+    ],
+    "categoria": "gastrointestinal",
+    "cid10": "K29",
+    "prevalencia": ""
+  },
+  {
+    "id": "osteoartrite",
+    "titulo": "Osteoartrite (Artrose)",
+    "categoria": "musculoesqueletico",
+    "cid10": "M15",
+    "prevalencia": ""
+  },
+  {
+    "id": "osteoporose",
+    "titulo": "Osteoporose",
+    "categoria": "musculoesqueletico",
+    "cid10": "M80",
+    "prevalencia": ""
+  },
+  {
+    "id": "dermatite-atopica",
+    "titulo": "Dermatite Atópica",
+    "sinonimos": [
+      "Eczema atópico"
+    ],
+    "categoria": "dermatologico",
+    "cid10": "L20",
+    "prevalencia": ""
+  },
+  {
+    "id": "infeccao-trato-urinario",
+    "titulo": "Infecção do Trato Urinário",
+    "sinonimos": [
+      "ITU",
+      "Cistite",
+      "Pielonefrite",
+      "Infecção urinária"
+    ],
+    "categoria": "infecciosas",
+    "cid10": "N39.0",
+    "prevalencia": "11% das mulheres/ano têm cistite"
+  },
+  {
+    "id": "faringoamigdalite",
+    "titulo": "Faringoamigdalite Aguda",
+    "categoria": "infecciosas",
+    "cid10": "J02",
+    "prevalencia": ""
+  },
+  {
+    "id": "dengue",
+    "titulo": "Dengue",
+    "sinonimos": [
+      "Febre quebra-ossos"
+    ],
+    "categoria": "infecciosas",
+    "cid10": "A90",
+    "prevalencia": ""
+  },
+  {
+    "id": "doenca-renal-cronica",
+    "titulo": "Doença Renal Crônica",
+    "sinonimos": [
+      "DRC",
+      "Insuficiência renal crônica",
+      "Nefropatia crônica"
+    ],
+    "categoria": "urologico",
+    "cid10": "N18",
+    "prevalencia": "10-15% da população adulta mundial tem algum grau de DRC"
+  },
+  {
+    "id": "hiperplasia-prostatica-benigna",
+    "titulo": "Hiperplasia Prostática Benigna",
+    "sinonimos": [
+      "HPB",
+      "Aumento benigno da próstata",
+      "Adenoma prostático"
+    ],
+    "categoria": "urologico",
+    "cid10": "N40",
+    "prevalencia": "50% aos 60 anos, 90% aos 90 anos têm HPB histológica"
+  },
+  {
+    "id": "neuropatia-periferica-diabetica",
+    "titulo": "Neuropatia Periférica Diabética",
+    "categoria": "neurologico",
+    "cid10": "G63.2",
+    "prevalencia": ""
+  },
+  {
+    "id": "anemia-ferropriva",
+    "titulo": "Anemia Ferropriva",
+    "sinonimos": [
+      "Anemia por deficiência de ferro"
+    ],
+    "categoria": "hematologico",
+    "cid10": "D50",
+    "prevalencia": ""
+  },
+  {
+    "id": "anemia-megaloblastica",
+    "titulo": "Anemia Megaloblástica",
+    "categoria": "hematologico",
+    "cid10": "D51",
+    "prevalencia": ""
+  },
+  {
+    "id": "sindrome-ovarios-policisticos",
+    "titulo": "Síndrome dos Ovários Policísticos (SOP)",
+    "categoria": "ginecologico",
+    "cid10": "E28.2",
+    "prevalencia": ""
+  },
+  {
+    "id": "pre-eclampsia",
+    "titulo": "Pré-eclâmpsia",
+    "sinonimos": [
+      "PE",
+      "Toxemia gravídica",
+      "Doença hipertensiva específica da gestação"
+    ],
+    "categoria": "ginecologico",
+    "cid10": "O14",
+    "prevalencia": "2-8% das gestações"
+  },
+  {
+    "id": "otite-media-aguda",
+    "titulo": "Otite Média Aguda",
+    "sinonimos": [
+      "OMA"
+    ],
+    "categoria": "pediatrico",
+    "cid10": "H66",
+    "prevalencia": ""
+  },
+  {
+    "id": "asma-infantil",
+    "titulo": "Asma na Infância",
+    "sinonimos": [
+      "Asma brônquica infantil",
+      "Bronquite asmática"
+    ],
+    "categoria": "respiratorio",
+    "cid10": "J45",
+    "prevalencia": ""
+  },
+  {
+    "id": "dermatite-atopica-pediatrica",
+    "titulo": "Dermatite Atópica",
+    "sinonimos": [
+      "Eczema atópico",
+      "Eczema infantil"
+    ],
+    "categoria": "dermatologico",
+    "cid10": "L20",
+    "prevalencia": ""
+  },
+  {
+    "id": "anemia-ferropriva-pediatrica",
+    "titulo": "Anemia Ferropriva na Infância",
+    "categoria": "hematologico",
+    "cid10": "D50",
+    "prevalencia": ""
+  },
+  {
+    "id": "depressao-idoso",
+    "titulo": "Depressão no Idoso",
+    "categoria": "saude_mental",
+    "cid10": "F32",
+    "prevalencia": ""
+  },
+  {
+    "id": "sinusite-aguda",
+    "titulo": "Sinusite Aguda",
+    "categoria": "respiratorio",
+    "cid10": "J01",
+    "prevalencia": ""
+  },
+  {
+    "id": "conjuntivite",
+    "titulo": "Conjuntivite",
+    "categoria": "outros",
+    "cid10": "H10",
+    "prevalencia": ""
+  },
+  {
+    "id": "faringite-aguda",
+    "titulo": "Faringite Aguda",
+    "categoria": "respiratorio",
+    "cid10": "J02",
+    "prevalencia": ""
+  },
+  {
+    "id": "dermatite-contato",
+    "titulo": "Dermatite de Contato",
+    "categoria": "dermatologico",
+    "cid10": "L25",
+    "prevalencia": ""
+  },
+  {
+    "id": "bronquite-cronica",
+    "titulo": "Bronquite Crônica",
+    "sinonimos": [
+      "Bronquite Crônica Simples",
+      "Doença Pulmonar Obstrutiva Crônica - Tipo Bronquítico"
+    ],
+    "categoria": "respiratorio",
+    "cid10": "J41",
+    "prevalencia": ""
+  },
+  {
+    "id": "enfisema-pulmonar",
+    "titulo": "Enfisema Pulmonar",
+    "categoria": "respiratorio",
+    "cid10": "J43",
+    "prevalencia": ""
+  },
+  {
+    "id": "neuropatia-periferica",
+    "titulo": "Neuropatia Periférica",
+    "sinonimos": [
+      "Polineuropatia"
+    ],
+    "categoria": "neurologico",
+    "cid10": "G62",
+    "prevalencia": ""
+  },
+  {
+    "id": "anemia-hemolitica",
+    "titulo": "Anemia Hemolítica",
+    "categoria": "hematologico",
+    "cid10": "D59",
+    "prevalencia": ""
+  },
+  {
+    "id": "mononucleose-infecciosa",
+    "titulo": "Mononucleose Infecciosa",
+    "categoria": "infecciosas",
+    "cid10": "B27",
+    "prevalencia": ""
+  },
+  {
+    "id": "hepatite-a",
+    "titulo": "Hepatite A",
+    "categoria": "infecciosas",
+    "cid10": "B15",
+    "prevalencia": ""
+  },
+  {
+    "id": "hepatite-b",
+    "titulo": "Hepatite B",
+    "categoria": "infecciosas",
+    "cid10": "B16",
+    "prevalencia": ""
+  },
+  {
+    "id": "hepatite-e",
+    "titulo": "Hepatite E",
+    "categoria": "infecciosas",
+    "cid10": "B17.2",
+    "prevalencia": ""
+  },
+  {
+    "id": "sífilis-terciaria",
+    "titulo": "Sífilis Terciária",
+    "categoria": "infecciosas",
+    "cid10": "A52",
+    "prevalencia": ""
+  },
+  {
+    "id": "hipotireoidismo-congenito",
+    "titulo": "Hipotireoidismo Congênito",
+    "sinonimos": [
+      "HC"
+    ],
+    "categoria": "endocrino",
+    "cid10": "E03.1",
+    "prevalencia": "1:2.000-4.000 nascidos vivos"
+  },
+  {
+    "id": "dermatite-seborreica",
+    "titulo": "Dermatite Seborreica",
+    "categoria": "dermatologico",
+    "cid10": "L21",
+    "prevalencia": ""
+  },
+  {
+    "id": "faringite-estreptococica",
+    "titulo": "Faringite Estreptocócica",
+    "sinonimos": [
+      "Amigdalite estreptocócica"
+    ],
+    "categoria": "infecciosas",
+    "cid10": "J02.0",
+    "prevalencia": ""
+  },
+  {
+    "id": "amigdalite",
+    "titulo": "Amigdalite",
+    "categoria": "infecciosas",
+    "cid10": "J03",
+    "prevalencia": ""
+  },
+  {
+    "id": "sindrome-ansiedade-generalizada",
+    "titulo": "Transtorno de Ansiedade Generalizada",
+    "categoria": "saude_mental",
+    "cid10": "F41.1",
+    "prevalencia": ""
+  },
+  {
+    "id": "tosse-cronica",
+    "titulo": "Tosse Crônica",
+    "sinonimos": [
+      "Tosse persistente"
+    ],
+    "categoria": "respiratorio",
+    "cid10": "R05",
+    "prevalencia": ""
+  },
+  {
+    "id": "bocio-simples",
+    "titulo": "Bócio Simples",
+    "sinonimos": [
+      "Bócio não tóxico"
+    ],
+    "categoria": "endocrino",
+    "cid10": "E04",
+    "prevalencia": ""
+  },
+  {
+    "id": "dislipidemia",
+    "titulo": "Dislipidemia",
+    "sinonimos": [
+      "Hiperlipidemia",
+      "Hipercolesterolemia",
+      "Hipertrigliceridemia"
+    ],
+    "categoria": "metabolico",
+    "cid10": "E78.0",
+    "prevalencia": ""
+  },
+  {
+    "id": "deficiencia-vitamina-d",
+    "titulo": "Deficiência de Vitamina D",
+    "sinonimos": [
+      "Hipovitaminose D",
+      "Insuficiência de vitamina D"
+    ],
+    "categoria": "metabolico",
+    "cid10": "E55.9",
+    "prevalencia": ""
+  },
+  {
+    "id": "deficiencia-vitamina-b12",
+    "titulo": "Deficiência de Vitamina B12",
+    "sinonimos": [
+      "Hipovitaminose B12",
+      "Deficiência de cobalamina"
+    ],
+    "categoria": "hematologico",
+    "cid10": "E53.8",
+    "prevalencia": ""
+  },
+  {
+    "id": "hipotireoidismo-subclinico",
+    "titulo": "Hipotireoidismo Subclínico",
+    "sinonimos": [
+      "Disfunção tireoidiana subclínica"
+    ],
+    "categoria": "endocrino",
+    "cid10": "E02",
+    "prevalencia": ""
+  },
+  {
+    "id": "hiperprolactinemia",
+    "titulo": "Hiperprolactinemia",
+    "sinonimos": [
+      "Prolactina elevada"
+    ],
+    "categoria": "endocrino",
+    "cid10": "E22.1",
+    "prevalencia": ""
+  },
+  {
+    "id": "insuficiencia-mitral",
+    "titulo": "Insuficiência Mitral",
+    "sinonimos": [
+      "IM",
+      "Regurgitação mitral"
+    ],
+    "categoria": "cardiovascular",
+    "cid10": "I34.0",
+    "prevalencia": ""
+  },
+  {
+    "id": "angina-estavel",
+    "titulo": "Angina Estável",
+    "sinonimos": [
+      "Angina pectoris crônica",
+      "Angina de esforço"
+    ],
+    "categoria": "cardiovascular",
+    "cid10": "I20.8",
+    "prevalencia": ""
+  },
+  {
+    "id": "hipertensao-pulmonar",
+    "titulo": "Hipertensão Pulmonar",
+    "sinonimos": [
+      "HP",
+      "Hipertensão arterial pulmonar"
+    ],
+    "categoria": "cardiovascular",
+    "cid10": "I27.0",
+    "prevalencia": ""
+  },
+  {
+    "id": "epididimite",
+    "titulo": "Epididimite",
+    "sinonimos": [
+      "Orquiepididimite"
+    ],
+    "categoria": "urologico",
+    "cid10": "N45.1",
+    "prevalencia": ""
+  },
+  {
+    "id": "endometriose",
+    "titulo": "Endometriose",
+    "sinonimos": [
+      "Endometrioma"
+    ],
+    "categoria": "ginecologico",
+    "cid10": "N80",
+    "prevalencia": ""
+  },
+  {
+    "id": "mioma-uterino",
+    "titulo": "Mioma Uterino",
+    "sinonimos": [
+      "Leiomioma",
+      "Fibroma uterino"
+    ],
+    "categoria": "ginecologico",
+    "cid10": "D25",
+    "prevalencia": ""
+  },
+  {
+    "id": "doenca-inflamatoria-pelvica",
+    "titulo": "Doença Inflamatória Pélvica",
+    "sinonimos": [
+      "DIP",
+      "Salpingite",
+      "Anexite"
+    ],
+    "categoria": "ginecologico",
+    "cid10": "N73",
+    "prevalencia": ""
+  },
+  {
+    "id": "escarlatina",
+    "titulo": "Escarlatina",
+    "sinonimos": [
+      "Scarlet fever"
+    ],
+    "categoria": "infecciosas",
+    "cid10": "A38",
+    "prevalencia": ""
+  },
+  {
+    "id": "dermatite-fraldas",
+    "titulo": "Dermatite da Área de Fraldas",
+    "sinonimos": [
+      "Assadura",
+      "Dermatite de fralda"
+    ],
+    "categoria": "pediatrico",
+    "cid10": "L22",
+    "prevalencia": ""
+  },
+  {
+    "id": "avc-isquemico",
+    "titulo": "Acidente Vascular Cerebral Isquêmico",
+    "sinonimos": [
+      "AVC",
+      "AVCi",
+      "Derrame cerebral",
+      "Stroke isquêmico",
+      "Infarto cerebral"
+    ],
+    "categoria": "neurologico",
+    "cid10": "I63",
+    "prevalencia": "2ª causa de morte no Brasil"
+  },
+  {
+    "id": "doenca-chagas",
+    "titulo": "Doença de Chagas",
+    "sinonimos": [
+      "Tripanossomíase americana",
+      "Cardiopatia chagásica"
+    ],
+    "categoria": "infecciosas",
+    "cid10": "B57",
+    "prevalencia": ""
+  },
+  {
+    "id": "leishmaniose-visceral",
+    "titulo": "Leishmaniose Visceral",
+    "sinonimos": [
+      "Calazar",
+      "Esplenomegalia tropical"
+    ],
+    "categoria": "infecciosas",
+    "cid10": "B55.0",
+    "prevalencia": ""
+  },
+  {
+    "id": "febre-amarela",
+    "titulo": "Febre Amarela",
+    "sinonimos": [
+      "FA",
+      "Yellow fever"
+    ],
+    "categoria": "infecciosas",
+    "cid10": "A95",
+    "prevalencia": ""
+  },
+  {
+    "id": "esquistossomose",
+    "titulo": "Esquistossomose Mansoni",
+    "sinonimos": [
+      "Barriga d'água",
+      "Xistose"
+    ],
+    "categoria": "infecciosas",
+    "cid10": "B65.1",
+    "prevalencia": ""
+  },
+  {
+    "id": "hanseniase",
+    "titulo": "Hanseníase",
+    "sinonimos": [
+      "Lepra",
+      "Mal de Hansen"
+    ],
+    "categoria": "dermatologico",
+    "cid10": "A30",
+    "prevalencia": ""
+  },
+  {
+    "id": "ataxia-friedreich",
+    "titulo": "Ataxia de Friedreich",
+    "sinonimos": [
+      "FRDA",
+      "Ataxia espinocerebelar autossômica recessiva"
+    ],
+    "categoria": "neurologico",
+    "cid10": "G11.1",
+    "prevalencia": "1:50.000 (ataxia hereditária mais comum)"
+  },
+  {
+    "id": "hipertensao-arterial-pulmonar",
+    "titulo": "Hipertensão Arterial Pulmonar",
+    "sinonimos": [
+      "HAP",
+      "PAH"
+    ],
+    "categoria": "cardiovascular",
+    "cid10": "I27.0",
+    "prevalencia": "15-50:1.000.000"
+  },
+  {
+    "id": "sindrome-wiskott-aldrich",
+    "titulo": "Síndrome de Wiskott-Aldrich",
+    "sinonimos": [
+      "WAS"
+    ],
+    "categoria": "hematologico",
+    "cid10": "D82.0",
+    "prevalencia": "1:100.000 nascidos vivos masculinos"
+  },
+  {
+    "id": "anemia-falciforme",
+    "titulo": "Doença Falciforme",
+    "sinonimos": [
+      "Anemia falciforme",
+      "Drepanocitose",
+      "HbSS"
+    ],
+    "categoria": "hematologico",
+    "cid10": "D57",
+    "prevalencia": ""
+  },
+  {
+    "id": "talassemia-major",
+    "titulo": "Talassemia Major",
+    "sinonimos": [
+      "β-talassemia major",
+      "Anemia de Cooley"
+    ],
+    "categoria": "hematologico",
+    "cid10": "D56.1",
+    "prevalencia": "Alta no Mediterrâneo, Oriente Médio, Sudeste Asiático"
+  },
+  {
+    "id": "purpura-trombocitopenica-trombotica",
+    "titulo": "Púrpura Trombocitopênica Trombótica",
+    "sinonimos": [
+      "PTT",
+      "TTP"
+    ],
+    "categoria": "hematologico",
+    "cid10": "M31.1",
+    "prevalencia": "3-6:1.000.000/ano"
+  },
+  {
+    "id": "otite-media-aguda-pediatrica",
+    "titulo": "Otite Média Aguda",
+    "sinonimos": [
+      "OMA",
+      "Infecção de ouvido"
+    ],
+    "categoria": "infecciosas",
+    "cid10": "H65",
+    "prevalencia": ""
+  },
+  {
+    "id": "faringoamigdalite-pediatrica",
+    "titulo": "Faringoamigdalite Aguda",
+    "sinonimos": [
+      "Amigdalite",
+      "Dor de garganta"
+    ],
+    "categoria": "infecciosas",
+    "cid10": "J02",
+    "prevalencia": ""
+  },
+  {
+    "id": "pneumonia-adquirida-comunidade-pediatrica",
+    "titulo": "Pneumonia Adquirida na Comunidade (Pediátrica)",
+    "sinonimos": [
+      "PAC infantil",
+      "Pneumonia bacteriana"
+    ],
+    "categoria": "respiratorio",
+    "cid10": "J13",
+    "prevalencia": ""
+  },
+  {
+    "id": "varicela",
+    "titulo": "Varicela",
+    "sinonimos": [
+      "Catapora",
+      "Chickenpox"
+    ],
+    "categoria": "infecciosas",
+    "cid10": "B01",
+    "prevalencia": ""
+  },
+  {
+    "id": "drge-infantil",
+    "titulo": "Doença do Refluxo Gastroesofágico (Lactentes)",
+    "sinonimos": [
+      "DRGE pediátrica",
+      "Refluxo"
+    ],
+    "categoria": "gastrointestinal",
+    "cid10": "K21",
+    "prevalencia": ""
+  },
+  {
+    "id": "dermatite-seborreica-infantil",
+    "titulo": "Dermatite Seborreica Infantil",
+    "sinonimos": [
+      "Crosta láctea",
+      "Seborreia"
+    ],
+    "categoria": "dermatologico",
+    "cid10": "L21",
+    "prevalencia": ""
+  },
+  {
+    "id": "anemia-ferropriva-infantil",
+    "titulo": "Anemia Ferropriva na Infância",
+    "sinonimos": [
+      "Anemia por deficiência de ferro",
+      "Anemia nutricional"
+    ],
+    "categoria": "hematologico",
+    "cid10": "D50",
+    "prevalencia": ""
+  },
+  {
+    "id": "tea",
+    "titulo": "Transtorno do Espectro Autista",
+    "sinonimos": [
+      "TEA",
+      "Autismo",
+      "Espectro autista"
+    ],
+    "categoria": "saude_mental",
+    "cid10": "F84",
+    "prevalencia": ""
+  },
+  {
+    "id": "obesidade-infantil",
+    "titulo": "Obesidade Infantil",
+    "sinonimos": [
+      "Sobrepeso",
+      "Excesso de peso"
+    ],
+    "categoria": "endocrino",
+    "cid10": "E66",
+    "prevalencia": ""
+  },
+  {
+    "id": "meningite-bacteriana-pediatrica",
+    "titulo": "Meningite Bacteriana (Pediátrica)",
+    "sinonimos": [
+      "Meningite purulenta"
+    ],
+    "categoria": "infecciosas",
+    "cid10": "G00",
+    "prevalencia": ""
+  },
+  {
+    "id": "rge-infantil",
+    "titulo": "Refluxo Gastroesofágico Fisiológico",
+    "sinonimos": [
+      "Regurgitação do lactente",
+      "Golfada"
+    ],
+    "categoria": "gastrointestinal",
+    "cid10": "K21.9",
+    "prevalencia": ""
+  },
+  {
+    "id": "leishmaniose-tegumentar",
+    "titulo": "Leishmaniose Tegumentar Americana",
+    "sinonimos": [
+      "Úlcera de Bauru",
+      "Ferida brava"
+    ],
+    "categoria": "dermatologico",
+    "cid10": "B55.1",
+    "prevalencia": ""
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "diseaseId": "transtorno-depressivo-maior",
+  "region": "BR",
+  "diseaseName": "Transtorno Depressivo Maior (TDM)",
+  "prevalence": {
+    "value": "5-7%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "IHME GBD / WHO + national survey context (DataSUS/mental health studies)",
+    "trend": "increasing post-COVID and with socioeconomic stressors"
+  },
+  "incidence": {
+    "value": "20-30 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "IHME GBD (major depressive disorder) context"
+  },
+  "burden": {
+    "dalyPerCapita": "0.03-0.06",
+    "mortalityRate": "Indirect; elevated suicide risk and medical comorbidity",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "prior depression episodes",
+      "chronic stress and poverty",
+      "trauma and violence exposure",
+      "chronic medical illness",
+      "substance use"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "adolescents and young adults",
+      "unemployed/low-income groups",
+      "patients with chronic pain",
+      "postpartum people"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: ≥2 weeks with depressed mood/anhedonia plus associated symptoms and functional impairment; exclude bipolar disorder and substance-induced mood disorder"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; opportunistic screening in APS and CAPS referrals",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10-15 million",
+    "controlRate": "Moderate; psychotherapy access limited, pharmacotherapy widely used"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS screening tools (PHQ-9) variably adopted; CAPS for moderate-severe and complex cases",
+    "treatmentProtocol": "SSRIs (sertraline/fluoxetine) and psychotherapy; crisis care and psychiatric referral for suicidality; integrated care in CAPS",
+    "regionalChallenges": "Stigma, limited psychotherapy availability, and uneven access to specialist services outside capitals",
+    "strongPoints": "CAPS network and SUS availability of core antidepressants"
+  }
+}
+

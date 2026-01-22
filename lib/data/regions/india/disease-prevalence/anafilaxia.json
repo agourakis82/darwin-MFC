@@ -1,0 +1,53 @@
+{
+  "diseaseId": "anafilaxia",
+  "region": "IN",
+  "diseaseName": "Anaphylaxis",
+  "prevalence": {
+    "value": "~1-2% lifetime risk",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Allergy/anaphylaxis epidemiology syntheses; WHO allergy context",
+    "trend": "increasing recognition in emergency care (food, drug and sting triggers)"
+  },
+  "incidence": {
+    "value": "~30-80 per 100,000/year (ED-treated events; variable)",
+    "population": "General population",
+    "year": 2024,
+    "source": "International emergency care incidence syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; preventable deaths with timely epinephrine",
+    "mortalityRate": "Low but higher where epinephrine access is limited",
+    "year": 2024,
+    "source": "WHO/IHME acute allergy context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "food allergy",
+      "drug allergy (antibiotics, NSAIDs)",
+      "insect stings",
+      "asthma (risk for severe reactions)",
+      "previous anaphylaxis",
+      "mast cell disorders (rare)"
+    ],
+    "vulnerablePopulations": [
+      "children with food allergy",
+      "patients with asthma",
+      "rural areas with delayed emergency access",
+      "patients without epinephrine auto-injector access"
+    ],
+    "diagnosticCriteria": "Clinical criteria (acute onset with airway/breathing/circulation compromise or hypotension after exposure); tryptase supports diagnosis when available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; event-driven diagnosis and education",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions with lifetime risk; acute events far fewer",
+    "controlRate": "Variable; depends on epinephrine access and follow-up allergy care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ED-based diagnosis; allergy referral for trigger identification and prevention planning",
+    "treatmentProtocol": "Immediate IM epinephrine, airway/oxygen/IV fluids as needed, observation for biphasic reactions; action plan and availability of auto-injectors where feasible",
+    "regionalChallenges": "Limited auto-injector availability/cost, under-recognition in primary care, uneven access to allergists",
+    "strongPoints": "Standard emergency protocols effective when implemented; growing urban allergy services"
+  }
+}

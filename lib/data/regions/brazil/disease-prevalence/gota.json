@@ -1,0 +1,53 @@
+{
+  "diseaseId": "gota",
+  "region": "BR",
+  "diseaseName": "Gota",
+  "prevalence": {
+    "value": "1-2%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBR/epidemiological syntheses (gout) + metabolic risk context",
+    "trend": "increasing with obesity, hypertension, and CKD prevalence"
+  },
+  "incidence": {
+    "value": "2-5 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "International gout cohort syntheses extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Indirect; increased cardiovascular risk associations",
+    "year": 2024,
+    "source": "IHME GBD (gout) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "male sex",
+      "hyperuricemia",
+      "obesity",
+      "CKD",
+      "diuretics",
+      "high purine/fructose intake and alcohol"
+    ],
+    "vulnerablePopulations": [
+      "men >40 years",
+      "patients with CKD or metabolic syndrome",
+      "patients on thiazide/loop diuretics"
+    ],
+    "diagnosticCriteria": "Clinical acute monoarthritis with hyperuricemia; gold standard is monosodium urate crystals in synovial fluid; imaging (ultrasound, DECT) supportive; aligned with ACR/EULAR approaches"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; detected in symptomatic cases",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2-4 million",
+    "controlRate": "Moderate; urate-lowering therapy adherence and follow-up vary"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care diagnosis common; arthrocentesis and imaging limited outside specialized centers",
+    "treatmentProtocol": "Acute flare: NSAIDs/colchicine/corticosteroids; chronic: allopurinol (titrated) with treat-to-target urate, lifestyle counseling; prophylaxis during ULT initiation",
+    "regionalChallenges": "Limited access to crystal confirmation and variable ULT titration/follow-up in APS",
+    "strongPoints": "Core medications (colchicine, allopurinol) are widely available and affordable"
+  }
+}
+

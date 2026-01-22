@@ -1,0 +1,50 @@
+{
+  "diseaseId": "vaginose-bacteriana",
+  "region": "EU",
+  "diseaseName": "Bacterial Vaginosis",
+  "prevalence": {
+    "value": "15-30% (reproductive-age women)",
+    "population": "Women of reproductive age in the EU",
+    "year": 2024,
+    "source": "European gynecology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "high (recurrent episodes common)",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; reproductive health impacts",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe reproductive health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "new/multiple sexual partners",
+      "vaginal douching",
+      "smoking",
+      "history of BV"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people",
+      "women with recurrent BV"
+    ],
+    "diagnosticCriteria": "Amsel criteria or Nugent score; pH >4.5; exclude trichomoniasis and candidiasis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening (pregnancy screening policies vary)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of episodes/year",
+    "controlRate": "Moderate; recurrence common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to microscopy/Gram stain in many settings",
+    "treatmentProtocol": "Metronidazole or clindamycin regimens; counseling to reduce recurrence; pregnancy management per national guidance",
+    "regionalChallenges": "High recurrence rates and variability in pregnancy screening practices",
+    "strongPoints": "Strong diagnostic infrastructure and effective standard treatments"
+  }
+}
+

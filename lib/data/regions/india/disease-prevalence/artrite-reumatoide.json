@@ -1,0 +1,25 @@
+{
+  "diseaseId": "artrite-reumatoide",
+  "region": "IN",
+  "diseaseName": "Rheumatoid Arthritis",
+  "prevalence": {"value": "0.7%", "population": "Indian adults (~1.4 billion)", "year": 2024, "source": "Indian Rheumatology Association (IRA) and ICMR surveys", "trend": "increasing due to aging population and improved diagnostics"},
+  "incidence": {"value": "35 per 100,000", "population": "Indian adults", "year": 2024, "source": "ICMR epidemiological studies"},
+  "burden": {"dalyPerCapita": "120", "mortalityRate": "4 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Female sex", "Genetic factors (e.g., HLA-DR4 alleles)", "Smoking", "Infections (e.g., periodontal disease)", "Obesity", "Environmental exposures"],
+    "vulnerablePopulations": ["Women (3x higher risk)", "Low socioeconomic groups", "Urban migrants", "Elderly (>50 years)"],
+    "diagnosticCriteria": "ACR/EULAR 2010 criteria adapted for India, RF/anti-CCP testing where available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "very limited rheumatology screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "7-10 million",
+    "controlRate": "30% poor due to limited access and late diagnosis"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "IRA/ACR criteria, clinical diagnosis common, limited RF/anti-CCP access in rural areas",
+    "treatmentProtocol": "DMARDs (methotrexate, hydroxychloroquine), limited biologic access (high cost), Ayurvedic options (e.g., Rasna, Guggulu)",
+    "regionalChallenges": "Severe rheumatologist shortage (<1 per million), expensive biologics, late diagnosis, rural access barriers",
+    "strongPoints": "Affordable generic DMARDs, IRA guidelines, Ayurvedic anti-inflammatory herbs, growing biosimilar availability"
+  }
+}

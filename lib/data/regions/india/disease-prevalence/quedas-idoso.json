@@ -1,0 +1,52 @@
+{
+  "diseaseId": "quedas-idoso",
+  "region": "IN",
+  "diseaseName": "Falls in Older Adults",
+  "prevalence": {
+    "value": "20-35% report ≥1 fall/year (underreported)",
+    "population": "Indian adults >60 years",
+    "year": 2024,
+    "source": "Geriatrics epidemiology syntheses (falls)",
+    "trend": "increasing with aging and multimorbidity"
+  },
+  "incidence": {
+    "value": "250-600 falls per 1,000 older adults/year",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "Falls epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.04 (older-adult concentrated)",
+    "mortalityRate": "Indirect; fracture and head injury burden",
+    "year": 2024,
+    "source": "IHME/WHO injury context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "frailty and sarcopenia",
+      "vision impairment",
+      "polypharmacy",
+      "orthostatic hypotension",
+      "unsafe home environments"
+    ],
+    "vulnerablePopulations": [
+      "older adults >70 years",
+      "frail older adults",
+      "older adults with diabetes and neuropathy"
+    ],
+    "diagnosticCriteria": "Clinical fall risk assessment (history, gait/balance), orthostatic vitals, vision check, medication review"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of older adults at risk",
+    "controlRate": "Low to moderate; limited access to physiotherapy and home modification"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often recognized after fracture; limited geriatric assessment services",
+    "treatmentProtocol": "Exercise, nutrition, medication review, vision correction, and home safety counseling",
+    "regionalChallenges": "Limited rehab access and delayed fracture care in some regions",
+    "strongPoints": "Community-based exercise and family support can reduce risk when mobilized"
+  }
+}
+

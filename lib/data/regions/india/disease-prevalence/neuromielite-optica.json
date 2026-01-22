@@ -1,0 +1,49 @@
+{
+  "diseaseId": "neuromielite-optica",
+  "region": "IN",
+  "diseaseName": "Neuromyelitis Optica Spectrum Disorder (NMOSD)",
+  "prevalence": {
+    "value": "0.5-2 per 100,000 (underdiagnosis likely)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Neuroimmunology cohort syntheses",
+    "trend": "increasing recognition with antibody testing"
+  },
+  "incidence": {
+    "value": "0.05-0.2 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "NMOSD cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0002-0.001",
+    "mortalityRate": "Indirect; severe relapses cause disability",
+    "year": 2024,
+    "source": "IHME/WHO context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "AQP4-IgG autoimmunity",
+      "female sex",
+      "autoimmune comorbidities"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "patients with delayed access to antibody testing and neuroimmunology services"
+    ],
+    "diagnosticCriteria": "International NMOSD criteria with core clinical syndromes and antibody status; differentiation from MS is essential"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~7,000-30,000",
+    "controlRate": "Low to moderate; depends on access to plasmapheresis and maintenance immunosuppression"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "AQP4 testing and plasmapheresis concentrated in tertiary centers",
+    "treatmentProtocol": "Relapse steroids and plasmapheresis; maintenance immunosuppression (rituximab/azathioprine) in specialist care",
+    "regionalChallenges": "Cost barriers and uneven access to specialized neuroimmunology services",
+    "strongPoints": "Growing tertiary neurology services and increasing access to antibody testing in urban centers"
+  }
+}
+

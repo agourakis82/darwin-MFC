@@ -1,0 +1,25 @@
+{
+  "diseaseId": "osteoporose",
+  "region": "EU",
+  "diseaseName": "Osteoporosis",
+  "prevalence": {"value": "22% in women and 6% in men", "population": "EU adults >50 years (~200 million)", "year": 2024, "source": "IOF Europe", "trend": "increasing due to aging population"},
+  "incidence": {"value": "2.3 per 1000", "population": "EU adults >50", "year": 2024, "source": "ESCEO"},
+  "burden": {"dalyPerCapita": "150", "mortalityRate": "240 per 100,000 - high post-fracture mortality", "year": 2024, "source": "WHO Europe"},
+  "epidemiology": {
+    "riskFactors": ["Advanced age", "Postmenopause", "Low body mass index", "Smoking", "Excessive alcohol intake", "Family history"],
+    "vulnerablePopulations": ["Postmenopausal women (1 in 3)", "Elderly men (1 in 5)", "Northern EU countries with limited sunlight and vitamin D deficiency", "Individuals with family history or low BMI"],
+    "diagnosticCriteria": "WHO DXA T-score ≤ -2.5, FRAX tool widely used"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic screening, DXA widely available in most countries",
+    "treatmentAvailable": true,
+    "estimatedPatients": "27 million",
+    "controlRate": "25% [low adherence and underdiagnosis]"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ESCEO/IOF guidelines, FRAX tool for fracture risk assessment",
+    "treatmentProtocol": "Bisphosphonates (alendronate, risedronate), denosumab, teriparatide for severe cases; calcium + vitamin D supplementation",
+    "regionalChallenges": "Aging demographics increasing burden, treatment gaps despite availability, high fracture-related healthcare costs, vitamin D deficiency in northern countries",
+    "strongPoints": "Comprehensive ESCEO guidelines, wide DXA access, fracture liaison services in many countries, high awareness, high treatment availability"
+  }
+}

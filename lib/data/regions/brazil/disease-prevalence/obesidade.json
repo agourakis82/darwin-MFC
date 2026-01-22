@@ -1,0 +1,50 @@
+{
+  "diseaseId": "obesidade",
+  "region": "BR",
+  "diseaseName": "Obesidade",
+  "prevalence": {
+    "value": "23.5% (BMI ≥30 kg/m²)",
+    "population": "Brazilian adults (≥18 years)",
+    "year": 2024,
+    "source": "VIGITEL/DataSUS (estimated from 2022 data showing 22.4%, with upward trend)",
+    "trend": "Increasing (from 11.8% in 2006 to 22.4% in 2022)"
+  },
+  "incidence": {
+    "value": "Approximately 2-3% annual new cases among adults",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Estimated from longitudinal studies like ELSA-Brasil"
+  },
+  "burden": {
+    "dalyPerCapita": "1,200 DALYs per 100,000 population (obesity-attributable)",
+    "mortalityRate": "15-20 deaths per 100,000 (obesity-related CVD and diabetes)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease Study 2021, adapted for Brazil"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Unhealthy diet high in ultra-processed foods and sugars",
+      "Physical inactivity",
+      "Genetic and socioeconomic factors",
+      "Strong association with metabolic syndrome (including central obesity, insulin resistance, hypertension, dyslipidemia, and hyperglycemia)"
+    ],
+    "vulnerablePopulations": [
+      "Low-income and urban populations",
+      "Women aged 35-54 years",
+      "Indigenous and Afro-Brazilian communities due to social determinants"
+    ],
+    "diagnosticCriteria": "Body Mass Index (BMI) ≥ 30 kg/m², per WHO classification; waist circumference for central obesity in metabolic syndrome context (>102 cm men, >88 cm women)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "About 60% in primary care settings via SUS, but lower in rural areas",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Over 40 million adults affected",
+    "controlRate": "Less than 15% achieve long-term weight management"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Aligned with WHO BMI standards, with emphasis on ethnic adaptations for Brazilian populations",
+    "treatmentProtocol": "SUS guidelines include nutritional counseling, physical activity programs, pharmacotherapy (e.g., GLP-1 agonists), and bariatric surgery for BMI ≥40 or ≥35 with comorbidities",
+    "regionalChallenges": "Socioeconomic inequalities leading to uneven access; high prevalence of ultra-processed food consumption in urban North and Northeast regions; integration with metabolic syndrome management strained by overburdened SUS",
+    "strongPoints": "National Nutrition Policy (NUPENS) and Family Health Strategy for community-based screening; growing telemedicine for remote areas"
+  }
+}

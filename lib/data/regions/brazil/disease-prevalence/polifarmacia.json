@@ -1,0 +1,52 @@
+{
+  "diseaseId": "polifarmacia",
+  "region": "BR",
+  "diseaseName": "Polifarmácia no Idoso",
+  "prevalence": {
+    "value": "35-50% (≥5 medications among adults >65 years)",
+    "population": "Brazilian adults >65 years",
+    "year": 2024,
+    "source": "Geriatrics pharmacology epidemiology syntheses",
+    "trend": "increasing with multimorbidity"
+  },
+  "incidence": {
+    "value": "high (accumulates with chronic disease treatment)",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "indirect; contributes to adverse drug events and falls",
+    "mortalityRate": "Indirect",
+    "year": 2024,
+    "source": "WHO/IHME medication safety context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "multimorbidity",
+      "multiple prescribers",
+      "fragmented care",
+      "lack of medication reconciliation",
+      "low health literacy"
+    ],
+    "vulnerablePopulations": [
+      "older adults with ≥3 chronic diseases",
+      "frail older adults",
+      "older adults with cognitive impairment"
+    ],
+    "diagnosticCriteria": "Medication count (≥5) plus assessment of potentially inappropriate medications (Beers/STOPP-START) and adverse effects"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited; medication review not routine",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of older adults",
+    "controlRate": "Variable; improves with structured medication review and deprescribing"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often recognized after adverse events; limited structured deprescribing programs",
+    "treatmentProtocol": "Medication reconciliation, apply Beers/STOPP-START, deprescribe where appropriate, simplify regimens",
+    "regionalChallenges": "Fragmented prescribing and limited pharmacist integration in primary care teams",
+    "strongPoints": "Primary care can implement reconciliation and deprescribing with protocols"
+  }
+}
+

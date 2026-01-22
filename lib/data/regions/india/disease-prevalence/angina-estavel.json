@@ -1,0 +1,52 @@
+{
+  "diseaseId": "angina-estavel",
+  "region": "IN",
+  "diseaseName": "Stable Angina",
+  "prevalence": {
+    "value": "~2-4% (adults; higher with age and risk factors)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Cardiovascular epidemiology syntheses; ischemic heart disease context (India)",
+    "trend": "stable; high CAD burden and aging increase absolute cases"
+  },
+  "incidence": {
+    "value": "~6-12 per 1,000 person-years (older/high-risk adults)",
+    "population": "Adults at risk for coronary artery disease",
+    "year": 2024,
+    "source": "Stable ischemic heart disease cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to disability and progression risk to MI/heart failure",
+    "mortalityRate": "Low per se; driven by underlying CAD events",
+    "year": 2024,
+    "source": "IHME/GBD ischemic heart disease burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "diabetes",
+      "hypertension",
+      "dyslipidemia",
+      "smoking/chewed tobacco",
+      "obesity and sedentary lifestyle",
+      "family history of premature CAD"
+    ],
+    "vulnerablePopulations": [
+      "adults >55 years",
+      "urban populations with metabolic risk",
+      "lower-income groups with limited access to secondary prevention"
+    ],
+    "diagnosticCriteria": "Typical exertional chest discomfort relieved by rest/nitrates; ECG and stress testing; coronary imaging/angiography for high-risk features; differentiate from ACS"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening for angina; variable cardiovascular risk screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions",
+    "controlRate": "Variable; improved by access to guideline-based therapy and revascularization when needed"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Testing access is uneven; many diagnoses are clinical in resource-limited settings",
+    "treatmentProtocol": "Antianginals (beta-blockers, nitrates, CCBs), antiplatelet/statin, BP/diabetes control, lifestyle change, cardiac rehab when available; PCI/CABG for selected cases",
+    "regionalChallenges": "Delayed presentation, uneven access to stress testing/angiography outside major cities, cost barriers",
+    "strongPoints": "Wide availability of affordable generics; large cardiology networks in major metros"
+  }
+}

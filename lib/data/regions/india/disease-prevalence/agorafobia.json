@@ -1,0 +1,52 @@
+{
+  "diseaseId": "agorafobia",
+  "region": "IN",
+  "diseaseName": "Agoraphobia",
+  "prevalence": {
+    "value": "0.5-1.5%",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "NMHS/ICMR + IHME GBD context",
+    "trend": "stable; underdiagnosis likely"
+  },
+  "incidence": {
+    "value": "1-2 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Anxiety disorder syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.005",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "panic attacks",
+      "anxiety sensitivity",
+      "female sex",
+      "trauma",
+      "comorbid depression"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "young adults",
+      "patients with panic disorder"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria; clinical assessment with functional impairment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~7-20 million",
+    "controlRate": "Low to moderate due to limited CBT access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often not formally diagnosed; symptoms may be framed as somatic",
+    "treatmentProtocol": "CBT (exposure) and SSRIs; counseling and family support",
+    "regionalChallenges": "High stigma and limited CBT availability",
+    "strongPoints": "Affordable generic SSRIs and increasing telehealth availability for counseling"
+  }
+}
+

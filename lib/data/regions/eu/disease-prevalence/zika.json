@@ -1,0 +1,50 @@
+{
+  "diseaseId": "zika",
+  "region": "EU",
+  "diseaseName": "Zika Virus Infection",
+  "prevalence": {
+    "value": "very low; mostly imported cases",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "ECDC / WHO Europe travel-related surveillance",
+    "trend": "stable low since the post-2016 period"
+  },
+  "incidence": {
+    "value": "<0.1 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECDC surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "minimal at population level",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe / IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "travel to areas with active Zika transmission",
+      "sexual transmission from returning travelers",
+      "pregnancy during/after travel"
+    ],
+    "vulnerablePopulations": [
+      "pregnant travelers",
+      "women of reproductive age traveling to endemic areas",
+      "fetuses/newborns with in utero exposure"
+    ],
+    "diagnosticCriteria": "PCR early in infection; serology in later phase with cross-reactivity considerations; case definitions per ECDC guidance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; targeted testing in pregnant travelers and symptomatic returning travelers",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very low",
+    "controlRate": "Supportive care; prevention via travel guidance and pregnancy risk counseling"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Reference laboratory networks with confirmatory testing; travel medicine clinics are common",
+    "treatmentProtocol": "Supportive care; pregnancy follow-up protocols for exposed pregnancies",
+    "regionalChallenges": "Maintaining clinician awareness in low-incidence settings and managing pregnancy exposure counseling",
+    "strongPoints": "Strong travel medicine infrastructure and robust reference lab capacity for arboviruses"
+  }
+}
+

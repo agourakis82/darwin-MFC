@@ -1,0 +1,49 @@
+{
+  "diseaseId": "sinusite-aguda",
+  "region": "EU",
+  "diseaseName": "Acute Rhinosinusitis",
+  "prevalence": {
+    "value": "common; most cases viral",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European primary care/ENT epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "50-150 per 1,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "European primary care cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe respiratory infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral URIs",
+      "allergic rhinitis",
+      "smoking"
+    ],
+    "vulnerablePopulations": [
+      "patients with allergic rhinitis",
+      "smokers"
+    ],
+    "diagnosticCriteria": "Clinical criteria; antibiotics reserved for likely bacterial patterns; imaging reserved for complications"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "high episode burden annually",
+    "controlRate": "High with stewardship and symptomatic care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Strong primary care pathways and stewardship",
+    "treatmentProtocol": "Symptomatic management and selective antibiotics; manage allergic rhinitis",
+    "regionalChallenges": "Maintaining low antibiotic overuse",
+    "strongPoints": "Guideline-driven stewardship and broad access to primary care"
+  }
+}
+

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "faringite-aguda",
+  "region": "IN",
+  "diseaseName": "Acute pharyngitis",
+  "prevalence": {
+    "value": "Common episodic condition (children and adolescents)",
+    "population": "Indian children and adolescents",
+    "year": 2024,
+    "source": "Primary care respiratory infection syntheses",
+    "trend": "stable; seasonal peaks with school attendance"
+  },
+  "incidence": {
+    "value": "~120-250 per 1,000 children/year (episodes)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Pediatric primary care cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low; high absenteeism and antibiotic use",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO URI context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral respiratory infections",
+      "group A streptococcus exposure",
+      "crowding",
+      "air pollution/biomass smoke exposure"
+    ],
+    "vulnerablePopulations": [
+      "children 5-15 years",
+      "crowded households",
+      "patients with recurrent pharyngitis"
+    ],
+    "diagnosticCriteria": "Clinical assessment; rapid antigen test/culture when available to guide antibiotics"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually",
+    "controlRate": "High for symptom relief; antibiotic stewardship limited by testing access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis common; limited access to rapid testing",
+    "treatmentProtocol": "Supportive care for viral; penicillin/amoxicillin for suspected streptococcal infection",
+    "regionalChallenges": "Antibiotic overuse and limited diagnostic confirmation",
+    "strongPoints": "Low-cost antibiotics and primary care access in many regions"
+  }
+}

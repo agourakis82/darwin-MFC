@@ -1,0 +1,51 @@
+{
+  "diseaseId": "anemia-ferropriva-infantil",
+  "region": "EU",
+  "diseaseName": "Iron Deficiency Anemia in Children",
+  "prevalence": {
+    "value": "~5-15% (young children; varies by country and socioeconomic status)",
+    "population": "EU children (<5 years)",
+    "year": 2024,
+    "source": "European child nutrition surveys and WHO anemia context",
+    "trend": "stable to slowly decreasing; persists in vulnerable groups"
+  },
+  "incidence": {
+    "value": "Common in vulnerable populations (infancy/toddlerhood)",
+    "population": "Infants and young children",
+    "year": 2024,
+    "source": "Pediatric nutrition cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate in vulnerable groups; impacts development and growth",
+    "mortalityRate": "Indirect; generally low in high-resource settings",
+    "year": 2024,
+    "source": "IHME/GBD anemia context; WHO child nutrition"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low dietary iron intake",
+      "prematurity/low birth weight",
+      "high cow’s milk intake in toddlers",
+      "food insecurity",
+      "restricted diets"
+    ],
+    "vulnerablePopulations": [
+      "infants 6-24 months",
+      "low-income households",
+      "children with restricted diets"
+    ],
+    "diagnosticCriteria": "Hemoglobin below age thresholds with iron studies as needed; dietary and growth assessment; rule out chronic inflammation and malabsorption when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; pediatric health visits may include hemoglobin checks for at-risk groups",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of children across the EU",
+    "controlRate": "High with supplementation and dietary intervention"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and pediatric services diagnose; lab access widely available",
+    "treatmentProtocol": "Oral iron supplementation, diet counseling, food fortification strategies, address underlying causes",
+    "regionalChallenges": "Socioeconomic disparities, adherence issues due to GI side effects",
+    "strongPoints": "Strong primary care and lab access; effective low-cost treatment"
+  }
+}

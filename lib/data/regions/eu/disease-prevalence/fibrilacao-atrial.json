@@ -1,0 +1,56 @@
+{
+  "diseaseId": "fibrilacao-atrial",
+  "region": "EU",
+  "diseaseName": "Atrial Fibrillation",
+  "prevalence": {
+    "value": "1.9%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "ESC Guidelines for the diagnosis and management of atrial fibrillation developed in collaboration with the European Association for Cardio-Thoracic Surgery (EACTS) (2020); European Heart Network",
+    "trend": "Increasing by ~1.5% annually due to population aging"
+  },
+  "incidence": {
+    "value": "0.15% per year",
+    "population": "EU adults aged 55+",
+    "year": 2024,
+    "source": "ESC 2020 Guidelines; Global Burden of Disease Study 2019 (via IHME)"
+  },
+  "burden": {
+    "dalyPerCapita": "45 DALYs per 100,000 population",
+    "mortalityRate": "0.4 per 1,000 population",
+    "year": 2024,
+    "source": "WHO European Region data; ESC Cardiovascular Disease Statistics 2022"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Age >65 years",
+      "Hypertension",
+      "Diabetes mellitus",
+      "Obesity",
+      "Coronary artery disease",
+      "Heart failure",
+      "Valvular heart disease",
+      "Alcohol consumption",
+      "Sleep apnea"
+    ],
+    "vulnerablePopulations": [
+      "Elderly individuals (>75 years)",
+      "Patients with existing cardiovascular disease",
+      "Men (slightly higher risk)",
+      "Individuals with chronic kidney disease"
+    ],
+    "diagnosticCriteria": "Detection of irregular heart rhythm without discernible P waves on 12-lead ECG, or irregular RR intervals (ESC 2020 Guidelines, Class I recommendation for ECG confirmation)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Opportunistic screening in high-risk groups (e.g., >65 years or with risk factors) covers ~30-50% in Western EU countries; limited EU-wide programs",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Approximately 8.5 million",
+    "controlRate": "Around 70-80% of eligible patients receive oral anticoagulation for stroke prevention (per ESC Atlas of Cardiology 2023)"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Uniformly based on ESC 2020 Guidelines across EU, emphasizing ECG and Holter monitoring",
+    "treatmentProtocol": "Integrated approach including rate/rhythm control, anticoagulation (DOACs preferred per ESC), and lifestyle management; catheter ablation for select cases",
+    "regionalChallenges": "Healthcare disparities between Eastern and Western EU (lower access in some member states); rising burden from aging demographics; anticoagulation underuse in rural areas",
+    "strongPoints": "Robust cardiology expertise and networks (e.g., EHN initiatives); high adherence to ESC guidelines in countries like Germany and France; EU-funded research on AF management"
+  }
+}

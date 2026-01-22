@@ -1,0 +1,254 @@
+[
+  {
+    "conditionId": "diabetes-mellitus-1",
+    "conditionName": "Diabetes Mellitus Tipo 1",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768995643473.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 120887
+  },
+  {
+    "conditionId": "doenca-arterial-coronariana",
+    "conditionName": "Doença Arterial Coronariana",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768995764603.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121131
+  },
+  {
+    "conditionId": "avc",
+    "conditionName": "Acidente Vascular Cerebral",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768995886813.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 122166
+  },
+  {
+    "conditionId": "insuficiencia-renal-aguda",
+    "conditionName": "Insuficiência Renal Aguda",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996007974.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121203
+  },
+  {
+    "conditionId": "hipertireoidismo",
+    "conditionName": "Hipertireoidismo",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996128505.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 120581
+  },
+  {
+    "conditionId": "anemia-ferropriva",
+    "conditionName": "Anemia Ferropriva",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996249104.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 120515
+  },
+  {
+    "conditionId": "tuberculose",
+    "conditionName": "Tuberculose",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996370542.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121438
+  },
+  {
+    "conditionId": "dengue",
+    "conditionName": "Dengue",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996491999.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121448
+  },
+  {
+    "conditionId": "covid-19",
+    "conditionName": "COVID-19",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996613924.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121962
+  },
+  {
+    "conditionId": "influenza",
+    "conditionName": "Influenza (Gripe)",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996735754.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121864
+  },
+  {
+    "conditionId": "gastrite",
+    "conditionName": "Gastrite e Úlcera Péptica",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996856332.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 120532
+  },
+  {
+    "conditionId": "drge",
+    "conditionName": "Doença do Refluxo Gastroesofágico",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996976837.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 120538
+  },
+  {
+    "conditionId": "sindrome-intestino-irritavel",
+    "conditionName": "Síndrome do Intestino Irritável",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768997097378.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 120575
+  },
+  {
+    "conditionId": "doenca-hepatica-gordurosa",
+    "conditionName": "Doença Hepática Gordurosa Não Alcoólica",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768997217949.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 120532
+  },
+  {
+    "conditionId": "cirrose",
+    "conditionName": "Cirrose Hepática",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768997338487.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 120543
+  },
+  {
+    "conditionId": "artrite-reumatoide",
+    "conditionName": "Artrite Reumatoide",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768997460137.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121600
+  },
+  {
+    "conditionId": "lupus",
+    "conditionName": "Lúpus Eritematoso Sistêmico",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768997581885.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121806
+  },
+  {
+    "conditionId": "fibromialgia",
+    "conditionName": "Fibromialgia",
+    "success": true,
+    "grade": "A",
+    "score": 95,
+    "outputFile": "lib/content-generation/output/modules/fibromialgia.ts",
+    "duration": 33727
+  },
+  {
+    "conditionId": "enxaqueca",
+    "conditionName": "Enxaqueca",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768997736824.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121159
+  },
+  {
+    "conditionId": "epilepsia",
+    "conditionName": "Epilepsia",
+    "success": true,
+    "grade": "A",
+    "score": 95,
+    "outputFile": "lib/content-generation/output/modules/epilepsia.ts",
+    "duration": 40317
+  },
+  {
+    "conditionId": "parkinson",
+    "conditionName": "Doença de Parkinson",
+    "success": true,
+    "grade": "A",
+    "score": 95,
+    "outputFile": "lib/content-generation/output/modules/parkinson.ts",
+    "duration": 27828
+  },
+  {
+    "conditionId": "alzheimer",
+    "conditionName": "Doença de Alzheimer",
+    "success": true,
+    "grade": "A",
+    "score": 95,
+    "outputFile": "lib/content-generation/output/modules/alzheimer.ts",
+    "duration": 31977
+  },
+  {
+    "conditionId": "demencia",
+    "conditionName": "Demência",
+    "success": true,
+    "grade": "A",
+    "score": 95,
+    "outputFile": "lib/content-generation/output/modules/demencia.ts",
+    "duration": 42439
+  },
+  {
+    "conditionId": "transtorno-bipolar",
+    "conditionName": "Transtorno Bipolar",
+    "success": true,
+    "grade": "A",
+    "score": 95,
+    "outputFile": "lib/content-generation/output/modules/transtorno-bipolar.ts",
+    "duration": 32454
+  },
+  {
+    "conditionId": "esquizofrenia",
+    "conditionName": "Esquizofrenia",
+    "success": true,
+    "grade": "A",
+    "score": 95,
+    "outputFile": "lib/content-generation/output/modules/esquizofrenia.ts",
+    "duration": 42818
+  },
+  {
+    "conditionId": "transtorno-panico",
+    "conditionName": "Transtorno do Pânico",
+    "success": true,
+    "grade": "A",
+    "score": 95,
+    "outputFile": "lib/content-generation/output/modules/transtorno-panico.ts",
+    "duration": 29763
+  },
+  {
+    "conditionId": "toc",
+    "conditionName": "Transtorno Obsessivo-Compulsivo",
+    "success": true,
+    "grade": "A",
+    "score": 95,
+    "outputFile": "lib/content-generation/output/modules/toc.ts",
+    "duration": 40361
+  },
+  {
+    "conditionId": "dermatite-atopica",
+    "conditionName": "Dermatite Atópica",
+    "success": true,
+    "grade": "A",
+    "score": 95,
+    "outputFile": "lib/content-generation/output/modules/dermatite-atopica.ts",
+    "duration": 25938
+  },
+  {
+    "conditionId": "psoriase",
+    "conditionName": "Psoríase",
+    "success": true,
+    "grade": "A",
+    "score": 95,
+    "outputFile": "lib/content-generation/output/modules/psoriase.ts",
+    "duration": 28148
+  },
+  {
+    "conditionId": "acne",
+    "conditionName": "Acne Vulgar",
+    "success": true,
+    "grade": "A",
+    "score": 95,
+    "outputFile": "lib/content-generation/output/modules/acne.ts",
+    "duration": 33839
+  },
+  {
+    "conditionId": "rinite-alergica",
+    "conditionName": "Rinite Alérgica",
+    "success": true,
+    "grade": "A",
+    "score": 95,
+    "outputFile": "lib/content-generation/output/modules/rinite-alergica.ts",
+    "duration": 32556
+  },
+  {
+    "conditionId": "sinusite",
+    "conditionName": "Sinusite",
+    "success": true,
+    "grade": "A",
+    "score": 95,
+    "outputFile": "lib/content-generation/output/modules/sinusite.ts",
+    "duration": 24539
+  }
+]

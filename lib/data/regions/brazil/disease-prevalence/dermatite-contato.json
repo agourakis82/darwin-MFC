@@ -1,0 +1,52 @@
+{
+  "diseaseId": "dermatite-contato",
+  "region": "BR",
+  "diseaseName": "Dermatite de contato",
+  "prevalence": {
+    "value": "~5-10% (adults; higher in occupational exposures)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBD and occupational dermatology epidemiology syntheses",
+    "trend": "stable; increased recognition in workplace settings"
+  },
+  "incidence": {
+    "value": "~3-8 per 1,000 workers/year (high-exposure jobs)",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "Occupational dermatology cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant work disruption and chronic dermatitis burden",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD skin disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "wet work and detergents",
+      "allergens (nickel, fragrances)",
+      "occupational irritants (cement, solvents)",
+      "atopic dermatitis",
+      "repeated skin barrier disruption"
+    ],
+    "vulnerablePopulations": [
+      "healthcare and cleaning workers",
+      "construction workers",
+      "hairdressers and food handlers",
+      "patients with atopic dermatitis"
+    ],
+    "diagnosticCriteria": "Clinical dermatitis with exposure history; patch testing for allergic contact dermatitis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of adults affected",
+    "controlRate": "Moderate; depends on avoidance and occupational adjustments"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care and dermatology; patch testing in referral centers",
+    "treatmentProtocol": "Avoidance of triggers, emollients, topical corticosteroids; workplace protection and PPE",
+    "regionalChallenges": "Limited access to patch testing and occupational health services in some regions",
+    "strongPoints": "Effective topical therapies and prevention strategies widely available"
+  }
+}

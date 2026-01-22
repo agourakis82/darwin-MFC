@@ -1,0 +1,52 @@
+{
+  "diseaseId": "herpes-simples",
+  "region": "IN",
+  "diseaseName": "Herpes simplex (HSV-1/HSV-2)",
+  "prevalence": {
+    "value": "~80-95% (HSV-1); ~10-15% (HSV-2)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "WHO HSV seroprevalence context; Indian STI surveillance summaries",
+    "trend": "stable; HSV-2 higher in high-risk groups"
+  },
+  "incidence": {
+    "value": "~2-6 per 1,000 adults/year (symptomatic genital herpes episodes)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "STI clinic and cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; recurrent morbidity and stigma",
+    "mortalityRate": "Negligible (except rare neonatal herpes)",
+    "year": 2024,
+    "source": "WHO/IHME STI burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "unprotected sexual activity",
+      "multiple partners",
+      "HIV or other immunosuppression",
+      "history of other STIs",
+      "oral-genital contact (HSV-1 genital infection)"
+    ],
+    "vulnerablePopulations": [
+      "sexually active adolescents and adults",
+      "people with HIV",
+      "pregnant people",
+      "sex workers"
+    ],
+    "diagnosticCriteria": "Clinical lesions with PCR/NAAT confirmation where available; type-specific serology for uncertain cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions (HSV-1 and HSV-2 combined)",
+    "controlRate": "Moderate; depends on access to antivirals and counseling"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis common; PCR testing limited to tertiary centers",
+    "treatmentProtocol": "Acyclovir episodic or suppressive therapy; counseling on transmission prevention; pregnancy management to reduce neonatal risk",
+    "regionalChallenges": "Stigma and low awareness; limited laboratory confirmation outside metros",
+    "strongPoints": "Low-cost antivirals broadly available"
+  }
+}

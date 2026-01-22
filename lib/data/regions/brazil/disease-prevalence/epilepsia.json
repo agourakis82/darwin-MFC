@@ -1,0 +1,53 @@
+{
+  "diseaseId": "epilepsia",
+  "region": "BR",
+  "diseaseName": "Epilepsia",
+  "prevalence": {
+    "value": "~0.8-1.2%",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Liga Brasileira de Epilepsia / epidemiological studies and IHME GBD estimates",
+    "trend": "stable; treatment gap persists in vulnerable populations"
+  },
+  "incidence": {
+    "value": "~40-70 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) / regional studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.006",
+    "mortalityRate": "Elevated vs general population (SUDEP and injury-related)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "perinatal injury",
+      "CNS infections and neurocysticercosis (regional)",
+      "stroke and traumatic brain injury",
+      "genetic epilepsy syndromes",
+      "substance use and sleep deprivation triggers"
+    ],
+    "vulnerablePopulations": [
+      "children with perinatal complications",
+      "adults post-stroke or TBI",
+      "rural populations with limited neurology access",
+      "people with low socioeconomic status"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis per ILAE (≥2 unprovoked seizures or one seizure with high recurrence risk); EEG and neuroimaging (MRI/CT) as available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; case-based diagnosis in primary care with referral when available",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1.7-2.5 million",
+    "controlRate": "~60-70% seizure control with appropriate therapy; treatment gap remains in underserved areas"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EEG/imaging access variable across SUS; specialist neurology more concentrated in capitals",
+    "treatmentProtocol": "First-line antiseizure medications (e.g., carbamazepine, valproate, levetiracetam in many settings); epilepsy surgery evaluation in reference centers for drug-resistant epilepsy",
+    "regionalChallenges": "Treatment gap and delayed specialist evaluation, stigma, and uneven access to newer antiseizure medications and surgery programs",
+    "strongPoints": "SUS provides core antiseizure medications and has specialized epilepsy centers in major cities"
+  }
+}
+

@@ -1,0 +1,54 @@
+{
+  "diseaseId": "acidente-vascular-cerebral",
+  "region": "EU",
+  "diseaseName": "Stroke",
+  "prevalence": {
+    "value": "1.2%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "ESC/ECDC/WHO Europe; ESO Guidelines 2021",
+    "trend": "Stable to slightly decreasing due to improved risk factor management"
+  },
+  "incidence": {
+    "value": "250 per 100,000",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "ESO Atlas of Stroke in Europe 2023"
+  },
+  "burden": {
+    "dalyPerCapita": "1,200 DALYs per 100,000",
+    "mortalityRate": "45 per 100,000",
+    "year": 2024,
+    "source": "WHO Europe Global Burden of Disease 2023; ESO Reports"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Hypertension (primary, ~50% attributable)",
+      "Atrial fibrillation",
+      "Smoking",
+      "Diabetes mellitus",
+      "Dyslipidemia",
+      "Obesity",
+      "Physical inactivity"
+    ],
+    "vulnerablePopulations": [
+      "Adults over 65 years",
+      "Males (slightly higher incidence)",
+      "Individuals with cardiovascular comorbidities",
+      "Socioeconomically disadvantaged groups"
+    ],
+    "diagnosticCriteria": "Clinical symptoms (e.g., sudden focal neurological deficit) confirmed by neuroimaging (CT/MRI); NIH Stroke Scale for severity; ESO guidelines emphasize rapid imaging to differentiate ischemic vs. hemorrhagic stroke"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Moderate (hypertension screening ~70-80% in primary care)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10 million stroke survivors",
+    "controlRate": "Risk factor control ~60% (e.g., BP management per ESO targets)"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Aligned with ESO recommendations: Urgent CT head within 20 minutes of arrival; MRI for confirmation if needed",
+    "treatmentProtocol": "ESO Guidelines 2021: IV thrombolysis within 4.5 hours, mechanical thrombectomy up to 24 hours in select cases; secondary prevention with antiplatelets/statins",
+    "regionalChallenges": "Disparities in access across Eastern vs. Western EU; stroke unit availability varies (80-90% coverage); aging population increases burden",
+    "strongPoints": "High thrombolysis rates in Western EU (~15-20%); ESO-led networks for stroke registries and research; integrated EU-wide prevention campaigns"
+  }
+}

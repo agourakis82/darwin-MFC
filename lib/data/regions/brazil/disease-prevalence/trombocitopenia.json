@@ -1,0 +1,53 @@
+{
+  "diseaseId": "trombocitopenia",
+  "region": "BR",
+  "diseaseName": "Trombocitopenia",
+  "prevalence": {
+    "value": "0.5-1.0% (any cause; varies by setting)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Hematology epidemiology syntheses",
+    "trend": "stable; detection high due to routine CBC use"
+  },
+  "incidence": {
+    "value": "1-3 per 1,000/year (detected cases)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "variable; depends on etiology",
+    "mortalityRate": "Low overall; higher in severe secondary causes and bleeding",
+    "year": 2024,
+    "source": "IHME/WHO hematologic context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral infections (e.g., dengue)",
+      "autoimmune ITP",
+      "medications (heparin, others)",
+      "liver disease/hypersplenism",
+      "bone marrow disorders"
+    ],
+    "vulnerablePopulations": [
+      "hospitalized patients",
+      "patients with chronic liver disease",
+      "patients with dengue/arboviral infections",
+      "pregnant people (gestational thrombocytopenia)"
+    ],
+    "diagnosticCriteria": "Platelets <150,000/µL with evaluation for pseudothrombocytopenia and etiology; bleeding risk stratification and peripheral smear review"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "CBC-based detection in prenatal/hospital settings is common; no population screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands with transient or chronic forms",
+    "controlRate": "Variable; depends on cause and access to hematology and treatments"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "CBC widely available; specialized testing (ITP workup, marrow) concentrated in referral centers",
+    "treatmentProtocol": "Treat underlying cause; ITP: steroids/IVIG and second-line agents; transfusion for bleeding/severe thrombocytopenia; manage dengue-associated thrombocytopenia supportively",
+    "regionalChallenges": "Etiology diversity and need for specialist evaluation; seasonal dengue surges increase cases",
+    "strongPoints": "Routine CBC availability and established referral pathways for severe cases"
+  }
+}
+

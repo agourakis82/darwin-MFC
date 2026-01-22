@@ -1,0 +1,49 @@
+{
+  "diseaseId": "vitiligo",
+  "region": "BR",
+  "diseaseName": "Vitiligo",
+  "prevalence": {
+    "value": "~0.5-1.0% (adults)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Dermatology epidemiology syntheses; SBD context",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~0.1-0.2 per 1,000 person-years",
+    "population": "General population",
+    "year": 2024,
+    "source": "Dermatology cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant psychosocial impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD skin disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "autoimmune disease",
+      "skin trauma (Koebner phenomenon)",
+      "stress"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with autoimmune thyroid disease"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis of depigmented macules; Wood lamp examination to confirm"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of individuals",
+    "controlRate": "Moderate; response depends on early treatment and access to phototherapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in dermatology; Wood lamp in specialty clinics",
+    "treatmentProtocol": "Topical corticosteroids or calcineurin inhibitors, phototherapy (NB-UVB), camouflage; systemic therapy for extensive disease",
+    "regionalChallenges": "Limited access to phototherapy outside major centers and stigma",
+    "strongPoints": "Growing dermatology services and availability of topical treatments"
+  }
+}

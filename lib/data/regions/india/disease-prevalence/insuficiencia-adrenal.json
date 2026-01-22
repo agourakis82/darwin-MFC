@@ -1,0 +1,50 @@
+{
+  "diseaseId": "insuficiencia-adrenal",
+  "region": "IN",
+  "diseaseName": "Adrenal insufficiency",
+  "prevalence": {
+    "value": "~80-130 per million",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Endocrinology registry syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~3-5 per million/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "Endocrine epidemiology studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low population burden; high per-case morbidity if untreated",
+    "mortalityRate": "Low with treatment; higher in adrenal crisis",
+    "year": 2024,
+    "source": "IHME/GBD endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autoimmune adrenalitis",
+      "tuberculosis (secondary causes)",
+      "pituitary disease",
+      "long-term steroid use"
+    ],
+    "vulnerablePopulations": [
+      "patients with autoimmune disease",
+      "people with TB history",
+      "patients with pituitary disorders"
+    ],
+    "diagnosticCriteria": "Low morning cortisol with elevated ACTH (primary) or low ACTH (secondary); ACTH stimulation test"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands",
+    "controlRate": "Moderate; depends on early recognition"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Endocrinology referral for dynamic testing",
+    "treatmentProtocol": "Glucocorticoid replacement, mineralocorticoid if primary; stress dosing education",
+    "regionalChallenges": "Delayed diagnosis and limited endocrine services in rural areas",
+    "strongPoints": "Effective low-cost replacement therapy"
+  }
+}

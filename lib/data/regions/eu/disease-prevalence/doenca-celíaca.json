@@ -1,0 +1,50 @@
+{
+  "diseaseId": "doenca-celíaca",
+  "region": "EU",
+  "diseaseName": "Celiac disease",
+  "prevalence": {
+    "value": "~0.7-1.0% (adults and children)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European gastroenterology epidemiology syntheses",
+    "trend": "increasing diagnosis with awareness"
+  },
+  "incidence": {
+    "value": "~8-15 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "Celiac cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; chronic GI and nutritional impact",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "WHO Europe/IHME digestive disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "HLA-DQ2/DQ8 genetics",
+      "family history",
+      "type 1 diabetes",
+      "autoimmune thyroid disease"
+    ],
+    "vulnerablePopulations": [
+      "children",
+      "first-degree relatives",
+      "patients with autoimmune disease"
+    ],
+    "diagnosticCriteria": "Positive tTG IgA with total IgA; confirmatory duodenal biopsy; HLA testing in equivocal cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no population screening; targeted testing in high-risk groups",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions across the EU",
+    "controlRate": "High with dietitian support and gluten-free adherence"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Serology and endoscopy widely available",
+    "treatmentProtocol": "Strict gluten-free diet, nutritional counseling, monitor deficiencies",
+    "regionalChallenges": "Cost and adherence to gluten-free diet in some populations",
+    "strongPoints": "Strong diagnostic access and dietitian support in many systems"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "diseaseId": "delirium",
+  "region": "BR",
+  "diseaseName": "Delirium (Estado Confusional Agudo)",
+  "prevalence": {
+    "value": "10-20% of hospitalized older adults; higher in ICU",
+    "population": "Hospitalized older adults in Brazil",
+    "year": 2024,
+    "source": "Geriatrics/critical care epidemiology syntheses",
+    "trend": "stable; recognition increasing with screening tools"
+  },
+  "incidence": {
+    "value": "5-15% new-onset during hospitalization (older adults)",
+    "population": "Hospitalized older adults",
+    "year": 2024,
+    "source": "Inpatient cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case; linked to mortality and long-term cognitive decline",
+    "mortalityRate": "Elevated (indirect; marker of severe illness)",
+    "year": 2024,
+    "source": "IHME/WHO inpatient outcomes context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "dementia/MCI",
+      "infection",
+      "polypharmacy (sedatives/anticholinergics)",
+      "dehydration",
+      "ICU stay and surgery"
+    ],
+    "vulnerablePopulations": [
+      "older adults with baseline cognitive impairment",
+      "ICU patients",
+      "post-operative patients"
+    ],
+    "diagnosticCriteria": "Acute change with fluctuating course and inattention; CAM or 4AT screening tools; identify and treat underlying cause"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; delirium screening is not universal",
+    "treatmentAvailable": true,
+    "estimatedPatients": "large inpatient burden annually",
+    "controlRate": "Improves with prevention bundles and early recognition"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Screening tool use varies; often missed in hypoactive delirium",
+    "treatmentProtocol": "Treat underlying cause, non-pharmacologic delirium bundles, avoid deliriogenic drugs; antipsychotics only for severe agitation when needed",
+    "regionalChallenges": "Underrecognition and staffing constraints for prevention bundles",
+    "strongPoints": "Evidence-based prevention and management can be implemented with low-cost protocols"
+  }
+}
+

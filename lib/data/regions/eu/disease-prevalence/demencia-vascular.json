@@ -1,0 +1,51 @@
+{
+  "diseaseId": "demencia-vascular",
+  "region": "EU",
+  "diseaseName": "Vascular dementia",
+  "prevalence": {
+    "value": "~0.7-1.5% (adults >65 years)",
+    "population": "Older adults in the EU",
+    "year": 2024,
+    "source": "European dementia epidemiology syntheses",
+    "trend": "increasing with aging population"
+  },
+  "incidence": {
+    "value": "~3-6 per 1,000 older adults/year",
+    "population": "Adults >65 years",
+    "year": 2024,
+    "source": "Longitudinal aging cohorts"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to disability and caregiver burden",
+    "mortalityRate": "Moderate (driven by comorbidity and stroke risk)",
+    "year": 2024,
+    "source": "WHO Europe/IHME dementia context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "stroke and TIA",
+      "hypertension",
+      "diabetes",
+      "atrial fibrillation",
+      "smoking"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with prior stroke",
+      "patients with uncontrolled vascular risk factors"
+    ],
+    "diagnosticCriteria": "Cognitive decline with vascular events or imaging evidence; neuroimaging supports diagnosis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic cognitive screening in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions across the EU",
+    "controlRate": "Moderate; prevention depends on vascular risk control"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical assessment with MRI/CT widely available",
+    "treatmentProtocol": "Vascular risk factor control, antiplatelet therapy when indicated, cognitive rehabilitation and caregiver support",
+    "regionalChallenges": "Care coordination and long-term support services",
+    "strongPoints": "Strong stroke prevention programs and dementia care pathways"
+  }
+}

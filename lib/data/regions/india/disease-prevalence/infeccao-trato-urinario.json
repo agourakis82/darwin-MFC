@@ -1,0 +1,55 @@
+{
+  "diseaseId": "infeccao-trato-urinario",
+  "region": "IN",
+  "diseaseName": "Urinary Tract Infection (UTI)",
+  "prevalence": {
+    "value": "10-15% lifetime in women (symptomatic UTI; underdiagnosis likely)",
+    "population": "Indian population (higher in women)",
+    "year": 2024,
+    "source": "ICMR + primary care epidemiology syntheses",
+    "trend": "stable; antimicrobial resistance increasing"
+  },
+  "incidence": {
+    "value": "40-90 per 1,000 women/year",
+    "population": "Women",
+    "year": 2024,
+    "source": "Primary care epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0006-0.002",
+    "mortalityRate": "Low overall; higher in complicated UTI and sepsis",
+    "year": 2024,
+    "source": "IHME GBD (UTI/pyelonephritis) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "pregnancy",
+      "diabetes mellitus",
+      "poor sanitation and hygiene",
+      "urinary catheterization",
+      "urologic abnormalities"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "pregnant people",
+      "older adults",
+      "patients with diabetes",
+      "patients with catheters"
+    ],
+    "diagnosticCriteria": "Clinical symptoms with urinalysis; culture for complicated/recurrent cases; resistance-aware empiric therapy is important"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening (pregnancy screening variable)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high episode burden annually",
+    "controlRate": "Variable; resistance and limited culture access affect outcomes"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis common; culture access often limited outside urban centers",
+    "treatmentProtocol": "Nitrofurantoin/fosfomycin where available; TMP-SMX and fluoroquinolones impacted by resistance; pregnancy-specific regimens and referral for pyelonephritis",
+    "regionalChallenges": "High antimicrobial resistance and out-of-pocket costs for diagnostics",
+    "strongPoints": "Wide availability of generic antibiotics and expanding primary care services"
+  }
+}
+

@@ -1,0 +1,47 @@
+{
+  "diseaseId": "doenca-huntington",
+  "region": "EU",
+  "diseaseName": "Huntington's Disease",
+  "prevalence": {
+    "value": "5-10 per 100,000",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European neurogenetics epidemiology syntheses",
+    "trend": "stable; improved survival and ascertainment"
+  },
+  "incidence": {
+    "value": "0.3-0.7 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0003-0.001",
+    "mortalityRate": "Elevated vs general population",
+    "year": 2024,
+    "source": "IHME/WHO Europe neurodegenerative context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autosomal dominant HTT expansion",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "families with Huntington disease"
+    ],
+    "diagnosticCriteria": "Clinical features with confirmatory genetic testing; structured multidisciplinary follow-up common"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening (predictive testing is available with counseling)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~25,000-45,000",
+    "controlRate": "Not curable; multidisciplinary symptom management improves quality of life"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Broad access to genetic testing and counseling in many member states",
+    "treatmentProtocol": "Multidisciplinary care, symptomatic treatment, rehabilitation, and palliative planning",
+    "regionalChallenges": "Long-term care needs and service variability across member states",
+    "strongPoints": "Established neurogenetics and multidisciplinary care pathways in many countries"
+  }
+}
+

@@ -1,0 +1,54 @@
+{
+  "diseaseId": "asma-infantil",
+  "region": "BR",
+  "diseaseName": "Asma na Infância",
+  "prevalence": {
+    "value": "8-12% (children)",
+    "population": "Brazilian children and adolescents",
+    "year": 2024,
+    "source": "SBP/SBPT + ISAAC-aligned asthma epidemiology syntheses",
+    "trend": "stable to increasing in urban areas due to pollution and allergen exposure"
+  },
+  "incidence": {
+    "value": "5-10 per 1,000/year (new diagnoses; varies by age)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Pediatric asthma cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.005-0.02 (pediatric burden concentrated)",
+    "mortalityRate": "Low with controller access; severe exacerbations can be fatal",
+    "year": 2024,
+    "source": "IHME/WHO asthma context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history of atopy",
+      "allergen exposure",
+      "tobacco smoke exposure",
+      "air pollution",
+      "viral-induced wheezing",
+      "obesity (older children)"
+    ],
+    "vulnerablePopulations": [
+      "children in low-income households",
+      "children exposed to smoke",
+      "children with allergic rhinitis/atopic dermatitis",
+      "children with poor access to inhaled corticosteroids"
+    ],
+    "diagnosticCriteria": "Recurrent wheeze/cough with variability; spirometry in older children when possible; symptom patterns and response to bronchodilator/controller therapy; exclude alternative diagnoses in preschool wheeze"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; case-based diagnosis in APS",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of children",
+    "controlRate": "Variable; depends on inhaler access, education, and adherence"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Spirometry access limited outside urban centers; diagnosis often clinical",
+    "treatmentProtocol": "ICS as controller; SABA for relief; action plans and trigger avoidance; severe asthma referral for biologics in specialized centers",
+    "regionalChallenges": "Inhaler availability and adherence, pollution exposure, and ED overload during exacerbation seasons",
+    "strongPoints": "Primary care network and availability of basic inhalers in SUS in many areas"
+  }
+}
+

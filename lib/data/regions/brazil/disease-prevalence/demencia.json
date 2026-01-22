@@ -1,0 +1,53 @@
+{
+  "diseaseId": "demencia",
+  "region": "BR",
+  "diseaseName": "Demência",
+  "prevalence": {
+    "value": "~7-8% in adults >65 years",
+    "population": "Brazilian older adults",
+    "year": 2024,
+    "source": "Academia Brasileira de Neurologia / epidemiological syntheses and IHME GBD estimates",
+    "trend": "increasing due to population aging and improved survival with chronic diseases"
+  },
+  "incidence": {
+    "value": "~15-25 per 1,000 person-years in adults >65 years",
+    "population": "Brazilian older adults",
+    "year": 2024,
+    "source": "Epidemiological cohort syntheses (Latin America) / IHME GBD"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.03 (older-adult concentrated)",
+    "mortalityRate": "Substantial in older age groups (direct and indirect)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "hypertension and cardiovascular disease",
+      "diabetes mellitus",
+      "low education and cognitive reserve",
+      "hearing loss and social isolation"
+    ],
+    "vulnerablePopulations": [
+      "older adults (>75 years)",
+      "low socioeconomic groups",
+      "patients with stroke history",
+      "rural populations with limited geriatric/neurology access"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis with functional impairment (DSM-5/ICD criteria), cognitive testing (e.g., MMSE/MoCA), and workup for reversible causes; neuroimaging when available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited opportunistic screening in APS; cognitive testing use varies",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1.6-2.2 million",
+    "controlRate": "Symptom management variable; caregiver support and access to multidisciplinary services limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care recognition variable; specialist confirmation (neurology/geriatrics) concentrated in larger cities",
+    "treatmentProtocol": "Non-pharmacologic support (caregiver education, safety, cognitive stimulation); cholinesterase inhibitors and memantine when indicated; management of vascular risk factors",
+    "regionalChallenges": "Underdiagnosis, limited specialist and long-term care capacity, and heavy caregiver burden with inequitable support services",
+    "strongPoints": "Growing awareness and availability of core dementia medications; expanding APS capacity for chronic disease management"
+  }
+}
+

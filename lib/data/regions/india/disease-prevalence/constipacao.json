@@ -1,0 +1,52 @@
+{
+  "diseaseId": "constipacao",
+  "region": "IN",
+  "diseaseName": "Constipation",
+  "prevalence": {
+    "value": "~10-18% (adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Gastroenterology epidemiology syntheses",
+    "trend": "stable; higher in women and older adults"
+  },
+  "incidence": {
+    "value": "~5-9% annual new or persistent cases",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Primary care cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant QOL impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD digestive disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low fiber intake",
+      "low fluid intake",
+      "sedentary lifestyle",
+      "constipating medications",
+      "female sex",
+      "older age"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "women",
+      "patients on constipating medications"
+    ],
+    "diagnosticCriteria": "Rome IV criteria; exclude secondary causes and alarm features"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "Moderate; improves with diet and laxatives"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care",
+    "treatmentProtocol": "Dietary fiber and fluids, osmotic laxatives, stimulant laxatives short-term",
+    "regionalChallenges": "Dietary habits and inconsistent long-term follow-up",
+    "strongPoints": "Low-cost treatments available in public and private care"
+  }
+}

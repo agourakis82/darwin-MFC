@@ -14,3 +14,5 @@ export {
   XPBadge,
   StreakDisplay,
 } from './XPDisplay';
+
+export { GamificationHub } from './GamificationHub';

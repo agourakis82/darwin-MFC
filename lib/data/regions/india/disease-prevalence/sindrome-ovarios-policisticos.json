@@ -1,0 +1,53 @@
+{
+  "diseaseId": "sindrome-ovarios-policisticos",
+  "region": "IN",
+  "diseaseName": "Polycystic Ovary Syndrome (PCOS)",
+  "prevalence": {
+    "value": "8-13% (reproductive-age women; higher in urban settings)",
+    "population": "Women of reproductive age in India",
+    "year": 2024,
+    "source": "Indian gynecology/endocrinology epidemiology syntheses",
+    "trend": "increasing with urbanization, obesity, and sedentary lifestyle"
+  },
+  "incidence": {
+    "value": "6-12 per 1,000 women/year (detection-dependent)",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "PCOS cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.008",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO women's health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "insulin resistance",
+      "South Asian metabolic risk phenotype",
+      "obesity",
+      "family history",
+      "sedentary lifestyle"
+    ],
+    "vulnerablePopulations": [
+      "urban women with obesity",
+      "women with infertility",
+      "adolescents with menstrual irregularity",
+      "women with limited access to specialist care"
+    ],
+    "diagnosticCriteria": "Rotterdam criteria with exclusion of other causes; clinical/biochemical hyperandrogenism and ultrasound findings"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of women",
+    "controlRate": "Variable; lifestyle and medication adherence limit outcomes"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnosis often in gynecology/endocrine clinics in urban centers; labs/US access limited in rural areas",
+    "treatmentProtocol": "Lifestyle/weight management, OCPs, metformin, fertility care when desired; screening for diabetes and dyslipidemia",
+    "regionalChallenges": "High metabolic risk and uneven access to endocrinology/fertility services",
+    "strongPoints": "Broad access to metformin and culturally accepted lifestyle interventions (diet/yoga) as adjuncts"
+  }
+}
+

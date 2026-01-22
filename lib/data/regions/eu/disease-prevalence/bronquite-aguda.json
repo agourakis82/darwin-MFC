@@ -1,0 +1,51 @@
+{
+  "diseaseId": "bronquite-aguda",
+  "region": "EU",
+  "diseaseName": "Acute bronchitis",
+  "prevalence": {
+    "value": "Common episodic condition",
+    "population": "EU adults and children",
+    "year": 2024,
+    "source": "European primary care respiratory infection syntheses",
+    "trend": "stable; seasonal peaks with viral outbreaks"
+  },
+  "incidence": {
+    "value": "~20-40 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Primary care cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; high cough-related healthcare visits",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe acute respiratory infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral infections",
+      "smoking",
+      "air pollution",
+      "asthma/COPD",
+      "occupational exposures"
+    ],
+    "vulnerablePopulations": [
+      "smokers",
+      "patients with chronic lung disease",
+      "older adults"
+    ],
+    "diagnosticCriteria": "Acute cough after URI; exclude pneumonia and asthma exacerbation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually",
+    "controlRate": "High with supportive care; antibiotics usually not indicated"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care diagnosis; chest imaging if pneumonia suspected",
+    "treatmentProtocol": "Supportive care and bronchodilators if wheezing; avoid routine antibiotics",
+    "regionalChallenges": "Antibiotic overuse in some settings",
+    "strongPoints": "Guideline-based primary care access"
+  }
+}

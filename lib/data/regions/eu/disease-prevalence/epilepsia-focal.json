@@ -1,0 +1,50 @@
+{
+  "diseaseId": "epilepsia-focal",
+  "region": "EU",
+  "diseaseName": "Focal Epilepsy",
+  "prevalence": {
+    "value": "0.3-0.6%",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ILAE/European epilepsy epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "15-35 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Elevated vs general population",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "stroke",
+      "traumatic brain injury",
+      "brain tumors",
+      "cortical malformations"
+    ],
+    "vulnerablePopulations": [
+      "older adults post-stroke",
+      "patients with structural brain lesions"
+    ],
+    "diagnosticCriteria": "ILAE criteria; EEG and MRI commonly used; surgical workup for drug-resistant focal epilepsy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1.5-3 million",
+    "controlRate": "Moderate to high with access to specialist care and epilepsy surgery programs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to EEG/MRI and specialist epilepsy services in many member states",
+    "treatmentProtocol": "Broad ASM access; structured pathways for drug-resistant epilepsy including surgery and neuromodulation",
+    "regionalChallenges": "Access variability across member states",
+    "strongPoints": "Strong specialist networks and advanced epilepsy care infrastructure in many systems"
+  }
+}
+

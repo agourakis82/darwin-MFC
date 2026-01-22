@@ -1,0 +1,25 @@
+{
+  "diseaseId": "ulcera-peptica",
+  "region": "EU",
+  "diseaseName": "Peptic Ulcer Disease",
+  "prevalence": {"value": "0.5-1%", "population": "EU adults (~447 million)", "year": 2024, "source": "UEG Journal Review 2023", "trend": "decreasing due to H. pylori eradication and PPI use"},
+  "incidence": {"value": "0.1-0.3 per 1000", "population": "EU adults", "year": 2024, "source": "ESGE Epidemiology Report"},
+  "burden": {"dalyPerCapita": "15-25", "mortalityRate": "0.5 per 100,000", "year": 2024, "source": "WHO Europe"},
+  "epidemiology": {
+    "riskFactors": ["H. pylori infection", "NSAID/aspirin use", "Smoking", "Alcohol consumption", "Helicobacter pylori reinfection", "Stress and psychological factors"],
+    "vulnerablePopulations": ["Elderly (>60 years)", "Chronic NSAID users", "Individuals with low socioeconomic status", "Immigrants from high H. pylori endemic regions"],
+    "diagnosticCriteria": "ESGE guidelines, endoscopy with rapid urease test or histology"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "H. pylori test-and-treat strategy in some countries",
+    "treatmentAvailable": true,
+    "estimatedPatients": "2-4 million",
+    "controlRate": "85% high with Maastricht VI guidelines"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ESGE/Maastricht VI criteria, endoscopy gold standard",
+    "treatmentProtocol": "PPIs + Maastricht VI eradication therapy (bismuth-based quadruple therapy), surveillance for complications",
+    "regionalChallenges": "Declining H. pylori (<20%) but rising NSAID-related ulcers, antibiotic resistance",
+    "strongPoints": "Maastricht VI guidelines, high endoscopy access, comprehensive H. pylori eradication programs"
+  }
+}

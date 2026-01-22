@@ -1,0 +1,53 @@
+{
+  "diseaseId": "osteoartrite",
+  "region": "IN",
+  "diseaseName": "Osteoarthritis",
+  "prevalence": {
+    "value": "22.1%",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR/IAR",
+    "trend": "Increasing by 1-2% annually due to aging population and lifestyle changes"
+  },
+  "incidence": {
+    "value": "150 per 100,000",
+    "population": "Adults aged 40+",
+    "year": 2024,
+    "source": "WHO Global Burden of Disease Study 2021, adapted for India"
+  },
+  "burden": {
+    "dalyPerCapita": "0.45 per 1,000 population",
+    "mortalityRate": "Negligible (<0.1 per 100,000)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease 2021"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Age (>50 years)",
+      "Female gender",
+      "Obesity (BMI >25)",
+      "Joint injuries",
+      "Occupational factors (prolonged squatting, heavy manual labor in agriculture)",
+      "Genetic predisposition"
+    ],
+    "vulnerablePopulations": [
+      "Elderly (>60 years)",
+      "Rural agricultural workers",
+      "Women in low socioeconomic groups",
+      "Individuals with high BMI"
+    ],
+    "diagnosticCriteria": "Clinical symptoms (pain, stiffness) + radiographic evidence (Kellgren-Lawrence grade ≥2); ACR/EULAR criteria adapted for resource-limited settings"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Low (<10% in primary care settings)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Approximately 280 million adults affected",
+    "controlRate": "Moderate (40-50% symptom management in urban areas; lower in rural)"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Similar to global standards but emphasis on clinical diagnosis due to limited imaging access; squatting test for knee OA",
+    "treatmentProtocol": "Conservative: NSAIDs, physiotherapy, weight management; Surgical: Joint replacement in advanced cases; Integration of Ayurveda (e.g., Panchakarma) in some regions",
+    "regionalChallenges": "High prevalence due to cultural squatting habits and occupational demands in rural India; Limited access to orthopedics in remote areas; Overburdened public hospitals",
+    "strongPoints": "Growing awareness via national programs like NPCDCS; Affordable generic medications; Community-based rehabilitation in some states"
+  }
+}

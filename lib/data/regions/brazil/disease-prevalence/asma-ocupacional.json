@@ -1,0 +1,52 @@
+{
+  "diseaseId": "asma-ocupacional",
+  "region": "BR",
+  "diseaseName": "Asma Ocupacional",
+  "prevalence": {
+    "value": "~0.3-1% (workforce); ~10-15% of adult asthma attributable to work exposures",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "Occupational asthma epidemiology syntheses; WHO occupational risk context",
+    "trend": "stable; underdiagnosed due to limited occupational health evaluation"
+  },
+  "incidence": {
+    "value": "~0.2-0.5 per 1,000 workers/year (high-risk sectors)",
+    "population": "Workers in high-exposure occupations",
+    "year": 2024,
+    "source": "Occupational cohort studies and surveillance reports"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; significant productivity loss and chronic asthma burden in affected workers",
+    "mortalityRate": "Low; severe uncontrolled asthma risk exists",
+    "year": 2024,
+    "source": "WHO/IHME asthma burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "exposure to sensitizers (flour, latex, isocyanates)",
+      "irritants (chlorine, welding fumes)",
+      "poor ventilation and lack of PPE",
+      "smoking",
+      "pre-existing atopy/asthma"
+    ],
+    "vulnerablePopulations": [
+      "bakers/food industry workers",
+      "healthcare workers (latex/cleaning agents)",
+      "spray painters/industrial workers (isocyanates)",
+      "informal workers without occupational health coverage"
+    ],
+    "diagnosticCriteria": "Asthma symptoms related to work with improvement off work; objective evidence via spirometry/peak flow variability across work-rest cycles; consider specific IgE for sensitizers and specialist evaluation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited; occupational surveillance varies by employer and sector",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands (subset of adult asthma)",
+    "controlRate": "Variable; best with exposure reduction/removal plus guideline-based asthma therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care recognition often limited; pulmonology/occupational medicine needed for confirmation and work-related assessment",
+    "treatmentProtocol": "Reduce/remove exposure, workplace controls and PPE; ICS-based therapy per asthma severity; worker compensation/occupational reporting when applicable",
+    "regionalChallenges": "Underdiagnosis, informal labor market barriers, limited access to occupational medicine services",
+    "strongPoints": "High-impact prevention when exposures are controlled; standard asthma medications broadly available"
+  }
+}

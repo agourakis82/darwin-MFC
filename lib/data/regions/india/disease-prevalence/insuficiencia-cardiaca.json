@@ -1,0 +1,41 @@
+{
+  "diseaseId": "insuficiencia-cardiaca",
+  "region": "IN",
+  "diseaseName": "Heart Failure",
+  "prevalence": {
+    "value": "1.3%",
+    "population": "Indian adults aged 45 and above (~600 million)",
+    "year": 2024,
+    "source": "Indian Council of Medical Research (ICMR) and Prospective Rural Urban Epidemiology (PURE) study, 2020-2023 updates",
+    "trend": "increasing due to rising cardiovascular risk factors, aging population, and improved survival from acute cardiac events"
+  },
+  "incidence": {
+    "value": "150 per 100,000",
+    "population": "total Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "National Health Profile (NHP) by Central Bureau of Health Intelligence (CBHI), 2023"
+  },
+  "burden": {
+    "dalyPerCapita": "1,200 DALYs per 100,000",
+    "mortalityRate": "120 deaths per 100,000",
+    "year": 2024,
+    "source": "Institute for Health Metrics and Evaluation (IHME) Global Burden of Disease (GBD) Study, India 2021 estimates extrapolated"
+  },
+  "epidemiology": {
+    "riskFactors": ["Hypertension", "Diabetes mellitus", "Coronary artery disease", "Rheumatic heart disease", "Smoking", "Obesity"],
+    "vulnerablePopulations": ["Elderly individuals over 65", "Rural low-income populations", "Women in endemic RHD areas", "Diabetic patients", "Post-myocardial infarction survivors"],
+    "diagnosticCriteria": "Framingham criteria or ESC 2021 guidelines adapted for India, including echocardiography for ejection fraction <40% and clinical symptoms like dyspnea and fatigue"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Approximately 25% in urban areas, <10% in rural via Ayushman Bharat program",
+    "treatmentAvailable": true,
+    "estimatedPatients": "8-10 million seeking care annually",
+    "controlRate": "35% with effective management including guideline-directed medical therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Indian Society of Cardiology (ISC) guidelines, emphasizing echocardiography and BNP levels where available",
+    "treatmentProtocol": "ESC/ACC guidelines adapted; beta-blockers, ACE inhibitors, ARNI, and diuretics widely available as generics; RHD-specific penicillin prophylaxis",
+    "regionalChallenges": "High burden of rheumatic heart disease in rural and tribal areas, limited access to advanced diagnostics in remote regions, air pollution exacerbating cases, and medication adherence issues due to cost",
+    "strongPoints": "Expansion of cardiac care under National Programme for Prevention and Control of Cardiovascular Diseases, affordable generic drugs, and increasing number of specialized heart failure clinics in urban centers"
+  }
+}

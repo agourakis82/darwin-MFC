@@ -1,0 +1,52 @@
+{
+  "diseaseId": "anemia-ferropriva-pediatrica",
+  "region": "IN",
+  "diseaseName": "Pediatric Iron Deficiency Anemia",
+  "prevalence": {
+    "value": "30-50% (children <5 years; varies by state)",
+    "population": "Indian children <5 years",
+    "year": 2024,
+    "source": "NFHS-5 + national anemia control program context",
+    "trend": "slowly decreasing; remains very high"
+  },
+  "incidence": {
+    "value": "60-120 per 1,000 children/year (context-dependent)",
+    "population": "Children <5 years",
+    "year": 2024,
+    "source": "Pediatric nutrition epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.006-0.02 (development and infection risk impact)",
+    "mortalityRate": "Indirect; contributes to child morbidity",
+    "year": 2024,
+    "source": "IHME GBD (iron deficiency)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low dietary iron intake",
+      "prematurity and low birth weight",
+      "parasitic infections",
+      "food insecurity",
+      "maternal anemia"
+    ],
+    "vulnerablePopulations": [
+      "infants and toddlers",
+      "low-income households",
+      "high-burden states and rural districts"
+    ],
+    "diagnosticCriteria": "Low hemoglobin with microcytosis; ferritin/TSAT when available; clinical nutrition and infection assessment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "programmatic screening under anemia control initiatives; varies by state",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of children",
+    "controlRate": "Variable; adherence and supply constraints affect outcomes"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Hemoglobin screening through public programs; iron studies limited",
+    "treatmentProtocol": "Iron supplementation, deworming, nutrition support, and maternal anemia interventions",
+    "regionalChallenges": "High baseline prevalence, adherence, and supply-chain consistency",
+    "strongPoints": "Large-scale national anemia programs and low-cost supplementation"
+  }
+}
+

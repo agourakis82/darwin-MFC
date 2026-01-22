@@ -1,0 +1,50 @@
+{
+  "diseaseId": "tendinite-ombro",
+  "region": "EU",
+  "diseaseName": "Rotator Cuff Tendinopathy / Shoulder Pain",
+  "prevalence": {
+    "value": "7-15% (adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European musculoskeletal epidemiology syntheses",
+    "trend": "stable to increasing with aging"
+  },
+  "incidence": {
+    "value": "10-30 per 1,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.008",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO Europe musculoskeletal context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "overhead work",
+      "repetitive use",
+      "older age",
+      "diabetes"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "manual workers"
+    ],
+    "diagnosticCriteria": "Clinical assessment with imaging for suspected tears or refractory symptoms; structured physiotherapy pathways common"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions with episodic shoulder pain",
+    "controlRate": "Moderate to high with access to physiotherapy and imaging; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Broad access to physiotherapy and imaging in many systems",
+    "treatmentProtocol": "Exercise-based rehab, NSAIDs, injections, and surgery for tears when indicated",
+    "regionalChallenges": "Wait times for elective imaging/surgery in some systems",
+    "strongPoints": "Strong conservative care pathways and rehab access in many member states"
+  }
+}
+

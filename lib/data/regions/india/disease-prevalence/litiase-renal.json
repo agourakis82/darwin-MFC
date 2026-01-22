@@ -1,0 +1,52 @@
+{
+  "diseaseId": "litiase-renal",
+  "region": "IN",
+  "diseaseName": "Renal calculi (urolithiasis)",
+  "prevalence": {
+    "value": "~4-7% (higher in stone belt regions)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Urological Society of India context; regional stone belt surveys",
+    "trend": "increasing with heat exposure and dietary change"
+  },
+  "incidence": {
+    "value": "~4-8 per 1,000 person-years (higher in stone belt)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Urology cohort studies and hospital data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; high acute pain and recurrence burden",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD kidney disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "heat and dehydration",
+      "low fluid intake",
+      "high sodium/animal protein diet",
+      "obesity and metabolic syndrome",
+      "family history",
+      "recurrent UTIs"
+    ],
+    "vulnerablePopulations": [
+      "men 30-60 years",
+      "stone belt regions (Rajasthan, Gujarat, Maharashtra)",
+      "outdoor workers"
+    ],
+    "diagnosticCriteria": "Renal colic with urinalysis; ultrasound or CT; metabolic work-up for recurrent stones"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions (including recurrent stone formers)",
+    "controlRate": "Moderate; recurrence prevention limited by counseling and follow-up access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Ultrasound widely used; CT access limited in smaller centers",
+    "treatmentProtocol": "Hydration, analgesia, alpha-blockers; ESWL/ureteroscopy/PCNL for larger stones; dietary prevention counseling",
+    "regionalChallenges": "Limited lithotripsy access in rural areas and delayed elective procedures",
+    "strongPoints": "Growing urology services and availability of minimally invasive procedures in urban centers"
+  }
+}

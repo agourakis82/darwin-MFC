@@ -1,0 +1,51 @@
+{
+  "diseaseId": "acidemia-propionica",
+  "region": "BR",
+  "diseaseName": "Acidemia Propiônica",
+  "prevalence": {
+    "value": "~0.2-0.6 per 100,000",
+    "population": "General population (rare inherited metabolic disorder)",
+    "year": 2024,
+    "source": "Orphanet; inborn errors of metabolism clinical registry syntheses",
+    "trend": "stable; earlier recognition improving with metabolic testing access"
+  },
+  "incidence": {
+    "value": "~1 per 80,000-150,000 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "International IEM incidence syntheses; tertiary center reports"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare), but high per-patient burden (metabolic crises, cardiomyopathy, neurodisability)",
+    "mortalityRate": "Low overall; higher in severe neonatal presentations without rapid treatment",
+    "year": 2024,
+    "source": "Orphanet clinical burden summaries; IHME/GBD modeled context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autosomal recessive inheritance",
+      "consanguinity (increases risk)",
+      "family history of propionic acidemia",
+      "catabolic stress (infection/fasting) precipitating crises",
+      "protein load in infancy without metabolic management"
+    ],
+    "vulnerablePopulations": [
+      "newborns/infants",
+      "patients in regions without metabolic reference centers",
+      "patients with recurrent infections or poor nutrition"
+    ],
+    "diagnosticCriteria": "MS/MS acylcarnitine profile with elevated C3, metabolic acidosis and hyperammonemia, urine organic acids (3-hydroxypropionate, methylcitrate), confirmatory enzymatic/genetic testing"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited and heterogeneous; confirmatory testing mainly in reference laboratories",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds (rare disease; uncertain)",
+    "controlRate": "Moderate with early diagnosis and adherence to diet/medication; low where access is fragmented"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Case detection via neonatal/infant decompensation in emergency settings; referral for confirmatory MS/MS and genetics",
+    "treatmentProtocol": "Emergency decompensation protocol (caloric support, ammonia control), long-term protein restriction with medical formulas, carnitine, intermittent antibiotics for gut propionate (e.g., metronidazole), cardiology/neuro follow-up",
+    "regionalChallenges": "Late diagnosis, access gaps for specialized formulas and emergency protocols outside tertiary hospitals",
+    "strongPoints": "Tertiary pediatric centers increasingly familiar with IEM emergency management"
+  }
+}

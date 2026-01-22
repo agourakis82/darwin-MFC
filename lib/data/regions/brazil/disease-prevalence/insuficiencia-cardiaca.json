@@ -1,0 +1,41 @@
+{
+  "diseaseId": "insuficiencia-cardiaca",
+  "region": "BR",
+  "diseaseName": "Insuficiência Cardíaca",
+  "prevalence": {
+    "value": "1.5%",
+    "population": "Brazilian adults aged 45 years and older",
+    "year": 2024,
+    "source": "Brazilian Society of Cardiology (SBC) guidelines and VIGITEL survey data",
+    "trend": "increasing due to aging population and rising cardiovascular risk factors"
+  },
+  "incidence": {
+    "value": "250 new cases per 100,000",
+    "population": "Brazilian population aged 40 years and older",
+    "year": 2024,
+    "source": "DataSUS and published epidemiological studies in Revista Brasileira de Cardiologia"
+  },
+  "burden": {
+    "dalyPerCapita": "850 DALYs per 100,000",
+    "mortalityRate": "120 deaths per 100,000",
+    "year": 2024,
+    "source": "Global Burden of Disease (GBD) Study 2019 extrapolated to 2024 and DataSUS mortality records"
+  },
+  "epidemiology": {
+    "riskFactors": ["Hypertension", "Diabetes mellitus", "Coronary artery disease", "Chagas disease", "Obesity", "Smoking"],
+    "vulnerablePopulations": ["Elderly population over 65 years", "Low socioeconomic status groups", "Rural and indigenous communities", "Chagas-endemic regions in Northeast Brazil", "Patients with comorbidities like CKD"],
+    "diagnosticCriteria": "Based on clinical symptoms (dyspnea, fatigue), echocardiographic evidence of reduced ejection fraction (<40%) or preserved ejection fraction with structural heart disease, and NYHA functional classification, as per SBC guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Limited routine screening; opportunistic via SUS primary care for high-risk groups, covering approximately 40% of adults over 40",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Approximately 1.8 million registered in SUS system",
+    "controlRate": "Around 35% of patients achieve effective management with guideline-directed therapy in SUS"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Brazilian Society of Cardiology (SBC) diagnostic standards, emphasizing echocardiography and biomarkers like NT-proBNP",
+    "treatmentProtocol": "SUS protocols follow SBC guidelines with availability of ACE inhibitors, beta-blockers, diuretics, and SGLT2 inhibitors; device therapy limited in rural areas",
+    "regionalChallenges": "High burden from Chagas disease in endemic areas, socioeconomic inequalities in access to specialized care, urban-rural disparities, and overburdened SUS in underserved regions",
+    "strongPoints": "SUS provides universal access to essential medications and multidisciplinary care through family health strategy units, with national heart failure registries for monitoring"
+  }
+}

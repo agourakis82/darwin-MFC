@@ -1,0 +1,52 @@
+{
+  "diseaseId": "tendinite",
+  "region": "BR",
+  "diseaseName": "Tendinite",
+  "prevalence": {
+    "value": "~5-10% (working-age adults)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Occupational health and musculoskeletal epidemiology syntheses",
+    "trend": "stable; higher in manual labor and repetitive work"
+  },
+  "incidence": {
+    "value": "~8-15 per 1,000 workers/year",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "Occupational cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant pain and work limitation",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD musculoskeletal context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "repetitive motion and overuse",
+      "manual labor",
+      "sports overuse",
+      "poor ergonomics",
+      "diabetes and obesity"
+    ],
+    "vulnerablePopulations": [
+      "manual workers",
+      "athletes",
+      "older adults",
+      "patients with diabetes"
+    ],
+    "diagnosticCriteria": "Clinical tendon pain with activity and focal tenderness; ultrasound or MRI if diagnosis uncertain or refractory"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of cases across musculoskeletal clinics",
+    "controlRate": "Moderate; improves with physiotherapy and ergonomic changes"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care evaluation; imaging access varies by region",
+    "treatmentProtocol": "Activity modification, NSAIDs, physiotherapy, ergonomic interventions; corticosteroid injections for selected cases",
+    "regionalChallenges": "Limited access to physiotherapy and delayed ergonomic interventions in workplaces",
+    "strongPoints": "Effective conservative management options and occupational health programs in larger employers"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "colite-ulcerativa",
+  "region": "IN",
+  "diseaseName": "Ulcerative colitis",
+  "prevalence": {
+    "value": "~40-90 per 100,000",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Indian IBD registry and gastroenterology syntheses",
+    "trend": "increasing with urbanization and improved diagnosis"
+  },
+  "incidence": {
+    "value": "~2-6 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "IBD cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to chronic symptoms and flares",
+    "mortalityRate": "Low to moderate",
+    "year": 2024,
+    "source": "IHME/GBD IBD context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "urban lifestyle",
+      "westernized diet",
+      "immune dysregulation"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with family history",
+      "patients with autoimmune disease"
+    ],
+    "diagnosticCriteria": "Clinical symptoms plus colonoscopy with biopsy; exclude infections (including intestinal TB)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands",
+    "controlRate": "Moderate; biologic access limited by cost"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Colonoscopy available in tertiary centers; delays in rural areas",
+    "treatmentProtocol": "5-ASA, corticosteroids for flares, immunomodulators; biologics in select cases; colectomy for refractory disease",
+    "regionalChallenges": "Cost barriers and overlap with infectious colitis",
+    "strongPoints": "Growing IBD expertise in major centers"
+  }
+}

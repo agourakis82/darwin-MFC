@@ -1,0 +1,49 @@
+{
+  "diseaseId": "bocio-simples",
+  "region": "IN",
+  "diseaseName": "Simple goiter",
+  "prevalence": {
+    "value": "~5-10% (adults; varies by iodine intake)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Iodine nutrition surveys and endocrine epidemiology",
+    "trend": "stable; localized iodine deficiency pockets"
+  },
+  "incidence": {
+    "value": "~6-12 per 1,000 adults/year (new detected goiter)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Endocrinology outpatient data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; cosmetic and compressive symptoms in some cases",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO/IHME endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "iodine deficiency or excess",
+      "female sex",
+      "older age",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "regions with iodine imbalance"
+    ],
+    "diagnosticCriteria": "Clinical neck exam and thyroid ultrasound; TSH evaluation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; incidental detection",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions with goiter or nodular thyroid",
+    "controlRate": "Moderate; depends on iodine balance and access to care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Ultrasound and lab testing in urban centers",
+    "treatmentProtocol": "Observation, treat iodine imbalance; surgery for compressive cases",
+    "regionalChallenges": "Iodine deficiency pockets and limited access to ultrasound",
+    "strongPoints": "Universal salt iodization program"
+  }
+}

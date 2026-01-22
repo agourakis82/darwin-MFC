@@ -1,0 +1,53 @@
+{
+  "diseaseId": "neuropatia-periferica-diabetica",
+  "region": "EU",
+  "diseaseName": "Diabetic Peripheral Neuropathy",
+  "prevalence": {
+    "value": "15-30% among people with diabetes",
+    "population": "EU adults with diabetes",
+    "year": 2024,
+    "source": "EASD/European diabetes complication syntheses",
+    "trend": "stable to increasing with aging and diabetes prevalence"
+  },
+  "incidence": {
+    "value": "1-3% per year among people with diabetes",
+    "population": "People with diabetes",
+    "year": 2024,
+    "source": "European cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.007 (diabetes-population concentrated)",
+    "mortalityRate": "Indirect (ulcers, infections, amputations)",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor glycemic control",
+      "long diabetes duration",
+      "smoking",
+      "obesity",
+      "hypertension/dyslipidemia",
+      "CKD"
+    ],
+    "vulnerablePopulations": [
+      "older adults with diabetes",
+      "patients with long duration of diabetes",
+      "patients with prior foot ulcers"
+    ],
+    "diagnosticCriteria": "Clinical exam with monofilament/vibration testing and symptom assessment; guideline-based annual foot screening common"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate to high; annual foot screening common in many systems",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~8-15 million",
+    "controlRate": "Moderate to high with structured diabetes care and foot clinics; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Integrated diabetes complication screening pathways and multidisciplinary foot clinics in many countries",
+    "treatmentProtocol": "Risk-factor control, foot care and ulcer prevention, neuropathic pain treatment (duloxetine/pregabalin), and rapid ulcer referral pathways",
+    "regionalChallenges": "Care variability across member states and persistent ulcer burden in high-risk groups",
+    "strongPoints": "Structured diabetes care systems and access to multidisciplinary foot services in many member states"
+  }
+}
+

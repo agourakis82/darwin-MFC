@@ -1,0 +1,52 @@
+{
+  "diseaseId": "doenca-parkinson",
+  "region": "IN",
+  "diseaseName": "Parkinson's Disease",
+  "prevalence": {
+    "value": "~0.2-0.3% overall; ~1% in adults >60 years (underdiagnosis likely)",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "Indian Academy of Neurology / IHME GBD estimates",
+    "trend": "increasing due to aging and better recognition in urban centers"
+  },
+  "incidence": {
+    "value": "~8-15 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.006",
+    "mortalityRate": "Increasing with age; complications contribute to mortality",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "male sex",
+      "genetic susceptibility",
+      "environmental exposures (pesticides)",
+      "vascular comorbidity affecting parkinsonism differential"
+    ],
+    "vulnerablePopulations": [
+      "older adults (>60 years)",
+      "rural populations with limited neurology access",
+      "patients with comorbid diabetes/hypertension"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis per MDS criteria; levodopa responsiveness supportive; imaging used mainly to exclude secondary causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis often delayed",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1.5-2.5 million",
+    "controlRate": "Variable; medication access is better for generics, but rehab and advanced therapy access is limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist evaluation concentrated in urban tertiary centers; many cases managed in general medicine settings",
+    "treatmentProtocol": "Levodopa and dopamine agonists (generics available); physiotherapy and speech therapy; DBS available in select tertiary centers",
+    "regionalChallenges": "Neurologist scarcity, out-of-pocket costs for rehab, and limited access to DBS/advanced therapy outside metros",
+    "strongPoints": "Affordable generic levodopa and expanding tertiary movement disorder services in major cities"
+  }
+}
+

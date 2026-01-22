@@ -1,0 +1,52 @@
+{
+  "diseaseId": "transtorno-espectro-autista",
+  "region": "BR",
+  "diseaseName": "Transtorno do Espectro Autista (TEA)",
+  "prevalence": {
+    "value": "1-2% (children)",
+    "population": "Brazilian children",
+    "year": 2024,
+    "source": "WHO/CDC-informed prevalence range + Brazilian service utilization context",
+    "trend": "increasing due to improved recognition and diagnostic expansion"
+  },
+  "incidence": {
+    "value": "3-6 per 1,000 live births (diagnosed over early childhood)",
+    "population": "Brazilian live births",
+    "year": 2024,
+    "source": "International cohort syntheses (ASD) extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.008",
+    "mortalityRate": "Low; indirect risks via comorbidities and accidents",
+    "year": 2024,
+    "source": "IHME/WHO neurodevelopmental disorder context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic susceptibility",
+      "male sex",
+      "prematurity/perinatal complications",
+      "advanced parental age (association)",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "boys",
+      "children with developmental delays",
+      "children with limited access to early intervention services"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: persistent social communication deficits and restricted/repetitive behaviors with early developmental onset; diagnosis often supported by standardized tools (e.g., ADOS) when available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; developmental screening in APS is inconsistent",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands to >1 million children (depending on ascertainment)",
+    "controlRate": "Not applicable; focus is on functional outcomes and access to early intervention"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist assessment (neuropediatrics/psychology) concentrated in larger cities; APS often initiates referral based on developmental concerns",
+    "treatmentProtocol": "Early behavioral interventions, speech therapy, occupational therapy, caregiver training, and school accommodations; medication for comorbid irritability/ADHD when indicated",
+    "regionalChallenges": "Long wait times, limited specialized teams in SUS, and unequal access to ABA/specialized therapies",
+    "strongPoints": "Increasing public awareness and expanding multidisciplinary services in some urban centers"
+  }
+}
+

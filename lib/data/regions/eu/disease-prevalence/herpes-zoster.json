@@ -1,0 +1,50 @@
+{
+  "diseaseId": "herpes-zoster",
+  "region": "EU",
+  "diseaseName": "Herpes zoster (shingles)",
+  "prevalence": {
+    "value": "~30% lifetime risk",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ECDC/WHO Europe zoster epidemiology context",
+    "trend": "increasing with aging population; vaccination programs expanding"
+  },
+  "incidence": {
+    "value": "~3-5 per 1,000 person-years (general); 7-12 per 1,000 in >60 years",
+    "population": "Adults, higher in older adults",
+    "year": 2024,
+    "source": "European zoster surveillance and cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; post-herpetic neuralgia drives disability",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "WHO Europe/IHME neurologic pain burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "older age",
+      "immunosuppression (HIV, cancer therapy, steroids)",
+      "diabetes",
+      "chronic kidney disease"
+    ],
+    "vulnerablePopulations": [
+      "adults >60 years",
+      "immunocompromised patients",
+      "transplant recipients"
+    ],
+    "diagnosticCriteria": "Typical dermatomal vesicular rash with neuropathic pain; PCR for atypical cases; urgent ophthalmology evaluation for ocular involvement"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of lifetime cases; hundreds of thousands annually",
+    "controlRate": "High with early antivirals and vaccination in eligible groups"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care diagnosis with rapid referral for complications",
+    "treatmentProtocol": "Antivirals within 72 hours, analgesia and neuropathic pain therapy; recombinant zoster vaccine available in many countries",
+    "regionalChallenges": "Variation in vaccine reimbursement and uptake across countries",
+    "strongPoints": "Strong access to antivirals, pain management and vaccination programs"
+  }
+}

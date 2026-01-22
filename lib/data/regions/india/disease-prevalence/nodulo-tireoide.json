@@ -1,0 +1,52 @@
+{
+  "diseaseId": "nodulo-tireoide",
+  "region": "IN",
+  "diseaseName": "Thyroid nodule",
+  "prevalence": {
+    "value": "~4-7% (palpable); ~20-35% (ultrasound)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Endocrine Society of India context; thyroid ultrasound epidemiology",
+    "trend": "increasing detection with imaging access"
+  },
+  "incidence": {
+    "value": "~4-8 per 1,000 adults/year (new detected nodules)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Outpatient endocrinology cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; burden driven by diagnostic work-up and anxiety",
+    "mortalityRate": "Negligible (most nodules benign)",
+    "year": 2024,
+    "source": "WHO/IHME endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "older age",
+      "iodine deficiency/excess",
+      "prior neck radiation",
+      "family history of thyroid disease",
+      "autoimmune thyroiditis"
+    ],
+    "vulnerablePopulations": [
+      "women >40 years",
+      "regions with iodine imbalance",
+      "families with thyroid cancer history"
+    ],
+    "diagnosticCriteria": "TSH and thyroid ultrasound; risk stratification by ultrasound features; FNA for suspicious nodules (Bethesda)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; incidental detection common",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions with nodules",
+    "controlRate": "Moderate; depends on access to ultrasound and FNA"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Ultrasound and FNA concentrated in urban centers; clinical evaluation common in rural areas",
+    "treatmentProtocol": "Observation for low-risk nodules; FNA for suspicious; surgery for malignant/high-risk cases",
+    "regionalChallenges": "Limited access to ultrasound/FNA outside metros and overdiagnosis in private imaging",
+    "strongPoints": "Established endocrinology services in tertiary hospitals"
+  }
+}

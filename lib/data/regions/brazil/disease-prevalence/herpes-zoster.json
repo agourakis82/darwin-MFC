@@ -1,0 +1,51 @@
+{
+  "diseaseId": "herpes-zoster",
+  "region": "BR",
+  "diseaseName": "Herpes zoster (cobreiro)",
+  "prevalence": {
+    "value": "~30% lifetime risk",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "WHO/CDC herpes zoster epidemiology context; regional adult health surveys",
+    "trend": "increasing with aging population and immunosuppression prevalence"
+  },
+  "incidence": {
+    "value": "~3-5 per 1,000 person-years (general); 8-12 per 1,000 in >60 years",
+    "population": "Adults, higher in older adults",
+    "year": 2024,
+    "source": "Herpes zoster cohort studies and vaccine era surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; post-herpetic neuralgia drives disability",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "WHO/IHME neurologic pain burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "older age",
+      "immunosuppression (HIV, cancer therapy, steroids)",
+      "diabetes",
+      "chronic kidney disease",
+      "female sex (slightly higher risk)"
+    ],
+    "vulnerablePopulations": [
+      "adults >60 years",
+      "people with HIV or cancer",
+      "transplant recipients"
+    ],
+    "diagnosticCriteria": "Typical dermatomal vesicular rash with neuropathic pain; PCR from lesions for atypical cases; assess ocular involvement urgently"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands to >1 million episodes per year (age-dependent)",
+    "controlRate": "Moderate; early antiviral treatment reduces complications"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care/UPA; referral for ophthalmic or disseminated cases",
+    "treatmentProtocol": "Acyclovir/valacyclovir within 72 hours, analgesia, neuropathic pain management; vaccine access mainly private",
+    "regionalChallenges": "Limited access to zoster vaccination in SUS, delayed presentation in some regions",
+    "strongPoints": "Effective antivirals widely available; clinical recognition is straightforward"
+  }
+}

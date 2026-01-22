@@ -1,0 +1,52 @@
+{
+  "diseaseId": "faringoamigdalite",
+  "region": "BR",
+  "diseaseName": "Faringoamigdalite Aguda",
+  "prevalence": {
+    "value": "10-20% annual incidence in children (episodes; mostly viral)",
+    "population": "Brazilian children",
+    "year": 2024,
+    "source": "SBP/primary care respiratory infection syntheses",
+    "trend": "stable with seasonal peaks"
+  },
+  "incidence": {
+    "value": "100-200 per 1,000 children/year (any sore throat episodes)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Primary care epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.003",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO context (acute respiratory infections)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "school/daycare exposure",
+      "winter season",
+      "household crowding",
+      "smoke exposure",
+      "limited hand hygiene"
+    ],
+    "vulnerablePopulations": [
+      "children 5-15 years",
+      "household crowding contexts",
+      "patients with recurrent infections"
+    ],
+    "diagnosticCriteria": "Clinical assessment; Centor/McIsaac criteria support GAS suspicion; rapid antigen test/culture when available; avoid antibiotics for likely viral pharyngitis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high episode burden annually",
+    "controlRate": "High symptom resolution; antibiotic stewardship is key"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS uses clinical criteria; rapid testing/culture availability varies",
+    "treatmentProtocol": "Supportive care for viral cases; penicillin/amoxicillin for suspected/confirmed GAS; treat rheumatic fever prevention in appropriate cases",
+    "regionalChallenges": "Overuse of antibiotics in some settings and limited rapid testing availability",
+    "strongPoints": "Wide APS coverage and availability of penicillin/amoxicillin"
+  }
+}
+

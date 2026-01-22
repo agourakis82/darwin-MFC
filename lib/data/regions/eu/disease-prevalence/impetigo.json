@@ -1,0 +1,49 @@
+{
+  "diseaseId": "impetigo",
+  "region": "EU",
+  "diseaseName": "Impetigo",
+  "prevalence": {
+    "value": "~1-2% (children)",
+    "population": "EU children",
+    "year": 2024,
+    "source": "European pediatric primary care data and dermatology surveillance",
+    "trend": "stable; occasional school outbreaks"
+  },
+  "incidence": {
+    "value": "~40-120 per 1,000 children/year (episodes)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Primary care cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; morbidity and school absenteeism",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe skin infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "skin trauma",
+      "crowding",
+      "atopic dermatitis",
+      "close contact in schools"
+    ],
+    "vulnerablePopulations": [
+      "children 2-10 years",
+      "patients with eczema"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; culture if MRSA suspected or recurrent outbreaks"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually across EU",
+    "controlRate": "High with prompt topical or oral antibiotics"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care diagnosis with access to culture in many systems",
+    "treatmentProtocol": "Topical antibiotics for limited disease; oral antibiotics for extensive cases; hygiene measures",
+    "regionalChallenges": "Antibiotic stewardship and MRSA considerations",
+    "strongPoints": "Good access to primary care and effective antibiotics"
+  }
+}

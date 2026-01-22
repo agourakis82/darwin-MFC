@@ -1,0 +1,49 @@
+{
+  "diseaseId": "leucemia-linfocitica-cronica",
+  "region": "BR",
+  "diseaseName": "Leucemia linfocitica cronica (LLC)",
+  "prevalence": {
+    "value": "~10-30 per 100,000",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Hematology registry syntheses",
+    "trend": "increasing prevalence with aging and improved survival"
+  },
+  "incidence": {
+    "value": "~1-3 per 100,000/year",
+    "population": "Adults (older age)",
+    "year": 2024,
+    "source": "Cancer registry and hematology cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; chronic disease with treatment-related morbidity",
+    "mortalityRate": "Moderate",
+    "year": 2024,
+    "source": "IHME/GBD hematologic malignancy context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "older age",
+      "male sex",
+      "family history",
+      "immune dysregulation"
+    ],
+    "vulnerablePopulations": [
+      "adults >60 years",
+      "patients with family history of CLL"
+    ],
+    "diagnosticCriteria": "Persistent lymphocytosis with immunophenotyping by flow cytometry; staging by Rai/Binet"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; incidental diagnosis common",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands",
+    "controlRate": "Moderate; access to targeted therapies varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Flow cytometry available in referral centers",
+    "treatmentProtocol": "Watchful waiting for early-stage; chemoimmunotherapy or targeted agents (BTK inhibitors) for progression",
+    "regionalChallenges": "Access to newer targeted therapies in SUS and geographic disparities",
+    "strongPoints": "Specialized hematology centers in major cities"
+  }
+}

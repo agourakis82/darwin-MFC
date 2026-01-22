@@ -1,0 +1,53 @@
+{
+  "diseaseId": "leptospirose",
+  "region": "BR",
+  "diseaseName": "Leptospirose",
+  "prevalence": {
+    "value": "1-3 per 100,000/year (higher in flood-prone cities; underdiagnosed)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde (SINAN) / SVSA",
+    "trend": "stable with seasonal peaks; risk increases with extreme rainfall and flooding"
+  },
+  "incidence": {
+    "value": "1-3 per 100,000/year (reported)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "SINAN notifications"
+  },
+  "burden": {
+    "dalyPerCapita": "0.00005-0.0002",
+    "mortalityRate": "Case-fatality ~5-15% in severe Weil syndrome",
+    "year": 2024,
+    "source": "IHME GBD / PAHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "exposure to contaminated floodwater",
+      "rodent infestation and poor sanitation",
+      "occupational exposure (waste, sewage, agriculture)",
+      "lack of protective equipment",
+      "delayed antibiotic treatment"
+    ],
+    "vulnerablePopulations": [
+      "residents of flood-prone urban peripheries",
+      "sanitation and waste workers",
+      "agricultural workers",
+      "people experiencing homelessness"
+    ],
+    "diagnosticCriteria": "Clinical suspicion (fever, myalgia, jaundice, renal failure) plus lab confirmation (MAT serology, PCR where available); Ministry of Health case definitions"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; outbreak/seasonal surveillance and syndromic detection",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2,000-6,000 reported cases/year",
+    "controlRate": "Good with early doxycycline/penicillin; severe disease outcomes depend on timely hospitalization"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SUS relies on clinical suspicion with confirmatory testing in reference labs; differential includes viral hepatitis and dengue",
+    "treatmentProtocol": "Early antibiotics (doxycycline, amoxicillin, or IV penicillin/ceftriaxone for severe cases) plus supportive renal/hepatic care",
+    "regionalChallenges": "Underdiagnosis, limited confirmatory testing in some regions, and high exposure risk during floods in large cities",
+    "strongPoints": "National notification system (SINAN) and established outbreak response protocols linked to environmental health actions"
+  }
+}
+

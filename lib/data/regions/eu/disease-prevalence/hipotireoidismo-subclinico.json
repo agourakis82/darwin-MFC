@@ -1,0 +1,50 @@
+{
+  "diseaseId": "hipotireoidismo-subclinico",
+  "region": "EU",
+  "diseaseName": "Subclinical hypothyroidism",
+  "prevalence": {
+    "value": "~4-10% (adults; higher in women and older adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European Thyroid Association context",
+    "trend": "stable; detection increases with routine TSH testing"
+  },
+  "incidence": {
+    "value": "~3-6 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Endocrinology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low; potential progression to overt hypothyroidism",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe/IHME endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "older age",
+      "autoimmune thyroiditis",
+      "iodine imbalance",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "women >50 years",
+      "patients with autoimmune disease"
+    ],
+    "diagnosticCriteria": "Elevated TSH with normal free T4; repeat testing and assess thyroid antibodies"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; targeted testing",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "High with monitoring and selective treatment"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "TSH testing widely available",
+    "treatmentProtocol": "Observation for mild cases; levothyroxine for symptomatic or high TSH",
+    "regionalChallenges": "Overtreatment in low-risk patients",
+    "strongPoints": "Clear guidelines and access to monitoring"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "diseaseId": "deficiencia-vitamina-b12",
+  "region": "BR",
+  "diseaseName": "Deficiencia de vitamina B12",
+  "prevalence": {
+    "value": "~5-15% (adults; higher in older adults)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Nutrition and hematology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~2-4 per 1,000 adults/year (new detected deficiency)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Primary care and hematology data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; neuropathy and anemia burden",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO nutrition context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "older age",
+      "vegetarian/low animal protein diet",
+      "pernicious anemia",
+      "malabsorption or bariatric surgery",
+      "metformin use"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with malabsorption",
+      "vegetarians"
+    ],
+    "diagnosticCriteria": "Low serum B12 with macrocytosis and/or elevated methylmalonic acid; assess symptoms"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; targeted testing",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of adults",
+    "controlRate": "High with supplementation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Lab testing available in primary care and referral centers",
+    "treatmentProtocol": "Oral or IM B12 replacement; treat underlying cause",
+    "regionalChallenges": "Underdiagnosis and limited follow-up",
+    "strongPoints": "Low-cost supplementation widely available"
+  }
+}

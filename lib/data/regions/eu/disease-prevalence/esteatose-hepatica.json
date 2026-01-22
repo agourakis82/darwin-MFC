@@ -1,0 +1,50 @@
+{
+  "diseaseId": "esteatose-hepatica",
+  "region": "EU",
+  "diseaseName": "Hepatic steatosis (MASLD/NAFLD)",
+  "prevalence": {
+    "value": "~25-30% (adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "EASL and European hepatology epidemiology syntheses",
+    "trend": "stable to increasing with obesity"
+  },
+  "incidence": {
+    "value": "~15-30 per 1,000 adults/year (new detected cases)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Metabolic liver disease cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; progression to NASH/cirrhosis in a subset",
+    "mortalityRate": "Low to moderate (cirrhosis and CVD-related)",
+    "year": 2024,
+    "source": "WHO Europe/IHME liver disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "obesity and central adiposity",
+      "type 2 diabetes",
+      "dyslipidemia",
+      "sedentary lifestyle",
+      "metabolic syndrome"
+    ],
+    "vulnerablePopulations": [
+      "adults with obesity or diabetes",
+      "patients with metabolic syndrome"
+    ],
+    "diagnosticCriteria": "Imaging evidence of steatosis plus exclusion of significant alcohol use; fibrosis assessment as needed"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "risk-based evaluation; no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "Moderate; lifestyle adherence is limiting"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Ultrasound and elastography widely available in many systems",
+    "treatmentProtocol": "Weight loss, diet and exercise, control of diabetes and lipids; fibrosis risk management",
+    "regionalChallenges": "Lifestyle adherence and long-term follow-up",
+    "strongPoints": "Strong hepatology networks and access to fibrosis assessment"
+  }
+}

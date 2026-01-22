@@ -1,0 +1,50 @@
+{
+  "diseaseId": "dermatite-atopica-pediatrica",
+  "region": "IN",
+  "diseaseName": "Pediatric Atopic Dermatitis",
+  "prevalence": {
+    "value": "8-15% (children)",
+    "population": "Indian children",
+    "year": 2024,
+    "source": "IADVL + ISAAC-aligned pediatric eczema syntheses",
+    "trend": "increasing in urban areas"
+  },
+  "incidence": {
+    "value": "5-12 per 1,000/year",
+    "population": "Children",
+    "year": 2024,
+    "source": "Pediatric dermatology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.012",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history of atopy",
+      "allergen exposure",
+      "urban pollution",
+      "skin barrier dysfunction"
+    ],
+    "vulnerablePopulations": [
+      "urban low-income children",
+      "children with asthma/allergic rhinitis"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis of pruritic eczema; exclude scabies and fungal infections"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of children",
+    "controlRate": "Variable; dependent on emollient access and follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnosis is clinical; specialist access varies widely",
+    "treatmentProtocol": "Emollients and topical steroids; manage infection; advanced therapy mainly in tertiary/private settings",
+    "regionalChallenges": "Out-of-pocket costs for emollients and limited specialist access outside metros",
+    "strongPoints": "Topical steroids widely available and growing dermatology services in cities"
+  }
+}
+

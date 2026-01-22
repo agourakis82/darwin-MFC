@@ -1,0 +1,53 @@
+{
+  "diseaseId": "transtorno-panico",
+  "region": "BR",
+  "diseaseName": "Transtorno de Pânico",
+  "prevalence": {
+    "value": "1.5-2.5%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "IHME GBD / WHO (anxiety disorders) + Brazilian mental health surveys",
+    "trend": "increasing recognition post-COVID and with higher urban stress"
+  },
+  "incidence": {
+    "value": "3-6 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Epidemiological syntheses (panic disorder) extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.006",
+    "mortalityRate": "Negligible (indirect risk via comorbidity/substance use)",
+    "year": 2024,
+    "source": "IHME GBD (anxiety spectrum) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history of anxiety",
+      "female sex",
+      "high baseline anxiety sensitivity",
+      "substance use (stimulants/caffeine)",
+      "comorbid depression"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "young adults",
+      "people with trauma exposure",
+      "patients with limited access to CBT"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: recurrent unexpected panic attacks with persistent concern/behavior change; rule out medical causes (thyroid, arrhythmia) and substance-induced symptoms"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited; mostly symptom-driven identification in APS/CAPS",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~3-5 million",
+    "controlRate": "Moderate; access to CBT is limited outside major cities"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS screening (PHQ/GAD tools) variable; CAPS supports complex cases",
+    "treatmentProtocol": "CBT + SSRIs/SNRIs; short-term benzodiazepines in selected cases; integrated care in CAPS when available",
+    "regionalChallenges": "Stigma, limited psychotherapy access, and uneven mental health workforce distribution",
+    "strongPoints": "CAPS network and SUS access to core psychotropics in many municipalities"
+  }
+}
+

@@ -1,0 +1,25 @@
+{
+  "diseaseId": "anemia-ferropriva",
+  "region": "EU",
+  "diseaseName": "Iron Deficiency Anaemia",
+  "prevalence": {"value": "10.5%", "population": "EU adults (~447 million)", "year": 2024, "source": "WHO Europe & EFSA", "trend": "stable, with slight increase due to rising vegetarian/vegan diets"},
+  "incidence": {"value": "18 per 1000", "population": "EU adults", "year": 2024, "source": "EFSA Panel on Nutrition"},
+  "burden": {"dalyPerCapita": "45", "mortalityRate": "0.5 per 100,000", "year": 2024, "source": "WHO Europe"},
+  "epidemiology": {
+    "riskFactors": ["Inadequate dietary iron intake", "Menstrual blood loss in women", "Pregnancy and lactation", "Gastrointestinal malabsorption", "Chronic blood loss from ulcers or cancer", "Vegetarian or vegan diets without supplementation"],
+    "vulnerablePopulations": ["Women of reproductive age", "Pregnant women", "Elderly with chronic diseases", "Children and adolescents", "Vegetarians and vegans"],
+    "diagnosticCriteria": "WHO/EFSA criteria: Hb <12 g/dL women, <13 g/dL men, ferritin <15 μg/L"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "routine prenatal screening in all EU countries",
+    "treatmentAvailable": true,
+    "estimatedPatients": "47 million",
+    "controlRate": "75% among diagnosed cases, supported by comprehensive prenatal care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "WHO/EFSA guidelines, ferritin measurement standard",
+    "treatmentProtocol": "Oral iron (ferrous sulfate, ferrous fumarate), intravenous iron in severe cases, dietary counseling",
+    "regionalChallenges": "Lower prevalence than global average (30-40%), disparities in Eastern EU countries, increasing vegetarian/vegan diets",
+    "strongPoints": "Universal prenatal screening, high-quality diagnostic access, food fortification voluntary in some countries"
+  }
+}

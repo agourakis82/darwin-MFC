@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useAppStore } from '@/lib/store/appStore';
+import type { Region } from '@/lib/types/region';
 import { Recommendations } from '@/lib/types/rastreamentos';
 import InlineCitation from '../Bibliography/InlineCitation';
 import { CheckCircle2, AlertTriangle, XCircle, HelpCircle, Building2, Hospital, Globe, Flag, Users, Menu } from 'lucide-react';
@@ -12,6 +14,25 @@ interface ComparisonCardProps {
 
 // Type for available guideline systems
 type GuidelineKey = 'sus' | 'societies' | 'india' | 'uk' | 'who';
+
+/**
+ * Map selected region to primary guideline key
+ * BR → sus (SUS - Sistema Único de Saúde)
+ * IN → india (NP-NCD)
+ * EU → uk (NHS/EMA)
+ */
+function getRegionGuidelineKey(region: Region): GuidelineKey {
+  switch (region) {
+    case 'BR':
+      return 'sus';
+    case 'IN':
+      return 'india';
+    case 'EU':
+      return 'uk';
+    default:
+      return 'sus';
+  }
+}
 
 interface GuidelineConfig {
   key: GuidelineKey;
@@ -86,6 +107,11 @@ const guidelineConfigs: Record<GuidelineKey, GuidelineConfig> = {
 
 export default function ComparisonCard({ title, recommendations }: ComparisonCardProps) {
   const { sus, societies, india, uk, who, convergence } = recommendations;
+  const selectedRegion = useAppStore((state) => state.selectedRegion);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Determine initial mobile tab from selected region
+  const regionGuidelineKey = getRegionGuidelineKey(selectedRegion);
 
   // Determine available guidelines (always include SUS and Societies)
   const availableGuidelines: GuidelineKey[] = ['sus', 'societies'];
@@ -94,7 +120,23 @@ export default function ComparisonCard({ title, recommendations }: ComparisonCar
   if (who) availableGuidelines.push('who');
 
   const hasMultipleGuidelines = availableGuidelines.length > 2;
-  const [selectedMobileTab, setSelectedMobileTab] = useState<GuidelineKey>('sus');
+  const [selectedMobileTab, setSelectedMobileTab] = useState<GuidelineKey>(regionGuidelineKey);
+
+  // Hydration safety: ensure component is mounted before rendering interactive content
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Update mobile tab when region changes (if available)
+  useEffect(() => {
+    if (!isMounted) return;
+    const newTabKey = getRegionGuidelineKey(selectedRegion);
+    if (availableGuidelines.includes(newTabKey)) {
+      setSelectedMobileTab(newTabKey);
+    } else {
+      setSelectedMobileTab('sus');
+    }
+  }, [selectedRegion, isMounted, availableGuidelines]);
 
   // Determine layout: for 3+ guidelines, use tabs on mobile, grid on desktop
   const isCompactView = availableGuidelines.length >= 3;
@@ -251,12 +293,15 @@ export default function ComparisonCard({ title, recommendations }: ComparisonCar
             const data = getGuidelineData(guideKey);
             if (!data) return null;
 
+            const isSelectedRegion = isMounted && guideKey === regionGuidelineKey;
+
             return (
               <GuidelineColumn
                 key={guideKey}
                 config={config}
                 data={data}
                 guideKey={guideKey}
+                isSelectedRegion={isSelectedRegion}
               />
             );
           })}
@@ -270,12 +315,15 @@ export default function ComparisonCard({ title, recommendations }: ComparisonCar
               const data = getGuidelineData(guideKey);
               if (!data || selectedMobileTab !== guideKey) return null;
 
+              const isSelectedRegion = isMounted && guideKey === regionGuidelineKey;
+
               return (
                 <GuidelineColumn
                   key={guideKey}
                   config={config}
                   data={data}
                   guideKey={guideKey}
+                  isSelectedRegion={isSelectedRegion}
                 />
               );
             })}
@@ -309,16 +357,25 @@ interface GuidelineColumnProps {
   config: GuidelineConfig;
   data: any; // Guideline data
   guideKey: GuidelineKey;
+  isSelectedRegion?: boolean;
 }
 
-function GuidelineColumn({ config, data, guideKey }: GuidelineColumnProps) {
+function GuidelineColumn({ config, data, guideKey, isSelectedRegion = false }: GuidelineColumnProps) {
   const Icon = config.icon;
   const hasJustification = 'justification' in data;
   const hasRecommendation = 'recommendation' in data;
   const hasCoverage = 'coverage' in data;
 
   return (
-    <div className="relative p-6 lg:p-8 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-sm">
+    <div className={`
+      relative p-6 lg:p-8 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-sm
+      transition-all duration-300
+      ${isSelectedRegion ? `
+        ring-2 ${config.borderColor}
+        shadow-lg ${config.shadowColor}
+        bg-gradient-to-br from-white/95 to-white/85 dark:from-neutral-900/95 dark:to-neutral-900/85
+      ` : ''}
+    `}>
       {/* Header */}
       <div className="mb-6 pb-5 border-b border-neutral-200 dark:border-neutral-700">
         <div className="flex items-center gap-3 mb-3">
@@ -326,9 +383,16 @@ function GuidelineColumn({ config, data, guideKey }: GuidelineColumnProps) {
             <Icon className="w-6 h-6 text-white" strokeWidth={2.5} />
           </div>
           <div className="flex-1 min-w-0">
-            <h4 className="text-base lg:text-lg font-bold text-neutral-900 dark:text-neutral-50 leading-tight">
-              {config.label}
-            </h4>
+            <div className="flex items-center gap-2 flex-wrap">
+              <h4 className="text-base lg:text-lg font-bold text-neutral-900 dark:text-neutral-50 leading-tight">
+                {config.label}
+              </h4>
+              {isSelectedRegion && (
+                <span className={`px-2 py-1 rounded-full text-xs font-bold ${config.badge}`}>
+                  Selected Region
+                </span>
+              )}
+            </div>
             <p className="text-xs text-neutral-500 dark:text-neutral-400 font-medium mt-0.5">
               {config.country}
             </p>

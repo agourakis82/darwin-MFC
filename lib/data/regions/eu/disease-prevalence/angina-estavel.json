@@ -1,0 +1,52 @@
+{
+  "diseaseId": "angina-estavel",
+  "region": "EU",
+  "diseaseName": "Stable Angina",
+  "prevalence": {
+    "value": "~2-4% (adults; higher with age)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cardiovascular epidemiology syntheses; ESC stable CAD context",
+    "trend": "stable to decreasing in some countries with prevention; aging increases absolute cases"
+  },
+  "incidence": {
+    "value": "~4-9 per 1,000 person-years (older/high-risk adults)",
+    "population": "Adults at risk for coronary artery disease",
+    "year": 2024,
+    "source": "Stable ischemic heart disease cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to disability and event risk if undertreated",
+    "mortalityRate": "Low per se; driven by underlying CAD events",
+    "year": 2024,
+    "source": "WHO Europe/IHME ischemic heart disease burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "hypertension",
+      "dyslipidemia",
+      "diabetes",
+      "smoking",
+      "obesity and inactivity",
+      "family history of premature CAD"
+    ],
+    "vulnerablePopulations": [
+      "adults >65 years",
+      "patients with diabetes",
+      "lower socioeconomic groups"
+    ],
+    "diagnosticCriteria": "Exertional chest discomfort relieved by rest/nitrates; ECG and functional testing; coronary CTA or angiography for high-risk symptoms; exclude acute coronary syndrome"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening for angina; cardiovascular risk screening is common in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions across the EU",
+    "controlRate": "High to moderate; supported by strong secondary prevention and revascularization access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Wide availability of stress testing and coronary imaging in many countries",
+    "treatmentProtocol": "Antianginals, antiplatelet/statin, BP/diabetes control, lifestyle change and cardiac rehab; revascularization for refractory/high-risk cases",
+    "regionalChallenges": "Aging demographics and multimorbidity; ensuring equitable access across regions",
+    "strongPoints": "ESC guideline-driven care with broad access to diagnostics, medications and revascularization"
+  }
+}

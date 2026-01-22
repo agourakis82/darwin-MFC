@@ -1,0 +1,52 @@
+{
+  "diseaseId": "tendinite",
+  "region": "IN",
+  "diseaseName": "Tendinitis",
+  "prevalence": {
+    "value": "~5-9% (working-age adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Occupational health and musculoskeletal epidemiology syntheses",
+    "trend": "stable; higher in manual labor and repetitive work"
+  },
+  "incidence": {
+    "value": "~10-18 per 1,000 workers/year",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "Occupational cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant pain and work limitation",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD musculoskeletal context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "repetitive motion and overuse",
+      "manual labor",
+      "sports overuse",
+      "poor ergonomics",
+      "diabetes and obesity"
+    ],
+    "vulnerablePopulations": [
+      "manual workers",
+      "athletes",
+      "older adults",
+      "patients with diabetes"
+    ],
+    "diagnosticCriteria": "Clinical tendon pain with activity and focal tenderness; ultrasound or MRI if diagnosis uncertain"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of cases across musculoskeletal clinics",
+    "controlRate": "Moderate; improves with physiotherapy and ergonomic changes"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care; imaging access variable",
+    "treatmentProtocol": "Activity modification, NSAIDs, physiotherapy, ergonomic interventions; injections for selected cases",
+    "regionalChallenges": "Limited access to physiotherapy and workplace ergonomics",
+    "strongPoints": "Effective conservative management options and affordable NSAIDs"
+  }
+}

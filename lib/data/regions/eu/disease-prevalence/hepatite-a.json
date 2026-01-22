@@ -1,0 +1,52 @@
+{
+  "diseaseId": "hepatite-a",
+  "region": "EU",
+  "diseaseName": "Hepatitis A",
+  "prevalence": {
+    "value": "low endemic transmission; outbreaks occur in defined risk networks and via foodborne events",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "ECDC hepatitis A surveillance",
+    "trend": "stable overall; periodic outbreaks (MSM networks, foodborne) and travel-related cases"
+  },
+  "incidence": {
+    "value": "~1-5 per 100,000/year (country-dependent; outbreak-driven)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECDC annual surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall",
+    "mortalityRate": "Very low; risk increases with older age and chronic liver disease",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "travel to endemic regions",
+      "outbreak exposure in MSM networks",
+      "foodborne outbreaks (contaminated produce/shellfish)",
+      "low baseline immunity in many countries"
+    ],
+    "vulnerablePopulations": [
+      "MSM during outbreaks",
+      "travelers",
+      "people with chronic liver disease",
+      "people experiencing homelessness"
+    ],
+    "diagnosticCriteria": "Acute hepatitis syndrome with anti-HAV IgM; outbreak linkage investigation per ECDC guidance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; case-based detection and outbreak investigation",
+    "treatmentAvailable": true,
+    "estimatedPatients": "thousands/year across EU (outbreak-dependent)",
+    "controlRate": "High recovery; control depends on vaccination strategies and rapid public health response"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Strong laboratory confirmation and genotyping used for outbreak tracing in many countries",
+    "treatmentProtocol": "Supportive care; vaccination and contact prophylaxis per national/ECDC guidance",
+    "regionalChallenges": "Outbreak control in high-contact networks and food supply chain investigations",
+    "strongPoints": "Robust public health surveillance and outbreak response capacity across member states"
+  }
+}
+

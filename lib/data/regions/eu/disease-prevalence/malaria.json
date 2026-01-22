@@ -1,0 +1,52 @@
+{
+  "diseaseId": "malaria",
+  "region": "EU",
+  "diseaseName": "Malaria",
+  "prevalence": {
+    "value": "<1 per 100,000/year (predominantly imported)",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "ECDC / WHO Europe travel-related surveillance",
+    "trend": "stable low; rare local transmission events possible with competent vectors in southern Europe"
+  },
+  "incidence": {
+    "value": "<1 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECDC annual infectious disease surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "minimal at population level",
+    "mortalityRate": "very low; deaths mainly in delayed diagnosis among travelers",
+    "year": 2024,
+    "source": "WHO Europe / IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "travel to endemic regions without prophylaxis",
+      "delayed diagnosis after travel",
+      "immunosuppression",
+      "limited awareness in non-endemic clinical settings"
+    ],
+    "vulnerablePopulations": [
+      "travelers visiting friends and relatives (VFR)",
+      "recent migrants from endemic countries",
+      "immunocompromised patients",
+      "pregnant travelers"
+    ],
+    "diagnosticCriteria": "Microscopy and/or rapid test, confirmed by PCR where available; travel history is critical; severe malaria criteria per European guidance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnostic testing for febrile travelers common in ED/primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~8,000-10,000 cases/year (mostly imported)",
+    "controlRate": "High cure rates with prompt diagnosis; severe cases occur with late presentation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High availability of microscopy/PCR in tertiary centers; strong travel medicine networks in many countries",
+    "treatmentProtocol": "Artemisinin-based therapy for uncomplicated P. falciparum; IV artesunate for severe malaria; chemoprophylaxis and bite prevention for travelers",
+    "regionalChallenges": "Missed or delayed diagnosis in low-exposure clinicians and inequities in travel medicine access for VFR travelers",
+    "strongPoints": "Well-resourced emergency and infectious disease services and robust travel medicine guidance"
+  }
+}
+

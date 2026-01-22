@@ -1,0 +1,52 @@
+{
+  "diseaseId": "ivas-pediatrica",
+  "region": "BR",
+  "diseaseName": "Infecções das Vias Aéreas Superiores (IVAS)",
+  "prevalence": {
+    "value": "18-25% annual symptomatic prevalence (including common cold, pharyngitis, and sinusitis)",
+    "population": "Brazilian population (approx. 213 million)",
+    "year": 2024,
+    "source": "DataSUS/VIGITEL; Ministério da Saúde Brazil (2023 report on respiratory infections)",
+    "trend": "Stable with seasonal peaks in winter; slight increase in urban areas due to air pollution"
+  },
+  "incidence": {
+    "value": "150-200 cases per 1,000 population per year",
+    "population": "General population, higher in children (up to 6 episodes/year)",
+    "year": 2024,
+    "source": "SINAN/DataSUS; WHO Global Burden of Disease Study (GBD 2019 adapted for Brazil)"
+  },
+  "burden": {
+    "dalyPerCapita": "0.05-0.1 DALYs per capita (primarily from morbidity in acute cases)",
+    "mortalityRate": "<0.5 deaths per 100,000 population (low, mainly complications in vulnerable groups)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) Brazil estimates 2021; DataSUS mortality data"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Viral exposure (rhinovirus, influenza, etc.)",
+      "Smoking and secondhand smoke",
+      "Air pollution and poor indoor ventilation",
+      "Overcrowding in urban and low-income areas",
+      "Immunosuppression and seasonal factors"
+    ],
+    "vulnerablePopulations": [
+      "Children under 5 years (highest incidence)",
+      "Elderly (>65 years)",
+      "Immunocompromised individuals (e.g., HIV patients)",
+      "Indigenous and rural populations with limited access"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis based on symptoms such as nasal congestion, sore throat, cough, fever (common cold); pharyngeal erythema and exudate (pharyngitis); facial pain and purulent discharge (sinusitis). Confirmed by rapid antigen tests or culture for bacterial cases (e.g., Streptococcus). Guidelines from Ministério da Saúde."
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "No routine screening; 70-80% access to primary care for symptomatic evaluation (SUS coverage)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Approx. 40-50 million symptomatic cases annually",
+    "controlRate": "60-70% effective control through symptomatic treatment and vaccination (influenza/ pneumococcal)"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primarily clinical in SUS units; imaging (e.g., sinus X-ray) for complicated sinusitis; adapted from international guidelines with emphasis on viral etiology to reduce antibiotic overuse",
+    "treatmentProtocol": "Symptomatic relief (analgesics, decongestants); antibiotics only for confirmed bacterial infection (e.g., amoxicillin for streptococcal pharyngitis). Follows Ministério da Saúde protocols, including flu vaccination campaigns",
+    "regionalChallenges": "High burden in Northern/Northeastern regions due to humidity and poverty; antibiotic resistance from overuse; limited access in Amazonian and rural areas",
+    "strongPoints": "Robust SUS network for free treatment; national surveillance via SINAN; successful influenza vaccination programs reducing secondary complications"
+  }
+}

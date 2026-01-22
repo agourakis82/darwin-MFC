@@ -1,0 +1,52 @@
+{
+  "diseaseId": "chikungunya",
+  "region": "EU",
+  "diseaseName": "Chikungunya",
+  "prevalence": {
+    "value": "<1 per 100,000/year (mostly imported; occasional local outbreaks with Aedes albopictus)",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "ECDC chikungunya surveillance",
+    "trend": "low but increasing risk of local transmission in warmer southern regions"
+  },
+  "incidence": {
+    "value": "<1 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECDC annual surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "minimal at population level",
+    "mortalityRate": "very low",
+    "year": 2024,
+    "source": "WHO Europe / IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "travel to endemic regions",
+      "presence of Aedes albopictus in southern EU",
+      "lack of bite prevention",
+      "delayed diagnosis in returning travelers"
+    ],
+    "vulnerablePopulations": [
+      "travelers (including VFR)",
+      "older adults",
+      "people with comorbidities",
+      "residents in areas with established Aedes vectors"
+    ],
+    "diagnosticCriteria": "Clinical suspicion with travel history; confirmation by PCR (early) or IgM; notification per ECDC case definition"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; targeted testing of febrile travelers",
+    "treatmentAvailable": true,
+    "estimatedPatients": "low; mostly imported cases annually",
+    "controlRate": "High recovery with supportive care; public health response focuses on vector control for local transmission"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Reference lab capacity for PCR/serology; surveillance emphasis in southern member states",
+    "treatmentProtocol": "Supportive management; rapid vector control (larviciding, source reduction) for local clusters",
+    "regionalChallenges": "Climate-driven expansion of Aedes vectors and rapid outbreak containment requirements",
+    "strongPoints": "Strong surveillance networks and coordinated outbreak response capacity across member states"
+  }
+}
+

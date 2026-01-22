@@ -1,0 +1,52 @@
+{
+  "diseaseId": "anafilaxia",
+  "region": "EU",
+  "diseaseName": "Anaphylaxis",
+  "prevalence": {
+    "value": "~1-2% lifetime risk",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European allergy epidemiology syntheses; WHO Europe allergy context",
+    "trend": "stable to increasing recognition; food and drug triggers prominent"
+  },
+  "incidence": {
+    "value": "~50-100 per 100,000/year (ED-treated events; variable by country)",
+    "population": "General population",
+    "year": 2024,
+    "source": "European emergency care/anaphylaxis incidence syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; preventable morbidity and rare deaths",
+    "mortalityRate": "Very low with prompt epinephrine and emergency care",
+    "year": 2024,
+    "source": "WHO Europe acute allergy context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "food allergy",
+      "drug allergy",
+      "insect stings",
+      "asthma (risk for severe reactions)",
+      "previous anaphylaxis",
+      "mast cell disorders (rare)"
+    ],
+    "vulnerablePopulations": [
+      "children with food allergy",
+      "patients with asthma",
+      "patients with prior severe reactions"
+    ],
+    "diagnosticCriteria": "Clinical criteria (acute onset with airway/breathing/circulation compromise); tryptase supports diagnosis when measured; response to epinephrine"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions with lifetime risk; acute events far fewer",
+    "controlRate": "High where action plans and auto-injectors are available and used correctly"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ED-based diagnosis and specialist allergy follow-up for trigger identification",
+    "treatmentProtocol": "Immediate IM epinephrine, airway/oxygen/IV fluids as needed, observation for biphasic reactions, prescribe auto-injector and provide action plan",
+    "regionalChallenges": "Ensuring training and adherence to action plans; variable reimbursement for auto-injectors",
+    "strongPoints": "Strong emergency care access and allergy services; high availability of epinephrine auto-injectors in many countries"
+  }
+}

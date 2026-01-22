@@ -1,0 +1,52 @@
+{
+  "diseaseId": "tendinite-ombro",
+  "region": "BR",
+  "diseaseName": "Síndrome do Manguito Rotador (Tendinopatia do Ombro)",
+  "prevalence": {
+    "value": "7-15% (adults; higher with age and occupational load)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Musculoskeletal epidemiology syntheses (shoulder pain/rotator cuff disease)",
+    "trend": "increasing with aging and physical workload"
+  },
+  "incidence": {
+    "value": "10-30 per 1,000/year",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "Shoulder pain cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.008",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO musculoskeletal context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "overhead work",
+      "repetitive shoulder use",
+      "older age",
+      "diabetes",
+      "smoking"
+    ],
+    "vulnerablePopulations": [
+      "manual workers",
+      "older adults",
+      "patients with diabetes"
+    ],
+    "diagnosticCriteria": "Clinical shoulder pain with impingement/rotator cuff tests; ultrasound/MRI for suspected tear or refractory cases; exclude red flags"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions with episodic shoulder pain",
+    "controlRate": "Moderate with physiotherapy and exercise-based rehab"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Mostly clinical diagnosis; imaging access variable in SUS",
+    "treatmentProtocol": "Activity modification, physiotherapy/exercise, NSAIDs, corticosteroid injections in selected cases; surgery for full-thickness tears in specialized centers",
+    "regionalChallenges": "Limited access to physiotherapy and long waits for imaging/surgery in SUS",
+    "strongPoints": "Conservative care is effective and can be delivered in primary care with physio support"
+  }
+}
+

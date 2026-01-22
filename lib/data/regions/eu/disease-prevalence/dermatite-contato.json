@@ -1,0 +1,52 @@
+{
+  "diseaseId": "dermatite-contato",
+  "region": "EU",
+  "diseaseName": "Contact dermatitis",
+  "prevalence": {
+    "value": "~5-10% (adults; higher in occupational exposures)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European Society of Contact Dermatitis context",
+    "trend": "stable; occupational cases prominent"
+  },
+  "incidence": {
+    "value": "~3-7 per 1,000 workers/year (high-exposure jobs)",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "Occupational dermatology surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant work disruption and chronic dermatitis burden",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe/IHME skin disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "wet work and detergents",
+      "allergens (nickel, fragrances)",
+      "occupational irritants (cement, solvents)",
+      "atopic dermatitis",
+      "repeated skin barrier disruption"
+    ],
+    "vulnerablePopulations": [
+      "healthcare and cleaning workers",
+      "construction workers",
+      "hairdressers and food handlers",
+      "patients with atopic dermatitis"
+    ],
+    "diagnosticCriteria": "Clinical dermatitis with exposure history; patch testing for allergic contact dermatitis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of adults affected",
+    "controlRate": "High with avoidance and workplace controls"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Patch testing widely available; occupational health services engaged",
+    "treatmentProtocol": "Avoidance, emollients, topical steroids; workplace protection and PPE",
+    "regionalChallenges": "Occupational exposure in small businesses and contractors",
+    "strongPoints": "Strong occupational health frameworks and access to dermatology care"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "otite-media-aguda",
+  "region": "EU",
+  "diseaseName": "Acute Otitis Media (AOM)",
+  "prevalence": {
+    "value": "common; ~50-70% of children have at least one episode by age 3",
+    "population": "EU children",
+    "year": 2024,
+    "source": "European pediatric infection epidemiology syntheses",
+    "trend": "stable; pneumococcal vaccination reduces some bacterial burden"
+  },
+  "incidence": {
+    "value": "80-200 per 1,000 children/year",
+    "population": "Children <5 years",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe pediatric infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "daycare attendance",
+      "viral URIs",
+      "smoke exposure",
+      "craniofacial anomalies"
+    ],
+    "vulnerablePopulations": [
+      "children <2 years",
+      "children with recurrent AOM"
+    ],
+    "diagnosticCriteria": "Otoscopy evidence of effusion and inflammation; symptom onset and severity guide management; stewardship reduces unnecessary antibiotics"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "high pediatric episode burden annually",
+    "controlRate": "High with guideline-based analgesia and selective antibiotics"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to otoscopy and follow-up; ENT referral pathways common for recurrent cases",
+    "treatmentProtocol": "Analgesia; selective antibiotics; tympanostomy pathways for recurrent disease when indicated",
+    "regionalChallenges": "Maintaining stewardship and managing recurrent disease burden",
+    "strongPoints": "Strong primary care and ENT access in many systems"
+  }
+}
+

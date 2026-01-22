@@ -1,0 +1,54 @@
+{
+  "diseaseId": "insonia",
+  "region": "EU",
+  "diseaseName": "Insomnia",
+  "prevalence": {
+    "value": "10-20% (chronic insomnia symptoms)",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "WHO Europe / European sleep epidemiology studies",
+    "trend": "stable to slightly increasing with aging and mental health comorbidity"
+  },
+  "incidence": {
+    "value": "20-40 per 1,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European sleep cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.006-0.02",
+    "mortalityRate": "Negligible (indirect impacts)",
+    "year": 2024,
+    "source": "IHME/WHO context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "stress and anxiety",
+      "depression",
+      "shift work",
+      "alcohol use",
+      "chronic pain",
+      "older age"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "women",
+      "shift workers",
+      "patients with depression/anxiety"
+    ],
+    "diagnosticCriteria": "Insomnia disorder definition with daytime impairment; evaluation for comorbid sleep apnea and mood disorders"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate; primary care recognition common",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~50-90 million with significant symptoms",
+    "controlRate": "Moderate; CBT-I access varies and hypnotic prescribing is regulated"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care pathways often include screening for depression/anxiety and referral for sleep studies when indicated",
+    "treatmentProtocol": "CBT-I as first-line; limited-duration hypnotics; management of comorbidities and sleep apnea",
+    "regionalChallenges": "Wait times for CBT-I/sleep clinics and heterogeneous access across member states",
+    "strongPoints": "Strong guidelines and regulated hypnotic prescribing with increasing digital CBT-I availability"
+  }
+}
+

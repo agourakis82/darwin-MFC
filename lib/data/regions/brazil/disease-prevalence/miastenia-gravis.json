@@ -1,0 +1,50 @@
+{
+  "diseaseId": "miastenia-gravis",
+  "region": "BR",
+  "diseaseName": "Miastenia Gravis",
+  "prevalence": {
+    "value": "15-30 per 100,000",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Neuromuscular epidemiology syntheses",
+    "trend": "increasing due to aging and improved diagnosis"
+  },
+  "incidence": {
+    "value": "1-3 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Myasthenia cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0004-0.0015",
+    "mortalityRate": "Low with modern care; crises can be fatal",
+    "year": 2024,
+    "source": "IHME/WHO neuromuscular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autoimmune AChR/MuSK antibodies",
+      "female sex (early-onset) and male sex (late-onset)",
+      "thymic disease"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with delayed access to neurology and ICU care",
+      "patients exposed to MG-worsening drugs"
+    ],
+    "diagnosticCriteria": "Fluctuating fatigable weakness; antibody testing (AChR/MuSK), electrophysiology (RNS/SFEMG), and clinical response; evaluate for thymoma"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~30,000-60,000",
+    "controlRate": "Moderate; improved with immunotherapy and crisis management capacity"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Antibody and SFEMG access variable; concentrated in tertiary centers",
+    "treatmentProtocol": "Pyridostigmine, corticosteroids, steroid-sparing immunosuppressants; IVIG/plasmapheresis for crisis; thymectomy in selected cases",
+    "regionalChallenges": "Unequal access to specialized testing and ICU/crisis therapies",
+    "strongPoints": "Tertiary centers can provide immunotherapy and crisis care"
+  }
+}
+

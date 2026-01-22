@@ -1,0 +1,48 @@
+{
+  "diseaseId": "ataxia-friedreich",
+  "region": "EU",
+  "diseaseName": "Friedreich Ataxia",
+  "prevalence": {
+    "value": "~2-4 per 100,000",
+    "population": "EU population (rare neurogenetic disease)",
+    "year": 2024,
+    "source": "Orphanet; European neurogenetics registry syntheses",
+    "trend": "stable; improved diagnosis and trial access in specialist centers"
+  },
+  "incidence": {
+    "value": "Rare; onset usually in adolescence",
+    "population": "General population",
+    "year": 2024,
+    "source": "Neurogenetics registries"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but high per-patient disability and cardiomyopathy burden",
+    "mortalityRate": "Moderate (cardiac complications are major drivers)",
+    "year": 2024,
+    "source": "Orphanet/registry outcomes"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "FXN GAA-repeat expansion (autosomal recessive)",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "children and adolescents",
+      "patients with cardiomyopathy",
+      "patients with diabetes or scoliosis complications"
+    ],
+    "diagnosticCriteria": "Progressive ataxia with neurologic signs plus genetic confirmation of FXN expansion; cardiology evaluation (ECG/echo) and metabolic screening"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis via neurology referral and genetic testing",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands across EU (rare)",
+    "controlRate": "Limited (no cure); supportive multidisciplinary care improves function and reduces complications"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Neurogenetics and multidisciplinary ataxia clinics available in many countries",
+    "treatmentProtocol": "Physiotherapy, mobility aids, speech therapy, cardiomyopathy management, diabetes screening, psychosocial support; referral to trials when eligible",
+    "regionalChallenges": "Variation in access to specialized ataxia clinics and long-term rehab across countries",
+    "strongPoints": "Strong diagnostic access to genetics and multidisciplinary care pathways in many EU systems"
+  }
+}

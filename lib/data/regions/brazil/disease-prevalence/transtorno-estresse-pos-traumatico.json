@@ -1,0 +1,53 @@
+{
+  "diseaseId": "transtorno-estresse-pos-traumatico",
+  "region": "BR",
+  "diseaseName": "Transtorno de Estresse Pós-Traumático (TEPT)",
+  "prevalence": {
+    "value": "3-5%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "WHO/IHME GBD + trauma/violence epidemiology context",
+    "trend": "increasing awareness and diagnosis; trauma exposure remains high in some settings"
+  },
+  "incidence": {
+    "value": "5-10 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "PTSD epidemiology syntheses extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.005-0.015",
+    "mortalityRate": "Negligible (indirect via suicide/substance use)",
+    "year": 2024,
+    "source": "IHME GBD (PTSD/anxiety spectrum) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "exposure to violence and trauma",
+      "female sex",
+      "prior mental health disorders",
+      "lack of social support",
+      "childhood adversity"
+    ],
+    "vulnerablePopulations": [
+      "survivors of violence",
+      "women",
+      "first responders",
+      "people in high-crime urban areas"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: trauma exposure with intrusive symptoms, avoidance, negative mood/cognition changes, and hyperarousal lasting >1 month with impairment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; largely symptom-driven and underdiagnosed",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~6-10 million",
+    "controlRate": "Low to moderate; trauma-focused psychotherapy access is limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often diagnosed in specialized services; APS screening is limited",
+    "treatmentProtocol": "Trauma-focused psychotherapy (CBT/EMDR) and SSRIs when indicated; management of comorbid depression/substance use",
+    "regionalChallenges": "Limited access to trauma-focused psychotherapy and high social exposure to violence in some communities",
+    "strongPoints": "CAPS and psychosocial networks can provide longitudinal support where available"
+  }
+}
+

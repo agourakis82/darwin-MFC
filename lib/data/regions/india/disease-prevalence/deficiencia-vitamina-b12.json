@@ -1,0 +1,50 @@
+{
+  "diseaseId": "deficiencia-vitamina-b12",
+  "region": "IN",
+  "diseaseName": "Vitamin B12 deficiency",
+  "prevalence": {
+    "value": "~20-40% (adults; higher in vegetarians)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Nutrition and hematology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~4-8 per 1,000 adults/year (new detected deficiency)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Primary care and hematology data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; neuropathy and anemia burden",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO nutrition context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "vegetarian/low animal protein diet",
+      "older age",
+      "malabsorption or bariatric surgery",
+      "metformin use"
+    ],
+    "vulnerablePopulations": [
+      "vegetarians",
+      "older adults",
+      "patients with malabsorption"
+    ],
+    "diagnosticCriteria": "Low serum B12 with macrocytosis and/or elevated methylmalonic acid"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; targeted testing",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens to hundreds of millions",
+    "controlRate": "Moderate; depends on supplementation and diet"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Lab testing available in urban centers",
+    "treatmentProtocol": "Oral or IM B12 replacement; diet counseling",
+    "regionalChallenges": "Underdiagnosis and limited follow-up",
+    "strongPoints": "Low-cost supplementation available"
+  }
+}

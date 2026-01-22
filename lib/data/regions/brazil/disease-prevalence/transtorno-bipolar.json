@@ -1,0 +1,52 @@
+{
+  "diseaseId": "transtorno-bipolar",
+  "region": "BR",
+  "diseaseName": "Transtorno Bipolar",
+  "prevalence": {
+    "value": "1-2%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "IHME GBD / Brazilian psychiatric epidemiology syntheses",
+    "trend": "stable; diagnosis improving with mental health service expansion"
+  },
+  "incidence": {
+    "value": "1-3 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Epidemiological syntheses (bipolar spectrum) extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.03",
+    "mortalityRate": "Indirect; elevated suicide and comorbidity risk",
+    "year": 2024,
+    "source": "IHME GBD (bipolar disorder)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "early life adversity",
+      "substance use",
+      "sleep disruption",
+      "antidepressant-induced mania in susceptible individuals"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "people with substance use",
+      "patients with recurrent depression (misdiagnosis risk)"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: history of manic/hypomanic episodes (with or without major depression); differentiation from unipolar depression is critical"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; often diagnosed after severe episodes",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2-4 million",
+    "controlRate": "Variable; relapse common without maintenance and psychosocial support"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist diagnosis more common; APS may miss hypomania history",
+    "treatmentProtocol": "Mood stabilizers (lithium, valproate) and atypical antipsychotics; psychoeducation; crisis care in CAPS for severe episodes",
+    "regionalChallenges": "Misdiagnosis as unipolar depression, limited psychotherapy/psychoeducation access, and adherence barriers",
+    "strongPoints": "CAPS network for severe mental illness and access to core mood stabilizers/antipsychotics"
+  }
+}
+

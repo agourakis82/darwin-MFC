@@ -1,0 +1,51 @@
+{
+  "diseaseId": "anemia-hemolitica",
+  "region": "BR",
+  "diseaseName": "Anemia Hemolítica",
+  "prevalence": {
+    "value": "~5-15 per 100,000 (all causes; varies)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Hematology epidemiology syntheses (AIHA and hereditary hemolytic anemias)",
+    "trend": "stable; better diagnostics increase detection"
+  },
+  "incidence": {
+    "value": "~1-3 per 100,000/year (autoimmune hemolytic anemia component)",
+    "population": "General population",
+    "year": 2024,
+    "source": "AIHA incidence meta-analyses"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; can be severe in acute hemolysis or chronic transfusion dependence",
+    "mortalityRate": "Low to moderate depending on etiology and comorbidities",
+    "year": 2024,
+    "source": "IHME anemia and hematologic disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autoimmune disease (e.g., SLE)",
+      "lymphoproliferative disorders",
+      "infections and drugs (trigger immune hemolysis)",
+      "hereditary RBC membrane/enzyme disorders",
+      "prosthetic valves (mechanical hemolysis)"
+    ],
+    "vulnerablePopulations": [
+      "older adults (AIHA)",
+      "patients with autoimmune disease or malignancy",
+      "patients with limited access to hematology care"
+    ],
+    "diagnosticCriteria": "Anemia with hemolysis markers (↑LDH, ↑indirect bilirubin, ↓haptoglobin, reticulocytosis), peripheral smear; direct antiglobulin test (DAT/Coombs) for immune hemolysis; evaluate underlying cause"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; evaluated when symptomatic or abnormal CBC found",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands (broad category; uncertain)",
+    "controlRate": "Variable; often good with timely diagnosis and targeted therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "CBC and hemolysis work-up available in larger labs; DAT and specialized testing may be delayed in smaller municipalities",
+    "treatmentProtocol": "Treat underlying cause; corticosteroids first-line for warm AIHA, immunosuppressants/rituximab when indicated; transfusion support; folate; splenectomy in select cases",
+    "regionalChallenges": "Specialized hematology access and availability of advanced immunotherapies varies by region",
+    "strongPoints": "Core diagnostics and steroids/transfusion support broadly available"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "diseaseId": "hiperplasia-prostatica-benigna",
+  "region": "IN",
+  "diseaseName": "Benign Prostatic Hyperplasia (BPH)",
+  "prevalence": {"value": "45%", "population": "Indian men >50 years (~1.4 billion)", "year": 2024, "source": "Urological Society of India (USI) & ICMR", "trend": "increasing [context - aging population]"},
+  "incidence": {"value": "15 per 1000", "population": "Indian men >50", "year": 2024, "source": "USI Epidemiological Survey"},
+  "burden": {"dalyPerCapita": "0.8", "mortalityRate": "Negligible", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Age >50 years", "Diabetes mellitus", "Metabolic syndrome", "Obesity", "Family history", "Sedentary lifestyle"],
+    "vulnerablePopulations": ["Men >60 years", "Urban men with sedentary lifestyles", "Men with diabetes", "Rural men with delayed healthcare access"],
+    "diagnosticCriteria": "USI guidelines, DRE, PSA, IPSS, uroflowmetry"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "very limited PSA screening, <10%",
+    "treatmentAvailable": true,
+    "estimatedPatients": "70 million",
+    "controlRate": "35% [context - moderate]"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "USI criteria, DRE primary in rural areas, PSA/TRUS in urban centers",
+    "treatmentProtocol": "Medical: tamsulosin, finasteride; Surgical: TURP, limited HoLEP; Ayurvedic: Gokshura, Shilajit for urinary symptoms",
+    "regionalChallenges": "Limited urologist access (<1 per 100,000), expensive PSA testing, late presentation, cultural reluctance to discuss urinary symptoms",
+    "strongPoints": "Affordable generic alpha-blockers/5-ARIs, USI guidelines, Ayurvedic urinary tonics, growing TURP access"
+  }
+}

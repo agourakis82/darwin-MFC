@@ -1,0 +1,52 @@
+{
+  "diseaseId": "incontinencia-urgencia",
+  "region": "BR",
+  "diseaseName": "Incontinencia urinaria de urgencia",
+  "prevalence": {
+    "value": "~5-10% (adults; higher in older women)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Urogynecology and urology epidemiology syntheses",
+    "trend": "increasing with aging"
+  },
+  "incidence": {
+    "value": "~5-10 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Urogynecology cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant QOL impact and social stigma",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD urologic burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "older age",
+      "female sex",
+      "obesity",
+      "diabetes",
+      "neurologic disease",
+      "bladder irritants"
+    ],
+    "vulnerablePopulations": [
+      "women >50 years",
+      "older adults",
+      "patients with neurologic disease"
+    ],
+    "diagnosticCriteria": "Clinical history of urgency with leakage; bladder diary; rule out UTI"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of adults",
+    "controlRate": "Moderate; improves with behavioral therapy and meds"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care assessment; urology/urogynecology referral as needed",
+    "treatmentProtocol": "Bladder training, pelvic floor therapy, antimuscarinics or beta-3 agonists; address comorbidities",
+    "regionalChallenges": "Limited access to pelvic floor therapy and specialty care",
+    "strongPoints": "Behavioral interventions feasible in primary care"
+  }
+}

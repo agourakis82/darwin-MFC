@@ -1,0 +1,50 @@
+{
+  "diseaseId": "gastroenterite-viral",
+  "region": "IN",
+  "diseaseName": "Viral gastroenteritis",
+  "prevalence": {
+    "value": "~10-20% annual symptomatic episodes",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "WHO/ICMR viral gastroenteritis context",
+    "trend": "stable; rotavirus vaccination reduces infant burden"
+  },
+  "incidence": {
+    "value": "~200-400 per 1,000 person-years",
+    "population": "General population",
+    "year": 2024,
+    "source": "Community cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate in children; low mortality overall",
+    "mortalityRate": "Low to moderate in vulnerable populations",
+    "year": 2024,
+    "source": "WHO/IHME diarrheal disease burden"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "norovirus/rotavirus exposure",
+      "crowding and daycare",
+      "institutional outbreaks",
+      "poor hand hygiene"
+    ],
+    "vulnerablePopulations": [
+      "children under 5",
+      "older adults",
+      "institutionalized populations"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; stool testing in outbreaks or severe cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; outbreak surveillance",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of episodes annually",
+    "controlRate": "Moderate; depends on early ORS and care access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care",
+    "treatmentProtocol": "ORS, zinc in children, IV fluids for severe cases",
+    "regionalChallenges": "Sanitation gaps and outbreak control in crowded settings",
+    "strongPoints": "Rotavirus vaccine coverage and ORS availability"
+  }
+}

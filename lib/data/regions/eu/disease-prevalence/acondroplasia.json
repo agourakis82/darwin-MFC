@@ -1,0 +1,49 @@
+{
+  "diseaseId": "acondroplasia",
+  "region": "EU",
+  "diseaseName": "Achondroplasia",
+  "prevalence": {
+    "value": "~3-5 per 100,000",
+    "population": "EU population",
+    "year": 2024,
+    "source": "Orphanet; European skeletal dysplasia epidemiology reviews",
+    "trend": "stable; high diagnostic confidence and long-term multidisciplinary follow-up"
+  },
+  "incidence": {
+    "value": "~1 per 15,000-25,000 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "Skeletal dysplasia incidence syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but significant lifelong morbidity (ENT, orthopedic, neurologic)",
+    "mortalityRate": "Low; higher in infancy for severe airway/foramen magnum complications",
+    "year": 2024,
+    "source": "Orphanet clinical burden summaries"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "FGFR3 pathogenic variant (often de novo)",
+      "advanced paternal age",
+      "family history (autosomal dominant when inherited)"
+    ],
+    "vulnerablePopulations": [
+      "infants (foramen magnum stenosis risk)",
+      "children with sleep apnea and recurrent otitis",
+      "adults with spinal stenosis"
+    ],
+    "diagnosticCriteria": "Clinical-radiographic diagnosis with FGFR3 confirmation; structured surveillance for neurologic compression, hydrocephalus, sleep apnea and hearing problems"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; early clinical diagnosis common",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands across the EU (rare)",
+    "controlRate": "Good with access to multidisciplinary clinics and timely complication management"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Genetics confirmation widely available; multidisciplinary skeletal dysplasia clinics in many countries",
+    "treatmentProtocol": "Orthopedic alignment and spine care, neurosurgical assessment for foramen magnum stenosis, ENT/hearing care, sleep apnea evaluation, physiotherapy and genetic counseling",
+    "regionalChallenges": "Variation in access to specialized dysplasia clinics across countries",
+    "strongPoints": "Strong multidisciplinary pathways and rehabilitative services; high availability of imaging and genetics"
+  }
+}

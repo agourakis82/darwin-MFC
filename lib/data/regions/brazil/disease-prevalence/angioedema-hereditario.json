@@ -1,0 +1,51 @@
+{
+  "diseaseId": "angioedema-hereditario",
+  "region": "BR",
+  "diseaseName": "Angioedema Hereditário (AEH)",
+  "prevalence": {
+    "value": "~1 per 50,000 (0.2 per 10,000)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Orphanet; hereditary angioedema epidemiology reviews",
+    "trend": "increasing diagnosed prevalence due to awareness and lab testing"
+  },
+  "incidence": {
+    "value": "Rare; family-based detection common",
+    "population": "All ages (often begins in childhood/adolescence)",
+    "year": 2024,
+    "source": "HAE clinical registries"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but high per-patient morbidity; laryngeal attacks can be fatal",
+    "mortalityRate": "Low with access to on-demand therapy; higher if untreated",
+    "year": 2024,
+    "source": "HAE registry outcomes; WHO/IHME acute airway risk context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "SERPING1 pathogenic variant (most cases)",
+      "family history (autosomal dominant)",
+      "estrogen exposure (can worsen attacks)",
+      "trauma/dental procedures (attack triggers)",
+      "ACE inhibitor exposure (can mimic/worsen angioedema; avoid in HAE)"
+    ],
+    "vulnerablePopulations": [
+      "patients without access to C1-INH testing",
+      "women (hormonal modulation of symptoms)",
+      "patients in remote areas without on-demand therapy"
+    ],
+    "diagnosticCriteria": "Recurrent angioedema without urticaria; low C4 and low/absent C1 inhibitor level or function; confirm with repeat labs and genetics when available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; cascade testing in families when index case diagnosed",
+    "treatmentAvailable": true,
+    "estimatedPatients": "A few thousand (rare; underdiagnosed)",
+    "controlRate": "Variable; improves with on-demand therapy and prophylaxis access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialized complement testing concentrated in larger labs; family screening may be delayed",
+    "treatmentProtocol": "On-demand therapy (C1-INH concentrate or bradykinin receptor antagonist where available), short/long-term prophylaxis in select patients, trigger avoidance, emergency plan",
+    "regionalChallenges": "Delayed diagnosis and uneven access to high-cost on-demand therapies",
+    "strongPoints": "Clear diagnostic biomarkers (C4/C1-INH) and strong impact of appropriate therapy once available"
+  }
+}

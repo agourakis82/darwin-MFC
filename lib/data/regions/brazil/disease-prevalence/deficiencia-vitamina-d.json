@@ -1,0 +1,51 @@
+{
+  "diseaseId": "deficiencia-vitamina-d",
+  "region": "BR",
+  "diseaseName": "Deficiencia de vitamina D",
+  "prevalence": {
+    "value": "~30-50% (adults; higher in older adults)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Nutrition survey syntheses",
+    "trend": "stable; higher in urban and indoor populations"
+  },
+  "incidence": {
+    "value": "Common; varies by season and sun exposure",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Nutritional cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low direct mortality; contributes to bone health issues",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO nutrition context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low sun exposure",
+      "older age",
+      "dark skin pigmentation",
+      "obesity",
+      "malabsorption"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "indoor workers",
+      "patients with malabsorption"
+    ],
+    "diagnosticCriteria": "Serum 25(OH)D levels below recommended thresholds"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; targeted testing",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions",
+    "controlRate": "High with supplementation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Lab testing available in urban centers",
+    "treatmentProtocol": "Vitamin D supplementation and lifestyle guidance",
+    "regionalChallenges": "Testing access and adherence to supplementation",
+    "strongPoints": "Low-cost supplementation widely available"
+  }
+}

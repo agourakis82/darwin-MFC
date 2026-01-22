@@ -1,0 +1,53 @@
+{
+  "diseaseId": "constipacao-pediatrica",
+  "region": "IN",
+  "diseaseName": "Pediatric Functional Constipation",
+  "prevalence": {
+    "value": "8-20% (children; underreported)",
+    "population": "Indian children",
+    "year": 2024,
+    "source": "Pediatric gastroenterology epidemiology syntheses",
+    "trend": "increasing in urban settings with diet change and sedentary behavior"
+  },
+  "incidence": {
+    "value": "10-25 per 1,000 children/year (clinically significant cases)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Pediatric primary care syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; high QOL and caregiver burden",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO child health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low fiber intake",
+      "withholding behavior",
+      "toilet training issues",
+      "low fluid intake",
+      "psychosocial stress",
+      "sedentary lifestyle"
+    ],
+    "vulnerablePopulations": [
+      "school-age children",
+      "urban children with diet changes",
+      "children with limited access to pediatric care"
+    ],
+    "diagnosticCriteria": "Rome IV functional constipation criteria; evaluate red flags for organic causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of children",
+    "controlRate": "Variable; adherence and follow-up constraints are common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often diagnosed clinically; limited access to pediatric GI outside cities",
+    "treatmentProtocol": "Education, toilet routine, dietary fiber/fluids, osmotic laxatives; address behavioral components",
+    "regionalChallenges": "Low follow-up continuity and variable access to PEG and dietary counseling",
+    "strongPoints": "Most cases manageable in primary care with education and inexpensive therapy"
+  }
+}
+

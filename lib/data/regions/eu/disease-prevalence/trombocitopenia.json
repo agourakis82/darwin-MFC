@@ -1,0 +1,52 @@
+{
+  "diseaseId": "trombocitopenia",
+  "region": "EU",
+  "diseaseName": "Thrombocytopenia",
+  "prevalence": {
+    "value": "0.3-1.0% (any cause; varies by inpatient vs outpatient)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European hematology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "1-3 per 1,000/year (detected cases)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "variable; depends on etiology",
+    "mortalityRate": "Low overall; higher in severe secondary causes",
+    "year": 2024,
+    "source": "IHME/WHO Europe context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "ITP",
+      "medications (including heparin)",
+      "liver disease",
+      "bone marrow disorders",
+      "infections"
+    ],
+    "vulnerablePopulations": [
+      "hospitalized patients",
+      "patients with cancer/hematologic disease",
+      "patients with chronic liver disease"
+    ],
+    "diagnosticCriteria": "Platelets <150,000/µL with evaluation for pseudothrombocytopenia, smear review, and secondary cause assessment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "CBC detection common in routine and inpatient labs",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions with transient or chronic thrombocytopenia",
+    "controlRate": "Generally good with access to hematology, immunotherapy, and transfusion services"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to hematology and diagnostic workups in most member states",
+    "treatmentProtocol": "Etiology-specific; ITP treatments (steroids, IVIG, thrombopoietin receptor agonists) and transfusion support when indicated",
+    "regionalChallenges": "Variation in access to high-cost agents between countries",
+    "strongPoints": "Robust diagnostic and transfusion infrastructure in many systems"
+  }
+}
+

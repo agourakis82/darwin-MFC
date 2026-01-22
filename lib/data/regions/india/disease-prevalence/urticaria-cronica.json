@@ -1,0 +1,52 @@
+{
+  "diseaseId": "urticaria-cronica",
+  "region": "IN",
+  "diseaseName": "Chronic Urticaria",
+  "prevalence": {
+    "value": "0.5-1.0%",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "IADVL/dermatology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "1-3 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Urticaria epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO skin disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autoimmune mechanisms",
+      "female sex",
+      "NSAID intolerance",
+      "stress",
+      "thyroid disease association"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "patients with thyroid disease",
+      "patients with limited access to specialist care"
+    ],
+    "diagnosticCriteria": "Urticaria/angioedema for >6 weeks; exclude urticarial vasculitis; evaluation guided by history; align with international urticaria guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~5-15 million",
+    "controlRate": "Variable; many rely on intermittent care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often managed in dermatology/allergy clinics in urban areas; rural care is variable",
+    "treatmentProtocol": "Second-generation antihistamines with up-dosing; short steroid bursts; omalizumab/cyclosporine for refractory cases mainly in tertiary/private settings",
+    "regionalChallenges": "Cost barriers for biologics and limited specialist access outside metros",
+    "strongPoints": "Affordable antihistamines and growing dermatology services in urban centers"
+  }
+}
+

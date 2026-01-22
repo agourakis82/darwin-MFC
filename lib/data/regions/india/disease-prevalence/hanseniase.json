@@ -1,0 +1,53 @@
+{
+  "diseaseId": "hanseniase",
+  "region": "IN",
+  "diseaseName": "Leprosy (Hansen's Disease)",
+  "prevalence": {
+    "value": "~0.6 per 10,000 (registered prevalence; endemic pockets higher)",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "National Leprosy Eradication Programme (NLEP) / WHO",
+    "trend": "slowly decreasing; ongoing transmission in some states and districts"
+  },
+  "incidence": {
+    "value": "~6-10 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "NLEP programme data"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0001-0.0003",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD / WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "household contact exposure",
+      "poverty and overcrowding",
+      "delayed diagnosis due to stigma",
+      "limited access to trained examiners in rural areas",
+      "immunogenetic susceptibility"
+    ],
+    "vulnerablePopulations": [
+      "household contacts of index cases",
+      "children in endemic districts",
+      "rural populations with limited access",
+      "migrant and socially marginalized communities"
+    ],
+    "diagnosticCriteria": "Clinical signs (hypopigmented/erythematous anesthetic lesions, nerve thickening) with smear/biopsy support; classification per WHO/NLEP"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "contact screening and targeted case detection campaigns in endemic blocks",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~100,000-150,000 new cases/year",
+    "controlRate": "High cure rates with MDT; disability prevention limited by late presentation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "NLEP supports decentralized diagnosis in primary care with referral for reactions/neuritis",
+    "treatmentProtocol": "WHO MDT provided free via NLEP; corticosteroids for reactions and neuritis; disability prevention and rehabilitation services where available",
+    "regionalChallenges": "Stigma and delayed diagnosis, disability burden, and uneven access to rehabilitation and specialist care",
+    "strongPoints": "Long-standing NLEP infrastructure with free MDT and community-based detection activities in endemic areas"
+  }
+}
+

@@ -1,0 +1,53 @@
+{
+  "diseaseId": "transtorno-neurocognitivo-leve",
+  "region": "IN",
+  "diseaseName": "Mild Neurocognitive Disorder (Mild Cognitive Impairment)",
+  "prevalence": {
+    "value": "10-20% in adults >60 years (underdiagnosis likely)",
+    "population": "Indian adults >60 years",
+    "year": 2024,
+    "source": "Indian aging cohort syntheses / ARDSI context",
+    "trend": "increasing with rapid aging and vascular risk factor growth"
+  },
+  "incidence": {
+    "value": "20-40 per 1,000 person-years in adults >60 years",
+    "population": "Indian adults >60 years",
+    "year": 2024,
+    "source": "Longitudinal cohort syntheses (MCI)"
+  },
+  "burden": {
+    "dalyPerCapita": "0.004-0.012 (older-adult concentrated)",
+    "mortalityRate": "Indirect; progression risk to dementia",
+    "year": 2024,
+    "source": "IHME GBD (dementia) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "low education/cognitive reserve",
+      "hypertension/diabetes",
+      "hearing loss",
+      "depression",
+      "sleep disorders"
+    ],
+    "vulnerablePopulations": [
+      "older adults (>70 years)",
+      "rural populations with limited specialist access",
+      "patients with stroke/vascular disease"
+    ],
+    "diagnosticCriteria": "Cognitive concern with objective impairment and preserved independence; screening tools (HMSE/MMSE/MoCA) and evaluation for reversible causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; cognitive screening not routine in most primary care settings",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~15-30 million older adults",
+    "controlRate": "Low to moderate; risk-factor control limited by access and continuity gaps"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnosis concentrated in urban tertiary centers; many cases not formally diagnosed",
+    "treatmentProtocol": "Risk-factor control, cognitive stimulation, physical activity, treat depression/hearing loss when possible; medication review",
+    "regionalChallenges": "Underdiagnosis, limited neuropsychological testing, and low access to memory clinics outside metros",
+    "strongPoints": "Family caregiving networks and expanding NCD programs can support vascular risk factor management"
+  }
+}
+

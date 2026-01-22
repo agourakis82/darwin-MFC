@@ -1,0 +1,53 @@
+{
+  "diseaseId": "transtorno-depressivo-maior",
+  "region": "EU",
+  "diseaseName": "Major Depressive Disorder (MDD)",
+  "prevalence": {
+    "value": "5-7%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "WHO Europe / European mental health epidemiology syntheses",
+    "trend": "stable to slightly increasing post-COVID"
+  },
+  "incidence": {
+    "value": "20-35 per 1,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cohort syntheses / IHME GBD context"
+  },
+  "burden": {
+    "dalyPerCapita": "0.03-0.07",
+    "mortalityRate": "Indirect; suicide risk and comorbidity effects",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prior depression",
+      "stressful life events",
+      "unemployment and social isolation",
+      "chronic medical illness",
+      "substance use"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "older adults living alone",
+      "people with chronic disease",
+      "migrants and socially vulnerable groups"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria; structured assessment common in primary care and specialist pathways"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate; primary care screening and referral pathways common in many countries",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~25-35 million",
+    "controlRate": "Moderate to high with psychotherapy and pharmacotherapy access; variable across member states"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Structured primary care assessment and stepped-care models in many systems",
+    "treatmentProtocol": "Psychotherapy (CBT/interpersonal therapy) and antidepressants; crisis pathways for suicidality",
+    "regionalChallenges": "Wait times for therapy in some systems and cross-country variability",
+    "strongPoints": "Broad access to evidence-based psychotherapy and antidepressants in many member states"
+  }
+}
+

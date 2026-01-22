@@ -1,0 +1,52 @@
+{
+  "diseaseId": "demencia-vascular",
+  "region": "BR",
+  "diseaseName": "Demencia vascular",
+  "prevalence": {
+    "value": "~0.5-1.0% (adults >65 years)",
+    "population": "Older adults in Brazil",
+    "year": 2024,
+    "source": "Dementia epidemiology syntheses; Brazilian aging studies",
+    "trend": "increasing with aging and vascular risk factors"
+  },
+  "incidence": {
+    "value": "~2-5 per 1,000 older adults/year",
+    "population": "Adults >65 years",
+    "year": 2024,
+    "source": "Longitudinal aging cohorts"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to disability and caregiver burden",
+    "mortalityRate": "Moderate (driven by comorbidity and stroke risk)",
+    "year": 2024,
+    "source": "IHME/GBD dementia context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "stroke and TIA",
+      "hypertension",
+      "diabetes",
+      "atrial fibrillation",
+      "smoking",
+      "hyperlipidemia"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with prior stroke",
+      "low-income populations with poor vascular risk control"
+    ],
+    "diagnosticCriteria": "Cognitive decline with vascular events or imaging evidence; neuroimaging (CT/MRI) supports diagnosis; exclude other dementias"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic cognitive screening in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands",
+    "controlRate": "Moderate; depends on vascular risk management and support services"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical assessment with imaging in referral centers",
+    "treatmentProtocol": "Vascular risk factor control, antiplatelet therapy when indicated, cognitive rehabilitation and caregiver support",
+    "regionalChallenges": "Limited access to neuroimaging and dementia support services in some regions",
+    "strongPoints": "Primary care programs for hypertension/diabetes support prevention"
+  }
+}

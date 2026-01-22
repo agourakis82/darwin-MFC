@@ -1,0 +1,52 @@
+{
+  "diseaseId": "hiperuricemia-assintomatica",
+  "region": "IN",
+  "diseaseName": "Asymptomatic hyperuricemia",
+  "prevalence": {
+    "value": "~10-18% (adults; higher in men)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Rheumatology and metabolic epidemiology syntheses",
+    "trend": "increasing with obesity and metabolic syndrome"
+  },
+  "incidence": {
+    "value": "~8-16 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Primary care and lab cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low direct burden; increases gout and CVD risk",
+    "mortalityRate": "Indirect (cardiometabolic risk)",
+    "year": 2024,
+    "source": "IHME/GBD cardiometabolic context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "male sex",
+      "obesity",
+      "high purine diet",
+      "alcohol intake",
+      "diuretics",
+      "chronic kidney disease"
+    ],
+    "vulnerablePopulations": [
+      "men >40 years",
+      "patients with CKD",
+      "patients with metabolic syndrome"
+    ],
+    "diagnosticCriteria": "Elevated serum uric acid without gout symptoms; assess renal function and comorbidities"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; detected via labs",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "Variable; treatment depends on risk profile"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Lab testing in primary care; evaluate secondary causes",
+    "treatmentProtocol": "Lifestyle modification; urate-lowering therapy reserved for gout or high-risk patients",
+    "regionalChallenges": "Limited lifestyle counseling and inconsistent follow-up",
+    "strongPoints": "Affordable medications and lab access in many settings"
+  }
+}

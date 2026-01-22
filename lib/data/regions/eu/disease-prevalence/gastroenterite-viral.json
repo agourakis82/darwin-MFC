@@ -1,0 +1,50 @@
+{
+  "diseaseId": "gastroenterite-viral",
+  "region": "EU",
+  "diseaseName": "Viral gastroenteritis",
+  "prevalence": {
+    "value": "~8-12% annual symptomatic episodes",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECDC/WHO Europe viral gastroenteritis context",
+    "trend": "stable; norovirus outbreaks common"
+  },
+  "incidence": {
+    "value": "~150-300 per 1,000 person-years",
+    "population": "General population",
+    "year": 2024,
+    "source": "Community cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low to moderate; higher in young children and older adults",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "WHO Europe/IHME diarrheal disease burden"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "norovirus/rotavirus exposure",
+      "institutional outbreaks",
+      "crowding",
+      "poor hand hygiene"
+    ],
+    "vulnerablePopulations": [
+      "children under 5",
+      "older adults",
+      "institutionalized populations"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; stool testing in outbreaks or severe cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; outbreak surveillance",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually across EU",
+    "controlRate": "High with ORS and supportive care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care diagnosis; lab confirmation in outbreaks",
+    "treatmentProtocol": "ORS, antiemetics, IV fluids for severe cases",
+    "regionalChallenges": "Outbreak control in institutions and hospitals",
+    "strongPoints": "Strong surveillance systems and access to supportive care"
+  }
+}

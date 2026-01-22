@@ -1,0 +1,53 @@
+{
+  "diseaseId": "transtorno-distimico",
+  "region": "BR",
+  "diseaseName": "Transtorno Depressivo Persistente (Distimia)",
+  "prevalence": {
+    "value": "2-3%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "IHME GBD / psychiatric epidemiology syntheses",
+    "trend": "stable; often underdiagnosed"
+  },
+  "incidence": {
+    "value": "3-6 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Mood disorder epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.02",
+    "mortalityRate": "Indirect; comorbidity and suicide risk lower than MDD but present",
+    "year": 2024,
+    "source": "IHME GBD (dysthymia/persistent depressive disorder) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "chronic stress",
+      "prior depression",
+      "female sex",
+      "social adversity",
+      "chronic medical illness"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "low-income groups",
+      "patients with chronic illness",
+      "people with limited access to psychotherapy"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: depressed mood most days for ≥2 years (adults) plus associated symptoms and impairment; distinguish from recurrent MDD"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; often detected during evaluation for chronic symptoms",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~4-6 million",
+    "controlRate": "Moderate; requires long-term management and psychotherapy access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS may detect through chronic complaints; confirmation and management often in mental health services",
+    "treatmentProtocol": "Psychotherapy and antidepressants when indicated; treat comorbid anxiety and chronic pain",
+    "regionalChallenges": "Underdiagnosis and limited long-term psychotherapy access",
+    "strongPoints": "APS and CAPS can provide longitudinal follow-up where available"
+  }
+}
+

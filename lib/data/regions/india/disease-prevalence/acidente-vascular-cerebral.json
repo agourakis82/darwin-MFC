@@ -1,0 +1,52 @@
+{
+  "diseaseId": "acidente-vascular-cerebral",
+  "region": "IN",
+  "diseaseName": "Stroke",
+  "prevalence": {
+    "value": "1.5%",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR/NFHS-5",
+    "trend": "Increasing due to aging population and lifestyle factors"
+  },
+  "incidence": {
+    "value": "145 per 100,000",
+    "population": "General population",
+    "year": 2024,
+    "source": "Indian Stroke Association (INTRASTROKE study)"
+  },
+  "burden": {
+    "dalyPerCapita": "250 DALYs per 1,000 population",
+    "mortalityRate": "87 per 100,000",
+    "year": 2024,
+    "source": "Global Burden of Disease Study 2019 (IHME)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Hypertension (prevalent in 25-30% of adults)",
+      "Diabetes mellitus",
+      "Dyslipidemia",
+      "Smoking and tobacco use",
+      "Obesity and sedentary lifestyle"
+    ],
+    "vulnerablePopulations": [
+      "Elderly (>60 years)",
+      "Individuals with low socioeconomic status",
+      "Rural populations with limited healthcare access",
+      "Younger adults (under 45 years; higher burden in India with mean age of onset ~63 years)"
+    ],
+    "diagnosticCriteria": "Based on WHO criteria: rapid onset of focal neurological deficit lasting >24 hours or leading to death, confirmed by neuroimaging (CT/MRI) and clinical scales like NIHSS"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Low (~20% for hypertension screening in primary care)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2.1 million prevalent cases",
+    "controlRate": "Poor; only 10-15% achieve blood pressure control"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Adapted WHO guidelines with emphasis on clinical diagnosis in resource-limited settings",
+    "treatmentProtocol": "Follows Indian Stroke Guidelines (ISG); includes thrombolysis (rt-PA) within 4.5 hours, but access limited",
+    "regionalChallenges": "High younger stroke burden (20-25% under 40 years); urban-rural disparity; only 1-3% receive thrombolysis due to delayed presentation and infrastructure gaps",
+    "strongPoints": "Emerging stroke units in urban centers; government initiatives like Ayushman Bharat for coverage; increasing awareness campaigns"
+  }
+}

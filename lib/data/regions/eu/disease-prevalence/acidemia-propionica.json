@@ -1,0 +1,50 @@
+{
+  "diseaseId": "acidemia-propionica",
+  "region": "EU",
+  "diseaseName": "Propionic Acidemia",
+  "prevalence": {
+    "value": "~0.3-0.8 per 100,000",
+    "population": "EU population (rare inherited metabolic disorder)",
+    "year": 2024,
+    "source": "Orphanet; European metabolic registries and newborn screening summaries",
+    "trend": "stable; earlier diagnosis improving with newborn screening and standardized emergency protocols"
+  },
+  "incidence": {
+    "value": "~1 per 80,000-150,000 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "European IEM incidence syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but high per-patient morbidity (metabolic crises, cardiomyopathy, neurodisability)",
+    "mortalityRate": "Low with early diagnosis and emergency management; higher in severe neonatal cases",
+    "year": 2024,
+    "source": "Orphanet and metabolic registry outcomes"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autosomal recessive inheritance",
+      "family history",
+      "catabolic stress triggers",
+      "gut propionate load (clinical management relevance)"
+    ],
+    "vulnerablePopulations": [
+      "newborns/infants",
+      "patients with recurrent infections triggering crises",
+      "patients needing specialized diet/medication access"
+    ],
+    "diagnosticCriteria": "Newborn screening/MS/MS (elevated C3) with confirmatory urine organic acids (methylcitrate, 3-hydroxypropionate), plasma acylcarnitines, genetic confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate to high depending on country; confirmatory and emergency pathways established in metabolic centers",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Low thousands (rare)",
+    "controlRate": "Good when diagnosed early and managed in specialized metabolic clinics"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Newborn screening in many countries and rapid referral to metabolic centers",
+    "treatmentProtocol": "Emergency protocols, protein restriction/medical nutrition, carnitine, intermittent antibiotics for gut propionate, cardiology/neuro follow-up; transplant evaluation in select cases",
+    "regionalChallenges": "Cross-country variation in screening and access to specialized services",
+    "strongPoints": "Established metabolic networks and standardized emergency and dietary management in many systems"
+  }
+}

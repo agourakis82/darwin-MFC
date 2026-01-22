@@ -1,0 +1,11 @@
+{
+  "diseaseId": "rinite-alergica",
+  "region": "IN",
+  "diseaseName": "Allergic Rhinitis",
+  "prevalence": {"value": "25%", "population": "Indian population (~1.4 billion)", "year": 2024, "source": "ICMR/Indian allergology data", "trend": "increasing due to urbanization and pollution"},
+  "incidence": {"value": "5-10% new cases annually", "population": "Indian population (~1.4 billion)", "year": 2024, "source": "Indian Journal of Allergy and Asthma (2020 study)"},
+  "burden": {"dalyPerCapita": "0.5-1 DALYs per 1000 population", "mortalityRate": "<0.1%", "year": 2024, "source": "Global Burden of Disease Study 2019, adapted for India"},
+  "epidemiology": {"riskFactors": ["Air pollution", "Pollen exposure", "Dust mites", "Genetic predisposition", "Urbanization"], "vulnerablePopulations": ["Urban residents", "Children under 18", "Individuals with comorbid asthma"], "diagnosticCriteria": "Symptoms including sneezing, nasal itching, rhinorrhea, and congestion lasting >1 hour on most days for >1 year; confirmed by positive skin prick test or elevated specific IgE levels (ARIA guidelines)"},
+  "publicHealthSystem": {"screeningCoverage": "<10%", "treatmentAvailable": true, "estimatedPatients": "350 million", "controlRate": "50%"},
+  "regionalSpecificities": {"diagnosisCriteria": "Adapted ARIA guidelines with emphasis on local allergens", "treatmentProtocol": "First-line: Intranasal corticosteroids and oral antihistamines; allergen avoidance; immunotherapy for severe cases", "regionalChallenges": "High air pollution in northern cities like Delhi worsens symptoms; limited access in rural areas", "strongPoints": "Affordable generic medications; growing allergy clinics in urban centers"}
+}

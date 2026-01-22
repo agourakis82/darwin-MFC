@@ -1,0 +1,50 @@
+{
+  "diseaseId": "amiloidose-attr-hereditaria",
+  "region": "IN",
+  "diseaseName": "Hereditary Transthyretin Amyloidosis (hATTR)",
+  "prevalence": {
+    "value": "~0.3-1.5 per 100,000 (underdiagnosed)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Orphanet; amyloidosis epidemiology reviews; Indian neurology/cardiology center reports",
+    "trend": "increasing diagnosed prevalence due to improved awareness and access to genetics"
+  },
+  "incidence": {
+    "value": "Rare; family-based detection predominates",
+    "population": "Adults (typically onset 30-70 years)",
+    "year": 2024,
+    "source": "Amyloidosis registries and cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but high per-patient morbidity and mortality without treatment",
+    "mortalityRate": "Meaningful without disease-modifying therapy; reduced with early diagnosis and treatment",
+    "year": 2024,
+    "source": "Registry outcomes and modeled cardiomyopathy/neuropathy burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "pathogenic TTR variant (autosomal dominant)",
+      "family history",
+      "age (mid-life or later onset)",
+      "delayed diagnosis due to nonspecific symptoms"
+    ],
+    "vulnerablePopulations": [
+      "members of affected families",
+      "patients with progressive polyneuropathy",
+      "patients with cardiomyopathy/HFpEF plus red-flag features"
+    ],
+    "diagnosticCriteria": "Clinical suspicion plus genetic confirmation (TTR); tissue biopsy with amyloid typing when needed; cardiac imaging and scintigraphy where available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no population screening; cascade family testing when feasible",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Thousands (rare; likely underdiagnosed)",
+    "controlRate": "Variable; limited by access to high-cost therapies and specialist care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnosis concentrated in tertiary centers; genetics and scintigraphy access limited outside metros",
+    "treatmentProtocol": "Disease-modifying therapy when accessible (TTR stabilizers/silencers), symptomatic neuropathy and heart failure management, genetic counseling and cascade testing",
+    "regionalChallenges": "Underdiagnosis, high out-of-pocket costs for diagnostics/therapies, limited specialist density",
+    "strongPoints": "Improving awareness among cardiology/neurology subspecialists and growing genetics capacity"
+  }
+}

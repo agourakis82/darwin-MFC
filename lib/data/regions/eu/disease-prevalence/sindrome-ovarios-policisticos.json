@@ -1,0 +1,51 @@
+{
+  "diseaseId": "sindrome-ovarios-policisticos",
+  "region": "EU",
+  "diseaseName": "Polycystic Ovary Syndrome (PCOS)",
+  "prevalence": {
+    "value": "6-12% (reproductive-age women)",
+    "population": "Women of reproductive age in the EU",
+    "year": 2024,
+    "source": "European endocrinology/gynecology epidemiology syntheses",
+    "trend": "stable; influenced by obesity trends"
+  },
+  "incidence": {
+    "value": "5-10 per 1,000 women/year (new diagnoses)",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.007",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO Europe women's health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "insulin resistance",
+      "obesity",
+      "family history",
+      "sedentary lifestyle"
+    ],
+    "vulnerablePopulations": [
+      "women with obesity",
+      "women with infertility",
+      "women with metabolic syndrome"
+    ],
+    "diagnosticCriteria": "Rotterdam criteria; exclusion of other endocrine causes; metabolic risk assessment included in routine care"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of women",
+    "controlRate": "Moderate with access to lifestyle support and reproductive endocrinology services"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Broad access to ultrasound and labs in many member states; metabolic screening common",
+    "treatmentProtocol": "Lifestyle intervention, OCPs for symptoms, metformin for metabolic risk, fertility treatments when desired",
+    "regionalChallenges": "Access variability and long wait times for fertility services in some systems",
+    "strongPoints": "Structured reproductive endocrinology pathways and metabolic screening in many health systems"
+  }
+}
+

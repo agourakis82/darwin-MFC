@@ -1,0 +1,52 @@
+{
+  "diseaseId": "hemorroidas",
+  "region": "IN",
+  "diseaseName": "Hemorrhoids",
+  "prevalence": {
+    "value": "~4-9% (adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Coloproctology and primary care epidemiology syntheses",
+    "trend": "stable; higher with constipation and low fiber intake"
+  },
+  "incidence": {
+    "value": "~6-16 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Outpatient cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; substantial discomfort and productivity impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD digestive disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "constipation and straining",
+      "low fiber diet",
+      "pregnancy",
+      "obesity",
+      "prolonged sitting",
+      "aging"
+    ],
+    "vulnerablePopulations": [
+      "adults >40 years",
+      "pregnant people",
+      "patients with chronic constipation"
+    ],
+    "diagnosticCriteria": "Clinical evaluation with digital rectal exam and anoscopy; rule out other causes of bleeding"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of adults affected",
+    "controlRate": "Moderate; depends on access to outpatient procedures"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care diagnosis common; specialist proctology access limited outside urban centers",
+    "treatmentProtocol": "Dietary fiber, hydration, topical therapy; rubber band ligation; hemorrhoidectomy for severe cases",
+    "regionalChallenges": "Stigma and delayed care; limited access to outpatient procedures",
+    "strongPoints": "Effective low-cost conservative treatments widely available"
+  }
+}

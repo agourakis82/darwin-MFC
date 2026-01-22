@@ -1,0 +1,53 @@
+{
+  "diseaseId": "anorexia-nervosa",
+  "region": "IN",
+  "diseaseName": "Anorexia Nervosa",
+  "prevalence": {
+    "value": "0.2-0.6% (likely underdiagnosed)",
+    "population": "Indian adolescents and young adults",
+    "year": 2024,
+    "source": "Eating disorder epidemiology syntheses + Indian clinical reports",
+    "trend": "increasing recognition in urban areas"
+  },
+  "incidence": {
+    "value": "0.5-2 per 10,000/year",
+    "population": "Adolescents and young adults",
+    "year": 2024,
+    "source": "Eating disorder cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0008-0.004",
+    "mortalityRate": "Elevated vs general population",
+    "year": 2024,
+    "source": "IHME GBD (eating disorders)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "adolescence",
+      "body image pressures",
+      "perfectionism/anxiety traits",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "urban adolescents",
+      "young women",
+      "athletes/dancers",
+      "patients with anxiety/depression"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria with medical assessment of malnutrition; careful differentiation from cultural dieting and medical causes of weight loss"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands (underdiagnosed)",
+    "controlRate": "Low to moderate due to limited specialist multidisciplinary programs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnosis concentrated in tertiary psychiatry and adolescent medicine in urban centers",
+    "treatmentProtocol": "Nutritional rehabilitation, psychotherapy (family-based approaches), and medical monitoring; inpatient stabilization for severe cases",
+    "regionalChallenges": "Underdiagnosis, stigma, and limited specialized eating disorder services",
+    "strongPoints": "Growing mental health services in major cities and increasing awareness among adolescents"
+  }
+}
+

@@ -1,0 +1,52 @@
+{
+  "diseaseId": "hipotireoidismo",
+  "region": "EU",
+  "diseaseName": "Hypothyroidism",
+  "prevalence": {
+    "value": "4.8%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "ETA Guidelines 2023 / WHO Europe Regional Data",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "1.5 per 1,000",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ETA Guidelines 2023"
+  },
+  "burden": {
+    "dalyPerCapita": "0.02",
+    "mortalityRate": "0.1 per 100,000",
+    "year": 2024,
+    "source": "WHO Global Burden of Disease 2023 / ETA"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Autoimmune thyroiditis (Hashimoto's)",
+      "Iodine deficiency",
+      "Post-thyroidectomy or radioiodine therapy",
+      "Medications (e.g., lithium, amiodarone)",
+      "Radiation exposure"
+    ],
+    "vulnerablePopulations": [
+      "Women (5-10 times higher risk)",
+      "Elderly (>65 years)",
+      "Postpartum women",
+      "Individuals with family history of thyroid disease"
+    ],
+    "diagnosticCriteria": "Elevated TSH (>4.0 mIU/L) with low free T4 for overt hypothyroidism; subclinical: elevated TSH with normal free T4 (ETA 2023 guidelines)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Routine screening in high-risk groups (~60-70% coverage)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~21.5 million",
+    "controlRate": "85-90% in diagnosed cases"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Follows ETA guidelines: TSH and free T4 measurement; ultrasound if nodular",
+    "treatmentProtocol": "Lifelong levothyroxine replacement; dose adjustment based on TSH levels (ETA 2023)",
+    "regionalChallenges": "Disparities in access in Eastern EU; underdiagnosis in subclinical cases",
+    "strongPoints": "High treatment efficacy; widespread availability of levothyroxine; strong endocrine networks"
+  }
+}

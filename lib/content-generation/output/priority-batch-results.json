@@ -1,0 +1,72 @@
+[
+  {
+    "conditionId": "diabetes-mellitus-1",
+    "conditionName": "Diabetes Mellitus Tipo 1",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768995783676.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 120598
+  },
+  {
+    "conditionId": "doenca-arterial-coronariana",
+    "conditionName": "Doença Arterial Coronariana",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768995904770.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121134
+  },
+  {
+    "conditionId": "avc",
+    "conditionName": "Acidente Vascular Cerebral",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996026869.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 122022
+  },
+  {
+    "conditionId": "tuberculose",
+    "conditionName": "Tuberculose",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996148276.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121449
+  },
+  {
+    "conditionId": "dengue",
+    "conditionName": "Dengue",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996269784.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121521
+  },
+  {
+    "conditionId": "covid-19",
+    "conditionName": "COVID-19",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996391547.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121701
+  },
+  {
+    "conditionId": "gastrite",
+    "conditionName": "Gastrite e Úlcera Péptica",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996512037.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 120544
+  },
+  {
+    "conditionId": "drge",
+    "conditionName": "Doença do Refluxo Gastroesofágico",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996632572.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 120570
+  },
+  {
+    "conditionId": "artrite-reumatoide",
+    "conditionName": "Artrite Reumatoide",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996753847.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121186
+  },
+  {
+    "conditionId": "enxaqueca",
+    "conditionName": "Enxaqueca",
+    "success": false,
+    "error": "Command failed: cat \"/tmp/llm-prompt-1768996875019.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
+    "duration": 121195
+  }
+]

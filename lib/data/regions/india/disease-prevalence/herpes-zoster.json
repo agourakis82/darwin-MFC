@@ -1,0 +1,50 @@
+{
+  "diseaseId": "herpes-zoster",
+  "region": "IN",
+  "diseaseName": "Herpes zoster (shingles)",
+  "prevalence": {
+    "value": "~25-30% lifetime risk",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "WHO/CDC zoster epidemiology context; Indian cohort summaries",
+    "trend": "increasing with aging and immunosuppression"
+  },
+  "incidence": {
+    "value": "~2-4 per 1,000 person-years (general); 6-10 per 1,000 in >60 years",
+    "population": "Adults, higher in older adults",
+    "year": 2024,
+    "source": "Herpes zoster cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; post-herpetic neuralgia significant in older adults",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "WHO/IHME neurologic pain burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "older age",
+      "immunosuppression (HIV, cancer therapy, steroids)",
+      "diabetes",
+      "chronic kidney disease"
+    ],
+    "vulnerablePopulations": [
+      "adults >60 years",
+      "people with HIV",
+      "cancer patients"
+    ],
+    "diagnosticCriteria": "Typical dermatomal vesicular rash with neuropathic pain; PCR when atypical or disseminated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands of episodes annually (age-dependent)",
+    "controlRate": "Moderate; early antivirals reduce complications"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care; referral for ocular or disseminated disease",
+    "treatmentProtocol": "Acyclovir/valacyclovir within 72 hours, analgesia, neuropathic pain management; vaccination mainly private",
+    "regionalChallenges": "Limited adult zoster vaccine access and delayed presentation",
+    "strongPoints": "Antivirals are affordable and widely available"
+  }
+}

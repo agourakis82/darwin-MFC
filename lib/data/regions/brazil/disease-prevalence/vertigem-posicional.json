@@ -1,0 +1,50 @@
+{
+  "diseaseId": "vertigem-posicional",
+  "region": "BR",
+  "diseaseName": "Vertigem Posicional Paroxística Benigna (VPPB)",
+  "prevalence": {
+    "value": "2-3% lifetime; higher in older adults",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Vestibular disorder epidemiology syntheses",
+    "trend": "increasing with aging"
+  },
+  "incidence": {
+    "value": "10-20 per 10,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "BPPV cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Indirect (falls risk)",
+    "year": 2024,
+    "source": "IHME/WHO injury context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "older age",
+      "head trauma",
+      "vestibular neuritis history",
+      "migraine association"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with falls risk"
+    ],
+    "diagnosticCriteria": "Dix-Hallpike with characteristic nystagmus; rule out central causes with neurologic red flags"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions lifetime",
+    "controlRate": "High with canalith repositioning maneuvers"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often diagnosed clinically in APS/ER; limited vestibular specialty access",
+    "treatmentProtocol": "Epley maneuver, vestibular rehab; avoid prolonged vestibular suppressants; evaluate for central causes when indicated",
+    "regionalChallenges": "Underuse of repositioning maneuvers and overuse of vestibular suppressants",
+    "strongPoints": "Highly effective low-cost bedside treatment"
+  }
+}
+

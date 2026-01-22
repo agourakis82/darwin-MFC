@@ -1,0 +1,51 @@
+{
+  "diseaseId": "lupus-eritematoso-sistemico",
+  "region": "EU",
+  "diseaseName": "Systemic Lupus Erythematosus (SLE)",
+  "prevalence": {
+    "value": "40-100 per 100,000",
+    "population": "EU population",
+    "year": 2024,
+    "source": "EULAR/European SLE epidemiology syntheses",
+    "trend": "stable; improved survival increases prevalence"
+  },
+  "incidence": {
+    "value": "2-8 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0008-0.0025",
+    "mortalityRate": "Elevated vs general population (renal/CV/infection complications)",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "genetic susceptibility",
+      "UV exposure",
+      "smoking"
+    ],
+    "vulnerablePopulations": [
+      "women of childbearing age",
+      "ethnic minority populations with higher severity in some cohorts",
+      "patients with renal involvement"
+    ],
+    "diagnosticCriteria": "ACR/EULAR classification supported by ANA and immunologic markers; structured nephritis workup pathways in specialist care"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~200,000-450,000",
+    "controlRate": "Moderate to high with access to rheumatology and modern therapies; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to autoantibody panels and renal biopsy in specialist centers",
+    "treatmentProtocol": "Hydroxychloroquine, steroids, immunosuppressants, and biologics (e.g., belimumab) as indicated; treat-to-target approaches common",
+    "regionalChallenges": "Cross-country variability and long-term steroid toxicity management",
+    "strongPoints": "EULAR guideline-driven care with broad access to diagnostics and therapies in many member states"
+  }
+}
+

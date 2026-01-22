@@ -1,0 +1,52 @@
+{
+  "diseaseId": "sindrome-metabolica",
+  "region": "BR",
+  "diseaseName": "Sindrome metabolica",
+  "prevalence": {
+    "value": "~25-35% (adults)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Cardiometabolic epidemiology syntheses; VIGITEL context",
+    "trend": "increasing with obesity and sedentary lifestyle"
+  },
+  "incidence": {
+    "value": "~20-40 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Cardiometabolic cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; increases risk of diabetes and CVD",
+    "mortalityRate": "Indirectly elevated via CVD/diabetes",
+    "year": 2024,
+    "source": "IHME/GBD cardiometabolic burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "central obesity",
+      "sedentary lifestyle",
+      "high-calorie diet",
+      "hypertension",
+      "dyslipidemia",
+      "insulin resistance"
+    ],
+    "vulnerablePopulations": [
+      "adults >40 years",
+      "low-income urban populations",
+      "patients with obesity"
+    ],
+    "diagnosticCriteria": "NCEP ATP III or IDF criteria (waist circumference, BP, glucose, triglycerides, HDL)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic screening in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "Low to moderate; lifestyle adherence is limiting"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care screening for BP, glucose, lipids, and waist circumference",
+    "treatmentProtocol": "Lifestyle modification, weight loss, BP and lipid management, diabetes prevention programs",
+    "regionalChallenges": "Limited access to structured lifestyle programs and high obesity prevalence",
+    "strongPoints": "Primary care chronic disease programs and affordable generics"
+  }
+}

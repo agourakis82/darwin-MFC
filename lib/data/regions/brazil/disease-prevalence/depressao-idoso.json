@@ -1,0 +1,53 @@
+{
+  "diseaseId": "depressao-idoso",
+  "region": "BR",
+  "diseaseName": "Depressão no Idoso",
+  "prevalence": {
+    "value": "10-15% (clinically significant depressive symptoms); major depression 3-5%",
+    "population": "Brazilian adults >65 years",
+    "year": 2024,
+    "source": "Geriatric psychiatry epidemiology syntheses",
+    "trend": "increasing recognition; risk rises with social isolation and multimorbidity"
+  },
+  "incidence": {
+    "value": "10-20 per 1,000 person-years",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "Geriatric depression cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.02-0.05 (older-adult concentrated)",
+    "mortalityRate": "Indirect; elevated suicide and medical comorbidity risk",
+    "year": 2024,
+    "source": "IHME/WHO mental health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "social isolation",
+      "bereavement",
+      "chronic disease and pain",
+      "cognitive impairment",
+      "polypharmacy"
+    ],
+    "vulnerablePopulations": [
+      "older adults living alone",
+      "frail older adults",
+      "older adults with chronic pain",
+      "care home residents"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 depression criteria; screening tools (GDS/PHQ-9) with careful differentiation from dementia and medical causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; opportunistic screening limited",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2-4 million older adults",
+    "controlRate": "Variable; improves with integrated care and psychotherapy access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS recognition variable; CAPS/geriatrics for complex cases",
+    "treatmentProtocol": "Psychotherapy when available, SSRIs with geriatric considerations, treat pain and social factors, suicide risk management",
+    "regionalChallenges": "Limited geriatric mental health services and social support resources",
+    "strongPoints": "Primary care and CAPS can provide follow-up and access to core antidepressants"
+  }
+}
+

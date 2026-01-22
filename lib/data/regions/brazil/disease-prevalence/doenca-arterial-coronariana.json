@@ -1,0 +1,56 @@
+{
+  "diseaseId": "doenca-arterial-coronariana",
+  "region": "BR",
+  "diseaseName": "Doença Arterial Coronariana",
+  "prevalence": {
+    "value": "7.2%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBC/DataSUS/VIGITEL",
+    "trend": "Stable with slight increase in urban areas due to aging population and lifestyle changes"
+  },
+  "incidence": {
+    "value": "250 per 100,000",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "DataSUS/SIM"
+  },
+  "burden": {
+    "dalyPerCapita": "450",
+    "mortalityRate": "180 per 100,000",
+    "year": 2024,
+    "source": "IHME/Global Burden of Disease Study"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Hypertension",
+      "Diabetes mellitus",
+      "Smoking",
+      "Obesity",
+      "Dyslipidemia",
+      "Sedentary lifestyle",
+      "Unhealthy diet high in saturated fats",
+      "Socioeconomic factors like poverty and limited healthcare access"
+    ],
+    "vulnerablePopulations": [
+      "Elderly individuals (>60 years)",
+      "Low socioeconomic status groups with poor nutrition and stress",
+      "Urban populations exposed to pollution and fast-paced lifestyles",
+      "Indigenous and rural communities with limited screening",
+      "Patients with multiple comorbidities"
+    ],
+    "diagnosticCriteria": "Diagnosis based on clinical symptoms (angina), ECG abnormalities, non-invasive tests (stress test, echocardiography), and invasive coronary angiography; classified by severity using ESC/ACC guidelines adapted for Brazilian context."
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "45%",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Approximately 10 million",
+    "controlRate": "55%"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Aligned with SBC national guidelines, emphasizing risk stratification tools like SCORE adapted for Brazilian populations.",
+    "treatmentProtocol": "Medical therapy (statins, antiplatelets), percutaneous coronary intervention (PCI), and coronary artery bypass grafting (CABG) available through SUS; emphasis on secondary prevention programs.",
+    "regionalChallenges": "Socioeconomic disparities leading to delayed diagnosis in North and Northeast regions; higher prevalence in South/Southeast due to urbanization and obesity epidemics; limited infrastructure in rural areas exacerbating access issues for low-income groups.",
+    "strongPoints": "Universal coverage via SUS providing free treatment; national initiatives like the Strategic Action Plan for Cardiovascular Health; strong cardiology networks in urban centers and growing telemedicine for remote areas."
+  }
+}

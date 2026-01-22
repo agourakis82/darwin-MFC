@@ -1,0 +1,25 @@
+{
+  "diseaseId": "bronquite-cronica",
+  "region": "IN",
+  "diseaseName": "Chronic Bronchitis",
+  "prevalence": {"value": "3.5%", "population": "Indian adults (~1.4 billion)", "year": 2024, "source": "ICMR National Respiratory Disease Survey", "trend": "increasing due to air pollution and biomass fuel exposure"},
+  "incidence": {"value": "2.5 per 1000", "population": "Indian adults", "year": 2024, "source": "Lung Care Foundation India Report"},
+  "burden": {"dalyPerCapita": "85", "mortalityRate": "65 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["biomass fuel exposure", "air pollution", "smoking", "tuberculosis coinfection", "occupational dust", "genetic predisposition"],
+    "vulnerablePopulations": ["rural women cooking with biomass", "elderly in urban slums", "low socioeconomic groups", "former TB patients"],
+    "diagnosticCriteria": "GOLD criteria adapted, clinical diagnosis in resource-limited settings"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "very limited spirometry access, <5% in rural areas",
+    "treatmentAvailable": true,
+    "estimatedPatients": "42 million - high burden",
+    "controlRate": "25% poor due to late diagnosis"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "GOLD criteria, clinical diagnosis common (chronic cough/sputum), limited spirometry",
+    "treatmentProtocol": "Bronchodilators (salbutamol), theophylline, limited ICS access, clean cooking fuel initiatives, Ayurvedic options (e.g., Vasarishta)",
+    "regionalChallenges": "Extreme air pollution (Delhi, Mumbai), biomass fuel use in 50% rural households, high TB coinfection, limited spirometry",
+    "strongPoints": "Ujjwala Yojana (clean cooking fuel program), affordable generic bronchodilators, Ayurvedic respiratory support"
+  }
+}

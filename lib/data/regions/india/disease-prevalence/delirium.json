@@ -1,0 +1,53 @@
+{
+  "diseaseId": "delirium",
+  "region": "IN",
+  "diseaseName": "Delirium",
+  "prevalence": {
+    "value": "15-30% of hospitalized older adults; higher in ICU",
+    "population": "Hospitalized older adults in India",
+    "year": 2024,
+    "source": "Geriatrics/critical care epidemiology syntheses",
+    "trend": "stable; underrecognition remains common"
+  },
+  "incidence": {
+    "value": "8-20% new-onset during hospitalization (older adults)",
+    "population": "Hospitalized older adults",
+    "year": 2024,
+    "source": "Inpatient cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case",
+    "mortalityRate": "Elevated (indirect)",
+    "year": 2024,
+    "source": "IHME/WHO inpatient outcomes context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "dementia",
+      "infection",
+      "dehydration",
+      "polypharmacy",
+      "ICU stay"
+    ],
+    "vulnerablePopulations": [
+      "older adults with baseline cognitive impairment",
+      "ICU patients",
+      "patients with sepsis"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis with CAM/4AT screening when used; identify reversible causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low to variable",
+    "treatmentAvailable": true,
+    "estimatedPatients": "large inpatient burden annually",
+    "controlRate": "Variable; limited staffing affects prevention bundle implementation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often missed, especially hypoactive delirium; screening tools inconsistently applied",
+    "treatmentProtocol": "Treat underlying cause, hydration, mobilization, sleep protocols; minimize sedatives; antipsychotics only for severe agitation when necessary",
+    "regionalChallenges": "High inpatient volumes and limited geriatric services",
+    "strongPoints": "Low-cost prevention strategies can reduce delirium when implemented"
+  }
+}
+

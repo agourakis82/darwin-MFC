@@ -1,0 +1,49 @@
+{
+  "diseaseId": "faringite-estreptococica",
+  "region": "IN",
+  "diseaseName": "Streptococcal pharyngitis",
+  "prevalence": {
+    "value": "~10-20% of pediatric pharyngitis episodes",
+    "population": "Indian children and adolescents",
+    "year": 2024,
+    "source": "Pediatric primary care syntheses",
+    "trend": "stable; seasonal peaks"
+  },
+  "incidence": {
+    "value": "~25-45 per 1,000 children/year (strep-confirmed)",
+    "population": "Children 5-15 years",
+    "year": 2024,
+    "source": "Pediatric cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; risk of rheumatic fever if untreated",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO URI and rheumatic fever context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "school/daycare exposure",
+      "crowding",
+      "winter/seasonal outbreaks",
+      "close contact with infected individuals"
+    ],
+    "vulnerablePopulations": [
+      "children 5-15 years",
+      "crowded households"
+    ],
+    "diagnosticCriteria": "Centor/McIsaac criteria with rapid antigen test or throat culture to confirm"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually",
+    "controlRate": "High with appropriate antibiotics"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis common; rapid testing limited",
+    "treatmentProtocol": "Penicillin/amoxicillin; avoid unnecessary antibiotics for viral pharyngitis",
+    "regionalChallenges": "Limited testing and antibiotic overuse",
+    "strongPoints": "Low-cost antibiotics widely available"
+  }
+}

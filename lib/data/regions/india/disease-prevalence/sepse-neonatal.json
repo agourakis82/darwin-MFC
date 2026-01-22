@@ -1,0 +1,53 @@
+{
+  "diseaseId": "sepse-neonatal",
+  "region": "IN",
+  "diseaseName": "Neonatal Sepsis",
+  "prevalence": {
+    "value": "~10-20 per 1,000 live births (higher in some settings)",
+    "population": "Live births in India",
+    "year": 2024,
+    "source": "National Neonatology Forum of India (NNF) / WHO newborn health estimates",
+    "trend": "decreasing in facilities with improved infection prevention; high burden persists in low-resource settings"
+  },
+  "incidence": {
+    "value": "~10-20 per 1,000 live births",
+    "population": "Neonates (0-28 days)",
+    "year": 2024,
+    "source": "Hospital-based neonatal network estimates"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case; major contributor to neonatal mortality",
+    "mortalityRate": "Case-fatality commonly ~10-30% depending on facility and resistance patterns",
+    "year": 2024,
+    "source": "WHO / IHME GBD neonatal infection estimates"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prematurity and low birth weight",
+      "home births or delayed facility access",
+      "prolonged rupture of membranes",
+      "invasive procedures and NICU exposure",
+      "overcrowding and limited infection prevention resources"
+    ],
+    "vulnerablePopulations": [
+      "preterm neonates",
+      "low birth weight infants",
+      "neonates in high-volume public maternity hospitals",
+      "rural and low-income families with delayed referral"
+    ],
+    "diagnosticCriteria": "Clinical syndrome with lab support (blood culture, CBC, CRP/procalcitonin) where available; sepsis bundles per national neonatal protocols"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; early recognition in SNCU/NICU and postnatal follow-up programmes",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands/year (high national birth cohort)",
+    "controlRate": "Variable; improved in facilities with strong SNCU/NICU capacity but affected by resistance and delayed presentation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SNCU/NICU protocols with clinical triggers; culture and sensitivity testing varies by district",
+    "treatmentProtocol": "Empiric antibiotics per national guidance (ampicillin + gentamicin for early-onset; broader regimens for late-onset guided by local resistance); supportive care in SNCU/NICU",
+    "regionalChallenges": "High caseloads, antimicrobial resistance, uneven NICU capacity, and delayed referral from peripheral facilities",
+    "strongPoints": "Expanding SNCU network and national focus on newborn survival with standardized facility-based care protocols"
+  }
+}
+

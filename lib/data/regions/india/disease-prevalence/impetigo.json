@@ -1,0 +1,51 @@
+{
+  "diseaseId": "impetigo",
+  "region": "IN",
+  "diseaseName": "Impetigo",
+  "prevalence": {
+    "value": "~2-5% (children; higher in tropical and crowded settings)",
+    "population": "Indian children",
+    "year": 2024,
+    "source": "Tropical dermatology surveillance; pediatric primary care syntheses",
+    "trend": "stable; outbreaks in crowded schools and slums"
+  },
+  "incidence": {
+    "value": "~80-200 per 1,000 children/year (episodes)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Pediatric infection cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; high morbidity and secondary infection risk",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO skin and soft tissue infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "skin trauma/insect bites",
+      "crowding",
+      "poor hygiene and sanitation",
+      "warm humid climate",
+      "atopic dermatitis"
+    ],
+    "vulnerablePopulations": [
+      "children 2-10 years",
+      "low-income communities",
+      "patients with eczema"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis of honey-colored crusted lesions; culture if MRSA suspected or recurrent outbreaks"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually",
+    "controlRate": "High with prompt antibiotics and hygiene measures"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis common; culture testing limited to tertiary centers",
+    "treatmentProtocol": "Topical mupirocin for limited lesions; oral antibiotics for extensive disease; hygiene measures",
+    "regionalChallenges": "Over-the-counter antibiotic use and resistance concerns",
+    "strongPoints": "Low-cost antibiotics and primary care access for early treatment"
+  }
+}

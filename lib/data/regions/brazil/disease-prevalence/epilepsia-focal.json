@@ -1,0 +1,52 @@
+{
+  "diseaseId": "epilepsia-focal",
+  "region": "BR",
+  "diseaseName": "Epilepsia Focal",
+  "prevalence": {
+    "value": "0.3-0.6%",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "ILAE-informed epilepsy epidemiology syntheses + regional context",
+    "trend": "stable; increased diagnosis with better imaging access"
+  },
+  "incidence": {
+    "value": "15-35 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Epilepsy cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Elevated vs general population (SUDEP/injury-related)",
+    "year": 2024,
+    "source": "IHME GBD (epilepsy) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "stroke",
+      "traumatic brain injury",
+      "CNS infections (regional)",
+      "brain tumors",
+      "cortical malformations"
+    ],
+    "vulnerablePopulations": [
+      "older adults post-stroke",
+      "patients with prior TBI",
+      "patients with limited access to MRI/EEG"
+    ],
+    "diagnosticCriteria": "ILAE criteria for epilepsy; focal seizure semiology; EEG and MRI for classification and etiology where available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~600,000-1.2 million",
+    "controlRate": "Moderate; seizure control depends on ASM access and specialist follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EEG/MRI access variable in SUS; specialist evaluation concentrated in capitals",
+    "treatmentProtocol": "ASMs such as carbamazepine/levetiracetam; surgical evaluation for drug-resistant focal epilepsy in reference centers",
+    "regionalChallenges": "Treatment gap and limited access to epilepsy surgery programs outside large cities",
+    "strongPoints": "Specialized centers exist and core ASMs are available"
+  }
+}
+

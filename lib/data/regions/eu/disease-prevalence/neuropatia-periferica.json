@@ -1,0 +1,51 @@
+{
+  "diseaseId": "neuropatia-periferica",
+  "region": "EU",
+  "diseaseName": "Peripheral neuropathy",
+  "prevalence": {
+    "value": "~1-3% (general); ~7-10% in older adults",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European neurology epidemiology syntheses",
+    "trend": "increasing with aging and diabetes prevalence"
+  },
+  "incidence": {
+    "value": "~2-4 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Neurology outpatient cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to pain, gait impairment and falls",
+    "mortalityRate": "Low (indirect via falls and comorbidity)",
+    "year": 2024,
+    "source": "WHO Europe/IHME neurologic burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "diabetes",
+      "alcohol use",
+      "vitamin B12 deficiency",
+      "chemotherapy or neurotoxic drugs",
+      "autoimmune disease"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with diabetes",
+      "patients with alcohol use disorder"
+    ],
+    "diagnosticCriteria": "Clinical neuropathic symptoms and exam; nerve conduction studies when indicated; evaluate reversible causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic screening in diabetes care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions (including diabetic and other etiologies)",
+    "controlRate": "High with structured care and access to neurology"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EMG/NCS widely available; multidisciplinary neuropathy clinics in many systems",
+    "treatmentProtocol": "Treat underlying cause, neuropathic pain meds, physiotherapy and fall prevention",
+    "regionalChallenges": "Polypharmacy in older adults and chronic pain management",
+    "strongPoints": "Broad access to diagnostics and guideline-based therapies"
+  }
+}

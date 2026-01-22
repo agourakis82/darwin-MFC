@@ -1,0 +1,51 @@
+{
+  "diseaseId": "sindrome-ansiedade-generalizada",
+  "region": "EU",
+  "diseaseName": "Generalized anxiety syndrome",
+  "prevalence": {
+    "value": "~4-6% (adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European mental health epidemiology syntheses",
+    "trend": "stable to increasing with stressors"
+  },
+  "incidence": {
+    "value": "~5-9 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Mental health cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to chronic symptoms and functional impairment",
+    "mortalityRate": "Low (indirect via comorbidity and suicide risk)",
+    "year": 2024,
+    "source": "WHO Europe/IHME mental health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "prior anxiety/depression",
+      "chronic stress",
+      "family history",
+      "substance use"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "young adults",
+      "people with chronic illness"
+    ],
+    "diagnosticCriteria": "Persistent excessive worry for >6 months with functional impairment; DSM-5 criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic screening in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "Moderate to high with access to psychotherapy and SSRIs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis with standardized screening tools",
+    "treatmentProtocol": "CBT and SSRIs/SNRIs; lifestyle interventions; avoid long-term benzodiazepines",
+    "regionalChallenges": "Access gaps to psychotherapy in some countries",
+    "strongPoints": "Structured mental health services and evidence-based guidelines"
+  }
+}

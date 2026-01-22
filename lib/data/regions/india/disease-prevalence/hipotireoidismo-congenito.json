@@ -1,0 +1,49 @@
+{
+  "diseaseId": "hipotireoidismo-congenito",
+  "region": "IN",
+  "diseaseName": "Congenital hypothyroidism",
+  "prevalence": {
+    "value": "~1 per 2,000-4,000 live births",
+    "population": "Newborns in India",
+    "year": 2024,
+    "source": "Newborn screening program reports; endocrine epidemiology",
+    "trend": "stable; detection improves with screening expansion"
+  },
+  "incidence": {
+    "value": "~1 per 2,000-4,000 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "Newborn screening data"
+  },
+  "burden": {
+    "dalyPerCapita": "low with early treatment; high disability without treatment",
+    "mortalityRate": "Low with treatment",
+    "year": 2024,
+    "source": "WHO child health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "thyroid dysgenesis",
+      "iodine deficiency/excess",
+      "family history",
+      "prematurity"
+    ],
+    "vulnerablePopulations": [
+      "newborns",
+      "preterm infants"
+    ],
+    "diagnosticCriteria": "Elevated TSH/low T4 on newborn screening; confirmatory serum testing"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; expanding newborn screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Thousands of children",
+    "controlRate": "High with early levothyroxine therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Screening coverage uneven; confirmatory testing in referral labs",
+    "treatmentProtocol": "Early levothyroxine replacement with regular monitoring",
+    "regionalChallenges": "Screening gaps and delayed follow-up in rural areas",
+    "strongPoints": "Effective therapy and growing newborn screening coverage"
+  }
+}

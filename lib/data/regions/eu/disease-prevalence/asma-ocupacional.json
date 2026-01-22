@@ -1,0 +1,52 @@
+{
+  "diseaseId": "asma-ocupacional",
+  "region": "EU",
+  "diseaseName": "Occupational Asthma",
+  "prevalence": {
+    "value": "~0.3-1% (workforce); ~10-15% of adult asthma attributable to work exposures",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "European occupational health surveillance; occupational asthma epidemiology syntheses",
+    "trend": "stable; prevention reduces incidence in regulated workplaces"
+  },
+  "incidence": {
+    "value": "~0.1-0.4 per 1,000 workers/year (high-risk sectors)",
+    "population": "Workers in high-exposure jobs",
+    "year": 2024,
+    "source": "Occupational cohort studies and surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; significant productivity loss and chronic asthma burden for affected workers",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "WHO Europe/IHME asthma burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "sensitizers (flour, latex, isocyanates)",
+      "irritants (cleaning agents, fumes)",
+      "poor ventilation",
+      "inadequate PPE",
+      "pre-existing atopy"
+    ],
+    "vulnerablePopulations": [
+      "food industry workers",
+      "healthcare workers",
+      "industrial workers with chemical exposure",
+      "cleaning workers"
+    ],
+    "diagnosticCriteria": "Work-related symptom pattern with objective confirmation (spirometry/peak flow variation); specialist evaluation to identify sensitizers and guide workplace controls"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "workplace surveillance varies; occupational health services common in many regulated sectors",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands (subset of adult asthma across EU)",
+    "controlRate": "High with exposure control and guideline-based asthma therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Occupational medicine and pulmonology pathways facilitate confirmation and workplace interventions",
+    "treatmentProtocol": "Exposure control/removal, workplace adjustments, PPE, guideline-based ICS therapy, documentation for occupational disease reporting/compensation",
+    "regionalChallenges": "Ensuring consistent reporting and coverage in small businesses and contractors",
+    "strongPoints": "Strong occupational health regulation and access to diagnostics and evidence-based asthma therapy"
+  }
+}

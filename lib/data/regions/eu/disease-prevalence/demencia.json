@@ -1,0 +1,53 @@
+{
+  "diseaseId": "demencia",
+  "region": "EU",
+  "diseaseName": "Dementia",
+  "prevalence": {
+    "value": "~7-9% in adults >65 years",
+    "population": "EU older adults",
+    "year": 2024,
+    "source": "WHO Europe / European dementia epidemiology syntheses",
+    "trend": "increasing due to aging demographics; some countries show slower growth due to risk factor control"
+  },
+  "incidence": {
+    "value": "~15-25 per 1,000 person-years in adults >65 years",
+    "population": "EU older adults",
+    "year": 2024,
+    "source": "European cohort studies / IHME GBD"
+  },
+  "burden": {
+    "dalyPerCapita": "0.02-0.05 (older-adult concentrated)",
+    "mortalityRate": "High in older age groups (direct and indirect)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "hypertension and cardiovascular disease",
+      "diabetes mellitus",
+      "hearing loss",
+      "physical inactivity and social isolation"
+    ],
+    "vulnerablePopulations": [
+      "older adults (>80 years)",
+      "people living alone",
+      "patients with prior stroke",
+      "frail older adults with multimorbidity"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis with cognitive testing (MMSE/MoCA) and functional assessment; imaging and biomarker pathways increasingly used in specialist settings"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; many countries support opportunistic screening and memory clinic referral pathways",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~7-10 million",
+    "controlRate": "Management generally strong with multidisciplinary support, though access varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Memory clinics and specialist pathways common; increasing access to advanced diagnostics in some countries",
+    "treatmentProtocol": "Non-pharmacologic care plans and caregiver support; cholinesterase inhibitors/memantine where indicated; management of vascular risks; social services integration",
+    "regionalChallenges": "Rising demand for long-term care and disparities in access between member states and rural vs urban areas",
+    "strongPoints": "Established multidisciplinary care models and strong social support services in many member states"
+  }
+}
+

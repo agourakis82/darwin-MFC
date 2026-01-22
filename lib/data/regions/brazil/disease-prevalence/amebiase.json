@@ -1,0 +1,52 @@
+{
+  "diseaseId": "amebiase",
+  "region": "BR",
+  "diseaseName": "Amebíase",
+  "prevalence": {
+    "value": "~1-3% (higher in sanitation-vulnerable areas)",
+    "population": "Brazilian population (varies by region and sanitation)",
+    "year": 2024,
+    "source": "Parasitology surveillance syntheses in Latin America; WHO intestinal parasite context",
+    "trend": "decreasing overall with sanitation improvements; persistent hotspots in vulnerable communities"
+  },
+  "incidence": {
+    "value": "Variable; outbreaks/seasonal increases in high-risk settings",
+    "population": "General population",
+    "year": 2024,
+    "source": "Public health surveillance and parasitology studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low nationally; higher in endemic pockets due to dysentery and liver abscess",
+    "mortalityRate": "Low; higher in severe invasive disease without timely treatment",
+    "year": 2024,
+    "source": "WHO/IHME enteric infections context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "unsafe water and sanitation",
+      "crowding",
+      "food contamination",
+      "travel to endemic areas",
+      "immunosuppression (risk of invasive disease)"
+    ],
+    "vulnerablePopulations": [
+      "children in low-sanitation communities",
+      "people in informal settlements",
+      "travelers and migrants from endemic zones",
+      "immunocompromised patients"
+    ],
+    "diagnosticCriteria": "Clinical syndrome (diarrhea/dysentery) plus stool testing; antigen/PCR improves specificity vs microscopy; evaluate for amoebic liver abscess with imaging and serology when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; testing based on symptoms/outbreaks",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands (varies by endemicity)",
+    "controlRate": "Good with prompt therapy; reinfection risk persists where sanitation is poor"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Microscopy common; antigen/PCR more available in reference labs; imaging for liver abscess in tertiary care",
+    "treatmentProtocol": "Metronidazole/tinidazole for invasive disease plus luminal agent (e.g., paromomycin) when available; oral rehydration and sanitation interventions",
+    "regionalChallenges": "Diagnostic limitations in primary care and persistent sanitation inequities in some regions",
+    "strongPoints": "Effective, low-cost therapy; strong impact of sanitation/clean water programs"
+  }
+}

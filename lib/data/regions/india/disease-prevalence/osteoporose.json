@@ -1,0 +1,25 @@
+{
+  "diseaseId": "osteoporose",
+  "region": "IN",
+  "diseaseName": "Osteoporosis",
+  "prevalence": {"value": "20-30%", "population": "Indian adults >50 years (~1.4 billion)", "year": 2024, "source": "IOF India & ICMR", "trend": "increasing due to aging population and urbanization"},
+  "incidence": {"value": "15 per 1000", "population": "Indian adults >50", "year": 2024, "source": "ICMR & IOF India"},
+  "burden": {"dalyPerCapita": "25", "mortalityRate": "0.5 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Vitamin D deficiency (>80% prevalence)", "Low calcium diet and low dairy intake", "Early menopause (average age 46-48 years)", "Sedentary lifestyle in urban areas", "Low BMI and malnutrition", "Darker skin pigmentation reducing vitamin D synthesis"],
+    "vulnerablePopulations": ["Postmenopausal women (30-50% prevalence)", "Elderly >60 years", "Urban populations with sedentary lifestyles", "Rural women with poor nutrition and low sunlight exposure"],
+    "diagnosticCriteria": "WHO DXA T-score ≤ -2.5, adapted with Indian ethnic-specific reference ranges (e.g., lower BMD thresholds)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "very low, <5% in public sector, limited DXA machines",
+    "treatmentAvailable": true,
+    "estimatedPatients": "50 million - underdiagnosed",
+    "controlRate": "10% poor due to limited screening and awareness"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "DXA when available, FRAX India tool, clinical assessment common in resource-limited settings",
+    "treatmentProtocol": "Calcium + vitamin D supplementation, bisphosphonates, lifestyle counseling; Ayurvedic calcium sources (e.g., kukkutandatvak bhasma)",
+    "regionalChallenges": "Highest burden globally at younger ages (mean onset 10 years earlier), severe vitamin D deficiency (>70% population), limited DXA access, low dairy consumption, early menopause, skin pigmentation reducing vitamin D synthesis",
+    "strongPoints": "Growing awareness via IOF India campaigns, affordable generic bisphosphonates, Ayurvedic supplements"
+  }
+}

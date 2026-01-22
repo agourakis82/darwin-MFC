@@ -1,0 +1,25 @@
+{
+  "diseaseId": "enxaqueca",
+  "region": "IN",
+  "diseaseName": "Migraine",
+  "prevalence": {"value": "14.5%", "population": "Indian adults (~1.4 billion)", "year": 2024, "source": "ICMR National Health Profile & IHS India", "trend": "increasing due to urbanization and stress"},
+  "incidence": {"value": "12 per 1000", "population": "Indian adults", "year": 2024, "source": "ICMR epidemiological surveys"},
+  "burden": {"dalyPerCapita": "150 - among highest for neurological conditions", "mortalityRate": "Negligible", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Stress", "Heat exposure", "Bright sunlight", "Genetic predisposition", "Hormonal fluctuations", "Dietary triggers"],
+    "vulnerablePopulations": ["Women (2-3x higher)", "Urban working professionals", "Low socioeconomic groups"],
+    "diagnosticCriteria": "ICHD-3 criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Low; no routine national screening, primarily opportunistic in urban clinics",
+    "treatmentAvailable": true,
+    "estimatedPatients": "140 million",
+    "controlRate": "25% overall - low in rural areas due to access barriers"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICHD-3 with clinical diagnosis in resource-limited settings",
+    "treatmentProtocol": "Acute: NSAIDs, limited triptan access; Prophylaxis: propranolol, amitriptyline; Ayurvedic: Shirolepa, Nasya",
+    "regionalChallenges": "Underdiagnosis, limited specialist access, expensive triptans, cultural stigma viewing headaches as normal",
+    "strongPoints": "Growing awareness, affordable generic NSAIDs, Ayurvedic alternatives integrated into care"
+  }
+}

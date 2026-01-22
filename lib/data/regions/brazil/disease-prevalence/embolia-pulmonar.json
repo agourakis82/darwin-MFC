@@ -1,0 +1,55 @@
+{
+  "diseaseId": "embolia-pulmonar",
+  "region": "BR",
+  "diseaseName": "Embolia Pulmonar (EP)",
+  "prevalence": {
+    "value": "0.1% (point prevalence; rare but high severity)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "DataSUS/SIM + estimativas epidemiológicas (VTE/PE)",
+    "trend": "increasing due to aging, cancer burden, and improved diagnostic access (CTPA)"
+  },
+  "incidence": {
+    "value": "60-100 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "IHME GBD (VTE) extrapolated + Brazilian hospitalization patterns (DataSUS)"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0003-0.0008",
+    "mortalityRate": "5-15 per 100,000 (higher with delayed diagnosis)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "recent surgery or trauma",
+      "immobility/hospitalization",
+      "cancer",
+      "pregnancy/postpartum",
+      "estrogen therapy",
+      "prior VTE and thrombophilia"
+    ],
+    "vulnerablePopulations": [
+      "older adults (>65 years)",
+      "post-operative patients",
+      "cancer patients",
+      "pregnant/postpartum people",
+      "patients in ICUs/long hospital stays"
+    ],
+    "diagnosticCriteria": "Clinical suspicion with pre-test probability (e.g., Wells), D-dimer (when appropriate), confirmation by CTPA or V/Q scan; DVT ultrasound supportive; follow Brazilian cardiology/pneumology guidance aligned with ESC"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; risk-based prophylaxis in hospitals is variable",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~130,000-200,000 VTE events/year (including PE and DVT)",
+    "controlRate": "Variable; outcomes depend on timely CTPA access and anticoagulation continuity"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "CTPA availability concentrated in larger hospitals; D-dimer use in APS/UPA varies; referral delays in remote areas",
+    "treatmentProtocol": "Anticoagulation (heparin/LMWH then DOACs or warfarin); thrombolysis or thrombectomy for high-risk PE in reference centers; prophylaxis protocols in surgical wards",
+    "regionalChallenges": "Unequal access to CTPA and ICU care, delays in diagnosis, and adherence barriers for long-term anticoagulation follow-up in SUS",
+    "strongPoints": "SUS hospital network can provide acute anticoagulation; growing DOAC access in private/selected public pathways; national guideline alignment with ESC"
+  }
+}
+

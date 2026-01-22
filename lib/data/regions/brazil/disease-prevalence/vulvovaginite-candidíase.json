@@ -1,0 +1,53 @@
+{
+  "diseaseId": "vulvovaginite-candidíase",
+  "region": "BR",
+  "diseaseName": "Candidíase Vulvovaginal",
+  "prevalence": {
+    "value": "70-75% lifetime in women; recurrent VVC ~5-8%",
+    "population": "Women",
+    "year": 2024,
+    "source": "FEBRASGO/gynecology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "high (episodes common); recurrent cases increasing with diabetes and antibiotic use",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; high QOL impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO women's health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "antibiotic use",
+      "pregnancy",
+      "diabetes mellitus",
+      "immunosuppression",
+      "high estrogen states"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people",
+      "women with diabetes",
+      "women with recurrent VVC",
+      "immunosuppressed patients"
+    ],
+    "diagnosticCriteria": "Typical symptoms (pruritus, discharge) plus microscopy (budding yeast/pseudohyphae) when available; pH usually normal; culture for recurrent/complicated cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high episode burden",
+    "controlRate": "High for uncomplicated cases; recurrent VVC requires longer regimens"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often clinically diagnosed in APS; microscopy/culture availability varies",
+    "treatmentProtocol": "Topical azoles or oral fluconazole; longer maintenance regimens for recurrent VVC; address diabetes control and triggers",
+    "regionalChallenges": "Misdiagnosis vs bacterial vaginosis/STIs and limited lab confirmation for recurrent cases",
+    "strongPoints": "Effective low-cost antifungals widely available"
+  }
+}
+

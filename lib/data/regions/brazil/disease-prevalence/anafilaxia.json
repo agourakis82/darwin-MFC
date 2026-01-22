@@ -1,0 +1,53 @@
+{
+  "diseaseId": "anafilaxia",
+  "region": "BR",
+  "diseaseName": "Anafilaxia",
+  "prevalence": {
+    "value": "~1-2% lifetime risk",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Allergy/anaphylaxis epidemiology syntheses; WHO allergy context",
+    "trend": "increasing recognition and emergency presentations (food and drug triggers)"
+  },
+  "incidence": {
+    "value": "~50-100 per 100,000/year (ED-treated events; variable)",
+    "population": "General population",
+    "year": 2024,
+    "source": "International emergency care incidence syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; high acuity events and anxiety/avoidance burden",
+    "mortalityRate": "Low but preventable (delayed epinephrine)",
+    "year": 2024,
+    "source": "WHO/IHME injury and acute allergy context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "food allergy (peanut/tree nuts, shellfish, milk/egg)",
+      "drug allergy (beta-lactams, NSAIDs)",
+      "insect stings (Hymenoptera)",
+      "asthma (risk for severe reactions)",
+      "previous anaphylaxis",
+      "mast cell disorders (rare)"
+    ],
+    "vulnerablePopulations": [
+      "children with food allergy",
+      "patients with asthma",
+      "patients with limited access to emergency services and epinephrine",
+      "rural areas with longer EMS response times"
+    ],
+    "diagnosticCriteria": "Clinical criteria (acute onset with airway/breathing/circulation compromise or hypotension after allergen exposure); serum tryptase supports diagnosis when measured; response to epinephrine"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis and management after event",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions with lifetime risk; acute events far fewer",
+    "controlRate": "Moderate; depends on timely epinephrine use and access to allergist follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Emergency diagnosis in UPA/ER; allergy referral for trigger work-up and prevention planning",
+    "treatmentProtocol": "Immediate IM epinephrine; airway/oxygen/IV fluids as needed; observation for biphasic reactions; prescribe/educate on epinephrine auto-injector where available; avoidance plan and action plan",
+    "regionalChallenges": "Limited access and cost barriers for epinephrine auto-injectors, uneven allergy specialist availability",
+    "strongPoints": "Emergency services can treat acute events; increasing public and professional awareness"
+  }
+}

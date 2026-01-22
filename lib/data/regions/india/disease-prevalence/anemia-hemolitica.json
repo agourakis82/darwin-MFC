@@ -1,0 +1,51 @@
+{
+  "diseaseId": "anemia-hemolitica",
+  "region": "IN",
+  "diseaseName": "Hemolytic Anemia",
+  "prevalence": {
+    "value": "~5-20 per 100,000 (all causes; varies)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Hematology epidemiology syntheses (AIHA and hereditary hemolytic anemias)",
+    "trend": "stable; detection improving with better lab access"
+  },
+  "incidence": {
+    "value": "~1-3 per 100,000/year (AIHA component)",
+    "population": "General population",
+    "year": 2024,
+    "source": "AIHA incidence meta-analyses"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; can be severe in acute hemolysis or chronic transfusion needs",
+    "mortalityRate": "Low to moderate depending on cause and comorbidities",
+    "year": 2024,
+    "source": "IHME anemia and hematologic disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autoimmune disease",
+      "lymphoproliferative disorders",
+      "infections and drugs",
+      "hereditary RBC disorders",
+      "prosthetic valves (less common)"
+    ],
+    "vulnerablePopulations": [
+      "older adults (AIHA)",
+      "patients with autoimmune disease or malignancy",
+      "patients with limited hematology access"
+    ],
+    "diagnosticCriteria": "CBC plus hemolysis markers (LDH, bilirubin, haptoglobin), smear, DAT/Coombs for immune hemolysis; evaluate underlying etiology"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; evaluated when symptomatic or abnormal CBC found",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands (broad category; uncertain)",
+    "controlRate": "Variable; improves with timely diagnosis and targeted therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "DAT testing availability varies; advanced work-up concentrated in tertiary centers",
+    "treatmentProtocol": "Treat underlying cause; steroids for warm AIHA, immunosuppressants/rituximab when indicated; transfusions; folate supplementation",
+    "regionalChallenges": "Specialist access and high cost of advanced immunotherapies for some patients",
+    "strongPoints": "Core diagnostics and steroid-based treatment widely available"
+  }
+}

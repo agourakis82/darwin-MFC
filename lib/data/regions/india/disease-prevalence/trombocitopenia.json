@@ -1,0 +1,53 @@
+{
+  "diseaseId": "trombocitopenia",
+  "region": "IN",
+  "diseaseName": "Thrombocytopenia",
+  "prevalence": {
+    "value": "0.5-1.5% (any cause; varies by season and setting)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Hematology and infectious disease epidemiology syntheses",
+    "trend": "stable; seasonal increases with dengue outbreaks"
+  },
+  "incidence": {
+    "value": "1-5 per 1,000/year (detected cases)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Clinical and hospital epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "variable; depends on etiology",
+    "mortalityRate": "Low overall; higher in severe secondary causes and bleeding",
+    "year": 2024,
+    "source": "IHME/WHO hematologic context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "dengue and other infections",
+      "ITP",
+      "medications",
+      "liver disease/hypersplenism",
+      "bone marrow disorders"
+    ],
+    "vulnerablePopulations": [
+      "patients during dengue season",
+      "pregnant people",
+      "patients with chronic liver disease",
+      "hospitalized patients"
+    ],
+    "diagnosticCriteria": "Platelets <150,000/µL with evaluation of smear and secondary causes; bleeding risk assessment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "CBC used in hospitals and prenatal care; no population screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very large transient burden during outbreaks",
+    "controlRate": "Variable; depends on cause and access to specialist care and transfusion services"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "CBC widely used in febrile illness evaluation; specialized hematology workups concentrated in tertiary centers",
+    "treatmentProtocol": "Supportive care in dengue; treat underlying causes; ITP management with steroids/IVIG; transfusion when indicated",
+    "regionalChallenges": "High seasonal caseloads during dengue outbreaks and limited transfusion capacity in some districts",
+    "strongPoints": "Broad availability of CBC testing and expanding hospital services"
+  }
+}
+

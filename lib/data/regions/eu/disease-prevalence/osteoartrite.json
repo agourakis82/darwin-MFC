@@ -1,0 +1,11 @@
+{
+  "diseaseId": "osteoartrite",
+  "region": "EU",
+  "diseaseName": "Osteoarthritis",
+  "prevalence": {"value": "10-15%", "population": "EU adults (~447 million)", "year": 2024, "source": "EULAR/WHO Europe", "trend": "Increasing due to aging population"},
+  "incidence": {"value": "200-300 per 100,000 adults", "population": "EU adults", "year": 2024, "source": "EULAR guidelines"},
+  "burden": {"dalyPerCapita": "0.2-0.5% of total DALYs", "mortalityRate": "<0.1 per 100,000", "year": 2024, "source": "WHO Europe/EULAR"},
+  "epidemiology": {"riskFactors": ["Age >50 years", "Obesity", "Female sex", "Joint injury", "Genetic predisposition"], "vulnerablePopulations": ["Elderly (>65 years)", "Obese individuals", "Women post-menopause", "Former athletes"], "diagnosticCriteria": "Clinical diagnosis per EULAR/ACR criteria: pain, stiffness, and radiographic evidence (Kellgren-Lawrence grade ≥2)"},
+  "publicHealthSystem": {"screeningCoverage": "No routine screening; opportunistic via primary care", "treatmentAvailable": true, "estimatedPatients": "~45-67 million adults", "controlRate": "Symptom management in 60-70% of diagnosed cases"},
+  "regionalSpecificities": {"diagnosisCriteria": "EULAR recommendations: clinical + imaging", "treatmentProtocol": "Non-pharmacological (exercise, weight loss) first-line; NSAIDs, intra-articular injections, joint replacement per EULAR guidelines", "regionalChallenges": "Heterogeneous access across member states; rising costs from aging demographics", "strongPoints": "Standardized EULAR guidelines; advanced orthopedic services in Western EU"}
+}

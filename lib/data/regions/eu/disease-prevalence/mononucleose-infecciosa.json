@@ -1,0 +1,48 @@
+{
+  "diseaseId": "mononucleose-infecciosa",
+  "region": "EU",
+  "diseaseName": "Infectious mononucleosis (EBV)",
+  "prevalence": {
+    "value": "Common in adolescents and young adults; most adults seropositive",
+    "population": "EU adolescents and young adults",
+    "year": 2024,
+    "source": "Infectious disease epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~4-10 per 1,000 adolescents/year",
+    "population": "Adolescents and young adults",
+    "year": 2024,
+    "source": "Primary care and school health cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; short-term fatigue and school/work absence",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe infectious disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "close contact and saliva exposure",
+      "adolescent/young adult age",
+      "crowding"
+    ],
+    "vulnerablePopulations": [
+      "adolescents and young adults",
+      "college students"
+    ],
+    "diagnosticCriteria": "Clinical syndrome with lymphadenopathy and fatigue; heterophile antibody test or EBV serology"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands of episodes annually",
+    "controlRate": "High with supportive care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care; serology widely available",
+    "treatmentProtocol": "Supportive care, hydration, avoid contact sports with splenomegaly; corticosteroids only for complications",
+    "regionalChallenges": "Overuse of antibiotics before diagnosis in some settings",
+    "strongPoints": "Clear clinical management and access to diagnostic testing"
+  }
+}

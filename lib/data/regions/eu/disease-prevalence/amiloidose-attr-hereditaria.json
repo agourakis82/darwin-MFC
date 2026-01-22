@@ -1,0 +1,50 @@
+{
+  "diseaseId": "amiloidose-attr-hereditaria",
+  "region": "EU",
+  "diseaseName": "Hereditary Transthyretin Amyloidosis (hATTR)",
+  "prevalence": {
+    "value": "~0.5-2 per 100,000 (higher in endemic areas/founder mutations)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "Orphanet; European amyloidosis registries and cohort studies",
+    "trend": "increasing diagnosed prevalence due to better awareness and access to genetics and imaging"
+  },
+  "incidence": {
+    "value": "Rare; family-based detection and referral dominate",
+    "population": "Adults (typical onset 30-70 years)",
+    "year": 2024,
+    "source": "European amyloidosis registries"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but high per-patient morbidity and mortality without disease-modifying therapy",
+    "mortalityRate": "Meaningful without therapy; reduced with earlier diagnosis and treatment",
+    "year": 2024,
+    "source": "Registry outcomes and WHO Europe chronic disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "pathogenic TTR variant (autosomal dominant)",
+      "family history",
+      "age",
+      "delayed diagnosis due to multisystem presentation"
+    ],
+    "vulnerablePopulations": [
+      "members of affected families",
+      "patients with progressive neuropathy",
+      "patients with cardiomyopathy plus red flags"
+    ],
+    "diagnosticCriteria": "Genetic confirmation (TTR), cardiac imaging and scintigraphy protocols, biopsy with amyloid typing when needed; multidisciplinary neurology/cardiology assessment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no population screening; cascade testing in families and targeted evaluation of suspected cases",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands across EU (rare; underdiagnosed historically)",
+    "controlRate": "Moderate to high where therapies and specialist pathways are accessible"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist amyloidosis centers and referral networks exist in many countries",
+    "treatmentProtocol": "Disease-modifying therapy (TTR stabilizers/silencers) per national reimbursement, heart failure and neuropathy management, genetic counseling/cascade testing",
+    "regionalChallenges": "Cross-country differences in reimbursement and access to high-cost therapies",
+    "strongPoints": "Strong specialist networks, genetics and imaging access, and increasing availability of disease-modifying therapies"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "diseaseId": "bocio-simples",
+  "region": "BR",
+  "diseaseName": "Bocio simples",
+  "prevalence": {
+    "value": "~3-8% (adults; varies by iodine intake)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBEM and iodine nutrition surveys",
+    "trend": "stable; localized areas with iodine imbalance"
+  },
+  "incidence": {
+    "value": "~5-10 per 1,000 adults/year (new detected goiter)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Endocrinology outpatient data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; cosmetic and compressive symptoms in some cases",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO/IHME endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "iodine deficiency or excess",
+      "female sex",
+      "older age",
+      "family history of thyroid disease"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "regions with iodine imbalance"
+    ],
+    "diagnosticCriteria": "Clinical neck exam and thyroid ultrasound; TSH evaluation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; incidental detection",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions with goiter or nodular thyroid",
+    "controlRate": "High with monitoring and iodine balance programs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Ultrasound and lab testing available in referral centers",
+    "treatmentProtocol": "Observation, treat iodine imbalance; surgery if compressive or suspicious nodules",
+    "regionalChallenges": "Uneven access to ultrasound in smaller municipalities",
+    "strongPoints": "Iodized salt programs and endocrinology services"
+  }
+}

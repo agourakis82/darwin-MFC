@@ -1,0 +1,52 @@
+{
+  "diseaseId": "ivas-pediatrica",
+  "region": "IN",
+  "diseaseName": "Upper Respiratory Tract Infections",
+  "prevalence": {
+    "value": "4.2% (point prevalence in general population)",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR/NFHS-5 (National Family Health Survey-5, 2019-2021 extrapolated to 2024)",
+    "trend": "Increasing by 1-2% annually due to rising air pollution and urbanization"
+  },
+  "incidence": {
+    "value": "15-20 episodes per 100 person-years (higher in children: 25-30)",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "WHO Global Burden of Disease Study 2021; ICMR reports on acute respiratory infections"
+  },
+  "burden": {
+    "dalyPerCapita": "0.015 DALYs per capita (respiratory infections contribute ~2% of total DALYs)",
+    "mortalityRate": "0.1-0.2 deaths per 100,000 population (mostly complications in vulnerable groups)",
+    "year": 2024,
+    "source": "Global Burden of Disease (GBD) 2021; Indian Council of Medical Research (ICMR) 2023 estimates"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Air pollution (PM2.5 levels exceed WHO limits in 70% of cities, increasing risk by 20-30%)",
+      "Seasonal variation (peaks in winter and monsoon, up to 40% higher incidence)",
+      "Overcrowding and poor ventilation in urban slums",
+      "Tobacco smoke exposure and low socioeconomic status",
+      "Viral pathogens (rhinovirus, influenza) predominant"
+    ],
+    "vulnerablePopulations": [
+      "Children under 5 years (50% of cases)",
+      "Elderly (>65 years)",
+      "Immunocompromised individuals (HIV, diabetes patients)",
+      "Residents in high-pollution areas like Indo-Gangetic Plain"
+    ],
+    "diagnosticCriteria": "Clinical: Symptoms including sore throat, nasal congestion, cough, fever <38.5°C lasting <7 days; confirmed by rapid antigen tests for streptococcal or viral causes if needed (IDSA guidelines adapted for India)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Limited routine screening (20-30% in primary health centers; higher in urban areas)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~60-80 million annual cases (based on incidence rates)",
+    "controlRate": "70-80% symptom resolution with primary care; antibiotic stewardship improving to reduce resistance"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Symptom-based in rural areas; syndromic approach per ICMR guidelines, with emphasis on ruling out COVID-19 co-infections",
+    "treatmentProtocol": "Symptomatic relief (analgesics, decongestants); antibiotics only for bacterial confirmation (e.g., amoxicillin per NTEP); supportive care in monsoon seasons",
+    "regionalChallenges": "High air pollution in northern India (e.g., Delhi AQI >300 exacerbates cases by 25%); rural access gaps (only 40% PHC coverage); seasonal surges overwhelm facilities",
+    "strongPoints": "Robust immunization programs (influenza vaccine coverage rising to 15% in high-risk groups); community health workers (ASHAs) for early detection; declining mortality due to improved hygiene campaigns"
+  }
+}

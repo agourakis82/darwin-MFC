@@ -1,0 +1,54 @@
+{
+  "diseaseId": "dengue",
+  "region": "IN",
+  "diseaseName": "Dengue",
+  "prevalence": {
+    "value": "0.1-0.5% annual reported incidence (substantial underreporting likely)",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "National Centre for Disease Control (NCDC) / NVBDCP-NCVBDC / WHO",
+    "trend": "increasing in many urban centers with expanding Aedes range and seasonal peaks"
+  },
+  "incidence": {
+    "value": "1-5 per 1,000/year (reported, outbreak-dependent)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "NCDC/NVBDCP surveillance reports"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0003-0.001 (outbreak-dependent)",
+    "mortalityRate": "Low overall; higher in delayed presentation and severe dengue",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) / WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Aedes exposure in dense urban settings",
+      "monsoon season and water storage practices",
+      "poor solid waste management",
+      "prior dengue infections",
+      "limited access to early diagnostics in some districts"
+    ],
+    "vulnerablePopulations": [
+      "children and young adults",
+      "urban slum communities",
+      "people with comorbidities",
+      "pregnant people",
+      "areas with recurrent seasonal outbreaks"
+    ],
+    "diagnosticCriteria": "Clinical case definition; confirmation with NS1/RT-PCR (early) or IgM; severity classification per national dengue guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; outbreak surveillance and fever clinic testing in many cities",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands/year (including underreported cases)",
+    "controlRate": "Good outcomes with timely supportive care; severe dengue depends on early detection and referral"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "NS1 and CBC commonly used in urban centers; limited access in rural areas leads to clinical diagnosis and referral",
+    "treatmentProtocol": "Supportive care with fluids guided by hematocrit and vitals; avoidance of NSAIDs; platelet transfusion only for specific indications",
+    "regionalChallenges": "Underreporting, variable lab access, and high seasonal caseloads in tertiary hospitals during monsoon peaks",
+    "strongPoints": "Growing fever-clinic capacity in cities and established national surveillance programmes for vector-borne disease control"
+  }
+}
+

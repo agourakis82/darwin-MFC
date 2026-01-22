@@ -1,0 +1,52 @@
+{
+  "diseaseId": "sindrome-metabolica",
+  "region": "IN",
+  "diseaseName": "Metabolic syndrome",
+  "prevalence": {
+    "value": "~25-35% (adults; higher in urban populations)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "ICMR and cardiometabolic epidemiology syntheses",
+    "trend": "increasing with obesity and sedentary lifestyle"
+  },
+  "incidence": {
+    "value": "~20-45 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Cardiometabolic cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; increases risk of diabetes and CVD",
+    "mortalityRate": "Indirectly elevated via CVD/diabetes",
+    "year": 2024,
+    "source": "IHME/GBD cardiometabolic burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "central obesity",
+      "sedentary lifestyle",
+      "high-calorie diet",
+      "hypertension",
+      "dyslipidemia",
+      "insulin resistance"
+    ],
+    "vulnerablePopulations": [
+      "adults >35 years",
+      "urban populations",
+      "patients with obesity"
+    ],
+    "diagnosticCriteria": "IDF or NCEP ATP III criteria (waist, BP, glucose, triglycerides, HDL)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic screening in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of millions of adults",
+    "controlRate": "Low; lifestyle adherence and access to counseling limit control"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care screening for BP, glucose, lipids, and waist circumference",
+    "treatmentProtocol": "Lifestyle modification, weight loss, BP/lipid control, diabetes prevention programs",
+    "regionalChallenges": "Limited access to structured lifestyle programs and high obesity prevalence",
+    "strongPoints": "Large-scale NCD programs and affordable generics"
+  }
+}

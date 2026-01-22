@@ -1,0 +1,54 @@
+{
+  "diseaseId": "olho-seco",
+  "region": "IN",
+  "diseaseName": "Dry Eye Disease",
+  "prevalence": {
+    "value": "15-25% (adults; higher in urban and older populations)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Ophthalmology epidemiology syntheses (dry eye)",
+    "trend": "increasing with screen time, pollution, and aging"
+  },
+  "incidence": {
+    "value": "15-35 per 1,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Dry eye cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; high QOL impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO eye health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "screen time",
+      "air pollution",
+      "older age",
+      "female sex",
+      "meibomian gland dysfunction",
+      "contact lens use"
+    ],
+    "vulnerablePopulations": [
+      "urban office workers",
+      "older adults",
+      "women",
+      "patients with autoimmune disease"
+    ],
+    "diagnosticCriteria": "Symptoms plus clinical signs; objective testing in eye clinics; rule out blepharitis and infection"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of millions with symptoms",
+    "controlRate": "Variable; depends on access to lubricants and eye care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often self-managed; clinical diagnosis in eye clinics and some primary care",
+    "treatmentProtocol": "Lubricants, lid hygiene, environmental modifications; topical anti-inflammatories in specialist care",
+    "regionalChallenges": "High pollution exposure and out-of-pocket cost for long-term lubricants",
+    "strongPoints": "Large eye care networks and low-risk symptomatic treatments"
+  }
+}
+

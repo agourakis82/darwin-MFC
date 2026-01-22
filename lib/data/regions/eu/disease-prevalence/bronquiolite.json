@@ -1,0 +1,52 @@
+{
+  "diseaseId": "bronquiolite",
+  "region": "EU",
+  "diseaseName": "Acute Bronchiolitis (RSV)",
+  "prevalence": {
+    "value": "common seasonal illness; 10-20% of infants affected annually",
+    "population": "EU infants (<2 years)",
+    "year": 2024,
+    "source": "European pediatric respiratory epidemiology syntheses / WHO Europe",
+    "trend": "seasonal peaks; improved prevention options emerging"
+  },
+  "incidence": {
+    "value": "high (infant seasonal episodes)",
+    "population": "Infants",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case in severe disease; overall burden moderate",
+    "mortalityRate": "Low; higher in preterm and comorbid infants",
+    "year": 2024,
+    "source": "WHO Europe / IHME LRI context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prematurity",
+      "congenital heart disease",
+      "chronic lung disease",
+      "tobacco smoke exposure",
+      "crowding"
+    ],
+    "vulnerablePopulations": [
+      "infants <6 months",
+      "preterm infants",
+      "infants with CHD/CLD"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; pulse oximetry; RSV testing used selectively; imaging reserved for atypical cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands to >1 million infant episodes/season across EU",
+    "controlRate": "High with supportive care and oxygen pathways"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to pediatric emergency care and oxygen support",
+    "treatmentProtocol": "Supportive care; oxygen and hydration; avoid routine bronchodilators/antibiotics; ICU support for severe cases",
+    "regionalChallenges": "Seasonal surges and hospital bed pressure",
+    "strongPoints": "Robust pediatric care systems and emerging RSV prevention strategies for high-risk infants"
+  }
+}
+

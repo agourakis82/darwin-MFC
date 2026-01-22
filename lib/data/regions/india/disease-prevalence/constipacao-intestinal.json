@@ -1,0 +1,52 @@
+{
+  "diseaseId": "constipacao-intestinal",
+  "region": "IN",
+  "diseaseName": "Chronic constipation",
+  "prevalence": {
+    "value": "~10-18% (adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Gastroenterology epidemiology syntheses",
+    "trend": "stable; higher in women and older adults"
+  },
+  "incidence": {
+    "value": "~5-9% annual new or chronic cases",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Primary care and GI cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant QOL and productivity impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD digestive disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low fiber intake",
+      "low fluid intake",
+      "sedentary lifestyle",
+      "opioid use",
+      "female sex",
+      "older age"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "women",
+      "patients on constipating medications"
+    ],
+    "diagnosticCriteria": "Rome IV functional constipation criteria; exclude secondary causes and alarm features"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "Moderate; improves with diet and laxative adherence"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care; limited access to motility testing",
+    "treatmentProtocol": "Dietary fiber and fluids, osmotic laxatives (PEG/lactulose), stimulant laxatives short-term; address secondary causes",
+    "regionalChallenges": "Low fiber diets and inconsistent long-term follow-up",
+    "strongPoints": "Low-cost laxatives and primary care access in many settings"
+  }
+}

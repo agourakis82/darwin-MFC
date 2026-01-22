@@ -1,0 +1,52 @@
+{
+  "diseaseId": "transtorno-panico",
+  "region": "EU",
+  "diseaseName": "Panic Disorder",
+  "prevalence": {
+    "value": "1-2%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "WHO Europe / European psychiatric epidemiology syntheses",
+    "trend": "stable to slightly increasing post-COVID"
+  },
+  "incidence": {
+    "value": "2-4 per 1,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.005",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD (anxiety spectrum) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "female sex",
+      "stressful life events",
+      "comorbid depression",
+      "substance use"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "women",
+      "people with comorbid mood disorders"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria with structured assessment and exclusion of medical causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate; primary care identification supported in many countries",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~5-8 million",
+    "controlRate": "Moderate to high with access to CBT and SSRIs/SNRIs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Structured pathways and access to psychotherapy in many member states",
+    "treatmentProtocol": "CBT + SSRIs/SNRIs; limited benzodiazepine use; stepped-care models common",
+    "regionalChallenges": "Access variability across member states and wait times for psychotherapy in some systems",
+    "strongPoints": "Strong guideline infrastructure and broad access to evidence-based psychotherapy"
+  }
+}
+

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "agamaglobulinemia-ligada-x",
+  "region": "BR",
+  "diseaseName": "Agamaglobulinemia ligada ao X (XLA)",
+  "prevalence": {
+    "value": "~0.1-0.3 per 100,000 (males)",
+    "population": "Male population (primary immunodeficiency)",
+    "year": 2024,
+    "source": "Primary immunodeficiency registry syntheses; Orphanet",
+    "trend": "stable; improved diagnosis with immunology referral and flow cytometry"
+  },
+  "incidence": {
+    "value": "~1 per 100,000-200,000 male live births",
+    "population": "Male newborns",
+    "year": 2024,
+    "source": "International XLA epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but high preventable burden without immunoglobulin replacement",
+    "mortalityRate": "Low with adequate Ig replacement; higher with delayed diagnosis/recurrent severe infections",
+    "year": 2024,
+    "source": "Orphanet/clinical immunology burden summaries"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "BTK gene pathogenic variant (X-linked)",
+      "family history in maternal lineage",
+      "lack of immunoglobulin replacement",
+      "exposure to recurrent respiratory/enteric infections"
+    ],
+    "vulnerablePopulations": [
+      "male infants after maternal Ig wanes (3-12 months)",
+      "patients with delayed referral to immunology",
+      "patients in regions with limited access to IVIG/SCIG"
+    ],
+    "diagnosticCriteria": "Recurrent bacterial infections; markedly low IgG/IgA/IgM; absent/very low CD19+ B cells on flow cytometry; confirmatory BTK genetic testing"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis via recurrent infections and immunology work-up",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds to low thousands (rare; uncertain)",
+    "controlRate": "Good with regular IVIG/SCIG and infection prevention; variable due to supply and access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Immunology referral for quantitative immunoglobulins and flow cytometry; genetic confirmation often centralized",
+    "treatmentProtocol": "Immunoglobulin replacement (IVIG/SCIG), prompt antibiotics, vaccination strategy (avoid live vaccines in severe antibody deficiency), bronchiectasis monitoring",
+    "regionalChallenges": "Geographic inequity in immunology specialists and consistent access to immunoglobulin products",
+    "strongPoints": "When available, IVIG programs markedly reduce infections and hospitalizations"
+  }
+}

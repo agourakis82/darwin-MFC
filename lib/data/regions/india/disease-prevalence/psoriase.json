@@ -1,0 +1,25 @@
+{
+  "diseaseId": "psoriase",
+  "region": "IN",
+  "diseaseName": "Psoriasis",
+  "prevalence": {"value": "2.3%", "population": "Indian adults (~1.4 billion)", "year": 2024, "source": "IADVL National Survey & ICMR Reports", "trend": "stable [due to improved awareness but consistent genetic predisposition]"},
+  "incidence": {"value": "78 per 100,000", "population": "Indian adults", "year": 2024, "source": "ICMR Epidemiology Studies"},
+  "burden": {"dalyPerCapita": "0.2-0.4 - high due to psychosocial impact", "mortalityRate": "Negligible", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Genetic factors (HLA-Cw6 association)", "Stress and psychological triggers", "Infections (streptococcal)", "Cold/dry climate", "Obesity and metabolic syndrome", "Smoking and alcohol use"],
+    "vulnerablePopulations": ["Adults 20-40 years", "Family history of psoriasis", "Urban populations", "North Indian ethnic groups"],
+    "diagnosticCriteria": "IADVL clinical criteria, Koebner phenomenon, Auspitz sign"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "28 million",
+    "controlRate": "45% [moderate - limited by access in rural areas]"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "IADVL guidelines, clinical diagnosis standard, biopsy rarely needed",
+    "treatmentProtocol": "Topical steroids, coal tar preparations, limited phototherapy (PUVA/NB-UVB in tertiary centers), systemic methotrexate, limited biologics (high cost), Ayurvedic options (e.g., Panchatikta ghrita, neem)",
+    "regionalChallenges": "Very limited phototherapy access, expensive biologics, severe psychosocial stigma, dermatologist shortage in rural areas",
+    "strongPoints": "Affordable generic topicals and methotrexate, IADVL guidelines, Ayurvedic formulations, growing biosimilar market"
+  }
+}

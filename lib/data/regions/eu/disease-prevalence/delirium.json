@@ -1,0 +1,52 @@
+{
+  "diseaseId": "delirium",
+  "region": "EU",
+  "diseaseName": "Delirium",
+  "prevalence": {
+    "value": "10-25% of hospitalized older adults; higher in ICU",
+    "population": "Hospitalized older adults in the EU",
+    "year": 2024,
+    "source": "European geriatric and ICU epidemiology syntheses",
+    "trend": "stable; screening increasingly adopted"
+  },
+  "incidence": {
+    "value": "5-15% new-onset during hospitalization (older adults)",
+    "population": "Hospitalized older adults",
+    "year": 2024,
+    "source": "European inpatient cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case",
+    "mortalityRate": "Elevated (indirect)",
+    "year": 2024,
+    "source": "IHME/WHO Europe inpatient outcomes context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "baseline cognitive impairment",
+      "infection",
+      "polypharmacy",
+      "surgery/ICU stay"
+    ],
+    "vulnerablePopulations": [
+      "older adults with dementia/MCI",
+      "ICU patients",
+      "post-operative patients"
+    ],
+    "diagnosticCriteria": "CAM/4AT screening with acute onset, inattention, and fluctuating course; identify underlying cause"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable but increasing in hospitals and ICUs",
+    "treatmentAvailable": true,
+    "estimatedPatients": "large inpatient burden annually",
+    "controlRate": "Moderate to high where prevention bundles are implemented"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Delirium screening integrated into many inpatient pathways",
+    "treatmentProtocol": "Prevention bundles (mobilization, hydration, sleep, sensory aids), treat causes, minimize deliriogenic meds; antipsychotics only when necessary",
+    "regionalChallenges": "Implementation variability and staffing constraints in some hospitals",
+    "strongPoints": "Strong evidence base and structured hospital protocols in many member states"
+  }
+}
+

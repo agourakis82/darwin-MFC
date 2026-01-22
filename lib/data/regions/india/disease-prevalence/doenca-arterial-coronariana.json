@@ -1,0 +1,55 @@
+{
+  "diseaseId": "doenca-arterial-coronariana",
+  "region": "IN",
+  "diseaseName": "Coronary Artery Disease",
+  "prevalence": {
+    "value": "8.8%",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR/NFHS-5 (Indian Council of Medical Research/National Family Health Survey-5, 2019-2021 extrapolated)",
+    "trend": "increasing by 2-3% annually due to urbanization"
+  },
+  "incidence": {
+    "value": "150 per 100,000",
+    "population": "adults aged 30-70",
+    "year": 2024,
+    "source": "Global Burden of Disease Study 2021 (IHME)"
+  },
+  "burden": {
+    "dalyPerCapita": "2,500 per 100,000",
+    "mortalityRate": "272 per 100,000",
+    "year": 2024,
+    "source": "Global Burden of Disease Study 2021 (IHME)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Hypertension",
+      "Diabetes mellitus",
+      "Smoking and tobacco use",
+      "Obesity and sedentary lifestyle",
+      "Dyslipidemia",
+      "Air pollution (PM2.5 exposure in urban areas)",
+      "Dietary factors (high intake of saturated fats, refined carbohydrates, and trans fats from ghee and fried foods)"
+    ],
+    "vulnerablePopulations": [
+      "Urban residents",
+      "Individuals aged >60 years",
+      "Males (higher incidence)",
+      "Low socioeconomic status groups",
+      "People with family history of CAD"
+    ],
+    "diagnosticCriteria": "Clinical symptoms (angina, myocardial infarction), supported by ECG, stress testing, echocardiography, and coronary angiography (per ACC/AHA guidelines adapted for India)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Low (~25% in urban areas, <10% in rural; via NCD programs)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Approximately 80 million",
+    "controlRate": "~35% achieve optimal risk factor control (ICMR data)"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Resource-stratified approach: Basic ECG in primary care, advanced imaging in tertiary centers",
+    "treatmentProtocol": "Medical management (antiplatelets, statins, beta-blockers); PCI/CABG in equipped facilities per CSI guidelines",
+    "regionalChallenges": "Unequal access in rural areas, high air pollution exacerbating cases in northern India (e.g., Delhi NCR), dietary patterns with excessive oil/ghee consumption, overburdened public hospitals",
+    "strongPoints": "Expanding Ayushman Bharat scheme for coverage, increasing cath labs in urban centers, national NCD program for awareness"
+  }
+}

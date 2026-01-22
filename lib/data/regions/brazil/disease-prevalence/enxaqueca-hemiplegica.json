@@ -1,0 +1,49 @@
+{
+  "diseaseId": "enxaqueca-hemiplegica",
+  "region": "BR",
+  "diseaseName": "Enxaqueca Hemiplégica",
+  "prevalence": {
+    "value": "rare (<0.01%)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Headache epidemiology syntheses (rare migraine subtypes)",
+    "trend": "stable; underdiagnosis and misclassification as TIA/stroke common"
+  },
+  "incidence": {
+    "value": "very low",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low at population level; high per-case disability during attacks",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO headache context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic mutations (familial hemiplegic migraine variants)",
+      "migraine history",
+      "sleep deprivation triggers"
+    ],
+    "vulnerablePopulations": [
+      "patients with recurrent aura and neurologic deficits",
+      "patients with limited access to neurology and imaging"
+    ],
+    "diagnosticCriteria": "ICHD-3: migraine with aura including motor weakness; differentiate from stroke/TIA; neuroimaging typically required at first presentation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very low",
+    "controlRate": "Variable; depends on specialist diagnosis and preventive therapy access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often evaluated emergently as possible stroke; neurology follow-up needed for definitive classification",
+    "treatmentProtocol": "Acute management individualized; avoid vasoconstrictors in some cases; preventive therapy (e.g., verapamil, acetazolamide) in specialist care",
+    "regionalChallenges": "Misdiagnosis leading to unnecessary stroke workups and limited specialist headache services outside large centers",
+    "strongPoints": "Access to emergency imaging in larger hospitals enables safe exclusion of stroke"
+  }
+}
+

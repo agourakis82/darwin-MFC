@@ -1,0 +1,50 @@
+{
+  "diseaseId": "doenca-celíaca",
+  "region": "IN",
+  "diseaseName": "Celiac disease",
+  "prevalence": {
+    "value": "~0.3-1.0% (adults and children)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Gastroenterology epidemiology syntheses; Indian celiac screening studies",
+    "trend": "increasing diagnosis with awareness"
+  },
+  "incidence": {
+    "value": "~4-8 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "Celiac cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; chronic GI and nutritional impact",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "IHME/GBD digestive disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "HLA-DQ2/DQ8 genetics",
+      "family history",
+      "type 1 diabetes",
+      "autoimmune thyroid disease"
+    ],
+    "vulnerablePopulations": [
+      "children",
+      "first-degree relatives",
+      "patients with autoimmune disease"
+    ],
+    "diagnosticCriteria": "Positive tTG IgA with total IgA; confirmatory duodenal biopsy; HLA testing in equivocal cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no population screening; targeted testing in high-risk groups",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands to >1 million",
+    "controlRate": "Moderate; adherence limited by diet access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Serology and endoscopy in tertiary centers; limited access in smaller cities",
+    "treatmentProtocol": "Strict gluten-free diet, nutritional counseling, monitor deficiencies",
+    "regionalChallenges": "High cost and limited availability of gluten-free foods",
+    "strongPoints": "Growing awareness and specialty GI services in major cities"
+  }
+}

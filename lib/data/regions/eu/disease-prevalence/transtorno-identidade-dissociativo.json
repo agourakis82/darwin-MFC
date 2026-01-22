@@ -1,0 +1,49 @@
+{
+  "diseaseId": "transtorno-identidade-dissociativo",
+  "region": "EU",
+  "diseaseName": "Dissociative Identity Disorder (DID)",
+  "prevalence": {
+    "value": "0.1-0.5% (rare)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European psychiatric epidemiology syntheses",
+    "trend": "stable; recognition higher in specialist trauma services"
+  },
+  "incidence": {
+    "value": "<1 per 10,000/year (diagnosed cases)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0005-0.002",
+    "mortalityRate": "Indirect; self-harm and comorbidity risk",
+    "year": 2024,
+    "source": "IHME/WHO Europe context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "severe childhood trauma",
+      "comorbid PTSD and depression",
+      "social isolation"
+    ],
+    "vulnerablePopulations": [
+      "survivors of chronic childhood trauma",
+      "patients with complex PTSD"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria with longitudinal specialist assessment; differentiation from psychosis is essential"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "low",
+    "controlRate": "Moderate with access to specialist trauma psychotherapy; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist trauma services more common in some member states",
+    "treatmentProtocol": "Trauma-focused psychotherapy with stabilization and safety planning; treat comorbidities",
+    "regionalChallenges": "High service demand and access variability across member states",
+    "strongPoints": "Availability of specialist mental health services and structured psychotherapy in many systems"
+  }
+}
+

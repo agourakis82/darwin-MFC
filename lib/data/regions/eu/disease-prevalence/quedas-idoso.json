@@ -1,0 +1,52 @@
+{
+  "diseaseId": "quedas-idoso",
+  "region": "EU",
+  "diseaseName": "Falls in Older Adults",
+  "prevalence": {
+    "value": "25-30% report ≥1 fall/year",
+    "population": "EU adults >65 years",
+    "year": 2024,
+    "source": "European geriatric epidemiology syntheses",
+    "trend": "stable to increasing with aging demographics"
+  },
+  "incidence": {
+    "value": "300-500 falls per 1,000 older adults/year",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.03",
+    "mortalityRate": "Indirect",
+    "year": 2024,
+    "source": "IHME/WHO Europe injury context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "frailty",
+      "balance/gait impairment",
+      "polypharmacy",
+      "vision impairment",
+      "orthostatic hypotension"
+    ],
+    "vulnerablePopulations": [
+      "older adults >80 years",
+      "care home residents",
+      "older adults with prior falls"
+    ],
+    "diagnosticCriteria": "Comprehensive fall risk assessment with gait/balance tests (TUG), orthostatic vitals, medication review, and home hazards evaluation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; fall risk screening integrated in many geriatric pathways",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of older adults at risk",
+    "controlRate": "Moderate to high where multifactorial programs are implemented"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Access to multidisciplinary geriatric assessment in many member states",
+    "treatmentProtocol": "Multifactorial interventions (exercise, home safety, deprescribing, vision correction, vitamin D where indicated)",
+    "regionalChallenges": "Program implementation variability across member states",
+    "strongPoints": "Strong evidence-based fall prevention programs in many systems"
+  }
+}
+

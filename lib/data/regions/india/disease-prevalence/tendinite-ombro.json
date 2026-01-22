@@ -1,0 +1,52 @@
+{
+  "diseaseId": "tendinite-ombro",
+  "region": "IN",
+  "diseaseName": "Rotator Cuff Tendinopathy / Shoulder Pain Syndrome",
+  "prevalence": {
+    "value": "5-12% (adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Musculoskeletal epidemiology syntheses",
+    "trend": "increasing with aging and occupational load"
+  },
+  "incidence": {
+    "value": "10-25 per 1,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Shoulder pain cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.008",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO musculoskeletal context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "repetitive overhead work",
+      "manual labor",
+      "older age",
+      "diabetes",
+      "poor ergonomics"
+    ],
+    "vulnerablePopulations": [
+      "manual workers",
+      "older adults",
+      "patients with diabetes"
+    ],
+    "diagnosticCriteria": "Clinical exam; imaging (US/MRI) for suspected tear or refractory cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions with shoulder pain episodes",
+    "controlRate": "Variable; access to physiotherapy is limited in many areas"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis common; imaging access concentrated in urban centers",
+    "treatmentProtocol": "Exercise/physiotherapy, NSAIDs, injections; surgery in selected cases in tertiary centers",
+    "regionalChallenges": "Limited physio access and delayed imaging/specialist referral",
+    "strongPoints": "Low-cost exercise-based rehab and growing orthopedic services"
+  }
+}
+

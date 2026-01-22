@@ -1,0 +1,53 @@
+{
+  "diseaseId": "hanseniase",
+  "region": "BR",
+  "diseaseName": "Hanseníase",
+  "prevalence": {
+    "value": "~1.0 per 10,000 (registered prevalence; endemic pockets higher)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde (SINAN Hanseníase) / WHO",
+    "trend": "slowly decreasing nationally; persistent transmission in North/Northeast and some Midwest areas"
+  },
+  "incidence": {
+    "value": "~10-15 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde / SINAN"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0001-0.0004",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD / WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "household contact with untreated cases",
+      "overcrowding and poverty",
+      "delayed diagnosis and treatment",
+      "limited access to dermatology/neurology evaluation",
+      "immunogenetic susceptibility"
+    ],
+    "vulnerablePopulations": [
+      "household contacts of cases",
+      "children in endemic municipalities",
+      "rural and peri-urban low-income communities",
+      "indigenous and remote populations in endemic areas"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis (skin lesions with sensory loss, nerve involvement) with slit-skin smear in multibacillary cases; classification per Ministério da Saúde/WHO"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "contact examination and targeted community actions in endemic municipalities",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~25,000-30,000 new cases/year",
+    "controlRate": "High cure rates with MDT; disability prevention depends on early diagnosis and follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS and dermatology support in endemic municipalities; referral for neuritis/reaction management",
+    "treatmentProtocol": "WHO multidrug therapy (rifampicin, dapsone, clofazimine) supplied via SUS; management of reactions with corticosteroids/thalidomide under strict control",
+    "regionalChallenges": "Late diagnosis leading to disability, stigma, and uneven specialist support for reactions and neuropathy in remote areas",
+    "strongPoints": "Established national programme with free MDT via SUS and long-standing surveillance and contact tracing in endemic areas"
+  }
+}
+

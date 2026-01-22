@@ -1,0 +1,52 @@
+{
+  "diseaseId": "tabagismo",
+  "region": "IN",
+  "diseaseName": "Tobacco use",
+  "prevalence": {
+    "value": "~20-25% (any tobacco use in adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "GATS India and national tobacco surveillance",
+    "trend": "slowly decreasing overall; smokeless tobacco remains high"
+  },
+  "incidence": {
+    "value": "~3-5% annual initiation among adolescents/young adults",
+    "population": "Adolescents and young adults",
+    "year": 2024,
+    "source": "School health surveys and tobacco surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "high; major driver of CVD, COPD and cancers",
+    "mortalityRate": "High (tobacco-attributable deaths)",
+    "year": 2024,
+    "source": "WHO/IHME tobacco-attributable burden"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "adolescent initiation",
+      "peer influence",
+      "low socioeconomic status",
+      "occupational stress",
+      "co-use with alcohol"
+    ],
+    "vulnerablePopulations": [
+      "adolescents",
+      "manual workers",
+      "low-income rural populations",
+      "people with mental health disorders"
+    ],
+    "diagnosticCriteria": "Self-reported tobacco use; assess dependence with standardized tools"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic screening in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of millions of current or former users",
+    "controlRate": "Low to moderate; cessation support varies by state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care screening and brief intervention",
+    "treatmentProtocol": "Behavioral counseling, nicotine replacement, bupropion/varenicline where available; quitline support",
+    "regionalChallenges": "High smokeless tobacco use, limited cessation services, and relapse",
+    "strongPoints": "National tobacco control program and increasing smoke-free policies"
+  }
+}

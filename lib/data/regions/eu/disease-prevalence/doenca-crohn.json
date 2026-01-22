@@ -1,0 +1,51 @@
+{
+  "diseaseId": "doenca-crohn",
+  "region": "EU",
+  "diseaseName": "Crohn disease",
+  "prevalence": {
+    "value": "~100-200 per 100,000",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECCO and European IBD registry syntheses",
+    "trend": "stable to increasing with improved survival and diagnosis"
+  },
+  "incidence": {
+    "value": "~5-10 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "European IBD cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to chronic disability and complications",
+    "mortalityRate": "Low to moderate",
+    "year": 2024,
+    "source": "WHO Europe/IHME IBD burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "smoking",
+      "urban lifestyle",
+      "westernized diet",
+      "immune dysregulation"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with family history",
+      "smokers"
+    ],
+    "diagnosticCriteria": "Clinical symptoms plus endoscopy with biopsy; imaging for extent; exclude infections"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands across the EU",
+    "controlRate": "High with access to biologics and specialist IBD care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Colonoscopy and imaging widely available; standardized IBD pathways",
+    "treatmentProtocol": "Steroids for flares, immunomodulators, biologics and small molecules; surgery for complications",
+    "regionalChallenges": "Long-term adherence and monitoring of biologic therapy",
+    "strongPoints": "Strong IBD centers and broad access to advanced therapies"
+  }
+}

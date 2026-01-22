@@ -1,0 +1,49 @@
+{
+  "diseaseId": "esclerose-lateral-amiotrofica",
+  "region": "IN",
+  "diseaseName": "Amyotrophic Lateral Sclerosis (ALS)",
+  "prevalence": {
+    "value": "2-6 per 100,000 (underdiagnosis likely)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Neurology epidemiology syntheses",
+    "trend": "stable to increasing recognition"
+  },
+  "incidence": {
+    "value": "0.8-2 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "ALS cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0004-0.0015",
+    "mortalityRate": "High case-fatality over years",
+    "year": 2024,
+    "source": "IHME GBD (motor neuron disease)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "male sex",
+      "genetic mutations (subset)"
+    ],
+    "vulnerablePopulations": [
+      "adults >50 years",
+      "patients without access to EMG and multidisciplinary care"
+    ],
+    "diagnosticCriteria": "Clinical UMN/LMN signs with progression; EMG supportive; exclude mimics"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~30,000-80,000",
+    "controlRate": "Not curable; outcomes depend on access to respiratory/nutritional support"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnosis concentrated in tertiary neurology centers; EMG access limited outside cities",
+    "treatmentProtocol": "Riluzole where available, NIV, nutrition support, physiotherapy, and palliative care",
+    "regionalChallenges": "Limited multidisciplinary ALS services and high out-of-pocket costs for respiratory support",
+    "strongPoints": "Growing tertiary neurology capacity in major cities"
+  }
+}
+

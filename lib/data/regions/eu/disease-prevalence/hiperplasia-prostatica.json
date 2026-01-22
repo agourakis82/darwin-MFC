@@ -1,0 +1,51 @@
+{
+  "diseaseId": "hiperplasia-prostatica",
+  "region": "EU",
+  "diseaseName": "Benign prostatic hyperplasia",
+  "prevalence": {
+    "value": "~50-70% (men >50 years)",
+    "population": "EU men >50 years",
+    "year": 2024,
+    "source": "EAU guideline context and epidemiology syntheses",
+    "trend": "increasing with aging population"
+  },
+  "incidence": {
+    "value": "~8-12 per 1,000 men/year (>50 years)",
+    "population": "Men >50 years",
+    "year": 2024,
+    "source": "European urology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant LUTS burden and QOL impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe/IHME urologic disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age >50 years",
+      "family history",
+      "obesity and metabolic syndrome",
+      "diabetes",
+      "sedentary lifestyle"
+    ],
+    "vulnerablePopulations": [
+      "men >70 years",
+      "men with metabolic syndrome",
+      "men with cardiovascular comorbidity"
+    ],
+    "diagnosticCriteria": "DRE, PSA, IPSS symptom score, urinalysis; uroflowmetry and ultrasound when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic evaluation",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of men with LUTS",
+    "controlRate": "High; access to medications and minimally invasive therapies is broad"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EAU-aligned evaluation with broad access to diagnostics",
+    "treatmentProtocol": "Alpha-blockers, 5-ARIs, combination therapy; minimally invasive procedures and TURP for refractory cases",
+    "regionalChallenges": "Balancing PSA-driven evaluation with overdiagnosis concerns",
+    "strongPoints": "Comprehensive urology services and wide access to effective therapies"
+  }
+}

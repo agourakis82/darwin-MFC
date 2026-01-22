@@ -1,0 +1,50 @@
+{
+  "diseaseId": "alergia-proteina-leite-vaca",
+  "region": "EU",
+  "diseaseName": "Cow’s Milk Protein Allergy (CMPA)",
+  "prevalence": {
+    "value": "~2-3% (infants)",
+    "population": "Infants in the first year of life",
+    "year": 2024,
+    "source": "European pediatric allergy epidemiology syntheses",
+    "trend": "stable; improved diagnosis and structured dietary management"
+  },
+  "incidence": {
+    "value": "~1-3 per 100 live births (first-year onset)",
+    "population": "Infants",
+    "year": 2024,
+    "source": "Food allergy incidence syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; nutrition and caregiver burden (specialized formulas)",
+    "mortalityRate": "Very low; anaphylaxis uncommon but possible",
+    "year": 2024,
+    "source": "WHO/IHME allergy context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history of atopy",
+      "infant eczema",
+      "coexisting food allergies",
+      "cow’s milk exposure"
+    ],
+    "vulnerablePopulations": [
+      "infants with eczema",
+      "families without access to dietitians",
+      "patients with multiple food allergies"
+    ],
+    "diagnosticCriteria": "Clinical history plus elimination and supervised re-challenge; specific IgE/skin testing for IgE-mediated disease; rule out intolerance and other GI causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands of infants across the EU",
+    "controlRate": "High with appropriate formula access and dietetic follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Allergy services and oral food challenges available in many tertiary centers",
+    "treatmentProtocol": "Cow’s milk elimination; eHF/AAF formulas when needed; dietitian support; planned supervised re-introduction to test tolerance",
+    "regionalChallenges": "Variation in reimbursement for specialized formulas and access to pediatric allergy in some regions",
+    "strongPoints": "Structured allergy care pathways and dietitian support; good access to hypoallergenic formulas in many systems"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "colite-ulcerativa",
+  "region": "EU",
+  "diseaseName": "Ulcerative colitis",
+  "prevalence": {
+    "value": "~150-300 per 100,000",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECCO and European IBD registry syntheses",
+    "trend": "stable to increasing with improved survival and diagnosis"
+  },
+  "incidence": {
+    "value": "~8-15 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "European IBD cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to chronic symptoms and flares",
+    "mortalityRate": "Low to moderate",
+    "year": 2024,
+    "source": "WHO Europe/IHME IBD burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "urban lifestyle",
+      "westernized diet",
+      "immune dysregulation"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with family history",
+      "patients with autoimmune disease"
+    ],
+    "diagnosticCriteria": "Clinical symptoms plus colonoscopy with biopsy; exclude infectious colitis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands across the EU",
+    "controlRate": "High with access to biologics and specialist IBD care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Colonoscopy and pathology widely available; standardized IBD pathways",
+    "treatmentProtocol": "5-ASA, corticosteroids, immunomodulators, biologics and small molecules; colectomy for refractory disease",
+    "regionalChallenges": "Long-term monitoring and adherence to therapy",
+    "strongPoints": "Strong IBD centers and access to advanced therapies"
+  }
+}

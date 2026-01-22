@@ -1,0 +1,51 @@
+{
+  "diseaseId": "urticaria",
+  "region": "EU",
+  "diseaseName": "Urticaria",
+  "prevalence": {
+    "value": "~15-20% lifetime (acute); ~0.5-1% chronic",
+    "population": "EU population",
+    "year": 2024,
+    "source": "EAACI/European allergy epidemiology syntheses",
+    "trend": "stable; chronic urticaria better recognized"
+  },
+  "incidence": {
+    "value": "~10-20 per 1,000 person-years (acute episodes)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Primary care and allergy clinic data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant itch and sleep disturbance",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe/IHME skin disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral infections",
+      "food or drug reactions",
+      "autoimmune disease (chronic urticaria)",
+      "stress",
+      "physical triggers (pressure, cold, heat)"
+    ],
+    "vulnerablePopulations": [
+      "women (chronic urticaria)",
+      "patients with autoimmune disease",
+      "patients with recurrent angioedema"
+    ],
+    "diagnosticCriteria": "Clinical wheals lasting <24h; chronic urticaria defined as >6 weeks"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions with acute episodes; hundreds of thousands with chronic disease",
+    "controlRate": "High with guideline-based antihistamine escalation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis with limited labs for chronic cases",
+    "treatmentProtocol": "Second-generation antihistamines, dose escalation; omalizumab or ciclosporin for refractory cases",
+    "regionalChallenges": "Access disparities to biologics across countries",
+    "strongPoints": "EAACI guideline-based care and broad antihistamine availability"
+  }
+}

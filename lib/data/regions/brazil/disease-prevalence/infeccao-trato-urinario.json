@@ -1,0 +1,55 @@
+{
+  "diseaseId": "infeccao-trato-urinario",
+  "region": "BR",
+  "diseaseName": "Infecção do Trato Urinário (ITU)",
+  "prevalence": {
+    "value": "8-12% lifetime in women (symptomatic UTI)",
+    "population": "Brazilian population (higher in women)",
+    "year": 2024,
+    "source": "Ministério da Saúde / SBI + epidemiological syntheses",
+    "trend": "stable; antimicrobial resistance increasing in some regions"
+  },
+  "incidence": {
+    "value": "50-100 per 1,000 women/year (any UTI episode; varies by age)",
+    "population": "Women",
+    "year": 2024,
+    "source": "Primary care epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0005-0.002",
+    "mortalityRate": "Low; higher in complicated pyelonephritis/sepsis",
+    "year": 2024,
+    "source": "IHME GBD (UTI/pyelonephritis) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "sexual activity",
+      "pregnancy",
+      "diabetes mellitus",
+      "urinary catheterization",
+      "urologic abnormalities"
+    ],
+    "vulnerablePopulations": [
+      "women of reproductive age",
+      "pregnant people",
+      "older adults",
+      "patients with diabetes",
+      "patients with indwelling catheters"
+    ],
+    "diagnosticCriteria": "Clinical symptoms (dysuria, frequency) plus urinalysis; culture in complicated/recurrent cases; management aligned with IDSA-adapted Brazilian guidance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening (except bacteriuria screening in pregnancy in many prenatal programs)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of episodes/year",
+    "controlRate": "High cure rates for uncomplicated cystitis; resistance complicates empiric therapy in some areas"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS diagnosis with urinalysis; culture access variable; prenatal screening for bacteriuria varies",
+    "treatmentProtocol": "Nitrofurantoin/fosfomycin or TMP-SMX guided by resistance; avoid fluoroquinolones for uncomplicated cases when possible; pyelonephritis requires broader therapy and follow-up",
+    "regionalChallenges": "Rising E. coli resistance, variable culture access, and high recurrence in some populations",
+    "strongPoints": "Wide APS coverage in SUS and availability of core antibiotics"
+  }
+}
+

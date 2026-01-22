@@ -1,0 +1,54 @@
+{
+  "diseaseId": "doenca-arterial-coronariana",
+  "region": "EU",
+  "diseaseName": "Coronary Artery Disease",
+  "prevalence": {
+    "value": "4.2%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "ESC Atlas of Cardiovascular Disease Statistics 2021; extrapolated to 2024 via WHO Europe",
+    "trend": "stable with slight decline due to risk factor control"
+  },
+  "incidence": {
+    "value": "1.8 per 1,000 adults",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "ESC Guidelines for Chronic Coronary Syndromes 2019; ECDC surveillance data"
+  },
+  "burden": {
+    "dalyPerCapita": "1,200 DALYs per 100,000 population",
+    "mortalityRate": "85 per 100,000 population",
+    "year": 2024,
+    "source": "Global Burden of Disease Study 2021 (IHME); WHO Europe cardiovascular report"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Hypertension",
+      "Dyslipidemia",
+      "Diabetes mellitus",
+      "Smoking",
+      "Obesity",
+      "Sedentary lifestyle",
+      "Family history"
+    ],
+    "vulnerablePopulations": [
+      "Adults over 65 years",
+      "Males (higher incidence)",
+      "Low socioeconomic status groups",
+      "Patients with comorbidities (e.g., diabetes)"
+    ],
+    "diagnosticCriteria": "Based on ESC 2019 Guidelines: Clinical symptoms (angina), ECG changes, stress testing, coronary angiography confirming >50% stenosis in major coronary arteries"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "65% for high-risk groups (varies by member state)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~18.7 million",
+    "controlRate": "55% achieving LDL targets per ESC guidelines"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Harmonized per ESC 2019 Guidelines across EU, with national adaptations",
+    "treatmentProtocol": "ESC-recommended: Optimal medical therapy (statins, antiplatelets), PCI/CABG for high-risk cases; dual antiplatelet therapy post-ACS",
+    "regionalChallenges": "Disparities in access between Western and Eastern EU; aging population increasing burden",
+    "strongPoints": "Advanced interventional cardiology networks; high adherence to ESC guidelines in most member states"
+  }
+}

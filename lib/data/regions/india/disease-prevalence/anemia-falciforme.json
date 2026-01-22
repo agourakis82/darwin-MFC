@@ -1,0 +1,52 @@
+{
+  "diseaseId": "anemia-falciforme",
+  "region": "IN",
+  "diseaseName": "Sickle Cell Disease",
+  "prevalence": {
+    "value": "~0.05-0.2% (SCD; higher in tribal/central India); trait common in some regions",
+    "population": "Indian population (regional/ethnic clustering)",
+    "year": 2024,
+    "source": "Indian hemoglobinopathy program syntheses; public health reports and cohort studies",
+    "trend": "stable births; improved survival increases prevalent population"
+  },
+  "incidence": {
+    "value": "High in hotspot states; newborn/antenatal screening programs expanding",
+    "population": "Newborns (varies by region)",
+    "year": 2024,
+    "source": "Hemoglobinopathy screening program reports and state health initiatives"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate in affected regions due to high prevalence; high per-patient morbidity",
+    "mortalityRate": "Elevated without early comprehensive care; reduced with prophylaxis and hydroxyurea",
+    "year": 2024,
+    "source": "IHME/GBD hemoglobinopathies context; Indian cohort outcomes"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "inherited HbS (autosomal recessive)",
+      "family history",
+      "limited access to early prophylaxis and comprehensive care",
+      "infections and dehydration (crisis triggers)",
+      "high burden regions (central/tribal areas)"
+    ],
+    "vulnerablePopulations": [
+      "children (infection risk)",
+      "pregnant people with SCD",
+      "rural/tribal communities with access barriers",
+      "patients with recurrent pain crises and anemia"
+    ],
+    "diagnosticCriteria": "Screening (newborn/antenatal where available) plus confirmatory hemoglobin electrophoresis/HPLC; ongoing monitoring for stroke, renal and pulmonary complications"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; expanding in high-burden states, limited nationally",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands to >1 million (varies by estimates; underdiagnosed)",
+    "controlRate": "Variable; improves with structured comprehensive care and hydroxyurea access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "State screening programs in hotspots; confirmatory testing availability varies",
+    "treatmentProtocol": "Vaccination and infection prophylaxis, hydroxyurea, transfusion protocols for complications, pain management, stroke prevention (TCD where available), community-based follow-up",
+    "regionalChallenges": "Access barriers in rural/tribal areas, stigma, limited specialist follow-up, inconsistent availability of comprehensive pain management",
+    "strongPoints": "Hydroxyurea is affordable; targeted public programs in high-burden states are expanding"
+  }
+}

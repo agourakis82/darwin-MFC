@@ -1,0 +1,51 @@
+{
+  "diseaseId": "cefaleia-tensional",
+  "region": "EU",
+  "diseaseName": "Tension-Type Headache",
+  "prevalence": {
+    "value": "20-30% (1-year prevalence)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "IHME GBD / European headache epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "high (recurrent episodic)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.006-0.02",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "stress",
+      "sleep deprivation",
+      "poor ergonomics",
+      "anxiety/depression"
+    ],
+    "vulnerablePopulations": [
+      "working-age adults",
+      "people with high occupational stress",
+      "patients with insomnia"
+    ],
+    "diagnosticCriteria": "ICHD-3 criteria; red flag assessment to exclude secondary headache"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions",
+    "controlRate": "Moderate to high with guideline-based management and access to non-pharmacologic therapies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care pathways often manage TTH with neurology referral for refractory cases",
+    "treatmentProtocol": "Education, lifestyle, simple analgesics; preventive therapy for chronic cases; physiotherapy and behavioral interventions available in many systems",
+    "regionalChallenges": "Medication overuse and access variability across member states",
+    "strongPoints": "Strong primary care and access to multidisciplinary headache management in many countries"
+  }
+}
+

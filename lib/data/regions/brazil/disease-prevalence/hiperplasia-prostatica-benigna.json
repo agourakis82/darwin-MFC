@@ -1,0 +1,25 @@
+{
+  "diseaseId": "hiperplasia-prostatica-benigna",
+  "region": "BR",
+  "diseaseName": "Hiperplasia Prostática Benigna (HPB)",
+  "prevalence": {"value": "50%", "population": "Brazilian men >50 years", "year": 2024, "source": "SBU - Sociedade Brasileira de Urologia", "trend": "increasing due to aging population"},
+  "incidence": {"value": "15 per 1000", "population": "Brazilian men >50", "year": 2024, "source": "DataSUS"},
+  "burden": {"dalyPerCapita": "0.5", "mortalityRate": "Negligible", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Age >50", "Family history", "Metabolic syndrome", "Diabetes", "Obesity", "Cardiovascular disease"],
+    "vulnerablePopulations": ["Men >60 years", "Men with diabetes/obesity", "Men in rural areas with limited access"],
+    "diagnosticCriteria": "DRE, PSA, IPSS score, TRUS, SBU guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic PSA screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "10 million",
+    "controlRate": "60% diagnosed and treated via SUS"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SBU guidelines, DRE + PSA + IPSS, TRUS via SUS",
+    "treatmentProtocol": "Medical: alpha-blockers (tamsulosin), 5-alpha reductase inhibitors (finasteride) via SUS; Surgical: TURP, HoLEP for severe cases",
+    "regionalChallenges": "Limited access to advanced surgical techniques (HoLEP), long wait times for TURP in SUS, underdiagnosis in rural areas",
+    "strongPoints": "SBU guidelines, alpha-blockers/finasteride via SUS, TURP widely available"
+  }
+}

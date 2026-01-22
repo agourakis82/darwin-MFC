@@ -1,0 +1,51 @@
+{
+  "diseaseId": "bronquite-aguda",
+  "region": "IN",
+  "diseaseName": "Acute bronchitis",
+  "prevalence": {
+    "value": "Common episodic condition",
+    "population": "Indian adults and children",
+    "year": 2024,
+    "source": "Primary care respiratory infection syntheses",
+    "trend": "stable; seasonal peaks with viral outbreaks"
+  },
+  "incidence": {
+    "value": "~25-60 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Primary care cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant cough-related visits",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO acute respiratory infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral infections",
+      "smoking and tobacco use",
+      "air pollution and biomass exposure",
+      "asthma/COPD",
+      "occupational exposures"
+    ],
+    "vulnerablePopulations": [
+      "smokers",
+      "patients with chronic lung disease",
+      "children and older adults"
+    ],
+    "diagnosticCriteria": "Acute cough with sputum after URI; exclude pneumonia and asthma exacerbation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually",
+    "controlRate": "High with supportive care; avoid routine antibiotics"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care; chest X-ray if pneumonia suspected",
+    "treatmentProtocol": "Supportive care, bronchodilators if wheeze; antibiotics only if bacterial infection suspected",
+    "regionalChallenges": "High air pollution and antibiotic overuse",
+    "strongPoints": "Primary care access and symptom-based treatment pathways"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "diseaseId": "hemorroidas",
+  "region": "EU",
+  "diseaseName": "Hemorrhoids",
+  "prevalence": {
+    "value": "~4-10% (adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European coloproctology epidemiology syntheses",
+    "trend": "stable; higher with aging population"
+  },
+  "incidence": {
+    "value": "~5-12 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Outpatient cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; substantial discomfort and QOL impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe digestive disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "constipation and straining",
+      "low fiber intake",
+      "pregnancy",
+      "obesity",
+      "prolonged sitting",
+      "aging"
+    ],
+    "vulnerablePopulations": [
+      "adults >40 years",
+      "pregnant people",
+      "patients with chronic constipation"
+    ],
+    "diagnosticCriteria": "Clinical evaluation with anoscopy; rule out other causes of rectal bleeding"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of adults affected",
+    "controlRate": "High with conservative measures and outpatient procedures"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care with access to specialist proctology when needed",
+    "treatmentProtocol": "Fiber, topical treatments, rubber band ligation; hemorrhoidectomy for severe cases",
+    "regionalChallenges": "Access disparities across regions and patient reluctance to seek care",
+    "strongPoints": "Wide availability of outpatient procedures and surgical care"
+  }
+}

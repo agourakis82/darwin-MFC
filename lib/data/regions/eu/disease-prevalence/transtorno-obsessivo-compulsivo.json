@@ -1,0 +1,49 @@
+{
+  "diseaseId": "transtorno-obsessivo-compulsivo",
+  "region": "EU",
+  "diseaseName": "Obsessive-Compulsive Disorder (OCD)",
+  "prevalence": {
+    "value": "1-2%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "WHO Europe / European psychiatric epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "1-2 per 1,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.01",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "stressful life events",
+      "comorbid anxiety/depression"
+    ],
+    "vulnerablePopulations": [
+      "adolescents and young adults",
+      "patients with comorbid mood disorders"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria; structured assessment with access to ERP therapy in many systems"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~5-9 million",
+    "controlRate": "Moderate to high with ERP and SSRIs; varies by country"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist pathways and psychotherapy access common in many member states",
+    "treatmentProtocol": "ERP-focused CBT and SSRIs; specialist augmentation strategies when refractory",
+    "regionalChallenges": "Wait times for ERP in some systems",
+    "strongPoints": "Broad availability of evidence-based psychotherapy in many countries"
+  }
+}
+

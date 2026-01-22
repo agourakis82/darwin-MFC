@@ -1,0 +1,53 @@
+{
+  "diseaseId": "cefaleia-tensional",
+  "region": "IN",
+  "diseaseName": "Tension-Type Headache",
+  "prevalence": {
+    "value": "15-25% (1-year prevalence)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "IHME GBD (tension-type headache) context",
+    "trend": "stable; high underdiagnosis"
+  },
+  "incidence": {
+    "value": "high (recurrent episodic)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Headache epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.005-0.02",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "stress",
+      "sleep deprivation",
+      "poor posture/ergonomics",
+      "anxiety/depression",
+      "high screen time"
+    ],
+    "vulnerablePopulations": [
+      "working-age adults",
+      "students and office workers",
+      "women",
+      "people with insomnia"
+    ],
+    "diagnosticCriteria": "ICHD-3 tension-type headache criteria; exclude secondary causes with red flags"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of millions with episodic symptoms",
+    "controlRate": "Variable; self-medication common and medication overuse risk is significant"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Mostly clinical diagnosis; limited neurology access outside cities",
+    "treatmentProtocol": "Lifestyle measures, stress management, sleep hygiene, simple analgesics; amitriptyline prophylaxis for chronic cases; yoga/relaxation often used",
+    "regionalChallenges": "Self-medication, medication overuse headache, and limited access to non-pharmacologic therapies",
+    "strongPoints": "Low-cost medications and culturally accepted stress-reduction practices (yoga/meditation)"
+  }
+}
+

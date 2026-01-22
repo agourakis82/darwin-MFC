@@ -1,0 +1,51 @@
+{
+  "diseaseId": "urticaria",
+  "region": "IN",
+  "diseaseName": "Urticaria",
+  "prevalence": {
+    "value": "~15-20% lifetime (acute); ~0.5-1% chronic",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Allergy/dermatology epidemiology syntheses",
+    "trend": "stable; chronic urticaria recognized more often"
+  },
+  "incidence": {
+    "value": "~12-25 per 1,000 person-years (acute episodes)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Primary care and allergy clinic data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant itch and sleep disturbance",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD skin disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral infections",
+      "food or drug reactions",
+      "autoimmune disease",
+      "stress",
+      "physical triggers (pressure, cold, heat)"
+    ],
+    "vulnerablePopulations": [
+      "women (chronic urticaria)",
+      "patients with autoimmune disease",
+      "patients with recurrent angioedema"
+    ],
+    "diagnosticCriteria": "Clinical wheals lasting <24h; chronic urticaria defined as >6 weeks"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions with acute episodes; hundreds of thousands with chronic disease",
+    "controlRate": "Moderate; improved with guideline-based antihistamine escalation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis; limited lab work-up for chronic cases",
+    "treatmentProtocol": "Second-generation antihistamines, dose escalation; omalizumab for refractory chronic urticaria where available",
+    "regionalChallenges": "Limited access to allergy specialists and biologics",
+    "strongPoints": "Antihistamines widely available and effective for most cases"
+  }
+}

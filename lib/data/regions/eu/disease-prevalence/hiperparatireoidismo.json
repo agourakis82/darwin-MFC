@@ -1,0 +1,50 @@
+{
+  "diseaseId": "hiperparatireoidismo",
+  "region": "EU",
+  "diseaseName": "Primary hyperparathyroidism",
+  "prevalence": {
+    "value": "~0.4-1.0% (adults; higher in older women)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European endocrinology epidemiology syntheses",
+    "trend": "stable; increasing detection with routine calcium testing"
+  },
+  "incidence": {
+    "value": "~3-6 per 10,000 person-years",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Endocrinology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; morbidity from stones and bone loss",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "WHO Europe/IHME endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "older age",
+      "neck radiation history",
+      "MEN syndromes (rare)"
+    ],
+    "vulnerablePopulations": [
+      "women >50 years",
+      "patients with nephrolithiasis or osteoporosis",
+      "families with MEN syndromes"
+    ],
+    "diagnosticCriteria": "Elevated calcium with inappropriately high PTH; assess vitamin D, renal function, bone density"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; incidental hypercalcemia detection",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions (mostly mild/asymptomatic)",
+    "controlRate": "High with surgical cure when indicated"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Lab testing and parathyroid imaging widely available",
+    "treatmentProtocol": "Parathyroidectomy for symptomatic or meeting criteria; monitoring for mild cases",
+    "regionalChallenges": "Variation in surgical access across countries",
+    "strongPoints": "Clear diagnostic criteria and effective surgical treatment"
+  }
+}

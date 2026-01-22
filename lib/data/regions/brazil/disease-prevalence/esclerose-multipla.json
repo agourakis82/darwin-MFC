@@ -1,0 +1,52 @@
+{
+  "diseaseId": "esclerose-multipla",
+  "region": "BR",
+  "diseaseName": "Esclerose Múltipla (EM)",
+  "prevalence": {
+    "value": "15-30 per 100,000",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Academia Brasileira de Neurologia + MS epidemiology syntheses",
+    "trend": "increasing due to improved diagnosis and survival"
+  },
+  "incidence": {
+    "value": "1-3 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "MS cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0008-0.003",
+    "mortalityRate": "Low; indirect via complications",
+    "year": 2024,
+    "source": "IHME GBD (MS)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "genetic susceptibility",
+      "low vitamin D/limited sun exposure patterns",
+      "smoking",
+      "EBV association"
+    ],
+    "vulnerablePopulations": [
+      "women 20-40 years",
+      "patients in Southern Brazil (higher latitude association in some datasets)",
+      "patients with delayed MRI access"
+    ],
+    "diagnosticCriteria": "McDonald criteria with dissemination in time and space (MRI) and CSF oligoclonal bands as supportive; clinical relapses and neurologic exam"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~30,000-60,000",
+    "controlRate": "Moderate; improved with disease-modifying therapy access and early diagnosis"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "MRI and neurology access concentrated in larger centers; diagnosis delays in remote areas",
+    "treatmentProtocol": "Disease-modifying therapies via SUS specialized components in many settings; relapse treatment with corticosteroids; rehabilitation services",
+    "regionalChallenges": "Unequal access to neurologists/MRI and timely escalation to high-efficacy DMTs",
+    "strongPoints": "Specialized MS care exists in major centers and public provision of several DMTs"
+  }
+}
+

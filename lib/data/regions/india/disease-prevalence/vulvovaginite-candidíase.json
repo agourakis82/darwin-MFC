@@ -1,0 +1,52 @@
+{
+  "diseaseId": "vulvovaginite-candidíase",
+  "region": "IN",
+  "diseaseName": "Vulvovaginal Candidiasis (VVC)",
+  "prevalence": {
+    "value": "70-75% lifetime in women; recurrent VVC ~5-8%",
+    "population": "Women",
+    "year": 2024,
+    "source": "Indian gynecology epidemiology syntheses",
+    "trend": "stable; recurrence associated with diabetes"
+  },
+  "incidence": {
+    "value": "high (episodes common)",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; high QOL impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO women's health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "diabetes mellitus",
+      "pregnancy",
+      "antibiotic use",
+      "immunosuppression",
+      "poor genital hygiene and tight clothing (association)"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people",
+      "women with diabetes",
+      "women with recurrent VVC"
+    ],
+    "diagnosticCriteria": "Clinical symptoms plus microscopy when available; pH usually normal; culture for recurrent/complicated cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high episode burden",
+    "controlRate": "Variable; recurrence common when diabetes is uncontrolled"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often clinical diagnosis; limited microscopy in peripheral settings",
+    "treatmentProtocol": "Topical azoles or oral fluconazole; longer maintenance for recurrent VVC; address diabetes and triggers",
+    "regionalChallenges": "Misdiagnosis and overuse of antifungals without confirmation; limited lab access",
+    "strongPoints": "Low-cost antifungals widely available"
+  }
+}
+

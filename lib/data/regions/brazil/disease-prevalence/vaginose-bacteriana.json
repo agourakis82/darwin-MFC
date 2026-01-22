@@ -1,0 +1,52 @@
+{
+  "diseaseId": "vaginose-bacteriana",
+  "region": "BR",
+  "diseaseName": "Vaginose Bacteriana",
+  "prevalence": {
+    "value": "15-30% (reproductive-age women; higher in some settings)",
+    "population": "Women of reproductive age in Brazil",
+    "year": 2024,
+    "source": "FEBRASGO/gynecology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "high (recurrent episodes common)",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; important reproductive health implications",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO reproductive health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "new/multiple sexual partners",
+      "vaginal douching",
+      "smoking",
+      "IUD use (association)",
+      "history of BV"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people (adverse outcomes association)",
+      "women with recurrent BV",
+      "women with limited access to gynecologic care"
+    ],
+    "diagnosticCriteria": "Amsel criteria (3/4) or Nugent score on Gram stain; vaginal pH >4.5 typical; differentiate from VVC and trichomoniasis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; pregnancy screening varies by context",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of episodes/year",
+    "controlRate": "Moderate; recurrence common"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often clinical diagnosis; microscopy/Gram stain availability varies",
+    "treatmentProtocol": "Metronidazole or clindamycin regimens; counsel to avoid douching and manage recurrence; pregnancy management per guidelines",
+    "regionalChallenges": "High recurrence and limited lab confirmation; overlap with STIs and limited access to follow-up",
+    "strongPoints": "Effective low-cost antibiotic treatments are widely available"
+  }
+}
+

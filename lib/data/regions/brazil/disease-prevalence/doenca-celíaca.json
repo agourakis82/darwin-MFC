@@ -1,0 +1,50 @@
+{
+  "diseaseId": "doenca-celíaca",
+  "region": "BR",
+  "diseaseName": "Doenca celiaca",
+  "prevalence": {
+    "value": "~0.5-1.0% (adults and children)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Gastroenterology epidemiology syntheses; celiac screening studies",
+    "trend": "increasing diagnosis with improved awareness"
+  },
+  "incidence": {
+    "value": "~5-10 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "Celiac cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; chronic GI and nutritional impact",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "IHME/GBD digestive disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "HLA-DQ2/DQ8 genetics",
+      "family history",
+      "type 1 diabetes",
+      "autoimmune thyroid disease"
+    ],
+    "vulnerablePopulations": [
+      "children",
+      "first-degree relatives",
+      "patients with autoimmune disease"
+    ],
+    "diagnosticCriteria": "Positive tTG IgA (with total IgA), confirmatory duodenal biopsy; consider HLA testing in equivocal cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no population screening; targeted testing in high-risk groups",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands",
+    "controlRate": "Moderate; depends on adherence to gluten-free diet"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Serology and endoscopy available in referral centers",
+    "treatmentProtocol": "Strict gluten-free diet, nutritional counseling, monitor deficiencies",
+    "regionalChallenges": "Limited access to gluten-free foods and dietitian support",
+    "strongPoints": "Growing awareness and access to diagnostic testing in major centers"
+  }
+}

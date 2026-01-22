@@ -2,6 +2,31 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { AppState, ContentMode, Theme, ViewMode } from '../types';
 import type { Locale } from '@/i18n/config';
+import type { Region } from '../types/region';
+
+/**
+ * Auto-detect region from browser locale
+ * Maps language codes to default regions
+ */
+function detectRegionFromLocale(locale?: Locale): Region {
+  if (!locale) return 'BR';
+
+  switch (locale) {
+    case 'pt':
+      return 'BR';
+    case 'hi':
+      return 'IN';
+    case 'en':
+    case 'es':
+    case 'fr':
+    case 'ru':
+    case 'ar':
+    case 'zh':
+    case 'el':
+    default:
+      return 'EU';
+  }
+}
 
 interface AppStore extends AppState {
   // Actions
@@ -27,20 +52,42 @@ interface AppStore extends AppState {
   // i18n
   locale?: Locale;
   setLocale: (locale: Locale) => void;
+  // Region selection
+  setRegion: (region: Region) => void;
 }
 
 export const useAppStore = create<AppStore>()(
   persist(
-    (set, get) => ({
-      // Estado inicial - Dark mode como padrão
-      theme: 'dark',
-      contentMode: 'descriptive',
-      viewMode: 'full', // full | high_yield | print_friendly
-      favorites: [],
-      favoritosDoencas: [],
-      favoritosMedicamentos: [],
-      favoritosProtocolos: [],
-      notes: {},
+    (set, get) => {
+      // Initialize region from localStorage or auto-detect from locale
+      const getInitialRegion = (): Region => {
+        if (typeof window !== 'undefined') {
+          const stored = localStorage.getItem('darwin-mfc-storage');
+          if (stored) {
+            try {
+              const parsed = JSON.parse(stored);
+              if (parsed.state?.selectedRegion) {
+                return parsed.state.selectedRegion;
+              }
+            } catch (e) {
+              console.error('Failed to parse stored region:', e);
+            }
+          }
+        }
+        return detectRegionFromLocale();
+      };
+
+      return {
+        // Estado inicial - Dark mode como padrão
+        theme: 'dark',
+        contentMode: 'descriptive',
+        viewMode: 'full', // full | high_yield | print_friendly
+        favorites: [],
+        favoritosDoencas: [],
+        favoritosMedicamentos: [],
+        favoritosProtocolos: [],
+        notes: {},
+        selectedRegion: getInitialRegion(),
 
       // Actions
       setTheme: (theme) => set({ theme }),
@@ -119,7 +166,16 @@ export const useAppStore = create<AppStore>()(
       // i18n
       locale: undefined,
       setLocale: (locale) => set({ locale }),
-    }),
+
+      // Region selection
+      setRegion: (region: Region) => {
+        set({ selectedRegion: region });
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('darwin-selected-region', region);
+        }
+      },
+      };
+    },
     {
       name: 'darwin-mfc-storage', // Nome da key no localStorage
       partialize: (state) => ({
@@ -132,6 +188,7 @@ export const useAppStore = create<AppStore>()(
         favoritosProtocolos: state.favoritosProtocolos,
         notes: state.notes,
         locale: state.locale,
+        selectedRegion: state.selectedRegion,
       }),
     }
   )

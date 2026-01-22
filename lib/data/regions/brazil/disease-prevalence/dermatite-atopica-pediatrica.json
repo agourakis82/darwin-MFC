@@ -1,0 +1,51 @@
+{
+  "diseaseId": "dermatite-atopica-pediatrica",
+  "region": "BR",
+  "diseaseName": "Dermatite Atópica (Pediátrica)",
+  "prevalence": {
+    "value": "10-15% (children)",
+    "population": "Brazilian children",
+    "year": 2024,
+    "source": "SBD + ISAAC-aligned pediatric eczema syntheses",
+    "trend": "stable to increasing in urban areas"
+  },
+  "incidence": {
+    "value": "5-15 per 1,000/year (new childhood diagnoses)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Pediatric dermatology cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.012",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD (atopic dermatitis)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history of atopy",
+      "skin barrier dysfunction",
+      "allergen exposure",
+      "urban pollution",
+      "asthma/allergic rhinitis comorbidity"
+    ],
+    "vulnerablePopulations": [
+      "children with asthma/allergic rhinitis",
+      "low-income families with limited emollient access"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis of pruritic eczema with typical age-dependent distribution; exclude scabies and contact dermatitis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of children",
+    "controlRate": "Variable; dependent on emollient access, education, and adherence"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS manages mild cases; dermatology referral for moderate-severe disease",
+    "treatmentProtocol": "Emollients and topical anti-inflammatories; infection management; advanced systemic/biologic therapies limited to specialized centers",
+    "regionalChallenges": "Access to emollients and specialist care within SUS",
+    "strongPoints": "Topical corticosteroids widely available and primary care coverage is broad"
+  }
+}
+

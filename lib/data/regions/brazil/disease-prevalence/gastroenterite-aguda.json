@@ -1,0 +1,52 @@
+{
+  "diseaseId": "gastroenterite-aguda",
+  "region": "BR",
+  "diseaseName": "Gastroenterite aguda",
+  "prevalence": {
+    "value": "~10-20% annual symptomatic episodes",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "DataSUS and WHO diarrheal disease context",
+    "trend": "decreasing in children due to vaccination and sanitation, persistent seasonal peaks"
+  },
+  "incidence": {
+    "value": "~200-400 per 1,000 person-years (higher in children)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Primary care and surveillance syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate in children due to dehydration risk",
+    "mortalityRate": "Low; higher in infants and vulnerable adults",
+    "year": 2024,
+    "source": "WHO/IHME diarrheal disease burden"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "contaminated food or water",
+      "poor sanitation",
+      "household crowding",
+      "daycare exposure",
+      "travel"
+    ],
+    "vulnerablePopulations": [
+      "children under 5",
+      "older adults",
+      "immunocompromised patients",
+      "low-income communities"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis (acute diarrhea/vomiting); stool testing reserved for severe, persistent, or outbreak cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom- and outbreak-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually",
+    "controlRate": "High with early oral rehydration and hygiene measures"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care evaluation; lab testing in outbreaks or severe cases",
+    "treatmentProtocol": "Oral rehydration solution, zinc in children, antiemetics when appropriate; antibiotics only for specific indications",
+    "regionalChallenges": "Access to clean water and sanitation in vulnerable areas; dehydration risk in infants",
+    "strongPoints": "Strong ORS availability and rotavirus vaccination impact in infants"
+  }
+}

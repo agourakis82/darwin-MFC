@@ -1,0 +1,51 @@
+{
+  "diseaseId": "faringite-aguda",
+  "region": "BR",
+  "diseaseName": "Faringite aguda",
+  "prevalence": {
+    "value": "Common episodic condition (children and adolescents)",
+    "population": "Brazilian children and adolescents",
+    "year": 2024,
+    "source": "Primary care respiratory infection syntheses",
+    "trend": "stable; seasonal peaks in school periods"
+  },
+  "incidence": {
+    "value": "~100-200 per 1,000 children/year (episodes)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Pediatric primary care cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low; significant school absenteeism and antibiotic use",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO URI context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral respiratory infections",
+      "group A streptococcus exposure",
+      "crowding",
+      "school/daycare attendance",
+      "smoke exposure"
+    ],
+    "vulnerablePopulations": [
+      "children 5-15 years",
+      "households with crowding",
+      "patients with recurrent pharyngitis"
+    ],
+    "diagnosticCriteria": "Clinical assessment (Centor/McIsaac) with rapid antigen testing or culture when available to confirm strep"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually",
+    "controlRate": "High for symptom relief; antibiotic stewardship varies by diagnostic access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis common; confirmatory testing limited in some settings",
+    "treatmentProtocol": "Supportive care for viral; penicillin/amoxicillin for suspected or confirmed streptococcal pharyngitis",
+    "regionalChallenges": "Antibiotic overuse without testing and delayed ENT access for recurrent cases",
+    "strongPoints": "Low-cost antibiotics and primary care access across SUS"
+  }
+}

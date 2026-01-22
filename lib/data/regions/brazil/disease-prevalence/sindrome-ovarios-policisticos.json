@@ -1,0 +1,53 @@
+{
+  "diseaseId": "sindrome-ovarios-policisticos",
+  "region": "BR",
+  "diseaseName": "Síndrome dos Ovários Policísticos (SOP)",
+  "prevalence": {
+    "value": "6-10% (reproductive-age women)",
+    "population": "Women of reproductive age in Brazil",
+    "year": 2024,
+    "source": "FEBRASGO/endocrinology-gynecology epidemiology syntheses (PCOS)",
+    "trend": "stable to increasing with obesity and insulin resistance prevalence"
+  },
+  "incidence": {
+    "value": "5-10 per 1,000 women/year (new diagnoses, detection-dependent)",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "PCOS clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.006",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO women's health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "insulin resistance",
+      "obesity",
+      "family history",
+      "sedentary lifestyle",
+      "ethnic susceptibility"
+    ],
+    "vulnerablePopulations": [
+      "women with obesity",
+      "women with irregular menses",
+      "women with infertility",
+      "patients with limited access to endocrinology/gynecology"
+    ],
+    "diagnosticCriteria": "Rotterdam criteria: 2 of 3 (oligo/anovulation, hyperandrogenism clinical/biochemical, polycystic ovaries on ultrasound) after exclusion of other causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis is symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of women",
+    "controlRate": "Variable; improved with weight management and access to hormonal/metabolic therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Ultrasound and hormone labs availability varies; APS often initiates evaluation and referral",
+    "treatmentProtocol": "Lifestyle/weight loss, combined oral contraceptives for cycle control, metformin for insulin resistance, fertility management in specialist care; screen for metabolic risk",
+    "regionalChallenges": "Obesity prevalence, limited access to specialized fertility services in SUS, and inconsistent metabolic screening",
+    "strongPoints": "Availability of metformin and primary care chronic disease management"
+  }
+}
+

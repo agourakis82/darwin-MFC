@@ -1,0 +1,51 @@
+{
+  "diseaseId": "dermatite-seborreica",
+  "region": "IN",
+  "diseaseName": "Seborrheic dermatitis",
+  "prevalence": {
+    "value": "~3-6% (adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Dermatology epidemiology syntheses; IADVL context",
+    "trend": "stable; higher in men and HIV patients"
+  },
+  "incidence": {
+    "value": "~5-12 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Dermatology outpatient data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; chronic pruritus and QOL impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD skin disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "male sex",
+      "sebaceous skin",
+      "HIV infection",
+      "Parkinson disease",
+      "stress"
+    ],
+    "vulnerablePopulations": [
+      "adults 20-60 years",
+      "patients with HIV",
+      "patients with Parkinson disease"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis of erythematous, greasy scaling in seborrheic areas"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of adults",
+    "controlRate": "High with topical therapy and maintenance"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care and dermatology",
+    "treatmentProtocol": "Medicated shampoos (ketoconazole), topical antifungals and corticosteroids; maintenance therapy",
+    "regionalChallenges": "Recurrence and adherence to maintenance therapy",
+    "strongPoints": "Effective topical treatments widely available"
+  }
+}

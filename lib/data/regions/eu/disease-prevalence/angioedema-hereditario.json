@@ -1,0 +1,50 @@
+{
+  "diseaseId": "angioedema-hereditario",
+  "region": "EU",
+  "diseaseName": "Hereditary Angioedema (HAE)",
+  "prevalence": {
+    "value": "~1 per 50,000",
+    "population": "EU population",
+    "year": 2024,
+    "source": "Orphanet; European HAE registries and epidemiology reviews",
+    "trend": "increasing diagnosed prevalence due to awareness and access to complement testing"
+  },
+  "incidence": {
+    "value": "Rare; family-based detection common",
+    "population": "All ages",
+    "year": 2024,
+    "source": "European HAE registries"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but high acute morbidity; laryngeal attacks are life-threatening",
+    "mortalityRate": "Very low with access to on-demand therapy and emergency care",
+    "year": 2024,
+    "source": "Registry outcomes"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "SERPING1 pathogenic variant",
+      "family history (autosomal dominant)",
+      "estrogen exposure (can worsen)",
+      "trauma/dental procedures (trigger)"
+    ],
+    "vulnerablePopulations": [
+      "undiagnosed family members",
+      "patients with frequent severe attacks",
+      "women with hormonally triggered symptoms"
+    ],
+    "diagnosticCriteria": "Recurrent angioedema without urticaria; low C4; low C1 inhibitor level or function; confirm with repeat testing and genetics"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no population screening; cascade family testing is standard",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Several thousand across the EU",
+    "controlRate": "High with access to on-demand therapy and prophylaxis where needed"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Complement testing and specialist allergy/immunology pathways widely available",
+    "treatmentProtocol": "On-demand therapies (C1-INH, bradykinin antagonist), prophylaxis for frequent/severe attacks, action plans and trigger avoidance",
+    "regionalChallenges": "Cross-country variation in access and reimbursement of specific therapies",
+    "strongPoints": "Strong registry networks and broad access to diagnostics and modern HAE treatments in many systems"
+  }
+}

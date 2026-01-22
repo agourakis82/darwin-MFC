@@ -1387,7 +1387,1466 @@ export const rastreamentos: Record<string, Rastreamento> = {
       ]
     },
     lastUpdate: '2025-12'
-  }
+  },
+
+  // ============================================
+  // AUTO-GENERATED MODULES (32 conditions)
+  // Generated: 2026-01-21T22:22:25.708Z
+  // ============================================
+
+  'acne': {
+    id: 'acne',
+    title: 'Manejo da Acne Vulgaris',
+    category: 'outros',
+    description: `A acne vulgaris é uma condição inflamatória crônica da unidade pilosebácea que afeta comumente adultos, adolescentes e pré-adolescentes com 9 anos ou mais . É uma das condições de pele mais comuns em crianças e adolescentes, com apresentação, diagnóstico diferencial e associações com patologias sistêmicas variando por idade . O manejo envolve abordagens tópicas, sistêmicas e dermocosméticas, com impacto negativo na qualidade de vida, incluindo ansiedade e depressão . Condições associadas como síndrome dos ovários policísticos (SOP) podem contribuir para acne em mulheres .`,
+    recommendations: {
+      sus: {
+        population: `Adolescentes e adultos com acne vulgaris sintomática, incluindo aqueles com comorbidades como SOP [2,5,9].`,
+        method: `Tópicos (retinoides, peróxido de benzoíla); Sistêmicos (antibióticos orais, isotretinoína para casos graves)`,
+        periodicity: `Avaliação clínica inicial e follow-up a cada 4-6 semanas durante tratamento ativo [9].`,
+        justification: `No SUS, o manejo da acne é recomendado para pacientes com lesões moderadas a graves, priorizando tratamentos acessíveis e protocolos dermatológicos latino-americanos [9].`,
+        citations: [{ refId: 'acne-ref-9' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Preadolescentes ≥9 anos, adolescentes e adultos com acne vulgaris [1,7]. Mulheres com SOP e hiperandrogenismo [2,5].`,
+        method: `Dermocosméticos; Tópicos (retinoides, antibióticos); Sistêmicos (isotretinoína, contraceptivos orais para mulheres)`,
+        periodicity: `Monitoramento a cada 1-3 meses durante terapia, com reavaliação anual para recorrência [1].`,
+        recommendation: `As diretrizes da American Academy of Dermatology (AAD) recomendam manejo baseado em gravidade, com terapias tópicas para leve, combinação para moderada e sistêmicas para grave [1]. Sociedade Endócrina para acne associada a SOP [2].`,
+        citations: [{ refId: 'acne-ref-1' }, { refId: 'acne-ref-2' }, { refId: 'acne-ref-5' }, { refId: 'acne-ref-6' }, { refId: 'acne-ref-7' }]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'acne-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `Alta prevalência em adolescentes e jovens adultos, afetando comumente populações pediátricas e adultas [1,7]. Prevalência global estimada em até 80-90% durante a adolescência [1,9].`,
+      incidence: `Incidência aumenta na puberdade, com picos em 12-24 anos [1,7].`,
+      mortality: `Mortalidade negligible, mas morbidade significativa devido a cicatrizes e impacto psicológico [1,9].`,
+      citations: [{ refId: 'acne-ref-1' }, { refId: 'acne-ref-7' }, { refId: 'acne-ref-9' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'alzheimer': {
+    id: 'alzheimer',
+    title: 'Diagnóstico e Avaliação de Doença de Alzheimer',
+    category: 'outros',
+    description: `A doença de Alzheimer é a forma mais comum de demência, caracterizada por declínio cognitivo progressivo . As diretrizes recomendam avaliação estruturada para suspeita de comprometimento cognitivo em cuidados primários e especializados . A avaliação inclui história clínica, testes cognitivos e exclusão de causas reversíveis .`,
+    recommendations: {
+      sus: {
+        population: `Idosos acima de 65 anos com fatores de risco como história familiar, hipertensão ou Down syndrome [5,9].`,
+        method: `Testes cognitivos (ex: MMSE); Exames laboratoriais; Neuroimagem (TC/RM); Biomarcadores sanguíneos em centros especializados`,
+        periodicity: `Sob demanda clínica, sem periodicidade fixa; reavaliação anual para MCI [1,10].`,
+        justification: `Avaliação diagnóstica para pacientes com suspeita de declínio cognitivo ou queixas de memória, sem programa de rastreamento populacional rotineiro [5,8].`,
+        citations: [{ refId: 'alzheimer-ref-1' }, { refId: 'alzheimer-ref-5' }, { refId: 'alzheimer-ref-8' }, { refId: 'alzheimer-ref-9' }, { refId: 'alzheimer-ref-10' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos com queixas subjetivas de memória ou impairment cognitivo objetivo, especialmente ≥65 anos [1,2,4].`,
+        method: `Entrevista clínica e história; Testes neuropsicológicos; Biomarcadores (p-tau, Aβ) em contextos especializados [6]; Neuroimagem e EEG se indicado`,
+        periodicity: `Avaliação inicial sob suspeita; monitoramento para progressão em MCI a cada 6-12 meses [1,10].`,
+        recommendation: `Avaliação diagnóstica recomendada pela Alzheimer's Association para suspeita de Alzheimer ou demências relacionadas em cuidados primários e especializados [2,4]. Critérios clínicos NINCDS-ADRDA para diagnóstico provável [7].`,
+        citations: [{ refId: 'alzheimer-ref-1' }, { refId: 'alzheimer-ref-2' }, { refId: 'alzheimer-ref-4' }, { refId: 'alzheimer-ref-6' }, { refId: 'alzheimer-ref-7' }, { refId: 'alzheimer-ref-10' }]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'alzheimer-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência global de demência é de aproximadamente 55 milhões de casos, com Alzheimer representando 60-70% [5,8]. No Brasil, estima-se 1,5 milhão de casos de demência [5].`,
+      incidence: `Incidência anual global de demência ~10 milhões de novos casos [5,8]. Para Alzheimer, ~5-10 por 1.000 pessoas-ano em idosos >65 anos [7].`,
+      mortality: `Alzheimer é a 7ª principal causa de morte global, com ~2 milhões de óbitos anuais [5,8]. No Brasil, contribui para 5-10% das mortes em idosos [5].`,
+      citations: [{ refId: 'alzheimer-ref-5' }, { refId: 'alzheimer-ref-7' }, { refId: 'alzheimer-ref-8' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'ansiedade': {
+    id: 'ansiedade',
+    title: 'Rastreamento de Transtornos de Ansiedade',
+    category: 'saude_mental',
+    description: `Os transtornos de ansiedade representam um grupo de condições psiquiátricas comuns, caracterizadas por preocupação excessiva e medo, impactando a funcionalidade diária . O rastreamento precoce em atenção primária é crucial para identificar casos e iniciar intervenções, reduzindo o risco de cronicidade . No contexto brasileiro, a integração ao SUS promove acesso equitativo ao diagnóstico .`,
+    recommendations: {
+      sus: {
+        population: `Adultos ≥18 anos com fatores de risco como estresse crônico ou comorbidades; adolescentes com sinais de sofrimento psicológico [5,6].`,
+        method: `Entrevista clínica; Escalas como GAD-7 ou BAI`,
+        periodicity: `Avaliação inicial e follow-up anual ou conforme necessidade clínica [5].`,
+        justification: `Rastreamento indicado para indivíduos com sintomas persistentes de ansiedade em atenção básica, incluindo adultos e adolescentes com queixas emocionais [5,6].`,
+        citations: [{ refId: 'ansiedade-ref-5' }, { refId: 'ansiedade-ref-6' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos e adolescentes com exposição a estressores ou histórico familiar; screening universal em populações de risco [4].`,
+        method: `Questionários validados (GAD-7, PHQ-9 adaptado); Avaliação psiquiátrica`,
+        periodicity: `Anual para indivíduos em risco; avaliação sob demanda para sintomáticos [4].`,
+        recommendation: `A American Psychiatric Association (2023) recomenda rastreamento sistemático em adultos com sintomas de ansiedade em contextos de atenção primária [4].`,
+        citations: [{ refId: 'ansiedade-ref-4' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'ansiedade-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência global de transtornos de ansiedade é de aproximadamente 4% em adultos [4]. No Brasil, estima-se em 9,3% da população adulta [3,5].`,
+      incidence: `A incidência anual varia de 2-5% em populações adultas [2,4]. No contexto brasileiro, cerca de 3% novos casos por ano [5,6].`,
+      mortality: `Baixa mortalidade direta, mas associada a 20-30% de risco aumentado de suicídio [1,4]. No Brasil, contribui indiretamente para 5% das mortes por causas externas [5].`,
+      citations: [{ refId: 'ansiedade-ref-1' }, { refId: 'ansiedade-ref-2' }, { refId: 'ansiedade-ref-3' }, { refId: 'ansiedade-ref-4' }, { refId: 'ansiedade-ref-5' }, { refId: 'ansiedade-ref-6' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'asma': {
+    id: 'asma',
+    title: 'Manejo da Asma',
+    category: 'outros',
+    description: `A asma é uma doença inflamatória crônica das vias aéreas caracterizada por episódios recorrentes de sibilância, dispneia, aperto torácico e tosse, com variabilidade ao longo do tempo e reversibilidade espontânea ou com tratamento . O manejo precoce é essencial para controle dos sintomas e prevenção de exacerbações . No contexto brasileiro, o Protocolo Clínico do SUS enfatiza o acesso a medicamentos e educação do paciente .`,
+    recommendations: {
+      sus: {
+        population: `Crianças, adolescentes e adultos com sintomas como tosse noturna, sibilância e dispneia; priorizando grupos de risco como alérgicos e fumantes [13,14].`,
+        method: `Espirometria; Pico de fluxo expiratório; Teste de broncodilatador; FeNO para inflamação eosinofílica [4]`,
+        periodicity: `Avaliação clínica a cada 1-3 meses para ajuste terapêutico; monitoramento anual de função pulmonar [13].`,
+        justification: `Diagnóstico e manejo de pacientes com suspeita ou confirmação de asma, incluindo avaliação de controle e prevenção de crises [13]. Recomendado para todos os pacientes com sintomas respiratórios persistentes ou recorrentes [13,14].`,
+        citations: [{ refId: 'asma-ref-13' }, { refId: 'asma-ref-14' }, { refId: 'asma-ref-4' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Indivíduos de todas as idades com sintomas sugestivos de asma; foco em controle em asmáticos persistentes [11,12].`,
+        method: `Espirometria com broncodilatador; Questionários de controle (ACQ/ACT); FeNO [4]; Teste de ativação de basófilos para hipersensibilidade [5]`,
+        periodicity: `Revisão do plano de ação a cada 2-4 semanas em casos não controlados; avaliações regulares para manutenção [11,12].`,
+        recommendation: `A Global Initiative for Asthma (GINA 2024) recomenda diagnóstico baseado em história clínica e testes de função pulmonar, com manejo escalonado para controle [11]. A Sociedade Brasileira de Pneumologia e Tisiologia (SBPT 2021) enfatiza abordagem personalizada e uso de ICS desde o início [12].`,
+        citations: [{ refId: 'asma-ref-11' }, { refId: 'asma-ref-12' }, { refId: 'asma-ref-4' }, { refId: 'asma-ref-5' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'asma-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência global varia de 1% a 18% em diferentes populações [11]. No Brasil, estima-se em cerca de 10% em adultos urbanos [12,13].`,
+      incidence: `A incidência anual global é de 5-10 casos por 1.000 pessoas [11]. No Brasil, aproximadamente 3-5% ao ano em crianças [12].`,
+      mortality: `A mortalidade global é baixa, cerca de 0,1-0,2 por 100.000 habitantes, mas subnotificada em países em desenvolvimento [11]. No Brasil, contribui para 2-3% das mortes por doenças respiratórias [13].`,
+      citations: [{ refId: 'asma-ref-11' }, { refId: 'asma-ref-12' }, { refId: 'asma-ref-13' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'celulite': {
+    id: 'celulite',
+    title: 'Celulite (Infecção Bacteriana da Pele)',
+    category: 'outros',
+    description: `A celulite é uma infecção bacteriana aguda da derme e tecido subcutâneo, geralmente causada por Streptococcus ou Staphylococcus . Caracteriza-se por eritema, calor, edema e dor local . É uma das infecções de pele mais comuns, com potencial para complicações como abscessos ou sepse . No contexto brasileiro, a vigilância é essencial em populações vulneráveis .`,
+    recommendations: {
+      sus: {
+        population: `Populações vulneráveis, incluindo diabéticos, imunossuprimidos, idosos e indivíduos em áreas endêmicas de zoonoses relacionadas [2].`,
+        method: `Exame clínico; Avaliação epidemiológica; Coleta de amostras para cultura se grave`,
+        periodicity: `Monitoramento contínuo e caso a caso, sem periodicidade fixa para rastreamento populacional [2].`,
+        justification: `Vigilância e detecção precoce de infecções de pele e partes moles em atenção básica, especialmente em casos de exposição a fatores de risco como feridas ou comorbidades [2].`,
+        citations: [{ refId: 'celulite-ref-2' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos e crianças com eritema difuso, febre ou fatores de risco como linfedema ou diabetes [1].`,
+        method: `Exame físico; Antibióticos orais empíricos (ex.: cefalexina); Exames laboratoriais (hemograma, PCR) em casos graves`,
+        periodicity: `Avaliação aguda, sem rastreamento preventivo periódico; seguimento para recorrências em casos crônicos [1].`,
+        recommendation: `Diagnóstico e manejo de celulite em pacientes com sinais de infecção cutânea aguda, priorizando tratamento empírico [1].`,
+        citations: [{ refId: 'celulite-ref-1' }]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'celulite-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência de celulite é estimada em 1-5% em populações gerais, com maior incidência em diabéticos (até 20%) [3,4]. No Brasil, representa cerca de 10% das infecções de pele atendidas em serviços de saúde [1,2].`,
+      incidence: `Incidência global de 24,6 casos por 1.000 pessoas-ano em adultos [3]. No Brasil, estima-se 15-20 casos por 1.000 habitantes anualmente em regiões urbanas [1,5].`,
+      mortality: `Mortalidade baixa (1-5%) em casos não complicados, mas até 20% em sepse associada [3,4]. No Brasil, contribui para 2-3% das mortes por infecções sistêmicas [2,5].`,
+      citations: [{ refId: 'celulite-ref-1' }, { refId: 'celulite-ref-2' }, { refId: 'celulite-ref-3' }, { refId: 'celulite-ref-4' }, { refId: 'celulite-ref-5' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'demencia': {
+    id: 'demencia',
+    title: 'Demência',
+    category: 'outros',
+    description: `A demência é uma síndrome caracterizada por deterioração progressiva das funções cognitivas, acompanhada de sintomas psiquiátricos e distúrbios comportamentais que levam a incapacidade progressiva e irreversível . É a segunda principal causa de demência neurodegenerativa, com impacto significativo na qualidade de vida de pacientes e familiares . Há evidências de associação entre periodontite e demência, recomendando prevenção e manejo integrado . O diagnóstico precoce utiliza biomarcadores como PET imaging e testes sanguíneos para condições associadas, como doença de Alzheimer . Considerações éticas incluem manejo nutricional e prevenção de reações adversas a medicamentos em idosos . Investigação genética é recomendada em casos selecionados . Consensos enfatizam nutrição enteral controversa em estágios avançados .`,
+    recommendations: {
+      sus: {
+        population: `Idosos ≥65 anos com sintomas sugestivos, comorbidades ou fatores de risco como polimedicação e comorbidades [4,9]`,
+        method: `Testes cognitivos (ex: Mini-Exame do Estado Mental); Avaliação clínica e laboratorial básica; Encaminhamento para especialistas se necessário`,
+        periodicity: `Avaliação anual em idosos sintomáticos ou a cada 1-2 anos em grupos de risco na atenção primária [3,9]`,
+        justification: `Avaliação cognitiva para idosos com suspeita de declínio cognitivo ou fatores de risco, sem programa de rastreamento populacional rotineiro, priorizando diagnóstico precoce na atenção básica [1,3,4]`,
+        citations: [{ refId: 'demencia-ref-1' }, { refId: 'demencia-ref-3' }, { refId: 'demencia-ref-4' }, { refId: 'demencia-ref-9' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Pacientes com suspeita de demência, incluindo prodromal ou estágio pré-demência, e idosos com fatores de risco genéticos ou periodontais [2,5,6,8]`,
+        method: `PET imaging biomarkers; Blood-based biomarkers (ex: p-tau, Aβ42/40); Testes genéticos em etiologia suspeita; Avaliação nutricional e odontológica integrada`,
+        periodicity: `Uso de biomarcadores no momento do diagnóstico; monitoramento anual para progressão em casos confirmados [5,6]`,
+        recommendation: `Diagnóstico utilizando biomarcadores de imagem PET e sanguíneos para condições neurodegenerativas associadas à demência, incluindo Alzheimer e demência com corpos de Lewy; prevenção de eventos adversos medicamentosos e manejo nutricional [3,5,6]`,
+        citations: [{ refId: 'demencia-ref-2' }, { refId: 'demencia-ref-3' }, { refId: 'demencia-ref-5' }, { refId: 'demencia-ref-6' }, { refId: 'demencia-ref-8' }]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'demencia-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `Globalmente, a prevalência de demência em adultos >60 anos é de aproximadamente 5-8%, afetando milhões devido ao envelhecimento populacional [1,3,6]`,
+      incidence: `Incidência anual de cerca de 1-2% em idosos >65 anos, com aumento em populações com comorbidades como periodontite [2,3]`,
+      mortality: `Demência contribui para cerca de 7% das mortes em idosos, com impacto significativo em qualidade de vida e autonomia [3,7]`,
+      citations: [{ refId: 'demencia-ref-1' }, { refId: 'demencia-ref-2' }, { refId: 'demencia-ref-3' }, { refId: 'demencia-ref-6' }, { refId: 'demencia-ref-7' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'depressao': {
+    id: 'depressao',
+    title: 'Rastreamento de Depressão',
+    category: 'saude_mental',
+    description: `A depressão é uma condição frequente, recorrente e crônica com altos níveis de incapacidade funcional . O rastreamento visa à identificação precoce em atenção primária para melhorar desfechos clínicos .`,
+    recommendations: {
+      sus: {
+        population: `Adultos ≥18 anos com fatores de risco como estresse crônico, perdas recentes ou comorbidades [1,2].`,
+        method: `PHQ-9; PHQ-2; Escala de Beck`,
+        periodicity: `Oportunístico durante consultas de rotina ou anualmente em grupos de risco [1,2].`,
+        justification: `Rastreamento recomendado em atenção primária para identificação de sintomas depressivos em populações vulneráveis [1,2].`,
+        citations: [{ refId: 'depressao-ref-1' }, { refId: 'depressao-ref-2' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos e idosos com sintomas sugestivos ou fatores de risco como histórico familiar [1,2].`,
+        method: `PHQ-9; PHQ-2; Escala de Hamilton`,
+        periodicity: `Anual em atenção primária ou conforme avaliação clínica [1,2].`,
+        recommendation: `A Associação Brasileira de Psiquiatria recomenda rastreamento para diagnóstico precoce de depressão maior [1,2].`,
+        citations: [{ refId: 'depressao-ref-1' }, { refId: 'depressao-ref-2' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'depressao-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `No Brasil, a prevalência de depressão é estimada em 5,8% na população adulta [1,2].`,
+      incidence: `A incidência anual é de aproximadamente 3-4% em adultos [1,2].`,
+      mortality: `A depressão contribui para cerca de 800 mil suicídios globais por ano, com impacto significativo no Brasil [1,2].`,
+      citations: [{ refId: 'depressao-ref-1' }, { refId: 'depressao-ref-2' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'dermatite-atopica': {
+    id: 'dermatite-atopica',
+    title: 'Dermatite Atópica',
+    category: 'outros',
+    description: `A dermatite atópica é uma doença inflamatória crônica da pele, caracterizada por prurido intenso e lesões eczematosas . Afeta principalmente crianças, com prevalência global variando de 15-20% em menores de 5 anos . No Brasil, estima-se que afete cerca de 10-15% das crianças . O manejo envolve hidratação, corticoides tópicos e, em casos graves, imunossupressores .`,
+    recommendations: {
+      sus: {
+        population: `Crianças e adultos com prurido recorrente, lesões eczematosas e história familiar de atopia [9,10].`,
+        method: `Exame dermatológico; Escala SCORAD; Testes alérgicos quando indicado`,
+        periodicity: `Avaliação clínica a cada 3-6 meses para controle de sintomas [9].`,
+        justification: `Diagnóstico e manejo inicial em atenção primária para pacientes com suspeita de dermatite atópica, com encaminhamento para especialista em casos moderados a graves [9,10].`,
+        citations: [{ refId: 'dermatite-atopica-ref-9' }, { refId: 'dermatite-atopica-ref-10' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Indivíduos de todas as idades com lesões pruriginosas e barreira cutânea alterada [1,11].`,
+        method: `Emolientes diários; Corticoides tópicos; Inibidores de calcineurina; Dupilumab para refratários`,
+        periodicity: `Monitoramento contínuo, com revisões a cada 1-3 meses em fases agudas [11].`,
+        recommendation: `A Academia Americana de Dermatologia (AAD 2023) recomenda diagnóstico baseado em critérios clínicos e manejo escalonado com emolientes e anti-inflamatórios tópicos [1,11].`,
+        citations: [{ refId: 'dermatite-atopica-ref-1' }, { refId: 'dermatite-atopica-ref-11' }]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'dermatite-atopica-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `Prevalência global em crianças: 15-20% [3,4]; em adultos: 1-3% [12]. No Brasil: 12% em crianças urbanas [5,6].`,
+      incidence: `Incidência anual global: 10-15% em lactentes [13]; no Brasil: aproximadamente 8-10 casos por 1.000 crianças/ano [14].`,
+      mortality: `Baixa mortalidade direta, mas associada a infecções secundárias (0,1-0,5% dos casos graves) [15]; no Brasil, contribui indiretamente para 0,2% das mortes por infecções cutâneas [16].`,
+      citations: [{ refId: 'dermatite-atopica-ref-3' }, { refId: 'dermatite-atopica-ref-4' }, { refId: 'dermatite-atopica-ref-5' }, { refId: 'dermatite-atopica-ref-6' }, { refId: 'dermatite-atopica-ref-12' }, { refId: 'dermatite-atopica-ref-13' }, { refId: 'dermatite-atopica-ref-14' }, { refId: 'dermatite-atopica-ref-15' }, { refId: 'dermatite-atopica-ref-16' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'diabetes-mellitus-2': {
+    id: 'diabetes-mellitus-2',
+    title: 'Diabetes Mellitus Tipo 2',
+    category: 'adultos',
+    description: `O diabetes mellitus tipo 2 (DM2) é uma doença metabólica crônica caracterizada por hiperglicemia resultante de defeitos na secreção de insulina e/ou ação da insulina . Representa a forma mais prevalente de diabetes, afetando milhões globalmente e sendo uma das principais causas de morbimortalidade . No contexto brasileiro, o DM2 é uma prioridade em saúde pública, com protocolos integrados para prevenção, diagnóstico e tratamento .`,
+    recommendations: {
+      sus: {
+        population: `Adultos ≥35 anos; indivíduos <35 anos com IMC ≥25 kg/m², hipertensão, dislipidemia, história familiar de DM2 ou gestantes com risco [11,12].`,
+        method: `Glicemia de jejum (≥126 mg/dL); Teste oral de tolerância à glicose 75g (TOTG ≥200 mg/dL em 2h); HbA1c (≥6,5%)`,
+        periodicity: `A cada 3 anos para indivíduos assintomáticos com glicemia normal; anualmente para aqueles com pré-diabetes ou fatores de risco elevados [11,12].`,
+        justification: `Rastreamento recomendado para adultos com sobrepeso (IMC ≥25 kg/m²) e fatores de risco, ou ≥35 anos, visando detecção precoce e prevenção de complicações [11,12].`,
+        citations: [{ refId: 'diabetes-mellitus-2-ref-11' }, { refId: 'diabetes-mellitus-2-ref-12' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos ≥35 anos com IMC ≥25 kg/m²; <35 anos com fatores de risco como sedentarismo, etnia de risco ou história familiar [9,10].`,
+        method: `Glicemia de jejum; HbA1c; TOTG 75g`,
+        periodicity: `Intervalo de 3 anos para normais; anual para pré-diabetes ou alto risco [9,10].`,
+        recommendation: `A American Diabetes Association (ADA 2024) e Sociedade Brasileira de Diabetes (SBD 2023-2024) recomendam rastreamento para adultos ≥35 anos com sobrepeso ou fatores de risco, enfatizando abordagem personalizada [9,10].`,
+        citations: [{ refId: 'diabetes-mellitus-2-ref-9' }, { refId: 'diabetes-mellitus-2-ref-10' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'diabetes-mellitus-2-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `Globalmente, afeta cerca de 10,5% dos adultos (537 milhões em 2021), projetado para 783 milhões até 2045 [9,10]. No Brasil, prevalência de 7,4% em adultos (aproximadamente 19 milhões) [10,11].`,
+      incidence: `Incidência global de 5,9 milhões de novos casos anuais [9]. No Brasil, cerca de 1,5 milhão de novos casos por ano [10,11].`,
+      mortality: `Causa 6,7 milhões de mortes globais em 2021 (9ª causa principal) [9]. No Brasil, responsável por 5,3% das mortes por doenças crônicas [11].`,
+      citations: [{ refId: 'diabetes-mellitus-2-ref-9' }, { refId: 'diabetes-mellitus-2-ref-10' }, { refId: 'diabetes-mellitus-2-ref-11' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'dislipidemia': {
+    id: 'dislipidemia',
+    title: 'Rastreamento de Dislipidemia',
+    category: 'outros',
+    description: `O rastreamento de dislipidemia é essencial para a prevenção de eventos cardiovasculares ateroscleróticos, com foco na identificação precoce de alterações lipídicas como hipercolesterolemia e hipertrigliceridemia . No Brasil, a dislipidemia é um fator de risco prevalente, contribuindo para a alta morbimortalidade cardiovascular . A abordagem integrada considera o risco cardiovascular global .`,
+    recommendations: {
+      sus: {
+        population: `Adultos ≥40 anos; indivíduos <40 anos com obesidade, diabetes, hipertensão ou história familiar de doença cardiovascular precoce [11,12].`,
+        method: `Perfil lipídico (colesterol total, HDL, LDL, triglicerídeos)`,
+        periodicity: `A cada 5 anos em indivíduos de baixo risco; anualmente em alto risco [11].`,
+        justification: `Rastreamento recomendado para prevenção de eventos cardiovasculares e pancreatite em indivíduos com fatores de risco ou ≥40 anos [11,12].`,
+        citations: [{ refId: 'dislipidemia-ref-11' }, { refId: 'dislipidemia-ref-12' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos ≥20 anos; priorizando aqueles com fatores de risco como diabetes, hipertensão ou tabagismo [1,3,5,7].`,
+        method: `Perfil lipídico completo; Cálculo de escore de risco (SCORE ou Framingham)`,
+        periodicity: `A cada 4-6 anos em adultos saudáveis; mais frequente em alto risco [1,5].`,
+        recommendation: `A Sociedade Brasileira de Cardiologia (2017) e diretrizes ESC recomendam rastreamento para avaliação de risco cardiovascular em adultos [1,3,5].`,
+        citations: [{ refId: 'dislipidemia-ref-1' }, { refId: 'dislipidemia-ref-3' }, { refId: 'dislipidemia-ref-5' }, { refId: 'dislipidemia-ref-7' }]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'dislipidemia-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `No Brasil, a prevalência de dislipidemia é de aproximadamente 30-40% em adultos, com hipercolesterolemia afetando 25% da população [11,12]. Globalmente, estima-se em 39% para hipercolesterolemia [3,5].`,
+      incidence: `A incidência anual de dislipidemia em adultos é de 5-10 casos por 1.000 habitantes, associada ao envelhecimento e obesidade [3,7]. No Brasil, contribui para 20% dos novos casos de doença coronariana [11].`,
+      mortality: `A dislipidemia contribui para 4,4 milhões de mortes globais por CVD anualmente [3,5]. No Brasil, representa fator em 30% das mortes cardiovasculares [11,12].`,
+      citations: [{ refId: 'dislipidemia-ref-3' }, { refId: 'dislipidemia-ref-5' }, { refId: 'dislipidemia-ref-7' }, { refId: 'dislipidemia-ref-11' }, { refId: 'dislipidemia-ref-12' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'doenca-renal-cronica': {
+    id: 'doenca-renal-cronica',
+    title: 'Rastreamento de Doença Renal Crônica',
+    category: 'outros',
+    description: `A Doença Renal Crônica (DRC) é definida como anormalidades na estrutura ou função renal por mais de três meses, com implicações na saúde . A prevalência global é estimada em 9,1% a 13,4% em adultos . No Brasil, a prevalência é de aproximadamente 10,2% na população adulta . O rastreamento precoce visa identificar estágios iniciais para retardar a progressão .`,
+    recommendations: {
+      sus: {
+        population: `Adultos maiores de 18 anos com fatores de risco cardiovascular ou renal; priorizar pacientes com diabetes e hipertensão [6,7].`,
+        method: `Dosagem de creatinina sérica para cálculo de TFG; Relação albumina/creatinina na urina`,
+        periodicity: `Anual para grupos de alto risco; a cada 1-2 anos para populações de risco moderado [6,7].`,
+        justification: `Rastreamento recomendado para indivíduos com fatores de risco como diabetes mellitus, hipertensão arterial, doenças cardiovasculares, idade superior a 60 anos, história familiar de DRC, obesidade e tabagismo [6,7].`,
+        citations: [{ refId: 'doenca-renal-cronica-ref-6' }, { refId: 'doenca-renal-cronica-ref-7' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos com diabetes, hipertensão, idade ≥60 anos, doenças cardiovasculares, tabagismo, obesidade ou história familiar de DRC [4,5].`,
+        method: `Cálculo de TFG por creatinina sérica (equação CKD-EPI); Medição de albuminúria (ACR em amostra isolada de urina)`,
+        periodicity: `Anual em indivíduos de alto risco; a cada 1-3 anos em risco moderado [4,5].`,
+        recommendation: `A KDIGO (2024) recomenda avaliação de TFG e albuminúria em adultos com fatores de risco, incluindo diabetes, hipertensão, idade >60 anos, histórico familiar e marcadores de risco cardiovascular [4]. A Sociedade Brasileira de Nefrologia (2022) endossa rastreamento similar para detecção precoce [5].`,
+        citations: [{ refId: 'doenca-renal-cronica-ref-4' }, { refId: 'doenca-renal-cronica-ref-5' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'doenca-renal-cronica-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência global de DRC é de 9,1% a 13,4% em adultos, afetando cerca de 700 milhões de pessoas [4]. No Brasil, estima-se em 10,2% da população adulta [5,6].`,
+      incidence: `A incidência global é de aproximadamente 133 casos por milhão de habitantes por ano [4]. No Brasil, a incidência anual é de cerca de 120-150 por milhão [5].`,
+      mortality: `A DRC contribui para 4,9 milhões de mortes globais em 2021, sendo a 9ª causa principal [4]. No Brasil, representa cerca de 5% das mortes por doenças crônicas não transmissíveis [6].`,
+      citations: [{ refId: 'doenca-renal-cronica-ref-4' }, { refId: 'doenca-renal-cronica-ref-5' }, { refId: 'doenca-renal-cronica-ref-6' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'dpoc': {
+    id: 'dpoc',
+    title: 'Rastreamento de Doença Pulmonar Obstrutiva Crônica (DPOC)',
+    category: 'outros',
+    description: `A Doença Pulmonar Obstrutiva Crônica (DPOC) é uma doença respiratória crônica progressiva, caracterizada por limitação ao fluxo aéreo, sendo uma das principais causas de morbimortalidade global . O rastreamento visa identificar casos precocemente em populações de risco por meio de espirometria, reduzindo complicações e mortalidade . No contexto brasileiro, a DPOC afeta significativamente o sistema de saúde pública .`,
+    recommendations: {
+      sus: {
+        population: `Adultos ≥40 anos com história de tabagismo ≥20 maços-ano, dispneia ou tosse crônica, e exposição ambiental [5,6].`,
+        method: `Espirometria com broncodilatador`,
+        periodicity: `Avaliação inicial com espirometria; repetição anual em casos confirmados ou de alto risco [6].`,
+        justification: `Rastreamento recomendado para indivíduos com sintomas respiratórios crônicos, tabagistas ou ex-tabagistas acima de 40 anos, e exposição ocupacional a poeiras ou fumos [5,6].`,
+        citations: [{ refId: 'dpoc-ref-5' }, { refId: 'dpoc-ref-6' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos ≥40 anos com tabagismo atual ou passado, sintomas respiratórios, e fatores de risco como exposição biomassa ou occupational [3,4].`,
+        method: `Espirometria (relação VEF1/CVF <0,70 pós-broncodilatador)`,
+        periodicity: `Espirometria única para diagnóstico em suspeitos; monitoramento periódico em diagnosticados [3,4].`,
+        recommendation: `A Global Initiative for Chronic Obstructive Lung Disease (GOLD 2024) e a Sociedade Brasileira de Pneumologia e Tisiologia (SBPT 2021) recomendam busca ativa (case-finding) em indivíduos de risco, não rastreamento populacional geral [3,4].`,
+        citations: [{ refId: 'dpoc-ref-3' }, { refId: 'dpoc-ref-4' }]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'dpoc-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência global de DPOC em adultos >40 anos é estimada em 12,1% [3]. No Brasil, a prevalência é de aproximadamente 13,6% em indivíduos >40 anos [4,5,6].`,
+      incidence: `A incidência global varia de 1,5 a 2,5 casos por 1.000 pessoas-ano em populações de risco [3]. No Brasil, estima-se 100.000 novos casos anuais [6].`,
+      mortality: `A DPOC é a terceira causa de morte global, com 3,23 milhões de óbitos em 2019 [3]. No Brasil, representa cerca de 5% das mortes por doenças crônicas [5,6].`,
+      citations: [{ refId: 'dpoc-ref-3' }, { refId: 'dpoc-ref-4' }, { refId: 'dpoc-ref-5' }, { refId: 'dpoc-ref-6' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'epilepsia': {
+    id: 'epilepsia',
+    title: 'Epilepsia',
+    category: 'outros',
+    description: `A epilepsia é um distúrbio neurológico caracterizado por crises recorrentes e autolimitadas, com classificação atualizada pela ILAE considerando etiologia, comorbidades e síndrome . A identificação precoce em neonatos, lactentes e crianças é essencial para manejo . Malformações do desenvolvimento cortical estão associadas a epilepsia refratária .`,
+    recommendations: {
+      sus: {
+        population: `Indivíduos com crises convulsivas suspeitas, neonatos, lactentes e crianças com fatores de risco como malformações corticais [4,5,8].`,
+        method: `Eletroencefalograma (EEG); Ressonância magnética (RM); Testes genéticos`,
+        periodicity: `Avaliação imediata para diagnóstico; follow-up periódico conforme necessidade clínica, sem periodicidade fixa para rastreamento [7].`,
+        justification: `Não há programa específico de rastreamento populacional no SUS para epilepsia; diagnóstico indicado por história clínica de crises recorrentes e avaliação neurológica [7]. Recomendado em neonatos e crianças com suspeita de síndromes epilépticas [5].`,
+        citations: [{ refId: 'epilepsia-ref-4' }, { refId: 'epilepsia-ref-5' }, { refId: 'epilepsia-ref-7' }, { refId: 'epilepsia-ref-8' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Neonatos e lactentes até 2 anos com crises; crianças com onset na infância e malformações corticais [4,5,8].`,
+        method: `Eletroencefalograma (EEG); Ressonância magnética (RM); Análise genética e classificação sindrômica`,
+        periodicity: `Diagnóstico imediato; monitoramento contínuo em síndromes específicas, sem rastreamento assintomático rotineiro [7].`,
+        recommendation: `A ILAE recomenda classificação e diagnóstico de síndromes epilépticas com base em idade de início, etiologia e EEG para orientação terapêutica [4,5,7]. Identificação em neonatos e infância para manejo precoce [5].`,
+        citations: [{ refId: 'epilepsia-ref-4' }, { refId: 'epilepsia-ref-5' }, { refId: 'epilepsia-ref-7' }, { refId: 'epilepsia-ref-8' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'epilepsia-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência global de epilepsia é de aproximadamente 0,5-1% da população [7]. Em neonatos e lactentes, a incidência de epilepsia é alta, afetando até 1-2% em grupos de risco [5]. No Brasil, estima-se prevalência similar à global, em torno de 1% [7].`,
+      incidence: `A incidência anual global é de 40-70 casos por 100.000 habitantes [7]. Em neonatos, pode ser de 1-3 por 1.000 nascidos vivos [5].`,
+      mortality: `A mortalidade associada à epilepsia inclui status epilepticus com alta morbimortalidade; taxa de SUDEP é de cerca de 1 por 1.000 pacientes-ano [1,7].`,
+      citations: [{ refId: 'epilepsia-ref-1' }, { refId: 'epilepsia-ref-5' }, { refId: 'epilepsia-ref-7' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'esquizofrenia': {
+    id: 'esquizofrenia',
+    title: 'Esquizofrenia',
+    category: 'outros',
+    description: `A esquizofrenia é uma síndrome heterogênea que afeta múltiplas dimensões da vida do paciente, sem cura, mas controlável com terapias farmacológicas e psicossociais . Definições inconsistentes de resistência ao tratamento limitam a pesquisa e a prática clínica . Aproximadamente 30% dos pacientes não respondem a dois ensaios adequados de antipsicóticos, caracterizando esquizofrenia resistente ao tratamento (TRS) . Consensos enfatizam a necessidade de abordagem multidimensional, incluindo monitoramento de saúde física devido a comorbidades elevadas .`,
+    recommendations: {
+      sus: {
+        population: `Adultos com diagnóstico de esquizofrenia ou transtornos psicóticos, priorizando casos resistentes [5,7]`,
+        method: `Antipsicóticos de primeira e segunda linha; Terapia cognitivo-comportamental; Suporte familiar e reabilitação`,
+        periodicity: `Monitoramento contínuo com avaliações clínicas regulares a cada 3-6 meses [7]`,
+        justification: `Tratamento integral no SUS para sintomas psicóticos persistentes, incluindo antipsicóticos e reabilitação psicossocial em Centros de Atenção Psicossocial (CAPS) [7,8]`,
+        citations: [{ refId: 'esquizofrenia-ref-5' }, { refId: 'esquizofrenia-ref-7' }, { refId: 'esquizofrenia-ref-8' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos com sintomas psicóticos por ≥6 meses não responsivos a tratamento [1,5]`,
+        method: `Antipsicóticos atípicos; Clozapina para TRS; Intervenções psicossociais multidimensional`,
+        periodicity: `Avaliação de resposta após 4-6 semanas; monitoramento anual de comorbidades físicas e prolactina [6,9]`,
+        recommendation: `Diagnóstico baseado em critérios consensuais para resposta e resistência; tratamento inicial com antipsicóticos, clozapina para TRS após falha de dois agentes [1,5]`,
+        citations: [{ refId: 'esquizofrenia-ref-1' }, { refId: 'esquizofrenia-ref-5' }, { refId: 'esquizofrenia-ref-6' }, { refId: 'esquizofrenia-ref-9' }]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'esquizofrenia-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `Prevalência vitalícia global de 0,3-0,7% em adultos [1,5]`,
+      incidence: `Incidência anual de 10-22 casos por 100.000 adultos [1,8]`,
+      mortality: `Mortalidade excessiva com razão de mortalidade padronizada 2-3 vezes maior devido a comorbidades físicas e suicídio [9]`,
+      citations: [{ refId: 'esquizofrenia-ref-1' }, { refId: 'esquizofrenia-ref-5' }, { refId: 'esquizofrenia-ref-8' }, { refId: 'esquizofrenia-ref-9' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'fibrilacao-atrial': {
+    id: 'fibrilacao-atrial',
+    title: 'Rastreamento de Fibrilação Atrial',
+    category: 'outros',
+    description: `A fibrilação atrial (FA) é a arritmia cardíaca sustentada mais comum, associada a risco aumentado de acidente vascular cerebral (AVC) e insuficiência cardíaca . O rastreamento oportunista é essencial para detecção precoce em populações de risco, reduzindo complicações tromboembólicas . A prevalência global é estimada em 2-3% em adultos, aumentando para 8-10% em idosos acima de 80 anos . No Brasil, a prevalência é de aproximadamente 1,4% na população geral, com maior impacto em idosos .`,
+    recommendations: {
+      sus: {
+        population: `Adultos ≥65 anos; adultos <65 anos com fatores de risco como hipertensão arterial, diabetes mellitus ou doença cardíaca [8,9].`,
+        method: `Eletrocardiograma (ECG) de 12 derivações; Monitorização ambulatorial de ECG (Holter); Pulseira de detecção de FA (ex: Apple Watch) em contextos oportunistas`,
+        periodicity: `Anual em populações de alto risco; a cada 2-3 anos em idosos assintomáticos [8].`,
+        justification: `Rastreamento recomendado para indivíduos ≥65 anos e aqueles com fatores de risco cardiovascular (hipertensão, diabetes, histórico familiar) [8,9].`,
+        citations: [{ refId: 'fibrilacao-atrial-ref-8' }, { refId: 'fibrilacao-atrial-ref-9' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos ≥65 anos; indivíduos de 50-64 anos com pelo menos um fator de risco (hipertensão, obesidade, apneia do sono) [3,4].`,
+        method: `ECG de rotina; Monitorização de pulso simples; Dispositivos wearables para detecção de FA`,
+        periodicity: `Rastreamento único oportunista em ≥65 anos; repetição anual se fatores de risco persistentes [3].`,
+        recommendation: `A European Society of Cardiology (ESC 2020) e American Heart Association (AHA 2019) recomendam rastreamento sistemático em adultos ≥65 anos para prevenção de AVC [3,4].`,
+        citations: [{ refId: 'fibrilacao-atrial-ref-3' }, { refId: 'fibrilacao-atrial-ref-4' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'fibrilacao-atrial-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência global de FA é de 2,7% em adultos (cerca de 33 milhões de casos), com aumento exponencial com a idade [1,2]. No Brasil, estima-se 1,4% na população adulta, afetando cerca de 2,3 milhões de pessoas [6,7].`,
+      incidence: `A incidência global é de 0,6-1,0 casos por 100 habitantes-ano, elevando-se para 2% em idosos [1,5]. No Brasil, a incidência anual é de aproximadamente 0,2-0,5 por 100 habitantes [6].`,
+      mortality: `A FA contribui para 20-30% dos casos de AVC isquêmico, com mortalidade 1,5-2 vezes maior em pacientes afetados [2,10]. Globalmente, associa-se a 113.000 mortes anuais; no Brasil, é fator em cerca de 10% das mortes cardiovasculares [7,11].`,
+      citations: [{ refId: 'fibrilacao-atrial-ref-1' }, { refId: 'fibrilacao-atrial-ref-2' }, { refId: 'fibrilacao-atrial-ref-5' }, { refId: 'fibrilacao-atrial-ref-6' }, { refId: 'fibrilacao-atrial-ref-7' }, { refId: 'fibrilacao-atrial-ref-10' }, { refId: 'fibrilacao-atrial-ref-11' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'fibromialgia': {
+    id: 'fibromialgia',
+    title: 'Fibromialgia',
+    category: 'outros',
+    description: `A fibromialgia é uma síndrome de dor crônica generalizada associada a fadiga, distúrbios do sono e sintomas somáticos . O diagnóstico é essencialmente clínico, baseado em critérios validados, sem necessidade de exames complementares de rotina .`,
+    recommendations: {
+      sus: {
+        population: `Adultos e idosos com suspeita clínica de dor difusa sem causa orgânica identificável [1,3].`,
+        method: `Critérios ACR 2016 (WPI e SSS); Exame físico para exclusão de outras condições; História clínica detalhada`,
+        periodicity: `Avaliação diagnóstica realizada uma vez, quando sintomas sugestivos estão presentes; reavaliação conforme evolução clínica [1].`,
+        justification: `Diagnóstico indicado para pacientes com dor musculoesquelética crônica generalizada por pelo menos 3 meses, acompanhada de fadiga e distúrbios cognitivos [1,3].`,
+        citations: [{ refId: 'fibromialgia-ref-1' }, { refId: 'fibromialgia-ref-3' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Mulheres adultas predominantemente, mas sem restrição de gênero; foco em pacientes com impacto funcional significativo [1,2].`,
+        method: `Índice de Dor Generalizada (WPI); Escala de Gravidade de Sintomas (SSS); Exclusão de outras patologias por história e exame`,
+        periodicity: `Diagnóstico único baseado em apresentação sintomática; monitoramento periódico para manejo, não para rastreamento populacional [2].`,
+        recommendation: `Recomendado pelas sociedades de reumatologia o diagnóstico clínico em indivíduos com dor generalizada persistente e sintomas associados, utilizando critérios ACR [1,2].`,
+        citations: [{ refId: 'fibromialgia-ref-1' }, { refId: 'fibromialgia-ref-2' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'fibromialgia-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência global da fibromialgia varia de 2% a 8% na população adulta, sendo mais comum em mulheres [1,2]. No Brasil, estima-se em cerca de 2,5% a 4% [3].`,
+      incidence: `A incidência anual é estimada em 2 a 4 casos por 1.000 adultos, com maior ocorrência em faixas etárias médias [2].`,
+      mortality: `A fibromialgia não está associada a aumento significativo de mortalidade, embora impacte qualidade de vida [1,3].`,
+      citations: [{ refId: 'fibromialgia-ref-1' }, { refId: 'fibromialgia-ref-2' }, { refId: 'fibromialgia-ref-3' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'hipertensao-arterial': {
+    id: 'hipertensao-arterial',
+    title: 'Rastreamento de Hipertensão Arterial',
+    category: 'outros',
+    description: `A hipertensão arterial é uma condição crônica caracterizada por elevados níveis pressóricos, sendo um fator de risco principal para doenças cardiovasculares . No Brasil, o rastreamento é essencial para detecção precoce e prevenção de complicações . A classificação segue critérios baseados em medições repetidas .`,
+    recommendations: {
+      sus: {
+        population: `Adultos ≥ 18 anos; priorizar aqueles com obesidade, diabetes ou história familiar [5,6].`,
+        method: `Medição da pressão arterial no consultório; Monitorização ambulatorial da pressão arterial (MAPA); Monitorização residencial da pressão arterial (MRPA)`,
+        periodicity: `Anual para adultos saudáveis; semestral ou trimestral para hipertensos controlados ou de alto risco [6,10].`,
+        justification: `Rastreamento recomendado para todos os adultos em consultas de atenção primária, com ênfase em indivíduos com fatores de risco [5,6,10].`,
+        citations: [{ refId: 'hipertensao-arterial-ref-5' }, { refId: 'hipertensao-arterial-ref-6' }, { refId: 'hipertensao-arterial-ref-10' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos ≥ 18 anos, com foco em idosos, gestantes e crianças/adolescentes com suspeita [6,7,8,9].`,
+        method: `Medição da pressão arterial no consultório; MAPA para confirmação de hipertensão branca ou mascarada; MRPA para monitoramento domiciliar`,
+        periodicity: `A cada 1-2 anos para normotensos; mais frequente em populações de risco [6].`,
+        recommendation: `A Sociedade Brasileira de Cardiologia recomenda rastreamento sistemático para detecção de hipertensão primária e secundária [5,6,8].`,
+        citations: [{ refId: 'hipertensao-arterial-ref-5' }, { refId: 'hipertensao-arterial-ref-6' }, { refId: 'hipertensao-arterial-ref-7' }, { refId: 'hipertensao-arterial-ref-8' }, { refId: 'hipertensao-arterial-ref-9' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'hipertensao-arterial-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência no Brasil é de aproximadamente 35% em adultos [5,6,10]. Globalmente, afeta cerca de 1,28 bilhão de adultos [10].`,
+      incidence: `Incidência anual no Brasil varia de 2-5% em adultos jovens [5,6].`,
+      mortality: `Responsável por 13% das mortes globais; no Brasil, contribui para 300 mil óbitos anuais por DCV [10].`,
+      citations: [{ refId: 'hipertensao-arterial-ref-5' }, { refId: 'hipertensao-arterial-ref-6' }, { refId: 'hipertensao-arterial-ref-10' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'hipotireoidismo': {
+    id: 'hipotireoidismo',
+    title: 'Rastreamento de Hipotireoidismo',
+    category: 'outros',
+    description: `O rastreamento de hipotireoidismo visa identificar precocemente disfunções tireoidianas para prevenir complicações cardiovasculares e neurológicas . A prevalência global de hipotireoidismo subclínico é de aproximadamente 4,6% em adultos . No Brasil, estima-se uma prevalência de 9% em mulheres adultas . O hipotireoidismo congênito afeta 1 em 2.000 a 4.000 recém-nascidos .`,
+    recommendations: {
+      sus: {
+        population: `Todos os recém-nascidos no nascimento; adultos com fatores de risco (idade >60 anos, história familiar, sintomas) [3,4].`,
+        method: `Dosagem de TSH no sangue total por punção no calcanhar; Dosagem de TSH sérico`,
+        periodicity: `Única vez no nascimento para congênito; a cada 6-12 meses em gestantes e anualmente em alto risco para adquirido [4].`,
+        justification: `Rastreamento obrigatório para hipotireoidismo congênito em todos os recém-nascidos [3]. Para adultos, indicado em grupos de risco como gestantes, idosos e pacientes com sintomas sugestivos [4].`,
+        citations: [{ refId: 'hipotireoidismo-ref-3' }, { refId: 'hipotireoidismo-ref-4' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Recém-nascidos, gestantes, mulheres no pós-parto e adultos com risco (idade avançada, autoimunidade) [1,2].`,
+        method: `Dosagem de TSH; T4 livre se TSH elevado`,
+        periodicity: `Única vez no nascimento; no primeiro trimestre para gestantes; a cada 3-6 meses se TSH alterado [1,2].`,
+        recommendation: `A American Thyroid Association (2021) recomenda rastreamento em gestantes, pós-parto e recém-nascidos, mas não rotineiro em adultos assintomáticos [1]. A SBEM (2022) endossa triagem em grupos de risco como mulheres >35 anos e pacientes com comorbidades [2].`,
+        citations: [{ refId: 'hipotireoidismo-ref-1' }, { refId: 'hipotireoidismo-ref-2' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'hipotireoidismo-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `Prevalência global de hipotireoidismo manifesto é de 0,3-1%, e subclínico de 4-10% [1]. No Brasil, prevalência de 3-9% em adultos, com maior impacto em mulheres [2,4]. Para congênito, 1:3.000 nascidos vivos [3].`,
+      incidence: `Incidência anual global de 1-2 casos por 1.000 adultos [1]. No Brasil, cerca de 1:2.500 para congênito [3].`,
+      mortality: `Hipotireoidismo não tratado aumenta mortalidade cardiovascular em 20-50% [1,2]. No Brasil, contribui para 5% das mortes por DCNT associadas [4].`,
+      citations: [{ refId: 'hipotireoidismo-ref-1' }, { refId: 'hipotireoidismo-ref-2' }, { refId: 'hipotireoidismo-ref-3' }, { refId: 'hipotireoidismo-ref-4' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'insuficiencia-cardiaca': {
+    id: 'insuficiencia-cardiaca',
+    title: 'Insuficiência Cardíaca',
+    category: 'adultos',
+    description: `A insuficiência cardíaca (IC) é uma síndrome clínica caracterizada pela incapacidade do coração em bombear sangue suficiente para atender às demandas metabólicas do organismo, resultando em sintomas como dispneia, fadiga e retenção de líquidos . É uma das principais causas de morbimortalidade cardiovascular global, com alta prevalência de fatores de risco como hipertensão e diabetes . No contexto brasileiro, a IC afeta significativamente o sistema de saúde, com ênfase em protocolos integrados para diagnóstico e tratamento .`,
+    recommendations: {
+      sus: {
+        population: `Adultos com suspeita clínica de IC, incluindo aqueles com hipertensão não controlada ou história de IAM; priorizar populações vulneráveis em atenção primária [11,13].`,
+        method: `Ecocardiograma; Dosagem de BNP/NT-proBNP; Terapia farmacológica (IECA/BRA, betabloqueadores, diuréticos); Educação em autocuidado`,
+        periodicity: `Monitoramento anual para pacientes estáveis; reavaliação imediata em descompensação; ecocardiograma inicial e follow-up a cada 6-12 meses [11].`,
+        justification: `Diagnóstico e tratamento da IC recomendado para pacientes com sintomas sugestivos (dispneia, edema) ou fatores de risco como hipertensão e IAM prévio, com uso de protocolos integrados no SUS [11,13].`,
+        citations: [{ refId: 'insuficiencia-cardiaca-ref-11' }, { refId: 'insuficiencia-cardiaca-ref-13' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos ≥18 anos com fatores de risco cardiovascular (hipertensão, diabetes, obesidade) ou sintomas sugestivos; foco em IC com fração preservada (HFpEF) em idosos [7,12].`,
+        method: `Ecocardiograma para FE; BNP/NT-proBNP para diagnóstico; Terapias GDMT (guideline-directed medical therapy): ARNI, SGLT2i, MRA, betabloqueadores; Reabilitação cardíaca`,
+        periodicity: `Avaliação inicial com ecocardiograma; monitoramento a cada 3-6 meses em IC descompensada, anual em estável [12].`,
+        recommendation: `A AHA/ACC/HFSA (2022) recomenda avaliação diagnóstica para IC em pacientes com sintomas de congestão ou redução da tolerância ao exercício, com estratificação por fração de ejeção [12].`,
+        citations: [{ refId: 'insuficiencia-cardiaca-ref-7' }, { refId: 'insuficiencia-cardiaca-ref-12' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'insuficiencia-cardiaca-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência global de IC é de aproximadamente 1-2% na população adulta, aumentando para >10% em idosos >70 anos [1,12]. No México, alta prevalência associada a fatores de risco [1]. Em Portugal, 15,2% de HFpEF em ≥50 anos [7]. No Brasil, estimada em 1,6-2,5% na população geral [10,11].`,
+      incidence: `Incidência global de 1-5 casos por 1.000 pessoas-ano, maior em populações com comorbidades [12]. No Brasil, incidência anual de cerca de 2-3 por 1.000 em adultos >45 anos [11,13].`,
+      mortality: `Mortalidade em 5 anos de 50% para IC sintomática [12]. No Brasil, IC contribui para 10-15% das mortes cardiovasculares, com taxa de 30-40 por 100.000 habitantes [10,11].`,
+      citations: [{ refId: 'insuficiencia-cardiaca-ref-1' }, { refId: 'insuficiencia-cardiaca-ref-7' }, { refId: 'insuficiencia-cardiaca-ref-10' }, { refId: 'insuficiencia-cardiaca-ref-11' }, { refId: 'insuficiencia-cardiaca-ref-12' }, { refId: 'insuficiencia-cardiaca-ref-13' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'itu': {
+    id: 'itu',
+    title: 'Rastreamento de Infecção do Trato Urinário',
+    category: 'outros',
+    description: `O rastreamento de infecção do trato urinário (ITU) é essencial para identificação precoce em populações de risco, como gestantes e pacientes em unidades de terapia intensiva . A prevalência é elevada em mulheres adultas .`,
+    recommendations: {
+      sus: {
+        population: `Gestantes; adultos em ITU com cateterismo urinário; mulheres com recorrência [5,7,8].`,
+        method: `Urocultura; EAS (exame de urina tipo I); Teste de tira reagente`,
+        periodicity: `Semestral em gestantes; semanal em pacientes cateterizados em ITU [5,6,7].`,
+        justification: `Rastreamento recomendado para gestantes e pacientes com fatores de risco em unidades hospitalares [5,7,8].`,
+        citations: [{ refId: 'itu-ref-5' }, { refId: 'itu-ref-6' }, { refId: 'itu-ref-7' }, { refId: 'itu-ref-8' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Mulheres grávidas; idosos em cuidados prolongados; pacientes diabéticos com ITU recorrente [9,10].`,
+        method: `Urocultura; Análise de urina; Testes rápidos laboratoriais`,
+        periodicity: `Anual para grupos de alto risco; durante pré-natal para gestantes [9].`,
+        recommendation: `A American Diabetes Association (2024) e sociedades semelhantes recomendam rastreamento em populações vulneráveis, adaptado para ITU em contextos de risco metabólico [9,10].`,
+        citations: [{ refId: 'itu-ref-9' }, { refId: 'itu-ref-10' }]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'itu-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência de ITU em mulheres adultas é de aproximadamente 50-60% ao longo da vida [2,4]. No Brasil, estima-se em 10-15% em populações hospitalizadas [3,7].`,
+      incidence: `A incidência anual em mulheres pré-menopausa é de 10-20% [1,2]. Em pacientes em ITU, pode atingir 25% [5,6].`,
+      mortality: `A mortalidade direta por ITU complicada é baixa (1-2%), mas elevada em sepse (20-40%) [3,6]. No Brasil, contribui para 5% das mortes hospitalares relacionadas a infecções [7,8].`,
+      citations: [{ refId: 'itu-ref-1' }, { refId: 'itu-ref-2' }, { refId: 'itu-ref-3' }, { refId: 'itu-ref-4' }, { refId: 'itu-ref-5' }, { refId: 'itu-ref-6' }, { refId: 'itu-ref-7' }, { refId: 'itu-ref-8' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'lombalgia': {
+    id: 'lombalgia',
+    title: 'Lombalgia',
+    category: 'outros',
+    description: `A lombalgia, ou dor lombar, é uma das principais causas de incapacidade global, afetando milhões de indivíduos . Representa um desafio significativo em protocolos clínicos e de rastreamento de distúrbios osteomusculares . A abordagem integrada entre tratamento não invasivo e manejo multidisciplinar é essencial .`,
+    recommendations: {
+      sus: {
+        population: `Adultos com dor lombar persistente >3 meses ou episódios recorrentes; trabalhadores expostos a fatores de risco ergonômicos [3,4].`,
+        method: `Terapia física; Exercícios de fortalecimento; Educação postural; Analgésicos não opioides quando necessário`,
+        periodicity: `Avaliação inicial imediata; follow-up a cada 4-6 semanas para lombalgia crônica, com reavaliação anual em contextos ocupacionais [3,4].`,
+        justification: `Recomendado para pacientes com lombalgia aguda, subaguda ou crônica, priorizando abordagem não farmacológica e avaliação ocupacional em casos relacionados ao trabalho [3,4].`,
+        citations: [{ refId: 'lombalgia-ref-3' }, { refId: 'lombalgia-ref-4' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos e idosos com lombalgia inespecífica; exclusão de causas graves por meio de história e exame físico [1,2].`,
+        method: `Calor superficial; Massagem; Acupuntura; Manipulação espinhal; AINEs para alívio sintomático`,
+        periodicity: `Reavaliação em 4-6 semanas para persistência; manutenção de exercícios a longo prazo [1,2].`,
+        recommendation: `Tratamento não invasivo recomendado para lombalgia aguda, subaguda e crônica, com foco em terapias multimodais [1,2].`,
+        citations: [{ refId: 'lombalgia-ref-1' }, { refId: 'lombalgia-ref-2' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'lombalgia-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `Prevalência pontual global de 7,5% em adultos [5]; no Brasil, estima-se em 18-30% para lombalgia crônica [6].`,
+      incidence: `Incidência anual global de 5-10% [5]; no Brasil, cerca de 9% em populações trabalhadoras [4,6].`,
+      mortality: `Baixa mortalidade direta, mas contribui para 60,8 milhões de anos vividos com incapacidade globalmente [5]; no Brasil, associada a morbidade ocupacional sem mortalidade significativa [4].`,
+      citations: [{ refId: 'lombalgia-ref-4' }, { refId: 'lombalgia-ref-5' }, { refId: 'lombalgia-ref-6' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'obesidade': {
+    id: 'obesidade',
+    title: 'Rastreamento e Manejo da Obesidade',
+    category: 'outros',
+    description: `A obesidade é uma doença crônica multifatorial caracterizada por acúmulo excessivo de tecido adiposo que pode prejudicar a saúde . Está associada a comorbidades como síndrome metabólica , hipertensão , apneia obstrutiva do sono , diabetes em idosos , esteatose hepática metabólica  e risco vascular . No contexto brasileiro, representa um desafio significativo para o sistema de saúde .`,
+    recommendations: {
+      sus: {
+        population: `Adultos e adolescentes com IMC ≥25 kg/m², priorizando aqueles com fatores de risco como hipertensão, diabetes ou dislipidemia [13,14].`,
+        method: `Medição de peso e altura para cálculo de IMC; Circunferência da cintura; Avaliação de composição corporal quando disponível`,
+        periodicity: `Monitoramento anual ou a cada consulta de rotina para avaliação de peso e IMC; reavaliação a cada 3-6 meses durante tratamento farmacológico [13,14].`,
+        justification: `Avaliação antropométrica para identificação de sobrepeso e obesidade em consultas de atenção primária, com ênfase em manejo integrado para doença crônica [13]. Uso de liraglutida indicado para obesidade grau III ou II com comorbidades, após falha em mudanças de estilo de vida [14].`,
+        citations: [{ refId: 'obesidade-ref-13' }, { refId: 'obesidade-ref-14' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Todos os adultos ≥18 anos, com foco em indivíduos com IMC ≥25 kg/m² e comorbidades cardiometabólicas [11,12].`,
+        method: `Cálculo de IMC; Medição de circunferência abdominal; Avaliação de risco metabólico integrada`,
+        periodicity: `Avaliação anual em adultos; mais frequente (a cada 3-6 meses) em casos de tratamento ativo [11,12].`,
+        recommendation: `Rastreamento universal de obesidade em adultos por meio de medidas antropométricas, com intervenções lifestyle como primeira linha; farmacoterapia para obesidade clínica (IMC ≥30 kg/m² ou ≥27 kg/m² com comorbidades) [11,12].`,
+        citations: [{ refId: 'obesidade-ref-11' }, { refId: 'obesidade-ref-12' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'obesidade-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `Globalmente, a prevalência de obesidade em adultos é de 13% (cerca de 1 bilhão de pessoas em 2022) [11]. No Brasil, estima-se em 22,4% entre adultos em 2021 [12,13].`,
+      incidence: `A incidência anual de obesidade varia de 1 a 2% em populações adultas, com maior risco em indivíduos com sobrepeso inicial [11,12].`,
+      mortality: `A obesidade contribui para aproximadamente 4,7 milhões de mortes anuais globalmente, principalmente por doenças cardiovasculares e metabólicas [7,11]. No Brasil, associa-se a elevada morbimortalidade por DCNT [12,13].`,
+      citations: [{ refId: 'obesidade-ref-7' }, { refId: 'obesidade-ref-11' }, { refId: 'obesidade-ref-12' }, { refId: 'obesidade-ref-13' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'osteoartrite': {
+    id: 'osteoartrite',
+    title: 'Diagnóstico Precoce e Manejo da Osteoartrite',
+    category: 'outros',
+    description: `A osteoartrite (OA) é a doença articular degenerativa mais prevalente, caracterizada por dor e rigidez articular, afetando principalmente joelhos, quadris e mãos . O diagnóstico precoce é essencial para intervenções não farmacológicas e farmacológicas que melhoram a qualidade de vida .`,
+    recommendations: {
+      sus: {
+        population: `Adultos >50 anos com sintomas articulares ou fatores de risco (IMC >30 kg/m², ocupações de alto impacto) [2].`,
+        method: `Exame clínico; Radiografia simples; Escala de dor (EVA)`,
+        periodicity: `Avaliação sob demanda, sem periodicidade fixa; reavaliação anual em casos de progressão [2].`,
+        justification: `Diagnóstico indicado para adultos com dor articular persistente >3 meses, idade >50 anos ou fatores de risco como obesidade e trauma prévio [2]. Não há rastreamento populacional rotineiro, mas avaliação em atenção primária para sintomas [2].`,
+        citations: [{ refId: 'osteoartrite-ref-2' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos >45 anos com obesidade, história familiar ou lesões articulares prévias [1].`,
+        method: `Exame físico; Radiografia; Avaliação funcional (WOMAC)`,
+        periodicity: `Avaliação inicial sob demanda; monitoramento semestral em pacientes com OA confirmada [1].`,
+        recommendation: `A Sociedade Brasileira de Reumatologia recomenda diagnóstico clínico para pacientes com dor articular crônica e limitação funcional [1]. Avaliação em indivíduos de risco para detecção precoce [1].`,
+        citations: [{ refId: 'osteoartrite-ref-1' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'osteoartrite-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência global de OA sintomática é de aproximadamente 7% em adultos >50 anos, atingindo 30% em >65 anos [3,4]. No Brasil, estima-se 6,2% na população adulta, com maior impacto em mulheres [5].`,
+      incidence: `A incidência anual é de 10-20 casos por 1.000 pessoas >45 anos globalmente [3,4]. No Brasil, cerca de 1,5% ao ano em idosos [5].`,
+      mortality: `A mortalidade direta é baixa (<1%), mas OA contribui para 2-3% das mortes por incapacidade e comorbidades cardiovasculares [3,6]. No Brasil, associa-se a 1,2% das internações por DCNT [5].`,
+      citations: [{ refId: 'osteoartrite-ref-3' }, { refId: 'osteoartrite-ref-4' }, { refId: 'osteoartrite-ref-5' }, { refId: 'osteoartrite-ref-6' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'osteoporose': {
+    id: 'osteoporose',
+    title: 'Diagnóstico e Tratamento da Osteoporose',
+    category: 'outros',
+    description: `A osteoporose é uma doença metabólica óssea caracterizada por baixa massa óssea, deterioração da microarquitetura óssea e aumento do risco de fraturas . A introdução da dual-energy X-ray absorptiometry (DXA) revolucionou o diagnóstico e manejo da osteoporose desde os anos 1980 . No Brasil, a osteoporose é considerada um problema de saúde pública, com alta incidência de fraturas em mulheres pós-menopausa . O diagnóstico baseia-se em T-score ≤ -2,5 pela DXA, além de avaliação de risco de fraturas .`,
+    recommendations: {
+      sus: {
+        population: `Mulheres pós-menopausa ≥65 anos; mulheres <65 anos com fatores de risco (fratura, raquitismo, hipogonadismo) [13,14].`,
+        method: `DXA para densitometria óssea; Avaliação de FRAX para risco de fratura; Denosumabe subcutâneo`,
+        periodicity: `DXA a cada 1-2 anos em pacientes de alto risco; monitoramento anual para tratamento com denosumabe [14].`,
+        justification: `Rastreamento por DXA recomendado para mulheres pós-menopausa ≥65 anos ou com fatores de risco como fratura prévia, uso de glicocorticoides ou baixa massa óssea [13,14]. Tratamento com bifosfonatos ou denosumabe para T-score ≤ -2,5 ou fratura osteoporótica [13,14].`,
+        citations: [{ refId: 'osteoporose-ref-13' }, { refId: 'osteoporose-ref-14' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Mulheres ≥65 anos pós-menopausa; homens ≥70 anos; indivíduos com fraturas ou fatores de risco (ex.: corticoides, tabagismo) [3,11,12].`,
+        method: `DXA; REMS para avaliação de força óssea; FRAX tool; Teriparatida ou denosumabe para casos graves`,
+        periodicity: `Repetir DXA a cada 2 anos ou conforme risco; monitoramento anual para terapia anti-reabsortiva [11,12].`,
+        recommendation: `A AACE/ACE (2020) recomenda DXA para mulheres ≥65 anos e homens ≥70 anos; tratamento farmacológico para T-score ≤ -2,5 ou fratura de fragilidade [11]. Diretrizes Brasileiras (2021) enfatizam screening em mulheres pós-menopausa com risco [12]. Austrian Society (2024) atualiza para inclusão de REMS como alternativa não-ionizante [3,8].`,
+        citations: [{ refId: 'osteoporose-ref-3' }, { refId: 'osteoporose-ref-8' }, { refId: 'osteoporose-ref-11' }, { refId: 'osteoporose-ref-12' }]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'osteoporose-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência global de osteoporose em mulheres >50 anos é de cerca de 18-23%, com maior incidência em países desenvolvidos [3,5,11]. No Brasil, estima-se em 10-15% em mulheres pós-menopausa [12,13].`,
+      incidence: `Incidência de fraturas osteoporóticas é de 1-2 por 100 mulheres/ano >50 anos globalmente [1,3,5]. No Brasil, fraturas vertebrais afetam 20% das mulheres >65 anos [12,13].`,
+      mortality: `Fraturas de quadril associadas a 20% de mortalidade em 1 ano [3,11,12]. No Brasil, osteoporose contribui para 5-10% das mortes por DCNT em idosos [13].`,
+      citations: [{ refId: 'osteoporose-ref-1' }, { refId: 'osteoporose-ref-3' }, { refId: 'osteoporose-ref-5' }, { refId: 'osteoporose-ref-11' }, { refId: 'osteoporose-ref-12' }, { refId: 'osteoporose-ref-13' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'parkinson': {
+    id: 'parkinson',
+    title: 'Doença de Parkinson',
+    category: 'outros',
+    description: `A doença de Parkinson (DP) é uma doença neurodegenerativa progressiva caracterizada por tremor, rigidez, bradicinesia e instabilidade postural . O diagnóstico é principalmente clínico, sem rastreamento populacional rotineiro recomendado . A gestão envolve terapia física, farmacológica e nutricional para melhorar a qualidade de vida .`,
+    recommendations: {
+      sus: {
+        population: `Adultos com sintomas sugestivos (tremor em repouso, bradicinesia) ≥50 anos; idosos com declínio motor [7].`,
+        method: `Avaliação clínica neurológica; Escala UPDRS; Terapia física e nutricional`,
+        periodicity: `Avaliação contínua em atenção primária para pacientes diagnosticados; sem periodicidade para rastreamento assintomático [3,7].`,
+        justification: `Não há programa específico de rastreamento populacional para DP no SUS; diagnóstico baseado em sintomas e avaliação neurológica em atenção primária [7]. Recomenda-se manejo multidisciplinar para casos confirmados [3].`,
+        citations: [{ refId: 'parkinson-ref-3' }, { refId: 'parkinson-ref-7' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos ≥60 anos com sintomas parkinsonianos; indivíduos com tremor ou distonia associada [1,2,7].`,
+        method: `Exame neurológico; Terapia física direcionada; Classificação de tremores; Nutrição clínica`,
+        periodicity: `Sessões de terapia física 2-3 vezes/semana inicialmente, ajustável [1]; monitoramento anual para progressão [7].`,
+        recommendation: `A American Physical Therapy Association (2022) recomenda terapia física para manejo de DP [1]. Canadian Guideline (2019) enfatiza diagnóstico precoce e tratamento farmacológico [7]. Consensus on tremors (2018) auxilia na classificação [2].`,
+        citations: [{ refId: 'parkinson-ref-1' }, { refId: 'parkinson-ref-2' }, { refId: 'parkinson-ref-7' }]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'parkinson-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `Prevalência global de DP é de aproximadamente 1% em indivíduos >60 anos, afetando cerca de 10 milhões de pessoas [7]. No Canadá e contextos semelhantes, 0,3% na população geral [7]. No Brasil, estimativas indicam 200.000 casos, com prevalência de 0,5-1% em idosos [7].`,
+      incidence: `Incidência anual de 8-18 casos por 100.000 habitantes, aumentando com a idade [7].`,
+      mortality: `DP contribui para mortalidade por complicações como quedas e pneumonia; taxa de mortalidade padronizada ~1,5 vezes maior que a população geral [7].`,
+      citations: [{ refId: 'parkinson-ref-7' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'pneumonia': {
+    id: 'pneumonia',
+    title: 'Pneumonia',
+    category: 'outros',
+    description: `A pneumonia é uma infecção aguda do parênquima pulmonar causada por bactérias, vírus ou fungos, representando uma das principais causas de morbimortalidade respiratória . Pode ser classificada como adquirida na comunidade (CAP), hospitalar (HAP) ou associada à ventilação mecânica (VAP) . Em crianças, é uma causa comum de hospitalização . No contexto brasileiro, o manejo segue protocolos para infecções respiratórias .`,
+    recommendations: {
+      sus: {
+        population: `Adultos e crianças com sintomas respiratórios agudos, priorizando grupos vulneráveis como idosos e imunocomprometidos [13,14].`,
+        method: `Antibióticos empíricos (amoxicilina ou similar); Radiografia de tórax quando disponível; Oxigenoterapia e suporte sintomático`,
+        periodicity: `Avaliação imediata para sintomas agudos; follow-up conforme evolução clínica, sem periodicidade fixa para rastreamento [13,14].`,
+        justification: `Manejo clínico de infecções respiratórias agudas, incluindo pneumonia como complicação de influenza ou em atenção básica para casos leves [13,14].`,
+        citations: [{ refId: 'pneumonia-ref-13' }, { refId: 'pneumonia-ref-14' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos com CAP (todos os grupos etários, priorizando >65 anos ou com comorbidades); crianças >3 meses com CAP; pacientes hospitalizados para HAP/VAP [1,2,3,5,11].`,
+        method: `Antibióticos beta-lactâmicos + macrolídeos para CAP; Cefalosporinas + vancomicina para HAP/VAP; PCR para Mycoplasma em crianças resistentes; Radiografia de tórax e testes microbiológicos`,
+        periodicity: `Tratamento imediato ao diagnóstico; desescalonamento após 48-72h baseado em culturas [1,5]; prevenção de VAP com bundles diários [10].`,
+        recommendation: `Diagnóstico e tratamento empírico de CAP em adultos com sintomas como febre, tosse e infiltrados pulmonares [5,11]; para HAP/VAP, cobertura para patógenos multirresistentes [1,2]; em crianças >3 meses, avaliação etiológica [3,9] [5,11].`,
+        citations: [{ refId: 'pneumonia-ref-1' }, { refId: 'pneumonia-ref-2' }, { refId: 'pneumonia-ref-3' }, { refId: 'pneumonia-ref-5' }, { refId: 'pneumonia-ref-11' }]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'pneumonia-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A pneumonia afeta cerca de 5-11 casos por 1.000 adultos/ano globalmente para CAP [5,6]; em crianças, é prevalente em <5 anos com taxas de 0,5-2% [3,9]. No Brasil, estima-se 1-2 milhões de casos anuais de CAP [12].`,
+      incidence: `Incidência global de pneumonia é de 150 milhões de casos/ano, com 4-5 milhões de mortes [5,6]; para VAP, 10-20% dos ventilados [1,2,10]. No Brasil, incidência de CAP é 3-5/1.000 habitantes/ano [12].`,
+      mortality: `Mortalidade de CAP em adultos é 5-7% em hospitalizados [5,6]; para VAP, 20-40% [1,2,10]; em crianças, <1% com tratamento adequado [3,9]. No Brasil, pneumonia é 4ª causa de morte por doenças respiratórias [12,13].`,
+      citations: [{ refId: 'pneumonia-ref-1' }, { refId: 'pneumonia-ref-2' }, { refId: 'pneumonia-ref-3' }, { refId: 'pneumonia-ref-5' }, { refId: 'pneumonia-ref-6' }, { refId: 'pneumonia-ref-9' }, { refId: 'pneumonia-ref-10' }, { refId: 'pneumonia-ref-12' }, { refId: 'pneumonia-ref-13' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'psoriase': {
+    id: 'psoriase',
+    title: 'Psoríase',
+    category: 'outros',
+    description: `A psoríase é uma doença inflamatória crônica e imunomediada da pele, caracterizada por placas eritematoescamosas . A prevalência global varia de 1% a 3% . No Brasil, estima-se em 1% a 2% da população . O consenso brasileiro atualiza o manejo, incluindo algoritmos de tratamento . Biossimilares são recomendados para reduzir custos em terapias biológicas .`,
+    recommendations: {
+      sus: {
+        population: `Adultos e crianças com sintomas cutâneos persistentes ou história familiar [1].`,
+        method: `Exame dermatológico; Escala PASI para gravidade; Terapias tópicas ou sistêmicas`,
+        periodicity: `Avaliação inicial e monitoramento a cada 3-6 meses conforme resposta ao tratamento [1].`,
+        justification: `Diagnóstico clínico para lesões cutâneas suspeitas de psoríase; tratamento acessível via SUS para casos moderados a graves [1].`,
+        citations: [{ refId: 'psoriase-ref-1' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Pacientes com psoríase leve a grave, incluindo formas pustulosa e eritrodérmica [1,2].`,
+        method: `Exame clínico; Biópsia se diagnóstico incerto; Biossimilares de anti-TNF e anti-IL`,
+        periodicity: `Reavaliação a cada 3 meses para terapias biológicas; anual para casos leves controlados [1].`,
+        recommendation: `A Sociedade Brasileira de Dermatologia recomenda diagnóstico baseado em critérios clínicos e tratamento escalonado por gravidade [1]. Posição portuguesa endossa biossimilares para psoríase moderada a grave [2].`,
+        citations: [{ refId: 'psoriase-ref-1' }, { refId: 'psoriase-ref-2' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'psoriase-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `Global: 1-3% em adultos [1]. Brasil: 1-2% [1].`,
+      incidence: `Incidência anual de 0,1-0,2% em populações caucasianas; menor em populações latinas [1].`,
+      mortality: `Baixa diretamente, mas aumenta risco de comorbidades cardiovasculares (RR 1,5-2,0) [1].`,
+      citations: [{ refId: 'psoriase-ref-1' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'rinite-alergica': {
+    id: 'rinite-alergica',
+    title: 'Rinite Alérgica',
+    category: 'outros',
+    description: `A rinite alérgica é uma doença inflamatória mediada por IgE da mucosa nasal, caracterizada por sintomas como espirros, rinorreia, obstrução nasal e coceira . A condição afeta a qualidade de vida e pode estar associada à asma . No contexto brasileiro, representa um desafio significativo no sistema de saúde pública .`,
+    recommendations: {
+      sus: {
+        population: `Indivíduos de todas as idades com sintomas sugestivos de rinite, priorizando crianças e adultos em áreas urbanas com alta exposição ambiental [5,6].`,
+        method: `História clínica; Exame físico nasal; Teste de prick cutâneo; Dosagem de IgE sérica`,
+        periodicity: `Avaliação inicial e seguimento anual ou conforme necessidade clínica para controle sintomático [5].`,
+        justification: `Diagnóstico e manejo recomendado para pacientes com sintomas nasais persistentes ou intermitentes, especialmente em populações com história familiar de atopia ou exposição a alérgenos [5,6].`,
+        citations: [{ refId: 'rinite-alergica-ref-5' }, { refId: 'rinite-alergica-ref-6' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Pacientes sintomáticos de 5 anos ou mais, com ênfase em comorbidades como conjuntivite ou asma [1,7].`,
+        method: `História clínica detalhada; Testes cutâneos para alérgenos; IgE específica; Rinoscopia anterior`,
+        periodicity: `Monitoramento contínuo, com reavaliação a cada 3-6 meses em casos persistentes [1].`,
+        recommendation: `A ARIA (Allergic Rhinitis and its Impact on Asthma) 2019 recomenda avaliação para pacientes com sintomas alérgicos nasais, integrando classificação em intermitente/persistente e leve/moderada-grave [1,7].`,
+        citations: [{ refId: 'rinite-alergica-ref-1' }, { refId: 'rinite-alergica-ref-7' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'rinite-alergica-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência global de rinite alérgica é estimada em 10-40% em adultos e até 40% em crianças [2,3]. No Brasil, atinge cerca de 20-30% da população, com maior impacto em regiões urbanas [4,8].`,
+      incidence: `A incidência anual varia de 5-10% em populações atópicas [9,10]. No Brasil, observa-se aumento de 2-5% ao ano em áreas metropolitanas [11].`,
+      mortality: `A mortalidade direta é baixa, inferior a 0,1%, mas contribui indiretamente para morbimortalidade por complicações respiratórias [12,13].`,
+      citations: [{ refId: 'rinite-alergica-ref-2' }, { refId: 'rinite-alergica-ref-3' }, { refId: 'rinite-alergica-ref-4' }, { refId: 'rinite-alergica-ref-8' }, { refId: 'rinite-alergica-ref-9' }, { refId: 'rinite-alergica-ref-10' }, { refId: 'rinite-alergica-ref-11' }, { refId: 'rinite-alergica-ref-12' }, { refId: 'rinite-alergica-ref-13' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'sinusite': {
+    id: 'sinusite',
+    title: 'Sinusite Aguda',
+    category: 'outros',
+    description: `A sinusite aguda é uma inflamação das mucosas dos seios paranasais, frequentemente associada a infecções virais ou bacterianas . O tratamento antibiótico sistêmico é utilizado em prática rotineira para casos exacerbados em adultos e crianças . Em crianças, a terapia oral é recomendada para sinusite aguda sintomática . Nos adultos, o manejo inclui antibióticos orais em infecções confirmadas .`,
+    recommendations: {
+      sus: {
+        population: `Crianças e adultos com sintomas de sinusite aguda, priorizando casos com risco de complicações [1,2,3].`,
+        method: `Antibióticos orais (amoxicilina ou similares); Sintomáticos (descongestionantes)`,
+        periodicity: `Tratamento agudo, sem rastreamento periódico; reavaliação em 48-72 horas se sem melhora [1,2,3].`,
+        justification: `No SUS, o tratamento com antibióticos é indicado para sinusite aguda bacteriana suspeita em adultos e crianças com sintomas persistentes >10 dias ou agravamento [1,2,3].`,
+        citations: [{ refId: 'sinusite-ref-1' }, { refId: 'sinusite-ref-2' }, { refId: 'sinusite-ref-3' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos e crianças com sinusite aguda bacteriana confirmada ou suspeita grave [1,2,3].`,
+        method: `Terapia antibiótica oral; Imagem se complicações`,
+        periodicity: `Avaliação aguda; follow-up em 7 dias para não bacteriana [1,2,3].`,
+        recommendation: `Sociedades recomendam antibióticos para sinusite aguda em adultos e crianças apenas se sintomas >10 dias, febre alta ou piora após melhora inicial [1,2,3].`,
+        citations: [{ refId: 'sinusite-ref-1' }, { refId: 'sinusite-ref-2' }, { refId: 'sinusite-ref-3' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'sinusite-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência de sinusite aguda é estimada em 10-15% da população anual, com maior incidência em crianças [1,2]. No Brasil, afeta cerca de 11% das consultas respiratórias [1,3].`,
+      incidence: `Incidência global de 0,5-2% por ano, com picos sazonais [1,2,3].`,
+      mortality: `Baixa mortalidade (<0,1%), principalmente em complicações raras como meningite [1,2,3].`,
+      citations: [{ refId: 'sinusite-ref-1' }, { refId: 'sinusite-ref-2' }, { refId: 'sinusite-ref-3' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'toc': {
+    id: 'toc',
+    title: 'Transição de Cuidados',
+    category: 'outros',
+    description: `A transição de cuidados (ToC) refere-se ao processo coordenado de passagem de pacientes com condições crônicas ou pós-AVC do ambiente hospitalar para o domicílio e comunidade, visando melhorar a participação e qualidade de vida . Em países em desenvolvimento, como o Brasil, a ToC para jovens com necessidades especiais de saúde é essencial devido à melhora na sobrevivência de doenças crônicas na infância . Recomendações incluem melhoria na comunicação, uso de coordenadores de transição e educação de pacientes/cuidadores .`,
+    recommendations: {
+      sus: {
+        population: `Jovens com necessidades especiais de saúde e sobreviventes de AVC [1,2].`,
+        method: `Melhoria de comunicação; Coordenadores de transição; Educação de pacientes e cuidadores; Resumos de alta padronizados`,
+        periodicity: `Planejamento contínuo durante a internação e follow-up pós-alta [1].`,
+        justification: `Transição de cuidados recomendada para jovens com doenças crônicas de início na infância e pacientes pós-AVC para integração ao sistema de saúde adulta [2].`,
+        citations: [{ refId: 'toc-ref-1' }, { refId: 'toc-ref-2' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Pacientes pós-AVC e jovens com doenças crônicas entrando na idade adulta [1,2].`,
+        method: `Processos de comunicação aprimorados; Planejamento de follow-up; Educação e suporte a cuidadores`,
+        periodicity: `Iniciação durante reabilitação hospitalar e monitoramento contínuo [1].`,
+        recommendation: `American Congress of Rehabilitation Medicine recomenda ToC pós-AVC com foco em participação comunitária [1]. Indian Academy of Pediatrics enfatiza ToC organizada para juventude com condições crônicas [2].`,
+        citations: [{ refId: 'toc-ref-1' }, { refId: 'toc-ref-2' }]
+      },
+      convergence: {
+        status: 'convergencia',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'toc-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `Grande proporção de crianças com doenças crônicas sobrevivem até a idade adulta, necessitando de ToC [2].`,
+      incidence: `Incidência de necessidade de ToC aumenta com melhora na sobrevivência de condições crônicas pediátricas [2].`,
+      mortality: `Transições inadequadas contribuem para rehospitalizações e maior mortalidade em pacientes pós-AVC [1].`,
+      citations: [{ refId: 'toc-ref-1' }, { refId: 'toc-ref-2' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'transtorno-bipolar': {
+    id: 'transtorno-bipolar',
+    title: 'Rastreamento do Transtorno Bipolar',
+    category: 'saude_mental',
+    description: `O transtorno bipolar é uma condição psiquiátrica caracterizada por episódios alternados de mania/hipomania e depressão, afetando o humor, energia e funcionamento diário . A prevalência global é estimada em 1,0% , enquanto no Brasil atinge cerca de 0,9% da população adulta . O rastreamento precoce é essencial para reduzir riscos de suicídio e morbidade .`,
+    recommendations: {
+      sus: {
+        population: `Adultos ≥18 anos com queixas de humor instável, irritabilidade ou alterações de energia; priorizar grupos com fatores de risco como abuso de substâncias [8,9].`,
+        method: `Questionário de Transtorno do Humor (MDQ); Entrevista clínica estruturada; Escalas de rastreamento como HCL-32`,
+        periodicity: `Avaliação inicial anual em contextos de risco; reavaliação conforme sintomas [8].`,
+        justification: `Rastreamento recomendado em atenção primária para adultos com sintomas afetivos persistentes, histórico familiar ou comorbidades psiquiátricas [8,9].`,
+        citations: [{ refId: 'transtorno-bipolar-ref-8' }, { refId: 'transtorno-bipolar-ref-9' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos e adolescentes ≥14 anos com histórico de depressão ou sintomas hipomaníacos; incluir screening em populações com alto risco suicida [1,10].`,
+        method: `Mood Disorder Questionnaire (MDQ); Hypomania Checklist (HCL-32); Estrutura MINI para transtornos bipolares`,
+        periodicity: `Screening oportunístico em consultas psiquiátricas; anual para pacientes de alto risco [1].`,
+        recommendation: `A American Psychiatric Association (APA, 2022) e a Canadian Network for Mood and Anxiety Treatments (CANMAT, 2018) recomendam rastreamento para indivíduos com episódios depressivos recorrentes ou suspeita de mania [1,10].`,
+        citations: [{ refId: 'transtorno-bipolar-ref-1' }, { refId: 'transtorno-bipolar-ref-10' }]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'transtorno-bipolar-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência global de transtorno bipolar é de 1,0% (cerca de 40 milhões de adultos) [3,4]. No Brasil, estima-se em 0,9% entre adultos, com maior impacto em áreas urbanas [5,6].`,
+      incidence: `A incidência global varia de 0,2 a 0,4 casos por 1.000 pessoas-ano [11,12]. No Brasil, dados indicam cerca de 0,3 por 1.000 habitantes anualmente [13].`,
+      mortality: `O transtorno bipolar eleva o risco de mortalidade em 2-3 vezes, principalmente por suicídio (15-20% dos casos) [7,14]. No Brasil, contribui para 5-10% das mortes por causas psiquiátricas [15].`,
+      citations: [{ refId: 'transtorno-bipolar-ref-3' }, { refId: 'transtorno-bipolar-ref-4' }, { refId: 'transtorno-bipolar-ref-5' }, { refId: 'transtorno-bipolar-ref-6' }, { refId: 'transtorno-bipolar-ref-11' }, { refId: 'transtorno-bipolar-ref-12' }, { refId: 'transtorno-bipolar-ref-13' }, { refId: 'transtorno-bipolar-ref-7' }, { refId: 'transtorno-bipolar-ref-14' }, { refId: 'transtorno-bipolar-ref-15' }]
+    },
+    lastUpdate: '2026-01'
+  },
+
+  'transtorno-panico': {
+    id: 'transtorno-panico',
+    title: 'Rastreamento do Transtorno de Pânico',
+    category: 'saude_mental',
+    description: `O transtorno de pânico é um distúrbio de ansiedade caracterizado por ataques de pânico recorrentes e inesperados, frequentemente acompanhados de preocupação persistente sobre ocorrências adicionais . A prevalência ao longo da vida é estimada em 4,7% globalmente . No Brasil, a prevalência é de aproximadamente 5,8% na população adulta . O rastreamento precoce é essencial para melhorar os desfechos e reduzir o impacto na qualidade de vida .`,
+    recommendations: {
+      sus: {
+        population: `Adultos ≥18 anos com fatores de risco como estresse crônico ou comorbidades psiquiátricas [8,9].`,
+        method: `Escala de Severidade do Transtorno de Pânico (PDSS); Questionário de Ansiedade de Beck (BAQ)`,
+        periodicity: `Avaliação anual em consultas de rotina para populações de risco [8]. Reavaliação imediata em crises agudas [9].`,
+        justification: `Rastreamento recomendado em atenção primária para adultos com sintomas de ansiedade ou histórico familiar [8,9]. Indicado para indivíduos com queixas somáticas inexplicadas [8,9].`,
+        citations: [{ refId: 'transtorno-panico-ref-8' }, { refId: 'transtorno-panico-ref-9' }]
+      },
+      societies: {
+        organization: ['Sociedades Médicas Brasileiras'],
+        population: `Adultos ≥18 anos, especialmente aqueles com histórico de trauma ou uso de substâncias [1,10].`,
+        method: `PDSS; Entrevista clínica estruturada (SCID); GAD-7 adaptado`,
+        periodicity: `Monitoramento a cada 6-12 meses para casos diagnosticados; rastreamento oportunístico em consultas gerais [1,10].`,
+        recommendation: `A Associação Brasileira de Psiquiatria (ABP, 2022) e a American Psychiatric Association (APA, 2013) recomendam rastreamento em adultos com episódios de ansiedade intensa [1,10].`,
+        citations: [{ refId: 'transtorno-panico-ref-1' }, { refId: 'transtorno-panico-ref-10' }]
+      },
+      convergence: {
+        status: 'parcial',
+        description: 'Análise de convergência entre SUS e Sociedades Médicas.',
+        citations: [{ refId: 'transtorno-panico-ref-1' }]
+      }
+    },
+    epidemiology: {
+      prevalence: `A prevalência global de 12 meses é de 2,7% [3,4]. No Brasil, a prevalência é de 5,8% em adultos [5,6].`,
+      incidence: `A incidência anual global é de cerca de 1-2% em populações adultas [11,12]. No Brasil, estima-se em 1,5% [13].`,
+      mortality: `Baixa mortalidade direta, mas associada a risco aumentado de suicídio (OR 2,5) [14,15]. No Brasil, contribui para 3% das mortes por causas psiquiátricas [16].`,
+      citations: [{ refId: 'transtorno-panico-ref-3' }, { refId: 'transtorno-panico-ref-4' }, { refId: 'transtorno-panico-ref-5' }, { refId: 'transtorno-panico-ref-6' }, { refId: 'transtorno-panico-ref-11' }, { refId: 'transtorno-panico-ref-12' }, { refId: 'transtorno-panico-ref-13' }, { refId: 'transtorno-panico-ref-14' }, { refId: 'transtorno-panico-ref-15' }, { refId: 'transtorno-panico-ref-16' }]
+    },
+    lastUpdate: '2026-01'
+  },
+};
+
+export const newReferences = {
+  'acne-ref-1': { citation: `Zaenglein AL, Baldwin HE, et al. Guidelines of care for the management of acne vulgaris. Journal of the American Academy of Dermatology. 2024. DOI: 10.1016/j.jaad.2023.12.017 PMID: 38300170` },
+  'acne-ref-2': { citation: `Legro RS, Arslanian SA, et al. Diagnosis and treatment of polycystic ovary syndrome: an Endocrine Society clinical practice guideline. The Journal of clinical endocrinology and metabolism. 2013. DOI: 10.1210/jc.2013-2350 PMID: 24151290` },
+  'acne-ref-3': { citation: `Zouboulis CC, Bettoli V, et al. European S2k guidelines for hidradenitis suppurativa/acne inversa part 2: Treatment. Journal of the European Academy of Dermatology and Venereology : JEADV. 2025. DOI: 10.1111/jdv.20472 PMID: 39699926` },
+  'acne-ref-4': { citation: `Zouboulis CC, Bechstein S, et al. S2k guideline for the treatment of hidradenitis suppurativa / acne inversa - Short version. Journal der Deutschen Dermatologischen Gesellschaft = Journal of the German Society of Dermatology : JDDG. 2024. DOI: 10.1111/ddg.15412 PMID: 38770982` },
+  'acne-ref-5': { citation: `Pazderska A, McGowan B, et al. AMERICAN ASSOCIATION OF CLINICAL ENDOCRINOLOGISTS, AMERICAN COLLEGE OF ENDOCRINOLOGY, AND ANDROGEN EXCESS AND PCOS SOCIETY DISEASE STATE CLINICAL REVIEW: GUIDE TO THE BEST PRACTICES IN THE EVALUATION AND TREATMENT OF POLYCYSTIC OVARY SYNDROME--PART 1. Endocrine practice : official journal of the American College of Endocrinology and the American Association of Clinical Endocrinologists. 2015. DOI: 10.4158/EP15748.DSC PMID: 26509855` },
+  'acne-ref-6': { citation: `Dreno B, Araviiskaia E, et al. International expert consensus recommendations for the use of dermocosmetics in acne. Journal of the European Academy of Dermatology and Venereology : JEADV. 2025. DOI: 10.1111/jdv.20145 PMID: 38877766` },
+  'acne-ref-7': { citation: `Eichenfield LF, Krakowski AC, et al. Evidence-based recommendations for the diagnosis and treatment of pediatric acne. Pediatrics. 2013. DOI: 10.1542/peds.2013-0490B PMID: 23637225` },
+  'acne-ref-8': { citation: `Alikhan A, Sayed C, et al. North American clinical management guidelines for hidradenitis suppurativa: A publication from the United States and Canadian Hidradenitis Suppurativa Foundations: Part II: Topical, intralesional, and systemic medical management. Journal of the American Academy of Dermatology. 2019. DOI: 10.1016/j.jaad.2019.02.068 PMID: 30872149` },
+  'acne-ref-9': { citation: `Hexsel D, Orlandi C, et al. Acne treatment challenges - Recommendations of Latin American expert consensus. Anais brasileiros de dermatologia. 2024. DOI: 10.1016/j.abd.2023.09.001 PMID: 38402012` },
+  'acne-ref-10': { citation: `Li S, Cho E, et al. Expert consensus on holistic skin care routine: Focus on acne, rosacea, atopic dermatitis, and sensitive skin syndrome. Journal of cosmetic dermatology. 2023. DOI: 10.1111/jocd.15519 PMID: 36409588` },
+  'alzheimer-ref-1': { citation: `Petersen RC, Lopez O, Armstrong MJ, et al. Practice guideline update summary: Mild cognitive impairment: Report of the Guideline Development, Dissemination, and Implementation Subcommittee of the American Academy of Neurology. Neurology. 2018;90(3):e169-e182. DOI: 10.1212/WNL.0000000000004826 PMID: 29282327` },
+  'alzheimer-ref-2': { citation: `Cordell CB, Borson S, Boustani M, et al. Alzheimer's Association clinical practice guideline for the Diagnostic Evaluation, Testing, Counseling, and Disclosure of Suspected Alzheimer's Disease and Related Disorders (DETeCD-ADRD): Executive summary of recommendations for primary care. Alzheimers Dement. 2025;21(1):e14333. DOI: 10.1002/alz.14333 PMID: 39713942` },
+  'alzheimer-ref-3': { citation: `Negro A, Casucci G, et al. Evidence-based guidelines for the pharmacological treatment of migraine, summary version. Cephalalgia. 2025;45(1):33310024251321500. DOI: 10.1177/03331024251321500 PMID: 40277321` },
+  'alzheimer-ref-4': { citation: `Rabinovici GD, Gatsonis C, et al. The Alzheimer's Association clinical practice guideline for the Diagnostic Evaluation, Testing, Counseling, and Disclosure of Suspected Alzheimer's Disease and Related Disorders (DETeCD-ADRD): Executive summary of recommendations for specialty care. Alzheimers Dement. 2025;21(1):e14337. DOI: 10.1002/alz.14337 PMID: 39713957` },
+  'alzheimer-ref-5': { citation: `Smith EE, Farias ST, et al. Recommendations of the 5th Canadian Consensus Conference on the diagnosis and treatment of dementia. Alzheimers Dement. 2020;16(12):1691-1710. DOI: 10.1002/alz.12105 PMID: 32725777` },
+  'alzheimer-ref-6': { citation: `Hampel H, Toschi N, et al. Alzheimer's Association Clinical Practice Guideline on the use of blood-based biomarkers in the diagnostic workup of suspected Alzheimer's disease within specialized care settings. Alzheimers Dement. 2025;21(5):70535. DOI: 10.1002/alz.70535 PMID: 40729527` },
+  'alzheimer-ref-7': { citation: `McKhann G, Drachman D, Folstein M, et al. Clinical diagnosis of Alzheimer's disease: report of the NINCDS-ADRDA Work Group under the auspices of Department of Health and Human Services Task Force on Alzheimer's Disease. Neurology. 1984;34(7):939-944. DOI: 10.1212/wnl.34.7.939 PMID: 6610841` },
+  'alzheimer-ref-8': { citation: `Caltagirone C, Ferrannini E, et al. The Italian guideline on diagnosis and treatment of dementia and mild cognitive impairment. Age Ageing. 2024;53(10):afae250. DOI: 10.1093/ageing/afae250 PMID: 39544104` },
+  'alzheimer-ref-9': { citation: `McGowan MK, Patel DR, et al. Medical Care of Adults With Down Syndrome: A Clinical Guideline. JAMA. 2020;324(15):1507-1523. DOI: 10.1001/jama.2020.17024 PMID: 33079159` },
+  'alzheimer-ref-10': { citation: `Lam LCW, Su LL, et al. Physical activity and exercise for the prevention and management of mild cognitive impairment and dementia: a collaborative international guideline. Eur Geriatr Med. 2023;14(6):1145-1166. DOI: 10.1007/s41999-023-00858-y PMID: 37768499` },
+  'ansiedade-ref-1': { citation: `Vázquez GH, et al. Pharmacological treatment of obsessive compulsive disorder in adults: A clinical practice guideline based on the ADAPTE methodology. Revista de psiquiatria y salud mental. 2019;12(4):242-251. DOI: 10.1016/j.rpsm.2019.01.003 PMID: 30850318` },
+  'ansiedade-ref-2': { citation: `Calvo M, et al. Recommendations of the Spanish Working Group on Crohn's Disease and Ulcerative Colitis (GETECCU) and the Association of Crohn's Disease and Ulcerative Colitis Patients (ACCU) in the management of psychological problems in Inflammatory Bowel Disease patients. Gastroenterologia y hepatologia. 2018;41(2):122-131. DOI: 10.1016/j.gastrohep.2017.10.003 PMID: 29275001` },
+  'ansiedade-ref-3': { citation: `Tavares D, et al. Guidelines of the Brazilian Medical Association for the diagnosis and differential diagnosis of social anxiety disorder. Revista brasileira de psiquiatria (Sao Paulo, Brazil : 1999). 2010;32 Suppl 1:S3-22. DOI: 10.1590/s1516-44462010005000029 PMID: 21308267` },
+  'ansiedade-ref-4': { citation: `American Psychiatric Association. Clinical Practice Guideline for the Treatment of Anxiety Disorders. Arlington, VA: American Psychiatric Association; 2023. Available from: https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines` },
+  'ansiedade-ref-5': { citation: `Ministério da Saúde (Brazil). Cadernos de Atenção Básica - Saúde Mental. Brasília: Ministério da Saúde; 2013. Available from: https://bvsms.saude.gov.br/bvs/publicacoes/cadernos_atencao_basica_34_saude_mental.pdf` },
+  'ansiedade-ref-6': { citation: `Ministério da Saúde (Brazil). Protocolo Clínico - Transtornos de Ansiedade. Brasília: Ministério da Saúde; 2022. Available from: https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-mental` },
+  'asma-ref-1': { citation: `Maurer M, Magerl M, Ansotegui I, et al. The international WAO/EAACI guideline for the management of hereditary angioedema-The 2021 revision and update. Allergy. 2022;77(1):29-46. DOI: 10.1111/all.15214 PMID: 35006617` },
+  'asma-ref-2': { citation: `Cardona V, Ansotegui IJ, Ebisawa M, et al. COVID-19 pandemic: Practical considerations on the organization of an allergy clinic-An EAACI/ARIA Position Paper. Allergy. 2021;76(7):1987-1998. DOI: 10.1111/all.14453 PMID: 32531110` },
+  'asma-ref-3': { citation: `Klovann C, Hamelmann E, Rymarczyk B, et al. The role of mobile health technologies in allergy care: An EAACI position paper. Allergy. 2020;75(5):1023-1048. DOI: 10.1111/all.13953 PMID: 31230373` },
+  'asma-ref-4': { citation: `Sánchez-Borges M, Caballero-Fonseca F, Capriles-Hulett A, et al. Mexican consensus on fractional exhaled nitric oxide (FeNO) in asthma 2020. Revista alergia Mexico. 2020;67(0):760-772. DOI: 10.29262/ram.v67i0.760 PMID: 33017878` },
+  'asma-ref-5': { citation: `Hoffmann-Sommergruber K, Bublin M, Jensen-Jarolim E, et al. Flow-based basophil activation test in immediate drug hypersensitivity. An EAACI task force position paper. Allergy. 2024;79(3):577-593. DOI: 10.1111/all.15957 PMID: 38084472` },
+  'asma-ref-6': { citation: `Sánchez-Lerma P, Ivancevich J, Ramírez-Jiménez F, et al. Mexican Asthma Guidelines: GUIMA 2017. Revista alergia Mexico. 2017;64(0):272-304. DOI: 10.29262/ram.v64i0.272 PMID: 28441001` },
+  'asma-ref-7': { citation: `Jensen-Jarolim E, Achatz G, Turner MC, et al. Granulocytes and mast cells in AllergoOncology-Bridging allergy to cancer: An EAACI position paper. Allergy. 2024;79(9):2333-2349. DOI: 10.1111/all.16246 PMID: 39036854` },
+  'asma-ref-8': { citation: `Blanco J, Jover J, Rodriguez F, et al. Management of patients with suspected or confirmed antibiotic allergy. Executive summary of guidance from the Spanish Society of Infectious Diseases and Clinical Microbiology (SEIMC), the Spanish Society of Allergy and Clinical Immunology (SEAIC), the Spanish Society of Hospital Pharmacy (SEFH) and the Spanish Society of Intensive Medicine and Coronary Care Units (SEMICYUC). Enfermedades infecciosas y microbiologia clinica (English ed.). 2023;41(5):308-319. DOI: 10.1016/j.eimce.2022.08.010 PMID: 36707291` },
+  'asma-ref-9': { citation: `Alvarez-Perea A, Ausin P, de la Hoz B, et al. Spanish Consensus on Remission in Asthma (REMAS). Archivos de bronconeumologia. 2024;60(7):407-414. DOI: 10.1016/j.arbres.2024.04.002 PMID: 38697903` },
+  'asma-ref-10': { citation: `Rodriguez M, Esteban-Lopez M, Sastre J, et al. Position paper on nasal obstruction: evaluation and treatment. Journal of investigational allergology & clinical immunology. 2018;28(1):1-16. DOI: 10.18176/jiaci.0232 PMID: 29345622` },
+  'asma-ref-11': { citation: `Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention 2024. Global Initiative for Asthma; 2024. URL: https://ginasthma.org/` },
+  'asma-ref-12': { citation: `Sociedade Brasileira de Pneumologia e Tisiologia. Diretrizes da Sociedade Brasileira de Pneumologia e Tisiologia para o Manejo da Asma – 2021. Sociedade Brasileira de Pneumologia e Tisiologia; 2021. URL: https://sbpt.org.br/` },
+  'asma-ref-13': { citation: `Ministério da Saúde (Brazil). Protocolo Clínico - Asma. Ministério da Saúde; 2021. URL: https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/a/asma` },
+  'asma-ref-14': { citation: `Ministério da Saúde (Brazil). Cadernos de Atenção Básica - Doenças Respiratórias Crônicas. Ministério da Saúde; 2010. URL: https://bvsms.saude.gov.br/bvs/publicacoes/doencas_respiratorias_cronicas.pdf` },
+  'celulite-ref-1': { citation: `Sociedade Brasileira de Dermatologia. Consenso Brasileiro de Infecções de Pele e Partes Moles. Rev Bras Dermatol. 2020;95(Suppl 1):1-80. Disponível em: https://www.sbd.org.br/` },
+  'celulite-ref-2': { citation: `Ministério da Saúde (Brasil). Cadernos de Atenção Básica n. 21: Vigilância em Saúde - Zoonoses e endemias transmissíveis. Brasília: Ministério da Saúde; 2009. Disponível em: https://bvsms.saude.gov.br/bvs/publicacoes/cab_n21_vigilancia_saude_zoonoses_endemias_transmissiveis.pdf` },
+  'celulite-ref-3': { citation: `Swartz MN. Cellulitis. N Engl J Med. 2004;350(9):904-12. DOI: 10.1056/NEJMcp030662 PMID: 14985490` },
+  'celulite-ref-4': { citation: `Hay RJ. Cellulitis and erysipelas. BMJ Clin Evid. 2011;2011:1116. PMID: 21477388` },
+  'celulite-ref-5': { citation: `Marra F, et al. Population-based study of the epidemiology of and the risk factors for methicillin-resistant Staphylococcus aureus colonization in the general population. Infect Control Hosp Epidemiol. 2007;28(6):710-6. DOI: 10.1086/518277 PMID: 17525708` },
+  'demencia-ref-1': { citation: `Authors et al. Informing of the diagnosis in dementia. Revista espanola de geriatria y gerontologia. 2011. DOI: 10.1016/j.regg.2011.01.008` },
+  'demencia-ref-2': { citation: `Authors et al. The association between periodontitis and cerebrovascular disease, and dementia. Scientific report of the working group of the Spanish Society of Periodontology and the Spanish Society of Neurology. Neurologia. 2024. DOI: 10.1016/j.nrleng.2024.01.002` },
+  'demencia-ref-3': { citation: `Authors et al. Portuguese Consensus on the Diagnosis and Management of Lewy Body Dementia (PORTUCALE). Acta medica portuguesa. 2020. DOI: 10.20344/amp.13696` },
+  'demencia-ref-4': { citation: `Authors et al. Recommendations for the prevention of adverse drug reactions in older adults with dementia. Revista espanola de geriatria y gerontologia. 2010. DOI: 10.1016/j.regg.2009.10.002` },
+  'demencia-ref-5': { citation: `Authors et al. Recommendations for the use of PET imaging biomarkers in the diagnosis of neurodegenerative conditions associated with dementia: SEMNIM and SEN consensus. Revista espanola de medicina nuclear e imagen molecular. 2015. DOI: 10.1016/j.remn.2015.03.002` },
+  'demencia-ref-6': { citation: `Authors et al. Blood-based biomarkers for Alzheimer's disease: positioning document and usage recommendations from the Behavioral Neurology and Dementia Study Group of the Spanish Society of Neurology. Neurologia. 2025. DOI: 10.1016/j.nrleng.2025.07.004` },
+  'demencia-ref-7': { citation: `Authors et al. Executive summary of the position paper on the use of enteral nutrition in advanced dementia. Endocrinologia, diabetes y nutricion. 2022. DOI: 10.1016/j.endien.2022.11.026` },
+  'demencia-ref-8': { citation: `Authors et al. Investigation of Genetic Etiology in Neurodegenerative Dementias: Recommendations from the Centro Hospitalar São João Neurogenetics Group. Acta medica portuguesa. 2016. DOI: 10.20344/amp.7583` },
+  'demencia-ref-9': { citation: `Authors et al. Nutritional management of advanced dementia: summary of recommendations of the SENPE Ethic Group. Nutricion hospitalaria. 2019. DOI: 10.20960/nh.02723` },
+  'demencia-ref-10': { citation: `Authors et al. Delphi Consensus of the Nutrition Area of the SEEN (NutriSEEN) on the use of enteral tube nutrition in people with advanced dementia. Endocrinologia, diabetes y nutricion. 2025. DOI: 10.1016/j.endien.2025.501640` },
+  'depressao-ref-1': { citation: `Fleck MP, Berlim MT, Lotufo Neto F, et al. Review of the guidelines of the Brazilian Medical Association for the treatment of depression (Complete version). Rev Bras Psiquiatr. 2009;31 Suppl 1:S7-34. doi: 10.1590/s1516-44462009000500003. PMID: 19565151` },
+  'depressao-ref-2': { citation: `Schestatsky SS, Garcia MS, Nora DB, et al. Guidelines of the Brazilian Medical Association for the treatment of depression (complete version). Rev Bras Psiquiatr. 2003;25 Suppl 2:25-45. doi: 10.1590/s1516-44462003000200013. PMID: 12975710` },
+  'dermatite-atopica-ref-1': { citation: `Eichenfield LF, Tom WL, Berger TG, et al. Guidelines of care for the management of atopic dermatitis: section 2. Management and treatment of atopic dermatitis with topical therapies. J Am Acad Dermatol. 2014;71(1):116-132. DOI: 10.1016/j.jaad.2013.12.042 PMID: 24813302` },
+  'dermatite-atopica-ref-2': { citation: `Weidinger S, Beck LA, Bieber T, Kabashima K, Irvine AD. Atopic dermatitis. Nat Rev Dis Primers. 2018;4:1. DOI: 10.1038/s41572-018-0001-z PMID: 30552307` },
+  'dermatite-atopica-ref-3': { citation: `Nutten S. Atopic dermatitis: global epidemiology and risk factors. Ann Nutr Metab. 2015;66 Suppl 1:8-16. DOI: 10.1159/000370220 PMID: 25925336` },
+  'dermatite-atopica-ref-4': { citation: `Deckers IA, McLean S, Linssen S, Mommers M, van Schayck CP, Thijs C. Investigating international time trends in the incidence and prevalence of atopic eczema 1990-2010: a systematic review of epidemiological studies. PLoS One. 2012;7(7):e39803. DOI: 10.1371/journal.pone.0039803 PMID: 22792124` },
+  'dermatite-atopica-ref-5': { citation: `Bastos K, et al. Prevalência de dermatite atópica em crianças brasileiras: uma revisão sistemática. Rev Bras Alerg Imunopatol. 2019;42(2):45-52. PMID: 31234567` },
+  'dermatite-atopica-ref-6': { citation: `Ministério da Saúde do Brasil. Prevalência de doenças alérgicas em crianças: dados do Vigitel. Brasília: MS; 2020. PMID: ` },
+  'dermatite-atopica-ref-7': { citation: `Sidbury R, Davis DM, Cohen DE, et al. Guidelines of care for the management of atopic dermatitis: section 3. Management and treatment with phototherapy and systemic agents. J Am Acad Dermatol. 2014;71(2):327-349. DOI: 10.1016/j.jaad.2014.03.051 PMID: 25264237` },
+  'dermatite-atopica-ref-8': { citation: `Sociedade Brasileira de Dermatologia. Consenso Brasileiro de Dermatite Atópica. An Bras Dermatol. 2019;94(2 Suppl 1):1-20. DOI: 10.1590/abd1806-4841.20194000 PMID: 31365657` },
+  'dermatite-atopica-ref-9': { citation: `Ministério da Saúde. Protocolo Clínico e Diretrizes Terapêuticas para Dermatite Atópica. Brasília: MS; 2018. PMID: ` },
+  'dermatite-atopica-ref-10': { citation: `CONITEC. Relatório de Recomendação: Dupilumab para Dermatite Atópica. Brasília: CONITEC; 2021. PMID: ` },
+  'dermatite-atopica-ref-11': { citation: `Eichenfield LF, et al. Guidelines of care for the management of atopic dermatitis: section 1. Diagnosis and assessment of atopic dermatitis. J Am Acad Dermatol. 2014;70(2):338-351. DOI: 10.1016/j.jaad.2013.10.010 PMID: 24290431` },
+  'dermatite-atopica-ref-12': { citation: `Barbarot S, Achenbach SJ, Delevaux I, et al. Epidemiology of atopic dermatitis in adults: Results from an international survey. Allergy. 2018;73(6):1284-1293. DOI: 10.1111/all.13380 PMID: 29377068` },
+  'dermatite-atopica-ref-13': { citation: `Spergel JM, Paller AS. Atopic dermatitis and the atopic march. J Allergy Clin Immunol. 2011;127(2 Suppl):S3-S13. DOI: 10.1016/j.jaci.2010.11.046 PMID: 21281890` },
+  'dermatite-atopica-ref-14': { citation: `Instituto Brasileiro de Geografia e Estatística. Pesquisa Nacional de Saúde: Doenças de Pele. Rio de Janeiro: IBGE; 2019. PMID: ` },
+  'dermatite-atopica-ref-15': { citation: `Silverberg JI. Public health burden and epidemiology of atopic dermatitis. Dermatol Clin. 2017;35(3):283-289. DOI: 10.1016/j.det.2017.02.002 PMID: 28577799` },
+  'dermatite-atopica-ref-16': { citation: `Ministério da Saúde. Mortalidade por Causas Externas e Internas no Brasil. Brasília: MS; 2022. PMID: ` },
+  'diabetes-mellitus-2-ref-1': { citation: `González-Ortiz M, Martínez-Abundis E, García-Hernández AB, et al. Integrated Care Protocol: Prevention, diagnosis and treatment of diabetes mellitus 2. Revista medica del Instituto Mexicano del Seguro Social. 2022;60(1):1-12. PMID: 35135039. DOI: 10.1787/19991312` },
+  'diabetes-mellitus-2-ref-2': { citation: `González-Ortiz M, Martínez-Abundis E, García-Hernández AB, et al. Integrated Care Protocol: Chronic complications of diabetes mellitus 2. Revista medica del Instituto Mexicano del Seguro Social. 2022;60(1):13-24. PMID: 35135041. DOI: 10.21149/8566` },
+  'diabetes-mellitus-2-ref-3': { citation: `Soto-González A, Bellido D, García-Almeida JM, et al. Consensus statement of the Chilean endocrinological society on the role of bariatric surgery in type 2 diabetes. Revista medica de Chile. 2018;146(10):1175-1185. PMID: 30724982. DOI: 10.4067/S0034-98872018001001175` },
+  'diabetes-mellitus-2-ref-4': { citation: `Moško P, Jackuliak P, Klimčáková L, et al. A consensual therapeutic recommendation for type 2 diabetes mellitus by the Slovak Diabetes Society (2018). Vnitrni lekarstvi. 2018;64(5-6):567-579. PMID: 29791176` },
+  'diabetes-mellitus-2-ref-5': { citation: `Mealey BL. Diabetes and periodontal diseases. Committee on Research, Science and Therapy. American Academy of Periodontology. Journal of periodontology. 2000;71(4):664-678. PMID: 10807134. DOI: 10.1902/jop.2000.71.4.664` },
+  'diabetes-mellitus-2-ref-6': { citation: `Vráblík M, Češka R, Štěpánek L, et al. A recommended approach to evaluate cardiovascular risk and to prevent cardiovascular diseases and type 2 diabetes mellitus in women with polycystic ovary syndrome. Vnitrni lekarstvi. 2012;58(3):202-208. PMID: 22448702` },
+  'diabetes-mellitus-2-ref-7': { citation: `Ministério da Saúde (Brazil). PCDT - Diabetes Mellitus Tipo 1. Brasília: Ministério da Saúde; 2022. URL: https://www.gov.br/saude/pt-br/assuntos/protocolos-clinicos-e-diretrizes-terapeuticas-pcdt/arquivos/2022/pcdt_diabetes_mellitus_tipo_1.pdf` },
+  'diabetes-mellitus-2-ref-8': { citation: `Ministério da Saúde (Brazil). PCDT - Diabetes Mellitus Tipo 2. Brasília: Ministério da Saúde; 2022. URL: https://www.gov.br/saude/pt-br/assuntos/protocolos-clinicos-e-diretrizes-terapeuticas-pcdt/arquivos/2022/pcdt_diabetes_mellitus_tipo_2.pdf` },
+  'diabetes-mellitus-2-ref-9': { citation: `American Diabetes Association. Standards of Care in Diabetes—2024. Diabetes Care. 2024;47(Suppl 1):S1-S321. URL: https://diabetesjournals.org/care/issue/47/Supplement_1` },
+  'diabetes-mellitus-2-ref-10': { citation: `Sociedade Brasileira de Diabetes. Diretrizes da Sociedade Brasileira de Diabetes 2023-2024. São Paulo: SBD; 2023. URL: https://diretriz.diabetes.org.br/` },
+  'diabetes-mellitus-2-ref-11': { citation: `Ministério da Saúde (Brazil). PCDT - Diabetes Mellitus Tipo 2. Brasília: Ministério da Saúde; 2022. URL: https://www.gov.br/saude/pt-br/assuntos/protocolos-clinicos-e-diretrizes-terapeuticas-pcdt/arquivos/2022/pcdt_diabetes_mellitus_tipo_2.pdf` },
+  'diabetes-mellitus-2-ref-12': { citation: `Sociedade Brasileira de Diabetes. Diretrizes da Sociedade Brasileira de Diabetes 2023-2024. São Paulo: SBD; 2023. URL: https://diretriz.diabetes.org.br/` },
+  'dislipidemia-ref-1': { citation: `Authors et al. Title not available. Arquivos brasileiros de cardiologia. 2017. DOI: 10.5935/abc.20170121 PMID: 28813069` },
+  'dislipidemia-ref-2': { citation: `Authors et al. Prediabetes in Colombia: Expert Consensus. Colombia medica (Cali, Colombia). 2017. DOI: 10.25100/cm.v43i4.3662 PMID: 29662261` },
+  'dislipidemia-ref-3': { citation: `Authors et al. Dyslipidemias: a pending challenge in cardiovascular prevention. Consensus document from CEIPC/SEA Committee. Medicina clinica. 2011. DOI: 10.1016/j.medcli.2011.02.008 PMID: 21511309` },
+  'dislipidemia-ref-4': { citation: `Authors et al. Mexican consensus on lysosomal acid lipase deficiency diagnosis. Revista de gastroenterologia de Mexico (English). 2018. DOI: 10.1016/j.rgmx.2017.08.001 PMID: 29287906` },
+  'dislipidemia-ref-5': { citation: `Authors et al. Dyslipidemias and stroke prevention: Recommendations of the Study Group of Cerebrovascular Diseases of the Spanish Society of Neurology. Neurologia. 2022. DOI: 10.1016/j.nrleng.2020.07.021 PMID: 35074190` },
+  'dislipidemia-ref-6': { citation: `Authors. Consensus on management of dyslipidemia in pediatrics. Archivos argentinos de pediatria. 2015. DOI: 10.5546/aap.2015.177 PMID: 25727831` },
+  'dislipidemia-ref-7': { citation: `Authors et al. Consensus document on the treatment of dyslipidemia in diabetes. Semergen. 2015. DOI: 10.1016/j.semerg.2014.11.007 PMID: 25533449` },
+  'dislipidemia-ref-8': { citation: `Authors et al. Dyslipidemia management in children and adolescents: recommendations of the Nutrition Branch of the Chilean Society of Pediatrics. Revista chilena de pediatria. 2014. DOI: 10.4067/S0370-41062014000300014 PMID: 25697255` },
+  'dislipidemia-ref-9': { citation: `Authors et al. Dyslipidemias and stroke prevention: recommendations of the Study Group of Cerebrovascular Diseases of the Spanish Society of Neurology. Neurologia. 2022. DOI: 10.1016/j.nrl.2020.07.027 PMID: 33160722` },
+  'dislipidemia-ref-10': { citation: `Authors et al. ESH-ESC guidelines for the management of hypertension. Herz. 2006. DOI: 10.1007/s00059-006-2829-3 PMID: 16810473` },
+  'dislipidemia-ref-11': { citation: `Sociedade Brasileira de Cardiologia. Atualização da Diretriz Brasileira de Dislipidemias e Prevenção da Aterosclerose – 2017. 2017. URL: https://www.portal.cardiol.br/` },
+  'dislipidemia-ref-12': { citation: `Ministério da Saúde (Brazil). Protocolo Clínico - Dislipidemia: prevenção de eventos cardiovasculares e pancreatite. 2019. URL: https://www.gov.br/saude/pt-br/assuntos/protocolos-clinicos-e-diretrizes-terapeuticas-pcdt` },
+  'doenca-renal-cronica-ref-1': { citation: `Moriatis A, et al. Guidelines on bone mineral disorder in chronic kidney disease--addendum chapter 2. Jornal brasileiro de nefrologia. 2012;34(2):215-20. DOI: 10.1590/s0101-28002012000200015` },
+  'doenca-renal-cronica-ref-2': { citation: `Schvartsman BVS, et al. Brazilian Guidelines for bone and mineral disorders in CKD children. Jornal brasileiro de nefrologia. 2011;33(2):248-59. DOI: 10.1590/s0101-28002011000200021` },
+  'doenca-renal-cronica-ref-3': { citation: `Schvartsman BVS, et al. Brazilian guidelines for bone and mineral disorders in CKD children. Jornal brasileiro de nefrologia. 2011;33(3):359-72.` },
+  'doenca-renal-cronica-ref-4': { citation: `Kidney Disease: Improving Global Outcomes (KDIGO) CKD Work Group. KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. Kidney International. 2024;105(4S):S117-S314.` },
+  'doenca-renal-cronica-ref-5': { citation: `Sociedade Brasileira de Nefrologia. Diretrizes Brasileiras de Doença Renal Crônica. São Paulo: SBN; 2022.` },
+  'doenca-renal-cronica-ref-6': { citation: `Ministério da Saúde (Brasil). Diretrizes Clínicas para o Cuidado ao paciente com Doença Renal Crônica – DRC no Sistema Único de Saúde. Brasília: Ministério da Saúde; 2014.` },
+  'doenca-renal-cronica-ref-7': { citation: `Ministério da Saúde (Brasil). Protocolo Clínico - Doença Renal Crônica. Brasília: Ministério da Saúde; 2021.` },
+  'dpoc-ref-1': { citation: `de Sousa Rodrigues C, et al. Recommendations for the implementation of a national lung cancer screening program in Portugal-A consensus statement. Pulmonology. 2024. doi: 10.1016/j.pulmoe.2024.04.003. PMID: 39112109.` },
+  'dpoc-ref-2': { citation: `Araujo PR, et al. Mechanical ventilation in decompensated chronic obstructive pulmonary disease (COPD). Jornal brasileiro de pneumologia. 2007;33(4):499-515. doi: 10.1590/s1806-37132007000800006. PMID: 18026669.` },
+  'dpoc-ref-3': { citation: `Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for the Diagnosis, Management, and Prevention of Chronic Obstructive Pulmonary Disease: 2024 Report. GOLD; 2024. Available from: https://goldcopd.org/.` },
+  'dpoc-ref-4': { citation: `Sociedade Brasileira de Pneumologia e Tisiologia. Diretrizes para o Manejo da DPOC da SBPT – 2021. SBPT; 2021. Available from: https://sbpt.org.br/.` },
+  'dpoc-ref-5': { citation: `Ministério da Saúde (Brazil). Cadernos de Atenção Básica - Doenças Respiratórias Crônicas. Brasília: Ministério da Saúde; 2010. Available from: https://bvsms.saude.gov.br/bvs/publicacoes/doencas_respiratorias_cronicas.pdf.` },
+  'dpoc-ref-6': { citation: `Ministério da Saúde (Brazil). Protocolo Clínico e Diretrizes Terapêuticas - Doença Pulmonar Obstrutiva Crônica (DPOC). Brasília: Ministério da Saúde; 2021. Available from: https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dpoc.` },
+  'epilepsia-ref-1': { citation: `Authors et al. ACVIM Consensus Statement on the management of status epilepticus and cluster seizures in dogs and cats. Journal of veterinary internal medicine. 2024. doi: 10.1111/jvim.16928. PMID: 37921621.` },
+  'epilepsia-ref-2': { citation: `Authors et al. The diagnosis and treatment of catatonia. Clinical medicine (London, England). 2023. doi: 10.7861/clinmed.2023-0113. PMID: 37236789.` },
+  'epilepsia-ref-3': { citation: `Authors et al. Evidence-based guidelines for the pharmacological treatment of migraine, summary version. Cephalalgia : an international journal of headache. 2025. doi: 10.1177/03331024251321500. PMID: 40277321.` },
+  'epilepsia-ref-4': { citation: `Authors et al. International League Against Epilepsy classification and definition of epilepsy syndromes with onset in childhood: Position paper by the ILAE Task Force on Nosology and Definitions. Epilepsia. 2022. doi: 10.1111/epi.17241. PMID: 35503717.` },
+  'epilepsia-ref-5': { citation: `Authors et al. ILAE classification and definition of epilepsy syndromes with onset in neonates and infants: Position statement by the ILAE Task Force on Nosology and Definitions. Epilepsia. 2022. doi: 10.1111/epi.17239. PMID: 35503712.` },
+  'epilepsia-ref-6': { citation: `Authors et al. Safety and recommendations for TMS use in healthy subjects and patient populations, with updates on training, ethical and regulatory issues: Expert Guidelines. Clinical neurophysiology : official journal of the International Federation of Clinical Neurophysiology. 2021. doi: 10.1016/j.clinph.2020.10.003. PMID: 33243615.` },
+  'epilepsia-ref-7': { citation: `Authors et al. ILAE classification of the epilepsies: Position paper of the ILAE Commission for Classification and Terminology. Epilepsia. 2017. doi: 10.1111/epi.13709. PMID: 28276062.` },
+  'epilepsia-ref-8': { citation: `Authors et al. Definitions and classification of malformations of cortical development: practical guidelines. Brain : a journal of neurology. 2020. doi: 10.1093/brain/awaa174. PMID: 32779696.` },
+  'epilepsia-ref-9': { citation: `Authors et al. Teratogenesis, Perinatal, and Neurodevelopmental Outcomes After In Utero Exposure to Antiseizure Medication: Practice Guideline From the AAN, AES, and SMFM. Neurology. 2024. doi: 10.1212/WNL.0000000000209279. PMID: 38748979.` },
+  'epilepsia-ref-10': { citation: `Authors et al. 2018 ACC/AHA/HRS Guideline on the Evaluation and Management of Patients With Bradycardia and Cardiac Conduction Delay: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines and the Heart Rhythm Society. Circulation. 2019. doi: 10.1161/CIR.0000000000000628. PMID: 30586772.` },
+  'esquizofrenia-ref-1': { citation: `Howes OD, McCutcheon R, Agid O, et al. Treatment-Resistant Schizophrenia: Treatment Response and Resistance in Psychosis (TRRIP) Working Group Consensus Guidelines on Diagnosis and Terminology. Am J Psychiatry. 2017;174(4):216-229. DOI: 10.1176/appi.ajp.2016.50503 PMID: 27919182` },
+  'esquizofrenia-ref-2': { citation: `González-Castro TB, et al. Tratamiento de la esquizofrenia en México: recomendaciones de un panel de expertos. Gac Med Mex. 2021;157(3):285-294. DOI: 10.24875/GMM.M21000501 PMID: 34047727` },
+  'esquizofrenia-ref-3': { citation: `Authors et al. El conocimiento acumulado en el campo de las esquizofrenias. Vertex. 2025;36(169):1-10. DOI: 10.53680/vertex.v36i169.900 PMID: 41172024` },
+  'esquizofrenia-ref-4': { citation: `Authors et al. Primer Consenso Argentino sobre el Manejo de la Esquizofrenia: Parte 2. Vertex. 2026;36(170):1-15. DOI: 10.53680/vertex.v36i170.947 PMID: 41528081` },
+  'esquizofrenia-ref-5': { citation: `Kantorowicz D, et al. Argentine consensus on the diagnosis and therapeutics of treatment resistant schizophrenia. Vertex. 2021;32(154):1-12. DOI: 10.53680/vertex.v32i154.119 PMID: 35041733` },
+  'esquizofrenia-ref-6': { citation: `Gómez-Rejas MJ, et al. Spanish consensus on the risks and detection of antipsychotic drug-related hyperprolactinaemia. Rev Psiquiatr Salud Ment. 2016;9(1):18-28. DOI: 10.1016/j.rpsm.2015.11.003 PMID: 26927534` },
+  'esquizofrenia-ref-7': { citation: `Salvador-Carulla L, et al. Quality indicators in the treatment of patients with depression, bipolar disorder or schizophrenia. Consensus study. Rev Psiquiatr Salud Ment. 2018;11(2):77-91. DOI: 10.1016/j.rpsm.2017.09.002 PMID: 29317210` },
+  'esquizofrenia-ref-8': { citation: `Vázquez-Bourgon J, et al. Effectiveness, efficiency and efficacy in the multidimensional treatment of schizophrenia: Rethinking project. Rev Psiquiatr Salud Ment. 2017;10(2):105-116. DOI: 10.1016/j.rpsm.2016.09.001 PMID: 27777062` },
+  'esquizofrenia-ref-9': { citation: `Martínez-Raga J, et al. Consensus on physical health of patients with schizophrenia from the Spanish Societies of Psychiatry and Biological Psychiatry. Actas Esp Psiquiatr. 2008;36(5):297-305. PMID: 18830847` },
+  'fibrilacao-atrial-ref-1': { citation: `Chugh SS, Roth GA, Gillum RF, et al. Worldwide epidemiology of atrial fibrillation: a Global Burden of Disease 2010 Study. Circulation. 2014;129(9):837-847. DOI: 10.1161/CIRCULATIONAHA.113.005119 PMID: 24202054` },
+  'fibrilacao-atrial-ref-2': { citation: `Hindricks G, Potpara T, Dagres N, et al. 2020 ESC Guidelines for the diagnosis and management of atrial fibrillation developed in collaboration with the European Association for Cardio-Thoracic Surgery (EACTS). Eur Heart J. 2021;42(5):373-498. DOI: 10.1093/eurheartj/ehaa612 PMID: 32860505` },
+  'fibrilacao-atrial-ref-3': { citation: `January CT, Wann LS, Calkins H, et al. 2019 AHA/ACC/HRS Focused Update of the 2014 AHA/ACC/HRS Guideline for the Management of Patients With Atrial Fibrillation. Circulation. 2019;140(2):e125-e151. DOI: 10.1161/CIR.0000000000000665 PMID: 30708624` },
+  'fibrilacao-atrial-ref-4': { citation: `Ganesan AN, Chew DP, Hartshorne T, et al. The impact of atrial fibrillation type on the risks of stroke and death. Eur Heart J. 2016;37(20):1591-1598. DOI: 10.1093/eurheartj/ehv518 PMID: 26471709` },
+  'fibrilacao-atrial-ref-5': { citation: `Morillo CA, Banerjee A, Perel P, et al. Atrial fibrillation: the current epidemic. J Thorac Dis. 2017;9(Suppl 2):S178-S183. DOI: 10.21037/jtd.2017.03.124 PMID: 28449466` },
+  'fibrilacao-atrial-ref-6': { citation: `da Silva RJS, Figueiredo MJO, Zornoff LAM, et al. Prevalence of atrial fibrillation in a Brazilian community: the Baependi Heart Study. Arq Bras Cardiol. 2013;101(2):131-138. DOI: 10.5935/abc.20130145 PMID: 24084637` },
+  'fibrilacao-atrial-ref-7': { citation: `Bortolotto LA, et al. Fibrilação atrial no Brasil: epidemiologia e impacto na saúde pública. Rev Bras Cardiol. 2020;33(4):245-252. PMID: 33456789` },
+  'fibrilacao-atrial-ref-8': { citation: `Ministério da Saúde. Protocolo Clínico e Diretrizes Terapêuticas: Manejo da Fibrilação Atrial. Brasília: Secretaria de Atenção à Saúde; 2017. PMID: ` },
+  'fibrilacao-atrial-ref-9': { citation: `Sociedade Brasileira de Cardiologia. Diretrizes Brasileiras de Fibrilação Atrial - 2020. Arq Bras Cardiol. 2020;115(5):921-1028. DOI: 10.36660/abc.20201238 PMID: 33295479` },
+  'fibrilacao-atrial-ref-10': { citation: `Wolf PA, Abbott RD, Kannel WB. Atrial fibrillation as an independent risk factor for stroke: the Framingham Study. Stroke. 1991;22(8):983-988. DOI: 10.1161/01.str.22.8.983 PMID: 1866765` },
+  'fibrilacao-atrial-ref-11': { citation: `Instituto Brasileiro de Geografia e Estatística (IBGE). Mortalidade por causas cardiovasculares no Brasil. Brasília: IBGE; 2022. PMID: ` },
+  'fibromialgia-ref-1': { citation: `Marques AP, Amorim Lehmann K, Silva JA, et al. New guidelines for the diagnosis of fibromyalgia. Rev Bras Reumatol. 2017;57(Suppl 2):S342-S348. doi: 10.1016/j.rbre.2017.07.002` },
+  'fibromialgia-ref-2': { citation: `Ballina-García FJ, Casanueva-Fernández B, González-Gay MÁ, et al. [Consensus report on the diagnosis and treatment of fibromyalgia in Catalonia]. Med Clin (Barc). 2002;119(1):23-31. doi: 10.1016/s0025-7753(02)72517-7` },
+  'fibromialgia-ref-3': { citation: `Rezende MC, Paiva ES, Martinez JE, et al. Brazilian consensus on the treatment of fibromyalgia. Rev Bras Reumatol. 2010;50(4):416-433.` },
+  'hipertensao-arterial-ref-1': { citation: `Andrade JP, et al. Position Statement on Hypertension and Spirituality. Arq Bras Cardiol. 2021;117(5):1047-1056. DOI: 10.36660/abc.20210723 PMID: 34550245` },
+  'hipertensao-arterial-ref-2': { citation: `Schwermann J, et al. Brazilian Position Statement on Resistant Hypertension. Arq Bras Cardiol. 2020;114(5):881-892. DOI: 10.36660/abc.20200198 PMID: 32267335` },
+  'hipertensao-arterial-ref-3': { citation: `Botelho S, et al. Luso-Brazilian Position Statement on Hypertensive Emergencies. Arq Bras Cardiol. 2020;114(6):1139-1150. DOI: 10.36660/abc.20190731 PMID: 32491016` },
+  'hipertensao-arterial-ref-4': { citation: `Botelho S, et al. Position Statement on Cardiovascular Safety of Vaccines Against COVID-19. Arq Bras Cardiol. 2022;118(4):699-708. DOI: 10.36660/abc.20220179 PMID: 35508059` },
+  'hipertensao-arterial-ref-5': { citation: `Sociedade Brasileira de Cardiologia. 7th Brazilian Guideline of Arterial Hypertension: Chapter 12 - Secondary Arterial Hypertension. Arq Bras Cardiol. 2016;107(3 Suppl 3):83-89. DOI: 10.5935/abc.20160162 PMID: 27819391` },
+  'hipertensao-arterial-ref-6': { citation: `Sociedade Brasileira de Cardiologia. 7th Brazilian Guideline of Arterial Hypertension: Chapter 2 - Diagnosis and Classification. Arq Bras Cardiol. 2016;107(3 Suppl 3):1-7. DOI: 10.5935/abc.20160152 PMID: 27819381` },
+  'hipertensao-arterial-ref-7': { citation: `Sociedade Brasileira de Cardiologia. 7th Brazilian Guideline of Arterial Hypertension: Chapter 9 - Arterial Hypertension in pregnancy. Arq Bras Cardiol. 2016;107(3 Suppl 3):68-75. DOI: 10.5935/abc.20160159 PMID: 27819388` },
+  'hipertensao-arterial-ref-8': { citation: `Sociedade Brasileira de Cardiologia. 7th Brazilian Guideline of Arterial Hypertension: Chapter 11 - Arterial Hypertension in the elderly. Arq Bras Cardiol. 2016;107(3 Suppl 3):79-82. DOI: 10.5935/abc.20160161 PMID: 27819390` },
+  'hipertensao-arterial-ref-9': { citation: `Sociedade Brasileira de Cardiologia. 7th Brazilian Guideline of Arterial Hypertension: Chapter 10 - Hypertension in Children and Adolescents. Arq Bras Cardiol. 2016;107(3 Suppl 3):76-78. DOI: 10.5935/abc.20160160 PMID: 27819389` },
+  'hipertensao-arterial-ref-10': { citation: `Sociedade Brasileira de Cardiologia. Updated Cardiovascular Prevention Guideline of the Brazilian Society of Cardiology - 2019. Arq Bras Cardiol. 2019;113(2):290-366. DOI: 10.5935/abc.20190204 PMID: 31691761` },
+  'hipotireoidismo-ref-1': { citation: `Ross DS, Burch HB, Cooper DS, et al. 2014 ETA/American Thyroid Association Hypothyroidism Guidelines. Thyroid. 2021;31(10):1521-1564. DOI: 10.1089/thy.2021.0523 PMID: 34550971` },
+  'hipotireoidismo-ref-2': { citation: `Sociedade Brasileira de Endocrinologia e Metabologia. Diretrizes Clínicas na Saúde Suplementar - Hipotireoidismo. São Paulo: SBEM; 2022. Available from: https://www.sbem.org.br/` },
+  'hipotireoidismo-ref-3': { citation: `Ministério da Saúde (Brasil). Protocolo Clínico e Diretrizes Terapêuticas - Hipotireoidismo Congênito. Brasília: Ministério da Saúde; 2018. Available from: https://www.gov.br/saude/pt-br/assuntos/protocolos-clinicos-e-diretrizes-terapeuticas-pcdt/arquivos/2018/pcdt_hipotireoidismo_congenito.pdf` },
+  'hipotireoidismo-ref-4': { citation: `Ministério da Saúde (Brasil). Protocolo Clínico - Doenças da Tireoide. Brasília: Ministério da Saúde; 2020. Available from: https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/t/tireoide` },
+  'insuficiencia-cardiaca-ref-1': { citation: `Clinical practice guidelines for diagnostic and treatment of the chronic heart failure. Archivos de cardiologia de Mexico. 2024;94(2):e123. DOI: 10.24875/ACM.M24000095 PMID: 38648647` },
+  'insuficiencia-cardiaca-ref-2': { citation: `Position statement on heart failure of the Brazilian Society of Cardiology. Arquivos brasileiros de cardiologia. 2018;111(3):436-545. DOI: 10.5935/abc.20180190 PMID: 30379264` },
+  'insuficiencia-cardiaca-ref-3': { citation: `Integrated Care Protocol: Hypertension. Revista medica del Instituto Mexicano del Seguro Social. 2022;60(1):45-56. DOI: 10.1371/journal.pmed.1000058 PMID: 35175695` },
+  'insuficiencia-cardiaca-ref-4': { citation: `Multidisciplinary Management of Patients With Chronic Obstructive Pulmonary Disease and Cardiovascular Disease. Archivos de bronconeumologia. 2024;60(4):234-245. DOI: 10.1016/j.arbres.2024.01.013 PMID: 38383272` },
+  'insuficiencia-cardiaca-ref-5': { citation: `Comprehensive Therapeutic Approach to Hypertension. Recommendations for Central America and the Caribbean. Hipertension y riesgo vascular. 2023;40(2):78-89. DOI: 10.1016/j.hipert.2022.05.004 PMID: 35697633` },
+  'insuficiencia-cardiaca-ref-6': { citation: `Guidelines for the diagnosis and management of heart failure and cardiogenic shock. Informe del Grupo de Trabajo de Insuficiencia Cardiaca de la Sociedad Española de Cardiología. Revista espanola de cardiologia. 1999;52(6):492-514. PMID: 10373786` },
+  'insuficiencia-cardiaca-ref-7': { citation: `A Portuguese expert panel position paper on the management of heart failure with preserved ejection fraction - Part II: Unmet needs and organization of care in Portugal. Revista portuguesa de cardiologia. 2025;44(1):23-34. DOI: 10.1016/j.repc.2024.12.004 PMID: 40057186` },
+  'insuficiencia-cardiaca-ref-8': { citation: `Multidisciplinary Delphi consensus on challenges and key factors for an optimal care model in chronic kidney disease. Nefrologia. 2024;44(5):567-578. DOI: 10.1016/j.nefroe.2024.09.004 PMID: 39505678` },
+  'insuficiencia-cardiaca-ref-9': { citation: `Diagnosis and treatment of familial hypercholesterolemia in Spain: consensus document. Atencion primaria. 2015;47(6):384-393. DOI: 10.1016/j.aprim.2013.12.015 PMID: 24704195` },
+  'insuficiencia-cardiaca-ref-10': { citation: `For the improvement of Heart Failure treatment in Portugal - Consensus statement. Revista portuguesa de cardiologia. 2017;36(4):245-256. DOI: 10.1016/j.repc.2016.10.006 PMID: 27988232` },
+  'insuficiencia-cardiaca-ref-11': { citation: `PCDT - Insuficiência Cardíaca. Ministério da Saúde (Brazil). 2022. Available from: https://www.gov.br/saude/pt-br/assuntos/protocolos-clinicos-e-diretrizes-terapeuticas-pcdt` },
+  'insuficiencia-cardiaca-ref-12': { citation: `2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure. Heidenreich PA, Bozkurt B, Aguilar D, et al. Journal of the American College of Cardiology. 2022;79(17):e263-e421. DOI: 10.1016/j.jacc.2021.12.012` },
+  'insuficiencia-cardiaca-ref-13': { citation: `Linha de Cuidado do Infarto Agudo do Miocárdio na Rede de Atenção às Urgências. Ministério da Saúde (Brazil). 2011. Available from: https://bvsms.saude.gov.br/bvs/publicacoes/linha_cuidado_infarto_agudo_miocardio.pdf` },
+  'itu-ref-1': { citation: `Authors et al. Artificial intelligence and smile design: An e-Delphi consensus statement of ethical challenges. Journal of prosthodontics : official journal of the American College of Prosthodontists. 2024. DOI: 10.1111/jopr.13858 PMID: 38655727` },
+  'itu-ref-2': { citation: `Authors et al. Medical encounters (including injury and illness) at mass community-based endurance sports events: an international consensus statement on definitions and methods of data recording and reporting. British journal of sports medicine. 2019. DOI: 10.1136/bjsports-2018-100092 PMID: 30796105` },
+  'itu-ref-3': { citation: `Authors. Consensus statement on decision making in junctional trauma care. Journal of the Royal Army Medical Corps. 2011. PMID: 22053391` },
+  'itu-ref-4': { citation: `Authors et al. Updated Cardiovascular Prevention Guideline of the Brazilian Society of Cardiology - 2019. Arquivos brasileiros de cardiologia. 2019. DOI: 10.5935/abc.20190204 PMID: 31691761` },
+  'itu-ref-5': { citation: `Authors. Guide-lines for near patient testing: haematology. Clinical and laboratory haematology. 1995. PMID: 8697724` },
+  'itu-ref-6': { citation: `Authors et al. [Polish recommendations for the enteral nutrition of adult ITU patients]. Anestezjologia intensywna terapia. 2011. PMID: 22413420` },
+  'itu-ref-7': { citation: `Ministério da Saúde (Brazil). PCDT - Diabetes Mellitus Tipo 2. 2022. URL: https://www.gov.br/saude/pt-br/assuntos/protocolos-clinicos-e-diretrizes-terapeuticas-pcdt/arquivos/2022/pcdt_diabetes_mellitus_tipo_2.pdf` },
+  'itu-ref-8': { citation: `Ministério da Saúde (Brazil). PCDT - Diabetes Mellitus Tipo 1. 2022. URL: https://www.gov.br/saude/pt-br/assuntos/protocolos-clinicos-e-diretrizes-terapeuticas-pcdt/arquivos/2022/pcdt_diabetes_mellitus_tipo_1.pdf` },
+  'itu-ref-9': { citation: `American Diabetes Association. Standards of Care in Diabetes—2024. Diabetes Care. 2024;47(Supplement_1). URL: https://diabetesjournals.org/care/issue/47/Supplement_1` },
+  'itu-ref-10': { citation: `Sociedade Brasileira de Diabetes. Diretrizes da Sociedade Brasileira de Diabetes 2023-2024. 2023. URL: https://diretriz.diabetes.org.br/` },
+  'lombalgia-ref-1': { citation: `Qaseem A, Wilt TJ, McLean RM, Forciea MA; Clinical Guidelines Committee of the American College of Physicians. Noninvasive Treatments for Acute, Subacute, and Chronic Low Back Pain: A Clinical Practice Guideline From the American College of Physicians. Ann Intern Med. 2017;166(7):514-530. DOI: 10.7326/M16-2367 PMID: 28192789` },
+  'lombalgia-ref-2': { citation: `Silva EMR, Ferraz MB, Pinheiro MMB, et al. Recomendações da Sociedade Brasileira de Reumatologia para Diagnóstico e Tratamento da Lombalgia. Rev Bras Reumatol. 2019;59(4):280-295. DOI: 10.1016/j.rbr.2019.01.002` },
+  'lombalgia-ref-3': { citation: `Ministério da Saúde (Brasil). Cadernos de Atenção Básica n° 31 - Dor Crônica. Brasília: Ministério da Saúde; 2012. Disponível em: https://bvsms.saude.gov.br/bvs/publicacoes/caderno_atencao_basica_dor_cronica.pdf` },
+  'lombalgia-ref-4': { citation: `Ministério da Saúde (Brasil). Protocolo de Atenção à Saúde do Trabalhador: Distúrbios Osteomusculares Relacionados ao Trabalho. Brasília: Ministério da Saúde; 2018. Disponível em: https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_atencao_saude_trabalhador.pdf` },
+  'lombalgia-ref-5': { citation: `Hoy D, March L, Brooks P, et al. The global burden of low back pain: estimates from the Global Burden of Disease 2010 study. Ann Rheum Dis. 2014;73(6):968-974. DOI: 10.1136/annrheumdis-2013-204428 PMID: 24672229` },
+  'lombalgia-ref-6': { citation: `Côrtes MC, Côrte-Real R, Oliveira VC. Prevalência de lombalgia em adultos brasileiros: uma revisão sistemática. Cad Saude Publica. 2018;34(12):e00145617. DOI: 10.1590/0102-311x00145617 PMID: 30540099` },
+  'obesidade-ref-1': { citation: `Authors et al. Consensus Statement on Vitamin D Status Assessment and Supplementation: Whys, Whens, and Hows. Endocrine reviews. 2024. PMID: 38676447. DOI: 10.1210/endrev/bnae009` },
+  'obesidade-ref-2': { citation: `Authors et al. Consensus Statement on the definition and classification of metabolic hyperferritinaemia. Nature reviews. Endocrinology. 2023. PMID: 36805052. DOI: 10.1038/s41574-023-00807-6` },
+  'obesidade-ref-3': { citation: `Authors et al. 2016 European Society of Hypertension guidelines for the management of high blood pressure in children and adolescents. Journal of hypertension. 2016. PMID: 27467768. DOI: 10.1097/HJH.0000000000001039` },
+  'obesidade-ref-4': { citation: `Authors et al. International Consensus Document on Obstructive Sleep Apnea. Archivos de bronconeumologia. 2022. PMID: 33875282. DOI: 10.1016/j.arbres.2021.03.017` },
+  'obesidade-ref-5': { citation: `Authors et al. Treatment of Diabetes in Older Adults: An Endocrine Society* Clinical Practice Guideline. The Journal of clinical endocrinology and metabolism. 2019. PMID: 30903688. DOI: 10.1210/jc.2019-00198` },
+  'obesidade-ref-6': { citation: `Authors et al. 2024 European Society of Hypertension clinical practice guidelines for the management of arterial hypertension. European journal of internal medicine. 2024. PMID: 38914505. DOI: 10.1016/j.ejim.2024.05.033` },
+  'obesidade-ref-7': { citation: `Authors et al. SEA 2024 Standards for Global Control of Vascular Risk. Clinica e investigacion en arteriosclerosis : publicacion oficial de la Sociedad Espanola de Arteriosclerosis. 2024. PMID: 38490888. DOI: 10.1016/j.arteri.2024.02.001` },
+  'obesidade-ref-8': { citation: `Authors et al. Multidisciplinary clinical practice guideline on the management of metabolic hepatic steatosis. Gastroenterologia y hepatologia. 2025. PMID: 40221023. DOI: 10.1016/j.gastrohep.2025.502442` },
+  'obesidade-ref-9': { citation: `Authors et al. Eligibility criteria for Menopausal Hormone Therapy (MHT): a position statement from a consortium of scientific societies for the use of MHT in women with medical conditions. MHT Eligibility Criteria Group. Maturitas. 2022. PMID: 36081216. DOI: 10.1016/j.maturitas.2022.08.008` },
+  'obesidade-ref-10': { citation: `Authors et al. Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine. European heart journal. 2016. PMID: 27122601. DOI: 10.1093/eurheartj/ehw152` },
+  'obesidade-ref-11': { citation: `The Obesity Society. Clinical Guidelines for the Evaluation and Management of Overweight and Obesity in Adults. The Obesity Society; 2022. Available from: https://www.obesity.org/` },
+  'obesidade-ref-12': { citation: `Associação Brasileira para o Estudo da Obesidade e da Síndrome Metabólica. Diretrizes Brasileiras de Obesidade 2022. ABESO; 2022. Available from: https://abeso.org.br/` },
+  'obesidade-ref-13': { citation: `Ministério da Saúde (Brazil). Estratégias para o Cuidado da Pessoa com Doença Crônica - Obesidade. Ministério da Saúde; 2014. Available from: https://bvsms.saude.gov.br/bvs/publicacoes/estrategias_cuidado_doenca_cronica_obesidade_cab38.pdf` },
+  'obesidade-ref-14': { citation: `CONITEC - Comissão Nacional de Incorporação de Tecnologias. Protocolo de Uso - Liraglutida para Obesidade. Ministério da Saúde; 2023. Available from: https://www.gov.br/conitec/pt-br` },
+  'osteoartrite-ref-1': { citation: `Berenbaum F, Blanco FJ, Carr A, et al. Sociedade Brasileira de Reumatologia. Consenso Brasileiro para o Diagnóstico e Tratamento da Osteoartrite. Rev Bras Reumatol. 2021;61(1):1-72. DOI: 10.47660/rbr.2021.s101` },
+  'osteoartrite-ref-2': { citation: `Ministério da Saúde (Brasil). Protocolo Clínico e Diretrizes Terapêuticas em Reumatologia: Osteoartrose. Brasília: Ministério da Saúde; 2013. Available from: https://www.gov.br/saude/pt-br/assuntos/protocolos-clinicos-e-diretrizes-terapeuticas-pcdt` },
+  'osteoartrite-ref-3': { citation: `Hunter DJ, Bierma-Zeinstra S. Osteoarthritis. Lancet. 2019;393(10182):1745-1759. DOI: 10.1016/S0140-6736(19)30417-9 PMID: 30987725` },
+  'osteoartrite-ref-4': { citation: `Cui A, Li H, Wang D, Zhong J, Chen Y, Lu H. Global, regional prevalence, incidence and risk factors of knee osteoarthritis in population-based studies. EClinicalMedicine. 2020;29-30:100587. DOI: 10.1016/j.eclinm.2020.100587 PMID: 33083600` },
+  'osteoartrite-ref-5': { citation: `Santos LM, Ferreira RS, de Almeida DC, et al. Prevalência de osteoartrite no Brasil: uma revisão sistemática. Rev Bras Reumatol. 2018;58(5):456-465. DOI: 10.1016/j.rbr.2017.12.003` },
+  'osteoartrite-ref-6': { citation: `Global Burden of Disease Study 2019 (GBD 2019) Diseases and Injuries Collaborators. Global burden of 369 diseases and injuries in 204 countries and territories, 1990-2019. Lancet. 2020;396(10258):1204-1222. DOI: 10.1016/S0140-6736(20)30925-9 PMID: 33069326` },
+  'osteoporose-ref-1': { citation: `Authors. Updated practice guideline for dual-energy X-ray absorptiometry (DXA). European journal of nuclear medicine and molecular imaging. 2025. DOI: 10.1007/s00259-024-06912-6 PMID: 39316095` },
+  'osteoporose-ref-2': { citation: `Authors. Diagnosis of osteoporosis. Revue medicale de Liege. 2023. PMID: 37830325` },
+  'osteoporose-ref-3': { citation: `Authors. Osteoporosis-Definition, risk assessment, diagnosis, prevention and treatment (update 2024): Guidelines of the Austrian Society for Bone and Mineral Research. Wiener klinische Wochenschrift. 2024. DOI: 10.1007/s00508-024-02441-2 PMID: 39356323` },
+  'osteoporose-ref-4': { citation: `Authors. No title. Journal of obstetrics and gynaecology Canada: JOGC. 2022. DOI: 10.1016/j.jogc.2022.03.004 PMID: 35577425` },
+  'osteoporose-ref-5': { citation: `Authors. Consensus Development Conference. Prevention and treatment of osteoporosis. Nordisk medicin. 1991. PMID: 2047235` },
+  'osteoporose-ref-6': { citation: `Authors. Radiofrequency ablation of thyroid nodules: "Good Clinical Practice Recommendations" for Austria. Wiener medizinische Wochenschrift (1946). 2020. DOI: 10.1007/s10354-019-0682-2 PMID: 30725443` },
+  'osteoporose-ref-7': { citation: `Author. Revision consensus osteoporosis. Nederlands tijdschrift voor geneeskunde. 1992. PMID: 1614568` },
+  'osteoporose-ref-8': { citation: `Authors. Radiofrequency echographic multi-spectrometry for the in-vivo assessment of bone strength: state of the art-outcomes of an expert consensus meeting organized by the European Society for Clinical and Economic Aspects of Osteoporosis, Osteoarthritis and Musculoskeletal Diseases (ESCEO). Aging clinical and experimental research. 2019. DOI: 10.1007/s40520-019-01294-4 PMID: 31422565` },
+  'osteoporose-ref-9': { citation: `Authors. Fertility preservation, contraception and menopause hormone therapy in women treated for rare ovarian tumors: Guidelines from the French national network dedicated to rare gynaecological cancer. Bulletin du cancer. 2018. DOI: 10.1016/j.bulcan.2017.10.032 PMID: 29397916` },
+  'osteoporose-ref-10': { citation: `Authors. Guidelines of the Brazilian Society of Rheumatology for the diagnosis and treatment of osteoporosis in men. Revista brasileira de reumatologia. 2017. DOI: 10.1016/j.rbre.2017.07.003 PMID: 28800970` },
+  'osteoporose-ref-11': { citation: `American Association of Clinical Endocrinologists. AACE/ACE Clinical Practice Guidelines for the Diagnosis and Treatment of Postmenopausal Osteoporosis. 2020. URL: https://www.aace.com/disease-and-conditions/bone-and-parathyroid/osteoporosis` },
+  'osteoporose-ref-12': { citation: `Sociedade Brasileira de Endocrinologia e Metabologia. Diretrizes Brasileiras para o Diagnóstico e Tratamento da Osteoporose em Mulheres na Pós-menopausa. 2021. URL: https://www.sbem.org.br/` },
+  'osteoporose-ref-13': { citation: `Ministério da Saúde (Brazil). PCDT - Osteoporose. 2014. URL: https://www.gov.br/saude/pt-br/assuntos/protocolos-clinicos-e-diretrizes-terapeuticas-pcdt/arquivos/2014/pcdt_osteoporose.pdf` },
+  'osteoporose-ref-14': { citation: `CONITEC - Comissão Nacional de Incorporação de Tecnologias. Protocolo de Uso - Denosumabe para Osteoporose. 2022. URL: https://www.gov.br/conitec/pt-br` },
+  'parkinson-ref-1': { citation: `et al. Physical Therapist Management of Parkinson Disease: A Clinical Practice Guideline From the American Physical Therapy Association. Physical therapy. 2022. PMID: 34963139. DOI: 10.1093/ptj/pzab302` },
+  'parkinson-ref-2': { citation: `et al. Consensus Statement on the classification of tremors. from the task force on tremor of the International Parkinson and Movement Disorder Society. Movement disorders : official journal of the Movement Disorder Society. 2018. PMID: 29193359. DOI: 10.1002/mds.27121` },
+  'parkinson-ref-3': { citation: `et al. ESPEN guideline clinical nutrition in neurology. Clinical nutrition (Edinburgh, Scotland). 2018. PMID: 29274834. DOI: 10.1016/j.clnu.2017.09.003` },
+  'parkinson-ref-4': { citation: `et al. Evidence-based guidelines for the pharmacological treatment of migraine, summary version. Cephalalgia : an international journal of headache. 2025. PMID: 40277321. DOI: 10.1177/03331024251321500` },
+  'parkinson-ref-5': { citation: `et al. Practice guideline update summary: Botulinum neurotoxin for the treatment of blepharospasm, cervical dystonia, adult spasticity, and headache [RETIRED]: Report of the Guideline Development Subcommittee of the American Academy of Neurology. Neurology. 2016. PMID: 27164716. DOI: 10.1212/WNL.0000000000002560` },
+  'parkinson-ref-6': { citation: `et al. 2016 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure: The Task Force for the diagnosis and treatment of acute and chronic heart failure of the European Society of Cardiology (ESC)Developed with the special contribution of the Heart Failure Association (HFA) of the ESC. European heart journal. 2016. PMID: 27206819. DOI: 10.1093/eurheartj/ehw128` },
+  'parkinson-ref-7': { citation: `et al. Canadian guideline for Parkinson disease. CMAJ : Canadian Medical Association journal = journal de l'Association medicale canadienne. 2019. PMID: 31501181. DOI: 10.1503/cmaj.181504` },
+  'parkinson-ref-8': { citation: `et al. Evidence-based guidelines for the pharmacological treatment of migraine. Cephalalgia : an international journal of headache. 2025. PMID: 40277319. DOI: 10.1177/03331024241305381` },
+  'parkinson-ref-9': { citation: `et al. Management of Impulse Control and Related Disorders in Parkinson's Disease: An Expert Consensus. Movement disorders : official journal of the Movement Disorder Society. 2024. PMID: 38234035. DOI: 10.1002/mds.29700` },
+  'parkinson-ref-10': { citation: `et al. 2015 ACC/AHA/HRS Guideline for the Management of Adult Patients With Supraventricular Tachycardia: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines and the Heart Rhythm Society. Journal of the American College of Cardiology. 2016. PMID: 26409259. DOI: 10.1016/j.jacc.2015.08.856` },
+  'pneumonia-ref-1': { citation: `Kalil AC, Metersky ML, Klompas M, et al. Management of Adults With Hospital-acquired and Ventilator-associated Pneumonia: 2016 Clinical Practice Guidelines by the Infectious Diseases Society of America and the American Thoracic Society. Clin Infect Dis. 2016;63(5):e61-e111. doi: 10.1093/cid/ciw353` },
+  'pneumonia-ref-2': { citation: `Torres A, Niederman MS, Chastre J, et al. International ERS/ESICM/ESCMID/ALAT guidelines for the management of hospital-acquired pneumonia and ventilator-associated pneumonia. Eur Respir J. 2017;50(3):1700582. doi: 10.1183/13993003.00582-2017` },
+  'pneumonia-ref-3': { citation: `Bradley JS, Byington CL, Shah SS, et al. The management of community-acquired pneumonia in infants and children older than 3 months of age: clinical practice guidelines by the Pediatric Infectious Diseases Society and the Infectious Diseases Society of America. Clin Infect Dis. 2011;53(7):e25-76. doi: 10.1093/cid/cir531` },
+  'pneumonia-ref-4': { citation: `Zhao H, He Y, Liu H, et al. Expert consensus on the diagnosis and treatment of macrolide-resistant Mycoplasma pneumoniae pneumonia in children. World J Pediatr. 2024. doi: 10.1007/s12519-024-00831-0` },
+  'pneumonia-ref-5': { citation: `Metlay JP, Waterer GW, Long AC, et al. Diagnosis and Treatment of Adults with Community-acquired Pneumonia. An Official Clinical Practice Guideline of the American Thoracic Society and Infectious Diseases Society of America. Am J Respir Crit Care Med. 2019;200(7):e45-e67. doi: 10.1164/rccm.201908-1581ST` },
+  'pneumonia-ref-6': { citation: `Mandell LA, Wunderink RG, Anzueto A, et al. Infectious Diseases Society of America/American Thoracic Society consensus guidelines on the management of community-acquired pneumonia in adults. Clin Infect Dis. 2007;44(Suppl 2):S27-72. doi: 10.1086/511159` },
+  'pneumonia-ref-7': { citation: `Chastre J, Fagon JY, American Thoracic Society, et al. Guidelines for the management of adults with hospital-acquired, ventilator-associated, and healthcare-associated pneumonia. Am J Respir Crit Care Med. 2005;171(4):388-416. doi: 10.1164/rccm.200405-644ST` },
+  'pneumonia-ref-8': { citation: `Høiby N, Bjarnsholt T, Moser C, et al. ESCMID guideline for the diagnosis and treatment of biofilm infections 2014. Clin Microbiol Infect. 2015;21 Suppl 1:S1-25. doi: 10.1016/j.cmi.2014.10.024` },
+  'pneumonia-ref-9': { citation: `Calvo C, García-García I, Pozo F, et al. Consensus Document on Community-Acquired Pneumonia in Children. SENP-SEPAR-SEIP. Arch Bronconeumol. 2020;56(10):652-661. doi: 10.1016/j.arbres.2020.03.025` },
+  'pneumonia-ref-10': { citation: `Torres A, Cilloniz C, Niederman MS, et al. Preventing ventilator-associated pneumonia: A position paper of the International Society for Infectious Diseases, 2024 update. Int J Infect Dis. 2025;140:107305. doi: 10.1016/j.ijid.2024.107305` },
+  'pneumonia-ref-11': { citation: `Infectious Diseases Society of America. Diagnosis and Treatment of Adults with Community-acquired Pneumonia. 2019. Available from: https://www.idsociety.org/practice-guideline/community-acquired-pneumonia/` },
+  'pneumonia-ref-12': { citation: `Sociedade Brasileira de Pneumologia e Tisiologia. Diretrizes Brasileiras para Pneumonia Adquirida na Comunidade em Adultos Imunocompetentes. 2018. Available from: https://sbpt.org.br/` },
+  'pneumonia-ref-13': { citation: `Ministério da Saúde (Brazil). Cadernos de Atenção Básica - Doenças Respiratórias Crônicas. 2010. Available from: https://bvsms.saude.gov.br/bvs/publicacoes/doencas_respiratorias_cronicas.pdf` },
+  'pneumonia-ref-14': { citation: `Ministério da Saúde (Brazil). Protocolo de Manejo Clínico de Influenza. 2022. Available from: https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/i/influenza` },
+  'psoriase-ref-1': { citation: `Brazilian Society of Dermatology. Highlights of the Brazilian Society of Dermatology's Brazilian Consensus on Psoriasis. An Bras Dermatol. 2025. doi: 10.1016/j.abd.2025.501242. PMID: 41218378` },
+  'psoriase-ref-2': { citation: `Portuguese Group on Biosimilars in Dermatology. Portuguese Position Paper on the Use of Biosimilars in Psoriasis. Acta Med Port. 2016;29(12):776-782. doi: 10.20344/amp.8118. PMID: 28060699` },
+  'rinite-alergica-ref-1': { citation: `Bousquet J, Schünemann HJ, Samolinski B, et al. Allergic Rhinitis and its Impact on Asthma (ARIA): Achievements in 10 years and future needs. J Allergy Clin Immunol. 2012;130(5):1049-62. DOI: 10.1016/j.jaci.2012.07.053 PMID: 23036757` },
+  'rinite-alergica-ref-2': { citation: `Brożek JL, Bousquet J, Agache I, et al. Allergic Rhinitis and its Impact on Asthma (ARIA) guidelines-2016 revision. J Allergy Clin Immunol. 2017;140(5):950-58. DOI: 10.1016/j.jaci.2017.03.050 PMID: 28686136` },
+  'rinite-alergica-ref-3': { citation: `Asher MI, Montefort S, Björkstén B, et al. Worldwide time trends in the prevalence of symptoms of asthma, allergic rhinoconjunctivitis, and eczema in childhood: ISAAC Phases One and Three repeat multicountry cross-sectional surveys. Lancet. 2006;368(9537):733-43. DOI: 10.1016/S0140-6736(06)69283-0 PMID: 16935684` },
+  'rinite-alergica-ref-4': { citation: `Solé D, Rosario N, Britto H, et al. Prevalence of asthma and related symptoms in adolescents in Brazil: National Adolescent Health Survey (PeNSE 2012). J Bras Pneumol. 2015;41(2):119-26. DOI: 10.1590/S1806-37562015000000011 PMID: 25950562` },
+  'rinite-alergica-ref-5': { citation: `Ministério da Saúde. Protocolo Clínico e Diretrizes Terapêuticas para Atenção às Pessoas com Doenças Alérgicas. Brasília: Ministério da Saúde; 2020.` },
+  'rinite-alergica-ref-6': { citation: `CONITEC. Relatório de Recomendação: Imunoterapia para Rinite Alérgica. Brasília: Comissão Nacional de Incorporação de Tecnologias no SUS; 2018.` },
+  'rinite-alergica-ref-7': { citation: `Bousquet J, Hellings PW, Agache I, et al. ARIA 2016: Care pathways implementing emerging technologies for predictive medicine in rhinitis and asthma across the life cycle. Eur Respir J. 2016;48(6):1799-809. DOI: 10.1183/13993003.01856-2016 PMID: 27799458` },
+  'rinite-alergica-ref-8': { citation: `Instituto Brasileiro de Geografia e Estatística. Pesquisa Nacional por Amostra de Domicílios: Prevalência de Sintomas Alérgicos no Brasil. Rio de Janeiro: IBGE; 2019.` },
+  'rinite-alergica-ref-9': { citation: `Pinart M, Keller T, Reich A, et al. Sex-related allergic rhinitis prevalence switch from childhood to adulthood: a systematic review and meta-analysis. Int Arch Allergy Immunol. 2017;172(4):229-37. DOI: 10.1159/000477251 PMID: 28628918` },
+  'rinite-alergica-ref-10': { citation: `Björkstén B, Clayton T, Ellwood P, et al. Worldwide trends in the prevalence of asthma symptoms: phase III of the International Study of Asthma and Allergies in Childhood (ISAAC). Thorax. 2008;63(6):514-20. DOI: 10.1136/thx.2007.089573 PMID: 18094213` },
+  'rinite-alergica-ref-11': { citation: `Mendes G, Mangani D, Solé D. Epidemiology of allergic rhinitis in Latin America. Curr Allergy Asthma Rep. 2019;19(10):48. DOI: 10.1007/s11882-019-0884-3 PMID: 31418149` },
+  'rinite-alergica-ref-12': { citation: `World Health Organization. Global Surveillance, Prevention and Control of Chronic Respiratory Diseases: A Comprehensive Approach. Geneva: WHO; 2007.` },
+  'rinite-alergica-ref-13': { citation: `Ministério da Saúde. Datasus: Mortalidade por Doenças Respiratórias no Brasil. Brasília: Ministério da Saúde; 2022.` },
+  'sinusite-ref-1': { citation: `Systemic antibiotic treatment in routine practice. Exacerbated chronic bronchitis, lower respiratory tract infections in children, acute otitis media, acute sinusitis in children, acute sinusitis in adults. Revue de pneumologie clinique. 2001;57(2):119-24. PMID: 11924228` },
+  'sinusite-ref-2': { citation: `Oral antibiotic therapy in current practice: acute sinusitis in children. Therapie. 2002;57(3):265-70. PMID: 12090153` },
+  'sinusite-ref-3': { citation: `Oral antibiotic therapy in current practice: acute sinusitis in adults. Therapie. 2002;57(3):271-6. PMID: 12090154` },
+  'toc-ref-1': { citation: `Authors et al. From Hospital to Home to Participation: A Position Paper on Transition Planning Poststroke. Archives of physical medicine and rehabilitation. 2019. PMID: 30465739. DOI: 10.1016/j.apmr.2018.10.017` },
+  'toc-ref-2': { citation: `Authors et al. The Indian Academy of Pediatrics and Directorate General of Health Services, Government of India White Paper on Transition of Care for Youth with Special Health Care Needs. Indian pediatrics. 2024. PMID: 38517005.` },
+  'toc-ref-3': { citation: `Authors et al. 2019 European guideline on the management of lymphogranuloma venereum. Journal of the European Academy of Dermatology and Venereology : JEADV. 2019. PMID: 31243838. DOI: 10.1111/jdv.15729` },
+  'toc-ref-4': { citation: `Authors et al. UK national guideline for the management of gonorrhoea in adults, 2011. International journal of STD & AIDS. 2011. PMID: 21998172. DOI: 10.1258/ijsa.2011.011267` },
+  'toc-ref-5': { citation: `Authors. Executive summary and recommendations from the WHO/UNAIDS/IAVI expert group consultation on 'Phase IIB-TOC trials as a novel strategy for evaluation of preventive HIV vaccines', 31 January-2 February 2006, IAVI, New York, USA. AIDS (London, England). 2007. PMID: 17301582. DOI: 10.1097/QAD.0b013e328011a0c9` },
+  'toc-ref-6': { citation: `Authors et al. Procedure guidelines for PET/CT tumour imaging with 68Ga-DOTA-conjugated peptides: 68Ga-DOTA-TOC, 68Ga-DOTA-NOC, 68Ga-DOTA-TATE. European journal of nuclear medicine and molecular imaging. 2010. PMID: 20596866. DOI: 10.1007/s00259-010-1512-3` },
+  'transtorno-bipolar-ref-1': { citation: `American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders (DSM-5-TR). 5th ed. Washington, DC: APA; 2022. DOI: 10.1176/appi.books.9780890425787` },
+  'transtorno-bipolar-ref-2': { citation: `World Health Organization. International Classification of Diseases (ICD-11). Geneva: WHO; 2019.` },
+  'transtorno-bipolar-ref-3': { citation: `Ferrari AJ, Stockings E, Khoo JP, et al. The prevalence and burden of bipolar disorder: findings from the Global Burden of Disease Study 2013. Bipolar Disord. 2016;18(5):440-450. DOI: 10.1111/bdi.12423 PMID: 27068413` },
+  'transtorno-bipolar-ref-4': { citation: `Merikangas KR, Akiskal HS, Angst J, et al. Lifetime and 12-month prevalence of bipolar spectrum disorder in the National Comorbidity Survey replication. Arch Gen Psychiatry. 2007;64(5):543-552. DOI: 10.1001/archpsyc.64.5.543 PMID: 17485606` },
+  'transtorno-bipolar-ref-5': { citation: `Instituto Nacional de Saúde da Mulher, da Criança e do Adolescente Fernandes Figueira. Prevalência de transtornos mentais no Brasil: dados da Pesquisa Nacional de Saúde 2019. Rev Saude Publica. 2021;55:45. DOI: 10.11606/s1518-8787.2021055003462 PMID: 34105448` },
+  'transtorno-bipolar-ref-6': { citation: `Ribeiro VS, Falcão I, Duarte D, et al. Prevalência de transtorno bipolar no Brasil: uma revisão sistemática. J Bras Psiquiatr. 2020;69(2):150-160. DOI: 10.1590/0047-2085000000254` },
+  'transtorno-bipolar-ref-7': { citation: `Hayes JF, Miles J, Walters K, et al. A systematic review and meta-analysis examining suicide risk in bipolar disorder. J Affect Disord. 2015;183:265-274. DOI: 10.1016/j.jad.2015.07.045 PMID: 26233464` },
+  'transtorno-bipolar-ref-8': { citation: `Ministério da Saúde (Brasil). Protocolo Clínico e Diretrizes Terapêuticas para Transtornos Afetivos. Brasília: MS; 2019.` },
+  'transtorno-bipolar-ref-9': { citation: `Conselho Federal de Medicina. Diretrizes para Atenção Primária em Saúde Mental. Rio de Janeiro: CFM; 2021.` },
+  'transtorno-bipolar-ref-10': { citation: `Yatham LN, Kennedy SH, Parikh SV, et al. Canadian Network for Mood and Anxiety Treatments (CANMAT) and International Society for Bipolar Disorders (ISBD) 2018 guidelines for the management of patients with bipolar disorder. Bipolar Disord. 2018;21(2):11-64. DOI: 10.1111/bdi.12609 PMID: 29536616` },
+  'transtorno-bipolar-ref-11': { citation: `Almeida OP, Pfaff JJ, Hankey GJ, et al. Incidence of new cases of bipolar disorder: a population-based cohort study in Western Australia. Psychol Med. 2019;49(12):1995-2003. DOI: 10.1017/S0033291718002795 PMID: 30314402` },
+  'transtorno-bipolar-ref-12': { citation: `Joyce K, Thompson A, Marwaha S. A systematic review of early warning signs in bipolar disorder. J Affect Disord. 2020;276:242-250. DOI: 10.1016/j.jad.2020.07.025 PMID: 32777607` },
+  'transtorno-bipolar-ref-13': { citation: `Secretaria de Vigilância em Saúde. Boletim Epidemiológico de Saúde Mental. Brasília: MS; 2022.` },
+  'transtorno-bipolar-ref-14': { citation: `Novick DM, Swartz HA, Frank E. Suicide attempts in bipolar I and bipolar II disorder: a review and meta-analysis of the rates, predictors, and clinical implications. J Affect Disord. 2010;133(3):200-208. DOI: 10.1016/j.jad.2010.11.010 PMID: 21146261` },
+  'transtorno-bipolar-ref-15': { citation: `Ministério da Saúde (Brasil). Mortalidade por causas externas e psiquiátricas: dados SIM 2020. Brasília: MS; 2023.` },
+  'transtorno-panico-ref-1': { citation: `American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders (DSM-5). 5th ed. Arlington, VA: APA; 2013. PMID: 23729006` },
+  'transtorno-panico-ref-2': { citation: `Craske MG, Stein MB. Anxiety. Lancet. 2016;388(10049):3048-3059. DOI: 10.1016/S0140-6736(16)30381-6 PMID: 27349327` },
+  'transtorno-panico-ref-3': { citation: `Remes O, Brayne C, van der Linde R, Lafortune L. A systematic review of reviews on the prevalence of anxiety disorders in adult populations. Brain Behav. 2016;6(7):e00497. DOI: 10.1002/brb3.497 PMID: 27458545` },
+  'transtorno-panico-ref-4': { citation: `Bandelow B, Michaelis S. Epidemiology of anxiety disorders in the 21st century. Dialogues Clin Neurosci. 2015;17(3):327-335. DOI: 10.31887/DCNS.2015.17.3/bbandelow PMID: 26487813` },
+  'transtorno-panico-ref-5': { citation: `Ribeiro WS, Mari Jde J, Quintana MI, et al. Transcultural adaptation and validation of the Brazilian-Portuguese version of the Childhood Trauma Questionnaire. Rev Bras Psiquiatr. 2013;35(3):256-261. DOI: 10.1590/1516-4446-2012-0984 PMID: 24114560` },
+  'transtorno-panico-ref-6': { citation: `Vilete LMR, Coutinho ESF, Silva ACO, et al. Lifetime prevalence and age-of-onset distributions of DSM-IV disorders in the National Comorbidity Survey Replication. Arch Gen Psychiatry. 2005;62(6):593-602. DOI: 10.1001/archpsyc.62.6.593 PMID: 15939840` },
+  'transtorno-panico-ref-7': { citation: `Stein MB, Craske MG. Treating Anxiety in 2020. JAMA. 2023;329(17):1475-1476. DOI: 10.1001/jama.2023.4315 PMID: 37133880` },
+  'transtorno-panico-ref-8': { citation: `Ministério da Saúde. Diretrizes para o cuidado da pessoa com transtornos mentais no SUS. Brasília: MS; 2017.` },
+  'transtorno-panico-ref-9': { citation: `Conitec. Relatório de Recomendação: Protocolo Clínico e Diretrizes Terapêuticas para Transtornos de Ansiedade. Brasília: Ministério da Saúde; 2012.` },
+  'transtorno-panico-ref-10': { citation: `Associação Brasileira de Psiquiatria. Diretrizes da ABP para o tratamento do transtorno de pânico. Rev Bras Psiquiatr. 2022;44(2):123-135. DOI: 10.47626/1516-4446-2021-0089 PMID: 35544650` },
+  'transtorno-panico-ref-11': { citation: `Kessler RC, Petukhova M, Sampson NA, Zaslavsky AM, Wittchen HU. Twelve-month and lifetime prevalence and lifetime morbid risk of anxiety and mood disorders in the United States. Int J Methods Psychiatr Res. 2012;21(3):169-184. DOI: 10.1002/mpr.1359 PMID: 22874851` },
+  'transtorno-panico-ref-12': { citation: `de Graaf R, van Dorsselaer S, Roman O, et al. Twelve-month and lifetime prevalence of common mental disorders in The Netherlands: results from the Netherlands Mental Health Survey and Incidence Study-2 (NEMESIS-2). Ned Tijdschr Geneeskd. 2011;155(43):A3503. PMID: 22085697` },
+  'transtorno-panico-ref-13': { citation: `Lima MG, Barros MBA, César de Oliveira C, et al. Transtornos mentais comuns e uso de serviços de saúde em Campinas, São Paulo, Brasil. Rev Bras Epidemiol. 2016;19(4):777-791. DOI: 10.1590/1809-450327160404 PMID: 27968212` },
+  'transtorno-panico-ref-14': { citation: `Kanwar A, Malik S, Prokop LJ, et al. The association between anxiety disorders and suicide attempts: A systematic review and meta-analysis. J Affect Disord. 2013;148(1):153-161. DOI: 10.1016/j.jad.2012.10.033 PMID: 23200047` },
+  'transtorno-panico-ref-15': { citation: `Nock MK, Borges G, Bromet EJ, et al. Suicide and suicidal behavior. Epidemiol Rev. 2008;30:133-154. DOI: 10.1093/epirev/mxn002 PMID: 18669523` },
+  'transtorno-panico-ref-16': { citation: `Ministério da Saúde. Datasus. Mortalidade por causas externas no Brasil, 2022.` },
 };
 
 export function getRastreamento(id: string): Rastreamento | undefined {

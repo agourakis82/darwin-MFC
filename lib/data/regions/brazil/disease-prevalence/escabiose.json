@@ -1,0 +1,51 @@
+{
+  "diseaseId": "escabiose",
+  "region": "BR",
+  "diseaseName": "Escabiose (sarna)",
+  "prevalence": {
+    "value": "~0.5-2% (higher in crowded settings)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "WHO scabies burden estimates; tropical dermatology surveillance",
+    "trend": "stable; outbreaks in institutional and low-income settings"
+  },
+  "incidence": {
+    "value": "~5-15 per 1,000 person-years in high-risk communities",
+    "population": "General population; higher in crowded households",
+    "year": 2024,
+    "source": "Community and school outbreak investigations"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant itch, sleep disturbance, and secondary infection risk",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO/IHME skin disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "crowding and close contact",
+      "poverty and limited sanitation",
+      "institutional living (prisons, shelters, long-term care)",
+      "delayed treatment of household contacts",
+      "young age"
+    ],
+    "vulnerablePopulations": [
+      "children",
+      "people in crowded households",
+      "institutionalized populations"
+    ],
+    "diagnosticCriteria": "Typical pruritic papules and burrows; diagnosis usually clinical; dermoscopy or microscopy can confirm mites/eggs when needed"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; outbreak- and symptom-driven detection",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands annually in endemic areas",
+    "controlRate": "Moderate; requires treatment of close contacts and hygiene measures"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care; confirmatory microscopy limited to reference services",
+    "treatmentProtocol": "Topical permethrin or oral ivermectin; treat household contacts; environmental cleaning of bedding/clothes",
+    "regionalChallenges": "Reinfestation due to incomplete contact treatment and crowded living conditions",
+    "strongPoints": "Effective low-cost therapies available in public system"
+  }
+}

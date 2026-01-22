@@ -1,0 +1,52 @@
+{
+  "diseaseId": "espondilite-anquilosante",
+  "region": "EU",
+  "diseaseName": "Ankylosing Spondylitis (Axial Spondyloarthritis)",
+  "prevalence": {
+    "value": "0.2-0.6%",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "EULAR/European spondyloarthritis epidemiology syntheses",
+    "trend": "stable; improved recognition with MRI"
+  },
+  "incidence": {
+    "value": "7-20 per 100,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Low; indirect disability burden",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "HLA-B27 positivity",
+      "male sex",
+      "family history",
+      "smoking",
+      "IBD/psoriasis association"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with delayed diagnosis",
+      "smokers"
+    ],
+    "diagnosticCriteria": "ASAS criteria with imaging and clinical features; MRI widely used for early disease in many settings"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~0.8-2.5 million",
+    "controlRate": "Moderate to high with access to biologics and physiotherapy; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to MRI and rheumatology services in many countries",
+    "treatmentProtocol": "Exercise programs, NSAIDs, and biologics (TNF/IL-17 inhibitors) with treat-to-target approaches",
+    "regionalChallenges": "Access variability and adherence to long-term exercise programs",
+    "strongPoints": "EULAR guideline-driven care and broad access to advanced therapies"
+  }
+}
+

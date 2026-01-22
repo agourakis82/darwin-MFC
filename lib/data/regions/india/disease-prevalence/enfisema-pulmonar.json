@@ -1,0 +1,51 @@
+{
+  "diseaseId": "enfisema-pulmonar",
+  "region": "IN",
+  "diseaseName": "Pulmonary emphysema",
+  "prevalence": {
+    "value": "~1-2% (adults; subset of COPD)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "ICMR and COPD epidemiology syntheses",
+    "trend": "stable; burden driven by smoking and biomass exposure"
+  },
+  "incidence": {
+    "value": "~1-3 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Respiratory cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to chronic respiratory disability",
+    "mortalityRate": "Elevated (linked to COPD complications)",
+    "year": 2024,
+    "source": "IHME/GBD COPD burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "tobacco smoking",
+      "biomass fuel exposure",
+      "air pollution",
+      "alpha-1 antitrypsin deficiency (rare)",
+      "occupational dust exposure"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "long-term smokers",
+      "women exposed to biomass smoke"
+    ],
+    "diagnosticCriteria": "Spirometry with airflow limitation and imaging findings; differentiate from chronic bronchitis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis based on symptoms and spirometry",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions with COPD; emphysema subset",
+    "controlRate": "Moderate; limited by spirometry access and inhaler adherence"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Spirometry access mainly in urban centers; imaging for emphysema in tertiary hospitals",
+    "treatmentProtocol": "Smoking cessation, inhaled bronchodilators, pulmonary rehab, vaccinations; oxygen for advanced disease",
+    "regionalChallenges": "High biomass exposure and limited spirometry access in rural areas",
+    "strongPoints": "Growing COPD programs and availability of essential inhalers"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "diseaseId": "herpes-simples",
+  "region": "BR",
+  "diseaseName": "Herpes simples (HSV-1/HSV-2)",
+  "prevalence": {
+    "value": "~70-90% (HSV-1); ~10-20% (HSV-2)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "WHO herpes simplex virus seroprevalence context; regional STI surveillance summaries",
+    "trend": "stable; HSV-2 higher in sexually active and high-risk groups"
+  },
+  "incidence": {
+    "value": "~3-8 per 1,000 adults/year (symptomatic genital herpes episodes)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "STI cohort syntheses and clinic surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; recurrent morbidity and psychosocial impact",
+    "mortalityRate": "Negligible (except rare neonatal herpes)",
+    "year": 2024,
+    "source": "WHO/IHME STI burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "unprotected sexual activity",
+      "multiple partners",
+      "early sexual debut",
+      "HIV or other immunosuppression",
+      "history of other STIs",
+      "oral-genital contact (HSV-1 genital infection)"
+    ],
+    "vulnerablePopulations": [
+      "sexually active adolescents and adults",
+      "people with HIV",
+      "pregnant people (neonatal transmission risk)",
+      "sex workers"
+    ],
+    "diagnosticCriteria": "Clinical lesions with confirmation by PCR/NAAT or culture when available; type-specific serology for unclear cases; assess risk in pregnancy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; diagnosis is symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions (HSV-1 and HSV-2 combined)",
+    "controlRate": "Moderate; improves with access to antivirals and counseling"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis common; PCR confirmation available in reference labs",
+    "treatmentProtocol": "Acyclovir/valacyclovir episodic or suppressive therapy; counseling on transmission prevention; pregnancy management to reduce neonatal risk",
+    "regionalChallenges": "Stigma, underdiagnosis of asymptomatic infections, uneven access to PCR testing",
+    "strongPoints": "Antivirals available in public system and widely in private pharmacies"
+  }
+}

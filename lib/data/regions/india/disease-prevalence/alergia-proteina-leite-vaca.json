@@ -1,0 +1,51 @@
+{
+  "diseaseId": "alergia-proteina-leite-vaca",
+  "region": "IN",
+  "diseaseName": "Cow’s Milk Protein Allergy (CMPA)",
+  "prevalence": {
+    "value": "~2-3% (infants)",
+    "population": "Infants in the first year of life",
+    "year": 2024,
+    "source": "Pediatric allergy epidemiology syntheses; Indian pediatric allergy practice patterns",
+    "trend": "stable; increased recognition and dietary management in urban pediatrics"
+  },
+  "incidence": {
+    "value": "~1-3 per 100 live births (first-year onset)",
+    "population": "Infants",
+    "year": 2024,
+    "source": "International food allergy incidence syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; caregiver and nutrition burden can be high",
+    "mortalityRate": "Very low; severe reactions possible but uncommon",
+    "year": 2024,
+    "source": "WHO/IHME allergy burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history of atopy",
+      "infant eczema",
+      "coexisting food allergies",
+      "cow’s milk exposure via formula or dairy",
+      "misdiagnosis with lactose intolerance"
+    ],
+    "vulnerablePopulations": [
+      "infants with eczema",
+      "families without access to allergy specialists",
+      "households with cost barriers to hypoallergenic formulas"
+    ],
+    "diagnosticCriteria": "Clinical history; elimination and re-challenge; specific IgE/skin tests when IgE-mediated suspected; rule out infections and non-allergic intolerance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; pediatric evaluation based on symptoms",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands of infants annually",
+    "controlRate": "Good with avoidance and appropriate formula; limited by cost and access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Oral food challenge capacity mostly limited to tertiary centers",
+    "treatmentProtocol": "Avoid cow’s milk protein; use extensively hydrolyzed or amino-acid formula when needed; nutrition counseling; supervised re-introduction to assess tolerance",
+    "regionalChallenges": "High cost of specialized formulas, underdiagnosis in rural settings, confusion with lactose intolerance",
+    "strongPoints": "Practical dietary management and strong pediatric primary care pathways in many settings"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "esclerose-lateral-amiotrofica",
+  "region": "BR",
+  "diseaseName": "Esclerose Lateral Amiotrófica (ELA)",
+  "prevalence": {
+    "value": "4-8 per 100,000",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Neurology epidemiology syntheses (ALS)",
+    "trend": "increasing due to aging and improved diagnosis"
+  },
+  "incidence": {
+    "value": "1-2 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "ALS cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0005-0.002",
+    "mortalityRate": "High case-fatality over years (neurodegenerative course)",
+    "year": 2024,
+    "source": "IHME GBD (motor neuron disease)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "male sex",
+      "genetic mutations (subset)",
+      "smoking (association)"
+    ],
+    "vulnerablePopulations": [
+      "adults >50 years",
+      "patients without access to multidisciplinary ALS clinics"
+    ],
+    "diagnosticCriteria": "Clinical UMN/LMN signs with progression; EMG supportive; El Escorial/Awaji criteria; exclude mimics"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~8,000-18,000",
+    "controlRate": "Not curable; survival and quality improved by multidisciplinary care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EMG and specialist neurology access concentrated in larger centers",
+    "treatmentProtocol": "Disease-modifying therapy where available (riluzole), respiratory support (NIV), nutrition (PEG), physiotherapy, and palliative care planning",
+    "regionalChallenges": "Limited multidisciplinary ALS clinics and access to ventilatory support in some regions",
+    "strongPoints": "Tertiary centers can provide multidisciplinary care and palliative support"
+  }
+}
+

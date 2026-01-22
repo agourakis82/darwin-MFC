@@ -1,0 +1,52 @@
+{
+  "diseaseId": "depressao-idoso",
+  "region": "IN",
+  "diseaseName": "Depression in Older Adults",
+  "prevalence": {
+    "value": "10-20% (clinically significant symptoms); major depression 3-6%",
+    "population": "Indian older adults",
+    "year": 2024,
+    "source": "Geriatric psychiatry epidemiology syntheses",
+    "trend": "increasing with aging and social change; underdiagnosis common"
+  },
+  "incidence": {
+    "value": "10-25 per 1,000 person-years",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "Geriatric depression cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.02-0.05",
+    "mortalityRate": "Indirect",
+    "year": 2024,
+    "source": "IHME/WHO mental health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "social isolation",
+      "chronic disease and pain",
+      "bereavement",
+      "poverty",
+      "cognitive impairment"
+    ],
+    "vulnerablePopulations": [
+      "older adults living alone",
+      "older adults with chronic illness",
+      "low-income older adults"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis with screening tools (GDS/PHQ) where used; differentiate from dementia and medical causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of older adults",
+    "controlRate": "Low to moderate due to limited psychotherapy and specialist access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often underrecognized; somatic presentations common",
+    "treatmentProtocol": "Antidepressants and counseling where available; address social isolation; manage comorbidities; suicide risk assessment",
+    "regionalChallenges": "High stigma and limited geriatric mental health services",
+    "strongPoints": "Affordable generic antidepressants and expanding tele-mental health capacity"
+  }
+}
+

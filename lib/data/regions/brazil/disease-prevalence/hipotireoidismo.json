@@ -1,0 +1,11 @@
+{
+  "diseaseId": "hipotireoidismo",
+  "region": "BR",
+  "diseaseName": "Hipotireoidismo",
+  "prevalence": {"value": "3.7%", "population": "Brazilian adults", "year": 2024, "source": "SBEM/DataSUS", "trend": "stable"},
+  "incidence": {"value": "4.2 per 1000 person-years", "population": "Brazilian adults", "year": 2024, "source": "SBEM epidemiological studies"},
+  "burden": {"dalyPerCapita": "0.15", "mortalityRate": "0.08 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {"riskFactors": ["Female gender", "Age >60 years", "Autoimmune thyroiditis", "Iodine deficiency (regional)", "Family history"], "vulnerablePopulations": ["Women", "Elderly population", "Pregnant women"], "diagnosticCriteria": "Elevated TSH (>4.5 mU/L) with low free T4 levels, per SBEM guidelines"},
+  "publicHealthSystem": {"screeningCoverage": "Limited (routine in pregnancy via SUS)", "treatmentAvailable": true, "estimatedPatients": "Approximately 5.5 million", "controlRate": "70% with levothyroxine therapy"},
+  "regionalSpecificities": {"diagnosisCriteria": "Aligned with international standards (TSH and T4 testing)", "treatmentProtocol": "Lifelong levothyroxine replacement, available free via SUS", "regionalChallenges": "Access delays in rural/Northern regions; diagnostic lab shortages", "strongPoints": "Nationwide SUS coverage for medication; strong endocrinology societies like SBEM"}
+}

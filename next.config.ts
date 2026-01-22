@@ -19,6 +19,35 @@ const nextConfig: NextConfig = {
   // Set USE_BASE_PATH=true to build with basePath for github.io subdirectory
   basePath: basePathValue,
   assetPrefix: basePathValue ? `${basePathValue}/` : '',
+
+  // ============================================
+  // PHASE 4: Performance & PWA Optimizations
+  // ============================================
+
+  // SVG as React components
+  webpack: (config, { isServer }) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      issuer: /\.[jt]sx?$/,
+      use: ['@svgr/webpack'],
+    });
+    return config;
+  },
+
+  // Optimize build
+  productionBrowserSourceMaps: false,
+
+
+
+  // Compression and optimization
+  compress: true,
+  poweredByHeader: false,
+
+  // TypeScript strict mode
+  typescript: {
+    tsconfigPath: './tsconfig.json',
+  },
+
 };
 
 export default withNextIntl(nextConfig);

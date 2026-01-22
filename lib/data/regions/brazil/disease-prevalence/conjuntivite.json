@@ -1,0 +1,51 @@
+{
+  "diseaseId": "conjuntivite",
+  "region": "BR",
+  "diseaseName": "Conjuntivite",
+  "prevalence": {
+    "value": "common; outbreaks frequent (viral/allergic)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ophthalmology/primary care epidemiology syntheses",
+    "trend": "stable; seasonal and outbreak-driven"
+  },
+  "incidence": {
+    "value": "high (episodic); variable by season",
+    "population": "General population",
+    "year": 2024,
+    "source": "Primary care and ophthalmology context"
+  },
+  "burden": {
+    "dalyPerCapita": "low; high transmissibility and productivity impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO eye health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral transmission in schools/workplaces",
+      "allergen exposure",
+      "contact lens use",
+      "poor hand hygiene"
+    ],
+    "vulnerablePopulations": [
+      "children in schools/daycare",
+      "allergic individuals",
+      "contact lens wearers"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; differentiate viral vs bacterial vs allergic; red flags (pain, photophobia, vision loss, contact lens keratitis) require urgent evaluation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high episode burden",
+    "controlRate": "High with hygiene and symptomatic care; antibiotics only when bacterial suspected"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS manages most cases; ophthalmology referral for red flags",
+    "treatmentProtocol": "Supportive care (lubricants, cold compresses), antihistamine drops for allergic; topical antibiotics for suspected bacterial; infection control guidance",
+    "regionalChallenges": "Outbreak control in schools and antibiotic overuse",
+    "strongPoints": "Most cases manageable in primary care with clear red flag triage"
+  }
+}
+

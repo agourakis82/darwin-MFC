@@ -1,0 +1,52 @@
+{
+  "diseaseId": "gota",
+  "region": "EU",
+  "diseaseName": "Gout",
+  "prevalence": {
+    "value": "1-3%",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "EULAR/European gout epidemiology syntheses",
+    "trend": "increasing with aging and metabolic syndrome prevalence"
+  },
+  "incidence": {
+    "value": "3-6 per 1,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Indirect (cardiovascular risk associations)",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "male sex",
+      "hyperuricemia",
+      "obesity/metabolic syndrome",
+      "CKD",
+      "diuretics",
+      "alcohol intake"
+    ],
+    "vulnerablePopulations": [
+      "older men",
+      "patients with CKD and metabolic syndrome"
+    ],
+    "diagnosticCriteria": "Crystal-proven diagnosis preferred; ultrasound/DECT supportive; EULAR-aligned criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~5-10 million",
+    "controlRate": "Moderate to high with treat-to-target urate strategies in many systems"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Access to imaging and rheumatology services varies but is generally high in many member states",
+    "treatmentProtocol": "Treat-to-target urate lowering (allopurinol/febuxostat) with flare prophylaxis; lifestyle counseling; biologics for refractory cases in specialist care",
+    "regionalChallenges": "Adherence and comorbidity management; variation across member states",
+    "strongPoints": "EULAR guideline-driven care and broad medication availability"
+  }
+}
+

@@ -1,0 +1,51 @@
+{
+  "diseaseId": "ivas-pediatrica",
+  "region": "EU",
+  "diseaseName": "Upper Respiratory Tract Infections",
+  "prevalence": {
+    "value": "18-25% annual prevalence",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "ECDC/WHO Europe",
+    "trend": "Seasonal peaks in winter; stable overall with slight increase due to post-COVID effects"
+  },
+  "incidence": {
+    "value": "150-200 episodes per 1,000 person-years",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "ECDC Surveillance Reports and WHO European Regional Office data"
+  },
+  "burden": {
+    "dalyPerCapita": "0.5-1.0 DALYs per 1,000 population",
+    "mortalityRate": "<0.1 per 100,000",
+    "year": 2024,
+    "source": "Global Burden of Disease Study 2021 (IHME) adapted for EU"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Viral exposure (e.g., rhinovirus, influenza)",
+      "Smoking and air pollution",
+      "Crowded living conditions",
+      "Weakened immune system"
+    ],
+    "vulnerablePopulations": [
+      "Children under 5 years",
+      "Elderly over 65 years",
+      "Immunocompromised individuals",
+      "Individuals with chronic respiratory conditions (e.g., asthma)"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis based on symptoms such as sore throat, nasal congestion, cough, and fever; confirmed by rapid antigen tests for streptococcal infections or viral PCR if needed"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "N/A (no routine screening; symptomatic case management)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~80-110 million cases annually",
+    "controlRate": "High for viral cases (symptomatic relief >90%); moderate for bacterial due to resistance (70-80%)"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Follows EU harmonized guidelines (e.g., NICE/ECDC protocols) emphasizing clinical assessment over routine testing to reduce overuse",
+    "treatmentProtocol": "Symptomatic treatment preferred; antibiotics only for confirmed bacterial etiology (e.g., Group A Streptococcus); adherence to AWaRe classification by WHO",
+    "regionalChallenges": "Rising antibiotic resistance (e.g., >20% resistance to macrolides in Streptococcus pneumoniae per ECDC data); seasonal overload on healthcare systems; disparities in access across Eastern vs. Western EU",
+    "strongPoints": "Robust surveillance via ECDC networks; high vaccination coverage for preventable causes (e.g., influenza >50%); strong public health campaigns on AMR"
+  }
+}

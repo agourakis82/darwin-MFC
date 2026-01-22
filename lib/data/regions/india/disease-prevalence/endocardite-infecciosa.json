@@ -1,0 +1,51 @@
+{
+  "diseaseId": "endocardite-infecciosa",
+  "region": "IN",
+  "diseaseName": "Infective endocarditis",
+  "prevalence": {
+    "value": "Rare (point prevalence <0.01%)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Cardiology and infectious disease surveillance",
+    "trend": "stable; rheumatic heart disease remains a risk factor"
+  },
+  "incidence": {
+    "value": "~3-10 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "Hospital-based cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case morbidity and mortality",
+    "mortalityRate": "Moderate to high (in-hospital 15-30%)",
+    "year": 2024,
+    "source": "IHME/GBD infectious and cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "rheumatic heart disease",
+      "prosthetic valves or devices",
+      "prior endocarditis",
+      "injection drug use",
+      "poor dental health"
+    ],
+    "vulnerablePopulations": [
+      "patients with valvular disease",
+      "hemodialysis patients",
+      "people who inject drugs"
+    ],
+    "diagnosticCriteria": "Modified Duke criteria; blood cultures and echocardiography (TTE/TEE)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; case-based detection",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Thousands of cases annually",
+    "controlRate": "Moderate; limited by delayed diagnosis and surgical access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Blood cultures and echocardiography in tertiary hospitals",
+    "treatmentProtocol": "Prolonged IV antibiotics; surgery for complications or prosthetic infection",
+    "regionalChallenges": "Delayed diagnosis and limited access to cardiac surgery in some regions",
+    "strongPoints": "Tertiary centers with cardiology and cardiac surgery services"
+  }
+}

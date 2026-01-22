@@ -1,0 +1,52 @@
+{
+  "diseaseId": "hipotensao-ortostatica",
+  "region": "IN",
+  "diseaseName": "Orthostatic Hypotension",
+  "prevalence": {
+    "value": "5-25% (older adults; higher with diabetes and frailty)",
+    "population": "Indian older adults",
+    "year": 2024,
+    "source": "Cardiology/geriatrics epidemiology syntheses",
+    "trend": "increasing with aging and diabetes burden"
+  },
+  "incidence": {
+    "value": "10-35 per 1,000 person-years",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "Geriatric cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.012",
+    "mortalityRate": "Indirect",
+    "year": 2024,
+    "source": "IHME/WHO injury context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "dehydration",
+      "antihypertensives",
+      "diabetic autonomic neuropathy",
+      "frailty",
+      "anemia"
+    ],
+    "vulnerablePopulations": [
+      "older adults with diabetes",
+      "frail older adults",
+      "patients on multiple BP medications"
+    ],
+    "diagnosticCriteria": "Orthostatic BP drop criteria; evaluate medications and volume status"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of older adults at risk",
+    "controlRate": "Low to moderate; depends on medication review and hydration"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often unmeasured in busy clinics",
+    "treatmentProtocol": "Hydration, medication adjustment, compression, treat anemia; specialist therapy for refractory cases",
+    "regionalChallenges": "High comorbidity burden and limited geriatric review services",
+    "strongPoints": "Simple low-cost measures can reduce symptoms when implemented"
+  }
+}
+

@@ -1,0 +1,49 @@
+{
+  "diseaseId": "acondroplasia",
+  "region": "BR",
+  "diseaseName": "Acondroplasia",
+  "prevalence": {
+    "value": "~3-5 per 100,000",
+    "population": "General population",
+    "year": 2024,
+    "source": "Orphanet; skeletal dysplasia epidemiology syntheses",
+    "trend": "stable; improved recognition and multidisciplinary follow-up"
+  },
+  "incidence": {
+    "value": "~1 per 15,000-25,000 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "International skeletal dysplasia incidence syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare), but significant per-patient burden (orthopedic, neurologic, ENT complications)",
+    "mortalityRate": "Low; increased risk in infancy with severe airway/foramen magnum issues",
+    "year": 2024,
+    "source": "Orphanet clinical burden summaries"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "FGFR3 pathogenic variant (often de novo)",
+      "advanced paternal age (increased de novo risk)",
+      "family history (autosomal dominant inheritance when inherited)"
+    ],
+    "vulnerablePopulations": [
+      "infants (foramen magnum stenosis risk)",
+      "children with recurrent otitis/sleep apnea",
+      "patients with limited access to orthopedic/ENT monitoring"
+    ],
+    "diagnosticCriteria": "Clinical-radiographic skeletal dysplasia pattern; confirmatory FGFR3 genetic testing; monitor for foramen magnum stenosis, hydrocephalus, sleep apnea and spinal stenosis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis at birth/early childhood by clinical and imaging features",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Several thousand (rare disease; uncertain)",
+    "controlRate": "Good when multidisciplinary care is available; variable across regions"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist confirmation via genetics/orthopedics; imaging access varies in smaller municipalities",
+    "treatmentProtocol": "Multidisciplinary follow-up (orthopedics, neurosurgery, ENT, sleep medicine), management of spinal stenosis and limb alignment, hearing and sleep apnea evaluation; genetic counseling",
+    "regionalChallenges": "Unequal access to specialized centers and timely neurosurgical assessment for foramen magnum stenosis",
+    "strongPoints": "Reference hospitals in major capitals can provide multidisciplinary pathways"
+  }
+}

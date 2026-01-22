@@ -1,0 +1,51 @@
+{
+  "diseaseId": "demencia-vascular",
+  "region": "IN",
+  "diseaseName": "Vascular dementia",
+  "prevalence": {
+    "value": "~0.4-0.9% (adults >65 years)",
+    "population": "Older adults in India",
+    "year": 2024,
+    "source": "Aging and dementia epidemiology syntheses",
+    "trend": "increasing with aging and vascular risk factors"
+  },
+  "incidence": {
+    "value": "~2-4 per 1,000 older adults/year",
+    "population": "Adults >65 years",
+    "year": 2024,
+    "source": "Longitudinal aging cohorts"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to disability and caregiver burden",
+    "mortalityRate": "Moderate (driven by comorbidity and stroke risk)",
+    "year": 2024,
+    "source": "IHME/GBD dementia context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "stroke and TIA",
+      "hypertension",
+      "diabetes",
+      "atrial fibrillation",
+      "smoking"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with prior stroke",
+      "low-income populations with poor vascular risk control"
+    ],
+    "diagnosticCriteria": "Cognitive decline with vascular events or imaging evidence; neuroimaging supports diagnosis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited cognitive screening in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands",
+    "controlRate": "Low to moderate; depends on vascular risk management"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical assessment with imaging in tertiary centers",
+    "treatmentProtocol": "Vascular risk factor control, antiplatelet therapy when indicated, cognitive support and caregiver education",
+    "regionalChallenges": "Limited access to neuroimaging and dementia support services",
+    "strongPoints": "Growing chronic disease programs for hypertension/diabetes"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "gastroenterite-viral",
+  "region": "BR",
+  "diseaseName": "Gastroenterite viral",
+  "prevalence": {
+    "value": "~8-15% annual symptomatic episodes",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "WHO/PAHO viral gastroenteritis context; surveillance data",
+    "trend": "stable; rotavirus vaccination reduces infant burden"
+  },
+  "incidence": {
+    "value": "~150-300 per 1,000 person-years",
+    "population": "General population",
+    "year": 2024,
+    "source": "Community cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate in children; low mortality overall",
+    "mortalityRate": "Low; higher in infants and vulnerable adults",
+    "year": 2024,
+    "source": "WHO/IHME diarrheal disease burden"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "norovirus/rotavirus exposure",
+      "crowding and daycare",
+      "institutional outbreaks",
+      "poor hand hygiene"
+    ],
+    "vulnerablePopulations": [
+      "children under 5",
+      "older adults",
+      "institutionalized populations"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; stool testing rarely needed outside outbreaks"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; outbreak surveillance",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually",
+    "controlRate": "High with ORS and supportive care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care",
+    "treatmentProtocol": "ORS, zinc in children, IV fluids for severe cases",
+    "regionalChallenges": "Outbreak control in schools and institutions",
+    "strongPoints": "Rotavirus vaccine coverage and ORS availability"
+  }
+}

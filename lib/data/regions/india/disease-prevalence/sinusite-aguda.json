@@ -1,0 +1,51 @@
+{
+  "diseaseId": "sinusite-aguda",
+  "region": "IN",
+  "diseaseName": "Acute Rhinosinusitis",
+  "prevalence": {
+    "value": "common; most cases viral",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Primary care/ENT epidemiology syntheses",
+    "trend": "stable; high antibiotic use in some settings"
+  },
+  "incidence": {
+    "value": "50-200 per 1,000/year (symptomatic episodes)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Primary care respiratory infection syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral URIs",
+      "allergic rhinitis",
+      "air pollution",
+      "smoking",
+      "crowding"
+    ],
+    "vulnerablePopulations": [
+      "patients with allergic rhinitis",
+      "urban residents with high pollution"
+    ],
+    "diagnosticCriteria": "Clinical criteria; bacterial suggested by persistent/severe/double-worsening patterns; imaging rarely needed"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high episode burden",
+    "controlRate": "High with symptomatic care; stewardship is variable"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often clinically diagnosed; limited imaging; antibiotics frequently overused",
+    "treatmentProtocol": "Symptomatic therapy and selective antibiotics; manage allergic rhinitis",
+    "regionalChallenges": "Antibiotic overuse and limited ENT access",
+    "strongPoints": "Low-cost symptomatic care and clear clinical criteria can reduce unnecessary antibiotics"
+  }
+}
+

@@ -1,0 +1,52 @@
+{
+  "diseaseId": "herpes-simples",
+  "region": "EU",
+  "diseaseName": "Herpes simplex (HSV-1/HSV-2)",
+  "prevalence": {
+    "value": "~60-80% (HSV-1); ~10-20% (HSV-2)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ECDC/WHO Europe HSV seroprevalence context",
+    "trend": "stable; HSV-1 genital infections increasing in younger adults"
+  },
+  "incidence": {
+    "value": "~3-7 per 1,000 adults/year (symptomatic genital herpes episodes)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "European STI surveillance syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; recurrent morbidity and psychosocial impact",
+    "mortalityRate": "Negligible (except rare neonatal herpes)",
+    "year": 2024,
+    "source": "WHO Europe STI burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "unprotected sexual activity",
+      "multiple partners",
+      "HIV or other immunosuppression",
+      "history of other STIs",
+      "oral-genital contact (HSV-1 genital infection)"
+    ],
+    "vulnerablePopulations": [
+      "sexually active adolescents and adults",
+      "people with HIV",
+      "pregnant people",
+      "sex workers"
+    ],
+    "diagnosticCriteria": "Clinical lesions with PCR/NAAT confirmation; type-specific serology for unclear cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions (HSV-1 and HSV-2 combined)",
+    "controlRate": "High with access to antivirals and counseling"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "PCR widely available; clinical diagnosis common in primary care",
+    "treatmentProtocol": "Acyclovir/valacyclovir episodic or suppressive therapy; counseling and partner notification as appropriate",
+    "regionalChallenges": "Stigma and under-recognition of asymptomatic infection",
+    "strongPoints": "Broad access to diagnostics and antivirals across EU health systems"
+  }
+}

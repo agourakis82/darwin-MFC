@@ -1,0 +1,54 @@
+{
+  "diseaseId": "olho-seco",
+  "region": "BR",
+  "diseaseName": "Síndrome do Olho Seco",
+  "prevalence": {
+    "value": "10-20% (adults; higher in older adults and women)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Ophthalmology epidemiology syntheses (dry eye disease)",
+    "trend": "increasing with screen time, aging, and environmental factors"
+  },
+  "incidence": {
+    "value": "10-30 per 1,000/year (new symptomatic cases)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Dry eye cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; high QOL impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO eye health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "older age",
+      "female sex",
+      "screen time and low blink rate",
+      "air conditioning and low humidity",
+      "contact lens use",
+      "autoimmune disease (e.g., Sjögren)"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "women",
+      "office workers with high screen time",
+      "patients with autoimmune disease"
+    ],
+    "diagnosticCriteria": "Symptoms plus objective signs (TBUT, staining, Schirmer) where available; rule out infection and blepharitis contributors"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of adults",
+    "controlRate": "Moderate; improves with lubricants and addressing blepharitis/meibomian dysfunction"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often diagnosed clinically; objective testing more available in ophthalmology services",
+    "treatmentProtocol": "Artificial tears, environmental modifications, treat blepharitis, topical anti-inflammatories in selected cases",
+    "regionalChallenges": "Cost/access to lubricants and specialist care in some regions",
+    "strongPoints": "Most management is low-risk and can be initiated in primary care with referral as needed"
+  }
+}
+

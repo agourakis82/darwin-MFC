@@ -1,0 +1,51 @@
+{
+  "diseaseId": "bronquiolite-aguda",
+  "region": "IN",
+  "diseaseName": "Acute bronchiolitis",
+  "prevalence": {
+    "value": "Common in infants; seasonal outbreaks",
+    "population": "Infants <2 years",
+    "year": 2024,
+    "source": "Pediatric respiratory surveillance; RSV season reports",
+    "trend": "stable; seasonal peaks"
+  },
+  "incidence": {
+    "value": "~60-180 per 1,000 infants/year",
+    "population": "Infants <2 years",
+    "year": 2024,
+    "source": "Pediatric cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate in infants due to hospitalization risk",
+    "mortalityRate": "Low; higher in premature and high-risk infants",
+    "year": 2024,
+    "source": "WHO/IHME lower respiratory infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "RSV infection",
+      "prematurity",
+      "congenital heart disease",
+      "chronic lung disease",
+      "crowding and daycare exposure"
+    ],
+    "vulnerablePopulations": [
+      "infants <6 months",
+      "premature infants",
+      "infants with cardiac or pulmonary comorbidity"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis of wheeze and respiratory distress in infants; imaging only if severe or atypical"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; seasonal surveillance",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually",
+    "controlRate": "High with supportive care and oxygen when needed"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in pediatric services; hospital admission for hypoxia",
+    "treatmentProtocol": "Supportive care, oxygen, hydration; avoid routine bronchodilators unless indicated",
+    "regionalChallenges": "Seasonal hospital crowding and limited ICU beds during RSV peaks",
+    "strongPoints": "Established pediatric protocols for bronchiolitis management"
+  }
+}

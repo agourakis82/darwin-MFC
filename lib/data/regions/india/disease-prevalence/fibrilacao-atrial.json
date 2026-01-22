@@ -1,0 +1,53 @@
+{
+  "diseaseId": "fibrilacao-atrial",
+  "region": "IN",
+  "diseaseName": "Atrial Fibrillation",
+  "prevalence": {
+    "value": "0.5%",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR/NFHS-5",
+    "trend": "Increasing due to aging population and rising NCDs"
+  },
+  "incidence": {
+    "value": "0.1%",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "ICMR Non-Communicable Disease Report"
+  },
+  "burden": {
+    "dalyPerCapita": "150",
+    "mortalityRate": "0.02%",
+    "year": 2024,
+    "source": "Global Burden of Disease Study (India-specific estimates)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Hypertension",
+      "Diabetes mellitus",
+      "Rheumatic heart disease",
+      "Age >65 years",
+      "Obesity",
+      "Alcohol consumption"
+    ],
+    "vulnerablePopulations": [
+      "Elderly population (>60 years)",
+      "Patients with valvular heart disease",
+      "Rural populations with limited access to care",
+      "Individuals with co-morbid NCDs"
+    ],
+    "diagnosticCriteria": "ECG showing irregular RR intervals with no discernible P waves; confirmed by Holter monitoring if needed (ESC guidelines adapted for India)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "15-20%",
+    "treatmentAvailable": true,
+    "estimatedPatients": "7-10 million",
+    "controlRate": "30-40%"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Standard ECG-based diagnosis; pulse palpation in resource-limited settings",
+    "treatmentProtocol": "Rate control with beta-blockers; anticoagulation with warfarin or DOACs; rhythm control in select cases (per Indian Heart Association guidelines)",
+    "regionalChallenges": "Low awareness, rural-urban disparity in access, high cost of anticoagulants, rheumatic heart disease prevalence",
+    "strongPoints": "Expanding cardiology networks in urban centers, government NCD programs like NPCDCS"
+  }
+}

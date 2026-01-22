@@ -1,0 +1,54 @@
+{
+  "diseaseId": "hepatite-b",
+  "region": "EU",
+  "diseaseName": "Hepatitis B",
+  "prevalence": {
+    "value": "~0.7-1.0% chronic HBV (HBsAg prevalence; varies by country)",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "ECDC hepatitis B surveillance / WHO Europe",
+    "trend": "stable to decreasing with vaccination and harm reduction; higher prevalence in some migrant groups"
+  },
+  "incidence": {
+    "value": "~1-6 per 100,000/year (reported; varies widely)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECDC annual surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.003",
+    "mortalityRate": "Indirect via cirrhosis/HCC burden",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "perinatal transmission without prophylaxis",
+      "unprotected sex",
+      "injecting drug use",
+      "migration from higher-prevalence regions",
+      "healthcare exposure in unvaccinated adults"
+    ],
+    "vulnerablePopulations": [
+      "migrants from higher-prevalence countries",
+      "people who inject drugs",
+      "MSM and sex workers",
+      "newborns of HBsAg-positive mothers",
+      "unvaccinated adults"
+    ],
+    "diagnosticCriteria": "HBsAg and HBV DNA for diagnosis/staging; ALT and fibrosis assessment; management per EASL guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "antenatal screening common; targeted screening in migrants and risk groups varies by country",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~3-4 million chronic HBV",
+    "controlRate": "Moderate; diagnosis and linkage-to-care gaps persist especially in marginalized populations"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EASL-aligned workup with HBV DNA and fibrosis staging widely available in specialist care",
+    "treatmentProtocol": "First-line tenofovir or entecavir; universal infant vaccination in most member states; PMTCT protocols and HBIG where indicated",
+    "regionalChallenges": "Undiagnosed infections in migrants and marginalized groups and variability in screening policies across member states",
+    "strongPoints": "Strong vaccination programmes, high access to antivirals, and standardized specialist care guidelines (EASL)"
+  }
+}
+

@@ -1,0 +1,51 @@
+{
+  "diseaseId": "esclerose-multipla",
+  "region": "EU",
+  "diseaseName": "Multiple Sclerosis (MS)",
+  "prevalence": {
+    "value": "80-150 per 100,000 (higher in Northern Europe)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European MS epidemiology syntheses / WHO Europe",
+    "trend": "stable to increasing due to improved survival and case ascertainment"
+  },
+  "incidence": {
+    "value": "4-10 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.006",
+    "mortalityRate": "Low; indirect via complications",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "genetic susceptibility",
+      "EBV association",
+      "smoking",
+      "vitamin D/latitude associations"
+    ],
+    "vulnerablePopulations": [
+      "women 20-40 years",
+      "patients with high disease activity requiring rapid escalation"
+    ],
+    "diagnosticCriteria": "McDonald criteria; MRI and CSF widely used; structured MS clinic pathways common"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~350,000-650,000",
+    "controlRate": "Moderate to high with access to high-efficacy DMTs and multidisciplinary care; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to MRI, CSF testing, and MS specialist services in many member states",
+    "treatmentProtocol": "Early DMT initiation with escalation strategies; relapse management; rehabilitation and symptom management clinics",
+    "regionalChallenges": "Access variability and cost/reimbursement differences across member states",
+    "strongPoints": "Robust MS registries and broad access to modern DMTs in many systems"
+  }
+}
+

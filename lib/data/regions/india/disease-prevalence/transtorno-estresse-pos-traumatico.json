@@ -1,0 +1,53 @@
+{
+  "diseaseId": "transtorno-estresse-pos-traumatico",
+  "region": "IN",
+  "diseaseName": "Post-Traumatic Stress Disorder (PTSD)",
+  "prevalence": {
+    "value": "1-3%",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "NMHS/ICMR + IHME GBD context",
+    "trend": "increasing recognition; underdiagnosis persists"
+  },
+  "incidence": {
+    "value": "2-6 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "PTSD epidemiology syntheses extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.01",
+    "mortalityRate": "Negligible (indirect via suicide/substance use)",
+    "year": 2024,
+    "source": "IHME GBD context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "trauma exposure (violence, accidents, disasters)",
+      "female sex",
+      "prior mental health disorders",
+      "poor social support",
+      "childhood adversity"
+    ],
+    "vulnerablePopulations": [
+      "survivors of violence",
+      "disaster-affected communities",
+      "healthcare and emergency workers",
+      "women"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 PTSD criteria; somatic presentations common; assessment includes comorbidity screening"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~15-40 million",
+    "controlRate": "Low due to limited access to trauma-focused psychotherapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist diagnosis concentrated in urban centers; primary care recognition limited",
+    "treatmentProtocol": "Trauma-focused psychotherapy and SSRIs when indicated; community support and counseling; tele-mental health emerging",
+    "regionalChallenges": "Stigma, low psychotherapy availability, and uneven mental health workforce",
+    "strongPoints": "Increasing telepsychiatry and NGO-led psychosocial support in some regions"
+  }
+}
+

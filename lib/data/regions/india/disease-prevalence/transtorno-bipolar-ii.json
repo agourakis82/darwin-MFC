@@ -1,0 +1,50 @@
+{
+  "diseaseId": "transtorno-bipolar-ii",
+  "region": "IN",
+  "diseaseName": "Bipolar II Disorder",
+  "prevalence": {
+    "value": "0.4-0.9%",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "NMHS/ICMR + IHME GBD with subtype estimates",
+    "trend": "stable; underdiagnosis common"
+  },
+  "incidence": {
+    "value": "0.3-0.9 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Bipolar spectrum syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.005-0.015",
+    "mortalityRate": "Indirect; elevated suicide risk",
+    "year": 2024,
+    "source": "IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "sleep disruption",
+      "stressful life events",
+      "substance use"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with recurrent depression"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: hypomanic episodes + major depressive episodes; no full manic episode"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~6-12 million",
+    "controlRate": "Low to moderate due to treatment gaps and limited follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often misdiagnosed as unipolar depression; specialist confirmation concentrated in tertiary centers",
+    "treatmentProtocol": "Mood stabilizers and atypical antipsychotics; psychoeducation; avoid antidepressant monotherapy when possible",
+    "regionalChallenges": "Specialist scarcity and high stigma with limited psychotherapy support",
+    "strongPoints": "Affordable generics and expanding tertiary psychiatry services in major cities"
+  }
+}
+

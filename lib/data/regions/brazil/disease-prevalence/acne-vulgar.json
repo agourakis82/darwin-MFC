@@ -1,0 +1,53 @@
+{
+  "diseaseId": "acne-vulgar",
+  "region": "BR",
+  "diseaseName": "Acne Vulgar",
+  "prevalence": {
+    "value": "~70-85% (adolescents); ~10-20% (adults)",
+    "population": "Brazilian adolescents and adults",
+    "year": 2024,
+    "source": "Dermatology epidemiology syntheses; Brazilian dermatology practice patterns",
+    "trend": "stable; adult acne recognized more frequently"
+  },
+  "incidence": {
+    "value": "Common; peak onset in puberty (age 11-18)",
+    "population": "Adolescents",
+    "year": 2024,
+    "source": "Dermatology cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; meaningful mental health/QOL impact (scarring, stigma)",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (skin conditions) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "pubertal androgen increase",
+      "family history",
+      "comedogenic cosmetics/occlusion",
+      "high glycemic-load diet (association)",
+      "polycystic ovary syndrome (in females)",
+      "certain medications (e.g., corticosteroids, lithium)"
+    ],
+    "vulnerablePopulations": [
+      "adolescents",
+      "women with hormonal acne/PCOS",
+      "patients with limited access to dermatology care",
+      "patients prone to keloid/hypertrophic scarring"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis based on comedones, papules/pustules, nodules and scarring; assess severity and psychosocial impact; evaluate hyperandrogenism when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven care (often primary care/dermatology)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions (common in adolescence)",
+    "controlRate": "Moderate; improves with adherence and access to topical/systemic therapies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis; specialist referral for severe nodulocystic acne or scarring",
+    "treatmentProtocol": "Topicals (benzoyl peroxide, retinoids), topical/oral antibiotics when indicated, hormonal therapy in selected women, isotretinoin for severe cases with monitoring",
+    "regionalChallenges": "Access to dermatology and consistent follow-up; isotretinoin monitoring capacity varies; misinformation and overuse of antibiotics",
+    "strongPoints": "Broad availability of effective topical therapies and generics; dermatology expertise concentrated in major centers"
+  }
+}

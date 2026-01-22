@@ -1,0 +1,52 @@
+{
+  "diseaseId": "anemia-ferropriva-pediatrica",
+  "region": "BR",
+  "diseaseName": "Anemia Ferropriva na Infância",
+  "prevalence": {
+    "value": "15-25% (children <5 years; higher in low-income regions)",
+    "population": "Brazilian children <5 years",
+    "year": 2024,
+    "source": "Ministério da Saúde/PNDS + pediatric nutrition syntheses",
+    "trend": "slowly decreasing with supplementation programs; persists in vulnerable groups"
+  },
+  "incidence": {
+    "value": "30-60 per 1,000 children/year (new cases; context-dependent)",
+    "population": "Children <5 years",
+    "year": 2024,
+    "source": "Pediatric nutrition epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.01 (child development impact)",
+    "mortalityRate": "Low; indirect via infection risk and development",
+    "year": 2024,
+    "source": "IHME GBD (iron deficiency)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low iron intake",
+      "prematurity/low birth weight",
+      "early cow's milk introduction",
+      "parasitic infections (some regions)",
+      "food insecurity"
+    ],
+    "vulnerablePopulations": [
+      "infants 6-24 months",
+      "children in low-income households",
+      "North/Northeast vulnerable municipalities"
+    ],
+    "diagnosticCriteria": "Low hemoglobin with microcytosis/hypochromia; ferritin (interpret with inflammation), transferrin saturation; evaluate diet and blood loss"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; screening during child health visits is not universal",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of children affected",
+    "controlRate": "Moderate; improves with supplementation and adherence"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "CBC available; ferritin testing variable; nutrition assessment in APS",
+    "treatmentProtocol": "Oral iron supplementation, dietary counseling, treat parasitosis when indicated; follow-up hemoglobin response",
+    "regionalChallenges": "Adherence to supplementation and food insecurity in some regions",
+    "strongPoints": "Primary care child health programs and low-cost iron supplementation"
+  }
+}
+

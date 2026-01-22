@@ -1,0 +1,51 @@
+{
+  "diseaseId": "transtorno-bipolar-ii",
+  "region": "BR",
+  "diseaseName": "Transtorno Bipolar Tipo II",
+  "prevalence": {
+    "value": "0.5-1.0%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "IHME GBD (bipolar disorder) + subtype distribution syntheses",
+    "trend": "stable; often underdiagnosed as recurrent depression"
+  },
+  "incidence": {
+    "value": "0.4-1.0 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Bipolar spectrum epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.006-0.015",
+    "mortalityRate": "Indirect; elevated suicide risk",
+    "year": 2024,
+    "source": "IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "sleep disruption",
+      "stressful life events",
+      "substance use"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with recurrent depression",
+      "patients with substance use"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: hypomanic episodes + major depressive episodes; no history of full manic episode"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; frequently misclassified as unipolar depression",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1-2 million",
+    "controlRate": "Variable; relapse common without maintenance therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Requires careful history for hypomania; often identified in specialist settings",
+    "treatmentProtocol": "Mood stabilizers (e.g., lamotrigine/lithium) and atypical antipsychotics; avoid antidepressant monotherapy when possible",
+    "regionalChallenges": "Underdiagnosis and inappropriate antidepressant monotherapy in some settings",
+    "strongPoints": "Access to core mood stabilizers and specialist care in major centers"
+  }
+}
+

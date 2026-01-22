@@ -1,0 +1,49 @@
+{
+  "diseaseId": "labirintite",
+  "region": "EU",
+  "diseaseName": "Labyrinthitis",
+  "prevalence": {
+    "value": "~1-2% (adults; episodic)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "ENT and vestibular disorder epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~2-5 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "ENT outpatient cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; dizziness and fall risk",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe/IHME neurologic burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral infections",
+      "otitis media",
+      "migraine",
+      "older age"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with recurrent ear infections"
+    ],
+    "diagnosticCriteria": "Acute vertigo with hearing symptoms; exclude stroke; audiometry/vestibular testing when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands of cases across EU",
+    "controlRate": "High with vestibular rehab and symptomatic therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis with access to vestibular testing in ENT services",
+    "treatmentProtocol": "Vestibular suppressants short-term, antiemetics, vestibular rehabilitation",
+    "regionalChallenges": "Access to vestibular rehab in some regions",
+    "strongPoints": "Strong ENT services and rehabilitation access"
+  }
+}

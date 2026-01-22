@@ -1,0 +1,50 @@
+{
+  "diseaseId": "constipacao-pediatrica",
+  "region": "EU",
+  "diseaseName": "Pediatric Functional Constipation",
+  "prevalence": {
+    "value": "8-15% (children)",
+    "population": "EU children",
+    "year": 2024,
+    "source": "European pediatric gastroenterology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "10-20 per 1,000 children/year",
+    "population": "Children",
+    "year": 2024,
+    "source": "European pediatric cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low; high healthcare utilization impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe child health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "withholding behavior",
+      "low fiber intake",
+      "toilet training issues",
+      "psychosocial stress"
+    ],
+    "vulnerablePopulations": [
+      "school-age children",
+      "children with developmental delay"
+    ],
+    "diagnosticCriteria": "Rome IV functional constipation criteria; red flag assessment for organic disease"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of children",
+    "controlRate": "Moderate to high with structured bowel regimens and follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care management with referral pathways to pediatric gastroenterology for refractory cases",
+    "treatmentProtocol": "Education, PEG-based regimens, toilet training support, dietary counseling",
+    "regionalChallenges": "Adherence and recurrence; service variability across member states",
+    "strongPoints": "Strong guideline-based care and access to effective therapies"
+  }
+}
+

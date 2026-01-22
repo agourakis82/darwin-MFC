@@ -1,0 +1,51 @@
+{
+  "diseaseId": "acidemia-metilmalonica",
+  "region": "IN",
+  "diseaseName": "Methylmalonic Acidemia (MMA)",
+  "prevalence": {
+    "value": "~0.5-1.2 per 100,000",
+    "population": "General population (rare inherited metabolic disorder)",
+    "year": 2024,
+    "source": "Orphanet rare disease summaries; Indian inborn errors of metabolism (IEM) center reports",
+    "trend": "stable; diagnosed prevalence increasing with greater IEM awareness and MS/MS testing"
+  },
+  "incidence": {
+    "value": "~1 per 40,000-80,000 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "IEM incidence syntheses; tertiary metabolic clinic series (India)"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare), but severe per-patient morbidity without early management",
+    "mortalityRate": "Higher in undiagnosed neonatal-onset; reduced with early intervention",
+    "year": 2024,
+    "source": "Orphanet/clinical outcomes and modeled rare disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autosomal recessive inheritance",
+      "consanguinity (higher in some communities)",
+      "family history of IEM",
+      "catabolic stress (infections/fasting)",
+      "cobalamin metabolism defects"
+    ],
+    "vulnerablePopulations": [
+      "newborns/infants",
+      "families with previous affected child",
+      "patients without access to metabolic genetics services"
+    ],
+    "diagnosticCriteria": "Metabolic acidosis/hyperammonemia in crises; elevated methylmalonic acid; MS/MS acylcarnitine profile (C3); confirmatory genetics; assess B12 responsiveness"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited; expanded newborn screening not universal and confirmatory testing is centralized",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds to a few thousand (rare; underdiagnosed)",
+    "controlRate": "Variable; best in centers with metabolic teams and access to medical nutrition"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnosis clustered in tertiary pediatric hospitals; many cases present late after metabolic crisis",
+    "treatmentProtocol": "Emergency decompensation management, protein-restricted diet/medical formulas, carnitine, B12 if responsive, renal/neurologic monitoring",
+    "regionalChallenges": "Limited newborn screening coverage, travel burden to specialty centers, cost and supply of metabolic formulas",
+    "strongPoints": "Growing network of IEM centers and increasing access to MS/MS testing in large cities"
+  }
+}

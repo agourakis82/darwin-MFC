@@ -1,0 +1,48 @@
+{
+  "diseaseId": "doenca-huntington",
+  "region": "IN",
+  "diseaseName": "Huntington's Disease",
+  "prevalence": {
+    "value": "1-5 per 100,000 (likely underdiagnosed)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Neurogenetics epidemiology syntheses",
+    "trend": "stable; diagnosis limited by testing access"
+  },
+  "incidence": {
+    "value": "0.1-0.4 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Huntington cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0002-0.0007",
+    "mortalityRate": "Elevated vs general population",
+    "year": 2024,
+    "source": "IHME/WHO neurodegenerative context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autosomal dominant HTT expansion",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "families with known Huntington disease",
+      "patients with limited access to genetic counseling"
+    ],
+    "diagnosticCriteria": "Clinical syndrome with confirmatory genetic testing where available; multidisciplinary evaluation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~15,000-70,000",
+    "controlRate": "Not curable; symptom management limited by specialist access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Genetic testing concentrated in tertiary centers; many families remain undiagnosed",
+    "treatmentProtocol": "Symptomatic management and caregiver support; psychiatric care for comorbid symptoms",
+    "regionalChallenges": "Limited neurogenetics and long-term care support",
+    "strongPoints": "Growing tertiary neurology services and expanding genetic testing capacity"
+  }
+}
+

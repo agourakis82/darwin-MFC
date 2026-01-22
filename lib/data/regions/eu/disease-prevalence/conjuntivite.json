@@ -1,0 +1,50 @@
+{
+  "diseaseId": "conjuntivite",
+  "region": "EU",
+  "diseaseName": "Conjunctivitis",
+  "prevalence": {
+    "value": "common; seasonal allergic and viral outbreaks",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European primary care/ophthalmology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "high (episodic)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Primary care cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe eye health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral transmission",
+      "allergen exposure",
+      "contact lens use"
+    ],
+    "vulnerablePopulations": [
+      "children in school settings",
+      "allergic individuals",
+      "contact lens users"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis with red flag triage for keratitis/uveitis and vision impairment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high episode burden",
+    "controlRate": "High with symptomatic care; stewardship reduces unnecessary antibiotics"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and optometry pathways commonly manage; ophthalmology referral for red flags",
+    "treatmentProtocol": "Supportive and antihistamine drops; antibiotics only when bacterial suspected; infection control guidance",
+    "regionalChallenges": "Managing outbreaks and reducing unnecessary antibiotic drops",
+    "strongPoints": "Strong primary care and eye care access in many member states"
+  }
+}
+

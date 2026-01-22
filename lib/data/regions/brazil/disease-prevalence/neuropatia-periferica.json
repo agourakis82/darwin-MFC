@@ -1,0 +1,52 @@
+{
+  "diseaseId": "neuropatia-periferica",
+  "region": "BR",
+  "diseaseName": "Neuropatia periferica",
+  "prevalence": {
+    "value": "~1-3% (general); ~7-10% in older adults",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Neurology epidemiology syntheses",
+    "trend": "increasing with aging and diabetes prevalence"
+  },
+  "incidence": {
+    "value": "~2-4 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Neurology outpatient cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to pain, gait impairment and falls",
+    "mortalityRate": "Low (indirect via falls and comorbidity)",
+    "year": 2024,
+    "source": "IHME/GBD neurologic burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "diabetes",
+      "alcohol use",
+      "vitamin B12 deficiency",
+      "chemotherapy or neurotoxic drugs",
+      "HIV and infections",
+      "autoimmune disease"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with diabetes",
+      "patients with alcohol use disorder"
+    ],
+    "diagnosticCriteria": "Clinical neuropathic symptoms and exam; nerve conduction studies when available; evaluate reversible causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic screening in diabetes care; no population screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions (including diabetic and other etiologies)",
+    "controlRate": "Moderate; depends on etiology control and pain management"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care; EMG/NCS in tertiary centers",
+    "treatmentProtocol": "Treat underlying cause, glycemic control, neuropathic pain meds (duloxetine, pregabalin), physiotherapy and fall prevention",
+    "regionalChallenges": "Limited access to EMG and specialist neurology in some regions",
+    "strongPoints": "Core medications and diabetes programs available in SUS"
+  }
+}

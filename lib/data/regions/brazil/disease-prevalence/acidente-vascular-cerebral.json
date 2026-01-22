@@ -1,0 +1,52 @@
+{
+  "diseaseId": "acidente-vascular-cerebral",
+  "region": "BR",
+  "diseaseName": "Acidente Vascular Cerebral (AVC)",
+  "prevalence": {
+    "value": "1.8% (ischemic: 1.5%; hemorrhagic: 0.3%)",
+    "population": "Brazilian adults aged 18+",
+    "year": 2024,
+    "source": "SBC/DataSUS/VIGITEL (estimated from 2022 national surveys extrapolated)",
+    "trend": "Stable to slightly increasing due to aging population and hypertension prevalence"
+  },
+  "incidence": {
+    "value": "115 per 100,000 (ischemic: 98 per 100,000; hemorrhagic: 17 per 100,000)",
+    "population": "General Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde/DataSUS (2023 hospital admissions data)"
+  },
+  "burden": {
+    "dalyPerCapita": "1,200 DALYs per 100,000 population",
+    "mortalityRate": "92 per 100,000 (ischemic: 60%; hemorrhagic: 40% of stroke deaths)",
+    "year": 2024,
+    "source": "Global Burden of Disease Study 2021 (IHME) adapted for Brazil"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Hypertension (prevalent in 35% of adults)",
+      "Diabetes mellitus (9.1% prevalence)",
+      "Smoking (11% current smokers)",
+      "Obesity (22% BMI >30)",
+      "Dyslipidemia and atrial fibrillation"
+    ],
+    "vulnerablePopulations": [
+      "Elderly (>65 years, 70% of cases)",
+      "Low socioeconomic status groups (higher in Northeast region)",
+      "Indigenous and rural populations (limited access to care)",
+      "Women (slightly higher disability-adjusted impact)"
+    ],
+    "diagnosticCriteria": "Clinical symptoms (sudden focal neurological deficit) confirmed by neuroimaging (CT/MRI); subtypes: ischemic (85%, due to thrombosis/embolism) vs. hemorrhagic (15%, intracerebral/subarachnoid); scales like NIHSS for severity"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "25% for hypertension screening in primary care (SUS data)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "1.2 million living with sequelae",
+    "controlRate": "Hypertension control: 45%; thrombolysis access: 10% within golden hour"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Follows AHA/ASA guidelines adapted by SBC; emphasis on rapid CT availability in SUS hospitals",
+    "treatmentProtocol": "SUS protocol includes rt-PA for ischemic within 4.5 hours; antiplatelets/anticoagulants; hemorrhagic management with neurosurgery where available",
+    "regionalChallenges": "Regional disparities (South/Southeast better access; North/Northeast higher mortality due to delayed care); infrastructure gaps in rural areas",
+    "strongPoints": "Universal SUS coverage; national stroke registry initiatives; growing telestroke networks in urban centers"
+  }
+}

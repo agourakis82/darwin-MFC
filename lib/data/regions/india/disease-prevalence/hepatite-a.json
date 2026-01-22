@@ -1,0 +1,51 @@
+{
+  "diseaseId": "hepatite-a",
+  "region": "IN",
+  "diseaseName": "Hepatitis A",
+  "prevalence": {
+    "value": "high seroprevalence in many settings; outbreaks occur in susceptible urban groups",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR / NCDC hepatitis surveillance summaries",
+    "trend": "shifting epidemiology with improving sanitation: fewer childhood infections, more adult outbreaks in some cities"
+  },
+  "incidence": {
+    "value": "variable; outbreaks drive reported incidence",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "ICMR/NCDC outbreak reports"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; higher in adult outbreaks",
+    "mortalityRate": "Low; severe disease in adults is uncommon but can occur",
+    "year": 2024,
+    "source": "IHME GBD / WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "contaminated water and food",
+      "poor sanitation and overcrowding",
+      "household transmission",
+      "travel and outbreak exposure"
+    ],
+    "vulnerablePopulations": [
+      "children in low-sanitation settings",
+      "unvaccinated adolescents and adults in higher-income urban groups",
+      "populations affected by waterborne outbreaks"
+    ],
+    "diagnosticCriteria": "Acute hepatitis with anti-HAV IgM positivity; clinical syndrome and elevated transaminases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; outbreak detection and testing of symptomatic cases",
+    "treatmentAvailable": true,
+    "estimatedPatients": "variable by outbreaks",
+    "controlRate": "High recovery; prevention focuses on sanitation and vaccination in specific risk settings"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Serology (anti-HAV IgM) used in outbreak investigations and hospital cases",
+    "treatmentProtocol": "Supportive care; public health response to water/food source contamination",
+    "regionalChallenges": "Waterborne outbreaks and uneven access to clean water/sanitation across states",
+    "strongPoints": "Public health outbreak response capacity through NCDC and state surveillance systems"
+  }
+}
+

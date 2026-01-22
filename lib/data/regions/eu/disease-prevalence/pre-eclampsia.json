@@ -1,0 +1,53 @@
+{
+  "diseaseId": "pre-eclampsia",
+  "region": "EU",
+  "diseaseName": "Pre-eclampsia",
+  "prevalence": {
+    "value": "~3-5% of pregnancies",
+    "population": "Pregnant people in the EU",
+    "year": 2024,
+    "source": "WHO Europe / European obstetric epidemiology syntheses",
+    "trend": "stable; risk influenced by maternal age and cardiometabolic factors"
+  },
+  "incidence": {
+    "value": "~30-50 per 1,000 pregnancies",
+    "population": "Pregnant people",
+    "year": 2024,
+    "source": "European perinatal surveillance syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "concentrated in maternal/neonatal outcomes",
+    "mortalityRate": "Low in most member states; severe morbidity persists",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "first pregnancy",
+      "prior pre-eclampsia",
+      "multiple gestation",
+      "chronic hypertension",
+      "diabetes and obesity",
+      "advanced maternal age"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people with limited prenatal access (migrants, social vulnerability)",
+      "patients with chronic hypertension/diabetes",
+      "multiple gestation pregnancies"
+    ],
+    "diagnosticCriteria": "Hypertension after 20 weeks with proteinuria and/or end-organ dysfunction; management per national guidelines aligned with international obstetric standards"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "prenatal BP screening is routine with high coverage in most member states",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~150,000-250,000 pregnancies/year",
+    "controlRate": "High in most settings due to structured prenatal care and referral pathways"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Standardized antenatal surveillance with lab testing and fetal monitoring when indicated",
+    "treatmentProtocol": "Aspirin prophylaxis for high-risk pregnancies, antihypertensives, magnesium sulfate for severe features, and timely delivery planning with neonatal support",
+    "regionalChallenges": "Increasing maternal age and obesity and heterogeneity in care resources across member states",
+    "strongPoints": "High prenatal care coverage, strong referral systems, and neonatal intensive care capacity in most member states"
+  }
+}
+

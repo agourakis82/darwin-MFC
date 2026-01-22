@@ -1,0 +1,51 @@
+{
+  "diseaseId": "angioedema-hereditario",
+  "region": "IN",
+  "diseaseName": "Hereditary Angioedema (HAE)",
+  "prevalence": {
+    "value": "~1 per 50,000 (underdiagnosed)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Orphanet; HAE epidemiology reviews; Indian allergy/immunology center reports",
+    "trend": "increasing diagnosed prevalence with improved complement testing awareness"
+  },
+  "incidence": {
+    "value": "Rare; family-based detection common",
+    "population": "All ages",
+    "year": 2024,
+    "source": "HAE registries"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but high acute morbidity; risk of fatal laryngeal edema without on-demand therapy",
+    "mortalityRate": "Low with access to therapy; higher with delayed diagnosis",
+    "year": 2024,
+    "source": "HAE registry outcomes"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "SERPING1 pathogenic variant (common)",
+      "family history (autosomal dominant)",
+      "estrogen exposure (can worsen)",
+      "trauma/dental procedures (trigger)",
+      "ACE inhibitor exposure (avoid in HAE)"
+    ],
+    "vulnerablePopulations": [
+      "patients without complement testing access",
+      "women with hormonally triggered attacks",
+      "patients in remote areas without emergency therapy"
+    ],
+    "diagnosticCriteria": "Recurrent angioedema without urticaria; low C4; low C1-inhibitor level/function; confirm with repeat tests and genetics when available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; cascade testing when index case diagnosed",
+    "treatmentAvailable": true,
+    "estimatedPatients": "A few thousand (rare; likely underdiagnosed)",
+    "controlRate": "Variable; depends on access to on-demand and prophylactic therapies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Complement testing and specialist referral concentrated in tertiary centers",
+    "treatmentProtocol": "On-demand therapy (C1-INH or bradykinin antagonist where available), prophylaxis for frequent/severe attacks, trigger avoidance, emergency action plan",
+    "regionalChallenges": "Underdiagnosis and limited availability/cost of specific HAE therapies",
+    "strongPoints": "Distinct biomarker-based diagnosis and major benefit from correct therapy once accessed"
+  }
+}

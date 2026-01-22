@@ -1,0 +1,53 @@
+{
+  "diseaseId": "osteoartrite",
+  "region": "BR",
+  "diseaseName": "Osteoartrite",
+  "prevalence": {
+    "value": "8.2%",
+    "population": "Brazilian adults aged 40+",
+    "year": 2024,
+    "source": "SBR/DataSUS (2023 estimates)",
+    "trend": "increasing due to aging population"
+  },
+  "incidence": {
+    "value": "280 per 100,000",
+    "population": "adults aged 40+",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2019, extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.012 DALYs",
+    "mortalityRate": "0.1 per 100,000 (indirect)",
+    "year": 2024,
+    "source": "GBD Brazil 2019, PAHO/WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age (>50 years)",
+      "obesity (BMI >30)",
+      "female sex",
+      "previous joint injuries",
+      "occupational repetitive stress (for knee and hip OA)"
+    ],
+    "vulnerablePopulations": [
+      "elderly (>65 years)",
+      "women post-menopause",
+      "low socioeconomic groups",
+      "rural and indigenous populations",
+      "obese individuals"
+    ],
+    "diagnosticCriteria": "ACR/EULAR criteria: knee OA - knee pain plus at least 3 of 6 clinical features (e.g., crepitus, bony tenderness); hip OA - groin pain, limited internal rotation; confirmed by X-ray (Kellgren-Lawrence grade ≥2)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "<15% in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "approximately 14 million",
+    "controlRate": "35-45% with symptom management"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Adapted ACR criteria in SUS, emphasizing clinical over imaging due to resource limits",
+    "treatmentProtocol": "Stepwise: analgesics/NSAIDs, physiotherapy, intra-articular injections; total knee/hip arthroplasty for advanced cases via SUS waitlists",
+    "regionalChallenges": "Unequal access in North/Northeast regions, long surgical wait times (up to 2 years), high obesity prevalence exacerbating knee OA",
+    "strongPoints": "Robust SUS coverage for medications, growing telemedicine for rural diagnosis, strong rheumatology societies (SBR) supporting training"
+  }
+}

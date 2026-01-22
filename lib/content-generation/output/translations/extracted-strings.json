@@ -1,0 +1,1634 @@
+[
+  {
+    "moduleId": "acne",
+    "moduleName": "Manejo da Acne Vulgaris",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Manejo da Acne Vulgaris",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A acne vulgaris é uma condição inflamatória crônica da unidade pilosebácea que afeta comumente adultos, adolescentes e pré-adolescentes com 9 anos ou mais . É uma das condições de pele mais comuns em crianças e adolescentes, com apresentação, diagnóstico diferencial e associações com patologias sistêmicas variando por idade . O manejo envolve abordagens tópicas, sistêmicas e dermocosméticas, com impacto negativo na qualidade de vida, incluindo ansiedade e depressão . Condições associadas como síndrome dos ovários policísticos (SOP) podem contribuir para acne em mulheres .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "No SUS, o manejo da acne é recomendado para pacientes com lesões moderadas a graves, priorizando tratamentos acessíveis e protocolos dermatológicos latino-americanos .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adolescentes e adultos com acne vulgaris sintomática, incluindo aqueles com comorbidades como SOP .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação clínica inicial e follow-up a cada 4-6 semanas durante tratamento ativo .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "As diretrizes da American Academy of Dermatology (AAD) recomendam manejo baseado em gravidade, com terapias tópicas para leve, combinação para moderada e sistêmicas para grave . Sociedade Endócrina para acne associada a SOP .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "Alta prevalência em adolescentes e jovens adultos, afetando comumente populações pediátricas e adultas . Prevalência global estimada em até 80-90% durante a adolescência .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência aumenta na puberdade, com picos em 12-24 anos .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Mortalidade negligible, mas morbidade significativa devido a cicatrizes e impacto psicológico .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "alzheimer",
+    "moduleName": "Diagnóstico e Avaliação de Doença de Alzheimer",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Diagnóstico e Avaliação de Doença de Alzheimer",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A doença de Alzheimer é a forma mais comum de demência, caracterizada por declínio cognitivo progressivo . As diretrizes recomendam avaliação estruturada para suspeita de comprometimento cognitivo em cuidados primários e especializados . A avaliação inclui história clínica, testes cognitivos e exclusão de causas reversíveis .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Avaliação diagnóstica para pacientes com suspeita de declínio cognitivo ou queixas de memória, sem programa de rastreamento populacional rotineiro .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Idosos acima de 65 anos com fatores de risco como história familiar, hipertensão ou Down syndrome .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Sob demanda clínica, sem periodicidade fixa; reavaliação anual para MCI .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "Avaliação diagnóstica recomendada pela Alzheimer\\",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência global de demência é de aproximadamente 55 milhões de casos, com Alzheimer representando 60-70% . No Brasil, estima-se 1,5 milhão de casos de demência .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência anual global de demência ~10 milhões de novos casos . Para Alzheimer, ~5-10 por 1.000 pessoas-ano em idosos >65 anos .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Alzheimer é a 7ª principal causa de morte global, com ~2 milhões de óbitos anuais . No Brasil, contribui para 5-10% das mortes em idosos .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "ansiedade",
+    "moduleName": "Rastreamento de Transtornos de Ansiedade",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Rastreamento de Transtornos de Ansiedade",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "Os transtornos de ansiedade representam um grupo de condições psiquiátricas comuns, caracterizadas por preocupação excessiva e medo, impactando a funcionalidade diária . O rastreamento precoce em atenção primária é crucial para identificar casos e iniciar intervenções, reduzindo o risco de cronicidade . No contexto brasileiro, a integração ao SUS promove acesso equitativo ao diagnóstico .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Rastreamento indicado para indivíduos com sintomas persistentes de ansiedade em atenção básica, incluindo adultos e adolescentes com queixas emocionais .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos ≥18 anos com fatores de risco como estresse crônico ou comorbidades; adolescentes com sinais de sofrimento psicológico .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação inicial e follow-up anual ou conforme necessidade clínica .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A American Psychiatric Association (2023) recomenda rastreamento sistemático em adultos com sintomas de ansiedade em contextos de atenção primária .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência global de transtornos de ansiedade é de aproximadamente 4% em adultos . No Brasil, estima-se em 9,3% da população adulta .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência anual varia de 2-5% em populações adultas . No contexto brasileiro, cerca de 3% novos casos por ano .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Baixa mortalidade direta, mas associada a 20-30% de risco aumentado de suicídio . No Brasil, contribui indiretamente para 5% das mortes por causas externas .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "asma",
+    "moduleName": "Manejo da Asma",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Manejo da Asma",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A asma é uma doença inflamatória crônica das vias aéreas caracterizada por episódios recorrentes de sibilância, dispneia, aperto torácico e tosse, com variabilidade ao longo do tempo e reversibilidade espontânea ou com tratamento . O manejo precoce é essencial para controle dos sintomas e prevenção de exacerbações . No contexto brasileiro, o Protocolo Clínico do SUS enfatiza o acesso a medicamentos e educação do paciente .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Diagnóstico e manejo de pacientes com suspeita ou confirmação de asma, incluindo avaliação de controle e prevenção de crises . Recomendado para todos os pacientes com sintomas respiratórios persistentes ou recorrentes .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Crianças, adolescentes e adultos com sintomas como tosse noturna, sibilância e dispneia; priorizando grupos de risco como alérgicos e fumantes .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação clínica a cada 1-3 meses para ajuste terapêutico; monitoramento anual de função pulmonar .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A Global Initiative for Asthma (GINA 2024) recomenda diagnóstico baseado em história clínica e testes de função pulmonar, com manejo escalonado para controle . A Sociedade Brasileira de Pneumologia e Tisiologia (SBPT 2021) enfatiza abordagem personalizada e uso de ICS desde o início .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência global varia de 1% a 18% em diferentes populações . No Brasil, estima-se em cerca de 10% em adultos urbanos .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência anual global é de 5-10 casos por 1.000 pessoas . No Brasil, aproximadamente 3-5% ao ano em crianças .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "A mortalidade global é baixa, cerca de 0,1-0,2 por 100.000 habitantes, mas subnotificada em países em desenvolvimento . No Brasil, contribui para 2-3% das mortes por doenças respiratórias .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "celulite",
+    "moduleName": "Celulite (Infecção Bacteriana da Pele)",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Celulite (Infecção Bacteriana da Pele)",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A celulite é uma infecção bacteriana aguda da derme e tecido subcutâneo, geralmente causada por Streptococcus ou Staphylococcus . Caracteriza-se por eritema, calor, edema e dor local . É uma das infecções de pele mais comuns, com potencial para complicações como abscessos ou sepse . No contexto brasileiro, a vigilância é essencial em populações vulneráveis .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Vigilância e detecção precoce de infecções de pele e partes moles em atenção básica, especialmente em casos de exposição a fatores de risco como feridas ou comorbidades .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Populações vulneráveis, incluindo diabéticos, imunossuprimidos, idosos e indivíduos em áreas endêmicas de zoonoses relacionadas .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Monitoramento contínuo e caso a caso, sem periodicidade fixa para rastreamento populacional .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "Diagnóstico e manejo de celulite em pacientes com sinais de infecção cutânea aguda, priorizando tratamento empírico .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência de celulite é estimada em 1-5% em populações gerais, com maior incidência em diabéticos (até 20%) . No Brasil, representa cerca de 10% das infecções de pele atendidas em serviços de saúde .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência global de 24,6 casos por 1.000 pessoas-ano em adultos . No Brasil, estima-se 15-20 casos por 1.000 habitantes anualmente em regiões urbanas .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Mortalidade baixa (1-5%) em casos não complicados, mas até 20% em sepse associada . No Brasil, contribui para 2-3% das mortes por infecções sistêmicas .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "demencia",
+    "moduleName": "Demência",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Demência",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A demência é uma síndrome caracterizada por deterioração progressiva das funções cognitivas, acompanhada de sintomas psiquiátricos e distúrbios comportamentais que levam a incapacidade progressiva e irreversível . É a segunda principal causa de demência neurodegenerativa, com impacto significativo na qualidade de vida de pacientes e familiares . Há evidências de associação entre periodontite e demência, recomendando prevenção e manejo integrado . O diagnóstico precoce utiliza biomarcadores como PET imaging e testes sanguíneos para condições associadas, como doença de Alzheimer . Considerações éticas incluem manejo nutricional e prevenção de reações adversas a medicamentos em idosos . Investigação genética é recomendada em casos selecionados . Consensos enfatizam nutrição enteral controversa em estágios avançados .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Avaliação cognitiva para idosos com suspeita de declínio cognitivo ou fatores de risco, sem programa de rastreamento populacional rotineiro, priorizando diagnóstico precoce na atenção básica ",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Idosos ≥65 anos com sintomas sugestivos, comorbidades ou fatores de risco como polimedicação e comorbidades ",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação anual em idosos sintomáticos ou a cada 1-2 anos em grupos de risco na atenção primária ",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "Diagnóstico utilizando biomarcadores de imagem PET e sanguíneos para condições neurodegenerativas associadas à demência, incluindo Alzheimer e demência com corpos de Lewy; prevenção de eventos adversos medicamentosos e manejo nutricional ",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "Globalmente, a prevalência de demência em adultos >60 anos é de aproximadamente 5-8%, afetando milhões devido ao envelhecimento populacional ",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência anual de cerca de 1-2% em idosos >65 anos, com aumento em populações com comorbidades como periodontite ",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Demência contribui para cerca de 7% das mortes em idosos, com impacto significativo em qualidade de vida e autonomia ",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "depressao",
+    "moduleName": "Rastreamento de Depressão",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Rastreamento de Depressão",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A depressão é uma condição frequente, recorrente e crônica com altos níveis de incapacidade funcional . O rastreamento visa à identificação precoce em atenção primária para melhorar desfechos clínicos .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Rastreamento recomendado em atenção primária para identificação de sintomas depressivos em populações vulneráveis .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos ≥18 anos com fatores de risco como estresse crônico, perdas recentes ou comorbidades .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Oportunístico durante consultas de rotina ou anualmente em grupos de risco .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A Associação Brasileira de Psiquiatria recomenda rastreamento para diagnóstico precoce de depressão maior .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "No Brasil, a prevalência de depressão é estimada em 5,8% na população adulta .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência anual é de aproximadamente 3-4% em adultos .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "A depressão contribui para cerca de 800 mil suicídios globais por ano, com impacto significativo no Brasil .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "dermatite-atopica",
+    "moduleName": "Dermatite Atópica",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Dermatite Atópica",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A dermatite atópica é uma doença inflamatória crônica da pele, caracterizada por prurido intenso e lesões eczematosas . Afeta principalmente crianças, com prevalência global variando de 15-20% em menores de 5 anos . No Brasil, estima-se que afete cerca de 10-15% das crianças . O manejo envolve hidratação, corticoides tópicos e, em casos graves, imunossupressores .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Diagnóstico e manejo inicial em atenção primária para pacientes com suspeita de dermatite atópica, com encaminhamento para especialista em casos moderados a graves .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Crianças e adultos com prurido recorrente, lesões eczematosas e história familiar de atopia .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação clínica a cada 3-6 meses para controle de sintomas .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A Academia Americana de Dermatologia (AAD 2023) recomenda diagnóstico baseado em critérios clínicos e manejo escalonado com emolientes e anti-inflamatórios tópicos .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "Prevalência global em crianças: 15-20% ; em adultos: 1-3% . No Brasil: 12% em crianças urbanas .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência anual global: 10-15% em lactentes ; no Brasil: aproximadamente 8-10 casos por 1.000 crianças/ano .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Baixa mortalidade direta, mas associada a infecções secundárias (0,1-0,5% dos casos graves) ; no Brasil, contribui indiretamente para 0,2% das mortes por infecções cutâneas .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "diabetes-mellitus-2",
+    "moduleName": "Diabetes Mellitus Tipo 2",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Diabetes Mellitus Tipo 2",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "O diabetes mellitus tipo 2 (DM2) é uma doença metabólica crônica caracterizada por hiperglicemia resultante de defeitos na secreção de insulina e/ou ação da insulina . Representa a forma mais prevalente de diabetes, afetando milhões globalmente e sendo uma das principais causas de morbimortalidade . No contexto brasileiro, o DM2 é uma prioridade em saúde pública, com protocolos integrados para prevenção, diagnóstico e tratamento .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Rastreamento recomendado para adultos com sobrepeso (IMC ≥25 kg/m²) e fatores de risco, ou ≥35 anos, visando detecção precoce e prevenção de complicações .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos ≥35 anos; indivíduos <35 anos com IMC ≥25 kg/m², hipertensão, dislipidemia, história familiar de DM2 ou gestantes com risco .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "A cada 3 anos para indivíduos assintomáticos com glicemia normal; anualmente para aqueles com pré-diabetes ou fatores de risco elevados .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A American Diabetes Association (ADA 2024) e Sociedade Brasileira de Diabetes (SBD 2023-2024) recomendam rastreamento para adultos ≥35 anos com sobrepeso ou fatores de risco, enfatizando abordagem personalizada .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "Globalmente, afeta cerca de 10,5% dos adultos (537 milhões em 2021), projetado para 783 milhões até 2045 . No Brasil, prevalência de 7,4% em adultos (aproximadamente 19 milhões) .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência global de 5,9 milhões de novos casos anuais . No Brasil, cerca de 1,5 milhão de novos casos por ano .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Causa 6,7 milhões de mortes globais em 2021 (9ª causa principal) . No Brasil, responsável por 5,3% das mortes por doenças crônicas .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "dislipidemia",
+    "moduleName": "Rastreamento de Dislipidemia",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Rastreamento de Dislipidemia",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "O rastreamento de dislipidemia é essencial para a prevenção de eventos cardiovasculares ateroscleróticos, com foco na identificação precoce de alterações lipídicas como hipercolesterolemia e hipertrigliceridemia . No Brasil, a dislipidemia é um fator de risco prevalente, contribuindo para a alta morbimortalidade cardiovascular . A abordagem integrada considera o risco cardiovascular global .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Rastreamento recomendado para prevenção de eventos cardiovasculares e pancreatite em indivíduos com fatores de risco ou ≥40 anos .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos ≥40 anos; indivíduos <40 anos com obesidade, diabetes, hipertensão ou história familiar de doença cardiovascular precoce .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "A cada 5 anos em indivíduos de baixo risco; anualmente em alto risco .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A Sociedade Brasileira de Cardiologia (2017) e diretrizes ESC recomendam rastreamento para avaliação de risco cardiovascular em adultos .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "No Brasil, a prevalência de dislipidemia é de aproximadamente 30-40% em adultos, com hipercolesterolemia afetando 25% da população . Globalmente, estima-se em 39% para hipercolesterolemia .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência anual de dislipidemia em adultos é de 5-10 casos por 1.000 habitantes, associada ao envelhecimento e obesidade . No Brasil, contribui para 20% dos novos casos de doença coronariana .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "A dislipidemia contribui para 4,4 milhões de mortes globais por CVD anualmente . No Brasil, representa fator em 30% das mortes cardiovasculares .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "doenca-renal-cronica",
+    "moduleName": "Rastreamento de Doença Renal Crônica",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Rastreamento de Doença Renal Crônica",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A Doença Renal Crônica (DRC) é definida como anormalidades na estrutura ou função renal por mais de três meses, com implicações na saúde . A prevalência global é estimada em 9,1% a 13,4% em adultos . No Brasil, a prevalência é de aproximadamente 10,2% na população adulta . O rastreamento precoce visa identificar estágios iniciais para retardar a progressão .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Rastreamento recomendado para indivíduos com fatores de risco como diabetes mellitus, hipertensão arterial, doenças cardiovasculares, idade superior a 60 anos, história familiar de DRC, obesidade e tabagismo .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos maiores de 18 anos com fatores de risco cardiovascular ou renal; priorizar pacientes com diabetes e hipertensão .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Anual para grupos de alto risco; a cada 1-2 anos para populações de risco moderado .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A KDIGO (2024) recomenda avaliação de TFG e albuminúria em adultos com fatores de risco, incluindo diabetes, hipertensão, idade >60 anos, histórico familiar e marcadores de risco cardiovascular . A Sociedade Brasileira de Nefrologia (2022) endossa rastreamento similar para detecção precoce .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência global de DRC é de 9,1% a 13,4% em adultos, afetando cerca de 700 milhões de pessoas . No Brasil, estima-se em 10,2% da população adulta .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência global é de aproximadamente 133 casos por milhão de habitantes por ano . No Brasil, a incidência anual é de cerca de 120-150 por milhão .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "A DRC contribui para 4,9 milhões de mortes globais em 2021, sendo a 9ª causa principal . No Brasil, representa cerca de 5% das mortes por doenças crônicas não transmissíveis .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "dpoc",
+    "moduleName": "Rastreamento de Doença Pulmonar Obstrutiva Crônica (DPOC)",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Rastreamento de Doença Pulmonar Obstrutiva Crônica (DPOC)",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A Doença Pulmonar Obstrutiva Crônica (DPOC) é uma doença respiratória crônica progressiva, caracterizada por limitação ao fluxo aéreo, sendo uma das principais causas de morbimortalidade global . O rastreamento visa identificar casos precocemente em populações de risco por meio de espirometria, reduzindo complicações e mortalidade . No contexto brasileiro, a DPOC afeta significativamente o sistema de saúde pública .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Rastreamento recomendado para indivíduos com sintomas respiratórios crônicos, tabagistas ou ex-tabagistas acima de 40 anos, e exposição ocupacional a poeiras ou fumos .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos ≥40 anos com história de tabagismo ≥20 maços-ano, dispneia ou tosse crônica, e exposição ambiental .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação inicial com espirometria; repetição anual em casos confirmados ou de alto risco .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A Global Initiative for Chronic Obstructive Lung Disease (GOLD 2024) e a Sociedade Brasileira de Pneumologia e Tisiologia (SBPT 2021) recomendam busca ativa (case-finding) em indivíduos de risco, não rastreamento populacional geral .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência global de DPOC em adultos >40 anos é estimada em 12,1% . No Brasil, a prevalência é de aproximadamente 13,6% em indivíduos >40 anos .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência global varia de 1,5 a 2,5 casos por 1.000 pessoas-ano em populações de risco . No Brasil, estima-se 100.000 novos casos anuais .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "A DPOC é a terceira causa de morte global, com 3,23 milhões de óbitos em 2019 . No Brasil, representa cerca de 5% das mortes por doenças crônicas .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "epilepsia",
+    "moduleName": "Epilepsia",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Epilepsia",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A epilepsia é um distúrbio neurológico caracterizado por crises recorrentes e autolimitadas, com classificação atualizada pela ILAE considerando etiologia, comorbidades e síndrome . A identificação precoce em neonatos, lactentes e crianças é essencial para manejo . Malformações do desenvolvimento cortical estão associadas a epilepsia refratária .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Não há programa específico de rastreamento populacional no SUS para epilepsia; diagnóstico indicado por história clínica de crises recorrentes e avaliação neurológica . Recomendado em neonatos e crianças com suspeita de síndromes epilépticas .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Indivíduos com crises convulsivas suspeitas, neonatos, lactentes e crianças com fatores de risco como malformações corticais .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação imediata para diagnóstico; follow-up periódico conforme necessidade clínica, sem periodicidade fixa para rastreamento .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A ILAE recomenda classificação e diagnóstico de síndromes epilépticas com base em idade de início, etiologia e EEG para orientação terapêutica . Identificação em neonatos e infância para manejo precoce .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência global de epilepsia é de aproximadamente 0,5-1% da população . Em neonatos e lactentes, a incidência de epilepsia é alta, afetando até 1-2% em grupos de risco . No Brasil, estima-se prevalência similar à global, em torno de 1% .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência anual global é de 40-70 casos por 100.000 habitantes . Em neonatos, pode ser de 1-3 por 1.000 nascidos vivos .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "A mortalidade associada à epilepsia inclui status epilepticus com alta morbimortalidade; taxa de SUDEP é de cerca de 1 por 1.000 pacientes-ano .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "esquizofrenia",
+    "moduleName": "Esquizofrenia",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Esquizofrenia",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A esquizofrenia é uma síndrome heterogênea que afeta múltiplas dimensões da vida do paciente, sem cura, mas controlável com terapias farmacológicas e psicossociais . Definições inconsistentes de resistência ao tratamento limitam a pesquisa e a prática clínica . Aproximadamente 30% dos pacientes não respondem a dois ensaios adequados de antipsicóticos, caracterizando esquizofrenia resistente ao tratamento (TRS) . Consensos enfatizam a necessidade de abordagem multidimensional, incluindo monitoramento de saúde física devido a comorbidades elevadas .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Tratamento integral no SUS para sintomas psicóticos persistentes, incluindo antipsicóticos e reabilitação psicossocial em Centros de Atenção Psicossocial (CAPS) ",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos com diagnóstico de esquizofrenia ou transtornos psicóticos, priorizando casos resistentes ",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Monitoramento contínuo com avaliações clínicas regulares a cada 3-6 meses ",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "Diagnóstico baseado em critérios consensuais para resposta e resistência; tratamento inicial com antipsicóticos, clozapina para TRS após falha de dois agentes ",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "Prevalência vitalícia global de 0,3-0,7% em adultos ",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência anual de 10-22 casos por 100.000 adultos ",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Mortalidade excessiva com razão de mortalidade padronizada 2-3 vezes maior devido a comorbidades físicas e suicídio ",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "fibrilacao-atrial",
+    "moduleName": "Rastreamento de Fibrilação Atrial",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Rastreamento de Fibrilação Atrial",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A fibrilação atrial (FA) é a arritmia cardíaca sustentada mais comum, associada a risco aumentado de acidente vascular cerebral (AVC) e insuficiência cardíaca . O rastreamento oportunista é essencial para detecção precoce em populações de risco, reduzindo complicações tromboembólicas . A prevalência global é estimada em 2-3% em adultos, aumentando para 8-10% em idosos acima de 80 anos . No Brasil, a prevalência é de aproximadamente 1,4% na população geral, com maior impacto em idosos .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Rastreamento recomendado para indivíduos ≥65 anos e aqueles com fatores de risco cardiovascular (hipertensão, diabetes, histórico familiar) .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos ≥65 anos; adultos <65 anos com fatores de risco como hipertensão arterial, diabetes mellitus ou doença cardíaca .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Anual em populações de alto risco; a cada 2-3 anos em idosos assintomáticos .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A European Society of Cardiology (ESC 2020) e American Heart Association (AHA 2019) recomendam rastreamento sistemático em adultos ≥65 anos para prevenção de AVC .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência global de FA é de 2,7% em adultos (cerca de 33 milhões de casos), com aumento exponencial com a idade . No Brasil, estima-se 1,4% na população adulta, afetando cerca de 2,3 milhões de pessoas .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência global é de 0,6-1,0 casos por 100 habitantes-ano, elevando-se para 2% em idosos . No Brasil, a incidência anual é de aproximadamente 0,2-0,5 por 100 habitantes .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "A FA contribui para 20-30% dos casos de AVC isquêmico, com mortalidade 1,5-2 vezes maior em pacientes afetados . Globalmente, associa-se a 113.000 mortes anuais; no Brasil, é fator em cerca de 10% das mortes cardiovasculares .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "fibromialgia",
+    "moduleName": "Fibromialgia",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Fibromialgia",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A fibromialgia é uma síndrome de dor crônica generalizada associada a fadiga, distúrbios do sono e sintomas somáticos . O diagnóstico é essencialmente clínico, baseado em critérios validados, sem necessidade de exames complementares de rotina .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Diagnóstico indicado para pacientes com dor musculoesquelética crônica generalizada por pelo menos 3 meses, acompanhada de fadiga e distúrbios cognitivos .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos e idosos com suspeita clínica de dor difusa sem causa orgânica identificável .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação diagnóstica realizada uma vez, quando sintomas sugestivos estão presentes; reavaliação conforme evolução clínica .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "Recomendado pelas sociedades de reumatologia o diagnóstico clínico em indivíduos com dor generalizada persistente e sintomas associados, utilizando critérios ACR .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência global da fibromialgia varia de 2% a 8% na população adulta, sendo mais comum em mulheres . No Brasil, estima-se em cerca de 2,5% a 4% .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência anual é estimada em 2 a 4 casos por 1.000 adultos, com maior ocorrência em faixas etárias médias .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "A fibromialgia não está associada a aumento significativo de mortalidade, embora impacte qualidade de vida .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "hipertensao-arterial",
+    "moduleName": "Rastreamento de Hipertensão Arterial",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Rastreamento de Hipertensão Arterial",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A hipertensão arterial é uma condição crônica caracterizada por elevados níveis pressóricos, sendo um fator de risco principal para doenças cardiovasculares . No Brasil, o rastreamento é essencial para detecção precoce e prevenção de complicações . A classificação segue critérios baseados em medições repetidas .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Rastreamento recomendado para todos os adultos em consultas de atenção primária, com ênfase em indivíduos com fatores de risco .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos ≥ 18 anos; priorizar aqueles com obesidade, diabetes ou história familiar .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Anual para adultos saudáveis; semestral ou trimestral para hipertensos controlados ou de alto risco .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A Sociedade Brasileira de Cardiologia recomenda rastreamento sistemático para detecção de hipertensão primária e secundária .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência no Brasil é de aproximadamente 35% em adultos . Globalmente, afeta cerca de 1,28 bilhão de adultos .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência anual no Brasil varia de 2-5% em adultos jovens .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Responsável por 13% das mortes globais; no Brasil, contribui para 300 mil óbitos anuais por DCV .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "hipotireoidismo",
+    "moduleName": "Rastreamento de Hipotireoidismo",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Rastreamento de Hipotireoidismo",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "O rastreamento de hipotireoidismo visa identificar precocemente disfunções tireoidianas para prevenir complicações cardiovasculares e neurológicas . A prevalência global de hipotireoidismo subclínico é de aproximadamente 4,6% em adultos . No Brasil, estima-se uma prevalência de 9% em mulheres adultas . O hipotireoidismo congênito afeta 1 em 2.000 a 4.000 recém-nascidos .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Rastreamento obrigatório para hipotireoidismo congênito em todos os recém-nascidos . Para adultos, indicado em grupos de risco como gestantes, idosos e pacientes com sintomas sugestivos .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Todos os recém-nascidos no nascimento; adultos com fatores de risco (idade >60 anos, história familiar, sintomas) .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Única vez no nascimento para congênito; a cada 6-12 meses em gestantes e anualmente em alto risco para adquirido .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A American Thyroid Association (2021) recomenda rastreamento em gestantes, pós-parto e recém-nascidos, mas não rotineiro em adultos assintomáticos . A SBEM (2022) endossa triagem em grupos de risco como mulheres >35 anos e pacientes com comorbidades .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "Prevalência global de hipotireoidismo manifesto é de 0,3-1%, e subclínico de 4-10% . No Brasil, prevalência de 3-9% em adultos, com maior impacto em mulheres . Para congênito, 1:3.000 nascidos vivos .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência anual global de 1-2 casos por 1.000 adultos . No Brasil, cerca de 1:2.500 para congênito .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Hipotireoidismo não tratado aumenta mortalidade cardiovascular em 20-50% . No Brasil, contribui para 5% das mortes por DCNT associadas .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "insuficiencia-cardiaca",
+    "moduleName": "Insuficiência Cardíaca",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Insuficiência Cardíaca",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A insuficiência cardíaca (IC) é uma síndrome clínica caracterizada pela incapacidade do coração em bombear sangue suficiente para atender às demandas metabólicas do organismo, resultando em sintomas como dispneia, fadiga e retenção de líquidos . É uma das principais causas de morbimortalidade cardiovascular global, com alta prevalência de fatores de risco como hipertensão e diabetes . No contexto brasileiro, a IC afeta significativamente o sistema de saúde, com ênfase em protocolos integrados para diagnóstico e tratamento .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Diagnóstico e tratamento da IC recomendado para pacientes com sintomas sugestivos (dispneia, edema) ou fatores de risco como hipertensão e IAM prévio, com uso de protocolos integrados no SUS .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos com suspeita clínica de IC, incluindo aqueles com hipertensão não controlada ou história de IAM; priorizar populações vulneráveis em atenção primária .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Monitoramento anual para pacientes estáveis; reavaliação imediata em descompensação; ecocardiograma inicial e follow-up a cada 6-12 meses .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A AHA/ACC/HFSA (2022) recomenda avaliação diagnóstica para IC em pacientes com sintomas de congestão ou redução da tolerância ao exercício, com estratificação por fração de ejeção .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência global de IC é de aproximadamente 1-2% na população adulta, aumentando para >10% em idosos >70 anos . No México, alta prevalência associada a fatores de risco . Em Portugal, 15,2% de HFpEF em ≥50 anos . No Brasil, estimada em 1,6-2,5% na população geral .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência global de 1-5 casos por 1.000 pessoas-ano, maior em populações com comorbidades . No Brasil, incidência anual de cerca de 2-3 por 1.000 em adultos >45 anos .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Mortalidade em 5 anos de 50% para IC sintomática . No Brasil, IC contribui para 10-15% das mortes cardiovasculares, com taxa de 30-40 por 100.000 habitantes .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "itu",
+    "moduleName": "Rastreamento de Infecção do Trato Urinário",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Rastreamento de Infecção do Trato Urinário",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "O rastreamento de infecção do trato urinário (ITU) é essencial para identificação precoce em populações de risco, como gestantes e pacientes em unidades de terapia intensiva . A prevalência é elevada em mulheres adultas .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Rastreamento recomendado para gestantes e pacientes com fatores de risco em unidades hospitalares .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Gestantes; adultos em ITU com cateterismo urinário; mulheres com recorrência .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Semestral em gestantes; semanal em pacientes cateterizados em ITU .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A American Diabetes Association (2024) e sociedades semelhantes recomendam rastreamento em populações vulneráveis, adaptado para ITU em contextos de risco metabólico .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência de ITU em mulheres adultas é de aproximadamente 50-60% ao longo da vida . No Brasil, estima-se em 10-15% em populações hospitalizadas .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência anual em mulheres pré-menopausa é de 10-20% . Em pacientes em ITU, pode atingir 25% .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "A mortalidade direta por ITU complicada é baixa (1-2%), mas elevada em sepse (20-40%) . No Brasil, contribui para 5% das mortes hospitalares relacionadas a infecções .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "lombalgia",
+    "moduleName": "Lombalgia",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Lombalgia",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A lombalgia, ou dor lombar, é uma das principais causas de incapacidade global, afetando milhões de indivíduos . Representa um desafio significativo em protocolos clínicos e de rastreamento de distúrbios osteomusculares . A abordagem integrada entre tratamento não invasivo e manejo multidisciplinar é essencial .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Recomendado para pacientes com lombalgia aguda, subaguda ou crônica, priorizando abordagem não farmacológica e avaliação ocupacional em casos relacionados ao trabalho .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos com dor lombar persistente >3 meses ou episódios recorrentes; trabalhadores expostos a fatores de risco ergonômicos .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação inicial imediata; follow-up a cada 4-6 semanas para lombalgia crônica, com reavaliação anual em contextos ocupacionais .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "Tratamento não invasivo recomendado para lombalgia aguda, subaguda e crônica, com foco em terapias multimodais .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "Prevalência pontual global de 7,5% em adultos ; no Brasil, estima-se em 18-30% para lombalgia crônica .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência anual global de 5-10% ; no Brasil, cerca de 9% em populações trabalhadoras .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Baixa mortalidade direta, mas contribui para 60,8 milhões de anos vividos com incapacidade globalmente ; no Brasil, associada a morbidade ocupacional sem mortalidade significativa .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "obesidade",
+    "moduleName": "Rastreamento e Manejo da Obesidade",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Rastreamento e Manejo da Obesidade",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A obesidade é uma doença crônica multifatorial caracterizada por acúmulo excessivo de tecido adiposo que pode prejudicar a saúde . Está associada a comorbidades como síndrome metabólica , hipertensão , apneia obstrutiva do sono , diabetes em idosos , esteatose hepática metabólica  e risco vascular . No contexto brasileiro, representa um desafio significativo para o sistema de saúde .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Avaliação antropométrica para identificação de sobrepeso e obesidade em consultas de atenção primária, com ênfase em manejo integrado para doença crônica . Uso de liraglutida indicado para obesidade grau III ou II com comorbidades, após falha em mudanças de estilo de vida .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos e adolescentes com IMC ≥25 kg/m², priorizando aqueles com fatores de risco como hipertensão, diabetes ou dislipidemia .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Monitoramento anual ou a cada consulta de rotina para avaliação de peso e IMC; reavaliação a cada 3-6 meses durante tratamento farmacológico .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "Rastreamento universal de obesidade em adultos por meio de medidas antropométricas, com intervenções lifestyle como primeira linha; farmacoterapia para obesidade clínica (IMC ≥30 kg/m² ou ≥27 kg/m² com comorbidades) .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "Globalmente, a prevalência de obesidade em adultos é de 13% (cerca de 1 bilhão de pessoas em 2022) . No Brasil, estima-se em 22,4% entre adultos em 2021 .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência anual de obesidade varia de 1 a 2% em populações adultas, com maior risco em indivíduos com sobrepeso inicial .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "A obesidade contribui para aproximadamente 4,7 milhões de mortes anuais globalmente, principalmente por doenças cardiovasculares e metabólicas . No Brasil, associa-se a elevada morbimortalidade por DCNT .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "osteoartrite",
+    "moduleName": "Diagnóstico Precoce e Manejo da Osteoartrite",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Diagnóstico Precoce e Manejo da Osteoartrite",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A osteoartrite (OA) é a doença articular degenerativa mais prevalente, caracterizada por dor e rigidez articular, afetando principalmente joelhos, quadris e mãos . O diagnóstico precoce é essencial para intervenções não farmacológicas e farmacológicas que melhoram a qualidade de vida .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Diagnóstico indicado para adultos com dor articular persistente >3 meses, idade >50 anos ou fatores de risco como obesidade e trauma prévio . Não há rastreamento populacional rotineiro, mas avaliação em atenção primária para sintomas .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos >50 anos com sintomas articulares ou fatores de risco (IMC >30 kg/m², ocupações de alto impacto) .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação sob demanda, sem periodicidade fixa; reavaliação anual em casos de progressão .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A Sociedade Brasileira de Reumatologia recomenda diagnóstico clínico para pacientes com dor articular crônica e limitação funcional . Avaliação em indivíduos de risco para detecção precoce .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência global de OA sintomática é de aproximadamente 7% em adultos >50 anos, atingindo 30% em >65 anos . No Brasil, estima-se 6,2% na população adulta, com maior impacto em mulheres .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência anual é de 10-20 casos por 1.000 pessoas >45 anos globalmente . No Brasil, cerca de 1,5% ao ano em idosos .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "A mortalidade direta é baixa (<1%), mas OA contribui para 2-3% das mortes por incapacidade e comorbidades cardiovasculares . No Brasil, associa-se a 1,2% das internações por DCNT .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "osteoporose",
+    "moduleName": "Diagnóstico e Tratamento da Osteoporose",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Diagnóstico e Tratamento da Osteoporose",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A osteoporose é uma doença metabólica óssea caracterizada por baixa massa óssea, deterioração da microarquitetura óssea e aumento do risco de fraturas . A introdução da dual-energy X-ray absorptiometry (DXA) revolucionou o diagnóstico e manejo da osteoporose desde os anos 1980 . No Brasil, a osteoporose é considerada um problema de saúde pública, com alta incidência de fraturas em mulheres pós-menopausa . O diagnóstico baseia-se em T-score ≤ -2,5 pela DXA, além de avaliação de risco de fraturas .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Rastreamento por DXA recomendado para mulheres pós-menopausa ≥65 anos ou com fatores de risco como fratura prévia, uso de glicocorticoides ou baixa massa óssea . Tratamento com bifosfonatos ou denosumabe para T-score ≤ -2,5 ou fratura osteoporótica .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Mulheres pós-menopausa ≥65 anos; mulheres <65 anos com fatores de risco (fratura, raquitismo, hipogonadismo) .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "DXA a cada 1-2 anos em pacientes de alto risco; monitoramento anual para tratamento com denosumabe .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A AACE/ACE (2020) recomenda DXA para mulheres ≥65 anos e homens ≥70 anos; tratamento farmacológico para T-score ≤ -2,5 ou fratura de fragilidade . Diretrizes Brasileiras (2021) enfatizam screening em mulheres pós-menopausa com risco . Austrian Society (2024) atualiza para inclusão de REMS como alternativa não-ionizante .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência global de osteoporose em mulheres >50 anos é de cerca de 18-23%, com maior incidência em países desenvolvidos . No Brasil, estima-se em 10-15% em mulheres pós-menopausa .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência de fraturas osteoporóticas é de 1-2 por 100 mulheres/ano >50 anos globalmente . No Brasil, fraturas vertebrais afetam 20% das mulheres >65 anos .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Fraturas de quadril associadas a 20% de mortalidade em 1 ano . No Brasil, osteoporose contribui para 5-10% das mortes por DCNT em idosos .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "parkinson",
+    "moduleName": "Doença de Parkinson",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Doença de Parkinson",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A doença de Parkinson (DP) é uma doença neurodegenerativa progressiva caracterizada por tremor, rigidez, bradicinesia e instabilidade postural . O diagnóstico é principalmente clínico, sem rastreamento populacional rotineiro recomendado . A gestão envolve terapia física, farmacológica e nutricional para melhorar a qualidade de vida .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Não há programa específico de rastreamento populacional para DP no SUS; diagnóstico baseado em sintomas e avaliação neurológica em atenção primária . Recomenda-se manejo multidisciplinar para casos confirmados .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos com sintomas sugestivos (tremor em repouso, bradicinesia) ≥50 anos; idosos com declínio motor .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação contínua em atenção primária para pacientes diagnosticados; sem periodicidade para rastreamento assintomático .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A American Physical Therapy Association (2022) recomenda terapia física para manejo de DP . Canadian Guideline (2019) enfatiza diagnóstico precoce e tratamento farmacológico . Consensus on tremors (2018) auxilia na classificação .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "Prevalência global de DP é de aproximadamente 1% em indivíduos >60 anos, afetando cerca de 10 milhões de pessoas . No Canadá e contextos semelhantes, 0,3% na população geral . No Brasil, estimativas indicam 200.000 casos, com prevalência de 0,5-1% em idosos .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência anual de 8-18 casos por 100.000 habitantes, aumentando com a idade .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "DP contribui para mortalidade por complicações como quedas e pneumonia; taxa de mortalidade padronizada ~1,5 vezes maior que a população geral .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "pneumonia",
+    "moduleName": "Pneumonia",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Pneumonia",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A pneumonia é uma infecção aguda do parênquima pulmonar causada por bactérias, vírus ou fungos, representando uma das principais causas de morbimortalidade respiratória . Pode ser classificada como adquirida na comunidade (CAP), hospitalar (HAP) ou associada à ventilação mecânica (VAP) . Em crianças, é uma causa comum de hospitalização . No contexto brasileiro, o manejo segue protocolos para infecções respiratórias .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Manejo clínico de infecções respiratórias agudas, incluindo pneumonia como complicação de influenza ou em atenção básica para casos leves .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos e crianças com sintomas respiratórios agudos, priorizando grupos vulneráveis como idosos e imunocomprometidos .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação imediata para sintomas agudos; follow-up conforme evolução clínica, sem periodicidade fixa para rastreamento .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "Diagnóstico e tratamento empírico de CAP em adultos com sintomas como febre, tosse e infiltrados pulmonares ; para HAP/VAP, cobertura para patógenos multirresistentes ; em crianças >3 meses, avaliação etiológica  .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A pneumonia afeta cerca de 5-11 casos por 1.000 adultos/ano globalmente para CAP ; em crianças, é prevalente em <5 anos com taxas de 0,5-2% . No Brasil, estima-se 1-2 milhões de casos anuais de CAP .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência global de pneumonia é de 150 milhões de casos/ano, com 4-5 milhões de mortes ; para VAP, 10-20% dos ventilados . No Brasil, incidência de CAP é 3-5/1.000 habitantes/ano .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Mortalidade de CAP em adultos é 5-7% em hospitalizados ; para VAP, 20-40% ; em crianças, <1% com tratamento adequado . No Brasil, pneumonia é 4ª causa de morte por doenças respiratórias .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "psoriase",
+    "moduleName": "Psoríase",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Psoríase",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A psoríase é uma doença inflamatória crônica e imunomediada da pele, caracterizada por placas eritematoescamosas . A prevalência global varia de 1% a 3% . No Brasil, estima-se em 1% a 2% da população . O consenso brasileiro atualiza o manejo, incluindo algoritmos de tratamento . Biossimilares são recomendados para reduzir custos em terapias biológicas .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Diagnóstico clínico para lesões cutâneas suspeitas de psoríase; tratamento acessível via SUS para casos moderados a graves .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos e crianças com sintomas cutâneos persistentes ou história familiar .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação inicial e monitoramento a cada 3-6 meses conforme resposta ao tratamento .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A Sociedade Brasileira de Dermatologia recomenda diagnóstico baseado em critérios clínicos e tratamento escalonado por gravidade . Posição portuguesa endossa biossimilares para psoríase moderada a grave .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "Global: 1-3% em adultos . Brasil: 1-2% .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência anual de 0,1-0,2% em populações caucasianas; menor em populações latinas .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Baixa diretamente, mas aumenta risco de comorbidades cardiovasculares (RR 1,5-2,0) .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "rinite-alergica",
+    "moduleName": "Rinite Alérgica",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Rinite Alérgica",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A rinite alérgica é uma doença inflamatória mediada por IgE da mucosa nasal, caracterizada por sintomas como espirros, rinorreia, obstrução nasal e coceira . A condição afeta a qualidade de vida e pode estar associada à asma . No contexto brasileiro, representa um desafio significativo no sistema de saúde pública .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Diagnóstico e manejo recomendado para pacientes com sintomas nasais persistentes ou intermitentes, especialmente em populações com história familiar de atopia ou exposição a alérgenos .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Indivíduos de todas as idades com sintomas sugestivos de rinite, priorizando crianças e adultos em áreas urbanas com alta exposição ambiental .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação inicial e seguimento anual ou conforme necessidade clínica para controle sintomático .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A ARIA (Allergic Rhinitis and its Impact on Asthma) 2019 recomenda avaliação para pacientes com sintomas alérgicos nasais, integrando classificação em intermitente/persistente e leve/moderada-grave .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência global de rinite alérgica é estimada em 10-40% em adultos e até 40% em crianças . No Brasil, atinge cerca de 20-30% da população, com maior impacto em regiões urbanas .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência anual varia de 5-10% em populações atópicas . No Brasil, observa-se aumento de 2-5% ao ano em áreas metropolitanas .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "A mortalidade direta é baixa, inferior a 0,1%, mas contribui indiretamente para morbimortalidade por complicações respiratórias .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "sinusite",
+    "moduleName": "Sinusite Aguda",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Sinusite Aguda",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A sinusite aguda é uma inflamação das mucosas dos seios paranasais, frequentemente associada a infecções virais ou bacterianas . O tratamento antibiótico sistêmico é utilizado em prática rotineira para casos exacerbados em adultos e crianças . Em crianças, a terapia oral é recomendada para sinusite aguda sintomática . Nos adultos, o manejo inclui antibióticos orais em infecções confirmadas .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "No SUS, o tratamento com antibióticos é indicado para sinusite aguda bacteriana suspeita em adultos e crianças com sintomas persistentes >10 dias ou agravamento .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Crianças e adultos com sintomas de sinusite aguda, priorizando casos com risco de complicações .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Tratamento agudo, sem rastreamento periódico; reavaliação em 48-72 horas se sem melhora .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "Sociedades recomendam antibióticos para sinusite aguda em adultos e crianças apenas se sintomas >10 dias, febre alta ou piora após melhora inicial .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência de sinusite aguda é estimada em 10-15% da população anual, com maior incidência em crianças . No Brasil, afeta cerca de 11% das consultas respiratórias .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência global de 0,5-2% por ano, com picos sazonais .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Baixa mortalidade (<0,1%), principalmente em complicações raras como meningite .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "toc",
+    "moduleName": "Transição de Cuidados",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Transição de Cuidados",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "A transição de cuidados (ToC) refere-se ao processo coordenado de passagem de pacientes com condições crônicas ou pós-AVC do ambiente hospitalar para o domicílio e comunidade, visando melhorar a participação e qualidade de vida . Em países em desenvolvimento, como o Brasil, a ToC para jovens com necessidades especiais de saúde é essencial devido à melhora na sobrevivência de doenças crônicas na infância . Recomendações incluem melhoria na comunicação, uso de coordenadores de transição e educação de pacientes/cuidadores .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Transição de cuidados recomendada para jovens com doenças crônicas de início na infância e pacientes pós-AVC para integração ao sistema de saúde adulta .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Jovens com necessidades especiais de saúde e sobreviventes de AVC .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Planejamento contínuo durante a internação e follow-up pós-alta .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "American Congress of Rehabilitation Medicine recomenda ToC pós-AVC com foco em participação comunitária . Indian Academy of Pediatrics enfatiza ToC organizada para juventude com condições crônicas .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "Grande proporção de crianças com doenças crônicas sobrevivem até a idade adulta, necessitando de ToC .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "Incidência de necessidade de ToC aumenta com melhora na sobrevivência de condições crônicas pediátricas .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Transições inadequadas contribuem para rehospitalizações e maior mortalidade em pacientes pós-AVC .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "transtorno-bipolar",
+    "moduleName": "Rastreamento do Transtorno Bipolar",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Rastreamento do Transtorno Bipolar",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "O transtorno bipolar é uma condição psiquiátrica caracterizada por episódios alternados de mania/hipomania e depressão, afetando o humor, energia e funcionamento diário . A prevalência global é estimada em 1,0% , enquanto no Brasil atinge cerca de 0,9% da população adulta . O rastreamento precoce é essencial para reduzir riscos de suicídio e morbidade .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Rastreamento recomendado em atenção primária para adultos com sintomas afetivos persistentes, histórico familiar ou comorbidades psiquiátricas .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos ≥18 anos com queixas de humor instável, irritabilidade ou alterações de energia; priorizar grupos com fatores de risco como abuso de substâncias .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação inicial anual em contextos de risco; reavaliação conforme sintomas .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A American Psychiatric Association (APA, 2022) e a Canadian Network for Mood and Anxiety Treatments (CANMAT, 2018) recomendam rastreamento para indivíduos com episódios depressivos recorrentes ou suspeita de mania .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência global de transtorno bipolar é de 1,0% (cerca de 40 milhões de adultos) . No Brasil, estima-se em 0,9% entre adultos, com maior impacto em áreas urbanas .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência global varia de 0,2 a 0,4 casos por 1.000 pessoas-ano . No Brasil, dados indicam cerca de 0,3 por 1.000 habitantes anualmente .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "O transtorno bipolar eleva o risco de mortalidade em 2-3 vezes, principalmente por suicídio (15-20% dos casos) . No Brasil, contribui para 5-10% das mortes por causas psiquiátricas .",
+        "context": "Mortality data"
+      }
+    ]
+  },
+  {
+    "moduleId": "transtorno-panico",
+    "moduleName": "Rastreamento do Transtorno de Pânico",
+    "fields": [
+      {
+        "key": "titulo",
+        "value": "Rastreamento do Transtorno de Pânico",
+        "context": "Module title"
+      },
+      {
+        "key": "descricao",
+        "value": "O transtorno de pânico é um distúrbio de ansiedade caracterizado por ataques de pânico recorrentes e inesperados, frequentemente acompanhados de preocupação persistente sobre ocorrências adicionais . A prevalência ao longo da vida é estimada em 4,7% globalmente . No Brasil, a prevalência é de aproximadamente 5,8% na população adulta . O rastreamento precoce é essencial para melhorar os desfechos e reduzir o impacto na qualidade de vida .",
+        "context": "Module description"
+      },
+      {
+        "key": "sus.indicacao",
+        "value": "Rastreamento recomendado em atenção primária para adultos com sintomas de ansiedade ou histórico familiar . Indicado para indivíduos com queixas somáticas inexplicadas .",
+        "context": "SUS screening indication"
+      },
+      {
+        "key": "sus.populacaoAlvo",
+        "value": "Adultos ≥18 anos com fatores de risco como estresse crônico ou comorbidades psiquiátricas .",
+        "context": "SUS target population"
+      },
+      {
+        "key": "sus.periodicidade",
+        "value": "Avaliação anual em consultas de rotina para populações de risco . Reavaliação imediata em crises agudas .",
+        "context": "SUS screening frequency"
+      },
+      {
+        "key": "sociedadesMedicas.indicacao",
+        "value": "A Associação Brasileira de Psiquiatria (ABP, 2022) e a American Psychiatric Association (APA, 2013) recomendam rastreamento em adultos com episódios de ansiedade intensa .",
+        "context": "Medical societies screening indication"
+      },
+      {
+        "key": "epidemiologia.prevalencia",
+        "value": "A prevalência global de 12 meses é de 2,7% . No Brasil, a prevalência é de 5,8% em adultos .",
+        "context": "Prevalence data"
+      },
+      {
+        "key": "epidemiologia.incidencia",
+        "value": "A incidência anual global é de cerca de 1-2% em populações adultas . No Brasil, estima-se em 1,5% .",
+        "context": "Incidence data"
+      },
+      {
+        "key": "epidemiologia.mortalidade",
+        "value": "Baixa mortalidade direta, mas associada a risco aumentado de suicídio (OR 2,5) . No Brasil, contribui para 3% das mortes por causas psiquiátricas .",
+        "context": "Mortality data"
+      }
+    ]
+  }
+]

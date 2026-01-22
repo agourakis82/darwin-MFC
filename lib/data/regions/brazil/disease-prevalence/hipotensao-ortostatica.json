@@ -1,0 +1,53 @@
+{
+  "diseaseId": "hipotensao-ortostatica",
+  "region": "BR",
+  "diseaseName": "Hipotensão Ortostática",
+  "prevalence": {
+    "value": "5-20% (older adults; higher in frail and autonomic disease)",
+    "population": "Brazilian adults >65 years",
+    "year": 2024,
+    "source": "Cardiology/geriatrics epidemiology syntheses",
+    "trend": "increasing with aging and polypharmacy"
+  },
+  "incidence": {
+    "value": "10-30 per 1,000 person-years",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "Geriatric cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.01",
+    "mortalityRate": "Indirect (falls, syncope, injury)",
+    "year": 2024,
+    "source": "IHME/WHO injury and cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "dehydration",
+      "antihypertensives/diuretics",
+      "autonomic neuropathy (diabetes)",
+      "Parkinson disease",
+      "frailty"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with diabetes and neuropathy",
+      "patients with Parkinson disease",
+      "patients on multiple BP medications"
+    ],
+    "diagnosticCriteria": "Drop in SBP ≥20 mmHg or DBP ≥10 mmHg within 3 minutes of standing; evaluate volume status, medications, autonomic causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; orthostatic vitals not routine",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of older adults",
+    "controlRate": "Variable; improves with medication review and non-pharmacologic measures"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often missed unless measured; APS can implement orthostatic vitals in high-risk patients",
+    "treatmentProtocol": "Hydration, slow position changes, compression stockings, adjust medications, treat anemia; pharmacologic therapy in specialist care when needed",
+    "regionalChallenges": "Polypharmacy and limited time for comprehensive geriatric review",
+    "strongPoints": "Many effective interventions are low-cost and feasible in primary care"
+  }
+}
+

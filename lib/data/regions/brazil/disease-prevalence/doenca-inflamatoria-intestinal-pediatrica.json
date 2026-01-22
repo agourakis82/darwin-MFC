@@ -1,0 +1,49 @@
+{
+  "diseaseId": "doenca-inflamatoria-intestinal-pediatrica",
+  "region": "BR",
+  "diseaseName": "Doenca inflamatoria intestinal pediatrica",
+  "prevalence": {
+    "value": "~10-20 per 100,000 children",
+    "population": "Brazilian children and adolescents",
+    "year": 2024,
+    "source": "Pediatric gastroenterology and IBD registry syntheses",
+    "trend": "increasing with improved diagnosis"
+  },
+  "incidence": {
+    "value": "~2-4 per 100,000 children/year",
+    "population": "Children and adolescents",
+    "year": 2024,
+    "source": "Pediatric IBD cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to growth impact and chronic disease",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "IHME/GBD IBD context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history of IBD",
+      "immune dysregulation",
+      "westernized diet",
+      "urban lifestyle"
+    ],
+    "vulnerablePopulations": [
+      "children with family history",
+      "adolescents"
+    ],
+    "diagnosticCriteria": "Clinical symptoms plus endoscopy with biopsy; imaging for small bowel; exclude infections"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Thousands of children",
+    "controlRate": "Moderate; access to biologics and pediatric IBD specialists varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Pediatric gastroenterology evaluation in tertiary centers",
+    "treatmentProtocol": "Steroids for flares, immunomodulators, biologics for moderate-severe disease, nutritional support",
+    "regionalChallenges": "Limited pediatric IBD centers and biologic access outside major cities",
+    "strongPoints": "Growing pediatric gastroenterology services and access to essential therapies"
+  }
+}

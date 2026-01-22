@@ -1,0 +1,51 @@
+{
+  "diseaseId": "hiperparatireoidismo",
+  "region": "IN",
+  "diseaseName": "Primary hyperparathyroidism",
+  "prevalence": {
+    "value": "~0.2-0.6% (adults; higher in older women)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Endocrinology epidemiology syntheses; Endocrine Society of India context",
+    "trend": "stable; increasing detection with routine calcium testing"
+  },
+  "incidence": {
+    "value": "~1-4 per 10,000 person-years",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Endocrinology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; morbidity from stones and bone loss",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "IHME/GBD endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "older age",
+      "neck radiation history",
+      "MEN syndromes (rare)",
+      "vitamin D deficiency (secondary forms)"
+    ],
+    "vulnerablePopulations": [
+      "women >50 years",
+      "patients with nephrolithiasis or osteoporosis",
+      "families with MEN syndromes"
+    ],
+    "diagnosticCriteria": "Elevated calcium with inappropriately high PTH; assess vitamin D, renal function and bone density"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; incidental hypercalcemia detection",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands (mostly mild/asymptomatic)",
+    "controlRate": "Moderate; surgical access varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Lab testing in urban centers; parathyroid imaging in tertiary hospitals",
+    "treatmentProtocol": "Parathyroidectomy for symptomatic or meeting criteria; monitoring for mild cases",
+    "regionalChallenges": "Limited surgical access and delayed referral in some regions",
+    "strongPoints": "Clear diagnostic criteria and effective surgery when available"
+  }
+}

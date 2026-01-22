@@ -1,0 +1,51 @@
+{
+  "diseaseId": "amigdalite",
+  "region": "IN",
+  "diseaseName": "Acute Tonsillitis",
+  "prevalence": {
+    "value": "Common episodic condition (especially children)",
+    "population": "Indian children and adolescents",
+    "year": 2024,
+    "source": "Pediatric infection epidemiology syntheses",
+    "trend": "stable; seasonal peaks with school attendance"
+  },
+  "incidence": {
+    "value": "~60-180 per 1,000 children/year (episodes; varies by setting)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Primary care and school health cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; substantial school absenteeism and antibiotic use",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO upper respiratory infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "school/daycare exposure",
+      "viral respiratory infections",
+      "group A streptococcus exposure",
+      "crowding",
+      "biomass smoke/air pollution exposure"
+    ],
+    "vulnerablePopulations": [
+      "children (5-15 years)",
+      "crowded households",
+      "patients with recurrent tonsillitis"
+    ],
+    "diagnosticCriteria": "Clinical assessment; rapid antigen test/culture when available to confirm streptococcal infection; evaluate for complications (peritonsillar abscess) and rheumatic fever risk"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven evaluation",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually",
+    "controlRate": "High for symptom relief; antibiotic stewardship limited by diagnostic access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis common; confirmatory testing availability varies widely",
+    "treatmentProtocol": "Supportive care for viral; antibiotics for suspected/confirmed streptococcal disease (penicillin/amoxicillin); ENT evaluation for recurrent severe disease",
+    "regionalChallenges": "Overuse of antibiotics, limited diagnostic testing in primary care, delayed ENT access in many districts",
+    "strongPoints": "Low-cost effective antibiotics widely available; strong primary care coverage in many regions"
+  }
+}

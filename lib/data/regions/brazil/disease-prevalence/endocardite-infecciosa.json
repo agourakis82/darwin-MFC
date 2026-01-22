@@ -1,0 +1,51 @@
+{
+  "diseaseId": "endocardite-infecciosa",
+  "region": "BR",
+  "diseaseName": "Endocardite infecciosa",
+  "prevalence": {
+    "value": "Rare (point prevalence <0.01%)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Cardiology and infectious disease surveillance",
+    "trend": "stable; risk influenced by prosthetic devices and rheumatic heart disease"
+  },
+  "incidence": {
+    "value": "~3-8 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "Hospital-based cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case morbidity and mortality",
+    "mortalityRate": "Moderate to high (in-hospital 15-30%)",
+    "year": 2024,
+    "source": "IHME/GBD infectious and cardiovascular context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prosthetic valves or devices",
+      "prior endocarditis",
+      "rheumatic heart disease",
+      "injection drug use",
+      "poor dental health"
+    ],
+    "vulnerablePopulations": [
+      "patients with valvular disease",
+      "hemodialysis patients",
+      "people who inject drugs"
+    ],
+    "diagnosticCriteria": "Modified Duke criteria; blood cultures and echocardiography (TTE/TEE)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; case-based detection",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Thousands of cases annually",
+    "controlRate": "Moderate; depends on early diagnosis and access to cardiac surgery"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Blood culture availability and echocardiography in referral hospitals",
+    "treatmentProtocol": "Prolonged IV antibiotics; surgery for complications or prosthetic infection",
+    "regionalChallenges": "Delayed diagnosis, limited access to TEE and cardiac surgery in some regions",
+    "strongPoints": "Tertiary centers with established endocarditis teams in major cities"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "diseaseId": "sindrome-intestino-irritavel",
+  "region": "IN",
+  "diseaseName": "Irritable Bowel Syndrome (IBS)",
+  "prevalence": {"value": "6.5%", "population": "Indian adults (~1.4 billion)", "year": 2024, "source": "ISG (Indian Society of Gastroenterology) & ICMR surveys", "trend": "increasing due to urbanization and stress"},
+  "incidence": {"value": "12 per 1000", "population": "Indian adults", "year": 2024, "source": "ICMR epidemiological studies"},
+  "burden": {"dalyPerCapita": "0.015", "mortalityRate": "Negligible", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Stress and anxiety", "Spicy food consumption", "Post-infectious (e.g., after gastroenteritis)", "Dietary intolerances (FODMAPs)", "Sedentary lifestyle", "Gut microbiota dysbiosis"],
+    "vulnerablePopulations": ["Women (1.5-2x higher)", "Urban working professionals", "Young adults (20-40 years)", "Post-infectious patients"],
+    "diagnosticCriteria": "Rome IV criteria adapted for India, ISG guidelines emphasizing clinical history and exclusion of organic disease"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "70 million - underdiagnosed",
+    "controlRate": "45% moderate due to limited specialist access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ISG/Rome IV criteria, clinical diagnosis, limited colonoscopy access",
+    "treatmentProtocol": "Dietary: spice reduction, fiber; Medical: antispasmodics (mebeverine), rifaximin for IBS-D; Ayurvedic: Triphala, Hingvastak churna for digestion",
+    "regionalChallenges": "Post-infectious IBS common, spicy diet culture, limited access to low FODMAP education, overlap with functional dyspepsia",
+    "strongPoints": "ISG guidelines, affordable generic medications, Ayurvedic digestive formulas, growing urban awareness"
+  }
+}

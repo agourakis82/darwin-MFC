@@ -1,0 +1,25 @@
+{
+  "diseaseId": "bronquite-cronica",
+  "region": "EU",
+  "diseaseName": "Chronic Bronchitis",
+  "prevalence": {"value": "3.8%", "population": "EU adults (~447 million)", "year": 2024, "source": "ERS/GOLD", "trend": "decreasing in Western EU, stable in Eastern EU"},
+  "incidence": {"value": "12 per 1000", "population": "EU adults", "year": 2024, "source": "GOLD"},
+  "burden": {"dalyPerCapita": "185", "mortalityRate": "25 per 100,000", "year": 2024, "source": "WHO Europe"},
+  "epidemiology": {
+    "riskFactors": ["Tobacco smoking", "Indoor and outdoor air pollution", "Occupational dust and chemical exposure", "Genetic predisposition (e.g., alpha-1 antitrypsin deficiency)", "Aging", "Biomass fuel exposure in rural areas"],
+    "vulnerablePopulations": ["Adults over 65 years", "Current and former smokers", "Individuals in low socioeconomic groups", "Residents in Eastern EU with high smoking rates"],
+    "diagnosticCriteria": "GOLD criteria, spirometry with post-bronchodilator FEV1/FVC <0.70"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "spirometry widely available in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "17 million",
+    "controlRate": "65% well-controlled in Western EU"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ERS/GOLD guidelines, spirometry mandatory for diagnosis",
+    "treatmentProtocol": "LABA/LAMA combinations, ICS/LABA for exacerbations, pulmonary rehabilitation, smoking cessation programs",
+    "regionalChallenges": "Persistent smoking in Eastern Europe, aging population, underdiagnosis despite high spirometry access",
+    "strongPoints": "Comprehensive ERS/GOLD guidelines, high spirometry availability, pulmonary rehabilitation programs, smoking cessation support"
+  }
+}

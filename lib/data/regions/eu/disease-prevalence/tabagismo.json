@@ -1,0 +1,51 @@
+{
+  "diseaseId": "tabagismo",
+  "region": "EU",
+  "diseaseName": "Tobacco use",
+  "prevalence": {
+    "value": "~20-25% (adult smokers; varies by country)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "Eurobarometer and WHO Europe tobacco surveillance",
+    "trend": "slowly decreasing overall; youth vaping rising in some countries"
+  },
+  "incidence": {
+    "value": "~2-4% annual initiation among adolescents/young adults",
+    "population": "Adolescents and young adults",
+    "year": 2024,
+    "source": "School health surveys and tobacco surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "high; major driver of CVD, COPD and cancer",
+    "mortalityRate": "High (tobacco-attributable deaths)",
+    "year": 2024,
+    "source": "WHO Europe/IHME tobacco-attributable burden"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "adolescent initiation",
+      "peer influence",
+      "socioeconomic disadvantage",
+      "mental health comorbidity",
+      "co-use with alcohol"
+    ],
+    "vulnerablePopulations": [
+      "adolescents",
+      "low-income adults",
+      "people with mental health disorders"
+    ],
+    "diagnosticCriteria": "Self-reported tobacco use; dependence assessment with standardized tools"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic screening and brief intervention in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of current or former smokers",
+    "controlRate": "Moderate; cessation success improves with counseling and pharmacotherapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care screening with brief interventions",
+    "treatmentProtocol": "Behavioral counseling, nicotine replacement, bupropion or varenicline; quitline and digital support",
+    "regionalChallenges": "Youth uptake of vaping products and socioeconomic disparities",
+    "strongPoints": "Strong tobacco control policies and cessation services in many countries"
+  }
+}

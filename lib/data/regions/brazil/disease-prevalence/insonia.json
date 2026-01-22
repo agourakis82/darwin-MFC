@@ -1,0 +1,55 @@
+{
+  "diseaseId": "insonia",
+  "region": "BR",
+  "diseaseName": "Insônia",
+  "prevalence": {
+    "value": "10-15% (chronic insomnia symptoms)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Epidemiological studies in Brazil + WHO sleep health context",
+    "trend": "increasing with anxiety/depression, shift work, and post-pandemic sleep disruption"
+  },
+  "incidence": {
+    "value": "20-40 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Sleep disorder cohort syntheses extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.005-0.015",
+    "mortalityRate": "Negligible (indirect via accidents and cardiometabolic risk)",
+    "year": 2024,
+    "source": "IHME/WHO (sleep and mental health burden context)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "stress and anxiety",
+      "depression",
+      "shift work",
+      "caffeine/alcohol use",
+      "poor sleep hygiene",
+      "chronic pain"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "older adults",
+      "shift workers",
+      "patients with depression/anxiety",
+      "patients with chronic pain"
+    ],
+    "diagnosticCriteria": "Insomnia disorder: difficulty initiating/maintaining sleep with daytime impairment ≥3 nights/week for ≥3 months; rule out OSA, restless legs, and substance-induced sleep disturbance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; usually symptom-driven in APS",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~20-30 million with clinically significant symptoms",
+    "controlRate": "Moderate; CBT-I availability limited, hypnotics often used"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS evaluation with screening for depression/anxiety and sleep apnea; limited access to polysomnography outside capitals",
+    "treatmentProtocol": "First-line CBT-I and sleep hygiene; short-term hypnotics when indicated; treat comorbid depression/anxiety and pain",
+    "regionalChallenges": "Limited CBT-I access, overreliance on benzodiazepines in some settings, and low specialist sleep medicine availability",
+    "strongPoints": "APS network can deliver sleep hygiene counseling and manage comorbid mental health conditions"
+  }
+}
+

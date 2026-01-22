@@ -1,0 +1,51 @@
+{
+  "diseaseId": "urticaria-cronica",
+  "region": "EU",
+  "diseaseName": "Chronic Urticaria",
+  "prevalence": {
+    "value": "0.5-1.0%",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European urticaria epidemiology syntheses / EAACI context",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "1-3 per 1,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO Europe skin disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autoimmune mechanisms",
+      "female sex",
+      "NSAID intolerance",
+      "stress"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "patients with autoimmune thyroid disease",
+      "patients with refractory CSU"
+    ],
+    "diagnosticCriteria": "Urticaria/angioedema >6 weeks; evaluation guided by history; management per EAACI/GA2LEN/EuroGuiDerm guidance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2-4 million",
+    "controlRate": "Moderate to high with stepwise therapy and biologic access; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist allergy/dermatology pathways common in many countries",
+    "treatmentProtocol": "Antihistamine up-dosing, omalizumab for refractory CSU, cyclosporine in selected cases; short steroid bursts for flares",
+    "regionalChallenges": "Reimbursement variability across member states",
+    "strongPoints": "Strong guideline pathways and broad access to specialist services in many systems"
+  }
+}
+

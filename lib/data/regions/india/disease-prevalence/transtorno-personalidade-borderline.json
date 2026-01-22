@@ -1,0 +1,51 @@
+{
+  "diseaseId": "transtorno-personalidade-borderline",
+  "region": "IN",
+  "diseaseName": "Borderline Personality Disorder",
+  "prevalence": {
+    "value": "1-2% (general population; underdiagnosis likely)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Psychiatric epidemiology syntheses",
+    "trend": "stable; low detection outside specialist services"
+  },
+  "incidence": {
+    "value": "0.3-1.0 per 1,000/year (new diagnoses)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.01",
+    "mortalityRate": "Indirect; elevated self-harm and suicide risk",
+    "year": 2024,
+    "source": "IHME/WHO mental health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "childhood trauma",
+      "comorbid mood/anxiety disorders",
+      "substance use",
+      "social adversity"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "people with trauma exposure",
+      "patients with recurrent self-harm"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria; requires longitudinal assessment and differentiation from mood disorders"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10-25 million",
+    "controlRate": "Low due to limited structured psychotherapy access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist diagnosis in tertiary psychiatry; limited community recognition",
+    "treatmentProtocol": "Psychotherapy (DBT/mentalization-based) where available; crisis management and comorbidity treatment",
+    "regionalChallenges": "Low availability of structured psychotherapy and high stigma",
+    "strongPoints": "Growing tele-mental health services may improve access to structured psychotherapy in the future"
+  }
+}
+

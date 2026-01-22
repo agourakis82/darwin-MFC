@@ -1,0 +1,49 @@
+{
+  "diseaseId": "transtorno-personalidade-borderline",
+  "region": "EU",
+  "diseaseName": "Borderline Personality Disorder",
+  "prevalence": {
+    "value": "1-2%",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European psychiatric epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "0.5-1.2 per 1,000/year (new diagnoses)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.01",
+    "mortalityRate": "Indirect; elevated suicide risk",
+    "year": 2024,
+    "source": "IHME/WHO Europe context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "childhood trauma",
+      "comorbid mood disorders",
+      "substance use"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with recurrent self-harm"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria; specialist assessment common"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~4-8 million",
+    "controlRate": "Moderate with access to structured psychotherapy; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist psychiatric diagnosis and crisis pathways common",
+    "treatmentProtocol": "DBT and other structured psychotherapies; crisis planning; targeted pharmacotherapy for symptom domains",
+    "regionalChallenges": "Access variability and high service demand",
+    "strongPoints": "Availability of structured psychotherapy programs in many member states"
+  }
+}
+

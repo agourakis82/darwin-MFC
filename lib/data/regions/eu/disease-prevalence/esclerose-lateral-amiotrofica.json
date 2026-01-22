@@ -1,0 +1,49 @@
+{
+  "diseaseId": "esclerose-lateral-amiotrofica",
+  "region": "EU",
+  "diseaseName": "Amyotrophic Lateral Sclerosis (ALS)",
+  "prevalence": {
+    "value": "5-10 per 100,000",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European ALS epidemiology syntheses / WHO Europe",
+    "trend": "stable to increasing with aging"
+  },
+  "incidence": {
+    "value": "2-3 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0007-0.0025",
+    "mortalityRate": "High case-fatality over years",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "male sex",
+      "genetic mutations (subset)"
+    ],
+    "vulnerablePopulations": [
+      "adults >60 years",
+      "patients with rapid progression requiring early multidisciplinary support"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis supported by EMG; structured ALS clinic pathways common in many countries"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~25,000-50,000",
+    "controlRate": "Not curable; survival improved by multidisciplinary care and ventilatory support"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to EMG and multidisciplinary ALS clinics in many member states",
+    "treatmentProtocol": "Riluzole and supportive multidisciplinary care (NIV, PEG, rehab, palliative planning)",
+    "regionalChallenges": "Service variability and resource needs for long-term supportive care",
+    "strongPoints": "Established multidisciplinary ALS clinics in many systems"
+  }
+}
+

@@ -1,0 +1,54 @@
+{
+  "diseaseId": "quedas-idoso",
+  "region": "BR",
+  "diseaseName": "Síndrome de Quedas no Idoso",
+  "prevalence": {
+    "value": "25-35% report ≥1 fall/year (community-dwelling older adults)",
+    "population": "Brazilian adults >65 years",
+    "year": 2024,
+    "source": "Geriatrics epidemiology syntheses (falls) + Brazilian aging cohort context",
+    "trend": "increasing with aging and multimorbidity"
+  },
+  "incidence": {
+    "value": "300-600 falls per 1,000 older adults/year",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "Falls epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.04 (older-adult concentrated)",
+    "mortalityRate": "Indirect; fracture and head injury mortality risk",
+    "year": 2024,
+    "source": "IHME/WHO injury context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "frailty and sarcopenia",
+      "polypharmacy (sedatives)",
+      "vision impairment",
+      "orthostatic hypotension",
+      "balance/gait disorders",
+      "home hazards"
+    ],
+    "vulnerablePopulations": [
+      "older adults >75 years",
+      "frail older adults",
+      "older adults with dementia",
+      "people with prior falls"
+    ],
+    "diagnosticCriteria": "Clinical assessment of fall history, gait/balance (e.g., TUG), orthostatic vitals, vision, medication review, and home risk factors"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited; falls risk screening not routine",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of older adults at risk",
+    "controlRate": "Variable; improved with multifactorial interventions"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often recognized after injury; comprehensive geriatric assessment limited outside large centers",
+    "treatmentProtocol": "Multifactorial fall prevention: strength/balance exercise, medication deprescribing, vision correction, home safety, vitamin D when indicated",
+    "regionalChallenges": "Limited access to physiotherapy and home safety programs and uneven geriatric coverage",
+    "strongPoints": "Primary care can implement medication review and basic fall risk screening"
+  }
+}
+

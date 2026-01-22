@@ -1,0 +1,50 @@
+{
+  "diseaseId": "asbestose",
+  "region": "BR",
+  "diseaseName": "Asbestose",
+  "prevalence": {
+    "value": "Low in general population; concentrated in historically exposed worker cohorts",
+    "population": "Adults with past occupational asbestos exposure",
+    "year": 2024,
+    "source": "Occupational lung disease epidemiology syntheses; WHO asbestos-related disease context",
+    "trend": "slowly decreasing in new cases; persistent burden due to long latency"
+  },
+  "incidence": {
+    "value": "Low; long latency (10-40+ years) after exposure",
+    "population": "Historically exposed workers",
+    "year": 2024,
+    "source": "Occupational cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; high in affected cohorts with progressive fibrosis",
+    "mortalityRate": "Moderate in severe cases; also elevated mesothelioma/lung cancer risk (related exposure)",
+    "year": 2024,
+    "source": "WHO/IHME occupational risk and chronic respiratory disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "occupational asbestos exposure (construction, shipyards, manufacturing)",
+      "duration and intensity of exposure",
+      "smoking (worsens outcomes and cancer risk)",
+      "poor respiratory protection"
+    ],
+    "vulnerablePopulations": [
+      "older workers with past exposure",
+      "workers in informal/unregulated settings",
+      "communities near asbestos use/processing sites (lower risk)"
+    ],
+    "diagnosticCriteria": "History of asbestos exposure plus interstitial fibrosis pattern on imaging (HRCT), restrictive spirometry, and exclusion of other ILDs; assess pleural plaques"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "occupational surveillance varies; not population-wide",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Thousands (exposed cohort dependent; uncertain)",
+    "controlRate": "Limited (irreversible fibrosis); management focuses on symptom control and prevention of progression/complications"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Pulmonology evaluation with HRCT and spirometry; occupational history often under-documented",
+    "treatmentProtocol": "Smoking cessation, vaccinations, pulmonary rehabilitation, oxygen when needed, treat comorbid COPD; surveillance for malignancy as clinically indicated",
+    "regionalChallenges": "Under-recognition, access to HRCT and occupational medicine services, legacy exposures with long latency",
+    "strongPoints": "Clear prevention pathway via exposure control; supportive care available in pulmonology services"
+  }
+}

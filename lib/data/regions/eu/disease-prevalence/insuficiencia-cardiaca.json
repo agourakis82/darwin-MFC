@@ -1,0 +1,41 @@
+{
+  "diseaseId": "insuficiencia-cardiaca",
+  "region": "EU",
+  "diseaseName": "Heart Failure",
+  "prevalence": {
+    "value": "1-2%",
+    "population": "EU adult population (~447 million total, focused on those aged 55+)",
+    "year": 2024,
+    "source": "European Society of Cardiology (ESC) Heart Failure Association, 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure",
+    "trend": "increasing due to aging population and improved survival from acute cardiac events"
+  },
+  "incidence": {
+    "value": "3-5 new cases per 1,000 person-years",
+    "population": "EU population aged 65+ (~100 million)",
+    "year": 2024,
+    "source": "ESC Heart Failure 2022 update and Global Burden of Disease Study (GBD) 2019"
+  },
+  "burden": {
+    "dalyPerCapita": "1,200-1,500 DALYs per 100,000",
+    "mortalityRate": "150-200 deaths per 100,000",
+    "year": 2024,
+    "source": "Institute for Health Metrics and Evaluation (IHME) Global Burden of Disease (GBD) 2019, extrapolated to EU"
+  },
+  "epidemiology": {
+    "riskFactors": ["Hypertension", "Coronary artery disease", "Diabetes mellitus", "Obesity", "Smoking", "Valvular heart disease"],
+    "vulnerablePopulations": ["Elderly (aged 65+)", "Patients with comorbidities like diabetes or CKD", "Men (slightly higher incidence)", "Socioeconomically disadvantaged groups", "Rural populations with limited access to care"],
+    "diagnosticCriteria": "ESC guidelines: Symptoms of heart failure (e.g., dyspnea, fatigue) plus objective evidence of cardiac dysfunction (e.g., echocardiography showing reduced ejection fraction <40% or elevated natriuretic peptides)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "No routine population screening; targeted screening for high-risk groups (e.g., post-MI patients) covers ~60-70% in urban areas",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~8-10 million seeking care in EU",
+    "controlRate": "40-50% of patients achieve optimal guideline-directed medical therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ESC (European Society of Cardiology) diagnostic standards",
+    "treatmentProtocol": "ESC treatment guidelines and medication protocols",
+    "regionalChallenges": "EU-specific challenges (aging population, healthcare disparities between Eastern and Western Europe, rising multimorbidity)",
+    "strongPoints": "EU healthcare system strengths for heart failure management: Comprehensive cardiology networks, high access to advanced therapies like SGLT2 inhibitors and device implants, integrated care models in many member states"
+  }
+}

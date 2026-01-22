@@ -1,0 +1,54 @@
+{
+  "diseaseId": "bronquiolite",
+  "region": "IN",
+  "diseaseName": "Acute Bronchiolitis (RSV)",
+  "prevalence": {
+    "value": "common seasonal illness; high infant burden",
+    "population": "Infants (<2 years) in India",
+    "year": 2024,
+    "source": "Pediatric respiratory infection syntheses / WHO context",
+    "trend": "seasonal peaks; severe disease concentrated in young infants"
+  },
+  "incidence": {
+    "value": "high (episodes common in infancy)",
+    "population": "Infants",
+    "year": 2024,
+    "source": "Pediatric epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case in severe disease; large national infant burden",
+    "mortalityRate": "Higher than high-income settings; driven by prematurity and limited oxygen access in some areas",
+    "year": 2024,
+    "source": "WHO/IHME lower respiratory infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prematurity",
+      "malnutrition",
+      "indoor air pollution",
+      "crowding",
+      "lack of breastfeeding (association)",
+      "congenital heart disease"
+    ],
+    "vulnerablePopulations": [
+      "infants <6 months",
+      "preterm and low birth weight infants",
+      "malnourished infants",
+      "rural households with limited hospital access"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis in infants with wheeze and respiratory distress; pulse oximetry; RSV testing limited"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of infant episodes annually",
+    "controlRate": "Variable; depends on timely oxygen support and referral capacity"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Mostly clinical diagnosis; limited RSV testing outside tertiary centers",
+    "treatmentProtocol": "Supportive care with oxygen and hydration; referral for severe cases; avoid unnecessary antibiotics and bronchodilators",
+    "regionalChallenges": "Oxygen availability and referral delays during seasonal surges, especially in rural districts",
+    "strongPoints": "Expanding pediatric care networks (SNCU/PHC) and increasing pulse oximetry adoption"
+  }
+}
+

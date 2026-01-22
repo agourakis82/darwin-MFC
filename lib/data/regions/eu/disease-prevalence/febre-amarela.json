@@ -1,0 +1,48 @@
+{
+  "diseaseId": "febre-amarela",
+  "region": "EU",
+  "diseaseName": "Yellow Fever",
+  "prevalence": {
+    "value": "no endemic transmission; imported cases are rare",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "ECDC / WHO travel medicine guidance",
+    "trend": "stable low; risk linked to travel to endemic regions"
+  },
+  "incidence": {
+    "value": "very low (sporadic imported cases)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECDC/WHO travel surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "negligible at population level",
+    "mortalityRate": "very low; severe disease possible in unvaccinated travelers",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "travel to endemic countries without vaccination",
+      "delayed recognition of hemorrhagic fever syndromes in returning travelers"
+    ],
+    "vulnerablePopulations": [
+      "unvaccinated travelers to endemic regions",
+      "older travelers and immunocompromised travelers (vaccine suitability issues)"
+    ],
+    "diagnosticCriteria": "Clinical suspicion in febrile jaundice after travel; confirmation by PCR/serology; notification per national/ECDC guidance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "travel clinic vaccination common; no screening in general population",
+    "treatmentAvailable": true,
+    "estimatedPatients": "rare imported cases",
+    "controlRate": "Prevention via vaccination; supportive care for severe cases"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Strong travel medicine and reference lab networks for viral hemorrhagic fevers",
+    "treatmentProtocol": "Supportive care; vaccination for travelers to endemic areas per WHO guidance",
+    "regionalChallenges": "Maintaining vaccine uptake and awareness among travelers and clinicians outside travel clinics",
+    "strongPoints": "Wide availability of travel clinics and vaccination services across many member states"
+  }
+}
+

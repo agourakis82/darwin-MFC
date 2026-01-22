@@ -1,0 +1,25 @@
+{
+  "diseaseId": "ulcera-peptica",
+  "region": "IN",
+  "diseaseName": "Peptic Ulcer Disease",
+  "prevalence": {"value": "8.5%", "population": "Indian adults (~1.4 billion)", "year": 2024, "source": "ICMR National Health Profile", "trend": "stable due to high H. pylori endemicity"},
+  "incidence": {"value": "1.8 per 1000", "population": "Indian adults", "year": 2024, "source": "ISG Consensus Guidelines"},
+  "burden": {"dalyPerCapita": "0.045", "mortalityRate": "1.2 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["H. pylori infection (>70% prevalence in India)", "NSAID use (common in elderly and chronic pain management)", "Spicy food consumption (cultural dietary habit)", "Smoking and alcohol", "Stress and irregular eating patterns", "Helicobacter pylori reinfection in endemic areas"],
+    "vulnerablePopulations": ["Low socioeconomic groups in rural areas", "Elderly population (>60 years)", "Chronic NSAID users", "Individuals with family history of PUD"],
+    "diagnosticCriteria": "ISG guidelines: Clinical symptoms (epigastric pain), endoscopy with biopsy for confirmation, H. pylori testing (urea breath test or stool antigen)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited H. pylori screening (primarily in urban tertiary centers)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "85 million",
+    "controlRate": "65% with PPI and antibiotic therapy adherence"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ISG criteria: Clinical diagnosis common in primary care, endoscopy reserved for complications like bleeding or perforation",
+    "treatmentProtocol": "PPIs (e.g., pantoprazole) + triple therapy for H. pylori (amoxicillin, clarithromycin, PPI for 14 days), lifestyle changes (reduce spicy food intake), Ayurvedic options (e.g., Yashtimadhu - licorice for gastroprotection)",
+    "regionalChallenges": "Very high H. pylori prevalence (>70%), spicy diet culture exacerbating symptoms, limited endoscopy access in rural areas, NSAID overuse in self-medication",
+    "strongPoints": "Affordable generic PPIs and antibiotics, integration of Ayurvedic gastroprotectives, ISG guidelines promoting evidence-based care"
+  }
+}

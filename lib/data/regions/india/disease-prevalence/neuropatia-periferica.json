@@ -1,0 +1,52 @@
+{
+  "diseaseId": "neuropatia-periferica",
+  "region": "IN",
+  "diseaseName": "Peripheral neuropathy",
+  "prevalence": {
+    "value": "~1-3% (general); ~7-10% in older adults",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Neurology epidemiology syntheses",
+    "trend": "increasing with diabetes and aging"
+  },
+  "incidence": {
+    "value": "~2-4 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Neurology outpatient cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to pain and gait impairment",
+    "mortalityRate": "Low (indirect via falls and comorbidity)",
+    "year": 2024,
+    "source": "IHME/GBD neurologic burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "diabetes",
+      "alcohol use",
+      "vitamin B12 deficiency",
+      "chemotherapy",
+      "HIV and infections",
+      "autoimmune disease"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with diabetes",
+      "patients with alcohol use disorder"
+    ],
+    "diagnosticCriteria": "Clinical neuropathic symptoms and exam; nerve conduction studies when available; evaluate reversible causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic screening in diabetes care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions (including diabetic and other etiologies)",
+    "controlRate": "Moderate; depends on etiology control and pain management"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care; EMG/NCS in tertiary centers",
+    "treatmentProtocol": "Treat underlying cause, glycemic control, neuropathic pain meds, physiotherapy and fall prevention",
+    "regionalChallenges": "Limited access to EMG and neurology services outside metros",
+    "strongPoints": "Affordable medications and diabetes programs in many regions"
+  }
+}

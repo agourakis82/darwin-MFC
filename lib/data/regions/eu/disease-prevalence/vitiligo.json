@@ -1,0 +1,49 @@
+{
+  "diseaseId": "vitiligo",
+  "region": "EU",
+  "diseaseName": "Vitiligo",
+  "prevalence": {
+    "value": "~0.5-1.0% (adults)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European dermatology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~0.1-0.2 per 1,000 person-years",
+    "population": "General population",
+    "year": 2024,
+    "source": "Dermatology cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant psychosocial impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe/IHME skin disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "autoimmune disease",
+      "skin trauma (Koebner phenomenon)",
+      "stress"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with autoimmune thyroid disease"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis of depigmented macules; Wood lamp examination"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of individuals",
+    "controlRate": "High with early treatment and phototherapy access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Dermatology diagnosis with Wood lamp availability",
+    "treatmentProtocol": "Topical corticosteroids or calcineurin inhibitors, phototherapy (NB-UVB), camouflage; systemic therapy for extensive disease",
+    "regionalChallenges": "Access to phototherapy in some regions",
+    "strongPoints": "Broad access to dermatology services"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "diseaseId": "sindrome-ansiedade-generalizada",
+  "region": "BR",
+  "diseaseName": "Sindrome de ansiedade generalizada",
+  "prevalence": {
+    "value": "~3-5% (adults)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Mental health epidemiology syntheses; WHO context",
+    "trend": "stable to increasing with stress and economic factors"
+  },
+  "incidence": {
+    "value": "~4-8 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Primary care and mental health cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to chronic symptoms and functional impairment",
+    "mortalityRate": "Low (indirect via comorbidity and suicide risk)",
+    "year": 2024,
+    "source": "IHME/GBD mental health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "prior anxiety/depression",
+      "chronic stress",
+      "family history",
+      "substance use"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "young adults",
+      "people with chronic illness"
+    ],
+    "diagnosticCriteria": "Persistent excessive worry for >6 months with functional impairment; DSM-5 criteria; exclude medical causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited screening in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of adults",
+    "controlRate": "Moderate; improves with access to psychotherapy and SSRIs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care and CAPS",
+    "treatmentProtocol": "CBT when available, SSRIs/SNRIs, lifestyle interventions; avoid long-term benzodiazepines",
+    "regionalChallenges": "Limited access to psychotherapy and stigma",
+    "strongPoints": "Primary care mental health programs and affordable medications"
+  }
+}

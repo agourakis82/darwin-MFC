@@ -1,0 +1,53 @@
+{
+  "diseaseId": "sepse-neonatal",
+  "region": "BR",
+  "diseaseName": "Sepse Neonatal",
+  "prevalence": {
+    "value": "~4-8 per 1,000 live births",
+    "population": "Live births in Brazil",
+    "year": 2024,
+    "source": "Brazilian neonatal/perinatal surveillance syntheses / Ministério da Saúde",
+    "trend": "slowly decreasing with improved perinatal care; higher rates persist in resource-limited settings"
+  },
+  "incidence": {
+    "value": "~4-8 per 1,000 live births",
+    "population": "Neonates (0-28 days)",
+    "year": 2024,
+    "source": "Hospital-based neonatal network estimates"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case; concentrated in neonatal mortality and neurodevelopmental sequelae",
+    "mortalityRate": "Case-fatality commonly ~5-20% depending on severity and facility",
+    "year": 2024,
+    "source": "WHO / IHME GBD neonatal sepsis estimates"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prematurity and low birth weight",
+      "prolonged rupture of membranes",
+      "maternal infection/chorioamnionitis",
+      "invasive procedures and NICU exposure",
+      "poor hand hygiene and overcrowding in neonatal units"
+    ],
+    "vulnerablePopulations": [
+      "preterm neonates",
+      "low birth weight infants",
+      "neonates in overcrowded maternity/NICU settings",
+      "settings with limited infection prevention resources"
+    ],
+    "diagnosticCriteria": "Clinical signs (temperature instability, respiratory distress, lethargy) with lab support (blood culture, CRP/procalcitonin) per neonatal sepsis protocols"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; early recognition protocols in maternity and NICU settings",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10,000-25,000 cases/year (approximate)",
+    "controlRate": "Improving with timely antibiotics and NICU support; outcomes vary by facility capacity"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Neonatal units follow sepsis bundles; culture availability varies; clinical diagnosis often drives early treatment",
+    "treatmentProtocol": "Empiric antibiotics (ampicillin + gentamicin for early-onset; broader coverage for late-onset based on local resistance) plus supportive NICU care",
+    "regionalChallenges": "Regional disparities in NICU capacity, antimicrobial resistance in some centers, and delays in referral from remote areas",
+    "strongPoints": "Expanding neonatal care networks and standardized sepsis protocols in many maternity hospitals"
+  }
+}
+

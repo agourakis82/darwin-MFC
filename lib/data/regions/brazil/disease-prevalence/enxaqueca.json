@@ -1,0 +1,25 @@
+{
+  "diseaseId": "enxaqueca",
+  "region": "BR",
+  "diseaseName": "Enxaqueca",
+  "prevalence": {"value": "15%", "population": "Brazilian adults", "year": 2024, "source": "SBCe - Sociedade Brasileira de Cefaleia", "trend": "stable, with increasing awareness in urban areas"},
+  "incidence": {"value": "18 per 1000", "population": "Brazilian adults", "year": 2024, "source": "DataSUS"},
+  "burden": {"dalyPerCapita": "0.045", "mortalityRate": "Negligible", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Genetic predisposition", "Female sex hormones", "Chronic stress", "Sleep disturbances", "Dietary triggers (e.g., caffeine, alcohol)", "Environmental factors (e.g., weather changes)"],
+    "vulnerablePopulations": ["Women (2-3x higher prevalence)", "Adults 18-50 years", "Individuals with low socioeconomic status", "Those with family history"],
+    "diagnosticCriteria": "ICHD-3 criteria adopted in Brazil"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Low; no routine national screening, primarily through primary care consultations",
+    "treatmentAvailable": true,
+    "estimatedPatients": "22.5 million",
+    "controlRate": "35% adequately managed, limited by access disparities"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICHD-3 International Classification",
+    "treatmentProtocol": "Acute: triptans, NSAIDs via SUS; Prophylaxis: beta-blockers, amitriptyline, topiramate",
+    "regionalChallenges": "Limited triptan access in public system (SUS), neurologist shortage in rural areas, high disability burden among women",
+    "strongPoints": "SBCe guidelines, basic medications via SUS, growing telemedicine options"
+  }
+}

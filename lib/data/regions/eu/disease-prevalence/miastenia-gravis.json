@@ -1,0 +1,49 @@
+{
+  "diseaseId": "miastenia-gravis",
+  "region": "EU",
+  "diseaseName": "Myasthenia Gravis",
+  "prevalence": {
+    "value": "20-30 per 100,000",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European neuromuscular epidemiology syntheses",
+    "trend": "increasing with aging and improved survival"
+  },
+  "incidence": {
+    "value": "1-3 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0005-0.0015",
+    "mortalityRate": "Low with modern care",
+    "year": 2024,
+    "source": "IHME/WHO Europe context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autoimmune antibodies (AChR/MuSK)",
+      "thymic disease",
+      "older age"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with bulbar/respiratory involvement"
+    ],
+    "diagnosticCriteria": "Antibody testing and electrophysiology widely available; thymoma evaluation standard"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~90,000-140,000",
+    "controlRate": "Moderate to high with access to immunotherapy and crisis management; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to antibody testing, EMG, and specialist neuromuscular clinics in many countries",
+    "treatmentProtocol": "Pyridostigmine, immunosuppression, IVIG/plasmapheresis for crisis, thymectomy when indicated; biologics in refractory cases in some systems",
+    "regionalChallenges": "Access variability and management of long-term immunosuppression risks",
+    "strongPoints": "Robust specialist care and access to crisis therapies in many member states"
+  }
+}
+

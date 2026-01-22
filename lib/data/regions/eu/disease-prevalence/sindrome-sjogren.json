@@ -1,0 +1,49 @@
+{
+  "diseaseId": "sindrome-sjogren",
+  "region": "EU",
+  "diseaseName": "Sjogren syndrome",
+  "prevalence": {
+    "value": "~0.2-0.6% (adults; mostly women)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "EULAR and rheumatology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~3-6 per 100,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Autoimmune disease cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; chronic sicca symptoms and fatigue",
+    "mortalityRate": "Low (increased lymphoma risk in subset)",
+    "year": 2024,
+    "source": "WHO Europe/IHME autoimmune context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "middle age",
+      "other autoimmune disease",
+      "family history of autoimmunity"
+    ],
+    "vulnerablePopulations": [
+      "women 40-60 years",
+      "patients with RA or lupus"
+    ],
+    "diagnosticCriteria": "Sicca symptoms with anti-SSA/SSB or salivary gland biopsy; Schirmer test and salivary flow"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions across the EU",
+    "controlRate": "High with symptomatic management and specialist care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Rheumatology pathways with autoantibody testing and biopsy",
+    "treatmentProtocol": "Artificial tears/saliva, pilocarpine, hydroxychloroquine for systemic symptoms; monitor lymphoma risk",
+    "regionalChallenges": "Chronic fatigue management and comorbid autoimmunity",
+    "strongPoints": "Strong rheumatology services and access to diagnostic testing"
+  }
+}

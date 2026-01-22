@@ -1,0 +1,52 @@
+{
+  "diseaseId": "doenca-parkinson",
+  "region": "BR",
+  "diseaseName": "Doença de Parkinson",
+  "prevalence": {
+    "value": "~0.3% overall; ~1% in adults >60 years",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Academia Brasileira de Neurologia / IHME GBD estimates",
+    "trend": "increasing due to population aging and improved survival"
+  },
+  "incidence": {
+    "value": "~10-20 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.005",
+    "mortalityRate": "Increasing with age; indirect mortality common",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "male sex",
+      "genetic susceptibility",
+      "environmental exposures (pesticides/solvents)",
+      "history of traumatic brain injury"
+    ],
+    "vulnerablePopulations": [
+      "older adults (>65 years)",
+      "rural agricultural workers (exposure risk)",
+      "patients with limited access to neurology care"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis (bradykinesia plus rest tremor/rigidity) per MDS criteria; response to levodopa supportive; imaging to rule out mimics when needed"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis often delayed until functional impact",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~500,000-800,000",
+    "controlRate": "Symptom control moderate with dopaminergic therapy; advanced therapy access limited outside major centers"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Neurology and movement disorder specialist access concentrated in capitals; primary care recognition variable",
+    "treatmentProtocol": "Levodopa/carbidopa and dopamine agonists where appropriate; physiotherapy and speech therapy; deep brain stimulation (DBS) in reference centers",
+    "regionalChallenges": "Limited access to multidisciplinary rehab and advanced therapies (DBS, infusion therapies) within SUS outside large cities",
+    "strongPoints": "Core dopaminergic medications available and specialized centers exist in major academic hospitals"
+  }
+}
+

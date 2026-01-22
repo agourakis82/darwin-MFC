@@ -1,0 +1,51 @@
+{
+  "diseaseId": "deficiencia-vitamina-d",
+  "region": "IN",
+  "diseaseName": "Vitamin D deficiency",
+  "prevalence": {
+    "value": "~50-70% (adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Nutrition survey syntheses",
+    "trend": "stable; higher in urban and indoor populations"
+  },
+  "incidence": {
+    "value": "Common; varies by season and sun exposure",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Nutritional cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low direct mortality; contributes to bone health issues",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO nutrition context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low sun exposure",
+      "darker skin pigmentation",
+      "cultural clothing practices",
+      "obesity",
+      "malabsorption"
+    ],
+    "vulnerablePopulations": [
+      "women with low sun exposure",
+      "older adults",
+      "patients with malabsorption"
+    ],
+    "diagnosticCriteria": "Serum 25(OH)D levels below recommended thresholds"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; targeted testing",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of millions",
+    "controlRate": "Moderate; depends on supplementation access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Lab testing in urban centers",
+    "treatmentProtocol": "Vitamin D supplementation and lifestyle guidance",
+    "regionalChallenges": "Testing cost and adherence to supplementation",
+    "strongPoints": "Low-cost supplementation available"
+  }
+}

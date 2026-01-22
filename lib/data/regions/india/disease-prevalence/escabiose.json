@@ -1,0 +1,51 @@
+{
+  "diseaseId": "escabiose",
+  "region": "IN",
+  "diseaseName": "Scabies",
+  "prevalence": {
+    "value": "~1-5% (higher in crowded settings)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "WHO scabies burden estimates; tropical dermatology surveillance",
+    "trend": "stable; persistent outbreaks in crowded communities"
+  },
+  "incidence": {
+    "value": "~10-30 per 1,000 person-years in high-risk communities",
+    "population": "General population; higher in schools and crowded households",
+    "year": 2024,
+    "source": "Community prevalence studies and outbreak investigations"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; high itch burden and secondary infection risk",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO/IHME skin disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "crowding and close contact",
+      "poverty and limited sanitation",
+      "institutional living",
+      "delayed treatment of household contacts",
+      "young age"
+    ],
+    "vulnerablePopulations": [
+      "children",
+      "people in crowded households",
+      "hostels, shelters and prisons"
+    ],
+    "diagnosticCriteria": "Typical pruritic papules and burrows; diagnosis usually clinical; dermoscopy/microscopy for confirmation when available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; outbreak-driven detection",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of cases annually in endemic settings",
+    "controlRate": "Moderate; requires treatment of close contacts and hygiene measures"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care and dermatology clinics",
+    "treatmentProtocol": "Topical permethrin or oral ivermectin; treat household contacts; wash bedding/clothing",
+    "regionalChallenges": "Reinfestation due to crowded living conditions and incomplete contact treatment",
+    "strongPoints": "Low-cost effective therapies widely available"
+  }
+}

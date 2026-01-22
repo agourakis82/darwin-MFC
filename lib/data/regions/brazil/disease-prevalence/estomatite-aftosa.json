@@ -1,0 +1,50 @@
+{
+  "diseaseId": "estomatite-aftosa",
+  "region": "BR",
+  "diseaseName": "Estomatite aftosa",
+  "prevalence": {
+    "value": "~10-20% (lifetime; recurrent aphthous ulcers)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Oral health epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~5-10 per 1,000 person-years (recurrent episodes)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Dental and oral medicine cohorts"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant pain and eating discomfort",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO oral health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "stress",
+      "minor mucosal trauma",
+      "nutritional deficiencies (iron/B12/folate)",
+      "hormonal changes"
+    ],
+    "vulnerablePopulations": [
+      "adolescents and young adults",
+      "patients with nutritional deficiencies"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis of recurrent shallow oral ulcers; exclude systemic disease when severe or atypical"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions with recurrent episodes",
+    "controlRate": "High with topical therapy and trigger avoidance"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care and dentistry",
+    "treatmentProtocol": "Topical corticosteroids, analgesic mouthwashes, treat deficiencies; evaluate for Behcet or IBD if severe",
+    "regionalChallenges": "Limited access to dental care in some regions",
+    "strongPoints": "Low-cost topical treatments and primary care access"
+  }
+}

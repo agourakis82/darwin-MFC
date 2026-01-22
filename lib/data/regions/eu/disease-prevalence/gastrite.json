@@ -1,0 +1,25 @@
+{
+  "diseaseId": "gastrite",
+  "region": "EU",
+  "diseaseName": "Gastritis/GORD",
+  "prevalence": {"value": "25%", "population": "EU adults (~447 million)", "year": 2024, "source": "UEG Journal (United European Gastroenterology)", "trend": "stable due to declining H. pylori prevalence (<20%) offset by rising obesity"},
+  "incidence": {"value": "6 per 1000", "population": "EU adults", "year": 2024, "source": "EAGEN (European Association for the Study of the Liver and Gastroenterology)"},
+  "burden": {"dalyPerCapita": "0.04", "mortalityRate": "0.5 per 100,000", "year": 2024, "source": "WHO Europe"},
+  "epidemiology": {
+    "riskFactors": ["Obesity", "Smoking", "Alcohol consumption", "NSAID use", "H. pylori infection (declining <20% in EU)", "Hiatal hernia"],
+    "vulnerablePopulations": ["Elderly (>65 years)", "Obese individuals (BMI >30)", "Pregnant women", "Low socioeconomic groups"],
+    "diagnosticCriteria": "Lyon Consensus (endoscopy, pH-metry for GERD); updated EU histological classification for gastritis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "No routine population screening; high access to endoscopy in 80% of EU countries",
+    "treatmentAvailable": true,
+    "estimatedPatients": "112 million",
+    "controlRate": "70% with PPI therapy and lifestyle interventions"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "UEG-endorsed Rome IV criteria for GERD functional symptoms",
+    "treatmentProtocol": "PPIs as first-line (widely available OTC), H. pylori eradication per Maastricht VI guidelines",
+    "regionalChallenges": "PPI overuse leading to resistance concerns, inconsistent Barrett's esophagus surveillance across member states",
+    "strongPoints": "High endoscopy access via national health systems, adoption of Maastricht VI and Lyon Consensus guidelines"
+  }
+}

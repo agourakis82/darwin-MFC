@@ -1,0 +1,51 @@
+{
+  "diseaseId": "transtorno-estresse-pos-traumatico",
+  "region": "EU",
+  "diseaseName": "Post-Traumatic Stress Disorder (PTSD)",
+  "prevalence": {
+    "value": "2-4%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "WHO Europe / European psychiatric epidemiology syntheses",
+    "trend": "stable to slightly increasing post-COVID"
+  },
+  "incidence": {
+    "value": "3-7 per 1,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.004-0.012",
+    "mortalityRate": "Negligible (indirect via suicide/substance use)",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "trauma exposure",
+      "female sex",
+      "prior mental health disorders",
+      "poor social support"
+    ],
+    "vulnerablePopulations": [
+      "survivors of violence",
+      "refugees and displaced populations",
+      "military and first responders"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 PTSD criteria; structured assessment and trauma-focused care pathways common in many systems"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate in high-risk services; variable in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10-15 million",
+    "controlRate": "Moderate with access to trauma-focused psychotherapy; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist trauma services and structured referrals exist in many countries",
+    "treatmentProtocol": "Trauma-focused CBT/EMDR and SSRIs when indicated; integrated care for refugees in some settings",
+    "regionalChallenges": "Service demand and access variability across member states",
+    "strongPoints": "Strong psychotherapy infrastructure and guideline-based care in many systems"
+  }
+}
+

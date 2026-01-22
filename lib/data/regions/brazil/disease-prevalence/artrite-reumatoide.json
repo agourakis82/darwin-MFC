@@ -1,0 +1,25 @@
+{
+  "diseaseId": "artrite-reumatoide",
+  "region": "BR",
+  "diseaseName": "Artrite Reumatoide",
+  "prevalence": {"value": "0.7%", "population": "Brazilian adults", "year": 2024, "source": "SBR - Sociedade Brasileira de Reumatologia / DataSUS", "trend": "stable prevalence with increasing diagnosis due to improved awareness"},
+  "incidence": {"value": "35 per 100,000", "population": "Brazilian adults", "year": 2024, "source": "SBR epidemiological studies"},
+  "burden": {"dalyPerCapita": "120", "mortalityRate": "0.8 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["female sex", "smoking", "genetic HLA-DR4", "family history", "obesity", "environmental exposures"],
+    "vulnerablePopulations": ["Women (3x higher)", "Adults 30-60 years", "Urban populations with limited access to care"],
+    "diagnosticCriteria": "ACR/EULAR 2010 criteria, RF and anti-CCP antibodies, SBR guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "1.05 million",
+    "controlRate": "45% adequately controlled due to access barriers"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SBR/ACR criteria, RF/anti-CCP testing via SUS",
+    "treatmentProtocol": "DMARDs (methotrexate) via SUS, biologics (adalimumab, etanercept) for moderate-severe cases via judicial demand",
+    "regionalChallenges": "Limited biologic access (judicial process required), rheumatologist shortage, treatment delays",
+    "strongPoints": "SBR guidelines, methotrexate free via SUS, some biologics via high-cost medication program"
+  }
+}

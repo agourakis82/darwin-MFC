@@ -1,0 +1,51 @@
+{
+  "diseaseId": "pneumonia-comunitaria",
+  "region": "IN",
+  "diseaseName": "Community-Acquired Pneumonia (CAP)",
+  "prevalence": {
+    "value": "8.4% in children under 5 for acute respiratory infections (including pneumonia)",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR/NFHS-5",
+    "trend": "Stable but with high seasonal variation due to monsoons"
+  },
+  "incidence": {
+    "value": "Approximately 20-30 cases per 1,000 population annually, with higher rates (up to 50 per 1,000) in children under 5",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "WHO Global Health Observatory and ICMR estimates"
+  },
+  "burden": {
+    "dalyPerCapita": "0.018 DALYs per capita (high burden from lower respiratory infections)",
+    "mortalityRate": "25-30 deaths per 100,000 population, with ~1 million child deaths globally, significant share in India",
+    "year": 2024,
+    "source": "Global Burden of Disease Study 2019 (IHME), extrapolated"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Indoor and outdoor air pollution (major contributor in urban and rural India)",
+      "Malnutrition",
+      "Tobacco exposure",
+      "Crowded living conditions",
+      "Immunosuppression (e.g., HIV)"
+    ],
+    "vulnerablePopulations": [
+      "Children under 5 years (high burden, ~40% of cases)",
+      "Elderly (>65 years)",
+      "Low socioeconomic groups in rural and urban slums"
+    ],
+    "diagnosticCriteria": "WHO criteria: Cough or difficult breathing with fast breathing or chest indrawing; confirmed by chest X-ray (consolidation) and microbiological tests (sputum culture, blood tests)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Low (20-30% for childhood ARI via ASHA workers and ICDS programs)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Over 50 million cases annually, with ~2-3 million in children under 5",
+    "controlRate": "Moderate (50-60% effective treatment coverage, limited by AMR)"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Adapted WHO guidelines with emphasis on clinical assessment in resource-limited settings",
+    "treatmentProtocol": "Antibiotics (amoxicillin as first-line per NTEP/WHO), oxygen therapy, and PCV13 vaccination; integrated with RNTCP for TB co-infection",
+    "regionalChallenges": "High antimicrobial resistance, air pollution exacerbating urban incidence (e.g., Delhi NCR), poor rural access, and overcrowding in monsoon seasons",
+    "strongPoints": "National vaccination drive (PCV introduced 2017, coverage ~70% in children), robust ICMR surveillance, and community health worker programs"
+  }
+}

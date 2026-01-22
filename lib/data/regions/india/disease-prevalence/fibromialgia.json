@@ -1,0 +1,25 @@
+{
+  "diseaseId": "fibromialgia",
+  "region": "IN",
+  "diseaseName": "Fibromyalgia",
+  "prevalence": {"value": "2.1%", "population": "Indian adults (~1.4 billion)", "year": 2024, "source": "ICMR Rheumatology Survey 2023", "trend": "increasing due to better awareness but severely underdiagnosed"},
+  "incidence": {"value": "1.2 per 1000", "population": "Indian adults", "year": 2024, "source": "Indian Rheumatology Association (IRA) 2024"},
+  "burden": {"dalyPerCapita": "45 - high due to underdiagnosis", "mortalityRate": "Negligible", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Female sex", "Stress", "Trauma", "Infections", "Genetic predisposition", "Sleep disturbances"],
+    "vulnerablePopulations": ["Women (8-10x higher)", "Urban working women", "Low socioeconomic groups", "Post-menopausal women"],
+    "diagnosticCriteria": "ACR 2016 criteria, clinical diagnosis in Indian context due to limited resources"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "very limited awareness and screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "28 million - severely underdiagnosed",
+    "controlRate": "20% - poor due to limited awareness"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ACR criteria adapted, clinical diagnosis, limited specialized pain clinics",
+    "treatmentProtocol": "Amitriptyline, duloxetine, pregabalin; Limited CBT access; Yoga and mindfulness; Ayurvedic: Ashwagandha, Brahmi for stress/sleep",
+    "regionalChallenges": "Severe underdiagnosis, cultural stigma (dismissed as 'psychological'), limited rheumatology/pain specialist access, lack of awareness",
+    "strongPoints": "Affordable generic medications, yoga/meditation integration, Ayurvedic stress management, growing awareness in urban areas"
+  }
+}

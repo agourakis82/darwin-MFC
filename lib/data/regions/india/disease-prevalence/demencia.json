@@ -1,0 +1,53 @@
+{
+  "diseaseId": "demencia",
+  "region": "IN",
+  "diseaseName": "Dementia",
+  "prevalence": {
+    "value": "~3-5% in adults >60 years (underdiagnosis likely)",
+    "population": "Indian older adults",
+    "year": 2024,
+    "source": "Alzheimer's and Related Disorders Society of India (ARDSI) / epidemiological syntheses and IHME GBD estimates",
+    "trend": "increasing due to rapid aging and rising vascular risk factors"
+  },
+  "incidence": {
+    "value": "~10-20 per 1,000 person-years in adults >60 years",
+    "population": "Indian older adults",
+    "year": 2024,
+    "source": "Indian cohort syntheses / IHME GBD"
+  },
+  "burden": {
+    "dalyPerCapita": "0.008-0.02 (older-adult concentrated)",
+    "mortalityRate": "Substantial in older age groups (direct and indirect)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "hypertension and stroke",
+      "diabetes mellitus",
+      "low education and limited cognitive reserve",
+      "hearing loss and depression"
+    ],
+    "vulnerablePopulations": [
+      "older adults (>70 years)",
+      "women (longer longevity)",
+      "rural populations with limited specialist access",
+      "families with limited caregiver support resources"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis with cognitive impairment and functional decline; screening tools (HMSE/MMSE/MoCA); evaluation for reversible causes; imaging in tertiary centers"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited; cognitive screening not routine in most primary care settings",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~6-9 million",
+    "controlRate": "Low to moderate; diagnosis delays and limited formal long-term care services"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnosis concentrated in urban tertiary centers; many cases managed at home without formal diagnosis",
+    "treatmentProtocol": "Caregiver education and safety planning; cholinesterase inhibitors/memantine when available; management of vascular risk factors and depression",
+    "regionalChallenges": "High underdiagnosis, stigma, limited geriatric psychiatry/neurology capacity, and heavy reliance on informal caregiving",
+    "strongPoints": "Growing awareness through NGOs and expanding memory clinic capacity in major cities"
+  }
+}
+

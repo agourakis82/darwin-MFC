@@ -1,0 +1,54 @@
+{
+  "diseaseId": "malaria",
+  "region": "IN",
+  "diseaseName": "Malaria",
+  "prevalence": {
+    "value": "~0.02% annual reported incidence (substantial underreporting in some districts)",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "National Center for Vector Borne Diseases Control (NCVBDC) / WHO",
+    "trend": "decreasing in recent years with intensified vector control; focal outbreaks persist"
+  },
+  "incidence": {
+    "value": "~0.2 per 1,000/year (reported)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "NCVBDC programme reports"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0006-0.0015",
+    "mortalityRate": "Low overall; severe disease concentrated in P. falciparum districts",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) / WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "living in forested/tribal areas",
+      "monsoon season mosquito density",
+      "poor housing and limited bed net use",
+      "occupational outdoor exposure",
+      "delayed access to diagnosis and ACT"
+    ],
+    "vulnerablePopulations": [
+      "tribal and forest-fringe communities",
+      "children <5 years in endemic districts",
+      "pregnant people",
+      "migrant laborers",
+      "remote rural populations"
+    ],
+    "diagnosticCriteria": "Rapid diagnostic test and/or microscopy with species identification; severe malaria criteria per national guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; fever testing in endemic areas and during outbreak response",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~300,000 reported cases/year",
+    "controlRate": "Moderate to high where RDT/ACT access is consistent; lower in remote tribal districts"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "RDT scale-up through NCVBDC and state programmes; microscopy confirmation in many districts",
+    "treatmentProtocol": "ACT for P. falciparum; chloroquine for P. vivax where sensitive plus primaquine for radical cure; severe malaria managed with parenteral artesunate",
+    "regionalChallenges": "Heterogeneous burden across states, access constraints in tribal areas, and supply-chain gaps during peak season",
+    "strongPoints": "Large-scale vector control programmes (LLIN/IRS) and expanding community-level RDT/ACT availability"
+  }
+}
+

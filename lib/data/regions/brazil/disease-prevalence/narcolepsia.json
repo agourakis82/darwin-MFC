@@ -1,0 +1,50 @@
+{
+  "diseaseId": "narcolepsia",
+  "region": "BR",
+  "diseaseName": "Narcolepsia",
+  "prevalence": {
+    "value": "20-50 per 100,000",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Sleep medicine epidemiology syntheses (narcolepsy)",
+    "trend": "stable; underdiagnosis remains common"
+  },
+  "incidence": {
+    "value": "0.5-1.5 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Narcolepsy cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0003-0.001",
+    "mortalityRate": "Negligible (indirect accident risk)",
+    "year": 2024,
+    "source": "IHME/WHO sleep and neurological disorder context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "HLA susceptibility (e.g., DQB1*06:02 association)",
+      "autoimmune mechanisms (type 1)",
+      "post-infectious triggers (association)",
+      "adolescence/young adulthood onset"
+    ],
+    "vulnerablePopulations": [
+      "adolescents and young adults",
+      "patients with delayed access to sleep medicine diagnostics"
+    ],
+    "diagnosticCriteria": "Excessive daytime sleepiness with cataplexy (type 1) and confirmation by PSG + MSLT (mean sleep latency ≤8 min with ≥2 SOREMPs) or CSF hypocretin when available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~40,000-100,000",
+    "controlRate": "Variable; medication and specialist access determine symptom control"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "PSG/MSLT availability limited and concentrated in larger centers; diagnosis delays are common",
+    "treatmentProtocol": "Sleep hygiene and scheduled naps; wake-promoting agents/stimulants and anticataplectic therapy where available; comorbidity management",
+    "regionalChallenges": "Limited access to sleep labs and specialist care; medication coverage variability",
+    "strongPoints": "Tertiary centers can provide diagnostic testing and follow-up in major cities"
+  }
+}
+

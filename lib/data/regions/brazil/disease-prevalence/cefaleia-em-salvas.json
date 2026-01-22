@@ -1,0 +1,50 @@
+{
+  "diseaseId": "cefaleia-em-salvas",
+  "region": "BR",
+  "diseaseName": "Cefaleia em Salvas",
+  "prevalence": {
+    "value": "0.1-0.2%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Headache epidemiology syntheses (cluster headache)",
+    "trend": "stable; underdiagnosis common"
+  },
+  "incidence": {
+    "value": "2-7 per 100,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Cluster headache cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004 (high disability per-case)",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO headache burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "male sex",
+      "smoking",
+      "alcohol (trigger during cluster periods)",
+      "circadian pattern susceptibility"
+    ],
+    "vulnerablePopulations": [
+      "men 20-50 years",
+      "smokers"
+    ],
+    "diagnosticCriteria": "ICHD-3: severe unilateral orbital/supraorbital/temporal pain 15-180 min with ipsilateral autonomic signs and attack frequency; distinguish from migraine and trigeminal neuralgia"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~150,000-300,000",
+    "controlRate": "Variable; depends on access to oxygen, triptans, and preventive therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often misdiagnosed; neurology access concentrated in major centers",
+    "treatmentProtocol": "Acute: high-flow oxygen and subcutaneous/intranasal triptans; prevention: verapamil and other options; avoid triggers during bouts",
+    "regionalChallenges": "Limited access to high-flow oxygen at home and specialist management; misdiagnosis delays",
+    "strongPoints": "Effective evidence-based treatments exist when diagnosis is made"
+  }
+}
+

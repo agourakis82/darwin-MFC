@@ -1,0 +1,51 @@
+{
+  "diseaseId": "sindrome-intestino-irritavel-diarréia",
+  "region": "IN",
+  "diseaseName": "IBS with diarrhea (IBS-D)",
+  "prevalence": {
+    "value": "~2-4% (adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "ISG/Rome IV epidemiology syntheses",
+    "trend": "stable; higher in urban populations"
+  },
+  "incidence": {
+    "value": "~1-2 per 1,000 adults/year (new IBS-D diagnoses)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Gastroenterology cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant QOL and productivity impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD digestive disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "post-infectious IBS",
+      "stress and anxiety",
+      "food triggers (spicy foods, FODMAPs)",
+      "female sex",
+      "gut microbiota dysbiosis"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "young adults",
+      "patients with anxiety or depression"
+    ],
+    "diagnosticCriteria": "Rome IV criteria for IBS-D; exclude alarm features and inflammatory bowel disease"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "Moderate; limited access to dietitian counseling"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care and gastroenterology",
+    "treatmentProtocol": "Dietary modification, antispasmodics, loperamide, rifaximin for selected cases; psychological therapy when available",
+    "regionalChallenges": "Underdiagnosis and limited access to low FODMAP education",
+    "strongPoints": "Affordable symptomatic medications widely available"
+  }
+}

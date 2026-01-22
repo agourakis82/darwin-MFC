@@ -1,0 +1,52 @@
+{
+  "diseaseId": "transtorno-uso-cannabis",
+  "region": "BR",
+  "diseaseName": "Transtorno por Uso de Cannabis",
+  "prevalence": {
+    "value": "1-2% (adults; higher in young adults)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "IHME GBD (cannabis use disorder) + national survey context",
+    "trend": "increasing with higher use prevalence and perceived lower risk"
+  },
+  "incidence": {
+    "value": "2-4 per 1,000/year",
+    "population": "Brazilian adolescents and young adults",
+    "year": 2024,
+    "source": "GBD context extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.006",
+    "mortalityRate": "Low; indirect risks via accidents and mental health comorbidity",
+    "year": 2024,
+    "source": "IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "early initiation",
+      "high-potency/high-frequency use",
+      "psychiatric comorbidity (anxiety/depression)",
+      "peer influence and availability",
+      "family history of substance use"
+    ],
+    "vulnerablePopulations": [
+      "adolescents and young adults",
+      "people with anxiety/depression",
+      "patients with psychosis risk"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 cannabis use disorder criteria; assess impairment, withdrawal, and comorbid mental health conditions"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited; SBIRT-like approaches vary",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2-4 million",
+    "controlRate": "Low to moderate; psychosocial treatment is mainstay"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often identified within CAPS AD or psychiatric services when comorbidity emerges",
+    "treatmentProtocol": "Psychosocial interventions (CBT/motivational), harm reduction, and comorbidity management; no approved pharmacotherapy specific to CUD",
+    "regionalChallenges": "Stigma, limited specialized addiction psychotherapy, and comorbid anxiety/psychosis management needs",
+    "strongPoints": "CAPS AD services and integration with mental health care in some municipalities"
+  }
+}
+

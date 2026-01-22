@@ -1,0 +1,54 @@
+{
+  "diseaseId": "pre-eclampsia",
+  "region": "BR",
+  "diseaseName": "Pré-eclâmpsia",
+  "prevalence": {
+    "value": "~4-6% of pregnancies",
+    "population": "Pregnant people in Brazil",
+    "year": 2024,
+    "source": "Ministério da Saúde / FEBRASGO guidance and obstetric epidemiology syntheses",
+    "trend": "stable; higher risk with increasing maternal age and obesity"
+  },
+  "incidence": {
+    "value": "~40-60 per 1,000 pregnancies",
+    "population": "Pregnant people",
+    "year": 2024,
+    "source": "Brazilian obstetric surveillance estimates"
+  },
+  "burden": {
+    "dalyPerCapita": "concentrated in maternal/neonatal outcomes",
+    "mortalityRate": "Major contributor to maternal morbidity/mortality when severe",
+    "year": 2024,
+    "source": "IHME GBD / WHO maternal health estimates"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "first pregnancy",
+      "prior pre-eclampsia",
+      "multiple gestation",
+      "chronic hypertension",
+      "diabetes and obesity",
+      "advanced maternal age"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people with limited prenatal care access",
+      "adolescents and older mothers",
+      "patients with chronic hypertension/diabetes",
+      "rural populations with referral delays"
+    ],
+    "diagnosticCriteria": "New-onset hypertension after 20 weeks plus proteinuria and/or end-organ dysfunction; management per FEBRASGO and Ministério da Saúde obstetric guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "prenatal BP screening is routine in SUS; quality varies by region",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~120,000-180,000 pregnancies/year",
+    "controlRate": "Variable; outcomes depend on timely prenatal detection and access to referral maternity services"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Routine prenatal BP and urine protein screening in APS; severe cases referred to high-risk prenatal and maternity hospitals",
+    "treatmentProtocol": "Aspirin prophylaxis in high-risk pregnancies, antihypertensives (labetalol/hydralazine/nifedipine), magnesium sulfate for seizure prophylaxis, and timely delivery planning",
+    "regionalChallenges": "Unequal access to high-risk obstetric care and ICU beds; delays in referral in rural/North regions",
+    "strongPoints": "Standardized prenatal protocols in SUS and broad availability of magnesium sulfate in maternity services"
+  }
+}
+

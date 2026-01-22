@@ -1,0 +1,54 @@
+{
+  "diseaseId": "hepatite-b",
+  "region": "BR",
+  "diseaseName": "Hepatite B",
+  "prevalence": {
+    "value": "~0.5-0.8% chronic HBV (HBsAg prevalence)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde (Boletim Hepatites Virais) / WHO",
+    "trend": "stable to decreasing with vaccination; higher prevalence in some Amazon/indigenous settings"
+  },
+  "incidence": {
+    "value": "~3-8 per 100,000/year (reported new HBV infections)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde viral hepatitis notifications"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.003",
+    "mortalityRate": "Indirect via cirrhosis/HCC burden",
+    "year": 2024,
+    "source": "IHME GBD / WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "perinatal transmission without prophylaxis",
+      "unprotected sex",
+      "unsafe injections/medical procedures",
+      "needle sharing",
+      "household contact with chronic HBV"
+    ],
+    "vulnerablePopulations": [
+      "unvaccinated adults",
+      "people who inject drugs",
+      "MSM and sex workers",
+      "indigenous and remote Amazon communities",
+      "newborns of HBsAg-positive mothers"
+    ],
+    "diagnosticCriteria": "HBsAg positive for chronic infection (≥6 months), HBV DNA quantification and ALT for staging; per national hepatitis guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "antenatal HBsAg testing common in SUS prenatal care; broader screening targeted to risk groups",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1.2-1.7 million chronic HBV",
+    "controlRate": "Variable; treatment coverage limited by diagnosis gaps and linkage-to-care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Prenatal screening and confirmatory serology/viral load in SUS; fibrosis staging via labs/imaging with referral pathways",
+    "treatmentProtocol": "Tenofovir or entecavir for eligible chronic HBV; neonatal immunoprophylaxis (vaccine + HBIG where indicated) and universal vaccination via PNI",
+    "regionalChallenges": "Underdiagnosis in adults, linkage-to-care gaps, and higher-burden pockets in remote regions",
+    "strongPoints": "Strong national immunization program and SUS access to first-line antivirals for eligible patients"
+  }
+}
+

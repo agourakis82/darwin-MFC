@@ -1,14 +1,16 @@
 'use client';
 
-import { use, useState } from 'react';
+import { use, useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { useAppStore } from '@/lib/store/appStore';
 import {
   ArrowLeft, BookOpen, Pill, FileText, Calculator, AlertTriangle,
   CheckCircle, XCircle, Clock, Users, Heart, ChevronDown, ChevronUp,
-  Stethoscope, Activity, Clipboard, Target, ExternalLink, ClipboardCheck
+  Stethoscope, Activity, Clipboard, Target, ExternalLink, ClipboardCheck,
+  ChevronRight, Globe, TrendingUp
 } from 'lucide-react';
-import { CATEGORIAS_DOENCA } from '@/lib/types/doenca';
+import { CATEGORIAS_DOENCA, getRegionalPrevalence, getRegionalGuideline } from '@/lib/types/doenca';
 import { useLocalizedDisease, LocalizedDoenca } from '@/lib/hooks/useLocalizedDisease';
 import {
   getMedicamentosForDoenca,
@@ -19,66 +21,22 @@ import { notFound } from 'next/navigation';
 import ChecklistConsultaComponent from '@/app/components/Checklist/ChecklistConsulta';
 import { generateChecklistFromDoenca } from '@/lib/utils/checklist-generator';
 import { OntologyCodesDisplay } from '@/app/components/Ontology';
+import { cn } from '@/lib/utils';
 
 // Loading Skeleton Component
 function DoencaDetailSkeleton() {
   return (
-    <div className="container mx-auto px-4 py-8 max-w-5xl animate-pulse">
-      {/* Breadcrumb skeleton */}
-      <div className="h-5 w-32 bg-neutral-200 dark:bg-neutral-700 rounded mb-6" />
-
-      {/* Header skeleton */}
-      <div className="mb-8">
-        <div className="flex items-start gap-4 mb-4">
-          <div className="w-16 h-16 bg-neutral-200 dark:bg-neutral-700 rounded-2xl" />
-          <div className="flex-1">
-            <div className="h-10 w-3/4 bg-neutral-200 dark:bg-neutral-700 rounded mb-2" />
-            <div className="flex flex-wrap gap-2">
-              <div className="h-7 w-24 bg-neutral-200 dark:bg-neutral-700 rounded-full" />
-              <div className="h-7 w-28 bg-neutral-200 dark:bg-neutral-700 rounded-full" />
-            </div>
-          </div>
+    <div className="container mx-auto px-4 py-8 max-w-6xl animate-pulse">
+      <div className="h-5 w-32 bg-carbon-200 dark:bg-carbon-800 rounded mb-8" />
+      <div className="flex gap-8">
+        <div className="hidden lg:block w-64 space-y-4">
+          {[1, 2, 3, 4, 5].map(i => (
+            <div key={i} className="h-4 bg-carbon-200 dark:bg-carbon-800 rounded w-full" />
+          ))}
         </div>
-
-        {/* Toggle buttons skeleton */}
-        <div className="flex gap-2 mt-4">
-          <div className="h-10 w-32 bg-neutral-200 dark:bg-neutral-700 rounded-xl" />
-          <div className="h-10 w-36 bg-neutral-200 dark:bg-neutral-700 rounded-xl" />
-          <div className="h-10 w-28 bg-neutral-200 dark:bg-neutral-700 rounded-xl" />
-        </div>
-      </div>
-
-      {/* Content skeleton */}
-      <div className="space-y-6">
-        <div className="glass-strong rounded-2xl p-6">
-          <div className="h-6 w-40 bg-neutral-200 dark:bg-neutral-700 rounded mb-3" />
-          <div className="h-4 w-full bg-neutral-200 dark:bg-neutral-700 rounded mb-2" />
-          <div className="h-4 w-5/6 bg-neutral-200 dark:bg-neutral-700 rounded mb-2" />
-          <div className="h-4 w-4/5 bg-neutral-200 dark:bg-neutral-700 rounded" />
-        </div>
-        <div className="glass-strong rounded-2xl p-6">
-          <div className="h-6 w-48 bg-neutral-200 dark:bg-neutral-700 rounded mb-3" />
-          <div className="space-y-2">
-            <div className="h-4 w-full bg-neutral-200 dark:bg-neutral-700 rounded" />
-            <div className="h-4 w-11/12 bg-neutral-200 dark:bg-neutral-700 rounded" />
-            <div className="h-4 w-10/12 bg-neutral-200 dark:bg-neutral-700 rounded" />
-          </div>
-        </div>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="glass-strong rounded-2xl p-6">
-            <div className="h-6 w-36 bg-neutral-200 dark:bg-neutral-700 rounded mb-3" />
-            <div className="space-y-2">
-              <div className="h-4 w-full bg-neutral-200 dark:bg-neutral-700 rounded" />
-              <div className="h-4 w-5/6 bg-neutral-200 dark:bg-neutral-700 rounded" />
-            </div>
-          </div>
-          <div className="glass-strong rounded-2xl p-6">
-            <div className="h-6 w-32 bg-neutral-200 dark:bg-neutral-700 rounded mb-3" />
-            <div className="space-y-2">
-              <div className="h-4 w-full bg-neutral-200 dark:bg-neutral-700 rounded" />
-              <div className="h-4 w-4/5 bg-neutral-200 dark:bg-neutral-700 rounded" />
-            </div>
-          </div>
+        <div className="flex-1 space-y-6">
+          <div className="h-12 bg-carbon-200 dark:bg-carbon-800 rounded w-3/4" />
+          <div className="h-32 bg-carbon-200 dark:bg-carbon-800 rounded w-full" />
         </div>
       </div>
     </div>
@@ -86,37 +44,18 @@ function DoencaDetailSkeleton() {
 }
 
 // Error Display Component
-function DoencaDetailError({ error, onRetry }: { error: Error; onRetry?: () => void }) {
+function DoencaDetailError({ error }: { error: Error }) {
   const t = useTranslations('diseaseDetail');
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-5xl">
-      <Link
-        href="/doencas"
-        className="inline-flex items-center gap-2 text-[#86868b] hover:text-blue-600 mb-6 transition-colors"
-      >
-        <ArrowLeft className="w-4 h-4" />
-        {t('backToDiseases')}
-      </Link>
-
-      <div className="glass-strong rounded-2xl p-8 text-center">
-        <div className="w-16 h-16 mx-auto mb-4 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center">
-          <AlertTriangle className="w-8 h-8 text-red-500" />
-        </div>
-        <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-2">
-          {t('error.title')}
-        </h2>
-        <p className="text-[#86868b] mb-4">
-          {error.message || t('error.generic')}
-        </p>
-        {onRetry && (
-          <button
-            onClick={onRetry}
-            className="px-4 py-2 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-colors"
-          >
-            {t('error.retry')}
-          </button>
-        )}
+    <div className="container mx-auto px-4 py-8 max-w-6xl">
+      <div className="p-12 border border-critical-red/20 bg-critical-red/5 rounded-lg text-center">
+        <AlertTriangle className="w-12 h-12 text-critical-red mx-auto mb-4" />
+        <h2 className="text-xl font-display font-bold text-helix-navy dark:text-white mb-2">{t('error.title')}</h2>
+        <p className="text-carbon-500 mb-6">{error.message || t('error.generic')}</p>
+        <Link href="/doencas" className="btn-tactile inline-block">
+          {t('backToDiseases')}
+        </Link>
       </div>
     </div>
   );
@@ -125,730 +64,340 @@ function DoencaDetailError({ error, onRetry }: { error: Error; onRetry?: () => v
 export default function DoencaDetailClient({ params }: { params: Promise<{ id: string }> }) {
   const t = useTranslations('diseaseDetail');
   const { id } = use(params);
-
-  // Use the localized disease hook instead of useMedicalTerms + getDoencaById
   const { disease: doenca, isLoading, error } = useLocalizedDisease(id);
+  const selectedRegion = useAppStore((state) => state.selectedRegion);
+  const [isMounted, setIsMounted] = useState(false);
 
-  const [showFullContent, setShowFullContent] = useState(false);
-  const [showChecklist, setShowChecklist] = useState(false);
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['epidemiologia']));
+  const [activeView, setActiveView] = useState<'quick' | 'full' | 'checklist'>('quick');
 
-  // Show loading skeleton while fetching translations
-  if (isLoading) {
-    return <DoencaDetailSkeleton />;
-  }
-
-  // Handle translation errors - show error UI with option to continue with original content
-  if (error) {
-    return <DoencaDetailError error={error} />;
-  }
-
-  // Handle disease not found
-  if (!doenca) {
-    notFound();
-  }
+  // Hydration safety
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+  
+  if (isLoading) return <DoencaDetailSkeleton />;
+  if (error) return <DoencaDetailError error={error} />;
+  if (!doenca) notFound();
 
   const categoriaInfo = doenca.categoria ? CATEGORIAS_DOENCA[doenca.categoria] : CATEGORIAS_DOENCA['outros'];
-
-  const toggleSection = (section: string) => {
-    const newExpanded = new Set(expandedSections);
-    if (newExpanded.has(section)) {
-      newExpanded.delete(section);
-    } else {
-      newExpanded.add(section);
-    }
-    setExpandedSections(newExpanded);
-  };
-
   const checklist = generateChecklistFromDoenca(doenca as any);
 
+  // Regional data
+  const regionalPrevalence = isMounted && doenca ? getRegionalPrevalence(doenca as any, selectedRegion) : null;
+  const regionalGuideline = isMounted && doenca ? getRegionalGuideline(doenca as any, selectedRegion) : null;
+
+  const sections = [
+    { id: 'definition', label: t('sections.definition'), icon: Stethoscope },
+    { id: 'diagnosis', label: t('sections.diagnosticCriteria'), icon: Clipboard },
+    { id: 'treatment', label: t('sections.fullTreatment'), icon: Pill },
+    { id: 'follow-up', label: t('sections.followUp'), icon: Clock },
+  ];
+
   return (
-    <div className="container mx-auto px-4 py-8 max-w-5xl">
-      {/* Breadcrumb */}
-      <Link
-        href="/doencas"
-        className="inline-flex items-center gap-2 text-[#86868b] hover:text-blue-600 mb-6 transition-colors"
-      >
-        <ArrowLeft className="w-4 h-4" />
-        {t('backToDiseases')}
-      </Link>
-
-      {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-start gap-4 mb-4">
-          <div className={`w-16 h-16 bg-gradient-to-br ${categoriaInfo.color} rounded-2xl flex items-center justify-center shadow-lg`}>
-            <BookOpen className="w-8 h-8 text-white" />
+    <div className="min-h-screen bg-paper-white dark:bg-carbon-950">
+      {/* 0. Breadcrumb HUD */}
+      <div className="border-b border-carbon-200 dark:border-carbon-800 bg-clinical-gray/50 dark:bg-carbon-900/50">
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-4 text-xs font-mono text-carbon-500 uppercase tracking-widest">
+            <Link href="/doencas" className="hover:text-helix-navy transition-colors flex items-center gap-1">
+              <ArrowLeft className="w-3 h-3" /> {t('backToDiseases')}
+            </Link>
+            <span className="text-carbon-300">/</span>
+            <span className="text-carbon-400">{categoriaInfo.label}</span>
+            <span className="text-carbon-300">/</span>
+            <span className="text-helix-navy dark:text-white font-bold">{doenca.titulo}</span>
           </div>
-          <div className="flex-1">
-            <h1 className="text-4xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-2">
-              {doenca.titulo}
-            </h1>
-            <div className="flex flex-wrap gap-2">
-              <span className={`px-3 py-1 bg-gradient-to-r ${categoriaInfo.color} text-white text-sm font-medium rounded-full`}>
-                {categoriaInfo.label}
-              </span>
-              {doenca.ciap2?.map(code => (
-                <span key={code} className="px-3 py-1 bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-sm font-mono rounded-full">
-                  CIAP-2: {code}
-                </span>
-              ))}
-              {doenca.cid10?.map(code => (
-                <span key={code} className="px-3 py-1 bg-blue-500/20 text-blue-700 dark:text-blue-300 text-sm font-mono rounded-full">
-                  CID-10: {code}
-                </span>
-              ))}
-              {/* Translation indicator */}
-              {doenca._isTranslated && (
-                <span className="px-3 py-1 bg-purple-500/20 text-purple-700 dark:text-purple-300 text-xs font-medium rounded-full">
-                  {doenca._locale.toUpperCase()}
-                </span>
-              )}
-            </div>
+          
+          <div className="flex gap-1">
+            {['quick', 'full', 'checklist'].map((view) => (
+              <button
+                key={view}
+                onClick={() => setActiveView(view as any)}
+                className={cn(
+                  "px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded transition-all",
+                  activeView === view 
+                    ? "bg-helix-navy text-white" 
+                    : "text-carbon-500 hover:bg-carbon-200 dark:hover:bg-carbon-800"
+                )}
+              >
+                {t(`views.${view === 'quick' ? 'quickView' : view === 'full' ? 'fullVersion' : 'checklist'}`)}
+              </button>
+            ))}
           </div>
-        </div>
-
-        {/* Toggle View */}
-        <div className="flex gap-2 mt-4 flex-wrap">
-          <button
-            onClick={() => {
-              setShowFullContent(false);
-              setShowChecklist(false);
-            }}
-            className={`px-4 py-2 rounded-xl font-medium transition-all ${
-              !showFullContent && !showChecklist
-                ? 'bg-blue-600 text-white shadow-lg'
-                : 'bg-white/50 dark:bg-neutral-800/50 text-[#86868b] hover:bg-blue-100'
-            }`}
-          >
-            {t('views.quickView')}
-          </button>
-          <button
-            onClick={() => {
-              setShowFullContent(true);
-              setShowChecklist(false);
-            }}
-            className={`px-4 py-2 rounded-xl font-medium transition-all ${
-              showFullContent && !showChecklist
-                ? 'bg-purple-600 text-white shadow-lg'
-                : 'bg-white/50 dark:bg-neutral-800/50 text-[#86868b] hover:bg-purple-100'
-            }`}
-          >
-            {t('views.fullVersion')}
-          </button>
-          <button
-            onClick={() => {
-              setShowFullContent(false);
-              setShowChecklist(true);
-            }}
-            className={`px-4 py-2 rounded-xl font-medium transition-all flex items-center gap-2 ${
-              showChecklist
-                ? 'bg-emerald-600 text-white shadow-lg'
-                : 'bg-white/50 dark:bg-neutral-800/50 text-[#86868b] hover:bg-emerald-100'
-            }`}
-          >
-            <ClipboardCheck className="w-4 h-4" />
-            {t('views.checklist')}
-          </button>
         </div>
       </div>
 
-      {/* Ontology Codes Section */}
-      {(doenca.loinc || doenca.hpo || doenca.ordo || doenca.snomedCT || doenca.meshId || doenca.doid || doenca.umlsCui) && (
-        <div className="glass-strong rounded-2xl p-6 mb-8">
-          <OntologyCodesDisplay
-            loinc={doenca.loinc}
-            hpo={doenca.hpo}
-            ordo={doenca.ordo}
-            icd10={doenca.cid10}
-            ciap2={doenca.ciap2}
-            snomedCT={doenca.snomedCT}
-            meshId={doenca.meshId}
-            doid={doenca.doid}
-            umlsCui={doenca.umlsCui}
-          />
+      {/* 1. The Metadata Abstract */}
+      <div className="clinical-abstract">
+        <div className="flex items-center gap-2">
+          <span className="text-carbon-400">CIAP-2:</span>
+          {doenca.ciap2?.map(c => <span key={c} className="bg-helix-navy/10 text-helix-navy px-1.5 rounded">{c}</span>)}
+        </div>
+        <div className="w-px h-4 bg-carbon-200 dark:bg-carbon-800" />
+        <div className="flex items-center gap-2">
+          <span className="text-carbon-400">CID-10:</span>
+          {doenca.cid10?.map(c => <span key={c} className="bg-adenine-teal/10 text-adenine-teal px-1.5 rounded">{c}</span>)}
+        </div>
+        <div className="ml-auto flex items-center gap-3">
+          <span className="text-carbon-400">UPDATED:</span>
+          <span className="font-bold">{doenca.lastUpdate}</span>
+        </div>
+      </div>
+
+      {/* Regional Context Information */}
+      {isMounted && (regionalPrevalence || regionalGuideline) && (
+        <div className="border-b border-carbon-200 dark:border-carbon-800 bg-clinical-gray/30 dark:bg-carbon-900/30">
+          <div className="container mx-auto px-4 py-6 max-w-7xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {regionalPrevalence && (
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-adenine-teal/10 flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-5 h-5 text-adenine-teal" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-xs font-bold text-carbon-400 uppercase tracking-widest mb-1.5">
+                      Regional Prevalence ({selectedRegion})
+                    </div>
+                    <div className="text-lg font-display font-bold text-helix-navy dark:text-white mb-1">
+                      {regionalPrevalence.value}
+                    </div>
+                    <div className="text-xs text-carbon-500">
+                      Source: {regionalPrevalence.source} ({regionalPrevalence.year})
+                    </div>
+                  </div>
+                </div>
+              )}
+              {regionalGuideline && (
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-guanine-green/10 flex items-center justify-center flex-shrink-0">
+                    <Globe className="w-5 h-5 text-guanine-green" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-xs font-bold text-carbon-400 uppercase tracking-widest mb-1.5">
+                      Regional Guideline ({selectedRegion})
+                    </div>
+                    <div className="text-base font-semibold text-helix-navy dark:text-white mb-1">
+                      {regionalGuideline.name}
+                    </div>
+                    <div className="text-xs text-carbon-500 flex items-center gap-1 flex-wrap">
+                      <span>{regionalGuideline.organization} ({regionalGuideline.year})</span>
+                      {regionalGuideline.url && (
+                        <>
+                          <span className="text-carbon-300">•</span>
+                          <a
+                            href={regionalGuideline.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-adenine-teal hover:underline inline-flex items-center gap-1"
+                          >
+                            View guideline <ExternalLink className="w-3 h-3" />
+                          </a>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       )}
 
-      {/* Checklist Content */}
-      {showChecklist ? (
-        <div className="mt-8">
-          <ChecklistConsultaComponent
-            checklist={checklist}
-            onComplete={(progress) => {
-              // Salvar no localStorage
-              const key = `checklist-${checklist.id}`;
-              localStorage.setItem(key, JSON.stringify(progress));
-            }}
-          />
-        </div>
-      ) : !showFullContent && doenca.quickView ? (
-        <div className="space-y-6">
-          {/* Definicao */}
-          <div className="glass-strong rounded-2xl p-6">
-            <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
-              <Stethoscope className="w-5 h-5 text-blue-500" />
-              {t('sections.definition')}
-            </h2>
-            <p className="text-lg text-[#1d1d1f] dark:text-[#f5f5f7] leading-relaxed">
-              {doenca.quickView.definicao}
-            </p>
-          </div>
-
-          {/* Criterios Diagnosticos */}
-          {doenca.quickView.criteriosDiagnosticos && (
-            <div className="glass-strong rounded-2xl p-6">
-              <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
-                <Clipboard className="w-5 h-5 text-emerald-500" />
-                {t('sections.diagnosticCriteria')}
-              </h2>
-              <ul className="space-y-2">
-                {doenca.quickView.criteriosDiagnosticos.map((criterio, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-[#1d1d1f] dark:text-[#f5f5f7]">{criterio}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Tratamento */}
-          {doenca.quickView.tratamentoPrimeiraLinha && (
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Nao Farmacologico */}
-              {doenca.quickView.tratamentoPrimeiraLinha.naoFarmacologico && (
-                <div className="glass-strong rounded-2xl p-6">
-                  <h2 className="text-lg font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
-                    <Heart className="w-5 h-5 text-pink-500" />
-                    {t('sections.nonPharmacological')}
-                  </h2>
-                  <ul className="space-y-2">
-                    {doenca.quickView.tratamentoPrimeiraLinha.naoFarmacologico.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm">
-                        <span className="text-pink-500">-</span>
-                        <span className="text-[#1d1d1f] dark:text-[#f5f5f7]">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* Farmacologico */}
-              {doenca.quickView.tratamentoPrimeiraLinha.farmacologico && (
-                <div className="glass-strong rounded-2xl p-6">
-                  <h2 className="text-lg font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
-                    <Pill className="w-5 h-5 text-blue-500" />
-                    {t('sections.pharmacological')}
-                  </h2>
-                  <ul className="space-y-2">
-                    {doenca.quickView.tratamentoPrimeiraLinha.farmacologico.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm">
-                        <span className="text-blue-500">-</span>
-                        <span className="text-[#1d1d1f] dark:text-[#f5f5f7]">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* Red Flags */}
-          {doenca.quickView.redFlags && (
-            <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-6">
-              <h2 className="text-xl font-bold text-red-700 dark:text-red-400 mb-3 flex items-center gap-2">
-                <AlertTriangle className="w-5 h-5" />
-                {t('sections.redFlags')}
-              </h2>
-              <ul className="space-y-2">
-                {doenca.quickView.redFlags.map((flag, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-red-800 dark:text-red-200 font-medium">{flag}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Metas e Exames */}
-          {(doenca.quickView.metasTerapeuticas || doenca.quickView.examesIniciais) && (
-            <div className="grid md:grid-cols-2 gap-6">
-              {doenca.quickView.metasTerapeuticas && (
-                <div className="glass-subtle rounded-2xl p-6">
-                  <h2 className="text-lg font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
-                    <Target className="w-5 h-5 text-amber-500" />
-                    {t('sections.therapeuticGoals')}
-                  </h2>
-                  <ul className="space-y-2">
-                    {doenca.quickView.metasTerapeuticas.map((meta, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm">
-                        <span className="text-amber-500">*</span>
-                        <span className="text-[#1d1d1f] dark:text-[#f5f5f7]">{meta}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {doenca.quickView.examesIniciais && (
-                <div className="glass-subtle rounded-2xl p-6">
-                  <h2 className="text-lg font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-3 flex items-center gap-2">
-                    <Activity className="w-5 h-5 text-purple-500" />
-                    {t('sections.initialExams')}
-                  </h2>
-                  <ul className="space-y-2">
-                    {doenca.quickView.examesIniciais.map((exame, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm">
-                        <span className="text-purple-500">+</span>
-                        <span className="text-[#1d1d1f] dark:text-[#f5f5f7]">{exame}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      ) : doenca.fullContent ? (
-        /* Full Content */
-        <div className="space-y-4">
-          {/* Epidemiologia */}
-          {doenca.fullContent.epidemiologia && (
-            <CollapsibleSection
-              title={t('sections.epidemiology')}
-              icon={<Users className="w-5 h-5 text-blue-500" />}
-              isExpanded={expandedSections.has('epidemiologia')}
-              onToggle={() => toggleSection('epidemiologia')}
-            >
-              <div className="grid md:grid-cols-3 gap-4 mb-4">
-                {doenca.fullContent.epidemiologia.prevalencia && (
-                  <div className="bg-blue-500/10 rounded-xl p-4 text-center">
-                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                      {doenca.fullContent.epidemiologia.prevalencia}
-                    </div>
-                    <div className="text-sm text-[#86868b]">{t('epi.prevalence')}</div>
-                  </div>
-                )}
-                {doenca.fullContent.epidemiologia.incidencia && (
-                  <div className="bg-emerald-500/10 rounded-xl p-4 text-center">
-                    <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-                      {doenca.fullContent.epidemiologia.incidencia}
-                    </div>
-                    <div className="text-sm text-[#86868b]">{t('epi.incidence')}</div>
-                  </div>
-                )}
-                {doenca.fullContent.epidemiologia.mortalidade && (
-                  <div className="bg-red-500/10 rounded-xl p-4 text-center">
-                    <div className="text-2xl font-bold text-red-600 dark:text-red-400">
-                      {doenca.fullContent.epidemiologia.mortalidade}
-                    </div>
-                    <div className="text-sm text-[#86868b]">{t('epi.mortality')}</div>
-                  </div>
-                )}
+      <div className="container mx-auto px-4 py-12 max-w-7xl">
+        <div className="flex flex-col lg:flex-row gap-12">
+          
+          {/* 2. Sticky ToC Sidebar */}
+          <aside className="lg:w-64 hidden lg:block">
+            <div className="sticky top-28 space-y-8">
+              <div>
+                <h4 className="text-[10px] font-bold text-carbon-400 uppercase tracking-[0.2em] mb-4">Contents</h4>
+                <nav className="flex flex-col gap-2">
+                  {sections.map(s => (
+                    <a key={s.id} href={`#${s.id}`} className="group flex items-center gap-3 text-sm text-carbon-500 hover:text-helix-navy transition-colors">
+                      <div className="w-1 h-1 rounded-full bg-carbon-300 group-hover:bg-helix-navy transition-colors" />
+                      {s.label}
+                    </a>
+                  ))}
+                </nav>
               </div>
-              {doenca.fullContent.epidemiologia.fatoresRisco && (
-                <div>
-                  <h4 className="font-semibold mb-2">{t('epi.riskFactors')}:</h4>
-                  <ul className="grid md:grid-cols-2 gap-2">
-                    {doenca.fullContent.epidemiologia.fatoresRisco.map((fator, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm">
-                        <span className="text-amber-500">!</span>
-                        {fator}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </CollapsibleSection>
-          )}
-
-          {/* Quadro Clinico */}
-          {doenca.fullContent?.quadroClinico && (
-            <CollapsibleSection
-              title={t('sections.clinicalPresentation')}
-              icon={<Stethoscope className="w-5 h-5 text-emerald-500" />}
-              isExpanded={expandedSections.has('quadroClinico')}
-              onToggle={() => toggleSection('quadroClinico')}
-            >
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold mb-2">{t('clinical.mainSymptoms')}:</h4>
-                  <ul className="space-y-1">
-                    {doenca.fullContent.quadroClinico.sintomasPrincipais?.map((s, idx) => (
-                      <li key={idx} className="text-sm flex items-start gap-2">
-                        <span className="text-emerald-500">-</span> {s}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">{t('clinical.physicalExamSigns')}:</h4>
-                  <ul className="space-y-1">
-                    {doenca.fullContent.quadroClinico.sinaisExameFisico?.map((s, idx) => (
-                      <li key={idx} className="text-sm flex items-start gap-2">
-                        <span className="text-blue-500">-</span> {s}
-                      </li>
-                    ))}
-                  </ul>
+              
+              <div className="pt-8 border-t border-carbon-200 dark:border-carbon-800">
+                <h4 className="text-[10px] font-bold text-carbon-400 uppercase tracking-[0.2em] mb-4">Actions</h4>
+                <div className="flex flex-col gap-3">
+                  <button className="flex items-center gap-2 text-xs font-semibold text-carbon-600 hover:text-adenine-teal">
+                    <ClipboardCheck className="w-4 h-4" /> Export Protocol
+                  </button>
+                  <button className="flex items-center gap-2 text-xs font-semibold text-carbon-600 hover:text-adenine-teal">
+                    <FileText className="w-4 h-4" /> Print Guidelines
+                  </button>
                 </div>
               </div>
-            </CollapsibleSection>
-          )}
+            </div>
+          </aside>
 
-          {/* Diagnostico */}
-          {doenca.fullContent?.diagnostico && (
-            <CollapsibleSection
-              title={t('sections.diagnosis')}
-              icon={<Clipboard className="w-5 h-5 text-purple-500" />}
-              isExpanded={expandedSections.has('diagnostico')}
-              onToggle={() => toggleSection('diagnostico')}
-            >
-              <div className="space-y-4">
-                {doenca.fullContent.diagnostico.criterios && (
-                  <div>
-                    <h4 className="font-semibold mb-2">{t('diagnosis.criteria')}:</h4>
-                    <ul className="space-y-1">
-                      {doenca.fullContent.diagnostico.criterios.map((c, idx) => (
-                        <li key={idx} className="text-sm flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" /> {c}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                {doenca.fullContent.diagnostico.diagnosticoDiferencial && (
-                  <div>
-                    <h4 className="font-semibold mb-2">{t('diagnosis.differential')}:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {doenca.fullContent.diagnostico.diagnosticoDiferencial.map((d, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-purple-500/20 text-purple-700 dark:text-purple-300 text-sm rounded-full">
-                          {d}
-                        </span>
-                      ))}
+          {/* 3. Main Clinical Column */}
+          <main className="flex-1 max-w-3xl">
+            <h1 className="text-4xl sm:text-5xl font-display font-bold text-helix-navy dark:text-white mb-6">
+              {doenca.titulo}
+            </h1>
+
+            {activeView === 'checklist' ? (
+              <ChecklistConsultaComponent
+                checklist={checklist}
+                onComplete={(progress) => {
+                  localStorage.setItem(`checklist-${checklist.id}`, JSON.stringify(progress));
+                }}
+              />
+            ) : (
+              <div className="space-y-16">
+                {/* 3.1 The Bottom Line (Summary) */}
+                <section id="definition">
+                  <div className="flex items-center gap-2 mb-6">
+                    <div className="w-8 h-8 rounded bg-helix-navy/5 flex items-center justify-center">
+                      <Stethoscope className="w-4 h-4 text-helix-navy" />
                     </div>
+                    <h2 className="text-xl font-display font-bold uppercase tracking-widest text-carbon-400">01. {t('sections.definition')}</h2>
                   </div>
-                )}
-              </div>
-            </CollapsibleSection>
-          )}
-
-          {/* Tratamento */}
-          {doenca.fullContent?.tratamento && (
-            <CollapsibleSection
-              title={t('sections.fullTreatment')}
-              icon={<Pill className="w-5 h-5 text-blue-500" />}
-              isExpanded={expandedSections.has('tratamento')}
-              onToggle={() => toggleSection('tratamento')}
-            >
-              <div className="space-y-6">
-                {doenca.fullContent.tratamento.objetivos && (
-                  <div>
-                    <h4 className="font-semibold mb-2">{t('treatment.objectives')}:</h4>
-                    <ul className="space-y-1">
-                      {doenca.fullContent.tratamento.objetivos.map((o, idx) => (
-                        <li key={idx} className="text-sm flex items-start gap-2">
-                          <Target className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" /> {o}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="bg-thymine-gold/5 border-l-4 border-thymine-gold p-6 rounded-r-lg italic font-body text-lg leading-relaxed text-helix-navy dark:text-carbon-100">
+                    "{doenca.quickView?.definicao || doenca.fullContent?.quadroClinico?.sintomasPrincipais?.[0]}"
                   </div>
-                )}
+                </section>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  {doenca.fullContent.tratamento.naoFarmacologico?.medidas && (
-                    <div className="bg-pink-500/10 rounded-xl p-4">
-                      <h4 className="font-semibold mb-2 text-pink-700 dark:text-pink-300">{t('treatment.nonPharmacological')}:</h4>
-                      <ul className="space-y-1">
-                        {doenca.fullContent.tratamento.naoFarmacologico.medidas.map((m, idx) => (
-                          <li key={idx} className="text-sm">{m}</li>
+                {/* 3.2 Clinical Ledger Sections */}
+                <section id="diagnosis" className="space-y-8">
+                  <div className="flex items-center gap-2 mb-6">
+                    <div className="w-8 h-8 rounded bg-adenine-teal/5 flex items-center justify-center">
+                      <Clipboard className="w-4 h-4 text-adenine-teal" />
+                    </div>
+                    <h2 className="text-xl font-display font-bold uppercase tracking-widest text-carbon-400">02. {t('sections.diagnosticCriteria')}</h2>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    {(doenca.quickView?.criteriosDiagnosticos || doenca.fullContent?.diagnostico?.criterios)?.map((c, i) => (
+                      <div key={i} className="flex gap-4 p-4 card-ledger group">
+                        <div className="w-6 h-6 rounded-full bg-carbon-100 dark:bg-carbon-800 flex items-center justify-center text-[10px] font-bold text-carbon-500 group-hover:bg-adenine-teal group-hover:text-white transition-colors">
+                          {i + 1}
+                        </div>
+                        <p className="flex-1 text-carbon-700 dark:text-carbon-300">{c}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {doenca.quickView?.redFlags && (
+                    <div className="p-6 border border-critical-red/20 bg-critical-red/5 rounded-lg">
+                      <h4 className="flex items-center gap-2 text-critical-red font-bold text-xs uppercase tracking-widest mb-4">
+                        <AlertTriangle className="w-4 h-4" /> {t('sections.redFlags')}
+                      </h4>
+                      <ul className="space-y-3">
+                        {doenca.quickView.redFlags.map((flag, i) => (
+                          <li key={i} className="flex items-start gap-3 text-sm font-semibold text-critical-red/80">
+                            <span className="text-critical-red">•</span> {flag}
+                          </li>
                         ))}
                       </ul>
                     </div>
                   )}
+                </section>
 
-                  {doenca.fullContent.tratamento.farmacologico?.primeiraLinha && (
-                    <div className="bg-blue-500/10 rounded-xl p-4">
-                      <h4 className="font-semibold mb-2 text-blue-700 dark:text-blue-300">{t('treatment.pharmacologicalFirstLine')}:</h4>
-                      {doenca.fullContent.tratamento.farmacologico.primeiraLinha.map((tr, idx) => (
-                        <div key={idx} className="mb-2">
-                          <span className="font-medium">{tr.classe}:</span>
-                          <ul className="ml-4">
-                            {tr.medicamentos?.map((m, midx) => (
-                              <li key={midx} className="text-sm">{m}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+                {/* 3.3 Management Protocol */}
+                <section id="treatment" className="space-y-8">
+                  <div className="flex items-center gap-2 mb-6">
+                    <div className="w-8 h-8 rounded bg-guanine-green/5 flex items-center justify-center">
+                      <Pill className="w-4 h-4 text-guanine-green" />
                     </div>
-                  )}
-                </div>
+                    <h2 className="text-xl font-display font-bold uppercase tracking-widest text-carbon-400">03. Clinical Management</h2>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="p-6 bg-clinical-gray dark:bg-carbon-900 border border-carbon-200 dark:border-carbon-800 rounded-lg">
+                      <h4 className="text-[10px] font-bold text-carbon-400 uppercase tracking-[0.2em] mb-4">Pharmacological</h4>
+                      <ul className="space-y-3">
+                        {(doenca.quickView?.tratamentoPrimeiraLinha?.farmacologico || []).map((item, i) => (
+                          <li key={i} className="text-sm flex gap-3 text-helix-navy dark:text-carbon-200">
+                            <CheckCircle className="w-4 h-4 text-adenine-teal flex-shrink-0" /> {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="p-6 bg-clinical-gray dark:bg-carbon-900 border border-carbon-200 dark:border-carbon-800 rounded-lg">
+                      <h4 className="text-[10px] font-bold text-carbon-400 uppercase tracking-[0.2em] mb-4">Non-Pharmacological</h4>
+                      <ul className="space-y-3">
+                        {(doenca.quickView?.tratamentoPrimeiraLinha?.naoFarmacologico || []).map((item, i) => (
+                          <li key={i} className="text-sm flex gap-3 text-helix-navy dark:text-carbon-200">
+                            <div className="w-4 h-4 border border-carbon-300 rounded-full flex-shrink-0" /> {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+
+                {/* 4. Cross References */}
+                <CrossReferencesSection doencaId={id} />
               </div>
-            </CollapsibleSection>
-          )}
-
-          {/* Acompanhamento */}
-          {doenca.fullContent?.acompanhamento && (
-            <CollapsibleSection
-              title={t('sections.followUp')}
-              icon={<Clock className="w-5 h-5 text-amber-500" />}
-              isExpanded={expandedSections.has('acompanhamento')}
-              onToggle={() => toggleSection('acompanhamento')}
-            >
-              <div className="space-y-4">
-                {doenca.fullContent.acompanhamento.frequenciaConsultas && (
-                  <div className="bg-amber-500/10 rounded-xl p-4">
-                    <h4 className="font-semibold mb-1">{t('followUp.visitFrequency')}:</h4>
-                    <p className="text-sm">{doenca.fullContent.acompanhamento.frequenciaConsultas}</p>
-                  </div>
-                )}
-
-                {doenca.fullContent.acompanhamento.metasTerapeuticas && (
-                  <div>
-                    <h4 className="font-semibold mb-2">{t('followUp.therapeuticGoals')}:</h4>
-                    <ul className="space-y-1">
-                      {doenca.fullContent.acompanhamento.metasTerapeuticas.map((m, idx) => (
-                        <li key={idx} className="text-sm flex items-start gap-2">
-                          <Target className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" /> {m}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {doenca.fullContent.acompanhamento.criteriosEncaminhamento && (
-                  <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
-                    <h4 className="font-semibold mb-2 text-red-700 dark:text-red-400">{t('followUp.referralCriteria')}:</h4>
-                    <ul className="space-y-1">
-                      {doenca.fullContent.acompanhamento.criteriosEncaminhamento.map((c, idx) => (
-                        <li key={idx} className="text-sm text-red-800 dark:text-red-200">{c}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            </CollapsibleSection>
-          )}
+            )}
+          </main>
         </div>
-      ) : (
-        <div className="text-center py-8 text-neutral-500">
-          {t('contentInDevelopment')}
-        </div>
-      )}
-
-      {/* Related Resources */}
-      <div className="mt-12 grid md:grid-cols-3 gap-4">
-        {((doenca as {medicamentos?: string[]}).medicamentos?.length ?? 0) > 0 && (
-          <Link href="/medicamentos" className="glass-subtle rounded-xl p-4 hover:shadow-lg transition-all group">
-            <div className="flex items-center gap-3">
-              <Pill className="w-8 h-8 text-blue-500" />
-              <div>
-                <div className="font-semibold group-hover:text-blue-600">{t('resources.medications', { count: (doenca as {medicamentos?: string[]}).medicamentos?.length ?? 0 })}</div>
-                <div className="text-sm text-[#86868b]">{t('resources.viewInPharmacy')}</div>
-              </div>
-            </div>
-          </Link>
-        )}
-
-        {((doenca as {protocolos?: string[]}).protocolos?.length ?? 0) > 0 && (
-          <Link href="/protocolos" className="glass-subtle rounded-xl p-4 hover:shadow-lg transition-all group">
-            <div className="flex items-center gap-3">
-              <FileText className="w-8 h-8 text-purple-500" />
-              <div>
-                <div className="font-semibold group-hover:text-purple-600">{t('resources.protocols', { count: (doenca as {protocolos?: string[]}).protocolos?.length ?? 0 })}</div>
-                <div className="text-sm text-[#86868b]">{t('resources.viewAlgorithms')}</div>
-              </div>
-            </div>
-          </Link>
-        )}
-
-        {((doenca as {calculadoras?: string[]}).calculadoras?.length ?? 0) > 0 && (
-          <Link href="/calculadoras" className="glass-subtle rounded-xl p-4 hover:shadow-lg transition-all group">
-            <div className="flex items-center gap-3">
-              <Calculator className="w-8 h-8 text-emerald-500" />
-              <div>
-                <div className="font-semibold group-hover:text-emerald-600">{t('resources.calculators', { count: (doenca as {calculadoras?: string[]}).calculadoras?.length ?? 0 })}</div>
-                <div className="text-sm text-[#86868b]">{t('resources.useTools')}</div>
-              </div>
-            </div>
-          </Link>
-        )}
-      </div>
-
-      {/* Cross-References Section */}
-      <CrossReferencesSection doencaId={id} />
-
-      {/* Context Link */}
-      <div className="mt-8">
-        <Link
-          href={`/contexto/${id}`}
-          className="flex items-center justify-center gap-2 w-full p-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl font-medium hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg"
-        >
-          <Clipboard className="w-5 h-5" />
-          {t('openClinicalContext')}
-          <ExternalLink className="w-4 h-4" />
-        </Link>
-      </div>
-
-      {/* Last Update */}
-      <div className="mt-8 text-center text-sm text-[#86868b]">
-        {t('lastUpdate')}: {doenca.lastUpdate}
       </div>
     </div>
   );
 }
 
-// Cross-References Section Component
 function CrossReferencesSection({ doencaId }: { doencaId: string }) {
   const t = useTranslations('diseaseDetail');
   const medicamentos = getMedicamentosForDoenca(doencaId);
   const protocolos = getProtocolosForDoenca(doencaId);
   const calculadoras = getCalculadorasForDoenca(doencaId);
 
-  const hasAnyRef = medicamentos.length > 0 || protocolos.length > 0 || calculadoras.length > 0;
-
-  if (!hasAnyRef) return null;
+  if (medicamentos.length === 0 && protocolos.length === 0 && calculadoras.length === 0) return null;
 
   return (
-    <div className="mt-8 glass-strong rounded-2xl p-6">
-      <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-4 flex items-center gap-2">
-        {t('crossRefs.title')}
-      </h2>
-
-      <div className="grid md:grid-cols-3 gap-4">
-        {/* Medicamentos */}
+    <div className="mt-20 pt-12 border-t border-carbon-200 dark:border-carbon-800">
+      <h3 className="text-[10px] font-bold text-carbon-400 uppercase tracking-[0.3em] mb-8">Related Authority Data</h3>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {medicamentos.length > 0 && (
-          <div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-4">
-            <h3 className="font-semibold text-purple-800 dark:text-purple-300 mb-3 flex items-center gap-2">
-              <Pill className="w-4 h-4" />
-              {t('crossRefs.medications', { count: medicamentos.length })}
-            </h3>
-            <ul className="space-y-2">
-              {medicamentos.slice(0, 4).map(med => (
-                <li key={med.medicamentoId}>
-                  <Link
-                    href={`/medicamentos/${med.medicamentoId}`}
-                    className="flex items-center justify-between p-2 bg-white/50 dark:bg-neutral-800/50 rounded-lg hover:bg-white dark:hover:bg-neutral-800 transition-colors"
-                  >
-                    <div>
-                      <span className="text-sm font-medium text-[#1d1d1f] dark:text-[#f5f5f7]">
-                        {med.nomeGenerico}
-                      </span>
-                      {med.tipoUso === 'primeira_linha' && (
-                        <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-1.5 py-0.5 rounded">
-                          {t('crossRefs.firstLine')}
-                        </span>
-                      )}
-                    </div>
-                    <ExternalLink className="w-3 h-3 text-[#86868b]" />
-                  </Link>
-                </li>
+          <div className="space-y-4">
+            <h4 className="text-xs font-bold text-helix-navy dark:text-carbon-200 flex items-center gap-2">
+              <Pill className="w-4 h-4" /> Pharmacy Hub
+            </h4>
+            <div className="flex flex-col gap-2">
+              {medicamentos.slice(0, 3).map(m => (
+                <Link key={m.medicamentoId} href={`/medicamentos/${m.medicamentoId}`} className="text-sm text-adenine-teal hover:underline flex items-center justify-between group">
+                  {m.nomeGenerico} <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all" />
+                </Link>
               ))}
-              {medicamentos.length > 4 && (
-                <li className="text-sm text-[#86868b] text-center pt-2">
-                  {t('crossRefs.more', { count: medicamentos.length - 4 })}
-                </li>
-              )}
-            </ul>
+            </div>
           </div>
         )}
-
-        {/* Protocolos */}
         {protocolos.length > 0 && (
-          <div className="bg-orange-50 dark:bg-orange-900/20 rounded-xl p-4">
-            <h3 className="font-semibold text-orange-800 dark:text-orange-300 mb-3 flex items-center gap-2">
-              <FileText className="w-4 h-4" />
-              {t('crossRefs.protocols', { count: protocolos.length })}
-            </h3>
-            <ul className="space-y-2">
-              {protocolos.map(prot => (
-                <li key={prot.protocoloId}>
-                  <Link
-                    href={`/protocolos?id=${prot.protocoloId}`}
-                    className="flex items-center justify-between p-2 bg-white/50 dark:bg-neutral-800/50 rounded-lg hover:bg-white dark:hover:bg-neutral-800 transition-colors"
-                  >
-                    <span className="text-sm font-medium text-[#1d1d1f] dark:text-[#f5f5f7]">
-                      {prot.titulo}
-                    </span>
-                    <ExternalLink className="w-3 h-3 text-[#86868b]" />
-                  </Link>
-                </li>
+          <div className="space-y-4">
+            <h4 className="text-xs font-bold text-helix-navy dark:text-carbon-200 flex items-center gap-2">
+              <FileText className="w-4 h-4" /> Logic Trails
+            </h4>
+            <div className="flex flex-col gap-2">
+              {protocolos.map(p => (
+                <Link key={p.protocoloId} href={`/protocolos?id=${p.protocoloId}`} className="text-sm text-adenine-teal hover:underline flex items-center justify-between group">
+                  {p.titulo} <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all" />
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
         )}
-
-        {/* Calculadoras */}
         {calculadoras.length > 0 && (
-          <div className="bg-emerald-50 dark:bg-emerald-900/20 rounded-xl p-4">
-            <h3 className="font-semibold text-emerald-800 dark:text-emerald-300 mb-3 flex items-center gap-2">
-              <Calculator className="w-4 h-4" />
-              {t('crossRefs.calculators', { count: calculadoras.length })}
-            </h3>
-            <ul className="space-y-2">
-              {calculadoras.map(calc => (
-                <li key={calc.calculadoraId}>
-                  <Link
-                    href={`/calculadoras#${calc.calculadoraId}`}
-                    className="flex items-center justify-between p-2 bg-white/50 dark:bg-neutral-800/50 rounded-lg hover:bg-white dark:hover:bg-neutral-800 transition-colors"
-                  >
-                    <div>
-                      <span className="text-sm font-medium text-[#1d1d1f] dark:text-[#f5f5f7]">
-                        {calc.nome}
-                      </span>
-                      {calc.prioritaria && (
-                        <span className="ml-2 text-xs bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 px-1.5 py-0.5 rounded">
-                          {t('crossRefs.priority')}
-                        </span>
-                      )}
-                    </div>
-                    <ExternalLink className="w-3 h-3 text-[#86868b]" />
-                  </Link>
-                </li>
+          <div className="space-y-4">
+            <h4 className="text-xs font-bold text-helix-navy dark:text-carbon-200 flex items-center gap-2">
+              <Calculator className="w-4 h-4" /> Metric HUD
+            </h4>
+            <div className="flex flex-col gap-2">
+              {calculadoras.map(c => (
+                <Link key={c.calculadoraId} href={`/calculadoras#${c.calculadoraId}`} className="text-sm text-adenine-teal hover:underline flex items-center justify-between group">
+                  {c.nome} <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all" />
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
         )}
       </div>
-    </div>
-  );
-}
-
-// Collapsible Section Component
-function CollapsibleSection({
-  title,
-  icon,
-  isExpanded,
-  onToggle,
-  children
-}: {
-  title: string;
-  icon: React.ReactNode;
-  isExpanded: boolean;
-  onToggle: () => void;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="glass-strong rounded-2xl overflow-hidden">
-      <button
-        onClick={onToggle}
-        className="w-full p-6 flex items-center justify-between hover:bg-white/50 dark:hover:bg-neutral-800/50 transition-colors"
-      >
-        <div className="flex items-center gap-3">
-          {icon}
-          <h2 className="text-xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7]">{title}</h2>
-        </div>
-        {isExpanded ? (
-          <ChevronUp className="w-5 h-5 text-[#86868b]" />
-        ) : (
-          <ChevronDown className="w-5 h-5 text-[#86868b]" />
-        )}
-      </button>
-      {isExpanded && (
-        <div className="px-6 pb-6 text-[#1d1d1f] dark:text-[#f5f5f7]">
-          {children}
-        </div>
-      )}
     </div>
   );
 }

@@ -10,6 +10,9 @@ import Footer from "./components/Layout/Footer";
 import KeyboardShortcuts from "./components/KeyboardShortcuts";
 import { PWAProvider } from "./components/PWA";
 import { ToastProvider } from "./components/ui/Toast";
+import { OfflineIndicator } from "@/components/PWA/OfflineIndicator";
+import { InstallPrompt } from "@/components/PWA/InstallPrompt";
+import PWAInitializer from "@/components/PWA/PWAInitializer";
 
 // NOTE: This root layout is used for pages NOT under [locale]/
 // Pages under [locale]/ have their own layout with Header/Sidebar/Footer
@@ -33,10 +36,10 @@ export const metadata: Metadata = {
       : 'http://localhost:3000'
   ),
   title: {
-    default: "Darwin MFC - Guia de Medicina de Família e Comunidade",
-    template: "%s - Darwin MFC",
+    default: "DARWIN MEDICAL HUB - Clinical Intelligence, Evolved",
+    template: "%s - Darwin Medical Hub",
   },
-  description: "Guia completo de Medicina de Família e Comunidade para consulta point-of-care na APS. 82 doenças, 138 medicamentos RENAME, protocolos flowchart e calculadoras clínicas com padrão acadêmico Q1. Codificação CIAP-2/CID-10.",
+  description: "Your clinical command center. Evidence-based protocols, intelligent drug references, and clinical calculators — all in one premium platform built for Family Medicine. 82+ conditions, 138+ RENAME medications, flowchart protocols with Q1 journal standards. CIAP-2/CID-10 coded.",
   keywords: [
     "medicina de família", "MFC", "APS", "atenção primária",
     "doenças", "medicamentos", "RENAME", "protocolos",
@@ -61,9 +64,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: "https://agourakis82.github.io/darwin-MFC/",
-    siteName: "Darwin MFC",
-    title: "Darwin MFC - Guia de Medicina de Família e Comunidade",
-    description: "Guia completo para consulta point-of-care na APS. Doenças, medicamentos, protocolos e calculadoras com padrão Q1.",
+    siteName: "DARWIN MEDICAL HUB",
+    title: "DARWIN MEDICAL HUB - Clinical Intelligence, Evolved",
+    description: "Your clinical command center. Evidence-based protocols, intelligent drug references, and clinical calculators for Family Medicine.",
     images: [
       {
         url: "/og-image.png",
@@ -75,15 +78,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Darwin MFC - Guia de MFC",
-    description: "Guia completo de Medicina de Família para APS",
+    title: "DARWIN MEDICAL HUB - Clinical Intelligence, Evolved",
+    description: "Your clinical command center for evidence-based Family Medicine",
     images: ["/og-image.png"],
   },
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Darwin MFC",
+    title: "Darwin Hub",
+    startupImage: "/icons/icon-192.png",
   },
   icons: {
     icon: "/logos/sus-logo.svg",
@@ -358,6 +362,9 @@ export default async function RootLayout({
           <ThemeProvider>
           <ToastProvider />
           <PWAProvider />
+          <PWAInitializer />
+          <OfflineIndicator />
+          <InstallPrompt />
           <KeyboardShortcuts />
           {/* Skip links for accessibility */}
           <a 

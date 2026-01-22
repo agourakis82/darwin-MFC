@@ -1,0 +1,55 @@
+{
+  "diseaseId": "tuberculose-pulmonar",
+  "region": "IN",
+  "diseaseName": "Pulmonary Tuberculosis",
+  "prevalence": {
+    "value": "~300 per 100,000 (active TB)",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "WHO Global TB Report 2024 / NTEP (National TB Elimination Programme)",
+    "trend": "slowly decreasing notifications; ongoing underdiagnosis and high transmission in dense urban settings"
+  },
+  "incidence": {
+    "value": "~200 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "WHO Global TB Report 2024"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.02",
+    "mortalityRate": "~25-35 per 100,000 (incl. HIV-negative and HIV-positive TB)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) / WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "household and community crowding",
+      "undernutrition",
+      "diabetes mellitus",
+      "tobacco smoking",
+      "HIV co-infection",
+      "silica exposure (e.g., mining) and indoor air pollution"
+    ],
+    "vulnerablePopulations": [
+      "urban slum populations",
+      "migrant workers",
+      "people living with HIV",
+      "people with diabetes/undernutrition",
+      "household contacts of index cases"
+    ],
+    "diagnosticCriteria": "Sputum NAAT (Xpert/Truenat), smear microscopy, culture/DST where available; CXR as triage; NTEP diagnostic algorithms"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "active case finding in high-risk groups; variable across states; symptom screening common in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~3.5-4.0 million active cases",
+    "controlRate": "~60-70% treatment success; gaps for MDR-TB and private-sector patients"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "NTEP algorithms with Truenat/Xpert scale-up; CXR camps for screening in high-burden districts",
+    "treatmentProtocol": "Free anti-TB drugs via NTEP (daily fixed-dose combinations); MDR/RR-TB regimens (including bedaquiline-based where indicated) in DR-TB centers; linkage with HIV program for TB-HIV",
+    "regionalChallenges": "Large private-sector care with variable reporting, MDR/RR-TB burden, delayed presentation, and high catastrophic costs despite free drugs",
+    "strongPoints": "National NTEP coverage with expanding rapid molecular testing and digital adherence support, and targeted active case-finding campaigns"
+  }
+}
+

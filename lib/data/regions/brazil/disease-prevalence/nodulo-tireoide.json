@@ -1,0 +1,52 @@
+{
+  "diseaseId": "nodulo-tireoide",
+  "region": "BR",
+  "diseaseName": "Nodulo de tireoide",
+  "prevalence": {
+    "value": "~4-7% (palpable); ~20-40% (ultrasound)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBEM guideline context and thyroid ultrasound epidemiology",
+    "trend": "increasing detection due to ultrasound use"
+  },
+  "incidence": {
+    "value": "~5-10 per 1,000 adults/year (new detected nodules)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Thyroid imaging and outpatient cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; burden driven by anxiety, diagnostic work-up, and overdiagnosis",
+    "mortalityRate": "Negligible (most nodules are benign)",
+    "year": 2024,
+    "source": "WHO/IHME endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "older age",
+      "iodine deficiency/excess",
+      "prior neck radiation",
+      "family history of thyroid disease",
+      "autoimmune thyroiditis"
+    ],
+    "vulnerablePopulations": [
+      "women >40 years",
+      "patients with radiation exposure history",
+      "families with thyroid cancer history"
+    ],
+    "diagnosticCriteria": "TSH and thyroid ultrasound; risk stratification by ultrasound features; fine-needle aspiration for suspicious nodules (Bethesda system)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; incidental detection common",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions with incidental nodules",
+    "controlRate": "High for benign nodules; appropriate surveillance reduces unnecessary surgery"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SBEM-aligned ultrasound risk stratification and FNA when indicated",
+    "treatmentProtocol": "Observation for low-risk nodules; FNA for suspicious nodules; surgery for malignant/high-risk cases; levothyroxine suppression rarely indicated",
+    "regionalChallenges": "Overdiagnosis and uneven access to ultrasound/FNA in smaller municipalities",
+    "strongPoints": "Clear guideline pathways and access to endocrinology in major centers"
+  }
+}

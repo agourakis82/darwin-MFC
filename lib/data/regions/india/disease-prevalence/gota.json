@@ -1,0 +1,53 @@
+{
+  "diseaseId": "gota",
+  "region": "IN",
+  "diseaseName": "Gout",
+  "prevalence": {
+    "value": "0.5-1.5%",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Indian rheumatology epidemiology syntheses + metabolic risk context",
+    "trend": "increasing with urbanization, obesity, and CKD"
+  },
+  "incidence": {
+    "value": "1-4 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "International cohort syntheses extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.003",
+    "mortalityRate": "Indirect (cardiometabolic associations)",
+    "year": 2024,
+    "source": "IHME GBD context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "male sex",
+      "hyperuricemia",
+      "diet high in purines/fructose",
+      "CKD",
+      "diuretics",
+      "alcohol use"
+    ],
+    "vulnerablePopulations": [
+      "men >40 years",
+      "patients with CKD/diabetes/metabolic syndrome",
+      "urban sedentary populations"
+    ],
+    "diagnosticCriteria": "Clinical flares; crystal confirmation when available; serum urate supportive but not diagnostic during acute attack"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~7-20 million",
+    "controlRate": "Low to moderate due to follow-up gaps and variable ULT titration"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Mostly clinical diagnosis; limited access to arthrocentesis in many settings",
+    "treatmentProtocol": "NSAIDs/colchicine/steroids for flares; allopurinol or febuxostat for urate lowering; lifestyle counseling",
+    "regionalChallenges": "Under-treatment and inconsistent treat-to-target titration; comorbidity burden and follow-up fragmentation",
+    "strongPoints": "Affordable generic ULT and colchicine availability"
+  }
+}
+

@@ -1,0 +1,52 @@
+{
+  "diseaseId": "espondilite-anquilosante",
+  "region": "BR",
+  "diseaseName": "Espondilite Anquilosante (Espondiloartrite Axial)",
+  "prevalence": {
+    "value": "0.2-0.5%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBR + spondyloarthritis epidemiology syntheses",
+    "trend": "stable; improved recognition with MRI availability"
+  },
+  "incidence": {
+    "value": "5-15 per 100,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Spondyloarthritis cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Low; indirect via disability and comorbidity",
+    "year": 2024,
+    "source": "IHME GBD (spondyloarthritis) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "HLA-B27 positivity",
+      "male sex",
+      "family history",
+      "smoking",
+      "inflammatory bowel disease/psoriasis association"
+    ],
+    "vulnerablePopulations": [
+      "young adults (onset <40 years)",
+      "men",
+      "patients with delayed diagnosis in primary care"
+    ],
+    "diagnosticCriteria": "Inflammatory back pain with imaging (sacroiliitis on X-ray/MRI) and/or HLA-B27 plus clinical features; ASAS criteria; exclude mechanical back pain"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~400,000-1,000,000",
+    "controlRate": "Moderate; biologic access and physiotherapy availability influence outcomes"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "MRI access variable in SUS; rheumatology referrals concentrated in capitals",
+    "treatmentProtocol": "Exercise/physiotherapy, NSAIDs first-line; TNF/IL-17 inhibitors for refractory disease in specialized care; smoking cessation counseling",
+    "regionalChallenges": "Delayed diagnosis, uneven access to MRI and biologics, and limited rehab services outside major centers",
+    "strongPoints": "Specialist centers can provide biologics and multidisciplinary care in larger cities"
+  }
+}
+

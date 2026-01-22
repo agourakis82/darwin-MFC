@@ -1,0 +1,51 @@
+{
+  "diseaseId": "dermatite-atopica",
+  "region": "EU",
+  "diseaseName": "Atopic Dermatitis",
+  "prevalence": {
+    "value": "10-20% (children); 2-8% (adults)",
+    "population": "EU population (age-dependent)",
+    "year": 2024,
+    "source": "European dermatology epidemiology syntheses / WHO Europe",
+    "trend": "stable to increasing in some settings"
+  },
+  "incidence": {
+    "value": "8-20 per 1,000/year (children)",
+    "population": "EU children",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.012",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history of atopy",
+      "asthma/allergic rhinitis",
+      "skin barrier dysfunction",
+      "environmental exposures"
+    ],
+    "vulnerablePopulations": [
+      "children",
+      "patients with comorbid atopy",
+      "patients with severe disease requiring systemic therapy"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; severity assessment (e.g., EASI/SCORAD) in specialist care"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions across EU",
+    "controlRate": "Moderate to high with access to dermatology and advanced therapies; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist dermatology pathways common; severity scoring used for systemic/biologic eligibility",
+    "treatmentProtocol": "Emollients, topical anti-inflammatories, phototherapy, systemic agents, and biologics (e.g., dupilumab, JAK inhibitors) for severe disease",
+    "regionalChallenges": "Access variability and reimbursement differences across member states",
+    "strongPoints": "Wide access to dermatology care and advanced therapies in many systems"
+  }
+}
+

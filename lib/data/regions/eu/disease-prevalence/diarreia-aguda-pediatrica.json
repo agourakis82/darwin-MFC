@@ -1,0 +1,49 @@
+{
+  "diseaseId": "diarreia-aguda-pediatrica",
+  "region": "EU",
+  "diseaseName": "Acute Pediatric Diarrhea",
+  "prevalence": {
+    "value": "common; highest in children <5 years (viral gastroenteritis dominant)",
+    "population": "EU children <5 years",
+    "year": 2024,
+    "source": "WHO Europe / European pediatric gastroenteritis epidemiology syntheses",
+    "trend": "stable; low mortality with high ORS access"
+  },
+  "incidence": {
+    "value": "1-2 episodes per child-year",
+    "population": "Children <5 years",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; high healthcare utilization during winter viral peaks",
+    "mortalityRate": "Very low",
+    "year": 2024,
+    "source": "IHME/WHO Europe diarrhea context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral gastroenteritis outbreaks (norovirus/rotavirus)",
+      "daycare attendance",
+      "household transmission"
+    ],
+    "vulnerablePopulations": [
+      "infants and young children",
+      "children with chronic disease or immunosuppression"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis with dehydration assessment; stool testing reserved for severe/bloody/prolonged illness or outbreak investigation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of episodes/year across EU",
+    "controlRate": "High with ORS and prompt care; hospitalization in select cases"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and ED pathways emphasize dehydration assessment and safe discharge criteria",
+    "treatmentProtocol": "ORS and continued feeding; IV fluids for severe dehydration; antibiotic stewardship is strong",
+    "regionalChallenges": "Seasonal hospital utilization peaks and outbreak control (norovirus)",
+    "strongPoints": "High access to ORS and robust pediatric emergency care"
+  }
+}
+

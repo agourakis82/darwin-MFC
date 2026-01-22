@@ -1,0 +1,50 @@
+{
+  "diseaseId": "acidemia-metilmalonica",
+  "region": "EU",
+  "diseaseName": "Methylmalonic Acidemia (MMA)",
+  "prevalence": {
+    "value": "~0.4-1.0 per 100,000",
+    "population": "EU population (rare inherited metabolic disorder)",
+    "year": 2024,
+    "source": "Orphanet; European metabolic registries and newborn screening program summaries",
+    "trend": "stable; earlier diagnosis supported by broader newborn screening and metabolic referral networks"
+  },
+  "incidence": {
+    "value": "~1 per 50,000-100,000 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "European inborn errors of metabolism incidence syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but high per-patient morbidity; CKD and neurodevelopmental complications",
+    "mortalityRate": "Low with early treatment; higher in severe neonatal-onset without rapid care",
+    "year": 2024,
+    "source": "Orphanet and metabolic registry outcomes"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autosomal recessive inheritance",
+      "family history",
+      "catabolic stress (infections/fasting)",
+      "cobalamin metabolism defects"
+    ],
+    "vulnerablePopulations": [
+      "newborns/infants",
+      "patients with delayed transition to adult metabolic care",
+      "patients with chronic kidney disease from MMA"
+    ],
+    "diagnosticCriteria": "Newborn screening/MS/MS with confirmatory methylmalonic acid quantification, acylcarnitine profile (C3), genetic confirmation; classify B12-responsive forms"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate to high depending on country; confirmatory testing and referral networks widely available",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Low thousands (rare)",
+    "controlRate": "Good with early diagnosis, diet/medication adherence, and specialist follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Newborn screening in many countries; metabolic centers provide confirmatory diagnostics and long-term care",
+    "treatmentProtocol": "Emergency metabolic protocols, medical nutrition and protein restriction, carnitine, B12 for responsive types, renal and neurodevelopmental surveillance; transplant evaluation for select severe cases",
+    "regionalChallenges": "Transition-to-adult care and long-term adherence; cross-country variation in screening panels",
+    "strongPoints": "Strong metabolic networks and access to specialized formulas and multidisciplinary follow-up"
+  }
+}

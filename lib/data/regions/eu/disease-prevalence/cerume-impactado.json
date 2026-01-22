@@ -1,0 +1,49 @@
+{
+  "diseaseId": "cerume-impactado",
+  "region": "EU",
+  "diseaseName": "Impacted cerumen",
+  "prevalence": {
+    "value": "~4-8% (adults); higher in older adults",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ENT primary care epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~8-15 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Primary care and ENT outpatient data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; hearing loss and discomfort",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe hearing health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "older age",
+      "hearing aid use",
+      "narrow ear canals",
+      "cotton swab use"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "hearing aid users"
+    ],
+    "diagnosticCriteria": "Otoscopy showing occluding cerumen with symptoms"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually across EU",
+    "controlRate": "High with removal and counseling"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care otoscopy; ENT referral for difficult cases",
+    "treatmentProtocol": "Cerumenolytics, irrigation, manual removal; counsel against cotton swabs",
+    "regionalChallenges": "Access disparities to ENT services in some regions",
+    "strongPoints": "Low-cost treatment widely available"
+  }
+}

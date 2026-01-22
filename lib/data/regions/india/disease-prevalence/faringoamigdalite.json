@@ -1,0 +1,52 @@
+{
+  "diseaseId": "faringoamigdalite",
+  "region": "IN",
+  "diseaseName": "Acute Pharyngotonsillitis",
+  "prevalence": {
+    "value": "15-30% annual incidence in children (episodes; mostly viral)",
+    "population": "Indian children",
+    "year": 2024,
+    "source": "Indian pediatric/primary care respiratory infection syntheses",
+    "trend": "stable with seasonal peaks"
+  },
+  "incidence": {
+    "value": "150-300 per 1,000 children/year (any sore throat episodes)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Primary care epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "school crowding",
+      "winter season",
+      "household crowding",
+      "indoor air pollution",
+      "limited hand hygiene"
+    ],
+    "vulnerablePopulations": [
+      "children 5-15 years",
+      "crowded households",
+      "patients with recurrent infections"
+    ],
+    "diagnosticCriteria": "Clinical assessment with Centor/McIsaac where used; rapid testing limited; antibiotics for suspected GAS when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high episode burden annually",
+    "controlRate": "High symptom resolution; stewardship needed to reduce unnecessary antibiotics"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Mostly clinical diagnosis; limited access to rapid testing and culture in many districts",
+    "treatmentProtocol": "Supportive care for viral cases; penicillin/amoxicillin for GAS suspicion; rheumatic fever prevention remains relevant",
+    "regionalChallenges": "High antibiotic overuse and limited diagnostics; rheumatic fever risk drives empiric treatment in some contexts",
+    "strongPoints": "Availability of low-cost antibiotics and broad primary care reach in many settings"
+  }
+}
+

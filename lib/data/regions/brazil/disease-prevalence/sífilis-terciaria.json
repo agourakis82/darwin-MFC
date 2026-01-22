@@ -1,0 +1,50 @@
+{
+  "diseaseId": "sífilis-terciaria",
+  "region": "BR",
+  "diseaseName": "Sífilis terciaria",
+  "prevalence": {
+    "value": "<0.05% (rare; late untreated cases)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Ministry of Health STI surveillance; WHO syphilis context",
+    "trend": "stable to decreasing with expanded screening and treatment"
+  },
+  "incidence": {
+    "value": "Very low; late progression from untreated infection",
+    "population": "Adults with prior untreated syphilis",
+    "year": 2024,
+    "source": "STI cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low population burden; high per-case morbidity (neurosyphilis, cardiovascular syphilis)",
+    "mortalityRate": "Low to moderate in advanced cardiovascular/neuro disease",
+    "year": 2024,
+    "source": "WHO/IHME STI burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "untreated primary/secondary syphilis",
+      "limited access to STI screening",
+      "HIV coinfection",
+      "stigma and delayed care"
+    ],
+    "vulnerablePopulations": [
+      "people with limited healthcare access",
+      "people with HIV",
+      "older adults with long-standing untreated infection"
+    ],
+    "diagnosticCriteria": "Reactive treponemal test plus compatible late manifestations (neuro/cardiovascular/gummatous); CSF testing for neurosyphilis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "expanded screening in prenatal and STI services",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Low thousands (rare late disease)",
+    "controlRate": "High with timely penicillin therapy and follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Serology widely available; neurosyphilis evaluation in referral centers",
+    "treatmentProtocol": "IV penicillin G for neurosyphilis; benzathine penicillin for late syphilis; monitor serologic response",
+    "regionalChallenges": "Late presentation and loss to follow-up",
+    "strongPoints": "Penicillin widely available and structured STI programs"
+  }
+}

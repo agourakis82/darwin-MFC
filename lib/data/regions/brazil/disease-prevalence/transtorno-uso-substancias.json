@@ -1,0 +1,53 @@
+{
+  "diseaseId": "transtorno-uso-substancias",
+  "region": "BR",
+  "diseaseName": "Transtorno por Uso de Substâncias",
+  "prevalence": {
+    "value": "3-5% (any substance use disorder; excluding nicotine)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "WHO/IHME GBD + national surveys (Cruz/Fiocruz) context",
+    "trend": "increasing in some urban contexts; polysubstance use concerns"
+  },
+  "incidence": {
+    "value": "5-10 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "GBD context extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.03",
+    "mortalityRate": "Elevated (overdose, violence, infections; indirect)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "early initiation of substance use",
+      "trauma and adverse childhood experiences",
+      "psychiatric comorbidity (depression/anxiety)",
+      "social vulnerability and unemployment",
+      "availability of substances"
+    ],
+    "vulnerablePopulations": [
+      "adolescents and young adults",
+      "people experiencing homelessness",
+      "people with severe mental illness",
+      "incarcerated populations"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: impaired control, social impairment, risky use, tolerance/withdrawal (substance-specific); severity by criteria count"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited; case-based identification in APS/CAPS AD",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~6-10 million",
+    "controlRate": "Low to moderate; relapse common without long-term support"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS screening variable; specialized care in CAPS AD and inpatient detox units where available",
+    "treatmentProtocol": "Psychosocial interventions, harm reduction, and medication-assisted treatment where applicable (e.g., alcohol); comorbidity management",
+    "regionalChallenges": "Stigma, uneven CAPS AD coverage, and limited long-term rehabilitation and housing support",
+    "strongPoints": "CAPS AD network and growing harm reduction initiatives in some municipalities"
+  }
+}
+

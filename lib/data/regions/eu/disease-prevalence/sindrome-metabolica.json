@@ -1,0 +1,52 @@
+{
+  "diseaseId": "sindrome-metabolica",
+  "region": "EU",
+  "diseaseName": "Metabolic syndrome",
+  "prevalence": {
+    "value": "~25-35% (adults; varies by country)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cardiometabolic epidemiology syntheses",
+    "trend": "stable to increasing with obesity and aging"
+  },
+  "incidence": {
+    "value": "~15-35 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Cardiometabolic cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; increases risk of diabetes and CVD",
+    "mortalityRate": "Indirectly elevated via CVD/diabetes",
+    "year": 2024,
+    "source": "WHO Europe/IHME cardiometabolic burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "central obesity",
+      "sedentary lifestyle",
+      "high-calorie diet",
+      "hypertension",
+      "dyslipidemia",
+      "insulin resistance"
+    ],
+    "vulnerablePopulations": [
+      "adults >40 years",
+      "patients with obesity",
+      "lower socioeconomic groups"
+    ],
+    "diagnosticCriteria": "IDF or NCEP ATP III criteria (waist, BP, glucose, triglycerides, HDL)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic screening in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "Moderate; depends on lifestyle and risk-factor control"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care screening for BP, glucose, lipids, and waist circumference",
+    "treatmentProtocol": "Lifestyle modification, weight loss, BP/lipid control, diabetes prevention programs",
+    "regionalChallenges": "Obesity trends and adherence to lifestyle changes",
+    "strongPoints": "Strong primary care networks and guideline-based management"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "diseaseId": "diabetes-mellitus-tipo-2",
+  "region": "IN",
+  "diseaseName": "Type 2 Diabetes Mellitus (T2DM)",
+  "prevalence": {
+    "value": "9-11%",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR-INDIAB / IDF Diabetes Atlas",
+    "trend": "increasing with urbanization, diet shifts, and obesity"
+  },
+  "incidence": {
+    "value": "8-12 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "ICMR-INDIAB projections / IHME GBD context"
+  },
+  "burden": {
+    "dalyPerCapita": "0.03-0.06",
+    "mortalityRate": "Indirect; elevated via cardiovascular and renal complications",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "central obesity and insulin resistance",
+      "sedentary lifestyle",
+      "family history",
+      "high refined carbohydrate diet",
+      "gestational diabetes history",
+      "hypertension and dyslipidemia"
+    ],
+    "vulnerablePopulations": [
+      "urban and peri-urban populations",
+      "people with obesity",
+      "South Asian phenotype (higher risk at lower BMI)",
+      "low-income groups with limited screening",
+      "patients with prior CVD"
+    ],
+    "diagnosticCriteria": "FPG ≥126 mg/dL, HbA1c ≥6.5%, 2h OGTT ≥200 mg/dL, or random glucose ≥200 mg/dL with symptoms; per ADA/ICMR-aligned criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic and programmatic screening under NPCDCS; heterogeneous by state",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~100-110 million",
+    "controlRate": "Low to moderate; large diagnosis and follow-up gaps outside urban centers"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Screening via NPCDCS in primary care and camps; HbA1c testing availability varies",
+    "treatmentProtocol": "Lifestyle + metformin; sulfonylureas and insulin widely used; SGLT2i/GLP-1RA increasing in urban private care; Ayurveda often used as adjunct (e.g., diet/yoga, herbal products)",
+    "regionalChallenges": "High out-of-pocket costs, variable continuity of care, and delayed complication screening",
+    "strongPoints": "Large-scale NCD programs and broad access to affordable generic diabetes medications"
+  }
+}
+

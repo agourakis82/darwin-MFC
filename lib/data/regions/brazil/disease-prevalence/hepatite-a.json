@@ -1,0 +1,52 @@
+{
+  "diseaseId": "hepatite-a",
+  "region": "BR",
+  "diseaseName": "Hepatite A",
+  "prevalence": {
+    "value": "high lifetime exposure (anti-HAV IgG common); acute hepatitis A is intermittent with outbreaks",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde / SVSA (viral hepatitis surveillance) / Fiocruz",
+    "trend": "decreasing long-term with sanitation improvements; outbreaks occur in susceptible adults"
+  },
+  "incidence": {
+    "value": "~1-5 per 100,000/year (reported; outbreak-dependent)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde viral hepatitis notifications"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; higher in adult outbreaks",
+    "mortalityRate": "Very low; fulminant hepatitis is rare",
+    "year": 2024,
+    "source": "IHME GBD / WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "fecal-oral transmission and poor sanitation",
+      "contaminated food/water",
+      "close-contact outbreaks (including household)",
+      "sexual transmission in MSM networks (documented outbreaks)"
+    ],
+    "vulnerablePopulations": [
+      "children in areas with poor sanitation",
+      "unvaccinated adolescents and adults",
+      "people experiencing homelessness",
+      "MSM networks during outbreaks"
+    ],
+    "diagnosticCriteria": "Acute hepatitis syndrome with anti-HAV IgM positivity; supportive LFT pattern; case definitions per Ministério da Saúde"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis in symptomatic cases and outbreak investigation",
+    "treatmentAvailable": true,
+    "estimatedPatients": "thousands/year (outbreak-dependent)",
+    "controlRate": "High recovery rate; prevention via vaccination and sanitation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SUS lab confirmation via anti-HAV IgM; public health response during outbreaks",
+    "treatmentProtocol": "Supportive care; post-exposure prophylaxis and vaccination strategies per national guidance",
+    "regionalChallenges": "Outbreaks in susceptible adult groups and sanitation disparities across municipalities",
+    "strongPoints": "National immunization program and established viral hepatitis surveillance within SUS"
+  }
+}
+

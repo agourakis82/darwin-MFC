@@ -1,0 +1,54 @@
+{
+  "diseaseId": "sindrome-tunel-carpiano",
+  "region": "BR",
+  "diseaseName": "Síndrome do Túnel do Carpo",
+  "prevalence": {
+    "value": "3-5% (adults)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Occupational/neurology epidemiology syntheses",
+    "trend": "stable to increasing with repetitive work and diabetes prevalence"
+  },
+  "incidence": {
+    "value": "1-3 per 1,000/year",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "CTS occupational epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.003",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO musculoskeletal/neurologic disability context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "repetitive wrist use",
+      "vibration exposure",
+      "female sex",
+      "pregnancy",
+      "diabetes and hypothyroidism",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "manual workers and keyboard-heavy occupations",
+      "women",
+      "pregnant people",
+      "patients with diabetes/hypothyroidism"
+    ],
+    "diagnosticCriteria": "Clinical symptoms (median nerve distribution) with provocative tests; confirmation by nerve conduction studies when needed; rule out cervical radiculopathy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; occupational identification varies",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~5-10 million",
+    "controlRate": "Moderate with splinting and timely decompression when indicated"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Electrodiagnostic testing access varies; many cases diagnosed clinically in APS/orthopedics",
+    "treatmentProtocol": "Activity modification, night splinting, NSAIDs; corticosteroid injection in selected cases; surgical decompression for persistent/severe cases",
+    "regionalChallenges": "Long wait times for nerve conduction studies and surgery in SUS in some regions",
+    "strongPoints": "Effective low-cost conservative options and established surgical treatment in referral centers"
+  }
+}
+

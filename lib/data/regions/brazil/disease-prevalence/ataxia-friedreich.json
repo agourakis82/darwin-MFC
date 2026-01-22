@@ -1,0 +1,49 @@
+{
+  "diseaseId": "ataxia-friedreich",
+  "region": "BR",
+  "diseaseName": "Ataxia de Friedreich",
+  "prevalence": {
+    "value": "~2-4 per 100,000",
+    "population": "General population (rare neurogenetic disease)",
+    "year": 2024,
+    "source": "Orphanet; Friedreich ataxia epidemiology reviews",
+    "trend": "stable; improved diagnosis with genetic testing"
+  },
+  "incidence": {
+    "value": "~1 per 50,000-100,000/year (birth prevalence proxy; rare)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Neurogenetics registry syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but high per-patient disability (progressive ataxia, cardiomyopathy)",
+    "mortalityRate": "Moderate (driven by cardiomyopathy/arrhythmias)",
+    "year": 2024,
+    "source": "Orphanet and neurology registry outcomes"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "FXN GAA-repeat expansion (autosomal recessive)",
+      "family history",
+      "consanguinity (increases risk)"
+    ],
+    "vulnerablePopulations": [
+      "children and adolescents (typical onset)",
+      "patients without access to neurogenetics services",
+      "patients with cardiomyopathy complications"
+    ],
+    "diagnosticCriteria": "Progressive gait/limb ataxia with neurologic signs (areflexia, dysarthria) plus genetic confirmation of FXN expansion; evaluate cardiomyopathy (ECG/echo) and diabetes risk"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis after neurologic presentation and referral",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Several thousand (rare; uncertain)",
+    "controlRate": "Limited (no cure); supportive care can improve function and reduce complications"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Neurology referral and access to genetic testing; diagnostic delays common outside major centers",
+    "treatmentProtocol": "Multidisciplinary care (physiotherapy, mobility aids, speech therapy), cardiology management, diabetes screening, psychosocial support; clinical trial referral when available",
+    "regionalChallenges": "Limited neurogenetics availability and rehab resources in some regions; transition care gaps",
+    "strongPoints": "Supportive multidisciplinary interventions can be implemented once diagnosed"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "doenca-graves",
+  "region": "IN",
+  "diseaseName": "Graves disease",
+  "prevalence": {
+    "value": "~0.5-1.0% (adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Endocrine Society of India context and epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~20-35 per 100,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Endocrinology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; morbidity from hyperthyroidism and ophthalmopathy",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "IHME/GBD endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "family history of autoimmune disease",
+      "smoking",
+      "postpartum period"
+    ],
+    "vulnerablePopulations": [
+      "women 20-50 years",
+      "smokers",
+      "patients with other autoimmune disease"
+    ],
+    "diagnosticCriteria": "Suppressed TSH with elevated free T4/T3; positive TRAb; thyroid uptake scan when needed"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions",
+    "controlRate": "Moderate; access to radioiodine varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Lab testing widely available; uptake scan mainly in tertiary centers",
+    "treatmentProtocol": "Antithyroid drugs, beta-blockers, radioiodine or surgery when indicated",
+    "regionalChallenges": "Delayed diagnosis in rural areas and limited ophthalmology care for orbitopathy",
+    "strongPoints": "Affordable antithyroid drugs widely available"
+  }
+}

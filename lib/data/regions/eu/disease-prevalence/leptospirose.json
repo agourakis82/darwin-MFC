@@ -1,0 +1,52 @@
+{
+  "diseaseId": "leptospirose",
+  "region": "EU",
+  "diseaseName": "Leptospirosis",
+  "prevalence": {
+    "value": "~0.2-1.0 per 100,000/year (higher in occupational and recreational exposure settings)",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "ECDC surveillance reports",
+    "trend": "stable; localized increases after flooding and in outdoor recreational exposure"
+  },
+  "incidence": {
+    "value": "~0.2-1.0 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECDC annual surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "low at population level",
+    "mortalityRate": "Low; higher in severe Weil syndrome",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "occupational animal exposure (farmers, veterinarians)",
+      "freshwater recreational activities",
+      "flooding and climate-related events",
+      "rodent exposure",
+      "delayed antibiotic therapy"
+    ],
+    "vulnerablePopulations": [
+      "farmers and animal handlers",
+      "outdoor recreation participants",
+      "people in flood-affected areas"
+    ],
+    "diagnosticCriteria": "Clinical suspicion plus serology (IgM, MAT) and/or PCR; case definitions per ECDC"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; tested based on exposure history and compatible illness",
+    "treatmentAvailable": true,
+    "estimatedPatients": "few thousand cases/year across EU",
+    "controlRate": "High with early treatment; severe cases require hospital support"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Access to serology and PCR in most member states; occupational and recreational exposure history emphasized",
+    "treatmentProtocol": "Doxycycline for mild disease; IV penicillin/ceftriaxone for severe disease; supportive renal/hepatic care",
+    "regionalChallenges": "Low clinical suspicion outside endemic micro-areas and increasing flood-related exposure events",
+    "strongPoints": "Strong laboratory networks and occupational health awareness in many member states"
+  }
+}
+

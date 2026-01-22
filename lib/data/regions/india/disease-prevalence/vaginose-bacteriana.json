@@ -1,0 +1,51 @@
+{
+  "diseaseId": "vaginose-bacteriana",
+  "region": "IN",
+  "diseaseName": "Bacterial Vaginosis",
+  "prevalence": {
+    "value": "20-35% (reproductive-age women; higher in some settings)",
+    "population": "Women of reproductive age in India",
+    "year": 2024,
+    "source": "Indian gynecology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "high (recurrent episodes common)",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; linked to adverse pregnancy outcomes and STI susceptibility",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO reproductive health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "sexual partner change",
+      "vaginal douching",
+      "smoking",
+      "history of BV"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people",
+      "women with recurrent BV",
+      "women with limited access to gynecologic care"
+    ],
+    "diagnosticCriteria": "Amsel criteria or Nugent score when available; pH >4.5 typical"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high episode burden",
+    "controlRate": "Moderate; recurrence common and follow-up limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Mostly clinical diagnosis in many settings; limited microscopy",
+    "treatmentProtocol": "Metronidazole/clindamycin regimens; counseling and recurrence management; pregnancy-specific care when indicated",
+    "regionalChallenges": "High recurrence, overlap with STIs, and limited diagnostic capacity in rural areas",
+    "strongPoints": "Low-cost effective antibiotics widely available"
+  }
+}
+

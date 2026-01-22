@@ -1,0 +1,52 @@
+{
+  "diseaseId": "transtorno-personalidade-borderline",
+  "region": "BR",
+  "diseaseName": "Transtorno de Personalidade Borderline",
+  "prevalence": {
+    "value": "1-2% (general population)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Psychiatric epidemiology syntheses (personality disorders)",
+    "trend": "stable; diagnosis increasing with service awareness"
+  },
+  "incidence": {
+    "value": "0.5-1.5 per 1,000/year (new diagnoses, highly service-dependent)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.01",
+    "mortalityRate": "Indirect; elevated suicide and self-harm risk",
+    "year": 2024,
+    "source": "IHME/WHO mental health burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "childhood trauma and neglect",
+      "family history and temperament",
+      "comorbid mood/anxiety disorders",
+      "substance use"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "people with trauma exposure",
+      "patients with comorbid substance use",
+      "patients with recurrent self-harm"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: pervasive pattern of instability in relationships, self-image, and affect with impulsivity; diagnosis requires longitudinal assessment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis is specialist-led",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2-4 million",
+    "controlRate": "Variable; best outcomes with structured psychotherapy (DBT) which is limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often diagnosed in specialized psychiatry/CAPS; APS identifies risk and refers",
+    "treatmentProtocol": "Structured psychotherapy (e.g., DBT) as first-line; crisis planning; cautious pharmacotherapy for symptom targets",
+    "regionalChallenges": "Limited DBT availability, crisis care gaps, and stigma",
+    "strongPoints": "CAPS can provide longitudinal follow-up and crisis support where present"
+  }
+}
+

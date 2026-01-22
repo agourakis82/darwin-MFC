@@ -1,0 +1,25 @@
+{
+  "diseaseId": "anemia-ferropriva",
+  "region": "IN",
+  "diseaseName": "Iron Deficiency Anaemia",
+  "prevalence": {"value": "57% in women, 25% in men", "population": "Indian adults (~1.4 billion)", "year": 2024, "source": "NFHS-5/ICMR", "trend": "stable despite interventions [high burden persists due to dietary and socioeconomic factors]"},
+  "incidence": {"value": "45 per 1000", "population": "Indian adults", "year": 2024, "source": "ICMR estimates"},
+  "burden": {"dalyPerCapita": "1500 - very high", "mortalityRate": "2 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Vegetarian diet low in heme iron", "Hookworm infections", "Malaria coinfections", "Poor dietary diversity", "Chronic blood loss from menstruation", "Socioeconomic factors limiting access to fortified foods"],
+    "vulnerablePopulations": ["Women (57% prevalence)", "Pregnant women (50-60%)", "Adolescent girls", "Rural populations"],
+    "diagnosticCriteria": "WHO criteria: Hb <12 g/dL women, <13 g/dL men, low serum ferritin"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Limited coverage via RMNCH+A program [~30-40% in targeted groups]",
+    "treatmentAvailable": true,
+    "estimatedPatients": "500 million - highest burden globally",
+    "controlRate": "20% [limited success due to low compliance and implementation gaps]"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "NFHS-5 protocol, point-of-care Hb testing",
+    "treatmentProtocol": "Free iron-folic acid (IFA) tablets via National Iron Plus Initiative, deworming, fortification programs",
+    "regionalChallenages": "Highest global burden, poor dietary diversity, vegetarian diets, hookworm/malaria coinfections, low compliance with IFA",
+    "strongPoints": "National Iron Plus Initiative, Anemia Mukt Bharat program (2018), food fortification with iron"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "diseaseId": "tosse-cronica",
+  "region": "IN",
+  "diseaseName": "Chronic cough",
+  "prevalence": {
+    "value": "~5-10% (adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Respiratory epidemiology syntheses",
+    "trend": "stable; associated with smoking, pollution, and TB sequelae"
+  },
+  "incidence": {
+    "value": "~6-10 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Pulmonology outpatient data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant QOL and sleep impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO respiratory symptom burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "smoking and tobacco use",
+      "air pollution/biomass exposure",
+      "asthma",
+      "GERD",
+      "post-TB lung disease"
+    ],
+    "vulnerablePopulations": [
+      "smokers",
+      "people with asthma or GERD",
+      "older adults"
+    ],
+    "diagnosticCriteria": "Cough >8 weeks; evaluate common causes and exclude TB and malignancy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "Moderate; depends on cause-directed therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care evaluation; chest imaging and sputum testing if TB suspected",
+    "treatmentProtocol": "Treat underlying cause (asthma, GERD, postnasal drip), smoking cessation",
+    "regionalChallenges": "High pollution exposure and delayed evaluation in rural areas",
+    "strongPoints": "Strong TB control programs and primary care access"
+  }
+}

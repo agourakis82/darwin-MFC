@@ -1,0 +1,53 @@
+{
+  "diseaseId": "hipertireoidismo",
+  "region": "IN",
+  "diseaseName": "Hyperthyroidism",
+  "prevalence": {
+    "value": "0.8-1.5%",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR/Indian thyroid epidemiology studies",
+    "trend": "stable; improved recognition in urban centers"
+  },
+  "incidence": {
+    "value": "0.3-0.7 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Indian cohort syntheses (thyroid disease) extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0006-0.0018",
+    "mortalityRate": "Low; risk via AF and untreated thyroid storm (rare)",
+    "year": 2024,
+    "source": "IHME GBD (thyroid disorders) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Graves disease",
+      "toxic multinodular goiter",
+      "postpartum thyroiditis",
+      "amiodarone-induced thyrotoxicosis",
+      "iodine nutrition shifts"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "older adults (nodular disease)",
+      "postpartum people",
+      "patients with limited access to follow-up testing"
+    ],
+    "diagnosticCriteria": "Low TSH with elevated free T4/T3; TRAb and imaging for etiology where available; diagnosis often clinical + lab in primary care/tertiary centers"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; testing is symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10-20 million",
+    "controlRate": "Variable due to follow-up gaps and cost of repeated testing"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "TSH/T4 testing more available in urban areas; imaging and endocrinology services concentrated in tertiary centers",
+    "treatmentProtocol": "Methimazole/carbimazole; beta-blockers; radioiodine or surgery in select cases; pregnancy-specific regimens (PTU in early pregnancy) in specialist care",
+    "regionalChallenges": "Access to endocrinology, repeated lab monitoring costs, and delayed definitive therapy outside metros",
+    "strongPoints": "Affordable generic antithyroid drugs and expanding diagnostic capacity in larger cities"
+  }
+}
+

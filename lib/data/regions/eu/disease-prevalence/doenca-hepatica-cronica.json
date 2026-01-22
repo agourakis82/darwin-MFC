@@ -1,0 +1,25 @@
+{
+  "diseaseId": "doenca-hepatica-cronica",
+  "region": "EU",
+  "diseaseName": "Chronic Liver Disease",
+  "prevalence": {"value": "1.5-2%", "population": "EU adults (~447 million)", "year": 2024, "source": "EASL Clinical Practice Guidelines", "trend": "increasing due to rising NAFLD and alcohol-related cases"},
+  "incidence": {"value": "15 per 100,000", "population": "EU adults", "year": 2024, "source": "WHO Europe"},
+  "burden": {"dalyPerCapita": "150-200", "mortalityRate": "20 per 100,000", "year": 2024, "source": "WHO Europe"},
+  "epidemiology": {
+    "riskFactors": ["Alcohol consumption", "Viral hepatitis (B/C)", "Non-alcoholic fatty liver disease (NAFLD)", "Obesity and metabolic syndrome", "Diabetes", "Drug-induced liver injury"],
+    "vulnerablePopulations": ["Elderly adults (>65 years)", "Men", "Eastern European populations", "Individuals with obesity"],
+    "diagnosticCriteria": "EASL guidelines, FibroScan, METAVIR/Ishak staging"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "hepatitis C screening improving, NAFLD opportunistic",
+    "treatmentAvailable": true,
+    "estimatedPatients": "6-9 million",
+    "controlRate": "60% for viral hepatitis with DAAs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EASL Clinical Practice Guidelines, non-invasive fibrosis assessment (FibroScan, FIB-4)",
+    "treatmentProtocol": "DAAs for hepatitis C (elimination targets), NAFLD lifestyle + emerging therapies, alcohol programs, liver transplantation",
+    "regionalChallenges": "Rising NAFLD/NASH burden (25-30% adults), alcohol consumption (Eastern Europe), hepatitis elimination gaps",
+    "strongPoints": "EASL guidelines, WHO hepatitis C elimination program, high transplant access, FibroScan availability"
+  }
+}

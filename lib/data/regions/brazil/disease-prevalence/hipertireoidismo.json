@@ -1,0 +1,53 @@
+{
+  "diseaseId": "hipertireoidismo",
+  "region": "BR",
+  "diseaseName": "Hipertireoidismo",
+  "prevalence": {
+    "value": "0.8-1.2%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Sociedade Brasileira de Endocrinologia e Metabologia (SBEM) + epidemiological syntheses",
+    "trend": "stable; increased detection with more TSH testing"
+  },
+  "incidence": {
+    "value": "0.3-0.6 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Epidemiological cohort syntheses (thyroid disease) extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0005-0.0015",
+    "mortalityRate": "Low; increased risk via atrial fibrillation and thyroid storm (rare)",
+    "year": 2024,
+    "source": "IHME GBD (thyroid disorders) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Graves disease (autoimmune)",
+      "toxic multinodular goiter",
+      "excess iodine exposure (rare)",
+      "amiodarone exposure",
+      "postpartum thyroiditis"
+    ],
+    "vulnerablePopulations": [
+      "women (higher prevalence)",
+      "older adults (nodular disease)",
+      "postpartum people",
+      "patients on amiodarone"
+    ],
+    "diagnosticCriteria": "Suppressed TSH with elevated free T4 and/or T3; etiologic workup with TRAb, thyroid uptake/scan and ultrasound as indicated; aligned with SBEM/ATA guidance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; TSH testing is common in symptomatic patients and high-risk groups",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1.5-2.5 million",
+    "controlRate": "Good symptom control with antithyroid drugs when follow-up is consistent; relapse common in Graves"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "TSH/T4 available in SUS; uptake scans and endocrinology referrals more limited outside major cities",
+    "treatmentProtocol": "Methimazole (preferred) or PTU in specific cases; beta-blockers for symptom control; radioactive iodine and surgery in selected cases",
+    "regionalChallenges": "Specialist access and variable availability of definitive therapy pathways (radioiodine/surgery) across regions",
+    "strongPoints": "Core lab tests and antithyroid medications available; strong endocrine society guidance"
+  }
+}
+

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "anemia-falciforme",
+  "region": "EU",
+  "diseaseName": "Sickle Cell Disease",
+  "prevalence": {
+    "value": "~0.01-0.03% (higher in migrant-origin communities)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European hemoglobinopathy registry context; WHO Europe migration and hemoglobinopathy burden syntheses",
+    "trend": "stable to increasing in some countries due to migration patterns and improved survival"
+  },
+  "incidence": {
+    "value": "Varies widely by country; newborn screening present in some regions and high-risk groups",
+    "population": "Newborns (country-specific)",
+    "year": 2024,
+    "source": "European screening program summaries and hemoglobinopathy registries"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; high per-patient burden (pain crises, organ damage, hospitalizations)",
+    "mortalityRate": "Elevated vs general population; reduced with comprehensive care and disease-modifying therapy",
+    "year": 2024,
+    "source": "IHME/GBD hemoglobinopathies context; registry outcomes"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "inherited HbS (autosomal recessive)",
+      "family history",
+      "limited access to comprehensive care (for outcomes)",
+      "infections/dehydration (crisis triggers)"
+    ],
+    "vulnerablePopulations": [
+      "children (infection risk)",
+      "pregnant people with SCD",
+      "patients with frequent vaso-occlusive crises"
+    ],
+    "diagnosticCriteria": "Newborn screening and confirmatory hemoglobin electrophoresis/HPLC; ongoing monitoring for stroke, pulmonary hypertension and renal disease"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable across countries; targeted screening and registry-based follow-up in many systems",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens to low hundreds of thousands across the EU",
+    "controlRate": "Moderate to high with comprehensive care, hydroxyurea and specialist follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist hemoglobinopathy centers in many countries; newborn screening and early referral varies",
+    "treatmentProtocol": "Vaccination and infection prophylaxis, hydroxyurea, transfusions and chelation when indicated, pain management pathways, stroke prevention, multidisciplinary pregnancy care",
+    "regionalChallenges": "Cross-country variation in screening and access to comprehensive SCD centers; transition care gaps",
+    "strongPoints": "High availability of specialist care and disease-modifying therapies in many EU health systems"
+  }
+}

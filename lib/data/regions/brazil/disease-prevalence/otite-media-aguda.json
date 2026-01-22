@@ -1,0 +1,53 @@
+{
+  "diseaseId": "otite-media-aguda",
+  "region": "BR",
+  "diseaseName": "Otite Média Aguda (OMA)",
+  "prevalence": {
+    "value": "common; ~50-70% of children have at least one episode by age 3",
+    "population": "Brazilian children",
+    "year": 2024,
+    "source": "SBP/pediatric infection epidemiology syntheses",
+    "trend": "stable; pneumococcal vaccination reduces some bacterial burden"
+  },
+  "incidence": {
+    "value": "100-200 per 1,000 children/year (episodes in young children)",
+    "population": "Children <5 years",
+    "year": 2024,
+    "source": "Pediatric primary care syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; significant healthcare utilization",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO pediatric infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "daycare attendance",
+      "viral URIs",
+      "secondhand smoke exposure",
+      "lack of breastfeeding (association)",
+      "craniofacial anomalies"
+    ],
+    "vulnerablePopulations": [
+      "children 6-24 months",
+      "children in daycare",
+      "children exposed to smoke",
+      "children with recurrent AOM"
+    ],
+    "diagnosticCriteria": "Acute onset of symptoms plus middle-ear effusion and signs of inflammation (bulging TM); otoscopy is key; differentiate from otitis media with effusion"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high pediatric episode burden annually",
+    "controlRate": "High with appropriate analgesia and selective antibiotics; stewardship needed"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in APS; otoscopy quality varies",
+    "treatmentProtocol": "Analgesia first; antibiotics (amoxicillin) for selected cases by age/severity; follow-up for recurrent cases and hearing concerns",
+    "regionalChallenges": "Antibiotic overuse and limited access to ENT for recurrent cases in some regions",
+    "strongPoints": "Availability of amoxicillin and strong pediatric guidelines"
+  }
+}
+

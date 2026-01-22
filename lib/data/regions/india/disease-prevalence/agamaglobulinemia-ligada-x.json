@@ -1,0 +1,50 @@
+{
+  "diseaseId": "agamaglobulinemia-ligada-x",
+  "region": "IN",
+  "diseaseName": "X-linked Agammaglobulinemia (XLA)",
+  "prevalence": {
+    "value": "~0.1-0.3 per 100,000 (males)",
+    "population": "Male population (primary immunodeficiency)",
+    "year": 2024,
+    "source": "Primary immunodeficiency registry syntheses; Orphanet; Indian immunology center reports",
+    "trend": "stable; increasing diagnosis in tertiary immunology services"
+  },
+  "incidence": {
+    "value": "~1 per 100,000-200,000 male live births",
+    "population": "Male newborns",
+    "year": 2024,
+    "source": "International XLA epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but largely preventable with immunoglobulin replacement",
+    "mortalityRate": "Higher with delayed diagnosis and poor access to IVIG/SCIG",
+    "year": 2024,
+    "source": "Orphanet/clinical immunology outcomes"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "BTK pathogenic variant (X-linked)",
+      "family history",
+      "lack of immunoglobulin replacement",
+      "crowding and recurrent respiratory infections"
+    ],
+    "vulnerablePopulations": [
+      "male infants after maternal Ig wanes",
+      "patients without access to immunology and flow cytometry",
+      "patients with recurrent pneumonia/bronchiectasis"
+    ],
+    "diagnosticCriteria": "Recurrent bacterial infections; low immunoglobulins; absent/very low B cells on flow cytometry; BTK genetic confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis via recurrent infections and immunology work-up",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds to low thousands (rare; underdiagnosed)",
+    "controlRate": "Variable; best with consistent IVIG/SCIG access and infection prevention"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clustered in tertiary immunology centers; diagnostic delays common",
+    "treatmentProtocol": "IVIG/SCIG replacement, prompt antibiotics, respiratory physiotherapy if bronchiectasis, vaccination planning (avoid live vaccines in severe antibody deficiency)",
+    "regionalChallenges": "High out-of-pocket costs, limited immunology specialists, inconsistent immunoglobulin access in some states",
+    "strongPoints": "Specialist centers can achieve good outcomes with regular immunoglobulin therapy"
+  }
+}

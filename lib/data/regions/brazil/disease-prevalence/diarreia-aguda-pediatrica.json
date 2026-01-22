@@ -1,0 +1,53 @@
+{
+  "diseaseId": "diarreia-aguda-pediatrica",
+  "region": "BR",
+  "diseaseName": "Diarreia Aguda Infantil",
+  "prevalence": {
+    "value": "common; 1-3 episodes/child/year in early childhood",
+    "population": "Brazilian children <5 years",
+    "year": 2024,
+    "source": "Ministério da Saúde / SBP + WHO diarrhea control context",
+    "trend": "decreasing severe outcomes with ORS and vaccination; outbreaks occur"
+  },
+  "incidence": {
+    "value": "1-3 episodes per child-year",
+    "population": "Children <5 years",
+    "year": 2024,
+    "source": "WHO/UNICEF diarrhea epidemiology context"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case in dehydration; overall decreasing mortality",
+    "mortalityRate": "Low compared to historical levels; concentrated in vulnerable groups",
+    "year": 2024,
+    "source": "IHME GBD / WHO diarrhea estimates"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral gastroenteritis (rotavirus/norovirus)",
+      "contaminated water/food",
+      "poor sanitation",
+      "malnutrition",
+      "lack of breastfeeding (association)"
+    ],
+    "vulnerablePopulations": [
+      "children <2 years",
+      "children in low-income households",
+      "children in areas with poor sanitation",
+      "malnourished children"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis based on stool frequency/consistency and dehydration assessment; stool testing reserved for severe/persistent/bloody diarrhea; WHO dehydration classification"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of episodes/year",
+    "controlRate": "High with timely ORS/zinc and dehydration management"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS focuses on dehydration assessment and danger signs; lab testing limited in primary care",
+    "treatmentProtocol": "ORS + zinc, continued feeding/breastfeeding; IV fluids for severe dehydration; antibiotics only for specific indications (e.g., dysentery)",
+    "regionalChallenges": "Sanitation disparities and seasonal outbreaks; risk of inappropriate antibiotic use",
+    "strongPoints": "SUS access to primary care, ORS distribution, and rotavirus vaccination program"
+  }
+}
+

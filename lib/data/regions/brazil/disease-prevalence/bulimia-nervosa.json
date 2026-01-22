@@ -1,0 +1,53 @@
+{
+  "diseaseId": "bulimia-nervosa",
+  "region": "BR",
+  "diseaseName": "Bulimia Nervosa",
+  "prevalence": {
+    "value": "0.5-1.5% (higher in adolescents and young women)",
+    "population": "Brazilian adolescents and young adults",
+    "year": 2024,
+    "source": "Eating disorder epidemiology syntheses (Latin America) / WHO context",
+    "trend": "increasing recognition"
+  },
+  "incidence": {
+    "value": "3-8 per 10,000/year",
+    "population": "Adolescents and young adults",
+    "year": 2024,
+    "source": "Eating disorder cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Elevated vs general population (indirect; comorbidity and suicide risk)",
+    "year": 2024,
+    "source": "IHME GBD (eating disorders)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "body image concerns",
+      "dieting behavior",
+      "comorbid depression/anxiety",
+      "impulsivity traits"
+    ],
+    "vulnerablePopulations": [
+      "adolescent girls",
+      "young women",
+      "patients with depression/anxiety",
+      "people with substance use"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: recurrent binge eating with compensatory behaviors (vomiting, laxatives, excessive exercise) at least weekly for 3 months plus body image overvaluation; assess electrolyte risk"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~0.5-1.5 million (including subthreshold)",
+    "controlRate": "Moderate; CBT availability limits outcomes"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often detected in mental health services or after medical complications (electrolytes, dental issues)",
+    "treatmentProtocol": "CBT as first-line, nutritional counseling, SSRIs (fluoxetine) when indicated; medical monitoring for purging complications",
+    "regionalChallenges": "Limited specialized programs and delayed help-seeking",
+    "strongPoints": "Core antidepressants available in SUS; specialist services exist in major urban centers"
+  }
+}
+

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "sífilis-terciaria",
+  "region": "IN",
+  "diseaseName": "Tertiary syphilis",
+  "prevalence": {
+    "value": "<0.05% (rare; late untreated cases)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "NACO STI surveillance; WHO syphilis context",
+    "trend": "stable to decreasing with expanded screening and treatment"
+  },
+  "incidence": {
+    "value": "Very low; late progression from untreated infection",
+    "population": "Adults with prior untreated syphilis",
+    "year": 2024,
+    "source": "STI cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low population burden; high per-case morbidity",
+    "mortalityRate": "Low to moderate in advanced neuro/cardiovascular disease",
+    "year": 2024,
+    "source": "WHO/IHME STI burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "untreated primary/secondary syphilis",
+      "limited access to STI screening",
+      "HIV coinfection",
+      "stigma and delayed care"
+    ],
+    "vulnerablePopulations": [
+      "people with HIV",
+      "people with limited healthcare access",
+      "older adults with long-standing infection"
+    ],
+    "diagnosticCriteria": "Reactive treponemal test plus compatible late manifestations; CSF testing for neurosyphilis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "prenatal and STI clinic screening increasing",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Low thousands (rare late disease)",
+    "controlRate": "High with timely penicillin therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Serology widely available; neurosyphilis evaluation in tertiary centers",
+    "treatmentProtocol": "IV penicillin G for neurosyphilis; benzathine penicillin for late syphilis",
+    "regionalChallenges": "Late presentation and loss to follow-up",
+    "strongPoints": "Penicillin widely available and national STI programs"
+  }
+}

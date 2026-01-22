@@ -1,0 +1,53 @@
+{
+  "diseaseId": "amebiase",
+  "region": "IN",
+  "diseaseName": "Amebiasis",
+  "prevalence": {
+    "value": "~3-8% (higher in sanitation-vulnerable areas)",
+    "population": "Indian population (varies by sanitation and region)",
+    "year": 2024,
+    "source": "Parasitology surveillance syntheses in South Asia; WHO intestinal parasite context",
+    "trend": "decreasing overall with sanitation improvements; persistent endemic pockets"
+  },
+  "incidence": {
+    "value": "Common in endemic areas; outbreaks can occur",
+    "population": "General population",
+    "year": 2024,
+    "source": "Public health surveillance and parasitology studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate in endemic communities due to dysentery and liver abscess",
+    "mortalityRate": "Low to moderate in severe invasive disease without timely care",
+    "year": 2024,
+    "source": "WHO/IHME enteric infections context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "unsafe water and sanitation",
+      "crowding",
+      "food contamination",
+      "malnutrition",
+      "travel to/from endemic areas",
+      "immunosuppression (risk of invasive disease)"
+    ],
+    "vulnerablePopulations": [
+      "children in low-sanitation settings",
+      "urban slum and rural areas with unsafe water",
+      "migrants and travelers",
+      "immunocompromised patients"
+    ],
+    "diagnosticCriteria": "Stool testing (antigen/PCR preferred; microscopy less specific), evaluate invasive disease with serology and imaging for liver abscess when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; symptom- and outbreak-driven testing",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of infections/colonization episodes (varies widely)",
+    "controlRate": "Good with prompt treatment; reinfection risk persists with poor sanitation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Microscopy widely used; antigen/PCR limited to reference labs",
+    "treatmentProtocol": "Metronidazole/tinidazole for invasive disease plus luminal therapy when available; oral rehydration; sanitation and water safety interventions",
+    "regionalChallenges": "High burden in sanitation-vulnerable areas, diagnostic limitations, overlap with other diarrheal diseases",
+    "strongPoints": "Effective low-cost treatments and major prevention gains possible via sanitation programs"
+  }
+}

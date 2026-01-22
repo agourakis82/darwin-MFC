@@ -1,0 +1,49 @@
+{
+  "diseaseId": "ataxia-friedreich",
+  "region": "IN",
+  "diseaseName": "Friedreich Ataxia",
+  "prevalence": {
+    "value": "~1-3 per 100,000 (rare; underdiagnosed)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Orphanet; Friedreich ataxia epidemiology reviews",
+    "trend": "stable; improved diagnosis with access to genetic testing"
+  },
+  "incidence": {
+    "value": "Rare; typical onset in adolescence",
+    "population": "General population",
+    "year": 2024,
+    "source": "Neurogenetics registry syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but high per-patient disability and cardiomyopathy burden",
+    "mortalityRate": "Moderate (cardiac complications drive mortality)",
+    "year": 2024,
+    "source": "Orphanet/registry outcomes"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "FXN GAA-repeat expansion (autosomal recessive)",
+      "family history",
+      "consanguinity (increases risk)"
+    ],
+    "vulnerablePopulations": [
+      "children and adolescents",
+      "patients without access to neurogenetics",
+      "patients with cardiomyopathy or diabetes complications"
+    ],
+    "diagnosticCriteria": "Progressive ataxia with neurologic signs plus genetic confirmation of FXN expansion; evaluate cardiomyopathy (ECG/echo) and diabetes risk"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis after symptoms and referral",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Thousands (rare; uncertain)",
+    "controlRate": "Limited (no cure); supportive care reduces complications and improves function"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnostic delays common outside tertiary neurology; genetic testing access is variable",
+    "treatmentProtocol": "Physiotherapy and mobility aids, cardiology management, diabetes screening, speech therapy and psychosocial support",
+    "regionalChallenges": "Rehab access and long-term multidisciplinary follow-up are uneven; cost barriers for genetics and devices",
+    "strongPoints": "Supportive care pathways can be implemented once diagnosis is established"
+  }
+}

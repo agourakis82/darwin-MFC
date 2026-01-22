@@ -1,0 +1,51 @@
+{
+  "diseaseId": "laringite-aguda",
+  "region": "BR",
+  "diseaseName": "Laringite/Crupe Viral",
+  "prevalence": {
+    "value": "common seasonal illness; highest in children 6 months to 3 years",
+    "population": "Brazilian children",
+    "year": 2024,
+    "source": "SBP / pediatric respiratory infection syntheses",
+    "trend": "stable with seasonal peaks"
+  },
+  "incidence": {
+    "value": "5-15 per 100 children/year (episodes; season-dependent)",
+    "population": "Children 0-5 years",
+    "year": 2024,
+    "source": "Pediatric primary care syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; can cause emergency visits",
+    "mortalityRate": "Very low with timely treatment",
+    "year": 2024,
+    "source": "WHO pediatric respiratory context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral infections (parainfluenza)",
+      "seasonality",
+      "young age",
+      "crowding"
+    ],
+    "vulnerablePopulations": [
+      "children 6-36 months",
+      "children with prior airway anomalies",
+      "children with limited access to emergency care"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis: barking cough, hoarseness, inspiratory stridor; severity assessment; exclude epiglottitis and foreign body"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands of episodes/year",
+    "controlRate": "High with corticosteroids; severe cases need nebulized epinephrine and observation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in APS/ER; imaging rarely needed",
+    "treatmentProtocol": "Dexamethasone for most cases; nebulized epinephrine for moderate-severe stridor; supportive care",
+    "regionalChallenges": "Emergency service surges during viral seasons",
+    "strongPoints": "Effective low-cost treatments and strong pediatric guidelines"
+  }
+}
+

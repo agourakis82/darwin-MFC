@@ -1,0 +1,51 @@
+{
+  "diseaseId": "amigdalite",
+  "region": "BR",
+  "diseaseName": "Amigdalite Aguda",
+  "prevalence": {
+    "value": "Common episodic condition (especially children)",
+    "population": "Brazilian children and adolescents",
+    "year": 2024,
+    "source": "Primary care and pediatric infection epidemiology syntheses",
+    "trend": "stable; seasonal peaks in school periods"
+  },
+  "incidence": {
+    "value": "~50-150 per 1,000 children/year (episodes; varies by age)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Pediatric primary care cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; substantial school/work absenteeism",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO upper respiratory infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "school/daycare exposure",
+      "viral respiratory infections",
+      "group A streptococcus exposure",
+      "crowding",
+      "smoke exposure"
+    ],
+    "vulnerablePopulations": [
+      "children (5-15 years)",
+      "households with crowding",
+      "patients with recurrent tonsillitis"
+    ],
+    "diagnosticCriteria": "Clinical assessment (Centor/McIsaac in adolescents/adults), rapid antigen test/culture when available to confirm streptococcal infection; evaluate for complications (peritonsillar abscess) and alarm signs"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven evaluation in APS/UPA",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually",
+    "controlRate": "High for symptom relief; antibiotic stewardship depends on diagnostic access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis common; confirmatory testing variably available in public settings",
+    "treatmentProtocol": "Supportive care for viral; antibiotics for confirmed/suspected streptococcal disease (penicillin/amoxicillin); tonsillectomy evaluation for recurrent severe cases",
+    "regionalChallenges": "Overuse of antibiotics without testing in some settings; access to ENT for recurrent cases",
+    "strongPoints": "Effective first-line antibiotics widely available; robust primary care access in many municipalities"
+  }
+}

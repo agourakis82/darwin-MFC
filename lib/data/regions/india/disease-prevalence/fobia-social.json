@@ -1,0 +1,52 @@
+{
+  "diseaseId": "fobia-social",
+  "region": "IN",
+  "diseaseName": "Social Anxiety Disorder",
+  "prevalence": {
+    "value": "1-3%",
+    "population": "Indian adolescents and adults",
+    "year": 2024,
+    "source": "NMHS/ICMR + IHME GBD context",
+    "trend": "increasing recognition among students and urban youth"
+  },
+  "incidence": {
+    "value": "2-5 per 1,000/year",
+    "population": "Indian adolescents and young adults",
+    "year": 2024,
+    "source": "Anxiety disorder cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.006",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "anxiety traits",
+      "bullying and social stress",
+      "family history",
+      "comorbid depression",
+      "cultural stigma around mental health"
+    ],
+    "vulnerablePopulations": [
+      "students",
+      "young adults",
+      "urban residents"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria; may present with somatic complaints"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~15-35 million",
+    "controlRate": "Low to moderate; psychotherapy access limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often underrecognized; clinical diagnosis in tertiary centers and some primary care programs",
+    "treatmentProtocol": "CBT and SSRIs; counseling and lifestyle approaches (yoga/meditation) commonly used as adjuncts",
+    "regionalChallenges": "Stigma and limited CBT availability",
+    "strongPoints": "Affordable generic SSRIs and growing tele-mental health capacity"
+  }
+}
+

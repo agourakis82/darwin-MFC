@@ -1,0 +1,52 @@
+{
+  "diseaseId": "litiase-renal",
+  "region": "BR",
+  "diseaseName": "Litiase renal (calculos renais)",
+  "prevalence": {
+    "value": "~6-9%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Urology epidemiology syntheses; regional climate risk context",
+    "trend": "increasing with heat exposure, obesity, and dietary patterns"
+  },
+  "incidence": {
+    "value": "~3-7 per 1,000 person-years",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Urology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; high acute pain and recurrence burden",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD kidney disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low fluid intake",
+      "hot climate and dehydration",
+      "high sodium/animal protein diet",
+      "obesity and metabolic syndrome",
+      "family history",
+      "recurrent UTIs"
+    ],
+    "vulnerablePopulations": [
+      "men 30-60 years",
+      "outdoor workers in hot regions",
+      "patients with recurrent stones"
+    ],
+    "diagnosticCriteria": "Clinical renal colic with urinalysis; imaging with ultrasound or CT; metabolic evaluation for recurrent stones"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions",
+    "controlRate": "Moderate; recurrence prevention depends on counseling and follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Ultrasound commonly used in SUS; CT for complex cases in tertiary centers",
+    "treatmentProtocol": "Hydration, analgesia, alpha-blockers for stone passage; ESWL/ureteroscopy/PCNL for larger stones; prevention counseling",
+    "regionalChallenges": "Limited lithotripsy access outside major cities and long wait times for elective procedures",
+    "strongPoints": "Effective acute management pathways and growing preventive counseling in urology services"
+  }
+}

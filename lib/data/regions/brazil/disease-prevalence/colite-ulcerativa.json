@@ -1,0 +1,51 @@
+{
+  "diseaseId": "colite-ulcerativa",
+  "region": "BR",
+  "diseaseName": "Colite ulcerativa",
+  "prevalence": {
+    "value": "~30-70 per 100,000",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Brazilian IBD registries and gastroenterology syntheses",
+    "trend": "increasing with urbanization and improved diagnosis"
+  },
+  "incidence": {
+    "value": "~2-5 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "IBD cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to chronic symptoms and flares",
+    "mortalityRate": "Low to moderate",
+    "year": 2024,
+    "source": "IHME/GBD IBD context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "urban lifestyle",
+      "westernized diet",
+      "immune dysregulation",
+      "smoking cessation (association for UC)"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with family history",
+      "patients with other autoimmune disease"
+    ],
+    "diagnosticCriteria": "Clinical symptoms plus colonoscopy with biopsy; exclude infectious colitis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands to low hundreds of thousands",
+    "controlRate": "Moderate; improves with access to immunosuppressants and biologics"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Colonoscopy and biopsy in tertiary centers; delays in smaller municipalities",
+    "treatmentProtocol": "5-ASA, corticosteroids for flares, immunomodulators, biologics via SUS pathways; colectomy for refractory disease",
+    "regionalChallenges": "Access to biologics and specialist IBD care outside major centers",
+    "strongPoints": "Established IBD centers and access to essential therapies"
+  }
+}

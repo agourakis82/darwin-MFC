@@ -54,5 +54,6 @@ export interface AppState {
   favoritosMedicamentos: string[]; // IDs dos medicamentos favoritos
   favoritosProtocolos: string[]; // IDs dos protocolos favoritos
   notes: Record<string, string>; // { itemId: nota }
+  selectedRegion: import('./region').Region; // BR | IN | EU
 }
 

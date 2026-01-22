@@ -1,0 +1,25 @@
+{
+  "diseaseId": "anemia-ferropriva",
+  "region": "BR",
+  "diseaseName": "Anemia Ferropriva",
+  "prevalence": {"value": "15%", "population": "Brazilian adults", "year": 2024, "source": "VIGITEL and DataSUS", "trend": "decreasing due to flour fortification programs"},
+  "incidence": {"value": "25 per 1000", "population": "Brazilian adults", "year": 2024, "source": "SBHH epidemiological reports"},
+  "burden": {"dalyPerCapita": "0.045", "mortalityRate": "0.2 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Poor diet low in heme iron", "Menstruation in women", "Hookworm infections in endemic areas", "Pregnancy and lactation", "Vegetarian or vegan diets", "Chronic blood loss from gastrointestinal issues"],
+    "vulnerablePopulations": ["Women of reproductive age", "Pregnant women", "Children <5 years", "Indigenous populations in remote areas", "Low-income urban dwellers"],
+    "diagnosticCriteria": "Brazilian diagnostic criteria: hemoglobin <12 g/dL for women, <13 g/dL for men, confirmed by low serum ferritin <15 ng/mL"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "85% via prenatal care in SUS",
+    "treatmentAvailable": true,
+    "estimatedPatients": "22 million",
+    "controlRate": "65% among diagnosed cases through SUS supplementation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SUS prenatal screening protocol includes hemoglobin testing at first consultation",
+    "treatmentProtocol": "Oral iron supplementation (ferrous sulfate 60 mg elemental iron daily) free via SUS, food fortification program with iron in wheat and corn flour",
+    "regionalChallenges": "Parasitic infections (hookworm) in North/Northeast regions, dietary iron deficiency due to reliance on non-fortified foods in rural areas",
+    "strongPoints": "Mandatory flour fortification with iron and folic acid since 2004, universal prenatal iron supplementation via SUS for at-risk women"
+  }
+}

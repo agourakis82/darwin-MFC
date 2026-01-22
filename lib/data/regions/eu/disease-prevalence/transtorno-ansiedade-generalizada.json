@@ -1,0 +1,41 @@
+{
+  "diseaseId": "transtorno-ansiedade-generalizada",
+  "region": "EU",
+  "diseaseName": "Generalized Anxiety Disorder (GAD)",
+  "prevalence": {
+    "value": "3-5%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "WHO Europe/IHME GBD (anxiety disorders) with GAD share estimates",
+    "trend": "Stable with slight increase post-COVID"
+  },
+  "incidence": {
+    "value": "2.1%",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "Global Burden of Disease Study 2019 (IHME)"
+  },
+  "burden": {
+    "dalyPerCapita": "0.012",
+    "mortalityRate": "<0.1%",
+    "year": 2024,
+    "source": "WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": ["Genetic predisposition", "Chronic stress", "Trauma or adverse childhood experiences", "Substance use"],
+    "vulnerablePopulations": ["Women (1.5-2x higher risk)", "Young adults (18-34 years)", "Low socioeconomic status groups", "LGBTQ+ individuals"],
+    "diagnosticCriteria": "ICD-11: Anxiety disorders are characterized by marked and consistently disproportionate fear or anxiety, which is persistent (lasting typically for at least several months) and impairs everyday activities. Includes generalized anxiety disorder (6B00), panic disorder (6B01), agoraphobia (6B03), social anxiety disorder (6B04), specific phobia (6B05), separation anxiety disorder (6B03), selective mutism (6B05), and other specified/unspecified anxiety disorders (6B0Z)."
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Limited; ~20% in primary care settings",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~32.6 million",
+    "controlRate": "40-50% (adequate treatment response)"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICD-11 adopted across EU member states",
+    "treatmentProtocol": "Combination of psychotherapy (e.g., CBT) and pharmacotherapy (SSRIs/SNRIs); follows NICE/WHO guidelines",
+    "regionalChallenges": "Stigma, uneven access in Eastern EU and rural areas, workforce shortages in mental health",
+    "strongPoints": "High-quality care in Western EU countries (e.g., Nordic models), EU-funded mental health initiatives"
+  }
+}

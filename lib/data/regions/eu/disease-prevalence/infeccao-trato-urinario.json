@@ -1,0 +1,55 @@
+{
+  "diseaseId": "infeccao-trato-urinario",
+  "region": "EU",
+  "diseaseName": "Urinary Tract Infection (UTI)",
+  "prevalence": {
+    "value": "10-20% annual incidence in adult women (symptomatic episodes)",
+    "population": "EU population (higher in women)",
+    "year": 2024,
+    "source": "European primary care epidemiology syntheses / EAU context",
+    "trend": "stable; resistance patterns vary by country"
+  },
+  "incidence": {
+    "value": "50-150 per 1,000 women/year",
+    "population": "Women",
+    "year": 2024,
+    "source": "European primary care cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0006-0.002",
+    "mortalityRate": "Low; higher in complicated UTI/sepsis",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "sexual activity",
+      "pregnancy",
+      "diabetes mellitus",
+      "catheterization",
+      "urologic abnormalities"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "pregnant people",
+      "older adults",
+      "patients with diabetes",
+      "patients with catheters"
+    ],
+    "diagnosticCriteria": "Symptom-based diagnosis for uncomplicated cystitis with selective urinalysis/culture; culture for complicated or recurrent cases; EAU-aligned guidance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening (pregnancy bacteriuria screening policies vary)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of episodes/year",
+    "controlRate": "High cure rates; stewardship focuses on resistance reduction"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Strong primary care pathways and culture availability for complicated cases",
+    "treatmentProtocol": "Nitrofurantoin/fosfomycin first-line in many guidelines; avoid fluoroquinolones for uncomplicated infections; stewardship and resistance surveillance programs",
+    "regionalChallenges": "Rising ESBL prevalence in some countries and stewardship implementation variability",
+    "strongPoints": "EAU guidance and robust antimicrobial stewardship in many member states"
+  }
+}
+

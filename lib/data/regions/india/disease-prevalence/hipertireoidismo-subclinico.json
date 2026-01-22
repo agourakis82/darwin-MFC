@@ -1,0 +1,49 @@
+{
+  "diseaseId": "hipertireoidismo-subclinico",
+  "region": "IN",
+  "diseaseName": "Subclinical hyperthyroidism",
+  "prevalence": {
+    "value": "~0.5-1.5% (adults; higher in older adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Endocrine epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~0.5-1.0 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Endocrinology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low; risk of AF and bone loss in older adults",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "IHME/GBD endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autonomous thyroid nodules",
+      "excess thyroid hormone replacement",
+      "Graves disease",
+      "older age"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients on levothyroxine"
+    ],
+    "diagnosticCriteria": "Low TSH with normal free T4/T3; repeat testing and evaluate etiology"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions",
+    "controlRate": "High with monitoring and dose adjustment"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "TSH testing in urban centers; imaging in tertiary centers",
+    "treatmentProtocol": "Observation or treatment in high-risk patients; adjust thyroid hormone dose",
+    "regionalChallenges": "Limited access to radioiodine in some regions",
+    "strongPoints": "Clear management guidelines and access to monitoring"
+  }
+}

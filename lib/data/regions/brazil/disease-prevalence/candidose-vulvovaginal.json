@@ -1,0 +1,52 @@
+{
+  "diseaseId": "candidose-vulvovaginal",
+  "region": "BR",
+  "diseaseName": "Candidose vulvovaginal",
+  "prevalence": {
+    "value": "~70-75% lifetime risk; ~5-8% recurrent",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "Gynecology and STI epidemiology syntheses; FEBRASGO context",
+    "trend": "stable; recurrent cases linked to diabetes and antibiotic use"
+  },
+  "incidence": {
+    "value": "~20-40 episodes per 100 women-years (symptomatic)",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "Gynecology outpatient cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; substantial discomfort and recurrence burden",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO/IHME reproductive health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "antibiotic use",
+      "diabetes or poor glycemic control",
+      "pregnancy",
+      "immunosuppression",
+      "high estrogen states",
+      "tight/occlusive clothing"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people",
+      "women with diabetes",
+      "women with recurrent VVC"
+    ],
+    "diagnosticCriteria": "Clinical symptoms (itching, discharge) plus microscopy (KOH/wet mount) or culture for recurrent/nonresponsive cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of symptomatic episodes annually",
+    "controlRate": "High for acute episodes; recurrent cases require longer regimens"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis common; microscopy/culture available in gynecology services",
+    "treatmentProtocol": "Topical azoles or oral fluconazole; extended regimens for recurrent disease; treat contributing factors",
+    "regionalChallenges": "Self-medication and recurrent cases without adequate diagnostic confirmation",
+    "strongPoints": "Effective low-cost antifungals widely available"
+  }
+}

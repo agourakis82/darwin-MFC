@@ -1,0 +1,54 @@
+{
+  "diseaseId": "dislipidemia",
+  "region": "IN",
+  "diseaseName": "Dyslipidemia",
+  "prevalence": {
+    "value": "72.2% (any lipid abnormality, including high LDL-C, low HDL-C, high TG, or high non-HDL-C)",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR-INDIAB Study (2019-2023 projections); NFHS-5 (2019-2021)",
+    "trend": "Increasing by ~2-3% annually due to urbanization and dietary shifts"
+  },
+  "incidence": {
+    "value": "Not routinely tracked; estimated 5-7% new cases annually in at-risk populations",
+    "population": "Adults aged 20-60 with metabolic risk factors",
+    "year": 2024,
+    "source": "Extrapolated from POSHAN and ICMR data"
+  },
+  "burden": {
+    "dalyPerCapita": "Contributes ~150-200 DALYs per 100,000 (CVD-attributable)",
+    "mortalityRate": "Indirect; ~10-15% of CVD deaths linked (1.2 million CVD deaths/year)",
+    "year": 2024,
+    "source": "GBD Study 2021 (IHME); ICMR"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Unhealthy diet high in saturated fats, trans fats, and refined carbs (e.g., ghee, fried foods, low fiber intake)",
+      "Genetic predisposition (e.g., higher prevalence of familial hypercholesterolemia in South Indian and Parsi populations; APOE gene variants)",
+      "Sedentary lifestyle and urbanization",
+      "Obesity and central adiposity",
+      "Type 2 diabetes and metabolic syndrome",
+      "Smoking and excessive alcohol"
+    ],
+    "vulnerablePopulations": [
+      "Urban adults (prevalence >80%)",
+      "Elderly (>60 years)",
+      "South Indians (higher genetic and dietary risks)",
+      "Individuals with family history of CVD",
+      "Low socioeconomic groups with poor access to healthy diets"
+    ],
+    "diagnosticCriteria": "Per Lipid Association of India (LAI) guidelines (2017, updated 2022): Fasting lipid profile - TC >200 mg/dL, LDL-C >130 mg/dL (or >100 in high-risk), HDL-C <40 mg/dL (men)/<50 (women), TG >150 mg/dL. Non-fasting options for screening."
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "<20% of adults receive regular lipid screening (higher in urban areas ~30%)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~900-1000 million adults affected",
+    "controlRate": "~15-20% achieve target lipid levels with treatment"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Adapted LAI guidelines with lower BMI-adjusted cutoffs for Indians (e.g., LDL-C target <100 mg/dL for all due to higher CVD risk at lower levels)",
+    "treatmentProtocol": "Lifestyle modification first (DASH-like diet, exercise); pharmacotherapy with statins (atorvastatin/rosuvastatin), fibrates for TG; per NPCDCS program under NHM",
+    "regionalChallenges": "Rural-urban disparity in access; cultural dietary preferences (e.g., high-carb vegetarian diets exacerbating TG); low awareness and adherence; counterfeit drugs",
+    "strongPoints": "Integration with NCD programs like NPCDCS; AYUSHMAN Bharat coverage for statins; growing telemedicine for urban-rural screening"
+  }
+}

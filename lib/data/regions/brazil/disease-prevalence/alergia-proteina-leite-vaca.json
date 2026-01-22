@@ -1,0 +1,51 @@
+{
+  "diseaseId": "alergia-proteina-leite-vaca",
+  "region": "BR",
+  "diseaseName": "Alergia à Proteína do Leite de Vaca (APLV)",
+  "prevalence": {
+    "value": "~2-3% (infants)",
+    "population": "Infants in the first year of life",
+    "year": 2024,
+    "source": "Pediatric allergy epidemiology syntheses; Brazilian pediatric allergy practice patterns",
+    "trend": "stable; awareness and diagnosis increasing"
+  },
+  "incidence": {
+    "value": "~1-3 per 100 live births (first-year onset)",
+    "population": "Newborns/infants",
+    "year": 2024,
+    "source": "International food allergy incidence syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant caregiver burden and nutrition impacts",
+    "mortalityRate": "Very low; severe anaphylaxis uncommon but possible",
+    "year": 2024,
+    "source": "WHO/IHME allergy burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history of atopy",
+      "eczema/atopic dermatitis in infancy",
+      "early formula exposure (association; complex)",
+      "cow’s milk protein exposure",
+      "coexisting food allergies"
+    ],
+    "vulnerablePopulations": [
+      "infants with moderate-severe eczema",
+      "families with limited access to allergists and dietitians",
+      "low-income households (cost of specialized formulas)"
+    ],
+    "diagnosticCriteria": "Clinical history of immediate (IgE-mediated) or delayed symptoms; elimination diet with controlled re-challenge; specific IgE/skin tests when IgE-mediated suspected; rule out non-allergic intolerance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven pediatric evaluation",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands of infants annually",
+    "controlRate": "Good with strict avoidance and appropriate formula; variable due to formula access and adherence"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Pediatric evaluation; oral food challenge capacity varies and is concentrated in tertiary centers",
+    "treatmentProtocol": "Elimination of cow’s milk protein; extensively hydrolyzed formula (eHF) or amino-acid formula (AAF) for severe cases; nutrition counseling; periodic supervised tolerance assessment",
+    "regionalChallenges": "Cost and availability of specialized formulas; overdiagnosis/underdiagnosis in primary care; limited allergy services outside capitals",
+    "strongPoints": "Effective management when formulas and counseling are accessible; increasing awareness in pediatrics"
+  }
+}

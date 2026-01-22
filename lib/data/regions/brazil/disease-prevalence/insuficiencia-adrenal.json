@@ -1,0 +1,51 @@
+{
+  "diseaseId": "insuficiencia-adrenal",
+  "region": "BR",
+  "diseaseName": "Insuficiencia adrenal",
+  "prevalence": {
+    "value": "~100-150 per million",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Endocrinology registry syntheses",
+    "trend": "stable; improved diagnosis in endocrine centers"
+  },
+  "incidence": {
+    "value": "~4-6 per million/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "Endocrine epidemiology studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low population burden; high per-case morbidity if untreated",
+    "mortalityRate": "Low with treatment; higher in adrenal crisis",
+    "year": 2024,
+    "source": "IHME/GBD endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autoimmune adrenalitis",
+      "tuberculosis (secondary causes)",
+      "pituitary disease",
+      "long-term steroid use",
+      "adrenal hemorrhage"
+    ],
+    "vulnerablePopulations": [
+      "patients with autoimmune disease",
+      "patients with pituitary disorders",
+      "people with TB history"
+    ],
+    "diagnosticCriteria": "Low morning cortisol with elevated ACTH (primary) or low ACTH (secondary); ACTH stimulation test"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands",
+    "controlRate": "High with replacement therapy and education"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Endocrinology referral for dynamic testing",
+    "treatmentProtocol": "Glucocorticoid replacement, mineralocorticoid if primary; stress dosing education",
+    "regionalChallenges": "Delayed diagnosis and limited access to endocrine care in some regions",
+    "strongPoints": "Effective low-cost replacement therapy"
+  }
+}

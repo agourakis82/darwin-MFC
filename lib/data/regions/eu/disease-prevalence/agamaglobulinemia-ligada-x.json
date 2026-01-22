@@ -1,0 +1,50 @@
+{
+  "diseaseId": "agamaglobulinemia-ligada-x",
+  "region": "EU",
+  "diseaseName": "X-linked Agammaglobulinemia (XLA)",
+  "prevalence": {
+    "value": "~0.1-0.3 per 100,000 (males)",
+    "population": "EU male population",
+    "year": 2024,
+    "source": "ESID/European primary immunodeficiency registry context; Orphanet",
+    "trend": "stable; improved detection and long-term outcomes with immunology networks"
+  },
+  "incidence": {
+    "value": "~1 per 100,000-200,000 male live births",
+    "population": "Male newborns",
+    "year": 2024,
+    "source": "Primary immunodeficiency epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but largely preventable morbidity with immunoglobulin replacement",
+    "mortalityRate": "Low with regular IVIG/SCIG and infection prevention",
+    "year": 2024,
+    "source": "Registry outcomes and Orphanet summaries"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "BTK pathogenic variant",
+      "family history",
+      "delayed diagnosis",
+      "bronchiectasis from recurrent infections"
+    ],
+    "vulnerablePopulations": [
+      "male infants and young boys",
+      "patients with delayed immunology referral",
+      "patients with chronic lung disease complications"
+    ],
+    "diagnosticCriteria": "Very low immunoglobulins, absent/low CD19+ B cells, recurrent bacterial infections; genetic confirmation (BTK)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; diagnosis via immunology pathways",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Thousands (rare)",
+    "controlRate": "High with regular IVIG/SCIG and structured follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Flow cytometry and genetics widely available; immunology referral networks established",
+    "treatmentProtocol": "IVIG/SCIG replacement, prompt antibiotics, lung monitoring, vaccination planning (avoid live vaccines in severe antibody deficiency)",
+    "regionalChallenges": "Ensuring adherence and transition to adult immunology care; cross-country access differences",
+    "strongPoints": "Strong access to IVIG/SCIG, immunology registries, and comprehensive follow-up"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "regionaldisease_prevalence_template": {
+    "description": "Template for regional disease prevalence data. Use MCP offload to fill these for all 368 diseases x 3 regions.",
+    "example": {
+      "diseaseId": "diabetes-mellitus-type-2",
+      "region": "BR",
+      "diseaseName": "Diabetes Mellitus Type 2",
+      "prevalence": {
+        "value": "11.5%",
+        "population": "Adult population (≥18 years)",
+        "year": 2024,
+        "source": "DataSUS / VIGITEL 2024",
+        "trend": "increasing"
+      },
+      "incidence": {
+        "value": "2.8 per 1000 person-years",
+        "population": "General population",
+        "year": 2024,
+        "source": "CONITEC / Ministry of Health"
+      },
+      "burden": {
+        "dalyPerCapita": "45 DALYs per 100,000",
+        "mortalityRate": "18.5 per 100,000",
+        "year": 2024,
+        "source": "WHO Global Health Observatory"
+      },
+      "epidemiology": {
+        "riskFactors": ["Obesity", "Sedentary lifestyle", "Genetic predisposition", "Age >45"],
+        "vulnerablePopulations": ["Low-income communities", "Indigenous populations", "Northeast region"],
+        "diagnosticCriteria": "Fasting glucose ≥126 mg/dL or HbA1c ≥6.5%"
+      },
+      "publicHealthSystem": {
+        "screeningCoverage": "45%",
+        "treatmentAvailable": true,
+        "estimatedPatients": "14.7 million (Brazil)",
+        "controlRate": "28%"
+      },
+      "regionalSpecificities": {
+        "diagnosisCriteria": "As per Ministry of Health Diabetic Guidelines 2023",
+        "treatmentProtocol": "First-line: Metformin; Second-line: GLP-1RA or SGLT2i",
+        "regionalChallenges": "Limited access to modern therapeutics in rural areas",
+        "strongPoints": "SUS coverage enables universal treatment access"
+      }
+    },
+    "indiaExample": {
+      "diseaseId": "diabetes-mellitus-type-2",
+      "region": "IN",
+      "diseaseName": "Diabetes Mellitus Type 2",
+      "prevalence": {
+        "value": "10.2%",
+        "population": "Adult population (≥18 years)",
+        "year": 2024,
+        "source": "NFHS-5 / ICMR Indian Council of Medical Research",
+        "trend": "rapidly increasing"
+      },
+      "incidence": {
+        "value": "1.5 per 1000 person-years",
+        "population": "Urban population",
+        "year": 2024,
+        "source": "Ministry of Health and Family Welfare"
+      },
+      "burden": {
+        "dalyPerCapita": "52 DALYs per 100,000",
+        "mortalityRate": "22.1 per 100,000",
+        "year": 2024,
+        "source": "WHO Southeast Asia Region"
+      },
+      "epidemiology": {
+        "riskFactors": ["Rapid urbanization", "Dietary changes", "Genetic predisposition", "Low physical activity"],
+        "vulnerablePopulations": ["Urban populations", "Affluent areas", "Working-age adults"],
+        "diagnosticCriteria": "Fasting glucose ≥126 mg/dL or HbA1c ≥6.5%"
+      },
+      "publicHealthSystem": {
+        "screeningCoverage": "25%",
+        "treatmentAvailable": true,
+        "estimatedPatients": "74 million (India, projected)",
+        "controlRate": "15%"
+      },
+      "regionalSpecificities": {
+        "diagnosisCriteria": "As per ICMR National Diabetes Management Protocol",
+        "treatmentProtocol": "First-line: Metformin; PMJAY/Jan Aushadhi available for essentials",
+        "regionalChallenges": "Urban-rural divide, affordability issues for newer agents",
+        "strongPoints": "PMJAY expanding coverage, large pharmaceutical generic sector"
+      }
+    },
+    "euExample": {
+      "diseaseId": "diabetes-mellitus-type-2",
+      "region": "EU",
+      "diseaseName": "Diabetes Mellitus Type 2",
+      "prevalence": {
+        "value": "9.1%",
+        "population": "Adult population (≥18 years)",
+        "year": 2024,
+        "source": "Eurostat / National Health Surveys",
+        "trend": "stable"
+      },
+      "incidence": {
+        "value": "1.2 per 1000 person-years",
+        "population": "General population",
+        "year": 2024,
+        "source": "European Centre for Disease Prevention and Control"
+      },
+      "burden": {
+        "dalyPerCapita": "38 DALYs per 100,000",
+        "mortalityRate": "15.3 per 100,000",
+        "year": 2024,
+        "source": "WHO Europe"
+      },
+      "epidemiology": {
+        "riskFactors": ["Obesity", "Sedentary lifestyle", "Age-related", "Genetic factors"],
+        "vulnerablePopulations": ["Eastern Europe", "Low socioeconomic status", "Migrants"],
+        "diagnosticCriteria": "Fasting glucose ≥126 mg/dL or HbA1c ≥6.5%"
+      },
+      "publicHealthSystem": {
+        "screeningCoverage": "72%",
+        "treatmentAvailable": true,
+        "estimatedPatients": "32 million (EU27)",
+        "controlRate": "58%"
+      },
+      "regionalSpecificities": {
+        "diagnosisCriteria": "As per ADA/EASD Consensus Reports",
+        "treatmentProtocol": "Personalized approach; GLP-1RA/SGLT2i increasingly first-line",
+        "regionalChallenges": "Variable access across EU countries",
+        "strongPoints": "High diagnostic rate, excellent drug availability, good control rates"
+      }
+    },
+    "dataRequirements": {
+      "mandatoryFields": [
+        "diseaseId",
+        "region",
+        "diseaseName",
+        "prevalence.value",
+        "prevalence.population",
+        "prevalence.year",
+        "prevalence.source"
+      ],
+      "optionalFields": [
+        "incidence",
+        "burden",
+        "epidemiology",
+        "publicHealthSystem",
+        "regionalSpecificities"
+      ],
+      "sourceQuality": "Prefer primary sources: government health ministries, WHO, peer-reviewed meta-analyses from past 5 years"
+    },
+    "mcpOffloadStrategy": {
+      "step1": "Generate prevalence for top 50 priority diseases: diabetes, HTN, TB, malaria, HIV, maternal health, neonatal",
+      "step2": "Generate prevalence for next 100 common diseases in APS/primary care",
+      "step3": "Generate prevalence for remaining 218 diseases",
+      "parallelization": "Process BR/IN/EU simultaneously for each batch",
+      "estimatedCompletionTime": "36-48 hours with parallel MCP offload (3 providers x 3 regions)"
+    }
+  }
+}

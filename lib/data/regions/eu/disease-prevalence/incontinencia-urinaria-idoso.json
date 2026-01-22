@@ -1,0 +1,52 @@
+{
+  "diseaseId": "incontinencia-urinaria-idoso",
+  "region": "EU",
+  "diseaseName": "Urinary Incontinence in Older Adults",
+  "prevalence": {
+    "value": "15-30% (older adults; higher in women and care homes)",
+    "population": "EU adults >65 years",
+    "year": 2024,
+    "source": "European geriatrics/urology epidemiology syntheses",
+    "trend": "increasing with aging demographics"
+  },
+  "incidence": {
+    "value": "15-35 per 1,000 person-years",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.005-0.02",
+    "mortalityRate": "Indirect",
+    "year": 2024,
+    "source": "IHME/WHO Europe older adult context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "pelvic floor dysfunction",
+      "BPH/LUTS",
+      "mobility impairment",
+      "cognitive impairment"
+    ],
+    "vulnerablePopulations": [
+      "older women",
+      "care home residents",
+      "frail older adults"
+    ],
+    "diagnosticCriteria": "Clinical assessment with bladder diary, urinalysis, and PVR when indicated; guideline-based evaluation pathways common"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; assessment often integrated in geriatric and primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of older adults",
+    "controlRate": "Moderate with access to pelvic floor physiotherapy and medications"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Broad access to continence services in many countries; varies by member state",
+    "treatmentProtocol": "Bladder training, pelvic floor physiotherapy, medications for urge incontinence, management of BPH, and continence products support",
+    "regionalChallenges": "Service variability and long-term care demands",
+    "strongPoints": "Structured continence services and multidisciplinary geriatric care pathways in many systems"
+  }
+}
+

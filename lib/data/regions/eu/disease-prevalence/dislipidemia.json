@@ -1,0 +1,11 @@
+{
+  "diseaseId": "dislipidemia",
+  "region": "EU",
+  "diseaseName": "Dyslipidemia",
+  "prevalence": {"value": "47% (elevated total cholesterol ≥5 mmol/L)", "population": "EU adults (~370 million)", "year": 2024, "source": "ESC Cardiovascular Disease Statistics 2023 / WHO Europe", "trend": "Stable to increasing due to rising obesity rates"},
+  "incidence": {"value": "Approximately 5-7% new diagnoses annually", "population": "EU adults", "year": 2024, "source": "ESC/EAS Guidelines 2019"},
+  "burden": {"dalyPerCapita": "15-20 DALYs per 1,000 population (attributable to CVD from dyslipidemia)", "mortalityRate": "Contributes to ~25% of CVD deaths (45,000-50,000 annually)", "year": 2024, "source": "IHME Global Burden of Disease 2021 / ESC"},
+  "epidemiology": {"riskFactors": ["Unhealthy diet high in saturated fats", "Physical inactivity", "Obesity", "Smoking", "Diabetes mellitus", "Genetic predisposition (e.g., familial hypercholesterolemia)"], "vulnerablePopulations": ["Adults over 50 years", "Individuals with metabolic syndrome", "South-Eastern Europeans (higher prevalence)", "Patients with type 2 diabetes"], "diagnosticCriteria": "Total cholesterol ≥5.0 mmol/L, LDL-C ≥3.0 mmol/L, or triglycerides ≥1.7 mmol/L; confirmed by fasting lipid profile (ESC/EAS 2019 Guidelines)"},
+  "publicHealthSystem": {"screeningCoverage": "65-70% in primary care settings", "treatmentAvailable": true, "estimatedPatients": "~175 million", "controlRate": "Only 40-50% achieve LDL-C targets"},
+  "regionalSpecificities": {"diagnosisCriteria": "Harmonized per ESC/EAS 2019: Risk-based thresholds (e.g., LDL-C <1.4 mmol/L for very high-risk patients)", "treatmentProtocol": "Lifestyle modification first-line; statins (e.g., atorvastatin) as pharmacotherapy; PCSK9 inhibitors for resistant cases (per ESC/EAS Guidelines)", "regionalChallenges": "Disparities in access between Western and Eastern EU; low awareness in rural areas; medication non-adherence", "strongPoints": "Well-established national CVD prevention programs; high statin availability (>90% coverage); integrated EU-wide surveillance via Eurostat"}
+}

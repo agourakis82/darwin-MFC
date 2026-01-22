@@ -1,0 +1,52 @@
+{
+  "diseaseId": "hipertireoidismo",
+  "region": "EU",
+  "diseaseName": "Hyperthyroidism",
+  "prevalence": {
+    "value": "0.7-1.2%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "European Thyroid Association (ETA) / European epidemiology syntheses",
+    "trend": "stable; detection improved with routine thyroid testing"
+  },
+  "incidence": {
+    "value": "0.3-0.6 per 1,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0005-0.0015",
+    "mortalityRate": "Low; mainly via cardiovascular complications in untreated cases",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Graves disease",
+      "toxic nodular goiter",
+      "iodine exposure changes",
+      "amiodarone exposure",
+      "postpartum thyroiditis"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "older adults",
+      "patients with cardiac comorbidity (AF risk)"
+    ],
+    "diagnosticCriteria": "Suppressed TSH with elevated free T4/T3; etiology by TRAb and uptake imaging where indicated; ETA-aligned pathways"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; high testing rates in symptomatic and risk groups",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~3-5 million",
+    "controlRate": "Generally high with structured endocrine care; relapse rates remain for Graves disease"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Broad access to thyroid labs and imaging in specialist settings",
+    "treatmentProtocol": "Antithyroid drugs, radioiodine, and surgery based on etiology and patient preference; beta-blockers for symptom control",
+    "regionalChallenges": "Variation in definitive therapy preferences between countries and management of comorbidities in older adults",
+    "strongPoints": "Strong guideline infrastructure (ETA) and widespread access to diagnostic and definitive therapies"
+  }
+}
+

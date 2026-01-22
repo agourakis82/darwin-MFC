@@ -1,0 +1,54 @@
+{
+  "diseaseId": "asma",
+  "region": "BR",
+  "diseaseName": "Asma Brônquica",
+  "prevalence": {
+    "value": "4.1%",
+    "population": "~8.8 million adults (18+ years)",
+    "year": 2024,
+    "source": "VIGITEL/SBPT (estimated from 2022 data extrapolated)",
+    "trend": "Stable to slightly increasing in urban areas due to pollution"
+  },
+  "incidence": {
+    "value": "~1.5-2% annually",
+    "population": "General population ~215 million",
+    "year": 2024,
+    "source": "SBPT and international estimates (e.g., GINA report adapted for Brazil)",
+    "trend": "Increasing in children and urban populations"
+  },
+  "burden": {
+    "dalyPerCapita": "~150-200 DALYs per 100,000",
+    "mortalityRate": "0.5-1 per 100,000",
+    "year": 2024,
+    "source": "Global Burden of Disease Study (IHME) 2021 data extrapolated"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Environmental pollution (urban air quality)",
+      "Tobacco smoke exposure",
+      "Allergens (dust mites, pollen)",
+      "Obesity",
+      "Genetic predisposition",
+      "Occupational exposures (e.g., chemicals in agriculture)"
+    ],
+    "vulnerablePopulations": [
+      "Children under 5 years",
+      "Elderly (>65 years)",
+      "Low-income urban dwellers",
+      "Indigenous and rural communities with limited access"
+    ],
+    "diagnosticCriteria": "Based on GINA guidelines: Recurrent wheezing, breathlessness, chest tightness, cough; confirmed by spirometry showing reversible airflow obstruction (FEV1/FVC <0.7, >12% improvement post-bronchodilator)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "~20-30% in primary care (via SUS, limited spirometry access)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10-15 million (including undiagnosed)",
+    "controlRate": "~50% achieve good control with ICS/LABA therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Follows GINA/SBPT: Clinical history + spirometry; peak flow monitoring in resource-limited settings",
+    "treatmentProtocol": "SUS protocol: Inhaled corticosteroids (ICS) as first-line; short-acting beta-agonists (SABA) for relief; stepwise approach per GINA; biologics (e.g., omalizumab) limited to severe cases in specialized centers",
+    "regionalChallenges": "High urban pollution in São Paulo/Rio exacerbates symptoms; disparities in SUS access in North/Northeast; underdiagnosis in rural areas; medication shortages during economic fluctuations",
+    "strongPoints": "Strong pneumology societies (SBPT); nationwide SUS coverage for basic inhalers; public awareness campaigns; integration with telemedicine post-COVID for follow-up"
+  }
+}

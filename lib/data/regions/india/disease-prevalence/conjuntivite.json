@@ -1,0 +1,51 @@
+{
+  "diseaseId": "conjuntivite",
+  "region": "IN",
+  "diseaseName": "Conjunctivitis",
+  "prevalence": {
+    "value": "common; outbreaks frequent (viral/allergic)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Ophthalmology/primary care epidemiology context",
+    "trend": "stable; seasonal peaks and outbreaks"
+  },
+  "incidence": {
+    "value": "high (episodic)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Primary care context"
+  },
+  "burden": {
+    "dalyPerCapita": "low",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO eye health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "crowding and transmission",
+      "allergen and pollution exposure",
+      "poor hand hygiene",
+      "contact lens use (urban)"
+    ],
+    "vulnerablePopulations": [
+      "school children",
+      "allergic individuals",
+      "urban residents with pollution exposure"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; red flags (pain, photophobia, vision loss, corneal involvement) require urgent referral"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high episode burden",
+    "controlRate": "High; outbreaks drive healthcare utilization"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often treated in primary care/pharmacy settings",
+    "treatmentProtocol": "Supportive care and allergy drops; antibiotics for suspected bacterial; hygiene and outbreak control",
+    "regionalChallenges": "Self-medication and antibiotic overuse; outbreak control in crowded settings",
+    "strongPoints": "Low-cost symptomatic care and strong eye care programs in many states"
+  }
+}
+

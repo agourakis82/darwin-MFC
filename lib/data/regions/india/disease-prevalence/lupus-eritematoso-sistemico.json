@@ -1,0 +1,52 @@
+{
+  "diseaseId": "lupus-eritematoso-sistemico",
+  "region": "IN",
+  "diseaseName": "Systemic Lupus Erythematosus (SLE)",
+  "prevalence": {
+    "value": "20-60 per 100,000 (underdiagnosis likely)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Indian rheumatology cohort syntheses + regional epidemiology reports",
+    "trend": "increasing recognition in urban centers"
+  },
+  "incidence": {
+    "value": "1-5 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "SLE epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0005-0.002",
+    "mortalityRate": "Elevated (infection, renal, and cardiovascular complications)",
+    "year": 2024,
+    "source": "IHME GBD / cohort mortality context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "genetic susceptibility",
+      "UV exposure",
+      "infections as triggers (association)",
+      "smoking"
+    ],
+    "vulnerablePopulations": [
+      "women of childbearing age",
+      "patients with limited access to rheumatology/nephrology",
+      "rural populations with delayed diagnosis"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis supported by ACR/EULAR criteria, ANA and immunologic markers; renal biopsy for nephritis when available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~300,000-800,000",
+    "controlRate": "Variable; constrained by specialist access and monitoring costs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ANA testing increasingly available; specialized panels and renal biopsy concentrated in tertiary centers",
+    "treatmentProtocol": "Hydroxychloroquine, steroids, immunosuppressants for organ involvement; biologics in select cases; pregnancy risk management in specialist services",
+    "regionalChallenges": "Specialist shortage, out-of-pocket lab monitoring costs, and infection risk with immunosuppression",
+    "strongPoints": "Affordable generic HCQ and expanding tertiary rheumatology services"
+  }
+}
+

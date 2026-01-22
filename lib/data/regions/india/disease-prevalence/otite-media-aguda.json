@@ -1,0 +1,52 @@
+{
+  "diseaseId": "otite-media-aguda",
+  "region": "IN",
+  "diseaseName": "Acute Otitis Media (AOM)",
+  "prevalence": {
+    "value": "common; high burden in early childhood",
+    "population": "Indian children",
+    "year": 2024,
+    "source": "Pediatric infection epidemiology syntheses / WHO context",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "100-250 per 1,000 children/year (episodes in young children)",
+    "population": "Children <5 years",
+    "year": 2024,
+    "source": "Pediatric primary care syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; contributes to hearing loss risk when recurrent/untreated",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO pediatric infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral URIs",
+      "crowding",
+      "indoor air pollution",
+      "lack of breastfeeding (association)",
+      "malnutrition (association)"
+    ],
+    "vulnerablePopulations": [
+      "young children",
+      "crowded households",
+      "rural areas with limited follow-up"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis with otoscopy; signs of effusion and inflammation; differentiate from OME"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high pediatric episode burden",
+    "controlRate": "Variable; delayed care can increase chronic ear disease risk"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Otoscopy quality and access vary; many cases treated empirically",
+    "treatmentProtocol": "Analgesia; antibiotics (amoxicillin) for selected cases; referral for recurrent disease and hearing concerns",
+    "regionalChallenges": "Overuse of antibiotics and limited ENT services in many districts",
+    "strongPoints": "Availability of low-cost antibiotics and expanding child health services"
+  }
+}
+

@@ -1,0 +1,49 @@
+{
+  "diseaseId": "epicondilite-lateral",
+  "region": "IN",
+  "diseaseName": "Lateral Epicondylitis (Tennis Elbow)",
+  "prevalence": {
+    "value": "1-3% (adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Musculoskeletal epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "3-10 per 1,000/year",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "Occupational cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.003",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "manual work and repetitive gripping",
+      "poor ergonomics",
+      "sports"
+    ],
+    "vulnerablePopulations": [
+      "manual workers",
+      "middle-aged adults"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; imaging rarely required"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of episodic cases",
+    "controlRate": "Variable; physio access affects outcomes"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis; many managed with self-medication",
+    "treatmentProtocol": "Exercise/physio, activity modification, NSAIDs; injections in selected cases",
+    "regionalChallenges": "Limited physiotherapy access and delayed care",
+    "strongPoints": "Low-cost exercise-based rehab"
+  }
+}
+

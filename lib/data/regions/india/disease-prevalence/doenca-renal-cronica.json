@@ -1,0 +1,53 @@
+{
+  "diseaseId": "doenca-renal-cronica",
+  "region": "IN",
+  "diseaseName": "Chronic Kidney Disease",
+  "prevalence": {
+    "value": "15.4% (stages 1-5)",
+    "population": "Indian adults (~900 million)",
+    "year": 2024,
+    "source": "ICMR/ISN National Survey (2020, extrapolated)",
+    "trend": "Increasing by 2-3% annually due to rising diabetes and hypertension"
+  },
+  "incidence": {
+    "value": "115 per million population (for ESRD)",
+    "population": "Total population (~1.4 billion)",
+    "year": 2024,
+    "source": "Indian Society of Nephrology (ISN) Registry (2022)"
+  },
+  "burden": {
+    "dalyPerCapita": "248 DALYs per 100,000",
+    "mortalityRate": "28 per 100,000",
+    "year": 2024,
+    "source": "Global Burden of Disease Study (GBD 2019, IHME, extrapolated to 2024)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Diabetes mellitus (primary driver, 40-50% cases)",
+      "Hypertension (30-40% cases)",
+      "Obesity and metabolic syndrome",
+      "Chronic infections (e.g., glomerulonephritis)",
+      "Family history and genetic factors",
+      "Tobacco use and environmental toxins"
+    ],
+    "vulnerablePopulations": [
+      "Adults over 40 years",
+      "Rural and low-socioeconomic groups",
+      "Patients with diabetes or hypertension",
+      "Indigenous and tribal communities"
+    ],
+    "diagnosticCriteria": "Based on KDIGO guidelines: eGFR <60 mL/min/1.73m² for >3 months or markers of kidney damage (e.g., albuminuria >30 mg/24h)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Low (~10-15% in high-risk groups)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~135 million (undiagnosed: ~80%)",
+    "controlRate": "Progression control ~20-30% in diagnosed cases"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Adapted KDIGO with local labs; challenges in rural eGFR accuracy",
+    "treatmentProtocol": "Conservative management, ACEi/ARB for early stages; dialysis/transplant for ESRD per ISN guidelines",
+    "regionalChallenges": "Limited dialysis access (only ~30% coverage, 1 center per 1 million people); high out-of-pocket costs; rural-urban disparity; water quality issues exacerbating infections",
+    "strongPoints": "Government initiatives like Ayushman Bharat for free dialysis; growing nephrology workforce; increasing awareness campaigns"
+  }
+}

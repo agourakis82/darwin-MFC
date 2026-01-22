@@ -1,0 +1,51 @@
+{
+  "diseaseId": "transtorno-obsessivo-compulsivo",
+  "region": "IN",
+  "diseaseName": "Obsessive-Compulsive Disorder (OCD)",
+  "prevalence": {
+    "value": "0.8-1.5%",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "NMHS/ICMR + IHME GBD (OCD) context",
+    "trend": "stable; underdiagnosis persists"
+  },
+  "incidence": {
+    "value": "1-2 per 1,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "OCD epidemiology syntheses extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.01",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "stressful life events",
+      "comorbid anxiety/depression",
+      "early-onset anxiety traits"
+    ],
+    "vulnerablePopulations": [
+      "adolescents and young adults",
+      "patients with limited access to psychotherapy",
+      "patients with comorbid depression"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: obsessions/compulsions causing distress/impairment; clinical assessment with comorbidity screening"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10-20 million",
+    "controlRate": "Low to moderate due to limited ERP therapy access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnosis concentrated in tertiary psychiatry; delays common",
+    "treatmentProtocol": "SSRIs + CBT/ERP where available; augmentation in specialist care",
+    "regionalChallenges": "High treatment gap for psychotherapy and stigma-driven delays",
+    "strongPoints": "Affordable generic SSRIs and expanding tele-mental health services"
+  }
+}
+

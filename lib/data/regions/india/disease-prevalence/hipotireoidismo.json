@@ -1,0 +1,11 @@
+{
+  "diseaseId": "hipotireoidismo",
+  "region": "IN",
+  "diseaseName": "Hypothyroidism",
+  "prevalence": {"value": "11%", "population": "Indian adults (~1.4 billion)", "year": 2024, "source": "ICMR/ESI", "trend": "Increasing due to rising autoimmune cases in urban areas"},
+  "incidence": {"value": "3.7 per 1000 person-years", "population": "General population", "year": 2024, "source": "Endocrine Society of India (ESI) estimates"},
+  "burden": {"dalyPerCapita": "0.45", "mortalityRate": "<0.1%", "year": 2024, "source": "Global Burden of Disease Study (IHME)"},
+  "epidemiology": {"riskFactors": ["Iodine deficiency", "Autoimmune thyroiditis (Hashimoto's)", "Female gender", "Age >40 years", "Family history"], "vulnerablePopulations": ["Women (2-4 times higher risk)", "Elderly (>60 years)", "Pregnant women", "Populations in iodine-deficient regions (e.g., Himalayas)"], "diagnosticCriteria": "TSH >4.5 mIU/L with low free T4; subclinical: TSH >4.5 mIU/L with normal T4 (American Thyroid Association guidelines)"},
+  "publicHealthSystem": {"screeningCoverage": "<20% in adults", "treatmentAvailable": true, "estimatedPatients": "Approximately 100-120 million", "controlRate": "40-50% (diagnosed and on treatment)"},
+  "regionalSpecificities": {"diagnosisCriteria": "TSH-based screening adapted to Indian reference ranges (e.g., higher TSH cutoffs in some studies)", "treatmentProtocol": "Lifelong levothyroxine replacement; dose 1.6 mcg/kg body weight, monitored every 6-12 months", "regionalChallenges": "Persistent iodine deficiency in sub-Himalayan and tribal areas despite iodized salt; low awareness and rural access issues; rising autoimmune cases in urban iodine-replete areas", "strongPoints": "National Iodine Deficiency Disorders Control Programme (NIDDCP) has reduced goiter prevalence; affordable generic levothyroxine available"}
+}

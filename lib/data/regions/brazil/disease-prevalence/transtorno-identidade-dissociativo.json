@@ -1,0 +1,50 @@
+{
+  "diseaseId": "transtorno-identidade-dissociativo",
+  "region": "BR",
+  "diseaseName": "Transtorno Dissociativo de Identidade (TDI)",
+  "prevalence": {
+    "value": "0.1-0.5% (rare; highly underdiagnosed)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Psychiatric epidemiology syntheses (dissociative disorders)",
+    "trend": "stable; recognition increasing in specialized services"
+  },
+  "incidence": {
+    "value": "<1 per 10,000/year (diagnosed cases)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0005-0.002",
+    "mortalityRate": "Indirect; elevated self-harm and comorbidity risk",
+    "year": 2024,
+    "source": "IHME/WHO mental health burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "severe childhood trauma and neglect",
+      "repeated abuse",
+      "comorbid PTSD and depression",
+      "social vulnerability"
+    ],
+    "vulnerablePopulations": [
+      "survivors of chronic childhood trauma",
+      "patients with complex PTSD and dissociative symptoms"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 dissociative identity disorder criteria with identity disruption, amnesia, and clinically significant distress/impairment; requires specialist longitudinal assessment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis is specialist-led",
+    "treatmentAvailable": true,
+    "estimatedPatients": "low; underdiagnosed",
+    "controlRate": "Variable; best outcomes with long-term trauma-focused psychotherapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Typically diagnosed in specialized psychiatry/psychology services; APS often identifies comorbid depression/PTSD first",
+    "treatmentProtocol": "Long-term trauma-focused psychotherapy with stabilization, integration, and safety planning; treat comorbid depression/anxiety; crisis support as needed",
+    "regionalChallenges": "Limited access to specialized trauma psychotherapy and high stigma around severe mental illness",
+    "strongPoints": "CAPS and psychosocial services can provide longitudinal support when available"
+  }
+}
+

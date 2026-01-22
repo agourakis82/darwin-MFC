@@ -1,0 +1,53 @@
+{
+  "diseaseId": "transtorno-panico",
+  "region": "IN",
+  "diseaseName": "Panic Disorder",
+  "prevalence": {
+    "value": "0.6-1.2%",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR/NMHS + IHME GBD context",
+    "trend": "increasing recognition in urban areas"
+  },
+  "incidence": {
+    "value": "1-3 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Epidemiological syntheses (panic disorder) extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD (anxiety spectrum) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "chronic stress",
+      "family history",
+      "female sex",
+      "substance use (stimulants)",
+      "comorbid depression"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "students and working professionals",
+      "urban residents",
+      "patients with limited access to psychotherapy"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria; clinical assessment with exclusion of medical mimics; somatic presentations are common"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; diagnosis commonly delayed",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~8-15 million",
+    "controlRate": "Low to moderate due to treatment gap and limited CBT access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care identification variable; psychiatric care concentrated in urban tertiary centers",
+    "treatmentProtocol": "SSRIs/SNRIs + CBT where available; short-term benzodiazepines in selected cases; telepsychiatry expanding",
+    "regionalChallenges": "High stigma, mental health professional scarcity, and high out-of-pocket costs",
+    "strongPoints": "Growing tele-mental health services and availability of affordable generic SSRIs"
+  }
+}
+

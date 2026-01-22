@@ -1,0 +1,53 @@
+{
+  "diseaseId": "chikungunya",
+  "region": "IN",
+  "diseaseName": "Chikungunya",
+  "prevalence": {
+    "value": "outbreak-dependent; typically <0.1% annual reported incidence",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "NCDC / NCVBDC (vector-borne disease surveillance)",
+    "trend": "episodic outbreaks; urban transmission supported by Aedes aegypti"
+  },
+  "incidence": {
+    "value": "0.1-1.0 per 1,000/year (outbreak-dependent, reported)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "NCDC surveillance reports"
+  },
+  "burden": {
+    "dalyPerCapita": "0.00005-0.0003",
+    "mortalityRate": "Low; chronic arthralgia contributes to disability",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Aedes exposure in urban settings",
+      "monsoon season breeding sites",
+      "water storage and inadequate waste management",
+      "limited vector control coverage",
+      "delayed supportive care and comorbidities"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "people with chronic diseases",
+      "urban slum communities",
+      "pregnant people"
+    ],
+    "diagnosticCriteria": "Acute fever with severe polyarthralgia; confirmation by RT-PCR (early) or IgM; differentiate from dengue"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; outbreak-based surveillance and fever clinic testing in some states",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens to hundreds of thousands/year (outbreak-dependent)",
+    "controlRate": "Acute recovery common; persistent joint pain in a subset with limited rehab access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis common in outbreaks; lab testing concentrated in public health labs and tertiary centers",
+    "treatmentProtocol": "Supportive care (paracetamol, hydration); avoid NSAIDs until dengue excluded; physiotherapy for persistent arthralgia",
+    "regionalChallenges": "Underreporting, variable lab access, and limited chronic pain/rehab services for post-chikungunya arthritis",
+    "strongPoints": "Established vector-borne disease control infrastructure and growing community awareness during outbreaks"
+  }
+}
+

@@ -1,0 +1,25 @@
+{
+  "diseaseId": "artrite-reumatoide",
+  "region": "EU",
+  "diseaseName": "Rheumatoid Arthritis",
+  "prevalence": {"value": "0.8%", "population": "EU adults (~447 million)", "year": 2024, "source": "EULAR 2023 estimates", "trend": "stable with early treatment"},
+  "incidence": {"value": "40 per 100,000", "population": "EU adults", "year": 2024, "source": "EULAR"},
+  "burden": {"dalyPerCapita": "0.045", "mortalityRate": "0.5 per 100,000", "year": 2024, "source": "WHO Europe"},
+  "epidemiology": {
+    "riskFactors": ["Genetic predisposition (HLA-DR4 allele)", "Smoking", "Female sex", "Obesity", "Environmental exposures", "Infections"],
+    "vulnerablePopulations": ["Women (2-3x higher)", "Adults 40-60 years", "Individuals with family history", "Smokers"],
+    "diagnosticCriteria": "ACR/EULAR 2010 criteria, RF and anti-CCP antibodies"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "early arthritis clinics in many countries",
+    "treatmentAvailable": true,
+    "estimatedPatients": "3.6 million",
+    "controlRate": "70% remission with treat-to-target"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EULAR recommendations, RF/anti-CCP/ultrasound/MRI widely available",
+    "treatmentProtocol": "Treat-to-target strategy: methotrexate first-line, biologics (TNF inhibitors, JAK inhibitors) widely accessible, early arthritis clinics",
+    "regionalChallenges": "High biologic costs straining healthcare budgets, disparities in Eastern EU access",
+    "strongPoints": "EULAR treat-to-target guidelines, high rheumatologist density, early arthritis clinics, wide biologic/biosimilar access"
+  }
+}

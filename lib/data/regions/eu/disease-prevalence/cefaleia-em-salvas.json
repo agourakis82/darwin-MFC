@@ -1,0 +1,49 @@
+{
+  "diseaseId": "cefaleia-em-salvas",
+  "region": "EU",
+  "diseaseName": "Cluster Headache",
+  "prevalence": {
+    "value": "0.1-0.2%",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European headache epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "2-8 per 100,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004 (high disability per-case)",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO Europe headache context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "male sex",
+      "smoking",
+      "alcohol triggers during bouts"
+    ],
+    "vulnerablePopulations": [
+      "men 20-50 years",
+      "smokers"
+    ],
+    "diagnosticCriteria": "ICHD-3 criteria with structured headache assessment; neurology pathways common"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~400,000-900,000",
+    "controlRate": "Moderate to high with access to oxygen, triptans, and preventive therapy; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist headache clinics available in many countries",
+    "treatmentProtocol": "High-flow oxygen and triptans acutely; verapamil prevention; CGRP options in selected refractory cases in some systems",
+    "regionalChallenges": "Access variability and wait times for specialist headache clinics",
+    "strongPoints": "Evidence-based acute and preventive therapies widely available in many systems"
+  }
+}
+

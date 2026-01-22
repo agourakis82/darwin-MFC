@@ -1,0 +1,51 @@
+{
+  "diseaseId": "tosse-cronica",
+  "region": "BR",
+  "diseaseName": "Tosse cronica",
+  "prevalence": {
+    "value": "~5-10% (adults)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Respiratory epidemiology syntheses",
+    "trend": "stable; associated with smoking and GERD"
+  },
+  "incidence": {
+    "value": "~5-8 per 1,000 adults/year (new chronic cough cases)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Pulmonology outpatient data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant QOL and sleep impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO respiratory symptom burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "smoking",
+      "asthma",
+      "GERD",
+      "upper airway cough syndrome",
+      "ACE inhibitor use"
+    ],
+    "vulnerablePopulations": [
+      "smokers",
+      "patients with asthma or GERD",
+      "older adults"
+    ],
+    "diagnosticCriteria": "Cough >8 weeks; evaluate common causes (asthma, GERD, UACS) and exclude red flags"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of adults",
+    "controlRate": "Moderate; improves with cause-directed therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care evaluation; chest imaging and spirometry as needed",
+    "treatmentProtocol": "Treat underlying cause (asthma, GERD, rhinitis), smoking cessation; cough suppressants short-term",
+    "regionalChallenges": "Limited access to spirometry and specialist care in some regions",
+    "strongPoints": "Primary care pathways for asthma/GERD management"
+  }
+}

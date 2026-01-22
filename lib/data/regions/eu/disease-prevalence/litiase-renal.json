@@ -1,0 +1,51 @@
+{
+  "diseaseId": "litiase-renal",
+  "region": "EU",
+  "diseaseName": "Renal calculi (urolithiasis)",
+  "prevalence": {
+    "value": "~6-9%",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European Association of Urology (EAU) context; urolithiasis epidemiology",
+    "trend": "increasing with obesity and dietary patterns"
+  },
+  "incidence": {
+    "value": "~3-6 per 1,000 person-years",
+    "population": "Adults",
+    "year": 2024,
+    "source": "European urology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; high acute pain and recurrence burden",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe/IHME kidney disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low fluid intake",
+      "high sodium/animal protein diet",
+      "obesity and metabolic syndrome",
+      "family history",
+      "recurrent UTIs"
+    ],
+    "vulnerablePopulations": [
+      "men 30-60 years",
+      "patients with recurrent stones",
+      "patients with metabolic syndrome"
+    ],
+    "diagnosticCriteria": "Renal colic with urinalysis; ultrasound or CT; metabolic work-up for recurrent stones"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions",
+    "controlRate": "High to moderate; recurrence prevention supported by metabolic stone clinics"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Imaging (ultrasound/CT) widely available; metabolic evaluation for recurrent stones",
+    "treatmentProtocol": "Hydration, analgesia, alpha-blockers; ESWL/ureteroscopy/PCNL; dietary and pharmacologic prevention",
+    "regionalChallenges": "High recurrence and lifestyle risk factors",
+    "strongPoints": "Wide access to minimally invasive stone procedures and preventive programs"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "neuromielite-optica",
+  "region": "BR",
+  "diseaseName": "Neuromielite Óptica (NMO / Doença de Devic)",
+  "prevalence": {
+    "value": "0.5-2 per 100,000",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Neuroimmunology epidemiology syntheses (NMOSD)",
+    "trend": "increasing recognition with AQP4/MOG antibody testing"
+  },
+  "incidence": {
+    "value": "0.05-0.2 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "NMOSD cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0002-0.001",
+    "mortalityRate": "Elevated vs MS due to relapse severity (indirect)",
+    "year": 2024,
+    "source": "IHME/WHO neuroimmunology context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "AQP4-IgG autoimmunity",
+      "female sex",
+      "coexisting autoimmune disease"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "patients with autoimmune comorbidities",
+      "patients with delayed access to neuroimmunology care"
+    ],
+    "diagnosticCriteria": "International NMOSD criteria: core clinical characteristics (optic neuritis, longitudinally extensive myelitis) with AQP4-IgG positivity or supportive MRI features; differentiate from MS"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1,000-4,000",
+    "controlRate": "Variable; relapse prevention depends on immunosuppression access and specialist follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "AQP4/MOG testing availability variable; often centralized",
+    "treatmentProtocol": "Acute relapses: IV steroids +/- plasmapheresis; maintenance immunosuppression (rituximab/azathioprine/mycophenolate) in specialist care",
+    "regionalChallenges": "Limited access to antibody testing, plasmapheresis, and high-cost biologics outside major centers",
+    "strongPoints": "Specialized neuroimmunology centers exist in major cities"
+  }
+}
+

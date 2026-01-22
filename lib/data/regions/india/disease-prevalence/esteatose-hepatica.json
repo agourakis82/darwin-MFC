@@ -1,0 +1,51 @@
+{
+  "diseaseId": "esteatose-hepatica",
+  "region": "IN",
+  "diseaseName": "Hepatic steatosis (MASLD/NAFLD)",
+  "prevalence": {
+    "value": "~20-30% (adults; higher in urban populations)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "ICMR and hepatology epidemiology syntheses",
+    "trend": "increasing with diabetes and obesity"
+  },
+  "incidence": {
+    "value": "~20-35 per 1,000 adults/year (new detected cases)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Metabolic liver disease cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; progression to NASH/cirrhosis in a subset",
+    "mortalityRate": "Low to moderate (cirrhosis and CVD-related)",
+    "year": 2024,
+    "source": "IHME/GBD liver disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "obesity and central adiposity",
+      "type 2 diabetes",
+      "dyslipidemia",
+      "sedentary lifestyle",
+      "metabolic syndrome"
+    ],
+    "vulnerablePopulations": [
+      "adults with obesity or diabetes",
+      "patients with metabolic syndrome",
+      "urban populations"
+    ],
+    "diagnosticCriteria": "Imaging evidence of steatosis plus exclusion of significant alcohol use; fibrosis assessment as needed"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; risk-based evaluation",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of millions of adults",
+    "controlRate": "Low; lifestyle adherence limits control"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Ultrasound in primary care; elastography in tertiary centers",
+    "treatmentProtocol": "Weight loss, diet and exercise, control of diabetes and lipids",
+    "regionalChallenges": "Limited structured lifestyle programs and fibrosis staging access",
+    "strongPoints": "Large NCD programs and growing hepatology services"
+  }
+}

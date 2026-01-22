@@ -1,0 +1,51 @@
+{
+  "diseaseId": "esteatose-hepatica",
+  "region": "BR",
+  "diseaseName": "Esteatose hepatica (MASLD/NAFLD)",
+  "prevalence": {
+    "value": "~25-30% (adults)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBH and hepatology epidemiology syntheses",
+    "trend": "increasing with obesity and diabetes prevalence"
+  },
+  "incidence": {
+    "value": "~20-40 per 1,000 adults/year (new detected cases)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Metabolic liver disease cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; progression to NASH/cirrhosis in a subset",
+    "mortalityRate": "Low to moderate (cirrhosis and CVD-related)",
+    "year": 2024,
+    "source": "IHME/GBD liver disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "obesity and central adiposity",
+      "type 2 diabetes",
+      "dyslipidemia",
+      "sedentary lifestyle",
+      "metabolic syndrome"
+    ],
+    "vulnerablePopulations": [
+      "adults with obesity or diabetes",
+      "patients with metabolic syndrome",
+      "older adults"
+    ],
+    "diagnosticCriteria": "Imaging evidence of steatosis (ultrasound) plus exclusion of significant alcohol use and other liver disease; fibrosis assessment as needed"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; risk-based evaluation",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "Low to moderate; lifestyle adherence limits control"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Ultrasound in primary care; elastography and hepatology referral in tertiary centers",
+    "treatmentProtocol": "Weight loss, diet and exercise, control of diabetes and lipids; manage fibrosis risk",
+    "regionalChallenges": "Limited access to specialized fibrosis assessment and structured lifestyle programs",
+    "strongPoints": "Primary care NCD programs and growing hepatology networks"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "diseaseId": "fibromialgia",
+  "region": "BR",
+  "diseaseName": "Fibromialgia",
+  "prevalence": {"value": "2.5%", "population": "Brazilian adults", "year": 2024, "source": "SBED - Sociedade Brasileira para Estudo da Dor", "trend": "increasing due to greater awareness and diagnostic improvements"},
+  "incidence": {"value": "0.8 per 1000", "population": "Brazilian adults", "year": 2024, "source": "SBR - Sociedade Brasileira de Reumatologia"},
+  "burden": {"dalyPerCapita": "0.012", "mortalityRate": "Negligible", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Female sex", "Stress", "Sleep disorders", "Depression", "Trauma history", "Genetic predisposition"],
+    "vulnerablePopulations": ["Women (7-9x higher)", "Adults 30-50 years", "Individuals with low socioeconomic status"],
+    "diagnosticCriteria": "ACR 2016 criteria, widespread pain index + symptom severity scale, SBED/SBR guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "3.5 million",
+    "controlRate": "35% adequately managed due to access barriers"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ACR 2016 criteria adapted by SBED/SBR, clinical diagnosis, exclusion of other conditions",
+    "treatmentProtocol": "Multimodal: amitriptyline, duloxetine, pregabalin via SUS; Physical therapy, cognitive-behavioral therapy, exercise programs",
+    "regionalChallenges": "Underdiagnosis and misdiagnosis, limited multidisciplinary pain clinics, stigma, psychiatric comorbidities",
+    "strongPoints": "SBED/SBR guidelines, medications available via SUS, growing awareness, pain management programs"
+  }
+}

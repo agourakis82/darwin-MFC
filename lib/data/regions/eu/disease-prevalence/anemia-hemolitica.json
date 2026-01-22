@@ -1,0 +1,51 @@
+{
+  "diseaseId": "anemia-hemolitica",
+  "region": "EU",
+  "diseaseName": "Hemolytic Anemia",
+  "prevalence": {
+    "value": "~5-15 per 100,000 (all causes; varies)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European hematology epidemiology syntheses (AIHA and hereditary hemolytic disorders)",
+    "trend": "stable; improved diagnostics increase recognition"
+  },
+  "incidence": {
+    "value": "~1-3 per 100,000/year (AIHA component)",
+    "population": "General population",
+    "year": 2024,
+    "source": "AIHA incidence meta-analyses"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; can be significant in severe or chronic cases",
+    "mortalityRate": "Low to moderate depending on etiology and comorbidity",
+    "year": 2024,
+    "source": "IHME/GBD hematologic disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autoimmune disease",
+      "hematologic malignancy",
+      "infections/drugs",
+      "hereditary RBC disorders",
+      "prosthetic valves"
+    ],
+    "vulnerablePopulations": [
+      "older adults (AIHA)",
+      "patients with autoimmune disease or malignancy",
+      "patients with complex comorbidities"
+    ],
+    "diagnosticCriteria": "Anemia with hemolysis markers and smear; DAT/Coombs for immune hemolysis; evaluate underlying disease and triggers"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands across the EU (broad category)",
+    "controlRate": "Generally good with targeted therapy and specialist care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Comprehensive hematology services and lab diagnostics widely available",
+    "treatmentProtocol": "Cause-directed care; steroids and rituximab/immunosuppressants for AIHA when indicated; transfusions and supportive care",
+    "regionalChallenges": "Managing frail comorbid patients and ensuring rapid evaluation in acute hemolysis",
+    "strongPoints": "Strong specialty hematology care and access to advanced therapies"
+  }
+}

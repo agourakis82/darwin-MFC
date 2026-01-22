@@ -1,0 +1,52 @@
+{
+  "diseaseId": "angina-estavel",
+  "region": "BR",
+  "diseaseName": "Angina Estável",
+  "prevalence": {
+    "value": "~2-4% (adults; higher with age)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Cardiovascular epidemiology syntheses; Brazilian ischemic heart disease context",
+    "trend": "stable to slightly decreasing with risk-factor control, but aging increases absolute cases"
+  },
+  "incidence": {
+    "value": "~5-10 per 1,000 person-years (older/high-risk adults)",
+    "population": "Adults at risk for coronary artery disease",
+    "year": 2024,
+    "source": "Stable ischemic heart disease cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to disability and MI risk if undertreated",
+    "mortalityRate": "Low per se; driven by underlying CAD events",
+    "year": 2024,
+    "source": "IHME/GBD ischemic heart disease burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "hypertension",
+      "dyslipidemia",
+      "diabetes",
+      "smoking",
+      "obesity and sedentary lifestyle",
+      "family history of premature CAD"
+    ],
+    "vulnerablePopulations": [
+      "adults >60 years",
+      "men (earlier onset) and post-menopausal women",
+      "low-income populations with barriers to secondary prevention"
+    ],
+    "diagnosticCriteria": "Typical exertional chest pain relieved by rest/nitrates; ECG and stress testing when available; coronary imaging/angiography for high-risk features; rule out ACS"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening for angina; cardiovascular risk screening in primary care varies",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions (overlaps with CAD prevalence)",
+    "controlRate": "Moderate; improves with access to antianginals and secondary prevention"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care recognition with referral for stress testing/cardiology when indicated; access to tests varies across SUS network",
+    "treatmentProtocol": "Antianginals (beta-blockers, nitrates, calcium channel blockers), antiplatelet and statin therapy, BP/diabetes control, smoking cessation, cardiac rehab; revascularization for refractory/high-risk cases",
+    "regionalChallenges": "Unequal access to stress testing and elective angiography, and delayed specialty follow-up in some regions",
+    "strongPoints": "Secondary prevention medications broadly available as generics; SUS cardiology centers in major cities"
+  }
+}

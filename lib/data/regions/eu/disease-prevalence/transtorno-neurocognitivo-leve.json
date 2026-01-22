@@ -1,0 +1,53 @@
+{
+  "diseaseId": "transtorno-neurocognitivo-leve",
+  "region": "EU",
+  "diseaseName": "Mild Cognitive Impairment (MCI)",
+  "prevalence": {
+    "value": "12-20% in adults >65 years",
+    "population": "EU adults >65 years",
+    "year": 2024,
+    "source": "European aging cohort syntheses / WHO Europe context",
+    "trend": "increasing with aging demographics and improved screening"
+  },
+  "incidence": {
+    "value": "25-45 per 1,000 person-years in adults >65 years",
+    "population": "EU adults >65 years",
+    "year": 2024,
+    "source": "European longitudinal cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.006-0.02 (older-adult concentrated)",
+    "mortalityRate": "Indirect; progression risk to dementia",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "vascular risk factors",
+      "hearing loss",
+      "depression",
+      "physical inactivity",
+      "sleep disorders"
+    ],
+    "vulnerablePopulations": [
+      "older adults (>75 years)",
+      "patients with stroke/vascular disease",
+      "socially isolated older adults"
+    ],
+    "diagnosticCriteria": "Cognitive concern with objective impairment and preserved functional independence; cognitive testing (MoCA/MMSE) and reversible-cause workup; memory clinic pathways common"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; opportunistic screening and memory clinic referral pathways in many countries",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~20-30 million older adults",
+    "controlRate": "Moderate; risk-factor control and cognitive interventions more accessible in many member states"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Memory clinics and structured referral pathways common; access varies by member state",
+    "treatmentProtocol": "Vascular risk control, cognitive stimulation, physical activity, hearing interventions, and medication review",
+    "regionalChallenges": "Service demand and access variability across member states",
+    "strongPoints": "Strong primary care infrastructure and specialist pathways for cognitive assessment in many systems"
+  }
+}
+

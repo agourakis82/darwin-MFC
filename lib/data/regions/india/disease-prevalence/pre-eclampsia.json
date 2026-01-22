@@ -1,0 +1,54 @@
+{
+  "diseaseId": "pre-eclampsia",
+  "region": "IN",
+  "diseaseName": "Pre-eclampsia",
+  "prevalence": {
+    "value": "~5-8% of pregnancies",
+    "population": "Pregnant people in India",
+    "year": 2024,
+    "source": "ICMR / FOGSI guidance and obstetric epidemiology syntheses",
+    "trend": "stable to increasing in some states with rising maternal age, obesity, and diabetes"
+  },
+  "incidence": {
+    "value": "~50-80 per 1,000 pregnancies",
+    "population": "Pregnant people",
+    "year": 2024,
+    "source": "Indian obstetric surveillance estimates"
+  },
+  "burden": {
+    "dalyPerCapita": "concentrated in maternal/neonatal outcomes",
+    "mortalityRate": "Significant contributor to maternal mortality where referral delays occur",
+    "year": 2024,
+    "source": "IHME GBD / WHO maternal health estimates"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "first pregnancy",
+      "prior pre-eclampsia",
+      "multiple gestation",
+      "chronic hypertension",
+      "diabetes and obesity",
+      "advanced maternal age"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people with limited antenatal care access",
+      "rural populations with delayed referral",
+      "anemic and malnourished mothers",
+      "women with chronic hypertension/diabetes"
+    ],
+    "diagnosticCriteria": "Hypertension after 20 weeks with proteinuria and/or end-organ dysfunction; management per national/FOGSI protocols"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "ANC blood pressure screening is routine in public programmes, but quality and continuity vary",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1.3-2.0 million pregnancies/year",
+    "controlRate": "Variable; outcomes depend on early detection and timely referral to EmOC facilities"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "BP measurement and urine testing in antenatal visits; high-risk pregnancies referred to district/tertiary centers",
+    "treatmentProtocol": "Low-dose aspirin for high-risk pregnancies, antihypertensives (labetalol/nifedipine), magnesium sulfate for severe pre-eclampsia/eclampsia prevention, and planned delivery",
+    "regionalChallenges": "Referral delays, limited ICU capacity in some districts, and uneven access to high-risk obstetric services",
+    "strongPoints": "Widespread ANC platform and strong emphasis on magnesium sulfate availability in emergency obstetric care"
+  }
+}
+

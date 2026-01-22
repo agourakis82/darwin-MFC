@@ -1,0 +1,53 @@
+{
+  "diseaseId": "acne-vulgar",
+  "region": "EU",
+  "diseaseName": "Acne Vulgaris",
+  "prevalence": {
+    "value": "~70-90% (adolescents); ~10-20% (adults)",
+    "population": "EU adolescents and adults",
+    "year": 2024,
+    "source": "European dermatology epidemiology syntheses",
+    "trend": "stable; adult acne and psychosocial impact increasingly recognized"
+  },
+  "incidence": {
+    "value": "Common; puberty-onset peak",
+    "population": "Adolescents",
+    "year": 2024,
+    "source": "Dermatology cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; moderate disability via QOL and mental health impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD skin disease burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "pubertal hormones",
+      "family history",
+      "comedogenic products/occlusion",
+      "high glycemic diet (association)",
+      "PCOS (in females)",
+      "medications (steroids, lithium)"
+    ],
+    "vulnerablePopulations": [
+      "adolescents",
+      "women with hormonal acne/PCOS",
+      "patients at risk of scarring",
+      "patients with mental health comorbidity"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; assess severity and scarring risk; evaluate for hyperandrogenism when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions",
+    "controlRate": "High to moderate; improved with guideline-based therapy and adherence"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and dermatology pathways; specialist review for severe scarring or nodulocystic acne",
+    "treatmentProtocol": "Topicals (benzoyl peroxide, retinoids), antibiotics when indicated, hormonal therapy (selected), isotretinoin with pregnancy prevention and monitoring",
+    "regionalChallenges": "Antibiotic stewardship and isotretinoin risk management; variable access to dermatology in some areas",
+    "strongPoints": "Broad access to dermatology and evidence-based therapies; structured isotretinoin monitoring programs"
+  }
+}

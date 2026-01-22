@@ -1,0 +1,48 @@
+{
+  "diseaseId": "dermatite-atopica-pediatrica",
+  "region": "EU",
+  "diseaseName": "Pediatric Atopic Dermatitis",
+  "prevalence": {
+    "value": "10-20% (children)",
+    "population": "EU children",
+    "year": 2024,
+    "source": "European pediatric dermatology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "8-20 per 1,000/year",
+    "population": "Children",
+    "year": 2024,
+    "source": "European pediatric cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.004-0.015",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history of atopy",
+      "skin barrier dysfunction",
+      "asthma/allergic rhinitis comorbidity"
+    ],
+    "vulnerablePopulations": [
+      "children with severe disease"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis with severity scoring in specialist care (e.g., EASI/SCORAD)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of children",
+    "controlRate": "Moderate to high with access to dermatology and advanced therapies when needed"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Strong referral pathways to dermatology in many systems",
+    "treatmentProtocol": "Emollients, topical anti-inflammatories, phototherapy/systemic agents/biologics for severe cases",
+    "regionalChallenges": "Wait times and cross-country variability",
+    "strongPoints": "Wide access to evidence-based pediatric dermatology care in many member states"
+  }
+}
+

@@ -1,0 +1,52 @@
+{
+  "diseaseId": "fascite-plantar",
+  "region": "BR",
+  "diseaseName": "Fascite Plantar",
+  "prevalence": {
+    "value": "4-7% (adults; higher in runners and obesity)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Musculoskeletal epidemiology syntheses (plantar fasciitis)",
+    "trend": "increasing with obesity and sedentary lifestyle"
+  },
+  "incidence": {
+    "value": "5-15 per 1,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Foot/ankle cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO musculoskeletal context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "obesity",
+      "prolonged standing work",
+      "running and high-impact activity",
+      "tight Achilles/calf",
+      "poor footwear"
+    ],
+    "vulnerablePopulations": [
+      "workers with prolonged standing",
+      "people with obesity",
+      "runners"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis: heel pain worst with first steps; tenderness at medial calcaneal tubercle; imaging reserved for atypical cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of episodic cases",
+    "controlRate": "Moderate with stretching, footwear, and physiotherapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in APS/orthopedics",
+    "treatmentProtocol": "Stretching, activity modification, heel supports, NSAIDs; physiotherapy; steroid injection in selected cases",
+    "regionalChallenges": "Limited access to physiotherapy and orthotics in some SUS regions",
+    "strongPoints": "Effective low-cost conservative management"
+  }
+}
+

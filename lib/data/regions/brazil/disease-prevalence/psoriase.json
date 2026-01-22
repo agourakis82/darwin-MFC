@@ -1,0 +1,25 @@
+{
+  "diseaseId": "psoriase",
+  "region": "BR",
+  "diseaseName": "Psoríase",
+  "prevalence": {"value": "1.5%", "population": "Brazilian adults", "year": 2024, "source": "SBD - Sociedade Brasileira de Dermatologia", "trend": "stable prevalence"},
+  "incidence": {"value": "150 per 100,000", "population": "Brazilian adults", "year": 2024, "source": "DataSUS"},
+  "burden": {"dalyPerCapita": "0.015", "mortalityRate": "Negligible", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["genetic predisposition", "stress", "infections", "obesity", "smoking", "alcohol consumption"],
+    "vulnerablePopulations": ["Adults 20-40 and 50-60 years (bimodal)", "Family history", "Individuals with obesity or metabolic syndrome"],
+    "diagnosticCriteria": "Clinical diagnosis based on skin lesions, SBD guidelines, biopsy in atypical cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "2.25 million",
+    "controlRate": "45% under control with available treatments"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SBD clinical criteria, dermoscopy when available",
+    "treatmentProtocol": "Topical corticosteroids via SUS, phototherapy (limited access), biologics (adalimumab, ustekinumab) via judicial demand for severe cases",
+    "regionalChallenges": "Limited phototherapy access, biologics require judicial process, psychosocial impact/stigma, dermatologist shortage in rural areas",
+    "strongPoints": "SBD guidelines, topical treatments via SUS, some biologics via high-cost medication program"
+  }
+}

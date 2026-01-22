@@ -1,0 +1,50 @@
+{
+  "diseaseId": "narcolepsia",
+  "region": "IN",
+  "diseaseName": "Narcolepsy",
+  "prevalence": {
+    "value": "20-60 per 100,000 (underdiagnosis likely)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Sleep medicine epidemiology syntheses",
+    "trend": "stable; diagnosis increasing in urban sleep clinics"
+  },
+  "incidence": {
+    "value": "0.5-2 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Narcolepsy cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0003-0.001",
+    "mortalityRate": "Negligible (indirect accident risk)",
+    "year": 2024,
+    "source": "IHME/WHO context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic susceptibility",
+      "autoimmune mechanisms (type 1)",
+      "post-infectious triggers (association)",
+      "adolescence/young adulthood onset"
+    ],
+    "vulnerablePopulations": [
+      "adolescents and young adults",
+      "patients without access to PSG/MSLT testing"
+    ],
+    "diagnosticCriteria": "Clinical EDS with cataplexy and confirmation by PSG + MSLT where available; diagnosis delays are common"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~300,000-800,000",
+    "controlRate": "Low to moderate due to limited sleep lab access and medication costs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Sleep labs concentrated in urban tertiary centers; many cases remain undiagnosed",
+    "treatmentProtocol": "Scheduled naps, sleep hygiene, stimulants/wake-promoting medications where available; manage comorbid sleep disorders",
+    "regionalChallenges": "Limited PSG/MSLT availability and high out-of-pocket costs",
+    "strongPoints": "Growing sleep medicine services in major cities"
+  }
+}
+

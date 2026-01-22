@@ -1,0 +1,25 @@
+{
+  "diseaseId": "doenca-hepatica-cronica",
+  "region": "IN",
+  "diseaseName": "Chronic Liver Disease",
+  "prevalence": {"value": "1.2%", "population": "Indian adults (~1.4 billion)", "year": 2024, "source": "INASL Guidelines 2023 & ICMR Reports", "trend": "increasing due to rising NAFLD and alcohol consumption"},
+  "incidence": {"value": "15 per 1000", "population": "Indian adults", "year": 2024, "source": "ICMR National Liver Disease Survey"},
+  "burden": {"dalyPerCapita": "150", "mortalityRate": "25 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Alcohol consumption", "Hepatitis B virus (HBV)", "Hepatitis E virus (HEV)", "Non-alcoholic fatty liver disease (NAFLD)", "Hepatitis C virus (HCV)", "Metabolic syndrome"],
+    "vulnerablePopulations": ["Urban obese populations", "Rural alcohol consumers", "Tribal communities with high HBV", "Diabetic patients"],
+    "diagnosticCriteria": "INASL guidelines, FIB-4 score, elastography when available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited hepatitis screening, <10% for NAFLD",
+    "treatmentAvailable": true,
+    "estimatedPatients": "16 million - high burden",
+    "controlRate": "25% [limited due to late diagnosis]"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "INASL guidelines, clinical + ultrasound common, limited biopsy/elastography",
+    "treatmentProtocol": "Hepatitis B treatment (tenofovir), alcohol cessation, NAFLD lifestyle intervention, limited DAA access for hepatitis C",
+    "regionalChallenges": "High hepatitis E burden (unique to India), rising NAFLD/NASH, alcohol-related cirrhosis, limited transplant access",
+    "strongPoints": "National Viral Hepatitis Control Program (NVHCP), affordable generic antivirals, Ayurvedic hepatoprotectives"
+  }
+}

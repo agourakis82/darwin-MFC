@@ -1,0 +1,52 @@
+{
+  "diseaseId": "dengue",
+  "region": "EU",
+  "diseaseName": "Dengue",
+  "prevalence": {
+    "value": "<0.01% annual incidence (mostly travel-related; occasional local outbreaks in southern EU)",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "ECDC dengue surveillance",
+    "trend": "increasing risk of autochthonous transmission in parts of southern Europe due to Aedes expansion"
+  },
+  "incidence": {
+    "value": "<1-3 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECDC annual infectious disease surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "minimal at population level",
+    "mortalityRate": "very low; severe cases mainly in older travelers/comorbidities",
+    "year": 2024,
+    "source": "WHO Europe / IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "travel to endemic regions",
+      "Aedes aegypti/albopictus presence in southern EU",
+      "delayed diagnosis after travel",
+      "lack of bite prevention"
+    ],
+    "vulnerablePopulations": [
+      "travelers (including VFR)",
+      "immunocompromised patients",
+      "older adults",
+      "communities in areas with established Aedes vectors"
+    ],
+    "diagnosticCriteria": "Clinical suspicion with travel history; confirmation by PCR/NS1 (early) or IgM/IgG serology; case classification per ECDC guidance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; travel-related fever evaluation common",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of thousands/year (mostly imported; outbreak-dependent)",
+    "controlRate": "High with supportive care; hospitalizations mainly in severe cases"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Broad laboratory capacity for PCR/serology in reference networks; mandatory reporting in many countries",
+    "treatmentProtocol": "Supportive care and monitoring; vector control and public health response for local transmission events",
+    "regionalChallenges": "Emerging local transmission risk in southern EU and the need for rapid vector control during outbreaks",
+    "strongPoints": "Strong surveillance and outbreak response capacity, and wide access to diagnostics in most member states"
+  }
+}
+

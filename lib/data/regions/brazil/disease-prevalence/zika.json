@@ -1,0 +1,51 @@
+{
+  "diseaseId": "zika",
+  "region": "BR",
+  "diseaseName": "Zika",
+  "prevalence": {
+    "value": "very low currently; sporadic transmission in some years",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde (SINAN) / Fiocruz",
+    "trend": "decreasing since the 2015-2016 epidemic; occasional regional clusters"
+  },
+  "incidence": {
+    "value": "<0.1 per 1,000/year (reported)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "SINAN / SVSA"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; concentrated burden via congenital Zika syndrome",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) / PAHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Aedes exposure",
+      "travel to areas with active transmission",
+      "lack of vector control and bite prevention",
+      "unprotected sex (sexual transmission)"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people (fetal risk)",
+      "women of reproductive age in endemic areas",
+      "newborns exposed in utero"
+    ],
+    "diagnosticCriteria": "RT-PCR on serum/urine early; serology with cross-reactivity considerations; surveillance definitions per Ministério da Saúde"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; testing focused on pregnant people with compatible illness and congenital syndrome surveillance",
+    "treatmentAvailable": true,
+    "estimatedPatients": "low; sporadic cases",
+    "controlRate": "Supportive care only; prevention via vector control and reproductive health guidance"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Enhanced congenital syndrome surveillance and targeted maternal testing in SUS when indicated",
+    "treatmentProtocol": "Supportive care; pregnancy counseling; multidisciplinary follow-up for congenital Zika syndrome",
+    "regionalChallenges": "Diagnostic cross-reactivity with dengue and the long-term care burden for affected children and families",
+    "strongPoints": "Established arbovirus surveillance infrastructure and congenital syndrome follow-up networks developed post-epidemic"
+  }
+}
+

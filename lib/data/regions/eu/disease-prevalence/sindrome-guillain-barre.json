@@ -1,0 +1,48 @@
+{
+  "diseaseId": "sindrome-guillain-barre",
+  "region": "EU",
+  "diseaseName": "Guillain-Barre syndrome",
+  "prevalence": {
+    "value": "Rare (point prevalence <0.01%)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European neurology surveillance",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~1-2 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "European neurology epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case disability; ICU needs in severe cases",
+    "mortalityRate": "Low to moderate (3-7% in severe cases)",
+    "year": 2024,
+    "source": "WHO Europe/IHME neurologic burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "recent infection (Campylobacter, influenza, CMV)",
+      "surgery or vaccination (rare)",
+      "older age"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with recent GI or respiratory infection"
+    ],
+    "diagnosticCriteria": "Progressive symmetric weakness and areflexia; CSF albuminocytologic dissociation; EMG/NCS"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; acute presentation",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Thousands of cases over time",
+    "controlRate": "High with early IVIG or plasmapheresis"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Neurology evaluation with access to EMG and CSF analysis",
+    "treatmentProtocol": "IVIG or plasmapheresis; ICU support for respiratory failure",
+    "regionalChallenges": "Access to ICU beds during seasonal peaks",
+    "strongPoints": "Established protocols and access to immunotherapy"
+  }
+}

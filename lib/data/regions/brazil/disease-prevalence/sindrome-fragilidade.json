@@ -1,0 +1,53 @@
+{
+  "diseaseId": "sindrome-fragilidade",
+  "region": "BR",
+  "diseaseName": "Síndrome de Fragilidade",
+  "prevalence": {
+    "value": "10-15% in adults >65 years",
+    "population": "Brazilian adults >65 years",
+    "year": 2024,
+    "source": "Geriatrics epidemiology syntheses (frailty) / Brazilian aging cohort context",
+    "trend": "increasing with population aging"
+  },
+  "incidence": {
+    "value": "30-60 per 1,000 person-years in older adults",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "Frailty cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.03 (older-adult concentrated)",
+    "mortalityRate": "Elevated (indirect; falls, hospitalization, disability)",
+    "year": 2024,
+    "source": "IHME/WHO older adult burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "multimorbidity",
+      "sarcopenia",
+      "malnutrition",
+      "polypharmacy",
+      "social isolation"
+    ],
+    "vulnerablePopulations": [
+      "older adults >75 years",
+      "low-income older adults",
+      "older adults with multimorbidity"
+    ],
+    "diagnosticCriteria": "Phenotype (Fried) or deficit accumulation (frailty index); screening tools in primary care (e.g., gait speed, grip strength) where used"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited; frailty screening not routine in APS",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~3-5 million older adults",
+    "controlRate": "Variable; improves with exercise, nutrition, and medication optimization"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often recognized after falls/hospitalizations; geriatric services concentrated in larger cities",
+    "treatmentProtocol": "Resistance exercise, nutrition/protein optimization, deprescribing, fall prevention, and social support interventions",
+    "regionalChallenges": "Limited geriatric workforce and uneven rehab and social support services",
+    "strongPoints": "Primary care chronic disease platform can support multidomain interventions when resources exist"
+  }
+}
+

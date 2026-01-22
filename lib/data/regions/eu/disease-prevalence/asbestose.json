@@ -1,0 +1,50 @@
+{
+  "diseaseId": "asbestose",
+  "region": "EU",
+  "diseaseName": "Asbestosis",
+  "prevalence": {
+    "value": "Low in general population; concentrated in historically exposed worker cohorts",
+    "population": "Adults with past occupational asbestos exposure",
+    "year": 2024,
+    "source": "WHO Europe asbestos-related disease context; occupational cohort syntheses",
+    "trend": "declining in new exposures; persistent burden due to long latency"
+  },
+  "incidence": {
+    "value": "Low; cases occur decades after exposure",
+    "population": "Historically exposed workers",
+    "year": 2024,
+    "source": "Occupational surveillance and cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; high in affected cohorts with progressive fibrosis",
+    "mortalityRate": "Moderate in severe cases; related asbestos malignancy risk persists",
+    "year": 2024,
+    "source": "WHO Europe/IHME occupational risk context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "occupational asbestos exposure",
+      "duration/intensity of exposure",
+      "smoking",
+      "inadequate PPE"
+    ],
+    "vulnerablePopulations": [
+      "older workers with legacy exposure",
+      "construction/renovation workers",
+      "workers in informal renovation without adequate protection"
+    ],
+    "diagnosticCriteria": "Exposure history plus HRCT findings of interstitial fibrosis and pleural plaques; restrictive spirometry; exclude other ILDs"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "occupational surveillance varies by country and industry; not population-wide",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands across EU exposed cohorts (uncertain)",
+    "controlRate": "Limited (irreversible fibrosis); focus on supportive care and prevention of complications"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Pulmonology and occupational medicine services widely available; HRCT access is generally good",
+    "treatmentProtocol": "Smoking cessation, vaccinations, pulmonary rehab, oxygen when needed, manage comorbid COPD; malignancy vigilance as clinically indicated",
+    "regionalChallenges": "Managing long-term cohort follow-up and comorbidities in aging exposed populations",
+    "strongPoints": "Strong occupational health frameworks and diagnostic capacity; prevention policies reduce future burden"
+  }
+}

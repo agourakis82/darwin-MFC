@@ -1,0 +1,53 @@
+{
+  "diseaseId": "dislipidemia",
+  "region": "BR",
+  "diseaseName": "Dislipidemia",
+  "prevalence": {
+    "value": "25.2% (elevated total cholesterol >200 mg/dL)",
+    "population": "Brazilian adults aged 18+",
+    "year": 2024,
+    "source": "SBC/VIGITEL/DataSUS",
+    "trend": "stable to increasing"
+  },
+  "incidence": {
+    "value": "N/A (chronic condition; new cases tracked via screening)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBC/VIGITEL"
+  },
+  "burden": {
+    "dalyPerCapita": "0.12 (contributing to CVD burden)",
+    "mortalityRate": "Indirect via CVD; 0.05% attributable",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease; SBC"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "obesity",
+      "sedentary lifestyle",
+      "unhealthy diet high in saturated fats",
+      "genetic predisposition",
+      "diabetes mellitus",
+      "smoking"
+    ],
+    "vulnerablePopulations": [
+      "adults over 40 years",
+      "urban residents",
+      "low socioeconomic groups",
+      "indigenous and rural populations in Amazon region"
+    ],
+    "diagnosticCriteria": "Total cholesterol >200 mg/dL, LDL-C >130 mg/dL, HDL-C <40 mg/dL (men) or <50 mg/dL (women), triglycerides >150 mg/dL; per Brazilian Society of Cardiology (SBC) guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "42% (via primary care and VIGITEL surveys)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "approximately 35 million adults",
+    "controlRate": "28% (achieving LDL targets)"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Aligned with national SBC guidelines; lipid profile testing via SUS labs",
+    "treatmentProtocol": "Lifestyle modification first; statins (e.g., simvastatin, atorvastatin) available free via SUS for high-risk patients; follow-up with lipid panels every 6-12 months",
+    "regionalChallenges": "Disparities in access between South/Southeast (higher screening) and North/Northeast (lower due to infrastructure); high prevalence in urban areas like São Paulo (30%) vs. rural (20%)",
+    "strongPoints": "Integration with Family Health Strategy (Estratégia Saúde da Família) for screening; national statin distribution program reducing costs; SBC awareness campaigns"
+  }
+}

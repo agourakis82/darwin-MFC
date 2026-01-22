@@ -1,0 +1,49 @@
+{
+  "diseaseId": "acondroplasia",
+  "region": "IN",
+  "diseaseName": "Achondroplasia",
+  "prevalence": {
+    "value": "~3-5 per 100,000",
+    "population": "General population",
+    "year": 2024,
+    "source": "Orphanet; skeletal dysplasia epidemiology reviews",
+    "trend": "stable; improved diagnosis and specialist follow-up in tertiary centers"
+  },
+  "incidence": {
+    "value": "~1 per 15,000-25,000 live births",
+    "population": "Newborns",
+    "year": 2024,
+    "source": "International skeletal dysplasia incidence syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but significant lifelong orthopedic/ENT/neurologic morbidity",
+    "mortalityRate": "Low; higher in infancy with severe airway or foramen magnum stenosis",
+    "year": 2024,
+    "source": "Orphanet clinical burden summaries"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "FGFR3 pathogenic variant (often de novo)",
+      "advanced paternal age",
+      "family history (autosomal dominant when inherited)"
+    ],
+    "vulnerablePopulations": [
+      "infants (risk of foramen magnum stenosis)",
+      "children with sleep apnea/recurrent ear disease",
+      "patients lacking access to orthopedics and neurosurgery"
+    ],
+    "diagnosticCriteria": "Clinical-radiographic diagnosis with confirmatory FGFR3 testing; surveillance for foramen magnum stenosis, hydrocephalus, sleep apnea, spinal stenosis and hearing issues"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis usually at birth/early childhood",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Several thousand (rare; uncertain)",
+    "controlRate": "Variable; best with multidisciplinary care pathways"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Genetics/orthopedics confirmation concentrated in tertiary hospitals",
+    "treatmentProtocol": "Multidisciplinary monitoring (orthopedics, ENT, sleep medicine, neurosurgery), physiotherapy and mobility support, genetic counseling",
+    "regionalChallenges": "Limited specialist availability outside major cities and delays for neurosurgical assessment in some regions",
+    "strongPoints": "Strong tertiary pediatric centers can coordinate multidisciplinary care when accessed"
+  }
+}

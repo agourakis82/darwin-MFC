@@ -1,0 +1,50 @@
+{
+  "diseaseId": "epicondilite-lateral",
+  "region": "BR",
+  "diseaseName": "Epicondilite Lateral (Cotovelo de Tenista)",
+  "prevalence": {
+    "value": "1-3% (adults)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Musculoskeletal/occupational epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "3-10 per 1,000/year",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "Occupational cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.003",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO musculoskeletal context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "repetitive wrist extension and gripping",
+      "manual labor",
+      "sports (racket)",
+      "poor ergonomics"
+    ],
+    "vulnerablePopulations": [
+      "manual workers",
+      "middle-aged adults"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis: lateral elbow pain with resisted wrist extension; imaging rarely needed; exclude cervical radiculopathy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of episodic cases",
+    "controlRate": "Moderate with physiotherapy and activity modification"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in APS/orthopedics",
+    "treatmentProtocol": "Activity modification, eccentric exercises/physio, NSAIDs; injections in selected cases; surgery rare",
+    "regionalChallenges": "Limited access to physiotherapy in some SUS regions",
+    "strongPoints": "Effective low-cost conservative management"
+  }
+}
+

@@ -1,0 +1,51 @@
+{
+  "diseaseId": "doenca-crohn",
+  "region": "IN",
+  "diseaseName": "Crohn disease",
+  "prevalence": {
+    "value": "~10-30 per 100,000",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Indian IBD registry and gastroenterology syntheses",
+    "trend": "increasing with urbanization and improved diagnosis"
+  },
+  "incidence": {
+    "value": "~0.5-2 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "IBD cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to chronic disability and complications",
+    "mortalityRate": "Low to moderate",
+    "year": 2024,
+    "source": "IHME/GBD IBD context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "smoking",
+      "urban lifestyle",
+      "westernized diet",
+      "immune dysregulation"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with family history",
+      "smokers"
+    ],
+    "diagnosticCriteria": "Clinical symptoms plus endoscopy with biopsy; imaging for extent; exclude infections (TB, enteric pathogens)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands",
+    "controlRate": "Low to moderate; biologic access limited by cost"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Colonoscopy and imaging available in tertiary centers; delays in diagnosis due to infection overlap",
+    "treatmentProtocol": "Steroids for flares, immunomodulators, biologics in select cases; surgery for complications",
+    "regionalChallenges": "Cost of biologics, TB differentiation, limited specialist access",
+    "strongPoints": "Growing IBD centers and awareness in major cities"
+  }
+}

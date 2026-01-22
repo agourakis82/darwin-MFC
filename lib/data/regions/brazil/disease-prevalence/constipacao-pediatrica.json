@@ -1,0 +1,53 @@
+{
+  "diseaseId": "constipacao-pediatrica",
+  "region": "BR",
+  "diseaseName": "Constipação Funcional na Infância",
+  "prevalence": {
+    "value": "7-15% (children)",
+    "population": "Brazilian children",
+    "year": 2024,
+    "source": "Pediatric gastroenterology epidemiology syntheses (functional constipation)",
+    "trend": "stable; diagnosis increases with school age"
+  },
+  "incidence": {
+    "value": "10-20 per 1,000 children/year (new clinically significant cases)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Pediatric primary care cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; high QOL and healthcare utilization impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO child health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "toilet training issues",
+      "low fiber intake",
+      "low fluid intake",
+      "withholding behavior",
+      "painful defecation history",
+      "psychosocial stress"
+    ],
+    "vulnerablePopulations": [
+      "school-age children",
+      "children with developmental delay",
+      "children with limited access to dietary counseling"
+    ],
+    "diagnosticCriteria": "Rome IV functional constipation criteria; assess red flags for organic disease (failure to thrive, delayed meconium, neurologic deficits)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven diagnosis in APS",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands to millions of children",
+    "controlRate": "Moderate; improves with structured bowel regimen and family education"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in APS; referral for red flags or refractory constipation",
+    "treatmentProtocol": "Education, toilet routine, fiber and fluids, osmotic laxatives (PEG/lactulose) and disimpaction regimens when needed",
+    "regionalChallenges": "Limited access to pediatric GI and inconsistent long-term follow-up and family adherence",
+    "strongPoints": "Effective low-cost management largely feasible in primary care"
+  }
+}
+

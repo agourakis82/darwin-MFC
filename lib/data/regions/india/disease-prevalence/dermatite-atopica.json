@@ -1,0 +1,52 @@
+{
+  "diseaseId": "dermatite-atopica",
+  "region": "IN",
+  "diseaseName": "Atopic Dermatitis",
+  "prevalence": {
+    "value": "8-15% (children); 2-5% (adults)",
+    "population": "Indian population (age-dependent)",
+    "year": 2024,
+    "source": "IADVL + ISAAC-aligned epidemiology syntheses",
+    "trend": "increasing in urban areas with pollution and lifestyle shifts"
+  },
+  "incidence": {
+    "value": "5-12 per 1,000/year (children)",
+    "population": "Indian children",
+    "year": 2024,
+    "source": "Dermatology epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.01",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history of atopy",
+      "asthma/allergic rhinitis",
+      "urban pollution",
+      "skin barrier dysfunction",
+      "early-life exposures"
+    ],
+    "vulnerablePopulations": [
+      "children",
+      "urban low-income families",
+      "patients with asthma/allergic rhinitis"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis of pruritic eczema with typical distribution and chronic/relapsing course; exclude scabies, contact dermatitis, and fungal infections"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions (children and adults)",
+    "controlRate": "Variable; topical therapy access is common, but severe disease care is limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and dermatology clinics diagnose clinically; specialist access variable",
+    "treatmentProtocol": "Emollients and topical steroids; calcineurin inhibitors when available; phototherapy and systemic agents in tertiary care; biologics limited and often private-sector",
+    "regionalChallenges": "Out-of-pocket costs for emollients and specialist care; limited access to advanced therapies",
+    "strongPoints": "Wide availability of topical steroids and growing dermatology services in urban centers"
+  }
+}
+

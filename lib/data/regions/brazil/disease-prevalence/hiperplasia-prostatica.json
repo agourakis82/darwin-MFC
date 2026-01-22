@@ -1,0 +1,51 @@
+{
+  "diseaseId": "hiperplasia-prostatica",
+  "region": "BR",
+  "diseaseName": "Hiperplasia prostatica",
+  "prevalence": {
+    "value": "~40-50% (men >50 years)",
+    "population": "Brazilian men >50 years",
+    "year": 2024,
+    "source": "SBU and urology epidemiology syntheses",
+    "trend": "increasing with aging population"
+  },
+  "incidence": {
+    "value": "~10-15 per 1,000 men/year (>50 years)",
+    "population": "Men >50 years",
+    "year": 2024,
+    "source": "Urology outpatient cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant LUTS burden and QOL impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD urologic disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age >50 years",
+      "family history",
+      "obesity and metabolic syndrome",
+      "diabetes",
+      "sedentary lifestyle"
+    ],
+    "vulnerablePopulations": [
+      "men >60 years",
+      "men with diabetes/obesity",
+      "men with limited access to urology care"
+    ],
+    "diagnosticCriteria": "DRE and PSA evaluation, IPSS symptom score, urinalysis; ultrasound and uroflowmetry when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic evaluation (no routine screening)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of men with LUTS",
+    "controlRate": "Moderate; improves with access to medications and timely referral"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SBU-aligned evaluation with DRE, PSA and symptom scoring; TRUS available in reference centers",
+    "treatmentProtocol": "Alpha-blockers and 5-alpha reductase inhibitors via SUS; TURP for refractory cases; limited access to newer minimally invasive options",
+    "regionalChallenges": "Long wait times for elective urology procedures and underdiagnosis in rural areas",
+    "strongPoints": "Standard medications available and TURP capacity in major hospitals"
+  }
+}

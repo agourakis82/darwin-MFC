@@ -1,0 +1,52 @@
+{
+  "diseaseId": "tabagismo",
+  "region": "BR",
+  "diseaseName": "Tabagismo",
+  "prevalence": {
+    "value": "~12-15% (adult smokers)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "INCA/VIGITEL tobacco surveillance",
+    "trend": "decreasing long-term but plateau in some groups"
+  },
+  "incidence": {
+    "value": "~2-3% annual initiation among adolescents/young adults",
+    "population": "Adolescents and young adults",
+    "year": 2024,
+    "source": "School health surveys and tobacco surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "high; major risk factor for CVD, COPD and cancer",
+    "mortalityRate": "High (tobacco-attributable mortality)",
+    "year": 2024,
+    "source": "WHO/IHME tobacco-attributable burden"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "adolescent initiation",
+      "peer influence",
+      "low socioeconomic status",
+      "mental health comorbidity",
+      "co-use with alcohol"
+    ],
+    "vulnerablePopulations": [
+      "adolescents",
+      "low-income adults",
+      "people with mental health disorders",
+      "manual workers"
+    ],
+    "diagnosticCriteria": "Self-reported tobacco use; assess dependence with standardized questionnaires (e.g., Fagerstrom)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic screening in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of current or former smokers",
+    "controlRate": "Moderate; cessation success improves with counseling and pharmacotherapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care screening and brief intervention programs",
+    "treatmentProtocol": "Behavioral counseling, nicotine replacement, bupropion or varenicline where available; quitline support",
+    "regionalChallenges": "Relapse, youth vaping uptake, and uneven access to cessation programs",
+    "strongPoints": "Strong tobacco control policies and established cessation programs"
+  }
+}

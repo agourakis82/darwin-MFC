@@ -1,0 +1,53 @@
+{
+  "diseaseId": "hepatite-e",
+  "region": "IN",
+  "diseaseName": "Hepatitis E",
+  "prevalence": {
+    "value": "significant contributor to acute viral hepatitis; outbreaks in waterborne settings",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR / WHO hepatitis estimates",
+    "trend": "stable; outbreaks linked to water contamination and monsoon flooding"
+  },
+  "incidence": {
+    "value": "outbreak-dependent; common cause of acute hepatitis in adults",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "ICMR/NCDC outbreak reports"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0003-0.001",
+    "mortalityRate": "Elevated case-fatality in pregnancy (can exceed 10-20% in severe outbreaks)",
+    "year": 2024,
+    "source": "IHME GBD / WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "contaminated drinking water (fecal-oral)",
+      "monsoon flooding and sewage contamination",
+      "overcrowding and poor sanitation",
+      "pregnancy (severe disease risk)",
+      "immunosuppression (chronic infection risk with some genotypes)"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people (especially third trimester)",
+      "populations affected by waterborne outbreaks",
+      "people with chronic liver disease",
+      "immunosuppressed patients"
+    ],
+    "diagnosticCriteria": "Anti-HEV IgM and/or HEV RNA; evaluation in acute hepatitis syndromes, especially in outbreaks"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; outbreak-focused testing and hospital-based diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "large acute hepatitis burden in outbreak years",
+    "controlRate": "Supportive care; mortality driven by severe disease in pregnancy and acute liver failure cases"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Hospital-based serology is common; confirmatory PCR more available in tertiary centers/ICMR labs",
+    "treatmentProtocol": "Supportive management; intensive care for acute liver failure; public health control via water and sanitation interventions",
+    "regionalChallenges": "Waterborne outbreaks and high maternal mortality in severe cases, plus limited ICU capacity in some districts",
+    "strongPoints": "ICMR and state outbreak response capacity and increasing access to diagnostics in tertiary centers"
+  }
+}
+

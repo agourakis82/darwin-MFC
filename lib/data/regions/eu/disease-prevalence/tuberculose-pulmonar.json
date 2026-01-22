@@ -1,0 +1,54 @@
+{
+  "diseaseId": "tuberculose-pulmonar",
+  "region": "EU",
+  "diseaseName": "Pulmonary Tuberculosis",
+  "prevalence": {
+    "value": "~12 per 100,000 (active TB)",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "ECDC Tuberculosis Surveillance / WHO Regional Office for Europe",
+    "trend": "decreasing overall; higher burden persists in some Eastern EU countries and vulnerable groups"
+  },
+  "incidence": {
+    "value": "~9 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECDC Tuberculosis Surveillance"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0003-0.0008",
+    "mortalityRate": "~0.8-1.5 per 100,000",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "migration from high-burden countries",
+      "homelessness and congregate settings",
+      "HIV co-infection",
+      "diabetes and immunosuppression",
+      "smoking and alcohol use disorder"
+    ],
+    "vulnerablePopulations": [
+      "recent migrants from high-burden countries",
+      "people experiencing homelessness",
+      "people in correctional facilities",
+      "people living with HIV",
+      "close contacts of infectious cases"
+    ],
+    "diagnosticCriteria": "Microbiological confirmation (NAAT, smear/culture) with drug susceptibility testing; radiology supportive; ECDC/WHO Europe surveillance definitions"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "contact tracing and targeted screening in high-risk groups; coverage varies by member state",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~50,000 active cases",
+    "controlRate": "~80-85% treatment success for drug-susceptible TB; lower for MDR-TB"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Broad access to molecular diagnostics and DST; standardized reporting to ECDC in most member states",
+    "treatmentProtocol": "Standard HRZE-based regimens for drug-susceptible TB; MDR-TB managed with specialist teams and newer agents (e.g., bedaquiline/linezolid) per national/WHO guidance",
+    "regionalChallenges": "Persistent MDR-TB in parts of Eastern EU, care continuity for migrants, and social vulnerability barriers to adherence",
+    "strongPoints": "Strong surveillance systems, high laboratory capacity for DST, and structured contact tracing and public health follow-up"
+  }
+}
+

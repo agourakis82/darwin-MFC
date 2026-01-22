@@ -1,0 +1,52 @@
+{
+  "diseaseId": "anemia-megaloblastica",
+  "region": "EU",
+  "diseaseName": "Megaloblastic Anemia (B12/Folate Deficiency)",
+  "prevalence": {
+    "value": "0.2-0.8% (higher in older adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European hematology and nutrition epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "0.5-2 per 1,000/year (diagnosed cases)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0005-0.002",
+    "mortalityRate": "Low; neurologic complications if untreated",
+    "year": 2024,
+    "source": "IHME/WHO Europe anemia context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "pernicious anemia",
+      "malabsorption and bariatric surgery",
+      "older age",
+      "metformin use",
+      "alcohol use"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "post-bariatric surgery patients",
+      "patients with autoimmune gastritis"
+    ],
+    "diagnosticCriteria": "Macrocytosis with low B12/folate and supportive biomarkers; workup for pernicious anemia; neurologic assessment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; detected via CBC and targeted testing",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands to a few million",
+    "controlRate": "High with treatment and monitoring"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Broad access to B12/folate and autoimmune testing in many systems",
+    "treatmentProtocol": "B12 replacement and folate supplementation; address underlying malabsorption and medication contributors",
+    "regionalChallenges": "Ensuring follow-up in older adults and post-bariatric patients",
+    "strongPoints": "High diagnostic access and effective low-cost treatment"
+  }
+}
+

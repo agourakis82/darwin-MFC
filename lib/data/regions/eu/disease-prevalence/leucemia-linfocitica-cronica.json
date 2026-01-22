@@ -1,0 +1,49 @@
+{
+  "diseaseId": "leucemia-linfocitica-cronica",
+  "region": "EU",
+  "diseaseName": "Chronic lymphocytic leukemia (CLL)",
+  "prevalence": {
+    "value": "~30-50 per 100,000",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European hematology registry syntheses",
+    "trend": "increasing prevalence with aging and improved survival"
+  },
+  "incidence": {
+    "value": "~3-5 per 100,000/year",
+    "population": "Adults (older age)",
+    "year": 2024,
+    "source": "Cancer registry and hematology cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate; chronic disease with treatment-related morbidity",
+    "mortalityRate": "Moderate",
+    "year": 2024,
+    "source": "WHO Europe/IHME hematologic malignancy context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "older age",
+      "male sex",
+      "family history",
+      "immune dysregulation"
+    ],
+    "vulnerablePopulations": [
+      "adults >60 years",
+      "patients with family history of CLL"
+    ],
+    "diagnosticCriteria": "Persistent lymphocytosis with flow cytometry; staging by Rai/Binet"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; incidental diagnosis common",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands across the EU",
+    "controlRate": "High with access to targeted therapies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Flow cytometry and molecular testing widely available",
+    "treatmentProtocol": "Watchful waiting for early-stage; targeted agents (BTK/BCL2 inhibitors) and chemoimmunotherapy when indicated",
+    "regionalChallenges": "Access disparities to novel agents across countries",
+    "strongPoints": "Strong hematology networks and access to modern therapies"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "amiloidose-attr-hereditaria",
+  "region": "BR",
+  "diseaseName": "Amiloidose hereditária por transtirretina (hATTR)",
+  "prevalence": {
+    "value": "~0.5-2 per 100,000 (clustered in affected families)",
+    "population": "General population (rare; familial clusters)",
+    "year": 2024,
+    "source": "Orphanet; hATTR epidemiology reviews; Brazilian referral center experience",
+    "trend": "increasing diagnosed prevalence due to improved awareness and genetics"
+  },
+  "incidence": {
+    "value": "Rare; family-based case detection predominates",
+    "population": "Adults (typically onset 30-70 years)",
+    "year": 2024,
+    "source": "hATTR clinical registries and cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "very low (rare) but high per-patient burden (progressive neuropathy/cardiomyopathy)",
+    "mortalityRate": "Meaningful without disease-modifying therapy; reduced with earlier diagnosis and treatment",
+    "year": 2024,
+    "source": "Clinical registry outcomes; WHO/IHME cardiomyopathy/neuropathy context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "pathogenic TTR variant (autosomal dominant)",
+      "family history of neuropathy or cardiomyopathy",
+      "age (symptom onset typically mid-life or later)",
+      "delayed diagnosis in non-endemic settings"
+    ],
+    "vulnerablePopulations": [
+      "members of affected families",
+      "patients with unexplained progressive polyneuropathy",
+      "patients with HFpEF/cardiomyopathy with red flags (carpal tunnel, neuropathy)"
+    ],
+    "diagnosticCriteria": "Clinical suspicion plus genetic confirmation (TTR sequencing); tissue biopsy with amyloid typing when needed; cardiac imaging (echo/MRI) and nuclear scintigraphy protocols where available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no population screening; cascade family testing when diagnosis established",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Thousands (rare; underdiagnosed)",
+    "controlRate": "Variable; improved with access to specialized centers and disease-modifying therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Referral to neurology/cardiology centers; genetic testing availability uneven across states",
+    "treatmentProtocol": "Disease-modifying therapy when accessible (e.g., TTR stabilizers/silencers per local availability), symptomatic management of neuropathy and heart failure, genetic counseling and cascade testing",
+    "regionalChallenges": "Underdiagnosis, limited access to confirmatory diagnostics and high-cost therapies, delays in referral pathways",
+    "strongPoints": "Specialty centers increasingly recognize red flags; growing rare disease advocacy and awareness"
+  }
+}

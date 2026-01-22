@@ -1,0 +1,53 @@
+{
+  "diseaseId": "transtorno-uso-alcool",
+  "region": "BR",
+  "diseaseName": "Transtorno por Uso de Álcool",
+  "prevalence": {
+    "value": "4-6%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "WHO/IHME GBD + national surveys context",
+    "trend": "stable to increasing in some groups; binge drinking patterns persist"
+  },
+  "incidence": {
+    "value": "6-12 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "GBD context extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.02-0.05",
+    "mortalityRate": "Elevated (injury, liver disease, cancer; indirect)",
+    "year": 2024,
+    "source": "IHME GBD (alcohol use)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "early initiation and binge drinking",
+      "psychiatric comorbidity",
+      "social stress and unemployment",
+      "family history",
+      "availability and cultural norms"
+    ],
+    "vulnerablePopulations": [
+      "men",
+      "young adults",
+      "people with depression/anxiety",
+      "people experiencing homelessness"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 alcohol use disorder criteria with impaired control and functional impairment; evaluate withdrawal risk"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited; AUDIT use variable in APS",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~8-12 million",
+    "controlRate": "Low to moderate; relapse common without sustained support"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS screening variable; specialized treatment via CAPS AD and inpatient detox where available",
+    "treatmentProtocol": "Brief interventions, psychosocial treatment, relapse prevention; pharmacotherapy (e.g., naltrexone/acamprosate) where available; manage withdrawal safely",
+    "regionalChallenges": "Service fragmentation, stigma, and limited long-term rehabilitation and housing support",
+    "strongPoints": "CAPS AD services and growing harm reduction/brief intervention programs in some municipalities"
+  }
+}
+

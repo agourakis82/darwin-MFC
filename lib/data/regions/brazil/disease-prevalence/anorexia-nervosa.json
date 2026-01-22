@@ -1,0 +1,53 @@
+{
+  "diseaseId": "anorexia-nervosa",
+  "region": "BR",
+  "diseaseName": "Anorexia Nervosa",
+  "prevalence": {
+    "value": "0.3-0.8% (higher in adolescent girls and young women)",
+    "population": "Brazilian adolescents and young adults",
+    "year": 2024,
+    "source": "Eating disorder epidemiology syntheses (Latin America) / WHO context",
+    "trend": "increasing recognition; social media and body image pressures contribute"
+  },
+  "incidence": {
+    "value": "1-3 per 10,000/year",
+    "population": "Adolescents and young adults",
+    "year": 2024,
+    "source": "Eating disorder cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.005",
+    "mortalityRate": "Elevated vs general population (medical complications and suicide)",
+    "year": 2024,
+    "source": "IHME GBD (eating disorders)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "adolescence",
+      "perfectionism and anxiety traits",
+      "family history",
+      "cultural/body image pressures"
+    ],
+    "vulnerablePopulations": [
+      "adolescent girls",
+      "young women",
+      "athletes/dancers",
+      "patients with comorbid anxiety/depression"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: restriction leading to low weight, intense fear of weight gain, and body image disturbance; medical assessment for malnutrition and complications"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; often detected late",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands (higher when including subthreshold cases)",
+    "controlRate": "Variable; best with multidisciplinary care, which is limited outside major centers"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnosis often in specialist mental health and pediatric/adolescent services; APS screening limited",
+    "treatmentProtocol": "Nutritional rehabilitation + psychotherapy (family-based therapy in adolescents) + medical monitoring; inpatient stabilization for severe malnutrition",
+    "regionalChallenges": "Limited multidisciplinary eating disorder programs in SUS and delayed presentation",
+    "strongPoints": "Specialized university hospitals can provide multidisciplinary care in large cities"
+  }
+}
+

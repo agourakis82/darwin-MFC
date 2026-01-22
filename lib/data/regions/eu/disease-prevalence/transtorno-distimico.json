@@ -1,0 +1,51 @@
+{
+  "diseaseId": "transtorno-distimico",
+  "region": "EU",
+  "diseaseName": "Persistent Depressive Disorder (Dysthymia)",
+  "prevalence": {
+    "value": "2-4%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "WHO Europe / European psychiatric epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "3-6 per 1,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.02",
+    "mortalityRate": "Indirect",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prior depression",
+      "chronic stress",
+      "social isolation",
+      "chronic illness"
+    ],
+    "vulnerablePopulations": [
+      "older adults living alone",
+      "people with chronic medical illness",
+      "socially vulnerable groups"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 persistent depressive disorder criteria; structured assessment common"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10-18 million",
+    "controlRate": "Moderate with access to psychotherapy; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and mental health services often use stepped-care pathways",
+    "treatmentProtocol": "Psychotherapy and antidepressants when indicated; management of comorbid anxiety and chronic illness",
+    "regionalChallenges": "Wait times for therapy and variability across member states",
+    "strongPoints": "Broad access to evidence-based care in many systems"
+  }
+}
+

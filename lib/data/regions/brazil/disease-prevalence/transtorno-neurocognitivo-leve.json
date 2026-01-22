@@ -1,0 +1,54 @@
+{
+  "diseaseId": "transtorno-neurocognitivo-leve",
+  "region": "BR",
+  "diseaseName": "Transtorno Neurocognitivo Leve (Comprometimento Cognitivo Leve)",
+  "prevalence": {
+    "value": "12-18% in adults >60 years",
+    "population": "Brazilian adults >60 years",
+    "year": 2024,
+    "source": "Epidemiological syntheses (aging cohorts) / ABN context",
+    "trend": "increasing with population aging and improved detection"
+  },
+  "incidence": {
+    "value": "20-35 per 1,000 person-years in adults >60 years",
+    "population": "Brazilian adults >60 years",
+    "year": 2024,
+    "source": "Longitudinal cohort syntheses (MCI)"
+  },
+  "burden": {
+    "dalyPerCapita": "0.005-0.015 (older-adult concentrated)",
+    "mortalityRate": "Indirect; elevated risk of progression to dementia",
+    "year": 2024,
+    "source": "IHME GBD (dementia) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "low education and cognitive reserve",
+      "hypertension/diabetes",
+      "hearing loss",
+      "depression",
+      "sleep disorders"
+    ],
+    "vulnerablePopulations": [
+      "older adults (>70 years)",
+      "patients with vascular risk factors",
+      "low socioeconomic groups",
+      "people with depression and social isolation"
+    ],
+    "diagnosticCriteria": "Cognitive concern with objective impairment (1+ domains) and preserved functional independence; cognitive screening (MoCA/MMSE) plus workup for reversible causes; DSM-5/ICD-aligned criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited; opportunistic screening in APS varies by municipality",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~3-5 million older adults",
+    "controlRate": "Variable; risk-factor management can slow progression, but access to cognitive rehab is limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care recognition variable; specialist evaluation (neurology/geriatrics) concentrated in larger cities",
+    "treatmentProtocol": "Address reversible causes (B12/thyroid), manage vascular risk factors, cognitive stimulation and physical activity; medication review (avoid anticholinergics)",
+    "regionalChallenges": "Underdiagnosis and limited access to memory clinics and neuropsychological testing outside capitals",
+    "strongPoints": "Growing awareness and structured chronic disease management in APS that can support risk-factor control"
+  }
+}
+

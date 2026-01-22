@@ -1,0 +1,54 @@
+{
+  "diseaseId": "malaria",
+  "region": "BR",
+  "diseaseName": "Malária",
+  "prevalence": {
+    "value": "~0.03% annual incidence nationally (endemic Amazon focus)",
+    "population": "Brazilian population (highest risk in Amazon region)",
+    "year": 2024,
+    "source": "Ministério da Saúde (SIVEP-Malária) / SVSA",
+    "trend": "stable to decreasing nationally; recurrent outbreaks in Amazon municipalities"
+  },
+  "incidence": {
+    "value": "~0.3 per 1,000/year nationally (much higher in endemic municipalities)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "SIVEP-Malária / Ministério da Saúde"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0002-0.0006",
+    "mortalityRate": "Low; clustered severe cases in remote areas",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "residence in Amazon endemic areas",
+      "occupational exposure (mining, forestry, agriculture)",
+      "limited housing protection (no screens/bed nets)",
+      "travel to endemic municipalities",
+      "delayed diagnosis and treatment"
+    ],
+    "vulnerablePopulations": [
+      "Amazon residents (Acre, Amazonas, Pará, Rondônia, Roraima, Amapá)",
+      "indigenous communities",
+      "migrant workers (garimpo/mining)",
+      "pregnant people",
+      "children <5 years in endemic settings"
+    ],
+    "diagnosticCriteria": "Thick/thin smear microscopy or rapid diagnostic test; species identification; follow national malaria guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no population screening; testing of febrile cases in endemic areas via local posts and reference labs",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~120,000 cases/year (mostly Amazon)",
+    "controlRate": "High cure rates when treated early; access gaps in remote riverine/indigenous areas"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SUS endemic-area fever protocols with smear microscopy and RDTs; surveillance via SIVEP-Malária",
+    "treatmentProtocol": "Chloroquine + primaquine for P. vivax; artemisinin-based combination therapy for P. falciparum per Ministério da Saúde; G6PD considerations for primaquine",
+    "regionalChallenges": "Geographic barriers in Amazon (travel time to diagnostics), outbreaks linked to mining and deforestation, and adherence challenges for primaquine",
+    "strongPoints": "Established endemic surveillance (SIVEP-Malária) and standardized SUS treatment protocols in the Amazon network"
+  }
+}
+

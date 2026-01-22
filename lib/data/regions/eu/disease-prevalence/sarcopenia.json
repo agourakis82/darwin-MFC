@@ -1,0 +1,52 @@
+{
+  "diseaseId": "sarcopenia",
+  "region": "EU",
+  "diseaseName": "Sarcopenia",
+  "prevalence": {
+    "value": "10-20% in adults >65 years (higher in >80)",
+    "population": "EU older adults",
+    "year": 2024,
+    "source": "EWGSOP2/European sarcopenia epidemiology syntheses",
+    "trend": "increasing with aging demographics"
+  },
+  "incidence": {
+    "value": "15-35 per 1,000 person-years",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.03",
+    "mortalityRate": "Indirect",
+    "year": 2024,
+    "source": "IHME/WHO Europe older adult context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "aging",
+      "physical inactivity",
+      "low protein intake",
+      "chronic disease",
+      "vitamin D deficiency"
+    ],
+    "vulnerablePopulations": [
+      "frail older adults",
+      "care home residents",
+      "older adults with multimorbidity"
+    ],
+    "diagnosticCriteria": "EWGSOP2: grip strength, muscle mass (DXA/BIA), and performance (gait speed/SPPB)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; geriatric assessment pathways exist in many systems",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of older adults",
+    "controlRate": "Moderate to high with access to structured rehab and nutrition support"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Broader access to DXA/BIA and rehab services in many member states",
+    "treatmentProtocol": "Resistance training, nutrition/protein optimization, vitamin D when indicated, and multidisciplinary geriatric care",
+    "regionalChallenges": "Implementation variability and service demand",
+    "strongPoints": "Established rehabilitation and geriatric care pathways in many systems"
+  }
+}
+

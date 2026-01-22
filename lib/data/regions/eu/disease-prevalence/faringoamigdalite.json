@@ -1,0 +1,49 @@
+{
+  "diseaseId": "faringoamigdalite",
+  "region": "EU",
+  "diseaseName": "Acute Pharyngotonsillitis",
+  "prevalence": {
+    "value": "10-20% annual incidence in children (episodes; mostly viral)",
+    "population": "EU children",
+    "year": 2024,
+    "source": "European primary care respiratory infection syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "100-250 per 1,000 children/year (any sore throat episodes)",
+    "population": "Children",
+    "year": 2024,
+    "source": "European primary care cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.003",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO Europe context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "school/daycare exposure",
+      "winter season",
+      "household crowding"
+    ],
+    "vulnerablePopulations": [
+      "children 5-15 years",
+      "patients with recurrent infections"
+    ],
+    "diagnosticCriteria": "Clinical assessment; Centor/McIsaac and rapid antigen tests used in many systems; antibiotics reserved for likely/confirmed GAS"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "high episode burden annually",
+    "controlRate": "High symptom resolution; stewardship reduces unnecessary antibiotics"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Rapid antigen testing and culture commonly available for uncertain cases",
+    "treatmentProtocol": "Supportive care for viral; penicillin/amoxicillin for GAS; emphasis on antimicrobial stewardship",
+    "regionalChallenges": "Maintaining low unnecessary antibiotic prescribing",
+    "strongPoints": "Strong primary care access and guideline-driven stewardship programs"
+  }
+}
+

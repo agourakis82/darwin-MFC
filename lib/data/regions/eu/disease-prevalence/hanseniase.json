@@ -1,0 +1,49 @@
+{
+  "diseaseId": "hanseniase",
+  "region": "EU",
+  "diseaseName": "Leprosy (Hansen's Disease)",
+  "prevalence": {
+    "value": "very rare; mostly imported cases",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "WHO / ECDC rare disease reporting (where applicable)",
+    "trend": "stable low"
+  },
+  "incidence": {
+    "value": "near-zero (<0.1 per 100,000/year)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "WHO / national surveillance summaries"
+  },
+  "burden": {
+    "dalyPerCapita": "negligible at population level",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "origin or long-term stay in endemic countries",
+      "delayed diagnosis due to low clinician familiarity",
+      "close household contact exposure"
+    ],
+    "vulnerablePopulations": [
+      "migrants from endemic regions",
+      "household contacts of diagnosed cases"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis with confirmatory biopsy/smear when needed; specialist infectious disease/dermatology referral"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; case-based detection",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very low",
+    "controlRate": "High cure rates with MDT when diagnosed; disability prevention depends on early recognition"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnosis typically in specialist centers with pathology support",
+    "treatmentProtocol": "WHO MDT via specialist prescription; monitoring for reactions and neuropathy",
+    "regionalChallenges": "Low clinical suspicion causing delayed diagnosis in some cases",
+    "strongPoints": "High access to specialist care and diagnostics once suspected"
+  }
+}
+

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "epilepsia-generalizada",
+  "region": "BR",
+  "diseaseName": "Epilepsia Generalizada",
+  "prevalence": {
+    "value": "0.2-0.5%",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "ILAE-informed epilepsy epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "10-25 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Epilepsy cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Elevated vs general population (SUDEP/injury)",
+    "year": 2024,
+    "source": "IHME GBD epilepsy context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic epilepsy syndromes",
+      "perinatal injury (some cases)",
+      "sleep deprivation triggers",
+      "photosensitivity (subset)"
+    ],
+    "vulnerablePopulations": [
+      "children and adolescents",
+      "patients with limited access to specialist care"
+    ],
+    "diagnosticCriteria": "ILAE criteria; generalized seizure semiology with EEG patterns; classification into generalized epilepsy syndromes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~400,000-1,000,000",
+    "controlRate": "Moderate; seizure control high in many syndromes with appropriate ASM"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EEG access varies; pediatric neurology and epilepsy clinics concentrated in major cities",
+    "treatmentProtocol": "Valproate, levetiracetam, and other ASMs based on syndrome and pregnancy risk; counseling on triggers and safety",
+    "regionalChallenges": "Access to pediatric neurology and specialized EEG interpretation outside capitals",
+    "strongPoints": "Core ASMs available and good response in many generalized epilepsy syndromes"
+  }
+}
+

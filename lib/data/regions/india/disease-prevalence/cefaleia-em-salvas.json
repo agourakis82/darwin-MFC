@@ -1,0 +1,50 @@
+{
+  "diseaseId": "cefaleia-em-salvas",
+  "region": "IN",
+  "diseaseName": "Cluster Headache",
+  "prevalence": {
+    "value": "0.05-0.2% (underdiagnosis likely)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Cluster headache epidemiology syntheses",
+    "trend": "stable; diagnosis improving in tertiary neurology centers"
+  },
+  "incidence": {
+    "value": "1-6 per 100,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Cluster headache cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO headache context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "male sex",
+      "smoking",
+      "alcohol as trigger",
+      "circadian susceptibility"
+    ],
+    "vulnerablePopulations": [
+      "men 20-50 years",
+      "smokers"
+    ],
+    "diagnosticCriteria": "ICHD-3 cluster headache criteria; clinical diagnosis with exclusion of secondary causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands to >1 million (underdiagnosed)",
+    "controlRate": "Low to moderate; access to oxygen and triptans varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often misdiagnosed as sinus headache; neurology access limited outside metros",
+    "treatmentProtocol": "Oxygen and triptans for acute attacks; verapamil preventive; referral to neurology for refractory cases",
+    "regionalChallenges": "Limited access to home oxygen and specialist care; misdiagnosis delays",
+    "strongPoints": "Effective therapies available in tertiary centers and urban private care"
+  }
+}
+

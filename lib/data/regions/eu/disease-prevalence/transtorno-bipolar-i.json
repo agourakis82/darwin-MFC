@@ -1,0 +1,50 @@
+{
+  "diseaseId": "transtorno-bipolar-i",
+  "region": "EU",
+  "diseaseName": "Bipolar I Disorder",
+  "prevalence": {
+    "value": "0.6-1.0%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "WHO Europe / European psychiatric epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "0.5-1.2 per 1,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.008-0.02",
+    "mortalityRate": "Indirect; elevated suicide risk",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "sleep disruption",
+      "substance use",
+      "stressful life events"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "people with comorbid substance use disorders"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: at least one manic episode"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2.5-4 million",
+    "controlRate": "Moderate to high with maintenance therapy and monitoring"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Structured specialist pathways and monitoring common",
+    "treatmentProtocol": "Mood stabilizers and antipsychotics; psychoeducation and relapse prevention programs",
+    "regionalChallenges": "Cross-country variability and comorbid substance use",
+    "strongPoints": "Broad access to treatment and monitoring in many member states"
+  }
+}
+

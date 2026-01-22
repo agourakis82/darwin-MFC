@@ -1,0 +1,52 @@
+{
+  "diseaseId": "sinusite-aguda",
+  "region": "BR",
+  "diseaseName": "Sinusite Aguda (Rinossinusite Aguda)",
+  "prevalence": {
+    "value": "common; most cases viral",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Primary care/ENT epidemiology syntheses",
+    "trend": "stable with seasonal peaks"
+  },
+  "incidence": {
+    "value": "50-150 per 1,000/year (symptomatic episodes; varies by age)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Primary care respiratory infection syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; high antibiotic use impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO respiratory infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral URIs",
+      "allergic rhinitis",
+      "smoking",
+      "air pollution",
+      "anatomic variation"
+    ],
+    "vulnerablePopulations": [
+      "patients with allergic rhinitis",
+      "children and adults with frequent URIs",
+      "smokers"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; bacterial sinusitis suggested by persistent symptoms >10 days, severe onset with fever/purulence, or double-worsening; imaging reserved for complications"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high episode burden annually",
+    "controlRate": "High with symptomatic care and antibiotic stewardship"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS diagnosis; limited imaging; stewardship important to reduce unnecessary antibiotics",
+    "treatmentProtocol": "Symptomatic care (analgesics, saline irrigation); antibiotics for likely bacterial cases; manage allergic rhinitis",
+    "regionalChallenges": "Antibiotic overuse and limited ENT access for recurrent cases",
+    "strongPoints": "Symptomatic management feasible in primary care and clear clinical criteria for antibiotics"
+  }
+}
+

@@ -1,0 +1,51 @@
+{
+  "diseaseId": "hipogonadismo-masculino",
+  "region": "IN",
+  "diseaseName": "Male hypogonadism",
+  "prevalence": {
+    "value": "~3-6% (men >40 years)",
+    "population": "Indian men >40 years",
+    "year": 2024,
+    "source": "Endocrinology and andrology epidemiology syntheses",
+    "trend": "stable; detection increasing with aging"
+  },
+  "incidence": {
+    "value": "~2-5 per 1,000 men/year",
+    "population": "Men >40 years",
+    "year": 2024,
+    "source": "Andrology clinic data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; impacts sexual health and QOL",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO male reproductive health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "aging",
+      "obesity",
+      "type 2 diabetes",
+      "chronic illness",
+      "testicular disease"
+    ],
+    "vulnerablePopulations": [
+      "older men",
+      "men with obesity/diabetes",
+      "patients with pituitary disease"
+    ],
+    "diagnosticCriteria": "Symptoms plus low morning total testosterone on two occasions; evaluate LH/FSH and secondary causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of men",
+    "controlRate": "Low to moderate; access to evaluation and therapy varies"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care screening for symptoms; endocrine/urology referral for confirmation",
+    "treatmentProtocol": "Testosterone replacement when indicated; lifestyle and comorbidity management",
+    "regionalChallenges": "Limited access to andrology services and misuse of testosterone",
+    "strongPoints": "Affordable medications and growing awareness"
+  }
+}

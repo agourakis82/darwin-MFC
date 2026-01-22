@@ -1,0 +1,52 @@
+{
+  "diseaseId": "impetigo",
+  "region": "BR",
+  "diseaseName": "Impetigo",
+  "prevalence": {
+    "value": "~1-3% (children; higher in hot and humid regions)",
+    "population": "Brazilian children",
+    "year": 2024,
+    "source": "Tropical dermatology surveillance; pediatric primary care syntheses",
+    "trend": "stable; outbreaks in crowded and low-sanitation settings"
+  },
+  "incidence": {
+    "value": "~50-150 per 1,000 children/year (episodes)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Pediatric infection cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; important morbidity and school absenteeism",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO skin and soft tissue infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "skin trauma or insect bites",
+      "crowding",
+      "poor hygiene",
+      "warm humid climate",
+      "atopic dermatitis",
+      "close contact in schools/daycare"
+    ],
+    "vulnerablePopulations": [
+      "children 2-10 years",
+      "low-income communities",
+      "patients with eczema"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis of honey-colored crusted lesions; culture if MRSA suspected or outbreak; evaluate for complications (post-strep sequelae)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands of episodes annually",
+    "controlRate": "High with prompt topical or oral antibiotics and hygiene measures"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care; culture availability limited",
+    "treatmentProtocol": "Topical mupirocin for limited lesions; oral antibiotics for extensive disease; hygiene and contact precautions",
+    "regionalChallenges": "Antibiotic overuse in some settings and limited access to culture for resistance",
+    "strongPoints": "Effective low-cost treatment available in SUS and primary care"
+  }
+}

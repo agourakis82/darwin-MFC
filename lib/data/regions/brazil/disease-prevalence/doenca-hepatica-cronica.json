@@ -1,0 +1,25 @@
+{
+  "diseaseId": "doenca-hepatica-cronica",
+  "region": "BR",
+  "diseaseName": "Doença Hepática Crônica",
+  "prevalence": {"value": "3.5%", "population": "Brazilian adults", "year": 2024, "source": "SBH - Sociedade Brasileira de Hepatologia / DataSUS", "trend": "increasing due to rising NAFLD and obesity rates"},
+  "incidence": {"value": "4.2 per 1000", "population": "Brazilian adults", "year": 2024, "source": "DataSUS / SBH"},
+  "burden": {"dalyPerCapita": "128", "mortalityRate": "18.5 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Alcohol consumption", "Viral hepatitis B and C", "Non-alcoholic fatty liver disease (NAFLD)", "Obesity and metabolic syndrome", "Diabetes mellitus", "Drug-induced liver injury"],
+    "vulnerablePopulations": ["Low socioeconomic status groups", "Indigenous populations", "Chronic alcohol users", "Patients with type 2 diabetes"],
+    "diagnosticCriteria": "Fibrosis staging via FIB-4, transient elastography, biopsy per SBH"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Hepatitis screening via SUS, limited NAFLD screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "5.2 million",
+    "controlRate": "45% due to improved viral hepatitis management but gaps in NAFLD"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SBH guidelines, elastography when available, viral markers via SUS",
+    "treatmentProtocol": "Hepatitis B/C treatment via SUS (tenofovir, DAAs), alcohol cessation programs, NAFLD lifestyle intervention",
+    "regionalChallenges": "Rising NAFLD/NASH due to obesity epidemic, alcohol consumption, limited elastography access",
+    "strongPoints": "Universal hepatitis C DAA treatment via SUS, viral hepatitis vaccination program"
+  }
+}

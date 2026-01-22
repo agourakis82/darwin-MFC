@@ -1,0 +1,51 @@
+{
+  "diseaseId": "transtorno-uso-alcool",
+  "region": "EU",
+  "diseaseName": "Alcohol Use Disorder (AUD)",
+  "prevalence": {
+    "value": "3-7% (country-dependent)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "WHO Europe + IHME GBD (alcohol use) context",
+    "trend": "stable; high-risk drinking persists in some regions"
+  },
+  "incidence": {
+    "value": "5-12 per 1,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "WHO Europe epidemiology context"
+  },
+  "burden": {
+    "dalyPerCapita": "0.02-0.06",
+    "mortalityRate": "Elevated (injury, liver disease, cancer; indirect)",
+    "year": 2024,
+    "source": "WHO Europe / IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "high-risk drinking patterns",
+      "psychiatric comorbidity",
+      "social deprivation",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "men",
+      "people with depression/anxiety",
+      "socially vulnerable groups"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 AUD criteria; assessment includes withdrawal risk and medical comorbidity"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate; brief interventions used in many primary care settings",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~15-30 million",
+    "controlRate": "Moderate; depends on access to addiction services and psychosocial support"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care screening and referral pathways common in many systems",
+    "treatmentProtocol": "Brief interventions, structured addiction treatment, relapse-prevention medications where indicated",
+    "regionalChallenges": "Access variability and persistent alcohol-related harms in some regions",
+    "strongPoints": "Strong public health monitoring and established addiction medicine services in many member states"
+  }
+}
+

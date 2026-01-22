@@ -1,0 +1,50 @@
+{
+  "diseaseId": "miastenia-gravis",
+  "region": "IN",
+  "diseaseName": "Myasthenia Gravis",
+  "prevalence": {
+    "value": "10-25 per 100,000 (underdiagnosis likely)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Neuromuscular epidemiology syntheses",
+    "trend": "increasing recognition in tertiary centers"
+  },
+  "incidence": {
+    "value": "1-2 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Myasthenia cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0004-0.0013",
+    "mortalityRate": "Low with care; crises can be fatal",
+    "year": 2024,
+    "source": "IHME/WHO context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autoimmune antibodies (AChR/MuSK)",
+      "thymic disease",
+      "female sex (early onset) / male sex (late onset)"
+    ],
+    "vulnerablePopulations": [
+      "patients with delayed diagnosis",
+      "patients without access to IVIG/plasmapheresis",
+      "older adults"
+    ],
+    "diagnosticCriteria": "Clinical fatigable weakness with antibody testing and electrophysiology; evaluate thymus"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~140,000-350,000",
+    "controlRate": "Variable; limited access to specialized testing and crisis management in many areas"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Antibody testing and SFEMG concentrated in tertiary centers",
+    "treatmentProtocol": "Pyridostigmine, steroids, immunosuppressants; IVIG/plasmapheresis for crisis where available; thymectomy in selected cases",
+    "regionalChallenges": "Cost and access barriers for crisis therapies and long-term immunosuppression monitoring",
+    "strongPoints": "Growing tertiary neurology and ICU capacity in major cities"
+  }
+}
+

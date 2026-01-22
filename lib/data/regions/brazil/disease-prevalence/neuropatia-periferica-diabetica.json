@@ -1,0 +1,54 @@
+{
+  "diseaseId": "neuropatia-periferica-diabetica",
+  "region": "BR",
+  "diseaseName": "Neuropatia Periférica Diabética",
+  "prevalence": {
+    "value": "20-30% among people with diabetes",
+    "population": "Brazilian adults with diabetes",
+    "year": 2024,
+    "source": "SBD/ADA-aligned diabetes complication syntheses",
+    "trend": "increasing with diabetes prevalence and longer disease duration"
+  },
+  "incidence": {
+    "value": "2-4% per year among people with diabetes",
+    "population": "People with diabetes",
+    "year": 2024,
+    "source": "Diabetes complications cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.008 (diabetes-population concentrated)",
+    "mortalityRate": "Indirect (foot ulcers, infections, amputations)",
+    "year": 2024,
+    "source": "IHME GBD (diabetes complications) context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor glycemic control",
+      "long duration of diabetes",
+      "smoking",
+      "hypertension and dyslipidemia",
+      "obesity",
+      "CKD"
+    ],
+    "vulnerablePopulations": [
+      "people with long-standing DM2",
+      "older adults with diabetes",
+      "patients with limited access to foot care",
+      "patients with low socioeconomic status"
+    ],
+    "diagnosticCriteria": "Clinical distal symmetric polyneuropathy assessment (symptoms + exam) with monofilament/vibration testing; rule out B12 deficiency (metformin), hypothyroidism, and alcohol-related neuropathy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; annual foot screening recommended but inconsistently implemented",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~3-6 million",
+    "controlRate": "Variable; improved with glycemic control and structured foot care programs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS screening with monofilament is inconsistent; referrals to endocrinology/neurology for complex cases",
+    "treatmentProtocol": "Optimize glycemic control; foot care and ulcer prevention; neuropathic pain treatment (e.g., duloxetine, pregabalin, amitriptyline) and podiatry when available",
+    "regionalChallenges": "Limited podiatry/diabetic foot clinics and delayed ulcer care in some regions",
+    "strongPoints": "APS chronic care platform and access to core diabetes medications in SUS"
+  }
+}
+

@@ -1,0 +1,49 @@
+{
+  "diseaseId": "faringite-estreptococica",
+  "region": "EU",
+  "diseaseName": "Streptococcal pharyngitis",
+  "prevalence": {
+    "value": "~10-20% of pediatric pharyngitis episodes",
+    "population": "EU children and adolescents",
+    "year": 2024,
+    "source": "European primary care respiratory infection syntheses",
+    "trend": "stable; seasonal peaks"
+  },
+  "incidence": {
+    "value": "~15-35 per 1,000 children/year (strep-confirmed)",
+    "population": "Children 5-15 years",
+    "year": 2024,
+    "source": "Pediatric cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; risk of rheumatic fever if untreated",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe URI context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "school/daycare exposure",
+      "crowding",
+      "winter/seasonal outbreaks",
+      "close contact with infected individuals"
+    ],
+    "vulnerablePopulations": [
+      "children 5-15 years",
+      "households with crowding"
+    ],
+    "diagnosticCriteria": "Centor/McIsaac criteria with rapid antigen test or culture to confirm"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of episodes annually across EU",
+    "controlRate": "High with appropriate antibiotics"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Rapid testing widely available",
+    "treatmentProtocol": "Penicillin/amoxicillin; avoid unnecessary antibiotics for viral pharyngitis",
+    "regionalChallenges": "Antibiotic stewardship and patient expectations",
+    "strongPoints": "Guideline-based care and strong primary care access"
+  }
+}

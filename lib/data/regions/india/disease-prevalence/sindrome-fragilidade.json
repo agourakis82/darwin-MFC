@@ -1,0 +1,53 @@
+{
+  "diseaseId": "sindrome-fragilidade",
+  "region": "IN",
+  "diseaseName": "Frailty Syndrome",
+  "prevalence": {
+    "value": "10-20% in adults >60 years (higher in low-income settings)",
+    "population": "Indian older adults",
+    "year": 2024,
+    "source": "Geriatrics epidemiology syntheses (frailty) + Indian aging cohort context",
+    "trend": "increasing with rapid aging and multimorbidity"
+  },
+  "incidence": {
+    "value": "30-70 per 1,000 person-years",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "Frailty cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.03 (older-adult concentrated)",
+    "mortalityRate": "Elevated (indirect)",
+    "year": 2024,
+    "source": "IHME/WHO older adult context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "malnutrition",
+      "multimorbidity",
+      "sarcopenia",
+      "polypharmacy",
+      "low physical activity",
+      "social vulnerability"
+    ],
+    "vulnerablePopulations": [
+      "older adults in rural areas",
+      "low-income older adults",
+      "older adults with multiple chronic diseases"
+    ],
+    "diagnosticCriteria": "Frailty phenotype or frailty index; screening tools used in some geriatric clinics"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; frailty screening not routine",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of older adults",
+    "controlRate": "Low to moderate; dependent on nutrition and exercise support availability"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often recognized after functional decline; limited geriatric services",
+    "treatmentProtocol": "Exercise, nutrition supplementation, deprescribing, fall prevention, and social support; integrate with NCD care",
+    "regionalChallenges": "Limited geriatric workforce and high malnutrition burden in some settings",
+    "strongPoints": "Family caregiving and community programs can support functional interventions where available"
+  }
+}
+

@@ -1,0 +1,52 @@
+{
+  "diseaseId": "asma-infantil",
+  "region": "EU",
+  "diseaseName": "Childhood Asthma",
+  "prevalence": {
+    "value": "8-12% (children)",
+    "population": "EU children and adolescents",
+    "year": 2024,
+    "source": "WHO Europe / European pediatric asthma epidemiology syntheses",
+    "trend": "stable; improved control in many systems"
+  },
+  "incidence": {
+    "value": "5-10 per 1,000/year",
+    "population": "Children",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.005-0.015",
+    "mortalityRate": "Very low with controller access",
+    "year": 2024,
+    "source": "IHME/WHO Europe asthma context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history of atopy",
+      "allergen exposure",
+      "viral-induced wheeze",
+      "tobacco smoke exposure",
+      "air pollution"
+    ],
+    "vulnerablePopulations": [
+      "children with allergic rhinitis/atopic dermatitis",
+      "children exposed to tobacco smoke",
+      "socially vulnerable groups"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis with variable symptoms; spirometry and FeNO used in many settings; guideline-based assessment per GINA/ERS"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of children",
+    "controlRate": "Moderate to high with structured asthma programs; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to spirometry and structured pediatric asthma care in many member states",
+    "treatmentProtocol": "ICS-based controller therapy and action plans; school and family education; specialist referral for severe asthma",
+    "regionalChallenges": "Care variability and adherence issues in some groups",
+    "strongPoints": "Strong guideline-based pediatric asthma programs and inhaler access"
+  }
+}
+

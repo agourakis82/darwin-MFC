@@ -1,0 +1,53 @@
+{
+  "diseaseId": "sarcopenia",
+  "region": "BR",
+  "diseaseName": "Sarcopenia",
+  "prevalence": {
+    "value": "10-20% in adults >60 years (higher in >80)",
+    "population": "Brazilian older adults",
+    "year": 2024,
+    "source": "EWGSOP-aligned sarcopenia epidemiology syntheses",
+    "trend": "increasing with aging"
+  },
+  "incidence": {
+    "value": "20-40 per 1,000 person-years",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "Sarcopenia cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.03 (older-adult concentrated)",
+    "mortalityRate": "Indirect (falls, disability)",
+    "year": 2024,
+    "source": "IHME/WHO older adult context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "aging",
+      "physical inactivity",
+      "low protein intake",
+      "chronic disease (COPD, HF)",
+      "inflammation",
+      "vitamin D deficiency"
+    ],
+    "vulnerablePopulations": [
+      "frail older adults",
+      "older adults with chronic disease",
+      "institutionalized older adults"
+    ],
+    "diagnosticCriteria": "EWGSOP2: low muscle strength (grip) + low muscle quantity (DXA/BIA) and/or low physical performance (gait speed/SPPB)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; not routinely screened",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of older adults",
+    "controlRate": "Variable; improves with resistance exercise and nutrition support"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "DXA/BIA access limited; many cases clinically recognized via functional decline",
+    "treatmentProtocol": "Resistance training, protein optimization, vitamin D when deficient, and chronic disease management",
+    "regionalChallenges": "Limited access to structured exercise programs and nutrition support",
+    "strongPoints": "Low-cost exercise interventions can be delivered through community/primary care programs"
+  }
+}
+

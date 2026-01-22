@@ -1,0 +1,52 @@
+{
+  "diseaseId": "gastroenterite-aguda",
+  "region": "IN",
+  "diseaseName": "Acute gastroenteritis",
+  "prevalence": {
+    "value": "~15-25% annual symptomatic episodes",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "ICMR and WHO diarrheal disease context",
+    "trend": "decreasing in children with vaccination and sanitation, remains high in vulnerable areas"
+  },
+  "incidence": {
+    "value": "~250-500 per 1,000 person-years (higher in children)",
+    "population": "General population",
+    "year": 2024,
+    "source": "Community and surveillance syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "high in children due to dehydration risk",
+    "mortalityRate": "Low to moderate in vulnerable populations",
+    "year": 2024,
+    "source": "WHO/IHME diarrheal disease burden"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "contaminated food or water",
+      "poor sanitation",
+      "crowding",
+      "daycare exposure",
+      "seasonal outbreaks"
+    ],
+    "vulnerablePopulations": [
+      "children under 5",
+      "older adults",
+      "immunocompromised patients",
+      "low-income rural and urban slum populations"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; stool testing for severe, persistent, or outbreak cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; outbreak-driven surveillance",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of episodes annually",
+    "controlRate": "Moderate; depends on early ORS and care access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care; lab testing mainly in outbreaks or severe cases",
+    "treatmentProtocol": "ORS, zinc in children, IV fluids for severe dehydration; antibiotics only when indicated",
+    "regionalChallenges": "Sanitation gaps and delayed care in rural areas",
+    "strongPoints": "Wide ORS availability and strong child health programs"
+  }
+}

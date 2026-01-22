@@ -1,0 +1,48 @@
+{
+  "diseaseId": "febre-amarela",
+  "region": "IN",
+  "diseaseName": "Yellow Fever",
+  "prevalence": {
+    "value": "no endemic transmission; imported cases are extremely rare",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "WHO / International Health Regulations (IHR) travel guidance",
+    "trend": "stable; risk primarily through travel from endemic countries"
+  },
+  "incidence": {
+    "value": "≈0 (endemic transmission absent)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "IHR reporting and national travel health policies"
+  },
+  "burden": {
+    "dalyPerCapita": "negligible at population level",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD / WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "travel to endemic areas without vaccination",
+      "lack of documentation of yellow fever vaccination for entry requirements"
+    ],
+    "vulnerablePopulations": [
+      "international travelers to endemic areas",
+      "unvaccinated migrants/travelers returning from endemic countries"
+    ],
+    "diagnosticCriteria": "Clinical suspicion in febrile jaundice after travel; confirmation by PCR/serology via reference labs"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "travel-related checks via IHR requirements (vaccination certificate for travelers from endemic areas)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "sporadic imported cases at most",
+    "controlRate": "Prevention via vaccination for travelers; supportive care for severe disease"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Travel history-driven diagnosis; confirmation in reference laboratories when suspected",
+    "treatmentProtocol": "Supportive care; vaccination for travelers to endemic areas per IHR/WHO guidance",
+    "regionalChallenges": "Low clinician familiarity due to rarity and potential delayed recognition in imported cases",
+    "strongPoints": "IHR-linked travel vaccination requirements reduce importation risk"
+  }
+}
+

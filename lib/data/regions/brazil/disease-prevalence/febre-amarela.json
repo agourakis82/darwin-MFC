@@ -1,0 +1,51 @@
+{
+  "diseaseId": "febre-amarela",
+  "region": "BR",
+  "diseaseName": "Febre Amarela",
+  "prevalence": {
+    "value": "rare; focal sylvatic transmission with periodic outbreaks",
+    "population": "Brazilian population (risk highest in endemic/transition areas)",
+    "year": 2024,
+    "source": "Ministério da Saúde (SVSA) / PAHO",
+    "trend": "episodic outbreaks; risk influenced by vaccination coverage and epizootics in primates"
+  },
+  "incidence": {
+    "value": "very low nationally (<0.1 per 100,000/year)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde outbreak reports"
+  },
+  "burden": {
+    "dalyPerCapita": "low nationally; high severity in cases",
+    "mortalityRate": "High case-fatality among severe cases",
+    "year": 2024,
+    "source": "IHME GBD / PAHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "lack of vaccination in risk areas",
+      "forest/rural exposure (sylvatic cycle)",
+      "travel to endemic municipalities",
+      "delayed supportive care for severe cases"
+    ],
+    "vulnerablePopulations": [
+      "unvaccinated travelers to risk areas",
+      "rural workers (forestry/agriculture)",
+      "populations near forest fragments in transition zones"
+    ],
+    "diagnosticCriteria": "Clinical suspicion with jaundice/hemorrhage; confirmation by RT-PCR/serology; surveillance triggered by epizootics and human cases"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; event-based surveillance and outbreak investigation",
+    "treatmentAvailable": true,
+    "estimatedPatients": "sporadic cases; outbreak-dependent",
+    "controlRate": "Prevention relies on vaccination; supportive hospital care for severe disease"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SUS surveillance integrates epizootic monitoring in primates and lab confirmation in reference labs",
+    "treatmentProtocol": "No specific antiviral; supportive ICU care for fulminant hepatitis/bleeding; vaccination for prevention per PNI",
+    "regionalChallenges": "Maintaining high vaccination coverage in expansion areas and rapid response to epizootics",
+    "strongPoints": "Strong national immunization program (PNI) with effective vaccine and established outbreak response protocols"
+  }
+}
+

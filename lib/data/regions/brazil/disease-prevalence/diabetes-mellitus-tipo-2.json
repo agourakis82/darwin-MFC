@@ -1,0 +1,55 @@
+{
+  "diseaseId": "diabetes-mellitus-tipo-2",
+  "region": "BR",
+  "diseaseName": "Diabetes Mellitus Tipo 2 (DM2)",
+  "prevalence": {
+    "value": "9-10%",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "VIGITEL / Sociedade Brasileira de Diabetes (SBD)",
+    "trend": "increasing due to obesity and population aging"
+  },
+  "incidence": {
+    "value": "6-9 per 1,000/year",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "IHME GBD / Brazilian survey extrapolations"
+  },
+  "burden": {
+    "dalyPerCapita": "0.02-0.05",
+    "mortalityRate": "Indirect; elevated via cardiovascular and renal complications",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "obesity and central adiposity",
+      "sedentary lifestyle",
+      "family history",
+      "age >45 years",
+      "history of gestational diabetes",
+      "hypertension and dyslipidemia"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "people with obesity",
+      "low socioeconomic groups",
+      "indigenous and rural populations with limited access",
+      "patients with prior cardiovascular disease"
+    ],
+    "diagnosticCriteria": "Fasting plasma glucose ≥126 mg/dL, HbA1c ≥6.5%, 2h OGTT ≥200 mg/dL, or random glucose ≥200 mg/dL with symptoms; per SBD/ADA-aligned criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic screening in APS; variable by municipality",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~16-20 million",
+    "controlRate": "~45-55% reach glycemic targets; constrained by follow-up capacity and adherence"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS screening with fasting glucose/HbA1c where available; complication screening (retina, kidney, feet) uneven",
+    "treatmentProtocol": "Lifestyle + metformin first-line; add sulfonylurea/insulin via SUS; GLP-1RA/SGLT2i limited in SUS and more common in private care",
+    "regionalChallenges": "Obesity epidemic, delayed complication screening, and unequal access to newer cardioprotective agents in SUS",
+    "strongPoints": "Broad SUS availability of metformin/sulfonylureas/insulin and strong APS platform for chronic care"
+  }
+}
+

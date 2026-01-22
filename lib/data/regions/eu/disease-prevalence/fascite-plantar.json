@@ -1,0 +1,50 @@
+{
+  "diseaseId": "fascite-plantar",
+  "region": "EU",
+  "diseaseName": "Plantar Fasciitis",
+  "prevalence": {
+    "value": "4-7% (adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European musculoskeletal epidemiology syntheses",
+    "trend": "stable to increasing with obesity"
+  },
+  "incidence": {
+    "value": "5-15 per 1,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO Europe musculoskeletal context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "obesity",
+      "prolonged standing",
+      "running/high impact",
+      "tight calf/Achilles"
+    ],
+    "vulnerablePopulations": [
+      "workers with prolonged standing",
+      "people with obesity"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis; imaging reserved for atypical cases; conservative management is standard"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of episodic cases",
+    "controlRate": "Moderate to high with physiotherapy access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Physiotherapy pathways common",
+    "treatmentProtocol": "Stretching, orthotics, activity modification, physiotherapy; injections selectively",
+    "regionalChallenges": "Wait times for physiotherapy in some systems",
+    "strongPoints": "Strong conservative care pathways and access to rehab in many member states"
+  }
+}
+

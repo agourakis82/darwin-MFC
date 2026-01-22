@@ -1,0 +1,50 @@
+{
+  "diseaseId": "fobia-social",
+  "region": "EU",
+  "diseaseName": "Social Anxiety Disorder",
+  "prevalence": {
+    "value": "2-4%",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "WHO Europe / European psychiatric epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "3-6 per 1,000/year",
+    "population": "EU adolescents and young adults",
+    "year": 2024,
+    "source": "European cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.008",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "anxiety traits",
+      "social adversity",
+      "family history",
+      "comorbid depression"
+    ],
+    "vulnerablePopulations": [
+      "adolescents and young adults",
+      "people with comorbid mood disorders"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria; structured assessment common"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10-18 million",
+    "controlRate": "Moderate to high with CBT access; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Psychological therapies are widely integrated in many health systems",
+    "treatmentProtocol": "CBT (exposure-based) and SSRIs; group CBT programs common in some countries",
+    "regionalChallenges": "Wait times for CBT in some systems",
+    "strongPoints": "Broad psychotherapy availability and guideline-based treatment"
+  }
+}
+

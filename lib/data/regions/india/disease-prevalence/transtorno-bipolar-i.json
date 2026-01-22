@@ -1,0 +1,50 @@
+{
+  "diseaseId": "transtorno-bipolar-i",
+  "region": "IN",
+  "diseaseName": "Bipolar I Disorder",
+  "prevalence": {
+    "value": "0.5-0.9%",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR/NMHS + IHME GBD (bipolar disorder) with subtype estimates",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "0.4-1.0 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Bipolar spectrum syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.007-0.02",
+    "mortalityRate": "Indirect; elevated suicide risk",
+    "year": 2024,
+    "source": "IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "sleep disruption",
+      "substance use",
+      "stressful life events"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with comorbid substance use"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11: at least one manic episode"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~7-12 million",
+    "controlRate": "Low to moderate due to treatment gaps and limited follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnosis often in tertiary psychiatry; delays common in rural areas",
+    "treatmentProtocol": "Mood stabilizers and antipsychotics; inpatient care for acute mania; limited psychoeducation availability",
+    "regionalChallenges": "Stigma, specialist shortage, and follow-up/monitoring barriers",
+    "strongPoints": "Availability of affordable generic mood stabilizers and expanding tertiary services"
+  }
+}
+

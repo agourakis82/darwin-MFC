@@ -65,6 +65,74 @@ The entire application state is managed through a single Zustand store with loca
 
 **Important:** State persists to localStorage under the key `rastreamentos-sus-storage`. The `contentMode` toggle affects ALL pages globally and is the central architectural decision of the app.
 
+### Multi-Country Architecture (v2.0.0)
+
+**Status:** Implemented (Phase 1-4 complete, Phase 5-6 pending)
+
+Darwin MFC supports multi-country deployment with region-specific medical data for Brazil (BR), India (IN), and European Union (EU).
+
+**Key Features:**
+- **Region Selection**: User-selectable via RegionSelector component in Header
+- **Auto-Detection**: Automatically detects region from language (pt→BR, hi→IN, others→EU)
+- **Independent from Locale**: Region (medical data) is separate from locale (UI language)
+  - Example: User can view India medical data in Portuguese UI
+- **Regional Overlays**: Medications and diseases have region-specific data overlays
+- **Regulatory Bodies**: ANVISA (Brazil), CDSCO (India), EMA (EU)
+- **Public Health Systems**: SUS (Brazil), Jan Aushadhi (India), NHS (EU varies by member state)
+
+**Components:**
+- `app/components/RegionSelector.tsx`: Flag-based region selector (BR/IN/EU)
+- `app/components/RegionalContextBanner.tsx`: Displays regulatory body and public health system info
+- `app/components/Comparison/ComparisonCard.tsx`: Highlights selected region's guidelines
+
+**Type System:**
+- `lib/types/region.ts`: Core regional types
+  - `Region`: 'BR' | 'IN' | 'EU'
+  - `RegionalMedicationOverlay`: Region-specific medication data
+  - `RegionalDiseaseOverlay`: Region-specific disease prevalence and guidelines
+  - `RegionalOverlayMap<T>`: Type-safe mapping of regions to overlays
+
+- `lib/types/medicamento.ts`: Medication types with regional support
+  - `regionalOverlays?: RegionalOverlayMap<RegionalMedicationOverlay>`
+  - Helper functions: `isAvailableInPublicSystem()`, `getRegionalMedicationData()`
+
+- `lib/types/doenca.ts`: Disease types with regional support
+  - `regionalOverlays?: RegionalOverlayMap<RegionalDiseaseOverlay>`
+  - Helper functions: `getRegionalPrevalence()`, `getRegionalGuideline()`
+
+**Data Files:**
+- `lib/data/regional-terminology.json`: Comprehensive regional medical terminology registry
+- `lib/data/regions/brazil/medications.ts`: Brazil medication overlays (690 medications)
+- `lib/data/regions/india/medications.ts`: India medication overlays (4350+ medications from NLEM 2022)
+- `lib/data/regions/eu/medications.ts`: EU medication overlays
+- `lib/data/regions/disease-prevalence-template.json`: Template for 1,104 regional disease entries
+
+**State Management:**
+```typescript
+// lib/store/appStore.ts
+const selectedRegion = useAppStore((state) => state.selectedRegion); // 'BR' | 'IN' | 'EU'
+const setRegion = useAppStore((state) => state.setRegion);
+```
+
+**Usage Example:**
+```typescript
+import { useAppStore } from '@/lib/store/appStore';
+import { isAvailableInPublicSystem } from '@/lib/types/medicamento';
+
+const selectedRegion = useAppStore((state) => state.selectedRegion);
+const isAvailable = isAvailableInPublicSystem(medication, selectedRegion);
+```
+
+**UI Integration:**
+- Header displays RegionSelector next to LanguageSelector
+- Medication cards show Globe icon when available in selected region's public system
+- Disease detail pages display regional prevalence and guideline references
+- ComparisonCard highlights selected region's screening guidelines with ring-2 border
+
+**Future Work (Phase 5-6):**
+- Phase 5: Translation of regional terminology to all 9 locales
+- Phase 6: Auto-update system via PubMed E-utilities API, ANVISA/CDSCO/EMA APIs, WHO Global Health Observatory
+
 ### Dual Content Architecture
 
 The app's unique feature is the **dual content mode system**:

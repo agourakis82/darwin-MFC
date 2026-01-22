@@ -1,0 +1,51 @@
+{
+  "diseaseId": "vulvovaginite-candidíase",
+  "region": "EU",
+  "diseaseName": "Vulvovaginal Candidiasis (VVC)",
+  "prevalence": {
+    "value": "70-75% lifetime in women; recurrent VVC ~5-8%",
+    "population": "Women",
+    "year": 2024,
+    "source": "European gynecology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "high (episodes common)",
+    "population": "Women of reproductive age",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low; high QOL impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe women's health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "antibiotic use",
+      "pregnancy",
+      "diabetes mellitus",
+      "immunosuppression"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people",
+      "women with diabetes",
+      "women with recurrent VVC"
+    ],
+    "diagnosticCriteria": "Symptoms with microscopy/culture when needed; recurrent/complicated cases require confirmation and longer therapy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high episode burden",
+    "controlRate": "High for uncomplicated cases; recurrent cases require structured management"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to microscopy/culture in many settings",
+    "treatmentProtocol": "Topical azoles or oral fluconazole; longer suppressive therapy for recurrent VVC; evaluate diabetes and other drivers",
+    "regionalChallenges": "Antifungal resistance in some recurrent cases and self-treatment without confirmation",
+    "strongPoints": "Strong diagnostic access and guideline-driven management pathways"
+  }
+}
+

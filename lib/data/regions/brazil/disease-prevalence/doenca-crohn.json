@@ -1,0 +1,51 @@
+{
+  "diseaseId": "doenca-crohn",
+  "region": "BR",
+  "diseaseName": "Doenca de Crohn",
+  "prevalence": {
+    "value": "~20-60 per 100,000",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Gastroenterology epidemiology syntheses; Brazilian IBD registries",
+    "trend": "increasing with urbanization and improved diagnosis"
+  },
+  "incidence": {
+    "value": "~1-4 per 100,000/year",
+    "population": "General population",
+    "year": 2024,
+    "source": "IBD cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate due to chronic disability and complications",
+    "mortalityRate": "Low to moderate (complications and comorbidity)",
+    "year": 2024,
+    "source": "IHME/GBD IBD context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "family history",
+      "smoking",
+      "urban lifestyle",
+      "westernized diet",
+      "dysbiosis and immune factors"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "patients with family history",
+      "smokers"
+    ],
+    "diagnosticCriteria": "Clinical symptoms plus endoscopy with biopsy; imaging (MR enterography/CT) for extent; exclude infection"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands to low hundreds of thousands",
+    "controlRate": "Moderate; improves with access to biologics and specialist care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Colonoscopy and imaging available in tertiary centers; delays in some regions",
+    "treatmentProtocol": "Corticosteroids for flares, immunomodulators (azathioprine), biologics (anti-TNF) via SUS pathways; surgery for complications",
+    "regionalChallenges": "Limited access to biologics and specialist IBD care outside major centers",
+    "strongPoints": "Growing IBD centers and availability of essential immunosuppressants"
+  }
+}

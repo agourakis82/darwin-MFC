@@ -1,0 +1,25 @@
+{
+  "diseaseId": "fibromialgia",
+  "region": "EU",
+  "diseaseName": "Fibromyalgia",
+  "prevalence": {"value": "2.4%", "population": "EU adults (~447 million)", "year": 2024, "source": "EULAR 2023 update", "trend": "increasing recognition"},
+  "incidence": {"value": "0.4 per 1000", "population": "EU adults", "year": 2024, "source": "WHO Europe estimates"},
+  "burden": {"dalyPerCapita": "0.015", "mortalityRate": "Negligible", "year": 2024, "source": "WHO Europe"},
+  "epidemiology": {
+    "riskFactors": ["Female sex", "Family history", "Physical or emotional trauma", "Infections or autoimmune conditions", "Sleep disturbances", "Genetic predisposition"],
+    "vulnerablePopulations": ["Women (7-9x higher)", "Adults 40-55 years", "Individuals with comorbid rheumatic diseases"],
+    "diagnosticCriteria": "ACR 2016 criteria, EULAR recommendations"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "10.7 million",
+    "controlRate": "45% moderate with multimodal approach"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EULAR evidence-based recommendations, ACR 2016 criteria widely adopted",
+    "treatmentProtocol": "Multimodal: duloxetine, pregabalin, amitriptyline; Multidisciplinary pain management, CBT, graded exercise therapy, patient education",
+    "regionalChallenges": ["Diagnostic delays", "stigma and disbelief from clinicians", "treatment heterogeneity across countries", "high disability burden"],
+    "strongPoints": ["EULAR guidelines", "multidisciplinary pain clinics", "CBT widely available", "patient support groups", "research networks"]
+  }
+}

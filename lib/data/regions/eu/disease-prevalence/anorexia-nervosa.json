@@ -1,0 +1,53 @@
+{
+  "diseaseId": "anorexia-nervosa",
+  "region": "EU",
+  "diseaseName": "Anorexia Nervosa",
+  "prevalence": {
+    "value": "0.5-1.0% (higher in adolescent girls and young women)",
+    "population": "EU adolescents and young adults",
+    "year": 2024,
+    "source": "European eating disorder epidemiology syntheses / WHO Europe",
+    "trend": "stable to increasing in some countries"
+  },
+  "incidence": {
+    "value": "2-8 per 10,000/year",
+    "population": "Adolescents and young adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.006",
+    "mortalityRate": "Elevated vs general population (medical complications and suicide)",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "adolescence",
+      "body image pressures",
+      "perfectionism/anxiety traits",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "adolescent girls",
+      "young women",
+      "athletes/dancers",
+      "patients with comorbid anxiety/depression"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria with medical assessment; structured eating disorder services common in many countries"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; earlier detection via school and primary care varies by country",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands to >1 million across EU",
+    "controlRate": "Moderate with multidisciplinary treatment access; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist eating disorder services and structured referral pathways in many member states",
+    "treatmentProtocol": "Multidisciplinary care (medical, nutrition, psychotherapy) with family-based therapy for adolescents; inpatient stabilization for severe cases",
+    "regionalChallenges": "Wait times for specialist services in some countries",
+    "strongPoints": "Established multidisciplinary eating disorder programs in many health systems"
+  }
+}
+

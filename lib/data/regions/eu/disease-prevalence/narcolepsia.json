@@ -1,0 +1,49 @@
+{
+  "diseaseId": "narcolepsia",
+  "region": "EU",
+  "diseaseName": "Narcolepsy",
+  "prevalence": {
+    "value": "25-60 per 100,000",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European sleep medicine epidemiology syntheses",
+    "trend": "stable; improved detection with specialist services"
+  },
+  "incidence": {
+    "value": "0.7-2 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0004-0.0012",
+    "mortalityRate": "Negligible (indirect accident risk)",
+    "year": 2024,
+    "source": "IHME/WHO Europe context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic susceptibility",
+      "autoimmune mechanisms (type 1)",
+      "post-infectious triggers (association)"
+    ],
+    "vulnerablePopulations": [
+      "adolescents and young adults",
+      "patients with delayed referral to sleep clinics"
+    ],
+    "diagnosticCriteria": "PSG + MSLT confirmation with SOREMP criteria; CSF hypocretin testing in specialized centers; European sleep medicine pathways"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~120,000-250,000",
+    "controlRate": "Moderate to high with access to sleep clinics and medications; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Broad access to PSG/MSLT in specialist centers",
+    "treatmentProtocol": "Wake-promoting agents and anticataplectic therapy; structured follow-up in sleep clinics",
+    "regionalChallenges": "Access variability across member states and medication reimbursement differences",
+    "strongPoints": "Strong specialist sleep medicine infrastructure in many countries"
+  }
+}
+

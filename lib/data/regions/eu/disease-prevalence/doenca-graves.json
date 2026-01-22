@@ -1,0 +1,50 @@
+{
+  "diseaseId": "doenca-graves",
+  "region": "EU",
+  "diseaseName": "Graves disease",
+  "prevalence": {
+    "value": "~0.5-1.0% (adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European Thyroid Association context",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~20-40 per 100,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Endocrinology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; morbidity from hyperthyroidism and ophthalmopathy",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "WHO Europe/IHME endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "family history of autoimmune disease",
+      "smoking",
+      "postpartum period"
+    ],
+    "vulnerablePopulations": [
+      "women 20-50 years",
+      "smokers",
+      "patients with other autoimmune disease"
+    ],
+    "diagnosticCriteria": "Suppressed TSH with elevated free T4/T3; positive TRAb; uptake scan when needed"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions",
+    "controlRate": "High with access to antithyroid therapy and definitive treatment"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Lab testing and uptake scans widely available",
+    "treatmentProtocol": "Antithyroid drugs, beta-blockers, radioiodine or surgery; ophthalmopathy management",
+    "regionalChallenges": "Smoking-related orbitopathy and adherence issues",
+    "strongPoints": "Comprehensive endocrine care pathways"
+  }
+}

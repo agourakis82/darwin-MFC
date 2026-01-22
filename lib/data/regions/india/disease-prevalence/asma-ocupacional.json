@@ -1,0 +1,52 @@
+{
+  "diseaseId": "asma-ocupacional",
+  "region": "IN",
+  "diseaseName": "Occupational Asthma",
+  "prevalence": {
+    "value": "~0.3-1% (workforce); ~10-15% of adult asthma attributable to work",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "Occupational asthma epidemiology syntheses; WHO occupational risk context",
+    "trend": "stable; underdiagnosed due to limited occupational medicine services"
+  },
+  "incidence": {
+    "value": "~0.2-0.6 per 1,000 workers/year (high-risk sectors)",
+    "population": "Workers in high-exposure jobs",
+    "year": 2024,
+    "source": "Occupational cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall; high productivity loss and chronic asthma morbidity for affected workers",
+    "mortalityRate": "Low; severe uncontrolled asthma risk exists",
+    "year": 2024,
+    "source": "IHME/WHO asthma burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "sensitizers (flour, latex, isocyanates)",
+      "irritants (welding fumes, cleaning agents)",
+      "poor ventilation and PPE",
+      "smoking",
+      "pre-existing atopy"
+    ],
+    "vulnerablePopulations": [
+      "bakers/food industry workers",
+      "healthcare workers",
+      "industrial workers (paints/chemicals)",
+      "informal workers without occupational health coverage"
+    ],
+    "diagnosticCriteria": "Work-related symptom pattern plus objective confirmation (spirometry/peak flow variation across work-rest cycles); specialist evaluation for sensitizer testing when possible"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited; workplace surveillance varies widely",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands (subset of adult asthma)",
+    "controlRate": "Variable; best with exposure control and guideline-based asthma therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often clinically suspected; confirmation limited outside tertiary centers",
+    "treatmentProtocol": "Exposure reduction/removal, workplace controls, PPE; ICS-based asthma therapy; documentation for occupational compensation when applicable",
+    "regionalChallenges": "Informal workforce barriers, underdiagnosis, limited occupational medicine services",
+    "strongPoints": "High-impact prevention when exposures are controlled; standard asthma medications are widely available"
+  }
+}

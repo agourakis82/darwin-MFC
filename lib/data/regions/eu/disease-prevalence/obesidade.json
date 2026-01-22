@@ -1,0 +1,52 @@
+{
+  "diseaseId": "obesidade",
+  "region": "EU",
+  "diseaseName": "Obesity",
+  "prevalence": {
+    "value": "23% (BMI ≥30 kg/m²)",
+    "population": "EU adults (18+ years, ~360 million)",
+    "year": 2024,
+    "source": "WHO European Regional Obesity Report 2022; Eurostat Health Interview Survey",
+    "trend": "Increasing (from 17% in 2010)"
+  },
+  "incidence": {
+    "value": "1.5-2% new cases annually",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "WHO Europe; European Association for the Study of Obesity (EASO) estimates"
+  },
+  "burden": {
+    "dalyPerCapita": "150-200 DALYs per 1,000 population attributable to obesity",
+    "mortalityRate": "2.8% of total deaths (indirect via comorbidities)",
+    "year": 2024,
+    "source": "Global Burden of Disease Study 2021 (IHME); WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Unhealthy diet high in sugars and fats",
+      "Physical inactivity",
+      "Genetic predisposition",
+      "Low socioeconomic status",
+      "Urbanization and sedentary lifestyles"
+    ],
+    "vulnerablePopulations": [
+      "Low-income and rural populations",
+      "Children and adolescents (15-20% prevalence)",
+      "Ethnic minorities (e.g., higher rates in Southern and Eastern Europe)",
+      "Women in certain age groups (post-menopausal)"
+    ],
+    "diagnosticCriteria": "BMI ≥ 30 kg/m² for adults; WHO classification (Class I: 30-34.9, Class II: 35-39.9, Class III: ≥40)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Routine BMI screening in primary care; coverage 60-80% in Western EU, lower (40-60%) in Eastern EU",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~82 million adults",
+    "controlRate": "20-30% achieve 5-10% sustained weight loss with interventions"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Standard WHO BMI criteria applied uniformly across EU member states",
+    "treatmentProtocol": "Multidisciplinary: lifestyle modifications (diet/exercise), pharmacotherapy (e.g., GLP-1 agonists), bariatric surgery for severe cases; follows EASO guidelines",
+    "regionalChallenges": "Socioeconomic disparities (higher prevalence in Eastern/Southern EU, e.g., 25-30% vs. 15-20% in Northern); rising childhood obesity (WHO target: halt increase by 2025); food environment influences",
+    "strongPoints": "WHO European Action Plan for the Prevention and Control of NCDs (2016-2025) includes obesity targets; EU Joint Action on Nutrition and Physical Activity; national policies in countries like Denmark and Finland with high screening/treatment access"
+  }
+}

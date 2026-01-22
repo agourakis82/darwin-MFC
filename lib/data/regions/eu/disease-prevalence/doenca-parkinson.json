@@ -1,0 +1,52 @@
+{
+  "diseaseId": "doenca-parkinson",
+  "region": "EU",
+  "diseaseName": "Parkinson's Disease",
+  "prevalence": {
+    "value": "~0.3% overall; 1-2% in adults >65 years",
+    "population": "EU population (~447 million)",
+    "year": 2024,
+    "source": "European neurological epidemiology syntheses / IHME GBD estimates",
+    "trend": "increasing due to aging demographics and improved survival"
+  },
+  "incidence": {
+    "value": "~15-25 per 100,000/year",
+    "population": "EU population",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.007",
+    "mortalityRate": "Increases with age; indirect mortality common",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "advanced age",
+      "male sex",
+      "genetic susceptibility",
+      "environmental exposures (pesticides/solvents)",
+      "history of traumatic brain injury"
+    ],
+    "vulnerablePopulations": [
+      "older adults (>70 years)",
+      "people with limited access to specialist care in underserved regions",
+      "patients with frailty and multimorbidity"
+    ],
+    "diagnosticCriteria": "MDS clinical diagnostic criteria; imaging (DaTscan/MRI) used when diagnostic uncertainty exists; multidisciplinary staging and follow-up"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; high access to specialist diagnosis in many member states",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1.2-1.8 million",
+    "controlRate": "Generally good symptom control with medication and multidisciplinary care; advanced therapy access is common in many countries"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Specialist neurology and movement disorder clinics widely available; standardized diagnostic pathways",
+    "treatmentProtocol": "Levodopa-based therapy, MAO-B inhibitors, dopamine agonists; multidisciplinary rehab; DBS and infusion therapies available in many tertiary centers",
+    "regionalChallenges": "Rising burden with aging and variability in access between member states and rural vs urban settings",
+    "strongPoints": "Strong specialist networks and access to advanced therapies and multidisciplinary rehabilitation"
+  }
+}
+

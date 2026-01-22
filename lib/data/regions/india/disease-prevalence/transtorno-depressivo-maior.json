@@ -1,0 +1,55 @@
+{
+  "diseaseId": "transtorno-depressivo-maior",
+  "region": "IN",
+  "diseaseName": "Major Depressive Disorder (MDD)",
+  "prevalence": {
+    "value": "3-5%",
+    "population": "Indian adults (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR/NMHS + IHME GBD (MDD)",
+    "trend": "increasing recognition with urbanization; underdiagnosis persists"
+  },
+  "incidence": {
+    "value": "15-25 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "IHME GBD context"
+  },
+  "burden": {
+    "dalyPerCapita": "0.02-0.05",
+    "mortalityRate": "Indirect; suicide risk and comorbidity effects",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poverty and chronic stress",
+      "female sex",
+      "trauma and adverse childhood experiences",
+      "chronic medical illness",
+      "substance use",
+      "social isolation"
+    ],
+    "vulnerablePopulations": [
+      "women",
+      "young adults",
+      "rural populations with limited services",
+      "patients with chronic diseases",
+      "postpartum people"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria; somatic presentations common; exclude bipolar disorder and medical mimics"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; treatment gap remains large",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~40-60 million",
+    "controlRate": "Low to moderate due to limited access to psychotherapy and specialist care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care detection is variable; diagnosis often delayed; services concentrated in tertiary centers",
+    "treatmentProtocol": "SSRIs and counseling/CBT where available; telepsychiatry and community programs expanding under NMHP",
+    "regionalChallenges": "High stigma, shortage of professionals, and out-of-pocket costs",
+    "strongPoints": "Affordable generic antidepressants and expanding national mental health initiatives"
+  }
+}
+

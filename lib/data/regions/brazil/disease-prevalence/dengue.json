@@ -1,0 +1,54 @@
+{
+  "diseaseId": "dengue",
+  "region": "BR",
+  "diseaseName": "Dengue",
+  "prevalence": {
+    "value": "highly variable; 0.5-2.0% annual incidence in outbreak years",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde (SINAN/InfoDengue) / Fiocruz",
+    "trend": "increasing outbreak magnitude with climate variability, urbanization, and expanding Aedes habitat"
+  },
+  "incidence": {
+    "value": "5-20 per 1,000/year (outbreak-dependent)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "SINAN / SVSA"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0005-0.002 (outbreak-dependent)",
+    "mortalityRate": "Low overall; increases in severe dengue during large outbreaks",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) / PAHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Aedes aegypti exposure in urban areas",
+      "standing water and inadequate sanitation",
+      "prior dengue infection (risk for severe dengue with heterologous serotype)",
+      "high-density housing",
+      "limited vector control coverage"
+    ],
+    "vulnerablePopulations": [
+      "children and adolescents",
+      "older adults and people with comorbidities",
+      "pregnant people",
+      "peri-urban communities with inadequate waste management",
+      "municipalities with recurrent outbreaks"
+    ],
+    "diagnosticCriteria": "Clinical case definition with warning signs; confirmation by NS1 antigen, RT-PCR (early), or IgM serology; classification per Ministério da Saúde dengue guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; syndromic surveillance and lab confirmation in priority cases/outbreaks",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands to millions/year (outbreak-dependent)",
+    "controlRate": "Most recover with supportive care; severe dengue outcomes depend on early recognition and referral"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS triage for warning signs; referral pathways to UPA/hospital for severe dengue; lab confirmation expanded during outbreaks",
+    "treatmentProtocol": "Supportive care with careful fluid management; avoid NSAIDs; platelet transfusion not routine; ICU for shock/bleeding per national guidance",
+    "regionalChallenges": "Overwhelmed emergency services during outbreaks, heterogeneous municipal vector control, and underreporting in some regions",
+    "strongPoints": "National surveillance (SINAN) and strong clinical protocols for early warning sign management within SUS"
+  }
+}
+

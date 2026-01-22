@@ -1,0 +1,54 @@
+{
+  "diseaseId": "incontinencia-urinaria-idoso",
+  "region": "BR",
+  "diseaseName": "Incontinência Urinária no Idoso",
+  "prevalence": {
+    "value": "15-30% (older adults; higher in women and institutionalized)",
+    "population": "Brazilian adults >65 years",
+    "year": 2024,
+    "source": "Geriatrics/urology epidemiology syntheses",
+    "trend": "increasing with aging and multimorbidity"
+  },
+  "incidence": {
+    "value": "20-40 per 1,000 person-years",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "Geriatric cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.005-0.02 (older-adult concentrated)",
+    "mortalityRate": "Indirect (falls, UTIs, skin breakdown)",
+    "year": 2024,
+    "source": "IHME/WHO older adult context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "pelvic floor weakness",
+      "BPH and LUTS",
+      "cognitive impairment",
+      "mobility impairment",
+      "polypharmacy (diuretics)"
+    ],
+    "vulnerablePopulations": [
+      "older women",
+      "frail older adults",
+      "older adults with dementia",
+      "institutionalized older adults"
+    ],
+    "diagnosticCriteria": "Clinical assessment with bladder diary, urinalysis, post-void residual when indicated; classify stress/urge/mixed/overflow; exclude UTI and medications"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; often not reported unless asked",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of older adults",
+    "controlRate": "Variable; improved with behavioral therapy and pelvic floor rehab"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS can diagnose; urology referral for complicated cases",
+    "treatmentProtocol": "Lifestyle and bladder training, pelvic floor exercises, manage constipation and meds; antimuscarinics/beta-3 agonists when available; treat BPH/overflow contributors",
+    "regionalChallenges": "Limited access to pelvic floor physiotherapy and stigma limiting reporting",
+    "strongPoints": "Behavioral interventions can be delivered in primary care"
+  }
+}
+

@@ -1,0 +1,11 @@
+{
+  "diseaseId": "rinite-alergica",
+  "region": "EU",
+  "diseaseName": "Allergic Rhinitis",
+  "prevalence": {"value": "25%", "population": "EU population (~447 million)", "year": 2024, "source": "EAACI/WHO Europe", "trend": "Stable to increasing due to environmental factors"},
+  "incidence": {"value": "4-6% new cases annually", "population": "EU population (~447 million)", "year": 2024, "source": "EAACI Guidelines 2023"},
+  "burden": {"dalyPerCapita": "0.2-0.5 per 1,000 population", "mortalityRate": "<0.1 per 100,000", "year": 2024, "source": "Global Burden of Disease Study 2021 (IHME), adapted for EU by EAACI"},
+  "epidemiology": {"riskFactors": ["Genetic predisposition", "Exposure to aeroallergens (pollen, dust mites, pet dander)", "Air pollution and urbanization", "Climate change extending pollen seasons"], "vulnerablePopulations": ["Children and adolescents", "Individuals with concomitant asthma or atopic dermatitis", "Urban dwellers in high-pollution areas"], "diagnosticCriteria": "Clinical symptoms (sneezing, nasal itching, rhinorrhea, congestion) lasting >1 hour on most days for >1 year, confirmed by positive skin prick test or serum-specific IgE to allergens (ARIA/EAACI guidelines)."},
+  "publicHealthSystem": {"screeningCoverage": "No routine population screening; symptom-based diagnosis", "treatmentAvailable": true, "estimatedPatients": "Approximately 112 million", "controlRate": "50-70% symptom control with treatment"},
+  "regionalSpecificities": {"diagnosisCriteria": "Standardized per ARIA/EAACI guidelines across EU member states", "treatmentProtocol": "Stepwise: intranasal corticosteroids as first-line, oral/intranasal antihistamines, allergen immunotherapy for severe cases (EAACI recommendations)", "regionalChallenges": "Rising prevalence from climate-driven pollen increases; access disparities in rural/Eastern EU vs. urban/Western EU", "strongPoints": "High availability of over-the-counter treatments and specialized allergy centers in most countries"}
+}

@@ -1,0 +1,53 @@
+{
+  "diseaseId": "asma-infantil",
+  "region": "IN",
+  "diseaseName": "Childhood Asthma",
+  "prevalence": {
+    "value": "6-10% (children)",
+    "population": "Indian children and adolescents",
+    "year": 2024,
+    "source": "ICMR/pediatric respiratory epidemiology syntheses",
+    "trend": "increasing in urban areas with air pollution"
+  },
+  "incidence": {
+    "value": "5-10 per 1,000/year (new diagnoses)",
+    "population": "Children",
+    "year": 2024,
+    "source": "Pediatric asthma cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.006-0.02 (pediatric burden concentrated)",
+    "mortalityRate": "Low but higher where controller access is limited",
+    "year": 2024,
+    "source": "IHME/WHO asthma context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "air pollution and biomass smoke",
+      "family history of atopy",
+      "allergen exposure",
+      "viral-induced wheeze",
+      "tobacco smoke exposure"
+    ],
+    "vulnerablePopulations": [
+      "urban children exposed to high PM2.5",
+      "children in biomass-using households",
+      "children with allergic rhinitis/atopic dermatitis",
+      "low-income families"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis with recurrent wheeze/cough; spirometry where available; response to bronchodilator/controller therapy; rule out TB and other causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of children",
+    "controlRate": "Low to moderate due to inhaler access gaps and adherence issues"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often clinical; spirometry limited; many treated intermittently",
+    "treatmentProtocol": "ICS controller therapy, SABA reliever; education and trigger avoidance; referral for severe asthma",
+    "regionalChallenges": "High air pollution, poor inhaler adherence, and limited access to specialist pediatric pulmonology",
+    "strongPoints": "Availability of affordable generic inhalers and expanding child health services"
+  }
+}
+

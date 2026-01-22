@@ -1,0 +1,50 @@
+{
+  "diseaseId": "hipotireoidismo-subclinico",
+  "region": "IN",
+  "diseaseName": "Subclinical hypothyroidism",
+  "prevalence": {
+    "value": "~4-10% (adults; higher in women and older adults)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "Endocrine Society of India context and epidemiology syntheses",
+    "trend": "stable; detection increases with routine TSH testing"
+  },
+  "incidence": {
+    "value": "~3-6 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Endocrinology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low; potential progression to overt hypothyroidism",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO/IHME endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "older age",
+      "autoimmune thyroiditis",
+      "iodine imbalance",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "women >50 years",
+      "patients with autoimmune disease"
+    ],
+    "diagnosticCriteria": "Elevated TSH with normal free T4; repeat testing and assess thyroid antibodies"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; testing in symptomatic or high-risk patients",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "High with monitoring and selective treatment"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "TSH testing widely available in urban centers",
+    "treatmentProtocol": "Observation for mild cases; levothyroxine for symptomatic, pregnant, or high TSH",
+    "regionalChallenges": "Overtreatment and follow-up gaps",
+    "strongPoints": "Low-cost levothyroxine widely available"
+  }
+}

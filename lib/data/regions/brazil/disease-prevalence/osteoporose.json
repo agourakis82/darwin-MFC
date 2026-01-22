@@ -1,0 +1,25 @@
+{
+  "diseaseId": "osteoporose",
+  "region": "BR",
+  "diseaseName": "Osteoporose",
+  "prevalence": {"value": "18%", "population": "Brazilian adults >50 years", "year": 2024, "source": "SOBEMOM and DataSUS", "trend": "increasing due to aging population"},
+  "incidence": {"value": "6 per 1000", "population": "Brazilian adults >50", "year": 2024, "source": "ABRASSO"},
+  "burden": {"dalyPerCapita": "0.002", "mortalityRate": "25 per 100,000 - related to hip fractures", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Advanced age (>50 years)", "Female sex (postmenopausal)", "Vitamin D deficiency", "Low calcium intake", "Sedentary lifestyle", "Family history of fractures"],
+    "vulnerablePopulations": ["Postmenopausal women", "Elderly >65 years", "People with low calcium intake", "Urban populations with limited sun exposure"],
+    "diagnosticCriteria": "DXA T-score ≤ -2.5 per WHO criteria, SOBEMOM guidelines"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited DXA access, ~15-20% coverage in high-risk groups",
+    "treatmentAvailable": true,
+    "estimatedPatients": "10.5 million",
+    "controlRate": "25% adequately treated due to underdiagnosis"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "DXA scanning per SOBEMOM guidelines, FRAX tool adaptation for Brazil",
+    "treatmentProtocol": "Calcium + vitamin D supplementation via SUS, bisphosphonates for diagnosed cases, fall prevention programs",
+    "regionalChallenges": "Limited DXA availability outside major cities, underdiagnosis, vitamin D deficiency despite tropical climate",
+    "strongPoints": "SOBEMOM national guidelines, SUS provision of basic medications (calcium, vitamin D, alendronate)"
+  }
+}

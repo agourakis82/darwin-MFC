@@ -12,6 +12,7 @@
  */
 
 import { Citation } from './references';
+import type { RegionalDiseaseOverlay, RegionalOverlayMap } from './region';
 
 // =============================================================================
 // CATEGORIAS DE DOENÇAS
@@ -290,6 +291,15 @@ export interface Doenca {
   
   /** Tags para busca */
   tags?: string[];
+
+  // ===========================================================================
+  // REGIONAL OVERLAYS (Multi-Country Support)
+  // ===========================================================================
+  // Enable region-specific disease information (Brazil/India/EU)
+  // Including prevalence data, treatment guidelines, screening recommendations
+
+  /** Regional-specific disease data (Brazil, India, EU) */
+  regionalOverlays?: RegionalOverlayMap<RegionalDiseaseOverlay>;
 }
 
 // =============================================================================
@@ -331,12 +341,12 @@ export function getDoencasByCategoria(doencas: Doenca[]): DoencasByCategoria[] {
 }
 
 export function searchDoencasByCode(
-  doencas: Doenca[], 
-  code: string, 
+  doencas: Doenca[],
+  code: string,
   type: 'ciap2' | 'cid10' | 'both' = 'both'
 ): Doenca[] {
   const normalizedCode = code.toUpperCase().trim();
-  
+
   return doencas.filter(doenca => {
     if (type === 'ciap2' || type === 'both') {
       if (doenca.ciap2.some(c => c.toUpperCase().includes(normalizedCode))) {
@@ -350,5 +360,55 @@ export function searchDoencasByCode(
     }
     return false;
   });
+}
+
+/**
+ * Get regional disease data for a specific region
+ * @param doenca Base disease/condition
+ * @param region Target region (BR, IN, EU)
+ * @returns Regional disease overlay if available, null otherwise
+ */
+export function getRegionalDiseaseData(
+  doenca: Doenca,
+  region: 'BR' | 'IN' | 'EU'
+): RegionalDiseaseOverlay | null {
+  if (!doenca.regionalOverlays) {
+    return null;
+  }
+  return doenca.regionalOverlays[region] || null;
+}
+
+/**
+ * Get regional prevalence data for a disease
+ * @param doenca Base disease/condition
+ * @param region Target region
+ * @returns Prevalence data if available, null otherwise
+ */
+export function getRegionalPrevalence(
+  doenca: Doenca,
+  region: 'BR' | 'IN' | 'EU'
+): { value: string; source: string; year: number } | null {
+  const regionalData = getRegionalDiseaseData(doenca, region);
+  if (!regionalData) {
+    return null;
+  }
+  return regionalData.prevalence || null;
+}
+
+/**
+ * Get regional treatment guidelines for a disease
+ * @param doenca Base disease/condition
+ * @param region Target region
+ * @returns Guideline reference if available, null otherwise
+ */
+export function getRegionalGuideline(
+  doenca: Doenca,
+  region: 'BR' | 'IN' | 'EU'
+): { name: string; organization: string; url?: string; year: number } | null {
+  const regionalData = getRegionalDiseaseData(doenca, region);
+  if (!regionalData) {
+    return null;
+  }
+  return regionalData.guidelineReference || null;
 }
 

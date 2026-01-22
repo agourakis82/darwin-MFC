@@ -1,0 +1,52 @@
+{
+  "diseaseId": "pneumonia-comunitaria",
+  "region": "BR",
+  "diseaseName": "Pneumonia Adquirida na Comunidade (PAC)",
+  "prevalence": {
+    "value": "1.2% (annual point prevalence, including community-acquired pneumonia [CAP] at 1.0% and hospital-acquired pneumonia [HAP] at 0.2%)",
+    "population": "215 million (total Brazilian population)",
+    "year": 2024,
+    "source": "DataSUS/SIM and Ministério da Saúde estimates, extrapolated from 2022 hospitalization data",
+    "trend": "Stable with slight decline in CAP due to pneumococcal vaccination (PCV13 coverage >90% in children)"
+  },
+  "incidence": {
+    "value": "12.5 per 1,000 population (CAP: 10.5 per 1,000; HAP: 2.0 per 1,000 hospitalized patients)",
+    "population": "215 million",
+    "year": 2024,
+    "source": "Global Burden of Disease Study 2019 (IHME) adjusted for Brazilian DATASUS 2023 data"
+  },
+  "burden": {
+    "dalyPerCapita": "0.015 DALYs per capita (lower respiratory infections including pneumonia)",
+    "mortalityRate": "18.5 per 100,000 population (age-standardized)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease 2021 update, with DATASUS mortality registry"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Smoking and air pollution exposure",
+      "Age extremes (children <5 years and adults >65 years)",
+      "Comorbidities (COPD, HIV/AIDS, diabetes)",
+      "Malnutrition and overcrowding (especially in CAP)",
+      "Nosocomial factors like mechanical ventilation (for HAP)"
+    ],
+    "vulnerablePopulations": [
+      "Indigenous communities in Amazon region",
+      "Elderly in urban favelas",
+      "Children under 5 in Northeast Brazil",
+      "Immunocompromised patients in hospital settings (HAP)"
+    ],
+    "diagnosticCriteria": "Clinical symptoms (fever, cough, dyspnea) + radiological evidence of pulmonary infiltrate per Brazilian Thoracic Society guidelines; microbiological confirmation for severe cases (CAP vs HAP distinction based on onset >48 hours post-admission for HAP)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "No routine screening; symptomatic diagnosis via SUS (Sistema Único de Saúde) primary care (coverage ~70% in urban areas)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "2.7 million new cases annually (based on incidence rate)",
+    "controlRate": "Antibiotic stewardship ~60%; pneumococcal vaccine coverage 85% in target groups (children and elderly)"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Adapted WHO guidelines with emphasis on rapid antigen tests for Streptococcus pneumoniae in SUS facilities; HAP surveillance mandatory in ICUs per ANVISA",
+    "treatmentProtocol": "Empirical antibiotics (amoxicillin-clavulanate for CAP; piperacillin-tazobactam for HAP) per Ministério da Saúde protocols; oxygen and supportive care widely available in SUS hospitals",
+    "regionalChallenges": "Higher incidence in North/Northeast (up to 15 per 1,000) due to socioeconomic disparities, limited access in rural areas, and antimicrobial resistance (e.g., 30% MRSA in HAP); seasonal peaks during rainy season",
+    "strongPoints": "Universal SUS coverage ensures free treatment; national vaccination program reduced pediatric CAP by 40% since 2010; robust DATASUS surveillance for outbreaks"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "diseaseId": "hipertireoidismo-subclinico",
+  "region": "BR",
+  "diseaseName": "Hipertireoidismo subclinico",
+  "prevalence": {
+    "value": "~0.5-2% (adults; higher in older adults)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBEM and endocrine epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~0.5-1.5 per 1,000 adults/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Endocrinology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low; risk of AF and bone loss in older adults",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "IHME/GBD endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autonomous thyroid nodules",
+      "excess thyroid hormone replacement",
+      "Graves disease",
+      "older age"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients on levothyroxine"
+    ],
+    "diagnosticCriteria": "Low TSH with normal free T4/T3; repeat testing and evaluate etiology"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening; detected via TSH testing",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands to low millions",
+    "controlRate": "High with monitoring and dose adjustment"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "TSH testing widely available; imaging in referral centers",
+    "treatmentProtocol": "Observation or treatment in high-risk (older, AF risk); adjust thyroid hormone dose; consider radioiodine for nodular disease",
+    "regionalChallenges": "Overtreatment and limited access to radioiodine in some regions",
+    "strongPoints": "Clear management guidelines and access to monitoring"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "diseaseId": "transtorno-ansiedade-generalizada",
+  "region": "IN",
+  "diseaseName": "Generalized Anxiety Disorder (GAD)",
+  "prevalence": {"value": "2.0%", "population": "Indian adults (~1.4 billion)", "year": 2024, "source": "ICMR/NMHS with GAD share estimates", "trend": "increasing due to urbanization and stress"},
+  "incidence": {"value": "0.8%", "population": "Indian adults", "year": 2024, "source": "IHME GBD estimates (adapted)"},
+  "burden": {"dalyPerCapita": "0.008", "mortalityRate": "Negligible", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {"riskFactors": ["Chronic stress", "Genetic predisposition", "Trauma", "Socioeconomic disadvantage", "Urbanization"], "vulnerablePopulations": ["Women", "Urban residents", "Low socioeconomic groups", "Students and working professionals", "Post-COVID populations"], "diagnosticCriteria": "DSM-5/ICD-11 GAD: excessive worry for ≥6 months with associated symptoms and functional impairment"},
+  "publicHealthSystem": {"screeningCoverage": "Low (<10%)", "treatmentAvailable": true, "estimatedPatients": "~52 million", "controlRate": "10-20% (due to 80-90% treatment gap)"},
+  "regionalSpecificities": {"diagnosisCriteria": "Adapted DSM-5/ICD-11 with cultural considerations for somatic symptoms", "treatmentProtocol": "Cognitive Behavioral Therapy (CBT) and SSRIs; National Mental Health Programme guidelines", "regionalChallenges": "High stigma, shortage of mental health professionals (0.75 per 100,000), rural-urban disparities, 80-90% treatment gap", "strongPoints": "Expanding telepsychiatry, NMHP initiatives, growing awareness post-COVID"}
+}

@@ -1,0 +1,54 @@
+{
+  "diseaseId": "hepatite-b",
+  "region": "IN",
+  "diseaseName": "Hepatitis B",
+  "prevalence": {
+    "value": "~2-4% chronic HBV (HBsAg prevalence)",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "ICMR / WHO hepatitis estimates",
+    "trend": "stable to slowly decreasing with infant vaccination scale-up; higher prevalence in some tribal and high-risk groups"
+  },
+  "incidence": {
+    "value": "variable; ongoing adult transmission in risk networks",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "WHO / national hepatitis programme estimates"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.008",
+    "mortalityRate": "Indirect via cirrhosis/HCC burden",
+    "year": 2024,
+    "source": "IHME GBD / WHO"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "perinatal transmission without timely birth dose",
+      "unsafe injections and healthcare exposures",
+      "unprotected sex",
+      "needle sharing",
+      "household contact with chronic HBV"
+    ],
+    "vulnerablePopulations": [
+      "newborns without timely birth dose vaccination",
+      "people who inject drugs",
+      "dialysis patients and people receiving frequent transfusions",
+      "tribal and remote populations",
+      "healthcare workers"
+    ],
+    "diagnosticCriteria": "HBsAg for diagnosis; HBV DNA and ALT for treatment decisions; fibrosis staging as available; per national/WHO guidance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "antenatal screening variable across states; screening more common in blood banks and high-risk settings",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~25-50 million chronic HBV",
+    "controlRate": "Low to moderate due to diagnosis and linkage gaps; treatment more available in urban centers"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "HBsAg screening in blood donation and antenatal care (heterogeneous); viral load testing concentrated in tertiary centers",
+    "treatmentProtocol": "Tenofovir/entecavir for eligible chronic HBV; infant vaccination with birth dose and pentavalent schedule; PMTCT where implemented",
+    "regionalChallenges": "Uneven birth dose coverage and limited access to HBV DNA testing outside cities, leading to delayed staging and treatment",
+    "strongPoints": "Large-scale immunization programme and availability of affordable generic antivirals"
+  }
+}
+

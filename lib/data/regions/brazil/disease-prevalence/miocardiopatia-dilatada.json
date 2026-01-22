@@ -1,0 +1,51 @@
+{
+  "diseaseId": "miocardiopatia-dilatada",
+  "region": "BR",
+  "diseaseName": "Miocardiopatia dilatada",
+  "prevalence": {
+    "value": "~30-50 per 100,000",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "Cardiology epidemiology syntheses",
+    "trend": "stable; improved survival increases prevalence"
+  },
+  "incidence": {
+    "value": "~4-8 per 100,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Cardiology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate to high due to heart failure and arrhythmias",
+    "mortalityRate": "Moderate",
+    "year": 2024,
+    "source": "IHME/GBD cardiovascular burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic predisposition",
+      "viral myocarditis",
+      "alcohol use",
+      "chemotherapy (anthracyclines)",
+      "peripartum cardiomyopathy"
+    ],
+    "vulnerablePopulations": [
+      "adults 30-60 years",
+      "patients with family history",
+      "postpartum women (peripartum cases)"
+    ],
+    "diagnosticCriteria": "Echocardiography showing LV dilation and reduced EF; evaluate ischemic and secondary causes; cardiac MRI when available"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis after symptoms",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of thousands",
+    "controlRate": "Moderate; depends on HF therapy adherence and access to devices"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Echo widely available in cardiology services; MRI in tertiary centers",
+    "treatmentProtocol": "Guideline-directed HF therapy, ICD/CRT for selected patients, transplant in advanced cases",
+    "regionalChallenges": "Access to advanced devices and transplant programs outside major centers",
+    "strongPoints": "Core HF medications available in SUS and cardiology networks"
+  }
+}

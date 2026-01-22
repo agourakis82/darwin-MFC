@@ -1,0 +1,52 @@
+{
+  "diseaseId": "dermatite-contato",
+  "region": "IN",
+  "diseaseName": "Contact dermatitis",
+  "prevalence": {
+    "value": "~5-12% (adults; higher in occupational exposures)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "IADVL and occupational dermatology epidemiology syntheses",
+    "trend": "stable; underdiagnosis in informal workforce"
+  },
+  "incidence": {
+    "value": "~4-10 per 1,000 workers/year (high-exposure jobs)",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "Occupational dermatology cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant work disruption and chronic dermatitis burden",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/GBD skin disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "wet work and detergents",
+      "allergens (nickel, fragrances)",
+      "occupational irritants (cement, solvents)",
+      "atopic dermatitis",
+      "repeated skin barrier disruption"
+    ],
+    "vulnerablePopulations": [
+      "healthcare and cleaning workers",
+      "construction workers",
+      "agricultural workers",
+      "patients with atopic dermatitis"
+    ],
+    "diagnosticCriteria": "Clinical dermatitis with exposure history; patch testing for allergic contact dermatitis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of adults affected",
+    "controlRate": "Moderate; depends on avoidance and workplace controls"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis common; patch testing limited to tertiary centers",
+    "treatmentProtocol": "Avoidance, emollients, topical steroids; workplace protection and PPE",
+    "regionalChallenges": "Limited occupational health coverage and patch testing access",
+    "strongPoints": "Effective topical therapies widely available"
+  }
+}

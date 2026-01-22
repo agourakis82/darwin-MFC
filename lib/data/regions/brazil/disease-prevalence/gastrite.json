@@ -1,0 +1,25 @@
+{
+  "diseaseId": "gastrite",
+  "region": "BR",
+  "diseaseName": "Gastrite/DRGE",
+  "prevalence": {"value": "15%", "population": "Brazilian adults", "year": 2024, "source": "VIGITEL (Vigilância de Fatores de Risco e Proteção para Doenças Crônicas por Inquérito Telefônico)", "trend": "increasing due to rising obesity and dietary changes"},
+  "incidence": {"value": "25 per 1000", "population": "Brazilian adults", "year": 2024, "source": "DataSUS"},
+  "burden": {"dalyPerCapita": "0.12", "mortalityRate": "0.5 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["High H. pylori infection rates (50-70% prevalence in Brazil)", "Dietary habits including frequent consumption of spicy foods, coffee, and fatty meals", "Obesity and overweight (prevalent in urban populations)", "Smoking and alcohol use", "Chronic stress from urban lifestyles", "NSAID overuse in self-medication"],
+    "vulnerablePopulations": ["Low-income urban dwellers with limited healthcare access", "Elderly population over 60", "Indigenous and rural communities with high H. pylori exposure", "Obese adults in southern and southeastern regions"],
+    "diagnosticCriteria": "Based on Rome IV criteria adapted by SBH (Sociedade Brasileira de Hepatologia), including upper endoscopy for confirmation, symptom assessment (heartburn, epigastric pain), and H. pylori testing via urea breath test or serology"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Low routine screening (under 20% coverage via SUS for symptomatic cases)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "22.5 million",
+    "controlRate": "55% managed with lifestyle and medication adherence"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SUS protocol emphasizes clinical history, endoscopy when available, and H. pylori eradication testing",
+    "treatmentProtocol": "PPIs (e.g., omeprazole) and H2 blockers provided free via SUS; H. pylori treatment with triple therapy (amoxicillin, clarithromycin, PPI) for confirmed cases",
+    "regionalChallenges": "Limited access to endoscopy in rural and northern regions; high H. pylori prevalence (up to 70% in Northeast Brazil) due to sanitation issues",
+    "strongPoints": "SUS ensures free access to essential PPIs and antibiotics, reducing out-of-pocket costs for low-income patients"
+  }
+}

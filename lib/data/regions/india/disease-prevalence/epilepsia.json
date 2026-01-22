@@ -1,0 +1,53 @@
+{
+  "diseaseId": "epilepsia",
+  "region": "IN",
+  "diseaseName": "Epilepsy",
+  "prevalence": {
+    "value": "~0.8-1.0% (substantial treatment gap)",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "Indian Epilepsy Society / ICMR studies and IHME GBD estimates",
+    "trend": "stable; underdiagnosis and stigma contribute to persistent burden"
+  },
+  "incidence": {
+    "value": "~50-100 per 100,000/year",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) / Indian epidemiological studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.004-0.01",
+    "mortalityRate": "Elevated vs general population (SUDEP and injury-related)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "perinatal injury",
+      "CNS infections (neurocysticercosis, TB meningitis)",
+      "stroke and traumatic brain injury",
+      "genetic epilepsy syndromes",
+      "alcohol withdrawal and metabolic triggers"
+    ],
+    "vulnerablePopulations": [
+      "rural populations with limited neurologist access",
+      "children with perinatal complications",
+      "people with CNS infections",
+      "low-income households"
+    ],
+    "diagnosticCriteria": "ILAE criteria; clinical history; EEG and imaging where available; differentiation from syncope/PNES"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; diagnosis often delayed outside cities",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10-14 million",
+    "controlRate": "Variable; large treatment gap (often >30%) due to access, cost, and stigma"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EEG and neuroimaging concentrated in urban/tertiary centers; many rural diagnoses are clinical",
+    "treatmentProtocol": "Affordable generics (phenytoin, carbamazepine, valproate, levetiracetam) widely used; referral for drug-resistant epilepsy evaluation where available",
+    "regionalChallenges": "Neurologist scarcity, stigma, and out-of-pocket costs lead to poor adherence and delayed escalation for drug-resistant epilepsy",
+    "strongPoints": "Availability of low-cost generic antiseizure medicines and growing tertiary epilepsy centers"
+  }
+}
+

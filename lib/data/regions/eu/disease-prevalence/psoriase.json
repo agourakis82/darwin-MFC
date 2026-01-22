@@ -1,0 +1,25 @@
+{
+  "diseaseId": "psoriase",
+  "region": "EU",
+  "diseaseName": "Psoriasis",
+  "prevalence": {"value": "2.5%", "population": "EU adults (~447 million)", "year": 2024, "source": "EDF - European Dermatology Forum", "trend": "stable"},
+  "incidence": {"value": "150 per 100,000", "population": "EU adults", "year": 2024, "source": "WHO Europe"},
+  "burden": {"dalyPerCapita": "0.02", "mortalityRate": "Negligible", "year": 2024, "source": "WHO Europe"},
+  "epidemiology": {
+    "riskFactors": ["Genetic predisposition (HLA-Cw6 allele)", "Obesity and metabolic syndrome", "Smoking", "Alcohol consumption", "Stress", "Infections (e.g., streptococcal)"],
+    "vulnerablePopulations": ["Adults 20-30 and 50-60 years (bimodal)", "Northern European populations (higher prevalence)", "Individuals with family history", "Patients with psoriatic arthritis comorbidity"],
+    "diagnosticCriteria": "EDF clinical criteria, PASI score for severity"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "11 million",
+    "controlRate": "70% [high with biologics]"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EDF guidelines, PASI and DLQI for severity/quality of life assessment",
+    "treatmentProtocol": "Topical corticosteroids, vitamin D analogs, phototherapy (NB-UVB) widely available, biologics (TNF inhibitors, IL-17/IL-23 inhibitors) for moderate-severe cases, JAK inhibitors emerging",
+    "regionalChallenges": "High biologic costs, psoriatic arthritis screening gaps, treatment adherence issues",
+    "strongPoints": "EDF guidelines, high phototherapy availability, comprehensive biologic access (TNF/IL-17/IL-23 inhibitors), psoriasis registries"
+  }
+}

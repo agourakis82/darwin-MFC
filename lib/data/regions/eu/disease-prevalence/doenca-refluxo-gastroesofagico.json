@@ -1,0 +1,25 @@
+{
+  "diseaseId": "doenca-refluxo-gastroesofagico",
+  "region": "EU",
+  "diseaseName": "Gastro-oesophageal Reflux Disease (GORD)",
+  "prevalence": {"value": "25%", "population": "EU adults (~447 million)", "year": 2024, "source": "UEG Journal (2023), extrapolated to 2024", "trend": "increasing due to rising obesity and aging population"},
+  "incidence": {"value": "5 per 1000", "population": "EU adults", "year": 2024, "source": "Lyon Consensus epidemiological review (2023)"},
+  "burden": {"dalyPerCapita": "0.025", "mortalityRate": "0.8 per 100,000", "year": 2024, "source": "WHO Europe"},
+  "epidemiology": {
+    "riskFactors": ["Obesity (BMI >30)", "Smoking", "Hiatal hernia", "Alcohol consumption", "Large meal sizes", "Pregnancy"],
+    "vulnerablePopulations": ["Elderly (>65 years)", "Obese individuals", "Smokers", "Pregnant women"],
+    "diagnosticCriteria": "Lyon Consensus 2018 criteria for conclusive GERD (e.g., abnormal acid exposure time on pH-metry or LA grade C/D esophagitis on endoscopy), integrated with Rome IV for overlapping functional dyspepsia"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening, Barrett's surveillance in high-risk",
+    "treatmentAvailable": true,
+    "estimatedPatients": "112 million",
+    "controlRate": "65% with adequate symptom control on PPI therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Lyon Consensus: pH-metry, endoscopy for LA grade C/D esophagitis, widespread adoption across EU gastroenterology societies",
+    "treatmentProtocol": "PPIs first-line (e.g., omeprazole 20-40mg daily), H2 blockers for mild cases, fundoplication for refractory cases, Barrett's surveillance per BSG/ESGE guidelines",
+    "regionalChallenges": "PPI overuse leading to resistance and side effects, rising obesity epidemic, surveillance burden for Barrett's esophagus progression to esophageal adenocarcinoma",
+    "strongPoints": "Lyon Consensus guidelines harmonized EU-wide, high endoscopy access in public health systems, comprehensive Barrett's monitoring programs in countries like UK and Germany"
+  }
+}

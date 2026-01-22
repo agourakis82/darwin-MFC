@@ -1,0 +1,11 @@
+{
+  "diseaseId": "transtorno-ansiedade-generalizada",
+  "region": "BR",
+  "diseaseName": "Transtorno de Ansiedade Generalizada (TAG)",
+  "prevalence": {"value": "4.0%", "population": "Brazilian adults", "year": 2024, "source": "WHO/IHME GBD (anxiety disorders) with TAG share estimates", "trend": "increasing post-COVID"},
+  "incidence": {"value": "1.5%", "population": "Brazilian adults", "year": 2024, "source": "IHME GBD estimates (adapted)"},
+  "burden": {"dalyPerCapita": "0.012", "mortalityRate": "Negligible", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {"riskFactors": ["Genetic predisposition", "Chronic stress", "Trauma or adverse childhood experiences", "Comorbid depression", "Substance use"], "vulnerablePopulations": ["Women", "Urban low-SES groups", "Adolescents and young adults", "Post-pandemic affected populations"], "diagnosticCriteria": "DSM-5/ICD-11 TAG: excessive worry most days for ≥6 months with associated symptoms (restlessness, fatigue, irritability, sleep disturbance) and functional impairment"},
+  "publicHealthSystem": {"screeningCoverage": "25%", "treatmentAvailable": true, "estimatedPatients": "18.6 million", "controlRate": "35% (adequate treatment access)"},
+  "regionalSpecificities": {"diagnosisCriteria": "ICD-11 adapted for SUS primary care screening", "treatmentProtocol": "Psychotherapy (CBT) and pharmacotherapy (SSRIs like sertraline) via SUS; multidisciplinary teams in CAPS", "regionalChallenges": "Regional disparities in access (rural North/Northeast), stigma, overburdened system", "strongPoints": "Expansion of mental health services through Family Health Strategy (ESF) and NASF teams"}
+}

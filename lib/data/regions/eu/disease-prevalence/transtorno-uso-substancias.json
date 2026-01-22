@@ -1,0 +1,51 @@
+{
+  "diseaseId": "transtorno-uso-substancias",
+  "region": "EU",
+  "diseaseName": "Substance Use Disorders",
+  "prevalence": {
+    "value": "3-6% (any SUD; excluding nicotine)",
+    "population": "EU adults (~447 million)",
+    "year": 2024,
+    "source": "EMCDDA/WHO Europe + IHME GBD context",
+    "trend": "stable to increasing in some settings; polysubstance use and opioids remain concerns"
+  },
+  "incidence": {
+    "value": "4-10 per 1,000/year",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European public health syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.01-0.03",
+    "mortalityRate": "Elevated (overdose and injury; indirect)",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "psychiatric comorbidity",
+      "social deprivation",
+      "availability of substances",
+      "trauma and adverse experiences"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "people experiencing homelessness",
+      "people with severe mental illness"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria; assessment includes intoxication/withdrawal and comorbidity"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "moderate; many systems integrate screening in primary care and emergency settings",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~15-25 million",
+    "controlRate": "Moderate; improved with harm reduction and integrated treatment programs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Access to addiction medicine and mental health services varies by member state",
+    "treatmentProtocol": "Harm reduction (e.g., OST), psychosocial interventions, and integrated dual-diagnosis care where available",
+    "regionalChallenges": "Overdose prevention, service gaps in marginalized populations, and variability across member states",
+    "strongPoints": "Established harm reduction infrastructure in many countries and strong public health monitoring (EMCDDA)"
+  }
+}
+

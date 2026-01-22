@@ -1,0 +1,51 @@
+{
+  "diseaseId": "transtorno-uso-cannabis",
+  "region": "EU",
+  "diseaseName": "Cannabis Use Disorder",
+  "prevalence": {
+    "value": "1-2% (adult population; higher in young adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "EMCDDA/WHO Europe + IHME GBD context",
+    "trend": "stable to increasing in some countries with higher availability"
+  },
+  "incidence": {
+    "value": "2-5 per 1,000/year",
+    "population": "EU adolescents and young adults",
+    "year": 2024,
+    "source": "European public health syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.006",
+    "mortalityRate": "Low; indirect risks",
+    "year": 2024,
+    "source": "IHME GBD / WHO Europe"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "early initiation",
+      "high-frequency use",
+      "psychiatric comorbidity",
+      "social deprivation"
+    ],
+    "vulnerablePopulations": [
+      "young adults",
+      "people with depression/anxiety",
+      "patients with psychosis risk"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria; assessment includes comorbidity screening and functional impairment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; integrated screening in primary care/emergency settings in some countries",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~5-10 million",
+    "controlRate": "Moderate with access to addiction services; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Addiction services and mental health services often integrated for dual diagnosis",
+    "treatmentProtocol": "Psychosocial interventions; harm reduction; comorbidity management; no specific approved pharmacotherapy",
+    "regionalChallenges": "Service demand and variability across member states",
+    "strongPoints": "Established addiction medicine systems and EMCDDA monitoring in many countries"
+  }
+}
+

@@ -12,6 +12,7 @@
  */
 
 import { Citation } from './references';
+import type { RegionalMedicationOverlay, RegionalOverlayMap } from './region';
 
 // =============================================================================
 // CLASSES TERAPÊUTICAS
@@ -495,7 +496,17 @@ export interface Medicamento {
   
   /** DCB (Denominação Comum Brasileira) - código oficial */
   dcbCode?: string;
-  
+
+  // =============================================================================
+  // REGIONAL OVERLAYS (Multi-Country Support)
+  // =============================================================================
+  // These fields enable region-specific medication information (Brazil/India/EU)
+  // Gradually replacing Brazil-specific fields (anvisaRegistro, dcbCode, rename)
+  // with a more scalable regional overlay architecture.
+
+  /** Regional-specific medication data (Brazil, India, EU) */
+  regionalOverlays?: RegionalOverlayMap<RegionalMedicationOverlay>;
+
   // =============================================================================
   // CLASSIFICAÇÃO
   // =============================================================================
@@ -626,7 +637,7 @@ export function getInteracoesGraves(medicamento: Medicamento): Interacao[] {
 }
 
 export function verificarAjusteRenal(
-  medicamento: Medicamento, 
+  medicamento: Medicamento,
   tfgEstimada: number
 ): AjusteDoseRenal | null {
   if (!medicamento.ajusteDoseRenal || medicamento.ajusteDoseRenal.length === 0) {
@@ -636,7 +647,7 @@ export function verificarAjusteRenal(
   // Encontrar o ajuste apropriado para a TFG
   for (const ajuste of medicamento.ajusteDoseRenal) {
     const tfgRange = ajuste.tfg;
-    
+
     if (tfgRange.startsWith('>')) {
       const threshold = parseInt(tfgRange.substring(1));
       if (tfgEstimada > threshold) return ajuste;
@@ -650,5 +661,42 @@ export function verificarAjusteRenal(
   }
 
   return null;
+}
+
+/**
+ * Get regional medication data for a specific region
+ * @param medicamento Base medication
+ * @param region Target region (BR, IN, EU)
+ * @returns Regional medication overlay if available, null otherwise
+ */
+export function getRegionalMedicationData(
+  medicamento: Medicamento,
+  region: 'BR' | 'IN' | 'EU'
+): RegionalMedicationOverlay | null {
+  if (!medicamento.regionalOverlays) {
+    return null;
+  }
+  return medicamento.regionalOverlays[region] || null;
+}
+
+/**
+ * Check if medication is available in a specific region's public health system
+ * @param medicamento Base medication
+ * @param region Target region
+ * @returns true if available in public system, false otherwise
+ */
+export function isAvailableInPublicSystem(
+  medicamento: Medicamento,
+  region: 'BR' | 'IN' | 'EU'
+): boolean {
+  const regionalData = getRegionalMedicationData(medicamento, region);
+  if (!regionalData) {
+    // Fallback to base medication for Brazil if no overlay exists
+    if (region === 'BR') {
+      return medicamento.apresentacoes.some(ap => ap.disponivelSUS);
+    }
+    return false;
+  }
+  return regionalData.availableInPublicSystem;
 }
 

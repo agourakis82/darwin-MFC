@@ -1,0 +1,51 @@
+{
+  "diseaseId": "transtorno-espectro-autista",
+  "region": "IN",
+  "diseaseName": "Autism Spectrum Disorder (ASD)",
+  "prevalence": {
+    "value": "0.7-1.5% (children; underdiagnosis likely)",
+    "population": "Indian children",
+    "year": 2024,
+    "source": "Indian child development studies + WHO context",
+    "trend": "increasing recognition in urban areas"
+  },
+  "incidence": {
+    "value": "2-5 per 1,000 live births (diagnosed over early childhood)",
+    "population": "Indian live births",
+    "year": 2024,
+    "source": "International ASD cohort syntheses extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.002-0.007",
+    "mortalityRate": "Low; indirect risks via comorbidities",
+    "year": 2024,
+    "source": "IHME/WHO neurodevelopmental disorder context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic susceptibility",
+      "male sex",
+      "perinatal complications",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "boys",
+      "children in rural areas with limited diagnostic services",
+      "children with developmental delays"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 ASD criteria; diagnosis often clinical with standardized tools in tertiary centers"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "low; developmental screening not routine in many settings",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of children (underdiagnosed)",
+    "controlRate": "Not applicable; outcomes depend on early intervention access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Diagnosis concentrated in urban developmental pediatrics/psychiatry; rural families face delays",
+    "treatmentProtocol": "Early intervention, speech/occupational therapy, special education supports; caregiver training; comorbidity management",
+    "regionalChallenges": "Underdiagnosis, limited therapy workforce, high out-of-pocket costs, and variable school inclusion resources",
+    "strongPoints": "Growing awareness and expanding private/NGO early intervention services in cities"
+  }
+}
+

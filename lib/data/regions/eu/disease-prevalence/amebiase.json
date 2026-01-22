@@ -1,0 +1,50 @@
+{
+  "diseaseId": "amebiase",
+  "region": "EU",
+  "diseaseName": "Amebiasis",
+  "prevalence": {
+    "value": "<0.1% (mostly travel-associated; higher in some migrant groups)",
+    "population": "EU population",
+    "year": 2024,
+    "source": "ECDC/WHO travel and enteric infection context; parasitology surveillance syntheses",
+    "trend": "stable; cases concentrated in travelers and imported infections"
+  },
+  "incidence": {
+    "value": "Low; sporadic imported cases",
+    "population": "General population",
+    "year": 2024,
+    "source": "ECDC/WHO Europe infectious disease surveillance context"
+  },
+  "burden": {
+    "dalyPerCapita": "very low overall; severe invasive disease rare but clinically important",
+    "mortalityRate": "Very low with timely diagnosis and treatment",
+    "year": 2024,
+    "source": "WHO/IHME enteric infections context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "travel to endemic regions",
+      "exposure to contaminated food/water",
+      "crowded settings with poor sanitation (rare in EU)",
+      "immunosuppression (risk of invasive disease)"
+    ],
+    "vulnerablePopulations": [
+      "travelers",
+      "recent migrants from endemic areas",
+      "immunocompromised patients"
+    ],
+    "diagnosticCriteria": "Stool antigen/PCR preferred; microscopy less specific; evaluate amoebic liver abscess with imaging and serology when clinically indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Low thousands of cases across the EU annually (mostly imported; uncertain)",
+    "controlRate": "High with timely treatment; public health control focuses on travel hygiene"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Modern diagnostics (PCR/antigen) available in many labs; travel history emphasized",
+    "treatmentProtocol": "Metronidazole/tinidazole for invasive disease plus luminal agent; supportive care; travel and hygiene counseling",
+    "regionalChallenges": "Recognition in primary care when travel history is missed; differentiating from other causes of diarrhea",
+    "strongPoints": "Good diagnostic and treatment availability and low baseline transmission"
+  }
+}

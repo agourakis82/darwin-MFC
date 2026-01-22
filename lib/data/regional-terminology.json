@@ -1,0 +1,189 @@
+{
+  "region": {
+    "brazil": {
+      "code": "BR",
+      "flag": "🇧🇷",
+      "name": "Brazil",
+      "locale": "pt",
+      "healthSystemName": "SUS - Sistema Único de Saúde",
+      "healthSystemAbbr": "SUS",
+      "regulatoryBody": "ANVISA - Agência Nacional de Vigilância Sanitária",
+      "regulatoryBodyAbbr": "ANVISA",
+      "primaryCareSystem": "APS - Atenção Primária à Saúde",
+      "medicationDatabase": "RENAME - Relação Nacional de Medicamentos Essenciais",
+      "coreTerms": {
+        "discretionaryScreening": "Rastreamento Oportunístico",
+        "universalScreening": "Triagem Populacional",
+        "chronicDiseaseManagement": "Manejo de Doenças Crônicas",
+        "publicFunding": "Fornecido pelo SUS",
+        "privateOption": "Disponível no mercado privado",
+        "notAvailable": "Não disponível no Brasil",
+        "approved": "Registrado na ANVISA",
+        "suspended": "Suspenso pela ANVISA",
+        "restricted": "Uso restrito",
+        "essentialMedicine": "Medicamento Essencial",
+        "genericAvailable": "Genérico disponível",
+        "brandName": "Nome comercial",
+        "dcbCode": "Código DCB",
+        "renameCode": "Código RENAME",
+        "atcCode": "Código ATC"
+      },
+      "abbreviations": {
+        "aps": "Atenção Primária à Saúde",
+        "dcnt": "Doença Crônica Não Transmissível",
+        "dst": "Distribuição Seletiva de Terapêutica",
+        "pec": "Protocolo Especial de Concessão",
+        "sinitox": "Sistema Nacional de Informações Tóxico-Farmacológicas",
+        "datasus": "Departamento de Informática do Sistema Único de Saúde",
+        "conitec": "Comissão Nacional de Incorporação de Tecnologias",
+        "ceaf": "Componente Especializado da Assistência Farmacêutica"
+      },
+      "guidelines": {
+        "source": "Ministério da Saúde",
+        "protocolsCNES": "Protocolos Clínicos e Diretrizes Terapêuticas",
+        "year": "2024-2026"
+      }
+    },
+    "india": {
+      "code": "IN",
+      "flag": "🇮🇳",
+      "name": "India",
+      "locale": "hi",
+      "healthSystemName": "National Health Mission - NHM",
+      "healthSystemAbbr": "NHM",
+      "regulatoryBody": "CDSCO - Central Drugs Standard Control Organisation",
+      "regulatoryBodyAbbr": "CDSCO",
+      "primaryCareSystem": "ASHA - Accredited Social Health Activists",
+      "medicationDatabase": "NLEM - National List of Essential Medicines",
+      "publicMedicineProgram": "Jan Aushadhi - Generic Affordable Medicine",
+      "coreTerms": {
+        "discretionaryScreening": "Targeted Screening",
+        "universalScreening": "Universal Health Coverage",
+        "chronicDiseaseManagement": "Non-Communicable Disease Management",
+        "publicFunding": "Covered under PMJAY",
+        "janAushadhi": "Available through Jan Aushadhi",
+        "notAvailable": "Not approved in India",
+        "approved": "Approved by CDSCO",
+        "suspended": "Suspended by CDSCO",
+        "restricted": "Restricted use",
+        "essentialMedicine": "Essential Medicine (NLEM)",
+        "genericAvailable": "Generic formulation available",
+        "brandName": "Brand name",
+        "registrationNumber": "Registration number"
+      },
+      "abbreviations": {
+        "pmjay": "Pradhan Mantri Jan Arogya Yojana (Ayushman Bharat)",
+        "ncd": "Non-Communicable Disease",
+        "rch": "Reproductive and Child Health",
+        "nfhs": "National Family Health Survey",
+        "dhs": "District Health Statistics",
+        "icmr": "Indian Council of Medical Research",
+        "aiims": "All India Institute of Medical Sciences",
+        "nm": "National Mission"
+      },
+      "guidelines": {
+        "source": "Ministry of Health and Family Welfare",
+        "protocolsICMR": "ICMR Clinical Practice Guidelines",
+        "year": "2024-2026"
+      }
+    },
+    "europeanUnion": {
+      "code": "EU",
+      "flag": "🇪🇺",
+      "name": "European Union",
+      "locale": "en",
+      "healthSystemName": "National Health Services / Public Health Systems",
+      "healthSystemAbbr": "NHS/Public",
+      "regulatoryBody": "EMA - European Medicines Agency",
+      "regulatoryBodyAbbr": "EMA",
+      "primaryCareSystem": "Primary Care / General Practice",
+      "medicationDatabase": "WHO Essential Medicines List (EML)",
+      "coreTerms": {
+        "discretionaryScreening": "Opportunistic Screening",
+        "universalScreening": "Population-Based Screening",
+        "chronicDiseaseManagement": "Long-term Care Management",
+        "publicFunding": "Covered by public health insurance",
+        "notAvailable": "Not approved in EU",
+        "approved": "Approved by EMA",
+        "suspended": "Suspended by EMA",
+        "restricted": "Conditional approval",
+        "essentialMedicine": "Essential Medicine (EML)",
+        "genericAvailable": "Generic available",
+        "brandName": "Trade name",
+        "emaApprovalNumber": "EMA approval number",
+        "orphanDrug": "Orphan drug designation"
+      },
+      "abbreviations": {
+        "chmp": "Committee for Medicinal Products for Human Use",
+        "prac": "Pharmacovigilance Risk Assessment Committee",
+        "prea": "Paediatric Investigation Plan",
+        "epar": "European Public Assessment Report",
+        "ecdc": "European Centre for Disease Prevention and Control",
+        "who": "World Health Organization"
+      },
+      "guidelines": {
+        "source": "European Union / WHO Europe",
+        "protocolsEUNETHTA": "European Network for Health Technology Assessment",
+        "year": "2024-2026"
+      }
+    }
+  },
+  "medicationAvailability": {
+    "approved": "Drug approved by regulatory authority",
+    "conditionallyApproved": "Approved under specific conditions",
+    "restricted": "Use restricted to specific conditions",
+    "suspended": "Regulatory suspension in effect",
+    "notApproved": "Not approved by regulatory authority",
+    "investigational": "Under investigation",
+    "discontinued": "No longer marketed",
+    "genericVersion": "Generic formulation available"
+  },
+  "publicHealthSystems": {
+    "sus": {
+      "name": "SUS - Brazilian Public Health System",
+      "region": "BR",
+      "coverage": "Universal coverage for Brazilian population",
+      "fundingModel": "Unified public funding"
+    },
+    "janAushadhi": {
+      "name": "Jan Aushadhi - Indian Generic Medicine Program",
+      "region": "IN",
+      "coverage": "Affordable generic medications nationwide",
+      "fundingModel": "Government-subsidized generic drugs"
+    },
+    "pmjay": {
+      "name": "PMJAY - Ayushman Bharat (Indian Health Scheme)",
+      "region": "IN",
+      "coverage": "500 million beneficiaries, hospitalization coverage",
+      "fundingModel": "Government health insurance"
+    },
+    "nhsUK": {
+      "name": "NHS - United Kingdom Health Service",
+      "region": "EU",
+      "coverage": "Universal coverage for UK population",
+      "fundingModel": "Tax-funded public healthcare"
+    },
+    "gesGermany": {
+      "name": "GES - German Public Insurance System",
+      "region": "EU",
+      "coverage": "Mandatory health insurance",
+      "fundingModel": "Social insurance contribution"
+    }
+  },
+  "diseaseClassifications": {
+    "infectious": "Infectious Disease",
+    "nonCommunicable": "Non-Communicable Disease (NCD)",
+    "neonatalDisease": "Neonatal Disorder",
+    "geneticDisorder": "Genetic Disorder",
+    "mentalHealth": "Mental Health Disorder",
+    "rareDisease": "Rare Disease",
+    "occupationalDisease": "Occupational Disease"
+  },
+  "screeningLevels": {
+    "primary": "Primary Prevention - Lifestyle modification",
+    "secondary": "Secondary Prevention - Early detection",
+    "tertiary": "Tertiary Prevention - Complication management",
+    "quartenary": "Quaternary Prevention - Overdiagnosis prevention"
+  },
+  "translationNotes": "These keys should be translated to Portuguese (pt), English (en), Spanish (es), French (fr), Russian (ru), Arabic (ar), Mandarin (zh), Greek (el), and Hindi (hi) in messages/{locale}/common.json"
+}

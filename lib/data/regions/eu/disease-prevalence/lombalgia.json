@@ -1,0 +1,41 @@
+{
+  "diseaseId": "lombalgia",
+  "region": "EU",
+  "diseaseName": "Low Back Pain",
+  "prevalence": {
+    "value": "18.4%",
+    "population": "adults aged 18-65 years",
+    "year": 2024,
+    "source": "WHO Europe (2022 Musculoskeletal Health Report, extrapolated to 2024)",
+    "trend": "stable with explanation: Prevalence has remained relatively stable over the past decade due to consistent lifestyle factors, though aging population may exert upward pressure"
+  },
+  "incidence": {
+    "value": "5.2% new cases annually",
+    "population": "adult population aged 20-64 years",
+    "year": 2024,
+    "source": "European Commission Joint Research Centre (2023 Health and Safety Report)"
+  },
+  "burden": {
+    "dalyPerCapita": "2,450 DALYs per 100,000",
+    "mortalityRate": "0.1 deaths per 100,000",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease Study 2019, updated estimates for EU (2023)"
+  },
+  "epidemiology": {
+    "riskFactors": ["Sedentary lifestyle", "Obesity", "Smoking", "Manual labor/heavy lifting", "Poor ergonomics", "Psychosocial stress"],
+    "vulnerablePopulations": ["Older adults (over 50)", "Manual workers", "Obese individuals", "Women (due to hormonal factors)", "Individuals with mental health disorders"],
+    "diagnosticCriteria": "Clinical diagnosis based on patient history, physical examination, and exclusion of red flags (e.g., cauda equina syndrome, infection); no routine imaging unless indicated (EU harmonized with IASP criteria)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "Routine occupational health screening covers 70% of workforce in EU member states",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Approximately 25 million seeking care annually",
+    "controlRate": "65% with effective management through multidisciplinary approaches"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU-wide adoption of EULAR guidelines (2020) emphasizing non-specific LBP diagnosis via clinical assessment and avoiding unnecessary imaging",
+    "treatmentProtocol": "First-line: Conservative management including exercise therapy, NSAIDs, and patient education; multidisciplinary rehab per NICE/EULAR protocols",
+    "regionalChallenges": "Access disparities between Eastern and Western EU countries, aging population increasing demand, and rising obesity rates exacerbating cases",
+    "strongPoints": "Comprehensive universal healthcare coverage in most EU states, strong physiotherapy networks, and EU-funded research initiatives like EuroSpine"
+  }
+}

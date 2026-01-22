@@ -1,0 +1,53 @@
+{
+  "diseaseId": "transtorno-uso-cannabis",
+  "region": "IN",
+  "diseaseName": "Cannabis Use Disorder",
+  "prevalence": {
+    "value": "0.5-1.5%",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "National surveys on substance use + IHME GBD context",
+    "trend": "stable to increasing in some regions"
+  },
+  "incidence": {
+    "value": "1-3 per 1,000/year",
+    "population": "Indian adolescents and young adults",
+    "year": 2024,
+    "source": "GBD context extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.005",
+    "mortalityRate": "Low; indirect via accidents and mental health comorbidity",
+    "year": 2024,
+    "source": "IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "early initiation",
+      "frequent use",
+      "psychiatric comorbidity",
+      "peer influence",
+      "social stressors"
+    ],
+    "vulnerablePopulations": [
+      "young men",
+      "students and unemployed youth",
+      "patients with anxiety/depression",
+      "patients with psychosis vulnerability"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 criteria; assess impairment and withdrawal; screen for comorbid mental illness"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~5-20 million (definition-dependent)",
+    "controlRate": "Low due to treatment gaps and limited counseling services"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often identified in de-addiction centers and tertiary psychiatry",
+    "treatmentProtocol": "Psychosocial treatment (CBT/motivational); harm reduction; comorbidity management",
+    "regionalChallenges": "Stigma and limited specialized psychotherapy access",
+    "strongPoints": "Growing de-addiction services and tele-mental health capacity in some states"
+  }
+}
+

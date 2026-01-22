@@ -1,0 +1,51 @@
+{
+  "diseaseId": "deficiencia-vitamina-b12",
+  "region": "EU",
+  "diseaseName": "Vitamin B12 deficiency",
+  "prevalence": {
+    "value": "~5-15% (adults; higher in older adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European nutrition and hematology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~2-4 per 1,000 adults/year (new detected deficiency)",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Primary care and hematology data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; neuropathy and anemia burden",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe nutrition context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "older age",
+      "pernicious anemia",
+      "malabsorption or bariatric surgery",
+      "metformin use",
+      "vegetarian/vegan diet"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with malabsorption",
+      "vegans/vegetarians"
+    ],
+    "diagnosticCriteria": "Low serum B12 with macrocytosis and/or elevated methylmalonic acid"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "targeted testing in high-risk groups",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of adults",
+    "controlRate": "High with supplementation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Lab testing widely available",
+    "treatmentProtocol": "Oral or IM B12 replacement; address underlying cause",
+    "regionalChallenges": "Underdiagnosis in older adults",
+    "strongPoints": "Broad access to diagnostics and supplementation"
+  }
+}

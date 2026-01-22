@@ -1,0 +1,50 @@
+{
+  "diseaseId": "laringite-aguda",
+  "region": "IN",
+  "diseaseName": "Viral Croup (Laryngotracheitis)",
+  "prevalence": {
+    "value": "common seasonal illness; highest in children 6 months to 3 years",
+    "population": "Indian children",
+    "year": 2024,
+    "source": "Pediatric respiratory infection syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "5-15 per 100 children/year (episodes; season-dependent)",
+    "population": "Children 0-5 years",
+    "year": 2024,
+    "source": "Pediatric primary care syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low overall",
+    "mortalityRate": "Very low with treatment",
+    "year": 2024,
+    "source": "WHO pediatric respiratory context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral infections",
+      "young age",
+      "crowding",
+      "indoor air pollution (respiratory vulnerability)"
+    ],
+    "vulnerablePopulations": [
+      "children 6-36 months",
+      "children with limited access to emergency care"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis with barking cough and stridor; rule out epiglottitis and foreign body"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions of episodes/year",
+    "controlRate": "High with steroids; severe cases require epinephrine and observation"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in primary care and emergency departments; limited imaging",
+    "treatmentProtocol": "Dexamethasone; nebulized epinephrine for moderate-severe cases; supportive care",
+    "regionalChallenges": "Access to timely emergency care in rural areas",
+    "strongPoints": "Low-cost effective therapy and expanding pediatric emergency services"
+  }
+}
+

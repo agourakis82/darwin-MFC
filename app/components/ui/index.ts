@@ -195,11 +195,4 @@ export {
   typography,
   spacing,
   borderRadius,
-  shadows,
-  transitions,
-  zIndex,
-  breakpoints,
-  components,
-  getCssVar,
-  rgba,
 } from '@/lib/design-tokens';

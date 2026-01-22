@@ -1,0 +1,52 @@
+{
+  "diseaseId": "constipacao",
+  "region": "EU",
+  "diseaseName": "Constipation",
+  "prevalence": {
+    "value": "~10-20% (adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European gastroenterology epidemiology syntheses",
+    "trend": "stable; higher in women and older adults"
+  },
+  "incidence": {
+    "value": "~5-10% annual new or persistent cases",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Primary care cohort data"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant QOL impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe/IHME digestive disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low fiber intake",
+      "low fluid intake",
+      "sedentary lifestyle",
+      "constipating medications",
+      "female sex",
+      "older age"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "women",
+      "patients on constipating medications"
+    ],
+    "diagnosticCriteria": "Rome IV criteria; exclude secondary causes and alarm features"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "High with diet and laxative regimens"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care diagnosis with GI referral as needed",
+    "treatmentProtocol": "Dietary fiber and fluids, osmotic laxatives, stimulant laxatives short-term",
+    "regionalChallenges": "Adherence and long-term management in older adults",
+    "strongPoints": "Wide access to effective laxatives and primary care"
+  }
+}

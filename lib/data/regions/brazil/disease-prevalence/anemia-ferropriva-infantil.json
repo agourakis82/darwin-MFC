@@ -1,0 +1,53 @@
+{
+  "diseaseId": "anemia-ferropriva-infantil",
+  "region": "BR",
+  "diseaseName": "Anemia Ferropriva na Infância",
+  "prevalence": {
+    "value": "~15-30% (children under 5; varies by region and socioeconomic status)",
+    "population": "Brazilian children (especially <5 years)",
+    "year": 2024,
+    "source": "Brazilian nutrition/child health survey syntheses; WHO anemia estimates context",
+    "trend": "slowly decreasing with nutrition programs; persistent inequality-driven pockets"
+  },
+  "incidence": {
+    "value": "Common; highest in infancy and early childhood",
+    "population": "Infants and young children",
+    "year": 2024,
+    "source": "Pediatric nutrition cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "moderate at population level due to high prevalence; impacts cognition and growth",
+    "mortalityRate": "Indirect; increases vulnerability to infections and developmental outcomes",
+    "year": 2024,
+    "source": "IHME/GBD anemia context; WHO child nutrition"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low dietary iron intake",
+      "prematurity/low birth weight",
+      "exclusive cow’s milk intake in infancy",
+      "parasitic infections (in some regions)",
+      "poverty and food insecurity",
+      "rapid growth in infancy"
+    ],
+    "vulnerablePopulations": [
+      "infants 6-24 months",
+      "low-income households",
+      "children with poor diet diversity",
+      "children with recurrent infections or parasitosis"
+    ],
+    "diagnosticCriteria": "Hemoglobin below age thresholds plus iron studies (ferritin with CRP context, transferrin saturation); dietary history; evaluate parasitosis or chronic inflammation when indicated"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "opportunistic hemoglobin screening in primary care and child health visits (variable)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Millions of children affected at some point",
+    "controlRate": "Moderate; improves with supplementation programs and adherence"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care hemoglobin testing; confirm iron deficiency where possible; integrate with growth monitoring",
+    "treatmentProtocol": "Oral iron supplementation, diet diversification, delayed cow’s milk introduction in infancy, deworming where appropriate; treat underlying causes",
+    "regionalChallenges": "Adherence (GI side effects), limited lab testing in some areas, overlapping infections and food insecurity",
+    "strongPoints": "Feasible low-cost treatment and prevention via primary care and nutrition programs"
+  }
+}

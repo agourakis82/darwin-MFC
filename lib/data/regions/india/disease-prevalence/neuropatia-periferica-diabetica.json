@@ -1,0 +1,54 @@
+{
+  "diseaseId": "neuropatia-periferica-diabetica",
+  "region": "IN",
+  "diseaseName": "Diabetic Peripheral Neuropathy",
+  "prevalence": {
+    "value": "20-40% among people with diabetes",
+    "population": "Indian adults with diabetes",
+    "year": 2024,
+    "source": "ICMR-INDIAB / diabetes complication syntheses",
+    "trend": "increasing with diabetes burden and delayed diagnosis"
+  },
+  "incidence": {
+    "value": "2-5% per year among people with diabetes",
+    "population": "People with diabetes",
+    "year": 2024,
+    "source": "Diabetes complications cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.003-0.01 (diabetes-population concentrated)",
+    "mortalityRate": "Indirect (ulcers, infections, amputations)",
+    "year": 2024,
+    "source": "IHME GBD context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor glycemic control",
+      "long duration of diabetes",
+      "smoking",
+      "hypertension and dyslipidemia",
+      "B12 deficiency (metformin association)",
+      "CKD"
+    ],
+    "vulnerablePopulations": [
+      "people with long-standing diabetes",
+      "patients with limited foot care access",
+      "rural populations with delayed diagnosis",
+      "patients with low income"
+    ],
+    "diagnosticCriteria": "Clinical neuropathy assessment with monofilament/vibration testing; evaluate reversible contributors (B12 deficiency, thyroid disease, alcohol use)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; foot screening often incomplete outside structured diabetes clinics",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~20-40 million",
+    "controlRate": "Low to moderate; high ulcer/amputation risk when foot care is limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Screening concentrated in urban diabetes clinics; peripheral centers rely on clinical exam",
+    "treatmentProtocol": "Glycemic control, foot care education, neuropathic pain meds (pregabalin, duloxetine, amitriptyline), prompt ulcer management",
+    "regionalChallenges": "Limited podiatry and diabetic foot services, high out-of-pocket costs, and delayed ulcer care",
+    "strongPoints": "Large diabetes programs and availability of affordable generics for neuropathic pain"
+  }
+}
+

@@ -1,0 +1,52 @@
+{
+  "diseaseId": "sindrome-tunel-carpiano",
+  "region": "EU",
+  "diseaseName": "Carpal Tunnel Syndrome",
+  "prevalence": {
+    "value": "3-6% (adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European occupational health and neurology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "1-4 per 1,000/year",
+    "population": "Working-age adults",
+    "year": 2024,
+    "source": "European occupational cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.003",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO Europe disability context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "repetitive wrist use",
+      "female sex",
+      "pregnancy",
+      "diabetes/hypothyroidism",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "manual workers",
+      "women",
+      "patients with diabetes"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis with confirmatory nerve conduction studies when needed"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; occupational health pathways vary",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions",
+    "controlRate": "Moderate to high with access to conservative care and timely surgery"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "High access to electrodiagnostics and hand surgery in many member states",
+    "treatmentProtocol": "Splinting, steroid injection, and surgical decompression when indicated; workplace ergonomic interventions",
+    "regionalChallenges": "Wait times for elective surgery in some systems",
+    "strongPoints": "Robust occupational health and surgical services in many member states"
+  }
+}
+

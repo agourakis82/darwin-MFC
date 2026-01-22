@@ -1,0 +1,49 @@
+{
+  "diseaseId": "vertigem-posicional",
+  "region": "EU",
+  "diseaseName": "Benign Paroxysmal Positional Vertigo (BPPV)",
+  "prevalence": {
+    "value": "2-3% lifetime",
+    "population": "EU population",
+    "year": 2024,
+    "source": "European vestibular epidemiology syntheses",
+    "trend": "increasing with aging demographics"
+  },
+  "incidence": {
+    "value": "10-25 per 10,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.001-0.004",
+    "mortalityRate": "Indirect (falls)",
+    "year": 2024,
+    "source": "IHME/WHO Europe injury context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "older age",
+      "head trauma",
+      "migraine association"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "patients with recurrent falls"
+    ],
+    "diagnosticCriteria": "Dix-Hallpike test; canalith repositioning response supports diagnosis"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions lifetime",
+    "controlRate": "High with maneuver-based care pathways"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and ENT pathways commonly use repositioning maneuvers",
+    "treatmentProtocol": "Epley maneuver and vestibular rehab; limited vestibular suppressant use",
+    "regionalChallenges": "Access variability across member states",
+    "strongPoints": "Strong access to ENT/physiotherapy and guideline-based care in many systems"
+  }
+}
+

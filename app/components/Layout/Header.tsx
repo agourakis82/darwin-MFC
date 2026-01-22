@@ -5,14 +5,16 @@ import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { useAppStore } from '@/lib/store/appStore';
 import { LanguageSelector } from '../LanguageSelector';
+import RegionSelector, { RegionSelectorCompact } from '../RegionSelector';
 import { Sun, Moon, BookOpen, FileText, Menu, X, Search, Zap, ClipboardList, AlertTriangle, Pill, Calculator, Stethoscope, Keyboard, GraduationCap, Users, Command, StickyNote } from 'lucide-react';
 import CommandPalette from '../CommandPalette/CommandPalette';
 import { HighYieldToggle } from '../HighYield';
+import { DarwinLogo } from '../Brand';
 
 // Fallback translations for pages not yet migrated to [locale]
 const fallbackTranslations: Record<string, string> = {
-  'common.appName': 'Darwin MFC',
-  'common.appSubtitle': 'Análise Sistêmica 2025',
+  'common.appName': 'DARWIN',
+  'common.appSubtitle': 'MEDICAL HUB',
   'nav.neonatal': 'Neonatal',
   'nav.infantil': 'Infantil',
   'nav.adultos': 'Adultos',
@@ -55,7 +57,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 navbar-glass" role="banner">
+      <header className="sticky top-0 z-40 header-darwin" role="banner">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo e Título */}
@@ -74,62 +76,52 @@ export default function Header() {
                 )}
               </button>
 
-            <Link href="/" className="flex items-center gap-3 apple-transition-fast hover:opacity-80">
-              <div className="w-12 h-12 gradient-apple-blue rounded-xl flex items-center justify-center shadow-lg">
-                <BookOpen className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-semibold text-[#1d1d1f] dark:text-[#f5f5f7] tracking-tight">
-                  {t('common.appName')}
-                </h1>
-                <p className="text-sm text-[#86868b] dark:text-[#86868b] hidden sm:block">
-                  {t('common.appSubtitle')}
-                </p>
-              </div>
+            <Link href="/" className="flex items-center gap-3 apple-transition-fast hover:opacity-90">
+              <DarwinLogo variant="full" size="md" animated={false} />
             </Link>
           </div>
 
-          {/* Navegação Desktop - Simplified */}
+          {/* Navegação Desktop - Darwin Medical Hub */}
           <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
             <Link
               href="/doencas"
-              className="px-3.5 py-2 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
+              className="nav-link-darwin"
             >
               <Stethoscope className="w-4 h-4" />
               {t('nav.doencas')}
             </Link>
             <Link
               href="/medicamentos"
-              className="px-3.5 py-2 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
+              className="nav-link-darwin"
             >
               <Pill className="w-4 h-4" />
               {t('nav.medicamentos')}
             </Link>
             <Link
               href="/protocolos"
-              className="px-3.5 py-2 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
+              className="nav-link-darwin"
             >
               <FileText className="w-4 h-4" />
               {t('nav.protocolos')}
             </Link>
-            <div className="w-px h-5 bg-black/10 dark:bg-white/10 mx-1" />
+            <div className="w-px h-5 bg-carbon-200 dark:bg-carbon-700 mx-1" />
             <Link
               href="/learn"
-              className="px-3.5 py-2 text-base font-medium text-[#007aff] dark:text-[#5ac8fa] hover:bg-[#007aff]/10 dark:hover:bg-[#5ac8fa]/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
+              className="px-3.5 py-2 text-base font-medium text-adenine-teal dark:text-cytosine-cyan hover:bg-adenine-teal/10 dark:hover:bg-cytosine-cyan/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
             >
               <GraduationCap className="w-4 h-4" />
               {t('nav.learn')}
             </Link>
             <Link
               href="/community"
-              className="px-3.5 py-2 text-base font-medium text-[#af52de] dark:text-[#bf5af2] hover:bg-[#af52de]/10 dark:hover:bg-[#bf5af2]/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
+              className="px-3.5 py-2 text-base font-medium text-guanine-green dark:text-guanine-green hover:bg-guanine-green/10 dark:hover:bg-guanine-green/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
             >
               <Users className="w-4 h-4" />
               {t('nav.community')}
             </Link>
             <Link
               href="/notas"
-              className="px-3.5 py-2 text-base font-medium text-[#ff9500] dark:text-[#ff9f0a] hover:bg-[#ff9500]/10 dark:hover:bg-[#ff9f0a]/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
+              className="px-3.5 py-2 text-base font-medium text-thymine-gold dark:text-thymine-gold hover:bg-thymine-gold/10 dark:hover:bg-thymine-gold/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
             >
               <StickyNote className="w-4 h-4" />
               {t('nav.notas')}
@@ -141,23 +133,23 @@ export default function Header() {
             {/* Command Palette Trigger */}
             <button
               onClick={() => setCommandPaletteOpen(true)}
-              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 apple-transition-fast border border-black/10 dark:border-white/10"
+              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl hover:bg-adenine-teal/10 dark:hover:bg-cytosine-cyan/10 apple-transition-fast border border-carbon-200 dark:border-carbon-700"
               aria-label={`${t('header.search')} (Cmd+K)`}
               title={`${t('header.search')} (Cmd+K)`}
             >
-              <Search className="w-4 h-4 text-[#86868b]" />
-              <span className="text-sm text-[#86868b]">{t('header.search')}</span>
-              <kbd className="hidden md:flex items-center gap-0.5 px-1.5 py-0.5 text-xs font-mono text-[#86868b] bg-black/5 dark:bg-white/10 rounded">
+              <Search className="w-4 h-4 text-carbon-500" />
+              <span className="text-sm text-carbon-500">{t('header.search')}</span>
+              <kbd className="hidden md:flex items-center gap-0.5 px-1.5 py-0.5 text-xs font-mono text-carbon-500 bg-carbon-200 dark:bg-carbon-700 rounded">
                 <Command className="w-3 h-3" />K
               </kbd>
             </button>
             {/* Mobile Search Button */}
             <button
               onClick={() => setCommandPaletteOpen(true)}
-              className="sm:hidden p-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 apple-transition-fast"
+              className="sm:hidden p-2 rounded-xl hover:bg-adenine-teal/10 dark:hover:bg-cytosine-cyan/10 apple-transition-fast"
               aria-label={t('header.search')}
             >
-              <Search className="w-5 h-5 text-[#1d1d1f] dark:text-[#f5f5f7]" />
+              <Search className="w-5 h-5 text-helix-navy dark:text-white" />
             </button>
 
             {/* High-Yield Mode Toggle */}
@@ -171,8 +163,8 @@ export default function Header() {
               onClick={toggleContentMode}
               className={`px-3.5 py-2 rounded-xl flex items-center gap-2 text-base font-medium apple-transition shadow-sm ${
                 contentMode === 'descriptive'
-                  ? 'bg-[#007aff]/10 text-[#007aff] dark:bg-[#5ac8fa]/15 dark:text-[#5ac8fa]'
-                  : 'bg-[#af52de]/10 text-[#af52de] dark:bg-[#bf5af2]/15 dark:text-[#bf5af2]'
+                  ? 'bg-adenine-teal/10 text-adenine-teal dark:bg-cytosine-cyan/15 dark:text-cytosine-cyan'
+                  : 'bg-guanine-green/10 text-guanine-green dark:bg-guanine-green/15 dark:text-guanine-green'
               }`}
               title={contentMode === 'descriptive' ? t('contentMode.descriptive') : t('contentMode.criticalAnalysis')}
               aria-pressed={contentMode === 'critical_analysis'}
@@ -184,21 +176,24 @@ export default function Header() {
               </span>
             </button>
 
+            {/* Region Selector */}
+            <RegionSelectorCompact />
+
             {/* Language Selector */}
             <LanguageSelector className="hidden sm:block" />
 
             {/* Toggle Tema */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 apple-transition-fast"
+              className="p-2 rounded-xl hover:bg-adenine-teal/10 dark:hover:bg-cytosine-cyan/10 apple-transition-fast"
               aria-label={theme === 'light' ? t('header.darkMode') : t('header.lightMode')}
               title={theme === 'light' ? t('header.darkMode') : t('header.lightMode')}
               aria-pressed={theme === 'dark'}
             >
               {theme === 'light' ? (
-                <Moon className="w-5 h-5 text-[#1d1d1f] dark:text-[#f5f5f7]" aria-hidden="true" />
+                <Moon className="w-5 h-5 text-helix-navy" aria-hidden="true" />
               ) : (
-                <Sun className="w-5 h-5 text-[#f5f5f7]" aria-hidden="true" />
+                <Sun className="w-5 h-5 text-cytosine-cyan" aria-hidden="true" />
               )}
             </button>
           </div>
@@ -344,6 +339,14 @@ export default function Header() {
                   </Link>
                 ))}
               </nav>
+            </div>
+
+            {/* Region Selector Mobile */}
+            <div className="px-5 pt-4 border-t border-black/10 dark:border-white/10">
+              <p className="py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">
+                Select Region
+              </p>
+              <RegionSelector showLabel={false} isCompact={false} className="w-full" />
             </div>
 
             {/* Language Selector Mobile */}

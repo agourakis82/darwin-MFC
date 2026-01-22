@@ -1,0 +1,25 @@
+{
+  "diseaseId": "bronquite-cronica",
+  "region": "BR",
+  "diseaseName": "Bronquite Crônica",
+  "prevalence": {"value": "4.2%", "population": "Brazilian adults", "year": 2024, "source": "SBPT (Sociedade Brasileira de Pneumologia e Tisiologia) and DataSUS", "trend": "stable with slight increase in urban areas due to air pollution"},
+  "incidence": {"value": "3.1 per 1000", "population": "Brazilian adults", "year": 2024, "source": "DataSUS epidemiological reports"},
+  "burden": {"dalyPerCapita": "85", "mortalityRate": "12.5 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Smoking (prevalence ~12% in adults)", "Air pollution in urban centers like São Paulo", "Biomass fuel exposure in rural households", "Occupational dust and chemical exposure", "Low socioeconomic status", "Genetic predisposition in some populations"],
+    "vulnerablePopulations": ["Adults over 40 years", "Rural women using biomass fuels for cooking", "Urban residents in high-pollution cities", "Low-income smokers"],
+    "diagnosticCriteria": "GOLD criteria for COPD, chronic cough/sputum for 3+ months/year for 2+ years"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited spirometry access, <20% in primary care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "6.3 million",
+    "controlRate": "35% well-controlled with access to SUS medications"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "SBPT/GOLD guidelines, spirometry when available, clinical diagnosis common",
+    "treatmentProtocol": "Bronchodilators (salbutamol, formoterol) via SUS, inhaled corticosteroids, smoking cessation programs",
+    "regionalChallenges": "Smoking prevalence, biomass fuel exposure in rural areas, limited spirometry access, air pollution in São Paulo/Rio",
+    "strongPoints": "SUS provision of inhalers, national smoking cessation program, SBPT guidelines"
+  }
+}

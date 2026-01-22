@@ -1,0 +1,25 @@
+{
+  "diseaseId": "nefrolitiase",
+  "region": "IN",
+  "diseaseName": "Kidney Stones (Nephrolithiasis)",
+  "prevalence": {"value": "4-7%", "population": "Indian adults (~1.4 billion)", "year": 2024, "source": "Urological Society of India (USI) and ICMR", "trend": "increasing due to extreme heat, dehydration, and dietary shifts"},
+  "incidence": {"value": "1.5 per 1000", "population": "Indian adults", "year": 2024, "source": "ICMR National Health Profile"},
+  "burden": {"dalyPerCapita": "0.05", "mortalityRate": "0.2 per 100,000", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["Extreme heat leading to dehydration", "Low water quality and intake", "High oxalate foods (spinach, nuts)", "Sedentary lifestyle", "Metabolic disorders like hypercalciuria", "Genetic factors in endemic areas"],
+    "vulnerablePopulations": ["Men (2-3x higher risk)", "Stone belt regions (Maharashtra, Gujarat, Rajasthan)", "Manual laborers in arid zones", "Rural populations with poor hydration"],
+    "diagnosticCriteria": "USI guidelines: Ultrasound as primary imaging, non-contrast CT when available for confirmation, KUB X-ray for radio-opaque stones"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "70 million - very high burden in stone belt",
+    "controlRate": "60% [with medical expulsive therapy and surgical interventions]"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "USI criteria, ultrasound primary in rural areas, CT in tertiary centers",
+    "treatmentProtocol": "Conservative: increased hydration; Medical: tamsulosin for stone passage; Surgical: ESWL, ureteroscopy, PCNL; Ayurvedic: Cystone (Himalaya), Gokshura",
+    "regionalChallenges": "Stone belt with very high prevalence due to heat/dehydration, limited lithotripsy in rural areas, poor water quality, high recurrence rates",
+    "strongPoints": "USI guidelines, growing lithotripsy access, Ayurvedic stone dissolution formulas (Cystone), affordable generic medications"
+  }
+}

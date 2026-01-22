@@ -1,0 +1,51 @@
+{
+  "diseaseId": "doenca-graves",
+  "region": "BR",
+  "diseaseName": "Doenca de Graves",
+  "prevalence": {
+    "value": "~0.5-1.0% (adults)",
+    "population": "Brazilian adults",
+    "year": 2024,
+    "source": "SBEM and endocrine epidemiology syntheses",
+    "trend": "stable; higher detection in women"
+  },
+  "incidence": {
+    "value": "~20-40 per 100,000/year",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Endocrinology cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; morbidity from hyperthyroidism and ophthalmopathy",
+    "mortalityRate": "Low",
+    "year": 2024,
+    "source": "IHME/GBD endocrine burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "female sex",
+      "family history of autoimmune disease",
+      "smoking (ophthalmopathy risk)",
+      "stress",
+      "postpartum period"
+    ],
+    "vulnerablePopulations": [
+      "women 20-50 years",
+      "smokers",
+      "patients with other autoimmune disease"
+    ],
+    "diagnosticCriteria": "Suppressed TSH with elevated free T4/T3; positive TRAb; thyroid uptake scan when needed"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; symptom-driven diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands to >1 million",
+    "controlRate": "High with antithyroid therapy and follow-up"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Lab testing widely available; uptake scan in referral centers",
+    "treatmentProtocol": "Antithyroid drugs (methimazole), beta-blockers, radioiodine or surgery when indicated; manage ophthalmopathy",
+    "regionalChallenges": "Access to specialized ophthalmology and radioiodine in some regions",
+    "strongPoints": "Clear diagnostic criteria and effective medical therapy"
+  }
+}

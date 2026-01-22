@@ -1,0 +1,53 @@
+{
+  "diseaseId": "transtorno-uso-alcool",
+  "region": "IN",
+  "diseaseName": "Alcohol Use Disorder (AUD)",
+  "prevalence": {
+    "value": "4-7% (higher in men; state variability)",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "National surveys on substance use + IHME GBD",
+    "trend": "stable to increasing in some states; high treatment gap"
+  },
+  "incidence": {
+    "value": "6-12 per 1,000/year",
+    "population": "Indian adults",
+    "year": 2024,
+    "source": "GBD context extrapolated"
+  },
+  "burden": {
+    "dalyPerCapita": "0.02-0.06",
+    "mortalityRate": "Elevated (injury, liver disease, TB interactions; indirect)",
+    "year": 2024,
+    "source": "IHME GBD"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "early initiation",
+      "psychiatric comorbidity",
+      "social stress",
+      "availability and cultural norms",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "men",
+      "migrant workers",
+      "people with depression/anxiety",
+      "low-income households"
+    ],
+    "diagnosticCriteria": "DSM-5/ICD-11 AUD criteria; assess withdrawal risk and comorbidities"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~40-70 million",
+    "controlRate": "Low due to large treatment gap and limited de-addiction capacity"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often identified late; community and primary care screening is inconsistent",
+    "treatmentProtocol": "Detoxification and psychosocial interventions; relapse prevention; pharmacotherapy where available; integration with mental health services",
+    "regionalChallenges": "High stigma, limited services, and out-of-pocket costs",
+    "strongPoints": "Growing de-addiction services and public health initiatives in some states"
+  }
+}
+

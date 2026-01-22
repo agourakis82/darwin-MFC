@@ -1,0 +1,52 @@
+{
+  "diseaseId": "constipacao-intestinal",
+  "region": "EU",
+  "diseaseName": "Chronic constipation",
+  "prevalence": {
+    "value": "~10-20% (adults)",
+    "population": "EU adults",
+    "year": 2024,
+    "source": "European gastroenterology epidemiology syntheses",
+    "trend": "stable; higher in women and older adults"
+  },
+  "incidence": {
+    "value": "~5-10% annual new or chronic cases",
+    "population": "Adults",
+    "year": 2024,
+    "source": "Primary care and GI cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; significant QOL and healthcare utilization impact",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe/IHME digestive disease context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "low fiber intake",
+      "low fluid intake",
+      "sedentary lifestyle",
+      "opioid or anticholinergic use",
+      "female sex",
+      "older age"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "women",
+      "patients on constipating medications"
+    ],
+    "diagnosticCriteria": "Rome IV functional constipation criteria; exclude secondary causes and alarm features"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Tens of millions of adults",
+    "controlRate": "High with diet and evidence-based laxative regimens"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care diagnosis with access to GI evaluation when needed",
+    "treatmentProtocol": "Dietary fiber and fluids, PEG/lactulose, stimulant laxatives short-term; evaluate secondary causes",
+    "regionalChallenges": "Adherence and long-term management in older adults",
+    "strongPoints": "Wide access to effective laxatives and primary care"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "diseaseId": "enxaqueca-hemiplegica",
+  "region": "IN",
+  "diseaseName": "Hemiplegic Migraine",
+  "prevalence": {
+    "value": "rare (<0.01%)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Headache epidemiology syntheses",
+    "trend": "stable; underdiagnosis common"
+  },
+  "incidence": {
+    "value": "very low",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "Clinical epidemiology syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "low at population level",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME/WHO headache context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic susceptibility",
+      "migraine history",
+      "sleep deprivation"
+    ],
+    "vulnerablePopulations": [
+      "patients with limited access to imaging and neurology",
+      "patients misdiagnosed as stroke/TIA"
+    ],
+    "diagnosticCriteria": "ICHD-3 hemiplegic migraine criteria; stroke/TIA must be excluded (often requires imaging)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very low (underdiagnosed)",
+    "controlRate": "Variable; specialist access is key"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Often treated as stroke in emergency settings; follow-up neurology access limited outside metros",
+    "treatmentProtocol": "Individualized acute management; preventive therapy in specialist care",
+    "regionalChallenges": "Limited access to imaging and headache specialists and delayed follow-up",
+    "strongPoints": "Tertiary hospitals can provide imaging and neurology evaluation in urban centers"
+  }
+}
+

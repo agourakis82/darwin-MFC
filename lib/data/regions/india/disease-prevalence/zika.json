@@ -1,0 +1,51 @@
+{
+  "diseaseId": "zika",
+  "region": "IN",
+  "diseaseName": "Zika Virus Infection",
+  "prevalence": {
+    "value": "rare; sporadic outbreaks in limited geographies",
+    "population": "Indian population (~1.4 billion)",
+    "year": 2024,
+    "source": "NCDC / ICMR outbreak reports",
+    "trend": "sporadic; surveillance strengthened after reported clusters"
+  },
+  "incidence": {
+    "value": "very low (<0.01 per 1,000/year)",
+    "population": "Indian population",
+    "year": 2024,
+    "source": "NCDC/ICMR surveillance summaries"
+  },
+  "burden": {
+    "dalyPerCapita": "minimal at population level; localized maternal/infant burden in outbreaks",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Aedes exposure in urban settings",
+      "monsoon season breeding sites",
+      "travel to affected districts",
+      "unprotected sex (rare transmission route)"
+    ],
+    "vulnerablePopulations": [
+      "pregnant people",
+      "women of reproductive age",
+      "newborns exposed in utero"
+    ],
+    "diagnosticCriteria": "RT-PCR early in illness; serology with flavivirus cross-reactivity; case definitions per national guidance"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; targeted testing during clusters and in pregnancy when indicated",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very low; outbreak clusters",
+    "controlRate": "Supportive care; prevention relies on vector control and pregnancy-focused risk communication"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR/NCDC-led outbreak investigations with centralized lab confirmation",
+    "treatmentProtocol": "Supportive management; pregnancy counseling and fetal monitoring during outbreaks",
+    "regionalChallenges": "Limited routine testing capacity outside outbreaks and differential diagnosis with dengue/chikungunya",
+    "strongPoints": "Rapid outbreak investigation capability through ICMR network and established vector control programmes"
+  }
+}
+

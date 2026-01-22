@@ -1,0 +1,48 @@
+{
+  "diseaseId": "doenca-huntington",
+  "region": "BR",
+  "diseaseName": "Doença de Huntington",
+  "prevalence": {
+    "value": "3-7 per 100,000",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Neurogenetics epidemiology syntheses",
+    "trend": "stable; diagnosis improving with genetic testing access"
+  },
+  "incidence": {
+    "value": "0.2-0.5 per 100,000/year",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Huntington cohort syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0002-0.0008",
+    "mortalityRate": "Elevated vs general population (neurodegenerative course)",
+    "year": 2024,
+    "source": "IHME/WHO neurodegenerative burden context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "autosomal dominant HTT expansion",
+      "family history"
+    ],
+    "vulnerablePopulations": [
+      "families with known Huntington disease",
+      "patients with limited access to genetic counseling"
+    ],
+    "diagnosticCriteria": "Clinical motor/cognitive/psychiatric syndrome with confirmatory genetic testing; supportive neuroimaging; multidisciplinary evaluation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~6,000-15,000",
+    "controlRate": "Not curable; symptom management depends on multidisciplinary access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Genetic testing and counseling concentrated in specialized centers",
+    "treatmentProtocol": "Symptomatic management (chorea, psychiatric symptoms), rehabilitation, caregiver support, and palliative planning",
+    "regionalChallenges": "Limited access to neurogenetics services and long-term multidisciplinary support outside major centers",
+    "strongPoints": "Specialized university centers can provide diagnosis and multidisciplinary follow-up"
+  }
+}
+

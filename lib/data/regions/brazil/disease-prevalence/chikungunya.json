@@ -1,0 +1,53 @@
+{
+  "diseaseId": "chikungunya",
+  "region": "BR",
+  "diseaseName": "Chikungunya",
+  "prevalence": {
+    "value": "outbreak-dependent; typically <0.2% annual incidence nationally",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "Ministério da Saúde (SINAN) / Fiocruz",
+    "trend": "increasing geographic spread with Aedes vectors; recurrent outbreaks in Northeast and Southeast"
+  },
+  "incidence": {
+    "value": "0.2-2.0 per 1,000/year (outbreak-dependent)",
+    "population": "Brazilian population",
+    "year": 2024,
+    "source": "SINAN / SVSA"
+  },
+  "burden": {
+    "dalyPerCapita": "0.0001-0.0006",
+    "mortalityRate": "Low; disability burden can be substantial due to chronic arthralgia",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD)"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "Aedes exposure (urban/peri-urban)",
+      "standing water and poor waste management",
+      "lack of window screens/repellents",
+      "prior outbreaks in municipality",
+      "delayed supportive care in severe cases"
+    ],
+    "vulnerablePopulations": [
+      "older adults",
+      "people with rheumatologic comorbidity",
+      "pregnant people and neonates (perinatal transmission risk)",
+      "communities in high Aedes density areas"
+    ],
+    "diagnosticCriteria": "Acute fever with polyarthralgia; confirmation by RT-PCR (early) or IgM serology; differential includes dengue and Zika"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; syndromic surveillance with targeted lab confirmation",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens to hundreds of thousands/year (outbreak-dependent)",
+    "controlRate": "Acute mortality low; long-term symptom control variable with chronic arthralgia in a subset"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "APS triage for arboviral syndromes; confirmatory testing prioritized during outbreaks",
+    "treatmentProtocol": "Supportive care (analgesics, hydration); avoid NSAIDs until dengue excluded; management of chronic arthralgia with physiotherapy and rheumatology referral when available",
+    "regionalChallenges": "Chronic disability burden and limited multidisciplinary rehab access in SUS outside large centers",
+    "strongPoints": "Integrated arbovirus surveillance and clinical guidance within SUS, with growing municipal vector control experience"
+  }
+}
+

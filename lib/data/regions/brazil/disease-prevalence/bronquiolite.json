@@ -1,0 +1,54 @@
+{
+  "diseaseId": "bronquiolite",
+  "region": "BR",
+  "diseaseName": "Bronquiolite Aguda (RSV)",
+  "prevalence": {
+    "value": "common seasonal illness; ~10-20% of infants affected annually",
+    "population": "Infants (<2 years) in Brazil",
+    "year": 2024,
+    "source": "SBP / RSV epidemiology syntheses",
+    "trend": "seasonal peaks; severe burden in infants and preterm babies"
+  },
+  "incidence": {
+    "value": "100-200 per 1,000 infants/year (episodes; season-dependent)",
+    "population": "Infants",
+    "year": 2024,
+    "source": "Pediatric respiratory infection syntheses"
+  },
+  "burden": {
+    "dalyPerCapita": "high per-case in severe disease; overall pediatric burden significant",
+    "mortalityRate": "Low overall; higher in high-risk infants and limited-resource settings",
+    "year": 2024,
+    "source": "WHO/IHME lower respiratory infection context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "RSV exposure",
+      "prematurity",
+      "chronic lung disease",
+      "congenital heart disease",
+      "tobacco smoke exposure",
+      "crowded households"
+    ],
+    "vulnerablePopulations": [
+      "infants <6 months",
+      "preterm infants",
+      "infants with CHD/CLD",
+      "low-income households"
+    ],
+    "diagnosticCriteria": "Clinical diagnosis (wheezing, cough, increased work of breathing) in infants during RSV season; pulse oximetry; exclude pneumonia; RSV testing not always required"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "hundreds of thousands of infant cases/season",
+    "controlRate": "Good with supportive care; severe cases require hospital/oxygen support"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in APS/ER; RSV testing used variably in hospitals",
+    "treatmentProtocol": "Supportive care: hydration, nasal suction, oxygen if hypoxic; avoid routine bronchodilators/antibiotics unless indicated; ICU for severe cases",
+    "regionalChallenges": "Seasonal surges overwhelming pediatric wards and unequal access to pediatric ICU in some regions",
+    "strongPoints": "Established pediatric guidelines and broad hospital network for supportive care in SUS"
+  }
+}
+

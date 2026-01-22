@@ -1,0 +1,51 @@
+{
+  "diseaseId": "depressao-idoso",
+  "region": "EU",
+  "diseaseName": "Depression in Older Adults",
+  "prevalence": {
+    "value": "10-15% (clinically significant symptoms); major depression 3-5%",
+    "population": "EU adults >65 years",
+    "year": 2024,
+    "source": "European geriatric psychiatry epidemiology syntheses",
+    "trend": "stable; higher in socially isolated and multimorbid older adults"
+  },
+  "incidence": {
+    "value": "8-18 per 1,000 person-years",
+    "population": "Older adults",
+    "year": 2024,
+    "source": "European cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "0.02-0.05",
+    "mortalityRate": "Indirect",
+    "year": 2024,
+    "source": "IHME/WHO Europe mental health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "social isolation",
+      "bereavement",
+      "chronic disease and pain",
+      "cognitive impairment"
+    ],
+    "vulnerablePopulations": [
+      "older adults living alone",
+      "care home residents",
+      "older adults with multimorbidity"
+    ],
+    "diagnosticCriteria": "Structured assessment with screening tools and differentiation from dementia and medical causes"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "variable; primary care detection pathways exist in many systems",
+    "treatmentAvailable": true,
+    "estimatedPatients": "tens of millions of older adults",
+    "controlRate": "Moderate to high with integrated care; varies by member state"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Primary care and geriatric services commonly detect and manage depression",
+    "treatmentProtocol": "Psychotherapy and antidepressants with geriatric monitoring; social prescribing and support services",
+    "regionalChallenges": "Service variability and access in rural areas",
+    "strongPoints": "Strong primary care and social support integration in many member states"
+  }
+}
+

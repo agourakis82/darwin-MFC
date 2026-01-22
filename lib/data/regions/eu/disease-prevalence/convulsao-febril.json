@@ -1,0 +1,49 @@
+{
+  "diseaseId": "convulsao-febril",
+  "region": "EU",
+  "diseaseName": "Febrile seizure",
+  "prevalence": {
+    "value": "~2-5% of children under 5",
+    "population": "EU children <5 years",
+    "year": 2024,
+    "source": "European pediatric neurology epidemiology syntheses",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~3-5 per 1,000 children/year",
+    "population": "Children <5 years",
+    "year": 2024,
+    "source": "Pediatric cohort studies"
+  },
+  "burden": {
+    "dalyPerCapita": "low mortality; high caregiver anxiety and ED utilization",
+    "mortalityRate": "Negligible",
+    "year": 2024,
+    "source": "WHO Europe child health context"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "viral febrile illnesses",
+      "family history",
+      "rapid temperature rise",
+      "age 6-24 months"
+    ],
+    "vulnerablePopulations": [
+      "infants and toddlers",
+      "children with family history"
+    ],
+    "diagnosticCriteria": "Seizure with fever in 6-60 months without CNS infection or prior afebrile seizures"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no screening; acute presentation",
+    "treatmentAvailable": true,
+    "estimatedPatients": "Hundreds of thousands of children ever affected",
+    "controlRate": "High with parental education and acute management"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Clinical diagnosis in emergency and pediatric services; exclude meningitis when indicated",
+    "treatmentProtocol": "Supportive care, antipyretics; benzodiazepines for prolonged seizures",
+    "regionalChallenges": "ED utilization during viral seasons",
+    "strongPoints": "Strong pediatric care pathways and access to emergency services"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "diseaseId": "sindrome-intestino-irritavel",
+  "region": "BR",
+  "diseaseName": "Síndrome do Intestino Irritável (SII)",
+  "prevalence": {"value": "12%", "population": "Brazilian adults", "year": 2024, "source": "FBG estimates based on DataSUS health surveys", "trend": "stable [consistent with global patterns, slight urban increase]"},
+  "incidence": {"value": "1.2 per 1000", "population": "Brazilian adults", "year": 2024, "source": "FBG epidemiological review"},
+  "burden": {"dalyPerCapita": "0.0008", "mortalityRate": "Negligible", "year": 2024, "source": "IHME Global Burden of Disease"},
+  "epidemiology": {
+    "riskFactors": ["female sex", "stress", "anxiety", "food intolerances", "post-infectious triggers", "genetic predisposition"],
+    "vulnerablePopulations": ["Women (2x higher)", "Young adults 20-40 years", "Urban dwellers with high-stress lifestyles"],
+    "diagnosticCriteria": "Rome IV criteria, FBG guidelines, diagnosis of exclusion"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "no routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "19 million",
+    "controlRate": "35% [partial symptom control via SUS access]"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Rome IV criteria adapted by FBG, clinical diagnosis, limited colonoscopy for alarm symptoms",
+    "treatmentProtocol": "Dietary: low FODMAP, fiber; Medical: antispasmodics, loperamide, antidepressants (amitriptyline) via SUS; Psychological: CBT when available",
+    "regionalChallenges": "Underdiagnosis, limited gastroenterologist access, low FODMAP diet awareness, psychiatric comorbidities",
+    "strongPoints": "FBG guidelines, basic medications via SUS, growing awareness"
+  }
+}
