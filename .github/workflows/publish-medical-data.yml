@@ -29,16 +29,13 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Install dependencies (root)
-        run: npm ci
-
       - name: Install package dependencies
         working-directory: packages/medical-data
         run: npm install
 
       - name: Build package
         working-directory: packages/medical-data
-        run: npm run build
+        run: npx tsup
 
       - name: Verify build output
         working-directory: packages/medical-data
