@@ -1,0 +1,90 @@
+name: Publish @darwin-mfc/medical-data
+
+on:
+  push:
+    tags:
+      - 'medical-data-v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g., 1.0.1)'
+        required: true
+        type: string
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies (root)
+        run: npm ci
+
+      - name: Install package dependencies
+        working-directory: packages/medical-data
+        run: npm install
+
+      - name: Build package
+        working-directory: packages/medical-data
+        run: npm run build
+
+      - name: Verify build output
+        working-directory: packages/medical-data
+        run: |
+          echo "Build output:"
+          ls -la dist/
+          echo ""
+          echo "Package size:"
+          du -sh dist/
+
+      - name: Update version (if manual trigger)
+        if: github.event_name == 'workflow_dispatch'
+        working-directory: packages/medical-data
+        run: npm version ${{ github.event.inputs.version }} --no-git-tag-version
+
+      - name: Publish to npm
+        working-directory: packages/medical-data
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          name: "@darwin-mfc/medical-data ${{ github.ref_name }}"
+          body: |
+            ## @darwin-mfc/medical-data
+
+            Medical data package for Darwin Education and other ecosystem projects.
+
+            ### Installation
+            ```bash
+            npm install @darwin-mfc/medical-data
+            ```
+
+            ### Contents
+            - **Diseases**: 1000+ diseases with ICD-10, CIAP-2, SNOMED-CT mappings
+            - **Medications**: 600+ medications with RENAME (Brazilian essential medications) data
+            - **Protocols**: Clinical protocols with interactive flowcharts
+
+            ### Usage
+            ```typescript
+            import { doencasConsolidadas, medicamentosConsolidados } from '@darwin-mfc/medical-data';
+            ```
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

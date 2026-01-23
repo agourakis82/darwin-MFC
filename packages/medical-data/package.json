@@ -1,0 +1,61 @@
+{
+  "name": "@darwin-mfc/medical-data",
+  "version": "1.0.0",
+  "description": "Medical data exports from Darwin-MFC for use in Darwin Education and other projects",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./diseases": {
+      "import": "./dist/diseases.mjs",
+      "require": "./dist/diseases.js"
+    },
+    "./medications": {
+      "import": "./dist/medications.mjs",
+      "require": "./dist/medications.js"
+    },
+    "./protocols": {
+      "import": "./dist/protocols.mjs",
+      "require": "./dist/protocols.js"
+    },
+    "./types": {
+      "import": "./dist/types.mjs",
+      "require": "./dist/types.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "medical",
+    "healthcare",
+    "diseases",
+    "medications",
+    "protocols",
+    "darwin-mfc",
+    "family-medicine",
+    "brazil",
+    "sus",
+    "rename"
+  ],
+  "author": "Darwin Medical Foundation Cluster",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darwin-mfc/darwin-MFC.git",
+    "directory": "packages/medical-data"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0"
+  }
+}
