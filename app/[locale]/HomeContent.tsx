@@ -2,11 +2,11 @@
 
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
-import { 
-  ArrowRight, 
-  BookOpen, 
-  Pill, 
-  FileText, 
+import {
+  ArrowRight,
+  BookOpen,
+  Pill,
+  FileText,
   Calculator,
   Stethoscope,
   Shield,
@@ -26,6 +26,7 @@ import { DarwinLogo } from '@/app/components/Brand';
 import { doencasConsolidadas } from '@/lib/data/doencas/index';
 import { medicamentosConsolidados } from '@/lib/data/medicamentos/index';
 import { todosProtocolosFlowchart } from '@/lib/data/protocolos-flowchart';
+import { PageContainer, ContentContainer, SectionContainer } from '@/app/components/Layout/Containers';
 
 // Dynamic statistics
 const stats = {
@@ -66,10 +67,10 @@ export default function HomeContent() {
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-adenine-teal/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-guanine-green/15 rounded-full blur-3xl" />
         
-        <div className="relative container mx-auto px-4 py-20 lg:py-32">
-          <div className="max-w-5xl mx-auto">
+        <div className="relative">
+          <ContentContainer className="py-20 lg:py-32">
             {/* Badge */}
-            <motion.div 
+            <motion.div
               className="flex justify-center mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -84,7 +85,7 @@ export default function HomeContent() {
             </motion.div>
 
             {/* Main headline */}
-            <motion.div 
+            <motion.div
               className="text-center mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -97,13 +98,13 @@ export default function HomeContent() {
                 </span>
               </h1>
               <p className="text-lg sm:text-xl text-carbon-600 dark:text-carbon-300 max-w-2xl mx-auto font-body leading-relaxed">
-                Evidence-based protocols, intelligent drug references, and clinical calculators — 
+                Evidence-based protocols, intelligent drug references, and clinical calculators —
                 all in one premium platform built for Family Medicine.
               </p>
             </motion.div>
 
             {/* CTA Buttons */}
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -128,7 +129,7 @@ export default function HomeContent() {
             </motion.div>
 
             {/* Trust indicators */}
-            <motion.div 
+            <motion.div
               className="flex flex-wrap justify-center gap-6 text-sm text-carbon-500 dark:text-carbon-400"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -147,7 +148,7 @@ export default function HomeContent() {
                 <span>CIAP-2 / CID-10 Coded</span>
               </div>
             </motion.div>
-          </div>
+          </ContentContainer>
         </div>
 
         {/* Curved section divider */}
@@ -161,7 +162,8 @@ export default function HomeContent() {
       {/* ============================================ */}
       {/* STATS BENTO GRID                            */}
       {/* ============================================ */}
-      <section className="container mx-auto px-4 py-16 lg:py-24">
+      <section>
+        <PageContainer className="py-16 lg:py-24">
         <motion.div 
           className="bento-grid"
           variants={staggerContainer}
@@ -284,12 +286,14 @@ export default function HomeContent() {
             </div>
           </motion.div>
         </motion.div>
+        </PageContainer>
       </section>
 
       {/* ============================================ */}
       {/* QUICK ACCESS SECTION                        */}
       {/* ============================================ */}
-      <section className="container mx-auto px-4 py-16">
+      <section>
+        <PageContainer className="py-16">
         <motion.div 
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -330,12 +334,14 @@ export default function HomeContent() {
             </motion.div>
           ))}
         </motion.div>
+        </PageContainer>
       </section>
 
       {/* ============================================ */}
       {/* SCREENING CATEGORIES                        */}
       {/* ============================================ */}
-      <section className="container mx-auto px-4 py-16">
+      <section>
+        <PageContainer className="py-16">
         <motion.div 
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -378,12 +384,14 @@ export default function HomeContent() {
             </motion.div>
           ))}
         </motion.div>
+        </PageContainer>
       </section>
 
       {/* ============================================ */}
       {/* TRUST SECTION                               */}
       {/* ============================================ */}
-      <section className="container mx-auto px-4 py-16 lg:py-24">
+      <section>
+        <PageContainer className="py-16 lg:py-24">
         <motion.div 
           className="card-darwin p-8 lg:p-12 bg-gradient-to-br from-helix-navy via-helix-navy to-adenine-teal text-white text-center relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
@@ -426,6 +434,7 @@ export default function HomeContent() {
             </div>
           </div>
         </motion.div>
+        </PageContainer>
       </section>
     </div>
   );

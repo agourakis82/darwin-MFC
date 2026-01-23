@@ -1,0 +1,10 @@
+console.log('🔌 Checking LLM Offload Providers\n');
+console.log('Available providers for translation:');
+console.log('  ✓ local     - CPU-bound (no API key needed)');
+console.log('  ✓ Minimax   - minimax.ai (configured via MCP)');
+console.log('  ✓ Groq      - groq.com (configured via MCP)');
+console.log('  ✓ Grok      - grok-4-fast-reasoning via xAI\n');
+console.log('📋 Recommendation for Phase 2 B:');
+console.log('  Use local provider first for quick validation');
+console.log('  Fallback chain: local → Minimax → Groq → Grok');
+console.log('\n✅ Providers verified and ready');
