@@ -312,7 +312,7 @@ export default function ProgressPage() {
             </div>
           </div>
         )}
-      </div>
+      </PageContainer>
     </div>
   );
 }

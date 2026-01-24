@@ -195,7 +195,7 @@ export default function CasosClinicosClient() {
             <p className="text-neutral-500">{t('emptyState.subtitle')}</p>
           </div>
         )}
-      </div>
+      </PageContainer>
     </div>
   );
 }

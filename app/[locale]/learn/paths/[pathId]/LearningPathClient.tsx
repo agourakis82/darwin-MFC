@@ -274,7 +274,7 @@ export default function LearningPathClient({ pathId }: LearningPathClientProps) 
               </button>
             )}
           </div>
-        </div>
+        </ContentContainer>
       </div>
 
       {/* Modules List */}

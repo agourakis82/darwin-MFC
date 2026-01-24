@@ -56,7 +56,7 @@ export default function AdultosPage() {
             </div>
           )}
         </div>
-      </div>
+      </PageContainer>
     </div>
   );
 }

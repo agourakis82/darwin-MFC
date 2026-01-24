@@ -80,7 +80,7 @@ export default function NeonatalPage() {
             </div>
           </div>
         </div>
-      </div>
+      </PageContainer>
     </div>
   );
 }

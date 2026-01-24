@@ -60,7 +60,7 @@ export default function InfantilPage() {
             </div>
           )}
         </div>
-      </div>
+      </PageContainer>
     </div>
   );
 }

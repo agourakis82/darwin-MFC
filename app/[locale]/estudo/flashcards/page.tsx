@@ -600,7 +600,7 @@ export default function FlashcardsStudyPage() {
               </span>
             </button>
           </div>
-        </div>
+        </ContentContainer>
       </div>
     );
   }
