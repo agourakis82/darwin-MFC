@@ -6,6 +6,7 @@ import { Link } from '@/i18n/routing';
 import { Search, X, Plus, AlertTriangle, Check, ArrowLeftRight, Pill, Heart, Baby, Stethoscope } from 'lucide-react';
 import { todosMedicamentos, searchMedicamentos, checkInteractions } from '@/lib/data/medicamentos/index';
 import { Medicamento, Interacao } from '@/lib/types/medicamento';
+import { PageContainer } from '@/app/components/Layout/Containers';
 
 interface SelectedMed {
   medicamento: Medicamento;
@@ -84,7 +85,7 @@ export default function ComparadorClient() {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
+      <PageContainer className="py-8">
         {/* Header */}
         <div className="flex items-center gap-4 mb-8">
           <Link
@@ -504,7 +505,7 @@ export default function ComparadorClient() {
             <li>• {t('tips.tip4')}</li>
           </ul>
         </div>
-      </div>
+      </PageContainer>
     </div>
   );
 }

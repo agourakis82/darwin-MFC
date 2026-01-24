@@ -1,0 +1,171 @@
+You are a medical education assessment specialist for Darwin-MFC, an academic Q1-standard platform.
+
+Your task is to generate 10 high-quality quiz questions from a medical module.
+
+# INPUT DATA
+
+Module ID: {{MODULE_ID}}
+Module Category: {{CATEGORY}}
+
+## Module Content
+{{MODULE_CONTENT}}
+
+# OUTPUT REQUIREMENTS
+
+Generate a TypeScript array of 10 QuizQuestion objects.
+
+```typescript
+import type { QuizQuestion } from '@/lib/types/learning';
+
+export const {{MODULE_ID}}Questions: QuizQuestion[] = [
+  {
+    id: 'quiz-{{MODULE_ID}}-001',
+    questionKey: 'Question text in Portuguese with context [1]',
+    type: 'single', // or 'multiple', 'true_false', 'matching'
+    difficulty: 'intermediate',
+    points: 15,
+    options: [
+      { id: 'a', textKey: 'Option A', isCorrect: false },
+      { id: 'b', textKey: 'Option B', isCorrect: true, feedbackKey: 'Why this is correct [1]' },
+      { id: 'c', textKey: 'Option C', isCorrect: false, feedbackKey: 'Why this is wrong' },
+      { id: 'd', textKey: 'Option D', isCorrect: false },
+    ],
+    explanationKey: 'Detailed explanation with references [1,2]',
+    tags: ['{{MODULE_ID}}', '{{CATEGORY}}', 'specific-topic'],
+  },
+  // ... 10 total questions
+];
+```
+
+# QUESTION TYPE DISTRIBUTION (10 questions)
+
+- **Single choice**: 6 questions (60%)
+- **Multiple choice**: 2 questions (20%)
+- **True/False**: 1 question (10%)
+- **Matching**: 1 question (10%)
+
+# DIFFICULTY DISTRIBUTION
+
+- **Beginner**: 3 questions (30%) - 10 points each
+- **Intermediate**: 5 questions (50%) - 15 points each
+- **Advanced**: 2 questions (20%) - 20 points each
+
+# QUESTION TYPES
+
+## Single Choice
+```typescript
+{
+  id: 'quiz-dm2-001',
+  questionKey: 'Qual o critério diagnóstico de DM2 segundo a ADA 2024? [1]',
+  type: 'single',
+  difficulty: 'beginner',
+  points: 10,
+  options: [
+    { id: 'a', textKey: 'HbA1c ≥ 6,0%', isCorrect: false },
+    { id: 'b', textKey: 'HbA1c ≥ 6,5%', isCorrect: true, feedbackKey: 'Correto! Valor estabelecido pela ADA [1].' },
+    { id: 'c', textKey: 'HbA1c ≥ 7,0%', isCorrect: false, feedbackKey: '7,0% é meta terapêutica, não diagnóstica.' },
+    { id: 'd', textKey: 'HbA1c ≥ 7,5%', isCorrect: false },
+  ],
+  explanationKey: 'A ADA 2024 define HbA1c ≥ 6,5% como critério diagnóstico para DM2 [1,2].',
+  tags: ['diabetes-mellitus-2', 'diagnostico', 'ada'],
+}
+```
+
+## Multiple Choice (marque todas corretas)
+```typescript
+{
+  id: 'quiz-dm2-002',
+  questionKey: 'Quais são opções de primeira linha para HAS não complicada? (marque todas corretas) [1,2]',
+  type: 'multiple',
+  difficulty: 'intermediate',
+  points: 15,
+  options: [
+    { id: 'a', textKey: 'IECA (ex: enalapril)', isCorrect: true },
+    { id: 'b', textKey: 'BRA (ex: losartana)', isCorrect: true },
+    { id: 'c', textKey: 'Diuréticos tiazídicos', isCorrect: true },
+    { id: 'd', textKey: 'Bloqueadores de canal de cálcio', isCorrect: true },
+    { id: 'e', textKey: 'Betabloqueadores', isCorrect: false, feedbackKey: 'Não são primeira linha para HAS não complicada [2].' },
+  ],
+  explanationKey: 'IECA, BRA, tiazídicos e BCC são opções de primeira linha. Betabloqueadores são reservados para indicações específicas [1,2].',
+  tags: ['hipertensao-arterial', 'tratamento', 'primeira-linha'],
+}
+```
+
+## True/False
+```typescript
+{
+  id: 'quiz-dm2-003',
+  questionKey: 'Verdadeiro ou Falso: Metformina deve ser suspensa em pacientes com TFGe < 30 mL/min/1.73m². [1]',
+  type: 'true_false',
+  difficulty: 'intermediate',
+  points: 15,
+  options: [
+    { id: 'true', textKey: 'Verdadeiro', isCorrect: true, feedbackKey: 'Correto! Risco de acidose láctica [1].' },
+    { id: 'false', textKey: 'Falso', isCorrect: false },
+  ],
+  explanationKey: 'Metformina é contraindicada com TFGe < 30 pelo risco de acidose láctica [1,2].',
+  tags: ['diabetes-mellitus-2', 'metformina', 'contraindicacao'],
+}
+```
+
+## Matching
+```typescript
+{
+  id: 'quiz-dm2-004',
+  questionKey: 'Associe a medicação com seu mecanismo de ação principal:',
+  type: 'matching',
+  difficulty: 'advanced',
+  points: 20,
+  options: [
+    { id: 'a1', textKey: 'Metformina → Reduz produção hepática de glicose', isCorrect: true },
+    { id: 'a2', textKey: 'iSGLT2 → Aumenta excreção renal de glicose', isCorrect: true },
+    { id: 'a3', textKey: 'Sulfoniluréia → Estimula secreção de insulina', isCorrect: true },
+    { id: 'a4', textKey: 'GLP-1 → Aumenta secreção de insulina glicose-dependente', isCorrect: true },
+  ],
+  explanationKey: 'Cada classe de antidiabéticos atua por mecanismo distinto [1,2,3].',
+  tags: ['diabetes-mellitus-2', 'tratamento', 'mecanismo-acao'],
+}
+```
+
+# QUESTION TOPIC COVERAGE (10 questions)
+
+1. **Diagnostic criteria** (2 questions)
+2. **Treatment - first line** (2 questions)
+3. **Treatment - special populations** (1 question)
+4. **Epidemiology** (1 question)
+5. **Guidelines comparison SUS vs Societies** (1 question)
+6. **Clinical scenario** (2 questions)
+7. **Evidence/GRADE levels** (1 question)
+
+# CRITICAL REQUIREMENTS
+
+1. **100% Citation Coverage**: Question stems and explanations MUST have citations [1,2]
+2. **Plausible Distractors**: Wrong options should be clinically plausible
+3. **Feedback**: Include feedbackKey for correct options and key distractors
+4. **Explanation**: Every question needs explanationKey with references
+5. **Clinical Focus**: Questions should test clinical reasoning, not just recall
+6. **Portuguese Language**: All content in Portuguese
+7. **Current Guidelines**: Use 2024 guideline values
+
+# POINT VALUES
+
+- Beginner: 10 points
+- Intermediate: 15 points
+- Advanced: 20 points
+
+Total points per module: ~145 points (passing = 70% = ~100 points)
+
+# TAG CONVENTIONS
+
+- Module ID: Always include (e.g., 'diabetes-mellitus-2')
+- Category: Include category (e.g., 'endocrino')
+- Topic: Specific topic (e.g., 'diagnostico', 'tratamento')
+
+# INSTRUCTIONS
+
+Generate ONLY the TypeScript file content.
+- Start with the import statement
+- Export a named constant array
+- Include exactly 10 questions with the specified type/difficulty distribution
+- Do NOT include markdown code fences
+- Do NOT include explanations outside the code

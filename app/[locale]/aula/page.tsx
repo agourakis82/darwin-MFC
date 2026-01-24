@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from '@/i18n/routing';
 import { caseSteps } from '@/lib/data/caso-clinico';
 import { ChevronLeft, ChevronRight, Home } from 'lucide-react';
+import { ContentContainer, PageContainer } from '@/app/components/Layout/Containers';
 
 // Direct imports - no lazy loading
 import AuthorCredits from '@/app/components/Aula/AuthorCredits';
@@ -67,14 +68,14 @@ export default function AulaPage() {
     <div className="min-h-screen">
       {/* Hero Section com Créditos */}
       <section className="px-4 py-8 md:py-12">
-        <div className="max-w-5xl mx-auto">
+        <ContentContainer>
           <AuthorCredits />
-        </div>
+        </ContentContainer>
       </section>
 
       {/* Genograma e Ecomapa */}
       <section className="px-4 py-8 bg-neutral-50 dark:bg-neutral-950">
-        <div className="max-w-6xl mx-auto">
+        <PageContainer>
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Genograma */}
             <div className="card-premium">
@@ -89,24 +90,24 @@ export default function AulaPage() {
               <Ecomap />
             </div>
           </div>
-        </div>
+        </PageContainer>
       </section>
 
       {/* Timeline de Navegação */}
       <section className="px-4 py-8">
-        <div className="max-w-5xl mx-auto">
+        <ContentContainer>
           <div className="card-premium">
             <CaseTimeline
               currentStep={currentStep}
               onStepChange={setCurrentStep}
             />
           </div>
-        </div>
+        </ContentContainer>
       </section>
 
       {/* Conteúdo do Passo Atual */}
       <section className="px-4 py-8 bg-neutral-50 dark:bg-neutral-950">
-        <div className="max-w-4xl mx-auto">
+        <ContentContainer>
           {currentStepData && (
             <CaseStep
               step={currentStepData}
@@ -154,13 +155,13 @@ export default function AulaPage() {
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
-        </div>
+        </ContentContainer>
       </section>
 
       {/* Resumo Final */}
       {currentStep === caseSteps.length && (
         <section className="px-4 py-12 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-teal-950/30">
-          <div className="max-w-3xl mx-auto text-center">
+          <ContentContainer>
             <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 dark:bg-emerald-900/50 rounded-full mb-6">
               <span className="text-3xl">🎉</span>
             </div>
@@ -186,13 +187,13 @@ export default function AulaPage() {
                 Explorar Rastreamentos
               </button>
             </div>
-          </div>
+          </ContentContainer>
         </section>
       )}
 
       {/* Cards de Navegação Rápida */}
       <section className="px-4 py-12">
-        <div className="max-w-5xl mx-auto">
+        <ContentContainer>
           <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-6">
             Explorar por Categoria
           </h3>
@@ -222,7 +223,7 @@ export default function AulaPage() {
               </button>
             ))}
           </div>
-        </div>
+        </ContentContainer>
       </section>
     </div>
   );

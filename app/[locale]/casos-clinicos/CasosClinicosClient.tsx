@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import {
   BookOpen, Clock, Trophy, ArrowRight, Heart, Brain,
   Stethoscope, Baby, Activity, Bug, Filter
@@ -85,7 +86,7 @@ export default function CasosClinicosClient() {
       </div>
 
       {/* Filtros */}
-      <div className="max-w-7xl mx-auto px-4 py-6">
+      <PageContainer className="py-6">
         <div className="flex flex-wrap gap-4 items-center">
           <div className="flex items-center gap-2">
             <Filter className="w-5 h-5 text-neutral-500" />
@@ -118,10 +119,10 @@ export default function CasosClinicosClient() {
             {t('filter.found', { count: casosFiltrados.length })}
           </span>
         </div>
-      </div>
+      </PageContainer>
 
       {/* Lista de Casos */}
-      <div className="max-w-7xl mx-auto px-4 pb-12">
+      <PageContainer className="pb-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {casosFiltrados.map(caso => {
             const IconCategoria = categoriaIcons[caso.categoria] || categoriaIcons.default;

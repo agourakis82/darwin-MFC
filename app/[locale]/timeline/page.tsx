@@ -1,8 +1,9 @@
+import { ContentContainer } from '@/app/components/Layout/Containers';
 import { Clock, TrendingUp } from 'lucide-react';
 
 export default function TimelinePage() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-5xl">
+    <ContentContainer className="py-12">
       {/* Header */}
       <div className="mb-12">
         <div className="flex items-center gap-3 mb-4">
@@ -75,7 +76,7 @@ export default function TimelinePage() {
           ))}
         </div>
       </div>
-    </div>
+    </ContentContainer>
   );
 }
 

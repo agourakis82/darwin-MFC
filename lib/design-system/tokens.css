@@ -1,0 +1,379 @@
+/* Design Tokens for Darwin-MFC Medical Education Platform
+   Responsive spacing, semantic colors, and typography for Q1 academic medical platform
+   Supports 9 languages and dark mode as default
+*/
+
+/* ============================================================================
+   1. CONTAINER AND SPACING SYSTEM - Responsive padding for all breakpoints
+   ============================================================================ */
+
+:root {
+  /* Responsive Container Padding
+     - Mobile (< 640px): 1rem (16px)
+     - Tablet (640-1024px): 1.5rem (24px)
+     - Desktop (1024-1536px): 2rem (32px)
+     - Ultra-wide (1536px+): 3rem (48px)
+  */
+  --container-padding-mobile: 1rem;
+  --container-padding-tablet: 1.5rem;
+  --container-padding-desktop: 2rem;
+  --container-padding-ultrawide: 3rem;
+
+  /* Container Max-Width Values */
+  --container-max-width-sm: 28rem;
+  --container-max-width-md: 32rem;
+  --container-max-width-lg: 36rem;
+  --container-max-width-5xl: 64rem;
+  --container-max-width-6xl: 72rem;
+  --container-max-width-7xl: 80rem;
+  --container-max-width-full: 100%;
+
+  /* Vertical Spacing Scale - Consistent rhythm between sections
+     Used for margins, padding, gaps in medical layouts
+  */
+  --space-0: 0rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+
+  /* Section spacing - Between major content sections */
+  --spacing-section: 3rem;
+  --spacing-section-lg: 4rem;
+
+  /* Block spacing - Between blocks within a section */
+  --spacing-block: 1.5rem;
+  --spacing-block-sm: 1rem;
+
+  /* Element spacing - Between inline elements */
+  --spacing-element: 0.75rem;
+}
+
+/* ============================================================================
+   2. BACKGROUND COLOR TOKENS - Semantic colors for light mode
+   ============================================================================ */
+
+:root {
+  /* Page Background - Default page background */
+  --color-bg-page: #ffffff;
+  --color-bg-page-hover: #fafafa;
+
+  /* Section Background - For sections with subtle background */
+  --color-bg-section: #f8f9fa;
+  --color-bg-section-hover: #f0f2f5;
+
+  /* Card Background - For cards, modals, elevated content */
+  --color-bg-card: #ffffff;
+  --color-bg-card-hover: #fafafa;
+
+  /* Elevated Background - For dropdowns, tooltips, floating elements */
+  --color-bg-elevated: #ffffff;
+  --color-bg-elevated-border: #e5e7eb;
+
+  /* Overlay Background - For modals, overlays */
+  --color-bg-overlay: rgba(0, 0, 0, 0.5);
+  --color-bg-overlay-light: rgba(0, 0, 0, 0.25);
+
+  /* Border Colors */
+  --color-border: #e5e7eb;
+  --color-border-light: #f3f4f6;
+  --color-border-dark: #d1d5db;
+
+  /* Text Colors */
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-tertiary: #9ca3af;
+  --color-text-inverse: #ffffff;
+}
+
+/* ============================================================================
+   3. DARK MODE - Darwin-MFC defaults to dark mode for medical education
+   ============================================================================ */
+
+html.dark,
+[data-theme="dark"] {
+  /* Dark Mode Backgrounds */
+  --color-bg-page: #0d0d0d;
+  --color-bg-page-hover: #1a1a1a;
+
+  --color-bg-section: #1a1a1a;
+  --color-bg-section-hover: #262626;
+
+  --color-bg-card: #1a1a1a;
+  --color-bg-card-hover: #262626;
+
+  --color-bg-elevated: #262626;
+  --color-bg-elevated-border: #404040;
+
+  --color-bg-overlay: rgba(0, 0, 0, 0.75);
+  --color-bg-overlay-light: rgba(0, 0, 0, 0.5);
+
+  /* Dark Mode Borders */
+  --color-border: #404040;
+  --color-border-light: #262626;
+  --color-border-dark: #525252;
+
+  /* Dark Mode Text */
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #a3a3a3;
+  --color-text-tertiary: #737373;
+  --color-text-inverse: #0d0d0d;
+}
+
+/* ============================================================================
+   4. TYPOGRAPHY - Optimized for medical content readability
+   ============================================================================ */
+
+:root {
+  /* Line Heights - For medical content with technical terms */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+  --line-height-loose: 1.9;
+
+  /* Letter Spacing - For emphasis and clinical accuracy */
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+
+  /* Font Sizes - Accessible medical typography */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/* ============================================================================
+   5. MEDICAL/CLINICAL COLORS - For clinical alerts and status indicators
+   ============================================================================ */
+
+:root {
+  /* Warning/Alert Colors - Clinical cautions, contraindications warnings */
+  --color-warning: #f59e0b;
+  --color-warning-bg: #fef3c7;
+  --color-warning-text: #92400e;
+  --color-warning-border: #fcd34d;
+
+  /* Success Colors - Positive outcomes, confirmed diagnoses, successful procedures */
+  --color-success: #10b981;
+  --color-success-bg: #d1fae5;
+  --color-success-text: #065f46;
+  --color-success-border: #6ee7b7;
+
+  /* Error/Danger Colors - Contraindications, critical alerts, adverse events */
+  --color-error: #ef4444;
+  --color-error-bg: #fef2f2;
+  --color-error-text: #991b1b;
+  --color-error-border: #fca5a5;
+
+  /* Info Colors - Clinical notes, references, additional information */
+  --color-info: #3b82f6;
+  --color-info-bg: #eff6ff;
+  --color-info-text: #1e40af;
+  --color-info-border: #93c5fd;
+
+  /* Secondary Info - For additional context, side effects, monitoring */
+  --color-secondary: #8b5cf6;
+  --color-secondary-bg: #f3e8ff;
+  --color-secondary-text: #5b21b6;
+  --color-secondary-border: #d8b4fe;
+}
+
+/* Dark mode clinical colors with better contrast */
+html.dark,
+[data-theme="dark"] {
+  --color-warning-bg: #713f12;
+  --color-warning-text: #fcd34d;
+  --color-warning-border: #f59e0b;
+
+  --color-success-bg: #064e3b;
+  --color-success-text: #6ee7b7;
+  --color-success-border: #10b981;
+
+  --color-error-bg: #7f1d1d;
+  --color-error-text: #fca5a5;
+  --color-error-border: #ef4444;
+
+  --color-info-bg: #1e3a8a;
+  --color-info-text: #93c5fd;
+  --color-info-border: #3b82f6;
+
+  --color-secondary-bg: #4c1d95;
+  --color-secondary-text: #d8b4fe;
+  --color-secondary-border: #8b5cf6;
+}
+
+/* ============================================================================
+   6. SHADOW AND ELEVATION - For depth and visual hierarchy
+   ============================================================================ */
+
+:root {
+  /* Shadows for elevation */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  /* Border Radius - For cards, buttons, inputs */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
+/* Dark mode shadows */
+html.dark,
+[data-theme="dark"] {
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
+/* ============================================================================
+   7. TRANSITIONS AND ANIMATIONS - For smooth interactions
+   ============================================================================ */
+
+:root {
+  /* Duration Tokens */
+  --duration-75: 75ms;
+  --duration-100: 100ms;
+  --duration-150: 150ms;
+  --duration-200: 200ms;
+  --duration-300: 300ms;
+  --duration-500: 500ms;
+
+  /* Easing Functions */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================================
+   8. MEDICAL-SPECIFIC TOKENS - For clinical content presentation
+   ============================================================================ */
+
+:root {
+  /* Citation and Reference Colors */
+  --color-citation: #1f2937;
+  --color-citation-bg: #f9fafb;
+  --color-reference-border: #d1d5db;
+
+  /* Divergence Status Indicators */
+  --color-convergence: #10b981;
+  --color-partial-convergence: #f59e0b;
+  --color-divergence: #ef4444;
+  --color-disputed: #8b5cf6;
+
+  /* Ontology and Code Colors */
+  --color-code-bg: #f3f4f6;
+  --color-code-text: #1f2937;
+  --color-ontology-badge: #e5e7eb;
+
+  /* Medical Evidence Levels */
+  --color-grade-a: #10b981;
+  --color-grade-b: #3b82f6;
+  --color-grade-c: #f59e0b;
+  --color-grade-d: #ef4444;
+}
+
+/* Dark mode medical colors */
+html.dark,
+[data-theme="dark"] {
+  --color-citation: #e5e7eb;
+  --color-citation-bg: #1f2937;
+  --color-reference-border: #4b5563;
+
+  --color-code-bg: #1f2937;
+  --color-code-text: #e5e7eb;
+  --color-ontology-badge: #4b5563;
+}
+
+/* ============================================================================
+   9. Z-INDEX SCALE - Consistent stacking context
+   ============================================================================ */
+
+:root {
+  --z-hide: -1;
+  --z-auto: auto;
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-notification: 1080;
+}
+
+/* ============================================================================
+   10. RESPONSIVE UTILITIES - Helper classes for consistent layouts
+   ============================================================================ */
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl;
+    padding: var(--container-padding-mobile);
+  }
+
+  @media (min-width: 640px) {
+    .container-page {
+      padding: var(--container-padding-tablet);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-page {
+      padding: var(--container-padding-desktop);
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .container-page {
+      padding: var(--container-padding-ultrawide);
+    }
+  }
+
+  .container-content {
+    @apply mx-auto w-full max-w-5xl;
+    padding: var(--container-padding-mobile);
+  }
+
+  @media (min-width: 1024px) {
+    .container-content {
+      padding: var(--container-padding-desktop);
+    }
+  }
+
+  .section-spacing {
+    margin-bottom: var(--spacing-section);
+  }
+
+  .block-spacing {
+    margin-bottom: var(--spacing-block);
+  }
+
+  .element-spacing {
+    margin-bottom: var(--spacing-element);
+  }
+}

@@ -8,6 +8,7 @@
  */
 
 import React from 'react';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import {
@@ -137,7 +138,7 @@ export default function ProgressPage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <PageContainer className="py-8">
         {pathsWithProgress.length === 0 ? (
           /* Empty State */
           <div className="text-center py-16">

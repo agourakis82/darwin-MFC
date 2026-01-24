@@ -8,6 +8,7 @@
  */
 
 import React, { useMemo, useEffect } from 'react';
+import { ContentContainer } from '@/app/components/Layout/Containers';
 import { useRouter } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import {
@@ -171,7 +172,7 @@ export default function LearningPathClient({ pathId }: LearningPathClientProps) 
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Hero Section */}
       <div className={`bg-gradient-to-r ${path.color} text-white`}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <ContentContainer className="py-8">
           {/* Back button */}
           <button
             onClick={() => router.push('/learn')}
@@ -277,7 +278,7 @@ export default function LearningPathClient({ pathId }: LearningPathClientProps) 
       </div>
 
       {/* Modules List */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <ContentContainer className="py-8">
         <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">
           {t('path_modules')}
         </h2>
@@ -384,7 +385,7 @@ export default function LearningPathClient({ pathId }: LearningPathClientProps) 
             </div>
           </div>
         )}
-      </div>
+      </ContentContainer>
     </div>
   );
 }

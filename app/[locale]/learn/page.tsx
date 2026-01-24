@@ -11,6 +11,7 @@
 import React from 'react';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import {
   GraduationCap,
   Clock,
@@ -87,7 +88,7 @@ export default function LearnPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <PageContainer className="py-12">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-4">
               <GraduationCap className="w-10 h-10" />
@@ -120,11 +121,11 @@ export default function LearnPage() {
               </div>
             ))}
           </div>
-        </div>
+        </PageContainer>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <PageContainer className="py-8">
         {/* Continue Learning (if in progress) */}
         {inProgressPaths.length > 0 && (
           <section className="mb-8">
@@ -222,7 +223,7 @@ export default function LearnPage() {
             {t('free_forever.description')}
           </p>
         </section>
-      </div>
+      </PageContainer>
     </div>
   );
 }

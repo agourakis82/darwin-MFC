@@ -5,9 +5,10 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Protocolo, ProtocolNode } from '@/lib/types/protocolo';
 import FlowchartEngine from '@/app/components/Flowchart/FlowchartEngine';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import { useLocalizedProtocol } from '@/app/hooks/useLocalizedProtocol';
-import { 
-  ArrowLeft, Shield, Clock, BookOpen, Layers, 
+import {
+  ArrowLeft, Shield, Clock, BookOpen, Layers,
   Settings, Download, Share2, Info, ChevronRight, Activity,
   AlertTriangle
 } from 'lucide-react';

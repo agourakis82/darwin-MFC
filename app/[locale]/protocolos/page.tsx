@@ -11,6 +11,7 @@ import { useState, useMemo } from 'react';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { GitFork, Search, Workflow, ExternalLink, Filter, Clock, ChevronRight } from 'lucide-react';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import { todosProtocolosFlowchart } from '@/lib/data/protocolos-flowchart';
 
 export default function ProtocolosPage() {
@@ -59,7 +60,7 @@ export default function ProtocolosPage() {
 
   return (
     <div className="min-h-screen bg-phosphate dark:bg-carbon-900">
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
+      <PageContainer className="py-8">
         {/* Header */}
         <div className="flex items-center gap-4 mb-8">
           <div className="w-16 h-16 bg-gradient-to-br from-helix-navy to-adenine-teal rounded-2xl flex items-center justify-center shadow-lg">
@@ -223,7 +224,7 @@ export default function ProtocolosPage() {
             </li>
           </ul>
         </div>
-      </div>
+      </PageContainer>
     </div>
   );
 }

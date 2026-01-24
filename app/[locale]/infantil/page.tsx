@@ -1,5 +1,6 @@
 import ComparisonSection from '@/app/components/Comparison/ComparisonSection';
 import HeroSection from '@/app/components/Hero/HeroSection';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import { getRastreamentosByCategory } from '@/lib/data/rastreamentos';
 import { Users, Brain, Eye, Droplet, Stethoscope } from 'lucide-react';
 
@@ -8,7 +9,7 @@ export default function InfantilPage() {
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 lg:px-8 py-8 max-w-7xl">
+      <PageContainer className="py-8">
         {/* Hero Section */}
         <HeroSection
           icon={<Users className="w-8 h-8 lg:w-10 lg:h-10 text-white" strokeWidth={2} />}

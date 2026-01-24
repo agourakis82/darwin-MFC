@@ -26,6 +26,7 @@ import {
 import { cn } from '@/lib/utils';
 import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
+import { PageContainer } from '@/app/components/Layout/Containers';
 
 // Calculator system imports
 import {
@@ -458,7 +459,7 @@ export default function CalculadorasHubClient() {
   const otherCalculators = filteredCalculators.filter((c) => !favorites.has(c.id));
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-7xl">
+    <PageContainer className="py-12">
       {/* Header */}
       <div className="mb-10">
         <div className="flex items-center gap-4 mb-6">
@@ -676,6 +677,6 @@ export default function CalculadorasHubClient() {
           </Link>
         </div>
       </div>
-    </div>
+    </PageContainer>
   );
 }

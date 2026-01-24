@@ -10,6 +10,7 @@
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { ContentContainer } from '@/app/components/Layout/Containers';
 import {
   Stethoscope,
   Pill,
@@ -79,7 +80,7 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
+      <ContentContainer className="py-8">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
           <div className="flex items-start gap-4">
@@ -484,7 +485,7 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
             </Link>
           </div>
         </div>
-      </div>
+      </ContentContainer>
     </div>
   );
 }

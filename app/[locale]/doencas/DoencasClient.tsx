@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { Link } from '@/i18n/routing';
 import { useTranslations, useLocale } from 'next-intl';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import {
   Search, Heart, Activity, Wind, Brain, Bug, Bone,
   Fingerprint, Utensils, Zap, Droplets, Baby, Users,
@@ -58,7 +59,7 @@ export default function DoencasClient() {
 
   return (
     <div className="min-h-screen bg-paper-white dark:bg-carbon-950">
-      <div className="container mx-auto px-4 py-12 max-w-7xl">
+      <PageContainer className="py-12">
         {/* Header - High Authority */}
         <div className="mb-12 border-b border-carbon-200 dark:border-carbon-800 pb-8">
           <div className="flex items-baseline gap-4 mb-2">
@@ -202,7 +203,7 @@ export default function DoencasClient() {
            <span>DARWIN MEDICAL HUB | ACADEMIC REGISTRY v2.6</span>
            <span>LOCALIZED: {locale.toUpperCase()} | ENCRYPTED LINK</span>
         </div>
-      </div>
+      </PageContainer>
     </div>
   );
 }

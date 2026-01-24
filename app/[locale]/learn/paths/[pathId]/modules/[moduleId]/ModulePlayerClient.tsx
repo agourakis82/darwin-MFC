@@ -9,6 +9,7 @@
  */
 
 import React, { useMemo, useState, useEffect, useRef, useCallback } from 'react';
+import { ContentContainer } from '@/app/components/Layout/Containers';
 import { useRouter } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import {
@@ -249,7 +250,7 @@ export default function ModulePlayerClient({ pathId, moduleId }: ModulePlayerCli
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
       <div className="sticky top-0 z-10 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-        <div className="max-w-4xl mx-auto px-4 py-4">
+        <ContentContainer className="py-4">
           <div className="flex items-center justify-between">
             {/* Back button */}
             <button
@@ -281,27 +282,27 @@ export default function ModulePlayerClient({ pathId, moduleId }: ModulePlayerCli
               style={{ width: `${((completedModulesCount + (isCompleted && currentModuleProgress?.status !== 'completed' ? 1 : 0)) / path.modules.length) * 100}%` }}
             />
           </div>
-        </div>
+        </ContentContainer>
       </div>
 
       {/* Module title */}
-      <div className="max-w-4xl mx-auto px-4 py-6">
+      <ContentContainer className="py-6">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
           {t(module.titleKey.replace('learning.', ''))}
         </h1>
         <p className="text-gray-600 dark:text-gray-400">
           {t(module.descriptionKey.replace('learning.', ''))}
         </p>
-      </div>
+      </ContentContainer>
 
       {/* Module content */}
-      <div className="max-w-4xl mx-auto px-4 pb-8">
+      <ContentContainer className="pb-8">
         {renderModuleContent()}
-      </div>
+      </ContentContainer>
 
       {/* Navigation footer */}
       <div className="sticky bottom-0 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-        <div className="max-w-4xl mx-auto px-4 py-4">
+        <ContentContainer className="py-4">
           <div className="flex items-center justify-between">
             <button
               onClick={handlePrevious}
@@ -351,7 +352,7 @@ export default function ModulePlayerClient({ pathId, moduleId }: ModulePlayerCli
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
-        </div>
+        </ContentContainer>
       </div>
 
       {/* Completion Celebration Modal */}

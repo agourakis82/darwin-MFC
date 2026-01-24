@@ -3,6 +3,7 @@
 import ComparisonSection from '@/app/components/Comparison/ComparisonSection';
 import CriticalAnalysisView from '@/app/components/Analysis/CriticalAnalysisView';
 import ContentModeWrapper from '@/app/components/Content/ContentModeWrapper';
+import { ContentContainer } from '@/app/components/Layout/Containers';
 import { getRastreamentosByCategory } from '@/lib/data/rastreamentos';
 
 export default function GestacaoPage() {
@@ -85,12 +86,12 @@ export default function GestacaoPage() {
   );
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-5xl">
+    <ContentContainer className="py-12">
       <ContentModeWrapper
         descriptiveContent={descriptiveContent}
         criticalAnalysisContent={criticalAnalysisContent}
       />
-    </div>
+    </ContentContainer>
   );
 }
 

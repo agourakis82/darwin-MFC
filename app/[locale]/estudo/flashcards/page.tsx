@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
+import { ContentContainer } from '@/app/components/Layout/Containers';
 import { useRouter } from 'next/navigation';
 import {
   Clock,
@@ -445,7 +446,7 @@ export default function FlashcardsStudyPage() {
 
     return (
       <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-blue-50/30 dark:from-neutral-950 dark:to-neutral-900 p-4 md:p-8">
-        <div className="max-w-2xl mx-auto">
+        <ContentContainer>
           {/* Header */}
           <div className="text-center mb-8">
             <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
@@ -610,7 +611,7 @@ export default function FlashcardsStudyPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-blue-50/30 dark:from-neutral-950 dark:to-neutral-900 p-4 md:p-8">
-      <div className="max-w-4xl mx-auto">
+      <ContentContainer>
         {/* Session Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
           {/* Left: Back button and progress */}
@@ -695,7 +696,7 @@ export default function FlashcardsStudyPage() {
         <div className="mt-8 text-center text-xs text-slate-500 dark:text-slate-500">
           Clique no card para virar. Escolha a qualidade da sua resposta.
         </div>
-      </div>
+      </ContentContainer>
     </div>
   );
 }

@@ -13,6 +13,7 @@
  */
 
 import { useState, useMemo, useEffect } from 'react';
+import { ContentContainer, PageContainer } from '@/app/components/Layout/Containers';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import {
@@ -154,7 +155,7 @@ export default function QuizSessionPage() {
   if (pageView === 'config' && isClient) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-blue-50/30 dark:from-neutral-950 dark:to-neutral-900 p-4 md:p-8">
-        <div className="max-w-4xl mx-auto">
+        <ContentContainer>
           {/* Header */}
           <div className="mb-8">
             <Link
@@ -392,7 +393,7 @@ export default function QuizSessionPage() {
               </div>
             </div>
           </div>
-        </div>
+        </ContentContainer>
       </div>
     );
   }
@@ -401,7 +402,7 @@ export default function QuizSessionPage() {
   if (pageView === 'session' && currentQuiz) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-blue-50/30 dark:from-neutral-950 dark:to-neutral-900 p-4 md:p-8">
-        <div className="max-w-5xl mx-auto">
+        <PageContainer>
           {/* Header */}
           <div className="mb-8 flex items-center justify-between flex-wrap gap-4">
             <div>
@@ -427,7 +428,7 @@ export default function QuizSessionPage() {
             onComplete={handleQuizComplete}
             adaptive={true}
           />
-        </div>
+        </PageContainer>
       </div>
     );
   }

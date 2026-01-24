@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import {
   Users, Plus, Trash2, Download, Upload, ZoomIn, ZoomOut,
   RotateCcw, Save, Heart, HeartCrack,
@@ -485,7 +486,7 @@ export default function GenogramaClient() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-purple-950">
+    <PageContainer className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-purple-950">
       {/* Header */}
       <div className="sticky top-0 z-30 p-4 border-b border-purple-100 dark:border-neutral-800 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
@@ -940,6 +941,6 @@ export default function GenogramaClient() {
           </div>
         </div>
       )}
-    </div>
+    </PageContainer>
   );
 }

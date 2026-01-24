@@ -1,9 +1,10 @@
 import ReferenceList from '@/app/components/Bibliography/ReferenceList';
+import { ContentContainer } from '@/app/components/Layout/Containers';
 import { BookMarked, Download } from 'lucide-react';
 
 export default function BibliografiaPage() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-5xl">
+    <ContentContainer className="py-12">
       {/* Header */}
       <div className="mb-12">
         <div className="flex items-center justify-between mb-6">
@@ -58,7 +59,7 @@ export default function BibliografiaPage() {
 
       {/* Lista de Referências */}
       <ReferenceList format="vancouver" />
-    </div>
+    </ContentContainer>
   );
 }
 

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D2137"/>
+      <stop offset="50%" stop-color="#0E7490"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="iconGradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E7490"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Simplified D backbone -->
+  <path 
+    d="M20 8 L20 56 M20 8 C44 8 52 20 52 32 C52 44 44 56 20 56" 
+    stroke="url(#iconGradient)" 
+    stroke-width="5" 
+    stroke-linecap="round" 
+    fill="none"
+  />
+  
+  <!-- Helix strand -->
+  <path 
+    d="M20 14 Q32 18 38 22 Q44 26 44 32 Q44 38 38 42 Q32 46 20 50" 
+    stroke="url(#iconGradientLight)" 
+    stroke-width="3.5" 
+    stroke-linecap="round" 
+    fill="none"
+  />
+  
+  <!-- Central nucleotide dot -->
+  <circle cx="44" cy="32" r="4" fill="#06B6D4"/>
+</svg>

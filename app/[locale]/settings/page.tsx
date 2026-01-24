@@ -11,6 +11,7 @@ import React, { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { useRouter } from '@/i18n/routing';
+import { ContentContainer } from '@/app/components/Layout/Containers';
 import { ArrowLeft, User, Settings as SettingsIcon, Loader2 } from 'lucide-react';
 import { ProfileCard, ProfileEditor, SettingsPanel } from '@/app/components/Profile';
 import { useUserStore } from '@/lib/store/userStore';
@@ -68,8 +69,8 @@ export default function SettingsPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
+      <ContentContainer className="py-8">
+        {/* Content Container already has max-w-4xl built-in */}
           {/* Tabs */}
           <div className="flex gap-2 mb-8">
             <button
@@ -102,8 +103,7 @@ export default function SettingsPage() {
           )}
 
           {activeTab === 'settings' && <SettingsPanel />}
-        </div>
-      </div>
+      </ContentContainer>
 
       {/* Profile Editor Modal */}
       {showEditor && (

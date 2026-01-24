@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import { Users, Network, BookOpen, Info, AlertCircle } from 'lucide-react';
 
 // Dynamic imports para evitar SSR issues com React Flow
@@ -34,7 +35,7 @@ export default function FerramentasFamiliaClient() {
   const [activeTab, setActiveTab] = useState<TabType>('genograma');
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-7xl">
+    <PageContainer className="py-8">
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
@@ -154,7 +155,7 @@ export default function FerramentasFamiliaClient() {
           </div>
         </div>
       </div>
-    </div>
+    </PageContainer>
   );
 }
 

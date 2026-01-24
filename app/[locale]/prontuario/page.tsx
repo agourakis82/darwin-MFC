@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { Link } from '@/i18n/routing';
 import SOAPExport from '@/app/components/Export/SOAPExport';
+import { PageContainer } from '@/app/components/Layout/Containers';
 
 export const metadata: Metadata = {
   title: 'Gerador de Nota SOAP | Darwin-MFC',
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 export default function ProntuarioPage() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
+      <PageContainer className="py-8">
         {/* Header */}
         <div className="mb-8">
           <Link
@@ -118,7 +119,7 @@ export default function ProntuarioPage() {
             🧮 Calculadoras
           </Link>
         </div>
-      </div>
+      </PageContainer>
     </div>
   );
 }

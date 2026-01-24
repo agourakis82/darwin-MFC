@@ -12,6 +12,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import {
   Calculator,
   ChevronLeft,
@@ -173,7 +174,7 @@ export default function CalculatorDetailPage() {
   const gradient = categoryGradients[calculator.category] || 'from-gray-500 to-slate-500';
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
+    <PageContainer className="py-8">
       {/* Navigation */}
       <nav className="mb-6">
         <Link
@@ -478,6 +479,6 @@ export default function CalculatorDetailPage() {
           )}
         </motion.div>
       )}
-    </div>
+    </PageContainer>
   );
 }

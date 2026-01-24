@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { Link } from '@/i18n/routing';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import InteractionChecker from '@/app/components/Interactions/InteractionChecker';
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 export default function InteracoesPage() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <PageContainer className="py-8">
         {/* Header */}
         <div className="mb-8">
           <Link
@@ -97,7 +98,7 @@ export default function InteracoesPage() {
             💊 Bulário RENAME
           </Link>
         </div>
-      </div>
+      </PageContainer>
     </div>
   );
 }

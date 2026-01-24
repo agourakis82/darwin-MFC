@@ -13,6 +13,7 @@ import { CLASSES_TERAPEUTICAS, CLASSIFICACAO_GESTACAO } from '@/lib/types/medica
 import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
 import { notFound } from 'next/navigation';
 import { PharmGKBDisplay } from '@/app/components/Ontology';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import { cn } from '@/lib/utils';
 
 export default function MedicamentoDetailClient({ params }: { params: Promise<{ id: string }> }) {
@@ -75,7 +76,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12 max-w-7xl">
+      <PageContainer className="py-12">
         <div className="flex flex-col lg:flex-row gap-12">
           
           {/* 2. Sidebar Navigation */}
@@ -231,7 +232,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
             </section>
           </main>
         </div>
-      </div>
+      </PageContainer>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 'use client';
 
 import { Link } from '@/i18n/routing';
-import { 
+import { PageContainer } from '@/app/components/Layout/Containers';
+import {
   Heart, Users, Scale, Building2, Map, MessageSquare,
   ChevronRight, BookOpen, Shield, Target, Layers, Network,
   Stethoscope, Home, RefreshCw, FileText
@@ -9,7 +10,7 @@ import {
 
 export default function SUSPage() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-7xl">
+    <PageContainer className="py-12">
       {/* Header */}
       <div className="mb-12">
         <div className="flex items-center gap-4 mb-6">
@@ -323,7 +324,7 @@ export default function SUSPage() {
           <li>• Gusso G, Lopes JMC. Tratado de Medicina de Família e Comunidade. 3ª ed. Porto Alegre: Artmed, 2024.</li>
         </ul>
       </section>
-    </div>
+    </PageContainer>
   );
 }
 

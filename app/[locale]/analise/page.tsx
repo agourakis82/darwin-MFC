@@ -1,12 +1,13 @@
 import { getAnaliseCritica } from '@/lib/data/analise-critica';
 import InlineCitation from '@/app/components/Bibliography/InlineCitation';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import { Lightbulb, AlertTriangle, TrendingUp } from 'lucide-react';
 
 export default function AnalisePage() {
   const analises = ['cancer-mama', 'cancer-colo-utero', 'cancer-prostata', 'tea-autismo'].map(getAnaliseCritica).filter(Boolean);
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-6xl">
+    <PageContainer className="py-12">
       {/* Header */}
       <div className="mb-12">
         <div className="flex items-center gap-3 mb-4">
@@ -237,7 +238,7 @@ export default function AnalisePage() {
           </p>
         </div>
       </div>
-    </div>
+    </PageContainer>
   );
 }
 

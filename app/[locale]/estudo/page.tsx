@@ -14,6 +14,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import {
   BookOpen,
   Brain,
@@ -312,7 +313,7 @@ export default function EstudoPage() {
     <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-blue-50/30 dark:from-neutral-950 dark:to-neutral-900">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <PageContainer className="py-12">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
               <GraduationCap className="w-7 h-7" />
@@ -348,10 +349,10 @@ export default function EstudoPage() {
               </div>
             </div>
           )}
-        </div>
+        </PageContainer>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <PageContainer className="py-8">
         {/* Empty State */}
         {!isClient ? (
           <div className="flex items-center justify-center py-20">
@@ -589,7 +590,7 @@ export default function EstudoPage() {
             </div>
           </div>
         )}
-      </div>
+      </PageContainer>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { useAppStore } from '@/lib/store/appStore';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import {
   Search, Pill, Shield, ChevronRight, Activity, Baby, AlertTriangle, Globe
 } from 'lucide-react';
@@ -46,7 +47,7 @@ export default function MedicamentosClient() {
 
   return (
     <div className="min-h-screen bg-paper-white dark:bg-carbon-950">
-      <div className="container mx-auto px-4 py-12 max-w-7xl">
+      <PageContainer className="py-12">
         {/* Header - High Authority */}
         <div className="mb-12 border-b border-carbon-200 dark:border-carbon-800 pb-8">
           <div className="flex items-baseline gap-4 mb-2">
@@ -187,7 +188,7 @@ export default function MedicamentosClient() {
            </div>
            <span>DARWIN MEDICAL HUB | PHARMACY LEDGER v1.2</span>
         </div>
-      </div>
+      </PageContainer>
     </div>
   );
 }

@@ -21,6 +21,7 @@ import {
   Sparkles,
   Lock,
 } from 'lucide-react';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import { CategoryCard } from '@/app/components/Community';
 import { FORUM_CATEGORIES } from '@/lib/types/community';
 
@@ -68,7 +69,7 @@ export default function CommunityPage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <PageContainer className="py-8">
         {/* Coming Soon Notice */}
         <div className="bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-amber-900/20 dark:to-yellow-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-6 mb-8">
           <div className="flex items-start gap-4">
@@ -184,7 +185,7 @@ export default function CommunityPage() {
             </div>
           </div>
         </div>
-      </div>
+      </PageContainer>
     </div>
   );
 }

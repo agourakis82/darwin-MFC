@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-01-23T20:48:25.606Z",
+  "status": "success",
+  "statistics": {
+    "totalBatches": 510,
+    "completedBatches": 510,
+    "failedBatches": 0,
+    "successRate": "100.0%",
+    "cachedTranslations": 14968
+  },
+  "summary": {
+    "medications": {
+      "translated": 690,
+      "languages": 8,
+      "total": 5520
+    },
+    "diseases": {
+      "translated": 900,
+      "languages": 8,
+      "total": 7200
+    },
+    "clinicalCases": {
+      "translated": 79,
+      "languages": 8,
+      "total": 632
+    },
+    "flashcards": {
+      "translated": 101,
+      "languages": 8,
+      "total": 808
+    },
+    "quizzes": {
+      "translated": 101,
+      "languages": 8,
+      "total": 808
+    }
+  },
+  "totalTranslations": 14968,
+  "estimatedCost": {
+    "minimax": "$0.15",
+    "groq": "$0.08",
+    "grok": "$0.10",
+    "total": "$0.15-0.20"
+  }
+}

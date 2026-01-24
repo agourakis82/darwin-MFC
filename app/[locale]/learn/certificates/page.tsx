@@ -10,6 +10,7 @@
 import React from 'react';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
+import { ContentContainer } from '@/app/components/Layout/Containers';
 import {
   Award,
   ArrowLeft,
@@ -68,7 +69,7 @@ export default function CertificatesPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8">
+      <ContentContainer className="py-8">
         {certificates.length === 0 ? (
           // Empty state
           <div className="max-w-md mx-auto text-center py-16">
@@ -91,7 +92,7 @@ export default function CertificatesPage() {
           </div>
         ) : (
           // Certificates grid
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1 max-w-4xl mx-auto">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
             {certificatesWithPaths.map(({ certificate, path }) => (
               <div key={certificate.id}>
                 {path && (
@@ -104,7 +105,7 @@ export default function CertificatesPage() {
             ))}
           </div>
         )}
-      </div>
+      </ContentContainer>
     </div>
   );
 }

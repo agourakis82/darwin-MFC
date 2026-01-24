@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import {
   Network, Plus, Trash2, Upload, ZoomIn, ZoomOut,
   X, Home, Heart, Briefcase, GraduationCap, Church, Hospital,
@@ -244,7 +245,7 @@ export default function EcomapaClient() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-white to-blue-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-cyan-950">
+    <PageContainer className="min-h-screen bg-gradient-to-br from-cyan-50 via-white to-blue-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-cyan-950">
       {/* Header */}
       <div className="sticky top-0 z-30 p-4 border-b border-cyan-100 dark:border-neutral-800 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
@@ -747,6 +748,6 @@ export default function EcomapaClient() {
           </div>
         </div>
       )}
-    </div>
+    </PageContainer>
   );
 }

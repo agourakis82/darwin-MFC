@@ -21,6 +21,7 @@ import { notFound } from 'next/navigation';
 import ChecklistConsultaComponent from '@/app/components/Checklist/ChecklistConsulta';
 import { generateChecklistFromDoenca } from '@/lib/utils/checklist-generator';
 import { OntologyCodesDisplay } from '@/app/components/Ontology';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import { cn } from '@/lib/utils';
 
 // Loading Skeleton Component
@@ -203,7 +204,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
         </div>
       )}
 
-      <div className="container mx-auto px-4 py-12 max-w-7xl">
+      <PageContainer className="py-12">
         <div className="flex flex-col lg:flex-row gap-12">
           
           {/* 2. Sticky ToC Sidebar */}
@@ -338,7 +339,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
             )}
           </main>
         </div>
-      </div>
+      </PageContainer>
     </div>
   );
 }

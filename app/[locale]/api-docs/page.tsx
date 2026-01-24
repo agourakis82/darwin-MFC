@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Copy, ExternalLink, ChevronDown, ChevronUp, Code2 } from 'lucide-react';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import { openApiSpec } from '@/lib/api/openapi';
 
 interface APIEndpoint {
@@ -80,7 +81,7 @@ export default function APIDocs() {
       </div>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <PageContainer className="py-12">
         {/* API Info Card */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
@@ -470,7 +471,7 @@ interactions = requests.post(
             </div>
           </div>
         </div>
-      </div>
+      </PageContainer>
     </div>
   );
 }

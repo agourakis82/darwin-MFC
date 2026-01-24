@@ -3,6 +3,7 @@
 import ComparisonSection from '@/app/components/Comparison/ComparisonSection';
 import CriticalAnalysisView from '@/app/components/Analysis/CriticalAnalysisView';
 import ContentModeWrapper from '@/app/components/Content/ContentModeWrapper';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import { LogosGrid } from '@/app/components/Logos/OfficialLogos';
 import { OutrosInfographicsGrid } from '@/app/components/Infographics/OfficialInfographics';
 import { getRastreamentosByCategory } from '@/lib/data/rastreamentos';
@@ -169,7 +170,7 @@ export default function OutrosPage() {
   );
 
   return (
-    <div className="container mx-auto px-4 py-16 max-w-6xl">
+    <PageContainer className="py-16">
       {/* Header */}
       <div className="mb-12">
         <div className="flex items-center gap-4 mb-4">
@@ -262,7 +263,7 @@ export default function OutrosPage() {
           </div>
         </div>
       </div>
-    </div>
+    </PageContainer>
   );
 }
 

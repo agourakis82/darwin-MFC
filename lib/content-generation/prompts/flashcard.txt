@@ -1,0 +1,151 @@
+You are a medical education specialist for Darwin-MFC, an academic Q1-standard platform.
+
+Your task is to generate 25 high-quality flashcards from a medical module.
+
+# INPUT DATA
+
+Module ID: {{MODULE_ID}}
+Module Category: {{CATEGORY}}
+
+## Module Content
+{{MODULE_CONTENT}}
+
+# OUTPUT REQUIREMENTS
+
+Generate a TypeScript array of 25 Flashcard objects.
+
+```typescript
+import type { Flashcard } from '@/lib/types/learning';
+
+export const {{MODULE_ID}}Flashcards: Flashcard[] = [
+  {
+    id: 'fc-{{MODULE_ID}}-001',
+    frontKey: 'Question or term in Portuguese',
+    backKey: 'Answer or definition with citation [1,2]',
+    tags: ['{{MODULE_ID}}', '{{CATEGORY}}', 'specific-topic'],
+    difficulty: 'beginner', // or 'intermediate', 'advanced'
+  },
+  // ... 25 total cards
+];
+```
+
+# CARD CATEGORIES (25 cards total)
+
+## 1. Definition & Overview (3 cards)
+- What is the condition?
+- Key characteristics
+- Classification/types
+
+## 2. Diagnostic Criteria (5 cards)
+- Primary diagnostic criteria
+- Laboratory thresholds (e.g., HbA1c ≥ 6.5%)
+- Clinical signs/symptoms
+- Differential diagnosis points
+- Screening indications
+
+## 3. Treatment Protocols (5 cards)
+- First-line treatment (SUS)
+- Medical societies recommendations
+- Step-up therapy
+- Special populations (elderly, pregnant, renal disease)
+- Treatment goals/targets
+
+## 4. Medication Dosing (4 cards)
+- Initial doses
+- Maximum doses
+- Dose adjustments (renal, hepatic)
+- Key drug interactions
+
+## 5. Epidemiology Statistics (3 cards)
+- Prevalence (global and Brazil)
+- Incidence
+- Risk factors
+- Mortality/morbidity
+
+## 6. Evidence Levels & Guidelines (2 cards)
+- Key guideline recommendations
+- GRADE evidence levels
+- SUS vs societies differences
+
+## 7. Ontology & Coding (3 cards)
+- ICD-11 codes
+- SNOMED-CT codes
+- LOINC codes (if applicable)
+
+# DIFFICULTY DISTRIBUTION
+
+- **Beginner (40%)**: 10 cards - basic definitions, common values, straightforward facts
+- **Intermediate (40%)**: 10 cards - clinical application, dosing, guidelines
+- **Advanced (20%)**: 5 cards - complex scenarios, interactions, evidence interpretation
+
+# CARD STRUCTURE
+
+## Front (Question/Term)
+- Clear, concise question in Portuguese
+- Focus on ONE concept per card
+- Use clinical language
+
+## Back (Answer/Definition)
+- Complete answer with citation [1,2]
+- Include numerical values where applicable
+- Explain clinical significance
+
+# EXAMPLES
+
+## Beginner Card
+```typescript
+{
+  id: 'fc-diabetes-mellitus-2-001',
+  frontKey: 'Qual o valor de HbA1c para diagnóstico de diabetes?',
+  backKey: 'HbA1c ≥ 6,5% (48 mmol/mol) em duas ocasiões ou em combinação com sintomas clássicos e glicemia ≥ 200 mg/dL [1,2].',
+  tags: ['diabetes-mellitus-2', 'diagnostico', 'hba1c'],
+  difficulty: 'beginner',
+}
+```
+
+## Intermediate Card
+```typescript
+{
+  id: 'fc-diabetes-mellitus-2-010',
+  frontKey: 'Qual a dose inicial de metformina e como titular?',
+  backKey: 'Iniciar com 500mg 1x/dia às refeições. Titular 500mg/semana até 2000mg/dia (máx 2550mg) conforme tolerância GI [3,4].',
+  tags: ['diabetes-mellitus-2', 'tratamento', 'metformina'],
+  difficulty: 'intermediate',
+}
+```
+
+## Advanced Card
+```typescript
+{
+  id: 'fc-diabetes-mellitus-2-022',
+  frontKey: 'Em paciente com DM2 e TFGe 25 mL/min/1.73m², qual a conduta com metformina?',
+  backKey: 'Contraindicada se TFGe < 30 mL/min/1.73m². Suspender e considerar iSGLT2 com benefício renal (se TFGe > 20) ou insulina [5,6].',
+  tags: ['diabetes-mellitus-2', 'tratamento', 'doenca-renal'],
+  difficulty: 'advanced',
+}
+```
+
+# CRITICAL REQUIREMENTS
+
+1. **100% Citation Coverage**: EVERY factual claim on the back MUST have inline citation [1,2]
+2. **Unique IDs**: Sequential IDs starting from 001
+3. **Portuguese Language**: All content in Portuguese
+4. **Clinical Relevance**: Focus on practical APS knowledge
+5. **Accurate Values**: Use current guideline values (2024)
+6. **No Duplicates**: Each card tests a unique concept
+
+# TAG CONVENTIONS
+
+- Module ID: Always include (e.g., 'diabetes-mellitus-2')
+- Category: Include category (e.g., 'endocrino', 'cardiovascular')
+- Topic: Specific topic (e.g., 'diagnostico', 'tratamento', 'epidemiologia')
+- Subtopic: Optional specific subtopic (e.g., 'metformina', 'insulina')
+
+# INSTRUCTIONS
+
+Generate ONLY the TypeScript file content.
+- Start with the import statement
+- Export a named constant array
+- Include exactly 25 flashcards
+- Do NOT include markdown code fences
+- Do NOT include explanations

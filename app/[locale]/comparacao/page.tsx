@@ -1,11 +1,12 @@
 import CoverageChart from '@/app/components/Charts/CoverageChart';
 import ConvergenceChart from '@/app/components/Charts/ConvergenceChart';
 import TimelineChart from '@/app/components/Charts/TimelineChart';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import { BarChart3 } from 'lucide-react';
 
 export default function ComparacaoPage() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-6xl">
+    <PageContainer className="py-12">
       {/* Header */}
       <div className="mb-12">
         <div className="flex items-center gap-3 mb-4">
@@ -110,7 +111,7 @@ export default function ComparacaoPage() {
           </div>
         </div>
       </div>
-    </div>
+    </PageContainer>
   );
 }
 

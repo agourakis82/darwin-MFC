@@ -3,6 +3,7 @@
 import ComparisonSection from '@/app/components/Comparison/ComparisonSection';
 import CriticalAnalysisView from '@/app/components/Analysis/CriticalAnalysisView';
 import ContentModeWrapper from '@/app/components/Content/ContentModeWrapper';
+import { ContentContainer } from '@/app/components/Layout/Containers';
 import InstitutionLogos, { SUSStructureDiagram } from '@/app/components/Logos/InstitutionLogos';
 import { LogosGrid } from '@/app/components/Logos/OfficialLogos';
 import { 
@@ -187,12 +188,12 @@ export default function CancerPage() {
   );
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-5xl">
+    <ContentContainer className="py-12">
       <ContentModeWrapper
         descriptiveContent={descriptiveContent}
         criticalAnalysisContent={criticalAnalysisContent}
       />
-    </div>
+    </ContentContainer>
   );
 }
 

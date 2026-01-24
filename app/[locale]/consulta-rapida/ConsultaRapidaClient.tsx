@@ -4,6 +4,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Search, Pill, FileText, Calculator, Stethoscope, ChevronRight, X, Heart, Activity, Syringe, Shield, Clock, ArrowLeft, Home } from 'lucide-react';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import { todosMedicamentos, searchMedicamentos } from '@/lib/data/medicamentos/index';
 import { todasDoencas, searchDoencas } from '@/lib/data/doencas/index';
 import { Medicamento } from '@/lib/types/medicamento';
@@ -206,7 +207,7 @@ export default function ConsultaRapidaClient() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col">
+    <PageContainer className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col">
       {/* Header Compacto */}
       <header className="sticky top-0 z-50 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-3">
         <div className="flex items-center justify-between mb-3">
@@ -443,7 +444,7 @@ export default function ConsultaRapidaClient() {
         <TabButton tab="doencas" icon={Stethoscope} label={t('tabs.diseases')} />
         <TabButton tab="calculadoras" icon={Calculator} label={t('tabs.calc')} />
       </nav>
-    </div>
+    </PageContainer>
   );
 }
 

@@ -1,0 +1,253 @@
+You are a medical education architect for Darwin-MFC, an academic Q1-standard (Nature/Cell level) platform for primary care education.
+
+Your task is to generate a comprehensive learning path with multiple module types.
+
+# INPUT DATA
+
+Topic: {{TOPIC}}
+Category: {{CATEGORY}}
+Difficulty: {{DIFFICULTY}}
+Target Hours: {{HOURS}}
+Path ID: {{PATH_ID}}
+
+## Available Medical Modules (reference by ID)
+{{AVAILABLE_MODULES}}
+
+# OUTPUT REQUIREMENTS
+
+Generate a TypeScript LearningPath object following `lib/types/learning.ts` structure.
+
+```typescript
+import type { LearningPath } from '@/lib/types/learning';
+
+export const {{PATH_CONST}}: LearningPath = {
+  id: '{{PATH_ID}}',
+  titleKey: 'learning.paths.{{PATH_ID}}.title',
+  descriptionKey: 'learning.paths.{{PATH_ID}}.description',
+  icon: '{{ICON}}', // Lucide icon: Heart, Brain, Stethoscope, Activity, etc.
+  color: '{{COLOR}}', // Tailwind: bg-blue-500, bg-green-500, bg-purple-500, etc.
+  category: '{{CATEGORY}}',
+  difficulty: '{{DIFFICULTY}}',
+  estimatedHours: {{HOURS}},
+  tags: [/* relevant tags */],
+  isPublished: true,
+  version: '1.0.0',
+  createdAt: '{{DATE}}',
+  updatedAt: '{{DATE}}',
+
+  certification: {
+    enabled: true,
+    titleKey: 'learning.certs.{{PATH_ID}}.title',
+    descriptionKey: 'learning.certs.{{PATH_ID}}.description',
+    minimumScore: 70,
+    validityMonths: 24,
+    accreditation: {
+      organization: 'Darwin MFC',
+      disclaimer: 'Este certificado é emitido pela plataforma Darwin MFC para fins educacionais.',
+    },
+  },
+
+  modules: [
+    // 8-12 modules mixing different types
+  ],
+};
+```
+
+# MODULE TYPES TO INCLUDE
+
+## 1. Content Modules (30% of path)
+Reference existing disease/medication modules:
+```typescript
+{
+  id: 'content-1',
+  titleKey: 'learning.modules.{{module}}.title',
+  descriptionKey: 'learning.modules.{{module}}.description',
+  type: 'content',
+  order: 1,
+  estimatedMinutes: 45,
+  content: {
+    type: 'content',
+    contentType: 'disease', // or 'medication', 'protocol', 'custom'
+    contentRef: '{{MODULE_ID}}', // Reference to existing module
+    sections: ['quickView', 'tratamento', 'acompanhamento'],
+  },
+}
+```
+
+## 2. Quiz Modules (20% of path)
+After content modules, add assessment:
+```typescript
+{
+  id: 'quiz-1',
+  titleKey: 'learning.modules.{{topic}}_quiz.title',
+  descriptionKey: 'learning.modules.{{topic}}_quiz.description',
+  type: 'quiz',
+  order: 2,
+  estimatedMinutes: 15,
+  prerequisites: ['content-1'],
+  passingScore: 70,
+  content: {
+    type: 'quiz',
+    shuffleQuestions: true,
+    shuffleOptions: true,
+    showFeedback: true,
+    allowRetry: true,
+    maxAttempts: 3,
+    questions: [
+      {
+        id: 'q1',
+        questionKey: 'Question text with citation [1]',
+        type: 'single', // or 'multiple', 'true_false'
+        difficulty: 'intermediate',
+        points: 10,
+        options: [
+          { id: 'a', textKey: 'Option A', isCorrect: false },
+          { id: 'b', textKey: 'Option B', isCorrect: true, feedbackKey: 'Correct feedback' },
+          { id: 'c', textKey: 'Option C', isCorrect: false },
+          { id: 'd', textKey: 'Option D', isCorrect: false },
+        ],
+        explanationKey: 'Detailed explanation with references [1,2]',
+      },
+      // 4-6 questions per quiz
+    ],
+  },
+}
+```
+
+## 3. Case Study Modules (25% of path)
+Interactive clinical scenarios:
+```typescript
+{
+  id: 'case-1',
+  titleKey: 'learning.modules.{{topic}}_case.title',
+  descriptionKey: 'learning.modules.{{topic}}_case.description',
+  type: 'case_study',
+  order: 3,
+  estimatedMinutes: 30,
+  prerequisites: ['content-1'],
+  content: {
+    type: 'case_study',
+    case: {
+      id: 'case-{{id}}',
+      presentationKey: 'Patient presentation text',
+      patientInfo: {
+        ageRange: '40-49',
+        sex: 'M',
+        occupation: 'Engineer',
+      },
+      learningObjectives: ['Objective 1', 'Objective 2'],
+      relatedDiseases: ['module-id'],
+      stages: [
+        {
+          id: 'stage-1',
+          titleKey: 'Stage Title',
+          contentKey: 'Stage content',
+          decision: {
+            questionKey: 'What would you do?',
+            options: [
+              { id: 'a', textKey: 'Option A', isOptimal: false, consequenceKey: 'Consequence' },
+              { id: 'b', textKey: 'Option B', isOptimal: true, consequenceKey: 'Consequence', nextStage: 'stage-2' },
+            ],
+          },
+        },
+        // 3-5 stages
+      ],
+    },
+  },
+}
+```
+
+## 4. Flashcards Modules (15% of path)
+Spaced repetition cards:
+```typescript
+{
+  id: 'flashcards-1',
+  titleKey: 'learning.modules.{{topic}}_flashcards.title',
+  descriptionKey: 'learning.modules.{{topic}}_flashcards.description',
+  type: 'flashcards',
+  order: 4,
+  estimatedMinutes: 20,
+  content: {
+    type: 'flashcards',
+    algorithm: 'sm2',
+    cards: [
+      {
+        id: 'fc-1',
+        frontKey: 'Question/Term',
+        backKey: 'Answer/Definition with citation [1]',
+        tags: ['topic'],
+        difficulty: 'beginner',
+      },
+      // 8-15 cards per module
+    ],
+  },
+}
+```
+
+## 5. Final Assessment (10% of path)
+Comprehensive quiz at the end:
+```typescript
+{
+  id: 'final-assessment',
+  titleKey: 'learning.modules.final_assessment.title',
+  descriptionKey: 'learning.modules.final_assessment.description',
+  type: 'quiz',
+  order: 10,
+  estimatedMinutes: 30,
+  prerequisites: [/* all other modules */],
+  passingScore: 70,
+  content: {
+    type: 'quiz',
+    shuffleQuestions: true,
+    shuffleOptions: true,
+    showFeedback: true,
+    allowRetry: true,
+    maxAttempts: 2,
+    questions: [/* 10-15 comprehensive questions */],
+  },
+}
+```
+
+# CRITICAL REQUIREMENTS
+
+1. **Progressive Difficulty**: Start with easier content, build to harder concepts
+2. **Prerequisites**: Use prerequisites to enforce learning order
+3. **Module Mix**: Include all 4 module types (content, quiz, case_study, flashcards)
+4. **Brazilian Context**: Use Portuguese terminology, SUS references
+5. **Citations**: Include inline citations [1,2] in question explanations and flashcard backs
+6. **Clinical Relevance**: Focus on practical primary care scenarios
+7. **Estimated Time**: Module times should sum to approximately {{HOURS}} hours
+
+# ICON SUGGESTIONS BY CATEGORY
+
+- primary_care: 'Heart', 'Stethoscope', 'Activity'
+- chronic_diseases: 'Pill', 'HeartPulse', 'Thermometer'
+- mental_health: 'Brain', 'SmilePlus', 'Sparkles'
+- pediatrics: 'Baby', 'Smile', 'Star'
+- geriatrics: 'User', 'Clock', 'Shield'
+- maternal_health: 'Baby', 'Heart', 'Plus'
+- emergency: 'AlertTriangle', 'Siren', 'Zap'
+- clinical_skills: 'BookOpen', 'GraduationCap', 'Target'
+- medications: 'Pill', 'Syringe', 'Flask'
+
+# COLOR SUGGESTIONS BY CATEGORY
+
+- primary_care: 'bg-blue-500'
+- chronic_diseases: 'bg-amber-500'
+- mental_health: 'bg-purple-500'
+- pediatrics: 'bg-pink-500'
+- geriatrics: 'bg-gray-500'
+- maternal_health: 'bg-rose-500'
+- emergency: 'bg-red-500'
+- clinical_skills: 'bg-indigo-500'
+- medications: 'bg-green-500'
+
+# INSTRUCTIONS
+
+Generate ONLY the TypeScript file content.
+- Start with the import statement
+- Export a named constant
+- Do NOT include markdown code fences
+- Do NOT include explanations
+- Use realistic Brazilian patient names and scenarios
+- Reference existing medical modules from the AVAILABLE_MODULES list when possible

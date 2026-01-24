@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { PageContainer } from '@/app/components/Layout/Containers';
 import {
   Calculator, Heart, Activity, TrendingUp, Scale, Brain,
   Wine, Droplets, Baby, Stethoscope, TestTube, AlertTriangle,
@@ -46,7 +47,7 @@ export default function CalculadorasPage() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-7xl">
+    <PageContainer className="py-12">
       {/* Header */}
       <div className="mb-12">
         <div className="flex items-center gap-4 mb-6">
@@ -176,7 +177,7 @@ export default function CalculadorasPage() {
           )}
         </div>
       </div>
-    </div>
+    </PageContainer>
   );
 }
 
