@@ -1,19 +1,7 @@
-// Interaction Badge
-export {
-  InteractionBadge,
-  InteractionIndicator,
-  InteractionLegend,
-  getHighestSeverity,
-  type InteractionSeverity,
-  type InteractionBadgeProps,
-} from './InteractionBadge';
+/**
+ * Medication Components for Darwin-MFC
+ * Pharmacogenomics and medication-related UI components
+ */
 
-// Interaction Card
-export {
-  InteractionCard,
-  InteractionSummaryCard,
-  type InteractionCardProps,
-  type DrugInfo,
-  type InteractionType,
-  type InteractionOnset,
-} from './InteractionCard';
+export { PharmGKBAlertCard } from './PharmGKBAlertCard';
+export { PharmGKBPanel } from './PharmGKBPanel';

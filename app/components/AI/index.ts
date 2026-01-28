@@ -1,7 +1,7 @@
 /**
- * AI Components
- * Scaffold for future AI integration
+ * AI Components for Darwin-MFC
+ * Clinical AI assistants for diagnosis and SOAP note analysis
  */
 
-export { AIChatInterface } from './AIChatInterface';
-export { AIChatButton } from './AIChatButton';
+export { DiagnosisAssistant } from './DiagnosisAssistant';
+export { SOAPAnalyzer } from './SOAPAnalyzer';
