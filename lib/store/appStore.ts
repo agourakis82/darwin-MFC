@@ -3,6 +3,11 @@ import { persist } from 'zustand/middleware';
 import { AppState, ContentMode, Theme, ViewMode } from '../types';
 import type { Locale } from '@/i18n/config';
 import type { Region } from '../types/region';
+import { supabase } from '@/lib/supabase/client';
+
+// Debounce timer for cloud sync
+let syncDebounceTimer: ReturnType<typeof setTimeout> | null = null;
+const SYNC_DEBOUNCE_MS = 2000; // 2 seconds
 
 /**
  * Auto-detect region from browser locale
@@ -29,6 +34,11 @@ function detectRegionFromLocale(locale?: Locale): Region {
 }
 
 interface AppStore extends AppState {
+  // Sync state
+  isSyncing: boolean;
+  lastSyncedAt: string | null;
+  syncError: string | null;
+
   // Actions
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
@@ -54,6 +64,10 @@ interface AppStore extends AppState {
   setLocale: (locale: Locale) => void;
   // Region selection
   setRegion: (region: Region) => void;
+  // Cloud sync
+  syncToCloud: () => Promise<void>;
+  loadFromCloud: () => Promise<void>;
+  setSyncError: (error: string | null) => void;
 }
 
 export const useAppStore = create<AppStore>()(
@@ -77,6 +91,19 @@ export const useAppStore = create<AppStore>()(
         return detectRegionFromLocale();
       };
 
+      // Helper to trigger debounced cloud sync
+      const triggerCloudSync = () => {
+        if (syncDebounceTimer) {
+          clearTimeout(syncDebounceTimer);
+        }
+        syncDebounceTimer = setTimeout(() => {
+          const state = get();
+          if (state.syncToCloud) {
+            state.syncToCloud();
+          }
+        }, SYNC_DEBOUNCE_MS);
+      };
+
       return {
         // Estado inicial - Dark mode como padrão
         theme: 'dark',
@@ -89,33 +116,62 @@ export const useAppStore = create<AppStore>()(
         notes: {},
         selectedRegion: getInitialRegion(),
 
-      // Actions
-      setTheme: (theme) => set({ theme }),
-      
-      toggleTheme: () => set((state) => ({ 
-        theme: state.theme === 'light' ? 'dark' : 'light' 
-      })),
+        // Sync state
+        isSyncing: false,
+        lastSyncedAt: null,
+        syncError: null,
 
-      setContentMode: (mode) => set({ contentMode: mode }),
-      
-      toggleContentMode: () => set((state) => ({
-        contentMode: state.contentMode === 'descriptive' ? 'critical_analysis' : 'descriptive'
-      })),
+      // Actions
+      setTheme: (theme) => {
+        set({ theme });
+        triggerCloudSync();
+      },
+
+      toggleTheme: () => {
+        set((state) => ({
+          theme: state.theme === 'light' ? 'dark' : 'light'
+        }));
+        triggerCloudSync();
+      },
+
+      setContentMode: (mode) => {
+        set({ contentMode: mode });
+        triggerCloudSync();
+      },
+
+      toggleContentMode: () => {
+        set((state) => ({
+          contentMode: state.contentMode === 'descriptive' ? 'critical_analysis' : 'descriptive'
+        }));
+        triggerCloudSync();
+      },
 
       // View mode (High-Yield)
-      setViewMode: (viewMode) => set({ viewMode }),
+      setViewMode: (viewMode) => {
+        set({ viewMode });
+        triggerCloudSync();
+      },
 
-      toggleHighYieldMode: () => set((state) => ({
-        viewMode: state.viewMode === 'high_yield' ? 'full' : 'high_yield'
-      })),
+      toggleHighYieldMode: () => {
+        set((state) => ({
+          viewMode: state.viewMode === 'high_yield' ? 'full' : 'high_yield'
+        }));
+        triggerCloudSync();
+      },
 
-      addFavorite: (id) => set((state) => ({
-        favorites: [...new Set([...state.favorites, id])]
-      })),
+      addFavorite: (id) => {
+        set((state) => ({
+          favorites: [...new Set([...state.favorites, id])]
+        }));
+        triggerCloudSync();
+      },
 
-      removeFavorite: (id) => set((state) => ({
-        favorites: state.favorites.filter(fav => fav !== id)
-      })),
+      removeFavorite: (id) => {
+        set((state) => ({
+          favorites: state.favorites.filter(fav => fav !== id)
+        }));
+        triggerCloudSync();
+      },
 
       toggleFavorite: (id) => {
         const { favorites } = get();
@@ -124,54 +180,253 @@ export const useAppStore = create<AppStore>()(
         } else {
           get().addFavorite(id);
         }
+        // Note: triggerCloudSync is called by add/removeFavorite
       },
 
-      setNote: (id, note) => set((state) => ({
-        notes: { ...state.notes, [id]: note }
-      })),
+      setNote: (id, note) => {
+        set((state) => ({
+          notes: { ...state.notes, [id]: note }
+        }));
+        triggerCloudSync();
+      },
 
-      removeNote: (id) => set((state) => {
-        const newNotes = { ...state.notes };
-        delete newNotes[id];
-        return { notes: newNotes };
-      }),
+      removeNote: (id) => {
+        set((state) => {
+          const newNotes = { ...state.notes };
+          delete newNotes[id];
+          return { notes: newNotes };
+        });
+        triggerCloudSync();
+      },
 
       // Doenças favorites
-      addFavoritoDoenca: (id) => set((state) => ({
-        favoritosDoencas: [...new Set([...state.favoritosDoencas, id])]
-      })),
+      addFavoritoDoenca: (id) => {
+        set((state) => ({
+          favoritosDoencas: [...new Set([...state.favoritosDoencas, id])]
+        }));
+        triggerCloudSync();
+      },
 
-      removeFavoritoDoenca: (id) => set((state) => ({
-        favoritosDoencas: state.favoritosDoencas.filter(fav => fav !== id)
-      })),
+      removeFavoritoDoenca: (id) => {
+        set((state) => ({
+          favoritosDoencas: state.favoritosDoencas.filter(fav => fav !== id)
+        }));
+        triggerCloudSync();
+      },
 
       // Medicamentos favorites
-      addFavoritoMedicamento: (id) => set((state) => ({
-        favoritosMedicamentos: [...new Set([...state.favoritosMedicamentos, id])]
-      })),
+      addFavoritoMedicamento: (id) => {
+        set((state) => ({
+          favoritosMedicamentos: [...new Set([...state.favoritosMedicamentos, id])]
+        }));
+        triggerCloudSync();
+      },
 
-      removeFavoritoMedicamento: (id) => set((state) => ({
-        favoritosMedicamentos: state.favoritosMedicamentos.filter(fav => fav !== id)
-      })),
+      removeFavoritoMedicamento: (id) => {
+        set((state) => ({
+          favoritosMedicamentos: state.favoritosMedicamentos.filter(fav => fav !== id)
+        }));
+        triggerCloudSync();
+      },
 
       // Protocolos favorites
-      addFavoritoProtocolo: (id) => set((state) => ({
-        favoritosProtocolos: [...new Set([...state.favoritosProtocolos, id])]
-      })),
+      addFavoritoProtocolo: (id) => {
+        set((state) => ({
+          favoritosProtocolos: [...new Set([...state.favoritosProtocolos, id])]
+        }));
+        triggerCloudSync();
+      },
 
-      removeFavoritoProtocolo: (id) => set((state) => ({
-        favoritosProtocolos: state.favoritosProtocolos.filter(fav => fav !== id)
-      })),
+      removeFavoritoProtocolo: (id) => {
+        set((state) => ({
+          favoritosProtocolos: state.favoritosProtocolos.filter(fav => fav !== id)
+        }));
+        triggerCloudSync();
+      },
 
       // i18n
       locale: undefined,
-      setLocale: (locale) => set({ locale }),
+      setLocale: (locale) => {
+        set({ locale });
+        triggerCloudSync();
+      },
 
       // Region selection
       setRegion: (region: Region) => {
         set({ selectedRegion: region });
         if (typeof window !== 'undefined') {
           localStorage.setItem('darwin-selected-region', region);
+        }
+        triggerCloudSync();
+      },
+
+      // Cloud sync error setter
+      setSyncError: (error: string | null) => set({ syncError: error }),
+
+      /**
+       * Sync current state to Supabase cloud storage
+       * Only syncs if user is authenticated
+       */
+      syncToCloud: async () => {
+        try {
+          const { data: { session } } = await supabase.auth.getSession();
+          if (!session?.user) {
+            // Not authenticated, skip cloud sync
+            return;
+          }
+
+          set({ isSyncing: true, syncError: null });
+
+          const state = get();
+          const userId = session.user.id;
+
+          // Sync user preferences
+          // @ts-ignore - Supabase types not fully configured yet (pending deployment)
+          await supabase.from('user_preferences').upsert({
+            user_id: userId,
+            theme: state.theme,
+            language: state.locale || 'pt',
+            content_mode: state.contentMode,
+            updated_at: new Date().toISOString(),
+          }, { onConflict: 'user_id' });
+
+          // Sync favorites - batch upsert
+          const allFavorites = [
+            ...state.favorites.map(id => ({ user_id: userId, entity_type: 'screening' as const, entity_id: id })),
+            ...state.favoritosDoencas.map(id => ({ user_id: userId, entity_type: 'disease' as const, entity_id: id })),
+            ...state.favoritosMedicamentos.map(id => ({ user_id: userId, entity_type: 'medication' as const, entity_id: id })),
+            ...state.favoritosProtocolos.map(id => ({ user_id: userId, entity_type: 'protocol' as const, entity_id: id })),
+          ];
+
+          if (allFavorites.length > 0) {
+            // Delete existing favorites for this user first
+            // @ts-ignore - Supabase types not fully configured yet (pending deployment)
+            await supabase.from('favorites').delete().eq('user_id', userId);
+            // Insert new favorites
+            // @ts-ignore - Supabase types not fully configured yet (pending deployment)
+            await supabase.from('favorites').insert(allFavorites);
+          }
+
+          // Sync notes
+          const notesArray = Object.entries(state.notes).map(([entity_id, content]) => ({
+            user_id: userId,
+            entity_type: 'screening' as const,
+            entity_id,
+            content,
+            updated_at: new Date().toISOString(),
+          }));
+
+          if (notesArray.length > 0) {
+            // Delete existing notes for this user first
+            // @ts-ignore - Supabase types not fully configured yet (pending deployment)
+            await supabase.from('notes').delete().eq('user_id', userId);
+            // Insert new notes
+            // @ts-ignore - Supabase types not fully configured yet (pending deployment)
+            await supabase.from('notes').insert(notesArray);
+          }
+
+          set({
+            isSyncing: false,
+            lastSyncedAt: new Date().toISOString()
+          });
+        } catch (error) {
+          console.error('Cloud sync error:', error);
+          set({
+            isSyncing: false,
+            syncError: error instanceof Error ? error.message : 'Sync failed'
+          });
+        }
+      },
+
+      /**
+       * Load user data from Supabase cloud storage
+       * Should be called after user signs in
+       */
+      loadFromCloud: async () => {
+        try {
+          const { data: { session } } = await supabase.auth.getSession();
+          if (!session?.user) {
+            return;
+          }
+
+          set({ isSyncing: true, syncError: null });
+          const userId = session.user.id;
+
+          // Load preferences
+          // @ts-ignore - Supabase types not fully configured yet (pending deployment)
+          const { data: prefs } = await supabase
+            .from('user_preferences')
+            .select('*')
+            .eq('user_id', userId)
+            .single();
+
+          if (prefs) {
+            set({
+              // @ts-ignore - Supabase types not fully configured yet
+              theme: prefs.theme as Theme || 'dark',
+              // @ts-ignore - Supabase types not fully configured yet
+              contentMode: prefs.content_mode as ContentMode || 'descriptive',
+              // @ts-ignore - Supabase types not fully configured yet
+              viewMode: prefs.view_mode as ViewMode || 'full',
+              // @ts-ignore - Supabase types not fully configured yet
+              locale: prefs.language as Locale || undefined,
+              // @ts-ignore - Supabase types not fully configured yet
+              selectedRegion: prefs.selected_region as Region || 'BR',
+            });
+          }
+
+          // Load favorites
+          // @ts-ignore - Supabase types not fully configured yet (pending deployment)
+          const { data: favorites } = await supabase
+            .from('favorites')
+            .select('entity_type, entity_id')
+            .eq('user_id', userId);
+
+          if (favorites) {
+            // @ts-ignore - Supabase types not fully configured yet
+            const screenings = favorites.filter(f => f.entity_type === 'screening').map(f => f.entity_id);
+            // @ts-ignore - Supabase types not fully configured yet
+            const diseases = favorites.filter(f => f.entity_type === 'disease').map(f => f.entity_id);
+            // @ts-ignore - Supabase types not fully configured yet
+            const medications = favorites.filter(f => f.entity_type === 'medication').map(f => f.entity_id);
+            // @ts-ignore - Supabase types not fully configured yet
+            const protocols = favorites.filter(f => f.entity_type === 'protocol').map(f => f.entity_id);
+
+            set({
+              favorites: screenings,
+              favoritosDoencas: diseases,
+              favoritosMedicamentos: medications,
+              favoritosProtocolos: protocols,
+            });
+          }
+
+          // Load notes
+          // @ts-ignore - Supabase types not fully configured yet (pending deployment)
+          const { data: notes } = await supabase
+            .from('notes')
+            .select('entity_id, content')
+            .eq('user_id', userId);
+
+          if (notes) {
+            const notesMap: Record<string, string> = {};
+            // @ts-ignore - Supabase types not fully configured yet
+            notes.forEach(note => {
+              // @ts-ignore - Supabase types not fully configured yet
+              notesMap[note.entity_id] = note.content;
+            });
+            set({ notes: notesMap });
+          }
+
+          set({
+            isSyncing: false,
+            lastSyncedAt: new Date().toISOString()
+          });
+        } catch (error) {
+          console.error('Load from cloud error:', error);
+          set({
+            isSyncing: false,
+            syncError: error instanceof Error ? error.message : 'Load failed'
+          });
         }
       },
       };

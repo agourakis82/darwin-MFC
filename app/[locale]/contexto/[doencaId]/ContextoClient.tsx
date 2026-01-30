@@ -27,7 +27,7 @@ import {
 import { useState, useCallback } from 'react';
 
 // Data imports
-import { doencas } from '@/lib/data/doencas';
+import { doencasConsolidadas as doencas } from '@/lib/data/doencas/index';
 import { 
   getMedicamentosForDoenca, 
   getProtocolosForDoenca, 
@@ -97,12 +97,12 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
                 {doenca.titulo}
               </h1>
               <div className="flex flex-wrap gap-2 mt-2">
-                {doenca.ciap2.map(code => (
+                {(doenca.ciap2 ?? []).map(code => (
                   <span key={code} className="px-2 py-0.5 bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 text-sm font-medium rounded-full">
                     CIAP-2: {code}
                   </span>
                 ))}
-                {doenca.cid10.slice(0, 2).map(code => (
+                {(doenca.cid10 ?? []).slice(0, 2).map(code => (
                   <span key={code} className="px-2 py-0.5 bg-cyan-100 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-300 text-sm font-medium rounded-full">
                     CID-10: {code}
                   </span>
@@ -140,7 +140,7 @@ export default function ContextoClient({ doencaId }: ContextoClientProps) {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-6">
             {/* QuickView Tab */}
-            {activeTab === 'quickview' && (
+            {activeTab === 'quickview' && doenca.quickView && (
               <>
                 {/* Definition */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700">

@@ -35,8 +35,8 @@ import {
 } from '@/lib/utils/smart-search';
 import { useAppStore } from '@/lib/store/appStore';
 import { getAllRastreamentos } from '@/lib/data/rastreamentos';
-import { doencas } from '@/lib/data/doencas';
-import { medicamentos } from '@/lib/data/medicamentos';
+import { doencasConsolidadas as doencas } from '@/lib/data/doencas/index';
+import { medicamentosConsolidados as medicamentos } from '@/lib/data/medicamentos/index';
 
 type SearchResultType = 'rastreamento' | 'doenca' | 'medicamento' | 'action' | 'page';
 
@@ -169,14 +169,15 @@ export default function CommandPalette({ open, onOpenChange }: CommandPalettePro
 
     // Diseases
     doencas.forEach((d) => {
+      if (!d.titulo) return;
       items.push({
         id: `doenca-${d.id}`,
         type: 'doenca',
         title: d.titulo,
-        subtitle: `${d.ciap2.join(', ')} | ${d.cid10.join(', ')}`,
+        subtitle: `${(d.ciap2 ?? []).join(', ')} | ${(d.cid10 ?? []).join(', ')}`,
         path: `/doencas/${d.id}`,
         icon: <BookOpen className="w-4 h-4 text-blue-500" />,
-        keywords: [...d.ciap2, ...d.cid10, d.titulo.toLowerCase()],
+        keywords: [...(d.ciap2 ?? []), ...(d.cid10 ?? []), d.titulo.toLowerCase()],
       });
     });
 
@@ -319,7 +320,7 @@ export default function CommandPalette({ open, onOpenChange }: CommandPalettePro
       />
 
       {/* Command Dialog */}
-      <div className="fixed left-1/2 top-[20%] -translate-x-1/2 w-full max-w-2xl px-4">
+      <div className="fixed left-1/2 top-[20%] -translate-x-1/2 w-[95vw] sm:w-full sm:max-w-2xl px-3 sm:px-4">
         <Command
           className="glass-strong rounded-2xl shadow-2xl overflow-hidden border border-white/20 dark:border-white/10 animate-scale-in"
           loop
@@ -340,7 +341,7 @@ export default function CommandPalette({ open, onOpenChange }: CommandPalettePro
           </div>
 
           {/* Results */}
-          <Command.List className="max-h-[400px] overflow-y-auto p-2">
+          <Command.List className="max-h-[50vh] sm:max-h-[400px] overflow-y-auto p-2">
             <Command.Empty className="py-12 text-center text-[#86868b]">
               {t('commandPalette.noResults')}
             </Command.Empty>

@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { defaultLocale } from '@/i18n/config';
 import ThemeProvider from "./components/Layout/ThemeProvider";
+import AuthProvider from "./components/Auth/AuthProvider";
 import Header from "./components/Layout/Header";
 import Sidebar from "./components/Layout/Sidebar";
 import Footer from "./components/Layout/Footer";
@@ -360,6 +361,7 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
+          <AuthProvider>
           <ToastProvider />
           <PWAProvider />
           <PWAInitializer />
@@ -367,19 +369,19 @@ export default async function RootLayout({
           <InstallPrompt />
           <KeyboardShortcuts />
           {/* Skip links for accessibility */}
-          <a 
-            href="#main-content" 
+          <a
+            href="#main-content"
             className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg"
           >
             Pular para o conteúdo principal
           </a>
-          <a 
-            href="#main-nav" 
+          <a
+            href="#main-nav"
             className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-64 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg"
           >
             Pular para navegação
           </a>
-          
+
           <div className="min-h-screen flex flex-col">
             <Header />
             <div className="flex flex-1">
@@ -392,6 +394,7 @@ export default async function RootLayout({
             </div>
             <Footer />
           </div>
+          </AuthProvider>
         </ThemeProvider>
         </NextIntlClientProvider>
       </body>

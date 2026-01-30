@@ -45,8 +45,8 @@ export default function ResponsiveSidebar() {
       className={clsx(
         // Layout positioning
         'fixed left-0 top-16 bottom-0 lg:relative lg:top-0',
-        // Dimensions
-        isCollapsed ? 'w-20' : 'lg:w-64',
+        // Dimensions - Mobile: full width minus margin, Desktop: 256px
+        isCollapsed ? 'w-20' : 'w-[calc(100vw-2rem)] lg:w-64',
         // Responsive behavior
         'hidden lg:flex flex-col',
         // Styling

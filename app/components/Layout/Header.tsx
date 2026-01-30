@@ -10,6 +10,7 @@ import { Sun, Moon, BookOpen, FileText, Menu, X, Search, Zap, ClipboardList, Ale
 import CommandPalette from '../CommandPalette/CommandPalette';
 import { HighYieldToggle } from '../HighYield';
 import { DarwinLogo } from '../Brand';
+import UserMenu from '../Auth/UserMenu';
 
 // Fallback translations for pages not yet migrated to [locale]
 const fallbackTranslations: Record<string, string> = {
@@ -182,6 +183,9 @@ export default function Header() {
             {/* Language Selector */}
             <LanguageSelector className="hidden sm:block" />
 
+            {/* User Menu / Login */}
+            <UserMenu />
+
             {/* Toggle Tema */}
             <button
               onClick={toggleTheme}
@@ -203,7 +207,7 @@ export default function Header() {
         {mobileMenuOpen && (
           <div
             id="mobile-menu"
-            className="lg:hidden pb-6 border-t border-black/10 dark:border-white/10 mt-4 pt-4 animate-fade-in max-h-[80vh] overflow-y-auto"
+            className="lg:hidden pb-6 border-t border-black/10 dark:border-white/10 mt-4 pt-4 animate-fade-in max-h-[85vh] sm:max-h-[80vh] overflow-y-auto"
             role="navigation"
             aria-label="Mobile navigation"
           >

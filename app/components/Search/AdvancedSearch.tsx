@@ -6,7 +6,7 @@ import Fuse from 'fuse.js';
 import { useLocale } from 'next-intl';
 import { getAllRastreamentos } from '@/lib/data/rastreamentos';
 import { getAllDoencas } from '@/lib/data/doencas/index';
-import { medicamentos } from '@/lib/data/medicamentos';
+import { medicamentosConsolidados as medicamentos } from '@/lib/data/medicamentos/index';
 import { Link } from '@/i18n/routing';
 import { useLocalizedDiseases, LocalizedDoenca } from '@/lib/hooks/useLocalizedDisease';
 

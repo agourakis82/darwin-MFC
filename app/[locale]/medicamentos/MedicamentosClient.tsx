@@ -8,8 +8,8 @@ import { PageContainer } from '@/app/components/Layout/Containers';
 import {
   Search, Pill, Shield, ChevronRight, Activity, Baby, AlertTriangle, Globe
 } from 'lucide-react';
-import { medicamentos, getMedicamentosByClasse } from '@/lib/data/medicamentos';
-import { CLASSES_TERAPEUTICAS, CLASSIFICACAO_GESTACAO, isAvailableInPublicSystem } from '@/lib/types/medicamento';
+import { medicamentosConsolidados as medicamentos } from '@/lib/data/medicamentos/index';
+import { CLASSES_TERAPEUTICAS, CLASSIFICACAO_GESTACAO, isAvailableInPublicSystem, getMedicamentosByClasse } from '@/lib/types/medicamento';
 import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
 import { cn } from '@/lib/utils';
 

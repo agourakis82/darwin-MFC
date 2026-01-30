@@ -3,18 +3,18 @@
  * =====================
  *
  * Zustand store for user authentication and profile state.
- * Separate from appStore to keep concerns isolated.
+ * Supports both Supabase cloud auth and offline auth via IndexedDB.
  */
 
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { UserProfile } from '../db/schemas';
 import {
-  login,
-  logout,
-  register,
+  login as localLogin,
+  logout as localLogout,
+  register as localRegister,
   getCurrentUser,
-  updateProfile,
+  updateProfile as localUpdateProfile,
   restoreSession,
   checkOfflineAuth,
   type LoginCredentials,
@@ -23,6 +23,8 @@ import {
 } from '../api/auth';
 import { initDB } from '../db/indexedDB';
 import { initSync } from './syncStore';
+import { supabase } from '@/lib/supabase/client';
+import { useAppStore } from './appStore';
 
 // =============================================================================
 // TYPES
@@ -96,7 +98,26 @@ export const useUserStore = create<UserState & UserActions>()(
         set({ isLoading: true, error: null });
 
         try {
-          const user = await login(credentials);
+          // Try Supabase auth first (if online)
+          let supabaseUser = null;
+          if (navigator.onLine) {
+            try {
+              const { data, error } = await supabase.auth.signInWithPassword({
+                email: credentials.username.includes('@')
+                  ? credentials.username
+                  : `${credentials.username}@darwin-mfc.local`,
+                password: credentials.password,
+              });
+              if (!error && data.user) {
+                supabaseUser = data.user;
+              }
+            } catch (e) {
+              console.log('[UserStore] Supabase auth failed, falling back to local:', e);
+            }
+          }
+
+          // Fall back to local auth
+          const user = await localLogin(credentials);
 
           // Check offline validity
           const offlineAuth = await checkOfflineAuth();
@@ -111,6 +132,15 @@ export const useUserStore = create<UserState & UserActions>()(
 
           // Initialize sync after login
           await initSync();
+
+          // Load cloud data if Supabase auth succeeded
+          if (supabaseUser) {
+            try {
+              await useAppStore.getState().loadFromCloud();
+            } catch (e) {
+              console.log('[UserStore] Cloud data load failed:', e);
+            }
+          }
         } catch (error) {
           const message = error instanceof AuthError
             ? error.message
@@ -129,7 +159,30 @@ export const useUserStore = create<UserState & UserActions>()(
         set({ isLoading: true, error: null });
 
         try {
-          const user = await register(data);
+          // Try Supabase registration first (if online)
+          let supabaseUser = null;
+          if (navigator.onLine && data.email) {
+            try {
+              const { data: authData, error } = await supabase.auth.signUp({
+                email: data.email,
+                password: data.password,
+                options: {
+                  data: {
+                    name: data.username,
+                    country: data.countryCode,
+                  },
+                },
+              });
+              if (!error && authData.user) {
+                supabaseUser = authData.user;
+              }
+            } catch (e) {
+              console.log('[UserStore] Supabase registration failed, falling back to local:', e);
+            }
+          }
+
+          // Also create local user for offline support
+          const user = await localRegister(data);
 
           // Check offline validity
           const offlineAuth = await checkOfflineAuth();
@@ -144,6 +197,15 @@ export const useUserStore = create<UserState & UserActions>()(
 
           // Initialize sync after registration
           await initSync();
+
+          // Sync initial data to cloud if Supabase user created
+          if (supabaseUser) {
+            try {
+              await useAppStore.getState().syncToCloud();
+            } catch (e) {
+              console.log('[UserStore] Initial cloud sync failed:', e);
+            }
+          }
         } catch (error) {
           const message = error instanceof AuthError
             ? error.message
@@ -162,7 +224,10 @@ export const useUserStore = create<UserState & UserActions>()(
         set({ isLoading: true });
 
         try {
-          await logout();
+          // Sign out from Supabase
+          await supabase.auth.signOut();
+          // Sign out from local auth
+          await localLogout();
         } finally {
           set({
             ...initialState,
@@ -183,7 +248,23 @@ export const useUserStore = create<UserState & UserActions>()(
         set({ isLoading: true, error: null });
 
         try {
-          const updatedUser = await updateProfile(updates);
+          const updatedUser = await localUpdateProfile(updates);
+
+          // Also update Supabase profile if online
+          if (navigator.onLine) {
+            try {
+              const { data: { session } } = await supabase.auth.getSession();
+              if (session?.user) {
+                // @ts-ignore - Supabase types not fully configured yet (pending deployment)
+                await supabase.from('users').update({
+                  name: updates.username,
+                  country: updates.countryCode,
+                }).eq('id', session.user.id);
+              }
+            } catch (e) {
+              console.log('[UserStore] Supabase profile update failed:', e);
+            }
+          }
 
           set({
             user: updatedUser,

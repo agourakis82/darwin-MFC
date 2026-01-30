@@ -49,16 +49,16 @@ export interface AlertDialogProps extends Omit<ModalProps, 'footer' | 'size'> {
 // =============================================================================
 
 const sizeStyles: Record<ModalSize, string> = {
-  sm: 'max-w-sm',
-  md: 'max-w-md',
-  lg: 'max-w-lg',
-  xl: 'max-w-xl',
+  sm: 'w-full sm:max-w-sm',     // Mobile: full width, Desktop: 384px
+  md: 'w-full sm:max-w-md',     // Mobile: full width, Desktop: 448px
+  lg: 'w-full sm:max-w-lg',     // Mobile: full width, Desktop: 512px
+  xl: 'w-full sm:max-w-xl',     // Mobile: full width, Desktop: 576px
   full: 'max-w-[95vw] max-h-[95vh]',
 };
 
 const drawerSizeStyles: Record<DrawerPosition, Record<'sm' | 'md' | 'lg', string>> = {
-  left: { sm: 'w-64', md: 'w-80', lg: 'w-96' },
-  right: { sm: 'w-64', md: 'w-80', lg: 'w-96' },
+  left: { sm: 'w-[85vw] sm:w-64', md: 'w-[90vw] sm:w-80', lg: 'w-[95vw] sm:w-96' },   // Mobile: 85% viewport, Desktop: 256px
+  right: { sm: 'w-[85vw] sm:w-64', md: 'w-[90vw] sm:w-80', lg: 'w-[95vw] sm:w-96' },
   top: { sm: 'h-48', md: 'h-64', lg: 'h-96' },
   bottom: { sm: 'h-48', md: 'h-64', lg: 'h-96' },
 };
@@ -124,7 +124,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
     return createPortal(
       <AnimatePresence>
         {isOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}

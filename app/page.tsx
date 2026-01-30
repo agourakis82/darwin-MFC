@@ -1,44 +1,51 @@
-'use client';
+import { Metadata } from 'next';
 
-import { useEffect } from 'react';
-import { useRouter } from '@/i18n/routing';
-import { defaultLocale, locales, type Locale } from '@/i18n/config';
+/**
+ * ROOT PAGE - DARWIN-MFC
+ * ======================
+ *
+ * This page should rarely be reached as middleware redirects
+ * to the appropriate locale (e.g., /pt/, /en/).
+ *
+ * This is a fallback for browsers that don't process middleware
+ * or when JavaScript is disabled.
+ */
+
+export const metadata: Metadata = {
+  title: 'Darwin MFC - Medical Foundation Cluster',
+  description: 'Comprehensive medical reference platform for primary care',
+};
 
 export default function RootPage() {
-  const router = useRouter();
-
-  useEffect(() => {
-    // Detect user's preferred language
-    let userLocale: Locale = defaultLocale;
-
-    // Check localStorage for saved preference
-    const savedLocale = localStorage.getItem('preferred-locale');
-    if (savedLocale && locales.includes(savedLocale as Locale)) {
-      userLocale = savedLocale as Locale;
-    } else {
-      // Check browser language
-      const browserLang = navigator.language.split('-')[0];
-      if (locales.includes(browserLang as Locale)) {
-        userLocale = browserLang as Locale;
-      }
-    }
-
-    // Redirect to detected locale
-    router.replace(`/${userLocale}`);
-  }, [router]);
-
   return (
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '100vh',
-      fontFamily: 'system-ui, -apple-system, sans-serif'
-    }}>
-      <div style={{ textAlign: 'center' }}>
-        <h1>Darwin MFC</h1>
-        <p>Redirecting...</p>
-      </div>
-    </div>
+    <html lang="pt">
+      <head>
+        {/* Meta refresh fallback - redirects to Portuguese locale after 0 seconds */}
+        <meta httpEquiv="refresh" content="0; url=/pt/" />
+      </head>
+      <body>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '100vh',
+          fontFamily: 'system-ui, -apple-system, sans-serif',
+          backgroundColor: '#f9fafb',
+          color: '#1f2937',
+        }}>
+          <div style={{ textAlign: 'center', padding: '2rem' }}>
+            <h1 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '1rem' }}>
+              Darwin MFC
+            </h1>
+            <p style={{ color: '#6b7280' }}>
+              Redirecting to Darwin Medical Foundation Cluster...
+            </p>
+            <p style={{ color: '#9ca3af', fontSize: '0.875rem', marginTop: '1rem' }}>
+              If you are not redirected, <a href="/pt/" style={{ color: '#3b82f6', textDecoration: 'underline' }}>click here</a>.
+            </p>
+          </div>
+        </div>
+      </body>
+    </html>
   );
 }

@@ -8,7 +8,7 @@ import {
   Clock, Shield, BookOpen, ChevronRight, Activity, XCircle,
   CheckCircle, Info, Stethoscope, Dna, FileText, Download
 } from 'lucide-react';
-import { medicamentos, getMedicamentoById } from '@/lib/data/medicamentos';
+import { medicamentosConsolidados as medicamentos, getMedicamentoById } from '@/lib/data/medicamentos/index';
 import { CLASSES_TERAPEUTICAS, CLASSIFICACAO_GESTACAO } from '@/lib/types/medicamento';
 import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
 import { notFound } from 'next/navigation';
@@ -137,7 +137,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
             <section id="indications">
               <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-carbon-400 mb-6">Clinical Indications</h2>
               <div className="grid gap-3">
-                {med.indicacoes.map((ind, i) => (
+                {(med.indicacoes ?? []).map((ind, i) => (
                   <div key={i} className="flex items-center gap-4 p-4 card-ledger">
                     <CheckCircle className="w-5 h-5 text-guanine-green" />
                     <span className="font-semibold text-helix-navy dark:text-carbon-200">{ind}</span>
@@ -150,17 +150,19 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
             <section id="dosage">
               <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-carbon-400 mb-6">Dosage & Administration</h2>
               <div className="space-y-4">
-                {med.posologias.map((p, i) => (
+                {(med.posologias ?? []).map((p, i) => (
                   <div key={i} className="card-ledger">
                     <div className="bg-clinical-gray dark:bg-carbon-800 px-6 py-3 border-b border-carbon-200 dark:border-carbon-700">
                        <h3 className="text-sm font-bold text-helix-navy dark:text-white uppercase tracking-wider">{p.indicacao}</h3>
                     </div>
                     <div className="p-6 grid sm:grid-cols-2 gap-8">
-                       <div className="space-y-2">
-                         <span className="text-[10px] font-bold text-carbon-400 uppercase tracking-widest">Adult Protocol</span>
-                         <p className="font-mono text-sm text-helix-navy dark:text-carbon-200 font-bold">{p.adultos.dose}</p>
-                         <p className="text-xs text-carbon-500 font-body">{p.adultos.frequencia}</p>
-                       </div>
+                       {p.adultos && (
+                         <div className="space-y-2">
+                           <span className="text-[10px] font-bold text-carbon-400 uppercase tracking-widest">Adult Protocol</span>
+                           <p className="font-mono text-sm text-helix-navy dark:text-carbon-200 font-bold">{p.adultos.dose}</p>
+                           <p className="text-xs text-carbon-500 font-body">{p.adultos.frequencia}</p>
+                         </div>
+                       )}
                        {p.pediatrico && (
                          <div className="space-y-2 border-l border-carbon-200 dark:border-carbon-800 pl-8">
                            <span className="text-[10px] font-bold text-adenine-teal uppercase tracking-widest">Pediatric HUD</span>
@@ -179,7 +181,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
               <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-carbon-400 mb-6">Interaction Ledger</h2>
               
               <div className="space-y-3">
-                {med.interacoes.map((int, i) => (
+                {(med.interacoes ?? []).map((int, i) => (
                   <div key={i} className="flex gap-6 p-6 card-ledger border-l-4 border-l-critical-red">
                      <div className="w-12 h-12 rounded bg-critical-red/5 flex items-center justify-center flex-shrink-0">
                        <AlertTriangle className="w-6 h-6 text-critical-red" />
@@ -207,7 +209,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
                      <XCircle className="w-3 h-3" /> Contraindications
                    </h4>
                    <ul className="space-y-2">
-                     {med.contraindicacoes.slice(0, 3).map((c, i) => (
+                     {(med.contraindicacoes ?? []).slice(0, 3).map((c, i) => (
                        <li key={i} className="text-xs text-carbon-700 dark:text-carbon-300 font-body">• {c}</li>
                      ))}
                    </ul>

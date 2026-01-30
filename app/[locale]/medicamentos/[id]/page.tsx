@@ -1,4 +1,4 @@
-import { medicamentos } from '@/lib/data/medicamentos';
+import { medicamentosConsolidados as medicamentos } from '@/lib/data/medicamentos/index';
 import MedicamentoDetailClient from './MedicamentoDetailClient';
 
 // Generate static params for all medicamentos

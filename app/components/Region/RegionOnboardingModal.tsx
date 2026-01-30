@@ -156,7 +156,7 @@ export function RegionOnboardingModal({
   return createPortal(
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-4">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -173,13 +173,13 @@ export function RegionOnboardingModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-2xl bg-white dark:bg-[#1c1c1e] rounded-2xl shadow-2xl overflow-hidden"
+            className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white dark:bg-[#1c1c1e] rounded-2xl shadow-2xl"
             role="dialog"
             aria-modal="true"
             aria-labelledby="region-onboarding-title"
           >
             {/* Header */}
-            <div className="px-6 pt-8 pb-4 text-center">
+            <div className="px-4 pt-6 pb-4 sm:px-6 sm:pt-8 text-center">
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -190,18 +190,18 @@ export function RegionOnboardingModal({
               </motion.div>
               <h2
                 id="region-onboarding-title"
-                className="text-2xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7]"
+                className="text-xl sm:text-2xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7]"
               >
                 Welcome to Darwin-MFC
               </h2>
-              <p className="mt-2 text-[#86868b] max-w-md mx-auto">
+              <p className="mt-2 text-sm sm:text-base text-[#86868b] max-w-md mx-auto">
                 Select your healthcare region to personalize content, medication availability, and clinical guidelines.
               </p>
             </div>
 
             {/* Region Cards */}
-            <div className="px-6 py-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="px-4 py-3 sm:px-6 sm:py-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
                 {REGION_CARDS.map((card, index) => (
                   <motion.button
                     key={card.region}
@@ -210,7 +210,7 @@ export function RegionOnboardingModal({
                     transition={{ delay: 0.1 * (index + 1) }}
                     onClick={() => handleSelectRegion(card.region)}
                     className={`
-                      relative p-5 rounded-xl text-left transition-all duration-200
+                      relative px-4 py-3 sm:px-5 sm:py-4 rounded-xl text-left transition-all duration-200
                       border-2
                       ${
                         selectedRegion === card.region
@@ -232,20 +232,20 @@ export function RegionOnboardingModal({
                     )}
 
                     {/* Flag */}
-                    <div className="text-4xl mb-3">{card.flag}</div>
+                    <div className="text-3xl sm:text-4xl mb-3">{card.flag}</div>
 
                     {/* Name */}
-                    <h3 className="text-lg font-semibold text-[#1d1d1f] dark:text-[#f5f5f7]">
+                    <h3 className="text-base sm:text-lg font-semibold text-[#1d1d1f] dark:text-[#f5f5f7]">
                       {card.name}
                     </h3>
 
                     {/* Regulatory Body */}
-                    <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mt-1">
+                    <p className="text-xs sm:text-sm font-medium text-blue-600 dark:text-blue-400 mt-1">
                       {card.regulatoryBody}
                     </p>
 
                     {/* Description */}
-                    <p className="text-xs text-[#86868b] mt-2 line-clamp-3">
+                    <p className="text-xs sm:text-sm text-[#86868b] mt-2 line-clamp-3">
                       {card.description}
                     </p>
                   </motion.button>
@@ -254,8 +254,8 @@ export function RegionOnboardingModal({
             </div>
 
             {/* Footer */}
-            <div className="px-6 py-5 border-t border-gray-200 dark:border-white/10 flex items-center justify-between">
-              <p className="text-xs text-[#86868b]">
+            <div className="px-4 py-4 sm:px-6 sm:py-5 border-t border-gray-200 dark:border-white/10 flex items-center justify-between gap-3">
+              <p className="text-xs text-[#86868b] hidden sm:block">
                 You can change this later in settings
               </p>
               <motion.button
@@ -264,8 +264,8 @@ export function RegionOnboardingModal({
                 onClick={handleConfirm}
                 disabled={!selectedRegion}
                 className={`
-                  flex items-center gap-2 px-6 py-2.5 rounded-xl font-medium text-sm
-                  transition-all duration-200
+                  flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-2.5 rounded-xl font-medium text-sm
+                  transition-all duration-200 flex-shrink-0
                   ${
                     selectedRegion
                       ? 'bg-blue-500 hover:bg-blue-600 text-white shadow-lg shadow-blue-500/25'
