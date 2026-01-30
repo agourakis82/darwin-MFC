@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Darwin MFC",
+    "slug": "darwin-mfc-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "scheme": "darwin",
+    "ios": {
+      "bundleIdentifier": "br.med.agourakis.darwin"
+    },
+    "android": {
+      "package": "br.med.agourakis.darwin",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-notifications"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
