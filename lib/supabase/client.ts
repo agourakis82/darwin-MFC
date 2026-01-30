@@ -6,44 +6,53 @@
  *
  * Supabase client for Darwin-MFC
  * Supports both browser and server-side rendering
+ *
+ * NOTE: Client is optional and will be null during static builds
+ * when environment variables are not configured.
  */
 
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient as SupabaseClientType } from '@supabase/supabase-js';
 import type { Database } from './types';
 
 // Environment variables
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error(
-    'Missing Supabase environment variables. Please set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY'
-  );
-}
+// Check if Supabase is configured (build-safe)
+export const isSupabaseConfigured = !!(supabaseUrl && supabaseAnonKey);
 
 /**
  * Supabase client for client-side operations
  * Uses anon key for Row Level Security
+ *
+ * NOTE: Will be null if environment variables are not configured.
+ * Always check `isSupabaseConfigured` before using.
  */
-export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey, {
-  auth: {
-    persistSession: true,
-    autoRefreshToken: true,
-    detectSessionInUrl: true,
-  },
-  global: {
-    headers: {
-      'x-application-name': 'darwin-mfc',
-    },
-  },
-});
+export const supabase: SupabaseClientType<Database> | null = isSupabaseConfigured
+  ? createClient<Database>(supabaseUrl!, supabaseAnonKey!, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: true,
+      },
+      global: {
+        headers: {
+          'x-application-name': 'darwin-mfc',
+        },
+      },
+    })
+  : null;
 
 /**
  * Create a Supabase client for server-side operations
  * Should be used in Server Components, API routes, and server actions
+ *
+ * @returns Supabase client or null if not configured
  */
-export function createServerSupabaseClient() {
-  return createClient<Database>(supabaseUrl, supabaseAnonKey, {
+export function createServerSupabaseClient(): SupabaseClientType<Database> | null {
+  if (!isSupabaseConfigured) return null;
+
+  return createClient<Database>(supabaseUrl!, supabaseAnonKey!, {
     auth: {
       persistSession: false,
       autoRefreshToken: false,
@@ -55,4 +64,4 @@ export function createServerSupabaseClient() {
 /**
  * Type-safe Supabase client
  */
-export type SupabaseClient = typeof supabase;
+export type SupabaseClient = SupabaseClientType<Database>;

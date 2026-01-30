@@ -23,7 +23,7 @@ import {
 } from '../api/auth';
 import { initDB } from '../db/indexedDB';
 import { initSync } from './syncStore';
-import { supabase } from '@/lib/supabase/client';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase/client';
 import { useAppStore } from './appStore';
 
 // =============================================================================
@@ -98,9 +98,9 @@ export const useUserStore = create<UserState & UserActions>()(
         set({ isLoading: true, error: null });
 
         try {
-          // Try Supabase auth first (if online)
+          // Try Supabase auth first (if online and configured)
           let supabaseUser = null;
-          if (navigator.onLine) {
+          if (navigator.onLine && isSupabaseConfigured && supabase) {
             try {
               const { data, error } = await supabase.auth.signInWithPassword({
                 email: credentials.username.includes('@')
@@ -159,9 +159,9 @@ export const useUserStore = create<UserState & UserActions>()(
         set({ isLoading: true, error: null });
 
         try {
-          // Try Supabase registration first (if online)
+          // Try Supabase registration first (if online and configured)
           let supabaseUser = null;
-          if (navigator.onLine && data.email) {
+          if (navigator.onLine && data.email && isSupabaseConfigured && supabase) {
             try {
               const { data: authData, error } = await supabase.auth.signUp({
                 email: data.email,
@@ -224,8 +224,10 @@ export const useUserStore = create<UserState & UserActions>()(
         set({ isLoading: true });
 
         try {
-          // Sign out from Supabase
-          await supabase.auth.signOut();
+          // Sign out from Supabase (if configured)
+          if (isSupabaseConfigured && supabase) {
+            await supabase.auth.signOut();
+          }
           // Sign out from local auth
           await localLogout();
         } finally {
@@ -250,8 +252,8 @@ export const useUserStore = create<UserState & UserActions>()(
         try {
           const updatedUser = await localUpdateProfile(updates);
 
-          // Also update Supabase profile if online
-          if (navigator.onLine) {
+          // Also update Supabase profile if online and configured
+          if (navigator.onLine && isSupabaseConfigured && supabase) {
             try {
               const { data: { session } } = await supabase.auth.getSession();
               if (session?.user) {

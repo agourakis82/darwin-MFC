@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import { User, Session } from '@supabase/supabase-js';
 import {
   supabase,
+  isSupabaseConfigured,
   signUp,
   signIn,
   signInWithOAuth,
@@ -107,6 +108,12 @@ export function useAuth(): UseAuthReturn {
     }
 
     initAuth();
+
+    // Skip auth listener if Supabase is not configured
+    if (!isSupabaseConfigured || !supabase) {
+      setState(prev => ({ ...prev, loading: false }));
+      return () => { mounted = false; };
+    }
 
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(

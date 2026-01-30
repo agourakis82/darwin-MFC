@@ -3,7 +3,7 @@ import { persist } from 'zustand/middleware';
 import { AppState, ContentMode, Theme, ViewMode } from '../types';
 import type { Locale } from '@/i18n/config';
 import type { Region } from '../types/region';
-import { supabase } from '@/lib/supabase/client';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase/client';
 
 // Debounce timer for cloud sync
 let syncDebounceTimer: ReturnType<typeof setTimeout> | null = null;
@@ -268,6 +268,9 @@ export const useAppStore = create<AppStore>()(
        * Only syncs if user is authenticated
        */
       syncToCloud: async () => {
+        // Skip if Supabase is not configured (static build)
+        if (!isSupabaseConfigured || !supabase) return;
+
         try {
           const { data: { session } } = await supabase.auth.getSession();
           if (!session?.user) {
@@ -343,6 +346,9 @@ export const useAppStore = create<AppStore>()(
        * Should be called after user signs in
        */
       loadFromCloud: async () => {
+        // Skip if Supabase is not configured (static build)
+        if (!isSupabaseConfigured || !supabase) return;
+
         try {
           const { data: { session } } = await supabase.auth.getSession();
           if (!session?.user) {

@@ -6,7 +6,7 @@
  */
 
 // Client
-export { supabase, createServerSupabaseClient } from './client';
+export { supabase, createServerSupabaseClient, isSupabaseConfigured } from './client';
 export type { SupabaseClient } from './client';
 
 // Types
