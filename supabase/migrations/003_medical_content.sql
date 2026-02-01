@@ -44,8 +44,8 @@ CREATE TABLE IF NOT EXISTS public.medicamentos (
   updated_at TIMESTAMPTZ DEFAULT NOW() NOT NULL
 );
 
--- Full-text search index for medications
-CREATE INDEX IF NOT EXISTS idx_medicamentos_nome ON public.medicamentos USING GIN (to_tsvector('portuguese', nome_generico || ' ' || COALESCE(array_to_string(nome_comercial, ' '), '')));
+-- Indexes for medications
+CREATE INDEX IF NOT EXISTS idx_medicamentos_nome ON public.medicamentos(nome_generico);
 CREATE INDEX IF NOT EXISTS idx_medicamentos_classe ON public.medicamentos(classe_terapeutica);
 CREATE INDEX IF NOT EXISTS idx_medicamentos_sus ON public.medicamentos(disponivel_sus) WHERE disponivel_sus = true;
 CREATE INDEX IF NOT EXISTS idx_medicamentos_atc ON public.medicamentos(atc_code);
@@ -81,8 +81,8 @@ CREATE TABLE IF NOT EXISTS public.doencas (
   updated_at TIMESTAMPTZ DEFAULT NOW() NOT NULL
 );
 
--- Full-text search index for diseases
-CREATE INDEX IF NOT EXISTS idx_doencas_nome ON public.doencas USING GIN (to_tsvector('portuguese', nome || ' ' || COALESCE(array_to_string(nome_alternativo, ' '), '')));
+-- Indexes for diseases
+CREATE INDEX IF NOT EXISTS idx_doencas_nome ON public.doencas(nome);
 CREATE INDEX IF NOT EXISTS idx_doencas_categoria ON public.doencas(categoria);
 CREATE INDEX IF NOT EXISTS idx_doencas_cid10 ON public.doencas(cid10);
 CREATE INDEX IF NOT EXISTS idx_doencas_ciap2 ON public.doencas(ciap2);
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS public.protocolos (
 );
 
 CREATE INDEX IF NOT EXISTS idx_protocolos_categoria ON public.protocolos(categoria);
-CREATE INDEX IF NOT EXISTS idx_protocolos_titulo ON public.protocolos USING GIN (to_tsvector('portuguese', titulo));
+CREATE INDEX IF NOT EXISTS idx_protocolos_titulo ON public.protocolos(titulo);
 
 -- =====================================================
 -- ROW LEVEL SECURITY
