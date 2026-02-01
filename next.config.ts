@@ -9,8 +9,13 @@ const isProd = process.env.NODE_ENV === 'production';
 const useBasePath = process.env.USE_BASE_PATH === 'true';
 const basePathValue = useBasePath ? '/darwin-MFC' : '';
 
+// Use SSR for Vercel (better for large sites with 15k+ pages)
+// Use static export only for GitHub Pages
+const isVercel = process.env.VERCEL === '1' || process.env.VERCEL_ENV !== undefined;
+
 const nextConfig: NextConfig = {
-  output: "export",
+  // Vercel handles SSR natively, use static export for GitHub Pages only
+  ...(isVercel ? {} : { output: "export" as const }),
   images: {
     unoptimized: true,
   },
