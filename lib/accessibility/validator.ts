@@ -3,7 +3,19 @@
  * State of the Art Implementation
  */
 
-import { AxeResults, Result } from 'axe-core';
+// Local type definitions (compatible with axe-core for future integration)
+export interface AxeResult {
+  id: string;
+  impact?: 'critical' | 'serious' | 'moderate' | 'minor';
+  description: string;
+  help: string;
+  helpUrl: string;
+  nodes: Array<{
+    html: string;
+    target: string[];
+    failureSummary?: string;
+  }>;
+}
 
 export interface AccessibilityViolation {
   id: string;
@@ -27,8 +39,8 @@ export interface AccessibilityNode {
 
 export interface AccessibilityReport {
   violations: AccessibilityViolation[];
-  passes: Result[];
-  incomplete: Result[];
+  passes: AxeResult[];
+  incomplete: AxeResult[];
   wcagLevel: 'A' | 'AA' | 'AAA';
   score: number;
   timestamp: Date;
@@ -283,8 +295,8 @@ export class AccessibilityValidator {
   public async validatePage(): Promise<AccessibilityReport> {
     const url = window.location.href;
     const violations: AccessibilityViolation[] = [];
-    const passes: Result[] = [];
-    const incomplete: Result[] = [];
+    const passes: AxeResult[] = [];
+    const incomplete: AxeResult[] = [];
 
     // Run custom rules
     for (const rule of this.customRules.values()) {
