@@ -1,13 +1,16 @@
 /**
  * API v1: Doenças (Diseases)
  * GET /api/v1/doencas - List diseases with pagination and filters
+ *
+ * Fetches from Supabase when configured, falls back to static data
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { doencasConsolidadas as doencas } from '@/lib/data/doencas/index';
-import type { Doenca } from '@/lib/types/doenca';
+import { getDoencas, searchDoencas, getDoencasByCategoria } from '@/lib/data/supabase-data';
 
-export const dynamic = 'force-static';
+// Dynamic rendering for Supabase, static for fallback
+export const dynamic = 'auto';
+export const revalidate = 3600; // 1 hour cache
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -23,29 +26,31 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const q = searchParams.get('q')?.toLowerCase() || '';
+    const categoria = searchParams.get('categoria') || '';
     const page = parseInt(searchParams.get('page') || '1', 10);
-    const limit = parseInt(searchParams.get('limit') || '20', 10);
+    const limit = Math.min(parseInt(searchParams.get('limit') || '20', 10), 100);
 
-    let filteredDoencas = [...doencas] as Doenca[];
+    let doencas;
 
-    // Search by title or synonyms
+    // Use search if query provided
     if (q) {
-      filteredDoencas = filteredDoencas.filter(d =>
-        d.titulo.toLowerCase().includes(q) ||
-        d.sinonimos?.some(s => s.toLowerCase().includes(q))
-      );
+      doencas = await searchDoencas(q);
+    } else if (categoria) {
+      doencas = await getDoencasByCategoria(categoria);
+    } else {
+      doencas = await getDoencas();
     }
 
-    const total = filteredDoencas.length;
+    const total = doencas.length;
     const start = (page - 1) * limit;
     const end = start + limit;
-    const paginated = filteredDoencas.slice(start, end);
+    const paginated = doencas.slice(start, end);
 
     return NextResponse.json({
       data: paginated.map(d => ({
         id: d.id,
         titulo: d.titulo,
-        sinonimos: d.sinonimos,
+        sinonimos: d.sinonimos || [],
         cid10: d.cid10,
         ciap2: d.ciap2,
         categoria: d.categoria

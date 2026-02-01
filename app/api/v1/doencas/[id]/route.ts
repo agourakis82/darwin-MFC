@@ -1,19 +1,17 @@
 /**
  * API v1: Doença por ID
  * GET /api/v1/doencas/[id] - Get single disease by slug
+ *
+ * Fetches from Supabase when configured, falls back to static data
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { doencasConsolidadas as doencas } from '@/lib/data/doencas/index';
-import type { Doenca } from '@/lib/types/doenca';
+import { getDoencaById, getDoencas } from '@/lib/data/supabase-data';
 
-// Check if we're on Vercel
-const isVercel = process.env.VERCEL === '1' || process.env.VERCEL_ENV !== undefined;
-
-// Use dynamic rendering on Vercel, static on GitHub Pages
-export const dynamic = isVercel ? 'auto' : 'force-static';
+// Dynamic rendering with ISR caching
+export const dynamic = 'auto';
 export const dynamicParams = true;
-export const revalidate = 3600;
+export const revalidate = 3600; // 1 hour cache
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -32,7 +30,8 @@ interface RouteParams {
 export async function GET(request: NextRequest, { params }: RouteParams) {
   try {
     const { id } = await params;
-    const doenca = doencas.find(d => d.id === id) as Doenca | undefined;
+
+    const doenca = await getDoencaById(id);
 
     if (!doenca) {
       return NextResponse.json(
@@ -51,17 +50,12 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   }
 }
 
-// Generate static params - limited on Vercel to reduce deployment size
+// Generate static params - limited for smaller deployment size
 export async function generateStaticParams() {
-  if (isVercel) {
-    // On Vercel: generate only top 50 diseases statically
-    const topDiseases = doencas.slice(0, 50);
-    return topDiseases.map((d) => ({
-      id: d.id,
-    }));
-  }
-  // For static export: generate all
-  return doencas.map((d) => ({
+  // Only pre-generate top 20 for faster builds
+  // Rest will be generated on-demand with ISR
+  const diseases = await getDoencas();
+  return diseases.slice(0, 20).map((d) => ({
     id: d.id,
   }));
 }

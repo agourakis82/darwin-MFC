@@ -1,20 +1,18 @@
 /**
  * API v1: Medicamento por ID
  * GET /api/v1/medicamentos/[id] - Get single medication by ID
+ *
+ * Fetches from Supabase when configured, falls back to static data
  */
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getDrugInteractionsForMedication, hasPharmacogenomicData } from '@/lib/types/pharmgkb';
-import type { Medicamento } from '@/lib/types/medicamento';
-import { medicamentosConsolidados as medicamentosData } from '@/lib/data/medicamentos/index';
+import { getMedicamentoById, getMedicamentos } from '@/lib/data/supabase-data';
 
-// Check if we're on Vercel
-const isVercel = process.env.VERCEL === '1' || process.env.VERCEL_ENV !== undefined;
-
-// Use dynamic rendering on Vercel, static on GitHub Pages
-export const dynamic = isVercel ? 'auto' : 'force-static';
+// Dynamic rendering with ISR caching
+export const dynamic = 'auto';
 export const dynamicParams = true;
-export const revalidate = 3600;
+export const revalidate = 3600; // 1 hour cache
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -33,19 +31,8 @@ interface RouteParams {
 export async function GET(request: NextRequest, { params }: RouteParams) {
   try {
     const { id } = await params;
-    // Fetch medications dynamically
-    let medicamentos: Medicamento[] = [];
-    try {
-      const { medicamentosConsolidados } = await import('@/lib/data/medicamentos/index');
-      medicamentos = medicamentosConsolidados;
-    } catch {
-      return NextResponse.json(
-        { error: 'Medicamento não encontrado' },
-        { status: 404, headers: CORS_HEADERS }
-      );
-    }
 
-    const medicamento = medicamentos.find(m => m.id === id);
+    const medicamento = await getMedicamentoById(id);
 
     if (!medicamento) {
       return NextResponse.json(
@@ -80,17 +67,12 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   }
 }
 
-// Generate static params - limited on Vercel to reduce deployment size
+// Generate static params - limited for smaller deployment size
 export async function generateStaticParams() {
-  if (isVercel) {
-    // On Vercel: generate only top 50 medications statically
-    const topMedications = medicamentosData.slice(0, 50);
-    return topMedications.map((medicamento) => ({
-      id: medicamento.id,
-    }));
-  }
-  // For static export: generate all
-  return medicamentosData.map((medicamento) => ({
-    id: medicamento.id,
+  // Only pre-generate top 20 for faster builds
+  // Rest will be generated on-demand with ISR
+  const meds = await getMedicamentos();
+  return meds.slice(0, 20).map((med) => ({
+    id: med.id,
   }));
 }

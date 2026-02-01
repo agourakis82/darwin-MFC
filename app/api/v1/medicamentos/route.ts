@@ -2,12 +2,15 @@
  * API v1: Medicamentos (Medications)
  * GET /api/v1/medicamentos - List medications with pagination and filters
  *
- * Note: Returns a static response as medications data structure varies
+ * Fetches from Supabase when configured, falls back to static data
  */
 
 import { NextRequest, NextResponse } from 'next/server';
+import { getMedicamentos, searchMedicamentos, getMedicamentosByClasse } from '@/lib/data/supabase-data';
 
-export const dynamic = 'force-static';
+// Dynamic rendering for Supabase, static for fallback
+export const dynamic = 'auto';
+export const revalidate = 3600; // 1 hour cache
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -23,24 +26,19 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const q = searchParams.get('q')?.toLowerCase() || '';
+    const classe = searchParams.get('classe') || '';
     const page = parseInt(searchParams.get('page') || '1', 10);
-    const limit = parseInt(searchParams.get('limit') || '20', 10);
+    const limit = Math.min(parseInt(searchParams.get('limit') || '20', 10), 100);
 
-    // For now return a sample response - real implementation would load from data files
-    const allMedicamentos = [
-      { id: 'metformina', nomeGenerico: 'Metformina', nomesComerciais: ['Glifage'], atcCode: 'A10BA02' },
-      { id: 'losartana', nomeGenerico: 'Losartana', nomesComerciais: ['Cozaar'], atcCode: 'C09CA01' },
-      { id: 'atorvastatina', nomeGenerico: 'Atorvastatina', nomesComerciais: ['Lipitor'], atcCode: 'C10AA05' }
-    ];
+    let medicamentos;
 
-    let medicamentos = [...allMedicamentos];
-
-    // Search by name
+    // Use search if query provided
     if (q) {
-      medicamentos = medicamentos.filter(m =>
-        m.nomeGenerico.toLowerCase().includes(q) ||
-        m.nomesComerciais?.some(n => n.toLowerCase().includes(q))
-      );
+      medicamentos = await searchMedicamentos(q);
+    } else if (classe) {
+      medicamentos = await getMedicamentosByClasse(classe);
+    } else {
+      medicamentos = await getMedicamentos();
     }
 
     const total = medicamentos.length;
@@ -52,8 +50,11 @@ export async function GET(request: NextRequest) {
       data: paginated.map(m => ({
         id: m.id,
         nomeGenerico: m.nomeGenerico,
-        nomesComerciais: m.nomesComerciais,
-        atcCode: m.atcCode
+        nomesComerciais: m.nomesComerciais || [],
+        classeTerapeutica: m.classeTerapeutica,
+        rename: m.rename, // Whether in RENAME (National Essential Medicines List)
+        disponivelSUS: m.apresentacoes?.some(ap => ap.disponivelSUS) || false,
+        atcCode: m.atcCode,
       })),
       pagination: {
         page,
