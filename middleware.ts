@@ -3,6 +3,9 @@ import type { NextRequest } from 'next/server';
 
 /**
  * Next.js Middleware for security headers and redirects
+ *
+ * IMPORTANT: This file MUST be at the project root (not in app/ folder)
+ * for Next.js to recognize and execute it.
  */
 
 // Supported locales from i18n config
