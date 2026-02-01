@@ -8,7 +8,13 @@ import { getDrugInteractionsForMedication, hasPharmacogenomicData } from '@/lib/
 import type { Medicamento } from '@/lib/types/medicamento';
 import { medicamentosConsolidados as medicamentosData } from '@/lib/data/medicamentos/index';
 
-export const dynamic = 'force-static';
+// Check if we're on Vercel
+const isVercel = process.env.VERCEL === '1' || process.env.VERCEL_ENV !== undefined;
+
+// Use dynamic rendering on Vercel, static on GitHub Pages
+export const dynamic = isVercel ? 'auto' : 'force-static';
+export const dynamicParams = true;
+export const revalidate = 3600;
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -74,10 +80,16 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   }
 }
 
-// Note: Static params generation would require loading all medications
-// For now, dynamic route will work
-
+// Generate static params - limited on Vercel to reduce deployment size
 export async function generateStaticParams() {
+  if (isVercel) {
+    // On Vercel: generate only top 50 medications statically
+    const topMedications = medicamentosData.slice(0, 50);
+    return topMedications.map((medicamento) => ({
+      id: medicamento.id,
+    }));
+  }
+  // For static export: generate all
   return medicamentosData.map((medicamento) => ({
     id: medicamento.id,
   }));

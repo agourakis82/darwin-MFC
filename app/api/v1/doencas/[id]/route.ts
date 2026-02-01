@@ -7,7 +7,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { doencasConsolidadas as doencas } from '@/lib/data/doencas/index';
 import type { Doenca } from '@/lib/types/doenca';
 
-export const dynamic = 'force-static';
+// Check if we're on Vercel
+const isVercel = process.env.VERCEL === '1' || process.env.VERCEL_ENV !== undefined;
+
+// Use dynamic rendering on Vercel, static on GitHub Pages
+export const dynamic = isVercel ? 'auto' : 'force-static';
+export const dynamicParams = true;
+export const revalidate = 3600;
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -45,8 +51,16 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   }
 }
 
-// Generate static params for all diseases
+// Generate static params - limited on Vercel to reduce deployment size
 export async function generateStaticParams() {
+  if (isVercel) {
+    // On Vercel: generate only top 50 diseases statically
+    const topDiseases = doencas.slice(0, 50);
+    return topDiseases.map((d) => ({
+      id: d.id,
+    }));
+  }
+  // For static export: generate all
   return doencas.map((d) => ({
     id: d.id,
   }));
