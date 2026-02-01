@@ -4,7 +4,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { doencas } from '@/lib/data/doencas';
+import { doencasConsolidadas as doencas } from '@/lib/data/doencas/index';
 import type { Doenca } from '@/lib/types/doenca';
 
 export const dynamic = 'force-static';

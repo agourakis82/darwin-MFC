@@ -6,7 +6,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getDrugInteractionsForMedication, hasPharmacogenomicData } from '@/lib/types/pharmgkb';
 import type { Medicamento } from '@/lib/types/medicamento';
-import { medicamentos as medicamentosData } from '@/lib/data/medicamentos';
+import { medicamentosConsolidados as medicamentosData } from '@/lib/data/medicamentos/index';
 
 export const dynamic = 'force-static';
 
@@ -30,8 +30,8 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     // Fetch medications dynamically
     let medicamentos: Medicamento[] = [];
     try {
-      const { medicamentos: allMedicamentos } = await import('@/lib/data/medicamentos');
-      medicamentos = allMedicamentos;
+      const { medicamentosConsolidados } = await import('@/lib/data/medicamentos/index');
+      medicamentos = medicamentosConsolidados;
     } catch {
       return NextResponse.json(
         { error: 'Medicamento não encontrado' },
