@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from 'next-intl/plugin';
+import bundleAnalyzer from '@next/bundle-analyzer';
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 const isProd = process.env.NODE_ENV === 'production';
 // Build without basePath for custom domain (default for GitHub Pages with CNAME)
@@ -17,7 +21,16 @@ const nextConfig: NextConfig = {
   // Vercel handles SSR natively, use static export for GitHub Pages only
   ...(isVercel ? {} : { output: "export" as const }),
   images: {
-    unoptimized: true,
+    // Enable optimization on Vercel, disable for static export
+    unoptimized: !isVercel,
+    // Allow images from Supabase storage
+    remotePatterns: isVercel ? [
+      {
+        protocol: 'https',
+        hostname: '*.supabase.co',
+        pathname: '/storage/**',
+      },
+    ] : [],
   },
   trailingSlash: true,
   // Build without basePath by default (for custom domain)
@@ -55,4 +68,4 @@ const nextConfig: NextConfig = {
 
 };
 
-export default withNextIntl(nextConfig);
+export default withBundleAnalyzer(withNextIntl(nextConfig));
