@@ -14,6 +14,7 @@ import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
 import { notFound } from 'next/navigation';
 import { PharmGKBDisplay } from '@/app/components/Ontology';
 import { PageContainer } from '@/app/components/Layout/Containers';
+import { TrustBadge } from '@/app/components/ui/TrustBadge';
 import { cn } from '@/lib/utils';
 
 export default function MedicamentoDetailClient({ params }: { params: Promise<{ id: string }> }) {
@@ -78,14 +79,12 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
           </p>
 
           {/* Trust indicators */}
-          <div className="flex flex-wrap gap-4 text-base text-neutral-600 dark:text-neutral-400">
-            <span className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Atualizado: {med.lastUpdate}
-            </span>
-          </div>
+          <TrustBadge
+            lastUpdated={med.lastUpdate}
+            citationCount={med.citations?.length ?? 0}
+            variant="inline"
+            showLabels={true}
+          />
         </header>
 
         {/* PREGNANCY ALERT - Unmissable for D/X categories */}
