@@ -6,7 +6,6 @@ import { Skeleton } from '@/app/components/ui/Skeleton';
 // Code splitting: lazy load the heavy client component
 const MedicamentosClient = dynamic(() => import('./MedicamentosClient'), {
   loading: () => <MedicamentosSkeleton />,
-  ssr: false,
 });
 
 // Loading skeleton for better UX during code splitting

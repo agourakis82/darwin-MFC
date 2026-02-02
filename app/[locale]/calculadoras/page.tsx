@@ -14,7 +14,6 @@ import { Skeleton } from '@/app/components/ui/Skeleton';
 // Code splitting: lazy load the heavy client component
 const CalculadorasHubClient = dynamic(() => import('./CalculadorasHubClient'), {
   loading: () => <CalculadorasSkeleton />,
-  ssr: false,
 });
 
 // Loading skeleton for better UX during code splitting
