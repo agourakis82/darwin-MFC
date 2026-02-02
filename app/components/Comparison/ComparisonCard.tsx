@@ -6,6 +6,7 @@ import type { Region } from '@/lib/types/region';
 import { Recommendations } from '@/lib/types/rastreamentos';
 import InlineCitation from '../Bibliography/InlineCitation';
 import { CheckCircle2, AlertTriangle, XCircle, HelpCircle, Building2, Hospital, Globe, Flag, Users, Menu } from 'lucide-react';
+import { semanticColors, convergenceConfig as tokenConvergenceConfig } from '@/lib/design-system/tokens';
 
 interface ComparisonCardProps {
   title: string;
@@ -141,54 +142,66 @@ export default function ComparisonCard({ title, recommendations }: ComparisonCar
   // Determine layout: for 3+ guidelines, use tabs on mobile, grid on desktop
   const isCompactView = availableGuidelines.length >= 3;
 
+  // Status configuration using design tokens for consistency
   const getStatusConfig = (status: string) => {
-    switch (status) {
-      case 'convergencia':
-        return {
-          color: 'emerald',
-          icon: CheckCircle2,
-          label: 'Convergência Total',
-          gradient: 'from-emerald-500/10 to-teal-500/10',
-          border: 'border-emerald-200 dark:border-emerald-800',
-          badge: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-emerald-300 dark:border-emerald-700'
-        };
-      case 'parcial':
-        return {
-          color: 'amber',
-          icon: HelpCircle,
-          label: 'Convergência Parcial',
-          gradient: 'from-amber-500/10 to-orange-500/10',
-          border: 'border-amber-200 dark:border-amber-800',
-          badge: 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700'
-        };
-      case 'divergencia':
-        return {
-          color: 'red',
-          icon: XCircle,
-          label: 'Divergência',
-          gradient: 'from-red-500/10 to-rose-500/10',
-          border: 'border-red-200 dark:border-red-800',
-          badge: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-300 dark:border-red-700'
-        };
-      case 'em_disputa':
-        return {
-          color: 'purple',
-          icon: AlertTriangle,
-          label: 'Em Disputa',
-          gradient: 'from-purple-500/10 to-violet-500/10',
-          border: 'border-purple-200 dark:border-purple-800',
-          badge: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-300 dark:border-purple-700'
-        };
-      default:
-        return {
-          color: 'neutral',
-          icon: HelpCircle,
-          label: status,
-          gradient: 'from-neutral-500/10 to-gray-500/10',
-          border: 'border-neutral-200 dark:border-neutral-800',
-          badge: 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-400 border-neutral-300 dark:border-neutral-700'
-        };
-    }
+    const icons = {
+      convergencia: CheckCircle2,
+      parcial: HelpCircle,
+      divergencia: XCircle,
+      em_disputa: AlertTriangle,
+    };
+
+    const labels = {
+      convergencia: 'Convergência Total',
+      parcial: 'Convergência Parcial',
+      divergencia: 'Divergência',
+      em_disputa: 'Em Disputa',
+    };
+
+    // Use design tokens for colors
+    const colorMappings = {
+      convergencia: {
+        color: 'success',
+        gradient: 'from-emerald-500/10 to-teal-500/10',
+        border: 'border-emerald-200 dark:border-emerald-800',
+        badge: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-emerald-300 dark:border-emerald-700'
+      },
+      parcial: {
+        color: 'warning',
+        gradient: 'from-amber-500/10 to-orange-500/10',
+        border: 'border-amber-200 dark:border-amber-800',
+        badge: 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700'
+      },
+      divergencia: {
+        color: 'danger',
+        gradient: 'from-red-500/10 to-rose-500/10',
+        border: 'border-red-200 dark:border-red-800',
+        badge: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-300 dark:border-red-700'
+      },
+      em_disputa: {
+        color: 'info',
+        gradient: 'from-cyan-500/10 to-blue-500/10',
+        border: 'border-cyan-200 dark:border-cyan-800',
+        badge: 'bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-400 border-cyan-300 dark:border-cyan-700'
+      },
+    };
+
+    const key = status as keyof typeof colorMappings;
+    const mapping = colorMappings[key] || {
+      color: 'neutral',
+      gradient: 'from-neutral-500/10 to-gray-500/10',
+      border: 'border-neutral-200 dark:border-neutral-800',
+      badge: 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-400 border-neutral-300 dark:border-neutral-700'
+    };
+
+    return {
+      color: mapping.color,
+      icon: icons[key] || HelpCircle,
+      label: labels[key] || status,
+      gradient: mapping.gradient,
+      border: mapping.border,
+      badge: mapping.badge,
+    };
   };
 
   const statusConfig = getStatusConfig(convergence.status);

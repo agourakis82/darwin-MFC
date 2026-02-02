@@ -58,6 +58,14 @@ export default function Header() {
 
   return (
     <>
+      {/* Skip to content link for keyboard accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-white dark:focus:bg-gray-900 focus:text-primary focus:rounded-lg focus:shadow-lg focus:ring-2 focus:ring-primary focus:outline-none"
+      >
+        Pular para o conteúdo
+      </a>
+
       <header className="sticky top-0 z-40 header-darwin" role="banner">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">

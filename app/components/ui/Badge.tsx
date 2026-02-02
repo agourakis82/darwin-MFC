@@ -1,7 +1,9 @@
 'use client';
 
 import { forwardRef, HTMLAttributes, ReactNode } from 'react';
+import { Heart, Wind, Brain, Utensils, Activity, Bug, Smile, Bone, Scan, Baby, User, Ribbon, FileText } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { semanticColors } from '@/lib/design-system/tokens';
 
 // =============================================================================
 // TYPES
@@ -111,7 +113,7 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
         {dot && (
           <span className="relative flex h-2 w-2">
             {pulse && (
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-current opacity-75" />
+              <span className="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-current opacity-75" />
             )}
             <span className="relative inline-flex rounded-full h-2 w-2 bg-current" />
           </span>
@@ -191,20 +193,20 @@ export interface CategoryBadgeProps extends Omit<BadgeProps, 'variant'> {
   category: CategoryType;
 }
 
-const categoryConfig: Record<CategoryType, { variant: BadgeVariant; icon: string }> = {
-  cardiovascular: { variant: 'danger', icon: '❤️' },
-  respiratory: { variant: 'info', icon: '🫁' },
-  neurological: { variant: 'secondary', icon: '🧠' },
-  gastrointestinal: { variant: 'warning', icon: '🫃' },
-  endocrine: { variant: 'primary', icon: '⚡' },
-  infectious: { variant: 'danger', icon: '🦠' },
-  mental_health: { variant: 'secondary', icon: '🧘' },
-  musculoskeletal: { variant: 'info', icon: '🦴' },
-  dermatological: { variant: 'warning', icon: '🩹' },
-  pediatric: { variant: 'primary', icon: '👶' },
-  geriatric: { variant: 'info', icon: '👴' },
-  oncology: { variant: 'danger', icon: '🎗️' },
-  other: { variant: 'default', icon: '📋' },
+const categoryConfig: Record<CategoryType, { variant: BadgeVariant; icon: typeof Heart }> = {
+  cardiovascular: { variant: 'danger', icon: Heart },
+  respiratory: { variant: 'info', icon: Wind },
+  neurological: { variant: 'secondary', icon: Brain },
+  gastrointestinal: { variant: 'warning', icon: Utensils },
+  endocrine: { variant: 'primary', icon: Activity },
+  infectious: { variant: 'danger', icon: Bug },
+  mental_health: { variant: 'secondary', icon: Smile },
+  musculoskeletal: { variant: 'info', icon: Bone },
+  dermatological: { variant: 'warning', icon: Scan },
+  pediatric: { variant: 'primary', icon: Baby },
+  geriatric: { variant: 'info', icon: User },
+  oncology: { variant: 'danger', icon: Ribbon },
+  other: { variant: 'default', icon: FileText },
 };
 
 const categoryLabels: Record<CategoryType, string> = {
@@ -226,10 +228,11 @@ const categoryLabels: Record<CategoryType, string> = {
 export function CategoryBadge({ category, children, ...props }: CategoryBadgeProps) {
   const config = categoryConfig[category];
   const label = children || categoryLabels[category];
+  const Icon = config.icon;
 
   return (
     <Badge variant={config.variant} {...props}>
-      <span className="-ml-0.5">{config.icon}</span>
+      <Icon className="h-3 w-3 -ml-0.5" aria-hidden="true" />
       {label}
     </Badge>
   );

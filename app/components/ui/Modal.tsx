@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef, HTMLAttributes, ReactNode, useEffect, useCallback } from 'react';
+import { forwardRef, HTMLAttributes, ReactNode, useEffect, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, AlertTriangle, CheckCircle, Info, XCircle } from 'lucide-react';
@@ -98,11 +98,32 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
     },
     ref
   ) => {
-    // Handle ESC key
+    const modalRef = useRef<HTMLDivElement>(null);
+    const previousFocusRef = useRef<HTMLElement | null>(null);
+
+    // Handle ESC key and focus trap
     const handleKeyDown = useCallback(
       (e: KeyboardEvent) => {
         if (e.key === 'Escape' && closeOnEsc) {
           onClose();
+          return;
+        }
+
+        // Focus trap: keep Tab within modal
+        if (e.key === 'Tab' && modalRef.current) {
+          const focusableElements = modalRef.current.querySelectorAll<HTMLElement>(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          );
+          const firstElement = focusableElements[0];
+          const lastElement = focusableElements[focusableElements.length - 1];
+
+          if (e.shiftKey && document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement?.focus();
+          } else if (!e.shiftKey && document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement?.focus();
+          }
         }
       },
       [closeOnEsc, onClose]
@@ -110,8 +131,22 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
 
     useEffect(() => {
       if (isOpen) {
+        // Store the previously focused element to restore later
+        previousFocusRef.current = document.activeElement as HTMLElement;
+
         document.addEventListener('keydown', handleKeyDown);
         document.body.style.overflow = 'hidden';
+
+        // Auto-focus first focusable element in modal
+        requestAnimationFrame(() => {
+          const firstFocusable = modalRef.current?.querySelector<HTMLElement>(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          );
+          firstFocusable?.focus();
+        });
+      } else {
+        // Restore focus to previously focused element when modal closes
+        previousFocusRef.current?.focus();
       }
       return () => {
         document.removeEventListener('keydown', handleKeyDown);
@@ -138,7 +173,12 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
 
             {/* Modal Content */}
             <motion.div
-              ref={ref}
+              ref={(node) => {
+                // Handle both refs
+                if (typeof ref === 'function') ref(node);
+                else if (ref) ref.current = node;
+                (modalRef as React.MutableRefObject<HTMLDivElement | null>).current = node;
+              }}
               initial={{ opacity: 0, scale: 0.95, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
