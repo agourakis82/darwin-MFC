@@ -41,6 +41,133 @@ export interface LOINCCode {
     unit: string;
     population?: 'adult' | 'pediatric' | 'neonatal';
   };
+
+  /** Reference ranges by age/sex/condition (enhanced for Phase 2) */
+  referenceRanges?: ReferenceRange[];
+
+  /** Related diseases (CID-10 codes) */
+  relatedDiseases?: string[];
+
+  /** Related medications (ATC codes) */
+  relatedMedications?: string[];
+
+  /** Clinical interpretation guidelines */
+  clinicalInterpretation?: ClinicalInterpretation;
+
+  /** Ordering guidelines */
+  orderingGuidelines?: string;
+
+  /** Common aliases */
+  aliases?: string[];
+}
+
+/**
+ * Enhanced reference range with age/sex/condition specificity
+ * Added for Phase 2 Month 4
+ */
+export interface ReferenceRange {
+  /** Age range (optional) */
+  age?: {
+    min: number;
+    max: number;
+    unit: 'years' | 'months' | 'days';
+  };
+
+  /** Sex-specific range */
+  sex?: 'M' | 'F' | 'both';
+
+  /** Special condition (e.g., "pregnant", "fasting") */
+  condition?: string;
+
+  /** Lower bound */
+  low: number;
+
+  /** Upper bound */
+  high: number;
+
+  /** Unit */
+  unit: string;
+
+  /** Critical low (panic value) */
+  criticalLow?: number;
+
+  /** Critical high (panic value) */
+  criticalHigh?: number;
+
+  /** Interpretation labels */
+  interpretation: {
+    low: string;
+    normal: string;
+    high: string;
+    criticalLow?: string;
+    criticalHigh?: string;
+  };
+}
+
+/**
+ * Clinical interpretation guidelines
+ */
+export interface ClinicalInterpretation {
+  lowInterpretation?: string;
+  highInterpretation?: string;
+  commonCauses?: {
+    low?: string[];
+    high?: string[];
+  };
+  followUp?: string;
+  repeatTesting?: string;
+}
+
+/**
+ * Lab result interpretation
+ */
+export interface InterpretationResult {
+  value: number;
+  unit: string;
+  status: 'critical_low' | 'low' | 'normal' | 'high' | 'critical_high';
+  statusLabel: string;
+  appliedRange: ReferenceRange;
+  interpretation?: string;
+  recommendations?: string[];
+  color: 'red' | 'yellow' | 'green' | 'orange';
+}
+
+/**
+ * Patient demographics for lab interpretation
+ */
+export interface PatientLabData {
+  age: number;
+  sex: 'M' | 'F';
+  condition?: string;
+  conditions?: string[];
+  medications?: string[];
+}
+
+/**
+ * Lab test result with interpretation
+ */
+export interface LabResult {
+  id: string;
+  loincCode: string;
+  value: number;
+  unit: string;
+  date: Date;
+  interpretation?: InterpretationResult;
+  notes?: string;
+  orderedBy?: string;
+  performedBy?: string;
+}
+
+/**
+ * Lab panel (group of tests)
+ */
+export interface LabPanel {
+  id: string;
+  name: string;
+  description: string;
+  loincCodes: string[];
+  indications: string[];
+  category: 'screening' | 'diagnostic' | 'monitoring';
 }
 
 /**
@@ -245,5 +372,124 @@ export function getRecommendedTests(
   return {
     diagnostic: mapping.diagnosticTests,
     monitoring: mapping.monitoringTests
+  };
+}
+
+/**
+ * Interprets a lab result value against reference ranges
+ * Added for Phase 2 Month 4
+ *
+ * @param loincCode - LOINC code object
+ * @param value - Test result value
+ * @param unit - Unit of measurement
+ * @param patientData - Patient demographics
+ * @returns Interpretation result
+ */
+export function interpretResult(
+  loincCode: LOINCCode,
+  value: number,
+  unit: string,
+  patientData: PatientLabData
+): InterpretationResult | null {
+  if (!loincCode.referenceRanges || loincCode.referenceRanges.length === 0) {
+    return null;
+  }
+
+  // Find the most specific reference range that applies
+  let applicableRange: ReferenceRange | undefined;
+
+  for (const range of loincCode.referenceRanges) {
+    // Check unit match
+    if (range.unit !== unit) continue;
+
+    // Check age match
+    if (range.age) {
+      const ageInYears = patientData.age;
+      const minAge = range.age.unit === 'years' ? range.age.min :
+                      range.age.unit === 'months' ? range.age.min / 12 :
+                      range.age.min / 365;
+      const maxAge = range.age.unit === 'years' ? range.age.max :
+                      range.age.unit === 'months' ? range.age.max / 12 :
+                      range.age.max / 365;
+
+      if (ageInYears < minAge || ageInYears > maxAge) continue;
+    }
+
+    // Check sex match
+    if (range.sex && range.sex !== 'both' && range.sex !== patientData.sex) {
+      continue;
+    }
+
+    // Check condition match
+    if (range.condition && range.condition !== patientData.condition) {
+      continue;
+    }
+
+    // This range applies
+    applicableRange = range;
+    break;
+  }
+
+  if (!applicableRange) {
+    // Fallback to first range with matching unit
+    applicableRange = loincCode.referenceRanges.find(r => r.unit === unit);
+  }
+
+  if (!applicableRange) {
+    return null;
+  }
+
+  // Determine status
+  let status: InterpretationResult['status'];
+  let statusLabel: string;
+  let color: InterpretationResult['color'];
+
+  if (applicableRange.criticalLow && value < applicableRange.criticalLow) {
+    status = 'critical_low';
+    statusLabel = applicableRange.interpretation.criticalLow || 'Critical Low';
+    color = 'red';
+  } else if (value < applicableRange.low) {
+    status = 'low';
+    statusLabel = applicableRange.interpretation.low;
+    color = 'yellow';
+  } else if (applicableRange.criticalHigh && value > applicableRange.criticalHigh) {
+    status = 'critical_high';
+    statusLabel = applicableRange.interpretation.criticalHigh || 'Critical High';
+    color = 'red';
+  } else if (value > applicableRange.high) {
+    status = 'high';
+    statusLabel = applicableRange.interpretation.high;
+    color = 'orange';
+  } else {
+    status = 'normal';
+    statusLabel = applicableRange.interpretation.normal;
+    color = 'green';
+  }
+
+  // Build interpretation text
+  const interpretation = loincCode.clinicalInterpretation ?
+    (status === 'low' || status === 'critical_low' ?
+      loincCode.clinicalInterpretation.lowInterpretation :
+      loincCode.clinicalInterpretation.highInterpretation) :
+    undefined;
+
+  // Build recommendations
+  const recommendations: string[] = [];
+  if (status === 'critical_low' || status === 'critical_high') {
+    recommendations.push('Notificar médico imediatamente');
+  }
+  if (loincCode.clinicalInterpretation?.followUp) {
+    recommendations.push(loincCode.clinicalInterpretation.followUp);
+  }
+
+  return {
+    value,
+    unit,
+    status,
+    statusLabel,
+    appliedRange: applicableRange,
+    interpretation,
+    recommendations,
+    color,
   };
 }

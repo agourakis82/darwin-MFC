@@ -1,0 +1,134 @@
+{
+  "confidenceLevel": {
+    "veryHigh": "Very High",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low",
+    "veryLow": "Very Low"
+  },
+  "confidenceSource": {
+    "biobert": "BioBERT",
+    "regex": "Regex",
+    "hybrid": "Hybrid"
+  },
+  "entityType": {
+    "disease": "Disease",
+    "medication": "Medication",
+    "symptom": "Symptom",
+    "exam": "Exam",
+    "procedure": "Procedure"
+  },
+  "soapSection": {
+    "subjective": "Subjective",
+    "objective": "Objective",
+    "assessment": "Assessment",
+    "plan": "Plan",
+    "subjectiveDesc": "Symptoms, complaints and patient history",
+    "objectiveDesc": "Physical exam, vital signs, exam results",
+    "assessmentDesc": "Diagnosis and clinical reasoning",
+    "planDesc": "Treatment plan, prescriptions, follow-up"
+  },
+  "entityCorrection": {
+    "correct": "Correct",
+    "wrongBoundaries": "Wrong Boundaries",
+    "wrongType": "Wrong Type",
+    "bothWrong": "Both Wrong",
+    "missingEntity": "Missing Entity",
+    "notAnEntity": "Not an Entity",
+    "addEntity": "Add Entity",
+    "correctEntity": "Correct Entity",
+    "feedbackType": "Feedback Type",
+    "entityTypeLabel": "Entity Type",
+    "selectCorrectText": "Select the Correct Text",
+    "dragToSelect": "Drag to select the correct entity boundaries",
+    "commentOptional": "Comment (optional)",
+    "explainCorrection": "Explain the correction...",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "submitCorrection": "Submit Correction",
+    "originalEntity": "Original Entity",
+    "noCorrections": "No corrections recorded",
+    "corrections": "Corrections"
+  },
+  "soapEditor": {
+    "sections": "Sections",
+    "freeText": "Free Text",
+    "copy": "Copy",
+    "clear": "Clear",
+    "save": "Save",
+    "emptySection": "Empty Section",
+    "clickToAdd": "Click to Add",
+    "saveChanges": "Save Changes",
+    "editSection": "Edit Section",
+    "typeContent": "Type the section content..."
+  },
+  "entityHighlighter": {
+    "confidence": "Confidence",
+    "source": "Source",
+    "linkedOntologies": "Linked to Ontologies",
+    "entityLegend": "Entity Legend"
+  },
+  "nerIndicator": {
+    "confidenceLabel": "Confidence",
+    "scoreLabel": "Score"
+  },
+  "nerDemo": {
+    "title": "Clinical NER Demo",
+    "description": "Interactive demonstration of Named Entity Recognition for medical SOAP notes. Extract diseases, medications, symptoms, and exams automatically.",
+    "sampleNotes": "Sample Clinical Notes",
+    "inputLabel": "SOAP Note Input",
+    "inputPlaceholder": "Enter a SOAP note in Portuguese or select a sample above...",
+    "tabs": {
+      "input": "Raw Input",
+      "parsed": "SOAP Sections",
+      "entities": "Extracted Entities"
+    },
+    "highlightMode": "Highlight Mode",
+    "showConfidence": "Show Confidence",
+    "minConfidence": "Min. Confidence",
+    "extractionStats": "Extraction Statistics",
+    "totalEntities": "Total Entities",
+    "avgConfidence": "Average Confidence",
+    "byType": "By Type",
+    "extractionSource": "Extraction Source",
+    "selectedEntity": "Selected Entity",
+    "entityText": "Text",
+    "entityType": "Type",
+    "confidence": "Confidence",
+    "position": "Position",
+    "quickFeedback": "Quick Feedback",
+    "detailedCorrection": "Detailed Correction",
+    "correctionsTitle": "Recent Corrections"
+  },
+  "clinicalAlerts": {
+    "title": "Clinical Alerts",
+    "noAlerts": "No clinical alerts identified",
+    "alertCount": "Alerts",
+    "critical": "critical",
+    "warning": "warning",
+    "info": "info",
+    "dismiss": "Dismiss",
+    "relatedEntities": "related entity(ies)",
+    "mute": "Mute alerts",
+    "unmute": "Unmute alerts",
+    "severity": {
+      "critical": "Critical",
+      "warning": "Warning",
+      "info": "Information"
+    },
+    "category": {
+      "drugInteraction": "Drug Interaction",
+      "contraindication": "Contraindication",
+      "criticalValue": "Critical Value",
+      "redFlag": "Red Flag",
+      "dosage": "Dosage Alert",
+      "monitoring": "Monitoring",
+      "followUp": "Follow-up"
+    },
+    "actions": {
+      "reviewMedications": "Review medication list and consider alternatives",
+      "urgentEvaluation": "Urgent clinical evaluation recommended",
+      "immediateAttention": "Immediate clinical attention required"
+    }
+  }
+}

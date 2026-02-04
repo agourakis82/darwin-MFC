@@ -1,0 +1,190 @@
+---
+# =============================================================================
+# LOSARTANA - MDX Content Format
+# =============================================================================
+# Edit this file like a document - easy for non-developers!
+#
+# Benefits:
+# - Version controlled (Git tracks all changes)
+# - Easy to read and write
+# - Supports rich formatting
+# - Custom components for alerts, tables, etc.
+# =============================================================================
+
+id: losartana
+nomeGenerico: Losartana potássica
+nomesComerciais:
+  - Cozaar
+  - Losartan
+
+# Ontologies (standardized codes)
+atcCode: C09CA01
+rxNormCui: "52175"
+drugBankId: DB00678
+snomedCT: "373567002"
+
+# Classification
+classeTerapeutica: anti_hipertensivo
+subclasse: bra
+rename: true
+
+# Metadata
+lastUpdate: 2024-12-15
+evidenceLevel: A
+citationCount: 47
+author: Darwin-MFC Team
+reviewedBy: Dr. Expert
+---
+
+import { DrugAlert } from '@/components/content/DrugAlert'
+import { DosingTable } from '@/components/content/DosingTable'
+import { InteractionWarning } from '@/components/content/InteractionWarning'
+import { KeyPoints } from '@/components/content/KeyPoints'
+
+<KeyPoints>
+- Antagonista do receptor AT1 da angiotensina II (BRA)
+- Primeira linha para hipertensão com proteção renal
+- **Contraindicado na gestação** (Categoria D)
+- Disponível no SUS: comprimido 50mg
+</KeyPoints>
+
+## Mecanismo de Ação
+
+Antagonista do receptor AT1 da angiotensina II. Bloqueia os efeitos
+vasoconstritores e de retenção de sódio da angiotensina II, promovendo
+vasodilatação e redução da pressão arterial.
+
+Diferente dos IECAs, não inibe a degradação da bradicinina, resultando em
+menor incidência de tosse seca.
+
+## Indicações
+
+1. **Hipertensão arterial sistêmica** - primeira linha
+2. **Insuficiência cardíaca** com fração de ejeção reduzida
+3. **Nefropatia diabética** - nefroproteção
+4. **Redução de risco de AVC** em hipertensos com HVE
+
+## Apresentações
+
+| Forma | Concentração | SUS |
+|-------|--------------|-----|
+| Comprimido | 50mg | ✓ Disponível |
+| Comprimido | 25mg | ✗ Não disponível |
+
+## Posologia
+
+<DosingTable>
+
+### Hipertensão Arterial (Adultos)
+
+| Dose Inicial | Dose Manutenção | Dose Máxima |
+|--------------|-----------------|-------------|
+| 50mg 1x/dia | 50-100mg 1x/dia | 100mg/dia |
+
+### Nefropatia Diabética
+
+| Dose Inicial | Titulação | Monitorização |
+|--------------|-----------|---------------|
+| 50mg 1x/dia | Até 100mg/dia | Creatinina + K+ |
+
+</DosingTable>
+
+## Alertas Importantes
+
+<DrugAlert type="pregnancy" severity="critical">
+**Contraindicado na gestação (Categoria D)**
+
+Risco de malformações fetais, oligoidrâmnio e morte fetal.
+Descontinuar imediatamente se gravidez confirmada ou suspeita.
+</DrugAlert>
+
+<DrugAlert type="renal" severity="moderate">
+**Monitorização renal necessária**
+
+Verificar creatinina e potássio 1-2 semanas após início ou ajuste de dose.
+Risco aumentado de hiperpotassemia em pacientes com DRC.
+</DrugAlert>
+
+## Contraindicações
+
+- Gestação (categoria D - risco fetal)
+- Hipersensibilidade aos BRA
+- Estenose bilateral das artérias renais
+- Hiperpotassemia (K+ >5,5 mEq/L)
+- Associação com Alisquireno em diabéticos ou DRC
+
+## Interações Medicamentosas
+
+<InteractionWarning severity="grave" drug="IECA (Enalapril, Captopril)">
+**Duplo bloqueio do SRAA**
+
+Risco de hiperpotassemia, hipotensão e insuficiência renal aguda.
+
+**Conduta:** Evitar associação. Se necessário, monitorização rigorosa.
+</InteractionWarning>
+
+<InteractionWarning severity="moderada" drug="AINEs (Ibuprofeno, Diclofenaco)">
+Redução do efeito anti-hipertensivo e risco de IRA.
+
+**Conduta:** Evitar uso crônico de AINEs.
+</InteractionWarning>
+
+<InteractionWarning severity="moderada" drug="Suplementos de potássio / Espironolactona">
+Risco de hiperpotassemia.
+
+**Conduta:** Monitorar K+ regularmente.
+</InteractionWarning>
+
+## Ajuste por Função Renal
+
+| TFG (mL/min) | Ajuste | Observação |
+|--------------|--------|------------|
+| >30 | Dose habitual | Não necessário ajuste |
+| 15-30 | Iniciar 25mg | Titular cuidadosamente, monitorar K+ |
+| <15 | Usar com cautela | Evitar se possível |
+
+## Efeitos Adversos
+
+### Comuns
+- Tontura
+- Hipotensão ortostática
+- Hiperpotassemia
+- Fadiga
+
+### Graves (raros)
+- Angioedema (menos frequente que com IECA)
+- Insuficiência renal aguda
+- Rabdomiólise (muito raro)
+
+## Populações Especiais
+
+### Idosos
+Não requer ajuste de dose. Iniciar com doses baixas devido ao risco
+de hipotensão ortostática.
+
+### Hepatopatas
+Considerar dose inicial menor (25mg) em insuficiência hepática leve
+a moderada.
+
+### Amamentação
+Não recomendado devido a dados insuficientes de segurança.
+
+## Monitorização
+
+- Pressão arterial regular
+- Creatinina e potássio (1-2 semanas após início/ajuste)
+- Função renal anual
+
+## Orientações ao Paciente
+
+1. Tomar sempre no mesmo horário
+2. Pode ser tomado com ou sem alimentos
+3. Não interromper abruptamente sem orientação médica
+4. **Informar ao médico se planeja engravidar**
+5. Levantar-se lentamente para evitar tontura
+
+## Referências
+
+[^1]: RENAME 2024 - Relação Nacional de Medicamentos Essenciais
+[^2]: Brenner BM, et al. Effects of losartan on renal and cardiovascular outcomes in patients with type 2 diabetes and nephropathy. N Engl J Med. 2001;345(12):861-9.
+[^3]: Dahlöf B, et al. Cardiovascular morbidity and mortality in the Losartan Intervention For Endpoint reduction in hypertension study (LIFE). Lancet. 2002;359(9311):995-1003.

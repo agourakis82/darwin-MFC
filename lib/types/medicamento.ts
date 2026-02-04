@@ -436,6 +436,96 @@ export interface Interacao {
 }
 
 // =============================================================================
+// PHARMGKB - FARMACOGENÉTICA
+// =============================================================================
+
+/**
+ * PharmGKB evidence levels following CPIC/DPWG guidelines
+ * 1A = High quality evidence with strong recommendation
+ * 1B = High quality evidence with moderate recommendation
+ * 2A = Moderate quality evidence with strong recommendation
+ * 2B = Moderate quality evidence with moderate recommendation
+ * 3 = Low quality evidence
+ * 4 = Preliminary evidence
+ */
+export type PharmGKBEvidenceLevel = '1A' | '1B' | '2A' | '2B' | '3' | '4';
+
+/**
+ * Metabolizer phenotypes based on genetic variants
+ */
+export type MetabolizerPhenotype =
+  | 'normal_metabolizer'          // Normal enzyme activity (wild-type)
+  | 'intermediate_metabolizer'    // Reduced enzyme activity (heterozygous)
+  | 'poor_metabolizer'            // Minimal/no enzyme activity (homozygous variant)
+  | 'ultra_rapid_metabolizer'     // Increased enzyme activity (gene duplication)
+  | 'increased_function'          // Slightly increased activity
+  | 'decreased_function';         // Slightly decreased activity
+
+/**
+ * Population frequency data for genetic variants
+ */
+export interface PopulationFrequency {
+  /** European descent */
+  european: number;
+  /** African descent */
+  african: number;
+  /** East Asian descent */
+  asian: number;
+  /** Hispanic/Latino descent */
+  hispanic: number;
+  /** South Asian descent (India, Pakistan) */
+  southAsian?: number;
+}
+
+/**
+ * Dosage recommendation based on genotype/phenotype
+ */
+export interface DosageRecommendation {
+  /** Recommendation text (e.g., "Use standard dose", "Increase dose by 50%", "Consider alternative") */
+  recommendation: string;
+  /** Clinical reasoning for the recommendation */
+  reasoning: string;
+  /** Strength of recommendation */
+  strength: 'strong' | 'moderate' | 'optional';
+  /** CPIC/DPWG classification */
+  classification?: string;
+}
+
+/**
+ * PharmGKB genetic variant data
+ */
+export interface PharmGKBVariant {
+  /** Allele designation (e.g., "*1/*1", "*1/*2", "*2/*2") */
+  allele: string;
+  /** Metabolizer phenotype */
+  phenotype: MetabolizerPhenotype;
+  /** Population frequency data */
+  frequency: PopulationFrequency;
+  /** Clinical implications of this variant */
+  implications: string[];
+  /** Dosage adjustment recommendation */
+  dosageRecommendation: DosageRecommendation;
+  /** Alternative medication IDs if this variant contraindicates use */
+  alternatives?: string[];
+}
+
+/**
+ * PharmGKB pharmacogenomics data for a medication
+ */
+export interface PharmGKBData {
+  /** Gene symbol (e.g., "CYP2D6", "CYP2C19", "TPMT", "DPYD") */
+  gene: string;
+  /** Array of genetic variants and their implications */
+  variants: PharmGKBVariant[];
+  /** PharmGKB evidence level (CPIC/DPWG classification) */
+  level: PharmGKBEvidenceLevel;
+  /** URL to CPIC or DPWG guideline */
+  guidelineUrl?: string;
+  /** Summary of pharmacogenomic effect */
+  summary?: string;
+}
+
+// =============================================================================
 // APRESENTAÇÕES COMERCIAIS
 // =============================================================================
 
@@ -480,13 +570,7 @@ export interface Medicamento {
   loinc?: string[];
   
   /** PharmGKB pharmacogenomics data */
-  pharmgkb?: {
-    gene: string; // Gene name (e.g., "CYP2D6")
-    variant?: string; // Genetic variant
-    phenotype?: 'poor_metabolizer' | 'intermediate_metabolizer' | 'extensive_metabolizer' | 'ultra_rapid_metabolizer' | 'reduced_response' | 'met_met_high_pain_sensitivity' | 'non_expressor' | 'high_risk_sjs_ten' | 'increased_risk_hypersensitivity' | 'increased_risk_sjs' | 'inhibitor_effect' | 'high_risk_scar' | 'reduced_enzyme_activity' | 'reduced_transport';
-    implications?: string[]; // Clinical implications
-    dosageRecommendations?: string[]; // Dosage recommendations based on phenotype
-  }[];
+  pharmgkb?: PharmGKBData[];
   
   /** Registro ANVISA (número de registro) */
   anvisaRegistro?: string;

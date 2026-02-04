@@ -1,0 +1,134 @@
+{
+  "confidenceLevel": {
+    "veryHigh": "Muito Alta",
+    "high": "Alta",
+    "medium": "Média",
+    "low": "Baixa",
+    "veryLow": "Muito Baixa"
+  },
+  "confidenceSource": {
+    "biobert": "BioBERT",
+    "regex": "Regex",
+    "hybrid": "Híbrido"
+  },
+  "entityType": {
+    "disease": "Doença",
+    "medication": "Medicamento",
+    "symptom": "Sintoma",
+    "exam": "Exame",
+    "procedure": "Procedimento"
+  },
+  "soapSection": {
+    "subjective": "Subjetivo",
+    "objective": "Objetivo",
+    "assessment": "Avaliação",
+    "plan": "Plano",
+    "subjectiveDesc": "Sintomas, queixas e histórico do paciente",
+    "objectiveDesc": "Exame físico, sinais vitais, resultados de exames",
+    "assessmentDesc": "Diagnóstico e raciocínio clínico",
+    "planDesc": "Plano de tratamento, prescrições, acompanhamento"
+  },
+  "entityCorrection": {
+    "correct": "Correto",
+    "wrongBoundaries": "Limites incorretos",
+    "wrongType": "Tipo incorreto",
+    "bothWrong": "Ambos incorretos",
+    "missingEntity": "Entidade faltando",
+    "notAnEntity": "Não é entidade",
+    "addEntity": "Adicionar Entidade",
+    "correctEntity": "Corrigir Entidade",
+    "feedbackType": "Tipo de Feedback",
+    "entityTypeLabel": "Tipo de Entidade",
+    "selectCorrectText": "Selecione o Texto Correto",
+    "dragToSelect": "Arraste para selecionar os limites corretos da entidade",
+    "commentOptional": "Comentário (opcional)",
+    "explainCorrection": "Explique a correção...",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "submitCorrection": "Enviar Correção",
+    "originalEntity": "Entidade Original",
+    "noCorrections": "Nenhuma correção registrada",
+    "corrections": "Correções"
+  },
+  "soapEditor": {
+    "sections": "Seções",
+    "freeText": "Texto Livre",
+    "copy": "Copiar",
+    "clear": "Limpar",
+    "save": "Salvar",
+    "emptySection": "Seção vazia",
+    "clickToAdd": "Clique para adicionar",
+    "saveChanges": "Salvar alterações",
+    "editSection": "Editar seção",
+    "typeContent": "Digite o conteúdo da seção..."
+  },
+  "entityHighlighter": {
+    "confidence": "Confiança",
+    "source": "Fonte",
+    "linkedOntologies": "Vinculado a ontologias",
+    "entityLegend": "Legenda de entidades"
+  },
+  "nerIndicator": {
+    "confidenceLabel": "Confiança",
+    "scoreLabel": "Score"
+  },
+  "nerDemo": {
+    "title": "Demo de NER Clínica",
+    "description": "Demonstração interativa de Reconhecimento de Entidades Nomeadas para notas médicas SOAP. Extrai doenças, medicamentos, sintomas e exames automaticamente.",
+    "sampleNotes": "Notas Clínicas de Exemplo",
+    "inputLabel": "Entrada de Nota SOAP",
+    "inputPlaceholder": "Digite uma nota SOAP em português ou selecione um exemplo acima...",
+    "tabs": {
+      "input": "Entrada Bruta",
+      "parsed": "Seções SOAP",
+      "entities": "Entidades Extraídas"
+    },
+    "highlightMode": "Modo de Destaque",
+    "showConfidence": "Mostrar Confiança",
+    "minConfidence": "Confiança Mín.",
+    "extractionStats": "Estatísticas de Extração",
+    "totalEntities": "Total de Entidades",
+    "avgConfidence": "Confiança Média",
+    "byType": "Por Tipo",
+    "extractionSource": "Fonte de Extração",
+    "selectedEntity": "Entidade Selecionada",
+    "entityText": "Texto",
+    "entityType": "Tipo",
+    "confidence": "Confiança",
+    "position": "Posição",
+    "quickFeedback": "Feedback Rápido",
+    "detailedCorrection": "Correção Detalhada",
+    "correctionsTitle": "Correções Recentes"
+  },
+  "clinicalAlerts": {
+    "title": "Alertas Clínicos",
+    "noAlerts": "Nenhum alerta clínico identificado",
+    "alertCount": "Alertas",
+    "critical": "crítico",
+    "warning": "aviso",
+    "info": "informação",
+    "dismiss": "Descartar",
+    "relatedEntities": "entidade(s) relacionada(s)",
+    "mute": "Silenciar alertas",
+    "unmute": "Ativar alertas",
+    "severity": {
+      "critical": "Crítico",
+      "warning": "Aviso",
+      "info": "Informação"
+    },
+    "category": {
+      "drugInteraction": "Interação Medicamentosa",
+      "contraindication": "Contraindicação",
+      "criticalValue": "Valor Crítico",
+      "redFlag": "Sinal de Alerta",
+      "dosage": "Alerta de Dosagem",
+      "monitoring": "Monitoramento",
+      "followUp": "Acompanhamento"
+    },
+    "actions": {
+      "reviewMedications": "Revise a lista de medicamentos e considere alternativas",
+      "urgentEvaluation": "Avaliação clínica urgente recomendada",
+      "immediateAttention": "Atenção clínica imediata necessária"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+# Darwin-MFC Docker Compose
+# ==========================
+# Deploy with: docker-compose up -d
+# Or use Proxmox LXC/VM with this compose file
+
+version: '3.8'
+
+services:
+  darwin-mfc:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: darwin-mfc:latest
+    container_name: darwin-mfc
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      # Optional: Mount logs for debugging
+      - ./logs:/var/log/nginx
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/pt/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 128M
+
+  # Optional: Traefik reverse proxy for HTTPS
+  # Uncomment if you want automatic SSL with Let's Encrypt
+  # traefik:
+  #   image: traefik:v2.10
+  #   container_name: traefik
+  #   restart: unless-stopped
+  #   command:
+  #     - "--api.dashboard=true"
+  #     - "--providers.docker=true"
+  #     - "--providers.docker.exposedbydefault=false"
+  #     - "--entrypoints.web.address=:80"
+  #     - "--entrypoints.websecure.address=:443"
+  #     - "--certificatesresolvers.letsencrypt.acme.httpchallenge=true"
+  #     - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+  #     - "--certificatesresolvers.letsencrypt.acme.email=your-email@example.com"
+  #     - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #     - ./letsencrypt:/letsencrypt
+  #   labels:
+  #     - "traefik.enable=true"
+  #     - "traefik.http.routers.darwin-mfc.rule=Host(`mfc.yourdomain.com`)"
+  #     - "traefik.http.routers.darwin-mfc.entrypoints=websecure"
+  #     - "traefik.http.routers.darwin-mfc.tls.certresolver=letsencrypt"
+
+networks:
+  default:
+    name: darwin-mfc-network

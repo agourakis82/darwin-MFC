@@ -24,6 +24,13 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
+
+# API setup with credentials (NEVER commit passwords)
+api/setup/install.php
+api/setup/import-data.php
+api/setup/fix-schema.php
+api/setup/data-migration.sql
 
 # vercel
 .vercel

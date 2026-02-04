@@ -740,11 +740,21 @@ P: Prednisona 40mg ao dia por 7 dias. Salbutamol inalado a cada 4 horas. Amoxici
 // DATASET ASSEMBLY
 // =============================================================================
 
-export const TEST_DATASET: TestCase[] = [
+// Import generated test cases (40 additional cases from Phase 3 Month 7)
+import { getValidatedGeneratedCases } from './generated-test-cases';
+
+// Original 9 test cases (manually curated, high-precision indices)
+export const ORIGINAL_TEST_CASES: TestCase[] = [
   ...simpleTestCases,
   ...complexTestCases,
   ...drugInteractionTestCases,
   ...specializedTestCases,
+];
+
+// Full dataset: Original + Generated = 49 total test cases
+export const TEST_DATASET: TestCase[] = [
+  ...ORIGINAL_TEST_CASES,
+  ...getValidatedGeneratedCases(),
 ];
 
 /**

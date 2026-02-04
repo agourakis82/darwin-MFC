@@ -3,20 +3,21 @@
  * ========================
  *
  * Centralized API endpoint definitions for backend communication.
- * These will connect to the self-hosted PocketBase backend.
+ * Connects to PHP/PostgreSQL backend hosted on Locaweb.
  */
 
 // =============================================================================
 // CONFIGURATION
 // =============================================================================
 
-// Backend URL - will be configured via environment variable
+// Backend URL - configured via environment variable
+// Production: https://agourakis.med.br/api or http://agourakis1.hospedagemdesites.ws/api
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8090';
 
-// API version prefix
-export const API_VERSION = '/api/v1';
+// API version prefix (empty for PHP backend, which uses /api directly)
+export const API_VERSION = '';
 
-// Full base URL with version
+// Full base URL
 export const API_URL = `${API_BASE_URL}${API_VERSION}`;
 
 // =============================================================================
@@ -25,13 +26,13 @@ export const API_URL = `${API_BASE_URL}${API_VERSION}`;
 
 export const ENDPOINTS = {
   // =========================================================================
-  // AUTH ENDPOINTS (Keycloak OAuth2)
+  // AUTH ENDPOINTS (JWT-based)
   // =========================================================================
   auth: {
     login: '/auth/login',
+    register: '/auth/register',
     logout: '/auth/logout',
     refresh: '/auth/refresh',
-    register: '/auth/register',
     me: '/auth/me',
     updateProfile: '/auth/profile',
     deleteAccount: '/auth/delete',
@@ -40,92 +41,50 @@ export const ENDPOINTS = {
   // =========================================================================
   // USER ENDPOINTS
   // =========================================================================
-  users: {
-    list: '/users',
-    get: (id: string) => `/users/${id}`,
-    update: (id: string) => `/users/${id}`,
-    mentors: '/users/mentors',
-    search: '/users/search',
+  usuario: {
+    profile: '/usuario/profile',
+    notas: '/usuario/notas',
+    favoritos: '/usuario/favoritos',
   },
 
   // =========================================================================
-  // LEARNING PROGRESS ENDPOINTS
+  // MEDICATIONS ENDPOINTS
   // =========================================================================
-  progress: {
-    list: '/progress',
-    get: (learningPathId: string) => `/progress/${learningPathId}`,
-    update: (learningPathId: string, moduleId: string) =>
-      `/progress/${learningPathId}/modules/${moduleId}`,
-    complete: (learningPathId: string, moduleId: string) =>
-      `/progress/${learningPathId}/modules/${moduleId}/complete`,
-    certificate: (learningPathId: string) => `/progress/${learningPathId}/certificate`,
+  medicamentos: {
+    list: '/medicamentos',
+    get: (id: string) => `/medicamentos/${id}`,
   },
 
   // =========================================================================
-  // FAVORITES ENDPOINTS
+  // DISEASES ENDPOINTS
   // =========================================================================
-  favorites: {
-    list: '/favorites',
-    add: '/favorites',
-    remove: (itemType: string, itemId: string) => `/favorites/${itemType}/${itemId}`,
-    sync: '/favorites/sync',
+  doencas: {
+    list: '/doencas',
+    get: (id: string) => `/doencas/${id}`,
   },
 
   // =========================================================================
-  // NOTES ENDPOINTS
+  // PROTOCOLS ENDPOINTS
   // =========================================================================
-  notes: {
-    list: '/notes',
-    get: (itemType: string, itemId: string) => `/notes/${itemType}/${itemId}`,
-    save: '/notes',
-    delete: (itemType: string, itemId: string) => `/notes/${itemType}/${itemId}`,
-    sync: '/notes/sync',
+  protocolos: {
+    list: '/protocolos',
+    get: (id: string) => `/protocolos/${id}`,
   },
 
   // =========================================================================
-  // FORUM ENDPOINTS
+  // DRUG INTERACTIONS ENDPOINTS
   // =========================================================================
-  forum: {
-    categories: '/forum/categories',
-    posts: {
-      list: '/forum/posts',
-      get: (postId: string) => `/forum/posts/${postId}`,
-      create: '/forum/posts',
-      update: (postId: string) => `/forum/posts/${postId}`,
-      delete: (postId: string) => `/forum/posts/${postId}`,
-      replies: (postId: string) => `/forum/posts/${postId}/replies`,
-    },
-    replies: {
-      create: (postId: string) => `/forum/posts/${postId}/replies`,
-      update: (postId: string, replyId: string) => `/forum/posts/${postId}/replies/${replyId}`,
-      delete: (postId: string, replyId: string) => `/forum/posts/${postId}/replies/${replyId}`,
-    },
+  interacoes: {
+    check: '/interacoes',
+    forMedication: (medId: string) => `/interacoes?med=${medId}`,
+    checkPair: (med1: string, med2: string) => `/interacoes?med1=${med1}&med2=${med2}`,
   },
 
   // =========================================================================
-  // CLINICAL CASES ENDPOINTS
+  // SEARCH ENDPOINTS
   // =========================================================================
-  cases: {
-    list: '/cases',
-    get: (caseId: string) => `/cases/${caseId}`,
-    create: '/cases',
-    update: (caseId: string) => `/cases/${caseId}`,
-    delete: (caseId: string) => `/cases/${caseId}`,
-    submit: (caseId: string) => `/cases/${caseId}/submit`,
-    review: (caseId: string) => `/cases/${caseId}/review`,
-    comments: (caseId: string) => `/cases/${caseId}/comments`,
-  },
-
-  // =========================================================================
-  // MENTORSHIP ENDPOINTS
-  // =========================================================================
-  mentorship: {
-    list: '/mentorship',
-    request: '/mentorship/request',
-    accept: (mentorshipId: string) => `/mentorship/${mentorshipId}/accept`,
-    decline: (mentorshipId: string) => `/mentorship/${mentorshipId}/decline`,
-    end: (mentorshipId: string) => `/mentorship/${mentorshipId}/end`,
-    messages: (mentorshipId: string) => `/mentorship/${mentorshipId}/messages`,
+  search: {
+    global: '/search',
   },
 
   // =========================================================================
@@ -136,38 +95,30 @@ export const ENDPOINTS = {
     pull: '/sync/pull',
     status: '/sync/status',
     resolve: '/sync/resolve',
+    conflicts: '/sync/conflicts',
   },
 
   // =========================================================================
-  // CONTENT ENDPOINTS (for dynamic content updates)
+  // FAVORITES & NOTES (standalone endpoints)
   // =========================================================================
-  content: {
-    diseases: '/content/diseases',
-    medications: '/content/medications',
-    protocols: '/content/protocols',
-    calculators: '/content/calculators',
-    updates: '/content/updates',
-    version: '/content/version',
+  favorites: {
+    list: '/usuario/favoritos',
+    sync: '/usuario/favoritos/sync',
+    add: '/usuario/favoritos',
+    remove: (id: string) => `/usuario/favoritos/${id}`,
+  },
+  notes: {
+    list: '/usuario/notas',
+    sync: '/usuario/notas/sync',
+    add: '/usuario/notas',
+    update: (id: string) => `/usuario/notas/${id}`,
+    remove: (id: string) => `/usuario/notas/${id}`,
   },
 
   // =========================================================================
-  // SEARCH ENDPOINTS
+  // HEALTH CHECK
   // =========================================================================
-  search: {
-    global: '/search',
-    diseases: '/search/diseases',
-    medications: '/search/medications',
-    forum: '/search/forum',
-    cases: '/search/cases',
-  },
-
-  // =========================================================================
-  // ANALYTICS ENDPOINTS (privacy-respecting)
-  // =========================================================================
-  analytics: {
-    event: '/analytics/event',
-    heartbeat: '/analytics/heartbeat',
-  },
+  health: '/health',
 } as const;
 
 // =============================================================================

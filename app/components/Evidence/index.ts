@@ -33,3 +33,24 @@ export {
   type EvidenceConfidenceBarProps,
   type ConfidenceLevel,
 } from './EvidenceConfidenceBar';
+
+// GRADE Evidence Badge (new)
+export {
+  EvidenceBadge,
+  EvidenceStrengthBadge as GradeEvidenceStrengthBadge,
+  type EvidenceBadgeProps,
+} from './EvidenceBadge';
+
+// GRADE Recommendation Card (new)
+export {
+  RecommendationCard,
+  RecommendationList,
+  type RecommendationCardProps,
+} from './RecommendationCard';
+
+// Citation Popover with evidence metadata (new)
+export {
+  CitationPopover,
+  InlineCitationGroup,
+  type CitationPopoverProps,
+} from './CitationPopover';
