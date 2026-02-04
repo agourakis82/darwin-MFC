@@ -175,6 +175,9 @@ export const NotAnimated: Story = {
 
 // All modes comparison
 export const AllModes: Story = {
+  args: {
+    ...Default.args,
+  },
   render: () => (
     <div className="space-y-6">
       <div>
@@ -215,6 +218,9 @@ export const AllModes: Story = {
 
 // All sizes comparison
 export const AllSizes: Story = {
+  args: {
+    ...Default.args,
+  },
   render: () => (
     <div className="space-y-6">
       <div>
@@ -239,6 +245,7 @@ export const AllSizes: Story = {
 
 // SourceBadge standalone
 export const SourceBadgeStories: StoryObj<typeof SourceBadge> = {
+  args: {},
   render: () => (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">Source Badges</h3>

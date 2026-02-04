@@ -243,6 +243,9 @@ export const NoAlerts: Story = {
 };
 
 export const AllSeverityLevels: Story = {
+  args: {
+    ...Default.args,
+  },
   render: () => (
     <div className="space-y-6">
       <div>
@@ -276,6 +279,9 @@ export const AllSeverityLevels: Story = {
 };
 
 export const AllCategories: Story = {
+  args: {
+    ...Default.args,
+  },
   render: () => {
     const categoryAlerts: ClinicalAlert[] = [
       {

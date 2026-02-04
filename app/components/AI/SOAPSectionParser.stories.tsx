@@ -117,6 +117,7 @@ export const ClickableSections: Story = {
 
 // SOAPEditor story
 export const FullEditor: StoryObj<typeof SOAPEditor> = {
+  args: {},
   render: () => {
     const EditorWrapper = () => {
       const [parsed, setParsed] = useState<ParsedSOAP | undefined>();
@@ -146,6 +147,7 @@ export const FullEditor: StoryObj<typeof SOAPEditor> = {
 };
 
 export const EditorWithoutToolbar: StoryObj<typeof SOAPEditor> = {
+  args: {},
   render: () => (
     <SOAPEditor
       initialText={sampleSOAPText}
@@ -155,6 +157,7 @@ export const EditorWithoutToolbar: StoryObj<typeof SOAPEditor> = {
 };
 
 export const EmptyEditor: StoryObj<typeof SOAPEditor> = {
+  args: {},
   render: () => (
     <SOAPEditor
       initialText=""
@@ -165,6 +168,7 @@ export const EmptyEditor: StoryObj<typeof SOAPEditor> = {
 
 // SOAPPreview story
 export const PreviewComponent: StoryObj<typeof SOAPPreview> = {
+  args: {},
   render: () => {
     const parsed = parseSOAPText(sampleSOAPText);
     return (

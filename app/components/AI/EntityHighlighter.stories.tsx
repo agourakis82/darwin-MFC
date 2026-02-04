@@ -163,6 +163,7 @@ export const WithoutConfidenceDisplay: Story = {
 
 // EntityLegend story
 export const Legend: StoryObj<typeof EntityLegend> = {
+  args: {},
   render: () => (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">Full Legend</h3>
