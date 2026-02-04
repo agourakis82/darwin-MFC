@@ -182,6 +182,9 @@ export const WithoutTextSelection: Story = {
 
 // Interactive story with state
 export const Interactive: Story = {
+  args: {
+    ...Default.args,
+  },
   render: () => {
     const InteractiveModal = () => {
       const [isOpen, setIsOpen] = useState(true);
@@ -225,6 +228,7 @@ export const Interactive: Story = {
 
 // QuickFeedbackButtons story
 export const QuickFeedback: StoryObj<typeof QuickFeedbackButtons> = {
+  args: {},
   render: () => {
     const FeedbackDemo = () => {
       const [lastFeedback, setLastFeedback] = useState<FeedbackType | null>(null);
@@ -259,6 +263,7 @@ export const QuickFeedback: StoryObj<typeof QuickFeedbackButtons> = {
 
 // CorrectionSummary story
 export const Summary: StoryObj<typeof CorrectionSummary> = {
+  args: {},
   render: () => {
     const SummaryDemo = () => {
       const [corrections, setCorrections] = useState<EntityCorrection[]>(sampleCorrections);
@@ -294,6 +299,9 @@ export const Summary: StoryObj<typeof CorrectionSummary> = {
 
 // Full workflow story
 export const FullWorkflow: Story = {
+  args: {
+    ...Default.args,
+  },
   render: () => {
     const WorkflowDemo = () => {
       const [isOpen, setIsOpen] = useState(false);
