@@ -139,7 +139,7 @@ const mockMedications: Medicamento[] = [
   {
     id: 'clopidogrel',
     nomeGenerico: 'Clopidogrel',
-    classeTerapeutica: 'cardiovascular',
+    classeTerapeutica: 'antiagregante',
     rename: true,
     apresentacoes: [],
     indicacoes: ['Prevenção de eventos cardiovasculares', 'Pós-stent'],
