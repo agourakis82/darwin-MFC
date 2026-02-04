@@ -9,7 +9,7 @@ Análise comparativa de diretrizes de rastreamento populacional com rigor acadê
 ![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
 ![License](https://img.shields.io/badge/License-MIT%2BCC--BY--4.0-green?style=for-the-badge)
-![Version](https://img.shields.io/badge/Version-0.7.0-blue?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-1.7.1-blue?style=for-the-badge)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17987610.svg)](https://doi.org/10.5281/zenodo.17987610)
 
 ---
@@ -212,5 +212,5 @@ For questions, suggestions, or collaborations / Para dúvidas, sugestões ou col
 
 ---
 
-**Last Update / Última Atualização**: December 2025 / Dezembro 2025  
-**Version / Versão**: 0.7.0
+**Last Update / Última Atualização**: February 2026 / Fevereiro 2026
+**Version / Versão**: 1.7.1
