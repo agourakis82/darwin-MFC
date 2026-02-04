@@ -273,9 +273,6 @@ export const AllSeverityLevels: Story = {
       </div>
     </div>
   ),
-  args: {
-    entities: [],
-  },
 };
 
 export const AllCategories: Story = {
@@ -363,9 +360,6 @@ export const AllCategories: Story = {
         maxAlerts={10}
       />
     );
-  },
-  args: {
-    entities: [],
   },
 };
 
