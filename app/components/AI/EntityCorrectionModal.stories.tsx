@@ -66,8 +66,10 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     isOpen: true,
+    onClose: () => console.log('Modal closed'),
     entity: sampleEntity,
     contextText: sampleContextText,
+    onSubmit: (correction) => console.log('Correction submitted:', correction),
     entityTypes: ['DISEASE', 'MEDICATION', 'SYMPTOM', 'EXAM', 'PROCEDURE'],
     enableTextSelection: true,
   },
