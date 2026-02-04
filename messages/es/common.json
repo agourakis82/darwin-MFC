@@ -132,12 +132,40 @@
     "jsonComingSoon": "Funcionalidad de exportación JSON se implementará"
   },
   "about": {
-    "title": "Acerca del Autor",
-    "subtitle": "Creador y Desarrollador",
-    "name": "Demetrios Agourakis",
-    "credentials": "Ingeniero Químico | Abogado | Estudiante de Maestría en Medicina Regenerativa y Biomateriales (PUC-SP) | Estudiante de Medicina",
-    "bio": "Demetrios Agourakis es el creador de Darwin MFC, una plataforma académica gratuita dedicada a la Medicina Familiar y Comunitaria. Con una formación interdisciplinaria única — ingeniero químico, abogado, estudiante de maestría en Medicina Regenerativa y Biomateriales en PUC-SP y estudiante de medicina con pasantía en Faculdade São Leopoldo Mandic — desarrollé esta guía para apoyar a profesionales y estudiantes con herramientas prácticas basadas en evidencia.",
-    "motivation": "Facilitar las consultas diarias de atención primaria, promoviendo una práctica clínica integral, efectiva y accesible para todos. La plataforma ofrece más de 198 condiciones clínicas mapeadas, protocolos interactivos, calculadoras clínicas y una base de datos actualizada de medicamentos, integrando perspectivas de ingeniería de tejidos, biomateriales y atención primaria de salud.",
+    "title": "Acerca de los Autores",
+    "subtitle": "Creadores y Desarrolladores",
+    "authors": {
+      "demetrios": {
+        "name": "Demetrios Agourakis",
+        "credentials": "Ingeniero Químico | Abogado | Estudiante de Maestría en Medicina Regenerativa y Biomateriales (PUC-SP) | Estudiante de Medicina",
+        "bio": "Demetrios Agourakis es el creador de Darwin MFC, una plataforma académica gratuita dedicada a la Medicina Familiar y Comunitaria. Con una formación interdisciplinaria única — ingeniero químico, abogado, estudiante de maestría en Medicina Regenerativa y Biomateriales en PUC-SP y estudiante de medicina con pasantía en Faculdade São Leopoldo Mandic — desarrollé esta guía para apoyar a profesionales y estudiantes con herramientas prácticas basadas en evidencia.",
+        "motivation": "Facilitar las consultas diarias de atención primaria, promoviendo una práctica clínica integral, efectiva y accesible para todos. La plataforma ofrece más de 198 condiciones clínicas mapeadas, protocolos interactivos, calculadoras clínicas y una base de datos actualizada de medicamentos, integrando perspectivas de ingeniería de tejidos, biomateriales y atención primaria de salud.",
+        "credentialsList": {
+          "title": "Formación Académica",
+          "items": [
+            "Ingeniero Químico",
+            "Abogado",
+            "Estudiante de Maestría en Medicina Regenerativa y Biomateriales (PUC-SP)",
+            "Estudiante de Medicina (Pasantía: Faculdade São Leopoldo Mandic)"
+          ]
+        },
+        "expertise": {
+          "title": "Áreas de Integración",
+          "items": [
+            "Medicina Familiar y Comunitaria",
+            "Ingeniería de Tejidos y Biomateriales",
+            "Medicina Regenerativa",
+            "Desarrollo de Herramientas de Atención Primaria",
+            "Infraestructura de Ciencia Abierta"
+          ]
+        }
+      },
+      "isadora": {
+        "name": "Isadora Casagrande Amalcaburio",
+        "credentials": "Estudiante de Medicina (Último Año), Faculdade São Leopoldo Mandic",
+        "bio": "Isadora es estudiante de medicina en el último año de Faculdade São Leopoldo Mandic con pasión por la Medicina Familiar y Comunitaria y atención primaria. Contribuye a Darwin MFC validando protocolos clínicos y apoyando el desarrollo de contenido."
+      }
+    },
     "links": {
       "orcid": "ORCID",
       "github": "GitHub",
@@ -146,25 +174,6 @@
       "email": "Contacto"
     },
     "projectNote": "Este es un proyecto independiente de código abierto. ¡Las contribuciones son bienvenidas!",
-    "credentialsList": {
-      "title": "Formación Académica",
-      "items": [
-        "Ingeniero Químico",
-        "Abogado",
-        "Estudiante de Maestría en Medicina Regenerativa y Biomateriales (PUC-SP)",
-        "Estudiante de Medicina (Pasantía: Faculdade São Leopoldo Mandic)"
-      ]
-    },
-    "expertise": {
-      "title": "Áreas de Integración",
-      "items": [
-        "Medicina Familiar y Comunitaria",
-        "Ingeniería de Tejidos y Biomateriales",
-        "Medicina Regenerativa",
-        "Desarrollo de Herramientas de Atención Primaria",
-        "Infraestructura de Ciencia Abierta"
-      ]
-    },
     "contribute": {
       "badge": "Código Abierto",
       "title": "Contribuye al Proyecto",

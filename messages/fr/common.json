@@ -132,12 +132,40 @@
     "jsonComingSoon": "Fonctionnalité d'exportation JSON sera implémentée"
   },
   "about": {
-    "title": "À propos de l'Auteur",
-    "subtitle": "Créateur et Développeur",
-    "name": "Demetrios Agourakis",
-    "credentials": "Ingénieur Chimiste | Avocat | Étudiant en Master de Médecine Régénérative et Biomatériaux (PUC-SP) | Étudiant en Médecine",
-    "bio": "Demetrios Agourakis est le créateur de Darwin MFC, une plateforme académique gratuite dédiée à la Médecine de Famille et Communautaire. Avec une formation interdisciplinaire unique — ingénieur chimiste, avocat, étudiant en master de Médecine Régénérative et Biomatériaux à PUC-SP et étudiant en médecine avec stage à la Faculdade São Leopoldo Mandic — j'ai développé ce guide pour soutenir les professionnels et étudiants avec des outils pratiques basés sur des preuves.",
-    "motivation": "Faciliter les consultations quotidiennes de soins primaires, en promouvant une pratique clinique complète, efficace et accessible à tous. La plateforme offre plus de 198 conditions cliniques cartographiées, protocoles interactifs, calculatrices cliniques et une base de données de médicaments actualisée, intégrant les perspectives de l'ingénierie tissulaire, des biomatériaux et des soins de santé primaires.",
+    "title": "À propos des Auteurs",
+    "subtitle": "Créateurs et Développeurs",
+    "authors": {
+      "demetrios": {
+        "name": "Demetrios Agourakis",
+        "credentials": "Ingénieur Chimiste | Avocat | Étudiant en Master de Médecine Régénérative et Biomatériaux (PUC-SP) | Étudiant en Médecine",
+        "bio": "Demetrios Agourakis est le créateur de Darwin MFC, une plateforme académique gratuite dédiée à la Médecine de Famille et Communautaire. Avec une formation interdisciplinaire unique — ingénieur chimiste, avocat, étudiant en master de Médecine Régénérative et Biomatériaux à PUC-SP et étudiant en médecine avec stage à la Faculdade São Leopoldo Mandic — j'ai développé ce guide pour soutenir les professionnels et étudiants avec des outils pratiques basés sur des preuves.",
+        "motivation": "Faciliter les consultations quotidiennes de soins primaires, en promouvant une pratique clinique complète, efficace et accessible à tous. La plateforme offre plus de 198 conditions cliniques cartographiées, protocoles interactifs, calculatrices cliniques et une base de données de médicaments actualisée, intégrant les perspectives de l'ingénierie tissulaire, des biomatériaux et des soins de santé primaires.",
+        "credentialsList": {
+          "title": "Formation Académique",
+          "items": [
+            "Ingénieur Chimiste",
+            "Avocat",
+            "Étudiant en Master de Médecine Régénérative et Biomatériaux (PUC-SP)",
+            "Étudiant en Médecine (Stage : Faculdade São Leopoldo Mandic)"
+          ]
+        },
+        "expertise": {
+          "title": "Domaines d'Intégration",
+          "items": [
+            "Médecine de Famille et Communautaire",
+            "Ingénierie Tissulaire et Biomatériaux",
+            "Médecine Régénérative",
+            "Développement d'Outils de Soins Primaires",
+            "Infrastructure de Science Ouverte"
+          ]
+        }
+      },
+      "isadora": {
+        "name": "Isadora Casagrande Amalcaburio",
+        "credentials": "Étudiante en Médecine (Dernière Année), Faculdade São Leopoldo Mandic",
+        "bio": "Isadora est étudiante en médecine en dernière année à la Faculdade São Leopoldo Mandic avec une passion pour la Médecine de Famille et Communautaire et les soins primaires. Elle contribue à Darwin MFC en validant les protocoles cliniques et en soutenant le développement de contenu."
+      }
+    },
     "links": {
       "orcid": "ORCID",
       "github": "GitHub",
@@ -146,25 +174,6 @@
       "email": "Contact"
     },
     "projectNote": "Ceci est un projet open-source indépendant. Les contributions sont les bienvenues !",
-    "credentialsList": {
-      "title": "Formation Académique",
-      "items": [
-        "Ingénieur Chimiste",
-        "Avocat",
-        "Étudiant en Master de Médecine Régénérative et Biomatériaux (PUC-SP)",
-        "Étudiant en Médecine (Stage : Faculdade São Leopoldo Mandic)"
-      ]
-    },
-    "expertise": {
-      "title": "Domaines d'Intégration",
-      "items": [
-        "Médecine de Famille et Communautaire",
-        "Ingénierie Tissulaire et Biomatériaux",
-        "Médecine Régénérative",
-        "Développement d'Outils de Soins Primaires",
-        "Infrastructure de Science Ouverte"
-      ]
-    },
     "contribute": {
       "badge": "Open Source",
       "title": "Contribuez au Projet",

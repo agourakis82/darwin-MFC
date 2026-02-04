@@ -132,12 +132,40 @@
     "jsonComingSoon": "JSON export functionality will be implemented"
   },
   "about": {
-    "title": "About the Author",
-    "subtitle": "Creator and Developer",
-    "name": "Demetrios Agourakis",
-    "credentials": "Chemical Engineer | Lawyer | MSc Student in Regenerative Medicine and Biomaterials (PUC-SP) | Medical Student",
-    "bio": "Demetrios Agourakis is the creator of Darwin MFC, a free academic platform dedicated to Family and Community Medicine. With a unique interdisciplinary background — chemical engineer, lawyer, master's student in Regenerative Medicine and Biomaterials at PUC-SP, and medical student with internship at Faculdade São Leopoldo Mandic — I developed this guide to support professionals and students with practical, evidence-based tools.",
-    "motivation": "To facilitate daily primary care consultations, promoting comprehensive, effective, and accessible clinical practice for all. The platform offers over 198 mapped clinical conditions, interactive protocols, clinical calculators, and an updated medication database, integrating perspectives from tissue engineering, biomaterials, and primary health care.",
+    "title": "About the Authors",
+    "subtitle": "Creators and Developers",
+    "authors": {
+      "demetrios": {
+        "name": "Demetrios Agourakis",
+        "credentials": "Chemical Engineer | Lawyer | MSc Student in Regenerative Medicine and Biomaterials (PUC-SP) | Medical Student",
+        "bio": "Demetrios Agourakis is the creator of Darwin MFC, a free academic platform dedicated to Family and Community Medicine. With a unique interdisciplinary background — chemical engineer, lawyer, master's student in Regenerative Medicine and Biomaterials at PUC-SP, and medical student with internship at Faculdade São Leopoldo Mandic — I developed this guide to support professionals and students with practical, evidence-based tools.",
+        "motivation": "To facilitate daily primary care consultations, promoting comprehensive, effective, and accessible clinical practice for all. The platform offers over 198 mapped clinical conditions, interactive protocols, clinical calculators, and an updated medication database, integrating perspectives from tissue engineering, biomaterials, and primary health care.",
+        "credentialsList": {
+          "title": "Academic Background",
+          "items": [
+            "Chemical Engineer",
+            "Lawyer",
+            "MSc Student in Regenerative Medicine and Biomaterials (PUC-SP)",
+            "Medical Student (Internship: Faculdade São Leopoldo Mandic)"
+          ]
+        },
+        "expertise": {
+          "title": "Integration Areas",
+          "items": [
+            "Family and Community Medicine",
+            "Tissue Engineering and Biomaterials",
+            "Regenerative Medicine",
+            "Primary Care Tools Development",
+            "Open Science Infrastructure"
+          ]
+        }
+      },
+      "isadora": {
+        "name": "Isadora Casagrande Amalcaburio",
+        "credentials": "Medical Student (Final Year), Faculdade São Leopoldo Mandic",
+        "bio": "Isadora is a final-year medical student at Faculdade São Leopoldo Mandic with a passion for Family and Community Medicine and primary care. She contributes to Darwin MFC by validating clinical protocols and supporting content development."
+      }
+    },
     "links": {
       "orcid": "ORCID",
       "github": "GitHub",
@@ -146,25 +174,6 @@
       "email": "Contact"
     },
     "projectNote": "This is an independent open-source project. Contributions welcome!",
-    "credentialsList": {
-      "title": "Academic Background",
-      "items": [
-        "Chemical Engineer",
-        "Lawyer",
-        "MSc Student in Regenerative Medicine and Biomaterials (PUC-SP)",
-        "Medical Student (Internship: Faculdade São Leopoldo Mandic)"
-      ]
-    },
-    "expertise": {
-      "title": "Integration Areas",
-      "items": [
-        "Family and Community Medicine",
-        "Tissue Engineering and Biomaterials",
-        "Regenerative Medicine",
-        "Primary Care Tools Development",
-        "Open Science Infrastructure"
-      ]
-    },
     "contribute": {
       "badge": "Open Source",
       "title": "Contribute to the Project",

@@ -132,12 +132,40 @@
     "jsonComingSoon": "Funcionalidade de exportação JSON será implementada"
   },
   "about": {
-    "title": "Sobre o Autor",
-    "subtitle": "Criador e Desenvolvedor",
-    "name": "Demetrios Agourakis",
-    "credentials": "Engenheiro Químico | Advogado | Mestrando em Medicina Regenerativa e Biomateriais (PUC-SP) | Estudante de Medicina",
-    "bio": "Demetrios Agourakis é o criador do Darwin MFC, uma plataforma gratuita e acadêmica dedicada à Medicina de Família e Comunidade. Com uma formação interdisciplinar única — engenheiro químico, advogado, mestrando em Medicina Regenerativa e Biomateriais pela PUC-SP e estudante de Medicina com estágio na Faculdade São Leopoldo Mandic —, desenvolvi este guia para apoiar profissionais e estudantes com ferramentas práticas e baseadas em evidências.",
-    "motivation": "Facilitar o dia a dia da consulta na atenção básica, promovendo uma prática clínica integral, resolutiva e acessível a todos. A plataforma oferece mais de 198 condições clínicas mapeadas, protocolos interativos, calculadoras clínicas e um banco de medicamentos atualizado, integrando perspectivas da engenharia de tecidos, biomateriais e atenção primária à saúde.",
+    "title": "Sobre os Autores",
+    "subtitle": "Criadores e Desenvolvedores",
+    "authors": {
+      "demetrios": {
+        "name": "Demetrios Agourakis",
+        "credentials": "Engenheiro Químico | Advogado | Mestrando em Medicina Regenerativa e Biomateriais (PUC-SP) | Estudante de Medicina",
+        "bio": "Demetrios Agourakis é o criador do Darwin MFC, uma plataforma gratuita e acadêmica dedicada à Medicina de Família e Comunidade. Com uma formação interdisciplinar única — engenheiro químico, advogado, mestrando em Medicina Regenerativa e Biomateriais pela PUC-SP e estudante de Medicina com estágio na Faculdade São Leopoldo Mandic —, desenvolvi este guia para apoiar profissionais e estudantes com ferramentas práticas e baseadas em evidências.",
+        "motivation": "Facilitar o dia a dia da consulta na atenção básica, promovendo uma prática clínica integral, resolutiva e acessível a todos. A plataforma oferece mais de 198 condições clínicas mapeadas, protocolos interativos, calculadoras clínicas e um banco de medicamentos atualizado, integrando perspectivas da engenharia de tecidos, biomateriais e atenção primária à saúde.",
+        "credentialsList": {
+          "title": "Formação Acadêmica",
+          "items": [
+            "Engenheiro Químico",
+            "Advogado",
+            "Mestrando em Medicina Regenerativa e Biomateriais (PUC-SP)",
+            "Estudante de Medicina (Estágio: Faculdade São Leopoldo Mandic)"
+          ]
+        },
+        "expertise": {
+          "title": "Áreas de Integração",
+          "items": [
+            "Medicina de Família e Comunidade",
+            "Engenharia de Tecidos e Biomateriais",
+            "Medicina Regenerativa",
+            "Desenvolvimento de Ferramentas de Atenção Primária",
+            "Infraestrutura de Ciência Aberta"
+          ]
+        }
+      },
+      "isadora": {
+        "name": "Isadora Casagrande Amalcaburio",
+        "credentials": "Estudante de Medicina (Último Ano), Faculdade São Leopoldo Mandic",
+        "bio": "Isadora é estudante de medicina no último ano da Faculdade São Leopoldo Mandic com paixão pela Medicina de Família e Comunidade e atenção primária. Ela contribui para o Darwin MFC validando protocolos clínicos e apoiando o desenvolvimento de conteúdo."
+      }
+    },
     "links": {
       "orcid": "ORCID",
       "github": "GitHub",
@@ -146,25 +174,6 @@
       "email": "Contato"
     },
     "projectNote": "Este é um projeto independente de código aberto. Contribuições são bem-vindas!",
-    "credentialsList": {
-      "title": "Formação Acadêmica",
-      "items": [
-        "Engenheiro Químico",
-        "Advogado",
-        "Mestrando em Medicina Regenerativa e Biomateriais (PUC-SP)",
-        "Estudante de Medicina (Estágio: Faculdade São Leopoldo Mandic)"
-      ]
-    },
-    "expertise": {
-      "title": "Áreas de Integração",
-      "items": [
-        "Medicina de Família e Comunidade",
-        "Engenharia de Tecidos e Biomateriais",
-        "Medicina Regenerativa",
-        "Desenvolvimento de Ferramentas de Atenção Primária",
-        "Infraestrutura de Ciência Aberta"
-      ]
-    },
     "contribute": {
       "badge": "Código Aberto",
       "title": "Contribua com o Projeto",
