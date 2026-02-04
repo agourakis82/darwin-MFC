@@ -129,7 +129,7 @@ Veja os arquivos `LICENSE` e `CONTENT_LICENSE` para detalhes.
 
 ---
 
-## 👨‍⚕️ Author / Autor
+## 👨‍⚕️ Authors / Autores
 
 **Demetrios Chiuratto Agourakis, MD**
 
@@ -140,6 +140,14 @@ Médico e Residente em Medicina de Família e Comunidade (PUC-SP, Brasil). Pesqu
 - **ORCID**: [0009-0001-8671-8878](https://orcid.org/0009-0001-8671-8878)
 - **GitHub**: [agourakis82](https://github.com/agourakis82)
 - **About**: [About the Author / Sobre o Autor](/about)
+
+**Isadora Casagrande Amalcaburio**
+
+Medical Student (Final Year), Faculdade São Leopoldo Mandic, Brazil.
+
+Estudante de Medicina (Último Ano), Faculdade São Leopoldo Mandic, Brasil.
+
+- **ORCID**: [0009-0005-6883-1809](https://orcid.org/0009-0005-6883-1809)
 
 ---
 
