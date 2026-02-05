@@ -763,14 +763,31 @@
     "title": "Bulário APS",
     "subtitle": "Medicamentos essenciais para a Atenção Primária à Saúde",
     "medicationCount": "{count} Medicamentos",
-    "description": "com posologia, interações, ajuste renal e segurança na gestação. Baseado na RENAME 2024 e bulas ANVISA.",
+    "activeCompounds": "[ {count} COMPOSTOS ATIVOS ]",
+    "description": "Referência farmacêutica centralizada para tomada de decisão terapêutica. Foco na Relação Nacional de Medicamentos Essenciais (RENAME).",
     "searchPlaceholder": "Buscar por nome genérico, comercial ou indicação...",
     "renameOnly": "Apenas RENAME",
     "all": "Todas",
+    "allClasses": "TODAS AS CLASSES",
     "noResults": "Nenhum medicamento encontrado",
+    "notFoundInHub": "Composto não encontrado no hub.",
     "interactions": "{count} interações",
     "renalAdjustment": "Ajuste renal",
-    "therapeuticClasses": "Classes Terapêuticas"
+    "therapeuticClasses": "Classes Terapêuticas",
+    "notAvailable": "N/D",
+    "table": {
+      "category": "CAT",
+      "genericName": "NOME GENÉRICO / COMPOSTO",
+      "indications": "INDICAÇÕES PRINCIPAIS",
+      "pregnancy": "GESTAÇÃO",
+      "atcCode": "CÓDIGO ATC",
+      "pregnancyCategory": "CAT {category}"
+    },
+    "footer": {
+      "liveRepository": "REPOSITÓRIO ATIVO",
+      "evidenceVerified": "EVIDÊNCIA VERIFICADA",
+      "pharmacyLedger": "DARWIN MEDICAL HUB | BULÁRIO v1.2"
+    }
   },
   "protocolos": {
     "title": "Protocolos Clínicos",

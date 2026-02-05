@@ -55,11 +55,11 @@ export default function MedicamentosClient() {
               {t('title')}
             </h1>
             <span className="text-xs font-mono text-carbon-400 font-bold uppercase tracking-widest">
-              [ {medicamentos.length} ACTIVE COMPOUNDS ]
+              {t('activeCompounds', { count: medicamentos.length })}
             </span>
           </div>
           <p className="text-lg text-carbon-500 font-body max-w-2xl leading-relaxed">
-            Centralized pharmaceutical reference for therapeutic decision-making. National List of Essential Medicines (RENAME) focus.
+            {t('description')}
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function MedicamentosClient() {
             )}
           >
             <Shield className="w-4 h-4" />
-            RENAME ONLY
+            {t('renameOnly')}
           </button>
         </div>
 
@@ -97,7 +97,7 @@ export default function MedicamentosClient() {
                 selectedClasse === 'todas' ? "bg-helix-navy text-white" : "bg-white dark:bg-carbon-900 text-carbon-500 hover:bg-clinical-gray"
               )}
             >
-              ALL CLASSES
+              {t('allClasses')}
             </button>
             {medicamentosAgrupados.map(grupo => (
               <button
@@ -117,15 +117,15 @@ export default function MedicamentosClient() {
         {/* Compound Ledger */}
         <div className="bg-white dark:bg-carbon-900 border border-carbon-200 dark:border-carbon-800 rounded-lg overflow-hidden">
           <div className="grid grid-cols-12 bg-clinical-gray dark:bg-carbon-800/50 border-b border-carbon-200 dark:border-carbon-700 px-6 py-3 text-[10px] font-bold text-carbon-400 uppercase tracking-widest">
-            <div className="col-span-1">CAT</div>
-            <div className="col-span-4">GENERIC NAME / COMPOUND</div>
-            <div className="col-span-3">PRIMARY INDICATIONS</div>
-            <div className="col-span-2">PREGNANCY</div>
-            <div className="col-span-2 text-right">ATC CODE</div>
+            <div className="col-span-1">{t('table.category')}</div>
+            <div className="col-span-4">{t('table.genericName')}</div>
+            <div className="col-span-3">{t('table.indications')}</div>
+            <div className="col-span-2">{t('table.pregnancy')}</div>
+            <div className="col-span-2 text-right">{t('table.atcCode')}</div>
           </div>
 
           {medicamentosFiltrados.length === 0 ? (
-            <div className="py-20 text-center text-carbon-500 font-body">Compound not found in hub.</div>
+            <div className="py-20 text-center text-carbon-500 font-body">{t('notFoundInHub')}</div>
           ) : (
             <div className="divide-y divide-carbon-100 dark:divide-carbon-800">
               {medicamentosFiltrados.map((med) => {
@@ -155,7 +155,7 @@ export default function MedicamentosClient() {
                         </div>
                       </div>
                       <p className="text-[10px] font-mono text-carbon-400 uppercase tracking-tight">
-                        {med.nomesComerciais?.slice(0, 3).join(' • ') || 'N/A'}
+                        {med.nomesComerciais?.slice(0, 3).join(' • ') || t('notAvailable')}
                       </p>
                     </div>
                     <div className="col-span-3 pr-4">
@@ -165,7 +165,7 @@ export default function MedicamentosClient() {
                     </div>
                     <div className="col-span-2">
                       <span className={cn("text-[10px] font-bold px-2 py-0.5 rounded text-white", gestacaoInfo.color.replace('bg-', 'bg-'))}>
-                        CAT {med.gestacao}
+                        {t('table.pregnancyCategory', { category: med.gestacao })}
                       </span>
                     </div>
                     <div className="col-span-2 text-right">
@@ -183,10 +183,10 @@ export default function MedicamentosClient() {
         {/* Footer Statistics */}
         <div className="mt-8 flex justify-between items-center text-[10px] font-bold text-carbon-400 uppercase tracking-widest">
            <div className="flex gap-4">
-             <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-guanine-green" /> LIVE REPOSITORY</span>
-             <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-adenine-teal" /> EVIDENCE VERIFIED</span>
+             <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-guanine-green" /> {t('footer.liveRepository')}</span>
+             <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-adenine-teal" /> {t('footer.evidenceVerified')}</span>
            </div>
-           <span>DARWIN MEDICAL HUB | PHARMACY LEDGER v1.2</span>
+           <span>{t('footer.pharmacyLedger')}</span>
         </div>
       </PageContainer>
     </div>
