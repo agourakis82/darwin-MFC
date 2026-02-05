@@ -49,9 +49,18 @@ export interface PharmGKBDisplayProps {
   pharmgkbData?: Array<{
     gene: string;
     variant?: string;
-    phenotype?: Phenotype;
+    phenotype?: Phenotype | string;
     implications?: string[];
     dosageRecommendations?: string[];
+    // Additional fields from PharmGKBData
+    variants?: Array<{
+      allele: string;
+      phenotype: string;
+      implications: string[];
+    }>;
+    level?: string;
+    summary?: string;
+    guidelineUrl?: string;
   }>;
 
   /** Whether to show in compact mode */
@@ -299,7 +308,7 @@ export function PharmGKBDisplay({
     pgxData = pharmgkbData.map((d) => ({
       gene: d.gene,
       variant: d.variant,
-      phenotype: d.phenotype,
+      phenotype: d.phenotype as Phenotype | undefined,
       implications: d.implications || [],
       dosageRecommendations: d.dosageRecommendations || [],
     }));

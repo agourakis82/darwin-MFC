@@ -196,7 +196,7 @@ function GeneSection({ data }: { data: PharmGKBData }) {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <PharmGKBBadge level={data.level} showLabel />
+          <PharmGKBBadge level={data.level ?? '4'} showLabel />
           {data.guidelineUrl && (
             <a
               href={data.guidelineUrl}
@@ -216,11 +216,11 @@ function GeneSection({ data }: { data: PharmGKBData }) {
         onClick={() => setIsExpanded(!isExpanded)}
         className="w-full text-left text-sm text-neutral-400 hover:text-neutral-300 transition-colors mb-3"
       >
-        {isExpanded ? '▼' : '▶'} {data.variants.length} variantes genéticas
+        {isExpanded ? '▼' : '▶'} {data.variants?.length ?? 0} variantes genéticas
       </button>
 
       {/* Variants */}
-      {isExpanded && (
+      {isExpanded && data.variants && (
         <div className="space-y-3">
           {data.variants.map((variant, idx) => (
             <VariantCard key={idx} variant={variant} />

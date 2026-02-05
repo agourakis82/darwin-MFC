@@ -511,18 +511,33 @@ export interface PharmGKBVariant {
 
 /**
  * PharmGKB pharmacogenomics data for a medication
+ * Supports both nested variants array (preferred) and legacy flat structure
  */
 export interface PharmGKBData {
   /** Gene symbol (e.g., "CYP2D6", "CYP2C19", "TPMT", "DPYD") */
   gene: string;
-  /** Array of genetic variants and their implications */
-  variants: PharmGKBVariant[];
+  /** Array of genetic variants and their implications (preferred structure) */
+  variants?: PharmGKBVariant[];
   /** PharmGKB evidence level (CPIC/DPWG classification) */
-  level: PharmGKBEvidenceLevel;
+  level?: PharmGKBEvidenceLevel;
   /** URL to CPIC or DPWG guideline */
   guidelineUrl?: string;
   /** Summary of pharmacogenomic effect */
   summary?: string;
+
+  // Legacy flat structure fields (for backwards compatibility)
+  /** @deprecated Use variants[].allele instead */
+  variant?: string;
+  /** @deprecated Use variants[].phenotype instead */
+  phenotype?: MetabolizerPhenotype | string;
+  /** @deprecated Use variants[].implications instead */
+  implications?: string[];
+  /** @deprecated Use variants[].dosageRecommendation instead */
+  dosageRecommendations?: string[];
+  /** @deprecated Use variants[].frequency instead */
+  frequency?: PopulationFrequency;
+  /** @deprecated Use variants[].alternatives instead */
+  alternatives?: string[];
 }
 
 // =============================================================================

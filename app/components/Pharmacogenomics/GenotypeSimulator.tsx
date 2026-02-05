@@ -68,7 +68,7 @@ export function GenotypeSimulator({ medications, onGenotypeChange }: GenotypeSim
         const selectedAllele = genotypes[pharmgkbData.gene];
         if (!selectedAllele) return;
 
-        const variant = pharmgkbData.variants.find((v) => v.allele === selectedAllele);
+        const variant = pharmgkbData.variants?.find((v) => v.allele === selectedAllele);
         if (!variant) return;
 
         impacts.push({
@@ -273,7 +273,7 @@ function MedicationImpactCard({ impact }: { impact: MedicationImpact }) {
         <div className="flex-1">
           <div className="flex items-start justify-between gap-2 mb-1">
             <p className="font-semibold text-neutral-200">{impact.medication.nomeGenerico}</p>
-            <PharmGKBBadge level={impact.medication.pharmgkb![0]!.level} gene={impact.gene} size="sm" />
+            <PharmGKBBadge level={impact.medication.pharmgkb?.[0]?.level ?? '1A'} gene={impact.gene} size="sm" />
           </div>
           <p className="text-xs text-neutral-400 mb-1.5">
             <span className="font-mono">{impact.allele}</span> → {impact.phenotype.replace(/_/g, ' ')}

@@ -33,9 +33,10 @@ export function PharmGKBAlert({
   }
 
   const highestEvidenceLevel = pharmgkbData.reduce((highest, data) => {
-    const levelOrder = { '1A': 0, '1B': 1, '2A': 2, '2B': 3, '3': 4, '4': 5 };
-    return levelOrder[data.level] < levelOrder[highest] ? data.level : highest;
-  }, pharmgkbData[0].level);
+    const levelOrder: Record<string, number> = { '1A': 0, '1B': 1, '2A': 2, '2B': 3, '3': 4, '4': 5 };
+    const dataLevel = data.level ?? '4';
+    return (levelOrder[dataLevel] ?? 5) < (levelOrder[highest] ?? 5) ? dataLevel : highest;
+  }, pharmgkbData[0]?.level ?? '4');
 
   const isHighEvidence = highestEvidenceLevel === '1A' || highestEvidenceLevel === '1B';
 
@@ -89,7 +90,7 @@ export function PharmGKBAlert({
         <p className="text-xs font-medium text-neutral-400 mb-2">Genes afetados:</p>
         <div className="flex flex-wrap gap-2">
           {pharmgkbData.map((data, idx) => (
-            <PharmGKBBadge key={idx} level={data.level} gene={data.gene} size="sm" />
+            <PharmGKBBadge key={idx} level={data.level ?? '4'} gene={data.gene} size="sm" />
           ))}
         </div>
       </div>
