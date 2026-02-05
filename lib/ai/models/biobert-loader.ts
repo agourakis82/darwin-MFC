@@ -18,8 +18,24 @@
 type InferenceSession = { run: (feeds: Record<string, unknown>) => Promise<Record<string, unknown>>; release: () => Promise<void>; };
 type Tensor = { data: Float32Array; dims: readonly number[]; };
 type OrtEnv = { wasm: { wasmPaths?: string } };
-let ort: { InferenceSession: { create: (...args: unknown[]) => Promise<InferenceSession> }; Tensor: new (...args: unknown[]) => Tensor; env: OrtEnv } | null = null;
-try { ort = require('onnxruntime-web'); } catch { /* not installed */ }
+type OrtModule = { InferenceSession: { create: (...args: unknown[]) => Promise<InferenceSession> }; Tensor: new (...args: unknown[]) => Tensor; env: OrtEnv };
+let ort: OrtModule | null = null;
+let ortLoadAttempted = false;
+
+// Async loader that uses dynamic import with webpackIgnore to make it truly optional
+async function loadOrt(): Promise<OrtModule | null> {
+  if (ortLoadAttempted) return ort;
+  ortLoadAttempted = true;
+  try {
+    // webpackIgnore tells webpack not to bundle this - it's loaded at runtime if available
+    // @ts-ignore - onnxruntime-web is optional, module may not be installed
+    ort = await import(/* webpackIgnore: true */ 'onnxruntime-web') as unknown as OrtModule;
+    return ort;
+  } catch {
+    // Module not installed - will use Hugging Face API or regex fallback
+    return null;
+  }
+}
 import {
   BIOBERT_CONFIG,
   DEFAULT_SESSION_OPTIONS,
@@ -60,12 +76,14 @@ const progressCallbacks = new Set<ProgressCallback>();
  */
 export async function initializeONNXRuntime(): Promise<void> {
   try {
-    // Configure WASM path for fallback
-    if (!ort) {
-      console.warn('[BioBERT] ONNX Runtime not available');
+    // Try to load ONNX Runtime (optional dependency)
+    const ortModule = await loadOrt();
+    if (!ortModule) {
+      console.warn('[BioBERT] ONNX Runtime not available - will use Hugging Face API or regex fallback');
       return;
     }
-    ort.env.wasm.wasmPaths = 'https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/';
+    // Configure WASM path for fallback
+    ortModule.env.wasm.wasmPaths = 'https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/';
 
     // Detect device capabilities
     const capabilities = await detectDeviceCapabilities();
@@ -265,8 +283,9 @@ async function createSession(modelBuffer: ArrayBuffer, sessionOptions: SessionOp
     // Convert ArrayBuffer to Uint8Array
     const modelData = new Uint8Array(modelBuffer);
 
-    // Create session with provided options
-    if (!ort) {
+    // Ensure ONNX Runtime is loaded
+    const ortModule = await loadOrt();
+    if (!ortModule) {
       throw new SessionCreationError('ONNX Runtime not available');
     }
     const convertedOptions = {
@@ -276,7 +295,7 @@ async function createSession(modelBuffer: ArrayBuffer, sessionOptions: SessionOp
       enableCpuMemArena: sessionOptions.enableCpuMemArena,
     };
 
-    const session = await ort.InferenceSession.create(modelData, convertedOptions as any);
+    const session = await ortModule.InferenceSession.create(modelData, convertedOptions as any);
 
     emitProgress({ stage: 'optimizing', progress: 90, status: 'Session created, optimizing...' });
 
