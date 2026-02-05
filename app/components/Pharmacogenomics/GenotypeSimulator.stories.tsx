@@ -158,7 +158,7 @@ const mockMedications: Medicamento[] = [
   {
     id: 'varfarina',
     nomeGenerico: 'Varfarina',
-    classeTerapeutica: 'cardiovascular',
+    classeTerapeutica: 'anticoagulante',
     rename: true,
     apresentacoes: [],
     indicacoes: ['Anticoagulação', 'Fibrilação atrial', 'Trombose venosa profunda'],
