@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { GenotypeSimulator } from './GenotypeSimulator';
 import type { Medicamento, PharmGKBData } from '@/lib/types/medicamento';
