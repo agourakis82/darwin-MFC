@@ -10,6 +10,7 @@ import Footer from "./components/Layout/Footer";
 import KeyboardShortcuts from "./components/KeyboardShortcuts";
 import { PWAProvider } from "./components/PWA";
 import { ToastProvider } from "./components/ui/Toast";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // NOTE: This root layout is used for pages NOT under [locale]/
 // Pages under [locale]/ have their own layout with Header/Sidebar/Footer
@@ -387,6 +388,7 @@ export default async function RootLayout({
           </div>
         </ThemeProvider>
         </NextIntlClientProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
