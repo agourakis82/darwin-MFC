@@ -1,0 +1,107 @@
+{
+  "regionalTerminology": {
+    "regions": {
+      "brazil": {
+        "name": "Бразилия",
+        "healthSystemName": "Единая система здравоохранения",
+        "healthSystemAbbr": "SUS",
+        "regulatoryBody": "Национальное агентство по санитарному надзору",
+        "regulatoryBodyAbbr": "ANVISA",
+        "primaryCareSystem": "Стратегия здоровья семьи",
+        "medicationDatabase": "Национальный реестр лекарственных средств",
+        "coreTerms": {
+          "discretionaryScreening": "Оппортунистический скрининг",
+          "universalScreening": "Популяционный скрининг",
+          "chronicDiseaseManagement": "Управление хроническими заболеваниями",
+          "publicFunding": "Обеспечивается SUS",
+          "privateOption": "Доступно в частном секторе",
+          "notAvailable": "Не доступно в Бразилии",
+          "approved": "Зарегистрировано ANVISA",
+          "suspended": "Приостановлено ANVISA",
+          "restricted": "Ограниченное применение",
+          "essentialMedicine": "Жизненно важное лекарство",
+          "genericAvailable": "Доступен дженерик",
+          "brandName": "Торговое название"
+        }
+      },
+      "india": {
+        "name": "Индия",
+        "healthSystemName": "Национальная миссия здравоохранения",
+        "healthSystemAbbr": "NHM",
+        "regulatoryBody": "Центральная организация по контролю стандартов лекарств",
+        "regulatoryBodyAbbr": "CDSCO",
+        "primaryCareSystem": "Здравоохранение на уровне сообщества",
+        "medicationDatabase": "Национальный список основных лекарств",
+        "coreTerms": {
+          "discretionaryScreening": "Целевой скрининг",
+          "universalScreening": "Всеобщий охват медицинской помощью",
+          "chronicDiseaseManagement": "Управление неинфекционными заболеваниями",
+          "publicFunding": "Покрывается PMJAY",
+          "privateOption": "Доступно через Jan Aushadhi",
+          "notAvailable": "Не одобрено в Индии",
+          "approved": "Одобрено CDSCO",
+          "suspended": "Приостановлено CDSCO",
+          "restricted": "Ограниченное применение",
+          "essentialMedicine": "Жизненно важное лекарство (NLEM)",
+          "genericAvailable": "Доступна дженерик-формула",
+          "brandName": "Торговое название"
+        }
+      },
+      "europeanUnion": {
+        "name": "Европейский Союз",
+        "healthSystemName": "Национальные системы здравоохранения",
+        "healthSystemAbbr": "NHS/Государственные",
+        "regulatoryBody": "Европейское агентство по лекарственным средствам",
+        "regulatoryBodyAbbr": "EMA",
+        "primaryCareSystem": "Первичная медицинская помощь",
+        "medicationDatabase": "Список основных лекарств ВОЗ (EML)",
+        "coreTerms": {
+          "discretionaryScreening": "Оппортунистический скрининг",
+          "universalScreening": "Популяционный скрининг",
+          "chronicDiseaseManagement": "Управление долгосрочным лечением",
+          "publicFunding": "Покрывается государственным медицинским страхованием",
+          "privateOption": "Доступно в частном секторе",
+          "notAvailable": "Не одобрено в ЕС",
+          "approved": "Одобрено EMA",
+          "suspended": "Приостановлено EMA",
+          "restricted": "Условное одобрение",
+          "essentialMedicine": "Жизненно важное лекарство (EML)",
+          "genericAvailable": "Доступен дженерик",
+          "brandName": "Торговое название"
+        }
+      }
+    },
+    "medicationAvailability": {
+      "approved": "Лекарство одобрено регуляторным органом",
+      "conditionallyApproved": "Одобрено при определённых условиях",
+      "restricted": "Применение ограничено определёнными условиями",
+      "suspended": "Действует регуляторная приостановка",
+      "notApproved": "Не одобрено регуляторным органом",
+      "investigational": "На стадии исследования",
+      "discontinued": "Снято с производства",
+      "genericVersion": "Доступна дженерик-формула"
+    },
+    "publicHealthSystems": {
+      "sus": { "name": "SUS - Единая система здравоохранения Бразилии", "coverage": "Универсальное покрытие населения Бразилии", "fundingModel": "Единое государственное финансирование" },
+      "janAushadhi": { "name": "Jan Aushadhi - Индийская программа доступных лекарств", "coverage": "Доступные дженерики по всей стране", "fundingModel": "Субсидируемые государством дженерики" },
+      "pmjay": { "name": "PMJAY - Ayushman Bharat (Индийская программа здравоохранения)", "coverage": "500 миллионов получателей, госпитальное покрытие", "fundingModel": "Государственное медицинское страхование" },
+      "nhsUK": { "name": "NHS - Национальная служба здравоохранения Великобритании", "coverage": "Универсальное покрытие населения Великобритании", "fundingModel": "Финансирование через налоги" },
+      "gesGermany": { "name": "GKV - Обязательное медицинское страхование Германии", "coverage": "Обязательное медицинское страхование", "fundingModel": "Взносы социального страхования" }
+    },
+    "diseaseClassifications": {
+      "infectious": "Инфекционное заболевание",
+      "nonCommunicable": "Неинфекционное заболевание (НИЗ)",
+      "neonatalDisease": "Неонатальное расстройство",
+      "geneticDisorder": "Генетическое расстройство",
+      "mentalHealth": "Психическое расстройство",
+      "rareDisease": "Редкое заболевание",
+      "occupationalDisease": "Профессиональное заболевание"
+    },
+    "screeningLevels": {
+      "primary": "Первичная профилактика - Модификация образа жизни",
+      "secondary": "Вторичная профилактика - Раннее выявление",
+      "tertiary": "Третичная профилактика - Управление осложнениями",
+      "quartenary": "Четвертичная профилактика - Предотвращение гипердиагностики"
+    }
+  }
+}

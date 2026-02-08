@@ -32,6 +32,17 @@ api/setup/import-data.php
 api/setup/fix-schema.php
 api/setup/data-migration.sql
 
+# storybook
+storybook-static/
+
+# legacy API (deprecated Feb 2026)
+api-legacy/
+api-deploy.zip
+test_api.php
+
+# supabase temp
+supabase/.temp/
+
 # vercel
 .vercel
 

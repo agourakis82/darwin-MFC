@@ -30,6 +30,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   let communityMessages = {};
   let clinicalCasesMessages = {};
   let authMessages = {};
+  let regionalMessages = {};
 
   try {
     diseasesMessages = (await import(`../messages/${locale}/diseases.json`)).default;
@@ -61,6 +62,12 @@ export default getRequestConfig(async ({ requestLocale }) => {
     // File doesn't exist yet, use empty object
   }
 
+  try {
+    regionalMessages = (await import(`../messages/${locale}/regional.json`)).default;
+  } catch (e) {
+    // File doesn't exist yet, use empty object
+  }
+
   return {
     locale,
     messages: {
@@ -69,6 +76,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       ...communityMessages,
       ...clinicalCasesMessages,
       ...authMessages,
+      ...regionalMessages,
       diseases: diseasesMessages,
     },
   };

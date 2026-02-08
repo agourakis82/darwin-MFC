@@ -132,6 +132,20 @@ export const PHARMACOGENES: GeneInfo[] = [
     chromosome: '1p21.3',
     function: 'Metabolismo de 5-fluorouracil e capecitabina',
     clinicallyRelevantAlleles: ['*1', '*2A', '*4', '*5', '*6', '*7', '*9A', '*13']
+  },
+  {
+    id: 'VKORC1',
+    name: 'Vitamin K Epoxide Reductase Complex Subunit 1',
+    chromosome: '16p11.2',
+    function: 'Sensibilidade à varfarina e outros antagonistas da vitamina K',
+    clinicallyRelevantAlleles: ['-1639G>A (rs9923231)']
+  },
+  {
+    id: 'SLCO1B1',
+    name: 'Solute Carrier Organic Anion Transporter Family Member 1B1',
+    chromosome: '12p12.2',
+    function: 'Transporte hepático de estatinas; variantes associadas a miopatia por estatinas',
+    clinicallyRelevantAlleles: ['rs4149056 (Val174Ala)']
   }
 ];
 
@@ -323,6 +337,641 @@ export const DRUG_INTERACTIONS: GeneDrugInteraction[] = [
     recommendation: 'CONTRAINDICADO. Risco de toxicidade grave/fatal. Usar alternativa terapêutica.',
     evidenceLevel: 'strong',
     source: 'CPIC'
+  },
+  // CYP2D6 — Amitriptilina
+  {
+    gene: 'CYP2D6',
+    medication: 'amitriptilina',
+    medicationName: 'Amitriptilina',
+    alleles: ['*4/*4', '*4/*5', '*5/*5'],
+    phenotype: 'poor',
+    recommendation: 'Evitar amitriptilina em metabolizadores pobres ou reduzir dose em pelo menos 50% e monitorar níveis plasmáticos. Considerar alternativa não dependente de CYP2D6.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2D6',
+    medication: 'amitriptilina',
+    medicationName: 'Amitriptilina',
+    alleles: ['*1/*4', '*1/*10'],
+    phenotype: 'intermediate',
+    recommendation: 'Reduzir dose inicial em 25% para metabolizadores intermediários e monitorar resposta clínica e efeitos adversos.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2D6',
+    medication: 'amitriptilina',
+    medicationName: 'Amitriptilina',
+    alleles: ['*1/*1', '*1/*2', '*2/*2'],
+    phenotype: 'normal',
+    recommendation: 'Iniciar com dose padrão de amitriptilina e ajustar conforme resposta clínica e tolerância.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  // CYP2D6 — Nortriptilina
+  {
+    gene: 'CYP2D6',
+    medication: 'nortriptilina',
+    medicationName: 'Nortriptilina',
+    alleles: ['*4/*4', '*4/*5', '*5/*5'],
+    phenotype: 'poor',
+    recommendation: 'Evitar nortriptilina em metabolizadores pobres ou reduzir dose em pelo menos 50% e monitorar níveis plasmáticos. Considerar alternativa.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2D6',
+    medication: 'nortriptilina',
+    medicationName: 'Nortriptilina',
+    alleles: ['*1/*4', '*1/*10'],
+    phenotype: 'intermediate',
+    recommendation: 'Reduzir dose inicial em 25% para metabolizadores intermediários e monitorar níveis e efeitos adversos.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2D6',
+    medication: 'nortriptilina',
+    medicationName: 'Nortriptilina',
+    alleles: ['*1/*1', '*1/*2', '*2/*2'],
+    phenotype: 'normal',
+    recommendation: 'Iniciar com dose padrão de nortriptilina e ajustar baseado na resposta clínica.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  // CYP2D6 — Fluoxetina
+  {
+    gene: 'CYP2D6',
+    medication: 'fluoxetina',
+    medicationName: 'Fluoxetina',
+    alleles: ['*4/*4', '*4/*5', '*5/*5'],
+    phenotype: 'poor',
+    recommendation: 'Para metabolizadores pobres, considerar alternativa ou reduzir dose de fluoxetina e monitorar efeitos adversos devido a maior exposição.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2D6',
+    medication: 'fluoxetina',
+    medicationName: 'Fluoxetina',
+    alleles: ['*1/*1', '*1/*2', '*2/*2'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de fluoxetina para metabolizadores normais, ajustando conforme necessário.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  // CYP2D6 — Paroxetina
+  {
+    gene: 'CYP2D6',
+    medication: 'paroxetina',
+    medicationName: 'Paroxetina',
+    alleles: ['*4/*4', '*4/*5', '*5/*5'],
+    phenotype: 'poor',
+    recommendation: 'Evitar paroxetina em metabolizadores pobres ou usar dose reduzida e monitorar. Preferir alternativa.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2D6',
+    medication: 'paroxetina',
+    medicationName: 'Paroxetina',
+    alleles: ['*1/*4', '*1/*10'],
+    phenotype: 'intermediate',
+    recommendation: 'Reduzir dose de paroxetina em 30-50% para metabolizadores intermediários e monitorar.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2D6',
+    medication: 'paroxetina',
+    medicationName: 'Paroxetina',
+    alleles: ['*1/*1', '*1/*2', '*2/*2'],
+    phenotype: 'normal',
+    recommendation: 'Iniciar com dose padrão de paroxetina e titular conforme resposta.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  // CYP2D6 — Venlafaxina
+  {
+    gene: 'CYP2D6',
+    medication: 'venlafaxina',
+    medicationName: 'Venlafaxina',
+    alleles: ['*4/*4', '*4/*5', '*5/*5'],
+    phenotype: 'poor',
+    recommendation: 'Para metabolizadores pobres, reduzir dose de venlafaxina ou escolher alternativa devido a risco de efeitos adversos.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2D6',
+    medication: 'venlafaxina',
+    medicationName: 'Venlafaxina',
+    alleles: ['*1/*1', '*1/*2', '*2/*2'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de venlafaxina para metabolizadores normais.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  // CYP2D6 — Metoprolol
+  {
+    gene: 'CYP2D6',
+    medication: 'metoprolol',
+    medicationName: 'Metoprolol',
+    alleles: ['*4/*4', '*4/*5', '*5/*5'],
+    phenotype: 'poor',
+    recommendation: 'Evitar metoprolol em metabolizadores pobres ou reduzir dose em 50% e monitorar resposta cardiovascular.',
+    evidenceLevel: 'moderate',
+    source: 'DPWG'
+  },
+  {
+    gene: 'CYP2D6',
+    medication: 'metoprolol',
+    medicationName: 'Metoprolol',
+    alleles: ['*1/*4', '*1/*10'],
+    phenotype: 'intermediate',
+    recommendation: 'Reduzir dose inicial de metoprolol em 30% para metabolizadores intermediários e ajustar conforme necessário.',
+    evidenceLevel: 'moderate',
+    source: 'DPWG'
+  },
+  {
+    gene: 'CYP2D6',
+    medication: 'metoprolol',
+    medicationName: 'Metoprolol',
+    alleles: ['*1/*1', '*1/*2', '*2/*2'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de metoprolol para metabolizadores normais.',
+    evidenceLevel: 'moderate',
+    source: 'DPWG'
+  },
+  // CYP2D6 — Carvedilol
+  {
+    gene: 'CYP2D6',
+    medication: 'carvedilol',
+    medicationName: 'Carvedilol',
+    alleles: ['*4/*4', '*4/*5', '*5/*5'],
+    phenotype: 'poor',
+    recommendation: 'Para metabolizadores pobres, reduzir dose de carvedilol e monitorar efeitos beta-bloqueadores aumentados.',
+    evidenceLevel: 'moderate',
+    source: 'DPWG'
+  },
+  {
+    gene: 'CYP2D6',
+    medication: 'carvedilol',
+    medicationName: 'Carvedilol',
+    alleles: ['*1/*1', '*1/*2', '*2/*2'],
+    phenotype: 'normal',
+    recommendation: 'Iniciar com dose padrão de carvedilol.',
+    evidenceLevel: 'moderate',
+    source: 'DPWG'
+  },
+  // CYP2D6 — Ondansetrona
+  {
+    gene: 'CYP2D6',
+    medication: 'ondansetrona',
+    medicationName: 'Ondansetrona',
+    alleles: ['*4/*4', '*4/*5', '*5/*5'],
+    phenotype: 'poor',
+    recommendation: 'Para metabolizadores pobres, maior risco de prolongamento QT; considerar alternativa como granisetrona.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2D6',
+    medication: 'ondansetrona',
+    medicationName: 'Ondansetrona',
+    alleles: ['*1/*1', '*1/*2', '*2/*2'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de ondansetrona para metabolizadores normais.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  // CYP2D6 — Tamoxifeno
+  {
+    gene: 'CYP2D6',
+    medication: 'tamoxifeno',
+    medicationName: 'Tamoxifeno',
+    alleles: ['*4/*4', '*4/*5', '*5/*5'],
+    phenotype: 'poor',
+    recommendation: 'Metabolizadores pobres têm menor formação de endoxifen; considerar alternativa como inibidor de aromatase.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2D6',
+    medication: 'tamoxifeno',
+    medicationName: 'Tamoxifeno',
+    alleles: ['*1/*4', '*1/*10'],
+    phenotype: 'intermediate',
+    recommendation: 'Para metabolizadores intermediários, monitorar eficácia de tamoxifeno ou considerar alternativa.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2D6',
+    medication: 'tamoxifeno',
+    medicationName: 'Tamoxifeno',
+    alleles: ['*1/*1', '*1/*2', '*2/*2'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de tamoxifeno para metabolizadores normais.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  // CYP2C19 — Escitalopram
+  {
+    gene: 'CYP2C19',
+    medication: 'escitalopram',
+    medicationName: 'Escitalopram',
+    alleles: ['*2/*2', '*2/*3', '*3/*3'],
+    phenotype: 'poor',
+    recommendation: 'Reduzir dose de escitalopram em 50% para metabolizadores pobres e monitorar efeitos adversos.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2C19',
+    medication: 'escitalopram',
+    medicationName: 'Escitalopram',
+    alleles: ['*1/*1'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de escitalopram para metabolizadores normais.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  // CYP2C19 — Sertralina
+  {
+    gene: 'CYP2C19',
+    medication: 'sertralina',
+    medicationName: 'Sertralina',
+    alleles: ['*2/*2', '*2/*3', '*3/*3'],
+    phenotype: 'poor',
+    recommendation: 'Para metabolizadores pobres, reduzir dose máxima de sertralina em 50% devido a maior exposição.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2C19',
+    medication: 'sertralina',
+    medicationName: 'Sertralina',
+    alleles: ['*1/*17'],
+    phenotype: 'rapid',
+    recommendation: 'Pode ser necessária dose mais alta de sertralina para metabolizadores rápidos se resposta inadequada.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2C19',
+    medication: 'sertralina',
+    medicationName: 'Sertralina',
+    alleles: ['*1/*1'],
+    phenotype: 'normal',
+    recommendation: 'Iniciar com dose padrão de sertralina.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  // CYP2C19 — Voriconazol
+  {
+    gene: 'CYP2C19',
+    medication: 'voriconazol',
+    medicationName: 'Voriconazol',
+    alleles: ['*2/*2', '*2/*3', '*3/*3'],
+    phenotype: 'poor',
+    recommendation: 'Para metabolizadores pobres, usar dose padrão de voriconazol mas monitorar níveis plasmáticos e toxicidade.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2C19',
+    medication: 'voriconazol',
+    medicationName: 'Voriconazol',
+    alleles: ['*1/*2', '*1/*3'],
+    phenotype: 'intermediate',
+    recommendation: 'Dose padrão de voriconazol para metabolizadores intermediários, com monitoramento terapêutico de níveis.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2C19',
+    medication: 'voriconazol',
+    medicationName: 'Voriconazol',
+    alleles: ['*1/*17'],
+    phenotype: 'rapid',
+    recommendation: 'Aumentar dose de voriconazol em 50% para metabolizadores rápidos e monitorar níveis para eficácia.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2C19',
+    medication: 'voriconazol',
+    medicationName: 'Voriconazol',
+    alleles: ['*1/*1'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de voriconazol com monitoramento se necessário.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  // CYP2C19 — Lansoprazol
+  {
+    gene: 'CYP2C19',
+    medication: 'lansoprazol',
+    medicationName: 'Lansoprazol',
+    alleles: ['*2/*2', '*2/*3', '*3/*3'],
+    phenotype: 'poor',
+    recommendation: 'Para metabolizadores pobres, usar dose padrão de lansoprazol; maior inibição ácida esperada.',
+    evidenceLevel: 'moderate',
+    source: 'DPWG'
+  },
+  {
+    gene: 'CYP2C19',
+    medication: 'lansoprazol',
+    medicationName: 'Lansoprazol',
+    alleles: ['*1/*1'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de lansoprazol para metabolizadores normais.',
+    evidenceLevel: 'moderate',
+    source: 'DPWG'
+  },
+  // CYP2C19 — Pantoprazol
+  {
+    gene: 'CYP2C19',
+    medication: 'pantoprazol',
+    medicationName: 'Pantoprazol',
+    alleles: ['*2/*2', '*2/*3', '*3/*3'],
+    phenotype: 'poor',
+    recommendation: 'Metabolizadores pobres podem ter maior exposição a pantoprazol; dose padrão geralmente adequada.',
+    evidenceLevel: 'moderate',
+    source: 'DPWG'
+  },
+  {
+    gene: 'CYP2C19',
+    medication: 'pantoprazol',
+    medicationName: 'Pantoprazol',
+    alleles: ['*1/*1'],
+    phenotype: 'normal',
+    recommendation: 'Iniciar com dose padrão de pantoprazol.',
+    evidenceLevel: 'moderate',
+    source: 'DPWG'
+  },
+  // CYP2C9 — Fenitoína
+  {
+    gene: 'CYP2C9',
+    medication: 'fenitoina',
+    medicationName: 'Fenitoína',
+    alleles: ['*2/*2', '*2/*3', '*3/*3'],
+    phenotype: 'poor',
+    recommendation: 'Para metabolizadores pobres, reduzir dose de fenitoína em 30% e monitorar níveis séricos para evitar toxicidade.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2C9',
+    medication: 'fenitoina',
+    medicationName: 'Fenitoína',
+    alleles: ['*1/*1'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de fenitoína com monitoramento de níveis.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  // CYP2C9 — Celecoxibe
+  {
+    gene: 'CYP2C9',
+    medication: 'celecoxibe',
+    medicationName: 'Celecoxibe',
+    alleles: ['*2/*2', '*2/*3', '*3/*3'],
+    phenotype: 'poor',
+    recommendation: 'Reduzir dose máxima de celecoxibe para 100mg/dia em metabolizadores pobres.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2C9',
+    medication: 'celecoxibe',
+    medicationName: 'Celecoxibe',
+    alleles: ['*1/*1'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de celecoxibe.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  // CYP2C9 — Ibuprofeno
+  {
+    gene: 'CYP2C9',
+    medication: 'ibuprofeno',
+    medicationName: 'Ibuprofeno',
+    alleles: ['*2/*2', '*2/*3', '*3/*3'],
+    phenotype: 'poor',
+    recommendation: 'Para metabolizadores pobres, usar dose mais baixa de ibuprofeno e monitorar efeitos adversos gastrointestinais.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2C9',
+    medication: 'ibuprofeno',
+    medicationName: 'Ibuprofeno',
+    alleles: ['*1/*1'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de ibuprofeno.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  // CYP2C9 — Losartana
+  {
+    gene: 'CYP2C9',
+    medication: 'losartana',
+    medicationName: 'Losartana',
+    alleles: ['*2/*2', '*2/*3', '*3/*3'],
+    phenotype: 'poor',
+    recommendation: 'Metabolizadores pobres podem ter menor ativação de losartana; considerar monitoramento de pressão arterial.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  {
+    gene: 'CYP2C9',
+    medication: 'losartana',
+    medicationName: 'Losartana',
+    alleles: ['*1/*1'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de losartana.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  // TPMT — Mercaptopurina
+  {
+    gene: 'TPMT',
+    medication: 'mercaptopurina',
+    medicationName: 'Mercaptopurina',
+    alleles: ['*3A/*3A', '*3C/*3C', '*2/*3A'],
+    phenotype: 'poor',
+    recommendation: 'Para metabolizadores pobres de TPMT, reduzir dose de mercaptopurina para 10% do padrão e monitorar contagem sanguínea.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'TPMT',
+    medication: 'mercaptopurina',
+    medicationName: 'Mercaptopurina',
+    alleles: ['*1/*3A', '*1/*3C'],
+    phenotype: 'intermediate',
+    recommendation: 'Reduzir dose de mercaptopurina em 30-50% para metabolizadores intermediários e monitorar toxicidade.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'TPMT',
+    medication: 'mercaptopurina',
+    medicationName: 'Mercaptopurina',
+    alleles: ['*1/*1'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de mercaptopurina com monitoramento rotineiro.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  // TPMT — Tioguanina
+  {
+    gene: 'TPMT',
+    medication: 'tioguanina',
+    medicationName: 'Tioguanina',
+    alleles: ['*3A/*3A', '*3C/*3C', '*2/*3A'],
+    phenotype: 'poor',
+    recommendation: 'Evitar tioguanina ou usar dose muito baixa (10% da padrão) em metabolizadores pobres devido a alto risco de mielossupressão.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'TPMT',
+    medication: 'tioguanina',
+    medicationName: 'Tioguanina',
+    alleles: ['*1/*3A', '*1/*3C'],
+    phenotype: 'intermediate',
+    recommendation: 'Reduzir dose de tioguanina em 30-50% e monitorar contagens sanguíneas semanalmente.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'TPMT',
+    medication: 'tioguanina',
+    medicationName: 'Tioguanina',
+    alleles: ['*1/*1'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de tioguanina.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  // DPYD — Capecitabina
+  {
+    gene: 'DPYD',
+    medication: 'capecitabina',
+    medicationName: 'Capecitabina',
+    alleles: ['*2A/*2A'],
+    phenotype: 'poor',
+    recommendation: 'CONTRAINDICADO. Risco de toxicidade grave/fatal por capecitabina. Usar alternativa terapêutica.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'DPYD',
+    medication: 'capecitabina',
+    medicationName: 'Capecitabina',
+    alleles: ['*1/*2A'],
+    phenotype: 'intermediate',
+    recommendation: 'Reduzir dose inicial de capecitabina em 25-50% para função intermediária e monitorar efeitos adversos.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'DPYD',
+    medication: 'capecitabina',
+    medicationName: 'Capecitabina',
+    alleles: ['*1/*1'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de capecitabina conforme protocolo oncológico.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  // VKORC1 — Varfarina
+  {
+    gene: 'VKORC1',
+    medication: 'varfarina',
+    medicationName: 'Varfarina',
+    alleles: ['A/G'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão inicial de varfarina para diplótipo A/G, ajustando com base no INR.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'VKORC1',
+    medication: 'varfarina',
+    medicationName: 'Varfarina',
+    alleles: ['A/A'],
+    phenotype: 'poor',
+    recommendation: 'REDUZIR dose inicial de varfarina. Sensibilidade aumentada ao VKORC1 A/A. Iniciar com dose baixa e titular conforme INR.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  // SLCO1B1 — Sinvastatina
+  {
+    gene: 'SLCO1B1',
+    medication: 'sinvastatina',
+    medicationName: 'Sinvastatina',
+    alleles: ['rs4149056 TC', 'rs4149056 CC'],
+    phenotype: 'poor',
+    recommendation: 'EVITAR sinvastatina ou REDUZIR dose máxima para 20mg. Risco aumentado de miopatia.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  {
+    gene: 'SLCO1B1',
+    medication: 'sinvastatina',
+    medicationName: 'Sinvastatina',
+    alleles: ['rs4149056 TT'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de sinvastatina para função normal de SLCO1B1.',
+    evidenceLevel: 'strong',
+    source: 'CPIC'
+  },
+  // SLCO1B1 — Atorvastatina
+  {
+    gene: 'SLCO1B1',
+    medication: 'atorvastatina',
+    medicationName: 'Atorvastatina',
+    alleles: ['rs4149056 TC', 'rs4149056 CC'],
+    phenotype: 'poor',
+    recommendation: 'Considerar redução de dose de atorvastatina ou alternativa em caso de função pobre de SLCO1B1 para minimizar risco de miopatia.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  {
+    gene: 'SLCO1B1',
+    medication: 'atorvastatina',
+    medicationName: 'Atorvastatina',
+    alleles: ['rs4149056 TT'],
+    phenotype: 'normal',
+    recommendation: 'Dose padrão de atorvastatina.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  // SLCO1B1 — Rosuvastatina
+  {
+    gene: 'SLCO1B1',
+    medication: 'rosuvastatina',
+    medicationName: 'Rosuvastatina',
+    alleles: ['rs4149056 TC', 'rs4149056 CC'],
+    phenotype: 'poor',
+    recommendation: 'Reduzir dose de rosuvastatina em 50% para função pobre de SLCO1B1 devido a maior exposição e risco de miopatia.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
+  },
+  {
+    gene: 'SLCO1B1',
+    medication: 'rosuvastatina',
+    medicationName: 'Rosuvastatina',
+    alleles: ['rs4149056 TT'],
+    phenotype: 'normal',
+    recommendation: 'Iniciar com dose padrão de rosuvastatina.',
+    evidenceLevel: 'moderate',
+    source: 'CPIC'
   }
 ];
 
@@ -376,6 +1025,16 @@ const DIPLOTYPE_PHENOTYPE_MAP: Record<string, Record<string, string>> = {
     '*1/*1': 'normal',
     '*1/*2A': 'intermediate',
     '*2A/*2A': 'poor'
+  },
+  VKORC1: {
+    'G/G': 'normal',
+    'A/G': 'normal',
+    'A/A': 'poor'
+  },
+  SLCO1B1: {
+    'rs4149056 TT': 'normal',
+    'rs4149056 TC': 'intermediate',
+    'rs4149056 CC': 'poor'
   }
 };
 

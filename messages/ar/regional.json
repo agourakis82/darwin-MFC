@@ -1,0 +1,107 @@
+{
+  "regionalTerminology": {
+    "regions": {
+      "brazil": {
+        "name": "البرازيل",
+        "healthSystemName": "نظام الصحة الموحد",
+        "healthSystemAbbr": "SUS",
+        "regulatoryBody": "الوكالة الوطنية للرقابة الصحية",
+        "regulatoryBodyAbbr": "ANVISA",
+        "primaryCareSystem": "نظام الرعاية الصحية الأولية",
+        "medicationDatabase": "قائمة الأدوية الأساسية الوطنية",
+        "coreTerms": {
+          "discretionaryScreening": "فحص انتقائي",
+          "universalScreening": "فحص سكاني شامل",
+          "chronicDiseaseManagement": "إدارة الأمراض المزمنة",
+          "publicFunding": "مقدم من SUS",
+          "privateOption": "متاح في السوق الخاص",
+          "notAvailable": "غير متوفر في البرازيل",
+          "approved": "مسجل لدى ANVISA",
+          "suspended": "معلق من قبل ANVISA",
+          "restricted": "استخدام مقيد",
+          "essentialMedicine": "دواء أساسي",
+          "genericAvailable": "جنيسي متوفر",
+          "brandName": "الاسم التجاري"
+        }
+      },
+      "india": {
+        "name": "الهند",
+        "healthSystemName": "البعثة الصحية الوطنية",
+        "healthSystemAbbr": "NHM",
+        "regulatoryBody": "المنظمة المركزية لمعايير الأدوية والرقابة",
+        "regulatoryBodyAbbr": "CDSCO",
+        "primaryCareSystem": "الرعاية الصحية الأولية المجتمعية",
+        "medicationDatabase": "القائمة الوطنية للأدوية الأساسية",
+        "coreTerms": {
+          "discretionaryScreening": "فحص موجه",
+          "universalScreening": "التغطية الصحية الشاملة",
+          "chronicDiseaseManagement": "إدارة الأمراض غير المعدية",
+          "publicFunding": "مغطى بموجب PMJAY",
+          "privateOption": "متاح عبر Jan Aushadhi",
+          "notAvailable": "غير معتمد في الهند",
+          "approved": "معتمد من CDSCO",
+          "suspended": "معلق من قبل CDSCO",
+          "restricted": "استخدام مقيد",
+          "essentialMedicine": "دواء أساسي (NLEM)",
+          "genericAvailable": "تركيبة جنيسية متوفرة",
+          "brandName": "الاسم التجاري"
+        }
+      },
+      "europeanUnion": {
+        "name": "الاتحاد الأوروبي",
+        "healthSystemName": "أنظمة الصحة الوطنية العامة",
+        "healthSystemAbbr": "NHS/عام",
+        "regulatoryBody": "وكالة الأدوية الأوروبية",
+        "regulatoryBodyAbbr": "EMA",
+        "primaryCareSystem": "الرعاية الأولية / الطب العام",
+        "medicationDatabase": "قائمة الأدوية الأساسية لمنظمة الصحة العالمية",
+        "coreTerms": {
+          "discretionaryScreening": "فحص انتقائي",
+          "universalScreening": "فحص سكاني شامل",
+          "chronicDiseaseManagement": "إدارة الرعاية طويلة الأمد",
+          "publicFunding": "مغطى بالتأمين الصحي العام",
+          "privateOption": "متاح في القطاع الخاص",
+          "notAvailable": "غير معتمد في الاتحاد الأوروبي",
+          "approved": "معتمد من EMA",
+          "suspended": "معلق من قبل EMA",
+          "restricted": "موافقة مشروطة",
+          "essentialMedicine": "دواء أساسي (EML)",
+          "genericAvailable": "جنيسي متوفر",
+          "brandName": "الاسم التجاري"
+        }
+      }
+    },
+    "medicationAvailability": {
+      "approved": "دواء معتمد من الجهة التنظيمية",
+      "conditionallyApproved": "معتمد بشروط محددة",
+      "restricted": "استخدام مقيد بشروط محددة",
+      "suspended": "تعليق تنظيمي ساري المفعول",
+      "notApproved": "غير معتمد من الجهة التنظيمية",
+      "investigational": "قيد التحقيق",
+      "discontinued": "لم يعد مسوقاً",
+      "genericVersion": "تركيبة جنيسية متوفرة"
+    },
+    "publicHealthSystems": {
+      "sus": { "name": "SUS - نظام الصحة العامة البرازيلي", "coverage": "تغطية شاملة للسكان البرازيليين", "fundingModel": "تمويل عام موحد" },
+      "janAushadhi": { "name": "Jan Aushadhi - برنامج الأدوية الجنيسية الهندي", "coverage": "أدوية جنيسية ميسورة التكلفة على مستوى البلاد", "fundingModel": "أدوية جنيسية مدعومة حكومياً" },
+      "pmjay": { "name": "PMJAY - Ayushman Bharat (برنامج الصحة الهندي)", "coverage": "500 مليون مستفيد، تغطية استشفائية", "fundingModel": "تأمين صحي حكومي" },
+      "nhsUK": { "name": "NHS - الخدمة الصحية الوطنية البريطانية", "coverage": "تغطية شاملة لسكان المملكة المتحدة", "fundingModel": "نظام صحي ممول من الضرائب" },
+      "gesGermany": { "name": "GKV - التأمين الصحي الإلزامي الألماني", "coverage": "تأمين صحي إلزامي", "fundingModel": "اشتراكات التأمين الاجتماعي" }
+    },
+    "diseaseClassifications": {
+      "infectious": "مرض معدي",
+      "nonCommunicable": "مرض غير معدي (NCD)",
+      "neonatalDisease": "اضطراب حديثي الولادة",
+      "geneticDisorder": "اضطراب وراثي",
+      "mentalHealth": "اضطراب الصحة النفسية",
+      "rareDisease": "مرض نادر",
+      "occupationalDisease": "مرض مهني"
+    },
+    "screeningLevels": {
+      "primary": "الوقاية الأولية - تعديل نمط الحياة",
+      "secondary": "الوقاية الثانوية - الكشف المبكر",
+      "tertiary": "الوقاية الثالثية - إدارة المضاعفات",
+      "quartenary": "الوقاية الرباعية - منع التشخيص المفرط"
+    }
+  }
+}

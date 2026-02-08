@@ -1,0 +1,107 @@
+{
+  "regionalTerminology": {
+    "regions": {
+      "brazil": {
+        "name": "Βραζιλία",
+        "healthSystemName": "Ενιαίο Σύστημα Υγείας",
+        "healthSystemAbbr": "SUS",
+        "regulatoryBody": "Εθνική Υπηρεσία Εποπτείας Υγείας",
+        "regulatoryBodyAbbr": "ANVISA",
+        "primaryCareSystem": "Στρατηγική Υγείας της Οικογένειας",
+        "medicationDatabase": "Εθνικός Κατάλογος Βασικών Φαρμάκων",
+        "coreTerms": {
+          "discretionaryScreening": "Ευκαιριακός Προσυμπτωματικός Έλεγχος",
+          "universalScreening": "Πληθυσμιακός Προσυμπτωματικός Έλεγχος",
+          "chronicDiseaseManagement": "Διαχείριση Χρόνιων Παθήσεων",
+          "publicFunding": "Παρέχεται από το SUS",
+          "privateOption": "Διαθέσιμο στην ιδιωτική αγορά",
+          "notAvailable": "Μη διαθέσιμο στη Βραζιλία",
+          "approved": "Εγγεγραμμένο στην ANVISA",
+          "suspended": "Ανασταλμένο από την ANVISA",
+          "restricted": "Περιορισμένη χρήση",
+          "essentialMedicine": "Βασικό Φάρμακο",
+          "genericAvailable": "Γενόσημο διαθέσιμο",
+          "brandName": "Εμπορική ονομασία"
+        }
+      },
+      "india": {
+        "name": "Ινδία",
+        "healthSystemName": "Εθνική Αποστολή Υγείας",
+        "healthSystemAbbr": "NHM",
+        "regulatoryBody": "Κεντρικός Οργανισμός Ελέγχου Προτύπων Φαρμάκων",
+        "regulatoryBodyAbbr": "CDSCO",
+        "primaryCareSystem": "Κοινοτική Πρωτοβάθμια Φροντίδα",
+        "medicationDatabase": "Εθνικός Κατάλογος Βασικών Φαρμάκων",
+        "coreTerms": {
+          "discretionaryScreening": "Στοχευμένος Προσυμπτωματικός Έλεγχος",
+          "universalScreening": "Καθολική Κάλυψη Υγείας",
+          "chronicDiseaseManagement": "Διαχείριση Μη Μεταδοτικών Νοσημάτων",
+          "publicFunding": "Καλύπτεται από το PMJAY",
+          "privateOption": "Διαθέσιμο μέσω Jan Aushadhi",
+          "notAvailable": "Δεν έχει εγκριθεί στην Ινδία",
+          "approved": "Εγκρίθηκε από τον CDSCO",
+          "suspended": "Ανασταλμένο από τον CDSCO",
+          "restricted": "Περιορισμένη χρήση",
+          "essentialMedicine": "Βασικό Φάρμακο (NLEM)",
+          "genericAvailable": "Γενόσημη σύνθεση διαθέσιμη",
+          "brandName": "Εμπορική ονομασία"
+        }
+      },
+      "europeanUnion": {
+        "name": "Ευρωπαϊκή Ένωση",
+        "healthSystemName": "Εθνικά Συστήματα Υγείας / Δημόσια Υγεία",
+        "healthSystemAbbr": "NHS/Δημόσιο",
+        "regulatoryBody": "Ευρωπαϊκός Οργανισμός Φαρμάκων",
+        "regulatoryBodyAbbr": "EMA",
+        "primaryCareSystem": "Πρωτοβάθμια Φροντίδα / Γενική Ιατρική",
+        "medicationDatabase": "Κατάλογος Βασικών Φαρμάκων ΠΟΥ (EML)",
+        "coreTerms": {
+          "discretionaryScreening": "Ευκαιριακός Προσυμπτωματικός Έλεγχος",
+          "universalScreening": "Πληθυσμιακός Προσυμπτωματικός Έλεγχος",
+          "chronicDiseaseManagement": "Διαχείριση Μακροχρόνιας Φροντίδας",
+          "publicFunding": "Καλύπτεται από τη δημόσια ασφάλιση υγείας",
+          "privateOption": "Διαθέσιμο στον ιδιωτικό τομέα",
+          "notAvailable": "Δεν έχει εγκριθεί στην ΕΕ",
+          "approved": "Εγκρίθηκε από τον EMA",
+          "suspended": "Ανασταλμένο από τον EMA",
+          "restricted": "Υπό όρους έγκριση",
+          "essentialMedicine": "Βασικό Φάρμακο (EML)",
+          "genericAvailable": "Γενόσημο διαθέσιμο",
+          "brandName": "Εμπορική ονομασία"
+        }
+      }
+    },
+    "medicationAvailability": {
+      "approved": "Φάρμακο εγκεκριμένο από ρυθμιστική αρχή",
+      "conditionallyApproved": "Εγκρίθηκε υπό συγκεκριμένους όρους",
+      "restricted": "Χρήση περιορισμένη σε συγκεκριμένες συνθήκες",
+      "suspended": "Ρυθμιστική αναστολή σε ισχύ",
+      "notApproved": "Δεν εγκρίθηκε από ρυθμιστική αρχή",
+      "investigational": "Υπό έρευνα",
+      "discontinued": "Δεν κυκλοφορεί πλέον",
+      "genericVersion": "Γενόσημη σύνθεση διαθέσιμη"
+    },
+    "publicHealthSystems": {
+      "sus": { "name": "SUS - Δημόσιο Σύστημα Υγείας της Βραζιλίας", "coverage": "Καθολική κάλυψη για τον πληθυσμό της Βραζιλίας", "fundingModel": "Ενιαία δημόσια χρηματοδότηση" },
+      "janAushadhi": { "name": "Jan Aushadhi - Ινδικό Πρόγραμμα Γενόσημων Φαρμάκων", "coverage": "Προσιτά γενόσημα φάρμακα σε εθνικό επίπεδο", "fundingModel": "Κυβερνητικά επιδοτούμενα γενόσημα" },
+      "pmjay": { "name": "PMJAY - Ayushman Bharat (Ινδικό Πρόγραμμα Υγείας)", "coverage": "500 εκατομμύρια δικαιούχοι, νοσοκομειακή κάλυψη", "fundingModel": "Κυβερνητική ασφάλιση υγείας" },
+      "nhsUK": { "name": "NHS - Εθνικό Σύστημα Υγείας του Ηνωμένου Βασιλείου", "coverage": "Καθολική κάλυψη για τον πληθυσμό του ΗΒ", "fundingModel": "Δημόσια υγεία χρηματοδοτούμενη από φόρους" },
+      "gesGermany": { "name": "GKV - Υποχρεωτική Ασφάλιση Υγείας Γερμανίας", "coverage": "Υποχρεωτική ασφάλιση υγείας", "fundingModel": "Εισφορές κοινωνικής ασφάλισης" }
+    },
+    "diseaseClassifications": {
+      "infectious": "Λοιμώδες Νόσημα",
+      "nonCommunicable": "Μη Μεταδοτικό Νόσημα (ΜΜΝ)",
+      "neonatalDisease": "Νεογνική Διαταραχή",
+      "geneticDisorder": "Γενετική Διαταραχή",
+      "mentalHealth": "Ψυχική Διαταραχή",
+      "rareDisease": "Σπάνιο Νόσημα",
+      "occupationalDisease": "Επαγγελματικό Νόσημα"
+    },
+    "screeningLevels": {
+      "primary": "Πρωτογενής Πρόληψη - Τροποποίηση τρόπου ζωής",
+      "secondary": "Δευτερογενής Πρόληψη - Πρώιμη ανίχνευση",
+      "tertiary": "Τριτογενής Πρόληψη - Διαχείριση επιπλοκών",
+      "quartenary": "Τεταρτογενής Πρόληψη - Πρόληψη υπερδιάγνωσης"
+    }
+  }
+}

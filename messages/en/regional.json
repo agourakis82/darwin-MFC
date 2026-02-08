@@ -1,0 +1,107 @@
+{
+  "regionalTerminology": {
+    "regions": {
+      "brazil": {
+        "name": "Brazil",
+        "healthSystemName": "SUS - Unified Health System",
+        "healthSystemAbbr": "SUS",
+        "regulatoryBody": "ANVISA - National Health Surveillance Agency",
+        "regulatoryBodyAbbr": "ANVISA",
+        "primaryCareSystem": "Primary Health Care (APS)",
+        "medicationDatabase": "RENAME - National Essential Medicines List",
+        "coreTerms": {
+          "discretionaryScreening": "Opportunistic Screening",
+          "universalScreening": "Population-Based Screening",
+          "chronicDiseaseManagement": "Chronic Disease Management",
+          "publicFunding": "Provided by SUS",
+          "privateOption": "Available in private market",
+          "notAvailable": "Not available in Brazil",
+          "approved": "Registered with ANVISA",
+          "suspended": "Suspended by ANVISA",
+          "restricted": "Restricted use",
+          "essentialMedicine": "Essential Medicine",
+          "genericAvailable": "Generic available",
+          "brandName": "Brand name"
+        }
+      },
+      "india": {
+        "name": "India",
+        "healthSystemName": "National Health Mission (NHM)",
+        "healthSystemAbbr": "NHM",
+        "regulatoryBody": "CDSCO - Central Drugs Standard Control Organisation",
+        "regulatoryBodyAbbr": "CDSCO",
+        "primaryCareSystem": "ASHA - Accredited Social Health Activists",
+        "medicationDatabase": "NLEM - National List of Essential Medicines",
+        "coreTerms": {
+          "discretionaryScreening": "Targeted Screening",
+          "universalScreening": "Universal Health Coverage",
+          "chronicDiseaseManagement": "Non-Communicable Disease Management",
+          "publicFunding": "Covered under PMJAY",
+          "privateOption": "Available through Jan Aushadhi",
+          "notAvailable": "Not approved in India",
+          "approved": "Approved by CDSCO",
+          "suspended": "Suspended by CDSCO",
+          "restricted": "Restricted use",
+          "essentialMedicine": "Essential Medicine (NLEM)",
+          "genericAvailable": "Generic formulation available",
+          "brandName": "Brand name"
+        }
+      },
+      "europeanUnion": {
+        "name": "European Union",
+        "healthSystemName": "National Health Services / Public Health Systems",
+        "healthSystemAbbr": "NHS/Public",
+        "regulatoryBody": "EMA - European Medicines Agency",
+        "regulatoryBodyAbbr": "EMA",
+        "primaryCareSystem": "Primary Care / General Practice",
+        "medicationDatabase": "WHO Essential Medicines List (EML)",
+        "coreTerms": {
+          "discretionaryScreening": "Opportunistic Screening",
+          "universalScreening": "Population-Based Screening",
+          "chronicDiseaseManagement": "Long-term Care Management",
+          "publicFunding": "Covered by public health insurance",
+          "privateOption": "Available privately",
+          "notAvailable": "Not approved in EU",
+          "approved": "Approved by EMA",
+          "suspended": "Suspended by EMA",
+          "restricted": "Conditional approval",
+          "essentialMedicine": "Essential Medicine (EML)",
+          "genericAvailable": "Generic available",
+          "brandName": "Trade name"
+        }
+      }
+    },
+    "medicationAvailability": {
+      "approved": "Drug approved by regulatory authority",
+      "conditionallyApproved": "Approved under specific conditions",
+      "restricted": "Use restricted to specific conditions",
+      "suspended": "Regulatory suspension in effect",
+      "notApproved": "Not approved by regulatory authority",
+      "investigational": "Under investigation",
+      "discontinued": "No longer marketed",
+      "genericVersion": "Generic formulation available"
+    },
+    "publicHealthSystems": {
+      "sus": { "name": "SUS - Brazilian Public Health System", "coverage": "Universal coverage for Brazilian population", "fundingModel": "Unified public funding" },
+      "janAushadhi": { "name": "Jan Aushadhi - Indian Generic Medicine Program", "coverage": "Affordable generic medications nationwide", "fundingModel": "Government-subsidized generic drugs" },
+      "pmjay": { "name": "PMJAY - Ayushman Bharat (Indian Health Scheme)", "coverage": "500 million beneficiaries, hospitalization coverage", "fundingModel": "Government health insurance" },
+      "nhsUK": { "name": "NHS - United Kingdom Health Service", "coverage": "Universal coverage for UK population", "fundingModel": "Tax-funded public healthcare" },
+      "gesGermany": { "name": "GKV - German Statutory Health Insurance", "coverage": "Mandatory health insurance", "fundingModel": "Social insurance contributions" }
+    },
+    "diseaseClassifications": {
+      "infectious": "Infectious Disease",
+      "nonCommunicable": "Non-Communicable Disease (NCD)",
+      "neonatalDisease": "Neonatal Disorder",
+      "geneticDisorder": "Genetic Disorder",
+      "mentalHealth": "Mental Health Disorder",
+      "rareDisease": "Rare Disease",
+      "occupationalDisease": "Occupational Disease"
+    },
+    "screeningLevels": {
+      "primary": "Primary Prevention - Lifestyle modification",
+      "secondary": "Secondary Prevention - Early detection",
+      "tertiary": "Tertiary Prevention - Complication management",
+      "quartenary": "Quaternary Prevention - Overdiagnosis prevention"
+    }
+  }
+}

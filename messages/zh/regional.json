@@ -1,0 +1,107 @@
+{
+  "regionalTerminology": {
+    "regions": {
+      "brazil": {
+        "name": "巴西",
+        "healthSystemName": "统一卫生系统",
+        "healthSystemAbbr": "SUS",
+        "regulatoryBody": "国家卫生监督局",
+        "regulatoryBodyAbbr": "ANVISA",
+        "primaryCareSystem": "家庭健康战略",
+        "medicationDatabase": "国家基本药物目录",
+        "coreTerms": {
+          "discretionaryScreening": "机会性筛查",
+          "universalScreening": "人群筛查",
+          "chronicDiseaseManagement": "慢性病管理",
+          "publicFunding": "由SUS提供",
+          "privateOption": "可在私立市场获取",
+          "notAvailable": "在巴西不可用",
+          "approved": "已在ANVISA注册",
+          "suspended": "被ANVISA暂停",
+          "restricted": "限制使用",
+          "essentialMedicine": "基本药物",
+          "genericAvailable": "仿制药可用",
+          "brandName": "商品名"
+        }
+      },
+      "india": {
+        "name": "印度",
+        "healthSystemName": "国家健康使命",
+        "healthSystemAbbr": "NHM",
+        "regulatoryBody": "中央药品标准控制组织",
+        "regulatoryBodyAbbr": "CDSCO",
+        "primaryCareSystem": "社区卫生保健",
+        "medicationDatabase": "国家基本药物清单",
+        "coreTerms": {
+          "discretionaryScreening": "靶向筛查",
+          "universalScreening": "全民健康覆盖",
+          "chronicDiseaseManagement": "非传染性疾病管理",
+          "publicFunding": "由PMJAY覆盖",
+          "privateOption": "可通过Jan Aushadhi获取",
+          "notAvailable": "在印度未获批准",
+          "approved": "已获CDSCO批准",
+          "suspended": "被CDSCO暂停",
+          "restricted": "限制使用",
+          "essentialMedicine": "基本药物（NLEM）",
+          "genericAvailable": "仿制药配方可用",
+          "brandName": "商品名"
+        }
+      },
+      "europeanUnion": {
+        "name": "欧盟",
+        "healthSystemName": "国家卫生服务体系/公共卫生系统",
+        "healthSystemAbbr": "NHS/公共",
+        "regulatoryBody": "欧洲药品管理局",
+        "regulatoryBodyAbbr": "EMA",
+        "primaryCareSystem": "初级保健/全科医学",
+        "medicationDatabase": "世卫组织基本药物清单（EML）",
+        "coreTerms": {
+          "discretionaryScreening": "机会性筛查",
+          "universalScreening": "人群筛查",
+          "chronicDiseaseManagement": "长期护理管理",
+          "publicFunding": "由公共医疗保险覆盖",
+          "privateOption": "可在私营部门获取",
+          "notAvailable": "在欧盟未获批准",
+          "approved": "已获EMA批准",
+          "suspended": "被EMA暂停",
+          "restricted": "有条件批准",
+          "essentialMedicine": "基本药物（EML）",
+          "genericAvailable": "仿制药可用",
+          "brandName": "商品名"
+        }
+      }
+    },
+    "medicationAvailability": {
+      "approved": "药物已获监管机构批准",
+      "conditionallyApproved": "在特定条件下获批",
+      "restricted": "限于特定条件使用",
+      "suspended": "监管暂停生效中",
+      "notApproved": "未获监管机构批准",
+      "investigational": "研究中",
+      "discontinued": "已停止销售",
+      "genericVersion": "仿制药配方可用"
+    },
+    "publicHealthSystems": {
+      "sus": { "name": "SUS - 巴西公共卫生系统", "coverage": "巴西人口全民覆盖", "fundingModel": "统一公共资金" },
+      "janAushadhi": { "name": "Jan Aushadhi - 印度仿制药项目", "coverage": "全国范围内可负担的仿制药", "fundingModel": "政府补贴仿制药" },
+      "pmjay": { "name": "PMJAY - Ayushman Bharat（印度健康计划）", "coverage": "5亿受益人，住院覆盖", "fundingModel": "政府健康保险" },
+      "nhsUK": { "name": "NHS - 英国国家卫生服务", "coverage": "英国人口全民覆盖", "fundingModel": "税收资助的公共医疗" },
+      "gesGermany": { "name": "GKV - 德国法定健康保险", "coverage": "强制性健康保险", "fundingModel": "社会保险缴费" }
+    },
+    "diseaseClassifications": {
+      "infectious": "传染病",
+      "nonCommunicable": "非传染性疾病（NCD）",
+      "neonatalDisease": "新生儿疾病",
+      "geneticDisorder": "遗传疾病",
+      "mentalHealth": "精神健康障碍",
+      "rareDisease": "罕见病",
+      "occupationalDisease": "职业病"
+    },
+    "screeningLevels": {
+      "primary": "一级预防 - 生活方式调整",
+      "secondary": "二级预防 - 早期发现",
+      "tertiary": "三级预防 - 并发症管理",
+      "quartenary": "四级预防 - 防止过度诊断"
+    }
+  }
+}

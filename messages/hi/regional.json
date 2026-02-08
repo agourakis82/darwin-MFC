@@ -1,0 +1,107 @@
+{
+  "regionalTerminology": {
+    "regions": {
+      "brazil": {
+        "name": "ब्राज़ील",
+        "healthSystemName": "एकीकृत स्वास्थ्य प्रणाली",
+        "healthSystemAbbr": "SUS",
+        "regulatoryBody": "राष्ट्रीय स्वास्थ्य निगरानी एजेंसी",
+        "regulatoryBodyAbbr": "ANVISA",
+        "primaryCareSystem": "पारिवारिक स्वास्थ्य रणनीति",
+        "medicationDatabase": "राष्ट्रीय आवश्यक दवा सूची",
+        "coreTerms": {
+          "discretionaryScreening": "अवसरवादी जांच",
+          "universalScreening": "जनसंख्या-आधारित जांच",
+          "chronicDiseaseManagement": "पुरानी बीमारी प्रबंधन",
+          "publicFunding": "SUS द्वारा प्रदान",
+          "privateOption": "निजी बाज़ार में उपलब्ध",
+          "notAvailable": "ब्राज़ील में उपलब्ध नहीं",
+          "approved": "ANVISA में पंजीकृत",
+          "suspended": "ANVISA द्वारा निलंबित",
+          "restricted": "प्रतिबंधित उपयोग",
+          "essentialMedicine": "आवश्यक दवा",
+          "genericAvailable": "जेनेरिक उपलब्ध",
+          "brandName": "ब्रांड नाम"
+        }
+      },
+      "india": {
+        "name": "भारत",
+        "healthSystemName": "राष्ट्रीय स्वास्थ्य मिशन",
+        "healthSystemAbbr": "NHM",
+        "regulatoryBody": "केंद्रीय औषधि मानक नियंत्रण संगठन",
+        "regulatoryBodyAbbr": "CDSCO",
+        "primaryCareSystem": "सामुदायिक स्वास्थ्य देखभाल",
+        "medicationDatabase": "राष्ट्रीय आवश्यक दवा सूची (NLEM)",
+        "coreTerms": {
+          "discretionaryScreening": "लक्षित जांच",
+          "universalScreening": "सार्वभौमिक स्वास्थ्य कवरेज",
+          "chronicDiseaseManagement": "गैर-संचारी रोग प्रबंधन",
+          "publicFunding": "PMJAY द्वारा कवर",
+          "privateOption": "जन औषधि के माध्यम से उपलब्ध",
+          "notAvailable": "भारत में स्वीकृत नहीं",
+          "approved": "CDSCO द्वारा स्वीकृत",
+          "suspended": "CDSCO द्वारा निलंबित",
+          "restricted": "प्रतिबंधित उपयोग",
+          "essentialMedicine": "आवश्यक दवा (NLEM)",
+          "genericAvailable": "जेनेरिक फॉर्मूलेशन उपलब्ध",
+          "brandName": "ब्रांड नाम"
+        }
+      },
+      "europeanUnion": {
+        "name": "यूरोपीय संघ",
+        "healthSystemName": "राष्ट्रीय स्वास्थ्य सेवाएं / सार्वजनिक स्वास्थ्य प्रणालियां",
+        "healthSystemAbbr": "NHS/सार्वजनिक",
+        "regulatoryBody": "यूरोपीय औषधि एजेंसी",
+        "regulatoryBodyAbbr": "EMA",
+        "primaryCareSystem": "प्राथमिक देखभाल / सामान्य चिकित्सा",
+        "medicationDatabase": "WHO आवश्यक दवा सूची (EML)",
+        "coreTerms": {
+          "discretionaryScreening": "अवसरवादी जांच",
+          "universalScreening": "जनसंख्या-आधारित जांच",
+          "chronicDiseaseManagement": "दीर्घकालिक देखभाल प्रबंधन",
+          "publicFunding": "सार्वजनिक स्वास्थ्य बीमा द्वारा कवर",
+          "privateOption": "निजी क्षेत्र में उपलब्ध",
+          "notAvailable": "EU में स्वीकृत नहीं",
+          "approved": "EMA द्वारा स्वीकृत",
+          "suspended": "EMA द्वारा निलंबित",
+          "restricted": "सशर्त स्वीकृति",
+          "essentialMedicine": "आवश्यक दवा (EML)",
+          "genericAvailable": "जेनेरिक उपलब्ध",
+          "brandName": "व्यापारिक नाम"
+        }
+      }
+    },
+    "medicationAvailability": {
+      "approved": "नियामक प्राधिकरण द्वारा स्वीकृत दवा",
+      "conditionallyApproved": "विशिष्ट शर्तों के तहत स्वीकृत",
+      "restricted": "विशिष्ट शर्तों तक सीमित उपयोग",
+      "suspended": "नियामक निलंबन प्रभावी",
+      "notApproved": "नियामक प्राधिकरण द्वारा अस्वीकृत",
+      "investigational": "अनुसंधान के अधीन",
+      "discontinued": "अब विपणन नहीं किया जाता",
+      "genericVersion": "जेनेरिक फॉर्मूलेशन उपलब्ध"
+    },
+    "publicHealthSystems": {
+      "sus": { "name": "SUS - ब्राज़ील की सार्वजनिक स्वास्थ्य प्रणाली", "coverage": "ब्राज़ीलियाई जनसंख्या के लिए सार्वभौमिक कवरेज", "fundingModel": "एकीकृत सार्वजनिक वित्तपोषण" },
+      "janAushadhi": { "name": "जन औषधि - भारतीय जेनेरिक दवा कार्यक्रम", "coverage": "देशव्यापी सस्ती जेनेरिक दवाएं", "fundingModel": "सरकारी सब्सिडी वाली जेनेरिक दवाएं" },
+      "pmjay": { "name": "PMJAY - आयुष्मान भारत (भारतीय स्वास्थ्य योजना)", "coverage": "50 करोड़ लाभार्थी, अस्पताल कवरेज", "fundingModel": "सरकारी स्वास्थ्य बीमा" },
+      "nhsUK": { "name": "NHS - यूनाइटेड किंगडम राष्ट्रीय स्वास्थ्य सेवा", "coverage": "UK जनसंख्या के लिए सार्वभौमिक कवरेज", "fundingModel": "कर-वित्तपोषित सार्वजनिक स्वास्थ्य सेवा" },
+      "gesGermany": { "name": "GKV - जर्मन अनिवार्य स्वास्थ्य बीमा", "coverage": "अनिवार्य स्वास्थ्य बीमा", "fundingModel": "सामाजिक बीमा योगदान" }
+    },
+    "diseaseClassifications": {
+      "infectious": "संक्रामक रोग",
+      "nonCommunicable": "गैर-संचारी रोग (NCD)",
+      "neonatalDisease": "नवजात विकार",
+      "geneticDisorder": "आनुवंशिक विकार",
+      "mentalHealth": "मानसिक स्वास्थ्य विकार",
+      "rareDisease": "दुर्लभ रोग",
+      "occupationalDisease": "व्यावसायिक रोग"
+    },
+    "screeningLevels": {
+      "primary": "प्राथमिक रोकथाम - जीवनशैली में बदलाव",
+      "secondary": "द्वितीयक रोकथाम - शीघ्र पहचान",
+      "tertiary": "तृतीयक रोकथाम - जटिलताओं का प्रबंधन",
+      "quartenary": "चतुर्थक रोकथाम - अति-निदान की रोकथाम"
+    }
+  }
+}

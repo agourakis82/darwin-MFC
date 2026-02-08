@@ -1,0 +1,107 @@
+{
+  "regionalTerminology": {
+    "regions": {
+      "brazil": {
+        "name": "Brésil",
+        "healthSystemName": "Système Unique de Santé",
+        "healthSystemAbbr": "SUS",
+        "regulatoryBody": "Agence Nationale de Surveillance Sanitaire",
+        "regulatoryBodyAbbr": "ANVISA",
+        "primaryCareSystem": "Stratégie Santé de la Famille",
+        "medicationDatabase": "Formulaire Thérapeutique National",
+        "coreTerms": {
+          "discretionaryScreening": "Dépistage opportuniste",
+          "universalScreening": "Dépistage populationnel",
+          "chronicDiseaseManagement": "Gestion des maladies chroniques",
+          "publicFunding": "Fourni par le SUS",
+          "privateOption": "Disponible sur le marché privé",
+          "notAvailable": "Non disponible au Brésil",
+          "approved": "Enregistré auprès de l'ANVISA",
+          "suspended": "Suspendu par l'ANVISA",
+          "restricted": "Usage restreint",
+          "essentialMedicine": "Médicament essentiel",
+          "genericAvailable": "Générique disponible",
+          "brandName": "Nom de marque"
+        }
+      },
+      "india": {
+        "name": "Inde",
+        "healthSystemName": "Mission Nationale de Santé",
+        "healthSystemAbbr": "NHM",
+        "regulatoryBody": "Organisation Centrale de Contrôle des Normes des Médicaments",
+        "regulatoryBodyAbbr": "CDSCO",
+        "primaryCareSystem": "Soins de Santé Primaires Ayushman Bharat",
+        "medicationDatabase": "Liste Nationale des Médicaments Essentiels",
+        "coreTerms": {
+          "discretionaryScreening": "Dépistage ciblé",
+          "universalScreening": "Couverture sanitaire universelle",
+          "chronicDiseaseManagement": "Gestion des maladies non transmissibles",
+          "publicFunding": "Couvert par le PMJAY",
+          "privateOption": "Disponible via Jan Aushadhi",
+          "notAvailable": "Non approuvé en Inde",
+          "approved": "Approuvé par le CDSCO",
+          "suspended": "Suspendu par le CDSCO",
+          "restricted": "Usage restreint",
+          "essentialMedicine": "Médicament essentiel (NLEM)",
+          "genericAvailable": "Formulation générique disponible",
+          "brandName": "Nom de marque"
+        }
+      },
+      "europeanUnion": {
+        "name": "Union Européenne",
+        "healthSystemName": "Systèmes de Santé Publics / NHS",
+        "healthSystemAbbr": "NHS/Public",
+        "regulatoryBody": "Agence Européenne des Médicaments",
+        "regulatoryBodyAbbr": "EMA",
+        "primaryCareSystem": "Soins Primaires / Médecine Générale",
+        "medicationDatabase": "Liste des Médicaments Essentiels de l'OMS (LME)",
+        "coreTerms": {
+          "discretionaryScreening": "Dépistage opportuniste",
+          "universalScreening": "Dépistage populationnel",
+          "chronicDiseaseManagement": "Gestion des soins de longue durée",
+          "publicFunding": "Couvert par l'assurance maladie publique",
+          "privateOption": "Disponible dans le secteur privé",
+          "notAvailable": "Non approuvé dans l'UE",
+          "approved": "Approuvé par l'EMA",
+          "suspended": "Suspendu par l'EMA",
+          "restricted": "Approbation conditionnelle",
+          "essentialMedicine": "Médicament essentiel (LME)",
+          "genericAvailable": "Générique disponible",
+          "brandName": "Nom commercial"
+        }
+      }
+    },
+    "medicationAvailability": {
+      "approved": "Médicament approuvé par l'autorité réglementaire",
+      "conditionallyApproved": "Approuvé sous conditions spécifiques",
+      "restricted": "Usage restreint à des conditions spécifiques",
+      "suspended": "Suspension réglementaire en vigueur",
+      "notApproved": "Non approuvé par l'autorité réglementaire",
+      "investigational": "En cours d'investigation",
+      "discontinued": "Commercialisation interrompue",
+      "genericVersion": "Formulation générique disponible"
+    },
+    "publicHealthSystems": {
+      "sus": { "name": "SUS - Système Public de Santé Brésilien", "coverage": "Couverture universelle pour la population brésilienne", "fundingModel": "Financement public unifié" },
+      "janAushadhi": { "name": "Jan Aushadhi - Programme Indien de Médicaments Génériques", "coverage": "Médicaments génériques abordables à l'échelle nationale", "fundingModel": "Médicaments génériques subventionnés par le gouvernement" },
+      "pmjay": { "name": "PMJAY - Ayushman Bharat (Programme de Santé Indien)", "coverage": "500 millions de bénéficiaires, couverture hospitalière", "fundingModel": "Assurance santé gouvernementale" },
+      "nhsUK": { "name": "NHS - Service National de Santé du Royaume-Uni", "coverage": "Couverture universelle pour la population britannique", "fundingModel": "Système de santé financé par l'impôt" },
+      "gesGermany": { "name": "GKV - Assurance Maladie Obligatoire Allemande", "coverage": "Assurance maladie obligatoire", "fundingModel": "Cotisations d'assurance sociale" }
+    },
+    "diseaseClassifications": {
+      "infectious": "Maladie Infectieuse",
+      "nonCommunicable": "Maladie Non Transmissible (MNT)",
+      "neonatalDisease": "Trouble Néonatal",
+      "geneticDisorder": "Trouble Génétique",
+      "mentalHealth": "Trouble de Santé Mentale",
+      "rareDisease": "Maladie Rare",
+      "occupationalDisease": "Maladie Professionnelle"
+    },
+    "screeningLevels": {
+      "primary": "Prévention Primaire - Modification du mode de vie",
+      "secondary": "Prévention Secondaire - Détection précoce",
+      "tertiary": "Prévention Tertiaire - Gestion des complications",
+      "quartenary": "Prévention Quaternaire - Prévention du surdiagnostic"
+    }
+  }
+}
