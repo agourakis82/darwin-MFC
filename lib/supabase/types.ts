@@ -28,6 +28,9 @@ export interface Database {
           role: 'user' | 'verified' | 'moderator' | 'admin';
           avatar_url: string | null;
           bio: string | null;
+          level: number;
+          xp: number;
+          streak_days: number;
           created_at: string;
           updated_at: string;
         };
@@ -41,6 +44,9 @@ export interface Database {
           role?: 'user' | 'verified' | 'moderator' | 'admin';
           avatar_url?: string | null;
           bio?: string | null;
+          level?: number;
+          xp?: number;
+          streak_days?: number;
           created_at?: string;
           updated_at?: string;
         };
@@ -54,9 +60,13 @@ export interface Database {
           role?: 'user' | 'verified' | 'moderator' | 'admin';
           avatar_url?: string | null;
           bio?: string | null;
+          level?: number;
+          xp?: number;
+          streak_days?: number;
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       user_preferences: {
         Row: {
@@ -66,6 +76,8 @@ export interface Database {
           content_mode: 'descriptive' | 'critical_analysis';
           notifications_enabled: boolean;
           email_notifications: boolean;
+          view_mode: string | null;
+          selected_region: string | null;
           updated_at: string;
         };
         Insert: {
@@ -75,6 +87,8 @@ export interface Database {
           content_mode?: 'descriptive' | 'critical_analysis';
           notifications_enabled?: boolean;
           email_notifications?: boolean;
+          view_mode?: string | null;
+          selected_region?: string | null;
           updated_at?: string;
         };
         Update: {
@@ -84,8 +98,11 @@ export interface Database {
           content_mode?: 'descriptive' | 'critical_analysis';
           notifications_enabled?: boolean;
           email_notifications?: boolean;
+          view_mode?: string | null;
+          selected_region?: string | null;
           updated_at?: string;
         };
+        Relationships: [];
       };
       user_progress: {
         Row: {
@@ -130,12 +147,13 @@ export interface Database {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       favorites: {
         Row: {
           id: string;
           user_id: string;
-          entity_type: 'disease' | 'medication' | 'protocol' | 'case' | 'calculator' | 'article';
+          entity_type: 'disease' | 'medication' | 'protocol' | 'case' | 'calculator' | 'article' | 'screening';
           entity_id: string;
           notes: string | null;
           tags: string[] | null;
@@ -144,7 +162,7 @@ export interface Database {
         Insert: {
           id?: string;
           user_id: string;
-          entity_type: 'disease' | 'medication' | 'protocol' | 'case' | 'calculator' | 'article';
+          entity_type: 'disease' | 'medication' | 'protocol' | 'case' | 'calculator' | 'article' | 'screening';
           entity_id: string;
           notes?: string | null;
           tags?: string[] | null;
@@ -153,18 +171,19 @@ export interface Database {
         Update: {
           id?: string;
           user_id?: string;
-          entity_type?: 'disease' | 'medication' | 'protocol' | 'case' | 'calculator' | 'article';
+          entity_type?: 'disease' | 'medication' | 'protocol' | 'case' | 'calculator' | 'article' | 'screening';
           entity_id?: string;
           notes?: string | null;
           tags?: string[] | null;
           created_at?: string;
         };
+        Relationships: [];
       };
       notes: {
         Row: {
           id: string;
           user_id: string;
-          entity_type: 'disease' | 'medication' | 'protocol' | 'case' | 'patient' | 'general';
+          entity_type: 'disease' | 'medication' | 'protocol' | 'case' | 'patient' | 'general' | 'screening';
           entity_id: string | null;
           title: string | null;
           content: string;
@@ -176,7 +195,7 @@ export interface Database {
         Insert: {
           id?: string;
           user_id: string;
-          entity_type: 'disease' | 'medication' | 'protocol' | 'case' | 'patient' | 'general';
+          entity_type: 'disease' | 'medication' | 'protocol' | 'case' | 'patient' | 'general' | 'screening';
           entity_id?: string | null;
           title?: string | null;
           content: string;
@@ -188,7 +207,7 @@ export interface Database {
         Update: {
           id?: string;
           user_id?: string;
-          entity_type?: 'disease' | 'medication' | 'protocol' | 'case' | 'patient' | 'general';
+          entity_type?: 'disease' | 'medication' | 'protocol' | 'case' | 'patient' | 'general' | 'screening';
           entity_id?: string | null;
           title?: string | null;
           content?: string;
@@ -197,6 +216,7 @@ export interface Database {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       learning_progress: {
         Row: {
@@ -244,6 +264,7 @@ export interface Database {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       quiz_attempts: {
         Row: {
@@ -279,6 +300,7 @@ export interface Database {
           passed?: boolean;
           created_at?: string;
         };
+        Relationships: [];
       };
       user_xp: {
         Row: {
@@ -314,6 +336,7 @@ export interface Database {
           weekly_goal_met_count?: number;
           updated_at?: string;
         };
+        Relationships: [];
       };
       xp_transactions: {
         Row: {
@@ -343,6 +366,7 @@ export interface Database {
           entity_id?: string | null;
           created_at?: string;
         };
+        Relationships: [];
       };
       badges: {
         Row: {
@@ -378,6 +402,7 @@ export interface Database {
           rarity?: 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary' | null;
           created_at?: string;
         };
+        Relationships: [];
       };
       user_badges: {
         Row: {
@@ -401,6 +426,15 @@ export interface Database {
           earned_at?: string;
           metadata?: Json;
         };
+        Relationships: [
+          {
+            foreignKeyName: 'user_badges_badge_id_fkey';
+            columns: ['badge_id'];
+            isOneToOne: false;
+            referencedRelation: 'badges';
+            referencedColumns: ['id'];
+          }
+        ];
       };
       user_achievements: {
         Row: {
@@ -439,6 +473,7 @@ export interface Database {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       shared_cases: {
         Row: {
@@ -495,6 +530,7 @@ export interface Database {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       case_comments: {
         Row: {
@@ -530,6 +566,7 @@ export interface Database {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       user_sessions: {
         Row: {
@@ -565,6 +602,7 @@ export interface Database {
           device_info?: Json | null;
           created_at?: string;
         };
+        Relationships: [];
       };
       activity_log: {
         Row: {
@@ -600,6 +638,292 @@ export interface Database {
           user_agent?: string | null;
           created_at?: string;
         };
+        Relationships: [];
+      };
+      // =============================================================================
+      // MEDICAL CONTENT TABLES (Migration 003)
+      // =============================================================================
+      medicamentos: {
+        Row: {
+          id: string;
+          nome_generico: string;
+          nome_comercial: string[] | null;
+          classe_terapeutica: string;
+          subclasse: string | null;
+          mecanismo_acao: string | null;
+          indicacoes: string[] | null;
+          contraindicacoes: string[] | null;
+          efeitos_adversos: Json | null;
+          interacoes: Json | null;
+          posologia: Json | null;
+          farmacocinetica: Json | null;
+          apresentacoes: string[] | null;
+          disponivel_sus: boolean;
+          disponivel_farmacia_popular: boolean;
+          atc_code: string | null;
+          cid10_indicacoes: string[] | null;
+          ciap2_indicacoes: string[] | null;
+          gestacao: string | null;
+          lactacao: string | null;
+          insuficiencia_renal: string | null;
+          insuficiencia_hepatica: string | null;
+          idoso: string | null;
+          pediatrico: string | null;
+          monitoramento: string[] | null;
+          ajuste_dose: Json | null;
+          regional_overlays: Json | null;
+          referencias: Json | null;
+          pharmgkb: Json | null;
+          loinc: string[] | null;
+          rxnorm_cui: string | null;
+          drugbank_id: string | null;
+          snomed_ct: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id: string;
+          nome_generico: string;
+          nome_comercial?: string[] | null;
+          classe_terapeutica: string;
+          subclasse?: string | null;
+          mecanismo_acao?: string | null;
+          indicacoes?: string[] | null;
+          contraindicacoes?: string[] | null;
+          efeitos_adversos?: Json | null;
+          interacoes?: Json | null;
+          posologia?: Json | null;
+          farmacocinetica?: Json | null;
+          apresentacoes?: string[] | null;
+          disponivel_sus?: boolean;
+          disponivel_farmacia_popular?: boolean;
+          atc_code?: string | null;
+          cid10_indicacoes?: string[] | null;
+          ciap2_indicacoes?: string[] | null;
+          gestacao?: string | null;
+          lactacao?: string | null;
+          insuficiencia_renal?: string | null;
+          insuficiencia_hepatica?: string | null;
+          idoso?: string | null;
+          pediatrico?: string | null;
+          monitoramento?: string[] | null;
+          ajuste_dose?: Json | null;
+          regional_overlays?: Json | null;
+          referencias?: Json | null;
+          pharmgkb?: Json | null;
+          loinc?: string[] | null;
+          rxnorm_cui?: string | null;
+          drugbank_id?: string | null;
+          snomed_ct?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          nome_generico?: string;
+          nome_comercial?: string[] | null;
+          classe_terapeutica?: string;
+          subclasse?: string | null;
+          mecanismo_acao?: string | null;
+          indicacoes?: string[] | null;
+          contraindicacoes?: string[] | null;
+          efeitos_adversos?: Json | null;
+          interacoes?: Json | null;
+          posologia?: Json | null;
+          farmacocinetica?: Json | null;
+          apresentacoes?: string[] | null;
+          disponivel_sus?: boolean;
+          disponivel_farmacia_popular?: boolean;
+          atc_code?: string | null;
+          cid10_indicacoes?: string[] | null;
+          ciap2_indicacoes?: string[] | null;
+          gestacao?: string | null;
+          lactacao?: string | null;
+          insuficiencia_renal?: string | null;
+          insuficiencia_hepatica?: string | null;
+          idoso?: string | null;
+          pediatrico?: string | null;
+          monitoramento?: string[] | null;
+          ajuste_dose?: Json | null;
+          regional_overlays?: Json | null;
+          referencias?: Json | null;
+          pharmgkb?: Json | null;
+          loinc?: string[] | null;
+          rxnorm_cui?: string | null;
+          drugbank_id?: string | null;
+          snomed_ct?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      doencas: {
+        Row: {
+          id: string;
+          nome: string;
+          nome_alternativo: string[] | null;
+          categoria: string;
+          subcategoria: string | null;
+          descricao: string | null;
+          epidemiologia: Json | null;
+          fisiopatologia: string | null;
+          quadro_clinico: Json | null;
+          diagnostico: Json | null;
+          tratamento: Json | null;
+          prognostico: string | null;
+          prevencao: string[] | null;
+          complicacoes: string[] | null;
+          quando_encaminhar: string[] | null;
+          cid10: string;
+          ciap2: string | null;
+          criterios_diagnosticos: Json | null;
+          medicamentos_relacionados: string[] | null;
+          protocolos_relacionados: string[] | null;
+          regional_overlays: Json | null;
+          referencias: Json | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id: string;
+          nome: string;
+          nome_alternativo?: string[] | null;
+          categoria: string;
+          subcategoria?: string | null;
+          descricao?: string | null;
+          epidemiologia?: Json | null;
+          fisiopatologia?: string | null;
+          quadro_clinico?: Json | null;
+          diagnostico?: Json | null;
+          tratamento?: Json | null;
+          prognostico?: string | null;
+          prevencao?: string[] | null;
+          complicacoes?: string[] | null;
+          quando_encaminhar?: string[] | null;
+          cid10: string;
+          ciap2?: string | null;
+          criterios_diagnosticos?: Json | null;
+          medicamentos_relacionados?: string[] | null;
+          protocolos_relacionados?: string[] | null;
+          regional_overlays?: Json | null;
+          referencias?: Json | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          nome?: string;
+          nome_alternativo?: string[] | null;
+          categoria?: string;
+          subcategoria?: string | null;
+          descricao?: string | null;
+          epidemiologia?: Json | null;
+          fisiopatologia?: string | null;
+          quadro_clinico?: Json | null;
+          diagnostico?: Json | null;
+          tratamento?: Json | null;
+          prognostico?: string | null;
+          prevencao?: string[] | null;
+          complicacoes?: string[] | null;
+          quando_encaminhar?: string[] | null;
+          cid10?: string;
+          ciap2?: string | null;
+          criterios_diagnosticos?: Json | null;
+          medicamentos_relacionados?: string[] | null;
+          protocolos_relacionados?: string[] | null;
+          regional_overlays?: Json | null;
+          referencias?: Json | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      protocolos: {
+        Row: {
+          id: string;
+          titulo: string;
+          categoria: string;
+          descricao: string | null;
+          condicoes: string[] | null;
+          fluxograma: Json | null;
+          etapas: Json | null;
+          criterios_inclusao: string[] | null;
+          criterios_exclusao: string[] | null;
+          medicamentos: string[] | null;
+          exames: string[] | null;
+          monitoramento: Json | null;
+          fonte: string | null;
+          ano_publicacao: number | null;
+          referencias: Json | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id: string;
+          titulo: string;
+          categoria: string;
+          descricao?: string | null;
+          condicoes?: string[] | null;
+          fluxograma?: Json | null;
+          etapas?: Json | null;
+          criterios_inclusao?: string[] | null;
+          criterios_exclusao?: string[] | null;
+          medicamentos?: string[] | null;
+          exames?: string[] | null;
+          monitoramento?: Json | null;
+          fonte?: string | null;
+          ano_publicacao?: number | null;
+          referencias?: Json | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          titulo?: string;
+          categoria?: string;
+          descricao?: string | null;
+          condicoes?: string[] | null;
+          fluxograma?: Json | null;
+          etapas?: Json | null;
+          criterios_inclusao?: string[] | null;
+          criterios_exclusao?: string[] | null;
+          medicamentos?: string[] | null;
+          exames?: string[] | null;
+          monitoramento?: Json | null;
+          fonte?: string | null;
+          ano_publicacao?: number | null;
+          referencias?: Json | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      patient_genotypes: {
+        Row: {
+          id: string;
+          user_id: string;
+          gene: string;
+          diplotype: string;
+          source: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          gene: string;
+          diplotype: string;
+          source?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          gene?: string;
+          diplotype?: string;
+          source?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
       };
     };
     Views: {

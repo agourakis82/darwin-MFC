@@ -5,8 +5,13 @@ import LoginForm from '@/app/components/Auth/LoginForm';
 import { Link } from '@/i18n/routing';
 import { ArrowLeft } from 'lucide-react';
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const t = await getTranslations({ locale: params.locale, namespace: 'auth' });
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'auth' });
 
   return {
     title: `${t('login')} | Darwin MFC`,
@@ -14,48 +19,50 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   };
 }
 
-export default function LoginPage() {
+function LoginPageContent() {
+  const t = useTranslations('auth');
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-adenine-teal/5 via-white to-cytosine-cyan/5 dark:from-carbon-900 dark:via-carbon-800 dark:to-carbon-900">
       <div className="container mx-auto px-4 py-12">
-        {/* Back to Home */}
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-sm text-carbon-600 dark:text-carbon-400 hover:text-adenine-teal dark:hover:text-cytosine-cyan apple-transition-fast mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to Darwin MFC
+          {t('back_to_home')}
         </Link>
 
         <div className="max-w-md mx-auto">
-          {/* Header */}
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-helix-navy dark:text-white mb-2">
-              Welcome Back
+              {t('welcome_back')}
             </h1>
             <p className="text-carbon-600 dark:text-carbon-400">
-              Sign in to access your medical hub
+              {t('sign_in_to_access')}
             </p>
           </div>
 
-          {/* Login Form */}
           <div className="bg-white dark:bg-carbon-800 rounded-2xl shadow-lg p-8">
             <LoginForm />
           </div>
 
-          {/* Additional Info */}
           <p className="text-center text-sm text-carbon-500 dark:text-carbon-400 mt-6">
-            By signing in, you agree to our{' '}
+            {t('terms_notice')}{' '}
             <Link href="/terms" className="text-adenine-teal dark:text-cytosine-cyan hover:underline">
-              Terms of Service
+              {t('terms_of_service')}
             </Link>{' '}
-            and{' '}
+            {t('and')}{' '}
             <Link href="/privacy" className="text-adenine-teal dark:text-cytosine-cyan hover:underline">
-              Privacy Policy
+              {t('privacy_policy')}
             </Link>
           </p>
         </div>
       </div>
     </div>
   );
+}
+
+export default function LoginPage() {
+  return <LoginPageContent />;
 }

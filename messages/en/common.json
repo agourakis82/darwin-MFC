@@ -102,7 +102,8 @@
     "advancedSearch": "Advanced Search",
     "q1Standard": "Q1 Academic Standard",
     "q1Description": "All statements validated with scientific references",
-    "lastUpdate": "Updated: Dec/2025"
+    "lastUpdate": "Updated: Dec/2025",
+    "pharmacogenomics": "Pharmacogenomics"
   },
   "footer": {
     "copyright": "© 2025 Darwin Medical Foundation Cluster",
@@ -1689,5 +1690,22 @@
       "alert": "Alert"
     },
     "instructions": "Click nodes for details • Scroll to zoom • Drag to move"
+  },
+  "pharmacogenomics": {
+    "title": "Pharmacogenomics",
+    "subtitle": "Adjust medications to your genetic profile",
+    "heroDescription": "Discover how your genetic variants influence medication response. Select your genotypes to receive personalized dosing alerts.",
+    "alertBanner": "Pharmacogenetic alert",
+    "noAlerts": "No pharmacogenetic alerts for this medication",
+    "viewFullSimulator": "View full simulator",
+    "genotypeSet": "Genotype set",
+    "selectGenotypes": "Select your genotypes",
+    "clearAll": "Clear all",
+    "evidenceLevels": "CPIC Evidence Levels",
+    "level1A": "1A — Published CPIC guidelines, strong evidence",
+    "level1B": "1B — Published CPIC guidelines, moderate evidence",
+    "level2A": "2A — Known clinical evidence, no formal guideline",
+    "level2B": "2B — Limited evidence",
+    "educationalDisclaimer": "This tool is educational. Consult a healthcare professional before changing any medication."
   }
 }

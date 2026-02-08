@@ -284,7 +284,6 @@ export const useAppStore = create<AppStore>()(
           const userId = session.user.id;
 
           // Sync user preferences
-          // @ts-ignore - Supabase types not fully configured yet (pending deployment)
           await supabase.from('user_preferences').upsert({
             user_id: userId,
             theme: state.theme,
@@ -303,10 +302,8 @@ export const useAppStore = create<AppStore>()(
 
           if (allFavorites.length > 0) {
             // Delete existing favorites for this user first
-            // @ts-ignore - Supabase types not fully configured yet (pending deployment)
             await supabase.from('favorites').delete().eq('user_id', userId);
             // Insert new favorites
-            // @ts-ignore - Supabase types not fully configured yet (pending deployment)
             await supabase.from('favorites').insert(allFavorites);
           }
 
@@ -321,10 +318,8 @@ export const useAppStore = create<AppStore>()(
 
           if (notesArray.length > 0) {
             // Delete existing notes for this user first
-            // @ts-ignore - Supabase types not fully configured yet (pending deployment)
             await supabase.from('notes').delete().eq('user_id', userId);
             // Insert new notes
-            // @ts-ignore - Supabase types not fully configured yet (pending deployment)
             await supabase.from('notes').insert(notesArray);
           }
 
@@ -359,7 +354,6 @@ export const useAppStore = create<AppStore>()(
           const userId = session.user.id;
 
           // Load preferences
-          // @ts-ignore - Supabase types not fully configured yet (pending deployment)
           const { data: prefs } = await supabase
             .from('user_preferences')
             .select('*')
@@ -368,34 +362,24 @@ export const useAppStore = create<AppStore>()(
 
           if (prefs) {
             set({
-              // @ts-ignore - Supabase types not fully configured yet
               theme: prefs.theme as Theme || 'dark',
-              // @ts-ignore - Supabase types not fully configured yet
               contentMode: prefs.content_mode as ContentMode || 'descriptive',
-              // @ts-ignore - Supabase types not fully configured yet
               viewMode: prefs.view_mode as ViewMode || 'full',
-              // @ts-ignore - Supabase types not fully configured yet
               locale: prefs.language as Locale || undefined,
-              // @ts-ignore - Supabase types not fully configured yet
               selectedRegion: prefs.selected_region as Region || 'BR',
             });
           }
 
           // Load favorites
-          // @ts-ignore - Supabase types not fully configured yet (pending deployment)
           const { data: favorites } = await supabase
             .from('favorites')
             .select('entity_type, entity_id')
             .eq('user_id', userId);
 
           if (favorites) {
-            // @ts-ignore - Supabase types not fully configured yet
             const screenings = favorites.filter(f => f.entity_type === 'screening').map(f => f.entity_id);
-            // @ts-ignore - Supabase types not fully configured yet
             const diseases = favorites.filter(f => f.entity_type === 'disease').map(f => f.entity_id);
-            // @ts-ignore - Supabase types not fully configured yet
             const medications = favorites.filter(f => f.entity_type === 'medication').map(f => f.entity_id);
-            // @ts-ignore - Supabase types not fully configured yet
             const protocols = favorites.filter(f => f.entity_type === 'protocol').map(f => f.entity_id);
 
             set({
@@ -407,7 +391,6 @@ export const useAppStore = create<AppStore>()(
           }
 
           // Load notes
-          // @ts-ignore - Supabase types not fully configured yet (pending deployment)
           const { data: notes } = await supabase
             .from('notes')
             .select('entity_id, content')
@@ -415,10 +398,10 @@ export const useAppStore = create<AppStore>()(
 
           if (notes) {
             const notesMap: Record<string, string> = {};
-            // @ts-ignore - Supabase types not fully configured yet
             notes.forEach(note => {
-              // @ts-ignore - Supabase types not fully configured yet
-              notesMap[note.entity_id] = note.content;
+              if (note.entity_id) {
+                notesMap[note.entity_id] = note.content;
+              }
             });
             set({ notes: notesMap });
           }

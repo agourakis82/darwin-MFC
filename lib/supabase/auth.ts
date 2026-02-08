@@ -1,5 +1,3 @@
-// @ts-nocheck
-// TODO: Generate proper Supabase types with `supabase gen types`
 /**
  * SUPABASE AUTHENTICATION HELPERS
  * ================================
@@ -8,7 +6,7 @@
  * Provides type-safe wrappers around Supabase auth
  */
 
-import { supabase } from './client';
+import { requireClient } from './client';
 import type { User, Session, AuthError } from '@supabase/supabase-js';
 
 export interface AuthResponse {
@@ -40,7 +38,7 @@ export interface SignInData {
 export async function signUp(data: SignUpData): Promise<AuthResponse> {
   const { email, password, name, specialty, country } = data;
 
-  const { data: authData, error } = await supabase.auth.signUp({
+  const { data: authData, error } = await requireClient().auth.signUp({
     email,
     password,
     options: {
@@ -70,7 +68,7 @@ export async function signUp(data: SignUpData): Promise<AuthResponse> {
 export async function signIn(data: SignInData): Promise<AuthResponse> {
   const { email, password } = data;
 
-  const { data: authData, error } = await supabase.auth.signInWithPassword({
+  const { data: authData, error } = await requireClient().auth.signInWithPassword({
     email,
     password,
   });
@@ -86,7 +84,7 @@ export async function signIn(data: SignInData): Promise<AuthResponse> {
  * Sign in with OAuth provider
  */
 export async function signInWithOAuth(provider: 'google' | 'github') {
-  const { data, error } = await supabase.auth.signInWithOAuth({
+  const { data, error } = await requireClient().auth.signInWithOAuth({
     provider,
     options: {
       redirectTo: `${window.location.origin}/auth/callback`,
@@ -104,7 +102,7 @@ export async function signInWithOAuth(provider: 'google' | 'github') {
  * Sign out the current user
  */
 export async function signOut() {
-  const { error } = await supabase.auth.signOut();
+  const { error } = await requireClient().auth.signOut();
   return { error };
 }
 
@@ -116,7 +114,7 @@ export async function signOut() {
  * Get the current user session
  */
 export async function getSession(): Promise<Session | null> {
-  const { data: { session } } = await supabase.auth.getSession();
+  const { data: { session } } = await requireClient().auth.getSession();
   return session;
 }
 
@@ -124,7 +122,7 @@ export async function getSession(): Promise<Session | null> {
  * Get the current user
  */
 export async function getUser(): Promise<User | null> {
-  const { data: { user } } = await supabase.auth.getUser();
+  const { data: { user } } = await requireClient().auth.getUser();
   return user;
 }
 
@@ -132,7 +130,7 @@ export async function getUser(): Promise<User | null> {
  * Refresh the current session
  */
 export async function refreshSession(): Promise<Session | null> {
-  const { data: { session }, error } = await supabase.auth.refreshSession();
+  const { data: { session }, error } = await requireClient().auth.refreshSession();
   if (error) {
     console.error('Error refreshing session:', error);
     return null;
@@ -148,7 +146,7 @@ export async function refreshSession(): Promise<Session | null> {
  * Send password reset email
  */
 export async function resetPassword(email: string) {
-  const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+  const { data, error } = await requireClient().auth.resetPasswordForEmail(email, {
     redirectTo: `${window.location.origin}/auth/reset-password`,
   });
 
@@ -159,7 +157,7 @@ export async function resetPassword(email: string) {
  * Update user password
  */
 export async function updatePassword(newPassword: string) {
-  const { data, error } = await supabase.auth.updateUser({
+  const { data, error } = await requireClient().auth.updateUser({
     password: newPassword,
   });
 
@@ -174,7 +172,7 @@ export async function updatePassword(newPassword: string) {
  * Resend email verification
  */
 export async function resendEmailVerification(email: string) {
-  const { data, error } = await supabase.auth.resend({
+  const { data, error } = await requireClient().auth.resend({
     type: 'signup',
     email,
     options: {
@@ -195,7 +193,7 @@ export async function resendEmailVerification(email: string) {
 export function onAuthStateChange(
   callback: (event: string, session: Session | null) => void
 ) {
-  return supabase.auth.onAuthStateChange((event, session) => {
+  return requireClient().auth.onAuthStateChange((event, session) => {
     callback(event, session);
   });
 }
@@ -208,7 +206,7 @@ export function onAuthStateChange(
  * Get user profile from public.users table
  */
 export async function getUserProfile(userId: string) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('users')
     .select('*')
     .eq('id', userId)
@@ -231,7 +229,7 @@ export async function updateUserProfile(
     bio?: string;
   }
 ) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('users')
     .update(updates)
     .eq('id', userId)
@@ -245,7 +243,7 @@ export async function updateUserProfile(
  * Get user preferences
  */
 export async function getUserPreferences(userId: string) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('user_preferences')
     .select('*')
     .eq('user_id', userId)
@@ -267,7 +265,7 @@ export async function updateUserPreferences(
     email_notifications?: boolean;
   }
 ) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('user_preferences')
     .upsert({
       user_id: userId,

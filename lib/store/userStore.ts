@@ -257,7 +257,6 @@ export const useUserStore = create<UserState & UserActions>()(
             try {
               const { data: { session } } = await supabase.auth.getSession();
               if (session?.user) {
-                // @ts-ignore - Supabase types not fully configured yet (pending deployment)
                 await supabase.from('users').update({
                   name: updates.username,
                   country: updates.countryCode,

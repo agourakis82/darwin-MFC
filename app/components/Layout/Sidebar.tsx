@@ -30,7 +30,8 @@ import {
   AlertTriangle,
   Printer,
   Search,
-  Keyboard
+  Keyboard,
+  Dna
 } from 'lucide-react';
 import { getRastreamentosByCategory } from '@/lib/data/rastreamentos';
 
@@ -80,6 +81,7 @@ export default function Sidebar() {
         { title: t('sidebar.protocols'), icon: FileText, path: '/protocolos' },
         { title: t('sidebar.calculators'), icon: Calculator, path: '/calculadoras' },
         { title: t('sidebar.clinicalCases'), icon: GraduationCap, path: '/casos-clinicos', badge: t('common.new') },
+        { title: t('sidebar.pharmacogenomics'), icon: Dna, path: '/farmacogenetica' },
       ]
     },
     {

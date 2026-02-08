@@ -6,10 +6,11 @@ import { useTranslations } from 'next-intl';
 import { useAppStore } from '@/lib/store/appStore';
 import { PageContainer } from '@/app/components/Layout/Containers';
 import {
-  Search, Pill, Shield, ChevronRight, Activity, Baby, AlertTriangle, Globe
+  Search, Pill, Shield, ChevronRight, Activity, Baby, AlertTriangle, Globe, Loader2
 } from 'lucide-react';
-import { medicamentosConsolidados as medicamentos } from '@/lib/data/medicamentos/index';
+import { medicamentosConsolidados as localMedicamentos } from '@/lib/data/medicamentos/index';
 import { CLASSES_TERAPEUTICAS, CLASSIFICACAO_GESTACAO, isAvailableInPublicSystem, getMedicamentosByClasse } from '@/lib/types/medicamento';
+import { useMedicamentos } from '@/lib/hooks/use-medicamentos';
 import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
 import { cn } from '@/lib/utils';
 
@@ -22,13 +23,17 @@ export default function MedicamentosClient() {
   const [selectedClasse, setSelectedClasse] = useState<string | 'todas'>('todas');
   const [showRENAME, setShowRENAME] = useState(false);
 
+  // Fetch from Supabase when configured, falls back to local data
+  const { data: supabaseMedicamentos, loading } = useMedicamentos();
+  const medicamentos = supabaseMedicamentos.length > 0 ? supabaseMedicamentos : localMedicamentos;
+
   // Hydration safety
   useEffect(() => {
     setIsMounted(true);
   }, []);
-  
-  const medicamentosAgrupados = useMemo(() => getMedicamentosByClasse(medicamentos), []);
-  
+
+  const medicamentosAgrupados = useMemo(() => getMedicamentosByClasse(medicamentos), [medicamentos]);
+
   const medicamentosFiltrados = useMemo(() => {
     let filtered = medicamentos;
     if (showRENAME) filtered = filtered.filter(m => m.rename);
@@ -43,7 +48,7 @@ export default function MedicamentosClient() {
       );
     }
     return filtered;
-  }, [searchTerm, selectedClasse, showRENAME]);
+  }, [medicamentos, searchTerm, selectedClasse, showRENAME]);
 
   return (
     <div className="min-h-screen bg-paper-white dark:bg-carbon-950">

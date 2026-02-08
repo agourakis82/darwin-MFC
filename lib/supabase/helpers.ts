@@ -1,5 +1,3 @@
-// @ts-nocheck
-// TODO: Generate proper Supabase types with `supabase gen types`
 /**
  * SUPABASE HELPER FUNCTIONS
  * ==========================
@@ -8,10 +6,13 @@
  * Type-safe wrappers around Supabase queries
  */
 
-import { supabase } from './client';
+import { requireClient } from './client';
 import type { Database } from './types';
 
 type Tables = Database['public']['Tables'];
+type ProgressEntityType = Tables['user_progress']['Row']['entity_type'];
+type FavoriteEntityType = Tables['favorites']['Row']['entity_type'];
+type NoteEntityType = Tables['notes']['Row']['entity_type'];
 
 // ==============================================
 // PROGRESS TRACKING
@@ -30,7 +31,7 @@ export interface ProgressUpdate {
  * Update user progress for any entity
  */
 export async function updateProgress(userId: string, update: ProgressUpdate) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('user_progress')
     .upsert({
       user_id: userId,
@@ -54,10 +55,10 @@ export async function updateProgress(userId: string, update: ProgressUpdate) {
  */
 export async function getProgress(
   userId: string,
-  entityType: string,
+  entityType: ProgressEntityType,
   entityId: string
 ) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('user_progress')
     .select('*')
     .eq('user_id', userId)
@@ -72,7 +73,7 @@ export async function getProgress(
  * Get all progress for a user
  */
 export async function getAllProgress(userId: string) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('user_progress')
     .select('*')
     .eq('user_id', userId)
@@ -84,8 +85,8 @@ export async function getAllProgress(userId: string) {
 /**
  * Get completed items count by type
  */
-export async function getCompletedCount(userId: string, entityType: string) {
-  const { count, error } = await supabase
+export async function getCompletedCount(userId: string, entityType: ProgressEntityType) {
+  const { count, error } = await requireClient()
     .from('user_progress')
     .select('*', { count: 'exact', head: true })
     .eq('user_id', userId)
@@ -109,7 +110,7 @@ export async function addFavorite(
   notes?: string,
   tags?: string[]
 ) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('favorites')
     .insert({
       user_id: userId,
@@ -127,8 +128,8 @@ export async function addFavorite(
 /**
  * Remove from favorites
  */
-export async function removeFavorite(userId: string, entityType: string, entityId: string) {
-  const { error } = await supabase
+export async function removeFavorite(userId: string, entityType: FavoriteEntityType, entityId: string) {
+  const { error } = await requireClient()
     .from('favorites')
     .delete()
     .eq('user_id', userId)
@@ -141,8 +142,8 @@ export async function removeFavorite(userId: string, entityType: string, entityI
 /**
  * Check if item is favorited
  */
-export async function isFavorite(userId: string, entityType: string, entityId: string) {
-  const { data, error } = await supabase
+export async function isFavorite(userId: string, entityType: FavoriteEntityType, entityId: string) {
+  const { data, error } = await requireClient()
     .from('favorites')
     .select('id')
     .eq('user_id', userId)
@@ -156,8 +157,8 @@ export async function isFavorite(userId: string, entityType: string, entityId: s
 /**
  * Get all favorites for a user
  */
-export async function getFavorites(userId: string, entityType?: string) {
-  let query = supabase
+export async function getFavorites(userId: string, entityType?: FavoriteEntityType) {
+  let query = requireClient()
     .from('favorites')
     .select('*')
     .eq('user_id', userId);
@@ -189,7 +190,7 @@ export async function createNote(
     isPrivate?: boolean;
   }
 ) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('notes')
     .insert({
       user_id: userId,
@@ -218,7 +219,7 @@ export async function updateNote(
     isPrivate?: boolean;
   }
 ) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('notes')
     .update({
       title: updates.title,
@@ -237,7 +238,7 @@ export async function updateNote(
  * Delete a note
  */
 export async function deleteNote(noteId: string) {
-  const { error } = await supabase
+  const { error } = await requireClient()
     .from('notes')
     .delete()
     .eq('id', noteId);
@@ -250,10 +251,10 @@ export async function deleteNote(noteId: string) {
  */
 export async function getNotesForEntity(
   userId: string,
-  entityType: string,
+  entityType: NoteEntityType,
   entityId: string
 ) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('notes')
     .select('*')
     .eq('user_id', userId)
@@ -268,7 +269,7 @@ export async function getNotesForEntity(
  * Get all notes for a user
  */
 export async function getAllNotes(userId: string) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('notes')
     .select('*')
     .eq('user_id', userId)
@@ -285,7 +286,7 @@ export async function getAllNotes(userId: string) {
  * Get user XP and level
  */
 export async function getUserXP(userId: string) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('user_xp')
     .select('*')
     .eq('user_id', userId)
@@ -304,7 +305,7 @@ export async function awardXP(
   entityType?: string,
   entityId?: string
 ) {
-  const { error } = await supabase.rpc('award_xp', {
+  const { error } = await requireClient().rpc('award_xp', {
     p_user_id: userId,
     p_amount: amount,
     p_reason: reason,
@@ -319,7 +320,7 @@ export async function awardXP(
  * Get XP transaction history
  */
 export async function getXPHistory(userId: string, limit = 50) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('xp_transactions')
     .select('*')
     .eq('user_id', userId)
@@ -333,7 +334,7 @@ export async function getXPHistory(userId: string, limit = 50) {
  * Update user streak
  */
 export async function updateStreak(userId: string) {
-  const { error } = await supabase.rpc('update_user_streak', {
+  const { error } = await requireClient().rpc('update_user_streak', {
     p_user_id: userId,
   });
 
@@ -344,7 +345,7 @@ export async function updateStreak(userId: string) {
  * Get user badges
  */
 export async function getUserBadges(userId: string) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('user_badges')
     .select('*, badges(*)')
     .eq('user_id', userId)
@@ -361,7 +362,7 @@ export async function awardBadge(
   badgeId: string,
   metadata?: Record<string, any>
 ) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('user_badges')
     .insert({
       user_id: userId,
@@ -378,7 +379,7 @@ export async function awardBadge(
  * Get all available badges
  */
 export async function getAllBadges() {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('badges')
     .select('*')
     .order('category', { ascending: true });
@@ -403,7 +404,7 @@ export async function updateLearningProgress(
     timeSpentSeconds?: number;
   }
 ) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('learning_progress')
     .upsert({
       user_id: userId,
@@ -433,7 +434,7 @@ export async function recordQuizAttempt(
 ) {
   const passed = score >= 70; // 70% passing threshold
 
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('quiz_attempts')
     .insert({
       user_id: userId,
@@ -454,7 +455,7 @@ export async function recordQuizAttempt(
  * Get learning path progress
  */
 export async function getLearningProgress(userId: string, pathId: string) {
-  const { data, error } = await supabase
+  const { data, error } = await requireClient()
     .from('learning_progress')
     .select('*')
     .eq('user_id', userId)
@@ -478,7 +479,7 @@ export async function logActivity(
   entityId?: string,
   metadata?: Record<string, any>
 ) {
-  const { error } = await supabase
+  const { error } = await requireClient()
     .from('activity_log')
     .insert({
       user_id: userId,

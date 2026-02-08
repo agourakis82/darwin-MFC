@@ -183,31 +183,114 @@ export const medicamentosReumatologia: Partial<Medicamento>[] = [
     pharmgkb: [
       {
         gene: 'TPMT',
-        variant: '*1/*1',
-        phenotype: 'extensive_metabolizer',
-        implications: ['Normal TPMT activity', 'Standard azathioprine metabolism', 'Lower risk of myelosuppression'],
-        dosageRecommendations: ['Standard dosing (1-3mg/kg/day)', 'Regular CBC monitoring', 'No genetic adjustment needed'],
-      },
-      {
-        gene: 'TPMT',
-        variant: '*1/*3A, *1/*3C, *1/*2',
-        phenotype: 'intermediate_metabolizer',
-        implications: ['Moderately reduced TPMT activity (30-70%)', 'Increased risk of myelosuppression', 'Requires dose reduction'],
-        dosageRecommendations: ['Reduce dose by 30-50%', 'Start at 1-1.5mg/kg/day', 'Increase CBC monitoring frequency', 'Consider alternative if recurrent cytopenia'],
-      },
-      {
-        gene: 'TPMT',
-        variant: '*3A/*3A, *3C/*3C, *2/*3A',
-        phenotype: 'poor_metabolizer',
-        implications: ['Severely reduced or absent TPMT activity', 'HIGH RISK of life-threatening myelosuppression', 'Accumulation of cytotoxic thioguanine nucleotides'],
-        dosageRecommendations: ['Use only 10% of standard dose (0.1-0.3mg/kg/day) if essential', 'AVOID azathioprine if possible', 'Consider alternative immunosuppressant (mycophenolate)', 'Mandatory frequent CBC monitoring if used'],
+        level: '1A',
+        summary: 'TPMT inativa tiopurinas (azatioprina → 6-MP → metabólitos tóxicos). Deficiência de TPMT causa mielossupressão grave e potencialmente fatal.',
+        guidelineUrl: 'https://cpicpgx.org/guidelines/guideline-for-thiopurines-and-tpmt-and-nudt15/',
+        variants: [
+          {
+            allele: '*1/*1',
+            phenotype: 'normal_metabolizer',
+            frequency: { european: 0.89, african: 0.87, asian: 0.93, hispanic: 0.90, southAsian: 0.91 },
+            implications: [
+              'Atividade TPMT normal',
+              'Metabolismo adequado da azatioprina',
+            ],
+            dosageRecommendation: {
+              recommendation: 'Dose padrão (1-3mg/kg/dia), monitorar hemograma regularmente',
+              reasoning: 'Atividade enzimática preservada permite dose completa com monitorização de rotina',
+              strength: 'strong',
+              classification: 'CPIC Level A - Normal metabolizer',
+            },
+          },
+          {
+            allele: '*1/*3A',
+            phenotype: 'intermediate_metabolizer',
+            frequency: { european: 0.08, african: 0.05, asian: 0.02, hispanic: 0.07, southAsian: 0.04 },
+            implications: [
+              'Atividade TPMT reduzida em 30-70%',
+              'Risco aumentado de mielossupressão',
+              'Acúmulo de nucleotídeos tioguanínicos (TGN)',
+            ],
+            dosageRecommendation: {
+              recommendation: 'Reduzir dose em 30-50%, iniciar com 1-1,5mg/kg/dia, hemograma semanal',
+              reasoning: 'Atividade TPMT parcial causa acúmulo de TGN citotóxicos',
+              strength: 'strong',
+              classification: 'CPIC Level A - Intermediate metabolizer',
+            },
+          },
+          {
+            allele: '*3A/*3A',
+            phenotype: 'poor_metabolizer',
+            frequency: { european: 0.003, african: 0.001, asian: 0.0005, hispanic: 0.002, southAsian: 0.001 },
+            implications: [
+              'Atividade TPMT ausente ou muito reduzida',
+              'RISCO DE MIELOSSUPRESSÃO FATAL com doses padrão',
+              'Acúmulo massivo de TGN citotóxicos',
+            ],
+            dosageRecommendation: {
+              recommendation: 'EVITAR azatioprina. Se essencial: usar apenas 10% da dose (0,1-0,3mg/kg/dia) com hemograma 2x/semana',
+              reasoning: 'Ausência de TPMT causa acúmulo letal de nucleotídeos tioguanínicos. Alternativas devem ser priorizadas.',
+              strength: 'strong',
+              classification: 'CPIC Level A - Poor metabolizer',
+            },
+            alternatives: ['micofenolato mofetil', 'metotrexato', 'ciclosporina'],
+          },
+        ],
       },
       {
         gene: 'NUDT15',
-        variant: '*3/*3',
-        phenotype: 'poor_metabolizer',
-        implications: ['Reduced NUDT15 activity', 'Higher risk of myelosuppression (especially in Asian populations)', 'Complements TPMT testing'],
-        dosageRecommendations: ['Reduce dose by 50-80%', 'Consider alternative immunosuppressant', 'Enhanced CBC monitoring'],
+        level: '1A',
+        summary: 'NUDT15 desfosforila metabólitos ativos de tiopurinas. Variantes reduzem esta atividade, especialmente relevante em populações asiáticas.',
+        guidelineUrl: 'https://cpicpgx.org/guidelines/guideline-for-thiopurines-and-tpmt-and-nudt15/',
+        variants: [
+          {
+            allele: '*1/*1',
+            phenotype: 'normal_metabolizer',
+            frequency: { european: 0.97, african: 0.96, asian: 0.78, hispanic: 0.93, southAsian: 0.85 },
+            implications: [
+              'Atividade NUDT15 normal',
+              'Desfosforilação adequada de TGN-TP',
+            ],
+            dosageRecommendation: {
+              recommendation: 'Dose padrão (considerar resultado TPMT conjuntamente)',
+              reasoning: 'Atividade NUDT15 preservada, dosar conforme genótipo TPMT',
+              strength: 'strong',
+              classification: 'CPIC Level A - Normal NUDT15',
+            },
+          },
+          {
+            allele: '*1/*3',
+            phenotype: 'intermediate_metabolizer',
+            frequency: { european: 0.02, african: 0.03, asian: 0.18, hispanic: 0.05, southAsian: 0.12 },
+            implications: [
+              'Atividade NUDT15 reduzida',
+              'Risco aumentado de mielossupressão, especialmente em asiáticos',
+            ],
+            dosageRecommendation: {
+              recommendation: 'Reduzir dose em 25-50%, hemograma semanal nas primeiras 8 semanas',
+              reasoning: 'Redução de NUDT15 permite acúmulo de metabólitos ativos de tiopurina',
+              strength: 'strong',
+              classification: 'CPIC Level A - Intermediate NUDT15',
+            },
+          },
+          {
+            allele: '*3/*3',
+            phenotype: 'poor_metabolizer',
+            frequency: { european: 0.0001, african: 0.0002, asian: 0.01, hispanic: 0.001, southAsian: 0.005 },
+            implications: [
+              'Atividade NUDT15 muito reduzida',
+              'Risco elevado de mielossupressão grave',
+              'Prevalente em asiáticos orientais',
+            ],
+            dosageRecommendation: {
+              recommendation: 'EVITAR azatioprina ou usar dose muito reduzida (10-25% da padrão) com monitorização intensiva',
+              reasoning: 'Deficiência de NUDT15 é causa independente de mielossupressão grave por tiopurinas',
+              strength: 'strong',
+              classification: 'CPIC Level A - Poor NUDT15',
+            },
+            alternatives: ['micofenolato mofetil', 'metotrexato'],
+          },
+        ],
       },
     ]
   },

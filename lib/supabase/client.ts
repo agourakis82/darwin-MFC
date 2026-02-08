@@ -1,5 +1,3 @@
-// @ts-nocheck
-// TODO: Generate proper Supabase types with `supabase gen types`
 /**
  * SUPABASE CLIENT CONFIGURATION
  * ==============================
@@ -65,3 +63,13 @@ export function createServerSupabaseClient(): SupabaseClientType<Database> | nul
  * Type-safe Supabase client
  */
 export type SupabaseClient = SupabaseClientType<Database>;
+
+/**
+ * Get non-null Supabase client.
+ * Callers must ensure isSupabaseConfigured is true before calling.
+ * Throws if Supabase is not configured.
+ */
+export function requireClient(): SupabaseClientType<Database> {
+  if (!supabase) throw new Error('Supabase not configured. Check isSupabaseConfigured first.');
+  return supabase;
+}

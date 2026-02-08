@@ -1,33 +1,36 @@
 'use client';
 
-import { use } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import {
-  ArrowLeft, Pill, AlertTriangle, Baby, Heart, TestTube,
-  Clock, Shield, BookOpen, ChevronRight, Activity, XCircle,
-  CheckCircle, Info, Stethoscope, Dna, FileText, Download
+  ArrowLeft, Baby, Heart,
+  Clock, Shield, XCircle,
+  CheckCircle, Stethoscope, AlertTriangle,
+  Dna
 } from 'lucide-react';
-import { medicamentosConsolidados as medicamentos, getMedicamentoById } from '@/lib/data/medicamentos/index';
-import { CLASSES_TERAPEUTICAS, CLASSIFICACAO_GESTACAO } from '@/lib/types/medicamento';
+import { CLASSES_TERAPEUTICAS, CLASSIFICACAO_GESTACAO, type Medicamento } from '@/lib/types/medicamento';
 import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
-import { notFound } from 'next/navigation';
 import { PharmGKBDisplay } from '@/app/components/Ontology';
+import { PharmGKBAlert } from '@/app/components/Pharmacogenomics/PharmGKBAlert';
 import { PageContainer } from '@/app/components/Layout/Containers';
 import { TrustBadge } from '@/app/components/ui/TrustBadge';
+import { useGenotypeStore } from '@/lib/store/genotypeStore';
 import { cn } from '@/lib/utils';
 
-export default function MedicamentoDetailClient({ params }: { params: Promise<{ id: string }> }) {
+interface MedicamentoDetailClientProps {
+  medicamento: Medicamento;
+}
+
+export default function MedicamentoDetailClient({ medicamento: med }: MedicamentoDetailClientProps) {
   const t = useTranslations('medicationDetail');
   const { translateMedication } = useMedicalTerms();
-  const { id } = use(params);
-  const med = getMedicamentoById(id);
-
-  if (!med) notFound();
 
   const classeInfo = CLASSES_TERAPEUTICAS[med.classeTerapeutica];
   const gestacaoInfo = CLASSIFICACAO_GESTACAO[med.gestacao];
   const translatedName = translateMedication(med.atcCode, med.nomeGenerico);
+  const { hasGenotypes } = useGenotypeStore();
+  const hasPGxData = med.pharmgkb && med.pharmgkb.length > 0;
+  const showPGxAlert = hasPGxData && hasGenotypes();
 
   // Pregnancy category colors - clinical grade
   const pregnancyCategoryColors: Record<string, string> = {
@@ -118,6 +121,41 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
               <span className="text-base text-neutral-600 dark:text-neutral-400">{gestacaoInfo.descricao}</span>
             </div>
           </div>
+        )}
+
+        {/* PGx Alert Banner */}
+        {showPGxAlert && (
+          <section className="mb-8">
+            <PharmGKBAlert
+              medicationName={translatedName}
+              pharmgkbData={med.pharmgkb!}
+              onViewDetails={() => {
+                const el = document.getElementById('pharmgkb');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            />
+          </section>
+        )}
+
+        {/* PGx Banner - show link when medication has data but user has no genotypes */}
+        {hasPGxData && !hasGenotypes() && (
+          <section className="mb-8 p-4 bg-purple-50 dark:bg-purple-950/30 rounded-2xl border border-purple-200 dark:border-purple-800 flex items-center gap-4">
+            <Dna className="w-6 h-6 text-purple-600 dark:text-purple-400 flex-shrink-0" />
+            <div className="flex-1">
+              <p className="text-base font-medium text-purple-800 dark:text-purple-200">
+                Este medicamento tem dados farmacogenéticos
+              </p>
+              <p className="text-sm text-purple-600 dark:text-purple-400">
+                Configure seus genótipos para ver alertas personalizados de dosagem.
+              </p>
+            </div>
+            <Link
+              href="/farmacogenetica"
+              className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-lg transition-colors flex-shrink-0"
+            >
+              Configurar
+            </Link>
+          </section>
         )}
 
         <div className="flex flex-col lg:flex-row gap-8">
@@ -293,7 +331,7 @@ export default function MedicamentoDetailClient({ params }: { params: Promise<{ 
             </section>
 
             {/* PharmGKB */}
-            <section>
+            <section id="pharmgkb">
               <PharmGKBDisplay
                 medicationName={med.nomeGenerico}
                 pharmgkbData={med.pharmgkb}

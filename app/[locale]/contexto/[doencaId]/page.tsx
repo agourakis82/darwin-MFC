@@ -32,11 +32,7 @@ export async function generateStaticParams() {
   }));
 }
 
-// Allow dynamic params for diseases not in generateStaticParams
-export const dynamicParams = true;
-
-// ISR: Revalidate pages every hour
-export const revalidate = 3600;
+export const dynamicParams = false;
 
 interface PageProps {
   params: Promise<{ doencaId: string }>;

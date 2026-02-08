@@ -1,4 +1,6 @@
+import { notFound } from 'next/navigation';
 import { medicamentosConsolidados as medicamentos } from '@/lib/data/medicamentos/index';
+import { getMedicamentoServer } from '@/lib/supabase/server-utils';
 import MedicamentoDetailClient from './MedicamentoDetailClient';
 
 // Check if we're on Vercel (use dynamic rendering to reduce deployment size)
@@ -21,12 +23,17 @@ export function generateStaticParams() {
   }));
 }
 
-// Allow dynamic params for medications not in generateStaticParams
-export const dynamicParams = true;
+export const dynamicParams = false;
 
-// ISR: Revalidate pages every hour
-export const revalidate = 3600;
+export default async function MedicamentoDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
 
-export default function MedicamentoDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  return <MedicamentoDetailClient params={params} />;
+  // Fetch medication from Supabase (or fallback to TypeScript constants)
+  const medicamento = await getMedicamentoServer(id);
+
+  if (!medicamento) {
+    notFound();
+  }
+
+  return <MedicamentoDetailClient medicamento={medicamento} />;
 }

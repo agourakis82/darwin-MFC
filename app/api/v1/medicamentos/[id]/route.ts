@@ -9,10 +9,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getDrugInteractionsForMedication, hasPharmacogenomicData } from '@/lib/types/pharmgkb';
 import { getMedicamentoById, getMedicamentos } from '@/lib/data/supabase-data';
 
-// Dynamic rendering with ISR caching
-export const dynamic = 'auto';
-export const dynamicParams = true;
-export const revalidate = 3600; // 1 hour cache
+// Static generation for all medication routes
+export const dynamic = 'force-static';
+export const dynamicParams = false;
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -67,12 +66,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   }
 }
 
-// Generate static params - limited for smaller deployment size
 export async function generateStaticParams() {
-  // Only pre-generate top 20 for faster builds
-  // Rest will be generated on-demand with ISR
   const meds = await getMedicamentos();
-  return meds.slice(0, 20).map((med) => ({
-    id: med.id,
-  }));
+  return meds.map((med) => ({ id: med.id }));
 }

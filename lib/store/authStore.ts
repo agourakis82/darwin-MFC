@@ -78,7 +78,6 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
         set({ user: session.user, session });
 
         // Fetch user profile
-        // @ts-ignore - Supabase types not fully configured yet
         const { data: profile } = await supabase
           .from('users')
           .select('*')
@@ -91,13 +90,12 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
       }
 
       // Listen for auth changes
-      supabase.auth.onAuthStateChange(async (event, session) => {
+      supabase!.auth.onAuthStateChange(async (event, session) => {
         set({ session, user: session?.user ?? null });
 
         if (event === 'SIGNED_IN' && session?.user) {
           // Fetch profile on sign in
-          // @ts-ignore - Supabase types not fully configured yet
-          const { data: profile } = await supabase
+          const { data: profile } = await supabase!
             .from('users')
             .select('*')
             .eq('id', session.user.id)
@@ -144,7 +142,6 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
     if (!isSupabaseConfigured || !supabase) return;
 
     try {
-      // @ts-ignore - Supabase types not fully configured yet
       const { data: profile } = await supabase
         .from('users')
         .select('*')

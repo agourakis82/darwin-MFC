@@ -177,6 +177,79 @@ export const medicamentosOncologiaQuimio: Partial<Medicamento>[] = [
     gestacao: 'D',
     amamentacao: { compativel: false, observacao: 'Contraindicado' },
     doencasRelacionadas: ['cancer-colorretal', 'cancer-gastrico'],
+    pharmgkb: [
+      {
+        gene: 'DPYD',
+        level: '1A',
+        summary: 'DPYD codifica a dihidropirimidina desidrogenase (DPD), enzima responsável pela inativação do 5-FU. Deficiência de DPD causa toxicidade grave e potencialmente fatal.',
+        guidelineUrl: 'https://cpicpgx.org/guidelines/guideline-for-fluoropyrimidines-and-dpyd/',
+        variants: [
+          {
+            allele: '*1/*1 (sem variantes)',
+            phenotype: 'normal_metabolizer',
+            frequency: { european: 0.90, african: 0.92, asian: 0.95, hispanic: 0.91, southAsian: 0.93 },
+            implications: [
+              'Atividade DPD normal',
+              'Metabolismo adequado do 5-FU',
+            ],
+            dosageRecommendation: {
+              recommendation: 'Dose padrão conforme protocolo oncológico',
+              reasoning: 'Atividade enzimática DPD preservada, clearance normal do 5-FU',
+              strength: 'strong',
+              classification: 'CPIC Level A - Normal metabolizer',
+            },
+          },
+          {
+            allele: '*1/*2A (c.1905+1G>A heterozigoto)',
+            phenotype: 'intermediate_metabolizer',
+            frequency: { european: 0.02, african: 0.01, asian: 0.005, hispanic: 0.015, southAsian: 0.01 },
+            implications: [
+              'Atividade DPD reduzida em ~50%',
+              'Risco elevado de toxicidade grave (mucosite, mielossupressão)',
+              'Diarreia grave e síndrome mão-pé mais frequentes',
+            ],
+            dosageRecommendation: {
+              recommendation: 'Reduzir dose inicial em 50%, monitorar toxicidade rigorosamente',
+              reasoning: 'Atividade DPD parcial resulta em acúmulo de 5-FU e metabólitos tóxicos',
+              strength: 'strong',
+              classification: 'CPIC Level A - Intermediate metabolizer',
+            },
+          },
+          {
+            allele: '*2A/*2A (c.1905+1G>A homozigoto)',
+            phenotype: 'poor_metabolizer',
+            frequency: { european: 0.001, african: 0.0005, asian: 0.0001, hispanic: 0.0008, southAsian: 0.0003 },
+            implications: [
+              'Deficiência completa ou quase completa de DPD',
+              'RISCO DE TOXICIDADE FATAL com doses padrão',
+              'Mielossupressão grave, sepse, mucosite necrosante',
+            ],
+            dosageRecommendation: {
+              recommendation: 'CONTRAINDICADO - NÃO ADMINISTRAR fluoropirimidinas',
+              reasoning: 'Ausência de DPD causa acúmulo letal de 5-FU. Toxicidade é imprevisível e potencialmente fatal.',
+              strength: 'strong',
+              classification: 'CPIC Level A - Poor metabolizer (DPD deficient)',
+            },
+            alternatives: ['raltitrexed', 'esquema sem fluoropirimidinas'],
+          },
+          {
+            allele: 'c.2846A>T heterozigoto',
+            phenotype: 'intermediate_metabolizer',
+            frequency: { european: 0.015, african: 0.005, asian: 0.003, hispanic: 0.01, southAsian: 0.005 },
+            implications: [
+              'Atividade DPD parcialmente reduzida',
+              'Risco aumentado de toxicidade graus 3-4',
+            ],
+            dosageRecommendation: {
+              recommendation: 'Reduzir dose inicial em 25-50%, titular conforme tolerância',
+              reasoning: 'Variante c.2846A>T reduz atividade DPD, embora menos que *2A',
+              strength: 'moderate',
+              classification: 'CPIC Level A - Intermediate metabolizer (c.2846 variant)',
+            },
+          },
+        ],
+      },
+    ],
     citations: [{ refId: 'rename-2024' }],
     lastUpdate: '2025-01',
     tags: ['antineoplasico', 'quimioterapia', 'antimetabolito']
