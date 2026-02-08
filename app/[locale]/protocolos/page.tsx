@@ -9,10 +9,12 @@
 
 import { useState, useMemo } from 'react';
 import { Link } from '@/i18n/routing';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { GitFork, Search, Workflow, ExternalLink, Filter, Clock, ChevronRight } from 'lucide-react';
 import { PageContainer } from '@/app/components/Layout/Containers';
 import { todosProtocolosFlowchart } from '@/lib/data/protocolos-flowchart';
+import { fadeInUp, listContainer } from '@/lib/design-system/animations/presets';
 
 export default function ProtocolosPage() {
   const t = useTranslations('protocolos');
@@ -115,15 +117,21 @@ export default function ProtocolosPage() {
 
         {/* Protocols Grid */}
         {protocolosFiltrados.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={listContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {protocolosFiltrados.map((protocolo) => {
               const gradient = getCategoriaGradient(protocolo.categoria);
-              
+
               return (
+                <motion.div key={protocolo.id} variants={fadeInUp} whileHover={{ y: -4 }} whileTap={{ scale: 0.98 }}>
                 <Link
-                  key={protocolo.id}
                   href={`/protocolos/flowchart/${protocolo.id}`}
-                  className="group card-darwin relative overflow-hidden rounded-2xl hover:border-adenine-teal dark:hover:border-cytosine-cyan transition-all hover:shadow-xl hover:scale-[1.02]"
+                  className="group card-darwin relative overflow-hidden rounded-2xl hover:border-adenine-teal dark:hover:border-cytosine-cyan transition-all hover:shadow-xl hover:scale-[1.02] block"
                 >
                   {/* Gradient Header */}
                   <div className={`h-2 bg-gradient-to-r ${gradient}`} />
@@ -178,9 +186,10 @@ export default function ProtocolosPage() {
                     </div>
                   </div>
                 </Link>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         ) : (
           <div className="text-center py-16">
             <Search className="w-16 h-16 mx-auto mb-4 text-carbon-300" />

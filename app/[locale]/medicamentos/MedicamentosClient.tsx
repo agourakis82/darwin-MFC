@@ -2,9 +2,11 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { Link } from '@/i18n/routing';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useAppStore } from '@/lib/store/appStore';
 import { PageContainer } from '@/app/components/Layout/Containers';
+import { fadeInUp } from '@/lib/design-system/animations/presets';
 import {
   Search, Pill, Shield, ChevronRight, Activity, Baby, AlertTriangle, Globe, Loader2
 } from 'lucide-react';
@@ -120,7 +122,13 @@ export default function MedicamentosClient() {
         </div>
 
         {/* Compound Ledger */}
-        <div className="bg-white dark:bg-carbon-900 border border-carbon-200 dark:border-carbon-800 rounded-lg overflow-hidden">
+        <motion.div
+          className="bg-white dark:bg-carbon-900 border border-carbon-200 dark:border-carbon-800 rounded-lg overflow-hidden"
+          variants={fadeInUp}
+          initial="initial"
+          animate="animate"
+          transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+        >
           <div className="grid grid-cols-12 bg-clinical-gray dark:bg-carbon-800/50 border-b border-carbon-200 dark:border-carbon-700 px-6 py-3 text-[10px] font-bold text-carbon-400 uppercase tracking-widest">
             <div className="col-span-1">{t('table.category')}</div>
             <div className="col-span-4">{t('table.genericName')}</div>
@@ -183,7 +191,7 @@ export default function MedicamentosClient() {
               })}
             </div>
           )}
-        </div>
+        </motion.div>
 
         {/* Footer Statistics */}
         <div className="mt-8 flex justify-between items-center text-[10px] font-bold text-carbon-400 uppercase tracking-widest">

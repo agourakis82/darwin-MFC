@@ -16,6 +16,8 @@ import { PageContainer } from '@/app/components/Layout/Containers';
 import { TrustBadge } from '@/app/components/ui/TrustBadge';
 import { useGenotypeStore } from '@/lib/store/genotypeStore';
 import { cn } from '@/lib/utils';
+import { StaggerPageSections } from '@/lib/design-system/animations/page-transitions';
+import { ScrollReveal } from '@/lib/design-system/animations/scroll';
 
 interface MedicamentoDetailClientProps {
   medicamento: Medicamento;
@@ -204,7 +206,7 @@ export default function MedicamentoDetailClient({ medicamento: med }: Medicament
           </aside>
 
           {/* Main Content */}
-          <main className="flex-1 max-w-3xl space-y-8">
+          <StaggerPageSections staggerDelay={0.1} className="flex-1 max-w-3xl space-y-8">
             {/* Indications - Key Points style */}
             <section id="indications" className="bg-teal-50 dark:bg-teal-950/40 rounded-2xl p-6 border-2 border-teal-200 dark:border-teal-800">
               <h2 className="text-lg font-bold text-teal-800 dark:text-teal-200 mb-4 flex items-center gap-2">
@@ -269,6 +271,7 @@ export default function MedicamentoDetailClient({ medicamento: med }: Medicament
             </section>
 
             {/* Interactions - Color-coded severity */}
+            <ScrollReveal animation="fadeInUp">
             <section id="interactions" className="bg-white dark:bg-neutral-900 rounded-2xl shadow-sm p-6">
               <h2 className="text-xl font-bold text-neutral-900 dark:text-white mb-6 border-l-4 border-teal-500 pl-4">
                 Interações Medicamentosas
@@ -301,8 +304,10 @@ export default function MedicamentoDetailClient({ medicamento: med }: Medicament
                 )}
               </div>
             </section>
+            </ScrollReveal>
 
             {/* Contraindications & Breastfeeding */}
+            <ScrollReveal animation="fadeInUp">
             <section id="contraindications" className="grid sm:grid-cols-2 gap-4">
               <div className="bg-red-50 dark:bg-red-950/30 rounded-2xl p-6 border border-red-200 dark:border-red-800">
                 <h3 className="text-base font-bold text-red-800 dark:text-red-200 mb-4 flex items-center gap-2">
@@ -329,15 +334,18 @@ export default function MedicamentoDetailClient({ medicamento: med }: Medicament
                 </p>
               </div>
             </section>
+            </ScrollReveal>
 
             {/* PharmGKB */}
+            <ScrollReveal animation="fadeInUp">
             <section id="pharmgkb">
               <PharmGKBDisplay
                 medicationName={med.nomeGenerico}
                 pharmgkbData={med.pharmgkb}
               />
             </section>
-          </main>
+            </ScrollReveal>
+          </StaggerPageSections>
         </div>
       </PageContainer>
     </div>

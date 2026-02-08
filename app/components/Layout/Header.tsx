@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useAppStore } from '@/lib/store/appStore';
 import { LanguageSelector } from '../LanguageSelector';
 import RegionSelector, { RegionSelectorCompact } from '../RegionSelector';
@@ -11,6 +12,8 @@ import CommandPalette from '../CommandPalette/CommandPalette';
 import { HighYieldToggle } from '../HighYield';
 import { DarwinLogo } from '../Brand';
 import UserMenu from '../Auth/UserMenu';
+import { DrawerTransition } from '@/lib/design-system/animations/transitions';
+import { fadeInUp, listContainer, springs } from '@/lib/design-system/animations/presets';
 
 // Fallback translations for pages not yet migrated to [locale]
 const fallbackTranslations: Record<string, string> = {
@@ -167,23 +170,50 @@ export default function Header() {
               showLabel={false}
             />
 
-            {/* Toggle Modo de Conteúdo */}
-            <button
-              onClick={toggleContentMode}
-              className={`px-3.5 py-2 rounded-xl flex items-center gap-2 text-base font-medium apple-transition shadow-sm ${
-                contentMode === 'descriptive'
-                  ? 'bg-adenine-teal/10 text-adenine-teal dark:bg-cytosine-cyan/15 dark:text-cytosine-cyan'
-                  : 'bg-guanine-green/10 text-guanine-green dark:bg-guanine-green/15 dark:text-guanine-green'
-              }`}
-              title={contentMode === 'descriptive' ? t('contentMode.descriptive') : t('contentMode.criticalAnalysis')}
-              aria-pressed={contentMode === 'critical_analysis'}
-              aria-label={`Content mode: ${contentMode === 'descriptive' ? 'Descriptive' : 'Critical Analysis'}. Click to toggle.`}
+            {/* Content Mode Segmented Control */}
+            <div
+              className="relative flex items-center bg-carbon-100 dark:bg-carbon-800 rounded-xl p-0.5"
+              role="radiogroup"
+              aria-label="Content mode"
             >
-              <FileText className="w-5 h-5" aria-hidden="true" />
-              <span className="hidden sm:inline">
-                {contentMode === 'descriptive' ? t('header.descriptiveMode') : t('header.criticalAnalysisMode')}
-              </span>
-            </button>
+              <motion.div
+                className="absolute top-0.5 bottom-0.5 rounded-lg bg-white dark:bg-carbon-700 shadow-sm"
+                layout
+                transition={{ type: 'spring', ...springs.bouncy }}
+                style={{
+                  left: contentMode === 'descriptive' ? '2px' : '50%',
+                  right: contentMode === 'descriptive' ? '50%' : '2px',
+                }}
+              />
+              <button
+                onClick={() => contentMode !== 'descriptive' && toggleContentMode()}
+                className={`relative z-10 px-3 py-1.5 rounded-lg text-sm font-medium apple-transition-fast flex items-center gap-1.5 ${
+                  contentMode === 'descriptive'
+                    ? 'text-adenine-teal dark:text-cytosine-cyan'
+                    : 'text-carbon-500 dark:text-carbon-400'
+                }`}
+                role="radio"
+                aria-checked={contentMode === 'descriptive'}
+                title={t('contentMode.descriptive')}
+              >
+                <BookOpen className="w-4 h-4" aria-hidden="true" />
+                <span className="hidden sm:inline">{t('header.descriptiveMode')}</span>
+              </button>
+              <button
+                onClick={() => contentMode !== 'critical_analysis' && toggleContentMode()}
+                className={`relative z-10 px-3 py-1.5 rounded-lg text-sm font-medium apple-transition-fast flex items-center gap-1.5 ${
+                  contentMode === 'critical_analysis'
+                    ? 'text-guanine-green dark:text-guanine-green'
+                    : 'text-carbon-500 dark:text-carbon-400'
+                }`}
+                role="radio"
+                aria-checked={contentMode === 'critical_analysis'}
+                title={t('contentMode.criticalAnalysis')}
+              >
+                <FileText className="w-4 h-4" aria-hidden="true" />
+                <span className="hidden sm:inline">{t('header.criticalAnalysisMode')}</span>
+              </button>
+            </div>
 
             {/* Region Selector */}
             <RegionSelectorCompact />
@@ -194,198 +224,167 @@ export default function Header() {
             {/* User Menu / Login */}
             <UserMenu />
 
-            {/* Toggle Tema */}
-            <button
+            {/* Toggle Tema — animated */}
+            <motion.button
               onClick={toggleTheme}
               className="p-2 rounded-xl hover:bg-adenine-teal/10 dark:hover:bg-cytosine-cyan/10 apple-transition-fast"
               aria-label={theme === 'light' ? t('header.darkMode') : t('header.lightMode')}
               title={theme === 'light' ? t('header.darkMode') : t('header.lightMode')}
               aria-pressed={theme === 'dark'}
+              whileTap={{ scale: 0.85, rotate: 180 }}
+              transition={{ type: 'spring', ...springs.bouncy }}
             >
-              {theme === 'light' ? (
-                <Moon className="w-5 h-5 text-helix-navy" aria-hidden="true" />
-              ) : (
-                <Sun className="w-5 h-5 text-cytosine-cyan" aria-hidden="true" />
-              )}
-            </button>
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={theme}
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  {theme === 'light' ? (
+                    <Moon className="w-5 h-5 text-helix-navy" aria-hidden="true" />
+                  ) : (
+                    <Sun className="w-5 h-5 text-cytosine-cyan" aria-hidden="true" />
+                  )}
+                </motion.div>
+              </AnimatePresence>
+            </motion.button>
           </div>
         </div>
 
-        {/* Menu Mobile - Melhorado */}
-        {mobileMenuOpen && (
+        {/* Mobile Drawer Menu */}
+        <DrawerTransition
+          show={mobileMenuOpen}
+          position="left"
+          size="320px"
+          backdrop={true}
+          closeOnBackdropClick={true}
+          onBackdropClick={() => setMobileMenuOpen(false)}
+        >
           <div
             id="mobile-menu"
-            className="lg:hidden pb-6 border-t border-black/10 dark:border-white/10 mt-4 pt-4 animate-fade-in max-h-[85vh] sm:max-h-[80vh] overflow-y-auto"
+            className="h-full bg-white dark:bg-carbon-950 overflow-y-auto pb-24"
             role="navigation"
             aria-label="Mobile navigation"
           >
-            
-            {/* Plataforma Social */}
-            <div className="mb-4">
-              <p className="px-5 py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">
-                Plataforma
-              </p>
-              <nav className="grid grid-cols-2 gap-2 px-3">
-                <Link
-                  href="/learn"
-                  className="flex flex-col items-center gap-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border-2 border-blue-200 dark:border-blue-800"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <GraduationCap className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                  <span className="text-xs font-medium">Aprender</span>
-                </Link>
-                <Link
-                  href="/community"
-                  className="flex flex-col items-center gap-2 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border-2 border-purple-200 dark:border-purple-800"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Users className="w-6 h-6 text-purple-600 dark:text-purple-400" />
-                  <span className="text-xs font-medium">Comunidade</span>
-                </Link>
-              </nav>
+            {/* Drawer Header */}
+            <div className="flex items-center justify-between px-5 py-4 border-b border-carbon-200 dark:border-carbon-800">
+              <DarwinLogo variant="full" size="sm" animated={false} />
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 rounded-xl hover:bg-carbon-100 dark:hover:bg-carbon-800 apple-transition-fast"
+                aria-label="Close menu"
+              >
+                <X className="w-5 h-5 text-carbon-500" />
+              </button>
             </div>
 
-            {/* Ferramentas Rápidas */}
-            <div className="mb-4">
-              <p className="px-5 py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">
-                Ferramentas Clínicas
-              </p>
-              <nav className="grid grid-cols-2 gap-2 px-3">
-                <Link
-                  href="/consulta-rapida"
-                  className="flex flex-col items-center gap-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Zap className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                  <span className="text-xs font-medium">Consulta Rápida</span>
-                </Link>
-                <Link
-                  href="/prontuario"
-                  className="flex flex-col items-center gap-2 p-4 bg-green-50 dark:bg-green-900/20 rounded-xl"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <ClipboardList className="w-6 h-6 text-green-600 dark:text-green-400" />
-                  <span className="text-xs font-medium">SOAP</span>
-                </Link>
-                <Link
-                  href="/medicamentos/interacoes"
-                  className="flex flex-col items-center gap-2 p-4 bg-red-50 dark:bg-red-900/20 rounded-xl"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <AlertTriangle className="w-6 h-6 text-red-600 dark:text-red-400" />
-                  <span className="text-xs font-medium">Interações</span>
-                </Link>
-                <Link
-                  href="/calculadoras"
-                  className="flex flex-col items-center gap-2 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Calculator className="w-6 h-6 text-purple-600 dark:text-purple-400" />
-                  <span className="text-xs font-medium">Calculadoras</span>
-                </Link>
-                <Link
-                  href="/notas"
-                  className="flex flex-col items-center gap-2 p-4 bg-orange-50 dark:bg-orange-900/20 rounded-xl"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <StickyNote className="w-6 h-6 text-orange-600 dark:text-orange-400" />
-                  <span className="text-xs font-medium">Notas</span>
-                </Link>
-              </nav>
-            </div>
+            <motion.div
+              variants={listContainer}
+              initial="initial"
+              animate="animate"
+              className="p-4 space-y-6"
+            >
+              {/* Ferramentas Rápidas */}
+              <motion.div variants={fadeInUp}>
+                <p className="px-2 py-2 text-xs font-bold text-carbon-400 uppercase tracking-wider">
+                  Ferramentas Clínicas
+                </p>
+                <nav className="grid grid-cols-2 gap-2">
+                  {[
+                    { href: '/consulta-rapida', icon: Zap, label: 'Consulta Rápida', color: 'text-adenine-teal bg-adenine-teal/10' },
+                    { href: '/prontuario', icon: ClipboardList, label: 'SOAP', color: 'text-guanine-green bg-guanine-green/10' },
+                    { href: '/medicamentos/interacoes', icon: AlertTriangle, label: 'Interações', color: 'text-red-500 bg-red-500/10' },
+                    { href: '/calculadoras', icon: Calculator, label: 'Calculadoras', color: 'text-cytosine-cyan bg-cytosine-cyan/10' },
+                    { href: '/notas', icon: StickyNote, label: 'Notas', color: 'text-thymine-gold bg-thymine-gold/10' },
+                    { href: '/learn', icon: GraduationCap, label: 'Aprender', color: 'text-adenine-teal bg-adenine-teal/10' },
+                  ].map(item => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="flex flex-col items-center gap-2 p-3 rounded-xl apple-transition-fast hover:scale-[1.02] active:scale-95"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${item.color}`}>
+                        <item.icon className="w-5 h-5" />
+                      </div>
+                      <span className="text-xs font-medium text-carbon-700 dark:text-carbon-300">{item.label}</span>
+                    </Link>
+                  ))}
+                </nav>
+              </motion.div>
 
-            {/* Guia Clínico */}
-            <div className="mb-4">
-              <p className="px-5 py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">
-                {t('sidebar.quickAccess')}
-              </p>
-              <nav className="flex flex-col gap-1 px-3">
-                <Link
-                  href="/doencas"
-                  className="flex items-center gap-3 px-4 py-3 hover:bg-black/5 dark:hover:bg-white/10 rounded-xl"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Stethoscope className="w-5 h-5 text-[#86868b]" />
-                  <span className="font-medium">Doenças APS</span>
-                  <span className="ml-auto text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-0.5 rounded-full">Novo</span>
-                </Link>
-                <Link
-                  href="/medicamentos"
-                  className="flex items-center gap-3 px-4 py-3 hover:bg-black/5 dark:hover:bg-white/10 rounded-xl"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Pill className="w-5 h-5 text-[#86868b]" />
-                  <span className="font-medium">Bulário RENAME</span>
-                </Link>
-                <Link
-                  href="/protocolos"
-                  className="flex items-center gap-3 px-4 py-3 hover:bg-black/5 dark:hover:bg-white/10 rounded-xl"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <FileText className="w-5 h-5 text-[#86868b]" />
-                  <span className="font-medium">Protocolos</span>
-                </Link>
-              </nav>
-            </div>
+              {/* Guia Clínico */}
+              <motion.div variants={fadeInUp}>
+                <p className="px-2 py-2 text-xs font-bold text-carbon-400 uppercase tracking-wider">
+                  {t('sidebar.quickAccess')}
+                </p>
+                <nav className="flex flex-col gap-1">
+                  {[
+                    { href: '/doencas', icon: Stethoscope, label: 'Doenças APS', badge: true },
+                    { href: '/medicamentos', icon: Pill, label: 'Bulário RENAME' },
+                    { href: '/protocolos', icon: FileText, label: 'Protocolos' },
+                  ].map(item => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="flex items-center gap-3 px-3 py-2.5 hover:bg-carbon-100 dark:hover:bg-carbon-800 rounded-xl apple-transition-fast"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <item.icon className="w-5 h-5 text-carbon-400" />
+                      <span className="font-medium text-carbon-800 dark:text-carbon-200">{item.label}</span>
+                      {item.badge && (
+                        <span className="ml-auto text-xs bg-guanine-green/10 text-guanine-green px-2 py-0.5 rounded-full font-medium">Novo</span>
+                      )}
+                    </Link>
+                  ))}
+                </nav>
+              </motion.div>
 
-            {/* Rastreamentos */}
-            <div className="mb-4">
-              <p className="px-5 py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">
-                {t('sidebar.rastreamentos')}
-              </p>
-              <nav className="flex flex-col gap-1 px-3">
-                {[
-                  { href: '/neonatal', label: t('nav.neonatal') },
-                  { href: '/infantil', label: t('nav.infantil') },
-                  { href: '/adultos', label: t('nav.adultos') },
-                  { href: '/cancer', label: t('nav.cancer') },
-                  { href: '/gestacao', label: t('nav.gestacao') },
-                ].map(item => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="px-4 py-2.5 text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-black/5 dark:hover:bg-white/10 rounded-xl"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
+              {/* Rastreamentos */}
+              <motion.div variants={fadeInUp}>
+                <p className="px-2 py-2 text-xs font-bold text-carbon-400 uppercase tracking-wider">
+                  {t('sidebar.rastreamentos')}
+                </p>
+                <nav className="flex flex-col gap-0.5">
+                  {[
+                    { href: '/neonatal', label: t('nav.neonatal') },
+                    { href: '/infantil', label: t('nav.infantil') },
+                    { href: '/adultos', label: t('nav.adultos') },
+                    { href: '/cancer', label: t('nav.cancer') },
+                    { href: '/gestacao', label: t('nav.gestacao') },
+                  ].map(item => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="px-3 py-2.5 text-sm font-medium text-carbon-700 dark:text-carbon-300 hover:bg-carbon-100 dark:hover:bg-carbon-800 rounded-xl apple-transition-fast"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+              </motion.div>
 
-            {/* Region Selector Mobile */}
-            <div className="px-5 pt-4 border-t border-black/10 dark:border-white/10">
-              <p className="py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">
-                Select Region
-              </p>
-              <RegionSelector showLabel={false} isCompact={false} className="w-full" />
-            </div>
-
-            {/* Language Selector Mobile */}
-            <div className="px-5 pt-4 border-t border-black/10 dark:border-white/10">
-              <p className="py-2 text-xs font-bold text-[#86868b] uppercase tracking-wider">
-                {t('header.selectLanguage')}
-              </p>
-              <LanguageSelector variant="buttons" />
-            </div>
-
-            {/* Atalhos */}
-            <div className="px-5 pt-4 border-t border-black/10 dark:border-white/10">
-              <div className="flex items-center gap-2 text-xs text-[#86868b]">
-                <Keyboard className="w-4 h-4" aria-hidden="true" />
-                <span>
-                  Pressione{' '}
-                  <kbd className="px-1.5 py-0.5 bg-neutral-200 dark:bg-neutral-700 rounded text-xs font-mono">
-                    <Command className="w-3 h-3 inline" />K
-                  </kbd>{' '}
-                  para buscar ou{' '}
-                  <kbd className="px-1.5 py-0.5 bg-neutral-200 dark:bg-neutral-700 rounded text-xs font-mono">?</kbd>{' '}
-                  para atalhos
-                </span>
-              </div>
-            </div>
+              {/* Settings */}
+              <motion.div variants={fadeInUp} className="space-y-4 pt-4 border-t border-carbon-200 dark:border-carbon-800">
+                <div>
+                  <p className="px-2 py-2 text-xs font-bold text-carbon-400 uppercase tracking-wider">
+                    Region
+                  </p>
+                  <RegionSelector showLabel={false} isCompact={false} className="w-full" />
+                </div>
+                <div>
+                  <p className="px-2 py-2 text-xs font-bold text-carbon-400 uppercase tracking-wider">
+                    {t('header.selectLanguage')}
+                  </p>
+                  <LanguageSelector variant="buttons" />
+                </div>
+              </motion.div>
+            </motion.div>
           </div>
-        )}
+        </DrawerTransition>
       </div>
     </header>
 

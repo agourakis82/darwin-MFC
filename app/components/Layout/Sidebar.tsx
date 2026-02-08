@@ -4,6 +4,9 @@ import { useState, useMemo } from 'react';
 import { Link } from '@/i18n/routing';
 import { usePathname } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
+import { AccordionTransition } from '@/lib/design-system/animations/transitions';
+import { hoverLift } from '@/lib/design-system/animations/presets';
 import {
   ChevronDown,
   ChevronRight,
@@ -161,12 +164,13 @@ export default function Sidebar() {
     return (
       <div key={section.title}>
         {section.path ? (
+          <motion.div whileHover={{ x: 2 }} transition={{ duration: 0.15 }}>
           <Link
             href={section.path}
             className={`flex items-center justify-between px-4 py-2.5 rounded-xl transition-all group ${
               isActive
-                ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20 font-semibold'
-                : 'text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800/80 hover:shadow-sm'
+                ? 'bg-adenine-teal/10 text-adenine-teal dark:bg-cytosine-cyan/10 dark:text-cytosine-cyan border-l-2 border-adenine-teal dark:border-cytosine-cyan font-semibold'
+                : 'text-carbon-700 dark:text-carbon-300 hover:bg-carbon-100 dark:hover:bg-carbon-800 hover:shadow-sm'
             }`}
             onClick={(e) => {
               if (hasSubsections) {
@@ -182,7 +186,7 @@ export default function Sidebar() {
               <span className="text-sm font-medium">{section.title}</span>
             </div>
             {section.badge && (
-              <span className="px-1.5 py-0.5 bg-emerald-500 text-white text-[10px] font-bold rounded-full ml-auto mr-2">
+              <span className="px-1.5 py-0.5 bg-guanine-green text-white text-[10px] font-bold rounded-full ml-auto mr-2">
                 {section.badge}
               </span>
             )}
@@ -204,10 +208,11 @@ export default function Sidebar() {
               </button>
             )}
           </Link>
+          </motion.div>
         ) : (
           <button
             onClick={() => toggleSection(section.title)}
-            className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg transition-colors text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+            className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg transition-colors text-carbon-700 dark:text-carbon-300 hover:bg-carbon-100 dark:hover:bg-carbon-800"
             aria-expanded={hasSubsections ? isExpanded : undefined}
           >
             <div className="flex items-center gap-3">
@@ -224,27 +229,29 @@ export default function Sidebar() {
           </button>
         )}
 
-        {hasSubsections && isExpanded && (
-          <div className="ml-10 mt-2 space-y-1 border-l-2 border-neutral-200 dark:border-neutral-700 pl-4" role="group">
-            {section.subsections!.map((subsection) => {
-              const isSubActive = pathname + (typeof window !== 'undefined' ? window.location.hash : '') === subsection.path;
+        {hasSubsections && (
+          <AccordionTransition show={isExpanded}>
+            <div className="ml-10 mt-2 space-y-1 border-l-2 border-carbon-200 dark:border-carbon-700 pl-4" role="group">
+              {section.subsections!.map((subsection) => {
+                const isSubActive = pathname + (typeof window !== 'undefined' ? window.location.hash : '') === subsection.path;
 
-              return (
-                <Link
-                  key={subsection.path}
-                  href={subsection.path}
-                  className={`block px-3 py-2 text-sm rounded-lg transition-all ${
-                    isSubActive
-                      ? 'text-blue-700 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900/30 border-l-2 border-blue-600 -ml-[18px] pl-4'
-                      : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-800/50'
-                  }`}
-                  aria-current={isSubActive ? 'page' : undefined}
-                >
-                  {subsection.title}
-                </Link>
-              );
-            })}
-          </div>
+                return (
+                  <Link
+                    key={subsection.path}
+                    href={subsection.path}
+                    className={`block px-3 py-2 text-sm rounded-lg transition-all ${
+                      isSubActive
+                        ? 'text-adenine-teal dark:text-cytosine-cyan font-semibold bg-adenine-teal/5 dark:bg-cytosine-cyan/10 border-l-2 border-adenine-teal dark:border-cytosine-cyan -ml-[18px] pl-4'
+                        : 'text-carbon-600 dark:text-carbon-400 hover:text-carbon-900 dark:hover:text-carbon-100 hover:bg-carbon-50 dark:hover:bg-carbon-800/50'
+                    }`}
+                    aria-current={isSubActive ? 'page' : undefined}
+                  >
+                    {subsection.title}
+                  </Link>
+                );
+              })}
+            </div>
+          </AccordionTransition>
         )}
       </div>
     );

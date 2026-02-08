@@ -23,6 +23,8 @@ import { generateChecklistFromDoenca } from '@/lib/utils/checklist-generator';
 import { OntologyCodesDisplay } from '@/app/components/Ontology';
 import { PageContainer } from '@/app/components/Layout/Containers';
 import { cn } from '@/lib/utils';
+import { TabTransition, StaggerPageSections } from '@/lib/design-system/animations/page-transitions';
+import { ScrollReveal } from '@/lib/design-system/animations/scroll';
 
 // Loading Skeleton Component
 function DoencaDetailSkeleton() {
@@ -242,6 +244,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
               {doenca.titulo}
             </h1>
 
+            <TabTransition activeTab={activeView}>
             {activeView === 'checklist' ? (
               <ChecklistConsultaComponent
                 checklist={checklist}
@@ -250,7 +253,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                 }}
               />
             ) : (
-              <div className="space-y-16">
+              <StaggerPageSections staggerDelay={0.12} className="space-y-16">
                 {/* 3.1 The Bottom Line (Summary) */}
                 <section id="definition">
                   <div className="flex items-center gap-2 mb-6">
@@ -334,9 +337,12 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
                 </section>
 
                 {/* 4. Cross References */}
-                <CrossReferencesSection doencaId={id} />
-              </div>
+                <ScrollReveal animation="fadeInUp">
+                  <CrossReferencesSection doencaId={id} />
+                </ScrollReveal>
+              </StaggerPageSections>
             )}
+            </TabTransition>
           </main>
         </div>
       </PageContainer>

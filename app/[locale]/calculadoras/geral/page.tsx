@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { PageContainer } from '@/app/components/Layout/Containers';
+import { fadeInUp, listContainer } from '@/lib/design-system/animations/presets';
 import {
   Calculator, Heart, Activity, TrendingUp, Scale, Brain,
   Wine, Droplets, Baby, Stethoscope, TestTube, AlertTriangle,
@@ -75,31 +77,39 @@ export default function CalculadorasPage() {
       {/* Selector de Calculadora */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-4">{t('selectCalculator')}</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3"
+          variants={listContainer}
+          initial="initial"
+          animate="animate"
+        >
           {calculators.map((calc) => {
             const Icon = calc.icon;
             return (
-              <button
+              <motion.button
                 key={calc.id}
+                variants={fadeInUp}
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
                 onClick={() => {
                   setActiveCalculator(calc.id);
                   setResult(null);
                 }}
                 className={`p-4 rounded-xl border-2 apple-transition text-left ${
                   activeCalculator === calc.id
-                    ? 'border-emerald-500 bg-emerald-500/10 dark:bg-emerald-500/20 shadow-lg'
-                    : 'border-neutral-200/50 dark:border-neutral-700/50 hover:border-emerald-400 dark:hover:border-emerald-600 glass-subtle'
+                    ? 'border-adenine-teal bg-adenine-teal/10 dark:bg-adenine-teal/20 shadow-lg'
+                    : 'border-carbon-200/50 dark:border-carbon-700/50 hover:border-adenine-teal dark:hover:border-cytosine-cyan bg-white dark:bg-carbon-900'
                 }`}
               >
-                <Icon className={`w-7 h-7 mb-2 ${activeCalculator === calc.id ? 'text-emerald-500' : 'text-[#86868b]'}`} />
-                <h3 className={`font-bold text-sm ${activeCalculator === calc.id ? 'text-emerald-600 dark:text-emerald-400' : 'text-[#1d1d1f] dark:text-[#f5f5f7]'}`}>
+                <Icon className={`w-7 h-7 mb-2 ${activeCalculator === calc.id ? 'text-adenine-teal' : 'text-carbon-400'}`} />
+                <h3 className={`font-bold text-sm ${activeCalculator === calc.id ? 'text-adenine-teal dark:text-cytosine-cyan' : 'text-helix-navy dark:text-white'}`}>
                   {calc.name}
                 </h3>
-                <p className="text-xs text-[#86868b] mt-1 line-clamp-2">{calc.description}</p>
-              </button>
+                <p className="text-xs text-carbon-500 mt-1 line-clamp-2">{calc.description}</p>
+              </motion.button>
             );
           })}
-        </div>
+        </motion.div>
       </div>
 
       {/* Calculadora Ativa */}

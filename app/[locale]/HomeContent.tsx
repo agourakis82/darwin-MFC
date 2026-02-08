@@ -2,6 +2,8 @@
 
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
+import { fadeInUp, listContainer } from '@/lib/design-system/animations/presets';
+import { ScrollReveal } from '@/lib/design-system/animations/scroll';
 import {
   ArrowRight,
   BookOpen,
@@ -35,20 +37,7 @@ const stats = {
   protocolos: todosProtocolosFlowchart.length,
 };
 
-// Animation variants
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] }
-};
-
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
+// Animation variants imported from design system (fadeInUp, listContainer)
 
 export default function HomeContent() {
   const t = useTranslations('home');
@@ -166,7 +155,7 @@ export default function HomeContent() {
         <PageContainer className="py-16 lg:py-24">
         <motion.div 
           className="bento-grid"
-          variants={staggerContainer}
+          variants={listContainer}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, margin: "-100px" }}
@@ -294,24 +283,18 @@ export default function HomeContent() {
       {/* ============================================ */}
       <section>
         <PageContainer className="py-16">
-        <motion.div 
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
+        <ScrollReveal animation="fadeInUp" className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-display font-bold text-helix-navy dark:text-white mb-4">
             Clinical Tools at Your Fingertips
           </h2>
           <p className="text-carbon-500 dark:text-carbon-400 font-body max-w-2xl mx-auto">
             Everything you need for evidence-based practice, organized for rapid access during consultations.
           </p>
-        </motion.div>
+        </ScrollReveal>
 
-        <motion.div 
+        <motion.div
           className="grid grid-cols-2 lg:grid-cols-4 gap-4"
-          variants={staggerContainer}
+          variants={listContainer}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
@@ -342,24 +325,18 @@ export default function HomeContent() {
       {/* ============================================ */}
       <section>
         <PageContainer className="py-16">
-        <motion.div 
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
+        <ScrollReveal animation="fadeInUp" className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-display font-bold text-helix-navy dark:text-white mb-4">
             SUS Screening Programs
           </h2>
           <p className="text-carbon-500 dark:text-carbon-400 font-body max-w-2xl mx-auto">
             Complete coverage of Brazilian public health screening protocols, organized by life stage.
           </p>
-        </motion.div>
+        </ScrollReveal>
 
         <motion.div 
           className="grid grid-cols-2 md:grid-cols-5 gap-4"
-          variants={staggerContainer}
+          variants={listContainer}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}

@@ -14,6 +14,9 @@ import { ToastProvider } from "./components/ui/Toast";
 import OfflineIndicator from "./components/PWA/OfflineIndicator";
 import InstallPrompt from "./components/PWA/InstallPrompt";
 import PWAInitializer from "./components/PWA/PWAInitializer";
+import { RouteChangeIndicator } from "@/lib/design-system/animations/page-transitions";
+import { MobileNavigation } from "@/lib/design-system/components/navigation/MobileNavigation";
+import { Home, Stethoscope, Pill, FileText, Calculator } from 'lucide-react';
 
 // NOTE: This root layout is used for pages NOT under [locale]/
 // Pages under [locale]/ have their own layout with Header/Sidebar/Footer
@@ -368,6 +371,7 @@ export default async function RootLayout({
           <OfflineIndicator />
           <InstallPrompt />
           <KeyboardShortcuts />
+          <RouteChangeIndicator color="bg-adenine-teal" />
           {/* Skip links for accessibility */}
           <a
             href="#main-content"
@@ -393,6 +397,15 @@ export default async function RootLayout({
               </main>
             </div>
             <Footer />
+            <MobileNavigation
+              items={[
+                { icon: Home, label: 'Home', href: '/' },
+                { icon: Stethoscope, label: 'Doenças', href: '/doencas' },
+                { icon: Pill, label: 'Meds', href: '/medicamentos' },
+                { icon: FileText, label: 'Protocolos', href: '/protocolos' },
+                { icon: Calculator, label: 'Calc', href: '/calculadoras' },
+              ]}
+            />
           </div>
           </AuthProvider>
         </ThemeProvider>

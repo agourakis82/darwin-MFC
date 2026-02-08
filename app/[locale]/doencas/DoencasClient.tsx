@@ -2,8 +2,10 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { Link } from '@/i18n/routing';
+import { motion } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
 import { PageContainer } from '@/app/components/Layout/Containers';
+import { fadeInUp } from '@/lib/design-system/animations/presets';
 import {
   Search, Heart, Activity, Wind, Brain, Bug, Bone,
   Fingerprint, Utensils, Zap, Droplets, Baby, Users,
@@ -133,7 +135,13 @@ export default function DoencasClient() {
         )}
 
         {/* The Clinical Ledger (Table View) */}
-        <div className="bg-white dark:bg-carbon-900 border border-carbon-200 dark:border-carbon-800 rounded-lg overflow-hidden">
+        <motion.div
+          className="bg-white dark:bg-carbon-900 border border-carbon-200 dark:border-carbon-800 rounded-lg overflow-hidden"
+          variants={fadeInUp}
+          initial="initial"
+          animate="animate"
+          transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+        >
           <div className="grid grid-cols-12 bg-clinical-gray dark:bg-carbon-800/50 border-b border-carbon-200 dark:border-carbon-700 px-6 py-3 text-[10px] font-bold text-carbon-400 uppercase tracking-widest">
             <div className="col-span-1">CODE</div>
             <div className="col-span-5">CONDITION / CLINICAL REGISTRY</div>
@@ -196,7 +204,7 @@ export default function DoencasClient() {
               })}
             </div>
           )}
-        </div>
+        </motion.div>
 
         {/* Footer Statistics */}
         <div className="mt-8 flex justify-between items-center text-[10px] font-bold text-carbon-400 uppercase tracking-widest">
