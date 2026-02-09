@@ -1,0 +1,50 @@
+{
+  "diseaseId": "sindrome-veia-cava-superior",
+  "region": "BR",
+  "diseaseName": "Superior Vena Cava Syndrome",
+  "prevalence": {
+    "value": "2-4% of thoracic malignancies",
+    "population": "target population",
+    "year": 2024,
+    "source": "SBOn / literature",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "oncological emergency",
+    "population": "target population",
+    "year": 2024,
+    "source": "SBOn / literature"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "depends on underlying cause",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "family history",
+      "environmental exposures",
+      "smoking (where applicable)",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "elderly",
+      "patients with genetic predisposition"
+    ],
+    "diagnosticCriteria": "Histopathological confirmation via biopsy; staging with imaging (CT/PET)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "N/A",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~3,000/year",
+    "controlRate": "radiotherapy access variable"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

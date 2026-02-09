@@ -1,0 +1,48 @@
+{
+  "diseaseId": "sindrome-down",
+  "region": "IN",
+  "diseaseName": "Down Syndrome (Trisomy 21)",
+  "prevalence": {
+    "value": "~1 per 800 live births",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / SGPGI studies",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~1 per 800",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / SGPGI studies"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "higher due to cardiac complications",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic inheritance",
+      "family history",
+      "consanguinity (where relevant)"
+    ],
+    "vulnerablePopulations": [
+      "carriers of pathogenic variants",
+      "families with consanguinity"
+    ],
+    "diagnosticCriteria": "Genetic testing, enzyme assay, and/or clinical criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited prenatal screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1-2 million",
+    "controlRate": "limited specialized care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

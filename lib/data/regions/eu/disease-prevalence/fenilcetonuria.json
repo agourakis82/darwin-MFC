@@ -1,0 +1,48 @@
+{
+  "diseaseId": "fenilcetonuria",
+  "region": "EU",
+  "diseaseName": "Phenylketonuria (PKU)",
+  "prevalence": {
+    "value": "~1 per 10,000",
+    "population": "target population",
+    "year": 2024,
+    "source": "Orphanet / E-PKU registries",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~400 new/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "Orphanet / E-PKU registries"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "normal with treatment",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic inheritance",
+      "family history",
+      "consanguinity (where relevant)"
+    ],
+    "vulnerablePopulations": [
+      "carriers of pathogenic variants",
+      "families with consanguinity"
+    ],
+    "diagnosticCriteria": "Genetic testing, enzyme assay, and/or clinical criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "universal neonatal screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~50,000",
+    "controlRate": "excellent with diet + sapropterin/gene therapy trials"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

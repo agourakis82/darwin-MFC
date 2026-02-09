@@ -1,0 +1,48 @@
+{
+  "diseaseId": "fibrose-cistica",
+  "region": "EU",
+  "diseaseName": "Cystic Fibrosis",
+  "prevalence": {
+    "value": "~1 per 2,500-3,500 live births",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECFS Patient Registry",
+    "trend": "improving survival with modulators"
+  },
+  "incidence": {
+    "value": "~1,500 new/year in EU",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECFS Patient Registry"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "median survival >50 years",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic inheritance",
+      "family history",
+      "consanguinity (where relevant)"
+    ],
+    "vulnerablePopulations": [
+      "carriers of pathogenic variants",
+      "families with consanguinity"
+    ],
+    "diagnosticCriteria": "Genetic testing, enzyme assay, and/or clinical criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "neonatal screening in most countries",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~50,000",
+    "controlRate": "CFTR modulators (Kaftrio/Trikafta) widely available"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

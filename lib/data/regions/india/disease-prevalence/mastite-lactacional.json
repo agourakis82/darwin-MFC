@@ -1,0 +1,47 @@
+{
+  "diseaseId": "mastite-lactacional",
+  "region": "IN",
+  "diseaseName": "Mastite Lactacional",
+  "prevalence": {
+    "value": "5-20% of women",
+    "population": "women of reproductive age",
+    "year": 2024,
+    "source": "FOGSI / NFHS-5",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "common, often undiagnosed",
+    "population": "target population",
+    "year": 2024,
+    "source": "FOGSI / NFHS-5"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "low but morbidity high",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "hormonal factors",
+      "reproductive age",
+      "STIs (where applicable)"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Pelvic examination, ultrasound, and/or laparoscopy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited in rural areas",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high volume",
+    "controlRate": "~60% with access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

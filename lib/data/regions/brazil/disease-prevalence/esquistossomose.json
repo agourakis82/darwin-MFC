@@ -1,0 +1,50 @@
+{
+  "diseaseId": "esquistossomose",
+  "region": "BR",
+  "diseaseName": "Schistosomiasis",
+  "prevalence": {
+    "value": "2-8% in endemic areas (NE Brazil)",
+    "population": "target population",
+    "year": 2024,
+    "source": "SVS / SINAN 2024",
+    "trend": "decreasing with MDA"
+  },
+  "incidence": {
+    "value": "~100,000/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "SVS / SINAN 2024"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "~500/year",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "parasitological exams in endemic areas",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1.5 million",
+    "controlRate": "praziquantel via SUS"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "hepatocarcinoma",
+  "region": "EU",
+  "diseaseName": "Hepatocellular Carcinoma",
+  "prevalence": {
+    "value": "8.0 per 100,000",
+    "population": "general population",
+    "year": 2024,
+    "source": "ECIS 2024",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "7.0 per 100,000/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECIS 2024"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "5.5 per 100,000",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "family history",
+      "environmental exposures",
+      "smoking (where applicable)",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "elderly",
+      "patients with genetic predisposition"
+    ],
+    "diagnosticCriteria": "Histopathological confirmation via biopsy; staging with imaging (CT/PET)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "HCC surveillance in cirrhosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~55,000 new cases/year",
+    "controlRate": "~25% 5-year survival"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

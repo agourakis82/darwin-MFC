@@ -1,0 +1,50 @@
+{
+  "diseaseId": "varicela",
+  "region": "BR",
+  "diseaseName": "Varicella (Chickenpox)",
+  "prevalence": {
+    "value": "~90% seroprevalence by adulthood",
+    "population": "target population",
+    "year": 2024,
+    "source": "SINAN / PNI",
+    "trend": "decreasing with vaccination"
+  },
+  "incidence": {
+    "value": "~500,000-1,000,000 cases/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "SINAN / PNI"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "~50/year",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "clinical diagnosis",
+    "treatmentAvailable": true,
+    "estimatedPatients": "childhood disease",
+    "controlRate": "vaccine in NIP since 2013 (tetraviral)"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

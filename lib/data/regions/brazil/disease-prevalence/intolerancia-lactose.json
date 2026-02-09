@@ -1,0 +1,45 @@
+{
+  "diseaseId": "intolerancia-lactose",
+  "region": "BR",
+  "diseaseName": "Lactose Intolerance",
+  "prevalence": {
+    "value": "~40-50% of adults",
+    "population": "target population",
+    "year": 2024,
+    "source": "SBG / SBAD",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "common",
+    "population": "target population",
+    "year": 2024,
+    "source": "SBG / SBAD"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "N/A",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "variable by condition"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Condition-specific clinical and laboratory criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "hydrogen breath test / clinical",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~80 million",
+    "controlRate": "lactase supplements, dairy-free diet"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

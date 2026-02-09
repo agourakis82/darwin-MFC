@@ -1,0 +1,50 @@
+{
+  "diseaseId": "malaria-vivax",
+  "region": "IN",
+  "diseaseName": "Plasmodium vivax Malaria",
+  "prevalence": {
+    "value": "widespread endemic",
+    "population": "target population",
+    "year": 2024,
+    "source": "NVBDCP 2024",
+    "trend": "decreasing"
+  },
+  "incidence": {
+    "value": "~3 million cases/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "NVBDCP 2024"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "rare",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "RDT",
+    "treatmentAvailable": true,
+    "estimatedPatients": "widespread",
+    "controlRate": "chloroquine + primaquine"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

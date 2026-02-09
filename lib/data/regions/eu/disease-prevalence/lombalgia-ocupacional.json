@@ -1,0 +1,49 @@
+{
+  "diseaseId": "lombalgia-ocupacional",
+  "region": "EU",
+  "diseaseName": "Lombalgia Ocupacional",
+  "prevalence": {
+    "value": "well-documented",
+    "population": "target population",
+    "year": 2024,
+    "source": "EU-OSHA / Eurostat",
+    "trend": "decreasing"
+  },
+  "incidence": {
+    "value": "declining with regulation",
+    "population": "target population",
+    "year": 2024,
+    "source": "EU-OSHA / Eurostat"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "low",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "occupational exposure",
+      "inadequate PPE",
+      "repetitive movements",
+      "toxic substances"
+    ],
+    "vulnerablePopulations": [
+      "workers in high-risk industries",
+      "informal sector workers"
+    ],
+    "diagnosticCriteria": "Occupational history, clinical exam, and exposure assessment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "mandatory occupational health",
+    "treatmentAvailable": true,
+    "estimatedPatients": "well-tracked",
+    "controlRate": "high compliance"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

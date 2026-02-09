@@ -1,0 +1,50 @@
+{
+  "diseaseId": "malaria-vivax",
+  "region": "BR",
+  "diseaseName": "Plasmodium vivax Malaria",
+  "prevalence": {
+    "value": "most common species in Amazon",
+    "population": "target population",
+    "year": 2024,
+    "source": "SIVEP-Malária 2024",
+    "trend": "decreasing"
+  },
+  "incidence": {
+    "value": "~70% of malaria cases",
+    "population": "target population",
+    "year": 2024,
+    "source": "SIVEP-Malária 2024"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "rare",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "thick smear/RDT",
+    "treatmentAvailable": true,
+    "estimatedPatients": "seasonal",
+    "controlRate": "chloroquine + primaquine via SUS"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "diseaseId": "tea",
+  "region": "EU",
+  "diseaseName": "Autism Spectrum Disorder",
+  "prevalence": {
+    "value": "~1-2% of children",
+    "population": "pediatric population",
+    "year": 2024,
+    "source": "WHO Europe / NICE / HAS",
+    "trend": "increasing diagnoses"
+  },
+  "incidence": {
+    "value": "~1 in 100",
+    "population": "target population",
+    "year": 2024,
+    "source": "WHO Europe / NICE / HAS"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "N/A",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "variable by condition"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Condition-specific clinical and laboratory criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "established screening programs",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~5 million",
+    "controlRate": "~40-60% receive intervention"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

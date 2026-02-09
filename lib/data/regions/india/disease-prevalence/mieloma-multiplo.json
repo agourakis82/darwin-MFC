@@ -1,0 +1,50 @@
+{
+  "diseaseId": "mieloma-multiplo",
+  "region": "IN",
+  "diseaseName": "Multiple Myeloma",
+  "prevalence": {
+    "value": "1.5 per 100,000",
+    "population": "general population",
+    "year": 2024,
+    "source": "ICMR 2022",
+    "trend": "increasing"
+  },
+  "incidence": {
+    "value": "2.0 per 100,000/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR 2022"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "1.5 per 100,000",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "family history",
+      "environmental exposures",
+      "smoking (where applicable)",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "elderly",
+      "patients with genetic predisposition"
+    ],
+    "diagnosticCriteria": "Histopathological confirmation via biopsy; staging with imaging (CT/PET)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "N/A",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~15,000 new cases/year",
+    "controlRate": "~40% 5-year survival"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

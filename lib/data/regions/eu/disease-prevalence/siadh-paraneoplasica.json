@@ -1,0 +1,50 @@
+{
+  "diseaseId": "siadh-paraneoplasica",
+  "region": "EU",
+  "diseaseName": "Paraneoplastic SIADH",
+  "prevalence": {
+    "value": "1-2% of cancer patients",
+    "population": "target population",
+    "year": 2024,
+    "source": "ESMO / literature",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "paraneoplastic complication",
+    "population": "target population",
+    "year": 2024,
+    "source": "ESMO / literature"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "variable",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "family history",
+      "environmental exposures",
+      "smoking (where applicable)",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "elderly",
+      "patients with genetic predisposition"
+    ],
+    "diagnosticCriteria": "Histopathological confirmation via biopsy; staging with imaging (CT/PET)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "routine electrolyte panels",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~30,000/year",
+    "controlRate": "tolvaptan available"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

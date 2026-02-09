@@ -1,0 +1,47 @@
+{
+  "diseaseId": "doenca-inflamatoria-pelvica",
+  "region": "BR",
+  "diseaseName": "Doença Inflamatória Pélvica",
+  "prevalence": {
+    "value": "5-15% of women of reproductive age",
+    "population": "women of reproductive age",
+    "year": 2024,
+    "source": "FEBRASGO / DataSUS",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "common",
+    "population": "target population",
+    "year": 2024,
+    "source": "FEBRASGO / DataSUS"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "low for most conditions",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "hormonal factors",
+      "reproductive age",
+      "STIs (where applicable)"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Pelvic examination, ultrasound, and/or laparoscopy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "routine gynecological care",
+    "treatmentAvailable": true,
+    "estimatedPatients": "high volume in APS",
+    "controlRate": "~80% with treatment"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

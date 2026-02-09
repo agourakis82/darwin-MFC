@@ -1,0 +1,45 @@
+{
+  "diseaseId": "intolerancia-lactose",
+  "region": "EU",
+  "diseaseName": "Lactose Intolerance",
+  "prevalence": {
+    "value": "~15-30% (varies: <5% N.Europe to >50% S.Europe)",
+    "population": "target population",
+    "year": 2024,
+    "source": "EFSA / national studies",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "common",
+    "population": "target population",
+    "year": 2024,
+    "source": "EFSA / national studies"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "N/A",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "variable by condition"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Condition-specific clinical and laboratory criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "hydrogen breath test",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~50-100 million",
+    "controlRate": "lactase supplements, dairy-free products widely available"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

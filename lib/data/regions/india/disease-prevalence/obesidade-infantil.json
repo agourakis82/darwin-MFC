@@ -1,0 +1,50 @@
+{
+  "diseaseId": "obesidade-infantil",
+  "region": "IN",
+  "diseaseName": "Childhood Obesity",
+  "prevalence": {
+    "value": "~5-10% urban, ~2-5% rural",
+    "population": "target population",
+    "year": 2024,
+    "source": "NFHS-5 / ICMR",
+    "trend": "increasing rapidly"
+  },
+  "incidence": {
+    "value": "rapidly increasing in urban areas",
+    "population": "target population",
+    "year": 2024,
+    "source": "NFHS-5 / ICMR"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "long-term",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prematurity",
+      "low birth weight",
+      "nutritional deficits",
+      "environmental factors"
+    ],
+    "vulnerablePopulations": [
+      "neonates",
+      "infants",
+      "children under 5"
+    ],
+    "diagnosticCriteria": "Age-appropriate clinical assessment and targeted investigations"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~15-20 million",
+    "controlRate": "<10% access lifestyle programs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

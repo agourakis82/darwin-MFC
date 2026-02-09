@@ -1,0 +1,47 @@
+{
+  "diseaseId": "endometriose",
+  "region": "BR",
+  "diseaseName": "Endometriosis",
+  "prevalence": {
+    "value": "~10-15% of women of reproductive age",
+    "population": "women of reproductive age",
+    "year": 2024,
+    "source": "FEBRASGO / SBE",
+    "trend": "increasing diagnoses"
+  },
+  "incidence": {
+    "value": "~2-5 per 1,000/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "FEBRASGO / SBE"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "N/A",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "hormonal factors",
+      "reproductive age",
+      "STIs (where applicable)"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Pelvic examination, ultrasound, and/or laparoscopy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "clinical suspicion; US ± MRI",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~7-10 million women",
+    "controlRate": "~60% symptom control with hormonal therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

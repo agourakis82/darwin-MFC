@@ -1,0 +1,47 @@
+{
+  "diseaseId": "estado-de-mal-epileptico",
+  "region": "BR",
+  "diseaseName": "Estado de Mal Epiléptico",
+  "prevalence": {
+    "value": "N/A (acute condition)",
+    "population": "target population",
+    "year": 2024,
+    "source": "DataSUS / SIH",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "variable",
+    "population": "target population",
+    "year": 2024,
+    "source": "DataSUS / SIH"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "variable; ~20-50% without treatment",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "underlying chronic conditions",
+      "acute triggers",
+      "delayed medical care"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Acute clinical presentation with laboratory and imaging confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "N/A",
+    "treatmentAvailable": true,
+    "estimatedPatients": "high emergency volume",
+    "controlRate": "depends on ED access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

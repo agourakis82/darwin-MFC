@@ -18,7 +18,7 @@ import {
   Stethoscope,
   Pill,
   FileText,
-  User,
+  Calculator,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -32,11 +32,6 @@ export interface NavItem {
 
 export interface MobileNavigationProps {
   /**
-   * Navigation items to display
-   */
-  items?: NavItem[];
-
-  /**
    * Additional CSS classes
    */
   className?: string;
@@ -48,11 +43,11 @@ export interface MobileNavigationProps {
 }
 
 const defaultItems: NavItem[] = [
-  { icon: Home, label: 'Início', href: '/' },
+  { icon: Home, label: 'Home', href: '/' },
   { icon: Stethoscope, label: 'Doenças', href: '/doencas' },
   { icon: Pill, label: 'Meds', href: '/medicamentos' },
   { icon: FileText, label: 'Protocolos', href: '/protocolos' },
-  { icon: User, label: 'Perfil', href: '/profile' },
+  { icon: Calculator, label: 'Calc', href: '/calculadoras' },
 ];
 
 /**
@@ -69,10 +64,10 @@ const defaultItems: NavItem[] = [
  * ```
  */
 export function MobileNavigation({
-  items = defaultItems,
   className,
   onItemClick,
 }: MobileNavigationProps) {
+  const items = defaultItems;
   const pathname = usePathname();
 
   const handleItemClick = (item: NavItem) => {

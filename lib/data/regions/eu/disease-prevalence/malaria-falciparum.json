@@ -1,0 +1,50 @@
+{
+  "diseaseId": "malaria-falciparum",
+  "region": "EU",
+  "diseaseName": "Plasmodium falciparum Malaria",
+  "prevalence": {
+    "value": "not endemic",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC TESSy 2024",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~8,000 imported cases/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC TESSy 2024"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "~50/year",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "post-travel workup",
+    "treatmentAvailable": true,
+    "estimatedPatients": "travelers/immigrants",
+    "controlRate": "prompt ACT treatment"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "malaria-falciparum",
+  "region": "IN",
+  "diseaseName": "Plasmodium falciparum Malaria",
+  "prevalence": {
+    "value": "endemic in tribal/forest areas",
+    "population": "target population",
+    "year": 2024,
+    "source": "NVBDCP / ICMR 2024",
+    "trend": "decreasing"
+  },
+  "incidence": {
+    "value": "~5 million cases/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "NVBDCP / ICMR 2024"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "~1,000/year",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "RDT in PHCs",
+    "treatmentAvailable": true,
+    "estimatedPatients": "high burden states",
+    "controlRate": "NVBDCP distribution of ACTs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

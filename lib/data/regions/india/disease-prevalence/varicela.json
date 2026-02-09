@@ -1,0 +1,50 @@
+{
+  "diseaseId": "varicela",
+  "region": "IN",
+  "diseaseName": "Varicella (Chickenpox)",
+  "prevalence": {
+    "value": "~80-90% seroprevalence",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / IAP",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "very common in children",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / IAP"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "~100/year",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "clinical",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions/year",
+    "controlRate": "vaccine available privately; not in UIP"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "diseaseId": "sepse",
+  "region": "IN",
+  "diseaseName": "Sepsis and Septic Shock",
+  "prevalence": {
+    "value": "~300-400 per 100,000 hospitalizations",
+    "population": "general population",
+    "year": 2024,
+    "source": "ICMR / ISCCM",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "estimated millions",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / ISCCM"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "~40-60% in ICU",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "underlying chronic conditions",
+      "acute triggers",
+      "delayed medical care"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Acute clinical presentation with laboratory and imaging confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited qSOFA adoption",
+    "treatmentAvailable": true,
+    "estimatedPatients": "high burden",
+    "controlRate": "limited ICU access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

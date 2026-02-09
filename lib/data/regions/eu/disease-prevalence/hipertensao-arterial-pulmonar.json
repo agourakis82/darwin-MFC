@@ -1,0 +1,45 @@
+{
+  "diseaseId": "hipertensao-arterial-pulmonar",
+  "region": "EU",
+  "diseaseName": "Hipertensão Arterial Pulmonar",
+  "prevalence": {
+    "value": "variable",
+    "population": "target population",
+    "year": 2024,
+    "source": "Eurostat / WHO Europe",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "variable",
+    "population": "target population",
+    "year": 2024,
+    "source": "Eurostat / WHO Europe"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "variable",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "variable by condition"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Condition-specific clinical and laboratory criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "as per guidelines",
+    "treatmentAvailable": true,
+    "estimatedPatients": "variable",
+    "controlRate": "well-established protocols"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

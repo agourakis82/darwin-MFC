@@ -1,0 +1,48 @@
+{
+  "diseaseId": "fibrose-cistica",
+  "region": "BR",
+  "diseaseName": "Cystic Fibrosis",
+  "prevalence": {
+    "value": "~1 per 7,500 live births",
+    "population": "target population",
+    "year": 2024,
+    "source": "REBRAFC / GBEFC",
+    "trend": "improving survival"
+  },
+  "incidence": {
+    "value": "~400 new cases/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "REBRAFC / GBEFC"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "median survival ~40 years",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic inheritance",
+      "family history",
+      "consanguinity (where relevant)"
+    ],
+    "vulnerablePopulations": [
+      "carriers of pathogenic variants",
+      "families with consanguinity"
+    ],
+    "diagnosticCriteria": "Genetic testing, enzyme assay, and/or clinical criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "neonatal IRT screening (Teste do Pezinho)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~5,000",
+    "controlRate": "CFTR modulators limited in SUS"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

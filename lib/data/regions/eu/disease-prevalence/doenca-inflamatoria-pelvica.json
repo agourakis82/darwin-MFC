@@ -1,0 +1,47 @@
+{
+  "diseaseId": "doenca-inflamatoria-pelvica",
+  "region": "EU",
+  "diseaseName": "Doença Inflamatória Pélvica",
+  "prevalence": {
+    "value": "5-10% of women",
+    "population": "women of reproductive age",
+    "year": 2024,
+    "source": "ESHRE / Eurostat",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "well-documented",
+    "population": "target population",
+    "year": 2024,
+    "source": "ESHRE / Eurostat"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "very low",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "hormonal factors",
+      "reproductive age",
+      "STIs (where applicable)"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Pelvic examination, ultrasound, and/or laparoscopy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "routine screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "moderate volume",
+    "controlRate": "~90% with treatment"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

@@ -106,6 +106,16 @@ export type ClasseTerapeutica =
   | 'hepatobiliar'
   // Antianêmicos
   | 'antianemico'
+  // Anestesia e Procedimentos
+  | 'anestesico'
+  | 'anestesico_local'
+  | 'sedativo'
+  | 'opioide'
+  | 'bloqueador_neuromuscular'
+  | 'anticolinesterasico'
+  | 'antidoto'
+  | 'anticolinergico'
+  | 'vasopressor'
   // Especiais
   | 'gas_medicinal'
   | 'outros';
@@ -195,6 +205,16 @@ export const CLASSES_TERAPEUTICAS: Record<ClasseTerapeutica, { label: string; co
   hepatobiliar: { label: 'Hepatobiliar', color: 'bg-emerald-700' },
   // Antianêmicos
   antianemico: { label: 'Antianêmico', color: 'bg-rose-700' },
+  // Anestesia e Procedimentos
+  anestesico: { label: 'Anestésico Geral', color: 'bg-slate-600' },
+  anestesico_local: { label: 'Anestésico Local', color: 'bg-slate-500' },
+  sedativo: { label: 'Sedativo', color: 'bg-indigo-600' },
+  opioide: { label: 'Opioide', color: 'bg-red-700' },
+  bloqueador_neuromuscular: { label: 'Bloqueador Neuromuscular', color: 'bg-zinc-600' },
+  anticolinesterasico: { label: 'Anticolinesterásico', color: 'bg-teal-600' },
+  antidoto: { label: 'Antídoto', color: 'bg-emerald-600' },
+  anticolinergico: { label: 'Anticolinérgico', color: 'bg-cyan-700' },
+  vasopressor: { label: 'Vasopressor', color: 'bg-red-800' },
   // Especiais
   gas_medicinal: { label: 'Gás Medicinal', color: 'bg-gray-400' },
   outros: { label: 'Outros', color: 'bg-gray-500' },
@@ -314,6 +334,12 @@ export type SubclasseMedicamento =
   | 'eletrolito' | 'nutriente'
   // Especiais
   | 'oxigenio'
+  // Anestesia/Procedimentos - subclasses
+  | 'inalatorio' | 'intravenoso' | 'amida' | 'ester'
+  | 'despolarizante' | 'nao_despolarizante'
+  | 'reversao_bnm' | 'antagonista_benzodiazepinico'
+  | 'reversao_anticolinergico' | 'adjuvante_anestesico'
+  | 'butirofenona' | 'simpatomimetico_indireto' | 'alfa1_agonista'
   // Outros
   | 'outros';
 

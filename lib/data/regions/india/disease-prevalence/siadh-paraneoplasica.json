@@ -1,0 +1,50 @@
+{
+  "diseaseId": "siadh-paraneoplasica",
+  "region": "IN",
+  "diseaseName": "Paraneoplastic SIADH",
+  "prevalence": {
+    "value": "1-2% of cancer patients",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / literature",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "paraneoplastic complication",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / literature"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "variable",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "family history",
+      "environmental exposures",
+      "smoking (where applicable)",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "elderly",
+      "patients with genetic predisposition"
+    ],
+    "diagnosticCriteria": "Histopathological confirmation via biopsy; staging with imaging (CT/PET)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "<10%",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~15,000/year",
+    "controlRate": "limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

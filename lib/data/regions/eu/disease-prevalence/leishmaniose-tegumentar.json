@@ -1,0 +1,50 @@
+{
+  "diseaseId": "leishmaniose-tegumentar",
+  "region": "EU",
+  "diseaseName": "Cutaneous Leishmaniasis",
+  "prevalence": {
+    "value": "Mediterranean and imported",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC 2024",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~500/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC 2024"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "rare",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "clinical suspicion",
+    "treatmentAvailable": true,
+    "estimatedPatients": "travelers and residents of endemic areas",
+    "controlRate": "intralesional therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

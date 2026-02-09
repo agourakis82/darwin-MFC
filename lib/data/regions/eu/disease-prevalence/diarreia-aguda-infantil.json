@@ -1,0 +1,50 @@
+{
+  "diseaseId": "diarreia-aguda-infantil",
+  "region": "EU",
+  "diseaseName": "Diarreia Aguda Infantil",
+  "prevalence": {
+    "value": "3-10% of pediatric population",
+    "population": "target population",
+    "year": 2024,
+    "source": "WHO Europe / national registries",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "common",
+    "population": "target population",
+    "year": 2024,
+    "source": "WHO Europe / national registries"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "very low",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prematurity",
+      "low birth weight",
+      "nutritional deficits",
+      "environmental factors"
+    ],
+    "vulnerablePopulations": [
+      "neonates",
+      "infants",
+      "children under 5"
+    ],
+    "diagnosticCriteria": "Age-appropriate clinical assessment and targeted investigations"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "well-child visits",
+    "treatmentAvailable": true,
+    "estimatedPatients": "moderate volume",
+    "controlRate": "~95% with standard care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

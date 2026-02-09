@@ -1,0 +1,47 @@
+{
+  "diseaseId": "sindrome-coronariana-aguda",
+  "region": "IN",
+  "diseaseName": "Acute Coronary Syndrome",
+  "prevalence": {
+    "value": "~3 million events/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "CSI / ICMR / GBD",
+    "trend": "increasing"
+  },
+  "incidence": {
+    "value": "very high",
+    "population": "target population",
+    "year": 2024,
+    "source": "CSI / ICMR / GBD"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "~500,000 deaths/year",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "underlying chronic conditions",
+      "acute triggers",
+      "delayed medical care"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Acute clinical presentation with laboratory and imaging confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "ECG + troponin where available",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~3 million/year",
+    "controlRate": "~30% timely PCI access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

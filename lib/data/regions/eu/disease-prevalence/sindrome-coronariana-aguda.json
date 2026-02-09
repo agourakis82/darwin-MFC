@@ -1,0 +1,47 @@
+{
+  "diseaseId": "sindrome-coronariana-aguda",
+  "region": "EU",
+  "diseaseName": "Acute Coronary Syndrome",
+  "prevalence": {
+    "value": "~1.8 million events/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "ESC / Eurostat / STEMI registries",
+    "trend": "decreasing with interventions"
+  },
+  "incidence": {
+    "value": "~250 per 100,000/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "ESC / Eurostat / STEMI registries"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "~400,000 deaths/year",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "underlying chronic conditions",
+      "acute triggers",
+      "delayed medical care"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Acute clinical presentation with laboratory and imaging confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "established STEMI networks",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1.8 million/year",
+    "controlRate": "~85% primary PCI access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

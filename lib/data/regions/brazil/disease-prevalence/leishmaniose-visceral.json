@@ -1,0 +1,50 @@
+{
+  "diseaseId": "leishmaniose-visceral",
+  "region": "BR",
+  "diseaseName": "Visceral Leishmaniasis (Kala-azar)",
+  "prevalence": {
+    "value": "endemic in NE and N Brazil",
+    "population": "target population",
+    "year": 2024,
+    "source": "SINAN / SVS 2024",
+    "trend": "urbanizing"
+  },
+  "incidence": {
+    "value": "~3,000 cases/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "SINAN / SVS 2024"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "~200/year (6-7%)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "rK39 rapid test",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~3,000/year",
+    "controlRate": "amphotericin B via SUS"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "toxoplasmose",
+  "region": "EU",
+  "diseaseName": "Toxoplasmosis",
+  "prevalence": {
+    "value": "~30-50% seroprevalence (varies by country)",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC / EUROTOXO",
+    "trend": "decreasing seroprevalence"
+  },
+  "incidence": {
+    "value": "congenital: ~0.1-0.5 per 1,000",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC / EUROTOXO"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "rare",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "prenatal screening in France/Austria; not universal",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~500 congenital cases/year",
+    "controlRate": "well-established treatment protocols"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

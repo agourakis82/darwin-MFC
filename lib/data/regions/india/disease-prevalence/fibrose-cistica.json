@@ -1,0 +1,48 @@
+{
+  "diseaseId": "fibrose-cistica",
+  "region": "IN",
+  "diseaseName": "Cystic Fibrosis",
+  "prevalence": {
+    "value": "~1 per 40,000-100,000 (rare)",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / literature",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "very low",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / literature"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "poor without treatment",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic inheritance",
+      "family history",
+      "consanguinity (where relevant)"
+    ],
+    "vulnerablePopulations": [
+      "carriers of pathogenic variants",
+      "families with consanguinity"
+    ],
+    "diagnosticCriteria": "Genetic testing, enzyme assay, and/or clinical criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited neonatal screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~3,000-5,000",
+    "controlRate": "limited CFTR modulator access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

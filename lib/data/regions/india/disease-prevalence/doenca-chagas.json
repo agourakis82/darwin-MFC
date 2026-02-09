@@ -1,0 +1,50 @@
+{
+  "diseaseId": "doenca-chagas",
+  "region": "IN",
+  "diseaseName": "Chagas Disease",
+  "prevalence": {
+    "value": "not endemic",
+    "population": "target population",
+    "year": 2024,
+    "source": "N/A",
+    "trend": "N/A"
+  },
+  "incidence": {
+    "value": "imported cases only",
+    "population": "target population",
+    "year": 2024,
+    "source": "N/A"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "N/A",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "N/A",
+    "treatmentAvailable": true,
+    "estimatedPatients": "negligible",
+    "controlRate": "N/A"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

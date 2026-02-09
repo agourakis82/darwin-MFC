@@ -1,0 +1,50 @@
+{
+  "diseaseId": "obesidade-infantil",
+  "region": "BR",
+  "diseaseName": "Childhood Obesity",
+  "prevalence": {
+    "value": "~15-20% overweight, ~8-10% obese (children 5-19)",
+    "population": "pediatric population",
+    "year": 2024,
+    "source": "VIGITEL / POF / SBP",
+    "trend": "increasing"
+  },
+  "incidence": {
+    "value": "increasing",
+    "population": "target population",
+    "year": 2024,
+    "source": "VIGITEL / POF / SBP"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "long-term cardiovascular risk",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prematurity",
+      "low birth weight",
+      "nutritional deficits",
+      "environmental factors"
+    ],
+    "vulnerablePopulations": [
+      "neonates",
+      "infants",
+      "children under 5"
+    ],
+    "diagnosticCriteria": "Age-appropriate clinical assessment and targeted investigations"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "BMI-for-age in routine pediatric visits",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~5-7 million children",
+    "controlRate": "~20% achieve sustained weight reduction"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

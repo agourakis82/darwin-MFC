@@ -1,0 +1,45 @@
+{
+  "diseaseId": "prostatite",
+  "region": "IN",
+  "diseaseName": "Prostatite",
+  "prevalence": {
+    "value": "variable",
+    "population": "target population",
+    "year": 2024,
+    "source": "Ministry of Health / ICMR",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "variable",
+    "population": "target population",
+    "year": 2024,
+    "source": "Ministry of Health / ICMR"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "variable",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "variable by condition"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Condition-specific clinical and laboratory criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited",
+    "treatmentAvailable": true,
+    "estimatedPatients": "variable",
+    "controlRate": "variable access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

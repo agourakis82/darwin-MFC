@@ -1,0 +1,50 @@
+{
+  "diseaseId": "leucemia-mieloide-cronica",
+  "region": "IN",
+  "diseaseName": "Chronic Myeloid Leukemia",
+  "prevalence": {
+    "value": "1.8 per 100,000",
+    "population": "general population",
+    "year": 2024,
+    "source": "ICMR 2022",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "1.5 per 100,000/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR 2022"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "0.8 per 100,000",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "family history",
+      "environmental exposures",
+      "smoking (where applicable)",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "elderly",
+      "patients with genetic predisposition"
+    ],
+    "diagnosticCriteria": "Histopathological confirmation via biopsy; staging with imaging (CT/PET)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "N/A",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~12,000 new cases/year",
+    "controlRate": "~80% with generic imatinib"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

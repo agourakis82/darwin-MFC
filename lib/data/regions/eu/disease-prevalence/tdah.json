@@ -1,0 +1,45 @@
+{
+  "diseaseId": "tdah",
+  "region": "EU",
+  "diseaseName": "ADHD",
+  "prevalence": {
+    "value": "5-7% of children",
+    "population": "pediatric population",
+    "year": 2024,
+    "source": "WHO Europe / NICE",
+    "trend": "increasing diagnoses"
+  },
+  "incidence": {
+    "value": "common",
+    "population": "target population",
+    "year": 2024,
+    "source": "WHO Europe / NICE"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "N/A",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "variable by condition"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Condition-specific clinical and laboratory criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "specialist assessment",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~5-7 million children",
+    "controlRate": "~50% receive medication/therapy"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

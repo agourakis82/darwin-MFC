@@ -1,0 +1,48 @@
+{
+  "diseaseId": "hemofilia-b",
+  "region": "BR",
+  "diseaseName": "Hemofilia B",
+  "prevalence": {
+    "value": "1-5 per 100,000",
+    "population": "general population",
+    "year": 2024,
+    "source": "DataSUS / SBGM",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "0.5-2 per 100,000/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "DataSUS / SBGM"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "variable",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic inheritance",
+      "family history",
+      "consanguinity (where relevant)"
+    ],
+    "vulnerablePopulations": [
+      "carriers of pathogenic variants",
+      "families with consanguinity"
+    ],
+    "diagnosticCriteria": "Genetic testing, enzyme assay, and/or clinical criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "neonatal screening (select conditions)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~500-5,000 patients",
+    "controlRate": "enzyme replacement/gene therapy where available"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "malaria-falciparum",
+  "region": "BR",
+  "diseaseName": "Plasmodium falciparum Malaria",
+  "prevalence": {
+    "value": "endemic in Amazon region",
+    "population": "target population",
+    "year": 2024,
+    "source": "SIVEP-Malária / SVS 2024",
+    "trend": "decreasing"
+  },
+  "incidence": {
+    "value": "~140,000 cases/year (all species)",
+    "population": "target population",
+    "year": 2024,
+    "source": "SIVEP-Malária / SVS 2024"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "~100/year",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "thick smear/RDT in endemic areas",
+    "treatmentAvailable": true,
+    "estimatedPatients": "seasonal peaks",
+    "controlRate": "ACT available via SUS"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

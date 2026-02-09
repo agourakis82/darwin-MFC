@@ -1,0 +1,47 @@
+{
+  "diseaseId": "cetoacidose-diabetica",
+  "region": "IN",
+  "diseaseName": "Cetoacidose Diabética",
+  "prevalence": {
+    "value": "N/A (acute condition)",
+    "population": "target population",
+    "year": 2024,
+    "source": "Ministry of Health / ICMR",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "variable",
+    "population": "target population",
+    "year": 2024,
+    "source": "Ministry of Health / ICMR"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "higher due to delayed access",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "underlying chronic conditions",
+      "acute triggers",
+      "delayed medical care"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Acute clinical presentation with laboratory and imaging confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "N/A",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high volume",
+    "controlRate": "limited ICU availability"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

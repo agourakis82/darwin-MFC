@@ -1,0 +1,49 @@
+{
+  "diseaseId": "dort-ler",
+  "region": "IN",
+  "diseaseName": "DORT/LER",
+  "prevalence": {
+    "value": "high in informal sector",
+    "population": "target population",
+    "year": 2024,
+    "source": "DGFASLI / ICMR",
+    "trend": "stable to increasing"
+  },
+  "incidence": {
+    "value": "largely unreported",
+    "population": "target population",
+    "year": 2024,
+    "source": "DGFASLI / ICMR"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "variable",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "occupational exposure",
+      "inadequate PPE",
+      "repetitive movements",
+      "toxic substances"
+    ],
+    "vulnerablePopulations": [
+      "workers in high-risk industries",
+      "informal sector workers"
+    ],
+    "diagnosticCriteria": "Occupational history, clinical exam, and exposure assessment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited occupational health services",
+    "treatmentAvailable": true,
+    "estimatedPatients": "millions at risk",
+    "controlRate": "limited enforcement"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

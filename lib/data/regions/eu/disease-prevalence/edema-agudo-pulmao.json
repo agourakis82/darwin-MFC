@@ -1,0 +1,47 @@
+{
+  "diseaseId": "edema-agudo-pulmao",
+  "region": "EU",
+  "diseaseName": "Edema Agudo de Pulmão",
+  "prevalence": {
+    "value": "N/A (acute condition)",
+    "population": "target population",
+    "year": 2024,
+    "source": "Eurostat / national registries",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "variable",
+    "population": "target population",
+    "year": 2024,
+    "source": "Eurostat / national registries"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "lower with rapid access",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "underlying chronic conditions",
+      "acute triggers",
+      "delayed medical care"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Acute clinical presentation with laboratory and imaging confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "N/A",
+    "treatmentAvailable": true,
+    "estimatedPatients": "moderate volume",
+    "controlRate": "well-equipped EDs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

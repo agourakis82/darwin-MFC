@@ -1,5 +1,3 @@
-// @ts-nocheck
-// TODO: Fix Posologia structure - all entries need 'adultos' field even for pediatric-only vaccines
 /**
  * VACINAS - DARWIN-MFC
  * ====================
@@ -47,7 +45,7 @@ export const vacinas: Partial<Medicamento>[] = [
     indicacoes: ['Prevenção de hepatite B', 'Universal para todos os RN nas primeiras 12h de vida'],
     mecanismoAcao: 'Antígeno de superfície HBsAg recombinante que induz anticorpos anti-HBs.',
     posologias: [
-      { indicacao: 'RN', pediatrico: { dose: '0.5ml IM', frequencia: 'Nas primeiras 12h de vida', idadeMinima: 'Nascimento' } },
+      { indicacao: 'RN', adultos: { dose: 'Não se aplica', frequencia: 'Vacina pediátrica' }, pediatrico: { dose: '0.5ml IM', frequencia: 'Nas primeiras 12h de vida', idadeMinima: 'Nascimento' } },
       { indicacao: 'Adulto não vacinado', adultos: { dose: '1ml IM', frequencia: '0, 1, 6 meses' } }
     ],
     contraindicacoes: ['Reação anafilática prévia'],
@@ -71,7 +69,7 @@ export const vacinas: Partial<Medicamento>[] = [
     apresentacoes: [{ forma: 'injetavel', concentracao: '0.5ml', disponivelSUS: true }],
     indicacoes: ['Prevenção de difteria, tétano, coqueluche, hepatite B e Haemophilus influenzae b'],
     mecanismoAcao: 'Vacina combinada com toxoides tetânico e diftérico, pertussis celular, HBsAg e polissacarídeo Hib conjugado.',
-    posologias: [{ indicacao: 'Esquema primário', pediatrico: { dose: '0.5ml IM', frequencia: 'Aos 2, 4 e 6 meses de idade', idadeMinima: '2 meses' } }],
+    posologias: [{ indicacao: 'Esquema primário', adultos: { dose: 'Não se aplica', frequencia: 'Vacina pediátrica' }, pediatrico: { dose: '0.5ml IM', frequencia: 'Aos 2, 4 e 6 meses de idade', idadeMinima: '2 meses' } }],
     contraindicacoes: ['Reação anafilática prévia', 'Encefalopatia em 7 dias após dose anterior', 'Convulsão em 72h após dose anterior'],
     efeitosAdversos: { comuns: ['Dor/vermelhidão local', 'Febre', 'Irritabilidade'], graves: ['Episódio hipotônico-hiporresponsivo', 'Convulsão febril', 'Encefalopatia'] },
     interacoes: [],
@@ -93,7 +91,7 @@ export const vacinas: Partial<Medicamento>[] = [
     apresentacoes: [{ forma: 'injetavel', concentracao: '0.5ml', disponivelSUS: true }],
     indicacoes: ['Prevenção de poliomielite (poliovírus tipos 1, 2, 3)'],
     mecanismoAcao: 'Vacina inativada com poliovírus tipos 1, 2, 3 que induz imunidade humoral.',
-    posologias: [{ indicacao: 'Esquema primário', pediatrico: { dose: '0.5ml IM', frequencia: 'Aos 2, 4 e 6 meses; reforços aos 15 meses e 4 anos', idadeMinima: '2 meses' } }],
+    posologias: [{ indicacao: 'Esquema primário', adultos: { dose: 'Não se aplica', frequencia: 'Vacina pediátrica' }, pediatrico: { dose: '0.5ml IM', frequencia: 'Aos 2, 4 e 6 meses; reforços aos 15 meses e 4 anos', idadeMinima: '2 meses' } }],
     contraindicacoes: ['Reação anafilática prévia a estreptomicina, neomicina ou polimixina B'],
     efeitosAdversos: { comuns: ['Dor local', 'Eritema'], graves: ['Anafilaxia (muito rara)'] },
     interacoes: [],
@@ -115,7 +113,7 @@ export const vacinas: Partial<Medicamento>[] = [
     apresentacoes: [{ forma: 'injetavel', concentracao: '0.5ml', disponivelSUS: true }],
     indicacoes: ['Prevenção de doença pneumocócica invasiva e otite média em lactentes'],
     mecanismoAcao: 'Polissacarídeos de 10 sorotipos de S. pneumoniae conjugados a proteína D/toxoide.',
-    posologias: [{ indicacao: 'Esquema primário', pediatrico: { dose: '0.5ml IM', frequencia: 'Aos 2 e 4 meses, reforço aos 12 meses', idadeMinima: '2 meses' } }],
+    posologias: [{ indicacao: 'Esquema primário', adultos: { dose: 'Não se aplica', frequencia: 'Vacina pediátrica' }, pediatrico: { dose: '0.5ml IM', frequencia: 'Aos 2 e 4 meses, reforço aos 12 meses', idadeMinima: '2 meses' } }],
     contraindicacoes: ['Reação anafilática prévia'],
     efeitosAdversos: { comuns: ['Dor local', 'Febre', 'Irritabilidade'], graves: ['Anafilaxia', 'Convulsão febril'] },
     interacoes: [],
@@ -137,7 +135,7 @@ export const vacinas: Partial<Medicamento>[] = [
     apresentacoes: [{ forma: 'solucao_oral', concentracao: '1.5ml', disponivelSUS: true }],
     indicacoes: ['Prevenção de gastroenterite grave por rotavírus'],
     mecanismoAcao: 'Vacina oral viva atenuada com rotavírus humano que induz imunidade mucosa.',
-    posologias: [{ indicacao: 'Prevenção rotavírus', pediatrico: { dose: '1.5ml VO', frequencia: 'Aos 2 e 4 meses (1ª dose até 3m15d, 2ª até 7m29d)', idadeMinima: '6 semanas' } }],
+    posologias: [{ indicacao: 'Prevenção rotavírus', adultos: { dose: 'Não se aplica', frequencia: 'Vacina pediátrica' }, pediatrico: { dose: '1.5ml VO', frequencia: 'Aos 2 e 4 meses (1ª dose até 3m15d, 2ª até 7m29d)', idadeMinima: '6 semanas' } }],
     contraindicacoes: ['Invaginação prévia', 'Malformação GI não corrigida', 'Imunodeficiência grave'],
     efeitosAdversos: { comuns: ['Irritabilidade', 'Diarreia leve', 'Vômito'], graves: ['Invaginação intestinal (risco muito baixo)'] },
     interacoes: [],
@@ -159,7 +157,7 @@ export const vacinas: Partial<Medicamento>[] = [
     apresentacoes: [{ forma: 'injetavel', concentracao: '0.5ml', disponivelSUS: true }],
     indicacoes: ['Prevenção de doença meningocócica invasiva por sorogrupo C'],
     mecanismoAcao: 'Polissacarídeo capsular de N. meningitidis C conjugado a proteína carreadora.',
-    posologias: [{ indicacao: 'Esquema infantil', pediatrico: { dose: '0.5ml IM', frequencia: 'Aos 3, 5 e 12 meses; reforço aos 11 anos', idadeMinima: '3 meses' } }],
+    posologias: [{ indicacao: 'Esquema infantil', adultos: { dose: 'Não se aplica', frequencia: 'Vacina pediátrica' }, pediatrico: { dose: '0.5ml IM', frequencia: 'Aos 3, 5 e 12 meses; reforço aos 11 anos', idadeMinima: '3 meses' } }],
     contraindicacoes: ['Reação anafilática prévia'],
     efeitosAdversos: { comuns: ['Dor local', 'Febre', 'Irritabilidade'], graves: ['Anafilaxia'] },
     interacoes: [],
@@ -182,7 +180,7 @@ export const vacinas: Partial<Medicamento>[] = [
     indicacoes: ['Prevenção de febre amarela em residentes/viajantes para áreas endêmicas'],
     mecanismoAcao: 'Vacina viva atenuada com cepa 17D que induz imunidade duradoura.',
     posologias: [
-      { indicacao: 'Dose primária', pediatrico: { dose: '0.5ml SC', frequencia: 'Aos 9 meses, reforço aos 4 anos', idadeMinima: '9 meses' } },
+      { indicacao: 'Dose primária', adultos: { dose: 'Não se aplica', frequencia: 'Vacina pediátrica' }, pediatrico: { dose: '0.5ml SC', frequencia: 'Aos 9 meses, reforço aos 4 anos', idadeMinima: '9 meses' } },
       { indicacao: 'Adulto não vacinado', adultos: { dose: '0.5ml SC', frequencia: 'Dose única (vida toda)' } }
     ],
     contraindicacoes: ['Imunodeficiência grave', 'Anafilaxia a ovo', 'Idade <6 meses', 'Gestação', 'Amamentação (lactente <6 meses)'],
@@ -206,7 +204,7 @@ export const vacinas: Partial<Medicamento>[] = [
     apresentacoes: [{ forma: 'injetavel', concentracao: '0.5ml', disponivelSUS: true }],
     indicacoes: ['Prevenção de sarampo, caxumba e rubéola'],
     mecanismoAcao: 'Vacina viva atenuada com vírus de sarampo, caxumba e rubéola.',
-    posologias: [{ indicacao: 'Esquema infantil', pediatrico: { dose: '0.5ml SC', frequencia: 'Aos 12 meses (1ª dose) e 15 meses (tetraviral)', idadeMinima: '12 meses' } }],
+    posologias: [{ indicacao: 'Esquema infantil', adultos: { dose: 'Não se aplica', frequencia: 'Vacina pediátrica' }, pediatrico: { dose: '0.5ml SC', frequencia: 'Aos 12 meses (1ª dose) e 15 meses (tetraviral)', idadeMinima: '12 meses' } }],
     contraindicacoes: ['Imunodeficiência grave', 'Gestação', 'Anafilaxia a neomicina'],
     efeitosAdversos: { comuns: ['Febre', 'Rash', 'Parotidite leve'], graves: ['Púrpura trombocitopênica', 'Encefalite (muito rara)', 'Anafilaxia'] },
     interacoes: [{ medicamento: 'Imunoglobulinas', gravidade: 'moderada', efeito: 'Reduz imunogenicidade', conduta: 'Intervalo de 3-11 meses dependendo da dose' }],
@@ -228,7 +226,7 @@ export const vacinas: Partial<Medicamento>[] = [
     apresentacoes: [{ forma: 'injetavel', concentracao: '0.5ml (720U pediátrica)', disponivelSUS: true }],
     indicacoes: ['Prevenção de hepatite A a partir dos 12 meses'],
     mecanismoAcao: 'Vacina inativada com vírus hepatite A que induz anticorpos anti-HAV.',
-    posologias: [{ indicacao: 'PNI', pediatrico: { dose: '0.5ml IM', frequencia: 'Dose única aos 15 meses', idadeMinima: '12 meses' } }],
+    posologias: [{ indicacao: 'PNI', adultos: { dose: 'Não se aplica', frequencia: 'Vacina pediátrica' }, pediatrico: { dose: '0.5ml IM', frequencia: 'Dose única aos 15 meses', idadeMinima: '12 meses' } }],
     contraindicacoes: ['Reação anafilática prévia'],
     efeitosAdversos: { comuns: ['Dor local', 'Cefaleia', 'Fadiga'], graves: ['Anafilaxia (muito rara)'] },
     interacoes: [],
@@ -250,7 +248,7 @@ export const vacinas: Partial<Medicamento>[] = [
     apresentacoes: [{ forma: 'injetavel', concentracao: '0.5ml', disponivelSUS: true }],
     indicacoes: ['Prevenção de infecção por HPV 6, 11, 16, 18', 'Câncer de colo uterino, vulva, vagina, ânus', 'Verrugas genitais'],
     mecanismoAcao: 'Partículas semelhantes ao vírus (VLPs) que induzem anticorpos neutralizantes.',
-    posologias: [{ indicacao: 'PNI', pediatrico: { dose: '0.5ml IM', frequencia: 'Meninas 9-14 anos: 2 doses (0, 6 meses); Meninos 11-14 anos: 2 doses', idadeMinima: '9 anos' } }],
+    posologias: [{ indicacao: 'PNI', adultos: { dose: 'Não se aplica', frequencia: 'Vacina pediátrica' }, pediatrico: { dose: '0.5ml IM', frequencia: 'Meninas 9-14 anos: 2 doses (0, 6 meses); Meninos 11-14 anos: 2 doses', idadeMinima: '9 anos' } }],
     contraindicacoes: ['Reação anafilática prévia', 'Gestação'],
     efeitosAdversos: { comuns: ['Dor local intensa', 'Cefaleia', 'Febre'], graves: ['Síncope', 'Anafilaxia'] },
     interacoes: [],
@@ -323,7 +321,7 @@ export const vacinas: Partial<Medicamento>[] = [
     indicacoes: ['Prevenção de influenza sazonal', 'Grupos prioritários: idosos, gestantes, crianças 6m-6a, comorbidades'],
     mecanismoAcao: 'Antígenos de hemaglutinina e neuraminidase de cepas circulantes (atualização anual).',
     posologias: [
-      { indicacao: 'Criança primovacinação', pediatrico: { dose: '0.5ml IM', frequencia: '2 doses com intervalo de 4 semanas se primeira vez', idadeMinima: '6 meses' } },
+      { indicacao: 'Criança primovacinação', adultos: { dose: 'Não se aplica', frequencia: 'Vacina pediátrica' }, pediatrico: { dose: '0.5ml IM', frequencia: '2 doses com intervalo de 4 semanas se primeira vez', idadeMinima: '6 meses' } },
       { indicacao: 'Adulto', adultos: { dose: '0.5ml IM', frequencia: 'Anualmente (campanha)' } }
     ],
     contraindicacoes: ['Anafilaxia a dose prévia', 'Síndrome de Guillain-Barré em 6 semanas após vacina influenza'],
@@ -396,7 +394,7 @@ export const vacinas: Partial<Medicamento>[] = [
     indicacoes: ['Prevenção de varicela (catapora)', 'Crianças 4 anos (PNI) ou suscetíveis'],
     mecanismoAcao: 'Vacina viva atenuada com cepa Oka de vírus varicela-zoster.',
     posologias: [
-      { indicacao: 'PNI', pediatrico: { dose: '0.5ml SC', frequencia: 'Dose única aos 4 anos (após tetraviral aos 15m)', idadeMinima: '12 meses' } },
+      { indicacao: 'PNI', adultos: { dose: 'Não se aplica', frequencia: 'Vacina pediátrica' }, pediatrico: { dose: '0.5ml SC', frequencia: 'Dose única aos 4 anos (após tetraviral aos 15m)', idadeMinima: '12 meses' } },
       { indicacao: 'Catch-up', adultos: { dose: '0.5ml SC', frequencia: '2 doses com intervalo de 4-8 semanas' } }
     ],
     contraindicacoes: ['Imunodeficiência grave', 'Gestação', 'Tuberculose ativa não tratada'],
@@ -468,7 +466,7 @@ export const vacinas: Partial<Medicamento>[] = [
     indicacoes: ['Prevenção de dengue (sorotipos 1-4)', 'Crianças 4-16 anos com sorologia prévia positiva (Dengvaxia) ou sem necessidade de sorologia (Qdenga)'],
     mecanismoAcao: 'Vírus quiméricos vivos atenuados (Dengvaxia) ou vírus dengue atenuados (Qdenga).',
     posologias: [
-      { indicacao: 'Qdenga (PNI)', pediatrico: { dose: '0.5ml SC', frequencia: '2 doses com intervalo de 3 meses', idadeMinima: '4 anos' } }
+      { indicacao: 'Qdenga (PNI)', adultos: { dose: 'Não se aplica', frequencia: 'Vacina pediátrica' }, pediatrico: { dose: '0.5ml SC', frequencia: '2 doses com intervalo de 3 meses', idadeMinima: '4 anos' } }
     ],
     contraindicacoes: ['Imunodeficiência', 'Gestação', 'Amamentação'],
     efeitosAdversos: { comuns: ['Cefaleia', 'Mialgia', 'Dor local', 'Mal-estar'], graves: ['Dengue grave em soronegativos (Dengvaxia)'] },
@@ -516,7 +514,7 @@ export const vacinas: Partial<Medicamento>[] = [
     indicacoes: ['Prevenção de doença meningocócica por sorogrupo B', 'Lactentes, crianças, adolescentes', 'Grupos de risco'],
     mecanismoAcao: 'Proteínas recombinantes de membrana externa de N. meningitidis B.',
     posologias: [
-      { indicacao: 'Lactentes', pediatrico: { dose: '0.5ml IM', frequencia: '3 doses (2, 4, 6 meses) + reforço 12-15 meses', idadeMinima: '2 meses' } },
+      { indicacao: 'Lactentes', adultos: { dose: 'Não se aplica', frequencia: 'Vacina pediátrica' }, pediatrico: { dose: '0.5ml IM', frequencia: '3 doses (2, 4, 6 meses) + reforço 12-15 meses', idadeMinima: '2 meses' } },
       { indicacao: 'Adolescentes/adultos', adultos: { dose: '0.5ml IM', frequencia: '2 doses com intervalo de 1-2 meses' } }
     ],
     contraindicacoes: ['Reação anafilática prévia'],

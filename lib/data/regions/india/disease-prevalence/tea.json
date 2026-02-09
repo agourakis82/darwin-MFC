@@ -1,0 +1,45 @@
+{
+  "diseaseId": "tea",
+  "region": "IN",
+  "diseaseName": "Autism Spectrum Disorder",
+  "prevalence": {
+    "value": "~1-1.5% of children",
+    "population": "pediatric population",
+    "year": 2024,
+    "source": "ICMR / INCLEN",
+    "trend": "increasing awareness"
+  },
+  "incidence": {
+    "value": "~1 in 100",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / INCLEN"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "N/A",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "variable by condition"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Condition-specific clinical and laboratory criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "very limited",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10-15 million",
+    "controlRate": "<5% access specialized services"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

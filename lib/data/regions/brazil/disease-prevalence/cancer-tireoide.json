@@ -1,0 +1,50 @@
+{
+  "diseaseId": "cancer-tireoide",
+  "region": "BR",
+  "diseaseName": "Thyroid Cancer",
+  "prevalence": {
+    "value": "8.5 per 100,000",
+    "population": "general population",
+    "year": 2024,
+    "source": "INCA 2024",
+    "trend": "increasing"
+  },
+  "incidence": {
+    "value": "9.0 per 100,000/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "INCA 2024"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "0.5 per 100,000",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "family history",
+      "environmental exposures",
+      "smoking (where applicable)",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "elderly",
+      "patients with genetic predisposition"
+    ],
+    "diagnosticCriteria": "Histopathological confirmation via biopsy; staging with imaging (CT/PET)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "incidental ultrasound",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~15,000 new cases/year",
+    "controlRate": "~98% 5-year survival"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

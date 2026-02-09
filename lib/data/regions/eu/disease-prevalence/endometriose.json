@@ -1,0 +1,47 @@
+{
+  "diseaseId": "endometriose",
+  "region": "EU",
+  "diseaseName": "Endometriosis",
+  "prevalence": {
+    "value": "~10-15% of women",
+    "population": "women of reproductive age",
+    "year": 2024,
+    "source": "ESHRE / Eurostat",
+    "trend": "increasing diagnoses"
+  },
+  "incidence": {
+    "value": "~2-5 per 1,000/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "ESHRE / Eurostat"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "N/A",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "hormonal factors",
+      "reproductive age",
+      "STIs (where applicable)"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Pelvic examination, ultrasound, and/or laparoscopy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "clinical + imaging; average 7-year diagnostic delay",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~14 million",
+    "controlRate": "~70% symptom improvement"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

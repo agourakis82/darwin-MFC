@@ -1,0 +1,50 @@
+{
+  "diseaseId": "cancer-prostata",
+  "region": "BR",
+  "diseaseName": "Prostate Cancer",
+  "prevalence": {
+    "value": "65.8 per 100,000 males",
+    "population": "general population",
+    "year": 2024,
+    "source": "INCA / Estimativa 2024",
+    "trend": "increasing"
+  },
+  "incidence": {
+    "value": "71.7 per 100,000/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "INCA / Estimativa 2024"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "15.6 per 100,000",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "family history",
+      "environmental exposures",
+      "smoking (where applicable)",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "elderly",
+      "patients with genetic predisposition"
+    ],
+    "diagnosticCriteria": "Histopathological confirmation via biopsy; staging with imaging (CT/PET)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "~40% of target population",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~72,000 new cases/year",
+    "controlRate": "~70% 5-year survival"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

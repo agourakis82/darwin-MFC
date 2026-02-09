@@ -1,0 +1,50 @@
+{
+  "diseaseId": "febre-tifoide",
+  "region": "BR",
+  "diseaseName": "Febre Tifoide",
+  "prevalence": {
+    "value": "variable, endemic in some regions",
+    "population": "target population",
+    "year": 2024,
+    "source": "SINAN / DataSUS / SVS",
+    "trend": "decreasing with interventions"
+  },
+  "incidence": {
+    "value": "variable by region",
+    "population": "target population",
+    "year": 2024,
+    "source": "SINAN / DataSUS / SVS"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "variable",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "SINAN surveillance",
+    "treatmentAvailable": true,
+    "estimatedPatients": "variable",
+    "controlRate": "SUS treatment programs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

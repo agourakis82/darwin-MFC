@@ -1,0 +1,45 @@
+{
+  "diseaseId": "tea",
+  "region": "BR",
+  "diseaseName": "Autism Spectrum Disorder",
+  "prevalence": {
+    "value": "~1-2% of children",
+    "population": "pediatric population",
+    "year": 2024,
+    "source": "SBP / CDC extrapolation",
+    "trend": "increasing diagnoses"
+  },
+  "incidence": {
+    "value": "~1 in 100",
+    "population": "target population",
+    "year": 2024,
+    "source": "SBP / CDC extrapolation"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "N/A",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "variable by condition"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Condition-specific clinical and laboratory criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "M-CHAT screening; limited access",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2 million",
+    "controlRate": "<20% receive ABA/specialist care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

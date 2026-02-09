@@ -1,0 +1,47 @@
+{
+  "diseaseId": "sindrome-coronariana-aguda",
+  "region": "BR",
+  "diseaseName": "Acute Coronary Syndrome",
+  "prevalence": {
+    "value": "~300,000 hospitalizations/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "DataSUS / SBC / DATASUS-SIH",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~350,000 events/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "DataSUS / SBC / DATASUS-SIH"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "~80,000 deaths/year",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "underlying chronic conditions",
+      "acute triggers",
+      "delayed medical care"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Acute clinical presentation with laboratory and imaging confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "ECG + troponin in chest pain",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~350,000/year",
+    "controlRate": "~70% receive PCI within guidelines"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

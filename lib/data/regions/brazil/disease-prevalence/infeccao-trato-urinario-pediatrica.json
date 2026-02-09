@@ -1,0 +1,50 @@
+{
+  "diseaseId": "infeccao-trato-urinario-pediatrica",
+  "region": "BR",
+  "diseaseName": "Infecção do Trato Urinário (Pediátrica)",
+  "prevalence": {
+    "value": "5-15% of pediatric population",
+    "population": "target population",
+    "year": 2024,
+    "source": "SBP / DataSUS",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "common in children <5 years",
+    "population": "target population",
+    "year": 2024,
+    "source": "SBP / DataSUS"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "low with treatment",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prematurity",
+      "low birth weight",
+      "nutritional deficits",
+      "environmental factors"
+    ],
+    "vulnerablePopulations": [
+      "neonates",
+      "infants",
+      "children under 5"
+    ],
+    "diagnosticCriteria": "Age-appropriate clinical assessment and targeted investigations"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "routine pediatric surveillance",
+    "treatmentAvailable": true,
+    "estimatedPatients": "high volume in APS/UBS",
+    "controlRate": "~90% with appropriate care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "diseaseId": "tdah",
+  "region": "BR",
+  "diseaseName": "ADHD",
+  "prevalence": {
+    "value": "5-7% of children and adolescents",
+    "population": "pediatric population",
+    "year": 2024,
+    "source": "ABP / ABENEPI",
+    "trend": "increasing diagnoses"
+  },
+  "incidence": {
+    "value": "common",
+    "population": "target population",
+    "year": 2024,
+    "source": "ABP / ABENEPI"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "N/A",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "variable by condition"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Condition-specific clinical and laboratory criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "clinical assessment (DSM-5)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2-3 million children",
+    "controlRate": "~30% receive adequate treatment"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

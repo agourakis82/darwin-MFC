@@ -1,0 +1,50 @@
+{
+  "diseaseId": "pti-pediatrica",
+  "region": "IN",
+  "diseaseName": "Púrpura Trombocitopênica Imune (PTI)",
+  "prevalence": {
+    "value": "5-20% of pediatric population",
+    "population": "target population",
+    "year": 2024,
+    "source": "NFHS-5 / ICMR",
+    "trend": "decreasing with ICDS"
+  },
+  "incidence": {
+    "value": "common",
+    "population": "target population",
+    "year": 2024,
+    "source": "NFHS-5 / ICMR"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "higher in rural areas",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prematurity",
+      "low birth weight",
+      "nutritional deficits",
+      "environmental factors"
+    ],
+    "vulnerablePopulations": [
+      "neonates",
+      "infants",
+      "children under 5"
+    ],
+    "diagnosticCriteria": "Age-appropriate clinical assessment and targeted investigations"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "community health workers",
+    "treatmentAvailable": true,
+    "estimatedPatients": "very high volume",
+    "controlRate": "~70-80% with treatment access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

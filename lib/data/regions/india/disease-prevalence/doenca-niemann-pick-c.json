@@ -1,0 +1,48 @@
+{
+  "diseaseId": "doenca-niemann-pick-c",
+  "region": "IN",
+  "diseaseName": "Doença de Niemann-Pick Tipo C",
+  "prevalence": {
+    "value": "0.5-3 per 100,000",
+    "population": "general population",
+    "year": 2024,
+    "source": "ICMR / ORDI India",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "0.3-1.5 per 100,000/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / ORDI India"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "variable",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic inheritance",
+      "family history",
+      "consanguinity (where relevant)"
+    ],
+    "vulnerablePopulations": [
+      "carriers of pathogenic variants",
+      "families with consanguinity"
+    ],
+    "diagnosticCriteria": "Genetic testing, enzyme assay, and/or clinical criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited newborn screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~1,000-10,000 patients",
+    "controlRate": "limited access to specialized treatment"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

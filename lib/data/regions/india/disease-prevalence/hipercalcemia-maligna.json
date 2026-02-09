@@ -1,0 +1,50 @@
+{
+  "diseaseId": "hipercalcemia-maligna",
+  "region": "IN",
+  "diseaseName": "Malignant Hypercalcemia",
+  "prevalence": {
+    "value": "2-5% of cancer patients",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / literature",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "paraneoplastic complication",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / literature"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "50% 30-day if untreated",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "family history",
+      "environmental exposures",
+      "smoking (where applicable)",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "elderly",
+      "patients with genetic predisposition"
+    ],
+    "diagnosticCriteria": "Histopathological confirmation via biopsy; staging with imaging (CT/PET)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "<20% routine monitoring",
+    "treatmentAvailable": true,
+    "estimatedPatients": "estimated ~50,000 episodes/year",
+    "controlRate": "limited by oncology access"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "raiva",
+  "region": "EU",
+  "diseaseName": "Raiva",
+  "prevalence": {
+    "value": "low, mostly imported cases",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC TESSy / WHO Europe",
+    "trend": "stable to decreasing"
+  },
+  "incidence": {
+    "value": "<1 per 100,000/year for most",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC TESSy / WHO Europe"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "low",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "ECDC surveillance",
+    "treatmentAvailable": true,
+    "estimatedPatients": "limited endemic transmission",
+    "controlRate": "prompt treatment available"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

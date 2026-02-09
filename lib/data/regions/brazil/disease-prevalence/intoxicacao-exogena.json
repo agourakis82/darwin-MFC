@@ -1,0 +1,49 @@
+{
+  "diseaseId": "intoxicacao-exogena",
+  "region": "BR",
+  "diseaseName": "Intoxicação Exógena Aguda",
+  "prevalence": {
+    "value": "variable by industry",
+    "population": "target population",
+    "year": 2024,
+    "source": "SINAN / CEREST / MTE",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "underreported",
+    "population": "target population",
+    "year": 2024,
+    "source": "SINAN / CEREST / MTE"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "low for most conditions",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "occupational exposure",
+      "inadequate PPE",
+      "repetitive movements",
+      "toxic substances"
+    ],
+    "vulnerablePopulations": [
+      "workers in high-risk industries",
+      "informal sector workers"
+    ],
+    "diagnosticCriteria": "Occupational history, clinical exam, and exposure assessment"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "PCMSO occupational health",
+    "treatmentAvailable": true,
+    "estimatedPatients": "estimated undercount",
+    "controlRate": "variable by sector"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "diseaseId": "esquistossomose",
+  "region": "EU",
+  "diseaseName": "Schistosomiasis",
+  "prevalence": {
+    "value": "rare, imported cases",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC 2024",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "<100/year in EU",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC 2024"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "rare",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "eosinophilia workup in travelers",
+    "treatmentAvailable": true,
+    "estimatedPatients": "travel-related",
+    "controlRate": "praziquantel available"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

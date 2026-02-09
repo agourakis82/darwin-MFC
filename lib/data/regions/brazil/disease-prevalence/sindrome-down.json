@@ -1,0 +1,48 @@
+{
+  "diseaseId": "sindrome-down",
+  "region": "BR",
+  "diseaseName": "Down Syndrome (Trisomy 21)",
+  "prevalence": {
+    "value": "~1 per 700 live births",
+    "population": "target population",
+    "year": 2024,
+    "source": "SINASC / SBG",
+    "trend": "stable birth prevalence"
+  },
+  "incidence": {
+    "value": "~1 per 700",
+    "population": "target population",
+    "year": 2024,
+    "source": "SINASC / SBG"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "improved with cardiac surgery",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic inheritance",
+      "family history",
+      "consanguinity (where relevant)"
+    ],
+    "vulnerablePopulations": [
+      "carriers of pathogenic variants",
+      "families with consanguinity"
+    ],
+    "diagnosticCriteria": "Genetic testing, enzyme assay, and/or clinical criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "prenatal screening variable; NIPT expanding",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~300,000",
+    "controlRate": "multidisciplinary follow-up via SUS"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "diseaseId": "sepse",
+  "region": "EU",
+  "diseaseName": "Sepsis and Septic Shock",
+  "prevalence": {
+    "value": "~200-300 per 100,000 hospitalizations",
+    "population": "general population",
+    "year": 2024,
+    "source": "ECDC / Intensive Care Med",
+    "trend": "decreasing mortality"
+  },
+  "incidence": {
+    "value": "~700,000 cases/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC / Intensive Care Med"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "~25-30%",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "underlying chronic conditions",
+      "acute triggers",
+      "delayed medical care"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Acute clinical presentation with laboratory and imaging confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "qSOFA/NEWS at ED triage",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~170,000 deaths/year",
+    "controlRate": "SSC bundle compliance ~60-70%"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

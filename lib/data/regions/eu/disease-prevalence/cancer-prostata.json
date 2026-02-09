@@ -1,0 +1,50 @@
+{
+  "diseaseId": "cancer-prostata",
+  "region": "EU",
+  "diseaseName": "Prostate Cancer",
+  "prevalence": {
+    "value": "107.2 per 100,000 males",
+    "population": "general population",
+    "year": 2024,
+    "source": "ECIS / Eurostat 2024",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "95.0 per 100,000/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECIS / Eurostat 2024"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "19.3 per 100,000",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "family history",
+      "environmental exposures",
+      "smoking (where applicable)",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "elderly",
+      "patients with genetic predisposition"
+    ],
+    "diagnosticCriteria": "Histopathological confirmation via biopsy; staging with imaging (CT/PET)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "~60% varies by country",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~450,000 new cases/year",
+    "controlRate": "~90% 5-year survival"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

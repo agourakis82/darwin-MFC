@@ -1,0 +1,50 @@
+{
+  "diseaseId": "varicela",
+  "region": "EU",
+  "diseaseName": "Varicella (Chickenpox)",
+  "prevalence": {
+    "value": "~95% seroprevalence",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC / WHO Europe",
+    "trend": "decreasing rapidly"
+  },
+  "incidence": {
+    "value": "declining with vaccination",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC / WHO Europe"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "<50/year",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "clinical + PCR",
+    "treatmentAvailable": true,
+    "estimatedPatients": "declining",
+    "controlRate": "vaccination in many EU countries"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

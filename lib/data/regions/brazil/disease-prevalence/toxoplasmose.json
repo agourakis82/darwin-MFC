@@ -1,0 +1,50 @@
+{
+  "diseaseId": "toxoplasmose",
+  "region": "BR",
+  "diseaseName": "Toxoplasmosis",
+  "prevalence": {
+    "value": "~50-80% seroprevalence",
+    "population": "target population",
+    "year": 2024,
+    "source": "DataSUS / SINASC",
+    "trend": "decreasing congenital cases"
+  },
+  "incidence": {
+    "value": "congenital: ~1-2 per 1,000 live births",
+    "population": "target population",
+    "year": 2024,
+    "source": "DataSUS / SINASC"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "rare in immunocompetent",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "prenatal IgG/IgM screening mandatory",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~3,000 congenital cases/year",
+    "controlRate": "spiramycin/pyrimethamine available"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

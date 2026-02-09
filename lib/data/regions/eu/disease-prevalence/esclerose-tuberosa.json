@@ -1,0 +1,48 @@
+{
+  "diseaseId": "esclerose-tuberosa",
+  "region": "EU",
+  "diseaseName": "Complexo Esclerose Tuberosa",
+  "prevalence": {
+    "value": "1-8 per 100,000",
+    "population": "general population",
+    "year": 2024,
+    "source": "Orphanet / Eurostat",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "0.5-3 per 100,000/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "Orphanet / Eurostat"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "variable",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic inheritance",
+      "family history",
+      "consanguinity (where relevant)"
+    ],
+    "vulnerablePopulations": [
+      "carriers of pathogenic variants",
+      "families with consanguinity"
+    ],
+    "diagnosticCriteria": "Genetic testing, enzyme assay, and/or clinical criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "expanded newborn screening",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~2,000-20,000 patients",
+    "controlRate": "orphan drug access via EMA"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

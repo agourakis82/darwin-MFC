@@ -1,0 +1,50 @@
+{
+  "diseaseId": "leishmaniose-tegumentar",
+  "region": "IN",
+  "diseaseName": "Cutaneous Leishmaniasis",
+  "prevalence": {
+    "value": "sporadic, less common than VL",
+    "population": "target population",
+    "year": 2024,
+    "source": "NVBDCP",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "<1,000/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "NVBDCP"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "very rare",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "clinical",
+    "treatmentAvailable": true,
+    "estimatedPatients": "<1,000/year",
+    "controlRate": "treatment available"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

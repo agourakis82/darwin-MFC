@@ -1,0 +1,50 @@
+{
+  "diseaseId": "doenca-chagas",
+  "region": "EU",
+  "diseaseName": "Chagas Disease",
+  "prevalence": {
+    "value": "~0.01% (immigrant populations)",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC / WHO Europe",
+    "trend": "stable (migration-related)"
+  },
+  "incidence": {
+    "value": "~100-500 diagnosed/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "ECDC / WHO Europe"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "rare",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "screening in endemic-origin populations",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~50,000-80,000 (Latin American immigrants)",
+    "controlRate": "treatment available"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

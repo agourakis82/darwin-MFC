@@ -1,0 +1,50 @@
+{
+  "diseaseId": "obesidade-infantil",
+  "region": "EU",
+  "diseaseName": "Childhood Obesity",
+  "prevalence": {
+    "value": "~20-25% overweight, ~8-12% obese",
+    "population": "target population",
+    "year": 2024,
+    "source": "WHO COSI / Eurostat",
+    "trend": "stable in some, increasing in Southern/Eastern EU"
+  },
+  "incidence": {
+    "value": "stable to increasing",
+    "population": "target population",
+    "year": 2024,
+    "source": "WHO COSI / Eurostat"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "long-term",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "prematurity",
+      "low birth weight",
+      "nutritional deficits",
+      "environmental factors"
+    ],
+    "vulnerablePopulations": [
+      "neonates",
+      "infants",
+      "children under 5"
+    ],
+    "diagnosticCriteria": "Age-appropriate clinical assessment and targeted investigations"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "school health programs",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~12-15 million",
+    "controlRate": "~30% achieve targets"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

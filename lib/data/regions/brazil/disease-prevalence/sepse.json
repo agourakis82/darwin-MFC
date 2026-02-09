@@ -1,0 +1,47 @@
+{
+  "diseaseId": "sepse",
+  "region": "BR",
+  "diseaseName": "Sepsis and Septic Shock",
+  "prevalence": {
+    "value": "~420 per 100,000 hospitalizations",
+    "population": "general population",
+    "year": 2024,
+    "source": "ILAS / SPREAD study",
+    "trend": "stable; high mortality"
+  },
+  "incidence": {
+    "value": "~600,000 cases/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "ILAS / SPREAD study"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "~55% in ICU (high globally)",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "underlying chronic conditions",
+      "acute triggers",
+      "delayed medical care"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Acute clinical presentation with laboratory and imaging confirmation"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "qSOFA / SOFA in EDs",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~240,000 deaths/year",
+    "controlRate": "SSC bundles; variable compliance"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

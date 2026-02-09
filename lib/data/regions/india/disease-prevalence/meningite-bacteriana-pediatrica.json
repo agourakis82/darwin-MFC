@@ -1,0 +1,50 @@
+{
+  "diseaseId": "meningite-bacteriana-pediatrica",
+  "region": "IN",
+  "diseaseName": "Meningite Bacteriana (Pediátrica)",
+  "prevalence": {
+    "value": "variable, endemic in many states",
+    "population": "target population",
+    "year": 2024,
+    "source": "NVBDCP / IDSP / Ministry of Health",
+    "trend": "variable"
+  },
+  "incidence": {
+    "value": "variable",
+    "population": "target population",
+    "year": 2024,
+    "source": "NVBDCP / IDSP / Ministry of Health"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "variable",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "poor sanitation",
+      "contaminated water/food",
+      "vector exposure",
+      "lack of vaccination"
+    ],
+    "vulnerablePopulations": [
+      "immunocompromised",
+      "residents of endemic areas",
+      "travelers"
+    ],
+    "diagnosticCriteria": "Clinical presentation, serological testing, and/or PCR"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "IDSP surveillance",
+    "treatmentAvailable": true,
+    "estimatedPatients": "variable",
+    "controlRate": "national control programs"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

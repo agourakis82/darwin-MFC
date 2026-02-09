@@ -1,0 +1,47 @@
+{
+  "diseaseId": "endometriose",
+  "region": "IN",
+  "diseaseName": "Endometriosis",
+  "prevalence": {
+    "value": "~10% of women of reproductive age",
+    "population": "women of reproductive age",
+    "year": 2024,
+    "source": "FOGSI / ICMR",
+    "trend": "increasing awareness"
+  },
+  "incidence": {
+    "value": "common but underdiagnosed",
+    "population": "target population",
+    "year": 2024,
+    "source": "FOGSI / ICMR"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "N/A",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "hormonal factors",
+      "reproductive age",
+      "STIs (where applicable)"
+    ],
+    "vulnerablePopulations": [
+      "varies by condition"
+    ],
+    "diagnosticCriteria": "Pelvic examination, ultrasound, and/or laparoscopy"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "limited",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~25 million",
+    "controlRate": "~40% access to treatment"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}

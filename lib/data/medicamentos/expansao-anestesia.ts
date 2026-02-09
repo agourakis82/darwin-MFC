@@ -1,5 +1,3 @@
-// @ts-nocheck
-// TODO: Fix type issues - classeTerapeutica needs valid values, posologia/interacoes need correct structure
 /**
  * Expansão: Anestésicos e Medicamentos de Procedimentos
  * 40 medicamentos para anestesia geral, local, bloqueio neuromuscular e reversão
@@ -21,7 +19,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     subclasse: 'inalatorio',
     rename: true,
     apresentacoes: [
-      { forma: 'líquido volátil', concentracao: '100%', disponivelSUS: true }
+      { forma: 'inalatorio', concentracao: '100%', disponivelSUS: true }
     ],
     indicacoes: [
       'Indução e manutenção de anestesia geral',
@@ -32,10 +30,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Indução anestésica',
-        dose: 'CAM 2.0% (adultos), até 7% para indução',
-        via: 'inalatória',
-        frequencia: 'contínua',
-        duracao: 'Durante procedimento'
+        adultos: {
+          dose: 'CAM 2.0% (adultos), até 7% para indução (inalatória)',
+          frequencia: 'contínua',
+          observacoes: 'Duração: Durante procedimento'
+        }
       }
     ],
     contraindicacoes: [
@@ -47,8 +46,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Hipertermia maligna', 'Hepatotoxicidade', 'Arritmias']
     },
     interacoes: [
-      { farmaco: 'Bloqueadores neuromusculares', tipo: 'potencializacao', descricao: 'Potencializa efeito de BNM não-despolarizantes' },
-      { farmaco: 'Opioides', tipo: 'potencializacao', descricao: 'Reduz CAM do sevoflurano' }
+      { medicamento: 'Bloqueadores neuromusculares', gravidade: 'moderada', efeito: 'Potencializa efeito de BNM não-despolarizantes', conduta: 'Monitorar e ajustar doses' },
+      { medicamento: 'Opioides', gravidade: 'moderada', efeito: 'Reduz CAM do sevoflurano', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Eliminado rapidamente' },
@@ -66,7 +65,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     subclasse: 'inalatorio',
     rename: false,
     apresentacoes: [
-      { forma: 'líquido volátil', concentracao: '100%', disponivelSUS: false }
+      { forma: 'inalatorio', concentracao: '100%', disponivelSUS: false }
     ],
     indicacoes: [
       'Manutenção de anestesia geral',
@@ -76,10 +75,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Manutenção anestésica',
-        dose: 'CAM 6.0% (adultos)',
-        via: 'inalatória',
-        frequencia: 'contínua',
-        duracao: 'Durante procedimento'
+        adultos: {
+          dose: 'CAM 6.0% (adultos) (inalatória)',
+          frequencia: 'contínua',
+          observacoes: 'Duração: Durante procedimento'
+        }
       }
     ],
     contraindicacoes: [
@@ -92,7 +92,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Hipertermia maligna', 'Hepatite']
     },
     interacoes: [
-      { farmaco: 'Bloqueadores neuromusculares', tipo: 'potencializacao', descricao: 'Potencializa BNM' }
+      { medicamento: 'Bloqueadores neuromusculares', gravidade: 'moderada', efeito: 'Potencializa BNM', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Eliminação rápida' },
@@ -110,7 +110,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     subclasse: 'inalatorio',
     rename: true,
     apresentacoes: [
-      { forma: 'líquido volátil', concentracao: '100%', disponivelSUS: true }
+      { forma: 'inalatorio', concentracao: '100%', disponivelSUS: true }
     ],
     indicacoes: [
       'Manutenção de anestesia geral',
@@ -120,10 +120,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Manutenção anestésica',
-        dose: 'CAM 1.15% (adultos)',
-        via: 'inalatória',
-        frequencia: 'contínua',
-        duracao: 'Durante procedimento'
+        adultos: {
+          dose: 'CAM 1.15% (adultos) (inalatória)',
+          frequencia: 'contínua',
+          observacoes: 'Duração: Durante procedimento'
+        }
       }
     ],
     contraindicacoes: [
@@ -135,7 +136,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Hipertermia maligna', 'Hepatotoxicidade']
     },
     interacoes: [
-      { farmaco: 'Bloqueadores neuromusculares', tipo: 'potencializacao', descricao: 'Potencializa BNM não-despolarizantes' }
+      { medicamento: 'Bloqueadores neuromusculares', gravidade: 'moderada', efeito: 'Potencializa BNM não-despolarizantes', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Seguro após eliminação' },
@@ -153,7 +154,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     subclasse: 'inalatorio',
     rename: true,
     apresentacoes: [
-      { forma: 'gás', concentracao: '100%', disponivelSUS: true }
+      { forma: 'gas', concentracao: '100%', disponivelSUS: true }
     ],
     indicacoes: [
       'Analgesia e sedação em procedimentos',
@@ -164,10 +165,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Analgesia/sedação',
-        dose: '50-70% em O2',
-        via: 'inalatória',
-        frequencia: 'contínua',
-        duracao: 'Durante procedimento'
+        adultos: {
+          dose: '50-70% em O2 (inalatória)',
+          frequencia: 'contínua',
+          observacoes: 'Duração: Durante procedimento'
+        }
       }
     ],
     contraindicacoes: [
@@ -182,7 +184,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Hipóxia por difusão', 'Mieloneuropatia (uso crônico)', 'Expansão de cavidades fechadas']
     },
     interacoes: [
-      { farmaco: 'Metotrexato', tipo: 'contraindicacao', descricao: 'Potencializa toxicidade hematológica' }
+      { medicamento: 'Metotrexato', gravidade: 'contraindicada', efeito: 'Potencializa toxicidade hematológica', conduta: 'Evitar associação' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Eliminação imediata' },
@@ -200,7 +202,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     subclasse: 'inalatorio',
     rename: false,
     apresentacoes: [
-      { forma: 'líquido volátil', concentracao: '100%', disponivelSUS: false }
+      { forma: 'inalatorio', concentracao: '100%', disponivelSUS: false }
     ],
     indicacoes: [
       'Anestesia geral (uso histórico)',
@@ -210,10 +212,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Manutenção anestésica',
-        dose: 'CAM 0.75%',
-        via: 'inalatória',
-        frequencia: 'contínua',
-        duracao: 'Durante procedimento'
+        adultos: {
+          dose: 'CAM 0.75% (inalatória)',
+          frequencia: 'contínua',
+          observacoes: 'Duração: Durante procedimento'
+        }
       }
     ],
     contraindicacoes: [
@@ -226,7 +229,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Hepatite fulminante', 'Arritmias ventriculares', 'Hipertermia maligna']
     },
     interacoes: [
-      { farmaco: 'Adrenalina', tipo: 'contraindicacao', descricao: 'Alto risco de arritmias ventriculares' }
+      { medicamento: 'Adrenalina', gravidade: 'contraindicada', efeito: 'Alto risco de arritmias ventriculares', conduta: 'Evitar associação' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Uso limitado atualmente' },
@@ -248,8 +251,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     subclasse: 'intravenoso',
     rename: true,
     apresentacoes: [
-      { forma: 'emulsão injetável', concentracao: '10mg/mL', disponivelSUS: true },
-      { forma: 'emulsão injetável', concentracao: '20mg/mL', disponivelSUS: true }
+      { forma: 'injetavel', concentracao: '10mg/mL', disponivelSUS: true },
+      { forma: 'injetavel', concentracao: '20mg/mL', disponivelSUS: true }
     ],
     indicacoes: [
       'Indução e manutenção de anestesia geral',
@@ -260,17 +263,19 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Indução anestésica',
-        dose: '1.5-2.5 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Bolus'
+        adultos: {
+          dose: '1.5-2.5 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Bolus'
+        }
       },
       {
         indicacao: 'Sedação UTI',
-        dose: '0.3-4 mg/kg/h',
-        via: 'IV contínuo',
-        frequencia: 'contínua',
-        duracao: 'Conforme necessidade'
+        adultos: {
+          dose: '0.3-4 mg/kg/h (IV contínuo)',
+          frequencia: 'contínua',
+          observacoes: 'Duração: Conforme necessidade'
+        }
       }
     ],
     contraindicacoes: [
@@ -283,8 +288,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Síndrome da infusão do propofol (PRIS)', 'Pancreatite', 'Anafilaxia']
     },
     interacoes: [
-      { farmaco: 'Opioides', tipo: 'potencializacao', descricao: 'Potencializa depressão respiratória' },
-      { farmaco: 'Benzodiazepínicos', tipo: 'potencializacao', descricao: 'Efeito sinérgico sedativo' }
+      { medicamento: 'Opioides', gravidade: 'moderada', efeito: 'Potencializa depressão respiratória', conduta: 'Monitorar e ajustar doses' },
+      { medicamento: 'Benzodiazepínicos', gravidade: 'moderada', efeito: 'Efeito sinérgico sedativo', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'B',
     amamentacao: { compativel: true, observacao: 'Meia-vida curta' },
@@ -302,7 +307,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     subclasse: 'intravenoso',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '2mg/mL', disponivelSUS: true }
+      { forma: 'injetavel', concentracao: '2mg/mL', disponivelSUS: true }
     ],
     indicacoes: [
       'Indução anestésica em instabilidade hemodinâmica',
@@ -312,10 +317,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Indução anestésica',
-        dose: '0.2-0.4 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Bolus'
+        adultos: {
+          dose: '0.2-0.4 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Bolus'
+        }
       }
     ],
     contraindicacoes: [
@@ -328,7 +334,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Supressão adrenal', 'Crise adrenal (uso prolongado)']
     },
     interacoes: [
-      { farmaco: 'Opioides', tipo: 'potencializacao', descricao: 'Efeito sedativo sinérgico' }
+      { medicamento: 'Opioides', gravidade: 'moderada', efeito: 'Efeito sedativo sinérgico', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Dose única segura' },
@@ -346,8 +352,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     subclasse: 'intravenoso',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '50mg/mL', disponivelSUS: true },
-      { forma: 'solução injetável', concentracao: '10mg/mL', disponivelSUS: true }
+      { forma: 'injetavel', concentracao: '50mg/mL', disponivelSUS: true },
+      { forma: 'injetavel', concentracao: '10mg/mL', disponivelSUS: true }
     ],
     indicacoes: [
       'Anestesia dissociativa',
@@ -360,17 +366,19 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Indução anestésica',
-        dose: '1-2 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Bolus'
+        adultos: {
+          dose: '1-2 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Bolus'
+        }
       },
       {
         indicacao: 'Sedação procedural',
-        dose: '4-5 mg/kg',
-        via: 'IM',
-        frequencia: 'dose única',
-        duracao: 'Duração 15-30 min'
+        adultos: {
+          dose: '4-5 mg/kg (IM)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Duração 15-30 min'
+        }
       }
     ],
     contraindicacoes: [
@@ -385,8 +393,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Laringoespasmo', 'Psicose emergente', 'Hipertensão grave']
     },
     interacoes: [
-      { farmaco: 'Benzodiazepínicos', tipo: 'benefica', descricao: 'Reduzem fenômenos dissociativos' },
-      { farmaco: 'Teofilina', tipo: 'contraindicacao', descricao: 'Risco de convulsões' }
+      { medicamento: 'Benzodiazepínicos', gravidade: 'leve', efeito: 'Reduzem fenômenos dissociativos', conduta: 'Associação pode ser benéfica' },
+      { medicamento: 'Teofilina', gravidade: 'contraindicada', efeito: 'Risco de convulsões', conduta: 'Evitar associação' }
     ],
     gestacao: 'B',
     amamentacao: { compativel: true, observacao: 'Dose única segura' },
@@ -404,7 +412,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     subclasse: 'barbiturico',
     rename: true,
     apresentacoes: [
-      { forma: 'pó para solução injetável', concentracao: '1g', disponivelSUS: true }
+      { forma: 'po_injetavel', concentracao: '1g', disponivelSUS: true }
     ],
     indicacoes: [
       'Indução anestésica',
@@ -415,17 +423,19 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Indução anestésica',
-        dose: '3-5 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Bolus'
+        adultos: {
+          dose: '3-5 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Bolus'
+        }
       },
       {
         indicacao: 'Coma barbitúrico',
-        dose: '3-5 mg/kg seguido de 1-5 mg/kg/h',
-        via: 'IV',
-        frequencia: 'contínua',
-        duracao: 'Conforme EEG'
+        adultos: {
+          dose: '3-5 mg/kg seguido de 1-5 mg/kg/h (IV)',
+          frequencia: 'contínua',
+          observacoes: 'Duração: Conforme EEG'
+        }
       }
     ],
     contraindicacoes: [
@@ -439,7 +449,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Colapso cardiovascular', 'Porfiria aguda', 'Necrose tecidual (extravasamento)']
     },
     interacoes: [
-      { farmaco: 'Opioides', tipo: 'potencializacao', descricao: 'Depressão respiratória' }
+      { medicamento: 'Opioides', gravidade: 'moderada', efeito: 'Depressão respiratória', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: false, observacao: 'Excretado no leite' },
@@ -457,9 +467,9 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     subclasse: 'benzodiazepínico',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '5mg/mL', disponivelSUS: true },
-      { forma: 'solução injetável', concentracao: '1mg/mL', disponivelSUS: true },
-      { forma: 'solução oral', concentracao: '2mg/mL', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '5mg/mL', disponivelSUS: true },
+      { forma: 'injetavel', concentracao: '1mg/mL', disponivelSUS: true },
+      { forma: 'solucao_oral', concentracao: '2mg/mL', disponivelSUS: false }
     ],
     indicacoes: [
       'Sedação pré-operatória',
@@ -472,17 +482,19 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Sedação procedural',
-        dose: '0.02-0.1 mg/kg',
-        via: 'IV',
-        frequencia: 'titulada',
-        duracao: 'Durante procedimento'
+        adultos: {
+          dose: '0.02-0.1 mg/kg (IV)',
+          frequencia: 'titulada',
+          observacoes: 'Duração: Durante procedimento'
+        }
       },
       {
         indicacao: 'Sedação UTI',
-        dose: '0.02-0.1 mg/kg/h',
-        via: 'IV contínuo',
-        frequencia: 'contínua',
-        duracao: 'Conforme necessidade'
+        adultos: {
+          dose: '0.02-0.1 mg/kg/h (IV contínuo)',
+          frequencia: 'contínua',
+          observacoes: 'Duração: Conforme necessidade'
+        }
       }
     ],
     contraindicacoes: [
@@ -495,8 +507,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Apneia', 'Reação paradoxal', 'Dependência (uso prolongado)']
     },
     interacoes: [
-      { farmaco: 'Opioides', tipo: 'potencializacao', descricao: 'Depressão respiratória grave' },
-      { farmaco: 'Inibidores CYP3A4', tipo: 'aumenta_nivel', descricao: 'Aumenta níveis de midazolam' }
+      { medicamento: 'Opioides', gravidade: 'moderada', efeito: 'Depressão respiratória grave', conduta: 'Monitorar e ajustar doses' },
+      { medicamento: 'Inibidores CYP3A4', gravidade: 'moderada', efeito: 'Aumenta níveis de midazolam', conduta: 'Monitorar níveis e ajustar dose' }
     ],
     gestacao: 'D',
     amamentacao: { compativel: true, observacao: 'Dose única segura, evitar doses repetidas' },
@@ -511,10 +523,10 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomesComerciais: ['Precedex'],
     atcCode: 'N05CM18',
     classeTerapeutica: 'sedativo',
-    subclasse: 'alfa2-agonista',
+    subclasse: 'agonista_alfa2',
     rename: false,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '100mcg/mL', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '100mcg/mL', disponivelSUS: false }
     ],
     indicacoes: [
       'Sedação em UTI (sem depressão respiratória)',
@@ -526,17 +538,19 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Sedação UTI',
-        dose: '0.2-0.7 mcg/kg/h',
-        via: 'IV contínuo',
-        frequencia: 'contínua',
-        duracao: 'Até 24h'
+        adultos: {
+          dose: '0.2-0.7 mcg/kg/h (IV contínuo)',
+          frequencia: 'contínua',
+          observacoes: 'Duração: Até 24h'
+        }
       },
       {
         indicacao: 'Sedação procedural',
-        dose: 'Ataque 1 mcg/kg em 10min, manutenção 0.2-1 mcg/kg/h',
-        via: 'IV',
-        frequencia: 'contínua',
-        duracao: 'Durante procedimento'
+        adultos: {
+          dose: 'Ataque 1 mcg/kg em 10min, manutenção 0.2-1 mcg/kg/h (IV)',
+          frequencia: 'contínua',
+          observacoes: 'Duração: Durante procedimento'
+        }
       }
     ],
     contraindicacoes: [
@@ -549,8 +563,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Parada sinusal', 'Hipertensão transitória (dose de ataque)']
     },
     interacoes: [
-      { farmaco: 'Betabloqueadores', tipo: 'potencializacao', descricao: 'Bradicardia aditiva' },
-      { farmaco: 'Digoxina', tipo: 'potencializacao', descricao: 'Risco de bradicardia' }
+      { medicamento: 'Betabloqueadores', gravidade: 'moderada', efeito: 'Bradicardia aditiva', conduta: 'Monitorar e ajustar doses' },
+      { medicamento: 'Digoxina', gravidade: 'moderada', efeito: 'Risco de bradicardia', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: false, observacao: 'Dados insuficientes' },
@@ -565,11 +579,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomesComerciais: ['Ultiva'],
     atcCode: 'N01AH06',
     classeTerapeutica: 'opioide',
-    subclasse: 'anestésico',
+    subclasse: 'opioide',
     rename: false,
     apresentacoes: [
-      { forma: 'pó para solução injetável', concentracao: '1mg', disponivelSUS: false },
-      { forma: 'pó para solução injetável', concentracao: '2mg', disponivelSUS: false }
+      { forma: 'po_injetavel', concentracao: '1mg', disponivelSUS: false },
+      { forma: 'po_injetavel', concentracao: '2mg', disponivelSUS: false }
     ],
     indicacoes: [
       'Analgesia intraoperatória',
@@ -580,10 +594,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Analgesia intraoperatória',
-        dose: '0.1-0.5 mcg/kg/min',
-        via: 'IV contínuo',
-        frequencia: 'contínua',
-        duracao: 'Durante procedimento'
+        adultos: {
+          dose: '0.1-0.5 mcg/kg/min (IV contínuo)',
+          frequencia: 'contínua',
+          observacoes: 'Duração: Durante procedimento'
+        }
       }
     ],
     contraindicacoes: [
@@ -595,7 +610,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Depressão respiratória', 'Rigidez torácica', 'Hiperalgesia pós-operatória']
     },
     interacoes: [
-      { farmaco: 'Benzodiazepínicos', tipo: 'potencializacao', descricao: 'Depressão respiratória sinérgica' }
+      { medicamento: 'Benzodiazepínicos', gravidade: 'moderada', efeito: 'Depressão respiratória sinérgica', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Metabolização rápida' },
@@ -610,12 +625,12 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomesComerciais: ['Fentanest', 'Durogesic'],
     atcCode: 'N01AH01',
     classeTerapeutica: 'opioide',
-    subclasse: 'anestésico',
+    subclasse: 'opioide',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '50mcg/mL', disponivelSUS: true },
-      { forma: 'adesivo transdérmico', concentracao: '25mcg/h', disponivelSUS: false },
-      { forma: 'adesivo transdérmico', concentracao: '50mcg/h', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '50mcg/mL', disponivelSUS: true },
+      { forma: 'adesivo', concentracao: '25mcg/h', disponivelSUS: false },
+      { forma: 'adesivo', concentracao: '50mcg/h', disponivelSUS: false }
     ],
     indicacoes: [
       'Analgesia intraoperatória',
@@ -627,17 +642,19 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Analgesia intraoperatória',
-        dose: '1-2 mcg/kg',
-        via: 'IV',
-        frequencia: 'bolus intermitente',
-        duracao: 'Durante procedimento'
+        adultos: {
+          dose: '1-2 mcg/kg (IV)',
+          frequencia: 'bolus intermitente',
+          observacoes: 'Duração: Durante procedimento'
+        }
       },
       {
         indicacao: 'Dor crônica',
-        dose: '25-100 mcg/h',
-        via: 'transdérmica',
-        frequencia: 'troca a cada 72h',
-        duracao: 'Contínuo'
+        adultos: {
+          dose: '25-100 mcg/h (transdérmica)',
+          frequencia: 'troca a cada 72h',
+          observacoes: 'Duração: Contínuo'
+        }
       }
     ],
     contraindicacoes: [
@@ -650,8 +667,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Depressão respiratória', 'Rigidez muscular', 'Bradicardia']
     },
     interacoes: [
-      { farmaco: 'IMAO', tipo: 'contraindicacao', descricao: 'Síndrome serotoninérgica' },
-      { farmaco: 'Benzodiazepínicos', tipo: 'potencializacao', descricao: 'Risco de depressão respiratória fatal' }
+      { medicamento: 'IMAO', gravidade: 'contraindicada', efeito: 'Síndrome serotoninérgica', conduta: 'Evitar associação' },
+      { medicamento: 'Benzodiazepínicos', gravidade: 'moderada', efeito: 'Risco de depressão respiratória fatal', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Doses baixas seguras' },
@@ -669,15 +686,15 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Lidocaína',
     nomesComerciais: ['Xylocaína', 'Lidostesin'],
     atcCode: 'N01BB02',
-    classeTerapeutica: 'anestesico-local',
+    classeTerapeutica: 'anestesico_local',
     subclasse: 'amida',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '1%', disponivelSUS: true },
-      { forma: 'solução injetável', concentracao: '2%', disponivelSUS: true },
-      { forma: 'solução injetável', concentracao: '2% com epinefrina', disponivelSUS: true },
+      { forma: 'injetavel', concentracao: '1%', disponivelSUS: true },
+      { forma: 'injetavel', concentracao: '2%', disponivelSUS: true },
+      { forma: 'injetavel', concentracao: '2% com epinefrina', disponivelSUS: true },
       { forma: 'gel', concentracao: '2%', disponivelSUS: true },
-      { forma: 'spray', concentracao: '10%', disponivelSUS: true }
+      { forma: 'aerosol', concentracao: '10%', disponivelSUS: true }
     ],
     indicacoes: [
       'Anestesia local infiltrativa',
@@ -690,10 +707,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Infiltração local',
-        dose: 'Até 4.5 mg/kg (sem epi) ou 7 mg/kg (com epi)',
-        via: 'SC/intradérmica',
-        frequencia: 'dose única',
-        duracao: 'Duração 1-2h'
+        adultos: {
+          dose: 'Até 4.5 mg/kg (sem epi) ou 7 mg/kg (com epi) (SC/intradérmica)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Duração 1-2h'
+        }
       }
     ],
     contraindicacoes: [
@@ -706,8 +724,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Toxicidade sistêmica (convulsões)', 'Colapso cardiovascular', 'Metahemoglobinemia']
     },
     interacoes: [
-      { farmaco: 'Betabloqueadores', tipo: 'aumenta_nivel', descricao: 'Reduz metabolismo hepático da lidocaína' },
-      { farmaco: 'Cimetidina', tipo: 'aumenta_nivel', descricao: 'Inibe CYP reduzindo clearance' }
+      { medicamento: 'Betabloqueadores', gravidade: 'moderada', efeito: 'Reduz metabolismo hepático da lidocaína', conduta: 'Monitorar níveis e ajustar dose' },
+      { medicamento: 'Cimetidina', gravidade: 'moderada', efeito: 'Inibe CYP reduzindo clearance', conduta: 'Monitorar níveis e ajustar dose' }
     ],
     gestacao: 'B',
     amamentacao: { compativel: true, observacao: 'Segura' },
@@ -721,13 +739,13 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Bupivacaína',
     nomesComerciais: ['Marcaína', 'Neocaína'],
     atcCode: 'N01BB01',
-    classeTerapeutica: 'anestesico-local',
+    classeTerapeutica: 'anestesico_local',
     subclasse: 'amida',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '0.25%', disponivelSUS: true },
-      { forma: 'solução injetável', concentracao: '0.5%', disponivelSUS: true },
-      { forma: 'solução injetável hiperbárica', concentracao: '0.5%', disponivelSUS: true }
+      { forma: 'injetavel', concentracao: '0.25%', disponivelSUS: true },
+      { forma: 'injetavel', concentracao: '0.5%', disponivelSUS: true },
+      { forma: 'injetavel', concentracao: '0.5%', disponivelSUS: true }
     ],
     indicacoes: [
       'Anestesia raquidiana',
@@ -739,17 +757,19 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Raquidiana',
-        dose: '10-15 mg (hiperbárica 0.5%)',
-        via: 'intratecal',
-        frequencia: 'dose única',
-        duracao: 'Duração 2-3h'
+        adultos: {
+          dose: '10-15 mg (hiperbárica 0.5%) (intratecal)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Duração 2-3h'
+        }
       },
       {
         indicacao: 'Peridural',
-        dose: '50-100 mg',
-        via: 'peridural',
-        frequencia: 'dose única ou contínua',
-        duracao: 'Duração 3-6h'
+        adultos: {
+          dose: '50-100 mg (peridural)',
+          frequencia: 'dose única ou contínua',
+          observacoes: 'Duração: Duração 3-6h'
+        }
       }
     ],
     contraindicacoes: [
@@ -762,7 +782,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Cardiotoxicidade grave', 'Convulsões', 'Parada cardíaca refratária']
     },
     interacoes: [
-      { farmaco: 'Amiodarona', tipo: 'potencializacao', descricao: 'Aumento da cardiotoxicidade' }
+      { medicamento: 'Amiodarona', gravidade: 'moderada', efeito: 'Aumento da cardiotoxicidade', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Baixa excreção no leite' },
@@ -776,13 +796,13 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Ropivacaína',
     nomesComerciais: ['Naropin'],
     atcCode: 'N01BB09',
-    classeTerapeutica: 'anestesico-local',
+    classeTerapeutica: 'anestesico_local',
     subclasse: 'amida',
     rename: false,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '2mg/mL', disponivelSUS: false },
-      { forma: 'solução injetável', concentracao: '7.5mg/mL', disponivelSUS: false },
-      { forma: 'solução injetável', concentracao: '10mg/mL', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '2mg/mL', disponivelSUS: false },
+      { forma: 'injetavel', concentracao: '7.5mg/mL', disponivelSUS: false },
+      { forma: 'injetavel', concentracao: '10mg/mL', disponivelSUS: false }
     ],
     indicacoes: [
       'Anestesia peridural',
@@ -794,10 +814,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Peridural cirúrgica',
-        dose: '75-150 mg (0.75%)',
-        via: 'peridural',
-        frequencia: 'dose única',
-        duracao: 'Duração 3-5h'
+        adultos: {
+          dose: '75-150 mg (0.75%) (peridural)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Duração 3-5h'
+        }
       }
     ],
     contraindicacoes: [
@@ -809,7 +830,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Toxicidade sistêmica', 'Convulsões']
     },
     interacoes: [
-      { farmaco: 'Fluvoxamina', tipo: 'aumenta_nivel', descricao: 'Inibe CYP1A2' }
+      { medicamento: 'Fluvoxamina', gravidade: 'moderada', efeito: 'Inibe CYP1A2', conduta: 'Monitorar níveis e ajustar dose' }
     ],
     gestacao: 'B',
     amamentacao: { compativel: true, observacao: 'Excreção mínima' },
@@ -823,13 +844,13 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Levobupivacaína',
     nomesComerciais: ['Novabupi'],
     atcCode: 'N01BB10',
-    classeTerapeutica: 'anestesico-local',
+    classeTerapeutica: 'anestesico_local',
     subclasse: 'amida',
     rename: false,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '0.25%', disponivelSUS: false },
-      { forma: 'solução injetável', concentracao: '0.5%', disponivelSUS: false },
-      { forma: 'solução injetável', concentracao: '0.75%', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '0.25%', disponivelSUS: false },
+      { forma: 'injetavel', concentracao: '0.5%', disponivelSUS: false },
+      { forma: 'injetavel', concentracao: '0.75%', disponivelSUS: false }
     ],
     indicacoes: [
       'Anestesia peridural',
@@ -841,10 +862,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Peridural',
-        dose: '50-150 mg',
-        via: 'peridural',
-        frequencia: 'dose única',
-        duracao: 'Duração 3-6h'
+        adultos: {
+          dose: '50-150 mg (peridural)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Duração 3-6h'
+        }
       }
     ],
     contraindicacoes: [
@@ -856,7 +878,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Toxicidade sistêmica', 'Convulsões']
     },
     interacoes: [
-      { farmaco: 'Inibidores CYP3A4', tipo: 'aumenta_nivel', descricao: 'Reduz metabolismo' }
+      { medicamento: 'Inibidores CYP3A4', gravidade: 'moderada', efeito: 'Reduz metabolismo', conduta: 'Monitorar níveis e ajustar dose' }
     ],
     gestacao: 'B',
     amamentacao: { compativel: true, observacao: 'Segura' },
@@ -870,12 +892,12 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Prilocaína',
     nomesComerciais: ['Citanest', 'EMLA (associação)'],
     atcCode: 'N01BB04',
-    classeTerapeutica: 'anestesico-local',
+    classeTerapeutica: 'anestesico_local',
     subclasse: 'amida',
     rename: false,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '3%', disponivelSUS: false },
-      { forma: 'creme tópico (com lidocaína)', concentracao: '2.5%', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '3%', disponivelSUS: false },
+      { forma: 'creme', concentracao: '2.5%', disponivelSUS: false }
     ],
     indicacoes: [
       'Anestesia local odontológica',
@@ -886,10 +908,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Bloqueio IV regional',
-        dose: 'Até 6 mg/kg',
-        via: 'IV regional',
-        frequencia: 'dose única',
-        duracao: 'Durante procedimento'
+        adultos: {
+          dose: 'Até 6 mg/kg (IV regional)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Durante procedimento'
+        }
       }
     ],
     contraindicacoes: [
@@ -902,8 +925,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Metahemoglobinemia', 'Toxicidade sistêmica']
     },
     interacoes: [
-      { farmaco: 'Sulfonamidas', tipo: 'potencializacao', descricao: 'Aumenta risco de metahemoglobinemia' },
-      { farmaco: 'Dapsona', tipo: 'potencializacao', descricao: 'Metahemoglobinemia aditiva' }
+      { medicamento: 'Sulfonamidas', gravidade: 'moderada', efeito: 'Aumenta risco de metahemoglobinemia', conduta: 'Monitorar e ajustar doses' },
+      { medicamento: 'Dapsona', gravidade: 'moderada', efeito: 'Metahemoglobinemia aditiva', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'B',
     amamentacao: { compativel: true, observacao: 'Doses terapêuticas seguras' },
@@ -917,12 +940,12 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Mepivacaína',
     nomesComerciais: ['Scandicaine', 'Mepiadre'],
     atcCode: 'N01BB03',
-    classeTerapeutica: 'anestesico-local',
+    classeTerapeutica: 'anestesico_local',
     subclasse: 'amida',
     rename: false,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '2%', disponivelSUS: false },
-      { forma: 'solução injetável', concentracao: '3%', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '2%', disponivelSUS: false },
+      { forma: 'injetavel', concentracao: '3%', disponivelSUS: false }
     ],
     indicacoes: [
       'Anestesia local odontológica',
@@ -933,10 +956,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Anestesia odontológica',
-        dose: 'Até 6.6 mg/kg',
-        via: 'infiltrativa/bloqueio',
-        frequencia: 'dose única',
-        duracao: 'Duração 2-3h'
+        adultos: {
+          dose: 'Até 6.6 mg/kg (infiltrativa/bloqueio)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Duração 2-3h'
+        }
       }
     ],
     contraindicacoes: [
@@ -948,7 +972,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Toxicidade sistêmica', 'Reações alérgicas']
     },
     interacoes: [
-      { farmaco: 'Antiarrítmicos', tipo: 'potencializacao', descricao: 'Efeitos cardíacos aditivos' }
+      { medicamento: 'Antiarrítmicos', gravidade: 'moderada', efeito: 'Efeitos cardíacos aditivos', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Segura' },
@@ -962,12 +986,12 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Articaína',
     nomesComerciais: ['Articaine', 'Septanest'],
     atcCode: 'N01BB58',
-    classeTerapeutica: 'anestesico-local',
+    classeTerapeutica: 'anestesico_local',
     subclasse: 'amida',
     rename: false,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '4% com epinefrina 1:100.000', disponivelSUS: false },
-      { forma: 'solução injetável', concentracao: '4% com epinefrina 1:200.000', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '4% com epinefrina 1:100.000', disponivelSUS: false },
+      { forma: 'injetavel', concentracao: '4% com epinefrina 1:200.000', disponivelSUS: false }
     ],
     indicacoes: [
       'Anestesia odontológica',
@@ -978,10 +1002,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Anestesia odontológica',
-        dose: 'Até 7 mg/kg',
-        via: 'infiltrativa',
-        frequencia: 'dose única',
-        duracao: 'Duração 1-2h'
+        adultos: {
+          dose: 'Até 7 mg/kg (infiltrativa)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Duração 1-2h'
+        }
       }
     ],
     contraindicacoes: [
@@ -994,7 +1019,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Parestesia prolongada', 'Toxicidade sistêmica']
     },
     interacoes: [
-      { farmaco: 'Anticolinesterásicos', tipo: 'potencializacao', descricao: 'Prolonga efeito' }
+      { medicamento: 'Anticolinesterásicos', gravidade: 'moderada', efeito: 'Prolonga efeito', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Metabolização rápida' },
@@ -1008,12 +1033,12 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Tetracaína',
     nomesComerciais: ['Pontocaine'],
     atcCode: 'N01BA03',
-    classeTerapeutica: 'anestesico-local',
+    classeTerapeutica: 'anestesico_local',
     subclasse: 'ester',
     rename: true,
     apresentacoes: [
-      { forma: 'solução oftálmica', concentracao: '0.5%', disponivelSUS: true },
-      { forma: 'solução injetável hiperbárica', concentracao: '1%', disponivelSUS: false }
+      { forma: 'colirio', concentracao: '0.5%', disponivelSUS: true },
+      { forma: 'injetavel', concentracao: '1%', disponivelSUS: false }
     ],
     indicacoes: [
       'Anestesia tópica oftálmica',
@@ -1024,10 +1049,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Anestesia oftálmica',
-        dose: '1-2 gotas',
-        via: 'tópica oftálmica',
-        frequencia: 'dose única ou repetida',
-        duracao: 'Duração 15-20 min'
+        adultos: {
+          dose: '1-2 gotas (tópica oftálmica)',
+          frequencia: 'dose única ou repetida',
+          observacoes: 'Duração: Duração 15-20 min'
+        }
       }
     ],
     contraindicacoes: [
@@ -1039,7 +1065,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Lesão corneana (uso repetido)', 'Reação alérgica']
     },
     interacoes: [
-      { farmaco: 'Sulfonamidas', tipo: 'reducao_efeito', descricao: 'PABA antagoniza sulfonamidas' }
+      { medicamento: 'Sulfonamidas', gravidade: 'leve', efeito: 'PABA antagoniza sulfonamidas', conduta: 'Considerar alternativas' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Uso tópico seguro' },
@@ -1057,11 +1083,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Succinilcolina',
     nomesComerciais: ['Quelicin', 'Anectine'],
     atcCode: 'M03AB01',
-    classeTerapeutica: 'bloqueador-neuromuscular',
+    classeTerapeutica: 'bloqueador_neuromuscular',
     subclasse: 'despolarizante',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '100mg/2mL', disponivelSUS: true }
+      { forma: 'injetavel', concentracao: '100mg/2mL', disponivelSUS: true }
     ],
     indicacoes: [
       'Intubação de sequência rápida',
@@ -1072,10 +1098,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'ISR',
-        dose: '1-1.5 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Efeito 5-10 min'
+        adultos: {
+          dose: '1-1.5 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Efeito 5-10 min'
+        }
       }
     ],
     contraindicacoes: [
@@ -1091,8 +1118,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Hipercalemia fatal', 'Hipertermia maligna', 'Bloqueio fase II', 'Parada cardíaca']
     },
     interacoes: [
-      { farmaco: 'Anticolinesterásicos', tipo: 'potencializacao', descricao: 'Prolonga bloqueio' },
-      { farmaco: 'Aminoglicosídeos', tipo: 'potencializacao', descricao: 'Potencializa bloqueio' }
+      { medicamento: 'Anticolinesterásicos', gravidade: 'moderada', efeito: 'Prolonga bloqueio', conduta: 'Monitorar e ajustar doses' },
+      { medicamento: 'Aminoglicosídeos', gravidade: 'moderada', efeito: 'Potencializa bloqueio', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Não absorvida VO' },
@@ -1106,11 +1133,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Rocurônio',
     nomesComerciais: ['Esmeron', 'Rocuron'],
     atcCode: 'M03AC09',
-    classeTerapeutica: 'bloqueador-neuromuscular',
-    subclasse: 'nao-despolarizante',
+    classeTerapeutica: 'bloqueador_neuromuscular',
+    subclasse: 'nao_despolarizante',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '10mg/mL', disponivelSUS: true }
+      { forma: 'injetavel', concentracao: '10mg/mL', disponivelSUS: true }
     ],
     indicacoes: [
       'Facilitação de intubação traqueal',
@@ -1121,17 +1148,19 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Intubação',
-        dose: '0.6 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Duração 30-40 min'
+        adultos: {
+          dose: '0.6 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Duração 30-40 min'
+        }
       },
       {
         indicacao: 'ISR',
-        dose: '1.2 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Início 60s'
+        adultos: {
+          dose: '1.2 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Início 60s'
+        }
       }
     ],
     contraindicacoes: [
@@ -1142,8 +1171,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Anafilaxia', 'Bloqueio prolongado (insuficiência hepática)']
     },
     interacoes: [
-      { farmaco: 'Aminoglicosídeos', tipo: 'potencializacao', descricao: 'Potencializa e prolonga bloqueio' },
-      { farmaco: 'Anestésicos inalatórios', tipo: 'potencializacao', descricao: 'Potencializa bloqueio' }
+      { medicamento: 'Aminoglicosídeos', gravidade: 'moderada', efeito: 'Potencializa e prolonga bloqueio', conduta: 'Monitorar e ajustar doses' },
+      { medicamento: 'Anestésicos inalatórios', gravidade: 'moderada', efeito: 'Potencializa bloqueio', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Não absorvido VO' },
@@ -1157,12 +1186,12 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Vecurônio',
     nomesComerciais: ['Norcuron'],
     atcCode: 'M03AC03',
-    classeTerapeutica: 'bloqueador-neuromuscular',
-    subclasse: 'nao-despolarizante',
+    classeTerapeutica: 'bloqueador_neuromuscular',
+    subclasse: 'nao_despolarizante',
     rename: true,
     apresentacoes: [
-      { forma: 'pó para solução injetável', concentracao: '4mg', disponivelSUS: true },
-      { forma: 'pó para solução injetável', concentracao: '10mg', disponivelSUS: true }
+      { forma: 'po_injetavel', concentracao: '4mg', disponivelSUS: true },
+      { forma: 'po_injetavel', concentracao: '10mg', disponivelSUS: true }
     ],
     indicacoes: [
       'Facilitação de intubação',
@@ -1173,10 +1202,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Intubação',
-        dose: '0.08-0.1 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Duração 25-40 min'
+        adultos: {
+          dose: '0.08-0.1 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Duração 25-40 min'
+        }
       }
     ],
     contraindicacoes: [
@@ -1187,8 +1217,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Miopatia do paciente crítico (uso prolongado)', 'Anafilaxia']
     },
     interacoes: [
-      { farmaco: 'Aminoglicosídeos', tipo: 'potencializacao', descricao: 'Prolonga bloqueio' },
-      { farmaco: 'Magnésio', tipo: 'potencializacao', descricao: 'Potencializa efeito' }
+      { medicamento: 'Aminoglicosídeos', gravidade: 'moderada', efeito: 'Prolonga bloqueio', conduta: 'Monitorar e ajustar doses' },
+      { medicamento: 'Magnésio', gravidade: 'moderada', efeito: 'Potencializa efeito', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Não absorvido VO' },
@@ -1202,11 +1232,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Atracúrio',
     nomesComerciais: ['Tracrium'],
     atcCode: 'M03AC04',
-    classeTerapeutica: 'bloqueador-neuromuscular',
-    subclasse: 'nao-despolarizante',
+    classeTerapeutica: 'bloqueador_neuromuscular',
+    subclasse: 'nao_despolarizante',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '10mg/mL', disponivelSUS: true }
+      { forma: 'injetavel', concentracao: '10mg/mL', disponivelSUS: true }
     ],
     indicacoes: [
       'Facilitação de intubação',
@@ -1217,10 +1247,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Intubação',
-        dose: '0.4-0.5 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Duração 25-35 min'
+        adultos: {
+          dose: '0.4-0.5 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Duração 25-35 min'
+        }
       }
     ],
     contraindicacoes: [
@@ -1231,7 +1262,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Anafilaxia', 'Convulsões (metabólito laudanosina)']
     },
     interacoes: [
-      { farmaco: 'Aminoglicosídeos', tipo: 'potencializacao', descricao: 'Prolonga bloqueio' }
+      { medicamento: 'Aminoglicosídeos', gravidade: 'moderada', efeito: 'Prolonga bloqueio', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Quaternário, não absorvido' },
@@ -1245,12 +1276,12 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Cisatracúrio',
     nomesComerciais: ['Nimbex'],
     atcCode: 'M03AC11',
-    classeTerapeutica: 'bloqueador-neuromuscular',
-    subclasse: 'nao-despolarizante',
+    classeTerapeutica: 'bloqueador_neuromuscular',
+    subclasse: 'nao_despolarizante',
     rename: false,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '2mg/mL', disponivelSUS: false },
-      { forma: 'solução injetável', concentracao: '5mg/mL', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '2mg/mL', disponivelSUS: false },
+      { forma: 'injetavel', concentracao: '5mg/mL', disponivelSUS: false }
     ],
     indicacoes: [
       'Facilitação de intubação',
@@ -1261,10 +1292,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Intubação',
-        dose: '0.15-0.2 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Duração 40-60 min'
+        adultos: {
+          dose: '0.15-0.2 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Duração 40-60 min'
+        }
       }
     ],
     contraindicacoes: [
@@ -1275,7 +1307,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Anafilaxia (rara)']
     },
     interacoes: [
-      { farmaco: 'Aminoglicosídeos', tipo: 'potencializacao', descricao: 'Prolonga bloqueio' }
+      { medicamento: 'Aminoglicosídeos', gravidade: 'moderada', efeito: 'Prolonga bloqueio', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'B',
     amamentacao: { compativel: true, observacao: 'Quaternário' },
@@ -1289,11 +1321,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Pancurônio',
     nomesComerciais: ['Pavulon'],
     atcCode: 'M03AC01',
-    classeTerapeutica: 'bloqueador-neuromuscular',
-    subclasse: 'nao-despolarizante',
+    classeTerapeutica: 'bloqueador_neuromuscular',
+    subclasse: 'nao_despolarizante',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '2mg/mL', disponivelSUS: true }
+      { forma: 'injetavel', concentracao: '2mg/mL', disponivelSUS: true }
     ],
     indicacoes: [
       'Relaxamento muscular em cirurgias longas',
@@ -1303,10 +1335,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Intubação/relaxamento',
-        dose: '0.06-0.1 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Duração 60-90 min'
+        adultos: {
+          dose: '0.06-0.1 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Duração 60-90 min'
+        }
       }
     ],
     contraindicacoes: [
@@ -1318,7 +1351,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Bloqueio prolongado', 'Miopatia']
     },
     interacoes: [
-      { farmaco: 'Aminoglicosídeos', tipo: 'potencializacao', descricao: 'Prolonga bloqueio' }
+      { medicamento: 'Aminoglicosídeos', gravidade: 'moderada', efeito: 'Prolonga bloqueio', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Quaternário' },
@@ -1332,11 +1365,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Mivacúrio',
     nomesComerciais: ['Mivacron'],
     atcCode: 'M03AC10',
-    classeTerapeutica: 'bloqueador-neuromuscular',
-    subclasse: 'nao-despolarizante',
+    classeTerapeutica: 'bloqueador_neuromuscular',
+    subclasse: 'nao_despolarizante',
     rename: false,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '2mg/mL', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '2mg/mL', disponivelSUS: false }
     ],
     indicacoes: [
       'Procedimentos cirúrgicos curtos',
@@ -1346,10 +1379,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Intubação',
-        dose: '0.15-0.25 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Duração 15-20 min'
+        adultos: {
+          dose: '0.15-0.25 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Duração 15-20 min'
+        }
       }
     ],
     contraindicacoes: [
@@ -1361,7 +1395,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Bloqueio prolongado', 'Broncoespasmo']
     },
     interacoes: [
-      { farmaco: 'Anticolinesterásicos', tipo: 'potencializacao', descricao: 'Prolonga duração' }
+      { medicamento: 'Anticolinesterásicos', gravidade: 'moderada', efeito: 'Prolonga duração', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Quaternário' },
@@ -1375,11 +1409,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomeGenerico: 'Tubocurarina',
     nomesComerciais: ['Curare'],
     atcCode: 'M03AA02',
-    classeTerapeutica: 'bloqueador-neuromuscular',
-    subclasse: 'nao-despolarizante',
+    classeTerapeutica: 'bloqueador_neuromuscular',
+    subclasse: 'nao_despolarizante',
     rename: false,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '3mg/mL', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '3mg/mL', disponivelSUS: false }
     ],
     indicacoes: [
       'Uso histórico em anestesia (substituído por agentes mais seguros)'
@@ -1388,10 +1422,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Histórico',
-        dose: '0.4-0.5 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Duração 60-90 min'
+        adultos: {
+          dose: '0.4-0.5 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Duração 60-90 min'
+        }
       }
     ],
     contraindicacoes: [
@@ -1404,7 +1439,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Colapso cardiovascular', 'Anafilaxia']
     },
     interacoes: [
-      { farmaco: 'Aminoglicosídeos', tipo: 'potencializacao', descricao: 'Prolonga bloqueio' }
+      { medicamento: 'Aminoglicosídeos', gravidade: 'moderada', efeito: 'Prolonga bloqueio', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Uso histórico' },
@@ -1423,10 +1458,10 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomesComerciais: ['Prostigmin'],
     atcCode: 'N07AA01',
     classeTerapeutica: 'anticolinesterasico',
-    subclasse: 'reversao-bnm',
+    subclasse: 'reversao_bnm',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '0.5mg/mL', disponivelSUS: true }
+      { forma: 'injetavel', concentracao: '0.5mg/mL', disponivelSUS: true }
     ],
     indicacoes: [
       'Reversão de bloqueio neuromuscular não-despolarizante',
@@ -1438,10 +1473,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Reversão de BNM',
-        dose: '0.04-0.07 mg/kg (máx 5 mg)',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Com atropina ou glicopirrolato'
+        adultos: {
+          dose: '0.04-0.07 mg/kg (máx 5 mg) (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Com atropina ou glicopirrolato'
+        }
       }
     ],
     contraindicacoes: [
@@ -1453,7 +1489,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Broncoespasmo', 'Colapso colinérgico']
     },
     interacoes: [
-      { farmaco: 'Aminoglicosídeos', tipo: 'reducao_efeito', descricao: 'Antagonizam efeito na junção' }
+      { medicamento: 'Aminoglicosídeos', gravidade: 'leve', efeito: 'Antagonizam efeito na junção', conduta: 'Considerar alternativas' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Quaternário, não absorvido' },
@@ -1468,10 +1504,10 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomesComerciais: ['Bridion'],
     atcCode: 'V03AB35',
     classeTerapeutica: 'antidoto',
-    subclasse: 'reversao-bnm',
+    subclasse: 'reversao_bnm',
     rename: false,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '100mg/mL', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '100mg/mL', disponivelSUS: false }
     ],
     indicacoes: [
       'Reversão de bloqueio neuromuscular por rocurônio',
@@ -1482,24 +1518,27 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Reversão bloqueio moderado',
-        dose: '2 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Reversão em 2-3 min'
+        adultos: {
+          dose: '2 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Reversão em 2-3 min'
+        }
       },
       {
         indicacao: 'Reversão bloqueio profundo',
-        dose: '4 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Reversão em 3-5 min'
+        adultos: {
+          dose: '4 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Reversão em 3-5 min'
+        }
       },
       {
         indicacao: 'Reversão imediata',
-        dose: '16 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Reversão em 1.5 min'
+        adultos: {
+          dose: '16 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Reversão em 1.5 min'
+        }
       }
     ],
     contraindicacoes: [
@@ -1511,8 +1550,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Anafilaxia', 'Bradicardia acentuada', 'Recurarização (dose insuficiente)']
     },
     interacoes: [
-      { farmaco: 'Toremifeno', tipo: 'reducao_efeito', descricao: 'Pode deslocar rocurônio do sugammadex' },
-      { farmaco: 'Contraceptivos orais', tipo: 'reducao_efeito', descricao: 'Pode reduzir eficácia por 7 dias' }
+      { medicamento: 'Toremifeno', gravidade: 'leve', efeito: 'Pode deslocar rocurônio do sugammadex', conduta: 'Considerar alternativas' },
+      { medicamento: 'Contraceptivos orais', gravidade: 'leve', efeito: 'Pode reduzir eficácia por 7 dias', conduta: 'Considerar alternativas' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Sem dados, provavelmente seguro' },
@@ -1527,10 +1566,10 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomesComerciais: ['Lanexat'],
     atcCode: 'V03AB25',
     classeTerapeutica: 'antidoto',
-    subclasse: 'antagonista-benzodiazepínico',
+    subclasse: 'antagonista_benzodiazepinico',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '0.1mg/mL', disponivelSUS: true }
+      { forma: 'injetavel', concentracao: '0.1mg/mL', disponivelSUS: true }
     ],
     indicacoes: [
       'Reversão de sedação por benzodiazepínicos',
@@ -1541,10 +1580,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Reversão de sedação',
-        dose: '0.2 mg IV, repetir 0.1 mg a cada 60s até 1 mg',
-        via: 'IV',
-        frequencia: 'titulada',
-        duracao: 'Efeito dura 45-90 min'
+        adultos: {
+          dose: '0.2 mg IV, repetir 0.1 mg a cada 60s até 1 mg (IV)',
+          frequencia: 'titulada',
+          observacoes: 'Duração: Efeito dura 45-90 min'
+        }
       }
     ],
     contraindicacoes: [
@@ -1557,7 +1597,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Convulsões', 'Arritmias', 'Síndrome de abstinência']
     },
     interacoes: [
-      { farmaco: 'Antidepressivos tricíclicos', tipo: 'potencializacao', descricao: 'Risco de convulsões em intoxicações mistas' }
+      { medicamento: 'Antidepressivos tricíclicos', gravidade: 'moderada', efeito: 'Risco de convulsões em intoxicações mistas', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Meia-vida curta' },
@@ -1572,10 +1612,10 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomesComerciais: ['Narcan'],
     atcCode: 'V03AB15',
     classeTerapeutica: 'antidoto',
-    subclasse: 'antagonista-opioide',
+    subclasse: 'antagonista_opioide',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '0.4mg/mL', disponivelSUS: true }
+      { forma: 'injetavel', concentracao: '0.4mg/mL', disponivelSUS: true }
     ],
     indicacoes: [
       'Reversão de depressão respiratória por opioides',
@@ -1586,17 +1626,19 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Depressão respiratória por opioide',
-        dose: '0.04-0.4 mg IV, titular',
-        via: 'IV/IM/SC',
-        frequencia: 'a cada 2-3 min',
-        duracao: 'Efeito dura 30-90 min'
+        adultos: {
+          dose: '0.04-0.4 mg IV, titular (IV/IM/SC)',
+          frequencia: 'a cada 2-3 min',
+          observacoes: 'Duração: Efeito dura 30-90 min'
+        }
       },
       {
         indicacao: 'Overdose',
-        dose: '0.4-2 mg IV',
-        via: 'IV/IM/intranasal',
-        frequencia: 'repetir a cada 2-3 min',
-        duracao: 'Máximo 10 mg'
+        adultos: {
+          dose: '0.4-2 mg IV (IV/IM/intranasal)',
+          frequencia: 'repetir a cada 2-3 min',
+          observacoes: 'Duração: Máximo 10 mg'
+        }
       }
     ],
     contraindicacoes: [
@@ -1607,7 +1649,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Edema pulmonar', 'Arritmias', 'Abstinência aguda', 'Hipertensão grave']
     },
     interacoes: [
-      { farmaco: 'Opioides', tipo: 'antagonismo', descricao: 'Reverte todos os efeitos opioides' }
+      { medicamento: 'Opioides', gravidade: 'moderada', efeito: 'Reverte todos os efeitos opioides', conduta: 'Monitorar resposta terapêutica' }
     ],
     gestacao: 'B',
     amamentacao: { compativel: true, observacao: 'Meia-vida curta' },
@@ -1622,10 +1664,10 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomesComerciais: ['Antilirium'],
     atcCode: 'N07AA01',
     classeTerapeutica: 'anticolinesterasico',
-    subclasse: 'reversao-anticolinergico',
+    subclasse: 'reversao_anticolinergico',
     rename: false,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '1mg/mL', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '1mg/mL', disponivelSUS: false }
     ],
     indicacoes: [
       'Síndrome anticolinérgica central',
@@ -1636,10 +1678,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Síndrome anticolinérgica',
-        dose: '0.5-2 mg IV lento (1 mg/min)',
-        via: 'IV',
-        frequencia: 'pode repetir após 20 min',
-        duracao: 'Efeito dura 30-60 min'
+        adultos: {
+          dose: '0.5-2 mg IV lento (1 mg/min) (IV)',
+          frequencia: 'pode repetir após 20 min',
+          observacoes: 'Duração: Efeito dura 30-60 min'
+        }
       }
     ],
     contraindicacoes: [
@@ -1653,7 +1696,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Convulsões', 'Assistolia', 'Broncoespasmo grave']
     },
     interacoes: [
-      { farmaco: 'Succinilcolina', tipo: 'potencializacao', descricao: 'Prolonga bloqueio despolarizante' }
+      { medicamento: 'Succinilcolina', gravidade: 'moderada', efeito: 'Prolonga bloqueio despolarizante', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: false, observacao: 'Dados insuficientes' },
@@ -1672,11 +1715,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomesComerciais: ['Atropion'],
     atcCode: 'A03BA01',
     classeTerapeutica: 'anticolinergico',
-    subclasse: 'adjuvante-anestesico',
+    subclasse: 'adjuvante_anestesico',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '0.25mg/mL', disponivelSUS: true },
-      { forma: 'solução injetável', concentracao: '0.5mg/mL', disponivelSUS: true }
+      { forma: 'injetavel', concentracao: '0.25mg/mL', disponivelSUS: true },
+      { forma: 'injetavel', concentracao: '0.5mg/mL', disponivelSUS: true }
     ],
     indicacoes: [
       'Bradicardia sintomática',
@@ -1688,17 +1731,19 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Bradicardia',
-        dose: '0.5-1 mg IV',
-        via: 'IV',
-        frequencia: 'a cada 3-5 min',
-        duracao: 'Máximo 3 mg'
+        adultos: {
+          dose: '0.5-1 mg IV (IV)',
+          frequencia: 'a cada 3-5 min',
+          observacoes: 'Duração: Máximo 3 mg'
+        }
       },
       {
         indicacao: 'Com neostigmina',
-        dose: '0.01-0.02 mg/kg',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Junto com neostigmina'
+        adultos: {
+          dose: '0.01-0.02 mg/kg (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Junto com neostigmina'
+        }
       }
     ],
     contraindicacoes: [
@@ -1711,7 +1756,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Hipertermia', 'Psicose anticolinérgica', 'Arritmias']
     },
     interacoes: [
-      { farmaco: 'Anticolinesterásicos', tipo: 'antagonismo', descricao: 'Antagoniza efeitos muscarínicos' }
+      { medicamento: 'Anticolinesterásicos', gravidade: 'moderada', efeito: 'Antagoniza efeitos muscarínicos', conduta: 'Monitorar resposta terapêutica' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Dose única segura' },
@@ -1726,10 +1771,10 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomesComerciais: ['Robinul'],
     atcCode: 'A03AB02',
     classeTerapeutica: 'anticolinergico',
-    subclasse: 'adjuvante-anestesico',
+    subclasse: 'adjuvante_anestesico',
     rename: false,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '0.2mg/mL', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '0.2mg/mL', disponivelSUS: false }
     ],
     indicacoes: [
       'Pré-medicação anestésica',
@@ -1740,10 +1785,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Com neostigmina',
-        dose: '0.2 mg para cada 1 mg de neostigmina',
-        via: 'IV',
-        frequencia: 'dose única',
-        duracao: 'Com reversão de BNM'
+        adultos: {
+          dose: '0.2 mg para cada 1 mg de neostigmina (IV)',
+          frequencia: 'dose única',
+          observacoes: 'Duração: Com reversão de BNM'
+        }
       }
     ],
     contraindicacoes: [
@@ -1755,7 +1801,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Retenção urinária', 'Íleo']
     },
     interacoes: [
-      { farmaco: 'Neostigmina', tipo: 'benefica', descricao: 'Previne bradicardia da neostigmina' }
+      { medicamento: 'Neostigmina', gravidade: 'leve', efeito: 'Previne bradicardia da neostigmina', conduta: 'Associação pode ser benéfica' }
     ],
     gestacao: 'B',
     amamentacao: { compativel: true, observacao: 'Quaternário, absorção mínima' },
@@ -1770,10 +1816,10 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomesComerciais: ['Zofran', 'Vonau'],
     atcCode: 'A04AA01',
     classeTerapeutica: 'antiemetico',
-    subclasse: 'antagonista-5ht3',
+    subclasse: 'antagonista_5ht3',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '2mg/mL', disponivelSUS: true },
+      { forma: 'injetavel', concentracao: '2mg/mL', disponivelSUS: true },
       { forma: 'comprimido', concentracao: '4mg', disponivelSUS: true },
       { forma: 'comprimido', concentracao: '8mg', disponivelSUS: true }
     ],
@@ -1786,17 +1832,19 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'NVPO profilaxia',
-        dose: '4 mg IV',
-        via: 'IV',
-        frequencia: 'ao final da cirurgia',
-        duracao: 'Dose única'
+        adultos: {
+          dose: '4 mg IV (IV)',
+          frequencia: 'ao final da cirurgia',
+          observacoes: 'Duração: Dose única'
+        }
       },
       {
         indicacao: 'Quimioterapia',
-        dose: '8-16 mg',
-        via: 'IV/VO',
-        frequencia: '2-3x/dia',
-        duracao: '1-5 dias'
+        adultos: {
+          dose: '8-16 mg (IV/VO)',
+          frequencia: '2-3x/dia',
+          observacoes: 'Duração: 1-5 dias'
+        }
       }
     ],
     contraindicacoes: [
@@ -1808,8 +1856,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Prolongamento QT', 'Síndrome serotoninérgica', 'Arritmias']
     },
     interacoes: [
-      { farmaco: 'Apomorfina', tipo: 'contraindicacao', descricao: 'Hipotensão grave' },
-      { farmaco: 'Medicamentos que prolongam QT', tipo: 'potencializacao', descricao: 'Risco de torsades de pointes' }
+      { medicamento: 'Apomorfina', gravidade: 'contraindicada', efeito: 'Hipotensão grave', conduta: 'Evitar associação' },
+      { medicamento: 'Medicamentos que prolongam QT', gravidade: 'moderada', efeito: 'Risco de torsades de pointes', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'B',
     amamentacao: { compativel: true, observacao: 'Excreção mínima' },
@@ -1827,7 +1875,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     subclasse: 'butirofenona',
     rename: false,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '2.5mg/mL', disponivelSUS: false }
+      { forma: 'injetavel', concentracao: '2.5mg/mL', disponivelSUS: false }
     ],
     indicacoes: [
       'Profilaxia e tratamento de NVPO',
@@ -1838,10 +1886,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'NVPO',
-        dose: '0.625-1.25 mg IV',
-        via: 'IV',
-        frequencia: 'ao final da cirurgia',
-        duracao: 'Dose única'
+        adultos: {
+          dose: '0.625-1.25 mg IV (IV)',
+          frequencia: 'ao final da cirurgia',
+          observacoes: 'Duração: Dose única'
+        }
       }
     ],
     contraindicacoes: [
@@ -1854,7 +1903,7 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Prolongamento QT', 'Torsades de pointes', 'Síndrome neuroléptica maligna']
     },
     interacoes: [
-      { farmaco: 'Medicamentos que prolongam QT', tipo: 'contraindicacao', descricao: 'Risco de torsades' }
+      { medicamento: 'Medicamentos que prolongam QT', gravidade: 'contraindicada', efeito: 'Risco de torsades', conduta: 'Evitar associação' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: false, observacao: 'Dados insuficientes' },
@@ -1869,10 +1918,10 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomesComerciais: ['Efedrin'],
     atcCode: 'C01CA26',
     classeTerapeutica: 'vasopressor',
-    subclasse: 'simpatomimetico-indireto',
+    subclasse: 'simpatomimetico_indireto',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '50mg/mL', disponivelSUS: true }
+      { forma: 'injetavel', concentracao: '50mg/mL', disponivelSUS: true }
     ],
     indicacoes: [
       'Hipotensão induzida por anestesia',
@@ -1883,10 +1932,11 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Hipotensão intraoperatória',
-        dose: '5-10 mg IV',
-        via: 'IV bolus',
-        frequencia: 'a cada 3-5 min',
-        duracao: 'Conforme resposta'
+        adultos: {
+          dose: '5-10 mg IV (IV bolus)',
+          frequencia: 'a cada 3-5 min',
+          observacoes: 'Duração: Conforme resposta'
+        }
       }
     ],
     contraindicacoes: [
@@ -1900,8 +1950,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Arritmias', 'Isquemia miocárdica', 'AVC hemorrágico']
     },
     interacoes: [
-      { farmaco: 'IMAO', tipo: 'contraindicacao', descricao: 'Crise hipertensiva' },
-      { farmaco: 'Anestésicos halogenados', tipo: 'potencializacao', descricao: 'Risco de arritmias' }
+      { medicamento: 'IMAO', gravidade: 'contraindicada', efeito: 'Crise hipertensiva', conduta: 'Evitar associação' },
+      { medicamento: 'Anestésicos halogenados', gravidade: 'moderada', efeito: 'Risco de arritmias', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Dose única segura' },
@@ -1916,10 +1966,10 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     nomesComerciais: ['Neo-Synephrine'],
     atcCode: 'C01CA06',
     classeTerapeutica: 'vasopressor',
-    subclasse: 'alfa1-agonista',
+    subclasse: 'alfa1_agonista',
     rename: true,
     apresentacoes: [
-      { forma: 'solução injetável', concentracao: '10mg/mL', disponivelSUS: true }
+      { forma: 'injetavel', concentracao: '10mg/mL', disponivelSUS: true }
     ],
     indicacoes: [
       'Hipotensão induzida por anestesia',
@@ -1930,17 +1980,19 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     posologias: [
       {
         indicacao: 'Hipotensão intraoperatória',
-        dose: '50-100 mcg IV',
-        via: 'IV bolus',
-        frequencia: 'a cada 1-2 min',
-        duracao: 'Conforme resposta'
+        adultos: {
+          dose: '50-100 mcg IV (IV bolus)',
+          frequencia: 'a cada 1-2 min',
+          observacoes: 'Duração: Conforme resposta'
+        }
       },
       {
         indicacao: 'Infusão contínua',
-        dose: '0.1-0.5 mcg/kg/min',
-        via: 'IV contínuo',
-        frequencia: 'contínua',
-        duracao: 'Conforme necessidade'
+        adultos: {
+          dose: '0.1-0.5 mcg/kg/min (IV contínuo)',
+          frequencia: 'contínua',
+          observacoes: 'Duração: Conforme necessidade'
+        }
       }
     ],
     contraindicacoes: [
@@ -1953,8 +2005,8 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
       graves: ['Bradicardia grave', 'Isquemia periférica', 'Necrose tecidual (extravasamento)']
     },
     interacoes: [
-      { farmaco: 'IMAO', tipo: 'contraindicacao', descricao: 'Hipertensão grave' },
-      { farmaco: 'Betabloqueadores', tipo: 'potencializacao', descricao: 'Hipertensão e bradicardia' }
+      { medicamento: 'IMAO', gravidade: 'contraindicada', efeito: 'Hipertensão grave', conduta: 'Evitar associação' },
+      { medicamento: 'Betabloqueadores', gravidade: 'moderada', efeito: 'Hipertensão e bradicardia', conduta: 'Monitorar e ajustar doses' }
     ],
     gestacao: 'C',
     amamentacao: { compativel: true, observacao: 'Dose única segura' },

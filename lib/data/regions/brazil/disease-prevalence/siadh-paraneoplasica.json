@@ -1,0 +1,50 @@
+{
+  "diseaseId": "siadh-paraneoplasica",
+  "region": "BR",
+  "diseaseName": "Paraneoplastic SIADH",
+  "prevalence": {
+    "value": "1-2% of cancer patients",
+    "population": "target population",
+    "year": 2024,
+    "source": "SBOn / literature",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "paraneoplastic complication",
+    "population": "target population",
+    "year": 2024,
+    "source": "SBOn / literature"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "variable",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "family history",
+      "environmental exposures",
+      "smoking (where applicable)",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "elderly",
+      "patients with genetic predisposition"
+    ],
+    "diagnosticCriteria": "Histopathological confirmation via biopsy; staging with imaging (CT/PET)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "serum sodium monitoring",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10,000/year",
+    "controlRate": "depends on tumor response"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

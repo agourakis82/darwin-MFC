@@ -1,0 +1,48 @@
+{
+  "diseaseId": "sindrome-down",
+  "region": "EU",
+  "diseaseName": "Down Syndrome (Trisomy 21)",
+  "prevalence": {
+    "value": "~1 per 1,000 live births (lower due to termination)",
+    "population": "target population",
+    "year": 2024,
+    "source": "EUROCAT / national registries",
+    "trend": "decreasing live birth prevalence in some countries"
+  },
+  "incidence": {
+    "value": "~1 per 1,000 live births",
+    "population": "target population",
+    "year": 2024,
+    "source": "EUROCAT / national registries"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "good survival with modern care",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic inheritance",
+      "family history",
+      "consanguinity (where relevant)"
+    ],
+    "vulnerablePopulations": [
+      "carriers of pathogenic variants",
+      "families with consanguinity"
+    ],
+    "diagnosticCriteria": "Genetic testing, enzyme assay, and/or clinical criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "universal first-trimester screening; NIPT",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~500,000",
+    "controlRate": "comprehensive multidisciplinary care"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "EU clinical guidelines / NICE / HAS",
+    "treatmentProtocol": "EMA-approved treatments and national formularies",
+    "regionalChallenges": "Cross-border access variability, aging population burden",
+    "strongPoints": "Orphan drug regulation, centers of excellence, research infrastructure"
+  }
+}

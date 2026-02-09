@@ -257,6 +257,39 @@ export const PHARMACOGENOMICS_GENES: Record<string, {
       },
     ],
   },
+  VKORC1: {
+    name: 'VKORC1',
+    description: 'Vitamin K epoxide reductase complex subunit 1 - target of warfarin',
+    commonVariants: [
+      {
+        variant: '-1639 GG',
+        phenotype: 'extensive_metabolizer',
+        frequency: '35-45%',
+        implications: ['Normal warfarin sensitivity', 'Standard warfarin dosing (5-7 mg/day)'],
+      },
+      {
+        variant: '-1639 GA',
+        phenotype: 'intermediate_metabolizer',
+        frequency: '40-50%',
+        implications: [
+          'Increased warfarin sensitivity',
+          'Reduced warfarin dose required (3-5 mg/day)',
+          'More frequent INR monitoring recommended',
+        ],
+      },
+      {
+        variant: '-1639 AA',
+        phenotype: 'poor_metabolizer',
+        frequency: '10-20%',
+        implications: [
+          'High warfarin sensitivity',
+          'Significantly reduced warfarin dose required (1-3 mg/day)',
+          'High risk of over-anticoagulation and bleeding',
+          'Frequent INR monitoring essential',
+        ],
+      },
+    ],
+  },
 };
 
 /**
@@ -287,7 +320,7 @@ export const MEDICATION_GENE_MAP: Record<string, string[]> = {
   'escitalopram': ['CYP2C19'],
 
   // Medications metabolized by CYP2C9
-  'warfarina': ['CYP2C9'],
+  'warfarina': ['CYP2C9', 'VKORC1'],
   'fenitoina': ['CYP2C9'],
   'fenobarbital': ['CYP2C9'],
   'diclofenaco': ['CYP2C9'],
@@ -296,9 +329,24 @@ export const MEDICATION_GENE_MAP: Record<string, string[]> = {
   'losartana': ['CYP2C9'],
   'irbesartana': ['CYP2C9'],
 
+  // Medications metabolized by CYP2D6 (additional)
+  'venlafaxina': ['CYP2D6'],
+  'aripiprazol': ['CYP2D6'],
+  'atomoxetina': ['CYP2D6'],
+  'propafenona': ['CYP2D6'],
+
+  // Medications metabolized by CYP2C19 (additional)
+  'voriconazol': ['CYP2C19'],
+  'diazepam': ['CYP2C19'],
+
+  // Medications metabolized by CYP2C9 (additional)
+  'celecoxibe': ['CYP2C9'],
+  'glipizida': ['CYP2C9'],
+
   // Medications metabolized by TPMT
   'azatioprina': ['TPMT'],
   'mercaptopurina': ['TPMT'],
+  'tioguanina': ['TPMT'],
 
   // Medications metabolized by DPYD
   'fluorouracila': ['DPYD'],
@@ -404,6 +452,18 @@ function getDosageRecommendations(
     if (phenotype === 'intermediate_metabolizer') {
       recommendations.push('Reduce dose by 30-50%');
       recommendations.push('Monitor for myelosuppression');
+    }
+  }
+
+  if (gene === 'VKORC1') {
+    if (phenotype === 'poor_metabolizer') {
+      recommendations.push('Use low-dose warfarin (1-3 mg/day initial)');
+      recommendations.push('Frequent INR monitoring essential');
+      recommendations.push('Consider pharmacogenomic-guided dosing algorithm');
+    }
+    if (phenotype === 'intermediate_metabolizer') {
+      recommendations.push('Consider reduced warfarin starting dose (3-5 mg/day)');
+      recommendations.push('More frequent INR monitoring recommended');
     }
   }
 

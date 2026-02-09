@@ -1,0 +1,48 @@
+{
+  "diseaseId": "fenilcetonuria",
+  "region": "BR",
+  "diseaseName": "Phenylketonuria (PKU)",
+  "prevalence": {
+    "value": "~1 per 15,000 live births",
+    "population": "target population",
+    "year": 2024,
+    "source": "PNTN / DataSUS",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "~200 new/year",
+    "population": "target population",
+    "year": 2024,
+    "source": "PNTN / DataSUS"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "normal life expectancy with treatment",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "genetic inheritance",
+      "family history",
+      "consanguinity (where relevant)"
+    ],
+    "vulnerablePopulations": [
+      "carriers of pathogenic variants",
+      "families with consanguinity"
+    ],
+    "diagnosticCriteria": "Genetic testing, enzyme assay, and/or clinical criteria"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "universal neonatal screening (Teste do Pezinho)",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~10,000",
+    "controlRate": "phenylalanine-restricted diet + sapropterin in some"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) / SUS guidelines",
+    "treatmentProtocol": "SUS formulary and specialized care centers (RENAME/CEAF)",
+    "regionalChallenges": "Geographic access disparities, specialist referral queues",
+    "strongPoints": "Universal SUS coverage, neonatal screening programs, RENAME"
+  }
+}

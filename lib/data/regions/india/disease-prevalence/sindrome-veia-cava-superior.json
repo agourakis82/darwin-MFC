@@ -1,0 +1,50 @@
+{
+  "diseaseId": "sindrome-veia-cava-superior",
+  "region": "IN",
+  "diseaseName": "Superior Vena Cava Syndrome",
+  "prevalence": {
+    "value": "2-4% of thoracic malignancies",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / literature",
+    "trend": "stable"
+  },
+  "incidence": {
+    "value": "oncological emergency",
+    "population": "target population",
+    "year": 2024,
+    "source": "ICMR / literature"
+  },
+  "burden": {
+    "dalyPerCapita": "See GBD estimates",
+    "mortalityRate": "depends on underlying cause",
+    "year": 2024,
+    "source": "IHME Global Burden of Disease (GBD) 2024"
+  },
+  "epidemiology": {
+    "riskFactors": [
+      "age",
+      "family history",
+      "environmental exposures",
+      "smoking (where applicable)",
+      "obesity"
+    ],
+    "vulnerablePopulations": [
+      "elderly",
+      "patients with genetic predisposition"
+    ],
+    "diagnosticCriteria": "Histopathological confirmation via biopsy; staging with imaging (CT/PET)"
+  },
+  "publicHealthSystem": {
+    "screeningCoverage": "N/A",
+    "treatmentAvailable": true,
+    "estimatedPatients": "~5,000/year",
+    "controlRate": "limited"
+  },
+  "regionalSpecificities": {
+    "diagnosisCriteria": "ICMR / National Program guidelines",
+    "treatmentProtocol": "NLEM-based formulary and tertiary centers",
+    "regionalChallenges": "Rural access gaps, diagnostic infrastructure, out-of-pocket costs",
+    "strongPoints": "Growing generic drug availability, expanding health insurance (PMJAY)"
+  }
+}
