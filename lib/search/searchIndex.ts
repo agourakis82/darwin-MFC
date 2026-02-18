@@ -10,6 +10,9 @@ import Fuse from 'fuse.js';
 import { medicamentosConsolidados } from '../data/medicamentos/index';
 import { todasDoencas } from '../data/doencas/index';
 import { calculadoras } from '../utils/calculators';
+import { protocolos } from '../data/protocolos';
+import { rastreamentos } from '../data/rastreamentos';
+import { allCasosClinicos } from '../data/casos-clinicos/index';
 
 // ==============================================
 // SEARCH RESULT TYPES
@@ -121,9 +124,63 @@ export function buildSearchIndex(): SearchableEntity[] {
     });
   });
 
-  // TODO: Index protocols when available
-  // TODO: Index clinical cases when available
-  // TODO: Index rastreamentos when available
+  // Index protocols
+  protocolos.forEach(protocolo => {
+    entities.push({
+      id: protocolo.id,
+      type: 'protocol',
+      title: protocolo.titulo,
+      description: protocolo.subtitulo || protocolo.descricao || '',
+      tags: [
+        protocolo.categoria,
+        ...((protocolo as any).ciap2Chapters || []),
+        ...((protocolo as any).tags || []),
+      ].filter(Boolean),
+      category: protocolo.categoria,
+      specialty: (protocolo as any).especialidade,
+      metadata: {
+        categoria: protocolo.categoria,
+      },
+    });
+  });
+
+  // Index clinical cases
+  allCasosClinicos.forEach(caso => {
+    if (!caso?.id) return;
+    entities.push({
+      id: caso.id,
+      type: 'case',
+      title: caso.titulo,
+      description: caso.subtitulo || '',
+      tags: [
+        caso.categoria,
+        caso.dificuldade,
+        ...((caso as any).tags || []),
+      ].filter(Boolean),
+      category: caso.categoria,
+      metadata: {
+        dificuldade: caso.dificuldade,
+        tempoEstimado: caso.tempoEstimado,
+      },
+    });
+  });
+
+  // Index rastreamentos
+  Object.values(rastreamentos).forEach(rastreamento => {
+    if (!rastreamento?.id) return;
+    entities.push({
+      id: rastreamento.id,
+      type: 'rastreamento',
+      title: rastreamento.title,
+      description: rastreamento.description || '',
+      tags: [
+        rastreamento.category,
+        ...((rastreamento as any).tags || []),
+      ].filter(Boolean),
+      category: rastreamento.category,
+      metadata: {},
+    });
+  });
 
   return entities;
 }
@@ -306,6 +363,15 @@ export function getSearchStats() {
 const SEARCH_HISTORY_KEY = 'darwin-mfc-search-history';
 const MAX_HISTORY_ITEMS = 20;
 
+function getLocalStorageSafe(): Storage | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    return window.localStorage;
+  } catch {
+    return null;
+  }
+}
+
 export interface SearchHistoryItem {
   query: string;
   timestamp: number;
@@ -317,6 +383,9 @@ export interface SearchHistoryItem {
  */
 export function saveSearchToHistory(query: string, resultsCount: number) {
   if (!query || query.trim().length < 2) return;
+
+  const storage = getLocalStorageSafe();
+  if (!storage) return;
 
   const history = getSearchHistory();
 
@@ -337,9 +406,9 @@ export function saveSearchToHistory(query: string, resultsCount: number) {
 
   // Save to localStorage
   try {
-    localStorage.setItem(SEARCH_HISTORY_KEY, JSON.stringify(limited));
+    storage.setItem(SEARCH_HISTORY_KEY, JSON.stringify(limited));
   } catch (error) {
-    console.error('Failed to save search history:', error);
+    // Ignore storage failures (SSR/export, private browsing, quota, etc.)
   }
 }
 
@@ -347,14 +416,16 @@ export function saveSearchToHistory(query: string, resultsCount: number) {
  * Get search history
  */
 export function getSearchHistory(): SearchHistoryItem[] {
+  const storage = getLocalStorageSafe();
+  if (!storage) return [];
+
   try {
-    const stored = localStorage.getItem(SEARCH_HISTORY_KEY);
+    const stored = storage.getItem(SEARCH_HISTORY_KEY);
     if (!stored) return [];
 
     const history = JSON.parse(stored);
     return Array.isArray(history) ? history : [];
   } catch (error) {
-    console.error('Failed to load search history:', error);
     return [];
   }
 }
@@ -363,9 +434,12 @@ export function getSearchHistory(): SearchHistoryItem[] {
  * Clear search history
  */
 export function clearSearchHistory() {
+  const storage = getLocalStorageSafe();
+  if (!storage) return;
+
   try {
-    localStorage.removeItem(SEARCH_HISTORY_KEY);
+    storage.removeItem(SEARCH_HISTORY_KEY);
   } catch (error) {
-    console.error('Failed to clear search history:', error);
+    // Ignore storage failures
   }
 }

@@ -29,6 +29,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { useEffect, useState } from 'react';
+import { ssrSafeJSONStorage } from '@/lib/store/persistStorage';
 
 // ============================================================================
 // TYPES
@@ -114,6 +115,7 @@ export const useAnimationConfig = create<AnimationConfigStore>()(
     {
       name: 'darwin-mfc-animation-config',
       version: 1,
+      storage: ssrSafeJSONStorage,
     }
   )
 );
@@ -176,12 +178,10 @@ export function useDevicePerformance(): 'high' | 'medium' | 'low' {
     const cores = navigator.hardwareConcurrency || 4;
 
     // Check device memory (if available)
-    // @ts-ignore - deviceMemory may not be in navigator type
     const memory = navigator.deviceMemory || 4;
 
     // Check connection speed
-    // @ts-ignore - connection may not be in navigator type
-    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    const connection = navigator.connection;
     const effectiveType = connection?.effectiveType || '4g';
 
     // Determine performance level
@@ -228,8 +228,7 @@ export function useBatteryStatus(): {
   useEffect(() => {
     if (typeof window === 'undefined' || !('getBattery' in navigator)) return;
 
-    // @ts-ignore - getBattery may not be in navigator type
-    navigator.getBattery().then((battery: any) => {
+    navigator.getBattery!().then((battery) => {
       const updateBatteryStatus = () => {
         setBatteryStatus({
           level: battery.level,

@@ -184,7 +184,6 @@ export function getDeviceCapabilities(): DeviceCapabilities {
     };
   }
 
-  // @ts-ignore
   const deviceMemory = navigator.deviceMemory || 8;
   const hardwareConcurrency = navigator.hardwareConcurrency || 4;
   const maxTouchPoints = navigator.maxTouchPoints || 0;
@@ -347,10 +346,8 @@ export function usePerformanceMonitoring(interval: number = 1000) {
       if (currentTime >= lastTime + interval) {
         const fps = Math.round((frames * 1000) / (currentTime - lastTime));
 
-        // @ts-ignore
         const memory = performance.memory
-          ? // @ts-ignore
-            Math.round(performance.memory.usedJSHeapSize / 1048576)
+          ? Math.round(performance.memory.usedJSHeapSize / 1048576)
           : 0;
 
         const connection = getNetworkInformation();
@@ -410,9 +407,7 @@ export function useMemoryPressure(threshold: number = 100) {
 
   useEffect(() => {
     const checkMemory = () => {
-      // @ts-ignore
       if (performance.memory) {
-        // @ts-ignore
         const usedMemory = performance.memory.usedJSHeapSize / 1048576; // MB
         setIsMemoryPressure(usedMemory > threshold);
       }

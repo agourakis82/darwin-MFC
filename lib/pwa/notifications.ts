@@ -15,8 +15,11 @@
  * - Badge management
  */
 
+'use client';
+
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { ssrSafeJSONStorage } from '@/lib/store/persistStorage';
 
 // ============================================================================
 // TYPES
@@ -96,6 +99,7 @@ export const useNotificationStore = create<NotificationStore>()(
     {
       name: 'darwin-mfc-notifications',
       version: 1,
+      storage: ssrSafeJSONStorage,
     }
   )
 );
@@ -422,11 +426,9 @@ export async function setBadgeCount(count: number): Promise<void> {
 
   try {
     if (count > 0) {
-      // @ts-ignore
-      await navigator.setAppBadge(count);
+      await navigator.setAppBadge?.(count);
     } else {
-      // @ts-ignore
-      await navigator.clearAppBadge();
+      await navigator.clearAppBadge?.();
     }
   } catch (error) {
     console.error('Failed to set badge count:', error);
@@ -439,8 +441,7 @@ export async function clearBadge(): Promise<void> {
   }
 
   try {
-    // @ts-ignore
-    await navigator.clearAppBadge();
+    await navigator.clearAppBadge?.();
   } catch (error) {
     console.error('Failed to clear badge:', error);
   }
@@ -513,8 +514,7 @@ async function openWindow(url: string): Promise<void> {
     if ('focus' in client) {
       await client.focus();
       if ('navigate' in client) {
-        // @ts-ignore
-        await client.navigate(url);
+        await (client as WindowClient & { navigate(url: string): Promise<void> }).navigate(url);
       }
       return;
     }
