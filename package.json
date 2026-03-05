@@ -1,6 +1,6 @@
 {
   "name": "darwin-mfc",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "private": true,
   "workspaces": [
     "packages/*"
@@ -14,7 +14,7 @@
     "start": "next start",
     "export": "next build && next export",
     "type-check": "node scripts/clean-next-types.js && tsc --noEmit",
-    "audit:tokens": "tsx scripts/audit-tokens.ts",
+    "audit:tokens": "node scripts/audit-tokens.js",
     "lint": "echo 'Lint check passed (no linter configured)'",
     "test": "tsx scripts/verify-integration.ts",
     "verify": "tsx scripts/verify-integration.ts",
