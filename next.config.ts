@@ -13,16 +13,17 @@ const isProd = process.env.NODE_ENV === 'production';
 const useBasePath = process.env.USE_BASE_PATH === 'true';
 const basePathValue = useBasePath ? '/darwin-MFC' : '';
 
-// Use SSR for Vercel (better for large sites with 15k+ pages)
-// Use static export only for GitHub Pages
+// Use SSR in dev and on Vercel (better for large sites with 15k+ pages).
+// Use static export only for production builds when not on Vercel (e.g., GitHub Pages).
 const isVercel = process.env.VERCEL === '1' || process.env.VERCEL_ENV !== undefined;
+const isStaticExport = !isVercel && process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
   // Vercel handles SSR natively, use static export for GitHub Pages only
-  ...(isVercel ? {} : { output: "export" as const }),
+  ...(isStaticExport ? { output: "export" as const } : {}),
   images: {
     // Enable optimization on Vercel, disable for static export
-    unoptimized: !isVercel,
+    unoptimized: isStaticExport,
     // Allow images from Supabase storage
     remotePatterns: isVercel ? [
       {
@@ -37,6 +38,12 @@ const nextConfig: NextConfig = {
   // Set USE_BASE_PATH=true to build with basePath for github.io subdirectory
   basePath: basePathValue,
   assetPrefix: basePathValue ? `${basePathValue}/` : '',
+  // Allow importing workspace packages without build-step friction.
+  transpilePackages: [
+    '@darwin-mfc/design-tokens',
+    '@darwin-mfc/protocol-runner',
+    '@darwin-mfc/protocol-data',
+  ],
 
   // ============================================
   // PHASE 4: Performance & PWA Optimizations
@@ -49,6 +56,8 @@ const nextConfig: NextConfig = {
       issuer: /\.[jt]sx?$/,
       use: ['@svgr/webpack'],
     });
+    // onnxruntime-web is loaded dynamically in the browser; exclude from SSG bundle
+    config.externals = [...(config.externals ?? []), 'onnxruntime-web'];
     return config;
   },
 
