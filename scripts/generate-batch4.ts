@@ -17,26 +17,18 @@ import { DataAggregator } from '../lib/content-generation/aggregator';
 import { AISynthesizer } from '../lib/content-generation/synthesizer';
 import { writeFile, mkdir, readdir } from 'fs/promises';
 
-// BATCH 5 — 18 remaining high-priority curated conditions
+// High-priority conditions to add (10 most important)
 const PRIORITY_CONDITIONS = [
-  { id: 'agorafobia',                           name: 'Agorafobia' },
-  { id: 'transtorno-personalidade-borderline', name: 'Transtorno de Personalidade Borderline' },
-  { id: 'transtorno-neurocognitivo-leve',      name: 'Transtorno Neurocognitivo Leve' },
-  { id: 'enfisema-pulmonar',                   name: 'Enfisema Pulmonar' },
-  { id: 'sifilis-terciaria',                   name: 'Sífilis Terciária' },
-  { id: 'hipotireoidismo-congenito',           name: 'Hipotireoidismo Congênito' },
-  { id: 'tosse-cronica',                       name: 'Tosse Crônica' },
-  { id: 'hiperprolactinemia',                  name: 'Hiperprolactinemia' },
-  { id: 'insuficiencia-mitral',                name: 'Insuficiência Mitral' },
-  { id: 'dermatite-fraldas',                   name: 'Dermatite da Área de Fraldas' },
-  { id: 'avc-isquemico',                       name: 'Acidente Vascular Cerebral Isquêmico' },
-  { id: 'otite-media-aguda-pediatrica',        name: 'Otite Média Aguda Pediátrica' },
-  { id: 'faringoamigdalite-pediatrica',        name: 'Faringoamigdalite Pediátrica' },
-  { id: 'pneumonia-adquirida-comunidade-pediatrica', name: 'Pneumonia Adquirida na Comunidade Pediátrica' },
-  { id: 'drge-infantil',                       name: 'DRGE Infantil' },
-  { id: 'dermatite-seborreica-infantil',       name: 'Dermatite Seborreica Infantil' },
-  { id: 'anemia-ferropriva-infantil',          name: 'Anemia Ferropriva Infantil' },
-  { id: 'meningite-bacteriana-pediatrica',     name: 'Meningite Bacteriana Pediátrica' },
+  { id: 'diabetes-mellitus-1', name: 'Diabetes Mellitus Tipo 1' },
+  { id: 'doenca-arterial-coronariana', name: 'Doença Arterial Coronariana' },
+  { id: 'avc', name: 'Acidente Vascular Cerebral' },
+  { id: 'tuberculose', name: 'Tuberculose' },
+  { id: 'dengue', name: 'Dengue' },
+  { id: 'covid-19', name: 'COVID-19' },
+  { id: 'gastrite', name: 'Gastrite e Úlcera Péptica' },
+  { id: 'drge', name: 'Doença do Refluxo Gastroesofágico' },
+  { id: 'artrite-reumatoide', name: 'Artrite Reumatoide' },
+  { id: 'enxaqueca', name: 'Enxaqueca' },
 ];
 
 const DELAY_BETWEEN_MODULES = 2000; // 2 seconds delay

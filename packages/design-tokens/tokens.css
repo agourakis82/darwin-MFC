@@ -1,0 +1,103 @@
+/* Darwin-MFC shared tokens (web + mobile). Keep in sync with packages/design-tokens/index.js */
+
+:root {
+  --color-paper-white: #FBFBF9;
+  --color-clinical-gray: #F4F4F2;
+  --color-phosphate: #F8FAFC;
+  --color-helix-navy: #0D2137;
+
+  --color-adenine-teal: #0E7490;
+  --color-guanine-green: #059669;
+  --color-cytosine-cyan: #06B6D4;
+  --color-thymine-gold: #B45309;
+
+  /* Brand scales (used by DDS primitives via Tailwind utilities) */
+  --color-brand-primary-50: #ECFEFF;
+  --color-brand-primary-100: #CFFAFE;
+  --color-brand-primary-200: #A5F3FC;
+  --color-brand-primary-300: #67E8F9;
+  --color-brand-primary-400: #22D3EE;
+  --color-brand-primary-500: #0E7490;
+  --color-brand-primary-600: #0B5F75;
+  --color-brand-primary-700: #094A5B;
+  --color-brand-primary-800: #073542;
+  --color-brand-primary-900: #052028;
+  --color-brand-primary-950: #031a20;
+
+  --color-brand-secondary-50: #ECFEFF;
+  --color-brand-secondary-100: #CFFAFE;
+  --color-brand-secondary-200: #A5F3FC;
+  --color-brand-secondary-300: #67E8F9;
+  --color-brand-secondary-400: #22D3EE;
+  --color-brand-secondary-500: #06B6D4;
+  --color-brand-secondary-600: #0891B2;
+  --color-brand-secondary-700: #0E7490;
+  --color-brand-secondary-800: #155E75;
+  --color-brand-secondary-900: #164E63;
+  --color-brand-secondary-950: #0b2f41;
+
+  /* Critical red (legacy) */
+  --color-critical-red: #DC2626;
+  --color-critical-red-50: #FEF2F2;
+  --color-critical-red-100: #FEE2E2;
+  --color-critical-red-200: #FECACA;
+  --color-critical-red-300: #FCA5A5;
+  --color-critical-red-400: #F87171;
+  --color-critical-red-500: #EF4444;
+  --color-critical-red-600: #DC2626;
+  --color-critical-red-700: #B91C1C;
+  --color-critical-red-800: #991B1B;
+  --color-critical-red-900: #7F1D1D;
+
+  /* Clinical semantic */
+  --color-clinical-critical-base: #DC2626;
+  --color-clinical-critical-dark: #B91C1C;
+  --color-clinical-critical-foreground: #FFFFFF;
+
+  --color-clinical-warning-base: #B45309;
+  --color-clinical-warning-dark: #92400E;
+  --color-clinical-warning-foreground: #FFFFFF;
+
+  --color-clinical-safe-base: #059669;
+  --color-clinical-safe-dark: #047857;
+  --color-clinical-safe-foreground: #FFFFFF;
+
+  --color-clinical-info-base: #0E7490;
+  --color-clinical-info-dark: #155E75;
+  --color-clinical-info-foreground: #FFFFFF;
+
+  --color-carbon-50: #FBFBF9;
+  --color-carbon-100: #F4F4F2;
+  --color-carbon-200: #E5E5E2;
+  --color-carbon-300: #D1D1CD;
+  --color-carbon-400: #A1A19D;
+  --color-carbon-500: #71716D;
+  --color-carbon-600: #52524E;
+  --color-carbon-700: #3F3F3C;
+  --color-carbon-800: #272725;
+  --color-carbon-900: #1A1A18;
+  --color-carbon-950: #0F0F0E;
+
+  --shadow-elevation-1: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-elevation-2: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-deep: 0 12px 32px -8px rgba(0, 0, 0, 0.10);
+
+  /* Semantic defaults (web can map these to utilities progressively) */
+  --color-bg-page: var(--color-phosphate);
+  --color-bg-card: #FFFFFF;
+  --color-bg-surface: #FFFFFF;
+  --color-text-primary: var(--color-carbon-900);
+  --color-text-secondary: var(--color-carbon-600);
+  --color-border: var(--color-carbon-200);
+}
+
+html.dark,
+[data-theme="dark"] {
+  --color-phosphate: var(--color-carbon-950);
+  --color-bg-page: var(--color-carbon-950);
+  --color-bg-card: var(--color-carbon-900);
+  --color-bg-surface: var(--color-carbon-900);
+  --color-text-primary: var(--color-carbon-100);
+  --color-text-secondary: var(--color-carbon-400);
+  --color-border: var(--color-carbon-800);
+}

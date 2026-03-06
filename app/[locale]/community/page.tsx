@@ -14,16 +14,18 @@ import { useTranslations } from 'next-intl';
 import {
   Users,
   MessageSquare,
-  GraduationCap,
   TrendingUp,
   PlusCircle,
-  ChevronRight,
-  Sparkles,
   Lock,
+  FileText,
+  ShieldCheck,
 } from 'lucide-react';
 import { PageContainer } from '@/app/components/Layout/Containers';
 import { CategoryCard } from '@/app/components/Community';
 import { FORUM_CATEGORIES } from '@/lib/types/community';
+import { listPublishedCases } from '@/lib/supabase/services/community';
+import { useAuth } from '@/lib/hooks/useAuth';
+import { useEffect, useState } from 'react';
 
 // =============================================================================
 // COMPONENT
@@ -31,86 +33,140 @@ import { FORUM_CATEGORIES } from '@/lib/types/community';
 
 export default function CommunityPage() {
   const t = useTranslations('community');
+  const tCommon = useTranslations('common');
+  const tCases = useTranslations('community.cases');
+  const { isAuthenticated } = useAuth();
+  const [cases, setCases] = useState<any[]>([]);
+  const [loadingCases, setLoadingCases] = useState(true);
 
-  // Placeholder stats
-  const stats = [
-    { label: t('stats.members'), value: '0', icon: Users, color: 'text-blue-500' },
-    { label: t('stats.discussions'), value: '0', icon: MessageSquare, color: 'text-green-500' },
-    { label: t('stats.mentors'), value: '0', icon: GraduationCap, color: 'text-purple-500' },
-  ];
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      setLoadingCases(true);
+      const res = await listPublishedCases({ limit: 6 });
+      if (!mounted) return;
+      setCases(res.data ?? []);
+      setLoadingCases(false);
+    })();
+    return () => { mounted = false; };
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-phosphate">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+      <div className="gradient-darwin-mesh">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Users className="w-10 h-10" />
-            <h1 className="text-3xl font-bold">{t('title')}</h1>
-          </div>
-          <p className="text-lg text-indigo-100 max-w-2xl mb-8">
-            {t('description')}
-          </p>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 max-w-lg">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center"
-              >
-                <stat.icon className="w-6 h-6 mx-auto mb-2 opacity-80" />
-                <div className="text-2xl font-bold">{stat.value}</div>
-                <div className="text-sm text-indigo-100">{stat.label}</div>
+          <div className="flex items-start justify-between gap-6">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-adenine-teal/10 dark:bg-cytosine-cyan/10 text-adenine-teal dark:text-cytosine-cyan text-sm font-semibold mb-4">
+                <Users className="w-4 h-4" />
+                {t('title')}
               </div>
-            ))}
+              <h1 className="text-4xl font-bold text-helix-navy dark:text-white mb-3">
+                {t('hero_title') ?? t('title')}
+              </h1>
+              <p className="text-lg text-carbon-700 dark:text-carbon-300 max-w-2xl">
+                {t('description')}
+              </p>
+            </div>
+
+            <div className="flex flex-col items-stretch gap-2 min-w-[220px]">
+              <Link
+                href={isAuthenticated ? '/community/cases/new' : '/auth/login'}
+                className="btn-darwin-primary px-5 py-3 justify-center"
+              >
+                <PlusCircle className="w-5 h-5" />
+                {tCases('submit_case')}
+              </Link>
+              {!isAuthenticated && (
+                <div className="text-xs text-carbon-600 dark:text-carbon-400 text-center">
+                  <Lock className="w-3.5 h-3.5 inline-block mr-1" />
+                  {t('auth_required_short')}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
       <PageContainer className="py-8">
-        {/* Coming Soon Notice */}
-        <div className="bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-amber-900/20 dark:to-yellow-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-6 mb-8">
-          <div className="flex items-start gap-4">
-            <Sparkles className="w-8 h-8 text-amber-600 dark:text-amber-400 shrink-0" />
-            <div>
-              <h3 className="font-semibold text-amber-900 dark:text-amber-100 mb-1">
-                {t('coming_soon.title')}
-              </h3>
-              <p className="text-sm text-amber-700 dark:text-amber-300">
-                {t('coming_soon.description')}
-              </p>
-            </div>
-          </div>
-        </div>
-
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Column */}
           <div className="lg:col-span-2 space-y-8">
+            {/* Published cases */}
+            <section>
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-xl font-semibold text-helix-navy dark:text-white flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-guanine-green" />
+                  {tCases('title')}
+                </h2>
+                <Link
+                  href="/community/cases/new"
+                  className="hidden sm:inline-flex btn-darwin-secondary px-4 py-2"
+                >
+                  <PlusCircle className="w-4 h-4" />
+                  {tCases('submit_case')}
+                </Link>
+              </div>
+
+              {loadingCases ? (
+                <div className="card-darwin p-6 text-carbon-600 dark:text-carbon-400">
+                  {tCommon('loading') ?? 'Loading...'}
+                </div>
+              ) : cases.length === 0 ? (
+                <div className="card-darwin p-6 text-carbon-600 dark:text-carbon-400">
+                  {tCases('none_published')}
+                </div>
+              ) : (
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {cases.map((c) => (
+                    <Link
+                      key={c.id}
+                      href={`/community/cases?id=${encodeURIComponent(c.id)}`}
+                      className="card-darwin p-6 hover:shadow-xl apple-transition block"
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <div className="text-sm font-semibold text-carbon-900 dark:text-carbon-100 line-clamp-2">
+                            {c.title}
+                          </div>
+                          <div className="mt-2 text-xs text-carbon-600 dark:text-carbon-400 flex flex-wrap gap-2">
+                            <span>{c.specialty ?? 'APS'}</span>
+                            <span className="hairline w-px h-4" />
+                            <span>{new Date(c.created_at).toLocaleDateString()}</span>
+                          </div>
+                        </div>
+                        {c.verified && (
+                          <div className="inline-flex items-center gap-1 text-xs font-semibold text-guanine-green">
+                            <ShieldCheck className="w-4 h-4" />
+                            {tCases('status.verified')}
+                          </div>
+                        )}
+                      </div>
+                      <div className="mt-4 flex items-center gap-2 text-xs text-carbon-600 dark:text-carbon-400">
+                        <ThumbsUpMini count={c.upvotes ?? 0} />
+                        <span className="hairline w-px h-4" />
+                        <span>{(c.views ?? 0).toString()} {tCases('views')}</span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </section>
+
             {/* Forum Categories */}
             <section>
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                  <MessageSquare className="w-5 h-5 text-blue-500" />
+                <h2 className="text-xl font-semibold text-helix-navy dark:text-white flex items-center gap-2">
+                  <MessageSquare className="w-5 h-5 text-adenine-teal dark:text-cytosine-cyan" />
                   {t('forums')}
                 </h2>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 {FORUM_CATEGORIES.map((category) => (
-                  <div key={category.id} className="relative">
-                    <CategoryCard category={category} />
-                    {/* Overlay for coming soon */}
-                    <div className="absolute inset-0 bg-gray-900/50 rounded-xl flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity cursor-not-allowed">
-                      <div className="bg-white dark:bg-gray-800 px-4 py-2 rounded-lg flex items-center gap-2">
-                        <Lock className="w-4 h-4 text-gray-500" />
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                          {t('coming_soon.badge')}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                  <CategoryCard key={category.id} category={category} />
                 ))}
               </div>
             </section>
@@ -118,15 +174,15 @@ export default function CommunityPage() {
             {/* Recent Discussions Placeholder */}
             <section>
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-green-500" />
+                <h2 className="text-xl font-semibold text-helix-navy dark:text-white flex items-center gap-2">
+                  <TrendingUp className="w-5 h-5 text-guanine-green" />
                   {t('recent_discussions')}
                 </h2>
               </div>
 
-              <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-8 text-center">
-                <MessageSquare className="w-12 h-12 mx-auto mb-4 text-gray-400" />
-                <p className="text-gray-600 dark:text-gray-400">
+              <div className="card-darwin p-8 text-center">
+                <MessageSquare className="w-12 h-12 mx-auto mb-4 text-carbon-400" />
+                <p className="text-carbon-600 dark:text-carbon-400">
                   {t('no_discussions')}
                 </p>
               </div>
@@ -135,51 +191,48 @@ export default function CommunityPage() {
 
           {/* Sidebar */}
           <div className="space-y-6">
-            {/* Mentorship Card */}
-            <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl p-6 text-white">
-              <GraduationCap className="w-10 h-10 mb-4" />
-              <h3 className="text-xl font-bold mb-2">{t('mentorship.title')}</h3>
-              <p className="text-purple-100 text-sm mb-4">
-                {t('mentorship.description')}
+            {/* Mentorship */}
+            <div className="card-darwin p-6">
+              <h3 className="font-semibold text-helix-navy dark:text-white mb-2">
+                {t('mentorship.title') ?? 'Mentoria'}
+              </h3>
+              <p className="text-sm text-carbon-700 dark:text-carbon-300 mb-4">
+                {t('mentorship.description') ?? 'Encontre mentores e peça orientação com responsabilidade.'}
               </p>
-              <button
-                disabled
-                className="w-full py-2 bg-white/20 hover:bg-white/30 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 cursor-not-allowed opacity-70"
-              >
-                <Lock className="w-4 h-4" />
-                {t('coming_soon.badge')}
-              </button>
+              <Link href="/community/mentorship" className="btn-darwin-primary px-5 py-3 justify-center">
+                {t('mentorship.connect') ?? 'Conectar'}
+              </Link>
             </div>
 
             {/* Guidelines */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="card-darwin p-6">
+              <h3 className="font-semibold text-helix-navy dark:text-white mb-4">
                 {t('guidelines.title')}
               </h3>
-              <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+              <ul className="space-y-3 text-sm text-carbon-700 dark:text-carbon-300">
                 <li className="flex items-start gap-2">
-                  <span className="text-green-500 mt-0.5">✓</span>
+                  <span className="text-guanine-green mt-0.5">✓</span>
                   {t('guidelines.respect')}
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-500 mt-0.5">✓</span>
+                  <span className="text-guanine-green mt-0.5">✓</span>
                   {t('guidelines.privacy')}
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-500 mt-0.5">✓</span>
+                  <span className="text-guanine-green mt-0.5">✓</span>
                   {t('guidelines.evidence')}
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-0.5">✗</span>
+                  <span className="text-critical-red-600 mt-0.5">✗</span>
                   {t('guidelines.no_pii')}
                 </li>
               </ul>
             </div>
 
             {/* Free Forever */}
-            <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-6 text-white">
+            <div className="card-darwin p-6 bg-gradient-to-br from-helix-navy to-adenine-teal text-white border-0">
               <h3 className="font-bold mb-2">{t('free_forever.title')}</h3>
-              <p className="text-sm text-green-100">
+              <p className="text-sm text-white/80">
                 {t('free_forever.description')}
               </p>
             </div>
@@ -187,5 +240,22 @@ export default function CommunityPage() {
         </div>
       </PageContainer>
     </div>
+  );
+}
+
+function ThumbsUpMini({ count }: { count: number }) {
+  return (
+    <span className="inline-flex items-center gap-1">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 1.98-1.7l1.2-8A2 2 0 0 0 19.48 9H14Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
+        <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" strokeWidth="2" />
+      </svg>
+      <span>{count}</span>
+    </span>
   );
 }

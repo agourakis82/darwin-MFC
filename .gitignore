@@ -1,5 +1,6 @@
 # dependencies
 /node_modules
+**/node_modules
 /.pnp
 .pnp.js
 
@@ -8,6 +9,7 @@
 
 # next.js
 /.next/
+/out/
 /out/
 
 # production
@@ -49,3 +51,21 @@ supabase/.temp/
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# playwright
+/playwright-report/
+/test-results/
+
+# local AI tooling config
+.claude/
+.roo/
+
+# generated content (built via scripts, not source)
+lib/content-generation/output/modules/
+
+# backup files
+lib/data/*.backup-*
+
+# mobile build artefacts (managed separately)
+packages/mobile/node_modules/
+packages/mobile/.expo/
