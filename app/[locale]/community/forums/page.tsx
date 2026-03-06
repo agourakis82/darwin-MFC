@@ -6,7 +6,7 @@ import { Link, useRouter } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { ArrowLeft, MessageSquare, PlusCircle } from 'lucide-react';
 import { CategoryCard } from '@/app/components/Community';
-import { FORUM_CATEGORIES } from '@/lib/types/community';
+import { FORUM_CATEGORIES, ForumCategory, ForumCategoryAccent } from '@/lib/types/community';
 import { listForumCategories, listForumPosts } from '@/lib/supabase/services/forum';
 import { useAuth } from '@/lib/hooks/useAuth';
 
@@ -53,11 +53,11 @@ function ForumCategoriesView({ title }: { title: string }) {
             nameKey: c.name_key,
             descriptionKey: c.description_key,
             icon: c.icon,
-            accent: ((c as any).accent ?? legacyColorToAccent(c.color)) as import('@/lib/types/community').ForumCategoryAccent,
+            accent: ((c as any).accent ?? legacyColorToAccent(c.color)) as ForumCategoryAccent,
             postCount: 0,
             isRestricted: (c.is_restricted ?? false) as boolean,
             order: (c.order ?? 0) as number,
-          })) as unknown as import('@/lib/types/community').ForumCategory[]
+          })) as unknown as ForumCategory[]
         );
       }
 
