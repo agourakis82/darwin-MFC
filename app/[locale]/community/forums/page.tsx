@@ -53,11 +53,11 @@ function ForumCategoriesView({ title }: { title: string }) {
             nameKey: c.name_key,
             descriptionKey: c.description_key,
             icon: c.icon,
-            accent: (c as any).accent ?? legacyColorToAccent(c.color),
+            accent: ((c as any).accent ?? legacyColorToAccent(c.color)) as import('@/lib/types/community').ForumCategoryAccent,
             postCount: 0,
             isRestricted: c.is_restricted ?? false,
             order: c.order ?? 0,
-          }))
+          })) as import('@/lib/types/community').ForumCategory[]
         );
       }
 
