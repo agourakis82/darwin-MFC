@@ -19,6 +19,12 @@ const isVercel = process.env.VERCEL === '1' || process.env.VERCEL_ENV !== undefi
 const isStaticExport = !isVercel && process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
+  // Turbopack: alias browser-only packages to stubs so they don't break SSG
+  turbopack: {
+    resolveAlias: {
+      'onnxruntime-web': './lib/ai/mocks/onnxruntime-web.js',
+    },
+  },
   // Vercel handles SSR natively, use static export for GitHub Pages only
   ...(isStaticExport ? { output: "export" as const } : {}),
   images: {
