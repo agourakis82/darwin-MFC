@@ -1,3 +1,4 @@
+'use client';
 import { useMemo, useState } from 'react';
 import { Search } from 'lucide-react';
 import { Link } from '@/i18n/routing';
