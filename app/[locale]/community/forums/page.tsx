@@ -55,9 +55,9 @@ function ForumCategoriesView({ title }: { title: string }) {
             icon: c.icon,
             accent: ((c as any).accent ?? legacyColorToAccent(c.color)) as import('@/lib/types/community').ForumCategoryAccent,
             postCount: 0,
-            isRestricted: c.is_restricted ?? false,
-            order: c.order ?? 0,
-          })) as import('@/lib/types/community').ForumCategory[]
+            isRestricted: (c.is_restricted ?? false) as boolean,
+            order: (c.order ?? 0) as number,
+          })) as unknown as import('@/lib/types/community').ForumCategory[]
         );
       }
 
