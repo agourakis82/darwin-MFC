@@ -68,7 +68,7 @@ export default function HomeContent() {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-adenine-teal/10 dark:bg-adenine-teal/20 border border-adenine-teal/20 dark:border-adenine-teal/30">
                 <Sparkles className="w-4 h-4 text-adenine-teal dark:text-cytosine-cyan" />
                 <span className="text-sm font-medium text-adenine-teal dark:text-cytosine-cyan">
-                  Clinical Intelligence, Evolved
+                  Inteligência Clínica de Emergência
                 </span>
               </div>
             </motion.div>
@@ -81,14 +81,14 @@ export default function HomeContent() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold tracking-tight text-helix-navy dark:text-white mb-6">
-                <span className="block">Your Clinical</span>
+                <span className="block">Seu Centro</span>
                 <span className="block bg-gradient-to-r from-adenine-teal via-guanine-green to-cytosine-cyan bg-clip-text text-transparent">
-                  Command Center
+                  de Decisão Clínica
                 </span>
               </h1>
               <p className="text-lg sm:text-xl text-carbon-600 dark:text-carbon-300 max-w-2xl mx-auto font-body leading-relaxed">
-                Evidence-based protocols, intelligent drug references, and clinical calculators —
-                all in one premium platform built for Family Medicine.
+                Protocolos baseados em evidência, referências terapêuticas de emergência e calculadoras clínicas —
+                tudo em uma plataforma otimizada para o atendimento agudo.
               </p>
             </motion.div>
 
@@ -104,7 +104,7 @@ export default function HomeContent() {
                 className="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-helix-navy to-adenine-teal text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  Explore the Evidence
+                  Explorar Evidências
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-adenine-teal to-guanine-green opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -113,7 +113,7 @@ export default function HomeContent() {
                 href="/medicamentos"
                 className="btn-darwin-secondary"
               >
-                View Medications
+                Ver Medicamentos
               </Link>
             </motion.div>
 
@@ -126,15 +126,15 @@ export default function HomeContent() {
             >
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-guanine-green" />
-                <span>Q1 Journal Standards</span>
+                <span>Padrão Científico Q1</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-guanine-green" />
-                <span>RENAME Indexed</span>
+                <span>Integrado à RENAME</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-guanine-green" />
-                <span>CIAP-2 / CID-10 Coded</span>
+                <span>Codificação CIAP-2 / CID-10</span>
               </div>
             </motion.div>
           </ContentContainer>
@@ -168,11 +168,11 @@ export default function HomeContent() {
             <div className="w-12 h-12 rounded-xl bg-adenine-teal/10 dark:bg-adenine-teal/20 flex items-center justify-center mb-4">
               <BookOpen className="w-6 h-6 text-adenine-teal" />
             </div>
-            <div>
-              <div className="text-4xl font-display font-bold text-helix-navy dark:text-white">{stats.doencas}+</div>
-              <div className="text-sm text-carbon-500 dark:text-carbon-400 font-ui">Conditions Covered</div>
-            </div>
-          </motion.div>
+              <div>
+                <div className="text-4xl font-display font-bold text-helix-navy dark:text-white">{stats.doencas}+</div>
+                <div className="text-sm text-carbon-500 dark:text-carbon-400 font-ui">Condições Cadastradas</div>
+              </div>
+            </motion.div>
 
           {/* Medications Card - 1x1 */}
           <motion.div 
@@ -182,11 +182,11 @@ export default function HomeContent() {
             <div className="w-12 h-12 rounded-xl bg-guanine-green/10 dark:bg-guanine-green/20 flex items-center justify-center mb-4">
               <Pill className="w-6 h-6 text-guanine-green" />
             </div>
-            <div>
-              <div className="text-4xl font-display font-bold text-helix-navy dark:text-white">{stats.medicamentos}+</div>
-              <div className="text-sm text-carbon-500 dark:text-carbon-400 font-ui">Medications Indexed</div>
-            </div>
-          </motion.div>
+              <div>
+                <div className="text-4xl font-display font-bold text-helix-navy dark:text-white">{stats.medicamentos}+</div>
+                <div className="text-sm text-carbon-500 dark:text-carbon-400 font-ui">Medicamentos Disponíveis</div>
+              </div>
+            </motion.div>
 
           {/* Featured Card - 2x1 */}
           <motion.div 
@@ -194,17 +194,17 @@ export default function HomeContent() {
             variants={fadeInUp}
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-            <div className="relative z-10">
-              <div className="flex items-center gap-2 mb-3">
-                <Brain className="w-5 h-5 text-cytosine-cyan" />
-                <span className="text-sm font-medium text-cytosine-cyan uppercase tracking-wide">AI-Enhanced</span>
+              <div className="relative z-10">
+                <div className="flex items-center gap-2 mb-3">
+                  <Brain className="w-5 h-5 text-cytosine-cyan" />
+                  <span className="text-sm font-medium text-cytosine-cyan uppercase tracking-wide">Potencial clínico por IA</span>
+                </div>
+                <h3 className="text-xl font-display font-bold mb-2">Inteligência Clínica</h3>
+                <p className="text-white/80 text-sm font-body">
+                Recomendações inteligentes, suporte à decisão e checagem de interações, orientadas por evidência.
+                </p>
               </div>
-              <h3 className="text-xl font-display font-bold mb-2">Clinical Intelligence</h3>
-              <p className="text-white/80 text-sm font-body">
-                Smart recommendations, differential diagnosis assistant, and drug interaction checker powered by evidence.
-              </p>
-            </div>
-          </motion.div>
+            </motion.div>
 
           {/* Protocols Card - 1x1 */}
           <motion.div 
@@ -214,11 +214,11 @@ export default function HomeContent() {
             <div className="w-12 h-12 rounded-xl bg-cytosine-cyan/10 dark:bg-cytosine-cyan/20 flex items-center justify-center mb-4">
               <FileText className="w-6 h-6 text-cytosine-cyan" />
             </div>
-            <div>
-              <div className="text-4xl font-display font-bold text-helix-navy dark:text-white">{stats.protocolos}+</div>
-              <div className="text-sm text-carbon-500 dark:text-carbon-400 font-ui">Clinical Protocols</div>
-            </div>
-          </motion.div>
+              <div>
+                <div className="text-4xl font-display font-bold text-helix-navy dark:text-white">{stats.protocolos}+</div>
+                <div className="text-sm text-carbon-500 dark:text-carbon-400 font-ui">Protocolos Clínicos</div>
+              </div>
+            </motion.div>
 
           {/* Learning Card - 2x1 */}
           <motion.div 
@@ -231,16 +231,16 @@ export default function HomeContent() {
               </div>
               <div>
                 <h3 className="text-lg font-display font-semibold text-helix-navy dark:text-white mb-1">
-                  Gamified Learning
+                  Aprendizado Guiado
                 </h3>
                 <p className="text-sm text-carbon-500 dark:text-carbon-400 font-body mb-3">
-                  Spaced repetition, flashcards, and XP-based progression to master clinical knowledge.
+                  Revisão espaçada, flashcards e trilhas progressivas para dominar conhecimento clínico.
                 </p>
                 <Link 
                   href="/learn"
                   className="inline-flex items-center gap-1 text-sm font-medium text-adenine-teal dark:text-cytosine-cyan hover:underline"
                 >
-                  Start Learning
+                  Iniciar Aprendizagem
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -255,9 +255,9 @@ export default function HomeContent() {
             <div className="w-12 h-12 rounded-xl bg-purple-500/10 dark:bg-purple-500/20 flex items-center justify-center mb-4">
               <Calculator className="w-6 h-6 text-purple-500" />
             </div>
-            <div>
-              <div className="text-lg font-display font-semibold text-helix-navy dark:text-white">Calculators</div>
-              <div className="text-sm text-carbon-500 dark:text-carbon-400 font-ui">Clinical scoring tools</div>
+              <div>
+                <div className="text-lg font-display font-semibold text-helix-navy dark:text-white">Calculadoras</div>
+              <div className="text-sm text-carbon-500 dark:text-carbon-400 font-ui">Scores e calculadoras clínicas</div>
             </div>
           </motion.div>
 
@@ -270,8 +270,8 @@ export default function HomeContent() {
               <Zap className="w-6 h-6 text-critical-red-500" />
             </div>
             <div>
-              <div className="text-lg font-display font-semibold text-helix-navy dark:text-white">Quick Consult</div>
-              <div className="text-sm text-carbon-500 dark:text-carbon-400 font-ui">Point-of-care reference</div>
+              <div className="text-lg font-display font-semibold text-helix-navy dark:text-white">Consulta Rápida</div>
+              <div className="text-sm text-carbon-500 dark:text-carbon-400 font-ui">Referência no ponto de cuidado</div>
             </div>
           </motion.div>
         </motion.div>
@@ -285,10 +285,10 @@ export default function HomeContent() {
         <PageContainer className="py-16">
         <ScrollReveal animation="fadeInUp" className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-display font-bold text-helix-navy dark:text-white mb-4">
-            Clinical Tools at Your Fingertips
+            Ferramentas Clínicas ao Seu Alcance
           </h2>
           <p className="text-carbon-500 dark:text-carbon-400 font-body max-w-2xl mx-auto">
-            Everything you need for evidence-based practice, organized for rapid access during consultations.
+            Tudo o que você precisa para prática baseada em evidência, organizado para acesso rápido durante o atendimento.
           </p>
         </ScrollReveal>
 
@@ -300,10 +300,10 @@ export default function HomeContent() {
           viewport={{ once: true }}
         >
           {[
-            { icon: Stethoscope, title: 'Quick Consultation', desc: 'Rapid clinical reference', href: '/consulta-rapida', color: 'adenine-teal' },
-            { icon: Shield, title: 'Drug Interactions', desc: 'Safety checker', href: '/medicamentos/interacoes', color: 'critical-red-500' },
-            { icon: FileText, title: 'Protocols', desc: 'Flowchart guidelines', href: '/protocolos', color: 'guanine-green' },
-            { icon: Calculator, title: 'Calculators', desc: 'Clinical scoring', href: '/calculadoras', color: 'cytosine-cyan' },
+            { icon: Stethoscope, title: 'Consulta Rápida', desc: 'Referência clínica rápida', href: '/consulta-rapida', color: 'adenine-teal' },
+            { icon: Shield, title: 'Interações Medicamentosas', desc: 'Verificação de segurança', href: '/medicamentos/interacoes', color: 'critical-red-500' },
+            { icon: FileText, title: 'Protocolos', desc: 'Fluxogramas de manejo', href: '/protocolos', color: 'guanine-green' },
+            { icon: Calculator, title: 'Calculadoras', desc: 'Escalas clínicas', href: '/calculadoras', color: 'cytosine-cyan' },
           ].map((item, i) => (
             <motion.div key={i} variants={fadeInUp}>
               <Link
@@ -327,10 +327,10 @@ export default function HomeContent() {
         <PageContainer className="py-16">
         <ScrollReveal animation="fadeInUp" className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-display font-bold text-helix-navy dark:text-white mb-4">
-            SUS Screening Programs
+            Programas de Rastreamento do SUS
           </h2>
           <p className="text-carbon-500 dark:text-carbon-400 font-body max-w-2xl mx-auto">
-            Complete coverage of Brazilian public health screening protocols, organized by life stage.
+            Cobertura completa dos protocolos de rastreamento em saúde pública, organizados por etapa da vida.
           </p>
         </ScrollReveal>
 
@@ -342,11 +342,11 @@ export default function HomeContent() {
           viewport={{ once: true }}
         >
           {[
-            { icon: Baby, title: 'Neonatal', href: '/neonatal', gradient: 'from-amber-400 to-orange-500' },
-            { icon: Users, title: 'Children', href: '/infantil', gradient: 'from-green-400 to-emerald-500' },
-            { icon: Activity, title: 'Adults', href: '/adultos', gradient: 'from-blue-400 to-cyan-500' },
-            { icon: Heart, title: 'Cancer', href: '/cancer', gradient: 'from-purple-400 to-pink-500' },
-            { icon: Heart, title: 'Pregnancy', href: '/gestacao', gradient: 'from-pink-400 to-rose-500' },
+            { icon: Baby, title: 'Neonato', href: '/neonatal', gradient: 'from-amber-400 to-orange-500' },
+            { icon: Users, title: 'Pediátrico', href: '/infantil', gradient: 'from-green-400 to-emerald-500' },
+            { icon: Activity, title: 'Adulto', href: '/adultos', gradient: 'from-blue-400 to-cyan-500' },
+            { icon: Heart, title: 'Oncologia', href: '/cancer', gradient: 'from-purple-400 to-pink-500' },
+            { icon: Heart, title: 'Gestação', href: '/gestacao', gradient: 'from-pink-400 to-rose-500' },
           ].map((item, i) => (
             <motion.div key={i} variants={fadeInUp}>
               <Link
@@ -385,28 +385,28 @@ export default function HomeContent() {
               <Award className="w-12 h-12 text-cytosine-cyan" />
             </div>
             <h2 className="text-2xl lg:text-4xl font-display font-bold mb-4">
-              Built for Healthcare Professionals
+              Feito para Profissionais de Saúde
             </h2>
             <p className="text-lg text-white/80 font-body max-w-2xl mx-auto mb-8">
-              DARWIN MEDICAL HUB combines rigorous evidence-based medicine with beautiful, intuitive design — 
-              because clinical tools should be as precise as the care you provide.
+              O DARWIN MEDICAL HUB combina medicina baseada em evidências com interface clara e intuitiva — 
+              porque ferramentas clínicas devem ser tão precisas quanto o cuidado que você oferece.
             </p>
             <div className="flex flex-wrap justify-center gap-8 text-sm">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-guanine-green" />
-                <span>Evidence-Based</span>
+                <span>Baseado em Evidência</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-guanine-green" />
-                <span>Continuously Updated</span>
+                <span>Atualizado Continuamente</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-guanine-green" />
-                <span>Offline Ready</span>
+                <span>Pronto para uso Offline</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-guanine-green" />
-                <span>WCAG 2.2 AAA</span>
+                <span>Acessibilidade WCAG 2.2 AAA</span>
               </div>
             </div>
           </div>

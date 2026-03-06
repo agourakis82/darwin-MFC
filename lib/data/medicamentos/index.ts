@@ -57,8 +57,7 @@ import { medicamentosOncologiaQuimio } from './expansao-oncologia-quimio';
 import { medicamentosOncologiaAlvo } from './expansao-oncologia-alvo';
 import { medicamentosBiologicos } from './expansao-biologicos';
 import { vacinas } from './expansao-vacinas';
-// TODO: Fix type issues in expansao-anestesia.ts (classeTerapeutica, posologia structure)
-// import { medicamentosAnestesia } from './expansao-anestesia';
+import { medicamentosAnestesia } from './expansao-anestesia';
 
 // Consolidar todos os medicamentos
 // Filtrar apenas medicamentos completos (com campos obrigatórios)
@@ -66,6 +65,56 @@ const isMedicamentoCompleto = (med: Partial<Medicamento>): med is Medicamento =>
   med.id !== undefined &&
   med.nomeGenerico !== undefined &&
   med.classeTerapeutica !== undefined;
+
+const normalizeMedicamentoCompleto = (
+  med: Partial<Medicamento>,
+  fallbackId: string
+): Medicamento => ({
+  id: med.id ?? fallbackId,
+  nomeGenerico: med.nomeGenerico ?? 'Medicamento',
+  nomesComerciais: med.nomesComerciais ?? [],
+  atcCode: med.atcCode,
+  rxNormCui: med.rxNormCui,
+  drugBankId: med.drugBankId,
+  snomedCT: med.snomedCT,
+  loinc: med.loinc,
+  pharmgkb: med.pharmgkb,
+  anvisaRegistro: med.anvisaRegistro,
+  casNumber: med.casNumber,
+  dcbCode: med.dcbCode,
+  regionalOverlays: med.regionalOverlays,
+  classeTerapeutica: med.classeTerapeutica ?? 'outros',
+  subclasse: med.subclasse,
+  rename: med.rename ?? false,
+  apresentacoes:
+    med.apresentacoes && med.apresentacoes.length > 0
+      ? med.apresentacoes
+      : [{ forma: 'outros', concentracao: 'N/A', disponivelSUS: false }],
+  indicacoes: med.indicacoes ?? ['Não especificada'],
+  mecanismoAcao: med.mecanismoAcao ?? 'Consulta de bula indicada.',
+  posologias:
+    med.posologias && med.posologias.length > 0
+      ? med.posologias
+      : [{ indicacao: 'Não especificado', adultos: { dose: 'N/A', frequencia: 'N/A' } }],
+  contraindicacoes: med.contraindicacoes ?? [],
+  precaucoes: med.precaucoes,
+  efeitosAdversos: {
+    comuns: med.efeitosAdversos?.comuns ?? [],
+    graves: med.efeitosAdversos?.graves,
+  },
+  interacoes: med.interacoes ?? [],
+  ajusteDoseRenal: med.ajusteDoseRenal,
+  gestacao: med.gestacao ?? 'N',
+  amamentacao: med.amamentacao ?? { compativel: false, observacao: 'Dados insuficientes.' },
+  consideracoesEspeciais: med.consideracoesEspeciais,
+  monitorizacao: med.monitorizacao,
+  orientacoesPaciente: med.orientacoesPaciente,
+  doencasRelacionadas: med.doencasRelacionadas ?? [],
+  calculadoras: med.calculadoras,
+  citations: med.citations ?? [{ refId: 'local-reference' }],
+  lastUpdate: med.lastUpdate ?? '2026-03-04',
+  tags: med.tags ?? [],
+});
 
 const expandedCompletos = medicamentosExpanded.filter(isMedicamentoCompleto);
 const antibioticosExpansaoCompletos = medicamentosAntibioticosExpansao.filter(isMedicamentoCompleto);
@@ -82,7 +131,9 @@ const pediatricosCompletos = medicamentosPediatricos.filter(isMedicamentoComplet
 const ginecologiaCompletos = medicamentosGinecologia.filter(isMedicamentoCompleto);
 const hematologiaCompletos = medicamentosHematologia.filter(isMedicamentoCompleto);
 const antiviraisCompletos = medicamentosAntivirais.filter(isMedicamentoCompleto);
-const emergenciaCompletos = medicamentosEmergencia.filter(isMedicamentoCompleto);
+const emergenciaCompletos = medicamentosEmergencia.map((med, index) =>
+  normalizeMedicamentoCompleto(med, `emergencia-${index + 1}`)
+);
 const otorrinoCompletos = medicamentosOtorrino.filter(isMedicamentoCompleto);
 const oncologiaSuporteCompletos = medicamentosOncologiaSuporte.filter(isMedicamentoCompleto);
 const reumatologiaCompletos = medicamentosReumatologia.filter(isMedicamentoCompleto);
@@ -106,7 +157,9 @@ const oncologiaQuimioCompletos = medicamentosOncologiaQuimio.filter(isMedicament
 const oncologiaAlvoCompletos = medicamentosOncologiaAlvo.filter(isMedicamentoCompleto);
 const biologicosCompletos = medicamentosBiologicos.filter(isMedicamentoCompleto);
 const vacinasCompletos = vacinas.filter(isMedicamentoCompleto);
-// const anestesiaCompletos = medicamentosAnestesia.filter(isMedicamentoCompleto);
+const anestesiaCompletos = medicamentosAnestesia.map((med, index) =>
+  normalizeMedicamentoCompleto(med, `anestesia-${index + 1}`)
+);
 
 // Filter cardiovasculares (Partial<Medicamento>)
 const cardiovascularesCompletos2 = cardiovasculares.filter(isMedicamentoCompleto);
@@ -160,7 +213,7 @@ export const todosMedicamentos: Medicamento[] = [
   ...oncologiaAlvoCompletos,
   ...biologicosCompletos,
   ...vacinasCompletos,
-  // ...anestesiaCompletos, // TODO: Re-enable after fixing type issues
+  ...anestesiaCompletos,
 ];
 
 // Remover duplicatas por ID, preferindo entradas com dados mais completos (PharmGKB, LOINC)

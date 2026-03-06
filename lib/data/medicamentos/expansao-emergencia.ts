@@ -6,7 +6,7 @@
 
 import { Medicamento } from '../../types/medicamento';
 
-export const medicamentosEmergencia: Partial<Medicamento>[] = [
+const medicamentosEmergenciaRaw: Partial<Medicamento>[] = [
   // ==================== DROGAS VASOATIVAS ====================
   {
     id: 'norepinefrina',
@@ -1007,3 +1007,52 @@ export const medicamentosEmergencia: Partial<Medicamento>[] = [
     amamentacao: { compativel: true, observacao: 'Seguro' }
   }
 ];
+
+const normalizeMedicamentoEmergencia = (med: Partial<Medicamento>, fallbackIndex: number): Medicamento => ({
+  id: med.id ?? `emergencia-${fallbackIndex}`,
+  nomeGenerico: med.nomeGenerico ?? 'Medicamento de emergência',
+  nomesComerciais: med.nomesComerciais ?? [],
+  atcCode: med.atcCode,
+  classeTerapeutica: med.classeTerapeutica ?? 'outros',
+  subclasse: med.subclasse,
+  rename: med.rename ?? false,
+  apresentacoes: med.apresentacoes && med.apresentacoes.length > 0
+    ? med.apresentacoes
+    : [{ forma: 'outros', concentracao: 'N/A', disponivelSUS: false }],
+  indicacoes: med.indicacoes ?? ['Não especificada'],
+  mecanismoAcao: med.mecanismoAcao ?? 'Consulta de bula e protocolo recomendada.',
+  posologias: med.posologias && med.posologias.length > 0
+    ? med.posologias
+    : [{ indicacao: 'Não especificado', adultos: { dose: 'N/A', frequencia: 'N/A' } }],
+  contraindicacoes: med.contraindicacoes ?? [],
+  precaucoes: med.precaucoes,
+  efeitosAdversos: {
+    comuns: med.efeitosAdversos?.comuns ?? [],
+    graves: med.efeitosAdversos?.graves,
+  },
+  interacoes: med.interacoes ?? [],
+  gestacao: med.gestacao ?? 'N',
+  amamentacao: med.amamentacao ?? { compativel: false, observacao: 'Consultar bula.' },
+  doencasRelacionadas: med.doencasRelacionadas ?? [],
+  citations: med.citations ?? [{ refId: 'local-reference' }],
+  lastUpdate: med.lastUpdate ?? '2026-03-05',
+  tags: med.tags ?? [],
+  ajusteDoseRenal: med.ajusteDoseRenal,
+  pharmgkb: med.pharmgkb,
+  calculadoras: med.calculadoras,
+  monitorizacao: med.monitorizacao,
+  orientacoesPaciente: med.orientacoesPaciente,
+  consideracoesEspeciais: med.consideracoesEspeciais,
+  regionalOverlays: med.regionalOverlays,
+  rxNormCui: med.rxNormCui,
+  snomedCT: med.snomedCT,
+  loinc: med.loinc,
+  drugBankId: med.drugBankId,
+  anvisaRegistro: med.anvisaRegistro,
+  casNumber: med.casNumber,
+  dcbCode: med.dcbCode,
+});
+
+export const medicamentosEmergencia: Partial<Medicamento>[] = medicamentosEmergenciaRaw.map((med, index) =>
+  normalizeMedicamentoEmergencia(med, index + 1)
+);

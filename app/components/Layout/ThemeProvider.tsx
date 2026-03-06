@@ -5,6 +5,7 @@ import { useAppStore } from '@/lib/store/appStore';
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
   const theme = useAppStore((state) => state.theme);
+  const reduceTransparency = useAppStore((state) => state.reduceTransparency);
 
   useEffect(() => {
     // Aplicar tema imediatamente ao carregar - Dark mode como padrão
@@ -20,6 +21,22 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
         localStorage.setItem('app-theme', 'dark');
       }
     }
+
+    // Apply reduce-transparency as early as possible (best effort).
+    try {
+      const raw = localStorage.getItem('darwin-mfc-storage');
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        const reduce = Boolean(parsed?.state?.reduceTransparency);
+        if (reduce) {
+          root.setAttribute('data-reduce-transparency', 'true');
+        } else {
+          root.removeAttribute('data-reduce-transparency');
+        }
+      }
+    } catch {
+      // ignore
+    }
   }, []);
 
   useEffect(() => {
@@ -34,6 +51,14 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
     }
   }, [theme]);
 
+  useEffect(() => {
+    const root = document.documentElement;
+    if (reduceTransparency) {
+      root.setAttribute('data-reduce-transparency', 'true');
+    } else {
+      root.removeAttribute('data-reduce-transparency');
+    }
+  }, [reduceTransparency]);
+
   return <>{children}</>;
 }
-

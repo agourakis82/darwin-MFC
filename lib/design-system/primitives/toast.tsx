@@ -47,26 +47,22 @@ const toastVariants = cva(
   {
     variants: {
       variant: {
-        default: 'border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900',
+        default: 'border-carbon-200 bg-paper-white dark:border-carbon-800 dark:bg-carbon-900',
         success: [
-          'border-l-4 border-l-green-600',
-          'bg-green-50 dark:bg-green-900/20',
-          'border-green-200 dark:border-green-800',
+          'border-l-4 border-l-clinical-safe-base',
+          'bg-guanine-green/10 dark:bg-guanine-green/15',
         ],
         error: [
-          'border-l-4 border-l-red-600',
-          'bg-red-50 dark:bg-red-900/20',
-          'border-red-200 dark:border-red-800',
+          'border-l-4 border-l-clinical-critical-base',
+          'bg-critical-red-50 dark:bg-critical-red-900/20',
         ],
         warning: [
-          'border-l-4 border-l-amber-600',
-          'bg-amber-50 dark:bg-amber-900/20',
-          'border-amber-200 dark:border-amber-800',
+          'border-l-4 border-l-clinical-warning-base',
+          'bg-thymine-gold/10 dark:bg-thymine-gold/15',
         ],
         info: [
-          'border-l-4 border-l-blue-600',
-          'bg-blue-50 dark:bg-blue-900/20',
-          'border-blue-200 dark:border-blue-800',
+          'border-l-4 border-l-clinical-info-base',
+          'bg-brand-primary-50 dark:bg-brand-primary-900/15',
         ],
       },
     },
@@ -85,7 +81,8 @@ const Toast = React.forwardRef<
   return (
     <ToastPrimitives.Root
       ref={ref}
-      className={cn(toastVariants({ variant }), className)}
+      // Include the variant name as a class so group-[.success] selectors can work.
+      className={cn(toastVariants({ variant }), variant ? String(variant) : null, className)}
       {...props}
     />
   );
@@ -100,7 +97,7 @@ const ToastAction = React.forwardRef<
   <ToastPrimitives.Action
     ref={ref}
     className={cn(
-      'inline-flex h-8 shrink-0 items-center justify-center rounded-md border border-neutral-200 bg-transparent px-3 text-sm font-medium ring-offset-white transition-colors hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.success]:border-green-600 group-[.success]:hover:border-green-700 group-[.success]:hover:bg-green-100 group-[.success]:focus:ring-green-600 group-[.error]:border-red-600 group-[.error]:hover:border-red-700 group-[.error]:hover:bg-red-100 group-[.error]:focus:ring-red-600 dark:ring-offset-neutral-950 dark:hover:bg-neutral-800 dark:focus:ring-neutral-300',
+      'inline-flex h-8 shrink-0 items-center justify-center rounded-md border border-carbon-200 bg-transparent px-3 text-sm font-medium ring-offset-paper-white transition-colors hover:bg-carbon-50 focus:outline-none focus:ring-2 focus:ring-brand-primary-500 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.success]:border-clinical-safe-base group-[.success]:focus:ring-clinical-safe-base group-[.error]:border-clinical-critical-base group-[.error]:focus:ring-clinical-critical-base group-[.warning]:border-clinical-warning-base group-[.warning]:focus:ring-clinical-warning-base group-[.info]:border-clinical-info-base group-[.info]:focus:ring-clinical-info-base dark:ring-offset-carbon-950 dark:hover:bg-carbon-900/40 dark:focus:ring-brand-primary-400',
       className
     )}
     {...props}
@@ -116,7 +113,7 @@ const ToastClose = React.forwardRef<
   <ToastPrimitives.Close
     ref={ref}
     className={cn(
-      'absolute right-2 top-2 rounded-md p-1 text-neutral-500 opacity-0 transition-opacity hover:text-neutral-900 focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.success]:text-green-600 group-[.success]:hover:text-green-900 group-[.error]:text-red-600 group-[.error]:hover:text-red-900 dark:hover:text-neutral-50',
+      'absolute right-2 top-2 rounded-md p-1 text-carbon-500 opacity-0 transition-opacity hover:text-carbon-900 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-brand-primary-500 group-hover:opacity-100 group-[.success]:text-clinical-safe-base group-[.error]:text-clinical-critical-base group-[.warning]:text-clinical-warning-base group-[.info]:text-clinical-info-base dark:hover:text-carbon-50',
       className
     )}
     toast-close=""
@@ -181,7 +178,7 @@ const ToastIcon = ({ variant }: { variant?: string }) => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="h-5 w-5 text-green-600"
+        className="h-5 w-5 text-clinical-safe-base"
       >
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
         <polyline points="22 4 12 14.01 9 11.01" />
@@ -198,7 +195,7 @@ const ToastIcon = ({ variant }: { variant?: string }) => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="h-5 w-5 text-red-600"
+        className="h-5 w-5 text-clinical-critical-base"
       >
         <circle cx="12" cy="12" r="10" />
         <line x1="12" y1="8" x2="12" y2="12" />
@@ -216,7 +213,7 @@ const ToastIcon = ({ variant }: { variant?: string }) => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="h-5 w-5 text-amber-600"
+        className="h-5 w-5 text-clinical-warning-base"
       >
         <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
         <line x1="12" y1="9" x2="12" y2="13" />
@@ -234,7 +231,7 @@ const ToastIcon = ({ variant }: { variant?: string }) => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="h-5 w-5 text-blue-600"
+        className="h-5 w-5 text-clinical-info-base"
       >
         <circle cx="12" cy="12" r="10" />
         <line x1="12" y1="16" x2="12" y2="12" />

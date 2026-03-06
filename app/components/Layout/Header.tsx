@@ -1,19 +1,23 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
+import { useRouter, usePathname } from '@/i18n/routing';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAppStore } from '@/lib/store/appStore';
+import { usePSStore } from '@/lib/store/psStore';
 import { LanguageSelector } from '../LanguageSelector';
 import RegionSelector, { RegionSelectorCompact } from '../RegionSelector';
-import { Sun, Moon, BookOpen, FileText, Menu, X, Search, Zap, ClipboardList, AlertTriangle, Pill, Calculator, Stethoscope, Keyboard, GraduationCap, Users, Command, StickyNote } from 'lucide-react';
+import { Sun, Moon, BookOpen, FileText, Menu, X, Search, Zap, AlertTriangle, Pill, Calculator, Stethoscope, Keyboard, GraduationCap, Users, Command, StickyNote, Bell, Ambulance, ClipboardCheck } from 'lucide-react';
 import CommandPalette from '../CommandPalette/CommandPalette';
 import { HighYieldToggle } from '../HighYield';
 import { DarwinLogo } from '../Brand';
 import UserMenu from '../Auth/UserMenu';
 import { DrawerTransition } from '@/lib/design-system/animations/transitions';
 import { fadeInUp, listContainer, springs } from '@/lib/design-system/animations/presets';
+import { useAuth } from '@/lib/hooks/useAuth';
+import { countUnreadNotifications } from '@/lib/supabase/services/notifications';
 
 // Fallback translations for pages not yet migrated to [locale]
 const fallbackTranslations: Record<string, string> = {
@@ -52,23 +56,75 @@ function useSafeTranslations() {
   }
 }
 
+function NotificationsBell() {
+  const { isAuthenticated } = useAuth();
+  const [unread, setUnread] = useState(0);
+
+  useEffect(() => {
+    let mounted = true;
+    let t: ReturnType<typeof setInterval> | null = null;
+
+    async function refresh() {
+      const res = await countUnreadNotifications();
+      if (!mounted) return;
+      if (!res.error) setUnread(res.count);
+    }
+
+    if (isAuthenticated) {
+      refresh();
+      t = setInterval(refresh, 60_000);
+    } else {
+      setUnread(0);
+    }
+
+    return () => {
+      mounted = false;
+      if (t) clearInterval(t);
+    };
+  }, [isAuthenticated]);
+
+  return (
+    <Link
+      href="/notifications"
+      className="relative p-2 rounded-xl hover:bg-adenine-teal/10 dark:hover:bg-cytosine-cyan/10 apple-transition-fast"
+      aria-label="Notificações"
+      title="Notificações"
+    >
+      <Bell className="w-5 h-5 text-helix-navy dark:text-white" aria-hidden="true" />
+      {unread > 0 ? (
+        <span
+          className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-brand-primary-600 text-white text-[11px] font-bold leading-[18px] text-center shadow-elevation-1"
+          aria-label={`${unread} não lidas`}
+        >
+          {unread > 9 ? '9+' : unread}
+        </span>
+      ) : null}
+    </Link>
+  );
+}
+
 export default function Header() {
   const t = useSafeTranslations();
+  const router = useRouter();
+  const pathname = usePathname();
+  const { mode, setMode } = usePSStore();
 
   const { theme, toggleTheme, contentMode, toggleContentMode } = useAppStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
 
+  const handleSwitchToPS = useCallback(() => {
+    const locale = pathname?.split('/').filter(Boolean)[0];
+    setMode('ps');
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('darwin-mode-selection', 'ps');
+    }
+    const target = locale ? `/${locale}/ps` : '/ps';
+    router.push(target);
+  }, [setMode, pathname, router]);
+
   return (
     <>
-      {/* Skip to content link for keyboard accessibility */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-white dark:focus:bg-gray-900 focus:text-primary focus:rounded-lg focus:shadow-lg focus:ring-2 focus:ring-primary focus:outline-none"
-      >
-        Pular para o conteúdo
-      </a>
-
       <header className="sticky top-0 z-40 header-darwin" role="banner">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
@@ -170,6 +226,21 @@ export default function Header() {
               showLabel={false}
             />
 
+            <button
+              onClick={handleSwitchToPS}
+              className={`hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border ${
+                mode === 'ps'
+                  ? 'border-red-500/60 text-red-500'
+                  : 'border-guanine-green text-guanine-green'
+              }`}
+              aria-label="Entrar em modo pronto-socorro"
+            >
+              <Ambulance className="w-4 h-4" />
+              <span className="text-sm font-medium">
+                {mode === 'ps' ? 'PS ativo' : 'Modo PS'}
+              </span>
+            </button>
+
             {/* Content Mode Segmented Control */}
             <div
               className="relative flex items-center bg-carbon-100 dark:bg-carbon-800 rounded-xl p-0.5"
@@ -223,6 +294,9 @@ export default function Header() {
 
             {/* User Menu / Login */}
             <UserMenu />
+
+            {/* Notifications */}
+            <NotificationsBell />
 
             {/* Toggle Tema — animated */}
             <motion.button
@@ -286,6 +360,21 @@ export default function Header() {
               animate="animate"
               className="p-4 space-y-6"
             >
+              <nav>
+                <button
+                  onClick={handleSwitchToPS}
+                  className={`w-full mt-2 text-left px-3 py-2 rounded-lg border ${
+                    mode === 'ps'
+                      ? 'border-red-400 text-red-400'
+                      : 'border-guanine-green text-guanine-green'
+                  }`}
+                >
+                  <span className="text-sm font-medium">
+                    {mode === 'ps' ? 'Modo PS ativo' : 'Entrar em Modo PS'}
+                  </span>
+                </button>
+              </nav>
+
               {/* Ferramentas Rápidas */}
               <motion.div variants={fadeInUp}>
                 <p className="px-2 py-2 text-xs font-bold text-carbon-400 uppercase tracking-wider">
@@ -294,7 +383,7 @@ export default function Header() {
                 <nav className="grid grid-cols-2 gap-2">
                   {[
                     { href: '/consulta-rapida', icon: Zap, label: 'Consulta Rápida', color: 'text-adenine-teal bg-adenine-teal/10' },
-                    { href: '/prontuario', icon: ClipboardList, label: 'SOAP', color: 'text-guanine-green bg-guanine-green/10' },
+                    { href: '/prontuario', icon: ClipboardCheck, label: 'SOAP', color: 'text-guanine-green bg-guanine-green/10' },
                     { href: '/medicamentos/interacoes', icon: AlertTriangle, label: 'Interações', color: 'text-red-500 bg-red-500/10' },
                     { href: '/calculadoras', icon: Calculator, label: 'Calculadoras', color: 'text-cytosine-cyan bg-cytosine-cyan/10' },
                     { href: '/notas', icon: StickyNote, label: 'Notas', color: 'text-thymine-gold bg-thymine-gold/10' },
@@ -396,4 +485,3 @@ export default function Header() {
     </>
   );
 }
-

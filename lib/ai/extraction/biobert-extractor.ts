@@ -18,19 +18,6 @@
  * - Falls back gracefully if model unavailable
  */
 
-// onnxruntime-web is optional - graceful degradation if not installed
-type Tensor = {
-  data: Float32Array | BigInt64Array;
-  dims: readonly number[];
-};
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-let onnxRuntime: any = null;
-try {
-  // Dynamic import for optional dependency
-  onnxRuntime = require('onnxruntime-web');
-} catch {
-  // onnxruntime-web not installed - will use regex fallback
-}
 import { loadBioBERTModel, isModelLoaded, preprocessText, type InferenceConfig } from '../models/biobert-loader';
 import { BIOBERT_CONFIG, getNERLabelById, type EntityType, type NERLabelConfig } from '../models/onnx-config';
 import { analyzeSOAPText, type ExtractedEntity as RegexEntity } from '@/lib/utils/nlp-soap';

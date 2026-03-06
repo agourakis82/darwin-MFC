@@ -15,6 +15,7 @@ import {
   getLevelFromXP,
   getBadgeById,
 } from '../types/gamification';
+import { ssrSafeJSONStorage } from './persistStorage';
 
 // =============================================================================
 // GAMIFICATION STORE TYPES
@@ -504,6 +505,7 @@ export const useGamificationStore = create<GamificationStore>()(
     }),
     {
       name: 'darwin-mfc-gamification',
+      storage: ssrSafeJSONStorage,
       partialize: (state) => ({
         totalXP: state.totalXP,
         currentLevel: state.currentLevel,

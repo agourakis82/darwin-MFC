@@ -116,6 +116,7 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
               <button
                 key={view}
                 onClick={() => setActiveView(view as any)}
+                data-testid={`disease-view-${view}`}
                 className={cn(
                   "px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded transition-all",
                   activeView === view 
@@ -239,19 +240,24 @@ export default function DoencaDetailClient({ params }: { params: Promise<{ id: s
           </aside>
 
           {/* 3. Main Clinical Column */}
-          <main className="flex-1 max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-display font-bold text-helix-navy dark:text-white mb-6">
+          <main className="flex-1 max-w-3xl" data-testid="disease-main">
+            <h1
+              className="text-4xl sm:text-5xl font-display font-bold text-helix-navy dark:text-white mb-6"
+              data-testid="disease-title"
+            >
               {doenca.titulo}
             </h1>
 
             <TabTransition activeTab={activeView}>
             {activeView === 'checklist' ? (
-              <ChecklistConsultaComponent
-                checklist={checklist}
-                onComplete={(progress) => {
-                  localStorage.setItem(`checklist-${checklist.id}`, JSON.stringify(progress));
-                }}
-              />
+              <div data-testid="disease-checklist">
+                <ChecklistConsultaComponent
+                  checklist={checklist}
+                  onComplete={(progress) => {
+                    localStorage.setItem(`checklist-${checklist.id}`, JSON.stringify(progress));
+                  }}
+                />
+              </div>
             ) : (
               <StaggerPageSections staggerDelay={0.12} className="space-y-16">
                 {/* 3.1 The Bottom Line (Summary) */}

@@ -277,6 +277,15 @@ export function getHighlightedHtml(text: string, query: string): string {
 
 const SAVED_SEARCHES_KEY = 'darwin-mfc-saved-searches';
 
+function getLocalStorageSafe(): Storage | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    return window.localStorage;
+  } catch {
+    return null;
+  }
+}
+
 export interface SavedSearch {
   id: string;
   name: string;
@@ -290,6 +299,8 @@ export interface SavedSearch {
  * Save a search for later use
  */
 export function saveSearch(name: string, query: string, filters: Partial<SearchOptions> = {}): SavedSearch {
+  const storage = getLocalStorageSafe();
+  // Still return the SavedSearch object even if persistence isn't available.
   const saved = getSavedSearches();
 
   const newSearch: SavedSearch = {
@@ -302,10 +313,12 @@ export function saveSearch(name: string, query: string, filters: Partial<SearchO
 
   saved.push(newSearch);
 
-  try {
-    localStorage.setItem(SAVED_SEARCHES_KEY, JSON.stringify(saved));
-  } catch (error) {
-    console.error('Failed to save search:', error);
+  if (storage) {
+    try {
+      storage.setItem(SAVED_SEARCHES_KEY, JSON.stringify(saved));
+    } catch {
+      // Ignore storage failures (SSR/export, private browsing, quota, etc.)
+    }
   }
 
   return newSearch;
@@ -315,14 +328,16 @@ export function saveSearch(name: string, query: string, filters: Partial<SearchO
  * Get all saved searches
  */
 export function getSavedSearches(): SavedSearch[] {
+  const storage = getLocalStorageSafe();
+  if (!storage) return [];
+
   try {
-    const stored = localStorage.getItem(SAVED_SEARCHES_KEY);
+    const stored = storage.getItem(SAVED_SEARCHES_KEY);
     if (!stored) return [];
 
     const searches = JSON.parse(stored);
     return Array.isArray(searches) ? searches : [];
-  } catch (error) {
-    console.error('Failed to load saved searches:', error);
+  } catch {
     return [];
   }
 }
@@ -331,13 +346,16 @@ export function getSavedSearches(): SavedSearch[] {
  * Delete a saved search
  */
 export function deleteSavedSearch(id: string): void {
+  const storage = getLocalStorageSafe();
   const saved = getSavedSearches();
   const filtered = saved.filter(s => s.id !== id);
 
-  try {
-    localStorage.setItem(SAVED_SEARCHES_KEY, JSON.stringify(filtered));
-  } catch (error) {
-    console.error('Failed to delete saved search:', error);
+  if (storage) {
+    try {
+      storage.setItem(SAVED_SEARCHES_KEY, JSON.stringify(filtered));
+    } catch {
+      // Ignore
+    }
   }
 }
 
@@ -345,16 +363,19 @@ export function deleteSavedSearch(id: string): void {
  * Update last used timestamp for a saved search
  */
 export function updateSavedSearchUsage(id: string): void {
+  const storage = getLocalStorageSafe();
   const saved = getSavedSearches();
   const search = saved.find(s => s.id === id);
 
   if (search) {
     search.lastUsed = Date.now();
 
-    try {
-      localStorage.setItem(SAVED_SEARCHES_KEY, JSON.stringify(saved));
-    } catch (error) {
-      console.error('Failed to update saved search:', error);
+    if (storage) {
+      try {
+        storage.setItem(SAVED_SEARCHES_KEY, JSON.stringify(saved));
+      } catch {
+        // Ignore
+      }
     }
   }
 }

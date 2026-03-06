@@ -99,7 +99,7 @@ function ScoreDisplay({
       )}
     >
       <div className="relative z-10">
-        <div className={cn('text-5xl font-bold', config.color)}>
+        <div className={cn('text-5xl font-bold', config.color)} data-testid="calculator-score">
           {scoreDisplay || score}
         </div>
         <div className={cn('mt-2 flex items-center justify-center gap-2', config.color)}>
@@ -357,7 +357,7 @@ export function CalculatorResult({
   };
 
   return (
-    <div className={cn('space-y-6', className)}>
+    <div className={cn('space-y-6', className)} data-testid="calculator-result">
       {/* Header with copy button */}
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">

@@ -2,34 +2,28 @@
   "community": {
     "title": "Darwin MFC Community",
     "description": "Connect with healthcare professionals worldwide. Share cases, discuss approaches, and find mentors.",
-
     "stats": {
       "members": "Members",
       "discussions": "Discussions",
       "mentors": "Mentors"
     },
-
     "forums": "Forums",
     "recent_discussions": "Recent Discussions",
     "no_discussions": "No discussions yet. Be the first!",
-
     "case": "Case",
     "replies": "replies",
     "views": "views",
-
     "time": {
       "just_now": "just now",
       "minutes_ago": "{count} min ago",
       "hours_ago": "{count}h ago",
       "days_ago": "{count}d ago"
     },
-
     "coming_soon": {
       "title": "Community Under Development",
       "description": "We're building a collaborative community for healthcare professionals. Forums, case discussions, and mentorship program will be available soon!",
       "badge": "Coming Soon"
     },
-
     "categories": {
       "clinical": "Clinical Discussions",
       "clinical_desc": "Questions about diagnosis, treatment, and patient management.",
@@ -40,20 +34,17 @@
       "regional": "Regional",
       "regional_desc": "Country or region-specific discussions."
     },
-
     "mentorship": {
       "title": "Mentorship Program",
       "description": "Connect with experienced professionals for guidance and career development.",
       "mentees": "mentees",
       "connect": "Connect",
       "unavailable": "Unavailable",
-
       "availability": {
         "available": "Available",
         "limited": "Limited",
         "unavailable": "Unavailable"
       },
-
       "specializations": {
         "family_medicine": "Family Medicine",
         "internal_medicine": "Internal Medicine",
@@ -67,7 +58,6 @@
         "other": "Other"
       }
     },
-
     "guidelines": {
       "title": "Community Guidelines",
       "respect": "Be respectful and constructive in discussions",
@@ -75,10 +65,29 @@
       "evidence": "Base your answers on scientific evidence",
       "no_pii": "Never share identifiable patient data"
     },
-
     "free_forever": {
       "title": "100% Free, Forever",
       "description": "Darwin MFC community is and always will be completely free. No subscriptions, no premium features."
+    },
+    "hero_title": "Learn with peers",
+    "auth_required_short": "Sign in to continue",
+    "auth_required_title": "Login required",
+    "auth_required_desc": "Sign in to create a post.",
+    "new_post": "New post",
+    "new_post_desc": "Write a question or discussion for the community.",
+    "select_post": "Select a post",
+    "select_post_desc": "Open a post from the forum.",
+    "post_not_found": "Post not found",
+    "post_not_found_desc": "This post may have been removed.",
+    "no_replies": "No replies yet.",
+    "pinned": "Pinned",
+    "locked": "Locked",
+    "upvote": "Upvote",
+    "post_fields": {
+      "title_label": "Title",
+      "title_placeholder": "e.g. Management of ...",
+      "content_label": "Content",
+      "content_placeholder": "Describe the context, your question, and what you have tried."
     }
   }
 }

@@ -6,7 +6,7 @@
 
 import type { Medicamento } from '@/lib/types/medicamento';
 
-export const medicamentosAnestesia: Partial<Medicamento>[] = [
+const medicamentosAnestesiaRaw: Partial<Medicamento>[] = [
   // ============================================
   // ANESTÉSICOS INALATÓRIOS (5)
   // ============================================
@@ -2016,3 +2016,52 @@ export const medicamentosAnestesia: Partial<Medicamento>[] = [
     tags: ['vasopressor', 'alfa1-agonista', 'vasoconstrictor-puro']
   }
 ];
+
+const normalizeMedicamentoAnestesia = (med: Partial<Medicamento>, fallbackIndex: number): Medicamento => ({
+  id: med.id ?? `anestesia-${fallbackIndex}`,
+  nomeGenerico: med.nomeGenerico ?? 'Medicamento de anestesia',
+  nomesComerciais: med.nomesComerciais ?? [],
+  atcCode: med.atcCode,
+  classeTerapeutica: med.classeTerapeutica ?? 'anestesico',
+  subclasse: med.subclasse,
+  rename: med.rename ?? false,
+  apresentacoes: med.apresentacoes && med.apresentacoes.length > 0
+    ? med.apresentacoes
+    : [{ forma: 'outros', concentracao: 'N/A', disponivelSUS: false }],
+  indicacoes: med.indicacoes ?? ['Não especificada'],
+  mecanismoAcao: med.mecanismoAcao ?? 'Consulta de bula e protocolo recomendada.',
+  posologias: med.posologias && med.posologias.length > 0
+    ? med.posologias
+    : [{ indicacao: 'Não especificado', adultos: { dose: 'N/A', frequencia: 'N/A' } }],
+  contraindicacoes: med.contraindicacoes ?? [],
+  precaucoes: med.precaucoes,
+  efeitosAdversos: {
+    comuns: med.efeitosAdversos?.comuns ?? [],
+    graves: med.efeitosAdversos?.graves,
+  },
+  interacoes: med.interacoes ?? [],
+  gestacao: med.gestacao ?? 'N',
+  amamentacao: med.amamentacao ?? { compativel: false, observacao: 'Consultar bula.' },
+  doencasRelacionadas: med.doencasRelacionadas ?? [],
+  citations: med.citations ?? [{ refId: 'local-reference' }],
+  lastUpdate: med.lastUpdate ?? '2026-03-05',
+  tags: med.tags ?? [],
+  ajusteDoseRenal: med.ajusteDoseRenal,
+  pharmgkb: med.pharmgkb,
+  calculadoras: med.calculadoras,
+  monitorizacao: med.monitorizacao,
+  orientacoesPaciente: med.orientacoesPaciente,
+  consideracoesEspeciais: med.consideracoesEspeciais,
+  regionalOverlays: med.regionalOverlays,
+  rxNormCui: med.rxNormCui,
+  snomedCT: med.snomedCT,
+  loinc: med.loinc,
+  drugBankId: med.drugBankId,
+  anvisaRegistro: med.anvisaRegistro,
+  casNumber: med.casNumber,
+  dcbCode: med.dcbCode,
+});
+
+export const medicamentosAnestesia: Partial<Medicamento>[] = medicamentosAnestesiaRaw.map((med, index) =>
+  normalizeMedicamentoAnestesia(med, index + 1)
+);

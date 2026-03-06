@@ -20,6 +20,9 @@ import {
   TrendingUp,
   Flame,
   BarChart3,
+  AlertTriangle,
+  Brain,
+  Baby,
 } from 'lucide-react';
 import { PathCard } from '@/app/components/Learning';
 import {
@@ -85,9 +88,9 @@ export default function LearnPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-phosphate">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <div className="bg-gradient-to-r from-helix-navy to-adenine-teal text-white">
         <PageContainer className="py-12">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-4">
@@ -97,14 +100,14 @@ export default function LearnPage() {
             {Object.keys(pathProgress).length > 0 && (
               <Link
                 href="/learn/progress"
-                className="flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors text-sm font-medium"
+                className="flex items-center gap-2 px-4 py-2 bg-white/15 hover:bg-white/25 rounded-xl apple-transition-fast text-sm font-semibold"
               >
                 <BarChart3 className="w-4 h-4" />
                 {t('progress.title')}
               </Link>
             )}
           </div>
-          <p className="text-lg text-blue-100 max-w-2xl">
+          <p className="text-lg text-white/80 max-w-2xl">
             {t('description')}
           </p>
 
@@ -113,11 +116,11 @@ export default function LearnPage() {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-lg p-4"
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10"
               >
                 <stat.icon className="w-6 h-6 mb-2 opacity-80" />
                 <div className="text-2xl font-bold">{stat.value}</div>
-                <div className="text-sm text-blue-100">{stat.label}</div>
+                <div className="text-sm text-white/70">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -130,8 +133,8 @@ export default function LearnPage() {
         {inProgressPaths.length > 0 && (
           <section className="mb-8">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                <Flame className="w-5 h-5 text-orange-500" />
+              <h2 className="text-xl font-semibold text-helix-navy dark:text-white flex items-center gap-2">
+                <Flame className="w-5 h-5 text-thymine-gold" />
                 {t('continue_learning')}
               </h2>
             </div>
@@ -151,8 +154,8 @@ export default function LearnPage() {
         {/* All Learning Paths */}
         <section>
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-blue-500" />
+            <h2 className="text-xl font-semibold text-helix-navy dark:text-white flex items-center gap-2">
+              <TrendingUp className="w-5 h-5 text-adenine-teal dark:text-cytosine-cyan" />
               {t('available_paths')}
             </h2>
           </div>
@@ -169,7 +172,7 @@ export default function LearnPage() {
           </div>
 
           {learningPaths.length === 0 && (
-            <div className="text-center py-12 text-gray-500 dark:text-gray-400">
+            <div className="text-center py-12 text-carbon-600 dark:text-carbon-400">
               <BookOpen className="w-12 h-12 mx-auto mb-4 opacity-50" />
               <p>{t('no_paths_available')}</p>
             </div>
@@ -178,7 +181,7 @@ export default function LearnPage() {
 
         {/* Coming Soon */}
         <section className="mt-12">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-xl font-semibold text-helix-navy dark:text-white mb-6">
             {t('coming_soon')}
           </h2>
 
@@ -187,28 +190,28 @@ export default function LearnPage() {
               {
                 title: t('coming.emergency'),
                 description: t('coming.emergency_desc'),
-                icon: '🚨',
+                Icon: AlertTriangle,
               },
               {
                 title: t('coming.mental_health'),
                 description: t('coming.mental_health_desc'),
-                icon: '🧠',
+                Icon: Brain,
               },
               {
                 title: t('coming.pediatrics'),
                 description: t('coming.pediatrics_desc'),
-                icon: '👶',
+                Icon: Baby,
               },
             ].map((item, index) => (
               <div
                 key={index}
-                className="p-6 bg-gray-100 dark:bg-gray-800/50 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700"
+                className="p-6 bg-carbon-100 dark:bg-carbon-900 rounded-2xl border border-carbon-200 dark:border-carbon-800"
               >
-                <div className="text-3xl mb-3">{item.icon}</div>
-                <h3 className="font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <item.Icon className="w-7 h-7 mb-3 text-adenine-teal dark:text-cytosine-cyan" aria-hidden="true" />
+                <h3 className="font-semibold text-helix-navy dark:text-white mb-1">
                   {item.title}
                 </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-carbon-600 dark:text-carbon-400">
                   {item.description}
                 </p>
               </div>
@@ -217,9 +220,9 @@ export default function LearnPage() {
         </section>
 
         {/* Free Forever Banner */}
-        <section className="mt-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-8 text-white text-center">
+        <section className="mt-12 bg-gradient-to-r from-guanine-green to-adenine-teal rounded-3xl p-8 text-white text-center shadow-lg">
           <h3 className="text-2xl font-bold mb-2">{t('free_forever.title')}</h3>
-          <p className="text-green-100 max-w-2xl mx-auto">
+          <p className="text-white/85 max-w-2xl mx-auto">
             {t('free_forever.description')}
           </p>
         </section>

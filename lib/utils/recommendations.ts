@@ -44,10 +44,20 @@ export interface PersonalizedRecommendations {
 
 const STORAGE_KEY = 'darwin-mfc-consultation-history';
 
+function getLocalStorageSafe(): Storage | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    return window.localStorage;
+  } catch {
+    return null;
+  }
+}
+
 /**
  * Salva consulta no histórico
  */
 export function saveConsultationToHistory(soapData: SOAPData): string {
+  const storage = getLocalStorageSafe();
   const history = getConsultationHistory();
   const newId = `consult-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
   
@@ -63,10 +73,12 @@ export function saveConsultationToHistory(soapData: SOAPData): string {
   // Mantém apenas últimas 100 consultas
   const limitedHistory = history.slice(0, 100);
   
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(limitedHistory));
-  } catch (error) {
-    console.error('Erro ao salvar histórico:', error);
+  if (storage) {
+    try {
+      storage.setItem(STORAGE_KEY, JSON.stringify(limitedHistory));
+    } catch {
+      // Ignore storage failures (SSR/export, private browsing, quota, etc.)
+    }
   }
   
   return newId;
@@ -76,15 +88,17 @@ export function saveConsultationToHistory(soapData: SOAPData): string {
  * Recupera histórico de consultas
  */
 export function getConsultationHistory(): ConsultationHistory[] {
+  const storage = getLocalStorageSafe();
+  if (!storage) return [];
+
   try {
-    const stored = localStorage.getItem(STORAGE_KEY);
+    const stored = storage.getItem(STORAGE_KEY);
     if (!stored) return [];
     
     const history = JSON.parse(stored) as ConsultationHistory[];
     // Validar estrutura básica
     return history.filter(h => h.id && h.date && h.soapData);
-  } catch (error) {
-    console.error('Erro ao recuperar histórico:', error);
+  } catch {
     return [];
   }
 }
@@ -93,13 +107,16 @@ export function getConsultationHistory(): ConsultationHistory[] {
  * Remove consulta do histórico
  */
 export function removeConsultationFromHistory(id: string): void {
+  const storage = getLocalStorageSafe();
+  if (!storage) return;
+
   const history = getConsultationHistory();
   const filtered = history.filter(h => h.id !== id);
   
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(filtered));
-  } catch (error) {
-    console.error('Erro ao remover consulta:', error);
+    storage.setItem(STORAGE_KEY, JSON.stringify(filtered));
+  } catch {
+    // Ignore
   }
 }
 
@@ -550,4 +567,3 @@ export function getHistoryStatistics(): {
     } : null,
   };
 }
-

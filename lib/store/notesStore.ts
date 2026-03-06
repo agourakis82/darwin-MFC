@@ -6,6 +6,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { Note, Highlight, NoteCitation, LinkedEntity, NotesState, NotesActions } from '@/lib/types/notes';
+import { ssrSafeJSONStorage } from './persistStorage';
 
 // =============================================================================
 // HELPER FUNCTIONS
@@ -205,6 +206,7 @@ export const useNotesStore = create<NotesStore>()(
     }),
     {
       name: 'darwin-notes-storage',
+      storage: ssrSafeJSONStorage,
       partialize: (state) => ({
         notes: state.notes,
       }),

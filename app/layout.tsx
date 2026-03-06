@@ -1,21 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { defaultLocale } from '@/i18n/config';
 import ThemeProvider from "./components/Layout/ThemeProvider";
 import AuthProvider from "./components/Auth/AuthProvider";
-import Header from "./components/Layout/Header";
-import Sidebar from "./components/Layout/Sidebar";
-import Footer from "./components/Layout/Footer";
-import KeyboardShortcuts from "./components/KeyboardShortcuts";
-import { PWAProvider } from "./components/PWA";
 import { ToastProvider } from "./components/ui/Toast";
-import OfflineIndicator from "./components/PWA/OfflineIndicator";
-import InstallPrompt from "./components/PWA/InstallPrompt";
-import PWAInitializer from "./components/PWA/PWAInitializer";
-import { RouteChangeIndicator } from "@/lib/design-system/animations/page-transitions";
-import { MobileNavigation } from "@/lib/design-system/components/navigation/MobileNavigation";
 
 // NOTE: This root layout is used for pages NOT under [locale]/
 // Pages under [locale]/ have their own layout with Header/Sidebar/Footer
@@ -99,14 +86,11 @@ export const metadata: Metadata = {
   category: "medical",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Provide default locale messages for pages not yet migrated to [locale]
-  const messages = await getMessages({ locale: defaultLocale });
-  
   return (
     <html lang="pt-BR" className="dark" suppressHydrationWarning>
       <head>
@@ -361,46 +345,12 @@ export default async function RootLayout({
         />
       </head>
       <body>
-        <NextIntlClientProvider messages={messages}>
-          <ThemeProvider>
+        <ThemeProvider>
           <AuthProvider>
-          <ToastProvider />
-          <PWAProvider />
-          <PWAInitializer />
-          <OfflineIndicator />
-          <InstallPrompt />
-          <KeyboardShortcuts />
-          <RouteChangeIndicator color="bg-adenine-teal" />
-          {/* Skip links for accessibility */}
-          <a
-            href="#main-content"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg"
-          >
-            Pular para o conteúdo principal
-          </a>
-          <a
-            href="#main-nav"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-64 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg"
-          >
-            Pular para navegação
-          </a>
-
-          <div className="min-h-screen flex flex-col">
-            <Header />
-            <div className="flex flex-1">
-              <div className="hidden lg:block">
-                <Sidebar />
-              </div>
-              <main id="main-content" className="flex-1 overflow-x-hidden" role="main" aria-label="Conteúdo principal">
-                {children}
-              </main>
-            </div>
-            <Footer />
-            <MobileNavigation />
-          </div>
+            <ToastProvider />
+            {children}
           </AuthProvider>
         </ThemeProvider>
-        </NextIntlClientProvider>
       </body>
     </html>
   );

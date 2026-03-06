@@ -82,10 +82,15 @@ export const commonVariants = {
 export const clinicalVariants = {
   // Severity levels
   severity: {
-    critical: 'bg-clinical-critical text-white border-clinical-critical',
-    warning: 'bg-clinical-warning text-black border-clinical-warning',
-    safe: 'bg-clinical-safe text-white border-clinical-safe',
-    info: 'bg-clinical-info text-white border-clinical-info',
+    // NOTE: keep aligned with packages/design-tokens/tailwind.css
+    critical:
+      'bg-clinical-critical-base text-clinical-critical-foreground border-clinical-critical-base',
+    warning:
+      'bg-clinical-warning-base text-clinical-warning-foreground border-clinical-warning-base',
+    safe:
+      'bg-clinical-safe-base text-clinical-safe-foreground border-clinical-safe-base',
+    info:
+      'bg-clinical-info-base text-clinical-info-foreground border-clinical-info-base',
   },
 
   // Evidence strength levels

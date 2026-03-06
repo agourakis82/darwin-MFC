@@ -13,7 +13,6 @@ import { useTranslations } from 'next-intl';
 import {
   Users,
   Search,
-  Filter,
   ChevronRight,
   ChevronLeft,
   Star,
@@ -23,7 +22,6 @@ import {
   CheckCircle2,
   Clock,
   AlertCircle,
-  Loader2,
   Sparkles,
 } from 'lucide-react';
 import type {
@@ -33,6 +31,8 @@ import type {
   MentorshipRequest,
 } from '@/lib/types/community';
 import { localeNames } from '@/i18n/config';
+import { Button } from '@/lib/design-system/primitives/button';
+import { cn } from '@/lib/utils';
 
 // =============================================================================
 // PROPS
@@ -190,21 +190,18 @@ export function MatchingWizard({
   if (success) {
     return (
       <div className="text-center py-12">
-        <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-          <CheckCircle2 className="w-8 h-8 text-green-600 dark:text-green-400" />
+        <div className="w-16 h-16 bg-guanine-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <CheckCircle2 className="w-8 h-8 text-guanine-green" />
         </div>
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+        <h3 className="text-xl font-semibold text-carbon-900 dark:text-carbon-100 mb-2">
           {t('request_sent')}
         </h3>
-        <p className="text-gray-600 dark:text-gray-400 mb-6">
+        <p className="text-carbon-600 dark:text-carbon-400 mb-6">
           {t('request_sent_desc', { mentor: selectedMentor?.displayName || '' })}
         </p>
-        <button
-          onClick={onClose}
-          className="px-6 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
-        >
+        <Button type="button" variant="safe" onClick={onClose}>
           {t('done')}
-        </button>
+        </Button>
       </div>
     );
   }
@@ -218,10 +215,10 @@ export function MatchingWizard({
             <div
               className={`w-10 h-10 rounded-full flex items-center justify-center font-medium transition-colors ${
                 step === s
-                  ? 'bg-purple-600 text-white'
+                  ? 'bg-brand-primary-600 text-white'
                   : s < step
-                  ? 'bg-green-600 text-white'
-                  : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400'
+                  ? 'bg-clinical-safe-base text-clinical-safe-foreground'
+                  : 'bg-carbon-200 dark:bg-carbon-800 text-carbon-600 dark:text-carbon-400'
               }`}
             >
               {s < step ? <CheckCircle2 className="w-5 h-5" /> : s}
@@ -229,7 +226,7 @@ export function MatchingWizard({
             {s < 3 && (
               <div
                 className={`w-16 h-1 rounded ${
-                  s < step ? 'bg-green-600' : 'bg-gray-200 dark:bg-gray-700'
+                  s < step ? 'bg-clinical-safe-base' : 'bg-carbon-200 dark:bg-carbon-800'
                 }`}
               />
             )}
@@ -241,20 +238,20 @@ export function MatchingWizard({
       {step === 1 && (
         <div className="space-y-6">
           <div className="text-center mb-6">
-            <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
-              <Sparkles className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+            <div className="w-12 h-12 bg-brand-primary-100 dark:bg-brand-primary-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
+              <Sparkles className="w-6 h-6 text-brand-primary-600 dark:text-brand-primary-300" />
             </div>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-xl font-semibold text-carbon-900 dark:text-carbon-100">
               {t('step1_title')}
             </h2>
-            <p className="text-gray-500 dark:text-gray-400">
+            <p className="text-carbon-500 dark:text-carbon-400">
               {t('step1_desc')}
             </p>
           </div>
 
           {/* Specialization */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+            <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-3">
               <BookOpen className="w-4 h-4 inline mr-1" />
               {t('field_specialization')}
             </label>
@@ -266,11 +263,13 @@ export function MatchingWizard({
                   onClick={() =>
                     setSelectedSpecialization(selectedSpecialization === spec ? null : spec)
                   }
-                  className={`p-3 rounded-lg border text-sm font-medium transition-colors ${
+                  className={cn(
+                    'p-3 rounded-xl border text-sm font-medium transition-colors',
+                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary-500 focus-visible:ring-offset-2',
                     selectedSpecialization === spec
-                      ? 'border-purple-500 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300'
-                      : 'border-gray-200 dark:border-gray-700 hover:border-purple-300 text-gray-700 dark:text-gray-300'
-                  }`}
+                      ? 'border-brand-primary-500 bg-brand-primary-50/80 dark:bg-brand-primary-900/20 text-brand-primary-700 dark:text-brand-primary-200'
+                      : 'border-carbon-200/70 dark:border-carbon-800/70 hover:border-brand-primary-300 text-carbon-700 dark:text-carbon-200 bg-white/60 dark:bg-carbon-900/40 hover:bg-carbon-50 dark:hover:bg-carbon-900/60'
+                  )}
                 >
                   {t(`specialization.${spec}`)}
                 </button>
@@ -280,7 +279,7 @@ export function MatchingWizard({
 
           {/* Languages */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+            <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-3">
               <Globe className="w-4 h-4 inline mr-1" />
               {t('field_languages')}
             </label>
@@ -290,11 +289,13 @@ export function MatchingWizard({
                   key={lang}
                   type="button"
                   onClick={() => toggleLanguage(lang)}
-                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                  className={cn(
+                    'px-3 py-1.5 rounded-full text-sm font-medium transition-colors',
+                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary-500 focus-visible:ring-offset-2',
                     selectedLanguages.includes(lang)
-                      ? 'bg-purple-600 text-white'
-                      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-                  }`}
+                      ? 'bg-brand-primary-600 text-white'
+                      : 'bg-carbon-100 dark:bg-carbon-900/40 text-carbon-700 dark:text-carbon-200 hover:bg-carbon-200 dark:hover:bg-carbon-800/60'
+                  )}
                 >
                   {localeNames[lang as keyof typeof localeNames] || lang}
                 </button>
@@ -304,7 +305,7 @@ export function MatchingWizard({
 
           {/* Experience Filter (optional) */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+            <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-3">
               <Users className="w-4 h-4 inline mr-1" />
               {t('field_experience')}
             </label>
@@ -312,11 +313,13 @@ export function MatchingWizard({
               <button
                 type="button"
                 onClick={() => setExperienceFilter(null)}
-                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                className={cn(
+                  'px-3 py-1.5 rounded-xl text-sm font-medium transition-colors',
+                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary-500 focus-visible:ring-offset-2',
                   experienceFilter === null
-                    ? 'bg-purple-600 text-white'
-                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-                }`}
+                    ? 'bg-brand-primary-600 text-white'
+                    : 'bg-carbon-100 dark:bg-carbon-900/40 text-carbon-700 dark:text-carbon-200 hover:bg-carbon-200 dark:hover:bg-carbon-800/60'
+                )}
               >
                 {t('any')}
               </button>
@@ -327,11 +330,13 @@ export function MatchingWizard({
                   onClick={() =>
                     setExperienceFilter(experienceFilter === level ? null : level)
                   }
-                  className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                  className={cn(
+                    'px-3 py-1.5 rounded-xl text-sm font-medium transition-colors',
+                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary-500 focus-visible:ring-offset-2',
                     experienceFilter === level
-                      ? 'bg-purple-600 text-white'
-                      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-                  }`}
+                      ? 'bg-brand-primary-600 text-white'
+                      : 'bg-carbon-100 dark:bg-carbon-900/40 text-carbon-700 dark:text-carbon-200 hover:bg-carbon-200 dark:hover:bg-carbon-800/60'
+                  )}
                 >
                   {t(`experience.${level}`)}
                 </button>
@@ -341,22 +346,18 @@ export function MatchingWizard({
 
           <div className="flex justify-between pt-4">
             {onClose && (
-              <button
-                type="button"
-                onClick={onClose}
-                className="px-6 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
-              >
+              <Button type="button" variant="outline" onClick={onClose}>
                 {t('cancel')}
-              </button>
+              </Button>
             )}
-            <button
+            <Button
               type="button"
               onClick={() => setStep(2)}
-              className="ml-auto flex items-center gap-2 px-6 py-2 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-colors"
+              className="ml-auto"
+              iconAfter={<ChevronRight className="w-4 h-4" />}
             >
               {t('find_mentors')}
-              <ChevronRight className="w-4 h-4" />
-            </button>
+            </Button>
           </div>
         </div>
       )}
@@ -365,10 +366,10 @@ export function MatchingWizard({
       {step === 2 && (
         <div className="space-y-6">
           <div className="text-center mb-6">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-xl font-semibold text-carbon-900 dark:text-carbon-100">
               {t('step2_title')}
             </h2>
-            <p className="text-gray-500 dark:text-gray-400">
+            <p className="text-carbon-500 dark:text-carbon-400">
               {t('step2_desc', { count: matchedMentors.length })}
             </p>
           </div>
@@ -376,17 +377,17 @@ export function MatchingWizard({
           {/* Results */}
           {matchedMentors.length === 0 ? (
             <div className="text-center py-12">
-              <Search className="w-12 h-12 text-gray-400 mx-auto mb-3" />
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
+              <Search className="w-12 h-12 text-carbon-400 mx-auto mb-3" />
+              <h3 className="text-lg font-medium text-carbon-900 dark:text-carbon-100 mb-2">
                 {t('no_mentors_found')}
               </h3>
-              <p className="text-gray-500 dark:text-gray-400">
+              <p className="text-carbon-500 dark:text-carbon-400">
                 {t('no_mentors_found_desc')}
               </p>
               <button
                 type="button"
                 onClick={() => setStep(1)}
-                className="mt-4 px-4 py-2 text-purple-600 dark:text-purple-400 hover:underline"
+                className="mt-4 px-4 py-2 text-brand-primary-600 dark:text-brand-primary-400 hover:underline"
               >
                 {t('adjust_filters')}
               </button>
@@ -398,45 +399,47 @@ export function MatchingWizard({
                   key={mentor.id}
                   type="button"
                   onClick={() => setSelectedMentor(mentor)}
-                  className={`w-full text-left p-4 rounded-xl border transition-all ${
+                  className={cn(
+                    'w-full text-left p-4 rounded-2xl border transition-all',
+                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary-500 focus-visible:ring-offset-2',
                     selectedMentor?.id === mentor.id
-                      ? 'border-purple-500 bg-purple-50 dark:bg-purple-900/20 ring-2 ring-purple-500'
-                      : 'border-gray-200 dark:border-gray-700 hover:border-purple-300 bg-white dark:bg-gray-800'
-                  }`}
+                      ? 'border-brand-primary-500 bg-brand-primary-50/70 dark:bg-brand-primary-900/10 ring-2 ring-brand-primary-500'
+                      : 'border-carbon-200 dark:border-carbon-800 hover:border-brand-primary-300 bg-white/70 dark:bg-carbon-900/30'
+                  )}
                 >
                   <div className="flex items-start gap-4">
                     {/* Avatar */}
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-bold flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-primary-600 to-brand-secondary-600 flex items-center justify-center text-white font-bold flex-shrink-0">
                       {mentor.displayName.charAt(0).toUpperCase()}
                     </div>
 
                     {/* Info */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
-                        <h4 className="font-medium text-gray-900 dark:text-white">
+                        <h4 className="font-medium text-carbon-900 dark:text-carbon-100">
                           {mentor.displayName}
                         </h4>
                         {mentor.mentorAvailability === 'available' ? (
-                          <span className="px-2 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs rounded-full">
+                          <span className="px-2 py-0.5 bg-clinical-safe-base/10 text-clinical-safe-base text-xs rounded-full">
                             {t('available')}
                           </span>
                         ) : (
-                          <span className="px-2 py-0.5 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 text-xs rounded-full">
+                          <span className="px-2 py-0.5 bg-clinical-warning-base/10 text-clinical-warning-base text-xs rounded-full">
                             {t('limited')}
                           </span>
                         )}
                       </div>
 
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                      <p className="text-sm text-carbon-600 dark:text-carbon-400 mt-1">
                         {mentor.mentorSpecializations
                           .map((s) => t(`specialization.${s}`))
                           .join(', ')}
                       </p>
 
-                      <div className="flex items-center gap-4 mt-2 text-sm text-gray-500 dark:text-gray-400">
+                      <div className="flex items-center gap-4 mt-2 text-sm text-carbon-500 dark:text-carbon-400">
                         {mentor.mentorRating && (
                           <span className="flex items-center gap-1">
-                            <Star className="w-4 h-4 text-yellow-500" />
+                            <Star className="w-4 h-4 text-thymine-gold" />
                             {mentor.mentorRating.toFixed(1)}
                           </span>
                         )}
@@ -453,12 +456,12 @@ export function MatchingWizard({
 
                     {/* Check */}
                     {selectedMentor?.id === mentor.id && (
-                      <CheckCircle2 className="w-6 h-6 text-purple-600 flex-shrink-0" />
+                      <CheckCircle2 className="w-6 h-6 text-brand-primary-600 flex-shrink-0" />
                     )}
                   </div>
 
                   {mentor.mentorBio && (
-                    <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                    <p className="mt-3 text-sm text-carbon-600 dark:text-carbon-400 line-clamp-2">
                       {mentor.mentorBio}
                     </p>
                   )}
@@ -468,23 +471,22 @@ export function MatchingWizard({
           )}
 
           <div className="flex justify-between pt-4">
-            <button
+            <Button
               type="button"
               onClick={() => setStep(1)}
-              className="flex items-center gap-2 px-6 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
+              variant="outline"
+              iconBefore={<ChevronLeft className="w-4 h-4" />}
             >
-              <ChevronLeft className="w-4 h-4" />
               {t('back')}
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
               onClick={() => setStep(3)}
               disabled={!selectedMentor}
-              className="flex items-center gap-2 px-6 py-2 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+              iconAfter={<ChevronRight className="w-4 h-4" />}
             >
               {t('continue')}
-              <ChevronRight className="w-4 h-4" />
-            </button>
+            </Button>
           </div>
         </div>
       )}
@@ -493,30 +495,30 @@ export function MatchingWizard({
       {step === 3 && selectedMentor && (
         <div className="space-y-6">
           <div className="text-center mb-6">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-xl font-semibold text-carbon-900 dark:text-carbon-100">
               {t('step3_title')}
             </h2>
-            <p className="text-gray-500 dark:text-gray-400">
+            <p className="text-carbon-500 dark:text-carbon-400">
               {t('step3_desc')}
             </p>
           </div>
 
           {/* Selected Mentor Card */}
-          <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+          <div className="bg-carbon-50/70 dark:bg-carbon-900/30 rounded-2xl p-4 border border-carbon-200/70 dark:border-carbon-800/70">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white text-2xl font-bold">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-primary-600 to-brand-secondary-600 flex items-center justify-center text-white text-2xl font-bold">
                 {selectedMentor.displayName.charAt(0).toUpperCase()}
               </div>
               <div>
-                <h4 className="text-lg font-medium text-gray-900 dark:text-white">
+                <h4 className="text-lg font-medium text-carbon-900 dark:text-carbon-100">
                   {selectedMentor.displayName}
                 </h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-carbon-600 dark:text-carbon-400">
                   {selectedMentor.mentorSpecializations
                     .map((s) => t(`specialization.${s}`))
                     .join(', ')}
                 </p>
-                <div className="flex items-center gap-2 mt-1 text-sm text-gray-500 dark:text-gray-400">
+                <div className="flex items-center gap-2 mt-1 text-sm text-carbon-500 dark:text-carbon-400">
                   <Globe className="w-4 h-4" />
                   {selectedMentor.mentorLanguages
                     .map((l) => localeNames[l as keyof typeof localeNames] || l)
@@ -528,7 +530,7 @@ export function MatchingWizard({
 
           {/* Message */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-2">
               <MessageSquare className="w-4 h-4 inline mr-1" />
               {t('field_message')} *
             </label>
@@ -537,19 +539,19 @@ export function MatchingWizard({
               onChange={(e) => setRequestMessage(e.target.value)}
               placeholder={t('placeholder_message')}
               rows={5}
-              className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white resize-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-3 border border-carbon-300 dark:border-carbon-700 rounded-xl bg-paper-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 resize-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary-500 focus-visible:ring-offset-2"
               maxLength={1000}
             />
-            <p className="text-xs text-gray-500 mt-1">
+            <p className="text-xs text-carbon-500 mt-1">
               {requestMessage.length}/1000 {t('characters')}
             </p>
           </div>
 
           {/* Info */}
-          <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+          <div className="p-4 bg-brand-secondary-50/70 dark:bg-brand-secondary-900/10 border border-brand-secondary-200/70 dark:border-brand-secondary-800/70 rounded-xl">
             <div className="flex items-start gap-3">
-              <Clock className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-blue-700 dark:text-blue-300">
+              <Clock className="w-5 h-5 text-brand-secondary-600 dark:text-brand-secondary-400 flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-brand-secondary-700 dark:text-brand-secondary-200">
                 {t('response_time_notice')}
               </p>
             </div>
@@ -557,43 +559,34 @@ export function MatchingWizard({
 
           {/* Error */}
           {error && (
-            <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+            <div className="p-4 bg-critical-red-50/70 dark:bg-critical-red-900/10 border border-critical-red-200 dark:border-critical-red-800 rounded-xl">
               <div className="flex items-center gap-2">
-                <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-400" />
-                <p className="text-red-700 dark:text-red-400">{error}</p>
+                <AlertCircle className="w-5 h-5 text-critical-red-600 dark:text-critical-red-400" />
+                <p className="text-critical-red-700 dark:text-critical-red-300">{error}</p>
               </div>
             </div>
           )}
 
           {/* Actions */}
           <div className="flex justify-between pt-4">
-            <button
+            <Button
               type="button"
               onClick={() => setStep(2)}
               disabled={isSubmitting}
-              className="flex items-center gap-2 px-6 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
+              variant="outline"
+              iconBefore={<ChevronLeft className="w-4 h-4" />}
             >
-              <ChevronLeft className="w-4 h-4" />
               {t('back')}
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
               onClick={handleSubmit}
               disabled={!requestMessage.trim() || isSubmitting}
-              className="flex items-center gap-2 px-6 py-2 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+              loading={isSubmitting}
+              iconBefore={<MessageSquare className="w-4 h-4" />}
             >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  {t('sending')}
-                </>
-              ) : (
-                <>
-                  <MessageSquare className="w-4 h-4" />
-                  {t('send_request')}
-                </>
-              )}
-            </button>
+              {isSubmitting ? t('sending') : t('send_request')}
+            </Button>
           </div>
         </div>
       )}

@@ -2,34 +2,28 @@
   "community": {
     "title": "Darwin MFC 社区",
     "description": "与全球医疗专业人员建立联系。分享病例、讨论方法、寻找导师。",
-
     "stats": {
       "members": "成员",
       "discussions": "讨论",
       "mentors": "导师"
     },
-
     "forums": "论坛",
     "recent_discussions": "最近讨论",
     "no_discussions": "还没有讨论。成为第一个！",
-
     "case": "病例",
     "replies": "回复",
     "views": "浏览",
-
     "time": {
       "just_now": "刚刚",
       "minutes_ago": "{count}分钟前",
       "hours_ago": "{count}小时前",
       "days_ago": "{count}天前"
     },
-
     "coming_soon": {
       "title": "社区正在开发中",
       "description": "我们正在为医疗专业人员建设一个协作社区。论坛、病例讨论和导师计划即将推出！",
       "badge": "即将推出"
     },
-
     "categories": {
       "clinical": "临床讨论",
       "clinical_desc": "关于诊断、治疗和患者管理的问题。",
@@ -40,20 +34,17 @@
       "regional": "区域",
       "regional_desc": "特定国家或地区的讨论。"
     },
-
     "mentorship": {
       "title": "导师计划",
       "description": "与经验丰富的专业人员联系，获得指导和职业发展。",
       "mentees": "学员",
       "connect": "联系",
       "unavailable": "不可用",
-
       "availability": {
         "available": "可用",
         "limited": "有限",
         "unavailable": "不可用"
       },
-
       "specializations": {
         "family_medicine": "家庭医学",
         "internal_medicine": "内科",
@@ -67,7 +58,6 @@
         "other": "其他"
       }
     },
-
     "guidelines": {
       "title": "社区准则",
       "respect": "在讨论中保持尊重和建设性",
@@ -75,10 +65,29 @@
       "evidence": "以科学证据为基础作答",
       "no_pii": "切勿分享可识别的患者数据"
     },
-
     "free_forever": {
       "title": "100%免费，永远",
       "description": "Darwin MFC社区永远完全免费。没有订阅，没有付费功能。"
+    },
+    "hero_title": "与社区一起学习",
+    "auth_required_short": "登录以继续",
+    "auth_required_title": "需要登录",
+    "auth_required_desc": "登录后即可创建帖子。",
+    "new_post": "新帖子",
+    "new_post_desc": "为社区写下一个问题或讨论。",
+    "select_post": "选择一个帖子",
+    "select_post_desc": "从论坛打开一个帖子。",
+    "post_not_found": "未找到帖子",
+    "post_not_found_desc": "该帖子可能已被删除。",
+    "no_replies": "暂无回复。",
+    "pinned": "置顶",
+    "locked": "已锁定",
+    "upvote": "点赞",
+    "post_fields": {
+      "title_label": "标题",
+      "title_placeholder": "例如：处理 ...",
+      "content_label": "内容",
+      "content_placeholder": "描述背景、你的问题，以及你已经尝试过的内容。"
     }
   }
 }

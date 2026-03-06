@@ -43,30 +43,30 @@ export function CaseCard({ casePost, compact = false }: CaseCardProps) {
   const getCaseTypeColor = (type: CaseType) => {
     switch (type) {
       case 'diagnostic_challenge':
-        return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300';
+        return 'bg-clinical-info-base/10 text-clinical-info-base';
       case 'treatment_decision':
-        return 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300';
+        return 'bg-clinical-safe-base/10 text-clinical-safe-base';
       case 'management_dilemma':
-        return 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300';
+        return 'bg-clinical-warning-base/10 text-clinical-warning-base';
       case 'ethical_question':
-        return 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300';
+        return 'bg-brand-secondary-50/80 dark:bg-brand-secondary-900/15 text-brand-secondary-700 dark:text-brand-secondary-200';
       case 'educational':
-        return 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300';
+        return 'bg-brand-primary-50/80 dark:bg-brand-primary-900/15 text-brand-primary-700 dark:text-brand-primary-200';
       default:
-        return 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300';
+        return 'bg-carbon-100 dark:bg-carbon-900/40 text-carbon-700 dark:text-carbon-200';
     }
   };
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'straightforward':
-        return 'text-green-600 dark:text-green-400';
+        return 'text-clinical-safe-base';
       case 'moderate':
-        return 'text-amber-600 dark:text-amber-400';
+        return 'text-clinical-warning-base';
       case 'complex':
-        return 'text-red-600 dark:text-red-400';
+        return 'text-clinical-critical-base';
       default:
-        return 'text-gray-600 dark:text-gray-400';
+        return 'text-carbon-600 dark:text-carbon-400';
     }
   };
 
@@ -75,7 +75,7 @@ export function CaseCard({ casePost, compact = false }: CaseCardProps) {
       case 'peer_reviewed':
       case 'published':
         return (
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs rounded-full">
+          <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-clinical-safe-base/10 text-clinical-safe-base text-xs rounded-full">
             <CheckCircle2 className="w-3 h-3" />
             {t('status.verified')}
           </span>
@@ -83,7 +83,7 @@ export function CaseCard({ casePost, compact = false }: CaseCardProps) {
       case 'pending':
       case 'auto_anonymized':
         return (
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 text-xs rounded-full">
+          <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-clinical-warning-base/10 text-clinical-warning-base text-xs rounded-full">
             <Clock className="w-3 h-3" />
             {t('status.pending_review')}
           </span>
@@ -102,18 +102,18 @@ export function CaseCard({ casePost, compact = false }: CaseCardProps) {
   if (compact) {
     return (
       <Link
-        href={`/community/cases/${casePost.id}`}
-        className="block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4 hover:border-green-300 dark:hover:border-green-600 transition-all hover:shadow-md"
+        href={`/community/cases?id=${encodeURIComponent(casePost.id)}`}
+        className="block card-darwin p-4 hover:border-clinical-safe-base apple-transition"
       >
         <div className="flex items-start gap-3">
-          <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-            <FileText className="w-5 h-5 text-green-600 dark:text-green-400" />
+          <div className="p-2 bg-guanine-green/10 rounded-lg">
+            <FileText className="w-5 h-5 text-guanine-green" />
           </div>
           <div className="flex-1 min-w-0">
-            <h3 className="font-medium text-gray-900 dark:text-white truncate">
+            <h3 className="font-medium text-carbon-900 dark:text-carbon-100 truncate">
               {casePost.title}
             </h3>
-            <div className="flex items-center gap-2 mt-1 text-sm text-gray-500 dark:text-gray-400">
+            <div className="flex items-center gap-2 mt-1 text-sm text-carbon-500 dark:text-carbon-400">
               <span>{formatAgeRange(caseData.ageRange)}</span>
               <span>•</span>
               <span>{caseData.sex === 'M' ? t('male') : caseData.sex === 'F' ? t('female') : t('other')}</span>
@@ -130,11 +130,11 @@ export function CaseCard({ casePost, compact = false }: CaseCardProps) {
 
   return (
     <Link
-      href={`/community/cases/${casePost.id}`}
-      className="block bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-green-300 dark:hover:border-green-600 transition-all hover:shadow-lg"
+      href={`/community/cases?id=${encodeURIComponent(casePost.id)}`}
+      className="block card-darwin rounded-2xl overflow-hidden hover:border-clinical-safe-base apple-transition"
     >
       {/* Header */}
-      <div className="p-5 border-b border-gray-200 dark:border-gray-700">
+      <div className="p-5 border-b border-carbon-200 dark:border-carbon-800">
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1">
             <div className="flex items-center gap-2 flex-wrap mb-2">
@@ -143,39 +143,39 @@ export function CaseCard({ casePost, compact = false }: CaseCardProps) {
               </span>
               {getAnonymizationBadge()}
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            <h3 className="text-lg font-semibold text-carbon-900 dark:text-carbon-100">
               {casePost.title}
             </h3>
           </div>
-          <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-xl">
-            <FileText className="w-6 h-6 text-green-600 dark:text-green-400" />
+          <div className="p-3 bg-guanine-green/10 rounded-xl">
+            <FileText className="w-6 h-6 text-guanine-green" />
           </div>
         </div>
       </div>
 
       {/* Patient Info */}
-      <div className="p-5 bg-gray-50 dark:bg-gray-800/50">
+      <div className="p-5 bg-carbon-50/70 dark:bg-carbon-900/30">
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
-            <div className="flex items-center justify-center gap-1 text-gray-500 dark:text-gray-400 mb-1">
+            <div className="flex items-center justify-center gap-1 text-carbon-500 dark:text-carbon-400 mb-1">
               <Calendar className="w-4 h-4" />
               <span className="text-xs">{t('age')}</span>
             </div>
-            <p className="font-medium text-gray-900 dark:text-white">
+            <p className="font-medium text-carbon-900 dark:text-carbon-100">
               {formatAgeRange(caseData.ageRange)}
             </p>
           </div>
           <div>
-            <div className="flex items-center justify-center gap-1 text-gray-500 dark:text-gray-400 mb-1">
+            <div className="flex items-center justify-center gap-1 text-carbon-500 dark:text-carbon-400 mb-1">
               <User className="w-4 h-4" />
               <span className="text-xs">{t('sex')}</span>
             </div>
-            <p className="font-medium text-gray-900 dark:text-white">
+            <p className="font-medium text-carbon-900 dark:text-carbon-100">
               {caseData.sex === 'M' ? t('male') : caseData.sex === 'F' ? t('female') : t('other')}
             </p>
           </div>
           <div>
-            <div className="flex items-center justify-center gap-1 text-gray-500 dark:text-gray-400 mb-1">
+            <div className="flex items-center justify-center gap-1 text-carbon-500 dark:text-carbon-400 mb-1">
               <AlertTriangle className="w-4 h-4" />
               <span className="text-xs">{t('difficulty_label')}</span>
             </div>
@@ -188,24 +188,24 @@ export function CaseCard({ casePost, compact = false }: CaseCardProps) {
 
       {/* Presentation Preview */}
       <div className="p-5">
-        <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-3">
+        <p className="text-sm text-carbon-600 dark:text-carbon-400 line-clamp-3">
           {caseData.presentation}
         </p>
 
         {/* Diagnosis Codes */}
         {caseData.diagnosisCodes.length > 0 && (
           <div className="flex items-center gap-2 mt-4 flex-wrap">
-            <Tag className="w-4 h-4 text-gray-400" />
+            <Tag className="w-4 h-4 text-carbon-400" />
             {caseData.diagnosisCodes.slice(0, 3).map((code) => (
               <span
                 key={code}
-                className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs rounded"
+                className="px-2 py-0.5 bg-carbon-100 dark:bg-carbon-800/60 text-carbon-600 dark:text-carbon-300 text-xs rounded"
               >
                 {code}
               </span>
             ))}
             {caseData.diagnosisCodes.length > 3 && (
-              <span className="text-xs text-gray-500">
+              <span className="text-xs text-carbon-500">
                 +{caseData.diagnosisCodes.length - 3}
               </span>
             )}
@@ -214,7 +214,7 @@ export function CaseCard({ casePost, compact = false }: CaseCardProps) {
       </div>
 
       {/* Footer */}
-      <div className="px-5 py-3 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+      <div className="px-5 py-3 border-t border-carbon-200 dark:border-carbon-800 flex items-center justify-between text-sm text-carbon-500 dark:text-carbon-400">
         <div className="flex items-center gap-4">
           <span className="flex items-center gap-1">
             <MessageSquare className="w-4 h-4" />

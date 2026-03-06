@@ -4,9 +4,9 @@
  */
 import React from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
-import { Card, Text, Button, ProgressBar } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../../contexts/ThemeContext';
+import { Button, Card, ProgressBar, Text } from '../../src/ui';
 
 interface StudyModule {
   id: string;
@@ -30,33 +30,37 @@ export default function EstudoScreen() {
   const renderModule = (module: StudyModule) => (
     <Card
       key={module.id}
-      style={[styles.moduleCard, { backgroundColor: colors.surface }]}
-      mode="elevated"
+      variant="elevated"
+      padding={16}
+      style={styles.moduleCard}
     >
-      <Card.Content>
-        <Text variant="titleMedium" style={[styles.moduleTitle, { color: colors.text }]}>
-          {module.title}
-        </Text>
-        <Text variant="bodySmall" style={{ color: colors.text, opacity: 0.7, marginBottom: 12 }}>
-          {module.description}
-        </Text>
-        <ProgressBar
-          progress={module.progress}
-          color={colors.primary}
-          style={styles.progressBar}
+      <Text variant="titleMedium" style={[styles.moduleTitle, { color: colors.text }]}>
+        {module.title}
+      </Text>
+      <Text variant="bodySmall" style={{ color: colors.text, opacity: 0.7, marginBottom: 12 }}>
+        {module.description}
+      </Text>
+      <ProgressBar progress={module.progress} style={styles.progressBar} />
+      <Text variant="bodySmall" style={{ color: colors.text, marginTop: 8 }}>
+        {module.completedItems}/{module.totalItems} itens ({Math.round(module.progress * 100)}%)
+      </Text>
+
+      <View style={styles.moduleActions}>
+        <Button
+          title="Flashcards"
+          variant="outline"
+          size="sm"
+          containerStyle={{ flex: 1 }}
+          onPress={() => {}}
         />
-        <Text variant="bodySmall" style={{ color: colors.text, marginTop: 8 }}>
-          {module.completedItems}/{module.totalItems} itens ({Math.round(module.progress * 100)}%)
-        </Text>
-      </Card.Content>
-      <Card.Actions>
-        <Button mode="text" textColor={colors.primary}>
-          Flashcards
-        </Button>
-        <Button mode="contained" buttonColor={colors.primary}>
-          Quiz
-        </Button>
-      </Card.Actions>
+        <Button
+          title="Quiz"
+          variant="primary"
+          size="sm"
+          containerStyle={{ flex: 1 }}
+          onPress={() => {}}
+        />
+      </View>
     </Card>
   );
 
@@ -69,17 +73,25 @@ export default function EstudoScreen() {
 
         {/* Quick Stats */}
         <View style={styles.statsRow}>
-          <Card style={[styles.statCard, { backgroundColor: colors.primary }]}>
-            <Card.Content style={styles.statContent}>
+          <Card
+            variant="elevated"
+            padding={16}
+            style={[styles.statCard, { backgroundColor: colors.primary, borderWidth: 0 }]}
+          >
+            <View style={styles.statContent}>
               <Text variant="headlineMedium" style={styles.statValue}>7</Text>
               <Text variant="bodySmall" style={styles.statLabel}>Dias seguidos</Text>
-            </Card.Content>
+            </View>
           </Card>
-          <Card style={[styles.statCard, { backgroundColor: colors.accent }]}>
-            <Card.Content style={styles.statContent}>
+          <Card
+            variant="elevated"
+            padding={16}
+            style={[styles.statCard, { backgroundColor: colors.accent, borderWidth: 0 }]}
+          >
+            <View style={styles.statContent}>
               <Text variant="headlineMedium" style={styles.statValue}>92%</Text>
               <Text variant="bodySmall" style={styles.statLabel}>Média Quiz</Text>
-            </Card.Content>
+            </View>
           </Card>
         </View>
 
@@ -99,6 +111,7 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     padding: 16,
+    paddingBottom: 120,
   },
   title: {
     fontWeight: 'bold',
@@ -130,13 +143,16 @@ const styles = StyleSheet.create({
   },
   moduleCard: {
     marginBottom: 12,
-    borderRadius: 12,
   },
   moduleTitle: {
     fontWeight: '600',
   },
   progressBar: {
-    height: 8,
-    borderRadius: 4,
+    marginTop: 2,
+  },
+  moduleActions: {
+    marginTop: 14,
+    flexDirection: 'row',
+    gap: 10,
   },
 });

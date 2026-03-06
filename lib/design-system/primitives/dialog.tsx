@@ -60,9 +60,9 @@ const contentVariants = cva(
     'fixed left-[50%] top-[50%] z-50',
     'translate-x-[-50%] translate-y-[-50%]',
     'w-full max-h-[90vh] overflow-y-auto',
-    'bg-white dark:bg-neutral-900',
-    'border border-neutral-200 dark:border-neutral-800',
-    'shadow-lg',
+    'bg-paper-white dark:bg-carbon-900',
+    'border border-carbon-200 dark:border-carbon-800',
+    'shadow-deep',
     'duration-200',
     'data-[state=open]:animate-in data-[state=closed]:animate-out',
     'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
@@ -84,10 +84,12 @@ const contentVariants = cva(
       },
       variant: {
         default: '',
-        glass: 'bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border-white/20 dark:border-neutral-700/20',
-        critical: 'border-l-4 border-l-red-600 bg-red-50 dark:bg-red-900/20',
-        warning: 'border-l-4 border-l-amber-600 bg-amber-50 dark:bg-amber-900/20',
-        success: 'border-l-4 border-l-green-600 bg-green-50 dark:bg-green-900/20',
+        // Uses global glass vars so "Reduce transparency" can make it solid.
+        glass:
+          'bg-[var(--darwin-glass-bg)] dark:bg-[var(--darwin-glass-bg-dark)] backdrop-blur-md border-carbon-200/70 dark:border-carbon-800/70',
+        critical: 'border-l-4 border-l-clinical-critical-base bg-critical-red-50 dark:bg-critical-red-900/20',
+        warning: 'border-l-4 border-l-clinical-warning-base bg-thymine-gold/10 dark:bg-thymine-gold/15',
+        success: 'border-l-4 border-l-clinical-safe-base bg-guanine-green/10 dark:bg-guanine-green/15',
       },
     },
     defaultVariants: {
@@ -135,7 +137,7 @@ const DialogContent = React.forwardRef<
       >
         {children}
         {showClose && (
-          <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-brand-primary-500 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-neutral-100 data-[state=open]:text-neutral-500 dark:ring-offset-neutral-950 dark:focus:ring-neutral-300 dark:data-[state=open]:bg-neutral-800 dark:data-[state=open]:text-neutral-400">
+          <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-paper-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-brand-primary-500 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-carbon-100 data-[state=open]:text-carbon-600 dark:ring-offset-carbon-950 dark:focus:ring-brand-primary-400 dark:data-[state=open]:bg-carbon-800/60 dark:data-[state=open]:text-carbon-300">
             {closeIcon || (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -206,7 +208,7 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cn('text-sm text-neutral-600 dark:text-neutral-400', className)}
+    className={cn('text-sm text-carbon-600 dark:text-carbon-400', className)}
     {...props}
   />
 ));

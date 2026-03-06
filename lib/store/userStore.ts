@@ -9,6 +9,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { UserProfile } from '../db/schemas';
+import { ssrSafeJSONStorage } from './persistStorage';
 import {
   login as localLogin,
   logout as localLogout,
@@ -368,6 +369,7 @@ export const useUserStore = create<UserState & UserActions>()(
     }),
     {
       name: 'darwin-mfc-user',
+      storage: ssrSafeJSONStorage,
       partialize: (state) => ({
         // Only persist minimal state
         // Full user data is in IndexedDB

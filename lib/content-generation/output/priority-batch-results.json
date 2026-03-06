@@ -1,72 +1,110 @@
 [
   {
-    "conditionId": "diabetes-mellitus-1",
-    "conditionName": "Diabetes Mellitus Tipo 1",
-    "success": false,
-    "error": "Command failed: cat \"/tmp/llm-prompt-1768995783676.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
-    "duration": 120598
+    "conditionId": "agorafobia",
+    "conditionName": "Agorafobia",
+    "success": true,
+    "duration": 27878
   },
   {
-    "conditionId": "doenca-arterial-coronariana",
-    "conditionName": "Doença Arterial Coronariana",
-    "success": false,
-    "error": "Command failed: cat \"/tmp/llm-prompt-1768995904770.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
-    "duration": 121134
+    "conditionId": "transtorno-personalidade-borderline",
+    "conditionName": "Transtorno de Personalidade Borderline",
+    "success": true,
+    "duration": 29417
   },
   {
-    "conditionId": "avc",
-    "conditionName": "Acidente Vascular Cerebral",
-    "success": false,
-    "error": "Command failed: cat \"/tmp/llm-prompt-1768996026869.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
-    "duration": 122022
+    "conditionId": "transtorno-neurocognitivo-leve",
+    "conditionName": "Transtorno Neurocognitivo Leve",
+    "success": true,
+    "duration": 53313
   },
   {
-    "conditionId": "tuberculose",
-    "conditionName": "Tuberculose",
-    "success": false,
-    "error": "Command failed: cat \"/tmp/llm-prompt-1768996148276.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
-    "duration": 121449
+    "conditionId": "enfisema-pulmonar",
+    "conditionName": "Enfisema Pulmonar",
+    "success": true,
+    "duration": 29768
   },
   {
-    "conditionId": "dengue",
-    "conditionName": "Dengue",
-    "success": false,
-    "error": "Command failed: cat \"/tmp/llm-prompt-1768996269784.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
-    "duration": 121521
+    "conditionId": "sifilis-terciaria",
+    "conditionName": "Sífilis Terciária",
+    "success": true,
+    "duration": 25278
   },
   {
-    "conditionId": "covid-19",
-    "conditionName": "COVID-19",
-    "success": false,
-    "error": "Command failed: cat \"/tmp/llm-prompt-1768996391547.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
-    "duration": 121701
+    "conditionId": "hipotireoidismo-congenito",
+    "conditionName": "Hipotireoidismo Congênito",
+    "success": true,
+    "duration": 30104
   },
   {
-    "conditionId": "gastrite",
-    "conditionName": "Gastrite e Úlcera Péptica",
-    "success": false,
-    "error": "Command failed: cat \"/tmp/llm-prompt-1768996512037.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
-    "duration": 120544
+    "conditionId": "tosse-cronica",
+    "conditionName": "Tosse Crônica",
+    "success": true,
+    "duration": 37823
   },
   {
-    "conditionId": "drge",
-    "conditionName": "Doença do Refluxo Gastroesofágico",
-    "success": false,
-    "error": "Command failed: cat \"/tmp/llm-prompt-1768996632572.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
-    "duration": 120570
+    "conditionId": "hiperprolactinemia",
+    "conditionName": "Hiperprolactinemia",
+    "success": true,
+    "duration": 42534
   },
   {
-    "conditionId": "artrite-reumatoide",
-    "conditionName": "Artrite Reumatoide",
-    "success": false,
-    "error": "Command failed: cat \"/tmp/llm-prompt-1768996753847.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
-    "duration": 121186
+    "conditionId": "insuficiencia-mitral",
+    "conditionName": "Insuficiência Mitral",
+    "success": true,
+    "duration": 30849
   },
   {
-    "conditionId": "enxaqueca",
-    "conditionName": "Enxaqueca",
-    "success": false,
-    "error": "Command failed: cat \"/tmp/llm-prompt-1768996875019.txt\" | llm-offload --provider grok --max-tokens 8000 --temperature 0.3 --no-stream\n",
-    "duration": 121195
+    "conditionId": "dermatite-fraldas",
+    "conditionName": "Dermatite da Área de Fraldas",
+    "success": true,
+    "duration": 45232
+  },
+  {
+    "conditionId": "avc-isquemico",
+    "conditionName": "Acidente Vascular Cerebral Isquêmico",
+    "success": true,
+    "duration": 40554
+  },
+  {
+    "conditionId": "otite-media-aguda-pediatrica",
+    "conditionName": "Otite Média Aguda Pediátrica",
+    "success": true,
+    "duration": 25158
+  },
+  {
+    "conditionId": "faringoamigdalite-pediatrica",
+    "conditionName": "Faringoamigdalite Pediátrica",
+    "success": true,
+    "duration": 34387
+  },
+  {
+    "conditionId": "pneumonia-adquirida-comunidade-pediatrica",
+    "conditionName": "Pneumonia Adquirida na Comunidade Pediátrica",
+    "success": true,
+    "duration": 41173
+  },
+  {
+    "conditionId": "drge-infantil",
+    "conditionName": "DRGE Infantil",
+    "success": true,
+    "duration": 37749
+  },
+  {
+    "conditionId": "dermatite-seborreica-infantil",
+    "conditionName": "Dermatite Seborreica Infantil",
+    "success": true,
+    "duration": 44792
+  },
+  {
+    "conditionId": "anemia-ferropriva-infantil",
+    "conditionName": "Anemia Ferropriva Infantil",
+    "success": true,
+    "duration": 33655
+  },
+  {
+    "conditionId": "meningite-bacteriana-pediatrica",
+    "conditionName": "Meningite Bacteriana Pediátrica",
+    "success": true,
+    "duration": 43770
   }
 ]

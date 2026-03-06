@@ -55,12 +55,12 @@ export function PostCard({ post, showCategory = false }: PostCardProps) {
 
   return (
     <Link
-      href={`/community/posts/${post.id}`}
-      className="block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4 hover:border-blue-300 dark:hover:border-blue-600 transition-all hover:shadow-md"
+      href={`/community/posts?id=${encodeURIComponent(post.id)}`}
+      className="card-darwin block p-4 apple-transition hover:shadow-xl"
     >
       <div className="flex items-start gap-3">
         {/* Author avatar */}
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-medium shrink-0">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-primary-600 to-brand-secondary-600 flex items-center justify-center text-white font-medium shrink-0">
           {post.author.displayName?.charAt(0).toUpperCase() || 'U'}
         </div>
 
@@ -68,24 +68,24 @@ export function PostCard({ post, showCategory = false }: PostCardProps) {
           {/* Title row */}
           <div className="flex items-center gap-2 flex-wrap">
             {isPinned && (
-              <Pin className="w-4 h-4 text-amber-500 shrink-0" />
+              <Pin className="w-4 h-4 text-thymine-gold shrink-0" />
             )}
             {isLocked && (
-              <Lock className="w-4 h-4 text-gray-400 shrink-0" />
+              <Lock className="w-4 h-4 text-carbon-400 shrink-0" />
             )}
             {post.isCase && (
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs rounded-full shrink-0">
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-guanine-green/10 dark:bg-guanine-green/15 text-guanine-green text-xs rounded-full shrink-0">
                 <FileText className="w-3 h-3" />
                 {t('case')}
               </span>
             )}
-            <h3 className="font-medium text-gray-900 dark:text-white truncate">
+            <h3 className="font-medium text-carbon-900 dark:text-carbon-100 truncate">
               {post.title}
             </h3>
           </div>
 
           {/* Author and time */}
-          <div className="flex items-center gap-2 mt-1 text-sm text-gray-500 dark:text-gray-400">
+          <div className="flex items-center gap-2 mt-1 text-sm text-carbon-600 dark:text-carbon-400">
             <span>{post.author.displayName || post.author.username}</span>
             <span>•</span>
             <span className="flex items-center gap-1">
@@ -96,13 +96,13 @@ export function PostCard({ post, showCategory = false }: PostCardProps) {
 
           {/* Excerpt */}
           {'excerpt' in post && post.excerpt && (
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+            <p className="mt-2 text-sm text-carbon-700 dark:text-carbon-300 line-clamp-2">
               {post.excerpt}
             </p>
           )}
 
           {/* Stats */}
-          <div className="flex items-center gap-4 mt-3 text-xs text-gray-500 dark:text-gray-400">
+          <div className="flex items-center gap-4 mt-3 text-xs text-carbon-600 dark:text-carbon-400">
             <span className="flex items-center gap-1">
               <MessageSquare className="w-4 h-4" />
               {post.replyCount} {t('replies')}

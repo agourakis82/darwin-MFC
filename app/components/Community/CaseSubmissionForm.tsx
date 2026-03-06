@@ -182,10 +182,10 @@ export function CaseSubmissionForm({
               onClick={() => setCurrentStep(step)}
               className={`w-10 h-10 rounded-full flex items-center justify-center font-medium transition-colors ${
                 currentStep === step
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-brand-primary-600 text-white'
                   : step < currentStep
-                  ? 'bg-green-600 text-white'
-                  : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400'
+                  ? 'bg-clinical-safe-base text-white'
+                  : 'bg-carbon-200 dark:bg-carbon-800 text-carbon-700 dark:text-carbon-300'
               }`}
             >
               {step < currentStep ? (
@@ -198,8 +198,8 @@ export function CaseSubmissionForm({
               <div
                 className={`w-16 h-1 rounded ${
                   step < currentStep
-                    ? 'bg-green-600'
-                    : 'bg-gray-200 dark:bg-gray-700'
+                    ? 'bg-clinical-safe-base'
+                    : 'bg-carbon-200 dark:bg-carbon-800'
                 }`}
               />
             )}
@@ -211,17 +211,17 @@ export function CaseSubmissionForm({
       {currentStep === 1 && (
         <div className="space-y-6">
           <div className="text-center mb-6">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-xl font-semibold text-carbon-900 dark:text-carbon-100">
               {t('step1_title')}
             </h2>
-            <p className="text-gray-500 dark:text-gray-400">
+            <p className="text-carbon-600 dark:text-carbon-400">
               {t('step1_desc')}
             </p>
           </div>
 
           {/* Title */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-2">
               {t('field_title')} *
             </label>
             <input
@@ -229,11 +229,11 @@ export function CaseSubmissionForm({
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder={t('placeholder_title')}
-              className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-carbon-300 dark:border-carbon-700 rounded-xl bg-paper-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 focus:ring-2 focus:ring-brand-primary-500 focus:border-transparent apple-transition"
               minLength={10}
               maxLength={200}
             />
-            <p className="text-xs text-gray-500 mt-1">
+            <p className="text-xs text-carbon-500 dark:text-carbon-400 mt-1">
               {title.length}/200 {t('characters')}
             </p>
           </div>
@@ -242,14 +242,14 @@ export function CaseSubmissionForm({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Age Range */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-2">
                 <Calendar className="w-4 h-4 inline mr-1" />
                 {t('field_age_range')} *
               </label>
               <select
                 value={ageRange}
                 onChange={(e) => setAgeRange(e.target.value as AgeRange)}
-                className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                className="w-full p-3 border border-carbon-300 dark:border-carbon-700 rounded-xl bg-paper-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 apple-transition"
               >
                 {AGE_RANGES.map((range) => (
                   <option key={range} value={range}>
@@ -261,14 +261,14 @@ export function CaseSubmissionForm({
 
             {/* Sex */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-2">
                 <User className="w-4 h-4 inline mr-1" />
                 {t('field_sex')} *
               </label>
               <select
                 value={sex}
                 onChange={(e) => setSex(e.target.value as 'M' | 'F' | 'other')}
-                className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                className="w-full p-3 border border-carbon-300 dark:border-carbon-700 rounded-xl bg-paper-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 apple-transition"
               >
                 <option value="M">{t('male')}</option>
                 <option value="F">{t('female')}</option>
@@ -278,7 +278,7 @@ export function CaseSubmissionForm({
 
             {/* Occupation (optional) */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-2">
                 {t('field_occupation')}
               </label>
               <input
@@ -286,7 +286,7 @@ export function CaseSubmissionForm({
                 value={occupation}
                 onChange={(e) => setOccupation(e.target.value)}
                 placeholder={t('placeholder_occupation')}
-                className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                className="w-full p-3 border border-carbon-300 dark:border-carbon-700 rounded-xl bg-paper-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 apple-transition"
                 maxLength={50}
               />
             </div>
@@ -296,14 +296,14 @@ export function CaseSubmissionForm({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Case Type */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-2">
                 <FileText className="w-4 h-4 inline mr-1" />
                 {t('field_case_type')} *
               </label>
               <select
                 value={caseType}
                 onChange={(e) => setCaseType(e.target.value as CaseType)}
-                className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                className="w-full p-3 border border-carbon-300 dark:border-carbon-700 rounded-xl bg-paper-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 apple-transition"
               >
                 {CASE_TYPES.map((type) => (
                   <option key={type} value={type}>
@@ -315,14 +315,14 @@ export function CaseSubmissionForm({
 
             {/* Difficulty */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-2">
                 <Stethoscope className="w-4 h-4 inline mr-1" />
                 {t('field_difficulty')} *
               </label>
               <select
                 value={difficulty}
                 onChange={(e) => setDifficulty(e.target.value as typeof difficulty)}
-                className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                className="w-full p-3 border border-carbon-300 dark:border-carbon-700 rounded-xl bg-paper-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 apple-transition"
               >
                 {DIFFICULTY_LEVELS.map((level) => (
                   <option key={level} value={level}>
@@ -338,7 +338,7 @@ export function CaseSubmissionForm({
               type="button"
               onClick={() => setCurrentStep(2)}
               disabled={!isStep1Valid}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+              className="px-6 py-2 bg-brand-primary-600 text-white rounded-xl font-semibold hover:bg-brand-primary-700 disabled:bg-carbon-400 disabled:cursor-not-allowed apple-transition-fast"
             >
               {t('next')}
             </button>
@@ -350,34 +350,34 @@ export function CaseSubmissionForm({
       {currentStep === 2 && (
         <div className="space-y-6">
           <div className="text-center mb-6">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-xl font-semibold text-carbon-900 dark:text-carbon-100">
               {t('step2_title')}
             </h2>
-            <p className="text-gray-500 dark:text-gray-400">
+            <p className="text-carbon-600 dark:text-carbon-400">
               {t('step2_desc')}
             </p>
           </div>
 
           {/* PII Warning Banner */}
           {piiWarnings.length > 0 && (
-            <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+            <div className="p-4 bg-critical-red-50 dark:bg-critical-red-900/20 border border-critical-red-200 dark:border-critical-red-800 rounded-2xl">
               <div className="flex items-start gap-3">
-                <AlertTriangle className="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
+                <AlertTriangle className="w-5 h-5 text-clinical-critical-base flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-medium text-red-800 dark:text-red-300">
+                  <h4 className="font-semibold text-critical-red-800 dark:text-critical-red-200">
                     {t('pii_warning_title')}
                   </h4>
-                  <p className="text-sm text-red-700 dark:text-red-400 mt-1">
+                  <p className="text-sm text-critical-red-700 dark:text-critical-red-300 mt-1">
                     {t('pii_warning_desc')}
                   </p>
                   <ul className="mt-2 space-y-1">
                     {piiWarnings.slice(0, 5).map((warning, i) => (
-                      <li key={i} className="text-sm text-red-600 dark:text-red-400">
+                      <li key={i} className="text-sm text-critical-red-700 dark:text-critical-red-300">
                         • {t(`pii_type.${warning.type}`)}: &quot;{warning.match.substring(0, 30)}...&quot;
                       </li>
                     ))}
                     {piiWarnings.length > 5 && (
-                      <li className="text-sm text-red-600 dark:text-red-400">
+                      <li className="text-sm text-critical-red-700 dark:text-critical-red-300">
                         +{piiWarnings.length - 5} {t('more_issues')}
                       </li>
                     )}
@@ -389,7 +389,7 @@ export function CaseSubmissionForm({
 
           {/* Presentation */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-2">
               {t('field_presentation')} *
             </label>
             <textarea
@@ -397,17 +397,17 @@ export function CaseSubmissionForm({
               onChange={(e) => setPresentation(e.target.value)}
               placeholder={t('placeholder_presentation')}
               rows={4}
-              className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white resize-none"
+              className="w-full p-3 border border-carbon-300 dark:border-carbon-700 rounded-xl bg-paper-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 resize-none focus:ring-2 focus:ring-brand-primary-500 focus:border-transparent apple-transition"
               minLength={50}
             />
-            <p className="text-xs text-gray-500 mt-1">
+            <p className="text-xs text-carbon-500 dark:text-carbon-400 mt-1">
               {presentation.length} {t('characters')} ({t('min_50')})
             </p>
           </div>
 
           {/* History */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-2">
               {t('field_history')}
             </label>
             <textarea
@@ -415,13 +415,13 @@ export function CaseSubmissionForm({
               onChange={(e) => setHistory(e.target.value)}
               placeholder={t('placeholder_history')}
               rows={3}
-              className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white resize-none"
+              className="w-full p-3 border border-carbon-300 dark:border-carbon-700 rounded-xl bg-paper-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 resize-none focus:ring-2 focus:ring-brand-primary-500 focus:border-transparent apple-transition"
             />
           </div>
 
           {/* Physical Exam */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-2">
               {t('field_physical_exam')}
             </label>
             <textarea
@@ -429,13 +429,13 @@ export function CaseSubmissionForm({
               onChange={(e) => setPhysicalExam(e.target.value)}
               placeholder={t('placeholder_physical_exam')}
               rows={3}
-              className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white resize-none"
+              className="w-full p-3 border border-carbon-300 dark:border-carbon-700 rounded-xl bg-paper-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 resize-none focus:ring-2 focus:ring-brand-primary-500 focus:border-transparent apple-transition"
             />
           </div>
 
           {/* Lab Results */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-2">
               {t('field_lab_results')}
             </label>
             <textarea
@@ -443,13 +443,13 @@ export function CaseSubmissionForm({
               onChange={(e) => setLabResults(e.target.value)}
               placeholder={t('placeholder_lab_results')}
               rows={3}
-              className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white resize-none"
+              className="w-full p-3 border border-carbon-300 dark:border-carbon-700 rounded-xl bg-paper-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 resize-none focus:ring-2 focus:ring-brand-primary-500 focus:border-transparent apple-transition"
             />
           </div>
 
           {/* Imaging */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-2">
               {t('field_imaging')}
             </label>
             <textarea
@@ -457,13 +457,13 @@ export function CaseSubmissionForm({
               onChange={(e) => setImaging(e.target.value)}
               placeholder={t('placeholder_imaging')}
               rows={2}
-              className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white resize-none"
+              className="w-full p-3 border border-carbon-300 dark:border-carbon-700 rounded-xl bg-paper-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 resize-none focus:ring-2 focus:ring-brand-primary-500 focus:border-transparent apple-transition"
             />
           </div>
 
           {/* Diagnosis Codes */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-carbon-700 dark:text-carbon-300 mb-2">
               <Tag className="w-4 h-4 inline mr-1" />
               {t('field_diagnosis_codes')}
             </label>
@@ -474,12 +474,12 @@ export function CaseSubmissionForm({
                 onChange={(e) => setNewCode(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), addCode())}
                 placeholder={t('placeholder_code')}
-                className="flex-1 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                className="flex-1 p-3 border border-carbon-300 dark:border-carbon-700 rounded-xl bg-paper-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 focus:ring-2 focus:ring-brand-primary-500 focus:border-transparent apple-transition"
               />
               <button
                 type="button"
                 onClick={addCode}
-                className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600"
+                className="px-4 py-2 bg-carbon-200 dark:bg-carbon-800 text-carbon-700 dark:text-carbon-200 rounded-xl hover:bg-carbon-300 dark:hover:bg-carbon-700 apple-transition-fast"
               >
                 {t('add')}
               </button>
@@ -489,13 +489,13 @@ export function CaseSubmissionForm({
                 {diagnosisCodes.map((code) => (
                   <span
                     key={code}
-                    className="inline-flex items-center gap-1 px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-sm"
+                    className="inline-flex items-center gap-1 px-2 py-1 bg-brand-primary-100 dark:bg-brand-primary-900/30 text-brand-primary-700 dark:text-brand-primary-300 rounded-xl text-sm"
                   >
                     {code}
                     <button
                       type="button"
                       onClick={() => removeCode(code)}
-                      className="hover:text-blue-900 dark:hover:text-blue-100"
+                      className="hover:text-brand-primary-900 dark:hover:text-brand-primary-100"
                     >
                       <XCircle className="w-4 h-4" />
                     </button>
@@ -509,7 +509,7 @@ export function CaseSubmissionForm({
             <button
               type="button"
               onClick={() => setCurrentStep(1)}
-              className="px-6 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
+              className="px-6 py-2 border border-carbon-300 dark:border-carbon-700 text-carbon-700 dark:text-carbon-200 rounded-xl hover:bg-carbon-50 dark:hover:bg-carbon-900/40 apple-transition-fast"
             >
               {t('back')}
             </button>
@@ -517,7 +517,7 @@ export function CaseSubmissionForm({
               type="button"
               onClick={() => setCurrentStep(3)}
               disabled={!isStep2Valid}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+              className="px-6 py-2 bg-brand-primary-600 text-white rounded-xl font-semibold hover:bg-brand-primary-700 disabled:bg-carbon-400 disabled:cursor-not-allowed apple-transition-fast"
             >
               {t('next')}
             </button>
@@ -529,41 +529,41 @@ export function CaseSubmissionForm({
       {currentStep === 3 && (
         <div className="space-y-6">
           <div className="text-center mb-6">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-xl font-semibold text-carbon-900 dark:text-carbon-100">
               {t('step3_title')}
             </h2>
-            <p className="text-gray-500 dark:text-gray-400">
+            <p className="text-carbon-600 dark:text-carbon-400">
               {t('step3_desc')}
             </p>
           </div>
 
           {/* Anonymization Status */}
-          <div className={`p-4 rounded-lg border ${
+          <div className={`p-4 rounded-2xl border ${
             piiWarnings.length === 0
-              ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800'
-              : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800'
+              ? 'bg-guanine-green/10 dark:bg-guanine-green/15 border-guanine-green/30 dark:border-guanine-green/40'
+              : 'bg-critical-red-50 dark:bg-critical-red-900/20 border-critical-red-200 dark:border-critical-red-800'
           }`}>
             <div className="flex items-center gap-3">
               {piiWarnings.length === 0 ? (
                 <>
-                  <Shield className="w-6 h-6 text-green-600 dark:text-green-400" />
+                  <Shield className="w-6 h-6 text-clinical-safe-base" />
                   <div>
-                    <h4 className="font-medium text-green-800 dark:text-green-300">
+                    <h4 className="font-semibold text-carbon-900 dark:text-carbon-100">
                       {t('anonymization_passed')}
                     </h4>
-                    <p className="text-sm text-green-700 dark:text-green-400">
+                    <p className="text-sm text-carbon-700 dark:text-carbon-300">
                       {t('anonymization_passed_desc')}
                     </p>
                   </div>
                 </>
               ) : (
                 <>
-                  <AlertTriangle className="w-6 h-6 text-red-600 dark:text-red-400" />
+                  <AlertTriangle className="w-6 h-6 text-clinical-critical-base" />
                   <div>
-                    <h4 className="font-medium text-red-800 dark:text-red-300">
+                    <h4 className="font-semibold text-carbon-900 dark:text-carbon-100">
                       {t('anonymization_failed')}
                     </h4>
-                    <p className="text-sm text-red-700 dark:text-red-400">
+                    <p className="text-sm text-carbon-700 dark:text-carbon-300">
                       {t('anonymization_failed_desc', { count: piiWarnings.length })}
                     </p>
                   </div>
@@ -574,13 +574,13 @@ export function CaseSubmissionForm({
 
           {/* Preview Toggle */}
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+            <h3 className="text-lg font-semibold text-carbon-900 dark:text-carbon-100">
               {t('preview_title')}
             </h3>
             <button
               type="button"
               onClick={() => setShowPreview(!showPreview)}
-              className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-sm"
+              className="flex items-center gap-2 px-3 py-1.5 bg-carbon-100 dark:bg-carbon-900/50 text-carbon-700 dark:text-carbon-200 border border-carbon-200/70 dark:border-carbon-800/70 rounded-xl text-sm apple-transition-fast hover:bg-carbon-200/60 dark:hover:bg-carbon-900/70"
             >
               {showPreview ? (
                 <>
@@ -597,43 +597,43 @@ export function CaseSubmissionForm({
           </div>
 
           {/* Case Preview */}
-          <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 space-y-4">
-            <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+          <div className="rounded-2xl border border-carbon-200/70 dark:border-carbon-800/70 bg-paper-white/75 dark:bg-carbon-900/35 p-6 space-y-4">
+            <h4 className="text-lg font-semibold text-carbon-900 dark:text-carbon-100">
               {title}
             </h4>
 
             <div className="flex flex-wrap gap-3 text-sm">
-              <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded">
+              <span className="px-2 py-1 bg-brand-primary-100 dark:bg-brand-primary-900/30 text-brand-primary-700 dark:text-brand-primary-300 rounded-xl">
                 {t(`type.${caseType}`)}
               </span>
-              <span className="text-gray-600 dark:text-gray-400">
+              <span className="text-carbon-600 dark:text-carbon-400">
                 {ageRange} {t('years')} | {sex === 'M' ? t('male') : sex === 'F' ? t('female') : t('other')}
               </span>
               <span className={`${
-                difficulty === 'straightforward' ? 'text-green-600' :
-                difficulty === 'moderate' ? 'text-amber-600' : 'text-red-600'
+                difficulty === 'straightforward' ? 'text-clinical-safe-base' :
+                difficulty === 'moderate' ? 'text-clinical-warning-base' : 'text-clinical-critical-base'
               }`}>
                 {t(`difficulty.${difficulty}`)}
               </span>
             </div>
 
             {showPreview ? (
-              <div className="space-y-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="space-y-4 pt-4 border-t border-carbon-200/70 dark:border-carbon-800/70">
                 <div>
-                  <h5 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
+                  <h5 className="text-sm font-medium text-carbon-600 dark:text-carbon-400 mb-1">
                     {t('field_presentation')}
                   </h5>
-                  <p className="text-gray-900 dark:text-white">
+                  <p className="text-carbon-900 dark:text-carbon-100">
                     {getAnonymizedPreview(presentation)}
                   </p>
                 </div>
 
                 {history && (
                   <div>
-                    <h5 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
+                    <h5 className="text-sm font-medium text-carbon-600 dark:text-carbon-400 mb-1">
                       {t('field_history')}
                     </h5>
-                    <p className="text-gray-900 dark:text-white">
+                    <p className="text-carbon-900 dark:text-carbon-100">
                       {getAnonymizedPreview(history)}
                     </p>
                   </div>
@@ -641,10 +641,10 @@ export function CaseSubmissionForm({
 
                 {physicalExam && (
                   <div>
-                    <h5 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
+                    <h5 className="text-sm font-medium text-carbon-600 dark:text-carbon-400 mb-1">
                       {t('field_physical_exam')}
                     </h5>
-                    <p className="text-gray-900 dark:text-white">
+                    <p className="text-carbon-900 dark:text-carbon-100">
                       {getAnonymizedPreview(physicalExam)}
                     </p>
                   </div>
@@ -652,14 +652,14 @@ export function CaseSubmissionForm({
 
                 {diagnosisCodes.length > 0 && (
                   <div>
-                    <h5 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
+                    <h5 className="text-sm font-medium text-carbon-600 dark:text-carbon-400 mb-1">
                       {t('field_diagnosis_codes')}
                     </h5>
                     <div className="flex flex-wrap gap-2">
                       {diagnosisCodes.map((code) => (
                         <span
                           key={code}
-                          className="px-2 py-0.5 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-sm"
+                          className="px-2 py-0.5 bg-carbon-200/60 dark:bg-carbon-800/60 text-carbon-700 dark:text-carbon-200 rounded-xl text-sm"
                         >
                           {code}
                         </span>
@@ -669,18 +669,18 @@ export function CaseSubmissionForm({
                 )}
               </div>
             ) : (
-              <p className="text-sm text-gray-500 dark:text-gray-400 italic">
+              <p className="text-sm text-carbon-500 dark:text-carbon-400 italic">
                 {t('preview_hidden')}
               </p>
             )}
           </div>
 
           {/* Info Notice */}
-          <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+          <div className="p-4 bg-brand-primary-50/80 dark:bg-brand-primary-900/20 border border-brand-primary-200/70 dark:border-brand-primary-800/60 rounded-2xl">
             <div className="flex items-start gap-3">
-              <Info className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+              <Info className="w-5 h-5 text-clinical-info-base flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-sm text-blue-700 dark:text-blue-300">
+                <p className="text-sm text-carbon-800 dark:text-carbon-200">
                   {t('review_notice')}
                 </p>
               </div>
@@ -689,8 +689,8 @@ export function CaseSubmissionForm({
 
           {/* Error */}
           {error && (
-            <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
-              <p className="text-red-700 dark:text-red-400">{error}</p>
+            <div className="p-4 bg-critical-red-50 dark:bg-critical-red-900/20 border border-critical-red-200 dark:border-critical-red-800 rounded-2xl">
+              <p className="text-critical-red-700 dark:text-critical-red-300">{error}</p>
             </div>
           )}
 
@@ -699,7 +699,7 @@ export function CaseSubmissionForm({
             <button
               type="button"
               onClick={() => setCurrentStep(2)}
-              className="px-6 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
+              className="px-6 py-2 border border-carbon-300 dark:border-carbon-700 text-carbon-700 dark:text-carbon-200 rounded-xl hover:bg-carbon-50 dark:hover:bg-carbon-900/40 apple-transition-fast"
             >
               {t('back')}
             </button>
@@ -709,7 +709,7 @@ export function CaseSubmissionForm({
                   type="button"
                   onClick={onCancel}
                   disabled={isSubmitting}
-                  className="px-6 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
+                  className="px-6 py-2 border border-carbon-300 dark:border-carbon-700 text-carbon-700 dark:text-carbon-200 rounded-xl hover:bg-carbon-50 dark:hover:bg-carbon-900/40 apple-transition-fast"
                 >
                   {t('cancel')}
                 </button>
@@ -717,7 +717,7 @@ export function CaseSubmissionForm({
               <button
                 type="submit"
                 disabled={!canSubmit}
-                className="flex items-center gap-2 px-6 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+                className="flex items-center gap-2 px-6 py-2 bg-clinical-safe-base text-white rounded-xl font-semibold hover:opacity-95 disabled:bg-carbon-400 disabled:cursor-not-allowed apple-transition-fast"
               >
                 {isSubmitting ? (
                   <>

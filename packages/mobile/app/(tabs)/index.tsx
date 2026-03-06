@@ -4,11 +4,12 @@
  */
 import React from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
-import { Card, Button, Text, Surface, Divider } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme } from '../../contexts/ThemeContext';
+import { Card, Button, Text, Divider } from '../../src/ui';
 
 interface StatItem {
   title: string;
@@ -27,6 +28,11 @@ export default function HomeScreen() {
   const { colors } = useTheme();
   const router = useRouter();
 
+  const displayName =
+    (typeof (user?.user_metadata as any)?.name === 'string' && String((user?.user_metadata as any)?.name).trim())
+      ? String((user?.user_metadata as any)?.name).trim()
+      : (user?.email ? user.email.split('@')[0] : 'Estudante');
+
   const stats: StatItem[] = [
     { title: 'Sequência', value: '7 dias', icon: 'calendar' },
     { title: 'Flashcards', value: '145', icon: 'cards' },
@@ -37,6 +43,7 @@ export default function HomeScreen() {
     { title: 'Iniciar Quiz', icon: 'play', route: '/estudo' },
     { title: 'Flashcards', icon: 'cards', route: '/estudo' },
     { title: 'Medicamentos', icon: 'pill', route: '/medicamentos' },
+    { title: 'Comunidade', icon: 'account-group', route: '/community' },
   ];
 
   const recentActivity = [
@@ -51,7 +58,7 @@ export default function HomeScreen() {
       <ScrollView contentContainerStyle={styles.scrollContent}>
         {/* Welcome */}
         <Text variant="headlineMedium" style={[styles.welcome, { color: colors.text }]}>
-          Olá, {user?.name || 'Estudante'}!
+          Olá, {displayName}!
         </Text>
 
         {/* Stats */}
@@ -61,10 +68,11 @@ export default function HomeScreen() {
           </Text>
           <View style={styles.statsRow}>
             {stats.map((stat) => (
-              <Surface
+              <Card
                 key={stat.title}
-                style={[styles.statCard, { backgroundColor: colors.surface }]}
-                elevation={2}
+                variant="elevated"
+                padding={16}
+                style={styles.statCard}
               >
                 <Text variant="headlineSmall" style={[styles.statValue, { color: colors.primary }]}>
                   {stat.value}
@@ -72,7 +80,7 @@ export default function HomeScreen() {
                 <Text variant="bodySmall" style={{ color: colors.text }}>
                   {stat.title}
                 </Text>
-              </Surface>
+              </Card>
             ))}
           </View>
         </View>
@@ -86,13 +94,13 @@ export default function HomeScreen() {
             {quickActions.map((action) => (
               <Button
                 key={action.title}
-                mode="contained"
-                icon={action.icon}
+                title={action.title}
+                variant="primary"
+                size="sm"
+                icon={<MaterialCommunityIcons name={action.icon as any} size={18} color="#fff" />}
                 onPress={() => router.push(action.route as any)}
-                style={styles.actionButton}
-                buttonColor={colors.primary}
+                containerStyle={styles.actionButton}
               >
-                {action.title}
               </Button>
             ))}
           </View>
@@ -103,19 +111,17 @@ export default function HomeScreen() {
           <Text variant="titleMedium" style={[styles.sectionTitle, { color: colors.text }]}>
             Atividade Recente
           </Text>
-          <Card style={[styles.activityCard, { backgroundColor: colors.surface }]}>
-            <Card.Content>
-              {recentActivity.map((item, index) => (
-                <React.Fragment key={index}>
-                  <View style={styles.activityItem}>
-                    <Text variant="bodyMedium" style={{ color: colors.text }}>
-                      • {item}
-                    </Text>
-                  </View>
-                  {index < recentActivity.length - 1 && <Divider style={styles.divider} />}
-                </React.Fragment>
-              ))}
-            </Card.Content>
+          <Card style={styles.activityCard}>
+            {recentActivity.map((item, index) => (
+              <React.Fragment key={index}>
+                <View style={styles.activityItem}>
+                  <Text variant="bodyMedium" style={{ color: colors.text }}>
+                    • {item}
+                  </Text>
+                </View>
+                {index < recentActivity.length - 1 && <Divider style={styles.divider} />}
+              </React.Fragment>
+            ))}
           </Card>
         </View>
       </ScrollView>
@@ -129,6 +135,7 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     padding: 16,
+    paddingBottom: 120,
   },
   welcome: {
     marginBottom: 24,
@@ -148,9 +155,7 @@ const styles = StyleSheet.create({
   statCard: {
     flex: 1,
     alignItems: 'center',
-    padding: 16,
     marginHorizontal: 4,
-    borderRadius: 12,
   },
   statValue: {
     fontWeight: 'bold',
@@ -166,7 +171,7 @@ const styles = StyleSheet.create({
     minWidth: 100,
   },
   activityCard: {
-    borderRadius: 12,
+    borderRadius: 16,
   },
   activityItem: {
     paddingVertical: 8,

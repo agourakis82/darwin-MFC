@@ -19,11 +19,13 @@ import {
   ChevronRight,
   Moon,
   Sun,
+  Droplets,
   Loader2,
   AlertTriangle,
 } from 'lucide-react';
 import { useUserStore } from '@/lib/store/userStore';
 import { useAppStore } from '@/lib/store/appStore';
+import { cn } from '@/lib/utils';
 
 interface SettingsPanelProps {
   onLogout?: () => void;
@@ -32,7 +34,7 @@ interface SettingsPanelProps {
 export default function SettingsPanel({ onLogout }: SettingsPanelProps) {
   const t = useTranslations('settings');
   const { logout } = useUserStore();
-  const { theme, toggleTheme } = useAppStore();
+  const { theme, toggleTheme, reduceTransparency, toggleReduceTransparency } = useAppStore();
 
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
@@ -93,50 +95,58 @@ export default function SettingsPanel({ onLogout }: SettingsPanelProps) {
   return (
     <div className="space-y-6">
       {/* Appearance */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
-        <div className="p-4 border-b border-gray-200 dark:border-gray-700">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+      <div className="bg-white dark:bg-carbon-900 rounded-2xl shadow-elevation-1 border border-carbon-200 dark:border-carbon-800 overflow-hidden">
+        <div className="p-4 border-b border-carbon-200 dark:border-carbon-800">
+          <h3 className="text-lg font-semibold text-carbon-900 dark:text-white">
             {t('appearance.title')}
           </h3>
         </div>
-        <div className="p-4">
-          <div className="flex items-center justify-between">
+        <div className="divide-y divide-carbon-200 dark:divide-carbon-800">
+          <div className="flex items-center justify-between p-4">
             <div className="flex items-center gap-3">
               {theme === 'dark' ? (
-                <Moon className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                <Moon className="w-5 h-5 text-carbon-600 dark:text-carbon-400" />
               ) : (
-                <Sun className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                <Sun className="w-5 h-5 text-carbon-600 dark:text-carbon-400" />
               )}
               <div>
-                <p className="font-medium text-gray-900 dark:text-white">
+                <p className="font-medium text-carbon-900 dark:text-white">
                   {t('appearance.theme')}
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-carbon-500 dark:text-carbon-400">
                   {theme === 'dark' ? t('appearance.dark') : t('appearance.light')}
                 </p>
               </div>
             </div>
             <button
               onClick={toggleTheme}
-              className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              className="px-4 py-2 bg-carbon-100 dark:bg-carbon-800 text-carbon-700 dark:text-carbon-200 rounded-xl hover:bg-carbon-200 dark:hover:bg-carbon-700 transition-colors"
             >
               {t('appearance.toggle')}
             </button>
           </div>
+
+          <SettingToggle
+            icon={<Droplets className="w-5 h-5 text-carbon-600 dark:text-carbon-400" />}
+            label={t('appearance.reduce_transparency') ?? 'Reduzir transparencia'}
+            description={t('appearance.reduce_transparency_desc') ?? 'Remove blur/translucidez para maior conforto e legibilidade.'}
+            enabled={reduceTransparency}
+            onToggle={toggleReduceTransparency}
+          />
         </div>
       </div>
 
       {/* Notifications */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
-        <div className="p-4 border-b border-gray-200 dark:border-gray-700">
+      <div className="bg-white dark:bg-carbon-900 rounded-2xl shadow-elevation-1 border border-carbon-200 dark:border-carbon-800 overflow-hidden">
+        <div className="p-4 border-b border-carbon-200 dark:border-carbon-800">
           <div className="flex items-center gap-2">
-            <Bell className="w-5 h-5 text-gray-600 dark:text-gray-400" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            <Bell className="w-5 h-5 text-carbon-600 dark:text-carbon-400" />
+            <h3 className="text-lg font-semibold text-carbon-900 dark:text-white">
               {t('notifications.title')}
             </h3>
           </div>
         </div>
-        <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="divide-y divide-carbon-200 dark:divide-carbon-800">
           <SettingToggle
             label={t('notifications.email')}
             description={t('notifications.email_desc')}
@@ -165,16 +175,16 @@ export default function SettingsPanel({ onLogout }: SettingsPanelProps) {
       </div>
 
       {/* Privacy */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
-        <div className="p-4 border-b border-gray-200 dark:border-gray-700">
+      <div className="bg-white dark:bg-carbon-900 rounded-2xl shadow-elevation-1 border border-carbon-200 dark:border-carbon-800 overflow-hidden">
+        <div className="p-4 border-b border-carbon-200 dark:border-carbon-800">
           <div className="flex items-center gap-2">
-            <Shield className="w-5 h-5 text-gray-600 dark:text-gray-400" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            <Shield className="w-5 h-5 text-carbon-600 dark:text-carbon-400" />
+            <h3 className="text-lg font-semibold text-carbon-900 dark:text-white">
               {t('privacy.title')}
             </h3>
           </div>
         </div>
-        <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="divide-y divide-carbon-200 dark:divide-carbon-800">
           <SettingToggle
             label={t('privacy.show_profile')}
             description={t('privacy.show_profile_desc')}
@@ -197,76 +207,76 @@ export default function SettingsPanel({ onLogout }: SettingsPanelProps) {
       </div>
 
       {/* Data & Account */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
-        <div className="p-4 border-b border-gray-200 dark:border-gray-700">
+      <div className="bg-white dark:bg-carbon-900 rounded-2xl shadow-elevation-1 border border-carbon-200 dark:border-carbon-800 overflow-hidden">
+        <div className="p-4 border-b border-carbon-200 dark:border-carbon-800">
           <div className="flex items-center gap-2">
-            <Eye className="w-5 h-5 text-gray-600 dark:text-gray-400" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            <Eye className="w-5 h-5 text-carbon-600 dark:text-carbon-400" />
+            <h3 className="text-lg font-semibold text-carbon-900 dark:text-white">
               {t('data.title')}
             </h3>
           </div>
         </div>
-        <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="divide-y divide-carbon-200 dark:divide-carbon-800">
           {/* Export Data */}
           <button
             onClick={handleExportData}
-            className="w-full flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+            className="w-full flex items-center justify-between p-4 hover:bg-carbon-50 dark:hover:bg-carbon-800/40 transition-colors"
           >
             <div className="flex items-center gap-3">
-              <Download className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+              <Download className="w-5 h-5 text-carbon-600 dark:text-carbon-400" />
               <div className="text-left">
-                <p className="font-medium text-gray-900 dark:text-white">
+                <p className="font-medium text-carbon-900 dark:text-white">
                   {t('data.export')}
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-carbon-500 dark:text-carbon-400">
                   {t('data.export_desc')}
                 </p>
               </div>
             </div>
-            <ChevronRight className="w-5 h-5 text-gray-400" />
+            <ChevronRight className="w-5 h-5 text-carbon-400" />
           </button>
 
           {/* Logout */}
           <button
             onClick={handleLogout}
             disabled={isLoggingOut}
-            className="w-full flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+            className="w-full flex items-center justify-between p-4 hover:bg-carbon-50 dark:hover:bg-carbon-800/40 transition-colors"
           >
             <div className="flex items-center gap-3">
               {isLoggingOut ? (
-                <Loader2 className="w-5 h-5 text-gray-600 dark:text-gray-400 animate-spin" />
+                <Loader2 className="w-5 h-5 text-carbon-600 dark:text-carbon-400 animate-spin" />
               ) : (
-                <LogOut className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                <LogOut className="w-5 h-5 text-carbon-600 dark:text-carbon-400" />
               )}
               <div className="text-left">
-                <p className="font-medium text-gray-900 dark:text-white">
+                <p className="font-medium text-carbon-900 dark:text-white">
                   {t('data.logout')}
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-carbon-500 dark:text-carbon-400">
                   {t('data.logout_desc')}
                 </p>
               </div>
             </div>
-            <ChevronRight className="w-5 h-5 text-gray-400" />
+            <ChevronRight className="w-5 h-5 text-carbon-400" />
           </button>
 
           {/* Delete Account */}
           <button
             onClick={() => setShowDeleteConfirm(true)}
-            className="w-full flex items-center justify-between p-4 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
+            className="w-full flex items-center justify-between p-4 hover:bg-critical-red-500/5 dark:hover:bg-critical-red-500/10 transition-colors"
           >
             <div className="flex items-center gap-3">
-              <Trash2 className="w-5 h-5 text-red-500" />
+              <Trash2 className="w-5 h-5 text-critical-red-600 dark:text-critical-red-400" />
               <div className="text-left">
-                <p className="font-medium text-red-600 dark:text-red-400">
+                <p className="font-medium text-critical-red-700 dark:text-critical-red-300">
                   {t('data.delete')}
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-carbon-500 dark:text-carbon-400">
                   {t('data.delete_desc')}
                 </p>
               </div>
             </div>
-            <ChevronRight className="w-5 h-5 text-gray-400" />
+            <ChevronRight className="w-5 h-5 text-carbon-400" />
           </button>
         </div>
       </div>
@@ -274,22 +284,22 @@ export default function SettingsPanel({ onLogout }: SettingsPanelProps) {
       {/* Delete Confirmation Modal */}
       {showDeleteConfirm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl w-full max-w-md p-6">
+          <div className="bg-white dark:bg-carbon-900 rounded-2xl shadow-deep w-full max-w-md p-6 border border-carbon-200 dark:border-carbon-800">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center">
-                <AlertTriangle className="w-6 h-6 text-red-600 dark:text-red-400" />
+              <div className="w-12 h-12 bg-critical-red-500/10 dark:bg-critical-red-500/20 rounded-full flex items-center justify-center">
+                <AlertTriangle className="w-6 h-6 text-critical-red-600 dark:text-critical-red-400" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-lg font-semibold text-carbon-900 dark:text-white">
                   {t('delete_confirm.title')}
                 </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-carbon-500 dark:text-carbon-400">
                   {t('delete_confirm.subtitle')}
                 </p>
               </div>
             </div>
 
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-carbon-700 dark:text-carbon-300 mb-6">
               {t('delete_confirm.message')}
             </p>
 
@@ -297,14 +307,14 @@ export default function SettingsPanel({ onLogout }: SettingsPanelProps) {
               <button
                 onClick={() => setShowDeleteConfirm(false)}
                 disabled={isDeleting}
-                className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
+                className="flex-1 px-4 py-2 border border-carbon-300 dark:border-carbon-700 text-carbon-700 dark:text-carbon-200 rounded-xl hover:bg-carbon-50 dark:hover:bg-carbon-800/40"
               >
                 {t('cancel')}
               </button>
               <button
                 onClick={handleDeleteAccount}
                 disabled={isDeleting}
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-400"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-critical-red-600 text-white rounded-xl hover:bg-critical-red-700 disabled:bg-carbon-400"
               >
                 {isDeleting ? (
                   <>
@@ -329,25 +339,31 @@ interface SettingToggleProps {
   description: string;
   enabled: boolean;
   onToggle: () => void;
+  icon?: React.ReactNode;
 }
 
-function SettingToggle({ label, description, enabled, onToggle }: SettingToggleProps) {
+function SettingToggle({ label, description, enabled, onToggle, icon }: SettingToggleProps) {
   return (
     <div className="flex items-center justify-between p-4">
-      <div>
-        <p className="font-medium text-gray-900 dark:text-white">{label}</p>
-        <p className="text-sm text-gray-500 dark:text-gray-400">{description}</p>
+      <div className="flex items-start gap-3">
+        {icon ? <div className="mt-0.5">{icon}</div> : null}
+        <div>
+          <p className="font-medium text-carbon-900 dark:text-white">{label}</p>
+          <p className="text-sm text-carbon-500 dark:text-carbon-400">{description}</p>
+        </div>
       </div>
       <button
         onClick={onToggle}
         className={`relative w-11 h-6 rounded-full transition-colors ${
-          enabled ? 'bg-blue-600' : 'bg-gray-300 dark:bg-gray-600'
+          enabled ? 'bg-brand-primary-500' : 'bg-carbon-300 dark:bg-carbon-700'
         }`}
       >
         <span
-          className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${
+          className={cn(
+            'absolute top-0.5 left-0.5 w-5 h-5 rounded-full shadow transition-transform',
+            'bg-white dark:bg-carbon-50',
             enabled ? 'translate-x-5' : 'translate-x-0'
-          }`}
+          )}
         />
       </button>
     </div>

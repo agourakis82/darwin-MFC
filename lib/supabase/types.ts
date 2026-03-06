@@ -540,6 +540,7 @@ export interface Database {
           parent_id: string | null;
           content: string;
           upvotes: number;
+          downvotes: number;
           is_verified_answer: boolean;
           created_at: string;
           updated_at: string;
@@ -551,6 +552,7 @@ export interface Database {
           parent_id?: string | null;
           content: string;
           upvotes?: number;
+          downvotes?: number;
           is_verified_answer?: boolean;
           created_at?: string;
           updated_at?: string;
@@ -562,9 +564,382 @@ export interface Database {
           parent_id?: string | null;
           content?: string;
           upvotes?: number;
+          downvotes?: number;
           is_verified_answer?: boolean;
           created_at?: string;
           updated_at?: string;
+        };
+        Relationships: [];
+      };
+      forum_categories: {
+        Row: {
+          id: string;
+          name_key: string;
+          description_key: string;
+          icon: string;
+          color: string;
+          accent: 'primary' | 'secondary' | 'info' | 'safe' | 'warning' | 'critical';
+          is_restricted: boolean;
+          order: number;
+          created_at: string;
+        };
+        Insert: {
+          id: string;
+          name_key: string;
+          description_key: string;
+          icon: string;
+          color: string;
+          accent?: 'primary' | 'secondary' | 'info' | 'safe' | 'warning' | 'critical';
+          is_restricted?: boolean;
+          order?: number;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          name_key?: string;
+          description_key?: string;
+          icon?: string;
+          color?: string;
+          accent?: 'primary' | 'secondary' | 'info' | 'safe' | 'warning' | 'critical';
+          is_restricted?: boolean;
+          order?: number;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      forum_posts: {
+        Row: {
+          id: string;
+          user_id: string;
+          category_id: string;
+          locale: string;
+          title: string;
+          content: string;
+          tags: string[] | null;
+          is_pinned: boolean;
+          is_locked: boolean;
+          view_count: number;
+          reply_count: number;
+          upvotes: number;
+          downvotes: number;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          category_id: string;
+          locale?: string;
+          title: string;
+          content: string;
+          tags?: string[] | null;
+          is_pinned?: boolean;
+          is_locked?: boolean;
+          view_count?: number;
+          reply_count?: number;
+          upvotes?: number;
+          downvotes?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          category_id?: string;
+          locale?: string;
+          title?: string;
+          content?: string;
+          tags?: string[] | null;
+          is_pinned?: boolean;
+          is_locked?: boolean;
+          view_count?: number;
+          reply_count?: number;
+          upvotes?: number;
+          downvotes?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      forum_replies: {
+        Row: {
+          id: string;
+          post_id: string;
+          user_id: string;
+          parent_id: string | null;
+          content: string;
+          is_accepted: boolean;
+          upvotes: number;
+          downvotes: number;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          post_id: string;
+          user_id: string;
+          parent_id?: string | null;
+          content: string;
+          is_accepted?: boolean;
+          upvotes?: number;
+          downvotes?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          post_id?: string;
+          user_id?: string;
+          parent_id?: string | null;
+          content?: string;
+          is_accepted?: boolean;
+          upvotes?: number;
+          downvotes?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      case_votes: {
+        Row: {
+          case_id: string;
+          user_id: string;
+          vote: number;
+          created_at: string;
+        };
+        Insert: {
+          case_id: string;
+          user_id: string;
+          vote: number;
+          created_at?: string;
+        };
+        Update: {
+          case_id?: string;
+          user_id?: string;
+          vote?: number;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      comment_votes: {
+        Row: {
+          comment_id: string;
+          user_id: string;
+          vote: number;
+          created_at: string;
+        };
+        Insert: {
+          comment_id: string;
+          user_id: string;
+          vote: number;
+          created_at?: string;
+        };
+        Update: {
+          comment_id?: string;
+          user_id?: string;
+          vote?: number;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      post_votes: {
+        Row: {
+          post_id: string;
+          user_id: string;
+          vote: number;
+          created_at: string;
+        };
+        Insert: {
+          post_id: string;
+          user_id: string;
+          vote: number;
+          created_at?: string;
+        };
+        Update: {
+          post_id?: string;
+          user_id?: string;
+          vote?: number;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      reply_votes: {
+        Row: {
+          reply_id: string;
+          user_id: string;
+          vote: number;
+          created_at: string;
+        };
+        Insert: {
+          reply_id: string;
+          user_id: string;
+          vote: number;
+          created_at?: string;
+        };
+        Update: {
+          reply_id?: string;
+          user_id?: string;
+          vote?: number;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      content_reports: {
+        Row: {
+          id: string;
+          reporter_user_id: string | null;
+          entity_type: 'shared_case' | 'case_comment' | 'forum_post' | 'forum_reply';
+          entity_id: string;
+          reason: string;
+          details: string | null;
+          status: 'open' | 'reviewing' | 'resolved';
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          reporter_user_id?: string | null;
+          entity_type: 'shared_case' | 'case_comment' | 'forum_post' | 'forum_reply';
+          entity_id: string;
+          reason: string;
+          details?: string | null;
+          status?: 'open' | 'reviewing' | 'resolved';
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          reporter_user_id?: string | null;
+          entity_type?: 'shared_case' | 'case_comment' | 'forum_post' | 'forum_reply';
+          entity_id?: string;
+          reason?: string;
+          details?: string | null;
+          status?: 'open' | 'reviewing' | 'resolved';
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      notifications: {
+        Row: {
+          id: string;
+          user_id: string;
+          type: string;
+          payload: Json;
+          read_at: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          type: string;
+          payload?: Json;
+          read_at?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          type?: string;
+          payload?: Json;
+          read_at?: string | null;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      mentor_profiles: {
+        Row: {
+          user_id: string;
+          mentor_bio: string | null;
+          specializations: string[] | null;
+          languages: string[] | null;
+          availability: 'available' | 'limited' | 'unavailable';
+          max_mentees: number;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          user_id: string;
+          mentor_bio?: string | null;
+          specializations?: string[] | null;
+          languages?: string[] | null;
+          availability?: 'available' | 'limited' | 'unavailable';
+          max_mentees?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          user_id?: string;
+          mentor_bio?: string | null;
+          specializations?: string[] | null;
+          languages?: string[] | null;
+          availability?: 'available' | 'limited' | 'unavailable';
+          max_mentees?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      mentorship_requests: {
+        Row: {
+          id: string;
+          mentor_id: string;
+          mentee_id: string;
+          message: string;
+          specialization: string | null;
+          status: 'pending' | 'accepted' | 'rejected' | 'completed';
+          created_at: string;
+          responded_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          mentor_id: string;
+          mentee_id: string;
+          message: string;
+          specialization?: string | null;
+          status?: 'pending' | 'accepted' | 'rejected' | 'completed';
+          created_at?: string;
+          responded_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          mentor_id?: string;
+          mentee_id?: string;
+          message?: string;
+          specialization?: string | null;
+          status?: 'pending' | 'accepted' | 'rejected' | 'completed';
+          created_at?: string;
+          responded_at?: string | null;
+        };
+        Relationships: [];
+      };
+      mentor_reviews: {
+        Row: {
+          id: string;
+          mentor_id: string;
+          mentee_id: string;
+          request_id: string | null;
+          rating: number;
+          comment: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          mentor_id: string;
+          mentee_id: string;
+          request_id?: string | null;
+          rating: number;
+          comment?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          mentor_id?: string;
+          mentee_id?: string;
+          request_id?: string | null;
+          rating?: number;
+          comment?: string | null;
+          created_at?: string;
         };
         Relationships: [];
       };
@@ -946,6 +1321,22 @@ export interface Database {
       };
       update_user_streak: {
         Args: { p_user_id: string };
+        Returns: void;
+      };
+      vote_case: {
+        Args: { p_case_id: string; p_vote: number };
+        Returns: void;
+      };
+      vote_comment: {
+        Args: { p_comment_id: string; p_vote: number };
+        Returns: void;
+      };
+      vote_post: {
+        Args: { p_post_id: string; p_vote: number };
+        Returns: void;
+      };
+      vote_reply: {
+        Args: { p_reply_id: string; p_vote: number };
         Returns: void;
       };
     };

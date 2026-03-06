@@ -199,7 +199,7 @@ export default function LearningPathClient({ pathId }: LearningPathClientProps) 
               <div className="flex flex-wrap gap-4 text-sm">
                 <div className="flex items-center gap-1">
                   <BookOpen className="w-4 h-4 opacity-80" />
-                  <span>{path.modules.length} {t('modules')}</span>
+                  <span>{path.modules.length} {t('modules_label')}</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Clock className="w-4 h-4 opacity-80" />
@@ -222,7 +222,7 @@ export default function LearningPathClient({ pathId }: LearningPathClientProps) 
           {/* Progress bar */}
           <div className="mt-6 bg-white/10 rounded-lg p-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium">{t('progress')}</span>
+              <span className="text-sm font-medium">{t('progress_label')}</span>
               <span className="text-sm">{progressPercent}%</span>
             </div>
             <div className="h-2 bg-white/20 rounded-full overflow-hidden">

@@ -14,13 +14,13 @@ const inputVariants = cva(
   // Base styles
   [
     'flex w-full rounded-md',
-    'border border-neutral-300 dark:border-neutral-700',
-    'bg-white dark:bg-neutral-900',
+    'border border-carbon-300 dark:border-carbon-700',
+    'bg-paper-white dark:bg-carbon-900',
     'px-3 py-2',
     'text-base',
     'transition-all duration-200',
     'file:border-0 file:bg-transparent file:text-sm file:font-medium',
-    'placeholder:text-neutral-400 dark:placeholder:text-neutral-600',
+    'placeholder:text-carbon-400 dark:placeholder:text-carbon-500',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary-500 focus-visible:ring-offset-2',
     'disabled:cursor-not-allowed disabled:opacity-50',
   ],
@@ -37,19 +37,19 @@ const inputVariants = cva(
       state: {
         default: '',
         error: [
-          'border-red-500 dark:border-red-600',
-          'focus-visible:ring-red-500',
-          'bg-red-50/50 dark:bg-red-900/10',
+          'border-clinical-critical-base',
+          'focus-visible:ring-clinical-critical-base',
+          'bg-critical-red-50/70 dark:bg-critical-red-900/10',
         ],
         success: [
-          'border-green-500 dark:border-green-600',
-          'focus-visible:ring-green-500',
-          'bg-green-50/50 dark:bg-green-900/10',
+          'border-clinical-safe-base',
+          'focus-visible:ring-clinical-safe-base',
+          'bg-guanine-green/10 dark:bg-guanine-green/15',
         ],
         warning: [
-          'border-amber-500 dark:border-amber-600',
-          'focus-visible:ring-amber-500',
-          'bg-amber-50/50 dark:bg-amber-900/10',
+          'border-clinical-warning-base',
+          'focus-visible:ring-clinical-warning-base',
+          'bg-thymine-gold/10 dark:bg-thymine-gold/15',
         ],
       },
 
@@ -139,10 +139,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="text-sm font-medium text-neutral-700 dark:text-neutral-300"
+            className="text-sm font-medium text-carbon-700 dark:text-carbon-300"
           >
             {label}
-            {required && <span className="text-red-500 ml-1">*</span>}
+            {required && <span className="text-clinical-critical-base ml-1">*</span>}
           </label>
         )}
 
@@ -150,7 +150,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <div className="relative">
           {/* Icon Before */}
           {iconBefore && (
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 dark:text-neutral-600">
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-carbon-400 dark:text-carbon-500">
               {iconBefore}
             </div>
           )}
@@ -179,7 +179,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
           {/* Loading Spinner or Icon After */}
           {(loading || iconAfter) && (
-            <div className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 dark:text-neutral-600">
+            <div className="absolute right-3 top-1/2 -translate-y-1/2 text-carbon-400 dark:text-carbon-500">
               {loading ? (
                 <svg
                   className="animate-spin h-4 w-4"
@@ -212,7 +212,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {error && (
           <p
             id={`${inputId}-error`}
-            className="text-sm text-red-600 dark:text-red-400"
+            className="text-sm text-clinical-critical-base dark:text-critical-red-400"
           >
             {error}
           </p>
@@ -222,7 +222,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {!error && helperText && (
           <p
             id={`${inputId}-helper`}
-            className="text-sm text-neutral-600 dark:text-neutral-400"
+            className="text-sm text-carbon-600 dark:text-carbon-400"
           >
             {helperText}
           </p>

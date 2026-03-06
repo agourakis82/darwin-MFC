@@ -172,7 +172,7 @@ export function PathCard({ path, progress, isLocked = false, locale = 'pt' }: Pa
           {/* Modules count */}
           <span className="flex items-center gap-1 text-gray-500 dark:text-gray-400">
             <BookOpen className="w-3 h-3" />
-            {completedModules}/{totalModules} {t('modules')}
+            {completedModules}/{totalModules} {t('modules_label')}
           </span>
 
           {/* Certificate badge */}

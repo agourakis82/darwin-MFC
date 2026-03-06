@@ -21,47 +21,44 @@ const cardVariants = cva(
       // Visual variants
       variant: {
         default: [
-          'bg-white dark:bg-neutral-900',
-          'border border-neutral-200 dark:border-neutral-800',
+          'bg-paper-white dark:bg-carbon-900',
+          'border border-carbon-200 dark:border-carbon-800',
         ],
         elevated: [
-          'bg-white dark:bg-neutral-900',
-          'shadow-md hover:shadow-lg',
+          'bg-paper-white dark:bg-carbon-900',
+          'shadow-elevation-1 hover:shadow-elevation-2',
         ],
         glass: [
-          'bg-white/70 dark:bg-neutral-900/70',
+          // Uses global glass vars so "Reduce transparency" can make it solid.
+          'bg-[var(--darwin-glass-bg)] dark:bg-[var(--darwin-glass-bg-dark)]',
           'backdrop-blur-md',
-          'border border-white/20 dark:border-neutral-700/20',
-          'shadow-lg',
+          'border border-carbon-200/70 dark:border-carbon-800/70',
+          'shadow-elevation-2',
         ],
         outline: [
           'bg-transparent',
-          'border-2 border-neutral-300 dark:border-neutral-700',
+          'border-2 border-carbon-300 dark:border-carbon-700',
         ],
         filled: [
-          'bg-neutral-100 dark:bg-neutral-800',
+          'bg-carbon-100 dark:bg-carbon-800',
         ],
 
         // Clinical variants
         criticalAlert: [
-          'bg-red-50 dark:bg-red-900/20',
-          'border-l-4 border-l-red-600',
-          'shadow-sm shadow-red-200 dark:shadow-red-900/20',
+          'bg-critical-red-50 dark:bg-critical-red-900/20',
+          'border-l-4 border-l-clinical-critical-base',
         ],
         warningAlert: [
-          'bg-amber-50 dark:bg-amber-900/20',
-          'border-l-4 border-l-amber-600',
-          'shadow-sm shadow-amber-200 dark:shadow-amber-900/20',
+          'bg-thymine-gold/10 dark:bg-thymine-gold/15',
+          'border-l-4 border-l-clinical-warning-base',
         ],
         safeAlert: [
-          'bg-green-50 dark:bg-green-900/20',
-          'border-l-4 border-l-green-600',
-          'shadow-sm shadow-green-200 dark:shadow-green-900/20',
+          'bg-guanine-green/10 dark:bg-guanine-green/15',
+          'border-l-4 border-l-clinical-safe-base',
         ],
         infoAlert: [
-          'bg-blue-50 dark:bg-blue-900/20',
-          'border-l-4 border-l-blue-600',
-          'shadow-sm shadow-blue-200 dark:shadow-blue-900/20',
+          'bg-brand-primary-50 dark:bg-brand-primary-900/15',
+          'border-l-4 border-l-clinical-info-base',
         ],
       },
 
@@ -172,7 +169,7 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn('text-sm text-neutral-600 dark:text-neutral-400', className)}
+    className={cn('text-sm text-carbon-600 dark:text-carbon-400', className)}
     {...props}
   />
 ));

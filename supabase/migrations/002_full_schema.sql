@@ -10,6 +10,8 @@
 
 -- Enable UUID extension in public schema
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA public;
+-- gen_random_uuid() requires pgcrypto
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 -- =====================================================
 -- USERS TABLE (extends profiles)

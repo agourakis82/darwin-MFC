@@ -1,13 +1,10 @@
 'use client';
 
-import React, { useCallback, useState, useMemo, useEffect } from 'react';
+import React, { useCallback, useState, useMemo, useEffect, useRef } from 'react';
 import {
   ReactFlow,
   Background,
-  Controls,
   MiniMap,
-  useNodesState,
-  useEdgesState,
   useReactFlow,
   ReactFlowProvider,
   MarkerType,
@@ -20,7 +17,7 @@ import {
 import '@xyflow/react/dist/style.css';
 import { CustomNodeData, ProtocolNode, ProtocolEdge, NodeType } from '@/lib/types/protocolo';
 import { cn } from '@/lib/utils';
-import { Shield, AlertTriangle, Pill, Stethoscope, Activity, FileText, ChevronRight, ChevronLeft, CheckCircle, RotateCcw, Play, ArrowRight } from 'lucide-react';
+import { Shield, AlertTriangle, Pill, Stethoscope, Activity, FileText, ChevronRight, ChevronLeft, CheckCircle, RotateCcw, ArrowRight, Search, Crosshair, Minus, Plus, Maximize2, Eye, EyeOff, ChevronsUpDown } from 'lucide-react';
 
 // Clinical-Grade Node Configuration
 // Larger, high-contrast nodes for emergency use
@@ -32,66 +29,66 @@ const nodeStyles: Record<NodeType, {
   label: string;
 }> = {
   start: {
-    bg: 'bg-teal-50 dark:bg-teal-950',
-    border: 'border-teal-500',
+    bg: 'bg-brand-primary-50 dark:bg-brand-primary-900/20',
+    border: 'border-brand-primary-500',
     icon: Activity,
-    iconBg: 'bg-teal-500 text-white',
+    iconBg: 'bg-brand-primary-600 text-white',
     label: 'INÍCIO',
   },
   end: {
-    bg: 'bg-neutral-100 dark:bg-neutral-800',
-    border: 'border-neutral-400',
+    bg: 'bg-carbon-100 dark:bg-carbon-900',
+    border: 'border-carbon-400',
     icon: CheckCircle,
-    iconBg: 'bg-neutral-500 text-white',
+    iconBg: 'bg-carbon-500 text-white',
     label: 'FIM',
   },
   decision: {
-    bg: 'bg-amber-50 dark:bg-amber-950',
-    border: 'border-amber-500',
+    bg: 'bg-thymine-gold/10 dark:bg-thymine-gold/15',
+    border: 'border-thymine-gold',
     icon: Shield,
-    iconBg: 'bg-amber-500 text-white',
+    iconBg: 'bg-thymine-gold text-white',
     label: 'DECISÃO',
   },
   action: {
-    bg: 'bg-blue-50 dark:bg-blue-950',
-    border: 'border-blue-500',
+    bg: 'bg-brand-secondary-50 dark:bg-brand-secondary-900/15',
+    border: 'border-brand-secondary-500',
     icon: Activity,
-    iconBg: 'bg-blue-500 text-white',
+    iconBg: 'bg-brand-secondary-500 text-white',
     label: 'AÇÃO',
   },
   assessment: {
-    bg: 'bg-purple-50 dark:bg-purple-950',
-    border: 'border-purple-500',
+    bg: 'bg-paper-white dark:bg-carbon-900',
+    border: 'border-carbon-300 dark:border-carbon-700',
     icon: Stethoscope,
-    iconBg: 'bg-purple-500 text-white',
+    iconBg: 'bg-helix-navy text-white',
     label: 'AVALIAÇÃO',
   },
   treatment: {
-    bg: 'bg-emerald-50 dark:bg-emerald-950',
-    border: 'border-emerald-500',
+    bg: 'bg-guanine-green/10 dark:bg-guanine-green/15',
+    border: 'border-guanine-green',
     icon: Pill,
-    iconBg: 'bg-emerald-500 text-white',
+    iconBg: 'bg-guanine-green text-white',
     label: 'TRATAMENTO',
   },
   referral: {
-    bg: 'bg-indigo-50 dark:bg-indigo-950',
-    border: 'border-indigo-500',
+    bg: 'bg-helix-navy/5 dark:bg-helix-navy/10',
+    border: 'border-helix-navy/25 dark:border-carbon-700',
     icon: FileText,
-    iconBg: 'bg-indigo-500 text-white',
+    iconBg: 'bg-helix-navy text-white',
     label: 'ENCAMINHAMENTO',
   },
   alert: {
-    bg: 'bg-red-100 dark:bg-red-950',
-    border: 'border-red-600',
+    bg: 'bg-critical-red-100 dark:bg-critical-red-900/25',
+    border: 'border-critical-red-600',
     icon: AlertTriangle,
-    iconBg: 'bg-red-600 text-white',
+    iconBg: 'bg-critical-red-600 text-white',
     label: 'ALERTA',
   },
   info: {
-    bg: 'bg-neutral-50 dark:bg-neutral-900',
-    border: 'border-neutral-300',
+    bg: 'bg-paper-white dark:bg-carbon-900',
+    border: 'border-carbon-300 dark:border-carbon-700',
     icon: FileText,
-    iconBg: 'bg-neutral-400 text-white',
+    iconBg: 'bg-carbon-400 text-white',
     label: 'INFO',
   },
 };
@@ -100,36 +97,55 @@ const nodeStyles: Record<NodeType, {
 interface ExtendedNodeData extends CustomNodeData {
   isActive?: boolean;
   isCompleted?: boolean;
+  isNext?: boolean;
+  isDisabled?: boolean;
+  viewerOnly?: boolean;
 }
 
 // Clinical-Grade Custom Node Component
 // Minimum 16px text, high contrast, large touch targets
-const CustomNode = ({ data, selected }: NodeProps) => {
+const CustomNode = ({ data }: NodeProps) => {
   const nodeData = data as ExtendedNodeData;
   const style = nodeStyles[nodeData.nodeType] || nodeStyles.info;
   const Icon = style.icon;
+  const isViewerOnly = Boolean(nodeData.viewerOnly);
 
-  // Decision nodes get diamond shape effect
   const isDecision = nodeData.nodeType === 'decision';
   const isAlert = nodeData.nodeType === 'alert';
   const isActive = nodeData.isActive;
   const isCompleted = nodeData.isCompleted;
+  const isNext = nodeData.isNext;
+  const isDisabled = nodeData.isDisabled;
+
+  const opacityClass = isDisabled
+    ? isCompleted
+      ? 'opacity-35'
+      : 'opacity-[0.18]'
+    : isCompleted
+      ? 'opacity-60'
+      : 'opacity-100';
 
   return (
     <div
       className={cn(
-        "relative rounded-2xl border-2 transition-all duration-300",
+        // Read-only viewer: nodes never drag; dragging anywhere pans the viewport (map-like).
+        "relative rounded-2xl border-2 transition-all duration-300 darwin-nodrag",
         // Base styling
         style.bg,
         style.border,
+        opacityClass,
+        // Guided mode: disabled nodes should not feel interactive (and shouldn't intercept gestures).
+        isDisabled && "pointer-events-none",
         // Active state - strong highlight
-        isActive && "ring-4 ring-teal-500 shadow-2xl scale-105 z-50 border-teal-500",
+        isActive && "ring-4 ring-brand-primary-500 shadow-2xl scale-105 z-50 border-brand-primary-500",
+        // Next option (guided mode): obvious click target
+        isNext && !isActive && "ring-2 ring-brand-primary-400 shadow-xl border-brand-primary-400",
         // Completed state
-        isCompleted && "opacity-60 border-emerald-400",
-        // Selected state
-        selected && !isActive && "ring-2 ring-neutral-300",
+        isCompleted && "border-guanine-green",
         // Alert animation
         isAlert && isActive && "animate-pulse",
+        // Cursor semantics
+        (isNext || isActive) ? "cursor-pointer" : "cursor-default",
       )}
       style={{
         minWidth: '280px',
@@ -137,22 +153,24 @@ const CustomNode = ({ data, selected }: NodeProps) => {
         padding: '20px',
       }}
     >
-      <Handle
-        type="target"
-        position={Position.Top}
-        className="!w-4 !h-4 !bg-neutral-400 !border-2 !border-white"
-      />
+      {!isViewerOnly && (
+        <Handle
+          type="target"
+          position={Position.Top}
+          className="!w-4 !h-4 !bg-carbon-400 !border-2 !border-white !opacity-0 !pointer-events-none"
+        />
+      )}
 
       {/* Completed checkmark */}
       {isCompleted && (
-        <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center shadow-lg">
+        <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-guanine-green flex items-center justify-center shadow-lg">
           <CheckCircle className="w-5 h-5 text-white" />
         </div>
       )}
 
       {/* Active indicator */}
       {isActive && (
-        <div className="absolute -top-3 -left-3 px-3 py-1 rounded-full bg-teal-500 text-white text-xs font-bold shadow-lg">
+        <div className="absolute -top-3 -left-3 px-3 py-1 rounded-full bg-brand-primary-600 text-white text-xs font-bold shadow-lg">
           ETAPA ATUAL
         </div>
       )}
@@ -168,7 +186,7 @@ const CustomNode = ({ data, selected }: NodeProps) => {
         </div>
         <span className={cn(
           "text-sm font-bold uppercase tracking-wider",
-          isAlert ? "text-red-700 dark:text-red-300" : "text-neutral-500 dark:text-neutral-400"
+          isAlert ? "text-critical-red-700 dark:text-critical-red-300" : "text-carbon-500 dark:text-carbon-400"
         )}>
           {style.label}
         </span>
@@ -177,42 +195,32 @@ const CustomNode = ({ data, selected }: NodeProps) => {
       {/* Main label - Large, readable */}
       <h3 className={cn(
         "text-lg font-bold leading-snug mb-2",
-        isActive ? "text-teal-900 dark:text-teal-100" : "text-neutral-900 dark:text-white"
+        isActive ? "text-brand-primary-700 dark:text-brand-primary-200" : "text-carbon-900 dark:text-white"
       )}>
         {nodeData.label}
       </h3>
 
       {/* Description - Minimum 16px */}
       {nodeData.description && (
-        <p className="text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        <p className="text-base text-carbon-700 dark:text-carbon-300 leading-relaxed">
           {nodeData.description}
         </p>
       )}
 
-      {/* Decision indicator */}
-      {isDecision && (
-        <div className="mt-4 flex gap-2">
-          <div className="flex-1 py-2 px-3 bg-emerald-100 dark:bg-emerald-900/50 rounded-lg text-center border-2 border-transparent hover:border-emerald-400 cursor-pointer transition-colors">
-            <span className="text-sm font-bold text-emerald-700 dark:text-emerald-300">SIM</span>
-          </div>
-          <div className="flex-1 py-2 px-3 bg-red-100 dark:bg-red-900/50 rounded-lg text-center border-2 border-transparent hover:border-red-400 cursor-pointer transition-colors">
-            <span className="text-sm font-bold text-red-700 dark:text-red-300">NÃO</span>
-          </div>
-        </div>
-      )}
-
       {/* Alert action */}
       {isAlert && (
-        <div className="mt-3 py-2 px-3 bg-red-600 rounded-lg text-center">
+        <div className="mt-3 py-2 px-3 bg-critical-red-600 rounded-lg text-center">
           <span className="text-sm font-bold text-white">AÇÃO IMEDIATA</span>
         </div>
       )}
 
-      <Handle
-        type="source"
-        position={Position.Bottom}
-        className="!w-4 !h-4 !bg-neutral-400 !border-2 !border-white"
-      />
+      {!isViewerOnly && (
+        <Handle
+          type="source"
+          position={Position.Bottom}
+          className="!w-4 !h-4 !bg-carbon-400 !border-2 !border-white !opacity-0 !pointer-events-none"
+        />
+      )}
     </div>
   );
 };
@@ -225,6 +233,7 @@ interface FlowchartEngineProps {
   onNodeClick?: (node: ProtocolNode) => void;
   className?: string;
   interactive?: boolean; // Enable step-by-step mode
+  viewerOnly?: boolean; // Secondary-surface map: no node selection/details UI
 }
 
 // Inner component that uses ReactFlow hooks
@@ -233,14 +242,33 @@ function FlowchartEngineInner({
   edges: initialEdges,
   onNodeClick,
   className = '',
-  interactive = true,
+  interactive = false,
+  viewerOnly = false,
 }: FlowchartEngineProps) {
+  const hudRef = useRef<HTMLDivElement | null>(null);
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
   const [selectedNode, setSelectedNode] = useState<ProtocolNode | null>(null);
   const [activeStepId, setActiveStepId] = useState<string | null>(null);
   const [completedSteps, setCompletedSteps] = useState<Set<string>>(new Set());
   const [stepHistory, setStepHistory] = useState<string[]>([]);
 
-  const { fitView, setCenter } = useReactFlow();
+  const [followActiveStep, setFollowActiveStep] = useState(true);
+  const [stepperOpen, setStepperOpen] = useState(true);
+  const [showMiniMap, setShowMiniMap] = useState(true);
+  const [search, setSearch] = useState('');
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [isProgrammaticMove, setIsProgrammaticMove] = useState(false);
+
+  const { fitView, setCenter, zoomIn, zoomOut, getZoom } = useReactFlow();
+
+  // When in guided mode, keep the experience locked-in (no free search teleporting).
+  useEffect(() => {
+    if (!interactive) return;
+    setSearch('');
+    setSearchOpen(false);
+    setSelectedNode(null);
+    setShowMiniMap(false);
+  }, [interactive]);
 
   // Find start node
   const startNode = useMemo(() =>
@@ -257,20 +285,33 @@ function FlowchartEngineInner({
 
   // Center view on active node when it changes
   useEffect(() => {
-    if (activeStepId && interactive) {
+    if (activeStepId && interactive && followActiveStep) {
       const activeNodeData = initialNodes.find(n => n.id === activeStepId);
       if (activeNodeData?.position) {
         // Small delay to allow React to process the state update
         setTimeout(() => {
+          const currentZoom = getZoom();
+          setIsProgrammaticMove(true);
           setCenter(
             activeNodeData.position.x + 150, // Center on node (half width)
             activeNodeData.position.y + 75,  // Center on node (half height)
-            { zoom: 0.85, duration: 500 }
+            { zoom: Math.min(Math.max(currentZoom, 0.55), 1.1), duration: 450 }
           );
+          setTimeout(() => setIsProgrammaticMove(false), 500);
         }, 100);
       }
     }
-  }, [activeStepId, interactive, initialNodes, setCenter]);
+  }, [activeStepId, interactive, followActiveStep, initialNodes, setCenter, getZoom]);
+
+  // First render: fit view nicely (without requiring the user to find the content)
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setIsProgrammaticMove(true);
+      fitView({ padding: 0.18, duration: 550 });
+      setTimeout(() => setIsProgrammaticMove(false), 650);
+    }, 50);
+    return () => clearTimeout(t);
+  }, [fitView]);
 
   // Get next possible nodes from current
   const getNextNodes = useCallback((nodeId: string) => {
@@ -280,6 +321,26 @@ function FlowchartEngineInner({
       node: initialNodes.find(n => n.id === edge.target),
     })).filter(item => item.node);
   }, [initialEdges, initialNodes]);
+
+  const nextNodeIds = useMemo(() => {
+    if (!interactive) return new Set<string>();
+    if (!activeStepId) return new Set<string>();
+    return new Set(getNextNodes(activeStepId).map((n) => n.node!.id));
+  }, [interactive, activeStepId, getNextNodes]);
+
+  const pathNodeIds = useMemo(() => {
+    const ids = [...stepHistory];
+    if (activeStepId) ids.push(activeStepId);
+    return ids;
+  }, [stepHistory, activeStepId]);
+
+  const takenEdgeKeys = useMemo(() => {
+    const keys = new Set<string>();
+    for (let i = 0; i < pathNodeIds.length - 1; i++) {
+      keys.add(`${pathNodeIds[i]}->${pathNodeIds[i + 1]}`);
+    }
+    return keys;
+  }, [pathNodeIds]);
 
   // Get current active node
   const activeNode = useMemo(() =>
@@ -319,10 +380,21 @@ function FlowchartEngineInner({
     setTimeout(() => fitView({ padding: 0.2, duration: 500 }), 100);
   }, [startNode, fitView]);
 
+  const jumpToStep = useCallback((nodeId: string) => {
+    const idx = stepHistory.indexOf(nodeId);
+    if (idx === -1) return;
+    const newHistory = stepHistory.slice(0, idx);
+    setStepHistory(newHistory);
+    setCompletedSteps(new Set(newHistory));
+    setActiveStepId(nodeId);
+  }, [stepHistory]);
+
   // Handle node click for navigation
   const handleNodeClick = useCallback((node: ProtocolNode) => {
-    setSelectedNode(node);
-    onNodeClick?.(node);
+    if (interactive) {
+      const isAllowed = node.id === activeStepId || nextNodeIds.has(node.id);
+      if (!isAllowed) return;
+    }
 
     // If interactive and clicking on a connected node, navigate to it
     if (interactive && activeStepId) {
@@ -330,9 +402,79 @@ function FlowchartEngineInner({
       const isNextNode = nextNodes.some(n => n.node?.id === node.id);
       if (isNextNode) {
         goToStep(node.id);
+        return; // guided: don't open floating details while progressing
       }
     }
-  }, [interactive, activeStepId, getNextNodes, goToStep, onNodeClick]);
+
+    // Explore mode: allow selecting nodes for detail panel.
+    if (!interactive && viewerOnly) return;
+    setSelectedNode(node);
+    onNodeClick?.(node);
+  }, [interactive, viewerOnly, activeStepId, nextNodeIds, getNextNodes, goToStep, onNodeClick]);
+
+  const searchableNodes = useMemo(() => {
+    return initialNodes
+      .map((n) => ({
+        id: n.id,
+        label: String(n.data.label || '').trim(),
+        type: n.data.nodeType,
+        position: n.position,
+        node: n,
+      }))
+      .filter((n) => n.label.length > 0);
+  }, [initialNodes]);
+
+  const searchResults = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    if (!q) return [];
+    return searchableNodes
+      .filter((n) => n.label.toLowerCase().includes(q))
+      .slice(0, 8);
+  }, [search, searchableNodes]);
+
+  const focusNode = useCallback((nodeId: string) => {
+    const n = initialNodes.find((x) => x.id === nodeId);
+    if (!n?.position) return;
+    if (!viewerOnly) setSelectedNode(n);
+    setSearchOpen(false);
+    setSearch('');
+    setIsProgrammaticMove(true);
+    setCenter(n.position.x + 150, n.position.y + 75, { zoom: Math.min(Math.max(getZoom(), 0.65), 1.25), duration: 450 });
+    setTimeout(() => setIsProgrammaticMove(false), 520);
+  }, [viewerOnly, initialNodes, setCenter, getZoom]);
+
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      // Cmd/Ctrl+K: focus search (native-feeling command palette gesture).
+      if (!interactive && (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setSearchOpen(true);
+        setTimeout(() => searchInputRef.current?.focus(), 0);
+        return;
+      }
+      // Escape: close search + close node details.
+      if (e.key === 'Escape') {
+        setSearchOpen(false);
+        setSelectedNode(null);
+      }
+    }
+
+    function onPointerDown(e: MouseEvent) {
+      const el = hudRef.current;
+      if (!el) return;
+      if (!searchOpen) return;
+      const target = e.target as Node | null;
+      if (target && el.contains(target as any)) return;
+      setSearchOpen(false);
+    }
+
+    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('mousedown', onPointerDown);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('mousedown', onPointerDown);
+    };
+  }, [searchOpen]);
 
   const preparedNodes = useMemo(() => initialNodes.map(n => ({
     ...n,
@@ -341,24 +483,59 @@ function FlowchartEngineInner({
       ...n.data,
       isActive: interactive && n.id === activeStepId,
       isCompleted: completedSteps.has(n.id),
+      isNext: interactive && activeStepId ? nextNodeIds.has(n.id) : false,
+      isDisabled: interactive ? !(n.id === activeStepId || nextNodeIds.has(n.id)) : false,
+      viewerOnly,
     },
-  })), [initialNodes, interactive, activeStepId, completedSteps]);
+  })), [initialNodes, interactive, activeStepId, completedSteps, nextNodeIds, viewerOnly]);
 
   const preparedEdges = useMemo(() => initialEdges.map(e => ({
     ...e,
-    style: {
-      stroke: completedSteps.has(e.source) ? '#10B981' : '#D1D5DB',
-      strokeWidth: completedSteps.has(e.source) ? 3 : 2,
-    },
-    animated: e.source === activeStepId,
-    markerEnd: { type: MarkerType.ArrowClosed, color: completedSteps.has(e.source) ? '#10B981' : '#D1D5DB' },
+    label: (() => {
+      if (!interactive) return e.label;
+      const isActiveOption = e.source === activeStepId && nextNodeIds.has(e.target);
+      const isTaken = takenEdgeKeys.has(`${e.source}->${e.target}`);
+      return (isActiveOption || isTaken) ? e.label : undefined;
+    })(),
+    style: (() => {
+      if (!interactive) {
+        const isCompleted = completedSteps.has(e.source);
+        return {
+          stroke: isCompleted ? '#10B981' : '#D1D5DB',
+          strokeWidth: isCompleted ? 3 : 2,
+        };
+      }
+
+      const key = `${e.source}->${e.target}`;
+      const isTaken = takenEdgeKeys.has(key);
+      const isActiveOption = e.source === activeStepId && nextNodeIds.has(e.target);
+
+      if (isTaken) return { stroke: '#10B981', strokeWidth: 3.5 };
+      if (isActiveOption) return { stroke: '#14B8A6', strokeWidth: 3.25 };
+      return { stroke: '#E5E7EB', strokeWidth: 1.5 };
+    })(),
+    animated: interactive
+      ? (e.source === activeStepId && nextNodeIds.has(e.target))
+      : e.source === activeStepId,
+    markerEnd: (() => {
+      if (!interactive) {
+        const isCompleted = completedSteps.has(e.source);
+        return { type: MarkerType.ArrowClosed, color: isCompleted ? '#10B981' : '#D1D5DB' };
+      }
+      const key = `${e.source}->${e.target}`;
+      const isTaken = takenEdgeKeys.has(key);
+      const isActiveOption = e.source === activeStepId && nextNodeIds.has(e.target);
+      if (isTaken) return { type: MarkerType.ArrowClosed, color: '#10B981' };
+      if (isActiveOption) return { type: MarkerType.ArrowClosed, color: '#14B8A6' };
+      return { type: MarkerType.ArrowClosed, color: '#E5E7EB' };
+    })(),
     labelStyle: { fill: '#6B7280', fontWeight: 600, fontSize: 12 },
     labelBgStyle: { fill: '#FFFFFF', fillOpacity: 0.9 },
     labelBgPadding: [6, 4] as [number, number],
-  })), [initialEdges, activeStepId, completedSteps]);
+  })), [initialEdges, interactive, activeStepId, completedSteps, nextNodeIds, takenEdgeKeys]);
 
-  const [nodes, , onNodesChange] = useNodesState(preparedNodes);
-  const [edges, , onEdgesChange] = useEdgesState(preparedEdges);
+  const nodes = useMemo(() => preparedNodes, [preparedNodes]);
+  const edges = useMemo(() => preparedEdges, [preparedEdges]);
 
   // Get next options for the active node
   const nextOptions = useMemo(() =>
@@ -367,29 +544,176 @@ function FlowchartEngineInner({
   );
 
   return (
-    <div className={cn("w-full h-full bg-paper-white dark:bg-carbon-950", className)}>
+    <div className={cn("relative w-full h-full bg-paper-white dark:bg-carbon-950", viewerOnly && "darwin-flowchart-map", className)}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
         onNodeClick={(_, node) => handleNodeClick(node as ProtocolNode)}
         nodeTypes={nodeTypes}
         fitView
         fitViewOptions={{ padding: 0.2 }}
-        nodesDraggable={true}
+        nodesDraggable={false}
         nodesConnectable={false}
-        panOnScroll={true}
-        zoomOnScroll={true}
+        elementsSelectable={false}
+        selectionOnDrag={false}
+        noDragClassName="darwin-nodrag"
+        nodesFocusable={false}
+        edgesFocusable={false}
+        panOnDrag={!interactive}
+        minZoom={0.25}
+        maxZoom={2.25}
+        // Apple-native gestures:
+        // - Explore: scroll pans; zoom only on pinch or Meta/Ctrl+scroll (via zoomActivationKeyCode default).
+        // - Guided: lock viewport from pan; keep pinch zoom only.
+        panOnScroll={!interactive}
+        zoomOnScroll={false}
+        zoomActivationKeyCode={interactive ? null : undefined}
+        zoomOnPinch={true}
+        zoomOnDoubleClick={false}
+        preventScrolling={true}
+        onMoveStart={(event) => {
+          if (!interactive) return;
+          if (isProgrammaticMove) return;
+          // In guided mode we keep follow as an explicit toggle (we don't auto-disable on incidental gestures).
+        }}
       >
         <Background color="#E5E5E2" gap={30} size={1} />
-        <Controls className="bg-white dark:bg-carbon-900 border border-carbon-200 dark:border-carbon-800 rounded shadow-elevation-1" />
-        <MiniMap 
-          className="bg-white dark:bg-carbon-900 border border-carbon-200 dark:border-carbon-800 rounded shadow-elevation-1"
-          nodeColor="#0D2137"
-          maskColor="rgba(251, 251, 249, 0.6)"
-        />
+        {showMiniMap && (
+          <MiniMap
+            className="bg-white/85 dark:bg-carbon-900/70 backdrop-blur border border-carbon-200 dark:border-carbon-800 rounded-xl shadow-elevation-2"
+            nodeColor="#0D2137"
+            maskColor="rgba(251, 251, 249, 0.55)"
+          />
+        )}
       </ReactFlow>
+
+      {/* Apple-native navigation HUD */}
+      <div ref={hudRef} className="absolute top-4 left-4 z-50 w-[360px] max-w-[calc(100%-2rem)]">
+        <div className="rounded-2xl border border-carbon-200/70 dark:border-carbon-800/70 bg-paper-white/85 dark:bg-carbon-950/55 backdrop-blur-xl shadow-elevation-2 overflow-hidden">
+          {!interactive ? (
+            <div className="flex items-center gap-2 px-3 py-2">
+              <Search className="w-4 h-4 text-carbon-500" />
+              <input
+                ref={searchInputRef}
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                  setSearchOpen(true);
+                }}
+                onFocus={() => setSearchOpen(true)}
+                placeholder="Buscar etapa (ex: hipertensao, antibiotic...)"
+                className="flex-1 bg-transparent text-sm text-carbon-900 dark:text-carbon-100 placeholder:text-carbon-500 outline-none"
+              />
+            </div>
+          ) : (
+            <div className="flex items-center gap-2 px-3 py-2">
+              <div className="inline-flex items-center gap-2 min-w-0">
+                <span className="px-2 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-brand-primary-100 dark:bg-brand-primary-900/30 text-brand-primary-700 dark:text-brand-primary-300">
+                  Guiado
+                </span>
+                <span className="text-xs text-carbon-500 dark:text-carbon-400 truncate">
+                  Foco na decisão clínica
+                </span>
+              </div>
+              <div className="flex-1" />
+              <button
+                type="button"
+                onClick={() => setFollowActiveStep((v) => !v)}
+                className={cn(
+                  "inline-flex items-center gap-1.5 rounded-xl px-2.5 py-1.5 text-xs font-semibold border transition-colors",
+                  followActiveStep
+                    ? "bg-brand-primary-600 text-white border-brand-primary-600"
+                    : "bg-transparent text-carbon-700 dark:text-carbon-200 border-carbon-200 dark:border-carbon-800 hover:bg-carbon-50 dark:hover:bg-carbon-900/40"
+                )}
+                title={followActiveStep ? "Seguindo etapa atual" : "Modo livre (nao segue)"}
+              >
+                {followActiveStep ? <Eye className="w-3.5 h-3.5" /> : <EyeOff className="w-3.5 h-3.5" />}
+                Seguir
+              </button>
+            </div>
+          )}
+
+          {!interactive && searchOpen && searchResults.length > 0 && (
+            <div className="border-t border-carbon-200/60 dark:border-carbon-800/60">
+              {searchResults.map((r) => (
+                <button
+                  key={r.id}
+                  type="button"
+                  onClick={() => focusNode(r.id)}
+                  className="w-full text-left px-3 py-2 hover:bg-carbon-50 dark:hover:bg-carbon-900/40 transition-colors"
+                >
+                  <div className="text-sm font-semibold text-carbon-900 dark:text-carbon-100 line-clamp-1">
+                    {r.label}
+                  </div>
+                  <div className="text-xs text-carbon-500">
+                    {nodeStyles[r.type]?.label ?? r.type}
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
+
+          <div className="border-t border-carbon-200/60 dark:border-carbon-800/60 px-2 py-2 flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => zoomOut({ duration: 160 })}
+              className="p-2 rounded-xl border border-carbon-200 dark:border-carbon-800 hover:bg-carbon-50 dark:hover:bg-carbon-900/40 transition-colors"
+              title="Zoom out"
+            >
+              <Minus className="w-4 h-4 text-carbon-700 dark:text-carbon-200" />
+            </button>
+            <button
+              type="button"
+              onClick={() => zoomIn({ duration: 160 })}
+              className="p-2 rounded-xl border border-carbon-200 dark:border-carbon-800 hover:bg-carbon-50 dark:hover:bg-carbon-900/40 transition-colors"
+              title="Zoom in"
+            >
+              <Plus className="w-4 h-4 text-carbon-700 dark:text-carbon-200" />
+            </button>
+            <button
+              type="button"
+              onClick={() => fitView({ padding: 0.18, duration: 380 })}
+              className="p-2 rounded-xl border border-carbon-200 dark:border-carbon-800 hover:bg-carbon-50 dark:hover:bg-carbon-900/40 transition-colors"
+              title="Enquadrar fluxograma"
+            >
+              <Maximize2 className="w-4 h-4 text-carbon-700 dark:text-carbon-200" />
+            </button>
+            {interactive && activeStepId && (
+              <button
+                type="button"
+                onClick={() => {
+                  const n = initialNodes.find((x) => x.id === activeStepId);
+                  if (!n?.position) return;
+                  setFollowActiveStep(true);
+                  setIsProgrammaticMove(true);
+                  setCenter(n.position.x + 150, n.position.y + 75, { duration: 380 });
+                  setTimeout(() => setIsProgrammaticMove(false), 450);
+                }}
+                className="p-2 rounded-xl border border-carbon-200 dark:border-carbon-800 hover:bg-carbon-50 dark:hover:bg-carbon-900/40 transition-colors"
+                title="Centralizar etapa atual"
+              >
+                <Crosshair className="w-4 h-4 text-carbon-700 dark:text-carbon-200" />
+              </button>
+            )}
+            <div className="flex-1" />
+            {!interactive && (
+              <button
+                type="button"
+                onClick={() => setShowMiniMap((v) => !v)}
+                className="p-2 rounded-xl border border-carbon-200 dark:border-carbon-800 hover:bg-carbon-50 dark:hover:bg-carbon-900/40 transition-colors"
+                title={showMiniMap ? "Ocultar minimapa" : "Mostrar minimapa"}
+              >
+                <ChevronsUpDown className="w-4 h-4 text-carbon-700 dark:text-carbon-200" />
+              </button>
+            )}
+          </div>
+        </div>
+        <div className="mt-2 text-[11px] text-carbon-500 dark:text-carbon-400">
+          {interactive
+            ? "Guiado: pinch para zoom (sem arrastar). Use os botoes para zoom/enquadrar."
+            : "Explorar: scroll para mover. Pinch para zoom. Mouse: segure Cmd/Ctrl e role para zoom."}
+        </div>
+      </div>
 
       {/* Interactive Step Navigation Panel */}
       {interactive && activeNode && (
@@ -404,7 +728,23 @@ function FlowchartEngineInner({
             />
           </div>
 
-          <div className="px-6 py-5">
+          <button
+            type="button"
+            onClick={() => setStepperOpen((v) => !v)}
+            className="w-full px-6 py-2 flex items-center justify-between text-sm font-semibold text-neutral-700 dark:text-neutral-200"
+            title={stepperOpen ? "Recolher painel" : "Expandir painel"}
+          >
+            <span className="inline-flex items-center gap-2">
+              <span className="px-2 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300">
+                {nodeStyles[activeNode.data.nodeType]?.label || 'ETAPA'}
+              </span>
+              <span className="truncate">{activeNode.data.label}</span>
+            </span>
+            <ChevronsUpDown className="w-4 h-4 text-neutral-500" />
+          </button>
+
+          {stepperOpen && (
+          <div className="px-6 pb-5">
             <div className="flex items-center justify-between gap-6">
               {/* Left: Back Button & History */}
               <div className="flex items-center gap-3">
@@ -502,6 +842,78 @@ function FlowchartEngineInner({
               </div>
             </div>
 
+            {/* Path chips (decision track) */}
+            <div className="mt-4 flex items-center gap-2 overflow-x-auto pb-1">
+              {stepHistory.map((id) => {
+                const n = initialNodes.find((x) => x.id === id);
+                if (!n) return null;
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    onClick={() => jumpToStep(id)}
+                    className="shrink-0 inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-950/40 hover:bg-neutral-50 dark:hover:bg-neutral-900/40 transition-colors"
+                    title="Voltar para esta etapa"
+                  >
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">
+                      ✓
+                    </span>
+                    <span className="text-xs font-semibold text-neutral-800 dark:text-neutral-200 line-clamp-1 max-w-[220px]">
+                      {String(n.data.label || '')}
+                    </span>
+                  </button>
+                );
+              })}
+              <span className="shrink-0 inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-teal-200 dark:border-teal-800 bg-teal-50 dark:bg-teal-950/30">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-teal-700 dark:text-teal-300">
+                  Agora
+                </span>
+                <span className="text-xs font-semibold text-neutral-900 dark:text-white line-clamp-1 max-w-[220px]">
+                  {String(activeNode.data.label || '')}
+                </span>
+              </span>
+            </div>
+
+            {/* Clinical context (always anchored here in guided mode) */}
+            {(activeNode.data.description || (activeNode.data.details && activeNode.data.details.length > 0) || (activeNode.data.medications && activeNode.data.medications.length > 0)) && (
+              <div className="mt-4 p-4 bg-neutral-50 dark:bg-neutral-900/40 rounded-xl border border-neutral-200 dark:border-neutral-800">
+                {activeNode.data.description && activeNode.data.nodeType !== 'decision' && activeNode.data.nodeType !== 'alert' && (
+                  <p className="text-base text-neutral-800 dark:text-neutral-200 leading-relaxed">
+                    {activeNode.data.description}
+                  </p>
+                )}
+
+                {activeNode.data.details && activeNode.data.details.length > 0 && (
+                  <ul
+                    className={cn(
+                      "mt-3 space-y-2",
+                      (!activeNode.data.description || activeNode.data.nodeType === 'decision' || activeNode.data.nodeType === 'alert') && "mt-0"
+                    )}
+                  >
+                    {activeNode.data.details.map((d, i) => (
+                      <li key={i} className="flex gap-3 text-base text-neutral-800 dark:text-neutral-200">
+                        <span className="w-2 h-2 rounded-full bg-teal-500 mt-2 shrink-0" />
+                        <span>{d}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {activeNode.data.medications && activeNode.data.medications.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {activeNode.data.medications.map((m) => (
+                      <span
+                        key={m}
+                        className="px-3 py-1.5 bg-white dark:bg-neutral-950/40 border border-emerald-200 dark:border-emerald-800 rounded-lg text-sm font-semibold text-emerald-800 dark:text-emerald-200"
+                      >
+                        {m}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Decision Context - Shows when on a decision node */}
             {activeNode.data.nodeType === 'decision' && activeNode.data.description && (
               <div className="mt-4 p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-800">
@@ -536,11 +948,12 @@ function FlowchartEngineInner({
               </div>
             )}
           </div>
+          )}
         </div>
       )}
 
       {/* Selected Node Detail Panel - Clinical Grade */}
-      {selectedNode && (
+      {!interactive && selectedNode && (
         <div className="absolute top-6 right-6 w-[400px] bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-2xl z-50 animate-in fade-in slide-in-from-right-4 duration-300">
           <div className="p-6">
             {/* Header */}

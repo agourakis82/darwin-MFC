@@ -7,7 +7,7 @@
  * Fluxogramas clicáveis para decisão clínica
  */
 
-import { useState, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
@@ -15,23 +15,78 @@ import { GitFork, Search, Workflow, ExternalLink, Filter, Clock, ChevronRight } 
 import { PageContainer } from '@/app/components/Layout/Containers';
 import { todosProtocolosFlowchart } from '@/lib/data/protocolos-flowchart';
 import { fadeInUp, listContainer } from '@/lib/design-system/animations/presets';
+import { getNodeById, sanitizeRunnerState, type ProtocolRunnerState } from '@/lib/protocolos/protocol-runner';
+
+const STORAGE_PREFIX = 'darwin:protocol-runner:';
+
+type ResumeInfo = {
+  activeNodeId: string;
+  activeLabel: string;
+  steps: number;
+};
 
 export default function ProtocolosPage() {
   const t = useTranslations('protocolos');
+  const commonT = useTranslations('common');
 
   const categorias = [
     { id: 'todos', label: t('categories.all'), cor: 'bg-helix-navy' },
     { id: 'cardiovascular', label: t('categories.cardiovascular'), cor: 'bg-critical-red-500' },
     { id: 'endocrino', label: t('categories.endocrine'), cor: 'bg-thymine-gold' },
     { id: 'respiratorio', label: t('categories.respiratory'), cor: 'bg-cytosine-cyan' },
-    { id: 'saude_mental', label: t('categories.mentalHealth'), cor: 'bg-purple-600' },
-    { id: 'musculoesqueletico', label: t('categories.musculoskeletal'), cor: 'bg-orange-500' },
-    { id: 'infectologia', label: t('categories.infectology'), cor: 'bg-thymine-gold' },
+    { id: 'saude_mental', label: t('categories.mentalHealth'), cor: 'bg-helix-navy' },
+    { id: 'musculoesqueletico', label: t('categories.musculoskeletal'), cor: 'bg-guanine-green' },
+    { id: 'infectologia', label: t('categories.infectology'), cor: 'bg-brand-primary-600' },
     { id: 'urgencia', label: t('categories.emergency'), cor: 'bg-critical-red-500' },
-    { id: 'materno_infantil', label: t('categories.maternalChild'), cor: 'bg-pink-500' },
+    { id: 'materno_infantil', label: t('categories.maternalChild'), cor: 'bg-brand-secondary-600' },
   ];
   const [searchTerm, setSearchTerm] = useState('');
   const [categoriaAtiva, setCategoriaAtiva] = useState('todos');
+  const [resumeById, setResumeById] = useState<Record<string, ResumeInfo>>({});
+
+  // Session-local progress surface for "Continuar" (top-tier runner UX).
+  useEffect(() => {
+    function refreshResume() {
+      if (typeof window === 'undefined') return;
+      const next: Record<string, ResumeInfo> = {};
+
+      for (const proto of todosProtocolosFlowchart) {
+        const raw = sessionStorage.getItem(`${STORAGE_PREFIX}${proto.id}`);
+        if (!raw) continue;
+        try {
+          const parsed = JSON.parse(raw) as ProtocolRunnerState;
+          const state = sanitizeRunnerState(proto, parsed);
+          const steps = state.history.length;
+
+          // Only show resume once the user actually moved forward.
+          if (steps <= 1) continue;
+          if (!state.activeNodeId) continue;
+
+          const active = getNodeById(proto, state.activeNodeId);
+          const label = String(active?.data?.label ?? '').trim();
+
+          next[proto.id] = {
+            activeNodeId: state.activeNodeId,
+            activeLabel: label || 'Etapa atual',
+            steps,
+          };
+        } catch {
+          // Ignore malformed/old storage.
+        }
+      }
+
+      setResumeById(next);
+    }
+
+    refreshResume();
+
+    function onVisibilityChange() {
+      if (document.visibilityState === 'visible') refreshResume();
+    }
+
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', onVisibilityChange);
+  }, []);
 
   const protocolosFiltrados = useMemo(() => {
     return todosProtocolosFlowchart.filter(p => {
@@ -48,20 +103,20 @@ export default function ProtocolosPage() {
 
   const getCategoriaGradient = (categoria: string) => {
     const gradients: Record<string, string> = {
-      cardiovascular: 'from-critical-red-500 to-red-600',
-      endocrino: 'from-thymine-gold to-orange-600',
+      cardiovascular: 'from-critical-red-500 to-critical-red-700',
+      endocrino: 'from-thymine-gold to-guanine-green',
       respiratorio: 'from-cytosine-cyan to-adenine-teal',
-      saude_mental: 'from-purple-500 to-violet-600',
-      musculoesqueletico: 'from-orange-500 to-amber-600',
-      infectologia: 'from-thymine-gold to-lime-600',
-      urgencia: 'from-critical-red-500 to-rose-700',
-      materno_infantil: 'from-pink-500 to-rose-600',
+      saude_mental: 'from-helix-navy to-brand-primary-600',
+      musculoesqueletico: 'from-guanine-green to-brand-secondary-600',
+      infectologia: 'from-brand-primary-600 to-brand-secondary-600',
+      urgencia: 'from-critical-red-600 to-helix-navy',
+      materno_infantil: 'from-brand-secondary-600 to-brand-primary-600',
     };
     return gradients[categoria] || 'from-helix-navy to-adenine-teal';
   };
 
   return (
-    <div className="min-h-screen bg-phosphate dark:bg-carbon-900">
+    <div className="min-h-screen bg-phosphate dark:bg-carbon-950">
       <PageContainer className="py-8">
         {/* Header */}
         <div className="flex items-center gap-4 mb-8">
@@ -126,11 +181,12 @@ export default function ProtocolosPage() {
           >
             {protocolosFiltrados.map((protocolo) => {
               const gradient = getCategoriaGradient(protocolo.categoria);
+              const resume = resumeById[protocolo.id];
 
               return (
                 <motion.div key={protocolo.id} variants={fadeInUp} whileHover={{ y: -4 }} whileTap={{ scale: 0.98 }}>
                 <Link
-                  href={`/protocolos/flowchart/${protocolo.id}`}
+                  href={`/protocolos/flowchart/${protocolo.id}/guided`}
                   className="group card-darwin relative overflow-hidden rounded-2xl hover:border-adenine-teal dark:hover:border-cytosine-cyan transition-all hover:shadow-xl hover:scale-[1.02] block"
                 >
                   {/* Gradient Header */}
@@ -156,6 +212,28 @@ export default function ProtocolosPage() {
                     <p className="text-sm text-carbon-600 dark:text-carbon-300 mb-4 line-clamp-2 font-body">
                       {protocolo.descricao}
                     </p>
+
+                    {/* Resume / Continue */}
+                    {resume ? (
+                      <div className="mb-4 rounded-2xl border border-brand-primary-200/70 dark:border-brand-primary-800/60 bg-brand-primary-50/80 dark:bg-brand-primary-900/20 p-4">
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="min-w-0">
+                            <div className="text-xs font-bold uppercase tracking-wider text-brand-primary-700 dark:text-brand-primary-300">
+                              {commonT('continue')}
+                            </div>
+                            <div className="mt-1 text-sm font-semibold text-carbon-900 dark:text-white line-clamp-2">
+                              {resume.activeLabel}
+                            </div>
+                            <div className="mt-1 text-xs text-carbon-600 dark:text-carbon-400">
+                              {commonT('step')} {resume.steps}
+                            </div>
+                          </div>
+                          <div className="w-10 h-10 rounded-2xl bg-brand-primary-600 text-white flex items-center justify-center shadow-sm shrink-0">
+                            <ChevronRight className="w-5 h-5" />
+                          </div>
+                        </div>
+                      </div>
+                    ) : null}
 
                     {/* Meta */}
                     <div className="flex items-center gap-3 mb-4">

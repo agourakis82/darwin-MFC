@@ -49,6 +49,8 @@ export interface AppState {
   theme: Theme;
   contentMode: ContentMode;
   viewMode: import('./evidence').ViewMode; // full | high_yield | print_friendly
+  /** Accessibility: reduces blur/transparency-heavy surfaces */
+  reduceTransparency: boolean;
   favorites: string[]; // IDs dos rastreamentos favoritos
   favoritosDoencas: string[]; // IDs das doenças favoritas
   favoritosMedicamentos: string[]; // IDs dos medicamentos favoritos
@@ -56,4 +58,3 @@ export interface AppState {
   notes: Record<string, string>; // { itemId: nota }
   selectedRegion: import('./region').Region; // BR | IN | EU
 }
-

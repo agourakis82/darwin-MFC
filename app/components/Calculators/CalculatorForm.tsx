@@ -413,7 +413,7 @@ export function CalculatorForm({
   );
 
   return (
-    <form onSubmit={handleSubmit} className={cn('space-y-6', className)}>
+    <form onSubmit={handleSubmit} className={cn('space-y-6', className)} data-testid="calculator-form">
       {Object.entries(groupedInputs).map(([groupName, inputs]) => (
         <div key={groupName} className="space-y-4">
           {Object.keys(groupedInputs).length > 1 && (
@@ -446,6 +446,7 @@ export function CalculatorForm({
         <button
           type="submit"
           disabled={!isFormValid}
+          data-testid="calculator-calc"
           className={cn(
             'flex-1 flex items-center justify-center gap-2 py-3 rounded-lg',
             'font-semibold text-white transition-colors',
@@ -460,6 +461,7 @@ export function CalculatorForm({
         <button
           type="button"
           onClick={handleReset}
+          data-testid="calculator-reset"
           className={cn(
             'px-4 py-3 rounded-lg',
             'bg-neutral-100 dark:bg-neutral-800',

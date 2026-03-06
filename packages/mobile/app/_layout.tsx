@@ -1,44 +1,44 @@
 /**
  * Darwin MFC Mobile App - Root Layout
- * Uses Expo Router with React Native Paper for Material Design
+ * Uses Expo Router (Apple-native UI kit lives in src/ui)
  */
+import 'react-native-url-polyfill/auto';
+import 'react-native-get-random-values';
+
 import { Stack } from 'expo-router';
-import { PaperProvider } from 'react-native-paper';
 import { AuthProvider } from '../contexts/AuthContext';
 import { ThemeProvider } from '../contexts/ThemeContext';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
-import { useFonts, Inter_400Regular, Inter_500Medium, Inter_700Bold } from '@expo-google-fonts/inter';
+import { useTheme } from '../contexts/ThemeContext';
+import { StatusBar } from 'expo-status-bar';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [fontsLoaded] = useFonts({
-    Inter_400Regular,
-    Inter_500Medium,
-    Inter_700Bold,
-  });
-
   useEffect(() => {
-    if (fontsLoaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
-
-  if (!fontsLoaded) {
-    return null;
-  }
+    SplashScreen.hideAsync();
+  }, []);
 
   return (
-    <PaperProvider>
-      <AuthProvider>
-        <ThemeProvider>
-          <Stack screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            <Stack.Screen name="(modal)" options={{ presentation: 'modal' }} />
-          </Stack>
-        </ThemeProvider>
-      </AuthProvider>
-    </PaperProvider>
+    <AuthProvider>
+      <ThemeProvider>
+        <ThemedAppShell />
+      </ThemeProvider>
+    </AuthProvider>
+  );
+}
+
+function ThemedAppShell() {
+  const { theme } = useTheme();
+
+  return (
+    <>
+      <StatusBar style={theme === 'dark' ? 'light' : 'dark'} />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(modal)" options={{ presentation: 'modal' }} />
+      </Stack>
+    </>
   );
 }

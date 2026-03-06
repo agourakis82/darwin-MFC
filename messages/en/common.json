@@ -6,9 +6,16 @@
     "appDescription": "Your clinical command center for evidence-based Family Medicine",
     "new": "New",
     "loading": "Loading...",
+    "backToHome": "Back to home",
     "search": {
       "placeholder": "Search..."
-    }
+    },
+    "back": "Back",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "step": "Step",
+    "publish": "Publish",
+    "saving": "Saving..."
   },
   "nav": {
     "home": "Home",
@@ -426,7 +433,14 @@
       "error_generic": "Failed to submit case. Please try again.",
       "next": "Next",
       "back": "Back",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "none_published": "No published cases yet.",
+      "open": "Open",
+      "not_found_title": "Case not found",
+      "not_found_desc": "This case may be private or unpublished.",
+      "upvote": "Upvote",
+      "case_data": "Case",
+      "views": "views"
     },
     "cases_desc": "Share and learn from anonymized patient cases",
     "mentorship": {
@@ -1084,7 +1098,9 @@
       "pediatrico": "Pediatric",
       "respiratorio": "Respiratory",
       "gastro": "Gastrointestinal",
-      "psiquiatrico": "Psychiatric"
+      "psiquiatrico": "Psychiatric",
+      "cronico": "Chronic care",
+      "gineco_obstetricia": "Gynecology & Obstetrics"
     },
     "difficulty": {
       "beginner": "Beginner",

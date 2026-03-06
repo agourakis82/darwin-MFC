@@ -11,6 +11,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { isSupabaseConfigured, supabase } from '@/lib/supabase/client';
+import { ssrSafeJSONStorage } from './persistStorage';
 
 /** The 7 genes supported by CPIC with highest clinical evidence */
 export const SUPPORTED_GENES = [
@@ -127,6 +128,7 @@ export const useGenotypeStore = create<GenotypeStore>()(
     }),
     {
       name: 'darwin-genotypes',
+      storage: ssrSafeJSONStorage,
       partialize: (state) => ({ genotypes: state.genotypes }),
     }
   )

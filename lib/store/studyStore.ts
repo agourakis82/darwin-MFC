@@ -10,6 +10,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { ReviewSchedule, Quality, calculateNextInterval, initializeSchedule } from '../utils/spaced-repetition';
 import { QuizAttempt, QuizResposta } from '../types/study-mode';
+import { ssrSafeJSONStorage } from './persistStorage';
 
 interface StudyProgress {
   flashcardId: string;
@@ -246,6 +247,7 @@ export const useStudyStore = create<StudyStore>()(
     }),
     {
       name: STORAGE_KEY,
+      storage: ssrSafeJSONStorage,
       // Custom serialization for Dates
       partialize: (state) => ({
         flashcardSchedules: Object.fromEntries(
@@ -325,4 +327,3 @@ export const useStudyStore = create<StudyStore>()(
     }
   )
 );
-

@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { ssrSafeJSONStorage } from './persistStorage';
 import type {
   UserLearningProgress,
   ModuleProgress,
@@ -570,6 +571,7 @@ export const useLearningStore = create<LearningStore>()(
     }),
     {
       name: 'darwin-mfc-learning',
+      storage: ssrSafeJSONStorage,
       partialize: (state) => ({
         pathProgress: state.pathProgress,
         flashcardStates: state.flashcardStates,

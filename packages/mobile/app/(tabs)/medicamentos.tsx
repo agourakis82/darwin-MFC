@@ -4,9 +4,10 @@
  */
 import React, { useState } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
-import { Searchbar, Card, Text, Chip } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useTheme } from '../../contexts/ThemeContext';
+import { Card, Input, Text } from '../../src/ui';
 
 interface Medication {
   id: string;
@@ -26,7 +27,8 @@ const MEDICATIONS: Medication[] = [
 ];
 
 export default function MedicamentosScreen() {
-  const { colors } = useTheme();
+  const { colors, theme } = useTheme();
+  const isDark = theme === 'dark';
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredMeds = MEDICATIONS.filter(
@@ -36,23 +38,25 @@ export default function MedicamentosScreen() {
   );
 
   const renderMedication = ({ item }: { item: Medication }) => (
-    <Card style={[styles.card, { backgroundColor: colors.surface }]} mode="elevated">
-      <Card.Content>
-        <Text variant="titleMedium" style={[styles.medName, { color: colors.text }]}>
-          {item.name}
-        </Text>
-        <Text variant="bodySmall" style={{ color: colors.text, opacity: 0.7 }}>
-          {item.genericName}
-        </Text>
-        <View style={styles.chipRow}>
-          <Chip compact style={styles.chip}>
+    <Card variant="elevated" padding={16} style={styles.card}>
+      <Text variant="titleMedium" style={[styles.medName, { color: colors.text }]}>
+        {item.name}
+      </Text>
+      <Text variant="bodySmall" style={{ color: colors.text, opacity: 0.7 }}>
+        {item.genericName}
+      </Text>
+      <View style={styles.chipRow}>
+        <View style={[styles.chip, { backgroundColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)', borderColor: colors.border }]}>
+          <Text variant="bodySmall" style={{ color: colors.text, fontWeight: '600' }}>
             {item.category}
-          </Chip>
-          <Chip compact style={styles.chip} textStyle={{ fontSize: 10 }}>
-            {item.atcCode}
-          </Chip>
+          </Text>
         </View>
-      </Card.Content>
+        <View style={[styles.chip, { backgroundColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)', borderColor: colors.border }]}>
+          <Text variant="bodySmall" style={{ color: colors.text, fontWeight: '600', fontSize: 11 }}>
+            {item.atcCode}
+          </Text>
+        </View>
+      </View>
     </Card>
   );
 
@@ -62,11 +66,11 @@ export default function MedicamentosScreen() {
         <Text variant="headlineMedium" style={[styles.title, { color: colors.text }]}>
           Medicamentos
         </Text>
-        <Searchbar
-          placeholder="Buscar medicamento..."
-          onChangeText={setSearchQuery}
+        <Input
+          placeholder="Buscar medicamento…"
           value={searchQuery}
-          style={[styles.searchbar, { backgroundColor: colors.surface }]}
+          onChangeText={setSearchQuery}
+          left={<MaterialCommunityIcons name="magnify" size={18} color={isDark ? 'rgba(244,244,242,0.7)' : 'rgba(26,26,24,0.55)'} />}
         />
       </View>
       <FlatList
@@ -86,21 +90,18 @@ const styles = StyleSheet.create({
   },
   header: {
     padding: 16,
+    gap: 12,
   },
   title: {
     fontWeight: 'bold',
-    marginBottom: 16,
-  },
-  searchbar: {
-    borderRadius: 12,
   },
   list: {
     padding: 16,
     paddingTop: 0,
+    paddingBottom: 120,
   },
   card: {
     marginBottom: 12,
-    borderRadius: 12,
   },
   medName: {
     fontWeight: '600',
@@ -112,6 +113,9 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   chip: {
-    height: 24,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderRadius: 999,
+    borderWidth: 1,
   },
 });

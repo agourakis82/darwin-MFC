@@ -1,81 +1,73 @@
 /**
  * Darwin Design System (DDS) - Design Tokens
  * Academic Premium & Clinical Authority Standard
+ *
+ * Source of truth:
+ * - @darwin-mfc/design-tokens (shared web + mobile)
+ *
+ * This file is kept as a compatibility layer to avoid import churn.
  */
 
+import {
+  colors as tokenColors,
+  radii as tokenRadii,
+  spacing as tokenSpacing,
+  motion,
+  shadows,
+  getCssVars,
+  getRNTheme,
+} from '@darwin-mfc/design-tokens';
+
 export const colors = {
-  // =============================================
-  // DARWIN MEDICAL HUB - SOTA Clinical Palette
-  // =============================================
+  // Darwin Medical Hub palette (semantic)
   darwin: {
-    // Primary Authority - Helix Navy
-    helixNavy: '#0D2137',
-    
-    // DNA Semantic Accents (Used sparingly for status/indication)
-    adenineTeal: '#0E7490',    
-    guanineGreen: '#059669',   
-    cytosineCyan: '#06B6D4',       
-    thymineGold: '#B45309',    
-    
-    // Backgrounds - The "Digital Journal" feel
-    paperWhite: '#FBFBF9',     // Primary content background
-    clinicalGray: '#F4F4F2',   // Secondary UI background
-    phosphate: '#F8FAFC',      
-    
-    // Carbon Scale (Neutral System)
-    carbon: {
-      50: '#FBFBF9',
-      100: '#F4F4F2',
-      200: '#E5E5E2',
-      300: '#D1D1CD',
-      400: '#A1A19D',
-      500: '#71716D',
-      600: '#52524E',
-      700: '#3F3F3C',
-      800: '#272725',
-      900: '#1A1A18',
-      950: '#0F0F0E',
-    },
-    
-    // Clinical Borders
-    border: 'rgba(26, 26, 24, 0.1)', // Hairline border
-    
-    // Semantic Colors
+    helixNavy: tokenColors.helixNavy,
+    adenineTeal: tokenColors.adenineTeal,
+    guanineGreen: tokenColors.guanineGreen,
+    cytosineCyan: tokenColors.cytosineCyan,
+    thymineGold: tokenColors.thymineGold,
+
+    paperWhite: tokenColors.paperWhite,
+    clinicalGray: tokenColors.clinicalGray,
+    phosphate: tokenColors.phosphate,
+
+    carbon: tokenColors.carbon,
+
+    border: 'rgba(26, 26, 24, 0.10)', // hairline default (web overrides via CSS vars)
+
     critical: {
-      red: '#B91C1C',
-      orange: '#C2410C',
+      red: tokenColors.clinical.critical.dark,
+      orange: tokenColors.clinical.warning.dark,
     },
   },
 
-  // Apple-inspired Colors (Maintained for UI logic)
+  // Apple-inspired logical colors (minimal, for JS-only logic)
   apple: {
     light: {
-      text: '#1A1A18',
-      secondaryText: '#71716D',
-      background: '#FBFBF9',
-      separator: 'rgba(0,0,0,0.1)',
+      text: tokenColors.carbon[900],
+      secondaryText: tokenColors.carbon[500],
+      background: tokenColors.paperWhite,
+      separator: 'rgba(0,0,0,0.10)',
     },
     dark: {
-      text: '#F4F4F2',
-      background: '#0F0F0E',
-      separator: 'rgba(255,255,255,0.1)',
-    }
-  }
+      text: tokenColors.carbon[100],
+      background: tokenColors.carbon[950],
+      separator: 'rgba(255,255,255,0.10)',
+    },
+  },
 } as const;
 
 export const typography = {
   fontFamily: {
-    // T - Trust (The Voice of Authority)
-    body: "'Source Serif 4', 'Georgia', serif",
-    
-    // A - Authority (The Structure)
-    display: "'Instrument Sans', sans-serif",
-    
-    // G - Guidance (The UI)
-    ui: "'Inter', sans-serif",
-    
-    // C - Code (The Data)
-    code: "'JetBrains Mono', monospace",
+    // System UI by default (performance + Apple-native feel)
+    ui: "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif",
+    display: "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif",
+
+    // Long-form academic reading
+    body: "'Source Serif 4', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
+
+    // Data/code
+    code: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
   },
 
   fontSize: {
@@ -101,15 +93,20 @@ export const typography = {
 export const spacing = {
   hairline: '0.5px',
   thin: '1px',
-  // Standard scales...
+  xs: `${tokenSpacing.xs}px`,
+  sm: `${tokenSpacing.sm}px`,
+  md: `${tokenSpacing.md}px`,
+  lg: `${tokenSpacing.lg}px`,
+  xl: `${tokenSpacing.xl}px`,
+  xxl: `${tokenSpacing.xxl}px`,
 } as const;
 
 export const borderRadius = {
   none: '0',
-  sm: '2px',
-  md: '4px',
-  lg: '8px',
-  xl: '12px',
+  sm: `${tokenRadii.sm}px`,
+  md: `${tokenRadii.md}px`,
+  lg: `${tokenRadii.lg}px`,
+  xl: `${tokenRadii.xl}px`,
   full: '9999px',
 } as const;
 
@@ -120,3 +117,14 @@ export const designTokens = {
 } as const;
 
 export default designTokens;
+
+// Re-export core shared tokens for consumers that want the canonical objects.
+export {
+  tokenColors,
+  tokenRadii as radii,
+  tokenSpacing as tokenSpacing,
+  motion,
+  shadows,
+  getCssVars,
+  getRNTheme,
+};

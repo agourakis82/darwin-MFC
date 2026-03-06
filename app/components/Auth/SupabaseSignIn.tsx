@@ -43,22 +43,22 @@ export default function SupabaseSignIn({ isOpen, onClose }: SupabaseSignInProps)
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={onClose}>
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full mx-4 p-6" onClick={(e) => e.stopPropagation()}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm" onClick={onClose}>
+      <div className="card-darwin max-w-md w-full mx-4 p-6 rounded-2xl" onClick={(e) => e.stopPropagation()}>
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h2 className="text-2xl font-bold text-helix-navy dark:text-white">
             {mode === 'signin' ? 'Sign In' : 'Create Account'}
           </h2>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
+          <button onClick={onClose} className="p-2 rounded-xl hover:bg-carbon-100 dark:hover:bg-carbon-800 apple-transition-fast" aria-label="Close">
             <X className="w-6 h-6" />
           </button>
         </div>
 
         {/* Error */}
         {error && (
-          <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 rounded-lg">
-            <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
+          <div className="mb-4 p-4 bg-red-50 dark:bg-red-950/30 rounded-xl border border-red-200 dark:border-red-900/40">
+            <p className="text-sm font-medium text-red-700 dark:text-red-300">{error}</p>
           </div>
         )}
 
@@ -67,7 +67,7 @@ export default function SupabaseSignIn({ isOpen, onClose }: SupabaseSignInProps)
           <button
             onClick={() => signInWithGoogle()}
             disabled={loading}
-            className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-600 disabled:opacity-50"
+            className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-white dark:bg-carbon-900 border border-carbon-200 dark:border-carbon-700 rounded-xl hover:bg-carbon-100 dark:hover:bg-carbon-800 disabled:opacity-50 apple-transition-fast font-semibold"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -81,7 +81,7 @@ export default function SupabaseSignIn({ isOpen, onClose }: SupabaseSignInProps)
           <button
             onClick={() => signInWithGithub()}
             disabled={loading}
-            className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 disabled:opacity-50"
+            className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-helix-navy text-white rounded-xl hover:opacity-95 disabled:opacity-50 apple-transition-fast font-semibold"
           >
             <Github className="w-5 h-5" />
             Continue with GitHub
@@ -91,10 +91,10 @@ export default function SupabaseSignIn({ isOpen, onClose }: SupabaseSignInProps)
         {/* Divider */}
         <div className="relative mb-6">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-300 dark:border-gray-600"></div>
+            <div className="w-full border-t border-carbon-200 dark:border-carbon-700"></div>
           </div>
           <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-white dark:bg-gray-800 text-gray-500">Or with email</span>
+            <span className="px-2 bg-white dark:bg-carbon-900 text-carbon-500">Or with email</span>
           </div>
         </div>
 
@@ -107,7 +107,7 @@ export default function SupabaseSignIn({ isOpen, onClose }: SupabaseSignInProps)
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              className="w-full px-4 py-3 border border-carbon-200 dark:border-carbon-700 rounded-xl bg-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 focus:outline-none focus:ring-2 focus:ring-adenine-teal/30 dark:focus:ring-cytosine-cyan/30"
             />
           )}
           
@@ -117,7 +117,7 @@ export default function SupabaseSignIn({ isOpen, onClose }: SupabaseSignInProps)
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+            className="w-full px-4 py-3 border border-carbon-200 dark:border-carbon-700 rounded-xl bg-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 focus:outline-none focus:ring-2 focus:ring-adenine-teal/30 dark:focus:ring-cytosine-cyan/30"
           />
           
           <div className="relative">
@@ -127,12 +127,13 @@ export default function SupabaseSignIn({ isOpen, onClose }: SupabaseSignInProps)
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              className="w-full px-4 py-3 pr-12 border border-carbon-200 dark:border-carbon-700 rounded-xl bg-white dark:bg-carbon-900 text-carbon-900 dark:text-carbon-100 focus:outline-none focus:ring-2 focus:ring-adenine-teal/30 dark:focus:ring-cytosine-cyan/30"
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg hover:bg-carbon-100 dark:hover:bg-carbon-800 apple-transition-fast text-carbon-500"
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
             >
               {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
             </button>
@@ -141,7 +142,7 @@ export default function SupabaseSignIn({ isOpen, onClose }: SupabaseSignInProps)
           <button
             type="submit"
             disabled={loading}
-            className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 font-medium"
+            className="w-full btn-darwin-primary px-4 py-3 disabled:opacity-50"
           >
             {loading ? (
               <Loader2 className="w-5 h-5 animate-spin mx-auto" />
@@ -155,7 +156,7 @@ export default function SupabaseSignIn({ isOpen, onClose }: SupabaseSignInProps)
         <div className="mt-4 text-center text-sm">
           <button
             onClick={() => setMode(mode === 'signin' ? 'signup' : 'signin')}
-            className="text-blue-600 hover:underline"
+            className="text-adenine-teal dark:text-cytosine-cyan hover:underline"
           >
             {mode === 'signin' ? "Don't have an account? Sign up" : 'Already have an account? Sign in'}
           </button>
@@ -164,4 +165,3 @@ export default function SupabaseSignIn({ isOpen, onClose }: SupabaseSignInProps)
     </div>
   );
 }
-

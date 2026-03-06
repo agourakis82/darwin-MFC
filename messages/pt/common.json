@@ -8,7 +8,13 @@
     "loading": "Carregando...",
     "search": {
       "placeholder": "Buscar..."
-    }
+    },
+    "back": "Voltar",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "step": "Passo",
+    "publish": "Publicar",
+    "saving": "Salvando..."
   },
   "nav": {
     "home": "Início",
@@ -445,7 +451,14 @@
       "error_generic": "Falha ao enviar caso. Por favor, tente novamente.",
       "next": "Próximo",
       "back": "Voltar",
-      "cancel": "Cancelar"
+      "cancel": "Cancelar",
+      "none_published": "Sem casos publicados ainda.",
+      "open": "Abrir",
+      "not_found_title": "Caso não encontrado",
+      "not_found_desc": "Este caso pode estar privado ou não publicado.",
+      "upvote": "Voto positivo",
+      "case_data": "Caso",
+      "views": "visualizações"
     },
     "cases_desc": "Compartilhe e aprenda com casos de pacientes anonimizados",
     "mentorship": {
@@ -1084,7 +1097,9 @@
       "pediatrico": "Pediátrico",
       "respiratorio": "Respiratório",
       "gastro": "Gastrointestinal",
-      "psiquiatrico": "Psiquiátrico"
+      "psiquiatrico": "Psiquiátrico",
+      "cronico": "Crônico",
+      "gineco_obstetricia": "Ginecologia e Obstetrícia"
     },
     "difficulty": {
       "beginner": "Iniciante",

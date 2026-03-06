@@ -5,6 +5,8 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Search, Pill, FileText, Calculator, Stethoscope, ChevronRight, X, Heart, Activity, Syringe, Shield, Clock, ArrowLeft, Home } from 'lucide-react';
 import { PageContainer } from '@/app/components/Layout/Containers';
+import { usePSStore } from '@/lib/store/psStore';
+import { allEmergencyDrugs } from '@/lib/ps/data';
 import { todosMedicamentos, searchMedicamentos } from '@/lib/data/medicamentos/index';
 import { todasDoencas, searchDoencas } from '@/lib/data/doencas/index';
 import { Medicamento } from '@/lib/types/medicamento';
@@ -20,6 +22,8 @@ interface QuickDose {
   via: string;
   frequencia: string;
   observacao?: string;
+  href?: string;
+  category?: string;
 }
 
 // Doses rápidas mais usadas na APS
@@ -46,6 +50,43 @@ const dosesRapidas: QuickDose[] = [
   { id: '20', nome: 'Sertralina', indicacao: 'Depressão / Ansiedade', dose: '50-100mg', via: 'VO', frequencia: '1x/dia' },
 ];
 
+const emergencyQuickDoses: QuickDose[] = allEmergencyDrugs
+  .map((drug) => {
+    const primary = drug.emergencyDosing[0];
+    if (!primary) {
+      return {
+        id: drug.id,
+        nome: drug.genericName,
+        indicacao: drug.keywords[0] ?? drug.category,
+        dose: 'Dose conforme protocolo',
+        via: 'BIC/IV',
+        frequencia: 'Conforme protocolo',
+        observacao: 'Acesso a ficha completa em Drogas PS',
+        href: `/ps/drogas/${drug.id}`,
+        category: drug.category,
+      };
+    }
+
+    const dose = primary.bolus
+      ? primary.bolus
+      : primary.doseRange
+        ? `${primary.doseRange.min} - ${primary.doseRange.max} ${primary.doseUnit}`
+        : 'Dose conforme protocolo';
+
+    return {
+      id: drug.id,
+      nome: drug.genericName,
+      indicacao: primary.indication,
+      dose,
+      via: primary.route ?? 'BIC/IV',
+      frequencia: primary.infusion ? 'Bolo/infusão conforme protocolo' : 'Conforme protocolo',
+      observacao: primary.notes?.[0],
+      href: `/ps/drogas/${drug.id}`,
+      category: drug.category,
+    };
+  })
+  .sort((a, b) => a.nome.localeCompare(b.nome));
+
 // Calculadoras rápidas - keys for translation
 const calculadorasRapidas = [
   { id: 'imc', nameKey: 'calculators.bmi', icon: '⚖️', path: '/calculadoras' },
@@ -58,6 +99,7 @@ const calculadorasRapidas = [
 
 export default function ConsultaRapidaClient() {
   const t = useTranslations('quickConsultation');
+  const mode = usePSStore((state) => state.mode);
   const [activeTab, setActiveTab] = useState<TabType>('inicio');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedMed, setSelectedMed] = useState<Medicamento | null>(null);
@@ -75,13 +117,14 @@ export default function ConsultaRapidaClient() {
 
   // Doses filtradas
   const filteredDoses = useMemo(() => {
-    if (!doseFilter.trim()) return dosesRapidas;
+    const source = mode === 'ps' ? emergencyQuickDoses : dosesRapidas;
+    if (!doseFilter.trim()) return source;
     const term = doseFilter.toLowerCase();
-    return dosesRapidas.filter(d => 
+    return source.filter(d => 
       d.nome.toLowerCase().includes(term) ||
       d.indicacao.toLowerCase().includes(term)
     );
-  }, [doseFilter]);
+  }, [doseFilter, mode]);
 
   const handleBack = () => {
     if (selectedMed) {
@@ -293,22 +336,41 @@ export default function ConsultaRapidaClient() {
               </div>
               
               <div className="space-y-2">
-                {filteredDoses.slice(0, 10).map(dose => (
-                  <div
-                    key={dose.id}
-                    className="bg-white dark:bg-slate-800 rounded-xl p-3 border border-slate-200 dark:border-slate-700"
-                  >
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="font-bold text-slate-900 dark:text-white">{dose.nome}</span>
-                      <span className="text-xs px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full">
-                        {dose.indicacao}
-                      </span>
+                {filteredDoses.slice(0, 10).map((dose) => {
+                  const cardContent = (
+                    <>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="font-bold text-slate-900 dark:text-white">{dose.nome}</span>
+                        <span className="text-xs px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full">
+                          {dose.indicacao}
+                        </span>
+                      </div>
+                      <p className="text-sm text-slate-600 dark:text-slate-300">
+                        <span className="font-medium">{dose.dose}</span> {dose.via} - {dose.frequencia}
+                      </p>
+                      {dose.observacao && (
+                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{dose.observacao}</p>
+                      )}
+                    </>
+                  );
+
+                  return dose.href ? (
+                    <Link
+                      key={dose.id}
+                      href={dose.href}
+                      className="bg-white dark:bg-slate-800 rounded-xl p-3 border border-slate-200 dark:border-slate-700 block"
+                    >
+                      {cardContent}
+                    </Link>
+                  ) : (
+                    <div
+                      key={dose.id}
+                      className="bg-white dark:bg-slate-800 rounded-xl p-3 border border-slate-200 dark:border-slate-700"
+                    >
+                      {cardContent}
                     </div>
-                    <p className="text-sm text-slate-600 dark:text-slate-300">
-                      <span className="font-medium">{dose.dose}</span> {dose.via} - {dose.frequencia}
-                    </p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
               
               {filteredDoses.length > 10 && (
@@ -447,4 +509,3 @@ export default function ConsultaRapidaClient() {
     </PageContainer>
   );
 }
-

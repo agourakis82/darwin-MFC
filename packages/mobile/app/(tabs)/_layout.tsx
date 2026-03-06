@@ -1,18 +1,18 @@
 /**
  * Darwin MFC Mobile - Tab Navigation Layout
- * 4 main tabs: Home, Medications, Study, Profile
+ * Main tabs: Home, Medications, Protocols, Study, Profile
  */
 import { Tabs } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { DarwinTabBar } from '../../src/ui';
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#6366f1',
-        tabBarInactiveTintColor: 'gray',
         headerShown: false,
       }}
+      tabBar={(props) => <DarwinTabBar {...props} />}
     >
       <Tabs.Screen
         name="index"
@@ -34,6 +34,19 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="pill"
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="protocolos"
+        options={{
+          title: 'Protocolos',
+          tabBarIcon: ({ color, size, focused }) => (
+            <MaterialCommunityIcons
+              name={focused ? 'file-document' : 'file-document-outline'}
               size={size}
               color={color}
             />

@@ -7,6 +7,12 @@ import { locales, type Locale } from '@/i18n/config';
 import LocaleHtmlAttributes from './LocaleHtmlAttributes';
 import { RegionProvider } from '@/lib/context/RegionContext';
 import RegionOnboardingModal from '@/app/components/Region/RegionOnboardingModal';
+import PSModeOnboardingModal from '@/app/components/PS/PSModeOnboardingModal';
+import ModePersistenceGate from '@/app/components/PS/ModePersistenceGate';
+import KeyboardShortcuts from '@/app/components/KeyboardShortcuts';
+import { PWAProvider } from '@/app/components/PWA';
+import { RouteChangeIndicator } from '@/lib/design-system/animations/page-transitions';
+import PSRouteShell from '@/app/components/PS/PSRouteShell';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -20,10 +26,11 @@ export const dynamicParams = false;
  * Locale Layout - wraps locale-prefixed pages with translations
  *
  * IMPORTANT: This layout does NOT have its own html/body tags.
- * The root layout (app/layout.tsx) provides html/body and navigation.
- * This layout only adds:
+ * The root layout (app/layout.tsx) provides html/body and global providers.
+ * This layout provides:
  * 1. NextIntlClientProvider for translations
  * 2. LocaleHtmlAttributes to update lang/dir attributes
+ * 3. The locale shell UI (header/sidebar/footer, mobile nav, PWA UI)
  */
 export default async function LocaleLayout({
   children,
@@ -52,10 +59,24 @@ export default async function LocaleLayout({
     <NextIntlClientProvider messages={messages}>
       <LocaleHtmlAttributes lang={htmlLang} dir={direction} />
       <RegionProvider>
-        {children}
+        <ModePersistenceGate />
+        <PWAProvider />
+        <KeyboardShortcuts />
+        <RouteChangeIndicator color="bg-adenine-teal" />
+        <PSModeOnboardingModal />
+
+        {/* Skip link for keyboard accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg"
+        >
+            Pular para o conteúdo principal
+        </a>
+
+        <PSRouteShell>{children}</PSRouteShell>
+
         <RegionOnboardingModal />
       </RegionProvider>
     </NextIntlClientProvider>
   );
 }
-

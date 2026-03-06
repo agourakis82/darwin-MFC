@@ -2,34 +2,28 @@
   "community": {
     "title": "Comunidad Darwin MFC",
     "description": "Conéctate con profesionales de la salud de todo el mundo. Comparte casos, discute enfoques y encuentra mentores.",
-
     "stats": {
       "members": "Miembros",
       "discussions": "Discusiones",
       "mentors": "Mentores"
     },
-
     "forums": "Foros",
     "recent_discussions": "Discusiones Recientes",
     "no_discussions": "No hay discusiones aún. ¡Sé el primero!",
-
     "case": "Caso",
     "replies": "respuestas",
     "views": "vistas",
-
     "time": {
       "just_now": "ahora mismo",
       "minutes_ago": "hace {count} min",
       "hours_ago": "hace {count}h",
       "days_ago": "hace {count}d"
     },
-
     "coming_soon": {
       "title": "Comunidad en Desarrollo",
       "description": "Estamos construyendo una comunidad colaborativa para profesionales de la salud. ¡Los foros, discusiones de casos y programa de mentoría estarán disponibles pronto!",
       "badge": "Próximamente"
     },
-
     "categories": {
       "clinical": "Discusiones Clínicas",
       "clinical_desc": "Preguntas sobre diagnóstico, tratamiento y manejo de pacientes.",
@@ -40,20 +34,17 @@
       "regional": "Regionales",
       "regional_desc": "Discusiones específicas por país o región."
     },
-
     "mentorship": {
       "title": "Programa de Mentoría",
       "description": "Conéctate con profesionales experimentados para orientación y desarrollo de carrera.",
       "mentees": "mentoreados",
       "connect": "Conectar",
       "unavailable": "No disponible",
-
       "availability": {
         "available": "Disponible",
         "limited": "Limitado",
         "unavailable": "No disponible"
       },
-
       "specializations": {
         "family_medicine": "Medicina Familiar",
         "internal_medicine": "Medicina Interna",
@@ -67,7 +58,6 @@
         "other": "Otros"
       }
     },
-
     "guidelines": {
       "title": "Directrices de la Comunidad",
       "respect": "Sé respetuoso y constructivo en las discusiones",
@@ -75,10 +65,29 @@
       "evidence": "Basa tus respuestas en evidencia científica",
       "no_pii": "Nunca compartas datos identificables de pacientes"
     },
-
     "free_forever": {
       "title": "100% Gratis, Para Siempre",
       "description": "La comunidad Darwin MFC es y siempre será completamente gratuita. Sin suscripciones, sin funciones premium."
+    },
+    "hero_title": "Aprende con la comunidad",
+    "auth_required_short": "Inicia sesión para continuar",
+    "auth_required_title": "Se requiere iniciar sesión",
+    "auth_required_desc": "Inicia sesión para crear un post.",
+    "new_post": "Nuevo post",
+    "new_post_desc": "Escribe una pregunta o discusión para la comunidad.",
+    "select_post": "Selecciona un post",
+    "select_post_desc": "Abre un post desde el foro.",
+    "post_not_found": "Post no encontrado",
+    "post_not_found_desc": "Este post puede haber sido eliminado.",
+    "no_replies": "Aún no hay respuestas.",
+    "pinned": "Fijado",
+    "locked": "Cerrado",
+    "upvote": "Voto positivo",
+    "post_fields": {
+      "title_label": "Título",
+      "title_placeholder": "Ej: Conducta en ...",
+      "content_label": "Contenido",
+      "content_placeholder": "Describe el contexto, tu duda y lo que ya has intentado."
     }
   }
 }

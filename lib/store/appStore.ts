@@ -4,6 +4,7 @@ import { AppState, ContentMode, Theme, ViewMode } from '../types';
 import type { Locale } from '@/i18n/config';
 import type { Region } from '../types/region';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase/client';
+import { ssrSafeJSONStorage } from './persistStorage';
 
 // Debounce timer for cloud sync
 let syncDebounceTimer: ReturnType<typeof setTimeout> | null = null;
@@ -42,6 +43,8 @@ interface AppStore extends AppState {
   // Actions
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
+  setReduceTransparency: (reduce: boolean) => void;
+  toggleReduceTransparency: () => void;
   setContentMode: (mode: ContentMode) => void;
   toggleContentMode: () => void;
   // View mode actions (High-Yield mode)
@@ -109,6 +112,7 @@ export const useAppStore = create<AppStore>()(
         theme: 'dark',
         contentMode: 'descriptive',
         viewMode: 'full', // full | high_yield | print_friendly
+        reduceTransparency: false,
         favorites: [],
         favoritosDoencas: [],
         favoritosMedicamentos: [],
@@ -131,6 +135,16 @@ export const useAppStore = create<AppStore>()(
         set((state) => ({
           theme: state.theme === 'light' ? 'dark' : 'light'
         }));
+        triggerCloudSync();
+      },
+
+      setReduceTransparency: (reduce) => {
+        set({ reduceTransparency: reduce });
+        triggerCloudSync();
+      },
+
+      toggleReduceTransparency: () => {
+        set((state) => ({ reduceTransparency: !state.reduceTransparency }));
         triggerCloudSync();
       },
 
@@ -422,10 +436,12 @@ export const useAppStore = create<AppStore>()(
     },
     {
       name: 'darwin-mfc-storage', // Nome da key no localStorage
+      storage: ssrSafeJSONStorage,
       partialize: (state) => ({
         theme: state.theme,
         contentMode: state.contentMode,
         viewMode: state.viewMode,
+        reduceTransparency: state.reduceTransparency,
         favorites: state.favorites,
         favoritosDoencas: state.favoritosDoencas,
         favoritosMedicamentos: state.favoritosMedicamentos,
@@ -437,4 +453,3 @@ export const useAppStore = create<AppStore>()(
     }
   )
 );
-

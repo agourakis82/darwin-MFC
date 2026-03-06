@@ -40,10 +40,10 @@ export default function SettingsPage() {
   // Show loading while initializing
   if (!isInitialized) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+      <div className="min-h-screen flex items-center justify-center bg-phosphate">
         <div className="text-center">
-          <Loader2 className="w-8 h-8 animate-spin text-blue-600 mx-auto" />
-          <p className="mt-4 text-gray-600 dark:text-gray-400">{t('common.loading')}</p>
+          <Loader2 className="w-8 h-8 animate-spin text-adenine-teal dark:text-cytosine-cyan mx-auto" />
+          <p className="mt-4 text-carbon-600 dark:text-carbon-400">{t('common.loading')}</p>
         </div>
       </div>
     );
@@ -55,13 +55,13 @@ export default function SettingsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-phosphate">
       {/* Header */}
-      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+      <div className="header-darwin">
         <div className="container mx-auto px-4 py-4">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm"
+            className="inline-flex items-center gap-2 text-carbon-600 dark:text-carbon-400 hover:text-adenine-teal dark:hover:text-cytosine-cyan apple-transition-fast text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
             {t('common.back')}
@@ -75,10 +75,10 @@ export default function SettingsPage() {
           <div className="flex gap-2 mb-8">
             <button
               onClick={() => setActiveTab('profile')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl font-semibold transition-colors ${
                 activeTab === 'profile'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                  ? 'bg-adenine-teal text-white'
+                  : 'bg-white dark:bg-carbon-900 text-carbon-700 dark:text-carbon-200 hover:bg-carbon-100 dark:hover:bg-carbon-800'
               }`}
             >
               <User className="w-4 h-4" />
@@ -86,10 +86,10 @@ export default function SettingsPage() {
             </button>
             <button
               onClick={() => setActiveTab('settings')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl font-semibold transition-colors ${
                 activeTab === 'settings'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                  ? 'bg-adenine-teal text-white'
+                  : 'bg-white dark:bg-carbon-900 text-carbon-700 dark:text-carbon-200 hover:bg-carbon-100 dark:hover:bg-carbon-800'
               }`}
             >
               <SettingsIcon className="w-4 h-4" />

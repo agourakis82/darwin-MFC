@@ -1,6 +1,40 @@
 import { getRequestConfig } from 'next-intl/server';
 import { routing } from './routing';
 
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+  return (
+    value != null &&
+    typeof value === 'object' &&
+    !Array.isArray(value)
+  );
+}
+
+function deepMerge(
+  base: Record<string, unknown>,
+  patch: Record<string, unknown>
+): Record<string, unknown> {
+  for (const [key, patchValue] of Object.entries(patch)) {
+    const baseValue = base[key];
+    if (isPlainObject(baseValue) && isPlainObject(patchValue)) {
+      base[key] = deepMerge({ ...baseValue }, patchValue);
+      continue;
+    }
+    base[key] = patchValue;
+  }
+  return base;
+}
+
+async function loadJson(locale: string, file: string): Promise<Record<string, unknown>> {
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const mod = await import(`../messages/${locale}/${file}.json`);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    return (mod.default ?? {}) as Record<string, unknown>;
+  } catch {
+    return {};
+  }
+}
+
 export default getRequestConfig(async ({ requestLocale }) => {
   // For static export, requestLocale should come from the route params
   // If it's not available, fall back to default locale
@@ -21,64 +55,95 @@ export default getRequestConfig(async ({ requestLocale }) => {
     locale = routing.defaultLocale;
   }
 
-  // Load and merge messages from multiple files
-  const commonMessages = (await import(`../messages/${locale}/common.json`)).default;
+  // Base-locale fallback (TOP TIER): ensure missing keys never break static export.
+  // Merge order: base (default locale) first, then the current locale overrides it.
+  const fallbackLocale =
+    // Prefer English as a "completeness baseline" for missing keys across locales.
+    // Default locale is pt, but pt translations are not guaranteed to be complete.
+    (routing.locales as readonly string[]).includes('en') ? 'en' : routing.defaultLocale;
 
-  // Load optional message files (with fallback to empty object if not found)
-  let diseasesMessages = {};
-  let learningMessages = {};
-  let communityMessages = {};
-  let clinicalCasesMessages = {};
-  let authMessages = {};
-  let regionalMessages = {};
+  const messageFiles = [
+    'common',
+    'learning',
+    'community',
+    'clinical-cases',
+    'auth',
+    'regional',
+  ];
 
-  try {
-    diseasesMessages = (await import(`../messages/${locale}/diseases.json`)).default;
-  } catch (e) {
-    // File doesn't exist yet, use empty object
-  }
+  const [
+    baseCommon,
+    baseLearning,
+    baseCommunity,
+    baseClinicalCases,
+    baseAuth,
+    baseRegional,
+  ] = await Promise.all(messageFiles.map((f) => loadJson(fallbackLocale, f)));
 
-  try {
-    learningMessages = (await import(`../messages/${locale}/learning.json`)).default;
-  } catch (e) {
-    // File doesn't exist yet, use empty object
-  }
+  const [
+    localeCommon,
+    localeLearning,
+    localeCommunity,
+    localeClinicalCases,
+    localeAuth,
+    localeRegional,
+  ] = locale === fallbackLocale
+    ? [baseCommon, baseLearning, baseCommunity, baseClinicalCases, baseAuth, baseRegional]
+    : await Promise.all(messageFiles.map((f) => loadJson(locale, f)));
 
-  try {
-    communityMessages = (await import(`../messages/${locale}/community.json`)).default;
-  } catch (e) {
-    // File doesn't exist yet, use empty object
-  }
+  const mergedMessages = deepMerge(
+    deepMerge(
+      deepMerge(
+        deepMerge(
+          deepMerge(
+            deepMerge({}, baseCommon),
+            baseLearning
+          ),
+          baseCommunity
+        ),
+        baseClinicalCases
+      ),
+      baseAuth
+    ),
+    baseRegional
+  );
 
-  try {
-    clinicalCasesMessages = (await import(`../messages/${locale}/clinical-cases.json`)).default;
-  } catch (e) {
-    // File doesn't exist yet, use empty object
-  }
+  deepMerge(mergedMessages, localeCommon);
+  deepMerge(mergedMessages, localeLearning);
+  deepMerge(mergedMessages, localeCommunity);
+  deepMerge(mergedMessages, localeClinicalCases);
+  deepMerge(mergedMessages, localeAuth);
+  deepMerge(mergedMessages, localeRegional);
 
-  try {
-    authMessages = (await import(`../messages/${locale}/auth.json`)).default;
-  } catch (e) {
-    // File doesn't exist yet, use empty object
-  }
+  const baseDiseases = await loadJson(fallbackLocale, 'diseases');
+  const localeDiseases = locale === fallbackLocale ? baseDiseases : await loadJson(locale, 'diseases');
 
-  try {
-    regionalMessages = (await import(`../messages/${locale}/regional.json`)).default;
-  } catch (e) {
-    // File doesn't exist yet, use empty object
-  }
+  const baseAi = await loadJson(fallbackLocale, 'ai');
+  const localeAi = locale === fallbackLocale ? baseAi : await loadJson(locale, 'ai');
+
+  const baseAccessibility = await loadJson(fallbackLocale, 'accessibility');
+  const localeAccessibility = locale === fallbackLocale ? baseAccessibility : await loadJson(locale, 'accessibility');
 
   return {
     locale,
     messages: {
-      ...commonMessages,
-      ...learningMessages,
-      ...communityMessages,
-      ...clinicalCasesMessages,
-      ...authMessages,
-      ...regionalMessages,
-      diseases: diseasesMessages,
+      ...mergedMessages,
+      diseases: deepMerge(deepMerge({}, baseDiseases), localeDiseases),
+      ai: deepMerge(deepMerge({}, baseAi), localeAi),
+      accessibility: deepMerge(deepMerge({}, baseAccessibility), localeAccessibility),
+    },
+    // Keep static export resilient when translations are incomplete.
+    // Missing keys should not break the build; show a safe fallback instead.
+    onError(error) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const code = (error as any)?.code;
+      if (code === 'MISSING_MESSAGE') return;
+      // eslint-disable-next-line no-console
+      console.error(error);
+    },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    getMessageFallback({ namespace, key }: any) {
+      return namespace ? `${namespace}.${key}` : key;
     },
   };
 });
-

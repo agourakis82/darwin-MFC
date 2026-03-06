@@ -72,11 +72,23 @@ export interface ForumCategory {
   nameKey: string; // i18n key
   descriptionKey: string;
   icon: string;
-  color: string;
+  /**
+   * Semantic accent (token-driven). Prefer over legacy Tailwind color strings.
+   * Maps to Darwin tokens: brand + clinical semantic colors.
+   */
+  accent: ForumCategoryAccent;
   postCount: number;
   isRestricted: boolean;
   order: number;
 }
+
+export type ForumCategoryAccent =
+  | 'primary'
+  | 'secondary'
+  | 'info'
+  | 'safe'
+  | 'warning'
+  | 'critical';
 
 export const FORUM_CATEGORIES: ForumCategory[] = [
   {
@@ -84,7 +96,7 @@ export const FORUM_CATEGORIES: ForumCategory[] = [
     nameKey: 'community.categories.clinical',
     descriptionKey: 'community.categories.clinical_desc',
     icon: 'Stethoscope',
-    color: 'text-blue-500',
+    accent: 'info',
     postCount: 0,
     isRestricted: false,
     order: 1,
@@ -94,7 +106,7 @@ export const FORUM_CATEGORIES: ForumCategory[] = [
     nameKey: 'community.categories.cases',
     descriptionKey: 'community.categories.cases_desc',
     icon: 'FileText',
-    color: 'text-green-500',
+    accent: 'safe',
     postCount: 0,
     isRestricted: false,
     order: 2,
@@ -104,7 +116,7 @@ export const FORUM_CATEGORIES: ForumCategory[] = [
     nameKey: 'community.categories.study_groups',
     descriptionKey: 'community.categories.study_groups_desc',
     icon: 'Users',
-    color: 'text-purple-500',
+    accent: 'secondary',
     postCount: 0,
     isRestricted: false,
     order: 3,
@@ -114,7 +126,7 @@ export const FORUM_CATEGORIES: ForumCategory[] = [
     nameKey: 'community.categories.regional',
     descriptionKey: 'community.categories.regional_desc',
     icon: 'Globe',
-    color: 'text-amber-500',
+    accent: 'warning',
     postCount: 0,
     isRestricted: false,
     order: 4,

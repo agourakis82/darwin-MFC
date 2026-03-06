@@ -9,8 +9,7 @@
 'use client';
 
 import * as React from 'react';
-import { usePathname } from 'next/navigation';
-import { Link } from '@/i18n/routing';
+import { Link, usePathname } from '@/i18n/routing';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/design-system/utils/cn';
 import {
@@ -88,12 +87,12 @@ export function MobileNavigation({
         // Fixed positioning
         'fixed bottom-0 left-0 right-0 z-50',
         // Glass morphism
-        'bg-white/80 dark:bg-neutral-900/80',
-        'backdrop-blur-md',
+        'bg-[var(--darwin-glass-bg)] dark:bg-[var(--darwin-glass-bg-dark)]',
+        'backdrop-blur-[var(--darwin-glass-blur)] backdrop-saturate-[var(--darwin-glass-saturate)]',
         // Border
-        'border-t border-neutral-200/50 dark:border-neutral-800/50',
+        'border-t border-carbon-200/50 dark:border-carbon-800/50',
         // Shadow
-        'shadow-lg',
+        'shadow-elevation-2',
         // Safe area support
         'pb-[env(safe-area-inset-bottom,0px)]',
         // Only show on mobile
@@ -105,6 +104,8 @@ export function MobileNavigation({
     >
       <div className="flex justify-around items-center h-16 px-2">
         {items.map((item) => {
+          // `usePathname()` from i18n routing returns a locale-aware pathname already normalized
+          // (e.g. '/doencas' instead of '/pt/doencas'), so this check works for all locales.
           const isActive = pathname ? (pathname === item.href || pathname.startsWith(item.href + '/')) : false;
           const Icon = item.icon;
 
@@ -131,7 +132,7 @@ export function MobileNavigation({
                     'w-6 h-6 flex items-center justify-center',
                     isActive
                       ? item.color || 'text-brand-primary-600 dark:text-brand-primary-400'
-                      : 'text-neutral-500 dark:text-neutral-400'
+                      : 'text-carbon-500 dark:text-carbon-400'
                   )}
                   animate={{
                     rotate: isActive ? [0, -10, 10, 0] : 0,
@@ -147,7 +148,7 @@ export function MobileNavigation({
                     'text-xs font-medium transition-colors',
                     isActive
                       ? item.color || 'text-brand-primary-600 dark:text-brand-primary-400'
-                      : 'text-neutral-500 dark:text-neutral-400'
+                      : 'text-carbon-500 dark:text-carbon-400'
                   )}
                   animate={{
                     opacity: isActive ? 1 : 0.7,
@@ -161,7 +162,7 @@ export function MobileNavigation({
                   <motion.span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="absolute -top-1 -right-2 min-w-[18px] h-[18px] flex items-center justify-center px-1 text-[10px] font-bold text-white bg-red-600 rounded-full"
+                    className="absolute -top-1 -right-2 min-w-[18px] h-[18px] flex items-center justify-center px-1 text-[10px] font-bold text-white bg-critical-red-600 rounded-full"
                   >
                     {item.badge}
                   </motion.span>

@@ -13,10 +13,13 @@
  * - Feedback deduplication
  */
 
+'use client';
+
 import { create } from 'zustand';
-import { persist, createJSONStorage } from 'zustand/middleware';
+import { persist } from 'zustand/middleware';
 import type { EntityCorrection, FeedbackType, CorrectionEntity } from '@/app/components/AI/EntityCorrectionModal';
 import type { EntityType } from '@/lib/ai/models/onnx-config';
+import { ssrSafeJSONStorage } from '@/lib/store/persistStorage';
 
 // =============================================================================
 // TYPES
@@ -339,7 +342,7 @@ export const useCorrectionFeedbackStore = create<CorrectionFeedbackState>()(
     }),
     {
       name: 'darwin-mfc-ner-corrections',
-      storage: createJSONStorage(() => localStorage),
+      storage: ssrSafeJSONStorage,
       partialize: (state) => ({
         sessions: state.sessions.map(s => ({
           ...s,

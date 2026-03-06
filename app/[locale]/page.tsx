@@ -1,6 +1,7 @@
 import HomeContent from './HomeContent';
 import { locales, type Locale } from '@/i18n/config';
 import { setRequestLocale } from 'next-intl/server';
+import ModePersistenceGate from '@/app/components/PS/ModePersistenceGate';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -20,6 +21,10 @@ export default async function HomePage({ params }: Props) {
   // Enable static rendering with next-intl
   setRequestLocale(locale);
 
-  return <HomeContent />;
+  return (
+    <>
+      <ModePersistenceGate />
+      <HomeContent />
+    </>
+  );
 }
-

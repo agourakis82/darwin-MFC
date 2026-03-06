@@ -14,8 +14,11 @@
  * - Privacy-first (100% local storage)
  */
 
+'use client';
+
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { ssrSafeJSONStorage } from '@/lib/store/persistStorage';
 
 // ============================================================================
 // TYPES
@@ -431,6 +434,7 @@ export const useUserPreferences = create<UserPreferencesState>()(
     {
       name: 'darwin-mfc-user-preferences',
       version: 1,
+      storage: ssrSafeJSONStorage,
     }
   )
 );

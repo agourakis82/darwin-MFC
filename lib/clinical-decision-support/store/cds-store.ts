@@ -11,6 +11,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { ClinicalAlert } from '../alerts/clinical-alerts';
 import type { CalculationHistoryItem } from '../calculators/framework';
+import { ssrSafeJSONStorage } from '@/lib/store/persistStorage';
 
 interface CDSState {
   // Alerts
@@ -82,6 +83,7 @@ export const useCDSStore = create<CDSState>()(
     {
       name: 'darwin-mfc-cds-storage',
       version: 1,
+      storage: ssrSafeJSONStorage,
     }
   )
 );
