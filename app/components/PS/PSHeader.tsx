@@ -4,7 +4,7 @@ import { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { Link } from '@/i18n/routing';
 import { useRouter, usePathname } from '@/i18n/routing';
 import { Activity, Weight, RotateCcw, Stethoscope, Search } from 'lucide-react';
-import { usePSStore } from '@/lib/store/psStore';
+import { getEffectiveWeight, usePSStore } from '@/lib/store/psStore';
 import { allEmergencyDrugs } from '@/lib/ps/data';
 import { emergencyProtocols } from '@/lib/ps/protocols';
 import { emergencyScores } from '@/lib/ps/scores';
@@ -20,7 +20,7 @@ type SearchResult = {
 };
 
 export default function PSHeader() {
-  const { patient, setPatientWeight, resetPatient, setMode } = usePSStore();
+  const { patient, activeCaseSession, setPatientWeight, resetPatient, setMode } = usePSStore();
   const router = useRouter();
   const pathname = usePathname();
   const searchInputRef = useRef<HTMLInputElement | null>(null);
@@ -145,7 +145,22 @@ export default function PSHeader() {
     return groups;
   }, [searchResults]);
 
-  const weightOk = patient.weight && patient.weight >= 2 && patient.weight <= 300;
+  const effectiveWeight = getEffectiveWeight(patient);
+  const weightOk = effectiveWeight && effectiveWeight >= 2 && effectiveWeight <= 300;
+  const weightSourceLabel = patient.useIdealWeight
+    ? 'ideal'
+    : patient.weightSource === 'estimated'
+      ? 'est.'
+      : patient.weightSource === 'verified'
+        ? 'ver.'
+        : null;
+  const activeCaseLabel = activeCaseSession
+    ? ({
+        pcr: 'PCR',
+        sepse_choque: 'Sepse',
+        iot_rsi: 'IOT/RSI',
+      }[activeCaseSession.workflow])
+    : null;
 
   return (
     <header
@@ -171,6 +186,16 @@ export default function PSHeader() {
             <span className="text-red-500 font-bold text-[10px] tracking-widest uppercase">Pronto-Socorro</span>
           </div>
         </Link>
+
+        {activeCaseSession && activeCaseSession.protocolId && (
+          <Link
+            href={`/ps/protocolos/${activeCaseSession.protocolId}`}
+            className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-red-500/20 bg-red-500/10 text-red-200 text-[11px] font-semibold tracking-wide"
+          >
+            <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
+            Caso ativo: {activeCaseLabel}
+          </Link>
+        )}
 
         {/* Spacer */}
         <div className="flex-1" />
@@ -198,6 +223,11 @@ export default function PSHeader() {
             step={0.1}
           />
           <span className={`text-xs font-semibold ${weightOk ? 'text-green-500' : 'text-slate-600'}`}>kg</span>
+          {weightSourceLabel && (
+            <span className={`text-[10px] font-semibold uppercase tracking-wide ${weightOk ? 'text-green-300/70' : 'text-slate-500'}`}>
+              {weightSourceLabel}
+            </span>
+          )}
           {patient.weight && (
             <button
               onClick={handleReset}

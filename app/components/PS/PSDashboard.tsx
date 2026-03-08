@@ -1,7 +1,8 @@
 'use client';
 
 import { Link } from '@/i18n/routing';
-import { usePSStore, getEffectiveWeight } from '@/lib/store/psStore';
+import PSActiveCaseCard from '@/app/components/PS/PSActiveCaseCard';
+import { usePSStore, getEffectiveWeight, type SentinelWorkflow } from '@/lib/store/psStore';
 import { allEmergencyDrugs } from '@/lib/ps/data';
 import {
   Zap, Flame, Brain, Heart, Activity, Wind, AlertTriangle, Shield,
@@ -19,6 +20,7 @@ interface ScenarioCard {
   subtitle: string;
   icon: React.ElementType;
   href: string;
+  workflow?: SentinelWorkflow;
   /** Tailwind color classes */
   iconColor: string;
   /** Hex or rgba for inline bg — keeps Tailwind purge safe */
@@ -26,12 +28,12 @@ interface ScenarioCard {
 }
 
 const scenarios: ScenarioCard[] = [
-  { id: 'pcr',                href: '/ps/protocolos/pcr',                  title: 'PCR',        subtitle: 'ACLS',           icon: Zap,         iconColor: 'text-red-400',     accent: 'rgba(239,68,68,0.12)' },
-  { id: 'sepse',              href: '/ps/protocolos/sepse',                 title: 'Sepse',      subtitle: 'Hour-1',         icon: Flame,       iconColor: 'text-orange-400',  accent: 'rgba(249,115,22,0.12)' },
+  { id: 'pcr',                href: '/ps/protocolos/pcr',                  title: 'PCR',        subtitle: 'ACLS',           icon: Zap,         workflow: 'pcr',          iconColor: 'text-red-400',     accent: 'rgba(239,68,68,0.12)' },
+  { id: 'sepse',              href: '/ps/protocolos/sepse',                 title: 'Sepse',      subtitle: 'Hour-1',         icon: Flame,       workflow: 'sepse_choque', iconColor: 'text-orange-400',  accent: 'rgba(249,115,22,0.12)' },
   { id: 'avc',                href: '/ps/protocolos/avc',                   title: 'AVC',        subtitle: 'Porta-Agulha',   icon: Brain,       iconColor: 'text-yellow-400',  accent: 'rgba(234,179,8,0.12)' },
   { id: 'iam',                href: '/ps/protocolos/iam',                   title: 'IAM',        subtitle: 'STEMI',          icon: Heart,       iconColor: 'text-blue-400',    accent: 'rgba(59,130,246,0.12)' },
   { id: 'choque',             href: '/ps/protocolos/choque',                title: 'Choque',     subtitle: '4 Tipos',        icon: Activity,    iconColor: 'text-purple-400',  accent: 'rgba(168,85,247,0.12)' },
-  { id: 'iot',                href: '/ps/protocolos/iot',                   title: 'IOT',        subtitle: 'RSI',            icon: Wind,        iconColor: 'text-green-400',   accent: 'rgba(34,197,94,0.12)' },
+  { id: 'iot',                href: '/ps/protocolos/iot',                   title: 'IOT',        subtitle: 'RSI',            icon: Wind,        workflow: 'iot_rsi',      iconColor: 'text-green-400',   accent: 'rgba(34,197,94,0.12)' },
   { id: 'anafilaxia',         href: '/ps/protocolos/anafilaxia',            title: 'Anafilaxia', subtitle: 'Epi IM',         icon: AlertTriangle, iconColor: 'text-red-300',   accent: 'rgba(252,165,165,0.10)' },
   { id: 'status-epilepticus', href: '/ps/protocolos/status-epilepticus',    title: 'Status',     subtitle: 'Epilepticus',    icon: Brain,       iconColor: 'text-indigo-400',  accent: 'rgba(99,102,241,0.12)' },
   { id: 'cad',                href: '/ps/protocolos/cad',                   title: 'CAD',        subtitle: 'DKA / EHH',      icon: Beaker,      iconColor: 'text-teal-400',    accent: 'rgba(20,184,166,0.12)' },
@@ -96,6 +98,7 @@ function GlassCard({ children, className = '' }: { children: React.ReactNode; cl
       style={{
         background: 'rgba(255,255,255,0.04)',
         border: '0.5px solid rgba(255,255,255,0.09)',
+        boxShadow: '0 14px 32px rgba(0,0,0,0.18)',
       }}
     >
       {children}
@@ -106,8 +109,28 @@ function GlassCard({ children, className = '' }: { children: React.ReactNode; cl
 // ─── Main component ───────────────────────────────────────────────────────────
 
 export default function PSDashboard() {
-  const { patient } = usePSStore();
+  const { patient, activeCaseSession, favoriteDrugs, favoriteScores, startCase, closeActiveCase } = usePSStore();
   const weight = getEffectiveWeight(patient);
+
+  const startSentinelCase = (scenario: ScenarioCard) => {
+    if (!scenario.workflow) return;
+    startCase({
+      workflow: scenario.workflow,
+      protocolId: scenario.id,
+      illnessSeverity:
+        scenario.workflow === 'pcr'
+          ? 'critical'
+          : scenario.workflow === 'sepse_choque'
+            ? 'critical'
+            : 'high',
+      pendingActionLabels:
+        scenario.workflow === 'pcr'
+          ? ['Iniciar timer', 'Definir ritmo', 'Marcar adrenalina']
+          : scenario.workflow === 'sepse_choque'
+            ? ['Reavaliar PAM', 'Checar vasoativa', 'Confirmar acesso']
+            : ['Confirmar preparo', 'Revisar drogas', 'Definir backup'],
+    });
+  };
 
   return (
     <div className="min-h-screen text-white" style={{ background: '#080810' }}>
@@ -115,6 +138,47 @@ export default function PSDashboard() {
         className="px-3 pt-3 pb-28 md:pb-8 space-y-6 max-w-5xl mx-auto"
         style={{ fontFamily: '-apple-system, "SF Pro Display", BlinkMacSystemFont, system-ui, sans-serif' }}
       >
+        <GlassCard className="p-4 md:p-5">
+          <div className="flex items-start justify-between gap-4">
+            <div className="min-w-0">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-cyan-300/75 font-bold">Acute care cockpit</p>
+              <h1 className="text-xl md:text-2xl font-bold text-white mt-1">Pronto-socorro operacional</h1>
+              <p className="text-sm text-slate-400 mt-2 max-w-2xl">
+                Caso ativo, protocolos críticos, doses rápidas e atalhos de execução no mesmo plano.
+              </p>
+            </div>
+            <div className="hidden md:flex items-center gap-2">
+              <Link
+                href="/ps/timer"
+                className="px-4 py-2.5 rounded-2xl text-sm font-semibold text-red-100"
+                style={{ background: 'rgba(239,68,68,0.10)', border: '1px solid rgba(239,68,68,0.18)' }}
+              >
+                Timer PCR
+              </Link>
+              <Link
+                href="/ps/escalas"
+                className="px-4 py-2.5 rounded-2xl text-sm font-semibold text-cyan-100"
+                style={{ background: 'rgba(34,211,238,0.10)', border: '1px solid rgba(34,211,238,0.18)' }}
+              >
+                Escalas
+              </Link>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
+            {[
+              { label: 'Caso ativo', value: activeCaseSession ? 'sim' : 'não' },
+              { label: 'Peso', value: weight ? `${weight} kg` : 'não informado' },
+              { label: 'Fav. drogas', value: `${favoriteDrugs.length}` },
+              { label: 'Fav. scores', value: `${favoriteScores.length}` },
+            ].map((item) => (
+              <div key={item.label} className="rounded-2xl px-3 py-3 bg-white/5 border border-white/7">
+                <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">{item.label}</p>
+                <p className="text-lg font-bold text-white mt-1">{item.value}</p>
+              </div>
+            ))}
+          </div>
+        </GlassCard>
 
         {/* ── Weight Banner ── */}
         {!weight ? (
@@ -143,6 +207,13 @@ export default function PSDashboard() {
           </div>
         )}
 
+        {activeCaseSession && (
+          <PSActiveCaseCard
+            activeCaseSession={activeCaseSession}
+            onClose={closeActiveCase}
+          />
+        )}
+
         {/* ── Critical Scenarios Grid ── */}
         <section>
           <SectionLabel>Cenários Críticos</SectionLabel>
@@ -153,8 +224,13 @@ export default function PSDashboard() {
                 <Link
                   key={s.id}
                   href={s.href}
+                  onClick={() => startSentinelCase(s)}
                   className="flex flex-col items-center text-center gap-2 p-3 rounded-2xl active:scale-95 transition-transform duration-100 min-h-[84px] justify-center"
-                  style={{ background: s.accent, border: '0.5px solid rgba(255,255,255,0.07)' }}
+                  style={{
+                    background: `linear-gradient(180deg, ${s.accent} 0%, rgba(255,255,255,0.02) 100%)`,
+                    border: '0.5px solid rgba(255,255,255,0.07)',
+                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)',
+                  }}
                 >
                   <Icon className={`w-6 h-6 ${s.iconColor}`} strokeWidth={1.8} />
                   <div>
@@ -179,7 +255,7 @@ export default function PSDashboard() {
                   href={t.href}
                   className="flex items-center gap-2 px-3 py-2 rounded-full text-[13px] font-semibold active:scale-95 transition-transform duration-100"
                   style={{
-                    background: 'rgba(255,255,255,0.05)',
+                    background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%)',
                     border: '0.5px solid rgba(255,255,255,0.10)',
                     color: t.color,
                   }}

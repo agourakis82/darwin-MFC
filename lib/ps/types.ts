@@ -113,6 +113,13 @@ export interface EmergencyDrug {
   keywords: string[];
 }
 
+export interface ProtocolStopPoint {
+  title: string;
+  description: string;
+  items: string[];
+  actionLabel: string;
+}
+
 export interface EmergencyProtocolStep {
   id: string;
   title: string;
@@ -130,6 +137,7 @@ export interface EmergencyProtocolStep {
   nextStepId?: string;
   alertLevel?: 'info' | 'warning' | 'critical';
   notes?: string[];
+  stopPoint?: ProtocolStopPoint;
 }
 
 export interface EmergencyProtocol {
