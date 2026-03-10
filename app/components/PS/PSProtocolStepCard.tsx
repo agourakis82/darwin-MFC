@@ -43,22 +43,22 @@ export default function PSProtocolStepCard({
     <button
       type="button"
       onClick={onClick}
-      className="w-full text-left transition-all duration-200 active:scale-[0.99]"
+      className="group w-full text-left apple-transition-fast active:scale-[0.99]"
     >
       <div
-        className="rounded-2xl overflow-hidden transition-all duration-200"
+        className="ps-app-interactive rounded-[24px] overflow-hidden"
         style={{
           background: isActive
-            ? 'rgba(255,255,255,0.06)'
+            ? 'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.05) 100%)'
             : isComplete
-              ? 'rgba(34,197,94,0.04)'
-              : 'rgba(255,255,255,0.025)',
+              ? 'linear-gradient(180deg, rgba(34,197,94,0.08) 0%, rgba(255,255,255,0.03) 100%)'
+              : 'linear-gradient(180deg, rgba(255,255,255,0.045) 0%, rgba(255,255,255,0.025) 100%)',
           border: isActive
             ? `1px solid ${alert.border}`
             : isComplete
               ? '0.5px solid rgba(34,197,94,0.20)'
               : '0.5px solid rgba(255,255,255,0.06)',
-          boxShadow: isActive ? `0 0 0 1px ${alert.border}` : 'none',
+          boxShadow: isActive ? `0 0 0 1px ${alert.border}, 0 16px 40px rgba(0,0,0,0.16)` : '0 12px 28px rgba(0,0,0,0.12)',
         }}
       >
         <div className="flex items-center gap-3 px-4 py-3">
@@ -84,7 +84,7 @@ export default function PSProtocolStepCard({
               {step.title}
             </p>
             <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
-              <p className="text-[11px] text-slate-600">{TYPE_LABEL[step.type] ?? step.type}</p>
+                <p className="text-[11px] text-slate-500">{TYPE_LABEL[step.type] ?? step.type}</p>
               {hasReviewed && (
                 <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide text-amber-200 border border-amber-400/25 bg-amber-500/10">
                   revisado

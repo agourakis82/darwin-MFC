@@ -4,7 +4,7 @@ import { Shield } from 'lucide-react';
 import PSPCRRoleBoard from '@/app/components/PS/PSPCRRoleBoard';
 import PSStopPointCard from '@/app/components/PS/PSStopPointCard';
 import PSTimelinePanel from '@/app/components/PS/PSTimelinePanel';
-import type { ActiveCaseSession, CaseRoleSlot } from '@/lib/store/psStore';
+import type { ActiveCaseSession } from '@/lib/store/psStore';
 import type { ProtocolRoleDefinition, StopPointData, TimelineEventItem } from '@/lib/ps/contracts';
 
 interface PSProtocolSafetySidebarProps {
@@ -31,7 +31,24 @@ export default function PSProtocolSafetySidebar({
   onStopPointContinue,
 }: PSProtocolSafetySidebarProps) {
   return (
-    <div className="space-y-4">
+    <aside className="space-y-4 xl:sticky xl:top-24">
+      <div className="rounded-[28px] border border-white/8 bg-white/[0.04] p-4">
+        <div className="mb-3 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-slate-500">
+          <Shield className="h-3.5 w-3.5 text-cyan-300" strokeWidth={2} />
+          Safety column
+        </div>
+        <div className="grid gap-2 grid-cols-2 text-sm">
+          <div className="rounded-2xl border border-white/7 bg-white/[0.04] p-3">
+            <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Etapa</p>
+            <p className="mt-1 font-semibold text-white">{currentStepId}</p>
+          </div>
+          <div className="rounded-2xl border border-white/7 bg-white/[0.04] p-3">
+            <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Eventos</p>
+            <p className="mt-1 font-semibold text-white">{timelineEvents.length}</p>
+          </div>
+        </div>
+      </div>
+
       {protocolId === 'pcr' && (
         <PSPCRRoleBoard
           activeCaseSession={activeCaseSession}
@@ -41,17 +58,14 @@ export default function PSProtocolSafetySidebar({
       )}
 
       {protocolId === 'pcr' && pcrPausePoints.length > 0 && (
-        <div
-          className="rounded-3xl px-4 py-4 space-y-3"
-          style={{ background: 'rgba(239,68,68,0.08)', border: '0.5px solid rgba(239,68,68,0.16)' }}
-        >
+        <div className="rounded-[28px] border border-rose-500/16 bg-rose-500/[0.07] p-4 space-y-3">
           <div className="flex items-center gap-2">
             <Shield className="w-3.5 h-3.5 text-rose-300" strokeWidth={2} />
             <p className="text-[11px] text-rose-200 font-bold uppercase tracking-wider">PCR pause points</p>
           </div>
           <div className="space-y-2">
             {pcrPausePoints.map((point) => (
-              <div key={`${currentStepId}-${point}`} className="rounded-xl px-3 py-3 bg-black/10 border border-white/8">
+              <div key={`${currentStepId}-${point}`} className="rounded-2xl border border-white/8 bg-black/10 px-3 py-3">
                 <p className="text-xs text-rose-50/90 leading-relaxed">{point}</p>
               </div>
             ))}
@@ -59,30 +73,22 @@ export default function PSProtocolSafetySidebar({
         </div>
       )}
 
-      <div className="space-y-3">
-        <p className="text-[11px] text-slate-600 font-semibold uppercase tracking-widest px-0.5">
-          Checkpoint de segurança
-        </p>
-        {stopPoint ? (
-          <PSStopPointCard
-            title={stopPoint.title}
-            description={stopPoint.description}
-            items={stopPoint.items}
-            actionLabel={stopPoint.actionLabel ?? 'Marcar checkpoint como revisado'}
-            onContinue={onStopPointContinue}
-          />
-        ) : (
-          <div
-            className="rounded-3xl px-4 py-4"
-            style={{ background: 'rgba(255,255,255,0.03)', border: '0.5px solid rgba(255,255,255,0.07)' }}
-          >
-            <p className="text-xs font-semibold text-slate-300">Sem checkpoint formal neste passo</p>
-            <p className="text-xs text-slate-500 mt-1">Awareness e timeline seguem ativos sem bloqueio extra.</p>
-          </div>
-        )}
-      </div>
+      {stopPoint ? (
+        <PSStopPointCard
+          title={stopPoint.title}
+          description={stopPoint.description}
+          items={stopPoint.items}
+          actionLabel={stopPoint.actionLabel ?? 'Marcar checkpoint como revisado'}
+          onContinue={onStopPointContinue}
+        />
+      ) : (
+        <div className="rounded-[28px] border border-white/8 bg-white/[0.035] p-4">
+          <p className="text-xs font-semibold text-slate-300">Checkpoint de segurança</p>
+          <p className="mt-1 text-xs text-slate-500">A timeline e a coordenação seguem ativas sem bloqueio extra.</p>
+        </div>
+      )}
 
       <PSTimelinePanel events={timelineEvents} />
-    </div>
+    </aside>
   );
 }

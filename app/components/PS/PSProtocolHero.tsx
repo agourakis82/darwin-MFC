@@ -27,47 +27,47 @@ export default function PSProtocolHero({
   onBack,
 }: PSProtocolHeroProps) {
   return (
-    <div className="space-y-3">
-      <div
-        className="rounded-3xl px-5 py-5 md:px-6"
-        style={{
-          background: `linear-gradient(135deg, ${protocolColor}18 0%, rgba(8,8,16,0) 60%)`,
-          border: `0.5px solid ${protocolColor}30`,
-        }}
-      >
-        <div className="flex items-start justify-between gap-3">
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-2">
-              <Activity className="w-4 h-4 flex-shrink-0" style={{ color: protocolColor }} strokeWidth={2} />
-              <span className="text-[11px] font-bold uppercase tracking-[0.22em]" style={{ color: protocolColor }}>
-                {protocol.category}
-              </span>
+    <section className="space-y-4">
+      <div className="rounded-[32px] border p-5 md:p-6 shadow-[0_24px_80px_rgba(0,0,0,0.24)]" style={{ background: `linear-gradient(135deg, ${protocolColor}14 0%, rgba(6,11,19,0.96) 52%, rgba(7,17,31,1) 100%)`, borderColor: `${protocolColor}22` }}>
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div className="min-w-0 flex-1">
+            <div className="mb-3 flex items-center gap-2">
+              <Activity className="h-4 w-4" style={{ color: protocolColor }} strokeWidth={2} />
+              <span className="text-[11px] font-bold uppercase tracking-[0.24em]" style={{ color: protocolColor }}>{protocol.category}</span>
             </div>
-            <h1 className="text-[22px] md:text-2xl font-bold text-white leading-tight">{protocol.name}</h1>
-            <p className="text-[13px] text-slate-400 mt-2 leading-relaxed max-w-3xl">{protocol.description}</p>
+            <h1 className="text-2xl md:text-[32px] font-bold text-white leading-tight">{protocol.name}</h1>
+            <p className="mt-2 max-w-3xl text-sm text-slate-400 leading-relaxed">{protocol.description}</p>
+          </div>
+
+          <div className="grid min-w-[220px] grid-cols-2 gap-2 text-sm">
+            <div className="rounded-2xl border border-white/7 bg-white/[0.04] px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Etapa</p>
+              <p className="mt-1 font-semibold text-white">{stepIndex + 1}/{totalSteps}</p>
+            </div>
+            <div className="rounded-2xl border border-white/7 bg-white/[0.04] px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Progressão</p>
+              <p className="mt-1 font-semibold text-white">{progress}%</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div
-        className="rounded-3xl px-5 py-4 md:px-6"
-        style={{
-          background: 'linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.03) 100%)',
-          border: '0.5px solid rgba(255,255,255,0.08)',
-          boxShadow: '0 10px 24px rgba(0,0,0,0.14)',
-        }}
-      >
-        <div className="flex items-center justify-between text-xs font-semibold text-slate-400 mb-2.5">
-          <span>Etapa {stepIndex + 1} de {totalSteps}</span>
-          <span className="font-mono" style={{ color: protocolColor }}>{progress}%</span>
+      <div className="rounded-[28px] border border-white/8 bg-white/[0.035] p-4 md:p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
+        <div className="mb-3 flex items-center justify-between gap-3 text-xs font-semibold text-slate-400">
+          <span>Fluxo do protocolo</span>
+          {visitedIds.length > 0 && (
+            <button type="button" onClick={onBack} className="inline-flex items-center gap-1.5 text-slate-400 transition-colors hover:text-white">
+              <ArrowLeft className="h-4 w-4" strokeWidth={2} />
+              Voltar
+            </button>
+          )}
         </div>
-        <div className="h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
-          <div
-            className="h-full rounded-full transition-all duration-500"
-            style={{ width: `${progress}%`, background: `linear-gradient(90deg, ${protocolColor} 0%, ${protocolColor}99 100%)` }}
-          />
+
+        <div className="h-1.5 rounded-full overflow-hidden bg-white/[0.06]">
+          <div className="h-full rounded-full transition-all duration-500" style={{ width: `${progress}%`, background: `linear-gradient(90deg, ${protocolColor} 0%, ${protocolColor}CC 100%)` }} />
         </div>
-        <div className="flex items-center gap-1 mt-2.5 flex-wrap">
+
+        <div className="mt-4 flex flex-wrap gap-2">
           {protocol.steps.map((step, index) => {
             const isDone = visitedIds.includes(step.id) || index < stepIndex;
             const isCurrent = step.id === currentStepId;
@@ -76,28 +76,19 @@ export default function PSProtocolHero({
                 key={step.id}
                 type="button"
                 onClick={() => onSelectStep(step.id)}
-                className="h-1.5 rounded-full transition-all duration-200 flex-shrink-0"
+                className={`rounded-full border px-3 py-2 text-xs font-semibold transition-all duration-150 ease-out ${isCurrent ? 'text-white' : 'text-slate-400 hover:text-white hover:-translate-y-0.5'}`}
                 style={{
-                  width: isCurrent ? 20 : 6,
-                  background: isCurrent ? protocolColor : isDone ? `${protocolColor}60` : 'rgba(255,255,255,0.12)',
+                  borderColor: isCurrent ? `${protocolColor}55` : 'rgba(255,255,255,0.08)',
+                  background: isCurrent ? `${protocolColor}22` : isDone ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.03)',
                 }}
                 title={step.title}
-              />
+              >
+                {index + 1}. {step.title}
+              </button>
             );
           })}
         </div>
       </div>
-
-      {visitedIds.length > 0 && (
-        <button
-          type="button"
-          onClick={onBack}
-          className="flex items-center gap-1.5 text-[13px] font-semibold text-slate-400 hover:text-white active:scale-95 transition-all"
-        >
-          <ArrowLeft className="w-4 h-4" strokeWidth={2} />
-          Voltar
-        </button>
-      )}
-    </div>
+    </section>
   );
 }

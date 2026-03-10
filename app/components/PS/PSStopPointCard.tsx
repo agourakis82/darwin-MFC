@@ -30,7 +30,7 @@ export default function PSStopPointCard({
       <div className="px-4 py-3 border-b border-amber-500/15">
         <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-amber-300 font-bold">
           <AlertTriangle className="w-3.5 h-3.5" strokeWidth={2} />
-          Stop point
+          Checkpoint de segurança
         </div>
         <h3 className="text-base text-white font-bold mt-2">{title}</h3>
         <p className="text-sm text-amber-50/85 mt-1">{description}</p>

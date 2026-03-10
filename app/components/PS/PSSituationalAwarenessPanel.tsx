@@ -1,6 +1,6 @@
 'use client';
 
-import { Activity, Clock3, ClipboardList, Weight } from 'lucide-react';
+import { Activity, ArrowRight, ClipboardList, Weight } from 'lucide-react';
 import type { ActiveCaseSession, PatientContext } from '@/lib/store/psStore';
 import { getEffectiveWeight } from '@/lib/store/psStore';
 
@@ -29,73 +29,58 @@ export default function PSSituationalAwarenessPanel({
   const weightSource = patient.useIdealWeight
     ? 'ideal'
     : patient.weightSource === 'verified'
-      ? 'ver.'
+      ? 'verificado'
       : patient.weightSource === 'estimated'
-        ? 'est.'
+        ? 'estimado'
         : null;
 
   return (
-    <div
-      className="rounded-2xl px-4 py-4 space-y-3"
-      style={{ background: 'rgba(255,255,255,0.03)', border: '0.5px solid rgba(255,255,255,0.07)' }}
-    >
-      <div className="flex items-center justify-between gap-2">
+    <section className="rounded-[28px] border border-white/8 bg-white/[0.035] p-4 md:p-5">
+      <div className="mb-4 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <Activity className="w-3.5 h-3.5 text-rose-400" strokeWidth={2} />
-          <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Situational awareness</p>
+          <Activity className="h-4 w-4 text-cyan-300" strokeWidth={2} />
+          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-500">Contexto vivo do caso</p>
         </div>
         {activeCaseSession && (
-          <span className="px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-rose-100 bg-rose-500/12 border border-rose-500/18">
+          <span className="rounded-full border border-cyan-400/16 bg-cyan-400/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-cyan-100">
             {activeCaseSession.illnessSeverity}
           </span>
         )}
       </div>
 
-      <div className="grid grid-cols-2 gap-2 text-xs md:grid-cols-3">
-        <div className="rounded-xl px-3 py-2 bg-white/5 border border-white/7">
-          <span className="text-slate-500 block mb-1">Workflow</span>
-          <span className="text-white font-semibold">
-            {activeCaseSession ? WORKFLOW_LABELS[activeCaseSession.workflow] : 'Sem caso ativo'}
-          </span>
+      <div className="grid gap-3 md:grid-cols-4">
+        <div className="rounded-2xl border border-white/7 bg-white/[0.04] p-3">
+          <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Workflow</p>
+          <p className="mt-1 text-sm font-semibold text-white">{activeCaseSession ? WORKFLOW_LABELS[activeCaseSession.workflow] : 'Sem caso ativo'}</p>
         </div>
-        <div className="rounded-xl px-3 py-2 bg-white/5 border border-white/7">
-          <span className="text-slate-500 block mb-1">Peso</span>
-          <span className="text-white font-semibold inline-flex items-center gap-1.5">
-            <Weight className="w-3.5 h-3.5 text-slate-400" strokeWidth={2} />
+        <div className="rounded-2xl border border-white/7 bg-white/[0.04] p-3">
+          <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Peso</p>
+          <p className="mt-1 inline-flex items-center gap-2 text-sm font-semibold text-white">
+            <Weight className="h-3.5 w-3.5 text-slate-400" strokeWidth={2} />
             {weight ? `${weight} kg` : 'Não informado'}
-            {weightSource && <span className="text-[10px] uppercase text-slate-500">{weightSource}</span>}
-          </span>
-        </div>
-        <div className="rounded-xl px-3 py-2 bg-white/5 border border-white/7 col-span-2 md:col-span-1">
-          <span className="text-slate-500 block mb-1">Pendências</span>
-          <span className="text-white font-semibold">
-            {pendingActions.length}
-          </span>
-        </div>
-      </div>
-
-      <div className="rounded-xl px-3 py-3 bg-white/5 border border-white/7">
-        <span className="text-[11px] text-slate-500 uppercase tracking-wider block mb-1">Passo atual</span>
-        <p className="text-sm text-white font-semibold">{currentStepTitle}</p>
-        {nextStepTitle && (
-          <p className="text-xs text-slate-400 mt-1 inline-flex items-center gap-1.5">
-            <Clock3 className="w-3.5 h-3.5" strokeWidth={2} />
-            Próximo: {nextStepTitle}
           </p>
-        )}
+          {weightSource && <p className="mt-1 text-[11px] text-slate-500">{weightSource}</p>}
+        </div>
+        <div className="rounded-2xl border border-white/7 bg-white/[0.04] p-3 md:col-span-2">
+          <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Agora → Próximo</p>
+          <p className="mt-1 text-sm font-semibold text-white">{currentStepTitle}</p>
+          {nextStepTitle && (
+            <p className="mt-2 inline-flex items-center gap-2 text-xs text-slate-400">
+              <ArrowRight className="h-3.5 w-3.5" strokeWidth={2} />
+              {nextStepTitle}
+            </p>
+          )}
+        </div>
       </div>
 
-      <div className="rounded-xl px-3 py-3 bg-white/5 border border-white/7">
-        <div className="flex items-center gap-1.5 mb-2">
-          <ClipboardList className="w-3.5 h-3.5 text-slate-400" strokeWidth={2} />
-          <span className="text-[11px] text-slate-500 uppercase tracking-wider">Pendências</span>
+      <div className="mt-4 rounded-2xl border border-white/7 bg-white/[0.04] p-4">
+        <div className="mb-3 flex items-center gap-2 text-[11px] uppercase tracking-wider text-slate-500 font-bold">
+          <ClipboardList className="h-3.5 w-3.5" strokeWidth={2} />
+          Próximas ações
         </div>
         <div className="flex flex-wrap gap-2">
           {pendingActions.length > 0 ? pendingActions.map((label) => (
-            <span
-              key={label}
-              className="px-2.5 py-1.5 rounded-full text-xs text-slate-200 bg-white/6 border border-white/8"
-            >
+            <span key={label} className="rounded-full border border-white/8 bg-white/[0.05] px-3 py-2 text-xs text-slate-100">
               {label}
             </span>
           )) : (
@@ -103,6 +88,6 @@ export default function PSSituationalAwarenessPanel({
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

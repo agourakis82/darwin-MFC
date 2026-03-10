@@ -1,10 +1,9 @@
 'use client';
 
-import { ClipboardCheck } from 'lucide-react';
 import type { ActiveCaseSession } from '@/lib/store/psStore';
 
 interface PSDebriefPanelProps {
-  activeCaseSession: ActiveCaseSession;
+  activeCaseSession: ActiveCaseSession | null;
   confirmedLabels: string[];
   reviewedLabels: string[];
   completedLabels: string[];
@@ -20,93 +19,51 @@ export default function PSDebriefPanel({
   pendingActions,
   eventLines,
 }: PSDebriefPanelProps) {
+  const activeCaseLabel = activeCaseSession
+    ? `${activeCaseSession.workflow.toUpperCase()} · ${activeCaseSession.activeStepId ?? 'sem passo ativo'}`
+    : 'Sem caso ativo';
+
   return (
-    <div
-      data-testid="ps-debrief-panel"
-      className="rounded-[24px] px-4 py-4 space-y-3.5"
-      style={{ background: 'rgba(255,255,255,0.03)', border: '0.5px solid rgba(255,255,255,0.07)' }}
-    >
-      <div className="flex items-center gap-2">
-        <ClipboardCheck className="w-3.5 h-3.5 text-green-400" strokeWidth={2} />
-        <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Debrief</p>
-      </div>
-
-      <div className="rounded-xl px-3 py-2 border border-green-400/12 bg-green-500/6">
-        <p className="text-[10px] uppercase tracking-wider text-green-200 font-bold">Fechamento rápido do caso</p>
-        <p className="text-xs text-slate-300 mt-1">
-          O que foi confirmado, o que ficou pendente e o que precisa ser retomado primeiro.
-        </p>
-      </div>
-
-      <div className="grid gap-2 md:grid-cols-[minmax(0,1.1fr)_minmax(180px,0.9fr)]">
-        <div className="rounded-xl px-3 py-3 bg-white/5 border border-white/7">
-          <p className="text-[10px] uppercase tracking-wider text-slate-500">Caso ativo</p>
-          <p className="text-xs text-slate-100 mt-1">{activeCaseSession.protocolId ?? activeCaseSession.workflow}</p>
-          <p className="text-[11px] text-slate-500 mt-1">{activeCaseSession.events.length} evento(s) no caso</p>
-        </div>
-        <div className="rounded-xl px-3 py-3 bg-white/5 border border-white/7">
-          <p className="text-[10px] uppercase tracking-wider text-slate-500">Prioridade de retomada</p>
-          <p className="text-xs text-slate-100 mt-1">
-            {pendingActions[0] ?? 'Sem pendência imediata'}
-          </p>
-        </div>
-      </div>
-
-      <div className="flex flex-wrap gap-2">
-        <span data-testid="ps-debrief-confirmed-count" className="px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-green-200 border border-green-400/20 bg-green-500/10">
-          Confirmado {confirmedLabels.length}
-        </span>
-        <span data-testid="ps-debrief-reviewed-count" className="px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-amber-200 border border-amber-400/20 bg-amber-500/10">
-          Revisado {reviewedLabels.length}
-        </span>
-        <span data-testid="ps-debrief-completed-count" className="px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-violet-200 border border-violet-400/20 bg-violet-500/10">
-          Concluído {completedLabels.length}
-        </span>
-      </div>
-
-      <div className="grid gap-3 md:grid-cols-4">
-        <div className="rounded-2xl p-3.5 bg-white/5 border border-white/7">
-          <p className="text-xs uppercase tracking-wider text-slate-500 mb-2">Confirmado</p>
-          <div className="space-y-1.5">
-            {confirmedLabels.length > 0 ? confirmedLabels.slice(0, 4).map((label) => (
-              <p key={label} className="text-xs text-slate-200">{label}</p>
-            )) : <p className="text-xs text-slate-500">Sem confirmações.</p>}
+    <section data-testid="ps-debrief-panel" className="space-y-5">
+      <div className="ps-app-surface-strong rounded-[30px] p-5 md:p-6">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="ps-app-label">Debrief mode</p>
+            <h2 className="mt-2 text-2xl font-bold tracking-[-0.03em] text-white">Fechamento operacional</h2>
+            <p className="mt-3 max-w-3xl text-sm text-slate-300">Resumo do que foi revisado, confirmado, concluído e do que ainda exige retomada.</p>
           </div>
+          <span className="ps-app-pill">{eventLines.length} eventos</span>
         </div>
-        <div className="rounded-2xl p-3.5 bg-white/5 border border-white/7">
-          <p className="text-xs uppercase tracking-wider text-slate-500 mb-2">Revisado</p>
-          <div className="space-y-1.5">
-            {reviewedLabels.length > 0 ? reviewedLabels.slice(0, 4).map((label) => (
-              <p key={label} className="text-xs text-slate-200">{label}</p>
-            )) : <p className="text-xs text-slate-500">Sem revisões.</p>}
-          </div>
-        </div>
-        <div className="rounded-2xl p-3.5 bg-white/5 border border-white/7">
-          <p className="text-xs uppercase tracking-wider text-slate-500 mb-2">Concluído</p>
-          <div className="space-y-1.5">
-            {completedLabels.length > 0 ? completedLabels.slice(0, 4).map((label) => (
-              <p key={label} className="text-xs text-slate-200">{label}</p>
-            )) : <p className="text-xs text-slate-500">Sem passos concluídos.</p>}
-          </div>
-        </div>
-        <div className="rounded-2xl p-3.5 bg-white/5 border border-white/7">
-          <p className="text-xs uppercase tracking-wider text-slate-500 mb-2">Pendências</p>
-          <div className="space-y-1.5">
-            {pendingActions.length > 0 ? pendingActions.slice(0, 4).map((label) => (
-              <p key={label} className="text-xs text-slate-200">{label}</p>
-            )) : <p className="text-xs text-slate-500">Sem pendências.</p>}
-          </div>
+
+        <div className="mt-5 grid gap-3 md:grid-cols-4">
+          <div data-testid="ps-debrief-reviewed-count" className="rounded-[24px] border border-amber-400/18 bg-amber-400/10 px-4 py-4"><p className="ps-app-label text-amber-200">Revisado</p><p className="mt-2 text-2xl font-bold text-white">{reviewedLabels.length}</p></div>
+          <div data-testid="ps-debrief-confirmed-count" className="rounded-[24px] border border-emerald-400/18 bg-emerald-500/10 px-4 py-4"><p className="ps-app-label text-emerald-200">Confirmado</p><p className="mt-2 text-2xl font-bold text-white">{confirmedLabels.length}</p></div>
+          <div data-testid="ps-debrief-completed-count" className="rounded-[24px] border border-cyan-400/18 bg-cyan-400/10 px-4 py-4"><p className="ps-app-label text-cyan-200">Concluído</p><p className="mt-2 text-2xl font-bold text-white">{completedLabels.length}</p></div>
+          <div className="rounded-[24px] border border-white/10 bg-white/[0.05] px-4 py-4"><p className="ps-app-label">Caso</p><p className="mt-2 text-base font-semibold text-white">{activeCaseLabel}</p></div>
         </div>
       </div>
 
-      <div className="rounded-2xl p-3.5 bg-white/5 border border-white/7">
-        <p className="text-xs uppercase tracking-wider text-slate-500 mb-2">Timeline recente</p>
-        <div className="space-y-1.5">
-          {eventLines.length > 0 ? eventLines.slice(0, 8).map((line) => (
-            <p key={line} className="text-xs text-slate-200">{line}</p>
-          )) : <p className="text-xs text-slate-500">Sem timeline disponível.</p>}
-        </div>
+      <div className="grid gap-4 xl:grid-cols-[0.9fr_1.1fr]">
+        <section className="ps-app-surface rounded-[30px] p-5 md:p-6">
+          <p className="ps-app-label">Pendências / retomada</p>
+          <div className="mt-4 space-y-3">
+            {pendingActions.length > 0 ? pendingActions.map((item, index) => (
+              <div key={`${item}-${index}`} className="rounded-[22px] border border-white/8 bg-white/[0.04] px-4 py-4 text-sm text-slate-200">{item}</div>
+            )) : (
+              <div className="rounded-[22px] border border-white/8 bg-white/[0.04] px-4 py-4 text-sm text-slate-400">Sem pendências abertas.</div>
+            )}
+          </div>
+        </section>
+
+        <section className="ps-app-surface rounded-[30px] p-5 md:p-6">
+          <p className="ps-app-label">Timeline recente</p>
+          <div className="mt-4 space-y-3">
+            {eventLines.map((item, index) => (
+              <div key={`${item}-${index}`} className="rounded-[22px] border border-white/8 bg-white/[0.04] px-4 py-4 text-sm text-slate-200">{item}</div>
+            ))}
+          </div>
+        </section>
       </div>
-    </div>
+    </section>
   );
 }

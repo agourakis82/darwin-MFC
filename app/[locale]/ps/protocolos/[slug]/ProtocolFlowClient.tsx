@@ -212,9 +212,9 @@ importExternalHandoff,
   const protocolColor = protocol.color ?? '#ef4444';
 
   return (
-    <div className="min-h-screen text-white" style={{ background: '#080810' }}>
+    <div className="min-h-screen text-white" style={{ background: 'radial-gradient(circle at top left, rgba(34,211,238,0.10), transparent 24%), radial-gradient(circle at top right, rgba(248,113,113,0.08), transparent 22%), linear-gradient(180deg, #07111f 0%, #050b14 100%)' }}>
       <div
-        className="max-w-[1180px] mx-auto px-4 md:px-5 pt-4 pb-28 md:pb-12 space-y-5"
+        className="max-w-[1480px] mx-auto px-4 md:px-6 pt-6 pb-28 md:pb-12 space-y-6"
         style={{ fontFamily: '-apple-system, "SF Pro Display", BlinkMacSystemFont, system-ui, sans-serif' }}
       >
         <PSProtocolHero
@@ -231,7 +231,30 @@ importExternalHandoff,
 
         <PSProtocolStatusChips items={statusChips} />
 
-        <div className="grid gap-4 xl:grid-cols-[minmax(0,1.6fr)_minmax(320px,0.95fr)]">
+        <div className="grid gap-6 xl:grid-cols-[280px_minmax(0,1.15fr)_360px]">
+          <aside className="space-y-3 xl:sticky xl:top-24 self-start">
+            <div className="rounded-[28px] border border-white/8 bg-white/[0.035] p-4">
+              <p className="text-[11px] text-slate-500 font-bold uppercase tracking-[0.22em] mb-3">Flow map</p>
+              <div className="space-y-2">
+                {protocol.steps.map((s) => {
+                  const isActive = s.id === currentStepId;
+                  const isComplete = visitedIds.includes(s.id);
+                  return (
+                    <PSProtocolStepCard
+                      key={s.id}
+                      step={s}
+                      isActive={isActive}
+                      isComplete={isComplete}
+                      hasReviewed={reviewedStepIds.has(s.id)}
+                      hasConfirmed={confirmedStepIds.has(s.id)}
+                      onClick={() => setCurrentStepId(s.id)}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          </aside>
+
           <div className="space-y-4">
             <PSActiveStepDetail
               step={currentStep}
@@ -270,6 +293,17 @@ importExternalHandoff,
               nextStepTitle={nextStepTitle}
               pendingActions={pendingActions}
             />
+
+            <PSProtocolResourcesPanel
+              protocol={protocol}
+              relatedScores={relatedScores}
+              currentStepId={currentStep.id}
+              onOpenDrug={(drugId) => {
+                openDrugSheet(drugId);
+                logCaseEvent(createDrugConsultedEvent(resolveDrugName(drugId), drugId, protocol.id, currentStep.id));
+              }}
+              resolveDrugName={resolveDrugName}
+            />
           </div>
 
           <PSProtocolSafetySidebar
@@ -291,38 +325,6 @@ importExternalHandoff,
             }}
           />
         </div>
-
-        <div className="space-y-1.5">
-          <p className="text-[11px] text-slate-600 font-semibold uppercase tracking-widest px-0.5 mb-2">
-            Fluxo do protocolo
-          </p>
-          {protocol.steps.map((s) => {
-            const isActive = s.id === currentStepId;
-            const isComplete = visitedIds.includes(s.id);
-            return (
-              <PSProtocolStepCard
-                key={s.id}
-                step={s}
-                isActive={isActive}
-                isComplete={isComplete}
-                hasReviewed={reviewedStepIds.has(s.id)}
-                hasConfirmed={confirmedStepIds.has(s.id)}
-                onClick={() => setCurrentStepId(s.id)}
-              />
-            );
-          })}
-        </div>
-
-        <PSProtocolResourcesPanel
-          protocol={protocol}
-          relatedScores={relatedScores}
-          currentStepId={currentStep.id}
-          onOpenDrug={(drugId) => {
-            openDrugSheet(drugId);
-            logCaseEvent(createDrugConsultedEvent(resolveDrugName(drugId), drugId, protocol.id, currentStep.id));
-          }}
-          resolveDrugName={resolveDrugName}
-        />
 
         {activeSessionForProtocol && (
           <>
@@ -361,7 +363,7 @@ importExternalHandoff,
                 validationError={handoffImport.validationError}
                 onImportDraftChange={setHandoffImportDraft}
                 onConfirmReplaceChange={setHandoffImportConfirmReplace}
-                onImportStructured={handoffImport.submitImport}
+                onImportStructured={() => handoffImport.submitImport(handoffImportDraft)}
                 onCopy={() => { void copyProtocolText(handoffExport.handoffSummary); }}
                 onCopyStructured={() => { void copyProtocolText(handoffExport.structuredHandoffCopyText); }}
                 onCopyNote={() => { void copyProtocolText(handoffExport.noteHandoffCopyText); }}
