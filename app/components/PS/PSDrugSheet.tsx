@@ -29,6 +29,9 @@ export default function PSDrugSheet({ drugId, patient, onClose, onReview, onConf
   const weightLabel = getWeightLabel(patient);
   const weightTimestamp = patient.weightMeasuredAt ? new Date(patient.weightMeasuredAt).toLocaleString('pt-BR') : 'Sem timestamp';
   const isEstimated = patient.weightSource === 'estimated';
+  const presentationPreview = drug.presentations.slice(0, 3);
+  const adversePreview = drug.seriousAdverseEffects.slice(0, 3);
+  const compatibilityPreview = drug.yCompatibility.slice(0, 3);
 
   return (
     <div className="fixed inset-0 z-50 bg-[#02060d]/74 backdrop-blur-xl">
@@ -50,7 +53,7 @@ export default function PSDrugSheet({ drugId, patient, onClose, onReview, onConf
           <div className="flex-1 overflow-y-auto px-5 py-5 md:px-6 md:py-6">
             <div className="grid gap-5 xl:grid-cols-[1.05fr_0.95fr]">
               <div className="space-y-5">
-                <section className="ps-app-surface-strong rounded-[28px] p-5">
+                <section className="ps-app-surface-strong rounded-[30px] p-5">
                   <div className="mb-4 flex flex-wrap gap-2">
                     <span className="ps-app-pill"><Weight className="h-3.5 w-3.5 text-amber-300" strokeWidth={2} />{weightLabel}</span>
                     <span className="ps-app-pill">Fonte: {patient.weightSource}</span>
@@ -65,12 +68,12 @@ export default function PSDrugSheet({ drugId, patient, onClose, onReview, onConf
                   )}
 
                   <div className="grid gap-3 md:grid-cols-2">
-                    <div className="rounded-[24px] border border-white/8 bg-white/[0.04] px-4 py-4">
+                    <div className="rounded-[24px] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.035))] px-4 py-4">
                       <p className="ps-app-label">Dose / faixa</p>
                       <p className="mt-2 text-lg font-semibold text-white">{primaryDosing ? `${primaryDosing.doseRange.min}-${primaryDosing.doseRange.max} ${primaryDosing.doseUnit}` : 'Ver protocolo institucional'}</p>
                       <p className="mt-1 text-sm text-slate-400">{primaryDosing?.indication || 'Base do cálculo: peso + concentração local'}</p>
                     </div>
-                    <div className="rounded-[24px] border border-white/8 bg-white/[0.04] px-4 py-4">
+                    <div className="rounded-[24px] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.035))] px-4 py-4">
                       <p className="ps-app-label">Diluição / preparo</p>
                       <p className="mt-2 text-lg font-semibold text-white">{primaryDosing?.infusion?.dilution.description || primaryDosing?.route || 'Ver protocolo institucional'}</p>
                       <p className="mt-1 text-sm text-slate-400">Pré-visualização operacional, não ordem pronta</p>
@@ -78,7 +81,7 @@ export default function PSDrugSheet({ drugId, patient, onClose, onReview, onConf
                   </div>
                 </section>
 
-                <section className="ps-app-surface rounded-[28px] p-5">
+                <section className="ps-app-surface rounded-[30px] p-5">
                   <div className="mb-3 flex items-center gap-2 ps-app-label"><Syringe className="h-3.5 w-3.5 text-cyan-300" strokeWidth={2} />Safety model</div>
                   <div className="space-y-3 text-sm text-slate-300">
                     <div className="rounded-[22px] border border-white/8 bg-white/[0.04] px-4 py-4">Compatibilidade Y e concentração precisam permanecer explícitas na infusão.</div>
@@ -89,7 +92,7 @@ export default function PSDrugSheet({ drugId, patient, onClose, onReview, onConf
               </div>
 
               <div className="space-y-5">
-                <section className="ps-app-surface rounded-[28px] p-5">
+                <section className="ps-app-surface rounded-[30px] p-5">
                   <p className="ps-app-label">Checks obrigatórios</p>
                   <div className="mt-4 space-y-3">
                     {[
@@ -102,12 +105,40 @@ export default function PSDrugSheet({ drugId, patient, onClose, onReview, onConf
                   </div>
                 </section>
 
-                <section className="ps-app-surface rounded-[28px] p-5">
+                <section className="ps-app-surface rounded-[30px] p-5">
                   <p className="ps-app-label">Contexto de cálculo</p>
                   <div className="mt-4 grid gap-3">
                     <div className="rounded-[22px] border border-white/8 bg-white/[0.04] px-4 py-4"><p className="text-sm font-semibold text-white">Via / indicação</p><p className="mt-1 text-sm text-slate-400">{primaryDosing?.route || 'n/a'} · {primaryDosing?.indication || 'n/a'}</p></div>
                     <div className="rounded-[22px] border border-white/8 bg-white/[0.04] px-4 py-4"><p className="text-sm font-semibold text-white">Contraindicações críticas</p><p className="mt-1 text-sm text-slate-400">{drug.contraindications.slice(0, 2).join(' · ') || 'Sem dados'}</p></div>
                     <div className="rounded-[22px] border border-white/8 bg-white/[0.04] px-4 py-4"><p className="text-sm font-semibold text-white">Origem clínica</p><p className="mt-1 text-sm text-slate-400">Bootstrap do protocolo. Validar referência institucional.</p></div>
+                  </div>
+                </section>
+
+                <section className="ps-app-surface rounded-[30px] p-5">
+                  <p className="ps-app-label">Apresentação / risco / compatibilidade</p>
+                  <div className="mt-4 space-y-3">
+                    <div className="rounded-[22px] border border-white/8 bg-white/[0.04] px-4 py-4">
+                      <p className="text-sm font-semibold text-white">Apresentações</p>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {presentationPreview.map((item) => (
+                          <span key={item} className="ps-app-pill">{item}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="rounded-[22px] border border-white/8 bg-white/[0.04] px-4 py-4">
+                      <p className="text-sm font-semibold text-white">Efeitos adversos críticos</p>
+                      <p className="mt-2 text-sm text-slate-400">{adversePreview.join(' · ') || 'Sem dados'}</p>
+                    </div>
+                    <div className="rounded-[22px] border border-white/8 bg-white/[0.04] px-4 py-4">
+                      <p className="text-sm font-semibold text-white">Compatibilidade Y</p>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {compatibilityPreview.length > 0 ? compatibilityPreview.map((entry) => (
+                          <span key={`${entry.drugId}-${entry.status}`} className="ps-app-pill">
+                            {entry.drugName}: {entry.status}
+                          </span>
+                        )) : <span className="text-sm text-slate-400">Sem dados</span>}
+                      </div>
+                    </div>
                   </div>
                 </section>
               </div>

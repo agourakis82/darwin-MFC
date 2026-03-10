@@ -48,12 +48,12 @@ export default function PSSituationalAwarenessPanel({
         )}
       </div>
 
-      <div className="grid gap-3 md:grid-cols-4">
-        <div className="rounded-2xl border border-white/7 bg-white/[0.04] p-3">
+      <div className="grid gap-3 xl:grid-cols-[0.85fr_0.65fr_1.5fr]">
+        <div className="rounded-[22px] border border-white/7 bg-white/[0.04] p-3">
           <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Workflow</p>
           <p className="mt-1 text-sm font-semibold text-white">{activeCaseSession ? WORKFLOW_LABELS[activeCaseSession.workflow] : 'Sem caso ativo'}</p>
         </div>
-        <div className="rounded-2xl border border-white/7 bg-white/[0.04] p-3">
+        <div className="rounded-[22px] border border-white/7 bg-white/[0.04] p-3">
           <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Peso</p>
           <p className="mt-1 inline-flex items-center gap-2 text-sm font-semibold text-white">
             <Weight className="h-3.5 w-3.5 text-slate-400" strokeWidth={2} />
@@ -61,7 +61,7 @@ export default function PSSituationalAwarenessPanel({
           </p>
           {weightSource && <p className="mt-1 text-[11px] text-slate-500">{weightSource}</p>}
         </div>
-        <div className="rounded-2xl border border-white/7 bg-white/[0.04] p-3 md:col-span-2">
+        <div className="rounded-[22px] border border-white/7 bg-white/[0.04] p-3">
           <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Agora → Próximo</p>
           <p className="mt-1 text-sm font-semibold text-white">{currentStepTitle}</p>
           {nextStepTitle && (
@@ -73,14 +73,14 @@ export default function PSSituationalAwarenessPanel({
         </div>
       </div>
 
-      <div className="mt-4 rounded-2xl border border-white/7 bg-white/[0.04] p-4">
+      <div className="mt-4 rounded-[22px] border border-white/7 bg-white/[0.04] p-4">
         <div className="mb-3 flex items-center gap-2 text-[11px] uppercase tracking-wider text-slate-500 font-bold">
           <ClipboardList className="h-3.5 w-3.5" strokeWidth={2} />
           Próximas ações
         </div>
         <div className="flex flex-wrap gap-2">
           {pendingActions.length > 0 ? pendingActions.map((label) => (
-            <span key={label} className="rounded-full border border-white/8 bg-white/[0.05] px-3 py-2 text-xs text-slate-100">
+            <span key={label} className="rounded-full border border-white/8 bg-white/[0.05] px-3 py-1.5 text-xs text-slate-100">
               {label}
             </span>
           )) : (

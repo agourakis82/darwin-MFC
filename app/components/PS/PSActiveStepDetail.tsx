@@ -64,11 +64,12 @@ export default function PSActiveStepDetail({
         </div>
       </div>
 
-      <div className="px-5 py-5 space-y-5">
+      <div className="px-5 py-5 space-y-4">
         <div>
-          <div className="flex flex-wrap items-center gap-2 mb-3">
+          <div className="mb-3 flex flex-wrap items-center gap-2">
             {hasReviewed && <span className="rounded-full border border-amber-400/20 bg-amber-500/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-200">Revisado</span>}
             {hasConfirmed && <span className="rounded-full border border-green-400/20 bg-green-500/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-green-200">Confirmado</span>}
+            <span className="rounded-full border border-white/8 bg-white/[0.05] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">{TYPE_LABEL[step.type]}</span>
           </div>
           <h2 className="text-2xl font-bold text-white leading-tight">{step.title}</h2>
           <p className="mt-3 text-sm md:text-[15px] text-slate-400 leading-relaxed max-w-3xl">{step.description}</p>
@@ -92,7 +93,7 @@ export default function PSActiveStepDetail({
                     key={`${step.id}-ck-${i}`}
                     type="button"
                     onClick={() => onToggleCheck(i)}
-                    className="w-full text-left flex items-start gap-3 rounded-2xl border px-4 py-3 transition-all duration-150 ease-out hover:bg-white/[0.05]"
+                    className="w-full text-left flex items-start gap-3 rounded-[20px] border px-4 py-3 transition-all duration-150 ease-out hover:bg-white/[0.05]"
                     style={{
                       background: done ? 'rgba(34,197,94,0.08)' : 'rgba(255,255,255,0.03)',
                       borderColor: done ? 'rgba(34,197,94,0.25)' : 'rgba(255,255,255,0.08)',
@@ -107,17 +108,23 @@ export default function PSActiveStepDetail({
           </div>
         ) : null}
 
-        <div className="flex flex-wrap gap-3">
+        <div className="rounded-[24px] border border-white/8 bg-white/[0.035] p-3 md:p-4">
+          <div className="mb-3 flex items-center justify-between gap-3">
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">Ações do passo</p>
+            <span className="text-[11px] font-semibold text-slate-500">no-context-switch</span>
+          </div>
+
+          <div className="grid gap-3 md:grid-cols-3">
           {step.type === 'drug' && step.drugId && (
             <button
               type="button"
               onClick={onOpenDrug}
               data-testid={`ps-step-drug-${step.drugId}`}
               aria-label={`${drugLabel ?? step.drugId} abrir sheet`}
-              className="inline-flex items-center gap-2 rounded-2xl border border-amber-400/22 bg-amber-500/10 px-4 py-3 text-sm font-semibold text-amber-100 transition-all duration-150 ease-out hover:bg-amber-500/14"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-amber-400/22 bg-amber-500/10 px-4 py-3 text-sm font-semibold text-amber-100 transition-all duration-150 ease-out hover:bg-amber-500/14"
             >
               <Pill className="w-4 h-4" strokeWidth={2} />
-              {drugLabel ?? step.drugId}
+              Abrir {drugLabel ?? step.drugId}
             </button>
           )}
 
@@ -125,7 +132,7 @@ export default function PSActiveStepDetail({
             <button
               type="button"
               onClick={onOpenTimer}
-              className="inline-flex items-center gap-2 rounded-2xl border border-rose-400/20 bg-rose-500/10 px-4 py-3 text-sm font-semibold text-rose-100 transition-all duration-150 ease-out hover:bg-rose-500/14"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-rose-400/20 bg-rose-500/10 px-4 py-3 text-sm font-semibold text-rose-100 transition-all duration-150 ease-out hover:bg-rose-500/14"
             >
               <Timer className="w-4 h-4" strokeWidth={2} />
               Abrir timer
@@ -135,12 +142,13 @@ export default function PSActiveStepDetail({
           {step.type === 'score' && step.scoreId && (
             <Link
               href={`/ps/escalas?score=${step.scoreId}`}
-              className="inline-flex items-center gap-2 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-sm font-semibold text-cyan-100 transition-all duration-150 ease-out hover:bg-cyan-400/14"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-sm font-semibold text-cyan-100 transition-all duration-150 ease-out hover:bg-cyan-400/14"
             >
               <Search className="w-4 h-4" strokeWidth={2} />
               Abrir score
             </Link>
           )}
+        </div>
         </div>
 
         {step.notes?.length ? (
@@ -151,7 +159,9 @@ export default function PSActiveStepDetail({
             </div>
             <div className="space-y-2">
               {step.notes.map((note) => (
-                <p key={note} className="text-xs text-slate-400 leading-relaxed">{note}</p>
+                <div key={note} className="rounded-[18px] border border-white/7 bg-white/[0.03] px-3 py-2.5">
+                  <p className="text-xs text-slate-400 leading-relaxed">{note}</p>
+                </div>
               ))}
             </div>
           </div>
@@ -179,7 +189,7 @@ export default function PSActiveStepDetail({
             type="button"
             onClick={onAdvance}
             disabled={isLastStep}
-            className="w-full flex items-center justify-center gap-2 rounded-[24px] px-4 py-4 text-sm font-bold transition-all duration-150 ease-out"
+            className="w-full flex items-center justify-center gap-2 rounded-[26px] px-4 py-4 text-sm font-bold transition-all duration-150 ease-out shadow-[0_18px_40px_rgba(0,0,0,0.16)]"
             style={isLastStep
               ? { background: 'rgba(34,197,94,0.12)', border: '1px solid rgba(34,197,94,0.25)', color: '#4ade80' }
               : { background: 'rgba(34,211,238,0.12)', border: '1px solid rgba(34,211,238,0.22)', color: '#cffafe' }}

@@ -23,7 +23,7 @@ export default function PSProtocolResourcesPanel({
   return (
     <div className="grid gap-4 xl:grid-cols-[0.9fr_1.1fr]">
       {(relatedScores.length > 0 || protocol.relatedDrugs.length > 0) && (
-        <div className="ps-app-surface rounded-[28px] p-4 md:p-5 space-y-4">
+        <div className="ps-app-surface rounded-[30px] p-4 md:p-5 space-y-4">
           {relatedScores.length > 0 && (
             <div>
               <div className="mb-3 flex items-center gap-2 ps-app-label">
@@ -50,7 +50,7 @@ export default function PSProtocolResourcesPanel({
                 <Pill className="w-3.5 h-3.5 text-amber-300" strokeWidth={2} />
                 Drogas relacionadas
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="grid gap-2 sm:grid-cols-2">
                 {protocol.relatedDrugs.slice(0, 8).map((drugId) => (
                   <button
                     key={drugId}
@@ -58,9 +58,10 @@ export default function PSProtocolResourcesPanel({
                     onClick={() => onOpenDrug(drugId)}
                     data-testid={`ps-related-drug-${drugId}`}
                     aria-label={`Abrir drug sheet ${resolveDrugName(drugId)}`}
-                    className="ps-app-interactive rounded-full border border-amber-400/18 bg-amber-500/10 px-3 py-2 text-xs font-semibold text-amber-100"
+                    className="ps-app-interactive flex items-center justify-between rounded-[20px] border border-amber-400/18 bg-amber-500/10 px-3 py-3 text-left text-xs font-semibold text-amber-100"
                   >
-                    {resolveDrugName(drugId)}
+                    <span>{resolveDrugName(drugId)}</span>
+                    <span className="text-[10px] uppercase tracking-[0.18em] text-amber-200/80">sheet</span>
                   </button>
                 ))}
               </div>
@@ -70,7 +71,7 @@ export default function PSProtocolResourcesPanel({
       )}
 
       {protocol.references.length > 0 && (
-        <div className="ps-app-surface rounded-[28px] p-4 md:p-5 space-y-4">
+        <div className="ps-app-surface rounded-[30px] p-4 md:p-5 space-y-4">
           <div className="flex items-center gap-2 ps-app-label">
             <BookOpen className="w-3.5 h-3.5 text-slate-400" strokeWidth={2} />
             Referências
