@@ -21,9 +21,9 @@ export default function PSProtocolResourcesPanel({
   resolveDrugName,
 }: PSProtocolResourcesPanelProps) {
   return (
-    <div className="grid gap-4 xl:grid-cols-[0.9fr_1.1fr]">
+    <div className="grid gap-4 xl:grid-cols-[0.86fr_1.14fr]">
       {(relatedScores.length > 0 || protocol.relatedDrugs.length > 0) && (
-        <div className="ps-app-surface rounded-[30px] p-4 md:p-5 space-y-4">
+        <div className="rounded-[30px] border border-white/10 bg-white/[0.04] p-4 md:p-5 space-y-4">
           {relatedScores.length > 0 && (
             <div>
               <div className="mb-3 flex items-center gap-2 ps-app-label">
@@ -58,7 +58,7 @@ export default function PSProtocolResourcesPanel({
                     onClick={() => onOpenDrug(drugId)}
                     data-testid={`ps-related-drug-${drugId}`}
                     aria-label={`Abrir drug sheet ${resolveDrugName(drugId)}`}
-                    className="ps-app-interactive flex items-center justify-between rounded-[20px] border border-amber-400/18 bg-amber-500/10 px-3 py-3 text-left text-xs font-semibold text-amber-100"
+                    className="ps-app-interactive flex items-center justify-between rounded-[18px] border border-amber-400/18 bg-amber-500/10 px-3 py-3 text-left text-xs font-semibold text-amber-100"
                   >
                     <span>{resolveDrugName(drugId)}</span>
                     <span className="text-[10px] uppercase tracking-[0.18em] text-amber-200/80">sheet</span>
@@ -71,14 +71,14 @@ export default function PSProtocolResourcesPanel({
       )}
 
       {protocol.references.length > 0 && (
-        <div className="ps-app-surface rounded-[30px] p-4 md:p-5 space-y-4">
+        <div className="rounded-[30px] border border-white/10 bg-[#08111c]/85 p-4 md:p-5 space-y-4">
           <div className="flex items-center gap-2 ps-app-label">
             <BookOpen className="w-3.5 h-3.5 text-slate-400" strokeWidth={2} />
             Referências
           </div>
           <ol className="space-y-3">
             {protocol.references.map((ref, i) => (
-              <li key={`${protocol.id}-${currentStepId}-ref-${i}`} className="rounded-[22px] border border-white/7 bg-white/[0.04] px-4 py-3 apple-transition-fast">
+              <li key={`${protocol.id}-${currentStepId}-ref-${i}`} className="rounded-[18px] border border-white/7 bg-white/[0.035] px-4 py-3 apple-transition-fast">
                 <p className="text-[12px] text-slate-300 leading-relaxed">{ref.citation}</p>
                 <div className="flex flex-wrap items-center gap-2 mt-2 text-[10px] text-slate-500">
                   <span>{ref.year}</span>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import { Activity, Command, HeartPulse, Search, Sparkles, Weight } from 'lucide-react';
+import { Activity, ChevronRight, Command, HeartPulse, Search, Sparkles, Weight } from 'lucide-react';
 import { useRouter } from '@/i18n/routing';
 import { allEmergencyDrugs } from '@/lib/ps/data';
 import { emergencyProtocols } from '@/lib/ps/protocols';
@@ -69,19 +69,26 @@ export default function PSHeader() {
             <div className="flex h-11 w-11 items-center justify-center rounded-[20px] border border-cyan-400/18 bg-cyan-400/12 shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
               <HeartPulse className="h-5 w-5 text-cyan-200" strokeWidth={2.2} />
             </div>
-            <div className="min-w-0">
+            <div className="min-w-0 leading-none">
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-300/70">Darwin ER</p>
-              <p className="truncate text-sm font-semibold text-white md:text-[15px]">Acute care app shell</p>
+              <div className="mt-1 flex items-center gap-2 text-sm font-semibold text-white md:text-[15px]">
+                <span className="truncate">Acute care app shell</span>
+                <ChevronRight className="hidden h-3.5 w-3.5 text-slate-500 lg:block" strokeWidth={2.4} />
+                <span className="hidden text-xs font-semibold text-slate-400 lg:inline">PS</span>
+              </div>
             </div>
           </div>
 
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="hidden flex-1 items-center gap-3 rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.04))] px-4 py-3 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_12px_30px_rgba(0,0,0,0.16)] apple-transition-fast hover:bg-white/[0.09] md:flex"
+            className="hidden flex-1 items-center gap-3 rounded-[26px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.04))] px-4 py-3 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_12px_30px_rgba(0,0,0,0.16)] apple-transition-fast hover:bg-white/[0.09] md:flex"
           >
             <Search className="h-4 w-4 text-slate-400" strokeWidth={2} />
-            <span className="flex-1 text-sm text-slate-400">Buscar droga, protocolo ou score</span>
+            <div className="flex flex-1 items-center justify-between gap-3">
+              <span className="text-sm text-slate-400">Buscar droga, protocolo ou score</span>
+              <span className="hidden text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 lg:inline">Command surface</span>
+            </div>
             <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.05] px-2 py-1 text-[11px] font-semibold text-slate-300">
               <Command className="h-3 w-3" strokeWidth={2} />K
             </span>

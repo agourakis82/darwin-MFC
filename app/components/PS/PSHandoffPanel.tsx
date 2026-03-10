@@ -55,8 +55,8 @@ export default function PSHandoffPanel({
 
   return (
     <section data-testid="ps-handoff-panel" className="space-y-5">
-      <div className="grid gap-4 xl:grid-cols-[1.1fr_0.9fr]">
-        <div className="ps-app-surface-strong rounded-[30px] p-5 md:p-6">
+      <div className="grid gap-4 xl:grid-cols-[1.2fr_0.8fr]">
+        <div className="rounded-[32px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] p-5 md:p-6">
           <div className="mb-4 flex items-start justify-between gap-4">
             <div>
               <p className="ps-app-label">Handoff mode</p>
@@ -65,31 +65,36 @@ export default function PSHandoffPanel({
             <span className="ps-app-pill">{formatLabel}</span>
           </div>
 
-          <div className="grid gap-3 md:grid-cols-3">
-            <div className="rounded-[24px] border border-amber-400/18 bg-amber-400/10 px-4 py-4"><p className="ps-app-label text-amber-200">Revisado</p><p className="mt-2 text-2xl font-bold text-white">{reviewedLabels.length}</p></div>
-            <div className="rounded-[24px] border border-emerald-400/18 bg-emerald-500/10 px-4 py-4"><p className="ps-app-label text-emerald-200">Confirmado</p><p className="mt-2 text-2xl font-bold text-white">{confirmedLabels.length}</p></div>
-            <div className="rounded-[24px] border border-cyan-400/18 bg-cyan-400/10 px-4 py-4"><p className="ps-app-label text-cyan-200">Concluído</p><p className="mt-2 text-2xl font-bold text-white">{completedLabels.length}</p></div>
-          </div>
-
-          <div className="mt-5 rounded-[26px] border border-white/8 bg-white/[0.04] px-4 py-4">
-            <p className="ps-app-label">Caso ativo</p>
-            <p className="mt-2 text-lg font-semibold text-white">{activeCaseLabel}</p>
-            <p className="mt-2 text-sm leading-6 text-slate-300">{summary}</p>
-          </div>
-
-          <div className="mt-5 flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2">
+            <span className="ps-app-pill">Revisado {reviewedLabels.length}</span>
+            <span className="ps-app-pill">Confirmado {confirmedLabels.length}</span>
+            <span className="ps-app-pill">Concluído {completedLabels.length}</span>
             <span className="ps-app-pill">{eventLines.length} evento(s)</span>
-            <button type="button" onClick={onCopy} className="ps-app-interactive inline-flex items-center gap-2 rounded-[24px] border border-cyan-400/18 bg-cyan-400/10 px-4 py-3 text-sm font-semibold text-cyan-100"><Clipboard className="h-4 w-4" strokeWidth={2} />Copiar handoff</button>
-            <button type="button" onClick={onCopyStructured} className="ps-app-interactive inline-flex items-center gap-2 rounded-[24px] border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-slate-100"><FileJson className="h-4 w-4" strokeWidth={2} />Copiar estruturado</button>
-            <button type="button" onClick={onCopyNote} className="ps-app-interactive inline-flex items-center gap-2 rounded-[24px] border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-slate-100"><NotebookPen className="h-4 w-4" strokeWidth={2} />Copiar nota clínica</button>
+          </div>
+
+          <div className="mt-5 grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="rounded-[26px] border border-white/8 bg-white/[0.04] px-4 py-4">
+              <p className="ps-app-label">Caso ativo</p>
+              <p className="mt-2 text-lg font-semibold text-white">{activeCaseLabel}</p>
+              <p className="mt-3 text-sm leading-6 text-slate-300">{summary}</p>
+            </div>
+
+            <div className="rounded-[26px] border border-white/8 bg-[#08101b]/88 px-4 py-4">
+              <p className="ps-app-label">Exportar agora</p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                <button type="button" onClick={onCopy} className="ps-app-interactive inline-flex items-center justify-center gap-2 rounded-[22px] border border-cyan-400/18 bg-cyan-400/10 px-4 py-3 text-sm font-semibold text-cyan-100"><Clipboard className="h-4 w-4" strokeWidth={2} />Copiar handoff</button>
+                <button type="button" onClick={onCopyStructured} className="ps-app-interactive inline-flex items-center justify-center gap-2 rounded-[22px] border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-slate-100"><FileJson className="h-4 w-4" strokeWidth={2} />Copiar estruturado</button>
+                <button type="button" onClick={onCopyNote} className="ps-app-interactive inline-flex items-center justify-center gap-2 rounded-[22px] border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-slate-100"><NotebookPen className="h-4 w-4" strokeWidth={2} />Copiar nota clínica</button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="ps-app-surface rounded-[30px] p-5 md:p-6">
+        <div className="rounded-[32px] border border-white/10 bg-[#08101b]/86 p-5 md:p-6">
           <p className="ps-app-label">Campos estruturados</p>
-          <div className="mt-4 space-y-3">
+          <div className="mt-4 space-y-2.5">
             {structuredFields.map((field, index) => (
-              <div key={`${field.label}-${index}`} className="rounded-[22px] border border-white/8 bg-white/[0.04] px-4 py-4">
+              <div key={`${field.label}-${index}`} className="rounded-[18px] border border-white/8 bg-white/[0.035] px-4 py-3.5">
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">{field.label}</p>
                 <p className="mt-2 text-sm text-slate-200">{field.value || '—'}</p>
               </div>
@@ -99,16 +104,16 @@ export default function PSHandoffPanel({
       </div>
 
       <div className="grid gap-4 xl:grid-cols-[1fr_1fr]">
-        <section className="ps-app-surface rounded-[30px] p-5 md:p-6">
+        <section className="rounded-[32px] border border-white/10 bg-white/[0.04] p-5 md:p-6">
           <p className="ps-app-label">Eventos recentes</p>
-          <div className="mt-4 space-y-3">
+          <div className="mt-4 space-y-2.5">
             {eventLines.map((event, index) => (
-              <div key={`${event}-${index}`} className="rounded-[22px] border border-white/8 bg-white/[0.04] px-4 py-4 text-sm text-slate-200">{event}</div>
+              <div key={`${event}-${index}`} className="rounded-[18px] border border-white/8 bg-white/[0.035] px-4 py-3.5 text-sm text-slate-200">{event}</div>
             ))}
           </div>
         </section>
 
-        <section className="ps-app-surface rounded-[30px] p-5 md:p-6">
+        <section className="rounded-[32px] border border-white/10 bg-[#08101b]/86 p-5 md:p-6">
           <div className="flex items-center justify-between gap-3">
             <p className="ps-app-label">Import handoff</p>
             <button
@@ -128,7 +133,7 @@ export default function PSHandoffPanel({
                 value={importDraft}
                 onChange={(event) => onImportDraftChange(event.target.value)}
                 placeholder="Cole aqui o payload estruturado do handoff"
-                className="mt-4 h-40 w-full rounded-[24px] border border-white/8 bg-white/[0.04] px-4 py-4 text-sm text-slate-100 outline-none placeholder:text-slate-500"
+                className="mt-4 h-40 w-full rounded-[24px] border border-white/8 bg-white/[0.035] px-4 py-4 text-sm text-slate-100 outline-none placeholder:text-slate-500"
               />
 
               {(validationError || submitError) && (
@@ -139,7 +144,7 @@ export default function PSHandoffPanel({
               )}
 
               {importPreview && (
-                <div data-testid="ps-handoff-import-preview" className="mt-4 rounded-[24px] border border-white/8 bg-white/[0.04] px-4 py-4">
+                <div data-testid="ps-handoff-import-preview" className="mt-4 rounded-[24px] border border-white/8 bg-white/[0.035] px-4 py-4">
                   <p className="ps-app-label">Preview</p>
                   <p className="mt-2 text-base font-semibold text-white">{importPreview.workflow}</p>
                   <p className="mt-1 text-sm text-slate-400">{importPreview.protocol}</p>
@@ -154,7 +159,7 @@ export default function PSHandoffPanel({
               )}
 
               <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-                <label className="flex items-center gap-3 rounded-[22px] border border-white/8 bg-white/[0.04] px-4 py-3 text-sm text-slate-200">
+                <label className="flex items-center gap-3 rounded-[22px] border border-white/8 bg-white/[0.035] px-4 py-3 text-sm text-slate-200">
                   <input type="checkbox" checked={confirmReplace} onChange={(event) => onConfirmReplaceChange(event.target.checked)} className="h-4 w-4" />
                   Confirmo substituir o caso ativo pelo handoff importado.
                 </label>
