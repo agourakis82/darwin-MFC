@@ -29,28 +29,33 @@ export default function PSDashboard() {
 
   return (
     <div className="space-y-6 md:space-y-8">
-      <section className="rounded-[36px] border border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.16),transparent_30%),linear-gradient(180deg,#091426_0%,#07111f_55%,#050c16_100%)] p-5 shadow-[0_28px_100px_rgba(0,0,0,0.34)] md:p-7">
-        <div className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr] xl:items-end">
+      <section className="rounded-[40px] border border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(251,191,36,0.12),transparent_24%),linear-gradient(180deg,#091426_0%,#07111f_55%,#050c16_100%)] p-5 shadow-[0_32px_120px_rgba(0,0,0,0.36)] md:p-7">
+        <div className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr] xl:items-end">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/18 bg-cyan-400/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200">
               <Siren className="h-3.5 w-3.5" strokeWidth={2} />PS App V2
             </div>
             <div>
-              <h1 className="max-w-4xl text-3xl font-bold tracking-[-0.04em] text-white md:text-5xl">Acute care cockpit</h1>
+              <h1 className="max-w-4xl text-3xl font-bold tracking-[-0.05em] text-white md:text-6xl">Acute care cockpit</h1>
               <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.22em] text-slate-500">Pronto-socorro operacional</p>
               <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300 md:text-[15px]">
                 Continue o caso atual, inicie um fluxo crítico em segundos e mantenha dose, checkpoint e handoff no mesmo plano operacional.
               </p>
             </div>
+            <div className="flex flex-wrap gap-2 pt-1">
+              <span className="ps-app-pill">continue case</span>
+              <span className="ps-app-pill">critical meds</span>
+              <span className="ps-app-pill">handoff ready</span>
+            </div>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-2">
-            <div className="ps-app-surface rounded-[26px] p-4">
+            <div className="ps-app-surface-strong rounded-[28px] p-4">
               <div className="flex items-center gap-2 ps-app-label"><Activity className="h-3.5 w-3.5 text-cyan-300" strokeWidth={2} />Caso ativo</div>
               <p className="mt-3 text-2xl font-bold text-white">{activeCaseSession ? 'Em execução' : 'Livre'}</p>
               <p className="mt-1 text-sm text-slate-400">{activeCaseSession ? activeCaseSession.workflow.toUpperCase() : 'Pronto para novo caso'}</p>
             </div>
-            <div className="ps-app-surface rounded-[26px] p-4">
+            <div className="ps-app-surface-strong rounded-[28px] p-4">
               <div className="flex items-center gap-2 ps-app-label"><Weight className="h-3.5 w-3.5 text-amber-300" strokeWidth={2} />Peso</div>
               <p className="mt-3 text-2xl font-bold text-white">{weightLabel}</p>
               <p className="mt-1 text-sm text-slate-400">Fonte: {patient.weightSource}</p>
@@ -82,21 +87,29 @@ export default function PSDashboard() {
           </div>
 
           <div className="grid gap-3">
-            {WORKFLOWS.map((workflow) => (
+            {WORKFLOWS.map((workflow, index) => (
               <Link
                 key={workflow.protocolId}
                 href={workflow.href}
                 onClick={() => startCase({ workflow: workflow.workflow, protocolId: workflow.protocolId })}
-                className="ps-app-interactive rounded-[26px] border border-white/8 bg-white/[0.04] px-4 py-4 shadow-[0_16px_40px_rgba(0,0,0,0.14)]"
+                className="ps-app-interactive rounded-[28px] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.035))] px-4 py-4 shadow-[0_18px_44px_rgba(0,0,0,0.16)]"
               >
                 <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <p className="text-lg font-semibold text-white">{workflow.label}</p>
-                    <p className="mt-1 text-sm text-slate-400">{workflow.blurb}</p>
+                  <div className="flex items-start gap-4">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-sm font-bold text-slate-200">
+                      0{index + 1}
+                    </span>
+                    <div>
+                      <p className="text-lg font-semibold text-white">{workflow.label}</p>
+                      <p className="mt-1 text-sm text-slate-400">{workflow.blurb}</p>
+                    </div>
                   </div>
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-slate-200">
-                    <ArrowRight className="h-4 w-4" strokeWidth={2} />
-                  </span>
+                  <div className="flex flex-col items-end gap-2">
+                    <span className="ps-app-pill">start</span>
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-slate-200">
+                      <ArrowRight className="h-4 w-4" strokeWidth={2} />
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}

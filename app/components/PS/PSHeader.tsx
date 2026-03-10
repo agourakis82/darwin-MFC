@@ -63,7 +63,7 @@ export default function PSHeader() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-white/8 bg-[#06101d]/88 backdrop-blur-3xl">
+      <header className="sticky top-0 z-40 border-b border-white/8 bg-[linear-gradient(180deg,rgba(7,15,27,0.96),rgba(6,16,29,0.82))] backdrop-blur-3xl shadow-[0_14px_48px_rgba(0,0,0,0.22)]">
         <div className="mx-auto flex max-w-[1520px] items-center gap-3 px-4 py-3 md:px-6 xl:px-8">
           <div className="flex min-w-0 items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-[20px] border border-cyan-400/18 bg-cyan-400/12 shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
@@ -78,7 +78,7 @@ export default function PSHeader() {
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="hidden flex-1 items-center gap-3 rounded-[22px] border border-white/10 bg-white/[0.05] px-4 py-3 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] apple-transition-fast hover:bg-white/[0.07] md:flex"
+            className="hidden flex-1 items-center gap-3 rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.04))] px-4 py-3 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_12px_30px_rgba(0,0,0,0.16)] apple-transition-fast hover:bg-white/[0.09] md:flex"
           >
             <Search className="h-4 w-4 text-slate-400" strokeWidth={2} />
             <span className="flex-1 text-sm text-slate-400">Buscar droga, protocolo ou score</span>
@@ -88,7 +88,7 @@ export default function PSHeader() {
           </button>
 
           <div className="ml-auto flex items-center gap-2 md:gap-3">
-            <div className="hidden items-center gap-2 rounded-[20px] border border-white/10 bg-white/[0.05] px-3 py-2 md:flex">
+            <div className="hidden items-center gap-2 rounded-[20px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] px-3 py-2 md:flex">
               <Weight className="h-4 w-4 text-amber-300" strokeWidth={2} />
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Peso</p>
@@ -97,7 +97,7 @@ export default function PSHeader() {
             </div>
 
             {activeCaseSession && (
-              <div className="hidden items-center gap-2 rounded-[20px] border border-cyan-400/18 bg-cyan-400/10 px-3 py-2 lg:flex">
+              <div className="hidden items-center gap-2 rounded-[20px] border border-cyan-400/18 bg-[linear-gradient(180deg,rgba(34,211,238,0.16),rgba(34,211,238,0.08))] px-3 py-2 lg:flex">
                 <Activity className="h-4 w-4 text-cyan-200" strokeWidth={2} />
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-300/70">Caso ativo</p>
@@ -106,7 +106,7 @@ export default function PSHeader() {
               </div>
             )}
 
-            <div className="flex items-center rounded-[20px] border border-white/10 bg-white/[0.05] p-1">
+            <div className="flex items-center rounded-[20px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
               {(['ps', 'aps'] as const).map((currentMode) => (
                 <button
                   key={currentMode}
