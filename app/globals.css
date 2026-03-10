@@ -401,6 +401,14 @@ html[data-reduce-transparency="true"] {
   letter-spacing: -0.02em;
 }
 
+@utility ps-app-kicker {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: rgb(148 163 184 / 0.78);
+}
+
 @utility ps-app-interactive {
   transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
 

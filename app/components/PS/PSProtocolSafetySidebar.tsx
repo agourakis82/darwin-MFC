@@ -32,19 +32,23 @@ export default function PSProtocolSafetySidebar({
 }: PSProtocolSafetySidebarProps) {
   return (
     <aside className="space-y-4 xl:sticky xl:top-24">
-      <div className="rounded-[28px] border border-white/8 bg-white/[0.04] p-4">
+      <div className="rounded-[30px] border border-white/10 bg-[#08111d]/86 p-4">
         <div className="mb-3 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-slate-500">
           <Shield className="h-3.5 w-3.5 text-cyan-300" strokeWidth={2} />
           Safety column
         </div>
-        <div className="grid gap-2 grid-cols-2 text-sm">
-          <div className="rounded-2xl border border-white/7 bg-white/[0.04] p-3">
-            <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Etapa</p>
-            <p className="mt-1 font-semibold text-white">{currentStepId}</p>
-          </div>
-          <div className="rounded-2xl border border-white/7 bg-white/[0.04] p-3">
-            <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Eventos</p>
-            <p className="mt-1 font-semibold text-white">{timelineEvents.length}</p>
+        <div className="rounded-[24px] border border-white/8 bg-white/[0.04] px-4 py-4">
+          <p className="ps-app-kicker">Monitorar agora</p>
+          <p className="mt-2 text-lg font-semibold tracking-[-0.03em] text-white">{protocolId.toUpperCase()}</p>
+          <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
+            <div className="rounded-[18px] border border-white/7 bg-white/[0.035] p-3">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Etapa</p>
+              <p className="mt-1 truncate font-semibold text-white">{currentStepId}</p>
+            </div>
+            <div className="rounded-[18px] border border-white/7 bg-white/[0.035] p-3">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Eventos</p>
+              <p className="mt-1 font-semibold text-white">{timelineEvents.length}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -65,7 +69,7 @@ export default function PSProtocolSafetySidebar({
           </div>
           <div className="space-y-2">
             {pcrPausePoints.map((point) => (
-              <div key={`${currentStepId}-${point}`} className="rounded-2xl border border-white/8 bg-black/10 px-3 py-3">
+              <div key={`${currentStepId}-${point}`} className="rounded-[18px] border border-white/8 bg-black/10 px-3 py-3">
                 <p className="text-xs text-rose-50/90 leading-relaxed">{point}</p>
               </div>
             ))}
@@ -82,7 +86,7 @@ export default function PSProtocolSafetySidebar({
           onContinue={onStopPointContinue}
         />
       ) : (
-        <div className="rounded-[28px] border border-white/8 bg-white/[0.035] p-4">
+        <div className="rounded-[28px] border border-white/8 bg-white/[0.03] p-4">
           <p className="text-xs font-semibold text-slate-300">Checkpoint de segurança</p>
           <p className="mt-1 text-xs text-slate-500">A timeline e a coordenação seguem ativas sem bloqueio extra.</p>
         </div>

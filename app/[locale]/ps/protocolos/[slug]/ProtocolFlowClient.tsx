@@ -231,10 +231,13 @@ importExternalHandoff,
 
         <PSProtocolStatusChips items={statusChips} />
 
-        <div className="grid gap-6 xl:grid-cols-[280px_minmax(0,1.15fr)_360px]">
+        <div className="grid gap-6 xl:grid-cols-[260px_minmax(0,1.2fr)_340px]">
           <aside className="space-y-3 xl:sticky xl:top-24 self-start">
-            <div className="rounded-[28px] border border-white/8 bg-white/[0.035] p-4">
-              <p className="text-[11px] text-slate-500 font-bold uppercase tracking-[0.22em] mb-3">Flow map</p>
+            <div className="rounded-[30px] border border-white/10 bg-[#08111d]/84 p-4">
+              <div className="mb-3 flex items-center justify-between gap-3">
+                <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-500">Flow map</p>
+                <span className="ps-app-pill">{totalSteps} passos</span>
+              </div>
               <div className="space-y-2">
                 {protocol.steps.map((s) => {
                   const isActive = s.id === currentStepId;
