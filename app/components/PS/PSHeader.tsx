@@ -95,6 +95,15 @@ export default function PSHeader() {
           </button>
 
           <div className="ml-auto flex items-center gap-2 md:gap-3">
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              className="inline-flex h-11 items-center gap-2 rounded-[20px] border border-white/10 bg-white/[0.05] px-3 text-sm font-semibold text-slate-200 apple-transition-fast hover:bg-white/[0.08] md:hidden"
+            >
+              <Search className="h-4 w-4 text-slate-400" strokeWidth={2} />
+              Buscar
+            </button>
+
             <div className="hidden items-center gap-2 rounded-[20px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] px-3 py-2 md:flex">
               <Weight className="h-4 w-4 text-amber-300" strokeWidth={2} />
               <div>
