@@ -104,7 +104,7 @@ export default function PSHeader() {
               Buscar
             </button>
 
-            <div className="hidden items-center gap-2 rounded-[20px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] px-3 py-2 md:flex">
+            <div className="hidden items-center gap-2 rounded-[18px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] px-3 py-2 md:flex">
               <Weight className="h-4 w-4 text-amber-300" strokeWidth={2} />
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Peso</p>
@@ -113,7 +113,7 @@ export default function PSHeader() {
             </div>
 
             {activeCaseSession && (
-              <div className="hidden items-center gap-2 rounded-[20px] border border-cyan-400/18 bg-[linear-gradient(180deg,rgba(34,211,238,0.16),rgba(34,211,238,0.08))] px-3 py-2 lg:flex">
+              <div className="hidden items-center gap-2 rounded-[18px] border border-cyan-400/18 bg-[linear-gradient(180deg,rgba(34,211,238,0.16),rgba(34,211,238,0.08))] px-3 py-2 lg:flex">
                 <Activity className="h-4 w-4 text-cyan-200" strokeWidth={2} />
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-300/70">Caso ativo</p>
@@ -122,13 +122,13 @@ export default function PSHeader() {
               </div>
             )}
 
-            <div className="flex items-center rounded-[20px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+            <div className="flex items-center rounded-[18px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
               {(['ps', 'aps'] as const).map((currentMode) => (
                 <button
                   key={currentMode}
                   type="button"
                   onClick={() => setMode(currentMode)}
-                  className={`rounded-2xl px-3 py-2 text-xs font-semibold apple-transition-fast ${mode === currentMode ? 'bg-white text-slate-950 shadow-[0_8px_24px_rgba(0,0,0,0.16)]' : 'text-slate-300 hover:text-white'}`}
+                  className={`rounded-[14px] px-3 py-2 text-xs font-semibold apple-transition-fast ${mode === currentMode ? 'bg-white text-slate-950 shadow-[0_8px_24px_rgba(0,0,0,0.16)]' : 'text-slate-300 hover:text-white'}`}
                 >
                   {currentMode.toUpperCase()}
                 </button>

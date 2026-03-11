@@ -30,36 +30,39 @@ export default function PSProtocolHero({
 
   return (
     <section className="space-y-4">
-      <div className="rounded-[34px] border p-5 md:p-6 shadow-[0_24px_80px_rgba(0,0,0,0.24)]" style={{ background: `linear-gradient(135deg, ${protocolColor}14 0%, rgba(6,11,19,0.96) 52%, rgba(7,17,31,1) 100%)`, borderColor: `${protocolColor}22` }}>
+      <div className="rounded-[34px] border p-5 md:p-6 shadow-[0_24px_80px_rgba(0,0,0,0.24)]" style={{ background: `linear-gradient(135deg, ${protocolColor}12 0%, rgba(6,11,19,0.96) 52%, rgba(7,17,31,1) 100%)`, borderColor: `${protocolColor}20` }}>
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="min-w-0 flex-1">
             <div className="mb-3 flex items-center gap-2">
               <Activity className="h-4 w-4" style={{ color: protocolColor }} strokeWidth={2} />
               <span className="text-[11px] font-bold uppercase tracking-[0.24em]" style={{ color: protocolColor }}>{protocol.category}</span>
             </div>
-            <h1 className="text-2xl md:text-[32px] font-bold text-white leading-tight">{protocol.name}</h1>
+            <h1 className="text-[2rem] font-bold leading-tight tracking-[-0.05em] text-white md:text-[2.5rem]">{protocol.name}</h1>
             <p className="mt-2 max-w-3xl text-sm text-slate-400 leading-relaxed">{protocol.description}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               <span className="ps-app-pill">step {stepIndex + 1} / {totalSteps}</span>
-              <span className="ps-app-pill">{progress}% progress</span>
+              <span className="ps-app-pill">{progress}%</span>
               {currentStepId && <span className="ps-app-pill">{currentStepId}</span>}
             </div>
           </div>
 
-          <div className="grid min-w-[220px] grid-cols-2 gap-2 text-sm">
-            <div className="rounded-[22px] border border-white/7 bg-white/[0.045] px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Etapa</p>
-              <p className="mt-1 font-semibold text-white">{stepIndex + 1}/{totalSteps}</p>
-            </div>
-            <div className="rounded-[22px] border border-white/7 bg-white/[0.045] px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Progressão</p>
-              <p className="mt-1 font-semibold text-white">{progress}%</p>
+          <div className="min-w-[220px] rounded-[26px] border border-white/8 bg-white/[0.04] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
+            <p className="ps-app-kicker">Protocol state</p>
+            <div className="mt-3 flex items-end justify-between gap-4">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Etapa</p>
+                <p className="mt-1 text-xl font-semibold text-white">{stepIndex + 1}/{totalSteps}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Progressão</p>
+                <p className="mt-1 text-xl font-semibold text-white">{progress}%</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="rounded-[28px] border border-white/8 bg-white/[0.035] p-4 md:p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
+      <div className="rounded-[28px] border border-white/8 bg-[#08111d]/82 p-4 md:p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
         <div className="mb-3 flex items-center justify-between gap-3 text-xs font-semibold text-slate-400">
           <span>Fluxo do protocolo</span>
           {visitedIds.length > 0 && (

@@ -231,9 +231,9 @@ importExternalHandoff,
 
         <PSProtocolStatusChips items={statusChips} />
 
-        <div className="grid gap-6 xl:grid-cols-[260px_minmax(0,1.2fr)_340px]">
+        <div className="grid gap-6 xl:grid-cols-[228px_minmax(0,1.28fr)_308px]">
           <aside className="space-y-3 xl:sticky xl:top-24 self-start">
-            <div className="rounded-[30px] border border-white/10 bg-[#08111d]/84 p-4">
+            <div className="rounded-[24px] border border-white/10 bg-[#08111d]/84 p-4">
               <div className="mb-3 flex items-center justify-between gap-3">
                 <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-500">Flow map</p>
                 <span className="ps-app-pill">{totalSteps} passos</span>

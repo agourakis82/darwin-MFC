@@ -46,24 +46,24 @@ export default function PSProtocolStepCard({
       className="group w-full text-left apple-transition-fast active:scale-[0.99]"
     >
       <div
-        className="ps-app-interactive overflow-hidden rounded-[22px]"
+        className="ps-app-interactive overflow-hidden rounded-[18px]"
         style={{
           background: isActive
-            ? 'linear-gradient(180deg, rgba(255,255,255,0.075) 0%, rgba(255,255,255,0.045) 100%)'
+            ? 'rgba(255,255,255,0.055)'
             : isComplete
-              ? 'linear-gradient(180deg, rgba(34,197,94,0.08) 0%, rgba(255,255,255,0.03) 100%)'
-              : 'linear-gradient(180deg, rgba(255,255,255,0.045) 0%, rgba(255,255,255,0.025) 100%)',
+              ? 'rgba(34,197,94,0.07)'
+              : 'rgba(255,255,255,0.028)',
           border: isActive
             ? `1px solid ${alert.border}`
             : isComplete
               ? '0.5px solid rgba(34,197,94,0.20)'
               : '0.5px solid rgba(255,255,255,0.06)',
-          boxShadow: isActive ? `0 0 0 1px ${alert.border}, 0 16px 40px rgba(0,0,0,0.16)` : '0 12px 28px rgba(0,0,0,0.12)',
+          boxShadow: isActive ? `0 0 0 1px ${alert.border}` : 'none',
         }}
       >
-        <div className="flex items-center gap-3 px-3.5 py-3">
+        <div className="flex items-center gap-3 px-3 py-2.5">
           <div
-            className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full"
+            className="flex h-6.5 w-6.5 flex-shrink-0 items-center justify-center rounded-full"
             style={{
               background: isComplete
                 ? 'rgba(34,197,94,0.15)'
@@ -80,11 +80,11 @@ export default function PSProtocolStepCard({
           </div>
 
           <div className="min-w-0 flex-1">
-            <p className={`text-[12.5px] font-semibold leading-snug ${isActive ? 'text-white' : isComplete ? 'text-slate-400' : 'text-slate-300'}`}>
+            <p className={`text-[12px] font-semibold leading-snug ${isActive ? 'text-white' : isComplete ? 'text-slate-400' : 'text-slate-300'}`}>
               {step.title}
             </p>
             <div className="mt-1 flex flex-wrap items-center gap-1.5">
-              <p className="text-[10px] uppercase tracking-[0.16em] text-slate-500">{TYPE_LABEL[step.type] ?? step.type}</p>
+              <p className="text-[9px] uppercase tracking-[0.18em] text-slate-500">{TYPE_LABEL[step.type] ?? step.type}</p>
               {hasReviewed && (
                 <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide text-amber-200 border border-amber-400/25 bg-amber-500/10">
                   revisado
@@ -99,7 +99,7 @@ export default function PSProtocolStepCard({
           </div>
 
           {isActive && (
-            <div className="h-1.5 w-1.5 flex-shrink-0 rounded-full" style={{ background: alert.color }} />
+            <div className="h-6 w-1 flex-shrink-0 rounded-full" style={{ background: alert.color }} />
           )}
         </div>
       </div>

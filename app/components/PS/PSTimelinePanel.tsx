@@ -15,7 +15,7 @@ interface PSTimelinePanelProps {
 
 export default function PSTimelinePanel({ events }: PSTimelinePanelProps) {
   return (
-    <div className="ps-app-surface rounded-[28px] px-4 py-4 space-y-3 md:px-5">
+    <div className="rounded-[24px] border border-white/8 bg-white/[0.025] px-4 py-4 space-y-3 md:px-5">
       <div className="flex items-center justify-between gap-2">
         <p className="ps-app-label">Timeline de segurança</p>
         <span className="ps-app-pill font-mono">{events.length} eventos</span>
@@ -25,17 +25,18 @@ export default function PSTimelinePanel({ events }: PSTimelinePanelProps) {
         {events.length > 0 ? events.map((event) => (
           <div
             key={event.id}
-            className="rounded-[22px] px-3 py-3 apple-transition-fast"
+            className="apple-transition-fast rounded-[16px] px-3 py-3"
             style={{
               background: event.isCurrentStep
-                ? 'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%)'
-                : 'linear-gradient(180deg, rgba(255,255,255,0.045) 0%, rgba(255,255,255,0.025) 100%)',
-              border: event.isCurrentStep ? '0.5px solid rgba(255,255,255,0.14)' : '0.5px solid rgba(255,255,255,0.07)',
-              boxShadow: event.isCurrentStep ? '0 12px 32px rgba(0,0,0,0.14)' : 'none',
+                ? 'rgba(255,255,255,0.055)'
+                : 'rgba(255,255,255,0.03)',
+              border: event.isCurrentStep ? '0.5px solid rgba(255,255,255,0.12)' : '0.5px solid rgba(255,255,255,0.07)',
+              boxShadow: 'none',
             }}
           >
-            <div className="flex items-start justify-between gap-2">
-              <div className="min-w-0">
+            <div className="flex items-start gap-3">
+              <div className="mt-0.5 h-2 w-2 shrink-0 rounded-full" style={{ background: event.isCurrentStep ? 'rgba(255,255,255,0.75)' : 'rgba(148,163,184,0.5)' }} />
+              <div className="min-w-0 flex-1">
                 <p className="text-sm text-white font-medium leading-snug">{event.label}</p>
                 <p className="text-[11px] text-slate-500 mt-1">{event.time}</p>
               </div>
@@ -45,7 +46,7 @@ export default function PSTimelinePanel({ events }: PSTimelinePanelProps) {
             </div>
           </div>
         )) : (
-          <div className="rounded-[22px] px-3 py-3 bg-white/[0.045] border border-white/7">
+          <div className="rounded-[16px] border border-white/7 bg-white/[0.03] px-3 py-3">
             <p className="text-xs text-slate-500">Sem eventos de segurança registrados neste caso.</p>
           </div>
         )}

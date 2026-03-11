@@ -30,7 +30,7 @@ export default function PSDashboard() {
   return (
     <div className="space-y-6 md:space-y-8">
       <section className="ps-app-enter rounded-[40px] border border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(251,191,36,0.12),transparent_24%),linear-gradient(180deg,#091426_0%,#07111f_55%,#050c16_100%)] p-5 shadow-[0_32px_120px_rgba(0,0,0,0.36)] md:p-7">
-        <div className="grid gap-6 xl:grid-cols-[1.24fr_0.76fr] xl:items-end">
+        <div className="grid gap-6 xl:grid-cols-[1.34fr_0.66fr] xl:items-end">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/18 bg-cyan-400/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200">
               <Siren className="h-3.5 w-3.5" strokeWidth={2} />PS App V2
@@ -42,10 +42,10 @@ export default function PSDashboard() {
                 Continue o caso atual, inicie um fluxo crítico em segundos e mantenha dose, checkpoint e handoff no mesmo plano operacional.
               </p>
             </div>
-            <div className="grid gap-3 pt-2 sm:grid-cols-[1.24fr_0.76fr]">
-              <div className="rounded-[32px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.035))] px-5 py-5 shadow-[0_24px_60px_rgba(0,0,0,0.18)]">
+            <div className="grid gap-3 pt-2 sm:grid-cols-[1.34fr_0.66fr]">
+              <div className="rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] px-5 py-5 shadow-[0_28px_72px_rgba(0,0,0,0.22)]">
                 <p className="ps-app-label">Continue / start</p>
-                <p className="mt-2 text-[1.85rem] font-semibold leading-tight tracking-[-0.05em] text-white md:text-[2.35rem]">
+                <p className="mt-2 max-w-3xl text-[2rem] font-semibold leading-[0.95] tracking-[-0.06em] text-white md:text-[2.85rem]">
                   {activeCaseSession ? `Retomar ${activeCaseSession.workflow.toUpperCase()}` : 'Entrar no caso agudo agora'}
                 </p>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">
@@ -59,64 +59,48 @@ export default function PSDashboard() {
                   <span className="ps-app-pill">handoff ready</span>
                 </div>
               </div>
-              <div className="rounded-[32px] border border-white/10 bg-[#08111d]/84 px-5 py-5">
-                <p className="ps-app-label">Operational state</p>
-                <div className="mt-4 space-y-3">
-                  <div className="flex items-center justify-between rounded-[18px] border border-white/8 bg-white/[0.04] px-4 py-3">
+              <div className="rounded-[34px] border border-white/10 bg-[#08111d]/84 px-5 py-5">
+                <p className="ps-app-label">Live state</p>
+                <div className="mt-4 space-y-2.5">
+                  <div className="flex items-center justify-between rounded-[18px] border border-white/8 bg-white/[0.035] px-4 py-3">
                     <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Caso</span>
-                    <span className="text-sm font-semibold text-white">{activeCaseSession ? 'Em execução' : 'Livre'}</span>
+                    <span className="text-sm font-semibold text-white">{activeCaseSession ? activeCaseSession.workflow.toUpperCase() : 'Livre'}</span>
                   </div>
-                  <div className="flex items-center justify-between rounded-[18px] border border-white/8 bg-white/[0.04] px-4 py-3">
+                  <div className="flex items-center justify-between rounded-[18px] border border-white/8 bg-white/[0.035] px-4 py-3">
                     <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Peso</span>
                     <span className="text-sm font-semibold text-white">{weightLabel}</span>
                   </div>
-                  <div className="flex items-center justify-between rounded-[18px] border border-white/8 bg-white/[0.04] px-4 py-3">
-                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Fonte</span>
-                    <span className="text-sm font-semibold text-white">{patient.weightSource}</span>
+                  <div className="flex items-center justify-between rounded-[18px] border border-white/8 bg-white/[0.035] px-4 py-3">
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Scores</span>
+                    <span className="text-sm font-semibold text-white">{favoriteScores.length}</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="grid gap-3">
-            <div className="ps-app-surface-strong rounded-[30px] p-5">
-              <div className="flex items-center justify-between gap-3">
-                <div>
-                  <p className="ps-app-label">Live state</p>
-                  <p className="mt-2 text-xl font-semibold tracking-[-0.03em] text-white">{activeCaseSession ? activeCaseSession.workflow.toUpperCase() : 'Ready to launch'}</p>
-                </div>
-                <Activity className="h-5 w-5 text-cyan-300" strokeWidth={2} />
+          <div className="rounded-[34px] border border-white/10 bg-white/[0.04] p-5">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="ps-app-label">Critical shortcuts</p>
+                <p className="mt-2 text-lg font-semibold tracking-[-0.03em] text-white">Drugs, scores e tools</p>
               </div>
-              <div className="mt-5 grid gap-2.5">
-                <div className="flex items-center justify-between rounded-[18px] border border-white/8 bg-white/[0.04] px-4 py-3">
-                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Peso</span>
-                  <span className="text-sm font-semibold text-white">{weightLabel}</span>
-                </div>
-                <div className="flex items-center justify-between rounded-[18px] border border-white/8 bg-white/[0.04] px-4 py-3">
-                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Drogas fixadas</span>
-                  <span className="text-sm font-semibold text-white">{favoriteDrugs.length}</span>
-                </div>
-                <div className="flex items-center justify-between rounded-[18px] border border-white/8 bg-white/[0.04] px-4 py-3">
-                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Scores fixados</span>
-                  <span className="text-sm font-semibold text-white">{favoriteScores.length}</span>
-                </div>
-              </div>
+              <Pill className="h-5 w-5 text-amber-300" strokeWidth={2} />
             </div>
-
-            <div className="rounded-[30px] border border-white/10 bg-white/[0.04] p-5">
-              <div className="flex items-center justify-between gap-3">
-                <div>
-                  <p className="ps-app-label">Critical shortcuts</p>
-                  <p className="mt-2 text-lg font-semibold tracking-[-0.03em] text-white">Drugs, scores e tools</p>
-                </div>
-                <Pill className="h-5 w-5 text-amber-300" strokeWidth={2} />
+            <div className="mt-4 flex flex-wrap gap-2">
+              <Link href="/ps/drogas" className="ps-app-pill">Drogas</Link>
+              <Link href="/ps/escalas" className="ps-app-pill">Scores</Link>
+              <Link href="/ps/ferramentas" className="ps-app-pill">Ferramentas</Link>
+              <Link href="/ps/protocolos" className="ps-app-pill">Protocolos</Link>
+            </div>
+            <div className="mt-5 grid gap-2.5">
+              <div className="flex items-center justify-between rounded-[18px] border border-white/8 bg-white/[0.035] px-4 py-3">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Drogas fixadas</span>
+                <span className="text-sm font-semibold text-white">{favoriteDrugs.length}</span>
               </div>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <Link href="/ps/drogas" className="ps-app-pill">Drogas</Link>
-                <Link href="/ps/escalas" className="ps-app-pill">Scores</Link>
-                <Link href="/ps/ferramentas" className="ps-app-pill">Ferramentas</Link>
-                <Link href="/ps/protocolos" className="ps-app-pill">Protocolos</Link>
+              <div className="flex items-center justify-between rounded-[18px] border border-white/8 bg-white/[0.035] px-4 py-3">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Scores fixados</span>
+                <span className="text-sm font-semibold text-white">{favoriteScores.length}</span>
               </div>
             </div>
           </div>

@@ -14,21 +14,23 @@ interface PSProtocolStatusChipsProps {
 
 export default function PSProtocolStatusChips({ items }: PSProtocolStatusChipsProps) {
   return (
-    <div className="grid gap-2 grid-cols-2 xl:grid-cols-4">
+    <div className="flex flex-wrap gap-2">
       {items.map((chip) => (
         <div
           key={chip.label}
-          className="rounded-[24px] px-4 py-3 apple-transition-fast"
+          className="rounded-full px-3.5 py-2 apple-transition-fast"
           style={{
             background: `linear-gradient(180deg, ${chip.tone} 0%, rgba(255,255,255,0.025) 100%)`,
             border: `0.5px solid ${chip.border}`,
-            boxShadow: '0 12px 30px rgba(0,0,0,0.12)',
+            boxShadow: '0 10px 24px rgba(0,0,0,0.1)',
           }}
         >
-          <p className="text-[10px] uppercase tracking-[0.22em] font-bold" style={{ color: chip.color }}>
-            {chip.label}
-          </p>
-          <p className="text-lg font-bold text-white mt-1">{chip.value}</p>
+          <div className="flex items-center gap-2">
+            <p className="text-[10px] uppercase tracking-[0.22em] font-bold" style={{ color: chip.color }}>
+              {chip.label}
+            </p>
+            <p className="text-sm font-bold text-white">{chip.value}</p>
+          </div>
         </div>
       ))}
     </div>
