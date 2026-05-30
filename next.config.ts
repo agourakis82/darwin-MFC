@@ -17,10 +17,13 @@ const basePathValue = useBasePath ? '/darwin-MFC' : '';
 // Use static export only for production builds when not on Vercel (e.g., GitHub Pages).
 const isVercel = process.env.VERCEL === '1' || process.env.VERCEL_ENV !== undefined;
 const isStaticExport = !isVercel && process.env.NODE_ENV === 'production';
+const projectRoot = process.cwd();
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ['127.0.0.1', 'localhost'],
   // Turbopack: alias browser-only packages to stubs so they don't break SSG
   turbopack: {
+    root: projectRoot,
     resolveAlias: {
       'onnxruntime-web': './lib/ai/mocks/onnxruntime-web.js',
     },

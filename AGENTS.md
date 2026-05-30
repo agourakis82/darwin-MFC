@@ -10,6 +10,24 @@ Guidance for agents working in `/home/demetrios/darwin-MFC`.
 - Primary runtime target: SSR on Vercel, static export for non-Vercel production builds
 - Styling stack: Tailwind CSS 4 plus shared workspace design tokens
 
+## Darwin IDE / Beagle Context
+
+Before acting from an editor agent, terminal agent, or Zed external agent, ask
+Darwin IDE for the current project lane:
+
+```bash
+dev darwin-ide whereami darwin-mfc
+dev darwin-ide agent-context darwin-mfc <agent-kind>
+```
+
+Use Beagle Workbench context only as shared memory and handoff state. Do not
+treat it as permission to mutate unrelated projects. If Project Cockpit is in
+fallback mode, use the result as read-only orientation and validate locally
+before editing.
+
+The Zed workspace profile lives in `.zed/` and connects this repo to the
+Darwin IDE MCP server plus the Beagle Workbench Context MCP server.
+
 ## Core Commands
 
 ```bash

@@ -1,4 +1,9 @@
 # Darwin-MFC Project Status Report
+
+> Status note, 2026-05-24: this report is a historical status snapshot.
+> For current runtime, validation, feature, and build truth, read
+> [CURRENT_STATUS.md](./CURRENT_STATUS.md) first.
+
 ## Comprehensive Analysis - January 2025
 
 **Version:** 1.6.0  
@@ -245,4 +250,3 @@ You've completed **Phase 2** (Study Mode & Offline Support) and started **Supaba
 4. **If Path B:** Resume Supabase integration and test authentication
 
 **What's your decision?** Reply with **A** or **B**.
-

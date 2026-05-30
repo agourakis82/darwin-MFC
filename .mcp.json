@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "darwin-ide": {
+      "command": "node",
+      "args": ["/home/devsounio/projects/darwin-ide/mcp/darwin-ide-mcp-server.mjs"],
+      "env": {
+        "PROJECT_COCKPIT_API": "http://127.0.0.1:4370",
+        "PROJECT_COCKPIT_UI": "http://127.0.0.1:4173",
+        "DARWIN_PROJECT": "darwin-mfc",
+        "DARWIN_MCP_FALLBACK": "1"
+      }
+    },
+    "beagle-workbench-context": {
+      "command": "node",
+      "args": ["/home/devsounio/beagle/apps/project-cockpit/bin/workbench-context-mcp.mjs"],
+      "env": {
+        "COCKPIT_API": "http://127.0.0.1:4370",
+        "COCKPIT_PROJECT": "darwin-mfc",
+        "COCKPIT_CLIENT_ID": "claude-code",
+        "COCKPIT_CLIENT_PROVIDER": "claude-code",
+        "COCKPIT_AUTO_HEARTBEAT": "1"
+      }
+    },
+    "beagle-canonical": {
+      "command": "node",
+      "args": ["/home/devsounio/beagle/beagle-mcp-server/dist/index.js"],
+      "env": {
+        "BEAGLE_CORE_URL": "http://127.0.0.1:8080",
+        "MCP_TRANSPORT": "stdio",
+        "OPENAI_APPS_SDK_ENABLED": "false",
+        "TAVILY_API_KEY": ""
+      }
+    }
+  }
+}

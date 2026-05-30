@@ -1,0 +1,184 @@
+[
+  {
+    "label": "Darwin: whereami",
+    "command": "/home/devsounio/projects/darwin-ide/bin/darwin-ide",
+    "args": ["whereami", "darwin-mfc"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Darwin: Codex agent context",
+    "command": "/home/devsounio/projects/darwin-ide/bin/darwin-ide",
+    "args": ["agent-context", "darwin-mfc", "codex"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Beagle: start Darwin-MFC multimodel backend",
+    "command": "bash",
+    "args": ["-lc", "cd /home/devsounio/beagle/apps/project-cockpit && npm run start:darwin-mfc:multimodel"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Beagle: attach multimodel backend tmux",
+    "command": "bash",
+    "args": ["-lc", "tmux attach -t ${PROJECT_COCKPIT_TMUX_SESSION:-project-cockpit-4370}"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Beagle: multimodel health",
+    "command": "bash",
+    "args": ["-lc", "cd /home/devsounio/beagle/apps/project-cockpit && npm run verify:multimodel:health"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Beagle: live room gate",
+    "command": "bash",
+    "args": ["-lc", "cd /home/devsounio/beagle/apps/project-cockpit && npm run verify:multimodel:live-room"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Beagle: real chat gate",
+    "command": "bash",
+    "args": ["-lc", "cd /home/devsounio/beagle/apps/project-cockpit && npm run verify:multimodel:real-chat"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Beagle: ChatGPT subscription drill",
+    "command": "bash",
+    "args": ["-lc", "cd /home/devsounio/beagle/apps/project-cockpit && npm run run:workbench:subscription-drill -- --client=chatgpt --keep-open"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Beagle: ChatGPT bringup console",
+    "command": "bash",
+    "args": ["-lc", "cd /home/devsounio/beagle/apps/project-cockpit && npm run run:workbench:subscription-bringup -- darwin-mfc chatgpt --reveal-token --drill --watch"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Beagle: Grok bringup console",
+    "command": "bash",
+    "args": ["-lc", "cd /home/devsounio/beagle/apps/project-cockpit && npm run run:workbench:subscription-bringup -- darwin-mfc grok --reveal-token --drill --watch"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Beagle: Claude Desktop bringup console",
+    "command": "bash",
+    "args": ["-lc", "cd /home/devsounio/beagle/apps/project-cockpit && npm run run:workbench:subscription-bringup -- darwin-mfc claude-desktop --reveal-token --drill --watch"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Beagle: subscription room (all clients)",
+    "command": "bash",
+    "args": ["-lc", "cd /home/devsounio/beagle/apps/project-cockpit && npm run run:workbench:subscription-room -- darwin-mfc all --reveal-token --drill --watch"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Darwin-MFC: start real agent room",
+    "command": "bash",
+    "args": ["-lc", "/home/devsounio/darwin-zed/scripts/start-darwin-mfc-agent-room"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Darwin-MFC: attach real agent room",
+    "command": "bash",
+    "args": ["-lc", "tmux attach -t ${DARWIN_MFC_AGENT_ROOM:-darwin-mfc-agent-room}"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Darwin-MFC: real Zed path doctor",
+    "command": "bash",
+    "args": ["-lc", "/home/devsounio/darwin-zed/scripts/doctor-real-zed-fork"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Zed Beagle: doctor",
+    "command": "bash",
+    "args": ["-lc", "/home/devsounio/darwin-zed/scripts/doctor-zed-beagle"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Zed Beagle: install local CLI",
+    "command": "bash",
+    "args": ["-lc", "/home/devsounio/darwin-zed/scripts/install-local-zed-cli"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Zed Beagle: install launchers",
+    "command": "bash",
+    "args": ["-lc", "/home/devsounio/darwin-zed/scripts/install-zed-beagle-launchers"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Zed Beagle: build extension",
+    "command": "bash",
+    "args": ["-lc", "/home/devsounio/darwin-zed/scripts/build-zed-beagle-extension"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Zed Beagle: install extension",
+    "command": "bash",
+    "args": ["-lc", "/home/devsounio/darwin-zed/scripts/install-zed-beagle-extension"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Zed Beagle: profile contract",
+    "command": "bash",
+    "args": ["-lc", "/home/devsounio/darwin-zed/scripts/verify-zed-beagle-profile"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Zed Beagle: extension contract",
+    "command": "bash",
+    "args": ["-lc", "/home/devsounio/darwin-zed/scripts/verify-zed-beagle-extension"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Zed Beagle: capability coverage",
+    "command": "bash",
+    "args": ["-lc", "/home/devsounio/darwin-zed/scripts/verify-zed-beagle-capabilities"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Zed Beagle: model route",
+    "command": "bash",
+    "args": ["-lc", "/home/devsounio/darwin-zed/scripts/zed-beagle-model-route 'small code change in Darwin-MFC'"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Darwin-MFC: type-check",
+    "command": "bash",
+    "args": ["-lc", "source /home/devsounio/projects/darwin-mfc/darwin-mfc-env.sh && cd /home/devsounio/darwin-MFC && pnpm type-check"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  },
+  {
+    "label": "Darwin-MFC: focused clinical browser gate",
+    "command": "bash",
+    "args": ["-lc", "source /home/devsounio/projects/darwin-mfc/darwin-mfc-env.sh && cd /home/devsounio/darwin-MFC && pnpm test:e2e:entry --project=chromium"],
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true
+  }
+]

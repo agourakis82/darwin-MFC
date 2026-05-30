@@ -1,5 +1,9 @@
 # Darwin-MFC Roadmap 2025-2026
 
+> Status note, 2026-05-24: this roadmap is a historical planning document.
+> For current runtime, validation, feature, and build truth, read
+> [CURRENT_STATUS.md](./CURRENT_STATUS.md) first.
+
 **Versão:** 1.0
 **Data:** Janeiro 2025
 **Status:** Aprovado para Implementação

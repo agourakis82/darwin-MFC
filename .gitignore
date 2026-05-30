@@ -69,3 +69,7 @@ lib/data/*.backup-*
 # mobile build artefacts (managed separately)
 packages/mobile/node_modules/
 packages/mobile/.expo/
+
+# runtime webhook state (written by the app)
+data/webhooks.json
+data/webhook-deliveries.json

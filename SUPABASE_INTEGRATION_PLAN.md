@@ -1,5 +1,9 @@
 # Supabase Integration Plan - Darwin Education
 
+> Status note, 2026-05-24: this is a planning document, not the current
+> implementation truth. For current runtime, validation, feature, and build
+> truth, read [CURRENT_STATUS.md](./CURRENT_STATUS.md) first.
+
 > **Goal:** Add backend capabilities to Darwin-MFC while maintaining offline-first static site architecture
 
 ---
@@ -1045,5 +1049,4 @@ supabase db push
 ```
 
 ---
-
 

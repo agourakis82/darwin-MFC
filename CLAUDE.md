@@ -17,6 +17,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Live Demo:** <https://mfc.agourakis.med.br>
 
+## Darwin IDE / Beagle Context
+
+When running as Claude Agent, Claude Code, Codex, Cursor, Kimi CLI, or another
+editor/terminal agent, orient through Darwin IDE before editing:
+
+```bash
+dev darwin-ide whereami darwin-mfc
+dev darwin-ide agent-context darwin-mfc claude
+```
+
+The repo-local Zed profile in `.zed/` connects this workspace to the Darwin IDE
+MCP server and Beagle Workbench Context MCP server. Use that shared context for
+memory and handoffs, but validate changes in this repo with the commands below.
+
 ## Commands
 
 The project uses **pnpm** as the package manager with pnpm workspaces.

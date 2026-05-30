@@ -1,4 +1,9 @@
 # Content Generation Implementation Roadmap
+
+> Status note, 2026-05-24: this roadmap is a historical implementation plan.
+> For current runtime, validation, feature, and build truth, read
+> [CURRENT_STATUS.md](./CURRENT_STATUS.md) first.
+
 ## 12-Week Plan to SOTA Educational Platform
 
 **Start Date:** January 2025  
@@ -210,4 +215,3 @@ Week 7-12: Scale to 19 Additional Paths
 - Reverse-engineer prompts from manual content
 
 **Which approach would you prefer?** Reply with **A**, **B**, or **C**! 🚀
-
