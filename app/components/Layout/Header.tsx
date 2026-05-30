@@ -86,6 +86,7 @@ function NotificationsBell() {
   return (
     <Link
       href="/notifications"
+      prefetch={false}
       className="relative p-2 rounded-xl hover:bg-adenine-teal/10 dark:hover:bg-cytosine-cyan/10 apple-transition-fast"
       aria-label="Notificações"
       title="Notificações"
@@ -144,15 +145,16 @@ export default function Header() {
                 )}
               </button>
 
-            <Link href="/" className="flex items-center gap-3 apple-transition-fast hover:opacity-90">
+            <Link href="/" prefetch={false} className="flex items-center gap-3 apple-transition-fast hover:opacity-90">
               <DarwinLogo variant="full" size="md" animated={false} />
             </Link>
           </div>
 
           {/* Navegação Desktop - Darwin Medical Hub */}
-          <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
+          <nav className="hidden 2xl:flex items-center gap-1" role="navigation" aria-label="Main navigation">
             <Link
               href="/doencas"
+              prefetch={false}
               className="nav-link-darwin"
             >
               <Stethoscope className="w-4 h-4" />
@@ -160,6 +162,7 @@ export default function Header() {
             </Link>
             <Link
               href="/medicamentos"
+              prefetch={false}
               className="nav-link-darwin"
             >
               <Pill className="w-4 h-4" />
@@ -167,6 +170,7 @@ export default function Header() {
             </Link>
             <Link
               href="/protocolos"
+              prefetch={false}
               className="nav-link-darwin"
             >
               <FileText className="w-4 h-4" />
@@ -175,6 +179,7 @@ export default function Header() {
             <div className="w-px h-5 bg-carbon-200 dark:bg-carbon-700 mx-1" />
             <Link
               href="/learn"
+              prefetch={false}
               className="px-3.5 py-2 text-base font-medium text-adenine-teal dark:text-cytosine-cyan hover:bg-adenine-teal/10 dark:hover:bg-cytosine-cyan/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
             >
               <GraduationCap className="w-4 h-4" />
@@ -182,6 +187,7 @@ export default function Header() {
             </Link>
             <Link
               href="/community"
+              prefetch={false}
               className="px-3.5 py-2 text-base font-medium text-guanine-green dark:text-guanine-green hover:bg-guanine-green/10 dark:hover:bg-guanine-green/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
             >
               <Users className="w-4 h-4" />
@@ -189,6 +195,7 @@ export default function Header() {
             </Link>
             <Link
               href="/notas"
+              prefetch={false}
               className="px-3.5 py-2 text-base font-medium text-thymine-gold dark:text-thymine-gold hover:bg-thymine-gold/10 dark:hover:bg-thymine-gold/10 rounded-lg apple-transition-fast flex items-center gap-1.5"
             >
               <StickyNote className="w-4 h-4" />
@@ -243,7 +250,7 @@ export default function Header() {
 
             {/* Content Mode Segmented Control */}
             <div
-              className="relative flex items-center bg-carbon-100 dark:bg-carbon-800 rounded-xl p-0.5"
+              className="relative hidden md:flex items-center bg-carbon-100 dark:bg-carbon-800 rounded-xl p-0.5"
               role="radiogroup"
               aria-label="Content mode"
             >
@@ -287,16 +294,22 @@ export default function Header() {
             </div>
 
             {/* Region Selector */}
-            <RegionSelectorCompact />
+            <div className="hidden sm:block">
+              <RegionSelectorCompact />
+            </div>
 
             {/* Language Selector */}
             <LanguageSelector className="hidden sm:block" />
 
             {/* User Menu / Login */}
-            <UserMenu />
+            <div className="hidden sm:block">
+              <UserMenu />
+            </div>
 
             {/* Notifications */}
-            <NotificationsBell />
+            <div className="hidden sm:block">
+              <NotificationsBell />
+            </div>
 
             {/* Toggle Tema — animated */}
             <motion.button
@@ -392,6 +405,7 @@ export default function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
+                      prefetch={false}
                       className="flex flex-col items-center gap-2 p-3 rounded-xl apple-transition-fast hover:scale-[1.02] active:scale-95"
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -418,6 +432,7 @@ export default function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
+                      prefetch={false}
                       className="flex items-center gap-3 px-3 py-2.5 hover:bg-carbon-100 dark:hover:bg-carbon-800 rounded-xl apple-transition-fast"
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -447,6 +462,7 @@ export default function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
+                      prefetch={false}
                       className="px-3 py-2.5 text-sm font-medium text-carbon-700 dark:text-carbon-300 hover:bg-carbon-100 dark:hover:bg-carbon-800 rounded-xl apple-transition-fast"
                       onClick={() => setMobileMenuOpen(false)}
                     >

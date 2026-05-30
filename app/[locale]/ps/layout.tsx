@@ -14,7 +14,13 @@ export default function PSLayout({
         <div className="hidden lg:block">
           <PSSidebar />
         </div>
-        <main className="flex-1 overflow-x-hidden">
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="flex-1 overflow-x-hidden"
+          role="main"
+          aria-label="Conteúdo principal"
+        >
           {children}
         </main>
       </div>

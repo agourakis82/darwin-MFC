@@ -30,6 +30,7 @@ import type { Region } from '@/lib/types/region';
 
 const STORAGE_KEY = 'darwin-mfc-region';
 const ONBOARDING_COMPLETED_KEY = 'darwin-mfc-region-onboarding-completed';
+const ONBOARDING_COMPLETED_EVENT = 'darwin-region-onboarding-completed';
 
 // =============================================================================
 // REGION CARD DATA
@@ -133,6 +134,7 @@ export function RegionOnboardingModal({
       if (typeof window !== 'undefined') {
         try {
           localStorage.setItem(ONBOARDING_COMPLETED_KEY, 'true');
+          window.dispatchEvent(new Event(ONBOARDING_COMPLETED_EVENT));
         } catch (error) {
           console.warn('Failed to save onboarding state:', error);
         }

@@ -77,11 +77,15 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "Darwin Hub",
-    startupImage: "/icons/icon-192.png",
+    startupImage: "/icons/icon-192x192.png",
   },
   icons: {
-    icon: "/logos/sus-logo.svg",
-    apple: "/logos/sus-logo.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icons/icon.svg", type: "image/svg+xml" },
+      { url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/icons/icon-192x192.png",
   },
   category: "medical",
 };

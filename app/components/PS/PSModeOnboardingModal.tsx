@@ -6,6 +6,9 @@ import { usePSStore } from '@/lib/store/psStore';
 import { locales } from '@/i18n/config';
 
 const MODE_SELECTION_KEY = 'darwin-mode-selection';
+const REGION_KEY = 'darwin-mfc-region';
+const REGION_ONBOARDING_COMPLETED_KEY = 'darwin-mfc-region-onboarding-completed';
+const REGION_ONBOARDING_COMPLETED_EVENT = 'darwin-region-onboarding-completed';
 
 export default function PSModeOnboardingModal() {
   const router = useRouter();
@@ -24,15 +27,38 @@ export default function PSModeOnboardingModal() {
     return null;
   }, [pathname]);
 
+  const isLandingPath = useMemo(() => {
+    const normalized = pathname ? pathname.split('?')[0] : '/';
+    const trimmed = normalized.endsWith('/') && normalized.length > 1 ? normalized.slice(0, -1) : normalized;
+    if (trimmed === '/') return true;
+    const parts = trimmed.split('/').filter(Boolean);
+    return parts.length === 1 && locales.includes(parts[0] as (typeof locales)[number]);
+  }, [pathname]);
+
   useEffect(() => {
     setMounted(true);
 
     if (typeof window === 'undefined') return;
-    const isModeSelected = localStorage.getItem(MODE_SELECTION_KEY);
-    if (!isModeSelected) {
+
+    const canShowModeOnboarding = () => {
+      const isModeSelected = localStorage.getItem(MODE_SELECTION_KEY);
+      const hasRegion = localStorage.getItem(REGION_KEY);
+      const isRegionOnboardingCompleted = localStorage.getItem(REGION_ONBOARDING_COMPLETED_KEY);
+      return !isModeSelected && Boolean(hasRegion || isRegionOnboardingCompleted) && isLandingPath;
+    };
+
+    const showIfReady = () => {
+      if (!canShowModeOnboarding()) return;
       setShow(true);
-    }
-  }, [pathname]);
+    };
+
+    showIfReady();
+    window.addEventListener(REGION_ONBOARDING_COMPLETED_EVENT, showIfReady);
+
+    return () => {
+      window.removeEventListener(REGION_ONBOARDING_COMPLETED_EVENT, showIfReady);
+    };
+  }, [isLandingPath]);
 
   const completeSelection = useCallback(
     (nextMode: 'ps' | 'aps') => {
@@ -87,7 +113,7 @@ export default function PSModeOnboardingModal() {
             className="w-full rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-left hover:bg-red-500/15"
           >
             <p className="font-semibold text-red-200">Modo Pronto-Socorro</p>
-            <p className="text-sm text-slate-300">Painel de guerra para situações críticas, protocolos e doses</p>
+            <p className="text-sm text-slate-300">Fluxo para situações críticas, protocolos rápidos e doses</p>
           </button>
         </div>
 

@@ -390,7 +390,7 @@ export default function GuidedProtocolRunnerClient({ protocolo }: { protocolo: P
         ) : null}
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-6 grid gap-6 lg:grid-cols-[320px,1fr]">
+      <div className="max-w-7xl mx-auto px-4 py-6 grid gap-6 lg:grid-cols-[320px,1fr]">
         {/* Screen reader: announce step transitions */}
         <div className="sr-only" aria-live="polite">
           {`Etapa ${Math.max(state.history.length, 1)}: ${headerTitle}`}
@@ -560,7 +560,7 @@ export default function GuidedProtocolRunnerClient({ protocolo }: { protocolo: P
             </div>
           </Card>
         </section>
-      </main>
+      </div>
 
       {/* Learn/details overlay (progressive disclosure) */}
       <Dialog open={learnOpen} onOpenChange={setLearnOpen}>

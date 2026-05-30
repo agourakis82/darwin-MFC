@@ -23,24 +23,28 @@ export default function Footer() {
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <Link
               href="/doencas"
+              prefetch={false}
               className="text-carbon-600 dark:text-carbon-400 hover:text-adenine-teal dark:hover:text-cytosine-cyan transition-colors"
             >
               Conditions
             </Link>
             <Link
               href="/medicamentos"
+              prefetch={false}
               className="text-carbon-600 dark:text-carbon-400 hover:text-adenine-teal dark:hover:text-cytosine-cyan transition-colors"
             >
               Medications
             </Link>
             <Link
               href="/protocolos"
+              prefetch={false}
               className="text-carbon-600 dark:text-carbon-400 hover:text-adenine-teal dark:hover:text-cytosine-cyan transition-colors"
             >
               Protocols
             </Link>
             <Link
               href="/about"
+              prefetch={false}
               className="text-carbon-600 dark:text-carbon-400 hover:text-adenine-teal dark:hover:text-cytosine-cyan transition-colors"
             >
               {t('about.title')}

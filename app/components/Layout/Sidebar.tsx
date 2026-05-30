@@ -167,6 +167,7 @@ export default function Sidebar() {
           <motion.div whileHover={{ x: 2 }} transition={{ duration: 0.15 }}>
           <Link
             href={section.path}
+            prefetch={false}
             className={`flex items-center justify-between px-4 py-2.5 rounded-xl transition-all group ${
               isActive
                 ? 'bg-adenine-teal/10 text-adenine-teal dark:bg-cytosine-cyan/10 dark:text-cytosine-cyan border-l-2 border-adenine-teal dark:border-cytosine-cyan font-semibold'
@@ -239,6 +240,7 @@ export default function Sidebar() {
                   <Link
                     key={subsection.path}
                     href={subsection.path}
+                    prefetch={false}
                     className={`block px-3 py-2 text-sm rounded-lg transition-all ${
                       isSubActive
                         ? 'text-adenine-teal dark:text-cytosine-cyan font-semibold bg-adenine-teal/5 dark:bg-cytosine-cyan/10 border-l-2 border-adenine-teal dark:border-cytosine-cyan -ml-[18px] pl-4'
@@ -313,4 +315,3 @@ export default function Sidebar() {
     </aside>
   );
 }
-

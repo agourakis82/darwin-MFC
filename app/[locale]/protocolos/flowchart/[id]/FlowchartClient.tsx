@@ -116,14 +116,14 @@ export default function FlowchartClient({ protocolo }: FlowchartClientProps) {
         </div>
       )}
 
-      <main className="flex-1 relative overflow-hidden">
+      <div className="flex-1 relative overflow-hidden">
         <FlowchartEngine
           nodes={localizedProtocol.nodes}
           edges={localizedProtocol.edges}
           viewerOnly
           className="h-full"
         />
-      </main>
+      </div>
 
       {/* Protocol info (secondary surface) */}
       <Dialog open={infoOpen} onOpenChange={setInfoOpen}>
