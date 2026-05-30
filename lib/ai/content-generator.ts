@@ -450,20 +450,44 @@ export class ContentGenerator {
     text: string;
     usage: { prompt: number; completion: number; total: number };
   }> {
-    if (!this.config.apiKey) {
+    // When pointing at a self-hosted OpenAI-compatible endpoint (e.g. the
+    // Darwin cluster LiteLLM router) an API key is not strictly required.
+    // We only enforce it for the public clouds (OpenAI/Groq).
+    const usingCustomEndpoint = Boolean(
+      this.config.baseUrl ||
+        process.env.DARWIN_LLM_ENDPOINT ||
+        process.env.OPENAI_BASE_URL
+    );
+    if (!this.config.apiKey && !usingCustomEndpoint) {
       const envVar = this.config.provider === 'groq' ? 'GROQ_API_KEY' : 'OPENAI_API_KEY';
       throw new Error(`API key required. Set ${envVar} environment variable.`);
     }
+    const authToken = this.config.apiKey || process.env.DARWIN_LLM_API_KEY || 'noauth';
 
-    const baseUrl = this.config.provider === 'groq'
-      ? 'https://api.groq.com/openai/v1'
-      : 'https://api.openai.com/v1';
+    // Resolve OpenAI-compatible baseUrl. Order of precedence:
+    //   1. Explicit per-instance override (this.config.baseUrl)
+    //   2. Darwin cluster LiteLLM router (DARWIN_LLM_ENDPOINT or OPENAI_BASE_URL)
+    //   3. Provider default (Groq cloud or OpenAI cloud)
+    // This lets darwin-MFC point at the in-cluster LiteLLM router
+    // (router.llm-router.svc.cluster.local:4000/v1) which fronts vLLM models
+    // (qwen2.5-14b, qwq-32b, qwen2.5-coder-32b, bge-m3) without code changes.
+    const envBaseUrl =
+      process.env.DARWIN_LLM_ENDPOINT ||
+      process.env.OPENAI_BASE_URL ||
+      '';
+    const baseUrl = this.config.baseUrl
+      ? this.config.baseUrl.replace(/\/$/, '')
+      : envBaseUrl
+        ? envBaseUrl.replace(/\/$/, '')
+        : this.config.provider === 'groq'
+          ? 'https://api.groq.com/openai/v1'
+          : 'https://api.openai.com/v1';
 
     const response = await fetch(`${baseUrl}/chat/completions`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.config.apiKey}`,
+        'Authorization': `Bearer ${authToken}`,
       },
       body: JSON.stringify({
         model: this.config.model,
