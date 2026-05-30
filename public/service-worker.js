@@ -180,8 +180,8 @@ self.addEventListener('push', (event) => {
   
   const options = {
     body: data.body || 'New notification from Darwin MFC',
-    icon: '/icons/icon-192.png',
-    badge: '/icons/badge-72.png',
+    icon: '/icons/icon-192x192.png',
+    badge: '/icons/icon-192x192.png',
     tag: data.tag || 'darwin-notification',
     requireInteraction: data.requireInteraction || false,
     data: data.data || {}

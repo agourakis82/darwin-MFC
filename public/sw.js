@@ -62,6 +62,7 @@ const PRECACHE_RESOURCES = [
   path('/'),
   path('/offline.html'),
   path('/manifest.json'),
+  path('/favicon.ico'),
   // Core pages (default locale - pt)
   path('/doencas'),
   path('/medicamentos'),
@@ -69,7 +70,10 @@ const PRECACHE_RESOURCES = [
   path('/protocolos'),
   path('/busca'),
   // Assets
-  path('/logos/sus-logo.svg'),
+  path('/icons/icon.svg'),
+  path('/icons/icon-192x192.png'),
+  path('/icons/icon-512x512.png'),
+  path('/logos/darwin-helix-icon.svg'),
 ];
 
 // Generate locale-specific URLs for precaching
