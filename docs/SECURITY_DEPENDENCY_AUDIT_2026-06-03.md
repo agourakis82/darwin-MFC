@@ -14,50 +14,41 @@ npm run audit:security-deps -- --format=summary
 ## Resultado Atual
 
 ```text
-total vulnerabilities: 10
-critical: 1
-high: 3
-moderate: 6
-direct packages: 5
-semver-major fixes: 1
+total vulnerabilities: 0
+critical: 0
+high: 0
+moderate: 0
+direct packages: 0
+semver-major fixes: 0
 run audit fix automatically: false
-critical jspdf              direct=true  current=3.0.4 fix=semver_major -> 4.2.1
-high     next               direct=true  current=16.1.1 fix=available
-high     minimatch          direct=false current=10.2.5 fix=available
-high     picomatch          direct=false current=2.3.1 fix=available
-moderate dompurify          direct=true  current=3.3.1 fix=available
-moderate next-intl          direct=true  current=4.6.1 fix=available
-moderate postcss            direct=true  current=8.5.6 fix=available
-moderate brace-expansion    direct=false current=2.0.2 fix=available
-moderate styled-components  direct=false current=6.3.6 fix=available
-moderate ws                 direct=false current=8.18.3 fix=available
 ```
 
-Versoes mais recentes consultadas via `npm view` em 2026-06-03:
+Remediacao aplicada em 2026-06-04:
 
 ```text
-next 16.2.7
-jspdf 4.2.1
-dompurify 3.4.7
-next-intl 4.13.0
-postcss 8.5.15
-ws 8.21.0
+next        16.2.7
+jspdf       4.2.1
+dompurify   3.4.8
+next-intl   4.13.0
+postcss     8.5.15
 ```
+
+`package.json` tambem fixa `overrides.postcss="$postcss"` para deduplicar o `postcss` transitivo de `next` para a versao raiz corrigida. `npm ls postcss --all` confirmou `next@16.2.7 -> postcss@8.5.15 deduped`.
 
 ## Conclusao
 
-Nao aplicar `npm audit fix` automaticamente. O pacote mais critico, `jspdf`, exige upgrade major para `4.2.1` e e usado em exportacao PDF client-side. `next` e `next-intl` tambem afetam o contrato de static export/i18n e precisam de gate completo.
+O corte de seguranca de dependencias foi aplicado no app raiz. `npm audit --json` e `npm run audit:security-deps -- --format=summary` reportam zero vulnerabilidades.
 
-Tratar como **Corte 7 - Segurança De Dependencias**, separado dos cortes de tooling, calculadoras, educacao, ECG, conteudo e agent-config.
+Continuar sem `npm audit fix --force`: antes da correcao, o npm sugeria downgrade inseguro/inadequado de `next`. O caminho adotado foi upgrade explicito de dependencias diretas, refresh de lockfile e override controlado de `postcss`.
 
 ## Achados
 
-### P0 - `jspdf` critical, upgrade major obrigatorio
+### P0 - `jspdf` critical, upgrade major aplicado
 
 Pacote direto:
 
-- atual: `jspdf@3.0.4`
-- fix: `jspdf@4.2.1`
+- anterior: `jspdf@3.0.4`
+- atual: `jspdf@4.2.1`
 - tipo: semver major
 - superficie: `lib/export/pdf.ts`
 
@@ -70,22 +61,21 @@ Risco reportado pelo audit:
 
 Gate antes de commit:
 
-- revisar API de `jsPDF` entre 3.x e 4.x;
 - smoke test de exportacao PDF de protocolos/casos/notas se houver UI acessivel;
 - `npm run type-check`;
 - `npm run lint`;
 - `npm run verify`;
 - `npm run build`.
 
-### P1 - `next` high, atualizar com static export gate completo
+### P1 - `next` high, upgrade aplicado com static export gate completo
 
 Pacote direto:
 
-- atual: `next@16.1.1`
-- mais recente consultado: `16.2.7`
+- anterior: `next@16.1.1`
+- atual: `next@16.2.7`
 - superficie: `next.config.ts`, App Router, SSG/static export
 
-Observacao importante: varios advisories de `next` envolvem middleware/proxy, server actions, image optimizer, RSC e self-hosted runtime. O app principal usa `output: "export"` e removeu `middleware.ts`, reduzindo parte da exposicao runtime. Ainda assim, o pacote e direto e o audit permanece falhando.
+Observacao importante: varios advisories de `next` envolvem middleware/proxy, server actions, image optimizer, RSC e self-hosted runtime. O app principal usa `output: "export"` e removeu `middleware.ts`, reduzindo parte da exposicao runtime. Mesmo assim, o pacote direto foi atualizado para manter o audit limpo e reduzir risco futuro.
 
 Gate antes de commit:
 
@@ -99,8 +89,8 @@ Gate antes de commit:
 
 Pacote direto:
 
-- atual: `dompurify@3.3.1`
-- mais recente consultado: `3.4.7`
+- anterior: `dompurify@3.3.1`
+- atual: `dompurify@3.4.8`
 - superficie: `app/[locale]/learn/paths/[pathId]/modules/[moduleId]/ModulePlayerClient.tsx`
 
 O uso atual sanitiza HTML vindo de strings i18n antes de `dangerouslySetInnerHTML`. Atualizar e rodar smoke de modulo de aprendizagem que usa modal de conclusao.
@@ -109,8 +99,8 @@ O uso atual sanitiza HTML vindo de strings i18n antes de `dangerouslySetInnerHTM
 
 Pacote direto:
 
-- atual: `next-intl@4.6.1`
-- mais recente consultado: `4.13.0`
+- anterior: `next-intl@4.6.1`
+- atual: `next-intl@4.13.0`
 - superficie: `i18n/routing.ts`, `i18n/request.ts`, layouts App Router
 
 Riscos reportados:
@@ -128,27 +118,21 @@ Gate antes de commit:
 
 Pacotes misturam tooling, transitive deps e runtime indireto:
 
-- `postcss@8.5.6` direto/dev e tambem transitive por `next`/`styled-components`;
+- `postcss@8.5.6` era direto/dev e tambem transitive por `next`/`styled-components`;
 - `styled-components@6.3.6` transitive via `postcss`;
 - `picomatch@2.3.1` transitive/tooling;
 - `minimatch` em arvores Jest/test tooling;
 - `brace-expansion` em arvores de glob/test tooling;
 - `ws@8.18.3` transitive/runtime indireto, tambem ha SOTA WebSocket incubado fora do core.
 
-Provavelmente serao resolvidos por atualizacoes diretas de `next`, `postcss`, `dompurify`, `next-intl`, `jspdf` e refresh do lockfile. Validar com novo `npm audit`.
+Foram resolvidos por atualizacoes diretas, refresh do lockfile, `npm audit fix` sem `--force` para transitive tooling e `overrides.postcss="$postcss"`.
 
-## Plano De Correcao Recomendado
+## Correcao Aplicada
 
-1. Criar branch/corte proprio para seguranca.
-2. Atualizar primeiro pacotes diretos sem major quando seguro:
-   - `next`
-   - `next-intl`
-   - `dompurify`
-   - `postcss`
-3. Rodar gates completos.
-4. Atualizar `jspdf` major em commit separado dentro do corte, com smoke PDF.
-5. Rodar `npm audit --json` novamente.
-6. Se restarem vulnerabilidades transitive, resolver via lockfile/parent packages, sem `audit fix --force` cego.
+1. Atualizados `next`, `next-intl`, `dompurify`, `postcss` e `jspdf`.
+2. Rodado `npm audit fix` sem `--force` para refresh seguro de dependencias transitive.
+3. Adicionado override controlado `postcss: "$postcss"` para impedir regressao para `postcss@8.4.x` transitivo em `next`.
+4. Revalidado `npm audit` e `audit:security-deps` com zero vulnerabilidades.
 
 ## Gates
 

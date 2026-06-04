@@ -61,24 +61,25 @@ const changedDependencyManifests = changedPaths
   .filter((file) => dependencyManifestPaths.includes(file))
   .sort();
 const staged = run('git diff --cached --name-only');
+const stageablePaths = Array.from(new Set([...documentationCandidates, ...changedDependencyManifests])).sort();
 
 const report = {
   generatedAt: new Date().toISOString(),
   summary: {
     documentationCandidates: documentationCandidates.length,
     changedDependencyManifests: changedDependencyManifests.length,
-    stageableDependencyUpgradePaths: 0,
+    stageableDependencyUpgradePaths: changedDependencyManifests.length,
     indexAlreadyStaged: staged ? staged.split('\n').filter(Boolean).length : 0,
   },
   documentationCandidates,
   changedDependencyManifests,
-  stageableDependencyUpgradePaths: [] as string[],
+  stageableDependencyUpgradePaths: changedDependencyManifests,
   safeToRunAuditFixAutomatically: false,
-  safeToStageSecurityPlanDocs: documentationCandidates.length > 0,
+  safeToStageSecurityCut: stageablePaths.length > 0,
   rationale: [
-    'The current critical jspdf fix is semver-major and touches client-side PDF export behavior.',
-    'Next and next-intl upgrades need full static-export and i18n gates.',
-    'Security remediation should be a dedicated dependency-upgrade cut, not mixed into repo triage staging.',
+    'The jspdf semver-major fix was applied in a dedicated security dependency cut.',
+    'Next and next-intl upgrades still require full static-export and i18n gates before commit.',
+    'Do not run audit fix --force automatically; npm proposed an unacceptable Next downgrade during remediation.',
   ],
 };
 
@@ -90,9 +91,9 @@ if (format === 'json') {
   console.log(`stageable dependency upgrade paths: ${report.summary.stageableDependencyUpgradePaths}`);
   console.log(`index already staged: ${report.summary.indexAlreadyStaged}`);
   console.log(`safe to run audit fix automatically: ${report.safeToRunAuditFixAutomatically}`);
-  console.log(`safe to stage security plan docs: ${report.safeToStageSecurityPlanDocs}`);
+  console.log(`safe to stage security cut: ${report.safeToStageSecurityCut}`);
 } else if (format === 'paths') {
-  console.log(documentationCandidates.join('\n'));
+  console.log(stageablePaths.join('\n'));
 } else {
-  console.log(`git add -- ${documentationCandidates.map(shellQuote).join(' ')}`);
+  console.log(`git add -- ${stageablePaths.map(shellQuote).join(' ')}`);
 }
