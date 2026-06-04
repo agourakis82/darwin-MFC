@@ -9,12 +9,10 @@
  */
 
 import { useState, useMemo, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Calculator,
   Search,
-  Filter,
   Star,
   Grid3X3,
   List,
@@ -34,6 +32,11 @@ import {
   type CalculatorCategory,
   categoryLabels,
   categoryIcons,
+  clinicalUseLabels,
+  evidenceLevelLabels,
+  evidenceLevelStyles,
+  getCalculatorEvidenceLevel,
+  isCalculatorVisible,
 } from '@/lib/calculators';
 
 // =============================================================================
@@ -187,6 +190,8 @@ function CalculatorCardEnhanced({
   const locale = useLocale();
   const colors = categoryColors[calculator.category];
   const categoryIcon = categoryIcons[calculator.category];
+  const evidenceLevel = getCalculatorEvidenceLevel(calculator);
+  const requiresBackend = calculator.requiresBackend;
 
   if (viewMode === 'list') {
     return (
@@ -223,9 +228,12 @@ function CalculatorCardEnhanced({
             >
               {categoryLabels[calculator.category]}
             </span>
-            {calculator.validationStudy && (
-              <span className="px-2 py-0.5 rounded-full text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400">
-                Validated
+            <span className={cn('px-2 py-0.5 rounded-full text-xs', evidenceLevelStyles[evidenceLevel])}>
+              {evidenceLevelLabels[evidenceLevel]}
+            </span>
+            {requiresBackend && (
+              <span className="px-2 py-0.5 rounded-full text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
+                Backend required
               </span>
             )}
           </div>
@@ -323,9 +331,17 @@ function CalculatorCardEnhanced({
           <span className="text-xs text-neutral-500">
             {calculator.inputs.length} inputs
           </span>
-          {calculator.validationStudy && (
-            <span className="px-2 py-0.5 rounded-full text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400">
-              Validated
+          <span className={cn('px-2 py-0.5 rounded-full text-xs', evidenceLevelStyles[evidenceLevel])}>
+            {evidenceLevelLabels[evidenceLevel]}
+          </span>
+          {calculator.clinicalUse && (
+            <span className="px-2 py-0.5 rounded-full text-xs bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300">
+              {clinicalUseLabels[calculator.clinicalUse]}
+            </span>
+          )}
+          {requiresBackend && (
+            <span className="px-2 py-0.5 rounded-full text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
+              Backend required
             </span>
           )}
         </div>
@@ -395,7 +411,6 @@ function CategoryFilter({ categories, selectedCategory, onSelect }: CategoryFilt
 // =============================================================================
 
 export default function CalculadorasHubClient() {
-  const t = useTranslations('calculadoras');
   const locale = useLocale();
 
   // State
@@ -403,6 +418,10 @@ export default function CalculadorasHubClient() {
   const [selectedCategory, setSelectedCategory] = useState<CalculatorCategory | 'all'>('all');
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
+  const visibleCalculators = useMemo(
+    () => allCalculators.filter(isCalculatorVisible),
+    []
+  );
 
   // Load favorites from localStorage
   useEffect(() => {
@@ -433,13 +452,13 @@ export default function CalculadorasHubClient() {
   // Get unique categories from calculators
   const categories = useMemo(() => {
     const cats = new Set<CalculatorCategory>();
-    allCalculators.forEach((calc) => cats.add(calc.category));
+    visibleCalculators.forEach((calc) => cats.add(calc.category));
     return Array.from(cats).sort();
-  }, []);
+  }, [visibleCalculators]);
 
   // Filter calculators
   const filteredCalculators = useMemo(() => {
-    return allCalculators.filter((calc) => {
+    return visibleCalculators.filter((calc) => {
       // Category filter
       if (selectedCategory !== 'all' && calc.category !== selectedCategory) {
         return false;
@@ -458,7 +477,7 @@ export default function CalculadorasHubClient() {
 
       return true;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [selectedCategory, searchQuery, visibleCalculators]);
 
   // Separate favorites
   const favoriteCalculators = filteredCalculators.filter((c) => favorites.has(c.id));
@@ -474,10 +493,10 @@ export default function CalculadorasHubClient() {
           </div>
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-neutral-100 tracking-tight">
-              Clinical Calculators
+              Clinical Calculators 2026
             </h1>
             <p className="text-lg text-neutral-500 dark:text-neutral-400">
-              Evidence-based clinical decision support tools
+              Clinical decision support tools with explicit evidence and backend status
             </p>
           </div>
         </div>
@@ -488,7 +507,7 @@ export default function CalculadorasHubClient() {
           <p className="text-sm text-amber-800 dark:text-amber-200">
             <strong>Clinical Disclaimer:</strong> These calculators are decision support tools only.
             Always use clinical judgment and consider the individual patient context.
-            Results should not replace proper medical evaluation.
+            Experimental tools are clearly marked and backend-dependent tools are unavailable without the configured clinical intelligence service.
           </p>
         </div>
       </div>
@@ -496,8 +515,8 @@ export default function CalculadorasHubClient() {
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <div className="p-4 rounded-xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-700">
-          <div className="text-3xl font-bold text-[#0071E3]">{allCalculators.length}</div>
-          <div className="text-sm text-neutral-500">Total Calculators</div>
+          <div className="text-3xl font-bold text-[#0071E3]">{visibleCalculators.length}</div>
+          <div className="text-sm text-neutral-500">Clinical Tools</div>
         </div>
         <div className="p-4 rounded-xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-700">
           <div className="text-3xl font-bold text-emerald-500">{categories.length}</div>
@@ -505,7 +524,7 @@ export default function CalculadorasHubClient() {
         </div>
         <div className="p-4 rounded-xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-700">
           <div className="text-3xl font-bold text-purple-500">
-            {allCalculators.filter((c) => c.validationStudy).length}
+            {visibleCalculators.filter((c) => getCalculatorEvidenceLevel(c) === 'validated').length}
           </div>
           <div className="text-sm text-neutral-500">Validated</div>
         </div>

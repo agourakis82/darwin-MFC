@@ -8,6 +8,7 @@
 
 import { calculatorRegistry } from '../registry';
 import type { ClinicalCalculator } from '../types';
+import { isCalculatorVisible } from '../clinical-intelligence';
 
 // =============================================================================
 // CRITICAL CARE CALCULATORS
@@ -95,6 +96,19 @@ import { apfel } from './apfel';
 import { mmse } from './mmse';
 
 // =============================================================================
+// CLINICAL INTELLIGENCE 2026 CALCULATORS
+// =============================================================================
+
+import { sotaMetabolicRiskCalculator } from './sota-metabolic-risk-2025';
+import { aiPoweredSepsisScore2025 } from './ai-powered-sepsis-score-2025';
+import { precisionFrailtyIndex2025 } from './precision-frailty-index-2025';
+import { preventScore2025 } from './prevent-score-2025';
+import { genomicMultiomicRisk } from './genomic-multiomic-risk';
+import { cancerRiskPrediction2025 } from './cancer-risk-prediction-2025';
+import { pharmacogenomicsPrecision } from './pharmacogenomics-precision';
+import { strokeTemporalEvolution } from './stroke-temporal-evolution';
+
+// =============================================================================
 // ALL CALCULATORS
 // =============================================================================
 
@@ -136,6 +150,15 @@ export const allCalculators: ClinicalCalculator[] = [
   apfel,
   // Neurology
   mmse,
+  // Clinical Intelligence 2026 calculators
+  sotaMetabolicRiskCalculator,
+  aiPoweredSepsisScore2025,
+  precisionFrailtyIndex2025,
+  preventScore2025,
+  genomicMultiomicRisk,
+  cancerRiskPrediction2025,
+  pharmacogenomicsPrecision,
+  strokeTemporalEvolution,
 ];
 
 // =============================================================================
@@ -208,6 +231,16 @@ export { apfel } from './apfel';
 // Neurology
 export { mmse } from './mmse';
 
+// Clinical Intelligence 2026 calculators
+export { sotaMetabolicRiskCalculator } from './sota-metabolic-risk-2025';
+export { aiPoweredSepsisScore2025 } from './ai-powered-sepsis-score-2025';
+export { precisionFrailtyIndex2025 } from './precision-frailty-index-2025';
+export { preventScore2025 } from './prevent-score-2025';
+export { genomicMultiomicRisk } from './genomic-multiomic-risk';
+export { cancerRiskPrediction2025 } from './cancer-risk-prediction-2025';
+export { pharmacogenomicsPrecision } from './pharmacogenomics-precision';
+export { strokeTemporalEvolution } from './stroke-temporal-evolution';
+
 // =============================================================================
 // CALCULATOR BY ID MAP
 // =============================================================================
@@ -239,12 +272,42 @@ export function getCalculatorIds(): string[] {
 }
 
 /**
+ * Get calculator IDs exposed in the clinical UI/SSG.
+ */
+export function getVisibleCalculatorIds(): string[] {
+  return allCalculators.filter(isCalculatorVisible).map((c) => c.id);
+}
+
+/**
  * Get calculators by category
  */
 export function getCalculatorsByCategory(
   category: string
 ): ClinicalCalculator[] {
   return allCalculators.filter((c) => c.category === category);
+}
+
+/**
+ * Get Clinical Intelligence 2026 calculators only
+ */
+export function getClinicalIntelligenceCalculators(): ClinicalCalculator[] {
+  return allCalculators.filter((c) => c.versionYear === 2026);
+}
+
+/**
+ * Backward-compatible alias for older imports.
+ *
+ * @deprecated Use getClinicalIntelligenceCalculators.
+ */
+export const getSOTACalculators = getClinicalIntelligenceCalculators;
+
+/**
+ * Get calculators by clinical evidence maturity.
+ */
+export function getCalculatorsByEvidenceLevel(
+  evidenceLevel: NonNullable<ClinicalCalculator['evidenceLevel']>
+): ClinicalCalculator[] {
+  return allCalculators.filter((c) => c.evidenceLevel === evidenceLevel);
 }
 
 export default allCalculators;

@@ -7,12 +7,12 @@
  */
 
 import { locales } from '@/i18n/config';
-import { getCalculatorIds } from '@/lib/calculators';
+import { getVisibleCalculatorIds } from '@/lib/calculators';
 import CalculatorDetailClient from './CalculatorDetailClient';
 
-// Generate static params for all calculators in all locales
+// Generate static params for exposed calculators in all locales.
 export function generateStaticParams() {
-  const calculatorIds = getCalculatorIds();
+  const calculatorIds = getVisibleCalculatorIds();
   const params: { locale: string; id: string }[] = [];
 
   for (const locale of locales) {

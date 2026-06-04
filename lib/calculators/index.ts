@@ -8,6 +8,7 @@
 
 // Types
 export * from './types';
+export * from './clinical-intelligence';
 
 // Formulas and utilities
 export * from './formulas';
@@ -22,7 +23,11 @@ export {
   calculatorsById,
   getCalculator,
   getCalculatorIds,
+  getVisibleCalculatorIds,
   getCalculatorsByCategory,
+  getClinicalIntelligenceCalculators,
+  getCalculatorsByEvidenceLevel,
+  getSOTACalculators,
   // Individual calculators
   qsofa,
   sofa,

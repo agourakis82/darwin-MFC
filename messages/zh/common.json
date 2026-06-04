@@ -13,7 +13,9 @@
     },
     "search": {
       "placeholder": "搜索药物、疾病、方案..."
-    }
+    },
+    "back": "返回",
+    "loading": "加载中..."
   },
   "nav": {
     "home": "首页",
@@ -754,7 +756,9 @@
     "results": "{count, plural, =0 {0 个结果} =1 {1 个结果} other {# 个结果}}",
     "noResults": "未找到疾病",
     "tryAnotherTerm": "尝试其他搜索词",
-    "noDescription": "暂无描述"
+    "noDescription": "暂无描述",
+    "loading": "加载中...",
+    "loadingDiseases": "正在加载疾病..."
   },
   "medicamentos": {
     "title": "初级保健药物指南",
@@ -1634,7 +1638,9 @@
       "respiratorio": "呼吸系统",
       "gastro": "消化系统",
       "dermatologia": "皮肤科",
-      "musculoesqueletico": "肌肉骨骼"
+      "musculoesqueletico": "肌肉骨骼",
+      "infeccioso": "感染性",
+      "neurologico": "神经系统"
     },
     "complexity": {
       "basico": "基础",

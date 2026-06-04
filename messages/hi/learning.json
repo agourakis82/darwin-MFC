@@ -5,151 +5,6 @@
     "available_paths": "उपलब्ध मार्ग",
     "coming_soon": "जल्द आ रहा है",
     "no_paths_available": "इस समय कोई मार्ग उपलब्ध नहीं है।",
-    "modules": "मॉड्यूल",
-    "certificate_available": "प्रमाणपत्र",
-    "continue": "जारी रखें",
-    "start": "शुरू करें",
-    "progress": "प्रगति",
-
-    "stats": {
-      "paths": "मार्ग",
-      "modules": "मॉड्यूल",
-      "hours": "घंटे",
-      "certificates": "प्रमाणपत्र",
-      "streak": "श्रृंखला"
-    },
-
-    "continue_learning": "सीखना जारी रखें",
-    "confirm_reset": "क्या आप सुनिश्चित हैं कि आप इस कोर्स में अपनी प्रगति रीसेट करना चाहते हैं? इस क्रिया को पूर्ववत नहीं किया जा सकता।",
-    "confirm_reset_all": "क्या आप सुनिश्चित हैं कि आप सभी प्रगति रीसेट करना चाहते हैं? इस क्रिया को पूर्ववत नहीं किया जा सकता।",
-    "add_bookmark": "बुकमार्क में जोड़ें",
-    "remove_bookmark": "बुकमार्क से हटाएं",
-    "reset_progress": "प्रगति रीसेट करें",
-
-    "status": {
-      "locked": "लॉक",
-      "completed": "पूर्ण",
-      "certified": "प्रमाणित",
-      "in_progress": "प्रगति में",
-      "not_started": "शुरू नहीं हुआ"
-    },
-
-    "difficulty": {
-      "beginner": "शुरुआती",
-      "intermediate": "मध्यवर्ती",
-      "advanced": "उन्नत"
-    },
-
-    "path_not_found": "मार्ग नहीं मिला",
-    "back_to_paths": "मार्गों पर वापस जाएं",
-    "path_modules": "मार्ग मॉड्यूल",
-    "modules_completed": "{total} में से {completed} मॉड्यूल पूर्ण",
-    "minimum_score": "प्रमाणन के लिए न्यूनतम अंक: {score}%",
-
-    "module_types": {
-      "content": "सामग्री",
-      "quiz": "प्रश्नोत्तरी",
-      "case_study": "नैदानिक मामला",
-      "flashcards": "फ्लैशकार्ड",
-      "video": "वीडियो",
-      "interactive": "इंटरैक्टिव"
-    },
-
-    "module_not_found": "मॉड्यूल नहीं मिला",
-    "previous": "पिछला",
-    "next": "अगला",
-    "complete_path": "मार्ग पूर्ण करें",
-    "completed_score": "{score}% - पूर्ण",
-    "completed": "पूर्ण",
-    "congratulations": "बधाई हो!",
-    "path_completed": "मार्ग पूर्ण हुआ!",
-    "close": "बंद करें",
-    "continue_btn": "जारी रखें",
-    "default_user": "स्वास्थ्य पेशेवर",
-    "mark_complete": "पूर्ण के रूप में चिह्नित करें",
-    "mark_as_viewed": "देखा हुआ चिह्नित करें",
-
-    "case_study_player": {
-      "title": "इंटरैक्टिव नैदानिक मामला",
-      "coming_soon": "इंटरैक्टिव नैदानिक मामले जल्द उपलब्ध होंगे।"
-    },
-
-    "flashcards_player": {
-      "title": "अंतराल दोहराव फ्लैशकार्ड",
-      "coming_soon": "फ्लैशकार्ड सिस्टम जल्द उपलब्ध होगा।"
-    },
-
-    "completion_modal": {
-      "congratulations": "बधाई हो!",
-      "path_completed": "मार्ग पूर्ण हुआ!",
-      "completed_with_cert": "आपने मार्ग <strong>{pathTitle}</strong> पूर्ण किया और प्रमाणपत्र अर्जित किया!",
-      "completed_success": "आपने सफलतापूर्वक मार्ग <strong>{pathTitle}</strong> पूर्ण किया।",
-      "certificate_issued": "प्रमाणपत्र जारी किया गया",
-      "score": "अंक: {score}%",
-      "view_certificate": "प्रमाणपत्र देखें",
-      "close": "बंद करें",
-      "continue": "जारी रखें"
-    },
-
-    "coming": {
-      "emergency": "प्राथमिक स्वास्थ्य आपातकालीन",
-      "emergency_desc": "प्राथमिक देखभाल में आपातकालीन स्थितियों का प्रारंभिक प्रबंधन।",
-      "mental_health": "मानसिक स्वास्थ्य",
-      "mental_health_desc": "प्राथमिक देखभाल में मानसिक स्वास्थ्य का व्यापक दृष्टिकोण।",
-      "pediatrics": "आवश्यक बाल रोग",
-      "pediatrics_desc": "प्राथमिक देखभाल में सामान्य बाल रोग स्थितियां।"
-    },
-
-    "free_forever": {
-      "title": "100% मुफ्त, हमेशा के लिए",
-      "description": "Darwin MFC एक गैर-लाभकारी अकादमिक मंच है। सभी शैक्षिक सामग्री पूरी तरह से मुफ्त है और हमेशा रहेगी।"
-    },
-
-    "widget": {
-      "start_learning": "सीखना शुरू करें",
-      "start_description": "प्राथमिक देखभाल पेशेवरों के लिए संरचित सीखने के मार्ग। हमेशा के लिए मुफ्त।",
-      "explore": "मार्गों का अन्वेषण करें",
-      "my_learning": "मेरा सीखना",
-      "view_all": "सभी देखें",
-      "days": "दिन",
-      "certs": "प्रमाणपत्र",
-      "paths": "मार्ग",
-      "continue": "जहां छोड़ा था वहां से जारी रखें",
-      "all_completed": "सभी मार्ग पूर्ण हो गए! नई सामग्री देखें।",
-      "browse": "मार्ग ब्राउज़ करें"
-    },
-
-    "progress": {
-      "title": "मेरी प्रगति",
-      "reset_all": "सभी रीसेट करें",
-      "streak_days": "दिन की श्रृंखला",
-      "modules_completed": "मॉड्यूल",
-      "minutes_studied": "मिनट",
-      "certificates": "प्रमाणपत्र",
-      "no_progress": "अभी तक कोई सीखने की प्रगति नहीं",
-      "start_learning": "अपनी प्रगति को यहां ट्रैक करने के लिए सीखने का मार्ग शुरू करें।",
-      "browse_paths": "सीखने के मार्ग ब्राउज़ करें",
-      "in_progress": "प्रगति में",
-      "completed": "पूर्ण",
-      "my_certificates": "मेरे प्रमाणपत्र",
-      "activity": "हाल की गतिविधि",
-      "last_active": "अंतिम सक्रिय",
-      "day_streak": "दिन की श्रृंखला",
-      "no_activity": "कोई हालिया गतिविधि नहीं",
-      "bookmarked": "बुकमार्क किया हुआ"
-    },
-
-    "paths": {
-      "aps_essentials": {
-        "title": "प्राथमिक देखभाल की बुनियाद",
-        "description": "प्राथमिक स्वास्थ्य देखभाल अभ्यास के लिए आवश्यक ज्ञान।"
-      },
-      "medication_safety": {
-        "title": "दवा सुरक्षा",
-        "description": "दवाओं की परस्पर क्रिया, गुर्दे की खुराक, विशेष आबादी।"
-      }
-    },
-
     "modules": {
       "aps_intro": {
         "title": "प्राथमिक देखभाल का परिचय",
@@ -220,7 +75,134 @@
         "description": "दवा सुरक्षा का एकीकृत परीक्षण।"
       }
     },
-
+    "certificate_available": "प्रमाणपत्र",
+    "continue": "जारी रखें",
+    "start": "शुरू करें",
+    "progress": {
+      "title": "मेरी प्रगति",
+      "reset_all": "सभी रीसेट करें",
+      "streak_days": "दिन की श्रृंखला",
+      "modules_completed": "मॉड्यूल",
+      "minutes_studied": "मिनट",
+      "certificates": "प्रमाणपत्र",
+      "no_progress": "अभी तक कोई सीखने की प्रगति नहीं",
+      "start_learning": "अपनी प्रगति को यहां ट्रैक करने के लिए सीखने का मार्ग शुरू करें।",
+      "browse_paths": "सीखने के मार्ग ब्राउज़ करें",
+      "in_progress": "प्रगति में",
+      "completed": "पूर्ण",
+      "my_certificates": "मेरे प्रमाणपत्र",
+      "activity": "हाल की गतिविधि",
+      "last_active": "अंतिम सक्रिय",
+      "day_streak": "दिन की श्रृंखला",
+      "no_activity": "कोई हालिया गतिविधि नहीं",
+      "bookmarked": "बुकमार्क किया हुआ"
+    },
+    "stats": {
+      "paths": "मार्ग",
+      "modules": "मॉड्यूल",
+      "hours": "घंटे",
+      "certificates": "प्रमाणपत्र",
+      "streak": "श्रृंखला",
+      "progress": "प्रगति"
+    },
+    "continue_learning": "सीखना जारी रखें",
+    "confirm_reset": "क्या आप सुनिश्चित हैं कि आप इस कोर्स में अपनी प्रगति रीसेट करना चाहते हैं? इस क्रिया को पूर्ववत नहीं किया जा सकता।",
+    "confirm_reset_all": "क्या आप सुनिश्चित हैं कि आप सभी प्रगति रीसेट करना चाहते हैं? इस क्रिया को पूर्ववत नहीं किया जा सकता।",
+    "add_bookmark": "बुकमार्क में जोड़ें",
+    "remove_bookmark": "बुकमार्क से हटाएं",
+    "reset_progress": "प्रगति रीसेट करें",
+    "status": {
+      "locked": "लॉक",
+      "completed": "पूर्ण",
+      "certified": "प्रमाणित",
+      "in_progress": "प्रगति में",
+      "not_started": "शुरू नहीं हुआ"
+    },
+    "difficulty": {
+      "beginner": "शुरुआती",
+      "intermediate": "मध्यवर्ती",
+      "advanced": "उन्नत"
+    },
+    "path_not_found": "मार्ग नहीं मिला",
+    "back_to_paths": "मार्गों पर वापस जाएं",
+    "path_modules": "मार्ग मॉड्यूल",
+    "modules_completed": "{total} में से {completed} मॉड्यूल पूर्ण",
+    "minimum_score": "प्रमाणन के लिए न्यूनतम अंक: {score}%",
+    "module_types": {
+      "content": "सामग्री",
+      "quiz": "प्रश्नोत्तरी",
+      "case_study": "नैदानिक मामला",
+      "flashcards": "फ्लैशकार्ड",
+      "video": "वीडियो",
+      "interactive": "इंटरैक्टिव"
+    },
+    "module_not_found": "मॉड्यूल नहीं मिला",
+    "previous": "पिछला",
+    "next": "अगला",
+    "complete_path": "मार्ग पूर्ण करें",
+    "completed_score": "{score}% - पूर्ण",
+    "completed": "पूर्ण",
+    "congratulations": "बधाई हो!",
+    "path_completed": "मार्ग पूर्ण हुआ!",
+    "close": "बंद करें",
+    "continue_btn": "जारी रखें",
+    "default_user": "स्वास्थ्य पेशेवर",
+    "mark_complete": "पूर्ण के रूप में चिह्नित करें",
+    "mark_as_viewed": "देखा हुआ चिह्नित करें",
+    "case_study_player": {
+      "title": "इंटरैक्टिव नैदानिक मामला",
+      "coming_soon": "इंटरैक्टिव नैदानिक मामले जल्द उपलब्ध होंगे।"
+    },
+    "flashcards_player": {
+      "title": "अंतराल दोहराव फ्लैशकार्ड",
+      "coming_soon": "फ्लैशकार्ड सिस्टम जल्द उपलब्ध होगा।"
+    },
+    "completion_modal": {
+      "congratulations": "बधाई हो!",
+      "path_completed": "मार्ग पूर्ण हुआ!",
+      "completed_with_cert": "आपने मार्ग <strong>{pathTitle}</strong> पूर्ण किया और प्रमाणपत्र अर्जित किया!",
+      "completed_success": "आपने सफलतापूर्वक मार्ग <strong>{pathTitle}</strong> पूर्ण किया।",
+      "certificate_issued": "प्रमाणपत्र जारी किया गया",
+      "score": "अंक: {score}%",
+      "view_certificate": "प्रमाणपत्र देखें",
+      "close": "बंद करें",
+      "continue": "जारी रखें"
+    },
+    "coming": {
+      "emergency": "प्राथमिक स्वास्थ्य आपातकालीन",
+      "emergency_desc": "प्राथमिक देखभाल में आपातकालीन स्थितियों का प्रारंभिक प्रबंधन।",
+      "mental_health": "मानसिक स्वास्थ्य",
+      "mental_health_desc": "प्राथमिक देखभाल में मानसिक स्वास्थ्य का व्यापक दृष्टिकोण।",
+      "pediatrics": "आवश्यक बाल रोग",
+      "pediatrics_desc": "प्राथमिक देखभाल में सामान्य बाल रोग स्थितियां।"
+    },
+    "free_forever": {
+      "title": "100% मुफ्त, हमेशा के लिए",
+      "description": "Darwin MFC एक गैर-लाभकारी अकादमिक मंच है। सभी शैक्षिक सामग्री पूरी तरह से मुफ्त है और हमेशा रहेगी।"
+    },
+    "widget": {
+      "start_learning": "सीखना शुरू करें",
+      "start_description": "प्राथमिक देखभाल पेशेवरों के लिए संरचित सीखने के मार्ग। हमेशा के लिए मुफ्त।",
+      "explore": "मार्गों का अन्वेषण करें",
+      "my_learning": "मेरा सीखना",
+      "view_all": "सभी देखें",
+      "days": "दिन",
+      "certs": "प्रमाणपत्र",
+      "paths": "मार्ग",
+      "continue": "जहां छोड़ा था वहां से जारी रखें",
+      "all_completed": "सभी मार्ग पूर्ण हो गए! नई सामग्री देखें।",
+      "browse": "मार्ग ब्राउज़ करें"
+    },
+    "paths": {
+      "aps_essentials": {
+        "title": "प्राथमिक देखभाल की बुनियाद",
+        "description": "प्राथमिक स्वास्थ्य देखभाल अभ्यास के लिए आवश्यक ज्ञान।"
+      },
+      "medication_safety": {
+        "title": "दवा सुरक्षा",
+        "description": "दवाओं की परस्पर क्रिया, गुर्दे की खुराक, विशेष आबादी।"
+      }
+    },
     "certs": {
       "aps_essentials": {
         "title": "प्राथमिक देखभाल की बुनियाद",
@@ -231,7 +213,6 @@
         "description": "दवा सुरक्षा पाठ्यक्रम का पूर्णता प्रमाणपत्र।"
       }
     },
-
     "quiz": {
       "question": "प्रश्न",
       "points": "अंक",
@@ -247,7 +228,6 @@
       "passing": "न्यूनतम",
       "correct_answers": "सही उत्तर"
     },
-
     "certificate": {
       "title": "पूर्णता प्रमाणपत्र",
       "subtitle": "पाठ्यक्रम सफलतापूर्वक पूर्ण",

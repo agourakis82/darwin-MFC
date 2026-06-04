@@ -5,150 +5,6 @@
     "available_paths": "Rutas Disponibles",
     "coming_soon": "Próximamente",
     "no_paths_available": "No hay rutas disponibles en este momento.",
-    "modules": "módulos",
-    "certificate_available": "Certificado",
-    "continue": "Continuar",
-    "start": "Iniciar",
-    "progress": "Progreso",
-
-    "stats": {
-      "paths": "Rutas",
-      "modules": "Módulos",
-      "hours": "Horas",
-      "certificates": "Certificados",
-      "streak": "Racha"
-    },
-
-    "continue_learning": "Continuar Aprendiendo",
-    "confirm_reset": "¿Estás seguro de que deseas reiniciar tu progreso en este curso? Esta acción no se puede deshacer.",
-    "confirm_reset_all": "¿Estás seguro de que deseas reiniciar todo el progreso? Esta acción no se puede deshacer.",
-    "add_bookmark": "Añadir a favoritos",
-    "remove_bookmark": "Quitar de favoritos",
-    "reset_progress": "Reiniciar progreso",
-
-    "module_types": {
-      "content": "Contenido",
-      "quiz": "Quiz",
-      "case_study": "Caso Clínico",
-      "flashcards": "Tarjetas",
-      "video": "Video",
-      "interactive": "Interactivo"
-    },
-
-    "module_not_found": "Módulo no encontrado",
-    "previous": "Anterior",
-    "next": "Siguiente",
-    "complete_path": "Completar Ruta",
-    "completed_score": "{score}% - Completado",
-    "completed": "Completado",
-    "congratulations": "¡Felicitaciones!",
-    "path_completed": "¡Ruta Completada!",
-    "close": "Cerrar",
-    "continue_btn": "Continuar",
-    "default_user": "Profesional de la Salud",
-    "mark_complete": "Marcar como completo",
-    "mark_as_viewed": "Marcar como visto",
-    "path_not_found": "Ruta no encontrada",
-    "back_to_paths": "Volver a las rutas",
-    "path_modules": "Módulos de la Ruta",
-    "modules_completed": "{completed} de {total} módulos completados",
-    "minimum_score": "Puntuación mínima para certificación: {score}%",
-
-    "case_study_player": {
-      "title": "Caso Clínico Interactivo",
-      "coming_soon": "Los casos clínicos interactivos estarán disponibles pronto."
-    },
-
-    "flashcards_player": {
-      "title": "Tarjetas de Repetición Espaciada",
-      "coming_soon": "El sistema de tarjetas estará disponible pronto."
-    },
-
-    "completion_modal": {
-      "congratulations": "¡Felicitaciones!",
-      "path_completed": "¡Ruta Completada!",
-      "completed_with_cert": "Completaste la ruta <strong>{pathTitle}</strong> y obtuviste un certificado!",
-      "completed_success": "Completaste la ruta <strong>{pathTitle}</strong> exitosamente.",
-      "certificate_issued": "Certificado Emitido",
-      "score": "Puntuación: {score}%",
-      "view_certificate": "Ver Certificado",
-      "close": "Cerrar",
-      "continue": "Continuar"
-    },
-
-    "status": {
-      "locked": "Bloqueado",
-      "completed": "Completado",
-      "certified": "Certificado",
-      "in_progress": "En Progreso",
-      "not_started": "No Iniciado"
-    },
-
-    "difficulty": {
-      "beginner": "Principiante",
-      "intermediate": "Intermedio",
-      "advanced": "Avanzado"
-    },
-
-    "coming": {
-      "emergency": "Emergencias en APS",
-      "emergency_desc": "Manejo inicial de emergencias en el contexto de atención primaria.",
-      "mental_health": "Salud Mental",
-      "mental_health_desc": "Abordaje integral de la salud mental en APS.",
-      "pediatrics": "Pediatría Esencial",
-      "pediatrics_desc": "Condiciones pediátricas comunes en atención primaria."
-    },
-
-    "free_forever": {
-      "title": "100% Gratis, Para Siempre",
-      "description": "Darwin MFC es una plataforma académica sin fines de lucro. Todo el contenido educativo es y siempre será completamente gratuito."
-    },
-
-    "widget": {
-      "start_learning": "Comenzar a Aprender",
-      "start_description": "Rutas de aprendizaje estructuradas para profesionales de atención primaria. Gratis para siempre.",
-      "explore": "Explorar Rutas",
-      "my_learning": "Mi Aprendizaje",
-      "view_all": "Ver Todo",
-      "days": "días",
-      "certs": "certificados",
-      "paths": "rutas",
-      "continue": "Continuar desde donde lo dejaste",
-      "all_completed": "¡Todas las rutas completadas! Revisa contenido nuevo.",
-      "browse": "Explorar Rutas"
-    },
-
-    "progress": {
-      "title": "Mi Progreso",
-      "reset_all": "Reiniciar Todo",
-      "streak_days": "Racha de Días",
-      "modules_completed": "Módulos",
-      "minutes_studied": "Minutos",
-      "certificates": "Certificados",
-      "no_progress": "Aún no hay progreso de aprendizaje",
-      "start_learning": "Comienza una ruta de aprendizaje para rastrear tu progreso aquí.",
-      "browse_paths": "Explorar Rutas de Aprendizaje",
-      "in_progress": "En Progreso",
-      "completed": "Completado",
-      "my_certificates": "Mis Certificados",
-      "activity": "Actividad Reciente",
-      "last_active": "Última actividad",
-      "day_streak": "racha de días",
-      "no_activity": "Sin actividad reciente",
-      "bookmarked": "Marcado"
-    },
-
-    "paths": {
-      "aps_essentials": {
-        "title": "Fundamentos de la APS",
-        "description": "Conocimientos esenciales para la práctica en Atención Primaria de Salud."
-      },
-      "medication_safety": {
-        "title": "Seguridad en el Uso de Medicamentos",
-        "description": "Interacciones medicamentosas, ajuste renal, poblaciones especiales."
-      }
-    },
-
     "modules": {
       "aps_intro": {
         "title": "Introducción a la APS",
@@ -219,7 +75,134 @@
         "description": "Prueba integrada de seguridad medicamentosa."
       }
     },
-
+    "certificate_available": "Certificado",
+    "continue": "Continuar",
+    "start": "Iniciar",
+    "progress": {
+      "title": "Mi Progreso",
+      "reset_all": "Reiniciar Todo",
+      "streak_days": "Racha de Días",
+      "modules_completed": "Módulos",
+      "minutes_studied": "Minutos",
+      "certificates": "Certificados",
+      "no_progress": "Aún no hay progreso de aprendizaje",
+      "start_learning": "Comienza una ruta de aprendizaje para rastrear tu progreso aquí.",
+      "browse_paths": "Explorar Rutas de Aprendizaje",
+      "in_progress": "En Progreso",
+      "completed": "Completado",
+      "my_certificates": "Mis Certificados",
+      "activity": "Actividad Reciente",
+      "last_active": "Última actividad",
+      "day_streak": "racha de días",
+      "no_activity": "Sin actividad reciente",
+      "bookmarked": "Marcado"
+    },
+    "stats": {
+      "paths": "Rutas",
+      "modules": "Módulos",
+      "hours": "Horas",
+      "certificates": "Certificados",
+      "streak": "Racha",
+      "progress": "Progreso"
+    },
+    "continue_learning": "Continuar Aprendiendo",
+    "confirm_reset": "¿Estás seguro de que deseas reiniciar tu progreso en este curso? Esta acción no se puede deshacer.",
+    "confirm_reset_all": "¿Estás seguro de que deseas reiniciar todo el progreso? Esta acción no se puede deshacer.",
+    "add_bookmark": "Añadir a favoritos",
+    "remove_bookmark": "Quitar de favoritos",
+    "reset_progress": "Reiniciar progreso",
+    "module_types": {
+      "content": "Contenido",
+      "quiz": "Quiz",
+      "case_study": "Caso Clínico",
+      "flashcards": "Tarjetas",
+      "video": "Video",
+      "interactive": "Interactivo"
+    },
+    "module_not_found": "Módulo no encontrado",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "complete_path": "Completar Ruta",
+    "completed_score": "{score}% - Completado",
+    "completed": "Completado",
+    "congratulations": "¡Felicitaciones!",
+    "path_completed": "¡Ruta Completada!",
+    "close": "Cerrar",
+    "continue_btn": "Continuar",
+    "default_user": "Profesional de la Salud",
+    "mark_complete": "Marcar como completo",
+    "mark_as_viewed": "Marcar como visto",
+    "path_not_found": "Ruta no encontrada",
+    "back_to_paths": "Volver a las rutas",
+    "path_modules": "Módulos de la Ruta",
+    "modules_completed": "{completed} de {total} módulos completados",
+    "minimum_score": "Puntuación mínima para certificación: {score}%",
+    "case_study_player": {
+      "title": "Caso Clínico Interactivo",
+      "coming_soon": "Los casos clínicos interactivos estarán disponibles pronto."
+    },
+    "flashcards_player": {
+      "title": "Tarjetas de Repetición Espaciada",
+      "coming_soon": "El sistema de tarjetas estará disponible pronto."
+    },
+    "completion_modal": {
+      "congratulations": "¡Felicitaciones!",
+      "path_completed": "¡Ruta Completada!",
+      "completed_with_cert": "Completaste la ruta <strong>{pathTitle}</strong> y obtuviste un certificado!",
+      "completed_success": "Completaste la ruta <strong>{pathTitle}</strong> exitosamente.",
+      "certificate_issued": "Certificado Emitido",
+      "score": "Puntuación: {score}%",
+      "view_certificate": "Ver Certificado",
+      "close": "Cerrar",
+      "continue": "Continuar"
+    },
+    "status": {
+      "locked": "Bloqueado",
+      "completed": "Completado",
+      "certified": "Certificado",
+      "in_progress": "En Progreso",
+      "not_started": "No Iniciado"
+    },
+    "difficulty": {
+      "beginner": "Principiante",
+      "intermediate": "Intermedio",
+      "advanced": "Avanzado"
+    },
+    "coming": {
+      "emergency": "Emergencias en APS",
+      "emergency_desc": "Manejo inicial de emergencias en el contexto de atención primaria.",
+      "mental_health": "Salud Mental",
+      "mental_health_desc": "Abordaje integral de la salud mental en APS.",
+      "pediatrics": "Pediatría Esencial",
+      "pediatrics_desc": "Condiciones pediátricas comunes en atención primaria."
+    },
+    "free_forever": {
+      "title": "100% Gratis, Para Siempre",
+      "description": "Darwin MFC es una plataforma académica sin fines de lucro. Todo el contenido educativo es y siempre será completamente gratuito."
+    },
+    "widget": {
+      "start_learning": "Comenzar a Aprender",
+      "start_description": "Rutas de aprendizaje estructuradas para profesionales de atención primaria. Gratis para siempre.",
+      "explore": "Explorar Rutas",
+      "my_learning": "Mi Aprendizaje",
+      "view_all": "Ver Todo",
+      "days": "días",
+      "certs": "certificados",
+      "paths": "rutas",
+      "continue": "Continuar desde donde lo dejaste",
+      "all_completed": "¡Todas las rutas completadas! Revisa contenido nuevo.",
+      "browse": "Explorar Rutas"
+    },
+    "paths": {
+      "aps_essentials": {
+        "title": "Fundamentos de la APS",
+        "description": "Conocimientos esenciales para la práctica en Atención Primaria de Salud."
+      },
+      "medication_safety": {
+        "title": "Seguridad en el Uso de Medicamentos",
+        "description": "Interacciones medicamentosas, ajuste renal, poblaciones especiales."
+      }
+    },
     "certs": {
       "aps_essentials": {
         "title": "Fundamentos de la APS",
@@ -230,7 +213,6 @@
         "description": "Certificado de finalización del curso de Seguridad en el Uso de Medicamentos."
       }
     },
-
     "quiz": {
       "question": "Pregunta",
       "points": "puntos",
@@ -246,7 +228,6 @@
       "passing": "Mínimo",
       "correct_answers": "Aciertos"
     },
-
     "certificate": {
       "title": "Certificado de Finalización",
       "subtitle": "Curso Completado con Éxito",

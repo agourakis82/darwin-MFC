@@ -13,7 +13,9 @@
     },
     "search": {
       "placeholder": "दवाइयाँ, बीमारियाँ, प्रोटोकॉल खोजें..."
-    }
+    },
+    "back": "वापस",
+    "loading": "लोड हो रहा है..."
   },
   "nav": {
     "home": "होम",
@@ -754,7 +756,9 @@
     "results": "{count, plural, =0 {0 परिणाम} =1 {1 परिणाम} other {# परिणाम}}",
     "noResults": "कोई रोग नहीं मिला",
     "tryAnotherTerm": "दूसरे शब्द से खोजें",
-    "noDescription": "विवरण उपलब्ध नहीं"
+    "noDescription": "विवरण उपलब्ध नहीं",
+    "loading": "लोड हो रहा है...",
+    "loadingDiseases": "रोग लोड हो रहे हैं..."
   },
   "medicamentos": {
     "title": "प्राथमिक देखभाल औषध सूची",
@@ -1634,7 +1638,9 @@
       "respiratorio": "श्वसन",
       "gastro": "पाचन",
       "dermatologia": "त्वचा विज्ञान",
-      "musculoesqueletico": "मस्कुलोस्केलेटल"
+      "musculoesqueletico": "मस्कुलोस्केलेटल",
+      "infeccioso": "संक्रामक",
+      "neurologico": "तंत्रिका संबंधी"
     },
     "complexity": {
       "basico": "बुनियादी",

@@ -3,7 +3,6 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
-const isProd = process.env.NODE_ENV === 'production';
 // Build without basePath for custom domain (default for GitHub Pages with CNAME)
 // Only use basePath when explicitly building for github.io subdirectory
 const useBasePath = process.env.USE_BASE_PATH === 'true';
@@ -11,6 +10,9 @@ const basePathValue = useBasePath ? '/darwin-MFC' : '';
 
 const nextConfig: NextConfig = {
   output: "export",
+  turbopack: {
+    root: process.cwd(),
+  },
   images: {
     unoptimized: true,
   },

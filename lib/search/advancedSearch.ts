@@ -15,6 +15,10 @@ import { expandQueryWithSynonyms, normalizeSearchText, getCanonicalTerm } from '
 import { calculateSemanticSimilarity } from './semantic';
 import { search, type SearchOptions, type SearchResult, buildSearchIndex } from './searchIndex';
 
+function canUseLocalStorage(): boolean {
+  return typeof window !== 'undefined' && typeof localStorage !== 'undefined';
+}
+
 // ==============================================
 // CID-10 / ATC CODE DIRECT LOOKUP
 // ==============================================
@@ -302,10 +306,12 @@ export function saveSearch(name: string, query: string, filters: Partial<SearchO
 
   saved.push(newSearch);
 
-  try {
-    localStorage.setItem(SAVED_SEARCHES_KEY, JSON.stringify(saved));
-  } catch (error) {
-    console.error('Failed to save search:', error);
+  if (canUseLocalStorage()) {
+    try {
+      localStorage.setItem(SAVED_SEARCHES_KEY, JSON.stringify(saved));
+    } catch (error) {
+      console.error('Failed to save search:', error);
+    }
   }
 
   return newSearch;
@@ -315,6 +321,8 @@ export function saveSearch(name: string, query: string, filters: Partial<SearchO
  * Get all saved searches
  */
 export function getSavedSearches(): SavedSearch[] {
+  if (!canUseLocalStorage()) return [];
+
   try {
     const stored = localStorage.getItem(SAVED_SEARCHES_KEY);
     if (!stored) return [];
@@ -331,6 +339,8 @@ export function getSavedSearches(): SavedSearch[] {
  * Delete a saved search
  */
 export function deleteSavedSearch(id: string): void {
+  if (!canUseLocalStorage()) return;
+
   const saved = getSavedSearches();
   const filtered = saved.filter(s => s.id !== id);
 
@@ -345,6 +355,8 @@ export function deleteSavedSearch(id: string): void {
  * Update last used timestamp for a saved search
  */
 export function updateSavedSearchUsage(id: string): void {
+  if (!canUseLocalStorage()) return;
+
   const saved = getSavedSearches();
   const search = saved.find(s => s.id === id);
 
@@ -376,6 +388,8 @@ export interface SearchAnalytics {
  * Log search analytics
  */
 export function logSearch(query: string, resultCount: number): void {
+  if (!canUseLocalStorage()) return;
+
   try {
     const analytics = getSearchAnalytics();
 
@@ -399,6 +413,8 @@ export function logSearch(query: string, resultCount: number): void {
  * Get search analytics
  */
 export function getSearchAnalytics(): SearchAnalytics[] {
+  if (!canUseLocalStorage()) return [];
+
   try {
     const stored = localStorage.getItem(SEARCH_ANALYTICS_KEY);
     if (!stored) return [];

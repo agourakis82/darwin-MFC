@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Questões Médicas - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .tabs {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .tab {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            background: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tab:hover {
+            background: #f8f9fa;
+        }
+
+        .tab.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .filtros {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .filtros h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .filtro-grupo {
+            display: inline-block;
+            margin-right: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .filtro-grupo label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .filtro-grupo select {
+            padding: 0.5rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .questoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .questao-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .questao-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .questao-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .badge.basico {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .badge.intermediario {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .badge.avancado {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .badge.diagnostico {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .badge.tratamento {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .badge.fisiopatologia {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+
+        .badge.epidemiologia {
+            background: #fff8e1;
+            color: #f57f17;
+        }
+
+        .badge.profilaxia {
+            background: #fce4ec;
+            color: #c2185b;
+        }
+
+        .especialidade-badge {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .questao-enunciado {
+            margin: 1rem 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .questao-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .questao-detalhe {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .alternativas {
+            margin: 1.5rem 0;
+        }
+
+        .alternativa {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .alternativa:hover {
+            border-color: #667eea;
+            background: #f8f9fa;
+        }
+
+        .alternativa.correta {
+            border-color: #28a745;
+            background: #d4edda;
+        }
+
+        .alternativa.incorreta {
+            border-color: #dc3545;
+            background: #f8d7da;
+        }
+
+        .explicacao {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #5a6fd8;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .btn-export {
+            background: #28a745;
+        }
+
+        .btn-export:hover {
+            background: #218838;
+        }
+
+        .pagination {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .page-btn {
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .page-btn:hover {
+            background: #f8f9fa;
+        }
+
+        .page-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .questoes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🏥 Sistema de Questões Médicas</h1>
+            <p>Protótipo Funcional para Geração de Questões em Volume</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab active" onclick="mostrarTab('lista')">Lista de Questões</button>
+            <button class="tab" onclick="mostrarTab('questao')">Responder Questão</button>
+            <button class="tab" onclick="mostrarTab('estatisticas')">Estatísticas</button>
+            <button class="tab" onclick="mostrarTab('exportar')">Exportar Dados</button>
+        </div>
+
+        <!-- Lista de Questões -->
+        <div id="lista" class="tab-content active">
+            <div class="filtros">
+                <h3>🔍 Filtros</h3>
+                <div class="filtro-grupo">
+                    <label>Especialidade:</label>
+                    <select id="filtro-especialidade" onchange="aplicarFiltros()">
+                        <option value="">Todas</option>
+                        <option value="medicina-interna">Medicina Interna</option>
+                        <option value="cardiologia">Cardiologia</option>
+                        <option value="pediatria">Pediatria</option>
+                    </select>
+                </div>
+
+                <div class="filtro-grupo">
+                    <label>Tipo:</label>
+                    <select id="filtro-tipo" onchange="aplicarFiltros()">
+                        <option value="">Todos</option>
+                        <option value="diagnostico">Diagnóstico</option>
+                        <option value="tratamento">Tratamento</option>
+                        <option value="fisiopatologia">Fisiopatologia</option>
+                        <option value="epidemiologia">Epidemiologia</option>
+                        <option value="profilaxia">Profilaxia</option>
+                    </select>
+                </div>
+
+                <div class="filtro-grupo">
+                    <label>Dificuldade:</label>
+                    <select id="filtro-dificuldade" onchange="aplicarFiltros()">
+                        <option value="">Todas</option>
+                        <option value="basico">Básico</option>
+                        <option value="intermediario">Intermediário</option>
+                        <option value="avancado">Avançado</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-secondary" onclick="limparFiltros()">Limpar Filtros</button>
+                <button class="btn btn-export" onclick="gerarNovoConjunto()">Gerar Novo Conjunto</button>
+            </div>
+
+            <div id="stats-bar" class="stats-grid">
+                <!-- Estatísticas dinâmicas serão inseridas aqui -->
+            </div>
+
+            <div id="questoes-container" class="questoes-grid">
+                <!-- Questões serão carregadas aqui -->
+            </div>
+
+            <div class="pagination">
+                <!-- Paginação será inserida aqui -->
+            </div>
+        </div>
+
+        <!-- Responder Questão -->
+        <div id="questao" class="tab-content">
+            <div class="questao-detalhe">
+                <div id="questao-conteudo">
+                    <div class="loading">Carregando questão...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Estatísticas -->
+        <div id="estatisticas" class="tab-content">
+            <div id="estatisticas-container">
+                <!-- Estatísticas serão carregadas aqui -->
+            </div>
+        </div>
+
+        <!-- Exportar Dados -->
+        <div id="exportar" class="tab-content">
+            <div class="questao-detalhe">
+                <h3>📤 Exportar Dados</h3>
+                <p>Exporte as questões em diferentes formatos:</p>
+
+                <div style="margin: 2rem 0;">
+                    <button class="btn btn-export" onclick="exportarJSON()">Exportar JSON</button>
+                    <button class="btn btn-export" onclick="exportarCSV()">Exportar CSV</button>
+                    <button class="btn btn-secondary" onclick="exportarEstatisticas()">Exportar Estatísticas</button>
+                </div>
+
+                <div id="dados-exportados" class="hidden">
+                    <h4>Dados Exportados:</h4>
+                    <textarea id="texto-exportado" style="width: 100%; height: 200px; padding: 1rem; font-family: monospace;"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dados globais
+        let todasAsQuestoes = [];
+        let questoesFiltradas = [];
+        let questaoAtual = null;
+        let paginaAtual = 1;
+        const questoesPorPagina = 12;
+
+        // Carregar dados iniciais
+        async function carregarDados() {
+            try {
+                // Simular carregamento de dados
+                mostrarLoading();
+
+                // Importar dados dos scripts TypeScript via módulo dinâmico
+                const modulos = await Promise.all([
+                    import('../scripts/simple-question-generator.ts'),
+                    import('../scripts/dados-exemplo-questoes.ts')
+                ]);
+
+                const gerador = modulos[0].questionGenerator || new SimpleQuestionGenerator();
+                const dados = modulos[1];
+
+                // Gerar questões se necessário
+                if (dados.todasAsQuestoes && dados.todasAsQuestoes.length > 0) {
+                    todasAsQuestoes = dados.todasAsQuestoes;
+                } else {
+                    // Gerar questões via gerador
+                    todasAsQuestoes = gerador.gerarQuestoes([], 150);
+                }
+
+                questoesFiltradas = [...todasAsQuestoes];
+                inicializarInterface();
+
+            } catch (error) {
+                console.log('Erro ao carregar dados:', error);
+                // Dados fallback se os módulos TypeScript não funcionarem
+                todasAsQuestoes = gerarDadosFallback();
+                questoesFiltradas = [...todasAsQuestoes];
+                inicializarInterface();
+            }
+        }
+
+        // Dados fallback se os módulos TypeScript não funcionarem
+        function gerarDadosFallback() {
+            const especialidades = ['medicina-interna', 'cardiologia', 'pediatria'];
+            const tipos = ['diagnostico', 'tratamento', 'fisiopatologia'];
+            const dificuldades = ['basico', 'intermediario', 'avancado'];
+
+            const questoes = [];
+
+            for (let i = 0; i < 150; i++) {
+                questoes.push({
+                    id: `q_${i + 1}`,
+                    especialidade: especialidades[Math.floor(Math.random() * especialidades.length)],
+                    tipo: tipos[Math.floor(Math.random() * tipos.length)],
+                    dificuldade: dificuldades[Math.floor(Math.random() * dificuldades.length)],
+                    enunciado: `Questão de exemplo ${i + 1} sobre ${especialidades[Math.floor(Math.random() * especialidades.length)]}`,
+                    alternativas: [
+                        'Alternativa A',
+                        'Alternativa B',
+                        'Alternativa C',
+                        'Alternativa D'
+                    ],
+                    respostaCorreta: Math.floor(Math.random() * 4),
+                    pontos: 10 + Math.floor(Math.random() * 20),
+                    tempoEstimado: 3 + Math.floor(Math.random() * 3),
+                    criadasEm: new Date(),
+                    ultimaModificacao: new Date(),
+                    vezesRespondida: Math.floor(Math.random() * 50),
+                    taxaAcerto: Math.random()
+                });
+            }
+
+            return questoes;
+        }
+
+        // Inicializar interface
+        function inicializarInterface() {
+            ocultarLoading();
+            renderizarQuestoes();
+            renderizarEstatisticas();
+            carregarPrimeiraQuestao();
+        }
+
+        // Sistema de tabs
+        function mostrarTab(tabId) {
+            // Ocultar todas as tabs
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Mostrar tab selecionada
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Renderizar questões
+        function renderizarQuestoes() {
+            const container = document.getElementById('questoes-container');
+            const inicio = (paginaAtual - 1) * questoesPorPagina;
+            const fim = inicio + questoesPorPagina;
+            const questoesPagina = questoesFiltradas.slice(inicio, fim);
+
+            container.innerHTML = questoesPagina.map(questao => `
+                <div class="questao-card" onclick="selecionarQuestao('${questao.id}')">
+                    <div class="questao-header">
+                        <span class="especialidade-badge">${formatarEspecialidade(questao.especialidade)}</span>
+                        <span class="badge ${questao.tipo}">${formatarTipo(questao.tipo)}</span>
+                    </div>
+                    <div class="questao-enunciado">${questao.enunciado}</div>
+                    <div class="questao-meta">
+                        <span>Dificuldade: <span class="badge ${questao.dificuldade}">${formatarDificuldade(questao.dificuldade)}</span></span>
+                        <span>Pontos: ${questao.pontos}</span>
+                    </div>
+                    <div class="questao-meta">
+                        <span>Respondida: ${questao.vezesRespondida || 0} vezes</span>
+                        <span>Taxa de acerto: ${Math.round((questao.taxaAcerto || 0) * 100)}%</span>
+                    </div>
+                </div>
+            `).join('');
+
+            renderizarPaginacao();
+            renderizarBarraEstatisticas();
+        }
+
+        // Renderizar paginação
+        function renderizarPaginacao() {
+            const totalPaginas = Math.ceil(questoesFiltradas.length / questoesPorPagina);
+            const container = document.querySelector('.pagination');
+
+            let paginacao = '';
+
+            for (let i = 1; i <= totalPaginas; i++) {
+                paginacao += `<button class="page-btn ${i === paginaAtual ? 'active' : ''}" onclick="irParaPagina(${i})">${i}</button>`;
+            }
+
+            container.innerHTML = paginacao;
+        }
+
+        // Ir para página
+        function irParaPagina(pagina) {
+            paginaAtual = pagina;
+            renderizarQuestoes();
+        }
+
+        // Aplicar filtros
+        function aplicarFiltros() {
+            const especialidade = document.getElementById('filtro-especialidade').value;
+            const tipo = document.getElementById('filtro-tipo').value;
+            const dificuldade = document.getElementById('filtro-dificuldade').value;
+
+            questoesFiltradas = todasAsQuestoes.filter(questao => {
+                const matchEspecialidade = !especialidade || questao.especialidade === especialidade;
+                const matchTipo = !tipo || questao.tipo === tipo;
+                const matchDificuldade = !dificuldade || questao.dificuldade === dificuldade;
+
+                return matchEspecialidade && matchTipo && matchDificuldade;
+            });
+
+            paginaAtual = 1;
+            renderizarQuestoes();
+        }
+
+        // Limpar filtros
+        function limparFiltros() {
+            document.getElementById('filtro-especialidade').value = '';
+            document.getElementById('filtro-tipo').value = '';
+            document.getElementById('filtro-dificuldade').value = '';
+
+            questoesFiltradas = [...todasAsQuestoes];
+            paginaAtual = 1;
+            renderizarQuestoes();
+        }
+
+        // Selecionar questão para responder
+        function selecionarQuestao(questaoId) {
+            questaoAtual = todasAsQuestoes.find(q => q.id === questaoId);
+            if (questaoAtual) {
+                mostrarTab('questao');
+                renderizarQuestaoDetalhada();
+            }
+        }
+
+        // Renderizar questão detalhada
+        function renderizarQuestaoDetalhada() {
+            const container = document.getElementById('questao-conteudo');
+
+            container.innerHTML = `
+                <div class="questao-header">
+                    <span class="especialidade-badge">${formatarEspecialidade(questaoAtual.especialidade)}</span>
+                    <span class="badge ${questaoAtual.tipo}">${formatarTipo(questaoAtual.tipo)}</span>
+                    <span class="badge ${questaoAtual.dificuldade}">${formatarDificuldade(questaoAtual.dificuldade)}</span>
+                </div>
+
+                <h3>${questaoAtual.enunciado}</h3>
+
+                <div class="alternativas">
+                    ${questaoAtual.alternativas.map((alt, index) => `
+                        <div class="alternativa" onclick="responderQuestao(${index})">
+                            <strong>${String.fromCharCode(65 + index)}.</strong> ${alt}
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div id="resultado-resposta" class="hidden"></div>
+            `;
+        }
+
+        // Responder questão
+        function responderQuestao(respostaEscolhida) {
+            const correta = respostaEscolhida === questaoAtual.respostaCorreta;
+            const alternativaCorreta = questaoAtual.respostaCorreta;
+
+            // Destacar respostas
+            document.querySelectorAll('.alternativa').forEach((alt, index) => {
+                alt.classList.remove('correta', 'incorreta');
+                if (index === alternativaCorreta) {
+                    alt.classList.add('correta');
+                } else if (index === respostaEscolhida && !correta) {
+                    alt.classList.add('incorreta');
+                }
+            });
+
+            // Mostrar resultado
+            const resultado = document.getElementById('resultado-resposta');
+            resultado.classList.remove('hidden');
+
+            resultado.innerHTML = `
+                <div class="explicacao">
+                    <h4>${correta ? '✅ Correto!' : '❌ Incorreto'}</h4>
+                    <p><strong>Pontos ganhos:</strong> ${correta ? questaoAtual.pontos : 0}</p>
+                    <p><strong>Resposta correta:</strong> ${String.fromCharCode(65 + alternativaCorreta)}. ${questaoAtual.alternativas[alternativaCorreta]}</p>
+                    ${questaoAtual.explicacao ? `<p><strong>Explicação:</strong> ${questaoAtual.explicacao}</p>` : ''}
+                </div>
+                <button class="btn" onclick="proximaQuestao()">Próxima Questão</button>
+            `;
+
+            // Atualizar estatísticas
+            questaoAtual.vezesRespondida = (questaoAtual.vezesRespondida || 0) + 1;
+            if (correta) {
+                questaoAtual.taxaAcerto = ((questaoAtual.taxaAcerto || 0) * (questaoAtual.vezesRespondida - 1) + 1) / questaoAtual.vezesRespondida;
+            } else {
+                questaoAtual.taxaAcerto = ((questaoAtual.taxaAcerto || 0) * (questaoAtual.vezesRespondida - 1)) / questaoAtual.vezesRespondida;
+            }
+        }
+
+        // Próxima questão
+        function proximaQuestao() {
+            const indiceAtual = todasAsQuestoes.findIndex(q => q.id === questaoAtual.id);
+            const proximoIndice = (indiceAtual + 1) % todasAsQuestoes.length;
+            questaoAtual = todasAsQuestoes[proximoIndice];
+            renderizarQuestaoDetalhada();
+        }
+
+        // Carregar primeira questão
+        function carregarPrimeiraQuestao() {
+            if (todasAsQuestoes.length > 0) {
+                questaoAtual = todasAsQuestoes[0];
+            }
+        }
+
+        // Renderizar estatísticas
+        function renderizarEstatisticas() {
+            const container = document.getElementById('estatisticas-container');
+
+            // Calcular estatísticas
+            const totalQuestoes = todasAsQuestoes.length;
+            const porEspecialidade = {};
+            const porTipo = {};
+            const porDificuldade = {};
+            const questoesRespondidas = todasAsQuestoes.filter(q => q.vezesRespondida > 0);
+            const taxaAcertoGeral = questoesRespondidas.length > 0
+                ? questoesRespondidas.reduce((acc, q) => acc + q.taxaAcerto, 0) / questoesRespondidas.length
+                : 0;
+
+            todasAsQuestoes.forEach(q => {
+                porEspecialidade[q.especialidade] = (porEspecialidade[q.especialidade] || 0) + 1;
+                porTipo[q.tipo] = (porTipo[q.tipo] || 0) + 1;
+                porDificuldade[q.dificuldade] = (porDificuldade[q.dificuldade] || 0) + 1;
+            });
+
+            container.innerHTML = `
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">${totalQuestoes}</div>
+                        <div class="stat-label">Total de Questões</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">${Math.round(taxaAcertoGeral * 100)}%</div>
+                        <div class="stat-label">Taxa de Acerto Geral</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">${questoesRespondidas.length}</div>
+                        <div class="stat-label">Questões Respondidas</div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>Por Especialidade</h4>
+                        ${Object.entries(porEspecialidade).map(([esp, qtd]) =>
+                            `<p>${formatarEspecialidade(esp)}: ${qtd}</p>`
+                        ).join('')}
+                    </div>
+
+                    <div class="stat-card">
+                        <h4>Por Tipo</h4>
+                        ${Object.entries(porTipo).map(([tipo, qtd]) =>
+                            `<p>${formatarTipo(tipo)}: ${qtd}</p>`
+                        ).join('')}
+                    </div>
+
+                    <div class="stat-card">
+                        <h4>Por Dificuldade</h4>
+                        ${Object.entries(porDificuldade).map(([dif, qtd]) =>
+                            `<p>${formatarDificuldade(dif)}: ${qtd}</p>`
+                        ).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Renderizar barra de estatísticas
+        function renderizarBarraEstatisticas() {
+            const container = document.getElementById('stats-bar');
+            const total = questoesFiltradas.length;
+            const respondidas = questoesFiltradas.filter(q => q.vezesRespondida > 0).length;
+            const taxaAcerto = questoesFiltradas.length > 0
+                ? Math.round(questoesFiltradas.reduce((acc, q) => acc + (q.taxaAcerto || 0), 0) / questoesFiltradas.length * 100)
+                : 0;
+
+            container.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">${total}</div>
+                    <div class="stat-label">Questões Encontradas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${respondidas}</div>
+                    <div class="stat-label">Respondidas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${taxaAcerto}%</div>
+                    <div class="stat-label">Taxa de Acerto</div>
+                </div>
+            `;
+        }
+
+        // Funções de formatação
+        function formatarEspecialidade(esp) {
+            const map = {
+                'medicina-interna': 'Medicina Interna',
+                'cardiologia': 'Cardiologia',
+                'pediatria': 'Pediatria'
+            };
+            return map[esp] || esp;
+        }
+
+        function formatarTipo(tipo) {
+            const map = {
+                'diagnostico': 'Diagnóstico',
+                'tratamento': 'Tratamento',
+                'fisiopatologia': 'Fisiopatologia',
+                'epidemiologia': 'Epidemiologia',
+                'profilaxia': 'Profilaxia'
+            };
+            return map[tipo] || tipo;
+        }
+
+        function formatarDificuldade(dif) {
+            const map = {
+                'basico': 'Básico',
+                'intermediario': 'Intermediário',
+                'avancado': 'Avançado'
+            };
+            return map[dif] || dif;
+        }
+
+        // Funções de exportação
+        function exportarJSON() {
+            const dados = JSON.stringify(todasAsQuestoes, null, 2);
+            mostrarDadosExportados(dados);
+            downloadFile(dados, 'questoes-medicas.json', 'application/json');
+        }
+
+        function exportarCSV() {
+            const headers = ['ID', 'Especialidade', 'Tipo', 'Dificuldade', 'Enunciado', 'Pontos', 'Tempo Estimado'];
+            const rows = todasAsQuestoes.map(q => [
+                q.id,
+                q.especialidade,
+                q.tipo,
+                q.dificuldade,
+                `"${q.enunciado.replace(/"/g, '""')}"`,
+                q.pontos,
+                q.tempoEstimado
+            ]);
+
+            const csv = [headers, ...rows].map(row => row.join(',')).join('\n');
+            mostrarDadosExportados(csv);
+            downloadFile(csv, 'questoes-medicas.csv', 'text/csv');
+        }
+
+        function exportarEstatisticas() {
+            const stats = {
+                totalQuestoes: todasAsQuestoes.length,
+                porEspecialidade: {},
+                porTipo: {},
+                porDificuldade: {}
+            };
+
+            todasAsQuestoes.forEach(q => {
+                stats.porEspecialidade[q.especialidade] = (stats.porEspecialidade[q.especialidade] || 0) + 1;
+                stats.porTipo[q.tipo] = (stats.porTipo[q.tipo] || 0) + 1;
+                stats.porDificuldade[q.dificuldade] = (stats.porDificuldade[q.dificuldade] || 0) + 1;
+            });
+
+            const dados = JSON.stringify(stats, null, 2);
+            mostrarDadosExportados(dados);
+            downloadFile(dados, 'estatisticas-questoes.json', 'application/json');
+        }
+
+        function mostrarDadosExportados(dados) {
+            const container = document.getElementById('dados-exportados');
+            const textarea = document.getElementById('texto-exportado');
+            textarea.value = dados;
+            container.classList.remove('hidden');
+        }
+
+        function downloadFile(conteudo, nomeArquivo, tipo) {
+            const blob = new Blob([conteudo], { type: tipo });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = nomeArquivo;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Gerar novo conjunto de questões
+        function gerarNovoConjunto() {
+            if (confirm('Deseja gerar um novo conjunto de questões? Isso substituirá as atuais.')) {
+                todasAsQuestoes = gerarDadosFallback();
+                questoesFiltradas = [...todasAsQuestoes];
+                paginaAtual = 1;
+                inicializarInterface();
+            }
+        }
+
+        // Loading functions
+        function mostrarLoading() {
+            document.getElementById('questoes-container').innerHTML = '<div class="loading">Carregando questões...</div>';
+        }
+
+        function ocultarLoading() {
+            // Loading será removido quando renderizarQuestoes() for chamado
+        }
+
+        // Inicializar quando a página carregar
+        document.addEventListener('DOMContentLoaded', carregarDados);
+    </script>
+</body>
+</html>

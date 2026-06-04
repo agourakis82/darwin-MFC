@@ -365,7 +365,7 @@ function PathProgressCard({
             )}
           </div>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-            {completedModules} / {path.modules.length} {t('modules')}
+            {completedModules} / {path.modules.length} {t('stats.modules')}
           </p>
         </div>
         <div className="text-right">

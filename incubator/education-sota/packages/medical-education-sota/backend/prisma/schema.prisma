@@ -1,0 +1,1188 @@
+/**
+ * Schema Prisma - Sistema de Educação Médica SOTA
+ * Base de dados State-of-the-Art para educação médica com IA
+ */
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// =============================================================================
+// USUÁRIOS E PERFIS
+// =============================================================================
+
+model User {
+  id              String   @id @default(cuid())
+  email           String   @unique
+  passwordHash    String
+  userType        UserType
+  isActive        Boolean  @default(true)
+  mfaEnabled      Boolean  @default(false)
+  mfaSecret       String?  @db.Text
+  lastLogin       DateTime?
+  lastPasswordChange DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relaciones
+  profile         UserProfile?
+  sessions        UserSession[]
+  refreshTokens   RefreshToken[]
+  auditLogs      AuditLog[]
+
+  // Estudante específico
+  studentProfile  StudentProfile?
+
+  // Instrutor específico
+  instructorProfile InstructorProfile?
+
+  // Admin específico
+  adminProfile    AdminProfile?
+
+  // Institution específico
+  institutionProfile Institution?
+
+  @@map("users")
+}
+
+model UserProfile {
+  id                String @id @default(cuid())
+  userId            String @unique
+  firstName         String
+  lastName          String
+  fullName          String
+  avatarUrl         String?
+  phoneNumber       String?
+  dateOfBirth       DateTime?
+  gender            Gender?
+  language          String  @default("pt-BR")
+  timezone          String  @default("America/Sao_Paulo")
+  preferences       Json    @default("{}")
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  user              User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_profiles")
+}
+
+model StudentProfile {
+  id                    String @id @default(cuid())
+  userId                String @unique
+  medicalId             String @unique @db.Text
+  currentLevel          StudentLevel
+  specialty             MedicalSpecialty
+  yearOfStudy          Int
+  gpa                   Float?
+  university            String
+  institutionId         String?
+
+  // Perfil de aprendizado
+  learningStyle         LearningStyle
+  preferredPace         LearningPace
+  attentionSpan         Int       @default(45) // minutos
+  technologyComfort     Float     @default(0.5) // 0-1
+
+  // Metas e objetivos
+  targetExam           ExamType
+  targetCompletionDate DateTime?
+
+  // Progresso geral
+  totalStudyTime       Int       @default(0) // minutos
+  coursesCompleted     Int       @default(0)
+  competenciesAchieved Int       @default(0)
+
+  // Análise de performance
+  strengthAreas        String[]  @default([])
+  weaknessAreas       String[]  @default([])
+  lastPerformanceUpdate DateTime?
+
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  user                User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  institution         Institution? @relation(fields: [institutionId], references: [id])
+
+  // Relaciones com outros modelos
+  knowledgeStates      KnowledgeState[]
+  learningSessions     LearningSession[]
+  studyPlans          StudyPlan[]
+  achievements        StudentAchievement[]
+  credentials         StudentCredential[]
+
+  @@map("student_profiles")
+}
+
+model InstructorProfile {
+  id                String @id @default(cuid())
+  userId            String @unique
+  medicalLicense    String @unique
+  specialty         MedicalSpecialty
+  experienceYears   Int
+  institutionId     String
+  department        String?
+  isVerified        Boolean @default(false)
+  verificationDate  DateTime?
+  bio               String? @db.Text
+  researchInterests String[]
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  user              User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("instructor_profiles")
+}
+
+model AdminProfile {
+  id                String @id @default(cuid())
+  userId            String @unique
+  role              AdminRole
+  permissions       String[] @default([])
+  department        String?
+  isSuperAdmin      Boolean @default(false)
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  user              User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("admin_profiles")
+}
+
+model Institution {
+  id              String @id @default(cuid())
+  name            String
+  type            InstitutionType
+  accreditation   String
+  accreditationNumber String?
+  address         Json
+  contact         Json
+  website         String?
+  logoUrl         String?
+
+  // Configurações específicas
+  lmsIntegration   Json? // Configurações de integração LMS
+  federationEnabled Boolean @default(false)
+  privacySettings  Json @default("{}")
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relaciones
+  users           User[]
+  students        StudentProfile[]
+  instructors     InstructorProfile[]
+  courses         Course[]
+  content         Content[]
+  federatedLearning FederatedLearningInstance?
+
+  @@map("institutions")
+}
+
+// =============================================================================
+// SESSÕES E AUTENTICAÇÃO
+// =============================================================================
+
+model UserSession {
+  id            String @id @default(cuid())
+  userId        String
+  sessionId     String @unique
+  deviceId      String
+  deviceInfo    Json
+  ipAddress     String
+  userAgent     String
+  isActive      Boolean @default(true)
+  expiresAt     DateTime
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user          User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_sessions")
+}
+
+model RefreshToken {
+  id        String @id @default(cuid())
+  userId    String
+  token     String @unique
+  expiresAt DateTime
+  used      Boolean @default(false)
+  createdAt DateTime @default(now())
+
+  user      User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("refresh_tokens")
+}
+
+// =============================================================================
+// SISTEMA DE CONHECIMENTO
+// =============================================================================
+
+model KnowledgeArea {
+  id              String @id @default(cuid())
+  name            String @unique
+  description     String? @db.Text
+  parentId        String?
+  level           Int // 1: Básico, 2: Intermediário, 3: Avançado
+  brazilianStandard String? // BNCC, CFM guidelines, etc.
+  icd11Code       String? // Código ICD-11
+  snomedCtCode    String? // Código SNOMED CT
+  competencyLevel Int @default(1)
+  prerequisites   String[] @default([])
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relaciones
+  parent          KnowledgeArea? @relation("KnowledgeAreaHierarchy", fields: [parentId], references: [id])
+  children        KnowledgeArea[] @relation("KnowledgeAreaHierarchy")
+  states          KnowledgeState[]
+  content         Content[]
+  assessments     Assessment[]
+
+  @@map("knowledge_areas")
+}
+
+model KnowledgeState {
+  id                String @id @default(cuid())
+  studentId         String
+  knowledgeAreaId   String
+
+  // Estado do conhecimento (0.0 - 1.0)
+  masteryLevel     Float @default(0.0)
+  confidence        Float @default(0.0)
+  lastAccessed      DateTime?
+  lastAssessment    DateTime?
+  totalTimeSpent   Int @default(0) // minutos
+
+  // Análise preditiva
+  predictedMastery  Float?
+  retentionRate     Float?
+  difficultyFactor  Float @default(1.0)
+  easeFactor        Float @default(2.5)
+
+  // Repetição espaçada
+  interval          Int @default(1) // dias
+  repetitionCount   Int @default(0)
+  lastReview        DateTime?
+  nextReview        DateTime?
+
+  // Neural factors
+  neuralPlasticity  Float @default(0.5)
+  cognitiveLoad      Float @default(0.5)
+  fatigueLevel       Float @default(0.0)
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  student           StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  knowledgeArea     KnowledgeArea @relation(fields: [knowledgeAreaId], references: [id], onDelete: Cascade)
+
+  @@unique([studentId, knowledgeAreaId])
+  @@map("knowledge_states")
+}
+
+// =============================================================================
+// CONTEÚDO EDUCACIONAL
+// =============================================================================
+
+model Course {
+  id              String @id @default(cuid())
+  title           String
+  description     String? @db.Text
+  specialty       MedicalSpecialty
+  level           CourseLevel
+  institutionId   String?
+
+  // Configurações do curso
+  duration        Int // horas
+  prerequisites   String[] @default([])
+  learningObjectives String[] @default([])
+  competencyFramework String? // SBME, CanMEDS, etc.
+
+  // Metadata
+  tags            String[] @default([])
+  difficulty      Int @default(1) // 1-5
+  rating          Float?
+  totalEnrollments Int @default(0)
+  isPublished     Boolean @default(false)
+
+  // Datas
+  startDate       DateTime?
+  endDate         DateTime?
+  enrollmentStart DateTime?
+  enrollmentEnd   DateTime?
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  institution     Institution? @relation(fields: [institutionId], references: [id])
+
+  // Relaciones
+  modules         CourseModule[]
+  enrollments     CourseEnrollment[]
+  assessments     Assessment[]
+  studyPlans      StudyPlan[]
+
+  @@map("courses")
+}
+
+model CourseModule {
+  id              String @id @default(cuid())
+  courseId        String
+  title           String
+  description     String? @db.Text
+  order           Int
+  duration        Int? // minutos
+
+  // Configurações
+  isOptional      Boolean @default(false)
+  unlockCriteria  Json? // Condições para desbloquear
+  completionCriteria Json?
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  course          Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  // Relaciones
+  content         Content[]
+  assessments     Assessment[]
+
+  @@map("course_modules")
+}
+
+model Content {
+  id              String @id @default(cuid())
+  title           String
+  description     String? @db.Text
+  type            ContentType
+  format          ContentFormat
+
+  // Conteúdo específico
+  body            String? @db.Text // Para texto, markdown
+  url             String? // Para vídeos, áudios, documentos
+  metadata        Json? // Metadados específicos do tipo
+
+  // Configurações educacionais
+  knowledgeAreaId String?
+  moduleId        String?
+  institutionId   String?
+
+  // Propriedades educacionais
+  difficulty      Int @default(1) // 1-5
+  duration        Int? // minutos estimados
+  interactive     Boolean @default(false)
+  immersive       Boolean @default(false) // VR/AR
+
+  // Validação médica
+  isValidated     Boolean @default(false)
+  validatedBy     String? // ID do validador
+  validatedAt     DateTime?
+  medicalAccuracy Float? // 0.0-1.0
+
+  // Analytics
+  viewCount       Int @default(0)
+  averageRating   Float?
+  completionRate  Float?
+
+  // Publishing
+  isPublished     Boolean @default(false)
+  publishedAt     DateTime?
+  version         String @default("1.0.0")
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  knowledgeArea   KnowledgeArea? @relation(fields: [knowledgeAreaId], references: [id])
+  module          CourseModule? @relation(fields: [moduleId], references: [id])
+  institution     Institution? @relation(fields: [institutionId], references: [id])
+
+  // Relaciones
+  assessments     Assessment[]
+  learningSessions LearningSession[]
+
+  @@map("content")
+}
+
+// =============================================================================
+// SESSÕES DE APRENDIZADO
+// =============================================================================
+
+model LearningSession {
+  id              String @id @default(cuid())
+  studentId       String
+  contentId       String?
+  sessionType     SessionType
+  status          SessionStatus @default(ACTIVE)
+
+  // Tempo
+  startedAt       DateTime @default(now())
+  endedAt         DateTime?
+  duration        Int? // minutos
+
+  // Performance metrics
+  accuracy        Float?
+  engagementScore Float?
+  completionRate  Float?
+
+  // Dados específicos da sessão
+  data            Json? // Dados específicos por tipo de sessão
+
+  // Feedback e avaliação
+  feedback        String? @db.Text
+  rating          Int? // 1-5
+  difficultyRating Int? // 1-5
+
+  // Análise em tempo real
+  attentionSpan   Int? // minutos
+  breakFrequency  Int?
+  interactionCount Int @default(0)
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  student         StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  content         Content? @relation(fields: [contentId], references: [id])
+
+  // Relaciones
+  analytics       SessionAnalytics[]
+  aiInsights      AIInsight[]
+
+  @@map("learning_sessions")
+}
+
+model SessionAnalytics {
+  id              String @id @default(cuid())
+  sessionId       String
+
+  // Métricas de tempo real
+  timestamp       DateTime @default(now())
+  scrollDepth     Float? // 0.0-1.0
+  timeOnPage      Int? // segundos
+  clickCount      Int @default(0)
+  keystrokeCount  Int @default(0)
+
+  // Engagement metrics
+  focusLost       Int @default(0)
+  tabSwitch       Int @default(0)
+  idleTime        Int @default(0) // segundos
+
+  // Interaction patterns
+  interactionType InteractionType?
+  interactionData Json?
+
+  // Performance metrics
+  responseTime    Int? // milissegundos
+  errorRate       Float?
+  completionRate   Float?
+
+  createdAt       DateTime @default(now())
+
+  session         LearningSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@map("session_analytics")
+}
+
+model AIInsight {
+  id              String @id @default(cuid())
+  sessionId       String
+
+  // Tipo de insight
+  type            InsightType
+  confidence       Float @default(0.0)
+
+  // Dados do insight
+  data            Json
+  recommendation   String? @db.Text
+  reasoning       String? @db.Text
+
+  // Contexto
+  modelUsed       String? // GPT-4, Claude-4, etc.
+  processingTime   Int? // milissegundos
+  tokenCount      Int?
+
+  // Ações tomadas
+  actionTaken     String?
+  impactScore     Float?
+
+  createdAt       DateTime @default(now())
+
+  session         LearningSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@map("ai_insights")
+}
+
+// =============================================================================
+// AVALIAÇÕES E QUESTÕES
+// =============================================================================
+
+model Assessment {
+  id              String @id @default(cuid())
+  title           String
+  description     String? @db.Text
+  type            AssessmentType
+
+  // Configurações
+  courseId        String?
+  moduleId        String?
+  contentId       String?
+  knowledgeAreaId String?
+
+  // Propriedades
+  timeLimit       Int? // minutos
+  maxAttempts     Int @default(1)
+  passingScore    Float @default(0.7) // 70%
+  randomizeQuestions Boolean @default(false)
+
+  // Analytics
+  totalAttempts   Int @default(0)
+  averageScore    Float?
+  averageTime     Int? // minutos
+  completionRate  Float?
+
+  // Metadata
+  tags            String[] @default([])
+  difficulty      Int @default(1) // 1-5
+
+  // Publishing
+  isPublished     Boolean @default(false)
+  publishedAt     DateTime?
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  course          Course? @relation(fields: [courseId], references: [id])
+  module          CourseModule? @relation(fields: [moduleId], references: [id])
+  content         Content? @relation(fields: [contentId], references: [id])
+  knowledgeArea   KnowledgeArea? @relation(fields: [knowledgeAreaId], references: [id])
+
+  // Relaciones
+  questions       Question[]
+  attempts        AssessmentAttempt[]
+
+  @@map("assessments")
+}
+
+model Question {
+  id              String @id @default(cuid())
+  assessmentId    String
+
+  // Conteúdo da questão
+  type            QuestionType
+  stem            String @db.Text
+  options         Json? // Para múltipla escolha
+  correctAnswer   String @db.Text
+  explanation     String? @db.Text
+
+  // Propriedades educacionais
+  difficulty      Float @default(0.5) // 0.0-1.0
+  discrimination  Float? // Índice de discriminação
+  timeEstimate    Int? // segundos
+
+  // Validação médica
+  isValidated     Boolean @default(false)
+  validatedBy     String?
+  validatedAt     DateTime?
+  medicalSource   String? // Referência médica
+
+  // Analytics
+  viewCount       Int @default(0)
+  correctRate     Float?
+  averageTime     Int? // segundos
+
+  // Metadata
+  tags            String[] @default([])
+  cognitiveLevel  CognitiveLevel?
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  assessment      Assessment @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+
+  // Relaciones
+  attempts        QuestionAttempt[]
+  llmVariations   LLMQuestionVariation[]
+
+  @@map("questions")
+}
+
+model LLMQuestionVariation {
+  id              String @id @default(cuid())
+  questionId      String
+
+  // Variação gerada por LLM
+  variation       String @db.Text
+  prompt          String @db.Text
+  model           String // GPT-4, Claude-4, etc.
+
+  // Qualidade da variação
+  qualityScore    Float?
+  similarity      Float? // Similaridade com original
+
+  // Validação
+  isValid         Boolean @default(false)
+  validationScore Float?
+  validationNotes String? @db.Text
+
+  createdAt       DateTime @default(now())
+
+  question        Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@map("llm_question_variations")
+}
+
+model AssessmentAttempt {
+  id              String @id @default(cuid())
+  assessmentId    String
+  studentId       String
+
+  // Status e timing
+  status          AttemptStatus @default(IN_PROGRESS)
+  startedAt       DateTime @default(now())
+  completedAt     DateTime?
+  timeSpent       Int? // minutos
+
+  // Resultados
+  score           Float?
+  percentage      Float?
+  passed          Boolean?
+
+  // Analytics
+  questionCount    Int?
+  correctAnswers   Int?
+  incorrectAnswers Int?
+  skippedQuestions Int?
+
+  // Feedback
+  feedback        String? @db.Text
+  improvementAreas String[] @default([])
+  strengths       String[] @default([])
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  assessment      Assessment @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+
+  // Relaciones
+  answers         QuestionAttempt[]
+
+  @@map("assessment_attempts")
+}
+
+model QuestionAttempt {
+  id              String @id @default(cuid())
+  attemptId       String
+  questionId      String
+
+  // Resposta
+  answer          String @db.Text
+  isCorrect       Boolean
+  timeSpent       Int? // segundos
+
+  // Analytics
+  confidence       Float? // 0.0-1.0
+  hintUsed        Boolean @default(false)
+  attempts        Int @default(1)
+
+  createdAt       DateTime @default(now())
+
+  attempt         AssessmentAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question        Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@map("question_attempts")
+}
+
+// =============================================================================
+// PLANEJAMENTO DE ESTUDO
+// =============================================================================
+
+model StudyPlan {
+  id              String @id @default(cuid())
+  studentId       String
+  courseId        String?
+  title           String
+  description     String? @db.Text
+
+  // Configurações
+  targetCompletion DateTime?
+  dailyStudyTime  Int @default(60) // minutos
+  preferredTimes  Json? // Horários preferidos
+
+  // Progresso
+  totalEstimated  Int? // horas
+  totalCompleted Int? @default(0)
+  completionRate  Float @default(0.0)
+
+  // Status
+  status          PlanStatus @default(ACTIVE)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  student         StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  course          Course? @relation(fields: [courseId], references: [id])
+
+  // Relaciones
+  activities      StudyActivity[]
+
+  @@map("study_plans")
+}
+
+model StudyActivity {
+  id              String @id @default(cuid())
+  studyPlanId     String
+  title           String
+  description     String? @db.Text
+  type            ActivityType
+
+  // Scheduling
+  scheduledDate   DateTime
+  duration        Int? // minutos
+  isRecurring     Boolean @default(false)
+  recurrencePattern Json? // Padrão de recorrência
+
+  // Status
+  status          ActivityStatus @default(SCHEDULED)
+  completedAt     DateTime?
+  timeSpent       Int? // minutos
+
+  // Content linkage
+  contentId       String?
+  knowledgeAreaId String?
+
+  // AI recommendations
+  priority        Int @default(1) // 1-5
+  aiSuggested     Boolean @default(false)
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  studyPlan       StudyPlan @relation(fields: [studyPlanId], references: [id], onDelete: Cascade)
+  content         Content? @relation(fields: [contentId], references: [id])
+  knowledgeArea   KnowledgeArea? @relation(fields: [knowledgeAreaId], references: [id])
+
+  @@map("study_activities")
+}
+
+// =============================================================================
+// CONQUISTAS E CREDENCIAIS
+// =============================================================================
+
+model StudentAchievement {
+  id              String @id @default(cuid())
+  studentId       String
+  type            AchievementType
+  title           String
+  description     String? @db.Text
+  icon            String?
+
+  // Metadados
+  criteria        Json
+  metadata        Json?
+  points          Int @default(0)
+
+  // Datas
+  earnedAt        DateTime @default(now())
+  expiresAt       DateTime?
+
+  // Verificação
+  isVerified      Boolean @default(false)
+  verifiedBy      String?
+  verificationDate DateTime?
+
+  createdAt       DateTime @default(now())
+
+  student         StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@map("student_achievements")
+}
+
+model StudentCredential {
+  id              String @id @default(cuid())
+  studentId       String
+  type            CredentialType
+  title           String
+  description     String? @db.Text
+
+  // Blockchain integration
+  blockchainId     String? @unique
+  transactionHash String? @unique
+
+  // Credential data
+  data            Json
+  issuedBy        String
+  issueDate       DateTime @default(now())
+  validityPeriod  Int? // dias
+
+  // Status
+  status          CredentialStatus @default(ACTIVE)
+  revokedAt       DateTime?
+  revocationReason String? @db.Text
+
+  createdAt       DateTime @default(now())
+
+  student         StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@map("student_credentials")
+}
+
+// =============================================================================
+// APRENDIZADO FEDERADO
+// =============================================================================
+
+model FederatedLearningInstance {
+  id              String @id @default(cuid())
+  institutionId   String @unique
+
+  // Configurações
+  isActive        Boolean @default(false)
+  privacyBudget   Float @default(1.0) // Epsilon para differential privacy
+  learningRate    Float @default(0.01)
+
+  // Status da participação
+  lastParticipation DateTime?
+  participationScore Float?
+
+  // Modelos
+  globalModelVersion String?
+  localModelVersion  String?
+
+  // Métricas
+  totalRounds     Int @default(0)
+  successfulRounds Int @default(0)
+  averageLoss     Float?
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  institution     Institution @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+
+  @@map("federated_learning_instances")
+}
+
+// =============================================================================
+// LOGS E AUDITORIA
+// =============================================================================
+
+model AuditLog {
+  id              String @id @default(cuid())
+  userId          String?
+
+  // Action details
+  action          String
+  resource        String
+  resourceId      String?
+
+  // Request details
+  ipAddress       String
+  userAgent       String?
+  sessionId       String?
+
+  // Response details
+  status          String
+  message         String? @db.Text
+
+  // Metadata
+  metadata        Json?
+  timestamp       DateTime @default(now())
+
+  user            User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@map("audit_logs")
+}
+
+// =============================================================================
+// ENUMS E TIPOS
+// =============================================================================
+
+enum UserType {
+  STUDENT
+  INSTRUCTOR
+  ADMIN
+  INSTITUTION
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+  PREFER_NOT_TO_SAY
+}
+
+enum StudentLevel {
+  FIRST_YEAR
+  SECOND_YEAR
+  THIRD_YEAR
+  FOURTH_YEAR
+  FIFTH_YEAR
+  SIXTH_YEAR
+  INTERNSHIP
+  RESIDENCY
+  SPECIALIZATION
+}
+
+enum MedicalSpecialty {
+  ANATOMIA
+  FISIOLOGIA
+  FARMACOLOGIA
+  PATOLOGIA
+  MICROBIOLOGIA
+  IMUNOLOGIA
+  BIOQUIMICA
+  GENETICA
+  CARDIOLOGIA
+  PNEUMOLOGIA
+  GASTROENTEROLOGIA
+  NEFROLOGIA
+  ENDOCRINOLOGIA
+  HEMATOLOGIA
+  ONCOLOGIA
+  NEUROLOGIA
+  PSIQUIATRIA
+  PEDIATRIA
+  GINECOLOGIA
+  OBSTETRICIA
+  DERMATOLOGIA
+  OFTALMOLOGIA
+  OTORRINOLARINGOLOGIA
+  UROLOGIA
+  ORTOPEDIA
+  CIRURGIA_GERAL
+  ANESTESIOLOGIA
+  RADIOLOGIA
+  MEDICINA_ESPORTIVA
+  MEDICINA_TROPICAL
+  SAUDE_PUBLICA
+  MEDICINA_FAMILIAR
+  EMERGENCIA
+  INTENSIVISMO
+}
+
+enum LearningStyle {
+  VISUAL
+  AUDITORY
+  KINESTHETIC
+  READING_WRITING
+  MULTIMODAL
+}
+
+enum LearningPace {
+  SLOW
+  NORMAL
+  FAST
+  ACCELERATED
+}
+
+enum ExamType {
+  ENAMED
+  RESIDENCIA
+  PROVA_PRATICA
+  AVALIACAO_UNIVERSITARIA
+  ESPECIALIZACAO
+  CERTIFICACAO
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  SYSTEM_ADMIN
+  CONTENT_ADMIN
+  INSTITUTION_ADMIN
+  SUPPORT_ADMIN
+}
+
+enum InstitutionType {
+  UNIVERSITY
+  MEDICAL_SCHOOL
+  HOSPITAL
+  RESEARCH_INSTITUTE
+  PROFESSIONAL_ASSOCIATION
+  GOVERNMENT_AGENCY
+}
+
+enum ContentType {
+  TEXT
+  VIDEO
+  AUDIO
+  INTERACTIVE
+  SIMULATION
+  CASE_STUDY
+  QUESTION
+  ASSESSMENT
+  INFOGRAPHIC
+  DIAGRAM
+  ANIMATION
+  VR_EXPERIENCE
+  AR_OVERLAY
+  COLLABORATION
+  DISCUSSION
+}
+
+enum ContentFormat {
+  MARKDOWN
+  HTML
+  PDF
+  VIDEO_MP4
+  AUDIO_MP3
+  IMAGE_PNG
+  IMAGE_JPG
+  SVG
+  WEB_APP
+  UNITY_BUILD
+  WEBXR
+  JSON
+  XML
+}
+
+enum CourseLevel {
+  INTRODUCTORY
+  BASIC
+  INTERMEDIATE
+  ADVANCED
+  EXPERT
+  SPECIALIZED
+}
+
+enum SessionType {
+  STUDY_SESSION
+  ASSESSMENT_SESSION
+  REVIEW_SESSION
+  COLLABORATION_SESSION
+  AI_TUTORING_SESSION
+  VR_PRACTICE
+  CASE_DISCUSSION
+}
+
+enum SessionStatus {
+  ACTIVE
+  PAUSED
+  COMPLETED
+  ABANDONED
+  EXPIRED
+}
+
+enum InteractionType {
+  CLICK
+  SCROLL
+  KEYBOARD
+  VOICE
+  GESTURE
+  VR_INTERACTION
+  AR_INTERACTION
+}
+
+enum InsightType {
+  PERFORMANCE_ANALYSIS
+  LEARNING_RECOMMENDATION
+  DIFFICULTY_ADJUSTMENT
+  CONTENT_SUGGESTION
+  STUDY_SCHEDULE
+  MOTIVATION_FEEDBACK
+  ENGAGEMENT_INSIGHT
+  PREDICTION
+}
+
+enum AssessmentType {
+  QUIZ
+  EXAM
+  PRACTICAL_ASSESSMENT
+  CASE_ANALYSIS
+  PORTFOLIO
+  ORAL_EXAMINATION
+  PEER_ASSESSMENT
+  SELF_ASSESSMENT
+  CONTINUOUS_ASSESSMENT
+  ADAPTIVE_TEST
+}
+
+enum QuestionType {
+  MULTIPLE_CHOICE
+  TRUE_FALSE
+  SHORT_ANSWER
+  LONG_ANSWER
+  ESSAY
+  DRAG_DROP
+  MATCHING
+  FILL_IN_BLANK
+  SCENARIO_BASED
+  INTERACTIVE_SIMULATION
+}
+
+enum CognitiveLevel {
+  REMEMBER
+  UNDERSTAND
+  APPLY
+  ANALYZE
+  EVALUATE
+  CREATE
+}
+
+enum AttemptStatus {
+  IN_PROGRESS
+  COMPLETED
+  ABANDONED
+  EXPIRED
+}
+
+enum PlanStatus {
+  ACTIVE
+  PAUSED
+  COMPLETED
+  CANCELLED
+  ARCHIVED
+}
+
+enum ActivityType {
+  STUDY_CONTENT
+  PRACTICE_QUESTIONS
+  REVIEW_SESSION
+  ASSESSMENT
+  COLLABORATION
+  VR_PRACTICE
+  CASE_DISCUSSION
+  READING
+  VIDEO_WATCHING
+}
+
+enum ActivityStatus {
+  SCHEDULED
+  IN_PROGRESS
+  COMPLETED
+  SKIPPED
+  CANCELLED
+}
+
+enum AchievementType {
+  COURSE_COMPLETION
+  ASSESSMENT_SCORE
+  STREAK_MILESTONE
+  COMPETENCY_MASTERY
+  SPEED_LEARNING
+  COLLABORATION
+  STREAK_SPECIAL
+  RESEARCH_CONTRIBUTION
+  PEER_HELPING
+  SYSTEM_FEEDBACK
+}
+
+enum CredentialType {
+  COURSE_COMPLETION
+  COMPETENCY_CERTIFICATION
+  SKILL_BADGE
+  ASSESSMENT_CERTIFICATE
+  MILESTONE_ACHIEVEMENT
+  PEER_RECOGNITION
+  INSTITUTION_CERTIFICATE
+  BLOCKCHAIN_VERIFIED
+}
+
+enum CredentialStatus {
+  ACTIVE
+  EXPIRED
+  REVOKED
+  SUSPENDED
+}

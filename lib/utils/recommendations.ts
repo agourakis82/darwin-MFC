@@ -44,10 +44,16 @@ export interface PersonalizedRecommendations {
 
 const STORAGE_KEY = 'darwin-mfc-consultation-history';
 
+function canUseLocalStorage(): boolean {
+  return typeof window !== 'undefined' && typeof localStorage !== 'undefined';
+}
+
 /**
  * Salva consulta no histórico
  */
 export function saveConsultationToHistory(soapData: SOAPData): string {
+  if (!canUseLocalStorage()) return '';
+
   const history = getConsultationHistory();
   const newId = `consult-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
   
@@ -76,6 +82,8 @@ export function saveConsultationToHistory(soapData: SOAPData): string {
  * Recupera histórico de consultas
  */
 export function getConsultationHistory(): ConsultationHistory[] {
+  if (!canUseLocalStorage()) return [];
+
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (!stored) return [];
@@ -93,6 +101,8 @@ export function getConsultationHistory(): ConsultationHistory[] {
  * Remove consulta do histórico
  */
 export function removeConsultationFromHistory(id: string): void {
+  if (!canUseLocalStorage()) return;
+
   const history = getConsultationHistory();
   const filtered = history.filter(h => h.id !== id);
   
@@ -550,4 +560,3 @@ export function getHistoryStatistics(): {
     } : null,
   };
 }
-

@@ -13,7 +13,9 @@
     },
     "search": {
       "placeholder": "Поиск лекарств, заболеваний, протоколов..."
-    }
+    },
+    "back": "Назад",
+    "loading": "Загрузка..."
   },
   "nav": {
     "home": "Главная",
@@ -754,7 +756,9 @@
     "results": "{count, plural, =0 {0 результатов} =1 {1 результат} other {# результатов}}",
     "noResults": "Заболевание не найдено",
     "tryAnotherTerm": "Попробуйте другой термин",
-    "noDescription": "Описание недоступно"
+    "noDescription": "Описание недоступно",
+    "loading": "Загрузка...",
+    "loadingDiseases": "Загрузка заболеваний..."
   },
   "medicamentos": {
     "title": "Справочник первичной помощи",
@@ -1634,7 +1638,9 @@
       "respiratorio": "Дыхательная",
       "gastro": "Гастро",
       "dermatologia": "Дерматология",
-      "musculoesqueletico": "Костно-мышечная"
+      "musculoesqueletico": "Костно-мышечная",
+      "infeccioso": "Инфекционные",
+      "neurologico": "Неврологические"
     },
     "complexity": {
       "basico": "Базовый",

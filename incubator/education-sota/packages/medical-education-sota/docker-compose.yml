@@ -1,0 +1,456 @@
+# Docker Compose - Sistema de Educação Médica SOTA 2025-2026
+# Orquestração completa com todos os serviços State-of-the-Art
+
+version: '3.8'
+
+services:
+  # ===== MICROSERVIÇO PRINCIPAL =====
+  medical-education-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://postgres:password@postgres:5432/medical_education_sota
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - postgres
+      - redis
+      - mongodb
+    volumes:
+      - ./logs:/app/logs
+      - ./cache:/app/cache
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ===== MICROSERVIÇO DE IA/ML =====
+  ai-ml-service:
+    build:
+      context: ./services/ai-ml
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+      - PYTHONPATH=/app
+      - MODEL_CACHE_SIZE=1000
+      - AI_BATCH_SIZE=32
+      - AI_MAX_CONCURRENT_REQUESTS=100
+    volumes:
+      - ./models:/app/models
+      - ./cache:/app/cache
+    depends_on:
+      - redis
+      - postgres
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  # ===== MICROSERVIÇO DE ANALYTICS =====
+  analytics-service:
+    build:
+      context: ./services/analytics
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8003"
+    environment:
+      - ANALYTICS_ENABLED=true
+      - ANALYTICS_BATCH_SIZE=100
+      - ANALYTICS_FLUSH_INTERVAL=5000
+      - REDIS_URL=redis://redis:6379
+      - POSTGRES_URL=postgresql://postgres:password@postgres:5432/medical_education_sota
+    depends_on:
+      - redis
+      - postgres
+      - influxdb
+    volumes:
+      - ./analytics:/app/data
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  # ===== MICROSERVIÇO DE VR/AR =====
+  vr-ar-service:
+    build:
+      context: ./services/vr-ar
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - VR_API_URL=http://localhost:8080
+      - VR_SIMULATION_TIMEOUT=300000
+    volumes:
+      - ./vr-content:/app/content
+      - ./vr-sessions:/app/sessions
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  # ===== WEBSOCKET SERVICE =====
+  websocket-service:
+    build:
+      context: ./services/websocket
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8002"
+    environment:
+      - SOCKET_IO_PORT=8002
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=medical_education_sota_jwt_secret_2025
+    depends_on:
+      - redis
+      - postgres
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  # ===== BANCO DE DADOS PRINCIPAL =====
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=medical_education_sota
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_INITDB_ARGS=--encoding=UTF-8 --lc-collate=en_US.UTF-8 --lc-ctype=en_US.UTF-8
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./backups:/backups
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d medical_education_sota"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # ===== MONGODB (Conteúdo e Analytics) =====
+  mongodb:
+    image: mongo:7.0
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=medical_content
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  # ===== REDIS (Cache e Sessions) =====
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes --requirepass password
+    volumes:
+      - redis_data:/data
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "password", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ===== INFLUXDB (Time Series Analytics) =====
+  influxdb:
+    image: influxdb:2.7-alpine
+    environment:
+      - INFLUXDB_DB=medical_analytics
+      - INFLUXDB_ADMIN_USER=admin
+      - INFLUXDB_ADMIN_PASSWORD=password
+      - INFLUXDB_USER=medical_user
+      - INFLUXDB_USER_PASSWORD=medical_password
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+      - influxdb_config:/etc/influxdb2
+    ports:
+      - "8086:8086"
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  # ===== ELASTICSEARCH (Busca e Analytics) =====
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+      - xpack.security.enabled=false
+      - xpack.security.enrollment.enabled=false
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # ===== KIBANA (Visualização) =====
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.11.0
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - ELASTICSEARCH_USERNAME=medical_user
+      - ELASTICSEARCH_PASSWORD=medical_password
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  # ===== PROMETHEUS (Monitoramento) =====
+  prometheus:
+    image: prom/prometheus:latest
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  # ===== GRAFANA (Dashboards) =====
+  grafana:
+    image: grafana/grafana:latest
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
+    ports:
+      - "3001:3000"
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  # ===== NGINX (Load Balancer) =====
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+      - ./static:/var/www/static
+    depends_on:
+      - medical-education-api
+      - ai-ml-service
+      - analytics-service
+      - vr-ar-service
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  # ===== JENKINS (CI/CD) =====
+  jenkins:
+    image: jenkins/jenkins:lts
+    environment:
+      - JENKINS_USER=admin
+      - JENKINS_PASSWORD=admin
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  # ===== JIRA (Gerenciamento de Projeto) =====
+  jira:
+    image: atlassian/jira-software:latest
+    environment:
+      - JVM_MINIMUM_MEMORY=512m
+      - JVM_MAXIMUM_MEMORY=2g
+      - JVM_SUPPORT_RECOMMENDED_ARGS=-XX:+UseG1GC -XX:+CMSClassUnloadingEnabled -XX:+UseStringDeduplication
+    volumes:
+      - jira_data:/var/atlassian/application-data/jira
+      - jira_db_data:/var/atlassian/application-data/jira/db
+    ports:
+      - "8081:8080"
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  # ===== SONARQUBE (Code Quality) =====
+  sonarqube:
+    image: sonarqube:9.9-community
+    environment:
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    ports:
+      - "9000:9000"
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  # ===== KAFKA (Streaming Analytics) =====
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    volumes:
+      - zookeeper_data:/var/lib/zookeeper/data
+      - zookeeper_logs:/var/lib/zookeeper/log
+    ports:
+      - "2181:2181"
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+    ports:
+      - "9092:9092"
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  # ===== S3-COMPATIBLE STORAGE =====
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      - MINIO_ROOT_USER=admin
+      - MINIO_ROOT_PASSWORD=admin123
+    volumes:
+      - minio_data:/data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+  # ===== BACKUP SERVICE =====
+  backup-service:
+    build:
+      context: ./services/backup
+      dockerfile: Dockerfile
+    environment:
+      - POSTGRES_URL=postgresql://postgres:password@postgres:5432/medical_education_sota
+      - S3_ENDPOINT=http://minio:9000
+      - S3_ACCESS_KEY=admin
+      - S3_SECRET_KEY=admin123
+      - BACKUP_SCHEDULE=0 2 * * * # Daily at 2 AM
+    volumes:
+      - ./backups:/backups
+      - ./scripts/backup:/scripts
+    depends_on:
+      - postgres
+      - minio
+    restart: unless-stopped
+    networks:
+      - medical-education-network
+
+# ===== VOLUMES =====
+volumes:
+  postgres_data:
+    driver: local
+  mongodb_data:
+    driver: local
+  redis_data:
+    driver: local
+  influxdb_data:
+    driver: local
+  elasticsearch_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+  jenkins_home:
+    driver: local
+  jira_data:
+    driver: local
+  jira_db_data:
+    driver: local
+  sonarqube_data:
+    driver: local
+  sonarqube_extensions:
+    driver: local
+  sonarqube_logs:
+    driver: local
+  zookeeper_data:
+    driver: local
+  zookeeper_logs:
+    driver: local
+  kafka_data:
+    driver: local
+  minio_data:
+    driver: local
+
+# ===== NETWORKS =====
+networks:
+  medical-education-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+# ===== HEALTH CHECKS =====
+x-health-check: &health-check
+  test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+  interval: 30s
+  timeout: 10s
+  retries: 3
+  start_period: 40s

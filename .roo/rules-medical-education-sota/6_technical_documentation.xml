@@ -1,0 +1,5 @@
+<technical_documentation>
+  <section name="boundary">O app principal usa static export; backends educacionais devem ser servicos separados.</section>
+  <section name="evidence">Toda funcao educacional com claim de eficacia precisa de evidencia e metodologia.</section>
+  <section name="security">Autenticacao real nao deve depender de API routes do app estatico.</section>
+</technical_documentation>

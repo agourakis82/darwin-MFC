@@ -225,7 +225,7 @@ export default function OutrosPage() {
       {/* Referências Principais */}
       <div className="mt-16 glass-strong rounded-2xl p-8 border border-[#007aff]/20">
         <h3 className="text-2xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] mb-6">
-          📚 Referências Principais (Q1+ SOTA)
+          📚 Referências Principais
         </h3>
         <div className="grid md:grid-cols-2 gap-6 text-base">
           <div>
@@ -265,4 +265,3 @@ export default function OutrosPage() {
     </div>
   );
 }
-

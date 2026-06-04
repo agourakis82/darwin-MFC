@@ -13,7 +13,9 @@
     },
     "search": {
       "placeholder": "Search medications, diseases, protocols..."
-    }
+    },
+    "back": "Back",
+    "loading": "Loading..."
   },
   "nav": {
     "home": "Home",
@@ -754,7 +756,9 @@
     "results": "{count, plural, =0 {0 results} =1 {1 result} other {# results}}",
     "noResults": "No disease found",
     "tryAnotherTerm": "Try searching for another term",
-    "noDescription": "Description not available"
+    "noDescription": "Description not available",
+    "loading": "Loading...",
+    "loadingDiseases": "Loading diseases..."
   },
   "medicamentos": {
     "title": "Primary Care Formulary",
@@ -1634,7 +1638,9 @@
       "respiratorio": "Respiratory",
       "gastro": "Gastro",
       "dermatologia": "Dermatology",
-      "musculoesqueletico": "Musculoskeletal"
+      "musculoesqueletico": "Musculoskeletal",
+      "infeccioso": "Infectious",
+      "neurologico": "Neurological"
     },
     "complexity": {
       "basico": "Basic",

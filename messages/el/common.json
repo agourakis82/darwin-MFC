@@ -13,7 +13,9 @@
     },
     "search": {
       "placeholder": "Αναζήτηση φαρμάκων, ασθενειών, πρωτοκόλλων..."
-    }
+    },
+    "back": "Πίσω",
+    "loading": "Φόρτωση..."
   },
   "nav": {
     "home": "Αρχική",
@@ -754,7 +756,9 @@
     "results": "{count, plural, =0 {0 αποτελέσματα} =1 {1 αποτέλεσμα} other {# αποτελέσματα}}",
     "noResults": "Δεν βρέθηκε νόσημα",
     "tryAnotherTerm": "Δοκιμάστε άλλον όρο αναζήτησης",
-    "noDescription": "Μη διαθέσιμη περιγραφή"
+    "noDescription": "Μη διαθέσιμη περιγραφή",
+    "loading": "Φόρτωση...",
+    "loadingDiseases": "Φόρτωση νοσημάτων..."
   },
   "medicamentos": {
     "title": "Φαρμακευτικός Οδηγός Πρωτοβάθμιας Φροντίδας",
@@ -1634,7 +1638,9 @@
       "respiratorio": "Αναπνευστικό",
       "gastro": "Γαστρεντερικό",
       "dermatologia": "Δερματολογία",
-      "musculoesqueletico": "Μυοσκελετικό"
+      "musculoesqueletico": "Μυοσκελετικό",
+      "infeccioso": "Λοιμώδες",
+      "neurologico": "Νευρολογικό"
     },
     "complexity": {
       "basico": "Βασικό",

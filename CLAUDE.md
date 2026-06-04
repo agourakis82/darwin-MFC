@@ -35,7 +35,7 @@ The app is configured for static export (`output: "export"` in next.config.ts) s
 **Files:**
 - `i18n/config.ts`: Locale definitions, RTL detection
 - `i18n/routing.ts`: next-intl navigation wrappers (Link, useRouter, usePathname)
-- `middleware.ts`: Locale routing middleware
+- `i18n/request.ts`: static-export-safe request/message loading
 - `messages/{locale}/`: Translation JSON files (common.json, clinical-cases.json, protocols.json)
 
 **Locales:** `pt` (default), `en`, `es`, `fr`, `ru`, `ar` (RTL), `zh`, `el`, `hi`
@@ -47,7 +47,7 @@ const t = useTranslations('common');
 return <h1>{t('title')}</h1>;
 ```
 
-**Routing:** All routes are prefixed with locale (e.g., `/pt/cancer`, `/en/cancer`). The `[locale]` dynamic segment in `app/[locale]/page.tsx` handles the root for each locale.
+**Routing:** All routes are prefixed with locale (e.g., `/pt/cancer`, `/en/cancer`). The root `app/page.tsx` performs client-side locale detection/redirect for static export. Do not reintroduce Next middleware/proxy for locale routing while `output: "export"` is enabled.
 
 ### Core State Management (Zustand)
 

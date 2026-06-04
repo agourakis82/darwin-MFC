@@ -1,0 +1,9 @@
+<workflow_instructions>
+  <mode_overview>Incubadora educacional separada do app medico clinico Darwin-MFC.</mode_overview>
+  <workflow>
+    <step>Identificar se o trabalho pertence a educacao ou ao app clinico.</step>
+    <step>Manter prototipos educacionais isolados de calculadoras, protocolos e conteudo assistencial.</step>
+    <step>Rebaixar claims para linguagem experimental quando nao houver validacao.</step>
+    <step>Documentar dependencias de backend fora do static export principal.</step>
+  </workflow>
+</workflow_instructions>

@@ -25,6 +25,7 @@ export type CalculatorCategory =
   | 'pediatrics'
   | 'orthopedics'
   | 'anesthesia'
+  | 'endocrinology'
   | 'general';
 
 export const categoryLabels: Record<CalculatorCategory, string> = {
@@ -42,6 +43,7 @@ export const categoryLabels: Record<CalculatorCategory, string> = {
   pediatrics: 'Pediatrics',
   orthopedics: 'Orthopedics',
   anesthesia: 'Anesthesia',
+  endocrinology: 'Endocrinology',
   general: 'General',
 };
 
@@ -60,6 +62,7 @@ export const categoryIcons: Record<CalculatorCategory, string> = {
   pediatrics: '👶',
   orthopedics: '🦴',
   anesthesia: '💉',
+  endocrinology: '⚡',
   general: '📊',
 };
 
@@ -296,6 +299,19 @@ export interface CalculatorCitation {
 }
 
 // =============================================================================
+// CLINICAL INTELLIGENCE METADATA
+// =============================================================================
+
+export type CalculatorEvidenceLevel = 'validated' | 'experimental' | 'prototype';
+
+export type CalculatorClinicalUse =
+  | 'screening'
+  | 'risk_stratification'
+  | 'triage'
+  | 'treatment_support'
+  | 'research_only';
+
+// =============================================================================
 // MAIN CALCULATOR INTERFACE
 // =============================================================================
 
@@ -356,6 +372,21 @@ export interface ClinicalCalculator {
 
   /** Last updated date */
   lastUpdated?: string;
+
+  /** Clinical evidence maturity for public display and gating */
+  evidenceLevel?: CalculatorEvidenceLevel;
+
+  /** Intended clinical support use */
+  clinicalUse?: CalculatorClinicalUse;
+
+  /** Short medical disclaimer shown with this calculator */
+  disclaimer?: string;
+
+  /** Whether calculation needs the external clinical intelligence backend */
+  requiresBackend?: boolean;
+
+  /** Clinical intelligence release year */
+  versionYear?: 2026;
 }
 
 // =============================================================================
@@ -424,6 +455,10 @@ export interface CalculatorMetadata {
   description: string;
   inputCount: number;
   hasValidationStudy: boolean;
+  evidenceLevel?: CalculatorEvidenceLevel;
+  clinicalUse?: CalculatorClinicalUse;
+  requiresBackend?: boolean;
+  versionYear?: 2026;
 }
 
 /**
@@ -438,5 +473,9 @@ export function extractMetadata(calculator: ClinicalCalculator): CalculatorMetad
     description: calculator.description,
     inputCount: calculator.inputs.length,
     hasValidationStudy: !!calculator.validationStudy,
+    evidenceLevel: calculator.evidenceLevel,
+    clinicalUse: calculator.clinicalUse,
+    requiresBackend: calculator.requiresBackend,
+    versionYear: calculator.versionYear,
   };
 }

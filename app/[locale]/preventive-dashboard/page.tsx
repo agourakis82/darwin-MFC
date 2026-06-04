@@ -5,7 +5,7 @@
  * ========================================================
  *
  * Demonstração completa do sistema de medicina preventiva preditiva
- * Inclui todas as 5 interfaces revolucionárias criadas com genius-creative-uiux
+ * Inclui cinco protótipos de interface para medicina preventiva preditiva.
  */
 
 import React, { useState } from 'react';
@@ -389,7 +389,7 @@ export default function PreventiveDashboardPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
             <div className="flex items-center gap-2">
-              <span>5 interfaces revolucionárias criadas com</span>
+              <span>5 protótipos de interface clínica</span>
               <code className="px-2 py-1 bg-neutral-100 dark:bg-neutral-800 rounded text-xs font-mono">
                 genius-creative-uiux
               </code>

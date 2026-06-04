@@ -13,7 +13,9 @@
     },
     "search": {
       "placeholder": "البحث عن الأدوية والأمراض والبروتوكولات..."
-    }
+    },
+    "back": "عودة",
+    "loading": "جار التحميل..."
   },
   "nav": {
     "home": "الرئيسية",
@@ -754,7 +756,9 @@
     "results": "{count, plural, =0 {0 نتائج} =1 {نتيجة واحدة} other {# نتائج}}",
     "noResults": "لم يتم العثور على مرض",
     "tryAnotherTerm": "حاول البحث بمصطلح آخر",
-    "noDescription": "الوصف غير متوفر"
+    "noDescription": "الوصف غير متوفر",
+    "loading": "جار التحميل...",
+    "loadingDiseases": "جار تحميل الأمراض..."
   },
   "medicamentos": {
     "title": "دليل الأدوية للرعاية الأولية",
@@ -1634,7 +1638,9 @@
       "respiratorio": "تنفسي",
       "gastro": "جهاز هضمي",
       "dermatologia": "جلدية",
-      "musculoesqueletico": "عضلي هيكلي"
+      "musculoesqueletico": "عضلي هيكلي",
+      "infeccioso": "معدي",
+      "neurologico": "عصبي"
     },
     "complexity": {
       "basico": "أساسي",

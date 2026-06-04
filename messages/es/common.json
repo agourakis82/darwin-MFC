@@ -13,7 +13,9 @@
     },
     "search": {
       "placeholder": "Buscar medicamentos, enfermedades, protocolos..."
-    }
+    },
+    "back": "Volver",
+    "loading": "Cargando..."
   },
   "nav": {
     "home": "Inicio",
@@ -754,7 +756,9 @@
     "results": "{count, plural, =0 {0 resultados} =1 {1 resultado} other {# resultados}}",
     "noResults": "No se encontró ninguna enfermedad",
     "tryAnotherTerm": "Intenta buscar otro término",
-    "noDescription": "Descripción no disponible"
+    "noDescription": "Descripción no disponible",
+    "loading": "Cargando...",
+    "loadingDiseases": "Cargando enfermedades..."
   },
   "medicamentos": {
     "title": "Formulario APS",
@@ -1634,7 +1638,9 @@
       "respiratorio": "Respiratorio",
       "gastro": "Gastro",
       "dermatologia": "Dermatología",
-      "musculoesqueletico": "Musculoesquelético"
+      "musculoesqueletico": "Musculoesquelético",
+      "infeccioso": "Infeccioso",
+      "neurologico": "Neurológico"
     },
     "complexity": {
       "basico": "Básico",

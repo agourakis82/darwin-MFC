@@ -1,0 +1,6 @@
+<implementation_plan>
+  <phase name="audit">Inventariar rotas, stores, APIs, claims e dependencias.</phase>
+  <phase name="isolate">Separar pacote/backend educacional do app clinico.</phase>
+  <phase name="validate">Rodar type-check, build, lint e auditorias especificas.</phase>
+  <phase name="promote">Promover apenas componentes revisados e explicitamente aprovados.</phase>
+</implementation_plan>

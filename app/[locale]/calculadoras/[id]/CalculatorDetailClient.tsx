@@ -10,7 +10,6 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { useParams } from 'next/navigation';
-import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import {
   Calculator,
@@ -33,11 +32,16 @@ import { showSuccessToast } from '@/app/components/ui/Toast';
 // Calculator imports
 import {
   getCalculator,
-  type ClinicalCalculator,
   type CalculatorInputValues,
   type ScoreInterpretation,
+  canCalculateClinically,
   categoryLabels,
   categoryIcons,
+  clinicalUseLabels,
+  evidenceLevelLabels,
+  evidenceLevelStyles,
+  getCalculatorClinicalDisclaimer,
+  getCalculatorEvidenceLevel,
 } from '@/lib/calculators';
 import { CalculatorForm, CalculatorResult } from '@/app/components/Calculators';
 
@@ -71,9 +75,12 @@ export default function CalculatorDetailPage() {
   const params = useParams();
   const locale = useLocale();
   const calculatorId = params?.id as string | undefined;
+  const calculator = useMemo(
+    () => (calculatorId ? getCalculator(calculatorId) ?? null : null),
+    [calculatorId]
+  );
 
   // State
-  const [calculator, setCalculator] = useState<ClinicalCalculator | null>(null);
   const [result, setResult] = useState<{
     score: number;
     interpretation: ScoreInterpretation;
@@ -81,14 +88,6 @@ export default function CalculatorDetailPage() {
   } | null>(null);
   const [isFavorite, setIsFavorite] = useState(false);
   const [showCitations, setShowCitations] = useState(false);
-
-  // Load calculator
-  useEffect(() => {
-    if (calculatorId) {
-      const calc = getCalculator(calculatorId);
-      setCalculator(calc || null);
-    }
-  }, [calculatorId]);
 
   // Load favorite status
   useEffect(() => {
@@ -129,6 +128,7 @@ export default function CalculatorDetailPage() {
   // Handle calculation
   const handleCalculate = (values: CalculatorInputValues) => {
     if (!calculator) return;
+    if (!canCalculateClinically(calculator)) return;
 
     const score = calculator.calculate(values);
     const interpretation = calculator.interpret(score, values);
@@ -172,6 +172,9 @@ export default function CalculatorDetailPage() {
   }
 
   const gradient = categoryGradients[calculator.category] || 'from-gray-500 to-slate-500';
+  const evidenceLevel = getCalculatorEvidenceLevel(calculator);
+  const canCalculate = canCalculateClinically(calculator);
+  const clinicalDisclaimer = getCalculatorClinicalDisclaimer(calculator);
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
@@ -218,6 +221,24 @@ export default function CalculatorDetailPage() {
                 >
                   {categoryLabels[calculator.category]}
                 </span>
+                <span className={cn('px-3 py-1 rounded-full text-sm font-medium', evidenceLevelStyles[evidenceLevel])}>
+                  {evidenceLevelLabels[evidenceLevel]}
+                </span>
+                {calculator.clinicalUse && (
+                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300">
+                    {clinicalUseLabels[calculator.clinicalUse]}
+                  </span>
+                )}
+                {calculator.versionYear && (
+                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300">
+                    Clinical Intelligence {calculator.versionYear}
+                  </span>
+                )}
+                {calculator.requiresBackend && (
+                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
+                    Backend required
+                  </span>
+                )}
               </div>
               <p className="text-lg text-neutral-600 dark:text-neutral-400 mt-1">
                 {calculator.name}
@@ -262,10 +283,18 @@ export default function CalculatorDetailPage() {
         <div className="mt-4 flex items-start gap-3 p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800">
           <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
           <p className="text-sm text-amber-800 dark:text-amber-200">
-            <strong>Clinical Disclaimer:</strong> This calculator is a decision support tool only.
-            Always use clinical judgment and consider the individual patient context.
+            <strong>Clinical Disclaimer:</strong> {clinicalDisclaimer}
           </p>
         </div>
+        {!canCalculate && (
+          <div className="mt-4 flex items-start gap-3 p-4 rounded-xl bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800">
+            <AlertTriangle className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+            <p className="text-sm text-blue-800 dark:text-blue-200">
+              The clinical intelligence backend is not configured. This calculator is shown for review,
+              but calculation is unavailable and no mock clinical result will be generated.
+            </p>
+          </div>
+        )}
       </motion.div>
 
       {/* Main content */}
@@ -283,10 +312,23 @@ export default function CalculatorDetailPage() {
               Calculator Input
             </h2>
           </div>
-          <CalculatorForm
-            calculator={calculator}
-            onCalculate={handleCalculate}
-          />
+          {canCalculate ? (
+            <CalculatorForm
+              calculator={calculator}
+              onCalculate={handleCalculate}
+            />
+          ) : (
+            <div className="flex flex-col items-center justify-center min-h-[320px] text-center rounded-xl border border-dashed border-blue-200 dark:border-blue-800 bg-blue-50/60 dark:bg-blue-950/20 p-6">
+              <AlertTriangle className="w-10 h-10 text-blue-600 dark:text-blue-400 mb-3" />
+              <h3 className="font-semibold text-blue-900 dark:text-blue-100">
+                Clinical intelligence backend required
+              </h3>
+              <p className="mt-2 text-sm text-blue-800 dark:text-blue-200 max-w-sm">
+                This tool depends on the external Darwin-MFC clinical intelligence service.
+                Configure the backend before enabling calculations.
+              </p>
+            </div>
+          )}
         </motion.div>
 
         {/* Result */}

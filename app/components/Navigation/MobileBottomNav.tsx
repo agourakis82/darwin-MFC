@@ -55,7 +55,7 @@ export default function MobileBottomNav() {
 
   const navItems: NavItem[] = [
     { icon: Home, label: t('sidebar.home'), path: '/' },
-    { icon: Search, label: t('common.search'), action: 'search' },
+    { icon: Search, label: t('header.search'), action: 'search' },
     { icon: Wrench, label: t('sidebar.clinicalTools'), action: 'tools' },
     { icon: Menu, label: 'Menu', action: 'menu' },
   ];

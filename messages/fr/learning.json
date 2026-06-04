@@ -5,151 +5,6 @@
     "available_paths": "Parcours Disponibles",
     "coming_soon": "Bientôt Disponible",
     "no_paths_available": "Aucun parcours disponible pour le moment.",
-    "modules": "modules",
-    "certificate_available": "Certificat",
-    "continue": "Continuer",
-    "start": "Commencer",
-    "progress": "Progression",
-
-    "stats": {
-      "paths": "Parcours",
-      "modules": "Modules",
-      "hours": "Heures",
-      "certificates": "Certificats",
-      "streak": "Série"
-    },
-
-    "continue_learning": "Continuer à Apprendre",
-    "confirm_reset": "Êtes-vous sûr de vouloir réinitialiser votre progression dans ce cours ? Cette action est irréversible.",
-    "confirm_reset_all": "Êtes-vous sûr de vouloir réinitialiser toute votre progression ? Cette action est irréversible.",
-    "add_bookmark": "Ajouter aux favoris",
-    "remove_bookmark": "Retirer des favoris",
-    "reset_progress": "Réinitialiser la progression",
-
-    "status": {
-      "locked": "Verrouillé",
-      "completed": "Terminé",
-      "certified": "Certifié",
-      "in_progress": "En Cours",
-      "not_started": "Non Commencé"
-    },
-
-    "difficulty": {
-      "beginner": "Débutant",
-      "intermediate": "Intermédiaire",
-      "advanced": "Avancé"
-    },
-
-    "path_not_found": "Parcours introuvable",
-    "back_to_paths": "Retour aux parcours",
-    "path_modules": "Modules du Parcours",
-    "modules_completed": "{completed} sur {total} modules terminés",
-    "minimum_score": "Score minimum pour la certification : {score}%",
-
-    "module_types": {
-      "content": "Contenu",
-      "quiz": "Quiz",
-      "case_study": "Cas Clinique",
-      "flashcards": "Flashcards",
-      "video": "Vidéo",
-      "interactive": "Interactif"
-    },
-
-    "module_not_found": "Module introuvable",
-    "previous": "Précédent",
-    "next": "Suivant",
-    "complete_path": "Terminer le Parcours",
-    "completed_score": "{score}% - Terminé",
-    "completed": "Terminé",
-    "congratulations": "Félicitations !",
-    "path_completed": "Parcours Terminé !",
-    "close": "Fermer",
-    "continue_btn": "Continuer",
-    "default_user": "Professionnel de Santé",
-    "mark_complete": "Marquer comme terminé",
-    "mark_as_viewed": "Marquer comme vu",
-
-    "case_study_player": {
-      "title": "Cas Clinique Interactif",
-      "coming_soon": "Les cas cliniques interactifs seront bientôt disponibles."
-    },
-
-    "flashcards_player": {
-      "title": "Flashcards à Répétition Espacée",
-      "coming_soon": "Le système de flashcards sera bientôt disponible."
-    },
-
-    "completion_modal": {
-      "congratulations": "Félicitations !",
-      "path_completed": "Parcours Terminé !",
-      "completed_with_cert": "Vous avez terminé le parcours <strong>{pathTitle}</strong> et obtenu un certificat !",
-      "completed_success": "Vous avez terminé le parcours <strong>{pathTitle}</strong> avec succès.",
-      "certificate_issued": "Certificat Délivré",
-      "score": "Score : {score}%",
-      "view_certificate": "Voir le Certificat",
-      "close": "Fermer",
-      "continue": "Continuer"
-    },
-
-    "coming": {
-      "emergency": "Urgences en Soins Primaires",
-      "emergency_desc": "Prise en charge initiale des urgences en soins primaires.",
-      "mental_health": "Santé Mentale",
-      "mental_health_desc": "Approche globale de la santé mentale en soins primaires.",
-      "pediatrics": "Pédiatrie Essentielle",
-      "pediatrics_desc": "Pathologies pédiatriques courantes en soins primaires."
-    },
-
-    "free_forever": {
-      "title": "100% Gratuit, Pour Toujours",
-      "description": "Darwin MFC est une plateforme académique à but non lucratif. Tout le contenu éducatif est et restera toujours entièrement gratuit."
-    },
-
-    "widget": {
-      "start_learning": "Commencer à Apprendre",
-      "start_description": "Parcours d'apprentissage structurés pour les professionnels de soins primaires. Gratuit pour toujours.",
-      "explore": "Explorer les Parcours",
-      "my_learning": "Mon Apprentissage",
-      "view_all": "Tout Voir",
-      "days": "jours",
-      "certs": "certificats",
-      "paths": "parcours",
-      "continue": "Continuer là où vous en étiez",
-      "all_completed": "Tous les parcours complétés ! Découvrez du nouveau contenu.",
-      "browse": "Parcourir les Parcours"
-    },
-
-    "progress": {
-      "title": "Ma Progression",
-      "reset_all": "Tout Réinitialiser",
-      "streak_days": "Série de Jours",
-      "modules_completed": "Modules",
-      "minutes_studied": "Minutes",
-      "certificates": "Certificats",
-      "no_progress": "Aucune progression d'apprentissage pour le moment",
-      "start_learning": "Commencez un parcours d'apprentissage pour suivre votre progression ici.",
-      "browse_paths": "Parcourir les Parcours d'Apprentissage",
-      "in_progress": "En Cours",
-      "completed": "Terminé",
-      "my_certificates": "Mes Certificats",
-      "activity": "Activité Récente",
-      "last_active": "Dernière activité",
-      "day_streak": "série de jours",
-      "no_activity": "Aucune activité récente",
-      "bookmarked": "Favoris"
-    },
-
-    "paths": {
-      "aps_essentials": {
-        "title": "Fondamentaux des Soins Primaires",
-        "description": "Connaissances essentielles pour la pratique en soins de santé primaires."
-      },
-      "medication_safety": {
-        "title": "Sécurité Médicamenteuse",
-        "description": "Interactions médicamenteuses, ajustement rénal, populations spéciales."
-      }
-    },
-
     "modules": {
       "aps_intro": {
         "title": "Introduction aux Soins Primaires",
@@ -220,7 +75,134 @@
         "description": "Test intégré sur la sécurité médicamenteuse."
       }
     },
-
+    "certificate_available": "Certificat",
+    "continue": "Continuer",
+    "start": "Commencer",
+    "progress": {
+      "title": "Ma Progression",
+      "reset_all": "Tout Réinitialiser",
+      "streak_days": "Série de Jours",
+      "modules_completed": "Modules",
+      "minutes_studied": "Minutes",
+      "certificates": "Certificats",
+      "no_progress": "Aucune progression d'apprentissage pour le moment",
+      "start_learning": "Commencez un parcours d'apprentissage pour suivre votre progression ici.",
+      "browse_paths": "Parcourir les Parcours d'Apprentissage",
+      "in_progress": "En Cours",
+      "completed": "Terminé",
+      "my_certificates": "Mes Certificats",
+      "activity": "Activité Récente",
+      "last_active": "Dernière activité",
+      "day_streak": "série de jours",
+      "no_activity": "Aucune activité récente",
+      "bookmarked": "Favoris"
+    },
+    "stats": {
+      "paths": "Parcours",
+      "modules": "Modules",
+      "hours": "Heures",
+      "certificates": "Certificats",
+      "streak": "Série",
+      "progress": "Progrès"
+    },
+    "continue_learning": "Continuer à Apprendre",
+    "confirm_reset": "Êtes-vous sûr de vouloir réinitialiser votre progression dans ce cours ? Cette action est irréversible.",
+    "confirm_reset_all": "Êtes-vous sûr de vouloir réinitialiser toute votre progression ? Cette action est irréversible.",
+    "add_bookmark": "Ajouter aux favoris",
+    "remove_bookmark": "Retirer des favoris",
+    "reset_progress": "Réinitialiser la progression",
+    "status": {
+      "locked": "Verrouillé",
+      "completed": "Terminé",
+      "certified": "Certifié",
+      "in_progress": "En Cours",
+      "not_started": "Non Commencé"
+    },
+    "difficulty": {
+      "beginner": "Débutant",
+      "intermediate": "Intermédiaire",
+      "advanced": "Avancé"
+    },
+    "path_not_found": "Parcours introuvable",
+    "back_to_paths": "Retour aux parcours",
+    "path_modules": "Modules du Parcours",
+    "modules_completed": "{completed} sur {total} modules terminés",
+    "minimum_score": "Score minimum pour la certification : {score}%",
+    "module_types": {
+      "content": "Contenu",
+      "quiz": "Quiz",
+      "case_study": "Cas Clinique",
+      "flashcards": "Flashcards",
+      "video": "Vidéo",
+      "interactive": "Interactif"
+    },
+    "module_not_found": "Module introuvable",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "complete_path": "Terminer le Parcours",
+    "completed_score": "{score}% - Terminé",
+    "completed": "Terminé",
+    "congratulations": "Félicitations !",
+    "path_completed": "Parcours Terminé !",
+    "close": "Fermer",
+    "continue_btn": "Continuer",
+    "default_user": "Professionnel de Santé",
+    "mark_complete": "Marquer comme terminé",
+    "mark_as_viewed": "Marquer comme vu",
+    "case_study_player": {
+      "title": "Cas Clinique Interactif",
+      "coming_soon": "Les cas cliniques interactifs seront bientôt disponibles."
+    },
+    "flashcards_player": {
+      "title": "Flashcards à Répétition Espacée",
+      "coming_soon": "Le système de flashcards sera bientôt disponible."
+    },
+    "completion_modal": {
+      "congratulations": "Félicitations !",
+      "path_completed": "Parcours Terminé !",
+      "completed_with_cert": "Vous avez terminé le parcours <strong>{pathTitle}</strong> et obtenu un certificat !",
+      "completed_success": "Vous avez terminé le parcours <strong>{pathTitle}</strong> avec succès.",
+      "certificate_issued": "Certificat Délivré",
+      "score": "Score : {score}%",
+      "view_certificate": "Voir le Certificat",
+      "close": "Fermer",
+      "continue": "Continuer"
+    },
+    "coming": {
+      "emergency": "Urgences en Soins Primaires",
+      "emergency_desc": "Prise en charge initiale des urgences en soins primaires.",
+      "mental_health": "Santé Mentale",
+      "mental_health_desc": "Approche globale de la santé mentale en soins primaires.",
+      "pediatrics": "Pédiatrie Essentielle",
+      "pediatrics_desc": "Pathologies pédiatriques courantes en soins primaires."
+    },
+    "free_forever": {
+      "title": "100% Gratuit, Pour Toujours",
+      "description": "Darwin MFC est une plateforme académique à but non lucratif. Tout le contenu éducatif est et restera toujours entièrement gratuit."
+    },
+    "widget": {
+      "start_learning": "Commencer à Apprendre",
+      "start_description": "Parcours d'apprentissage structurés pour les professionnels de soins primaires. Gratuit pour toujours.",
+      "explore": "Explorer les Parcours",
+      "my_learning": "Mon Apprentissage",
+      "view_all": "Tout Voir",
+      "days": "jours",
+      "certs": "certificats",
+      "paths": "parcours",
+      "continue": "Continuer là où vous en étiez",
+      "all_completed": "Tous les parcours complétés ! Découvrez du nouveau contenu.",
+      "browse": "Parcourir les Parcours"
+    },
+    "paths": {
+      "aps_essentials": {
+        "title": "Fondamentaux des Soins Primaires",
+        "description": "Connaissances essentielles pour la pratique en soins de santé primaires."
+      },
+      "medication_safety": {
+        "title": "Sécurité Médicamenteuse",
+        "description": "Interactions médicamenteuses, ajustement rénal, populations spéciales."
+      }
+    },
     "certs": {
       "aps_essentials": {
         "title": "Fondamentaux des Soins Primaires",
@@ -231,7 +213,6 @@
         "description": "Certificat de réussite du cours Sécurité Médicamenteuse."
       }
     },
-
     "quiz": {
       "question": "Question",
       "points": "points",
@@ -247,7 +228,6 @@
       "passing": "Minimum",
       "correct_answers": "Bonnes réponses"
     },
-
     "certificate": {
       "title": "Certificat de Réussite",
       "subtitle": "Cours Complété avec Succès",

@@ -13,7 +13,9 @@
     },
     "search": {
       "placeholder": "Rechercher médicaments, maladies, protocoles..."
-    }
+    },
+    "back": "Retour",
+    "loading": "Chargement..."
   },
   "nav": {
     "home": "Accueil",
@@ -754,7 +756,9 @@
     "results": "{count, plural, =0 {0 résultats} =1 {1 résultat} other {# résultats}}",
     "noResults": "Aucune maladie trouvée",
     "tryAnotherTerm": "Essayez de chercher un autre terme",
-    "noDescription": "Description non disponible"
+    "noDescription": "Description non disponible",
+    "loading": "Chargement...",
+    "loadingDiseases": "Chargement des maladies..."
   },
   "medicamentos": {
     "title": "Formulaire des Soins Primaires",
@@ -1634,7 +1638,9 @@
       "respiratorio": "Respiratoire",
       "gastro": "Gastro",
       "dermatologia": "Dermatologie",
-      "musculoesqueletico": "Musculo-squelettique"
+      "musculoesqueletico": "Musculo-squelettique",
+      "infeccioso": "Infectieux",
+      "neurologico": "Neurologique"
     },
     "complexity": {
       "basico": "Basique",

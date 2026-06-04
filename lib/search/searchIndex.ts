@@ -306,6 +306,10 @@ export function getSearchStats() {
 const SEARCH_HISTORY_KEY = 'darwin-mfc-search-history';
 const MAX_HISTORY_ITEMS = 20;
 
+function canUseLocalStorage(): boolean {
+  return typeof window !== 'undefined' && typeof localStorage !== 'undefined';
+}
+
 export interface SearchHistoryItem {
   query: string;
   timestamp: number;
@@ -317,6 +321,7 @@ export interface SearchHistoryItem {
  */
 export function saveSearchToHistory(query: string, resultsCount: number) {
   if (!query || query.trim().length < 2) return;
+  if (!canUseLocalStorage()) return;
 
   const history = getSearchHistory();
 
@@ -347,6 +352,8 @@ export function saveSearchToHistory(query: string, resultsCount: number) {
  * Get search history
  */
 export function getSearchHistory(): SearchHistoryItem[] {
+  if (!canUseLocalStorage()) return [];
+
   try {
     const stored = localStorage.getItem(SEARCH_HISTORY_KEY);
     if (!stored) return [];
@@ -363,6 +370,8 @@ export function getSearchHistory(): SearchHistoryItem[] {
  * Clear search history
  */
 export function clearSearchHistory() {
+  if (!canUseLocalStorage()) return;
+
   try {
     localStorage.removeItem(SEARCH_HISTORY_KEY);
   } catch (error) {
