@@ -17,6 +17,7 @@ import {
   getMedicamentoById as getLocalMedicamentoById,
 } from '@/lib/data/medicamentos/index';
 import { convertMedicamentoRowToMedicamento } from '@/lib/supabase/transforms/medicamentos';
+import { mergeMedicamentoCatalogs } from '@/lib/supabase/merge-medicamentos';
 
 /**
  * Get a medication by ID (server-side)
@@ -81,7 +82,10 @@ export async function getMedicamentosServer(): Promise<Medicamento[]> {
       return medicamentosConsolidados;
     }
 
-    return data.map(convertMedicamentoRowToMedicamento);
+    return mergeMedicamentoCatalogs(
+      medicamentosConsolidados,
+      data.map(convertMedicamentoRowToMedicamento)
+    );
   } catch (err) {
     console.error('Error in getMedicamentosServer:', err);
     return medicamentosConsolidados;

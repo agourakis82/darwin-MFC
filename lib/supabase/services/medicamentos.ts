@@ -16,9 +16,15 @@ import {
   getMedicamentoById as getLocalMedicamentoById,
   getMedicamentosByClasse as getLocalMedicamentosByClasse,
   searchMedicamentos as searchLocalMedicamentos,
-  getMedicamentoStats as getLocalMedicamentoStats,
 } from '@/lib/data/medicamentos/index';
 import { convertMedicamentoRowToMedicamento } from '@/lib/supabase/transforms/medicamentos';
+import { mergeMedicamentoCatalogs } from '@/lib/supabase/merge-medicamentos';
+
+const getLocalMedicamentosSUS = () =>
+  medicamentosConsolidados.filter(
+    (medicamento) =>
+      medicamento.rename || medicamento.apresentacoes.some((apresentacao) => apresentacao.disponivelSUS)
+  );
 
 /**
  * Get all medications
@@ -39,7 +45,10 @@ export async function getMedicamentos(): Promise<Medicamento[]> {
     return medicamentosConsolidados;
   }
 
-  return data.map(convertMedicamentoRowToMedicamento);
+  return mergeMedicamentoCatalogs(
+    medicamentosConsolidados,
+    data.map(convertMedicamentoRowToMedicamento)
+  );
 }
 
 /**
@@ -83,7 +92,10 @@ export async function getMedicamentosByClasse(classe: string): Promise<Medicamen
     return getLocalMedicamentosByClasse(classe);
   }
 
-  return data.map(convertMedicamentoRowToMedicamento);
+  return mergeMedicamentoCatalogs(
+    getLocalMedicamentosByClasse(classe),
+    data.map(convertMedicamentoRowToMedicamento)
+  );
 }
 
 /**
@@ -109,7 +121,10 @@ export async function searchMedicamentos(query: string): Promise<Medicamento[]> 
     return searchLocalMedicamentos(query);
   }
 
-  return data.map(convertMedicamentoRowToMedicamento);
+  return mergeMedicamentoCatalogs(
+    searchLocalMedicamentos(query),
+    data.map(convertMedicamentoRowToMedicamento)
+  ).slice(0, 50);
 }
 
 /**
@@ -117,7 +132,7 @@ export async function searchMedicamentos(query: string): Promise<Medicamento[]> 
  */
 export async function getMedicamentosSUS(): Promise<Medicamento[]> {
   if (!isSupabaseConfigured || !supabase) {
-    return medicamentosConsolidados.filter(m => m.rename || m.apresentacoes.some(a => a.disponivelSUS));
+    return getLocalMedicamentosSUS();
   }
 
   const { data, error } = await supabase
@@ -128,10 +143,13 @@ export async function getMedicamentosSUS(): Promise<Medicamento[]> {
 
   if (error) {
     console.error('Error fetching SUS medicamentos from Supabase:', error);
-    return medicamentosConsolidados.filter(m => m.rename);
+    return getLocalMedicamentosSUS();
   }
 
-  return data.map(convertMedicamentoRowToMedicamento);
+  return mergeMedicamentoCatalogs(
+    getLocalMedicamentosSUS(),
+    data.map(convertMedicamentoRowToMedicamento)
+  );
 }
 
 /**
@@ -145,46 +163,24 @@ export async function getMedicamentoStats(): Promise<{
   percentRENAME: number;
   percentSUS: number;
 }> {
-  if (!isSupabaseConfigured || !supabase) {
-    return getLocalMedicamentoStats();
-  }
-
-  // Get total count
-  const { count: total, error: totalError } = await supabase
-    .from('medicamentos')
-    .select('*', { count: 'exact', head: true });
-
-  // Get SUS count
-  const { count: susCount, error: susError } = await supabase
-    .from('medicamentos')
-    .select('*', { count: 'exact', head: true })
-    .eq('disponivel_sus', true);
-
-  // Get counts by class
-  const { data: classCounts, error: classError } = await supabase
-    .from('medicamentos')
-    .select('classe_terapeutica');
-
-  if (totalError || susError || classError) {
-    console.error('Error fetching medicamento stats from Supabase');
-    return getLocalMedicamentoStats();
-  }
-
-  const byClasse = (classCounts ?? []).reduce((acc, row) => {
-    const classe = (row as { classe_terapeutica: string }).classe_terapeutica;
-    acc[classe] = (acc[classe] || 0) + 1;
+  const medicamentos = await getMedicamentos();
+  const byClasse = medicamentos.reduce((acc, medicamento) => {
+    acc[medicamento.classeTerapeutica] = (acc[medicamento.classeTerapeutica] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
-
-  const totalCount = total || 0;
-  const susTotal = susCount || 0;
+  const susTotal = medicamentos.filter(
+    (medicamento) =>
+      medicamento.rename || medicamento.apresentacoes.some((apresentacao) => apresentacao.disponivelSUS)
+  ).length;
+  const renameTotal = medicamentos.filter((medicamento) => medicamento.rename).length;
+  const totalCount = medicamentos.length;
 
   return {
     total: totalCount,
-    rename: susTotal,
+    rename: renameTotal,
     disponivelSUS: susTotal,
     byClasse,
-    percentRENAME: totalCount > 0 ? Math.round((susTotal / totalCount) * 100) : 0,
+    percentRENAME: totalCount > 0 ? Math.round((renameTotal / totalCount) * 100) : 0,
     percentSUS: totalCount > 0 ? Math.round((susTotal / totalCount) * 100) : 0,
   };
 }
@@ -207,66 +203,32 @@ export async function getMedicamentosPaginated(
   pageSize: number;
   totalPages: number;
 }> {
-  if (!isSupabaseConfigured || !supabase) {
-    // Local pagination fallback
-    let filtered = medicamentosConsolidados;
-
-    if (filters?.classe) {
-      filtered = filtered.filter(m => m.classeTerapeutica === filters.classe);
-    }
-    if (filters?.disponivelSUS) {
-      filtered = filtered.filter(m => m.rename || m.apresentacoes.some(a => a.disponivelSUS));
-    }
-    if (filters?.search) {
-      const query = filters.search.toLowerCase();
-      filtered = filtered.filter(m =>
-        m.nomeGenerico.toLowerCase().includes(query) ||
-        m.nomesComerciais?.some(n => n.toLowerCase().includes(query)) ||
-        m.classeTerapeutica.toLowerCase().includes(query)
-      );
-    }
-
-    const total = filtered.length;
-    const start = (page - 1) * pageSize;
-    const data = filtered.slice(start, start + pageSize);
-
-    return {
-      data,
-      total,
-      page,
-      pageSize,
-      totalPages: Math.ceil(total / pageSize),
-    };
-  }
-
-  // Build Supabase query
-  let query = supabase.from('medicamentos').select('*', { count: 'exact' });
-
+  let filtered = await getMedicamentos();
   if (filters?.classe) {
-    query = query.eq('classe_terapeutica', filters.classe);
+    filtered = filtered.filter((medicamento) => medicamento.classeTerapeutica === filters.classe);
   }
   if (filters?.disponivelSUS) {
-    query = query.eq('disponivel_sus', true);
+    filtered = filtered.filter(
+      (medicamento) =>
+        medicamento.rename || medicamento.apresentacoes.some((apresentacao) => apresentacao.disponivelSUS)
+    );
   }
   if (filters?.search) {
     const searchTerm = filters.search.toLowerCase();
-    query = query.or(`nome_generico.ilike.%${searchTerm}%,classe_terapeutica.ilike.%${searchTerm}%`);
+    filtered = filtered.filter(
+      (medicamento) =>
+        medicamento.nomeGenerico.toLowerCase().includes(searchTerm) ||
+        medicamento.nomesComerciais?.some((nome) => nome.toLowerCase().includes(searchTerm)) ||
+        medicamento.classeTerapeutica.toLowerCase().includes(searchTerm)
+    );
   }
 
+  const total = filtered.length;
   const start = (page - 1) * pageSize;
-  const { data, error, count } = await query
-    .order('nome_generico')
-    .range(start, start + pageSize - 1);
-
-  if (error) {
-    console.error('Error fetching paginated medicamentos:', error);
-    return getMedicamentosPaginated(page, pageSize, filters);
-  }
-
-  const total = count || 0;
+  const data = filtered.slice(start, start + pageSize);
 
   return {
-    data: data.map(convertMedicamentoRowToMedicamento),
+    data,
     total,
     page,
     pageSize,
