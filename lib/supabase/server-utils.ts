@@ -41,7 +41,9 @@ export async function getMedicamentoServer(id: string): Promise<Medicamento | nu
       .single();
 
     if (error) {
-      console.error('Error fetching medicamento from Supabase:', error);
+      if (error.code !== 'PGRST116') {
+        console.error('Error fetching medicamento from Supabase:', error);
+      }
       // Fallback to local data
       return getLocalMedicamentoById(id) || null;
     }
@@ -72,8 +74,10 @@ export async function getMedicamentosServer(): Promise<Medicamento[]> {
       .select('*')
       .order('nome_generico');
 
-    if (error) {
-      console.error('Error fetching medicamentos from Supabase:', error);
+    if (error || !data?.length) {
+      if (error) {
+        console.error('Error fetching medicamentos from Supabase:', error);
+      }
       return medicamentosConsolidados;
     }
 
