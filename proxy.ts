@@ -47,7 +47,7 @@ function addSecurityHeaders(response: NextResponse): NextResponse {
   // Security Headers
   response.headers.set(
     'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://vitals.vercel-analytics.com; frame-ancestors 'none';"
+    "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://vitals.vercel-analytics.com https://*.supabase.co wss://*.supabase.co; frame-ancestors 'none';"
   );
 
   response.headers.set('X-Content-Type-Options', 'nosniff');

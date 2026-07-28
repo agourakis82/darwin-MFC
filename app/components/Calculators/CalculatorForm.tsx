@@ -132,8 +132,26 @@ function SelectInput({ input, value, onChange, error }: SelectInputProps) {
 interface NumberInputProps {
   input: CalculatorInput;
   value: number | undefined;
-  onChange: (value: number) => void;
+  onChange: (value: number | undefined) => void;
   error?: string;
+}
+
+function getDefaultStep(input: CalculatorInput): number | 'any' {
+  if (input.validation?.step !== undefined) {
+    return input.validation.step;
+  }
+
+  switch (input.type) {
+    case 'integer':
+    case 'age':
+    case 'heart-rate':
+    case 'respiratory-rate':
+    case 'oxygen-saturation':
+    case 'gcs':
+      return 1;
+    default:
+      return 'any';
+  }
 }
 
 function NumberInput({ input, value, onChange, error }: NumberInputProps) {
@@ -144,10 +162,12 @@ function NumberInput({ input, value, onChange, error }: NumberInputProps) {
           id={input.id}
           type="number"
           value={value ?? ''}
-          onChange={(e) => onChange(Number(e.target.value))}
+          onChange={(e) =>
+            onChange(e.target.value === '' ? undefined : Number(e.target.value))
+          }
           min={input.validation?.min}
           max={input.validation?.max}
-          step={input.validation?.step || 1}
+          step={getDefaultStep(input)}
           placeholder={`Enter ${input.label.toLowerCase()}`}
           className={cn(
             'w-full px-3 py-2.5 rounded-lg',
@@ -227,7 +247,7 @@ export function CalculatorForm({
   initialValues = {},
   className,
 }: CalculatorFormProps) {
-  const [values, setValues] = useState<CalculatorInputValues>(initialValues);
+  const [values, setValues] = useState<Partial<CalculatorInputValues>>(initialValues);
   const [errors, setErrors] = useState<CalculatorValidationErrors>({});
   const [touched, setTouched] = useState<Set<string>>(new Set());
 
@@ -246,6 +266,21 @@ export function CalculatorForm({
     (input: CalculatorInput, value: number | undefined): string | undefined => {
       if (input.required && (value === undefined || value === null)) {
         return 'This field is required';
+      }
+
+      if (value !== undefined) {
+        if (!Number.isFinite(value)) {
+          return 'Enter a valid number';
+        }
+
+        const step = getDefaultStep(input);
+        if (step !== 'any') {
+          const stepBase = input.validation?.min ?? 0;
+          const stepDistance = (value - stepBase) / step;
+          if (Math.abs(stepDistance - Math.round(stepDistance)) > 1e-9) {
+            return `Use increments of ${step}`;
+          }
+        }
       }
 
       if (value !== undefined && input.validation) {
@@ -268,7 +303,7 @@ export function CalculatorForm({
   );
 
   const handleChange = useCallback(
-    (inputId: string, value: number) => {
+    (inputId: string, value: number | undefined) => {
       setValues((prev) => ({ ...prev, [inputId]: value }));
       setTouched((prev) => new Set(prev).add(inputId));
 
@@ -309,7 +344,7 @@ export function CalculatorForm({
       setTouched(new Set(calculator.inputs.map((i) => i.id)));
 
       if (isValid) {
-        onCalculate(values);
+        onCalculate(values as CalculatorInputValues);
       }
     },
     [calculator.inputs, values, validateInput, onCalculate]
@@ -347,16 +382,16 @@ export function CalculatorForm({
             show = conditionValue !== compareValue;
             break;
           case '>':
-            show = conditionValue > compareValue;
+            show = conditionValue !== undefined && conditionValue > compareValue;
             break;
           case '<':
-            show = conditionValue < compareValue;
+            show = conditionValue !== undefined && conditionValue < compareValue;
             break;
           case '>=':
-            show = conditionValue >= compareValue;
+            show = conditionValue !== undefined && conditionValue >= compareValue;
             break;
           case '<=':
-            show = conditionValue <= compareValue;
+            show = conditionValue !== undefined && conditionValue <= compareValue;
             break;
         }
 
@@ -413,7 +448,12 @@ export function CalculatorForm({
   );
 
   return (
-    <form onSubmit={handleSubmit} className={cn('space-y-6', className)} data-testid="calculator-form">
+    <form
+      onSubmit={handleSubmit}
+      noValidate
+      className={cn('space-y-6', className)}
+      data-testid="calculator-form"
+    >
       {Object.entries(groupedInputs).map(([groupName, inputs]) => (
         <div key={groupName} className="space-y-4">
           {Object.keys(groupedInputs).length > 1 && (
