@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "darwin.sounio.calibration-certificate.v1",
+  "certificateId": "respiratory-pediatric-aps-br-pending",
+  "modelVersion": "respiratory-pediatric-0.1.0",
+  "status": "not-calibrated",
+  "issuedAt": null,
+  "validFrom": null,
+  "validUntil": null,
+  "population": {
+    "country": "BR",
+    "careSetting": "APS/SUS",
+    "locale": "pt-BR",
+    "ageMinimumDays": 0,
+    "ageMaximumYearsExclusive": 18,
+    "sites": [],
+    "inclusionCriteria": [
+      "Pediatric patient evaluated in primary care for an acute respiratory presentation"
+    ],
+    "exclusionCriteria": [
+      "No retrospective patient-level temporal validation cohort is bound to this certificate"
+    ]
+  },
+  "method": {
+    "family": "split-conformal",
+    "variant": "class-conditional-and-subgroup-audited",
+    "alpha": 0.05,
+    "calibrationSplit": "temporal-by-patient",
+    "decisionPolicy": "cost-sensitive-selective-prediction"
+  },
+  "coverage": {
+    "target": 0.95,
+    "marginalObserved": null,
+    "lowerConfidenceBound": null,
+    "classConditional": {},
+    "subgroupConditional": {},
+    "meanPredictionSetSize": null
+  },
+  "clinicalUtility": {
+    "decisionCurveNetBenefit": null,
+    "pneumoniaTop3Recall": null,
+    "severitySensitivity": null,
+    "brierScore": null,
+    "expectedCalibrationError": null
+  },
+  "distribution": {
+    "status": "unmeasured",
+    "referenceFingerprint": null,
+    "monitor": "maximum-mean-discrepancy-plus-delayed-label-calibration",
+    "thresholds": {},
+    "lastCheckedAt": null
+  },
+  "hashes": {
+    "developmentCohortSha256": null,
+    "calibrationCohortSha256": null,
+    "evaluationCohortSha256": null,
+    "analysisPlanSha256": null,
+    "analysisCodeSha256": null
+  },
+  "signature": null,
+  "refusalReasons": [
+    "Retrospective patient-level temporal calibration has not been performed.",
+    "No subgroup-conditional coverage evidence is available.",
+    "No distribution reference fingerprint is available.",
+    "No production signature is present."
+  ]
+}

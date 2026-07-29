@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 import { Link } from '@/i18n/routing';
-import { Copy, Download, Check, FileText, ClipboardList, Stethoscope, Pill, Target, User, ChevronDown, ChevronUp, Users, Network, ExternalLink } from 'lucide-react';
+import { Copy, Download, Check, FileText, ClipboardList, Stethoscope, Pill, Target, User, ChevronDown, ChevronUp, Users, Network, ExternalLink, Lightbulb, Plus } from 'lucide-react';
 import type { ChecklistProgress, ChecklistConsulta } from '@/lib/types/checklist';
 import { checklistProgressToSOAPText, checklistProgressToSOAPResumo } from './ChecklistSOAPExport';
 import SOAPNLPSuggestions, { SOAPNLPSuggestionsInline } from './SOAPNLPSuggestions';
@@ -14,7 +14,9 @@ import { saveConsultationToHistory } from '@/lib/utils/recommendations';
 import type { Recommendation } from '@/lib/utils/recommendations';
 import DrugInteractionAlerts from './DrugInteractionAlerts';
 import DifferentialDiagnosisAssistant from '@/app/components/Diagnosis/DifferentialDiagnosisAssistant';
+import TreatmentSuggestionPanel from '@/app/components/Diagnosis/TreatmentSuggestionPanel';
 import { extractSymptomsFromSOAP } from '@/lib/utils/symptom-extraction';
+import type { PatientAgeUnit } from '@/lib/utils/differential-diagnosis';
 
 interface FamilyToolsData {
   genogramaResumo?: string;
@@ -29,6 +31,7 @@ export interface SOAPData {
   paciente?: {
     iniciais?: string;
     idade?: string;
+    idadeUnidade?: PatientAgeUnit;
     sexo?: string;
   };
   data?: string;
@@ -88,7 +91,7 @@ export default function SOAPExport({
   onDataChange,
 }: SOAPExportProps) {
   const [data, setData] = useState<SOAPData>({
-    paciente: { iniciais: '', idade: '', sexo: '' },
+    paciente: { iniciais: '', idade: '', idadeUnidade: 'anos', sexo: '' },
     data: new Date().toISOString().split('T')[0],
     subjetivo: '',
     objetivo: {
@@ -113,6 +116,7 @@ export default function SOAPExport({
   });
 
   const [copied, setCopied] = useState(false);
+  const [generatedAt, setGeneratedAt] = useState('');
   const [expandedSections, setExpandedSections] = useState({
     identificacao: true,
     subjetivo: true,
@@ -125,8 +129,17 @@ export default function SOAPExport({
   const [newOrientacao, setNewOrientacao] = useState('');
   const [newExame, setNewExame] = useState('');
   const [newMedicamento, setNewMedicamento] = useState({ medicamento: '', posologia: '', duracao: '' });
+  const [selectedDiagnosisId, setSelectedDiagnosisId] = useState(doencaId || '');
 
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    setGeneratedAt(new Date().toLocaleString('pt-BR'));
+  }, []);
+
+  useEffect(() => {
+    if (doencaId) setSelectedDiagnosisId(doencaId);
+  }, [doencaId]);
 
   const toggleSection = (section: keyof typeof expandedSections) => {
     setExpandedSections(prev => ({ ...prev, [section]: !prev[section] }));
@@ -149,7 +162,7 @@ export default function SOAPExport({
       text += '═══════════════════════════════════════\n\n';
       
       if (data.paciente?.iniciais) text += `Paciente: ${data.paciente.iniciais}`;
-      if (data.paciente?.idade) text += ` | ${data.paciente.idade} anos`;
+      if (data.paciente?.idade) text += ` | ${data.paciente.idade} ${data.paciente.idadeUnidade || 'anos'}`;
       if (data.paciente?.sexo) text += ` | ${data.paciente.sexo}`;
       text += '\n';
       if (data.data) text += `Data: ${new Date(data.data).toLocaleDateString('pt-BR')}\n`;
@@ -292,10 +305,10 @@ export default function SOAPExport({
     }
 
     text += '\n═══════════════════════════════════════\n';
-    text += `Gerado por Darwin-MFC em ${new Date().toLocaleString('pt-BR')}\n`;
+    text += `Gerado por Darwin-MFC em ${generatedAt || 'sessão atual'}\n`;
 
     return text;
-  }, [data]);
+  }, [data, generatedAt]);
 
   const copyToClipboard = async () => {
     try {
@@ -323,7 +336,7 @@ export default function SOAPExport({
     icon: Icon, 
     title, 
     section,
-    color 
+    color: _color
   }: { 
     icon: React.ElementType; 
     title: string; 
@@ -332,7 +345,7 @@ export default function SOAPExport({
   }) => (
     <button
       onClick={() => toggleSection(section)}
-      className={`w-full flex items-center justify-between p-3 ${color} rounded-lg transition-colors`}
+      className="flex w-full items-center justify-between border-b border-white/10 bg-[#0a151b] p-3 text-zinc-200 transition-colors hover:bg-white/[0.04]"
     >
       <div className="flex items-center gap-2">
         <Icon className="w-5 h-5" />
@@ -356,22 +369,59 @@ export default function SOAPExport({
     return null;
   };
 
+  const handleDiagnosisSelect = (selectedDoencaId: string) => {
+    const doenca = todasDoencas.find(d => d.id === selectedDoencaId);
+    if (!doenca?.titulo) return;
+
+    setSelectedDiagnosisId(selectedDoencaId);
+    const hipoteses = data.avaliacao?.hipoteses || [];
+    updateData({
+      avaliacao: {
+        ...data.avaliacao,
+        hipoteses: hipoteses.includes(doenca.titulo) ? hipoteses : [...hipoteses, doenca.titulo],
+        cid10: [...new Set([...(data.avaliacao?.cid10 || []), ...(doenca.cid10 || [])])],
+        ciap2: [...new Set([...(data.avaliacao?.ciap2 || []), ...(doenca.ciap2 || [])])],
+      }
+    });
+  };
+
+  const handleAddTreatment = (prescription: { medicamento: string; posologia: string; duracao?: string }) => {
+    const prescriptions = data.plano?.prescricoes || [];
+    const normalizedName = prescription.medicamento.toLowerCase();
+    if (prescriptions.some(item => item.medicamento.toLowerCase() === normalizedName)) return;
+
+    updateData({
+      plano: {
+        ...data.plano,
+        prescricoes: [...prescriptions, prescription],
+      }
+    });
+    setExpandedSections(previous => ({ ...previous, plano: true }));
+  };
+
+  const handlePatientContextChange = (updates: { age?: string; ageUnit?: PatientAgeUnit; weightKg?: string }) => {
+    const nextData: SOAPData = {
+      ...data,
+      paciente: {
+        ...data.paciente,
+        idade: updates.age ?? data.paciente?.idade,
+        idadeUnidade: updates.ageUnit ?? data.paciente?.idadeUnidade ?? 'anos',
+      },
+      objetivo: {
+        ...data.objetivo,
+        sinaisVitais: {
+          ...data.objetivo?.sinaisVitais,
+          peso: updates.weightKg ?? data.objetivo?.sinaisVitais?.peso,
+        },
+      },
+    };
+    setData(nextData);
+    onDataChange?.(nextData);
+  };
+
   const handleSelectRecommendation = (rec: Recommendation) => {
     if (rec.type === 'diagnosis' && rec.metadata?.doencaId) {
-      const doenca = todasDoencas.find(d => d.id === rec.metadata?.doencaId);
-      if (doenca && doenca.titulo) {
-        const hipoteses = data.avaliacao?.hipoteses || [];
-        if (!hipoteses.includes(doenca.titulo)) {
-          updateData({
-            avaliacao: {
-              ...data.avaliacao,
-              hipoteses: [...hipoteses, doenca.titulo],
-              cid10: [...new Set([...(data.avaliacao?.cid10 || []), ...(doenca.cid10 || [])])],
-              ciap2: [...new Set([...(data.avaliacao?.ciap2 || []), ...(doenca.ciap2 || [])])],
-            }
-          });
-        }
-      }
+      handleDiagnosisSelect(rec.metadata.doencaId);
     } else if (rec.type === 'medication' && rec.metadata?.medicamentoId) {
       const medicamentoId = rec.metadata.medicamentoId;
       const medicamento = todosMedicamentos.find(m => m.id === medicamentoId);
@@ -430,7 +480,30 @@ export default function SOAPExport({
   }, [data.subjetivo, data.objetivo?.exameFisico]);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
+      <section id="assistente-clinico" className="space-y-3 scroll-mt-24">
+        <DifferentialDiagnosisAssistant
+          initialSymptom={extractedSymptoms.principal}
+          initialSecondarySymptoms={extractedSymptoms.secundarios}
+          selectedDiagnosisId={selectedDiagnosisId}
+          patientAge={data.paciente?.idade || ''}
+          patientAgeUnit={data.paciente?.idadeUnidade || 'anos'}
+          patientWeightKg={data.objetivo?.sinaisVitais?.peso || ''}
+          onPatientContextChange={handlePatientContextChange}
+          onDiagnosisSelect={handleDiagnosisSelect}
+        />
+        {selectedDiagnosisId && (
+          <TreatmentSuggestionPanel
+            doencaId={selectedDiagnosisId}
+            prescriptions={data.plano?.prescricoes || []}
+            patientAge={data.paciente?.idade || ''}
+            patientAgeUnit={data.paciente?.idadeUnidade || 'anos'}
+            patientWeightKg={data.objetivo?.sinaisVitais?.peso || ''}
+            onAddMedication={handleAddTreatment}
+          />
+        )}
+      </section>
+
       {/* Painel de Recomendações */}
       <RecommendationsPanel
         currentSOAP={data}
@@ -439,12 +512,12 @@ export default function SOAPExport({
         maxRecommendations={8}
       />
 
-      <div className="grid lg:grid-cols-2 gap-6">
+      <div className="grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)]">
         {/* Formulário */}
         <div className="space-y-4">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
-            <FileText className="w-6 h-6 text-white" />
+        <div className="mb-4 flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-md border border-cyan-300/30 bg-cyan-300/[0.08]">
+            <FileText className="h-5 w-5 text-cyan-300" />
           </div>
           <div>
             <h2 className="text-xl font-bold text-slate-900 dark:text-white">Nota SOAP</h2>
@@ -453,7 +526,7 @@ export default function SOAPExport({
         </div>
 
         {/* Identificação */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+        <div className="overflow-hidden rounded-md border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800">
           <SectionHeader 
             icon={User} 
             title="Identificação" 
@@ -468,12 +541,28 @@ export default function SOAPExport({
                 onChange={e => updateData({ paciente: { ...data.paciente, iniciais: e.target.value } })}
                 className="col-span-1 px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm"
               />
-              <input
-                placeholder="Idade"
-                value={data.paciente?.idade || ''}
-                onChange={e => updateData({ paciente: { ...data.paciente, idade: e.target.value } })}
-                className="col-span-1 px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm"
-              />
+              <div className="col-span-1 flex min-w-0 gap-1.5">
+                <input
+                  type="number"
+                  min="0"
+                  step="0.1"
+                  inputMode="decimal"
+                  placeholder="Idade"
+                  value={data.paciente?.idade || ''}
+                  onChange={e => handlePatientContextChange({ age: e.target.value })}
+                  className="min-w-0 flex-1 px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm"
+                />
+                <select
+                  aria-label="Unidade da idade"
+                  value={data.paciente?.idadeUnidade || 'anos'}
+                  onChange={e => handlePatientContextChange({ ageUnit: e.target.value as PatientAgeUnit })}
+                  className="w-[88px] px-2 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm"
+                >
+                  <option value="dias">dias</option>
+                  <option value="meses">meses</option>
+                  <option value="anos">anos</option>
+                </select>
+              </div>
               <select
                 value={data.paciente?.sexo || ''}
                 onChange={e => updateData({ paciente: { ...data.paciente, sexo: e.target.value } })}
@@ -494,7 +583,7 @@ export default function SOAPExport({
         </div>
 
         {/* S - Subjetivo */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+        <div className="overflow-hidden rounded-md border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800">
           <SectionHeader 
             icon={ClipboardList} 
             title="【S】 Subjetivo" 
@@ -555,7 +644,7 @@ export default function SOAPExport({
         </div>
 
         {/* O - Objetivo */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+        <div className="overflow-hidden rounded-md border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800">
           <SectionHeader 
             icon={Stethoscope} 
             title="【O】 Objetivo" 
@@ -626,7 +715,7 @@ export default function SOAPExport({
         </div>
 
         {/* A - Avaliação */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+        <div className="overflow-hidden rounded-md border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800">
           <SectionHeader 
             icon={Target} 
             title="【A】 Avaliação" 
@@ -635,28 +724,6 @@ export default function SOAPExport({
           />
           {expandedSections.avaliacao && (
             <div className="p-4 space-y-4">
-              {/* Assistente de Diagnóstico Diferencial */}
-              <DifferentialDiagnosisAssistant
-                initialSymptom={extractedSymptoms.principal}
-                initialSecondarySymptoms={extractedSymptoms.secundarios}
-                onDiagnosisSelect={(doencaId) => {
-                  const doenca = todasDoencas.find(d => d.id === doencaId);
-                  if (doenca?.titulo) {
-                    const hipoteses = data.avaliacao?.hipoteses || [];
-                    if (!hipoteses.includes(doenca.titulo)) {
-                      updateData({
-                        avaliacao: {
-                          ...data.avaliacao,
-                          hipoteses: [...hipoteses, doenca.titulo],
-                          cid10: [...new Set([...(data.avaliacao?.cid10 || []), ...(doenca.cid10 || [])])],
-                          ciap2: [...new Set([...(data.avaliacao?.ciap2 || []), ...(doenca.ciap2 || [])])],
-                        }
-                      });
-                    }
-                  }
-                }}
-              />
-
               <div>
                 <label className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-2 block">Hipóteses Diagnósticas</label>
                 <div className="flex gap-2 mb-2">
@@ -729,7 +796,7 @@ export default function SOAPExport({
         </div>
 
         {/* P - Plano */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+        <div className="overflow-hidden rounded-md border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800">
           <SectionHeader 
             icon={Pill} 
             title="【P】 Plano" 
@@ -771,7 +838,7 @@ export default function SOAPExport({
                     }}
                     className="px-3 py-1.5 bg-green-500 text-white rounded text-sm hover:bg-green-600"
                   >
-                    +
+                    <Plus className="h-4 w-4" aria-hidden="true" />
                   </button>
                 </div>
                 {data.plano?.prescricoes?.map((p, i) => (
@@ -796,7 +863,7 @@ export default function SOAPExport({
         </div>
 
         {/* F - Família (MFC) */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+        <div className="overflow-hidden rounded-md border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800">
           <SectionHeader 
             icon={Users} 
             title="【F】 Abordagem Familiar (MFC)" 
@@ -872,7 +939,8 @@ export default function SOAPExport({
               {/* Dica */}
               <div className="p-3 bg-rose-50 dark:bg-rose-900/20 rounded-lg border border-rose-200 dark:border-rose-800">
                 <p className="text-xs text-rose-700 dark:text-rose-300">
-                  💡 <strong>Dica MFC:</strong> A abordagem familiar é fundamental na APS. Considere o ciclo de vida familiar, crises normativas/paranormativas, e a influência do contexto social na saúde do paciente.
+                  <Lightbulb className="mr-1 inline h-3.5 w-3.5" aria-hidden="true" />
+                  <strong>Dica MFC:</strong> A abordagem familiar é fundamental na APS. Considere o ciclo de vida familiar, crises normativas/paranormativas, e a influência do contexto social na saúde do paciente.
                 </p>
               </div>
             </div>
@@ -882,7 +950,7 @@ export default function SOAPExport({
 
       {/* Preview */}
       <div className="lg:sticky lg:top-4 h-fit">
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+        <div className="overflow-hidden rounded-md border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800">
           <div className="p-4 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
             <h3 className="font-bold text-slate-900 dark:text-white">Pré-visualização</h3>
             <div className="flex gap-2">
@@ -914,39 +982,6 @@ export default function SOAPExport({
         </div>
       </div>
 
-      {/* Preview */}
-      <div className="lg:sticky lg:top-4 h-fit">
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-          <div className="p-4 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
-            <h3 className="font-bold text-slate-900 dark:text-white">Pré-visualização</h3>
-            <div className="flex gap-2">
-              <button
-                onClick={copyToClipboard}
-                className={`px-3 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 transition-colors ${
-                  copied 
-                    ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' 
-                    : 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800'
-                }`}
-              >
-                {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                {copied ? 'Copiado!' : 'Copiar'}
-              </button>
-              <button
-                onClick={downloadTxt}
-                className="px-3 py-1.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium flex items-center gap-1 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
-              >
-                <Download className="w-4 h-4" />
-                Download
-              </button>
-            </div>
-          </div>
-          <div className="p-4 max-h-[calc(100vh-200px)] overflow-y-auto">
-            <pre className="text-xs text-slate-700 dark:text-slate-300 whitespace-pre-wrap font-mono bg-slate-50 dark:bg-slate-900 p-4 rounded-lg">
-              {formattedSOAP}
-            </pre>
-          </div>
-        </div>
-      </div>
       </div>
 
       {/* Botão para salvar no histórico */}
@@ -963,4 +998,3 @@ export default function SOAPExport({
     </div>
   );
 }
-

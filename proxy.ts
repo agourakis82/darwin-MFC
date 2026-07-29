@@ -15,10 +15,15 @@ const defaultLocale = 'pt';
  * Add security headers to response
  */
 function addSecurityHeaders(response: NextResponse): NextResponse {
+  const scriptSources =
+    process.env.NODE_ENV === 'development'
+      ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
+      : "script-src 'self' 'unsafe-inline'";
+
   // Security Headers
   response.headers.set(
     'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://vitals.vercel-analytics.com https://*.supabase.co wss://*.supabase.co; frame-ancestors 'none';"
+    `default-src 'self'; ${scriptSources}; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://vitals.vercel-analytics.com https://*.supabase.co wss://*.supabase.co; frame-ancestors 'none';`
   );
 
   response.headers.set('X-Content-Type-Options', 'nosniff');

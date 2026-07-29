@@ -43,6 +43,7 @@ import { pesi } from './pesi';
 // =============================================================================
 
 import { meldNa } from './meld-na';
+import { meld3 } from './meld-3';
 import { childPugh } from './child-pugh';
 
 // =============================================================================
@@ -117,6 +118,7 @@ export const allCalculators: ClinicalCalculator[] = [
   curb65,
   pesi,
   // Hepatology
+  meld3,
   meldNa,
   childPugh,
   // Psychiatry
@@ -180,6 +182,7 @@ export { curb65 } from './curb65';
 export { pesi } from './pesi';
 
 // Hepatology
+export { meld3 } from './meld-3';
 export { meldNa } from './meld-na';
 export { childPugh } from './child-pugh';
 

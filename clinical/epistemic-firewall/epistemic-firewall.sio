@@ -1,0 +1,62 @@
+//@ run-pass
+// Sounio is the source of truth for the browser firewall policy table.
+// The build executes every possible gate mask and serializes the results.
+
+let DISPOSITION_REFUSE: i64 = 0
+let DISPOSITION_ASK: i64 = 1
+let DISPOSITION_DEFER: i64 = 2
+let DISPOSITION_ACT: i64 = 3
+
+let REASON_INTEGRITY: i64 = 10
+let REASON_CALIBRATION: i64 = 11
+let REASON_SIGNATURE: i64 = 12
+let REASON_POPULATION: i64 = 13
+let REASON_TEMPORAL: i64 = 14
+let REASON_DRIFT: i64 = 15
+let REASON_RED_FLAG: i64 = 20
+let REASON_OBSERVATION: i64 = 30
+let REASON_AUTHORIZED: i64 = 40
+
+fn gate(mask: i64, bit: i64) -> bool {
+    (mask & bit) != 0
+}
+
+fn disposition(mask: i64) -> i64 with Observe {
+    if !gate(mask, 1) { return DISPOSITION_REFUSE }
+    if !gate(mask, 2) { return DISPOSITION_REFUSE }
+    if !gate(mask, 4) { return DISPOSITION_REFUSE }
+    if !gate(mask, 8) { return DISPOSITION_REFUSE }
+    if !gate(mask, 16) { return DISPOSITION_REFUSE }
+    if !gate(mask, 32) { return DISPOSITION_REFUSE }
+    if gate(mask, 64) { return DISPOSITION_DEFER }
+    if gate(mask, 128) { return DISPOSITION_ASK }
+    DISPOSITION_ACT
+}
+
+fn reason(mask: i64) -> i64 with Observe {
+    if !gate(mask, 1) { return REASON_INTEGRITY }
+    if !gate(mask, 2) { return REASON_CALIBRATION }
+    if !gate(mask, 4) { return REASON_SIGNATURE }
+    if !gate(mask, 8) { return REASON_POPULATION }
+    if !gate(mask, 16) { return REASON_TEMPORAL }
+    if !gate(mask, 32) { return REASON_DRIFT }
+    if gate(mask, 64) { return REASON_RED_FLAG }
+    if gate(mask, 128) { return REASON_OBSERVATION }
+    REASON_AUTHORIZED
+}
+
+fn main() -> i64 with IO, Mut, Observe {
+    var mask: i64 = 0
+    while mask < 256 {
+        print("P ")
+        print_int(mask)
+        print(" ")
+        print_int(disposition(mask))
+        print(" ")
+        print_int(reason(mask))
+        println("")
+        mask = mask + 1
+    }
+    println("SOUNIO_EPISTEMIC_FIREWALL_OK")
+    0
+}

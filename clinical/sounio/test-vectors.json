@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "darwin.sounio.clinical-vectors.v1",
+  "vectors": [
+    { "id": "preschool-viral-uri", "ageYears": 4, "present": ["fever", "cough", "coryza", "sore_throat"], "absent": ["dyspnea", "wheeze", "stridor", "tachypnea", "hypoxemia", "paroxysmal_cough", "age_under_2", "duration_over_10d"], "expectedLeader": "ivas-pediatrica", "expectedNextQuestion": null },
+    { "id": "infant-bronchiolitis", "ageYears": 0.8, "present": ["cough", "coryza", "dyspnea", "wheeze", "tachypnea", "age_under_2"], "absent": ["stridor", "hypoxemia", "paroxysmal_cough", "duration_over_10d"], "expectedLeader": "bronquiolite", "expectedNextQuestion": "fever" },
+    { "id": "preschool-pneumonia", "ageYears": 4, "present": ["fever", "cough", "dyspnea", "tachypnea", "hypoxemia"], "absent": ["coryza", "wheeze", "stridor", "paroxysmal_cough", "age_under_2"], "expectedLeader": "pneumonia-adquirida-comunidade-pediatrica", "expectedNextQuestion": "sore_throat" },
+    { "id": "preschool-croup", "ageYears": 3, "present": ["cough", "coryza", "stridor"], "absent": ["wheeze", "hypoxemia", "paroxysmal_cough", "age_under_2", "duration_over_10d"], "expectedLeader": "crupe", "expectedNextQuestion": "tachypnea" },
+    { "id": "young-infant-pertussis", "ageYears": 0.25, "present": ["cough", "paroxysmal_cough", "age_under_2", "duration_over_10d"], "absent": ["fever", "coryza", "wheeze", "stridor"], "expectedLeader": "coqueluche", "expectedNextQuestion": "tachypnea" }
+  ]
+}

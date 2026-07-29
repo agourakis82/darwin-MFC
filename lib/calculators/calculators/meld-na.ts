@@ -3,7 +3,7 @@
  * ==============
  *
  * Model for End-Stage Liver Disease with Sodium.
- * Used for liver transplant prioritization.
+ * Kept for historical comparisons and existing bookmarks.
  */
 
 import type { ClinicalCalculator, ScoreInterpretation } from '../types';
@@ -14,13 +14,13 @@ export const meldNa: ClinicalCalculator = {
   abbreviation: 'MELD-Na',
   category: 'hepatology',
   description:
-    'Predicts 90-day mortality in patients with end-stage liver disease. Used for liver transplant allocation.',
+    'Predicts 90-day mortality in patients with end-stage liver disease. Superseded by MELD 3.0 for current adult liver transplant allocation in Brazil.',
   purpose:
-    'The MELD-Na score estimates survival in patients with chronic liver disease and prioritizes liver transplant allocation.',
+    'The MELD-Na score estimates survival in chronic liver disease and is retained for historical comparison. Use MELD 3.0 for current adult allocation workflows in Brazil.',
 
   indications: [
     'End-stage liver disease assessment',
-    'Liver transplant prioritization',
+    'Historical comparison with prior liver transplant scoring',
     'Prognosis in cirrhosis',
     'TIPS procedure risk assessment',
   ],
@@ -234,5 +234,10 @@ export const meldNa: ClinicalCalculator = {
   ],
 
   validationStudy:
-    'Validated in UNOS database. Now standard for US liver transplant allocation.',
+    'Validated in the UNOS database. This version is no longer the current adult allocation model in Brazil; use MELD 3.0.',
+  notes: [
+    'Do not use MELD-Na as the current adult liver transplant allocation score in Brazil.',
+  ],
+  relatedCalculators: ['meld-3', 'child-pugh'],
+  lastUpdated: '2026-07-29',
 };

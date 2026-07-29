@@ -1,367 +1,405 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Brain, Plus, X, Stethoscope, TestTube, AlertTriangle, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
+import React, { useEffect, useMemo, useState } from 'react';
+import {
+  AlertTriangle,
+  Brain,
+  Check,
+  ChevronDown,
+  ChevronUp,
+  Plus,
+  Search,
+  ShieldCheck,
+  ShieldX,
+  Stethoscope,
+  TestTube,
+  X,
+} from 'lucide-react';
 import {
   generateDifferentialDiagnosis,
-  generateDiagnosticPathway,
+  getAllSintomas,
+  patientAgeInYears,
   type DifferentialDiagnosisResult,
-  type DiagnosticPathway,
+  type PatientAgeUnit,
 } from '@/lib/utils/differential-diagnosis';
-import { Link } from '@/i18n/routing';
+import { runSilentClinicalKernel } from '@/lib/clinical-kernel/loader';
+import type { EpistemicDifferential } from '@/lib/clinical-kernel/types';
 
 interface DifferentialDiagnosisAssistantProps {
   initialSymptom?: string;
   initialSecondarySymptoms?: string[];
+  selectedDiagnosisId?: string;
+  patientAge?: string;
+  patientAgeUnit?: PatientAgeUnit;
+  patientWeightKg?: string;
+  onPatientContextChange?: (updates: { age?: string; ageUnit?: PatientAgeUnit; weightKg?: string }) => void;
   onDiagnosisSelect?: (doencaId: string) => void;
 }
+
+const probabilityStyles = {
+  alta: 'border-emerald-300/25 bg-emerald-300/[0.06] text-emerald-200',
+  moderada: 'border-amber-300/25 bg-amber-300/[0.06] text-amber-200',
+  baixa: 'border-cyan-300/20 bg-cyan-300/[0.05] text-cyan-200',
+};
 
 export default function DifferentialDiagnosisAssistant({
   initialSymptom = '',
   initialSecondarySymptoms = [],
+  selectedDiagnosisId,
+  patientAge = '',
+  patientAgeUnit = 'anos',
+  patientWeightKg = '',
+  onPatientContextChange,
   onDiagnosisSelect,
 }: DifferentialDiagnosisAssistantProps) {
-  const [sintomaPrincipal, setSintomaPrincipal] = useState(initialSymptom);
-  const [sintomasSecundarios, setSintomasSecundarios] = useState<string[]>(initialSecondarySymptoms);
-  const [novoSintoma, setNovoSintoma] = useState('');
+  const [primarySymptom, setPrimarySymptom] = useState(initialSymptom);
+  const [secondarySymptoms, setSecondarySymptoms] = useState<string[]>(initialSecondarySymptoms);
+  const [newSymptom, setNewSymptom] = useState('');
   const [result, setResult] = useState<DifferentialDiagnosisResult | null>(null);
-  const [pathway, setPathway] = useState<DiagnosticPathway | null>(null);
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [kernelResult, setKernelResult] = useState<EpistemicDifferential | null>(null);
+  const [kernelChecking, setKernelChecking] = useState(false);
+  const [expanded, setExpanded] = useState(true);
+  const symptomNames = useMemo(() => getAllSintomas().map(item => item.nome), []);
+  const ageValue = patientAge === '' ? undefined : Number(patientAge.replace(',', '.'));
+  const weightKg = patientWeightKg === '' ? undefined : Number(patientWeightKg.replace(',', '.'));
+  const ageYears = patientAgeInYears({ ageValue, ageUnit: patientAgeUnit });
+  const ageBand = ageYears === undefined
+    ? null
+    : ageYears < (2 / 12) ? 'Neonatal / lactente jovem'
+    : ageYears < 2 ? 'Lactente'
+    : ageYears < 6 ? 'Pré-escolar'
+    : ageYears < 12 ? 'Escolar'
+    : ageYears < 18 ? 'Adolescente'
+    : ageYears >= 65 ? 'Pessoa idosa'
+    : 'Adulto';
 
-  // Atualiza quando initialSymptom muda (ex: quando usuário digita no SOAP)
-  React.useEffect(() => {
-    if (initialSymptom) {
-      setSintomaPrincipal(initialSymptom);
-    }
+  useEffect(() => {
+    if (initialSymptom) setPrimarySymptom(initialSymptom);
   }, [initialSymptom]);
 
-  React.useEffect(() => {
-    if (initialSecondarySymptoms.length > 0) {
-      setSintomasSecundarios(initialSecondarySymptoms);
-    }
+  useEffect(() => {
+    if (initialSecondarySymptoms.length > 0) setSecondarySymptoms(initialSecondarySymptoms);
   }, [initialSecondarySymptoms]);
 
-  const handleAnalyze = () => {
-    if (!sintomaPrincipal.trim()) return;
-
-    const differential = generateDifferentialDiagnosis(
-      sintomaPrincipal,
-      sintomasSecundarios,
-      []
-    );
-    setResult(differential);
-
-    const pathwayResult = generateDiagnosticPathway(sintomaPrincipal, sintomasSecundarios);
-    setPathway(pathwayResult);
+  const analyze = () => {
+    if (!primarySymptom.trim()) return;
+    setResult(generateDifferentialDiagnosis(primarySymptom, secondarySymptoms, [], {
+      ageValue,
+      ageUnit: patientAgeUnit,
+      weightKg,
+    }));
+    setKernelChecking(true);
+    setKernelResult(null);
+    void runSilentClinicalKernel({
+      ageYears,
+      symptoms: [primarySymptom, ...secondarySymptoms],
+    }).then(kernel => {
+      setKernelResult(kernel);
+      setKernelChecking(false);
+    });
   };
 
-  const handleAddSymptom = () => {
-    if (novoSintoma.trim() && !sintomasSecundarios.includes(novoSintoma.trim())) {
-      setSintomasSecundarios([...sintomasSecundarios, novoSintoma.trim()]);
-      setNovoSintoma('');
-    }
-  };
-
-  const handleRemoveSymptom = (sintoma: string) => {
-    setSintomasSecundarios(sintomasSecundarios.filter(s => s !== sintoma));
-  };
-
-  const getProbabilityColor = (probabilidade: string) => {
-    switch (probabilidade) {
-      case 'alta':
-        return 'bg-green-100 dark:bg-green-900/30 border-green-500 dark:border-green-700 text-green-700 dark:text-green-300';
-      case 'moderada':
-        return 'bg-amber-100 dark:bg-amber-900/30 border-amber-500 dark:border-amber-700 text-amber-700 dark:text-amber-300';
-      case 'baixa':
-        return 'bg-blue-100 dark:bg-blue-900/30 border-blue-500 dark:border-blue-700 text-blue-700 dark:text-blue-300';
-      default:
-        return 'bg-neutral-100 dark:bg-neutral-900/30 border-neutral-500 dark:border-neutral-700';
-    }
+  const addSecondarySymptom = () => {
+    const symptom = newSymptom.trim();
+    if (!symptom || secondarySymptoms.some(item => item.toLowerCase() === symptom.toLowerCase())) return;
+    setSecondarySymptoms(previous => [...previous, symptom]);
+    setNewSymptom('');
   };
 
   return (
-    <div className="space-y-4">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center">
-            <Brain className="w-6 h-6 text-white" />
+    <section className="overflow-hidden rounded-md border border-cyan-300/25 bg-[#071319]" aria-labelledby="clinical-assistant-title">
+      <div className="flex items-center justify-between border-b border-white/10 bg-cyan-300/[0.05] px-4 py-3">
+        <div className="flex min-w-0 items-start gap-3">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-cyan-300/25 bg-cyan-300/10">
+            <Brain className="h-4 w-4 text-cyan-300" aria-hidden="true" />
           </div>
-          <div>
-            <h2 className="text-xl font-bold text-neutral-900 dark:text-white">
-              Assistente de Diagnóstico Diferencial
-            </h2>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400">
-              Análise sistemática de sintomas para diagnóstico diferencial
-            </p>
+          <div className="min-w-0">
+            <p className="text-[11px] font-semibold uppercase text-cyan-300">Apoio clínico por sintomas</p>
+            <h2 id="clinical-assistant-title" className="text-base font-semibold text-white">Hipóteses prováveis e diferenciais</h2>
+            <p className="mt-0.5 text-xs text-zinc-500">Cruza sintomas, critérios clínicos, sinais de alarme e exames úteis.</p>
           </div>
         </div>
         <button
-          onClick={() => setIsExpanded(!isExpanded)}
-          className="p-2 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded"
+          type="button"
+          onClick={() => setExpanded(value => !value)}
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-zinc-400 transition-colors hover:bg-white/[0.06] hover:text-white"
+          aria-label={expanded ? 'Recolher assistente clínico' : 'Expandir assistente clínico'}
         >
-          {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+          {expanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
         </button>
       </div>
 
-      {isExpanded && (
-        <>
-          {/* Input de Sintomas */}
-          <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
-                Sintoma Principal *
+      {expanded && (
+        <div>
+          <div className="flex flex-col gap-3 border-b border-white/[0.07] bg-black/10 px-4 py-3 sm:flex-row sm:items-end">
+            <div className="flex min-w-0 flex-1 items-center gap-2">
+              <label className="min-w-0 flex-1 text-xs font-medium text-zinc-400">
+                Idade do paciente
+                <input
+                  type="number"
+                  min="0"
+                  step="0.1"
+                  inputMode="decimal"
+                  value={patientAge}
+                  onChange={event => onPatientContextChange?.({ age: event.target.value })}
+                  placeholder="Idade"
+                  className="mt-1.5 h-10 w-full rounded-md border border-white/15 bg-black/20 px-3 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-cyan-300/50"
+                />
               </label>
+              <label className="w-[104px] shrink-0 text-xs font-medium text-zinc-400">
+                Unidade
+                <select
+                  value={patientAgeUnit}
+                  onChange={event => onPatientContextChange?.({ ageUnit: event.target.value as PatientAgeUnit })}
+                  className="mt-1.5 h-10 w-full rounded-md border border-white/15 bg-[#071319] px-2 text-sm text-zinc-100 outline-none transition-colors focus:border-cyan-300/50"
+                >
+                  <option value="dias">dias</option>
+                  <option value="meses">meses</option>
+                  <option value="anos">anos</option>
+                </select>
+              </label>
+            </div>
+            <label className="block min-w-0 sm:w-36 text-xs font-medium text-zinc-400">
+              Peso para dose
+              <div className="relative mt-1.5">
+                <input
+                  type="number"
+                  min="0"
+                  step="0.1"
+                  inputMode="decimal"
+                  value={patientWeightKg}
+                  onChange={event => onPatientContextChange?.({ weightKg: event.target.value })}
+                  placeholder="Peso"
+                  className="h-10 w-full rounded-md border border-white/15 bg-black/20 px-3 pr-9 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-cyan-300/50"
+                />
+                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-zinc-600">kg</span>
+              </div>
+            </label>
+            <div className="flex h-10 items-center rounded-md border border-white/10 bg-white/[0.03] px-3 text-xs text-zinc-400 sm:min-w-36">
+              {ageBand || 'Informe a idade'}
+            </div>
+          </div>
+
+          <div className="grid gap-3 border-b border-white/[0.07] p-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto] md:items-end">
+            <label className="block min-w-0 text-xs font-medium text-zinc-400">
+              Sintoma principal
               <input
-                type="text"
-                value={sintomaPrincipal}
-                onChange={e => setSintomaPrincipal(e.target.value)}
-                placeholder="Ex: Tosse, Dor abdominal, Cefaleia..."
-                className="w-full px-4 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                onKeyDown={e => {
-                  if (e.key === 'Enter') {
-                    e.preventDefault();
-                    handleAnalyze();
+                value={primarySymptom}
+                onChange={event => setPrimarySymptom(event.target.value)}
+                onKeyDown={event => {
+                  if (event.key === 'Enter') {
+                    event.preventDefault();
+                    analyze();
                   }
                 }}
+                list="darwin-primary-symptoms"
+                placeholder="Ex.: tosse, febre, cefaleia"
+                className="mt-1.5 h-10 w-full rounded-md border border-white/15 bg-black/20 px-3 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-cyan-300/50"
               />
-            </div>
+              <datalist id="darwin-primary-symptoms">
+                {symptomNames.map(name => <option key={name} value={name} />)}
+              </datalist>
+            </label>
 
-            <div>
-              <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
-                Sintomas Secundários
-              </label>
-              <div className="flex gap-2 mb-2">
+            <label className="block min-w-0 text-xs font-medium text-zinc-400">
+              Sintoma associado
+              <div className="mt-1.5 flex gap-2">
                 <input
-                  type="text"
-                  value={novoSintoma}
-                  onChange={e => setNovoSintoma(e.target.value)}
-                  placeholder="Adicionar sintoma secundário..."
-                  className="flex-1 px-4 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm"
-                  onKeyDown={e => {
-                    if (e.key === 'Enter') {
-                      e.preventDefault();
-                      handleAddSymptom();
+                  value={newSymptom}
+                  onChange={event => setNewSymptom(event.target.value)}
+                  onKeyDown={event => {
+                    if (event.key === 'Enter') {
+                      event.preventDefault();
+                      addSecondarySymptom();
                     }
                   }}
+                  list="darwin-secondary-symptoms"
+                  placeholder="Adicionar outro sintoma"
+                  className="h-10 min-w-0 flex-1 rounded-md border border-white/15 bg-black/20 px-3 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-cyan-300/50"
                 />
+                <datalist id="darwin-secondary-symptoms">
+                  {symptomNames.map(name => <option key={name} value={name} />)}
+                </datalist>
                 <button
-                  onClick={handleAddSymptom}
-                  className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm font-medium flex items-center gap-2 transition-colors"
+                  type="button"
+                  onClick={addSecondarySymptom}
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-white/15 text-zinc-300 transition-colors hover:border-cyan-300/40 hover:text-cyan-200"
+                  aria-label="Adicionar sintoma associado"
                 >
-                  <Plus className="w-4 h-4" />
-                  Adicionar
+                  <Plus className="h-4 w-4" />
                 </button>
               </div>
-              {sintomasSecundarios.length > 0 && (
-                <div className="flex flex-wrap gap-2">
-                  {sintomasSecundarios.map((sintoma, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm flex items-center gap-2"
-                    >
-                      {sintoma}
-                      <button
-                        onClick={() => handleRemoveSymptom(sintoma)}
-                        className="hover:bg-purple-200 dark:hover:bg-purple-800 rounded-full p-0.5"
-                      >
-                        <X className="w-3 h-3" />
-                      </button>
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
+            </label>
 
             <button
-              onClick={handleAnalyze}
-              disabled={!sintomaPrincipal.trim()}
-              className="w-full px-4 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-lg font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              type="button"
+              onClick={analyze}
+              disabled={!primarySymptom.trim()}
+              className="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-cyan-300 px-4 text-sm font-semibold text-[#041218] transition-colors hover:bg-cyan-200 disabled:cursor-not-allowed disabled:opacity-40"
             >
-              <Brain className="w-5 h-5" />
-              Analisar Diagnóstico Diferencial
+              <Search className="h-4 w-4" aria-hidden="true" />
+              Analisar
             </button>
           </div>
 
-          {/* Resultados */}
+          {secondarySymptoms.length > 0 && (
+            <div className="flex flex-wrap gap-2 border-b border-white/[0.07] px-4 py-3">
+              {secondarySymptoms.map(symptom => (
+                <span key={symptom} className="inline-flex items-center gap-1.5 rounded border border-white/10 bg-white/[0.04] px-2 py-1 text-xs text-zinc-300">
+                  {symptom}
+                  <button
+                    type="button"
+                    onClick={() => setSecondarySymptoms(items => items.filter(item => item !== symptom))}
+                    className="text-zinc-500 hover:text-white"
+                    aria-label={`Remover ${symptom}`}
+                  >
+                    <X className="h-3 w-3" />
+                  </button>
+                </span>
+              ))}
+            </div>
+          )}
+
+          {result && (kernelChecking || kernelResult) && (
+            <div
+              className="flex min-h-9 items-center gap-2 border-b border-white/[0.07] bg-black/10 px-4 py-2 text-[11px] text-zinc-500"
+              title={kernelResult?.refusalReasons.join(' · ')}
+              aria-live="polite"
+            >
+              {kernelChecking ? (
+                <span className="h-3.5 w-3.5 animate-spin rounded-full border border-cyan-300/25 border-t-cyan-300" aria-hidden="true" />
+              ) : kernelResult?.integrityVerified && kernelResult.policy.disposition !== 'REFUSE' ? (
+                <ShieldCheck className="h-3.5 w-3.5 text-emerald-300" aria-hidden="true" />
+              ) : (
+                <ShieldX
+                  className={`h-3.5 w-3.5 ${kernelResult?.integrityVerified ? 'text-amber-300' : 'text-zinc-600'}`}
+                  aria-hidden="true"
+                />
+              )}
+              <span>
+                {kernelChecking
+                  ? 'Sounio · verificando recibo e integridade'
+                  : kernelResult?.integrityVerified
+                    ? kernelResult.policy.disposition === 'REFUSE'
+                      ? 'Sounio · integridade verificada · autorização clínica bloqueada'
+                      : kernelResult.signatureVerified
+                        ? 'Sounio · modo silencioso · recibo assinado e verificado'
+                        : 'Sounio · modo silencioso · integridade verificada · recibo não assinado'
+                    : 'Sounio · execução recusada para este contexto'}
+              </span>
+              {kernelResult?.integrityVerified && (
+                <span className="ml-auto hidden font-mono text-[10px] text-zinc-600 sm:inline">
+                  {kernelResult.modelVersion}
+                </span>
+              )}
+            </div>
+          )}
+
           {result && (
-            <div className="space-y-4">
-              {/* Diagnósticos Diferenciais */}
-              <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6">
-                <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
-                  <Stethoscope className="w-5 h-5 text-purple-600" />
-                  Diagnósticos Diferenciais ({result.diagnosticosDiferenciais.length})
-                </h3>
-                <div className="space-y-4">
-                  {result.diagnosticosDiferenciais.map((diff, index) => (
-                    <div
-                      key={index}
-                      className={`p-4 rounded-lg border-2 ${getProbabilityColor(diff.probabilidade)}`}
-                    >
-                      <div className="flex items-start justify-between mb-2">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <h4 className="font-bold text-lg">
-                              {diff.doenca.titulo || diff.doenca.id}
-                            </h4>
-                            <span className={`px-2 py-1 rounded text-xs font-semibold ${getProbabilityColor(diff.probabilidade)}`}>
-                              {diff.probabilidade.toUpperCase()}
+            <div className="grid lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,0.55fr)]">
+              <div className="divide-y divide-white/[0.07] lg:border-r lg:border-white/[0.07]">
+                <div className="flex items-center justify-between px-4 py-3">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-zinc-100">
+                    <Stethoscope className="h-4 w-4 text-cyan-300" aria-hidden="true" />
+                    Diagnósticos diferenciais
+                  </div>
+                  <span className="text-xs text-zinc-500">{result.diagnosticosDiferenciais.length} hipóteses</span>
+                </div>
+
+                {result.diagnosticosDiferenciais.map((differential, index) => {
+                  const isSelected = selectedDiagnosisId === differential.doenca.id;
+                  const probabilityStyle = probabilityStyles[differential.probabilidade] || probabilityStyles.baixa;
+                  return (
+                    <article key={differential.doenca.id || index} className={`px-4 py-3 transition-colors ${isSelected ? 'bg-emerald-300/[0.05]' : 'hover:bg-white/[0.025]'}`}>
+                      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                        <div className="min-w-0">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="text-xs tabular-nums text-zinc-600">{String(index + 1).padStart(2, '0')}</span>
+                            <h3 className="text-sm font-semibold text-zinc-100">{differential.doenca.titulo || differential.doenca.id}</h3>
+                            <span className={`rounded border px-1.5 py-0.5 text-[10px] font-semibold uppercase ${probabilityStyle}`}>
+                              {differential.probabilidade}
                             </span>
-                            <span className="px-2 py-1 bg-white/50 dark:bg-black/20 rounded text-xs font-mono">
-                              Score: {Math.round(diff.score)}%
-                            </span>
+                            <span className="text-xs tabular-nums text-zinc-500">aderência {Math.round(differential.score)}%</span>
+                            {differential.adequacaoEtaria === 'preferencial' && (
+                              <span className="rounded border border-emerald-300/20 bg-emerald-300/[0.07] px-1.5 py-0.5 text-[10px] font-semibold uppercase text-emerald-200">faixa etária</span>
+                            )}
+                            {differential.adequacaoEtaria === 'menos_provavel' && (
+                              <span className="rounded border border-white/10 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-zinc-500">menos típica na idade</span>
+                            )}
                           </div>
-                          <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">
-                            Critérios atendidos: {diff.criteriosAtendidos}/{diff.criteriosTotais}
+                          <p className="mt-1.5 text-xs leading-relaxed text-zinc-400">
+                            {differential.criteriosAtendidos}/{differential.criteriosTotais} critérios compatíveis
+                            {differential.doenca.quickView?.definicao ? ` · ${differential.doenca.quickView.definicao}` : ''}
                           </p>
-                          {diff.doenca.quickView?.definicao && (
-                            <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
-                              {diff.doenca.quickView.definicao}
-                            </p>
+                          {differential.examesRecomendados.length > 0 && (
+                            <div className="mt-2 flex flex-wrap items-center gap-1.5 text-xs text-zinc-500">
+                              <TestTube className="h-3.5 w-3.5 text-cyan-300" aria-hidden="true" />
+                              {differential.examesRecomendados.slice(0, 4).join(' · ')}
+                            </div>
+                          )}
+                          {differential.redFlags.length > 0 && (
+                            <div className="mt-2 flex items-start gap-1.5 text-xs leading-relaxed text-red-300">
+                              <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                              {differential.redFlags.join(' · ')}
+                            </div>
                           )}
                         </div>
                         {onDiagnosisSelect && (
                           <button
-                            onClick={() => diff.doenca.id && onDiagnosisSelect(diff.doenca.id)}
-                            className="ml-4 px-3 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-xs font-medium transition-colors"
+                            type="button"
+                            onClick={() => differential.doenca.id && onDiagnosisSelect(differential.doenca.id)}
+                            className={`inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md px-3 text-xs font-semibold transition-colors ${isSelected ? 'border border-emerald-300/25 bg-emerald-300/10 text-emerald-200' : 'border border-white/15 text-zinc-300 hover:border-cyan-300/40 hover:text-cyan-200'}`}
                           >
-                            Selecionar
+                            {isSelected && <Check className="h-3.5 w-3.5" aria-hidden="true" />}
+                            {isSelected ? 'Selecionada' : 'Usar hipótese'}
                           </button>
                         )}
                       </div>
-
-                      {/* Exames Recomendados */}
-                      {diff.examesRecomendados.length > 0 && (
-                        <div className="mt-3 pt-3 border-t border-current/20">
-                          <p className="text-xs font-semibold mb-1 flex items-center gap-1">
-                            <TestTube className="w-3 h-3" />
-                            Exames Recomendados:
-                          </p>
-                          <div className="flex flex-wrap gap-1">
-                            {diff.examesRecomendados.map((exame, idx) => (
-                              <span
-                                key={idx}
-                                className="px-2 py-0.5 bg-white/50 dark:bg-black/20 rounded text-xs"
-                              >
-                                {exame}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Red Flags */}
-                      {diff.redFlags.length > 0 && (
-                        <div className="mt-3 pt-3 border-t border-current/20">
-                          <p className="text-xs font-semibold mb-1 flex items-center gap-1 text-red-600 dark:text-red-400">
-                            <AlertTriangle className="w-3 h-3" />
-                            Sinais de Alarme:
-                          </p>
-                          <ul className="list-disc list-inside text-xs space-y-0.5">
-                            {diff.redFlags.map((flag, idx) => (
-                              <li key={idx}>{flag}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                    </article>
+                  );
+                })}
               </div>
 
-              {/* Recomendações */}
-              {result.recomendacoes && (
-                <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 space-y-4">
-                  <h3 className="text-lg font-bold text-neutral-900 dark:text-white flex items-center gap-2">
-                    <ArrowRight className="w-5 h-5 text-purple-600" />
-                    Recomendações
+              <aside className="space-y-4 p-4">
+                <div>
+                  <h3 className="flex items-center gap-2 text-xs font-semibold uppercase text-zinc-300">
+                    <TestTube className="h-3.5 w-3.5 text-cyan-300" aria-hidden="true" />
+                    Próximos exames
                   </h3>
-
-                  {/* Exames */}
-                  {result.recomendacoes.exames.length > 0 && (
-                    <div>
-                      <h4 className="font-semibold text-neutral-700 dark:text-neutral-300 mb-2 flex items-center gap-2">
-                        <TestTube className="w-4 h-4" />
-                        Exames Recomendados
-                      </h4>
-                      <div className="space-y-2">
-                        {result.recomendacoes.exames.map((exame, index) => (
-                          <div
-                            key={index}
-                            className={`p-3 rounded-lg border ${
-                              exame.prioridade === 'alta'
-                                ? 'bg-red-50 dark:bg-red-950/20 border-red-300 dark:border-red-700'
-                                : exame.prioridade === 'media'
-                                ? 'bg-amber-50 dark:bg-amber-950/20 border-amber-300 dark:border-amber-700'
-                                : 'bg-blue-50 dark:bg-blue-950/20 border-blue-300 dark:border-blue-700'
-                            }`}
-                          >
-                            <div className="flex items-start justify-between">
-                              <div>
-                                <p className="font-medium text-sm">{exame.nome}</p>
-                                <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
-                                  {exame.justificativa}
-                                </p>
-                              </div>
-                              <span
-                                className={`px-2 py-1 rounded text-xs font-semibold ${
-                                  exame.prioridade === 'alta'
-                                    ? 'bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300'
-                                    : exame.prioridade === 'media'
-                                    ? 'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300'
-                                    : 'bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300'
-                                }`}
-                              >
-                                {exame.prioridade.toUpperCase()}
-                              </span>
-                            </div>
-                          </div>
-                        ))}
+                  <div className="mt-2 space-y-2">
+                    {result.recomendacoes.exames.slice(0, 5).map(exam => (
+                      <div key={`${exam.nome}-${exam.prioridade}`} className="border-l border-cyan-300/25 pl-2.5">
+                        <p className="text-xs font-medium text-zinc-200">{exam.nome}</p>
+                        <p className="mt-0.5 text-[11px] leading-relaxed text-zinc-500">{exam.justificativa}</p>
                       </div>
-                    </div>
-                  )}
-
-                  {/* Encaminhamentos */}
-                  {result.recomendacoes.encaminhamento.length > 0 && (
-                    <div>
-                      <h4 className="font-semibold text-neutral-700 dark:text-neutral-300 mb-2">
-                        Encaminhamentos Sugeridos
-                      </h4>
-                      <div className="space-y-2">
-                        {result.recomendacoes.encaminhamento.map((enc, index) => (
-                          <div
-                            key={index}
-                            className={`p-3 rounded-lg border ${
-                              enc.urgencia === 'urgente'
-                                ? 'bg-red-50 dark:bg-red-950/20 border-red-300 dark:border-red-700'
-                                : 'bg-blue-50 dark:bg-blue-950/20 border-blue-300 dark:border-blue-700'
-                            }`}
-                          >
-                            <div className="flex items-start justify-between">
-                              <div>
-                                <p className="font-medium text-sm">{enc.especialidade}</p>
-                                <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
-                                  {enc.motivo}
-                                </p>
-                              </div>
-                              {enc.urgencia === 'urgente' && (
-                                <span className="px-2 py-1 bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300 rounded text-xs font-semibold">
-                                  URGENTE
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                    ))}
+                  </div>
                 </div>
-              )}
+
+                {result.recomendacoes.encaminhamento.length > 0 && (
+                  <div className="border-t border-white/[0.07] pt-4">
+                    <h3 className="text-xs font-semibold uppercase text-zinc-300">Encaminhamento</h3>
+                    <div className="mt-2 space-y-2">
+                      {result.recomendacoes.encaminhamento.map(referral => (
+                        <div key={`${referral.especialidade}-${referral.motivo}`} className="text-xs leading-relaxed text-zinc-400">
+                          <span className={referral.urgencia === 'urgente' ? 'font-semibold text-red-300' : 'font-medium text-zinc-200'}>{referral.especialidade}</span>
+                          {' · '}{referral.motivo}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </aside>
             </div>
           )}
-        </>
+
+          {!result && (
+            <div className="px-4 py-5 text-center text-xs text-zinc-500">
+              Informe o sintoma principal para ordenar hipóteses, diferenciais e sinais de alarme.
+            </div>
+          )}
+        </div>
       )}
-    </div>
+    </section>
   );
 }
-

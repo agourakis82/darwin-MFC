@@ -54,18 +54,18 @@ export default function MedicamentosClient() {
 
   return (
     <div className="min-h-screen bg-paper-white dark:bg-carbon-950">
-      <PageContainer className="py-12">
+      <PageContainer className="py-8 md:py-12">
         {/* Header - High Authority */}
-        <div className="mb-12 border-b border-carbon-200 dark:border-carbon-800 pb-8">
-          <div className="flex items-baseline gap-4 mb-2">
-            <h1 className="text-4xl font-display font-bold text-helix-navy dark:text-white">
+        <div className="mb-8 border-b border-carbon-200 pb-6 dark:border-carbon-800 md:mb-12 md:pb-8">
+          <div className="mb-2 flex flex-wrap items-baseline gap-x-4 gap-y-2">
+            <h1 className="text-3xl font-display font-bold text-helix-navy dark:text-white sm:text-4xl">
               {t('title')}
             </h1>
             <span className="text-xs font-mono text-carbon-400 font-bold uppercase tracking-widest">
               {t('activeCompounds', { count: medicamentos.length })}
             </span>
           </div>
-          <p className="text-lg text-carbon-500 font-body max-w-2xl leading-relaxed">
+          <p className="max-w-2xl font-body text-base leading-relaxed text-carbon-500 sm:text-lg">
             {t('description')}
           </p>
         </div>
@@ -129,7 +129,7 @@ export default function MedicamentosClient() {
           animate="animate"
           transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
         >
-          <div className="grid grid-cols-12 bg-clinical-gray dark:bg-carbon-800/50 border-b border-carbon-200 dark:border-carbon-700 px-6 py-3 text-[10px] font-bold text-carbon-400 uppercase tracking-widest">
+          <div className="hidden grid-cols-12 bg-clinical-gray dark:bg-carbon-800/50 border-b border-carbon-200 dark:border-carbon-700 px-6 py-3 text-[10px] font-bold text-carbon-400 uppercase tracking-widest md:grid">
             <div className="col-span-1">{t('table.category')}</div>
             <div className="col-span-4">{t('table.genericName')}</div>
             <div className="col-span-3">{t('table.indications')}</div>
@@ -148,14 +148,14 @@ export default function MedicamentosClient() {
                   <Link
                     key={med.id}
                     href={`/medicamentos/${med.id}`}
-                    className="grid grid-cols-12 items-center px-6 py-4 hover:bg-clinical-gray/50 dark:hover:bg-carbon-800/30 transition-all group"
+                    className="group flex items-start gap-3 px-4 py-4 transition-all hover:bg-clinical-gray/50 dark:hover:bg-carbon-800/30 md:grid md:grid-cols-12 md:items-center md:px-6"
                   >
-                    <div className="col-span-1">
+                    <div className="shrink-0 md:col-span-1">
                       <div className={cn("w-8 h-8 rounded flex items-center justify-center text-white", classeInfo.color.replace('bg-', 'bg-'))}>
                          <Pill className="w-4 h-4" />
                       </div>
                     </div>
-                    <div className="col-span-4 pr-4">
+                    <div className="min-w-0 flex-1 md:col-span-4 md:pr-4">
                       <div className="flex items-center gap-2 flex-wrap">
                         <h3 className="text-base font-semibold text-helix-navy dark:text-white group-hover:text-adenine-teal transition-colors capitalize">
                           {translateMedication(med.atcCode, med.nomeGenerico)}
@@ -170,18 +170,26 @@ export default function MedicamentosClient() {
                       <p className="text-[10px] font-mono text-carbon-400 uppercase tracking-tight">
                         {med.nomesComerciais?.slice(0, 3).join(' • ') || t('notAvailable')}
                       </p>
+                      <div className="mt-2 flex flex-wrap items-center gap-2 md:hidden">
+                        <span className={cn("rounded px-2 py-0.5 text-[10px] font-bold text-white", gestacaoInfo.color.replace('bg-', 'bg-'))}>
+                          {t('table.pregnancyCategory', { category: med.gestacao })}
+                        </span>
+                        <span className="font-mono text-[10px] font-bold text-carbon-500">
+                          {med.atcCode}
+                        </span>
+                      </div>
                     </div>
-                    <div className="col-span-3 pr-4">
+                    <div className="hidden md:col-span-3 md:block md:pr-4">
                       <p className="text-xs text-carbon-600 dark:text-carbon-400 line-clamp-1 font-body italic">
                         {med.indicacoes.slice(0, 2).join(', ')}
                       </p>
                     </div>
-                    <div className="col-span-2">
+                    <div className="hidden md:col-span-2 md:block">
                       <span className={cn("text-[10px] font-bold px-2 py-0.5 rounded text-white", gestacaoInfo.color.replace('bg-', 'bg-'))}>
                         {t('table.pregnancyCategory', { category: med.gestacao })}
                       </span>
                     </div>
-                    <div className="col-span-2 text-right">
+                    <div className="hidden text-right md:col-span-2 md:block">
                       <span className="font-mono text-xs font-bold text-helix-navy dark:text-carbon-400">
                         {med.atcCode}
                       </span>
@@ -194,8 +202,8 @@ export default function MedicamentosClient() {
         </motion.div>
 
         {/* Footer Statistics */}
-        <div className="mt-8 flex justify-between items-center text-[10px] font-bold text-carbon-400 uppercase tracking-widest">
-           <div className="flex gap-4">
+        <div className="mt-8 flex flex-col gap-3 text-[10px] font-bold uppercase tracking-widest text-carbon-400 sm:flex-row sm:items-center sm:justify-between">
+           <div className="flex flex-wrap gap-4">
              <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-guanine-green" /> {t('footer.liveRepository')}</span>
              <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-adenine-teal" /> {t('footer.evidenceVerified')}</span>
            </div>

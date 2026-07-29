@@ -1,682 +1,433 @@
 'use client';
 
-/**
- * DARWIN-MFC CALCULATORS HUB CLIENT
- * ==================================
- *
- * Enhanced calculator hub with category filtering, search,
- * and the new clinical calculator system.
- */
-
-import { useState, useMemo, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useMemo, useState } from 'react';
 import {
-  Calculator,
-  Search,
-  Filter,
-  Star,
-  Grid3X3,
-  List,
-  X,
-  ChevronRight,
+  Activity,
   AlertTriangle,
-  Sparkles,
+  Baby,
+  Bone,
+  Brain,
+  Bug,
+  Calculator,
+  ChevronRight,
+  Droplets,
+  Grid3X3,
+  HeartPulse,
+  List,
+  Search,
+  ShieldCheck,
+  Siren,
+  Star,
+  Stethoscope,
+  Syringe,
+  Wind,
+  X,
+  type LucideIcon,
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import { Link } from '@/i18n/routing';
-import { useLocale } from 'next-intl';
 import { PageContainer } from '@/app/components/Layout/Containers';
-
-// Calculator system imports
+import { cn } from '@/lib/utils';
 import {
   allCalculators,
-  type ClinicalCalculator,
   type CalculatorCategory,
-  categoryLabels,
-  categoryIcons,
+  type ClinicalCalculator,
 } from '@/lib/calculators';
-
-// =============================================================================
-// TYPES
-// =============================================================================
 
 type ViewMode = 'grid' | 'list';
 
-// =============================================================================
-// CATEGORY COLORS
-// =============================================================================
+type CategoryMeta = {
+  label: string;
+  icon: LucideIcon;
+  color: string;
+  surface: string;
+};
 
-const categoryColors: Record<CalculatorCategory, {
-  bg: string;
-  bgHover: string;
-  border: string;
-  text: string;
-  gradient: string;
-}> = {
+const categoryMeta: Record<CalculatorCategory, CategoryMeta> = {
   'critical-care': {
-    bg: 'bg-red-50 dark:bg-red-950/30',
-    bgHover: 'hover:bg-red-100 dark:hover:bg-red-950/50',
-    border: 'border-red-200 dark:border-red-800',
-    text: 'text-red-700 dark:text-red-400',
-    gradient: 'from-red-500 to-orange-500',
+    label: 'Terapia intensiva',
+    icon: Activity,
+    color: 'text-red-300',
+    surface: 'bg-red-400/10',
   },
   cardiology: {
-    bg: 'bg-rose-50 dark:bg-rose-950/30',
-    bgHover: 'hover:bg-rose-100 dark:hover:bg-rose-950/50',
-    border: 'border-rose-200 dark:border-rose-800',
-    text: 'text-rose-700 dark:text-rose-400',
-    gradient: 'from-rose-500 to-pink-500',
+    label: 'Cardiologia',
+    icon: HeartPulse,
+    color: 'text-rose-300',
+    surface: 'bg-rose-400/10',
   },
   pulmonology: {
-    bg: 'bg-sky-50 dark:bg-sky-950/30',
-    bgHover: 'hover:bg-sky-100 dark:hover:bg-sky-950/50',
-    border: 'border-sky-200 dark:border-sky-800',
-    text: 'text-sky-700 dark:text-sky-400',
-    gradient: 'from-sky-500 to-blue-500',
+    label: 'Pneumologia',
+    icon: Wind,
+    color: 'text-sky-300',
+    surface: 'bg-sky-400/10',
   },
   hepatology: {
-    bg: 'bg-amber-50 dark:bg-amber-950/30',
-    bgHover: 'hover:bg-amber-100 dark:hover:bg-amber-950/50',
-    border: 'border-amber-200 dark:border-amber-800',
-    text: 'text-amber-700 dark:text-amber-400',
-    gradient: 'from-amber-500 to-yellow-500',
+    label: 'Hepatologia',
+    icon: Stethoscope,
+    color: 'text-amber-300',
+    surface: 'bg-amber-400/10',
   },
   nephrology: {
-    bg: 'bg-purple-50 dark:bg-purple-950/30',
-    bgHover: 'hover:bg-purple-100 dark:hover:bg-purple-950/50',
-    border: 'border-purple-200 dark:border-purple-800',
-    text: 'text-purple-700 dark:text-purple-400',
-    gradient: 'from-purple-500 to-violet-500',
+    label: 'Nefrologia',
+    icon: Droplets,
+    color: 'text-violet-300',
+    surface: 'bg-violet-400/10',
   },
   neurology: {
-    bg: 'bg-indigo-50 dark:bg-indigo-950/30',
-    bgHover: 'hover:bg-indigo-100 dark:hover:bg-indigo-950/50',
-    border: 'border-indigo-200 dark:border-indigo-800',
-    text: 'text-indigo-700 dark:text-indigo-400',
-    gradient: 'from-indigo-500 to-blue-500',
+    label: 'Neurologia',
+    icon: Brain,
+    color: 'text-indigo-300',
+    surface: 'bg-indigo-400/10',
   },
   psychiatry: {
-    bg: 'bg-violet-50 dark:bg-violet-950/30',
-    bgHover: 'hover:bg-violet-100 dark:hover:bg-violet-950/50',
-    border: 'border-violet-200 dark:border-violet-800',
-    text: 'text-violet-700 dark:text-violet-400',
-    gradient: 'from-violet-500 to-purple-500',
+    label: 'Psiquiatria',
+    icon: Brain,
+    color: 'text-fuchsia-300',
+    surface: 'bg-fuchsia-400/10',
   },
   'infectious-disease': {
-    bg: 'bg-lime-50 dark:bg-lime-950/30',
-    bgHover: 'hover:bg-lime-100 dark:hover:bg-lime-950/50',
-    border: 'border-lime-200 dark:border-lime-800',
-    text: 'text-lime-700 dark:text-lime-400',
-    gradient: 'from-lime-500 to-green-500',
+    label: 'Infectologia',
+    icon: Bug,
+    color: 'text-lime-300',
+    surface: 'bg-lime-400/10',
   },
   hematology: {
-    bg: 'bg-pink-50 dark:bg-pink-950/30',
-    bgHover: 'hover:bg-pink-100 dark:hover:bg-pink-950/50',
-    border: 'border-pink-200 dark:border-pink-800',
-    text: 'text-pink-700 dark:text-pink-400',
-    gradient: 'from-pink-500 to-rose-500',
+    label: 'Hematologia',
+    icon: Droplets,
+    color: 'text-pink-300',
+    surface: 'bg-pink-400/10',
   },
   emergency: {
-    bg: 'bg-orange-50 dark:bg-orange-950/30',
-    bgHover: 'hover:bg-orange-100 dark:hover:bg-orange-950/50',
-    border: 'border-orange-200 dark:border-orange-800',
-    text: 'text-orange-700 dark:text-orange-400',
-    gradient: 'from-orange-500 to-red-500',
+    label: 'Urgência e emergência',
+    icon: Siren,
+    color: 'text-orange-300',
+    surface: 'bg-orange-400/10',
   },
   obstetrics: {
-    bg: 'bg-fuchsia-50 dark:bg-fuchsia-950/30',
-    bgHover: 'hover:bg-fuchsia-100 dark:hover:bg-fuchsia-950/50',
-    border: 'border-fuchsia-200 dark:border-fuchsia-800',
-    text: 'text-fuchsia-700 dark:text-fuchsia-400',
-    gradient: 'from-fuchsia-500 to-pink-500',
+    label: 'Obstetrícia',
+    icon: Activity,
+    color: 'text-fuchsia-300',
+    surface: 'bg-fuchsia-400/10',
   },
   pediatrics: {
-    bg: 'bg-cyan-50 dark:bg-cyan-950/30',
-    bgHover: 'hover:bg-cyan-100 dark:hover:bg-cyan-950/50',
-    border: 'border-cyan-200 dark:border-cyan-800',
-    text: 'text-cyan-700 dark:text-cyan-400',
-    gradient: 'from-cyan-500 to-teal-500',
+    label: 'Pediatria',
+    icon: Baby,
+    color: 'text-cyan-300',
+    surface: 'bg-cyan-400/10',
   },
   orthopedics: {
-    bg: 'bg-stone-50 dark:bg-stone-950/30',
-    bgHover: 'hover:bg-stone-100 dark:hover:bg-stone-950/50',
-    border: 'border-stone-200 dark:border-stone-700',
-    text: 'text-stone-700 dark:text-stone-400',
-    gradient: 'from-stone-500 to-gray-500',
+    label: 'Ortopedia',
+    icon: Bone,
+    color: 'text-stone-300',
+    surface: 'bg-stone-400/10',
   },
   anesthesia: {
-    bg: 'bg-teal-50 dark:bg-teal-950/30',
-    bgHover: 'hover:bg-teal-100 dark:hover:bg-teal-950/50',
-    border: 'border-teal-200 dark:border-teal-800',
-    text: 'text-teal-700 dark:text-teal-400',
-    gradient: 'from-teal-500 to-emerald-500',
+    label: 'Anestesiologia',
+    icon: Syringe,
+    color: 'text-teal-300',
+    surface: 'bg-teal-400/10',
   },
   general: {
-    bg: 'bg-gray-50 dark:bg-gray-800/30',
-    bgHover: 'hover:bg-gray-100 dark:hover:bg-gray-800/50',
-    border: 'border-gray-200 dark:border-gray-700',
-    text: 'text-gray-700 dark:text-gray-400',
-    gradient: 'from-gray-500 to-slate-500',
+    label: 'Clínica geral',
+    icon: Calculator,
+    color: 'text-zinc-300',
+    surface: 'bg-zinc-400/10',
   },
 };
 
-// =============================================================================
-// SUB-COMPONENTS
-// =============================================================================
-
-interface CalculatorCardEnhancedProps {
+type CalculatorItemProps = {
   calculator: ClinicalCalculator;
-  isFavorite: boolean;
-  onToggleFavorite: () => void;
+  favorite: boolean;
   viewMode: ViewMode;
-}
+  onToggleFavorite: () => void;
+};
 
-function CalculatorCardEnhanced({
+function CalculatorItem({
   calculator,
-  isFavorite,
-  onToggleFavorite,
+  favorite,
   viewMode,
-}: CalculatorCardEnhancedProps) {
-  const locale = useLocale();
-  const colors = categoryColors[calculator.category];
-  const categoryIcon = categoryIcons[calculator.category];
+  onToggleFavorite,
+}: CalculatorItemProps) {
+  const meta = categoryMeta[calculator.category];
+  const Icon = meta.icon;
 
   if (viewMode === 'list') {
     return (
-      <Link
-        href={`/calculadoras/${calculator.id}`}
-        locale={locale}
-        className={cn(
-          'flex items-center gap-4 p-4 rounded-xl border',
-          'bg-white dark:bg-neutral-900/50',
-          'border-neutral-200 dark:border-neutral-700',
-          'hover:border-[#0071E3] dark:hover:border-[#0071E3]',
-          'hover:shadow-lg transition-all duration-200'
-        )}
-      >
-        <div
-          className={cn(
-            'flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-xl',
-            colors.bg
-          )}
+      <article className="flex items-center gap-3 rounded-md border border-white/10 bg-[#081116] p-3 transition-colors hover:border-cyan-400/35">
+        <Link
+          href={`/calculadoras/${calculator.id}`}
+          className="flex min-w-0 flex-1 items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
         >
-          {categoryIcon}
-        </div>
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2">
-            <h3 className="font-bold text-neutral-900 dark:text-neutral-100">
-              {calculator.abbreviation}
-            </h3>
-            <span
-              className={cn(
-                'px-2 py-0.5 rounded-full text-xs font-medium',
-                colors.bg,
-                colors.text
-              )}
-            >
-              {categoryLabels[calculator.category]}
-            </span>
-            {calculator.validationStudy && (
-              <span className="px-2 py-0.5 rounded-full text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400">
-                Validated
-              </span>
-            )}
-          </div>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400 truncate">
-            {calculator.name}
-          </p>
-        </div>
+          <span className={cn('grid h-10 w-10 shrink-0 place-items-center rounded-md', meta.surface, meta.color)}>
+            <Icon className="h-5 w-5" strokeWidth={1.7} aria-hidden="true" />
+          </span>
+          <span className="min-w-0">
+            <span className="block truncate text-sm font-semibold text-white">{calculator.abbreviation}</span>
+            <span className="block truncate text-xs text-zinc-500">{calculator.name}</span>
+          </span>
+          <span className={cn('ml-auto hidden text-xs sm:inline', meta.color)}>{meta.label}</span>
+          <ChevronRight className="h-4 w-4 shrink-0 text-zinc-600" aria-hidden="true" />
+        </Link>
         <button
-          onClick={(e) => {
-            e.preventDefault();
-            onToggleFavorite();
-          }}
-          className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700"
+          type="button"
+          onClick={onToggleFavorite}
+          className="grid h-9 w-9 shrink-0 place-items-center rounded-md text-zinc-500 transition-colors hover:bg-white/[0.05] hover:text-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+          aria-label={favorite ? `Remover ${calculator.abbreviation} dos favoritos` : `Favoritar ${calculator.abbreviation}`}
+          title={favorite ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
         >
-          <Star
-            className={cn(
-              'w-5 h-5',
-              isFavorite
-                ? 'fill-yellow-400 text-yellow-400'
-                : 'text-neutral-300'
-            )}
-          />
+          <Star className={cn('h-4 w-4', favorite && 'fill-amber-300 text-amber-300')} aria-hidden="true" />
         </button>
-        <ChevronRight className="w-5 h-5 text-neutral-400" />
-      </Link>
+      </article>
     );
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      className={cn(
-        'group relative overflow-hidden rounded-2xl border',
-        'bg-white dark:bg-neutral-900/50',
-        colors.border,
-        'hover:shadow-xl transition-all duration-300'
-      )}
-    >
-      {/* Gradient header */}
-      <div
-        className={cn(
-          'h-1.5 bg-gradient-to-r',
-          colors.gradient
-        )}
-      />
-
-      <div className="p-5">
-        <div className="flex items-start justify-between gap-3">
-          <div
-            className={cn(
-              'w-12 h-12 rounded-xl flex items-center justify-center text-xl',
-              colors.bg
-            )}
-          >
-            {categoryIcon}
-          </div>
-          <button
-            onClick={onToggleFavorite}
-            className="p-1.5 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors"
-          >
-            <Star
-              className={cn(
-                'w-5 h-5',
-                isFavorite
-                  ? 'fill-yellow-400 text-yellow-400'
-                  : 'text-neutral-300'
-              )}
-            />
-          </button>
-        </div>
-
-        <h3 className="mt-4 text-lg font-bold text-neutral-900 dark:text-neutral-100">
-          {calculator.abbreviation}
-        </h3>
-        <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400 line-clamp-1">
-          {calculator.name}
-        </p>
-
-        <p className="mt-3 text-sm text-neutral-500 dark:text-neutral-400 line-clamp-2">
-          {calculator.description}
-        </p>
-
-        <div className="mt-4 flex items-center gap-2 flex-wrap">
-          <span
-            className={cn(
-              'px-2 py-0.5 rounded-full text-xs font-medium',
-              colors.bg,
-              colors.text
-            )}
-          >
-            {categoryLabels[calculator.category]}
-          </span>
-          <span className="text-xs text-neutral-500">
-            {calculator.inputs.length} inputs
-          </span>
-          {calculator.validationStudy && (
-            <span className="px-2 py-0.5 rounded-full text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400">
-              Validated
-            </span>
-          )}
-        </div>
-
-        <Link
-          href={`/calculadoras/${calculator.id}`}
-          locale={locale}
-          className={cn(
-            'mt-4 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl',
-            'bg-[#0071E3] hover:bg-[#0077ED] text-white',
-            'font-medium text-sm transition-colors'
-          )}
+    <article className="flex min-h-[250px] flex-col rounded-md border border-white/10 bg-[#081116] p-5 transition-colors hover:border-cyan-400/35">
+      <div className="flex items-start justify-between gap-3">
+        <span className={cn('grid h-11 w-11 place-items-center rounded-md', meta.surface, meta.color)}>
+          <Icon className="h-6 w-6" strokeWidth={1.7} aria-hidden="true" />
+        </span>
+        <button
+          type="button"
+          onClick={onToggleFavorite}
+          className="grid h-9 w-9 place-items-center rounded-md text-zinc-600 transition-colors hover:bg-white/[0.05] hover:text-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+          aria-label={favorite ? `Remover ${calculator.abbreviation} dos favoritos` : `Favoritar ${calculator.abbreviation}`}
+          title={favorite ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
         >
-          <Calculator className="w-4 h-4" />
-          Open Calculator
-        </Link>
+          <Star className={cn('h-4 w-4', favorite && 'fill-amber-300 text-amber-300')} aria-hidden="true" />
+        </button>
       </div>
-    </motion.div>
-  );
-}
 
-interface CategoryFilterProps {
-  categories: CalculatorCategory[];
-  selectedCategory: CalculatorCategory | 'all';
-  onSelect: (category: CalculatorCategory | 'all') => void;
-}
+      <h3 className="mt-4 text-lg font-semibold tracking-normal text-white">{calculator.abbreviation}</h3>
+      <p className="mt-1 line-clamp-1 text-xs text-zinc-400">{calculator.name}</p>
+      <p className="mt-3 line-clamp-2 text-xs leading-relaxed text-zinc-500">{calculator.description}</p>
 
-function CategoryFilter({ categories, selectedCategory, onSelect }: CategoryFilterProps) {
-  return (
-    <div className="flex flex-wrap gap-2">
-      <button
-        onClick={() => onSelect('all')}
-        className={cn(
-          'px-4 py-2 rounded-xl text-sm font-medium transition-all',
-          selectedCategory === 'all'
-            ? 'bg-[#0071E3] text-white shadow-md'
-            : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700'
-        )}
+      <div className="mt-auto flex items-center gap-2 pt-4 text-[10px]">
+        <span className={cn('rounded border border-white/10 px-2 py-1', meta.color)}>{meta.label}</span>
+        <span className="text-zinc-600">{calculator.inputs.length} parâmetros</span>
+        {calculator.validationStudy ? (
+          <span className="ml-auto flex items-center gap-1 text-emerald-400">
+            <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />
+            Validada
+          </span>
+        ) : null}
+      </div>
+
+      <Link
+        href={`/calculadoras/${calculator.id}`}
+        className="mt-4 flex h-10 items-center justify-center gap-2 rounded-md border border-cyan-400/50 bg-cyan-400/10 text-sm font-medium text-cyan-200 transition-colors hover:bg-cyan-400/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
       >
-        All Categories
-      </button>
-      {categories.map((category) => {
-        const colors = categoryColors[category];
-        const isSelected = selectedCategory === category;
-        return (
-          <button
-            key={category}
-            onClick={() => onSelect(category)}
-            className={cn(
-              'px-4 py-2 rounded-xl text-sm font-medium transition-all flex items-center gap-2',
-              isSelected
-                ? cn('bg-gradient-to-r text-white shadow-md', colors.gradient)
-                : cn(colors.bg, colors.text, colors.bgHover)
-            )}
-          >
-            <span>{categoryIcons[category]}</span>
-            {categoryLabels[category]}
-          </button>
-        );
-      })}
-    </div>
+        <Calculator className="h-4 w-4" aria-hidden="true" />
+        Abrir calculadora
+      </Link>
+    </article>
   );
 }
-
-// =============================================================================
-// MAIN COMPONENT
-// =============================================================================
 
 export default function CalculadorasHubClient() {
-  const t = useTranslations('calculadoras');
-  const locale = useLocale();
-
-  // State
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<CalculatorCategory | 'all'>('all');
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
 
-  // Load favorites from localStorage
   useEffect(() => {
     const stored = localStorage.getItem('darwin-calculator-favorites');
-    if (stored) {
-      try {
-        setFavorites(new Set(JSON.parse(stored)));
-      } catch {
-        // Ignore parse errors
-      }
+    if (!stored) return;
+    try {
+      setFavorites(new Set(JSON.parse(stored)));
+    } catch {
+      localStorage.removeItem('darwin-calculator-favorites');
     }
   }, []);
 
-  // Save favorites to localStorage
+  const categories = useMemo(() => {
+    const values = new Set<CalculatorCategory>();
+    allCalculators.forEach((calculator) => values.add(calculator.category));
+    return Array.from(values).sort((a, b) =>
+      categoryMeta[a].label.localeCompare(categoryMeta[b].label, 'pt-BR')
+    );
+  }, []);
+
+  const filteredCalculators = useMemo(() => {
+    const normalizedQuery = searchQuery.trim().toLocaleLowerCase('pt-BR');
+    return allCalculators.filter((calculator) => {
+      if (selectedCategory !== 'all' && calculator.category !== selectedCategory) return false;
+      if (!normalizedQuery) return true;
+      return [
+        calculator.name,
+        calculator.abbreviation,
+        calculator.description,
+        categoryMeta[calculator.category].label,
+      ].some((value) => value.toLocaleLowerCase('pt-BR').includes(normalizedQuery));
+    });
+  }, [searchQuery, selectedCategory]);
+
+  const orderedCalculators = useMemo(
+    () =>
+      [...filteredCalculators].sort((a, b) => {
+        const favoriteDifference = Number(favorites.has(b.id)) - Number(favorites.has(a.id));
+        return favoriteDifference || a.abbreviation.localeCompare(b.abbreviation);
+      }),
+    [favorites, filteredCalculators]
+  );
+
   const toggleFavorite = (id: string) => {
-    setFavorites((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        next.add(id);
-      }
-      localStorage.setItem('darwin-calculator-favorites', JSON.stringify([...next]));
+    setFavorites((current) => {
+      const next = new Set(current);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      localStorage.setItem('darwin-calculator-favorites', JSON.stringify(Array.from(next)));
       return next;
     });
   };
 
-  // Get unique categories from calculators
-  const categories = useMemo(() => {
-    const cats = new Set<CalculatorCategory>();
-    allCalculators.forEach((calc) => cats.add(calc.category));
-    return Array.from(cats).sort();
-  }, []);
-
-  // Filter calculators
-  const filteredCalculators = useMemo(() => {
-    return allCalculators.filter((calc) => {
-      // Category filter
-      if (selectedCategory !== 'all' && calc.category !== selectedCategory) {
-        return false;
-      }
-
-      // Search filter
-      if (searchQuery) {
-        const query = searchQuery.toLowerCase();
-        return (
-          calc.name.toLowerCase().includes(query) ||
-          calc.abbreviation.toLowerCase().includes(query) ||
-          calc.description.toLowerCase().includes(query) ||
-          categoryLabels[calc.category].toLowerCase().includes(query)
-        );
-      }
-
-      return true;
-    });
-  }, [selectedCategory, searchQuery]);
-
-  // Separate favorites
-  const favoriteCalculators = filteredCalculators.filter((c) => favorites.has(c.id));
-  const otherCalculators = filteredCalculators.filter((c) => !favorites.has(c.id));
-
   return (
-    <PageContainer className="py-12">
-      {/* Header */}
-      <div className="mb-10">
-        <div className="flex items-center gap-4 mb-6">
-          <div className="w-16 h-16 bg-gradient-to-br from-[#0071E3] to-[#5E5CE6] rounded-2xl flex items-center justify-center shadow-lg">
-            <Calculator className="w-8 h-8 text-white" />
+    <div className="min-h-screen bg-[#050b0f] text-zinc-100">
+      <PageContainer className="py-8 md:py-12">
+        <header className="border-b border-white/10 pb-7">
+          <div className="flex items-start gap-4">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-md border border-cyan-400/30 bg-cyan-400/10 text-cyan-300">
+              <Calculator className="h-6 w-6" aria-hidden="true" />
+            </span>
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-400/80">
+                Ferramentas clínicas
+              </p>
+              <h1 className="mt-1 text-3xl font-semibold tracking-normal text-white sm:text-4xl">
+                Calculadoras clínicas
+              </h1>
+              <p className="mt-2 text-sm text-zinc-500">
+                Escores e índices para suporte à decisão clínica.
+              </p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-neutral-100 tracking-tight">
-              Clinical Calculators
-            </h1>
-            <p className="text-lg text-neutral-500 dark:text-neutral-400">
-              Evidence-based clinical decision support tools
+
+          <div className="mt-6 flex items-start gap-3 rounded-md border border-amber-400/25 bg-amber-400/[0.06] p-4">
+            <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-300" aria-hidden="true" />
+            <p className="text-xs leading-relaxed text-amber-100/75">
+              <strong className="text-amber-200">Aviso clínico:</strong> use os resultados como apoio.
+              Considere o contexto individual e não substitua a avaliação médica.
             </p>
           </div>
+        </header>
+
+        <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 border-b border-white/10 pb-5 text-xs">
+          <span><strong className="text-xl font-semibold text-cyan-300">{allCalculators.length}</strong> <span className="text-zinc-500">calculadoras</span></span>
+          <span><strong className="text-xl font-semibold text-emerald-300">{categories.length}</strong> <span className="text-zinc-500">especialidades</span></span>
+          <span><strong className="text-xl font-semibold text-amber-300">{favorites.size}</strong> <span className="text-zinc-500">favoritas</span></span>
         </div>
 
-        {/* Clinical disclaimer */}
-        <div className="flex items-start gap-3 p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800">
-          <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
-          <p className="text-sm text-amber-800 dark:text-amber-200">
-            <strong>Clinical Disclaimer:</strong> These calculators are decision support tools only.
-            Always use clinical judgment and consider the individual patient context.
-            Results should not replace proper medical evaluation.
-          </p>
-        </div>
-      </div>
-
-      {/* Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <div className="p-4 rounded-xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-700">
-          <div className="text-3xl font-bold text-[#0071E3]">{allCalculators.length}</div>
-          <div className="text-sm text-neutral-500">Total Calculators</div>
-        </div>
-        <div className="p-4 rounded-xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-700">
-          <div className="text-3xl font-bold text-emerald-500">{categories.length}</div>
-          <div className="text-sm text-neutral-500">Categories</div>
-        </div>
-        <div className="p-4 rounded-xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-700">
-          <div className="text-3xl font-bold text-purple-500">
-            {allCalculators.filter((c) => c.validationStudy).length}
+        <section className="mt-6" aria-label="Busca e filtros de calculadoras">
+          <div className="relative">
+            <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-zinc-500" aria-hidden="true" />
+            <input
+              type="search"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              placeholder="Buscar por nome, sigla ou especialidade"
+              className="h-12 w-full rounded-md border border-white/15 bg-[#081116] pl-12 pr-12 text-sm text-white outline-none placeholder:text-zinc-600 focus:border-cyan-400/70 focus:ring-2 focus:ring-cyan-400/15"
+            />
+            {searchQuery ? (
+              <button
+                type="button"
+                onClick={() => setSearchQuery('')}
+                className="absolute right-2 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-md text-zinc-500 hover:bg-white/[0.05] hover:text-white"
+                aria-label="Limpar busca"
+              >
+                <X className="h-4 w-4" aria-hidden="true" />
+              </button>
+            ) : null}
           </div>
-          <div className="text-sm text-neutral-500">Validated</div>
-        </div>
-        <div className="p-4 rounded-xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-700">
-          <div className="text-3xl font-bold text-yellow-500">{favorites.size}</div>
-          <div className="text-sm text-neutral-500">Favorites</div>
-        </div>
-      </div>
 
-      {/* Search and filters */}
-      <div className="space-y-4 mb-8">
-        {/* Search bar */}
-        <div className="relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search calculators by name, abbreviation, or keywords..."
-            className={cn(
-              'w-full pl-12 pr-12 py-3.5 rounded-xl',
-              'bg-white dark:bg-neutral-900',
-              'border border-neutral-200 dark:border-neutral-700',
-              'text-neutral-900 dark:text-neutral-100',
-              'placeholder:text-neutral-400',
-              'focus:outline-none focus:ring-2 focus:ring-[#0071E3]/50 focus:border-[#0071E3]'
-            )}
-          />
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery('')}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700"
-            >
-              <X className="w-4 h-4 text-neutral-400" />
-            </button>
-          )}
-        </div>
+          <div className="mt-4 flex items-start gap-3">
+            <div className="no-scrollbar flex min-w-0 flex-1 gap-2 overflow-x-auto pb-2">
+              <button
+                type="button"
+                onClick={() => setSelectedCategory('all')}
+                className={cn(
+                  'h-10 shrink-0 rounded-md border px-3 text-xs font-medium transition-colors',
+                  selectedCategory === 'all'
+                    ? 'border-cyan-300/70 bg-cyan-400/10 text-cyan-200'
+                    : 'border-white/10 text-zinc-400 hover:border-white/25 hover:text-white'
+                )}
+              >
+                Todas
+              </button>
+              {categories.map((category) => {
+                const meta = categoryMeta[category];
+                const Icon = meta.icon;
+                const selected = selectedCategory === category;
+                return (
+                  <button
+                    key={category}
+                    type="button"
+                    onClick={() => setSelectedCategory(category)}
+                    className={cn(
+                      'flex h-10 shrink-0 items-center gap-2 rounded-md border px-3 text-xs transition-colors',
+                      selected
+                        ? cn('border-white/25', meta.surface, meta.color)
+                        : 'border-white/10 text-zinc-500 hover:border-white/25 hover:text-zinc-200'
+                    )}
+                  >
+                    <Icon className="h-4 w-4" aria-hidden="true" />
+                    {meta.label}
+                  </button>
+                );
+              })}
+            </div>
 
-        {/* Filters row */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-          <CategoryFilter
-            categories={categories}
-            selectedCategory={selectedCategory}
-            onSelect={setSelectedCategory}
-          />
-
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setViewMode('grid')}
-              className={cn(
-                'p-2.5 rounded-lg transition-colors',
-                viewMode === 'grid'
-                  ? 'bg-[#0071E3] text-white'
-                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400'
-              )}
-            >
-              <Grid3X3 className="w-5 h-5" />
-            </button>
-            <button
-              onClick={() => setViewMode('list')}
-              className={cn(
-                'p-2.5 rounded-lg transition-colors',
-                viewMode === 'list'
-                  ? 'bg-[#0071E3] text-white'
-                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400'
-              )}
-            >
-              <List className="w-5 h-5" />
-            </button>
+            <div className="hidden shrink-0 items-center gap-1 sm:flex" aria-label="Modo de visualização">
+              <button
+                type="button"
+                onClick={() => setViewMode('grid')}
+                className={cn('grid h-10 w-10 place-items-center rounded-md', viewMode === 'grid' ? 'bg-cyan-400/15 text-cyan-300' : 'text-zinc-500 hover:bg-white/[0.05]')}
+                aria-label="Visualização em grade"
+                title="Grade"
+              >
+                <Grid3X3 className="h-4 w-4" aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode('list')}
+                className={cn('grid h-10 w-10 place-items-center rounded-md', viewMode === 'list' ? 'bg-cyan-400/15 text-cyan-300' : 'text-zinc-500 hover:bg-white/[0.05]')}
+                aria-label="Visualização em lista"
+                title="Lista"
+              >
+                <List className="h-4 w-4" aria-hidden="true" />
+              </button>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* Favorites section */}
-      {favoriteCalculators.length > 0 && (
-        <div className="mb-10">
-          <div className="flex items-center gap-2 mb-4">
-            <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-            <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              Favorites
+        <section className="mt-7" aria-labelledby="calculator-list-title">
+          <div className="mb-4 flex items-center gap-2">
+            <h2 id="calculator-list-title" className="text-base font-semibold tracking-normal text-white">
+              {selectedCategory === 'all' ? 'Todas as calculadoras' : categoryMeta[selectedCategory].label}
             </h2>
-            <span className="text-sm text-neutral-500">({favoriteCalculators.length})</span>
+            <span className="text-xs text-zinc-600">({orderedCalculators.length})</span>
           </div>
-          <div
-            className={cn(
-              viewMode === 'grid'
-                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
-                : 'space-y-3'
-            )}
-          >
-            <AnimatePresence mode="popLayout">
-              {favoriteCalculators.map((calc) => (
-                <CalculatorCardEnhanced
-                  key={calc.id}
-                  calculator={calc}
-                  isFavorite={true}
-                  onToggleFavorite={() => toggleFavorite(calc.id)}
+
+          {orderedCalculators.length ? (
+            <div className={viewMode === 'grid' ? 'grid gap-4 sm:grid-cols-2 xl:grid-cols-3' : 'space-y-2'}>
+              {orderedCalculators.map((calculator) => (
+                <CalculatorItem
+                  key={calculator.id}
+                  calculator={calculator}
+                  favorite={favorites.has(calculator.id)}
                   viewMode={viewMode}
+                  onToggleFavorite={() => toggleFavorite(calculator.id)}
                 />
               ))}
-            </AnimatePresence>
-          </div>
-        </div>
-      )}
-
-      {/* All calculators */}
-      <div>
-        <div className="flex items-center gap-2 mb-4">
-          <Sparkles className="w-5 h-5 text-[#0071E3]" />
-          <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-100">
-            {selectedCategory === 'all' ? 'All Calculators' : categoryLabels[selectedCategory]}
-          </h2>
-          <span className="text-sm text-neutral-500">
-            ({otherCalculators.length})
-          </span>
-        </div>
-
-        {otherCalculators.length === 0 ? (
-          <div className="text-center py-16">
-            <Calculator className="w-16 h-16 mx-auto mb-4 text-neutral-300 dark:text-neutral-700" />
-            <h3 className="text-lg font-semibold text-neutral-600 dark:text-neutral-400">
-              No calculators found
-            </h3>
-            <p className="text-sm text-neutral-500 mt-1">
-              Try adjusting your search or filter criteria
-            </p>
-          </div>
-        ) : (
-          <div
-            className={cn(
-              viewMode === 'grid'
-                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
-                : 'space-y-3'
-            )}
-          >
-            <AnimatePresence mode="popLayout">
-              {otherCalculators.map((calc) => (
-                <CalculatorCardEnhanced
-                  key={calc.id}
-                  calculator={calc}
-                  isFavorite={false}
-                  onToggleFavorite={() => toggleFavorite(calc.id)}
-                  viewMode={viewMode}
-                />
-              ))}
-            </AnimatePresence>
-          </div>
-        )}
-      </div>
-
-      {/* Legacy calculators link */}
-      <div className="mt-12 p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-700">
-        <div className="flex items-center justify-between">
-          <div>
-            <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">
-              Looking for other calculators?
-            </h3>
-            <p className="text-sm text-neutral-500 mt-1">
-              Access BMI, CKD-EPI, Framingham, PHQ-9, and other screening tools
-            </p>
-          </div>
-          <Link
-            href="/calculadoras/geral"
-            locale={locale}
-            className={cn(
-              'flex items-center gap-2 px-5 py-2.5 rounded-xl',
-              'bg-neutral-200 dark:bg-neutral-800',
-              'text-neutral-700 dark:text-neutral-300',
-              'hover:bg-neutral-300 dark:hover:bg-neutral-700',
-              'font-medium text-sm transition-colors'
-            )}
-          >
-            General Calculators
-            <ChevronRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </div>
-    </PageContainer>
+            </div>
+          ) : (
+            <div className="rounded-md border border-dashed border-white/15 py-16 text-center">
+              <Calculator className="mx-auto h-10 w-10 text-zinc-700" aria-hidden="true" />
+              <h3 className="mt-4 text-sm font-medium text-zinc-300">Nenhuma calculadora encontrada</h3>
+              <p className="mt-1 text-xs text-zinc-600">Ajuste a busca ou escolha outra especialidade.</p>
+            </div>
+          )}
+        </section>
+      </PageContainer>
+    </div>
   );
 }

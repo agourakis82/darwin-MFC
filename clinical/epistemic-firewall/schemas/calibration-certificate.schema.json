@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://darwin-mfc.local/schemas/calibration-certificate.v1.json",
+  "title": "Darwin Sounio Calibration Certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "certificateId",
+    "modelVersion",
+    "status",
+    "population",
+    "method",
+    "coverage",
+    "clinicalUtility",
+    "distribution",
+    "hashes",
+    "signature",
+    "refusalReasons"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "darwin.sounio.calibration-certificate.v1" },
+    "certificateId": { "type": "string", "minLength": 1 },
+    "modelVersion": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["not-calibrated", "calibrated", "expired", "drifted", "revoked"] },
+    "issuedAt": { "type": ["string", "null"], "format": "date-time" },
+    "validFrom": { "type": ["string", "null"], "format": "date-time" },
+    "validUntil": { "type": ["string", "null"], "format": "date-time" },
+    "population": {
+      "type": "object",
+      "required": ["country", "careSetting", "locale", "ageMinimumDays", "ageMaximumYearsExclusive", "sites", "inclusionCriteria", "exclusionCriteria"]
+    },
+    "method": {
+      "type": "object",
+      "required": ["family", "variant", "alpha", "calibrationSplit", "decisionPolicy"]
+    },
+    "coverage": {
+      "type": "object",
+      "required": ["target", "marginalObserved", "lowerConfidenceBound", "classConditional", "subgroupConditional", "meanPredictionSetSize"]
+    },
+    "clinicalUtility": { "type": "object" },
+    "distribution": {
+      "type": "object",
+      "required": ["status", "referenceFingerprint", "monitor", "thresholds", "lastCheckedAt"]
+    },
+    "hashes": { "type": "object" },
+    "signature": { "type": ["string", "null"] },
+    "refusalReasons": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "darwin.sounio.current-aps-comparator.v1",
+  "comparatorVersion": "current-aps-heuristic-v1.0.0",
+  "scoreScale": "current-product-heuristic-0-to-100",
+  "probabilityNormalization": "sounio-add-one-and-normalize-v1",
+  "featureLabels": {
+    "fever": "Febre",
+    "cough": "Tosse",
+    "coryza": "Coriza",
+    "sore_throat": "Dor de Garganta",
+    "dyspnea": "Dispneia",
+    "wheeze": "Sibilancia",
+    "stridor": "Estridor",
+    "tachypnea": "Taquipneia",
+    "hypoxemia": "Hipoxemia",
+    "paroxysmal_cough": "Tosse paroxistica",
+    "duration_over_10d": "Sintomas ha mais de 10 dias"
+  },
+  "primarySymptomPriority": [
+    "cough",
+    "dyspnea",
+    "sore_throat",
+    "fever",
+    "wheeze",
+    "stridor",
+    "coryza",
+    "tachypnea",
+    "hypoxemia",
+    "paroxysmal_cough",
+    "duration_over_10d"
+  ],
+  "conditionAliases": {
+    "ivas-pediatrica": ["ivas-pediatrica", "resfriado-comum", "rinofaringite-aguda"],
+    "pneumonia-adquirida-comunidade-pediatrica": [
+      "pneumonia-adquirida-comunidade-pediatrica",
+      "pneumonia-comunitaria"
+    ],
+    "bronquiolite": ["bronquiolite", "bronquiolite-aguda", "bronquiolite-viral"],
+    "asma-pediatrica": ["asma-pediatrica", "asma-infantil", "asma"],
+    "crupe": ["crupe"],
+    "coqueluche": ["coqueluche"],
+    "influenza-covid-pediatrica": [
+      "influenza-covid-pediatrica",
+      "influenza",
+      "covid-19",
+      "sindrome-gripal"
+    ],
+    "faringite-aguda": ["faringite-aguda", "faringite-estreptococica"],
+    "outra-incerta": []
+  }
+}

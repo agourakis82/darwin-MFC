@@ -76,7 +76,9 @@ const doencaMedicamentoMap: Record<string, MedicamentoReference[]> = {
   'diabetes-mellitus-2': [
     { medicamentoId: 'metformina', nomeGenerico: 'Metformina', tipoUso: 'primeira_linha', posologiaResumida: '850mg 2-3x/dia', disponivelSUS: true },
     { medicamentoId: 'gliclazida', nomeGenerico: 'Gliclazida', tipoUso: 'segunda_linha', posologiaResumida: '30-120mg 1x/dia', disponivelSUS: true },
+    { medicamentoId: 'dapagliflozina', nomeGenerico: 'Dapagliflozina', tipoUso: 'segunda_linha', posologiaResumida: '10mg 1x/dia, conforme critérios do PCDT', disponivelSUS: true },
     { medicamentoId: 'insulina-nph', nomeGenerico: 'Insulina NPH', tipoUso: 'alternativa', posologiaResumida: '10UI ao deitar', disponivelSUS: true },
+    { medicamentoId: 'insulina-glargina', nomeGenerico: 'Insulina glargina', tipoUso: 'alternativa', posologiaResumida: 'Conforme critérios e disponibilidade local', disponivelSUS: true },
   ],
   'depressao': [
     { medicamentoId: 'fluoxetina', nomeGenerico: 'Fluoxetina', tipoUso: 'primeira_linha', posologiaResumida: '20mg 1x/dia', disponivelSUS: true },
@@ -124,6 +126,10 @@ const doencaMedicamentoMap: Record<string, MedicamentoReference[]> = {
     { medicamentoId: 'atorvastatina', nomeGenerico: 'Atorvastatina', tipoUso: 'primeira_linha', posologiaResumida: '10-40mg/dia', disponivelSUS: true },
   ],
   'pneumonia': [
+    { medicamentoId: 'amoxicilina', nomeGenerico: 'Amoxicilina', tipoUso: 'primeira_linha', posologiaResumida: '500mg 8/8h x7d', indicacaoEspecifica: 'PAC leve/moderada', disponivelSUS: true },
+    { medicamentoId: 'azitromicina', nomeGenerico: 'Azitromicina', tipoUso: 'alternativa', posologiaResumida: '500mg 1x/dia x3-5d', indicacaoEspecifica: 'Alérgico a penicilina ou PAC atípica', disponivelSUS: true },
+  ],
+  'pneumonia-comunitaria': [
     { medicamentoId: 'amoxicilina', nomeGenerico: 'Amoxicilina', tipoUso: 'primeira_linha', posologiaResumida: '500mg 8/8h x7d', indicacaoEspecifica: 'PAC leve/moderada', disponivelSUS: true },
     { medicamentoId: 'azitromicina', nomeGenerico: 'Azitromicina', tipoUso: 'alternativa', posologiaResumida: '500mg 1x/dia x3-5d', indicacaoEspecifica: 'Alérgico a penicilina ou PAC atípica', disponivelSUS: true },
   ],

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "darwin.sounio.clinical-receipt.v2",
+  "modelVersion": "respiratory-pediatric-0.1.0",
+  "status": "experimental",
+  "generatedAt": "2026-07-29T23:36:59.886Z",
+  "abi": {
+    "conditions": 9,
+    "features": 12,
+    "modelStrideBytes": 224,
+    "outputStrideBytes": 32,
+    "informationGainOffsetBytes": 288,
+    "nextQuestionOffsetBytes": 384,
+    "outputBytes": 400,
+    "imports": [
+      {
+        "module": "env",
+        "name": "log",
+        "signature": "(f64)->f64",
+        "purpose": "Shannon entropy"
+      }
+    ]
+  },
+  "compiler": {
+    "identity": "souc-self-hosted-x86_64",
+    "sha256": "840ecf6080b31a6fc5f3b93c5c781119feac37a16c4b4170596f7643164d9e2b",
+    "sourceFreshness": "local-snapshot-unverified-against-remote"
+  },
+  "hashes": {
+    "sourceBundleSha256": "fb1beb0954564fc8a3fee5d414cb73b361e89857a84bc77b305efdcb1c5641dc",
+    "evidenceSha256": "b3dd81ff21b08508e4d036e85c49ff061e4787e0562deb4855c28a813fea8895",
+    "vectorsSha256": "c147d26395e04e4d96abc07ca5e0e16d4576399c5ea3f16dd05f6a0118d10786",
+    "modelSha256": "03ed46f0ca68516a95469699958dd8aab30ac5f7a4d53c2ce08e557582839413",
+    "wasmSha256": "2634111ab6564692f4a3670479b5226cc24e6d78a634846a7fc5bea02b144753",
+    "nativeOracleOutputSha256": "97956e3343dd9614eb5e11d3b09ebd31460faaf00dbcca4150358168631abffb",
+    "calibrationCertificateSha256": "5dbfbe5ea8db042ae8389c373af03bfeff703359cb94fd27e4db236a26cf5c66",
+    "epistemicFirewallPolicySha256": "41339450baaa96d0665ae9876f970f0a1f017923338d3bb472cef841c08d654a",
+    "epistemicFirewallSourceSha256": "17e62243b754541cfeafb615daed7ad83f24f413bec3051f6c46801c40d9b919",
+    "epistemicFirewallOracleOutputSha256": "d53321eda0d8c403aba6850fabcafc3d2a1dca29e3d7cf3aaba0cbc844a40f97"
+  },
+  "gates": {
+    "nativeOracleExecuted": true,
+    "wasmInstantiated": true,
+    "nativeWasmParity": true,
+    "informationGainParity": true,
+    "oracleOutputPrecisionDecimals": 6,
+    "parityTolerance": 0.000001,
+    "maxAbsoluteError": 4.955255423468247e-7,
+    "maxInformationGainError": 1.9633386208472992e-7,
+    "vectorLeaders": [
+      {
+        "id": "preschool-viral-uri",
+        "expectedLeader": "ivas-pediatrica",
+        "observedLeader": "ivas-pediatrica",
+        "passed": true,
+        "expectedNextQuestion": -1,
+        "oracleNextQuestion": -1,
+        "observedNextQuestion": -1,
+        "nextQuestionPassed": true,
+        "expectedInformationGain": -1,
+        "observedInformationGain": -1
+      },
+      {
+        "id": "infant-bronchiolitis",
+        "expectedLeader": "bronquiolite",
+        "observedLeader": "bronquiolite",
+        "passed": true,
+        "expectedNextQuestion": 0,
+        "oracleNextQuestion": 0,
+        "observedNextQuestion": 0,
+        "nextQuestionPassed": true,
+        "expectedInformationGain": 0.023861,
+        "observedInformationGain": 0.023860845844739964
+      },
+      {
+        "id": "preschool-pneumonia",
+        "expectedLeader": "pneumonia-adquirida-comunidade-pediatrica",
+        "observedLeader": "pneumonia-adquirida-comunidade-pediatrica",
+        "passed": true,
+        "expectedNextQuestion": 3,
+        "oracleNextQuestion": 3,
+        "observedNextQuestion": 3,
+        "nextQuestionPassed": true,
+        "expectedInformationGain": 0.002709,
+        "observedInformationGain": 0.0027090130329065487
+      },
+      {
+        "id": "preschool-croup",
+        "expectedLeader": "crupe",
+        "observedLeader": "crupe",
+        "passed": true,
+        "expectedNextQuestion": 7,
+        "oracleNextQuestion": 7,
+        "observedNextQuestion": 7,
+        "nextQuestionPassed": true,
+        "expectedInformationGain": 0.060203,
+        "observedInformationGain": 0.06020316997970765
+      },
+      {
+        "id": "young-infant-pertussis",
+        "expectedLeader": "coqueluche",
+        "observedLeader": "coqueluche",
+        "passed": true,
+        "expectedNextQuestion": 7,
+        "oracleNextQuestion": 7,
+        "observedNextQuestion": 7,
+        "nextQuestionPassed": true,
+        "expectedInformationGain": 0.037633,
+        "observedInformationGain": 0.037633196333862085
+      }
+    ],
+    "retrospectiveCalibration": false,
+    "epistemicFirewallOracleExecuted": true,
+    "epistemicFirewallPolicyTableComplete": true,
+    "signatureVerified": false
+  },
+  "signature": null,
+  "refusalReasons": [
+    "Retrospective calibration has not been performed.",
+    "The compiler artifact has not been reconciled with the current remote Sounio workspace.",
+    "No production signing key was provided."
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://darwin-mfc.local/schemas/calibration-report.v1.json",
+  "title": "Darwin Sounio Calibration Analysis Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "reportId",
+    "status",
+    "clinicalPromotionAuthorized",
+    "modelVersion",
+    "generatedAt",
+    "cohort",
+    "split",
+    "conformal",
+    "comparator",
+    "precisionPlan",
+    "coverage",
+    "metrics",
+    "scientificGates",
+    "governanceGates",
+    "precisionGates",
+    "readinessGates",
+    "promotion",
+    "hashes",
+    "limitations"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "darwin.sounio.calibration-report.v1" },
+    "reportId": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["fixture-only", "research-only"] },
+    "clinicalPromotionAuthorized": { "const": false },
+    "modelVersion": { "type": "string", "minLength": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "cohort": { "type": "object" },
+    "split": { "type": "object" },
+    "conformal": { "type": "object" },
+    "comparator": {
+      "type": "object",
+      "required": [
+        "comparatorVersion",
+        "scoreScale",
+        "probabilityNormalization",
+        "primarySymptomPolicy",
+        "mathematicalAuthority",
+        "runtime"
+      ]
+    },
+    "precisionPlan": {
+      "type": "object",
+      "required": [
+        "method",
+        "anticipatedCoverage",
+        "targetLowerConfidenceBound",
+        "confidenceLevel",
+        "requiredEvaluationPatientsPerClass",
+        "requiredOverallEvaluationPatientsAtDevelopmentMix",
+        "minimumCalibrationPatientsPerClassForNonMaximalConformalQuantile",
+        "scope"
+      ]
+    },
+    "coverage": { "type": "object" },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "marginalCoverage",
+        "meanPredictionSetSize",
+        "multiclassBrierScore",
+        "expectedCalibrationError5Bin",
+        "pneumoniaTop3Recall",
+        "redFlagSeveritySensitivity",
+        "pneumoniaDecisionCurveNetBenefitAt10Percent",
+        "marginalCoverageWilsonLower95",
+        "currentApsComparatorBrierScore",
+        "relativeBrierImprovementVsCurrentAps"
+      ]
+    },
+    "scientificGates": { "type": "object" },
+    "governanceGates": { "type": "object" },
+    "precisionGates": { "type": "object" },
+    "readinessGates": { "type": "object" },
+    "promotion": {
+      "type": "object",
+      "required": ["eligibleForIndependentReview", "blockers"]
+    },
+    "hashes": { "type": "object" },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://darwin-mfc.local/schemas/current-aps-comparator.v1.json",
+  "title": "Darwin Current APS Heuristic Comparator",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "comparatorVersion",
+    "scoreScale",
+    "probabilityNormalization",
+    "featureLabels",
+    "primarySymptomPriority",
+    "conditionAliases"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "darwin.sounio.current-aps-comparator.v1" },
+    "comparatorVersion": { "type": "string", "minLength": 1 },
+    "scoreScale": { "const": "current-product-heuristic-0-to-100" },
+    "probabilityNormalization": { "const": "sounio-add-one-and-normalize-v1" },
+    "featureLabels": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "primarySymptomPriority": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "conditionAliases": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

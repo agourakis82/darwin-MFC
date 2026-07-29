@@ -1,0 +1,217 @@
+//@ generated-entrypoint
+// Darwin-Sounio native oracle. The build script appends evidence and vectors.
+
+let CONDITION_COUNT: i64 = 9
+let FEATURE_COUNT: i64 = 12
+let MODEL_STRIDE: i64 = 28
+
+struct ClinicalInput {
+    values: [i64; 12],
+}
+
+struct ClinicalModel {
+    values: [f64; 252],
+}
+
+struct KnowledgeProbability {
+    value: f64,
+    lower: f64,
+    upper: f64,
+    confidence: f64,
+    provenance_id: i64,
+    revisable: bool,
+}
+
+struct EpistemicDifferential {
+    values: [KnowledgeProbability; 9],
+}
+
+// Flat oracle storage avoids bootstrap struct-return copies. The typed structs
+// above remain the clinical model; this path exists only for the parity gate.
+var ORACLE_INPUT: [i64; 12] = [0; 12]
+var ORACLE_MODEL: [f64; 252] = [0.0; 252]
+var ORACLE_POSTERIOR: [f64; 9] = [0.0; 9]
+var ORACLE_INFORMATION_GAIN: [f64; 12] = [0.0; 12]
+var ORACLE_NEXT_QUESTION: i64 = -1
+
+fn clamp_probability(value: f64) -> f64 with Observe {
+    if value < 0.0 { return 0.0 }
+    if value > 1.0 { return 1.0 }
+    value
+}
+
+fn infer_epistemic(input: ClinicalInput, model: ClinicalModel) -> EpistemicDifferential with Mut, Div, Observe {
+    var raw: [f64; 9] = [0.0; 9]
+    var total: f64 = 0.0
+    var condition: i64 = 0
+
+    while condition < CONDITION_COUNT {
+        let base = condition * MODEL_STRIDE
+        var score = model.values[base as usize]
+        var feature: i64 = 0
+        while feature < FEATURE_COUNT {
+            let code = input.values[feature as usize]
+            let likelihood_base = base + 4 + feature * 2
+            if code == 1 {
+                score = score * model.values[likelihood_base as usize]
+            } else {
+                if code == 0 {
+                    score = score * model.values[(likelihood_base + 1) as usize]
+                }
+            }
+            feature = feature + 1
+        }
+        raw[condition as usize] = score
+        total = total + score
+        condition = condition + 1
+    }
+
+    let empty = KnowledgeProbability {
+        value: 0.0,
+        lower: 0.0,
+        upper: 0.0,
+        confidence: 0.0,
+        provenance_id: 0,
+        revisable: true,
+    }
+    var output = EpistemicDifferential { values: [empty; 9] }
+    condition = 0
+    while condition < CONDITION_COUNT {
+        let base = condition * MODEL_STRIDE
+        var posterior: f64 = 0.0
+        if total > 0.0 {
+            posterior = raw[condition as usize] / total
+        }
+        let lower = clamp_probability(posterior * model.values[(base + 1) as usize])
+        let upper = clamp_probability(posterior * model.values[(base + 2) as usize])
+        output.values[condition as usize] = KnowledgeProbability {
+            value: posterior,
+            lower: lower,
+            upper: upper,
+            confidence: model.values[(base + 3) as usize],
+            provenance_id: condition + 1,
+            revisable: true,
+        }
+        condition = condition + 1
+    }
+    output
+}
+
+fn infer_oracle() with Mut, Div, Panic {
+    var total: f64 = 0.0
+    var condition: i64 = 0
+    while condition < CONDITION_COUNT {
+        let base = condition * MODEL_STRIDE
+        var score = ORACLE_MODEL[base as usize]
+        var feature: i64 = 0
+        while feature < FEATURE_COUNT {
+            let code = ORACLE_INPUT[feature as usize]
+            let likelihood_base = base + 4 + feature * 2
+            if code == 1 {
+                score = score * ORACLE_MODEL[likelihood_base as usize]
+            } else {
+                if code == 0 {
+                    score = score * ORACLE_MODEL[(likelihood_base + 1) as usize]
+                }
+            }
+            feature = feature + 1
+        }
+        ORACLE_POSTERIOR[condition as usize] = score
+        total = total + score
+        condition = condition + 1
+    }
+    condition = 0
+    while condition < CONDITION_COUNT {
+        ORACLE_POSTERIOR[condition as usize] = ORACLE_POSTERIOR[condition as usize] / total
+        condition = condition + 1
+    }
+}
+
+// Pure logarithm approximation used identically by the native oracle and WASM.
+// Inputs in the EIG path are probabilities in (0, 1].
+fn ln_approx(value: f64) -> f64 with Mut, Div {
+    if value <= 0.0 { return -1000.0 }
+    var x = value
+    var exponent: i64 = 0
+    while x < 0.5 {
+        x = x * 2.0
+        exponent = exponent - 1
+    }
+    let y = (x - 1.0) / (x + 1.0)
+    let y2 = y * y
+    var term = y
+    var sum = term
+    term = term * y2
+    sum = sum + term / 3.0
+    term = term * y2
+    sum = sum + term / 5.0
+    term = term * y2
+    sum = sum + term / 7.0
+    term = term * y2
+    sum = sum + term / 9.0
+    term = term * y2
+    sum = sum + term / 11.0
+    2.0 * sum + (exponent as f64) * 0.6931471805599453
+}
+
+fn entropy_term(probability: f64) -> f64 with Mut, Div {
+    if probability <= 0.0 { return 0.0 }
+    0.0 - probability * ln_approx(probability)
+}
+
+fn compute_oracle_information_gain() with Mut, Div, Panic {
+    var current_entropy: f64 = 0.0
+    var condition: i64 = 0
+    while condition < CONDITION_COUNT {
+        current_entropy = current_entropy + entropy_term(ORACLE_POSTERIOR[condition as usize])
+        condition = condition + 1
+    }
+
+    ORACLE_NEXT_QUESTION = -1
+    var best_gain: f64 = -1.0
+    var feature: i64 = 0
+    while feature < FEATURE_COUNT {
+        if ORACLE_INPUT[feature as usize] == -1 {
+            var probability_yes: f64 = 0.0
+            condition = 0
+            while condition < CONDITION_COUNT {
+                let base = condition * MODEL_STRIDE + 4 + feature * 2
+                let yes_weight = ORACLE_MODEL[base as usize]
+                let no_weight = ORACLE_MODEL[(base + 1) as usize]
+                let conditional_yes = yes_weight / (yes_weight + no_weight)
+                probability_yes = probability_yes + ORACLE_POSTERIOR[condition as usize] * conditional_yes
+                condition = condition + 1
+            }
+            let probability_no = 1.0 - probability_yes
+            var entropy_yes: f64 = 0.0
+            var entropy_no: f64 = 0.0
+            condition = 0
+            while condition < CONDITION_COUNT {
+                let base = condition * MODEL_STRIDE + 4 + feature * 2
+                let yes_weight = ORACLE_MODEL[base as usize]
+                let no_weight = ORACLE_MODEL[(base + 1) as usize]
+                let conditional_yes = yes_weight / (yes_weight + no_weight)
+                let joint_yes = ORACLE_POSTERIOR[condition as usize] * conditional_yes
+                let joint_no = ORACLE_POSTERIOR[condition as usize] * (1.0 - conditional_yes)
+                if probability_yes > 0.0 {
+                    entropy_yes = entropy_yes + entropy_term(joint_yes / probability_yes)
+                }
+                if probability_no > 0.0 {
+                    entropy_no = entropy_no + entropy_term(joint_no / probability_no)
+                }
+                condition = condition + 1
+            }
+            let gain = current_entropy - probability_yes * entropy_yes - probability_no * entropy_no
+            ORACLE_INFORMATION_GAIN[feature as usize] = gain
+            if gain > best_gain {
+                best_gain = gain
+                ORACLE_NEXT_QUESTION = feature
+            }
+        } else {
+            ORACLE_INFORMATION_GAIN[feature as usize] = -1.0
+        }
+        feature = feature + 1
+    }
+}
+
+// The generated source adds build_model(), build_vector_*() and main().

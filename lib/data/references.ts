@@ -5,6 +5,60 @@ import { Reference } from '../types/references';
  * Padrão Q1: Toda referência deve ter metadados completos
  */
 export const references: Record<string, Reference> = {
+  'pcdt-has-2025': {
+    id: 'pcdt-has-2025',
+    type: 'diretriz',
+    title: 'Protocolo Clínico e Diretrizes Terapêuticas da Hipertensão Arterial Sistêmica',
+    legalNumber: 'Portaria SECTICS/MS nº 49, de 23 de julho de 2025',
+    year: 2025,
+    authors: ['Ministério da Saúde'],
+    url: 'https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf/view',
+    accessDate: '2026-07-29',
+  },
+
+  'esc-has-2024': {
+    id: 'esc-has-2024',
+    type: 'diretriz',
+    title: '2024 ESC Guidelines for the Management of Elevated Blood Pressure and Hypertension',
+    journal: 'European Heart Journal',
+    year: 2024,
+    authors: ['European Society of Cardiology'],
+    url: 'https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/elevated-blood-pressure-and-hypertension/',
+    accessDate: '2026-07-29',
+  },
+
+  'pcdt-dm2-2026': {
+    id: 'pcdt-dm2-2026',
+    type: 'diretriz',
+    title: 'Protocolo Clínico e Diretrizes Terapêuticas do Diabete Melito Tipo 2',
+    legalNumber: 'Portaria SCTIE/MS nº 13, de 21 de fevereiro de 2026',
+    year: 2026,
+    authors: ['Ministério da Saúde'],
+    url: 'https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf/view',
+    accessDate: '2026-07-29',
+  },
+
+  'sbd-2025': {
+    id: 'sbd-2025',
+    type: 'diretriz',
+    title: 'Diretriz Oficial da Sociedade Brasileira de Diabetes: Tratamento do DM2 no SUS',
+    year: 2025,
+    authors: ['Sociedade Brasileira de Diabetes'],
+    url: 'https://diretriz.diabetes.org.br/tratamento-do-dm2-no-sus/',
+    accessDate: '2026-07-29',
+  },
+
+  'ada-2026': {
+    id: 'ada-2026',
+    type: 'diretriz',
+    title: 'Standards of Care in Diabetes - 2026',
+    journal: 'Diabetes Care',
+    year: 2026,
+    authors: ['American Diabetes Association Professional Practice Committee'],
+    url: 'https://diabetesjournals.org/care/issue/49/Supplement_1',
+    accessDate: '2026-07-29',
+  },
+
   // Portarias e Diretrizes MS 2025
   'portaria-saes-13-2025': {
     id: 'portaria-saes-13-2025',
@@ -13109,4 +13163,3 @@ export function getReference(id: string): Reference | undefined {
 export function getReferences(ids: string[]): Reference[] {
   return ids.map(id => references[id]).filter(Boolean);
 }
-

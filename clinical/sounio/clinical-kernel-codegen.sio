@@ -1,0 +1,605 @@
+//@ run-pass
+// Sounio-generated WebAssembly kernel for auditable Bayesian updating.
+// Exports memory, infer(...), and next_question(...). Math.log is imported as
+// an interoperability primitive; all probability and EIG orchestration is here.
+
+let CONDITION_COUNT: i64 = 9
+let FEATURE_COUNT: i64 = 12
+let MODEL_STRIDE_BYTES: i64 = 224
+let OUTPUT_STRIDE_BYTES: i64 = 32
+
+// The bootstrap native emitter cannot return large structs without copying them.
+// Indexed global arenas keep this generator executable with the checked compiler.
+var B0: [i8; 32768] = [0; 32768]
+var B1: [i8; 32768] = [0; 32768]
+var B2: [i8; 32768] = [0; 32768]
+var B3: [i8; 32768] = [0; 32768]
+var B4: [i8; 32768] = [0; 32768]
+var B5: [i8; 32768] = [0; 32768]
+var B6: [i8; 32768] = [0; 32768]
+var B7: [i8; 32768] = [0; 32768]
+var B8: [i8; 32768] = [0; 32768]
+var B9: [i8; 32768] = [0; 32768]
+var BLEN: [i64; 10] = [0; 10]
+var BNEXT: i64 = 0
+var STAGE: [i8; 32768] = [0; 32768]
+
+fn buf_new() -> i64 with Mut, Panic {
+    let id = BNEXT
+    BNEXT = BNEXT + 1
+    BLEN[id as usize] = 0
+    id
+}
+
+fn byte_at(b: i64, index: i64) -> i8 with Panic {
+    if b == 0 { B0[index as usize] }
+    else if b == 1 { B1[index as usize] }
+    else if b == 2 { B2[index as usize] }
+    else if b == 3 { B3[index as usize] }
+    else if b == 4 { B4[index as usize] }
+    else if b == 5 { B5[index as usize] }
+    else if b == 6 { B6[index as usize] }
+    else if b == 7 { B7[index as usize] }
+    else if b == 8 { B8[index as usize] }
+    else { B9[index as usize] }
+}
+
+fn set_byte(b: i64, index: i64, byte: i8) with Mut, Panic {
+    if b == 0 { B0[index as usize] = byte }
+    else if b == 1 { B1[index as usize] = byte }
+    else if b == 2 { B2[index as usize] = byte }
+    else if b == 3 { B3[index as usize] = byte }
+    else if b == 4 { B4[index as usize] = byte }
+    else if b == 5 { B5[index as usize] = byte }
+    else if b == 6 { B6[index as usize] = byte }
+    else if b == 7 { B7[index as usize] = byte }
+    else if b == 8 { B8[index as usize] = byte }
+    else { B9[index as usize] = byte }
+}
+
+fn buf_len(b: i64) -> i64 with Panic {
+    BLEN[b as usize]
+}
+
+fn push(b: i64, byte: i64) -> i64 with Mut, Panic, Div {
+    let len = buf_len(b)
+    if len < 32768 {
+        set_byte(b, len, (byte & 255) as i8)
+        BLEN[b as usize] = len + 1
+    }
+    b
+}
+
+fn uleb(b: i64, value: i64) -> i64 with Mut, Panic, Div {
+    var out = b
+    var v = value
+    while v > 127 {
+        out = push(out, (v & 127) | 128)
+        v = v / 128
+    }
+    push(out, v & 127)
+}
+
+fn sleb(b: i64, value: i64) -> i64 with Mut, Panic, Div {
+    // The bootstrap integer division truncates -1 / 128 to zero instead of
+    // preserving the sign. Encode the clinical unknown sentinel explicitly.
+    if value == -1 { return push(b, 127) }
+    var out = b
+    var v = value
+    var more = true
+    while more {
+        let byte = v & 127
+        v = v / 128
+        let sign_set = (byte & 64) != 0
+        if (v == 0 && !sign_set) || (v == -1 && sign_set) {
+            more = false
+            out = push(out, byte)
+        } else {
+            out = push(out, byte | 128)
+        }
+    }
+    out
+}
+
+fn append(dst: i64, src: i64) -> i64 with Mut, Panic, Div {
+    var out = dst
+    var i: i64 = 0
+    while i < buf_len(src) {
+        out = push(out, byte_at(src, i) as i64)
+        i = i + 1
+    }
+    out
+}
+
+fn section(dst: i64, id: i64, payload: i64) -> i64 with Mut, Panic, Div {
+    var out = push(dst, id)
+    out = uleb(out, buf_len(payload))
+    append(out, payload)
+}
+
+fn ascii_infer(b: i64) -> i64 with Mut, Panic, Div {
+    var out = uleb(b, 5)
+    out = push(out, 105)
+    out = push(out, 110)
+    out = push(out, 102)
+    out = push(out, 101)
+    push(out, 114)
+}
+
+fn ascii_next_question(b: i64) -> i64 with Mut, Panic, Div {
+    var out = uleb(b, 13)
+    out = push(out, 110)
+    out = push(out, 101)
+    out = push(out, 120)
+    out = push(out, 116)
+    out = push(out, 95)
+    out = push(out, 113)
+    out = push(out, 117)
+    out = push(out, 101)
+    out = push(out, 115)
+    out = push(out, 116)
+    out = push(out, 105)
+    out = push(out, 111)
+    push(out, 110)
+}
+
+fn ascii_env(b: i64) -> i64 with Mut, Panic, Div {
+    var out = uleb(b, 3)
+    out = push(out, 101)
+    out = push(out, 110)
+    push(out, 118)
+}
+
+fn ascii_log(b: i64) -> i64 with Mut, Panic, Div {
+    var out = uleb(b, 3)
+    out = push(out, 108)
+    out = push(out, 111)
+    push(out, 103)
+}
+
+fn ascii_memory(b: i64) -> i64 with Mut, Panic, Div {
+    var out = uleb(b, 6)
+    out = push(out, 109)
+    out = push(out, 101)
+    out = push(out, 109)
+    out = push(out, 111)
+    out = push(out, 114)
+    push(out, 121)
+}
+
+fn local_get(b: i64, index: i64) -> i64 with Mut, Panic, Div {
+    uleb(push(b, 32), index)
+}
+
+fn local_set(b: i64, index: i64) -> i64 with Mut, Panic, Div {
+    uleb(push(b, 33), index)
+}
+
+fn i32_const(b: i64, value: i64) -> i64 with Mut, Panic, Div {
+    sleb(push(b, 65), value)
+}
+
+fn f64_zero(b: i64) -> i64 with Mut, Panic, Div {
+    var out = push(b, 68)
+    var i: i64 = 0
+    while i < 8 {
+        out = push(out, 0)
+        i = i + 1
+    }
+    out
+}
+
+fn f64_one(b: i64) -> i64 with Mut, Panic, Div {
+    var out = push(b, 68)
+    out = push(out, 0)
+    out = push(out, 0)
+    out = push(out, 0)
+    out = push(out, 0)
+    out = push(out, 0)
+    out = push(out, 0)
+    out = push(out, 240)
+    push(out, 63)
+}
+
+fn f64_neg_one(b: i64) -> i64 with Mut, Panic, Div {
+    var out = push(b, 68)
+    out = push(out, 0)
+    out = push(out, 0)
+    out = push(out, 0)
+    out = push(out, 0)
+    out = push(out, 0)
+    out = push(out, 0)
+    out = push(out, 240)
+    push(out, 191)
+}
+
+fn model_load(b: i64, byte_offset: i64) -> i64 with Mut, Panic, Div {
+    var out = local_get(b, 1)
+    out = i32_const(out, byte_offset)
+    out = push(out, 106)
+    out = push(out, 43)
+    out = uleb(out, 3)
+    uleb(out, 0)
+}
+
+fn input_load(b: i64, feature_index: i64) -> i64 with Mut, Panic, Div {
+    var out = local_get(b, 0)
+    out = i32_const(out, feature_index * 4)
+    out = push(out, 106)
+    out = push(out, 40)
+    out = uleb(out, 2)
+    uleb(out, 0)
+}
+
+fn output_address(b: i64, byte_offset: i64) -> i64 with Mut, Panic, Div {
+    var out = local_get(b, 2)
+    out = i32_const(out, byte_offset)
+    push(out, 106)
+}
+
+fn output_load(b: i64, byte_offset: i64) -> i64 with Mut, Panic, Div {
+    var out = output_address(b, byte_offset)
+    out = push(out, 43)
+    out = uleb(out, 3)
+    uleb(out, 0)
+}
+
+fn output_store_local(b: i64, byte_offset: i64, local_index: i64) -> i64 with Mut, Panic, Div {
+    var out = output_address(b, byte_offset)
+    out = local_get(out, local_index)
+    out = push(out, 57)
+    out = uleb(out, 3)
+    uleb(out, 0)
+}
+
+fn output_store_model(b: i64, byte_offset: i64, model_offset: i64) -> i64 with Mut, Panic, Div {
+    var out = output_address(b, byte_offset)
+    out = model_load(out, model_offset)
+    out = push(out, 57)
+    out = uleb(out, 3)
+    uleb(out, 0)
+}
+
+fn output_store_i32_local(b: i64, byte_offset: i64, local_index: i64) -> i64 with Mut, Panic, Div {
+    var out = output_address(b, byte_offset)
+    out = local_get(out, local_index)
+    out = push(out, 54)
+    out = uleb(out, 2)
+    uleb(out, 0)
+}
+
+fn conditional_yes(b: i64, plus_offset: i64, minus_offset: i64) -> i64 with Mut, Panic, Div {
+    var out = model_load(b, plus_offset)
+    out = model_load(out, plus_offset)
+    out = model_load(out, minus_offset)
+    out = push(out, 160)
+    push(out, 163)
+}
+
+fn entropy_add(b: i64, entropy_local: i64, probability_local: i64) -> i64 with Mut, Panic, Div {
+    var out = local_get(b, entropy_local)
+    out = f64_zero(out)
+    out = local_get(out, probability_local)
+    out = local_get(out, probability_local)
+    out = uleb(push(out, 16), 0)
+    out = push(out, 162)
+    out = push(out, 161)
+    out = push(out, 160)
+    local_set(out, entropy_local)
+}
+
+fn multiply_score_by_model(b: i64, model_offset: i64) -> i64 with Mut, Panic, Div {
+    var out = local_get(b, 4)
+    out = model_load(out, model_offset)
+    out = push(out, 162)
+    local_set(out, 4)
+}
+
+fn emit_feature_update(b: i64, feature_index: i64, plus_offset: i64, minus_offset: i64) -> i64 with Mut, Panic, Div {
+    var out = input_load(b, feature_index)
+    out = i32_const(out, 1)
+    out = push(out, 70)
+    out = push(out, 4)
+    out = push(out, 64)
+    out = multiply_score_by_model(out, plus_offset)
+    out = push(out, 5)
+    out = input_load(out, feature_index)
+    out = i32_const(out, 0)
+    out = push(out, 70)
+    out = push(out, 4)
+    out = push(out, 64)
+    out = multiply_score_by_model(out, minus_offset)
+    out = push(out, 11)
+    push(out, 11)
+}
+
+fn build_infer_body() -> i64 with Mut, Panic, Div {
+    var body = buf_new()
+    // One local declaration group containing sum and score as f64.
+    body = uleb(body, 1)
+    body = uleb(body, 2)
+    body = push(body, 124)
+    body = f64_zero(body)
+    body = local_set(body, 3)
+
+    var condition: i64 = 0
+    while condition < CONDITION_COUNT {
+        let model_base = condition * MODEL_STRIDE_BYTES
+        body = model_load(body, model_base)
+        body = local_set(body, 4)
+
+        var feature: i64 = 0
+        while feature < FEATURE_COUNT {
+            let plus_offset = model_base + 32 + feature * 16
+            let minus_offset = plus_offset + 8
+            body = emit_feature_update(body, feature, plus_offset, minus_offset)
+            feature = feature + 1
+        }
+
+        body = local_get(body, 3)
+        body = local_get(body, 4)
+        body = push(body, 160)
+        body = local_set(body, 3)
+        body = output_store_local(body, condition * OUTPUT_STRIDE_BYTES, 4)
+        condition = condition + 1
+    }
+
+    condition = 0
+    while condition < CONDITION_COUNT {
+        let output_base = condition * OUTPUT_STRIDE_BYTES
+        let model_base = condition * MODEL_STRIDE_BYTES
+        body = output_load(body, output_base)
+        body = local_get(body, 3)
+        body = push(body, 163)
+        body = local_set(body, 4)
+        body = output_store_local(body, output_base, 4)
+
+        body = output_address(body, output_base + 8)
+        body = local_get(body, 4)
+        body = model_load(body, model_base + 8)
+        body = push(body, 162)
+        body = push(body, 57)
+        body = uleb(body, 3)
+        body = uleb(body, 0)
+
+        body = output_address(body, output_base + 16)
+        body = local_get(body, 4)
+        body = model_load(body, model_base + 16)
+        body = push(body, 162)
+        body = f64_one(body)
+        body = push(body, 164)
+        body = push(body, 57)
+        body = uleb(body, 3)
+        body = uleb(body, 0)
+
+        body = output_store_model(body, output_base + 24, model_base + 24)
+        condition = condition + 1
+    }
+
+    body = i32_const(body, 0)
+    push(body, 11)
+}
+
+fn build_next_question_body() -> i64 with Mut, Panic, Div {
+    var body = buf_new()
+    // f64 locals: current H, P(yes), P(no), H(yes), H(no), EIG,
+    // best EIG, temporary probability. i32 local: best feature index.
+    body = uleb(body, 2)
+    body = uleb(body, 8)
+    body = push(body, 124)
+    body = uleb(body, 1)
+    body = push(body, 127)
+
+    // Recompute the posterior through the Sounio-generated infer function.
+    body = local_get(body, 0)
+    body = local_get(body, 1)
+    body = local_get(body, 2)
+    body = uleb(push(body, 16), 1)
+    body = push(body, 26)
+
+    body = f64_zero(body)
+    body = local_set(body, 3)
+    var condition: i64 = 0
+    while condition < CONDITION_COUNT {
+        body = output_load(body, condition * OUTPUT_STRIDE_BYTES)
+        body = local_set(body, 10)
+        body = entropy_add(body, 3, 10)
+        condition = condition + 1
+    }
+
+    body = f64_neg_one(body)
+    body = local_set(body, 9)
+    body = i32_const(body, -1)
+    body = local_set(body, 11)
+
+    var feature: i64 = 0
+    while feature < FEATURE_COUNT {
+        body = input_load(body, feature)
+        body = i32_const(body, -1)
+        body = push(body, 70)
+        body = push(body, 4)
+        body = push(body, 64)
+
+        body = f64_zero(body)
+        body = local_set(body, 4)
+        condition = 0
+        while condition < CONDITION_COUNT {
+            let model_base = condition * MODEL_STRIDE_BYTES
+            let plus_offset = model_base + 32 + feature * 16
+            let minus_offset = plus_offset + 8
+            body = local_get(body, 4)
+            body = output_load(body, condition * OUTPUT_STRIDE_BYTES)
+            body = conditional_yes(body, plus_offset, minus_offset)
+            body = push(body, 162)
+            body = push(body, 160)
+            body = local_set(body, 4)
+            condition = condition + 1
+        }
+        body = f64_one(body)
+        body = local_get(body, 4)
+        body = push(body, 161)
+        body = local_set(body, 5)
+        body = f64_zero(body)
+        body = local_set(body, 6)
+        body = f64_zero(body)
+        body = local_set(body, 7)
+
+        condition = 0
+        while condition < CONDITION_COUNT {
+            let model_base = condition * MODEL_STRIDE_BYTES
+            let plus_offset = model_base + 32 + feature * 16
+            let minus_offset = plus_offset + 8
+
+            // P(condition | yes)
+            body = output_load(body, condition * OUTPUT_STRIDE_BYTES)
+            body = conditional_yes(body, plus_offset, minus_offset)
+            body = push(body, 162)
+            body = local_get(body, 4)
+            body = push(body, 163)
+            body = local_set(body, 10)
+            body = entropy_add(body, 6, 10)
+
+            // P(condition | no)
+            body = output_load(body, condition * OUTPUT_STRIDE_BYTES)
+            body = f64_one(body)
+            body = conditional_yes(body, plus_offset, minus_offset)
+            body = push(body, 161)
+            body = push(body, 162)
+            body = local_get(body, 5)
+            body = push(body, 163)
+            body = local_set(body, 10)
+            body = entropy_add(body, 7, 10)
+            condition = condition + 1
+        }
+
+        body = local_get(body, 3)
+        body = local_get(body, 4)
+        body = local_get(body, 6)
+        body = push(body, 162)
+        body = push(body, 161)
+        body = local_get(body, 5)
+        body = local_get(body, 7)
+        body = push(body, 162)
+        body = push(body, 161)
+        body = local_set(body, 8)
+        body = output_store_local(body, CONDITION_COUNT * OUTPUT_STRIDE_BYTES + feature * 8, 8)
+
+        body = local_get(body, 8)
+        body = local_get(body, 9)
+        body = push(body, 100)
+        body = push(body, 4)
+        body = push(body, 64)
+        body = local_get(body, 8)
+        body = local_set(body, 9)
+        body = i32_const(body, feature)
+        body = local_set(body, 11)
+        body = push(body, 11)
+
+        body = push(body, 5)
+        body = output_address(body, CONDITION_COUNT * OUTPUT_STRIDE_BYTES + feature * 8)
+        body = f64_neg_one(body)
+        body = push(body, 57)
+        body = uleb(body, 3)
+        body = uleb(body, 0)
+        body = push(body, 11)
+
+        feature = feature + 1
+    }
+
+    body = output_store_i32_local(body, CONDITION_COUNT * OUTPUT_STRIDE_BYTES + FEATURE_COUNT * 8, 11)
+    body = output_store_local(body, CONDITION_COUNT * OUTPUT_STRIDE_BYTES + FEATURE_COUNT * 8 + 8, 9)
+    body = local_get(body, 11)
+    push(body, 11)
+}
+
+fn build_module() -> i64 with Mut, Panic, Div {
+    var wasm = buf_new()
+    wasm = push(wasm, 0)
+    wasm = push(wasm, 97)
+    wasm = push(wasm, 115)
+    wasm = push(wasm, 109)
+    wasm = push(wasm, 1)
+    wasm = push(wasm, 0)
+    wasm = push(wasm, 0)
+    wasm = push(wasm, 0)
+
+    var types = buf_new()
+    types = uleb(types, 2)
+    types = push(types, 96)
+    types = uleb(types, 3)
+    types = push(types, 127)
+    types = push(types, 127)
+    types = push(types, 127)
+    types = uleb(types, 1)
+    types = push(types, 127)
+    types = push(types, 96)
+    types = uleb(types, 1)
+    types = push(types, 124)
+    types = uleb(types, 1)
+    types = push(types, 124)
+    wasm = section(wasm, 1, types)
+
+    var imports = buf_new()
+    imports = uleb(imports, 1)
+    imports = ascii_env(imports)
+    imports = ascii_log(imports)
+    imports = push(imports, 0)
+    imports = uleb(imports, 1)
+    wasm = section(wasm, 2, imports)
+
+    var functions = buf_new()
+    functions = uleb(functions, 2)
+    functions = uleb(functions, 0)
+    functions = uleb(functions, 0)
+    wasm = section(wasm, 3, functions)
+
+    var memory = buf_new()
+    memory = uleb(memory, 1)
+    memory = uleb(memory, 0)
+    memory = uleb(memory, 4)
+    wasm = section(wasm, 5, memory)
+
+    var exports = buf_new()
+    exports = uleb(exports, 3)
+    exports = ascii_infer(exports)
+    exports = push(exports, 0)
+    exports = uleb(exports, 1)
+    exports = ascii_next_question(exports)
+    exports = push(exports, 0)
+    exports = uleb(exports, 2)
+    exports = ascii_memory(exports)
+    exports = push(exports, 2)
+    exports = uleb(exports, 0)
+    wasm = section(wasm, 7, exports)
+
+    let infer_body = build_infer_body()
+    let next_question_body = build_next_question_body()
+    var code = buf_new()
+    code = uleb(code, 2)
+    code = uleb(code, buf_len(infer_body))
+    code = append(code, infer_body)
+    code = uleb(code, buf_len(next_question_body))
+    code = append(code, next_question_body)
+    section(wasm, 10, code)
+}
+
+fn main() -> i64 with IO, Mut, Panic, Div {
+    let wasm = build_module()
+    if arg_count() <= 0 {
+        println("clinical-kernel-codegen: missing output path")
+        return 2
+    }
+    let output_path = get_arg(0)
+    var i: i64 = 0
+    while i < buf_len(wasm) {
+        STAGE[i as usize] = byte_at(wasm, i)
+        i = i + 1
+    }
+    let rc = write_file(output_path, STAGE, buf_len(wasm))
+    if rc == 0 {
+        print("clinical-kernel-codegen: wrote ")
+        print_int(buf_len(wasm))
+        println(" bytes")
+    }
+    rc
+}
