@@ -467,6 +467,29 @@ const publicNamcsAdapter = spawnSync(
   [resolve(process.cwd(), 'scripts/analyze-public-namcs2018.mjs'), '--self-test'],
   { cwd: process.cwd(), encoding: 'utf8' },
 );
+
+const publicSivepStratification = spawnSync(
+  process.execPath,
+  [resolve(process.cwd(), 'scripts/analyze-public-sivep-srag.mjs'), '--self-test'],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+if (
+  publicSivepStratification.status === 0
+  && publicSivepStratification.stdout.includes('PUBLIC_SIVEP_STRATIFICATION_SELF_TEST_VALID')
+  && publicSivepStratification.stdout.includes('darwin.sounio.public-sivep-stratification-self-test.v1')
+  && publicSivepStratification.stdout.includes('"minimumDisclosureCell": 30')
+  && publicSivepStratification.stdout.includes('"severityPrimaryAndComplementarySuppression": true')
+  && publicSivepStratification.stdout.includes('"apsCalibrationAuthorized": false')
+  && publicSivepStratification.stdout.includes('"clinicalActivationAuthorized": false')
+) {
+  pass('SIVEP-Gripe Stratified Safety Audit', 'Faixas etarias, codigos oficiais, supressao complementar e recusa clinica passam no teste deterministico');
+} else {
+  fail('SIVEP-Gripe Stratified Safety Audit', 'Estratificacao SIVEP ou fronteira de divulgacao/uso clinico falhou', {
+    status: publicSivepStratification.status,
+    output: publicSivepStratification.stdout || publicSivepStratification.stderr,
+  });
+}
+
 if (
   publicNamcsAdapter.status === 0
   && publicNamcsAdapter.stdout.includes('PUBLIC_NAMCS2018_ADAPTER_SELF_TEST_VALID')

@@ -48,6 +48,8 @@ A future calibrated certificate still requires either an approved target-domain 
 
 ## Executed public audit
 
+The frozen 2025 SIVEP-Gripe snapshot was re-executed on 2026-07-30 with age, final-classification and outcome stratification. All 336,260 rows, 381,900,544 bytes and the frozen SHA-256 reconciled. A disclosure threshold of 30 left six of 24 age-classification rows publishable, with 17 primary and one complementary suppression. The method, non-patient aggregates and refusal boundary are recorded in [SIVEP-Gripe pediatric stratified safety audit v2](./sivep-srag-stratified-safety-v2.md).
+
 The NAMCS 2018 ambulatory adapter was executed on 2026-07-30. It reconciled all 9,953 source visits and the weighted total documented by CDC, while retaining `PATWT`, `CSTRATM` and `CPSUM`. The reproducible mapping, hashes, aggregate results and reliability boundary are recorded in [NAMCS 2018 pediatric respiratory ambulatory audit v1](./namcs2018-ambulatory-audit-v1.md). A second independent executor gate subsequently established numeric parity for 21 design-based estimates and standard errors; see [NAMCS 2018 complex-survey parity v1](./namcs2018-complex-survey-parity-v1.md).
 
 This execution does not close the target-domain gap. It provides a transportability and observed-practice stress test only; the firewall remains `REFUSE`.

@@ -9,6 +9,7 @@ const schemaPath = join(root, 'clinical/epistemic-firewall/public-data/public-da
 const evidencePath = join(root, 'clinical/sounio/evidence-bundle.json');
 const dictionaryPath = join(root, 'clinical/epistemic-firewall/multicenter/data-dictionary.v1.json');
 const feasibilityPath = join(root, 'docs/research/epistemic-firewall/public-data-feasibility-v1.md');
+const sivepAuditPath = join(root, 'docs/research/epistemic-firewall/sivep-srag-stratified-safety-v2.md');
 const namcsAuditPath = join(root, 'docs/research/epistemic-firewall/namcs2018-ambulatory-audit-v1.md');
 const outputPath = join(root, '.clinical-kernel-build/public-data/registry-validation.json');
 
@@ -26,6 +27,7 @@ const schema = JSON.parse(schemaBytes.toString('utf8'));
 const evidence = readJson(evidencePath);
 const dictionary = readJson(dictionaryPath);
 const feasibility = readFileSync(feasibilityPath, 'utf8');
+const sivepAudit = readFileSync(sivepAuditPath, 'utf8');
 const namcsAudit = readFileSync(namcsAuditPath, 'utf8');
 
 const featureIds = evidence.features.map(feature => feature.id);
@@ -138,6 +140,10 @@ requireCondition(feasibility.includes('No open patient-level APS/SUS cohort iden
 requireCondition(feasibility.includes('Public data cannot promote the firewall'), 'public-data-firewall-boundary-missing');
 requireCondition(feasibility.includes('SIVEP-Gripe'), 'public-data-sivep-documentation-missing');
 requireCondition(feasibility.includes('NAMCS 2018'), 'public-data-namcs-documentation-missing');
+requireCondition(sivepAudit.includes('minimum cell threshold is 30'), 'public-data-sivep-disclosure-threshold-missing');
+requireCondition(sivepAudit.includes('simple marginal subtraction'), 'public-data-sivep-complementary-suppression-missing');
+requireCondition(sivepAudit.includes('patientRowsPersisted=false'), 'public-data-sivep-row-persistence-boundary-missing');
+requireCondition(sivepAudit.includes('firewall disposition `REFUSE`'), 'public-data-sivep-firewall-boundary-missing');
 requireCondition(namcsAudit.includes('RFV omission always remains unknown'), 'public-data-namcs-missingness-boundary-missing');
 requireCondition(namcsAudit.includes('prescriptionRecommendationAuthorized=false'), 'public-data-namcs-prescription-boundary-missing');
 requireCondition(namcsAudit.includes('860,385,638.653'), 'public-data-namcs-weight-reconciliation-missing');
@@ -172,6 +178,7 @@ const report = {
     registrySha256: sha256(registryBytes),
     schemaSha256: sha256(schemaBytes),
     feasibilitySha256: sha256(readFileSync(feasibilityPath)),
+    sivepAuditSha256: sha256(readFileSync(sivepAuditPath)),
     namcsAuditSha256: sha256(readFileSync(namcsAuditPath)),
   },
 };

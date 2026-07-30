@@ -113,10 +113,16 @@
 - `pnpm verify:public-namcs2018-survey-parity`: 21/21 pontos e erros-padrao concordaram; erro relativo maximo de 1,74e-15 nos pontos e 2,06e-15 nos erros-padrao, com 436 graus de liberdade identicos.
 - Testes de identidade recusam hash de fonte adulterado e troca do `Rscript`; recibos anteriores sao invalidados antes de uma nova tentativa.
 - `pnpm verify`: 26 passaram, 0 falharam, 0 avisos; `pnpm type-check`, lockfile congelado e `pnpm build:vercel` passaram, com 13.683 paginas estaticas.
+- O recibo SIVEP-Gripe evoluiu para `darwin.sounio.public-sivep-feasibility-receipt.v2`, com faixas `<2`, `2-4`, `5-11` e `12-17`, classificacao final, desfecho e severidade por idade.
+- `pnpm analyze:public-sivep-srag:full` reconciliou novamente 336.260 registros, 381.900.544 bytes e SHA-256 `b5def80ae35092c5f64b4766d6d2e5785bdd63978a9aae51cc90521a91a6aaaa`; todas as 20 invariantes passaram.
+- Com limiar minimo de 30, 17 das 24 linhas idade-classificacao foram suprimidas primariamente, uma complementarmente e seis publicadas. Nenhuma linha suprimida reteve contagens; o controle protege margens simples, mas nao reivindica certificacao formal de risco de divulgacao.
+- `pnpm test:public-sivep-stratification` passou limites etarios, codigos oficiais, supressao primaria/complementar e recusa clinica. Probabilidades, efeitos de tratamento, prescricao, calibracao APS e ativacao permaneceram falsos.
+- `pnpm verify`: 27 passaram, 0 falharam, 0 avisos; `pnpm type-check`, lockfile congelado e `pnpm build:vercel` passaram, com 13.683 paginas estaticas. Uma leitura remota do Supabase registrou `ECONNRESET`, mas o build concluiu com as 717 rotas de medicamentos materializadas nos nove idiomas.
 
 ## Proximo passo
 
-- Estratificar os agregados SIVEP por faixa etaria, classe final e desfecho, com supressao de celulas pequenas e somente para invariantes de seguranca/transportabilidade permitidos.
+- Executar a auditoria de transportabilidade do NAMCS Health Center 2024, preservando pesos, estratos e conglomerados, sem converter codigos diagnosticos em referencia adjudicada.
+- Revalidar o endpoint e os controles de divulgacao do e-SUS Notifica antes de qualquer extracao; omissao de sintoma deve permanecer desconhecida.
 - Continuar buscando uma fonte publica ou parceria futura com coorte de APS desidentificada, adjudicada e aprovada; probabilidades e EIG permanecem bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.
 - Obter as aprovacoes institucionais reais e preencher, revisar e bloquear externamente os mapeamentos de pelo menos dois servicos de APS antes de iniciar qualquer calibracao real.
