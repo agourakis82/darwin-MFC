@@ -3,10 +3,17 @@ import { createHash } from 'node:crypto';
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { loadCompilerSourceReceipt } from './lib/sounio-compiler-receipt.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const sounioRoot = process.env.SOUNIO_ROOT || '/Users/demetriosagourakis/dev/sounio';
-const compiler = join(sounioRoot, 'artifacts/self-hosted/souc-self-hosted-x86_64');
+const compiler = resolve(
+  process.env.SOUNIO_COMPILER_PATH
+    || join(sounioRoot, 'artifacts/self-hosted/souc-self-hosted-x86_64'),
+);
+const compilerSourceReceiptPath = process.env.SOUNIO_COMPILER_RECEIPT_PATH
+  ? resolve(process.env.SOUNIO_COMPILER_RECEIPT_PATH)
+  : null;
 const sourceDir = join(root, 'clinical/sounio');
 const firewallDir = join(root, 'clinical/epistemic-firewall');
 const buildDir = join(root, '.clinical-kernel-build/calibration');
@@ -16,7 +23,12 @@ const calibrationTemplatePath = join(firewallDir, 'conformal-calibration.sio');
 const cohortSchemaPath = join(firewallDir, 'schemas/retrospective-cohort.schema.json');
 const comparatorSchemaPath = join(firewallDir, 'schemas/current-aps-comparator.schema.json');
 const calibrationReportSchemaPath = join(firewallDir, 'schemas/calibration-report.schema.json');
-const analysisPlanPath = join(root, 'docs/research/epistemic-firewall/cohort-calibration-protocol.md');
+const analysisPlanPath = join(root, 'docs/research/epistemic-firewall/statistical-analysis-plan-v1.md');
+const cohortProtocolPath = join(root, 'docs/research/epistemic-firewall/cohort-calibration-protocol.md');
+const intendedUsePath = join(root, 'docs/research/epistemic-firewall/intended-use-v1.md');
+const dataDictionaryPath = join(firewallDir, 'multicenter/data-dictionary.v1.json');
+const siteMappingTemplatePath = join(firewallDir, 'multicenter/site-mapping.template.json');
+const multicenterValidatorPath = join(root, 'scripts/validate-multicenter-package.mjs');
 const sampleSizeMethodPath = join(root, 'docs/research/epistemic-firewall/sample-size-method-note.md');
 const comparatorAdapterPath = join(root, 'scripts/score-current-aps-comparator.ts');
 const comparatorConfigPath = join(firewallDir, 'current-aps-comparator.json');
@@ -31,6 +43,9 @@ const cohortArgumentIndex = args.indexOf('--cohort');
 const useFixture = args.includes('--fixture');
 const validateOnly = args.includes('--validate-only');
 const promote = args.includes('--promote');
+const siteMappingPaths = args.flatMap((value, index) => (
+  value === '--site-mapping' && args[index + 1] ? [resolve(root, args[index + 1])] : []
+));
 
 if (useFixture === (cohortArgumentIndex >= 0)) {
   throw new Error('Choose exactly one input: --fixture or --cohort <path>.');
@@ -210,6 +225,17 @@ function validateCohort(value) {
 
 validateCohort(cohort);
 
+const multicenterValidationArgs = [multicenterValidatorPath];
+if (cohort.provenance.kind === 'retrospective-clinical') {
+  for (const path of siteMappingPaths) multicenterValidationArgs.push('--mapping', path);
+  multicenterValidationArgs.push('--require-locked');
+}
+const multicenterValidationBytes = execFileSync(process.execPath, multicenterValidationArgs, {
+  cwd: root,
+  stdio: ['ignore', 'pipe', 'pipe'],
+  maxBuffer: 16 * 1024 * 1024,
+});
+
 function temporalPatientSplit(records) {
   const patients = new Map();
   for (const record of records) {
@@ -285,6 +311,15 @@ if (validateOnly) {
 }
 
 mkdirSync(buildDir, { recursive: true });
+
+const compilerBytes = readFileSync(compiler);
+const compilerSha256 = sha256(compilerBytes);
+const compilerSourceReceipt = compilerSourceReceiptPath
+  ? loadCompilerSourceReceipt(compilerSourceReceiptPath, {
+    expectedCompilerSha256: compilerSha256,
+    requireReconciled: true,
+  })
+  : null;
 
 const comparatorInput = {
   schemaVersion: 'darwin.sounio.comparator-input.v1',
@@ -508,6 +543,13 @@ const report = {
     mathematicalAuthority: 'clinical/epistemic-firewall/conformal-calibration.sio',
     runtime: { node: process.version, tsx: tsxPackage.version },
   },
+  compiler: {
+    sha256: compilerSha256,
+    sourceReceiptSha256: compilerSourceReceipt ? sha256(compilerSourceReceipt.bytes) : null,
+    reconciled: compilerSourceReceipt?.validation.compilerReconciled === true,
+    sourceBranch: compilerSourceReceipt?.validation.branch ?? null,
+    sourceCommit: compilerSourceReceipt?.validation.commit ?? null,
+  },
   precisionPlan,
   coverage: {
     classConditional: Object.fromEntries(evidence.conditions.map((condition, index) => [condition.id, classCoverage[index]])),
@@ -555,11 +597,21 @@ const report = {
       ...collectFiles(diseaseDataDir),
     ]),
     analysisPlanSha256: sha256(readFileSync(analysisPlanPath)),
+    cohortProtocolSha256: sha256(readFileSync(cohortProtocolPath)),
+    intendedUseSha256: sha256(readFileSync(intendedUsePath)),
+    dataDictionarySha256: sha256(readFileSync(dataDictionaryPath)),
+    siteMappingSetSha256: sha256(Buffer.concat(
+      (siteMappingPaths.length > 0 ? siteMappingPaths : [siteMappingTemplatePath])
+        .sort()
+        .flatMap(path => [Buffer.from(path.slice(root.length)), Buffer.from('\0'), readFileSync(path), Buffer.from('\0')]),
+    )),
+    multicenterValidationSha256: sha256(multicenterValidationBytes),
     sampleSizeMethodSha256: sha256(readFileSync(sampleSizeMethodPath)),
     analysisCodeSha256: sha256(readFileSync(scriptPath)),
     sounioSourceSha256: sha256(readFileSync(calibrationTemplatePath)),
     generatedSounioSourceSha256: sha256(Buffer.from(generated)),
-    compilerSha256: sha256(readFileSync(compiler)),
+    compilerSha256,
+    compilerSourceReceiptSha256: compilerSourceReceipt ? sha256(compilerSourceReceipt.bytes) : null,
     oracleSha256: sha256(readFileSync(oraclePath)),
     oracleOutputSha256: sha256(Buffer.from(oracleOutput)),
   },

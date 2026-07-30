@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://darwin-mfc.local/schemas/site-mapping.v1.json",
+  "title": "Darwin Sounio Multicenter Site Mapping",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "mappingVersion",
+    "status",
+    "siteCode",
+    "sourceSystem",
+    "dataUseApprovalId",
+    "dictionaryVersion",
+    "cohortSchemaVersion",
+    "indexEncounter",
+    "pseudonyms",
+    "observations",
+    "referenceStandard",
+    "missingness",
+    "privacy",
+    "approval"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "darwin.sounio.site-mapping.v1" },
+    "mappingVersion": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["draft", "locked", "retired"] },
+    "siteCode": { "type": "string", "minLength": 1 },
+    "sourceSystem": { "type": "string", "minLength": 1 },
+    "dataUseApprovalId": { "type": "string", "minLength": 1 },
+    "dictionaryVersion": { "const": "1.0.0" },
+    "cohortSchemaVersion": { "const": "darwin.sounio.retrospective-cohort.v1" },
+    "indexEncounter": { "type": "object" },
+    "pseudonyms": {
+      "type": "object",
+      "required": ["algorithm", "patientSourceField", "encounterSourceField", "siteSourceValue", "siteHeldSecretNeverExported"],
+      "properties": {
+        "algorithm": { "const": "HMAC-SHA-256" },
+        "siteHeldSecretNeverExported": { "const": true }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": ["featureId", "sourceFields", "transformation", "unit"]
+      }
+    },
+    "referenceStandard": { "type": "object" },
+    "missingness": { "type": "object" },
+    "privacy": { "type": "object" },
+    "approval": { "type": "object" }
+  }
+}

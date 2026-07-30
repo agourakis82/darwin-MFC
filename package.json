@@ -23,6 +23,8 @@
     "test": "tsx scripts/verify-integration.ts",
     "verify": "tsx scripts/verify-integration.ts",
     "build:clinical-kernel": "node scripts/build-sounio-clinical-kernel.mjs",
+    "validate:compiler-source-receipt": "node scripts/validate-sounio-compiler-source-receipt.mjs",
+    "validate:multicenter-package": "node scripts/validate-multicenter-package.mjs",
     "calibrate:epistemic-firewall:fixture": "node scripts/calibrate-epistemic-firewall.mjs --fixture",
     "calibrate:epistemic-firewall:validate": "node scripts/calibrate-epistemic-firewall.mjs --fixture --validate-only",
     "research:epistemic-firewall": "node scripts/run-epistemic-firewall-prior-art-search.mjs",

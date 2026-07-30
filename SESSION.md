@@ -3,7 +3,7 @@
 ## Estado
 
 - Branch: `codex/aps-design-refactor`.
-- Preview local: `http://localhost:3011/pt/prontuario/` servido a partir de `out/`.
+- Preview local verificado: `http://127.0.0.1:3011/pt/prontuario/` servido a partir de `out/`.
 - Redesign APS/SUS/pt-BR e correcoes clinicas consolidados no checkpoint da branch.
 - Assistente clinico promovido ao topo da consulta: sintomas, diferenciais, exames e sinais de alarme.
 - Hipotese selecionada agora abre medicamentos relacionados, dose de referencia, disponibilidade SUS/RENAME e bula.
@@ -14,7 +14,7 @@
 - Posologia pediatrica ausente permanece bloqueada; nenhuma sugestao entra automaticamente na prescricao.
 - Kernel clinico respiratorio pediatrico implementado em Sounio com gerador WASM, oraculo nativo e ABI numerica fixa.
 - O prontuario executa o kernel em modo silencioso, verifica SHA-256 de evidencia/modelo/WASM e recusa incompatibilidades sem fallback probabilistico em TypeScript.
-- O recibo permanece `experimental`: sem calibracao retrospectiva, sem assinatura de producao e sem reconciliacao do compilador local com o workspace remoto.
+- O recibo clinico v3 permanece `experimental`: o compilador foi reconciliado, mas ainda nao existem calibracao retrospectiva aprovada, referencia populacional nem assinatura de producao.
 - Probabilidades Sounio nao alteram ranking, tratamento ou prescricao visiveis enquanto os gates cientificos nao forem cumpridos.
 - ABI v2 calcula entropia de Shannon e ganho esperado de informacao no Sounio/WASM e devolve a proxima pergunta como indice numerico.
 - O contrato verificavel registra o import `env.log: (f64)->f64`; TypeScript apenas fornece o primitivo e interpreta indice/EIG, sem recalcular probabilidades.
@@ -32,6 +32,13 @@
 - O gate Brier agora compara o kernel ao score APS atual. Na fixture, Brier Sounio foi 0,348525 versus 0,739351 do comparador, skill de 0,528607; o resultado e apenas de engenharia.
 - Os minimos fixos de 1.000 pacientes e 200 casos de avaliacao foram removidos. O Sounio calcula precisao de cobertura: 203 pacientes de avaliacao por condicao e 1.827 no mix balanceado da fixture, alem do limite conformal de 19 casos de calibracao por condicao.
 - Coorte v1 agora exige um unico encontro indice por paciente; episodios repetidos ficam recusados ate existir analise cluster-aware.
+- Workspace Sounio oficial recuperado sem reiniciar a sessao ativa: `/workspace/sounio` permaneceu intacto e o estado Zellij/processos foi preservado em `/workspace/.recovery/source-fresh-20260730T003523Z`.
+- Branch cientifica fixada em `integration/sounio-dev-ready-base`, commit `8d203709e1c171d5fb017909f87000eea54a238e`, tree `7a130685743fdafc6751bb083866e943cc4d7fbb`; divergencia registrada contra `origin/main` em 1484 commits apenas no main e 2741 apenas na branch.
+- Compilador reconstruido em worktree limpo e diretorio temporario, sem sobrescrever o artefato versionado. Bootstrap forcado por fonte, stage2 e stage3 produziram o mesmo SHA-256 `4511a6ed2055524df877de0a8fd140993904e44cf65ebe43c70d827b3edc2dfc`.
+- Recibo `darwin.sounio.compiler-source-receipt.v1` validado com SHA-256 `f071869e8c8070f169fd0086df3b8e3501e0504d4f04485cba614e07a678907c` e `compilerReconciled=true`.
+- Build Darwin aceita `SOUNIO_COMPILER_PATH` e `SOUNIO_COMPILER_RECEIPT_PATH`; snapshots sem Git continuam testaveis, mas jamais podem produzir reconciliacao positiva.
+- Recibo clinico evoluido para v3 e recibo do firewall para v2; ambos vinculam o recibo source-fresh do compilador e recusam schema, hash, branch, commit, tree, seed ou identidade incompativeis.
+- Pacote multicentrico executavel fechado com intended use, SAP congelado, dicionario de 12 observacoes e nove condicoes, template/schema de mapeamento e checklist de extracao/desidentificacao. Nenhum prontuario ou identificador de paciente foi incluido no repositorio.
 
 ## Verificacao
 
@@ -59,12 +66,22 @@
 - `pnpm build:clinical-kernel`, `pnpm exec tsc --noEmit` e `pnpm build`: passaram novamente; 16.545 paginas estaticas.
 - `pnpm calibrate:epistemic-firewall:fixture`: passou com comparador APS v1, Brier skill e plano de precisao executados no Sounio; promocao permaneceu bloqueada.
 - `pnpm verify`: 21 passaram, 0 falharam, 0 avisos, incluindo o contrato do comparador APS.
+- Gates source-fresh: fixed-point bit a bit, self-hosting/release gates e verificador canonico de marcadores passaram no worktree Sounio limpo.
+- `pnpm validate:compiler-source-receipt`: passou com `compilerReconciled=true`.
+- `pnpm validate:multicenter-package`: passou com 12 observacoes, nove condicoes e zero registros de pacientes.
+- Fixture source-fresh: 45 pacientes sinteticos, split 27/9/9, Brier Sounio 0,348525, comparador 0,739351, melhora relativa 0,528607 e ECE 0,026786; os gates de precisao/governanca permaneceram vermelhos, como previsto.
+- Tentativa `--fixture --promote`: recusada com exit code diferente de zero, como previsto.
+- `pnpm verify`: 22 passaram, 0 falharam, 0 avisos, incluindo recusa de fonte suja, commit divergente, seed trocada, recibo ausente e adulteracao de hashes.
+- `pnpm build:clinical-kernel`: passou com os paths source-fresh; WASM de 29.195 bytes e cinco vetores dentro de `1e-6` (erro maximo posterior 4,96e-7; EIG 1,96e-7).
+- `pnpm type-check`, `pnpm build:vercel` e `pnpm build`: passaram; o build estatico materializou 16.545 paginas.
+- Navegador em origem limpa: 4 anos + tosse -> `REFUSE / calibration-invalid`, integridade verificada, autorizacao clinica bloqueada, zero probabilidades/posteriores Sounio expostos e zero erros de console.
+- A data SOAP foi tornada deterministica entre SSR e cliente; o erro de hidratacao React observado no fuso de Sao Paulo foi eliminado.
 
 ## Proximo passo
 
 - Obter e analisar uma coorte retrospectiva real, desidentificada, adjudicada e aprovada; probabilidades e EIG continuam bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.
-- Reconciliar e reconstruir o compilador Sounio padrao; assinar o recibo somente depois dos gates.
+- Bloquear e revisar os mapeamentos assinados de pelo menos dois servicos de APS antes de iniciar qualquer calibracao real.
 - Completar claim charts de `US12542216B2`, `US20260121859A1` e `WO2023057516A1`, expandir familias/CPC/IPC e obter segunda revisao independente.
 - Implementar referencia de distribuicao, monitor de drift com rotulos tardios e estudo prospectivo silencioso antes de produzir qualquer certificado real.
-- Publicar no Vercel quando solicitado, mantendo o Epistemic Firewall em `REFUSE` ate os gates cientificos completos.
+- Assinar e publicar somente quando solicitado e depois dos gates cientificos completos; ate la, manter o Epistemic Firewall em `REFUSE`.

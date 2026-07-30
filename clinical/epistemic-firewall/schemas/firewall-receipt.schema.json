@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://darwin-mfc.local/schemas/epistemic-firewall-receipt.v1.json",
+  "$id": "https://darwin-mfc.local/schemas/epistemic-firewall-receipt.v2.json",
   "title": "Darwin Sounio Epistemic Firewall Receipt",
   "type": "object",
   "additionalProperties": false,
@@ -16,7 +16,7 @@
     "refusalReasons"
   ],
   "properties": {
-    "schemaVersion": { "const": "darwin.sounio.epistemic-firewall-receipt.v1" },
+    "schemaVersion": { "const": "darwin.sounio.epistemic-firewall-receipt.v2" },
     "policyVersion": { "type": "string", "minLength": 1 },
     "modelVersion": { "type": "string", "minLength": 1 },
     "status": { "enum": ["refused", "experimental", "calibrated"] },

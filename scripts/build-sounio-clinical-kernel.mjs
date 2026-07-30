@@ -3,10 +3,20 @@ import { createHash } from 'node:crypto';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  COMPILER_SOURCE_RECEIPT_SCHEMA,
+  loadCompilerSourceReceipt,
+} from './lib/sounio-compiler-receipt.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const sounioRoot = process.env.SOUNIO_ROOT || '/Users/demetriosagourakis/dev/sounio';
-const compiler = join(sounioRoot, 'artifacts/self-hosted/souc-self-hosted-x86_64');
+const compiler = resolve(
+  process.env.SOUNIO_COMPILER_PATH
+    || join(sounioRoot, 'artifacts/self-hosted/souc-self-hosted-x86_64'),
+);
+const compilerSourceReceiptInputPath = process.env.SOUNIO_COMPILER_RECEIPT_PATH
+  ? resolve(process.env.SOUNIO_COMPILER_RECEIPT_PATH)
+  : null;
 const sourceDir = join(root, 'clinical/sounio');
 const firewallDir = join(root, 'clinical/epistemic-firewall');
 const publicDir = join(root, 'public/clinical-kernel');
@@ -23,6 +33,7 @@ const receiptPath = join(publicDir, 'clinical-kernel.receipt.json');
 const policyPath = join(publicDir, 'epistemic-firewall.policy.json');
 const publicCalibrationPath = join(publicDir, 'calibration-certificate.json');
 const firewallReceiptPath = join(publicDir, 'epistemic-firewall.receipt.json');
+const publicCompilerSourceReceiptPath = join(publicDir, 'compiler-source.receipt.json');
 
 mkdirSync(publicDir, { recursive: true });
 mkdirSync(buildDir, { recursive: true });
@@ -50,6 +61,75 @@ const formatNumber = value => {
   if (!Number.isFinite(value)) throw new Error(`Non-finite model value: ${value}`);
   return Number(value).toPrecision(17).replace(/e\+/, 'e');
 };
+const compilerBytes = readFileSync(compiler);
+const compilerSha256 = sha256(compilerBytes);
+let compilerSourceReceipt;
+let compilerSourceReceiptBytes;
+let compilerReconciled = false;
+
+if (compilerSourceReceiptInputPath) {
+  const loaded = loadCompilerSourceReceipt(compilerSourceReceiptInputPath, {
+    expectedCompilerSha256: compilerSha256,
+    requireReconciled: true,
+  });
+  compilerSourceReceipt = loaded.receipt;
+  compilerSourceReceiptBytes = loaded.bytes;
+  compilerReconciled = loaded.validation.compilerReconciled;
+} else {
+  compilerSourceReceipt = {
+    schemaVersion: COMPILER_SOURCE_RECEIPT_SCHEMA,
+    receiptId: `unreconciled-${compilerSha256.slice(0, 12)}`,
+    generatedAt: new Date().toISOString(),
+    repository: {
+      url: null,
+      sourceBranch: null,
+      commit: null,
+      tree: null,
+      clean: false,
+      remoteBranchCommit: null,
+      remoteMainCommit: null,
+      divergenceFromMain: null,
+    },
+    source: { seed: { path: null, sha256: null } },
+    artifacts: {
+      compiler: {
+        identity: 'souc-local-snapshot-unreconciled',
+        sha256: compilerSha256,
+        bytes: compilerBytes.length,
+      },
+      fixedPointStage2: null,
+      fixedPointStage3: null,
+      gateCompiler: null,
+    },
+    commands: [],
+    canonicalGateAdapter: null,
+    hashes: {
+      sourceManifestSha256: null,
+      compilerSourceSha256: null,
+      seedSha256: null,
+      compilerSha256,
+      gateCompilerSha256: null,
+      reproducibilityGateLogSha256: null,
+      releaseGateLogSha256: null,
+    },
+    gates: {
+      sourceRepositoryClean: false,
+      sourceBranchPinned: false,
+      sourceCommitMatchesRemote: false,
+      seedTrackedAtPinnedCommit: false,
+      sourceBootstrapForced: false,
+      fixedPointBitwise: false,
+      selfHostReproducibility: false,
+      selfHostRelease: false,
+      noRustMarkers: false,
+    },
+    compilerReconciled: false,
+    signature: null,
+    refusalReasons: ['compiler-source-receipt-not-provided'],
+  };
+  compilerSourceReceiptBytes = Buffer.from(`${JSON.stringify(compilerSourceReceipt, null, 2)}\n`);
+}
+writeFileSync(publicCompilerSourceReceiptPath, compilerSourceReceiptBytes);
 const requiredCalibrationHashes = [
   calibration.hashes.developmentCohortSha256,
   calibration.hashes.calibrationCohortSha256,
@@ -342,7 +422,6 @@ if (!parityPassed || !informationGainParityPassed || !leadersPassed || !nextQues
   );
 }
 
-const compilerBytes = readFileSync(compiler);
 const sourceBundle = Buffer.concat([
   readFileSync(codegenPath),
   readFileSync(oracleTemplatePath),
@@ -350,7 +429,7 @@ const sourceBundle = Buffer.concat([
   Buffer.from(generated),
 ]);
 const receipt = {
-  schemaVersion: 'darwin.sounio.clinical-receipt.v2',
+  schemaVersion: 'darwin.sounio.clinical-receipt.v3',
   modelVersion: evidence.modelVersion,
   status: 'experimental',
   generatedAt: new Date().toISOString(),
@@ -367,9 +446,13 @@ const receipt = {
     ],
   },
   compiler: {
-    identity: 'souc-self-hosted-x86_64',
-    sha256: sha256(compilerBytes),
-    sourceFreshness: 'local-snapshot-unverified-against-remote',
+    identity: compilerSourceReceipt.artifacts.compiler.identity,
+    sha256: compilerSha256,
+    sourceFreshness: compilerReconciled ? 'source-fresh-fixed-point' : 'local-snapshot-unreconciled',
+    sourceReceiptSchemaVersion: compilerSourceReceipt.schemaVersion,
+    sourceBranch: compilerSourceReceipt.repository.sourceBranch,
+    sourceCommit: compilerSourceReceipt.repository.commit,
+    sourceTree: compilerSourceReceipt.repository.tree,
   },
   hashes: {
     sourceBundleSha256: sha256(sourceBundle),
@@ -382,6 +465,7 @@ const receipt = {
     epistemicFirewallPolicySha256: sha256(policyBytes),
     epistemicFirewallSourceSha256: sha256(readFileSync(firewallSourcePath)),
     epistemicFirewallOracleOutputSha256: sha256(Buffer.from(firewallOracleOutput)),
+    compilerSourceReceiptSha256: sha256(compilerSourceReceiptBytes),
   },
   gates: {
     nativeOracleExecuted: true,
@@ -396,12 +480,15 @@ const receipt = {
     retrospectiveCalibration: calibrationEvidenceComplete,
     epistemicFirewallOracleExecuted: true,
     epistemicFirewallPolicyTableComplete: policyEntries.length === 256,
+    compilerReconciled,
     signatureVerified: false,
   },
   signature: null,
   refusalReasons: [
     'Retrospective calibration has not been performed.',
-    'The compiler artifact has not been reconciled with the current remote Sounio workspace.',
+    ...(!compilerReconciled
+      ? ['The compiler artifact has not been reconciled with the pinned remote Sounio source.']
+      : []),
     'No production signing key was provided.',
   ],
 };
@@ -409,7 +496,7 @@ const receiptBytes = Buffer.from(`${JSON.stringify(receipt, null, 2)}\n`);
 writeFileSync(receiptPath, receiptBytes);
 
 const firewallReceipt = {
-  schemaVersion: 'darwin.sounio.epistemic-firewall-receipt.v1',
+  schemaVersion: 'darwin.sounio.epistemic-firewall-receipt.v2',
   policyVersion: policyBundle.policyVersion,
   modelVersion: evidence.modelVersion,
   status: 'refused',
@@ -419,7 +506,8 @@ const firewallReceipt = {
     evidenceSha256: sha256(evidenceBytes),
     modelSha256: sha256(modelBuffer),
     wasmSha256: sha256(wasmBytes),
-    compilerSha256: sha256(compilerBytes),
+    compilerSha256,
+    compilerSourceReceiptSha256: sha256(compilerSourceReceiptBytes),
     calibrationCertificateSha256: sha256(calibrationBytes),
     policySha256: sha256(policyBytes),
     policySourceSha256: sha256(readFileSync(firewallSourcePath)),
@@ -429,7 +517,7 @@ const firewallReceipt = {
     policyOracleExecuted: true,
     policyTableComplete: policyEntries.length === 256,
     calibrationCertificateValid: calibrationEvidenceComplete,
-    compilerReconciled: false,
+    compilerReconciled,
     distributionInBounds: calibrationEvidenceComplete && calibration.distribution.status === 'in-bounds',
     signatureVerified: false,
   },

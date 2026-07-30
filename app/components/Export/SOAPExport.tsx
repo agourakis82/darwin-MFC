@@ -85,6 +85,19 @@ interface SOAPExportProps {
   includeChecklist?: boolean;
 }
 
+function formatIsoDatePtBr(value: string): string {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+  return match ? `${match[3]}/${match[2]}/${match[1]}` : value;
+}
+
+function currentLocalIsoDate(): string {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 export default function SOAPExport({
   initialData = {},
   doencaId,
@@ -92,7 +105,7 @@ export default function SOAPExport({
 }: SOAPExportProps) {
   const [data, setData] = useState<SOAPData>({
     paciente: { iniciais: '', idade: '', idadeUnidade: 'anos', sexo: '' },
-    data: new Date().toISOString().split('T')[0],
+    data: '',
     subjetivo: '',
     objetivo: {
       sinaisVitais: {},
@@ -134,6 +147,7 @@ export default function SOAPExport({
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
+    setData(current => current.data ? current : { ...current, data: currentLocalIsoDate() });
     setGeneratedAt(new Date().toLocaleString('pt-BR'));
   }, []);
 
@@ -165,7 +179,7 @@ export default function SOAPExport({
       if (data.paciente?.idade) text += ` | ${data.paciente.idade} ${data.paciente.idadeUnidade || 'anos'}`;
       if (data.paciente?.sexo) text += ` | ${data.paciente.sexo}`;
       text += '\n';
-      if (data.data) text += `Data: ${new Date(data.data).toLocaleDateString('pt-BR')}\n`;
+      if (data.data) text += `Data: ${formatIsoDatePtBr(data.data)}\n`;
       text += '\n';
     }
 

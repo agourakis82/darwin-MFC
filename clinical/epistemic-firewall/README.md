@@ -6,7 +6,12 @@ This directory contains the clinical authorization layer that is intentionally s
 
 1. `epistemic-firewall.sio` executes all 256 combinations of eight authorization gates.
 2. The build captures the native Sounio output and generates `epistemic-firewall.policy.json`.
-3. The browser verifies the policy, calibration certificate, evidence, model, WASM, compiler identity, and receipts by SHA-256.
+3. `clinical-receipt.v3` and `firewall-receipt.v2` bind the source-fresh compiler receipt, compiler, policy, calibration certificate, evidence, model, and WASM by SHA-256.
+4. The browser verifies every cross-binding and the compiler reconciliation claim.
+5. The browser looks up the current gate mask in the Sounio-generated table.
+6. A `REFUSE` disposition stops before the probabilistic WASM is instantiated.
+
+The build accepts `SOUNIO_COMPILER_PATH` and `SOUNIO_COMPILER_RECEIPT_PATH`. A local snapshot may execute engineering tests, but only a valid `darwin.sounio.compiler-source-receipt.v1` can set `compilerReconciled=true`.
 
 ## Retrospective calibration pipeline
 
@@ -23,9 +28,9 @@ pnpm calibrate:epistemic-firewall:validate
 
 The cohort contract and full protocol are documented in `schemas/retrospective-cohort.schema.json` and `docs/research/epistemic-firewall/cohort-calibration-protocol.md`.
 
+The frozen multicenter package contains the intended-use statement, SAP, 12-observation and nine-condition data dictionary, site-mapping schema/template, and extraction checklist. Validate it with `pnpm validate:multicenter-package`. A real cohort requires at least two locked site mappings.
+
 The scope and limitations of the executable precision calculation are recorded in `docs/research/epistemic-firewall/sample-size-method-note.md`.
-4. The browser looks up the current gate mask in the Sounio-generated table.
-5. A `REFUSE` disposition stops before the probabilistic WASM is instantiated.
 
 TypeScript does not recalculate the policy or clinical probabilities. It verifies bound artifacts, derives observable gate facts, and interprets the Sounio-generated disposition.
 

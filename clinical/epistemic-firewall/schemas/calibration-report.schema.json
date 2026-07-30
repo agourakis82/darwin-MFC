@@ -15,6 +15,7 @@
     "split",
     "conformal",
     "comparator",
+    "compiler",
     "precisionPlan",
     "coverage",
     "metrics",
@@ -46,6 +47,10 @@
         "mathematicalAuthority",
         "runtime"
       ]
+    },
+    "compiler": {
+      "type": "object",
+      "required": ["sha256", "sourceReceiptSha256", "reconciled", "sourceBranch", "sourceCommit"]
     },
     "precisionPlan": {
       "type": "object",

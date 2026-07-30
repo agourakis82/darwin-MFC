@@ -15,8 +15,9 @@ import { getMedicamentosForDoenca } from '../lib/data/cross-references';
 import { generateDifferentialDiagnosis } from '../lib/utils/differential-diagnosis';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join, resolve } from 'node:path';
 
 interface VerificationResult {
   component: string;
@@ -237,22 +238,29 @@ try {
   const firewallReceipt = JSON.parse(
     readFileSync(resolve(kernelDir, 'epistemic-firewall.receipt.json'), 'utf8'),
   );
+  const compilerSourceReceiptBytes = readFileSync(resolve(kernelDir, 'compiler-source.receipt.json'));
+  const compilerSourceReceipt = JSON.parse(compilerSourceReceiptBytes.toString('utf8'));
   const hash = (value: Buffer) => createHash('sha256').update(value).digest('hex');
   const hashesMatch = hash(evidenceBytes) === receipt.hashes.evidenceSha256
     && hash(modelBytes) === receipt.hashes.modelSha256
     && hash(wasmBytes) === receipt.hashes.wasmSha256
     && hash(calibrationBytes) === receipt.hashes.calibrationCertificateSha256
     && hash(policyBytes) === receipt.hashes.epistemicFirewallPolicySha256
-    && hash(receiptBytes) === firewallReceipt.hashes.clinicalReceiptSha256;
+    && hash(receiptBytes) === firewallReceipt.hashes.clinicalReceiptSha256
+    && hash(compilerSourceReceiptBytes) === receipt.hashes.compilerSourceReceiptSha256
+    && hash(compilerSourceReceiptBytes) === firewallReceipt.hashes.compilerSourceReceiptSha256;
   const tamperedWasm = Buffer.from(wasmBytes);
   tamperedWasm[tamperedWasm.length - 1] ^= 1;
   const tamperedPolicy = Buffer.from(policyBytes);
   tamperedPolicy[tamperedPolicy.length - 2] ^= 1;
   const tamperedCalibration = Buffer.from(calibrationBytes);
   tamperedCalibration[tamperedCalibration.length - 2] ^= 1;
+  const tamperedCompilerReceipt = Buffer.from(compilerSourceReceiptBytes);
+  tamperedCompilerReceipt[tamperedCompilerReceipt.length - 2] ^= 1;
   const tamperDetected = hash(tamperedWasm) !== receipt.hashes.wasmSha256
     && hash(tamperedPolicy) !== receipt.hashes.epistemicFirewallPolicySha256
-    && hash(tamperedCalibration) !== receipt.hashes.calibrationCertificateSha256;
+    && hash(tamperedCalibration) !== receipt.hashes.calibrationCertificateSha256
+    && hash(tamperedCompilerReceipt) !== receipt.hashes.compilerSourceReceiptSha256;
   const instance = new WebAssembly.Instance(
     new WebAssembly.Module(wasmBytes),
     { env: { log: Math.log } },
@@ -266,13 +274,23 @@ try {
     && receipt.abi.imports?.[0]?.module === 'env'
     && receipt.abi.imports?.[0]?.name === 'log';
   const gatesPassed = receipt.status === 'experimental'
-    && receipt.schemaVersion === 'darwin.sounio.clinical-receipt.v2'
+    && receipt.schemaVersion === 'darwin.sounio.clinical-receipt.v3'
     && receipt.gates.nativeOracleExecuted === true
     && receipt.gates.nativeWasmParity === true
     && receipt.gates.informationGainParity === true
     && receipt.gates.epistemicFirewallOracleExecuted === true
     && receipt.gates.epistemicFirewallPolicyTableComplete === true
+    && receipt.gates.compilerReconciled === true
     && receipt.gates.retrospectiveCalibration === false;
+  const compilerSourcePassed = compilerSourceReceipt.schemaVersion === 'darwin.sounio.compiler-source-receipt.v1'
+    && compilerSourceReceipt.repository.sourceBranch === 'integration/sounio-dev-ready-base'
+    && compilerSourceReceipt.repository.clean === true
+    && compilerSourceReceipt.repository.commit === compilerSourceReceipt.repository.remoteBranchCommit
+    && compilerSourceReceipt.compilerReconciled === true
+    && Object.values(compilerSourceReceipt.gates).every(value => value === true)
+    && compilerSourceReceipt.hashes.compilerSha256 === receipt.compiler.sha256
+    && compilerSourceReceipt.artifacts.fixedPointStage2.sha256 === receipt.compiler.sha256
+    && compilerSourceReceipt.artifacts.fixedPointStage3.sha256 === receipt.compiler.sha256;
   const policyMasks = new Set(policy.entries.map((entry: { mask: number }) => entry.mask));
   const calibrationRefusal = calibration.status === 'not-calibrated'
     && firewallReceipt.status === 'refused'
@@ -284,16 +302,65 @@ try {
     && policyMasks.size === 256
     && firewallReceipt.gates.policyOracleExecuted === true
     && firewallReceipt.gates.policyTableComplete === true
+    && firewallReceipt.schemaVersion === 'darwin.sounio.epistemic-firewall-receipt.v2'
+    && firewallReceipt.gates.compilerReconciled === true
     && calibrationRefusal;
 
-  if (hashesMatch && tamperDetected && abiAvailable && gatesPassed && firewallPassed) {
-    pass('Sounio Clinical Kernel', 'WASM íntegro e Epistemic Firewall Sounio bloqueando uso clínico sem calibração');
+  const validatorScript = resolve(process.cwd(), 'scripts/validate-sounio-compiler-source-receipt.mjs');
+  const tamperDir = mkdtempSync(join(tmpdir(), 'darwin-compiler-receipt-'));
+  const validateMutation = (name: string, mutate: (copy: any) => void) => {
+    const copy = structuredClone(compilerSourceReceipt);
+    mutate(copy);
+    const path = join(tamperDir, `${name}.json`);
+    writeFileSync(path, `${JSON.stringify(copy, null, 2)}\n`);
+    return spawnSync(process.execPath, [
+      validatorScript,
+      '--receipt',
+      path,
+      '--expected-compiler-sha256',
+      receipt.compiler.sha256,
+    ], { cwd: process.cwd(), encoding: 'utf8' });
+  };
+  const dirtyReceipt = validateMutation('dirty', copy => { copy.repository.clean = false; });
+  const divergentReceipt = validateMutation('divergent', copy => { copy.repository.commit = '0'.repeat(40); });
+  const changedSeedReceipt = validateMutation('changed-seed', copy => { copy.source.seed.sha256 = '0'.repeat(64); });
+  const changedCompilerReceipt = validateMutation('changed-compiler', copy => { copy.hashes.compilerSha256 = '0'.repeat(64); });
+  const missingReceipt = spawnSync(process.execPath, [
+    validatorScript,
+    '--receipt',
+    join(tamperDir, 'missing.json'),
+    '--expected-compiler-sha256',
+    receipt.compiler.sha256,
+  ], { cwd: process.cwd(), encoding: 'utf8' });
+  const sourceFreshRefusalsPassed = dirtyReceipt.status !== 0
+    && dirtyReceipt.stderr.includes('compiler-source-repository-dirty')
+    && divergentReceipt.status !== 0
+    && divergentReceipt.stderr.includes('compiler-source-commit-divergent')
+    && changedSeedReceipt.status !== 0
+    && changedSeedReceipt.stderr.includes('compiler-seed-hash-mismatch')
+    && changedCompilerReceipt.status !== 0
+    && changedCompilerReceipt.stderr.includes('compiler-artifact-receipt-hash-mismatch')
+    && missingReceipt.status !== 0;
+  rmSync(tamperDir, { recursive: true, force: true });
+
+  if (
+    hashesMatch
+    && tamperDetected
+    && abiAvailable
+    && gatesPassed
+    && compilerSourcePassed
+    && sourceFreshRefusalsPassed
+    && firewallPassed
+  ) {
+    pass('Sounio Clinical Kernel', 'Compilador source-fresh, WASM íntegro e firewall bloqueando uso sem calibração');
   } else {
     fail('Sounio Clinical Kernel', 'Gate de integridade, ABI ou estado experimental falhou', {
       hashesMatch,
       tamperDetected,
       abiAvailable,
       gatesPassed,
+      compilerSourcePassed,
+      sourceFreshRefusalsPassed,
       firewallPassed,
     });
   }
@@ -328,6 +395,26 @@ if (fixtureContractPassed && fixturePromotionRefused) {
     validationOutput: fixtureValidation.stdout || fixtureValidation.stderr,
     promotionStatus: fixturePromotion.status,
     promotionOutput: fixturePromotion.stderr || fixturePromotion.stdout,
+  });
+}
+
+const multicenterPackage = spawnSync(
+  process.execPath,
+  [resolve(process.cwd(), 'scripts/validate-multicenter-package.mjs')],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+if (
+  multicenterPackage.status === 0
+  && multicenterPackage.stdout.includes('MULTICENTER_PACKAGE_VALID')
+  && multicenterPackage.stdout.includes('"observations": 12')
+  && multicenterPackage.stdout.includes('"conditions": 9')
+  && multicenterPackage.stdout.includes('"containsPatientRecords": false')
+) {
+  pass('Multicenter Research Package', 'Intended use, SAP, dicionário e template de extração estão congelados e validáveis');
+} else {
+  fail('Multicenter Research Package', 'Pacote multicêntrico incompleto ou incompatível', {
+    status: multicenterPackage.status,
+    output: multicenterPackage.stdout || multicenterPackage.stderr,
   });
 }
 

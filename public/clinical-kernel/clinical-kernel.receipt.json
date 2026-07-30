@@ -1,8 +1,8 @@
 {
-  "schemaVersion": "darwin.sounio.clinical-receipt.v2",
+  "schemaVersion": "darwin.sounio.clinical-receipt.v3",
   "modelVersion": "respiratory-pediatric-0.1.0",
   "status": "experimental",
-  "generatedAt": "2026-07-29T23:36:59.886Z",
+  "generatedAt": "2026-07-30T00:56:25.522Z",
   "abi": {
     "conditions": 9,
     "features": 12,
@@ -21,9 +21,13 @@
     ]
   },
   "compiler": {
-    "identity": "souc-self-hosted-x86_64",
-    "sha256": "840ecf6080b31a6fc5f3b93c5c781119feac37a16c4b4170596f7643164d9e2b",
-    "sourceFreshness": "local-snapshot-unverified-against-remote"
+    "identity": "souc-source-fresh-linux-x86_64",
+    "sha256": "4511a6ed2055524df877de0a8fd140993904e44cf65ebe43c70d827b3edc2dfc",
+    "sourceFreshness": "source-fresh-fixed-point",
+    "sourceReceiptSchemaVersion": "darwin.sounio.compiler-source-receipt.v1",
+    "sourceBranch": "integration/sounio-dev-ready-base",
+    "sourceCommit": "8d203709e1c171d5fb017909f87000eea54a238e",
+    "sourceTree": "7a130685743fdafc6751bb083866e943cc4d7fbb"
   },
   "hashes": {
     "sourceBundleSha256": "fb1beb0954564fc8a3fee5d414cb73b361e89857a84bc77b305efdcb1c5641dc",
@@ -35,7 +39,8 @@
     "calibrationCertificateSha256": "5dbfbe5ea8db042ae8389c373af03bfeff703359cb94fd27e4db236a26cf5c66",
     "epistemicFirewallPolicySha256": "41339450baaa96d0665ae9876f970f0a1f017923338d3bb472cef841c08d654a",
     "epistemicFirewallSourceSha256": "17e62243b754541cfeafb615daed7ad83f24f413bec3051f6c46801c40d9b919",
-    "epistemicFirewallOracleOutputSha256": "d53321eda0d8c403aba6850fabcafc3d2a1dca29e3d7cf3aaba0cbc844a40f97"
+    "epistemicFirewallOracleOutputSha256": "d53321eda0d8c403aba6850fabcafc3d2a1dca29e3d7cf3aaba0cbc844a40f97",
+    "compilerSourceReceiptSha256": "f071869e8c8070f169fd0086df3b8e3501e0504d4f04485cba614e07a678907c"
   },
   "gates": {
     "nativeOracleExecuted": true,
@@ -111,12 +116,12 @@
     "retrospectiveCalibration": false,
     "epistemicFirewallOracleExecuted": true,
     "epistemicFirewallPolicyTableComplete": true,
+    "compilerReconciled": true,
     "signatureVerified": false
   },
   "signature": null,
   "refusalReasons": [
     "Retrospective calibration has not been performed.",
-    "The compiler artifact has not been reconciled with the current remote Sounio workspace.",
     "No production signing key was provided."
   ]
 }

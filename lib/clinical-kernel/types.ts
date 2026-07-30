@@ -2,7 +2,7 @@ export type ClinicalKernelStatus = 'experimental' | 'calibrated' | 'refused';
 export type ClinicalFirewallDisposition = 'REFUSE' | 'ASK' | 'DEFER' | 'ACT';
 
 export interface ClinicalKernelReceipt {
-  schemaVersion: 'darwin.sounio.clinical-receipt.v2';
+  schemaVersion: 'darwin.sounio.clinical-receipt.v3';
   modelVersion: string;
   status: Exclude<ClinicalKernelStatus, 'refused'>;
   generatedAt: string;
@@ -25,6 +25,10 @@ export interface ClinicalKernelReceipt {
     identity: string;
     sha256: string;
     sourceFreshness: string;
+    sourceReceiptSchemaVersion: 'darwin.sounio.compiler-source-receipt.v1';
+    sourceBranch: string | null;
+    sourceCommit: string | null;
+    sourceTree: string | null;
   };
   hashes: {
     evidenceSha256: string;
@@ -37,9 +41,53 @@ export interface ClinicalKernelReceipt {
     wasmInstantiated: boolean;
     nativeWasmParity: boolean;
     retrospectiveCalibration: boolean;
+    compilerReconciled: boolean;
     signatureVerified: boolean;
     [key: string]: unknown;
   };
+  signature: string | null;
+  refusalReasons: string[];
+}
+
+export interface SounioCompilerSourceReceipt {
+  schemaVersion: 'darwin.sounio.compiler-source-receipt.v1';
+  receiptId: string;
+  generatedAt: string;
+  repository: {
+    url: string | null;
+    sourceBranch: string | null;
+    commit: string | null;
+    tree: string | null;
+    clean: boolean;
+    remoteBranchCommit: string | null;
+    remoteMainCommit: string | null;
+    divergenceFromMain: { mainOnly: number; branchOnly: number } | null;
+  };
+  source: {
+    seed: { path: string | null; sha256: string | null };
+    [key: string]: unknown;
+  };
+  artifacts: {
+    compiler: { identity: string; sha256: string; bytes: number };
+    fixedPointStage2: { sha256: string; bytes: number } | null;
+    fixedPointStage3: { sha256: string; bytes: number } | null;
+    gateCompiler: { path: string; sha256: string } | null;
+  };
+  commands: Array<Record<string, unknown>>;
+  canonicalGateAdapter: Record<string, unknown> | null;
+  hashes: Record<string, string | null>;
+  gates: {
+    sourceRepositoryClean: boolean;
+    sourceBranchPinned: boolean;
+    sourceCommitMatchesRemote: boolean;
+    seedTrackedAtPinnedCommit: boolean;
+    sourceBootstrapForced: boolean;
+    fixedPointBitwise: boolean;
+    selfHostReproducibility: boolean;
+    selfHostRelease: boolean;
+    noRustMarkers: boolean;
+  };
+  compilerReconciled: boolean;
   signature: string | null;
   refusalReasons: string[];
 }
@@ -112,7 +160,7 @@ export interface ClinicalFirewallPolicy {
 }
 
 export interface ClinicalFirewallReceipt {
-  schemaVersion: 'darwin.sounio.epistemic-firewall-receipt.v1';
+  schemaVersion: 'darwin.sounio.epistemic-firewall-receipt.v2';
   policyVersion: string;
   modelVersion: string;
   status: 'refused' | 'experimental' | 'calibrated';

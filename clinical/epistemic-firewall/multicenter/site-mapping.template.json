@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "darwin.sounio.site-mapping.v1",
+  "mappingVersion": "0.0.0-draft",
+  "status": "draft",
+  "siteCode": "REPLACE_WITH_NONIDENTIFYING_SITE_CODE",
+  "sourceSystem": "REPLACE_WITH_SOURCE_SYSTEM_AND_VERSION",
+  "dataUseApprovalId": "REPLACE_WITH_APPROVAL_ID",
+  "dictionaryVersion": "1.0.0",
+  "cohortSchemaVersion": "darwin.sounio.retrospective-cohort.v1",
+  "indexEncounter": {
+    "selectionRule": "REPLACE_WITH_DETERMINISTIC_ONE_ENCOUNTER_PER_PATIENT_RULE",
+    "encounterDateField": null,
+    "ageDaysDerivation": null
+  },
+  "pseudonyms": {
+    "algorithm": "HMAC-SHA-256",
+    "patientSourceField": null,
+    "encounterSourceField": null,
+    "siteSourceValue": null,
+    "siteHeldSecretNeverExported": true
+  },
+  "observations": [
+    { "featureId": "fever", "sourceFields": [], "transformation": null, "unit": "degC" },
+    { "featureId": "cough", "sourceFields": [], "transformation": null, "unit": null },
+    { "featureId": "coryza", "sourceFields": [], "transformation": null, "unit": null },
+    { "featureId": "sore_throat", "sourceFields": [], "transformation": null, "unit": null },
+    { "featureId": "dyspnea", "sourceFields": [], "transformation": null, "unit": null },
+    { "featureId": "wheeze", "sourceFields": [], "transformation": null, "unit": null },
+    { "featureId": "stridor", "sourceFields": [], "transformation": null, "unit": null },
+    { "featureId": "tachypnea", "sourceFields": [], "transformation": null, "unit": "breaths/min" },
+    { "featureId": "hypoxemia", "sourceFields": [], "transformation": null, "unit": "%" },
+    { "featureId": "paroxysmal_cough", "sourceFields": [], "transformation": null, "unit": null },
+    { "featureId": "age_under_2", "sourceFields": ["DERIVED_FROM_ageDays"], "transformation": "ageDays < 730", "unit": null },
+    { "featureId": "duration_over_10d", "sourceFields": [], "transformation": null, "unit": "completed-days" }
+  ],
+  "referenceStandard": {
+    "adjudicationMethod": "chart-review-double",
+    "adjudicatorsBlindedToKernel": true,
+    "conditionSourceFields": [],
+    "severityOutcomeSourceFields": [],
+    "disagreementResolution": null
+  },
+  "missingness": {
+    "unknownCode": -1,
+    "absentCode": 0,
+    "presentCode": 1,
+    "notDocumentedMapsTo": -1
+  },
+  "privacy": {
+    "freeTextExported": false,
+    "directIdentifiersExported": false,
+    "dateOfBirthExported": false,
+    "linkageTableLeavesSite": false,
+    "reidentificationRiskAssessmentId": null
+  },
+  "approval": {
+    "mappingLocked": false,
+    "clinicalReviewer": null,
+    "dataSteward": null,
+    "lockedAt": null,
+    "mappingSha256": null
+  }
+}

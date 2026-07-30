@@ -9,13 +9,16 @@ import type {
   ClinicalKernelInput,
   ClinicalKernelReceipt,
   EpistemicDifferential,
+  SounioCompilerSourceReceipt,
 } from './types';
 
-const RECEIPT_SCHEMA = 'darwin.sounio.clinical-receipt.v2';
+const RECEIPT_SCHEMA = 'darwin.sounio.clinical-receipt.v3';
 const EVIDENCE_SCHEMA = 'darwin.sounio.clinical-evidence.v1';
 const CALIBRATION_SCHEMA = 'darwin.sounio.calibration-certificate.v1';
 const POLICY_SCHEMA = 'darwin.sounio.epistemic-firewall-policy.v1';
-const FIREWALL_RECEIPT_SCHEMA = 'darwin.sounio.epistemic-firewall-receipt.v1';
+const FIREWALL_RECEIPT_SCHEMA = 'darwin.sounio.epistemic-firewall-receipt.v2';
+const COMPILER_SOURCE_RECEIPT_SCHEMA = 'darwin.sounio.compiler-source-receipt.v1';
+const COMPILER_SOURCE_BRANCH = 'integration/sounio-dev-ready-base';
 const INPUT_OFFSET = 0;
 const MODEL_OFFSET = 4096;
 const OUTPUT_OFFSET = 32768;
@@ -25,6 +28,7 @@ interface KernelAssets {
   calibration: ClinicalCalibrationCertificate;
   policy: ClinicalFirewallPolicy;
   firewallReceipt: ClinicalFirewallReceipt;
+  compilerSourceReceipt: SounioCompilerSourceReceipt;
   evidence: ClinicalEvidenceBundle;
   model: ArrayBuffer;
   wasm: ArrayBuffer;
@@ -53,34 +57,58 @@ async function loadAssets(): Promise<KernelAssets> {
   const receipt = JSON.parse(new TextDecoder().decode(receiptBytes)) as ClinicalKernelReceipt;
   if (receipt.schemaVersion !== RECEIPT_SCHEMA) throw new Error('receipt-schema-mismatch');
 
-  const [evidenceBytes, model, wasm, calibrationBytes, policyBytes, firewallReceiptBytes] = await Promise.all([
+  const [
+    evidenceBytes,
+    model,
+    wasm,
+    calibrationBytes,
+    policyBytes,
+    firewallReceiptBytes,
+    compilerSourceReceiptBytes,
+  ] = await Promise.all([
     fetchBytes(`${root}/evidence-bundle.json`),
     fetchBytes(`${root}/clinical-model.bin`),
     fetchBytes(`${root}/clinical-kernel.wasm`),
     fetchBytes(`${root}/calibration-certificate.json`),
     fetchBytes(`${root}/epistemic-firewall.policy.json`),
     fetchBytes(`${root}/epistemic-firewall.receipt.json`),
+    fetchBytes(`${root}/compiler-source.receipt.json`),
   ]);
   const evidence = JSON.parse(new TextDecoder().decode(evidenceBytes)) as ClinicalEvidenceBundle;
   const calibration = JSON.parse(new TextDecoder().decode(calibrationBytes)) as ClinicalCalibrationCertificate;
   const policy = JSON.parse(new TextDecoder().decode(policyBytes)) as ClinicalFirewallPolicy;
   const firewallReceipt = JSON.parse(new TextDecoder().decode(firewallReceiptBytes)) as ClinicalFirewallReceipt;
+  const compilerSourceReceipt = JSON.parse(
+    new TextDecoder().decode(compilerSourceReceiptBytes),
+  ) as SounioCompilerSourceReceipt;
   if (evidence.schemaVersion !== EVIDENCE_SCHEMA) throw new Error('evidence-schema-mismatch');
   if (calibration.schemaVersion !== CALIBRATION_SCHEMA) throw new Error('calibration-schema-mismatch');
   if (policy.schemaVersion !== POLICY_SCHEMA) throw new Error('firewall-policy-schema-mismatch');
   if (firewallReceipt.schemaVersion !== FIREWALL_RECEIPT_SCHEMA) throw new Error('firewall-receipt-schema-mismatch');
+  if (compilerSourceReceipt.schemaVersion !== COMPILER_SOURCE_RECEIPT_SCHEMA) {
+    throw new Error('compiler-source-receipt-schema-mismatch');
+  }
   if (evidence.modelVersion !== receipt.modelVersion) throw new Error('model-version-mismatch');
   if (calibration.modelVersion !== receipt.modelVersion) throw new Error('calibration-model-version-mismatch');
   if (firewallReceipt.modelVersion !== receipt.modelVersion) throw new Error('firewall-model-version-mismatch');
   if (firewallReceipt.policyVersion !== policy.policyVersion) throw new Error('firewall-policy-version-mismatch');
 
-  const [receiptHash, evidenceHash, modelHash, wasmHash, calibrationHash, policyHash] = await Promise.all([
+  const [
+    receiptHash,
+    evidenceHash,
+    modelHash,
+    wasmHash,
+    calibrationHash,
+    policyHash,
+    compilerSourceReceiptHash,
+  ] = await Promise.all([
     sha256Hex(receiptBytes),
     sha256Hex(evidenceBytes),
     sha256Hex(model),
     sha256Hex(wasm),
     sha256Hex(calibrationBytes),
     sha256Hex(policyBytes),
+    sha256Hex(compilerSourceReceiptBytes),
   ]);
   if (evidenceHash !== receipt.hashes.evidenceSha256) throw new Error('evidence-hash-mismatch');
   if (modelHash !== receipt.hashes.modelSha256) throw new Error('model-hash-mismatch');
@@ -88,6 +116,9 @@ async function loadAssets(): Promise<KernelAssets> {
   if (calibrationHash !== receipt.hashes.calibrationCertificateSha256) throw new Error('calibration-hash-mismatch');
   if (policyHash !== receipt.hashes.epistemicFirewallPolicySha256) throw new Error('firewall-policy-hash-mismatch');
   if (receiptHash !== firewallReceipt.hashes.clinicalReceiptSha256) throw new Error('firewall-clinical-receipt-hash-mismatch');
+  if (compilerSourceReceiptHash !== receipt.hashes.compilerSourceReceiptSha256) {
+    throw new Error('compiler-source-receipt-hash-mismatch');
+  }
   if (
     evidenceHash !== firewallReceipt.hashes.evidenceSha256
     || modelHash !== firewallReceipt.hashes.modelSha256
@@ -95,8 +126,25 @@ async function loadAssets(): Promise<KernelAssets> {
     || calibrationHash !== firewallReceipt.hashes.calibrationCertificateSha256
     || policyHash !== firewallReceipt.hashes.policySha256
     || receipt.compiler.sha256 !== firewallReceipt.hashes.compilerSha256
+    || compilerSourceReceiptHash !== firewallReceipt.hashes.compilerSourceReceiptSha256
+    || compilerSourceReceipt.artifacts.compiler.sha256 !== receipt.compiler.sha256
   ) {
     throw new Error('firewall-cross-binding-mismatch');
+  }
+  const compilerSourceGatesPassed = Object.values(compilerSourceReceipt.gates).every(value => value === true);
+  const compilerSourceInternallyReconciled = compilerSourceGatesPassed
+    && compilerSourceReceipt.repository.clean === true
+    && compilerSourceReceipt.repository.sourceBranch === COMPILER_SOURCE_BRANCH
+    && compilerSourceReceipt.repository.commit === compilerSourceReceipt.repository.remoteBranchCommit
+    && compilerSourceReceipt.artifacts.fixedPointStage2?.sha256 === receipt.compiler.sha256
+    && compilerSourceReceipt.artifacts.fixedPointStage3?.sha256 === receipt.compiler.sha256
+    && compilerSourceReceipt.signature === null;
+  if (
+    compilerSourceReceipt.compilerReconciled !== compilerSourceInternallyReconciled
+    || receipt.gates.compilerReconciled !== compilerSourceInternallyReconciled
+    || firewallReceipt.gates.compilerReconciled !== compilerSourceInternallyReconciled
+  ) {
+    throw new Error('compiler-reconciliation-gate-mismatch');
   }
   if (receipt.abi.features !== evidence.features.length || receipt.abi.conditions !== evidence.conditions.length) {
     throw new Error('abi-count-mismatch');
@@ -124,11 +172,14 @@ async function loadAssets(): Promise<KernelAssets> {
   ) {
     throw new Error('firewall-policy-table-incomplete');
   }
-  if (receipt.status === 'calibrated' && (!receipt.signature || !receipt.gates.signatureVerified)) {
+  if (
+    receipt.status === 'calibrated'
+    && (!compilerSourceInternallyReconciled || !receipt.signature || !receipt.gates.signatureVerified)
+  ) {
     throw new Error('calibrated-receipt-signature-required');
   }
 
-  return { receipt, calibration, policy, firewallReceipt, evidence, model, wasm };
+  return { receipt, calibration, policy, firewallReceipt, compilerSourceReceipt, evidence, model, wasm };
 }
 
 function technicalRefusal(reason: string): EpistemicDifferential {
@@ -181,7 +232,9 @@ function evaluateFirewall(
   const calibrationValid = calibration.status === 'calibrated'
     && calibrationEvidenceComplete
     && receipt.gates.retrospectiveCalibration === true
-    && firewallReceipt.gates.calibrationCertificateValid;
+    && firewallReceipt.gates.calibrationCertificateValid
+    && receipt.gates.compilerReconciled === true
+    && firewallReceipt.gates.compilerReconciled === true;
   const signatureVerified = receipt.gates.signatureVerified === true
     && firewallReceipt.gates.signatureVerified
     && Boolean(receipt.signature)

@@ -99,11 +99,16 @@ Validate only the input and split contract:
 node scripts/calibrate-epistemic-firewall.mjs --fixture --validate-only
 ```
 
-Analyze an approved cohort without copying it into the repository:
+Analyze an approved cohort without copying it into the repository. Cohort v1 requires at least two locked site mappings:
 
 ```bash
-node scripts/calibrate-epistemic-firewall.mjs --cohort /secure/path/cohort.json
+node scripts/calibrate-epistemic-firewall.mjs \
+  --cohort /secure/path/cohort.json \
+  --site-mapping /secure/site-a.mapping.json \
+  --site-mapping /secure/site-b.mapping.json
 ```
+
+For source-fresh execution, also set `SOUNIO_COMPILER_PATH` and `SOUNIO_COMPILER_RECEIPT_PATH`. The report records and binds both compiler hashes.
 
 The report is written under the ignored `.clinical-kernel-build/calibration/` directory. Never commit clinical cohort files or patient-level derivatives.
 
