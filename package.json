@@ -31,6 +31,8 @@
     "probe:public-clinical-datasets": "node scripts/probe-public-clinical-datasets.mjs --strict",
     "analyze:public-sivep-srag:feasibility": "node scripts/analyze-public-sivep-srag.mjs --max-rows 100000",
     "analyze:public-sivep-srag:full": "node scripts/analyze-public-sivep-srag.mjs --all",
+    "analyze:public-namcs2018": "node scripts/analyze-public-namcs2018.mjs",
+    "test:public-namcs2018-adapter": "node scripts/analyze-public-namcs2018.mjs --self-test",
     "calibrate:epistemic-firewall:fixture": "node scripts/calibrate-epistemic-firewall.mjs --fixture",
     "calibrate:epistemic-firewall:validate": "node scripts/calibrate-epistemic-firewall.mjs --fixture --validate-only",
     "research:epistemic-firewall": "node scripts/run-epistemic-firewall-prior-art-search.mjs",
@@ -123,6 +125,7 @@
     "zustand": "^5.0.9"
   },
   "devDependencies": {
+    "@irbisadm/statfmt": "0.1.1",
     "@lhci/cli": "^0.15.1",
     "@next/bundle-analyzer": "^16.1.6",
     "@playwright/test": "^1.57.0",

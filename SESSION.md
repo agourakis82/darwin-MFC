@@ -49,6 +49,11 @@
 - O SIVEP-Gripe 2025 foi processado integralmente por streaming, sem persistir linhas individuais. O snapshot congelado tem 381.900.544 bytes, 336.260 registros e SHA-256 `b5def80ae35092c5f64b4766d6d2e5785bdd63978a9aae51cc90521a91a6aaaa`.
 - A analise SIVEP encontrou 195.021 registros pediatricos, incluindo 47.304 admissoes em UTI, 106.372 usos de suporte ventilatorio e 1.964 obitos por SRAG. Esses agregados descrevem vigilancia hospitalar grave e nao podem estimar priors ou efeitos terapeuticos da APS.
 - Os recibos publicos mantem `apsCalibrationAuthorized=false`, `clinicalActivationAuthorized=false`, `patientRowsPersisted=false` e disposicao final `REFUSE`.
+- Adaptador NAMCS 2018 implementado com `@irbisadm/statfmt@0.1.1`, port TypeScript puro do ReadStat. O ZIP oficial e extraido em diretorio temporario, somente 77 campos selecionados sao agregados e todos os arquivos-fonte sao removidos ao final.
+- O recibo NAMCS vincula SHA-256 do ZIP, SAS, formatos CDC, registro e script. As 9.953 consultas e 1.038 variaveis foram reconciliadas; `PATWT` somou 860.385.638,653, dentro de uma consulta do total CDC arredondado.
+- A amostra contem 1.252 consultas pediatricas e 262 no subconjunto respiratorio de desenvolvimento. Apenas amoxicilina, albuterol e acetaminofeno atingiram 30 mencoes; sao associacoes descritivas dos EUA em 2018, nunca recomendacoes.
+- `CSTRATM` e `CPSUM` foram preservados com 60 estratos e 496 clusters. A v1 calcula pontos ponderados, mas recusa intervalos inferenciais ate haver implementacao complex-survey validada contra um oraculo independente.
+- O mapeamento `age_under_2` do NAMCS foi corrigido: `AGE` 0 ou 1 indica menor de 2 anos; `AGEDAYS` existe somente abaixo de 1 ano e nao pode excluir criancas de 1 ano.
 
 ## Verificacao
 
@@ -96,10 +101,15 @@
 - `pnpm analyze:public-sivep-srag:full`: processou 336.260 registros e 381.900.544 bytes; o SHA-256 integral e todas as sete invariantes de particao passaram, sem persistencia de linhas ou identificadores.
 - `pnpm verify`: 24 passaram, 0 falharam, 0 avisos, incluindo a proibicao de promover fontes publicas pelo firewall.
 - `pnpm type-check` e `pnpm build:vercel`: passaram; o build materializou 13.683 paginas estaticas.
+- `pnpm test:public-namcs2018-adapter`: passou os mapeamentos de idade, temperatura com decimal implicito, cinco sinais positivos, pneumonia/bronquiolite e bloqueios clinicos.
+- `pnpm analyze:public-namcs2018`: passou 14 invariantes no snapshot completo; nenhum registro, identificador ou credencial foi persistido.
+- `pnpm probe:public-clinical-datasets`: 14/14 endpoints oficiais alcancaveis apos incluir os formatos de valores do NAMCS.
+- `pnpm verify`: 25 passaram, 0 falharam, 0 avisos, incluindo o adaptador NAMCS offline.
+- `pnpm type-check` e `pnpm build:vercel`: passaram apos a integracao do parser; 13.683 paginas estaticas.
 
 ## Proximo passo
 
-- Implementar o adaptador de extracao do NAMCS 2018 para auditoria descritiva de sintomas, diagnosticos e medicamentos, sem tratar associacao observacional como recomendacao terapeutica.
+- Implementar erro-padrao e intervalos complex-survey para os pontos NAMCS usando `PATWT`, `CSTRATM` e `CPSUM`, com paridade contra um segundo executor R/ReadStat antes de qualquer interpretacao inferencial.
 - Estratificar os agregados SIVEP por faixa etaria, classe final e desfecho para testar somente os invariantes de seguranca e transportabilidade permitidos.
 - Continuar buscando uma fonte publica ou parceria futura com coorte de APS desidentificada, adjudicada e aprovada; probabilidades e EIG permanecem bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.

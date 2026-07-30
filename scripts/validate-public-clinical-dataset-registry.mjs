@@ -9,6 +9,7 @@ const schemaPath = join(root, 'clinical/epistemic-firewall/public-data/public-da
 const evidencePath = join(root, 'clinical/sounio/evidence-bundle.json');
 const dictionaryPath = join(root, 'clinical/epistemic-firewall/multicenter/data-dictionary.v1.json');
 const feasibilityPath = join(root, 'docs/research/epistemic-firewall/public-data-feasibility-v1.md');
+const namcsAuditPath = join(root, 'docs/research/epistemic-firewall/namcs2018-ambulatory-audit-v1.md');
 const outputPath = join(root, '.clinical-kernel-build/public-data/registry-validation.json');
 
 const readJson = path => JSON.parse(readFileSync(path, 'utf8'));
@@ -25,6 +26,7 @@ const schema = JSON.parse(schemaBytes.toString('utf8'));
 const evidence = readJson(evidencePath);
 const dictionary = readJson(dictionaryPath);
 const feasibility = readFileSync(feasibilityPath, 'utf8');
+const namcsAudit = readFileSync(namcsAuditPath, 'utf8');
 
 const featureIds = evidence.features.map(feature => feature.id);
 const conditionIds = evidence.conditions.map(condition => condition.id);
@@ -136,6 +138,14 @@ requireCondition(feasibility.includes('No open patient-level APS/SUS cohort iden
 requireCondition(feasibility.includes('Public data cannot promote the firewall'), 'public-data-firewall-boundary-missing');
 requireCondition(feasibility.includes('SIVEP-Gripe'), 'public-data-sivep-documentation-missing');
 requireCondition(feasibility.includes('NAMCS 2018'), 'public-data-namcs-documentation-missing');
+requireCondition(namcsAudit.includes('RFV omission always remains unknown'), 'public-data-namcs-missingness-boundary-missing');
+requireCondition(namcsAudit.includes('prescriptionRecommendationAuthorized=false'), 'public-data-namcs-prescription-boundary-missing');
+requireCondition(namcsAudit.includes('860,385,638.653'), 'public-data-namcs-weight-reconciliation-missing');
+
+const namcs2018 = registry.datasets.find(dataset => dataset.sourceId === 'us-namcs-office-2018');
+const namcsAgeUnder2 = namcs2018?.featureMappings.find(mapping => mapping.featureId === 'age_under_2');
+requireCondition(namcsAgeUnder2?.rule.includes('AGE 0 or 1'), 'public-data-namcs-age-under-2-rule-invalid');
+requireCondition(namcs2018?.probes.some(probe => probe.probeId === 'value-formats'), 'public-data-namcs-value-formats-probe-missing');
 
 const report = {
   schemaVersion: 'darwin.sounio.public-data-registry-validation.v1',
@@ -162,6 +172,7 @@ const report = {
     registrySha256: sha256(registryBytes),
     schemaSha256: sha256(schemaBytes),
     feasibilitySha256: sha256(readFileSync(feasibilityPath)),
+    namcsAuditSha256: sha256(readFileSync(namcsAuditPath)),
   },
 };
 

@@ -46,6 +46,12 @@ These public datasets can falsify unsafe behavior and expose transportability fa
 
 A future calibrated certificate still requires either an approved target-domain retrospective cohort or a prospectively collected silent APS cohort, plus the frozen SAP, independent review, distribution fingerprint, validity interval and production signature.
 
+## Executed public audit
+
+The NAMCS 2018 ambulatory adapter was executed on 2026-07-30. It reconciled all 9,953 source visits and the weighted total documented by CDC, while retaining `PATWT`, `CSTRATM` and `CPSUM`. The reproducible mapping, hashes, aggregate results and reliability boundary are recorded in [NAMCS 2018 pediatric respiratory ambulatory audit v1](./namcs2018-ambulatory-audit-v1.md).
+
+This execution does not close the target-domain gap. It provides a transportability and observed-practice stress test only; the firewall remains `REFUSE`.
+
 ## Official sources
 
 - Brazilian Ministry of Health, [SIVEP-Gripe SRAG open dataset](https://dadosabertos.saude.gov.br/dataset/srag-2019-a-2026).

@@ -462,6 +462,27 @@ if (
   });
 }
 
+const publicNamcsAdapter = spawnSync(
+  process.execPath,
+  [resolve(process.cwd(), 'scripts/analyze-public-namcs2018.mjs'), '--self-test'],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+if (
+  publicNamcsAdapter.status === 0
+  && publicNamcsAdapter.stdout.includes('PUBLIC_NAMCS2018_ADAPTER_SELF_TEST_VALID')
+  && publicNamcsAdapter.stdout.includes('darwin.sounio.public-namcs2018-adapter-self-test.v1')
+  && publicNamcsAdapter.stdout.includes('"probabilitiesEstimated": false')
+  && publicNamcsAdapter.stdout.includes('"prescriptionRecommendationAuthorized": false')
+  && publicNamcsAdapter.stdout.includes('"clinicalActivationAuthorized": false')
+) {
+  pass('NAMCS 2018 Public Adapter', 'Mapeamentos positivos, proxies e bloqueios clinicos passam no teste deterministico');
+} else {
+  fail('NAMCS 2018 Public Adapter', 'Adaptador NAMCS incompleto ou fronteira clinica violada', {
+    status: publicNamcsAdapter.status,
+    output: publicNamcsAdapter.stdout || publicNamcsAdapter.stderr,
+  });
+}
+
 try {
   const comparatorScript = resolve(process.cwd(), 'scripts/score-current-aps-comparator.ts');
   const comparatorConfig = JSON.parse(readFileSync(

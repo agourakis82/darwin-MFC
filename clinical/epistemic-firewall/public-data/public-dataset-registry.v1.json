@@ -150,7 +150,8 @@
       "officialDatasetUrl": "https://data.cdc.gov/National-Center-for-Health-Statistics/National-Ambulatory-Medical-Care-Survey-2018-2019-/nf35-ec5c",
       "documentationUrls": [
         "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2018/doc2018-508.pdf",
-        "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2018/nam18for.txt"
+        "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2018/nam18for.txt",
+        "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2018/readme2018-sas.txt"
       ],
       "license": "Public Domain U.S. Government",
       "access": {
@@ -196,7 +197,7 @@
         { "featureId": "tachypnea", "fidelity": "proxy", "sourceFields": ["RFV1", "RFV2", "RFV3", "RFV4", "RFV5"], "rule": "Reason-for-visit code 14302 is rapid breathing or hyperventilation and is not an age-specific respiratory-rate derivation; canonical value remains unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
         { "featureId": "hypoxemia", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible room-air SpO2 field in the public visit file; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
         { "featureId": "paroxysmal_cough", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible structured field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
-        { "featureId": "age_under_2", "fidelity": "exact", "sourceFields": ["AGE", "AGEDAYS"], "rule": "Valid AGEDAYS below 730 maps to present; otherwise valid AGE at least 2 maps to absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "age_under_2", "fidelity": "exact", "sourceFields": ["AGE", "AGEDAYS"], "rule": "Valid AGE 0 or 1 maps to present and valid AGE at least 2 maps to absent; AGEDAYS provides infant granularity but is only populated below 1 year", "missingMapsTo": -1, "apsCalibrationEligible": false },
         { "featureId": "duration_over_10d", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible episode-duration field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false }
       ],
       "conditionMappings": [
@@ -212,7 +213,8 @@
       "probes": [
         { "probeId": "catalog", "method": "HEAD", "url": "https://data.cdc.gov/National-Center-for-Health-Statistics/National-Ambulatory-Medical-Care-Survey-2018-2019-/nf35-ec5c", "essential": true },
         { "probeId": "documentation", "method": "HEAD", "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2018/doc2018-508.pdf", "essential": true },
-        { "probeId": "public-use-archive", "method": "HEAD", "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2018/namcs2018_sas.zip", "essential": true }
+        { "probeId": "public-use-archive", "method": "HEAD", "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2018/namcs2018_sas.zip", "essential": true },
+        { "probeId": "value-formats", "method": "HEAD", "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2018/nam18for.txt", "essential": true }
       ]
     },
     {
