@@ -99,7 +99,7 @@ Validate only the input and split contract:
 node scripts/calibrate-epistemic-firewall.mjs --fixture --validate-only
 ```
 
-Analyze an approved cohort without copying it into the repository. Cohort v1 requires at least two locked site mappings:
+Analyze an approved cohort without copying it into the repository. Cohort v1 requires at least two externally stored site-mapping v2 files locked with `pnpm lock:multicenter-site`. The calibrator requires the cohort's exact `siteHash` set to equal the approved mapping set and binds the cohort data-use approval to a referenced agreement:
 
 ```bash
 node scripts/calibrate-epistemic-firewall.mjs \

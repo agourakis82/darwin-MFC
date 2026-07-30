@@ -7,6 +7,8 @@
 - [ ] A site data steward and two independent clinical adjudicators are named outside the repository.
 - [ ] The analytic purpose, retention period, access list, incident process, and destruction procedure are approved.
 - [ ] The site confirms the lawful basis for processing sensitive health data under applicable Brazilian governance and the LGPD.
+- [ ] The database controller authorization, data-use agreement, RIPD or risk decision, secure-environment review, and local responsibility attestation are referenced by off-repository IDs.
+- [ ] A single coordinating protocol is documented, and each participating center retains its local operational responsibilities.
 
 ## Source Mapping
 
@@ -16,6 +18,7 @@
 - [ ] The nine reference classes use double chart adjudication; billing codes alone are insufficient.
 - [ ] Adjudicators are blinded to Sounio and comparator output.
 - [ ] Exactly one index encounter is selected per patient for cohort contract v1.
+- [ ] Availability of sex at birth, race/skin color, comorbidity, immunization, geography, and socioeconomic proxy is documented without silently treating unavailable data as absence.
 
 ## Prohibited Data
 
@@ -27,7 +30,8 @@
 
 ## Pseudonymization
 
-- [ ] Patient, encounter, and site identifiers are HMAC-SHA-256 pseudonyms, not unsalted hashes of source identifiers.
+- [ ] Patient and encounter identifiers are HMAC-SHA-256 pseudonyms, not unsalted hashes of source identifiers.
+- [ ] `siteHash` is a domain-separated SHA-256 of the nonidentifying study `siteCode`; no source institution identifier enters that derivation.
 - [ ] Site-held secrets never leave the source institution and are not reused across unrelated projects.
 - [ ] The linkage table remains at the source site under separate access control.
 - [ ] Collision, null, duplicate, and one-patient-one-encounter checks pass before transfer.
@@ -45,6 +49,8 @@ Pseudonymization is not anonymization. A documented re-identification risk asses
 ## Pre-Analysis Gate
 
 - [ ] `pnpm validate:multicenter-package` passes.
+- [ ] Two completed mappings are locked outside the repository with `pnpm lock:multicenter-site` and pass `--require-locked`.
+- [ ] The cohort `siteHash` set exactly equals the locked mapping set; no unknown or empty site is present.
 - [ ] `node scripts/calibrate-epistemic-firewall.mjs --cohort /secure/path/cohort.json --validate-only` passes.
 - [ ] There is zero patient leakage across temporal partitions.
 - [ ] At least two sites and all nine classes are represented as required.

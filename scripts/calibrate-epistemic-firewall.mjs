@@ -43,6 +43,9 @@ const cohortArgumentIndex = args.indexOf('--cohort');
 const useFixture = args.includes('--fixture');
 const validateOnly = args.includes('--validate-only');
 const promote = args.includes('--promote');
+const cohortPath = cohortArgumentIndex >= 0 && args[cohortArgumentIndex + 1]
+  ? resolve(root, args[cohortArgumentIndex + 1])
+  : null;
 const siteMappingPaths = args.flatMap((value, index) => (
   value === '--site-mapping' && args[index + 1] ? [resolve(root, args[index + 1])] : []
 ));
@@ -150,7 +153,7 @@ function createSyntheticFixture() {
 
 const cohort = useFixture
   ? createSyntheticFixture()
-  : JSON.parse(readFileSync(resolve(root, args[cohortArgumentIndex + 1]), 'utf8'));
+  : JSON.parse(readFileSync(cohortPath, 'utf8'));
 
 const exactKeys = (value, allowed, context) => {
   const unexpected = Object.keys(value).filter(key => !allowed.includes(key));
@@ -228,7 +231,7 @@ validateCohort(cohort);
 const multicenterValidationArgs = [multicenterValidatorPath];
 if (cohort.provenance.kind === 'retrospective-clinical') {
   for (const path of siteMappingPaths) multicenterValidationArgs.push('--mapping', path);
-  multicenterValidationArgs.push('--require-locked');
+  multicenterValidationArgs.push('--require-locked', '--cohort', cohortPath, '--require-cohort-binding');
 }
 const multicenterValidationBytes = execFileSync(process.execPath, multicenterValidationArgs, {
   cwd: root,

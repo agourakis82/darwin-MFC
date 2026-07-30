@@ -28,7 +28,7 @@ pnpm calibrate:epistemic-firewall:validate
 
 The cohort contract and full protocol are documented in `schemas/retrospective-cohort.schema.json` and `docs/research/epistemic-firewall/cohort-calibration-protocol.md`.
 
-The frozen multicenter package contains the intended-use statement, SAP, 12-observation and nine-condition data dictionary, site-mapping schema/template, and extraction checklist. Validate it with `pnpm validate:multicenter-package`. A real cohort requires at least two locked site mappings.
+The frozen multicenter package contains the intended-use statement, SAP, 12-observation and nine-condition data dictionary, site-mapping v2 schema/template, onboarding runbook, and extraction checklist. Validate the template package with `pnpm validate:multicenter-package` and the executable synthetic refusal suite with `pnpm test:multicenter-onboarding`. A real cohort requires at least two externally stored locked site mappings whose exact `siteHash` set matches the cohort. Lock completed drafts with `pnpm lock:multicenter-site`; a lock never authorizes calibration or clinical use.
 
 The scope and limitations of the executable precision calculation are recorded in `docs/research/epistemic-firewall/sample-size-method-note.md`.
 

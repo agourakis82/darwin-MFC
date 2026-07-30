@@ -39,6 +39,10 @@
 - Build Darwin aceita `SOUNIO_COMPILER_PATH` e `SOUNIO_COMPILER_RECEIPT_PATH`; snapshots sem Git continuam testaveis, mas jamais podem produzir reconciliacao positiva.
 - Recibo clinico evoluido para v3 e recibo do firewall para v2; ambos vinculam o recibo source-fresh do compilador e recusam schema, hash, branch, commit, tree, seed ou identidade incompativeis.
 - Pacote multicentrico executavel fechado com intended use, SAP congelado, dicionario de 12 observacoes e nove condicoes, template/schema de mapeamento e checklist de extracao/desidentificacao. Nenhum prontuario ou identificador de paciente foi incluido no repositorio.
+- Site mapping evoluido para v2: separa centro clinico de fixture sintetica, referencia revisao etica, autorizacao do controlador do banco, acordo local, autorizacao multicentrica comum, avaliacao de base legal, RIPD, ambiente seguro, retencao, incidentes e responsabilidades locais.
+- `lock:multicenter-site` deriva `siteHash`, bloqueia o contrato e calcula SHA-256 canonico. Mapeamentos clinicos reais sao recusados dentro do repositorio; documentos, nomes, chaves HMAC e dados continuam fora do Git.
+- O calibrador exige que os dois ou mais mapeamentos tenham o mesmo protocolo, centro coordenador e autorizacao multicentrica, e que o conjunto exato de `siteHash` coincida com a coorte.
+- O recibo de onboarding distingue `mappingGateReady` de verificacao humana: `governanceDocumentsVerified=false` e `calibrationAuthorized=false` permanecem invariantes do software.
 
 ## Verificacao
 
@@ -76,12 +80,17 @@
 - `pnpm type-check`, `pnpm build:vercel` e `pnpm build`: passaram; o build estatico materializou 16.545 paginas.
 - Navegador em origem limpa: 4 anos + tosse -> `REFUSE / calibration-invalid`, integridade verificada, autorizacao clinica bloqueada, zero probabilidades/posteriores Sounio expostos e zero erros de console.
 - A data SOAP foi tornada deterministica entre SSR e cliente; o erro de hidratacao React observado no fuso de Sao Paulo foi eliminado.
+- `pnpm test:multicenter-onboarding`: dois centros exclusivamente sinteticos foram bloqueados e vinculados a uma coorte de engenharia; a fixture permaneceu sem autorizacao de calibracao.
+- Dez cenarios negativos foram recusados: hash adulterado, site duplicado, revisao vencida, aprovacao etica vencida, protocolo divergente, site de coorte desconhecido, autorizacao multicentrica nao vinculada, coorte ausente, tentativa de gravar mapping real no Git e uso de mapping sintetico no calibrador.
+- `pnpm verify`: 23 passaram, 0 falharam, 0 avisos apos o onboarding v2.
+- `pnpm type-check`: passou apos o onboarding v2.
+- Fixture source-fresh foi reexecutada com o compilador reconciliado; permaneceu `fixture-only`, inelegivel para revisao independente ou promocao.
 
 ## Proximo passo
 
 - Obter e analisar uma coorte retrospectiva real, desidentificada, adjudicada e aprovada; probabilidades e EIG continuam bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.
-- Bloquear e revisar os mapeamentos assinados de pelo menos dois servicos de APS antes de iniciar qualquer calibracao real.
+- Obter as aprovacoes institucionais reais e preencher, revisar e bloquear externamente os mapeamentos de pelo menos dois servicos de APS antes de iniciar qualquer calibracao real.
 - Completar claim charts de `US12542216B2`, `US20260121859A1` e `WO2023057516A1`, expandir familias/CPC/IPC e obter segunda revisao independente.
 - Implementar referencia de distribuicao, monitor de drift com rotulos tardios e estudo prospectivo silencioso antes de produzir qualquer certificado real.
 - Assinar e publicar somente quando solicitado e depois dos gates cientificos completos; ate la, manter o Epistemic Firewall em `REFUSE`.

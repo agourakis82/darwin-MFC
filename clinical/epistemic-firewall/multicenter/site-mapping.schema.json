@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://darwin-mfc.local/schemas/site-mapping.v1.json",
+  "$id": "https://darwin-mfc.local/schemas/site-mapping.v2.json",
   "title": "Darwin Sounio Multicenter Site Mapping",
   "type": "object",
   "additionalProperties": false,
@@ -8,34 +8,97 @@
     "schemaVersion",
     "mappingVersion",
     "status",
+    "siteKind",
     "siteCode",
+    "siteHash",
     "sourceSystem",
-    "dataUseApprovalId",
     "dictionaryVersion",
     "cohortSchemaVersion",
+    "governance",
     "indexEncounter",
     "pseudonyms",
     "observations",
     "referenceStandard",
     "missingness",
     "privacy",
+    "representation",
     "approval"
   ],
   "properties": {
-    "schemaVersion": { "const": "darwin.sounio.site-mapping.v1" },
+    "schemaVersion": { "const": "darwin.sounio.site-mapping.v2" },
     "mappingVersion": { "type": "string", "minLength": 1 },
     "status": { "enum": ["draft", "locked", "retired"] },
-    "siteCode": { "type": "string", "minLength": 1 },
+    "siteKind": { "enum": ["clinical-site", "synthetic-fixture"] },
+    "siteCode": { "type": "string", "pattern": "^[A-Z][A-Z0-9_-]{2,31}$" },
+    "siteHash": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
     "sourceSystem": { "type": "string", "minLength": 1 },
-    "dataUseApprovalId": { "type": "string", "minLength": 1 },
     "dictionaryVersion": { "const": "1.0.0" },
     "cohortSchemaVersion": { "const": "darwin.sounio.retrospective-cohort.v1" },
-    "indexEncounter": { "type": "object" },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "researchProtocolId",
+        "coordinatingCenterCode",
+        "participatingCenterCode",
+        "ethicsReviewModel",
+        "ethicsApprovalId",
+        "ethicsApprovalIssuedAt",
+        "ethicsApprovalValidUntil",
+        "localResponsibilityAttested",
+        "databaseControllerAuthorizationId",
+        "databaseControllerAuthorizationAttested",
+        "dataUseAgreementId",
+        "multicenterDataUseApprovalId",
+        "dataUseAgreementValidUntil",
+        "legalBasisAssessmentId",
+        "researchBodyEligibilityAttested",
+        "ripdId",
+        "dataControllerCode",
+        "dataProcessorCode",
+        "dpoChannelHeldOffRepository"
+      ],
+      "properties": {
+        "researchProtocolId": { "type": "string", "minLength": 1 },
+        "coordinatingCenterCode": { "type": "string", "minLength": 1 },
+        "participatingCenterCode": { "type": "string", "minLength": 1 },
+        "ethicsReviewModel": { "enum": ["single-review-coordinating-cep", "local-review"] },
+        "ethicsApprovalId": { "type": "string", "minLength": 1 },
+        "ethicsApprovalIssuedAt": { "type": "string", "format": "date" },
+        "ethicsApprovalValidUntil": { "type": ["string", "null"], "format": "date" },
+        "localResponsibilityAttested": { "const": true },
+        "databaseControllerAuthorizationId": { "type": "string", "minLength": 1 },
+        "databaseControllerAuthorizationAttested": { "const": true },
+        "dataUseAgreementId": { "type": "string", "minLength": 1 },
+        "multicenterDataUseApprovalId": { "type": "string", "minLength": 1 },
+        "dataUseAgreementValidUntil": { "type": ["string", "null"], "format": "date" },
+        "legalBasisAssessmentId": { "type": "string", "minLength": 1 },
+        "researchBodyEligibilityAttested": { "const": true },
+        "ripdId": { "type": "string", "minLength": 1 },
+        "dataControllerCode": { "type": "string", "minLength": 1 },
+        "dataProcessorCode": { "type": "string", "minLength": 1 },
+        "dpoChannelHeldOffRepository": { "const": true }
+      }
+    },
+    "indexEncounter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selectionRule", "encounterDateField", "ageDaysDerivation"],
+      "properties": {
+        "selectionRule": { "type": "string", "minLength": 1 },
+        "encounterDateField": { "type": "string", "minLength": 1 },
+        "ageDaysDerivation": { "type": "string", "minLength": 1 }
+      }
+    },
     "pseudonyms": {
       "type": "object",
-      "required": ["algorithm", "patientSourceField", "encounterSourceField", "siteSourceValue", "siteHeldSecretNeverExported"],
+      "additionalProperties": false,
+      "required": ["algorithm", "patientSourceField", "encounterSourceField", "siteHashDerivation", "siteHeldSecretNeverExported"],
       "properties": {
         "algorithm": { "const": "HMAC-SHA-256" },
+        "patientSourceField": { "type": "string", "minLength": 1 },
+        "encounterSourceField": { "type": "string", "minLength": 1 },
+        "siteHashDerivation": { "const": "SHA-256(darwin.sounio.site:v1:<siteCode>)" },
         "siteHeldSecretNeverExported": { "const": true }
       }
     },
@@ -45,12 +108,118 @@
       "maxItems": 12,
       "items": {
         "type": "object",
-        "required": ["featureId", "sourceFields", "transformation", "unit"]
+        "additionalProperties": false,
+        "required": ["featureId", "sourceFields", "transformation", "unit"],
+        "properties": {
+          "featureId": { "type": "string", "minLength": 1 },
+          "sourceFields": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+          "transformation": { "type": "string", "minLength": 1 },
+          "unit": { "type": ["string", "null"] }
+        }
       }
     },
-    "referenceStandard": { "type": "object" },
-    "missingness": { "type": "object" },
-    "privacy": { "type": "object" },
-    "approval": { "type": "object" }
+    "referenceStandard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["adjudicationMethod", "adjudicatorsBlindedToKernel", "conditionSourceFields", "severityOutcomeSourceFields", "disagreementResolution"],
+      "properties": {
+        "adjudicationMethod": { "const": "chart-review-double" },
+        "adjudicatorsBlindedToKernel": { "const": true },
+        "conditionSourceFields": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "severityOutcomeSourceFields": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "disagreementResolution": { "type": "string", "minLength": 1 }
+      }
+    },
+    "missingness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unknownCode", "absentCode", "presentCode", "notDocumentedMapsTo"],
+      "properties": {
+        "unknownCode": { "const": -1 },
+        "absentCode": { "const": 0 },
+        "presentCode": { "const": 1 },
+        "notDocumentedMapsTo": { "const": -1 }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "freeTextExported",
+        "directIdentifiersExported",
+        "dateOfBirthExported",
+        "linkageTableLeavesSite",
+        "crossBorderTransfer",
+        "minimumNecessaryAttested",
+        "reidentificationRiskAssessmentId",
+        "secureEnvironmentAssessmentId",
+        "retentionPlanId",
+        "breachResponsePlanId"
+      ],
+      "properties": {
+        "freeTextExported": { "const": false },
+        "directIdentifiersExported": { "const": false },
+        "dateOfBirthExported": { "const": false },
+        "linkageTableLeavesSite": { "const": false },
+        "crossBorderTransfer": { "const": false },
+        "minimumNecessaryAttested": { "const": true },
+        "reidentificationRiskAssessmentId": { "type": "string", "minLength": 1 },
+        "secureEnvironmentAssessmentId": { "type": "string", "minLength": 1 },
+        "retentionPlanId": { "type": "string", "minLength": 1 },
+        "breachResponsePlanId": { "type": "string", "minLength": 1 }
+      }
+    },
+    "representation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["careSetting", "coverageStart", "coverageEnd", "sourcePopulationDescription", "inclusionExclusionProtocolId", "variables"],
+      "properties": {
+        "careSetting": { "const": "APS-SUS" },
+        "coverageStart": { "type": "string", "format": "date" },
+        "coverageEnd": { "type": "string", "format": "date" },
+        "sourcePopulationDescription": { "type": "string", "minLength": 1 },
+        "inclusionExclusionProtocolId": { "type": "string", "minLength": 1 },
+        "variables": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "availability", "sourceFields", "transformation"],
+            "properties": {
+              "id": { "enum": ["sex_at_birth", "race_skin_color", "comorbidity", "immunization", "geography", "socioeconomic_proxy"] },
+              "availability": { "enum": ["available-mapped", "unavailable-source", "not-approved"] },
+              "sourceFields": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+              "transformation": { "type": ["string", "null"] }
+            }
+          }
+        }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mappingLocked",
+        "clinicalReviewerId",
+        "dataStewardId",
+        "principalInvestigatorId",
+        "lockedAt",
+        "reviewDueAt",
+        "documentsHeldOffRepository",
+        "mappingSha256"
+      ],
+      "properties": {
+        "mappingLocked": { "type": "boolean" },
+        "clinicalReviewerId": { "type": ["string", "null"] },
+        "dataStewardId": { "type": ["string", "null"] },
+        "principalInvestigatorId": { "type": ["string", "null"] },
+        "lockedAt": { "type": ["string", "null"], "format": "date" },
+        "reviewDueAt": { "type": ["string", "null"], "format": "date" },
+        "documentsHeldOffRepository": { "const": true },
+        "mappingSha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" }
+      }
+    }
   }
 }

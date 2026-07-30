@@ -406,15 +406,37 @@ const multicenterPackage = spawnSync(
 if (
   multicenterPackage.status === 0
   && multicenterPackage.stdout.includes('MULTICENTER_PACKAGE_VALID')
+  && multicenterPackage.stdout.includes('darwin.sounio.multicenter-package-validation.v2')
   && multicenterPackage.stdout.includes('"observations": 12')
   && multicenterPackage.stdout.includes('"conditions": 9')
+  && multicenterPackage.stdout.includes('"calibrationAuthorized": false')
   && multicenterPackage.stdout.includes('"containsPatientRecords": false')
 ) {
-  pass('Multicenter Research Package', 'Intended use, SAP, dicionário e template de extração estão congelados e validáveis');
+  pass('Multicenter Research Package', 'Pacote v2 mantém governança por centro, representatividade e autorização clínica bloqueada');
 } else {
   fail('Multicenter Research Package', 'Pacote multicêntrico incompleto ou incompatível', {
     status: multicenterPackage.status,
     output: multicenterPackage.stdout || multicenterPackage.stderr,
+  });
+}
+
+const multicenterOnboarding = spawnSync(
+  process.execPath,
+  [resolve(process.cwd(), 'scripts/test-multicenter-onboarding.mjs')],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+if (
+  multicenterOnboarding.status === 0
+  && multicenterOnboarding.stdout.includes('MULTICENTER_ONBOARDING_FIXTURE_PASS')
+  && multicenterOnboarding.stdout.includes('"exactCohortSiteBinding": true')
+  && multicenterOnboarding.stdout.includes('"calibrationAuthorized": false')
+  && multicenterOnboarding.stdout.includes('"refused": true')
+) {
+  pass('Multicenter Site Onboarding', 'Dois centros sintéticos vinculam a coorte; adulteração, expiração e site desconhecido são recusados');
+} else {
+  fail('Multicenter Site Onboarding', 'Gate executável de onboarding multicêntrico falhou', {
+    status: multicenterOnboarding.status,
+    output: multicenterOnboarding.stdout || multicenterOnboarding.stderr,
   });
 }
 
