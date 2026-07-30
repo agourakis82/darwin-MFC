@@ -440,6 +440,28 @@ if (
   });
 }
 
+const publicDatasetRegistry = spawnSync(
+  process.execPath,
+  [resolve(process.cwd(), 'scripts/validate-public-clinical-dataset-registry.mjs')],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+if (
+  publicDatasetRegistry.status === 0
+  && publicDatasetRegistry.stdout.includes('PUBLIC_CLINICAL_DATASET_REGISTRY_VALID')
+  && publicDatasetRegistry.stdout.includes('darwin.sounio.public-data-registry-validation.v1')
+  && publicDatasetRegistry.stdout.includes('"apsCalibrationAuthorized": false')
+  && publicDatasetRegistry.stdout.includes('"clinicalActivationAuthorized": false')
+  && publicDatasetRegistry.stdout.includes('"containsPatientRows": false')
+  && publicDatasetRegistry.stdout.includes('"containsCredentials": false')
+) {
+  pass('Public Clinical Dataset Registry', 'Fontes publicas ficam limitadas a prevalidacao e nao podem promover o firewall');
+} else {
+  fail('Public Clinical Dataset Registry', 'Registro publico incompleto ou autorizacao indevida detectada', {
+    status: publicDatasetRegistry.status,
+    output: publicDatasetRegistry.stdout || publicDatasetRegistry.stderr,
+  });
+}
+
 try {
   const comparatorScript = resolve(process.cwd(), 'scripts/score-current-aps-comparator.ts');
   const comparatorConfig = JSON.parse(readFileSync(

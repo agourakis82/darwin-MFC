@@ -1,0 +1,351 @@
+{
+  "schemaVersion": "darwin.sounio.public-clinical-dataset-registry.v1",
+  "status": "research-feasibility-only",
+  "reviewedAt": "2026-07-29",
+  "targetSetting": "APS/SUS pediatric respiratory pilot",
+  "invariants": {
+    "apsCalibrationAuthorized": false,
+    "clinicalActivationAuthorized": false,
+    "patientRowsStoredInRepository": false,
+    "credentialsStoredInRepository": false,
+    "unknownNeverCoercedToAbsent": true
+  },
+  "datasets": [
+    {
+      "sourceId": "br-sivep-gripe-srag-2025",
+      "title": "SIVEP-Gripe SRAG 2025 frozen public microdata",
+      "authority": "Brazilian Ministry of Health - DATASUS/SVSA",
+      "country": "Brazil",
+      "officialDatasetUrl": "https://dadosabertos.saude.gov.br/dataset/srag-2019-a-2026",
+      "documentationUrls": [
+        "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SRAG/dicionario-de-dados-2019-a-2025.pdf",
+        "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SRAG/ficha-de-notificacao-2025.pdf"
+      ],
+      "license": "Creative Commons Attribution",
+      "access": {
+        "level": "public",
+        "patientLevel": true,
+        "retrievalStatus": "live CSV header verified on 2026-07-29",
+        "credentialsStored": false,
+        "snapshot": "INFLUD25-27-07-2026.csv",
+        "unitOfAnalysis": "anonymized notified SRAG case"
+      },
+      "population": {
+        "description": "Hospitalized severe acute respiratory syndrome cases and SRAG deaths notified in Brazil",
+        "careSetting": "hospital and mortality surveillance",
+        "pediatricRecordsAvailable": true
+      },
+      "role": "severity-safety-validation",
+      "allowedUses": [
+        "red-flag sensitivity stress test",
+        "severe respiratory outcome validation",
+        "influenza COVID and RSV etiologic subgroup audit",
+        "temporal and geographic robustness analysis"
+      ],
+      "forbiddenUses": [
+        "aps-prior-calibration",
+        "nine-class-calibration",
+        "clinical-activation",
+        "prescription-generation"
+      ],
+      "selectionBias": [
+        "SRAG hospitalization and death ascertainment creates extreme spectrum bias",
+        "Notified cases are not representative of children presenting to APS",
+        "Symptoms and outcomes may be missing or revised after notification"
+      ],
+      "featureMappings": [
+        { "featureId": "fever", "fidelity": "proxy", "sourceFields": ["FEBRE"], "rule": "FEBRE 1 is reported fever, not the required measured temperature at least 38 degC; otherwise canonical value remains unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "cough", "fidelity": "exact", "sourceFields": ["TOSSE"], "rule": "1 maps to present, 2 maps to absent, 9 or blank maps to unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "coryza", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible structured field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "sore_throat", "fidelity": "exact", "sourceFields": ["GARGANTA"], "rule": "1 maps to present, 2 maps to absent, 9 or blank maps to unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "dyspnea", "fidelity": "exact", "sourceFields": ["DISPNEIA"], "rule": "1 maps to present, 2 maps to absent, 9 or blank maps to unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "wheeze", "fidelity": "unavailable", "sourceFields": [], "rule": "No current wheeze examination field; asthma comorbidity must not be substituted and the canonical value remains unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "stridor", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible structured field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "tachypnea", "fidelity": "unavailable", "sourceFields": [], "rule": "Respiratory distress is not an age-specific respiratory-rate derivation; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "hypoxemia", "fidelity": "proxy", "sourceFields": ["SATURACAO"], "rule": "SATURACAO encodes SpO2 below 95 percent, which is incompatible with the frozen below 92 percent threshold; canonical value remains unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "paroxysmal_cough", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible structured field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "age_under_2", "fidelity": "exact", "sourceFields": ["NU_IDADE_N", "TP_IDADE"], "rule": "Normalize days months or years to ageDays; valid ageDays below 730 maps to present and ageDays at least 730 maps to absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "duration_over_10d", "fidelity": "proxy", "sourceFields": ["DT_SIN_PRI", "DT_NOTIFIC"], "rule": "Date difference is usable only as notification-time duration and not as the prespecified APS index-encounter duration; canonical value remains unknown", "missingMapsTo": -1, "apsCalibrationEligible": false }
+      ],
+      "conditionMappings": [
+        { "conditionId": "influenza-covid-pediatrica", "fidelity": "exact-subset", "sourceFields": ["CLASSI_FIN", "PCR_SARS2", "POS_PCRFLU", "TP_FLU_PCR"], "rule": "Use laboratory or final-classification confirmed influenza or COVID subsets only; never infer the full viral syndrome class", "nineClassCalibrationEligible": false },
+        { "conditionId": "bronquiolite", "fidelity": "syndromic-proxy", "sourceFields": ["PCR_VSR", "AN_VSR", "NU_IDADE_N", "TP_IDADE"], "rule": "RSV positivity in a young child is an etiologic proxy and not an adjudicated bronchiolitis diagnosis", "nineClassCalibrationEligible": false }
+      ],
+      "probes": [
+        { "probeId": "dataset-page", "method": "HEAD", "url": "https://dadosabertos.saude.gov.br/dataset/srag-2019-a-2026", "essential": true },
+        { "probeId": "dictionary", "method": "HEAD", "url": "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SRAG/dicionario-de-dados-2019-a-2025.pdf", "essential": true },
+        { "probeId": "frozen-csv-header", "method": "RANGE_HEADER", "url": "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SRAG/2025/INFLUD25-27-07-2026.csv", "essential": true, "delimiter": ";", "requiredColumns": ["NU_IDADE_N", "TP_IDADE", "FEBRE", "TOSSE", "GARGANTA", "DISPNEIA", "SATURACAO", "UTI", "SUPORT_VEN", "CLASSI_FIN", "EVOLUCAO"] }
+      ]
+    },
+    {
+      "sourceId": "br-esus-notifica-sg-2024",
+      "title": "e-SUS Notifica mild and moderate influenza-like illness 2024",
+      "authority": "Brazilian Ministry of Health - DATASUS/SVSA",
+      "country": "Brazil",
+      "officialDatasetUrl": "https://dadosabertos.saude.gov.br/dataset/notificacoes-de-sindrome-gripal-leve-2024",
+      "documentationUrls": [
+        "https://dadosabertos.saude.gov.br/dataset/notificacoes-de-sindrome-gripal-api-opensearch",
+        "https://datasus.saude.gov.br/wp-content/uploads/2023/04/Dicionario-de-dados_API-E-SUS-Notifica_13_12_22-1.pdf"
+      ],
+      "license": "Creative Commons Attribution",
+      "access": {
+        "level": "public-metadata",
+        "patientLevel": true,
+        "retrievalStatus": "metadata verified; published row endpoints require a separate availability review",
+        "credentialsStored": false,
+        "snapshot": "2024 state-partitioned publication metadata reviewed 2026-07-29",
+        "unitOfAnalysis": "notified suspected mild or moderate COVID-19 influenza-like illness case"
+      },
+      "population": {
+        "description": "Mild and moderate influenza-like illness notifications created for suspected COVID-19 surveillance from March 2020",
+        "careSetting": "mixed community testing and health-service surveillance",
+        "pediatricRecordsAvailable": true
+      },
+      "role": "syndromic-development",
+      "allowedUses": [
+        "positive symptom extraction development",
+        "COVID-era syndromic subgroup audit",
+        "missingness and state-integration sensitivity analysis",
+        "temporal drift exploration"
+      ],
+      "forbiddenUses": [
+        "aps-prior-calibration",
+        "nine-class-calibration",
+        "clinical-activation",
+        "prescription-generation"
+      ],
+      "selectionBias": [
+        "Eligibility was suspected COVID-19 rather than all pediatric respiratory presentations",
+        "Testing strategy and state-system integration changed over time",
+        "A non-selected symptom in a multi-select field is not an explicit clinical denial"
+      ],
+      "featureMappings": [
+        { "featureId": "fever", "fidelity": "proxy", "sourceFields": ["codigoSintomas"], "rule": "Symptom code 8 is reported fever, not measured temperature at least 38 degC; canonical value remains unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "cough", "fidelity": "positive-only", "sourceFields": ["codigoSintomas"], "rule": "Symptom code 7 maps to present; non-selection maps to unknown, never absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "coryza", "fidelity": "positive-only", "sourceFields": ["codigoSintomas"], "rule": "Symptom code 2 maps to present; non-selection maps to unknown, never absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "sore_throat", "fidelity": "positive-only", "sourceFields": ["codigoSintomas"], "rule": "Symptom code 10 maps to present; non-selection maps to unknown, never absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "dyspnea", "fidelity": "positive-only", "sourceFields": ["codigoSintomas"], "rule": "Symptom code 9 maps to present; non-selection maps to unknown, never absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "wheeze", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible structured field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "stridor", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible structured field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "tachypnea", "fidelity": "unavailable", "sourceFields": [], "rule": "No age-specific respiratory rate field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "hypoxemia", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible room-air SpO2 field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "paroxysmal_cough", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible structured field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "age_under_2", "fidelity": "exact", "sourceFields": ["idade"], "rule": "Valid age in completed years 0 or 1 maps to present and at least 2 maps to absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "duration_over_10d", "fidelity": "proxy", "sourceFields": ["dataInicioSintomas", "dataNotificacao"], "rule": "Notification-time duration is not guaranteed to equal the APS index-encounter duration; canonical value remains unknown", "missingMapsTo": -1, "apsCalibrationEligible": false }
+      ],
+      "conditionMappings": [
+        { "conditionId": "influenza-covid-pediatrica", "fidelity": "exact-subset", "sourceFields": ["classificacaoFinal", "codigoClassificacaoFinal", "testes"], "rule": "Confirmed COVID-19 is an exact etiologic subset; discarded or unspecified SG must not be relabeled as another target condition", "nineClassCalibrationEligible": false }
+      ],
+      "probes": [
+        { "probeId": "dataset-page", "method": "HEAD", "url": "https://dadosabertos.saude.gov.br/dataset/notificacoes-de-sindrome-gripal-leve-2024", "essential": false },
+        { "probeId": "api-metadata-page", "method": "HEAD", "url": "https://dadosabertos.saude.gov.br/dataset/notificacoes-de-sindrome-gripal-api-opensearch", "essential": false },
+        { "probeId": "dictionary", "method": "HEAD", "url": "https://datasus.saude.gov.br/wp-content/uploads/2023/04/Dicionario-de-dados_API-E-SUS-Notifica_13_12_22-1.pdf", "essential": false }
+      ]
+    },
+    {
+      "sourceId": "us-namcs-office-2018",
+      "title": "NAMCS 2018 office-based physician visit public-use file",
+      "authority": "United States CDC National Center for Health Statistics",
+      "country": "United States",
+      "officialDatasetUrl": "https://data.cdc.gov/National-Center-for-Health-Statistics/National-Ambulatory-Medical-Care-Survey-2018-2019-/nf35-ec5c",
+      "documentationUrls": [
+        "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2018/doc2018-508.pdf",
+        "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2018/nam18for.txt"
+      ],
+      "license": "Public Domain U.S. Government",
+      "access": {
+        "level": "public",
+        "patientLevel": true,
+        "retrievalStatus": "public-use archives and documentation live",
+        "credentialsStored": false,
+        "snapshot": "2018 NAMCS public-use visit file",
+        "unitOfAnalysis": "sampled office-based physician visit"
+      },
+      "population": {
+        "description": "9,953 sampled visits to nonfederal office-based physicians in the United States",
+        "careSetting": "office-based ambulatory care",
+        "pediatricRecordsAvailable": true
+      },
+      "role": "ambulatory-treatment-pattern-audit",
+      "allowedUses": [
+        "reason-for-visit adapter development",
+        "ICD-10-CM target-class proxy audit",
+        "medication association and prescribing-pattern audit",
+        "international transportability stress test"
+      ],
+      "forbiddenUses": [
+        "aps-prior-calibration",
+        "nine-class-calibration",
+        "clinical-activation",
+        "prescription-generation"
+      ],
+      "selectionBias": [
+        "United States office-based care is not Brazilian APS or SUS",
+        "The 2018 visit response rate and item nonresponse require survey-design analysis",
+        "Reasons for visit are positive mentions and do not establish absent symptoms",
+        "Medication records show observed practice, not recommended care"
+      ],
+      "featureMappings": [
+        { "featureId": "fever", "fidelity": "positive-only", "sourceFields": ["TEMPTAKE", "TEMPF"], "rule": "Measured temperature at least 100.4 degF maps to present; the public file cannot establish explicit fever absence, so every other state maps to unknown, never absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "cough", "fidelity": "positive-only", "sourceFields": ["RFV1", "RFV2", "RFV3", "RFV4", "RFV5"], "rule": "Reason-for-visit code 14400 maps to present; no code maps to unknown, never absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "coryza", "fidelity": "positive-only", "sourceFields": ["RFV1", "RFV2", "RFV3", "RFV4", "RFV5"], "rule": "Reason-for-visit code 14000 for nasal congestion maps to present; no code maps to unknown, never absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "sore_throat", "fidelity": "positive-only", "sourceFields": ["RFV1", "RFV2", "RFV3", "RFV4", "RFV5"], "rule": "Reason-for-visit codes 14551 or 14552 for throat soreness or pain map to present; no code maps to unknown, never absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "dyspnea", "fidelity": "positive-only", "sourceFields": ["RFV1", "RFV2", "RFV3", "RFV4", "RFV5"], "rule": "Reason-for-visit codes 14150 or 14200 map to present; no code maps to unknown, never absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "wheeze", "fidelity": "positive-only", "sourceFields": ["RFV1", "RFV2", "RFV3", "RFV4", "RFV5"], "rule": "Reason-for-visit code 14250 maps to present; no code maps to unknown, never absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "stridor", "fidelity": "proxy", "sourceFields": ["DIAG1", "DIAG2", "DIAG3", "DIAG4", "DIAG5"], "rule": "ICD-10-CM R061 does not establish stridor at rest; the canonical value remains unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "tachypnea", "fidelity": "proxy", "sourceFields": ["RFV1", "RFV2", "RFV3", "RFV4", "RFV5"], "rule": "Reason-for-visit code 14302 is rapid breathing or hyperventilation and is not an age-specific respiratory-rate derivation; canonical value remains unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "hypoxemia", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible room-air SpO2 field in the public visit file; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "paroxysmal_cough", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible structured field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "age_under_2", "fidelity": "exact", "sourceFields": ["AGE", "AGEDAYS"], "rule": "Valid AGEDAYS below 730 maps to present; otherwise valid AGE at least 2 maps to absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "duration_over_10d", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible episode-duration field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false }
+      ],
+      "conditionMappings": [
+        { "conditionId": "ivas-pediatrica", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DIAG1", "DIAG2", "DIAG3", "DIAG4", "DIAG5"], "rule": "ICD-10-CM J00 or J06 proxy; not double adjudication", "nineClassCalibrationEligible": false },
+        { "conditionId": "pneumonia-adquirida-comunidade-pediatrica", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DIAG1", "DIAG2", "DIAG3", "DIAG4", "DIAG5"], "rule": "ICD-10-CM J12 through J18 proxy; not double adjudication", "nineClassCalibrationEligible": false },
+        { "conditionId": "bronquiolite", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DIAG1", "DIAG2", "DIAG3", "DIAG4", "DIAG5"], "rule": "ICD-10-CM J21 proxy; not double adjudication", "nineClassCalibrationEligible": false },
+        { "conditionId": "asma-pediatrica", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DIAG1", "DIAG2", "DIAG3", "DIAG4", "DIAG5"], "rule": "ICD-10-CM J45 proxy; not double adjudication", "nineClassCalibrationEligible": false },
+        { "conditionId": "crupe", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DIAG1", "DIAG2", "DIAG3", "DIAG4", "DIAG5"], "rule": "ICD-10-CM J05 proxy; not double adjudication", "nineClassCalibrationEligible": false },
+        { "conditionId": "coqueluche", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DIAG1", "DIAG2", "DIAG3", "DIAG4", "DIAG5"], "rule": "ICD-10-CM A37 proxy; not laboratory confirmation or double adjudication", "nineClassCalibrationEligible": false },
+        { "conditionId": "influenza-covid-pediatrica", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DIAG1", "DIAG2", "DIAG3", "DIAG4", "DIAG5"], "rule": "ICD-10-CM J09 through J11 proxy for influenza; 2018 predates COVID-19", "nineClassCalibrationEligible": false },
+        { "conditionId": "faringite-aguda", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DIAG1", "DIAG2", "DIAG3", "DIAG4", "DIAG5"], "rule": "ICD-10-CM J02 or J03 proxy; not double adjudication", "nineClassCalibrationEligible": false }
+      ],
+      "probes": [
+        { "probeId": "catalog", "method": "HEAD", "url": "https://data.cdc.gov/National-Center-for-Health-Statistics/National-Ambulatory-Medical-Care-Survey-2018-2019-/nf35-ec5c", "essential": true },
+        { "probeId": "documentation", "method": "HEAD", "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2018/doc2018-508.pdf", "essential": true },
+        { "probeId": "public-use-archive", "method": "HEAD", "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2018/namcs2018_sas.zip", "essential": true }
+      ]
+    },
+    {
+      "sourceId": "us-namcs-health-center-2024",
+      "title": "NAMCS Health Center Component 2024 public-use file",
+      "authority": "United States CDC National Center for Health Statistics",
+      "country": "United States",
+      "officialDatasetUrl": "https://data.cdc.gov/National-Center-for-Health-Statistics/National-Ambulatory-Medical-Care-Survey-Health-Cente/wj2j-rzx9",
+      "documentationUrls": [
+        "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2024/2024-NAMCS-HC-Component-Codebook.pdf",
+        "https://www.cdc.gov/nchs/data/namcs/2024-health-center-component/2024-NAMCS-HC-Component-Technical-Documentation2.pdf"
+      ],
+      "license": "Public Domain U.S. Government",
+      "access": {
+        "level": "public",
+        "patientLevel": true,
+        "retrievalStatus": "public-use R SAS and Stata files documented",
+        "credentialsStored": false,
+        "snapshot": "2024 NAMCS Health Center Component public-use file",
+        "unitOfAnalysis": "health center EHR encounter"
+      },
+      "population": {
+        "description": "503,779 encounters from 107 sampled United States health centers",
+        "careSetting": "federally qualified and similar health centers",
+        "pediatricRecordsAvailable": true
+      },
+      "role": "diagnosis-transportability-audit",
+      "allowedUses": [
+        "ICD-10-CM target-class prevalence audit",
+        "age-stratified diagnosis transportability analysis",
+        "health-center encounter weighting and missingness study"
+      ],
+      "forbiddenUses": [
+        "aps-prior-calibration",
+        "nine-class-calibration",
+        "clinical-activation",
+        "prescription-generation"
+      ],
+      "selectionBias": [
+        "United States health centers are not Brazilian APS or SUS",
+        "The public file exposes age and up to 30 diagnoses but not the 12 clinical observations",
+        "Diagnosis codes are not independent double adjudication"
+      ],
+      "featureMappings": [
+        { "featureId": "fever", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible temperature or structured fever field in the 2024 public file; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "cough", "fidelity": "unavailable", "sourceFields": [], "rule": "No reason-for-visit or structured symptom field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "coryza", "fidelity": "unavailable", "sourceFields": [], "rule": "No reason-for-visit or structured symptom field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "sore_throat", "fidelity": "unavailable", "sourceFields": [], "rule": "No reason-for-visit or structured symptom field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "dyspnea", "fidelity": "unavailable", "sourceFields": [], "rule": "No reason-for-visit or structured symptom field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "wheeze", "fidelity": "unavailable", "sourceFields": [], "rule": "No examination field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "stridor", "fidelity": "unavailable", "sourceFields": [], "rule": "No examination field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "tachypnea", "fidelity": "unavailable", "sourceFields": [], "rule": "No respiratory-rate field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "hypoxemia", "fidelity": "unavailable", "sourceFields": [], "rule": "No room-air SpO2 field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "paroxysmal_cough", "fidelity": "unavailable", "sourceFields": [], "rule": "No structured symptom field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "age_under_2", "fidelity": "exact", "sourceFields": ["AGE", "AGE_U1_MONTH"], "rule": "Valid AGE 0 or 1 maps to present and valid AGE at least 2 maps to absent", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "duration_over_10d", "fidelity": "unavailable", "sourceFields": [], "rule": "No episode-duration field; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false }
+      ],
+      "conditionMappings": [
+        { "conditionId": "ivas-pediatrica", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DX1", "DX2", "DX3", "DX4", "DX5", "DX6", "DX7", "DX8", "DX9", "DX10", "DX11", "DX12", "DX13", "DX14", "DX15", "DX16", "DX17", "DX18", "DX19", "DX20", "DX21", "DX22", "DX23", "DX24", "DX25", "DX26", "DX27", "DX28", "DX29", "DX30"], "rule": "ICD-10-CM J00 or J06 proxy; not double adjudication", "nineClassCalibrationEligible": false },
+        { "conditionId": "pneumonia-adquirida-comunidade-pediatrica", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DX1", "DX2", "DX3", "DX4", "DX5", "DX6", "DX7", "DX8", "DX9", "DX10", "DX11", "DX12", "DX13", "DX14", "DX15", "DX16", "DX17", "DX18", "DX19", "DX20", "DX21", "DX22", "DX23", "DX24", "DX25", "DX26", "DX27", "DX28", "DX29", "DX30"], "rule": "ICD-10-CM J12 through J18 proxy; not double adjudication", "nineClassCalibrationEligible": false },
+        { "conditionId": "bronquiolite", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DX1", "DX2", "DX3", "DX4", "DX5", "DX6", "DX7", "DX8", "DX9", "DX10", "DX11", "DX12", "DX13", "DX14", "DX15", "DX16", "DX17", "DX18", "DX19", "DX20", "DX21", "DX22", "DX23", "DX24", "DX25", "DX26", "DX27", "DX28", "DX29", "DX30"], "rule": "ICD-10-CM J21 proxy; not double adjudication", "nineClassCalibrationEligible": false },
+        { "conditionId": "asma-pediatrica", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DX1", "DX2", "DX3", "DX4", "DX5", "DX6", "DX7", "DX8", "DX9", "DX10", "DX11", "DX12", "DX13", "DX14", "DX15", "DX16", "DX17", "DX18", "DX19", "DX20", "DX21", "DX22", "DX23", "DX24", "DX25", "DX26", "DX27", "DX28", "DX29", "DX30"], "rule": "ICD-10-CM J45 proxy; not double adjudication", "nineClassCalibrationEligible": false },
+        { "conditionId": "crupe", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DX1", "DX2", "DX3", "DX4", "DX5", "DX6", "DX7", "DX8", "DX9", "DX10", "DX11", "DX12", "DX13", "DX14", "DX15", "DX16", "DX17", "DX18", "DX19", "DX20", "DX21", "DX22", "DX23", "DX24", "DX25", "DX26", "DX27", "DX28", "DX29", "DX30"], "rule": "ICD-10-CM J05 proxy; not double adjudication", "nineClassCalibrationEligible": false },
+        { "conditionId": "coqueluche", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DX1", "DX2", "DX3", "DX4", "DX5", "DX6", "DX7", "DX8", "DX9", "DX10", "DX11", "DX12", "DX13", "DX14", "DX15", "DX16", "DX17", "DX18", "DX19", "DX20", "DX21", "DX22", "DX23", "DX24", "DX25", "DX26", "DX27", "DX28", "DX29", "DX30"], "rule": "ICD-10-CM A37 proxy; not laboratory confirmation or double adjudication", "nineClassCalibrationEligible": false },
+        { "conditionId": "influenza-covid-pediatrica", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DX1", "DX2", "DX3", "DX4", "DX5", "DX6", "DX7", "DX8", "DX9", "DX10", "DX11", "DX12", "DX13", "DX14", "DX15", "DX16", "DX17", "DX18", "DX19", "DX20", "DX21", "DX22", "DX23", "DX24", "DX25", "DX26", "DX27", "DX28", "DX29", "DX30"], "rule": "ICD-10-CM J09 through J11 or U071 proxy; not a combined adjudicated class", "nineClassCalibrationEligible": false },
+        { "conditionId": "faringite-aguda", "fidelity": "diagnosis-code-proxy", "sourceFields": ["DX1", "DX2", "DX3", "DX4", "DX5", "DX6", "DX7", "DX8", "DX9", "DX10", "DX11", "DX12", "DX13", "DX14", "DX15", "DX16", "DX17", "DX18", "DX19", "DX20", "DX21", "DX22", "DX23", "DX24", "DX25", "DX26", "DX27", "DX28", "DX29", "DX30"], "rule": "ICD-10-CM J02 or J03 proxy; not double adjudication", "nineClassCalibrationEligible": false }
+      ],
+      "probes": [
+        { "probeId": "catalog", "method": "HEAD", "url": "https://data.cdc.gov/National-Center-for-Health-Statistics/National-Ambulatory-Medical-Care-Survey-Health-Cente/wj2j-rzx9", "essential": true },
+        { "probeId": "codebook", "method": "HEAD", "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2024/2024-NAMCS-HC-Component-Codebook.pdf", "essential": true },
+        { "probeId": "public-use-rds", "method": "HEAD", "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NAMCS/2024/namcshc2024_R.rds", "essential": true }
+      ]
+    },
+    {
+      "sourceId": "br-sinan-pertussis-tabnet",
+      "title": "SINAN pertussis public TabNet series",
+      "authority": "Brazilian Ministry of Health - DATASUS",
+      "country": "Brazil",
+      "officialDatasetUrl": "https://datasus.saude.gov.br/acesso-a-informacao/doencas-e-agravos-de-notificacao-de-2007-em-diante-sinan/",
+      "documentationUrls": [
+        "https://datasus.saude.gov.br/epidemiologicas-e-morbidade/"
+      ],
+      "license": "Not stated on the reviewed landing page; reuse terms require confirmation",
+      "access": {
+        "level": "public",
+        "patientLevel": false,
+        "retrievalStatus": "public aggregate query interface verified",
+        "credentialsStored": false,
+        "snapshot": "SINAN 2007 onward public TabNet interface",
+        "unitOfAnalysis": "aggregate notified pertussis count or rate"
+      },
+      "population": {
+        "description": "Notified pertussis cases available through aggregate epidemiologic tables",
+        "careSetting": "national notifiable-disease surveillance",
+        "pediatricRecordsAvailable": true
+      },
+      "role": "epidemiologic-context-only",
+      "allowedUses": [
+        "pertussis temporal surveillance context",
+        "age and geography incidence context",
+        "rare-condition stress-scenario design"
+      ],
+      "forbiddenUses": [
+        "aps-prior-calibration",
+        "nine-class-calibration",
+        "clinical-activation",
+        "prescription-generation"
+      ],
+      "selectionBias": [
+        "Aggregate surveillance lacks encounter-level symptoms and outcomes",
+        "Notification probability differs from APS presentation probability",
+        "Population incidence cannot be substituted for a symptomatic-encounter prior"
+      ],
+      "featureMappings": [
+        { "featureId": "fever", "fidelity": "unavailable", "sourceFields": [], "rule": "Aggregate table has no encounter-level feature; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "cough", "fidelity": "unavailable", "sourceFields": [], "rule": "Aggregate table has no encounter-level feature; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "coryza", "fidelity": "unavailable", "sourceFields": [], "rule": "Aggregate table has no encounter-level feature; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "sore_throat", "fidelity": "unavailable", "sourceFields": [], "rule": "Aggregate table has no encounter-level feature; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "dyspnea", "fidelity": "unavailable", "sourceFields": [], "rule": "Aggregate table has no encounter-level feature; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "wheeze", "fidelity": "unavailable", "sourceFields": [], "rule": "Aggregate table has no encounter-level feature; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "stridor", "fidelity": "unavailable", "sourceFields": [], "rule": "Aggregate table has no encounter-level feature; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "tachypnea", "fidelity": "unavailable", "sourceFields": [], "rule": "Aggregate table has no encounter-level feature; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "hypoxemia", "fidelity": "unavailable", "sourceFields": [], "rule": "Aggregate table has no encounter-level feature; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "paroxysmal_cough", "fidelity": "unavailable", "sourceFields": [], "rule": "Aggregate table has no encounter-level feature; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "age_under_2", "fidelity": "unavailable", "sourceFields": [], "rule": "Aggregate age bands cannot construct an encounter vector; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
+        { "featureId": "duration_over_10d", "fidelity": "unavailable", "sourceFields": [], "rule": "Aggregate table has no episode duration; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false }
+      ],
+      "conditionMappings": [
+        { "conditionId": "coqueluche", "fidelity": "syndromic-proxy", "sourceFields": ["aggregate notified case count"], "rule": "Use only for epidemiologic context; an aggregate notified count cannot label an encounter", "nineClassCalibrationEligible": false }
+      ],
+      "probes": [
+        { "probeId": "tabnet-entry", "method": "HEAD", "url": "https://datasus.saude.gov.br/acesso-a-informacao/doencas-e-agravos-de-notificacao-de-2007-em-diante-sinan/", "essential": false }
+      ]
+    }
+  ]
+}

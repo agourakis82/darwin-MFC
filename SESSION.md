@@ -43,6 +43,12 @@
 - `lock:multicenter-site` deriva `siteHash`, bloqueia o contrato e calcula SHA-256 canonico. Mapeamentos clinicos reais sao recusados dentro do repositorio; documentos, nomes, chaves HMAC e dados continuam fora do Git.
 - O calibrador exige que os dois ou mais mapeamentos tenham o mesmo protocolo, centro coordenador e autorizacao multicentrica, e que o conjunto exato de `siteHash` coincida com a coorte.
 - O recibo de onboarding distingue `mappingGateReady` de verificacao humana: `governanceDocumentsVerified=false` e `calibrationAuthorized=false` permanecem invariantes do software.
+- Na ausencia de coorte institucional, foi aberta uma trilha publica governada com cinco fontes oficiais: SIVEP-Gripe, e-SUS Notifica, NAMCS 2018, NAMCS Health Center 2024 e SINAN coqueluche/TabNet.
+- O registro publico documenta populacao, ambiente assistencial, licenca, vieses, usos permitidos/proibidos e fidelidade das 12 observacoes. Valores ausentes ou nao selecionados nunca sao convertidos em ausencia clinica.
+- Nenhuma das fontes revisadas cobre simultaneamente o vetor APS congelado, as nove condicoes adjudicadas, tratamento e desfecho. Dados publicos permanecem limitados a pre-validacao, auditoria de transportabilidade, contexto epidemiologico ou validacao de seguranca.
+- O SIVEP-Gripe 2025 foi processado integralmente por streaming, sem persistir linhas individuais. O snapshot congelado tem 381.900.544 bytes, 336.260 registros e SHA-256 `b5def80ae35092c5f64b4766d6d2e5785bdd63978a9aae51cc90521a91a6aaaa`.
+- A analise SIVEP encontrou 195.021 registros pediatricos, incluindo 47.304 admissoes em UTI, 106.372 usos de suporte ventilatorio e 1.964 obitos por SRAG. Esses agregados descrevem vigilancia hospitalar grave e nao podem estimar priors ou efeitos terapeuticos da APS.
+- Os recibos publicos mantem `apsCalibrationAuthorized=false`, `clinicalActivationAuthorized=false`, `patientRowsPersisted=false` e disposicao final `REFUSE`.
 
 ## Verificacao
 
@@ -85,10 +91,17 @@
 - `pnpm verify`: 23 passaram, 0 falharam, 0 avisos apos o onboarding v2.
 - `pnpm type-check`: passou apos o onboarding v2.
 - Fixture source-fresh foi reexecutada com o compilador reconciliado; permaneceu `fixture-only`, inelegivel para revisao independente ou promocao.
+- `pnpm validate:public-clinical-datasets`: passou com cinco fontes, 13 probes definidos, sete mapeamentos exatos, 17 proxies/positive-only e zero autorizacao de calibracao/ativacao.
+- `pnpm probe:public-clinical-datasets`: 13/13 endpoints oficiais alcancaveis; o CSV SIVEP congelado apresentou 194 colunas e todas as colunas requeridas foram verificadas.
+- `pnpm analyze:public-sivep-srag:full`: processou 336.260 registros e 381.900.544 bytes; o SHA-256 integral e todas as sete invariantes de particao passaram, sem persistencia de linhas ou identificadores.
+- `pnpm verify`: 24 passaram, 0 falharam, 0 avisos, incluindo a proibicao de promover fontes publicas pelo firewall.
+- `pnpm type-check` e `pnpm build:vercel`: passaram; o build materializou 13.683 paginas estaticas.
 
 ## Proximo passo
 
-- Obter e analisar uma coorte retrospectiva real, desidentificada, adjudicada e aprovada; probabilidades e EIG continuam bloqueados ate os gates completos.
+- Implementar o adaptador de extracao do NAMCS 2018 para auditoria descritiva de sintomas, diagnosticos e medicamentos, sem tratar associacao observacional como recomendacao terapeutica.
+- Estratificar os agregados SIVEP por faixa etaria, classe final e desfecho para testar somente os invariantes de seguranca e transportabilidade permitidos.
+- Continuar buscando uma fonte publica ou parceria futura com coorte de APS desidentificada, adjudicada e aprovada; probabilidades e EIG permanecem bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.
 - Obter as aprovacoes institucionais reais e preencher, revisar e bloquear externamente os mapeamentos de pelo menos dois servicos de APS antes de iniciar qualquer calibracao real.
 - Completar claim charts de `US12542216B2`, `US20260121859A1` e `WO2023057516A1`, expandir familias/CPC/IPC e obter segunda revisao independente.

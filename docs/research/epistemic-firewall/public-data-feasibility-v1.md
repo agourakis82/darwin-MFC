@@ -1,0 +1,59 @@
+# Public respiratory data feasibility v1
+
+Reviewed: 2026-07-29
+
+## Decision
+
+No open patient-level APS/SUS cohort identified in the reviewed official sources has all of the following: pediatric age, the frozen 12 observations, a nine-condition reference standard, index-encounter timing, treatment, and outcomes.
+
+This is an inference from the official public-access descriptions reviewed on the date above, not a claim that no such dataset can exist. SISAB and SIAPS public products are described as aggregate reports, while more detailed access is restricted to authorized health managers. The target-domain gap therefore remains real.
+
+Public data cannot promote the firewall. It can support engineering, external safety analysis, transportability analysis, and study design while `apsCalibrationAuthorized=false` and the product remains `REFUSE`.
+
+## Source portfolio
+
+| Source | Useful signal | Valid role | Blocking mismatch |
+| --- | --- | --- | --- |
+| SIVEP-Gripe SRAG | Age, fever report, cough, sore throat, dyspnea, SpO2 below 95%, ICU, ventilation, outcome, virology | Severity and red-flag stress testing | Hospitalized SRAG and deaths create severe spectrum bias; the SpO2 threshold differs from the frozen APS definition |
+| e-SUS Notifica SG | Age, positive symptom mentions, symptom onset, COVID tests and outcome | Syndromic adapter and missingness development | Suspected COVID-19 surveillance is not all-cause APS; non-selection is not explicit symptom absence |
+| NAMCS 2018 office visits | Age in days, reasons for visit, temperature, up to five diagnoses and 30 medications | Ambulatory adapter, treatment-pattern audit, international transportability | United States 2018 practice is not SUS; observed prescribing is not recommended care; labels are not double adjudicated |
+| NAMCS Health Center 2024 | 503,779 encounters, age and up to 30 ICD-10-CM diagnoses | Diagnosis-code and age transportability audit | Public file does not expose the frozen symptom vector or medications |
+| SINAN pertussis TabNet | Age, place and time aggregates for notified pertussis | Epidemiologic context and rare-event stress scenarios | Aggregate incidence cannot label encounters or estimate a prior among symptomatic APS visits |
+
+## Canonical mapping policy
+
+1. Unknown remains `-1` and is never converted to absent.
+2. A symptom listed as a reason for visit may establish presence, but its omission does not establish absence.
+3. A proxy with an incompatible threshold remains unknown in the canonical vector. In particular, SIVEP `SATURACAO` means SpO2 below 95%, while the frozen Darwin definition requires room-air SpO2 below 92%.
+4. Billing or provider diagnosis codes are development labels only. They do not satisfy the frozen double-adjudication reference standard.
+5. Population incidence is not a symptomatic-encounter prior.
+6. Medication associations describe observed practice. They cannot generate or authorize prescriptions.
+
+## Executable first phase
+
+The public-data lane should run four analyses before any request for institutional data:
+
+1. SIVEP pediatric sensitivity analysis for ICU, ventilation and death, stratified by age, calendar time and geography.
+2. NAMCS 2018 extraction feasibility for fever, cough, coryza, sore throat, dyspnea and wheeze using positive-only reason-for-visit mappings, with medication associations kept descriptive.
+3. NAMCS 2024 diagnosis-code transportability audit for the eight named respiratory conditions, preserving survey weights and site clustering.
+4. e-SUS Notifica availability and missingness audit. No row extraction begins until the current public endpoint and disclosure controls are reverified.
+
+All analyses must produce versioned data dictionaries, source hashes, inclusion counts, missingness tables and non-patient receipts. No source rows, identifiers or public endpoint credentials belong in this repository.
+
+## Promotion boundary
+
+These public datasets can falsify unsafe behavior and expose transportability failure. They cannot establish APS/SUS calibration because none jointly represents the target encounter population, frozen predictors and adjudicated outcomes.
+
+A future calibrated certificate still requires either an approved target-domain retrospective cohort or a prospectively collected silent APS cohort, plus the frozen SAP, independent review, distribution fingerprint, validity interval and production signature.
+
+## Official sources
+
+- Brazilian Ministry of Health, [SIVEP-Gripe SRAG open dataset](https://dadosabertos.saude.gov.br/dataset/srag-2019-a-2026).
+- Brazilian Ministry of Health, [e-SUS Notifica mild and moderate influenza-like illness](https://dadosabertos.saude.gov.br/dataset/notificacoes-de-sindrome-gripal-api-opensearch).
+- Brazilian Ministry of Health, [SISAB public-access FAQ](https://sisab.saude.gov.br/paginas/acessoPublico/faq/IndexFaq.xhtml).
+- Brazilian Ministry of Health, [SIAPS system description](https://sisaps.saude.gov.br/sistemas/siaps/).
+- DATASUS, [SINAN diseases and conditions from 2007 onward](https://datasus.saude.gov.br/acesso-a-informacao/doencas-e-agravos-de-notificacao-de-2007-em-diante-sinan/).
+- CDC/NCHS, [NAMCS overview](https://www.cdc.gov/nchs/namcs/about/).
+- CDC/NCHS, [NAMCS questionnaires, datasets and documentation](https://www.cdc.gov/nchs/namcs/documentation/index.html).
+- CDC/NCHS, [NAMCS 2018-2019 public-use catalog entry](https://data.cdc.gov/National-Center-for-Health-Statistics/National-Ambulatory-Medical-Care-Survey-2018-2019-/nf35-ec5c).
+- CDC/NCHS, [NAMCS Health Center Component 2022-2024 public-use catalog entry](https://data.cdc.gov/National-Center-for-Health-Statistics/National-Ambulatory-Medical-Care-Survey-Health-Cente/wj2j-rzx9).
