@@ -61,6 +61,8 @@ Only medication codes appearing in at least 30 sampled visits are emitted. In th
 
 Point estimates use `PATWT`. The receipt preserves `CSTRATM` and `CPSUM`, but version 1 does not calculate complex-survey standard errors or confidence intervals. Weighted shares therefore remain descriptive point estimates.
 
+A separate opt-in gate now validates Taylor-linearized standard errors against R `survey` 4.5 without changing this v1 receipt or its clinical authorization boundary. See [NAMCS 2018 complex-survey parity v1](./namcs2018-complex-survey-parity-v1.md).
+
 Condition-specific cells for pneumonia, bronchiolitis, asthma, croup, pertussis and influenza are below the display threshold. They cannot support condition-level medication conclusions. Even larger cells remain diagnosis-code proxies without independent adjudication.
 
 The final state is invariant: `apsCalibrationAuthorized=false`, `prescriptionRecommendationAuthorized=false`, `clinicalActivationAuthorized=false` and firewall disposition `REFUSE`.

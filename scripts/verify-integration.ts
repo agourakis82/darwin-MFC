@@ -483,6 +483,26 @@ if (
   });
 }
 
+const publicNamcsVariance = spawnSync(
+  process.execPath,
+  [resolve(process.cwd(), 'scripts/test-complex-survey-linearization.mjs')],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+if (
+  publicNamcsVariance.status === 0
+  && publicNamcsVariance.stdout.includes('COMPLEX_SURVEY_LINEARIZATION_SELF_TEST_VALID')
+  && publicNamcsVariance.stdout.includes('darwin.sounio.complex-survey-linearization-self-test.v1')
+  && publicNamcsVariance.stdout.includes('"apsCalibrationAuthorized": false')
+  && publicNamcsVariance.stdout.includes('"clinicalActivationAuthorized": false')
+) {
+  pass('NAMCS Complex-Survey Linearization', 'Totais e razoes passam no teste sintetico estratificado por conglomerados');
+} else {
+  fail('NAMCS Complex-Survey Linearization', 'Formula de variancia complex-survey ou bloqueio clinico falhou', {
+    status: publicNamcsVariance.status,
+    output: publicNamcsVariance.stdout || publicNamcsVariance.stderr,
+  });
+}
+
 try {
   const comparatorScript = resolve(process.cwd(), 'scripts/score-current-aps-comparator.ts');
   const comparatorConfig = JSON.parse(readFileSync(

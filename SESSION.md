@@ -52,8 +52,11 @@
 - Adaptador NAMCS 2018 implementado com `@irbisadm/statfmt@0.1.1`, port TypeScript puro do ReadStat. O ZIP oficial e extraido em diretorio temporario, somente 77 campos selecionados sao agregados e todos os arquivos-fonte sao removidos ao final.
 - O recibo NAMCS vincula SHA-256 do ZIP, SAS, formatos CDC, registro e script. As 9.953 consultas e 1.038 variaveis foram reconciliadas; `PATWT` somou 860.385.638,653, dentro de uma consulta do total CDC arredondado.
 - A amostra contem 1.252 consultas pediatricas e 262 no subconjunto respiratorio de desenvolvimento. Apenas amoxicilina, albuterol e acetaminofeno atingiram 30 mencoes; sao associacoes descritivas dos EUA em 2018, nunca recomendacoes.
-- `CSTRATM` e `CPSUM` foram preservados com 60 estratos e 496 clusters. A v1 calcula pontos ponderados, mas recusa intervalos inferenciais ate haver implementacao complex-survey validada contra um oraculo independente.
+- `CSTRATM` e `CPSUM` foram preservados com 60 estratos e 496 clusters. A v1 continua descritiva, e um recibo separado agora valida erros-padrao complex-survey contra um oraculo R independente.
 - O mapeamento `age_under_2` do NAMCS foi corrigido: `AGE` 0 ou 1 indica menor de 2 anos; `AGEDAYS` existe somente abaixo de 1 ano e nao pode excluir criancas de 1 ano.
+- Linearizacao de Taylor implementada em Node para totais e razoes no desenho estratificado WR por conglomerado ultimo; o teste sintetico verifica variancia total 20 e variancia de razao 1,25.
+- Oraculo pinado em R `survey` 4.5, recompilado em biblioteca ignorada pelo Git e vinculado ao SHA-256 do tarball CRAN, bootstrap, arvore instalada, dependencias e executavel `Rscript` real.
+- O gate compara 21 metricas, suprime intervalos com menos de 30 positivos e mantem todos os resultados como descritivos dos EUA em 2018. Nenhum dado de linha e persistido; o firewall permanece `REFUSE`.
 
 ## Verificacao
 
@@ -106,11 +109,14 @@
 - `pnpm probe:public-clinical-datasets`: 14/14 endpoints oficiais alcancaveis apos incluir os formatos de valores do NAMCS.
 - `pnpm verify`: 25 passaram, 0 falharam, 0 avisos, incluindo o adaptador NAMCS offline.
 - `pnpm type-check` e `pnpm build:vercel`: passaram apos a integracao do parser; 13.683 paginas estaticas.
+- `pnpm bootstrap:public-namcs2018-survey-oracle`: passou com R 4.6.1, `survey` 4.5 e tarball de 2.417.046 bytes com SHA-256 `8a2ab01759f9acf6000274255edf00e342dfbf320a39fb76d42594e4d262b519`.
+- `pnpm verify:public-namcs2018-survey-parity`: 21/21 pontos e erros-padrao concordaram; erro relativo maximo de 1,74e-15 nos pontos e 2,06e-15 nos erros-padrao, com 436 graus de liberdade identicos.
+- Testes de identidade recusam hash de fonte adulterado e troca do `Rscript`; recibos anteriores sao invalidados antes de uma nova tentativa.
+- `pnpm verify`: 26 passaram, 0 falharam, 0 avisos; `pnpm type-check`, lockfile congelado e `pnpm build:vercel` passaram, com 13.683 paginas estaticas.
 
 ## Proximo passo
 
-- Implementar erro-padrao e intervalos complex-survey para os pontos NAMCS usando `PATWT`, `CSTRATM` e `CPSUM`, com paridade contra um segundo executor R/ReadStat antes de qualquer interpretacao inferencial.
-- Estratificar os agregados SIVEP por faixa etaria, classe final e desfecho para testar somente os invariantes de seguranca e transportabilidade permitidos.
+- Estratificar os agregados SIVEP por faixa etaria, classe final e desfecho, com supressao de celulas pequenas e somente para invariantes de seguranca/transportabilidade permitidos.
 - Continuar buscando uma fonte publica ou parceria futura com coorte de APS desidentificada, adjudicada e aprovada; probabilidades e EIG permanecem bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.
 - Obter as aprovacoes institucionais reais e preencher, revisar e bloquear externamente os mapeamentos de pelo menos dois servicos de APS antes de iniciar qualquer calibracao real.
