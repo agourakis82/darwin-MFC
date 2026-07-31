@@ -17,6 +17,7 @@ interface YoungInfantFeverSafetyInterviewProps {
   answers: YoungInfantFeverSafetyAnswers;
   assessment: YoungInfantFeverSafetyAssessment;
   onChange: (updates: Partial<YoungInfantFeverSafetyAnswers>) => void;
+  sharedDiarrheaSigns?: boolean;
 }
 
 const answerOptions: Array<{ value: ClinicalAnswer; label: string; title: string }> = [
@@ -96,10 +97,26 @@ export default function YoungInfantFeverSafetyInterview({
   answers,
   assessment,
   onChange,
+  sharedDiarrheaSigns = false,
 }: YoungInfantFeverSafetyInterviewProps) {
-  const status = assessment.priority === 'immediate-referral'
+  const sharedDangerSignIds = new Set([
+    'ill-appearance',
+    'reduced-movement',
+    'unable-to-feed',
+    'vomiting-everything',
+    'poor-perfusion',
+  ]);
+  const displayedDangerSignIds = sharedDiarrheaSigns
+    ? assessment.dangerSignIds.filter(id => !sharedDangerSignIds.has(id))
+    : assessment.dangerSignIds;
+  const displayPriority = displayedDangerSignIds.length > 0
+    ? 'immediate-referral'
+    : assessment.prioritySignIds.length > 0
+      ? 'same-day-assessment'
+      : 'routine';
+  const status = displayPriority === 'immediate-referral'
     ? { label: 'Encaminhamento urgente', className: 'border-red-300/30 bg-red-300/10 text-red-200' }
-    : assessment.priority === 'same-day-assessment'
+    : displayPriority === 'same-day-assessment'
       ? { label: 'Completar agora', className: 'border-amber-300/30 bg-amber-300/10 text-amber-200' }
       : { label: 'Sem sinal registrado', className: 'border-white/15 bg-white/[0.04] text-zinc-400' };
 
@@ -172,27 +189,37 @@ export default function YoungInfantFeverSafetyInterview({
       </div>
 
       <div className="grid gap-3 px-4 py-3 sm:grid-cols-2 lg:grid-cols-4">
-        <TriStateField label="Parece muito doente / não vai bem" value={answers.illAppearance} onChange={value => onChange({ illAppearance: value })} />
-        <TriStateField label="Movimenta-se menos que o normal" value={answers.reducedMovement} onChange={value => onChange({ reducedMovement: value })} />
-        <TriStateField label="Não consegue mamar ou beber" value={answers.unableToFeed} onChange={value => onChange({ unableToFeed: value })} />
-        <TriStateField label="Vomita tudo" value={answers.vomitingEverything} onChange={value => onChange({ vomitingEverything: value })} />
+        {!sharedDiarrheaSigns && (
+          <TriStateField label="Parece muito doente / não vai bem" value={answers.illAppearance} onChange={value => onChange({ illAppearance: value })} />
+        )}
+        {!sharedDiarrheaSigns && (
+          <TriStateField label="Movimenta-se menos que o normal" value={answers.reducedMovement} onChange={value => onChange({ reducedMovement: value })} />
+        )}
+        {!sharedDiarrheaSigns && (
+          <TriStateField label="Não consegue mamar ou beber" value={answers.unableToFeed} onChange={value => onChange({ unableToFeed: value })} />
+        )}
+        {!sharedDiarrheaSigns && (
+          <TriStateField label="Vomita tudo" value={answers.vomitingEverything} onChange={value => onChange({ vomitingEverything: value })} />
+        )}
         <TriStateField label="Convulsão" value={answers.convulsions} onChange={value => onChange({ convulsions: value })} />
         <TriStateField label="Apneia" value={answers.apnea} onChange={value => onChange({ apnea: value })} />
         <TriStateField label="Cianose central" value={answers.centralCyanosis} onChange={value => onChange({ centralCyanosis: value })} />
         <TriStateField label="Esforço respiratório grave" value={answers.severeRespiratoryDistress} onChange={value => onChange({ severeRespiratoryDistress: value })} />
-        <TriStateField label="Perfusão ruim / enchimento >2 s" value={answers.poorPerfusion} onChange={value => onChange({ poorPerfusion: value })} />
+        {!sharedDiarrheaSigns && (
+          <TriStateField label="Perfusão ruim / enchimento >2 s" value={answers.poorPerfusion} onChange={value => onChange({ poorPerfusion: value })} />
+        )}
         <TriStateField label="Fontanela abaulada" value={answers.bulgingFontanelle} onChange={value => onChange({ bulgingFontanelle: value })} />
         <TriStateField label="Petéquias / púrpura não branqueável" value={answers.nonBlanchingRash} onChange={value => onChange({ nonBlanchingRash: value })} />
         <TriStateField label="Umbigo: eritema estende à pele" value={answers.umbilicalInfectionExtendingToSkin} onChange={value => onChange({ umbilicalInfectionExtendingToSkin: value })} />
         <TriStateField label="Pústulas extensas ou numerosas" value={answers.extensiveSkinPustules} onChange={value => onChange({ extensiveSkinPustules: value })} />
       </div>
 
-      {(assessment.dangerSignIds.length > 0 || assessment.prioritySignIds.length > 0 || assessment.aapAgeScope) && (
+      {(displayedDangerSignIds.length > 0 || assessment.prioritySignIds.length > 0 || assessment.aapAgeScope) && (
         <div className="space-y-1.5 border-t border-white/[0.07] px-4 py-3" aria-live="polite">
-          {assessment.dangerSignIds.length > 0 && (
+          {displayedDangerSignIds.length > 0 && (
             <p className="flex items-start gap-2 text-xs font-semibold leading-relaxed text-red-200">
               <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-              Encaminhamento urgente: {assessment.dangerSignIds.map(id => dangerLabels[id]).join(' · ')}.
+              Encaminhamento urgente: {displayedDangerSignIds.map(id => dangerLabels[id]).join(' · ')}.
             </p>
           )}
           {assessment.prioritySignIds.includes('temperature-measurement-required') && (

@@ -160,11 +160,20 @@
 - Playwright validou 7 dias + 37,5 °C axilar, 30 dias + febre domiciliar, dia 60 exato, saida no dia 90 e febre + tosse. A transicao tosse/apneia/febre preservou a resposta urgente e manteve uma unica pergunta compartilhada.
 - Desktop de 1440 px e mobile de 390 px ficaram sem overflow horizontal; o console final teve zero erros e zero avisos. O Sounio permaneceu `REFUSE / calibration-invalid` e sem probabilidades calibradas expostas.
 - `pnpm test:young-infant-fever-safety-fixtures`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado agora fecha 33/33 sem avisos e o build materializa 13.683 paginas estaticas, incluindo 717 medicamentos nos nove idiomas.
+- A triagem de diarreia e desidratacao pediatrica cobre idade desconhecida ate menor de 5 anos, com matrizes AIDPI distintas abaixo de 60 dias e de 60 dias a menor de 5 anos.
+- A classificacao exige dois sinais observaveis e preserva desconhecidos: lactente jovem usa estado geral, olhos fundos, succao/ingestao e prega; crianca maior separa desidratacao grave, alguma desidratacao e sem desidratacao.
+- Duracao persistente respeita os limites nacionais: 7 dias no menor de 2 meses e 14 dias a partir de 2 meses. Sangue nas fezes, sinais gerais de perigo, choque e vomito bilioso permanecem rotas independentes de escalonamento.
+- O painel compartilha estado geral, capacidade de beber/mamar, vomitar tudo e enchimento capilar com febre e respiratorio. No fluxo combinado `diarreia + febre + tosse`, cada pergunta compartilhada aparece uma unica vez e a resposta e preservada entre paineis.
+- Dezesseis fixtures sinteticas cobrem 59/60 dias, persistencia 7/14 dias, as duas matrizes de desidratacao, sangue por idade, choque, risco de piora, diagnosticos alternativos, desconhecidos e a saida exata aos 5 anos.
+- Desidratacao, sangue, choque e sinais abdominais nao alteram o vetor Sounio congelado. O painel nao calcula score de choque nem autoriza hidratacao, zinco, antibiotico, dose ou prescricao; o firewall continua `REFUSE / calibration-invalid`.
+- `pnpm test:pediatric-diarrhea-safety-fixtures`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado fecha 34/34 sem avisos; o build materializa 13.683 paginas e 717 medicamentos.
+- Playwright validou menor de 2 meses com dois sinais e 7 dias de diarreia, a transicao no dia 60, alguma desidratacao, fluxo combinado sem perguntas duplicadas e saida aos 5 anos. Mobile de 390 px ficou sem overflow (`390/384`) e o console teve zero erros e zero avisos.
+- Depois de um `500` transitorio em `/pt/busca/` durante o dev anterior, o servidor foi reiniciado limpo e `/pt/busca/`, `/pt/medicamentos/`, `/pt/calculadoras/` e `/pt/prontuario/` responderam HTTP 200; a falha nao se reproduziu.
 
 ## Proximo passo
 
 - Manter o e-SUS Notifica em monitoramento de disponibilidade; somente abrir auditoria de cabecalho se o endpoint publico retornar HTTP 200/206, sem credenciais ou contorno de controle de acesso.
-- Levar o mesmo contrato estruturado para diarreia e desidratacao pediatrica, com classificacao AIDPI por sinais observaveis, idade e ingestao, sem transformar proxies em diagnostico ou autorizar hidratacao/prescricao automatica.
+- Levar o mesmo contrato estruturado para dor abdominal e vomitos pediatricos, separando sinais cirurgicos, invaginacao, apendicite e vomito bilioso sem transformar a triagem em diagnostico ou prescricao automatica.
 - A primeira fase publica de cinco analises esta concluida; qualquer nova fonte deve preencher uma lacuna explicita, revalidar hashes e permanecer fora da promocao clinica.
 - Continuar buscando uma fonte publica ou parceria futura com coorte de APS desidentificada, adjudicada e aprovada; probabilidades e EIG permanecem bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.

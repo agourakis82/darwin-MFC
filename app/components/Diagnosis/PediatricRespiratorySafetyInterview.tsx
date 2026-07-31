@@ -18,6 +18,7 @@ interface PediatricRespiratorySafetyInterviewProps {
   assessment: PediatricRespiratorySafetyAssessment;
   onChange: (updates: Partial<PediatricRespiratorySafetyAnswers>) => void;
   sharedYoungInfantSigns?: boolean;
+  sharedDiarrheaSigns?: boolean;
 }
 
 const answerOptions: Array<{ value: ClinicalAnswer; label: string; title: string }> = [
@@ -82,17 +83,28 @@ export default function PediatricRespiratorySafetyInterview({
   assessment,
   onChange,
   sharedYoungInfantSigns = false,
+  sharedDiarrheaSigns = false,
 }: PediatricRespiratorySafetyInterviewProps) {
-  const sharedDangerSignIds = new Set([
-    'apnea',
-    'central-cyanosis',
-    'convulsions',
-    'lethargy-or-unconsciousness',
-    'unable-to-drink-or-breastfeed',
-    'vomiting-everything',
-    'severe-work-of-breathing',
-  ]);
-  const displayedDangerSignIds = sharedYoungInfantSigns
+  const sharedDangerSignIds = new Set<string>();
+  if (sharedYoungInfantSigns) {
+    [
+      'apnea',
+      'central-cyanosis',
+      'convulsions',
+      'lethargy-or-unconsciousness',
+      'unable-to-drink-or-breastfeed',
+      'vomiting-everything',
+      'severe-work-of-breathing',
+    ].forEach(id => sharedDangerSignIds.add(id));
+  }
+  if (sharedDiarrheaSigns) {
+    [
+      'lethargy-or-unconsciousness',
+      'unable-to-drink-or-breastfeed',
+      'vomiting-everything',
+    ].forEach(id => sharedDangerSignIds.add(id));
+  }
+  const displayedDangerSignIds = sharedDangerSignIds.size > 0
     ? assessment.dangerSignIds.filter(id => !sharedDangerSignIds.has(id))
     : assessment.dangerSignIds;
   const displayPriority = displayedDangerSignIds.length > 0
@@ -248,14 +260,14 @@ export default function PediatricRespiratorySafetyInterview({
           <TriStateField label="Gemência / esforço intenso" value={answers.severeWorkOfBreathing} onChange={value => onChange({ severeWorkOfBreathing: value })} />
         )}
         <TriStateField label="Estridor em repouso" value={answers.stridorAtRest} onChange={value => onChange({ stridorAtRest: value })} />
-        {!sharedYoungInfantSigns && (
+        {!sharedYoungInfantSigns && !sharedDiarrheaSigns && (
           <TriStateField label="Não bebe ou não mama" value={answers.unableToDrinkOrBreastfeed} onChange={value => onChange({ unableToDrinkOrBreastfeed: value })} />
         )}
-        {!sharedYoungInfantSigns && (
+        {!sharedYoungInfantSigns && !sharedDiarrheaSigns && (
           <TriStateField label="Vomita tudo" value={answers.vomitingEverything} onChange={value => onChange({ vomitingEverything: value })} />
         )}
         <TriStateField label="Ingestão reduzida / desidratação" value={answers.reducedOralIntakeOrDehydration} onChange={value => onChange({ reducedOralIntakeOrDehydration: value })} />
-        {!sharedYoungInfantSigns && (
+        {!sharedYoungInfantSigns && !sharedDiarrheaSigns && (
           <TriStateField label="Letargia / inconsciência" value={answers.lethargyOrUnconsciousness} onChange={value => onChange({ lethargyOrUnconsciousness: value })} />
         )}
         {!sharedYoungInfantSigns && (

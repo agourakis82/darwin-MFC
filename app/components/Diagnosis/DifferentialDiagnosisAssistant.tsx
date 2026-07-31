@@ -32,6 +32,11 @@ import {
   type ClinicalAnswer,
 } from '@/lib/clinical-safety/pertussis';
 import {
+  EMPTY_PEDIATRIC_DIARRHEA_SAFETY_INPUT,
+  evaluatePediatricDiarrheaSafety,
+  isPediatricDiarrheaSafetyRelevant,
+} from '@/lib/clinical-safety/pediatric-diarrhea';
+import {
   EMPTY_PEDIATRIC_RESPIRATORY_SAFETY_INPUT,
   evaluatePediatricRespiratorySafety,
   isPediatricRespiratorySafetyRelevant,
@@ -45,6 +50,9 @@ import {
 import PertussisSafetyInterview, {
   type PertussisSafetyAnswers,
 } from './PertussisSafetyInterview';
+import PediatricDiarrheaSafetyInterview, {
+  type PediatricDiarrheaSafetyAnswers,
+} from './PediatricDiarrheaSafetyInterview';
 import PediatricRespiratorySafetyInterview, {
   type PediatricRespiratorySafetyAnswers,
 } from './PediatricRespiratorySafetyInterview';
@@ -102,6 +110,9 @@ export default function DifferentialDiagnosisAssistant({
   const [pediatricRespiratoryAnswers, setPediatricRespiratoryAnswers] = useState<PediatricRespiratorySafetyAnswers>({
     ...EMPTY_PEDIATRIC_RESPIRATORY_SAFETY_INPUT,
   });
+  const [pediatricDiarrheaAnswers, setPediatricDiarrheaAnswers] = useState<PediatricDiarrheaSafetyAnswers>({
+    ...EMPTY_PEDIATRIC_DIARRHEA_SAFETY_INPUT,
+  });
   const [youngInfantFeverAnswers, setYoungInfantFeverAnswers] = useState<YoungInfantFeverSafetyAnswers>({
     ...EMPTY_YOUNG_INFANT_FEVER_SAFETY_INPUT,
   });
@@ -111,12 +122,38 @@ export default function DifferentialDiagnosisAssistant({
   const patientAgeContext = { ageValue, ageUnit: patientAgeUnit };
   const ageYears = patientAgeInYears(patientAgeContext);
   const ageDays = patientAgeInDays(patientAgeContext);
+  const reportedSymptoms = [primarySymptom, ...secondarySymptoms];
+  const diarrheaRelevant = isPediatricDiarrheaSafetyRelevant(reportedSymptoms, ageDays);
+  const pediatricDiarrheaAssessment = evaluatePediatricDiarrheaSafety({
+    ...pediatricDiarrheaAnswers,
+    ageDays,
+    diarrheaPresent: diarrheaRelevant,
+  });
+  const diarrheaLethargy: ClinicalAnswer = pediatricDiarrheaAnswers.generalCondition === 'lethargic-unconscious'
+    ? 'yes'
+    : pediatricDiarrheaAnswers.generalCondition === 'normal'
+      ? 'no'
+      : 'unknown';
+  const diarrheaUnableToDrink: ClinicalAnswer = pediatricDiarrheaAnswers.drinkingAbility === 'poor-unable'
+    ? 'yes'
+    : pediatricDiarrheaAnswers.drinkingAbility === 'unknown'
+      ? 'unknown'
+      : 'no';
   const youngInfantFeverRelevant = isYoungInfantFeverSafetyRelevant(
-    [primarySymptom, ...secondarySymptoms],
+    reportedSymptoms,
     ageDays,
   );
   const youngInfantFeverAssessment = evaluateYoungInfantFeverSafety({
     ...youngInfantFeverAnswers,
+    illAppearance: diarrheaRelevant ? diarrheaLethargy : youngInfantFeverAnswers.illAppearance,
+    reducedMovement: diarrheaRelevant ? diarrheaLethargy : youngInfantFeverAnswers.reducedMovement,
+    unableToFeed: diarrheaRelevant ? diarrheaUnableToDrink : youngInfantFeverAnswers.unableToFeed,
+    vomitingEverything: diarrheaRelevant
+      ? pediatricDiarrheaAnswers.vomitingEverything
+      : youngInfantFeverAnswers.vomitingEverything,
+    poorPerfusion: diarrheaRelevant
+      ? pediatricDiarrheaAnswers.capillaryRefillOver2Seconds
+      : youngInfantFeverAnswers.poorPerfusion,
     ageDays,
     feverConcernPresent: youngInfantFeverRelevant,
   });
@@ -127,7 +164,7 @@ export default function DifferentialDiagnosisAssistant({
     ? youngInfantFeverAnswers.centralCyanosis
     : pediatricRespiratoryAnswers.centralCyanosis;
   const respiratoryRelevant = isPediatricRespiratorySafetyRelevant(
-    [primarySymptom, ...secondarySymptoms],
+    reportedSymptoms,
     ageDays,
   );
   const pediatricRespiratoryAssessment = evaluatePediatricRespiratorySafety({
@@ -137,13 +174,19 @@ export default function DifferentialDiagnosisAssistant({
     convulsions: youngInfantFeverRelevant
       ? youngInfantFeverAnswers.convulsions
       : pediatricRespiratoryAnswers.convulsions,
-    lethargyOrUnconsciousness: youngInfantFeverRelevant
+    lethargyOrUnconsciousness: diarrheaRelevant
+      ? diarrheaLethargy
+      : youngInfantFeverRelevant
       ? mergeClinicalAnswers(youngInfantFeverAnswers.illAppearance, youngInfantFeverAnswers.reducedMovement)
       : pediatricRespiratoryAnswers.lethargyOrUnconsciousness,
-    unableToDrinkOrBreastfeed: youngInfantFeverRelevant
+    unableToDrinkOrBreastfeed: diarrheaRelevant
+      ? diarrheaUnableToDrink
+      : youngInfantFeverRelevant
       ? youngInfantFeverAnswers.unableToFeed
       : pediatricRespiratoryAnswers.unableToDrinkOrBreastfeed,
-    vomitingEverything: youngInfantFeverRelevant
+    vomitingEverything: diarrheaRelevant
+      ? pediatricDiarrheaAnswers.vomitingEverything
+      : youngInfantFeverRelevant
       ? youngInfantFeverAnswers.vomitingEverything
       : pediatricRespiratoryAnswers.vomitingEverything,
     severeWorkOfBreathing: youngInfantFeverRelevant
@@ -177,6 +220,72 @@ export default function DifferentialDiagnosisAssistant({
   useEffect(() => {
     if (initialSecondarySymptoms.length > 0) setSecondarySymptoms(initialSecondarySymptoms);
   }, [initialSecondarySymptoms]);
+
+  useEffect(() => {
+    if (!diarrheaRelevant) return;
+    const lethargySources: ClinicalAnswer[] = [];
+    const unableSources: ClinicalAnswer[] = [];
+    const vomitingSources: ClinicalAnswer[] = [];
+    if (youngInfantFeverRelevant) {
+      lethargySources.push(mergeClinicalAnswers(
+        youngInfantFeverAnswers.illAppearance,
+        youngInfantFeverAnswers.reducedMovement,
+      ));
+      unableSources.push(youngInfantFeverAnswers.unableToFeed);
+      vomitingSources.push(youngInfantFeverAnswers.vomitingEverything);
+    }
+    if (respiratoryRelevant) {
+      lethargySources.push(pediatricRespiratoryAnswers.lethargyOrUnconsciousness);
+      unableSources.push(pediatricRespiratoryAnswers.unableToDrinkOrBreastfeed);
+      vomitingSources.push(pediatricRespiratoryAnswers.vomitingEverything);
+    }
+    const importedLethargy = lethargySources.length > 0 ? mergeClinicalAnswers(...lethargySources) : 'unknown';
+    const importedUnable = unableSources.length > 0 ? mergeClinicalAnswers(...unableSources) : 'unknown';
+    const importedVomiting = vomitingSources.length > 0 ? mergeClinicalAnswers(...vomitingSources) : 'unknown';
+
+    setPediatricDiarrheaAnswers(previous => {
+      const next: PediatricDiarrheaSafetyAnswers = {
+        ...previous,
+        generalCondition: previous.generalCondition === 'unknown'
+          ? importedLethargy === 'yes'
+            ? 'lethargic-unconscious'
+            : importedLethargy === 'no'
+              ? 'normal'
+              : 'unknown'
+          : previous.generalCondition,
+        drinkingAbility: previous.drinkingAbility === 'unknown'
+          ? importedUnable === 'yes'
+            ? 'poor-unable'
+            : importedUnable === 'no'
+              ? 'normal'
+              : 'unknown'
+          : previous.drinkingAbility,
+        vomitingEverything: previous.vomitingEverything === 'unknown'
+          ? importedVomiting
+          : previous.vomitingEverything,
+        capillaryRefillOver2Seconds: previous.capillaryRefillOver2Seconds === 'unknown'
+          && youngInfantFeverRelevant
+          ? youngInfantFeverAnswers.poorPerfusion
+          : previous.capillaryRefillOver2Seconds,
+      };
+      return Object.keys(next).every(key => (
+        next[key as keyof PediatricDiarrheaSafetyAnswers]
+          === previous[key as keyof PediatricDiarrheaSafetyAnswers]
+      )) ? previous : next;
+    });
+  }, [
+    diarrheaRelevant,
+    respiratoryRelevant,
+    youngInfantFeverRelevant,
+    pediatricRespiratoryAnswers.lethargyOrUnconsciousness,
+    pediatricRespiratoryAnswers.unableToDrinkOrBreastfeed,
+    pediatricRespiratoryAnswers.vomitingEverything,
+    youngInfantFeverAnswers.illAppearance,
+    youngInfantFeverAnswers.poorPerfusion,
+    youngInfantFeverAnswers.reducedMovement,
+    youngInfantFeverAnswers.unableToFeed,
+    youngInfantFeverAnswers.vomitingEverything,
+  ]);
 
   useEffect(() => {
     if (!youngInfantFeverRelevant) return;
@@ -244,10 +353,50 @@ export default function DifferentialDiagnosisAssistant({
     }
   };
 
+  const updatePediatricDiarrheaAnswers = (updates: Partial<PediatricDiarrheaSafetyAnswers>) => {
+    setPediatricDiarrheaAnswers(previous => ({ ...previous, ...updates }));
+
+    const feverUpdates: Partial<YoungInfantFeverSafetyAnswers> = {};
+    const respiratoryUpdates: Partial<PediatricRespiratorySafetyAnswers> = {};
+    if (updates.generalCondition !== undefined) {
+      const lethargy: ClinicalAnswer = updates.generalCondition === 'lethargic-unconscious'
+        ? 'yes'
+        : updates.generalCondition === 'normal'
+          ? 'no'
+          : 'unknown';
+      feverUpdates.illAppearance = lethargy;
+      feverUpdates.reducedMovement = lethargy;
+      respiratoryUpdates.lethargyOrUnconsciousness = lethargy;
+    }
+    if (updates.drinkingAbility !== undefined) {
+      const unable: ClinicalAnswer = updates.drinkingAbility === 'poor-unable'
+        ? 'yes'
+        : updates.drinkingAbility === 'unknown'
+          ? 'unknown'
+          : 'no';
+      feverUpdates.unableToFeed = unable;
+      respiratoryUpdates.unableToDrinkOrBreastfeed = unable;
+    }
+    if (updates.vomitingEverything !== undefined) {
+      feverUpdates.vomitingEverything = updates.vomitingEverything;
+      respiratoryUpdates.vomitingEverything = updates.vomitingEverything;
+    }
+    if (updates.capillaryRefillOver2Seconds !== undefined) {
+      feverUpdates.poorPerfusion = updates.capillaryRefillOver2Seconds;
+    }
+    if (Object.keys(feverUpdates).length > 0) {
+      setYoungInfantFeverAnswers(previous => ({ ...previous, ...feverUpdates }));
+    }
+    if (Object.keys(respiratoryUpdates).length > 0) {
+      setPediatricRespiratoryAnswers(previous => ({ ...previous, ...respiratoryUpdates }));
+    }
+  };
+
   const analyze = () => {
     if (!primarySymptom.trim()) return;
     const heuristicSymptoms = uniqueSymptoms([
       ...secondarySymptoms,
+      ...(diarrheaRelevant ? pediatricDiarrheaAssessment.heuristicSymptoms : []),
       ...(youngInfantFeverRelevant ? youngInfantFeverAssessment.heuristicSymptoms : []),
       ...(respiratoryRelevant ? pediatricRespiratoryAssessment.heuristicSymptoms : []),
       ...(pertussisRelevant ? pertussisAssessment.heuristicSymptoms : []),
@@ -266,6 +415,7 @@ export default function DifferentialDiagnosisAssistant({
       ageYears,
       symptoms: [
         ...reportedKernelSymptoms,
+        ...(diarrheaRelevant ? pediatricDiarrheaAssessment.kernelSymptoms : []),
         ...(youngInfantFeverRelevant ? youngInfantFeverAssessment.kernelSymptoms : []),
         ...(respiratoryRelevant ? pediatricRespiratoryAssessment.kernelSymptoms : []),
         ...(pertussisRelevant ? pertussisAssessment.kernelSymptoms : []),
@@ -437,11 +587,20 @@ export default function DifferentialDiagnosisAssistant({
             </div>
           )}
 
+          {diarrheaRelevant && (
+            <PediatricDiarrheaSafetyInterview
+              answers={pediatricDiarrheaAnswers}
+              assessment={pediatricDiarrheaAssessment}
+              onChange={updatePediatricDiarrheaAnswers}
+            />
+          )}
+
           {youngInfantFeverRelevant && (
             <YoungInfantFeverSafetyInterview
               answers={youngInfantFeverAnswers}
               assessment={youngInfantFeverAssessment}
               onChange={updateYoungInfantFeverAnswers}
+              sharedDiarrheaSigns={diarrheaRelevant}
             />
           )}
 
@@ -451,6 +610,7 @@ export default function DifferentialDiagnosisAssistant({
               assessment={pediatricRespiratoryAssessment}
               onChange={updates => setPediatricRespiratoryAnswers(previous => ({ ...previous, ...updates }))}
               sharedYoungInfantSigns={youngInfantFeverRelevant}
+              sharedDiarrheaSigns={diarrheaRelevant}
             />
           )}
 

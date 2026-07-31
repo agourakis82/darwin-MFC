@@ -548,6 +548,41 @@ const youngInfantFeverSafetyFixtures = spawnSync(
   { cwd: process.cwd(), encoding: 'utf8' },
 );
 
+const pediatricDiarrheaSafetyFixtures = spawnSync(
+  'pnpm',
+  ['exec', 'tsx', resolve(process.cwd(), 'scripts/test-pediatric-diarrhea-safety-fixtures.ts')],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+
+if (
+  pediatricDiarrheaSafetyFixtures.status === 0
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('PEDIATRIC_DIARRHEA_SAFETY_FIXTURES_VALID')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('darwin.sounio.pediatric-diarrhea-safety-fixture-test.v1')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"fixturesPassed": 16')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"youngInfantTwoSignMatrixPassed": true')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"olderChildSevereAndSomeMatricesPassed": true')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"ageSpecificPersistenceThresholdsPassed": true')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"bloodInStoolAgeBoundaryPassed": true')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"shockAndAlternativeDiagnosisSignsPassed": true')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"exactFiveYearBoundaryPassed": true')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"unknownNeverCoercedToAbsent": true')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"frozenFeatureIsolationPassed": true')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"dehydrationAddedToKernel": false')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"shockScoreCalculated": false')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"fluidPlanAuthorized": false')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"zincDoseAuthorized": false')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"antibioticRecommendationAuthorized": false')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"prescriptionAuthorized": false')
+  && pediatricDiarrheaSafetyFixtures.stdout.includes('"clinicalActivationAuthorized": false')
+) {
+  pass('Pediatric Diarrhea Safety Fixtures', 'Matrizes AIDPI por idade, persistencia, sangue, choque e sinais alternativos passam sem alterar o vetor congelado ou autorizar terapia');
+} else {
+  fail('Pediatric Diarrhea Safety Fixtures', 'Fixtures de diarreia, limites etarios ou fronteira epistemica falharam', {
+    status: pediatricDiarrheaSafetyFixtures.status,
+    output: pediatricDiarrheaSafetyFixtures.stdout || pediatricDiarrheaSafetyFixtures.stderr,
+  });
+}
+
 if (
   youngInfantFeverSafetyFixtures.status === 0
   && youngInfantFeverSafetyFixtures.stdout.includes('YOUNG_INFANT_FEVER_SAFETY_FIXTURES_VALID')
