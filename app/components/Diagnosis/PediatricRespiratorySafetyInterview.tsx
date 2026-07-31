@@ -17,6 +17,7 @@ interface PediatricRespiratorySafetyInterviewProps {
   answers: PediatricRespiratorySafetyAnswers;
   assessment: PediatricRespiratorySafetyAssessment;
   onChange: (updates: Partial<PediatricRespiratorySafetyAnswers>) => void;
+  sharedYoungInfantSigns?: boolean;
 }
 
 const answerOptions: Array<{ value: ClinicalAnswer; label: string; title: string }> = [
@@ -80,10 +81,28 @@ export default function PediatricRespiratorySafetyInterview({
   answers,
   assessment,
   onChange,
+  sharedYoungInfantSigns = false,
 }: PediatricRespiratorySafetyInterviewProps) {
-  const status = assessment.priority === 'immediate-referral'
+  const sharedDangerSignIds = new Set([
+    'apnea',
+    'central-cyanosis',
+    'convulsions',
+    'lethargy-or-unconsciousness',
+    'unable-to-drink-or-breastfeed',
+    'vomiting-everything',
+    'severe-work-of-breathing',
+  ]);
+  const displayedDangerSignIds = sharedYoungInfantSigns
+    ? assessment.dangerSignIds.filter(id => !sharedDangerSignIds.has(id))
+    : assessment.dangerSignIds;
+  const displayPriority = displayedDangerSignIds.length > 0
+    ? 'immediate-referral'
+    : assessment.prioritySignIds.length > 0
+      ? 'same-day-assessment'
+      : 'routine';
+  const status = displayPriority === 'immediate-referral'
     ? { label: 'Encaminhamento urgente', className: 'border-red-300/30 bg-red-300/10 text-red-200' }
-    : assessment.priority === 'same-day-assessment'
+    : displayPriority === 'same-day-assessment'
       ? { label: 'Avaliar hoje', className: 'border-amber-300/30 bg-amber-300/10 text-amber-200' }
       : { label: 'Em investigação', className: 'border-white/15 bg-white/[0.04] text-zinc-400' };
 
@@ -218,24 +237,38 @@ export default function PediatricRespiratorySafetyInterview({
       </div>
 
       <div className="grid gap-3 px-4 py-3 sm:grid-cols-2 lg:grid-cols-5">
-        <TriStateField label="Apneia" value={answers.apnea} onChange={value => onChange({ apnea: value })} />
-        <TriStateField label="Cianose central" value={answers.centralCyanosis} onChange={value => onChange({ centralCyanosis: value })} />
+        {!sharedYoungInfantSigns && (
+          <TriStateField label="Apneia" value={answers.apnea} onChange={value => onChange({ apnea: value })} />
+        )}
+        {!sharedYoungInfantSigns && (
+          <TriStateField label="Cianose central" value={answers.centralCyanosis} onChange={value => onChange({ centralCyanosis: value })} />
+        )}
         <TriStateField label={chestIndrawingLabel} value={answers.chestIndrawing} onChange={value => onChange({ chestIndrawing: value })} />
-        <TriStateField label="Gemência / esforço intenso" value={answers.severeWorkOfBreathing} onChange={value => onChange({ severeWorkOfBreathing: value })} />
+        {!sharedYoungInfantSigns && (
+          <TriStateField label="Gemência / esforço intenso" value={answers.severeWorkOfBreathing} onChange={value => onChange({ severeWorkOfBreathing: value })} />
+        )}
         <TriStateField label="Estridor em repouso" value={answers.stridorAtRest} onChange={value => onChange({ stridorAtRest: value })} />
-        <TriStateField label="Não bebe ou não mama" value={answers.unableToDrinkOrBreastfeed} onChange={value => onChange({ unableToDrinkOrBreastfeed: value })} />
-        <TriStateField label="Vomita tudo" value={answers.vomitingEverything} onChange={value => onChange({ vomitingEverything: value })} />
+        {!sharedYoungInfantSigns && (
+          <TriStateField label="Não bebe ou não mama" value={answers.unableToDrinkOrBreastfeed} onChange={value => onChange({ unableToDrinkOrBreastfeed: value })} />
+        )}
+        {!sharedYoungInfantSigns && (
+          <TriStateField label="Vomita tudo" value={answers.vomitingEverything} onChange={value => onChange({ vomitingEverything: value })} />
+        )}
         <TriStateField label="Ingestão reduzida / desidratação" value={answers.reducedOralIntakeOrDehydration} onChange={value => onChange({ reducedOralIntakeOrDehydration: value })} />
-        <TriStateField label="Letargia / inconsciência" value={answers.lethargyOrUnconsciousness} onChange={value => onChange({ lethargyOrUnconsciousness: value })} />
-        <TriStateField label="Convulsão" value={answers.convulsions} onChange={value => onChange({ convulsions: value })} />
+        {!sharedYoungInfantSigns && (
+          <TriStateField label="Letargia / inconsciência" value={answers.lethargyOrUnconsciousness} onChange={value => onChange({ lethargyOrUnconsciousness: value })} />
+        )}
+        {!sharedYoungInfantSigns && (
+          <TriStateField label="Convulsão" value={answers.convulsions} onChange={value => onChange({ convulsions: value })} />
+        )}
       </div>
 
-      {(assessment.dangerSignIds.length > 0 || assessment.prioritySignIds.length > 0) && (
+      {(displayedDangerSignIds.length > 0 || assessment.prioritySignIds.length > 0) && (
         <div className="space-y-1.5 border-t border-white/[0.07] px-4 py-3" aria-live="polite">
-          {assessment.dangerSignIds.length > 0 && (
+          {displayedDangerSignIds.length > 0 && (
             <p className="flex items-start gap-2 text-xs font-semibold leading-relaxed text-red-200">
               <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-              Encaminhamento urgente: {assessment.dangerSignIds.map(id => (
+              Encaminhamento urgente: {displayedDangerSignIds.map(id => (
                 id === 'chest-indrawing' && assessment.ageBand === 'under-2-months'
                   ? 'tiragem subcostal grave'
                   : dangerLabels[id]

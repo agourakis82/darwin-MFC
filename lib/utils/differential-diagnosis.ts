@@ -115,6 +115,13 @@ export function patientAgeInYears(context?: PatientClinicalContext): number | un
   return context.ageValue;
 }
 
+export function patientAgeInDays(context?: PatientClinicalContext): number | undefined {
+  if (context?.ageValue === undefined || !Number.isFinite(context.ageValue) || context.ageValue < 0) return undefined;
+  if (context.ageUnit === 'dias') return context.ageValue;
+  if (context.ageUnit === 'meses') return context.ageValue * (365.25 / 12);
+  return context.ageValue * 365.25;
+}
+
 function getAgeAdjustment(
   doenca: Partial<Doenca>,
   context?: PatientClinicalContext

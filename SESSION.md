@@ -3,7 +3,7 @@
 ## Estado
 
 - Branch: `codex/aps-design-refactor`.
-- Preview local verificado: `http://127.0.0.1:3011/pt/prontuario/` servido a partir de `out/`.
+- Preview local verificado: `http://127.0.0.1:3011/pt/prontuario/` no servidor de desenvolvimento.
 - Redesign APS/SUS/pt-BR e correcoes clinicas consolidados no checkpoint da branch.
 - Assistente clinico promovido ao topo da consulta: sintomas, diferenciais, exames e sinais de alarme.
 - Hipotese selecionada agora abre medicamentos relacionados, dose de referencia, disponibilidade SUS/RENAME e bula.
@@ -142,19 +142,29 @@
 - Apneia, cianose central, convulsao, letargia/inconsciencia, incapacidade de beber ou mamar, vomitar tudo, esforco grave, tiragem subcostal e estridor em repouso geram encaminhamento urgente independentemente do ranking.
 - Apneia, alimentacao, hidratacao, vomitos e estado neurologico permanecem invariantes de seguranca e nao atravessam o vetor Sounio. Somente taquipneia, hipoxemia, esforco/retracoes e estridor podem alimentar os quatro campos congelados correspondentes.
 - A triagem respiratoria compartilha apneia e cianose com o painel de coqueluche, evitando perguntas duplicadas. Nenhum alerta autoriza antibiotico, oxigenio, dose ou prescricao.
+- A triagem de febre no lactente jovem cobre idade desconhecida e 0 a 89 dias, separando temperatura atual, local de afericao, febre documentada em casa, contexto de prematuridade e sinais de possivel infeccao grave.
+- AIDPI nacional aciona seguranca abaixo de 60 dias com temperatura axilar menor que 36 °C ou a partir de 37,5 °C; temperatura atual ou domiciliar documentada a partir de 38 °C aciona a rota internacional abaixo de 90 dias.
+- Relato textual de febre e febre domiciliar nao atravessam silenciosamente o vetor Sounio. Somente temperatura atual valida de 38 °C ou mais materializa o feature congelado `fever`; o restante permanece na camada de seguranca e na heuristica explicitamente rotulada.
+- Apneia, cianose, convulsao, alimentacao, vomitos, estado geral e esforco grave sao sincronizados ao alternar entre os paineis febril e respiratorio, sem perder respostas ou duplicar perguntas.
+- Idades informadas em dias agora preservam diretamente os limites inteiros 59/60 e 89/90, sem ida e volta por anos decimais.
 - `pnpm test:pertussis-safety-fixtures`, `pnpm install --frozen-lockfile`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado agora fecha 31/31 sem avisos; o build materializou 13.683 paginas e manteve 717 medicamentos.
 - Playwright real validou a triagem no prontuario com lactente de 3 meses, tosse e apneia: alerta imediato, maior risco e firewall fechado. Desktop e mobile de 390 px ficaram sem overflow horizontal (`390/390`) e sem erros ou avisos de console.
 - Quatorze fixtures respiratorias sinteticas cobrem os limites 60/50/40, segunda contagem do lactente jovem, SpO2 91/92, apneia sem taquipneia, tiragem, estridor, sinais gerais de perigo, contexto pos-oxigenio, escolar sem derivacao AIDPI e desconhecido preservado.
 - `pnpm test:pediatric-respiratory-safety-fixtures`, `pnpm install --frozen-lockfile`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado agora fecha 32/32 sem avisos; o build materializou 13.683 paginas e manteve 717 medicamentos.
 - Playwright real validou dois fluxos: lactente de 1 mes com apneia e FR 42 recebeu encaminhamento urgente sem taquipneia; lactente de 3 meses com FR 50 e SpO2 91% em ar ambiente mostrou taquipneia e hipoxemia. O Sounio permaneceu `REFUSE / calibration-invalid`.
 - A segunda contagem apareceu dinamicamente para lactente de 1 mes com FR 60. Desktop de 1440 px e mobile de 390 px ficaram sem overflow horizontal; o console teve zero erros e zero avisos.
-- `scripts/clean-next-types.js` agora preserva `.next/dev/types` quando `.next/dev/lock` existe. Isso impede que o type-check invalide o runtime Turbopack enquanto clientes estao usando o preview.
+- `scripts/clean-next-types.js` agora preserva `.next/types` e `.next/dev/types` quando `.next/dev/lock` existe. Isso impede que o type-check invalide o runtime Turbopack enquanto clientes estao usando o preview.
 - O cenario concorrente passou: `pnpm type-check` com o servidor ativo, seguido de `/pt/`, `/pt/medicamentos/`, `/pt/doencas/`, `/pt/calculadoras/` e `/pt/prontuario/`, retornou HTTP 200 em todas as rotas e sem erro no log.
+- Quatorze fixtures de febre no lactente jovem cobrem os limites axilares AIDPI, hipotermia, dia 60 e dia 90, febre domiciliar, local desconhecido, prematuridade, aparencia grave, perfusao, sinais neurologicos/cutaneos e desconhecidos preservados.
+- O teste prova que febre domiciliar, o limiar AIDPI de 37,5 °C e sinais sistemicos nao alteram o vetor congelado; tratamento, antibiotico, prescricao, score de sepse e ativacao clinica permanecem falsos.
+- Playwright validou 7 dias + 37,5 °C axilar, 30 dias + febre domiciliar, dia 60 exato, saida no dia 90 e febre + tosse. A transicao tosse/apneia/febre preservou a resposta urgente e manteve uma unica pergunta compartilhada.
+- Desktop de 1440 px e mobile de 390 px ficaram sem overflow horizontal; o console final teve zero erros e zero avisos. O Sounio permaneceu `REFUSE / calibration-invalid` e sem probabilidades calibradas expostas.
+- `pnpm test:young-infant-fever-safety-fixtures`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado agora fecha 33/33 sem avisos e o build materializa 13.683 paginas estaticas, incluindo 717 medicamentos nos nove idiomas.
 
 ## Proximo passo
 
 - Manter o e-SUS Notifica em monitoramento de disponibilidade; somente abrir auditoria de cabecalho se o endpoint publico retornar HTTP 200/206, sem credenciais ou contorno de controle de acesso.
-- Levar o mesmo contrato estruturado para febre no lactente jovem, separando temperatura aferida, idade em dias e sinais de sepse do ranking diagnostico, sem autorizar antibiotico ou prescricao automatica.
+- Levar o mesmo contrato estruturado para diarreia e desidratacao pediatrica, com classificacao AIDPI por sinais observaveis, idade e ingestao, sem transformar proxies em diagnostico ou autorizar hidratacao/prescricao automatica.
 - A primeira fase publica de cinco analises esta concluida; qualquer nova fonte deve preencher uma lacuna explicita, revalidar hashes e permanecer fora da promocao clinica.
 - Continuar buscando uma fonte publica ou parceria futura com coorte de APS desidentificada, adjudicada e aprovada; probabilidades e EIG permanecem bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.

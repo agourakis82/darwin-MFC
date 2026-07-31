@@ -542,6 +542,39 @@ const pediatricRespiratorySafetyFixtures = spawnSync(
   { cwd: process.cwd(), encoding: 'utf8' },
 );
 
+const youngInfantFeverSafetyFixtures = spawnSync(
+  'pnpm',
+  ['exec', 'tsx', resolve(process.cwd(), 'scripts/test-young-infant-fever-safety-fixtures.ts')],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+
+if (
+  youngInfantFeverSafetyFixtures.status === 0
+  && youngInfantFeverSafetyFixtures.stdout.includes('YOUNG_INFANT_FEVER_SAFETY_FIXTURES_VALID')
+  && youngInfantFeverSafetyFixtures.stdout.includes('darwin.sounio.young-infant-fever-safety-fixture-test.v1')
+  && youngInfantFeverSafetyFixtures.stdout.includes('"fixturesPassed": 14')
+  && youngInfantFeverSafetyFixtures.stdout.includes('"aidpiAxillaryThresholdsPassed": true')
+  && youngInfantFeverSafetyFixtures.stdout.includes('"internationalUnderThreeMonthThresholdPassed": true')
+  && youngInfantFeverSafetyFixtures.stdout.includes('"aapAgeBoundaryPassed": true')
+  && youngInfantFeverSafetyFixtures.stdout.includes('"homeFeverDoesNotEnterKernel": true')
+  && youngInfantFeverSafetyFixtures.stdout.includes('"rawFeverTextSanitizedBeforeKernel": true')
+  && youngInfantFeverSafetyFixtures.stdout.includes('"onlyMeasuredFeverChangesFrozenVector": true')
+  && youngInfantFeverSafetyFixtures.stdout.includes('"systemicDangerSignsRemainSafetyOnly": true')
+  && youngInfantFeverSafetyFixtures.stdout.includes('"unknownNeverCoercedToAbsent": true')
+  && youngInfantFeverSafetyFixtures.stdout.includes('"sepsisRiskScoreCalculated": false')
+  && youngInfantFeverSafetyFixtures.stdout.includes('"posteriorAdjustedInTypeScript": false')
+  && youngInfantFeverSafetyFixtures.stdout.includes('"antibioticRecommendationAuthorized": false')
+  && youngInfantFeverSafetyFixtures.stdout.includes('"prescriptionAuthorized": false')
+  && youngInfantFeverSafetyFixtures.stdout.includes('"clinicalActivationAuthorized": false')
+) {
+  pass('Young Infant Fever Safety Fixtures', 'Idade em dias, temperatura axilar, febre domiciliar e sinais de infeccao grave passam sem score de sepse ou atalho para o vetor');
+} else {
+  fail('Young Infant Fever Safety Fixtures', 'Fixtures febris, limites etarios ou fronteira epistemica falharam', {
+    status: youngInfantFeverSafetyFixtures.status,
+    output: youngInfantFeverSafetyFixtures.stdout || youngInfantFeverSafetyFixtures.stderr,
+  });
+}
+
 if (
   pediatricRespiratorySafetyFixtures.status === 0
   && pediatricRespiratorySafetyFixtures.stdout.includes('PEDIATRIC_RESPIRATORY_SAFETY_FIXTURES_VALID')

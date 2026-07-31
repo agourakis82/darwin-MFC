@@ -45,6 +45,7 @@
     "test:public-sinan-pertussis": "node scripts/analyze-public-sinan-pertussis-tabnet.mjs --self-test",
     "test:pertussis-safety-fixtures": "tsx scripts/test-pertussis-safety-fixtures.ts",
     "test:pediatric-respiratory-safety-fixtures": "tsx scripts/test-pediatric-respiratory-safety-fixtures.ts",
+    "test:young-infant-fever-safety-fixtures": "tsx scripts/test-young-infant-fever-safety-fixtures.ts",
     "calibrate:epistemic-firewall:fixture": "node scripts/calibrate-epistemic-firewall.mjs --fixture",
     "calibrate:epistemic-firewall:validate": "node scripts/calibrate-epistemic-firewall.mjs --fixture --validate-only",
     "research:epistemic-firewall": "node scripts/run-epistemic-firewall-prior-art-search.mjs",

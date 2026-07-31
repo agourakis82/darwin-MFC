@@ -18,6 +18,7 @@ import {
 import {
   generateDifferentialDiagnosis,
   getAllSintomas,
+  patientAgeInDays,
   patientAgeInYears,
   type DifferentialDiagnosisResult,
   type PatientAgeUnit,
@@ -28,18 +29,28 @@ import {
   EMPTY_PERTUSSIS_SAFETY_INPUT,
   evaluatePertussisSafety,
   isPertussisSafetyRelevant,
+  type ClinicalAnswer,
 } from '@/lib/clinical-safety/pertussis';
 import {
   EMPTY_PEDIATRIC_RESPIRATORY_SAFETY_INPUT,
   evaluatePediatricRespiratorySafety,
   isPediatricRespiratorySafetyRelevant,
 } from '@/lib/clinical-safety/pediatric-respiratory';
+import {
+  EMPTY_YOUNG_INFANT_FEVER_SAFETY_INPUT,
+  evaluateYoungInfantFeverSafety,
+  isYoungInfantFeverConcernSymptom,
+  isYoungInfantFeverSafetyRelevant,
+} from '@/lib/clinical-safety/young-infant-fever';
 import PertussisSafetyInterview, {
   type PertussisSafetyAnswers,
 } from './PertussisSafetyInterview';
 import PediatricRespiratorySafetyInterview, {
   type PediatricRespiratorySafetyAnswers,
 } from './PediatricRespiratorySafetyInterview';
+import YoungInfantFeverSafetyInterview, {
+  type YoungInfantFeverSafetyAnswers,
+} from './YoungInfantFeverSafetyInterview';
 
 interface DifferentialDiagnosisAssistantProps {
   initialSymptom?: string;
@@ -60,6 +71,12 @@ const probabilityStyles = {
 
 function uniqueSymptoms(symptoms: string[]): string[] {
   return [...new Set(symptoms)];
+}
+
+function mergeClinicalAnswers(...answers: ClinicalAnswer[]): ClinicalAnswer {
+  if (answers.includes('yes')) return 'yes';
+  if (answers.every(answer => answer === 'no')) return 'no';
+  return 'unknown';
 }
 
 export default function DifferentialDiagnosisAssistant({
@@ -85,25 +102,61 @@ export default function DifferentialDiagnosisAssistant({
   const [pediatricRespiratoryAnswers, setPediatricRespiratoryAnswers] = useState<PediatricRespiratorySafetyAnswers>({
     ...EMPTY_PEDIATRIC_RESPIRATORY_SAFETY_INPUT,
   });
+  const [youngInfantFeverAnswers, setYoungInfantFeverAnswers] = useState<YoungInfantFeverSafetyAnswers>({
+    ...EMPTY_YOUNG_INFANT_FEVER_SAFETY_INPUT,
+  });
   const symptomNames = useMemo(() => getAllSintomas().map(item => item.nome), []);
   const ageValue = patientAge === '' ? undefined : Number(patientAge.replace(',', '.'));
   const weightKg = patientWeightKg === '' ? undefined : Number(patientWeightKg.replace(',', '.'));
-  const ageYears = patientAgeInYears({ ageValue, ageUnit: patientAgeUnit });
-  const ageDays = ageYears === undefined ? undefined : ageYears * 365.2425;
+  const patientAgeContext = { ageValue, ageUnit: patientAgeUnit };
+  const ageYears = patientAgeInYears(patientAgeContext);
+  const ageDays = patientAgeInDays(patientAgeContext);
+  const youngInfantFeverRelevant = isYoungInfantFeverSafetyRelevant(
+    [primarySymptom, ...secondarySymptoms],
+    ageDays,
+  );
+  const youngInfantFeverAssessment = evaluateYoungInfantFeverSafety({
+    ...youngInfantFeverAnswers,
+    ageDays,
+    feverConcernPresent: youngInfantFeverRelevant,
+  });
+  const resolvedApnea = youngInfantFeverRelevant
+    ? youngInfantFeverAnswers.apnea
+    : pediatricRespiratoryAnswers.apnea;
+  const resolvedCentralCyanosis = youngInfantFeverRelevant
+    ? youngInfantFeverAnswers.centralCyanosis
+    : pediatricRespiratoryAnswers.centralCyanosis;
   const respiratoryRelevant = isPediatricRespiratorySafetyRelevant(
     [primarySymptom, ...secondarySymptoms],
     ageDays,
   );
   const pediatricRespiratoryAssessment = evaluatePediatricRespiratorySafety({
     ...pediatricRespiratoryAnswers,
+    apnea: resolvedApnea,
+    centralCyanosis: resolvedCentralCyanosis,
+    convulsions: youngInfantFeverRelevant
+      ? youngInfantFeverAnswers.convulsions
+      : pediatricRespiratoryAnswers.convulsions,
+    lethargyOrUnconsciousness: youngInfantFeverRelevant
+      ? mergeClinicalAnswers(youngInfantFeverAnswers.illAppearance, youngInfantFeverAnswers.reducedMovement)
+      : pediatricRespiratoryAnswers.lethargyOrUnconsciousness,
+    unableToDrinkOrBreastfeed: youngInfantFeverRelevant
+      ? youngInfantFeverAnswers.unableToFeed
+      : pediatricRespiratoryAnswers.unableToDrinkOrBreastfeed,
+    vomitingEverything: youngInfantFeverRelevant
+      ? youngInfantFeverAnswers.vomitingEverything
+      : pediatricRespiratoryAnswers.vomitingEverything,
+    severeWorkOfBreathing: youngInfantFeverRelevant
+      ? youngInfantFeverAnswers.severeRespiratoryDistress
+      : pediatricRespiratoryAnswers.severeWorkOfBreathing,
     ageDays,
     respiratorySymptomsPresent: respiratoryRelevant,
   });
   const pertussisRelevant = isPertussisSafetyRelevant([primarySymptom, ...secondarySymptoms]);
   const pertussisAssessment = evaluatePertussisSafety({
     ...pertussisAnswers,
-    apnea: respiratoryRelevant ? pediatricRespiratoryAnswers.apnea : pertussisAnswers.apnea,
-    cyanosis: respiratoryRelevant ? pediatricRespiratoryAnswers.centralCyanosis : pertussisAnswers.cyanosis,
+    apnea: respiratoryRelevant ? resolvedApnea : pertussisAnswers.apnea,
+    cyanosis: respiratoryRelevant ? resolvedCentralCyanosis : pertussisAnswers.cyanosis,
     ageDays,
     coughPresent: pertussisRelevant,
   });
@@ -125,10 +178,77 @@ export default function DifferentialDiagnosisAssistant({
     if (initialSecondarySymptoms.length > 0) setSecondarySymptoms(initialSecondarySymptoms);
   }, [initialSecondarySymptoms]);
 
+  useEffect(() => {
+    if (!youngInfantFeverRelevant) return;
+    setYoungInfantFeverAnswers(previous => {
+      const next = {
+        ...previous,
+        apnea: previous.apnea === 'unknown' ? pediatricRespiratoryAnswers.apnea : previous.apnea,
+        centralCyanosis: previous.centralCyanosis === 'unknown'
+          ? pediatricRespiratoryAnswers.centralCyanosis
+          : previous.centralCyanosis,
+        convulsions: previous.convulsions === 'unknown'
+          ? pediatricRespiratoryAnswers.convulsions
+          : previous.convulsions,
+        unableToFeed: previous.unableToFeed === 'unknown'
+          ? pediatricRespiratoryAnswers.unableToDrinkOrBreastfeed
+          : previous.unableToFeed,
+        vomitingEverything: previous.vomitingEverything === 'unknown'
+          ? pediatricRespiratoryAnswers.vomitingEverything
+          : previous.vomitingEverything,
+        severeRespiratoryDistress: previous.severeRespiratoryDistress === 'unknown'
+          ? pediatricRespiratoryAnswers.severeWorkOfBreathing
+          : previous.severeRespiratoryDistress,
+        illAppearance: previous.illAppearance === 'unknown'
+          && pediatricRespiratoryAnswers.lethargyOrUnconsciousness === 'yes'
+          ? 'yes' as const
+          : previous.illAppearance,
+      };
+      return Object.keys(next).every(key => (
+        next[key as keyof YoungInfantFeverSafetyAnswers]
+          === previous[key as keyof YoungInfantFeverSafetyAnswers]
+      )) ? previous : next;
+    });
+  }, [
+    youngInfantFeverRelevant,
+    pediatricRespiratoryAnswers.apnea,
+    pediatricRespiratoryAnswers.centralCyanosis,
+    pediatricRespiratoryAnswers.convulsions,
+    pediatricRespiratoryAnswers.lethargyOrUnconsciousness,
+    pediatricRespiratoryAnswers.severeWorkOfBreathing,
+    pediatricRespiratoryAnswers.unableToDrinkOrBreastfeed,
+    pediatricRespiratoryAnswers.vomitingEverything,
+  ]);
+
+  const updateYoungInfantFeverAnswers = (updates: Partial<YoungInfantFeverSafetyAnswers>) => {
+    const next = { ...youngInfantFeverAnswers, ...updates };
+    setYoungInfantFeverAnswers(next);
+
+    const respiratoryUpdates: Partial<PediatricRespiratorySafetyAnswers> = {};
+    if (updates.apnea !== undefined) respiratoryUpdates.apnea = updates.apnea;
+    if (updates.centralCyanosis !== undefined) respiratoryUpdates.centralCyanosis = updates.centralCyanosis;
+    if (updates.convulsions !== undefined) respiratoryUpdates.convulsions = updates.convulsions;
+    if (updates.unableToFeed !== undefined) respiratoryUpdates.unableToDrinkOrBreastfeed = updates.unableToFeed;
+    if (updates.vomitingEverything !== undefined) respiratoryUpdates.vomitingEverything = updates.vomitingEverything;
+    if (updates.severeRespiratoryDistress !== undefined) {
+      respiratoryUpdates.severeWorkOfBreathing = updates.severeRespiratoryDistress;
+    }
+    if (updates.illAppearance !== undefined || updates.reducedMovement !== undefined) {
+      respiratoryUpdates.lethargyOrUnconsciousness = mergeClinicalAnswers(
+        next.illAppearance,
+        next.reducedMovement,
+      );
+    }
+    if (Object.keys(respiratoryUpdates).length > 0) {
+      setPediatricRespiratoryAnswers(previous => ({ ...previous, ...respiratoryUpdates }));
+    }
+  };
+
   const analyze = () => {
     if (!primarySymptom.trim()) return;
     const heuristicSymptoms = uniqueSymptoms([
       ...secondarySymptoms,
+      ...(youngInfantFeverRelevant ? youngInfantFeverAssessment.heuristicSymptoms : []),
       ...(respiratoryRelevant ? pediatricRespiratoryAssessment.heuristicSymptoms : []),
       ...(pertussisRelevant ? pertussisAssessment.heuristicSymptoms : []),
     ]);
@@ -137,13 +257,16 @@ export default function DifferentialDiagnosisAssistant({
       ageUnit: patientAgeUnit,
       weightKg,
     }));
+    const reportedKernelSymptoms = youngInfantFeverRelevant
+      ? [primarySymptom, ...secondarySymptoms].filter(symptom => !isYoungInfantFeverConcernSymptom(symptom))
+      : [primarySymptom, ...secondarySymptoms];
     setKernelChecking(true);
     setKernelResult(null);
     void runSilentClinicalKernel({
       ageYears,
       symptoms: [
-        primarySymptom,
-        ...secondarySymptoms,
+        ...reportedKernelSymptoms,
+        ...(youngInfantFeverRelevant ? youngInfantFeverAssessment.kernelSymptoms : []),
         ...(respiratoryRelevant ? pediatricRespiratoryAssessment.kernelSymptoms : []),
         ...(pertussisRelevant ? pertussisAssessment.kernelSymptoms : []),
       ].filter((symptom, index, symptoms) => symptoms.indexOf(symptom) === index),
@@ -314,11 +437,20 @@ export default function DifferentialDiagnosisAssistant({
             </div>
           )}
 
+          {youngInfantFeverRelevant && (
+            <YoungInfantFeverSafetyInterview
+              answers={youngInfantFeverAnswers}
+              assessment={youngInfantFeverAssessment}
+              onChange={updateYoungInfantFeverAnswers}
+            />
+          )}
+
           {respiratoryRelevant && (
             <PediatricRespiratorySafetyInterview
               answers={pediatricRespiratoryAnswers}
               assessment={pediatricRespiratoryAssessment}
               onChange={updates => setPediatricRespiratoryAnswers(previous => ({ ...previous, ...updates }))}
+              sharedYoungInfantSigns={youngInfantFeverRelevant}
             />
           )}
 
