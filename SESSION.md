@@ -118,11 +118,17 @@
 - Com limiar minimo de 30, 17 das 24 linhas idade-classificacao foram suprimidas primariamente, uma complementarmente e seis publicadas. Nenhuma linha suprimida reteve contagens; o controle protege margens simples, mas nao reivindica certificacao formal de risco de divulgacao.
 - `pnpm test:public-sivep-stratification` passou limites etarios, codigos oficiais, supressao primaria/complementar e recusa clinica. Probabilidades, efeitos de tratamento, prescricao, calibracao APS e ativacao permaneceram falsos.
 - `pnpm verify`: 27 passaram, 0 falharam, 0 avisos; `pnpm type-check`, lockfile congelado e `pnpm build:vercel` passaram, com 13.683 paginas estaticas. Uma leitura remota do Supabase registrou `ECONNRESET`, mas o build concluiu com as 717 rotas de medicamentos materializadas nos nove idiomas.
+- O snapshot NAMCS Health Center 2024 foi congelado em 14.135.511 bytes e SHA-256 `66dd4cfefb95a7938b735ecb0da9dadc78ff72825175296e6a7f9aa4e577533c`; 503.799 encontros, 107 centros, oito estratos e o total ponderado CDC foram reconciliados.
+- Node e o oraculo independente R `survey` 4.5 concordaram em 54 totais e razoes de idade/diagnostico dentro de `1e-9`, com 99 graus de liberdade identicos. Quarenta e quatro metricas foram publicadas e dez suprimidas por celula pequena ou RSE alto.
+- `pnpm audit:public-esus-notifica-2024` revalidou o catalogo oficial: 31 recursos ativos, tres PDFs e 28 CSVs cobrindo 27 UFs mais `NI`. Todos os 28 endpoints CSV retornaram HTTP 403; nenhum corpo, cabecalho CSV ou registro de paciente foi lido ou persistido.
+- O gate e-SUS trata um futuro HTTP 200/206 apenas como `header-review-required`; extracao, probabilidades, prescricao, calibracao APS e ativacao clinica continuam falsas, com missingness sempre desconhecida e firewall `REFUSE`.
+- `pnpm verify`: 29 passaram, 0 falharam, 0 avisos, incluindo NAMCS HC 2024 e o novo gate offline de disponibilidade e-SUS.
+- `pnpm type-check` e `pnpm build:vercel` passaram; o build materializou novamente 13.683 paginas estaticas e 717 medicamentos nos nove idiomas.
 
 ## Proximo passo
 
-- Executar a auditoria de transportabilidade do NAMCS Health Center 2024, preservando pesos, estratos e conglomerados, sem converter codigos diagnosticos em referencia adjudicada.
-- Revalidar o endpoint e os controles de divulgacao do e-SUS Notifica antes de qualquer extracao; omissao de sintoma deve permanecer desconhecida.
+- Manter o e-SUS Notifica em monitoramento de disponibilidade; somente abrir auditoria de cabecalho se o endpoint publico retornar HTTP 200/206, sem credenciais ou contorno de controle de acesso.
+- Executar o proximo estresse publico agregado com SINAN coqueluche/TabNet, preservando a fronteira entre incidencia populacional e probabilidade diagnostica entre consultas sintomaticas de APS.
 - Continuar buscando uma fonte publica ou parceria futura com coorte de APS desidentificada, adjudicada e aprovada; probabilidades e EIG permanecem bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.
 - Obter as aprovacoes institucionais reais e preencher, revisar e bloquear externamente os mapeamentos de pelo menos dois servicos de APS antes de iniciar qualquer calibracao real.

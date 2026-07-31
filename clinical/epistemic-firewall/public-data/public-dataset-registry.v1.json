@@ -1,7 +1,7 @@
 {
   "schemaVersion": "darwin.sounio.public-clinical-dataset-registry.v1",
   "status": "research-feasibility-only",
-  "reviewedAt": "2026-07-29",
+  "reviewedAt": "2026-07-30",
   "targetSetting": "APS/SUS pediatric respiratory pilot",
   "invariants": {
     "apsCalibrationAuthorized": false,
@@ -91,9 +91,9 @@
       "access": {
         "level": "public-metadata",
         "patientLevel": true,
-        "retrievalStatus": "metadata verified; published row endpoints require a separate availability review",
+        "retrievalStatus": "31 resources verified; all 28 published state CSV endpoints returned HTTP 403 on 2026-07-30, so row extraction remains blocked",
         "credentialsStored": false,
-        "snapshot": "2024 state-partitioned publication metadata reviewed 2026-07-29",
+        "snapshot": "2024 state-partitioned 20/12/2025 publication metadata revalidated 2026-07-30",
         "unitOfAnalysis": "notified suspected mild or moderate COVID-19 influenza-like illness case"
       },
       "population": {
@@ -103,6 +103,7 @@
       },
       "role": "syndromic-development",
       "allowedUses": [
+        "public endpoint availability monitoring without reading response bodies",
         "positive symptom extraction development",
         "COVID-era syndromic subgroup audit",
         "missingness and state-integration sensitivity analysis",
@@ -231,13 +232,13 @@
       "access": {
         "level": "public",
         "patientLevel": true,
-        "retrievalStatus": "public-use R SAS and Stata files documented",
+        "retrievalStatus": "frozen public-use RDS identity verified on 2026-07-30",
         "credentialsStored": false,
         "snapshot": "2024 NAMCS Health Center Component public-use file",
         "unitOfAnalysis": "health center EHR encounter"
       },
       "population": {
-        "description": "503,779 encounters from 107 sampled United States health centers",
+        "description": "503,799 encounters from 107 sampled United States health centers",
         "careSetting": "federally qualified and similar health centers",
         "pediatricRecordsAvailable": true
       },
@@ -256,7 +257,8 @@
       "selectionBias": [
         "United States health centers are not Brazilian APS or SUS",
         "The public file exposes age and up to 30 diagnoses but not the 12 clinical observations",
-        "Diagnosis codes are not independent double adjudication"
+        "Diagnosis codes are not independent double adjudication",
+        "The unweighted health-center response rate was 27.9 percent"
       ],
       "featureMappings": [
         { "featureId": "fever", "fidelity": "unavailable", "sourceFields": [], "rule": "No compatible temperature or structured fever field in the 2024 public file; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },

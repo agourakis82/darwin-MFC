@@ -511,6 +511,55 @@ const publicNamcsVariance = spawnSync(
   [resolve(process.cwd(), 'scripts/test-complex-survey-linearization.mjs')],
   { cwd: process.cwd(), encoding: 'utf8' },
 );
+
+const publicNamcsHc2024 = spawnSync(
+  process.execPath,
+  [resolve(process.cwd(), 'scripts/analyze-public-namcs-hc-2024.mjs'), '--self-test'],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+
+const publicEsusAvailability = spawnSync(
+  process.execPath,
+  [resolve(process.cwd(), 'scripts/audit-public-esus-notifica-2024-availability.mjs'), '--self-test'],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+if (
+  publicEsusAvailability.status === 0
+  && publicEsusAvailability.stdout.includes('PUBLIC_ESUS_NOTIFICA_AVAILABILITY_SELF_TEST_VALID')
+  && publicEsusAvailability.stdout.includes('darwin.sounio.public-esus-notifica-availability-self-test.v1')
+  && publicEsusAvailability.stdout.includes('"blockedCaseRefused": true')
+  && publicEsusAvailability.stdout.includes('"reachableCaseRequiresHeaderReview": true')
+  && publicEsusAvailability.stdout.includes('"signedUrlRejected": true')
+  && publicEsusAvailability.stdout.includes('"duplicatePartitionRejected": true')
+  && publicEsusAvailability.stdout.includes('"patientRowsRead": false')
+  && publicEsusAvailability.stdout.includes('"unknownNeverCoercedToAbsent": true')
+  && publicEsusAvailability.stdout.includes('"clinicalActivationAuthorized": false')
+) {
+  pass('e-SUS Notifica Availability Gate', 'Metadados publicos sao auditaveis, mas bloqueio HTTP e acesso futuro continuam sem autorizar extracao ou uso clinico');
+} else {
+  fail('e-SUS Notifica Availability Gate', 'Gate de disponibilidade, missingness ou recusa clinica do e-SUS falhou', {
+    status: publicEsusAvailability.status,
+    output: publicEsusAvailability.stdout || publicEsusAvailability.stderr,
+  });
+}
+
+if (
+  publicNamcsHc2024.status === 0
+  && publicNamcsHc2024.stdout.includes('PUBLIC_NAMCS_HC_2024_ADAPTER_SELF_TEST_VALID')
+  && publicNamcsHc2024.stdout.includes('darwin.sounio.public-namcs-hc-2024-adapter-self-test.v1')
+  && publicNamcsHc2024.stdout.includes('"smallCellSuppressed": true')
+  && publicNamcsHc2024.stdout.includes('"probabilitiesEstimated": false')
+  && publicNamcsHc2024.stdout.includes('"prescriptionRecommendationAuthorized": false')
+  && publicNamcsHc2024.stdout.includes('"clinicalActivationAuthorized": false')
+) {
+  pass('NAMCS HC 2024 Transportability', 'Idade, codigos diagnosticos, supressao e recusa clinica passam no contrato offline');
+} else {
+  fail('NAMCS HC 2024 Transportability', 'Adaptador NAMCS HC 2024 ou fronteira clinica falhou', {
+    status: publicNamcsHc2024.status,
+    output: publicNamcsHc2024.stdout || publicNamcsHc2024.stderr,
+  });
+}
+
 if (
   publicNamcsVariance.status === 0
   && publicNamcsVariance.stdout.includes('COMPLEX_SURVEY_LINEARIZATION_SELF_TEST_VALID')

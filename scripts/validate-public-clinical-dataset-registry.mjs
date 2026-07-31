@@ -11,6 +11,8 @@ const dictionaryPath = join(root, 'clinical/epistemic-firewall/multicenter/data-
 const feasibilityPath = join(root, 'docs/research/epistemic-firewall/public-data-feasibility-v1.md');
 const sivepAuditPath = join(root, 'docs/research/epistemic-firewall/sivep-srag-stratified-safety-v2.md');
 const namcsAuditPath = join(root, 'docs/research/epistemic-firewall/namcs2018-ambulatory-audit-v1.md');
+const namcsHcAuditPath = join(root, 'docs/research/epistemic-firewall/namcs-hc-2024-transportability-audit-v1.md');
+const esusAuditPath = join(root, 'docs/research/epistemic-firewall/esus-notifica-2024-availability-audit-v1.md');
 const outputPath = join(root, '.clinical-kernel-build/public-data/registry-validation.json');
 
 const readJson = path => JSON.parse(readFileSync(path, 'utf8'));
@@ -29,6 +31,8 @@ const dictionary = readJson(dictionaryPath);
 const feasibility = readFileSync(feasibilityPath, 'utf8');
 const sivepAudit = readFileSync(sivepAuditPath, 'utf8');
 const namcsAudit = readFileSync(namcsAuditPath, 'utf8');
+const namcsHcAudit = readFileSync(namcsHcAuditPath, 'utf8');
+const esusAudit = readFileSync(esusAuditPath, 'utf8');
 
 const featureIds = evidence.features.map(feature => feature.id);
 const conditionIds = evidence.conditions.map(condition => condition.id);
@@ -147,11 +151,31 @@ requireCondition(sivepAudit.includes('firewall disposition `REFUSE`'), 'public-d
 requireCondition(namcsAudit.includes('RFV omission always remains unknown'), 'public-data-namcs-missingness-boundary-missing');
 requireCondition(namcsAudit.includes('prescriptionRecommendationAuthorized=false'), 'public-data-namcs-prescription-boundary-missing');
 requireCondition(namcsAudit.includes('860,385,638.653'), 'public-data-namcs-weight-reconciliation-missing');
+requireCondition(namcsHcAudit.includes('503,799'), 'public-data-namcs-hc-row-reconciliation-missing');
+requireCondition(namcsHcAudit.includes('54 totals and ratios'), 'public-data-namcs-hc-parity-count-missing');
+requireCondition(namcsHcAudit.includes('99 design degrees of freedom'), 'public-data-namcs-hc-degrees-freedom-missing');
+requireCondition(namcsHcAudit.includes('patientRowsPersisted=false'), 'public-data-namcs-hc-row-persistence-boundary-missing');
+requireCondition(namcsHcAudit.includes('not formal NCHS publication certification'), 'public-data-namcs-hc-reliability-boundary-missing');
+requireCondition(namcsHcAudit.includes('prescriptionRecommendationAuthorized=false'), 'public-data-namcs-hc-prescription-boundary-missing');
+requireCondition(esusAudit.includes('28 of 28 published CSV resources returned HTTP 403'), 'public-data-esus-endpoint-status-missing');
+requireCondition(esusAudit.includes('patientRowsRead=false'), 'public-data-esus-row-read-boundary-missing');
+requireCondition(esusAudit.includes('patientRowsPersisted=false'), 'public-data-esus-row-persistence-boundary-missing');
+requireCondition(esusAudit.includes('extractionAuthorized=false'), 'public-data-esus-extraction-boundary-missing');
+requireCondition(esusAudit.includes('unknownNeverCoercedToAbsent=true'), 'public-data-esus-missingness-boundary-missing');
+requireCondition(esusAudit.includes('firewall disposition `REFUSE`'), 'public-data-esus-firewall-boundary-missing');
 
 const namcs2018 = registry.datasets.find(dataset => dataset.sourceId === 'us-namcs-office-2018');
+const namcsHc2024 = registry.datasets.find(dataset => dataset.sourceId === 'us-namcs-health-center-2024');
+const esus2024 = registry.datasets.find(dataset => dataset.sourceId === 'br-esus-notifica-sg-2024');
 const namcsAgeUnder2 = namcs2018?.featureMappings.find(mapping => mapping.featureId === 'age_under_2');
 requireCondition(namcsAgeUnder2?.rule.includes('AGE 0 or 1'), 'public-data-namcs-age-under-2-rule-invalid');
 requireCondition(namcs2018?.probes.some(probe => probe.probeId === 'value-formats'), 'public-data-namcs-value-formats-probe-missing');
+requireCondition(namcsHc2024?.population.description.includes('503,799'), 'public-data-namcs-hc-source-row-count-invalid');
+requireCondition(namcsHc2024?.selectionBias.some(bias => bias.includes('27.9 percent')), 'public-data-namcs-hc-response-rate-boundary-missing');
+requireCondition(esus2024?.access.level === 'public-metadata', 'public-data-esus-access-level-invalid');
+requireCondition(esus2024?.access.retrievalStatus.includes('all 28 published state CSV endpoints returned HTTP 403'), 'public-data-esus-retrieval-status-invalid');
+requireCondition(esus2024?.access.snapshot.includes('revalidated 2026-07-30'), 'public-data-esus-snapshot-review-missing');
+requireCondition(esus2024?.allowedUses.some(use => use.includes('without reading response bodies')), 'public-data-esus-body-read-boundary-missing');
 
 const report = {
   schemaVersion: 'darwin.sounio.public-data-registry-validation.v1',
@@ -180,6 +204,8 @@ const report = {
     feasibilitySha256: sha256(readFileSync(feasibilityPath)),
     sivepAuditSha256: sha256(readFileSync(sivepAuditPath)),
     namcsAuditSha256: sha256(readFileSync(namcsAuditPath)),
+    namcsHcAuditSha256: sha256(readFileSync(namcsHcAuditPath)),
+    esusAuditSha256: sha256(readFileSync(esusAuditPath)),
   },
 };
 

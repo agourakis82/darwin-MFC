@@ -17,7 +17,7 @@ Public data cannot promote the firewall. It can support engineering, external sa
 | SIVEP-Gripe SRAG | Age, fever report, cough, sore throat, dyspnea, SpO2 below 95%, ICU, ventilation, outcome, virology | Severity and red-flag stress testing | Hospitalized SRAG and deaths create severe spectrum bias; the SpO2 threshold differs from the frozen APS definition |
 | e-SUS Notifica SG | Age, positive symptom mentions, symptom onset, COVID tests and outcome | Syndromic adapter and missingness development | Suspected COVID-19 surveillance is not all-cause APS; non-selection is not explicit symptom absence |
 | NAMCS 2018 office visits | Age in days, reasons for visit, temperature, up to five diagnoses and 30 medications | Ambulatory adapter, treatment-pattern audit, international transportability | United States 2018 practice is not SUS; observed prescribing is not recommended care; labels are not double adjudicated |
-| NAMCS Health Center 2024 | 503,779 encounters, age and up to 30 ICD-10-CM diagnoses | Diagnosis-code and age transportability audit | Public file does not expose the frozen symptom vector or medications |
+| NAMCS Health Center 2024 | 503,799 encounters, age and up to 30 ICD-10-CM diagnoses | Diagnosis-code and age transportability audit | Public file does not expose the frozen symptom vector or medications |
 | SINAN pertussis TabNet | Age, place and time aggregates for notified pertussis | Epidemiologic context and rare-event stress scenarios | Aggregate incidence cannot label encounters or estimate a prior among symptomatic APS visits |
 
 ## Canonical mapping policy
@@ -52,12 +52,17 @@ The frozen 2025 SIVEP-Gripe snapshot was re-executed on 2026-07-30 with age, fin
 
 The NAMCS 2018 ambulatory adapter was executed on 2026-07-30. It reconciled all 9,953 source visits and the weighted total documented by CDC, while retaining `PATWT`, `CSTRATM` and `CPSUM`. The reproducible mapping, hashes, aggregate results and reliability boundary are recorded in [NAMCS 2018 pediatric respiratory ambulatory audit v1](./namcs2018-ambulatory-audit-v1.md). A second independent executor gate subsequently established numeric parity for 21 design-based estimates and standard errors; see [NAMCS 2018 complex-survey parity v1](./namcs2018-complex-survey-parity-v1.md).
 
+The NAMCS Health Center 2024 audit was executed on 2026-07-30. It reconciled all 503,799 public encounters, 107 centers, eight strata and the CDC weighted total. Node and R `survey` 4.5 matched 54 age and diagnosis-code estimates within `1e-9`; 10 unreliable or small metrics were suppressed. See [NAMCS Health Center 2024 pediatric diagnosis transportability audit v1](./namcs-hc-2024-transportability-audit-v1.md).
+
+The e-SUS Notifica 2024 publication was revalidated on 2026-07-30. The official catalog exposed 31 active resources, including 28 state-partitioned CSV entries, but every published CSV endpoint returned HTTP 403 to an unauthenticated range request. No response body or patient row was read or persisted. Extraction remains blocked; see [e-SUS Notifica 2024 public availability audit v1](./esus-notifica-2024-availability-audit-v1.md).
+
 This execution does not close the target-domain gap. It provides a transportability and observed-practice stress test only; the firewall remains `REFUSE`.
 
 ## Official sources
 
 - Brazilian Ministry of Health, [SIVEP-Gripe SRAG open dataset](https://dadosabertos.saude.gov.br/dataset/srag-2019-a-2026).
-- Brazilian Ministry of Health, [e-SUS Notifica mild and moderate influenza-like illness](https://dadosabertos.saude.gov.br/dataset/notificacoes-de-sindrome-gripal-api-opensearch).
+- Brazilian Ministry of Health, [e-SUS Notifica mild and moderate influenza-like illness 2024](https://dadosabertos.saude.gov.br/dataset/notificacoes-de-sindrome-gripal-leve-2024).
+- DATASUS, [e-SUS Notifica data dictionary](https://datasus.saude.gov.br/wp-content/uploads/2023/04/Dicionario-de-dados_API-E-SUS-Notifica_13_12_22-1.pdf).
 - Brazilian Ministry of Health, [SISAB public-access FAQ](https://sisab.saude.gov.br/paginas/acessoPublico/faq/IndexFaq.xhtml).
 - Brazilian Ministry of Health, [SIAPS system description](https://sisaps.saude.gov.br/sistemas/siaps/).
 - DATASUS, [SINAN diseases and conditions from 2007 onward](https://datasus.saude.gov.br/acesso-a-informacao/doencas-e-agravos-de-notificacao-de-2007-em-diante-sinan/).
