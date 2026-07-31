@@ -529,6 +529,36 @@ const publicSinanPertussis = spawnSync(
   [resolve(process.cwd(), 'scripts/analyze-public-sinan-pertussis-tabnet.mjs'), '--self-test'],
   { cwd: process.cwd(), encoding: 'utf8' },
 );
+
+const pertussisSafetyFixtures = spawnSync(
+  'pnpm',
+  ['exec', 'tsx', resolve(process.cwd(), 'scripts/test-pertussis-safety-fixtures.ts')],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+
+if (
+  pertussisSafetyFixtures.status === 0
+  && pertussisSafetyFixtures.stdout.includes('PERTUSSIS_SAFETY_FIXTURES_VALID')
+  && pertussisSafetyFixtures.stdout.includes('darwin.sounio.pertussis-safety-fixture-test.v1')
+  && pertussisSafetyFixtures.stdout.includes('"fixturesPassed": 6')
+  && pertussisSafetyFixtures.stdout.includes('"ageSpecificDurationRulesPassed": true')
+  && pertussisSafetyFixtures.stdout.includes('"infantApneaCyanosisSafetyPassed": true')
+  && pertussisSafetyFixtures.stdout.includes('"vaccinationNeverExcludesPassed": true')
+  && pertussisSafetyFixtures.stdout.includes('"contactDoesNotAlterKernelVector": true')
+  && pertussisSafetyFixtures.stdout.includes('"nonspecificCoughNotHighAdherence": true')
+  && pertussisSafetyFixtures.stdout.includes('"sinanAggregateCountsUsedAsPrior": false')
+  && pertussisSafetyFixtures.stdout.includes('"posteriorAdjustedInTypeScript": false')
+  && pertussisSafetyFixtures.stdout.includes('"prescriptionAuthorized": false')
+  && pertussisSafetyFixtures.stdout.includes('"clinicalActivationAuthorized": false')
+) {
+  pass('Pertussis Safety Fixtures', 'Idade, duracao, exposicao, vacinacao e sinais de alarme passam sem inflar tosse inespecifica ou alterar o vetor Sounio');
+} else {
+  fail('Pertussis Safety Fixtures', 'Fixtures de seguranca ou fronteira epistemica da coqueluche falharam', {
+    status: pertussisSafetyFixtures.status,
+    output: pertussisSafetyFixtures.stdout || pertussisSafetyFixtures.stderr,
+  });
+}
+
 if (
   publicSinanPertussis.status === 0
   && publicSinanPertussis.stdout.includes('PUBLIC_SINAN_PERTUSSIS_TABNET_SELF_TEST_VALID')

@@ -43,6 +43,7 @@
     "test:public-esus-notifica-availability": "node scripts/audit-public-esus-notifica-2024-availability.mjs --self-test",
     "analyze:public-sinan-pertussis": "node scripts/analyze-public-sinan-pertussis-tabnet.mjs",
     "test:public-sinan-pertussis": "node scripts/analyze-public-sinan-pertussis-tabnet.mjs --self-test",
+    "test:pertussis-safety-fixtures": "tsx scripts/test-pertussis-safety-fixtures.ts",
     "calibrate:epistemic-firewall:fixture": "node scripts/calibrate-epistemic-firewall.mjs --fixture",
     "calibrate:epistemic-firewall:validate": "node scripts/calibrate-epistemic-firewall.mjs --fixture --validate-only",
     "research:epistemic-firewall": "node scripts/run-epistemic-firewall-prior-art-search.mjs",

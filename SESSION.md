@@ -130,11 +130,20 @@
 - Em 2024, os agregados publicaveis foram 1.401 menores de 1 ano, 2.215 menores de 5, 4.522 menores de 15, 1.050 na faixa cruzada 15-19 e 2.176 com 20 anos ou mais. A faixa 15-19 nunca foi relabelada como menor de 18.
 - O recibo SINAN aplica limiar 30, nao persiste a matriz bruta ou celulas suprimidas, vincula o executor `curl` e mantem `symptomaticEncounterPriorEstimated=false`, probabilidades/prescricao/calibracao/ativacao falsas e firewall `REFUSE`.
 - `pnpm verify`: 30 passaram, 0 falharam, 0 avisos, incluindo o gate epidemiologico SINAN. `pnpm install --frozen-lockfile`, `pnpm type-check` e `pnpm build:vercel` passaram; 13.683 paginas e 717 medicamentos permaneceram materializados.
+- A triagem de seguranca para coqueluche foi implementada como camada separada do kernel probabilistico, com idade em dias, duracao da tosse, paroxismos, guincho, vomito pos-tosse, apneia, cianose, engasgo, contato proximo confirmado e situacao vacinal.
+- As regras de suspeicao seguem a Nota Tecnica MS 70/2024: 10 dias para menores de 6 meses, 14 dias a partir de 6 meses e rota independente por contato proximo com caso confirmado laboratorialmente. A vacinacao nunca exclui suspeicao.
+- Apneia e cianose geram alerta imediato independente do ranking; lactentes menores de 6 meses permanecem marcados como maior risco mesmo sem guincho. A Nota Tecnica MS 165/2025 e as clinical features CDC 2025 ficaram vinculadas como proveniencia complementar.
+- Seis fixtures sinteticas cobrem lactente com apneia precoce, lactente no limiar de 10 dias, crianca maior com 14 dias e paroxismos, adolescente vacinado exposto, IVAS aguda sem criterios e idade/duracao desconhecidas.
+- Contato e vacinacao podem alterar apenas o contrato de suspeicao/vigilancia; nao atravessam o vetor Sounio. O limiar clinico de exatamente 10 dias no lactente nao e convertido no feature congelado `duration_over_10d`, que permanece estritamente maior que 10 dias.
+- O comparador heuristico passou a parear cada sintoma com no maximo um criterio e limita aderencia alta quando ha somente um achado inespecifico. Tosse isolada em lactente deixa coqueluche com aderencia baixa 39; PAC continua liderando tosse + febre + dispneia com 77,5.
+- A interface explicita `aderencia alta/moderada/baixa`, nunca probabilidade calibrada. O Sounio continua exibindo `REFUSE / calibration-invalid`, sem posterior, EIG ou prescricao automatica.
+- `pnpm test:pertussis-safety-fixtures`, `pnpm install --frozen-lockfile`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado agora fecha 31/31 sem avisos; o build materializou 13.683 paginas e manteve 717 medicamentos.
+- Playwright real validou a triagem no prontuario com lactente de 3 meses, tosse e apneia: alerta imediato, maior risco e firewall fechado. Desktop e mobile de 390 px ficaram sem overflow horizontal (`390/390`) e sem erros ou avisos de console.
 
 ## Proximo passo
 
 - Manter o e-SUS Notifica em monitoramento de disponibilidade; somente abrir auditoria de cabecalho se o endpoint publico retornar HTTP 200/206, sem credenciais ou contorno de controle de acesso.
-- Transformar o contexto SINAN em fixtures de seguranca para coqueluche que testem perguntas de idade, vacinacao, contato, duracao, paroxismos e sinais de alarme sem alterar o posterior Sounio pelo numero nacional.
+- Levar o mesmo contrato de perguntas estruturadas e invariantes de gravidade para pneumonia/bronquiolite, com FR por idade, SpO2, tiragens, hidratacao e capacidade de beber, sem promover posterior Sounio.
 - A primeira fase publica de cinco analises esta concluida; qualquer nova fonte deve preencher uma lacuna explicita, revalidar hashes e permanecer fora da promocao clinica.
 - Continuar buscando uma fonte publica ou parceria futura com coorte de APS desidentificada, adjudicada e aprovada; probabilidades e EIG permanecem bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.

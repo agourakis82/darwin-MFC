@@ -24,6 +24,14 @@ import {
 } from '@/lib/utils/differential-diagnosis';
 import { runSilentClinicalKernel } from '@/lib/clinical-kernel/loader';
 import type { EpistemicDifferential } from '@/lib/clinical-kernel/types';
+import {
+  EMPTY_PERTUSSIS_SAFETY_INPUT,
+  evaluatePertussisSafety,
+  isPertussisSafetyRelevant,
+} from '@/lib/clinical-safety/pertussis';
+import PertussisSafetyInterview, {
+  type PertussisSafetyAnswers,
+} from './PertussisSafetyInterview';
 
 interface DifferentialDiagnosisAssistantProps {
   initialSymptom?: string;
@@ -59,10 +67,19 @@ export default function DifferentialDiagnosisAssistant({
   const [kernelResult, setKernelResult] = useState<EpistemicDifferential | null>(null);
   const [kernelChecking, setKernelChecking] = useState(false);
   const [expanded, setExpanded] = useState(true);
+  const [pertussisAnswers, setPertussisAnswers] = useState<PertussisSafetyAnswers>({
+    ...EMPTY_PERTUSSIS_SAFETY_INPUT,
+  });
   const symptomNames = useMemo(() => getAllSintomas().map(item => item.nome), []);
   const ageValue = patientAge === '' ? undefined : Number(patientAge.replace(',', '.'));
   const weightKg = patientWeightKg === '' ? undefined : Number(patientWeightKg.replace(',', '.'));
   const ageYears = patientAgeInYears({ ageValue, ageUnit: patientAgeUnit });
+  const pertussisRelevant = isPertussisSafetyRelevant([primarySymptom, ...secondarySymptoms]);
+  const pertussisAssessment = evaluatePertussisSafety({
+    ...pertussisAnswers,
+    ageDays: ageYears === undefined ? undefined : ageYears * 365.2425,
+    coughPresent: pertussisRelevant,
+  });
   const ageBand = ageYears === undefined
     ? null
     : ageYears < (2 / 12) ? 'Neonatal / lactente jovem'
@@ -83,7 +100,10 @@ export default function DifferentialDiagnosisAssistant({
 
   const analyze = () => {
     if (!primarySymptom.trim()) return;
-    setResult(generateDifferentialDiagnosis(primarySymptom, secondarySymptoms, [], {
+    const heuristicSymptoms = pertussisRelevant
+      ? [...secondarySymptoms, ...pertussisAssessment.heuristicSymptoms]
+      : secondarySymptoms;
+    setResult(generateDifferentialDiagnosis(primarySymptom, heuristicSymptoms, [], {
       ageValue,
       ageUnit: patientAgeUnit,
       weightKg,
@@ -92,7 +112,11 @@ export default function DifferentialDiagnosisAssistant({
     setKernelResult(null);
     void runSilentClinicalKernel({
       ageYears,
-      symptoms: [primarySymptom, ...secondarySymptoms],
+      symptoms: [
+        primarySymptom,
+        ...secondarySymptoms,
+        ...(pertussisRelevant ? pertussisAssessment.kernelSymptoms : []),
+      ],
     }).then(kernel => {
       setKernelResult(kernel);
       setKernelChecking(false);
@@ -115,8 +139,8 @@ export default function DifferentialDiagnosisAssistant({
           </div>
           <div className="min-w-0">
             <p className="text-[11px] font-semibold uppercase text-cyan-300">Apoio clínico por sintomas</p>
-            <h2 id="clinical-assistant-title" className="text-base font-semibold text-white">Hipóteses prováveis e diferenciais</h2>
-            <p className="mt-0.5 text-xs text-zinc-500">Cruza sintomas, critérios clínicos, sinais de alarme e exames úteis.</p>
+            <h2 id="clinical-assistant-title" className="text-base font-semibold text-white">Hipóteses clínicas e diferenciais</h2>
+            <p className="mt-0.5 text-xs text-zinc-500">Ordena aderência clínica e mantém sinais de alarme independentes.</p>
           </div>
         </div>
         <button
@@ -260,6 +284,14 @@ export default function DifferentialDiagnosisAssistant({
             </div>
           )}
 
+          {pertussisRelevant && (
+            <PertussisSafetyInterview
+              answers={pertussisAnswers}
+              assessment={pertussisAssessment}
+              onChange={updates => setPertussisAnswers(previous => ({ ...previous, ...updates }))}
+            />
+          )}
+
           {result && (kernelChecking || kernelResult) && (
             <div
               className="flex min-h-9 items-center gap-2 border-b border-white/[0.07] bg-black/10 px-4 py-2 text-[11px] text-zinc-500"
@@ -316,8 +348,11 @@ export default function DifferentialDiagnosisAssistant({
                           <div className="flex flex-wrap items-center gap-2">
                             <span className="text-xs tabular-nums text-zinc-600">{String(index + 1).padStart(2, '0')}</span>
                             <h3 className="text-sm font-semibold text-zinc-100">{differential.doenca.titulo || differential.doenca.id}</h3>
-                            <span className={`rounded border px-1.5 py-0.5 text-[10px] font-semibold uppercase ${probabilityStyle}`}>
-                              {differential.probabilidade}
+                            <span
+                              title="Classificação heurística de aderência; não é probabilidade calibrada"
+                              className={`rounded border px-1.5 py-0.5 text-[10px] font-semibold uppercase ${probabilityStyle}`}
+                            >
+                              aderência {differential.probabilidade}
                             </span>
                             <span className="text-xs tabular-nums text-zinc-500">aderência {Math.round(differential.score)}%</span>
                             {differential.adequacaoEtaria === 'preferencial' && (

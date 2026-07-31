@@ -408,7 +408,10 @@ function calculateDiagnosisScore(
     // Verifica se o critério está presente nos sintomas
     const sintomasCorrespondentes = sintomasNormalizados
       .map((sintoma, index) => ({ sintoma, index }))
-      .filter(({ sintoma }) => criterioNormalizado.includes(sintoma) || sintoma.includes(criterioNormalizado));
+      .filter(({ sintoma, index }) => (
+        !sintomasCobertos.has(index)
+        && (criterioNormalizado.includes(sintoma) || sintoma.includes(criterioNormalizado))
+      ));
     const sintomaCorrespondente = sintomasCorrespondentes.length > 0;
     const ausenciaCorrespondente = ausentesNormalizados.some(sintoma =>
       criterioNormalizado.includes(sintoma) || sintoma.includes(criterioNormalizado)
@@ -462,8 +465,14 @@ function calculateDiagnosisScore(
     ? ageAdjustment.adjustment * ageRelevance
     : ageAdjustment.adjustment;
 
-  // Normaliza score entre 0-100
-  const score = Math.max(0, Math.min(100, scoreBase));
+  // Um conjunto pequeno de critérios compatíveis não pode parecer uma
+  // probabilidade alta apenas por idade ou por um sintoma muito inespecífico.
+  const evidenceCap = criteriosTotais >= 3 && criteriosAtendidos <= 1 && sintomasCobertos.size <= 1
+    ? 39
+    : criteriosTotais >= 4 && criteriaMatchRatio < 0.5 && sintomasCobertos.size <= 2
+      ? 64
+      : 100;
+  const score = Math.max(0, Math.min(evidenceCap, scoreBase));
 
   // Determina probabilidade
   let probabilidade: 'alta' | 'moderada' | 'baixa';
