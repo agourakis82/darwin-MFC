@@ -13,5 +13,8 @@ function rmIfExists(p) {
 }
 
 rmIfExists(path.join(process.cwd(), '.next', 'types'));
-rmIfExists(path.join(process.cwd(), '.next', 'dev', 'types'));
 
+const devLock = path.join(process.cwd(), '.next', 'dev', 'lock');
+if (!fs.existsSync(devLock)) {
+  rmIfExists(path.join(process.cwd(), '.next', 'dev', 'types'));
+}

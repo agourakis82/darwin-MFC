@@ -14,6 +14,7 @@ interface PertussisSafetyInterviewProps {
   answers: PertussisSafetyAnswers;
   assessment: PertussisSafetyAssessment;
   onChange: (updates: Partial<PertussisSafetyAnswers>) => void;
+  sharedRespiratorySigns?: boolean;
 }
 
 const answerOptions: Array<{ value: ClinicalAnswer; label: string; title: string }> = [
@@ -64,6 +65,7 @@ export default function PertussisSafetyInterview({
   answers,
   assessment,
   onChange,
+  sharedRespiratorySigns = false,
 }: PertussisSafetyInterviewProps) {
   const status = assessment.priority === 'immediate-assessment'
     ? { label: 'Avaliação imediata', className: 'border-red-300/30 bg-red-300/10 text-red-200' }
@@ -126,8 +128,12 @@ export default function PertussisSafetyInterview({
         <TriStateField label="Tosse em acessos" value={answers.paroxysmalCough} onChange={value => onChange({ paroxysmalCough: value })} />
         <TriStateField label="Guincho inspiratório" value={answers.inspiratoryWhoop} onChange={value => onChange({ inspiratoryWhoop: value })} />
         <TriStateField label="Vômito pós-tosse" value={answers.postTussiveVomiting} onChange={value => onChange({ postTussiveVomiting: value })} />
-        <TriStateField label="Apneia" value={answers.apnea} onChange={value => onChange({ apnea: value })} />
-        <TriStateField label="Cianose" value={answers.cyanosis} onChange={value => onChange({ cyanosis: value })} />
+        {!sharedRespiratorySigns && (
+          <TriStateField label="Apneia" value={answers.apnea} onChange={value => onChange({ apnea: value })} />
+        )}
+        {!sharedRespiratorySigns && (
+          <TriStateField label="Cianose" value={answers.cyanosis} onChange={value => onChange({ cyanosis: value })} />
+        )}
         <TriStateField label="Engasgo" value={answers.choking} onChange={value => onChange({ choking: value })} />
         <div className="sm:col-span-2 lg:col-span-2">
           <TriStateField

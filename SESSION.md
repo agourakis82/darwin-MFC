@@ -137,13 +137,24 @@
 - Contato e vacinacao podem alterar apenas o contrato de suspeicao/vigilancia; nao atravessam o vetor Sounio. O limiar clinico de exatamente 10 dias no lactente nao e convertido no feature congelado `duration_over_10d`, que permanece estritamente maior que 10 dias.
 - O comparador heuristico passou a parear cada sintoma com no maximo um criterio e limita aderencia alta quando ha somente um achado inespecifico. Tosse isolada em lactente deixa coqueluche com aderencia baixa 39; PAC continua liderando tosse + febre + dispneia com 77,5.
 - A interface explicita `aderencia alta/moderada/baixa`, nunca probabilidade calibrada. O Sounio continua exibindo `REFUSE / calibration-invalid`, sem posterior, EIG ou prescricao automatica.
+- A triagem respiratoria pediatrica agora deriva taquipneia somente de contagem valida em repouso: `>=60/min` abaixo de 2 meses, com segunda contagem obrigatoria se elevada; `>=50/min` de 2 a 11 meses; `>=40/min` de 1 a menor de 5 anos. Depois de 5 anos, a UI nao inventa um limiar AIDPI.
+- SpO2 entra como hipoxemia no vetor congelado apenas quando valida, em ar ambiente e abaixo de 92%. Medidas somente apos oxigenio ou com contexto desconhecido permanecem desconhecidas.
+- Apneia, cianose central, convulsao, letargia/inconsciencia, incapacidade de beber ou mamar, vomitar tudo, esforco grave, tiragem subcostal e estridor em repouso geram encaminhamento urgente independentemente do ranking.
+- Apneia, alimentacao, hidratacao, vomitos e estado neurologico permanecem invariantes de seguranca e nao atravessam o vetor Sounio. Somente taquipneia, hipoxemia, esforco/retracoes e estridor podem alimentar os quatro campos congelados correspondentes.
+- A triagem respiratoria compartilha apneia e cianose com o painel de coqueluche, evitando perguntas duplicadas. Nenhum alerta autoriza antibiotico, oxigenio, dose ou prescricao.
 - `pnpm test:pertussis-safety-fixtures`, `pnpm install --frozen-lockfile`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado agora fecha 31/31 sem avisos; o build materializou 13.683 paginas e manteve 717 medicamentos.
 - Playwright real validou a triagem no prontuario com lactente de 3 meses, tosse e apneia: alerta imediato, maior risco e firewall fechado. Desktop e mobile de 390 px ficaram sem overflow horizontal (`390/390`) e sem erros ou avisos de console.
+- Quatorze fixtures respiratorias sinteticas cobrem os limites 60/50/40, segunda contagem do lactente jovem, SpO2 91/92, apneia sem taquipneia, tiragem, estridor, sinais gerais de perigo, contexto pos-oxigenio, escolar sem derivacao AIDPI e desconhecido preservado.
+- `pnpm test:pediatric-respiratory-safety-fixtures`, `pnpm install --frozen-lockfile`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado agora fecha 32/32 sem avisos; o build materializou 13.683 paginas e manteve 717 medicamentos.
+- Playwright real validou dois fluxos: lactente de 1 mes com apneia e FR 42 recebeu encaminhamento urgente sem taquipneia; lactente de 3 meses com FR 50 e SpO2 91% em ar ambiente mostrou taquipneia e hipoxemia. O Sounio permaneceu `REFUSE / calibration-invalid`.
+- A segunda contagem apareceu dinamicamente para lactente de 1 mes com FR 60. Desktop de 1440 px e mobile de 390 px ficaram sem overflow horizontal; o console teve zero erros e zero avisos.
+- `scripts/clean-next-types.js` agora preserva `.next/dev/types` quando `.next/dev/lock` existe. Isso impede que o type-check invalide o runtime Turbopack enquanto clientes estao usando o preview.
+- O cenario concorrente passou: `pnpm type-check` com o servidor ativo, seguido de `/pt/`, `/pt/medicamentos/`, `/pt/doencas/`, `/pt/calculadoras/` e `/pt/prontuario/`, retornou HTTP 200 em todas as rotas e sem erro no log.
 
 ## Proximo passo
 
 - Manter o e-SUS Notifica em monitoramento de disponibilidade; somente abrir auditoria de cabecalho se o endpoint publico retornar HTTP 200/206, sem credenciais ou contorno de controle de acesso.
-- Levar o mesmo contrato de perguntas estruturadas e invariantes de gravidade para pneumonia/bronquiolite, com FR por idade, SpO2, tiragens, hidratacao e capacidade de beber, sem promover posterior Sounio.
+- Levar o mesmo contrato estruturado para febre no lactente jovem, separando temperatura aferida, idade em dias e sinais de sepse do ranking diagnostico, sem autorizar antibiotico ou prescricao automatica.
 - A primeira fase publica de cinco analises esta concluida; qualquer nova fonte deve preencher uma lacuna explicita, revalidar hashes e permanecer fora da promocao clinica.
 - Continuar buscando uma fonte publica ou parceria futura com coorte de APS desidentificada, adjudicada e aprovada; probabilidades e EIG permanecem bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.

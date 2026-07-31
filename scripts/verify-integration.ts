@@ -536,6 +536,38 @@ const pertussisSafetyFixtures = spawnSync(
   { cwd: process.cwd(), encoding: 'utf8' },
 );
 
+const pediatricRespiratorySafetyFixtures = spawnSync(
+  'pnpm',
+  ['exec', 'tsx', resolve(process.cwd(), 'scripts/test-pediatric-respiratory-safety-fixtures.ts')],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+
+if (
+  pediatricRespiratorySafetyFixtures.status === 0
+  && pediatricRespiratorySafetyFixtures.stdout.includes('PEDIATRIC_RESPIRATORY_SAFETY_FIXTURES_VALID')
+  && pediatricRespiratorySafetyFixtures.stdout.includes('darwin.sounio.pediatric-respiratory-safety-fixture-test.v1')
+  && pediatricRespiratorySafetyFixtures.stdout.includes('"fixturesPassed": 14')
+  && pediatricRespiratorySafetyFixtures.stdout.includes('"ageSpecificFastBreathingRulesPassed": true')
+  && pediatricRespiratorySafetyFixtures.stdout.includes('"youngInfantRepeatCountPassed": true')
+  && pediatricRespiratorySafetyFixtures.stdout.includes('"roomAirHypoxemiaBoundaryPassed": true')
+  && pediatricRespiratorySafetyFixtures.stdout.includes('"bronchiolitisApneaWithoutTachypneaPassed": true')
+  && pediatricRespiratorySafetyFixtures.stdout.includes('"generalDangerSignsRemainIndependentPassed": true')
+  && pediatricRespiratorySafetyFixtures.stdout.includes('"frozenFeatureIsolationPassed": true')
+  && pediatricRespiratorySafetyFixtures.stdout.includes('"unknownNeverCoercedToAbsent": true')
+  && pediatricRespiratorySafetyFixtures.stdout.includes('"nonFrozenSafetySignalsAddedToKernel": false')
+  && pediatricRespiratorySafetyFixtures.stdout.includes('"posteriorAdjustedInTypeScript": false')
+  && pediatricRespiratorySafetyFixtures.stdout.includes('"antibioticRecommendationAuthorized": false')
+  && pediatricRespiratorySafetyFixtures.stdout.includes('"prescriptionAuthorized": false')
+  && pediatricRespiratorySafetyFixtures.stdout.includes('"clinicalActivationAuthorized": false')
+) {
+  pass('Pediatric Respiratory Safety Fixtures', 'Limiares AIDPI, repeticao no lactente jovem, SpO2 e sinais de perigo passam sem contaminar campos nao congelados');
+} else {
+  fail('Pediatric Respiratory Safety Fixtures', 'Fixtures respiratorias, limiares etarios ou fronteira epistemica falharam', {
+    status: pediatricRespiratorySafetyFixtures.status,
+    output: pediatricRespiratorySafetyFixtures.stdout || pediatricRespiratorySafetyFixtures.stderr,
+  });
+}
+
 if (
   pertussisSafetyFixtures.status === 0
   && pertussisSafetyFixtures.stdout.includes('PERTUSSIS_SAFETY_FIXTURES_VALID')

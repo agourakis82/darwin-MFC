@@ -29,9 +29,17 @@ import {
   evaluatePertussisSafety,
   isPertussisSafetyRelevant,
 } from '@/lib/clinical-safety/pertussis';
+import {
+  EMPTY_PEDIATRIC_RESPIRATORY_SAFETY_INPUT,
+  evaluatePediatricRespiratorySafety,
+  isPediatricRespiratorySafetyRelevant,
+} from '@/lib/clinical-safety/pediatric-respiratory';
 import PertussisSafetyInterview, {
   type PertussisSafetyAnswers,
 } from './PertussisSafetyInterview';
+import PediatricRespiratorySafetyInterview, {
+  type PediatricRespiratorySafetyAnswers,
+} from './PediatricRespiratorySafetyInterview';
 
 interface DifferentialDiagnosisAssistantProps {
   initialSymptom?: string;
@@ -49,6 +57,10 @@ const probabilityStyles = {
   moderada: 'border-amber-300/25 bg-amber-300/[0.06] text-amber-200',
   baixa: 'border-cyan-300/20 bg-cyan-300/[0.05] text-cyan-200',
 };
+
+function uniqueSymptoms(symptoms: string[]): string[] {
+  return [...new Set(symptoms)];
+}
 
 export default function DifferentialDiagnosisAssistant({
   initialSymptom = '',
@@ -70,14 +82,29 @@ export default function DifferentialDiagnosisAssistant({
   const [pertussisAnswers, setPertussisAnswers] = useState<PertussisSafetyAnswers>({
     ...EMPTY_PERTUSSIS_SAFETY_INPUT,
   });
+  const [pediatricRespiratoryAnswers, setPediatricRespiratoryAnswers] = useState<PediatricRespiratorySafetyAnswers>({
+    ...EMPTY_PEDIATRIC_RESPIRATORY_SAFETY_INPUT,
+  });
   const symptomNames = useMemo(() => getAllSintomas().map(item => item.nome), []);
   const ageValue = patientAge === '' ? undefined : Number(patientAge.replace(',', '.'));
   const weightKg = patientWeightKg === '' ? undefined : Number(patientWeightKg.replace(',', '.'));
   const ageYears = patientAgeInYears({ ageValue, ageUnit: patientAgeUnit });
+  const ageDays = ageYears === undefined ? undefined : ageYears * 365.2425;
+  const respiratoryRelevant = isPediatricRespiratorySafetyRelevant(
+    [primarySymptom, ...secondarySymptoms],
+    ageDays,
+  );
+  const pediatricRespiratoryAssessment = evaluatePediatricRespiratorySafety({
+    ...pediatricRespiratoryAnswers,
+    ageDays,
+    respiratorySymptomsPresent: respiratoryRelevant,
+  });
   const pertussisRelevant = isPertussisSafetyRelevant([primarySymptom, ...secondarySymptoms]);
   const pertussisAssessment = evaluatePertussisSafety({
     ...pertussisAnswers,
-    ageDays: ageYears === undefined ? undefined : ageYears * 365.2425,
+    apnea: respiratoryRelevant ? pediatricRespiratoryAnswers.apnea : pertussisAnswers.apnea,
+    cyanosis: respiratoryRelevant ? pediatricRespiratoryAnswers.centralCyanosis : pertussisAnswers.cyanosis,
+    ageDays,
     coughPresent: pertussisRelevant,
   });
   const ageBand = ageYears === undefined
@@ -100,9 +127,11 @@ export default function DifferentialDiagnosisAssistant({
 
   const analyze = () => {
     if (!primarySymptom.trim()) return;
-    const heuristicSymptoms = pertussisRelevant
-      ? [...secondarySymptoms, ...pertussisAssessment.heuristicSymptoms]
-      : secondarySymptoms;
+    const heuristicSymptoms = uniqueSymptoms([
+      ...secondarySymptoms,
+      ...(respiratoryRelevant ? pediatricRespiratoryAssessment.heuristicSymptoms : []),
+      ...(pertussisRelevant ? pertussisAssessment.heuristicSymptoms : []),
+    ]);
     setResult(generateDifferentialDiagnosis(primarySymptom, heuristicSymptoms, [], {
       ageValue,
       ageUnit: patientAgeUnit,
@@ -115,8 +144,9 @@ export default function DifferentialDiagnosisAssistant({
       symptoms: [
         primarySymptom,
         ...secondarySymptoms,
+        ...(respiratoryRelevant ? pediatricRespiratoryAssessment.kernelSymptoms : []),
         ...(pertussisRelevant ? pertussisAssessment.kernelSymptoms : []),
-      ],
+      ].filter((symptom, index, symptoms) => symptoms.indexOf(symptom) === index),
     }).then(kernel => {
       setKernelResult(kernel);
       setKernelChecking(false);
@@ -284,11 +314,20 @@ export default function DifferentialDiagnosisAssistant({
             </div>
           )}
 
+          {respiratoryRelevant && (
+            <PediatricRespiratorySafetyInterview
+              answers={pediatricRespiratoryAnswers}
+              assessment={pediatricRespiratoryAssessment}
+              onChange={updates => setPediatricRespiratoryAnswers(previous => ({ ...previous, ...updates }))}
+            />
+          )}
+
           {pertussisRelevant && (
             <PertussisSafetyInterview
               answers={pertussisAnswers}
               assessment={pertussisAssessment}
               onChange={updates => setPertussisAnswers(previous => ({ ...previous, ...updates }))}
+              sharedRespiratorySigns={respiratoryRelevant}
             />
           )}
 
