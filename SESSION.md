@@ -178,11 +178,19 @@
 - Playwright validou lactente de 6 meses com colica e palidez episodica, pre-escolar com padrao compativel com apendicite, vomito bilioso, fluxo combinado com diarreia sem perguntas duplicadas e saida aos 18 anos. Mobile de 390 px ficou sem overflow (`384/384`) e o console teve zero erros e zero avisos.
 - `pnpm test:pediatric-abdominal-safety-fixtures`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado fecha 35/35 sem avisos; o build materializa 13.683 paginas e 717 medicamentos.
 - O preview foi reiniciado limpo em `http://127.0.0.1:3011`; inicio, prontuario, medicamentos, doencas, calculadoras e busca responderam HTTP 200.
+- A cobertura abdominal ganhou E2E permanente em `tests/e2e/pediatric-abdominal-safety.spec.ts`, com comando dedicado `pnpm test:e2e:pediatric-safety`.
+- Quatro execucoes passaram em serie no build Vercel: continuidade e deduplicacao em Desktop Chrome e Mobile Chrome, mais linguagem nao diagnostica, firewall Sounio fechado, limite de 18 anos, ausencia de overflow e zero erros de runtime nos dois projetos.
+- O fluxo `dor abdominal -> vomita tudo -> diarreia -> remover diarreia` manteve `vomita tudo` e vomito bilioso marcados, exibiu uma unica pergunta de cada sinal compartilhado e preservou a rota urgente de invaginacao.
+- O fluxo de dor progressiva em quadrante inferior direito com migracao, piora ao movimento e febre manteve a frase `exige excluir apendicite`, sem diagnostico confirmado, score, imagem ou probabilidade calibrada.
+- A primeira tentativa E2E nao chegou aos casos porque o `chromium_headless_shell` esperado pelo Playwright nao estava instalado; a repeticao usou `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome` e passou 4/4.
+- Durante a execucao contra `next dev`, o Turbopack voltou a produzir `500` transitorio com `JSON.parse` na geracao de rotas. O erro foi capturado integralmente; a mesma suite passou no caminho deterministico `VERCEL=1 next build` + `VERCEL=1 next start`.
+- `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram; o gate integrado permaneceu 35/35 e o build materializou 13.683 paginas.
+- O cache `.next/dev` com a falha foi preservado fora do worktree para diagnostico e o preview `next dev` foi recriado limpo em `3011`; prontuario, medicamentos, doencas, calculadoras e busca responderam HTTP 200.
 
 ## Proximo passo
 
 - Manter o e-SUS Notifica em monitoramento de disponibilidade; somente abrir auditoria de cabecalho se o endpoint publico retornar HTTP 200/206, sem credenciais ou contorno de controle de acesso.
-- Submeter o novo contrato abdominal a revisao clinica independente e transformar os cenarios de deduplicacao e persistencia de respostas em E2E permanente antes de ampliar a triagem para outro sintoma pediatrico.
+- Submeter o novo contrato abdominal a revisao clinica independente e incluir a suite E2E dedicada no CI com instalacao/pin explicito do navegador antes de ampliar a triagem para outro sintoma pediatrico.
 - A primeira fase publica de cinco analises esta concluida; qualquer nova fonte deve preencher uma lacuna explicita, revalidar hashes e permanecer fora da promocao clinica.
 - Continuar buscando uma fonte publica ou parceria futura com coorte de APS desidentificada, adjudicada e aprovada; probabilidades e EIG permanecem bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.
