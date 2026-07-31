@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "darwin.medication-catalog-audit.v1",
+  "bundleVersion": "2026-07-31.1",
+  "bundleSha256": "2f8f127762df0c0cbb0664fdf503b2dc1e796d1608817191e9f4dc2246267a23",
+  "sourceRegistrySha256": "abb745a6845f510aed7fa19db73aa18fce9937e7f7c6db418ab91afd5e8cd5cf",
+  "doseRuleBundleSha256": "b0936dc95cc74f2bef03f00a41017fa16fe3c2e96237c6fcc572c09445f83333",
+  "catalog": {
+    "expectedMedicationCount": 717,
+    "uniqueMedicationCount": 717,
+    "referenceOnlyCount": 210,
+    "doseReviewedCount": 0,
+    "dataIncompleteCount": 507,
+    "localReferenceCount": 26,
+    "pediatricPosologyCount": 137,
+    "doseMaximumCount": 195,
+    "renalAdjustmentCount": 125,
+    "hepaticAdjustmentCount": 1
+  },
+  "gates": {
+    "exactMedicationCount": true,
+    "uniqueMedicationIds": true,
+    "sourceSnapshotsHashBound": true,
+    "automaticExtractionCannotApprove": true,
+    "unsignedRulesCannotCalculate": true,
+    "legacyTextCannotCalculate": true,
+    "allUnreviewedMedicationsReferenceOnly": true
+  }
+}

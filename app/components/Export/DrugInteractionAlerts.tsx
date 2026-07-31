@@ -6,6 +6,7 @@ import {
   analyzeCurrentSOAPInteractions,
   analyzeInteractionsWithHistory,
   getInteractionSeverityStyle,
+  INTERACTION_KNOWLEDGE_STATUS,
   type InteractionAlert,
 } from '@/lib/utils/drug-interactions';
 import type { SOAPData } from '@/app/components/Export/SOAPExport';
@@ -35,7 +36,14 @@ export default function DrugInteractionAlerts({
   }, [soapData, includeHistory, maxAlerts]);
 
   if (alerts.length === 0) {
-    return null;
+    return (
+      <div className="rounded-md border border-amber-300/30 bg-amber-50 p-3 text-sm text-amber-950 dark:bg-amber-950/20 dark:text-amber-100">
+        <p className="font-semibold">Nenhum par encontrado na base de referência</p>
+        <p className="mt-1 text-xs opacity-80">
+          Cobertura parcial ({INTERACTION_KNOWLEDGE_STATUS.ruleCount} pares), ainda não vinculada a revisão independente. Ausência de alerta não confirma segurança.
+        </p>
+      </div>
+    );
   }
 
   const highPriorityAlerts = alerts.filter(a => a.prioridade === 'alta');
@@ -77,6 +85,7 @@ export default function DrugInteractionAlerts({
                 </span>
               )}
             </p>
+            <p className="mt-1 text-xs font-medium text-amber-700 dark:text-amber-300">Base parcial de referência, não validada como clearance.</p>
           </div>
         </div>
         {collapsible && (
@@ -205,7 +214,7 @@ function InteractionAlertCard({ alert }: { alert: InteractionAlert }) {
           {alert.contexto !== 'prescricao_atual' && (
             <div className="p-2 bg-blue-50 dark:bg-blue-950/20 rounded border border-blue-200 dark:border-blue-800">
               <p className="text-xs text-blue-700 dark:text-blue-300">
-                ⚠️ Esta interação envolve medicamentos do histórico de consultas anteriores.
+                Esta interação envolve medicamentos do histórico de consultas anteriores.
               </p>
             </div>
           )}
@@ -259,4 +268,3 @@ export function DrugInteractionAlertsInline({
     </div>
   );
 }
-

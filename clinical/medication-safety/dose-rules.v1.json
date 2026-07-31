@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "darwin.medication-dose-rules.v1",
+  "bundleVersion": "2026-07-31.1",
+  "status": "reference-only",
+  "rules": [],
+  "promotionPolicy": {
+    "minimumIndependentReviewers": 2,
+    "requiredReviewerRoles": ["physician", "pharmacist"],
+    "automaticExtractionCanApprove": false,
+    "unsignedRuleCanCalculate": false,
+    "legacyTextCanCalculate": false
+  },
+  "refusalReasons": [
+    "no-dose-rule-has-independent-physician-and-pharmacist-approval"
+  ]
+}

@@ -1,29 +1,30 @@
 /**
- * Sistema de Alertas Inteligentes de Interações Medicamentosas
- * Detecta interações em tempo real baseado em prescrições e histórico
+ * Prontuario adapter for the canonical interaction catalog.
+ *
+ * This module intentionally contains no interaction rules. The catalog remains
+ * reference-only until its sources and reviewers are bound into a Darwin Rx receipt.
  */
 
-import type { Medicamento } from '@/lib/types/medicamento';
-import { todosMedicamentos } from '@/lib/data/medicamentos/index';
 import type { SOAPData } from '@/app/components/Export/SOAPExport';
+import { medicamentosConsolidados as todosMedicamentos } from '@/lib/data/medicamentos/index';
+import {
+  interacoesMedicamentosas,
+  type GravidadeInteracao as CatalogSeverity,
+  type InteracaoMedicamentosa,
+} from '@/lib/data/interacoes-medicamentosas';
+import type { Medicamento } from '@/lib/types/medicamento';
 import { getConsultationHistory } from './recommendations';
 
-export type GravidadeInteracao = 'contraindicada' | 'grave' | 'moderada' | 'leve' | 'desconhecida';
+export type GravidadeInteracao = CatalogSeverity | 'desconhecida';
 
 export interface DrugInteraction {
-  medicamento1: {
-    id: string;
-    nome: string;
-  };
-  medicamento2: {
-    id: string;
-    nome: string;
-  };
+  medicamento1: { id: string; nome: string };
+  medicamento2: { id: string; nome: string };
   gravidade: GravidadeInteracao;
   descricao: string;
   mecanismo?: string;
   conduta: string;
-  evidencia?: string; // Nível de evidência (ex: "Nível 1 - Evidência forte")
+  evidencia?: string;
   referencias?: string[];
 }
 
@@ -35,539 +36,162 @@ export interface InteractionAlert {
   timestamp: Date;
 }
 
-/**
- * Base de conhecimento de interações medicamentosas
- * Baseado em:
- * - Micromedex Drug Interactions
- * - UpToDate Drug Interactions
- * - RENAME 2024
- * - ANVISA Bulas
- */
-const INTERACTION_DATABASE: Array<{
-  medicamento1: string; // ID ou classe terapêutica
-  medicamento2: string;
-  gravidade: GravidadeInteracao;
-  descricao: string;
-  mecanismo?: string;
-  conduta: string;
-  tipo: 'especifica' | 'classe'; // específica ou por classe terapêutica
-}> = [
-  // Anticoagulantes
-  {
-    medicamento1: 'warfarina',
-    medicamento2: 'aspirina',
-    gravidade: 'grave',
-    descricao: 'Aumento significativo do risco de sangramento',
-    mecanismo: 'Ambos antiagregantes/anticoagulantes - efeito aditivo',
-    conduta: 'Evitar associação ou monitorar INR rigorosamente. Considerar profilaxia gastroprotetora.',
-    tipo: 'especifica',
-  },
-  {
-    medicamento1: 'warfarina',
-    medicamento2: 'acido-acetilsalicilico',
-    gravidade: 'grave',
-    descricao: 'Risco aumentado de sangramento',
-    mecanismo: 'Efeito aditivo na inibição da coagulação',
-    conduta: 'Evitar ou monitorar INR semanalmente',
-    tipo: 'especifica',
-  },
-  {
-    medicamento1: 'warfarina',
-    medicamento2: 'diclofenaco',
-    gravidade: 'grave',
-    descricao: 'Aumento do risco de sangramento gastrointestinal',
-    mecanismo: 'AINEs inibem agregação plaquetária e podem causar lesão GI',
-    conduta: 'Evitar associação. Se necessário, usar IBP profilático.',
-    tipo: 'especifica',
-  },
-  {
-    medicamento1: 'warfarina',
-    medicamento2: 'classe:antibiotico',
-    gravidade: 'moderada',
-    descricao: 'Muitos antibióticos podem potencializar efeito da warfarina',
-    mecanismo: 'Alteração no metabolismo hepático da warfarina',
-    conduta: 'Monitorar INR durante e após tratamento antibiótico',
-    tipo: 'classe',
-  },
-  
-  // Antiagregantes
-  {
-    medicamento1: 'acido-acetilsalicilico',
-    medicamento2: 'diclofenaco',
-    gravidade: 'moderada',
-    descricao: 'Risco aumentado de sangramento gastrointestinal',
-    mecanismo: 'Efeito aditivo na inibição de COX',
-    conduta: 'Evitar uso concomitante prolongado. Considerar gastroproteção.',
-    tipo: 'especifica',
-  },
-  {
-    medicamento1: 'classe:antiagregante',
-    medicamento2: 'classe:anti_inflamatorio',
-    gravidade: 'moderada',
-    descricao: 'Risco de sangramento aumentado',
-    mecanismo: 'Efeitos sinérgicos na inibição de agregação plaquetária',
-    conduta: 'Monitorar sinais de sangramento. Considerar gastroproteção.',
-    tipo: 'classe',
-  },
-  
-  // IECA e BRAs
-  {
-    medicamento1: 'captopril',
-    medicamento2: 'espironolactona',
-    gravidade: 'grave',
-    descricao: 'Risco aumentado de hipercalemia',
-    mecanismo: 'Ambos aumentam potássio sérico',
-    conduta: 'Monitorar potássio sérico. Evitar em DRC avançada.',
-    tipo: 'especifica',
-  },
-  {
-    medicamento1: 'classe:ieca',
-    medicamento2: 'classe:diuretico_poupador_potassio',
-    gravidade: 'grave',
-    descricao: 'Risco de hipercalemia grave',
-    mecanismo: 'Efeito aditivo na retenção de potássio',
-    conduta: 'Monitorar potássio sérico regularmente. Contraindicado em DRC estágio 4-5.',
-    tipo: 'classe',
-  },
-  {
-    medicamento1: 'classe:ieca',
-    medicamento2: 'lítio',
-    gravidade: 'moderada',
-    descricao: 'Aumento dos níveis séricos de lítio com risco de toxicidade',
-    mecanismo: 'IECA reduz excreção renal de lítio',
-    conduta: 'Monitorar níveis séricos de lítio. Ajustar dose se necessário.',
-    tipo: 'classe',
-  },
-  
-  // Beta-bloqueadores
-  {
-    medicamento1: 'classe:betabloqueador',
-    medicamento2: 'verapamil',
-    gravidade: 'grave',
-    descricao: 'Risco de bradicardia severa e bloqueio atrioventricular',
-    mecanismo: 'Efeito aditivo na condução cardíaca',
-    conduta: 'Evitar associação. Se necessário, monitorar ECG.',
-    tipo: 'classe',
-  },
-  {
-    medicamento1: 'propranolol',
-    medicamento2: 'classe:antidiabetico',
-    gravidade: 'moderada',
-    descricao: 'Beta-bloqueadores podem mascarar sintomas de hipoglicemia',
-    mecanismo: 'Bloqueio de receptores beta-adrenérgicos',
-    conduta: 'Monitorar glicemia cuidadosamente. Orientar paciente sobre sintomas.',
-    tipo: 'especifica',
-  },
-  
-  // Metformina
-  {
-    medicamento1: 'metformina',
-    medicamento2: 'classe:contraste_iodado',
-    gravidade: 'grave',
-    descricao: 'Risco de acidose láctica',
-    mecanismo: 'Contraste pode causar insuficiência renal aguda',
-    conduta: 'Suspender metformina 48h antes e após exame com contraste iodado.',
-    tipo: 'classe',
-  },
-  
-  // Digoxina
-  {
-    medicamento1: 'digoxina',
-    medicamento2: 'furosemida',
-    gravidade: 'moderada',
-    descricao: 'Hipocalemia aumenta risco de toxicidade da digoxina',
-    mecanismo: 'Diuréticos de alça podem causar hipocalemia',
-    conduta: 'Monitorar potássio e níveis de digoxina. Suplementar potássio se necessário.',
-    tipo: 'especifica',
-  },
-  {
-    medicamento1: 'digoxina',
-    medicamento2: 'classe:antibiotico',
-    gravidade: 'moderada',
-    descricao: 'Alguns antibióticos podem aumentar níveis de digoxina',
-    mecanismo: 'Alteração no metabolismo ou absorção',
-    conduta: 'Monitorar níveis séricos de digoxina durante tratamento.',
-    tipo: 'classe',
-  },
-  
-  // Antidepressivos
-  {
-    medicamento1: 'classe:antidepressivo',
-    medicamento2: 'classe:ansiolitico',
-    gravidade: 'moderada',
-    descricao: 'Risco aumentado de sedação e depressão do SNC',
-    mecanismo: 'Efeito aditivo na depressão do sistema nervoso central',
-    conduta: 'Monitorar sedação excessiva. Orientar sobre atividades que requerem atenção.',
-    tipo: 'classe',
-  },
-  {
-    medicamento1: 'fluoxetina',
-    medicamento2: 'classe:antipsicotico',
-    gravidade: 'moderada',
-    descricao: 'Pode aumentar níveis de antipsicóticos atípicos',
-    mecanismo: 'Inibição do CYP2D6',
-    conduta: 'Monitorar efeitos adversos. Pode ser necessário ajuste de dose.',
-    tipo: 'especifica',
-  },
-  
-  // Antiepilépticos
-  {
-    medicamento1: 'fenitoina',
-    medicamento2: 'classe:anticoncepcional',
-    gravidade: 'moderada',
-    descricao: 'Fenitoina pode diminuir eficácia de contraceptivos hormonais',
-    mecanismo: 'Indução enzimática do CYP3A4',
-    conduta: 'Recomendar método contraceptivo adicional (barreira).',
-    tipo: 'especifica',
-  },
-  {
-    medicamento1: 'carbamazepina',
-    medicamento2: 'classe:anticoncepcional',
-    gravidade: 'moderada',
-    descricao: 'Carbamazepina pode diminuir eficácia de contraceptivos hormonais',
-    mecanismo: 'Indução enzimática do CYP3A4',
-    conduta: 'Recomendar método contraceptivo adicional.',
-    tipo: 'especifica',
-  },
-  
-  // Corticosteroides
-  {
-    medicamento1: 'prednisona',
-    medicamento2: 'classe:antidiabetico',
-    gravidade: 'moderada',
-    descricao: 'Corticoides podem aumentar glicemia',
-    mecanismo: 'Aumento da resistência à insulina',
-    conduta: 'Monitorar glicemia. Pode ser necessário ajuste de dose de antidiabético.',
-    tipo: 'especifica',
-  },
-  {
-    medicamento1: 'classe:corticoide',
-    medicamento2: 'classe:anti_hipertensivo',
-    gravidade: 'leve',
-    descricao: 'Corticoides podem aumentar pressão arterial',
-    mecanismo: 'Retenção de sódio e água',
-    conduta: 'Monitorar pressão arterial. Ajustar anti-hipertensivo se necessário.',
-    tipo: 'classe',
-  },
-  
-  // Álcool com medicamentos
-  {
-    medicamento1: 'classe:ansiolitico',
-    medicamento2: 'alcool',
-    gravidade: 'grave',
-    descricao: 'Depressão severa do SNC com risco de parada respiratória',
-    mecanismo: 'Efeito sinérgico na depressão do sistema nervoso central',
-    conduta: 'Contraindicado uso concomitante de álcool. Orientar paciente.',
-    tipo: 'classe',
-  },
-  {
-    medicamento1: 'metronidazol',
-    medicamento2: 'alcool',
-    gravidade: 'grave',
-    descricao: 'Reação tipo dissulfiram (náusea, vômito, rubor)',
-    mecanismo: 'Inibição da aldeído desidrogenase',
-    conduta: 'Evitar álcool durante tratamento e 48h após.',
-    tipo: 'especifica',
-  },
-  
-  // Antibióticos e pílulas
-  {
-    medicamento1: 'rifampicina',
-    medicamento2: 'classe:anticoncepcional',
-    gravidade: 'moderada',
-    descricao: 'Rifampicina pode diminuir eficácia de contraceptivos hormonais',
-    mecanismo: 'Indução enzimática',
-    conduta: 'Recomendar método contraceptivo adicional.',
-    tipo: 'especifica',
-  },
-  
-  // Estatinas
-  {
-    medicamento1: 'classe:hipolipemiante',
-    medicamento2: 'classe:antifungico',
-    gravidade: 'moderada',
-    descricao: 'Alguns antifúngicos podem aumentar risco de miopatia por estatinas',
-    mecanismo: 'Inibição do CYP3A4',
-    conduta: 'Monitorar CK e sintomas musculares. Considerar suspender estatina temporariamente.',
-    tipo: 'classe',
-  },
-];
+export const INTERACTION_KNOWLEDGE_STATUS = {
+  status: 'reference-only' as const,
+  coverage: 'partial-unreviewed' as const,
+  ruleCount: interacoesMedicamentosas.length,
+  absenceMeaning: 'not-found-not-cleared' as const,
+};
 
-/**
- * Verifica se um medicamento pertence a uma classe terapêutica
- */
-function medicamentoPertenceAClasse(medicamento: Medicamento, classe: string): boolean {
-  if (classe.startsWith('classe:')) {
-    const classeSemPrefix = classe.replace('classe:', '');
-    return medicamento.classeTerapeutica === classeSemPrefix;
-  }
-  return false;
+const TOKEN_ALIASES: Record<string, string> = {
+  'acido-acetilsalicilico': 'aas',
+  'acido-acetilsalicilico-aas': 'aas',
+  aspirina: 'aas',
+  warfarina: 'varfarina',
+};
+
+function canonicalToken(value: string): string {
+  const normalized = value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+  return TOKEN_ALIASES[normalized] || normalized;
 }
 
-/**
- * Encontra todas as interações entre dois medicamentos
- */
-function findInteractionsBetween(
-  med1: Medicamento,
-  med2: Medicamento
-): DrugInteraction[] {
-  const interactions: DrugInteraction[] = [];
-  
-  INTERACTION_DATABASE.forEach(interactionRule => {
-    let match1 = false;
-    let match2 = false;
-    
-    // Verifica se med1 corresponde ao primeiro medicamento da regra
-    if (interactionRule.tipo === 'especifica') {
-      match1 = med1.id === interactionRule.medicamento1 || 
-               med1.nomeGenerico.toLowerCase() === interactionRule.medicamento1.toLowerCase();
-    } else {
-      match1 = medicamentoPertenceAClasse(med1, interactionRule.medicamento1);
-    }
-    
-    // Verifica se med2 corresponde ao segundo medicamento da regra
-    if (interactionRule.tipo === 'especifica') {
-      match2 = med2.id === interactionRule.medicamento2 || 
-               med2.nomeGenerico.toLowerCase() === interactionRule.medicamento2.toLowerCase();
-    } else {
-      match2 = medicamentoPertenceAClasse(med2, interactionRule.medicamento2);
-    }
-    
-    // Verifica interação bidirecional
-    if (match1 && match2) {
-      interactions.push({
-        medicamento1: { id: med1.id, nome: med1.nomeGenerico },
-        medicamento2: { id: med2.id, nome: med2.nomeGenerico },
-        gravidade: interactionRule.gravidade,
-        descricao: interactionRule.descricao,
-        mecanismo: interactionRule.mecanismo,
-        conduta: interactionRule.conduta,
-      });
-    } else if (match2 && match1) {
-      // Interação reversa (med2 -> med1)
-      interactions.push({
-        medicamento1: { id: med2.id, nome: med2.nomeGenerico },
-        medicamento2: { id: med1.id, nome: med1.nomeGenerico },
-        gravidade: interactionRule.gravidade,
-        descricao: interactionRule.descricao,
-        mecanismo: interactionRule.mecanismo,
-        conduta: interactionRule.conduta,
-      });
-    }
-  });
-  
-  // Também verifica interações definidas nos dados do medicamento
-  med1.interacoes?.forEach(interacao => {
-    if (interacao.medicamento) {
-      // Tenta encontrar o medicamento na lista
-      const medEncontrado = todosMedicamentos.find(m => 
-        m.nomeGenerico.toLowerCase().includes(interacao.medicamento.toLowerCase()) ||
-        m.id === interacao.medicamento.toLowerCase().replace(/\s+/g, '-')
-      );
-      
-      if (medEncontrado && medEncontrado.id === med2.id) {
-        interactions.push({
-          medicamento1: { id: med1.id, nome: med1.nomeGenerico },
-          medicamento2: { id: med2.id, nome: med2.nomeGenerico },
-          gravidade: interacao.gravidade,
-          descricao: interacao.efeito || 'Interação medicamentosa',
-          conduta: interacao.conduta || 'Monitorar paciente',
-        });
-      }
-    }
-  });
-  
-  return interactions;
+function medicationTokens(medication: Medicamento): Set<string> {
+  return new Set([
+    canonicalToken(medication.id),
+    canonicalToken(medication.nomeGenerico),
+    ...(medication.nomesComerciais || []).map(canonicalToken),
+  ]);
 }
 
-/**
- * Encontra medicamento por nome (genérico ou comercial)
- */
 function findMedicationByName(name: string): Medicamento | null {
-  const normalized = name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
-  
-  return todosMedicamentos.find(med => {
-    if (med.id.toLowerCase() === normalized || 
-        med.nomeGenerico.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') === normalized) {
-      return true;
-    }
-    
-    if (med.nomesComerciais?.some(nc => 
-      nc.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') === normalized
-    )) {
-      return true;
-    }
-    
-    return false;
-  }) || null;
+  const token = canonicalToken(name);
+  return todosMedicamentos.find(medication => medicationTokens(medication).has(token)) || null;
 }
 
-/**
- * Extrai lista de medicamentos de um SOAP
- */
-function extractMedicationsFromSOAP(soapData: Partial<SOAPData>): Medicamento[] {
-  const medications: Medicamento[] = [];
-  const medicationNames = new Set<string>();
-  
-  // Extrai da prescrição atual
-  soapData.plano?.prescricoes?.forEach(presc => {
-    if (presc.medicamento && !medicationNames.has(presc.medicamento.toLowerCase())) {
-      medicationNames.add(presc.medicamento.toLowerCase());
-      const med = findMedicationByName(presc.medicamento);
-      if (med) {
-        medications.push(med);
-      }
-    }
-  });
-  
-  // Extrai do texto (usando NLP básico)
-  const fullText = [
-    soapData.subjetivo || '',
-    soapData.objetivo?.exameFisico || '',
-    soapData.plano?.orientacoes?.join(' ') || '',
-  ].join(' ').toLowerCase();
-  
-  todosMedicamentos.forEach(med => {
-    if (medicationNames.has(med.nomeGenerico.toLowerCase())) return;
-    
-    // Verifica se o nome genérico aparece no texto
-    if (fullText.includes(med.nomeGenerico.toLowerCase())) {
-      medicationNames.add(med.nomeGenerico.toLowerCase());
-      medications.push(med);
-      return;
-    }
-    
-    // Verifica nomes comerciais
-    if (med.nomesComerciais?.some(nc => fullText.includes(nc.toLowerCase()))) {
-      medicationNames.add(med.nomeGenerico.toLowerCase());
-      medications.push(med);
-    }
-  });
-  
-  return medications;
+function pairMatches(
+  rule: InteracaoMedicamentosa,
+  medication1: Medicamento,
+  medication2: Medicamento,
+): boolean {
+  const first = canonicalToken(rule.medicamento1);
+  const second = canonicalToken(rule.medicamento2);
+  const tokens1 = medicationTokens(medication1);
+  const tokens2 = medicationTokens(medication2);
+  return (tokens1.has(first) && tokens2.has(second))
+    || (tokens1.has(second) && tokens2.has(first));
 }
 
-/**
- * Analisa interações na prescrição atual do SOAP
- */
-export function analyzeCurrentSOAPInteractions(
-  soapData: Partial<SOAPData>
+function toInteraction(
+  rule: InteracaoMedicamentosa,
+  medication1: Medicamento,
+  medication2: Medicamento,
+): DrugInteraction {
+  return {
+    medicamento1: { id: medication1.id, nome: medication1.nomeGenerico },
+    medicamento2: { id: medication2.id, nome: medication2.nomeGenerico },
+    gravidade: rule.gravidade,
+    descricao: rule.efeito,
+    mecanismo: rule.mecanismo.replaceAll('_', ' '),
+    conduta: rule.conduta,
+    evidencia: rule.evidencia,
+    referencias: rule.fontes,
+  };
+}
+
+function priorityFor(severity: GravidadeInteracao): InteractionAlert['prioridade'] {
+  if (severity === 'contraindicada' || severity === 'grave') return 'alta';
+  if (severity === 'leve') return 'baixa';
+  return 'media';
+}
+
+function explicitMedications(soapData: Partial<SOAPData>): Medicamento[] {
+  const seen = new Set<string>();
+  const result: Medicamento[] = [];
+  for (const prescription of soapData.plano?.prescricoes || []) {
+    const medication = findMedicationByName(prescription.medicamento);
+    if (medication && !seen.has(medication.id)) {
+      seen.add(medication.id);
+      result.push(medication);
+    }
+  }
+  return result;
+}
+
+function analyzePairs(
+  firstList: Medicamento[],
+  secondList: Medicamento[],
+  contexto: InteractionAlert['contexto'],
+  sameList: boolean,
 ): InteractionAlert[] {
-  const medications = extractMedicationsFromSOAP(soapData);
   const alerts: InteractionAlert[] = [];
-  const seenInteractions = new Set<string>();
-  
-  // Verifica todas as combinações de medicamentos
-  for (let i = 0; i < medications.length; i++) {
-    for (let j = i + 1; j < medications.length; j++) {
-      const med1 = medications[i];
-      const med2 = medications[j];
-      
-      const interactions = findInteractionsBetween(med1, med2);
-      
-      interactions.forEach(interaction => {
-        // Cria chave única para evitar duplicatas
-        const key = [med1.id, med2.id].sort().join('::');
-        if (seenInteractions.has(key)) return;
-        seenInteractions.add(key);
-        
-        // Determina prioridade baseada na gravidade
-        let prioridade: 'alta' | 'media' | 'baixa' = 'media';
-        if (interaction.gravidade === 'contraindicada' || interaction.gravidade === 'grave') {
-          prioridade = 'alta';
-        } else if (interaction.gravidade === 'leve') {
-          prioridade = 'baixa';
-        }
-        
-        alerts.push({
-          id: `alert-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-          interaction,
-          contexto: 'prescricao_atual',
-          prioridade,
-          timestamp: new Date(),
-        });
+  const seen = new Set<string>();
+  for (let firstIndex = 0; firstIndex < firstList.length; firstIndex += 1) {
+    const start = sameList ? firstIndex + 1 : 0;
+    for (let secondIndex = start; secondIndex < secondList.length; secondIndex += 1) {
+      const medication1 = firstList[firstIndex];
+      const medication2 = secondList[secondIndex];
+      if (medication1.id === medication2.id) continue;
+      const pairId = [medication1.id, medication2.id].sort().join('::');
+      if (seen.has(pairId)) continue;
+      const rule = interacoesMedicamentosas.find(candidate => pairMatches(candidate, medication1, medication2));
+      if (!rule) continue;
+      seen.add(pairId);
+      const interaction = toInteraction(rule, medication1, medication2);
+      alerts.push({
+        id: `${contexto}:${rule.id}:${pairId}`,
+        interaction,
+        contexto,
+        prioridade: priorityFor(interaction.gravidade),
+        timestamp: new Date(0),
       });
     }
   }
-  
-  // Ordena por prioridade e gravidade
-  return alerts.sort((a, b) => {
-    const priorityOrder = { alta: 3, media: 2, baixa: 1 };
-    const severityOrder = { contraindicada: 5, grave: 4, moderada: 3, leve: 2, desconhecida: 1 };
-    
-    if (priorityOrder[a.prioridade] !== priorityOrder[b.prioridade]) {
-      return priorityOrder[b.prioridade] - priorityOrder[a.prioridade];
-    }
-    
-    return severityOrder[b.interaction.gravidade] - severityOrder[a.interaction.gravidade];
-  });
+  return alerts;
 }
 
-/**
- * Analisa interações considerando histórico de consultas
- */
+function sortAlerts(alerts: InteractionAlert[]): InteractionAlert[] {
+  const priority = { alta: 3, media: 2, baixa: 1 } as const;
+  return alerts.sort((left, right) => priority[right.prioridade] - priority[left.prioridade]);
+}
+
+export function analyzeCurrentSOAPInteractions(soapData: Partial<SOAPData>): InteractionAlert[] {
+  const medications = explicitMedications(soapData);
+  return sortAlerts(analyzePairs(medications, medications, 'prescricao_atual', true));
+}
+
+export function analyzeMedicationIds(medicationIds: string[]): InteractionAlert[] {
+  const medications = medicationIds
+    .map(id => todosMedicamentos.find(medication => medication.id === id))
+    .filter((medication): medication is Medicamento => medication !== undefined);
+  return sortAlerts(analyzePairs(medications, medications, 'prescricao_atual', true));
+}
+
 export function analyzeInteractionsWithHistory(
   currentSOAP: Partial<SOAPData>,
-  historyLimit: number = 10
+  historyLimit = 10,
 ): InteractionAlert[] {
-  const currentAlerts = analyzeCurrentSOAPInteractions(currentSOAP);
-  const historyAlerts: InteractionAlert[] = [];
-  
-  const history = getConsultationHistory().slice(0, historyLimit);
-  
-  // Extrai medicamentos do histórico
-  const historicalMedications = new Set<string>();
-  history.forEach(consultation => {
-    consultation.soapData.plano?.prescricoes?.forEach(presc => {
-      if (presc.medicamento) {
-        historicalMedications.add(presc.medicamento.toLowerCase());
-      }
-    });
-  });
-  
-  // Verifica interações entre medicamentos atuais e históricos
-  const currentMedications = extractMedicationsFromSOAP(currentSOAP);
-  
-  currentMedications.forEach(currentMed => {
-    historicalMedications.forEach(histMedName => {
-      const histMed = findMedicationByName(histMedName);
-      if (!histMed) return;
-      
-      const interactions = findInteractionsBetween(currentMed, histMed);
-      interactions.forEach(interaction => {
-        historyAlerts.push({
-          id: `alert-history-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-          interaction,
-          contexto: 'historico',
-          prioridade: interaction.gravidade === 'grave' || interaction.gravidade === 'contraindicada' ? 'alta' : 'media',
-          timestamp: new Date(),
-        });
-      });
-    });
-  });
-  
-  // Combina e remove duplicatas
-  const allAlerts = [...currentAlerts, ...historyAlerts];
-  const uniqueAlerts = new Map<string, InteractionAlert>();
-  
-  allAlerts.forEach(alert => {
-    const key = `${alert.interaction.medicamento1.id}::${alert.interaction.medicamento2.id}`;
-    const existing = uniqueAlerts.get(key);
-    
-    if (!existing || alert.prioridade === 'alta') {
-      uniqueAlerts.set(key, alert);
-    }
-  });
-  
-  return Array.from(uniqueAlerts.values()).sort((a, b) => {
-    const priorityOrder = { alta: 3, media: 2, baixa: 1 };
-    return priorityOrder[b.prioridade] - priorityOrder[a.prioridade];
-  });
+  const current = explicitMedications(currentSOAP);
+  const history = getConsultationHistory()
+    .slice(0, historyLimit)
+    .flatMap(consultation => explicitMedications(consultation.soapData));
+  const combined = [
+    ...analyzePairs(current, current, 'prescricao_atual', true),
+    ...analyzePairs(current, history, 'historico', false),
+  ];
+  const unique = new Map<string, InteractionAlert>();
+  for (const alert of combined) {
+    const key = [alert.interaction.medicamento1.id, alert.interaction.medicamento2.id].sort().join('::');
+    const existing = unique.get(key);
+    if (!existing || alert.prioridade === 'alta') unique.set(key, alert);
+  }
+  return sortAlerts([...unique.values()]);
 }
 
-/**
- * Obtém cor e ícone baseado na gravidade
- */
 export function getInteractionSeverityStyle(gravidade: GravidadeInteracao): {
   color: string;
   bgColor: string;
@@ -576,40 +200,13 @@ export function getInteractionSeverityStyle(gravidade: GravidadeInteracao): {
 } {
   switch (gravidade) {
     case 'contraindicada':
-      return {
-        color: 'text-red-700 dark:text-red-300',
-        bgColor: 'bg-red-50 dark:bg-red-950/30',
-        borderColor: 'border-red-500 dark:border-red-700',
-        icon: '🚫',
-      };
     case 'grave':
-      return {
-        color: 'text-orange-700 dark:text-orange-300',
-        bgColor: 'bg-orange-50 dark:bg-orange-950/30',
-        borderColor: 'border-orange-500 dark:border-orange-700',
-        icon: '⚠️',
-      };
+      return { color: 'text-red-700 dark:text-red-300', bgColor: 'bg-red-50 dark:bg-red-950/20', borderColor: 'border-red-500 dark:border-red-700', icon: 'alert-triangle' };
     case 'moderada':
-      return {
-        color: 'text-amber-700 dark:text-amber-300',
-        bgColor: 'bg-amber-50 dark:bg-amber-950/30',
-        borderColor: 'border-amber-500 dark:border-amber-700',
-        icon: '⚡',
-      };
+      return { color: 'text-orange-700 dark:text-orange-300', bgColor: 'bg-orange-50 dark:bg-orange-950/20', borderColor: 'border-orange-500 dark:border-orange-700', icon: 'zap' };
     case 'leve':
-      return {
-        color: 'text-blue-700 dark:text-blue-300',
-        bgColor: 'bg-blue-50 dark:bg-blue-950/30',
-        borderColor: 'border-blue-500 dark:border-blue-700',
-        icon: 'ℹ️',
-      };
+      return { color: 'text-amber-700 dark:text-amber-300', bgColor: 'bg-amber-50 dark:bg-amber-950/20', borderColor: 'border-amber-500 dark:border-amber-700', icon: 'info' };
     default:
-      return {
-        color: 'text-neutral-700 dark:text-neutral-300',
-        bgColor: 'bg-neutral-50 dark:bg-neutral-900/30',
-        borderColor: 'border-neutral-500 dark:border-neutral-700',
-        icon: '❓',
-      };
+      return { color: 'text-slate-700 dark:text-slate-300', bgColor: 'bg-slate-50 dark:bg-slate-900/30', borderColor: 'border-slate-300 dark:border-slate-700', icon: 'info' };
   }
 }
-

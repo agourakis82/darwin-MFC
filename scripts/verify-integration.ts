@@ -368,6 +368,32 @@ try {
   fail('Sounio Clinical Kernel', `Falha ao validar artefatos: ${error}`);
 }
 
+const medicationSafetyFixtures = spawnSync(
+  'pnpm',
+  ['exec', 'tsx', resolve(process.cwd(), 'scripts/test-medication-safety-fixtures.ts')],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+if (
+  medicationSafetyFixtures.status === 0
+  && medicationSafetyFixtures.stdout.includes('MEDICATION_SAFETY_FIXTURES_VALID')
+  && medicationSafetyFixtures.stdout.includes('"uniqueMedicationIds": 717')
+  && medicationSafetyFixtures.stdout.includes('"vectorsPassed": 7')
+  && medicationSafetyFixtures.stdout.includes('"hashTamperCasesPassed": 9')
+  && medicationSafetyFixtures.stdout.includes('"runtimeRegexDoseCalculationPresent": false')
+  && medicationSafetyFixtures.stdout.includes('"simulatedProntuarioInteractionDatabasePresent": false')
+  && medicationSafetyFixtures.stdout.includes('"interactionAbsenceClearsSafety": false')
+  && medicationSafetyFixtures.stdout.includes('"fhirStatus": "draft"')
+  && medicationSafetyFixtures.stdout.includes('"fhirIntent": "proposal"')
+  && medicationSafetyFixtures.stdout.includes('"productionDisposition": "REFUSE"')
+) {
+  pass('Darwin Rx Medication Safety', '717 medicamentos, hashes, WASM inteiro, interacoes canonicas e FHIR draft passam com producao em REFUSE');
+} else {
+  fail('Darwin Rx Medication Safety', 'Contrato do catalogo, kernel, integridade ou interoperabilidade falhou', {
+    status: medicationSafetyFixtures.status,
+    output: medicationSafetyFixtures.stdout || medicationSafetyFixtures.stderr,
+  });
+}
+
 const calibrationScript = resolve(process.cwd(), 'scripts/calibrate-epistemic-firewall.mjs');
 const fixtureValidation = spawnSync(
   process.execPath,
@@ -822,10 +848,17 @@ const hasAmoxicillinDose = pneumoniaTherapy.some(reference =>
 const hasAzithromycinDose = pneumoniaTherapy.some(reference =>
   reference.medicamentoId === 'azitromicina' && Boolean(reference.posologiaResumida)
 );
-if (hasAmoxicillinDose && hasAzithromycinDose) {
-  pass('Diagnosis to Treatment', 'PAC vinculada a amoxicilina e azitromicina com posologia');
+const medicationDoseRules = JSON.parse(readFileSync(
+  resolve(process.cwd(), 'clinical/medication-safety/dose-rules.v1.json'),
+  'utf8',
+));
+if (hasAmoxicillinDose && hasAzithromycinDose && medicationDoseRules.rules.length === 0) {
+  pass('Diagnosis to Treatment', 'PAC filtra amoxicilina e azitromicina como referencias; nenhuma posologia legada foi promovida a regra');
 } else {
-  fail('Diagnosis to Treatment', 'PAC sem opções terapêuticas completas', { pneumoniaTherapy });
+  fail('Diagnosis to Treatment', 'Filtro terapeutico ou fronteira de regras revisadas inconsistente', {
+    pneumoniaTherapy,
+    structuredRuleCount: medicationDoseRules.rules.length,
+  });
 }
 
 // Verificar que todas as doenças têm pelo menos CID-10 ou CIAP-2

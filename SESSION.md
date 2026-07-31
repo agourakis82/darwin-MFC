@@ -2,15 +2,24 @@
 
 ## Estado
 
-- Branch: `codex/aps-design-refactor`.
+- Branch: `codex/darwin-rx-medication-safety` (empilhada sobre `codex/aps-design-refactor`).
+- Marco Darwin Rx implementado: os 717 medicamentos permanecem pesquisaveis em um bundle imutavel e auditavel, com estados `Referencia`, `Dose revisada` ou `Dados incompletos`.
+- O calculo clinico por regex foi removido. Posologias textuais antigas sao apenas referencias `legacy-unverified` e nunca geram dose, selo de seguranca ou inclusao automatica na prescricao.
+- A base simulada de interacoes do prontuario foi eliminada. O adaptador usa pares canonicos do catalogo existente e ausencia de interacao encontrada nunca significa seguranca comprovada.
+- O kernel deterministico `medication-safety-kernel.sio` foi compilado para WASM com aritmetica inteira, sete vetores em paridade exata nativo/WASM e recibo vinculado ao bundle, fonte, compilador source-fresh e artefato.
+- Nao existe fallback matematico TypeScript. O loader verifica SHA-256, identidade do compilador, 717 IDs e registro de chaves Ed25519 antes de qualquer execucao.
+- A producao permanece corretamente em `REFUSE`: nenhuma regra de dose tem dupla revisao medico-farmaceutica e o bundle ainda nao possui assinatura confiavel.
+- Gestacao e lactacao agora usam risco narrativo, evidencia e conduta; categorias A/B/C/D/X foram removidas das interfaces Darwin Rx.
+- Prescricoes antigas e manuais continuam legiveis como `legacy-unverified`. Uma futura prescricao estruturada confirmada sera exportada somente como FHIR R4 `MedicationRequest` em `draft/proposal`.
+- A uniao local/Supabase preserva os 717 medicamentos; o Supabase pode enriquecer texto editorial, mas nao promover nem sobrescrever silenciosamente regras clinicas assinadas.
 - Preview local verificado: `http://127.0.0.1:3011/pt/prontuario/` no servidor de desenvolvimento.
 - Redesign APS/SUS/pt-BR e correcoes clinicas consolidados no checkpoint da branch.
 - Assistente clinico promovido ao topo da consulta: sintomas, diferenciais, exames e sinais de alarme.
-- Hipotese selecionada agora abre medicamentos relacionados, dose de referencia, disponibilidade SUS/RENAME e bula.
+- Hipotese selecionada agora filtra medicamentos relacionados e abre disponibilidade SUS/RENAME, bula e proveniencia; nao calcula nem inclui dose automaticamente.
 - Inclusao na prescricao exige confirmacao explicita do profissional.
 - IDs legados do banco de sintomas sao resolvidos para as doencas atuais; PAC lidera o caso tosse + febre + dispneia.
 - Idade do paciente agora aceita dias, meses ou anos e participa da ordenacao dos diagnosticos diferenciais.
-- Peso em kg sincroniza com a nota SOAP e libera apenas as sugestoes pediatricas calculaveis por peso.
+- Peso em kg sincroniza com a nota SOAP como contexto futuro do kernel, mas nao libera calculo enquanto a regra nao estiver vigente, assinada e duplamente revisada.
 - Posologia pediatrica ausente permanece bloqueada; nenhuma sugestao entra automaticamente na prescricao.
 - Kernel clinico respiratorio pediatrico implementado em Sounio com gerador WASM, oraculo nativo e ABI numerica fixa.
 - O prontuario executa o kernel em modo silencioso, verifica SHA-256 de evidencia/modelo/WASM e recusa incompatibilidades sem fallback probabilistico em TypeScript.
@@ -60,15 +69,21 @@
 
 ## Verificacao
 
+- `pnpm build:medication-safety`: passou com 717 IDs unicos, bundle SHA-256 `2f8f127762df0c0cbb0664fdf503b2dc1e796d1608817191e9f4dc2246267a23`, WASM SHA-256 `2b4d92a4cb4e0afd8c95faa8059f566913b7f83f2c217e068f006560e6f3a414` e disposicao final `REFUSE`.
+- `pnpm test:medication-safety-fixtures`: passou sete vetores, nove adulteracoes de hash, ausencia de regex/base simulada/fallback e contrato FHIR `draft/proposal`.
+- `pnpm verify`: 36 passaram, 0 falharam, 0 avisos, incluindo o gate Darwin Rx.
+- `pnpm exec tsc --noEmit`: passou apos a integracao Darwin Rx.
+- `pnpm build:vercel`: passou e materializou 13.683 paginas estaticas, incluindo os 717 medicamentos em nove idiomas.
+- Playwright Darwin Rx: 4/4 em Desktop Chrome e Mobile Chrome; catalogo, detalhe, prontuario, integridade dos artefatos, ausencia de auto-prescricao e layout sem overflow foram validados.
 - `pnpm exec tsc --noEmit`: passou.
 - `pnpm build:clinical-kernel`: passou; WASM de 29.195 bytes, cinco vetores, erro maximo posterior de 4,96e-7 e erro maximo EIG de 1,96e-7.
 - `pnpm verify`: 19 passaram, 0 falharam, 0 avisos, incluindo integridade, ABI e deteccao de adulteracao do kernel.
 - `pnpm build`: passou, 16.545 paginas estaticas.
 - Artefatos servidos em `/clinical-kernel/`; prontuario e recibo responderam HTTP 200 no preview local.
 - Teste ABI v2 real: 3 anos + tosse + coriza + estridor -> crupe, alarme estridor e proxima pergunta sobre hipoxemia; integridade valida.
-- Fluxo real no navegador: sintomas -> PAC -> amoxicilina/azitromicina -> bula -> adicionar ao plano -> preview SOAP.
+- O fluxo historico sintomas -> PAC -> medicamento foi contido: agora chega a bula/referencia, sem adicionar dose automaticamente ao plano.
 - Fluxo pediatrico real: 4 anos + tosse + febre + dor de garganta + coriza -> IVAS em primeiro -> PAC pediatrica antes da adulta.
-- Dose real validada: PAC pediatrica com 18 kg -> amoxicilina 900-1620 mg/dia -> confirmacao -> plano e preview SOAP.
+- O antigo calculo pediatrico por texto foi desativado e preservado apenas como evidencia de migracao `legacy-unverified`.
 - Mobile de 313 px sem overflow horizontal; titulo terapeutico quebra em duas linhas.
 - `pnpm research:epistemic-firewall`: passou e gravou o primeiro log auditavel em 2026-07-29.
 - Epistemic Firewall: 256/256 mascaras Sounio, estado atual `refused`, hash cruzado dos recibos valido.
@@ -192,10 +207,12 @@
 - Checkout, Node, pnpm e upload de artefatos estao fixados por SHA no workflow. Relatorio, resultados, screenshots, traces e videos de falha ficam retidos por 14 dias; os cenarios sao exclusivamente sinteticos.
 - A simulacao fiel `CI=1 pnpm test:e2e:pediatric-safety` instalou Playwright 1.58.1, Chromium 145 revision 1208 e FFmpeg revision 1011, reconstruiu/subiu o Vercel isolado em `3200` e passou 4/4 em 1,9 minuto.
 - `pnpm install --frozen-lockfile`, parser YAML, `pnpm type-check`, `pnpm verify` e o build interno do E2E passaram. O gate integrado permaneceu 35/35 e 13.683 paginas foram materializadas.
-- Nao existe pull request aberto para `codex/aps-design-refactor`; portanto, o workflow ainda nao tem execucao remota e so podera ser observado no GitHub apos abertura de PR, merge no `main` ou dispatch disponivel no branch padrao.
+- O PR base `codex/aps-design-refactor` foi aberto e a primeira execucao remota do workflow `Clinical Safety E2E` passou antes do inicio do branch Darwin Rx.
 
 ## Proximo passo
 
+- Obter revisao independente de medico e farmaceutico para as primeiras regras estruturadas, assinar o bundle com chave confiavel e executar shadow mode antes de qualquer estado `READY_FOR_CONFIRMATION`.
+- Manter todos os itens sem regra vigente e duplamente revisada como `reference-only`; nenhuma extracao automatica pode promover uma regra.
 - Manter o e-SUS Notifica em monitoramento de disponibilidade; somente abrir auditoria de cabecalho se o endpoint publico retornar HTTP 200/206, sem credenciais ou contorno de controle de acesso.
 - Submeter o novo contrato abdominal a revisao clinica independente e obter a primeira execucao remota verde do novo workflow em PR antes de ampliar a triagem para outro sintoma pediatrico.
 - A primeira fase publica de cinco analises esta concluida; qualquer nova fonte deve preencher uma lacuna explicita, revalidar hashes e permanecer fora da promocao clinica.
