@@ -13,6 +13,7 @@ const sivepAuditPath = join(root, 'docs/research/epistemic-firewall/sivep-srag-s
 const namcsAuditPath = join(root, 'docs/research/epistemic-firewall/namcs2018-ambulatory-audit-v1.md');
 const namcsHcAuditPath = join(root, 'docs/research/epistemic-firewall/namcs-hc-2024-transportability-audit-v1.md');
 const esusAuditPath = join(root, 'docs/research/epistemic-firewall/esus-notifica-2024-availability-audit-v1.md');
+const sinanAuditPath = join(root, 'docs/research/epistemic-firewall/sinan-pertussis-tabnet-audit-v1.md');
 const outputPath = join(root, '.clinical-kernel-build/public-data/registry-validation.json');
 
 const readJson = path => JSON.parse(readFileSync(path, 'utf8'));
@@ -33,6 +34,7 @@ const sivepAudit = readFileSync(sivepAuditPath, 'utf8');
 const namcsAudit = readFileSync(namcsAuditPath, 'utf8');
 const namcsHcAudit = readFileSync(namcsHcAuditPath, 'utf8');
 const esusAudit = readFileSync(esusAuditPath, 'utf8');
+const sinanAudit = readFileSync(sinanAuditPath, 'utf8');
 
 const featureIds = evidence.features.map(feature => feature.id);
 const conditionIds = evidence.conditions.map(condition => condition.id);
@@ -163,10 +165,17 @@ requireCondition(esusAudit.includes('patientRowsPersisted=false'), 'public-data-
 requireCondition(esusAudit.includes('extractionAuthorized=false'), 'public-data-esus-extraction-boundary-missing');
 requireCondition(esusAudit.includes('unknownNeverCoercedToAbsent=true'), 'public-data-esus-missingness-boundary-missing');
 requireCondition(esusAudit.includes('firewall disposition `REFUSE`'), 'public-data-esus-firewall-boundary-missing');
+requireCondition(sinanAudit.includes('44,878 confirmed notifications'), 'public-data-sinan-grand-total-missing');
+requireCondition(sinanAudit.includes('7,748'), 'public-data-sinan-2024-total-missing');
+requireCondition(sinanAudit.includes('exactUnder18AgeBandAvailable=false'), 'public-data-sinan-age-boundary-missing');
+requireCondition(sinanAudit.includes('symptomaticEncounterPriorEstimated=false'), 'public-data-sinan-prior-boundary-missing');
+requireCondition(sinanAudit.includes('raw TabNet matrix and suppressed values are not persisted'), 'public-data-sinan-persistence-boundary-missing');
+requireCondition(sinanAudit.includes('firewall disposition `REFUSE`'), 'public-data-sinan-firewall-boundary-missing');
 
 const namcs2018 = registry.datasets.find(dataset => dataset.sourceId === 'us-namcs-office-2018');
 const namcsHc2024 = registry.datasets.find(dataset => dataset.sourceId === 'us-namcs-health-center-2024');
 const esus2024 = registry.datasets.find(dataset => dataset.sourceId === 'br-esus-notifica-sg-2024');
+const sinanPertussis = registry.datasets.find(dataset => dataset.sourceId === 'br-sinan-pertussis-tabnet');
 const namcsAgeUnder2 = namcs2018?.featureMappings.find(mapping => mapping.featureId === 'age_under_2');
 requireCondition(namcsAgeUnder2?.rule.includes('AGE 0 or 1'), 'public-data-namcs-age-under-2-rule-invalid');
 requireCondition(namcs2018?.probes.some(probe => probe.probeId === 'value-formats'), 'public-data-namcs-value-formats-probe-missing');
@@ -176,6 +185,11 @@ requireCondition(esus2024?.access.level === 'public-metadata', 'public-data-esus
 requireCondition(esus2024?.access.retrievalStatus.includes('all 28 published state CSV endpoints returned HTTP 403'), 'public-data-esus-retrieval-status-invalid');
 requireCondition(esus2024?.access.snapshot.includes('revalidated 2026-07-30'), 'public-data-esus-snapshot-review-missing');
 requireCondition(esus2024?.allowedUses.some(use => use.includes('without reading response bodies')), 'public-data-esus-body-read-boundary-missing');
+requireCondition(sinanPertussis?.access.patientLevel === false, 'public-data-sinan-patient-level-boundary-invalid');
+requireCondition(sinanPertussis?.access.retrievalStatus.includes('hash-bound national age-by-symptom-year aggregate'), 'public-data-sinan-retrieval-status-invalid');
+requireCondition(sinanPertussis?.access.snapshot.includes('symptom years 2007-2024'), 'public-data-sinan-snapshot-invalid');
+requireCondition(sinanPertussis?.documentationUrls.some(url => url.includes('coquebr.def')), 'public-data-sinan-tabnet-form-missing');
+requireCondition(sinanPertussis?.selectionBias.some(bias => bias.includes('15-19')), 'public-data-sinan-cross-boundary-age-missing');
 
 const report = {
   schemaVersion: 'darwin.sounio.public-data-registry-validation.v1',
@@ -206,6 +220,7 @@ const report = {
     namcsAuditSha256: sha256(readFileSync(namcsAuditPath)),
     namcsHcAuditSha256: sha256(readFileSync(namcsHcAuditPath)),
     esusAuditSha256: sha256(readFileSync(esusAuditPath)),
+    sinanAuditSha256: sha256(readFileSync(sinanAuditPath)),
   },
 };
 

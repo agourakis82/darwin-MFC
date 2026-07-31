@@ -124,11 +124,18 @@
 - O gate e-SUS trata um futuro HTTP 200/206 apenas como `header-review-required`; extracao, probabilidades, prescricao, calibracao APS e ativacao clinica continuam falsas, com missingness sempre desconhecida e firewall `REFUSE`.
 - `pnpm verify`: 29 passaram, 0 falharam, 0 avisos, incluindo NAMCS HC 2024 e o novo gate offline de disponibilidade e-SUS.
 - `pnpm type-check` e `pnpm build:vercel` passaram; o build materializou novamente 13.683 paginas estaticas e 717 medicamentos nos nove idiomas.
+- A consulta nacional SINAN/TabNet de coqueluche foi congelada por HTTPS com os 20 arquivos de notificacao de 2007-2026 e anos de inicio de sintomas de 2007-2024. Os anos de sintomas 2025 e 2026 ficaram excluidos por revisao/parcialidade.
+- O manifesto do formulario, corpo POST e matriz canonica foram pinados pelos SHA-256 `0c058b7f7fee6727a30ba13323e6d3fdae8769ea7fec34bb3e365ace9d116333`, `4a12397dc9fc21431b880a12789386a3eb35f759a177e6a71e0519fac592eb8c` e `7b0e47cb791f8f669a20a7177da653df0553d122531501ca2f04f5f6ea6668e1`.
+- A matriz reconciliou 44.878 notificacoes confirmadas entre 2007 e 2024. O ano de 2024 registrou 7.748, 4,9476 vezes 2019, mas abaixo das 8.498 de 2014; isto e contexto de notificacao, nao incidencia nem probabilidade diagnostica.
+- Em 2024, os agregados publicaveis foram 1.401 menores de 1 ano, 2.215 menores de 5, 4.522 menores de 15, 1.050 na faixa cruzada 15-19 e 2.176 com 20 anos ou mais. A faixa 15-19 nunca foi relabelada como menor de 18.
+- O recibo SINAN aplica limiar 30, nao persiste a matriz bruta ou celulas suprimidas, vincula o executor `curl` e mantem `symptomaticEncounterPriorEstimated=false`, probabilidades/prescricao/calibracao/ativacao falsas e firewall `REFUSE`.
+- `pnpm verify`: 30 passaram, 0 falharam, 0 avisos, incluindo o gate epidemiologico SINAN. `pnpm install --frozen-lockfile`, `pnpm type-check` e `pnpm build:vercel` passaram; 13.683 paginas e 717 medicamentos permaneceram materializados.
 
 ## Proximo passo
 
 - Manter o e-SUS Notifica em monitoramento de disponibilidade; somente abrir auditoria de cabecalho se o endpoint publico retornar HTTP 200/206, sem credenciais ou contorno de controle de acesso.
-- Executar o proximo estresse publico agregado com SINAN coqueluche/TabNet, preservando a fronteira entre incidencia populacional e probabilidade diagnostica entre consultas sintomaticas de APS.
+- Transformar o contexto SINAN em fixtures de seguranca para coqueluche que testem perguntas de idade, vacinacao, contato, duracao, paroxismos e sinais de alarme sem alterar o posterior Sounio pelo numero nacional.
+- A primeira fase publica de cinco analises esta concluida; qualquer nova fonte deve preencher uma lacuna explicita, revalidar hashes e permanecer fora da promocao clinica.
 - Continuar buscando uma fonte publica ou parceria futura com coorte de APS desidentificada, adjudicada e aprovada; probabilidades e EIG permanecem bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.
 - Obter as aprovacoes institucionais reais e preencher, revisar e bloquear externamente os mapeamentos de pelo menos dois servicos de APS antes de iniciar qualquer calibracao real.

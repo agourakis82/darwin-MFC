@@ -523,6 +523,31 @@ const publicEsusAvailability = spawnSync(
   [resolve(process.cwd(), 'scripts/audit-public-esus-notifica-2024-availability.mjs'), '--self-test'],
   { cwd: process.cwd(), encoding: 'utf8' },
 );
+
+const publicSinanPertussis = spawnSync(
+  process.execPath,
+  [resolve(process.cwd(), 'scripts/analyze-public-sinan-pertussis-tabnet.mjs'), '--self-test'],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+if (
+  publicSinanPertussis.status === 0
+  && publicSinanPertussis.stdout.includes('PUBLIC_SINAN_PERTUSSIS_TABNET_SELF_TEST_VALID')
+  && publicSinanPertussis.stdout.includes('darwin.sounio.public-sinan-pertussis-tabnet-self-test.v1')
+  && publicSinanPertussis.stdout.includes('"yearColumnsReconciled": true')
+  && publicSinanPertussis.stdout.includes('"smallCellSuppressionApplied": true')
+  && publicSinanPertussis.stdout.includes('"crossBoundaryAge15To19NotRelabeledUnder18": true')
+  && publicSinanPertussis.stdout.includes('"mismatchedTotalRejected": true')
+  && publicSinanPertussis.stdout.includes('"symptomaticEncounterPriorEstimated": false')
+  && publicSinanPertussis.stdout.includes('"clinicalActivationAuthorized": false')
+) {
+  pass('SINAN Pertussis Epidemiologic Gate', 'Totais, supressao e faixa 15-19 passam; notificacoes agregadas nao viram prior sintomatico ou entrada clinica');
+} else {
+  fail('SINAN Pertussis Epidemiologic Gate', 'Contrato agregado, reconciliacao ou fronteira clinica do SINAN falhou', {
+    status: publicSinanPertussis.status,
+    output: publicSinanPertussis.stdout || publicSinanPertussis.stderr,
+  });
+}
+
 if (
   publicEsusAvailability.status === 0
   && publicEsusAvailability.stdout.includes('PUBLIC_ESUS_NOTIFICA_AVAILABILITY_SELF_TEST_VALID')

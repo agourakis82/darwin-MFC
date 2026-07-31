@@ -1,6 +1,6 @@
 # Public respiratory data feasibility v1
 
-Reviewed: 2026-07-29
+Reviewed: 2026-07-30
 
 ## Decision
 
@@ -31,12 +31,13 @@ Public data cannot promote the firewall. It can support engineering, external sa
 
 ## Executable first phase
 
-The public-data lane should run four analyses before any request for institutional data:
+The public-data lane should run five analyses before any request for institutional data:
 
 1. SIVEP pediatric sensitivity analysis for ICU, ventilation and death, stratified by age, calendar time and geography.
 2. NAMCS 2018 extraction feasibility for fever, cough, coryza, sore throat, dyspnea and wheeze using positive-only reason-for-visit mappings, with medication associations kept descriptive.
 3. NAMCS 2024 diagnosis-code transportability audit for the eight named respiratory conditions, preserving survey weights and site clustering.
 4. e-SUS Notifica availability and missingness audit. No row extraction begins until the current public endpoint and disclosure controls are reverified.
+5. SINAN pertussis age-by-year aggregate audit. Confirmed notifications remain epidemiologic context and never become a symptomatic-encounter prior.
 
 All analyses must produce versioned data dictionaries, source hashes, inclusion counts, missingness tables and non-patient receipts. No source rows, identifiers or public endpoint credentials belong in this repository.
 
@@ -56,6 +57,8 @@ The NAMCS Health Center 2024 audit was executed on 2026-07-30. It reconciled all
 
 The e-SUS Notifica 2024 publication was revalidated on 2026-07-30. The official catalog exposed 31 active resources, including 28 state-partitioned CSV entries, but every published CSV endpoint returned HTTP 403 to an unauthenticated range request. No response body or patient row was read or persisted. Extraction remains blocked; see [e-SUS Notifica 2024 public availability audit v1](./esus-notifica-2024-availability-audit-v1.md).
 
+The SINAN pertussis TabNet audit was executed on 2026-07-30. It reconciled a national age-by-symptom-year matrix across all 20 notification files and 18 completed symptom years. The 2024 table contained 7,748 confirmed notifications, 4.95 times the 2019 count but below the 8,498 recorded for 2014. Age bands, revision status, suppression and the prohibition on deriving a symptomatic APS prior are documented in [SINAN pertussis TabNet epidemiologic stress audit v1](./sinan-pertussis-tabnet-audit-v1.md).
+
 This execution does not close the target-domain gap. It provides a transportability and observed-practice stress test only; the firewall remains `REFUSE`.
 
 ## Official sources
@@ -66,6 +69,8 @@ This execution does not close the target-domain gap. It provides a transportabil
 - Brazilian Ministry of Health, [SISAB public-access FAQ](https://sisab.saude.gov.br/paginas/acessoPublico/faq/IndexFaq.xhtml).
 - Brazilian Ministry of Health, [SIAPS system description](https://sisaps.saude.gov.br/sistemas/siaps/).
 - DATASUS, [SINAN diseases and conditions from 2007 onward](https://datasus.saude.gov.br/acesso-a-informacao/doencas-e-agravos-de-notificacao-de-2007-em-diante-sinan/).
+- DATASUS, [SINAN pertussis national TabNet form](https://tabnet.datasus.gov.br/cgi/deftohtm.exe?sinannet/cnv/coquebr.def).
+- DATASUS, [TabNet usage and export instructions](https://tabnet.datasus.gov.br/tabnet/tabdescr.htm).
 - CDC/NCHS, [NAMCS overview](https://www.cdc.gov/nchs/namcs/about/).
 - CDC/NCHS, [NAMCS questionnaires, datasets and documentation](https://www.cdc.gov/nchs/namcs/documentation/index.html).
 - CDC/NCHS, [NAMCS 2018-2019 public-use catalog entry](https://data.cdc.gov/National-Center-for-Health-Statistics/National-Ambulatory-Medical-Care-Survey-2018-2019-/nf35-ec5c).

@@ -297,15 +297,17 @@
       "country": "Brazil",
       "officialDatasetUrl": "https://datasus.saude.gov.br/acesso-a-informacao/doencas-e-agravos-de-notificacao-de-2007-em-diante-sinan/",
       "documentationUrls": [
-        "https://datasus.saude.gov.br/epidemiologicas-e-morbidade/"
+        "https://datasus.saude.gov.br/epidemiologicas-e-morbidade/",
+        "https://tabnet.datasus.gov.br/cgi/deftohtm.exe?sinannet/cnv/coquebr.def",
+        "https://tabnet.datasus.gov.br/tabnet/tabdescr.htm"
       ],
       "license": "Not stated on the reviewed landing page; reuse terms require confirmation",
       "access": {
         "level": "public",
         "patientLevel": false,
-        "retrievalStatus": "public aggregate query interface verified",
+        "retrievalStatus": "hash-bound national age-by-symptom-year aggregate executed and reconciled on 2026-07-30",
         "credentialsStored": false,
-        "snapshot": "SINAN 2007 onward public TabNet interface",
+        "snapshot": "notification files 2007-2026 with symptom years 2007-2024; 2025 and 2026 symptom years excluded",
         "unitOfAnalysis": "aggregate notified pertussis count or rate"
       },
       "population": {
@@ -315,6 +317,7 @@
       },
       "role": "epidemiologic-context-only",
       "allowedUses": [
+        "hash-bound national age-by-year notification trend audit",
         "pertussis temporal surveillance context",
         "age and geography incidence context",
         "rare-condition stress-scenario design"
@@ -328,7 +331,9 @@
       "selectionBias": [
         "Aggregate surveillance lacks encounter-level symptoms and outcomes",
         "Notification probability differs from APS presentation probability",
-        "Population incidence cannot be substituted for a symptomatic-encounter prior"
+        "Population incidence cannot be substituted for a symptomatic-encounter prior",
+        "The 15-19 year aggregate band crosses the frozen under-18 target boundary",
+        "The official interface marks 2023 and 2024 data as subject to revision"
       ],
       "featureMappings": [
         { "featureId": "fever", "fidelity": "unavailable", "sourceFields": [], "rule": "Aggregate table has no encounter-level feature; always unknown", "missingMapsTo": -1, "apsCalibrationEligible": false },
