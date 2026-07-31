@@ -4,9 +4,11 @@ import React, { useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Search, X, Plus, AlertTriangle, Check, ArrowLeftRight, Pill, Heart, Baby, Stethoscope } from 'lucide-react';
-import { todosMedicamentos, searchMedicamentos, checkInteractions } from '@/lib/data/medicamentos/index';
-import { Medicamento, Interacao } from '@/lib/types/medicamento';
+import { medicamentosConsolidados as todosMedicamentos, searchMedicamentos } from '@/lib/data/medicamentos/index';
+import { Medicamento } from '@/lib/types/medicamento';
 import { PageContainer } from '@/app/components/Layout/Containers';
+import { getMedicationEvidenceSummary } from '@/lib/medication-safety';
+import { analyzeMedicationIds } from '@/lib/utils/drug-interactions';
 
 interface SelectedMed {
   medicamento: Medicamento;
@@ -29,15 +31,15 @@ export default function ComparadorClient() {
   const interactions = useMemo(() => {
     if (selectedMeds.length < 2) return [];
     const medIds = selectedMeds.map(s => s.medicamento.id);
-    const results = checkInteractions(medIds);
-    return results.map(int => ({
-      med1: int.med1,
-      med2: int.med2,
+    const results = analyzeMedicationIds(medIds);
+    return results.map(alert => ({
+      med1: alert.interaction.medicamento1.nome,
+      med2: alert.interaction.medicamento2.nome,
       interaction: {
-        medicamento: int.med2,
-        gravidade: int.gravidade as 'grave' | 'moderada' | 'leve',
-        efeito: int.efeito,
-        conduta: int.conduta,
+        medicamento: alert.interaction.medicamento2.nome,
+        gravidade: alert.interaction.gravidade as 'grave' | 'moderada' | 'leve',
+        efeito: alert.interaction.descricao,
+        conduta: alert.interaction.conduta,
       },
     }));
   }, [selectedMeds]);
@@ -67,17 +69,6 @@ export default function ComparadorClient() {
       case 'moderada': return 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200 border-amber-300';
       case 'leve': return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 border-yellow-300';
       default: return 'bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-200 border-slate-300';
-    }
-  };
-
-  const getGestacaoColor = (categoria: string | undefined) => {
-    switch (categoria) {
-      case 'A': return 'bg-green-100 text-green-800';
-      case 'B': return 'bg-blue-100 text-blue-800';
-      case 'C': return 'bg-amber-100 text-amber-800';
-      case 'D': return 'bg-orange-100 text-orange-800';
-      case 'X': return 'bg-red-100 text-red-800';
-      default: return 'bg-slate-100 text-slate-800';
     }
   };
 
@@ -373,10 +364,8 @@ export default function ComparadorClient() {
                       {t('table.pregnancy')}
                     </td>
                     {selectedMeds.map(({ medicamento }) => (
-                      <td key={medicamento.id} className="px-4 py-3">
-                        <span className={`inline-block px-2 py-1 rounded text-xs font-bold ${getGestacaoColor(medicamento.gestacao)}`}>
-                          {t('table.category', { category: medicamento.gestacao })}
-                        </span>
+                      <td key={medicamento.id} className="px-4 py-3 text-xs leading-relaxed text-slate-700 dark:text-slate-300">
+                        {getMedicationEvidenceSummary(medicamento).pregnancyRiskNarrative}
                       </td>
                     ))}
                   </tr>
@@ -509,4 +498,3 @@ export default function ComparadorClient() {
     </div>
   );
 }
-

@@ -60,12 +60,12 @@ export default function InteracoesPage() {
             </p>
           </div>
 
-          <div className="p-4 bg-green-50 dark:bg-green-950 rounded-xl border border-green-200 dark:border-green-800">
-            <h3 className="font-bold text-green-800 dark:text-green-200 mb-2 flex items-center gap-2">
-              ✅ Sem Interações
+          <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-xl border border-slate-300 dark:border-slate-700">
+            <h3 className="font-bold text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-2">
+              Resultado não encontrado
             </h3>
-            <p className="text-sm text-green-700 dark:text-green-300">
-              Não foram encontradas interações conhecidas entre os medicamentos selecionados na base de dados.
+            <p className="text-sm text-slate-700 dark:text-slate-300">
+              A base é parcial e ainda não tem revisão independente vinculada. Ausência de par não confirma segurança.
             </p>
           </div>
         </div>
@@ -102,4 +102,3 @@ export default function InteracoesPage() {
     </div>
   );
 }
-

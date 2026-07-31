@@ -46,8 +46,17 @@ export function convertMedicamentoRowToMedicamento(row: MedicamentoRow): Medicam
 
   // Parse lactacao -> Medicamento.amamentacao.
   const lactacaoStr = row.lactacao || '';
-  const lactacaoCompativel = lactacaoStr.toLowerCase().startsWith('compatível');
-  const lactacaoObs = lactacaoStr.replace(/^(Compatível|Não compatível):\\s*/, '');
+  let lactacaoCompativel = lactacaoStr.toLowerCase().startsWith('compatível');
+  let lactacaoObs = lactacaoStr.replace(/^(Compatível|Não compatível):\s*/, '');
+  if (lactacaoStr.trim().startsWith('{')) {
+    try {
+      const parsed = JSON.parse(lactacaoStr) as { compativel?: unknown; observacao?: unknown };
+      if (typeof parsed.compativel === 'boolean') lactacaoCompativel = parsed.compativel;
+      if (typeof parsed.observacao === 'string') lactacaoObs = parsed.observacao;
+    } catch {
+      // Preserve malformed legacy source text for audit instead of inventing a value.
+    }
+  }
 
   return {
     id: row.id,
@@ -94,4 +103,3 @@ export function convertMedicamentoRowToMedicamento(row: MedicamentoRow): Medicam
     tags: undefined,
   };
 }
-

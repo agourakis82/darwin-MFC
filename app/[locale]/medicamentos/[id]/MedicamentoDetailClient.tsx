@@ -6,18 +6,18 @@ import {
   ArrowLeft, Baby, Heart,
   Clock, Shield, XCircle,
   CheckCircle, Stethoscope, AlertTriangle,
-  Dna
+  Dna, ExternalLink, LockKeyhole
 } from 'lucide-react';
-import { CLASSES_TERAPEUTICAS, CLASSIFICACAO_GESTACAO, type Medicamento } from '@/lib/types/medicamento';
+import { CLASSES_TERAPEUTICAS, type Medicamento } from '@/lib/types/medicamento';
 import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
 import { PharmGKBDisplay } from '@/app/components/Ontology';
 import { PharmGKBAlert } from '@/app/components/Pharmacogenomics/PharmGKBAlert';
 import { PageContainer } from '@/app/components/Layout/Containers';
 import { TrustBadge } from '@/app/components/ui/TrustBadge';
 import { useGenotypeStore } from '@/lib/store/genotypeStore';
-import { cn } from '@/lib/utils';
 import { StaggerPageSections } from '@/lib/design-system/animations/page-transitions';
 import { ScrollReveal } from '@/lib/design-system/animations/scroll';
+import { getMedicationEvidenceSummary } from '@/lib/medication-safety';
 
 interface MedicamentoDetailClientProps {
   medicamento: Medicamento;
@@ -28,20 +28,11 @@ export default function MedicamentoDetailClient({ medicamento: med }: Medicament
   const { translateMedication } = useMedicalTerms();
 
   const classeInfo = CLASSES_TERAPEUTICAS[med.classeTerapeutica];
-  const gestacaoInfo = CLASSIFICACAO_GESTACAO[med.gestacao];
+  const evidence = getMedicationEvidenceSummary(med);
   const translatedName = translateMedication(med.atcCode, med.nomeGenerico);
   const { hasGenotypes } = useGenotypeStore();
   const hasPGxData = med.pharmgkb && med.pharmgkb.length > 0;
   const showPGxAlert = hasPGxData && hasGenotypes();
-
-  // Pregnancy category colors - clinical grade
-  const pregnancyCategoryColors: Record<string, string> = {
-    A: 'bg-emerald-600',
-    B: 'bg-teal-600',
-    C: 'bg-amber-500',
-    D: 'bg-red-600',
-    X: 'bg-red-700',
-  };
 
   return (
     <div className="min-h-screen bg-[#FAFAF8] dark:bg-neutral-950">
@@ -73,6 +64,13 @@ export default function MedicamentoDetailClient({ medicamento: med }: Medicament
                 <Shield className="w-4 h-4" /> RENAME
               </span>
             )}
+            <span className={`inline-flex items-center gap-1 border px-3 py-1 text-sm font-bold ${
+              evidence.knowledgeStatus === 'data-incomplete'
+                ? 'border-amber-300 bg-amber-50 text-amber-800 dark:bg-amber-950/30 dark:text-amber-200'
+                : 'border-cyan-300 bg-cyan-50 text-cyan-800 dark:bg-cyan-950/30 dark:text-cyan-200'
+            }`}>
+              <LockKeyhole className="h-4 w-4" /> {evidence.statusLabel}
+            </span>
           </div>
 
           <h1 className="text-4xl font-bold text-neutral-900 dark:text-white mb-4 leading-tight capitalize">
@@ -90,40 +88,33 @@ export default function MedicamentoDetailClient({ medicamento: med }: Medicament
             variant="inline"
             showLabels={true}
           />
+          <div className="mt-5 grid gap-3 border-t border-neutral-200 pt-5 text-sm dark:border-neutral-800 sm:grid-cols-3">
+            <div><span className="block text-xs font-semibold uppercase text-neutral-500">Revisão informada</span>{evidence.reportedUpdateDate || 'Não estruturada'}</div>
+            <div><span className="block text-xs font-semibold uppercase text-neutral-500">Fontes locais</span>{evidence.sourceReferenceCount}</div>
+            <div><span className="block text-xs font-semibold uppercase text-neutral-500">Cálculo de dose</span>Bloqueado</div>
+          </div>
         </header>
 
-        {/* PREGNANCY ALERT - Unmissable for D/X categories */}
-        {(med.gestacao === 'D' || med.gestacao === 'X') && (
-          <section className="bg-red-600 text-white rounded-2xl p-6 mb-8">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
-                <Baby className="w-7 h-7" />
-              </div>
-              <div>
-                <h2 className="text-xl font-bold mb-2">
-                  {med.gestacao === 'X' ? 'CONTRAINDICADO NA GESTAÇÃO' : 'RISCO NA GESTAÇÃO'}
-                </h2>
-                <p className="text-lg leading-relaxed opacity-95">
-                  Categoria {med.gestacao} FDA. {gestacaoInfo.descricao}
-                </p>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Pregnancy Badge for other categories */}
-        {med.gestacao !== 'D' && med.gestacao !== 'X' && (
-          <div className="mb-8 p-4 bg-white dark:bg-neutral-900 rounded-2xl shadow-sm flex items-center gap-4">
-            <Baby className="w-6 h-6 text-neutral-500" />
-            <div className="flex items-center gap-3">
-              <span className="text-base font-medium text-neutral-700 dark:text-neutral-300">Gestação:</span>
-              <span className={cn("px-3 py-1 rounded-full text-sm font-bold text-white", pregnancyCategoryColors[med.gestacao] || 'bg-neutral-500')}>
-                Categoria {med.gestacao}
-              </span>
-              <span className="text-base text-neutral-600 dark:text-neutral-400">{gestacaoInfo.descricao}</span>
+        <section className="mb-8 border border-amber-200 bg-amber-50 p-5 dark:border-amber-900 dark:bg-amber-950/20">
+          <div className="flex items-start gap-4">
+            <Baby className="mt-0.5 h-6 w-6 shrink-0 text-amber-700 dark:text-amber-300" />
+            <div>
+              <h2 className="font-bold text-amber-950 dark:text-amber-100">Gravidez e lactação: avaliação narrativa</h2>
+              <p className="mt-2 text-sm leading-relaxed text-amber-900 dark:text-amber-200">{evidence.pregnancyRiskNarrative}</p>
+              <p className="mt-2 text-sm leading-relaxed text-amber-900 dark:text-amber-200">Lactação: {evidence.lactationNarrative}</p>
+              <p className="mt-2 text-xs font-medium text-amber-800 dark:text-amber-300">As categorias históricas A/B/C/D/X não são usadas pelo Darwin Rx para decidir risco.</p>
             </div>
           </div>
-        )}
+        </section>
+
+        <div className="mb-8 flex flex-wrap gap-3 text-sm">
+          <a href={evidence.regulatorySourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 border border-neutral-300 bg-white px-3 py-2 font-medium text-neutral-700 hover:border-teal-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200">
+            Bulário Anvisa <ExternalLink className="h-4 w-4" />
+          </a>
+          <a href={evidence.formularySourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 border border-neutral-300 bg-white px-3 py-2 font-medium text-neutral-700 hover:border-teal-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200">
+            RENAME <ExternalLink className="h-4 w-4" />
+          </a>
+        </div>
 
         {/* PGx Alert Banner */}
         {showPGxAlert && (
@@ -228,6 +219,10 @@ export default function MedicamentoDetailClient({ medicamento: med }: Medicament
               <h2 className="text-xl font-bold text-neutral-900 dark:text-white mb-6 border-l-4 border-teal-500 pl-4">
                 Posologia
               </h2>
+              <div className="mb-5 flex items-start gap-2 border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900 dark:border-amber-900 dark:bg-amber-950/20 dark:text-amber-200">
+                <LockKeyhole className="mt-0.5 h-4 w-4 shrink-0" />
+                <p>Texto legado para consulta e auditoria. Não é interpretado como regra, não calcula dose e não pode gerar rascunho verificado.</p>
+              </div>
 
               <div className="grid gap-4">
                 {(med.posologias ?? []).map((p, i) => (
@@ -299,7 +294,7 @@ export default function MedicamentoDetailClient({ medicamento: med }: Medicament
 
                 {(!med.interacoes || med.interacoes.length === 0) && (
                   <p className="text-base text-neutral-600 dark:text-neutral-400 italic">
-                    Nenhuma interação crítica registrada.
+                    Nenhuma interação registrada neste item. Isso não confirma ausência de interação.
                   </p>
                 )}
               </div>

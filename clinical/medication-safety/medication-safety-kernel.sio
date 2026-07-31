@@ -1,0 +1,99 @@
+//@ generated-entrypoint
+// Darwin Rx deterministic native oracle. The build appends fixed test vectors.
+
+struct Microgram { value: i64 }
+struct Gram { value: i64 }
+struct Microliter { value: i64 }
+struct MicrogramPerKilogram { value: i64 }
+struct MicrogramPerMilliliter { value: i64 }
+
+// Mixing units requires an explicit function boundary. Dose arithmetic uses
+// scaled integers only; the browser never reproduces these operations.
+fn dose_for_weight(rate: MicrogramPerKilogram, weight: Gram) -> Microgram with Div {
+    Microgram { value: (rate.value * weight.value) / 1000 }
+}
+
+fn volume_for_dose(dose: Microgram, concentration: MicrogramPerMilliliter) -> Microliter with Div {
+    Microliter { value: (dose.value * 1000) / concentration.value }
+}
+
+let INPUT_COUNT: i64 = 26
+let OUTPUT_COUNT: i64 = 8
+
+var ORACLE_INPUT: [i64; 26] = [0; 26]
+var ORACLE_OUTPUT: [i64; 8] = [0; 8]
+
+fn evaluate_oracle() with Mut, Div, Panic {
+    var blockers: i64 = 0
+    var warnings: i64 = 0
+    var dose: i64 = 0
+    var uncapped: i64 = 0
+    var maximum_applied: i64 = 0
+    var volume: i64 = 0
+
+    if ORACLE_INPUT[0] != 1 { blockers = blockers | 1 }
+    if ORACLE_INPUT[1] != 1 { blockers = blockers | 2 }
+    if ORACLE_INPUT[2] != 1 || ORACLE_INPUT[3] != 1 { blockers = blockers | 4 }
+    if ORACLE_INPUT[4] != 1 { blockers = blockers | 8 }
+    if ORACLE_INPUT[5] != 1 { blockers = blockers | 16 }
+    if ORACLE_INPUT[13] < ORACLE_INPUT[14] || ORACLE_INPUT[13] >= ORACLE_INPUT[15] { blockers = blockers | 32 }
+    if ORACLE_INPUT[6] > 0 && ORACLE_INPUT[8] <= 0 { blockers = blockers | 64 }
+    if ORACLE_INPUT[16] != 0 { blockers = blockers | 128 }
+    if ORACLE_INPUT[18] > 64 { blockers = blockers | 256 }
+    if ORACLE_INPUT[19] != 1 { blockers = blockers | 512 }
+    if ORACLE_INPUT[20] != 0 { blockers = blockers | 1024 }
+    if ORACLE_INPUT[21] != 0 { blockers = blockers | 2048 }
+    if ORACLE_INPUT[22] != 0 { blockers = blockers | 4096 }
+    if ORACLE_INPUT[23] != 0 { blockers = blockers | 8192 }
+    if ORACLE_INPUT[25] != 0 { blockers = blockers | 16384 }
+
+    if ORACLE_INPUT[6] < 0 || ORACLE_INPUT[6] > 2 { blockers = blockers | 32768 }
+    if ORACLE_INPUT[7] <= 0 || ORACLE_INPUT[7] > 1000000000 { blockers = blockers | 32768 }
+    if ORACLE_INPUT[8] < 0 || ORACLE_INPUT[8] > 500000 { blockers = blockers | 32768 }
+    if ORACLE_INPUT[9] <= 0 || ORACLE_INPUT[9] > 24 { blockers = blockers | 32768 }
+    if ORACLE_INPUT[10] < 0 || ORACLE_INPUT[10] > 1000000000000 { blockers = blockers | 32768 }
+    if ORACLE_INPUT[11] <= 0 || ORACLE_INPUT[12] <= 0 { blockers = blockers | 32768 }
+
+    if ORACLE_INPUT[17] != 0 { warnings = warnings | 1 }
+    if ORACLE_INPUT[24] != 0 { warnings = warnings | 2 }
+
+    if blockers == 0 {
+        if ORACLE_INPUT[6] == 0 {
+            dose = ORACLE_INPUT[7]
+        } else {
+            let rate = MicrogramPerKilogram { value: ORACLE_INPUT[7] }
+            let weight = Gram { value: ORACLE_INPUT[8] }
+            dose = dose_for_weight(rate, weight).value
+            if ORACLE_INPUT[6] == 2 {
+                dose = dose / ORACLE_INPUT[9]
+            }
+        }
+        uncapped = dose
+        if ORACLE_INPUT[10] > 0 && dose > ORACLE_INPUT[10] {
+            dose = ORACLE_INPUT[10]
+            maximum_applied = 1
+        }
+        let dose_typed = Microgram { value: dose }
+        let concentration = MicrogramPerMilliliter { value: ORACLE_INPUT[11] }
+        volume = volume_for_dose(dose_typed, concentration).value
+        volume = ((volume + ORACLE_INPUT[12] - 1) / ORACLE_INPUT[12]) * ORACLE_INPUT[12]
+    }
+
+    var disposition: i64 = 2
+    if blockers != 0 {
+        disposition = 0
+    } else {
+        if warnings != 0 { disposition = 1 }
+    }
+
+    ORACLE_OUTPUT[0] = disposition
+    ORACLE_OUTPUT[1] = blockers
+    ORACLE_OUTPUT[2] = warnings
+    ORACLE_OUTPUT[3] = dose
+    ORACLE_OUTPUT[4] = volume
+    ORACLE_OUTPUT[5] = uncapped
+    ORACLE_OUTPUT[6] = maximum_applied
+    ORACLE_OUTPUT[7] = ORACLE_INPUT[2] + ORACLE_INPUT[3]
+}
+
+// The build adds load_vector_N(), print_result() and main().

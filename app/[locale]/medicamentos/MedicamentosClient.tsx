@@ -8,13 +8,14 @@ import { useAppStore } from '@/lib/store/appStore';
 import { PageContainer } from '@/app/components/Layout/Containers';
 import { fadeInUp } from '@/lib/design-system/animations/presets';
 import {
-  Search, Pill, Shield, ChevronRight, Activity, Baby, AlertTriangle, Globe, Loader2
+  Search, Pill, Shield, Globe, LockKeyhole
 } from 'lucide-react';
 import { medicamentosConsolidados as localMedicamentos } from '@/lib/data/medicamentos/index';
-import { CLASSES_TERAPEUTICAS, CLASSIFICACAO_GESTACAO, isAvailableInPublicSystem, getMedicamentosByClasse } from '@/lib/types/medicamento';
+import { CLASSES_TERAPEUTICAS, isAvailableInPublicSystem, getMedicamentosByClasse } from '@/lib/types/medicamento';
 import { useMedicamentos } from '@/lib/hooks/use-medicamentos';
 import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
 import { cn } from '@/lib/utils';
+import { getMedicationEvidenceSummary } from '@/lib/medication-safety';
 
 export default function MedicamentosClient() {
   const t = useTranslations('medicamentos');
@@ -25,7 +26,7 @@ export default function MedicamentosClient() {
   const [selectedClasse, setSelectedClasse] = useState<string | 'todas'>('todas');
   const [showRENAME, setShowRENAME] = useState(false);
 
-  // Fetch from Supabase when configured, falls back to local data
+  // The service returns the local 717-item union plus optional Supabase editorial rows.
   const { data: supabaseMedicamentos, loading } = useMedicamentos();
   const medicamentos = supabaseMedicamentos.length > 0 ? supabaseMedicamentos : localMedicamentos;
 
@@ -68,6 +69,10 @@ export default function MedicamentosClient() {
           <p className="max-w-2xl font-body text-base leading-relaxed text-carbon-500 sm:text-lg">
             {t('description')}
           </p>
+          <div className="mt-4 flex max-w-3xl items-start gap-2 border-l-2 border-amber-400 bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-950 dark:bg-amber-950/20 dark:text-amber-100">
+            <LockKeyhole className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+            <p>Catálogo completo e pesquisável. Cálculos de dose permanecem bloqueados até a regra específica ter fonte vigente, integridade e revisão independente por médico e farmacêutico.</p>
+          </div>
         </div>
 
         {/* Toolbar */}
@@ -133,7 +138,7 @@ export default function MedicamentosClient() {
             <div className="col-span-1">{t('table.category')}</div>
             <div className="col-span-4">{t('table.genericName')}</div>
             <div className="col-span-3">{t('table.indications')}</div>
-            <div className="col-span-2">{t('table.pregnancy')}</div>
+            <div className="col-span-2">Estado Darwin Rx</div>
             <div className="col-span-2 text-right">{t('table.atcCode')}</div>
           </div>
 
@@ -143,7 +148,7 @@ export default function MedicamentosClient() {
             <div className="divide-y divide-carbon-100 dark:divide-carbon-800">
               {medicamentosFiltrados.map((med) => {
                 const classeInfo = CLASSES_TERAPEUTICAS[med.classeTerapeutica];
-                const gestacaoInfo = CLASSIFICACAO_GESTACAO[med.gestacao];
+                const evidence = getMedicationEvidenceSummary(med);
                 return (
                   <Link
                     key={med.id}
@@ -171,8 +176,13 @@ export default function MedicamentosClient() {
                         {med.nomesComerciais?.slice(0, 3).join(' • ') || t('notAvailable')}
                       </p>
                       <div className="mt-2 flex flex-wrap items-center gap-2 md:hidden">
-                        <span className={cn("rounded px-2 py-0.5 text-[10px] font-bold text-white", gestacaoInfo.color.replace('bg-', 'bg-'))}>
-                          {t('table.pregnancyCategory', { category: med.gestacao })}
+                        <span className={cn(
+                          "rounded border px-2 py-0.5 text-[10px] font-bold",
+                          evidence.knowledgeStatus === 'data-incomplete'
+                            ? 'border-amber-300 bg-amber-50 text-amber-800 dark:bg-amber-950/30 dark:text-amber-200'
+                            : 'border-cyan-300 bg-cyan-50 text-cyan-800 dark:bg-cyan-950/30 dark:text-cyan-200',
+                        )}>
+                          {evidence.statusLabel}
                         </span>
                         <span className="font-mono text-[10px] font-bold text-carbon-500">
                           {med.atcCode}
@@ -185,8 +195,13 @@ export default function MedicamentosClient() {
                       </p>
                     </div>
                     <div className="hidden md:col-span-2 md:block">
-                      <span className={cn("text-[10px] font-bold px-2 py-0.5 rounded text-white", gestacaoInfo.color.replace('bg-', 'bg-'))}>
-                        {t('table.pregnancyCategory', { category: med.gestacao })}
+                      <span className={cn(
+                        "rounded border px-2 py-0.5 text-[10px] font-bold",
+                        evidence.knowledgeStatus === 'data-incomplete'
+                          ? 'border-amber-300 bg-amber-50 text-amber-800 dark:bg-amber-950/30 dark:text-amber-200'
+                          : 'border-cyan-300 bg-cyan-50 text-cyan-800 dark:bg-cyan-950/30 dark:text-cyan-200',
+                      )}>
+                        {evidence.statusLabel}
                       </span>
                     </div>
                     <div className="hidden text-right md:col-span-2 md:block">
@@ -205,7 +220,7 @@ export default function MedicamentosClient() {
         <div className="mt-8 flex flex-col gap-3 text-[10px] font-bold uppercase tracking-widest text-carbon-400 sm:flex-row sm:items-center sm:justify-between">
            <div className="flex flex-wrap gap-4">
              <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-guanine-green" /> {t('footer.liveRepository')}</span>
-             <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-adenine-teal" /> {t('footer.evidenceVerified')}</span>
+             <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-adenine-teal" /> Fontes em reconciliação</span>
            </div>
            <span>{t('footer.pharmacyLedger')}</span>
         </div>

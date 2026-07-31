@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "darwin.sounio.compiler-source-receipt.v1",
+  "receiptId": "sounio-8d203709e1c1-4511a6ed2055",
+  "generatedAt": "2026-07-30T00:52:05.204Z",
+  "repository": {
+    "url": "https://github.com/Sounio-lang/sounio.git",
+    "sourceBranch": "integration/sounio-dev-ready-base",
+    "commit": "8d203709e1c171d5fb017909f87000eea54a238e",
+    "tree": "7a130685743fdafc6751bb083866e943cc4d7fbb",
+    "clean": true,
+    "remoteBranchCommit": "8d203709e1c171d5fb017909f87000eea54a238e",
+    "remoteMainCommit": "f65ada4c73ac57d802e5eaf329cc46483a524da6",
+    "divergenceFromMain": {
+      "mainOnly": 1484,
+      "branchOnly": 2741
+    }
+  },
+  "source": {
+    "compiler": {
+      "path": "self-hosted/compiler/lean_single.sio",
+      "sha256": "127c76fc96ee0003e29624894b9d35cdd0b215de6b04221990908d13c37e898c"
+    },
+    "buildScript": {
+      "path": "scripts/ci/build_native_souc.sh",
+      "sha256": "9e844eed46ca3bce3b7bed616544630d1150fc669628072ec1fc88ad7e1e6efe"
+    },
+    "reproducibilityGate": {
+      "path": "scripts/selfhost/selfhost_cycle_repro_gate.sh",
+      "sha256": "364c1717ee448b106cae6c7969e7120143e3d154a7406ca3a6999b60aefacc11"
+    },
+    "releaseGate": {
+      "path": "scripts/selfhost/selfhost_cycle_release_gate.sh",
+      "sha256": "8014d0fcb143c45f0908d1826261e1e577b80acab5eac37ecda476f764bf995a"
+    },
+    "noRustMarkerGate": {
+      "path": "scripts/ci/assert_no_rust_markers.sh",
+      "sha256": "77d0a6bebd8668cdadffbfaca6dd9e5e75066c69affe3490d6a8e1ba72b6c556"
+    },
+    "seed": {
+      "path": "bin/souc-linux-x86_64",
+      "sha256": "4511a6ed2055524df877de0a8fd140993904e44cf65ebe43c70d827b3edc2dfc"
+    }
+  },
+  "artifacts": {
+    "compiler": {
+      "identity": "souc-source-fresh-linux-x86_64",
+      "sha256": "4511a6ed2055524df877de0a8fd140993904e44cf65ebe43c70d827b3edc2dfc",
+      "bytes": 2015481
+    },
+    "fixedPointStage2": {
+      "sha256": "4511a6ed2055524df877de0a8fd140993904e44cf65ebe43c70d827b3edc2dfc",
+      "bytes": 2015481
+    },
+    "fixedPointStage3": {
+      "sha256": "4511a6ed2055524df877de0a8fd140993904e44cf65ebe43c70d827b3edc2dfc",
+      "bytes": 2015481
+    },
+    "gateCompiler": {
+      "path": "artifacts/omega/souc-bin/souc-linux-x86_64-gpu",
+      "sha256": "09cfe0d1175d1e559b258329f0fbe57999ab6b7f56b59ada441db17f1618dadc"
+    }
+  },
+  "commands": [
+    {
+      "id": "source-bootstrap",
+      "environment": {
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "SOUNIO_FORCE_SOURCE_BOOTSTRAP": "1"
+      },
+      "argv": [
+        "bash",
+        "scripts/ci/build_native_souc.sh",
+        "<build>/souc-source-fresh"
+      ],
+      "exitCode": 0,
+      "outputSha256": "8dab918b7e5d54e5b0205ae81b8ebf836341e1e7d7923ff8ecd99adaff564abf"
+    },
+    {
+      "id": "fixed-point-stage2",
+      "argv": [
+        "<build>/souc-source-fresh",
+        "self-hosted/compiler/lean_single.sio",
+        "<build>/souc-fixedpoint-stage2"
+      ],
+      "exitCode": 0,
+      "outputSha256": "4511a6ed2055524df877de0a8fd140993904e44cf65ebe43c70d827b3edc2dfc"
+    },
+    {
+      "id": "fixed-point-stage3",
+      "argv": [
+        "<build>/souc-fixedpoint-stage2",
+        "self-hosted/compiler/lean_single.sio",
+        "<build>/souc-fixedpoint-stage3"
+      ],
+      "exitCode": 0,
+      "outputSha256": "4511a6ed2055524df877de0a8fd140993904e44cf65ebe43c70d827b3edc2dfc"
+    },
+    {
+      "id": "selfhost-reproducibility",
+      "argv": [
+        "bash",
+        "scripts/selfhost/selfhost_cycle_repro_gate.sh"
+      ],
+      "exitCode": 0,
+      "outputSha256": "f3879a84f99f97cbc57eb22139c82b25bb6659f2a9c3004f48307378545736b0"
+    },
+    {
+      "id": "selfhost-release",
+      "argv": [
+        "bash",
+        "scripts/selfhost/selfhost_cycle_release_gate.sh"
+      ],
+      "exitCode": 0,
+      "outputSha256": "b236e9d5479e23e18144f6500cc3df01bb6458bd0b8e4b5336e730e24f6b2903"
+    }
+  ],
+  "canonicalGateAdapter": {
+    "applied": true,
+    "reason": "The pinned gate references scripts/assert_no_rust_markers.sh; the tracked verifier is scripts/ci/assert_no_rust_markers.sh.",
+    "markerVerificationExecutedSeparately": true
+  },
+  "hashes": {
+    "sourceManifestSha256": "a0aa74acdb9fba08243d9d77a63d82a85ddfac6c0142645dfc33b00c2e14e068",
+    "compilerSourceSha256": "127c76fc96ee0003e29624894b9d35cdd0b215de6b04221990908d13c37e898c",
+    "seedSha256": "4511a6ed2055524df877de0a8fd140993904e44cf65ebe43c70d827b3edc2dfc",
+    "compilerSha256": "4511a6ed2055524df877de0a8fd140993904e44cf65ebe43c70d827b3edc2dfc",
+    "gateCompilerSha256": "09cfe0d1175d1e559b258329f0fbe57999ab6b7f56b59ada441db17f1618dadc",
+    "reproducibilityGateLogSha256": "f3879a84f99f97cbc57eb22139c82b25bb6659f2a9c3004f48307378545736b0",
+    "releaseGateLogSha256": "b236e9d5479e23e18144f6500cc3df01bb6458bd0b8e4b5336e730e24f6b2903"
+  },
+  "gates": {
+    "sourceRepositoryClean": true,
+    "sourceBranchPinned": true,
+    "sourceCommitMatchesRemote": true,
+    "seedTrackedAtPinnedCommit": true,
+    "sourceBootstrapForced": true,
+    "fixedPointBitwise": true,
+    "selfHostReproducibility": true,
+    "selfHostRelease": true,
+    "noRustMarkers": true
+  },
+  "compilerReconciled": true,
+  "signature": null,
+  "refusalReasons": []
+}

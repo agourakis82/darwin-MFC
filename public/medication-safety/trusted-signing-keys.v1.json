@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "darwin.medication-signing-key-registry.v1",
+  "generatedAt": "2026-07-31T00:00:00.000Z",
+  "keys": [],
+  "policy": {
+    "algorithm": "Ed25519",
+    "minimumActiveKeys": 1,
+    "emptyRegistryDisposition": "REFUSE",
+    "note": "No production signing authority has been approved. Adding a key requires an audited registry update and a rebuilt receipt."
+  }
+}

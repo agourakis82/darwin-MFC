@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "darwin.medication-source-registry.v1",
+  "registryVersion": "2026-07-31.1",
+  "bundleGeneratedAt": "2026-07-31T18:00:00.000Z",
+  "sources": [
+    {
+      "id": "ms-rename-live-2026-07-31",
+      "title": "Relacao Nacional de Medicamentos Essenciais",
+      "authority": "Ministerio da Saude",
+      "jurisdiction": "BR",
+      "role": "formulary",
+      "url": "https://www.gov.br/saude/pt-br/composicao/sectics/rename",
+      "retrievedAt": "2026-07-31T17:30:00.000Z",
+      "mediaType": "text/html",
+      "bytes": 124174,
+      "sha256": "afcaee7e0dde132821e22acb434641c0ee3fbc6c57cb63fee4db6985c17da9d1"
+    },
+    {
+      "id": "anvisa-bulario-2026-07-31",
+      "title": "Bulario Eletronico",
+      "authority": "Agencia Nacional de Vigilancia Sanitaria",
+      "jurisdiction": "BR",
+      "role": "regulatory-label",
+      "url": "https://www.gov.br/anvisa/pt-br/sistemas/bulario-eletronico",
+      "retrievedAt": "2026-07-31T17:30:00.000Z",
+      "mediaType": "text/html",
+      "bytes": 231277,
+      "sha256": "a0a124d1a21dff34a83b949e538b4df30fe0cdb23fc62e260e32b35a86ed548b"
+    },
+    {
+      "id": "who-aware-book-2022",
+      "title": "WHO AWaRe antibiotic book",
+      "authority": "World Health Organization",
+      "jurisdiction": "WHO",
+      "role": "clinical-guideline",
+      "url": "https://qualityhealthservices.who.int/quality-toolkit/qt-catalog-item/the-who-aware-%28-access-watch-reserve%29-antibiotic-book",
+      "retrievedAt": "2026-07-31T17:30:00.000Z",
+      "mediaType": "text/html",
+      "bytes": 26969,
+      "sha256": "f6a6a14300c609b74cdc7d902f6b5ca8d66e7ac8c077db52914b21511db90e4f"
+    },
+    {
+      "id": "hl7-fhir-r4-medication-request",
+      "title": "FHIR R4 MedicationRequest",
+      "authority": "Health Level Seven International",
+      "jurisdiction": "HL7",
+      "role": "interoperability",
+      "url": "https://hl7.org/fhir/R4/medicationrequest-definitions.html",
+      "retrievedAt": "2026-07-31T17:30:00.000Z",
+      "mediaType": "text/html",
+      "bytes": 50857,
+      "sha256": "ede6c712682997af825abde08dfba8dd1e7b0dd7504a815d741ed7910fdbb4df"
+    },
+    {
+      "id": "fda-pllr",
+      "title": "Pregnancy and Lactation Labeling Rule",
+      "authority": "US Food and Drug Administration",
+      "jurisdiction": "US",
+      "role": "regulatory-label",
+      "url": "https://www.fda.gov/drugs/labeling/questions-and-answers-pregnancy-and-lactation-labeling-rule",
+      "retrievedAt": "2026-07-31T17:30:00.000Z",
+      "mediaType": "text/html",
+      "bytes": 34140,
+      "sha256": "f430af165449e33068f93730a99bb6615e81ee202878aec87f25b117c44e06b6"
+    },
+    {
+      "id": "who-medication-without-harm-2024",
+      "title": "Medication Without Harm policy brief",
+      "authority": "World Health Organization",
+      "jurisdiction": "WHO",
+      "role": "safety-policy",
+      "url": "https://www.who.int/publications/i/item/9789240062764",
+      "retrievedAt": "2026-07-31T17:30:00.000Z",
+      "mediaType": "text/html",
+      "bytes": 90559,
+      "sha256": "440a0a18c386f62d5306b798bea3fb0433a565a9560d937c9820a761525c9290"
+    }
+  ]
+}

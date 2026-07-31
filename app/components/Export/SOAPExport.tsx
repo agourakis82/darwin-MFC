@@ -17,6 +17,7 @@ import DifferentialDiagnosisAssistant from '@/app/components/Diagnosis/Different
 import TreatmentSuggestionPanel from '@/app/components/Diagnosis/TreatmentSuggestionPanel';
 import { extractSymptomsFromSOAP } from '@/lib/utils/symptom-extraction';
 import type { PatientAgeUnit } from '@/lib/utils/differential-diagnosis';
+import { normalizeLegacyPrescription, type LegacyPrescriptionV1, type SOAPPrescriptionV2 } from '@/lib/medication-safety';
 
 interface FamilyToolsData {
   genogramaResumo?: string;
@@ -60,11 +61,7 @@ export interface SOAPData {
   };
   plano?: {
     orientacoes?: string[];
-    prescricoes?: Array<{
-      medicamento: string;
-      posologia: string;
-      duracao?: string;
-    }>;
+    prescricoes?: SOAPPrescriptionV2[];
     examesSolicitados?: string[];
     encaminhamentos?: string[];
     retorno?: string;
@@ -103,7 +100,7 @@ export default function SOAPExport({
   doencaId,
   onDataChange,
 }: SOAPExportProps) {
-  const [data, setData] = useState<SOAPData>({
+  const [data, setData] = useState<SOAPData>(() => ({
     paciente: { iniciais: '', idade: '', idadeUnidade: 'anos', sexo: '' },
     data: '',
     subjetivo: '',
@@ -118,15 +115,16 @@ export default function SOAPExport({
       cid10: [],
       risco: '',
     },
+    ...initialData,
     plano: {
       orientacoes: [],
-      prescricoes: [],
       examesSolicitados: [],
       encaminhamentos: [],
       retorno: '',
+      ...initialData.plano,
+      prescricoes: (initialData.plano?.prescricoes || []).map(normalizeLegacyPrescription),
     },
-    ...initialData,
-  });
+  }));
 
   const [copied, setCopied] = useState(false);
   const [generatedAt, setGeneratedAt] = useState('');
@@ -260,7 +258,10 @@ export default function SOAPExport({
     if (data.plano?.prescricoes && data.plano.prescricoes.length > 0) {
       text += '▸ Prescrição:\n';
       data.plano.prescricoes.forEach((p, i) => {
-        text += `   ${i + 1}. ${p.medicamento}\n`;
+        const verificationLabel = p.verificationStatus === 'professionally-confirmed'
+          ? 'confirmada pelo profissional'
+          : 'não verificada pelo Darwin Rx';
+        text += `   ${i + 1}. ${p.medicamento} [${verificationLabel}]\n`;
         text += `      ${p.posologia}`;
         if (p.duracao) text += ` por ${p.duracao}`;
         text += '\n';
@@ -369,20 +370,6 @@ export default function SOAPExport({
     </button>
   );
 
-  const findMedicationIdByName = (name: string): string | null => {
-    const normalized = name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    for (const med of todosMedicamentos) {
-      if (med.nomeGenerico.toLowerCase().includes(normalized) || 
-          med.nomeGenerico.toLowerCase() === normalized) {
-        return med.id;
-      }
-      if (med.nomesComerciais?.some(nc => nc.toLowerCase().includes(normalized))) {
-        return med.id;
-      }
-    }
-    return null;
-  };
-
   const handleDiagnosisSelect = (selectedDoencaId: string) => {
     const doenca = todasDoencas.find(d => d.id === selectedDoencaId);
     if (!doenca?.titulo) return;
@@ -397,20 +384,6 @@ export default function SOAPExport({
         ciap2: [...new Set([...(data.avaliacao?.ciap2 || []), ...(doenca.ciap2 || [])])],
       }
     });
-  };
-
-  const handleAddTreatment = (prescription: { medicamento: string; posologia: string; duracao?: string }) => {
-    const prescriptions = data.plano?.prescricoes || [];
-    const normalizedName = prescription.medicamento.toLowerCase();
-    if (prescriptions.some(item => item.medicamento.toLowerCase() === normalizedName)) return;
-
-    updateData({
-      plano: {
-        ...data.plano,
-        prescricoes: [...prescriptions, prescription],
-      }
-    });
-    setExpandedSections(previous => ({ ...previous, plano: true }));
   };
 
   const handlePatientContextChange = (updates: { age?: string; ageUnit?: PatientAgeUnit; weightKg?: string }) => {
@@ -437,30 +410,9 @@ export default function SOAPExport({
     if (rec.type === 'diagnosis' && rec.metadata?.doencaId) {
       handleDiagnosisSelect(rec.metadata.doencaId);
     } else if (rec.type === 'medication' && rec.metadata?.medicamentoId) {
-      const medicamentoId = rec.metadata.medicamentoId;
-      const medicamento = todosMedicamentos.find(m => m.id === medicamentoId);
+      const medicamento = todosMedicamentos.find(m => m.id === rec.metadata?.medicamentoId);
       if (medicamento) {
-        const prescricoes = data.plano?.prescricoes || [];
-        const alreadyPrescribed = prescricoes.some(p => {
-          const medId = findMedicationIdByName(p.medicamento);
-          return medId !== null && medId === medicamento.id;
-        });
-        if (!alreadyPrescribed) {
-          const firstPosologia = medicamento.posologias && medicamento.posologias.length > 0 ? medicamento.posologias[0] : null;
-          const doseAdultos = firstPosologia?.adultos?.dose || 'Conforme prescrição médica';
-          const frequenciaAdultos = firstPosologia?.adultos?.frequencia || '';
-          const posologiaCompleta = frequenciaAdultos ? `${doseAdultos} ${frequenciaAdultos}` : doseAdultos;
-          updateData({
-            plano: {
-              ...data.plano,
-              prescricoes: [...prescricoes, {
-                medicamento: medicamento.nomeGenerico,
-                posologia: posologiaCompleta,
-                duracao: '',
-              }]
-            }
-          });
-        }
+        window.open(`/pt/medicamentos/${medicamento.id}`, '_blank', 'noopener,noreferrer');
       }
     } else if (rec.type === 'followup' && rec.metadata?.doencaId) {
       const doenca = todasDoencas.find(d => d.id === rec.metadata?.doencaId);
@@ -513,7 +465,6 @@ export default function SOAPExport({
             patientAge={data.paciente?.idade || ''}
             patientAgeUnit={data.paciente?.idadeUnidade || 'anos'}
             patientWeightKg={data.objetivo?.sinaisVitais?.peso || ''}
-            onAddMedication={handleAddTreatment}
           />
         )}
       </section>
@@ -844,7 +795,10 @@ export default function SOAPExport({
                         updateData({
                           plano: {
                             ...data.plano,
-                            prescricoes: [...(data.plano?.prescricoes || []), newMedicamento]
+                            prescricoes: [
+                              ...(data.plano?.prescricoes || []),
+                              normalizeLegacyPrescription(newMedicamento as LegacyPrescriptionV1),
+                            ]
                           }
                         });
                         setNewMedicamento({ medicamento: '', posologia: '', duracao: '' });
@@ -857,7 +811,12 @@ export default function SOAPExport({
                 </div>
                 {data.plano?.prescricoes?.map((p, i) => (
                   <div key={i} className="flex items-center justify-between px-2 py-1 bg-green-50 dark:bg-green-900/30 rounded mb-1">
-                    <span className="text-sm text-green-700 dark:text-green-300">{p.medicamento} - {p.posologia}</span>
+                    <span className="text-sm text-green-700 dark:text-green-300">
+                      {p.medicamento} - {p.posologia}
+                      <span className="ml-2 text-xs font-medium text-amber-700 dark:text-amber-300">
+                        {p.verificationStatus === 'professionally-confirmed' ? 'Confirmada' : 'Não verificada pelo Darwin Rx'}
+                      </span>
+                    </span>
                     <button onClick={() => updateData({
                       plano: { ...data.plano, prescricoes: data.plano?.prescricoes?.filter((_, idx) => idx !== i) }
                     })} className="text-green-500 hover:text-green-700">×</button>

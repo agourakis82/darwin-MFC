@@ -1,10 +1,11 @@
 'use client';
 
-import { AlertTriangle, Check, ExternalLink, Pill, Plus, ShieldCheck } from 'lucide-react';
+import { AlertTriangle, ExternalLink, LockKeyhole, Pill } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { getMedicamentosForDoenca, type MedicamentoReference } from '@/lib/data/cross-references';
 import { todasDoencas } from '@/lib/data/doencas/index';
 import { medicamentosConsolidados } from '@/lib/data/medicamentos/index';
+import { getMedicationEvidenceSummary } from '@/lib/medication-safety';
 import { patientAgeInYears, type PatientAgeUnit } from '@/lib/utils/differential-diagnosis';
 
 interface Prescription {
@@ -19,7 +20,6 @@ interface TreatmentSuggestionPanelProps {
   patientAge?: string;
   patientAgeUnit?: PatientAgeUnit;
   patientWeightKg?: string;
-  onAddMedication: (prescription: Prescription) => void;
 }
 
 const usageLabels: Record<MedicamentoReference['tipoUso'], string> = {
@@ -37,38 +37,12 @@ function normalize(value: string) {
     .trim();
 }
 
-function calculateWeightReference(dosage: string, weightKg?: number): string | null {
-  if (!weightKg || weightKg <= 0) return null;
-  const normalizedDosage = dosage.replace(',', '.');
-  const range = normalizedDosage.match(/(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)\s*mg\/kg\/dia/i);
-  if (range) {
-    const minimum = Number(range[1]) * weightKg;
-    const maximum = Number(range[2]) * weightKg;
-    return `Para ${weightKg} kg: ${minimum.toFixed(0)}-${maximum.toFixed(0)} mg/dia`;
-  }
-
-  const single = normalizedDosage.match(/(\d+(?:\.\d+)?)\s*mg\/kg\/dia/i);
-  if (single) {
-    const total = Number(single[1]) * weightKg;
-    return `Para ${weightKg} kg: ${total.toFixed(0)} mg/dia`;
-  }
-
-  const perDose = normalizedDosage.match(/(\d+(?:\.\d+)?)\s*mg\/kg(?:\/dose)?/i);
-  if (perDose) {
-    const total = Number(perDose[1]) * weightKg;
-    return `Para ${weightKg} kg: ${total.toFixed(0)} mg por dose`;
-  }
-
-  return null;
-}
-
 export default function TreatmentSuggestionPanel({
   doencaId,
   prescriptions,
   patientAge = '',
   patientAgeUnit = 'anos',
   patientWeightKg = '',
-  onAddMedication,
 }: TreatmentSuggestionPanelProps) {
   const doenca = todasDoencas.find(item => item.id === doencaId);
   if (!doenca) return null;
@@ -99,8 +73,8 @@ export default function TreatmentSuggestionPanel({
   const pediatric = ageKnown && ageYears < 18;
   const pharmacologicalGuidance = doenca.quickView?.tratamentoPrimeiraLinha?.farmacologico || [];
   const contextLabel = ageKnown
-    ? `${pediatric ? 'Posologia pediátrica' : 'Posologia adulta'} · ${patientAge} ${patientAgeUnit}${numericWeight ? ` · ${numericWeight} kg` : ''}`
-    : 'Informe idade para liberar a prescrição';
+    ? `${pediatric ? 'Contexto pediátrico' : 'Contexto adulto'} · ${patientAge} ${patientAgeUnit}${numericWeight ? ` · ${numericWeight} kg` : ''}`
+    : 'Idade ainda não informada';
 
   return (
     <section className="overflow-hidden rounded-md border border-emerald-300/25 bg-[#071319]" aria-labelledby="treatment-suggestions-title">
@@ -117,7 +91,7 @@ export default function TreatmentSuggestionPanel({
           </div>
         </div>
         <div className="flex items-center gap-1.5 text-xs text-zinc-400">
-          <ShieldCheck className="h-3.5 w-3.5 text-cyan-300" aria-hidden="true" />
+          <LockKeyhole className="h-3.5 w-3.5 text-cyan-300" aria-hidden="true" />
           {contextLabel}
         </div>
       </div>
@@ -129,6 +103,7 @@ export default function TreatmentSuggestionPanel({
           );
           const adultDose = medication?.posologias?.[0]?.adultos;
           const pediatricPosology = medication?.posologias?.find(item => item.pediatrico)?.pediatrico;
+          const evidence = medication ? getMedicationEvidenceSummary(medication) : null;
           const contextualDose = pharmacologicalGuidance.find(instruction =>
             normalize(instruction).includes(normalize(reference.nomeGenerico))
           );
@@ -139,26 +114,15 @@ export default function TreatmentSuggestionPanel({
             ? `${pediatricPosology.dose}${pediatricPosology.frequencia ? ` · ${pediatricPosology.frequencia}` : ''}`
             : null);
           const baseDosage = pediatric ? pediatricDosage : adultDosage;
-          const weightBased = pediatric && Boolean(baseDosage && /\/kg/i.test(baseDosage));
-          const calculatedWeightReference = baseDosage ? calculateWeightReference(baseDosage, numericWeight) : null;
           const dosage = baseDosage
-            ? `${baseDosage}${calculatedWeightReference ? ` · ${calculatedWeightReference}` : ''}`
+            ? baseDosage
             : pediatric
-              ? 'Sem posologia pediátrica estruturada; consultar protocolo ou bula'
-              : 'Consultar bula e individualizar posologia';
+              ? 'Sem texto pediátrico disponível; consultar protocolo e bula vigente'
+              : 'Consultar protocolo e bula vigente';
           const alreadyAdded = prescriptions.some(item =>
             normalize(item.medicamento) === normalize(reference.nomeGenerico)
           );
-          const canAdd = ageKnown && Boolean(baseDosage) && (!weightBased || Boolean(numericWeight)) && !alreadyAdded;
-          const actionLabel = alreadyAdded
-            ? 'No plano'
-            : !ageKnown
-              ? 'Informe idade'
-              : weightBased && !numericWeight
-                ? 'Informe peso'
-                : !baseDosage
-                  ? 'Dose indisponível'
-                  : 'Adicionar ao plano';
+          const statusLabel = evidence?.statusLabel || 'Dados incompletos';
 
           return (
             <div key={reference.medicamentoId} className="grid gap-3 px-4 py-3 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
@@ -173,12 +137,14 @@ export default function TreatmentSuggestionPanel({
                       SUS / RENAME
                     </span>
                   )}
+                  <span className="rounded border border-amber-300/20 bg-amber-300/[0.07] px-1.5 py-0.5 text-[10px] font-semibold uppercase text-amber-200">
+                    {statusLabel}
+                  </span>
                 </div>
-                <p className="mt-1 text-sm text-zinc-300"><span className="text-zinc-500">{pediatric ? 'Dose pediátrica:' : 'Dose de referência:'}</span> {dosage}</p>
-                {weightBased && !numericWeight && (
-                  <p className="mt-1 text-xs font-medium text-amber-300">Informe o peso para calcular e liberar esta prescrição.</p>
-                )}
+                <p className="mt-1 text-sm text-zinc-300"><span className="text-zinc-500">Texto legado de referência:</span> {dosage}</p>
+                <p className="mt-1 text-xs font-medium text-amber-300">O Darwin Rx não interpreta, calcula nem libera esta dose.</p>
                 {reference.indicacaoEspecifica && <p className="mt-0.5 text-xs text-zinc-500">{reference.indicacaoEspecifica}</p>}
+                {alreadyAdded && <p className="mt-0.5 text-xs text-zinc-500">Há uma prescrição manual deste medicamento no plano.</p>}
               </div>
 
               <div className="flex items-center gap-2">
@@ -193,12 +159,12 @@ export default function TreatmentSuggestionPanel({
                 )}
                 <button
                   type="button"
-                  disabled={!canAdd}
-                  onClick={() => onAddMedication({ medicamento: reference.nomeGenerico, posologia: dosage, duracao: '' })}
-                  className="inline-flex h-9 items-center gap-1.5 rounded-md bg-emerald-400 px-3 text-xs font-semibold text-[#04110d] transition-colors hover:bg-emerald-300 disabled:cursor-default disabled:bg-white/10 disabled:text-zinc-500"
+                  disabled
+                  title="Disponível quando indicação, via, apresentação e regra tiverem dupla revisão"
+                  className="inline-flex h-9 items-center gap-1.5 rounded-md bg-white/10 px-3 text-xs font-semibold text-zinc-500 disabled:cursor-not-allowed"
                 >
-                  {alreadyAdded ? <Check className="h-3.5 w-3.5" aria-hidden="true" /> : <Plus className="h-3.5 w-3.5" aria-hidden="true" />}
-                  {actionLabel}
+                  <LockKeyhole className="h-3.5 w-3.5" aria-hidden="true" />
+                  Apenas referência
                 </button>
               </div>
             </div>
@@ -208,7 +174,7 @@ export default function TreatmentSuggestionPanel({
 
       <div className="flex gap-2 border-t border-amber-300/15 bg-amber-300/[0.04] px-4 py-3 text-xs leading-relaxed text-zinc-400">
         <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
-        <p>Confirme diagnóstico, indicação, alergias, interações, apresentação, dose máxima e ajustes renal/hepático. Cálculos por peso são referências e exigem conferência profissional antes da prescrição.</p>
+        <p>Nenhuma dose é calculada a partir destes textos. O cálculo estruturado só será habilitado após seleção de indicação, via e apresentação, integridade válida e revisão independente por médico e farmacêutico.</p>
       </div>
     </section>
   );

@@ -2,9 +2,10 @@
 
 import React, { useState, useMemo, useCallback } from 'react';
 import { Link } from '@/i18n/routing';
-import { AlertTriangle, X, Search, Plus, Shield, Info, ChevronDown, ChevronUp } from 'lucide-react';
-import { todosMedicamentos, searchMedicamentos, checkInteractions } from '@/lib/data/medicamentos/index';
+import { AlertTriangle, X, Search, Shield, Info, ChevronDown, ChevronUp } from 'lucide-react';
+import { medicamentosConsolidados as todosMedicamentos, searchMedicamentos } from '@/lib/data/medicamentos/index';
 import { Medicamento } from '@/lib/types/medicamento';
+import { analyzeMedicationIds, INTERACTION_KNOWLEDGE_STATUS } from '@/lib/utils/drug-interactions';
 
 interface InteractionResult {
   med1: string;
@@ -48,7 +49,13 @@ export default function InteractionChecker({
   // Verifica interações
   const interactions = useMemo(() => {
     if (selectedMedIds.length < 2) return [];
-    return checkInteractions(selectedMedIds);
+    return analyzeMedicationIds(selectedMedIds).map(alert => ({
+      med1: alert.interaction.medicamento1.nome,
+      med2: alert.interaction.medicamento2.nome,
+      gravidade: alert.interaction.gravidade,
+      efeito: alert.interaction.descricao,
+      conduta: alert.interaction.conduta,
+    }));
   }, [selectedMedIds]);
 
   // Contagem por gravidade
@@ -149,7 +156,7 @@ export default function InteractionChecker({
               Verificador de Interações
             </h3>
             <p className="text-xs text-slate-500 dark:text-slate-400">
-              Adicione medicamentos para verificar interações
+              Base parcial de referência com {INTERACTION_KNOWLEDGE_STATUS.ruleCount} pares
             </p>
           </div>
         </div>
@@ -233,16 +240,16 @@ export default function InteractionChecker({
       <div className="p-4">
         {interactions.length === 0 ? (
           selectedMedIds.length >= 2 ? (
-            <div className="flex items-center gap-3 p-4 bg-green-50 dark:bg-green-950 rounded-lg border border-green-200 dark:border-green-800">
-              <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
-                <span className="text-xl">✅</span>
+            <div className="flex items-center gap-3 rounded-md border border-amber-300 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-950/30">
+              <div className="flex h-10 w-10 items-center justify-center bg-amber-100 dark:bg-amber-900">
+                <AlertTriangle className="h-5 w-5 text-amber-700 dark:text-amber-200" />
               </div>
               <div>
-                <p className="font-medium text-green-800 dark:text-green-200">
-                  Nenhuma interação conhecida
+                <p className="font-medium text-amber-900 dark:text-amber-100">
+                  Nenhum par encontrado na base parcial
                 </p>
-                <p className="text-sm text-green-600 dark:text-green-400">
-                  Os medicamentos selecionados não apresentam interações registradas
+                <p className="text-sm text-amber-700 dark:text-amber-300">
+                  Ausência de resultado não funciona como liberação de segurança.
                 </p>
               </div>
             </div>
@@ -329,4 +336,3 @@ export default function InteractionChecker({
     </div>
   );
 }
-
