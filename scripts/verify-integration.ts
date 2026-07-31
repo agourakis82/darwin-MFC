@@ -554,6 +554,42 @@ const pediatricDiarrheaSafetyFixtures = spawnSync(
   { cwd: process.cwd(), encoding: 'utf8' },
 );
 
+const pediatricAbdominalSafetyFixtures = spawnSync(
+  'pnpm',
+  ['exec', 'tsx', resolve(process.cwd(), 'scripts/test-pediatric-abdominal-safety-fixtures.ts')],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+
+if (
+  pediatricAbdominalSafetyFixtures.status === 0
+  && pediatricAbdominalSafetyFixtures.stdout.includes('PEDIATRIC_ABDOMINAL_SAFETY_FIXTURES_VALID')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('darwin.sounio.pediatric-abdominal-safety-fixture-test.v1')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"fixturesPassed": 18')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"surgicalDangerSignsPassed": true')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"biliousAndObstructionRoutesPassed": true')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"intussusceptionPatternPassed": true')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"appendicitisPatternWithoutDiagnosisPassed": true')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"neurologicDkaAndPoisoningRoutesPassed": true')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"exactEighteenYearBoundaryPassed": true')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"unknownNeverCoercedToAbsent": true')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"frozenFeatureIsolationPassed": true')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"abdominalSignsAddedToKernel": false')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"appendicitisScoreCalculated": false')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"intussusceptionDiagnosed": false')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"imagingAutomaticallyOrdered": false')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"antiemeticAuthorized": false')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"antibioticAuthorized": false')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"prescriptionAuthorized": false')
+  && pediatricAbdominalSafetyFixtures.stdout.includes('"clinicalActivationAuthorized": false')
+) {
+  pass('Pediatric Abdominal Safety Fixtures', 'Sinais cirurgicos, bilioso, obstrucao, invaginacao, apendicite compativel e limites etarios passam sem diagnostico, score, imagem ou terapia automatica');
+} else {
+  fail('Pediatric Abdominal Safety Fixtures', 'Fixtures abdominais, limites etarios ou fronteira epistemica falharam', {
+    status: pediatricAbdominalSafetyFixtures.status,
+    output: pediatricAbdominalSafetyFixtures.stdout || pediatricAbdominalSafetyFixtures.stderr,
+  });
+}
+
 if (
   pediatricDiarrheaSafetyFixtures.status === 0
   && pediatricDiarrheaSafetyFixtures.stdout.includes('PEDIATRIC_DIARRHEA_SAFETY_FIXTURES_VALID')

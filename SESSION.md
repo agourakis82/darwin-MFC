@@ -169,11 +169,20 @@
 - `pnpm test:pediatric-diarrhea-safety-fixtures`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado fecha 34/34 sem avisos; o build materializa 13.683 paginas e 717 medicamentos.
 - Playwright validou menor de 2 meses com dois sinais e 7 dias de diarreia, a transicao no dia 60, alguma desidratacao, fluxo combinado sem perguntas duplicadas e saida aos 5 anos. Mobile de 390 px ficou sem overflow (`390/384`) e o console teve zero erros e zero avisos.
 - Depois de um `500` transitorio em `/pt/busca/` durante o dev anterior, o servidor foi reiniciado limpo e `/pt/busca/`, `/pt/medicamentos/`, `/pt/calculadoras/` e `/pt/prontuario/` responderam HTTP 200; a falha nao se reproduziu.
+- A triagem de dor abdominal e vomitos pediatricos cobre idade desconhecida ate menor de 18 anos, preservando a saida exata aos 18 anos e sem aplicar um escore diagnostico de apendicite.
+- Vomito verde/bilioso, hematemese, peritonismo, massa ou hernia encarcerada, escroto agudo, dor pelvica aguda, dor intensa subita/progressiva, obstrucao, sinais neurologicos, cetoacidose e intoxicacao permanecem rotas independentes de encaminhamento.
+- Padroes de invaginacao e apendicite sao apresentados como condicoes que exigem exclusao urgente ou no mesmo dia, nunca como diagnostico confirmado. Imagem, antiemetico, antibiotico, dose e prescricao continuam bloqueados.
+- A interface compartilha `vomita tudo` e sangue visivel nas fezes com diarreia; vomito bilioso, dor localizada e distensao/peritonismo ficam no painel abdominal. Febre e respiratorio reutilizam a resposta de vomitos sem repetir a pergunta.
+- Dezoito fixtures sinteticas cobrem bilioso, hematemese, peritonismo, massa/hernia, escroto/pelve, obstrucao, invaginacao, apendicite compativel, lactente com vomito em jato, neurologico, cetoacidose, intoxicacao, desconhecidos e o limite de 18 anos.
+- O teste prova que todos os sinais abdominais deixam o vetor Sounio congelado inalterado. O firewall continua `REFUSE / calibration-invalid`, sem probabilidade, score, imagem ou terapia automatica.
+- Playwright validou lactente de 6 meses com colica e palidez episodica, pre-escolar com padrao compativel com apendicite, vomito bilioso, fluxo combinado com diarreia sem perguntas duplicadas e saida aos 18 anos. Mobile de 390 px ficou sem overflow (`384/384`) e o console teve zero erros e zero avisos.
+- `pnpm test:pediatric-abdominal-safety-fixtures`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado fecha 35/35 sem avisos; o build materializa 13.683 paginas e 717 medicamentos.
+- O preview foi reiniciado limpo em `http://127.0.0.1:3011`; inicio, prontuario, medicamentos, doencas, calculadoras e busca responderam HTTP 200.
 
 ## Proximo passo
 
 - Manter o e-SUS Notifica em monitoramento de disponibilidade; somente abrir auditoria de cabecalho se o endpoint publico retornar HTTP 200/206, sem credenciais ou contorno de controle de acesso.
-- Levar o mesmo contrato estruturado para dor abdominal e vomitos pediatricos, separando sinais cirurgicos, invaginacao, apendicite e vomito bilioso sem transformar a triagem em diagnostico ou prescricao automatica.
+- Submeter o novo contrato abdominal a revisao clinica independente e transformar os cenarios de deduplicacao e persistencia de respostas em E2E permanente antes de ampliar a triagem para outro sintoma pediatrico.
 - A primeira fase publica de cinco analises esta concluida; qualquer nova fonte deve preencher uma lacuna explicita, revalidar hashes e permanecer fora da promocao clinica.
 - Continuar buscando uma fonte publica ou parceria futura com coorte de APS desidentificada, adjudicada e aprovada; probabilidades e EIG permanecem bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.

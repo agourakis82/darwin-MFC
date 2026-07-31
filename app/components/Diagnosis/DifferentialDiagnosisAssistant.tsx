@@ -32,6 +32,11 @@ import {
   type ClinicalAnswer,
 } from '@/lib/clinical-safety/pertussis';
 import {
+  EMPTY_PEDIATRIC_ABDOMINAL_SAFETY_INPUT,
+  evaluatePediatricAbdominalSafety,
+  isPediatricAbdominalSafetyRelevant,
+} from '@/lib/clinical-safety/pediatric-abdominal';
+import {
   EMPTY_PEDIATRIC_DIARRHEA_SAFETY_INPUT,
   evaluatePediatricDiarrheaSafety,
   isPediatricDiarrheaSafetyRelevant,
@@ -50,6 +55,9 @@ import {
 import PertussisSafetyInterview, {
   type PertussisSafetyAnswers,
 } from './PertussisSafetyInterview';
+import PediatricAbdominalSafetyInterview, {
+  type PediatricAbdominalSafetyAnswers,
+} from './PediatricAbdominalSafetyInterview';
 import PediatricDiarrheaSafetyInterview, {
   type PediatricDiarrheaSafetyAnswers,
 } from './PediatricDiarrheaSafetyInterview';
@@ -113,6 +121,9 @@ export default function DifferentialDiagnosisAssistant({
   const [pediatricDiarrheaAnswers, setPediatricDiarrheaAnswers] = useState<PediatricDiarrheaSafetyAnswers>({
     ...EMPTY_PEDIATRIC_DIARRHEA_SAFETY_INPUT,
   });
+  const [pediatricAbdominalAnswers, setPediatricAbdominalAnswers] = useState<PediatricAbdominalSafetyAnswers>({
+    ...EMPTY_PEDIATRIC_ABDOMINAL_SAFETY_INPUT,
+  });
   const [youngInfantFeverAnswers, setYoungInfantFeverAnswers] = useState<YoungInfantFeverSafetyAnswers>({
     ...EMPTY_YOUNG_INFANT_FEVER_SAFETY_INPUT,
   });
@@ -124,10 +135,54 @@ export default function DifferentialDiagnosisAssistant({
   const ageDays = patientAgeInDays(patientAgeContext);
   const reportedSymptoms = [primarySymptom, ...secondarySymptoms];
   const diarrheaRelevant = isPediatricDiarrheaSafetyRelevant(reportedSymptoms, ageDays);
+  const abdominalRelevant = isPediatricAbdominalSafetyRelevant(reportedSymptoms, ageDays);
+  const youngInfantFeverRelevant = isYoungInfantFeverSafetyRelevant(reportedSymptoms, ageDays);
+  const respiratoryRelevant = isPediatricRespiratorySafetyRelevant(reportedSymptoms, ageDays);
+  const resolvedVomitingEverything = diarrheaRelevant
+    ? pediatricDiarrheaAnswers.vomitingEverything
+    : abdominalRelevant
+      ? pediatricAbdominalAnswers.vomitingEverything
+      : youngInfantFeverRelevant
+        ? youngInfantFeverAnswers.vomitingEverything
+        : pediatricRespiratoryAnswers.vomitingEverything;
+  const abdominalLocalizedOrSevere: ClinicalAnswer = pediatricAbdominalAnswers.painSeverity === 'severe'
+    || ['right-lower-quadrant', 'other-localized', 'pelvic-lower'].includes(pediatricAbdominalAnswers.painLocation)
+    ? 'yes'
+    : pediatricAbdominalAnswers.painSeverity === 'unknown' || pediatricAbdominalAnswers.painLocation === 'unknown'
+      ? 'unknown'
+      : 'no';
+  const abdominalDistensionOrRebound = mergeClinicalAnswers(
+    pediatricAbdominalAnswers.abdominalDistension,
+    pediatricAbdominalAnswers.guardingOrRigidity,
+    pediatricAbdominalAnswers.reboundOrPercussionTenderness,
+  );
   const pediatricDiarrheaAssessment = evaluatePediatricDiarrheaSafety({
     ...pediatricDiarrheaAnswers,
+    vomitingEverything: resolvedVomitingEverything,
+    biliousVomiting: abdominalRelevant
+      ? pediatricAbdominalAnswers.biliousVomiting
+      : pediatricDiarrheaAnswers.biliousVomiting,
+    severeLocalizedAbdominalPain: abdominalRelevant
+      ? abdominalLocalizedOrSevere
+      : pediatricDiarrheaAnswers.severeLocalizedAbdominalPain,
+    abdominalDistensionOrRebound: abdominalRelevant
+      ? abdominalDistensionOrRebound
+      : pediatricDiarrheaAnswers.abdominalDistensionOrRebound,
     ageDays,
     diarrheaPresent: diarrheaRelevant,
+  });
+  const pediatricAbdominalAssessment = evaluatePediatricAbdominalSafety({
+    ...pediatricAbdominalAnswers,
+    vomitingEverything: resolvedVomitingEverything,
+    visibleBloodInStool: diarrheaRelevant
+      ? pediatricDiarrheaAnswers.bloodInStool
+      : pediatricAbdominalAnswers.visibleBloodInStool,
+    biliousVomiting: abdominalRelevant
+      ? pediatricAbdominalAnswers.biliousVomiting
+      : pediatricDiarrheaAnswers.biliousVomiting,
+    feverPresent: reportedSymptoms.some(isYoungInfantFeverConcernSymptom) ? 'yes' : pediatricAbdominalAnswers.feverPresent,
+    ageDays,
+    abdominalOrVomitingPresent: abdominalRelevant,
   });
   const diarrheaLethargy: ClinicalAnswer = pediatricDiarrheaAnswers.generalCondition === 'lethargic-unconscious'
     ? 'yes'
@@ -139,18 +194,12 @@ export default function DifferentialDiagnosisAssistant({
     : pediatricDiarrheaAnswers.drinkingAbility === 'unknown'
       ? 'unknown'
       : 'no';
-  const youngInfantFeverRelevant = isYoungInfantFeverSafetyRelevant(
-    reportedSymptoms,
-    ageDays,
-  );
   const youngInfantFeverAssessment = evaluateYoungInfantFeverSafety({
     ...youngInfantFeverAnswers,
     illAppearance: diarrheaRelevant ? diarrheaLethargy : youngInfantFeverAnswers.illAppearance,
     reducedMovement: diarrheaRelevant ? diarrheaLethargy : youngInfantFeverAnswers.reducedMovement,
     unableToFeed: diarrheaRelevant ? diarrheaUnableToDrink : youngInfantFeverAnswers.unableToFeed,
-    vomitingEverything: diarrheaRelevant
-      ? pediatricDiarrheaAnswers.vomitingEverything
-      : youngInfantFeverAnswers.vomitingEverything,
+    vomitingEverything: resolvedVomitingEverything,
     poorPerfusion: diarrheaRelevant
       ? pediatricDiarrheaAnswers.capillaryRefillOver2Seconds
       : youngInfantFeverAnswers.poorPerfusion,
@@ -163,10 +212,6 @@ export default function DifferentialDiagnosisAssistant({
   const resolvedCentralCyanosis = youngInfantFeverRelevant
     ? youngInfantFeverAnswers.centralCyanosis
     : pediatricRespiratoryAnswers.centralCyanosis;
-  const respiratoryRelevant = isPediatricRespiratorySafetyRelevant(
-    reportedSymptoms,
-    ageDays,
-  );
   const pediatricRespiratoryAssessment = evaluatePediatricRespiratorySafety({
     ...pediatricRespiratoryAnswers,
     apnea: resolvedApnea,
@@ -184,11 +229,7 @@ export default function DifferentialDiagnosisAssistant({
       : youngInfantFeverRelevant
       ? youngInfantFeverAnswers.unableToFeed
       : pediatricRespiratoryAnswers.unableToDrinkOrBreastfeed,
-    vomitingEverything: diarrheaRelevant
-      ? pediatricDiarrheaAnswers.vomitingEverything
-      : youngInfantFeverRelevant
-      ? youngInfantFeverAnswers.vomitingEverything
-      : pediatricRespiratoryAnswers.vomitingEverything,
+    vomitingEverything: resolvedVomitingEverything,
     severeWorkOfBreathing: youngInfantFeverRelevant
       ? youngInfantFeverAnswers.severeRespiratoryDistress
       : pediatricRespiratoryAnswers.severeWorkOfBreathing,
@@ -239,6 +280,7 @@ export default function DifferentialDiagnosisAssistant({
       unableSources.push(pediatricRespiratoryAnswers.unableToDrinkOrBreastfeed);
       vomitingSources.push(pediatricRespiratoryAnswers.vomitingEverything);
     }
+    if (abdominalRelevant) vomitingSources.push(pediatricAbdominalAnswers.vomitingEverything);
     const importedLethargy = lethargySources.length > 0 ? mergeClinicalAnswers(...lethargySources) : 'unknown';
     const importedUnable = unableSources.length > 0 ? mergeClinicalAnswers(...unableSources) : 'unknown';
     const importedVomiting = vomitingSources.length > 0 ? mergeClinicalAnswers(...vomitingSources) : 'unknown';
@@ -275,15 +317,67 @@ export default function DifferentialDiagnosisAssistant({
     });
   }, [
     diarrheaRelevant,
+    abdominalRelevant,
     respiratoryRelevant,
     youngInfantFeverRelevant,
     pediatricRespiratoryAnswers.lethargyOrUnconsciousness,
     pediatricRespiratoryAnswers.unableToDrinkOrBreastfeed,
     pediatricRespiratoryAnswers.vomitingEverything,
+    pediatricAbdominalAnswers.vomitingEverything,
     youngInfantFeverAnswers.illAppearance,
     youngInfantFeverAnswers.poorPerfusion,
     youngInfantFeverAnswers.reducedMovement,
     youngInfantFeverAnswers.unableToFeed,
+    youngInfantFeverAnswers.vomitingEverything,
+  ]);
+
+  useEffect(() => {
+    if (!abdominalRelevant) return;
+    const importedVomiting = diarrheaRelevant
+      ? pediatricDiarrheaAnswers.vomitingEverything
+      : youngInfantFeverRelevant
+        ? youngInfantFeverAnswers.vomitingEverything
+        : respiratoryRelevant
+          ? pediatricRespiratoryAnswers.vomitingEverything
+          : 'unknown';
+    setPediatricAbdominalAnswers(previous => {
+      const next: PediatricAbdominalSafetyAnswers = {
+        ...previous,
+        vomitingEverything: previous.vomitingEverything === 'unknown'
+          ? importedVomiting
+          : previous.vomitingEverything,
+        visibleBloodInStool: previous.visibleBloodInStool === 'unknown' && diarrheaRelevant
+          ? pediatricDiarrheaAnswers.bloodInStool
+          : previous.visibleBloodInStool,
+        biliousVomiting: previous.biliousVomiting === 'unknown' && diarrheaRelevant
+          ? pediatricDiarrheaAnswers.biliousVomiting
+          : previous.biliousVomiting,
+        painSeverity: previous.painSeverity === 'unknown'
+          && diarrheaRelevant
+          && pediatricDiarrheaAnswers.severeLocalizedAbdominalPain === 'yes'
+          ? 'severe'
+          : previous.painSeverity,
+        abdominalDistension: previous.abdominalDistension === 'unknown'
+          && diarrheaRelevant
+          ? pediatricDiarrheaAnswers.abdominalDistensionOrRebound
+          : previous.abdominalDistension,
+      };
+      return Object.keys(next).every(key => (
+        next[key as keyof PediatricAbdominalSafetyAnswers]
+          === previous[key as keyof PediatricAbdominalSafetyAnswers]
+      )) ? previous : next;
+    });
+  }, [
+    abdominalRelevant,
+    diarrheaRelevant,
+    respiratoryRelevant,
+    youngInfantFeverRelevant,
+    pediatricDiarrheaAnswers.abdominalDistensionOrRebound,
+    pediatricDiarrheaAnswers.biliousVomiting,
+    pediatricDiarrheaAnswers.bloodInStool,
+    pediatricDiarrheaAnswers.severeLocalizedAbdominalPain,
+    pediatricDiarrheaAnswers.vomitingEverything,
+    pediatricRespiratoryAnswers.vomitingEverything,
     youngInfantFeverAnswers.vomitingEverything,
   ]);
 
@@ -351,6 +445,12 @@ export default function DifferentialDiagnosisAssistant({
     if (Object.keys(respiratoryUpdates).length > 0) {
       setPediatricRespiratoryAnswers(previous => ({ ...previous, ...respiratoryUpdates }));
     }
+    if (updates.vomitingEverything !== undefined) {
+      setPediatricAbdominalAnswers(previous => ({
+        ...previous,
+        vomitingEverything: updates.vomitingEverything ?? previous.vomitingEverything,
+      }));
+    }
   };
 
   const updatePediatricDiarrheaAnswers = (updates: Partial<PediatricDiarrheaSafetyAnswers>) => {
@@ -390,12 +490,67 @@ export default function DifferentialDiagnosisAssistant({
     if (Object.keys(respiratoryUpdates).length > 0) {
       setPediatricRespiratoryAnswers(previous => ({ ...previous, ...respiratoryUpdates }));
     }
+    const abdominalUpdates: Partial<PediatricAbdominalSafetyAnswers> = {};
+    if (updates.vomitingEverything !== undefined) abdominalUpdates.vomitingEverything = updates.vomitingEverything;
+    if (updates.bloodInStool !== undefined) abdominalUpdates.visibleBloodInStool = updates.bloodInStool;
+    if (updates.biliousVomiting !== undefined) abdominalUpdates.biliousVomiting = updates.biliousVomiting;
+    if (updates.severeLocalizedAbdominalPain === 'yes') abdominalUpdates.painSeverity = 'severe';
+    if (updates.abdominalDistensionOrRebound !== undefined) {
+      abdominalUpdates.abdominalDistension = updates.abdominalDistensionOrRebound;
+    }
+    if (Object.keys(abdominalUpdates).length > 0) {
+      setPediatricAbdominalAnswers(previous => ({ ...previous, ...abdominalUpdates }));
+    }
+  };
+
+  const updatePediatricAbdominalAnswers = (updates: Partial<PediatricAbdominalSafetyAnswers>) => {
+    const next = { ...pediatricAbdominalAnswers, ...updates };
+    setPediatricAbdominalAnswers(next);
+
+    const diarrheaUpdates: Partial<PediatricDiarrheaSafetyAnswers> = {};
+    if (updates.vomitingEverything !== undefined) diarrheaUpdates.vomitingEverything = updates.vomitingEverything;
+    if (updates.visibleBloodInStool !== undefined) diarrheaUpdates.bloodInStool = updates.visibleBloodInStool;
+    if (updates.biliousVomiting !== undefined) diarrheaUpdates.biliousVomiting = updates.biliousVomiting;
+    if (updates.painSeverity !== undefined || updates.painLocation !== undefined) {
+      diarrheaUpdates.severeLocalizedAbdominalPain = next.painSeverity === 'severe'
+        || ['right-lower-quadrant', 'other-localized', 'pelvic-lower'].includes(next.painLocation)
+        ? 'yes'
+        : next.painSeverity === 'unknown' || next.painLocation === 'unknown'
+          ? 'unknown'
+          : 'no';
+    }
+    if (
+      updates.abdominalDistension !== undefined
+      || updates.guardingOrRigidity !== undefined
+      || updates.reboundOrPercussionTenderness !== undefined
+    ) {
+      diarrheaUpdates.abdominalDistensionOrRebound = mergeClinicalAnswers(
+        next.abdominalDistension,
+        next.guardingOrRigidity,
+        next.reboundOrPercussionTenderness,
+      );
+    }
+    if (Object.keys(diarrheaUpdates).length > 0) {
+      setPediatricDiarrheaAnswers(previous => ({ ...previous, ...diarrheaUpdates }));
+    }
+    if (updates.vomitingEverything !== undefined) {
+      setYoungInfantFeverAnswers(previous => ({ ...previous, vomitingEverything: updates.vomitingEverything! }));
+      setPediatricRespiratoryAnswers(previous => ({ ...previous, vomitingEverything: updates.vomitingEverything! }));
+    }
+  };
+
+  const updatePediatricRespiratoryAnswers = (updates: Partial<PediatricRespiratorySafetyAnswers>) => {
+    setPediatricRespiratoryAnswers(previous => ({ ...previous, ...updates }));
+    if (updates.vomitingEverything !== undefined) {
+      setPediatricAbdominalAnswers(previous => ({ ...previous, vomitingEverything: updates.vomitingEverything! }));
+    }
   };
 
   const analyze = () => {
     if (!primarySymptom.trim()) return;
     const heuristicSymptoms = uniqueSymptoms([
       ...secondarySymptoms,
+      ...(abdominalRelevant ? pediatricAbdominalAssessment.heuristicSymptoms : []),
       ...(diarrheaRelevant ? pediatricDiarrheaAssessment.heuristicSymptoms : []),
       ...(youngInfantFeverRelevant ? youngInfantFeverAssessment.heuristicSymptoms : []),
       ...(respiratoryRelevant ? pediatricRespiratoryAssessment.heuristicSymptoms : []),
@@ -415,6 +570,7 @@ export default function DifferentialDiagnosisAssistant({
       ageYears,
       symptoms: [
         ...reportedKernelSymptoms,
+        ...(abdominalRelevant ? pediatricAbdominalAssessment.kernelSymptoms : []),
         ...(diarrheaRelevant ? pediatricDiarrheaAssessment.kernelSymptoms : []),
         ...(youngInfantFeverRelevant ? youngInfantFeverAssessment.kernelSymptoms : []),
         ...(respiratoryRelevant ? pediatricRespiratoryAssessment.kernelSymptoms : []),
@@ -592,6 +748,16 @@ export default function DifferentialDiagnosisAssistant({
               answers={pediatricDiarrheaAnswers}
               assessment={pediatricDiarrheaAssessment}
               onChange={updatePediatricDiarrheaAnswers}
+              sharedAbdominalSigns={abdominalRelevant}
+            />
+          )}
+
+          {abdominalRelevant && (
+            <PediatricAbdominalSafetyInterview
+              answers={pediatricAbdominalAnswers}
+              assessment={pediatricAbdominalAssessment}
+              onChange={updatePediatricAbdominalAnswers}
+              sharedDiarrheaSigns={diarrheaRelevant}
             />
           )}
 
@@ -601,6 +767,7 @@ export default function DifferentialDiagnosisAssistant({
               assessment={youngInfantFeverAssessment}
               onChange={updateYoungInfantFeverAnswers}
               sharedDiarrheaSigns={diarrheaRelevant}
+              sharedAbdominalVomiting={abdominalRelevant}
             />
           )}
 
@@ -608,9 +775,10 @@ export default function DifferentialDiagnosisAssistant({
             <PediatricRespiratorySafetyInterview
               answers={pediatricRespiratoryAnswers}
               assessment={pediatricRespiratoryAssessment}
-              onChange={updates => setPediatricRespiratoryAnswers(previous => ({ ...previous, ...updates }))}
+              onChange={updatePediatricRespiratoryAnswers}
               sharedYoungInfantSigns={youngInfantFeverRelevant}
               sharedDiarrheaSigns={diarrheaRelevant}
+              sharedAbdominalVomiting={abdominalRelevant}
             />
           )}
 

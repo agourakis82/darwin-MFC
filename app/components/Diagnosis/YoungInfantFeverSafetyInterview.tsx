@@ -18,6 +18,7 @@ interface YoungInfantFeverSafetyInterviewProps {
   assessment: YoungInfantFeverSafetyAssessment;
   onChange: (updates: Partial<YoungInfantFeverSafetyAnswers>) => void;
   sharedDiarrheaSigns?: boolean;
+  sharedAbdominalVomiting?: boolean;
 }
 
 const answerOptions: Array<{ value: ClinicalAnswer; label: string; title: string }> = [
@@ -98,6 +99,7 @@ export default function YoungInfantFeverSafetyInterview({
   assessment,
   onChange,
   sharedDiarrheaSigns = false,
+  sharedAbdominalVomiting = false,
 }: YoungInfantFeverSafetyInterviewProps) {
   const sharedDangerSignIds = new Set([
     'ill-appearance',
@@ -106,9 +108,10 @@ export default function YoungInfantFeverSafetyInterview({
     'vomiting-everything',
     'poor-perfusion',
   ]);
-  const displayedDangerSignIds = sharedDiarrheaSigns
-    ? assessment.dangerSignIds.filter(id => !sharedDangerSignIds.has(id))
-    : assessment.dangerSignIds;
+  const displayedDangerSignIds = assessment.dangerSignIds.filter(id => (
+    !(sharedDiarrheaSigns && sharedDangerSignIds.has(id))
+    && !(sharedAbdominalVomiting && id === 'vomiting-everything')
+  ));
   const displayPriority = displayedDangerSignIds.length > 0
     ? 'immediate-referral'
     : assessment.prioritySignIds.length > 0
@@ -198,7 +201,7 @@ export default function YoungInfantFeverSafetyInterview({
         {!sharedDiarrheaSigns && (
           <TriStateField label="Não consegue mamar ou beber" value={answers.unableToFeed} onChange={value => onChange({ unableToFeed: value })} />
         )}
-        {!sharedDiarrheaSigns && (
+        {!sharedDiarrheaSigns && !sharedAbdominalVomiting && (
           <TriStateField label="Vomita tudo" value={answers.vomitingEverything} onChange={value => onChange({ vomitingEverything: value })} />
         )}
         <TriStateField label="Convulsão" value={answers.convulsions} onChange={value => onChange({ convulsions: value })} />

@@ -17,6 +17,7 @@ interface PediatricDiarrheaSafetyInterviewProps {
   answers: PediatricDiarrheaSafetyAnswers;
   assessment: PediatricDiarrheaSafetyAssessment;
   onChange: (updates: Partial<PediatricDiarrheaSafetyAnswers>) => void;
+  sharedAbdominalSigns?: boolean;
 }
 
 const answerOptions: Array<{ value: ClinicalAnswer; label: string; title: string }> = [
@@ -93,8 +94,20 @@ export default function PediatricDiarrheaSafetyInterview({
   answers,
   assessment,
   onChange,
+  sharedAbdominalSigns = false,
 }: PediatricDiarrheaSafetyInterviewProps) {
-  const status = assessment.priority === 'immediate-referral'
+  const displayedDangerSignIds = sharedAbdominalSigns
+    ? assessment.dangerSignIds.filter(id => id !== 'bilious-vomiting')
+    : assessment.dangerSignIds;
+  const displayedPrioritySignIds = sharedAbdominalSigns
+    ? assessment.prioritySignIds.filter(id => id !== 'alternative-diagnosis-sign')
+    : assessment.prioritySignIds;
+  const displayPriority = displayedDangerSignIds.length > 0
+    ? 'immediate-referral'
+    : displayedPrioritySignIds.length > 0
+      ? 'same-day-assessment'
+      : 'routine';
+  const status = displayPriority === 'immediate-referral'
     ? { label: 'Encaminhar agora', className: 'border-red-300/30 bg-red-300/10 text-red-200' }
     : assessment.priority === 'same-day-assessment'
       ? { label: 'Avaliar hoje', className: 'border-amber-300/30 bg-amber-300/10 text-amber-200' }
@@ -200,7 +213,9 @@ export default function PediatricDiarrheaSafetyInterview({
         <TriStateField label="Extremidades frias" value={answers.coldExtremities} onChange={value => onChange({ coldExtremities: value })} />
         <TriStateField label="Pulso periférico fraco" value={answers.weakPeripheralPulse} onChange={value => onChange({ weakPeripheralPulse: value })} />
         <TriStateField label="Hipotensão aferida" value={answers.hypotension} onChange={value => onChange({ hypotension: value })} />
-        <TriStateField label="Vômito bilioso" value={answers.biliousVomiting} onChange={value => onChange({ biliousVomiting: value })} />
+        {!sharedAbdominalSigns && (
+          <TriStateField label="Vômito bilioso" value={answers.biliousVomiting} onChange={value => onChange({ biliousVomiting: value })} />
+        )}
       </div>
 
       <details className="group border-b border-white/[0.07]">
@@ -244,40 +259,44 @@ export default function PediatricDiarrheaSafetyInterview({
           </label>
           <TriStateField label="Interrompeu aleitamento" value={answers.stoppedBreastfeeding} onChange={value => onChange({ stoppedBreastfeeding: value })} />
           <TriStateField label="Baixo peso ou desnutrição" value={answers.lowBirthWeightOrMalnutrition} onChange={value => onChange({ lowBirthWeightOrMalnutrition: value })} />
-          <TriStateField label="Dor abdominal forte ou localizada" value={answers.severeLocalizedAbdominalPain} onChange={value => onChange({ severeLocalizedAbdominalPain: value })} />
-          <TriStateField label="Distensão ou defesa abdominal" value={answers.abdominalDistensionOrRebound} onChange={value => onChange({ abdominalDistensionOrRebound: value })} />
+          {!sharedAbdominalSigns && (
+            <TriStateField label="Dor abdominal forte ou localizada" value={answers.severeLocalizedAbdominalPain} onChange={value => onChange({ severeLocalizedAbdominalPain: value })} />
+          )}
+          {!sharedAbdominalSigns && (
+            <TriStateField label="Distensão ou defesa abdominal" value={answers.abdominalDistensionOrRebound} onChange={value => onChange({ abdominalDistensionOrRebound: value })} />
+          )}
         </div>
       </details>
 
-      {(assessment.dangerSignIds.length > 0 || assessment.prioritySignIds.length > 0) && (
+      {(displayedDangerSignIds.length > 0 || displayedPrioritySignIds.length > 0) && (
         <div className="space-y-1.5 border-b border-white/[0.07] px-4 py-3" aria-live="polite">
-          {assessment.dangerSignIds.length > 0 && (
+          {displayedDangerSignIds.length > 0 && (
             <p className="flex items-start gap-2 text-xs font-semibold leading-relaxed text-red-200">
               <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-              Encaminhamento urgente: {assessment.dangerSignIds.map(id => dangerLabels[id]).join(' · ')}.
+              Encaminhamento urgente: {displayedDangerSignIds.map(id => dangerLabels[id]).join(' · ')}.
             </p>
           )}
-          {assessment.prioritySignIds.includes('incomplete-dehydration-screen') && (
+          {displayedPrioritySignIds.includes('incomplete-dehydration-screen') && (
             <p className="text-xs leading-relaxed text-amber-200">
               Complete estado geral, olhos, ingestão e prega cutânea; desconhecido não significa ausência.
             </p>
           )}
-          {assessment.prioritySignIds.includes('some-dehydration') && (
+          {displayedPrioritySignIds.includes('some-dehydration') && (
             <p className="text-xs leading-relaxed text-amber-200">Alguma desidratação: avaliação e plano clínico no mesmo dia.</p>
           )}
-          {assessment.prioritySignIds.includes('persistent-diarrhea') && (
+          {displayedPrioritySignIds.includes('persistent-diarrhea') && (
             <p className="text-xs leading-relaxed text-amber-200">Diarreia persistente por 14 dias ou mais: avaliação no mesmo dia.</p>
           )}
-          {assessment.prioritySignIds.includes('blood-in-stool-dysentery') && (
+          {displayedPrioritySignIds.includes('blood-in-stool-dysentery') && (
             <p className="text-xs leading-relaxed text-amber-200">Sangue nas fezes na faixa de 2 meses a menor de 5 anos: avaliar disenteria no mesmo dia.</p>
           )}
-          {assessment.prioritySignIds.includes('decreased-urine-output') && (
+          {displayedPrioritySignIds.includes('decreased-urine-output') && (
             <p className="text-xs leading-relaxed text-amber-200">Diurese reduzida aumenta a preocupação com desidratação.</p>
           )}
-          {assessment.prioritySignIds.includes('increased-dehydration-risk') && (
+          {displayedPrioritySignIds.includes('increased-dehydration-risk') && (
             <p className="text-xs leading-relaxed text-amber-200">Há fator de maior risco para desidratação ou piora.</p>
           )}
-          {assessment.prioritySignIds.includes('alternative-diagnosis-sign') && (
+          {displayedPrioritySignIds.includes('alternative-diagnosis-sign') && (
             <p className="text-xs leading-relaxed text-amber-200">Dor intensa/localizada ou distensão/defesa exige avaliar diagnóstico alternativo.</p>
           )}
         </div>

@@ -19,6 +19,7 @@ interface PediatricRespiratorySafetyInterviewProps {
   onChange: (updates: Partial<PediatricRespiratorySafetyAnswers>) => void;
   sharedYoungInfantSigns?: boolean;
   sharedDiarrheaSigns?: boolean;
+  sharedAbdominalVomiting?: boolean;
 }
 
 const answerOptions: Array<{ value: ClinicalAnswer; label: string; title: string }> = [
@@ -84,6 +85,7 @@ export default function PediatricRespiratorySafetyInterview({
   onChange,
   sharedYoungInfantSigns = false,
   sharedDiarrheaSigns = false,
+  sharedAbdominalVomiting = false,
 }: PediatricRespiratorySafetyInterviewProps) {
   const sharedDangerSignIds = new Set<string>();
   if (sharedYoungInfantSigns) {
@@ -104,6 +106,7 @@ export default function PediatricRespiratorySafetyInterview({
       'vomiting-everything',
     ].forEach(id => sharedDangerSignIds.add(id));
   }
+  if (sharedAbdominalVomiting) sharedDangerSignIds.add('vomiting-everything');
   const displayedDangerSignIds = sharedDangerSignIds.size > 0
     ? assessment.dangerSignIds.filter(id => !sharedDangerSignIds.has(id))
     : assessment.dangerSignIds;
@@ -263,7 +266,7 @@ export default function PediatricRespiratorySafetyInterview({
         {!sharedYoungInfantSigns && !sharedDiarrheaSigns && (
           <TriStateField label="Não bebe ou não mama" value={answers.unableToDrinkOrBreastfeed} onChange={value => onChange({ unableToDrinkOrBreastfeed: value })} />
         )}
-        {!sharedYoungInfantSigns && !sharedDiarrheaSigns && (
+        {!sharedYoungInfantSigns && !sharedDiarrheaSigns && !sharedAbdominalVomiting && (
           <TriStateField label="Vomita tudo" value={answers.vomitingEverything} onChange={value => onChange({ vomitingEverything: value })} />
         )}
         <TriStateField label="Ingestão reduzida / desidratação" value={answers.reducedOralIntakeOrDehydration} onChange={value => onChange({ reducedOralIntakeOrDehydration: value })} />
