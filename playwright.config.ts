@@ -8,7 +8,8 @@ import { defineConfig, devices } from '@playwright/test';
 const chromiumExecutablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH;
 const playwrightPort = Number(process.env.PLAYWRIGHT_PORT || 3200);
 const baseURL = process.env.PLAYWRIGHT_BASE_URL || `http://localhost:${playwrightPort}`;
-const fullMatrix = !!process.env.CI || process.env.PLAYWRIGHT_FULL_MATRIX === '1';
+const fullMatrix = process.env.PLAYWRIGHT_FULL_MATRIX === '1'
+  || (!!process.env.CI && process.env.PLAYWRIGHT_FULL_MATRIX !== '0');
 const useDevServer = process.env.PLAYWRIGHT_USE_DEV_SERVER === '1';
 
 export default defineConfig({

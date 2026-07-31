@@ -186,11 +186,18 @@
 - Durante a execucao contra `next dev`, o Turbopack voltou a produzir `500` transitorio com `JSON.parse` na geracao de rotas. O erro foi capturado integralmente; a mesma suite passou no caminho deterministico `VERCEL=1 next build` + `VERCEL=1 next start`.
 - `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram; o gate integrado permaneceu 35/35 e o build materializou 13.683 paginas.
 - O cache `.next/dev` com a falha foi preservado fora do worktree para diagnostico e o preview `next dev` foi recriado limpo em `3011`; prontuario, medicamentos, doencas, calculadoras e busca responderam HTTP 200.
+- O workflow `.github/workflows/clinical-safety-e2e.yml` adiciona gate dedicado em pull requests e no `main` quando mudam diagnostico, seguranca clinica, kernel, fixtures ou a propria infraestrutura Playwright.
+- `@playwright/test` foi fixado exatamente em `1.58.1`; o lockfile vincula a mesma versao e o CI instala Chromium com dependencias pelo proprio Playwright, incluindo o runtime de video/FFmpeg correspondente.
+- O script pediatrico fixa `PLAYWRIGHT_FULL_MATRIX=0`; a configuracao agora permite esse override explicito sob `CI=1`, mantendo somente Chromium desktop e Mobile Chrome. A matriz completa continua disponivel com `PLAYWRIGHT_FULL_MATRIX=1`.
+- Checkout, Node, pnpm e upload de artefatos estao fixados por SHA no workflow. Relatorio, resultados, screenshots, traces e videos de falha ficam retidos por 14 dias; os cenarios sao exclusivamente sinteticos.
+- A simulacao fiel `CI=1 pnpm test:e2e:pediatric-safety` instalou Playwright 1.58.1, Chromium 145 revision 1208 e FFmpeg revision 1011, reconstruiu/subiu o Vercel isolado em `3200` e passou 4/4 em 1,9 minuto.
+- `pnpm install --frozen-lockfile`, parser YAML, `pnpm type-check`, `pnpm verify` e o build interno do E2E passaram. O gate integrado permaneceu 35/35 e 13.683 paginas foram materializadas.
+- Nao existe pull request aberto para `codex/aps-design-refactor`; portanto, o workflow ainda nao tem execucao remota e so podera ser observado no GitHub apos abertura de PR, merge no `main` ou dispatch disponivel no branch padrao.
 
 ## Proximo passo
 
 - Manter o e-SUS Notifica em monitoramento de disponibilidade; somente abrir auditoria de cabecalho se o endpoint publico retornar HTTP 200/206, sem credenciais ou contorno de controle de acesso.
-- Submeter o novo contrato abdominal a revisao clinica independente e incluir a suite E2E dedicada no CI com instalacao/pin explicito do navegador antes de ampliar a triagem para outro sintoma pediatrico.
+- Submeter o novo contrato abdominal a revisao clinica independente e obter a primeira execucao remota verde do novo workflow em PR antes de ampliar a triagem para outro sintoma pediatrico.
 - A primeira fase publica de cinco analises esta concluida; qualquer nova fonte deve preencher uma lacuna explicita, revalidar hashes e permanecer fora da promocao clinica.
 - Continuar buscando uma fonte publica ou parceria futura com coorte de APS desidentificada, adjudicada e aprovada; probabilidades e EIG permanecem bloqueados ate os gates completos.
 - Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.
