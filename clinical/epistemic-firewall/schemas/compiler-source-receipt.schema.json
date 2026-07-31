@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://darwin-mfc.local/schemas/compiler-source-receipt.v1.json",
+  "title": "Darwin Sounio Source-Fresh Compiler Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "receiptId",
+    "generatedAt",
+    "repository",
+    "source",
+    "artifacts",
+    "commands",
+    "canonicalGateAdapter",
+    "hashes",
+    "gates",
+    "compilerReconciled",
+    "signature",
+    "refusalReasons"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "darwin.sounio.compiler-source-receipt.v1" },
+    "receiptId": { "type": "string", "minLength": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "repository": {
+      "type": "object",
+      "required": [
+        "url",
+        "sourceBranch",
+        "commit",
+        "tree",
+        "clean",
+        "remoteBranchCommit",
+        "remoteMainCommit",
+        "divergenceFromMain"
+      ]
+    },
+    "source": { "type": "object" },
+    "artifacts": { "type": "object" },
+    "commands": { "type": "array", "items": { "type": "object" } },
+    "canonicalGateAdapter": { "type": ["object", "null"] },
+    "hashes": { "type": "object" },
+    "gates": {
+      "type": "object",
+      "required": [
+        "sourceRepositoryClean",
+        "sourceBranchPinned",
+        "sourceCommitMatchesRemote",
+        "seedTrackedAtPinnedCommit",
+        "sourceBootstrapForced",
+        "fixedPointBitwise",
+        "selfHostReproducibility",
+        "selfHostRelease",
+        "noRustMarkers"
+      ]
+    },
+    "compilerReconciled": { "type": "boolean" },
+    "signature": { "type": ["string", "null"] },
+    "refusalReasons": { "type": "array", "items": { "type": "string" } }
+  }
+}

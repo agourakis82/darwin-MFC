@@ -1,0 +1,207 @@
+# Sessao atual
+
+## Estado
+
+- Branch: `codex/aps-design-refactor`.
+- Preview local verificado: `http://127.0.0.1:3011/pt/prontuario/` no servidor de desenvolvimento.
+- Redesign APS/SUS/pt-BR e correcoes clinicas consolidados no checkpoint da branch.
+- Assistente clinico promovido ao topo da consulta: sintomas, diferenciais, exames e sinais de alarme.
+- Hipotese selecionada agora abre medicamentos relacionados, dose de referencia, disponibilidade SUS/RENAME e bula.
+- Inclusao na prescricao exige confirmacao explicita do profissional.
+- IDs legados do banco de sintomas sao resolvidos para as doencas atuais; PAC lidera o caso tosse + febre + dispneia.
+- Idade do paciente agora aceita dias, meses ou anos e participa da ordenacao dos diagnosticos diferenciais.
+- Peso em kg sincroniza com a nota SOAP e libera apenas as sugestoes pediatricas calculaveis por peso.
+- Posologia pediatrica ausente permanece bloqueada; nenhuma sugestao entra automaticamente na prescricao.
+- Kernel clinico respiratorio pediatrico implementado em Sounio com gerador WASM, oraculo nativo e ABI numerica fixa.
+- O prontuario executa o kernel em modo silencioso, verifica SHA-256 de evidencia/modelo/WASM e recusa incompatibilidades sem fallback probabilistico em TypeScript.
+- O recibo clinico v3 permanece `experimental`: o compilador foi reconciliado, mas ainda nao existem calibracao retrospectiva aprovada, referencia populacional nem assinatura de producao.
+- Probabilidades Sounio nao alteram ranking, tratamento ou prescricao visiveis enquanto os gates cientificos nao forem cumpridos.
+- ABI v2 calcula entropia de Shannon e ganho esperado de informacao no Sounio/WASM e devolve a proxima pergunta como indice numerico.
+- O contrato verificavel registra o import `env.log: (f64)->f64`; TypeScript apenas fornece o primitivo e interpreta indice/EIG, sem recalcular probabilidades.
+- Epistemic Firewall v0.1 implementado: uma politica Sounio gera uma tabela completa de 256 estados `REFUSE / ASK / DEFER / ACT` durante o build.
+- O navegador verifica certificado de calibracao, politica, evidencia, modelo, WASM, compilador e dois recibos com vinculos SHA-256 cruzados.
+- Sem calibracao, assinatura, validade temporal e distribuicao de referencia, o firewall retorna `REFUSE` antes de instanciar o WASM probabilistico e nao devolve hipoteses Sounio.
+- Alterar apenas `status` para `calibrated` agora quebra o build: a promocao exige cobertura por classe e subgrupo, utilidade clinica, validade, fingerprint de distribuicao e hashes de coortes/analises completos.
+- Busca formal de anterioridade aberta em `docs/research/epistemic-firewall/`, com protocolo, log reproduzivel Crossref/Europe PMC, matriz inicial e registro patentario.
+- A busca encontrou anterioridade forte para conformal prediction diagnostica, verificacao formal de CDS e proveniencia/gates criptograficos; a hipotese de novidade foi estreitada para o vinculo conjunto com certificado de cobertura, politica Sounio, WASM e identidade do compilador.
+- Pipeline retrospectivo v0.1 implementado: contrato JSON estrito de coorte desidentificada, split temporal 60/20/20 pela data indice do paciente e bloqueio de vazamento entre particoes.
+- `conformal-calibration.sio` e a unica autoridade para posterior, nao-conformidade, limiar conformal por classe, cobertura, Brier, ECE, top-3 de pneumonia, sensibilidade dos sinais de alarme, decision curve e limite inferior de Wilson.
+- A fixture deterministica de 45 pacientes e somente de engenharia: gera relatorio `fixture-only` em `.clinical-kernel-build/calibration/`, nao altera o certificado ativo e falha imediatamente com `PROMOTION_REFUSED` se houver tentativa de promocao.
+- O gate de melhora de Brier usa agora o comparador APS congelado; distribuicao de referencia, revisao independente e assinatura continuam ausentes.
+- Comparador APS atual congelado em `current-aps-comparator.json` com schema, versao, prioridade de sintomas e aliases de doencas. O adaptador TypeScript emite somente scores brutos; normalizacao probabilistica, Brier e Brier skill permanecem sob autoridade Sounio.
+- O gate Brier agora compara o kernel ao score APS atual. Na fixture, Brier Sounio foi 0,348525 versus 0,739351 do comparador, skill de 0,528607; o resultado e apenas de engenharia.
+- Os minimos fixos de 1.000 pacientes e 200 casos de avaliacao foram removidos. O Sounio calcula precisao de cobertura: 203 pacientes de avaliacao por condicao e 1.827 no mix balanceado da fixture, alem do limite conformal de 19 casos de calibracao por condicao.
+- Coorte v1 agora exige um unico encontro indice por paciente; episodios repetidos ficam recusados ate existir analise cluster-aware.
+- Workspace Sounio oficial recuperado sem reiniciar a sessao ativa: `/workspace/sounio` permaneceu intacto e o estado Zellij/processos foi preservado em `/workspace/.recovery/source-fresh-20260730T003523Z`.
+- Branch cientifica fixada em `integration/sounio-dev-ready-base`, commit `8d203709e1c171d5fb017909f87000eea54a238e`, tree `7a130685743fdafc6751bb083866e943cc4d7fbb`; divergencia registrada contra `origin/main` em 1484 commits apenas no main e 2741 apenas na branch.
+- Compilador reconstruido em worktree limpo e diretorio temporario, sem sobrescrever o artefato versionado. Bootstrap forcado por fonte, stage2 e stage3 produziram o mesmo SHA-256 `4511a6ed2055524df877de0a8fd140993904e44cf65ebe43c70d827b3edc2dfc`.
+- Recibo `darwin.sounio.compiler-source-receipt.v1` validado com SHA-256 `f071869e8c8070f169fd0086df3b8e3501e0504d4f04485cba614e07a678907c` e `compilerReconciled=true`.
+- Build Darwin aceita `SOUNIO_COMPILER_PATH` e `SOUNIO_COMPILER_RECEIPT_PATH`; snapshots sem Git continuam testaveis, mas jamais podem produzir reconciliacao positiva.
+- Recibo clinico evoluido para v3 e recibo do firewall para v2; ambos vinculam o recibo source-fresh do compilador e recusam schema, hash, branch, commit, tree, seed ou identidade incompativeis.
+- Pacote multicentrico executavel fechado com intended use, SAP congelado, dicionario de 12 observacoes e nove condicoes, template/schema de mapeamento e checklist de extracao/desidentificacao. Nenhum prontuario ou identificador de paciente foi incluido no repositorio.
+- Site mapping evoluido para v2: separa centro clinico de fixture sintetica, referencia revisao etica, autorizacao do controlador do banco, acordo local, autorizacao multicentrica comum, avaliacao de base legal, RIPD, ambiente seguro, retencao, incidentes e responsabilidades locais.
+- `lock:multicenter-site` deriva `siteHash`, bloqueia o contrato e calcula SHA-256 canonico. Mapeamentos clinicos reais sao recusados dentro do repositorio; documentos, nomes, chaves HMAC e dados continuam fora do Git.
+- O calibrador exige que os dois ou mais mapeamentos tenham o mesmo protocolo, centro coordenador e autorizacao multicentrica, e que o conjunto exato de `siteHash` coincida com a coorte.
+- O recibo de onboarding distingue `mappingGateReady` de verificacao humana: `governanceDocumentsVerified=false` e `calibrationAuthorized=false` permanecem invariantes do software.
+- Na ausencia de coorte institucional, foi aberta uma trilha publica governada com cinco fontes oficiais: SIVEP-Gripe, e-SUS Notifica, NAMCS 2018, NAMCS Health Center 2024 e SINAN coqueluche/TabNet.
+- O registro publico documenta populacao, ambiente assistencial, licenca, vieses, usos permitidos/proibidos e fidelidade das 12 observacoes. Valores ausentes ou nao selecionados nunca sao convertidos em ausencia clinica.
+- Nenhuma das fontes revisadas cobre simultaneamente o vetor APS congelado, as nove condicoes adjudicadas, tratamento e desfecho. Dados publicos permanecem limitados a pre-validacao, auditoria de transportabilidade, contexto epidemiologico ou validacao de seguranca.
+- O SIVEP-Gripe 2025 foi processado integralmente por streaming, sem persistir linhas individuais. O snapshot congelado tem 381.900.544 bytes, 336.260 registros e SHA-256 `b5def80ae35092c5f64b4766d6d2e5785bdd63978a9aae51cc90521a91a6aaaa`.
+- A analise SIVEP encontrou 195.021 registros pediatricos, incluindo 47.304 admissoes em UTI, 106.372 usos de suporte ventilatorio e 1.964 obitos por SRAG. Esses agregados descrevem vigilancia hospitalar grave e nao podem estimar priors ou efeitos terapeuticos da APS.
+- Os recibos publicos mantem `apsCalibrationAuthorized=false`, `clinicalActivationAuthorized=false`, `patientRowsPersisted=false` e disposicao final `REFUSE`.
+- Adaptador NAMCS 2018 implementado com `@irbisadm/statfmt@0.1.1`, port TypeScript puro do ReadStat. O ZIP oficial e extraido em diretorio temporario, somente 77 campos selecionados sao agregados e todos os arquivos-fonte sao removidos ao final.
+- O recibo NAMCS vincula SHA-256 do ZIP, SAS, formatos CDC, registro e script. As 9.953 consultas e 1.038 variaveis foram reconciliadas; `PATWT` somou 860.385.638,653, dentro de uma consulta do total CDC arredondado.
+- A amostra contem 1.252 consultas pediatricas e 262 no subconjunto respiratorio de desenvolvimento. Apenas amoxicilina, albuterol e acetaminofeno atingiram 30 mencoes; sao associacoes descritivas dos EUA em 2018, nunca recomendacoes.
+- `CSTRATM` e `CPSUM` foram preservados com 60 estratos e 496 clusters. A v1 continua descritiva, e um recibo separado agora valida erros-padrao complex-survey contra um oraculo R independente.
+- O mapeamento `age_under_2` do NAMCS foi corrigido: `AGE` 0 ou 1 indica menor de 2 anos; `AGEDAYS` existe somente abaixo de 1 ano e nao pode excluir criancas de 1 ano.
+- Linearizacao de Taylor implementada em Node para totais e razoes no desenho estratificado WR por conglomerado ultimo; o teste sintetico verifica variancia total 20 e variancia de razao 1,25.
+- Oraculo pinado em R `survey` 4.5, recompilado em biblioteca ignorada pelo Git e vinculado ao SHA-256 do tarball CRAN, bootstrap, arvore instalada, dependencias e executavel `Rscript` real.
+- O gate compara 21 metricas, suprime intervalos com menos de 30 positivos e mantem todos os resultados como descritivos dos EUA em 2018. Nenhum dado de linha e persistido; o firewall permanece `REFUSE`.
+
+## Verificacao
+
+- `pnpm exec tsc --noEmit`: passou.
+- `pnpm build:clinical-kernel`: passou; WASM de 29.195 bytes, cinco vetores, erro maximo posterior de 4,96e-7 e erro maximo EIG de 1,96e-7.
+- `pnpm verify`: 19 passaram, 0 falharam, 0 avisos, incluindo integridade, ABI e deteccao de adulteracao do kernel.
+- `pnpm build`: passou, 16.545 paginas estaticas.
+- Artefatos servidos em `/clinical-kernel/`; prontuario e recibo responderam HTTP 200 no preview local.
+- Teste ABI v2 real: 3 anos + tosse + coriza + estridor -> crupe, alarme estridor e proxima pergunta sobre hipoxemia; integridade valida.
+- Fluxo real no navegador: sintomas -> PAC -> amoxicilina/azitromicina -> bula -> adicionar ao plano -> preview SOAP.
+- Fluxo pediatrico real: 4 anos + tosse + febre + dor de garganta + coriza -> IVAS em primeiro -> PAC pediatrica antes da adulta.
+- Dose real validada: PAC pediatrica com 18 kg -> amoxicilina 900-1620 mg/dia -> confirmacao -> plano e preview SOAP.
+- Mobile de 313 px sem overflow horizontal; titulo terapeutico quebra em duas linhas.
+- `pnpm research:epistemic-firewall`: passou e gravou o primeiro log auditavel em 2026-07-29.
+- Epistemic Firewall: 256/256 mascaras Sounio, estado atual `refused`, hash cruzado dos recibos valido.
+- Teste real do loader: 4 anos + tosse + febre + coriza -> `REFUSE / calibration-invalid`, mascara 137, integridade valida e zero hipoteses Sounio expostas.
+- `pnpm exec tsc --noEmit`: passou apos o firewall.
+- `pnpm verify`: 19 passaram, 0 falharam, 0 avisos apos o firewall.
+- `pnpm build`: passou novamente, 16.545 paginas estaticas.
+- Preview real: quatro novos artefatos responderam HTTP 200; UI mostrou autorizacao clinica bloqueada e o console ficou sem erros.
+- `pnpm calibrate:epistemic-firewall:validate`: 45 pacientes, split 27/9/9, nove condicoes em calibracao e avaliacao e zero vazamento.
+- `pnpm calibrate:epistemic-firewall:fixture`: compilou e executou o oraculo Sounio; cobertura marginal 1,00, Brier 0,348525, ECE 0,026786 e limite inferior de Wilson 0,700855. Estes numeros sao apenas da fixture e nao possuem validade clinica.
+- `node scripts/calibrate-epistemic-firewall.mjs --fixture --promote`: recusado antes da compilacao, como previsto.
+- `pnpm verify`: 20 passaram, 0 falharam, 0 avisos, incluindo contrato de coorte e bloqueio de promocao sintetica.
+- `pnpm build:clinical-kernel`, `pnpm exec tsc --noEmit` e `pnpm build`: passaram novamente; 16.545 paginas estaticas.
+- `pnpm calibrate:epistemic-firewall:fixture`: passou com comparador APS v1, Brier skill e plano de precisao executados no Sounio; promocao permaneceu bloqueada.
+- `pnpm verify`: 21 passaram, 0 falharam, 0 avisos, incluindo o contrato do comparador APS.
+- Gates source-fresh: fixed-point bit a bit, self-hosting/release gates e verificador canonico de marcadores passaram no worktree Sounio limpo.
+- `pnpm validate:compiler-source-receipt`: passou com `compilerReconciled=true`.
+- `pnpm validate:multicenter-package`: passou com 12 observacoes, nove condicoes e zero registros de pacientes.
+- Fixture source-fresh: 45 pacientes sinteticos, split 27/9/9, Brier Sounio 0,348525, comparador 0,739351, melhora relativa 0,528607 e ECE 0,026786; os gates de precisao/governanca permaneceram vermelhos, como previsto.
+- Tentativa `--fixture --promote`: recusada com exit code diferente de zero, como previsto.
+- `pnpm verify`: 22 passaram, 0 falharam, 0 avisos, incluindo recusa de fonte suja, commit divergente, seed trocada, recibo ausente e adulteracao de hashes.
+- `pnpm build:clinical-kernel`: passou com os paths source-fresh; WASM de 29.195 bytes e cinco vetores dentro de `1e-6` (erro maximo posterior 4,96e-7; EIG 1,96e-7).
+- `pnpm type-check`, `pnpm build:vercel` e `pnpm build`: passaram; o build estatico materializou 16.545 paginas.
+- Navegador em origem limpa: 4 anos + tosse -> `REFUSE / calibration-invalid`, integridade verificada, autorizacao clinica bloqueada, zero probabilidades/posteriores Sounio expostos e zero erros de console.
+- A data SOAP foi tornada deterministica entre SSR e cliente; o erro de hidratacao React observado no fuso de Sao Paulo foi eliminado.
+- `pnpm test:multicenter-onboarding`: dois centros exclusivamente sinteticos foram bloqueados e vinculados a uma coorte de engenharia; a fixture permaneceu sem autorizacao de calibracao.
+- Dez cenarios negativos foram recusados: hash adulterado, site duplicado, revisao vencida, aprovacao etica vencida, protocolo divergente, site de coorte desconhecido, autorizacao multicentrica nao vinculada, coorte ausente, tentativa de gravar mapping real no Git e uso de mapping sintetico no calibrador.
+- `pnpm verify`: 23 passaram, 0 falharam, 0 avisos apos o onboarding v2.
+- `pnpm type-check`: passou apos o onboarding v2.
+- Fixture source-fresh foi reexecutada com o compilador reconciliado; permaneceu `fixture-only`, inelegivel para revisao independente ou promocao.
+- `pnpm validate:public-clinical-datasets`: passou com cinco fontes, 13 probes definidos, sete mapeamentos exatos, 17 proxies/positive-only e zero autorizacao de calibracao/ativacao.
+- `pnpm probe:public-clinical-datasets`: 13/13 endpoints oficiais alcancaveis; o CSV SIVEP congelado apresentou 194 colunas e todas as colunas requeridas foram verificadas.
+- `pnpm analyze:public-sivep-srag:full`: processou 336.260 registros e 381.900.544 bytes; o SHA-256 integral e todas as sete invariantes de particao passaram, sem persistencia de linhas ou identificadores.
+- `pnpm verify`: 24 passaram, 0 falharam, 0 avisos, incluindo a proibicao de promover fontes publicas pelo firewall.
+- `pnpm type-check` e `pnpm build:vercel`: passaram; o build materializou 13.683 paginas estaticas.
+- `pnpm test:public-namcs2018-adapter`: passou os mapeamentos de idade, temperatura com decimal implicito, cinco sinais positivos, pneumonia/bronquiolite e bloqueios clinicos.
+- `pnpm analyze:public-namcs2018`: passou 14 invariantes no snapshot completo; nenhum registro, identificador ou credencial foi persistido.
+- `pnpm probe:public-clinical-datasets`: 14/14 endpoints oficiais alcancaveis apos incluir os formatos de valores do NAMCS.
+- `pnpm verify`: 25 passaram, 0 falharam, 0 avisos, incluindo o adaptador NAMCS offline.
+- `pnpm type-check` e `pnpm build:vercel`: passaram apos a integracao do parser; 13.683 paginas estaticas.
+- `pnpm bootstrap:public-namcs2018-survey-oracle`: passou com R 4.6.1, `survey` 4.5 e tarball de 2.417.046 bytes com SHA-256 `8a2ab01759f9acf6000274255edf00e342dfbf320a39fb76d42594e4d262b519`.
+- `pnpm verify:public-namcs2018-survey-parity`: 21/21 pontos e erros-padrao concordaram; erro relativo maximo de 1,74e-15 nos pontos e 2,06e-15 nos erros-padrao, com 436 graus de liberdade identicos.
+- Testes de identidade recusam hash de fonte adulterado e troca do `Rscript`; recibos anteriores sao invalidados antes de uma nova tentativa.
+- `pnpm verify`: 26 passaram, 0 falharam, 0 avisos; `pnpm type-check`, lockfile congelado e `pnpm build:vercel` passaram, com 13.683 paginas estaticas.
+- O recibo SIVEP-Gripe evoluiu para `darwin.sounio.public-sivep-feasibility-receipt.v2`, com faixas `<2`, `2-4`, `5-11` e `12-17`, classificacao final, desfecho e severidade por idade.
+- `pnpm analyze:public-sivep-srag:full` reconciliou novamente 336.260 registros, 381.900.544 bytes e SHA-256 `b5def80ae35092c5f64b4766d6d2e5785bdd63978a9aae51cc90521a91a6aaaa`; todas as 20 invariantes passaram.
+- Com limiar minimo de 30, 17 das 24 linhas idade-classificacao foram suprimidas primariamente, uma complementarmente e seis publicadas. Nenhuma linha suprimida reteve contagens; o controle protege margens simples, mas nao reivindica certificacao formal de risco de divulgacao.
+- `pnpm test:public-sivep-stratification` passou limites etarios, codigos oficiais, supressao primaria/complementar e recusa clinica. Probabilidades, efeitos de tratamento, prescricao, calibracao APS e ativacao permaneceram falsos.
+- `pnpm verify`: 27 passaram, 0 falharam, 0 avisos; `pnpm type-check`, lockfile congelado e `pnpm build:vercel` passaram, com 13.683 paginas estaticas. Uma leitura remota do Supabase registrou `ECONNRESET`, mas o build concluiu com as 717 rotas de medicamentos materializadas nos nove idiomas.
+- O snapshot NAMCS Health Center 2024 foi congelado em 14.135.511 bytes e SHA-256 `66dd4cfefb95a7938b735ecb0da9dadc78ff72825175296e6a7f9aa4e577533c`; 503.799 encontros, 107 centros, oito estratos e o total ponderado CDC foram reconciliados.
+- Node e o oraculo independente R `survey` 4.5 concordaram em 54 totais e razoes de idade/diagnostico dentro de `1e-9`, com 99 graus de liberdade identicos. Quarenta e quatro metricas foram publicadas e dez suprimidas por celula pequena ou RSE alto.
+- `pnpm audit:public-esus-notifica-2024` revalidou o catalogo oficial: 31 recursos ativos, tres PDFs e 28 CSVs cobrindo 27 UFs mais `NI`. Todos os 28 endpoints CSV retornaram HTTP 403; nenhum corpo, cabecalho CSV ou registro de paciente foi lido ou persistido.
+- O gate e-SUS trata um futuro HTTP 200/206 apenas como `header-review-required`; extracao, probabilidades, prescricao, calibracao APS e ativacao clinica continuam falsas, com missingness sempre desconhecida e firewall `REFUSE`.
+- `pnpm verify`: 29 passaram, 0 falharam, 0 avisos, incluindo NAMCS HC 2024 e o novo gate offline de disponibilidade e-SUS.
+- `pnpm type-check` e `pnpm build:vercel` passaram; o build materializou novamente 13.683 paginas estaticas e 717 medicamentos nos nove idiomas.
+- A consulta nacional SINAN/TabNet de coqueluche foi congelada por HTTPS com os 20 arquivos de notificacao de 2007-2026 e anos de inicio de sintomas de 2007-2024. Os anos de sintomas 2025 e 2026 ficaram excluidos por revisao/parcialidade.
+- O manifesto do formulario, corpo POST e matriz canonica foram pinados pelos SHA-256 `0c058b7f7fee6727a30ba13323e6d3fdae8769ea7fec34bb3e365ace9d116333`, `4a12397dc9fc21431b880a12789386a3eb35f759a177e6a71e0519fac592eb8c` e `7b0e47cb791f8f669a20a7177da653df0553d122531501ca2f04f5f6ea6668e1`.
+- A matriz reconciliou 44.878 notificacoes confirmadas entre 2007 e 2024. O ano de 2024 registrou 7.748, 4,9476 vezes 2019, mas abaixo das 8.498 de 2014; isto e contexto de notificacao, nao incidencia nem probabilidade diagnostica.
+- Em 2024, os agregados publicaveis foram 1.401 menores de 1 ano, 2.215 menores de 5, 4.522 menores de 15, 1.050 na faixa cruzada 15-19 e 2.176 com 20 anos ou mais. A faixa 15-19 nunca foi relabelada como menor de 18.
+- O recibo SINAN aplica limiar 30, nao persiste a matriz bruta ou celulas suprimidas, vincula o executor `curl` e mantem `symptomaticEncounterPriorEstimated=false`, probabilidades/prescricao/calibracao/ativacao falsas e firewall `REFUSE`.
+- `pnpm verify`: 30 passaram, 0 falharam, 0 avisos, incluindo o gate epidemiologico SINAN. `pnpm install --frozen-lockfile`, `pnpm type-check` e `pnpm build:vercel` passaram; 13.683 paginas e 717 medicamentos permaneceram materializados.
+- A triagem de seguranca para coqueluche foi implementada como camada separada do kernel probabilistico, com idade em dias, duracao da tosse, paroxismos, guincho, vomito pos-tosse, apneia, cianose, engasgo, contato proximo confirmado e situacao vacinal.
+- As regras de suspeicao seguem a Nota Tecnica MS 70/2024: 10 dias para menores de 6 meses, 14 dias a partir de 6 meses e rota independente por contato proximo com caso confirmado laboratorialmente. A vacinacao nunca exclui suspeicao.
+- Apneia e cianose geram alerta imediato independente do ranking; lactentes menores de 6 meses permanecem marcados como maior risco mesmo sem guincho. A Nota Tecnica MS 165/2025 e as clinical features CDC 2025 ficaram vinculadas como proveniencia complementar.
+- Seis fixtures sinteticas cobrem lactente com apneia precoce, lactente no limiar de 10 dias, crianca maior com 14 dias e paroxismos, adolescente vacinado exposto, IVAS aguda sem criterios e idade/duracao desconhecidas.
+- Contato e vacinacao podem alterar apenas o contrato de suspeicao/vigilancia; nao atravessam o vetor Sounio. O limiar clinico de exatamente 10 dias no lactente nao e convertido no feature congelado `duration_over_10d`, que permanece estritamente maior que 10 dias.
+- O comparador heuristico passou a parear cada sintoma com no maximo um criterio e limita aderencia alta quando ha somente um achado inespecifico. Tosse isolada em lactente deixa coqueluche com aderencia baixa 39; PAC continua liderando tosse + febre + dispneia com 77,5.
+- A interface explicita `aderencia alta/moderada/baixa`, nunca probabilidade calibrada. O Sounio continua exibindo `REFUSE / calibration-invalid`, sem posterior, EIG ou prescricao automatica.
+- A triagem respiratoria pediatrica agora deriva taquipneia somente de contagem valida em repouso: `>=60/min` abaixo de 2 meses, com segunda contagem obrigatoria se elevada; `>=50/min` de 2 a 11 meses; `>=40/min` de 1 a menor de 5 anos. Depois de 5 anos, a UI nao inventa um limiar AIDPI.
+- SpO2 entra como hipoxemia no vetor congelado apenas quando valida, em ar ambiente e abaixo de 92%. Medidas somente apos oxigenio ou com contexto desconhecido permanecem desconhecidas.
+- Apneia, cianose central, convulsao, letargia/inconsciencia, incapacidade de beber ou mamar, vomitar tudo, esforco grave, tiragem subcostal e estridor em repouso geram encaminhamento urgente independentemente do ranking.
+- Apneia, alimentacao, hidratacao, vomitos e estado neurologico permanecem invariantes de seguranca e nao atravessam o vetor Sounio. Somente taquipneia, hipoxemia, esforco/retracoes e estridor podem alimentar os quatro campos congelados correspondentes.
+- A triagem respiratoria compartilha apneia e cianose com o painel de coqueluche, evitando perguntas duplicadas. Nenhum alerta autoriza antibiotico, oxigenio, dose ou prescricao.
+- A triagem de febre no lactente jovem cobre idade desconhecida e 0 a 89 dias, separando temperatura atual, local de afericao, febre documentada em casa, contexto de prematuridade e sinais de possivel infeccao grave.
+- AIDPI nacional aciona seguranca abaixo de 60 dias com temperatura axilar menor que 36 °C ou a partir de 37,5 °C; temperatura atual ou domiciliar documentada a partir de 38 °C aciona a rota internacional abaixo de 90 dias.
+- Relato textual de febre e febre domiciliar nao atravessam silenciosamente o vetor Sounio. Somente temperatura atual valida de 38 °C ou mais materializa o feature congelado `fever`; o restante permanece na camada de seguranca e na heuristica explicitamente rotulada.
+- Apneia, cianose, convulsao, alimentacao, vomitos, estado geral e esforco grave sao sincronizados ao alternar entre os paineis febril e respiratorio, sem perder respostas ou duplicar perguntas.
+- Idades informadas em dias agora preservam diretamente os limites inteiros 59/60 e 89/90, sem ida e volta por anos decimais.
+- `pnpm test:pertussis-safety-fixtures`, `pnpm install --frozen-lockfile`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado agora fecha 31/31 sem avisos; o build materializou 13.683 paginas e manteve 717 medicamentos.
+- Playwright real validou a triagem no prontuario com lactente de 3 meses, tosse e apneia: alerta imediato, maior risco e firewall fechado. Desktop e mobile de 390 px ficaram sem overflow horizontal (`390/390`) e sem erros ou avisos de console.
+- Quatorze fixtures respiratorias sinteticas cobrem os limites 60/50/40, segunda contagem do lactente jovem, SpO2 91/92, apneia sem taquipneia, tiragem, estridor, sinais gerais de perigo, contexto pos-oxigenio, escolar sem derivacao AIDPI e desconhecido preservado.
+- `pnpm test:pediatric-respiratory-safety-fixtures`, `pnpm install --frozen-lockfile`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado agora fecha 32/32 sem avisos; o build materializou 13.683 paginas e manteve 717 medicamentos.
+- Playwright real validou dois fluxos: lactente de 1 mes com apneia e FR 42 recebeu encaminhamento urgente sem taquipneia; lactente de 3 meses com FR 50 e SpO2 91% em ar ambiente mostrou taquipneia e hipoxemia. O Sounio permaneceu `REFUSE / calibration-invalid`.
+- A segunda contagem apareceu dinamicamente para lactente de 1 mes com FR 60. Desktop de 1440 px e mobile de 390 px ficaram sem overflow horizontal; o console teve zero erros e zero avisos.
+- `scripts/clean-next-types.js` agora preserva `.next/types` e `.next/dev/types` quando `.next/dev/lock` existe. Isso impede que o type-check invalide o runtime Turbopack enquanto clientes estao usando o preview.
+- O cenario concorrente passou: `pnpm type-check` com o servidor ativo, seguido de `/pt/`, `/pt/medicamentos/`, `/pt/doencas/`, `/pt/calculadoras/` e `/pt/prontuario/`, retornou HTTP 200 em todas as rotas e sem erro no log.
+- Quatorze fixtures de febre no lactente jovem cobrem os limites axilares AIDPI, hipotermia, dia 60 e dia 90, febre domiciliar, local desconhecido, prematuridade, aparencia grave, perfusao, sinais neurologicos/cutaneos e desconhecidos preservados.
+- O teste prova que febre domiciliar, o limiar AIDPI de 37,5 °C e sinais sistemicos nao alteram o vetor congelado; tratamento, antibiotico, prescricao, score de sepse e ativacao clinica permanecem falsos.
+- Playwright validou 7 dias + 37,5 °C axilar, 30 dias + febre domiciliar, dia 60 exato, saida no dia 90 e febre + tosse. A transicao tosse/apneia/febre preservou a resposta urgente e manteve uma unica pergunta compartilhada.
+- Desktop de 1440 px e mobile de 390 px ficaram sem overflow horizontal; o console final teve zero erros e zero avisos. O Sounio permaneceu `REFUSE / calibration-invalid` e sem probabilidades calibradas expostas.
+- `pnpm test:young-infant-fever-safety-fixtures`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado agora fecha 33/33 sem avisos e o build materializa 13.683 paginas estaticas, incluindo 717 medicamentos nos nove idiomas.
+- A triagem de diarreia e desidratacao pediatrica cobre idade desconhecida ate menor de 5 anos, com matrizes AIDPI distintas abaixo de 60 dias e de 60 dias a menor de 5 anos.
+- A classificacao exige dois sinais observaveis e preserva desconhecidos: lactente jovem usa estado geral, olhos fundos, succao/ingestao e prega; crianca maior separa desidratacao grave, alguma desidratacao e sem desidratacao.
+- Duracao persistente respeita os limites nacionais: 7 dias no menor de 2 meses e 14 dias a partir de 2 meses. Sangue nas fezes, sinais gerais de perigo, choque e vomito bilioso permanecem rotas independentes de escalonamento.
+- O painel compartilha estado geral, capacidade de beber/mamar, vomitar tudo e enchimento capilar com febre e respiratorio. No fluxo combinado `diarreia + febre + tosse`, cada pergunta compartilhada aparece uma unica vez e a resposta e preservada entre paineis.
+- Dezesseis fixtures sinteticas cobrem 59/60 dias, persistencia 7/14 dias, as duas matrizes de desidratacao, sangue por idade, choque, risco de piora, diagnosticos alternativos, desconhecidos e a saida exata aos 5 anos.
+- Desidratacao, sangue, choque e sinais abdominais nao alteram o vetor Sounio congelado. O painel nao calcula score de choque nem autoriza hidratacao, zinco, antibiotico, dose ou prescricao; o firewall continua `REFUSE / calibration-invalid`.
+- `pnpm test:pediatric-diarrhea-safety-fixtures`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado fecha 34/34 sem avisos; o build materializa 13.683 paginas e 717 medicamentos.
+- Playwright validou menor de 2 meses com dois sinais e 7 dias de diarreia, a transicao no dia 60, alguma desidratacao, fluxo combinado sem perguntas duplicadas e saida aos 5 anos. Mobile de 390 px ficou sem overflow (`390/384`) e o console teve zero erros e zero avisos.
+- Depois de um `500` transitorio em `/pt/busca/` durante o dev anterior, o servidor foi reiniciado limpo e `/pt/busca/`, `/pt/medicamentos/`, `/pt/calculadoras/` e `/pt/prontuario/` responderam HTTP 200; a falha nao se reproduziu.
+- A triagem de dor abdominal e vomitos pediatricos cobre idade desconhecida ate menor de 18 anos, preservando a saida exata aos 18 anos e sem aplicar um escore diagnostico de apendicite.
+- Vomito verde/bilioso, hematemese, peritonismo, massa ou hernia encarcerada, escroto agudo, dor pelvica aguda, dor intensa subita/progressiva, obstrucao, sinais neurologicos, cetoacidose e intoxicacao permanecem rotas independentes de encaminhamento.
+- Padroes de invaginacao e apendicite sao apresentados como condicoes que exigem exclusao urgente ou no mesmo dia, nunca como diagnostico confirmado. Imagem, antiemetico, antibiotico, dose e prescricao continuam bloqueados.
+- A interface compartilha `vomita tudo` e sangue visivel nas fezes com diarreia; vomito bilioso, dor localizada e distensao/peritonismo ficam no painel abdominal. Febre e respiratorio reutilizam a resposta de vomitos sem repetir a pergunta.
+- Dezoito fixtures sinteticas cobrem bilioso, hematemese, peritonismo, massa/hernia, escroto/pelve, obstrucao, invaginacao, apendicite compativel, lactente com vomito em jato, neurologico, cetoacidose, intoxicacao, desconhecidos e o limite de 18 anos.
+- O teste prova que todos os sinais abdominais deixam o vetor Sounio congelado inalterado. O firewall continua `REFUSE / calibration-invalid`, sem probabilidade, score, imagem ou terapia automatica.
+- Playwright validou lactente de 6 meses com colica e palidez episodica, pre-escolar com padrao compativel com apendicite, vomito bilioso, fluxo combinado com diarreia sem perguntas duplicadas e saida aos 18 anos. Mobile de 390 px ficou sem overflow (`384/384`) e o console teve zero erros e zero avisos.
+- `pnpm test:pediatric-abdominal-safety-fixtures`, `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram. O gate integrado fecha 35/35 sem avisos; o build materializa 13.683 paginas e 717 medicamentos.
+- O preview foi reiniciado limpo em `http://127.0.0.1:3011`; inicio, prontuario, medicamentos, doencas, calculadoras e busca responderam HTTP 200.
+- A cobertura abdominal ganhou E2E permanente em `tests/e2e/pediatric-abdominal-safety.spec.ts`, com comando dedicado `pnpm test:e2e:pediatric-safety`.
+- Quatro execucoes passaram em serie no build Vercel: continuidade e deduplicacao em Desktop Chrome e Mobile Chrome, mais linguagem nao diagnostica, firewall Sounio fechado, limite de 18 anos, ausencia de overflow e zero erros de runtime nos dois projetos.
+- O fluxo `dor abdominal -> vomita tudo -> diarreia -> remover diarreia` manteve `vomita tudo` e vomito bilioso marcados, exibiu uma unica pergunta de cada sinal compartilhado e preservou a rota urgente de invaginacao.
+- O fluxo de dor progressiva em quadrante inferior direito com migracao, piora ao movimento e febre manteve a frase `exige excluir apendicite`, sem diagnostico confirmado, score, imagem ou probabilidade calibrada.
+- A primeira tentativa E2E nao chegou aos casos porque o `chromium_headless_shell` esperado pelo Playwright nao estava instalado; a repeticao usou `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome` e passou 4/4.
+- Durante a execucao contra `next dev`, o Turbopack voltou a produzir `500` transitorio com `JSON.parse` na geracao de rotas. O erro foi capturado integralmente; a mesma suite passou no caminho deterministico `VERCEL=1 next build` + `VERCEL=1 next start`.
+- `pnpm type-check`, `pnpm verify` e `pnpm build:vercel` passaram; o gate integrado permaneceu 35/35 e o build materializou 13.683 paginas.
+- O cache `.next/dev` com a falha foi preservado fora do worktree para diagnostico e o preview `next dev` foi recriado limpo em `3011`; prontuario, medicamentos, doencas, calculadoras e busca responderam HTTP 200.
+- O workflow `.github/workflows/clinical-safety-e2e.yml` adiciona gate dedicado em pull requests e no `main` quando mudam diagnostico, seguranca clinica, kernel, fixtures ou a propria infraestrutura Playwright.
+- `@playwright/test` foi fixado exatamente em `1.58.1`; o lockfile vincula a mesma versao e o CI instala Chromium com dependencias pelo proprio Playwright, incluindo o runtime de video/FFmpeg correspondente.
+- O script pediatrico fixa `PLAYWRIGHT_FULL_MATRIX=0`; a configuracao agora permite esse override explicito sob `CI=1`, mantendo somente Chromium desktop e Mobile Chrome. A matriz completa continua disponivel com `PLAYWRIGHT_FULL_MATRIX=1`.
+- Checkout, Node, pnpm e upload de artefatos estao fixados por SHA no workflow. Relatorio, resultados, screenshots, traces e videos de falha ficam retidos por 14 dias; os cenarios sao exclusivamente sinteticos.
+- A simulacao fiel `CI=1 pnpm test:e2e:pediatric-safety` instalou Playwright 1.58.1, Chromium 145 revision 1208 e FFmpeg revision 1011, reconstruiu/subiu o Vercel isolado em `3200` e passou 4/4 em 1,9 minuto.
+- `pnpm install --frozen-lockfile`, parser YAML, `pnpm type-check`, `pnpm verify` e o build interno do E2E passaram. O gate integrado permaneceu 35/35 e 13.683 paginas foram materializadas.
+- Nao existe pull request aberto para `codex/aps-design-refactor`; portanto, o workflow ainda nao tem execucao remota e so podera ser observado no GitHub apos abertura de PR, merge no `main` ou dispatch disponivel no branch padrao.
+
+## Proximo passo
+
+- Manter o e-SUS Notifica em monitoramento de disponibilidade; somente abrir auditoria de cabecalho se o endpoint publico retornar HTTP 200/206, sem credenciais ou contorno de controle de acesso.
+- Submeter o novo contrato abdominal a revisao clinica independente e obter a primeira execucao remota verde do novo workflow em PR antes de ampliar a triagem para outro sintoma pediatrico.
+- A primeira fase publica de cinco analises esta concluida; qualquer nova fonte deve preencher uma lacuna explicita, revalidar hashes e permanecer fora da promocao clinica.
+- Continuar buscando uma fonte publica ou parceria futura com coorte de APS desidentificada, adjudicada e aprovada; probabilidades e EIG permanecem bloqueados ate os gates completos.
+- Submeter o plano amostral completo a estatistico independente: slope/intercept de calibracao, discriminacao, incerteza pareada do Brier skill, net benefit, prevalencia, sites e subgrupos.
+- Obter as aprovacoes institucionais reais e preencher, revisar e bloquear externamente os mapeamentos de pelo menos dois servicos de APS antes de iniciar qualquer calibracao real.
+- Completar claim charts de `US12542216B2`, `US20260121859A1` e `WO2023057516A1`, expandir familias/CPC/IPC e obter segunda revisao independente.
+- Implementar referencia de distribuicao, monitor de drift com rotulos tardios e estudo prospectivo silencioso antes de produzir qualquer certificado real.
+- Assinar e publicar somente quando solicitado e depois dos gates cientificos completos; ate la, manter o Epistemic Firewall em `REFUSE`.

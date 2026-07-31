@@ -1,18 +1,18 @@
 import { doencasConsolidadas } from '@/lib/data/doencas/index';
-import { getDoencaIdsForStatic } from '@/lib/supabase/server-utils-doencas';
+import { getDoencaIdsForStatic, getDoencasServer } from '@/lib/supabase/server-utils-doencas';
 import DoencaDetailClient from './DoencaDetailClient';
 
 // Check if we're on Vercel (use dynamic rendering to reduce deployment size)
 const isVercel = process.env.VERCEL === '1' || process.env.VERCEL_ENV !== undefined;
 
-// Generate static params - limited on Vercel to reduce deployment size
-export function generateStaticParams() {
-  const allIds = getDoencaIdsForStatic();
-  if (isVercel) {
-    // On Vercel: generate only top 50 diseases statically
-    // Rest will be generated on-demand with ISR
-    return allIds.slice(0, 50).map((id) => ({ id }));
-  }
+// Generate all known IDs so Supabase-backed links work in every deployment target.
+export async function generateStaticParams() {
+  const allIds = isVercel
+    ? (await getDoencasServer())
+        .map((doenca) => doenca.id)
+        .filter((id): id is string => Boolean(id))
+    : getDoencaIdsForStatic();
+
   // For static export: generate all
   return allIds.map((id) => ({ id }));
 }

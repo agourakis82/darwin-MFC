@@ -1,0 +1,86 @@
+name: Clinical Safety E2E
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/clinical-safety-e2e.yml'
+      - 'app/components/Diagnosis/**'
+      - 'clinical/epistemic-firewall/**'
+      - 'clinical/sounio/**'
+      - 'lib/clinical-kernel/**'
+      - 'lib/clinical-safety/**'
+      - 'tests/e2e/pediatric-abdominal-safety.spec.ts'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'playwright.config.ts'
+  push:
+    branches: ['main']
+    paths:
+      - '.github/workflows/clinical-safety-e2e.yml'
+      - 'app/components/Diagnosis/**'
+      - 'clinical/epistemic-firewall/**'
+      - 'clinical/sounio/**'
+      - 'lib/clinical-kernel/**'
+      - 'lib/clinical-safety/**'
+      - 'tests/e2e/pediatric-abdominal-safety.spec.ts'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'playwright.config.ts'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: clinical-safety-e2e-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pediatric-abdominal-safety:
+    name: Pediatric abdominal safety
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with:
+          version: 11.3.0
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+          cache: pnpm
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install pinned Chromium runtime
+        run: |
+          pnpm exec playwright --version
+          pnpm exec playwright install --with-deps chromium
+
+      - name: Type-check
+        run: pnpm type-check
+
+      - name: Verify clinical integration
+        run: pnpm verify
+
+      - name: Run pediatric safety E2E
+        run: pnpm test:e2e:pediatric-safety
+
+      - name: Upload Playwright evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: pediatric-safety-playwright-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: warn
+          retention-days: 14

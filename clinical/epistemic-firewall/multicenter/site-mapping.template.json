@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "darwin.sounio.site-mapping.v2",
+  "mappingVersion": "0.0.0-draft",
+  "status": "draft",
+  "siteKind": "clinical-site",
+  "siteCode": "REPLACE_WITH_NONIDENTIFYING_SITE_CODE",
+  "siteHash": null,
+  "sourceSystem": "REPLACE_WITH_SOURCE_SYSTEM_AND_VERSION",
+  "dictionaryVersion": "1.0.0",
+  "cohortSchemaVersion": "darwin.sounio.retrospective-cohort.v1",
+  "governance": {
+    "researchProtocolId": "REPLACE_WITH_FROZEN_PROTOCOL_ID",
+    "coordinatingCenterCode": "REPLACE_WITH_COORDINATING_CENTER_CODE",
+    "participatingCenterCode": "REPLACE_WITH_PARTICIPATING_CENTER_CODE",
+    "ethicsReviewModel": "single-review-coordinating-cep",
+    "ethicsApprovalId": "REPLACE_WITH_ETHICS_APPROVAL_ID",
+    "ethicsApprovalIssuedAt": "REPLACE_WITH_YYYY-MM-DD",
+    "ethicsApprovalValidUntil": null,
+    "localResponsibilityAttested": true,
+    "databaseControllerAuthorizationId": "REPLACE_WITH_DATABASE_CONTROLLER_AUTHORIZATION_ID",
+    "databaseControllerAuthorizationAttested": true,
+    "dataUseAgreementId": "REPLACE_WITH_DATA_USE_AGREEMENT_ID",
+    "multicenterDataUseApprovalId": "REPLACE_WITH_MULTICENTER_DATA_USE_APPROVAL_ID",
+    "dataUseAgreementValidUntil": null,
+    "legalBasisAssessmentId": "REPLACE_WITH_LEGAL_BASIS_ASSESSMENT_ID",
+    "researchBodyEligibilityAttested": true,
+    "ripdId": "REPLACE_WITH_RIPD_OR_RISK_DECISION_ID",
+    "dataControllerCode": "REPLACE_WITH_DATA_CONTROLLER_CODE",
+    "dataProcessorCode": "REPLACE_WITH_DATA_PROCESSOR_CODE",
+    "dpoChannelHeldOffRepository": true
+  },
+  "indexEncounter": {
+    "selectionRule": "REPLACE_WITH_DETERMINISTIC_ONE_ENCOUNTER_PER_PATIENT_RULE",
+    "encounterDateField": "REPLACE_WITH_ENCOUNTER_DATE_FIELD",
+    "ageDaysDerivation": "REPLACE_WITH_AGE_DAYS_DERIVATION"
+  },
+  "pseudonyms": {
+    "algorithm": "HMAC-SHA-256",
+    "patientSourceField": "REPLACE_WITH_PATIENT_SOURCE_FIELD",
+    "encounterSourceField": "REPLACE_WITH_ENCOUNTER_SOURCE_FIELD",
+    "siteHashDerivation": "SHA-256(darwin.sounio.site:v1:<siteCode>)",
+    "siteHeldSecretNeverExported": true
+  },
+  "observations": [
+    { "featureId": "fever", "sourceFields": ["REPLACE_WITH_SOURCE_FIELD"], "transformation": "REPLACE_WITH_TRANSFORMATION", "unit": "degC" },
+    { "featureId": "cough", "sourceFields": ["REPLACE_WITH_SOURCE_FIELD"], "transformation": "REPLACE_WITH_TRANSFORMATION", "unit": null },
+    { "featureId": "coryza", "sourceFields": ["REPLACE_WITH_SOURCE_FIELD"], "transformation": "REPLACE_WITH_TRANSFORMATION", "unit": null },
+    { "featureId": "sore_throat", "sourceFields": ["REPLACE_WITH_SOURCE_FIELD"], "transformation": "REPLACE_WITH_TRANSFORMATION", "unit": null },
+    { "featureId": "dyspnea", "sourceFields": ["REPLACE_WITH_SOURCE_FIELD"], "transformation": "REPLACE_WITH_TRANSFORMATION", "unit": null },
+    { "featureId": "wheeze", "sourceFields": ["REPLACE_WITH_SOURCE_FIELD"], "transformation": "REPLACE_WITH_TRANSFORMATION", "unit": null },
+    { "featureId": "stridor", "sourceFields": ["REPLACE_WITH_SOURCE_FIELD"], "transformation": "REPLACE_WITH_TRANSFORMATION", "unit": null },
+    { "featureId": "tachypnea", "sourceFields": ["REPLACE_WITH_SOURCE_FIELD"], "transformation": "REPLACE_WITH_TRANSFORMATION", "unit": "breaths/min" },
+    { "featureId": "hypoxemia", "sourceFields": ["REPLACE_WITH_SOURCE_FIELD"], "transformation": "REPLACE_WITH_TRANSFORMATION", "unit": "%" },
+    { "featureId": "paroxysmal_cough", "sourceFields": ["REPLACE_WITH_SOURCE_FIELD"], "transformation": "REPLACE_WITH_TRANSFORMATION", "unit": null },
+    { "featureId": "age_under_2", "sourceFields": ["DERIVED_FROM_ageDays"], "transformation": "ageDays < 730", "unit": null },
+    { "featureId": "duration_over_10d", "sourceFields": ["REPLACE_WITH_SOURCE_FIELD"], "transformation": "REPLACE_WITH_TRANSFORMATION", "unit": "completed-days" }
+  ],
+  "referenceStandard": {
+    "adjudicationMethod": "chart-review-double",
+    "adjudicatorsBlindedToKernel": true,
+    "conditionSourceFields": ["REPLACE_WITH_ADJUDICATED_CONDITION_FIELD"],
+    "severityOutcomeSourceFields": ["REPLACE_WITH_SEVERITY_OUTCOME_FIELD"],
+    "disagreementResolution": "REPLACE_WITH_THIRD_REVIEW_OR_CONSENSUS_RULE"
+  },
+  "missingness": {
+    "unknownCode": -1,
+    "absentCode": 0,
+    "presentCode": 1,
+    "notDocumentedMapsTo": -1
+  },
+  "privacy": {
+    "freeTextExported": false,
+    "directIdentifiersExported": false,
+    "dateOfBirthExported": false,
+    "linkageTableLeavesSite": false,
+    "crossBorderTransfer": false,
+    "minimumNecessaryAttested": true,
+    "reidentificationRiskAssessmentId": "REPLACE_WITH_REIDENTIFICATION_RISK_ASSESSMENT_ID",
+    "secureEnvironmentAssessmentId": "REPLACE_WITH_SECURE_ENVIRONMENT_ASSESSMENT_ID",
+    "retentionPlanId": "REPLACE_WITH_RETENTION_PLAN_ID",
+    "breachResponsePlanId": "REPLACE_WITH_BREACH_RESPONSE_PLAN_ID"
+  },
+  "representation": {
+    "careSetting": "APS-SUS",
+    "coverageStart": "REPLACE_WITH_YYYY-MM-DD",
+    "coverageEnd": "REPLACE_WITH_YYYY-MM-DD",
+    "sourcePopulationDescription": "REPLACE_WITH_NONIDENTIFYING_SOURCE_POPULATION_DESCRIPTION",
+    "inclusionExclusionProtocolId": "REPLACE_WITH_INCLUSION_EXCLUSION_PROTOCOL_ID",
+    "variables": [
+      { "id": "sex_at_birth", "availability": "not-approved", "sourceFields": [], "transformation": null },
+      { "id": "race_skin_color", "availability": "not-approved", "sourceFields": [], "transformation": null },
+      { "id": "comorbidity", "availability": "not-approved", "sourceFields": [], "transformation": null },
+      { "id": "immunization", "availability": "not-approved", "sourceFields": [], "transformation": null },
+      { "id": "geography", "availability": "not-approved", "sourceFields": [], "transformation": null },
+      { "id": "socioeconomic_proxy", "availability": "not-approved", "sourceFields": [], "transformation": null }
+    ]
+  },
+  "approval": {
+    "mappingLocked": false,
+    "clinicalReviewerId": "REPLACE_WITH_ROLE_ID_NOT_PERSON_NAME",
+    "dataStewardId": "REPLACE_WITH_ROLE_ID_NOT_PERSON_NAME",
+    "principalInvestigatorId": "REPLACE_WITH_ROLE_ID_NOT_PERSON_NAME",
+    "lockedAt": null,
+    "reviewDueAt": "REPLACE_WITH_YYYY-MM-DD",
+    "documentsHeldOffRepository": true,
+    "mappingSha256": null
+  }
+}

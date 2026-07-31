@@ -40,7 +40,9 @@ export async function getDoencaServer(id: string): Promise<Partial<Doenca> | nul
       .single();
 
     if (error) {
-      console.error('Error fetching doenca from Supabase:', error);
+      if (error.code !== 'PGRST116') {
+        console.error('Error fetching doenca from Supabase:', error);
+      }
       return getLocalDoencaById(id) || null;
     }
 
@@ -70,8 +72,10 @@ export async function getDoencasServer(): Promise<Partial<Doenca>[]> {
       .select('*')
       .order('nome');
 
-    if (error) {
-      console.error('Error fetching doencas from Supabase:', error);
+    if (error || !data?.length) {
+      if (error) {
+        console.error('Error fetching doencas from Supabase:', error);
+      }
       return doencasConsolidadas;
     }
 

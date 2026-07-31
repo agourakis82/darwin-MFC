@@ -218,6 +218,47 @@ html[data-reduce-transparency="true"] {
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* APS consultation workspace: keeps legacy clinical tools inside the focused shell. */
+.soap-clinical-workspace {
+  color-scheme: dark;
+}
+
+.soap-clinical-workspace input,
+.soap-clinical-workspace textarea,
+.soap-clinical-workspace select {
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  border-radius: 0.375rem !important;
+  background: #050c10 !important;
+  color: #f4f4f5 !important;
+  outline: none;
+}
+
+.soap-clinical-workspace input:focus,
+.soap-clinical-workspace textarea:focus,
+.soap-clinical-workspace select:focus {
+  border-color: rgba(103, 232, 249, 0.7) !important;
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.12);
+}
+
+.soap-clinical-workspace input::placeholder,
+.soap-clinical-workspace textarea::placeholder {
+  color: #52525b;
+}
+
+.soap-clinical-workspace [class*="dark:bg-slate-800"],
+.soap-clinical-workspace [class*="dark:bg-slate-900"] {
+  background-color: #071015 !important;
+}
+
+.soap-clinical-workspace [class*="dark:border-slate-700"] {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.soap-clinical-workspace [class*="rounded-xl"],
+.soap-clinical-workspace [class*="rounded-2xl"] {
+  border-radius: 0.5rem !important;
+}
+
 /* DARWIN CARD */
 @utility card-darwin {
   background-color: white;

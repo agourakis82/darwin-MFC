@@ -1,0 +1,322 @@
+{
+  "schemaVersion": "darwin.sounio.pediatric-diarrhea-safety-fixtures.v1",
+  "status": "synthetic-safety-only",
+  "locale": "pt-BR",
+  "setting": "APS/SUS",
+  "sourceBoundary": {
+    "dehydrationAddedToKernel": false,
+    "shockScoreCalculated": false,
+    "fluidPlanAuthorized": false,
+    "zincDoseAuthorized": false,
+    "antibioticRecommendationAuthorized": false,
+    "prescriptionAuthorized": false,
+    "clinicalActivationAuthorized": false
+  },
+  "references": [
+    {
+      "id": "ms-acute-child-care-aidpi",
+      "url": "https://linhasdecuidado.saude.gov.br/portal/puericultura/unidade-de-atencao-primaria/condicoes-agudas/index.php"
+    },
+    {
+      "id": "ms-aidpi-child-2017",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/manual_quadros_procedimentos_aidpi_crianca_2meses_5anos.pdf"
+    },
+    {
+      "id": "who-imci-diarrhoea-2014",
+      "url": "https://www.who.int/publications/i/item/9789241506823"
+    },
+    {
+      "id": "who-young-infant-2019",
+      "url": "https://www.who.int/publications/i/item/9789241516365"
+    },
+    {
+      "id": "nice-gastroenteritis-cg84",
+      "url": "https://www.nice.org.uk/guidance/cg84/chapter/Recommendations"
+    }
+  ],
+  "defaults": {
+    "ageDays": 365,
+    "diarrheaPresent": true,
+    "durationDays": 2,
+    "bloodInStool": "no",
+    "generalCondition": "normal",
+    "sunkenEyes": "no",
+    "drinkingAbility": "normal",
+    "skinPinchReturn": "normal",
+    "vomitingEverything": "no",
+    "decreasedUrineOutput": "no",
+    "paleOrMottledSkin": "no",
+    "coldExtremities": "no",
+    "weakPeripheralPulse": "no",
+    "capillaryRefillOver2Seconds": "no",
+    "hypotension": "no",
+    "biliousVomiting": "no",
+    "severeLocalizedAbdominalPain": "no",
+    "abdominalDistensionOrRebound": "no",
+    "stoolsLast24Hours": 3,
+    "vomitingEpisodesLast24Hours": 0,
+    "stoppedBreastfeeding": "no",
+    "lowBirthWeightOrMalnutrition": "no"
+  },
+  "fixtures": [
+    {
+      "id": "young-infant-two-signs-classify-dehydration",
+      "input": { "ageDays": 30, "generalCondition": "restless-irritable", "sunkenEyes": "yes" },
+      "expected": {
+        "applicable": true,
+        "ageBand": "under-2-months",
+        "classification": "young-infant-dehydration",
+        "youngInfantSignCount": 2,
+        "dangerSignIds": ["young-infant-dehydration"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "young-infant-day-59-duration-7-is-urgent",
+      "input": { "ageDays": 59, "durationDays": 7 },
+      "expected": {
+        "applicable": true,
+        "ageBand": "under-2-months",
+        "classification": "no-dehydration",
+        "youngInfantSignCount": 0,
+        "dangerSignIds": ["young-infant-diarrhea-7-days-or-more"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "day-60-duration-7-does-not-use-young-infant-threshold",
+      "input": { "ageDays": 60, "durationDays": 7 },
+      "expected": {
+        "applicable": true,
+        "ageBand": "2-months-to-under-5-years",
+        "classification": "no-dehydration",
+        "youngInfantSignCount": 0,
+        "dangerSignIds": [],
+        "prioritySignIds": [],
+        "priority": "routine",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "day-60-two-severe-signs-classify-severe-dehydration",
+      "input": { "ageDays": 60, "generalCondition": "lethargic-unconscious", "sunkenEyes": "yes" },
+      "expected": {
+        "applicable": true,
+        "ageBand": "2-months-to-under-5-years",
+        "classification": "severe-dehydration",
+        "youngInfantSignCount": 2,
+        "dangerSignIds": ["severe-dehydration", "lethargic-or-unconscious"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "preschool-two-some-signs-classify-some-dehydration",
+      "input": { "ageDays": 1460, "generalCondition": "restless-irritable", "drinkingAbility": "eager-thirsty" },
+      "expected": {
+        "applicable": true,
+        "ageBand": "2-months-to-under-5-years",
+        "classification": "some-dehydration",
+        "youngInfantSignCount": 1,
+        "dangerSignIds": [],
+        "prioritySignIds": ["some-dehydration"],
+        "priority": "same-day-assessment",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "preschool-normal-signs-classify-no-dehydration",
+      "input": { "ageDays": 1460 },
+      "expected": {
+        "applicable": true,
+        "ageBand": "2-months-to-under-5-years",
+        "classification": "no-dehydration",
+        "youngInfantSignCount": 0,
+        "dangerSignIds": [],
+        "prioritySignIds": [],
+        "priority": "routine",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "preschool-duration-14-without-dehydration-is-persistent",
+      "input": { "ageDays": 1460, "durationDays": 14 },
+      "expected": {
+        "applicable": true,
+        "ageBand": "2-months-to-under-5-years",
+        "classification": "no-dehydration",
+        "youngInfantSignCount": 0,
+        "dangerSignIds": [],
+        "prioritySignIds": ["persistent-diarrhea"],
+        "priority": "same-day-assessment",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "persistent-diarrhea-with-dehydration-is-urgent",
+      "input": { "ageDays": 1460, "durationDays": 14, "generalCondition": "restless-irritable", "drinkingAbility": "eager-thirsty" },
+      "expected": {
+        "applicable": true,
+        "ageBand": "2-months-to-under-5-years",
+        "classification": "some-dehydration",
+        "youngInfantSignCount": 1,
+        "dangerSignIds": ["persistent-diarrhea-with-dehydration"],
+        "prioritySignIds": ["some-dehydration"],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "young-infant-blood-in-stool-is-urgent",
+      "input": { "ageDays": 30, "bloodInStool": "yes" },
+      "expected": {
+        "applicable": true,
+        "ageBand": "under-2-months",
+        "classification": "no-dehydration",
+        "youngInfantSignCount": 0,
+        "dangerSignIds": ["young-infant-blood-in-stool"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": ["Sangue nas fezes"],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "older-infant-blood-in-stool-is-same-day",
+      "input": { "ageDays": 60, "bloodInStool": "yes" },
+      "expected": {
+        "applicable": true,
+        "ageBand": "2-months-to-under-5-years",
+        "classification": "no-dehydration",
+        "youngInfantSignCount": 0,
+        "dangerSignIds": [],
+        "prioritySignIds": ["blood-in-stool-dysentery"],
+        "priority": "same-day-assessment",
+        "heuristicSymptoms": ["Sangue nas fezes"],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "shock-signs-are-independent-and-urgent",
+      "input": {
+        "ageDays": 1460,
+        "paleOrMottledSkin": "yes",
+        "coldExtremities": "yes",
+        "weakPeripheralPulse": "yes",
+        "capillaryRefillOver2Seconds": "yes",
+        "hypotension": "yes"
+      },
+      "expected": {
+        "applicable": true,
+        "ageBand": "2-months-to-under-5-years",
+        "classification": "no-dehydration",
+        "youngInfantSignCount": 0,
+        "dangerSignIds": ["pale-or-mottled-skin", "cold-extremities", "weak-peripheral-pulse", "capillary-refill-over-2-seconds", "hypotension"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "vomiting-everything-and-bile-are-urgent",
+      "input": { "ageDays": 1460, "vomitingEverything": "yes", "biliousVomiting": "yes" },
+      "expected": {
+        "applicable": true,
+        "ageBand": "2-months-to-under-5-years",
+        "classification": "no-dehydration",
+        "youngInfantSignCount": 0,
+        "dangerSignIds": ["vomiting-everything", "bilious-vomiting"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": ["Vômito"],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "risk-and-alternative-diagnosis-signs-are-same-day",
+      "input": {
+        "ageDays": 1460,
+        "decreasedUrineOutput": "yes",
+        "stoolsLast24Hours": 6,
+        "vomitingEpisodesLast24Hours": 3,
+        "stoppedBreastfeeding": "yes",
+        "lowBirthWeightOrMalnutrition": "yes",
+        "severeLocalizedAbdominalPain": "yes",
+        "abdominalDistensionOrRebound": "yes"
+      },
+      "expected": {
+        "applicable": true,
+        "ageBand": "2-months-to-under-5-years",
+        "classification": "no-dehydration",
+        "youngInfantSignCount": 0,
+        "dangerSignIds": [],
+        "prioritySignIds": ["decreased-urine-output", "increased-dehydration-risk", "alternative-diagnosis-sign"],
+        "priority": "same-day-assessment",
+        "heuristicSymptoms": ["Vômito"],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "unknown-age-and-core-signs-remain-incomplete",
+      "useUnknownDefaults": true,
+      "input": {},
+      "expected": {
+        "applicable": true,
+        "ageBand": "unknown",
+        "classification": "incomplete",
+        "youngInfantSignCount": 0,
+        "dangerSignIds": [],
+        "prioritySignIds": ["age-required", "incomplete-dehydration-screen"],
+        "priority": "same-day-assessment",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": [],
+        "requiredNextQuestionIds": ["age", "generalCondition", "sunkenEyes", "drinkingAbility", "skinPinchReturn"]
+      }
+    },
+    {
+      "id": "unknown-sign-can-block-false-no-dehydration",
+      "input": { "ageDays": 60, "generalCondition": "lethargic-unconscious", "sunkenEyes": "unknown" },
+      "expected": {
+        "applicable": true,
+        "ageBand": "2-months-to-under-5-years",
+        "classification": "incomplete",
+        "youngInfantSignCount": 1,
+        "dangerSignIds": ["lethargic-or-unconscious"],
+        "prioritySignIds": ["incomplete-dehydration-screen"],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": [],
+        "requiredNextQuestionIds": ["sunkenEyes"]
+      }
+    },
+    {
+      "id": "exact-five-years-is-outside-aidpi-panel",
+      "input": { "ageDays": 1826.2125 },
+      "expected": {
+        "applicable": false,
+        "ageBand": "not-aidpi",
+        "classification": "not-applicable",
+        "youngInfantSignCount": 0,
+        "dangerSignIds": [],
+        "prioritySignIds": [],
+        "priority": "routine",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    }
+  ]
+}

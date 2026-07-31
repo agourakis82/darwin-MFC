@@ -1,0 +1,480 @@
+{
+  "schemaVersion": "darwin.sounio.pediatric-respiratory-safety-fixtures.v1",
+  "status": "synthetic-safety-only",
+  "locale": "pt-BR",
+  "setting": "APS/SUS",
+  "sourceBoundary": {
+    "nonFrozenSafetySignalsAddedToKernel": false,
+    "posteriorAdjustedInTypeScript": false,
+    "antibioticRecommendationAuthorized": false,
+    "prescriptionAuthorized": false,
+    "clinicalActivationAuthorized": false
+  },
+  "references": [
+    {
+      "id": "ms-acute-child-care-aidpi",
+      "url": "https://linhasdecuidado.saude.gov.br/portal/puericultura/unidade-de-atencao-primaria/condicoes-agudas/index.php"
+    },
+    {
+      "id": "ms-aidpi-child-2017",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/manual_quadros_procedimentos_aidpi_crianca_2meses_5anos.pdf"
+    },
+    {
+      "id": "who-young-infant-2019",
+      "url": "https://www.who.int/publications/i/item/9789241516365"
+    },
+    {
+      "id": "nice-bronchiolitis-ng9",
+      "url": "https://www.nice.org.uk/guidance/ng9/chapter/Recommendations"
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "young-infant-repeat-confirms-60",
+      "input": {
+        "ageDays": 30,
+        "respiratorySymptomsPresent": true,
+        "respiratoryRatePerMinute": 60,
+        "repeatRespiratoryRatePerMinute": 60,
+        "respiratoryRateMeasurementState": "calm",
+        "spo2Percent": 97,
+        "oxygenMeasurementContext": "room-air",
+        "chestIndrawing": "no",
+        "severeWorkOfBreathing": "no",
+        "unableToDrinkOrBreastfeed": "no",
+        "vomitingEverything": "no",
+        "reducedOralIntakeOrDehydration": "no",
+        "lethargyOrUnconsciousness": "no",
+        "convulsions": "no",
+        "apnea": "no",
+        "centralCyanosis": "no",
+        "stridorAtRest": "no"
+      },
+      "expected": {
+        "ageBand": "under-2-months",
+        "fastBreathingThreshold": 60,
+        "tachypnea": "present",
+        "hypoxemia": "absent",
+        "repeatCountRequired": true,
+        "dangerSignIds": [],
+        "prioritySignIds": ["tachypnea-for-age"],
+        "priority": "same-day-assessment",
+        "kernelSymptoms": ["Frequência respiratória elevada"]
+      }
+    },
+    {
+      "id": "young-infant-repeat-missing-preserves-unknown",
+      "input": {
+        "ageDays": 30,
+        "respiratorySymptomsPresent": true,
+        "respiratoryRatePerMinute": 61,
+        "respiratoryRateMeasurementState": "calm",
+        "oxygenMeasurementContext": "unknown",
+        "chestIndrawing": "no",
+        "severeWorkOfBreathing": "no",
+        "unableToDrinkOrBreastfeed": "no",
+        "vomitingEverything": "no",
+        "reducedOralIntakeOrDehydration": "no",
+        "lethargyOrUnconsciousness": "no",
+        "convulsions": "no",
+        "apnea": "no",
+        "centralCyanosis": "no",
+        "stridorAtRest": "no"
+      },
+      "expected": {
+        "ageBand": "under-2-months",
+        "fastBreathingThreshold": 60,
+        "tachypnea": "unknown",
+        "hypoxemia": "unknown",
+        "repeatCountRequired": true,
+        "dangerSignIds": [],
+        "prioritySignIds": ["young-infant-repeat-count-required"],
+        "priority": "same-day-assessment",
+        "kernelSymptoms": [],
+        "requiredNextQuestionIds": ["repeatRespiratoryRatePerMinute"]
+      }
+    },
+    {
+      "id": "two-month-threshold-is-50",
+      "input": {
+        "ageDays": 60,
+        "respiratorySymptomsPresent": true,
+        "respiratoryRatePerMinute": 50,
+        "respiratoryRateMeasurementState": "calm",
+        "spo2Percent": 96,
+        "oxygenMeasurementContext": "room-air",
+        "chestIndrawing": "no",
+        "severeWorkOfBreathing": "no",
+        "unableToDrinkOrBreastfeed": "no",
+        "vomitingEverything": "no",
+        "reducedOralIntakeOrDehydration": "no",
+        "lethargyOrUnconsciousness": "no",
+        "convulsions": "no",
+        "apnea": "no",
+        "centralCyanosis": "no",
+        "stridorAtRest": "no"
+      },
+      "expected": {
+        "ageBand": "2-to-11-months",
+        "fastBreathingThreshold": 50,
+        "tachypnea": "present",
+        "hypoxemia": "absent",
+        "repeatCountRequired": false,
+        "dangerSignIds": [],
+        "prioritySignIds": ["tachypnea-for-age"],
+        "priority": "same-day-assessment",
+        "kernelSymptoms": ["Frequência respiratória elevada"]
+      }
+    },
+    {
+      "id": "eleven-months-49-is-not-fast",
+      "input": {
+        "ageDays": 364,
+        "respiratorySymptomsPresent": true,
+        "respiratoryRatePerMinute": 49,
+        "respiratoryRateMeasurementState": "calm",
+        "spo2Percent": 96,
+        "oxygenMeasurementContext": "room-air",
+        "chestIndrawing": "no",
+        "severeWorkOfBreathing": "no",
+        "unableToDrinkOrBreastfeed": "no",
+        "vomitingEverything": "no",
+        "reducedOralIntakeOrDehydration": "no",
+        "lethargyOrUnconsciousness": "no",
+        "convulsions": "no",
+        "apnea": "no",
+        "centralCyanosis": "no",
+        "stridorAtRest": "no"
+      },
+      "expected": {
+        "ageBand": "2-to-11-months",
+        "fastBreathingThreshold": 50,
+        "tachypnea": "absent",
+        "hypoxemia": "absent",
+        "repeatCountRequired": false,
+        "dangerSignIds": [],
+        "prioritySignIds": [],
+        "priority": "routine",
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "twelve-month-threshold-is-40",
+      "input": {
+        "ageDays": 366,
+        "respiratorySymptomsPresent": true,
+        "respiratoryRatePerMinute": 40,
+        "respiratoryRateMeasurementState": "calm",
+        "spo2Percent": 98,
+        "oxygenMeasurementContext": "room-air",
+        "chestIndrawing": "no",
+        "severeWorkOfBreathing": "no",
+        "unableToDrinkOrBreastfeed": "no",
+        "vomitingEverything": "no",
+        "reducedOralIntakeOrDehydration": "no",
+        "lethargyOrUnconsciousness": "no",
+        "convulsions": "no",
+        "apnea": "no",
+        "centralCyanosis": "no",
+        "stridorAtRest": "no"
+      },
+      "expected": {
+        "ageBand": "1-to-under-5-years",
+        "fastBreathingThreshold": 40,
+        "tachypnea": "present",
+        "hypoxemia": "absent",
+        "repeatCountRequired": false,
+        "dangerSignIds": [],
+        "prioritySignIds": ["tachypnea-for-age"],
+        "priority": "same-day-assessment",
+        "kernelSymptoms": ["Frequência respiratória elevada"]
+      }
+    },
+    {
+      "id": "preschool-39-is-not-fast",
+      "input": {
+        "ageDays": 1461,
+        "respiratorySymptomsPresent": true,
+        "respiratoryRatePerMinute": 39,
+        "respiratoryRateMeasurementState": "calm",
+        "spo2Percent": 97,
+        "oxygenMeasurementContext": "room-air",
+        "chestIndrawing": "no",
+        "severeWorkOfBreathing": "no",
+        "unableToDrinkOrBreastfeed": "no",
+        "vomitingEverything": "no",
+        "reducedOralIntakeOrDehydration": "no",
+        "lethargyOrUnconsciousness": "no",
+        "convulsions": "no",
+        "apnea": "no",
+        "centralCyanosis": "no",
+        "stridorAtRest": "no"
+      },
+      "expected": {
+        "ageBand": "1-to-under-5-years",
+        "fastBreathingThreshold": 40,
+        "tachypnea": "absent",
+        "hypoxemia": "absent",
+        "repeatCountRequired": false,
+        "dangerSignIds": [],
+        "prioritySignIds": [],
+        "priority": "routine",
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "room-air-spo2-91-is-danger",
+      "input": {
+        "ageDays": 180,
+        "respiratorySymptomsPresent": true,
+        "respiratoryRatePerMinute": 45,
+        "respiratoryRateMeasurementState": "calm",
+        "spo2Percent": 91,
+        "oxygenMeasurementContext": "room-air",
+        "chestIndrawing": "no",
+        "severeWorkOfBreathing": "no",
+        "unableToDrinkOrBreastfeed": "no",
+        "vomitingEverything": "no",
+        "reducedOralIntakeOrDehydration": "no",
+        "lethargyOrUnconsciousness": "no",
+        "convulsions": "no",
+        "apnea": "no",
+        "centralCyanosis": "no",
+        "stridorAtRest": "no"
+      },
+      "expected": {
+        "ageBand": "2-to-11-months",
+        "fastBreathingThreshold": 50,
+        "tachypnea": "absent",
+        "hypoxemia": "present",
+        "repeatCountRequired": false,
+        "dangerSignIds": ["room-air-spo2-below-92"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "kernelSymptoms": ["SpO2 baixa"]
+      }
+    },
+    {
+      "id": "post-oxygen-spo2-does-not-enter-kernel",
+      "input": {
+        "ageDays": 180,
+        "respiratorySymptomsPresent": true,
+        "respiratoryRatePerMinute": 45,
+        "respiratoryRateMeasurementState": "calm",
+        "spo2Percent": 88,
+        "oxygenMeasurementContext": "supplemental-oxygen",
+        "chestIndrawing": "no",
+        "severeWorkOfBreathing": "no",
+        "unableToDrinkOrBreastfeed": "no",
+        "vomitingEverything": "no",
+        "reducedOralIntakeOrDehydration": "no",
+        "lethargyOrUnconsciousness": "no",
+        "convulsions": "no",
+        "apnea": "no",
+        "centralCyanosis": "no",
+        "stridorAtRest": "no"
+      },
+      "expected": {
+        "ageBand": "2-to-11-months",
+        "fastBreathingThreshold": 50,
+        "tachypnea": "absent",
+        "hypoxemia": "unknown",
+        "repeatCountRequired": false,
+        "dangerSignIds": [],
+        "prioritySignIds": [],
+        "priority": "routine",
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "bronchiolitis-young-infant-apnea-without-tachypnea",
+      "input": {
+        "ageDays": 35,
+        "respiratorySymptomsPresent": true,
+        "respiratoryRatePerMinute": 42,
+        "respiratoryRateMeasurementState": "calm",
+        "spo2Percent": 96,
+        "oxygenMeasurementContext": "room-air",
+        "chestIndrawing": "no",
+        "severeWorkOfBreathing": "no",
+        "unableToDrinkOrBreastfeed": "no",
+        "vomitingEverything": "no",
+        "reducedOralIntakeOrDehydration": "no",
+        "lethargyOrUnconsciousness": "no",
+        "convulsions": "no",
+        "apnea": "yes",
+        "centralCyanosis": "no",
+        "stridorAtRest": "no"
+      },
+      "expected": {
+        "ageBand": "under-2-months",
+        "fastBreathingThreshold": 60,
+        "tachypnea": "absent",
+        "hypoxemia": "absent",
+        "repeatCountRequired": false,
+        "dangerSignIds": ["apnea"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "chest-indrawing-maps-only-to-dyspnea",
+      "input": {
+        "ageDays": 500,
+        "respiratorySymptomsPresent": true,
+        "respiratoryRatePerMinute": 35,
+        "respiratoryRateMeasurementState": "calm",
+        "spo2Percent": 97,
+        "oxygenMeasurementContext": "room-air",
+        "chestIndrawing": "yes",
+        "severeWorkOfBreathing": "no",
+        "unableToDrinkOrBreastfeed": "no",
+        "vomitingEverything": "no",
+        "reducedOralIntakeOrDehydration": "no",
+        "lethargyOrUnconsciousness": "no",
+        "convulsions": "no",
+        "apnea": "no",
+        "centralCyanosis": "no",
+        "stridorAtRest": "no"
+      },
+      "expected": {
+        "ageBand": "1-to-under-5-years",
+        "fastBreathingThreshold": 40,
+        "tachypnea": "absent",
+        "hypoxemia": "absent",
+        "repeatCountRequired": false,
+        "dangerSignIds": ["chest-indrawing"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "kernelSymptoms": ["Dificuldade para respirar"]
+      }
+    },
+    {
+      "id": "general-danger-signs-stay-safety-only",
+      "input": {
+        "ageDays": 700,
+        "respiratorySymptomsPresent": true,
+        "respiratoryRatePerMinute": 32,
+        "respiratoryRateMeasurementState": "calm",
+        "spo2Percent": 98,
+        "oxygenMeasurementContext": "room-air",
+        "chestIndrawing": "no",
+        "severeWorkOfBreathing": "no",
+        "unableToDrinkOrBreastfeed": "yes",
+        "vomitingEverything": "yes",
+        "reducedOralIntakeOrDehydration": "yes",
+        "lethargyOrUnconsciousness": "yes",
+        "convulsions": "yes",
+        "apnea": "no",
+        "centralCyanosis": "no",
+        "stridorAtRest": "no"
+      },
+      "expected": {
+        "ageBand": "1-to-under-5-years",
+        "fastBreathingThreshold": 40,
+        "tachypnea": "absent",
+        "hypoxemia": "absent",
+        "repeatCountRequired": false,
+        "dangerSignIds": ["convulsions", "lethargy-or-unconsciousness", "unable-to-drink-or-breastfeed", "vomiting-everything"],
+        "prioritySignIds": ["reduced-intake-or-dehydration"],
+        "priority": "immediate-referral",
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "stridor-at-rest-is-danger-and-frozen-feature",
+      "input": {
+        "ageDays": 900,
+        "respiratorySymptomsPresent": true,
+        "respiratoryRatePerMinute": 34,
+        "respiratoryRateMeasurementState": "calm",
+        "spo2Percent": 98,
+        "oxygenMeasurementContext": "room-air",
+        "chestIndrawing": "no",
+        "severeWorkOfBreathing": "no",
+        "unableToDrinkOrBreastfeed": "no",
+        "vomitingEverything": "no",
+        "reducedOralIntakeOrDehydration": "no",
+        "lethargyOrUnconsciousness": "no",
+        "convulsions": "no",
+        "apnea": "no",
+        "centralCyanosis": "no",
+        "stridorAtRest": "yes"
+      },
+      "expected": {
+        "ageBand": "1-to-under-5-years",
+        "fastBreathingThreshold": 40,
+        "tachypnea": "absent",
+        "hypoxemia": "absent",
+        "repeatCountRequired": false,
+        "dangerSignIds": ["stridor-at-rest"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "kernelSymptoms": ["Estridor"]
+      }
+    },
+    {
+      "id": "school-age-rate-is-not-derived-from-aidpi",
+      "input": {
+        "ageDays": 2191,
+        "respiratorySymptomsPresent": true,
+        "respiratoryRatePerMinute": 45,
+        "respiratoryRateMeasurementState": "calm",
+        "spo2Percent": 98,
+        "oxygenMeasurementContext": "room-air",
+        "chestIndrawing": "no",
+        "severeWorkOfBreathing": "no",
+        "unableToDrinkOrBreastfeed": "no",
+        "vomitingEverything": "no",
+        "reducedOralIntakeOrDehydration": "no",
+        "lethargyOrUnconsciousness": "no",
+        "convulsions": "no",
+        "apnea": "no",
+        "centralCyanosis": "no",
+        "stridorAtRest": "no"
+      },
+      "expected": {
+        "ageBand": "5-to-17-years",
+        "fastBreathingThreshold": null,
+        "tachypnea": "unknown",
+        "hypoxemia": "absent",
+        "repeatCountRequired": false,
+        "dangerSignIds": [],
+        "prioritySignIds": [],
+        "priority": "routine",
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "unknown-is-never-coerced-to-absent",
+      "input": {
+        "respiratorySymptomsPresent": true,
+        "respiratoryRateMeasurementState": "unknown",
+        "oxygenMeasurementContext": "unknown",
+        "chestIndrawing": "unknown",
+        "severeWorkOfBreathing": "unknown",
+        "unableToDrinkOrBreastfeed": "unknown",
+        "vomitingEverything": "unknown",
+        "reducedOralIntakeOrDehydration": "unknown",
+        "lethargyOrUnconsciousness": "unknown",
+        "convulsions": "unknown",
+        "apnea": "unknown",
+        "centralCyanosis": "unknown",
+        "stridorAtRest": "unknown"
+      },
+      "expected": {
+        "ageBand": "unknown",
+        "fastBreathingThreshold": null,
+        "tachypnea": "unknown",
+        "hypoxemia": "unknown",
+        "repeatCountRequired": false,
+        "dangerSignIds": [],
+        "prioritySignIds": [],
+        "priority": "routine",
+        "kernelSymptoms": [],
+        "requiredNextQuestionIds": ["age", "respiratoryRatePerMinute", "spo2Percent", "apnea", "centralCyanosis"]
+      }
+    }
+  ]
+}

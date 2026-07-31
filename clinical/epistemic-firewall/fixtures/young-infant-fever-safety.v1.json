@@ -1,0 +1,357 @@
+{
+  "schemaVersion": "darwin.sounio.young-infant-fever-safety-fixtures.v1",
+  "status": "synthetic-safety-only",
+  "locale": "pt-BR",
+  "setting": "APS/SUS",
+  "sourceBoundary": {
+    "homeFeverAddedToKernel": false,
+    "nonFrozenSafetySignalsAddedToKernel": false,
+    "sepsisRiskScoreCalculated": false,
+    "posteriorAdjustedInTypeScript": false,
+    "antibioticRecommendationAuthorized": false,
+    "prescriptionAuthorized": false,
+    "clinicalActivationAuthorized": false
+  },
+  "references": [
+    {
+      "id": "ms-aidpi-neonatal",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/maual_aidpi_neonatal_quadro_procedimentos.pdf"
+    },
+    {
+      "id": "ms-child-danger-signs",
+      "url": "https://linhasdecuidado.saude.gov.br/portal/puericultura/sou-paciente/"
+    },
+    {
+      "id": "who-young-infant-2019",
+      "url": "https://www.who.int/publications/i/item/9789241516365"
+    },
+    {
+      "id": "aap-febrile-infant-2021",
+      "url": "https://publications.aap.org/pediatrics/article/148/2/e2021052228/179783/Evaluation-and-Management-of-Well-Appearing"
+    },
+    {
+      "id": "nice-fever-under-5-ng143",
+      "url": "https://www.nice.org.uk/guidance/ng143/chapter/recommendations"
+    }
+  ],
+  "defaults": {
+    "feverConcernPresent": true,
+    "temperatureMeasurementSite": "unknown",
+    "documentedHomeFeverAtOrAbove38": "no",
+    "illAppearance": "no",
+    "reducedMovement": "no",
+    "unableToFeed": "no",
+    "vomitingEverything": "no",
+    "convulsions": "no",
+    "apnea": "no",
+    "centralCyanosis": "no",
+    "severeRespiratoryDistress": "no",
+    "poorPerfusion": "no",
+    "bulgingFontanelle": "no",
+    "nonBlanchingRash": "no",
+    "umbilicalInfectionExtendingToSkin": "no",
+    "extensiveSkinPustules": "no",
+    "pretermOrMedicallyComplex": "no"
+  },
+  "fixtures": [
+    {
+      "id": "neonate-day-7-axillary-37-5",
+      "input": {
+        "ageDays": 7,
+        "temperatureC": 37.5,
+        "temperatureMeasurementSite": "axillary"
+      },
+      "expected": {
+        "applicable": true,
+        "ageBand": "0-to-7-days",
+        "temperatureStatus": "aidpi-fever",
+        "aidpiTemperatureDangerMet": true,
+        "internationalFeverThresholdMet": false,
+        "aapAgeScope": false,
+        "dangerSignIds": ["axillary-temperature-at-or-above-37-5"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": ["Febre"],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "day-59-axillary-37-4-normal",
+      "input": {
+        "ageDays": 59,
+        "temperatureC": 37.4,
+        "temperatureMeasurementSite": "axillary"
+      },
+      "expected": {
+        "applicable": true,
+        "ageBand": "29-to-59-days",
+        "temperatureStatus": "normal",
+        "aidpiTemperatureDangerMet": false,
+        "internationalFeverThresholdMet": false,
+        "aapAgeScope": true,
+        "dangerSignIds": [],
+        "prioritySignIds": [],
+        "priority": "routine",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "day-59-axillary-35-9-hypothermia",
+      "input": {
+        "ageDays": 59,
+        "temperatureC": 35.9,
+        "temperatureMeasurementSite": "axillary"
+      },
+      "expected": {
+        "applicable": true,
+        "ageBand": "29-to-59-days",
+        "temperatureStatus": "hypothermia",
+        "aidpiTemperatureDangerMet": true,
+        "internationalFeverThresholdMet": false,
+        "aapAgeScope": true,
+        "dangerSignIds": ["axillary-temperature-below-36"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "day-60-exact-38",
+      "input": {
+        "ageDays": 60,
+        "temperatureC": 38,
+        "temperatureMeasurementSite": "axillary"
+      },
+      "expected": {
+        "applicable": true,
+        "ageBand": "60-to-89-days",
+        "temperatureStatus": "fever",
+        "aidpiTemperatureDangerMet": false,
+        "internationalFeverThresholdMet": true,
+        "aapAgeScope": true,
+        "dangerSignIds": ["measured-temperature-at-or-above-38"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": ["Febre"],
+        "kernelSymptoms": ["Febre"]
+      }
+    },
+    {
+      "id": "day-89-exact-38",
+      "input": {
+        "ageDays": 89,
+        "temperatureC": 38,
+        "temperatureMeasurementSite": "other"
+      },
+      "expected": {
+        "applicable": true,
+        "ageBand": "60-to-89-days",
+        "temperatureStatus": "fever",
+        "aidpiTemperatureDangerMet": false,
+        "internationalFeverThresholdMet": true,
+        "aapAgeScope": false,
+        "dangerSignIds": ["measured-temperature-at-or-above-38"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": ["Febre"],
+        "kernelSymptoms": ["Febre"]
+      }
+    },
+    {
+      "id": "day-90-is-outside-panel",
+      "input": {
+        "ageDays": 90,
+        "temperatureC": 38,
+        "temperatureMeasurementSite": "axillary"
+      },
+      "expected": {
+        "applicable": false,
+        "ageBand": "not-young-infant",
+        "temperatureStatus": "fever",
+        "aidpiTemperatureDangerMet": false,
+        "internationalFeverThresholdMet": false,
+        "aapAgeScope": false,
+        "dangerSignIds": [],
+        "prioritySignIds": [],
+        "priority": "routine",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "documented-home-fever-does-not-enter-kernel",
+      "input": {
+        "ageDays": 30,
+        "temperatureC": 37,
+        "temperatureMeasurementSite": "axillary",
+        "documentedHomeFeverAtOrAbove38": "yes"
+      },
+      "expected": {
+        "applicable": true,
+        "ageBand": "29-to-59-days",
+        "temperatureStatus": "normal",
+        "aidpiTemperatureDangerMet": false,
+        "internationalFeverThresholdMet": true,
+        "aapAgeScope": true,
+        "dangerSignIds": ["documented-home-fever-at-or-above-38"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": ["Febre"],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "ill-appearance-and-poor-perfusion-stay-safety-only",
+      "input": {
+        "ageDays": 45,
+        "temperatureC": 37,
+        "temperatureMeasurementSite": "axillary",
+        "illAppearance": "yes",
+        "poorPerfusion": "yes"
+      },
+      "expected": {
+        "applicable": true,
+        "ageBand": "29-to-59-days",
+        "temperatureStatus": "normal",
+        "aidpiTemperatureDangerMet": false,
+        "internationalFeverThresholdMet": false,
+        "aapAgeScope": true,
+        "dangerSignIds": ["ill-appearance", "poor-perfusion"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "unknown-site-37-5-requires-confirmation",
+      "input": {
+        "ageDays": 20,
+        "temperatureC": 37.5,
+        "temperatureMeasurementSite": "unknown"
+      },
+      "expected": {
+        "applicable": true,
+        "ageBand": "8-to-21-days",
+        "temperatureStatus": "normal",
+        "aidpiTemperatureDangerMet": false,
+        "internationalFeverThresholdMet": false,
+        "aapAgeScope": true,
+        "dangerSignIds": [],
+        "prioritySignIds": ["measurement-site-required"],
+        "priority": "same-day-assessment",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": [],
+        "requiredNextQuestionIds": ["temperatureMeasurementSite"]
+      }
+    },
+    {
+      "id": "rectal-37-5-does-not-use-axillary-cutoff",
+      "input": {
+        "ageDays": 10,
+        "temperatureC": 37.5,
+        "temperatureMeasurementSite": "rectal"
+      },
+      "expected": {
+        "applicable": true,
+        "ageBand": "8-to-21-days",
+        "temperatureStatus": "normal",
+        "aidpiTemperatureDangerMet": false,
+        "internationalFeverThresholdMet": false,
+        "aapAgeScope": true,
+        "dangerSignIds": [],
+        "prioritySignIds": [],
+        "priority": "routine",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "preterm-context-without-temperature",
+      "input": {
+        "ageDays": 40,
+        "pretermOrMedicallyComplex": "yes"
+      },
+      "expected": {
+        "applicable": true,
+        "ageBand": "29-to-59-days",
+        "temperatureStatus": "unknown",
+        "aidpiTemperatureDangerMet": false,
+        "internationalFeverThresholdMet": false,
+        "aapAgeScope": true,
+        "dangerSignIds": [],
+        "prioritySignIds": ["temperature-measurement-required", "higher-risk-clinical-context"],
+        "priority": "same-day-assessment",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": [],
+        "requiredNextQuestionIds": ["temperatureC"]
+      }
+    },
+    {
+      "id": "unknown-age-with-measured-fever",
+      "input": {
+        "temperatureC": 38,
+        "temperatureMeasurementSite": "axillary"
+      },
+      "expected": {
+        "applicable": true,
+        "ageBand": "unknown",
+        "temperatureStatus": "fever",
+        "aidpiTemperatureDangerMet": false,
+        "internationalFeverThresholdMet": false,
+        "aapAgeScope": false,
+        "dangerSignIds": [],
+        "prioritySignIds": ["age-required"],
+        "priority": "same-day-assessment",
+        "heuristicSymptoms": ["Febre"],
+        "kernelSymptoms": ["Febre"],
+        "requiredNextQuestionIds": ["age"]
+      }
+    },
+    {
+      "id": "neurologic-and-skin-danger-signs-stay-safety-only",
+      "input": {
+        "ageDays": 40,
+        "temperatureC": 37,
+        "temperatureMeasurementSite": "axillary",
+        "convulsions": "yes",
+        "bulgingFontanelle": "yes",
+        "nonBlanchingRash": "yes"
+      },
+      "expected": {
+        "applicable": true,
+        "ageBand": "29-to-59-days",
+        "temperatureStatus": "normal",
+        "aidpiTemperatureDangerMet": false,
+        "internationalFeverThresholdMet": false,
+        "aapAgeScope": true,
+        "dangerSignIds": ["convulsions", "bulging-fontanelle", "non-blanching-rash"],
+        "prioritySignIds": [],
+        "priority": "immediate-referral",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "unknown-is-never-coerced-to-absent",
+      "useUnknownDefaults": true,
+      "input": {},
+      "expected": {
+        "applicable": true,
+        "ageBand": "unknown",
+        "temperatureStatus": "unknown",
+        "aidpiTemperatureDangerMet": false,
+        "internationalFeverThresholdMet": false,
+        "aapAgeScope": false,
+        "dangerSignIds": [],
+        "prioritySignIds": ["age-required", "temperature-measurement-required", "incomplete-danger-screen"],
+        "priority": "same-day-assessment",
+        "heuristicSymptoms": [],
+        "kernelSymptoms": [],
+        "requiredNextQuestionIds": ["age", "temperatureC", "documentedHomeFeverAtOrAbove38", "illAppearance", "poorPerfusion"]
+      }
+    }
+  ]
+}

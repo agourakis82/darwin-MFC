@@ -61,19 +61,19 @@ export default function DoencasClient() {
 
   return (
     <div className="min-h-screen bg-paper-white dark:bg-carbon-950">
-      <PageContainer className="py-12">
+      <PageContainer className="py-8 md:py-12">
         {/* Header - High Authority */}
-        <div className="mb-12 border-b border-carbon-200 dark:border-carbon-800 pb-8">
-          <div className="flex items-baseline gap-4 mb-2">
-            <h1 className="text-4xl font-display font-bold text-helix-navy dark:text-white">
+        <div className="mb-8 border-b border-carbon-200 pb-6 dark:border-carbon-800 md:mb-12 md:pb-8">
+          <div className="mb-2 flex flex-wrap items-baseline gap-x-4 gap-y-2">
+            <h1 className="text-3xl font-display font-bold text-helix-navy dark:text-white sm:text-4xl">
               {t('title')}
             </h1>
             <span className="text-xs font-mono text-carbon-400 font-bold uppercase tracking-widest">
-              [ {doencasConsolidadas.length} REGISTRIES ]
+              [ {doencasConsolidadas.length} CONDIÇÕES ]
             </span>
           </div>
-          <p className="text-lg text-carbon-500 font-body max-w-2xl leading-relaxed">
-            Clinical decision support for primary care professionals. Systematic evidence-based reviews for real-world practice.
+          <p className="max-w-2xl font-body text-base leading-relaxed text-carbon-500 sm:text-lg">
+            Suporte à decisão clínica para profissionais da atenção primária, com sínteses baseadas em evidências para a prática.
           </p>
         </div>
 
@@ -111,8 +111,8 @@ export default function DoencasClient() {
                 selectedCategoria === 'todas' ? "bg-helix-navy text-white" : "bg-white dark:bg-carbon-900 text-carbon-600 hover:bg-clinical-gray"
               )}
             >
-              <span className="text-[10px] font-bold uppercase tracking-widest block mb-1">ALL</span>
-              <span className="text-sm font-semibold">General Registry</span>
+              <span className="mb-1 block text-[10px] font-bold uppercase tracking-widest">Todas</span>
+              <span className="text-sm font-semibold">Visão geral</span>
             </button>
             {Object.entries(CATEGORIAS_DOENCA).map(([key, value]) => {
               const count = doencasAgrupadas[key]?.length || 0;
@@ -142,23 +142,23 @@ export default function DoencasClient() {
           animate="animate"
           transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
         >
-          <div className="grid grid-cols-12 bg-clinical-gray dark:bg-carbon-800/50 border-b border-carbon-200 dark:border-carbon-700 px-6 py-3 text-[10px] font-bold text-carbon-400 uppercase tracking-widest">
-            <div className="col-span-1">CODE</div>
-            <div className="col-span-5">CONDITION / CLINICAL REGISTRY</div>
+          <div className="hidden grid-cols-12 bg-clinical-gray dark:bg-carbon-800/50 border-b border-carbon-200 dark:border-carbon-700 px-6 py-3 text-[10px] font-bold text-carbon-400 uppercase tracking-widest md:grid">
+            <div className="col-span-1">Ícone</div>
+            <div className="col-span-5">Condição clínica</div>
             <div className="col-span-2">CIAP-2</div>
             <div className="col-span-2">CID-10</div>
-            <div className="col-span-2 text-right">ACTION</div>
+            <div className="col-span-2 text-right">Ação</div>
           </div>
 
           {isLoading ? (
              <div className="py-20 flex flex-col items-center">
                <Loader2 className="w-8 h-8 animate-spin text-adenine-teal mb-4" />
-               <span className="text-xs font-mono text-carbon-400 uppercase tracking-widest">SYNCHRONIZING REGISTRY...</span>
+               <span className="text-xs font-mono text-carbon-400 uppercase tracking-widest">Carregando condições...</span>
              </div>
           ) : doencasFiltradas.length === 0 ? (
             <div className="py-20 text-center">
               <Search className="w-12 h-12 mx-auto mb-4 text-carbon-200" />
-              <p className="text-carbon-500 font-body">No matching medical records found.</p>
+              <p className="text-carbon-500 font-body">Nenhuma condição correspondente foi encontrada.</p>
             </div>
           ) : (
             <div className="divide-y divide-carbon-100 dark:divide-carbon-800">
@@ -169,35 +169,43 @@ export default function DoencasClient() {
                   <Link
                     key={d.id}
                     href={`/doencas/${d.id}`}
-                    className="grid grid-cols-12 items-center px-6 py-4 hover:bg-clinical-gray/50 dark:hover:bg-carbon-800/30 transition-all group"
+                    className="group flex items-start gap-3 px-4 py-4 transition-all hover:bg-clinical-gray/50 dark:hover:bg-carbon-800/30 md:grid md:grid-cols-12 md:items-center md:px-6"
                   >
-                    <div className="col-span-1">
+                    <div className="shrink-0 md:col-span-1">
                       <div className={cn("w-8 h-8 rounded flex items-center justify-center text-white", categoriaInfo.color.replace('from-', 'bg-').split(' ')[0])}>
                          <IconComponent className="w-4 h-4" />
                       </div>
                     </div>
-                    <div className="col-span-5 pr-4">
+                    <div className="min-w-0 flex-1 md:col-span-5 md:pr-4">
                       <h3 className="text-base font-semibold text-helix-navy dark:text-white group-hover:text-adenine-teal transition-colors mb-0.5">
                         {d.titulo}
                       </h3>
                       <p className="text-xs text-carbon-500 line-clamp-1 font-body">
-                        {d.quickView?.definicao || 'Registry detail pending verification.'}
+                        {d.quickView?.definicao || 'Resumo clínico em revisão.'}
                       </p>
+                      <div className="mt-2 flex flex-wrap gap-2 md:hidden">
+                        <span className="rounded bg-carbon-100 px-1.5 py-0.5 font-mono text-[10px] text-carbon-600 dark:bg-carbon-800 dark:text-carbon-400">
+                          CIAP-2 {d.ciap2?.[0] || '—'}
+                        </span>
+                        <span className="rounded bg-carbon-100 px-1.5 py-0.5 font-mono text-[10px] text-carbon-600 dark:bg-carbon-800 dark:text-carbon-400">
+                          CID-10 {d.cid10?.[0] || '—'}
+                        </span>
+                      </div>
                     </div>
-                    <div className="col-span-2">
+                    <div className="hidden md:col-span-2 md:block">
                       <span className="font-mono text-xs text-carbon-600 dark:text-carbon-400 bg-carbon-100 dark:bg-carbon-800 px-1.5 py-0.5 rounded">
                         {d.ciap2?.[0] || '—'}
                       </span>
                     </div>
-                    <div className="col-span-2">
+                    <div className="hidden md:col-span-2 md:block">
                       <span className="font-mono text-xs text-carbon-600 dark:text-carbon-400 bg-carbon-100 dark:bg-carbon-800 px-1.5 py-0.5 rounded">
                         {d.cid10?.[0] || '—'}
                       </span>
                     </div>
-                    <div className="col-span-2 text-right">
-                      <button className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-carbon-300 group-hover:text-adenine-teal transition-colors">
-                        OPEN HUD <ChevronRight className="w-3 h-3" />
-                      </button>
+                    <div className="hidden text-right md:col-span-2 md:block">
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-carbon-300 transition-colors group-hover:text-adenine-teal">
+                        Abrir <ChevronRight className="w-3 h-3" />
+                      </span>
                     </div>
                   </Link>
                 );
@@ -207,9 +215,9 @@ export default function DoencasClient() {
         </motion.div>
 
         {/* Footer Statistics */}
-        <div className="mt-8 flex justify-between items-center text-[10px] font-bold text-carbon-400 uppercase tracking-widest">
-           <span>DARWIN MEDICAL HUB | ACADEMIC REGISTRY v2.6</span>
-           <span>LOCALIZED: {locale.toUpperCase()} | ENCRYPTED LINK</span>
+        <div className="mt-8 flex flex-col gap-2 text-[10px] font-bold uppercase tracking-widest text-carbon-400 sm:flex-row sm:items-center sm:justify-between">
+           <span>Darwin Medical Hub | Base clínica APS</span>
+           <span>Idioma: {locale.toUpperCase()} | Conteúdo local</span>
         </div>
       </PageContainer>
     </div>

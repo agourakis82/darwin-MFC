@@ -1,367 +1,939 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Brain, Plus, X, Stethoscope, TestTube, AlertTriangle, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
+import React, { useEffect, useMemo, useState } from 'react';
+import {
+  AlertTriangle,
+  Brain,
+  Check,
+  ChevronDown,
+  ChevronUp,
+  Plus,
+  Search,
+  ShieldCheck,
+  ShieldX,
+  Stethoscope,
+  TestTube,
+  X,
+} from 'lucide-react';
 import {
   generateDifferentialDiagnosis,
-  generateDiagnosticPathway,
+  getAllSintomas,
+  patientAgeInDays,
+  patientAgeInYears,
   type DifferentialDiagnosisResult,
-  type DiagnosticPathway,
+  type PatientAgeUnit,
 } from '@/lib/utils/differential-diagnosis';
-import { Link } from '@/i18n/routing';
+import { runSilentClinicalKernel } from '@/lib/clinical-kernel/loader';
+import type { EpistemicDifferential } from '@/lib/clinical-kernel/types';
+import {
+  EMPTY_PERTUSSIS_SAFETY_INPUT,
+  evaluatePertussisSafety,
+  isPertussisSafetyRelevant,
+  type ClinicalAnswer,
+} from '@/lib/clinical-safety/pertussis';
+import {
+  EMPTY_PEDIATRIC_ABDOMINAL_SAFETY_INPUT,
+  evaluatePediatricAbdominalSafety,
+  isPediatricAbdominalSafetyRelevant,
+} from '@/lib/clinical-safety/pediatric-abdominal';
+import {
+  EMPTY_PEDIATRIC_DIARRHEA_SAFETY_INPUT,
+  evaluatePediatricDiarrheaSafety,
+  isPediatricDiarrheaSafetyRelevant,
+} from '@/lib/clinical-safety/pediatric-diarrhea';
+import {
+  EMPTY_PEDIATRIC_RESPIRATORY_SAFETY_INPUT,
+  evaluatePediatricRespiratorySafety,
+  isPediatricRespiratorySafetyRelevant,
+} from '@/lib/clinical-safety/pediatric-respiratory';
+import {
+  EMPTY_YOUNG_INFANT_FEVER_SAFETY_INPUT,
+  evaluateYoungInfantFeverSafety,
+  isYoungInfantFeverConcernSymptom,
+  isYoungInfantFeverSafetyRelevant,
+} from '@/lib/clinical-safety/young-infant-fever';
+import PertussisSafetyInterview, {
+  type PertussisSafetyAnswers,
+} from './PertussisSafetyInterview';
+import PediatricAbdominalSafetyInterview, {
+  type PediatricAbdominalSafetyAnswers,
+} from './PediatricAbdominalSafetyInterview';
+import PediatricDiarrheaSafetyInterview, {
+  type PediatricDiarrheaSafetyAnswers,
+} from './PediatricDiarrheaSafetyInterview';
+import PediatricRespiratorySafetyInterview, {
+  type PediatricRespiratorySafetyAnswers,
+} from './PediatricRespiratorySafetyInterview';
+import YoungInfantFeverSafetyInterview, {
+  type YoungInfantFeverSafetyAnswers,
+} from './YoungInfantFeverSafetyInterview';
 
 interface DifferentialDiagnosisAssistantProps {
   initialSymptom?: string;
   initialSecondarySymptoms?: string[];
+  selectedDiagnosisId?: string;
+  patientAge?: string;
+  patientAgeUnit?: PatientAgeUnit;
+  patientWeightKg?: string;
+  onPatientContextChange?: (updates: { age?: string; ageUnit?: PatientAgeUnit; weightKg?: string }) => void;
   onDiagnosisSelect?: (doencaId: string) => void;
+}
+
+const probabilityStyles = {
+  alta: 'border-emerald-300/25 bg-emerald-300/[0.06] text-emerald-200',
+  moderada: 'border-amber-300/25 bg-amber-300/[0.06] text-amber-200',
+  baixa: 'border-cyan-300/20 bg-cyan-300/[0.05] text-cyan-200',
+};
+
+function uniqueSymptoms(symptoms: string[]): string[] {
+  return [...new Set(symptoms)];
+}
+
+function mergeClinicalAnswers(...answers: ClinicalAnswer[]): ClinicalAnswer {
+  if (answers.includes('yes')) return 'yes';
+  if (answers.every(answer => answer === 'no')) return 'no';
+  return 'unknown';
 }
 
 export default function DifferentialDiagnosisAssistant({
   initialSymptom = '',
   initialSecondarySymptoms = [],
+  selectedDiagnosisId,
+  patientAge = '',
+  patientAgeUnit = 'anos',
+  patientWeightKg = '',
+  onPatientContextChange,
   onDiagnosisSelect,
 }: DifferentialDiagnosisAssistantProps) {
-  const [sintomaPrincipal, setSintomaPrincipal] = useState(initialSymptom);
-  const [sintomasSecundarios, setSintomasSecundarios] = useState<string[]>(initialSecondarySymptoms);
-  const [novoSintoma, setNovoSintoma] = useState('');
+  const [primarySymptom, setPrimarySymptom] = useState(initialSymptom);
+  const [secondarySymptoms, setSecondarySymptoms] = useState<string[]>(initialSecondarySymptoms);
+  const [newSymptom, setNewSymptom] = useState('');
   const [result, setResult] = useState<DifferentialDiagnosisResult | null>(null);
-  const [pathway, setPathway] = useState<DiagnosticPathway | null>(null);
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [kernelResult, setKernelResult] = useState<EpistemicDifferential | null>(null);
+  const [kernelChecking, setKernelChecking] = useState(false);
+  const [expanded, setExpanded] = useState(true);
+  const [pertussisAnswers, setPertussisAnswers] = useState<PertussisSafetyAnswers>({
+    ...EMPTY_PERTUSSIS_SAFETY_INPUT,
+  });
+  const [pediatricRespiratoryAnswers, setPediatricRespiratoryAnswers] = useState<PediatricRespiratorySafetyAnswers>({
+    ...EMPTY_PEDIATRIC_RESPIRATORY_SAFETY_INPUT,
+  });
+  const [pediatricDiarrheaAnswers, setPediatricDiarrheaAnswers] = useState<PediatricDiarrheaSafetyAnswers>({
+    ...EMPTY_PEDIATRIC_DIARRHEA_SAFETY_INPUT,
+  });
+  const [pediatricAbdominalAnswers, setPediatricAbdominalAnswers] = useState<PediatricAbdominalSafetyAnswers>({
+    ...EMPTY_PEDIATRIC_ABDOMINAL_SAFETY_INPUT,
+  });
+  const [youngInfantFeverAnswers, setYoungInfantFeverAnswers] = useState<YoungInfantFeverSafetyAnswers>({
+    ...EMPTY_YOUNG_INFANT_FEVER_SAFETY_INPUT,
+  });
+  const symptomNames = useMemo(() => getAllSintomas().map(item => item.nome), []);
+  const ageValue = patientAge === '' ? undefined : Number(patientAge.replace(',', '.'));
+  const weightKg = patientWeightKg === '' ? undefined : Number(patientWeightKg.replace(',', '.'));
+  const patientAgeContext = { ageValue, ageUnit: patientAgeUnit };
+  const ageYears = patientAgeInYears(patientAgeContext);
+  const ageDays = patientAgeInDays(patientAgeContext);
+  const reportedSymptoms = [primarySymptom, ...secondarySymptoms];
+  const diarrheaRelevant = isPediatricDiarrheaSafetyRelevant(reportedSymptoms, ageDays);
+  const abdominalRelevant = isPediatricAbdominalSafetyRelevant(reportedSymptoms, ageDays);
+  const youngInfantFeverRelevant = isYoungInfantFeverSafetyRelevant(reportedSymptoms, ageDays);
+  const respiratoryRelevant = isPediatricRespiratorySafetyRelevant(reportedSymptoms, ageDays);
+  const resolvedVomitingEverything = diarrheaRelevant
+    ? pediatricDiarrheaAnswers.vomitingEverything
+    : abdominalRelevant
+      ? pediatricAbdominalAnswers.vomitingEverything
+      : youngInfantFeverRelevant
+        ? youngInfantFeverAnswers.vomitingEverything
+        : pediatricRespiratoryAnswers.vomitingEverything;
+  const abdominalLocalizedOrSevere: ClinicalAnswer = pediatricAbdominalAnswers.painSeverity === 'severe'
+    || ['right-lower-quadrant', 'other-localized', 'pelvic-lower'].includes(pediatricAbdominalAnswers.painLocation)
+    ? 'yes'
+    : pediatricAbdominalAnswers.painSeverity === 'unknown' || pediatricAbdominalAnswers.painLocation === 'unknown'
+      ? 'unknown'
+      : 'no';
+  const abdominalDistensionOrRebound = mergeClinicalAnswers(
+    pediatricAbdominalAnswers.abdominalDistension,
+    pediatricAbdominalAnswers.guardingOrRigidity,
+    pediatricAbdominalAnswers.reboundOrPercussionTenderness,
+  );
+  const pediatricDiarrheaAssessment = evaluatePediatricDiarrheaSafety({
+    ...pediatricDiarrheaAnswers,
+    vomitingEverything: resolvedVomitingEverything,
+    biliousVomiting: abdominalRelevant
+      ? pediatricAbdominalAnswers.biliousVomiting
+      : pediatricDiarrheaAnswers.biliousVomiting,
+    severeLocalizedAbdominalPain: abdominalRelevant
+      ? abdominalLocalizedOrSevere
+      : pediatricDiarrheaAnswers.severeLocalizedAbdominalPain,
+    abdominalDistensionOrRebound: abdominalRelevant
+      ? abdominalDistensionOrRebound
+      : pediatricDiarrheaAnswers.abdominalDistensionOrRebound,
+    ageDays,
+    diarrheaPresent: diarrheaRelevant,
+  });
+  const pediatricAbdominalAssessment = evaluatePediatricAbdominalSafety({
+    ...pediatricAbdominalAnswers,
+    vomitingEverything: resolvedVomitingEverything,
+    visibleBloodInStool: diarrheaRelevant
+      ? pediatricDiarrheaAnswers.bloodInStool
+      : pediatricAbdominalAnswers.visibleBloodInStool,
+    biliousVomiting: abdominalRelevant
+      ? pediatricAbdominalAnswers.biliousVomiting
+      : pediatricDiarrheaAnswers.biliousVomiting,
+    feverPresent: reportedSymptoms.some(isYoungInfantFeverConcernSymptom) ? 'yes' : pediatricAbdominalAnswers.feverPresent,
+    ageDays,
+    abdominalOrVomitingPresent: abdominalRelevant,
+  });
+  const diarrheaLethargy: ClinicalAnswer = pediatricDiarrheaAnswers.generalCondition === 'lethargic-unconscious'
+    ? 'yes'
+    : pediatricDiarrheaAnswers.generalCondition === 'normal'
+      ? 'no'
+      : 'unknown';
+  const diarrheaUnableToDrink: ClinicalAnswer = pediatricDiarrheaAnswers.drinkingAbility === 'poor-unable'
+    ? 'yes'
+    : pediatricDiarrheaAnswers.drinkingAbility === 'unknown'
+      ? 'unknown'
+      : 'no';
+  const youngInfantFeverAssessment = evaluateYoungInfantFeverSafety({
+    ...youngInfantFeverAnswers,
+    illAppearance: diarrheaRelevant ? diarrheaLethargy : youngInfantFeverAnswers.illAppearance,
+    reducedMovement: diarrheaRelevant ? diarrheaLethargy : youngInfantFeverAnswers.reducedMovement,
+    unableToFeed: diarrheaRelevant ? diarrheaUnableToDrink : youngInfantFeverAnswers.unableToFeed,
+    vomitingEverything: resolvedVomitingEverything,
+    poorPerfusion: diarrheaRelevant
+      ? pediatricDiarrheaAnswers.capillaryRefillOver2Seconds
+      : youngInfantFeverAnswers.poorPerfusion,
+    ageDays,
+    feverConcernPresent: youngInfantFeverRelevant,
+  });
+  const resolvedApnea = youngInfantFeverRelevant
+    ? youngInfantFeverAnswers.apnea
+    : pediatricRespiratoryAnswers.apnea;
+  const resolvedCentralCyanosis = youngInfantFeverRelevant
+    ? youngInfantFeverAnswers.centralCyanosis
+    : pediatricRespiratoryAnswers.centralCyanosis;
+  const pediatricRespiratoryAssessment = evaluatePediatricRespiratorySafety({
+    ...pediatricRespiratoryAnswers,
+    apnea: resolvedApnea,
+    centralCyanosis: resolvedCentralCyanosis,
+    convulsions: youngInfantFeverRelevant
+      ? youngInfantFeverAnswers.convulsions
+      : pediatricRespiratoryAnswers.convulsions,
+    lethargyOrUnconsciousness: diarrheaRelevant
+      ? diarrheaLethargy
+      : youngInfantFeverRelevant
+      ? mergeClinicalAnswers(youngInfantFeverAnswers.illAppearance, youngInfantFeverAnswers.reducedMovement)
+      : pediatricRespiratoryAnswers.lethargyOrUnconsciousness,
+    unableToDrinkOrBreastfeed: diarrheaRelevant
+      ? diarrheaUnableToDrink
+      : youngInfantFeverRelevant
+      ? youngInfantFeverAnswers.unableToFeed
+      : pediatricRespiratoryAnswers.unableToDrinkOrBreastfeed,
+    vomitingEverything: resolvedVomitingEverything,
+    severeWorkOfBreathing: youngInfantFeverRelevant
+      ? youngInfantFeverAnswers.severeRespiratoryDistress
+      : pediatricRespiratoryAnswers.severeWorkOfBreathing,
+    ageDays,
+    respiratorySymptomsPresent: respiratoryRelevant,
+  });
+  const pertussisRelevant = isPertussisSafetyRelevant([primarySymptom, ...secondarySymptoms]);
+  const pertussisAssessment = evaluatePertussisSafety({
+    ...pertussisAnswers,
+    apnea: respiratoryRelevant ? resolvedApnea : pertussisAnswers.apnea,
+    cyanosis: respiratoryRelevant ? resolvedCentralCyanosis : pertussisAnswers.cyanosis,
+    ageDays,
+    coughPresent: pertussisRelevant,
+  });
+  const ageBand = ageYears === undefined
+    ? null
+    : ageYears < (2 / 12) ? 'Neonatal / lactente jovem'
+    : ageYears < 2 ? 'Lactente'
+    : ageYears < 6 ? 'Pré-escolar'
+    : ageYears < 12 ? 'Escolar'
+    : ageYears < 18 ? 'Adolescente'
+    : ageYears >= 65 ? 'Pessoa idosa'
+    : 'Adulto';
 
-  // Atualiza quando initialSymptom muda (ex: quando usuário digita no SOAP)
-  React.useEffect(() => {
-    if (initialSymptom) {
-      setSintomaPrincipal(initialSymptom);
-    }
+  useEffect(() => {
+    if (initialSymptom) setPrimarySymptom(initialSymptom);
   }, [initialSymptom]);
 
-  React.useEffect(() => {
-    if (initialSecondarySymptoms.length > 0) {
-      setSintomasSecundarios(initialSecondarySymptoms);
-    }
+  useEffect(() => {
+    if (initialSecondarySymptoms.length > 0) setSecondarySymptoms(initialSecondarySymptoms);
   }, [initialSecondarySymptoms]);
 
-  const handleAnalyze = () => {
-    if (!sintomaPrincipal.trim()) return;
+  useEffect(() => {
+    if (!diarrheaRelevant) return;
+    const lethargySources: ClinicalAnswer[] = [];
+    const unableSources: ClinicalAnswer[] = [];
+    const vomitingSources: ClinicalAnswer[] = [];
+    if (youngInfantFeverRelevant) {
+      lethargySources.push(mergeClinicalAnswers(
+        youngInfantFeverAnswers.illAppearance,
+        youngInfantFeverAnswers.reducedMovement,
+      ));
+      unableSources.push(youngInfantFeverAnswers.unableToFeed);
+      vomitingSources.push(youngInfantFeverAnswers.vomitingEverything);
+    }
+    if (respiratoryRelevant) {
+      lethargySources.push(pediatricRespiratoryAnswers.lethargyOrUnconsciousness);
+      unableSources.push(pediatricRespiratoryAnswers.unableToDrinkOrBreastfeed);
+      vomitingSources.push(pediatricRespiratoryAnswers.vomitingEverything);
+    }
+    if (abdominalRelevant) vomitingSources.push(pediatricAbdominalAnswers.vomitingEverything);
+    const importedLethargy = lethargySources.length > 0 ? mergeClinicalAnswers(...lethargySources) : 'unknown';
+    const importedUnable = unableSources.length > 0 ? mergeClinicalAnswers(...unableSources) : 'unknown';
+    const importedVomiting = vomitingSources.length > 0 ? mergeClinicalAnswers(...vomitingSources) : 'unknown';
 
-    const differential = generateDifferentialDiagnosis(
-      sintomaPrincipal,
-      sintomasSecundarios,
-      []
-    );
-    setResult(differential);
+    setPediatricDiarrheaAnswers(previous => {
+      const next: PediatricDiarrheaSafetyAnswers = {
+        ...previous,
+        generalCondition: previous.generalCondition === 'unknown'
+          ? importedLethargy === 'yes'
+            ? 'lethargic-unconscious'
+            : importedLethargy === 'no'
+              ? 'normal'
+              : 'unknown'
+          : previous.generalCondition,
+        drinkingAbility: previous.drinkingAbility === 'unknown'
+          ? importedUnable === 'yes'
+            ? 'poor-unable'
+            : importedUnable === 'no'
+              ? 'normal'
+              : 'unknown'
+          : previous.drinkingAbility,
+        vomitingEverything: previous.vomitingEverything === 'unknown'
+          ? importedVomiting
+          : previous.vomitingEverything,
+        capillaryRefillOver2Seconds: previous.capillaryRefillOver2Seconds === 'unknown'
+          && youngInfantFeverRelevant
+          ? youngInfantFeverAnswers.poorPerfusion
+          : previous.capillaryRefillOver2Seconds,
+      };
+      return Object.keys(next).every(key => (
+        next[key as keyof PediatricDiarrheaSafetyAnswers]
+          === previous[key as keyof PediatricDiarrheaSafetyAnswers]
+      )) ? previous : next;
+    });
+  }, [
+    diarrheaRelevant,
+    abdominalRelevant,
+    respiratoryRelevant,
+    youngInfantFeverRelevant,
+    pediatricRespiratoryAnswers.lethargyOrUnconsciousness,
+    pediatricRespiratoryAnswers.unableToDrinkOrBreastfeed,
+    pediatricRespiratoryAnswers.vomitingEverything,
+    pediatricAbdominalAnswers.vomitingEverything,
+    youngInfantFeverAnswers.illAppearance,
+    youngInfantFeverAnswers.poorPerfusion,
+    youngInfantFeverAnswers.reducedMovement,
+    youngInfantFeverAnswers.unableToFeed,
+    youngInfantFeverAnswers.vomitingEverything,
+  ]);
 
-    const pathwayResult = generateDiagnosticPathway(sintomaPrincipal, sintomasSecundarios);
-    setPathway(pathwayResult);
-  };
+  useEffect(() => {
+    if (!abdominalRelevant) return;
+    const importedVomiting = diarrheaRelevant
+      ? pediatricDiarrheaAnswers.vomitingEverything
+      : youngInfantFeverRelevant
+        ? youngInfantFeverAnswers.vomitingEverything
+        : respiratoryRelevant
+          ? pediatricRespiratoryAnswers.vomitingEverything
+          : 'unknown';
+    setPediatricAbdominalAnswers(previous => {
+      const next: PediatricAbdominalSafetyAnswers = {
+        ...previous,
+        vomitingEverything: previous.vomitingEverything === 'unknown'
+          ? importedVomiting
+          : previous.vomitingEverything,
+        visibleBloodInStool: previous.visibleBloodInStool === 'unknown' && diarrheaRelevant
+          ? pediatricDiarrheaAnswers.bloodInStool
+          : previous.visibleBloodInStool,
+        biliousVomiting: previous.biliousVomiting === 'unknown' && diarrheaRelevant
+          ? pediatricDiarrheaAnswers.biliousVomiting
+          : previous.biliousVomiting,
+        painSeverity: previous.painSeverity === 'unknown'
+          && diarrheaRelevant
+          && pediatricDiarrheaAnswers.severeLocalizedAbdominalPain === 'yes'
+          ? 'severe'
+          : previous.painSeverity,
+        abdominalDistension: previous.abdominalDistension === 'unknown'
+          && diarrheaRelevant
+          ? pediatricDiarrheaAnswers.abdominalDistensionOrRebound
+          : previous.abdominalDistension,
+      };
+      return Object.keys(next).every(key => (
+        next[key as keyof PediatricAbdominalSafetyAnswers]
+          === previous[key as keyof PediatricAbdominalSafetyAnswers]
+      )) ? previous : next;
+    });
+  }, [
+    abdominalRelevant,
+    diarrheaRelevant,
+    respiratoryRelevant,
+    youngInfantFeverRelevant,
+    pediatricDiarrheaAnswers.abdominalDistensionOrRebound,
+    pediatricDiarrheaAnswers.biliousVomiting,
+    pediatricDiarrheaAnswers.bloodInStool,
+    pediatricDiarrheaAnswers.severeLocalizedAbdominalPain,
+    pediatricDiarrheaAnswers.vomitingEverything,
+    pediatricRespiratoryAnswers.vomitingEverything,
+    youngInfantFeverAnswers.vomitingEverything,
+  ]);
 
-  const handleAddSymptom = () => {
-    if (novoSintoma.trim() && !sintomasSecundarios.includes(novoSintoma.trim())) {
-      setSintomasSecundarios([...sintomasSecundarios, novoSintoma.trim()]);
-      setNovoSintoma('');
+  useEffect(() => {
+    if (!youngInfantFeverRelevant) return;
+    setYoungInfantFeverAnswers(previous => {
+      const next = {
+        ...previous,
+        apnea: previous.apnea === 'unknown' ? pediatricRespiratoryAnswers.apnea : previous.apnea,
+        centralCyanosis: previous.centralCyanosis === 'unknown'
+          ? pediatricRespiratoryAnswers.centralCyanosis
+          : previous.centralCyanosis,
+        convulsions: previous.convulsions === 'unknown'
+          ? pediatricRespiratoryAnswers.convulsions
+          : previous.convulsions,
+        unableToFeed: previous.unableToFeed === 'unknown'
+          ? pediatricRespiratoryAnswers.unableToDrinkOrBreastfeed
+          : previous.unableToFeed,
+        vomitingEverything: previous.vomitingEverything === 'unknown'
+          ? pediatricRespiratoryAnswers.vomitingEverything
+          : previous.vomitingEverything,
+        severeRespiratoryDistress: previous.severeRespiratoryDistress === 'unknown'
+          ? pediatricRespiratoryAnswers.severeWorkOfBreathing
+          : previous.severeRespiratoryDistress,
+        illAppearance: previous.illAppearance === 'unknown'
+          && pediatricRespiratoryAnswers.lethargyOrUnconsciousness === 'yes'
+          ? 'yes' as const
+          : previous.illAppearance,
+      };
+      return Object.keys(next).every(key => (
+        next[key as keyof YoungInfantFeverSafetyAnswers]
+          === previous[key as keyof YoungInfantFeverSafetyAnswers]
+      )) ? previous : next;
+    });
+  }, [
+    youngInfantFeverRelevant,
+    pediatricRespiratoryAnswers.apnea,
+    pediatricRespiratoryAnswers.centralCyanosis,
+    pediatricRespiratoryAnswers.convulsions,
+    pediatricRespiratoryAnswers.lethargyOrUnconsciousness,
+    pediatricRespiratoryAnswers.severeWorkOfBreathing,
+    pediatricRespiratoryAnswers.unableToDrinkOrBreastfeed,
+    pediatricRespiratoryAnswers.vomitingEverything,
+  ]);
+
+  const updateYoungInfantFeverAnswers = (updates: Partial<YoungInfantFeverSafetyAnswers>) => {
+    const next = { ...youngInfantFeverAnswers, ...updates };
+    setYoungInfantFeverAnswers(next);
+
+    const respiratoryUpdates: Partial<PediatricRespiratorySafetyAnswers> = {};
+    if (updates.apnea !== undefined) respiratoryUpdates.apnea = updates.apnea;
+    if (updates.centralCyanosis !== undefined) respiratoryUpdates.centralCyanosis = updates.centralCyanosis;
+    if (updates.convulsions !== undefined) respiratoryUpdates.convulsions = updates.convulsions;
+    if (updates.unableToFeed !== undefined) respiratoryUpdates.unableToDrinkOrBreastfeed = updates.unableToFeed;
+    if (updates.vomitingEverything !== undefined) respiratoryUpdates.vomitingEverything = updates.vomitingEverything;
+    if (updates.severeRespiratoryDistress !== undefined) {
+      respiratoryUpdates.severeWorkOfBreathing = updates.severeRespiratoryDistress;
+    }
+    if (updates.illAppearance !== undefined || updates.reducedMovement !== undefined) {
+      respiratoryUpdates.lethargyOrUnconsciousness = mergeClinicalAnswers(
+        next.illAppearance,
+        next.reducedMovement,
+      );
+    }
+    if (Object.keys(respiratoryUpdates).length > 0) {
+      setPediatricRespiratoryAnswers(previous => ({ ...previous, ...respiratoryUpdates }));
+    }
+    if (updates.vomitingEverything !== undefined) {
+      setPediatricAbdominalAnswers(previous => ({
+        ...previous,
+        vomitingEverything: updates.vomitingEverything ?? previous.vomitingEverything,
+      }));
     }
   };
 
-  const handleRemoveSymptom = (sintoma: string) => {
-    setSintomasSecundarios(sintomasSecundarios.filter(s => s !== sintoma));
+  const updatePediatricDiarrheaAnswers = (updates: Partial<PediatricDiarrheaSafetyAnswers>) => {
+    setPediatricDiarrheaAnswers(previous => ({ ...previous, ...updates }));
+
+    const feverUpdates: Partial<YoungInfantFeverSafetyAnswers> = {};
+    const respiratoryUpdates: Partial<PediatricRespiratorySafetyAnswers> = {};
+    if (updates.generalCondition !== undefined) {
+      const lethargy: ClinicalAnswer = updates.generalCondition === 'lethargic-unconscious'
+        ? 'yes'
+        : updates.generalCondition === 'normal'
+          ? 'no'
+          : 'unknown';
+      feverUpdates.illAppearance = lethargy;
+      feverUpdates.reducedMovement = lethargy;
+      respiratoryUpdates.lethargyOrUnconsciousness = lethargy;
+    }
+    if (updates.drinkingAbility !== undefined) {
+      const unable: ClinicalAnswer = updates.drinkingAbility === 'poor-unable'
+        ? 'yes'
+        : updates.drinkingAbility === 'unknown'
+          ? 'unknown'
+          : 'no';
+      feverUpdates.unableToFeed = unable;
+      respiratoryUpdates.unableToDrinkOrBreastfeed = unable;
+    }
+    if (updates.vomitingEverything !== undefined) {
+      feverUpdates.vomitingEverything = updates.vomitingEverything;
+      respiratoryUpdates.vomitingEverything = updates.vomitingEverything;
+    }
+    if (updates.capillaryRefillOver2Seconds !== undefined) {
+      feverUpdates.poorPerfusion = updates.capillaryRefillOver2Seconds;
+    }
+    if (Object.keys(feverUpdates).length > 0) {
+      setYoungInfantFeverAnswers(previous => ({ ...previous, ...feverUpdates }));
+    }
+    if (Object.keys(respiratoryUpdates).length > 0) {
+      setPediatricRespiratoryAnswers(previous => ({ ...previous, ...respiratoryUpdates }));
+    }
+    const abdominalUpdates: Partial<PediatricAbdominalSafetyAnswers> = {};
+    if (updates.vomitingEverything !== undefined) abdominalUpdates.vomitingEverything = updates.vomitingEverything;
+    if (updates.bloodInStool !== undefined) abdominalUpdates.visibleBloodInStool = updates.bloodInStool;
+    if (updates.biliousVomiting !== undefined) abdominalUpdates.biliousVomiting = updates.biliousVomiting;
+    if (updates.severeLocalizedAbdominalPain === 'yes') abdominalUpdates.painSeverity = 'severe';
+    if (updates.abdominalDistensionOrRebound !== undefined) {
+      abdominalUpdates.abdominalDistension = updates.abdominalDistensionOrRebound;
+    }
+    if (Object.keys(abdominalUpdates).length > 0) {
+      setPediatricAbdominalAnswers(previous => ({ ...previous, ...abdominalUpdates }));
+    }
   };
 
-  const getProbabilityColor = (probabilidade: string) => {
-    switch (probabilidade) {
-      case 'alta':
-        return 'bg-green-100 dark:bg-green-900/30 border-green-500 dark:border-green-700 text-green-700 dark:text-green-300';
-      case 'moderada':
-        return 'bg-amber-100 dark:bg-amber-900/30 border-amber-500 dark:border-amber-700 text-amber-700 dark:text-amber-300';
-      case 'baixa':
-        return 'bg-blue-100 dark:bg-blue-900/30 border-blue-500 dark:border-blue-700 text-blue-700 dark:text-blue-300';
-      default:
-        return 'bg-neutral-100 dark:bg-neutral-900/30 border-neutral-500 dark:border-neutral-700';
+  const updatePediatricAbdominalAnswers = (updates: Partial<PediatricAbdominalSafetyAnswers>) => {
+    const next = { ...pediatricAbdominalAnswers, ...updates };
+    setPediatricAbdominalAnswers(next);
+
+    const diarrheaUpdates: Partial<PediatricDiarrheaSafetyAnswers> = {};
+    if (updates.vomitingEverything !== undefined) diarrheaUpdates.vomitingEverything = updates.vomitingEverything;
+    if (updates.visibleBloodInStool !== undefined) diarrheaUpdates.bloodInStool = updates.visibleBloodInStool;
+    if (updates.biliousVomiting !== undefined) diarrheaUpdates.biliousVomiting = updates.biliousVomiting;
+    if (updates.painSeverity !== undefined || updates.painLocation !== undefined) {
+      diarrheaUpdates.severeLocalizedAbdominalPain = next.painSeverity === 'severe'
+        || ['right-lower-quadrant', 'other-localized', 'pelvic-lower'].includes(next.painLocation)
+        ? 'yes'
+        : next.painSeverity === 'unknown' || next.painLocation === 'unknown'
+          ? 'unknown'
+          : 'no';
     }
+    if (
+      updates.abdominalDistension !== undefined
+      || updates.guardingOrRigidity !== undefined
+      || updates.reboundOrPercussionTenderness !== undefined
+    ) {
+      diarrheaUpdates.abdominalDistensionOrRebound = mergeClinicalAnswers(
+        next.abdominalDistension,
+        next.guardingOrRigidity,
+        next.reboundOrPercussionTenderness,
+      );
+    }
+    if (Object.keys(diarrheaUpdates).length > 0) {
+      setPediatricDiarrheaAnswers(previous => ({ ...previous, ...diarrheaUpdates }));
+    }
+    if (updates.vomitingEverything !== undefined) {
+      setYoungInfantFeverAnswers(previous => ({ ...previous, vomitingEverything: updates.vomitingEverything! }));
+      setPediatricRespiratoryAnswers(previous => ({ ...previous, vomitingEverything: updates.vomitingEverything! }));
+    }
+  };
+
+  const updatePediatricRespiratoryAnswers = (updates: Partial<PediatricRespiratorySafetyAnswers>) => {
+    setPediatricRespiratoryAnswers(previous => ({ ...previous, ...updates }));
+    if (updates.vomitingEverything !== undefined) {
+      setPediatricAbdominalAnswers(previous => ({ ...previous, vomitingEverything: updates.vomitingEverything! }));
+    }
+  };
+
+  const analyze = () => {
+    if (!primarySymptom.trim()) return;
+    const heuristicSymptoms = uniqueSymptoms([
+      ...secondarySymptoms,
+      ...(abdominalRelevant ? pediatricAbdominalAssessment.heuristicSymptoms : []),
+      ...(diarrheaRelevant ? pediatricDiarrheaAssessment.heuristicSymptoms : []),
+      ...(youngInfantFeverRelevant ? youngInfantFeverAssessment.heuristicSymptoms : []),
+      ...(respiratoryRelevant ? pediatricRespiratoryAssessment.heuristicSymptoms : []),
+      ...(pertussisRelevant ? pertussisAssessment.heuristicSymptoms : []),
+    ]);
+    setResult(generateDifferentialDiagnosis(primarySymptom, heuristicSymptoms, [], {
+      ageValue,
+      ageUnit: patientAgeUnit,
+      weightKg,
+    }));
+    const reportedKernelSymptoms = youngInfantFeverRelevant
+      ? [primarySymptom, ...secondarySymptoms].filter(symptom => !isYoungInfantFeverConcernSymptom(symptom))
+      : [primarySymptom, ...secondarySymptoms];
+    setKernelChecking(true);
+    setKernelResult(null);
+    void runSilentClinicalKernel({
+      ageYears,
+      symptoms: [
+        ...reportedKernelSymptoms,
+        ...(abdominalRelevant ? pediatricAbdominalAssessment.kernelSymptoms : []),
+        ...(diarrheaRelevant ? pediatricDiarrheaAssessment.kernelSymptoms : []),
+        ...(youngInfantFeverRelevant ? youngInfantFeverAssessment.kernelSymptoms : []),
+        ...(respiratoryRelevant ? pediatricRespiratoryAssessment.kernelSymptoms : []),
+        ...(pertussisRelevant ? pertussisAssessment.kernelSymptoms : []),
+      ].filter((symptom, index, symptoms) => symptoms.indexOf(symptom) === index),
+    }).then(kernel => {
+      setKernelResult(kernel);
+      setKernelChecking(false);
+    });
+  };
+
+  const addSecondarySymptom = () => {
+    const symptom = newSymptom.trim();
+    if (!symptom || secondarySymptoms.some(item => item.toLowerCase() === symptom.toLowerCase())) return;
+    setSecondarySymptoms(previous => [...previous, symptom]);
+    setNewSymptom('');
   };
 
   return (
-    <div className="space-y-4">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center">
-            <Brain className="w-6 h-6 text-white" />
+    <section className="overflow-hidden rounded-md border border-cyan-300/25 bg-[#071319]" aria-labelledby="clinical-assistant-title">
+      <div className="flex items-center justify-between border-b border-white/10 bg-cyan-300/[0.05] px-4 py-3">
+        <div className="flex min-w-0 items-start gap-3">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-cyan-300/25 bg-cyan-300/10">
+            <Brain className="h-4 w-4 text-cyan-300" aria-hidden="true" />
           </div>
-          <div>
-            <h2 className="text-xl font-bold text-neutral-900 dark:text-white">
-              Assistente de Diagnóstico Diferencial
-            </h2>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400">
-              Análise sistemática de sintomas para diagnóstico diferencial
-            </p>
+          <div className="min-w-0">
+            <p className="text-[11px] font-semibold uppercase text-cyan-300">Apoio clínico por sintomas</p>
+            <h2 id="clinical-assistant-title" className="text-base font-semibold text-white">Hipóteses clínicas e diferenciais</h2>
+            <p className="mt-0.5 text-xs text-zinc-500">Ordena aderência clínica e mantém sinais de alarme independentes.</p>
           </div>
         </div>
         <button
-          onClick={() => setIsExpanded(!isExpanded)}
-          className="p-2 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded"
+          type="button"
+          onClick={() => setExpanded(value => !value)}
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-zinc-400 transition-colors hover:bg-white/[0.06] hover:text-white"
+          aria-label={expanded ? 'Recolher assistente clínico' : 'Expandir assistente clínico'}
         >
-          {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+          {expanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
         </button>
       </div>
 
-      {isExpanded && (
-        <>
-          {/* Input de Sintomas */}
-          <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
-                Sintoma Principal *
+      {expanded && (
+        <div>
+          <div className="flex flex-col gap-3 border-b border-white/[0.07] bg-black/10 px-4 py-3 sm:flex-row sm:items-end">
+            <div className="flex min-w-0 flex-1 items-center gap-2">
+              <label className="min-w-0 flex-1 text-xs font-medium text-zinc-400">
+                Idade do paciente
+                <input
+                  type="number"
+                  min="0"
+                  step="0.1"
+                  inputMode="decimal"
+                  value={patientAge}
+                  onChange={event => onPatientContextChange?.({ age: event.target.value })}
+                  placeholder="Idade"
+                  className="mt-1.5 h-10 w-full rounded-md border border-white/15 bg-black/20 px-3 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-cyan-300/50"
+                />
               </label>
+              <label className="w-[104px] shrink-0 text-xs font-medium text-zinc-400">
+                Unidade
+                <select
+                  value={patientAgeUnit}
+                  onChange={event => onPatientContextChange?.({ ageUnit: event.target.value as PatientAgeUnit })}
+                  className="mt-1.5 h-10 w-full rounded-md border border-white/15 bg-[#071319] px-2 text-sm text-zinc-100 outline-none transition-colors focus:border-cyan-300/50"
+                >
+                  <option value="dias">dias</option>
+                  <option value="meses">meses</option>
+                  <option value="anos">anos</option>
+                </select>
+              </label>
+            </div>
+            <label className="block min-w-0 sm:w-36 text-xs font-medium text-zinc-400">
+              Peso para dose
+              <div className="relative mt-1.5">
+                <input
+                  type="number"
+                  min="0"
+                  step="0.1"
+                  inputMode="decimal"
+                  value={patientWeightKg}
+                  onChange={event => onPatientContextChange?.({ weightKg: event.target.value })}
+                  placeholder="Peso"
+                  className="h-10 w-full rounded-md border border-white/15 bg-black/20 px-3 pr-9 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-cyan-300/50"
+                />
+                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-zinc-600">kg</span>
+              </div>
+            </label>
+            <div className="flex h-10 items-center rounded-md border border-white/10 bg-white/[0.03] px-3 text-xs text-zinc-400 sm:min-w-36">
+              {ageBand || 'Informe a idade'}
+            </div>
+          </div>
+
+          <div className="grid gap-3 border-b border-white/[0.07] p-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto] md:items-end">
+            <label className="block min-w-0 text-xs font-medium text-zinc-400">
+              Sintoma principal
               <input
-                type="text"
-                value={sintomaPrincipal}
-                onChange={e => setSintomaPrincipal(e.target.value)}
-                placeholder="Ex: Tosse, Dor abdominal, Cefaleia..."
-                className="w-full px-4 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                onKeyDown={e => {
-                  if (e.key === 'Enter') {
-                    e.preventDefault();
-                    handleAnalyze();
+                value={primarySymptom}
+                onChange={event => setPrimarySymptom(event.target.value)}
+                onKeyDown={event => {
+                  if (event.key === 'Enter') {
+                    event.preventDefault();
+                    analyze();
                   }
                 }}
+                list="darwin-primary-symptoms"
+                placeholder="Ex.: tosse, febre, cefaleia"
+                className="mt-1.5 h-10 w-full rounded-md border border-white/15 bg-black/20 px-3 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-cyan-300/50"
               />
-            </div>
+              <datalist id="darwin-primary-symptoms">
+                {symptomNames.map(name => <option key={name} value={name} />)}
+              </datalist>
+            </label>
 
-            <div>
-              <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
-                Sintomas Secundários
-              </label>
-              <div className="flex gap-2 mb-2">
+            <label className="block min-w-0 text-xs font-medium text-zinc-400">
+              Sintoma associado
+              <div className="mt-1.5 flex gap-2">
                 <input
-                  type="text"
-                  value={novoSintoma}
-                  onChange={e => setNovoSintoma(e.target.value)}
-                  placeholder="Adicionar sintoma secundário..."
-                  className="flex-1 px-4 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm"
-                  onKeyDown={e => {
-                    if (e.key === 'Enter') {
-                      e.preventDefault();
-                      handleAddSymptom();
+                  value={newSymptom}
+                  onChange={event => setNewSymptom(event.target.value)}
+                  onKeyDown={event => {
+                    if (event.key === 'Enter') {
+                      event.preventDefault();
+                      addSecondarySymptom();
                     }
                   }}
+                  list="darwin-secondary-symptoms"
+                  placeholder="Adicionar outro sintoma"
+                  className="h-10 min-w-0 flex-1 rounded-md border border-white/15 bg-black/20 px-3 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-cyan-300/50"
                 />
+                <datalist id="darwin-secondary-symptoms">
+                  {symptomNames.map(name => <option key={name} value={name} />)}
+                </datalist>
                 <button
-                  onClick={handleAddSymptom}
-                  className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm font-medium flex items-center gap-2 transition-colors"
+                  type="button"
+                  onClick={addSecondarySymptom}
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-white/15 text-zinc-300 transition-colors hover:border-cyan-300/40 hover:text-cyan-200"
+                  aria-label="Adicionar sintoma associado"
                 >
-                  <Plus className="w-4 h-4" />
-                  Adicionar
+                  <Plus className="h-4 w-4" />
                 </button>
               </div>
-              {sintomasSecundarios.length > 0 && (
-                <div className="flex flex-wrap gap-2">
-                  {sintomasSecundarios.map((sintoma, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm flex items-center gap-2"
-                    >
-                      {sintoma}
-                      <button
-                        onClick={() => handleRemoveSymptom(sintoma)}
-                        className="hover:bg-purple-200 dark:hover:bg-purple-800 rounded-full p-0.5"
-                      >
-                        <X className="w-3 h-3" />
-                      </button>
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
+            </label>
 
             <button
-              onClick={handleAnalyze}
-              disabled={!sintomaPrincipal.trim()}
-              className="w-full px-4 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-lg font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              type="button"
+              onClick={analyze}
+              disabled={!primarySymptom.trim()}
+              className="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-cyan-300 px-4 text-sm font-semibold text-[#041218] transition-colors hover:bg-cyan-200 disabled:cursor-not-allowed disabled:opacity-40"
             >
-              <Brain className="w-5 h-5" />
-              Analisar Diagnóstico Diferencial
+              <Search className="h-4 w-4" aria-hidden="true" />
+              Analisar
             </button>
           </div>
 
-          {/* Resultados */}
+          {secondarySymptoms.length > 0 && (
+            <div className="flex flex-wrap gap-2 border-b border-white/[0.07] px-4 py-3">
+              {secondarySymptoms.map(symptom => (
+                <span key={symptom} className="inline-flex items-center gap-1.5 rounded border border-white/10 bg-white/[0.04] px-2 py-1 text-xs text-zinc-300">
+                  {symptom}
+                  <button
+                    type="button"
+                    onClick={() => setSecondarySymptoms(items => items.filter(item => item !== symptom))}
+                    className="text-zinc-500 hover:text-white"
+                    aria-label={`Remover ${symptom}`}
+                  >
+                    <X className="h-3 w-3" />
+                  </button>
+                </span>
+              ))}
+            </div>
+          )}
+
+          {diarrheaRelevant && (
+            <PediatricDiarrheaSafetyInterview
+              answers={pediatricDiarrheaAnswers}
+              assessment={pediatricDiarrheaAssessment}
+              onChange={updatePediatricDiarrheaAnswers}
+              sharedAbdominalSigns={abdominalRelevant}
+            />
+          )}
+
+          {abdominalRelevant && (
+            <PediatricAbdominalSafetyInterview
+              answers={pediatricAbdominalAnswers}
+              assessment={pediatricAbdominalAssessment}
+              onChange={updatePediatricAbdominalAnswers}
+              sharedDiarrheaSigns={diarrheaRelevant}
+            />
+          )}
+
+          {youngInfantFeverRelevant && (
+            <YoungInfantFeverSafetyInterview
+              answers={youngInfantFeverAnswers}
+              assessment={youngInfantFeverAssessment}
+              onChange={updateYoungInfantFeverAnswers}
+              sharedDiarrheaSigns={diarrheaRelevant}
+              sharedAbdominalVomiting={abdominalRelevant}
+            />
+          )}
+
+          {respiratoryRelevant && (
+            <PediatricRespiratorySafetyInterview
+              answers={pediatricRespiratoryAnswers}
+              assessment={pediatricRespiratoryAssessment}
+              onChange={updatePediatricRespiratoryAnswers}
+              sharedYoungInfantSigns={youngInfantFeverRelevant}
+              sharedDiarrheaSigns={diarrheaRelevant}
+              sharedAbdominalVomiting={abdominalRelevant}
+            />
+          )}
+
+          {pertussisRelevant && (
+            <PertussisSafetyInterview
+              answers={pertussisAnswers}
+              assessment={pertussisAssessment}
+              onChange={updates => setPertussisAnswers(previous => ({ ...previous, ...updates }))}
+              sharedRespiratorySigns={respiratoryRelevant}
+            />
+          )}
+
+          {result && (kernelChecking || kernelResult) && (
+            <div
+              className="flex min-h-9 items-center gap-2 border-b border-white/[0.07] bg-black/10 px-4 py-2 text-[11px] text-zinc-500"
+              title={kernelResult?.refusalReasons.join(' · ')}
+              aria-live="polite"
+            >
+              {kernelChecking ? (
+                <span className="h-3.5 w-3.5 animate-spin rounded-full border border-cyan-300/25 border-t-cyan-300" aria-hidden="true" />
+              ) : kernelResult?.integrityVerified && kernelResult.policy.disposition !== 'REFUSE' ? (
+                <ShieldCheck className="h-3.5 w-3.5 text-emerald-300" aria-hidden="true" />
+              ) : (
+                <ShieldX
+                  className={`h-3.5 w-3.5 ${kernelResult?.integrityVerified ? 'text-amber-300' : 'text-zinc-600'}`}
+                  aria-hidden="true"
+                />
+              )}
+              <span>
+                {kernelChecking
+                  ? 'Sounio · verificando recibo e integridade'
+                  : kernelResult?.integrityVerified
+                    ? kernelResult.policy.disposition === 'REFUSE'
+                      ? 'Sounio · integridade verificada · autorização clínica bloqueada'
+                      : kernelResult.signatureVerified
+                        ? 'Sounio · modo silencioso · recibo assinado e verificado'
+                        : 'Sounio · modo silencioso · integridade verificada · recibo não assinado'
+                    : 'Sounio · execução recusada para este contexto'}
+              </span>
+              {kernelResult?.integrityVerified && (
+                <span className="ml-auto hidden font-mono text-[10px] text-zinc-600 sm:inline">
+                  {kernelResult.modelVersion}
+                </span>
+              )}
+            </div>
+          )}
+
           {result && (
-            <div className="space-y-4">
-              {/* Diagnósticos Diferenciais */}
-              <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6">
-                <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
-                  <Stethoscope className="w-5 h-5 text-purple-600" />
-                  Diagnósticos Diferenciais ({result.diagnosticosDiferenciais.length})
-                </h3>
-                <div className="space-y-4">
-                  {result.diagnosticosDiferenciais.map((diff, index) => (
-                    <div
-                      key={index}
-                      className={`p-4 rounded-lg border-2 ${getProbabilityColor(diff.probabilidade)}`}
-                    >
-                      <div className="flex items-start justify-between mb-2">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <h4 className="font-bold text-lg">
-                              {diff.doenca.titulo || diff.doenca.id}
-                            </h4>
-                            <span className={`px-2 py-1 rounded text-xs font-semibold ${getProbabilityColor(diff.probabilidade)}`}>
-                              {diff.probabilidade.toUpperCase()}
+            <div className="grid lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,0.55fr)]">
+              <div className="divide-y divide-white/[0.07] lg:border-r lg:border-white/[0.07]">
+                <div className="flex items-center justify-between px-4 py-3">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-zinc-100">
+                    <Stethoscope className="h-4 w-4 text-cyan-300" aria-hidden="true" />
+                    Diagnósticos diferenciais
+                  </div>
+                  <span className="text-xs text-zinc-500">{result.diagnosticosDiferenciais.length} hipóteses</span>
+                </div>
+
+                {result.diagnosticosDiferenciais.map((differential, index) => {
+                  const isSelected = selectedDiagnosisId === differential.doenca.id;
+                  const probabilityStyle = probabilityStyles[differential.probabilidade] || probabilityStyles.baixa;
+                  return (
+                    <article key={differential.doenca.id || index} className={`px-4 py-3 transition-colors ${isSelected ? 'bg-emerald-300/[0.05]' : 'hover:bg-white/[0.025]'}`}>
+                      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                        <div className="min-w-0">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="text-xs tabular-nums text-zinc-600">{String(index + 1).padStart(2, '0')}</span>
+                            <h3 className="text-sm font-semibold text-zinc-100">{differential.doenca.titulo || differential.doenca.id}</h3>
+                            <span
+                              title="Classificação heurística de aderência; não é probabilidade calibrada"
+                              className={`rounded border px-1.5 py-0.5 text-[10px] font-semibold uppercase ${probabilityStyle}`}
+                            >
+                              aderência {differential.probabilidade}
                             </span>
-                            <span className="px-2 py-1 bg-white/50 dark:bg-black/20 rounded text-xs font-mono">
-                              Score: {Math.round(diff.score)}%
-                            </span>
+                            <span className="text-xs tabular-nums text-zinc-500">aderência {Math.round(differential.score)}%</span>
+                            {differential.adequacaoEtaria === 'preferencial' && (
+                              <span className="rounded border border-emerald-300/20 bg-emerald-300/[0.07] px-1.5 py-0.5 text-[10px] font-semibold uppercase text-emerald-200">faixa etária</span>
+                            )}
+                            {differential.adequacaoEtaria === 'menos_provavel' && (
+                              <span className="rounded border border-white/10 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-zinc-500">menos típica na idade</span>
+                            )}
                           </div>
-                          <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">
-                            Critérios atendidos: {diff.criteriosAtendidos}/{diff.criteriosTotais}
+                          <p className="mt-1.5 text-xs leading-relaxed text-zinc-400">
+                            {differential.criteriosAtendidos}/{differential.criteriosTotais} critérios compatíveis
+                            {differential.doenca.quickView?.definicao ? ` · ${differential.doenca.quickView.definicao}` : ''}
                           </p>
-                          {diff.doenca.quickView?.definicao && (
-                            <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
-                              {diff.doenca.quickView.definicao}
-                            </p>
+                          {differential.examesRecomendados.length > 0 && (
+                            <div className="mt-2 flex flex-wrap items-center gap-1.5 text-xs text-zinc-500">
+                              <TestTube className="h-3.5 w-3.5 text-cyan-300" aria-hidden="true" />
+                              {differential.examesRecomendados.slice(0, 4).join(' · ')}
+                            </div>
+                          )}
+                          {differential.redFlags.length > 0 && (
+                            <div className="mt-2 flex items-start gap-1.5 text-xs leading-relaxed text-red-300">
+                              <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                              {differential.redFlags.join(' · ')}
+                            </div>
                           )}
                         </div>
                         {onDiagnosisSelect && (
                           <button
-                            onClick={() => diff.doenca.id && onDiagnosisSelect(diff.doenca.id)}
-                            className="ml-4 px-3 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-xs font-medium transition-colors"
+                            type="button"
+                            onClick={() => differential.doenca.id && onDiagnosisSelect(differential.doenca.id)}
+                            className={`inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md px-3 text-xs font-semibold transition-colors ${isSelected ? 'border border-emerald-300/25 bg-emerald-300/10 text-emerald-200' : 'border border-white/15 text-zinc-300 hover:border-cyan-300/40 hover:text-cyan-200'}`}
                           >
-                            Selecionar
+                            {isSelected && <Check className="h-3.5 w-3.5" aria-hidden="true" />}
+                            {isSelected ? 'Selecionada' : 'Usar hipótese'}
                           </button>
                         )}
                       </div>
-
-                      {/* Exames Recomendados */}
-                      {diff.examesRecomendados.length > 0 && (
-                        <div className="mt-3 pt-3 border-t border-current/20">
-                          <p className="text-xs font-semibold mb-1 flex items-center gap-1">
-                            <TestTube className="w-3 h-3" />
-                            Exames Recomendados:
-                          </p>
-                          <div className="flex flex-wrap gap-1">
-                            {diff.examesRecomendados.map((exame, idx) => (
-                              <span
-                                key={idx}
-                                className="px-2 py-0.5 bg-white/50 dark:bg-black/20 rounded text-xs"
-                              >
-                                {exame}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Red Flags */}
-                      {diff.redFlags.length > 0 && (
-                        <div className="mt-3 pt-3 border-t border-current/20">
-                          <p className="text-xs font-semibold mb-1 flex items-center gap-1 text-red-600 dark:text-red-400">
-                            <AlertTriangle className="w-3 h-3" />
-                            Sinais de Alarme:
-                          </p>
-                          <ul className="list-disc list-inside text-xs space-y-0.5">
-                            {diff.redFlags.map((flag, idx) => (
-                              <li key={idx}>{flag}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                    </article>
+                  );
+                })}
               </div>
 
-              {/* Recomendações */}
-              {result.recomendacoes && (
-                <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 space-y-4">
-                  <h3 className="text-lg font-bold text-neutral-900 dark:text-white flex items-center gap-2">
-                    <ArrowRight className="w-5 h-5 text-purple-600" />
-                    Recomendações
+              <aside className="space-y-4 p-4">
+                <div>
+                  <h3 className="flex items-center gap-2 text-xs font-semibold uppercase text-zinc-300">
+                    <TestTube className="h-3.5 w-3.5 text-cyan-300" aria-hidden="true" />
+                    Próximos exames
                   </h3>
-
-                  {/* Exames */}
-                  {result.recomendacoes.exames.length > 0 && (
-                    <div>
-                      <h4 className="font-semibold text-neutral-700 dark:text-neutral-300 mb-2 flex items-center gap-2">
-                        <TestTube className="w-4 h-4" />
-                        Exames Recomendados
-                      </h4>
-                      <div className="space-y-2">
-                        {result.recomendacoes.exames.map((exame, index) => (
-                          <div
-                            key={index}
-                            className={`p-3 rounded-lg border ${
-                              exame.prioridade === 'alta'
-                                ? 'bg-red-50 dark:bg-red-950/20 border-red-300 dark:border-red-700'
-                                : exame.prioridade === 'media'
-                                ? 'bg-amber-50 dark:bg-amber-950/20 border-amber-300 dark:border-amber-700'
-                                : 'bg-blue-50 dark:bg-blue-950/20 border-blue-300 dark:border-blue-700'
-                            }`}
-                          >
-                            <div className="flex items-start justify-between">
-                              <div>
-                                <p className="font-medium text-sm">{exame.nome}</p>
-                                <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
-                                  {exame.justificativa}
-                                </p>
-                              </div>
-                              <span
-                                className={`px-2 py-1 rounded text-xs font-semibold ${
-                                  exame.prioridade === 'alta'
-                                    ? 'bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300'
-                                    : exame.prioridade === 'media'
-                                    ? 'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300'
-                                    : 'bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300'
-                                }`}
-                              >
-                                {exame.prioridade.toUpperCase()}
-                              </span>
-                            </div>
-                          </div>
-                        ))}
+                  <div className="mt-2 space-y-2">
+                    {result.recomendacoes.exames.slice(0, 5).map(exam => (
+                      <div key={`${exam.nome}-${exam.prioridade}`} className="border-l border-cyan-300/25 pl-2.5">
+                        <p className="text-xs font-medium text-zinc-200">{exam.nome}</p>
+                        <p className="mt-0.5 text-[11px] leading-relaxed text-zinc-500">{exam.justificativa}</p>
                       </div>
-                    </div>
-                  )}
-
-                  {/* Encaminhamentos */}
-                  {result.recomendacoes.encaminhamento.length > 0 && (
-                    <div>
-                      <h4 className="font-semibold text-neutral-700 dark:text-neutral-300 mb-2">
-                        Encaminhamentos Sugeridos
-                      </h4>
-                      <div className="space-y-2">
-                        {result.recomendacoes.encaminhamento.map((enc, index) => (
-                          <div
-                            key={index}
-                            className={`p-3 rounded-lg border ${
-                              enc.urgencia === 'urgente'
-                                ? 'bg-red-50 dark:bg-red-950/20 border-red-300 dark:border-red-700'
-                                : 'bg-blue-50 dark:bg-blue-950/20 border-blue-300 dark:border-blue-700'
-                            }`}
-                          >
-                            <div className="flex items-start justify-between">
-                              <div>
-                                <p className="font-medium text-sm">{enc.especialidade}</p>
-                                <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
-                                  {enc.motivo}
-                                </p>
-                              </div>
-                              {enc.urgencia === 'urgente' && (
-                                <span className="px-2 py-1 bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300 rounded text-xs font-semibold">
-                                  URGENTE
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                    ))}
+                  </div>
                 </div>
-              )}
+
+                {result.recomendacoes.encaminhamento.length > 0 && (
+                  <div className="border-t border-white/[0.07] pt-4">
+                    <h3 className="text-xs font-semibold uppercase text-zinc-300">Encaminhamento</h3>
+                    <div className="mt-2 space-y-2">
+                      {result.recomendacoes.encaminhamento.map(referral => (
+                        <div key={`${referral.especialidade}-${referral.motivo}`} className="text-xs leading-relaxed text-zinc-400">
+                          <span className={referral.urgencia === 'urgente' ? 'font-semibold text-red-300' : 'font-medium text-zinc-200'}>{referral.especialidade}</span>
+                          {' · '}{referral.motivo}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </aside>
             </div>
           )}
-        </>
+
+          {!result && (
+            <div className="px-4 py-5 text-center text-xs text-zinc-500">
+              Informe o sintoma principal para ordenar hipóteses, diferenciais e sinais de alarme.
+            </div>
+          )}
+        </div>
       )}
-    </div>
+    </section>
   );
 }
-

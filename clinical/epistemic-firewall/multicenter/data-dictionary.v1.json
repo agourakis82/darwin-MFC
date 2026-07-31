@@ -1,0 +1,224 @@
+{
+  "schemaVersion": "darwin.sounio.multicenter-data-dictionary.v1",
+  "dictionaryVersion": "1.0.0",
+  "status": "frozen-research-only",
+  "frozenAt": "2026-07-30T00:00:00.000Z",
+  "locale": "pt-BR",
+  "setting": "APS/SUS",
+  "population": {
+    "ageMinimumDays": 0,
+    "ageMaximumDays": 6574,
+    "indexEncounterCountPerPatient": 1
+  },
+  "observationEncoding": {
+    "unknown": -1,
+    "absent": 0,
+    "present": 1,
+    "rule": "Unknown is preserved and must never be coerced to absent."
+  },
+  "observationWindow": "Information documented before disposition in the prespecified index encounter.",
+  "observations": [
+    {
+      "index": 0,
+      "id": "fever",
+      "label": "Febre",
+      "type": "trivalent-observation",
+      "presentDefinition": "Highest measured temperature is at least 38.0 degC during the index encounter.",
+      "absentDefinition": "A measured temperature below 38.0 degC and an explicit source statement that fever is absent.",
+      "unknownDefinition": "Temperature is not measured, unit is unresolved, or fever status is not explicit.",
+      "allowedSources": ["triage-vital-sign", "clinician-structured-observation"]
+    },
+    {
+      "index": 1,
+      "id": "cough",
+      "label": "Tosse",
+      "type": "trivalent-observation",
+      "presentDefinition": "Cough is explicitly documented as present in the index encounter.",
+      "absentDefinition": "Cough is explicitly denied or documented as absent.",
+      "unknownDefinition": "Cough status is not documented.",
+      "allowedSources": ["structured-symptom", "adjudicated-chart-abstraction"]
+    },
+    {
+      "index": 2,
+      "id": "coryza",
+      "label": "Coriza",
+      "type": "trivalent-observation",
+      "presentDefinition": "Coryza, rhinorrhea, or nasal obstruction is explicitly documented as present.",
+      "absentDefinition": "Coryza, rhinorrhea, and nasal obstruction are explicitly documented as absent.",
+      "unknownDefinition": "Nasal symptom status is not documented.",
+      "allowedSources": ["structured-symptom", "adjudicated-chart-abstraction"]
+    },
+    {
+      "index": 3,
+      "id": "sore_throat",
+      "label": "Dor de garganta",
+      "type": "trivalent-observation",
+      "presentDefinition": "Sore throat or odynophagia is explicitly documented as present.",
+      "absentDefinition": "Sore throat and odynophagia are explicitly documented as absent.",
+      "unknownDefinition": "Throat symptom status is not documented or cannot be assessed.",
+      "allowedSources": ["structured-symptom", "adjudicated-chart-abstraction"]
+    },
+    {
+      "index": 4,
+      "id": "dyspnea",
+      "label": "Dispneia",
+      "type": "trivalent-observation",
+      "presentDefinition": "Respiratory difficulty, dyspnea, increased work of breathing, retractions, or nasal flaring is explicitly documented as present.",
+      "absentDefinition": "Respiratory difficulty and increased work of breathing are explicitly documented as absent.",
+      "unknownDefinition": "Respiratory effort is not documented.",
+      "allowedSources": ["structured-symptom", "structured-physical-exam", "adjudicated-chart-abstraction"]
+    },
+    {
+      "index": 5,
+      "id": "wheeze",
+      "label": "Sibilância",
+      "type": "trivalent-observation",
+      "presentDefinition": "Wheeze is documented by examination or a clinician records current wheezing.",
+      "absentDefinition": "Wheeze is explicitly documented as absent on examination.",
+      "unknownDefinition": "Auscultation or wheeze status is not documented.",
+      "allowedSources": ["structured-physical-exam", "adjudicated-chart-abstraction"]
+    },
+    {
+      "index": 6,
+      "id": "stridor",
+      "label": "Estridor",
+      "type": "trivalent-observation",
+      "presentDefinition": "Stridor at rest is explicitly documented.",
+      "absentDefinition": "Stridor at rest is explicitly documented as absent.",
+      "unknownDefinition": "Resting stridor status is not documented.",
+      "allowedSources": ["structured-physical-exam", "adjudicated-chart-abstraction"]
+    },
+    {
+      "index": 7,
+      "id": "tachypnea",
+      "label": "Taquipneia",
+      "type": "trivalent-observation",
+      "presentDefinition": "A clinician documents tachypnea for age or a respiratory-rate derivation approved in the locked site mapping evaluates true.",
+      "absentDefinition": "A clinician explicitly documents no tachypnea or the approved age-specific derivation evaluates false from a valid resting measurement.",
+      "unknownDefinition": "Respiratory rate, age band, measurement state, or mapping rule is missing or unresolved.",
+      "allowedSources": ["triage-vital-sign", "structured-physical-exam", "adjudicated-chart-abstraction"],
+      "siteDerivationMustBePrespecified": true
+    },
+    {
+      "index": 8,
+      "id": "hypoxemia",
+      "label": "Hipoxemia",
+      "type": "trivalent-observation",
+      "presentDefinition": "Room-air SpO2 is below 92% or hypoxemia is explicitly documented before oxygen treatment.",
+      "absentDefinition": "Valid room-air SpO2 is at least 92% and hypoxemia is explicitly absent.",
+      "unknownDefinition": "SpO2 is missing, invalid, measured only after oxygen, or oxygen status is unresolved.",
+      "allowedSources": ["triage-vital-sign", "structured-physical-exam"]
+    },
+    {
+      "index": 9,
+      "id": "paroxysmal_cough",
+      "label": "Tosse paroxística",
+      "type": "trivalent-observation",
+      "presentDefinition": "Paroxysmal cough, inspiratory whoop, or post-tussive vomiting is explicitly documented.",
+      "absentDefinition": "These features are explicitly documented as absent.",
+      "unknownDefinition": "Paroxysmal character is not documented.",
+      "allowedSources": ["structured-symptom", "adjudicated-chart-abstraction"]
+    },
+    {
+      "index": 10,
+      "id": "age_under_2",
+      "label": "Menor de 2 anos",
+      "type": "derived-trivalent-observation",
+      "presentDefinition": "ageDays is less than 730.",
+      "absentDefinition": "ageDays is at least 730.",
+      "unknownDefinition": "ageDays is missing or outside the permitted range.",
+      "allowedSources": ["derived-from-age-days"]
+    },
+    {
+      "index": 11,
+      "id": "duration_over_10d",
+      "label": "Duração maior que 10 dias",
+      "type": "trivalent-observation",
+      "presentDefinition": "The current respiratory symptom episode has lasted more than 10 completed days at the index encounter.",
+      "absentDefinition": "Duration is explicitly 10 completed days or less.",
+      "unknownDefinition": "Episode start or duration is not documented precisely enough to classify.",
+      "allowedSources": ["structured-symptom-duration", "adjudicated-chart-abstraction"]
+    }
+  ],
+  "referenceConditions": [
+    {
+      "index": 0,
+      "id": "ivas-pediatrica",
+      "label": "IVAS",
+      "referenceRule": "Independent double chart review using the frozen adjudication manual; billing code alone is insufficient."
+    },
+    {
+      "index": 1,
+      "id": "pneumonia-adquirida-comunidade-pediatrica",
+      "label": "Pneumonia pediátrica",
+      "referenceRule": "Independent double chart review using the frozen adjudication manual; radiography is supportive but not mandatory unless required by the site protocol."
+    },
+    {
+      "index": 2,
+      "id": "bronquiolite",
+      "label": "Bronquiolite",
+      "referenceRule": "Independent double chart review using the frozen adjudication manual."
+    },
+    {
+      "index": 3,
+      "id": "asma-pediatrica",
+      "label": "Asma ou sibilância viral",
+      "referenceRule": "Independent double chart review using the frozen adjudication manual."
+    },
+    {
+      "index": 4,
+      "id": "crupe",
+      "label": "Crupe",
+      "referenceRule": "Independent double chart review using the frozen adjudication manual."
+    },
+    {
+      "index": 5,
+      "id": "coqueluche",
+      "label": "Coqueluche",
+      "referenceRule": "Independent double chart review using the frozen adjudication manual; laboratory evidence is recorded when available."
+    },
+    {
+      "index": 6,
+      "id": "influenza-covid-pediatrica",
+      "label": "Síndrome gripal viral",
+      "referenceRule": "Independent double chart review using the frozen adjudication manual; virologic evidence is recorded when available."
+    },
+    {
+      "index": 7,
+      "id": "faringite-aguda",
+      "label": "Faringite aguda",
+      "referenceRule": "Independent double chart review using the frozen adjudication manual."
+    },
+    {
+      "index": 8,
+      "id": "outra-incerta",
+      "label": "Outra condição ou informação insuficiente",
+      "referenceRule": "Used when the presentation is outside the eight named classes or remains unresolved after double adjudication; the rationale is retained at the source site only."
+    }
+  ],
+  "prohibitedAnalyticFields": [
+    "name",
+    "cpf",
+    "cns",
+    "dateOfBirth",
+    "fullAddress",
+    "telephone",
+    "email",
+    "medicalRecordNumber",
+    "freeText",
+    "image",
+    "audio",
+    "biometric",
+    "genomicSequence"
+  ],
+  "normativeReferences": [
+    {
+      "id": "ms-aidpi-2017",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/manual_quadros_procedimentos_aidpi_crianca_2meses_5anos.pdf"
+    },
+    {
+      "id": "who-smart-child-health-2024",
+      "url": "https://www.who.int/publications/i/item/9789240089907"
+    }
+  ]
+}

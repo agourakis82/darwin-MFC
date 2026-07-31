@@ -31,10 +31,10 @@ export const doencas: Doenca[] = [
     quickView: {
       definicao: 'Condição clínica multifatorial caracterizada por elevação sustentada dos níveis pressóricos ≥140/90 mmHg. É o principal fator de risco modificável para doenças cardiovasculares, cerebrovasculares e renais.',
       criteriosDiagnosticos: [
-        'PA de consultório ≥140/90 mmHg em 2 ou mais ocasiões distintas',
+        'PA de consultório ≥140/90 mmHg, confirmada em 2 a 3 medidas entre 1 dia e 4 semanas',
         'MAPA: média 24h ≥130/80 mmHg, vigília ≥135/85 mmHg, sono ≥120/70 mmHg',
-        'MRPA: média ≥130/80 mmHg (7 dias, 2 medidas/dia)',
-        'Afastar hipertensão do jaleco branco e mascarada'
+        'MRPA: média ≥130/80 mmHg',
+        'PA ≥180/110 mmHg ou presença de doença cardiovascular/lesão de órgão-alvo pode confirmar em uma visita'
       ],
       tratamentoPrimeiraLinha: {
         naoFarmacologico: [
@@ -48,16 +48,15 @@ export const doencas: Doenca[] = [
         farmacologico: [
           'IECA (Enalapril 5-20mg 12/12h) ou BRA (Losartana 50-100mg/dia)',
           'BCC (Anlodipino 5-10mg/dia)',
-          'Diurético tiazídico (HCTZ 12,5-25mg/dia ou Clortalidona 12,5-25mg)',
+          'Diurético tiazídico disponível no SUS (HCTZ 12,5-25mg/dia)',
           'Combinações preferidas: IECA/BRA + BCC ou IECA/BRA + Diurético',
-          'Evitar monoterapia em estágio 2 ou alto risco CV'
+          'Iniciar 2 classes no estágio 1 com risco moderado/alto ou lesão de órgão-alvo e nos estágios 2-3'
         ]
       },
       metasTerapeuticas: [
-        'PA <140/90 mmHg (geral)',
-        'PA <130/80 mmHg se alto risco CV, DM ou DRC',
-        'PA <130/80 mmHg em idosos hígidos (<80 anos)',
-        'PA <150/90 mmHg em idosos frágeis (>80 anos)'
+        'Alvo inicial <140/90 mmHg; se tolerado, buscar <130/80 mmHg em menores de 65 anos ou com comorbidades',
+        'Entre 65-79 anos: PAS 130-140 mmHg e PAD <80 mmHg, evitando <120/70 mmHg',
+        'Idoso frágil: alvo individualizado, em geral 140-149/70-79 mmHg'
       ],
       examesIniciais: [
         'Glicemia de jejum e HbA1c',
@@ -69,7 +68,7 @@ export const doencas: Doenca[] = [
         'ECG de repouso'
       ],
       redFlags: [
-        'PA ≥180/120 mmHg com sintomas (cefaleia intensa, alteração visual, dispneia)',
+        'PA ≥180/110 mmHg, sobretudo com sintomas ou lesão aguda de órgão-alvo',
         'Suspeita de HAS secundária (início <30 anos, refratária, hipocalemia)',
         'Lesão de órgão-alvo aguda (IAM, AVC, EAP, dissecção)',
         'Gestante com PA ≥140/90 mmHg'
@@ -77,10 +76,10 @@ export const doencas: Doenca[] = [
     },
     fullContent: {
       epidemiologia: {
-        prevalencia: '32% da população adulta brasileira',
-        incidencia: '~500 mil novos casos/ano',
-        mortalidade: '~300 mil mortes CV/ano (principal FR)',
-        faixaEtaria: 'Aumenta progressivamente com idade (>60% em >65 anos)',
+        prevalencia: '23,9% dos adultos relataram diagnóstico médico na PNS 2019 (~38,1 milhões de pessoas)',
+        incidencia: 'Não estimada no PCDT nacional de 2025',
+        mortalidade: '39.966 óbitos atribuíveis à hipertensão em 2021',
+        faixaEtaria: 'A prevalência aumenta progressivamente com a idade',
         fatoresRisco: [
           'Idade avançada',
           'História familiar de HAS',
@@ -92,7 +91,7 @@ export const doencas: Doenca[] = [
           'Tabagismo',
           'Estresse crônico'
         ],
-        citations: [{ refId: 'vigitel-2023' }]
+        citations: [{ refId: 'pcdt-has-2025' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -111,13 +110,13 @@ export const doencas: Doenca[] = [
           'B4 (sobrecarga ventricular)',
           'Edema de MMII (se ICC)'
         ],
-        citations: [{ refId: 'sbc-has-2020' }]
+        citations: [{ refId: 'pcdt-has-2025' }]
       },
       diagnostico: {
         criterios: [
-          'PA ≥140/90 mmHg em 2+ consultas com técnica adequada',
-          'MAPA ou MRPA para confirmação (excluir jaleco branco)',
-          'Classificação: Ótima (<120/80), Normal (120-129/80-84), Pré-HAS (130-139/85-89)',
+          'PA ≥140/90 mmHg confirmada com técnica adequada em 2 a 3 medidas',
+          'MAPA ou MRPA para confirmação e identificação de efeito do avental branco ou hipertensão mascarada',
+          'Consultório 130-139/85-89 mmHg: avaliar risco cardiovascular e confirmar fora do consultório quando indicado',
           'Estágios: 1 (140-159/90-99), 2 (160-179/100-109), 3 (≥180/110)'
         ],
         diagnosticoDiferencial: [
@@ -135,7 +134,7 @@ export const doencas: Doenca[] = [
           'Ecocardiograma se suspeita de cardiopatia',
           'USG renal se suspeita de HAS secundária'
         ],
-        citations: [{ refId: 'sbc-has-2020' }]
+        citations: [{ refId: 'pcdt-has-2025' }]
       },
       tratamento: {
         objetivos: [
@@ -155,19 +154,19 @@ export const doencas: Doenca[] = [
             'Cessação do tabagismo',
             'Controle do estresse'
           ],
-          citations: [{ refId: 'sbc-has-2020' }]
+          citations: [{ refId: 'pcdt-has-2025' }]
         },
         farmacologico: {
           primeiraLinha: [
             {
               classe: 'IECA',
-              medicamentos: ['Enalapril 5-40mg/dia', 'Captopril 25-150mg/dia', 'Ramipril 2,5-10mg/dia'],
+              medicamentos: ['Enalapril 5-40mg/dia', 'Captopril 25-150mg/dia'],
               posologia: '1-2x/dia',
               observacoes: 'Tosse seca em 5-20%. CI: gestação, K>5,5, estenose bilateral renal'
             },
             {
               classe: 'BRA',
-              medicamentos: ['Losartana 50-100mg/dia', 'Valsartana 80-320mg/dia'],
+              medicamentos: ['Losartana 50-100mg/dia'],
               posologia: '1x/dia',
               observacoes: 'Alternativa se intolerância a IECA'
             },
@@ -178,10 +177,10 @@ export const doencas: Doenca[] = [
               observacoes: 'Edema de MMII dose-dependente'
             },
             {
-              classe: 'Diurético tiazídico',
-              medicamentos: ['HCTZ 12,5-25mg/dia', 'Clortalidona 12,5-25mg/dia', 'Indapamida 1,5mg/dia'],
+              classe: 'Diurético tiazídico disponível no SUS',
+              medicamentos: ['Hidroclorotiazida 12,5-25mg/dia'],
               posologia: '1x/dia pela manhã',
-              observacoes: 'Monitorar K+, glicemia, ácido úrico'
+              observacoes: 'Monitorar K+, glicemia e ácido úrico. Clortalidona não foi incorporada ao SUS para controle inadequado da PA.'
             }
           ],
           segundaLinha: [
@@ -208,7 +207,7 @@ export const doencas: Doenca[] = [
             { situacao: 'Gestação', conduta: 'Metildopa, Nifedipino, Labetalol. CI: IECA, BRA' },
             { situacao: 'Negro', conduta: 'BCC ou Tiazídico como 1ª linha (melhor resposta)' }
           ],
-          citations: [{ refId: 'sbc-has-2020' }]
+          citations: [{ refId: 'pcdt-has-2025' }]
         },
         duracao: 'Tratamento contínuo. Descontinuação apenas em casos selecionados (MEV bem-sucedida, HAS inicial leve)'
       },
@@ -220,8 +219,8 @@ export const doencas: Doenca[] = [
           'Microalbuminúria: anual se DM ou DRC'
         ],
         metasTerapeuticas: [
-          'PA <140/90 mmHg (geral)',
-          'PA <130/80 mmHg se alto risco, DM, DRC',
+          'Alvo inicial <140/90 mmHg',
+          'Se tolerado, <130/80 mmHg em menores de 65 anos ou com comorbidades',
           'Controle de DM, dislipidemia, tabagismo'
         ],
         criteriosEncaminhamento: [
@@ -231,7 +230,7 @@ export const doencas: Doenca[] = [
           'DRC TFG <30 mL/min',
           'Emergências hipertensivas'
         ],
-        citations: [{ refId: 'sbc-has-2020' }]
+        citations: [{ refId: 'pcdt-has-2025' }]
       },
       prevencao: {
         primaria: [
@@ -246,7 +245,7 @@ export const doencas: Doenca[] = [
           'Automonitorização da PA',
           'Controle de fatores de risco associados'
         ],
-        citations: [{ refId: 'ms-cab-37-2013' }]
+        citations: [{ refId: 'pcdt-has-2025' }]
       }
     },
     protocolos: ['protocolo-has', 'estratificacao-rcv'],
@@ -254,10 +253,10 @@ export const doencas: Doenca[] = [
     calculadoras: ['framingham', 'score', 'ckdepi'],
     rastreamentos: ['hipertensao-arterial'],
     citations: [
-      { refId: 'sbc-has-2020' },
-      { refId: 'ms-cab-37-2013' }
+      { refId: 'pcdt-has-2025' },
+      { refId: 'esc-has-2024', note: 'Contexto internacional; metas do SUS seguem o PCDT nacional' }
     ],
-    lastUpdate: '2024-12',
+    lastUpdate: '2026-07',
     tags: ['cardiovascular', 'cronica', 'prevalente', 'dcnt']
   },
 
@@ -279,6 +278,7 @@ export const doencas: Doenca[] = [
       definicao: 'Doença metabólica caracterizada por hiperglicemia crônica resultante de defeitos na secreção e/ou ação da insulina. Representa 90-95% dos casos de diabetes e está fortemente associada à obesidade e sedentarismo.',
       criteriosDiagnosticos: [
         'Glicemia de jejum ≥126 mg/dL (confirmada em 2 ocasiões)',
+        'Glicemia 1h após TOTG 75g ≥209 mg/dL',
         'Glicemia 2h após TOTG 75g ≥200 mg/dL',
         'HbA1c ≥6,5% (método certificado)',
         'Glicemia casual ≥200 mg/dL + sintomas clássicos (poliúria, polidipsia, perda de peso)'
@@ -292,11 +292,10 @@ export const doencas: Doenca[] = [
           'Cessação do tabagismo'
         ],
         farmacologico: [
-          'Metformina 500-2550mg/dia (1ª linha se TFG >30)',
-          'Se HbA1c >7,5% ou sintomático: associar 2º agente',
-          'iSGLT2 se DCV ou DRC (empagliflozina, dapagliflozina)',
-          'GLP-1 se obesidade ou DCV (semaglutida, liraglutida)',
-          'Insulina se HbA1c >10% ou sintomas graves'
+          'Metformina 500-2550mg/dia como escolha inicial, salvo contraindicação',
+          'HbA1c >7,5% ao diagnóstico: considerar combinação desde o início',
+          'No SUS, o iSGLT2 disponível é dapagliflozina 10mg/dia, conforme critérios do PCDT',
+          'Insulina se HbA1c >9%, glicemia de jejum ≥300mg/dL, sintomas agudos ou intercorrência grave'
         ]
       },
       metasTerapeuticas: [
@@ -307,7 +306,7 @@ export const doencas: Doenca[] = [
         'Glicemia pós-prandial <180 mg/dL'
       ],
       examesIniciais: [
-        'HbA1c (a cada 3-6 meses)',
+        'HbA1c e glicemia de jejum',
         'Glicemia de jejum',
         'Perfil lipídico (LDL, HDL, TG)',
         'Creatinina e TFG',
@@ -326,10 +325,10 @@ export const doencas: Doenca[] = [
     },
     fullContent: {
       epidemiologia: {
-        prevalencia: '9,4% da população adulta brasileira (~16 milhões)',
-        incidencia: '~500 mil novos casos/ano',
-        mortalidade: '~70 mil mortes/ano atribuídas ao DM',
-        faixaEtaria: 'Pico 45-64 anos, crescente em jovens',
+        prevalencia: '12,9% dos adultos no Brasil, mais de 26 milhões de pessoas (estimativa citada no PCDT 2026)',
+        incidencia: 'Não estimada no PCDT nacional de 2026',
+        mortalidade: 'Risco elevado de mortalidade cardiovascular, renal e por complicações agudas',
+        faixaEtaria: 'Rastreamento universal a partir de 35 anos; antes disso, se sobrepeso/obesidade e fator de risco',
         fatoresRisco: [
           'Obesidade/sobrepeso (IMC ≥25)',
           'Sedentarismo',
@@ -340,7 +339,7 @@ export const doencas: Doenca[] = [
           'HAS, dislipidemia',
           'Uso de corticoides, antipsicóticos'
         ],
-        citations: [{ refId: 'sbd-2024' }]
+        citations: [{ refId: 'pcdt-dm2-2026' }]
       },
       quadroClinico: {
         sintomasPrincipais: [
@@ -359,11 +358,12 @@ export const doencas: Doenca[] = [
           'Pulsos pediais diminuídos (DAP)',
           'Retinopatia ao exame de fundo de olho'
         ],
-        citations: [{ refId: 'sbd-2024' }]
+        citations: [{ refId: 'pcdt-dm2-2026' }]
       },
       diagnostico: {
         criterios: [
-          'Glicemia jejum ≥126 mg/dL (2 ocasiões ou 1 + sintomas)',
+          'Glicemia de jejum ≥126 mg/dL; em assintomáticos, confirmar com 2 resultados alterados',
+          'TOTG 75g ≥209 mg/dL em 1 hora',
           'TOTG 75g ≥200 mg/dL às 2h',
           'HbA1c ≥6,5%',
           'Glicemia casual ≥200 + sintomas clássicos'
@@ -381,7 +381,7 @@ export const doencas: Doenca[] = [
           'Transaminases',
           'TSH'
         ],
-        citations: [{ refId: 'sbd-2024' }]
+        citations: [{ refId: 'pcdt-dm2-2026' }]
       },
       tratamento: {
         objetivos: [
@@ -400,7 +400,7 @@ export const doencas: Doenca[] = [
             'Educação em diabetes estruturada',
             'Automonitorização da glicemia capilar'
           ],
-          citations: [{ refId: 'sbd-2024' }]
+          citations: [{ refId: 'pcdt-dm2-2026' }]
         },
         farmacologico: {
           primeiraLinha: [
@@ -408,45 +408,45 @@ export const doencas: Doenca[] = [
               classe: 'Biguanida',
               medicamentos: ['Metformina 500-2550mg/dia'],
               posologia: '2-3x/dia às refeições (XR 1x/dia)',
-              observacoes: 'Iniciar 500mg 1-2x/dia, titular a cada 1-2 semanas. CI: TFG <30, acidose, desidratação'
+              observacoes: 'Iniciar 500-850mg/dia e titular. Máximo 1g/dia se TFG 30-45; suspender se TFG <30.'
             }
           ],
           segundaLinha: [
             {
               classe: 'iSGLT2',
-              medicamentos: ['Empagliflozina 10-25mg/dia', 'Dapagliflozina 10mg/dia'],
-              observacoes: 'Preferir se DCV aterosclerótica ou ICC ou DRC. CI: TFG <20-25'
+              medicamentos: ['Dapagliflozina 10mg/dia'],
+              observacoes: 'iSGLT2 disponível no SUS. Segunda intensificação: ≥40 anos com DCV estabelecida, ou homens ≥55/mulheres ≥60 com HAS, dislipidemia ou tabagismo. Não iniciar se TFG <25.'
             },
             {
               classe: 'Agonista GLP-1',
               medicamentos: ['Semaglutida 0,25-1mg SC/semana', 'Liraglutida 0,6-1,8mg SC/dia'],
-              observacoes: 'Preferir se obesidade ou DCV. Alto custo, não disponível SUS'
+              observacoes: 'Opção em diretrizes internacionais para obesidade/DCV; não integra o esquema medicamentoso do PCDT/SUS 2026.'
             },
             {
               classe: 'Sulfonilureia',
               medicamentos: ['Glibenclamida 2,5-20mg/dia', 'Gliclazida MR 30-120mg/dia'],
-              observacoes: 'Disponível SUS. Risco de hipoglicemia e ganho de peso'
+              observacoes: 'Disponíveis no SUS. Preferir gliclazida MR se risco de hipoglicemia; glibenclamida não é recomendada a partir de 60 anos.'
             },
             {
               classe: 'Insulina',
-              medicamentos: ['NPH 10 UI noturna', 'Regular pré-prandial'],
-              observacoes: 'Se HbA1c >10%, sintomas catabólicos, falha de ADOs'
+              medicamentos: ['NPH 10 UI ou 0,1-0,2 UI/kg à noite', 'Regular pré-prandial', 'Análogo de ação prolongada conforme acesso'],
+              observacoes: 'Considerar se HbA1c >9%, jejum ≥300mg/dL, sintomas agudos ou falha de agentes orais. AIAP priorizada quando há maior risco de hipoglicemia, idade avançada, variabilidade glicêmica ou disfunção renal/hepática.'
             }
           ],
           situacoesEspeciais: [
-            { situacao: 'DCV estabelecida', conduta: 'Preferir iSGLT2 ou GLP-1 com benefício CV comprovado' },
-            { situacao: 'ICC', conduta: 'iSGLT2 obrigatório (empagliflozina, dapagliflozina)' },
-            { situacao: 'DRC', conduta: 'iSGLT2 se TFG >20-25. Ajustar metformina/suspender se TFG <30' },
-            { situacao: 'Idoso frágil', conduta: 'Meta HbA1c <8%. Evitar sulfonilureias. Preferir iDPP4' }
+            { situacao: 'DCV estabelecida', conduta: 'No SUS, avaliar dapagliflozina conforme critérios do PCDT e tratar fatores de risco concomitantes.' },
+            { situacao: 'Insuficiência cardíaca', conduta: 'Seguir também o PCDT específico; dapagliflozina pode ter indicação cardiorrenal independente do controle glicêmico.' },
+            { situacao: 'DRC', conduta: 'Seguir também o PCDT de DRC. Suspender metformina e dapagliflozina se TFG <25-30 conforme o fármaco e encaminhar.' },
+            { situacao: 'Idoso ou risco de hipoglicemia', conduta: 'Individualizar meta, preferir gliclazida à glibenclamida e considerar análogo basal conforme critérios e disponibilidade.' }
           ],
-          citations: [{ refId: 'sbd-2024' }]
+          citations: [{ refId: 'pcdt-dm2-2026' }, { refId: 'sbd-2025' }]
         },
         duracao: 'Tratamento contínuo e progressivo'
       },
       acompanhamento: {
-        frequenciaConsultas: 'A cada 3-4 meses se descontrolado; 6 meses se estável',
+        frequenciaConsultas: 'A cada 3 meses enquanto fora da meta; a cada 6 meses quando estável',
         examesControle: [
-          'HbA1c a cada 3-6 meses',
+          'HbA1c e glicemia de jejum a cada 6 meses se na meta; a cada 3 meses se fora da meta',
           'Perfil lipídico, creatinina, TFG, microalbuminúria: anual',
           'Fundo de olho: anual (a cada 2 anos se sem retinopatia e bom controle)',
           'Exame dos pés: a cada consulta',
@@ -466,7 +466,7 @@ export const doencas: Doenca[] = [
           'Descompensação refratária',
           'Necessidade de insulinização complexa'
         ],
-        citations: [{ refId: 'sbd-2024' }]
+        citations: [{ refId: 'pcdt-dm2-2026' }, { refId: 'sbd-2025' }]
       },
       prevencao: {
         primaria: [
@@ -479,15 +479,19 @@ export const doencas: Doenca[] = [
           'Rastreamento e tratamento de complicações',
           'Vacinação (influenza, pneumococo, hepatite B)'
         ],
-        citations: [{ refId: 'sbd-2024' }]
+        citations: [{ refId: 'pcdt-dm2-2026' }]
       }
     },
     protocolos: ['protocolo-dm2', 'insulinizacao-dm2'],
-    medicamentos: ['metformina', 'glibenclamida', 'insulina-nph', 'empagliflozina'],
+    medicamentos: ['metformina', 'gliclazida', 'glibenclamida', 'dapagliflozina', 'insulina-nph'],
     calculadoras: ['findrisc', 'ckdepi', 'framingham'],
     rastreamentos: ['diabetes-mellitus-2'],
-    citations: [{ refId: 'sbd-2024' }],
-    lastUpdate: '2024-12',
+    citations: [
+      { refId: 'pcdt-dm2-2026' },
+      { refId: 'sbd-2025' },
+      { refId: 'ada-2026', note: 'Contexto internacional complementar' }
+    ],
+    lastUpdate: '2026-07',
     tags: ['metabolico', 'cronica', 'prevalente', 'dcnt']
   },
 
@@ -1294,4 +1298,3 @@ export function searchDoencas(termo: string): Doenca[] {
 export function getDoencasPorCategoria(categoria: string): Doenca[] {
   return doencas.filter(d => d.categoria === categoria);
 }
-

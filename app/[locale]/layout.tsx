@@ -6,8 +6,6 @@ import { getDirection, formatLocaleForHTML } from '@/lib/i18n/utils';
 import { locales, type Locale } from '@/i18n/config';
 import LocaleHtmlAttributes from './LocaleHtmlAttributes';
 import { RegionProvider } from '@/lib/context/RegionContext';
-import RegionOnboardingModal from '@/app/components/Region/RegionOnboardingModal';
-import PSModeOnboardingModal from '@/app/components/PS/PSModeOnboardingModal';
 import ModePersistenceGate from '@/app/components/PS/ModePersistenceGate';
 import KeyboardShortcuts from '@/app/components/KeyboardShortcuts';
 import { PWAProvider } from '@/app/components/PWA';
@@ -63,7 +61,6 @@ export default async function LocaleLayout({
         <PWAProvider />
         <KeyboardShortcuts />
         <RouteChangeIndicator color="bg-adenine-teal" />
-        <PSModeOnboardingModal />
 
         {/* Skip link for keyboard accessibility */}
         <a
@@ -75,7 +72,6 @@ export default async function LocaleLayout({
 
         <PSRouteShell>{children}</PSRouteShell>
 
-        <RegionOnboardingModal />
       </RegionProvider>
     </NextIntlClientProvider>
   );

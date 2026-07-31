@@ -40,27 +40,38 @@ export const CLINICAL_PRACTICES: Record<Locale, Record<string, ClinicalPractice[
   pt: {
     'hipertensao-arterial': [
       {
-        id: 'sbc-has-2020',
-        title: 'Diretrizes Brasileiras de Hipertensão Arterial - 2020',
-        organization: 'SBC / SBMFC',
-        year: 2020,
-        url: 'https://www.sbc.org.br',
+        id: 'pcdt-has-2025',
+        title: 'PCDT da Hipertensão Arterial Sistêmica',
+        organization: 'Ministério da Saúde',
+        year: 2025,
+        url: 'https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf/view',
       },
       {
-        id: 'ms-cab-37-2013',
-        title: 'Caderno de Atenção Básica nº 37 - Hipertensão Arterial',
-        organization: 'Ministério da Saúde',
-        year: 2013,
-        url: 'https://bvsms.saude.gov.br',
+        id: 'esc-has-2024',
+        title: '2024 ESC Guidelines for Elevated Blood Pressure and Hypertension',
+        organization: 'European Society of Cardiology',
+        year: 2024,
+        url: 'https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/elevated-blood-pressure-and-hypertension/',
+        countrySpecificNotes: [
+          'Contexto internacional: alvo sistólico de 120-129 mmHg para a maioria dos adultos tratados, se tolerado',
+          'Aplicar as metas e a disponibilidade terapêutica do PCDT/SUS no contexto brasileiro',
+        ],
       },
     ],
-    'diabetes-mellitus-tipo-2': [
+    'diabetes-mellitus-2': [
       {
-        id: 'sbd-2024',
-        title: 'Diretrizes da Sociedade Brasileira de Diabetes - 2024',
-        organization: 'SBD',
-        year: 2024,
-        url: 'https://www.diabetes.org.br',
+        id: 'pcdt-dm2-2026',
+        title: 'PCDT do Diabete Melito Tipo 2',
+        organization: 'Ministério da Saúde',
+        year: 2026,
+        url: 'https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf/view',
+      },
+      {
+        id: 'sbd-2025',
+        title: 'Diretriz Oficial: Tratamento do DM2 no SUS',
+        organization: 'Sociedade Brasileira de Diabetes',
+        year: 2025,
+        url: 'https://diretriz.diabetes.org.br/tratamento-do-dm2-no-sus/',
       },
     ],
   },
@@ -87,7 +98,7 @@ export const CLINICAL_PRACTICES: Record<Locale, Record<string, ClinicalPractice[
         url: 'https://www.aafp.org',
       },
     ],
-    'diabetes-mellitus-tipo-2': [
+    'diabetes-mellitus-2': [
       {
         id: 'ada-2024',
         title: 'Standards of Care in Diabetes - 2024',
@@ -113,7 +124,7 @@ export const CLINICAL_PRACTICES: Record<Locale, Record<string, ClinicalPractice[
         url: 'https://www.sehh.es',
       },
     ],
-    'diabetes-mellitus-tipo-2': [
+    'diabetes-mellitus-2': [
       {
         id: 'sed-2023',
         title: 'Guía de Práctica Clínica sobre Diabetes Tipo 2',
@@ -135,7 +146,7 @@ export const CLINICAL_PRACTICES: Record<Locale, Record<string, ClinicalPractice[
         url: 'https://www.has-sante.fr',
       },
     ],
-    'diabetes-mellitus-tipo-2': [
+    'diabetes-mellitus-2': [
       {
         id: 'has-diabetes-2023',
         title: 'Recommandation de bonne pratique: Diabète de type 2',
@@ -157,7 +168,7 @@ export const CLINICAL_PRACTICES: Record<Locale, Record<string, ClinicalPractice[
         url: 'https://www.scardio.ru',
       },
     ],
-    'diabetes-mellitus-tipo-2': [
+    'diabetes-mellitus-2': [
       {
         id: 'rda-2021',
         title: 'Клинические рекомендации: Сахарный диабет 2 типа',
@@ -179,7 +190,7 @@ export const CLINICAL_PRACTICES: Record<Locale, Record<string, ClinicalPractice[
         url: 'https://www.moh.gov.sa',
       },
     ],
-    'diabetes-mellitus-tipo-2': [
+    'diabetes-mellitus-2': [
       {
         id: 'saudi-diabetes-2023',
         title: 'المبادئ التوجيهية السريرية: داء السكري من النوع 2',
@@ -201,7 +212,7 @@ export const CLINICAL_PRACTICES: Record<Locale, Record<string, ClinicalPractice[
         url: 'http://www.nccd.org.cn',
       },
     ],
-    'diabetes-mellitus-tipo-2': [
+    'diabetes-mellitus-2': [
       {
         id: 'china-diabetes-2021',
         title: '中国2型糖尿病防治指南 - 2021',
@@ -223,7 +234,7 @@ export const CLINICAL_PRACTICES: Record<Locale, Record<string, ClinicalPractice[
         url: 'https://www.hellenic-cardiology.org',
       },
     ],
-    'diabetes-mellitus-tipo-2': [
+    'diabetes-mellitus-2': [
       {
         id: 'hellenic-diabetes-2023',
         title: 'Κλινικές Οδηγίες: Σακχαρώδης Διαβήτης Τύπου 2',
@@ -249,7 +260,7 @@ export const CLINICAL_PRACTICES: Record<Locale, Record<string, ClinicalPractice[
         ],
       },
     ],
-    'diabetes-mellitus-tipo-2': [
+    'diabetes-mellitus-2': [
       {
         id: 'india-diabetes-2024',
         title: 'भारतीय मधुमेह दिशानिर्देश - 2024',
@@ -278,4 +289,3 @@ export function getClinicalPractices(
 ): ClinicalPractice[] {
   return CLINICAL_PRACTICES[locale]?.[diseaseId] || [];
 }
-

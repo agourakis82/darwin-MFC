@@ -92,33 +92,30 @@ const shellContentPattern = /DARWIN|Doenças|Medicamentos|Protocolos|Calculadora
 test.describe('Clinical entry friction', () => {
   test.describe.configure({ mode: 'serial' });
 
-  test('fresh landing sequences region before mode onboarding', async ({ page }) => {
+  test('fresh landing opens directly in Brazilian APS without onboarding blockers', async ({ page }) => {
     await clearOnboardingClientState(page);
     const pageErrors = collectPageErrors(page);
 
     await page.goto('/pt', { waitUntil: 'domcontentloaded' });
 
-    const regionDialog = page.getByRole('dialog', { name: 'Welcome to Darwin-MFC' });
-    await expect(regionDialog).toBeVisible();
+    await expect(page.getByRole('dialog', { name: 'Welcome to Darwin-MFC' })).toHaveCount(0);
     await expect(page.getByText('Escolha o modo inicial')).toHaveCount(0);
-
-    await regionDialog.getByRole('button', { name: /Brazil/ }).click();
-    await page.getByRole('button', { name: 'Continue' }).click();
-
-    await expect(page.getByText('Escolha o modo inicial')).toBeVisible();
+    await expect(page.locator('html')).toHaveAttribute('lang', 'pt-BR');
+    await expect(page.locator('body')).toContainText(/APS|Seu Centro|DARWIN/i);
     await expect(page.getByText('Painel de guerra')).toHaveCount(0);
 
     expect(pageErrors, pageErrors[0]?.stack || pageErrors[0]?.message).toHaveLength(0);
   });
 
-  test('first landing can ask for mode without legacy emergency copy', async ({ page }) => {
+  test('first landing remains usable with an existing Brazilian region', async ({ page }) => {
     await primeCommonClientState(page);
     const pageErrors = collectPageErrors(page);
 
     await page.goto('/pt', { waitUntil: 'domcontentloaded' });
 
-    await expect(page.getByText('Escolha o modo inicial')).toBeVisible();
-    await expect(page.getByText('Fluxo para situações críticas, protocolos rápidos e doses')).toBeVisible();
+    await expect(page.getByText('Escolha o modo inicial')).toHaveCount(0);
+    await expect(page.getByRole('dialog', { name: 'Welcome to Darwin-MFC' })).toHaveCount(0);
+    await expect(page.locator('body')).toContainText(/Medicamentos|Doenças|Calculadoras/i);
     await expect(page.getByText('Painel de guerra')).toHaveCount(0);
 
     expect(pageErrors, pageErrors[0]?.stack || pageErrors[0]?.message).toHaveLength(0);

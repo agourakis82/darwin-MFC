@@ -1,0 +1,149 @@
+{
+  "schemaVersion": "darwin.sounio.pediatric-abdominal-safety-fixtures.v1",
+  "status": "synthetic-safety-only",
+  "locale": "pt-BR",
+  "setting": "APS/SUS",
+  "sourceBoundary": {
+    "abdominalSignsAddedToKernel": false,
+    "appendicitisScoreCalculated": false,
+    "intussusceptionDiagnosed": false,
+    "imagingAutomaticallyOrdered": false,
+    "antiemeticAuthorized": false,
+    "antibioticAuthorized": false,
+    "prescriptionAuthorized": false,
+    "clinicalActivationAuthorized": false
+  },
+  "references": [
+    { "id": "sbp-nausea-vomiting-2024", "url": "https://www.sbp.com.br/fileadmin/user_upload/24101c-DC_NauseasVomitos_em_pediatria_como_abordar-atualiz.pdf" },
+    { "id": "nice-gastroenteritis-cg84", "url": "https://www.nice.org.uk/guidance/cg84/chapter/Recommendations" },
+    { "id": "rch-acute-abdominal-pain", "url": "https://www.rch.org.au/clinicalguide/guideline_index/Abdominal_pain/" },
+    { "id": "rch-vomiting", "url": "https://www.rch.org.au/clinicalguide/guideline_index/Vomiting/" },
+    { "id": "rch-intussusception", "url": "https://www.rch.org.au/clinicalguide/guideline_index/intussusception_guideline/" },
+    { "id": "idsa-appendicitis-imaging-2024", "url": "https://www.idsociety.org/practice-guideline/intra-abdominal-infections/" }
+  ],
+  "defaults": {
+    "ageDays": 365,
+    "abdominalOrVomitingPresent": true,
+    "painDurationHours": 12,
+    "vomitingEpisodesLast24Hours": 0,
+    "painOnset": "gradual",
+    "painPattern": "other",
+    "painLocation": "diffuse",
+    "painSeverity": "mild",
+    "migrationToRightLowerQuadrant": "no",
+    "painWithMovementOrUnableToWalkHop": "no",
+    "feverPresent": "no",
+    "guardingOrRigidity": "no",
+    "reboundOrPercussionTenderness": "no",
+    "abdominalDistension": "no",
+    "palpableMassOrIncarceratedHernia": "no",
+    "biliousVomiting": "no",
+    "hematemesis": "no",
+    "projectileVomiting": "no",
+    "vomitingEverything": "no",
+    "visibleBloodInStool": "no",
+    "drawsLegsUp": "no",
+    "pallorOrEpisodicLethargy": "no",
+    "scrotalOrInguinalPainSwelling": "no",
+    "suddenPelvicPainOrPregnancyConcern": "no",
+    "morningHeadacheOrMorningVomiting": "no",
+    "abnormalNeurologyMeningismOrBulgingFontanelle": "no",
+    "polyuriaPolydipsiaWeightLossOrDeepBreathing": "no",
+    "suspectedPoisoningOrIngestion": "no",
+    "previousAbdominalSurgeryOrObstruction": "no",
+    "urinarySymptoms": "no"
+  },
+  "fixtures": [
+    {
+      "id": "bilious-vomiting-is-urgent",
+      "input": { "biliousVomiting": "yes" },
+      "expected": { "applicable": true, "ageBand": "3-months-to-under-2-years", "dangerSignIds": ["bilious-vomiting"], "prioritySignIds": [], "patternIds": [], "priority": "immediate-referral", "heuristicSymptoms": ["Dor abdominal", "Vômito"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "hematemesis-is-urgent",
+      "input": { "hematemesis": "yes" },
+      "expected": { "applicable": true, "ageBand": "3-months-to-under-2-years", "dangerSignIds": ["hematemesis"], "prioritySignIds": [], "patternIds": [], "priority": "immediate-referral", "heuristicSymptoms": ["Dor abdominal", "Vômito", "Hematêmese"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "guarding-and-rebound-produce-one-peritonism-route",
+      "input": { "guardingOrRigidity": "yes", "reboundOrPercussionTenderness": "yes" },
+      "expected": { "applicable": true, "ageBand": "3-months-to-under-2-years", "dangerSignIds": ["peritonism"], "prioritySignIds": [], "patternIds": [], "priority": "immediate-referral", "heuristicSymptoms": ["Dor abdominal"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "mass-and-acute-scrotum-are-independent",
+      "input": { "palpableMassOrIncarceratedHernia": "yes", "scrotalOrInguinalPainSwelling": "yes" },
+      "expected": { "applicable": true, "ageBand": "3-months-to-under-2-years", "dangerSignIds": ["abdominal-mass-or-incarcerated-hernia", "acute-scrotal-pain-or-swelling"], "prioritySignIds": [], "patternIds": [], "priority": "immediate-referral", "heuristicSymptoms": ["Dor abdominal"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "acute-pelvic-or-pregnancy-concern-is-urgent",
+      "input": { "ageDays": 5840, "suddenPelvicPainOrPregnancyConcern": "yes" },
+      "expected": { "applicable": true, "ageBand": "12-to-under-18-years", "dangerSignIds": ["acute-pelvic-pain-or-pregnancy-concern"], "prioritySignIds": [], "patternIds": [], "priority": "immediate-referral", "heuristicSymptoms": ["Dor abdominal"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "severe-sudden-progressive-pain-is-urgent",
+      "input": { "painOnset": "sudden", "painPattern": "constant-progressive", "painSeverity": "severe" },
+      "expected": { "applicable": true, "ageBand": "3-months-to-under-2-years", "dangerSignIds": ["severe-sudden-or-progressive-pain"], "prioritySignIds": [], "patternIds": [], "priority": "immediate-referral", "heuristicSymptoms": ["Dor abdominal"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "distension-plus-vomiting-requires-obstruction-exclusion",
+      "input": { "abdominalDistension": "yes", "vomitingEpisodesLast24Hours": 2 },
+      "expected": { "applicable": true, "ageBand": "3-months-to-under-2-years", "dangerSignIds": ["bowel-obstruction-pattern"], "prioritySignIds": [], "patternIds": ["possible-obstruction"], "priority": "immediate-referral", "heuristicSymptoms": ["Dor abdominal", "Vômito", "Distensão abdominal"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "six-month-colicky-pallor-pattern-requires-intussusception-exclusion",
+      "input": { "ageDays": 180, "painPattern": "intermittent-colicky", "pallorOrEpisodicLethargy": "yes" },
+      "expected": { "applicable": true, "ageBand": "3-months-to-under-2-years", "dangerSignIds": ["intussusception-pattern"], "prioritySignIds": [], "patternIds": ["possible-intussusception"], "priority": "immediate-referral", "heuristicSymptoms": ["Dor abdominal"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "older-child-colic-legs-and-blood-still-trigger-pattern",
+      "input": { "ageDays": 1095, "painPattern": "intermittent-colicky", "drawsLegsUp": "yes", "visibleBloodInStool": "yes" },
+      "expected": { "applicable": true, "ageBand": "2-to-under-5-years", "dangerSignIds": ["intussusception-pattern"], "prioritySignIds": [], "patternIds": ["possible-intussusception"], "priority": "immediate-referral", "heuristicSymptoms": ["Dor abdominal"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "young-infant-projectile-vomiting-is-urgent",
+      "input": { "ageDays": 45, "painPattern": "none", "painLocation": "none", "painSeverity": "none", "projectileVomiting": "yes" },
+      "expected": { "applicable": true, "ageBand": "under-3-months", "dangerSignIds": ["projectile-vomiting-young-infant"], "prioritySignIds": ["young-infant-nonspecific-symptoms"], "patternIds": [], "priority": "immediate-referral", "heuristicSymptoms": ["Vômito"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "right-lower-quadrant-migration-pattern-is-same-day-not-diagnosis",
+      "input": { "ageDays": 1460, "painPattern": "constant-progressive", "painLocation": "right-lower-quadrant", "migrationToRightLowerQuadrant": "yes", "painWithMovementOrUnableToWalkHop": "yes", "feverPresent": "yes" },
+      "expected": { "applicable": true, "ageBand": "2-to-under-5-years", "dangerSignIds": [], "prioritySignIds": ["appendicitis-compatible-pattern"], "patternIds": ["possible-appendicitis"], "priority": "same-day-assessment", "heuristicSymptoms": ["Dor abdominal"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "under-five-atypical-fever-vomiting-progressive-pattern",
+      "input": { "ageDays": 1095, "painPattern": "constant-progressive", "painLocation": "diffuse", "feverPresent": "yes", "vomitingEpisodesLast24Hours": 3 },
+      "expected": { "applicable": true, "ageBand": "2-to-under-5-years", "dangerSignIds": [], "prioritySignIds": ["appendicitis-compatible-pattern", "recurrent-vomiting"], "patternIds": ["possible-appendicitis"], "priority": "same-day-assessment", "heuristicSymptoms": ["Dor abdominal", "Vômito"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "morning-headache-or-neurology-is-urgent",
+      "input": { "morningHeadacheOrMorningVomiting": "yes", "abnormalNeurologyMeningismOrBulgingFontanelle": "yes" },
+      "expected": { "applicable": true, "ageBand": "3-months-to-under-2-years", "dangerSignIds": ["neurological-red-flags"], "prioritySignIds": [], "patternIds": [], "priority": "immediate-referral", "heuristicSymptoms": ["Dor abdominal"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "dka-and-poisoning-routes-are-independent",
+      "input": { "polyuriaPolydipsiaWeightLossOrDeepBreathing": "yes", "suspectedPoisoningOrIngestion": "yes" },
+      "expected": { "applicable": true, "ageBand": "3-months-to-under-2-years", "dangerSignIds": ["dka-pattern", "suspected-poisoning"], "prioritySignIds": [], "patternIds": [], "priority": "immediate-referral", "heuristicSymptoms": ["Dor abdominal"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "isolated-localized-pain-is-same-day",
+      "input": { "ageDays": 2920, "painLocation": "other-localized", "painSeverity": "moderate" },
+      "expected": { "applicable": true, "ageBand": "5-to-under-12-years", "dangerSignIds": [], "prioritySignIds": ["localized-abdominal-pain"], "patternIds": [], "priority": "same-day-assessment", "heuristicSymptoms": ["Dor abdominal"], "kernelSymptoms": [] }
+    },
+    {
+      "id": "unknown-age-and-core-signs-remain-incomplete",
+      "useUnknownDefaults": true,
+      "input": {},
+      "expected": { "applicable": true, "ageBand": "unknown", "dangerSignIds": [], "prioritySignIds": ["age-required", "incomplete-core-surgical-screen"], "patternIds": [], "priority": "same-day-assessment", "heuristicSymptoms": [], "kernelSymptoms": [], "requiredNextQuestionIds": ["age", "biliousVomiting", "guardingOrRigidity", "scrotalOrInguinalPainSwelling"] }
+    },
+    {
+      "id": "exact-eighteen-years-exits-pediatric-panel",
+      "input": { "ageDays": 6574.365 },
+      "expected": { "applicable": false, "ageBand": "adult", "dangerSignIds": [], "prioritySignIds": [], "patternIds": [], "priority": "routine", "heuristicSymptoms": [], "kernelSymptoms": [] }
+    },
+    {
+      "id": "three-vomits-are-same-day-without-automatic-treatment",
+      "input": { "vomitingEpisodesLast24Hours": 3 },
+      "expected": { "applicable": true, "ageBand": "3-months-to-under-2-years", "dangerSignIds": [], "prioritySignIds": ["recurrent-vomiting"], "patternIds": [], "priority": "same-day-assessment", "heuristicSymptoms": ["Dor abdominal", "Vômito"], "kernelSymptoms": [] }
+    }
+  ]
+}

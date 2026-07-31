@@ -16,6 +16,7 @@ import type { Medicamento } from '@/lib/types/medicamento';
 import type { Doenca } from '@/lib/types/doenca';
 import { convertMedicamentoRowToMedicamento } from '@/lib/supabase/transforms/medicamentos';
 import { convertDoencaRowToDoenca } from '@/lib/supabase/transforms/doencas';
+import { mergeMedicamentoCatalogs } from '@/lib/supabase/merge-medicamentos';
 
 // Cache for static fallback data (lazy loaded)
 let staticMedicamentos: Medicamento[] | null = null;
@@ -37,6 +38,14 @@ function logFallbackOnce(scope: string, message?: string) {
   console.warn(`[supabase-data] ${scope}: ${message ?? 'using static fallback'}`);
 }
 
+async function getStaticMedicamentos(): Promise<Medicamento[]> {
+  if (!staticMedicamentos) {
+    const { medicamentosConsolidados } = await import('@/lib/data/medicamentos/index');
+    staticMedicamentos = medicamentosConsolidados;
+  }
+  return staticMedicamentos;
+}
+
 /**
  * Get all medications
  * Uses Supabase if configured, otherwise falls back to static data
@@ -52,7 +61,10 @@ export async function getMedicamentos(): Promise<Medicamento[]> {
 
       if (!error && data) {
         supabaseMedicamentosOk = true;
-        return data.map(convertMedicamentoRowToMedicamento);
+        return mergeMedicamentoCatalogs(
+          await getStaticMedicamentos(),
+          data.map(convertMedicamentoRowToMedicamento)
+        );
       }
       supabaseMedicamentosOk = false;
       logFallbackOnce('medicamentos', error?.message);
@@ -60,11 +72,7 @@ export async function getMedicamentos(): Promise<Medicamento[]> {
   }
 
   // Fallback to static data
-  if (!staticMedicamentos) {
-    const { medicamentosConsolidados } = await import('@/lib/data/medicamentos/index');
-    staticMedicamentos = medicamentosConsolidados;
-  }
-  return staticMedicamentos;
+  return getStaticMedicamentos();
 }
 
 /**
@@ -171,7 +179,14 @@ export async function searchMedicamentos(query: string): Promise<Medicamento[]> 
 
       if (!error && data) {
         supabaseMedicamentosOk = true;
-        return data.map(convertMedicamentoRowToMedicamento);
+        const localMatches = (await getStaticMedicamentos()).filter((medicamento) =>
+          medicamento.nomeGenerico.toLowerCase().includes(query.toLowerCase()) ||
+          medicamento.nomesComerciais?.some((nome) => nome.toLowerCase().includes(query.toLowerCase()))
+        );
+        return mergeMedicamentoCatalogs(
+          localMatches,
+          data.map(convertMedicamentoRowToMedicamento)
+        ).slice(0, 50);
       }
       supabaseMedicamentosOk = false;
       logFallbackOnce('medicamentos.search', error?.message);
@@ -234,7 +249,13 @@ export async function getMedicamentosByClasse(classe: string): Promise<Medicamen
 
       if (!error && data) {
         supabaseMedicamentosOk = true;
-        return data.map(convertMedicamentoRowToMedicamento);
+        const localMatches = (await getStaticMedicamentos()).filter(
+          (medicamento) => medicamento.classeTerapeutica === classe
+        );
+        return mergeMedicamentoCatalogs(
+          localMatches,
+          data.map(convertMedicamentoRowToMedicamento)
+        );
       }
       supabaseMedicamentosOk = false;
       logFallbackOnce('medicamentos.byClasse', error?.message);

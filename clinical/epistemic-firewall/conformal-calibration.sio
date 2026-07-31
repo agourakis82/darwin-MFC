@@ -1,0 +1,358 @@
+// Darwin-Sounio split-conformal calibration oracle.
+// Counts and record loaders are generated from a validated, deidentified cohort.
+
+let DEVELOPMENT_COUNT: i64 = __DEVELOPMENT_COUNT__
+let CALIBRATION_COUNT: i64 = __CALIBRATION_COUNT__
+let EVALUATION_COUNT: i64 = __EVALUATION_COUNT__
+let COVERAGE_PERCENT: i64 = 95
+let ANTICIPATED_COVERAGE: f64 = 0.98
+let TARGET_COVERAGE_LOWER_BOUND: f64 = 0.95
+
+var CALIBRATION_SCORES: [f64; __CALIBRATION_COUNT__] = [0.0; __CALIBRATION_COUNT__]
+var CALIBRATION_LABELS: [i64; __CALIBRATION_COUNT__] = [0; __CALIBRATION_COUNT__]
+var DEVELOPMENT_LABEL_TOTALS: [i64; 9] = [0; 9]
+var CLASS_THRESHOLDS: [f64; 9] = [1.0; 9]
+var CLASS_CALIBRATION_TOTALS: [i64; 9] = [0; 9]
+var CLASS_EVALUATION_HITS: [i64; 9] = [0; 9]
+var CLASS_EVALUATION_TOTALS: [i64; 9] = [0; 9]
+var GROUP_HITS: [i64; 3] = [0; 3]
+var GROUP_TOTALS: [i64; 3] = [0; 3]
+var ECE_CONFIDENCE_SUMS: [f64; 5] = [0.0; 5]
+var ECE_CORRECT_SUMS: [i64; 5] = [0; 5]
+var ECE_TOTALS: [i64; 5] = [0; 5]
+var MARGINAL_HITS: i64 = 0
+var PREDICTION_SET_SIZE_SUM: i64 = 0
+var BRIER_CONDITION_SUMS: [f64; 9] = [0.0; 9]
+var COMPARATOR_RAW_SCORES: [f64; 9] = [0.0; 9]
+var COMPARATOR_BRIER_CONDITION_SUMS: [f64; 9] = [0.0; 9]
+var PNEUMONIA_TOP3_HITS: i64 = 0
+var PNEUMONIA_TOTAL: i64 = 0
+var SEVERITY_HITS: i64 = 0
+var SEVERITY_TOTAL: i64 = 0
+var DCA_TRUE_POSITIVES: i64 = 0
+var DCA_FALSE_POSITIVES: i64 = 0
+
+fn absolute(value: f64) -> f64 {
+    if value < 0.0 { return 0.0 - value }
+    value
+}
+
+fn square_root(value: f64) -> f64 with Mut, Div {
+    if value <= 0.0 { return 0.0 }
+    var estimate: f64 = 1.0
+    if value > 1.0 { estimate = value }
+    var iteration: i64 = 0
+    while iteration < 20 {
+        estimate = 0.5 * (estimate + value / estimate)
+        iteration = iteration + 1
+    }
+    estimate
+}
+
+fn wilson_lower_bound(observed: f64, total: i64) -> f64 with Mut, Div {
+    if total <= 0 { return 0.0 }
+    let sample_size = total as f64
+    let z = 1.959963984540054
+    let z_squared = z * z
+    let denominator = 1.0 + z_squared / sample_size
+    let center = observed + z_squared / (2.0 * sample_size)
+    let variance = (observed * (1.0 - observed) + z_squared / (4.0 * sample_size)) / sample_size
+    let margin = z * square_root(variance)
+    (center - margin) / denominator
+}
+
+fn required_precision_sample_size() -> i64 with Mut, Div {
+    var sample_size: i64 = 1
+    while sample_size <= 100000 {
+        if wilson_lower_bound(0.98, sample_size) >= 0.95 {
+            return sample_size
+        }
+        sample_size = sample_size + 1
+    }
+    -1
+}
+
+fn required_overall_for_class_precision(required_per_class: i64) -> i64 with Mut, Div, Panic {
+    var required_overall: i64 = 0
+    var condition: i64 = 0
+    while condition < CONDITION_COUNT {
+        let class_total = DEVELOPMENT_LABEL_TOTALS[condition as usize]
+        if class_total == 0 { return -1 }
+        let condition_required = (required_per_class * DEVELOPMENT_COUNT + class_total - 1) / class_total
+        if condition_required > required_overall { required_overall = condition_required }
+        condition = condition + 1
+    }
+    required_overall
+}
+
+fn development_observation(label: i64) with Mut, Panic {
+    DEVELOPMENT_LABEL_TOTALS[label as usize] = DEVELOPMENT_LABEL_TOTALS[label as usize] + 1
+}
+
+fn calibration_observation(index: i64, label: i64) with Mut, Div, Panic {
+    infer_oracle()
+    CALIBRATION_LABELS[index as usize] = label
+    CALIBRATION_SCORES[index as usize] = 1.0 - ORACLE_POSTERIOR[label as usize]
+}
+
+fn conformal_threshold(condition: i64) -> f64 with Mut, Div, Panic {
+    var total: i64 = 0
+    var index: i64 = 0
+    while index < CALIBRATION_COUNT {
+        if CALIBRATION_LABELS[index as usize] == condition {
+            total = total + 1
+        }
+        index = index + 1
+    }
+    CLASS_CALIBRATION_TOTALS[condition as usize] = total
+    if total == 0 { return 1.0 }
+
+    var rank = ((total + 1) * COVERAGE_PERCENT + 99) / 100
+    if rank > total { rank = total }
+    var threshold: f64 = 2.0
+    index = 0
+    while index < CALIBRATION_COUNT {
+        if CALIBRATION_LABELS[index as usize] == condition {
+            let candidate = CALIBRATION_SCORES[index as usize]
+            var less_or_equal: i64 = 0
+            var other: i64 = 0
+            while other < CALIBRATION_COUNT {
+                if CALIBRATION_LABELS[other as usize] == condition {
+                    if CALIBRATION_SCORES[other as usize] <= candidate {
+                        less_or_equal = less_or_equal + 1
+                    }
+                }
+                other = other + 1
+            }
+            if less_or_equal >= rank {
+                if candidate < threshold { threshold = candidate }
+            }
+        }
+        index = index + 1
+    }
+    threshold
+}
+
+fn compute_thresholds() with Mut, Div, Panic {
+    var condition: i64 = 0
+    while condition < CONDITION_COUNT {
+        CLASS_THRESHOLDS[condition as usize] = conformal_threshold(condition)
+        condition = condition + 1
+    }
+}
+
+fn age_group(age_days: i64) -> i64 {
+    if age_days < 730 { return 0 }
+    if age_days < 2190 { return 1 }
+    2
+}
+
+fn confidence_bin(confidence: f64) -> i64 {
+    if confidence < 0.2 { return 0 }
+    if confidence < 0.4 { return 1 }
+    if confidence < 0.6 { return 2 }
+    if confidence < 0.8 { return 3 }
+    4
+}
+
+fn evaluation_observation(label: i64, age_days: i64, severe: i64) with Mut, Div, Panic {
+    infer_oracle()
+    let true_score = 1.0 - ORACLE_POSTERIOR[label as usize]
+    let covered = true_score <= CLASS_THRESHOLDS[label as usize]
+    CLASS_EVALUATION_TOTALS[label as usize] = CLASS_EVALUATION_TOTALS[label as usize] + 1
+    if covered {
+        MARGINAL_HITS = MARGINAL_HITS + 1
+        CLASS_EVALUATION_HITS[label as usize] = CLASS_EVALUATION_HITS[label as usize] + 1
+    }
+
+    let group = age_group(age_days)
+    GROUP_TOTALS[group as usize] = GROUP_TOTALS[group as usize] + 1
+    if covered { GROUP_HITS[group as usize] = GROUP_HITS[group as usize] + 1 }
+
+    var prediction_set_size: i64 = 0
+    var condition: i64 = 0
+    var best_condition: i64 = 0
+    var best_probability: f64 = -1.0
+    while condition < CONDITION_COUNT {
+        let probability = ORACLE_POSTERIOR[condition as usize]
+        if 1.0 - probability <= CLASS_THRESHOLDS[condition as usize] {
+            prediction_set_size = prediction_set_size + 1
+        }
+        if condition == label {
+            let one_minus_probability = 1.0 - probability
+            BRIER_CONDITION_SUMS[condition as usize] = BRIER_CONDITION_SUMS[condition as usize] + one_minus_probability * one_minus_probability
+        } else {
+            BRIER_CONDITION_SUMS[condition as usize] = BRIER_CONDITION_SUMS[condition as usize] + probability * probability
+        }
+        if probability > best_probability {
+            best_probability = probability
+            best_condition = condition
+        }
+        condition = condition + 1
+    }
+
+    var comparator_total: f64 = 0.0
+    condition = 0
+    while condition < CONDITION_COUNT {
+        comparator_total = comparator_total + COMPARATOR_RAW_SCORES[condition as usize] + 1.0
+        condition = condition + 1
+    }
+    condition = 0
+    while condition < CONDITION_COUNT {
+        let comparator_probability = (COMPARATOR_RAW_SCORES[condition as usize] + 1.0) / comparator_total
+        if condition == label {
+            let one_minus_comparator = 1.0 - comparator_probability
+            COMPARATOR_BRIER_CONDITION_SUMS[condition as usize] = COMPARATOR_BRIER_CONDITION_SUMS[condition as usize] + one_minus_comparator * one_minus_comparator
+        } else {
+            COMPARATOR_BRIER_CONDITION_SUMS[condition as usize] = COMPARATOR_BRIER_CONDITION_SUMS[condition as usize] + comparator_probability * comparator_probability
+        }
+        condition = condition + 1
+    }
+    PREDICTION_SET_SIZE_SUM = PREDICTION_SET_SIZE_SUM + prediction_set_size
+
+    let bin = confidence_bin(best_probability)
+    ECE_TOTALS[bin as usize] = ECE_TOTALS[bin as usize] + 1
+    ECE_CONFIDENCE_SUMS[bin as usize] = ECE_CONFIDENCE_SUMS[bin as usize] + best_probability
+    if best_condition == label {
+        ECE_CORRECT_SUMS[bin as usize] = ECE_CORRECT_SUMS[bin as usize] + 1
+    }
+
+    if label == 1 {
+        PNEUMONIA_TOTAL = PNEUMONIA_TOTAL + 1
+        var higher: i64 = 0
+        condition = 0
+        while condition < CONDITION_COUNT {
+            if ORACLE_POSTERIOR[condition as usize] > ORACLE_POSTERIOR[1 as usize] {
+                higher = higher + 1
+            }
+            condition = condition + 1
+        }
+        if higher < 3 { PNEUMONIA_TOP3_HITS = PNEUMONIA_TOP3_HITS + 1 }
+    }
+
+    if severe == 1 {
+        SEVERITY_TOTAL = SEVERITY_TOTAL + 1
+        if ORACLE_INPUT[6 as usize] == 1 || ORACLE_INPUT[7 as usize] == 1 || ORACLE_INPUT[8 as usize] == 1 {
+            SEVERITY_HITS = SEVERITY_HITS + 1
+        }
+    }
+
+    if ORACLE_POSTERIOR[1 as usize] >= 0.1 {
+        if label == 1 {
+            DCA_TRUE_POSITIVES = DCA_TRUE_POSITIVES + 1
+        } else {
+            DCA_FALSE_POSITIVES = DCA_FALSE_POSITIVES + 1
+        }
+    }
+}
+
+fn print_metric(name: i64, value: f64) with IO {
+    print("M ")
+    print_int(name)
+    print(" ")
+    println(value)
+}
+
+fn print_calibration_report() with IO, Mut, Div, Panic {
+    var condition: i64 = 0
+    while condition < CONDITION_COUNT {
+        print("T ")
+        print_int(condition)
+        print(" ")
+        println(CLASS_THRESHOLDS[condition as usize])
+        print("C ")
+        print_int(condition)
+        print(" ")
+        print_int(CLASS_EVALUATION_HITS[condition as usize])
+        print(" ")
+        print_int(CLASS_EVALUATION_TOTALS[condition as usize])
+        print(" ")
+        if CLASS_EVALUATION_TOTALS[condition as usize] > 0 {
+            println((CLASS_EVALUATION_HITS[condition as usize] as f64) / (CLASS_EVALUATION_TOTALS[condition as usize] as f64))
+        } else {
+            println(0.0)
+        }
+        condition = condition + 1
+    }
+
+    var group: i64 = 0
+    while group < 3 {
+        print("G ")
+        print_int(group)
+        print(" ")
+        print_int(GROUP_HITS[group as usize])
+        print(" ")
+        print_int(GROUP_TOTALS[group as usize])
+        print(" ")
+        if GROUP_TOTALS[group as usize] > 0 {
+            println((GROUP_HITS[group as usize] as f64) / (GROUP_TOTALS[group as usize] as f64))
+        } else {
+            println(0.0)
+        }
+        group = group + 1
+    }
+
+    let evaluation_count = EVALUATION_COUNT as f64
+    print_metric(1, (MARGINAL_HITS as f64) / evaluation_count)
+    print_metric(2, (PREDICTION_SET_SIZE_SUM as f64) / evaluation_count)
+    var brier_sum: f64 = 0.0
+    condition = 0
+    while condition < CONDITION_COUNT {
+        brier_sum = brier_sum + BRIER_CONDITION_SUMS[condition as usize]
+        condition = condition + 1
+    }
+    print("M 3 ")
+    println(brier_sum / evaluation_count)
+
+    var ece: f64 = 0.0
+    var bin: i64 = 0
+    while bin < 5 {
+        if ECE_TOTALS[bin as usize] > 0 {
+            let bin_total = ECE_TOTALS[bin as usize] as f64
+            let accuracy = (ECE_CORRECT_SUMS[bin as usize] as f64) / bin_total
+            let confidence = ECE_CONFIDENCE_SUMS[bin as usize] / bin_total
+            ece = ece + (bin_total / evaluation_count) * absolute(accuracy - confidence)
+        }
+        bin = bin + 1
+    }
+    print_metric(4, ece)
+
+    if PNEUMONIA_TOTAL > 0 {
+        print_metric(5, (PNEUMONIA_TOP3_HITS as f64) / (PNEUMONIA_TOTAL as f64))
+    } else {
+        print_metric(5, 0.0)
+    }
+    if SEVERITY_TOTAL > 0 {
+        print_metric(6, (SEVERITY_HITS as f64) / (SEVERITY_TOTAL as f64))
+    } else {
+        print_metric(6, 0.0)
+    }
+    let threshold_odds = 0.1 / 0.9
+    let net_benefit = (DCA_TRUE_POSITIVES as f64) / evaluation_count - ((DCA_FALSE_POSITIVES as f64) / evaluation_count) * threshold_odds
+    print_metric(7, net_benefit)
+    let observed_coverage = (MARGINAL_HITS as f64) / evaluation_count
+    print_metric(8, wilson_lower_bound(observed_coverage, EVALUATION_COUNT))
+
+    var comparator_brier_sum: f64 = 0.0
+    condition = 0
+    while condition < CONDITION_COUNT {
+        comparator_brier_sum = comparator_brier_sum + COMPARATOR_BRIER_CONDITION_SUMS[condition as usize]
+        condition = condition + 1
+    }
+    let model_brier = brier_sum / evaluation_count
+    let comparator_brier = comparator_brier_sum / evaluation_count
+    print_metric(9, comparator_brier)
+    if comparator_brier > 0.0 {
+        print_metric(10, (comparator_brier - model_brier) / comparator_brier)
+    } else {
+        print_metric(10, -1.0)
+    }
+
+    let required_per_class = required_precision_sample_size()
+    print_metric(11, required_per_class as f64)
+    print_metric(12, required_overall_for_class_precision(required_per_class) as f64)
+    print_metric(13, 19.0)
+    println("SOUNIO_CONFORMAL_CALIBRATION_OK")
+}
+
+// The generated source adds load_model(), record loaders, and main().

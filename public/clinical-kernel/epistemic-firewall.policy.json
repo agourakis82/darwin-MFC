@@ -1,0 +1,1297 @@
+{
+  "schemaVersion": "darwin.sounio.epistemic-firewall-policy.v1",
+  "policyVersion": "epistemic-firewall-v0.1.0",
+  "generatedBy": "clinical/epistemic-firewall/epistemic-firewall.sio",
+  "bitOrder": {
+    "integrityVerified": 1,
+    "calibrationValid": 2,
+    "signatureVerified": 4,
+    "populationSupported": 8,
+    "temporalValidity": 16,
+    "distributionInBounds": 32,
+    "redFlagPresent": 64,
+    "additionalObservationRequired": 128
+  },
+  "entries": [
+    {
+      "mask": 0,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 1,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 2,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 3,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 4,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 5,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 6,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 7,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 8,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 9,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 10,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 11,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 12,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 13,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 14,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 15,
+      "disposition": "REFUSE",
+      "reason": "certificate-expired"
+    },
+    {
+      "mask": 16,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 17,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 18,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 19,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 20,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 21,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 22,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 23,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 24,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 25,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 26,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 27,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 28,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 29,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 30,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 31,
+      "disposition": "REFUSE",
+      "reason": "distribution-out-of-bounds"
+    },
+    {
+      "mask": 32,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 33,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 34,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 35,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 36,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 37,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 38,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 39,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 40,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 41,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 42,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 43,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 44,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 45,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 46,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 47,
+      "disposition": "REFUSE",
+      "reason": "certificate-expired"
+    },
+    {
+      "mask": 48,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 49,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 50,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 51,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 52,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 53,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 54,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 55,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 56,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 57,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 58,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 59,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 60,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 61,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 62,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 63,
+      "disposition": "ACT",
+      "reason": "authorized"
+    },
+    {
+      "mask": 64,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 65,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 66,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 67,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 68,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 69,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 70,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 71,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 72,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 73,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 74,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 75,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 76,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 77,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 78,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 79,
+      "disposition": "REFUSE",
+      "reason": "certificate-expired"
+    },
+    {
+      "mask": 80,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 81,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 82,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 83,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 84,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 85,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 86,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 87,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 88,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 89,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 90,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 91,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 92,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 93,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 94,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 95,
+      "disposition": "REFUSE",
+      "reason": "distribution-out-of-bounds"
+    },
+    {
+      "mask": 96,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 97,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 98,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 99,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 100,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 101,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 102,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 103,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 104,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 105,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 106,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 107,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 108,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 109,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 110,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 111,
+      "disposition": "REFUSE",
+      "reason": "certificate-expired"
+    },
+    {
+      "mask": 112,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 113,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 114,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 115,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 116,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 117,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 118,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 119,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 120,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 121,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 122,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 123,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 124,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 125,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 126,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 127,
+      "disposition": "DEFER",
+      "reason": "red-flag-requires-clinician"
+    },
+    {
+      "mask": 128,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 129,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 130,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 131,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 132,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 133,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 134,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 135,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 136,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 137,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 138,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 139,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 140,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 141,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 142,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 143,
+      "disposition": "REFUSE",
+      "reason": "certificate-expired"
+    },
+    {
+      "mask": 144,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 145,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 146,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 147,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 148,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 149,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 150,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 151,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 152,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 153,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 154,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 155,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 156,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 157,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 158,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 159,
+      "disposition": "REFUSE",
+      "reason": "distribution-out-of-bounds"
+    },
+    {
+      "mask": 160,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 161,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 162,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 163,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 164,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 165,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 166,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 167,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 168,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 169,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 170,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 171,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 172,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 173,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 174,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 175,
+      "disposition": "REFUSE",
+      "reason": "certificate-expired"
+    },
+    {
+      "mask": 176,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 177,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 178,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 179,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 180,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 181,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 182,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 183,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 184,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 185,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 186,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 187,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 188,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 189,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 190,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 191,
+      "disposition": "ASK",
+      "reason": "additional-observation-required"
+    },
+    {
+      "mask": 192,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 193,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 194,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 195,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 196,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 197,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 198,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 199,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 200,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 201,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 202,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 203,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 204,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 205,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 206,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 207,
+      "disposition": "REFUSE",
+      "reason": "certificate-expired"
+    },
+    {
+      "mask": 208,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 209,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 210,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 211,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 212,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 213,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 214,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 215,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 216,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 217,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 218,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 219,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 220,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 221,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 222,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 223,
+      "disposition": "REFUSE",
+      "reason": "distribution-out-of-bounds"
+    },
+    {
+      "mask": 224,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 225,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 226,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 227,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 228,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 229,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 230,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 231,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 232,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 233,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 234,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 235,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 236,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 237,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 238,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 239,
+      "disposition": "REFUSE",
+      "reason": "certificate-expired"
+    },
+    {
+      "mask": 240,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 241,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 242,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 243,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 244,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 245,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 246,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 247,
+      "disposition": "REFUSE",
+      "reason": "population-unsupported"
+    },
+    {
+      "mask": 248,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 249,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 250,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 251,
+      "disposition": "REFUSE",
+      "reason": "signature-invalid"
+    },
+    {
+      "mask": 252,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 253,
+      "disposition": "REFUSE",
+      "reason": "calibration-invalid"
+    },
+    {
+      "mask": 254,
+      "disposition": "REFUSE",
+      "reason": "integrity-invalid"
+    },
+    {
+      "mask": 255,
+      "disposition": "DEFER",
+      "reason": "red-flag-requires-clinician"
+    }
+  ]
+}

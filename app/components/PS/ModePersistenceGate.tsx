@@ -9,13 +9,24 @@ export default function ModePersistenceGate() {
   const router = useRouter();
   const pathname = usePathname();
   const mode = usePSStore((state) => state.mode);
+  const setMode = usePSStore((state) => state.setMode);
 
   useEffect(() => {
-    if (mode !== 'ps' || !pathname) return;
+    if (!pathname) return;
 
     const normalized = pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
     const parts = normalized.split('/').filter(Boolean);
     const hasLocale = parts[0] && locales.includes(parts[0] as (typeof locales)[number]);
+
+    // The product root is always the Brazilian APS entry point, even when a
+    // previous session last used the emergency module.
+    if (normalized === '/' || (hasLocale && parts.length === 1)) {
+      if (mode === 'ps') setMode('aps');
+      return;
+    }
+
+    if (mode !== 'ps') return;
+
     const isPsPath = hasLocale
       ? parts[1] === 'ps'
       : parts[0] === 'ps';
@@ -33,7 +44,7 @@ export default function ModePersistenceGate() {
     }
 
     router.replace('/ps');
-  }, [mode, pathname, router]);
+  }, [mode, pathname, router, setMode]);
 
   return null;
 }

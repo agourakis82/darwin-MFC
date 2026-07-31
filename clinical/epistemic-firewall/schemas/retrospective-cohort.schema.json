@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://darwin-mfc.local/schemas/retrospective-cohort.v1.json",
+  "title": "Darwin Sounio Deidentified Retrospective Cohort",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "datasetId", "createdAt", "provenance", "records"],
+  "properties": {
+    "schemaVersion": { "const": "darwin.sounio.retrospective-cohort.v1" },
+    "datasetId": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "sourceSystem",
+        "dataUseApprovalId",
+        "deidentificationAttested",
+        "adjudicationProtocol"
+      ],
+      "properties": {
+        "kind": { "enum": ["synthetic-fixture", "retrospective-clinical"] },
+        "sourceSystem": { "type": "string", "minLength": 1 },
+        "dataUseApprovalId": { "type": ["string", "null"] },
+        "deidentificationAttested": { "type": "boolean" },
+        "adjudicationProtocol": { "type": "string", "minLength": 1 }
+      }
+    },
+    "records": {
+      "type": "array",
+      "description": "Exactly one index encounter per patient; patientHash uniqueness is enforced by the executable validator.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "patientHash",
+          "encounterHash",
+          "siteHash",
+          "encounterDate",
+          "ageDays",
+          "features",
+          "adjudicatedConditionId",
+          "severityOutcome",
+          "adjudicationMethod"
+        ],
+        "properties": {
+          "patientHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "encounterHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "siteHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "encounterDate": { "type": "string", "format": "date" },
+          "ageDays": { "type": "integer", "minimum": 0, "maximum": 6574 },
+          "features": {
+            "type": "array",
+            "minItems": 12,
+            "maxItems": 12,
+            "items": { "enum": [-1, 0, 1] }
+          },
+          "adjudicatedConditionId": { "type": "string", "minLength": 1 },
+          "severityOutcome": { "type": "boolean" },
+          "adjudicationMethod": {
+            "enum": ["chart-review-double", "chart-review-single", "synthetic-rule"]
+          }
+        }
+      }
+    }
+  }
+}

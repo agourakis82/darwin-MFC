@@ -1,0 +1,1808 @@
+{
+  "schemaVersion": "darwin.prior-art-search-log.v1",
+  "searchOpenedAt": "2026-07-29T22:13:56.516Z",
+  "status": "open",
+  "protocol": "PRISMA-S-inspired discovery search; not a completed systematic review or legal opinion",
+  "databases": [
+    "Crossref",
+    "Europe PMC"
+  ],
+  "queries": [
+    {
+      "id": "NPL-01",
+      "concept": "proof-carrying clinical inference",
+      "query": "(\"proof carrying\" OR \"proof-carrying\") AND (clinical OR medical OR diagnosis)",
+      "databases": [
+        {
+          "name": "Crossref",
+          "url": "https://api.crossref.org/works?query.bibliographic=%28%22proof+carrying%22+OR+%22proof-carrying%22%29+AND+%28clinical+OR+medical+OR+diagnosis%29&rows=20&select=DOI%2Ctitle%2Cpublished%2Ctype%2CURL",
+          "error": null,
+          "totalResults": 7695183,
+          "records": [
+            {
+              "title": "Proof-Carrying Survivability",
+              "year": 2013,
+              "doi": "10.21236/ada582166",
+              "type": "report",
+              "url": "https://doi.org/10.21236/ada582166",
+              "source": "Crossref"
+            },
+            {
+              "title": "A Proof-Carrying File System",
+              "year": 2009,
+              "doi": "10.21236/ada507095",
+              "type": "report",
+              "url": "https://doi.org/10.21236/ada507095",
+              "source": "Crossref"
+            },
+            {
+              "title": "Proof-Carrying Code. Design and Implementation",
+              "year": 2002,
+              "doi": "10.1007/978-94-010-0413-8_8",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-94-010-0413-8_8",
+              "source": "Crossref"
+            },
+            {
+              "title": "PCAL: Language Support for Proof-Carrying Authorization Systems",
+              "year": 2009,
+              "doi": "10.21236/ada512406",
+              "type": "report",
+              "url": "https://doi.org/10.21236/ada512406",
+              "source": "Crossref"
+            },
+            {
+              "title": "Proof-Carrying Machine Learning for Safety-Critical Autonomy",
+              "year": 2025,
+              "doi": "10.62311/nesx/rb-978-81-997219-2-0",
+              "type": "reference-book",
+              "url": "https://doi.org/10.62311/nesx/rb-978-81-997219-2-0",
+              "source": "Crossref"
+            },
+            {
+              "title": "Proof-Carrying Code",
+              "year": 2004,
+              "doi": "10.7551/mitpress/1104.003.0008",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.7551/mitpress/1104.003.0008",
+              "source": "Crossref"
+            },
+            {
+              "title": "Execution-Witness Binding: Proof-Carrying Authorization for LLM Agent Runtimes",
+              "year": 2026,
+              "doi": "10.2139/ssrn.6352164",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.6352164",
+              "source": "Crossref"
+            },
+            {
+              "title": "Proof-Carrying Code",
+              "year": 2011,
+              "doi": "10.1007/978-1-4419-5906-5_864",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-1-4419-5906-5_864",
+              "source": "Crossref"
+            },
+            {
+              "title": "Verifiable AI Governance: The Four Tests Standard (4TS) and Proof-Carrying Decisions",
+              "year": 2025,
+              "doi": "10.2139/ssrn.5688982",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.5688982",
+              "source": "Crossref"
+            },
+            {
+              "title": "The Unified Semantic Lattice: Deterministic Security Enforcement via Hardware-Attested Proof-Carrying Code",
+              "year": 2026,
+              "doi": "10.36227/techrxiv.177212455.57375619/v1",
+              "type": "posted-content",
+              "url": "https://doi.org/10.36227/techrxiv.177212455.57375619/v1",
+              "source": "Crossref"
+            },
+            {
+              "title": "Proof-Carrying Code",
+              "year": 2025,
+              "doi": "10.1007/978-3-030-71522-9_864",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-030-71522-9_864",
+              "source": "Crossref"
+            },
+            {
+              "title": "Interfacing Hoare Logic and Type Systems for Foundational Proof-Carrying Code",
+              "year": 2005,
+              "doi": "10.21236/ada436479",
+              "type": "report",
+              "url": "https://doi.org/10.21236/ada436479",
+              "source": "Crossref"
+            },
+            {
+              "title": "The Weird Machines in Proof-Carrying Code",
+              "year": 2014,
+              "doi": "10.1109/spw.2014.37",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/spw.2014.37",
+              "source": "Crossref"
+            },
+            {
+              "title": "Foundational proof-carrying code",
+              "year": null,
+              "doi": "10.1109/lics.2001.932501",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/lics.2001.932501",
+              "source": "Crossref"
+            },
+            {
+              "title": "A Proof-Carrying File System",
+              "year": 2010,
+              "doi": "10.1109/sp.2010.28",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/sp.2010.28",
+              "source": "Crossref"
+            },
+            {
+              "title": "Proof-Carrying Code with Untrusted Proof Rules",
+              "year": 2003,
+              "doi": "10.1007/3-540-36532-x_18",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/3-540-36532-x_18",
+              "source": "Crossref"
+            },
+            {
+              "title": "Proof-Carrying Arithmetic for Quantum ECDLP: A Certificate Format for Public Reversible Blocks",
+              "year": 2026,
+              "doi": "10.20944/preprints202607.0906.v1",
+              "type": "posted-content",
+              "url": "https://doi.org/10.20944/preprints202607.0906.v1",
+              "source": "Crossref"
+            },
+            {
+              "title": "Proof-Carrying Verification for Tool-Using LLM Agents: Frozen Records, One-Clock Certificates, and Refinement Ladders",
+              "year": 2026,
+              "doi": "10.2139/ssrn.5994135",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.5994135",
+              "source": "Crossref"
+            },
+            {
+              "title": "Cybersecurity Under Change: Proof-Carrying Assurance via Frozen Records and a One-Residual, One-Clock Certificate",
+              "year": 2026,
+              "doi": "10.2139/ssrn.5996315",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.5996315",
+              "source": "Crossref"
+            },
+            {
+              "title": "PROOF-CARRYING PROGRAMMING: GCD OF POLYNOMIALS",
+              "year": 2025,
+              "doi": "10.7868/s3034584725060051",
+              "type": "journal-article",
+              "url": "https://doi.org/10.7868/s3034584725060051",
+              "source": "Crossref"
+            }
+          ]
+        },
+        {
+          "name": "Europe PMC",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%22proof+carrying%22+OR+%22proof-carrying%22%29+AND+%28clinical+OR+medical+OR+diagnosis%29&format=json&pageSize=20&resultType=core",
+          "error": null,
+          "totalResults": 5,
+          "records": [
+            {
+              "title": "SNARKs to the rescue: proof-of-contact in zero knowledge",
+              "year": 2020,
+              "doi": null,
+              "pmid": null,
+              "type": null,
+              "url": null,
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Practical and Efficient in-Enclave Verification of Privacy Compliance.",
+              "year": 2021,
+              "doi": "10.1109/dsn48987.2021.00052",
+              "pmid": "35919377",
+              "type": null,
+              "url": "https://doi.org/10.1109/dsn48987.2021.00052",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Comparison of concomitant and subsequent cholangiocarcinomas associated with hepatolithiasis: Clinical implications.",
+              "year": 2013,
+              "doi": "10.3748/wjg.v19.i3.375",
+              "pmid": "23372360",
+              "type": null,
+              "url": "https://doi.org/10.3748/wjg.v19.i3.375",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Medical News",
+              "year": 1963,
+              "doi": null,
+              "pmid": null,
+              "type": null,
+              "url": null,
+              "source": "Europe PMC"
+            },
+            {
+              "title": "A tribute to the services of Sir Archibald  McIndoe to plastic surgery.",
+              "year": 1967,
+              "doi": null,
+              "pmid": "4863112",
+              "type": null,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/4863112/",
+              "source": "Europe PMC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NPL-02",
+      "concept": "conformal clinical inference with formal verification",
+      "query": "\"conformal prediction\" AND clinical AND (\"formal verification\" OR \"runtime verification\")",
+      "databases": [
+        {
+          "name": "Crossref",
+          "url": "https://api.crossref.org/works?query.bibliographic=%22conformal+prediction%22+AND+clinical+AND+%28%22formal+verification%22+OR+%22runtime+verification%22%29&rows=20&select=DOI%2Ctitle%2Cpublished%2Ctype%2CURL",
+          "error": null,
+          "totalResults": 4997776,
+          "records": [
+            {
+              "title": "Accelerating hardware formal verification via AutoML-driven SMT runtime prediction and solver selection",
+              "year": 2026,
+              "doi": "10.1016/j.vlsi.2026.102747",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1016/j.vlsi.2026.102747",
+              "source": "Crossref"
+            },
+            {
+              "title": "Conformal Prediction for STL Runtime Verification",
+              "year": 2023,
+              "doi": "10.1109/allerton58177.2023.10313399",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/allerton58177.2023.10313399",
+              "source": "Crossref"
+            },
+            {
+              "title": "PSL for Runtime Verification: Theory and Practice",
+              "year": null,
+              "doi": "10.1007/978-3-540-77395-5_1",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-540-77395-5_1",
+              "source": "Crossref"
+            },
+            {
+              "title": "Robust Conformal Prediction for STL Runtime Verification under Distribution Shift",
+              "year": 2024,
+              "doi": "10.1109/iccps61052.2024.00022",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/iccps61052.2024.00022",
+              "source": "Crossref"
+            },
+            {
+              "title": "Challenges in High-Assurance Runtime Verification",
+              "year": 2016,
+              "doi": "10.1007/978-3-319-47166-2_31",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-319-47166-2_31",
+              "source": "Crossref"
+            },
+            {
+              "title": "Formal Methods",
+              "year": 2019,
+              "doi": "10.23943/princeton/9780691181301.003.0002",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.23943/princeton/9780691181301.003.0002",
+              "source": "Crossref"
+            },
+            {
+              "title": "From Runtime Verification to Runtime Intervention and Adaptation",
+              "year": 2013,
+              "doi": "10.1007/978-3-642-35632-2_26",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-642-35632-2_26",
+              "source": "Crossref"
+            },
+            {
+              "title": "Teaching Runtime Verification",
+              "year": 2012,
+              "doi": "10.1007/978-3-642-29860-8_4",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-642-29860-8_4",
+              "source": "Crossref"
+            },
+            {
+              "title": "Interactive Runtime Verification",
+              "year": null,
+              "doi": "10.70675/16baf2a8z9491z41faza6e9z6ba33ed0e41b",
+              "type": "dissertation",
+              "url": "https://doi.org/10.70675/16baf2a8z9491z41faza6e9z6ba33ed0e41b",
+              "source": "Crossref"
+            },
+            {
+              "title": "From Runtime Verification to Evolvable Systems",
+              "year": null,
+              "doi": "10.1007/978-3-540-77395-5_9",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-540-77395-5_9",
+              "source": "Crossref"
+            },
+            {
+              "title": "Offline Runtime Verification",
+              "year": 2022,
+              "doi": "10.1007/978-3-031-09268-8_12",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-031-09268-8_12",
+              "source": "Crossref"
+            },
+            {
+              "title": "Runtime Verification Prediction for Traces with Data",
+              "year": 2023,
+              "doi": "10.1007/978-3-031-44267-4_8",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-031-44267-4_8",
+              "source": "Crossref"
+            },
+            {
+              "title": "Runtime Checking for Program Verification",
+              "year": null,
+              "doi": "10.1007/978-3-540-77395-5_17",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-540-77395-5_17",
+              "source": "Crossref"
+            },
+            {
+              "title": "What is Runtime Verification",
+              "year": 2022,
+              "doi": "10.1007/978-3-031-09268-8_2",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-031-09268-8_2",
+              "source": "Crossref"
+            },
+            {
+              "title": "Runtime Verification in Multi-Cores",
+              "year": 2010,
+              "doi": "10.1007/978-1-4419-8034-2_8",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-1-4419-8034-2_8",
+              "source": "Crossref"
+            },
+            {
+              "title": "Conformal Prediction for STL Runtime Verification",
+              "year": 2023,
+              "doi": "10.1145/3576841.3585927",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1145/3576841.3585927",
+              "source": "Crossref"
+            },
+            {
+              "title": "Generating Inductive Shape Predicates for Runtime Checking and Formal Verification",
+              "year": 2018,
+              "doi": "10.1007/978-3-030-03421-4_5",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-030-03421-4_5",
+              "source": "Crossref"
+            },
+            {
+              "title": "Some Thoughts on Runtime Verification",
+              "year": 2016,
+              "doi": "10.1007/978-3-319-46982-9_1",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-319-46982-9_1",
+              "source": "Crossref"
+            },
+            {
+              "title": "Runtime Verification for Software Transactional Memories",
+              "year": 2010,
+              "doi": "10.1007/978-3-642-16612-9_32",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-642-16612-9_32",
+              "source": "Crossref"
+            },
+            {
+              "title": "Runtime Verification: A Computer Architecture Perspective",
+              "year": 2012,
+              "doi": "10.1007/978-3-642-29860-8_5",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-642-29860-8_5",
+              "source": "Crossref"
+            }
+          ]
+        },
+        {
+          "name": "Europe PMC",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22conformal+prediction%22+AND+clinical+AND+%28%22formal+verification%22+OR+%22runtime+verification%22%29&format=json&pageSize=20&resultType=core",
+          "error": null,
+          "totalResults": 1,
+          "records": [
+            {
+              "title": "Will your next surgeon be a robot? Autonomy and AI in robotic surgery.",
+              "year": 2025,
+              "doi": "10.1126/scirobotics.adt0187",
+              "pmid": "40700524",
+              "type": null,
+              "url": "https://doi.org/10.1126/scirobotics.adt0187",
+              "source": "Europe PMC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NPL-03",
+      "concept": "selective clinical prediction with provenance",
+      "query": "(\"selective prediction\" OR abstention) AND clinical AND (provenance OR cryptographic OR attestation)",
+      "databases": [
+        {
+          "name": "Crossref",
+          "url": "https://api.crossref.org/works?query.bibliographic=%28%22selective+prediction%22+OR+abstention%29+AND+clinical+AND+%28provenance+OR+cryptographic+OR+attestation%29&rows=20&select=DOI%2Ctitle%2Cpublished%2Ctype%2CURL",
+          "error": null,
+          "totalResults": 5176759,
+          "records": [
+            {
+              "title": "Cryptographic mechanisms for device authentication and attestation in the internet of things",
+              "year": null,
+              "doi": "10.70675/d1bfea06zb650z4d22z8929z282bc939b8db",
+              "type": "dissertation",
+              "url": "https://doi.org/10.70675/d1bfea06zb650z4d22z8929z282bc939b8db",
+              "source": "Crossref"
+            },
+            {
+              "title": "Model Identity Verification Protocol (MIVP) A Cryptographic Attestation Standard for AI Systems",
+              "year": 2026,
+              "doi": "10.2139/ssrn.6243978",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.6243978",
+              "source": "Crossref"
+            },
+            {
+              "title": "Towards Bio-Cryptographic Attestation: A Candidate Framework for Live-Source Witnessing and Receipt-Bound Evidence",
+              "year": 2026,
+              "doi": "10.2139/ssrn.6429779",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.6429779",
+              "source": "Crossref"
+            },
+            {
+              "title": "Provenance-Bound Context Attestation and Deterministic Policy Authorization for Agentic AI Actions",
+              "year": 2026,
+              "doi": "10.2139/ssrn.6938859",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.6938859",
+              "source": "Crossref"
+            },
+            {
+              "title": "Verifiable Model Procurement for Industrial CPS Using Cryptographic Performance Attestation",
+              "year": 2026,
+              "doi": "10.21203/rs.3.rs-6567437/v2",
+              "type": "posted-content",
+              "url": "https://doi.org/10.21203/rs.3.rs-6567437/v2",
+              "source": "Crossref"
+            },
+            {
+              "title": "Selective “Selective Prediction”: Reducing Unnecessary Abstention in Vision-Language Reasoning",
+              "year": 2024,
+              "doi": "10.18653/v1/2024.findings-acl.767",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.18653/v1/2024.findings-acl.767",
+              "source": "Crossref"
+            },
+            {
+              "title": "Provenance-Based Attestation for Trustworthy Computing",
+              "year": 2015,
+              "doi": "10.1109/trustcom.2015.428",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/trustcom.2015.428",
+              "source": "Crossref"
+            },
+            {
+              "title": "TrustDTI: Trustworthy Drug–Target Interaction Prediction via Evidential Deep Learning and Selective Abstention",
+              "year": 2026,
+              "doi": "10.1109/access.2026.3707193",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1109/access.2026.3707193",
+              "source": "Crossref"
+            },
+            {
+              "title": "selective cryptographic session",
+              "year": null,
+              "doi": "10.1007/springerreference_24275",
+              "type": "reference-entry",
+              "url": "https://doi.org/10.1007/springerreference_24275",
+              "source": "Crossref"
+            },
+            {
+              "title": "Cryptographic Attestation of Medical AI: Bridging the Trust Gap in Nuclear Medicine via Proof of Inference (Preprint)",
+              "year": 2026,
+              "doi": "10.2196/preprints.95545",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2196/preprints.95545",
+              "source": "Crossref"
+            },
+            {
+              "title": "AI Supply Chain Security: MBOM-PQC Provenance, PQC Attestation, and a Maturity Model for Quantum-Resistant Assurance",
+              "year": 2026,
+              "doi": "10.20944/preprints202603.1963.v1",
+              "type": "posted-content",
+              "url": "https://doi.org/10.20944/preprints202603.1963.v1",
+              "source": "Crossref"
+            },
+            {
+              "title": "AI Supply Chain Security: MBOM-PQC Provenance, PQC Attestation, and a Maturity Model for Quantum-Resistant Assurance",
+              "year": 2026,
+              "doi": "10.20944/preprints202603.1963.v2",
+              "type": "posted-content",
+              "url": "https://doi.org/10.20944/preprints202603.1963.v2",
+              "source": "Crossref"
+            },
+            {
+              "title": "Provenance Attestation of Human Cells Using Physical Unclonable Functions",
+              "year": 2021,
+              "doi": "10.1101/2021.06.11.448108",
+              "type": "posted-content",
+              "url": "https://doi.org/10.1101/2021.06.11.448108",
+              "source": "Crossref"
+            },
+            {
+              "title": "Provenance Over Detection: A Cryptographic Framework for Human Authorship Verification in Music Distribution",
+              "year": 2026,
+              "doi": "10.2139/ssrn.6402298",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.6402298",
+              "source": "Crossref"
+            },
+            {
+              "title": "HDP: A Lightweight Cryptographic Protocol for Human Delegation Provenance in Agentic AI Systems",
+              "year": 2026,
+              "doi": "10.2139/ssrn.6493442",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.6493442",
+              "source": "Crossref"
+            },
+            {
+              "title": "Provenance as Substrate: A Cryptographic Identifier Framework for Music Rights and Royalty Infrastructure",
+              "year": 2026,
+              "doi": "10.2139/ssrn.6730343",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.6730343",
+              "source": "Crossref"
+            },
+            {
+              "title": "Model Procurement for Industrial Cyber-Physical Systems Using Cryptographic Performance Attestation",
+              "year": 2026,
+              "doi": "10.3390/fi18030146",
+              "type": "journal-article",
+              "url": "https://doi.org/10.3390/fi18030146",
+              "source": "Crossref"
+            },
+            {
+              "title": "Circumventing Cryptographic Deniability with Remote Attestation",
+              "year": 2019,
+              "doi": "10.2478/popets-2019-0051",
+              "type": "journal-article",
+              "url": "https://doi.org/10.2478/popets-2019-0051",
+              "source": "Crossref"
+            },
+            {
+              "title": "AI Supply Chain Security: MBOM-PQC Provenance, PQC Attestation, and a Maturity Model for Quantum-Resistant Assurance",
+              "year": 2026,
+              "doi": "10.3390/systems14050593",
+              "type": "journal-article",
+              "url": "https://doi.org/10.3390/systems14050593",
+              "source": "Crossref"
+            },
+            {
+              "title": "Selective Abstention in Simultaneous Elections: Understanding the Turnout Gap",
+              "year": 2020,
+              "doi": "10.33774/apsa-2020-580j6-v2",
+              "type": "posted-content",
+              "url": "https://doi.org/10.33774/apsa-2020-580j6-v2",
+              "source": "Crossref"
+            }
+          ]
+        },
+        {
+          "name": "Europe PMC",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%22selective+prediction%22+OR+abstention%29+AND+clinical+AND+%28provenance+OR+cryptographic+OR+attestation%29&format=json&pageSize=20&resultType=core",
+          "error": null,
+          "totalResults": 131,
+          "records": [
+            {
+              "title": "Operationalizing Large Language Models for Clinical Research Data Extraction: Methods, Quality Control, and Governance.",
+              "year": 2026,
+              "doi": "10.1007/s10916-026-02353-w",
+              "pmid": "41735696",
+              "type": null,
+              "url": "https://doi.org/10.1007/s10916-026-02353-w",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Image-embedded prompt injection vulnerability of vision-language models in dental radiology: a cross-vendor attack–defense evaluation",
+              "year": 2026,
+              "doi": "10.21203/rs.3.rs-9932271/v1",
+              "pmid": null,
+              "type": null,
+              "url": "https://doi.org/10.21203/rs.3.rs-9932271/v1",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "The Next Paradigm in Medical AI: A Survey of Agentic AI in Biomedicine.",
+              "year": 2026,
+              "doi": "10.1109/rbme.2026.3704162",
+              "pmid": "42441446",
+              "type": null,
+              "url": "https://doi.org/10.1109/rbme.2026.3704162",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Safety-Constrained Agentic AI for Autism Screening: A Multimodal, Clinician-Guided Architecture.",
+              "year": 2026,
+              "doi": "10.7759/cureus.108961",
+              "pmid": "42306396",
+              "type": null,
+              "url": "https://doi.org/10.7759/cureus.108961",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "The One-Person Laboratory Should Be a First-Class Unit of Evaluation in Dry-Lab AI Research",
+              "year": 2026,
+              "doi": "10.20944/preprints202604.1414.v1",
+              "pmid": null,
+              "type": null,
+              "url": "https://doi.org/10.20944/preprints202604.1414.v1",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Evidence-based AI: from trailblazer to trustblazer?",
+              "year": 2026,
+              "doi": "10.3389/frai.2026.1818128",
+              "pmid": "42318585",
+              "type": null,
+              "url": "https://doi.org/10.3389/frai.2026.1818128",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Using Provenance Dispersion to Triage Uncertain Neurosymbolic OCT Diagnoses.",
+              "year": 2026,
+              "doi": "10.1167/tvst.15.3.9",
+              "pmid": "41800851",
+              "type": null,
+              "url": "https://doi.org/10.1167/tvst.15.3.9",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Smart Lies and Sharp Eyes: Pragmatic Artificial Intelligence for Cancer Pathology: Promise, Pitfalls, and Access Pathways.",
+              "year": 2026,
+              "doi": "10.3390/cancers18030421",
+              "pmid": "41681893",
+              "type": null,
+              "url": "https://doi.org/10.3390/cancers18030421",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "From Sensing to Sense-Making: A Framework for On-Person Intelligence with Wearable Biosensors and Edge LLMs.",
+              "year": 2026,
+              "doi": "10.3390/s26072034",
+              "pmid": "41977819",
+              "type": null,
+              "url": "https://doi.org/10.3390/s26072034",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Applications of artificial intelligence in non-small cell lung cancer: from precision diagnosis to personalized prognosis and therapy.",
+              "year": 2025,
+              "doi": "10.1186/s12967-025-07591-z",
+              "pmid": "41437380",
+              "type": null,
+              "url": "https://doi.org/10.1186/s12967-025-07591-z",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "AI snake oil? A risk/benefit analysis for toxicology",
+              "year": null,
+              "doi": null,
+              "pmid": null,
+              "type": null,
+              "url": null,
+              "source": "Europe PMC"
+            },
+            {
+              "title": "How to bring generative AI to oncology practice.",
+              "year": 2026,
+              "doi": "10.1016/j.esmorw.2025.100679",
+              "pmid": "41930309",
+              "type": null,
+              "url": "https://doi.org/10.1016/j.esmorw.2025.100679",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "From Agents to Governance: Essential AI Skills for Clinicians in the Large Language Model Era.",
+              "year": 2026,
+              "doi": "10.2196/86550",
+              "pmid": "41534067",
+              "type": null,
+              "url": "https://doi.org/10.2196/86550",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "PANDIA: Personalized neuro-symbolic multimodal fusion for interpretable neonatal pain assessment.",
+              "year": 2026,
+              "doi": "10.1371/journal.pdig.0001442",
+              "pmid": "42189831",
+              "type": null,
+              "url": "https://doi.org/10.1371/journal.pdig.0001442",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Artificial intelligence in genitourinary pathology.",
+              "year": 2026,
+              "doi": "10.1111/his.70020",
+              "pmid": "41384695",
+              "type": null,
+              "url": "https://doi.org/10.1111/his.70020",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Evaluating large language models for evidence-based clinical question answering.",
+              "year": 2026,
+              "doi": "10.1016/j.patter.2026.101519",
+              "pmid": "42130942",
+              "type": null,
+              "url": "https://doi.org/10.1016/j.patter.2026.101519",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Confidence-calibrated federated graph attention for internet of things agents under latency SLOs.",
+              "year": 2026,
+              "doi": "10.1038/s41598-026-45662-3",
+              "pmid": "41904251",
+              "type": null,
+              "url": "https://doi.org/10.1038/s41598-026-45662-3",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "An unusual presentation of cystic lymphangioma in the mesoappendix: a case report.",
+              "year": 2026,
+              "doi": "10.1097/rc9.0000000000000201",
+              "pmid": "41938381",
+              "type": null,
+              "url": "https://doi.org/10.1097/rc9.0000000000000201",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Challenges of Implementing LLMs in Clinical Practice: Perspectives.",
+              "year": 2025,
+              "doi": "10.3390/jcm14176169",
+              "pmid": "40943929",
+              "type": null,
+              "url": "https://doi.org/10.3390/jcm14176169",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Prioritizing human-AI collaboration in healthcare: the TRIAD framework for trustworthy governance, real-world, and integrated adaptive deployment.",
+              "year": 2025,
+              "doi": "10.1186/s40779-026-00684-w",
+              "pmid": "41810150",
+              "type": null,
+              "url": "https://doi.org/10.1186/s40779-026-00684-w",
+              "source": "Europe PMC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NPL-04",
+      "concept": "non-repudiable clinical decision support provenance",
+      "query": "\"clinical decision support\" AND (\"non-repudiable\" OR \"cryptographic provenance\" OR attestation)",
+      "databases": [
+        {
+          "name": "Crossref",
+          "url": "https://api.crossref.org/works?query.bibliographic=%22clinical+decision+support%22+AND+%28%22non-repudiable%22+OR+%22cryptographic+provenance%22+OR+attestation%29&rows=20&select=DOI%2Ctitle%2Cpublished%2Ctype%2CURL",
+          "error": null,
+          "totalResults": 7079260,
+          "records": [
+            {
+              "title": "Non-repudiable Provenance for Clinical Decision Support Systems",
+              "year": 2021,
+              "doi": "10.1007/978-3-030-80960-7_10",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-030-80960-7_10",
+              "source": "Crossref"
+            },
+            {
+              "title": "Non-Repudiable and Repudiable Authentications in E-Systems",
+              "year": 2007,
+              "doi": "10.1007/978-1-84628-992-7_3",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-1-84628-992-7_3",
+              "source": "Crossref"
+            },
+            {
+              "title": "Component middleware to support non-repudiable service interactions",
+              "year": 2004,
+              "doi": "10.1109/dsn.2004.1311931",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/dsn.2004.1311931",
+              "source": "Crossref"
+            },
+            {
+              "title": "Cryptographic mechanisms for device authentication and attestation in the internet of things",
+              "year": null,
+              "doi": "10.70675/d1bfea06zb650z4d22z8929z282bc939b8db",
+              "type": "dissertation",
+              "url": "https://doi.org/10.70675/d1bfea06zb650z4d22z8929z282bc939b8db",
+              "source": "Crossref"
+            },
+            {
+              "title": "Model Identity Verification Protocol (MIVP) A Cryptographic Attestation Standard for AI Systems",
+              "year": 2026,
+              "doi": "10.2139/ssrn.6243978",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.6243978",
+              "source": "Crossref"
+            },
+            {
+              "title": "Towards Bio-Cryptographic Attestation: A Candidate Framework for Live-Source Witnessing and Receipt-Bound Evidence",
+              "year": 2026,
+              "doi": "10.2139/ssrn.6429779",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.6429779",
+              "source": "Crossref"
+            },
+            {
+              "title": "Provenance-Bound Context Attestation and Deterministic Policy Authorization for Agentic AI Actions",
+              "year": 2026,
+              "doi": "10.2139/ssrn.6938859",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.6938859",
+              "source": "Crossref"
+            },
+            {
+              "title": "Verifiable Model Procurement for Industrial CPS Using Cryptographic Performance Attestation",
+              "year": 2026,
+              "doi": "10.21203/rs.3.rs-6567437/v2",
+              "type": "posted-content",
+              "url": "https://doi.org/10.21203/rs.3.rs-6567437/v2",
+              "source": "Crossref"
+            },
+            {
+              "title": "Socialising Decision Enactment: Living Provenance in Decision Support",
+              "year": 2022,
+              "doi": "10.1201/9781003030966-13",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1201/9781003030966-13",
+              "source": "Crossref"
+            },
+            {
+              "title": "Provenance-Based Attestation for Trustworthy Computing",
+              "year": 2015,
+              "doi": "10.1109/trustcom.2015.428",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/trustcom.2015.428",
+              "source": "Crossref"
+            },
+            {
+              "title": "A provenance-based approach to semantic web service description and discovery",
+              "year": 2014,
+              "doi": "10.1016/j.dss.2014.04.007",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1016/j.dss.2014.04.007",
+              "source": "Crossref"
+            },
+            {
+              "title": "Socialising the decision-making process: transaction provenance decision support",
+              "year": 2020,
+              "doi": "10.1080/12460125.2020.1868653",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1080/12460125.2020.1868653",
+              "source": "Crossref"
+            },
+            {
+              "title": "SciBlock: A Blockchain-Based Tamper-Proof Non-Repudiable Storage for Scientific Workflow Provenance",
+              "year": 2019,
+              "doi": "10.1109/cic48465.2019.00019",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/cic48465.2019.00019",
+              "source": "Crossref"
+            },
+            {
+              "title": "Middleware Support for Non-repudiable Transactional Information Sharing between Enterprises",
+              "year": 2003,
+              "doi": "10.1007/978-3-540-40010-3_11",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-540-40010-3_11",
+              "source": "Crossref"
+            },
+            {
+              "title": "Section V. Adoption of Clinical Decision Support",
+              "year": 2014,
+              "doi": "10.1016/b978-0-12-398476-0.00034-8",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1016/b978-0-12-398476-0.00034-8",
+              "source": "Crossref"
+            },
+            {
+              "title": "Corrigendum to “A provenance-based approach to semantic web service description and discovery” [Decis. Support. Syst. (64C) (2014) 90–99]",
+              "year": 2016,
+              "doi": "10.1016/j.dss.2016.04.002",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1016/j.dss.2016.04.002",
+              "source": "Crossref"
+            },
+            {
+              "title": "Section IV. The Technology of Clinical Decision Support",
+              "year": 2014,
+              "doi": "10.1016/b978-0-12-398476-0.00038-5",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1016/b978-0-12-398476-0.00038-5",
+              "source": "Crossref"
+            },
+            {
+              "title": "Visualization and Data Provenance Trends in Decision Support for Cybersecurity",
+              "year": 2017,
+              "doi": "10.1007/978-3-319-59439-2_9",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-319-59439-2_9",
+              "source": "Crossref"
+            },
+            {
+              "title": "Cryptographic Attestation of Medical AI: Bridging the Trust Gap in Nuclear Medicine via Proof of Inference (Preprint)",
+              "year": 2026,
+              "doi": "10.2196/preprints.95545",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2196/preprints.95545",
+              "source": "Crossref"
+            },
+            {
+              "title": "Section III. Sources of Knowledge for Clinical Decision Support",
+              "year": 2014,
+              "doi": "10.1016/b978-0-12-398476-0.00039-7",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1016/b978-0-12-398476-0.00039-7",
+              "source": "Crossref"
+            }
+          ]
+        },
+        {
+          "name": "Europe PMC",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22clinical+decision+support%22+AND+%28%22non-repudiable%22+OR+%22cryptographic+provenance%22+OR+attestation%29&format=json&pageSize=20&resultType=core",
+          "error": null,
+          "totalResults": 129,
+          "records": [
+            {
+              "title": "Enhancing Physician Resilience to Generative AI: Multilevel Framework for Shared Authority, Verification, and Skill Preservation.",
+              "year": 2026,
+              "doi": "10.2196/88058",
+              "pmid": "42341297",
+              "type": null,
+              "url": "https://doi.org/10.2196/88058",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "A Framework for Emergency Department-Integrated Hepatitis C Test-and-Treat in the United States.",
+              "year": 2026,
+              "doi": "10.1111/jvh.70178",
+              "pmid": "42050986",
+              "type": null,
+              "url": "https://doi.org/10.1111/jvh.70178",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "From \"Black Box\" to Learning System: Formative Viewpoint on Digital Health Governance for Childhood Cancer Information in Japan.",
+              "year": 2026,
+              "doi": "10.2196/86775",
+              "pmid": "41740961",
+              "type": null,
+              "url": "https://doi.org/10.2196/86775",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Current state of electronic problems lists in primary care: a rapid scoping review.",
+              "year": 2026,
+              "doi": "10.1093/fampra/cmag036",
+              "pmid": "42275183",
+              "type": null,
+              "url": "https://doi.org/10.1093/fampra/cmag036",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Impact of a Clinical Decision Support System on CT Pulmonary Angiography Yield and Utilization in Hospitalized Patients.",
+              "year": 2025,
+              "doi": "10.1016/j.jacr.2024.11.030",
+              "pmid": "39662713",
+              "type": null,
+              "url": "https://doi.org/10.1016/j.jacr.2024.11.030",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Guardrails for GenAI drafted replies in patient portal messaging.",
+              "year": 2026,
+              "doi": "10.1038/s41746-026-02621-6",
+              "pmid": "41942581",
+              "type": null,
+              "url": "https://doi.org/10.1038/s41746-026-02621-6",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "REALity vs. Review of Medication And Problem Lists (REAL-MAP)",
+              "year": 2023,
+              "doi": null,
+              "pmid": null,
+              "type": null,
+              "url": null,
+              "source": "Europe PMC"
+            },
+            {
+              "title": "An auditable and source-verified framework for clinical AI decision support: integrating retrieval-augmented generation with data provenance.",
+              "year": 2026,
+              "doi": "10.3389/frai.2026.1737532",
+              "pmid": "41716615",
+              "type": null,
+              "url": "https://doi.org/10.3389/frai.2026.1737532",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Anticoagulation Quality Improvement Project: Reducing Noncompliant Anticoagulation Administrations in Patients With Cancer and Thrombocytopenia.",
+              "year": 2026,
+              "doi": "10.1188/26.cjon.33-40",
+              "pmid": "41650136",
+              "type": null,
+              "url": "https://doi.org/10.1188/26.cjon.33-40",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "1190. Nudging Away from Alert Fatigue: A Novel Method for Tracking the Impact of Integrated Clinical Decision Support on Meropenem Order Rates",
+              "year": 2023,
+              "doi": null,
+              "pmid": null,
+              "type": null,
+              "url": null,
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Understanding anesthesia anxiety: A mixed-methods analysis of propofol discourse on reddit",
+              "year": 2026,
+              "doi": null,
+              "pmid": null,
+              "type": null,
+              "url": null,
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Zero-Knowledge Process Verification: A Comprehensive Framework for a Distributed Healthcare System.",
+              "year": 2026,
+              "doi": "10.30953/bhty.v9.430",
+              "pmid": "42205846",
+              "type": null,
+              "url": "https://doi.org/10.30953/bhty.v9.430",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Point-of-Care Feedback: Preceptor Cosigning Workflow Promotes Milestone Assessment.",
+              "year": 2023,
+              "doi": "10.4300/jgme-d-22-00761.1",
+              "pmid": "37363661",
+              "type": null,
+              "url": "https://doi.org/10.4300/jgme-d-22-00761.1",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Economics and Equity of Large Language Models: Health Care Perspective.",
+              "year": 2024,
+              "doi": "10.2196/64226",
+              "pmid": "39541580",
+              "type": null,
+              "url": "https://doi.org/10.2196/64226",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Integration of Federated Learning and Blockchain in Health Care: Tutorial on Medical Data, Architectures, Privacy, Security, and Regulatory Compliance.",
+              "year": 2026,
+              "doi": "10.2196/80178",
+              "pmid": "42296530",
+              "type": null,
+              "url": "https://doi.org/10.2196/80178",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare.",
+              "year": 2025,
+              "doi": "10.1038/s41746-025-01900-y",
+              "pmid": "40790350",
+              "type": null,
+              "url": "https://doi.org/10.1038/s41746-025-01900-y",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Decision Support to Improve Critical Care Services Documentation in an Academic Emergency Department.",
+              "year": 2022,
+              "doi": "10.1055/a-1950-9032",
+              "pmid": "36162434",
+              "type": null,
+              "url": "https://doi.org/10.1055/a-1950-9032",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Slow Harm After Dobbs v. Jackson Women's Health Organization: An Analytic Scoping Review of How Data and Surveillance Infrastructures Reshape Emergency Obstetric Care.",
+              "year": 2026,
+              "doi": "10.7759/cureus.108911",
+              "pmid": "42299169",
+              "type": null,
+              "url": "https://doi.org/10.7759/cureus.108911",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Novel algorithms &amp; blood-based biomarkers: Dementia detection and care transitions for persons living with dementia in the emergency department.",
+              "year": 2025,
+              "doi": "10.1002/alz.70287",
+              "pmid": "40390207",
+              "type": null,
+              "url": "https://doi.org/10.1002/alz.70287",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Characterizing Physical Activity Trajectories Preceding Incident Major Depressive Disorder Diagnosis With Consumer Wearable Devices in the All of Us Research Program: Retrospective Nested Case-Control Study.",
+              "year": 2026,
+              "doi": "10.2196/93164",
+              "pmid": "42081737",
+              "type": null,
+              "url": "https://doi.org/10.2196/93164",
+              "source": "Europe PMC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NPL-05",
+      "concept": "compiler identity in clinical software assurance",
+      "query": "(compiler OR WebAssembly OR WASM) AND \"clinical decision support\" AND (provenance OR verification OR receipt)",
+      "databases": [
+        {
+          "name": "Crossref",
+          "url": "https://api.crossref.org/works?query.bibliographic=%28compiler+OR+WebAssembly+OR+WASM%29+AND+%22clinical+decision+support%22+AND+%28provenance+OR+verification+OR+receipt%29&rows=20&select=DOI%2Ctitle%2Cpublished%2Ctype%2CURL",
+          "error": null,
+          "totalResults": 5574092,
+          "records": [
+            {
+              "title": "WebAssembly with Rust and JavaScript: An Introduction to wasm-bindgen",
+              "year": 2021,
+              "doi": "10.1007/978-1-4842-7496-5_4",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-1-4842-7496-5_4",
+              "source": "Crossref"
+            },
+            {
+              "title": "WebAssembly (Wasm) for Legal Professionals: Exploring Current Parameters in License Compliance",
+              "year": 2022,
+              "doi": "10.70828/ltew7465",
+              "type": "report",
+              "url": "https://doi.org/10.70828/ltew7465",
+              "source": "Crossref"
+            },
+            {
+              "title": "Wasm Web Interface",
+              "year": 2021,
+              "doi": "10.1007/978-1-4842-7496-5_6",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-1-4842-7496-5_6",
+              "source": "Crossref"
+            },
+            {
+              "title": "Wasm and Kubernetes",
+              "year": 2021,
+              "doi": "10.1007/978-1-4842-7496-5_7",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-1-4842-7496-5_7",
+              "source": "Crossref"
+            },
+            {
+              "title": "WebAssembly Module Internals: Sections and Memory Model",
+              "year": 2021,
+              "doi": "10.1007/978-1-4842-7496-5_2",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-1-4842-7496-5_2",
+              "source": "Crossref"
+            },
+            {
+              "title": "Extending Istio with WebAssembly",
+              "year": 2021,
+              "doi": "10.1007/978-1-4842-7496-5_8",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-1-4842-7496-5_8",
+              "source": "Crossref"
+            },
+            {
+              "title": "WebAssembly Introduction",
+              "year": 2021,
+              "doi": "10.1007/978-1-4842-7496-5_1",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-1-4842-7496-5_1",
+              "source": "Crossref"
+            },
+            {
+              "title": "WebAssembly Text Toolkit and Other Utilities",
+              "year": 2021,
+              "doi": "10.1007/978-1-4842-7496-5_3",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-1-4842-7496-5_3",
+              "source": "Crossref"
+            },
+            {
+              "title": "WebAssembly for Cloud",
+              "year": 2022,
+              "doi": "10.1007/978-1-4842-7496-5",
+              "type": "book",
+              "url": "https://doi.org/10.1007/978-1-4842-7496-5",
+              "source": "Crossref"
+            },
+            {
+              "title": "WebAssembly(WASM)",
+              "year": 2020,
+              "doi": "10.1007/978-981-15-6218-1_11",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-981-15-6218-1_11",
+              "source": "Crossref"
+            },
+            {
+              "title": "Wasm-Mutate: Fast and Effective Binary Diversification for Webassembly",
+              "year": 2023,
+              "doi": "10.2139/ssrn.4578348",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.4578348",
+              "source": "Crossref"
+            },
+            {
+              "title": "waPC",
+              "year": 2021,
+              "doi": "10.1007/978-1-4842-7496-5_5",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-1-4842-7496-5_5",
+              "source": "Crossref"
+            },
+            {
+              "title": "WebAssembly: Yes, but for What?",
+              "year": 2025,
+              "doi": "10.1145/3746171",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1145/3746171",
+              "source": "Crossref"
+            },
+            {
+              "title": "Iris-Wasm: Robust and Modular Verification of WebAssembly Programs",
+              "year": 2023,
+              "doi": "10.1145/3591265",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1145/3591265",
+              "source": "Crossref"
+            },
+            {
+              "title": "Implementing a Taxis compiler",
+              "year": 1988,
+              "doi": "10.1016/0167-9236(88)90117-0",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1016/0167-9236(88)90117-0",
+              "source": "Crossref"
+            },
+            {
+              "title": "Wasm/k: delimited continuations for WebAssembly",
+              "year": 2020,
+              "doi": "10.1145/3426422.3426978",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1145/3426422.3426978",
+              "source": "Crossref"
+            },
+            {
+              "title": "Schism: A Self-Hosting Scheme to WebAssembly Compiler",
+              "year": 2018,
+              "doi": "10.29007/csq2",
+              "type": "report-series",
+              "url": "https://doi.org/10.29007/csq2",
+              "source": "Crossref"
+            },
+            {
+              "title": "Wasm-Mutate: Fast and effective binary diversification for WebAssembly",
+              "year": 2024,
+              "doi": "10.1016/j.cose.2024.103731",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1016/j.cose.2024.103731",
+              "source": "Crossref"
+            },
+            {
+              "title": "Table 6: Results for the compiler provenance task.",
+              "year": null,
+              "doi": "10.7717/peerj-cs.1286/table-6",
+              "type": "component",
+              "url": "https://doi.org/10.7717/peerj-cs.1286/table-6",
+              "source": "Crossref"
+            },
+            {
+              "title": "Table 4: Results for the compiler provenance task.",
+              "year": null,
+              "doi": "10.7717/peerj-cs.1286/table-4",
+              "type": "component",
+              "url": "https://doi.org/10.7717/peerj-cs.1286/table-4",
+              "source": "Crossref"
+            }
+          ]
+        },
+        {
+          "name": "Europe PMC",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28compiler+OR+WebAssembly+OR+WASM%29+AND+%22clinical+decision+support%22+AND+%28provenance+OR+verification+OR+receipt%29&format=json&pageSize=20&resultType=core",
+          "error": null,
+          "totalResults": 14,
+          "records": [
+            {
+              "title": "Development of an automated machine learning-based prediction model and interactive tool for blood transfusion requirements in patients with severe traumatic brain injury.",
+              "year": 2026,
+              "doi": "10.3389/fneur.2026.1757553",
+              "pmid": "42136801",
+              "type": null,
+              "url": "https://doi.org/10.3389/fneur.2026.1757553",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "An Expert Knowledge Algorithm and Model Predicting Wound Healing Trends for a Decision Support System for Pressure Injury Management in Home Care Nursing: Development and Validation Study.",
+              "year": 2025,
+              "doi": "10.2196/65716",
+              "pmid": "41364745",
+              "type": null,
+              "url": "https://doi.org/10.2196/65716",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Predictive effect of postoperative recovery in general anesthesia patients using interpretable models based on swarm intelligence machine learning.",
+              "year": 2025,
+              "doi": "10.3389/fphys.2025.1565548",
+              "pmid": "40951641",
+              "type": null,
+              "url": "https://doi.org/10.3389/fphys.2025.1565548",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Privacy-preserving federated learning with optimized ensemble weighting and knowledge distillation for COVID-19 detection from non-IID medical imaging data.",
+              "year": 2026,
+              "doi": "10.1038/s41598-026-45454-9",
+              "pmid": "42000837",
+              "type": null,
+              "url": "https://doi.org/10.1038/s41598-026-45454-9",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Phenopacket-tools: Building and validating GA4GH Phenopackets.",
+              "year": 2023,
+              "doi": "10.1371/journal.pone.0285433",
+              "pmid": "37196000",
+              "type": null,
+              "url": "https://doi.org/10.1371/journal.pone.0285433",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Pediatric decision support using adapted Arden Syntax.",
+              "year": 2018,
+              "doi": "10.1016/j.artmed.2015.09.006",
+              "pmid": "26547523",
+              "type": null,
+              "url": "https://doi.org/10.1016/j.artmed.2015.09.006",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Executing medical logic modules expressed in ArdenML using Drools.",
+              "year": 2012,
+              "doi": "10.1136/amiajnl-2011-000512",
+              "pmid": "22180871",
+              "type": null,
+              "url": "https://doi.org/10.1136/amiajnl-2011-000512",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Enabling Agile Clinical and Translational Data Warehousing: Platform Development and Evaluation.",
+              "year": 2020,
+              "doi": "10.2196/15918",
+              "pmid": "32706673",
+              "type": null,
+              "url": "https://doi.org/10.2196/15918",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Normalization and standardization of electronic health records for high-throughput phenotyping: the SHARPn consortium.",
+              "year": 2013,
+              "doi": "10.1136/amiajnl-2013-001939",
+              "pmid": "24190931",
+              "type": null,
+              "url": "https://doi.org/10.1136/amiajnl-2013-001939",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Category Definitions",
+              "year": 2017,
+              "doi": null,
+              "pmid": null,
+              "type": null,
+              "url": null,
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Integrating decision support, based on the Arden Syntax, in a clinical laboratory environment.",
+              "year": 1993,
+              "doi": null,
+              "pmid": "8130502",
+              "type": null,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/8130502/",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "50th ESCP Symposium on Clinical Pharmacy, Polypharmacy and ageing - highly individualized, interprofessional, person-centered care : 19–21 October 2022, Prague, Czech Republic",
+              "year": 2022,
+              "doi": null,
+              "pmid": null,
+              "type": null,
+              "url": null,
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Automated telephone communication systems for preventive healthcare and management of long-term conditions.",
+              "year": 2016,
+              "doi": "10.1002/14651858.cd009921.pub2",
+              "pmid": "27960229",
+              "type": null,
+              "url": "https://doi.org/10.1002/14651858.cd009921.pub2",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Demonstrations Digest",
+              "year": 1988,
+              "doi": null,
+              "pmid": null,
+              "type": null,
+              "url": null,
+              "source": "Europe PMC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NPL-06",
+      "concept": "calibration certificate for clinical AI",
+      "query": "(\"calibration certificate\" OR \"coverage certificate\") AND (clinical OR medical OR healthcare) AND AI",
+      "databases": [
+        {
+          "name": "Crossref",
+          "url": "https://api.crossref.org/works?query.bibliographic=%28%22calibration+certificate%22+OR+%22coverage+certificate%22%29+AND+%28clinical+OR+medical+OR+healthcare%29+AND+AI&rows=20&select=DOI%2Ctitle%2Cpublished%2Ctype%2CURL",
+          "error": null,
+          "totalResults": 8009997,
+          "records": [
+            {
+              "title": "Practice for Healthcare Certificate Policy",
+              "year": null,
+              "doi": "10.1520/e2212-02",
+              "type": "standard",
+              "url": "https://doi.org/10.1520/e2212-02",
+              "source": "Crossref"
+            },
+            {
+              "title": "Practice for Healthcare Certificate Policy",
+              "year": null,
+              "doi": "10.1520/e2212",
+              "type": "standard",
+              "url": "https://doi.org/10.1520/e2212",
+              "source": "Crossref"
+            },
+            {
+              "title": "Practice for Healthcare Certificate Policy",
+              "year": null,
+              "doi": "10.1520/e2212-02a",
+              "type": "standard",
+              "url": "https://doi.org/10.1520/e2212-02a",
+              "source": "Crossref"
+            },
+            {
+              "title": "Practice for Healthcare Certificate Policy",
+              "year": null,
+              "doi": "10.1520/e2212-02ar10",
+              "type": "standard",
+              "url": "https://doi.org/10.1520/e2212-02ar10",
+              "source": "Crossref"
+            },
+            {
+              "title": "Methods for preparation of calibration gas mixtures",
+              "year": null,
+              "doi": "10.3403/00178573",
+              "type": "standard",
+              "url": "https://doi.org/10.3403/00178573",
+              "source": "Crossref"
+            },
+            {
+              "title": "Methods for preparation of calibration gas mixtures",
+              "year": null,
+              "doi": "10.3403/00178573u",
+              "type": "standard",
+              "url": "https://doi.org/10.3403/00178573u",
+              "source": "Crossref"
+            },
+            {
+              "title": "Methods for preparation of calibration gas mixtures.",
+              "year": null,
+              "doi": "10.3403/00125624",
+              "type": "standard",
+              "url": "https://doi.org/10.3403/00125624",
+              "source": "Crossref"
+            },
+            {
+              "title": "Practice for Healthcare Certificate Policy",
+              "year": 2010,
+              "doi": "10.1520/e2212-02r10",
+              "type": "standard",
+              "url": "https://doi.org/10.1520/e2212-02r10",
+              "source": "Crossref"
+            },
+            {
+              "title": "calibration certificate",
+              "year": 2025,
+              "doi": "10.1351/goldbook.08011",
+              "type": "book-section",
+              "url": "https://doi.org/10.1351/goldbook.08011",
+              "source": "Crossref"
+            },
+            {
+              "title": "Pain or insomnia main reasons for cannabis use in those without medical certificate",
+              "year": 2019,
+              "doi": "10.1211/cp.2019.20206894",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1211/cp.2019.20206894",
+              "source": "Crossref"
+            },
+            {
+              "title": "Medical Psychology Certificate Program Information",
+              "year": null,
+              "doi": "10.1037/e526082013-001",
+              "type": "dataset",
+              "url": "https://doi.org/10.1037/e526082013-001",
+              "source": "Crossref"
+            },
+            {
+              "title": "The Next Frontier for CA/Certificate Security - DANE and Certificate Transparency",
+              "year": 2021,
+              "doi": "10.1007/978-3-030-75354-2_26",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-030-75354-2_26",
+              "source": "Crossref"
+            },
+            {
+              "title": "Suite B Certificate and Certificate Revocation List (CRL) Profile",
+              "year": 2010,
+              "doi": "10.17487/rfc5759",
+              "type": "report",
+              "url": "https://doi.org/10.17487/rfc5759",
+              "source": "Crossref"
+            },
+            {
+              "title": "The Work of Reuse: Birth Certificate Data and Healthcare Accountability Measurements",
+              "year": null,
+              "doi": "10.9776/16320",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.9776/16320",
+              "source": "Crossref"
+            },
+            {
+              "title": "Algorithmic Constitutionalism and Horizontal Rights: Designing the National AI Regulatory Authority (NaiRA) and AI Clearance Certificate (AIC)",
+              "year": 2026,
+              "doi": "10.2139/ssrn.6159846",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.6159846",
+              "source": "Crossref"
+            },
+            {
+              "title": "Death certificate completion",
+              "year": 2006,
+              "doi": "10.1201/b17661-125",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1201/b17661-125",
+              "source": "Crossref"
+            },
+            {
+              "title": "Medical Certificate Anomalies: Analysis of Central Medical Inspection Missions and Medico-Legal Implications in Tunisia",
+              "year": 2026,
+              "doi": "10.47191/ijmscrs/v6-i5-08",
+              "type": "journal-article",
+              "url": "https://doi.org/10.47191/ijmscrs/v6-i5-08",
+              "source": "Crossref"
+            },
+            {
+              "title": "Certificate",
+              "year": null,
+              "doi": "10.31661/gmj.v8i.1270.g1922",
+              "type": "component",
+              "url": "https://doi.org/10.31661/gmj.v8i.1270.g1922",
+              "source": "Crossref"
+            },
+            {
+              "title": "Standards and Implementations for the Certificate of\n                                                Clinical Competence in Audiology",
+              "year": 1997,
+              "doi": "10.1044/policy.st1997-00188",
+              "type": "report",
+              "url": "https://doi.org/10.1044/policy.st1997-00188",
+              "source": "Crossref"
+            },
+            {
+              "title": "Editorial Certificate",
+              "year": null,
+              "doi": "10.31661/gmj.v8i.1411.g2041",
+              "type": "component",
+              "url": "https://doi.org/10.31661/gmj.v8i.1411.g2041",
+              "source": "Crossref"
+            }
+          ]
+        },
+        {
+          "name": "Europe PMC",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%22calibration+certificate%22+OR+%22coverage+certificate%22%29+AND+%28clinical+OR+medical+OR+healthcare%29+AND+AI&format=json&pageSize=20&resultType=core",
+          "error": null,
+          "totalResults": 17,
+          "records": [
+            {
+              "title": "Multi-institution longitudinal apparent diffusion coefficient measurements in a diffusion weighted imaging phantom at room temperature.",
+              "year": 2025,
+              "doi": "10.1016/j.phro.2025.100814",
+              "pmid": "40755885",
+              "type": null,
+              "url": "https://doi.org/10.1016/j.phro.2025.100814",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Accuracy and Bias of Pulse Oximetry in the Intensive Care Unit: A Prospective Observational Study.",
+              "year": 2026,
+              "doi": "10.1111/nicc.70433",
+              "pmid": "41856803",
+              "type": null,
+              "url": "https://doi.org/10.1111/nicc.70433",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Centralized daily drug management in clinical trial institutions and specific implementation plans.",
+              "year": 2025,
+              "doi": "10.3389/fdsfr.2025.1620314",
+              "pmid": "40978505",
+              "type": null,
+              "url": "https://doi.org/10.3389/fdsfr.2025.1620314",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Monitoring System for Operating Variables in Incubators in the Neonatology Service of a Highly Complex Hospital through the Internet of Things (IoT).",
+              "year": 2023,
+              "doi": "10.3390/s23125719",
+              "pmid": "37420890",
+              "type": null,
+              "url": "https://doi.org/10.3390/s23125719",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Smart Manufacturing and Digitalization of Metrology: A Systematic Literature Review and a Research Agenda.",
+              "year": 2022,
+              "doi": "10.3390/s22166114",
+              "pmid": "36015873",
+              "type": null,
+              "url": "https://doi.org/10.3390/s22166114",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Measuring Speech Intelligibility with Romanian Synthetic Unpredictable Sentences in Normal Hearing.",
+              "year": 2024,
+              "doi": "10.3390/audiolres14060085",
+              "pmid": "39727608",
+              "type": null,
+              "url": "https://doi.org/10.3390/audiolres14060085",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Quality Assurance in Clinical Trials Requiring Radiation Therapy in Sub-Saharan Africa.",
+              "year": 2023,
+              "doi": "10.1016/j.ijrobp.2022.11.042",
+              "pmid": "36493958",
+              "type": null,
+              "url": "https://doi.org/10.1016/j.ijrobp.2022.11.042",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Challenges in Sensors Technology for Industry 4.0 for Futuristic Metrological Applications",
+              "year": 2021,
+              "doi": null,
+              "pmid": null,
+              "type": null,
+              "url": null,
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Designing effective virtual reality environments for pain management in burn-injured patients.",
+              "year": 2023,
+              "doi": "10.1007/s10055-021-00552-z",
+              "pmid": "36915632",
+              "type": null,
+              "url": "https://doi.org/10.1007/s10055-021-00552-z",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Dosimetric Performance of Poly(vinyl alcohol)/Silver Nanoparticles Hybrid Nanomaterials for Colorimetric Sensing of Gamma Radiation.",
+              "year": 2022,
+              "doi": "10.3390/nano12071088",
+              "pmid": "35407206",
+              "type": null,
+              "url": "https://doi.org/10.3390/nano12071088",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Evaluating the Accuracy of the Azure Kinect and Kinect v2.",
+              "year": 2022,
+              "doi": "10.3390/s22072469",
+              "pmid": "35408082",
+              "type": null,
+              "url": "https://doi.org/10.3390/s22072469",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "EPSM 2022, Engineering and Physical Sciences in Medicine : 13–16 November 2022, Adelaide, Australia",
+              "year": 2023,
+              "doi": null,
+              "pmid": null,
+              "type": null,
+              "url": null,
+              "source": "Europe PMC"
+            },
+            {
+              "title": "15th National Congress of the Italian Association of Nuclear Medicine and Molecular Imaging (AIMN) : Rimini (Italy), May, 12–15, 2022",
+              "year": 2022,
+              "doi": null,
+              "pmid": null,
+              "type": null,
+              "url": null,
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Use of a Force-Torque Sensor for Self-Calibration of a 6-DOF Medical Robot.",
+              "year": 2016,
+              "doi": "10.3390/s16060798",
+              "pmid": "27258278",
+              "type": null,
+              "url": "https://doi.org/10.3390/s16060798",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "European Association of Nuclear Medicine October 22 - 30, 2020 Virtual.",
+              "year": 2020,
+              "doi": "10.1007/s00259-020-04988-4",
+              "pmid": "32945931",
+              "type": null,
+              "url": "https://doi.org/10.1007/s00259-020-04988-4",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "The Kilogram and Measurements of Mass and Force.",
+              "year": 2001,
+              "doi": "10.6028/jres.106.003",
+              "pmid": "27500016",
+              "type": null,
+              "url": "https://doi.org/10.6028/jres.106.003",
+              "source": "Europe PMC"
+            },
+            {
+              "title": "Abstracts_Poster presentations",
+              "year": 2007,
+              "doi": null,
+              "pmid": null,
+              "type": null,
+              "url": null,
+              "source": "Europe PMC"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Database ranking is retained as returned and has not yet undergone dual-reviewer screening.",
+    "Patent searching is recorded separately because PATENTSCOPE and Google Patents do not expose equivalent unauthenticated APIs.",
+    "Citation chaining, CPC/IPC classification searching, non-English synonyms, and legal claim construction remain open."
+  ]
+}

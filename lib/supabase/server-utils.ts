@@ -17,6 +17,7 @@ import {
   getMedicamentoById as getLocalMedicamentoById,
 } from '@/lib/data/medicamentos/index';
 import { convertMedicamentoRowToMedicamento } from '@/lib/supabase/transforms/medicamentos';
+import { mergeMedicamentoCatalogs } from '@/lib/supabase/merge-medicamentos';
 
 /**
  * Get a medication by ID (server-side)
@@ -41,7 +42,9 @@ export async function getMedicamentoServer(id: string): Promise<Medicamento | nu
       .single();
 
     if (error) {
-      console.error('Error fetching medicamento from Supabase:', error);
+      if (error.code !== 'PGRST116') {
+        console.error('Error fetching medicamento from Supabase:', error);
+      }
       // Fallback to local data
       return getLocalMedicamentoById(id) || null;
     }
@@ -72,12 +75,17 @@ export async function getMedicamentosServer(): Promise<Medicamento[]> {
       .select('*')
       .order('nome_generico');
 
-    if (error) {
-      console.error('Error fetching medicamentos from Supabase:', error);
+    if (error || !data?.length) {
+      if (error) {
+        console.error('Error fetching medicamentos from Supabase:', error);
+      }
       return medicamentosConsolidados;
     }
 
-    return data.map(convertMedicamentoRowToMedicamento);
+    return mergeMedicamentoCatalogs(
+      medicamentosConsolidados,
+      data.map(convertMedicamentoRowToMedicamento)
+    );
   } catch (err) {
     console.error('Error in getMedicamentosServer:', err);
     return medicamentosConsolidados;

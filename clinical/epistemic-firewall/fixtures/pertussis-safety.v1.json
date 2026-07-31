@@ -1,0 +1,177 @@
+{
+  "schemaVersion": "darwin.sounio.pertussis-safety-fixtures.v1",
+  "status": "synthetic-safety-only",
+  "locale": "pt-BR",
+  "setting": "APS/SUS",
+  "sourceBoundary": {
+    "sinanAggregateCountsUsedAsPrior": false,
+    "posteriorAdjustedInTypeScript": false,
+    "prescriptionAuthorized": false,
+    "clinicalActivationAuthorized": false
+  },
+  "references": [
+    {
+      "id": "ms-nt-70-2024",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/c/coqueluche/nota-tecnica-e-informativa/nota-tecnica-conjunta-no-70-2024-dpni-svsa-ms"
+    },
+    {
+      "id": "ms-nt-165-2025",
+      "url": "https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/notas-tecnicas/2025/nota-tecnica-conjunta-no-165-2025-dpni-svsa-ms.pdf/view"
+    },
+    {
+      "id": "cdc-pertussis-clinical-features-2025",
+      "url": "https://www.cdc.gov/pertussis/signs-symptoms/index.html"
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "young-infant-early-apnea",
+      "input": {
+        "ageDays": 90,
+        "coughPresent": true,
+        "coughDurationDays": 3,
+        "paroxysmalCough": "unknown",
+        "inspiratoryWhoop": "no",
+        "postTussiveVomiting": "no",
+        "apnea": "yes",
+        "cyanosis": "no",
+        "choking": "unknown",
+        "closeContact": "no",
+        "vaccinationStatus": "incomplete"
+      },
+      "expected": {
+        "surveillanceDefinitionMet": false,
+        "surveillanceRoute": "not-met",
+        "durationThresholdDays": 10,
+        "dangerSignIds": ["apnea"],
+        "highRiskIds": ["age-under-6-months"],
+        "priority": "immediate-assessment",
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "young-infant-ten-days-cyanosis",
+      "input": {
+        "ageDays": 150,
+        "coughPresent": true,
+        "coughDurationDays": 10,
+        "paroxysmalCough": "no",
+        "inspiratoryWhoop": "no",
+        "postTussiveVomiting": "no",
+        "apnea": "no",
+        "cyanosis": "yes",
+        "choking": "no",
+        "closeContact": "no",
+        "vaccinationStatus": "incomplete"
+      },
+      "expected": {
+        "surveillanceDefinitionMet": true,
+        "surveillanceRoute": "age-duration-features",
+        "durationThresholdDays": 10,
+        "dangerSignIds": ["cyanosis"],
+        "highRiskIds": ["age-under-6-months"],
+        "priority": "immediate-assessment",
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "older-child-fourteen-days-paroxysms",
+      "input": {
+        "ageDays": 1461,
+        "coughPresent": true,
+        "coughDurationDays": 14,
+        "paroxysmalCough": "yes",
+        "inspiratoryWhoop": "no",
+        "postTussiveVomiting": "yes",
+        "apnea": "no",
+        "cyanosis": "no",
+        "choking": "no",
+        "closeContact": "no",
+        "vaccinationStatus": "incomplete"
+      },
+      "expected": {
+        "surveillanceDefinitionMet": true,
+        "surveillanceRoute": "age-duration-features",
+        "durationThresholdDays": 14,
+        "dangerSignIds": [],
+        "highRiskIds": [],
+        "priority": "routine",
+        "kernelSymptoms": ["Tosse paroxística", "Mais de 10 dias"]
+      }
+    },
+    {
+      "id": "vaccinated-adolescent-confirmed-contact",
+      "input": {
+        "ageDays": 5114,
+        "coughPresent": true,
+        "coughDurationDays": 3,
+        "paroxysmalCough": "no",
+        "inspiratoryWhoop": "no",
+        "postTussiveVomiting": "no",
+        "apnea": "no",
+        "cyanosis": "no",
+        "choking": "no",
+        "closeContact": "yes",
+        "vaccinationStatus": "up-to-date"
+      },
+      "expected": {
+        "surveillanceDefinitionMet": true,
+        "surveillanceRoute": "confirmed-close-contact",
+        "durationThresholdDays": 14,
+        "dangerSignIds": [],
+        "highRiskIds": [],
+        "priority": "routine",
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "acute-uri-no-pertussis-features",
+      "input": {
+        "ageDays": 2191,
+        "coughPresent": true,
+        "coughDurationDays": 3,
+        "paroxysmalCough": "no",
+        "inspiratoryWhoop": "no",
+        "postTussiveVomiting": "no",
+        "apnea": "no",
+        "cyanosis": "no",
+        "choking": "no",
+        "closeContact": "no",
+        "vaccinationStatus": "up-to-date"
+      },
+      "expected": {
+        "surveillanceDefinitionMet": false,
+        "surveillanceRoute": "not-met",
+        "durationThresholdDays": 14,
+        "dangerSignIds": [],
+        "highRiskIds": [],
+        "priority": "routine",
+        "kernelSymptoms": []
+      }
+    },
+    {
+      "id": "unknown-age-and-duration-preserved",
+      "input": {
+        "coughPresent": true,
+        "paroxysmalCough": "yes",
+        "inspiratoryWhoop": "unknown",
+        "postTussiveVomiting": "unknown",
+        "apnea": "unknown",
+        "cyanosis": "unknown",
+        "choking": "unknown",
+        "closeContact": "no",
+        "vaccinationStatus": "unknown"
+      },
+      "expected": {
+        "surveillanceDefinitionMet": false,
+        "surveillanceRoute": "not-met",
+        "durationThresholdDays": null,
+        "dangerSignIds": [],
+        "highRiskIds": [],
+        "priority": "routine",
+        "kernelSymptoms": ["Tosse paroxística"],
+        "requiredNextQuestionIds": ["age", "coughDurationDays"]
+      }
+    }
+  ]
+}

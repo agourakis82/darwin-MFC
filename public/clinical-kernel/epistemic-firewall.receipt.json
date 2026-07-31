@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "darwin.sounio.epistemic-firewall-receipt.v2",
+  "policyVersion": "epistemic-firewall-v0.1.0",
+  "modelVersion": "respiratory-pediatric-0.1.0",
+  "status": "refused",
+  "generatedAt": "2026-07-30T00:56:25.522Z",
+  "hashes": {
+    "clinicalReceiptSha256": "f0c680a12b7b1ffaeeec04607acb999741d8d81208bbead8a7c2a7b6cc44116d",
+    "evidenceSha256": "b3dd81ff21b08508e4d036e85c49ff061e4787e0562deb4855c28a813fea8895",
+    "modelSha256": "03ed46f0ca68516a95469699958dd8aab30ac5f7a4d53c2ce08e557582839413",
+    "wasmSha256": "2634111ab6564692f4a3670479b5226cc24e6d78a634846a7fc5bea02b144753",
+    "compilerSha256": "4511a6ed2055524df877de0a8fd140993904e44cf65ebe43c70d827b3edc2dfc",
+    "compilerSourceReceiptSha256": "f071869e8c8070f169fd0086df3b8e3501e0504d4f04485cba614e07a678907c",
+    "calibrationCertificateSha256": "5dbfbe5ea8db042ae8389c373af03bfeff703359cb94fd27e4db236a26cf5c66",
+    "policySha256": "41339450baaa96d0665ae9876f970f0a1f017923338d3bb472cef841c08d654a",
+    "policySourceSha256": "17e62243b754541cfeafb615daed7ad83f24f413bec3051f6c46801c40d9b919",
+    "policyOracleOutputSha256": "d53321eda0d8c403aba6850fabcafc3d2a1dca29e3d7cf3aaba0cbc844a40f97"
+  },
+  "gates": {
+    "policyOracleExecuted": true,
+    "policyTableComplete": true,
+    "calibrationCertificateValid": false,
+    "compilerReconciled": true,
+    "distributionInBounds": false,
+    "signatureVerified": false
+  },
+  "signature": null,
+  "refusalReasons": [
+    "Retrospective patient-level temporal calibration has not been performed.",
+    "No subgroup-conditional coverage evidence is available.",
+    "No distribution reference fingerprint is available.",
+    "No production signature is present."
+  ]
+}

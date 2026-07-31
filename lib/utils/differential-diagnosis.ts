@@ -26,6 +26,15 @@ export interface Symptom {
   importancia: 'alta' | 'media' | 'baixa';
 }
 
+export type PatientAgeUnit = 'dias' | 'meses' | 'anos';
+
+export interface PatientClinicalContext {
+  ageValue?: number;
+  ageUnit?: PatientAgeUnit;
+  weightKg?: number;
+  sex?: string;
+}
+
 export interface DiagnosticPathway {
   sintomaPrincipal: string;
   condicoes: Array<{
@@ -54,6 +63,7 @@ export interface DifferentialDiagnosisResult {
   sintomasSecundariosDetalhados?: Sintoma[]; // Rich data for secondary symptoms
   perguntasChave: string[]; // Key clinical questions to characterize symptoms
   redFlagsSintomas: string[]; // Red flags from symptoms themselves
+  contextoPaciente?: PatientClinicalContext;
   diagnosticosDiferenciais: Array<{
     doenca: Partial<Doenca>;
     score: number; // 0-100
@@ -63,6 +73,7 @@ export interface DifferentialDiagnosisResult {
     examesRecomendados: string[];
     redFlags: string[];
     sintomasRelacionados: string[]; // Symptoms from sintomasDatabase that support this diagnosis
+    adequacaoEtaria?: 'preferencial' | 'compativel' | 'menos_provavel';
   }>;
   recomendacoes: {
     exames: Array<{ nome: string; prioridade: 'alta' | 'media' | 'baixa'; justificativa: string }>;
@@ -80,6 +91,85 @@ function normalizeSymptom(symptom: string): string {
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .trim();
+}
+
+function findDoencaByReference(reference: string): Partial<Doenca> | undefined {
+  const normalizedReference = normalizeSymptom(reference);
+  return todasDoencas.find(doenca => {
+    if (doenca.id === reference) return true;
+    if (normalizeSymptom(doenca.id || '') === normalizedReference) return true;
+    if (normalizeSymptom(doenca.titulo || '') === normalizedReference) return true;
+    return doenca.sinonimos?.some(sinonimo => normalizeSymptom(sinonimo) === normalizedReference) ?? false;
+  });
+}
+
+function symptomSupportsDisease(symptom: Sintoma, diseaseId?: string): boolean {
+  if (!diseaseId) return false;
+  return symptom.doencasRelacionadas.some(reference => findDoencaByReference(reference)?.id === diseaseId);
+}
+
+export function patientAgeInYears(context?: PatientClinicalContext): number | undefined {
+  if (context?.ageValue === undefined || !Number.isFinite(context.ageValue) || context.ageValue < 0) return undefined;
+  if (context.ageUnit === 'dias') return context.ageValue / 365.25;
+  if (context.ageUnit === 'meses') return context.ageValue / 12;
+  return context.ageValue;
+}
+
+export function patientAgeInDays(context?: PatientClinicalContext): number | undefined {
+  if (context?.ageValue === undefined || !Number.isFinite(context.ageValue) || context.ageValue < 0) return undefined;
+  if (context.ageUnit === 'dias') return context.ageValue;
+  if (context.ageUnit === 'meses') return context.ageValue * (365.25 / 12);
+  return context.ageValue * 365.25;
+}
+
+function getAgeAdjustment(
+  doenca: Partial<Doenca>,
+  context?: PatientClinicalContext
+): { adjustment: number; fit?: 'preferencial' | 'compativel' | 'menos_provavel' } {
+  const ageYears = patientAgeInYears(context);
+  if (ageYears === undefined) return { adjustment: 0 };
+
+  const epidemiologyAge = doenca.fullContent?.epidemiologia?.faixaEtaria || '';
+  const identityText = normalizeSymptom([
+    doenca.titulo,
+    doenca.subcategoria,
+    doenca.quickView?.definicao,
+    ...(doenca.tags || []),
+  ].filter(Boolean).join(' '));
+  const searchableText = `${identityText} ${normalizeSymptom(epidemiologyAge)}`;
+  const pediatricSpecific = doenca.categoria === 'pediatrico'
+    || identityText.includes('pediatr')
+    || identityText.includes('crianca')
+    || identityText.includes('infancia')
+    || identityText.includes('infantil');
+  const geriatricSpecific = doenca.categoria === 'geriatrico'
+    || identityText.includes('geriatr')
+    || identityText.includes('idoso');
+  const infantSpecific = searchableText.includes('lactente')
+    || searchableText.includes('bronquiolite')
+    || searchableText.includes('<2 anos')
+    || searchableText.includes('menor de 2 anos');
+  const preschoolSpecific = searchableText.includes('<5 anos')
+    || searchableText.includes('menor de 5 anos')
+    || searchableText.includes('pre-escolar');
+  const adultOnly = /adult|acima de (18|40|50|60)|>(18|40|50|60)|apos (40|50|60)/.test(normalizeSymptom(epidemiologyAge));
+
+  let adjustment = 0;
+  if (ageYears < 18) {
+    if (pediatricSpecific) adjustment += 30;
+    if (geriatricSpecific) adjustment -= 55;
+    if (adultOnly) adjustment -= 30;
+    if (ageYears < 2 && infantSpecific) adjustment += 15;
+    if (ageYears < 5 && preschoolSpecific) adjustment += 10;
+  } else {
+    if (pediatricSpecific) adjustment -= 40;
+    if (geriatricSpecific) adjustment += ageYears >= 65 ? 25 : -25;
+  }
+
+  return {
+    adjustment,
+    fit: adjustment >= 15 ? 'preferencial' : adjustment <= -20 ? 'menos_provavel' : 'compativel',
+  };
 }
 
 /**
@@ -293,35 +383,51 @@ const DECISION_TREES: Record<string, {
 function calculateDiagnosisScore(
   doenca: Partial<Doenca>,
   sintomasPresentes: string[],
-  sintomasAusentes: string[] = []
+  sintomasAusentes: string[] = [],
+  sintomasDetalhados: Sintoma[] = [],
+  patientContext?: PatientClinicalContext
 ): {
   score: number;
   criteriosAtendidos: number;
   criteriosTotais: number;
   probabilidade: 'alta' | 'moderada' | 'baixa';
+  adequacaoEtaria?: 'preferencial' | 'compativel' | 'menos_provavel';
 } {
   if (!doenca.quickView?.criteriosDiagnosticos) {
     return { score: 0, criteriosAtendidos: 0, criteriosTotais: 0, probabilidade: 'baixa' };
   }
 
-  const criteriosDiagnosticos = doenca.quickView.criteriosDiagnosticos;
+  const criteriosDiagnosticos = doenca.quickView.criteriosDiagnosticos
+    .filter(criterio => normalizeSymptom(criterio).length > 0);
   const sintomasNormalizados = sintomasPresentes.map(normalizeSymptom);
   const ausentesNormalizados = sintomasAusentes.map(normalizeSymptom);
 
   // Verifica quantos critérios diagnósticos estão presentes
   let criteriosAtendidos = 0;
   let criteriosNecessarios = 0;
+  const sintomasCobertos = new Set<number>();
 
   criteriosDiagnosticos.forEach(criterio => {
     const criterioNormalizado = normalizeSymptom(criterio);
+    const criterioNegado = criterioNormalizado.includes('ausencia de')
+      || criterioNormalizado.startsWith('sem ');
     
     // Verifica se o critério está presente nos sintomas
-    const presente = sintomasNormalizados.some(sintoma => 
+    const sintomasCorrespondentes = sintomasNormalizados
+      .map((sintoma, index) => ({ sintoma, index }))
+      .filter(({ sintoma, index }) => (
+        !sintomasCobertos.has(index)
+        && (criterioNormalizado.includes(sintoma) || sintoma.includes(criterioNormalizado))
+      ));
+    const sintomaCorrespondente = sintomasCorrespondentes.length > 0;
+    const ausenciaCorrespondente = ausentesNormalizados.some(sintoma =>
       criterioNormalizado.includes(sintoma) || sintoma.includes(criterioNormalizado)
     );
+    const presente = criterioNegado ? ausenciaCorrespondente && !sintomaCorrespondente : sintomaCorrespondente;
 
     if (presente) {
       criteriosAtendidos++;
+      if (!criterioNegado) sintomasCorrespondentes.forEach(({ index }) => sintomasCobertos.add(index));
     }
 
     // Critérios que contêm palavras-chave importantes são necessários
@@ -334,14 +440,20 @@ function calculateDiagnosisScore(
 
   const criteriosTotais = criteriosDiagnosticos.length;
 
-  // Calcula score baseado na proporção de critérios atendidos
-  let scoreBase = (criteriosAtendidos / criteriosTotais) * 100;
-
-  // Ajusta score baseado em sintomas específicos da doença
-  const sintomaMapping = SYMPTOM_TO_DIAGNOSIS_MAP[doenca.titulo?.toLowerCase() || ''];
-  if (sintomaMapping) {
-    scoreBase += sintomaMapping.peso * 20; // Bônus por mapeamento direto
-  }
+  // Combina aderência aos critérios com o número e o peso dos sintomas
+  // explicitamente relacionados à doença. Isso reduz falsos positivos de
+  // condições com critérios curtos e genéricos.
+  const criteriaMatchRatio = criteriosAtendidos / criteriosTotais;
+  const inputCoverage = sintomasNormalizados.length > 0 ? sintomasCobertos.size / sintomasNormalizados.length : 0;
+  const criteriaScore = (criteriaMatchRatio * 30) + (inputCoverage * 25);
+  const totalSymptomWeight = sintomasDetalhados.reduce((total, symptom) => total + symptom.peso, 0);
+  const supportedSymptomWeight = sintomasDetalhados
+    .filter(symptom => symptomSupportsDisease(symptom, doenca.id))
+    .reduce((total, symptom) => total + symptom.peso, 0);
+  const symptomSupportScore = totalSymptomWeight > 0
+    ? (supportedSymptomWeight / totalSymptomWeight) * 45
+    : 0;
+  let scoreBase = criteriaScore + symptomSupportScore;
 
   // Penaliza se houver sintomas que excluem o diagnóstico
   if (doenca.quickView.redFlags) {
@@ -353,8 +465,21 @@ function calculateDiagnosisScore(
     scoreBase -= redFlagsPresentes.length * 10; // Penalidade por red flags ausentes quando esperadas
   }
 
-  // Normaliza score entre 0-100
-  const score = Math.max(0, Math.min(100, scoreBase));
+  const ageAdjustment = getAgeAdjustment(doenca, patientContext);
+  const symptomRelevance = totalSymptomWeight > 0 ? supportedSymptomWeight / totalSymptomWeight : 0;
+  const ageRelevance = Math.max(inputCoverage, symptomRelevance);
+  scoreBase += ageAdjustment.adjustment > 0
+    ? ageAdjustment.adjustment * ageRelevance
+    : ageAdjustment.adjustment;
+
+  // Um conjunto pequeno de critérios compatíveis não pode parecer uma
+  // probabilidade alta apenas por idade ou por um sintoma muito inespecífico.
+  const evidenceCap = criteriosTotais >= 3 && criteriosAtendidos <= 1 && sintomasCobertos.size <= 1
+    ? 39
+    : criteriosTotais >= 4 && criteriaMatchRatio < 0.5 && sintomasCobertos.size <= 2
+      ? 64
+      : 100;
+  const score = Math.max(0, Math.min(evidenceCap, scoreBase));
 
   // Determina probabilidade
   let probabilidade: 'alta' | 'moderada' | 'baixa';
@@ -371,6 +496,7 @@ function calculateDiagnosisScore(
     criteriosAtendidos,
     criteriosTotais,
     probabilidade,
+    adequacaoEtaria: ageAdjustment.fit,
   };
 }
 
@@ -381,7 +507,8 @@ function calculateDiagnosisScore(
 export function generateDifferentialDiagnosis(
   sintomaPrincipal: string,
   sintomasSecundarios: string[] = [],
-  sintomasAusentes: string[] = []
+  sintomasAusentes: string[] = [],
+  patientContext?: PatientClinicalContext
 ): DifferentialDiagnosisResult {
   const sintomaPrincipalNormalizado = normalizeSymptom(sintomaPrincipal);
   const sintomasSecundariosNormalizados = sintomasSecundarios.map(normalizeSymptom);
@@ -396,6 +523,8 @@ export function generateDifferentialDiagnosis(
   // Get detailed data for secondary symptoms
   const sintomasSecundariosDetalhados = sintomasSecundarios
     .map(s => findSintoma(s))
+    .filter((s): s is Sintoma => s !== undefined);
+  const sintomasDetalhados = [sintomaDetalhado, ...sintomasSecundariosDetalhados]
     .filter((s): s is Sintoma => s !== undefined);
 
   // Collect key clinical questions from all symptoms
@@ -417,25 +546,19 @@ export function generateDifferentialDiagnosis(
 
   // Busca doenças relacionadas ao sintoma principal
   const doencasCandidatas = new Map<string, Partial<Doenca>>();
+  const addCandidate = (reference: string) => {
+    const doenca = findDoencaByReference(reference);
+    if (doenca?.id) doencasCandidatas.set(doenca.id, doenca);
+  };
 
   // 1. Enhanced search using sintomasDatabase first
   if (sintomaDetalhado) {
-    sintomaDetalhado.doencasRelacionadas.forEach(doencaId => {
-      const doenca = todasDoencas.find(d => d.id === doencaId);
-      if (doenca) {
-        doencasCandidatas.set(doencaId, doenca);
-      }
-    });
+    sintomaDetalhado.doencasRelacionadas.forEach(addCandidate);
   }
 
   // 2. Also search secondary symptoms in sintomasDatabase
   sintomasSecundariosDetalhados.forEach(sintoma => {
-    sintoma.doencasRelacionadas.forEach(doencaId => {
-      const doenca = todasDoencas.find(d => d.id === doencaId);
-      if (doenca && !doencasCandidatas.has(doencaId)) {
-        doencasCandidatas.set(doencaId, doenca);
-      }
-    });
+    sintoma.doencasRelacionadas.forEach(addCandidate);
   });
 
   // 3. Fallback: Busca direta pelo mapeamento de sintomas (legacy)
@@ -443,10 +566,7 @@ export function generateDifferentialDiagnosis(
     if (normalizeSymptom(sintoma) === sintomaPrincipalNormalizado ||
         sintomaPrincipalNormalizado.includes(normalizeSymptom(sintoma))) {
       mapping.doencas.forEach(doencaId => {
-        const doenca = todasDoencas.find(d => d.id === doencaId);
-        if (doenca && !doencasCandidatas.has(doencaId)) {
-          doencasCandidatas.set(doencaId, doenca);
-        }
+        addCandidate(doencaId);
       });
     }
   });
@@ -456,10 +576,7 @@ export function generateDifferentialDiagnosis(
     Object.entries(SYMPTOM_TO_DIAGNOSIS_MAP).forEach(([sintoma, mapping]) => {
       if (normalizeSymptom(sintoma) === sintomaSec || sintomaSec.includes(normalizeSymptom(sintoma))) {
         mapping.doencas.forEach(doencaId => {
-          const doenca = todasDoencas.find(d => d.id === doencaId);
-          if (doenca && !doencasCandidatas.has(doencaId)) {
-            doencasCandidatas.set(doencaId, doenca);
-          }
+          addCandidate(doencaId);
         });
       }
     });
@@ -482,8 +599,8 @@ export function generateDifferentialDiagnosis(
   // Calcula scores para cada doença candidata
   const diagnosticosDiferenciais = Array.from(doencasCandidatas.values())
     .map(doenca => {
-      const { score, criteriosAtendidos, criteriosTotais, probabilidade } =
-        calculateDiagnosisScore(doenca, todosSintomas, sintomasAusentes);
+      const { score, criteriosAtendidos, criteriosTotais, probabilidade, adequacaoEtaria } =
+        calculateDiagnosisScore(doenca, todosSintomas, sintomasAusentes, sintomasDetalhados, patientContext);
 
       // Find symptoms from sintomasDatabase that support this diagnosis
       const sintomasRelacionados = doenca.id
@@ -499,6 +616,7 @@ export function generateDifferentialDiagnosis(
         examesRecomendados: doenca.quickView?.examesIniciais || [],
         redFlags: doenca.quickView?.redFlags || [],
         sintomasRelacionados,
+        adequacaoEtaria,
       };
     })
     .filter(result => result.score > 0) // Remove doenças com score zero
@@ -549,6 +667,7 @@ export function generateDifferentialDiagnosis(
     sintomasSecundariosDetalhados,
     perguntasChave: uniquePerguntasChave,
     redFlagsSintomas: uniqueRedFlagsSintomas,
+    contextoPaciente: patientContext,
     diagnosticosDiferenciais,
     recomendacoes: {
       exames: Array.from(examesRecomendados.entries()).map(([nome, info]) => ({
@@ -574,12 +693,16 @@ export function generateDiagnosticPathway(
   if (!tree) return null;
 
   const diagnosticos = tree.diagnosticos.map(diagTree => {
-    const doenca = todasDoencas.find(d => d.id === diagTree.doencaId);
+    const doenca = findDoencaByReference(diagTree.doencaId);
     if (!doenca) return null;
 
     const { score, criteriosAtendidos, criteriosTotais } = calculateDiagnosisScore(
       doenca,
-      [sintomaPrincipal, ...sintomasSecundarios]
+      [sintomaPrincipal, ...sintomasSecundarios],
+      [],
+      [findSintoma(sintomaPrincipal), ...sintomasSecundarios.map(findSintoma)]
+        .filter((s): s is Sintoma => s !== undefined),
+      undefined
     );
 
     const criteriosPresentes = diagTree.criterios.obrigatorios.filter(crit =>
@@ -610,4 +733,3 @@ export function generateDiagnosticPathway(
     proximosPassos: [],
   };
 }
-
