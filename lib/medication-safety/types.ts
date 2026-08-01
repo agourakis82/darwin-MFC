@@ -127,6 +127,19 @@ export interface MedicationKnowledgeBundleV1 {
   };
 }
 
+export interface MedicationKnowledgeBundleV2 extends Omit<MedicationKnowledgeBundleV1, 'schemaVersion'> {
+  schemaVersion: 'darwin.medication-knowledge-bundle.v2';
+  identity: {
+    schemaVersion: 'darwin.medication-identity-bundle.v1';
+    bundleVersion: string;
+    identityBundleSha256: string;
+    identityReceiptSha256: string;
+    canonicalConceptCount: number;
+    legacyAliasCount: 717;
+    clinicalRulesPromoted: 0;
+  };
+}
+
 export interface PatientMedicationContextV1 {
   ageDays?: number;
   weightGram?: number;
@@ -213,6 +226,16 @@ export interface MedicationSafetyReceiptV1 {
   };
   refusalReasons: string[];
   signature: null;
+}
+
+export interface MedicationSafetyReceiptV2 extends Omit<MedicationSafetyReceiptV1, 'schemaVersion' | 'hashes'> {
+  schemaVersion: 'darwin.sounio.medication-safety-receipt.v2';
+  hashes: MedicationSafetyReceiptV1['hashes'] & {
+    medicationIdentityBundleSha256: string;
+    medicationIdentityReceiptSha256: string;
+    medicationSourceManifestSha256: string;
+    medicationReconciliationOverridesSha256: string;
+  };
 }
 
 export interface MedicationSafetyEvaluationRequestV1 {

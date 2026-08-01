@@ -18,7 +18,11 @@ import {
   searchMedicamentos as searchLocalMedicamentos,
 } from '@/lib/data/medicamentos/index';
 import { convertMedicamentoRowToMedicamento } from '@/lib/supabase/transforms/medicamentos';
-import { mergeMedicamentoCatalogs } from '@/lib/supabase/merge-medicamentos';
+import {
+  applyMedicationEditorialOverlay,
+  mergeMedicamentoCatalogs,
+  toMedicationEditorialOverlay,
+} from '@/lib/supabase/merge-medicamentos';
 
 const getLocalMedicamentosSUS = () =>
   medicamentosConsolidados.filter(
@@ -55,8 +59,10 @@ export async function getMedicamentos(): Promise<Medicamento[]> {
  * Get a single medication by ID
  */
 export async function getMedicamentoById(id: string): Promise<Medicamento | null> {
+  const localMedication = getLocalMedicamentoById(id) || null;
+  if (!localMedication) return null;
   if (!isSupabaseConfigured || !supabase) {
-    return getLocalMedicamentoById(id) || null;
+    return localMedication;
   }
 
   const { data, error } = await supabase
@@ -67,10 +73,13 @@ export async function getMedicamentoById(id: string): Promise<Medicamento | null
 
   if (error) {
     console.error('Error fetching medicamento from Supabase:', error);
-    return getLocalMedicamentoById(id) || null;
+    return localMedication;
   }
 
-  return convertMedicamentoRowToMedicamento(data);
+  return applyMedicationEditorialOverlay(
+    localMedication,
+    toMedicationEditorialOverlay(convertMedicamentoRowToMedicamento(data)),
+  );
 }
 
 /**

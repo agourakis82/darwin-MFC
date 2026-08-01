@@ -7,11 +7,12 @@
 
 import type { SOAPData } from '@/app/components/Export/SOAPExport';
 import { medicamentosConsolidados as todosMedicamentos } from '@/lib/data/medicamentos/index';
+import type { GravidadeInteracao as CatalogSeverity } from '@/lib/data/interacoes-medicamentosas';
 import {
-  interacoesMedicamentosas,
-  type GravidadeInteracao as CatalogSeverity,
-  type InteracaoMedicamentosa,
-} from '@/lib/data/interacoes-medicamentosas';
+  getMedicationIdentityBundle,
+  resolveMedicationIdentity,
+  type CanonicalMedicationInteractionPairV1,
+} from '@/lib/medication-safety';
 import type { Medicamento } from '@/lib/types/medicamento';
 import { getConsultationHistory } from './recommendations';
 
@@ -26,6 +27,9 @@ export interface DrugInteraction {
   conduta: string;
   evidencia?: string;
   referencias?: string[];
+  sourceStatus?: 'located' | 'source-unverifiable';
+  promotionStatus?: 'not-promoted';
+  severityConflict?: boolean;
 }
 
 export interface InteractionAlert {
@@ -39,9 +43,13 @@ export interface InteractionAlert {
 export const INTERACTION_KNOWLEDGE_STATUS = {
   status: 'reference-only' as const,
   coverage: 'partial-unreviewed' as const,
-  ruleCount: interacoesMedicamentosas.length,
+  ruleCount: 176,
+  canonicalPairCount: 152,
+  severityConflictCount: 7,
   absenceMeaning: 'not-found-not-cleared' as const,
 };
+
+const canonicalInteractionPairs = getMedicationIdentityBundle().interactions;
 
 const TOKEN_ALIASES: Record<string, string> = {
   'acido-acetilsalicilico': 'aas',
@@ -73,33 +81,41 @@ function findMedicationByName(name: string): Medicamento | null {
   return todosMedicamentos.find(medication => medicationTokens(medication).has(token)) || null;
 }
 
-function pairMatches(
-  rule: InteracaoMedicamentosa,
+function findCanonicalPair(
   medication1: Medicamento,
   medication2: Medicamento,
-): boolean {
-  const first = canonicalToken(rule.medicamento1);
-  const second = canonicalToken(rule.medicamento2);
-  const tokens1 = medicationTokens(medication1);
-  const tokens2 = medicationTokens(medication2);
-  return (tokens1.has(first) && tokens2.has(second))
-    || (tokens1.has(second) && tokens2.has(first));
+): CanonicalMedicationInteractionPairV1 | undefined {
+  const concept1 = resolveMedicationIdentity(medication1.id)?.conceptId;
+  const concept2 = resolveMedicationIdentity(medication2.id)?.conceptId;
+  if (!concept1 || !concept2) return undefined;
+  const expected = [concept1, concept2].sort().join('::');
+  return canonicalInteractionPairs.find(pair => {
+    if (pair.endpoints.some(endpoint => endpoint.kind !== 'medication-concept')) return false;
+    return pair.endpoints.map(endpoint => endpoint.id).sort().join('::') === expected;
+  });
 }
 
 function toInteraction(
-  rule: InteracaoMedicamentosa,
+  pair: CanonicalMedicationInteractionPairV1,
   medication1: Medicamento,
   medication2: Medicamento,
 ): DrugInteraction {
+  const primary = pair.observations[0];
   return {
     medicamento1: { id: medication1.id, nome: medication1.nomeGenerico },
     medicamento2: { id: medication2.id, nome: medication2.nomeGenerico },
-    gravidade: rule.gravidade,
-    descricao: rule.efeito,
-    mecanismo: rule.mecanismo.replaceAll('_', ' '),
-    conduta: rule.conduta,
-    evidencia: rule.evidencia,
-    referencias: rule.fontes,
+    gravidade: pair.severityConflict ? 'desconhecida' : pair.severities[0] as GravidadeInteracao,
+    descricao: pair.severityConflict
+      ? `Conflito entre registros legados: ${pair.severities.join(' versus ')}.`
+      : primary.effect,
+    conduta: pair.severityConflict
+      ? 'Não promover automaticamente. Revisar as fontes e confirmar a conduta em referência vigente.'
+      : primary.management,
+    evidencia: pair.sourceStatus === 'located' ? 'fonte localizada' : 'fonte sem versão ou localizador verificável',
+    referencias: pair.observations.map(observation => observation.source),
+    sourceStatus: pair.sourceStatus,
+    promotionStatus: pair.promotionStatus,
+    severityConflict: pair.severityConflict,
   };
 }
 
@@ -138,12 +154,12 @@ function analyzePairs(
       if (medication1.id === medication2.id) continue;
       const pairId = [medication1.id, medication2.id].sort().join('::');
       if (seen.has(pairId)) continue;
-      const rule = interacoesMedicamentosas.find(candidate => pairMatches(candidate, medication1, medication2));
-      if (!rule) continue;
+      const canonicalPair = findCanonicalPair(medication1, medication2);
+      if (!canonicalPair) continue;
       seen.add(pairId);
-      const interaction = toInteraction(rule, medication1, medication2);
+      const interaction = toInteraction(canonicalPair, medication1, medication2);
       alerts.push({
-        id: `${contexto}:${rule.id}:${pairId}`,
+        id: `${contexto}:${canonicalPair.id}:${pairId}`,
         interaction,
         contexto,
         prioridade: priorityFor(interaction.gravidade),

@@ -1,8 +1,8 @@
 import type {
   MedicationDoseRuleV1,
-  MedicationKnowledgeBundleV1,
+  MedicationKnowledgeBundleV2,
   MedicationSafetyEvaluationRequestV1,
-  MedicationSafetyReceiptV1,
+  MedicationSafetyReceiptV2,
   MedicationSafetyResultV1,
 } from './types';
 
@@ -23,9 +23,9 @@ interface CompilerReceiptBoundary {
 }
 
 interface LoadedMedicationSafetyKernel {
-  receipt: MedicationSafetyReceiptV1;
+  receipt: MedicationSafetyReceiptV2;
   receiptSha256: string;
-  bundle: MedicationKnowledgeBundleV1;
+  bundle: MedicationKnowledgeBundleV2;
   instance: WebAssembly.Instance;
   signatureVerified: boolean;
 }
@@ -68,7 +68,7 @@ function exactArrayBuffer(bytes: Uint8Array): ArrayBuffer {
 }
 
 async function verifyBundleSignature(
-  bundle: MedicationKnowledgeBundleV1,
+  bundle: MedicationKnowledgeBundleV2,
   registry: SigningKeyRegistryV1,
 ): Promise<boolean> {
   if (!bundle.signature || bundle.signature.algorithm !== 'Ed25519') return false;
@@ -98,29 +98,77 @@ let cachedKernel: Promise<LoadedMedicationSafetyKernel> | null = null;
 
 export function loadMedicationSafetyKernel(): Promise<LoadedMedicationSafetyKernel> {
   cachedKernel ??= (async () => {
-    const [receiptBytes, bundleBytes, wasmBytes, compilerBytes, registryBytes] = await Promise.all([
+    const [
+      receiptBytes,
+      bundleBytes,
+      identityBundleBytes,
+      identityReceiptBytes,
+      sourceManifestBytes,
+      reconciliationOverridesBytes,
+      wasmBytes,
+      compilerBytes,
+      registryBytes,
+    ] = await Promise.all([
       fetchBytes(`${ROOT}/medication-safety.receipt.json`),
       fetchBytes(`${ROOT}/medication-knowledge-bundle.json`),
+      fetchBytes(`${ROOT}/medication-identity-bundle.json`),
+      fetchBytes(`${ROOT}/medication-identity.receipt.json`),
+      fetchBytes(`${ROOT}/source-manifest.v2.json`),
+      fetchBytes(`${ROOT}/reconciliation-overrides.v1.json`),
       fetchBytes(`${ROOT}/medication-safety-kernel.wasm`),
       fetchBytes(`${ROOT}/compiler-source.receipt.json`),
       fetchBytes(`${ROOT}/trusted-signing-keys.v1.json`),
     ]);
-    const receipt = decodeJson<MedicationSafetyReceiptV1>(receiptBytes);
-    const bundle = decodeJson<MedicationKnowledgeBundleV1>(bundleBytes);
+    const receipt = decodeJson<MedicationSafetyReceiptV2>(receiptBytes);
+    const bundle = decodeJson<MedicationKnowledgeBundleV2>(bundleBytes);
+    const identityReceipt = decodeJson<{
+      schemaVersion: string;
+      hashes: { identityBundleSha256: string };
+      gates: { productionAuthorized: boolean };
+    }>(identityReceiptBytes);
     const compilerReceipt = decodeJson<CompilerReceiptBoundary>(compilerBytes);
     const registry = decodeJson<SigningKeyRegistryV1>(registryBytes);
-    if (receipt.schemaVersion !== 'darwin.sounio.medication-safety-receipt.v1') throw new Error('medication-receipt-schema-mismatch');
-    if (bundle.schemaVersion !== 'darwin.medication-knowledge-bundle.v1') throw new Error('medication-bundle-schema-mismatch');
+    if (receipt.schemaVersion !== 'darwin.sounio.medication-safety-receipt.v2') throw new Error('medication-receipt-schema-mismatch');
+    if (bundle.schemaVersion !== 'darwin.medication-knowledge-bundle.v2') throw new Error('medication-bundle-schema-mismatch');
+    if (identityReceipt.schemaVersion !== 'darwin.medication-identity-receipt.v1') throw new Error('medication-identity-receipt-schema-mismatch');
     if (registry.schemaVersion !== 'darwin.medication-signing-key-registry.v1') throw new Error('medication-key-registry-schema-mismatch');
     if (compilerReceipt.schemaVersion !== 'darwin.sounio.compiler-source-receipt.v1') throw new Error('medication-compiler-receipt-schema-mismatch');
-    const [bundleHash, wasmHash, compilerHash, registryHash, receiptHash] = await Promise.all([
+    const [
+      bundleHash,
+      identityBundleHash,
+      identityReceiptHash,
+      sourceManifestHash,
+      reconciliationOverridesHash,
+      wasmHash,
+      compilerHash,
+      registryHash,
+      receiptHash,
+    ] = await Promise.all([
       sha256Hex(bundleBytes),
+      sha256Hex(identityBundleBytes),
+      sha256Hex(identityReceiptBytes),
+      sha256Hex(sourceManifestBytes),
+      sha256Hex(reconciliationOverridesBytes),
       sha256Hex(wasmBytes),
       sha256Hex(compilerBytes),
       sha256Hex(registryBytes),
       sha256Hex(receiptBytes),
     ]);
     if (bundleHash !== receipt.hashes.medicationKnowledgeBundleSha256) throw new Error('medication-bundle-hash-mismatch');
+    if (identityBundleHash !== receipt.hashes.medicationIdentityBundleSha256
+      || identityBundleHash !== identityReceipt.hashes.identityBundleSha256
+      || identityBundleHash !== bundle.identity.identityBundleSha256) {
+      throw new Error('medication-identity-bundle-hash-mismatch');
+    }
+    if (identityReceiptHash !== receipt.hashes.medicationIdentityReceiptSha256
+      || identityReceiptHash !== bundle.identity.identityReceiptSha256) {
+      throw new Error('medication-identity-receipt-hash-mismatch');
+    }
+    if (sourceManifestHash !== receipt.hashes.medicationSourceManifestSha256) throw new Error('medication-source-manifest-hash-mismatch');
+    if (reconciliationOverridesHash !== receipt.hashes.medicationReconciliationOverridesSha256) throw new Error('medication-overrides-hash-mismatch');
+    if (identityReceipt.gates.productionAuthorized !== false || bundle.identity.clinicalRulesPromoted !== 0) {
+      throw new Error('medication-identity-clinical-promotion-invalid');
+    }
     if (wasmHash !== receipt.hashes.wasmSha256) throw new Error('medication-wasm-hash-mismatch');
     if (compilerHash !== receipt.hashes.compilerSourceReceiptSha256) throw new Error('medication-compiler-receipt-hash-mismatch');
     if (registryHash !== receipt.hashes.trustedSigningKeysSha256) throw new Error('medication-key-registry-hash-mismatch');

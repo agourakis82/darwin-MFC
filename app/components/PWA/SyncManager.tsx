@@ -234,6 +234,18 @@ export default function SyncManager() {
     return null;
   }
 
+  // A healthy idle sync state does not need a floating control competing with
+  // clinical actions, especially on narrow screens.
+  if (
+    !isExpanded
+    && status.isOnline
+    && !status.isSyncing
+    && status.pendingCount === 0
+    && status.failedCount === 0
+  ) {
+    return null;
+  }
+
   // Collapsed view - just a small indicator
   if (!isExpanded) {
     return (

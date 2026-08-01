@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "darwin.medication-identity-report.v1",
+  "bundleVersion": "2026-07-31.1",
+  "summary": {
+    "canonicalConcepts": 637,
+    "ingredients": 643,
+    "aliases": 717,
+    "products": 1415,
+    "conflicts": 32,
+    "sourceConfirmedConcepts": 515,
+    "candidateConcepts": 122,
+    "reviewRequiredConcepts": 0
+  },
+  "audit": {
+    "legacyRecordCount": 717,
+    "uniqueAliasCount": 717,
+    "legacyPresentationCount": 1415,
+    "resolvedPresentationCount": 1120,
+    "incompletePresentationCount": 0,
+    "reviewRequiredPresentationCount": 295,
+    "conflictedPresentationCount": 0,
+    "duplicateAtcGroupCount": 78,
+    "duplicateAtcLegacyRecordCount": 171,
+    "legacyInteractionCount": 176,
+    "uniqueInteractionPairCount": 152,
+    "duplicateInteractionGroupCount": 23,
+    "interactionSeverityConflictCount": 7,
+    "clinicalRulesPromoted": 0
+  },
+  "duplicateAtcClassifications": {
+    "exact-alias": 15,
+    "product-by-formulation": 18,
+    "product-by-route": 20,
+    "association-distinct": 0,
+    "conflict": 25
+  },
+  "interactionCoverage": {
+    "sourceUnverifiablePairs": 150,
+    "unresolvedEndpointPairs": 34,
+    "promotedPairs": 0
+  }
+}

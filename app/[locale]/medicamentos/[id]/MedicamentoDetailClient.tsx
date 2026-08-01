@@ -1,12 +1,13 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import {
   ArrowLeft, Baby, Heart,
   Clock, Shield, XCircle,
   CheckCircle, Stethoscope, AlertTriangle,
-  Dna, ExternalLink, LockKeyhole
+  Dna, ExternalLink, LockKeyhole, BadgeCheck, PackageSearch
 } from 'lucide-react';
 import { CLASSES_TERAPEUTICAS, type Medicamento } from '@/lib/types/medicamento';
 import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
@@ -18,12 +19,15 @@ import { useGenotypeStore } from '@/lib/store/genotypeStore';
 import { StaggerPageSections } from '@/lib/design-system/animations/page-transitions';
 import { ScrollReveal } from '@/lib/design-system/animations/scroll';
 import { getMedicationEvidenceSummary } from '@/lib/medication-safety';
+import type { CanonicalMedicationIdentityView } from '@/lib/medication-safety';
 
 interface MedicamentoDetailClientProps {
   medicamento: Medicamento;
+  identity: CanonicalMedicationIdentityView;
+  locale: string;
 }
 
-export default function MedicamentoDetailClient({ medicamento: med }: MedicamentoDetailClientProps) {
+export default function MedicamentoDetailClient({ medicamento: med, identity, locale }: MedicamentoDetailClientProps) {
   const t = useTranslations('medicationDetail');
   const { translateMedication } = useMedicalTerms();
 
@@ -33,6 +37,12 @@ export default function MedicamentoDetailClient({ medicamento: med }: Medicament
   const { hasGenotypes } = useGenotypeStore();
   const hasPGxData = med.pharmgkb && med.pharmgkb.length > 0;
   const showPGxAlert = hasPGxData && hasGenotypes();
+
+  useEffect(() => {
+    if (!identity.requestedViaAlias) return;
+    const canonicalPath = `/${locale}/medicamentos/${identity.canonicalPathId}/`;
+    window.history.replaceState(window.history.state, '', canonicalPath);
+  }, [identity.canonicalPathId, identity.requestedViaAlias, locale]);
 
   return (
     <div className="min-h-screen bg-[#FAFAF8] dark:bg-neutral-950">
@@ -51,7 +61,7 @@ export default function MedicamentoDetailClient({ medicamento: med }: Medicament
 
       <PageContainer className="py-8">
         {/* Hero Header - Large, scannable */}
-        <header className="bg-white dark:bg-neutral-900 rounded-2xl shadow-sm p-8 mb-8">
+        <header className="mb-8 rounded-lg border border-neutral-200 bg-white p-6 shadow-sm dark:border-neutral-800 dark:bg-neutral-900 sm:p-8">
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <span className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">
               {classeInfo.label}
@@ -88,10 +98,30 @@ export default function MedicamentoDetailClient({ medicamento: med }: Medicament
             variant="inline"
             showLabels={true}
           />
-          <div className="mt-5 grid gap-3 border-t border-neutral-200 pt-5 text-sm dark:border-neutral-800 sm:grid-cols-3">
+          <div className="mt-5 grid gap-3 border-t border-neutral-200 pt-5 text-sm text-neutral-800 dark:border-neutral-800 dark:text-neutral-200 sm:grid-cols-3">
             <div><span className="block text-xs font-semibold uppercase text-neutral-500">Revisão informada</span>{evidence.reportedUpdateDate || 'Não estruturada'}</div>
             <div><span className="block text-xs font-semibold uppercase text-neutral-500">Fontes locais</span>{evidence.sourceReferenceCount}</div>
             <div><span className="block text-xs font-semibold uppercase text-neutral-500">Cálculo de dose</span>Bloqueado</div>
+          </div>
+          <div className="mt-5 border-t border-neutral-200 pt-5 dark:border-neutral-800">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+              <span className="inline-flex items-center gap-2 font-semibold text-teal-800 dark:text-teal-200">
+                <BadgeCheck className="h-4 w-4" />
+                {identity.status === 'source-confirmed' ? 'Identidade DCB confirmada' : 'Identidade candidata para revisão'}
+              </span>
+              <span className="inline-flex items-center gap-2 text-neutral-600 dark:text-neutral-300">
+                <PackageSearch className="h-4 w-4" />
+                {identity.productCount} apresentações · {identity.reviewRequiredProductCount} exigem revisão
+              </span>
+              <span className="font-mono text-xs text-neutral-500">{identity.conceptId}</span>
+            </div>
+            <p className="mt-3 text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
+              {identity.aliasIds.length} registro{identity.aliasIds.length === 1 ? '' : 's'} legado{identity.aliasIds.length === 1 ? '' : 's'} preservado{identity.aliasIds.length === 1 ? '' : 's'}:
+              {' '}{identity.aliases.map(alias => alias.displayName).join(' · ')}
+            </p>
+            {identity.dcbCodes.length > 0 && (
+              <p className="mt-2 font-mono text-xs text-neutral-500">DCB {identity.dcbCodes.join(' · ')}</p>
+            )}
           </div>
         </header>
 

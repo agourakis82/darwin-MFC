@@ -1,36 +1,43 @@
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import { medicamentosConsolidados as medicamentos } from '@/lib/data/medicamentos/index';
-import { getMedicamentoServer, getMedicamentosServer } from '@/lib/supabase/server-utils';
+import { getMedicamentoServer } from '@/lib/supabase/server-utils';
+import {
+  getCanonicalMedicationById,
+  getMedicationRouteIds,
+  resolveMedicationIdentity,
+} from '@/lib/medication-safety';
 import MedicamentoDetailClient from './MedicamentoDetailClient';
 
-// Check if we're on Vercel (use dynamic rendering to reduce deployment size)
-const isVercel = process.env.VERCEL === '1' || process.env.VERCEL_ENV !== undefined;
-
-// Generate all known IDs so Supabase-backed links work in every deployment target.
 export async function generateStaticParams() {
-  if (isVercel) {
-    const remoteMedications = await getMedicamentosServer();
-    return remoteMedications.map((med) => ({
-      id: med.id,
-    }));
-  }
-  // For static export (GitHub Pages): generate all
-  return medicamentos.map((med) => ({
-    id: med.id,
-  }));
+  return getMedicationRouteIds().map(id => ({ id }));
 }
 
 export const dynamicParams = false;
 
-export default async function MedicamentoDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
+type PageProps = { params: Promise<{ locale: string; id: string }> };
 
-  // Fetch medication from Supabase (or fallback to TypeScript constants)
-  const medicamento = await getMedicamentoServer(id);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale, id } = await params;
+  const identity = resolveMedicationIdentity(id);
+  if (!identity) return {};
+  return {
+    title: `${identity.preferredName} | Darwin Rx`,
+    alternates: { canonical: `/${locale}/medicamentos/${identity.canonicalPathId}/` },
+  };
+}
 
-  if (!medicamento) {
-    notFound();
-  }
+export default async function MedicamentoDetailPage({ params }: PageProps) {
+  const { locale, id } = await params;
+  const identity = resolveMedicationIdentity(id);
+  if (!identity) notFound();
 
-  return <MedicamentoDetailClient medicamento={medicamento} />;
+  const editorialMembers = await Promise.all(identity.aliasIds.map(aliasId => getMedicamentoServer(aliasId)));
+  const editorialById = new Map(editorialMembers.filter(Boolean).map(medication => [medication!.id, medication!]));
+  const sourceCatalog = medicamentos.map(medication => editorialById.get(medication.id) ?? medication);
+  const canonical = getCanonicalMedicationById(id, sourceCatalog);
+
+  if (!canonical) notFound();
+
+  return <MedicamentoDetailClient medicamento={canonical.medication} identity={canonical.identity} locale={locale} />;
 }

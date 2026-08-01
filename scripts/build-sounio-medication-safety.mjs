@@ -28,6 +28,10 @@ const registryPath = join(sourceDir, 'source-registry.v1.json');
 const rulesPath = join(sourceDir, 'dose-rules.v1.json');
 const trustedSigningKeysPath = join(sourceDir, 'trusted-signing-keys.v1.json');
 const bundlePath = join(publicDir, 'medication-knowledge-bundle.json');
+const identityBundlePath = join(publicDir, 'medication-identity-bundle.json');
+const identityReceiptPath = join(publicDir, 'medication-identity.receipt.json');
+const sourceManifestPath = join(sourceDir, 'source-manifest.v2.json');
+const reconciliationOverridesPath = join(sourceDir, 'reconciliation-overrides.v1.json');
 const wasmPath = join(publicDir, 'medication-safety-kernel.wasm');
 const receiptPath = join(publicDir, 'medication-safety.receipt.json');
 const publicCompilerReceiptPath = join(publicDir, 'compiler-source.receipt.json');
@@ -36,7 +40,7 @@ const publicTrustedSigningKeysPath = join(publicDir, 'trusted-signing-keys.v1.js
 mkdirSync(publicDir, { recursive: true });
 mkdirSync(buildDir, { recursive: true });
 
-execFileSync('pnpm', ['exec', 'tsx', 'scripts/build-medication-safety-bundle.ts'], {
+execFileSync('pnpm', ['build:medication-catalog'], {
   cwd: root,
   stdio: 'inherit',
 });
@@ -55,15 +59,27 @@ const registryBytes = readFileSync(registryPath);
 const rulesBytes = readFileSync(rulesPath);
 const trustedSigningKeysBytes = readFileSync(trustedSigningKeysPath);
 const bundleBytes = readFileSync(bundlePath);
+const identityBundleBytes = readFileSync(identityBundlePath);
+const identityReceiptBytes = readFileSync(identityReceiptPath);
+const sourceManifestBytes = readFileSync(sourceManifestPath);
+const reconciliationOverridesBytes = readFileSync(reconciliationOverridesPath);
 const vectors = JSON.parse(vectorBytes.toString('utf8'));
 const rules = JSON.parse(rulesBytes.toString('utf8'));
 const bundle = JSON.parse(bundleBytes.toString('utf8'));
+const identityReceipt = JSON.parse(identityReceiptBytes.toString('utf8'));
 
 if (vectors.inputCount !== 26 || vectors.outputCount !== 8) {
   throw new Error('Medication safety ABI requires 26 integer inputs and 8 integer outputs.');
 }
 if (bundle.medications.length !== 717 || new Set(bundle.medications.map(item => item.medicationId)).size !== 717) {
   throw new Error('Medication safety bundle must contain exactly 717 unique medications.');
+}
+if (bundle.schemaVersion !== 'darwin.medication-knowledge-bundle.v2') {
+  throw new Error('Medication safety bundle v2 is required.');
+}
+if (sha256(identityBundleBytes) !== identityReceipt.hashes.identityBundleSha256
+  || bundle.identity.identityBundleSha256 !== identityReceipt.hashes.identityBundleSha256) {
+  throw new Error('Medication identity bundle is not hash-bound to the safety bundle.');
 }
 
 let generated = `${sourceBytes.toString('utf8')}\n`;
@@ -186,7 +202,7 @@ const productionReviewedRules = approvedRules.length > 0;
 const signatureVerified = bundle.signature !== null;
 const productionAuthorized = productionReviewedRules && signatureVerified && bundle.status === 'reviewed';
 const receipt = {
-  schemaVersion: 'darwin.sounio.medication-safety-receipt.v1',
+  schemaVersion: 'darwin.sounio.medication-safety-receipt.v2',
   receiptId: `darwin-rx-${sha256(wasmBytes).slice(0, 12)}-${sha256(bundleBytes).slice(0, 12)}`,
   generatedAt: bundle.generatedAt,
   status: productionAuthorized ? 'reviewed' : 'reference-only',
@@ -207,6 +223,10 @@ const receipt = {
   },
   hashes: {
     medicationKnowledgeBundleSha256: sha256(bundleBytes),
+    medicationIdentityBundleSha256: sha256(identityBundleBytes),
+    medicationIdentityReceiptSha256: sha256(identityReceiptBytes),
+    medicationSourceManifestSha256: sha256(sourceManifestBytes),
+    medicationReconciliationOverridesSha256: sha256(reconciliationOverridesBytes),
     sourceRegistrySha256: sha256(registryBytes),
     doseRulesSha256: sha256(rulesBytes),
     trustedSigningKeysSha256: sha256(trustedSigningKeysBytes),

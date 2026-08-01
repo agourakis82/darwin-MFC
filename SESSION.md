@@ -1,5 +1,32 @@
 # Sessao atual
 
+## Marco Darwin Rx Canonical Formulary v2 - 2026-07-31
+
+- Branch isolada: `codex/darwin-rx-canonical-formulary-v2`, baseada exatamente em `451f0d3` e empilhada sobre o PR #3.
+- Os 717 registros legados foram reconciliados em 637 conceitos canônicos, mantendo exatamente 717 aliases pesquisáveis e todas as URLs históricas. A hidratação substitui a URL por `med-*` e publica `rel=canonical`.
+- As 1.415 apresentações foram preservadas: 1.120 normalizadas e 295 marcadas `review-required`. Nenhum candidato de parsing virou regra clínica.
+- A DCB IN 439/2026, a RENAME 2024 2a edição, a consulta regulatória Anvisa e os metadados ATC 2026 foram congelados com bytes e SHA-256. O transporte por espelho da RENAME está explicitamente identificado no manifesto.
+- O Supabase agora é exclusivamente `MedicationEditorialOverlayV1`: pode acrescentar aliases comerciais e tags, mas não sobrescreve identidade, apresentação, RENAME, interação, contraindicação ou qualquer campo clínico. Linhas remotas desconhecidas ficam fora do catálogo.
+- As 176 interações legadas foram reconciliadas em 152 pares, com 23 grupos duplicados e sete conflitos de gravidade. Todos permanecem `not-promoted`; ausência de par continua significando apenas `not-found-not-cleared`.
+- `MedicationKnowledgeBundleV2` e `MedicationSafetyReceiptV2` vinculam o bundle de identidade, recibo, manifesto, overrides, compilador source-fresh e WASM. Sounio nativo/WASM mantém paridade exata nos sete vetores.
+- Produção permanece deliberadamente `REFUSE`: zero regras de dose, zero interações promovidas, assinatura ausente e `productionAuthorized=false`.
+- UI do bulário lista conceitos canônicos, busca por DCB/ATC/comerciais/aliases, mostra contagem reconciliada e preserva o conteúdo acumulado dos registros históricos.
+- Preview de produção atual: `http://127.0.0.1:3012/pt/medicamentos/`.
+
+### Verificação v2
+
+- `pnpm build:medication-safety`: passou com compilador source-fresh SHA-256 `4511a6ed2055524df877de0a8fd140993904e44cf65ebe43c70d827b3edc2dfc`, WASM `2b4d92a4cb4e0afd8c95faa8059f566913b7f83f2c217e068f006560e6f3a414` e disposição `REFUSE`.
+- Bundle de identidade SHA-256 `efced17ce7a0fa8fdce66d94f4e9fc0cfd2096c9ae676d0a58532767c80b7011`; bundle clínico v2 SHA-256 `7d49b4da94597a56afa90dd2b2f8fcd76b96ed07ba40775bf1fbc27b3bc75423`.
+- `pnpm verify`: 36/36 gates verdes; `pnpm type-check` passou.
+- `pnpm build:vercel`: passou com 19.416 páginas, incluindo 12.184 rotas de medicamentos entre conceitos e aliases nos nove idiomas.
+- Playwright de produção: 6/6 em Desktop Chrome e Mobile Chrome, incluindo alias em nove idiomas, URL canônica, artefatos v2, prontuário sem auto-prescrição e ausência de overflow.
+
+### Próximo passo v2
+
+- Revisão humana dos 122 conceitos candidatos e 295 apresentações `review-required`, começando pelos 32 conflitos explícitos.
+- Localizar fontes versionadas para os 152 pares de interação; os sete conflitos de gravidade exigem adjudicação independente antes de qualquer promoção.
+- Manter doses vazias e `REFUSE` até revisão independente médico-farmacêutica e assinatura confiável.
+
 ## Estado
 
 - Branch: `codex/darwin-rx-medication-safety` (empilhada sobre `codex/aps-design-refactor`).

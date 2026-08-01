@@ -13,6 +13,8 @@ interface InteractionResult {
   gravidade: string;
   efeito: string;
   conduta: string;
+  sourceStatus?: 'located' | 'source-unverifiable';
+  severityConflict?: boolean;
 }
 
 interface InteractionCheckerProps {
@@ -55,13 +57,19 @@ export default function InteractionChecker({
       gravidade: alert.interaction.gravidade,
       efeito: alert.interaction.descricao,
       conduta: alert.interaction.conduta,
+      sourceStatus: alert.interaction.sourceStatus,
+      severityConflict: alert.interaction.severityConflict,
     }));
   }, [selectedMedIds]);
 
   // Contagem por gravidade
   const interactionCounts = useMemo(() => {
-    const counts = { grave: 0, moderada: 0, leve: 0 };
+    const counts = { grave: 0, moderada: 0, leve: 0, conflito: 0 };
     interactions.forEach(int => {
+      if (int.severityConflict) {
+        counts.conflito += 1;
+        return;
+      }
       if (int.gravidade in counts) {
         counts[int.gravidade as keyof typeof counts]++;
       }
@@ -91,7 +99,7 @@ export default function InteractionChecker({
           border: 'border-red-300 dark:border-red-700',
           text: 'text-red-800 dark:text-red-200',
           badge: 'bg-red-500 text-white',
-          icon: '🚨',
+          icon: 'alert' as const,
         };
       case 'moderada':
         return {
@@ -99,7 +107,7 @@ export default function InteractionChecker({
           border: 'border-amber-300 dark:border-amber-700',
           text: 'text-amber-800 dark:text-amber-200',
           badge: 'bg-amber-500 text-white',
-          icon: '⚠️',
+          icon: 'alert' as const,
         };
       case 'leve':
         return {
@@ -107,7 +115,7 @@ export default function InteractionChecker({
           border: 'border-yellow-300 dark:border-yellow-700',
           text: 'text-yellow-800 dark:text-yellow-200',
           badge: 'bg-yellow-500 text-white',
-          icon: '💡',
+          icon: 'info' as const,
         };
       default:
         return {
@@ -115,7 +123,7 @@ export default function InteractionChecker({
           border: 'border-slate-300 dark:border-slate-700',
           text: 'text-slate-800 dark:text-slate-200',
           badge: 'bg-slate-500 text-white',
-          icon: 'ℹ️',
+          icon: 'alert' as const,
         };
     }
   };
@@ -156,7 +164,7 @@ export default function InteractionChecker({
               Verificador de Interações
             </h3>
             <p className="text-xs text-slate-500 dark:text-slate-400">
-              Base parcial de referência com {INTERACTION_KNOWLEDGE_STATUS.ruleCount} pares
+              {INTERACTION_KNOWLEDGE_STATUS.canonicalPairCount} pares canônicos · {INTERACTION_KNOWLEDGE_STATUS.ruleCount} registros · {INTERACTION_KNOWLEDGE_STATUS.severityConflictCount} conflitos
             </p>
           </div>
         </div>
@@ -283,6 +291,11 @@ export default function InteractionChecker({
                   {interactionCounts.leve} leve{interactionCounts.leve !== 1 ? 's' : ''}
                 </span>
               )}
+              {interactionCounts.conflito > 0 && (
+                <span className="border border-slate-400 bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-800 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100">
+                  {interactionCounts.conflito} conflito{interactionCounts.conflito !== 1 ? 's' : ''}
+                </span>
+              )}
             </div>
 
             {/* Lista de Interações */}
@@ -296,6 +309,7 @@ export default function InteractionChecker({
                 })
                 .map((int, i) => {
                   const styles = getGravidadeStyles(int.gravidade);
+                  const SeverityIcon = styles.icon === 'info' ? Info : AlertTriangle;
                   return (
                     <div
                       key={i}
@@ -303,13 +317,13 @@ export default function InteractionChecker({
                     >
                       <div className="flex items-start justify-between gap-2 mb-2">
                         <div className="flex items-center gap-2">
-                          <span className="text-lg">{styles.icon}</span>
+                          <SeverityIcon className="h-4 w-4 shrink-0" />
                           <span className={`font-semibold text-sm ${styles.text}`}>
                             {int.med1} ↔ {int.med2}
                           </span>
                         </div>
                         <span className={`px-2 py-0.5 rounded text-xs font-bold uppercase ${styles.badge}`}>
-                          {int.gravidade}
+                          {int.severityConflict ? 'conflito' : int.gravidade}
                         </span>
                       </div>
                       <p className={`text-sm ${styles.text} mb-2`}>
@@ -318,6 +332,11 @@ export default function InteractionChecker({
                       <p className={`text-xs ${styles.text} opacity-80`}>
                         <strong>Conduta:</strong> {int.conduta}
                       </p>
+                      {int.sourceStatus === 'source-unverifiable' && (
+                        <p className={`mt-2 text-xs ${styles.text}`}>
+                          Fonte legada sem versão ou localizador verificável. O par não foi promovido.
+                        </p>
+                      )}
                     </div>
                   );
                 })}
@@ -330,7 +349,7 @@ export default function InteractionChecker({
       <div className="px-4 py-3 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-700">
         <p className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
           <Info className="w-3 h-3" />
-          Baseado em interações registradas na literatura. Sempre consulte fontes adicionais.
+          Base parcial reconciliada. Ausência de par nunca significa segurança confirmada.
         </p>
       </div>
     </div>

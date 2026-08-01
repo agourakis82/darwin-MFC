@@ -15,7 +15,7 @@ import { CLASSES_TERAPEUTICAS, isAvailableInPublicSystem, getMedicamentosByClass
 import { useMedicamentos } from '@/lib/hooks/use-medicamentos';
 import { useMedicalTerms } from '@/lib/i18n/useMedicalTerms';
 import { cn } from '@/lib/utils';
-import { getMedicationEvidenceSummary } from '@/lib/medication-safety';
+import { getCanonicalMedicationCatalog, getMedicationEvidenceSummary } from '@/lib/medication-safety';
 
 export default function MedicamentosClient() {
   const t = useTranslations('medicamentos');
@@ -29,29 +29,32 @@ export default function MedicamentosClient() {
   // The service returns the local 717-item union plus optional Supabase editorial rows.
   const { data: supabaseMedicamentos, loading } = useMedicamentos();
   const medicamentos = supabaseMedicamentos.length > 0 ? supabaseMedicamentos : localMedicamentos;
+  const canonicalCatalog = useMemo(() => getCanonicalMedicationCatalog(medicamentos), [medicamentos]);
 
   // Hydration safety
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  const medicamentosAgrupados = useMemo(() => getMedicamentosByClasse(medicamentos), [medicamentos]);
+  const medicamentosAgrupados = useMemo(
+    () => getMedicamentosByClasse(canonicalCatalog.map(entry => entry.medication)),
+    [canonicalCatalog],
+  );
 
   const medicamentosFiltrados = useMemo(() => {
-    let filtered = medicamentos;
-    if (showRENAME) filtered = filtered.filter(m => m.rename);
-    if (selectedClasse !== 'todas') filtered = filtered.filter(m => m.classeTerapeutica === selectedClasse);
+    let filtered = canonicalCatalog;
+    if (showRENAME) filtered = filtered.filter(entry => entry.medication.rename);
+    if (selectedClasse !== 'todas') filtered = filtered.filter(entry => entry.medication.classeTerapeutica === selectedClasse);
     if (searchTerm.trim()) {
-      const term = searchTerm.toLowerCase();
-      filtered = filtered.filter(m => 
-        m.nomeGenerico.toLowerCase().includes(term) ||
-        m.nomesComerciais?.some(n => n.toLowerCase().includes(term)) ||
-        m.indicacoes.some(i => i.toLowerCase().includes(term)) ||
-        m.tags?.some(t => t.toLowerCase().includes(term))
+      const term = searchTerm.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+      filtered = filtered.filter(({ medication: med, identity }) =>
+        identity.normalizedSearchText.includes(term)
+        || med.indicacoes.some(indication => indication.toLowerCase().includes(term))
+        || med.tags?.some(tag => tag.toLowerCase().includes(term))
       );
     }
     return filtered;
-  }, [medicamentos, searchTerm, selectedClasse, showRENAME]);
+  }, [canonicalCatalog, searchTerm, selectedClasse, showRENAME]);
 
   return (
     <div className="min-h-screen bg-paper-white dark:bg-carbon-950">
@@ -63,7 +66,7 @@ export default function MedicamentosClient() {
               {t('title')}
             </h1>
             <span className="text-xs font-mono text-carbon-400 font-bold uppercase tracking-widest">
-              {t('activeCompounds', { count: medicamentos.length })}
+              {canonicalCatalog.length} conceitos canônicos / 717 registros reconciliados
             </span>
           </div>
           <p className="max-w-2xl font-body text-base leading-relaxed text-carbon-500 sm:text-lg">
@@ -146,13 +149,13 @@ export default function MedicamentosClient() {
             <div className="py-20 text-center text-carbon-500 font-body">{t('notFoundInHub')}</div>
           ) : (
             <div className="divide-y divide-carbon-100 dark:divide-carbon-800">
-              {medicamentosFiltrados.map((med) => {
+              {medicamentosFiltrados.map(({ medication: med, identity }) => {
                 const classeInfo = CLASSES_TERAPEUTICAS[med.classeTerapeutica];
                 const evidence = getMedicationEvidenceSummary(med);
                 return (
                   <Link
-                    key={med.id}
-                    href={`/medicamentos/${med.id}`}
+                    key={identity.conceptId}
+                    href={`/medicamentos/${identity.canonicalPathId}`}
                     className="group flex items-start gap-3 px-4 py-4 transition-all hover:bg-clinical-gray/50 dark:hover:bg-carbon-800/30 md:grid md:grid-cols-12 md:items-center md:px-6"
                   >
                     <div className="shrink-0 md:col-span-1">
@@ -163,7 +166,7 @@ export default function MedicamentosClient() {
                     <div className="min-w-0 flex-1 md:col-span-4 md:pr-4">
                       <div className="flex items-center gap-2 flex-wrap">
                         <h3 className="text-base font-semibold text-helix-navy dark:text-white group-hover:text-adenine-teal transition-colors capitalize">
-                          {translateMedication(med.atcCode, med.nomeGenerico)}
+                          {translateMedication(med.atcCode, identity.preferredName)}
                         </h3>
                         <div className="flex items-center gap-1.5">
                           {med.rename && <Shield className="w-3 h-3 text-guanine-green" />}
@@ -173,7 +176,9 @@ export default function MedicamentosClient() {
                         </div>
                       </div>
                       <p className="text-[10px] font-mono text-carbon-400 uppercase tracking-tight">
-                        {med.nomesComerciais?.slice(0, 3).join(' • ') || t('notAvailable')}
+                        {identity.aliasIds.length > 1
+                          ? `${identity.aliasIds.length} aliases históricos · ${identity.productCount} apresentações`
+                          : med.nomesComerciais?.slice(0, 3).join(' • ') || t('notAvailable')}
                       </p>
                       <div className="mt-2 flex flex-wrap items-center gap-2 md:hidden">
                         <span className={cn(
@@ -185,7 +190,7 @@ export default function MedicamentosClient() {
                           {evidence.statusLabel}
                         </span>
                         <span className="font-mono text-[10px] font-bold text-carbon-500">
-                          {med.atcCode}
+                          {identity.atcCodes.join(' · ') || t('notAvailable')}
                         </span>
                       </div>
                     </div>
@@ -206,7 +211,7 @@ export default function MedicamentosClient() {
                     </div>
                     <div className="hidden text-right md:col-span-2 md:block">
                       <span className="font-mono text-xs font-bold text-helix-navy dark:text-carbon-400">
-                        {med.atcCode}
+                        {identity.atcCodes.join(' · ') || t('notAvailable')}
                       </span>
                     </div>
                   </Link>

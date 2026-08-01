@@ -1,9 +1,18 @@
 {
-  "schemaVersion": "darwin.medication-knowledge-bundle.v1",
+  "schemaVersion": "darwin.medication-knowledge-bundle.v2",
   "bundleVersion": "2026-07-31.1",
   "generatedAt": "2026-07-31T18:00:00.000Z",
   "status": "unsigned-reference-only",
   "intendedUse": "APS/SUS medication reference with fail-closed structured dosing eligibility.",
+  "identity": {
+    "schemaVersion": "darwin.medication-identity-bundle.v1",
+    "bundleVersion": "2026-07-31.1",
+    "identityBundleSha256": "efced17ce7a0fa8fdce66d94f4e9fc0cfd2096c9ae676d0a58532767c80b7011",
+    "identityReceiptSha256": "868ea032f483c99640785134fe2a46709e9b777e806eaa518f9e2adaee93ed89",
+    "canonicalConceptCount": 637,
+    "legacyAliasCount": 717,
+    "clinicalRulesPromoted": 0
+  },
   "sourceSnapshots": [
     {
       "id": "ms-rename-live-2026-07-31",

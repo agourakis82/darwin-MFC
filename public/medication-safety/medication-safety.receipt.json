@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "darwin.sounio.medication-safety-receipt.v1",
-  "receiptId": "darwin-rx-2b4d92a4cb4e-2f8f127762df",
+  "schemaVersion": "darwin.sounio.medication-safety-receipt.v2",
+  "receiptId": "darwin-rx-2b4d92a4cb4e-7d49b4da9459",
   "generatedAt": "2026-07-31T18:00:00.000Z",
   "status": "reference-only",
   "compiler": {
@@ -22,7 +22,11 @@
     "imports": []
   },
   "hashes": {
-    "medicationKnowledgeBundleSha256": "2f8f127762df0c0cbb0664fdf503b2dc1e796d1608817191e9f4dc2246267a23",
+    "medicationKnowledgeBundleSha256": "7d49b4da94597a56afa90dd2b2f8fcd76b96ed07ba40775bf1fbc27b3bc75423",
+    "medicationIdentityBundleSha256": "efced17ce7a0fa8fdce66d94f4e9fc0cfd2096c9ae676d0a58532767c80b7011",
+    "medicationIdentityReceiptSha256": "868ea032f483c99640785134fe2a46709e9b777e806eaa518f9e2adaee93ed89",
+    "medicationSourceManifestSha256": "c808b22d753e4cc2a384102e2a464bd5f01900cda5e711cfd44f6cd83b292de6",
+    "medicationReconciliationOverridesSha256": "1d280c3611820088fd14a40b1138a3f924c70f1031fc7bfb8f7d345c92bb85d6",
     "sourceRegistrySha256": "abb745a6845f510aed7fa19db73aa18fce9937e7f7c6db418ab91afd5e8cd5cf",
     "doseRulesSha256": "b0936dc95cc74f2bef03f00a41017fa16fe3c2e96237c6fcc572c09445f83333",
     "trustedSigningKeysSha256": "1cb99d95e76a8affb0b1e38d57a0eac2f93f72a5e65b39cad16a783b1a1be0f4",

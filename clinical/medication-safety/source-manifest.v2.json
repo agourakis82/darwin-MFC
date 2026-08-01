@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "darwin.medication-source-manifest.v2",
+  "manifestVersion": "2026-07-31.1",
+  "generatedAt": "2026-07-31T21:00:00.000Z",
+  "sources": [
+    {
+      "id": "anvisa-dcb-in-439-2026",
+      "title": "Lista consolidada de Denominacoes Comuns Brasileiras - IN 439/2026",
+      "authority": "Agencia Nacional de Vigilancia Sanitaria",
+      "url": "https://bibliotecadigital.anvisa.gov.br/jspui/handle/anvisa/20673",
+      "localPath": "clinical/medication-safety/snapshots/dcb-in-439-2026.xlsx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 588227,
+      "sha256": "0eb2fa86ece3b520e55f8a6224f705a403aea18d53373f2c9d29987ca159b20e",
+      "transport": "official",
+      "usage": "identity"
+    },
+    {
+      "id": "ms-rename-2024-2ed",
+      "title": "Relacao Nacional de Medicamentos Essenciais 2024, segunda edicao",
+      "authority": "Ministerio da Saude",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/relacao_nacional_medicamentos_2024_2ed.pdf",
+      "localPath": "clinical/medication-safety/snapshots/rename-2024-2ed.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 2576541,
+      "sha256": "b1b0d582cb68fc96fcbe04fd65c1c697d5206b7dce8886f1c6ddb06374fd5201",
+      "transport": "mirror-of-official",
+      "usage": "formulary"
+    },
+    {
+      "id": "ms-rename-landing-2026-07-31",
+      "title": "RENAME - pagina institucional",
+      "authority": "Ministerio da Saude",
+      "url": "https://www.gov.br/saude/pt-br/composicao/sectics/daf/rename",
+      "localPath": "clinical/medication-safety/snapshots/rename-landing-2026-07-31.html",
+      "mediaType": "text/html",
+      "bytes": 123243,
+      "sha256": "df6dfd5ea45178cb2a29d08ed8401f0a1aedf5db41d70361e5b60b5e809c3d6d",
+      "transport": "official",
+      "usage": "formulary"
+    },
+    {
+      "id": "anvisa-medication-register-query-2026-07-31",
+      "title": "Consulta a registro de medicamentos",
+      "authority": "Agencia Nacional de Vigilancia Sanitaria",
+      "url": "https://www.gov.br/anvisa/pt-br/sistemas/consulta-a-registro-de-medicamentos",
+      "localPath": "clinical/medication-safety/snapshots/anvisa-medication-register-query.html",
+      "mediaType": "text/html",
+      "bytes": 232074,
+      "sha256": "d9d01d716e65d76c6c039bbc66bcf0ab860dcff74b6cfcd84eaa4370b7dc8271",
+      "transport": "official",
+      "usage": "regulatory-query"
+    },
+    {
+      "id": "who-atc-2026-index-metadata",
+      "title": "ATC/DDD Index and Guidelines metadata",
+      "authority": "WHO Collaborating Centre for Drug Statistics Methodology",
+      "url": "https://atcddd.fhi.no/atc_ddd_index_and_guidelines/atc_ddd_index/%26lang%3Den",
+      "localPath": "clinical/medication-safety/snapshots/atc-2026-index-metadata.html",
+      "mediaType": "text/html",
+      "bytes": 11312,
+      "sha256": "9fd3894ad6c493c1b491fc447118aeb160d71a4bf01b11e3e1927127ac782a8f",
+      "transport": "official",
+      "usage": "classification-metadata"
+    }
+  ],
+  "limitations": [
+    "The licensed bulk ATC index is not included; legacy ATC codes remain secondary candidates.",
+    "The RENAME PDF bytes were obtained from a public mirror because the official file endpoint reset automated connections; the official landing page is frozen separately.",
+    "Regulatory query snapshots support candidate review and never auto-promote identity or clinical content."
+  ]
+}

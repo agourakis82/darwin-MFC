@@ -378,7 +378,7 @@ if (
   && medicationSafetyFixtures.stdout.includes('MEDICATION_SAFETY_FIXTURES_VALID')
   && medicationSafetyFixtures.stdout.includes('"uniqueMedicationIds": 717')
   && medicationSafetyFixtures.stdout.includes('"vectorsPassed": 7')
-  && medicationSafetyFixtures.stdout.includes('"hashTamperCasesPassed": 9')
+  && medicationSafetyFixtures.stdout.includes('"hashTamperCasesPassed": 13')
   && medicationSafetyFixtures.stdout.includes('"runtimeRegexDoseCalculationPresent": false')
   && medicationSafetyFixtures.stdout.includes('"simulatedProntuarioInteractionDatabasePresent": false')
   && medicationSafetyFixtures.stdout.includes('"interactionAbsenceClearsSafety": false')
@@ -386,7 +386,7 @@ if (
   && medicationSafetyFixtures.stdout.includes('"fhirIntent": "proposal"')
   && medicationSafetyFixtures.stdout.includes('"productionDisposition": "REFUSE"')
 ) {
-  pass('Darwin Rx Medication Safety', '717 medicamentos, hashes, WASM inteiro, interacoes canonicas e FHIR draft passam com producao em REFUSE');
+  pass('Darwin Rx Medication Safety', '637 conceitos, 717 aliases, 1.415 apresentacoes, hashes v2, WASM inteiro e 152 pares canonicos passam com producao em REFUSE');
 } else {
   fail('Darwin Rx Medication Safety', 'Contrato do catalogo, kernel, integridade ou interoperabilidade falhou', {
     status: medicationSafetyFixtures.status,

@@ -33,7 +33,7 @@ test.describe('Darwin Rx medication safety', () => {
     const runtimeErrors = collectRuntimeErrors(page);
     await page.goto('/pt/medicamentos', { waitUntil: 'domcontentloaded' });
 
-    await expect(page.getByLabel('Conteúdo principal').getByText(/717 compostos ativos/i).first()).toBeVisible();
+    await expect(page.getByLabel('Conteúdo principal').getByText(/637 conceitos canônicos \/ 717 registros reconciliados/i).first()).toBeVisible();
     await expect(page.getByText(/catálogo completo e pesquisável/i)).toBeVisible();
     const search = page.locator('input[type="text"]').first();
     await search.fill('amoxicilina');
@@ -49,6 +49,8 @@ test.describe('Darwin Rx medication safety', () => {
     await expect(page.getByText(/Lactação: Compatível com amamentação/i)).toBeVisible();
     await expect(page.getByText(/Lactação: \{/i)).toHaveCount(0);
     await expect(page.getByText(/Texto legado para consulta e auditoria/i)).toBeVisible();
+    await expect(page.getByText(/Identidade DCB confirmada|Identidade candidata para revisão/i)).toBeVisible();
+    await expect(page.getByText(/registros? legados? preservados?/i)).toBeVisible();
     await expect(page.getByRole('link', { name: /Bulário Anvisa/i })).toBeVisible();
     await expect(page.getByRole('link', { name: /^RENAME/i })).toBeVisible();
     await expectNoHorizontalOverflow(page);
@@ -56,6 +58,9 @@ test.describe('Darwin Rx medication safety', () => {
     for (const path of [
       '/medication-safety/medication-safety.receipt.json',
       '/medication-safety/medication-knowledge-bundle.json',
+      '/medication-safety/medication-identity-bundle.json',
+      '/medication-safety/medication-identity.receipt.json',
+      '/medication-safety/medication-search-index.json',
       '/medication-safety/medication-safety-kernel.wasm',
       '/medication-safety/trusted-signing-keys.v1.json',
     ]) {
@@ -63,6 +68,21 @@ test.describe('Darwin Rx medication safety', () => {
       expect(response.status(), path).toBe(200);
     }
     expect(runtimeErrors).toEqual([]);
+  });
+
+  test('keeps historical aliases in every locale and canonicalizes the hydrated URL', async ({ page, request }) => {
+    const locales = ['pt', 'en', 'es', 'fr', 'ru', 'ar', 'zh', 'el', 'hi'];
+    for (const locale of locales) {
+      const response = await request.get(`/${locale}/medicamentos/amoxicilina-suspensao/`);
+      expect(response.status(), locale).toBe(200);
+    }
+
+    await page.goto('/pt/medicamentos/amoxicilina-suspensao/', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByRole('heading', { name: /amoxicilina/i, level: 1 })).toBeVisible();
+    await expect(page).toHaveURL(/\/pt\/medicamentos\/med-amoxicilina\/$/);
+    const canonicalHref = await page.locator('link[rel="canonical"]').getAttribute('href');
+    expect(canonicalHref).toContain('/pt/medicamentos/med-amoxicilina/');
+    await expectNoHorizontalOverflow(page);
   });
 
   test('filters treatment references without calculating or auto-adding a dose', async ({ page }) => {
