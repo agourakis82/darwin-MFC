@@ -91,6 +91,12 @@ export default function MedicamentoDetailClient({ medicamento: med, identity, lo
             {med.mecanismoAcao}
           </p>
 
+          {med.editorialSummary ? (
+            <div className="mb-6 border-l-2 border-cyan-500 bg-cyan-50 px-4 py-3 text-sm leading-relaxed text-cyan-950 dark:bg-cyan-950/20 dark:text-cyan-100">
+              {med.editorialSummary}
+            </div>
+          ) : null}
+
           {/* Trust indicators */}
           <TrustBadge
             lastUpdated={med.lastUpdate}

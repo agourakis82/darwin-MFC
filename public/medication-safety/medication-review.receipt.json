@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "darwin.medication-review-receipt.v1",
+  "generatedAt": "2026-07-31T21:00:00.000Z",
+  "bundleVersion": "2026-07-31.1",
+  "hashes": {
+    "identityBundleSha256": "efced17ce7a0fa8fdce66d94f4e9fc0cfd2096c9ae676d0a58532767c80b7011",
+    "reviewSeedSha256": "bbb933c91c404096efb26bae31ae6791cc46c3bd75df5f50f0cbb33404142db7",
+    "generatorSha256": "5a24af57ca6c52f652ad1f3f49da5949041a26d76f528dd438f5a3e77864e9f8",
+    "doseRulesSha256": "b0936dc95cc74f2bef03f00a41017fa16fe3c2e96237c6fcc572c09445f83333"
+  },
+  "gates": {
+    "exactTaskCount": true,
+    "noDuplicateTargets": true,
+    "severityConflictsLinkedNotDuplicated": true,
+    "presentationsDeferred": true,
+    "doseCandidatesCannotCalculate": true,
+    "interactionsRemainNotPromoted": true,
+    "productionDoseRulesRemainEmpty": true,
+    "productionAuthorized": false
+  },
+  "signature": null
+}

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "darwin.medication-dose-rule-candidates.v2",
+  "bundleVersion": "2026-07-31.1",
+  "intendedUse": "Human review queue only. These candidates cannot calculate, prescribe, or enter the production Sounio kernel.",
+  "waves": [
+    {
+      "id": "respiratory-pediatric-aps",
+      "order": 1,
+      "status": "open-for-evidence",
+      "label": "Respiratório pediátrico na APS"
+    },
+    {
+      "id": "high-risk",
+      "order": 2,
+      "status": "planned",
+      "label": "Medicamentos de alto risco"
+    },
+    {
+      "id": "rename-antimicrobials",
+      "order": 3,
+      "status": "planned",
+      "label": "Antimicrobianos da RENAME"
+    }
+  ],
+  "candidates": [
+    {
+      "schemaVersion": "darwin.medication-dose-rule-candidate.v2",
+      "id": "dose-candidate-amoxicilina-pac-pediatrica",
+      "wave": "respiratory-pediatric-aps",
+      "medicationLegacyId": "amoxicilina",
+      "indicationId": "pneumonia-adquirida-comunidade-pediatrica",
+      "indicationLabel": "Pneumonia adquirida na comunidade em pediatria",
+      "populationLabel": "Crianças atendidas na APS",
+      "status": "evidence-required",
+      "structuredRule": null,
+      "sourceIds": [],
+      "reviewDecisionIds": [],
+      "productionAuthorized": false
+    },
+    {
+      "schemaVersion": "darwin.medication-dose-rule-candidate.v2",
+      "id": "dose-candidate-amoxicilina-oma-pediatrica",
+      "wave": "respiratory-pediatric-aps",
+      "medicationLegacyId": "amoxicilina",
+      "indicationId": "otite-media-aguda-pediatrica",
+      "indicationLabel": "Otite média aguda em pediatria",
+      "populationLabel": "Crianças atendidas na APS",
+      "status": "evidence-required",
+      "structuredRule": null,
+      "sourceIds": [],
+      "reviewDecisionIds": [],
+      "productionAuthorized": false
+    },
+    {
+      "schemaVersion": "darwin.medication-dose-rule-candidate.v2",
+      "id": "dose-candidate-azitromicina-coqueluche-pediatrica",
+      "wave": "respiratory-pediatric-aps",
+      "medicationLegacyId": "azitromicina",
+      "indicationId": "coqueluche-pediatrica",
+      "indicationLabel": "Coqueluche em pediatria",
+      "populationLabel": "Lactentes, crianças e adolescentes",
+      "status": "evidence-required",
+      "structuredRule": null,
+      "sourceIds": [],
+      "reviewDecisionIds": [],
+      "productionAuthorized": false
+    },
+    {
+      "schemaVersion": "darwin.medication-dose-rule-candidate.v2",
+      "id": "dose-candidate-salbutamol-asma-pediatrica",
+      "wave": "respiratory-pediatric-aps",
+      "medicationLegacyId": "salbutamol",
+      "indicationId": "asma-sibilancia-pediatrica",
+      "indicationLabel": "Asma ou sibilância em pediatria",
+      "populationLabel": "Crianças e adolescentes atendidos na APS",
+      "status": "evidence-required",
+      "structuredRule": null,
+      "sourceIds": [],
+      "reviewDecisionIds": [],
+      "productionAuthorized": false
+    },
+    {
+      "schemaVersion": "darwin.medication-dose-rule-candidate.v2",
+      "id": "dose-candidate-dexametasona-crupe-pediatrica",
+      "wave": "respiratory-pediatric-aps",
+      "medicationLegacyId": "dexametasona",
+      "indicationId": "crupe-pediatrico",
+      "indicationLabel": "Crupe em pediatria",
+      "populationLabel": "Crianças em avaliação profissional",
+      "status": "evidence-required",
+      "structuredRule": null,
+      "sourceIds": [],
+      "reviewDecisionIds": [],
+      "productionAuthorized": false
+    }
+  ]
+}

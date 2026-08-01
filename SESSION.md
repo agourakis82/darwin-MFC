@@ -1,5 +1,27 @@
 # Sessao atual
 
+## Marco Darwin Rx Evidence Review Studio - 2026-07-31
+
+- Branch isolada: `codex/darwin-rx-evidence-review-studio`, baseada no commit `5487069` do formulary v2.
+- Nova rota APS `/<locale>/rx/revisao/` entregue nos nove idiomas, com bancada responsiva em tres regioes: fila, evidencia/diff e decisao/proveniencia. Em telas menores, o fluxo vira etapas sequenciais.
+- A fila deterministica contem exatamente 177 alvos primarios: 25 conflitos ATC e 152 pares canonicos de interacao. Os sete conflitos de gravidade ficam vinculados aos pares, sem duplicacao. As 295 apresentacoes pendentes aparecem como proxima fila.
+- O piloto de dose abriu cinco candidatos respiratorios pediatricos da APS sem matematica pre-preenchida. Todos permanecem `reviewed-candidate`, com `productionAuthorized=false`, sem assinatura, sem envio ao WASM e sem promocao ao prontuario.
+- Contratos Darwin adicionados para tarefa, evidencia, decisao, consenso, candidato de dose e recibo. Exportacao de workflow cobre FHIR R4 `Task`, `Provenance` e `AuditEvent`.
+- A migracao Supabase `017_medication_review_studio.sql` cria candidaturas, credenciais administradas, tarefas, atribuicoes, evidencias, decisoes, consensos, eventos e overlays editoriais append-only. Claim, decisao cega, consenso, adjudicacao e credenciais passam por RPCs com RLS e constraints.
+- O overlay remoto v2 aceita apenas aliases comerciais, sinonimos de busca, resumo editorial, aconselhamento, referencias editoriais e traducoes. DCB/ATC, composicao, apresentacoes, RENAME, interacoes, contraindicacoes e doses continuam protegidos pelo bundle local.
+- O Supabase remoto ainda nao recebeu a migracao nem o seed porque credenciais administrativas nao estavam disponiveis nesta sessao. A UI entra em modo de auditoria local verificavel e nao simula persistencia.
+- Preview de producao atual: `http://127.0.0.1:3211/pt/rx/revisao/`.
+
+### Verificacao do Review Studio
+
+- `pnpm test:medication-review-studio`: passou com 177 tarefas, sete conflitos, 295 apresentacoes adiadas, cinco candidatos e zero autorizacao clinica.
+- A migracao foi aplicada com sucesso em PostgreSQL 16 temporario, incluindo roles e schemas de autenticacao simulados para validacao estrutural.
+- `pnpm type-check`: passou.
+- `pnpm verify`: 37/37 gates verdes, zero falhas e zero avisos.
+- `pnpm build:vercel`: passou com 19.425 paginas e a rota do Studio nos nove idiomas.
+- Playwright de producao: 6/6 em Desktop Chrome e Mobile Chrome, cobrindo fila, filtros, conflito, candidatura, regras de dose, nove locales, artefatos publicos e ausencia de overflow horizontal.
+- QA visual no viewport de 1274 x 717 confirmou continuidade com o bulário canônico e visibilidade simultanea de fila, evidencia e decisao.
+
 ## Marco Darwin Rx Canonical Formulary v2 - 2026-07-31
 
 - Branch isolada: `codex/darwin-rx-canonical-formulary-v2`, baseada exatamente em `451f0d3` e empilhada sobre o PR #3.

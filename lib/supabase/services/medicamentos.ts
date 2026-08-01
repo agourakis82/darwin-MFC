@@ -20,9 +20,11 @@ import {
 import { convertMedicamentoRowToMedicamento } from '@/lib/supabase/transforms/medicamentos';
 import {
   applyMedicationEditorialOverlay,
+  applyMedicationEditorialOverlaysV2,
   mergeMedicamentoCatalogs,
   toMedicationEditorialOverlay,
 } from '@/lib/supabase/merge-medicamentos';
+import { getMedicationEditorialOverlaysV2 } from './medication-editorial-overlays';
 
 const getLocalMedicamentosSUS = () =>
   medicamentosConsolidados.filter(
@@ -49,10 +51,12 @@ export async function getMedicamentos(): Promise<Medicamento[]> {
     return medicamentosConsolidados;
   }
 
-  return mergeMedicamentoCatalogs(
+  const merged = mergeMedicamentoCatalogs(
     medicamentosConsolidados,
     data.map(convertMedicamentoRowToMedicamento)
   );
+  const overlays = await getMedicationEditorialOverlaysV2(supabase as any, merged.map(item => item.id));
+  return applyMedicationEditorialOverlaysV2(merged, overlays);
 }
 
 /**
@@ -76,10 +80,12 @@ export async function getMedicamentoById(id: string): Promise<Medicamento | null
     return localMedication;
   }
 
-  return applyMedicationEditorialOverlay(
+  const merged = applyMedicationEditorialOverlay(
     localMedication,
     toMedicationEditorialOverlay(convertMedicamentoRowToMedicamento(data)),
   );
+  const overlays = await getMedicationEditorialOverlaysV2(supabase as any, [id]);
+  return applyMedicationEditorialOverlaysV2([merged], overlays)[0];
 }
 
 /**
@@ -101,10 +107,12 @@ export async function getMedicamentosByClasse(classe: string): Promise<Medicamen
     return getLocalMedicamentosByClasse(classe);
   }
 
-  return mergeMedicamentoCatalogs(
+  const merged = mergeMedicamentoCatalogs(
     getLocalMedicamentosByClasse(classe),
     data.map(convertMedicamentoRowToMedicamento)
   );
+  const overlays = await getMedicationEditorialOverlaysV2(supabase as any, merged.map(item => item.id));
+  return applyMedicationEditorialOverlaysV2(merged, overlays);
 }
 
 /**
@@ -130,10 +138,12 @@ export async function searchMedicamentos(query: string): Promise<Medicamento[]> 
     return searchLocalMedicamentos(query);
   }
 
-  return mergeMedicamentoCatalogs(
+  const merged = mergeMedicamentoCatalogs(
     searchLocalMedicamentos(query),
     data.map(convertMedicamentoRowToMedicamento)
   ).slice(0, 50);
+  const overlays = await getMedicationEditorialOverlaysV2(supabase as any, merged.map(item => item.id));
+  return applyMedicationEditorialOverlaysV2(merged, overlays);
 }
 
 /**
@@ -155,10 +165,12 @@ export async function getMedicamentosSUS(): Promise<Medicamento[]> {
     return getLocalMedicamentosSUS();
   }
 
-  return mergeMedicamentoCatalogs(
+  const merged = mergeMedicamentoCatalogs(
     getLocalMedicamentosSUS(),
     data.map(convertMedicamentoRowToMedicamento)
   );
+  const overlays = await getMedicationEditorialOverlaysV2(supabase as any, merged.map(item => item.id));
+  return applyMedicationEditorialOverlaysV2(merged, overlays);
 }
 
 /**
