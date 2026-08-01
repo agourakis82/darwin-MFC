@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "darwin.medication-change-impact-report.v1",
+  "graphSha256": "b363accdd5592b5b0e42a502767d7ddda6562e34f842783e425057f70599500b",
+  "changedNodeIds": [
+    "rxeg-000f7699a15a699455ceed45494d5c9d51e1a4a37e9271421a2ffeec08a0c246"
+  ],
+  "staleDescendantIds": [
+    "rxeg-32f1ddcc13fbaf1f9cc854596d5761a1bfb90f3caf85b2afc7f6ea6bdcb0188e",
+    "rxeg-4a7f3496e72c6c4e0c3093a78c493ce6374686f4bf992359b36e62766c855917",
+    "rxeg-5355550716be17916466ab809da3f2f50b3a727dbad73b0cb4212bd5a534d7db",
+    "rxeg-5e08c17aac067a22db7d51a904ce77a0b59e005ec4a960c6c819663710bc4c29",
+    "rxeg-616707cf7d875980a9dc16cdd918dbe61d68f8cd9c5ef6754aec86e3aa7fe3fa",
+    "rxeg-79d632d94ffa53dbdcd3baf612f85d0e27be2e57707204a84a9195776f8685fb",
+    "rxeg-deb51e0d57ed5b155fb476777c65761615616b264c60e0ff560e1b28fa90bb41",
+    "rxeg-f4878fa39b767e4400a1f4709ff84680737e307a86f2e4b2de173ac79efb0920"
+  ],
+  "affectedArtifactIds": [
+    "rxenv-dose-candidate-salbutamol-asma-pediatrica"
+  ],
+  "disposition": "REFUSE",
+  "reason": "evidence-descendant-stale"
+}

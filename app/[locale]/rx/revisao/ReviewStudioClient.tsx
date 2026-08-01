@@ -6,6 +6,7 @@ import {
   AlertTriangle,
   ArrowRight,
   BadgeCheck,
+  Binary,
   BookOpenCheck,
   Check,
   ChevronRight,
@@ -23,6 +24,7 @@ import {
   LockKeyhole,
   LogIn,
   Pill,
+  Play,
   Search,
   Send,
   ShieldAlert,
@@ -34,6 +36,9 @@ import {
 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import reviewSeedData from '@/public/medication-safety/medication-review-seed.json';
+import envelopeArtifactData from '@/public/medication-envelope/medication-envelope-artifacts.json';
+import envelopeBenchmarkData from '@/public/medication-envelope/medication-envelope-benchmark.json';
+import envelopeReceiptData from '@/public/medication-envelope/medication-assurance.receipt.json';
 import type {
   MedicationDoseRuleCandidateV2,
   MedicationEvidenceSubmissionV1,
@@ -42,6 +47,11 @@ import type {
   MedicationReviewSeedV1,
   MedicationReviewTaskV1,
 } from '@/lib/medication-safety/review-types';
+import type {
+  MedicationAssuranceReceiptV1,
+  MedicationEnvelopeArtifactBundleV1,
+  MedicationEnvelopeBenchmarkV1,
+} from '@/lib/medication-envelope';
 import {
   claimMedicationReviewTask,
   getMedicationReviewSession,
@@ -54,8 +64,11 @@ import {
 } from '@/lib/supabase/services/medication-review';
 
 const seed = reviewSeedData as unknown as MedicationReviewSeedV1;
+const envelopeArtifacts = envelopeArtifactData as unknown as MedicationEnvelopeArtifactBundleV1;
+const envelopeBenchmark = envelopeBenchmarkData as unknown as MedicationEnvelopeBenchmarkV1;
+const envelopeReceipt = envelopeReceiptData as unknown as MedicationAssuranceReceiptV1;
 
-type StudioTab = 'queue' | 'dose' | 'application';
+type StudioTab = 'queue' | 'dose' | 'envelope' | 'application';
 type MobileStage = 'queue' | 'evidence' | 'decision';
 
 const CORE_COPY: Record<string, {
@@ -66,16 +79,17 @@ const CORE_COPY: Record<string, {
   decision: string;
   apply: string;
   doses: string;
+  envelope: string;
 }> = {
-  pt: { title: 'Darwin Rx Review Studio', subtitle: 'Evidência rastreável, revisão independente e consenso sem ativação clínica.', queue: 'Fila', evidence: 'Evidência', decision: 'Decisão', apply: 'Candidatura', doses: 'Regras de dose' },
-  en: { title: 'Darwin Rx Review Studio', subtitle: 'Traceable evidence, independent review, and consensus without clinical activation.', queue: 'Queue', evidence: 'Evidence', decision: 'Decision', apply: 'Application', doses: 'Dose rules' },
-  es: { title: 'Darwin Rx Review Studio', subtitle: 'Evidencia trazable, revisión independiente y consenso sin activación clínica.', queue: 'Cola', evidence: 'Evidencia', decision: 'Decisión', apply: 'Candidatura', doses: 'Reglas de dosis' },
-  fr: { title: 'Darwin Rx Review Studio', subtitle: 'Preuves traçables, révision indépendante et consensus sans activation clinique.', queue: 'File', evidence: 'Preuve', decision: 'Décision', apply: 'Candidature', doses: 'Règles de dose' },
-  ru: { title: 'Darwin Rx Review Studio', subtitle: 'Проверяемые источники, независимая оценка и консенсус без клинической активации.', queue: 'Очередь', evidence: 'Данные', decision: 'Решение', apply: 'Заявка', doses: 'Дозирование' },
-  ar: { title: 'Darwin Rx Review Studio', subtitle: 'أدلة قابلة للتتبع ومراجعة مستقلة دون تفعيل سريري.', queue: 'قائمة', evidence: 'الأدلة', decision: 'القرار', apply: 'الطلب', doses: 'قواعد الجرعات' },
-  zh: { title: 'Darwin Rx Review Studio', subtitle: '可追溯证据、独立审查与不触发临床启用的共识。', queue: '队列', evidence: '证据', decision: '决定', apply: '申请', doses: '剂量规则' },
-  el: { title: 'Darwin Rx Review Studio', subtitle: 'Ιχνηλάσιμα στοιχεία, ανεξάρτητη κρίση και συναίνεση χωρίς κλινική ενεργοποίηση.', queue: 'Ουρά', evidence: 'Στοιχεία', decision: 'Απόφαση', apply: 'Αίτηση', doses: 'Κανόνες δόσης' },
-  hi: { title: 'Darwin Rx Review Studio', subtitle: 'ट्रेस योग्य साक्ष्य, स्वतंत्र समीक्षा और बिना क्लिनिकल सक्रियण के सहमति।', queue: 'कतार', evidence: 'साक्ष्य', decision: 'निर्णय', apply: 'आवेदन', doses: 'खुराक नियम' },
+  pt: { title: 'Darwin Rx Review Studio', subtitle: 'Evidência rastreável, revisão independente e consenso sem ativação clínica.', queue: 'Fila', evidence: 'Evidência', decision: 'Decisão', apply: 'Candidatura', doses: 'Regras de dose', envelope: 'Envelopes' },
+  en: { title: 'Darwin Rx Review Studio', subtitle: 'Traceable evidence, independent review, and consensus without clinical activation.', queue: 'Queue', evidence: 'Evidence', decision: 'Decision', apply: 'Application', doses: 'Dose rules', envelope: 'Envelopes' },
+  es: { title: 'Darwin Rx Review Studio', subtitle: 'Evidencia trazable, revisión independiente y consenso sin activación clínica.', queue: 'Cola', evidence: 'Evidencia', decision: 'Decisión', apply: 'Candidatura', doses: 'Reglas de dosis', envelope: 'Envelopes' },
+  fr: { title: 'Darwin Rx Review Studio', subtitle: 'Preuves traçables, révision indépendante et consensus sans activation clinique.', queue: 'File', evidence: 'Preuve', decision: 'Décision', apply: 'Candidature', doses: 'Règles de dose', envelope: 'Enveloppes' },
+  ru: { title: 'Darwin Rx Review Studio', subtitle: 'Проверяемые источники, независимая оценка и консенсус без клинической активации.', queue: 'Очередь', evidence: 'Данные', decision: 'Решение', apply: 'Заявка', doses: 'Дозирование', envelope: 'Ограничения' },
+  ar: { title: 'Darwin Rx Review Studio', subtitle: 'أدلة قابلة للتتبع ومراجعة مستقلة دون تفعيل سريري.', queue: 'قائمة', evidence: 'الأدلة', decision: 'القرار', apply: 'الطلب', doses: 'قواعد الجرعات', envelope: 'النطاقات' },
+  zh: { title: 'Darwin Rx Review Studio', subtitle: '可追溯证据、独立审查与不触发临床启用的共识。', queue: '队列', evidence: '证据', decision: '决定', apply: '申请', doses: '剂量规则', envelope: '约束范围' },
+  el: { title: 'Darwin Rx Review Studio', subtitle: 'Ιχνηλάσιμα στοιχεία, ανεξάρτητη κρίση και συναίνεση χωρίς κλινική ενεργοποίηση.', queue: 'Ουρά', evidence: 'Στοιχεία', decision: 'Απόφαση', apply: 'Αίτηση', doses: 'Κανόνες δόσης', envelope: 'Περιορισμοί' },
+  hi: { title: 'Darwin Rx Review Studio', subtitle: 'ट्रेस योग्य साक्ष्य, स्वतंत्र समीक्षा और बिना क्लिनिकल सक्रियण के सहमति।', queue: 'कतार', evidence: 'साक्ष्य', decision: 'निर्णय', apply: 'आवेदन', doses: 'खुराक नियम', envelope: 'सीमाएँ' },
 };
 
 const RISK_LABEL = { critical: 'Crítico', high: 'Alto', routine: 'Rotina' } as const;
@@ -642,6 +656,158 @@ function DosePanel({
   );
 }
 
+function EnvelopePanel() {
+  const [selectedId, setSelectedId] = useState(envelopeArtifacts.artifacts[0]?.artifactId ?? '');
+  const [scenario, setScenario] = useState<MedicationEnvelopeBenchmarkV1['cases'][number]['scenario']>('WITHIN_FIXTURE');
+  const [executed, setExecuted] = useState(false);
+  const selected = envelopeArtifacts.artifacts.find(artifact => artifact.artifactId === selectedId)
+    ?? envelopeArtifacts.artifacts[0];
+  const selectedCase = envelopeBenchmark.cases.find(item => item.artifactId === selected?.artifactId && item.scenario === scenario);
+  const engineeringDisposition = selectedCase
+    ? (['REFUSE', 'BLOCK', 'REVIEW', 'WITHIN_REVIEWED_ENVELOPE'] as const)[selectedCase.expectedEngineeringOutput[0]]
+    : 'REFUSE';
+  const gateRows = [
+    ['Grafo Merkle', envelopeReceipt.gates.graphIntegrity && envelopeReceipt.gates.graphCycleFree],
+    ['Compilador source-fresh', envelopeReceipt.gates.compilerReconciled],
+    ['Paridade nativo/WASM', envelopeReceipt.gates.nativeWasmExactParity],
+    ['Provas cvc5 + Z3 + Lean', envelopeReceipt.gates.solverAgreement && envelopeReceipt.gates.leanSemanticsVerified],
+    ['Credencial do piloto', envelopeReceipt.gates.pilotCredentialKeyAvailable],
+    ['Dupla revisão', envelopeArtifacts.artifacts.every(artifact => artifact.reviewStatus === 'PILOT_APPROVED')],
+  ] as const;
+  const waveLabel = (artifactId: string) => {
+    if (artifactId.includes('high-risk')) return 'Alto risco';
+    if (artifactId.includes('dose-candidate')) return 'Pediatria APS';
+    return 'Interação crítica';
+  };
+
+  useEffect(() => { setExecuted(false); }, [selectedId, scenario]);
+  if (!selected || !selectedCase) return null;
+
+  return (
+    <div className="mx-auto max-w-[1680px]" data-testid="medication-envelope-studio">
+      <div className="grid border-b border-white/10 bg-black/10 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="border-b border-white/10 px-4 py-3 sm:border-r xl:border-b-0"><p className="text-[10px] uppercase text-zinc-600">Grafo vivo</p><p className="mt-1 text-lg font-semibold text-white">115 nós</p></div>
+        <div className="border-b border-white/10 px-4 py-3 xl:border-b-0 xl:border-r"><p className="text-[10px] uppercase text-zinc-600">Artefatos</p><p className="mt-1 text-lg font-semibold text-cyan-200">17 candidatos</p></div>
+        <div className="border-b border-white/10 px-4 py-3 sm:border-r sm:border-b-0"><p className="text-[10px] uppercase text-zinc-600">Benchmark</p><p className="mt-1 text-lg font-semibold text-emerald-200">340 vinhetas</p></div>
+        <div className="px-4 py-3"><p className="text-[10px] uppercase text-zinc-600">Runtime clínico</p><p className="mt-1 text-lg font-semibold text-red-200">REFUSE</p></div>
+      </div>
+
+      <div className="grid min-h-[700px] xl:grid-cols-[270px_minmax(420px,1fr)_310px]">
+        <aside className="border-b border-white/10 bg-black/10 xl:border-b-0 xl:border-r">
+          <div className="border-b border-white/10 px-4 py-3">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-200"><Binary className="h-4 w-4 text-cyan-300" />Constraint IR v1</p>
+            <p className="mt-1 font-mono text-[9px] text-zinc-600">{envelopeReceipt.hashes.evidenceGraphMerkleRootSha256.slice(0, 18)}</p>
+          </div>
+          <div className="max-h-[650px] overflow-y-auto">
+            {envelopeArtifacts.artifacts.map(artifact => (
+              <button
+                key={artifact.artifactId}
+                type="button"
+                onClick={() => setSelectedId(artifact.artifactId)}
+                className={`w-full border-b border-white/[0.07] px-4 py-3 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-cyan-400 ${artifact.artifactId === selected.artifactId ? 'bg-cyan-400/[0.09]' : 'hover:bg-white/[0.035]'}`}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[9px] font-semibold uppercase text-amber-300">{waveLabel(artifact.artifactId)}</span>
+                  <span className="font-mono text-[9px] text-zinc-700">{artifact.constraints.length} IR</span>
+                </div>
+                <p className="mt-1 line-clamp-2 text-xs font-semibold text-zinc-200">{artifact.artifactId.replace(/^rxenv-/, '').replaceAll('-', ' ')}</p>
+              </button>
+            ))}
+          </div>
+        </aside>
+
+        <main className="min-w-0 border-b border-white/10 px-4 py-5 lg:px-6 xl:border-b-0 xl:border-r">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div className="min-w-0">
+              <span className="text-[10px] font-semibold uppercase text-cyan-300">{waveLabel(selected.artifactId)}</span>
+              <h2 className="mt-2 break-words text-xl font-semibold text-white">{selected.artifactId.replace(/^rxenv-/, '').replaceAll('-', ' ')}</h2>
+              <p className="mt-2 text-xs leading-relaxed text-zinc-500">{selected.population}</p>
+            </div>
+            <span className="inline-flex shrink-0 items-center gap-2 rounded-md border border-amber-400/25 bg-amber-400/[0.06] px-3 py-2 text-xs font-semibold text-amber-200"><FileSearch className="h-4 w-4" />EVIDENCE_REQUIRED</span>
+          </div>
+
+          <section className="mt-6 border-y border-white/10">
+            {selected.constraints.map((constraint, index) => (
+              <div key={constraint.id} className="grid gap-2 border-b border-white/[0.07] py-3 last:border-b-0 sm:grid-cols-[34px_1fr_auto] sm:items-center">
+                <span className="grid h-7 w-7 place-items-center rounded-md bg-white/[0.05] font-mono text-[10px] text-zinc-500">{index + 1}</span>
+                <div>
+                  <p className="text-xs font-semibold text-zinc-200">{constraint.label}</p>
+                  <p className="mt-1 font-mono text-[9px] text-zinc-600">{constraint.id}</p>
+                </div>
+                <span className="w-fit rounded-md border border-white/10 px-2 py-1 text-[9px] font-semibold text-zinc-400">{constraint.kind} · {constraint.severity}</span>
+              </div>
+            ))}
+          </section>
+
+          <section className="mt-6">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-white">Vinheta sintética</p>
+                <p className="mt-1 text-[10px] text-zinc-600">Sem contexto real e sem persistência de valores</p>
+              </div>
+              <span className="font-mono text-[9px] text-zinc-600">{selectedCase.id}</span>
+            </div>
+            <div className="mt-3 grid grid-cols-2 gap-2 lg:grid-cols-4">
+              {([
+                ['WITHIN_FIXTURE', 'Dentro'],
+                ['SINGLE_VIOLATION', '1 violação'],
+                ['COMBINED_VIOLATION', 'Combinada'],
+                ['MISSING_CONTEXT', 'Contexto ausente'],
+              ] as const).map(([value, label]) => (
+                <button key={value} type="button" onClick={() => setScenario(value)} className={`min-h-10 rounded-md border px-2 text-[10px] font-semibold ${scenario === value ? 'border-cyan-300 bg-cyan-300 text-[#041014]' : 'border-white/10 text-zinc-400 hover:text-white'}`}>{label}</button>
+              ))}
+            </div>
+            <button type="button" onClick={() => setExecuted(true)} className="mt-3 inline-flex h-11 w-full items-center justify-center gap-2 rounded-md bg-cyan-300 px-4 text-sm font-semibold text-[#041014]"><Play className="h-4 w-4" />Executar gate sintético</button>
+          </section>
+
+          {executed ? (
+            <section className="mt-4 grid border border-white/10 sm:grid-cols-2" role="status" data-testid="envelope-result">
+              <div className="border-b border-white/10 p-4 sm:border-b-0 sm:border-r">
+                <p className="text-[10px] font-semibold uppercase text-zinc-600">Oráculo de engenharia</p>
+                <p className="mt-2 break-words text-sm font-semibold text-cyan-200">{engineeringDisposition}</p>
+                <p className="mt-2 font-mono text-[9px] text-zinc-600">[{selectedCase.expectedEngineeringOutput.join(', ')}]</p>
+              </div>
+              <div className="p-4">
+                <p className="text-[10px] font-semibold uppercase text-zinc-600">Disposição clínica</p>
+                <p className="mt-2 text-sm font-semibold text-red-200">REFUSE</p>
+                <p className="mt-2 text-[10px] leading-relaxed text-zinc-500">Sem consenso humano, credencial vinculada ou promoção clínica do artefato.</p>
+              </div>
+            </section>
+          ) : null}
+        </main>
+
+        <aside className="bg-black/10 px-4 py-5">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-200"><ShieldCheck className="h-4 w-4 text-emerald-300" />Assurance receipt</p>
+              <p className="mt-1 font-mono text-[9px] text-zinc-600">{envelopeReceipt.receiptId}</p>
+            </div>
+            <span className="rounded-md border border-red-400/25 bg-red-400/[0.06] px-2 py-1 text-[10px] font-semibold text-red-200">REFUSE</span>
+          </div>
+          <div className="mt-5 border-y border-white/10">
+            {gateRows.map(([label, passed]) => (
+              <div key={label} className="flex min-h-11 items-center justify-between gap-3 border-b border-white/[0.07] text-xs last:border-b-0">
+                <span className="text-zinc-400">{label}</span>
+                <span className={`inline-flex items-center gap-1.5 font-semibold ${passed ? 'text-emerald-300' : 'text-red-200'}`}>{passed ? <Check className="h-3.5 w-3.5" /> : <X className="h-3.5 w-3.5" />}{passed ? 'PASS' : 'REFUSE'}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mt-5 space-y-2">
+            <p className="text-[10px] font-semibold uppercase text-zinc-600">Bloqueios ativos</p>
+            {envelopeReceipt.refusalReasons.slice(0, 6).map(reason => (
+              <div key={reason} className="flex gap-2 border-l-2 border-red-400/35 py-1 pl-3 text-[10px] leading-relaxed text-zinc-400"><LockKeyhole className="mt-0.5 h-3 w-3 shrink-0 text-red-300" />{reason}</div>
+            ))}
+          </div>
+          <div className="mt-5 border-t border-white/10 pt-4">
+            <p className="text-[10px] uppercase text-zinc-600">WASM</p>
+            <p className="mt-1 break-all font-mono text-[9px] text-zinc-500">{envelopeReceipt.hashes.wasmSha256}</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
 export default function ReviewStudioClient() {
   const locale = useLocale();
   const copy = CORE_COPY[locale] ?? CORE_COPY.pt;
@@ -727,6 +893,7 @@ export default function ReviewStudioClient() {
             {([
               ['queue', copy.queue, ListFilter],
               ['dose', copy.doses, Pill],
+              ['envelope', copy.envelope, Binary],
               ['application', copy.apply, CircleUserRound],
             ] as const).map(([value, label, Icon]) => (
               <button key={value} type="button" onClick={() => setTab(value)} className={`relative flex h-12 shrink-0 items-center gap-2 px-4 text-xs font-semibold ${tab === value ? 'text-cyan-200' : 'text-zinc-500 hover:text-zinc-200'}`}>
@@ -746,6 +913,7 @@ export default function ReviewStudioClient() {
 
       {tab === 'application' ? <ApplicationPanel online={online} authenticated={authenticated} /> : null}
       {tab === 'dose' ? <DosePanel candidates={seed.doseRuleCandidates} tasks={doseTasks} online={online} authenticated={authenticated} profile={profile} /> : null}
+      {tab === 'envelope' ? <EnvelopePanel /> : null}
       {tab === 'queue' && selectedTask ? (
         <>
           <div className="border-b border-white/10 px-3 py-2 xl:hidden">
@@ -789,7 +957,7 @@ export default function ReviewStudioClient() {
       <footer className="border-t border-white/10 px-4 py-3 text-[10px] text-zinc-600 lg:px-6">
         <div className="mx-auto flex max-w-[1680px] flex-wrap items-center justify-between gap-2">
           <span className="inline-flex items-center gap-2"><Hash className="h-3 w-3" />Recibo do Studio vinculado ao bundle canônico</span>
-          <span>0 interações promovidas · 0 regras de produção · assinatura ausente</span>
+          <span>17 envelopes candidatos · 340 vinhetas sintéticas · 0 ativações clínicas</span>
         </div>
       </footer>
     </div>

@@ -1,0 +1,2184 @@
+{
+  "schemaVersion": "darwin.medication-envelope-prior-art-search-log.v1",
+  "searchOpenedAt": "2026-08-01T21:55:01.425Z",
+  "status": "OPEN",
+  "claimStatus": "NO_PIONEERING_CLAIM",
+  "protocol": "PRISMA-S-inspired discovery search; not a systematic review, freedom-to-operate analysis, or legal novelty opinion.",
+  "databases": [
+    "PubMed",
+    "Europe PMC",
+    "Crossref",
+    "IEEE Xplore",
+    "ACM Digital Library",
+    "arXiv",
+    "WIPO PATENTSCOPE",
+    "Espacenet",
+    "Google Patents",
+    "INPI Brasil"
+  ],
+  "queries": [
+    {
+      "id": "RXE-01",
+      "concept": "proof-carrying prescribing",
+      "query": "\"proof-carrying\" AND (prescribing OR prescription OR medication)",
+      "databases": [
+        {
+          "name": "Crossref",
+          "mode": "api",
+          "searchUrl": "https://api.crossref.org/works?query.bibliographic=%22proof-carrying%22+AND+%28prescribing+OR+prescription+OR+medication%29&rows=25&select=DOI%2Ctitle%2Cpublished%2Ctype%2CURL",
+          "error": null,
+          "resultCount": 287102,
+          "records": [
+            {
+              "title": "Prescription writing and record keeping",
+              "year": 2005,
+              "doi": "10.4324/9780203987704-34",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203987704-34"
+            },
+            {
+              "title": "Prescription writing and record keeping",
+              "year": 2013,
+              "doi": "10.4324/9780203111826-33",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203111826-33"
+            },
+            {
+              "title": "Ethics of Prescription Medication Access, Innovation, and Prescribing",
+              "year": 2019,
+              "doi": "10.1001/amajethics.2019.627",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1001/amajethics.2019.627"
+            },
+            {
+              "title": "Prescription writing and record keeping",
+              "year": 2021,
+              "doi": "10.4324/9781003030430-29",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9781003030430-29"
+            },
+            {
+              "title": "Prescription medication sharing for non-recreational purposes: A systematic review of the literature",
+              "year": 2023,
+              "doi": "10.1370/afm.22.s1.5269",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1370/afm.22.s1.5269"
+            },
+            {
+              "title": "Prevalence and risk factors for prescription medication sharing in the UK general population",
+              "year": 2023,
+              "doi": "10.1370/afm.22.s1.5278",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1370/afm.22.s1.5278"
+            },
+            {
+              "title": "Study of prescribing errors of two different prescription systems: pre-printed prescription from historical medication and hand-written prescription",
+              "year": 2022,
+              "doi": "10.29090/psa.2022.06.22.141",
+              "type": "journal-article",
+              "url": "https://doi.org/10.29090/psa.2022.06.22.141"
+            },
+            {
+              "title": "Medication errors: prescribing faults and prescription errors",
+              "year": 2009,
+              "doi": "10.1111/j.1365-2125.2009.03425.x",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1111/j.1365-2125.2009.03425.x"
+            },
+            {
+              "title": "Proof-Carrying Survivability",
+              "year": 2013,
+              "doi": "10.21236/ada582166",
+              "type": "report",
+              "url": "https://doi.org/10.21236/ada582166"
+            },
+            {
+              "title": "Prescribing and Monitoring Medication",
+              "year": 2015,
+              "doi": "10.1201/b18773-9",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1201/b18773-9"
+            },
+            {
+              "title": "Analisis Potensi Kejadian Medication Errors pada Fase Prescribing dalam Pelayanan Resep Pasien Rawat Jalan di Rumah Sakit Bhayangkara Brimob",
+              "year": 2025,
+              "doi": "10.35760/jff.2025.v3i2.136",
+              "type": "journal-article",
+              "url": "https://doi.org/10.35760/jff.2025.v3i2.136"
+            },
+            {
+              "title": "Medication allergies",
+              "year": 2005,
+              "doi": "10.4324/9780203987704-30",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203987704-30"
+            },
+            {
+              "title": "Starting medication",
+              "year": 2005,
+              "doi": "10.4324/9780203987704-15",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203987704-15"
+            },
+            {
+              "title": "Stopping medication",
+              "year": 2013,
+              "doi": "10.4324/9780203111826-16",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203111826-16"
+            },
+            {
+              "title": "Medication allergies",
+              "year": 2013,
+              "doi": "10.4324/9780203111826-29",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203111826-29"
+            },
+            {
+              "title": "Stopping medication",
+              "year": 2005,
+              "doi": "10.4324/9780203987704-18",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203987704-18"
+            },
+            {
+              "title": "Starting medication",
+              "year": 2013,
+              "doi": "10.4324/9780203111826-13",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203111826-13"
+            },
+            {
+              "title": "Medication and psychotherapy",
+              "year": 2005,
+              "doi": "10.4324/9780203987704-17",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203987704-17"
+            },
+            {
+              "title": "PCR207 The Role of Telemedicine in Prescribing Medication in Spain: Findings From a Physicians’ Prescription Panel",
+              "year": 2024,
+              "doi": "10.1016/j.jval.2024.10.3449",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1016/j.jval.2024.10.3449"
+            },
+            {
+              "title": "Write a prescription",
+              "year": 2003,
+              "doi": "10.12968/npre.2003.1.1.11188",
+              "type": "journal-article",
+              "url": "https://doi.org/10.12968/npre.2003.1.1.11188"
+            },
+            {
+              "title": "Medication of sleep problems",
+              "year": 2013,
+              "doi": "10.4324/9780203111826-22",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203111826-22"
+            },
+            {
+              "title": "Re: Temporal Trends in Anticholinergic Medication Prescription in Older People: Repeated Cross-Sectional Analysis of Population Prescribing Data",
+              "year": 2015,
+              "doi": "10.1016/j.juro.2015.04.043",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1016/j.juro.2015.04.043"
+            },
+            {
+              "title": "Prescribing Medication",
+              "year": null,
+              "doi": "10.1007/978-3-540-73142-9_13",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-540-73142-9_13"
+            },
+            {
+              "title": "Electronic Prescribing and Medication Administration Record Systems",
+              "year": 2015,
+              "doi": "10.1201/b18773-26",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1201/b18773-26"
+            },
+            {
+              "title": "Medication of sleep problems",
+              "year": 2005,
+              "doi": "10.4324/9780203987704-24",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203987704-24"
+            }
+          ]
+        },
+        {
+          "name": "Europe PMC",
+          "mode": "api",
+          "searchUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22proof-carrying%22+AND+%28prescribing+OR+prescription+OR+medication%29&format=json&pageSize=25&resultType=core",
+          "error": null,
+          "resultCount": 0,
+          "records": []
+        },
+        {
+          "name": "PubMed",
+          "mode": "api-identifiers",
+          "searchUrl": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22proof-carrying%22+AND+%28prescribing+OR+prescription+OR+medication%29&retmode=json&retmax=25",
+          "error": null,
+          "resultCount": 0,
+          "records": []
+        },
+        {
+          "name": "IEEE Xplore",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=%22proof-carrying%22%20AND%20(prescribing%20OR%20prescription%20OR%20medication)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "ACM Digital Library",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://dl.acm.org/action/doSearch?AllField=%22proof-carrying%22%20AND%20(prescribing%20OR%20prescription%20OR%20medication)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "arXiv",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://arxiv.org/search/?query=%22proof-carrying%22%20AND%20(prescribing%20OR%20prescription%20OR%20medication)&searchtype=all",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "WIPO PATENTSCOPE",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://patentscope.wipo.int/search/en/result.jsf?query=%22proof-carrying%22%20AND%20(prescribing%20OR%20prescription%20OR%20medication)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "Espacenet",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://worldwide.espacenet.com/patent/search?q=%22proof-carrying%22%20AND%20(prescribing%20OR%20prescription%20OR%20medication)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "Google Patents",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://patents.google.com/?q=%22proof-carrying%22%20AND%20(prescribing%20OR%20prescription%20OR%20medication)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "INPI Brasil",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://busca.inpi.gov.br/pePI/servlet/PatenteServletController?Action=SearchBasica&query=%22proof-carrying%22%20AND%20(prescribing%20OR%20prescription%20OR%20medication)",
+          "resultCount": null,
+          "records": []
+        }
+      ]
+    },
+    {
+      "id": "RXE-02",
+      "concept": "dose safety envelope",
+      "query": "\"dose safety envelope\" OR (dose AND \"safety envelope\")",
+      "databases": [
+        {
+          "name": "Crossref",
+          "mode": "api",
+          "searchUrl": "https://api.crossref.org/works?query.bibliographic=%22dose+safety+envelope%22+OR+%28dose+AND+%22safety+envelope%22%29&rows=25&select=DOI%2Ctitle%2Cpublished%2Ctype%2CURL",
+          "error": null,
+          "resultCount": 1193800,
+          "records": [
+            {
+              "title": "Envelope Simulation: A New Adaptive Method for Dose Optimization",
+              "year": 2020,
+              "doi": "10.1101/2020.03.09.983411",
+              "type": "posted-content",
+              "url": "https://doi.org/10.1101/2020.03.09.983411"
+            },
+            {
+              "title": "Safety of Single Dose Gentamicin Compared with Multiple Dose Regimens",
+              "year": 2016,
+              "doi": "10.26226/morressier.5731a407d462b8028d88c87a",
+              "type": "posted-content",
+              "url": "https://doi.org/10.26226/morressier.5731a407d462b8028d88c87a"
+            },
+            {
+              "title": "Automated driving system safety measurement part I :",
+              "year": 2021,
+              "doi": "10.6028/nist.sp.1900-301",
+              "type": "report",
+              "url": "https://doi.org/10.6028/nist.sp.1900-301"
+            },
+            {
+              "title": "Definition and means of maintaining the effluent stack monitors portion of the PFP safety envelope",
+              "year": 1997,
+              "doi": "10.2172/325690",
+              "type": "report",
+              "url": "https://doi.org/10.2172/325690"
+            },
+            {
+              "title": "Towards a Failsafe Flight Envelope Protection: The Recovery Shield",
+              "year": 2013,
+              "doi": "10.1080/09617353.2013.11690972",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1080/09617353.2013.11690972"
+            },
+            {
+              "title": "Vehicle Safety Envelope: A dynamic two-dimensional surrogate safety assessment approach for traffic conflict identification",
+              "year": 2026,
+              "doi": "10.1080/19439962.2026.2690506",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1080/19439962.2026.2690506"
+            },
+            {
+              "title": "The safety envelope: managing the safety culture",
+              "year": 1992,
+              "doi": "10.1109/hfpp.1992.283362",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/hfpp.1992.283362"
+            },
+            {
+              "title": "Definition and means of maintaining the criticality detectors and alarms portion of the PFP safety envelope",
+              "year": 1997,
+              "doi": "10.2172/10148662",
+              "type": "report",
+              "url": "https://doi.org/10.2172/10148662"
+            },
+            {
+              "title": "Definition and Means of Maintaining the Criticality Prevention Design Features Portion of the PFP Safety Envelope",
+              "year": 2000,
+              "doi": "10.2172/804257",
+              "type": "report",
+              "url": "https://doi.org/10.2172/804257"
+            },
+            {
+              "title": "Dose calculations",
+              "year": 2006,
+              "doi": "10.1016/b978-075066723-4/50035-8",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1016/b978-075066723-4/50035-8"
+            },
+            {
+              "title": "Dose Calculations",
+              "year": 2020,
+              "doi": "10.1016/b978-0-12-818326-7.00038-x",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1016/b978-0-12-818326-7.00038-x"
+            },
+            {
+              "title": "Security of Nuclear Facilities: The Envelope",
+              "year": 2017,
+              "doi": "10.4324/9781315272092-5",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9781315272092-5"
+            },
+            {
+              "title": "Definition and means of maintaining the room continuous air monitors portion of the PFP safety envelope",
+              "year": 2002,
+              "doi": "10.2172/808257",
+              "type": "report",
+              "url": "https://doi.org/10.2172/808257"
+            },
+            {
+              "title": "Automation, Lateral Wander, and Airfield Pavements: Engineered Wander — Optimal Commanded Offset Schedules and Their Safety Envelope",
+              "year": 2026,
+              "doi": "10.2139/ssrn.7044651",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.7044651"
+            },
+            {
+              "title": "Definition and means of maintaining the structural confinement features portion of the PFP safety envelope. Revision 1",
+              "year": 1997,
+              "doi": "10.2172/325438",
+              "type": "report",
+              "url": "https://doi.org/10.2172/325438"
+            },
+            {
+              "title": "Definition and Means of Maintaining the Criticality Prevention Design Features Portion of the PFP Safety Envelope",
+              "year": 2001,
+              "doi": "10.2172/807338",
+              "type": "report",
+              "url": "https://doi.org/10.2172/807338"
+            },
+            {
+              "title": "Definition and Means of Maintaining the Criticality Detectors and Alarms Portion of the PFP Safety Envelope",
+              "year": 1997,
+              "doi": "10.2172/341293",
+              "type": "report",
+              "url": "https://doi.org/10.2172/341293"
+            },
+            {
+              "title": "Definition and means of maintaining the supply ventilation system seismic shutdown portion of the PFP safety envelope",
+              "year": 1997,
+              "doi": "10.2172/325844",
+              "type": "report",
+              "url": "https://doi.org/10.2172/325844"
+            },
+            {
+              "title": "Criticality Safety Envelope for Receipt, Handling, and Storage of Transuranic Waste",
+              "year": 1998,
+              "doi": "10.2172/4869",
+              "type": "report",
+              "url": "https://doi.org/10.2172/4869"
+            },
+            {
+              "title": "May I Have the Envelope Please?",
+              "year": 2008,
+              "doi": "10.1097/pts.0b013e318179a20d",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1097/pts.0b013e318179a20d"
+            },
+            {
+              "title": "Natalizumab Kinetics and Dose Extension: Defining the Therapeutic Envelope (P06.174)",
+              "year": 2012,
+              "doi": "10.1212/wnl.78.1_meetingabstracts.p06.174",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1212/wnl.78.1_meetingabstracts.p06.174"
+            },
+            {
+              "title": "Shifting the Paradigm in Radiation Safety",
+              "year": 2012,
+              "doi": "10.2203/dose-response.11-056.doss",
+              "type": "journal-article",
+              "url": "https://doi.org/10.2203/dose-response.11-056.doss"
+            },
+            {
+              "title": "Transformer-Based Safety Envelope Identification for Hose-Drogue Aerial Refueling Docking",
+              "year": 2026,
+              "doi": "10.2139/ssrn.6842360",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.6842360"
+            },
+            {
+              "title": "Envelope and Phase Statistics of Large Waves",
+              "year": 2008,
+              "doi": "10.1115/omae2008-57129",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1115/omae2008-57129"
+            },
+            {
+              "title": "Low-dose UV-therapy: effectivity and safety aspects",
+              "year": null,
+              "doi": "10.5463/thesis.53",
+              "type": "dissertation",
+              "url": "https://doi.org/10.5463/thesis.53"
+            }
+          ]
+        },
+        {
+          "name": "Europe PMC",
+          "mode": "api",
+          "searchUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22dose+safety+envelope%22+OR+%28dose+AND+%22safety+envelope%22%29&format=json&pageSize=25&resultType=core",
+          "error": null,
+          "resultCount": 26,
+          "records": [
+            {
+              "title": "Safety-constrained evaluation of antibacterial multicomponent borate glasses.",
+              "year": 2026,
+              "doi": "10.1016/j.bbiosy.2026.100140",
+              "pmid": "42211032",
+              "url": "https://doi.org/10.1016/j.bbiosy.2026.100140"
+            },
+            {
+              "title": "Exercise as Medicine: Quantifying the Effects of Physical Activity on Fibromyalgia Pain-A Systematic Review and Meta-Analysis.",
+              "year": 2026,
+              "doi": "10.3390/brainsci16040365",
+              "pmid": "42041776",
+              "url": "https://doi.org/10.3390/brainsci16040365"
+            },
+            {
+              "title": "The Brain-Atrial Fibrillation-Recent Rehabilitation Axis: A Modern Approach.",
+              "year": 2026,
+              "doi": "10.3390/healthcare14060765",
+              "pmid": "41897218",
+              "url": "https://doi.org/10.3390/healthcare14060765"
+            },
+            {
+              "title": "Prophylactic transarterial embolization after endoscopic hemostasis in patients with non-variceal upper gastrointestinal bleeding - is it time to act?",
+              "year": 2026,
+              "doi": "10.3389/fradi.2026.1719448",
+              "pmid": "42006601",
+              "url": "https://doi.org/10.3389/fradi.2026.1719448"
+            },
+            {
+              "title": "Cardioplegia Strategies in Minimally Invasive Aortic Valve Replacement: An Inverse Probability of Treatment Weighting Analysis",
+              "year": 2026,
+              "doi": null,
+              "pmid": null,
+              "url": null
+            },
+            {
+              "title": "Emerging Thrombolysis Technologies in Vascular Thrombosis.",
+              "year": 2025,
+              "doi": "10.3390/jcm14217758",
+              "pmid": "41227154",
+              "url": "https://doi.org/10.3390/jcm14217758"
+            },
+            {
+              "title": "A Resource-Efficient, High-Dose, Gamified Neurorehabilitation Program for Chronic Stroke at Home: Retrospective Real-World Analysis.",
+              "year": 2025,
+              "doi": "10.2196/69335",
+              "pmid": "40638834",
+              "url": "https://doi.org/10.2196/69335"
+            },
+            {
+              "title": "Precision in Complexity: A Protocol-Driven Quantitative Anatomic Strategy for Giant Olfactory Groove Meningioma Resection in a High-Risk Geriatric Patient.",
+              "year": 2026,
+              "doi": "10.3390/diagnostics16010127",
+              "pmid": "41515621",
+              "url": "https://doi.org/10.3390/diagnostics16010127"
+            },
+            {
+              "title": "Aptamer-Functionalized Nanocarriers for Bone and Joint Diseases: Engineering Design Rules and Translational Roadmap.",
+              "year": 2026,
+              "doi": "10.1002/smsc.70294",
+              "pmid": "42125269",
+              "url": "https://doi.org/10.1002/smsc.70294"
+            },
+            {
+              "title": "Effect of ultrasound-guided fascia iliaca compartment block on pain management in hip fracture patients: A double-blind placebo-controlled randomized clinical trial.",
+              "year": 2025,
+              "doi": "10.1097/md.0000000000044622",
+              "pmid": "41054164",
+              "url": "https://doi.org/10.1097/md.0000000000044622"
+            },
+            {
+              "title": "Cohort profile: an observational population-based cohort study on COVID-19 vaccine effectiveness in the Netherlands - the VAccine Study COVID-19 (VASCO).",
+              "year": 2024,
+              "doi": "10.1136/bmjopen-2024-085388",
+              "pmid": "39401962",
+              "url": "https://doi.org/10.1136/bmjopen-2024-085388"
+            },
+            {
+              "title": "Thalamic sonication in chronic disorders of consciousness: a mechanistic single-arm clinical trial",
+              "year": 2026,
+              "doi": null,
+              "pmid": null,
+              "url": null
+            },
+            {
+              "title": "Mitochondrial priming in therapy-induced senescence: implications for CAR-T/NK immunosenolytic therapy.",
+              "year": 2025,
+              "doi": "10.3389/fimmu.2025.1695244",
+              "pmid": "41280927",
+              "url": "https://doi.org/10.3389/fimmu.2025.1695244"
+            },
+            {
+              "title": "Towards Clinical Trial Readiness: Optimization of a Parallel Robot for Lower Limb Rehabilitation.",
+              "year": 2025,
+              "doi": "10.3390/bioengineering13010026",
+              "pmid": "41595958",
+              "url": "https://doi.org/10.3390/bioengineering13010026"
+            },
+            {
+              "title": "Caliceal Fluid Temperature During High-Power Holmium Laser Lithotripsy in an In Vivo Porcine Model.",
+              "year": 2018,
+              "doi": "10.1089/end.2018.0395",
+              "pmid": "29905092",
+              "url": "https://doi.org/10.1089/end.2018.0395"
+            },
+            {
+              "title": "Disc-Toroid Hybrid Lipid Nanoparticles for Efficient Drug Encapsulation and Subcutaneous Delivery.",
+              "year": 2026,
+              "doi": "10.1002/smll.202600052",
+              "pmid": "41815035",
+              "url": "https://doi.org/10.1002/smll.202600052"
+            },
+            {
+              "title": "Neutrophil membrane-encapsulated nanosonosensitizer with ultrasound-reinforced ferroptosis in Pseudomonas aeruginosa pneumonia.",
+              "year": 2025,
+              "doi": "10.1186/s12951-025-03676-5",
+              "pmid": "41013695",
+              "url": "https://doi.org/10.1186/s12951-025-03676-5"
+            },
+            {
+              "title": "Next-generation smart ophthalmic biomaterials: From passive response to active interaction and closed-loop control.",
+              "year": 2026,
+              "doi": "10.1016/j.bioactmat.2025.10.037",
+              "pmid": "41234295",
+              "url": "https://doi.org/10.1016/j.bioactmat.2025.10.037"
+            },
+            {
+              "title": "A simulated model for fluid and tissue heating during pediatric laser lithotripsy.",
+              "year": 2020,
+              "doi": "10.1016/j.jpurol.2020.07.014",
+              "pmid": "32768343",
+              "url": "https://doi.org/10.1016/j.jpurol.2020.07.014"
+            },
+            {
+              "title": "Nanoparticle-Mediated Ferroptosis for Cancer Therapy: Mechanisms and Therapeutic Strategies.",
+              "year": 2025,
+              "doi": "10.2147/nsa.s550828",
+              "pmid": "41170180",
+              "url": "https://doi.org/10.2147/nsa.s550828"
+            },
+            {
+              "title": "Longitudinal Functional Assessment of Brain Injury Induced by High-Intensity Ultrasound Pulse Sequences.",
+              "year": 2019,
+              "doi": "10.1038/s41598-019-51876-5",
+              "pmid": "31664091",
+              "url": "https://doi.org/10.1038/s41598-019-51876-5"
+            },
+            {
+              "title": "ISOPT <i>Clinical</i> Hot Topic Panel Discussion on Ocular Drug Delivery.",
+              "year": 2019,
+              "doi": "10.1089/jop.2018.0138",
+              "pmid": "31259643",
+              "url": "https://doi.org/10.1089/jop.2018.0138"
+            },
+            {
+              "title": "Weighted-Ball Velocity Enhancement Programs for Baseball Pitchers: A Systematic Review.",
+              "year": 2019,
+              "doi": "10.1177/2325967118825469",
+              "pmid": "30800693",
+              "url": "https://doi.org/10.1177/2325967118825469"
+            },
+            {
+              "title": "Ultrasound Neuromodulation: A Review of Results, Mechanisms and Safety.",
+              "year": 2019,
+              "doi": "10.1016/j.ultrasmedbio.2018.12.015",
+              "pmid": "31109842",
+              "url": "https://doi.org/10.1016/j.ultrasmedbio.2018.12.015"
+            },
+            {
+              "title": "Artificial Intelligence Applied to Battery Research: Hype or Reality?",
+              "year": 2022,
+              "doi": "10.1021/acs.chemrev.1c00108",
+              "pmid": "34529918",
+              "url": "https://doi.org/10.1021/acs.chemrev.1c00108"
+            }
+          ]
+        },
+        {
+          "name": "PubMed",
+          "mode": "api-identifiers",
+          "searchUrl": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22dose+safety+envelope%22+OR+%28dose+AND+%22safety+envelope%22%29&retmode=json&retmax=25",
+          "error": null,
+          "resultCount": 407,
+          "records": [
+            {
+              "pmid": "42531807",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42531807/"
+            },
+            {
+              "pmid": "42528156",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42528156/"
+            },
+            {
+              "pmid": "42506662",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42506662/"
+            },
+            {
+              "pmid": "42460419",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42460419/"
+            },
+            {
+              "pmid": "42429630",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42429630/"
+            },
+            {
+              "pmid": "42420790",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42420790/"
+            },
+            {
+              "pmid": "42393766",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42393766/"
+            },
+            {
+              "pmid": "42341523",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42341523/"
+            },
+            {
+              "pmid": "42193085",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42193085/"
+            },
+            {
+              "pmid": "42167201",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42167201/"
+            },
+            {
+              "pmid": "42140500",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42140500/"
+            },
+            {
+              "pmid": "41985546",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41985546/"
+            },
+            {
+              "pmid": "41955926",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41955926/"
+            },
+            {
+              "pmid": "41922984",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41922984/"
+            },
+            {
+              "pmid": "41827471",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41827471/"
+            },
+            {
+              "pmid": "41820674",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41820674/"
+            },
+            {
+              "pmid": "41806759",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41806759/"
+            },
+            {
+              "pmid": "41747463",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41747463/"
+            },
+            {
+              "pmid": "41587557",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41587557/"
+            },
+            {
+              "pmid": "41579705",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41579705/"
+            },
+            {
+              "pmid": "41271616",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41271616/"
+            },
+            {
+              "pmid": "41097560",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41097560/"
+            },
+            {
+              "pmid": "41045670",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41045670/"
+            },
+            {
+              "pmid": "40994374",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40994374/"
+            },
+            {
+              "pmid": "40978881",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40978881/"
+            }
+          ]
+        },
+        {
+          "name": "IEEE Xplore",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=%22dose%20safety%20envelope%22%20OR%20(dose%20AND%20%22safety%20envelope%22)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "ACM Digital Library",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://dl.acm.org/action/doSearch?AllField=%22dose%20safety%20envelope%22%20OR%20(dose%20AND%20%22safety%20envelope%22)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "arXiv",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://arxiv.org/search/?query=%22dose%20safety%20envelope%22%20OR%20(dose%20AND%20%22safety%20envelope%22)&searchtype=all",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "WIPO PATENTSCOPE",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://patentscope.wipo.int/search/en/result.jsf?query=%22dose%20safety%20envelope%22%20OR%20(dose%20AND%20%22safety%20envelope%22)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "Espacenet",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://worldwide.espacenet.com/patent/search?q=%22dose%20safety%20envelope%22%20OR%20(dose%20AND%20%22safety%20envelope%22)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "Google Patents",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://patents.google.com/?q=%22dose%20safety%20envelope%22%20OR%20(dose%20AND%20%22safety%20envelope%22)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "INPI Brasil",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://busca.inpi.gov.br/pePI/servlet/PatenteServletController?Action=SearchBasica&query=%22dose%20safety%20envelope%22%20OR%20(dose%20AND%20%22safety%20envelope%22)",
+          "resultCount": null,
+          "records": []
+        }
+      ]
+    },
+    {
+      "id": "RXE-03",
+      "concept": "clinical constraint compiler",
+      "query": "\"clinical constraint compiler\" OR (clinical AND constraint AND compiler)",
+      "databases": [
+        {
+          "name": "Crossref",
+          "mode": "api",
+          "searchUrl": "https://api.crossref.org/works?query.bibliographic=%22clinical+constraint+compiler%22+OR+%28clinical+AND+constraint+AND+compiler%29&rows=25&select=DOI%2Ctitle%2Cpublished%2Ctype%2CURL",
+          "error": null,
+          "resultCount": 4111064,
+          "records": [
+            {
+              "title": "A Code generated by Herbrand compiler",
+              "year": 1993,
+              "doi": "10.7551/mitpress/2086.003.0020",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.7551/mitpress/2086.003.0020"
+            },
+            {
+              "title": "Constraint Programming in Compiler Optimization: Lessons Learned",
+              "year": 2013,
+              "doi": "10.1109/ictai.2013.137",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/ictai.2013.137"
+            },
+            {
+              "title": "Deep Learning Compiler Optimization Based on Constraint Programming",
+              "year": 2024,
+              "doi": "10.1145/3672758.3672767",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1145/3672758.3672767"
+            },
+            {
+              "title": "Flow logics for constraint based analysis",
+              "year": 1998,
+              "doi": "10.1007/bfb0026426",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/bfb0026426"
+            },
+            {
+              "title": "pyATF: Constraint-Based Auto-Tuning in Python",
+              "year": 2025,
+              "doi": "10.1145/3708493.3712682",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1145/3708493.3712682"
+            },
+            {
+              "title": "A prolog constraint handling rules compiler and runtime system",
+              "year": 2000,
+              "doi": "10.1080/088395100117043",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1080/088395100117043"
+            },
+            {
+              "title": "A Compiler Generator for Constraint Logic Programs",
+              "year": 2004,
+              "doi": "10.1007/978-3-540-39866-0_17",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-540-39866-0_17"
+            },
+            {
+              "title": "compiler compiler",
+              "year": null,
+              "doi": "10.1007/springerreference_10648",
+              "type": "reference-entry",
+              "url": "https://doi.org/10.1007/springerreference_10648"
+            },
+            {
+              "title": "Compact Representation and Interleaved Solving for Scalable Constraint-Based Points-to Analysis",
+              "year": 2026,
+              "doi": "10.1145/3771775.3786280",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1145/3771775.3786280"
+            },
+            {
+              "title": "On the implementation of abstract interpretation systems for (constraint) Logic Programs",
+              "year": 1994,
+              "doi": "10.1007/3-540-57877-3_12",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/3-540-57877-3_12"
+            },
+            {
+              "title": "Towards a compiler for a constraint language",
+              "year": 1989,
+              "doi": "10.1145/66617.66649",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1145/66617.66649"
+            },
+            {
+              "title": "A compiler and virtual machine for constraint-logic object-oriented programming with Muli",
+              "year": 2019,
+              "doi": "10.1016/j.cola.2019.05.001",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1016/j.cola.2019.05.001"
+            },
+            {
+              "title": "Towards a constraint functional logic compiler for symbolic computation systems",
+              "year": 1994,
+              "doi": "10.1007/3-540-58402-1_35",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/3-540-58402-1_35"
+            },
+            {
+              "title": "Design of a dependency-directed compiler for constraint propagation",
+              "year": 1988,
+              "doi": "10.1145/51909.51926",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1145/51909.51926"
+            },
+            {
+              "title": "The META-T Compiler-Compiler",
+              "year": null,
+              "doi": "10.31274/rtd-180814-1057",
+              "type": "dissertation",
+              "url": "https://doi.org/10.31274/rtd-180814-1057"
+            },
+            {
+              "year": 2023,
+              "doi": "10.28989/compiler.v12i2",
+              "type": "journal-issue",
+              "url": "https://doi.org/10.28989/compiler.v12i2"
+            },
+            {
+              "year": 2016,
+              "doi": "10.28989/compiler.v5i2",
+              "type": "journal-issue",
+              "url": "https://doi.org/10.28989/compiler.v5i2"
+            },
+            {
+              "title": "KiCS2: A New Compiler from Curry to Haskell",
+              "year": 2011,
+              "doi": "10.1007/978-3-642-22531-4_1",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-642-22531-4_1"
+            },
+            {
+              "year": 2020,
+              "doi": "10.28989/compiler.v9i1",
+              "type": "journal-issue",
+              "url": "https://doi.org/10.28989/compiler.v9i1"
+            },
+            {
+              "year": 2024,
+              "doi": "10.28989/compiler.v13i2",
+              "type": "journal-issue",
+              "url": "https://doi.org/10.28989/compiler.v13i2"
+            },
+            {
+              "year": 2015,
+              "doi": "10.28989/compiler.v4i2",
+              "type": "journal-issue",
+              "url": "https://doi.org/10.28989/compiler.v4i2"
+            },
+            {
+              "year": 2012,
+              "doi": "10.28989/compiler.v1i1",
+              "type": "journal-issue",
+              "url": "https://doi.org/10.28989/compiler.v1i1"
+            },
+            {
+              "title": "META-T compiler--compiler",
+              "year": 1974,
+              "doi": "10.2172/4258892",
+              "type": "report",
+              "url": "https://doi.org/10.2172/4258892"
+            },
+            {
+              "year": 2014,
+              "doi": "10.28989/compiler.v3i1",
+              "type": "journal-issue",
+              "url": "https://doi.org/10.28989/compiler.v3i1"
+            },
+            {
+              "year": 2016,
+              "doi": "10.28989/compiler.v5i1",
+              "type": "journal-issue",
+              "url": "https://doi.org/10.28989/compiler.v5i1"
+            }
+          ]
+        },
+        {
+          "name": "Europe PMC",
+          "mode": "api",
+          "searchUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22clinical+constraint+compiler%22+OR+%28clinical+AND+constraint+AND+compiler%29&format=json&pageSize=25&resultType=core",
+          "error": null,
+          "resultCount": 162,
+          "records": [
+            {
+              "title": "Hybrid Analytical and Simulation-Based Approach for Workspace Verification of a Pneumatic Upper Limb Exoskeleton.",
+              "year": 2026,
+              "doi": "10.3390/s26113308",
+              "pmid": "42280828",
+              "url": "https://doi.org/10.3390/s26113308"
+            },
+            {
+              "title": "AstigMETRICS: An Automated Tool for Standardized Vector Metrics Tables and Group Comparisons in Refractive Surgery",
+              "year": 2026,
+              "doi": null,
+              "pmid": null,
+              "url": null
+            },
+            {
+              "title": "From Biosignals to Bedside: A Review of Real-Time Edge Machine Learning for Wearable Health Monitoring.",
+              "year": 2026,
+              "doi": "10.3390/bioengineering13050559",
+              "pmid": "42194316",
+              "url": "https://doi.org/10.3390/bioengineering13050559"
+            },
+            {
+              "title": "Standardized quantum transistor block enables differentiable learning on gait dynamics.",
+              "year": 2026,
+              "doi": "10.1038/s41598-026-40424-7",
+              "pmid": "41708727",
+              "url": "https://doi.org/10.1038/s41598-026-40424-7"
+            },
+            {
+              "title": "A parallel algorithm for generating Pareto-optimal radiosurgery treatment plans.",
+              "year": 2026,
+              "doi": "10.1002/mp.70454",
+              "pmid": "42108219",
+              "url": "https://doi.org/10.1002/mp.70454"
+            },
+            {
+              "title": "Going faster to see further: graphics processing unit-accelerated value iteration and simulation for perishable inventory control using JAX.",
+              "year": 2025,
+              "doi": "10.1007/s10479-025-06551-6",
+              "pmid": "40822292",
+              "url": "https://doi.org/10.1007/s10479-025-06551-6"
+            },
+            {
+              "title": "The enduring advantages of the SLOW5 file format for raw nanopore sequencing data.",
+              "year": 2025,
+              "doi": "10.1093/gigascience/giaf118",
+              "pmid": "41100284",
+              "url": "https://doi.org/10.1093/gigascience/giaf118"
+            },
+            {
+              "title": "Automatic Detection of Articulatory-Based Disfluencies in Primary Progressive Aphasia.",
+              "year": 2025,
+              "doi": "10.1109/jstsp.2025.3579972",
+              "pmid": "41567718",
+              "url": "https://doi.org/10.1109/jstsp.2025.3579972"
+            },
+            {
+              "title": "Hierarchical Poromechanical Approach to Investigate the Impact of Mechanical Loading on Human Skin Micro-Circulation.",
+              "year": 2025,
+              "doi": "10.1002/cnm.70066",
+              "pmid": "40650462",
+              "url": "https://doi.org/10.1002/cnm.70066"
+            },
+            {
+              "title": "Extract, transform, load framework for the conversion of health databases to OMOP.",
+              "year": 2022,
+              "doi": "10.1371/journal.pone.0266911",
+              "pmid": "35404974",
+              "url": "https://doi.org/10.1371/journal.pone.0266911"
+            },
+            {
+              "title": "The evolutionary impact of childhood cancer on the human gene pool.",
+              "year": 2024,
+              "doi": "10.1038/s41467-024-45975-9",
+              "pmid": "38424437",
+              "url": "https://doi.org/10.1038/s41467-024-45975-9"
+            },
+            {
+              "title": "Temporal trends and forecasting of respiratory mortality in Bangladesh: A SARIMA model for seasonal mortality risk and public health action.",
+              "year": 2025,
+              "doi": "10.1177/22799036251395248",
+              "pmid": "41246192",
+              "url": "https://doi.org/10.1177/22799036251395248"
+            },
+            {
+              "title": "Biochef: a client-side WebAssembly-based workflow builder for genomic data analysis.",
+              "year": 2026,
+              "doi": "10.1186/s12859-026-06431-1",
+              "pmid": "41957706",
+              "url": "https://doi.org/10.1186/s12859-026-06431-1"
+            },
+            {
+              "title": "A transfer learning approach for automatic conflicts detection in software requirement sentence pairs based on dual encoders.",
+              "year": 2026,
+              "doi": "10.1371/journal.pone.0344174",
+              "pmid": "41818319",
+              "url": "https://doi.org/10.1371/journal.pone.0344174"
+            },
+            {
+              "title": "Ultra-high-resolution brain MRI at 0.55T: bSTAR and its application to magnetization transfer ratio imaging.",
+              "year": 2025,
+              "doi": "10.1016/j.zemedi.2024.12.001",
+              "pmid": "39824686",
+              "url": "https://doi.org/10.1016/j.zemedi.2024.12.001"
+            },
+            {
+              "title": "A Bayesian network perspective on neonatal pneumonia in pregnant women with diabetes mellitus.",
+              "year": 2023,
+              "doi": "10.1186/s12874-023-02070-9",
+              "pmid": "37880592",
+              "url": "https://doi.org/10.1186/s12874-023-02070-9"
+            },
+            {
+              "title": "Comparative Analysis of Open-Source Finite Element Method Solvers for Computational Fluid Dynamics Performance in a Carotid Artery Model.",
+              "year": 2026,
+              "doi": "10.1115/1.4070404",
+              "pmid": "41239896",
+              "url": "https://doi.org/10.1115/1.4070404"
+            },
+            {
+              "title": "Crafting an innovative one health-aligned machine learning framework for neglected tropical diseases elimination.",
+              "year": 2026,
+              "doi": "10.1016/j.jare.2025.07.023",
+              "pmid": "40669598",
+              "url": "https://doi.org/10.1016/j.jare.2025.07.023"
+            },
+            {
+              "title": "Emergent multipath COVID-19 specimen collection problem with green corridor through variable length GA.",
+              "year": 2023,
+              "doi": "10.1016/j.eswa.2023.120879",
+              "pmid": "37362254",
+              "url": "https://doi.org/10.1016/j.eswa.2023.120879"
+            },
+            {
+              "title": "Tube2FEM: a general-purpose highly automated pipeline for flow-related processes in (embedded) tubular objects.",
+              "year": 2025,
+              "doi": "10.1098/rsos.242025",
+              "pmid": "40809357",
+              "url": "https://doi.org/10.1098/rsos.242025"
+            },
+            {
+              "title": "A Federated Learning Model Based on Hardware Acceleration for the Early Detection of Alzheimer's Disease.",
+              "year": 2023,
+              "doi": "10.3390/s23198272",
+              "pmid": "37837101",
+              "url": "https://doi.org/10.3390/s23198272"
+            },
+            {
+              "title": "Validity and reliability of the Chinese version of the Break-up Distress Scale for college students.",
+              "year": 2025,
+              "doi": "10.3389/fpsyg.2025.1615021",
+              "pmid": "40672863",
+              "url": "https://doi.org/10.3389/fpsyg.2025.1615021"
+            },
+            {
+              "title": "Transforming Cancer Nanotechnology Data Analysis and User Experience. Part II: Providing Future Solutions Using Large Language Models.",
+              "year": 2025,
+              "doi": "10.1002/wnan.70029",
+              "pmid": "40840518",
+              "url": "https://doi.org/10.1002/wnan.70029"
+            },
+            {
+              "title": "MobileNet-GDR: a lightweight algorithm for grape leaf disease identification based on improved MobileNetV4-small.",
+              "year": 2025,
+              "doi": "10.3389/fpls.2025.1702071",
+              "pmid": "41281328",
+              "url": "https://doi.org/10.3389/fpls.2025.1702071"
+            },
+            {
+              "title": "A Study on Energy Consumption in AI-Driven Medical Image Segmentation.",
+              "year": 2025,
+              "doi": "10.3390/jimaging11060174",
+              "pmid": "40558774",
+              "url": "https://doi.org/10.3390/jimaging11060174"
+            }
+          ]
+        },
+        {
+          "name": "PubMed",
+          "mode": "api-identifiers",
+          "searchUrl": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22clinical+constraint+compiler%22+OR+%28clinical+AND+constraint+AND+compiler%29&retmode=json&retmax=25",
+          "error": null,
+          "resultCount": 104,
+          "records": [
+            {
+              "pmid": "42537288",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42537288/"
+            },
+            {
+              "pmid": "42410888",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42410888/"
+            },
+            {
+              "pmid": "42370437",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42370437/"
+            },
+            {
+              "pmid": "42318735",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42318735/"
+            },
+            {
+              "pmid": "42137251",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42137251/"
+            },
+            {
+              "pmid": "42044990",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42044990/"
+            },
+            {
+              "pmid": "42039274",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42039274/"
+            },
+            {
+              "pmid": "41967338",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41967338/"
+            },
+            {
+              "pmid": "41966646",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41966646/"
+            },
+            {
+              "pmid": "41948327",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41948327/"
+            },
+            {
+              "pmid": "41918008",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41918008/"
+            },
+            {
+              "pmid": "41896273",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41896273/"
+            },
+            {
+              "pmid": "41887385",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41887385/"
+            },
+            {
+              "pmid": "41763633",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41763633/"
+            },
+            {
+              "pmid": "41618184",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41618184/"
+            },
+            {
+              "pmid": "41569222",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41569222/"
+            },
+            {
+              "pmid": "41475837",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41475837/"
+            },
+            {
+              "pmid": "41456609",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41456609/"
+            },
+            {
+              "pmid": "41364145",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41364145/"
+            },
+            {
+              "pmid": "41153773",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41153773/"
+            },
+            {
+              "pmid": "41107078",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/41107078/"
+            },
+            {
+              "pmid": "40868222",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40868222/"
+            },
+            {
+              "pmid": "40789391",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40789391/"
+            },
+            {
+              "pmid": "40714244",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40714244/"
+            },
+            {
+              "pmid": "40533538",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40533538/"
+            }
+          ]
+        },
+        {
+          "name": "IEEE Xplore",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=%22clinical%20constraint%20compiler%22%20OR%20(clinical%20AND%20constraint%20AND%20compiler)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "ACM Digital Library",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://dl.acm.org/action/doSearch?AllField=%22clinical%20constraint%20compiler%22%20OR%20(clinical%20AND%20constraint%20AND%20compiler)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "arXiv",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://arxiv.org/search/?query=%22clinical%20constraint%20compiler%22%20OR%20(clinical%20AND%20constraint%20AND%20compiler)&searchtype=all",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "WIPO PATENTSCOPE",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://patentscope.wipo.int/search/en/result.jsf?query=%22clinical%20constraint%20compiler%22%20OR%20(clinical%20AND%20constraint%20AND%20compiler)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "Espacenet",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://worldwide.espacenet.com/patent/search?q=%22clinical%20constraint%20compiler%22%20OR%20(clinical%20AND%20constraint%20AND%20compiler)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "Google Patents",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://patents.google.com/?q=%22clinical%20constraint%20compiler%22%20OR%20(clinical%20AND%20constraint%20AND%20compiler)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "INPI Brasil",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://busca.inpi.gov.br/pePI/servlet/PatenteServletController?Action=SearchBasica&query=%22clinical%20constraint%20compiler%22%20OR%20(clinical%20AND%20constraint%20AND%20compiler)",
+          "resultCount": null,
+          "records": []
+        }
+      ]
+    },
+    {
+      "id": "RXE-04",
+      "concept": "executable guideline provenance",
+      "query": "\"executable guideline\" AND (provenance OR traceability OR evidence)",
+      "databases": [
+        {
+          "name": "Crossref",
+          "mode": "api",
+          "searchUrl": "https://api.crossref.org/works?query.bibliographic=%22executable+guideline%22+AND+%28provenance+OR+traceability+OR+evidence%29&rows=25&select=DOI%2Ctitle%2Cpublished%2Ctype%2CURL",
+          "error": null,
+          "resultCount": 1161680,
+          "records": [
+            {
+              "title": "Table 1: Assessment of solutions according to Independence, Traceability, DL Provenance Graph, Provenance Representation, and Provenance Graph in Production.",
+              "year": null,
+              "doi": "10.7717/peerj-cs.2985/table-1",
+              "type": "component",
+              "url": "https://doi.org/10.7717/peerj-cs.2985/table-1"
+            },
+            {
+              "title": "Extreme Product Line Engineering: Managing Variability and Traceability via Executable Specifications",
+              "year": 2009,
+              "doi": "10.1109/agile.2009.12",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/agile.2009.12"
+            },
+            {
+              "year": null,
+              "doi": "10.54499/2021.00244.ceecind/cp1650/ct0010",
+              "type": "grant",
+              "url": "https://doi.org/10.54499/2021.00244.ceecind/cp1650/ct0010"
+            },
+            {
+              "title": "Tractable Executable Binary Provenance Signalling through Vision Transformers",
+              "year": 2024,
+              "doi": "10.1109/lt60077.2024.10469044",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/lt60077.2024.10469044"
+            },
+            {
+              "title": "Provenance in the Context of Metrological Traceability",
+              "year": 2025,
+              "doi": "10.3390/metrology5030052",
+              "type": "journal-article",
+              "url": "https://doi.org/10.3390/metrology5030052"
+            },
+            {
+              "title": "Space Mission Data Provenance Traceability",
+              "year": 2018,
+              "doi": "10.2514/6.2018-2482",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.2514/6.2018-2482"
+            },
+            {
+              "title": "E2Map: Evidence-Contracted Construction of Executable 2D Maps",
+              "year": 2026,
+              "doi": "10.2139/ssrn.7188978",
+              "type": "posted-content",
+              "url": "https://doi.org/10.2139/ssrn.7188978"
+            },
+            {
+              "title": "End-to-end Provenance Traceability and Reproducibility Through \"Palletized'' Simulation Data",
+              "year": 2018,
+              "doi": "10.2172/1531316",
+              "type": "report",
+              "url": "https://doi.org/10.2172/1531316"
+            },
+            {
+              "title": "End-to-end Provenance Traceability and Reproducibility Through \"Palletized'' Simulation Data",
+              "year": 2018,
+              "doi": "10.2172/1481638",
+              "type": "report",
+              "url": "https://doi.org/10.2172/1481638"
+            },
+            {
+              "title": "Synthesis and Traceability of Scenario-Based Executable Models",
+              "year": 2006,
+              "doi": "10.1109/isola.2006.36",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/isola.2006.36"
+            },
+            {
+              "year": null,
+              "doi": "10.47486/dc108",
+              "type": "grant",
+              "url": "https://doi.org/10.47486/dc108"
+            },
+            {
+              "title": "Market Preference for Provenance and Traceability tied to Critical Infrastructure: US-EU Initiative",
+              "year": 2024,
+              "doi": "10.37665/cogyvuz45256",
+              "type": "journal-article",
+              "url": "https://doi.org/10.37665/cogyvuz45256"
+            },
+            {
+              "title": "Food Provenance and Food Fingerprinting",
+              "year": 2017,
+              "doi": "10.1002/9781119101406.ch2",
+              "type": "other",
+              "url": "https://doi.org/10.1002/9781119101406.ch2"
+            },
+            {
+              "title": "Preserving Reproducibility: Provenance and Executable Containers in DataONE Data Packages",
+              "year": 2018,
+              "doi": "10.1109/escience.2018.00019",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/escience.2018.00019"
+            },
+            {
+              "title": "DEEP: A Provenance-Aware Executable Document System",
+              "year": 2012,
+              "doi": "10.1007/978-3-642-34222-6_3",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1007/978-3-642-34222-6_3"
+            },
+            {
+              "title": "TGE-360: A Mature, Executable and Evidence-Governed Taqrīb Governance Ecosystem",
+              "year": 2026,
+              "doi": "10.24108/preprints-3115499",
+              "type": "posted-content",
+              "url": "https://doi.org/10.24108/preprints-3115499"
+            },
+            {
+              "title": "Teaching Provenance: Implementing Industry Traceability Practices in Studio-Based HCI Design Units",
+              "year": 2026,
+              "doi": "10.1145/3803869.3803877",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1145/3803869.3803877"
+            },
+            {
+              "title": "Data Mining and Structuring of Executable Data Analysis Reports: Guideline Development and Implementation in a Narrow Sense",
+              "year": 2000,
+              "doi": "10.3233/978-1-60750-921-9-790",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.3233/978-1-60750-921-9-790"
+            },
+            {
+              "title": "ProChain: Provenance-Aware Traceability Framework for IoT-Based Supply Chain Systems",
+              "year": 2022,
+              "doi": "10.1109/access.2021.3135371",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1109/access.2021.3135371"
+            },
+            {
+              "title": "Blockchain in Supply Chain Management, Traceability, Transparency, and Provenance",
+              "year": 2025,
+              "doi": "10.2174/9798898811501125010004",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.2174/9798898811501125010004"
+            },
+            {
+              "title": "Using Blockchain for Provenance and Traceability in Internet of Things-Integrated Food Logistics",
+              "year": 2019,
+              "doi": "10.1109/mc.2019.2942111",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1109/mc.2019.2942111"
+            },
+            {
+              "title": "Blockchain-Based Supply Chain Provenance: Ensuring Traceability and Integrity",
+              "year": 2025,
+              "doi": "10.62311/nesx/rphcrcscrbc3",
+              "type": "journal-article",
+              "url": "https://doi.org/10.62311/nesx/rphcrcscrbc3"
+            },
+            {
+              "title": "An Uncertainty-Aware Provenance Framework for Enhanced Traceability in Engineering Systems",
+              "year": 2026,
+              "doi": "10.1109/aero66936.2026.11520142",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/aero66936.2026.11520142"
+            },
+            {
+              "title": "TraceGraph: versioned, provenance-linked clinicalevidence graphs for guideline drift detection and safetysignal auditing",
+              "year": 2026,
+              "doi": "10.21203/rs.3.rs-8466783/v1",
+              "type": "posted-content",
+              "url": "https://doi.org/10.21203/rs.3.rs-8466783/v1"
+            },
+            {
+              "title": "A Provenance-Aware Policy Language (cProvl) and a Data Traceability Model (cProv) for the Cloud",
+              "year": 2013,
+              "doi": "10.1109/cgc.2013.81",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1109/cgc.2013.81"
+            }
+          ]
+        },
+        {
+          "name": "Europe PMC",
+          "mode": "api",
+          "searchUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22executable+guideline%22+AND+%28provenance+OR+traceability+OR+evidence%29&format=json&pageSize=25&resultType=core",
+          "error": null,
+          "resultCount": 15,
+          "records": [
+            {
+              "title": "An Integrated Process for Co-Developing and Implementing Written and Computable Clinical Practice Guidelines.",
+              "year": 2023,
+              "doi": "10.1097/jmq.0000000000000137",
+              "pmid": "37668271",
+              "url": "https://doi.org/10.1097/jmq.0000000000000137"
+            },
+            {
+              "title": "A Mobile Clinical Decision Support Tool for Pediatric Cardiovascular Risk-Reduction Clinical Practice Guidelines: Development and Description.",
+              "year": 2017,
+              "doi": "10.2196/mhealth.6291",
+              "pmid": "28270384",
+              "url": "https://doi.org/10.2196/mhealth.6291"
+            },
+            {
+              "title": "A Computer-Interpretable Guideline for COVID-19: Rapid Development and Dissemination.",
+              "year": 2020,
+              "doi": "10.2196/21628",
+              "pmid": "32931443",
+              "url": "https://doi.org/10.2196/21628"
+            },
+            {
+              "title": "Translation of hypertension treatment guidelines into practice: a review of implementation.",
+              "year": 2011,
+              "doi": "10.1016/j.jash.2011.03.002",
+              "pmid": "21640688",
+              "url": "https://doi.org/10.1016/j.jash.2011.03.002"
+            },
+            {
+              "title": "Evaluation for Perioperative Blood Transfusion during Major Abdominal Procedures in a Pediatric Population: A Retrospective Observation Cohort Study.",
+              "year": 2020,
+              "doi": "10.1159/000497826",
+              "pmid": "32110196",
+              "url": "https://doi.org/10.1159/000497826"
+            },
+            {
+              "title": "Reduced rate of dehiscence after implementation of a novel technique for creating colonic anastomosis in pediatric patients undergoing intestinal anastomosis in a single institute.",
+              "year": 2019,
+              "doi": "10.1097/md.0000000000015577",
+              "pmid": "31083235",
+              "url": "https://doi.org/10.1097/md.0000000000015577"
+            },
+            {
+              "title": "Rotation thromboelastometry (ROTEM) enables improved outcomes in the pediatric trauma population.",
+              "year": 2018,
+              "doi": "10.1177/0300060518794092",
+              "pmid": "30200794",
+              "url": "https://doi.org/10.1177/0300060518794092"
+            },
+            {
+              "title": "Knowledge management in the era of digital medicine: A programmatic approach to optimize patient care in an academic medical center.",
+              "year": 2017,
+              "doi": "10.1002/lrh2.10022",
+              "pmid": "31245559",
+              "url": "https://doi.org/10.1002/lrh2.10022"
+            },
+            {
+              "title": "The impact of early enteral nutrition on pediatric patients undergoing gastrointestinal anastomosis a propensity score matching analysis.",
+              "year": 2018,
+              "doi": "10.1097/md.0000000000010045",
+              "pmid": "29489656",
+              "url": "https://doi.org/10.1097/md.0000000000010045"
+            },
+            {
+              "title": "Partnerships in Innovation: How We Accomplished the Objectives of the SAGE Project",
+              "year": 2006,
+              "doi": null,
+              "pmid": null,
+              "url": null
+            },
+            {
+              "title": "Revisiting the EBM decision model to formalize non-compliance with computerized CPGs: results in the management of breast cancer with OncoDoc2.",
+              "year": 2011,
+              "doi": null,
+              "pmid": "22195063",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/22195063/"
+            },
+            {
+              "title": "A set of preliminary standards recommended for achieving a national repository of clinical decision support interventions.",
+              "year": 2009,
+              "doi": null,
+              "pmid": "20351928",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20351928/"
+            },
+            {
+              "title": "Supporting multidisciplinary staff meetings for guideline-based breast cancer management: a study with OncoDoc2.",
+              "year": 2007,
+              "doi": null,
+              "pmid": "18693918",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/18693918/"
+            },
+            {
+              "title": "HOLON/CADSE: integrating open software standards and formal methods to generate guideline-based decision support agents.",
+              "year": 1999,
+              "doi": null,
+              "pmid": "10566502",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/10566502/"
+            },
+            {
+              "title": "A framework and tools for authoring, editing, documenting, sharing, searching, navigating, and executing computer-based clinical guidelines.",
+              "year": 1999,
+              "doi": null,
+              "pmid": "10566361",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/10566361/"
+            }
+          ]
+        },
+        {
+          "name": "PubMed",
+          "mode": "api-identifiers",
+          "searchUrl": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22executable+guideline%22+AND+%28provenance+OR+traceability+OR+evidence%29&retmode=json&retmax=25",
+          "error": null,
+          "resultCount": 1601,
+          "records": [
+            {
+              "pmid": "42537999",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42537999/"
+            },
+            {
+              "pmid": "42526471",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42526471/"
+            },
+            {
+              "pmid": "42523015",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42523015/"
+            },
+            {
+              "pmid": "42516505",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42516505/"
+            },
+            {
+              "pmid": "42507345",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42507345/"
+            },
+            {
+              "pmid": "42504883",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42504883/"
+            },
+            {
+              "pmid": "42503917",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42503917/"
+            },
+            {
+              "pmid": "42492476",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42492476/"
+            },
+            {
+              "pmid": "42484585",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42484585/"
+            },
+            {
+              "pmid": "42480206",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42480206/"
+            },
+            {
+              "pmid": "42475690",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42475690/"
+            },
+            {
+              "pmid": "42468985",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42468985/"
+            },
+            {
+              "pmid": "42463243",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42463243/"
+            },
+            {
+              "pmid": "42458285",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42458285/"
+            },
+            {
+              "pmid": "42444178",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42444178/"
+            },
+            {
+              "pmid": "42423906",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42423906/"
+            },
+            {
+              "pmid": "42414125",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42414125/"
+            },
+            {
+              "pmid": "42405499",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42405499/"
+            },
+            {
+              "pmid": "42384141",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42384141/"
+            },
+            {
+              "pmid": "42382940",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42382940/"
+            },
+            {
+              "pmid": "42379364",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42379364/"
+            },
+            {
+              "pmid": "42364804",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42364804/"
+            },
+            {
+              "pmid": "42358745",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42358745/"
+            },
+            {
+              "pmid": "42357986",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42357986/"
+            },
+            {
+              "pmid": "42346870",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42346870/"
+            }
+          ]
+        },
+        {
+          "name": "IEEE Xplore",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=%22executable%20guideline%22%20AND%20(provenance%20OR%20traceability%20OR%20evidence)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "ACM Digital Library",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://dl.acm.org/action/doSearch?AllField=%22executable%20guideline%22%20AND%20(provenance%20OR%20traceability%20OR%20evidence)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "arXiv",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://arxiv.org/search/?query=%22executable%20guideline%22%20AND%20(provenance%20OR%20traceability%20OR%20evidence)&searchtype=all",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "WIPO PATENTSCOPE",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://patentscope.wipo.int/search/en/result.jsf?query=%22executable%20guideline%22%20AND%20(provenance%20OR%20traceability%20OR%20evidence)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "Espacenet",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://worldwide.espacenet.com/patent/search?q=%22executable%20guideline%22%20AND%20(provenance%20OR%20traceability%20OR%20evidence)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "Google Patents",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://patents.google.com/?q=%22executable%20guideline%22%20AND%20(provenance%20OR%20traceability%20OR%20evidence)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "INPI Brasil",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://busca.inpi.gov.br/pePI/servlet/PatenteServletController?Action=SearchBasica&query=%22executable%20guideline%22%20AND%20(provenance%20OR%20traceability%20OR%20evidence)",
+          "resultCount": null,
+          "records": []
+        }
+      ]
+    },
+    {
+      "id": "RXE-05",
+      "concept": "assurance case medication",
+      "query": "\"assurance case\" AND (medication OR prescribing OR prescription)",
+      "databases": [
+        {
+          "name": "Crossref",
+          "mode": "api",
+          "searchUrl": "https://api.crossref.org/works?query.bibliographic=%22assurance+case%22+AND+%28medication+OR+prescribing+OR+prescription%29&rows=25&select=DOI%2Ctitle%2Cpublished%2Ctype%2CURL",
+          "error": null,
+          "resultCount": 3388562,
+          "records": [
+            {
+              "title": "Prescription writing and record keeping",
+              "year": 2005,
+              "doi": "10.4324/9780203987704-34",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203987704-34"
+            },
+            {
+              "title": "Prescription writing and record keeping",
+              "year": 2013,
+              "doi": "10.4324/9780203111826-33",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203111826-33"
+            },
+            {
+              "title": "Ethics of Prescription Medication Access, Innovation, and Prescribing",
+              "year": 2019,
+              "doi": "10.1001/amajethics.2019.627",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1001/amajethics.2019.627"
+            },
+            {
+              "title": "Prescription writing and record keeping",
+              "year": 2021,
+              "doi": "10.4324/9781003030430-29",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9781003030430-29"
+            },
+            {
+              "title": "Prescription medication sharing for non-recreational purposes: A systematic review of the literature",
+              "year": 2023,
+              "doi": "10.1370/afm.22.s1.5269",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1370/afm.22.s1.5269"
+            },
+            {
+              "title": "Prevalence and risk factors for prescription medication sharing in the UK general population",
+              "year": 2023,
+              "doi": "10.1370/afm.22.s1.5278",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1370/afm.22.s1.5278"
+            },
+            {
+              "title": "Study of prescribing errors of two different prescription systems: pre-printed prescription from historical medication and hand-written prescription",
+              "year": 2022,
+              "doi": "10.29090/psa.2022.06.22.141",
+              "type": "journal-article",
+              "url": "https://doi.org/10.29090/psa.2022.06.22.141"
+            },
+            {
+              "title": "Does electronic medication reconciliation at hospital discharge decrease prescription medication errors?",
+              "year": 2015,
+              "doi": "10.1108/ijhcqa-12-2014-0113",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1108/ijhcqa-12-2014-0113"
+            },
+            {
+              "title": "Medication errors case studies: Prescribing, transcribing, and prescriptions/orders writing errors",
+              "year": 2023,
+              "doi": "10.1016/b978-0-323-98802-5.00012-1",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1016/b978-0-323-98802-5.00012-1"
+            },
+            {
+              "title": "Medication in mental heath: a case study",
+              "year": 2011,
+              "doi": "10.12968/npre.2011.9.8.383",
+              "type": "journal-article",
+              "url": "https://doi.org/10.12968/npre.2011.9.8.383"
+            },
+            {
+              "title": "5PSQ-076 Prescription medication sharing among adults in Saudi Arabia: a cross sectional survey study",
+              "year": 2020,
+              "doi": "10.1136/ejhpharm-2020-eahpconf.393",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1136/ejhpharm-2020-eahpconf.393"
+            },
+            {
+              "title": "Concordance in action: case study of medication management",
+              "year": 2012,
+              "doi": "10.12968/npre.2012.10.4.195",
+              "type": "journal-article",
+              "url": "https://doi.org/10.12968/npre.2012.10.4.195"
+            },
+            {
+              "title": "Medication errors: prescribing faults and prescription errors",
+              "year": 2009,
+              "doi": "10.1111/j.1365-2125.2009.03425.x",
+              "type": "journal-article",
+              "url": "https://doi.org/10.1111/j.1365-2125.2009.03425.x"
+            },
+            {
+              "title": "Prescribing and Monitoring Medication",
+              "year": 2015,
+              "doi": "10.1201/b18773-9",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.1201/b18773-9"
+            },
+            {
+              "title": "Analisis Potensi Kejadian Medication Errors pada Fase Prescribing dalam Pelayanan Resep Pasien Rawat Jalan di Rumah Sakit Bhayangkara Brimob",
+              "year": 2025,
+              "doi": "10.35760/jff.2025.v3i2.136",
+              "type": "journal-article",
+              "url": "https://doi.org/10.35760/jff.2025.v3i2.136"
+            },
+            {
+              "title": "Inappropriate Proton Pump Inhibitor Prescribing in Hospitalized Patients: Rate and Reasons for Prescription",
+              "year": 2026,
+              "doi": "10.25258/ijpqa.16.12.137",
+              "type": "journal-article",
+              "url": "https://doi.org/10.25258/ijpqa.16.12.137"
+            },
+            {
+              "title": "Improving Medication Prescribing-Related Outcomes for Vulnerable Elderly In Transitions",
+              "year": 2019,
+              "doi": "10.31525/ct1-nct04077281",
+              "type": "journal-article",
+              "url": "https://doi.org/10.31525/ct1-nct04077281"
+            },
+            {
+              "title": "5PSQ-220 Discrepancies between prescription and dispensing of medication in automatic dispensing cabinet",
+              "year": 2021,
+              "doi": "10.1136/ejhpharm-2021-eahpconf.339",
+              "type": "proceedings-article",
+              "url": "https://doi.org/10.1136/ejhpharm-2021-eahpconf.339"
+            },
+            {
+              "title": "Medication allergies",
+              "year": 2005,
+              "doi": "10.4324/9780203987704-30",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203987704-30"
+            },
+            {
+              "title": "Starting medication",
+              "year": 2005,
+              "doi": "10.4324/9780203987704-15",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203987704-15"
+            },
+            {
+              "title": "Stopping medication",
+              "year": 2013,
+              "doi": "10.4324/9780203111826-16",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203111826-16"
+            },
+            {
+              "title": "Medication allergies",
+              "year": 2013,
+              "doi": "10.4324/9780203111826-29",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203111826-29"
+            },
+            {
+              "title": "Stopping medication",
+              "year": 2005,
+              "doi": "10.4324/9780203987704-18",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203987704-18"
+            },
+            {
+              "title": "Starting medication",
+              "year": 2013,
+              "doi": "10.4324/9780203111826-13",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203111826-13"
+            },
+            {
+              "title": "Medication and psychotherapy",
+              "year": 2005,
+              "doi": "10.4324/9780203987704-17",
+              "type": "book-chapter",
+              "url": "https://doi.org/10.4324/9780203987704-17"
+            }
+          ]
+        },
+        {
+          "name": "Europe PMC",
+          "mode": "api",
+          "searchUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22assurance+case%22+AND+%28medication+OR+prescribing+OR+prescription%29&format=json&pageSize=25&resultType=core",
+          "error": null,
+          "resultCount": 13,
+          "records": [
+            {
+              "title": "Efficacy and Safety of Acupuncture at Sensitized Acupoints for Knee Osteoarthritis: Protocol for a Multicenter, Single-Blind Randomized Controlled Trial.",
+              "year": 2025,
+              "doi": "10.2196/77336",
+              "pmid": "40990366",
+              "url": "https://doi.org/10.2196/77336"
+            },
+            {
+              "title": "QRNN-GRU framework for automatic argument and annotation extraction in medical drug reviews.",
+              "year": 2026,
+              "doi": "10.1038/s41598-026-41379-5",
+              "pmid": "41833960",
+              "url": "https://doi.org/10.1038/s41598-026-41379-5"
+            },
+            {
+              "title": "Bridging the Urban and Regional Divide in Stroke Care (BUILDS): A Novel Telestroke Unit Service.",
+              "year": 2025,
+              "doi": "10.1111/ajr.70067",
+              "pmid": "40530763",
+              "url": "https://doi.org/10.1111/ajr.70067"
+            },
+            {
+              "title": "Recommendations for the safe, effective use of adaptive CDS in the US healthcare system: an AMIA position paper.",
+              "year": 2021,
+              "doi": "10.1093/jamia/ocaa319",
+              "pmid": "33447854",
+              "url": "https://doi.org/10.1093/jamia/ocaa319"
+            },
+            {
+              "title": "Improving safety claims in digital health interventions using the digital health assessment method.",
+              "year": 2024,
+              "doi": "10.1177/20552076241258756",
+              "pmid": "39070888",
+              "url": "https://doi.org/10.1177/20552076241258756"
+            },
+            {
+              "title": "Inpatient Respiratory Arrest Associated With Sedative and Analgesic Medications: Impact of Continuous Monitoring on Patient Mortality and Severe Morbidity.",
+              "year": 2021,
+              "doi": "10.1097/pts.0000000000000696",
+              "pmid": "32175965",
+              "url": "https://doi.org/10.1097/pts.0000000000000696"
+            },
+            {
+              "title": "Scalable Agile Framework for Execution in AI for Medical AI Ethics Policy Design in Small- and Medium-Sized Enterprises.",
+              "year": 2026,
+              "doi": "10.2196/80028",
+              "pmid": "41740154",
+              "url": "https://doi.org/10.2196/80028"
+            },
+            {
+              "title": "CSHP Professional Practice Conference 2018: Poster Abstracts",
+              "year": 2018,
+              "doi": null,
+              "pmid": null,
+              "url": null
+            },
+            {
+              "title": "A framework for synthesis of safety justification for digitally enabled healthcare services.",
+              "year": 2017,
+              "doi": "10.1177/2055207617704271",
+              "pmid": "29942592",
+              "url": "https://doi.org/10.1177/2055207617704271"
+            },
+            {
+              "title": "Open Source Patient-Controlled Analgesic Pump Requirements Documentation.",
+              "year": 2013,
+              "doi": "10.1109/sehc.2013.6602474",
+              "pmid": "24931440",
+              "url": "https://doi.org/10.1109/sehc.2013.6602474"
+            },
+            {
+              "title": "Irritable bowel syndrome symptom severity improves equally with probiotic and placebo.",
+              "year": 2016,
+              "doi": "10.3748/wjg.v22.i48.10631",
+              "pmid": "28082816",
+              "url": "https://doi.org/10.3748/wjg.v22.i48.10631"
+            },
+            {
+              "title": "Unintended Consequences of Wearable Sensor Use in Healthcare. Contribution of the IMIA Wearable Sensors in Healthcare WG.",
+              "year": 2016,
+              "doi": "10.15265/iy-2016-025",
+              "pmid": "27830234",
+              "url": "https://doi.org/10.15265/iy-2016-025"
+            },
+            {
+              "title": "Tackling COVID-19 through Responsible AI Innovation: Five Steps in the Right Direction",
+              "year": 2020,
+              "doi": null,
+              "pmid": null,
+              "url": null
+            }
+          ]
+        },
+        {
+          "name": "PubMed",
+          "mode": "api-identifiers",
+          "searchUrl": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22assurance+case%22+AND+%28medication+OR+prescribing+OR+prescription%29&retmode=json&retmax=25",
+          "error": null,
+          "resultCount": 7,
+          "records": [
+            {
+              "pmid": "40588887",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40588887/"
+            },
+            {
+              "pmid": "39070888",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39070888/"
+            },
+            {
+              "pmid": "32900694",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/32900694/"
+            },
+            {
+              "pmid": "28892407",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/28892407/"
+            },
+            {
+              "pmid": "18528247",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/18528247/"
+            },
+            {
+              "pmid": "16990736",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/16990736/"
+            },
+            {
+              "pmid": "11073485",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/11073485/"
+            }
+          ]
+        },
+        {
+          "name": "IEEE Xplore",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=%22assurance%20case%22%20AND%20(medication%20OR%20prescribing%20OR%20prescription)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "ACM Digital Library",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://dl.acm.org/action/doSearch?AllField=%22assurance%20case%22%20AND%20(medication%20OR%20prescribing%20OR%20prescription)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "arXiv",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://arxiv.org/search/?query=%22assurance%20case%22%20AND%20(medication%20OR%20prescribing%20OR%20prescription)&searchtype=all",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "WIPO PATENTSCOPE",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://patentscope.wipo.int/search/en/result.jsf?query=%22assurance%20case%22%20AND%20(medication%20OR%20prescribing%20OR%20prescription)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "Espacenet",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://worldwide.espacenet.com/patent/search?q=%22assurance%20case%22%20AND%20(medication%20OR%20prescribing%20OR%20prescription)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "Google Patents",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://patents.google.com/?q=%22assurance%20case%22%20AND%20(medication%20OR%20prescribing%20OR%20prescription)",
+          "resultCount": null,
+          "records": []
+        },
+        {
+          "name": "INPI Brasil",
+          "mode": "manual-screening-required",
+          "searchUrl": "https://busca.inpi.gov.br/pePI/servlet/PatenteServletController?Action=SearchBasica&query=%22assurance%20case%22%20AND%20(medication%20OR%20prescribing%20OR%20prescription)",
+          "resultCount": null,
+          "records": []
+        }
+      ]
+    }
+  ],
+  "nextActions": [
+    "Dual-reviewer title and abstract screening.",
+    "Backward and forward citation chaining.",
+    "CPC and IPC classification expansion for patent families.",
+    "Claim-by-claim novelty matrix and legal review before any public originality claim."
+  ],
+  "limitations": [
+    "API result ranking is retained as returned and has not been adjudicated.",
+    "IEEE, ACM, arXiv, and patent databases require manual screening in their native interfaces.",
+    "Search strings are discovery queries and do not substitute for professional patent searching."
+  ]
+}

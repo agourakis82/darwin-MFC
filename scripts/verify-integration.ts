@@ -416,6 +416,28 @@ if (
   });
 }
 
+const medicationEnvelope = spawnSync(
+  'pnpm',
+  ['exec', 'tsx', resolve(process.cwd(), 'scripts/test-medication-envelope.ts')],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+if (
+  medicationEnvelope.status === 0
+  && medicationEnvelope.stdout.includes('MEDICATION_ENVELOPE_VALID')
+  && medicationEnvelope.stdout.includes('"artifacts": 17')
+  && medicationEnvelope.stdout.includes('"benchmarkCases": 340')
+  && medicationEnvelope.stdout.includes('"nativeWasmExactParity": true')
+  && medicationEnvelope.stdout.includes('"pilotAuthorized": false')
+  && medicationEnvelope.stdout.includes('"productionAuthorized": false')
+) {
+  pass('Darwin Rx Evidence-to-Envelope', 'Grafo Merkle, 17 artefatos, 340 vinhetas, provas formais e WASM passam; piloto e producao permanecem em REFUSE');
+} else {
+  fail('Darwin Rx Evidence-to-Envelope', 'Grafo, IR, prova, WASM, benchmark ou fronteira de governanca falhou', {
+    status: medicationEnvelope.status,
+    output: medicationEnvelope.stdout || medicationEnvelope.stderr,
+  });
+}
+
 const calibrationScript = resolve(process.cwd(), 'scripts/calibrate-epistemic-firewall.mjs');
 const fixtureValidation = spawnSync(
   process.execPath,

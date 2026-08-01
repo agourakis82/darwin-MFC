@@ -1,0 +1,53 @@
+//@ generated-entrypoint
+// Darwin Rx proof-carrying envelope gate. Clinical predicates arrive as
+// reviewed constraint codes; only Sounio may turn them into a disposition.
+
+let INPUT_COUNT: i64 = 16
+let OUTPUT_COUNT: i64 = 8
+
+var ORACLE_INPUT: [i64; 16] = [0; 16]
+var ORACLE_OUTPUT: [i64; 8] = [0; 8]
+
+fn evaluate_oracle() with Mut, Panic {
+    var refusal: i64 = 0
+    var blockers: i64 = ORACLE_INPUT[12]
+    var reviews: i64 = ORACLE_INPUT[13]
+
+    if ORACLE_INPUT[0] != 1 { refusal = refusal | 1 }
+    if ORACLE_INPUT[1] != 1 { refusal = refusal | 2 }
+    if ORACLE_INPUT[2] != 1 { refusal = refusal | 4 }
+    if ORACLE_INPUT[3] != 1 { refusal = refusal | 8 }
+    if ORACLE_INPUT[4] != 1 { refusal = refusal | 16 }
+    if ORACLE_INPUT[5] != 1 { refusal = refusal | 32 }
+    if ORACLE_INPUT[6] != 1 { refusal = refusal | 64 }
+    if ORACLE_INPUT[7] != 1 { refusal = refusal | 128 }
+    if ORACLE_INPUT[8] != 1 { refusal = refusal | 256 }
+    if ORACLE_INPUT[9] != 1 { refusal = refusal | 512 }
+    if ORACLE_INPUT[10] != 1 { refusal = refusal | 1024 }
+    if ORACLE_INPUT[14] != 0 { refusal = refusal | 2048 }
+    if ORACLE_INPUT[15] != 1 { refusal = refusal | 4096 }
+    if ORACLE_INPUT[11] < 0 || ORACLE_INPUT[11] > 64 { refusal = refusal | 8192 }
+    if blockers < 0 || reviews < 0 { refusal = refusal | 16384 }
+
+    if ORACLE_INPUT[11] > 0 { reviews = reviews | 1 }
+
+    var disposition: i64 = 3
+    if reviews != 0 { disposition = 2 }
+    if blockers != 0 { disposition = 1 }
+    if refusal != 0 { disposition = 0 }
+
+    var counterexample: i64 = 0
+    if blockers != 0 { counterexample = blockers }
+    else if reviews != 0 { counterexample = reviews }
+
+    ORACLE_OUTPUT[0] = disposition
+    ORACLE_OUTPUT[1] = refusal
+    ORACLE_OUTPUT[2] = blockers
+    ORACLE_OUTPUT[3] = reviews
+    ORACLE_OUTPUT[4] = ORACLE_INPUT[11]
+    ORACLE_OUTPUT[5] = counterexample
+    ORACLE_OUTPUT[6] = ORACLE_INPUT[1] + ORACLE_INPUT[4] + ORACLE_INPUT[6]
+    ORACLE_OUTPUT[7] = ORACLE_INPUT[0] + ORACLE_INPUT[10]
+}
+
+// The build appends fixed test vectors and main().
